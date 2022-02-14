@@ -20,6 +20,7 @@
 #include <MC/ScoreboardId.hpp>
 #include <MC/ListTag.hpp>
 #include <MC/CompoundTag.hpp>
+#include <PlayerInfoAPI.h>
 #include <string>
 #include <vector>
 #include <unordered_map>
@@ -286,7 +287,17 @@ Local<Value> PlayerClass::getXuid()
         if (!player)
             return Local<Value>();
 
-        return String::newString(player->getXuid());
+        string xuid;
+        try
+        {
+            xuid = player->getXuid();
+        }
+        catch (...)
+        {
+            logger.debug("Fail in getXuid!");
+            xuid = PlayerInfo::getXuid(player->getRealName());
+        }
+        return String::newString(xuid);
     }
     CATCH("Fail in getXuid!")
 }
@@ -298,7 +309,17 @@ Local<Value> PlayerClass::getUuid()
         if (!player)
             return Local<Value>();
 
-        return String::newString(player->getUuid());
+        string uuid;
+        try
+        {
+            uuid = player->getUuid();
+        }
+        catch (...)
+        {
+            logger.debug("Fail in getUuid!");
+            uuid = PlayerInfo::getUUID(player->getRealName());
+        }
+        return String::newString(uuid);
     }
     CATCH("Fail in getUuid!")
 }

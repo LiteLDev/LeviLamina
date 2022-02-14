@@ -3,7 +3,7 @@
 #include <map>
 #include <string>
 #include <third-party/ThreadPool/ThreadPool.hpp>
-
+#include <mutex>
 
 
 //////////////////// Structs ////////////////////
@@ -63,6 +63,8 @@ extern std::vector<ScriptEngine*> currentModuleEngines;
 
 //线程池
 extern ThreadPool pool;
+
+extern std::mutex messageLoopLock;
 
 //////////////////// APIs ////////////////////
 

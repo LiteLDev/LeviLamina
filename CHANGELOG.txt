@@ -1,16 +1,16 @@
-## [LiteLoader Release Note]
-LiteLoaderBDS-2.1.1 update has been released, automatic update has been pushed
+## [LiteLoader Release Note] 
+LiteLoaderBDS-2.1.2 update has been released, automatic update has been pushed 
 This is an important bug fix update! 
-
-## [Changes]
-New teleportFace API
-
+## [New features]
+ - Added some color-related APIs
+ - Script engine exported registerPlugin API
+ - Exported the new allowlist API
+ - Finished some i18n work
 ## [Bug Fix]
-Fix the bug that the door cannot be placed in some cases
-Repair the problem of logger crash
-Repair the problem of offset position of pl.blockPos
-Repair the problem of CustomForm of script engine
-Repair the possible failure and crash of AddonInstaller.
-Repair the problem of crash caused by explosion
-Repair the problem of facing to the sky after teleport
-Repair some spelling errors
+ - Fix a serious remote call deadlock problem in the scripting engine.
+Fix the problem of script engine ll.require working abnormally. 
+ - Fix a possible error reported by getXuid
+ - Fix the problem that the PlayerDrop event triggers incorrectly
+ - Fix the issue that the player respawn event triggers abnormally
+ - The problem that may occur when the crossbow fires fireworks rockets is fixed.
+ - The problem with AddonInstaller is fixed.

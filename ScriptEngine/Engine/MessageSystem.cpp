@@ -329,12 +329,19 @@ bool ModuleMessageResult::cancel()
 ///////////////////////////// Funcs /////////////////////////////
 void MessageSystemLoopOnce()
 {
+    //if (!messageLoopLock.try_lock())
+    //    return;
     for (auto engine : currentModuleEngines)
     {
         try
         {
-            EngineScope enter(engine);
-            engine->messageQueue()->loopQueue(script::utils::MessageQueue::LoopType::kLoopOnce);
+            if(EngineScope::currentEngine() == engine)
+                engine->messageQueue()->loopQueue(script::utils::MessageQueue::LoopType::kLoopOnce);
+            else
+            {
+                EngineScope enter(engine);
+                engine->messageQueue()->loopQueue(script::utils::MessageQueue::LoopType::kLoopOnce);
+            }
         }
         catch (const Exception& e)
         {
@@ -349,7 +356,8 @@ void MessageSystemLoopOnce()
             logger.error("Uncaught Exception Detected!");
         }
     }
-    //logger.debug("Engine-{} Message Loop.", LLSE_MODULE_TYPE);
+    //messageLoopLock.unlock();
+    logger.debug("Engine-{} Message Loop.", LLSE_MODULE_TYPE);
 }
 
 void InitMessageSystem()
@@ -360,7 +368,7 @@ void InitMessageSystem()
         while (true)
         {
             MessageSystemLoopOnce();
-            Sleep(1);
+            Sleep(5);
         }
     }).detach();
 }

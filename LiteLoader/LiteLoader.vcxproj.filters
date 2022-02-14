@@ -303,6 +303,9 @@
     <ClCompile Include="Kernel\Compatibility.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\MC\ColorFormatAPI.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -639,6 +642,9 @@
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\MC\ItemStackBase.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\ColorFormat.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
   </ItemGroup>

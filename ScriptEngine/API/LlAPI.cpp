@@ -24,6 +24,7 @@ ClassDefine<void> LlClassBuilder =
         .function("export", &LlClass::exportFunc)
         .function("require", &LlClass::require)
         .function("eval", &LlClass::eval)
+        .function("registerPlugin", &LlClass::registerPlugin)
 
         //For Compatibility
         .function("checkVersion", &LlClass::requireVersion)
@@ -144,15 +145,7 @@ Local<Value> LlClass::require(const Arguments& args)
         string thisName = ENGINE_OWN_DATA()->pluginName;
 
         //已加载插件
-        for (auto pluginName : globalShareData->pluginsList)
-        {
-            if (pluginName == require)
-            {
-                existing = true;
-                break;
-            }
-        }
-        if (existing)
+        if (PluginManager::getPlugin(require) != nullptr)
         {
             logger.info(thisName + tr("lxlapi.require.success") + require);
             return Boolean::newBoolean(true);
@@ -197,8 +190,7 @@ Local<Value> LlClass::require(const Arguments& args)
         }
         if (existing)
         {
-            //bool success = PluginManager::loadPlugin(string(LLSE_DEPENDS_DIR) + "/" + require);
-            bool success = true;                            //TODO: Temporarily disable ll.require for more work
+            bool success = PluginManager::loadPlugin(string(LLSE_DEPENDS_DIR) + "/" + require);
             if (success)
             {
                 logger.info(thisName + tr("lxlapi.require.success") + require);

@@ -23,14 +23,44 @@ public:
     MCAPI static UUID fromString(std::string const&);
     MCAPI bool isEmpty() const;
     MCAPI static UUID seedFromString(std::string const&);
+    MCAPI static class mce::UUID EMPTY;
 
     inline operator bool() const
     {
         return !isEmpty();
     }
 };
+class Color
+{
+public:
+    float r;
+    float g;
+    float b;
+    float a;
+    Color(float r, float g, float b, float a = 1)
+        : r(r)
+        , g(g)
+        , b(b)
+        , a(a){};
 
-class Color;
+    inline operator bool() const
+    {
+        return !(*this == NIL);
+    }
+
+    LIAPI double distanceTo(mce::Color const dst) const;
+    LIAPI std::string toConsoleColorCode(bool foreground = true) const;
+    LIAPI std::string toMcColorCode() const;
+    LIAPI static class mce::Color fromConsoleColorCode(std::string const&);
+
+    MCAPI static mce::Color const NIL;
+    MCAPI static class mce::Color fromHexString(std::string const&);
+    MCAPI bool operator==(class mce::Color const&) const;
+    MCAPI int toABGR(void) const;
+    MCAPI int toARGB(void) const;
+    MCAPI std::string toHexString(void) const;
+
+};
 
 }; // namespace mce
 
@@ -765,6 +795,18 @@ enum class PlayerScoreSetFunction : char
     Remove = 2
 };
 
+enum class ContainerID : int8_t
+{
+    Invalid = -1,
+    Inventory = 0,
+    First = 1,
+    Last = 100,
+    Offhand = 119,
+    Armor = 120,
+    SelectionSlots = 122,
+    PlayerUIOnly = 124
+};
+
 enum class FaceID : char
 {
     Unknown = -1,
@@ -1018,6 +1060,32 @@ enum ItemStackNetResult :unsigned char {
 //public:
 //    int Min = 1, Max = 0x7FFFFFFF;
 //};
+
+enum class InventoryTransactionError
+{
+    Unknown = 0,
+    NoError = 1,
+    BalanceMismatch = 2,
+    SourceItemMismatch = 3,
+    InventoryMismatch = 4,
+    SizeMismatch = 5,
+    AuthorityMismatch = 6,
+    StateMismatch = 7,
+    ApiDenied = 8
+};
+
+enum class InventorySourceType
+{
+    Invalid = -1,
+    Container = 0,
+    Global = 1,
+    World = 2,
+    Creative = 3,
+    UntrackedInteractionUI = 100,
+    NONIMPLEMENTEDTODO = 99999
+};
+
+
 
 template <typename T>
 struct InvertableFilter

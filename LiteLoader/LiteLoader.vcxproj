@@ -87,6 +87,7 @@ LibraryBuilder.exe
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Kernel\Compatibility.cpp" />
+    <ClCompile Include="Kernel\MC\ColorFormatAPI.cpp" />
     <ClCompile Include="Kernel\MC\I18nAPI.cpp" />
     <ClCompile Include="Kernel\AllowListAPI.cpp" />
     <ClCompile Include="Kernel\Scoreboard\ObjectiveAPI.cpp" />
@@ -111,6 +112,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\BlockInstance.hpp" />
     <ClInclude Include="Header\MC\ByteArrayTag.hpp" />
     <ClInclude Include="Header\MC\ByteTag.hpp" />
+    <ClInclude Include="Header\MC\ColorFormat.hpp" />
     <ClInclude Include="Header\MC\CommandMessage.hpp" />
     <ClInclude Include="Header\MC\CommandPosition.hpp" />
     <ClInclude Include="Header\MC\CommandOrigin.hpp" />

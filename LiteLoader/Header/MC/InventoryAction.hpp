@@ -5,6 +5,9 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "InventorySource.hpp"
+#include "ItemStack.hpp"
+
 #undef BEFORE_EXTRA
 
 class InventoryAction {
@@ -12,6 +15,9 @@ class InventoryAction {
 #define AFTER_EXTRA
 // Add Member There
 public:
+InventorySource source; // 0x0
+uint32_t slot;          // 0xC
+ItemStack from, to;     // 0x10, 0xA0
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYACTION

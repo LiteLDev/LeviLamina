@@ -1,6 +1,7 @@
 #include "LocalShareData.h"
 #include <Configs.h>
 #include <third-party/ThreadPool/ThreadPool.hpp>
+#include <mutex>
 
 //DLL本地共享数据
 LocalDataType* localShareData;
@@ -10,6 +11,8 @@ std::vector<RegCmdQueue> toRegCmdQueue;
 
 //线程池
 ThreadPool pool(LLSE_POOL_THREAD_COUNT);
+
+std::mutex messageLoopLock;
 
 void InitLocalShareData()
 {

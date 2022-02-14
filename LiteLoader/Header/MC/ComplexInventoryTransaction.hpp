@@ -21,7 +21,7 @@ enum class Type : unsigned
     ITEM_USE_ON_ACTOR = 3,
     RELEASE_ITEM = 4,
 } type;
-InventoryTransaction* data;
+InventoryTransaction data;
 
 #undef AFTER_EXTRA
 

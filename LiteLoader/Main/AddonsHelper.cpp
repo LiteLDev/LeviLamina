@@ -199,20 +199,25 @@ bool InstallAddonToLevel(std::string addonDir, std::string addonName)
 void FindManifest(vector<string> &result, const string& path)
 {
     filesystem::directory_iterator ent(path);
+
+    bool foundManifest = false;
     for (auto& file : ent)
     {
-        if (file.is_directory())
+        auto path = file.path();
+        if (path.filename() == "manifest.json")
         {
-            FindManifest(result, file.path().string());
+            result.push_back(filesystem::canonical(path).parent_path().u8string());
+            foundManifest = true;
+            break;
         }
-        else {
-            auto path = file.path();
-            if (path.filename() == "manifest.json")
-            {
-                result.push_back(filesystem::canonical(path).parent_path().u8string());
-                break;
-            }
-        }
+    }
+    if (!foundManifest)
+    {
+        //No manifest file
+        filesystem::directory_iterator ent2(path);
+        for (auto& file : ent2)
+            if (file.is_directory())
+                FindManifest(result, file.path().string());
     }
     return;
 }
@@ -254,7 +259,7 @@ bool AddonsManager::install(std::string packPath)
         filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
         filesystem::create_directories(ADDON_INSTALL_TEMP_DIR, ec);
 
-        auto res = NewProcessSync(fmt::format("{} x {} -o{} -aoa", ZIP_PROGRAM_PATH, packPath, ADDON_INSTALL_TEMP_DIR), ADDON_INSTALL_MAX_WAIT);
+        auto res = NewProcessSync(fmt::format("{} x \"{}\" -o{} -aoa", ZIP_PROGRAM_PATH, packPath, ADDON_INSTALL_TEMP_DIR), ADDON_INSTALL_MAX_WAIT);
         if (res.first != 0)
         {
             addonLogger.error("Fail to uncompress addon {}!", name);

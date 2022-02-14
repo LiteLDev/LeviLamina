@@ -23,6 +23,7 @@
 #include <MC/NetworkIdentifier.hpp>
 #include <MC/Objective.hpp>
 #include <MC/Player.hpp>
+#include <MC/PlayerActionPacket.hpp>
 #include <MC/RespawnPacket.hpp>
 #include <MC/Scoreboard.hpp>
 #include <MC/NpcActionsContainer.hpp>
@@ -45,6 +46,23 @@
 #include <string>
 #include <typeinfo>
 #include <vector>
+#include <MC/ComplexInventoryTransaction.hpp>
+#include <MC/InventoryTransaction.hpp>
+#include <MC/InventoryAction.hpp>
+#include <MC/InventorySource.hpp>
+
+static_assert(offsetof(InventoryAction, source) == 0x0);
+static_assert(offsetof(InventoryAction, slot) == 0x0c);
+static_assert(offsetof(InventoryAction, from) == 0x10);
+static_assert(offsetof(InventoryAction, to) == 0xa0);
+static_assert(offsetof(InventorySource, type) == 0x0);
+static_assert(offsetof(InventorySource, container) == 0x04);
+static_assert(offsetof(InventorySource, flags) == 0x08);
+static_assert(offsetof(ComplexInventoryTransaction, type) == 0x08);
+static_assert(offsetof(ComplexInventoryTransaction, data) == 0x10);
+static_assert(offsetof(InventoryTransaction, actions) == 0x0);
+static_assert(offsetof(InventoryTransaction, items) == 0x40);
+
 using namespace Event;
 using std::vector;
 extern Logger logger;
@@ -346,19 +364,22 @@ TClasslessInstanceHook(void, "?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServ
 }
 
 /////////////////// PlayerRespawn ///////////////////
-TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VRespawnPacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
-      NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket)
+TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VPlayerActionPacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
+                       NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket)
 {
-    IF_LISTENED(PlayerRespawnEvent)
+    PlayerActionPacket* packet = *(PlayerActionPacket**)pPacket;
+    if (packet->actionType == PlayerActionType::Respawn)
     {
-        RespawnPacket* packet = *(RespawnPacket**)pPacket;
-        PlayerRespawnEvent ev{};
-        ev.mPlayer = packet->getPlayerFromPacket(handler, id);
-        if (!ev.mPlayer)
-            return;
-        ev.call();
+        IF_LISTENED(PlayerRespawnEvent)
+        {
+            PlayerRespawnEvent ev{};
+            ev.mPlayer = packet->getPlayerFromPacket(handler, id);
+            if (!ev.mPlayer)
+                return;
+            ev.call();
+        }
+        IF_LISTENED_END(PlayerRespawnEvent)
     }
-    IF_LISTENED_END(PlayerRespawnEvent)
     return original(this, id, handler, pPacket);
 }
 
@@ -520,11 +541,14 @@ TInstanceHook(bool, "?take@Player@@QEAA_NAEAVActor@@HH@Z",
     return original(this, actor, a2, a3);
 }
 
-
+bool isQDrop;
+bool isDieDrop;
 /////////////////// PlayerDropItem ///////////////////
 TInstanceHook(bool, "?drop@Player@@UEAA_NAEBVItemStack@@_N@Z",
       Player, ItemStack* it, bool a3)
 {
+    if (isQDrop) return original(this, it, a3);
+    if (isDieDrop) return original(this, it, a3);
     IF_LISTENED(PlayerDropItemEvent)
     {
         PlayerDropItemEvent ev{};
@@ -1534,14 +1558,39 @@ TInstanceHook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer
         }
     }
     IF_LISTENED_END(PlayerDieEvent)
-    return original(this, src);
+    isDieDrop = true;
+    auto out = original(this, src);
+    isDieDrop = false;
+    return out;
 }
 
+bool isStartDestroy = false;
+THook(bool, "?startDestroyBlock@GameMode@@UEAA_NAEBVBlockPos@@EAEA_N@Z", Actor** ac, BlockPos* bpos, unsigned __int8 a3, bool* a4)
+{
+    IF_LISTENED(PlayerDestroyBlockEvent)
+    {
+        if (ac[1]->isPlayer())
+        {
+            PlayerDestroyBlockEvent ev{};
+            ev.mPlayer = (ServerPlayer*)ac[1];
+            ev.mBlockInstance = Level::getBlockInstance(bpos, ac[1]->getDimensionId());
+            if (!ev.call())
+                return false;
+            isStartDestroy = true;
+            auto out = original(ac, bpos, a3, a4);
+            isStartDestroy = false;
+            return out;
+        }
+    }
+    IF_LISTENED_END(PlayerDestroyBlockEvent)
+    return original(ac, bpos, a3, a4);
+}
 
 /////////////////// PlayerDestroy ///////////////////
 TInstanceHook(bool, "?checkBlockDestroyPermissions@BlockSource@@QEAA_NAEAVActor@@AEBVBlockPos@@AEBVItemStackBase@@_N@Z",
       BlockSource , Actor* ac, BlockPos* bpos, ItemStackBase* a4, bool a5)
 {
+    if (isStartDestroy) return original(this, ac, bpos, a4, a5);
     IF_LISTENED(PlayerDestroyBlockEvent)
     {
         if (ac->isPlayer())
@@ -1841,6 +1890,7 @@ TInstanceHook(void, "?_shootFirework@CrossbowItem@@AEBAXAEBVItemInstance@@AEAVPl
             return;
     }
     IF_LISTENED_END(ProjectileSpawnEvent)
+    original(this, a1, a2);
 }
 
 TClasslessInstanceHook(void, "?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z",
@@ -2021,33 +2071,35 @@ THook(std::ostream&,
     return original(_this, str, size);
 }
 
-//enum InventorySourceFlags
-//{
-//    DropItem = 0,
-//    PickupItem = 1,
-//    None = 2
-//};
+
 TInstanceHook(void*, "?handle@ComplexInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z",
       ComplexInventoryTransaction, Player* a2, int a3)
 {
-    auto v7 = (InventoryTransaction*)((__int64)this + 16);
-    auto& a = dAccess<std::unordered_map<void*, void*>, 0>(v7);
-    for (auto& i : a)
-        if ((int)*((char*)&i.first + 8) == 0)//DropItem
+    if (this->type == ComplexInventoryTransaction::Type::NORMAL)
+    {
+        IF_LISTENED(PlayerDropItemEvent)
         {
-            IF_LISTENED(PlayerDropItemEvent)
+            auto& InvTran = this->data;
+            auto& action = InvTran.getActions(InventorySource(InventorySourceType::Container, ContainerID::Inventory));
+            if (action.size() == 1)
             {
                 PlayerDropItemEvent ev{};
-                ev.mItemStack = const_cast<ItemStack*>(&a2->getCarriedItem());
+                auto& item = a2->getInventory().getItem(action[0].slot);
+                ev.mItemStack = const_cast<ItemStack*>(&item);
                 ev.mPlayer = a2;
                 if (!ev.call())
                 {
                     a2->sendInventory(1);
                     return nullptr;
                 }
+                isQDrop = true;
+                auto out = original(this, a2, a3);
+                isQDrop = false;
+                return out;
             }
-            IF_LISTENED_END(PlayerDropItemEvent)
         }
+        IF_LISTENED_END(PlayerDropItemEvent)
+    }
     return original(this, a2, a3);
 }
 

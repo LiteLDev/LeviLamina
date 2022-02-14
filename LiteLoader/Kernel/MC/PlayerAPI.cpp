@@ -35,6 +35,8 @@
 #include <Impl/FormPacketHelper.h>
 #include <EventAPI.h>
 #include <bitset>
+#include <MC/ItemStackDescriptor.hpp>
+#include <MC/NetworkItemStackDescriptor.hpp>
 
 NetworkIdentifier* Player::getNetworkIdentifier() 
 {
@@ -397,6 +399,7 @@ bool Player::sendTextPacket(string text, TextType Type) const
         case TextType::RAW:
         case TextType::TIP:
         case TextType::SYSTEM:
+        case TextType::JSON_WHISPER:
         case TextType::JSON:
             wp.writeString(text);
             break;
@@ -404,9 +407,7 @@ bool Player::sendTextPacket(string text, TextType Type) const
         case TextType::POPUP:
         case TextType::JUKEBOX_POPUP:
             wp.writeString(text);
-            wp.writeVarInt(0);
-            break;
-        case TextType::JSON_WHISPER:
+            wp.writeUnsignedVarInt(0);
             break;
     }
     wp.writeString("");
@@ -483,8 +484,6 @@ bool Player::sendPlaySoundPacket(string SoundName, Vec3 Position, float Volume, 
 }
 
 // Bad?
-#include <MC/ItemStackDescriptor.hpp>
-#include <MC/NetworkItemStackDescriptor.hpp>
 bool Player::sendAddItemEntityPacket(unsigned long long runtimeID, Item const& item, int stackSize, short aux, Vec3 pos, vector<std::unique_ptr<DataItem>> dataItems) const
 {
     BinaryStream wp;
