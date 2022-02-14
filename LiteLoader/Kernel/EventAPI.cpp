@@ -1890,6 +1890,7 @@ TInstanceHook(void, "?_shootFirework@CrossbowItem@@AEBAXAEBVItemInstance@@AEAVPl
             return;
     }
     IF_LISTENED_END(ProjectileSpawnEvent)
+    original(this, a1, a2);
 }
 
 TClasslessInstanceHook(void, "?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z",
