@@ -23,6 +23,7 @@
 #include <MC/NetworkIdentifier.hpp>
 #include <MC/Objective.hpp>
 #include <MC/Player.hpp>
+#include <MC/PlayerActionPacket.hpp>
 #include <MC/RespawnPacket.hpp>
 #include <MC/Scoreboard.hpp>
 #include <MC/NpcActionsContainer.hpp>
@@ -363,19 +364,22 @@ TClasslessInstanceHook(void, "?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServ
 }
 
 /////////////////// PlayerRespawn ///////////////////
-TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VRespawnPacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
-      NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket)
+TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VPlayerActionPacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
+                       NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket)
 {
-    IF_LISTENED(PlayerRespawnEvent)
+    PlayerActionPacket* packet = *(PlayerActionPacket**)pPacket;
+    if (packet->actionType == PlayerActionType::Respawn)
     {
-        RespawnPacket* packet = *(RespawnPacket**)pPacket;
-        PlayerRespawnEvent ev{};
-        ev.mPlayer = packet->getPlayerFromPacket(handler, id);
-        if (!ev.mPlayer)
-            return;
-        ev.call();
+        IF_LISTENED(PlayerRespawnEvent)
+        {
+            PlayerRespawnEvent ev{};
+            ev.mPlayer = packet->getPlayerFromPacket(handler, id);
+            if (!ev.mPlayer)
+                return;
+            ev.call();
+        }
+        IF_LISTENED_END(PlayerRespawnEvent)
     }
-    IF_LISTENED_END(PlayerRespawnEvent)
     return original(this, id, handler, pPacket);
 }
 
