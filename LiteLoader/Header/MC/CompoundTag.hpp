@@ -56,7 +56,7 @@ public:
     LIAPI class CompoundTag const* getCompoundTag(class gsl::basic_string_span<char const, -1> key) const;
     LIAPI class Tag* operator[](class gsl::basic_string_span<char const, -1> key);
 
-    // io
+    // IO
     LIAPI void setItemStack(ItemStack* item);
     LIAPI void setBlock(Block* blk);
     LIAPI bool setActor(Actor* actor) const;
@@ -76,6 +76,12 @@ public:
     LIAPI static std::unique_ptr<CompoundTag> fromSNBT(const std::string& snbt);
     LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(void* data, size_t len, bool isLittleEndian = true);
     LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(void* data, size_t len, size_t& endOffset, bool isLittleEndian = true);
+    LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(std::string const& data, size_t& endOffset, bool isLittleEndian = true);
+    LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(std::string const& data, bool isLittleEndian = true);
+    // No Test
+    LIAPI std::string toNetworkNBT() const;
+    LIAPI static std::unique_ptr<CompoundTag> fromNetworkNBT(std::string const& data);
+    
 
     // Deprecated?
     LIAPI std::string toSNBT();

@@ -46,6 +46,7 @@ public:
         writeFloat(vec3.y);
         writeFloat(vec3.z);
     }
+    LIAPI void writeCompoundTag(class CompoundTag const& tag);
 
 
 #undef AFTER_EXTRA

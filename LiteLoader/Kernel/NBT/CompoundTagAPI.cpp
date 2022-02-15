@@ -342,14 +342,37 @@ std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(void* data, size_t len, 
     return fromBinaryNBT(data, len, endOffset, isLittleEndian);
 }
 
+std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(std::string const& data, size_t& endOffset, bool isLittleEndian)
+{
+    return fromBinaryNBT((void*)data.c_str(), data.size(), endOffset, isLittleEndian);
+}
+
+std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(std::string const& data, bool isLittleEndian)
+{
+    size_t endOffset = 0;
+    return fromBinaryNBT(data, endOffset, isLittleEndian);
+}
+
 #pragma endregion
 
 #pragma region To Network NBT
-
+#include <MC/BinaryStream.hpp>
+//////////////////// To Network ////////////////////
+std::string CompoundTag::toNetworkNBT() const
+{
+    BinaryStream bs;
+    bs.writeCompoundTag(*this);
+    return bs.getAndReleaseData();
+}
 #pragma endregion
 
 #pragma region From Network NBT
-
+//////////////////// From Network ////////////////////
+std::unique_ptr<CompoundTag> CompoundTag::fromNetworkNBT(std::string const& data)
+{
+    ReadOnlyBinaryStream bs(data, false);
+    return bs.getCompoundTag();
+}
 #pragma endregion
 
 #pragma region To SNBT

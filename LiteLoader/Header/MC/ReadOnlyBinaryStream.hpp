@@ -54,6 +54,7 @@ public:
     //{
     //    descriptor.read(*this);
     //}
+    LIAPI std::unique_ptr<class CompoundTag> getCompoundTag();
 
 #undef AFTER_EXTRA
 
