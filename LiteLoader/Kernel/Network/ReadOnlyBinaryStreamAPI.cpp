@@ -1,4 +1,5 @@
 #include <MC/ReadOnlyBinaryStream.hpp>
+#include <MC/CompoundTag.hpp>
 
 std::string const& ReadOnlyBinaryStream::getData() const {
     return *pBuf;
@@ -22,6 +23,15 @@ void ReadOnlyBinaryStream::setReadPointer(std::size_t size) {
         readPointer = size;
     else
         readPointer = len;
+}
+
+std::unique_ptr<class CompoundTag> ReadOnlyBinaryStream::getCompoundTag()
+{
+    auto tag = CompoundTag::create();
+    class CompoundTag& (*rv)(class CompoundTag&, class ReadOnlyBinaryStream&);
+    *((void**)&rv) = dlsym("?write@?$serialize@VCompoundTag@@@@SAXAEBVCompoundTag@@AEAVBinaryStream@@@Z");
+    (*rv)(*tag, *this);
+    return std::move(tag);
 }
 
 //static_assert(offsetof(ReadOnlyBinaryStream, pBuf) == 56);

@@ -12,11 +12,18 @@ namespace ColorFormat {
 
 #define AFTER_EXTRA
 // Add Member There
-LIAPI std::string mcColorCodeToConsole(std::string const& mcCode);
-LIAPI mce::Color colorFromConsoleColorCode(std::string const& consoleCode);
-LIAPI std::string consoleColorCodeToMc(std::string const& consoleCode);
-LIAPI std::string& transferConsoleColorToMc(std::string& str);
-LIAPI std::string& transferMcColorToConsole(std::string& str, bool keepColorCode);
+LIAPI extern std::unordered_map<std::string, const char*> const colorCodeToConsoleMap;
+LIAPI extern std::unordered_map<std::string, mce::Color const> const colorCodeToColorMap;
+
+
+LIAPI std::string nearestColorCodeFromColor(mce::Color const& color);
+LIAPI mce::Color ColorFromConsoleCode(std::string const& consoleCode);
+
+LIAPI std::string consoleCodeFromColorCode(std::string const& mcCode);
+LIAPI std::string nearestColorCodeFromConsoleCode(std::string const& consoleCode);
+
+LIAPI std::string& transferConsoleColorToColorCode(std::string& str);
+LIAPI std::string& transferColorCodeToConsole(std::string& str, bool keepColorCode = false);
 
 #undef AFTER_EXTRA
     MCAPI extern std::string const AQUA;

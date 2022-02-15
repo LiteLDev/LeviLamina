@@ -17,7 +17,7 @@ massive API, lots of packed utility interfaces, a rich event system and powerful
 
 `LiteLoader` provides a massive API, a powerful event system and a large number of encapsulated development infrastructure interfaces, providing a solid foundation for extending the Bedrock Edition **BDS** with more gameplay and functionality. With plugins, it is easy to extend the functionality of BDS, the associated development is easy to learn, and the development approach is flexible.
 
-Writing plugins in**C++，Golang，JavaScript，Lua，Python**  and other languages allows developers to easily extend and customize **BDS** functionality,
+Writing plugins in **C++，Golang，JavaScript，Lua，Python**  and other languages, which allows developers to easily extend and customize **BDS** functionality,
 making it easy to learn and extremely flexible.
 
 <br/>
@@ -110,7 +110,7 @@ mc.regPlayerCmd("stop","close server", (pl,args) => {
 2. Unzip everything into the directory of `bedrock_server.exe`. If you are prompted with conflicting files during the decompression process, just select `Overwrite`.
 3. Ensure that the `bedrock_server.pdb` file exists.    
    Run `SymDB2.exe` to generate the symbol file (`bedrock_server.symdb2`) and the BDS with the exported symbols (`bedrock_server_mod.exe`)  
-4. When the console output `Press any key to continue. . . ` , press any key to close the window
+4. When the console output `Press any key to continue. . . ` , press any key to close the window
 5. Execute `bedrock_server_mod.exe` and enjoy it !
 
 ### For Linux
@@ -135,7 +135,7 @@ Everything's done! Next, you can install **LiteLoader** plugins!
 
 `LiteLoader` main plugin distribution channels.
 
-- MineBBS Forum: [Click here to go for exploration](https://www.minebbs.com/resources/?prefix_id=59)
+- MineBBS Forum: [Click here to go for exploration](https://www.minebbs.com/resources/?prefix_id=59)
 - GitHub Discussion: [Discussions - LiteLDev/LiteLoaderBDS](https://github.com/LiteLDev/LiteLoaderBDS/discussions)
 
 ### Plugin installation
@@ -155,7 +155,7 @@ If in the same BDS version, LiteLoader update will **automatically push**, and *
 the server is started.  
 The latest features, get the first time! Eliminate the trouble of repeated manual upgrades!
 
-You can use `ll upgrade` command at console to check for update manually too.
+You can use `ll upgrade` command at console to check for update manually too.
 
 <br/>
 
