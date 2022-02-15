@@ -169,6 +169,7 @@ Local<Value> DbClass::close(const Arguments& args)
 {
     try
     {
+        kvdb.reset();
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in DbClose!")
