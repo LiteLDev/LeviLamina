@@ -84,9 +84,9 @@ body:
     description: Please copy and paste any relevant log output. 请粘贴有关此问题的日志到此处
     render: shell
 - type: textarea
-  id: logs
+  id: plugins
   attributes:
-    label: Plugins list 插件列表
+    label: Plugin list 插件列表
     description: Please take a screenshot of the plugins folder or copy the command output of `ll list`. 请截屏插件文件夹或复制命令`ll list`的输出
 - type: markdown
   attributes:
