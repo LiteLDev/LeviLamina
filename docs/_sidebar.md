@@ -1,3 +1,4 @@
-- 🎨 欢迎加入LXL大家庭！
-- 💻 右侧内容是对项目的简单介绍
+- 🎨 Welcome to LiteLoaderBDS Project !
+- 💻 Introduction about the project 👉
+- 
 
