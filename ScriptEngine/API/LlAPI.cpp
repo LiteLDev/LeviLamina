@@ -122,9 +122,9 @@ Local<Value> LlClass::listPlugins(const Arguments& args)
     {
         Local<Array> plugins = Array::newArray();
         auto list = PluginManager::getAllPlugins();
-        for(auto pluginName : list)
+        for(auto &plugin : list)
         {
-            plugins.add(String::newString(pluginName));
+            plugins.add(String::newString(plugin.second->name));
         }
         return plugins;
     }

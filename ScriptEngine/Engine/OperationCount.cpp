@@ -1,5 +1,6 @@
 #include "GlobalShareData.h"
 #include "OperationCount.h"
+#include <PluginManager.h>
 #include <Configs.h>
 #include <vector>
 
@@ -60,7 +61,7 @@ bool OperationCount::hasReachCount(int count)
 
 bool OperationCount::hasReachMaxEngineCount()
 {
-	return hasReachCount(globalShareData->pluginsList.size());
+	return hasReachCount(PluginManager::getAllScriptPlugins().size());
 }
 
 bool OperationCount::hasReachMaxBackendCount()

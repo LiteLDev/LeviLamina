@@ -16,8 +16,9 @@ public:
 	static bool reloadAllPlugins();
 
 	static LL::Plugin* getPlugin(std::string name);
-	static std::vector<std::string> getLocalPlugins();
-	static std::vector<std::string> getAllPlugins();
+	static std::unordered_map<std::string, LL::Plugin*> getLocalPlugins();
+	static std::unordered_map<std::string, LL::Plugin*> getAllScriptPlugins();
+	static std::unordered_map<std::string, LL::Plugin*> getAllPlugins();
 
 	static bool registerPlugin(std::string filePath, std::string name, std::string introduction,
 		LL::Version version, std::map<std::string, std::string> others);

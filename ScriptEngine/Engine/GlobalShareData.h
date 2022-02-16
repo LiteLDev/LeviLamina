@@ -33,9 +33,6 @@ struct MessageHandlers
 //全局共享数据
 struct GlobalDataType
 {
-	//所有插件名单
-	std::vector<std::string> pluginsList;
-
 	//总引擎表
 	std::vector<ScriptEngineData> engines;
 
@@ -67,5 +64,3 @@ extern GlobalDataType* globalShareData;
 //////////////////// APIs ////////////////////
 
 void InitGlobalShareData();
-void AddToGlobalPluginsList(const std::string& name);
-void RemoveFromGlobalPluginsList(const std::string& name);

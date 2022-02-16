@@ -9,6 +9,7 @@
 #include <Engine/LoaderHelper.h>
 #include <Engine/RemoteCall.h>
 #include <Engine/TimeTaskSystem.h>
+#include <Utils/STLHelper.h>
 #include <LiteLoader/Main/PluginManager.h>
 #include <Loader.h>
 #include <ScheduleAPI.h>
@@ -82,13 +83,10 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
 
     //判重
     string pluginName = std::filesystem::path(filePath).filename().u8string();
-    for (auto plugin : globalShareData->pluginsList)
+    if (PluginManager::getPlugin(pluginName))
     {
-        if (pluginName == plugin)
-        {
-            logger.error("This plugin has been loaded by LiteLoader. You cannot load it twice.");
-            return false;
-        }
+        logger.error("This plugin has been loaded by LiteLoader. You cannot load it twice.");
+        return false;
     }
 
     if (!filesystem::exists(filePath))
@@ -153,7 +151,6 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
         //后处理
         if (!PluginManager::getPlugin(pluginName))
             PluginManager::registerPlugin(filePath, pluginName, pluginName, LL::Version(1, 0, 0), {});
-        AddToGlobalPluginsList(pluginName);
         if (isHotLoad)
             LxlCallEventsOnHotLoad(engine);
         logger.info(pluginName + " loaded.");
@@ -203,7 +200,6 @@ bool PluginManager::unloadPlugin(const std::string& name)
 
             LxlCallEventsOnHotUnload(engine);
             LxlRemoveTimeTaskData(engine);
-            RemoveFromGlobalPluginsList(name);
             LxlRemoveAllEventListeners(engine);
             LxlRemoveCmdRegister(engine);
             LxlRemoveAllExportedFuncs(engine);
@@ -248,8 +244,8 @@ bool PluginManager::reloadPlugin(const std::string& name)
 bool PluginManager::reloadAllPlugins()
 {
     auto pluginsList = PluginManager::getLocalPlugins();
-    for (auto& name : pluginsList)
-        reloadPlugin(name);
+    for (auto& plugin : pluginsList)
+        reloadPlugin(plugin.second->name);
     return true;
 }
 
@@ -259,23 +255,36 @@ LL::Plugin* PluginManager::getPlugin(std::string name)
 }
 
 //获取当前语言的所有插件
-vector<string> PluginManager::getLocalPlugins()
+std::unordered_map<std::string, LL::Plugin*> PluginManager::getLocalPlugins()
 {
-    vector<string> list;
+    std::unordered_map<std::string, LL::Plugin*> res;
 
     for (auto& engine : currentModuleEngines)
     {
         string name = ENGINE_GET_DATA(engine)->pluginName;
         if (name != LLSE_DEBUG_ENGINE_NAME)
-            list.push_back(name);
+        {
+            LL::Plugin* plugin = PluginManager::getPlugin(name);
+            if (plugin)
+                res[plugin->name] = plugin;
+        }
     }
-    return list;
+    return res;
 }
 
-//获取整个LXL所有的插件
-vector<string> PluginManager::getAllPlugins()
+std::unordered_map<std::string, LL::Plugin*> PluginManager::getAllScriptPlugins()
 {
-    return globalShareData->pluginsList;
+    auto res = getAllPlugins();
+    erase_if(res, [](auto& item) {
+        return item.second->type != LL::Plugin::PluginType::ScriptPlugin;
+    });
+    return res;
+}
+
+//获取所有的插件
+std::unordered_map<std::string, LL::Plugin*> PluginManager::getAllPlugins()
+{
+    return LL::PluginManager::getAllPlugins();
 }
 
 bool PluginManager::registerPlugin(std::string filePath, std::string name, std::string introduction,

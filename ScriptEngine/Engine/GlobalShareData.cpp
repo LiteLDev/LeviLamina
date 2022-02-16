@@ -45,14 +45,3 @@ void InitGlobalShareData()
 		globalShareData = (GlobalDataType*)address;
 	}
 }
-
-void AddToGlobalPluginsList(const std::string& name)
-{
-	globalShareData->pluginsList.push_back(name);
-}
-
-void RemoveFromGlobalPluginsList(const std::string& name)
-{
-	auto& list = globalShareData->pluginsList;
-	list.erase(std::remove(list.begin(), list.end(), name), list.end());
-}
