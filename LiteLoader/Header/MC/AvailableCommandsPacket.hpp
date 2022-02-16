@@ -13,7 +13,50 @@ class AvailableCommandsPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+    struct EnumData
+    {
+        std::string name;
+        std::vector<unsigned int> valueIndices;
+    };//56
+    struct ConstrainedValueData
+    {
+        unsigned int unk;
+    };
+    struct OverloadData
+    {
+    };
+    struct ParamData
+    {
+    };
+    struct CommandData
+    {
+        std::string commandName;
+        std::vector<void*> enumIndices;
+        std::vector<void*> suffixIndices;
+        std::vector<void*> dynamicEnumIndices;
+    };//104
+    struct SoftEnumData
+    {
+        std::string name;
+        std::vector<std::string> values;
+    };//56
 
+std::vector<std::string> mAllEnums;//48
+std::vector<std::string> mAllSuffix;//72
+std::vector<EnumData> mEnumDatas;//96
+std::vector<CommandData> mCommandDatas;//120
+std::vector<SoftEnumData> mSoftEnums;//144
+std::vector<ConstrainedValueData> mConstrainedValueDatas; //168
+
+inline void test()
+{
+    static_assert(sizeof(AvailableCommandsPacket) == 192);
+    static_assert(sizeof(EnumData) == 56);
+    static_assert(sizeof(CommandData) == 104);
+    static_assert(offsetof(AvailableCommandsPacket, mAllEnums) == 48);
+    static_assert(offsetof(AvailableCommandsPacket, mAllSuffix) == 72);
+    static_assert(offsetof(AvailableCommandsPacket, mConstrainedValueDatas) == 168);
+}
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AVAILABLECOMMANDSPACKET

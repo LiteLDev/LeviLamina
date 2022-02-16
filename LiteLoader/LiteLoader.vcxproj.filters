@@ -309,6 +309,9 @@
     <ClCompile Include="Kernel\NBT\PrettySnbtFormatAPI.cpp">
       <Filter>Kernel\NBT</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\Command\DynamicCommandAPI.cpp">
+      <Filter>Kernel\Command</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -652,6 +655,9 @@
     </ClInclude>
     <ClInclude Include="Header\MC\PrettySnbtFormat.hpp">
       <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\DynamicCommandAPI.h">
+      <Filter>Header\Command</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

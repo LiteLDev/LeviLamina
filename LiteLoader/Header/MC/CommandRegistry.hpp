@@ -242,7 +242,7 @@ public:
         return this;
     }
 
-    
+    friend class DynamicCommand;
 
 
 #undef AFTER_EXTRA

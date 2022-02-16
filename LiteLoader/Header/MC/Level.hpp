@@ -192,6 +192,12 @@ public:
         *((void**)&rv) = dlsym("?getRuntimeActorList@Level@@UEBA?AV?$vector@PEAVActor@@V?$allocator@PEAVActor@@@std@@@std@@XZ");
         return (this->*rv)();
     }
+    inline class PacketSender* getPacketSender() const
+    {
+        class PacketSender* (Level::*rv)() const;
+        *((void**)&rv) = dlsym("?getPacketSender@Level@@UEBAPEAVPacketSender@@XZ");
+        return (this->*rv)();
+    }
     /*
 * Wrappers for Muti-Vftable Class
 inline void _checkUserStorage() {

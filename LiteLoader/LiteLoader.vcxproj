@@ -86,6 +86,7 @@ LibraryBuilder.exe
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Kernel\Command\DynamicCommandAPI.cpp" />
     <ClCompile Include="Kernel\NBT\PrettySnbtFormatAPI.cpp" />
     <ClCompile Include="Kernel\Compatibility.cpp" />
     <ClCompile Include="Kernel\MC\ColorFormatAPI.cpp" />
@@ -128,6 +129,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\DataItem2.hpp" />
     <ClInclude Include="Header\MC\DBStorage.hpp" />
     <ClInclude Include="Header\MC\DoubleTag.hpp" />
+    <ClInclude Include="Header\DynamicCommandAPI.h" />
     <ClInclude Include="Header\MC\EndTag.hpp" />
     <ClInclude Include="Header\MC\FloatTag.hpp" />
     <ClInclude Include="Header\FormUI.h" />
