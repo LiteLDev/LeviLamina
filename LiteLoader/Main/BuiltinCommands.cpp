@@ -203,7 +203,7 @@ void LLPluginInfoCommand(CommandOutput& output, const string& pluginName)
         string pluginType = plugin->type == Plugin::PluginType::ScriptPlugin ? "Script Plugin" : "DLL Plugin";
 
         oss << "Plugin <" << pluginName << ">\n\n";
-        oss << "- Name:  " << plugin->name << '(' << fn << ")\n";
+        oss << "- Name:  " << plugin->name << ' (' << fn << ")\n";
         oss << "- Introduction:  " << plugin->introduction << "\n";
         oss << "- Version:  v" << plugin->version.toString(true) << "\n";
         oss << "- Type:  " << pluginType << "\n";

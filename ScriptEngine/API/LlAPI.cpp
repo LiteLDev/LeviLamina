@@ -49,7 +49,29 @@ Local<Value> LlClass::registerPlugin(const Arguments& args)
         LL::Version ver = LL::Version(1, 0, 0);
         if (args.size() >= 3)
         {
-            if (args[2].isObject())
+            if (args[2].isArray())
+            {
+                Local<Array> verInfo = args[2].asArray();
+                if (verInfo.size() >= 1)
+                {
+                    Local<Value> major = verInfo.get(0);
+                    if (major.isNumber())
+                        ver.major = major.toInt();
+                }
+                if (verInfo.size() >= 2)
+                {
+                    Local<Value> minor = verInfo.get(1);
+                    if (minor.isNumber())
+                        ver.minor = minor.toInt();
+                }
+                if (verInfo.size() >= 3)
+                {
+                    Local<Value> revision = verInfo.get(2);
+                    if (revision.isNumber())
+                        ver.revision = revision.toInt();
+                }
+            }
+            else if (args[2].isObject())
             {
                 Local<Object> verInfo = args[2].asObject();
                 if (verInfo.has("major"))
@@ -67,28 +89,6 @@ Local<Value> LlClass::registerPlugin(const Arguments& args)
                 if (verInfo.has("revision"))
                 {
                     Local<Value> revision = verInfo.get("revision");
-                    if (revision.isNumber())
-                        ver.revision = revision.toInt();
-                }
-            }
-            else if (args[2].isArray())
-            {
-                Local<Array> verInfo = args[2].asArray();
-                if(verInfo.size() >= 1)
-                {
-                    Local<Value> major = verInfo.get(0);
-                    if (major.isNumber())
-                        ver.major = major.toInt();
-                }
-                if (verInfo.size() >= 2)
-                {
-                    Local<Value> minor = verInfo.get(1);
-                    if (minor.isNumber())
-                        ver.minor = minor.toInt();
-                }
-                if (verInfo.size() >= 3)
-                {
-                    Local<Value> revision = verInfo.get(2);
                     if (revision.isNumber())
                         ver.revision = revision.toInt();
                 }
