@@ -344,7 +344,7 @@ Local<Value> JsonToValue(std::string jsonStr)
             return String::newString("");
         if (jsonStr.front() == '\"' && jsonStr.back() == '\"')
             return String::newString(jsonStr.substr(1,jsonStr.size()-2));
-        auto j = fifo_json::parse(jsonStr);
+        auto j = fifo_json::parse(jsonStr, nullptr, true, true);
         return JsonToValue(j);
     }
     catch (const fifo_json::exception &e)
