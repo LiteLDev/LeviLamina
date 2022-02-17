@@ -5,9 +5,14 @@
 using namespace std;
 
 wstring str2wstr(const string& str) {
-    auto len = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, nullptr, 0);
+    return str2wstr(str, CP_UTF8);
+}
+
+std::wstring str2wstr(const std::string& str, UINT codePage)
+{
+    auto len = MultiByteToWideChar(codePage, 0, str.c_str(), -1, nullptr, 0);
     auto* buffer = new wchar_t[len + 1];
-    MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, buffer, len + 1);
+    MultiByteToWideChar(codePage, 0, str.c_str(), -1, buffer, len + 1);
     buffer[len] = L'\0';
 
     wstring result = wstring(buffer);
@@ -16,9 +21,14 @@ wstring str2wstr(const string& str) {
 }
 
 string wstr2str(const wstring& wstr) {
-    auto len = WideCharToMultiByte(CP_UTF8, 0, wstr.c_str(), -1, nullptr, 0, nullptr, nullptr);
+    return wstr2str(wstr, CP_UTF8);
+}
+
+std::string wstr2str(const std::wstring& wstr, UINT codePage)
+{
+    auto len = WideCharToMultiByte(codePage, 0, wstr.c_str(), -1, nullptr, 0, nullptr, nullptr);
     char* buffer = new char[len + 1];
-    WideCharToMultiByte(CP_UTF8, 0, wstr.c_str(), -1, buffer, len + 1, nullptr, nullptr);
+    WideCharToMultiByte(codePage, 0, wstr.c_str(), -1, buffer, len + 1, nullptr, nullptr);
     buffer[len] = '\0';
 
     string result = string(buffer);
@@ -85,20 +95,4 @@ std::string FixCurlyBracket(std::string str) {
     ReplaceStr(str, "{", "{{");
     ReplaceStr(str, "}", "}}");
     return str;
-}
-
-std::wstring ANSI2Unicode(const std::string& str)
-{
-    std::wstring ret;
-    std::mbstate_t state = {};
-    const char* src = str.data();
-    size_t len = std::mbsrtowcs(nullptr, &src, 0, &state);
-    if (static_cast<size_t>(-1) != len) {
-        std::unique_ptr< wchar_t[] > buff(new wchar_t[len + 1]);
-        len = std::mbsrtowcs(buff.get(), &src, len, &state);
-        if (static_cast<size_t>(-1) != len) {
-            ret.assign(buff.get(), len);
-        }
-    }
-    return ret;
 }

@@ -81,6 +81,9 @@ public:
     LIAPI static void broadcastTitle(const string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
     LIAPI static void sendPacketForAllPlayer(Packet& pkt);
 
+    LIAPI static std::string getCurrentLevelName();
+    LIAPI static std::string getCurrentLevelPath();
+
  public:
     static void dummy() { ; }
     struct ServerCommandOrigin {

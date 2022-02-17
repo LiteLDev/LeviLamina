@@ -8,6 +8,7 @@
 #include <MC/CommandPosition.hpp>
 #include <MC/CommandRegistry.hpp>
 #include <MC/PropertiesSettings.hpp>
+#include <MC/Level.hpp>
 #include <GlobalServiceAPI.h>
 #include <Utils/WinHelper.h>
 #include <Utils/FileHelper.h>
@@ -82,32 +83,9 @@ void AutoInstallAddons()
     }
 }
 
-//Helper
-std::string GetCurrentLevelPath()
-{
-    try
-    {
-        return "./worlds/" + Global<PropertiesSettings>->getLevelName();
-    }
-    catch (...)
-    {
-        ifstream fin("server.properties");
-        string buf;
-        while (getline(fin, buf))
-        {
-            if (buf.find("level-name=") != string::npos)
-            {
-                if (buf.back() == '\n')  buf.pop_back();
-                if (buf.back() == '\r')  buf.pop_back();
-                return "./worlds/" + buf.substr(11);
-            }
-        }
-    }
-}
-
 void BuildAddonList()
 {
-    string levelPath = GetCurrentLevelPath();
+    string levelPath = Level::getCurrentLevelPath();
 
     //behavior_packs
     string path = levelPath + "/world_behavior_packs.json";
@@ -153,7 +131,7 @@ bool InstallAddonToLevel(std::string addonDir, std::string addonName)
     }
 
     // copy files
-    string levelPath = GetCurrentLevelPath();
+    string levelPath = Level::getCurrentLevelPath();
     string toPath = levelPath + subPath + "/" + addonName;
 
     std::error_code ec;

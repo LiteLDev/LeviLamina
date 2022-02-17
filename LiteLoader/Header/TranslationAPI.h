@@ -7,27 +7,37 @@
 #include "third-party/Nlohmann/json.hpp"
 #include "third-party/FMT/core.h"
 #include "third-party/FMT/os.h"
+#include "third-party/compact_enc_det/compact_enc_det.h"
 #include <string>
 #include "Utils/StringHelper.h"
 
 //////////////////////////////////////////////////////
 // For Internationalization
 //
-// [Usage]
+// [Usage - Translation]
 //
-// Translation::load("plugins/xxx/lang/zh_CN.json");
-// ...
-// tr("There are {0} days before {1} to come back", 3, "alex");          // return translated string [std::string]
-// trc("There are {0} days before {1} to come back", 3, "alex");         // return translated string [const char*]
+//  Translation::load("plugins/xxx/lang/zh_CN.json");
+//  ...
+//  tr("There are {0} days before {1} to come back", 3, "alex");          // return translated string [std::string]
+//  trc("There are {0} days before {1} to come back", 3, "alex");         // return translated string [const char*]
 //
-//
-// [Translation File]  -  plugins/xxx/lang/zh_CN.json
-//
-// {
-//      "There are {0} days before {1} to come back": "在{1}回来前还剩{0}天",
-//      "...": "...",
-//      "...": "..."
-// }
+//  ** In Translation File: plugins/xxx/lang/zh_CN.json
+//  {
+//       "There are {0} days before {1} to come back": "在{1}回来前还剩{0}天",
+//       "...": "...",
+//       "...": "..."
+//  }
+// 
+// 
+// [Usage - Text Encoding]
+// 
+//  Encoding code = TextEncoding::detectEncoding("你好吗？");               // Detect the encoding of text
+// 
+//  string hello = TextEncoding::fromUnicode(L"Hello");                     // Convert Unicode wstring -> MBCS string
+//  wstring world = TextEncoding::toUnicode("World");                       // Convert MBCS string -> Unicode wstring
+// 
+//  string tonight = TextEncoding::convert("今天晚上", Encoding::CHINESE_GB, Encoding::UTF8);
+//                                                                          // Convert from one MBCS encoding to another
 //
 //////////////////////////////////////////////////////
 
@@ -103,4 +113,14 @@ inline const char* trc(const S& formatStr, const Args&... args) {
 template <typename... Args>
 inline const char* trc(const char* formatStr, const Args&... args) {
     return trc(std::string(formatStr), args...);
+}
+
+// For text encoding
+namespace TextEncoding
+{
+    LIAPI Encoding detectEncoding(const std::string& text, bool *isReliable = nullptr);
+
+    LIAPI std::string fromUnicode(const std::wstring& text, Encoding encoding = Encoding::UTF8);
+    LIAPI std::wstring toUnicode(const std::string& text, Encoding encoding = Encoding::UTF8);
+    LIAPI std::string convert(const std::string& text, Encoding from, Encoding to);
 }

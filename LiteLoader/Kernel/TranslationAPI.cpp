@@ -1,5 +1,7 @@
 #include <TranslationAPI.h>
+#include <Utils/StringHelper.h>
 #include <Main/LiteLoader.h>
+using namespace std;
 
 namespace Translation {
     bool loadImpl(HMODULE hPlugin, const std::string &filePath) {
@@ -21,3 +23,65 @@ namespace Translation {
         return true;
     }
 }; // namespace Translation
+
+namespace TextEncoding
+{
+    const std::unordered_map<Encoding,UINT> Encoding_CodePage_Map = {
+        {Encoding::UTF8, CP_UTF8},
+        {Encoding::CHINESE_GB, 936},
+        {Encoding::GBK, 936},
+        {Encoding::GB18030, 54936},
+    };
+
+    Encoding detectEncoding(const std::string& text, bool* isReliable)
+    {
+        bool temp;
+        int bytes_consumed;
+
+        return DetectEncoding(
+            text.c_str(), text.size(),
+            nullptr, nullptr, nullptr,
+            UNKNOWN_ENCODING,
+            UNKNOWN_LANGUAGE,
+            CompactEncDet::WEB_CORPUS,
+            false,
+            &bytes_consumed,
+            isReliable ? isReliable : &temp);
+    }
+
+    std::string fromUnicode(const std::wstring &text, Encoding encoding)
+    {
+        try
+        {
+            return wstr2str(text, Encoding_CodePage_Map.at(encoding));
+        }
+        catch (...)
+        {
+            return "";
+        }
+    }
+
+    std::wstring toUnicode(const std::string &text, Encoding encoding)
+    {
+        try
+        {
+            return str2wstr(text, Encoding_CodePage_Map.at(encoding));
+        }
+        catch (...)
+        {
+            return L"";
+        }
+    }
+
+    std::string convert(const std::string &text, Encoding from, Encoding to)
+    {
+        if (text.empty() || from == to)
+            return text;
+
+        wstring uni = toUnicode(text, from);
+        if (uni.empty())
+            return "";
+
+        return fromUnicode(uni, to);
+    }
+} // namespace TextEncoding

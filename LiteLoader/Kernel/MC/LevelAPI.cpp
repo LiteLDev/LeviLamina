@@ -3,6 +3,7 @@
 #include <utility>
 #include <vector>
 #include <cctype>
+#include <fstream>
 #include <MC/Actor.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/Spawner.hpp>
@@ -18,6 +19,7 @@
 #include <MC/MinecraftCommands.hpp>
 #include <MC/Tick.hpp>
 #include <MC/Packet.hpp>
+#include <MC/PropertiesSettings.hpp>
 
 
 Actor* Level::getEntity(ActorUniqueID uniqueId)
@@ -401,4 +403,32 @@ void Level::sendPacketForAllPlayer(Packet& pkt)
     {
         sp->sendNetworkPacket(pkt);
     }
+}
+
+std::string Level::getCurrentLevelName()
+{
+    try
+    {
+        return Global<PropertiesSettings>->getLevelName();
+    }
+    catch (...)
+    {
+        std::ifstream fin("server.properties");
+        string buf;
+        while (getline(fin, buf))
+        {
+            if (buf.find("level-name=") != string::npos)
+            {
+                if (buf.back() == '\n')  buf.pop_back();
+                if (buf.back() == '\r')  buf.pop_back();
+                return buf.substr(11);
+            }
+        }
+    }
+    return "";
+}
+
+std::string Level::getCurrentLevelPath()
+{
+    return "./worlds/" + getCurrentLevelName();
 }

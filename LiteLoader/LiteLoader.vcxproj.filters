@@ -688,6 +688,9 @@
     <Library Include="Lib\third-party\dbghelp\dbghelp.lib">
       <Filter>Lib</Filter>
     </Library>
+    <Library Include="Lib\third-party\compact_enc_det\ced.lib">
+      <Filter>Lib</Filter>
+    </Library>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resource\LiteLoader.aps">
