@@ -243,6 +243,7 @@ public:
     }
 
     friend class DynamicCommand;
+    friend class DynamicCommandInstance;
 
 
 #undef AFTER_EXTRA
