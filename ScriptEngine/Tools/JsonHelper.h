@@ -15,7 +15,7 @@ template<class Key, class T, class dummy_compare, class Allocator>
 using workaround_fifo_map = fifo_map<Key, T, fifo_map_compare<Key>, Allocator>;
 using fifo_json = basic_json<workaround_fifo_map>;
 
-inline fifo_json CreateJson(const std::string& path, const std::string& defContent)
+inline fifo_json CreateJson(const std::string& path, const std::string& defContent, bool allowComment = true)
 {
     fifo_json jsonConf;
     if (!filesystem::exists(path))
@@ -27,7 +27,7 @@ inline fifo_json CreateJson(const std::string& path, const std::string& defConte
         {
             try
             {
-                jsonConf = fifo_json::parse(defContent);
+                jsonConf = fifo_json::parse(defContent, nullptr, true, allowComment);
             }
             catch (exception& e)
             {
@@ -58,7 +58,7 @@ inline fifo_json CreateJson(const std::string& path, const std::string& defConte
         {
             try
             {
-                jsonConf = fifo_json::parse(*jsonTexts);
+                jsonConf = fifo_json::parse(*jsonTexts, nullptr, true, allowComment);
             }
             catch (exception& e)
             {

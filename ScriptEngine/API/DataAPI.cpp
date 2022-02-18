@@ -405,7 +405,7 @@ bool ConfJsonClass::reload()
     if (!jsonTexts)
         return false;
 
-    jsonConf = fifo_json::parse(*jsonTexts);
+    jsonConf = fifo_json::parse(*jsonTexts, nullptr, true, true);
     return true;
 }
 
