@@ -14,7 +14,16 @@ mkdir LiteLoaderSDK\Lib 2>nul
 mkdir LiteLoaderSDK\Tools 2>nul
 mkdir LiteLoaderSDK\Tools\llvm-dlltool-msys2 2>nul
 
-xcopy LiteLoader\Header\* LiteLoaderSDK\Header /E /Q /Y
+xcopy LiteLoader\Header\* LiteLoaderSDK\Header /Q /Y
+xcopy LiteLoader\Header\MC LiteLoaderSDK\Header /E /Q /Y
+xcopy LiteLoader\Header\Impl LiteLoaderSDK\Header /E /Q /Y
+xcopy LiteLoader\Header\Utils LiteLoaderSDK\Header /E /Q /Y
+xcopy LiteLoader\Header\third-party\seh_exception LiteLoaderSDK\Header /E /Q /Y
+xcopy LiteLoader\Header\third-party\Nlohmann LiteLoaderSDK\Header /E /Q /Y
+xcopy LiteLoader\Header\third-party\magic_enum LiteLoaderSDK\Header /E /Q /Y
+xcopy LiteLoader\Header\third-party\httplib LiteLoaderSDK\Header /E /Q /Y
+xcopy LiteLoader\Header\third-party\FMT LiteLoaderSDK\Header /E /Q /Y
+xcopy LiteLoader\Header\third-party\SimpleIni LiteLoaderSDK\Header /E /Q /Y
 
 copy /Y LiteLoader\Lib\SymDBHelper.lib LiteLoaderSDK\Lib
 copy /Y x64\Release\LiteLoader.lib LiteLoaderSDK\Lib
