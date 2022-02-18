@@ -1,11 +1,14 @@
 #include <DynamicCommandAPI.h>
-#include <MC/AvailableCommandsPacket.hpp>
-#include <MC/LoopbackPacketSender.hpp>
-#include <MC/Level.hpp>
-#include <LoggerAPI.h>
-
 #include <I18nAPI.h>
 #include <LLAPI.h>
+#include <LoggerAPI.h>
+#include <MC/AvailableCommandsPacket.hpp>
+#include <MC/CommandMessage.hpp>
+#include <MC/CommandOutput.hpp>
+#include <MC/CommandRegistry.hpp>
+#include <MC/Level.hpp>
+#include <MC/LoopbackPacketSender.hpp>
+#include <third-party/dyncall/dyncall_callback.h>
 
 extern Logger logger;
 typedef DynamicCommand::Result Result;
@@ -591,7 +594,7 @@ inline DynamicCommand::BuilderFn DynamicCommandInstance::initCommandBuilder()
 
 #pragma endregion
 
-#ifndef TEST_DYNAMIC_COMMAND
+#ifdef TEST_DYNAMIC_COMMAND
 
 //TInstanceHook(std::unique_ptr<Command>&, "?createCommand@CommandRegistry@@AEBA?AV?$unique_ptr@VCommand@@U?$default_delete@VCommand@@@std@@@std@@AEBUParseToken@1@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z",
 //              CommandRegistry, std::unique_ptr<Command>& res, struct CommandRegistry::ParseToken const& parseToken, class CommandOrigin const& origin, int unk, std::string& str, class std::vector<std::string>& strs)
@@ -613,6 +616,8 @@ inline DynamicCommand::BuilderFn DynamicCommandInstance::initCommandBuilder()
 
 #include <third-party/magic_enum/magic_enum.hpp>
 #include <MC/CommandUtils.hpp>
+#include <MC/Actor.hpp>
+#include <MC/Player.hpp>
 
 void testRegCommand(std::string const& name = "dyncmd")
 {

@@ -1,8 +1,11 @@
 #pragma once
-#include "../RegCommandAPI.h"
-#include "../Utils/WinHelper.h"
-
-#include <third-party/dyncall/dyncall_callback.h>
+#include "Global.h"
+class Actor;
+#include "MC/Command.hpp"
+#include "MC/CommandSelector.hpp"
+#include "MC/CommandPosition.hpp"
+#include "MC/CommandParameterData.hpp"
+#include "Utils/WinHelper.h"
 
 ///////////////////////////////////////////////////////
 // Dynamic Command Registry
@@ -19,7 +22,9 @@
 //              {"TestEnum2", {"list"}},
 //          },
 //          {
-//              // parameters(type, name, [optional], [enumOptions(also enumName)]
+//              // parameters(type, name, [optional], [enumOptions(also enumName)], [identifier])
+//              // identifier: used to identify unique parameter data, if idnetifier is not set, 
+//              //   it is set to be the same as enumOptions or name (identifier = enumOptions.empty() ? name:enumOptions)
 //              DynamicCommandInstance::ParameterData(DynamicCommand::ParameterType::Enum, "testEnum", "TestEnum1"),
 //              DynamicCommandInstance::ParameterData(DynamicCommand::ParameterType::Enum, "testEnum", "TestEnum2"),
 //              DynamicCommandInstance::ParameterData(DynamicCommand::ParameterType::Int, "testInt", true),
@@ -86,10 +91,17 @@
 //      DynamicCommand::setup(std::move(command));
 //
 /////////////////////////////////////////////////////
-
+struct DCCallback;
+struct DCArgs;
+typedef union DCValue_ DCValue;
+class DynamicCommandInstance;
+class CommandMessage;
+class CommandOutput;
+class CommandRegistry;
+class Player;
 
 #define AllResultType bool const*, int const*, float const*, std::string const*, CommandSelector<Actor> const*, CommandSelector<Player> const*, CommandPosition const* /*std::vector<Actor*>, std::vector<Player*>, Vec3, EnumResult, SoftEnumResult*/
-class DynamicCommandInstance;
+
 class DynamicCommand : public Command
 {
 public:
