@@ -274,6 +274,7 @@ You must accept the Minecraft EULA.
 [ThreadPool](https://github.com/jhasse/ThreadPool) Zlib License    
 [LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) MIT License
 [magic_enum](https://github.com/Neargye/magic_enum) MIT License
+[dyncall](https://www.dyncall.org/index) ISC license
 
 ### Extra Restrictions & Exceptions
 

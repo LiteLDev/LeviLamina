@@ -2,6 +2,7 @@
 #include "../RegCommandAPI.h"
 #include "../Utils/WinHelper.h"
 
+#include <third-party/dyncall/dyncall_callback.h>
 
 ///////////////////////////////////////////////////////
 // Dynamic Command Registry
@@ -186,9 +187,6 @@ public:
     private:
         size_t offset = -1;
 
-        friend class DynamicCommand;
-        friend class DynamicCommandInstance;
-
     public:
         LIAPI ParameterPtr(ParameterType type, size_t offset);
         LIAPI bool isValueSet(DynamicCommand const* command) const;
@@ -200,6 +198,10 @@ public:
             checkTempateType<T>(type);
             return dAccess<T>(command, offset);
         }
+        inline size_t getOffset() const
+        {
+            return offset;
+        }
     };
 
     struct ParameterData
@@ -209,13 +211,14 @@ public:
         size_t offset = -1;
         std::string name;
         std::string description;
+        std::string identifier;
         bool optional = false;
         CommandParameterOption option;
 
     public:
         ParameterData() = delete;
-        LIAPI ParameterData(DynamicCommand::ParameterType type, std::string const& name, bool optional = false, std::string const& enumOptions = "", CommandParameterOption parameterOption = (CommandParameterOption)-1);
-        LIAPI ParameterData(DynamicCommand::ParameterType type, std::string const& name, std::string const& enumOptions = "", CommandParameterOption parameterOption = (CommandParameterOption)-1);
+        LIAPI ParameterData(DynamicCommand::ParameterType type, std::string const& name, bool optional = false, std::string const& enumOptions = "", std::string const& identifier = "", CommandParameterOption parameterOption = (CommandParameterOption)-1);
+        LIAPI ParameterData(DynamicCommand::ParameterType type, std::string const& name, std::string const& enumOptions = "", std::string const& identifier = "", CommandParameterOption parameterOption = (CommandParameterOption)-1);
         LIAPI CommandParameterData makeParameterData() const;
 
         friend class DynamicCommandInstance;
@@ -263,8 +266,13 @@ public:
         {
             this->option = parameterOption;
         }
+
+        inline ParameterData(DynamicCommand::ParameterType type, std::string const& name, const char* enumOptions = "", std::string const& identifer = "", CommandParameterOption parameterOption = (CommandParameterOption)-1)
+            : ParameterData(type, name, (std::string const&)enumOptions, identifer, parameterOption){};
+
     };
     using CallBackFn = std::function<void(CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, Result>& results)>;
+    using BuilderFn = std::unique_ptr<Command>(*)();
 
 private:
     // map<offset, data>
@@ -308,7 +316,10 @@ private:
         }
         return false;
     }
-    LIAPI static std::unique_ptr<Command> commandBuilder();
+    //LIAPI static std::unique_ptr<Command> commandBuilder();
+
+    LIAPI static char builderCallbackHanler(DCCallback* cb, DCArgs* args, DCValue* result, void* userdata);
+    LIAPI static std::unique_ptr<Command>* commandBuilder2(std::unique_ptr<Command>*, std::string name);
 
     friend class DynamicCommandInstance;
 
@@ -330,6 +341,8 @@ public:
         CommandFlag flag2 = {(CommandFlagValue)0},
         HMODULE handler = GetCurrentModule());
 
+    LIAPI static bool updateAvailableCommands();
+
     //template <typename T>
     //inline static T const& getResultByName(std::unordered_map<std::string, Result>& results, std::string const& name)
     //{
@@ -340,15 +353,25 @@ public:
 class DynamicCommandInstance
 {
 public:
-    using ParameterData = DynamicCommand::ParameterData;
     struct ParameterIndex
     {
+        DynamicCommandInstance* instance;
         size_t index;
-        ParameterIndex(size_t index)
-            : index(index){};
+        ParameterIndex(DynamicCommandInstance* instance, size_t index)
+            : instance(instance)
+            , index(index){};
         inline operator size_t() const
         {
             return index;
+        }
+        inline DynamicCommand::ParameterData& operator->()
+        {
+            return instance->parameterDatas.at(index);
+        }
+        inline bool isValid() const
+        {
+            size_t size = instance->parameterDatas.size();
+            return index > 0 && index < size;
         }
     };
 
@@ -358,6 +381,8 @@ private:
     std::unique_ptr<std::string> description;
     CommandPermissionLevel permission;
     CommandFlag flag;
+    DynamicCommand::BuilderFn builder = nullptr;
+    
 
     // DynamicCommand Extend Part
     std::unordered_map<std::string, DynamicCommand::ParameterPtr> parameterPtrs = {};
@@ -369,7 +394,7 @@ private:
     // unordered_map{ enumName, pair{ enumIndex, enumSize } }
     std::unordered_map<std::string_view, std::pair<size_t, size_t>> enumRanges = {};
 
-    std::vector<ParameterData> parameterDatas = {};
+    std::vector<DynamicCommand::ParameterData> parameterDatas = {};
     std::vector<std::vector<ParameterIndex>> overloads = {}; // indices of parmeter instance
 
     DynamicCommand::CallBackFn callback = nullptr;
@@ -379,20 +404,23 @@ private:
 
     LIAPI DynamicCommandInstance(std::string const& name, std::string const& description, CommandPermissionLevel permission = CommandPermissionLevel::GameMasters, CommandFlag flag = {(CommandFlagValue)0x80}, HMODULE handler = GetCurrentModule());
 
+    LIAPI bool setBuilder(DynamicCommand::BuilderFn builder);
+    LIAPI DynamicCommand::BuilderFn initCommandBuilder();
+
 public:
     virtual ~DynamicCommandInstance();
 
     LIAPI static std::unique_ptr<DynamicCommandInstance> create(std::string const& name, std::string const& description, CommandPermissionLevel permission, CommandFlag flag, HMODULE handler = GetCurrentModule());
     LIAPI std::string const& addEnum(std::string const& description, std::vector<std::string> const& values);
     LIAPI std::string const& getEnumValue(int index) const;
-    LIAPI ParameterIndex newParameter(ParameterData&& data);
-    LIAPI ParameterIndex newParameter(DynamicCommand::ParameterType type, std::string const& name, bool optional = false, std::string const& description = "", CommandParameterOption parameterOption = (CommandParameterOption)-1);
-    LIAPI ParameterIndex newParameter(DynamicCommand::ParameterType type, std::string const& name, std::string const& description, CommandParameterOption parameterOption = (CommandParameterOption)-1);
+    LIAPI ParameterIndex newParameter(DynamicCommand::ParameterData&& data);
+    LIAPI ParameterIndex newParameter(DynamicCommand::ParameterType type, std::string const& name, std::string const& description, std::string const& identifier = "", CommandParameterOption parameterOption = (CommandParameterOption)-1);
+    LIAPI ParameterIndex newParameter(DynamicCommand::ParameterType type, std::string const& name, bool optional = false, std::string const& description = "", std::string const& identifier = "", CommandParameterOption parameterOption = (CommandParameterOption)-1);
     LIAPI ParameterIndex findParameterIndex(std::string const& param);
     LIAPI bool addOverload(std::vector<ParameterIndex>&& params);
     LIAPI bool addOverload(std::vector<std::string>&& params);
     LIAPI bool addOverload(std::vector<char const*>&& params);
-    LIAPI bool addOverload(std::vector<ParameterData>&& params);
+    LIAPI bool addOverload(std::vector<DynamicCommand::ParameterData>&& params);
     LIAPI bool setAlias(std::string const& alias);
     LIAPI std::vector<CommandParameterData> buildOverload(std::vector<ParameterIndex> const& overload);
     LIAPI void setCallback(DynamicCommand::CallBackFn&& callback);
@@ -401,4 +429,11 @@ public:
     {
         return addOverload((std::vector<T>)params);
     }
+    inline std::string const& getCommandName()
+    {
+        return name;
+    }
+    inline ParameterIndex newParameter(DynamicCommand::ParameterType type, std::string const& name, const char* description, std::string const& identifier, CommandParameterOption parameterOption = (CommandParameterOption)-1){
+        return newParameter(type, name, (std::string const&)description, identifier, parameterOption);
+    };
 };

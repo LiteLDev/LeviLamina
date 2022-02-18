@@ -303,6 +303,9 @@ LibraryBuilder.exe
     <Library Include="Lib\SymDBHelper.lib" />
     <Library Include="Lib\third-party\compact_enc_det\ced.lib" />
     <Library Include="Lib\third-party\dbghelp\dbghelp.lib" />
+    <Library Include="Lib\third-party\dyncall\dyncallback_s.lib" />
+    <Library Include="Lib\third-party\dyncall\dyncall_s.lib" />
+    <Library Include="Lib\third-party\dyncall\dynload_s.lib" />
     <Library Include="Lib\third-party\openssl\libcrypto.lib" />
     <Library Include="Lib\third-party\openssl\libssl.lib" />
     <Library Include="Lib\third-party\SQLiteCpp\sqlite3.lib" />
