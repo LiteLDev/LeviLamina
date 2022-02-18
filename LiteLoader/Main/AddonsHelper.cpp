@@ -105,7 +105,7 @@ bool InstallAddonToLevel(std::string addonDir, std::string addonName)
     // parse addon data
     try
     {
-        auto manifest = nlohmann::json::parse(*ReadAllFile(addonDir + "/manifest.json"), nullptr, false, true);
+        auto manifest = nlohmann::json::parse(*ReadAllFile(addonDir + "/manifest.json"), nullptr, true, true);
         string type = manifest["modules"][0]["type"];
         if (type == "resources")
         {
