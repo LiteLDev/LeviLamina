@@ -15,15 +15,15 @@ mkdir LiteLoaderSDK\Tools 2>nul
 mkdir LiteLoaderSDK\Tools\llvm-dlltool-msys2 2>nul
 
 xcopy LiteLoader\Header\* LiteLoaderSDK\Header /Q /Y
-xcopy LiteLoader\Header\MC LiteLoaderSDK\Header /E /Q /Y
-xcopy LiteLoader\Header\Impl LiteLoaderSDK\Header /E /Q /Y
-xcopy LiteLoader\Header\Utils LiteLoaderSDK\Header /E /Q /Y
-xcopy LiteLoader\Header\third-party\seh_exception LiteLoaderSDK\Header /E /Q /Y
-xcopy LiteLoader\Header\third-party\Nlohmann LiteLoaderSDK\Header /E /Q /Y
-xcopy LiteLoader\Header\third-party\magic_enum LiteLoaderSDK\Header /E /Q /Y
-xcopy LiteLoader\Header\third-party\httplib LiteLoaderSDK\Header /E /Q /Y
-xcopy LiteLoader\Header\third-party\FMT LiteLoaderSDK\Header /E /Q /Y
-xcopy LiteLoader\Header\third-party\SimpleIni LiteLoaderSDK\Header /E /Q /Y
+xcopy LiteLoader\Header\MC LiteLoaderSDK\Header\MC /E /Q /Y
+xcopy LiteLoader\Header\Impl LiteLoaderSDK\Header\Impl /E /Q /Y
+xcopy LiteLoader\Header\Utils LiteLoaderSDK\Header\Utils /E /Q /Y
+xcopy LiteLoader\Header\third-party\seh_exception LiteLoaderSDK\Header\third-party\seh_exception /E /Q /Y
+xcopy LiteLoader\Header\third-party\Nlohmann LiteLoaderSDK\Header\third-party\Nlohmann /E /Q /Y
+xcopy LiteLoader\Header\third-party\magic_enum LiteLoaderSDK\Header\third-party\magic_enum /E /Q /Y
+xcopy LiteLoader\Header\third-party\httplib LiteLoaderSDK\Header\third-party\httplib /E /Q /Y
+xcopy LiteLoader\Header\third-party\FMT LiteLoaderSDK\Header\third-party\FMT /E /Q /Y
+xcopy LiteLoader\Header\third-party\SimpleIni LiteLoaderSDK\Header\third-party\SimpleIni /E /Q /Y
 
 copy /Y LiteLoader\Lib\SymDBHelper.lib LiteLoaderSDK\Lib
 copy /Y x64\Release\LiteLoader.lib LiteLoaderSDK\Lib
