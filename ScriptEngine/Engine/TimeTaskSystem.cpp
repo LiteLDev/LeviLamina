@@ -31,14 +31,14 @@ std::unordered_map<int, TimeTaskData> timeTaskMap;
     { \
         logger.error("Error occurred in {}", TASK_TYPE); \
         logger.error("C++ Uncaught Exception Detected!"); \
-        logger.error(e.what()); \
+        logger.error(TextEncoding::toUTF8(e.what())); \
         logger.error("In Plugin: " + ENGINE_GET_DATA(engine)->pluginName); \
     } \
     catch (const seh_exception& e) \
     { \
         logger.error("Error occurred in {}", TASK_TYPE); \
         logger.error("SEH Uncaught Exception Detected!"); \
-        logger.error(e.what()); \
+        logger.error(TextEncoding::toUTF8(e.what())); \
         logger.error("In Plugin: " + ENGINE_GET_DATA(engine)->pluginName); \
     }
 

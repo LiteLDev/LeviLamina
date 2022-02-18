@@ -32,7 +32,7 @@ inline fifo_json CreateJson(const std::string& path, const std::string& defConte
             catch (exception& e)
             {
                 logger.error("Fail to parse default json content!");
-                logger.error(e.what());
+                logger.error(TextEncoding::toUTF8(e.what()));
                 jsonConf = fifo_json::object();
             }
         }
@@ -63,7 +63,7 @@ inline fifo_json CreateJson(const std::string& path, const std::string& defConte
             catch (exception& e)
             {
                 logger.error("Fail to parse json content in file!");
-                logger.error(e.what());
+                logger.error(TextEncoding::toUTF8(e.what()));
                 jsonConf = fifo_json::object();
             }
         }

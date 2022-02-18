@@ -13,7 +13,7 @@
 #include "Loader.h"
 #include "AutoUpgrade.h"
 #include "CrashLogger.h"
-#include <TranslationAPI.h>
+#include <I18nAPI.h>
 #include "AddonsHelper.h"
 #include <EventAPI.h>
 #include "Version.h"

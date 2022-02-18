@@ -175,7 +175,7 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
     catch (const std::exception& e)
     {
         logger.error("Fail to load " + filePath + "!");
-        logger.error(e.what());
+        logger.error(TextEncoding::toUTF8(e.what()));
     }
     catch (...)
     {

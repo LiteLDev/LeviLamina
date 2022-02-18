@@ -14,6 +14,7 @@
 #include <Utils/FileHelper.h>
 #include <third-party/Nlohmann/json.hpp>
 #include <LoggerAPI.h>
+#include <I18nAPI.h>
 #include <filesystem>
 #include <set>
 #include <vector>
@@ -125,7 +126,7 @@ bool InstallAddonToLevel(std::string addonDir, std::string addonName)
     catch (const std::exception &e)
     {
         addonLogger.error("Fail to parse the manifest data of addon {}!", addonName);
-        addonLogger.error("Error: {}", e.what());
+        addonLogger.error("Error: {}", TextEncoding::toUTF8(e.what()));
         addonLogger.error("* Install progress aborted!");
         return false;
     }
@@ -168,7 +169,7 @@ bool InstallAddonToLevel(std::string addonDir, std::string addonName)
     catch (const std::exception& e)
     {
         addonLogger.error("Fail to insert the addon {} into {}!", addonName, addonListFile);
-        addonLogger.error("Error: {}", e.what());
+        addonLogger.error("Error: {}", TextEncoding::toUTF8(e.what()));
         addonLogger.error("* Install progress aborted!");
         return false;
     }
@@ -268,15 +269,13 @@ bool AddonsManager::install(std::string packPath)
     {
         addonLogger.error("Uncaught SEH Exception Detected!");
         addonLogger.error("In AddonsInstaller");
-        //addonLogger.error("Error: Code[{}] {}", e.code(), e.what());
-        cout << "Error: Code[" << e.code() << "] " << e.what() << endl;     //TODO Issue #223
+        addonLogger.error("Error: Code[{}] {}", e.code(), TextEncoding::toUTF8(e.what()));
     }
     catch (const std::exception& e)
     {
         addonLogger.error("Uncaught C++ Exception Detected!");
         addonLogger.error("In AddonsInstaller");
-        //addonLogger.error("Error: {}", e.what());
-        cout << "Error: " << e.what() << endl;     //TODO Issue #223
+        addonLogger.error("Error: Code[{}] {}", -1, TextEncoding::toUTF8(e.what()));
     }
     catch (...)
     {

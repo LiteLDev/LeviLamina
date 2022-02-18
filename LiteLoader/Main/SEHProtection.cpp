@@ -31,7 +31,7 @@ THook2("SEHPROTECT",void, "?tick@ServerLevel@@UEAAXXZ",
     catch (const seh_exception& e)
     {
         logger.error("Uncaught SEH Exception Detected in ServerLevel::tick!");
-        logger.error("Exception: {}",wstr2str(ANSI2Unicode(e.what())));
+        logger.error("Exception: {}",wstr2str(ANSI2Unicode(TextEncoding::toUTF8(e.what()))));
 		logger.error("Error Code: {}", e.code());
 		PrintCurrentStackTraceback(e.info());
     }
@@ -59,7 +59,7 @@ THook(__int64, "?update@Minecraft@@QEAA_NXZ",
 	catch (const seh_exception& e)
 	{
 		logger.error("Uncaught SEH Exception Detected in Minecraft::update!");
-		logger.error("Exception: {}", wstr2str(ANSI2Unicode(e.what())));
+		logger.error("Exception: {}", wstr2str(ANSI2Unicode(TextEncoding::toUTF8(e.what()))));
 		logger.error("Error Code: {}", e.code());
 		PrintCurrentStackTraceback(e.info());
 	}

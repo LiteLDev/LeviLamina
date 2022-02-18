@@ -80,7 +80,7 @@ bool inline IsInstanceOf(Local<Value> v)
     catch(const std::exception &e) \
     { \
         logger.error("C++ Uncaught Exception Detected!"); \
-        logger.error(e.what()); \
+        logger.error(TextEncoding::toUTF8(e.what())); \
         logger.error(std::string("In API: ") + __FUNCTION__); \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
         return Local<Value>(); \
@@ -88,7 +88,7 @@ bool inline IsInstanceOf(Local<Value> v)
     catch(const seh_exception &e) \
     { \
         logger.error("SEH Uncaught Exception Detected!"); \
-        logger.error(e.what()); \
+        logger.error(TextEncoding::toUTF8(e.what())); \
         logger.error(std::string("In API: ") + __FUNCTION__); \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
         return Local<Value>(); \
@@ -132,7 +132,7 @@ bool inline IsInstanceOf(Local<Value> v)
     catch(const std::exception &e) \
     { \
         logger.error("C++ Uncaught Exception Detected!"); \
-        logger.error(e.what()); \
+        logger.error(TextEncoding::toUTF8(e.what())); \
         logger.error(std::string("In API: ") + __FUNCTION__); \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
         return nullptr; \
@@ -140,7 +140,7 @@ bool inline IsInstanceOf(Local<Value> v)
     catch(const seh_exception &e) \
     { \
         logger.error("SEH Uncaught Exception Detected!"); \
-        logger.error(e.what()); \
+        logger.error(TextEncoding::toUTF8(e.what())); \
         logger.error(std::string("In API: ") + __FUNCTION__); \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
         return nullptr; \

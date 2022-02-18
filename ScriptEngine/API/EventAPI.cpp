@@ -180,7 +180,7 @@ string EventTypeToString(EVENT_TYPES e)
     { \
         logger.error("Event Callback Failed!"); \
         logger.error("C++ Uncaught Exception Detected!"); \
-        logger.error(e.what()); \
+        logger.error(TextEncoding::toUTF8(e.what())); \
         logger.error("In Event: " + EventTypeToString(TYPE)); \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
     } \
@@ -188,7 +188,7 @@ string EventTypeToString(EVENT_TYPES e)
     { \
         logger.error("Event Callback Failed!"); \
         logger.error("SEH Uncaught Exception Detected!"); \
-        logger.error(e.what()); \
+        logger.error(TextEncoding::toUTF8(e.what())); \
         logger.error("In Event: " + EventTypeToString(TYPE)); \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
     } \

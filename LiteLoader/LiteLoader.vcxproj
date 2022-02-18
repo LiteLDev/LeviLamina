@@ -87,6 +87,7 @@ LibraryBuilder.exe
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Kernel\Command\DynamicCommandAPI.cpp" />
+    <ClCompile Include="Kernel\I18nAPI_LL.cpp" />
     <ClCompile Include="Kernel\NBT\PrettySnbtFormatAPI.cpp" />
     <ClCompile Include="Kernel\Compatibility.cpp" />
     <ClCompile Include="Kernel\MC\ColorFormatAPI.cpp" />
@@ -227,7 +228,6 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\MC\Types.cpp" />
     <ClCompile Include="Kernel\Utils\CryptHelper.cpp" />
     <ClCompile Include="Kernel\Utils\FileHelper.cpp" />
-    <ClCompile Include="Kernel\TranslationAPI.cpp" />
     <ClCompile Include="Kernel\Utils\GlobalService.cpp" />
     <ClCompile Include="Kernel\Utils\NetworkHelper.cpp" />
     <ClCompile Include="Kernel\Utils\PlayerMap.cpp" />
@@ -255,6 +255,7 @@ LibraryBuilder.exe
     <ResourceCompile Include="Resource\LiteLoader.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Header\TranslationAPI.h" />
     <ClInclude Include="Header\Utils\DbgHelper.h" />
     <ClInclude Include="Header\Utils\STLHelper.h" />
     <ClInclude Include="Main\AddonsHelper.h" />
@@ -275,7 +276,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\Utils\FileHelper.h" />
     <ClInclude Include="Header\Utils\Hash.h" />
     <ClInclude Include="Header\HookAPI.h" />
-    <ClInclude Include="Header\TranslationAPI.h" />
+    <ClInclude Include="Header\I18nAPI.h" />
     <ClInclude Include="Header\Utils\Json.h" />
     <ClInclude Include="Header\GlobalServiceAPI.h" />
     <ClInclude Include="Header\Utils\NetworkHelper.h" />

@@ -45,7 +45,7 @@ void LoadDepends()
             catch (std::exception e)
             {
                 logger.warn("Fail to load dependence " + i.path().filename().string() + ".");
-                logger.warn(e.what());
+                logger.warn(TextEncoding::toUTF8(e.what()));
             }
             catch (...)
             {

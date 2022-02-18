@@ -4,6 +4,7 @@
 #include <MC/Level.hpp>
 #include <LoggerAPI.h>
 
+#include <I18nAPI.h>
 #include <LLAPI.h>
 
 extern Logger logger;
@@ -51,7 +52,7 @@ inline void OutputError(std::string errorMsg, int errorCode, std::string errorWh
 #define CatchDynamicCommandError(func, handler)                                             \
     catch (const seh_exception& e)                                                          \
     {                                                                                       \
-        OutputError("Uncaught SEH Exception Detected!", e.code(), e.what(), func, handler); \
+        OutputError("Uncaught SEH Exception Detected!", e.code(), TextEncoding::toUTF8(e.what()), func, handler); \
     }                                                                                       \
     catch (const std::exception& e)                                                         \
     {                                                                                       \

@@ -1,6 +1,7 @@
 #include <Global.h>
 #include <FormUI.h>
 #include <LLAPI.h>
+#include <I18nAPI.h>
 
 #include <Impl/FormPacketHelper.h>
 #include <third-party/Nlohmann/fifo_json.hpp>
@@ -207,7 +208,7 @@ TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFo
     {
         logger.error("Event Callback Failed!");
         logger.error("SEH Uncaught Exception Detected!");
-        logger.error("{}", e.what());
+        logger.error("{}", TextEncoding::toUTF8(e.what()));
         logger.error("In Event: onFormSelected");
         PrintCurrentStackTraceback();
     }

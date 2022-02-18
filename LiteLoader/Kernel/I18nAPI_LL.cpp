@@ -1,4 +1,4 @@
-#include <TranslationAPI.h>
+#include <I18nAPI.h>
 #include <Utils/StringHelper.h>
 #include <Main/LiteLoader.h>
 using namespace std;
@@ -14,7 +14,7 @@ namespace Translation {
             PluginOwnData::setImpl<std::string>(hPlugin, TRANSLATION_DATA_FILE, filePath);
         } catch (const nlohmann::json::exception &e) {
             logger.error("Fail to load translation file <{}> !", filePath);
-            logger.error("{}", e.what());
+            logger.error("{}", TextEncoding::toUTF8(e.what()));
             return false;
         } catch (...) {
             logger.error("Fail to load translation file <{}> !", filePath);
@@ -32,6 +32,17 @@ namespace TextEncoding
         {Encoding::GBK, 936},
         {Encoding::GB18030, 54936},
     };
+
+    Encoding getLocalEncoding()
+    {
+        UINT page = GetACP();
+        for (auto& [k, v] : Encoding_CodePage_Map)
+        {
+            if (v == page)
+                return k;
+        }
+        return default_encoding();
+    }
 
     Encoding detectEncoding(const std::string& text, bool* isReliable)
     {
@@ -71,6 +82,16 @@ namespace TextEncoding
         {
             return L"";
         }
+    }
+
+    std::string toUTF8(const std::string& text)
+    {
+        return convert(text, detectEncoding(text), Encoding::UTF8);
+    }
+
+    std::string toUTF8(const std::string& text, Encoding from)
+    {
+        return convert(text, from, Encoding::UTF8);
     }
 
     std::string convert(const std::string &text, Encoding from, Encoding to)

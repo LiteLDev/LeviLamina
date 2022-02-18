@@ -18,7 +18,7 @@
 #include <LiteLoader/Main/Version.h>
 #include <Utils/FileHelper.h>
 #include <Tools/JsonHelper.h>
-#include <TranslationAPI.h>
+#include <I18nAPI.h>
 #include <EconomicSystem.h>
 
 using namespace std;
@@ -51,7 +51,7 @@ void LoadConfigFile()
     }
     catch (const nlohmann::json::exception& e) {
         logger.error("Fail to parse config file <{}> !", LITELOADER_CONFIG_FILE);
-        logger.error("{}", e.what());
+        logger.error("{}", TextEncoding::toUTF8(e.what()));
     }
     catch (...) {
         logger.error("Fail to load config file <{}> !", LITELOADER_CONFIG_FILE);

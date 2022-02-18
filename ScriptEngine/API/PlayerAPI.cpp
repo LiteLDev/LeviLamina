@@ -1214,7 +1214,7 @@ Local<Value> PlayerClass::sendCustomForm(const Arguments& args)
     catch (const fifo_json::exception& e)
     {
         logger.error("Fail to parse Json string in sendCustomForm!");
-        logger.error(e.what());
+        logger.error(TextEncoding::toUTF8(e.what()));
 
         return Local<Value>();
     }
