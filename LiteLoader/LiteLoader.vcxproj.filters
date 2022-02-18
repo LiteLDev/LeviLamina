@@ -670,9 +670,6 @@
     <Library Include="Lib\third-party\openssl\libssl.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="Header\third-party\cpp-base64\lib\cpp-base64.lib">
-      <Filter>Lib</Filter>
-    </Library>
     <Library Include="Lib\third-party\SQLiteCpp\SQLiteCpp.lib">
       <Filter>Lib</Filter>
     </Library>
@@ -701,6 +698,9 @@
       <Filter>Lib</Filter>
     </Library>
     <Library Include="Lib\third-party\dyncall\dynload_s.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\third-party\cpp-base64\cpp-base64.lib">
       <Filter>Lib</Filter>
     </Library>
   </ItemGroup>
