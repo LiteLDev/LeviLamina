@@ -367,14 +367,18 @@ Local<Value> CommandClass::setCallback(const Arguments& args)
         get()->setCallback(
             [](DynamicCommand const& command, CommandOrigin const& origin, CommandOutput& output,
                std::unordered_map<std::string, DynamicCommand::Result>& results) {
-                auto& commandName = command.getInstance()->getCommandName();
+                auto instance = command.getInstance();
+                auto& commandName = instance->getCommandName();
                 EngineScope enter(localShareData->commandCallbacks[commandName].fromEngine);
                 try
                 {
                     Local<Object> args = Object::newObject();
+                    auto cmd = CommandClass::newCommand(const_cast<DynamicCommandInstance*>(instance));
+                    auto ori = Local<Value>();
+                    auto outp = Local<Value>();
                     for (auto& [name, param] : results)
                         args.set(name, convertResult(param));
-                    localShareData->commandCallbacks[commandName].func.get().call({}, args);
+                    localShareData->commandCallbacks[commandName].func.get().call({}, cmd, ori, outp, args);
                 }
                 CATCH("Fail in executing command \"" + commandName + "\"!")
             });

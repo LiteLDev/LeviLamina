@@ -25,4 +25,5 @@ public:
     Local<Value> addOverload(const Arguments& args);
     Local<Value> setCallback(const Arguments& args);
     Local<Value> setup(const Arguments& args);
+    Local<Value> isRegistered(const Arguments& args);
 };
