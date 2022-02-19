@@ -121,6 +121,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\CommandOrigin.hpp" />
     <ClInclude Include="Header\MC\CommandOutput.hpp" />
     <ClInclude Include="Header\MC\CommandParameterData.hpp" />
+    <ClInclude Include="Header\MC\CommandPositionFloat.hpp" />
     <ClInclude Include="Header\MC\CommandRegistry.hpp" />
     <ClInclude Include="Header\MC\CommandSelector.hpp" />
     <ClInclude Include="Header\MC\CommandSelectorBase.hpp" />

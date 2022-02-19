@@ -22,3 +22,37 @@ TClasslessInstanceHook(bool, "?isExpansionAllowed@CommandSelectorBase@@AEBA_NAEB
         return true;
     return original(this, a2);
 }
+
+#include <MC/AllowListCommand.hpp>
+#include <MC/CommandVersion.hpp>
+#include <MC/CommandRegistry.hpp>
+#include <MC/CommandParameterData.hpp>
+inline void tryChangeStringToRawText(CommandParameterData& data)
+{
+    if (false /* config.xxxx*/ && data.tid.value == type_id<CommandRegistry, std::string>().value)
+    {
+        data.tid = type_id<CommandRegistry, CommandRawText>();
+        data.parser = CommandRegistry::getParseFn<CommandRawText>();
+    }
+}
+// allowlist
+TInstanceHook(CommandRegistry::Overload*, "??$_registerOverload@VAllowListCommand@@VCommandParameterData@@V2@@CommandRegistry@@AEAAPEAUOverload@0@PEBDVCommandVersion@@AEBVCommandParameterData@@2@Z",
+              CommandRegistry, char const* unk, class CommandVersion version, class CommandParameterData const& operationParam, class CommandParameterData& nameParam)
+{
+    tryChangeStringToRawText(nameParam);
+    return original(this, unk, version, operationParam, nameParam);
+}
+// op
+TInstanceHook(CommandRegistry::Overload*, "??$_registerOverload@VOpCommand@@VCommandParameterData@@@CommandRegistry@@AEAAPEAUOverload@0@PEBDVCommandVersion@@AEBVCommandParameterData@@@Z",
+              CommandRegistry, char const* unk, class CommandVersion version, class CommandParameterData& nameParam)
+{
+    tryChangeStringToRawText(nameParam);
+    return original(this, unk, version, nameParam);
+}
+// deop
+TInstanceHook(CommandRegistry::Overload*, "??$_registerOverload@VDeOpCommand@@VCommandParameterData@@@CommandRegistry@@AEAAPEAUOverload@0@PEBDVCommandVersion@@AEBVCommandParameterData@@@Z",
+              CommandRegistry, char const* unk, class CommandVersion version, class CommandParameterData& nameParam)
+{
+    tryChangeStringToRawText(nameParam);
+    return original(this, unk, version, nameParam);
+}

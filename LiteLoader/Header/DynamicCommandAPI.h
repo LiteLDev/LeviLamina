@@ -23,7 +23,7 @@ class Actor;
 //          },
 //          {
 //              // parameters(type, name, [optional], [enumOptions(also enumName)], [identifier])
-//              // identifier: used to identify unique parameter data, if idnetifier is not set, 
+//              // identifier: used to identify unique parameter data, if idnetifier is not set,
 //              //   it is set to be the same as enumOptions or name (identifier = enumOptions.empty() ? name:enumOptions)
 //              DynamicCommandInstance::ParameterData(DynamicCommand::ParameterType::Enum, "testEnum", "TestEnum1"),
 //              DynamicCommandInstance::ParameterData(DynamicCommand::ParameterType::Enum, "testEnum", "TestEnum2"),
@@ -91,6 +91,7 @@ class Actor;
 //      DynamicCommand::setup(std::move(command));
 //
 /////////////////////////////////////////////////////
+
 struct DCCallback;
 struct DCArgs;
 typedef union DCValue_ DCValue;
@@ -100,95 +101,119 @@ class CommandOutput;
 class CommandRegistry;
 class Player;
 
-#define AllResultType bool const*, int const*, float const*, std::string const*, CommandSelector<Actor> const*, CommandSelector<Player> const*, CommandPosition const* /*std::vector<Actor*>, std::vector<Player*>, Vec3, EnumResult, SoftEnumResult*/
+
+#define AllResultType bool const*, int const*, float const*, std::string const*, CommandSelector<Actor> const*, CommandSelector<Player> const*, CommandPosition const*, CommandPositionFloat const*, CommandMessage const*, CommandRawText const*, Json::Value const*, std::unique_ptr<Command> const*, CommandItem const*, Block const* const*, MobEffect const* const*
 
 class DynamicCommand : public Command
 {
+    template <typename _Ty, class... _Types>
+    static constexpr bool is_one_of_v = std::_Meta_find_unique_index<std::variant<_Types...>, std::add_pointer_t<std::add_const_t<_Ty>>>::value < sizeof...(_Types);
+    template <typename _Ty>
+    static constexpr bool is_supported_result_type_v = is_one_of_v<_Ty, AllResultType>;
+    template <typename _Ty, typename Type>
+    using enable_if_supported_t = std::enable_if_t<is_supported_result_type_v<_Ty>, Type>;
+
 public:
     enum class ParameterType
     {
-        Bool,
-        Int,
-        Float,
-        String,
-        Actor,
-        Player,
-        Position,
-        Enum,
-        SoftEnum,
+        Bool,      //bool
+        Int,       //int
+        Float,     //float
+        String,    //std::string
+        Actor,     //CommandSelector<Actor>
+        Player,    //CommandSelector<Player>
+        BlockPos,  //CommandPosition
+        Vec3,      //CommandPositionFloat
+        Message,   //CommandMessage
+        RawText,   //CommandRawText
+        JsonValue, //Json::Value
+        Command,   //std::unique_ptr<Command>
+        Item,      //CommandItem
+        Block,     //Block const*
+        Effect,    //MobEffect const*
+        Enum,      //ENUM
+        SoftEnum,  //SOFT_ENUM
     };
     struct ParameterPtr;
+
     struct Result
     {
-        ParameterPtr const* parameterPtr;
-        DynamicCommandInstance const* command;
-        std::variant<AllResultType> const value;
-        bool isSet;
+        ParameterType const type;
+        size_t const offset;
+        bool const isSet;
 
+        DynamicCommand const* command;
+        DynamicCommandInstance const* instance;
+        CommandOrigin const* origin;
+        LIAPI Result(ParameterPtr const* ptr, DynamicCommand const* command, CommandOrigin const* origin, DynamicCommandInstance const* instance = nullptr);
+        LIAPI Result();
         LIAPI std::string const& getEnumValue() const;
         LIAPI ParameterType getType() const;
         LIAPI std::string getName() const;
+        LIAPI std::string toDebugString() const;
+        LIAPI DynamicCommandInstance const* getInstance() const;
 
         template <typename T>
-        inline T const& get() const
+        inline enable_if_supported_t<T, T const&> getRaw() const
         {
-            if (parameterPtr->type == ParameterType::Enum)
-            {
-                if constexpr (std::is_enum_v<T>)
-                    return *(T const*)std::get<int const*>(value);
-                else if constexpr (std::is_same_v<T, std::string>)
-                    return getEnumValue();
-                else if constexpr (std::is_integral_v<T>)
-                    return *(T const*)std::get<int const*>(value);
-            }
-            checkTempateType<T>(parameterPtr->type);
-            return *std::get<T const*>(value);
+            if (checkTempateType<T>(type))
+                return dAccess<T>(command, offset);
+            return T();
         }
 
         template <typename T>
-        inline T const& value_or(T const& defaultValue)
+        inline enable_if_supported_t<T, T const&> value_or(T const& defaultValue)
         {
             if (isSet)
-                return get<T>();
+                return getRaw<T>();
             return defaultValue;
         }
+
         template <typename T>
-        inline T get(CommandOrigin const& origin) const = delete;
-        template <>
-        inline std::vector<Actor*> get<std::vector<Actor*>>(CommandOrigin const& origin) const
+        inline std::conditional_t<std::is_lvalue_reference_v<T>, std::add_lvalue_reference_t<std::add_const_t<std::remove_reference_t<T>>>, T>
+            get() const
         {
-            checkTempateType<CommandSelector<Actor>>(getType());
+            static_assert(is_supported_result_type_v<T> || (std::is_lvalue_reference_v<T> && is_supported_result_type_v<std::remove_reference_t<T>>),
+                          "Unsupported Result Type");
+            if constexpr (std::is_lvalue_reference_v<T>)
+                return getRaw<std::remove_reference_t<T>>();
+            else
+                return getRaw<T>();
+        }
+
+        template <>
+        inline std::vector<Actor*> get<std::vector<Actor*>>() const
+        {
+            if (type == ParameterType::Player)
+                return *(std::vector<Actor*>*)&get<std::vector<Player*>>();
             std::vector<Actor*> rtn;
-            for (auto& result : get<CommandSelector<Actor>>().results(origin))
+            for (auto& result : getRaw<CommandSelector<Actor>>().results(*origin))
             {
                 rtn.push_back(result);
             }
             return rtn;
         }
         template <>
-        inline std::vector<Player*> get<std::vector<Player*>>(CommandOrigin const& origin) const
+        inline std::vector<Player*> get<std::vector<Player*>>() const
         {
-            checkTempateType<CommandSelector<Player>>(getType());
             std::vector<Player*> rtn;
-            for (auto& result : get<CommandSelector<Player>>().results(origin))
+            for (auto& result : getRaw<CommandSelector<Player>>().results(*origin))
             {
                 rtn.push_back(result);
             }
             return rtn;
         }
         template <>
-        inline BlockPos get<BlockPos>(CommandOrigin const& origin) const
+        inline BlockPos get<BlockPos>() const
         {
-            checkTempateType<CommandPosition>(getType());
-            auto& pos = get<CommandPosition>();
-            return pos.getBlockPos(origin, Vec3::ZERO);
+            auto& pos = getRaw<CommandPosition>();
+            return pos.getBlockPos(*origin, Vec3::ZERO);
         }
         template <>
-        inline Vec3 get<Vec3>(CommandOrigin const& origin) const
+        inline Vec3 get<Vec3>() const
         {
-            checkTempateType<CommandPosition>(getType());
-            auto& pos = get<CommandPosition>();
-            return pos.getPosition(origin, Vec3::ZERO);
+            auto& pos = getRaw<CommandPositionFloat>();
+            return pos.getPosition(*origin, Vec3::ZERO);
         }
     };
 
@@ -199,16 +224,18 @@ public:
     private:
         size_t offset = -1;
 
+        friend struct Result;
+
     public:
         LIAPI ParameterPtr(ParameterType type, size_t offset);
         LIAPI bool isValueSet(DynamicCommand const* command) const;
-        LIAPI Result getResult(DynamicCommand const* command) const;
+        LIAPI Result getResult(DynamicCommand const* command, CommandOrigin const* origin) const;
 
         template <typename T>
         inline T const& getValue(DynamicCommand const* command) const
         {
             checkTempateType<T>(type);
-            return dAccess<T>(command, offset);
+            return *(T*)getValuePrt(command);
         }
         inline size_t getOffset() const
         {
@@ -236,7 +263,7 @@ public:
         friend class DynamicCommandInstance;
 
         template <ParameterType type>
-        static constexpr CommandParameterDataType getCommandParameterDataType()
+        inline static constexpr CommandParameterDataType getCommandParameterDataType()
         {
             if constexpr (type == ParameterType::Enum)
                 return CommandParameterDataType::ENUM;
@@ -248,16 +275,15 @@ public:
         template <ParameterType type, typename T>
         CommandParameterData makeParameterData() const
         {
-            static const typeid_t<CommandRegistry> boolTypeid = SymCall("??$type_id@VCommandRegistry@@_N@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ", typeid_t<CommandRegistry>)();
             CommandParameterData param{
-                std::is_same_v<T, bool> ? boolTypeid : CommandRegistry::getNextTypeId(),
+                type == ParameterType::Enum ? typeid_t<CommandRegistry>::count++ : type_id<CommandRegistry, T>(),
                 type == ParameterType::Enum ? &CommandRegistry::fakeParse<T> : CommandRegistry::getParseFn<T>(),
                 name,
                 getCommandParameterDataType<type>(),
                 description == "" ? nullptr : description.data(),
                 (int)offset,
                 optional,
-                (int)offset + (int)ParameterSize.at(type)};
+                (int)offset + (int)ParameterSizeMap.at(type)};
             if ((int)option != -1)
                 param.addOptions(option);
             return std::move(param);
@@ -281,47 +307,52 @@ public:
 
         inline ParameterData(DynamicCommand::ParameterType type, std::string const& name, const char* enumOptions = "", std::string const& identifer = "", CommandParameterOption parameterOption = (CommandParameterOption)-1)
             : ParameterData(type, name, (std::string const&)enumOptions, identifer, parameterOption){};
-
     };
+
     using CallBackFn = std::function<void(CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, Result>& results)>;
-    using BuilderFn = std::unique_ptr<Command>(*)();
+    using BuilderFn = std::unique_ptr<Command> (*)();
 
 private:
-    // map<offset, data>
-    std::string commandName;
-
-    template <typename T>
-    inline static bool checkTempateType(ParameterType type)
+    template <typename _Ty>
+    inline static enable_if_supported_t<_Ty, bool> checkTempateType(ParameterType type)
     {
         switch (type)
         {
             case ParameterType::Bool:
-                return std::is_same_v<ParameterDataType::Bool, T>;
-                break;
+                return std::is_same_v<ParameterDataType::Bool, std::remove_cv_t<_Ty>>;
             case ParameterType::Int:
-                return std::is_integral_v<T>;
-                break;
+                return std::is_same_v<ParameterDataType::Int, std::remove_cv_t<_Ty>>;
             case ParameterType::Float:
-                return std::is_floating_point_v<T>;
-                break;
+                return std::is_same_v<ParameterDataType::Float, std::remove_cv_t<_Ty>>;
             case ParameterType::String:
-                return std::is_same_v<ParameterDataType::String, T>;
-                break;
+                return std::is_same_v<ParameterDataType::String, std::remove_cv_t<_Ty>>;
             case ParameterType::Actor:
-                return std::is_same_v<ParameterDataType::Actor, T> || std::is_same_v<std::vector<Actor*>, T>;
-                break;
+                return std::is_same_v<ParameterDataType::Actor, std::remove_cv_t<_Ty>>;
             case ParameterType::Player:
-                return std::is_same_v<ParameterDataType::Player, T> || std::is_same_v<std::vector<Player*>, T>;
-                break;
-            case ParameterType::Position:
-                return std::is_same_v<ParameterDataType::Position, T> || std::is_same_v<BlockPos, T> || std::is_same_v<Vec3, T>;
-                break;
+                return std::is_same_v<ParameterDataType::Player, std::remove_cv_t<_Ty>>;
+            case ParameterType::BlockPos:
+            case ParameterType::Vec3:
+                return std::is_same_v<ParameterDataType::BlockPos, std::remove_cv_t<_Ty>> || std::is_same_v<ParameterDataType::Vec3, std::remove_cv_t<_Ty>>;
+            case ParameterType::Message:
+                return std::is_same_v<ParameterDataType::Message, std::remove_cv_t<_Ty>>;
+            case ParameterType::RawText:
+                return std::is_same_v<ParameterDataType::RawText, std::remove_cv_t<_Ty>> || std::is_same_v<std::string, std::remove_cv_t<_Ty>>;
+            case ParameterType::JsonValue:
+                return std::is_same_v<ParameterDataType::JsonValue, std::remove_cv_t<_Ty>>;
+            case ParameterType::Command:
+                return std::is_same_v<ParameterDataType::Command, std::remove_cv_t<_Ty>>;
+            case ParameterType::Item:
+                return std::is_same_v<ParameterDataType::Item, std::remove_cv_t<_Ty>>;
+            case ParameterType::Block:
+                return std::is_same_v<ParameterDataType::Block, std::remove_cv_t<_Ty>>;
+            case ParameterType::Effect:
+                return std::is_same_v<ParameterDataType::Effect, std::remove_cv_t<_Ty>>;
+            //case ParameterType::Position:
+            //    return std::is_same_v<ParameterDataType::Position, std::remove_cv_t<_Ty>> || std::is_same_v<BlockPos, std::remove_cv_t<_Ty>> || std::is_same_v<Vec3, std::remove_cv_t<_Ty>>;
             case ParameterType::Enum:
-                return std::is_integral_v<T> || std::is_same_v<std::string, T> || std::is_enum_v<T>;
-                break;
+                return std::is_integral_v<_Ty> || std::is_same_v<std::string, std::remove_cv_t<_Ty>> || std::is_enum_v<_Ty>;
             case ParameterType::SoftEnum:
-                return std::is_same_v<ParameterDataType::SoftEnum, T>;
-                break;
+                return std::is_same_v<ParameterDataType::SoftEnum, std::remove_cv_t<_Ty>>;
             default:
                 return false;
                 break;
@@ -331,7 +362,7 @@ private:
     //LIAPI static std::unique_ptr<Command> commandBuilder();
 
     LIAPI static char builderCallbackHanler(DCCallback* cb, DCArgs* args, DCValue* result, void* userdata);
-    LIAPI static std::unique_ptr<Command>* commandBuilder2(std::unique_ptr<Command>*, std::string name);
+    LIAPI static std::unique_ptr<Command>* commandBuilder2(std::unique_ptr<Command>* rtn, std::string name);
 
     friend class DynamicCommandInstance;
 
@@ -355,13 +386,9 @@ public:
 
     LIAPI static bool updateAvailableCommands();
 
-    //template <typename T>
-    //inline static T const& getResultByName(std::unordered_map<std::string, Result>& results, std::string const& name)
-    //{
-    //    auto iter = results.find(name);
-    //    return iter == results.end() ? T() : iter->second.get<T>();
-    //}
+    LIAPI DynamicCommandInstance const* getInstance() const;
 };
+
 class DynamicCommandInstance
 {
 public:
@@ -394,9 +421,9 @@ private:
     CommandPermissionLevel permission;
     CommandFlag flag;
     DynamicCommand::BuilderFn builder = nullptr;
-    
 
-    // DynamicCommand Extend Part
+
+    // Parameter Pointers to DynamicCommand Extra Part
     std::unordered_map<std::string, DynamicCommand::ParameterPtr> parameterPtrs = {};
     size_t commandSize = sizeof(DynamicCommand);
 
@@ -407,7 +434,7 @@ private:
     std::unordered_map<std::string_view, std::pair<size_t, size_t>> enumRanges = {};
 
     std::vector<DynamicCommand::ParameterData> parameterDatas = {};
-    std::vector<std::vector<ParameterIndex>> overloads = {}; // indices of parmeter instance
+    std::vector<std::vector<ParameterIndex>> overloads = {}; // indices of parameter instance
 
     DynamicCommand::CallBackFn callback = nullptr;
     HMODULE handler = nullptr;
@@ -436,6 +463,7 @@ public:
     LIAPI bool setAlias(std::string const& alias);
     LIAPI std::vector<CommandParameterData> buildOverload(std::vector<ParameterIndex> const& overload);
     LIAPI void setCallback(DynamicCommand::CallBackFn&& callback);
+
     template <typename T>
     inline bool addOverload(std::initializer_list<T>&& params)
     {
@@ -445,7 +473,8 @@ public:
     {
         return name;
     }
-    inline ParameterIndex newParameter(DynamicCommand::ParameterType type, std::string const& name, const char* description, std::string const& identifier, CommandParameterOption parameterOption = (CommandParameterOption)-1){
+    inline ParameterIndex newParameter(DynamicCommand::ParameterType type, std::string const& name, const char* description, std::string const& identifier, CommandParameterOption parameterOption = (CommandParameterOption)-1)
+    {
         return newParameter(type, name, (std::string const&)description, identifier, parameterOption);
     };
 };

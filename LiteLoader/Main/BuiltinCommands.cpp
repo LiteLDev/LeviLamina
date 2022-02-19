@@ -167,7 +167,6 @@ public:
     }
 };
 
-
 void LLUpgradeCommand(CommandOutput& output, bool isForce)
 {
     std::thread([isForce]() {
@@ -315,7 +314,7 @@ class LLCommand : public Command
     Operation operation;
     UpgradeOption upgradeOption;
     bool hasUpgradeOption, hasPluginNameSet;
-    string pluginNameToDoOperation;
+    CommandRawText pluginNameToDoOperation;
 
 public:
 

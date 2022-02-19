@@ -68,11 +68,11 @@ class Command {
 // Add Member There
 
 protected:
-    int unk8;          // 8
-    void* unk16;       // 16
-    int unk24;         // 24
-    unsigned char b28; // 28
-    CommandFlag flag;  // 30
+    int unk8;                          // 8
+    CommandRegistry* registry;         // 16
+    unsigned int symbol;               // 24, CommandRegistry::Symbol
+    CommandPermissionLevel permission; // 28
+    CommandFlag flag;                  // 30
 
 public:
     template <typename T>

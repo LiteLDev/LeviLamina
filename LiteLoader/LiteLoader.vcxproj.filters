@@ -662,6 +662,9 @@
     <ClInclude Include="Header\TranslationAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
+    <ClInclude Include="Header\MC\CommandPositionFloat.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Lib\third-party\openssl\libcrypto.lib">

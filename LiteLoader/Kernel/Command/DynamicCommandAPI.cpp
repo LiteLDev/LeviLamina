@@ -6,25 +6,48 @@
 #include <MC/CommandMessage.hpp>
 #include <MC/CommandOutput.hpp>
 #include <MC/CommandRegistry.hpp>
+#include <MC/ItemInstance.hpp>
+#include <MC/MobEffect.hpp>
 #include <MC/Level.hpp>
+#include <MC/Block.hpp>
 #include <MC/LoopbackPacketSender.hpp>
 #include <third-party/dyncall/dyncall_callback.h>
+#include <third-party/magic_enum/magic_enum.hpp>
+#include <MC/CommandUtils.hpp>
+
 
 extern Logger logger;
+
+// global variable and function
+namespace
+{
+//static std::string latestAllocateName = "";
+static std::mutex commandAllocateLock;
+std::unordered_map<std::string, std::unique_ptr<DynamicCommandInstance>> dynamicCommandInstances;
+
 typedef DynamicCommand::Result Result;
 typedef DynamicCommand::ParameterType ParameterType;
 typedef DynamicCommand::ParameterPtr ParameterPtr;
 typedef DynamicCommand::ParameterData ParameterData;
 typedef DynamicCommandInstance::ParameterIndex ParameterIndex;
 
-auto const ParameterSize = std::unordered_map<ParameterType, size_t>{
+auto const ParameterSizeMap = std::unordered_map<ParameterType, size_t>{
     {ParameterType::Bool, std::max((size_t)8, sizeof(bool))},
     {ParameterType::Int, std::max((size_t)8, sizeof(int))},
     {ParameterType::Float, std::max((size_t)8, sizeof(float))},
     {ParameterType::Actor, std::max((size_t)8, sizeof(CommandSelector<Actor>))},
     {ParameterType::Player, std::max((size_t)8, sizeof(CommandSelector<Player>))},
     {ParameterType::String, std::max((size_t)8, sizeof(std::string))},
-    {ParameterType::Position, std::max((size_t)8, sizeof(CommandPosition))},
+    {ParameterType::BlockPos, std::max((size_t)8, sizeof(CommandPosition))},
+    {ParameterType::Vec3, std::max((size_t)8, sizeof(CommandPositionFloat))},
+    {ParameterType::Message, std::max((size_t)8, sizeof(CommandMessage))},
+    {ParameterType::RawText, std::max((size_t)8, sizeof(CommandRawText))},
+    {ParameterType::JsonValue, std::max((size_t)8, sizeof(Json::Value))},
+    {ParameterType::Command, std::max((size_t)8, sizeof(std::unique_ptr<Command>))},
+    {ParameterType::Item, std::max((size_t)8, sizeof(CommandItem))},
+    {ParameterType::Block, std::max((size_t)8, sizeof(Block const*))},
+    {ParameterType::Effect, std::max((size_t)8, sizeof(MobEffect const*))},
+    //{ParameterType::Position, std::max((size_t)8, sizeof(CommandPosition))},
     {ParameterType::Enum, std::max((size_t)8, sizeof(int))},
     {ParameterType::SoftEnum, std::max((size_t)8, sizeof(std::string))},
 };
@@ -37,7 +60,16 @@ typedef float Float;
 typedef std::string String;
 typedef CommandSelector<Actor> Actor;
 typedef CommandSelector<Player> Player;
-typedef CommandPosition Position;
+typedef CommandPosition BlockPos;
+typedef CommandPositionFloat Vec3;
+typedef CommandMessage Message;
+typedef CommandRawText RawText;
+typedef Json::Value JsonValue;
+typedef std::unique_ptr<Command> Command;
+typedef CommandItem Item;
+typedef Block const* Block;
+typedef MobEffect const* Effect;
+//typedef CommandPosition Position;
 typedef int Enum;
 typedef std::string SoftEnum;
 } // namespace ParameterDataType
@@ -65,12 +97,6 @@ inline void OutputError(std::string errorMsg, int errorCode, std::string errorWh
         OutputError("Uncaught Exception Detected!", -1, "", func, handler);                                       \
     }
 
-// global variable
-namespace
-{
-//static std::string latestAllocateName = "";
-static std::mutex commandAllocateLock;
-std::unordered_map<std::string, std::unique_ptr<DynamicCommandInstance>> dynamicCommandInstances;
 } // namespace
 
 #pragma region ParameterPtr
@@ -83,46 +109,54 @@ inline DynamicCommand::ParameterPtr::ParameterPtr(ParameterType type, size_t off
 
 inline bool DynamicCommand::ParameterPtr::isValueSet(DynamicCommand const* command) const
 {
-    return dAccess<bool>(command, offset + ParameterSize.at(type));
+    return dAccess<bool>(command, offset + ParameterSizeMap.at(type));
 }
 
-Result ParameterPtr::getResult(DynamicCommand const* command) const
+Result ParameterPtr::getResult(DynamicCommand const* command, CommandOrigin const* origin) const
 {
-    auto commandInstance = dynamicCommandInstances.at(command->commandName).get();
-    switch (type)
-    {
-        case ParameterType::Bool:
-            return {this, commandInstance, &getValue<bool>(command), isValueSet(command)};
-            break;
-        case ParameterType::Int:
-            return {this, commandInstance, &getValue<int>(command), isValueSet(command)};
-            break;
-        case ParameterType::Float:
-            return {this, commandInstance, &getValue<float>(command), isValueSet(command)};
-            break;
-        case ParameterType::Actor:
-            return {this, commandInstance, &getValue<CommandSelector<Actor>>(command), isValueSet(command)};
-            break;
-        case ParameterType::Player:
-            return {this, commandInstance, &getValue<CommandSelector<Player>>(command), isValueSet(command)};
-            break;
-        case ParameterType::String:
-            return {this, commandInstance, &getValue<std::string>(command), isValueSet(command)};
-            break;
-        case ParameterType::Position:
-            return {this, commandInstance, &getValue<CommandPosition>(command), isValueSet(command)};
-            break;
-        case ParameterType::Enum:
-            return {this, commandInstance, &getValue<int>(command), isValueSet(command)};
-            break;
-        case ParameterType::SoftEnum:
-            return {this, commandInstance, &getValue<std::string>(command), isValueSet(command)};
-            break;
-        default:
-            logger.error("Unknown Parameter Type {}", (int)type);
-            break;
-    }
-    return {};
+    //auto commandInstance = dynamicCommandInstances.at(command->getCommandName()).get();
+    return {this, command, origin};
+    //switch (type)
+    //{
+    //    case ParameterType::Bool:
+    //        return {this, commandInstance, &getValue<bool>(command), isValueSet(command)};
+    //    case ParameterType::Int:
+    //        return {this, commandInstance, &getValue<int>(command), isValueSet(command)};
+    //    case ParameterType::Float:
+    //        return {this, commandInstance, &getValue<float>(command), isValueSet(command)};
+    //    case ParameterType::Actor:
+    //        return {this, commandInstance, &getValue<CommandSelector<Actor>>(command), isValueSet(command)};
+    //    case ParameterType::Player:
+    //        return {this, commandInstance, &getValue<CommandSelector<Player>>(command), isValueSet(command)};
+    //    case ParameterType::String:
+    //        return {this, commandInstance, &getValue<std::string>(command), isValueSet(command)};
+    //    case ParameterType::BlockPos:
+    //        return {this, commandInstance, &getValue<CommandPosition>(command), isValueSet(command)}; //CommandPosition
+    //    case ParameterType::Vec3:
+    //        return {this, commandInstance, &getValue<CommandPositionFloat>(command), isValueSet(command)}; //CommandPositionFloat
+    //    case ParameterType::Message:
+    //        return {this, commandInstance, &getValue<CommandMessage>(command), isValueSet(command)}; //CommandMessage
+    //    case ParameterType::RawText:
+    //        return {this, commandInstance, &getValue<CommandRawText>(command), isValueSet(command)}; //CommandRawText
+    //    case ParameterType::JsonValue:
+    //        return {this, commandInstance, &getValue<Json::Value>(command), isValueSet(command)}; //Json::Value
+    //    case ParameterType::Command:
+    //        return {this, commandInstance, &getValue<std::unique_ptr<Command>>(command), isValueSet(command)}; //std::unique_ptr<Command>
+    //    case ParameterType::Item:
+    //        return {this, commandInstance, &getValue<CommandItem>(command), isValueSet(command)}; //CommandItem
+    //    case ParameterType::Block:
+    //        return {this, commandInstance, &getValue<Block const*>(command), isValueSet(command)}; //Block const*
+    //    case ParameterType::Effect:
+    //        return {this, commandInstance, &getValue<MobEffect const*>(command), isValueSet(command)}; //MobEffect const*
+    //    case ParameterType::Enum:
+    //        return {this, commandInstance, &getValue<int>(command), isValueSet(command)};
+    //    case ParameterType::SoftEnum:
+    //        return {this, commandInstance, &getValue<std::string>(command), isValueSet(command)};
+    //    default:
+    //        logger.error("Unknown Parameter Type {}", (int)type);
+    //        break;
+    //}
+    //return {};
 }
 
 #pragma endregion
@@ -163,34 +197,42 @@ inline CommandParameterData DynamicCommand::ParameterData::makeParameterData() c
     {
         case ParameterType::Bool:
             return makeParameterData<ParameterType::Bool, bool>();
-            break;
         case ParameterType::Int:
             return makeParameterData<ParameterType::Int, int>();
-            break;
         case ParameterType::Float:
             return makeParameterData<ParameterType::Float, float>();
-            break;
         case ParameterType::String:
             return makeParameterData<ParameterType::String, std::string>();
-            break;
         case ParameterType::Actor:
             return makeParameterData<ParameterType::Actor, CommandSelector<Actor>>();
-            break;
         case ParameterType::Player:
             return makeParameterData<ParameterType::Player, CommandSelector<Player>>();
-            break;
-        case ParameterType::Position:
-            return makeParameterData<ParameterType::Position, CommandPosition>();
-            break;
+        case ParameterType::BlockPos:
+            return makeParameterData<ParameterType::BlockPos, CommandPosition>();
+        case ParameterType::Vec3:
+            return makeParameterData<ParameterType::Vec3, CommandPositionFloat>();
+        case ParameterType::Message:
+            return makeParameterData<ParameterType::Message, CommandMessage>();
+        case ParameterType::RawText:
+            return makeParameterData<ParameterType::RawText, CommandRawText>();
+        case ParameterType::JsonValue:
+            return makeParameterData<ParameterType::JsonValue, Json::Value>();
+        case ParameterType::Command:
+            return makeParameterData<ParameterType::Command, std::unique_ptr<Command>>();
+        case ParameterType::Item:
+            return makeParameterData<ParameterType::Item, CommandItem>();
+        case ParameterType::Block:
+            return makeParameterData<ParameterType::Block, Block const*>();
+        case ParameterType::Effect:
+            return makeParameterData<ParameterType::Effect, MobEffect const*>();
+            //case ParameterType::Position:
+            //    return makeParameterData<ParameterType::Position, CommandPosition>();
         case ParameterType::Enum:
             return makeParameterData<ParameterType::Enum, int>();
-            break;
         case ParameterType::SoftEnum:
             return makeParameterData<ParameterType::SoftEnum, std::string>();
-            break;
         default:
             return {};
-            break;
     }
 }
 
@@ -198,32 +240,119 @@ inline CommandParameterData DynamicCommand::ParameterData::makeParameterData() c
 
 #pragma region Result
 
+inline DynamicCommand::Result::Result(ParameterPtr const* ptr, DynamicCommand const* command, CommandOrigin const* origin, DynamicCommandInstance const* instance)
+    : type(ptr->type)
+    , offset(ptr->offset)
+    , command(command)
+    , origin(origin)
+    , instance(instance ? instance : command->getInstance())
+    , isSet(ptr->isValueSet(command))
+{
+}
+
+inline DynamicCommand::Result::Result()
+    : type((ParameterType)-1)
+    , offset(-1)
+    , command(nullptr)
+    , origin(nullptr)
+    , instance(nullptr)
+    , isSet(false)
+{
+}
+
 inline std::string const& DynamicCommand::Result::getEnumValue() const
 {
     if (getType() == ParameterType::Enum)
     {
-        auto index = get<int>();
-        return command->getEnumValue(index);
+        auto index = getRaw<int>();
+        return instance->getEnumValue(index);
     }
     else if (getType() == ParameterType::SoftEnum)
     {
-        return get<std::string>();
+        return getRaw<std::string>();
     }
     return "";
 }
 
 inline ParameterType DynamicCommand::Result::getType() const
 {
-    return parameterPtr->type;
+    return type;
 }
 
 inline std::string DynamicCommand::Result::getName() const
 {
-    for (auto& [name, ptr] : command->parameterPtrs)
+    for (auto& [name, ptr] : instance->parameterPtrs)
     {
-        if (ptr.getOffset() == parameterPtr->getOffset())
+        if (ptr.getOffset() == offset)
             return name;
     }
+}
+
+std::string DynamicCommand::Result::toDebugString() const
+{
+    std::string name = getName();
+    ParameterType type = getType();
+    std::string typeName = fmt::format("{}({})", magic_enum::enum_name(type), (int)type);
+    switch (type)
+    {
+        case ParameterType::Bool:
+            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, getRaw<bool>());
+        case ParameterType::Int:
+            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, getRaw<int>());
+        case ParameterType::Float:
+            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, getRaw<float>());
+        case ParameterType::Actor:
+            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, getRaw<CommandSelector<Actor>>().getName());
+        case ParameterType::Player:
+        {
+            //std::vector<Actor*> actors = get<std::vector<Actor*>>();
+            //std::ostringstream oss;
+            //oss << "count: " << actors.size() << ", actors: [";
+            //bool first = true;
+            //for (auto& actor : actors) {
+            //    if (!first) oss << ", ";
+            //    oss << CommandUtils::getActorName(*actor);
+            //}
+            //oss << "]";
+            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, getRaw<CommandSelector<Player>>().getName());
+        }
+        case ParameterType::String:
+            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, getRaw<std::string>());
+        case ParameterType::BlockPos:
+            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, getRaw<CommandPosition>().serialize().toSNBT());
+        case ParameterType::Vec3:
+            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, getRaw<CommandPositionFloat>().serialize().toSNBT());
+        case ParameterType::Message:
+            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, "<CommandMessage>");
+        case ParameterType::RawText:
+            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, getRaw<CommandRawText>().getText());
+        case ParameterType::JsonValue:
+            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, getRaw<Json::Value>().toStyledString().substr(0, getRaw<Json::Value>().toStyledString().size() - 1));
+        case ParameterType::Command:
+            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, isSet ? getRaw<std::unique_ptr<Command>>()->getCommandName() : "Null");
+        case ParameterType::Item:
+            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, getRaw<CommandItem>().createInstance(1, 1, nullptr, true).value_or(ItemInstance::EMPTY_ITEM).toString());
+        case ParameterType::Block:
+            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, isSet ? getRaw<Block const*>()->toDebugString() : "nullptr");
+        case ParameterType::Effect:
+            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, isSet ? getRaw<MobEffect const*>()->getComponentName().getString() : "nullptr");
+        case ParameterType::Enum:
+            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, getRaw<std::string>());
+        case ParameterType::SoftEnum:
+            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, getRaw<std::string>());
+        default:
+            logger.error("Unknown Parameter Type {}, name: {}", typeName, name);
+            break;
+    }
+}
+
+inline DynamicCommandInstance const* DynamicCommand::Result::getInstance() const
+{
+    std::string commandName = command->getCommandName();
+    auto iter = dynamicCommandInstances.find(commandName);
+    if (iter == dynamicCommandInstances.end())
+        return nullptr;
+    return iter->second.get();
 }
 
 #pragma endregion
@@ -256,11 +385,10 @@ std::unique_ptr<Command>* DynamicCommand::commandBuilder2(std::unique_ptr<Comman
     auto& commandInstance = *dynamicCommandInstances.at(name);
     auto command = new char[commandInstance.commandSize]{0};
     (*(DynamicCommand*)command).DynamicCommand::DynamicCommand();
-    (*(DynamicCommand*)command).commandName = name;
     for (auto& [name, param] : commandInstance.parameterPtrs)
     {
         size_t offset = param.getOffset();
-        dAccess<bool>(command, offset + ParameterSize.at(param.type)) = false; //XXXX_isSet;
+        dAccess<bool>(command, offset + ParameterSizeMap.at(param.type)) = false; //XXXX_isSet;
         switch (param.type)
         {
             case ParameterType::Bool:
@@ -281,8 +409,35 @@ std::unique_ptr<Command>* DynamicCommand::commandBuilder2(std::unique_ptr<Comman
             case ParameterType::String:
                 dAccess<std::string>(command, offset).basic_string::basic_string();
                 break;
-            case ParameterType::Position:
+            case ParameterType::BlockPos:
                 dAccess<CommandPosition>(command, offset).CommandPosition::CommandPosition();
+                break;
+            case ParameterType::Vec3:
+                dAccess<CommandPositionFloat>(command, offset).CommandPositionFloat::CommandPositionFloat();
+                break;
+            case ParameterType::Message:
+                dAccess<CommandMessage>(command, offset).CommandMessage::CommandMessage();
+                break;
+            case ParameterType::RawText:
+                dAccess<CommandRawText>(command, offset).CommandRawText::CommandRawText();
+                break;
+            case ParameterType::JsonValue:
+                dAccess<Json::Value>(command, offset).Json::Value::Value();
+                break;
+            case ParameterType::Command:
+                dAccess<std::unique_ptr<Command>>(command, offset) = {};
+                break;
+            case ParameterType::Item:
+                dAccess<CommandItem>(command, offset).CommandItem::CommandItem();
+                break;
+            case ParameterType::Block:
+                dAccess<Block const*>(command, offset) = nullptr;
+                break;
+            case ParameterType::Effect:
+                dAccess<MobEffect const*>(command, offset) = nullptr;
+                break;
+                //case ParameterType::Position:
+                //    dAccess<CommandPosition>(command, offset).CommandPosition::CommandPosition();
                 break;
             case ParameterType::Enum:
                 dAccess<int>(command, offset) = int();
@@ -301,7 +456,7 @@ std::unique_ptr<Command>* DynamicCommand::commandBuilder2(std::unique_ptr<Comman
 
 DynamicCommand::~DynamicCommand()
 {
-    auto& commandIns = *dynamicCommandInstances.at(commandName);
+    auto& commandIns = *dynamicCommandInstances.at(getCommandName());
     for (auto& [name, parameter] : commandIns.parameterPtrs)
     {
         auto offset = parameter.getOffset();
@@ -322,9 +477,34 @@ DynamicCommand::~DynamicCommand()
             case ParameterType::String:
                 dAccess<std::string>(this, offset).~basic_string();
                 break;
-            case ParameterType::Position:
+            case ParameterType::BlockPos:
                 dAccess<CommandPosition>(this, offset).~CommandPosition();
                 break;
+            case ParameterType::Vec3:
+                dAccess<CommandPositionFloat>(this, offset).~CommandPositionFloat();
+                break;
+            case ParameterType::Message:
+                dAccess<CommandMessage>(this, offset).~CommandMessage();
+                break;
+            case ParameterType::RawText:
+                dAccess<CommandRawText>(this, offset).~CommandRawText();
+                break;
+            case ParameterType::JsonValue:
+                dAccess<Json::Value>(this, offset).~Value();
+                break;
+            case ParameterType::Command:
+                dAccess<std::unique_ptr<Command>>(this, offset).~unique_ptr<Command>();
+                break;
+            case ParameterType::Item:
+                dAccess<CommandItem>(this, offset).~CommandItem();
+                break;
+            case ParameterType::Block:
+                break;
+            case ParameterType::Effect:
+                break;
+                //case ParameterType::Position:
+                //    dAccess<CommandPosition>(this, offset).~CommandPosition();
+                //    break;
             case ParameterType::Enum:
                 break;
             case ParameterType::SoftEnum:
@@ -339,25 +519,29 @@ DynamicCommand::~DynamicCommand()
 
 void DynamicCommand::execute(CommandOrigin const& origin, CommandOutput& output) const
 {
-    if (dynamicCommandInstances.count(commandName) == 0)
+    auto iter = dynamicCommandInstances.find(getCommandName());
+    if (iter == dynamicCommandInstances.end())
     {
         logger.error("Dynamic Command Not Found");
         return;
     }
-    auto& commandIns = *dynamicCommandInstances.at(commandName);
+    auto& commandIns = *iter->second;
+    if (!commandIns.callback)
+    {
+        return;
+    }
     try
     {
         std::unordered_map<std::string, Result> results;
 
         for (auto& [name, param] : commandIns.parameterPtrs)
         {
-            results.emplace(name, param.getResult(this));
+            results.emplace(name, param.getResult(this, &origin));
         }
         commandIns.callback(origin, output, results);
     }
     CatchDynamicCommandError("DynamicCommand::execute", commandIns.handler);
 }
-#include <LLAPI.h>
 
 std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(std::string const& name, std::string const& description, CommandPermissionLevel permission, CommandFlag flag1, CommandFlag flag2, HMODULE handler)
 {
@@ -379,7 +563,7 @@ bool DynamicCommand::setup(std::unique_ptr<class DynamicCommandInstance> command
             values.emplace_back(*iter, index);
             index++;
         }
-        Global<CommandRegistry>->_addEnumValuesInternal(name.data(), values, CommandRegistry::getNextTypeId(), &CommandRegistry::parseEnum<int>).val;
+        Global<CommandRegistry>->_addEnumValuesInternal(name.data(), values, typeid_t<CommandRegistry>::count++, &CommandRegistry::parseEnum<int>).val;
     }
     Global<CommandRegistry>->registerCommand(commandInstance->name, commandInstance->description->c_str(), commandInstance->permission, commandInstance->flag, commandInstance->flag);
     auto builder = commandInstance->initCommandBuilder();
@@ -394,6 +578,8 @@ bool DynamicCommand::setup(std::unique_ptr<class DynamicCommandInstance> command
 inline bool DynamicCommand::setup(std::string const& name, std::string const& description, std::unordered_map<std::string, std::vector<std::string>>&& enums, std::vector<ParameterData>&& params, std::vector<std::vector<std::string>>&& overloads, CallBackFn callback, CommandPermissionLevel permission, CommandFlag flag1, CommandFlag flag2, HMODULE handler)
 {
     auto command = createCommand(name, description, permission, flag1, flag2, handler);
+    if (!command)
+        return false;
     for (auto& [name, values] : enums)
     {
         command->addEnum(name, std::move(values));
@@ -418,6 +604,16 @@ inline bool DynamicCommand::updateAvailableCommands()
     if (sender)
         sender->sendBroadcast(packet);
     return true;
+}
+
+inline DynamicCommandInstance const* DynamicCommand::getInstance() const
+{
+    std::string commandName = getCommandName();
+    auto iter = dynamicCommandInstances.find(commandName);
+    if (iter == dynamicCommandInstances.end())
+        return nullptr;
+    else
+        return iter->second.get();
 }
 
 #pragma endregion
@@ -501,7 +697,7 @@ ParameterIndex DynamicCommandInstance::newParameter(DynamicCommand::ParameterDat
     {
         offset = commandSize;
         parameterPtrs.emplace(data.name, DynamicCommand::ParameterPtr(data.type, offset));
-        commandSize += ParameterSize.at(data.type) + 8;
+        commandSize += ParameterSizeMap.at(data.type) + 8;
     }
     else
     {
@@ -510,13 +706,14 @@ ParameterIndex DynamicCommandInstance::newParameter(DynamicCommand::ParameterDat
             throw std::runtime_error(fmt::format("dynamic command \"{}\" register failed, Different type parameters with the same name {} are not allowed", name, data.name));
     }
     std::string const& identifier = data.identifier;
-    if (parameterDatas.end() != std::find_if(parameterDatas.begin(), parameterDatas.end(), 
-        [&](DynamicCommand::ParameterData const& data) { return data.identifier == identifier; }))
+    if (parameterDatas.end() != std::find_if(parameterDatas.begin(), parameterDatas.end(),
+                                             [&](DynamicCommand::ParameterData const& data) { return data.identifier == identifier; }))
         throw std::runtime_error("parameter identifier already exists");
     data.offset = offset;
     parameterDatas.emplace_back(std::move(data));
     return {this, parameterDatas.size() - 1};
 }
+
 inline ParameterIndex DynamicCommandInstance::newParameter(DynamicCommand::ParameterType type, std::string const& name, std::string const& description, std::string const& identifier, CommandParameterOption parameterOption)
 {
     return newParameter(type, name, false, description, identifier, parameterOption);
@@ -526,7 +723,6 @@ inline ParameterIndex DynamicCommandInstance::newParameter(DynamicCommand::Param
 {
     return newParameter(ParameterData(type, name, optional, description, identifier, parameterOption));
 }
-
 
 inline ParameterIndex DynamicCommandInstance::findParameterIndex(std::string const& indentifier)
 {
@@ -614,8 +810,6 @@ inline DynamicCommand::BuilderFn DynamicCommandInstance::initCommandBuilder()
 //    return rtn;
 //}
 
-#include <third-party/magic_enum/magic_enum.hpp>
-#include <MC/CommandUtils.hpp>
 #include <MC/Actor.hpp>
 #include <MC/Player.hpp>
 
@@ -623,78 +817,67 @@ void testRegCommand(std::string const& name = "dyncmd")
 {
     using Param = DynamicCommand::ParameterData;
     using ParamType = DynamicCommand::ParameterType;
-    Param boolParam(ParamType::Bool, "testBool", false);
-    Param intParam(ParamType::Int, "testInt", false);
-    Param floatParam(ParamType::Float, "testFloat", false);
-    Param strParam(ParamType::String, "testStr", false);
+    Param boolParam(ParamType::Bool, "testBool", true);
+    Param intParam(ParamType::Int, "testInt", true);
+    Param floatParam(ParamType::Float, "testFloat", true);
+    Param strParam(ParamType::String, "testStr", true);
     Param actorParam(ParamType::Actor, "testActor", true);
     Param playerParam(ParamType::Player, "testPlayer", true);
-    Param posParam(ParamType::Position, "testPos", true);
-
+    Param BlockPosParam(ParamType::BlockPos, "testBlockPos", true);
+    Param Vec3Param(ParamType::Vec3, "testVec3", true);
+    Param MessageParam(ParamType::Message, "testMessage", true);
+    Param RawTextParam(ParamType::RawText, "testRawText", true);
+    Param JsonValueParam(ParamType::JsonValue, "testJsonValue", true);
+    Param CommandParam(ParamType::Command, "testCommand", true);
+    Param ItemParam(ParamType::Item, "testItem", true);
+    Param BlockParam(ParamType::Block, "testBlock", true);
+    Param EffectParam(ParamType::Effect, "testEffect", true);
+    //Param posParam(ParamType::Position, "testPos", true);
+    // Test Command: dynparam true 114 3.14 str @e @a 3 1 4 ~3 ~1 ~4 msg raw text {"a":4} version stick concrete speed
     DynamicCommand::setup(
-        name, "dynamic command",
+        "dynparam", "dynamic command",
         {},
-        {boolParam, intParam, floatParam, strParam, actorParam, playerParam, posParam},
-        {{"testBool", "testInt", "testFloat", "testStr", "testActor", "testPlayer", "testPos"}},
+        {
+            boolParam,
+            intParam,
+            floatParam,
+            strParam,
+            actorParam,
+            playerParam,
+            BlockPosParam,
+            Vec3Param,
+            MessageParam,
+            RawTextParam,
+            JsonValueParam,
+            CommandParam,
+            ItemParam,
+            BlockParam,
+            EffectParam,
+        },
+        {{
+            "testBool",
+            "testInt",
+            "testFloat",
+            "testStr",
+            "testActor",
+            "testPlayer",
+            "testBlockPos",
+            "testVec3",
+            "testMessage",
+            "testRawText",
+            "testJsonValue",
+            "testCommand",
+            "testItem",
+            "testBlock",
+            "testEffect",
+        }},
         [](CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, Result>& results) {
             output.success("Success");
             auto testBool = results["testBool"].get<bool>();
             output.success(fmt::format("testBool is {}", testBool));
             for (auto& [name, result] : results)
             {
-                switch (result.getType())
-                {
-                    case ParameterType::Bool:
-                        output.success(fmt::format("name: {}, type: {}, value: {}",
-                                                   result.getName(), magic_enum::enum_name(result.getType()), result.get<bool>()));
-                        break;
-                    case ParameterType::Int:
-                        output.success(fmt::format("name: {}, type: {}, value: {}",
-                                                   result.getName(), magic_enum::enum_name(result.getType()), result.get<int>()));
-                        break;
-                    case ParameterType::Float:
-                        output.success(fmt::format("name: {}, type: {}, value: {}",
-                                                   result.getName(), magic_enum::enum_name(result.getType()), result.get<float>()));
-                        break;
-                    case ParameterType::Actor:
-                    {
-                        auto& actors = result.get<std::vector<Actor*>>(origin);
-                        output.success(fmt::format("name: {}, type: {}, size: {}",
-                                                   result.getName(), magic_enum::enum_name(result.getType()), actors.size()));
-                        for (auto& actor : actors)
-                        {
-                            output.success(fmt::format("Name: {}", CommandUtils::getActorName(*actor)));
-                        }
-                        break;
-                    }
-                    case ParameterType::Player:
-                    {
-                        auto& players = result.get<std::vector<Player*>>(origin);
-                        output.success(fmt::format("name: {}, type: {}, size: {}",
-                                                   result.getName(), magic_enum::enum_name(result.getType()), players.size()));
-                        for (auto& player : players)
-                        {
-                            output.success(fmt::format("Name: {}", CommandUtils::getActorName(*player)));
-                        }
-                        break;
-                    }
-                    case ParameterType::String:
-                        output.success(fmt::format("name: {}, type: {}, value: {}",
-                                                   result.getName(), magic_enum::enum_name(result.getType()), result.get<std::string>()));
-                        break;
-                    case ParameterType::Position:
-                        output.success(fmt::format("name: {}, type: {}, value: {}",
-                                                   result.getName(), magic_enum::enum_name(result.getType()), result.get<Vec3>(origin).toString()));
-                        break;
-                    case ParameterType::Enum:
-                        break;
-                    case ParameterType::SoftEnum:
-
-                        break;
-                    default:
-                        logger.error("Unknown Parameter Type {}", (int)result.getType());
-                        break;
-                }
+                output.success(result.toDebugString());
             }
         },
         CommandPermissionLevel::Any);
@@ -721,7 +904,7 @@ void testRegCommand(std::string const& name = "dyncmd")
         },
         // dynamic command callback
         [](CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, Result>& results) {
-            auto& action = results["testEnum"].get<std::string>();
+            auto& action = results["testEnum"].getRaw<std::string>();
             switch (do_hash(action.c_str()))
             {
                 case do_hash("list"):
@@ -729,7 +912,7 @@ void testRegCommand(std::string const& name = "dyncmd")
                 case do_hash("add"):
                 case do_hash("remove"):
                     if (results["testInt"].isSet)
-                        output.success(fmt::format("testInt is {}", results["testInt"].get<int>()));
+                        output.success(fmt::format("testInt is {}", results["testInt"].getRaw<int>()));
                     else
                         output.success("testInt is not set");
                     break;
@@ -742,7 +925,7 @@ void testRegCommand(std::string const& name = "dyncmd")
 TClasslessInstanceHook2("TestDynamicCommand_startServerThread", void, "?startServerThread@ServerInstance@@QEAAXXZ")
 {
     original(this);
-    testRegCommand("dyncmdtest");
+    testRegCommand("dynenum");
     auto packet = Global<CommandRegistry>->serializeAvailableCommands();
     auto sender = (LoopbackPacketSender*)Global<Level>->getPacketSender();
     if (sender)
@@ -767,7 +950,7 @@ TClasslessInstanceHook2("TestDynamicCommand_startServerThread", void, "?startSer
         switch (do_hash(results["testEnum"].get<std::string>().c_str()))
         {
             case do_hash("add"):
-                output.success(fmt::format("Add - {}", results["testString"].get<std::string>()));
+                output.success(fmt::format("Add - {}", results["testString"].get<int>()));
                 break;
             case do_hash("remove"):
                 output.success(fmt::format("Remove - {}", results["testString"].get<std::string>()));
@@ -783,7 +966,6 @@ TClasslessInstanceHook2("TestDynamicCommand_startServerThread", void, "?startSer
     DynamicCommand::setup(std::move(command));
 };
 
-
 TClasslessInstanceHook2("TestDynamicCommand_attack", bool, "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z",
                         Actor* ac, int* damageCause)
 {
@@ -794,5 +976,11 @@ TClasslessInstanceHook2("TestDynamicCommand_attack", bool, "?attack@Player@@UEAA
 
     return original(this, ac, damageCause);
 }
+
+//TInstanceHook(void, "?run@Command@@QEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z",
+//              Command, class CommandOrigin const& origin, class CommandOutput& output)
+//{
+//    logger.info("Command({})::run()", getCommandName());
+//}
 
 #endif // DEBUG
