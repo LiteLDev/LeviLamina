@@ -1,17 +1,4 @@
 #pragma once
-#include "Global.h"
-#include "LLAPI.h"
-#include "LoggerAPI.h"
-#include "Utils/FileHelper.h"
-#include "Utils/PluginOwnData.h"
-#include "third-party/Nlohmann/json.hpp"
-#include "third-party/FMT/core.h"
-#include "third-party/FMT/os.h"
-#include "third-party/compact_enc_det/compact_enc_det.h"
-#define UNICODE
-#include <string>
-#include "Utils/StringHelper.h"
-
 //////////////////////////////////////////////////////
 // For Internationalization
 //
@@ -43,6 +30,25 @@
 //                                                                          // Convert from one MBCS encoding to another
 //
 //////////////////////////////////////////////////////
+
+#include "Global.h"
+#include "LLAPI.h"
+#include "LoggerAPI.h"
+#include "Utils/FileHelper.h"
+#include "Utils/PluginOwnData.h"
+#include "third-party/Nlohmann/json.hpp"
+#include "third-party/FMT/core.h"
+#include "third-party/FMT/os.h"
+#include <string>
+#include "Utils/StringHelper.h"
+
+#ifdef UNICODE
+#include "third-party/compact_enc_det/compact_enc_det.h"
+#define UNICODE
+#else
+#include "third-party/compact_enc_det/compact_enc_det.h"
+#endif
+
 
 #define TRANSLATION_DATA_NAME "_ll_plugin_translation_content"
 #define TRANSLATION_DATA_FILE "_ll_plugin_translation_file"
