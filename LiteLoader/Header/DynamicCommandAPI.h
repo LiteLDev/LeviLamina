@@ -102,7 +102,7 @@ class CommandRegistry;
 class Player;
 
 
-#define AllResultType bool const*, int const*, float const*, std::string const*, CommandSelector<Actor> const*, CommandSelector<Player> const*, CommandPosition const*, CommandPositionFloat const*, CommandMessage const*, CommandRawText const*, Json::Value const*, std::unique_ptr<Command> const*, CommandItem const*, Block const* const*, MobEffect const* const*
+#define AllResultType bool const*, int const*, float const*, std::string const*, CommandSelector<Actor> const*, CommandSelector<Player> const*, CommandPosition const*, CommandPositionFloat const*, CommandRawText const*, CommandMessage const*, Json::Value const*, CommandItem const*, Block const* const*, MobEffect const* const*, std::unique_ptr<Command> const*
 
 class DynamicCommand : public Command
 {
@@ -124,15 +124,15 @@ public:
         Player,    //CommandSelector<Player>
         BlockPos,  //CommandPosition
         Vec3,      //CommandPositionFloat
-        Message,   //CommandMessage
         RawText,   //CommandRawText
+        Message,   //CommandMessage
         JsonValue, //Json::Value
-        Command,   //std::unique_ptr<Command>
         Item,      //CommandItem
         Block,     //Block const*
         Effect,    //MobEffect const*
         Enum,      //ENUM
         SoftEnum,  //SOFT_ENUM
+        Command,   //std::unique_ptr<Command>
     };
     struct ParameterPtr;
 
@@ -156,6 +156,10 @@ public:
         template <typename T>
         inline enable_if_supported_t<T, T const&> getRaw() const
         {
+            if constexpr (std::is_same_v<std::remove_cv_t<T>, std::string>) {
+                if (type == ParameterType::Enum)
+                    return getEnumValue();
+            }
             if (checkTempateType<T>(type))
                 return dAccess<T>(command, offset);
             throw std::runtime_error("Unsupported Result Type");
@@ -250,8 +254,8 @@ public:
 
     public:
         ParameterData() = delete;
-        LIAPI ParameterData(DynamicCommand::ParameterType type, std::string const& name, bool optional = false, std::string const& enumOptions = "", std::string const& identifier = "", CommandParameterOption parameterOption = (CommandParameterOption)-1);
-        LIAPI ParameterData(DynamicCommand::ParameterType type, std::string const& name, std::string const& enumOptions = "", std::string const& identifier = "", CommandParameterOption parameterOption = (CommandParameterOption)-1);
+        LIAPI ParameterData(std::string const& name, DynamicCommand::ParameterType type, bool optional = false, std::string const& enumOptions = "", std::string const& identifier = "", CommandParameterOption parameterOption = (CommandParameterOption)-1);
+        LIAPI ParameterData(std::string const& name, DynamicCommand::ParameterType type, std::string const& enumOptions = "", std::string const& identifier = "", CommandParameterOption parameterOption = (CommandParameterOption)-1);
         LIAPI CommandParameterData makeParameterData() const;
 
         friend class DynamicCommandInstance;
@@ -299,11 +303,11 @@ public:
             this->option = parameterOption;
         }
 
-        inline ParameterData(DynamicCommand::ParameterType type, std::string const& name, const char* enumOptions = "", std::string const& identifer = "", CommandParameterOption parameterOption = (CommandParameterOption)-1)
-            : ParameterData(type, name, (std::string const&)enumOptions, identifer, parameterOption){};
+        inline ParameterData(std::string const& name, ParameterType type, const char* enumOptions = "", std::string const& identifer = "", CommandParameterOption parameterOption = (CommandParameterOption)-1)
+            : ParameterData(name, type, (std::string const&)enumOptions, identifer, parameterOption){};
     };
 
-    using CallBackFn = std::function<void(CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, Result>& results)>;
+    using CallBackFn = std::function<void(DynamicCommand const& cmd, CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, Result>& results)>;
     using BuilderFn = std::unique_ptr<Command> (*)();
 
 private:
@@ -327,14 +331,12 @@ private:
             case ParameterType::BlockPos:
             case ParameterType::Vec3:
                 return std::is_same_v<CommandPosition, std::remove_cv_t<_Ty>> || std::is_same_v<CommandPositionFloat, std::remove_cv_t<_Ty>>;
-            case ParameterType::Message:
-                return std::is_same_v<CommandMessage, std::remove_cv_t<_Ty>>;
             case ParameterType::RawText:
                 return std::is_same_v<CommandRawText, std::remove_cv_t<_Ty>> || std::is_same_v<std::string, std::remove_cv_t<_Ty>>;
+            case ParameterType::Message:
+                return std::is_same_v<CommandMessage, std::remove_cv_t<_Ty>>;
             case ParameterType::JsonValue:
                 return std::is_same_v<Json::Value, std::remove_cv_t<_Ty>>;
-            case ParameterType::Command:
-                return std::is_same_v<std::unique_ptr<Command>, std::remove_cv_t<_Ty>>;
             case ParameterType::Item:
                 return std::is_same_v<CommandItem, std::remove_cv_t<_Ty>>;
             case ParameterType::Block:
@@ -347,6 +349,8 @@ private:
                 return std::is_integral_v<_Ty> || std::is_same_v<std::string, std::remove_cv_t<_Ty>> || std::is_enum_v<_Ty>;
             case ParameterType::SoftEnum:
                 return std::is_same_v<std::string, std::remove_cv_t<_Ty>>;
+            case ParameterType::Command:
+                return std::is_same_v<std::unique_ptr<Command>, std::remove_cv_t<_Ty>>;
             default:
                 return false;
                 break;
@@ -381,6 +385,8 @@ public:
     LIAPI static bool updateAvailableCommands();
 
     LIAPI DynamicCommandInstance const* getInstance() const;
+
+    LIAPI static DynamicCommandInstance const* getInstance(std::string const& commandName);
 };
 
 class DynamicCommandInstance
@@ -447,8 +453,8 @@ public:
     LIAPI std::string const& addEnum(std::string const& description, std::vector<std::string> const& values);
     LIAPI std::string const& getEnumValue(int index) const;
     LIAPI ParameterIndex newParameter(DynamicCommand::ParameterData&& data);
-    LIAPI ParameterIndex newParameter(DynamicCommand::ParameterType type, std::string const& name, std::string const& description, std::string const& identifier = "", CommandParameterOption parameterOption = (CommandParameterOption)-1);
-    LIAPI ParameterIndex newParameter(DynamicCommand::ParameterType type, std::string const& name, bool optional = false, std::string const& description = "", std::string const& identifier = "", CommandParameterOption parameterOption = (CommandParameterOption)-1);
+    LIAPI ParameterIndex newParameter(std::string const& name, DynamicCommand::ParameterType type, std::string const& description, std::string const& identifier = "", CommandParameterOption parameterOption = (CommandParameterOption)-1);
+    LIAPI ParameterIndex newParameter(std::string const& name, DynamicCommand::ParameterType type,  bool optional = false, std::string const& description = "", std::string const& identifier = "", CommandParameterOption parameterOption = (CommandParameterOption)-1);
     LIAPI ParameterIndex findParameterIndex(std::string const& param);
     LIAPI bool addOverload(std::vector<ParameterIndex>&& params);
     LIAPI bool addOverload(std::vector<std::string>&& params);
@@ -463,12 +469,12 @@ public:
     {
         return addOverload((std::vector<T>)params);
     }
-    inline std::string const& getCommandName()
+    inline std::string const& getCommandName() const
     {
         return name;
     }
-    inline ParameterIndex newParameter(DynamicCommand::ParameterType type, std::string const& name, const char* description, std::string const& identifier, CommandParameterOption parameterOption = (CommandParameterOption)-1)
+    inline ParameterIndex newParameter(std::string const& name, DynamicCommand::ParameterType type, const char* description, std::string const& identifier, CommandParameterOption parameterOption = (CommandParameterOption)-1)
     {
-        return newParameter(type, name, (std::string const&)description, identifier, parameterOption);
+        return newParameter(name, type, (std::string const&)description, identifier, parameterOption);
     };
 };

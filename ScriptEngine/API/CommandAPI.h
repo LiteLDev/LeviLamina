@@ -16,20 +16,13 @@ class CommandClass : public ScriptClass
     }
 
 public:
+
     CommandClass(std::unique_ptr<DynamicCommandInstance>&& p);
     static Local<Object> newCommand(std::unique_ptr<DynamicCommandInstance>&& p);
-    //name, description, permission, flag
     Local<Value> getName();
-    // string, vector<string>
     Local<Value> addEnum(const Arguments& args);
-    // type, name, optional, description, identifier
-    // type, name, description, identifier
     Local<Value> newParameter(const Arguments& args);
-    // vector<identifier>
-    // vector<int>
     Local<Value> addOverload(const Arguments& args);
-    // function (origin, output, results){}
     Local<Value> setCallback(const Arguments& args);
-
     Local<Value> setup(const Arguments& args);
 };
