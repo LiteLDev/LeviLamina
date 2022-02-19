@@ -8,17 +8,17 @@ class CommandClass : public ScriptClass
 {
     std::unique_ptr<DynamicCommandInstance> uptr;
     DynamicCommandInstance* ptr;
+    bool registered = false;
     inline DynamicCommandInstance* get()
     {
-        if (uptr)
-            return uptr.get();
         return ptr;
     }
 
 public:
-
     CommandClass(std::unique_ptr<DynamicCommandInstance>&& p);
+    CommandClass(DynamicCommandInstance* p);
     static Local<Object> newCommand(std::unique_ptr<DynamicCommandInstance>&& p);
+    static Local<Object> newCommand(DynamicCommandInstance* p);
     Local<Value> getName();
     Local<Value> addEnum(const Arguments& args);
     Local<Value> newParameter(const Arguments& args);

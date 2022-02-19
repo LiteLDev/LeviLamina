@@ -15,7 +15,6 @@
 #include <third-party/magic_enum/magic_enum.hpp>
 #include <MC/CommandUtils.hpp>
 
-
 extern Logger logger;
 
 // global variable and function
@@ -46,7 +45,6 @@ auto const ParameterSizeMap = std::unordered_map<ParameterType, size_t>{
     {ParameterType::Item, std::max((size_t)8, sizeof(CommandItem))},
     {ParameterType::Block, std::max((size_t)8, sizeof(Block const*))},
     {ParameterType::Effect, std::max((size_t)8, sizeof(MobEffect const*))},
-    //{ParameterType::Position, std::max((size_t)8, sizeof(CommandPosition))},
     {ParameterType::Enum, std::max((size_t)8, sizeof(int))},
     {ParameterType::SoftEnum, std::max((size_t)8, sizeof(std::string))},
     {ParameterType::Command, std::max((size_t)8, sizeof(std::unique_ptr<Command>))},
@@ -481,13 +479,12 @@ void DynamicCommand::execute(CommandOrigin const& origin, CommandOutput& output)
     auto iter = dynamicCommandInstances.find(getCommandName());
     if (iter == dynamicCommandInstances.end())
     {
-        logger.error("Dynamic Command Not Found");
-        return;
+        return output.error("Dynamic Command Not Found");
     }
     auto& commandIns = *iter->second;
     if (!commandIns.callback)
     {
-        return;
+        return output.error(fmt::format("Command {} has been removed.", getCommandName()));
     }
     try
     {
@@ -509,6 +506,8 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(std:
 
 bool DynamicCommand::setup(std::unique_ptr<class DynamicCommandInstance> commandInstance)
 {
+    if (!commandInstance)
+        return false;
     if (!commandInstance->callback)
         return false;
     if (commandInstance->overloads.empty())
@@ -734,8 +733,13 @@ inline void DynamicCommandInstance::setCallback(DynamicCommand::CallBackFn&& cal
     this->callback = callback;
 }
 
-inline bool DynamicCommandInstance::setBuilder(DynamicCommand::BuilderFn builder)
+inline void DynamicCommandInstance::removeCallback()
 {
+    callback = nullptr;
+}
+
+inline bool DynamicCommandInstance::setBuilder(DynamicCommand::BuilderFn builder)
+    {
     if (this->builder == nullptr)
         this->builder = builder;
     else

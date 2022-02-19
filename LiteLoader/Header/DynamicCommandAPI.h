@@ -463,6 +463,7 @@ public:
     LIAPI bool setAlias(std::string const& alias);
     LIAPI std::vector<CommandParameterData> buildOverload(std::vector<ParameterIndex> const& overload);
     LIAPI void setCallback(DynamicCommand::CallBackFn&& callback);
+    LIAPI void removeCallback();
 
     template <typename T>
     inline bool addOverload(std::initializer_list<T>&& params)

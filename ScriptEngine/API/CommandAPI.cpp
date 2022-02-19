@@ -23,6 +23,7 @@
 #include <ScriptEngine/API/BaseAPI.h>
 #include <ScriptEngine/API/EntityAPI.h>
 #include <third-party/magic_enum/magic_enum.hpp>
+#include <MC/JsonHelpers.hpp>
 
 
 //////////////////// Class Definition ////////////////////
@@ -36,6 +37,7 @@ ClassDefine<CommandClass> CommandClassBuilder =
         .instanceFunction("newParameter", &CommandClass::newParameter)
         .instanceFunction("addOverload", &CommandClass::addOverload)
         .instanceFunction("setCallback", &CommandClass::setCallback)
+        .instanceFunction("isRegistered", &CommandClass::isRegistered)
         .instanceFunction("setup", &CommandClass::setup)
 
         .build();
@@ -89,7 +91,7 @@ Local<Value> convertResult(DynamicCommand::Result const& result)
         case DynamicCommand::ParameterType::RawText:
             return String::newString(result.getRaw<std::string>());
         case DynamicCommand::ParameterType::JsonValue:
-            return String::newString(result.getRaw<Json::Value>().toStyledString());
+            return String::newString(JsonHelpers::serialize(result.getRaw<Json::Value>()));
         case DynamicCommand::ParameterType::Command:
             return String::newString(result.getRaw<std::unique_ptr<Command>>()->getCommandName());
         case DynamicCommand::ParameterType::Item:
@@ -165,6 +167,13 @@ Local<Value> McClass::createCommand(const Arguments& args)
     try
     {
         auto name = args[0].toStr();
+        auto instance = DynamicCommand::getInstance(name);
+        if (instance) 
+        {
+            logger.warn("Dynamic command {} already exists, changes will not be applied except for setOverload!", name);
+            return CommandClass::newCommand(const_cast<std::add_pointer_t<std::remove_cv_t<std::remove_pointer_t<decltype(instance)>>>>(instance));
+        }
+
         auto desc = args[1].toStr();
         CommandPermissionLevel permission = CommandPermissionLevel::GameMasters;
         CommandFlag flag = {(CommandFlagValue)0x80};
@@ -184,9 +193,16 @@ Local<Value> McClass::createCommand(const Arguments& args)
             }
         }
         auto command = DynamicCommand::createCommand(name, desc, permission, flag);
-        if (!alias.empty())
-            command->setAlias(alias);
-        return CommandClass::newCommand(std::move(command));
+        if (command)
+        {
+            if (!alias.empty())
+                command->setAlias(alias);
+            return CommandClass::newCommand(std::move(command));
+        }
+        else
+        {
+            return Boolean::newBoolean(false);
+        }
     }
     CATCH("Fail in getCommandName!")
 }
@@ -209,11 +225,22 @@ Local<Value> McClass::createCommand(const Arguments& args)
 CommandClass::CommandClass(std::unique_ptr<DynamicCommandInstance>&& p)
     : ScriptClass(ScriptClass::ConstructFromCpp<CommandClass>{})
     , uptr(std::move(p))
-    , ptr(uptr.get()){};
+    , ptr(uptr.get())
+    , registered(false){};
+CommandClass::CommandClass(DynamicCommandInstance* p)
+    : ScriptClass(ScriptClass::ConstructFromCpp<CommandClass>{})
+    , uptr()
+    , ptr(p)
+    , registered(true){};
 
 Local<Object> CommandClass::newCommand(std::unique_ptr<DynamicCommandInstance>&& p)
 {
     auto newp = new CommandClass(std::move(p));
+    return newp->getScriptObject();
+}
+Local<Object> CommandClass::newCommand(DynamicCommandInstance* p)
+{
+    auto newp = new CommandClass(p);
     return newp->getScriptObject();
 }
 
@@ -234,6 +261,8 @@ Local<Value> CommandClass::addEnum(const Arguments& args)
     CHECK_ARG_TYPE(args[1], ValueKind::kArray)
     try
     {
+        if (registered)
+            return Boolean::newBoolean(true); //TODO
         auto enumName = args[0].toStr();
         auto enumArr = args[1].asArray();
         if (enumArr.size() == 0 || !enumArr.get(0).isString())
@@ -256,6 +285,8 @@ Local<Value> CommandClass::newParameter(const Arguments& args)
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     try
     {
+        if (registered)
+            return Boolean::newBoolean(true); //TODO
         auto name = args[0].toStr();
         DynamicCommand::ParameterType type = parseEnum<DynamicCommand::ParameterType>(args[1]);
         std::string description = "";
@@ -285,9 +316,11 @@ Local<Value> CommandClass::addOverload(const Arguments& args)
     CHECK_ARGS_COUNT(args, 1);
     try
     {
+        if (registered)
+            return Boolean::newBoolean(true); //TODO
         auto command = get();
-        if (args[0].isString()) {
-            
+        if (args[0].isString())
+        {
         }
         auto paramArr = args[0].asArray();
         if (paramArr.size() == 0)
@@ -311,6 +344,7 @@ Local<Value> CommandClass::addOverload(const Arguments& args)
             return Boolean::newBoolean(command->addOverload(std::move(params)));
         }
         CHECK_ARG_TYPE(paramArr.get(0), ValueKind::kString);
+        return Boolean::newBoolean(false);
     }
     CATCH("Fail in addOverload!")
 }
@@ -324,7 +358,12 @@ Local<Value> CommandClass::setCallback(const Arguments& args)
     {
         auto func = args[0].asFunction();
         DynamicCommandInstance* command = get();
-        localShareData->commandCallbacks[command->getCommandName()] = {EngineScope::currentEngine(), 0, script::Global<Function>(func)};
+        auto& commandName = command->getCommandName();
+        if (localShareData->commandCallbacks.find(commandName) != localShareData->commandCallbacks.end())
+            localShareData->commandCallbacks.erase(commandName);
+        localShareData->commandCallbacks[commandName] = {EngineScope::currentEngine(), 0, script::Global<Function>(func)};
+        if (registered)
+            return Boolean::newBoolean(true);
         get()->setCallback(
             [](DynamicCommand const& command, CommandOrigin const& origin, CommandOutput& output,
                std::unordered_map<std::string, DynamicCommand::Result>& results) {
@@ -337,7 +376,7 @@ Local<Value> CommandClass::setCallback(const Arguments& args)
                         args.set(name, convertResult(param));
                     localShareData->commandCallbacks[commandName].func.get().call({}, args);
                 }
-                CATCH("Fail in executing command " + commandName + "!")
+                CATCH("Fail in executing command \"" + commandName + "\"!")
             });
         return Boolean::newBoolean(true);
     }
@@ -348,7 +387,14 @@ Local<Value> CommandClass::setup(const Arguments& args)
 {
     try
     {
+        if (registered)
+            return Boolean::newBoolean(true);
         return Boolean::newBoolean(DynamicCommand::setup(std::move(uptr)));
     }
     CATCH("Fail in setup!")
+}
+
+Local<Value> CommandClass::isRegistered(const Arguments& args)
+{
+    return Boolean::newBoolean(registered);
 }
