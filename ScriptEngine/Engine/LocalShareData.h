@@ -47,6 +47,9 @@ struct LocalDataType
 
 	//控制台命令回调
 	std::map<std::string, CmdCallbackData, CmdCallbackMapCmp> consoleCmdCallbacks;
+
+	// 真指令回调
+	std::map<std::string, CmdCallbackData, CmdCallbackMapCmp> commandCallbacks;
 };
 
 

@@ -6,7 +6,8 @@
     </Filter>
     <Filter Include="Main">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+      <Extensions>
+      </Extensions>
     </Filter>
     <Filter Include="Lib">
       <UniqueIdentifier>{3aacf150-55b2-4166-9782-9832fe58a15f}</UniqueIdentifier>
@@ -28,7 +29,7 @@
     <ClCompile Include="API\BlockAPI.cpp">
       <Filter>API</Filter>
     </ClCompile>
-    <ClCompile Include="API\CommandAPI.cpp">
+    <ClCompile Include="API\CommandCompatibleAPI.cpp">
       <Filter>API</Filter>
     </ClCompile>
     <ClCompile Include="API\DataAPI.cpp">
@@ -145,6 +146,9 @@
     <ClCompile Include="PluginManager.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="API\CommandAPI.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API\BaseAPI.h">
@@ -153,7 +157,7 @@
     <ClInclude Include="API\BlockAPI.h">
       <Filter>API</Filter>
     </ClInclude>
-    <ClInclude Include="API\CommandAPI.h">
+    <ClInclude Include="API\CommandCompatibleAPI.h">
       <Filter>API</Filter>
     </ClInclude>
     <ClInclude Include="API\DataAPI.h">
@@ -272,6 +276,9 @@
     </ClInclude>
     <ClInclude Include="PluginManager.h">
       <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="API\CommandAPI.h">
+      <Filter>API</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

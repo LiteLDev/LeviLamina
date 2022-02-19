@@ -1,7 +1,10 @@
+#include "DynamicCommandAPI.h"
 #include "CommandAPI.h"
 #include "APIHelp.h"
 #include "McAPI.h"
+#include "ItemAPI.h"
 #include "PlayerAPI.h"
+#include "BlockAPI.h"
 #include <Tools/Utils.h>
 #include <Engine/GlobalShareData.h>
 #include <Engine/LocalShareData.h>
@@ -14,25 +17,37 @@
 #include <Configs.h>
 #include <vector>
 #include <string>
-using namespace std;
+#include <MC/ItemInstance.hpp>
+#include <MC/ItemStack.hpp>
+#include <MC/Dimension.hpp>
+#include <ScriptEngine/API/BaseAPI.h>
+#include <ScriptEngine/API/EntityAPI.h>
 
-//////////////////// Helper ////////////////////
 
-bool RegisterCmd(const string& cmd, const string& describe, int cmdLevel)
-{
-    ::Global<CommandRegistry>->registerCommand(cmd, describe.c_str(), (CommandPermissionLevel)cmdLevel, { (CommandFlagValue)0 },
-        { (CommandFlagValue)0x80 });
-    return true;
-}
+//////////////////// Class Definition ////////////////////
 
-//////////////////// APIs ////////////////////
+ClassDefine<CommandClass> CommandClassBuilder =
+    defineClass<CommandClass>("LLSE_Command")
+        .constructor(nullptr)
+        .instanceProperty("name", &CommandClass::getName)
+
+        .instanceFunction("addEnum", &CommandClass::addEnum)
+        .instanceFunction("newParameter", &CommandClass::newParameter)
+        .instanceFunction("addOverload", &CommandClass::addOverload)
+        .instanceFunction("setCallback", &CommandClass::setCallback)
+        .instanceFunction("setup", &CommandClass::setup)
+
+        .build();
+
+//////////////////// MC APIs ////////////////////
 
 Local<Value> McClass::runcmd(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 1)
     CHECK_ARG_TYPE(args[0], ValueKind::kString)
 
-    try {
+    try
+    {
         return Boolean::newBoolean(Level::executeCommand(args[0].asString().toString()));
     }
     CATCH("Fail in RunCmd!")
@@ -43,7 +58,8 @@ Local<Value> McClass::runcmdEx(const Arguments& args)
     CHECK_ARGS_COUNT(args, 1)
     CHECK_ARG_TYPE(args[0], ValueKind::kString)
 
-    try {
+    try
+    {
         std::pair<bool, string> result = Level::executeCommandEx(args[0].asString().toString());
         Local<Object> resObj = Object::newObject();
         resObj.set("success", result.first);
@@ -53,274 +69,261 @@ Local<Value> McClass::runcmdEx(const Arguments& args)
     CATCH("Fail in RunCmdEx!")
 }
 
-
-// Helper
-void LxlRegisterNewCmd(bool isPlayerCmd, string cmd, const string& describe, int level, Local<Function> func)
+//name, description, permission, flag, alias
+Local<Value> McClass::createCommand(const Arguments& args)
 {
-    if (cmd[0] == '/')
-        cmd = cmd.erase(0, 1);
-
-    if (isPlayerCmd)
-    {
-        localShareData->playerCmdCallbacks[cmd] = { EngineScope::currentEngine(),level,script::Global<Function>(func) };
-        globalShareData->playerRegisteredCmd[cmd] = LLSE_BACKEND_TYPE;
-    }
-    else
-    {
-        localShareData->consoleCmdCallbacks[cmd] = { EngineScope::currentEngine(),level,script::Global<Function>(func) };
-        globalShareData->consoleRegisteredCmd[cmd] = LLSE_BACKEND_TYPE;
-    }
-
-    //延迟注册
-    if (isCmdRegisterEnabled)
-        RegisterCmd(cmd, describe, level);
-    else
-        toRegCmdQueue.push_back({ cmd, describe, level });
-}
-
-bool LxlRemoveCmdRegister(ScriptEngine* engine)
-{
-    erase_if(localShareData->playerCmdCallbacks, [&engine](auto& data) {
-        return data.second.fromEngine == engine;
-    });
-    erase_if(localShareData->consoleCmdCallbacks, [&engine](auto& data) {
-        return data.second.fromEngine == engine;
-    });
-    return true;
-}
-// Helper
-
-Local<Value> McClass::regPlayerCmd(const Arguments& args)
-{
-    CHECK_ARGS_COUNT(args, 3);
+    CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     CHECK_ARG_TYPE(args[1], ValueKind::kString);
-    CHECK_ARG_TYPE(args[2], ValueKind::kFunction);
-    if (args.size() >= 4)
-        CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
 
-    try {
-        string cmd = args[0].asString().toString();
-        string describe = args[1].asString().toString();
-        int level = 0;
-
-        if (args.size() >= 4)
+    try
+    {
+        auto name = args[0].toStr();
+        auto desc = args[1].toStr();
+        CommandPermissionLevel permission = CommandPermissionLevel::GameMasters;
+        CommandFlag flag = {(CommandFlagValue)0x80};
+        std::string alias = "";
+        if (args.size() > 2)
         {
-            int newLevel = args[3].asNumber().toInt32();
-            if (newLevel >= 0 && newLevel <= 3)
-                level = newLevel;
+            CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+            permission = (CommandPermissionLevel)args[2].toInt();
+            if (args.size() > 3)
+            {
+                CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
+                flag = {(CommandFlagValue)args[3].toInt()};
+                if (args.size() > 4)
+                {
+                    CHECK_ARG_TYPE(args[4], ValueKind::kString);
+                    alias = args[4].toStr();
+                }
+            }
         }
-
-        LxlRegisterNewCmd(true, cmd, describe, level, args[2].asFunction());
-        return Boolean::newBoolean(true);
+        auto command = DynamicCommand::createCommand(name, desc, permission, flag);
+        if (!alias.empty())
+            command->setAlias(alias);
+        return CommandClass::newCommand(std::move(command));
     }
-    CATCH("Fail in RegisterPlayerCmd!");
+    CATCH("Fail in getCommandName!")
 }
 
-Local<Value> McClass::regConsoleCmd(const Arguments& args)
+//////////////////// Helper ////////////////////
+
+Local<Value> convertResult(DynamicCommand::Result const& result)
 {
-    CHECK_ARGS_COUNT(args, 3);
-    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    if (!result.isSet)
+        return Local<Value>(); //null 
+    switch (result.type)
+    {
+        case DynamicCommand::ParameterType::Bool:
+            return Boolean::newBoolean(result.getRaw<bool>());
+        case DynamicCommand::ParameterType::Int:
+            return Number::newNumber(result.getRaw<int>());
+        case DynamicCommand::ParameterType::Float:
+            return Number::newNumber(result.getRaw<float>());
+        case DynamicCommand::ParameterType::String:
+            return String::newString(result.getRaw<std::string>());
+        case DynamicCommand::ParameterType::Actor:
+        {
+            auto arr = Array::newArray();
+            for (auto i : result.get<std::vector<Actor*>>())
+            {
+                arr.add(EntityClass::newEntity(i));
+            }
+            return arr;
+        }
+        case DynamicCommand::ParameterType::Player:
+        {
+            auto arr = Array::newArray();
+            for (auto i : result.get<std::vector<Player*>>())
+            {
+                arr.add(PlayerClass::newPlayer(i));
+            }
+            return arr;
+        }
+        case DynamicCommand::ParameterType::BlockPos:
+        {
+            auto dim = result.origin->getDimension();
+            return IntPos::newPos(result.get<BlockPos>(), dim ? (int)dim->getDimensionId() : -1);
+        }
+        case DynamicCommand::ParameterType::Vec3:
+        {
+            auto dim = result.origin->getDimension();
+            return FloatPos::newPos(result.get<Vec3>(), dim ? (int)dim->getDimensionId() : -1);
+        }
+        case DynamicCommand::ParameterType::Message:
+            return String::newString(result.getRaw<CommandMessage>().getMessage(*result.origin));
+        case DynamicCommand::ParameterType::RawText:
+            return String::newString(result.getRaw<std::string>());
+        case DynamicCommand::ParameterType::JsonValue:
+            return String::newString(result.getRaw<Json::Value>().toStyledString());
+        case DynamicCommand::ParameterType::Command:
+            return String::newString(result.getRaw<std::unique_ptr<Command>>()->getCommandName());
+        case DynamicCommand::ParameterType::Item:
+            return ItemClass::newItem(new ItemStack(result.getRaw<CommandItem>().createInstance(1,1,nullptr,true).value_or(ItemInstance::EMPTY_ITEM)));
+        case DynamicCommand::ParameterType::Block:
+            return BlockClass::newBlock(const_cast<Block*>(result.getRaw<Block const*>()), const_cast<BlockPos*>(&BlockPos::MIN), -1);
+        case DynamicCommand::ParameterType::Effect:
+            return String::newString(result.getRaw<MobEffect const*>()->getComponentName().getString());
+        case DynamicCommand::ParameterType::Enum:
+            return String::newString(result.getRaw<std::string>());
+        case DynamicCommand::ParameterType::SoftEnum:
+            return String::newString(result.getRaw<std::string>());
+        default:
+            return Local<Value>(); //null 
+            break;
+    }
+}
+
+
+//////////////////// Command APIs ////////////////////
+
+// function (origin, output, results){}
+
+
+// vector<identifier>
+// vector<int>
+
+
+// type, name, optional, description, identifier
+// type, name, description, identifier
+
+
+// string, vector<string>
+
+
+CommandClass::CommandClass(std::unique_ptr<DynamicCommandInstance>&& p)
+    : ScriptClass(ScriptClass::ConstructFromCpp<CommandClass>{})
+    , uptr(std::move(p))
+    , ptr(uptr.get()){};
+
+Local<Object> CommandClass::newCommand(std::unique_ptr<DynamicCommandInstance>&& p)
+{
+    auto newp = new CommandClass(std::move(p));
+    return newp->getScriptObject();
+}
+
+
+Local<Value> CommandClass::getName()
+{
+    try
+    {
+        return String::newString(get()->getCommandName());
+    }
+    CATCH("Fail in getCommandName!")
+}
+
+Local<Value> CommandClass::addEnum(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 2)
+    CHECK_ARG_TYPE(args[0], ValueKind::kString)
+    CHECK_ARG_TYPE(args[1], ValueKind::kArray)
+    try
+    {
+        auto enumName = args[0].toStr();
+        auto enumArr = args[1].asArray();
+        if (enumArr.size() == 0 || !enumArr.get(0).isString())
+            return Local<Value>();
+        vector<string> enumValues;
+        for (int i = 0; i < enumArr.size(); ++i)
+        {
+            enumValues.push_back(enumArr.get(i).toStr());
+        }
+        return Boolean::newBoolean(!get()->addEnum(enumName, std::move(enumValues)).empty());
+    }
+    CATCH("Fail in addEnum!")
+}
+
+Local<Value> CommandClass::newParameter(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
     CHECK_ARG_TYPE(args[1], ValueKind::kString);
-    CHECK_ARG_TYPE(args[2], ValueKind::kFunction);
+    try
+    {
+        auto type = (DynamicCommand::ParameterType)args[0].toInt();
+        auto name = args[1].toStr();
+        std::string description = "";
+        bool optional = false;
+        std::string identifier = "";
+        size_t index = 2;
+        CommandParameterOption option = (CommandParameterOption)-1;
+        if (args.size() > index && args[index].isBoolean())
+            optional = args[index++].asBoolean().value();
+        if (args.size() > index && args[index].isString())
+            description = args[index++].toStr();
+        if (args.size() > index && args[index].isString())
+            identifier = args[index++].toStr();
+        if (args.size() > index && args[index].isNumber())
+            option = (CommandParameterOption)args[index++].toInt();
 
-    try {
-        string cmd = args[0].asString().toString();
-        string describe = args[1].asString().toString();
-
-        LxlRegisterNewCmd(false, cmd, describe, 4, args[2].asFunction());
-        return Boolean::newBoolean(true);
+        return Number::newNumber((int64_t)get()->newParameter(type, name, optional, description, identifier, option).index);
     }
-    CATCH("Fail in RegisterConsoleCmd!");
+    CATCH("Fail in newParameter!")
 }
 
-//Helper
-bool SendCmdOutput(const std::string& output)
-{
-    string finalOutput(output);
-    finalOutput += "\r\n";
-
-    SymCall("??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z",
-        ostream&, ostream&, const char*, unsigned)
-        (cout, finalOutput.c_str(), finalOutput.size());
-    return true;
-}
-//Helper
-
-Local<Value> McClass::sendCmdOutput(const Arguments& args)
+Local<Value> CommandClass::addOverload(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 1);
-    CHECK_ARG_TYPE(args[0], ValueKind::kString);
-
-    try {
-        return Boolean::newBoolean(SendCmdOutput(args[0].toStr()));
-    }
-    CATCH("Fail in SendCmdOutput!");
-}
-
-
-//////////////////// LXL Event Callbacks ////////////////////
-
-void RegisterBuiltinCmds()
-{
-    //调试引擎
-    RegisterCmd(LLSE_DEBUG_CMD, "LXL " + string(LLSE_MODULE_TYPE) + " Engine Real-time Debugging", 4);
-    
-    //热管理
-    RegisterCmd("lxl list", "List current loaded LXL plugins", 4);
-    RegisterCmd("lxl load", "Load a new LXL plugin", 4);
-    RegisterCmd("lxl unload", "Unload an existing LXL plugin", 4);
-    RegisterCmd("lxl reload", "Reload an existing LXL plugin / all LXL plugins", 4);
-    RegisterCmd("lxl version", "Get the version of LiteXLoader", 4);
-
-    logger.info("Builtin Cmds Registered.");
-}
-
-void ProcessRegCmdQueue()
-{
-    for (auto& cmdData : toRegCmdQueue)
+    CHECK_ARG_TYPE(args[0], ValueKind::kArray);
+    try
     {
-        RegisterCmd(cmdData.cmd, cmdData.describe, cmdData.level);
-    }
-    toRegCmdQueue.clear();
-}
-
-bool ProcessDebugEngine(const string& cmd)
-{
-#define OUTPUT_DEBUG_SIGN() std::cout << "> " << std::flush
-    extern bool globalDebug;
-    extern ScriptEngine *debugEngine;
-
-    if (cmd == LLSE_DEBUG_CMD)
-    {
-        if (globalDebug)
+        auto command = get();
+        auto paramArr = args[0].asArray();
+        if (paramArr.size() == 0)
+            return Local<Value>();
+        if (paramArr.get(0).isString())
         {
-            //EndDebug
-            logger.info("Debug mode ended");
-            globalDebug = false;
+            std::vector<std::string> params;
+            for (int i = 0; i < paramArr.size(); ++i)
+            {
+                params.push_back(paramArr.get(i).toStr());
+            }
+            return Boolean::newBoolean(command->addOverload(std::move(params)));
+        }
+        else if (paramArr.get(0).isNumber())
+        {
+            std::vector<DynamicCommandInstance::ParameterIndex> params;
+            for (int i = 0; i < paramArr.size(); ++i)
+            {
+                params.push_back({command, (size_t)paramArr.get(i).asNumber().toInt64()});
+            }
+            return Boolean::newBoolean(command->addOverload(std::move(params)));
         }
         else
         {
-            //StartDebug
-            logger.info("Debug mode begins");
-            globalDebug = true;
-            OUTPUT_DEBUG_SIGN();
+            throw std::runtime_error("");
         }
-        return false;
     }
-    if (globalDebug)
-    {
-        EngineScope enter(debugEngine);
-        try
-        {
-            if (cmd == "stop")
-            {
-                return true;
-            }
-            else
-            {
-                auto result = debugEngine->eval(cmd);
-                PrintValue(std::cout, result);
-                cout << endl;
-                OUTPUT_DEBUG_SIGN();
-            }
-        }
-        catch (Exception& e)
-        {
-            PrintException(e);
-            OUTPUT_DEBUG_SIGN();
-        }
-        return false;
-    }
-    return true;
+    CATCH("Fail in addOverload!")
 }
 
-string LxlFindCmdReg(bool isPlayerCmd, const string& cmd, vector<string>& receiveParas, bool *fromOtherEngine)
+Local<Value> CommandClass::setCallback(const Arguments& args)
 {
-    std::unordered_map<std::string, std::string>& registeredMap =
-        isPlayerCmd ? globalShareData->playerRegisteredCmd : globalShareData->consoleRegisteredCmd;
-    for (auto& [prefix,fromEngine] : registeredMap)
-    {
-        if (cmd == prefix || (cmd.find(prefix) == 0 && cmd[prefix.size()] == ' '))
-            //如果命令与注册前缀全匹配，或者目标前缀后面为空格
-        {
-            //Matched
-            if (fromEngine != LLSE_BACKEND_TYPE)
-            {
-                *fromOtherEngine = true;
-                return string();
-            }
-        }
-    }
-
-    std::map<std::string, CmdCallbackData, CmdCallbackMapCmp>& cmdMap =
-        isPlayerCmd ? localShareData->playerCmdCallbacks : localShareData->consoleCmdCallbacks;
-
-    for (auto& cmdData : cmdMap)
-    {
-        string prefix = cmdData.first;
-        if (cmd == prefix || (cmd.find(prefix) == 0 && cmd[prefix.size()] == ' '))
-            //如果命令与注册前缀全匹配，或者目标前缀后面为空格
-        {
-            //Matched
-            if (cmd.size() > prefix.size())
-            {
-                //除了注册前缀之外还有额外参数
-                receiveParas = SplitCmdLine(cmd.substr(prefix.size() + 1));
-            }
-            else
-                receiveParas = vector<string>();
-
-            return prefix;
-        }
-    }
-    return string();
-}
-
-bool CallPlayerCmdCallback(Player* player, const string& cmdPrefix, const vector<string> &paras)
-{
-    EngineScope enter(localShareData->playerCmdCallbacks[cmdPrefix].fromEngine);
-    auto cmdData = localShareData->playerCmdCallbacks[cmdPrefix];
-    Local<Value> res{};
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kFunction);
     try
     {
-        Local<Array> args = Array::newArray();
-        for (auto& para : paras)
-            args.add(String::newString(para));
-        res = cmdData.func.get().call({}, PlayerClass::newPlayer(player), args);
+        auto func = args[0].asFunction();
+        std::string commandName = get()->getCommandName();
+        DynamicCommandInstance* command;
+        localShareData->commandCallbacks[commandName] = {EngineScope::currentEngine(), 0, script::Global<Function>(func)};
+        get()->setCallback(
+            [commandName, command](CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, DynamicCommand::Result>& results) {
+                Local<Array> args = Array::newArray();
+                for (auto& [name, ptr] : command->parameterPtrs)
+                    args.add(convertResult(results.at(name)));
+                localShareData->commandCallbacks[commandName].func.get().call({}, args);
+            });
+        return Boolean::newBoolean(true);
     }
-    catch (const Exception& e)
-    {
-        logger.error("PlayerCmd Callback Failed!");
-        logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-        logger.error << e << logger.endl;
-    }
-    if (res.isNull() || (res.isBoolean() && res.asBoolean().value() == false))
-        return false;
-
-    return true;
+    CATCH("Fail in setCallback!")
 }
 
-bool CallServerCmdCallback(const string& cmdPrefix, const vector<string>& paras)
+Local<Value> CommandClass::setup(const Arguments& args)
 {
-    EngineScope enter(localShareData->consoleCmdCallbacks[cmdPrefix].fromEngine);
-    auto cmdData = localShareData->consoleCmdCallbacks[cmdPrefix];
-    Local<Value> res{};
     try
     {
-        Local<Array> args = Array::newArray();
-        for (auto& para : paras)
-            args.add(String::newString(para));
-        res = cmdData.func.get().call({}, args);
+        return Boolean::newBoolean(DynamicCommand::setup(std::move(uptr)));
     }
-    catch (const Exception& e)
-    {
-        logger.error("ServerCmd Callback Failed!");
-        logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-        logger.error << e << logger.endl;
-    }
-    if (res.isNull() || (res.isBoolean() && res.asBoolean().value() == false))
-        return false;
-
-    return true;
+    CATCH("Fail in setup!")
 }

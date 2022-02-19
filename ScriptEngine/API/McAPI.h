@@ -10,6 +10,7 @@ public:
 
     static Local<Value> runcmd(const Arguments& args);
     static Local<Value> runcmdEx(const Arguments& args);
+    static Local<Value> createCommand(const Arguments& args);
     static Local<Value> regPlayerCmd(const Arguments& args);
     static Local<Value> broadcast(const Arguments& args);
 

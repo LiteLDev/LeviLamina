@@ -1,29 +1,35 @@
 #pragma once
-#include "APIHelp.h"
-#include <string>
-#include <vector>
+#include "CommandCompatibleAPI.h"
+#include <DynamicCommandAPI.h>
+class CommandClass;
+extern ClassDefine<CommandClass> CommandClassBuilder;
 
-//////////////////// LXL Event Callbacks ////////////////////
+class CommandClass : public ScriptClass
+{
+    std::unique_ptr<DynamicCommandInstance> uptr;
+    DynamicCommandInstance* ptr;
+    inline DynamicCommandInstance* get()
+    {
+        if (uptr)
+            return uptr.get();
+        return ptr;
+    }
 
-class Player;
-//helper
-std::vector<std::string> SplitCmdLine(const std::string& paras);
+public:
+    CommandClass(std::unique_ptr<DynamicCommandInstance>&& p);
+    static Local<Object> newCommand(std::unique_ptr<DynamicCommandInstance>&& p);
+    //name, description, permission, flag
+    Local<Value> getName();
+    // string, vector<string>
+    Local<Value> addEnum(const Arguments& args);
+    // type, name, optional, description, identifier
+    // type, name, description, identifier
+    Local<Value> newParameter(const Arguments& args);
+    // vector<identifier>
+    // vector<int>
+    Local<Value> addOverload(const Arguments& args);
+    // function (origin, output, results){}
+    Local<Value> setCallback(const Arguments& args);
 
-// 注册LXL内置命令
-void RegisterBuiltinCmds();
-// 命令回调查询
-std::string LxlFindCmdReg(bool isPlayerCmd, const std::string& cmd, std::vector<std::string>& receiveParas, bool* fromOtherEngine);
-// 删除指定引擎的所有命令
-bool LxlRemoveCmdRegister(script::ScriptEngine* engine);
-
-// 处理命令延迟注册
-void ProcessRegCmdQueue();
-// 处理调试引擎事件
-bool ProcessDebugEngine(const std::string& cmd);
-// 处理热管理系统
-bool ProcessHotManageCmd(std::string& cmd);
-
-// 玩家自定义命令注册回调
-bool CallPlayerCmdCallback(Player* player, const std::string& cmdPrefix, const std::vector<std::string>& paras);
-// 控制台自定义命令注册回调
-bool CallServerCmdCallback(const std::string& cmdPrefix, const std::vector<std::string>& paras);
+    Local<Value> setup(const Arguments& args);
+};

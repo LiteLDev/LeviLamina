@@ -158,7 +158,7 @@ public:
         {
             if (checkTempateType<T>(type))
                 return dAccess<T>(command, offset);
-            return T();
+            throw std::runtime_error("Unsupported Result Type");
         }
 
         template <typename T>
@@ -185,7 +185,7 @@ public:
         inline std::vector<Actor*> get<std::vector<Actor*>>() const
         {
             if (type == ParameterType::Player)
-                return *(std::vector<Actor*>*)&get<std::vector<Player*>>();
+                return (std::vector<Actor*>&)get<std::vector<Player*>>();
             std::vector<Actor*> rtn;
             for (auto& result : getRaw<CommandSelector<Actor>>().results(*origin))
             {
@@ -231,12 +231,6 @@ public:
         LIAPI bool isValueSet(DynamicCommand const* command) const;
         LIAPI Result getResult(DynamicCommand const* command, CommandOrigin const* origin) const;
 
-        template <typename T>
-        inline T const& getValue(DynamicCommand const* command) const
-        {
-            checkTempateType<T>(type);
-            return *(T*)getValuePrt(command);
-        }
         inline size_t getOffset() const
         {
             return offset;
@@ -283,7 +277,7 @@ public:
                 description == "" ? nullptr : description.data(),
                 (int)offset,
                 optional,
-                (int)offset + (int)ParameterSizeMap.at(type)};
+                (int)offset + std::max(8, (int)sizeof(T))};
             if ((int)option != -1)
                 param.addOptions(option);
             return std::move(param);
@@ -319,40 +313,40 @@ private:
         switch (type)
         {
             case ParameterType::Bool:
-                return std::is_same_v<ParameterDataType::Bool, std::remove_cv_t<_Ty>>;
+                return std::is_same_v<bool, std::remove_cv_t<_Ty>>;
             case ParameterType::Int:
-                return std::is_same_v<ParameterDataType::Int, std::remove_cv_t<_Ty>>;
+                return std::is_same_v<int, std::remove_cv_t<_Ty>>;
             case ParameterType::Float:
-                return std::is_same_v<ParameterDataType::Float, std::remove_cv_t<_Ty>>;
+                return std::is_same_v<float, std::remove_cv_t<_Ty>>;
             case ParameterType::String:
-                return std::is_same_v<ParameterDataType::String, std::remove_cv_t<_Ty>>;
+                return std::is_same_v<std::string, std::remove_cv_t<_Ty>>;
             case ParameterType::Actor:
-                return std::is_same_v<ParameterDataType::Actor, std::remove_cv_t<_Ty>>;
+                return std::is_same_v<CommandSelector<Actor>, std::remove_cv_t<_Ty>>;
             case ParameterType::Player:
-                return std::is_same_v<ParameterDataType::Player, std::remove_cv_t<_Ty>>;
+                return std::is_same_v<CommandSelector<Player>, std::remove_cv_t<_Ty>>;
             case ParameterType::BlockPos:
             case ParameterType::Vec3:
-                return std::is_same_v<ParameterDataType::BlockPos, std::remove_cv_t<_Ty>> || std::is_same_v<ParameterDataType::Vec3, std::remove_cv_t<_Ty>>;
+                return std::is_same_v<CommandPosition, std::remove_cv_t<_Ty>> || std::is_same_v<CommandPositionFloat, std::remove_cv_t<_Ty>>;
             case ParameterType::Message:
-                return std::is_same_v<ParameterDataType::Message, std::remove_cv_t<_Ty>>;
+                return std::is_same_v<CommandMessage, std::remove_cv_t<_Ty>>;
             case ParameterType::RawText:
-                return std::is_same_v<ParameterDataType::RawText, std::remove_cv_t<_Ty>> || std::is_same_v<std::string, std::remove_cv_t<_Ty>>;
+                return std::is_same_v<CommandRawText, std::remove_cv_t<_Ty>> || std::is_same_v<std::string, std::remove_cv_t<_Ty>>;
             case ParameterType::JsonValue:
-                return std::is_same_v<ParameterDataType::JsonValue, std::remove_cv_t<_Ty>>;
+                return std::is_same_v<Json::Value, std::remove_cv_t<_Ty>>;
             case ParameterType::Command:
-                return std::is_same_v<ParameterDataType::Command, std::remove_cv_t<_Ty>>;
+                return std::is_same_v<std::unique_ptr<Command>, std::remove_cv_t<_Ty>>;
             case ParameterType::Item:
-                return std::is_same_v<ParameterDataType::Item, std::remove_cv_t<_Ty>>;
+                return std::is_same_v<CommandItem, std::remove_cv_t<_Ty>>;
             case ParameterType::Block:
-                return std::is_same_v<ParameterDataType::Block, std::remove_cv_t<_Ty>>;
+                return std::is_same_v<Block const*, std::remove_cv_t<_Ty>>;
             case ParameterType::Effect:
-                return std::is_same_v<ParameterDataType::Effect, std::remove_cv_t<_Ty>>;
+                return std::is_same_v<MobEffect const*, std::remove_cv_t<_Ty>>;
             //case ParameterType::Position:
             //    return std::is_same_v<ParameterDataType::Position, std::remove_cv_t<_Ty>> || std::is_same_v<BlockPos, std::remove_cv_t<_Ty>> || std::is_same_v<Vec3, std::remove_cv_t<_Ty>>;
             case ParameterType::Enum:
                 return std::is_integral_v<_Ty> || std::is_same_v<std::string, std::remove_cv_t<_Ty>> || std::is_enum_v<_Ty>;
             case ParameterType::SoftEnum:
-                return std::is_same_v<ParameterDataType::SoftEnum, std::remove_cv_t<_Ty>>;
+                return std::is_same_v<std::string, std::remove_cv_t<_Ty>>;
             default:
                 return false;
                 break;
@@ -370,7 +364,7 @@ public:
     /*0*/ virtual ~DynamicCommand();
     /*1*/ virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    LIAPI static struct std::unique_ptr<class DynamicCommandInstance> createCommand(std::string const& name, std::string const& description, CommandPermissionLevel permission = CommandPermissionLevel::Any, CommandFlag flag1 = {(CommandFlagValue)0x80}, CommandFlag flag2 = {(CommandFlagValue)0}, HMODULE handler = GetCurrentModule());
+    LIAPI static std::unique_ptr<class DynamicCommandInstance> createCommand(std::string const& name, std::string const& description, CommandPermissionLevel permission = CommandPermissionLevel::Any, CommandFlag flag1 = {(CommandFlagValue)0x80}, CommandFlag flag2 = {(CommandFlagValue)0}, HMODULE handler = GetCurrentModule());
     LIAPI static bool setup(std::unique_ptr<class DynamicCommandInstance> commandInstance);
     LIAPI static bool setup(
         std::string const& name,
@@ -422,7 +416,7 @@ private:
     CommandFlag flag;
     DynamicCommand::BuilderFn builder = nullptr;
 
-
+    public:
     // Parameter Pointers to DynamicCommand Extra Part
     std::unordered_map<std::string, DynamicCommand::ParameterPtr> parameterPtrs = {};
     size_t commandSize = sizeof(DynamicCommand);
