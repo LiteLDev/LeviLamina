@@ -5,6 +5,8 @@
 #include "ItemAPI.h"
 #include "PlayerAPI.h"
 #include "BlockAPI.h"
+#include "CommandOriginAPI.h"
+#include "CommandOutputAPI.h"
 #include <Tools/Utils.h>
 #include <Engine/GlobalShareData.h>
 #include <Engine/LocalShareData.h>
@@ -209,24 +211,12 @@ Local<Value> McClass::createCommand(const Arguments& args)
 
 //////////////////// Command APIs ////////////////////
 
-// function (origin, output, results){}
-
-
-// vector<identifier>
-// vector<int>
-
-
-// type, name, optional, description, identifier
-// type, name, description, identifier
-
-
-// string, vector<string>
-
 CommandClass::CommandClass(std::unique_ptr<DynamicCommandInstance>&& p)
     : ScriptClass(ScriptClass::ConstructFromCpp<CommandClass>{})
     , uptr(std::move(p))
     , ptr(uptr.get())
     , registered(false){};
+
 CommandClass::CommandClass(DynamicCommandInstance* p)
     : ScriptClass(ScriptClass::ConstructFromCpp<CommandClass>{})
     , uptr()
@@ -238,6 +228,7 @@ Local<Object> CommandClass::newCommand(std::unique_ptr<DynamicCommandInstance>&&
     auto newp = new CommandClass(std::move(p));
     return newp->getScriptObject();
 }
+
 Local<Object> CommandClass::newCommand(DynamicCommandInstance* p)
 {
     auto newp = new CommandClass(p);
@@ -277,8 +268,10 @@ Local<Value> CommandClass::addEnum(const Arguments& args)
     CATCH("Fail in addEnum!")
 }
 
-// name, type, optional, description, identifier
-// name, type, description, identifier
+// name, type, optional, description, identifier, option
+// name, type, description, identifier, option
+// name, type, optional, description, option
+// name, type, description, option
 Local<Value> CommandClass::newParameter(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 2);
@@ -310,7 +303,7 @@ Local<Value> CommandClass::newParameter(const Arguments& args)
 }
 
 // vector<identifier>
-// vector<int>
+// vector<index>
 Local<Value> CommandClass::addOverload(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 1);
@@ -349,7 +342,7 @@ Local<Value> CommandClass::addOverload(const Arguments& args)
     CATCH("Fail in addOverload!")
 }
 
-// function (origin, output, results){}
+// function (command, origin, output, results){}
 Local<Value> CommandClass::setCallback(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 1);
@@ -374,8 +367,8 @@ Local<Value> CommandClass::setCallback(const Arguments& args)
                 {
                     Local<Object> args = Object::newObject();
                     auto cmd = CommandClass::newCommand(const_cast<DynamicCommandInstance*>(instance));
-                    auto ori = Local<Value>();
-                    auto outp = Local<Value>();
+                    auto ori = CommandOriginClass::newCommandOrigin(&origin);
+                    auto outp = CommandOutputClass::newCommandOutput(&output);
                     for (auto& [name, param] : results)
                         args.set(name, convertResult(param));
                     localShareData->commandCallbacks[commandName].func.get().call({}, cmd, ori, outp, args);
@@ -401,4 +394,13 @@ Local<Value> CommandClass::setup(const Arguments& args)
 Local<Value> CommandClass::isRegistered(const Arguments& args)
 {
     return Boolean::newBoolean(registered);
+}
+
+Local<Value> CommandClass::toString(const Arguments& args)
+{
+    try
+    {
+        return String::newString(fmt::format("<Command({})>",get()->getCommandName()));
+    }
+    CATCH("Fail in toString!");
 }

@@ -149,6 +149,12 @@
     <ClCompile Include="API\CommandAPI.cpp">
       <Filter>API</Filter>
     </ClCompile>
+    <ClCompile Include="API\CommandOriginAPI.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\CommandOutputAPI.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API\BaseAPI.h">
@@ -278,6 +284,12 @@
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="API\CommandAPI.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\CommandOriginAPI.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\CommandOutputAPI.h">
       <Filter>API</Filter>
     </ClInclude>
   </ItemGroup>

@@ -35,12 +35,17 @@ enum class OriginType : char {
     Test = 4,
     AutomationPlayer = 5,
     ClientAutomation = 6,
-    DedicatedServer = 7,
+    Server = 7,
     Actor = 8,
     Virtual = 9,
     GameArgument = 10,
     ActorServer = 11,
+    Precompiled = 12,
+    GameDirectorEntity = 13,
+    Script = 14,
     ExecuteContext = 15,
+
+    DedicatedServer = 7,//Server
 };
 
 struct CommandFlag {

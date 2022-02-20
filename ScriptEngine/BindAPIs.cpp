@@ -3,6 +3,8 @@
 #include <API/BlockAPI.h>
 #include <API/BlockEntityAPI.h>
 #include <API/CommandAPI.h>
+#include <API/CommandOriginAPI.h>
+#include <API/CommandOutputAPI.h>
 #include <API/DeviceAPI.h>
 #include <API/DataAPI.h>
 #include <API/ItemAPI.h>
@@ -82,4 +84,6 @@ void BindAPIs(ScriptEngine *engine)
     engine->registerNativeClass<NbtListClass>(NbtListClassBuilder);
     engine->registerNativeClass<NbtCompoundClass>(NbtCompoundClassBuilder);
     engine->registerNativeClass<CommandClass>(CommandClassBuilder);
+    engine->registerNativeClass<CommandOriginClass>(CommandOriginClassBuilder);
+    engine->registerNativeClass<CommandOutputClass>(CommandOutputClassBuilder);
 }

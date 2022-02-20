@@ -26,4 +26,5 @@ public:
     Local<Value> setCallback(const Arguments& args);
     Local<Value> setup(const Arguments& args);
     Local<Value> isRegistered(const Arguments& args);
+    Local<Value> toString(const Arguments& args);
 };

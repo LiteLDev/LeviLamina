@@ -1,0 +1,113 @@
+#include "CommandOriginAPI.h"
+#include "NbtAPI.h"
+#include "EntityAPI.h"
+#include "APIHelp.h"
+#include "BaseAPI.h"
+#include "BlockAPI.h"
+#include "EntityAPI.h"
+#include "ItemAPI.h"
+#include "PlayerAPI.h"
+#include "McAPI.h"
+#include "ContainerAPI.h"
+#include "NbtAPI.h"
+#include <MC/Actor.hpp>
+#include <MC/Level.hpp>
+#include <MC/ItemActor.hpp>
+#include <MC/SimpleContainer.hpp>
+#include <MC/CompoundTag.hpp>
+#include <MC/Mob.hpp>
+#include <MC/Dimension.hpp>
+#include <third-party/magic_enum/magic_enum.hpp>
+
+//////////////////// Class Definition ////////////////////
+
+ClassDefine<CommandOriginClass> CommandOriginClassBuilder =
+    defineClass<CommandOriginClass>("LLSE_CommandOrigin")
+        .constructor(nullptr)
+        .instanceProperty("type", &CommandOriginClass::getOriginType)
+        .instanceProperty("name", &CommandOriginClass::getOriginName)
+        .instanceProperty("pos", &CommandOriginClass::getPosition)
+        .instanceProperty("blockPos", &CommandOriginClass::getBlockPosition)
+        .instanceProperty("entity", &CommandOriginClass::getEntity)
+
+        .instanceFunction("getNbt", &CommandOriginClass::getNbt)
+        .instanceFunction("toString", &CommandOriginClass::toString)
+
+        .build();
+
+//////////////////// APIs ////////////////////
+
+CommandOriginClass::CommandOriginClass(CommandOrigin const* p)
+    : ScriptClass(ScriptClass::ConstructFromCpp<CommandOriginClass>{})
+    , ptr(p){};
+
+Local<Object> CommandOriginClass::newCommandOrigin(CommandOrigin const* p)
+{
+    auto newp = new CommandOriginClass(p);
+    return newp->getScriptObject();
+}
+
+Local<Value> CommandOriginClass::getOriginType()
+{
+    try
+    {
+        return String::newString(magic_enum::enum_name((OriginType)get()->getOriginType()));
+    }
+    CATCH("Fail in getOriginType!");
+}
+
+Local<Value> CommandOriginClass::getOriginName()
+{
+    try
+    {
+        return String::newString(get()->getName());
+    }
+    CATCH("Fail in getOriginName!");
+}
+
+Local<Value> CommandOriginClass::getBlockPosition()
+{
+    try
+    {
+        auto dim = get()->getDimension();
+        return IntPos::newPos(get()->getBlockPosition(), dim ? (int)dim->getDimensionId() : 0);
+    }
+    CATCH("Fail in getBlockPosition!");
+}
+
+Local<Value> CommandOriginClass::getPosition()
+{
+    try
+    {
+        auto dim = get()->getDimension();
+        return FloatPos::newPos(get()->getWorldPosition(), dim ? (int)dim->getDimensionId() : 0);
+    }
+    CATCH("Fail in getPosition!");
+}
+
+Local<Value> CommandOriginClass::getEntity()
+{
+    try
+    {
+        return EntityClass::newEntity(get()->getEntity());
+    }
+    CATCH("Fail in getEntity!");
+}
+
+Local<Value> CommandOriginClass::getNbt(const Arguments& args)
+{
+    try
+    {
+        return NbtCompoundClass::pack(std::make_unique<CompoundTag>(get()->serialize()));
+    }
+    CATCH("Fail in getNbt!");
+}
+
+Local<Value> CommandOriginClass::toString()
+{
+    try
+    {
+        return String::newString("<CommandOrigin>");
+    }
+    CATCH("Fail in toString!");
+}

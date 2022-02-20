@@ -27,6 +27,7 @@ public:
     void setY(const Local<Value>& value) { y = value.asNumber().toInt64(); }
     void setZ(const Local<Value>& value) { z = value.asNumber().toInt64(); }
     void setDimId(const Local<Value>& value) { dim = value.asNumber().toInt32(); }
+    Local<Value> toString();
 };
 extern ClassDefine<IntPos> IntPosBuilder;
 
@@ -46,6 +47,9 @@ public:
     Local<Value> getZ() { return Number::newNumber(z); }
     Local<Value> getDim();
     Local<Value> getDimId() { return Number::newNumber(dim); }
+    Local<Value> toString();
+
+
     void setX(const Local<Value>& value) { x = value.asNumber().toInt64(); }
     void setY(const Local<Value>& value) { y = value.asNumber().toInt64(); }
     void setZ(const Local<Value>& value) { z = value.asNumber().toInt64(); }
@@ -66,6 +70,7 @@ public:
     Local<Value> getYaw() { return Number::newNumber(yaw); }
     void setPitch(const Local<Value>& value) { pitch = value.asNumber().toDouble(); }
     void setYaw(const Local<Value>& value) { yaw = value.asNumber().toDouble(); }
+    Local<Value> toString();
 
     Local<Value> toFacing();
 
