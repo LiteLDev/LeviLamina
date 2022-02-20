@@ -369,8 +369,7 @@ public:
     /*1*/ virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     LIAPI static std::unique_ptr<class DynamicCommandInstance> createCommand(std::string const& name, std::string const& description, CommandPermissionLevel permission = CommandPermissionLevel::Any, CommandFlag flag1 = {(CommandFlagValue)0x80}, CommandFlag flag2 = {(CommandFlagValue)0}, HMODULE handler = GetCurrentModule());
-    LIAPI static bool setup(std::unique_ptr<class DynamicCommandInstance> commandInstance);
-    LIAPI static bool setup(
+    LIAPI static std::unique_ptr<class DynamicCommandInstance> createCommand(
         std::string const& name,
         std::string const& description,
         std::unordered_map<std::string, std::vector<std::string>>&& enums,
@@ -381,6 +380,22 @@ public:
         CommandFlag flag1 = {(CommandFlagValue)0x80},
         CommandFlag flag2 = {(CommandFlagValue)0},
         HMODULE handler = GetCurrentModule());
+
+    LIAPI static DynamicCommandInstance const* setup(std::unique_ptr<class DynamicCommandInstance> commandInstance);
+    inline static DynamicCommandInstance const* setup(
+        std::string const& name,
+        std::string const& description,
+        std::unordered_map<std::string, std::vector<std::string>>&& enums,
+        std::vector<ParameterData>&& params,
+        std::vector<std::vector<std::string>>&& overloads,
+        CallBackFn callback,
+        CommandPermissionLevel permission = CommandPermissionLevel::Any,
+        CommandFlag flag1 = {(CommandFlagValue)0x80},
+        CommandFlag flag2 = {(CommandFlagValue)0},
+        HMODULE handler = GetCurrentModule())
+    {
+        return setup(createCommand(name, description, std::move(enums), std::move(params), std::move(overloads), std::move(callback), permission, flag1, flag2, handler));
+    };
 
     LIAPI static bool updateAvailableCommands();
 

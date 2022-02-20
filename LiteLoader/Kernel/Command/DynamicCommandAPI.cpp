@@ -504,7 +504,7 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(std:
     return DynamicCommandInstance::create(name, description, permission, flag1 |= flag2, handler);
 }
 
-bool DynamicCommand::setup(std::unique_ptr<class DynamicCommandInstance> commandInstance)
+DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class DynamicCommandInstance> commandInstance)
 {
     if (!commandInstance)
         return false;
@@ -530,10 +530,11 @@ bool DynamicCommand::setup(std::unique_ptr<class DynamicCommandInstance> command
         Global<CommandRegistry>->registerOverload(commandInstance->name, builder, commandInstance->buildOverload(overload));
     }
     //commandInstance->overloads.clear();
-    dynamicCommandInstances.emplace(commandInstance->name, std::move(commandInstance));
+    auto res = dynamicCommandInstances.emplace(commandInstance->name, std::move(commandInstance));
+    return res.first->second.get();
 }
 
-inline bool DynamicCommand::setup(std::string const& name, std::string const& description, std::unordered_map<std::string, std::vector<std::string>>&& enums, std::vector<ParameterData>&& params, std::vector<std::vector<std::string>>&& overloads, CallBackFn callback, CommandPermissionLevel permission, CommandFlag flag1, CommandFlag flag2, HMODULE handler)
+std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(std::string const& name, std::string const& description, std::unordered_map<std::string, std::vector<std::string>>&& enums, std::vector<ParameterData>&& params, std::vector<std::vector<std::string>>&& overloads, CallBackFn callback, CommandPermissionLevel permission, CommandFlag flag1, CommandFlag flag2, HMODULE handler)
 {
     auto command = createCommand(name, description, permission, flag1, flag2, handler);
     if (!command)
@@ -551,8 +552,7 @@ inline bool DynamicCommand::setup(std::string const& name, std::string const& de
         command->addOverload(std::move(overload));
     }
     command->setCallback(std::move(callback));
-    setup(std::move(command));
-    return true;
+    return std::move(command);
 }
 
 inline bool DynamicCommand::updateAvailableCommands()

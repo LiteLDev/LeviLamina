@@ -21,6 +21,7 @@ public:
     Local<Value> getBlockPosition();
     Local<Value> getPosition();
     Local<Value> getEntity();
+    Local<Value> getPlayer();
     Local<Value> getNbt(const Arguments& args);
     Local<Value> toString();
 };

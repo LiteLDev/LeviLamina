@@ -29,6 +29,7 @@ ClassDefine<CommandOriginClass> CommandOriginClassBuilder =
         .instanceProperty("pos", &CommandOriginClass::getPosition)
         .instanceProperty("blockPos", &CommandOriginClass::getBlockPosition)
         .instanceProperty("entity", &CommandOriginClass::getEntity)
+        .instanceProperty("player", &CommandOriginClass::getPlayer)
 
         .instanceFunction("getNbt", &CommandOriginClass::getNbt)
         .instanceFunction("toString", &CommandOriginClass::toString)
@@ -89,7 +90,22 @@ Local<Value> CommandOriginClass::getEntity()
 {
     try
     {
-        return EntityClass::newEntity(get()->getEntity());
+        auto entity = get()->getEntity();
+        if (!entity)
+            return Local<Value>();
+        return EntityClass::newEntity(entity);
+    }
+    CATCH("Fail in getEntity!");
+}
+
+Local<Value> CommandOriginClass::getPlayer()
+{
+    try
+    {
+        auto player = get()->getPlayer();
+        if (!player)
+            return Local<Value>();
+        return PlayerClass::newPlayer((Player*)player);
     }
     CATCH("Fail in getEntity!");
 }

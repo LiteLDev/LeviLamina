@@ -302,42 +302,67 @@ Local<Value> CommandClass::newParameter(const Arguments& args)
     CATCH("Fail in newParameter!")
 }
 
-// vector<identifier>
+    // vector<identifier>
 // vector<index>
 Local<Value> CommandClass::addOverload(const Arguments& args)
 {
-    CHECK_ARGS_COUNT(args, 1);
     try
     {
         if (registered)
             return Boolean::newBoolean(true); //TODO
         auto command = get();
-        if (args[0].isString())
-        {
-        }
-        auto paramArr = args[0].asArray();
-        if (paramArr.size() == 0)
-            return Local<Value>();
-        if (paramArr.get(0).isString())
-        {
-            std::vector<std::string> params;
-            for (int i = 0; i < paramArr.size(); ++i)
-            {
-                params.push_back(paramArr.get(i).toStr());
-            }
-            return Boolean::newBoolean(command->addOverload(std::move(params)));
-        }
-        else if (paramArr.get(0).isNumber())
+        if (args.size() == 0)
+            return Boolean::newBoolean(command->addOverload(std::vector<DynamicCommandInstance::ParameterIndex>{}));
+        if (args[0].isNumber())
         {
             std::vector<DynamicCommandInstance::ParameterIndex> params;
-            for (int i = 0; i < paramArr.size(); ++i)
+            for (int i = 0; i < args.size(); ++i)
             {
-                params.push_back({command, (size_t)paramArr.get(i).asNumber().toInt64()});
+                CHECK_ARG_TYPE(args[i], ValueKind::kNumber);
+                params.emplace_back(command, (size_t)args[i].asNumber().toInt64());
             }
             return Boolean::newBoolean(command->addOverload(std::move(params)));
         }
-        CHECK_ARG_TYPE(paramArr.get(0), ValueKind::kString);
-        return Boolean::newBoolean(false);
+        else if (args[0].isString())
+        {
+            std::vector<std::string> params;
+            for (int i = 0; i < args.size(); ++i)
+            {
+                CHECK_ARG_TYPE(args[i], ValueKind::kString);
+                params.emplace_back(args[i].toStr());
+            }
+            return Boolean::newBoolean(command->addOverload(std::move(params)));
+        }
+        else if (args[0].isArray())
+        {
+            auto arr = args[0].asArray();
+            if (arr.size() == 0)
+                return Boolean::newBoolean(command->addOverload(std::vector<DynamicCommandInstance::ParameterIndex>{}));
+            if (arr.get(0).isNumber())
+            {
+                std::vector<DynamicCommandInstance::ParameterIndex> params;
+                for (int i = 0; i < arr.size(); ++i)
+                {
+                    CHECK_ARG_TYPE(arr.get(i), ValueKind::kNumber);
+                    params.emplace_back(command, (size_t)arr.get(i).asNumber().toInt64());
+                }
+                return Boolean::newBoolean(command->addOverload(std::move(params)));
+            }
+            else if (arr.get(0).isString())
+            {
+                std::vector<std::string> params;
+                for (int i = 0; i < arr.size(); ++i)
+                {
+                    CHECK_ARG_TYPE(arr.get(i), ValueKind::kString);
+                    params.emplace_back(arr.get(i).toStr());
+                }
+                return Boolean::newBoolean(command->addOverload(std::move(params)));
+            }
+        }
+        logger.error("Wrong type of argument!");
+        logger.error(std::string("In API: ") + __FUNCTION__);
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+        return Local<Value>();
     }
     CATCH("Fail in addOverload!")
 }
