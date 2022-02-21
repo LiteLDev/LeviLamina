@@ -51,7 +51,6 @@
 #include <MC/InventoryTransaction.hpp>
 #include <MC/InventoryAction.hpp>
 #include <MC/InventorySource.hpp>
-#include <MC/Util.hpp>
 
 static_assert(offsetof(InventoryAction, source) == 0x0);
 static_assert(offsetof(InventoryAction, slot) == 0x0c);
@@ -1062,6 +1061,7 @@ TInstanceHook(bool, "?canOpenContainerScreen@Player@@UEAA_NXZ",Player)
     IF_LISTENED_END(PlayerOpenContainerScreenEvent)
     return original(this);
 }
+#include <MC/Util.hpp>
 /////////////////// PlayerCmdEvent & ConsoleCmd ///////////////////
 TClasslessInstanceHook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z",
        MCRESULT* rtn, std::shared_ptr<CommandContext> context, bool print)
