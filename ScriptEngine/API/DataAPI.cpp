@@ -1070,7 +1070,21 @@ Local<Value> DataClass::fromBase64(const Arguments& args)
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
     try {
-        return String::newString(base64_decode(args[0].toStr()));
+        bool isBinary = false;
+        if (args.size() > 1)
+        {
+            CHECK_ARG_TYPE(args[1], ValueKind::kBoolean);
+            isBinary = args[1].asBoolean().value();
+        }
+        auto data = base64_decode(args[0].toStr());
+        if (isBinary)
+        {
+            return ByteBuffer::newByteBuffer((void*)data.c_str(), data.size());
+        }
+        else
+        {
+            return String::newString(data);
+        }
     }
     CATCH("Fail in FromBase64!");
 }
