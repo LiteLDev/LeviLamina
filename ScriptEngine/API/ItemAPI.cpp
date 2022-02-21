@@ -220,8 +220,10 @@ Local<Value> ItemClass::setNbt(const Arguments& args)
         auto nbt = NbtCompoundClass::extract(args[0]);
         if (!nbt)
             return Local<Value>();    //Null
-
+        auto item = get();
         item->setNbt(nbt);
+        // update Pre Data
+        preloadData();
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in setNbt!");
