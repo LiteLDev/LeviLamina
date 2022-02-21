@@ -143,11 +143,11 @@ Local<Value> ItemClass::set(const Arguments& args)
 Local<Value> ItemClass::clone(const Arguments& args)
 {
     try {
-        auto item = ItemClass::extract(args[0]);
+        auto item = get();
         if (!item)
             return Local<Value>();    //Null
 
-        return Boolean::newBoolean(item->clone_s());
+        return ItemClass::newItem(item->clone_s());
     }
     CATCH("Fail in cloneItem!");
 }
