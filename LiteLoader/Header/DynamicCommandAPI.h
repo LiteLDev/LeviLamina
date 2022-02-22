@@ -62,8 +62,8 @@ class Actor;
 //      // create a dynamic command
 //      auto command = DynamicCommand::createCommand("dyncmd", "dynamic command", CommandPermissionLevel::GameMasters);
 //
-//      auto& optionsAdd = command->addEnum("TestOperation1", {"add", "remove"});
-//      auto& optionsList = command->addEnum("TestOperation2", {"list"});
+//      auto& optionsAdd = command->setEnum("TestOperation1", {"add", "remove"});
+//      auto& optionsList = command->setEnum("TestOperation2", {"list"});
 //
 //      ParameterIndex actionAdd = command->newParameter(ParamType::Enum, "testEnum", optionsAdd, (CommandParameterOption)1);
 //      ParameterIndex actionList = command->newParameter(ParamType::Enum, "testEnum", optionsList, (CommandParameterOption)1);
@@ -474,7 +474,7 @@ public:
     virtual ~DynamicCommandInstance();
 
     LIAPI static std::unique_ptr<DynamicCommandInstance> create(std::string const& name, std::string const& description, CommandPermissionLevel permission, CommandFlag flag, HMODULE handler = GetCurrentModule());
-    LIAPI std::string const& addEnum(std::string const& description, std::vector<std::string> const& values);
+    LIAPI std::string const& setEnum(std::string const& description, std::vector<std::string> const& values);
     LIAPI std::string const& getEnumValue(int index) const;
     LIAPI ParameterIndex newParameter(DynamicCommand::ParameterData&& data);
     LIAPI ParameterIndex newParameter(std::string const& name, DynamicCommand::ParameterType type,  bool optional = false, std::string const& description = "", std::string const& identifier = "", CommandParameterOption parameterOption = (CommandParameterOption)0);

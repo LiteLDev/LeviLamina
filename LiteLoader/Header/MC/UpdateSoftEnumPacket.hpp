@@ -6,6 +6,12 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+enum SoftEnumUpdateType : char
+{
+    Add = 0,
+    Remove = 1,
+    Set = 2,
+};
 
 #undef BEFORE_EXTRA
 

@@ -15,6 +15,7 @@
 #include <third-party/dyncall/dyncall_callback.h>
 #include <third-party/magic_enum/magic_enum.hpp>
 #include <MC/CommandUtils.hpp>
+#include <MC/CommandSoftEnumRegistry.hpp>
 
 extern Logger logger;
 
@@ -558,7 +559,7 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(std:
         return false;
     for (auto& [name, values] : enums)
     {
-        command->addEnum(name, std::move(values));
+        command->setEnum(name, std::move(values));
     }
     for (auto& param : params)
     {
@@ -575,6 +576,7 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(std:
 inline bool DynamicCommand::updateAvailableCommands()
 {
     auto packet = Global<CommandRegistry>->serializeAvailableCommands();
+    packet.test();
     auto sender = (LoopbackPacketSender*)Global<Level>->getPacketSender();
     if (sender)
         sender->sendBroadcast(packet);
@@ -652,7 +654,7 @@ inline bool DynamicCommandInstance::addOverload(std::vector<std::string>&& param
     return addOverload(std::move(paramIndices));
 }
 
-inline std::string const& DynamicCommandInstance::addEnum(std::string const& description, std::vector<std::string> const& values)
+inline std::string const& DynamicCommandInstance::setEnum(std::string const& description, std::vector<std::string> const& values)
 {
     enumNames.push_back(std::make_unique<std::string>(description));
     std::string const& desc = **(enumNames.end() - 1);
@@ -766,13 +768,13 @@ inline std::vector<CommandParameterData> DynamicCommandInstance::buildOverload(s
     return datas;
 }
 
-bool DynamicCommandInstance::updateSoftEnum(std::string const&) const
+bool DynamicCommandInstance::updateSoftEnum(std::string const& name) const
 {
     if (!name.empty())
     {
         auto iter = softEnumValues.find(name);
         if (iter != softEnumValues.end())
-            Global<CommandRegistry>->addSoftEnum(iter->first, iter->second);
+            CommandSoftEnumRegistry(Global<CommandRegistry>).updateSoftEnum(SoftEnumUpdateType::Set, iter->first, iter->second);
         else
             return false;
         return true;
@@ -781,7 +783,7 @@ bool DynamicCommandInstance::updateSoftEnum(std::string const&) const
     {
         for (auto& [key, values] : softEnumValues)
         {
-            Global<CommandRegistry>->addSoftEnum(key, values);
+            CommandSoftEnumRegistry(Global<CommandRegistry>).updateSoftEnum(SoftEnumUpdateType::Set, key, values);
         }
     }
 }
@@ -970,7 +972,7 @@ void testRegCommand(std::string const& name = "dyncmd")
             }
         },
         CommandPermissionLevel::Any);
-    return;
+    //return;
     // Direct setup of dynamic command with necessary information
     DynamicCommand::setup(
         "dynenum",         // command name
@@ -1011,11 +1013,52 @@ void testRegCommand(std::string const& name = "dyncmd")
         },
         CommandPermissionLevel::Any);
 }
+inline void testSoftEnum()
+{
+    using Param = DynamicCommand::ParameterData;
+    using ParamType = DynamicCommand::ParameterType;
+    auto command = DynamicCommand::createCommand("dynsoft", "dynamic command for soft enum", CommandPermissionLevel::GameMasters);
+
+    auto change = command->mandatory("operation", ParamType::Enum, 
+        command->setEnum("DynSoft_Change",{"add","remove"}), (CommandParameterOption)1);
+    auto list = command->mandatory("operation", ParamType::Enum, 
+        command->setEnum("DynSoft_List",{"list"}), (CommandParameterOption)1);
+    auto name = command->mandatory("name", ParamType::SoftEnum, 
+        command->setSoftEnum("DynNames", {"aaa"}));
+
+    command->addOverload({change, name});
+    command->addOverload({list});
+    command->setCallback(
+        [](DynamicCommand const& cmd, CommandOrigin const& origin, CommandOutput& output,
+            std::unordered_map<std::string, Result>& results) 
+        {
+            switch (do_hash(results["operation"].getRaw<std::string>().c_str()))
+            {
+                case do_hash("add"):
+                    cmd.getInstance()->addSoftEnumValues("DynNames", {results["name"].getRaw<std::string>()});
+                    output.success("Add Success");
+                    break;
+                case do_hash("remove"):
+                    cmd.getInstance()->removeSoftEnumValues("DynNames", {results["name"].getRaw<std::string>()});
+                    output.success("Remove Success");
+                    break;
+                case do_hash("list"):
+                    for (auto& val : cmd.getInstance()->getSoftEnumValues("DynNames")) {
+                        output.success(val);
+                    }
+                    break;
+                default:
+                    break;
+            }
+        });
+    DynamicCommand::setup(std::move(command));
+}
 
 TClasslessInstanceHook2("TestDynamicCommand_startServerThread", void, "?startServerThread@ServerInstance@@QEAAXXZ")
 {
     original(this);
     testRegCommand("dynenum");
+    testSoftEnum();
     auto packet = Global<CommandRegistry>->serializeAvailableCommands();
     auto sender = (LoopbackPacketSender*)Global<Level>->getPacketSender();
     if (sender)
@@ -1026,8 +1069,8 @@ TClasslessInstanceHook2("TestDynamicCommand_startServerThread", void, "?startSer
     // create a dynamic command
     auto command = DynamicCommand::createCommand("dyncmd", "dynamic command", CommandPermissionLevel::GameMasters);
 
-    auto& optionsAdd = command->addEnum("TestOperation1", {"add", "remove"});
-    auto& optionsList = command->addEnum("TestOperation2", {"list"});
+    auto& optionsAdd = command->setEnum("TestOperation1", {"add", "remove"});
+    auto& optionsList = command->setEnum("TestOperation2", {"list"});
 
     command->mandatory("testEnum", ParamType::Enum, optionsAdd, (CommandParameterOption)1);
     command->mandatory("testEnum", ParamType::Enum, optionsList, (CommandParameterOption)1);
@@ -1054,6 +1097,8 @@ TClasslessInstanceHook2("TestDynamicCommand_startServerThread", void, "?startSer
     });
     // do not forget to setup the command instance
     DynamicCommand::setup(std::move(command));
+
+
 };
 
 TClasslessInstanceHook2("TestDynamicCommand_attack", bool, "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z",
@@ -1063,6 +1108,7 @@ TClasslessInstanceHook2("TestDynamicCommand_attack", bool, "?attack@Player@@UEAA
     i++;
     auto name = fmt::format("dyncmd{}", i);
     //testRegCommand(name);
+    DynamicCommand::updateAvailableCommands();
 
     return original(this, ac, damageCause);
 }
@@ -1081,4 +1127,3 @@ TInstanceHook(CommandParameterData&, "?addOptions@CommandParameterData@@QEAAAEAV
     return original(this, option);
 }
 #endif // DEBUG
-

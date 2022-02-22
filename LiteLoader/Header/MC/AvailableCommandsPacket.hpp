@@ -20,7 +20,9 @@ class AvailableCommandsPacket : public Packet {
     };//56
     struct ConstrainedValueData
     {
-        unsigned int unk;
+        int enumIndex;
+        int enumNameIndex;
+        std::vector<unsigned char> unk8;
     };
     struct OverloadData
     {
@@ -47,9 +49,15 @@ std::vector<EnumData> mEnumDatas;//96
 std::vector<CommandData> mCommandDatas;//120
 std::vector<SoftEnumData> mSoftEnums;//144
 std::vector<ConstrainedValueData> mConstrainedValueDatas; //168
-
+public:
 inline void test()
 {
+    std::vector<std::tuple<std::string, std::string, char>> datas;
+    for (auto& i : mConstrainedValueDatas) {
+        datas.push_back(std::tuple{mAllEnums.at(i.enumIndex), mEnumDatas.at(i.enumNameIndex).name, i.unk8[0]});
+        if (mEnumDatas.at(i.enumNameIndex).name == "CommandName")
+            i.unk8[0] = '\x1';
+    }
     static_assert(sizeof(AvailableCommandsPacket) == 192);
     static_assert(sizeof(EnumData) == 56);
     static_assert(sizeof(CommandData) == 104);

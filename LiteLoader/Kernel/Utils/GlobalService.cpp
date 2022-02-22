@@ -90,8 +90,9 @@ TInstanceHook(void*, "??0RakPeer@RakNet@@QEAA@XZ", RakNet::RakPeer)
     return original(this);
 }
 // Scoreboard
+#include <MC/CommandSoftEnumRegistry.hpp>
 TInstanceHook(Scoreboard*, "??0ServerScoreboard@@QEAA@VCommandSoftEnumRegistry@@PEAVLevelStorage@@@Z",
-      Scoreboard, void* a2, void* a3)
+              Scoreboard, void** a2, class LevelStorage* a3)
 {
     Scoreboard* sc = original(this, a2, a3);
     Global<Scoreboard> = sc;

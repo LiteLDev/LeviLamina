@@ -1086,8 +1086,6 @@ enum class InventorySourceType
     NONIMPLEMENTEDTODO = 99999
 };
 
-
-
 template <typename T>
 struct InvertableFilter
 {

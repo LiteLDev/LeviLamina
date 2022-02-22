@@ -87,6 +87,7 @@ inline typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentif
 };
 
 #pragma endregion
+
 #undef BEFORE_EXTRA
 
 class CommandRegistry {

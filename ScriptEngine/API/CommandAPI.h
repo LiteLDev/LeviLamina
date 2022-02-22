@@ -41,7 +41,7 @@ public:
     static Local<Object> newCommand(std::unique_ptr<DynamicCommandInstance>&& p);
     static Local<Object> newCommand(DynamicCommandInstance* p);
     Local<Value> getName();
-    Local<Value> addEnum(const Arguments& args);
+    Local<Value> setEnum(const Arguments& args);
     Local<Value> newParameter(const Arguments& args);
     Local<Value> mandatory(const Arguments& args);
     Local<Value> optional(const Arguments& args);

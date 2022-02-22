@@ -39,7 +39,7 @@ ClassDefine<CommandClass> CommandClassBuilder =
         .instanceProperty("name", &CommandClass::getName)
         .instanceProperty("registered", &CommandClass::isRegistered)
 
-        .instanceFunction("addEnum", &CommandClass::addEnum)
+        .instanceFunction("setEnum", &CommandClass::setEnum)
         //.instanceFunction("newParameter", &CommandClass::newParameter)
         .instanceFunction("mandatory", &CommandClass::mandatory)
         .instanceFunction("optional", &CommandClass::optional)
@@ -257,7 +257,7 @@ Local<Value> CommandClass::getName()
 }
 
 // string, vector<string>
-Local<Value> CommandClass::addEnum(const Arguments& args)
+Local<Value> CommandClass::setEnum(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 2)
     CHECK_ARG_TYPE(args[0], ValueKind::kString)
@@ -275,9 +275,9 @@ Local<Value> CommandClass::addEnum(const Arguments& args)
         {
             enumValues.push_back(enumArr.get(i).toStr());
         }
-        return Boolean::newBoolean(!get()->addEnum(enumName, std::move(enumValues)).empty());
+        return Boolean::newBoolean(!get()->setEnum(enumName, std::move(enumValues)).empty());
     }
-    CATCH("Fail in addEnum!")
+    CATCH("Fail in setEnum!")
 }
 
 // name, type, optional, description, identifier, option
