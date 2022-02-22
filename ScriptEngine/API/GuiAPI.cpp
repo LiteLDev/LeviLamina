@@ -64,6 +64,9 @@ bool SimpleFormClass::sendForm(Form::SimpleForm* form, Player* player, script::L
         [engine{ EngineScope::currentEngine() }, callback{ std::move(callbackFunc) }]
         (Player* pl, int chosen)
         {
+            if (!EngineManager::isValid(engine))
+                return;
+
             EngineScope scope(engine);
             try
             {
