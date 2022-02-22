@@ -25,7 +25,7 @@ public:
     Local<Value> getSuccessCount();
 
     //MCAPI enum CommandOutputType getType() const;
-    Local<Value> getType();
+    //Local<Value> getType();
 
     //MCAPI void success(std::string const&, std::vector<class CommandOutputParameter> const&);
     //MCAPI void success();

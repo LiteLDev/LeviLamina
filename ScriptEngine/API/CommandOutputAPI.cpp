@@ -50,14 +50,14 @@ Local<Value> CommandOutputClass::getSuccessCount()
 };
 
 //MCAPI enum CommandOutputType getType() const;
-Local<Value> CommandOutputClass::getType()
-{
-    try
-    {
-        return String::newString(magic_enum::enum_name(get()->getType()));
-    }
-    CATCH("Fail in getType!");
-};
+//Local<Value> CommandOutputClass::getType()
+//{
+//    try
+//    {
+//        return String::newString(magic_enum::enum_name(get()->getType()));
+//    }
+//    CATCH("Fail in getType!");
+//};
 
 //MCAPI void success(std::string const&, std::vector<class CommandOutputParameter> const&);
 //MCAPI void success();
