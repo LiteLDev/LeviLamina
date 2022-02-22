@@ -322,6 +322,7 @@ public:
     {
         std::string pluginName = "";
         if (hasPluginNameSet) {
+            pluginName = pluginNameToDoOperation;
             if (pluginName.size() > 1 && pluginName[0] == '"' && pluginName[pluginName.size() - 1] == '"' && pluginName[pluginName.size() - 2] != '\\')
             {
                 pluginName.erase(0, 1);
