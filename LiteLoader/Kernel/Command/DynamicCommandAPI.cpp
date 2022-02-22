@@ -702,7 +702,7 @@ inline ParameterIndex DynamicCommandInstance::findParameterIndex(std::string con
     size_t index = 0;
     for (auto& paramData : parameterDatas)
     {
-        if (paramData.identifier == indentifier)
+        if (paramData.identifier == indentifier || paramData.description == indentifier|| paramData.name == indentifier)
             break;
         index++;
     }
@@ -769,6 +769,14 @@ inline std::vector<CommandParameterData> DynamicCommandInstance::buildOverload(s
 
 bool DynamicCommandInstance::updateSoftEnum(std::string const& name) const
 {
+    if (!hasRegistered())
+    {
+        for (auto& [key, values] : softEnumValues)
+        {
+            Global<CommandRegistry>->addSoftEnum(key, values);
+        }
+        return;
+    }
     if (!name.empty())
     {
         auto iter = softEnumValues.find(name);

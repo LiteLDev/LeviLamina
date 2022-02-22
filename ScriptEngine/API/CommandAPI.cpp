@@ -48,7 +48,7 @@ ClassDefine<CommandClass> CommandClassBuilder =
         .instanceFunction("removeSoftEnumValues", &CommandClass::removeSoftEnumValues)
         .instanceFunction("getSoftEnumValues", &CommandClass::getSoftEnumValues)
         //.instanceFunction("getSoftEnumNames", &CommandClass::getSoftEnumNames)
-        .instanceFunction("addOverload", &CommandClass::addOverload)
+        .instanceFunction("overload", &CommandClass::addOverload)
         .instanceFunction("setCallback", &CommandClass::setCallback)
         .instanceFunction("setup", &CommandClass::setup)
 
@@ -298,7 +298,7 @@ Local<Value> CommandClass::newParameter(const Arguments& args)
         bool optional = false;
         std::string identifier = "";
         size_t index = 2;
-        CommandParameterOption option = (CommandParameterOption)-1;
+        CommandParameterOption option = (CommandParameterOption)0;
         if (args.size() > index && args[index].isBoolean())
             optional = args[index++].asBoolean().value();
         if (args.size() > index && args[index].isString())
@@ -329,7 +329,7 @@ Local<Value> CommandClass::mandatory(const Arguments& args)
         bool optional = false;
         std::string identifier = "";
         size_t index = 2;
-        CommandParameterOption option = (CommandParameterOption)-1;
+        CommandParameterOption option = (CommandParameterOption)0;
         if (args.size() > index && args[index].isString())
             description = args[index++].toStr();
         if (args.size() > index && args[index].isString())
@@ -358,7 +358,7 @@ Local<Value> CommandClass::optional(const Arguments& args)
         bool optional = true;
         std::string identifier = "";
         size_t index = 2;
-        CommandParameterOption option = (CommandParameterOption)-1;
+        CommandParameterOption option = (CommandParameterOption)0;
         if (args.size() > index && args[index].isString())
             description = args[index++].toStr();
         if (args.size() > index && args[index].isString())
