@@ -47,7 +47,7 @@ ClassDefine<CommandClass> CommandClassBuilder =
         .instanceFunction("addSoftEnumValues", &CommandClass::addSoftEnumValues)
         .instanceFunction("removeSoftEnumValues", &CommandClass::removeSoftEnumValues)
         .instanceFunction("getSoftEnumValues", &CommandClass::getSoftEnumValues)
-        .instanceFunction("getSoftEnumNames", &CommandClass::getSoftEnumNames)
+        //.instanceFunction("getSoftEnumNames", &CommandClass::getSoftEnumNames)
         .instanceFunction("addOverload", &CommandClass::addOverload)
         .instanceFunction("setCallback", &CommandClass::setCallback)
         .instanceFunction("setup", &CommandClass::setup)
