@@ -19,10 +19,7 @@ public:
     LIAPI void reserve(size_t size);
     LIAPI std::string& getRaw();
     template <typename T>
-    inline void writeType(T const&)
-    {
-        static_assert(false, "Unsupported Type");
-    };
+    inline void writeType(T const&) = delete;
     template <>
     MCAPI void writeType(struct CommandOriginData const&);
     template <>

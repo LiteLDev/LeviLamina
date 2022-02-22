@@ -24,11 +24,8 @@ public:
     LIAPI size_t getUnreadLength() const;
     LIAPI void setReadPointer(std::size_t size);
 
-        template <typename T>
-    inline void readType(T&)
-    {
-        static_assert(false, "Unsupported Type");
-    }
+    template <typename T>
+    inline void readType(T&) = delete;
     template <>
     MCAPI void readType(struct CommandOriginData&);
     template <>
