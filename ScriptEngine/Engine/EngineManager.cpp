@@ -22,6 +22,7 @@ bool EngineManager::unRegisterEngine(ScriptEngine* toDelete)
 bool EngineManager::registerEngine(ScriptEngine* engine)
 {
     globalShareData->globalEngineList.push_back(engine);
+    return true;
 }
 
 ScriptEngine* EngineManager::newEngine(string pluginName)
