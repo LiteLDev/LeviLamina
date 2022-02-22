@@ -262,6 +262,7 @@ public:
         LIAPI CommandParameterData makeParameterData() const;
 
         friend class DynamicCommandInstance;
+        friend class DynamicCommand;
 
         template <ParameterType type>
         inline static constexpr CommandParameterDataType getCommandParameterDataType()
@@ -430,7 +431,7 @@ public:
         inline bool isValid() const
         {
             size_t size = instance->parameterDatas.size();
-            return index > 0 && index < size;
+            return index >= 0 && index < size;
         }
     };
 

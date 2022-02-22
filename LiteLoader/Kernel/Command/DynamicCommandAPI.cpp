@@ -99,6 +99,27 @@ inline void OutputError(std::string errorMsg, int errorCode, std::string errorWh
         OutputError("Uncaught Exception Detected!", -1, "", func, handler);                                       \
     }
 
+inline std::vector<std::string> getEnumNamesFromBDS()
+{
+    auto packet = Global<CommandRegistry>->serializeAvailableCommands();
+    return packet.getEnumNames();
+}
+inline std::vector<std::string> getSoftEnumNamesFromBDS()
+{
+    auto packet = Global<CommandRegistry>->serializeAvailableCommands();
+    return packet.getSoftEnumNames();
+}
+inline std::vector<std::string> getEnumValuesFromBDS(std::string const& name)
+{
+    auto packet = Global<CommandRegistry>->serializeAvailableCommands();
+    return packet.getEnumValues(name);
+}
+inline std::vector<std::string> getSoftEnumValuesFromBDS(std::string const& name)
+{
+    auto packet = Global<CommandRegistry>->serializeAvailableCommands();
+    return packet.getSoftEnumValues(name);
+}
+
 } // namespace
 
 #pragma region ParameterPtr
@@ -529,8 +550,21 @@ DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class Dynami
     if (commandInstance->overloads.empty())
         return false;
     commandInstance->updateSoftEnum();
+    auto namesInBds = getEnumNamesFromBDS();
     for (auto& [name, range] : commandInstance->enumRanges)
     {
+        std::string fixedName = name.data();
+        while (std::find(namesInBds.begin(), namesInBds.end(), fixedName) != namesInBds.end())
+        {
+            fixedName.append("_");
+        }
+        if (fixedName != name) {
+            for (auto& namePtr : commandInstance->enumNames) {
+                if (*namePtr == name) {
+                    namePtr->assign(fixedName);
+                }
+            }
+        }
         std::vector<std::pair<std::string, uint64_t>> values;
         size_t index = range.first;
         for (auto& iter = commandInstance->enumValues.begin() + range.first; iter != commandInstance->enumValues.begin() + range.first + range.second; ++iter)
@@ -638,7 +672,12 @@ inline bool DynamicCommandInstance::addOverload(std::vector<char const*>&& param
     std::vector<ParameterIndex> paramIndices;
     for (auto& param : params)
     {
-        paramIndices.push_back(findParameterIndex(param));
+        auto index = findParameterIndex(param);
+        if (!index.isValid())
+        {
+            throw std::runtime_error("Parameter " + std::string(param) + "not found");
+        }
+        paramIndices.push_back(index);
     }
     return addOverload(std::move(paramIndices));
 }
@@ -688,6 +727,16 @@ ParameterIndex DynamicCommandInstance::newParameter(DynamicCommand::ParameterDat
                                              [&](DynamicCommand::ParameterData const& data) { return data.identifier == identifier; }))
         throw std::runtime_error("parameter identifier already exists");
     data.offset = offset;
+    if (data.type == ParameterType::Enum) {
+        auto namesInBds = getEnumNamesFromBDS();
+        if (enumRanges.count(data.description) == 0)
+        {
+            auto iter = std::find(namesInBds.begin(), namesInBds.end(), data.description);
+            if (iter == namesInBds.end())
+                throw("Enum " + std::string(data.description) + "not found in command and bds");
+            setEnum(*iter, getEnumValuesFromBDS(*iter));
+        }
+    }
     parameterDatas.emplace_back(std::move(data));
     return {this, parameterDatas.size() - 1};
 }
@@ -775,7 +824,7 @@ bool DynamicCommandInstance::updateSoftEnum(std::string const& name) const
         {
             Global<CommandRegistry>->addSoftEnum(key, values);
         }
-        return;
+        return true;
     }
     if (!name.empty())
     {
@@ -990,6 +1039,7 @@ void testRegCommand(std::string const& name = "dyncmd")
             // enums{enumName, {values...}}
             {"TestEnum1", {"add", "remove"}},
             {"TestEnum2", {"list"}},
+            {"Block", {"aaaa"}},
         },
         {
             // parameters(type, name, [optional], [enumOptions(also enumName)]
@@ -1032,10 +1082,12 @@ inline void testSoftEnum()
         command->setEnum("DynSoft_Change",{"add","remove"}), (CommandParameterOption)1);
     auto list = command->mandatory("operation", ParamType::Enum, 
         command->setEnum("DynSoft_List",{"list"}), (CommandParameterOption)1);
+    auto test = command->mandatory("operation", ParamType::Enum, "TagChangeAction", (CommandParameterOption)1);
     auto name = command->mandatory("name", ParamType::SoftEnum, 
         command->setSoftEnum("DynNames", {"aaa"}));
 
-    command->addOverload({change, name});
+    //command->addOverload({change, name});
+    command->addOverload({"TagChangeAction", "name"}); // enum in bds
     command->addOverload({list});
     command->setCallback(
         [](DynamicCommand const& cmd, CommandOrigin const& origin, CommandOutput& output,
