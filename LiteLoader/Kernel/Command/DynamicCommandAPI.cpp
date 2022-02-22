@@ -576,7 +576,6 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(std:
 inline bool DynamicCommand::updateAvailableCommands()
 {
     auto packet = Global<CommandRegistry>->serializeAvailableCommands();
-    packet.test();
     auto sender = (LoopbackPacketSender*)Global<Level>->getPacketSender();
     if (sender)
         sender->sendBroadcast(packet);
@@ -882,6 +881,8 @@ inline DynamicCommand::BuilderFn DynamicCommandInstance::initCommandBuilder()
 #pragma endregion
 
 #ifdef TEST_DYNAMIC_COMMAND
+// Notice!!!
+// Enabling this code may cause some command arguments to be parsed abnormally
 
 //TInstanceHook(std::unique_ptr<Command>&, "?createCommand@CommandRegistry@@AEBA?AV?$unique_ptr@VCommand@@U?$default_delete@VCommand@@@std@@@std@@AEBUParseToken@1@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z",
 //              CommandRegistry, std::unique_ptr<Command>& res, struct CommandRegistry::ParseToken const& parseToken, class CommandOrigin const& origin, int unk, std::string& str, class std::vector<std::string>& strs)
