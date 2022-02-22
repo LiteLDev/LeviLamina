@@ -30,8 +30,8 @@
 
 //////////////////// Class Definition ////////////////////
 
-ClassDefine<void> PermissionStaticBuilder = EnumDefineBuilder<CommandPermissionLevel>::build("Perm");
-ClassDefine<void> ParamStaticBuilder = EnumDefineBuilder<DynamicCommand::ParameterType>::build("Param");
+ClassDefine<void> PermissionStaticBuilder = EnumDefineBuilder<CommandPermissionLevel>::build("PermType");
+ClassDefine<void> ParamStaticBuilder = EnumDefineBuilder<DynamicCommand::ParameterType>::build("ParamType");
 
 ClassDefine<CommandClass> CommandClassBuilder =
     defineClass<CommandClass>("LLSE_Command")
