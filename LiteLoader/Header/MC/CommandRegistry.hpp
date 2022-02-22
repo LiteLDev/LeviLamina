@@ -16,6 +16,7 @@
 #include "CommandVersion.hpp"
 #include "CommandRawText.hpp"
 #include "CommandItem.hpp"
+#include "CommandIntegerRange.hpp"
 
 class CommandParameterData;
 
@@ -71,6 +72,19 @@ template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, std::string>()
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, std::unique_ptr<Command>>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class WildcardCommandSelector<Actor>>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandIntegerRange>();
+//template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>();
+template<>
+inline typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>()
+{
+    static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)dlsym_real("?id@?1???$type_id@VCommandRegistry@@PEBUActorDefinitionIdentifier@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
+    //static typeid_t<CommandRegistry> id = ([]() -> typeid_t<CommandRegistry> {
+    //    CommandParameterData data = SymCall("??$mandatory@VRideCommand@@PEBUActorDefinitionIdentifier@@@commands@@YA?AVCommandParameterData@@PEQRideCommand@@PEBUActorDefinitionIdentifier@@PEBDPEQ2@_N@Z",
+    //            CommandParameterData, void*, char const*, uintptr_t)(nullptr, "entityType", 0);
+    //    return data.tid;
+    //    })();
+    return id;
+};
 
 #pragma endregion
 #undef BEFORE_EXTRA
@@ -248,11 +262,19 @@ public:
         {typeid(CommandItem).name(),
          dlsym_real(
              "??$parse@VCommandItem@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+        {typeid(WildcardCommandSelector<Actor>).name(),
+         dlsym_real(
+             "??$parse@V?$WildcardCommandSelector@VActor@@@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+        {typeid(ActorDefinitionIdentifier const*).name(),
+         dlsym_real(
+             "??$parse@PEBUActorDefinitionIdentifier@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
     };
 
 private:
     template <typename T>
-    bool parse(void*, ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&) const;
+    bool parse(void*, ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&) const {
+            
+    };
 
 public:
     template <typename T>

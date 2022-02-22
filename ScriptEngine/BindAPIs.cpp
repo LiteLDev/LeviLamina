@@ -50,6 +50,9 @@ void BindAPIs(ScriptEngine *engine)
     engine->registerNativeClass(NbtStaticBuilder);
     engine->registerNativeClass(TextClassBuilder);
 
+    engine->registerNativeClass(PermissionStaticBuilder);
+    engine->registerNativeClass(ParamStaticBuilder);
+    engine->registerNativeClass(OriginTypeStaticBuilder);
 
     //////////////// 实例类 ////////////////
 

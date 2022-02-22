@@ -3,7 +3,9 @@
 #include <MC/CommandOrigin.hpp>
 
 class CommandOriginClass;
+extern ClassDefine<void> OriginTypeStaticBuilder;
 extern ClassDefine<CommandOriginClass> CommandOriginClassBuilder;
+
 
 class CommandOriginClass : public ScriptClass
 {
@@ -17,6 +19,7 @@ public:
     CommandOriginClass(CommandOrigin const* p);
     static Local<Object> newCommandOrigin(CommandOrigin const* p);
     Local<Value> getOriginType();
+    Local<Value> getOriginTypeName();
     Local<Value> getOriginName();
     Local<Value> getBlockPosition();
     Local<Value> getPosition();

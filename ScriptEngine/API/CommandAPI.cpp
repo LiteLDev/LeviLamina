@@ -30,16 +30,26 @@
 
 //////////////////// Class Definition ////////////////////
 
+ClassDefine<void> PermissionStaticBuilder = EnumDefineBuilder<CommandPermissionLevel>::build("Perm");
+ClassDefine<void> ParamStaticBuilder = EnumDefineBuilder<DynamicCommand::ParameterType>::build("Param");
+
 ClassDefine<CommandClass> CommandClassBuilder =
     defineClass<CommandClass>("LLSE_Command")
         .constructor(nullptr)
         .instanceProperty("name", &CommandClass::getName)
+        .instanceProperty("registered", &CommandClass::isRegistered)
 
         .instanceFunction("addEnum", &CommandClass::addEnum)
-        .instanceFunction("newParameter", &CommandClass::newParameter)
+        //.instanceFunction("newParameter", &CommandClass::newParameter)
+        .instanceFunction("mandatory", &CommandClass::mandatory)
+        .instanceFunction("optional", &CommandClass::optional)
+        .instanceFunction("setSoftEnum", &CommandClass::setSoftEnum)
+        .instanceFunction("addSoftEnumValues", &CommandClass::addSoftEnumValues)
+        .instanceFunction("removeSoftEnumValues", &CommandClass::removeSoftEnumValues)
+        .instanceFunction("getSoftEnumValues", &CommandClass::getSoftEnumValues)
+        .instanceFunction("getSoftEnumNames", &CommandClass::getSoftEnumNames)
         .instanceFunction("addOverload", &CommandClass::addOverload)
         .instanceFunction("setCallback", &CommandClass::setCallback)
-        .instanceFunction("isRegistered", &CommandClass::isRegistered)
         .instanceFunction("setup", &CommandClass::setup)
 
         .build();
@@ -94,8 +104,6 @@ Local<Value> convertResult(DynamicCommand::Result const& result)
             return String::newString(result.getRaw<std::string>());
         case DynamicCommand::ParameterType::JsonValue:
             return String::newString(JsonHelpers::serialize(result.getRaw<Json::Value>()));
-        case DynamicCommand::ParameterType::Command:
-            return String::newString(result.getRaw<std::unique_ptr<Command>>()->getCommandName());
         case DynamicCommand::ParameterType::Item:
             return ItemClass::newItem(new ItemStack(result.getRaw<CommandItem>().createInstance(1, 1, nullptr, true).value_or(ItemInstance::EMPTY_ITEM)));
         case DynamicCommand::ParameterType::Block:
@@ -106,6 +114,10 @@ Local<Value> convertResult(DynamicCommand::Result const& result)
             return String::newString(result.getRaw<std::string>());
         case DynamicCommand::ParameterType::SoftEnum:
             return String::newString(result.getRaw<std::string>());
+        case DynamicCommand::ParameterType::Command:
+            return String::newString(result.getRaw<std::unique_ptr<Command>>()->getCommandName());
+        case DynamicCommand::ParameterType::ActorType:
+            return String::newString(result.getRaw<ActorDefinitionIdentifier const*>()->getCanonicalName());
         default:
             return Local<Value>(); //null
             break;
@@ -296,13 +308,71 @@ Local<Value> CommandClass::newParameter(const Arguments& args)
         if (args.size() > index && args[index].isNumber())
             option = (CommandParameterOption)args[index++].toInt();
         if (index != args.size())
-            throw std::runtime_error("Error Argment in newParameter");
+            throw std::runtime_error("Error Argument in newParameter");
+        return Number::newNumber((int64_t)get()->newParameter(name, type, optional, description, identifier, option).index);
+    }
+    CATCH("Fail in newParameter!")
+}
+// name, type, description, identifier, option
+// name, type, description, option
+Local<Value> CommandClass::mandatory(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    try
+    {
+        if (registered)
+            return Boolean::newBoolean(true); //TODO
+        auto name = args[0].toStr();
+        DynamicCommand::ParameterType type = parseEnum<DynamicCommand::ParameterType>(args[1]);
+        std::string description = "";
+        bool optional = false;
+        std::string identifier = "";
+        size_t index = 2;
+        CommandParameterOption option = (CommandParameterOption)-1;
+        if (args.size() > index && args[index].isString())
+            description = args[index++].toStr();
+        if (args.size() > index && args[index].isString())
+            identifier = args[index++].toStr();
+        if (args.size() > index && args[index].isNumber())
+            option = (CommandParameterOption)args[index++].toInt();
+        if (index != args.size())
+            throw std::runtime_error("Error Argument in newParameter");
+        return Number::newNumber((int64_t)get()->newParameter(name, type, optional, description, identifier, option).index);
+    }
+    CATCH("Fail in newParameter!")
+}
+// name, type, description, identifier, option
+// name, type, description, option
+Local<Value> CommandClass::optional(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    try
+    {
+        if (registered)
+            return Boolean::newBoolean(true); //TODO
+        auto name = args[0].toStr();
+        DynamicCommand::ParameterType type = parseEnum<DynamicCommand::ParameterType>(args[1]);
+        std::string description = "";
+        bool optional = true;
+        std::string identifier = "";
+        size_t index = 2;
+        CommandParameterOption option = (CommandParameterOption)-1;
+        if (args.size() > index && args[index].isString())
+            description = args[index++].toStr();
+        if (args.size() > index && args[index].isString())
+            identifier = args[index++].toStr();
+        if (args.size() > index && args[index].isNumber())
+            option = (CommandParameterOption)args[index++].toInt();
+        if (index != args.size())
+            throw std::runtime_error("Error Argument in newParameter");
         return Number::newNumber((int64_t)get()->newParameter(name, type, optional, description, identifier, option).index);
     }
     CATCH("Fail in newParameter!")
 }
 
-    // vector<identifier>
+// vector<identifier>
 // vector<index>
 Local<Value> CommandClass::addOverload(const Arguments& args)
 {
@@ -360,7 +430,7 @@ Local<Value> CommandClass::addOverload(const Arguments& args)
             }
         }
         logger.error("Wrong type of argument!");
-        logger.error(std::string("In API: ") + __FUNCTION__);
+        logger.error("In API: " __FUNCTION__);
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
         return Local<Value>();
     }
@@ -398,7 +468,8 @@ Local<Value> CommandClass::setCallback(const Arguments& args)
                         args.set(name, convertResult(param));
                     localShareData->commandCallbacks[commandName].func.get().call({}, cmd, ori, outp, args);
                 }
-                CATCH("Fail in executing command \"" + commandName + "\"!")
+                CATCH_C("Fail in executing command \"" + commandName + "\"!")
+                return nullptr;
             });
         return Boolean::newBoolean(true);
     }
@@ -416,7 +487,7 @@ Local<Value> CommandClass::setup(const Arguments& args)
     CATCH("Fail in setup!")
 }
 
-Local<Value> CommandClass::isRegistered(const Arguments& args)
+Local<Value> CommandClass::isRegistered()
 {
     return Boolean::newBoolean(registered);
 }
@@ -429,3 +500,70 @@ Local<Value> CommandClass::toString(const Arguments& args)
     }
     CATCH("Fail in toString!");
 }
+
+Local<Value> CommandClass::setSoftEnum(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kArray);
+    try
+    {
+        auto name = args[0].toStr();
+        auto enums = parseStringList(args[1].asArray());
+        return String::newString(get()->setSoftEnum(name, std::move(enums)));
+    }
+    CATCH("");
+}
+
+Local<Value> CommandClass::addSoftEnumValues(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kArray);
+    try
+    {
+        auto name = args[0].toStr();
+        auto enums = parseStringList(args[1].asArray());
+        return String::newString(get()->addSoftEnumValues(name, std::move(enums)));
+    }
+    CATCH("");
+}
+
+Local<Value> CommandClass::removeSoftEnumValues(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kArray);
+    try
+    {
+        auto name = args[0].toStr();
+        auto enums = parseStringList(args[1].asArray());
+        return String::newString(get()->removeSoftEnumValues(name, std::move(enums)));
+    }
+    CATCH("");
+}
+
+Local<Value> CommandClass::getSoftEnumValues(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    try
+    {
+        auto name = args[0].toStr();
+        return getStringArray(get()->getSoftEnumValues(name));
+    }
+    CATCH("");
+}
+
+Local<Value> CommandClass::getSoftEnumNames(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    try
+    {
+        auto name = args[0].toStr();
+        return getStringArray(get()->getSoftEnumNames());
+    }
+    CATCH("");
+}
+

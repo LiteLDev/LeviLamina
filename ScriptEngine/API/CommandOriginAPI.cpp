@@ -20,11 +20,13 @@
 #include <third-party/magic_enum/magic_enum.hpp>
 
 //////////////////// Class Definition ////////////////////
+ClassDefine<void> OriginTypeStaticBuilder = EnumDefineBuilder<OriginType>::build("OriginType");
 
 ClassDefine<CommandOriginClass> CommandOriginClassBuilder =
     defineClass<CommandOriginClass>("LLSE_CommandOrigin")
         .constructor(nullptr)
         .instanceProperty("type", &CommandOriginClass::getOriginType)
+        .instanceProperty("typeName", &CommandOriginClass::getOriginTypeName)
         .instanceProperty("name", &CommandOriginClass::getOriginName)
         .instanceProperty("pos", &CommandOriginClass::getPosition)
         .instanceProperty("blockPos", &CommandOriginClass::getBlockPosition)
@@ -52,9 +54,18 @@ Local<Value> CommandOriginClass::getOriginType()
 {
     try
     {
-        return String::newString(magic_enum::enum_name((OriginType)get()->getOriginType()));
+        return Number::newNumber((int)get()->getOriginType());
     }
     CATCH("Fail in getOriginType!");
+}
+
+Local<Value> CommandOriginClass::getOriginTypeName()
+{
+    try
+    {
+        return String::newString(magic_enum::enum_name((OriginType)get()->getOriginType()));
+    }
+    CATCH("Fail in getOriginTypeName!");
 }
 
 Local<Value> CommandOriginClass::getOriginName()

@@ -14,7 +14,10 @@ enum class CommandParameterDataType {
     ENUM,
     SOFT_ENUM
 };
-enum CommandParameterOption;
+enum CommandParameterOption:unsigned char
+{
+
+};
 class CommandRegistry;
 
 #undef BEFORE_EXTRA
@@ -38,7 +41,7 @@ public:
     int offset;                    // 64
     int flag_offset;               // 68
     bool mand;                     // 72
-    bool pad73;                    // 73
+    unsigned char options;         // 73
 
     CommandParameterData()
         : tid(tid){};
@@ -55,7 +58,7 @@ public:
         , offset(offset)
         , flag_offset(flag_offset)
         , mand(optional)
-        , pad73(false){};
+        , options(0){};
 
 #undef AFTER_EXTRA
 
