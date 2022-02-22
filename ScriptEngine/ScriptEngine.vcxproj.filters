@@ -143,9 +143,6 @@
     <ClCompile Include="BuiltinCommands.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="PluginManager.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
     <ClCompile Include="API\CommandAPI.cpp">
       <Filter>API</Filter>
     </ClCompile>
@@ -154,6 +151,12 @@
     </ClCompile>
     <ClCompile Include="API\CommandOutputAPI.cpp">
       <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="PluginManager.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\EngineManager.cpp">
+      <Filter>Engine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -291,6 +294,9 @@
     </ClInclude>
     <ClInclude Include="API\CommandOutputAPI.h">
       <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\EngineManager.h">
+      <Filter>Engine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

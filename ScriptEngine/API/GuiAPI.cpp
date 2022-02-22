@@ -322,7 +322,8 @@ bool CallFormCallback(Player* player, unsigned formId, const string& data)
 
     try
     {
-        for (auto engine : currentModuleEngines)
+        auto engines = EngineManager::getLocalEngines();
+        for (auto engine : engines)
         {
             EngineScope enter(engine);
             FormCallbackData callback;

@@ -9,6 +9,7 @@
 #include <Engine/LoaderHelper.h>
 #include <Engine/RemoteCall.h>
 #include <Engine/TimeTaskSystem.h>
+#include <Engine/EngineManager.h>
 #include <Utils/STLHelper.h>
 #include <LiteLoader/Main/PluginManager.h>
 #include <Loader.h>
@@ -95,6 +96,7 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
         return false;
     }
 
+    ScriptEngine* engine = nullptr;
     try
     {
         auto scripts = ReadAllFile(filePath);
@@ -102,9 +104,7 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
             throw("Fail to open plugin file!");
 
         //启动引擎
-        ScriptEngine* engine = NewEngine();
-        currentModuleEngines.push_back(engine);
-        globalShareData->engines.push_back({ LLSE_MODULE_TYPE, pluginName, engine });
+        engine = EngineManager::newEngine();
         EngineScope enter(engine);
 
         //setData
@@ -151,6 +151,7 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
         //后处理
         if (!PluginManager::getPlugin(pluginName))
             PluginManager::registerPlugin(filePath, pluginName, pluginName, LL::Version(1, 0, 0), {});
+
         if (isHotLoad)
             LxlCallEventsOnHotLoad(engine);
         logger.info(pluginName + " loaded.");
@@ -158,19 +159,19 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
     }
     catch (const Exception& e)
     {
-        ScriptEngine* deleteEngine = currentModuleEngines.back();
-        currentModuleEngines.pop_back();
-        globalShareData->engines.pop_back();
+        logger.error("Fail to load " + filePath + "!\n");
+        if (engine)
         {
-            EngineScope enter(deleteEngine);
-
-            deleteEngine->getData().reset();
-            logger.error("Fail to load " + filePath + "!\n");
+            EngineScope enter(engine);
             logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
             PrintException(e);
             ExitEngineScope exit;
+
+            engine->getData().reset();
+            EngineManager::unRegisterEngine(engine);
         }
-        deleteEngine->destroy();
+        if(engine)
+            engine->destroy();
     }
     catch (const std::exception& e)
     {
@@ -188,40 +189,27 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
 bool PluginManager::unloadPlugin(const std::string& name)
 {
     if (name == LLSE_DEBUG_ENGINE_NAME)
-        return true;
+        return false;
 
-    string unloadedPath = "";
-    for (int i = 0; i < currentModuleEngines.size(); ++i)
-    {
-        ScriptEngine* engine = currentModuleEngines[i];
-        if (ENGINE_GET_DATA(engine)->pluginName == name)
-        {
-            unloadedPath = ENGINE_GET_DATA(engine)->pluginFilePath;
+    auto engine = EngineManager::getEngine(name);
+    if (!engine)
+        return false;
 
-            LxlCallEventsOnHotUnload(engine);
-            LxlRemoveTimeTaskData(engine);
-            LxlRemoveAllEventListeners(engine);
-            LxlRemoveCmdRegister(engine);
-            LxlRemoveAllExportedFuncs(engine);
-            engine->getData().reset();
-            currentModuleEngines.erase(currentModuleEngines.begin() + i);       //????? change to std::remove_if
-            
-            auto& engines = globalShareData->engines;
-            engines.erase(remove_if(engines.begin(), engines.end(), 
-                [&name](ScriptEngineData& engineData) { return engineData.pluginName == name; })
-            , engines.end());
+    LxlCallEventsOnHotUnload(engine);
+    LxlRemoveTimeTaskData(engine);
+    LxlRemoveAllEventListeners(engine);
+    LxlRemoveCmdRegister(engine);
+    LxlRemoveAllExportedFuncs(engine);
+    engine->getData().reset();
 
-            PluginManager::unRegisterPlugin(name);
-            //delay request to avoid crash
-            Schedule::nextTick([engine]() {
-                engine->destroy();
-            });
+    EngineManager::unRegisterEngine(engine);
+    PluginManager::unRegisterPlugin(name);
+    Schedule::nextTick([engine]() {
+        engine->destroy();
+    });
 
-            logger.info(name + " unloaded.");
-            return true;
-        }
-    }
-    return false;
+    logger.info(name + " unloaded.");
+    return true;
 }
 
 //重载插件
@@ -259,7 +247,8 @@ std::unordered_map<std::string, LL::Plugin*> PluginManager::getLocalPlugins()
 {
     std::unordered_map<std::string, LL::Plugin*> res;
 
-    for (auto& engine : currentModuleEngines)
+    auto engines = EngineManager::getLocalEngines();
+    for (auto& engine : engines)
     {
         string name = ENGINE_GET_DATA(engine)->pluginName;
         if (name != LLSE_DEBUG_ENGINE_NAME)

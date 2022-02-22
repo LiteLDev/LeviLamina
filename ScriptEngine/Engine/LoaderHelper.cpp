@@ -24,21 +24,6 @@
 #include <PluginManager.h>
 using namespace std;
 
-//创建新引擎
-ScriptEngine* NewEngine()
-{
-    ScriptEngine* engine;
-
-#if !defined(SCRIPTX_BACKEND_WEBASSEMBLY)
-    engine = new ScriptEngineImpl();
-#else
-    engine = ScriptEngineImpl::instance();
-#endif
-
-    engine->setData(make_shared<EngineOwnData>());
-    return engine;
-}
-
 //远程装载回调
 void RemoteLoadRequest(ModuleMessage& msg)
 {

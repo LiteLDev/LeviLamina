@@ -61,9 +61,6 @@ extern LocalDataType* localShareData;
 //命令延迟注册队列
 extern std::vector<RegCmdQueue> toRegCmdQueue;
 
-//本地引擎表
-extern std::vector<ScriptEngine*> currentModuleEngines;
-
 //线程池
 extern ThreadPool pool;
 

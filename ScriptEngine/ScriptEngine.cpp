@@ -5,6 +5,7 @@
 #include <Engine/LocalShareData.h>
 #include <Engine/RemoteCall.h>
 #include <Engine/MessageSystem.h>
+#include <Engine/EngineManager.h>
 #include <SafeGuardRecord.h>
 #include <windows.h>
 #include <string>
@@ -23,8 +24,6 @@
 
 using namespace std;
 
-//主引擎表
-std::vector<ScriptEngine*> currentModuleEngines;
 //配置文件
 fifo_json globalConfig;
 

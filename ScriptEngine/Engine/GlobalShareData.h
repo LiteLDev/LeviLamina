@@ -1,4 +1,5 @@
 #include <API/APIHelp.h>
+#include "EngineManager.h"
 #include <vector>
 #include <list>
 #include <string>
@@ -15,14 +16,6 @@ struct ExportedFuncData
 	script::Global<Function> func;
 };
 
-//全局引擎数据
-struct ScriptEngineData
-{
-	string moduleType;
-	string pluginName;
-	ScriptEngine* engine;
-};
-
 //消息系统处理函数信息
 struct MessageHandlers
 {
@@ -33,8 +26,8 @@ struct MessageHandlers
 //全局共享数据
 struct GlobalDataType
 {
-	//总引擎表
-	std::vector<ScriptEngineData> engines;
+	//引擎管理器表
+	std::list<ScriptEngine*> globalEngineList;
 
 	//注册过的命令
 	std::unordered_map<std::string, std::string> playerRegisteredCmd;

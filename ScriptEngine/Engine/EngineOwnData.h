@@ -21,13 +21,14 @@ struct EngineOwnData
     //基础信息
     std::string pluginName = "";
     std::string pluginFilePath = "";
+    std::string engineType = LLSE_BACKEND_TYPE;
 
     //表单回调
     std::map<unsigned, FormCallbackData> formCallbacks;
 
     //LoggerAPI
     bool toConsole = true;
-    Logger logger = Logger("");
+    ::Logger logger = ::Logger("");
     int maxLogLevel = 4;
 
     //玩家绑定数据

@@ -2,6 +2,7 @@
 #include "TimeTaskSystem.h"
 #include "MessageSystem.h"
 #include <Engine/EngineOwnData.h>
+#include <Engine/EngineManager.h>
 #include <ScheduleAPI.h>
 #include <Utils/STLHelper.h>
 #include <map>
@@ -61,6 +62,8 @@ int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
         try {
             if (timeTaskMap.find(id) == timeTaskMap.end())
                 return;
+            if (!EngineManager::isValid(engine))
+                return;
             auto& taskData = timeTaskMap.at(id);
 
             EngineScope scope(engine);
@@ -93,6 +96,8 @@ int NewTimeout(Local<String> func, int timeout)
         try {
             if (timeTaskMap.find(id) == timeTaskMap.end())
                 return;
+            if (!EngineManager::isValid(engine))
+                return;
             auto& taskData = timeTaskMap.at(id);
             EngineScope scope(engine);
             engine->eval(taskData.code.get().toString());
@@ -118,6 +123,12 @@ int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
         try {
             if (timeTaskMap.find(id) == timeTaskMap.end())
                 return;
+            if (!EngineManager::isValid(engine))
+            {
+                timeTaskMap[id].task.cancel();
+                timeTaskMap.erase(id);
+                return;
+            }
             auto& taskData = timeTaskMap.at(id);
 
             EngineScope scope(engine);
@@ -149,6 +160,12 @@ int NewInterval(Local<String> func, int timeout)
         try {
             if (timeTaskMap.find(id) == timeTaskMap.end())
                 return;
+            if (!EngineManager::isValid(engine))
+            {
+                timeTaskMap[id].task.cancel();
+                timeTaskMap.erase(id);
+                return;
+            }
             auto& taskData = timeTaskMap.at(id);
             EngineScope scope(engine);
             engine->eval(taskData.code.get().toString());

@@ -39,6 +39,7 @@
     <ClCompile Include="API\CommandAPI.cpp" />
     <ClCompile Include="API\CommandOriginAPI.cpp" />
     <ClCompile Include="API\CommandOutputAPI.cpp" />
+    <ClCompile Include="Engine\EngineManager.cpp" />
     <ClCompile Include="Engine\LocalShareData.cpp" />
     <ClCompile Include="Engine\MessageSystem.cpp" />
     <ClCompile Include="Engine\OperationCount.cpp" />
@@ -86,6 +87,7 @@
     <ClInclude Include="API\CommandOutputAPI.h" />
     <ClInclude Include="Configs.h" />
     <ClInclude Include="API\CommandAPI.h" />
+    <ClInclude Include="Engine\EngineManager.h" />
     <ClInclude Include="Engine\GlobalShareData.h" />
     <ClInclude Include="Engine\EngineOwnData.h" />
     <ClInclude Include="Engine\LoaderHelper.h" />

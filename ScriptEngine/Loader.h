@@ -8,5 +8,4 @@
 extern std::vector<std::string> depends;
 
 //前置声明
-extern std::vector<ScriptEngine*> currentModuleEngines;
 extern void BindAPIs(ScriptEngine *engine);

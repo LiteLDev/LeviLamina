@@ -1246,10 +1246,13 @@ THook(void, "?tick@ServerLevel@@UEAAXXZ",
 {
     try
     {
-        for (auto engine : currentModuleEngines)
+        for (auto engine : globalShareData->globalEngineList)
         {
-            EngineScope enter(engine);
-            engine->messageQueue()->loopQueue(script::utils::MessageQueue::LoopType::kLoopOnce);
+            if (EngineManager::getEngineType(engine) == LLSE_BACKEND_TYPE)
+            {
+                EngineScope enter(engine);
+                engine->messageQueue()->loopQueue(script::utils::MessageQueue::LoopType::kLoopOnce);
+            }
         }
     }
     catch (...)
