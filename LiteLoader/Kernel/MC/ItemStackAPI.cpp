@@ -4,6 +4,8 @@
 #include "MC/Spawner.hpp"
 #include "MC/Level.hpp"
 #include "MC/ItemInstance.hpp"
+#include "MC/I18n.hpp"
+#include "MC/PropertiesSettings.hpp"
 #include <MC/CompoundTag.hpp>
 #include <string>
 #include <utility>
@@ -102,3 +104,11 @@ int ItemStackBase::getCount() const
         return 0;
     return dAccess<unsigned char, 34>(this);
 }
+
+string ItemStack::getStandardName(const Localization& language)
+{
+    I18n::chooseLanguage(language);
+    string standardName = this->getItem()->buildDescriptionName(*this);
+    I18n::chooseLanguage(Global<PropertiesSettings>->getLanguage());
+    return (standardName);
+};
