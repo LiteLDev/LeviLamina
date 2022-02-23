@@ -1,6 +1,6 @@
 #include "Global.h"
 #include <Main/Config.h>
-
+#include <MC/CommandParameterData.hpp>
 /////////////////// Built in UnlockCmd ///////////////////
 
 bool isUnlockCmdEnabled = true;
@@ -56,3 +56,33 @@ TClasslessInstanceHook(bool, "?isExpansionAllowed@CommandSelectorBase@@AEBA_NAEB
 //    tryChangeStringToRawText(nameParam);
 //    return original(this, unk, version, nameParam);
 //}
+// bool unlockNewExecute = true;
+// TClasslessInstanceHook(bool, "?isEnabled@FeatureToggles@@QEBA_NW4FeatureOptionID@@@Z",
+//                        int feature)
+// {
+//     if (feature == 54 && unlockNewExecute)
+//         return true;
+//     return original(this, feature);
+// }
+//TClasslessInstanceHook(void, "?addSemanticConstraint@CommandRegistry@@AEAAXW4SemanticConstraint@@@Z",
+//                       enum SemanticConstraint)
+//{
+//    return;
+//}
+TClasslessInstanceHook(void, "?addEnumValueConstraints@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@W4SemanticConstraint@@@Z",
+                       std::string const& enumName, std::vector<std::string> const& enumValues, SemanticConstraint constraint)
+{
+    if (!LL::globalConfig.enableUnlockCmd)
+        return original(this, enumName, enumValues, constraint);
+    if (constraint & SemanticConstraint::RequiresCheatsEnabled)
+    {
+        constraint = (SemanticConstraint)(constraint & (~SemanticConstraint::RequiresCheatsEnabled));
+        constraint = (SemanticConstraint)(constraint | SemanticConstraint::RequiresElevatedPermissions);
+    }
+    //if (constraint & SemanticConstraint::RequiresHostPermissions)
+    //{
+    //    constraint = (SemanticConstraint)(constraint & (~SemanticConstraint::RequiresHostPermissions));
+    //    constraint = (SemanticConstraint)(constraint | SemanticConstraint::RequiresElevatedPermissions);
+    //}
+    return original(this, enumName, enumValues, constraint);
+}
