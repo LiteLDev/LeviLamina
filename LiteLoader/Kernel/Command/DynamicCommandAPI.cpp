@@ -549,8 +549,9 @@ DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class Dynami
         return false;
     if (commandInstance->overloads.empty())
         return false;
-    commandInstance->updateSoftEnum();
+    //commandInstance->updateSoftEnum();
     auto namesInBds = getEnumNamesFromBDS();
+    std::unordered_map<std::string_view, std::pair<size_t, size_t>> convertedEnumRanges;
     for (auto& [name, range] : commandInstance->enumRanges)
     {
         std::string fixedName = name.data();
@@ -558,10 +559,19 @@ DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class Dynami
         {
             fixedName.append("_");
         }
+        std::string_view fixedView = name;
         if (fixedName != name) {
             for (auto& namePtr : commandInstance->enumNames) {
                 if (*namePtr == name) {
-                    namePtr->assign(fixedName);
+                    namePtr->swap(fixedName);
+                    fixedView = *namePtr;
+                    for (auto& data : commandInstance->parameterDatas) {
+                        if (data.description == fixedName)
+                        {
+                            data.description = *namePtr;
+                        }
+                    }
+                    break;
                 }
             }
         }
@@ -572,8 +582,9 @@ DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class Dynami
             values.emplace_back(*iter, index);
             index++;
         }
-        Global<CommandRegistry>->_addEnumValuesInternal(name.data(), values, typeid_t<CommandRegistry>::count++, &CommandRegistry::parseEnum<int>).val;
+        Global<CommandRegistry>->_addEnumValuesInternal(fixedView.data(), values, typeid_t<CommandRegistry>::count++, &CommandRegistry::parseEnum<int64_t>).val;
     }
+    commandInstance->enumRanges.swap(convertedEnumRanges);
     Global<CommandRegistry>->registerCommand(commandInstance->name, commandInstance->description->c_str(), commandInstance->permission, commandInstance->flag, commandInstance->flag);
     auto builder = commandInstance->initCommandBuilder();
     for (auto& overload : commandInstance->overloads)
@@ -694,15 +705,16 @@ inline bool DynamicCommandInstance::addOverload(std::vector<std::string>&& param
 
 inline std::string const& DynamicCommandInstance::setEnum(std::string const& description, std::vector<std::string> const& values)
 {
-    enumNames.push_back(std::make_unique<std::string>(description));
-    std::string const& desc = **(enumNames.end() - 1);
-    enumRanges.emplace(desc, std::pair{enumValues.size(), values.size()});
+    auto& desc = enumNames.emplace_back(std::make_unique<std::string>(description));
+    enumRanges.emplace(*desc, std::pair{enumValues.size(), values.size()});
     enumValues.insert(enumValues.end(), values.begin(), values.end());
-    return desc;
+    return *desc;
 }
 
 inline std::string const& DynamicCommandInstance::getEnumValue(int index) const
 {
+    if (index < 0 || index >= enumValues.size())
+        throw std::runtime_error("Enum index out of range");
     return enumValues.at(index);
 }
 
@@ -733,9 +745,16 @@ ParameterIndex DynamicCommandInstance::newParameter(DynamicCommand::ParameterDat
         {
             auto iter = std::find(namesInBds.begin(), namesInBds.end(), data.description);
             if (iter == namesInBds.end())
-                throw("Enum " + std::string(data.description) + "not found in command and bds");
+                throw("Enum " + std::string(data.description) + "not found in command and BDS");
             setEnum(*iter, getEnumValuesFromBDS(*iter));
         }
+    }
+    else if (data.type == ParameterType::SoftEnum)
+    {
+        auto namesInBds = getSoftEnumNames();
+        auto iter = std::find(namesInBds.begin(), namesInBds.end(), data.description);
+        if (iter == namesInBds.end())
+            throw("SoftEnum " + std::string(data.description) + "not found in BDS");
     }
     parameterDatas.emplace_back(std::move(data));
     return {this, parameterDatas.size() - 1};
@@ -816,91 +835,67 @@ inline std::vector<CommandParameterData> DynamicCommandInstance::buildOverload(s
     return datas;
 }
 
-bool DynamicCommandInstance::updateSoftEnum(std::string const& name) const
-{
-    if (!hasRegistered())
-    {
-        for (auto& [key, values] : softEnumValues)
-        {
-            Global<CommandRegistry>->addSoftEnum(key, values);
-        }
-        return true;
-    }
-    if (!name.empty())
-    {
-        auto iter = softEnumValues.find(name);
-        if (iter != softEnumValues.end())
-            CommandSoftEnumRegistry(Global<CommandRegistry>).updateSoftEnum(SoftEnumUpdateType::Set, iter->first, iter->second);
-        else
-            return false;
-        return true;
-    }
-    else
-    {
-        for (auto& [key, values] : softEnumValues)
-        {
-            CommandSoftEnumRegistry(Global<CommandRegistry>).updateSoftEnum(SoftEnumUpdateType::Set, key, values);
-        }
-    }
-}
+//bool DynamicCommandInstance::updateSoftEnum(std::string const& name) const
+//{
+//    if (!hasRegistered())
+//    {
+//        for (auto& [key, values] : softEnumValues)
+//        {
+//            Global<CommandRegistry>->addSoftEnum(key, values);
+//        }
+//        return true;
+//    }
+//    if (!name.empty())
+//    {
+//        auto iter = softEnumValues.find(name);
+//        if (iter != softEnumValues.end())
+//            CommandSoftEnumRegistry(Global<CommandRegistry>).updateSoftEnum(SoftEnumUpdateType::Set, iter->first, iter->second);
+//        else
+//            return false;
+//        return true;
+//    }
+//    else
+//    {
+//        for (auto& [key, values] : softEnumValues)
+//        {
+//            CommandSoftEnumRegistry(Global<CommandRegistry>).updateSoftEnum(SoftEnumUpdateType::Set, key, values);
+//        }
+//    }
+//}
 std::string DynamicCommandInstance::setSoftEnum(std::string const& name, std::vector<std::string> const& values) const
 {
-    if (softEnumValues.find(name) != softEnumValues.end())
-        softEnumValues.erase(name);
-    auto iter = softEnumValues.emplace(name, values);
-    if (hasRegistered())
-    {
-        updateSoftEnum(name);
+    auto names = getSoftEnumNamesFromBDS();
+    if (std::find(names.begin(), names.end(), name) == names.end()) {
+        Global<CommandRegistry>->addSoftEnum(name, values);
+        return name;
     }
+    CommandSoftEnumRegistry(Global<CommandRegistry>).updateSoftEnum(SoftEnumUpdateType::Set, name, values);
+    auto vals = getSoftEnumValuesFromBDS(name);
     return name;
 }
 std::string DynamicCommandInstance::addSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const
 {
-    if (softEnumValues.find(name) == softEnumValues.end())
-        addSoftEnumValues(name, values);
-    auto& vals = softEnumValues.at(name);
-    for (auto& val : values)
+    auto names = getSoftEnumNamesFromBDS();
+    if (std::find(names.begin(), names.end(), name) == names.end())
     {
-        if (std::find(vals.begin(), vals.end(), val) == vals.end())
-            vals.push_back(val);
+        Global<CommandRegistry>->addSoftEnum(name, values);
+        return name;
     }
-    if (hasRegistered())
-    {
-        updateSoftEnum(name);
-    }
+    CommandSoftEnumRegistry(Global<CommandRegistry>).updateSoftEnum(SoftEnumUpdateType::Add, name, values);
     return name;
 };
 std::string DynamicCommandInstance::removeSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const
 {
-    if (softEnumValues.find(name) == softEnumValues.end())
-        return "";
-    auto& vals = softEnumValues.at(name);
-    for (auto& val : values)
-    {
-        auto iter = std::find(vals.begin(), vals.end(), val);
-        if (iter != vals.end())
-            vals.erase(iter);
-    }
-    if (hasRegistered())
-    {
-        updateSoftEnum(name);
-    }
+    CommandSoftEnumRegistry(Global<CommandRegistry>).updateSoftEnum(SoftEnumUpdateType::Remove, name, values);
     return name;
 }
 inline std::vector<std::string> DynamicCommandInstance::getSoftEnumValues(std::string const& name) const
 {
-    if (softEnumValues.find(name) == softEnumValues.end())
-        return {};
-    return softEnumValues.at(name);
+    return getSoftEnumValuesFromBDS(name);
 }
 inline std::vector<std::string> DynamicCommandInstance::getSoftEnumNames() const
 {
-    std::vector<std::string> names;
-    for (auto& [name, values] : softEnumValues)
-    {
-        names.push_back(name);
-    }
-    return names;
+    return getSoftEnumNamesFromBDS();
 }
 
 inline void DynamicCommandInstance::setCallback(DynamicCommand::CallBackFn&& callback) const
@@ -1082,12 +1077,12 @@ inline void testSoftEnum()
         command->setEnum("DynSoft_Change",{"add","remove"}), (CommandParameterOption)1);
     auto list = command->mandatory("operation", ParamType::Enum, 
         command->setEnum("DynSoft_List",{"list"}), (CommandParameterOption)1);
-    auto test = command->mandatory("operation", ParamType::Enum, "TagChangeAction", (CommandParameterOption)1);
+    auto test = command->mandatory("operation", ParamType::Enum, "Block", (CommandParameterOption)1);
     auto name = command->mandatory("name", ParamType::SoftEnum, 
         command->setSoftEnum("DynNames", {"aaa"}));
 
     //command->addOverload({change, name});
-    command->addOverload({"TagChangeAction", "name"}); // enum in bds
+    command->addOverload({"Block", "name"}); // enum in bds
     command->addOverload({list});
     command->setCallback(
         [](DynamicCommand const& cmd, CommandOrigin const& origin, CommandOutput& output,

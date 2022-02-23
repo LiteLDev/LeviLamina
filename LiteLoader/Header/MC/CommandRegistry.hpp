@@ -95,7 +95,9 @@ class CommandRegistry {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    struct ParseToken {};
+    struct ParseToken {
+        MCAPI std::string toString() const;
+    };
 
     using ParseFn = bool (CommandRegistry::*)(
         void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&,
@@ -300,7 +302,8 @@ public:
                       CommandOrigin const&,
                       int,
                       std::string&,
-                      std::vector<std::string>&) const {
+                      std::vector<std::string>&) const
+    {
         auto data = getEnumData(token);
         *(int*)target = (int)data;
         return true;
@@ -309,7 +312,8 @@ public:
     template <typename Type, typename IDConverter = CommandRegistry::DefaultIdConverter<Type>>
     bool parseEnum(
         void* target, CommandRegistry::ParseToken const& token, CommandOrigin const&, int, std::string&,
-        std::vector<std::string>&) const {
+        std::vector<std::string>&) const
+    {
         auto data = getEnumData(token);
         *(Type*)target = IDConverter{}(data);
         return true;

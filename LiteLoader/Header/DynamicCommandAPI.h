@@ -454,8 +454,6 @@ public:
     // unordered_map{ enumName, pair{ enumIndex, enumSize } }
     std::unordered_map<std::string_view, std::pair<size_t, size_t>> enumRanges = {};
 
-    mutable std::unordered_map<std::string, std::vector<std::string>> softEnumValues;
-
     std::vector<DynamicCommand::ParameterData> parameterDatas = {};
 
 private:
@@ -495,7 +493,7 @@ public:
     LIAPI std::vector<CommandParameterData> buildOverload(std::vector<ParameterIndex> const& overload);
     LIAPI void setCallback(DynamicCommand::CallBackFn&& callback) const;
     LIAPI void removeCallback() const;
-    LIAPI bool updateSoftEnum(std::string const& name = "") const;
+    //LIAPI bool updateSoftEnum(std::string const& name = "") const;
     LIAPI std::string setSoftEnum(std::string const& name, std::vector<std::string> const& values) const;
     LIAPI std::string addSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const;
     LIAPI std::string removeSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const;
