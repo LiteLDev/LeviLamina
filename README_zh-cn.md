@@ -10,7 +10,7 @@
 
 ##### [English](README.md) | 简体中文
 
-![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20%26%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FDocs%2Fmaster%2Fimages%2Ficon.ico&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
+![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20%26%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLiteLoaderBDS%2Fmain%2Fdocs%2Fassets%2FLL-Logo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
 `LiteLoaderBDS` 是一个非官方的 `Minecraft` 服务端插件加载器，为基岩版官方服务端`Bedrock Dedicated Server`（以下简称**BDS**）提供插件开发支持 和 插件加载服务，弥补了官方行为包开发接口长期以来存在的一些不足。
 
@@ -149,7 +149,7 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 如果BDS版本相同，LiteLoader的更新将会**自动推送**，并且**自动在下一次服务端开启时安装**  
 第一时间获取最新功能更新！ 免去重复手动升级的烦恼~
 
-你也可以在控制台使用 `ll upgrade` 命令手动检查更新。
+你也可以在控制台使用 `ll upgrade` 命令手动检查更新。
 
 <br/>
 
@@ -286,6 +286,7 @@ PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](
 [ThreadPool](https://github.com/jhasse/ThreadPool) Zlib License    
 [LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) MIT License
 [magic_enum](https://github.com/Neargye/magic_enum) MIT License
+[dyncall](https://www.dyncall.org/index) ISC license
 
 ### 额外限制和例外
 

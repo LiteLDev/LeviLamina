@@ -1,6 +1,7 @@
 #include "APIHelp.h"
 #include <Utils/NetworkHelper.h>
 #include <Engine/TimeTaskSystem.h>
+#include <Engine/EngineManager.h>
 #include <third-party/httplib/httplib.h>
 #include <third-party/LightWebSocketClient/include/WebSocketClient.h>
 #include "NetworkAPI.h"
@@ -287,6 +288,9 @@ Local<Value> NetworkClass::httpGet(const Arguments& args)
             [callback{ std::move(callbackFunc) }, engine{ EngineScope::currentEngine() }]
             (int status, string body)
         {
+            if (!EngineManager::isValid(engine))
+                return;
+
             EngineScope scope(engine);
             try
             {
@@ -322,6 +326,9 @@ Local<Value> NetworkClass::httpPost(const Arguments& args)
             [callback{ std::move(callbackFunc) }, engine{ EngineScope::currentEngine() }]
             (int status, string data)
         {
+            if (!EngineManager::isValid(engine))
+                return;
+
             EngineScope scope(engine);
             try
             {

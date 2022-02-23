@@ -19,6 +19,7 @@
 #include <MC/EndTag.hpp>
 #include <MC/StringTag.hpp>
 #include <MC/Tag.hpp>
+#include <I18nAPI.h>
 #include <map>
 #include <nbt-cpp/nbt.hpp>
 #include <sstream>
@@ -224,11 +225,11 @@ inline void OutputNBTError(std::string const& errorMsg, int errorCode, std::stri
 #define CatchNBTError(func)                                                           \
     catch (const seh_exception& e)                                                    \
     {                                                                                 \
-        OutputNBTError("Uncaught SEH Exception Detected!", e.code(), e.what(), func); \
+        OutputNBTError("Uncaught SEH Exception Detected!", e.code(), TextEncoding::toUTF8(e.what()), func); \
     }                                                                                 \
     catch (const std::exception& e)                                                   \
     {                                                                                 \
-        OutputNBTError("Uncaught C++ Exception Detected!", errno, e.what(), func);    \
+        OutputNBTError("Uncaught C++ Exception Detected!", errno, TextEncoding::toUTF8(e.what()), func);    \
     }                                                                                 \
     catch (...)                                                                       \
     {                                                                                 \

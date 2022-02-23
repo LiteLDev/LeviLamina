@@ -5,6 +5,7 @@
 #include <Engine/LocalShareData.h>
 #include <Engine/RemoteCall.h>
 #include <Engine/MessageSystem.h>
+#include <Engine/EngineManager.h>
 #include <SafeGuardRecord.h>
 #include <windows.h>
 #include <string>
@@ -18,13 +19,11 @@
 #include <LiteLoader/Main/Version.h>
 #include <Utils/FileHelper.h>
 #include <Tools/JsonHelper.h>
-#include <TranslationAPI.h>
+#include <I18nAPI.h>
 #include <EconomicSystem.h>
 
 using namespace std;
 
-//主引擎表
-std::vector<ScriptEngine*> currentModuleEngines;
 //配置文件
 fifo_json globalConfig;
 
@@ -51,7 +50,7 @@ void LoadConfigFile()
     }
     catch (const nlohmann::json::exception& e) {
         logger.error("Fail to parse config file <{}> !", LITELOADER_CONFIG_FILE);
-        logger.error("{}", e.what());
+        logger.error("{}", TextEncoding::toUTF8(e.what()));
     }
     catch (...) {
         logger.error("Fail to load config file <{}> !", LITELOADER_CONFIG_FILE);

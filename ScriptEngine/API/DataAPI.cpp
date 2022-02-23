@@ -351,7 +351,7 @@ Local<Value> ConfJsonClass::reload(const Arguments& args)
     catch (const fifo_json::exception& e)
     {
         logger.error("Fail to parse json content in file!");
-        logger.error(e.what());
+        logger.error(TextEncoding::toUTF8(e.what()));
         return Boolean::newBoolean(false);
     }
     CATCH("Fail in confJsonReload!");
@@ -405,7 +405,7 @@ bool ConfJsonClass::reload()
     if (!jsonTexts)
         return false;
 
-    jsonConf = fifo_json::parse(*jsonTexts);
+    jsonConf = fifo_json::parse(*jsonTexts, nullptr, true, true);
     return true;
 }
 
@@ -734,13 +734,13 @@ Local<Value> MoneyClass::set(const Arguments& args)
     catch (const std::invalid_argument& e)
     {
         logger.error("Bad argument in MoneySet!");
-        logger.error(e.what());
+        logger.error(TextEncoding::toUTF8(e.what()));
         return Boolean::newBoolean(false);
     }
     catch (const std::out_of_range& e)
     {
         logger.error("Bad argument in MoneySet!");
-        logger.error(e.what());
+        logger.error(TextEncoding::toUTF8(e.what()));
         return Boolean::newBoolean(false);
     }
     CATCH("Fail in MoneySet!");
@@ -758,13 +758,13 @@ Local<Value> MoneyClass::get(const Arguments& args)
     catch (const std::invalid_argument& e)
     {
         logger.error("Bad argument in MoneyGet!");
-        logger.error(e.what());
+        logger.error(TextEncoding::toUTF8(e.what()));
         return Number::newNumber(0);
     }
     catch (const std::out_of_range& e)
     {
         logger.error("Bad argument in MoneyGet!");
-        logger.error(e.what());
+        logger.error(TextEncoding::toUTF8(e.what()));
         return Number::newNumber(0);
     }
     CATCH("Fail in MoneyGet!");
@@ -783,13 +783,13 @@ Local<Value> MoneyClass::add(const Arguments& args)
     catch (const std::invalid_argument& e)
     {
         logger.error("Bad argument in MoneyAdd!");
-        logger.error(e.what());
+        logger.error(TextEncoding::toUTF8(e.what()));
         return Boolean::newBoolean(false);
     }
     catch (const std::out_of_range& e)
     {
         logger.error("Bad argument in MoneyAdd!");
-        logger.error(e.what());
+        logger.error(TextEncoding::toUTF8(e.what()));
         return Boolean::newBoolean(false);
     }
     CATCH("Fail in MoneyAdd!");
@@ -808,13 +808,13 @@ Local<Value> MoneyClass::reduce(const Arguments& args)
     catch (const std::invalid_argument& e)
     {
         logger.error("Bad argument in MoneyReduce!");
-        logger.error(e.what());
+        logger.error(TextEncoding::toUTF8(e.what()));
         return Boolean::newBoolean(false);
     }
     catch (const std::out_of_range& e)
     {
         logger.error("Bad argument in MoneyReduce!");
-        logger.error(e.what());
+        logger.error(TextEncoding::toUTF8(e.what()));
         return Boolean::newBoolean(false);
     }
     CATCH("Fail in MoneyReduce!");
@@ -838,13 +838,13 @@ Local<Value> MoneyClass::trans(const Arguments& args)
     catch (const std::invalid_argument& e)
     {
         logger.error("Bad argument in MoneyTrans!");
-        logger.error(e.what());
+        logger.error(TextEncoding::toUTF8(e.what()));
         return Boolean::newBoolean(false);
     }
     catch (const std::out_of_range& e)
     {
         logger.error("Bad argument in MoneyTrans!");
-        logger.error(e.what());
+        logger.error(TextEncoding::toUTF8(e.what()));
         return Boolean::newBoolean(false);
     }
     CATCH("Fail in MoneyTrans!");
@@ -899,13 +899,13 @@ Local<Value> MoneyClass::getHistory(const Arguments& args)
     catch (const std::invalid_argument& e)
     {
         logger.error("Bad argument in MoneyGetHintory!");
-        logger.error(e.what());
+        logger.error(TextEncoding::toUTF8(e.what()));
         return Local<Value>();
     }
     catch (const std::out_of_range& e)
     {
         logger.error("Bad argument in MoneyGetHintory!");
-        logger.error(e.what());
+        logger.error(TextEncoding::toUTF8(e.what()));
         return Local<Value>();
     }
     CATCH("Fail in MoneyGetHintory!");
@@ -1070,7 +1070,21 @@ Local<Value> DataClass::fromBase64(const Arguments& args)
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
     try {
-        return String::newString(base64_decode(args[0].toStr()));
+        bool isBinary = false;
+        if (args.size() > 1)
+        {
+            CHECK_ARG_TYPE(args[1], ValueKind::kBoolean);
+            isBinary = args[1].asBoolean().value();
+        }
+        auto data = base64_decode(args[0].toStr());
+        if (isBinary)
+        {
+            return ByteBuffer::newByteBuffer((void*)data.c_str(), data.size());
+        }
+        else
+        {
+            return String::newString(data);
+        }
     }
     CATCH("Fail in FromBase64!");
 }

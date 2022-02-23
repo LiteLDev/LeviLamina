@@ -14,7 +14,10 @@ enum class CommandParameterDataType {
     ENUM,
     SOFT_ENUM
 };
-enum CommandParameterOption;
+enum CommandParameterOption:unsigned char
+{
+
+};
 class CommandRegistry;
 
 #undef BEFORE_EXTRA
@@ -38,16 +41,14 @@ public:
     int offset;                    // 64
     int flag_offset;               // 68
     bool mand;                     // 72
-    bool pad73;                    // 73
+    unsigned char options;         // 73
 
     CommandParameterData()
-        : tid(0) {
-    }
+        : tid(tid){};
 
     CommandParameterData(
         typeid_t<CommandRegistry> tid, ParseFn parser, std::string_view describe,
         CommandParameterDataType type, char const* enumName, int offset, bool optional, int flag_offset)
-
         : tid(tid)
         , parser(parser)
         , name(describe)
@@ -57,8 +58,7 @@ public:
         , offset(offset)
         , flag_offset(flag_offset)
         , mand(optional)
-        , pad73(false) {
-    }
+        , options(0){};
 
 #undef AFTER_EXTRA
 

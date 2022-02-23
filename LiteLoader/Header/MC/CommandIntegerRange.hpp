@@ -10,6 +10,9 @@
 class CommandIntegerRange {
 
 #define AFTER_EXTRA
+public:
+    int min, max;
+    bool inverted;
 
 #undef AFTER_EXTRA
 

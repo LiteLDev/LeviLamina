@@ -81,9 +81,6 @@
     <ClCompile Include="Kernel\Utils\FileHelper.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\TranslationAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\KVDBAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
@@ -312,6 +309,9 @@
     <ClCompile Include="Kernel\Command\DynamicCommandAPI.cpp">
       <Filter>Kernel\Command</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\I18nAPI_LL.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -350,7 +350,7 @@
     <ClInclude Include="Header\Utils\FileHelper.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Header\TranslationAPI.h">
+    <ClInclude Include="Header\I18nAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\KVDBAPI.h">
@@ -659,15 +659,18 @@
     <ClInclude Include="Header\DynamicCommandAPI.h">
       <Filter>Header\Command</Filter>
     </ClInclude>
+    <ClInclude Include="Header\TranslationAPI.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\CommandPositionFloat.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Lib\third-party\openssl\libcrypto.lib">
       <Filter>Lib</Filter>
     </Library>
     <Library Include="Lib\third-party\openssl\libssl.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="Header\third-party\cpp-base64\lib\cpp-base64.lib">
       <Filter>Lib</Filter>
     </Library>
     <Library Include="Lib\third-party\SQLiteCpp\SQLiteCpp.lib">
@@ -689,6 +692,18 @@
       <Filter>Lib</Filter>
     </Library>
     <Library Include="Lib\third-party\compact_enc_det\ced.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\third-party\dyncall\dyncall_s.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\third-party\dyncall\dyncallback_s.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\third-party\dyncall\dynload_s.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\third-party\cpp-base64\cpp-base64.lib">
       <Filter>Lib</Filter>
     </Library>
   </ItemGroup>

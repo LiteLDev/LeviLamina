@@ -11,6 +11,7 @@
 #include <Utils/StringHelper.h>
 #include <Utils/DbgHelper.h>
 #include <Main/Version.h>
+#include <I18nAPI.h>
 #include <chrono>
 #include <filesystem>
 #include <httplib/httplib.h>
@@ -364,11 +365,11 @@ bool LL::CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
     {
         if (isUpdateManually)
         {
-            autoUpgradeLogger.info("SEH Uncaught Exception Detected!\n{}", e.what());
+            autoUpgradeLogger.info("SEH Uncaught Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
             autoUpgradeLogger.info("In Auto Update system");
             PrintCurrentStackTraceback();
         } else {
-            autoUpgradeLogger.debug("SEH Uncaught Exception Detected!\n{}", e.what());
+            autoUpgradeLogger.debug("SEH Uncaught Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
             autoUpgradeLogger.debug("In Auto Update system");
         }
     }
@@ -441,9 +442,9 @@ void LL::InitAutoUpdateCheck()
             }
             catch (const seh_exception& e)
             {
-                autoUpgradeLogger.debug("SEH Uncaught Exception Detected!\n{}", e.what());
+                autoUpgradeLogger.debug("SEH Uncaught Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
                 autoUpgradeLogger.debug("In Auto Update system");
-                autoUpgradeLogger.debug("SEH Uncaught Exception Detected!\n{}", e.what());
+                autoUpgradeLogger.debug("SEH Uncaught Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
                 autoUpgradeLogger.debug("In Auto Update system");
             }
             catch (...)

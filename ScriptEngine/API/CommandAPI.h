@@ -1,29 +1,59 @@
 #pragma once
-#include "APIHelp.h"
-#include <string>
-#include <vector>
+#include "CommandCompatibleAPI.h"
+#include <DynamicCommandAPI.h>
 
-//////////////////// LXL Event Callbacks ////////////////////
+extern ClassDefine<void> ParamStaticBuilder;
+extern ClassDefine<void> PermissionStaticBuilder;
 
-class Player;
-//helper
-std::vector<std::string> SplitCmdLine(const std::string& paras);
+class CommandClass : public ScriptClass
+{
+    std::unique_ptr<DynamicCommandInstance> uptr;
+    DynamicCommandInstance* ptr;
+    bool registered = false;
+    inline DynamicCommandInstance* get()
+    {
+        return ptr;
+    }
+    inline std::vector<std::string> parseStringList(Local<Array> arr)
+    {
+        if (arr.size() == 0 || !arr.get(0).isString())
+            return {};
+        std::vector<std::string> strs;
+        for (size_t i = 0; i < arr.size(); i++)
+        {
+            strs.push_back(arr.get(i).toStr());
+        }
+        return std::move(strs);
+    }
+    inline Local<Value> getStringArray(std::vector<std::string> values)
+    {
+        Local<Array> arr = Array::newArray(values.size());
+        for (auto& str : values)
+        {
+            arr.add(String::newString(str));
+        }
+        return arr;
+    }
 
-// 注册LXL内置命令
-void RegisterBuiltinCmds();
-// 命令回调查询
-std::string LxlFindCmdReg(bool isPlayerCmd, const std::string& cmd, std::vector<std::string>& receiveParas, bool* fromOtherEngine);
-// 删除指定引擎的所有命令
-bool LxlRemoveCmdRegister(script::ScriptEngine* engine);
-
-// 处理命令延迟注册
-void ProcessRegCmdQueue();
-// 处理调试引擎事件
-bool ProcessDebugEngine(const std::string& cmd);
-// 处理热管理系统
-bool ProcessHotManageCmd(std::string& cmd);
-
-// 玩家自定义命令注册回调
-bool CallPlayerCmdCallback(Player* player, const std::string& cmdPrefix, const std::vector<std::string>& paras);
-// 控制台自定义命令注册回调
-bool CallServerCmdCallback(const std::string& cmdPrefix, const std::vector<std::string>& paras);
+public:
+    CommandClass(std::unique_ptr<DynamicCommandInstance>&& p);
+    CommandClass(DynamicCommandInstance* p);
+    static Local<Object> newCommand(std::unique_ptr<DynamicCommandInstance>&& p);
+    static Local<Object> newCommand(DynamicCommandInstance* p);
+    Local<Value> getName();
+    Local<Value> setEnum(const Arguments& args);
+    Local<Value> newParameter(const Arguments& args);
+    Local<Value> mandatory(const Arguments& args);
+    Local<Value> optional(const Arguments& args);
+    Local<Value> addOverload(const Arguments& args);
+    Local<Value> setCallback(const Arguments& args);
+    Local<Value> setup(const Arguments& args);
+    Local<Value> isRegistered();
+    Local<Value> toString(const Arguments& args);
+    Local<Value> setSoftEnum(const Arguments& args);
+    Local<Value> addSoftEnumValues(const Arguments& args);
+    Local<Value> removeSoftEnumValues(const Arguments& args);
+    Local<Value> getSoftEnumValues(const Arguments& args);
+    Local<Value> getSoftEnumNames(const Arguments& args);
+};
+extern ClassDefine<CommandClass> CommandClassBuilder;

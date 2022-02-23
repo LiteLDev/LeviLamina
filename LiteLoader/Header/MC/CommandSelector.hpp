@@ -20,3 +20,8 @@ public:
         }
     }
 };
+
+template <typename T>
+class WildcardCommandSelector : public CommandSelectorBase
+{
+};

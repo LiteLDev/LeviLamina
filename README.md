@@ -10,7 +10,7 @@
 
 ##### English | [简体中文](README_zh-cn.md)
 
-![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20%26%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FDocs%2Fmaster%2Fimages%2Ficon.ico&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
+![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20%26%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLiteLoaderBDS%2Fmain%2Fdocs%2Fassets%2FLL-Logo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
 `LiteLoaderBDS` is an unofficial plugin loader that provides basic API support for `Bedrock Dedicated Server`, with a
 massive API, lots of packed utility interfaces, a rich event system and powerful basic interface support.
@@ -274,6 +274,7 @@ You must accept the Minecraft EULA.
 [ThreadPool](https://github.com/jhasse/ThreadPool) Zlib License    
 [LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) MIT License
 [magic_enum](https://github.com/Neargye/magic_enum) MIT License
+[dyncall](https://www.dyncall.org/index) ISC license
 
 ### Extra Restrictions & Exceptions
 

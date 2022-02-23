@@ -64,6 +64,9 @@ bool SimpleFormClass::sendForm(Form::SimpleForm* form, Player* player, script::L
         [engine{ EngineScope::currentEngine() }, callback{ std::move(callbackFunc) }]
         (Player* pl, int chosen)
         {
+            if (!EngineManager::isValid(engine))
+                return;
+
             EngineScope scope(engine);
             try
             {
@@ -322,7 +325,8 @@ bool CallFormCallback(Player* player, unsigned formId, const string& data)
 
     try
     {
-        for (auto engine : currentModuleEngines)
+        auto engines = EngineManager::getLocalEngines();
+        for (auto engine : engines)
         {
             EngineScope enter(engine);
             FormCallbackData callback;

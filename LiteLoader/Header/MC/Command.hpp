@@ -35,12 +35,17 @@ enum class OriginType : char {
     Test = 4,
     AutomationPlayer = 5,
     ClientAutomation = 6,
-    DedicatedServer = 7,
+    Server = 7,
     Actor = 8,
     Virtual = 9,
     GameArgument = 10,
     ActorServer = 11,
+    Precompiled = 12,
+    GameDirectorEntity = 13,
+    Script = 14,
     ExecuteContext = 15,
+
+    DedicatedServer = 7,//Server
 };
 
 struct CommandFlag {
@@ -68,11 +73,11 @@ class Command {
 // Add Member There
 
 protected:
-    int unk8;          // 8
-    void* unk16;       // 16
-    int unk24;         // 24
-    unsigned char b28; // 28
-    CommandFlag flag;  // 30
+    int unk8;                          // 8
+    CommandRegistry* registry;         // 16
+    unsigned int symbol;               // 24, CommandRegistry::Symbol
+    CommandPermissionLevel permission; // 28
+    CommandFlag flag;                  // 30
 
 public:
     template <typename T>

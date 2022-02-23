@@ -40,6 +40,7 @@
 #include <RegCommandAPI.h>
 #include <Utils/StringHelper.h>
 #include <Utils/DbgHelper.h>
+#include <I18nAPI.h>
 #include <functional>
 #include <tuple>
 #include <iostream>
@@ -50,6 +51,7 @@
 #include <MC/InventoryTransaction.hpp>
 #include <MC/InventoryAction.hpp>
 #include <MC/InventorySource.hpp>
+#include <MC/Util.hpp>
 
 static_assert(offsetof(InventoryAction, source) == 0x0);
 static_assert(offsetof(InventoryAction, slot) == 0x0c);
@@ -143,11 +145,11 @@ bool EventManager<EVENT>::call(EVENT& ev)
         }
         catch (const seh_exception& e)
         {
-            OutputError("Uncaught SEH Exception Detected!", e.code(), e.what(), typeid(EVENT).name(), i->pluginName);
+            OutputError("Uncaught SEH Exception Detected!", e.code(), TextEncoding::toUTF8(e.what()), typeid(EVENT).name(), i->pluginName);
         }
         catch (const std::exception& e)
         {
-            OutputError("Uncaught C++ Exception Detected!", errno, e.what(), typeid(EVENT).name(), i->pluginName);
+            OutputError("Uncaught C++ Exception Detected!", errno, TextEncoding::toUTF8(e.what()), typeid(EVENT).name(), i->pluginName);
         }
         catch (...)
         {
@@ -160,18 +162,18 @@ bool EventManager<EVENT>::call(EVENT& ev)
     auto iNoConst = ev.listenersNoConst.begin();
     try { for (; iNoConst != ev.listenersNoConst.end(); ++iNoConst) if (!iNoConst->second(ev)) passToBDS = false;}
     catch (const seh_exception& e)
-    { OutputError("Uncaught SEH Exception Detected!", e.code(), e.what(), typeid(EVENT).name(), iNoConst->first); }
+    { OutputError("Uncaught SEH Exception Detected!", e.code(), TextEncoding::toUTF8(e.what()), typeid(EVENT).name(), iNoConst->first); }
     catch (const std::exception& e)
-    { OutputError("Uncaught Exception Detected! ", -1, e.what(), typeid(EVENT).name(), iNoConst->first); }
+    { OutputError("Uncaught Exception Detected! ", -1, TextEncoding::toUTF8(e.what()), typeid(EVENT).name(), iNoConst->first); }
     catch (...)
     { OutputError("Uncaught Exception Detected!", -1, "", typeid(EVENT).name(), iNoConst->first); }
     ///////////////////////////////////// For compatibility DO NOT UPDATE /////////////////////////////////////
     auto i = ev.listeners.begin();
     try { for (; i != ev.listeners.end(); ++i) if (!i->second(ev)) passToBDS = false; }
     catch (const seh_exception& e)
-    { OutputError("Uncaught SEH Exception Detected!", e.code(), e.what(), typeid(EVENT).name(), i->first); }
+    { OutputError("Uncaught SEH Exception Detected!", e.code(), TextEncoding::toUTF8(e.what()), typeid(EVENT).name(), i->first); }
     catch (const std::exception& e)
-    { OutputError("Uncaught Exception Detected! ", -1, e.what(), typeid(EVENT).name(), i->first); }
+    { OutputError("Uncaught Exception Detected! ", -1, TextEncoding::toUTF8(e.what()), typeid(EVENT).name(), i->first); }
     catch (...)
     { OutputError("Uncaught Exception Detected!", -1, "", typeid(EVENT).name(), i->first); }
     ///////////////////////////////////// For compatibility DO NOT UPDATE /////////////////////////////////////
@@ -193,11 +195,11 @@ bool EventManager<EVENT>::callToPlugin(std::string pluginName, EVENT& ev)
         }
         catch (const seh_exception& e)
         {
-            OutputError("Uncaught SEH Exception Detected!", e.code(), e.what(), typeid(EVENT).name(), i->pluginName);
+            OutputError("Uncaught SEH Exception Detected!", e.code(), TextEncoding::toUTF8(e.what()), typeid(EVENT).name(), i->pluginName);
         }
         catch (const std::exception& e)
         {
-            OutputError("Uncaught C++ Exception Detected!", errno, e.what(), typeid(EVENT).name(), i->pluginName);
+            OutputError("Uncaught C++ Exception Detected!", errno, TextEncoding::toUTF8(e.what()), typeid(EVENT).name(), i->pluginName);
         }
         catch (...)
         {
@@ -1060,7 +1062,6 @@ TInstanceHook(bool, "?canOpenContainerScreen@Player@@UEAA_NXZ",Player)
     IF_LISTENED_END(PlayerOpenContainerScreenEvent)
     return original(this);
 }
-
 /////////////////// PlayerCmdEvent & ConsoleCmd ///////////////////
 TClasslessInstanceHook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z",
        MCRESULT* rtn, std::shared_ptr<CommandContext> context, bool print)
@@ -1077,12 +1078,16 @@ TClasslessInstanceHook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCR
         {
             cmd = cmd.substr(1, cmd.size() - 1);
         }
+
+        if (!Util::isValidUTF8(cmd)) {
+            logger.error("Detected invalid utf-8 character, command will not be executed");
+            return rtn;
+        }
     }
     catch (...)
     {
         return rtn;
     }
-
     if (sp)
     {
         //PlayerCmd

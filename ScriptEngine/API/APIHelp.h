@@ -29,6 +29,7 @@ using script::ValueKind;
 #include <vector>
 #include <exception>
 #include <sstream>
+#include <magic_enum/magic_enum.hpp>
 
 // 输出异常信息
 inline void PrintException(const script::Exception& e)
@@ -80,7 +81,7 @@ bool inline IsInstanceOf(Local<Value> v)
     catch(const std::exception &e) \
     { \
         logger.error("C++ Uncaught Exception Detected!"); \
-        logger.error(e.what()); \
+        logger.error(TextEncoding::toUTF8(e.what())); \
         logger.error(std::string("In API: ") + __FUNCTION__); \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
         return Local<Value>(); \
@@ -88,7 +89,7 @@ bool inline IsInstanceOf(Local<Value> v)
     catch(const seh_exception &e) \
     { \
         logger.error("SEH Uncaught Exception Detected!"); \
-        logger.error(e.what()); \
+        logger.error(TextEncoding::toUTF8(e.what())); \
         logger.error(std::string("In API: ") + __FUNCTION__); \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
         return Local<Value>(); \
@@ -132,7 +133,7 @@ bool inline IsInstanceOf(Local<Value> v)
     catch(const std::exception &e) \
     { \
         logger.error("C++ Uncaught Exception Detected!"); \
-        logger.error(e.what()); \
+        logger.error(TextEncoding::toUTF8(e.what())); \
         logger.error(std::string("In API: ") + __FUNCTION__); \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
         return nullptr; \
@@ -140,7 +141,7 @@ bool inline IsInstanceOf(Local<Value> v)
     catch(const seh_exception &e) \
     { \
         logger.error("SEH Uncaught Exception Detected!"); \
-        logger.error(e.what()); \
+        logger.error(TextEncoding::toUTF8(e.what())); \
         logger.error(std::string("In API: ") + __FUNCTION__); \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
         return nullptr; \
@@ -170,3 +171,36 @@ std::string ValueToString(Local<Value> v);
 Local<Value> JsonToValue(std::string jsonStr);
 Local<Value> JsonToValue(fifo_json j);
 std::string ValueToJson(Local<Value> v,int formatIndent = -1);
+
+// Get the enum's ClassDefine<void> object
+// Limitation: enum values must be in range of [-128, 128)
+template <typename Type>
+struct EnumDefineBuilder
+{
+    template <Type val>
+    inline static Local<Value> serialize()
+    {
+        return Number::newNumber(static_cast<int>(val));
+    }
+    template <Type val, std::enable_if_t<std::is_enum_v<Type>, char> max = static_cast<char>(*magic_enum::enum_values<Type>().rbegin())>
+    inline static void buildBuilder(script::ClassDefineBuilder<void>& builder)
+    {
+        if constexpr (static_cast<char>(val) > max)
+            return;
+        if constexpr (!magic_enum::enum_name(val).empty())
+        {
+            //fmt::print("{} = {},\n", magic_enum::enum_name(val), static_cast<int>(val));
+            builder.property(magic_enum::enum_name(val).data(), &serialize<val>);
+        }
+        buildBuilder<static_cast<Type>((static_cast<char>(val) + 1)), max>(builder);
+    }
+    template <std::enable_if_t<std::is_enum_v<Type>, char> max = static_cast<char>(*magic_enum::enum_values<Type>().rbegin())>
+    inline static ClassDefine<void> build(std::string const& name)
+    {
+        script::ClassDefineBuilder<void> builder = defineClass(name);
+        //fmt::print("枚举 {} 可能取值：\n", name);
+        buildBuilder<*magic_enum::enum_values<Type>().begin(), max>(builder);
+        //fmt::print("\n");
+        return builder.build();
+    }
+};

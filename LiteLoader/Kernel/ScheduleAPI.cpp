@@ -7,6 +7,7 @@
 #include <LoggerAPI.h>
 #include <LLAPI.h>
 #include <Utils/DbgHelper.h>
+#include <I18nAPI.h>
 
 using namespace std;
 
@@ -87,14 +88,14 @@ public:
                 }
                 catch (const seh_exception& e) {
                     logger.error("SEH exception occurred in ScheduleTask!");
-                    logger.error("{}", e.what());
+                    logger.error("{}", TextEncoding::toUTF8(e.what()));
                     logger.error("TaskId: {}", t.taskId);
                     if (auto plugin = LL::getPlugin(t.handler))
                         logger.error("Plugin: {}", plugin->name);
                 }
                 catch (const std::exception& e) {
                     logger.error("Exception occurred in ScheduleTask!");
-                    logger.error("{}", e.what());
+                    logger.error("{}", TextEncoding::toUTF8(e.what()));
                     logger.error("TaskId: {}", t.taskId);
                     if (auto plugin = LL::getPlugin(t.handler))
                         logger.error("Plugin: {}", plugin->name);

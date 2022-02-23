@@ -3,7 +3,7 @@
 #include <vector>
 #include <RegCommandAPI.h>
 
-static_assert(offsetof(CommandParameterData, pad73) == 73);
+static_assert(offsetof(CommandParameterData, options) == 73);
 static_assert(offsetof(CommandParameterData, name) == 16);
 static_assert(offsetof(CommandParameterData, unk56) == 56);
 static_assert(offsetof(CommandRegistry::Overload, unk) == 40);

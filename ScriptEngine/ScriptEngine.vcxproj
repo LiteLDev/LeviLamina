@@ -15,7 +15,7 @@
     <ClCompile Include="API\BaseAPI.cpp" />
     <ClCompile Include="API\BlockAPI.cpp" />
     <ClCompile Include="API\BlockEntityAPI.cpp" />
-    <ClCompile Include="API\CommandAPI.cpp" />
+    <ClCompile Include="API\CommandCompatibleAPI.cpp" />
     <ClCompile Include="API\ContainerAPI.cpp" />
     <ClCompile Include="API\DataAPI.cpp" />
     <ClCompile Include="API\DeviceAPI.cpp" />
@@ -36,6 +36,10 @@
     <ClCompile Include="API\ServerAPI.cpp" />
     <ClCompile Include="API\SystemAPI.cpp" />
     <ClCompile Include="BindAPIs.cpp" />
+    <ClCompile Include="API\CommandAPI.cpp" />
+    <ClCompile Include="API\CommandOriginAPI.cpp" />
+    <ClCompile Include="API\CommandOutputAPI.cpp" />
+    <ClCompile Include="Engine\EngineManager.cpp" />
     <ClCompile Include="Engine\LocalShareData.cpp" />
     <ClCompile Include="Engine\MessageSystem.cpp" />
     <ClCompile Include="Engine\OperationCount.cpp" />
@@ -58,7 +62,7 @@
     <ClInclude Include="API\BaseAPI.h" />
     <ClInclude Include="API\BlockAPI.h" />
     <ClInclude Include="API\BlockEntityAPI.h" />
-    <ClInclude Include="API\CommandAPI.h" />
+    <ClInclude Include="API\CommandCompatibleAPI.h" />
     <ClInclude Include="API\ContainerAPI.h" />
     <ClInclude Include="API\DataAPI.h" />
     <ClInclude Include="API\DeviceAPI.h" />
@@ -79,7 +83,11 @@
     <ClInclude Include="API\ServerAPI.h" />
     <ClInclude Include="API\McAPI.h" />
     <ClInclude Include="API\SystemAPI.h" />
+    <ClInclude Include="API\CommandOriginAPI.h" />
+    <ClInclude Include="API\CommandOutputAPI.h" />
     <ClInclude Include="Configs.h" />
+    <ClInclude Include="API\CommandAPI.h" />
+    <ClInclude Include="Engine\EngineManager.h" />
     <ClInclude Include="Engine\GlobalShareData.h" />
     <ClInclude Include="Engine\EngineOwnData.h" />
     <ClInclude Include="Engine\LoaderHelper.h" />

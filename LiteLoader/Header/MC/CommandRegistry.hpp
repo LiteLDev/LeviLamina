@@ -7,24 +7,86 @@
 // Include Headers or Declare Types Here
 #include <memory>
 #include "Command.hpp"
+//#include "typeid_t.hpp"
 #include "CommandPosition.hpp"
+#include "CommandPositionFloat.hpp"
 #include "CommandMessage.hpp"
 #include "CommandSelector.hpp"
 #include "CommandOrigin.hpp"
 #include "CommandVersion.hpp"
+#include "CommandRawText.hpp"
+#include "CommandItem.hpp"
+#include "CommandIntegerRange.hpp"
+
 class CommandParameterData;
 
+#pragma region typeid
+
 template <typename T>
-class typeid_t {
+class typeid_t
+{
 public:
+    inline static unsigned short count = 0;
     unsigned short value;
     typeid_t<T>(typeid_t<T> const& id)
-        : value(id.value) {
-    }
+        : value(id.value){};
     typeid_t<T>(unsigned short value)
-        : value(value) {
-    }
+        : value(value){};
 };
+template <>
+class typeid_t<CommandRegistry>
+{
+public:
+    MCAPI static unsigned short count;
+    unsigned short value;
+    typeid_t<CommandRegistry>(typeid_t<CommandRegistry> const& id)
+        : value(id.value){};
+    typeid_t<CommandRegistry>(unsigned short value)
+        : value(value){};
+};
+template <typename T, typename T2>
+typeid_t<T> type_id()
+{
+    static typeid_t<T> id = typeid_t<T>::count++;
+    return id;
+}
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDamageCause>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, AutomaticID<class Dimension, int>>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class Block const*>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, bool>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandMessage>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum CommandOperator>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPosition>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPositionFloat>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPositionFloat>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<Actor>>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<Player>>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum EquipmentSlot>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, float>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, int>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, Json::Value>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum Mirror>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class MobEffect const*>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class RelativeFloat>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, std::string>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, std::unique_ptr<Command>>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class WildcardCommandSelector<Actor>>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandIntegerRange>();
+//template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>();
+template<>
+inline typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>()
+{
+    static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)dlsym_real("?id@?1???$type_id@VCommandRegistry@@PEBUActorDefinitionIdentifier@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
+    //static typeid_t<CommandRegistry> id = ([]() -> typeid_t<CommandRegistry> {
+    //    CommandParameterData data = SymCall("??$mandatory@VRideCommand@@PEBUActorDefinitionIdentifier@@@commands@@YA?AVCommandParameterData@@PEQRideCommand@@PEBUActorDefinitionIdentifier@@PEBDPEQ2@_N@Z",
+    //            CommandParameterData, void*, char const*, uintptr_t)(nullptr, "entityType", 0);
+    //    return data.tid;
+    //    })();
+    return id;
+};
+
+#pragma endregion
 
 #undef BEFORE_EXTRA
 
@@ -45,7 +107,7 @@ public:
     };
 
     struct Overload {
-        using FactoryFn = std::unique_ptr<Command>(*)(void);
+        using FactoryFn = std::unique_ptr<Command>(*)();
 
         CommandVersion version;                    // 0
         FactoryFn factory;                         // 8
@@ -171,15 +233,57 @@ public:
              "HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@"
              "DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@"
              "std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+        {typeid(CommandPositionFloat).name(),
+         dlsym_real(
+             "??$parse@VCommandPositionFloat@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@"
+             "HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@"
+             "DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@"
+             "V?$allocator@D@2@@std@@@2@@4@@Z")},
         {typeid(Json::Value).name(),
          dlsym_real(
              "??$parse@VValue@Json@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@"
              "HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@"
              "DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@"
              "V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+        {typeid(std::unique_ptr<Command>).name(),
+         dlsym_real(
+             "??$parse@V?$unique_ptr@VCommand@@U?$default_delete@VCommand@@@std@@@std@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+        {typeid(RelativeFloat).name(),
+         dlsym_real(
+             "??$parse@VRelativeFloat@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+        {typeid(CommandRawText).name(),
+         dlsym_real(
+             "??$parse@VCommandRawText@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+        {typeid(Block const*).name(),
+         dlsym_real(
+             "??$parse@PEBVBlock@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+        {typeid(MobEffect const*).name(),
+         dlsym_real(
+             "??$parse@PEBVMobEffect@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+        {typeid(CommandItem).name(),
+         dlsym_real(
+             "??$parse@VCommandItem@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+        {typeid(WildcardCommandSelector<Actor>).name(),
+         dlsym_real(
+             "??$parse@V?$WildcardCommandSelector@VActor@@@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+        {typeid(ActorDefinitionIdentifier const*).name(),
+         dlsym_real(
+             "??$parse@PEBUActorDefinitionIdentifier@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
     };
+
+private:
+    template <typename T>
+    bool parse(void*, ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&) const {
+            
+    };
+
+public:
     template <typename T>
     inline static ParseFn getParseFn(){
+        if constexpr (!std::is_same_v<enum CommandOperator,T> && std::is_enum_v<T>)
+            return &fakeParse<T>;
+        //else
+        //    return &parse<T>;
         bool (CommandRegistry::*ptr)(void*, CommandRegistry::ParseToken const&,
                                      CommandOrigin const&, int, std::string&,
                                      std::vector<std::string>&) const;
@@ -231,18 +335,18 @@ public:
         return _addEnumValuesInternal(name, converted, tid, &CommandRegistry::parseEnumInt).val;
     }
 
-    inline static typeid_t<CommandRegistry> getNextTypeId() {
-        auto& id = *((unsigned short*)SYM("?count@?$typeid_t@VCommandRegistry@@@@2GA"));
-        return {id++};
-    }
+    //inline static typeid_t<CommandRegistry> getNextTypeId() {
+    //    return typeid_t<CommandRegistry>::count++;
+    //}
 
     template <typename T>
     CommandRegistry* addEnum(char const* name, std::vector<std::pair<std::string, T>> const& values) {
-        this->addEnumValues<T>(name, CommandRegistry::getNextTypeId(), values);
+        this->addEnumValues<T>(name, type_id<CommandRegistry, T>(), values);
         return this;
     }
 
     friend class DynamicCommand;
+    friend class DynamicCommandInstance;
 
 
 #undef AFTER_EXTRA

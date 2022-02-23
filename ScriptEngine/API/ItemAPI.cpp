@@ -143,11 +143,11 @@ Local<Value> ItemClass::set(const Arguments& args)
 Local<Value> ItemClass::clone(const Arguments& args)
 {
     try {
-        auto item = ItemClass::extract(args[0]);
+        auto item = get();
         if (!item)
             return Local<Value>();    //Null
 
-        return Boolean::newBoolean(item->clone_s());
+        return ItemClass::newItem(item->clone_s());
     }
     CATCH("Fail in cloneItem!");
 }
@@ -220,8 +220,10 @@ Local<Value> ItemClass::setNbt(const Arguments& args)
         auto nbt = NbtCompoundClass::extract(args[0]);
         if (!nbt)
             return Local<Value>();    //Null
-
+        auto item = get();
         item->setNbt(nbt);
+        // update Pre Data
+        preloadData();
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in setNbt!");

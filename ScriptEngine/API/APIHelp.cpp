@@ -349,7 +349,7 @@ Local<Value> JsonToValue(std::string jsonStr)
     }
     catch (const fifo_json::exception &e)
     {
-        logger.warn(tr("api.parseJson.fail") + e.what());
+        logger.warn(tr("api.parseJson.fail") + TextEncoding::toUTF8(e.what()));
         return String::newString(jsonStr);
     }
 }
