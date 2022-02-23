@@ -6,6 +6,7 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include <string>
+#include "CommandOrigin.hpp"
 class CommandOrigin;
 
 #undef BEFORE_EXTRA
@@ -17,8 +18,8 @@ class CommandContext {
 
 public:
     std::string command;
-    CommandOrigin* origin;
-    int Version = 10;
+    std::unique_ptr<CommandOrigin> origin;
+    int Version = 18;
 
     std::string& getCmd() {
         return command;

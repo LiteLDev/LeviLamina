@@ -2,10 +2,10 @@
 #include "Global.h"
 class Actor;
 #include "MC/Command.hpp"
+#include "MC/CommandRegistry.hpp"
 #include "MC/CommandSelector.hpp"
 #include "MC/CommandPosition.hpp"
 #include "MC/CommandParameterData.hpp"
-#include "MC/CommandRegistry.hpp"
 #include "Utils/WinHelper.h"
 
 ///////////////////////////////////////////////////////

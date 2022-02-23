@@ -536,9 +536,6 @@
     <ClInclude Include="Header\MC\ShortTag.hpp">
       <Filter>Header\NBT</Filter>
     </ClInclude>
-    <ClInclude Include="Header\RegCommandAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
     <ClInclude Include="Header\MC\BlockInstance.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
@@ -663,6 +660,12 @@
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\MC\CommandPositionFloat.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\CommandFlag.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\RegCommandAPI.h">
       <Filter>Header\Command</Filter>
     </ClInclude>
   </ItemGroup>

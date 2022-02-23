@@ -6,17 +6,29 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-#include "CommandRegistry.hpp"
+#include "Command.hpp"
 #include <string_view>
 
 enum class CommandParameterDataType {
     NORMAL,
     ENUM,
-    SOFT_ENUM
+    SOFT_ENUM,
+    POSIFIX,
 };
-enum CommandParameterOption:unsigned char
+enum SemanticConstraint: unsigned char
 {
-
+    NoneConstraint = 0,
+    RequiresCheatsEnabled=1,
+    RequiresElevatedPermissions=2,
+    RequiresHostPermissions=4,
+    VALUE_MASK=8,
+};
+enum CommandParameterOption : unsigned char
+{
+    None = 0,
+    EnumAutocompleteExpansion = 1,
+    HasSemanticConstraint = 2, //be used in block or item name enum
+    EnumAsChainedCommand = 4,  //be used in NewExecuteCommand
 };
 class CommandRegistry;
 

@@ -5,9 +5,13 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+enum CommandPermissionLevel : char;
+enum class CommandFlagValue : char;
+class CommandParameterData;
+#include "CommandFlag.hpp"
 #include <memory>
-#include "Command.hpp"
 //#include "typeid_t.hpp"
+//#include "Command.hpp"
 #include "CommandPosition.hpp"
 #include "CommandPositionFloat.hpp"
 #include "CommandMessage.hpp"
@@ -18,7 +22,6 @@
 #include "CommandItem.hpp"
 #include "CommandIntegerRange.hpp"
 
-class CommandParameterData;
 
 #pragma region typeid
 
@@ -59,8 +62,8 @@ template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum CommandOp
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPosition>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPositionFloat>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPositionFloat>();
-template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<Actor>>();
-template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<Player>>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Actor>>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Player>>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum EquipmentSlot>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, float>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, int>();
@@ -69,7 +72,7 @@ template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum Mirror>()
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class MobEffect const*>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class RelativeFloat>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, std::string>();
-template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, std::unique_ptr<Command>>();
+template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, std::unique_ptr<class Command>>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class WildcardCommandSelector<Actor>>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandIntegerRange>();
@@ -95,21 +98,50 @@ class CommandRegistry {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    struct ParseToken {
-        MCAPI std::string toString() const;
-    };
-
-    using ParseFn = bool (CommandRegistry::*)(
-        void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&,
-        std::vector<std::string>&) const;
 
     class Symbol {
     public:
         unsigned val;
+        MCAPI Symbol(unsigned __int64 = -1);
+        MCAPI Symbol(class Symbol const&);
+        MCAPI unsigned __int64 toIndex() const;
+        MCAPI int value() const;
     };
 
+    struct ParseToken
+    {
+        std::unique_ptr<CommandRegistry::ParseToken> child;
+        std::unique_ptr<CommandRegistry::ParseToken> next;
+        CommandRegistry::ParseToken* parent;
+        const char* text; //24
+        uint32_t length;  //32
+        Symbol type;      //36
+        MCAPI std::string toString() const;
+        //{
+        //    if (text)
+        //        return std::string(text, length);
+        //    auto v6 = child.get();
+        //    auto v8 = child.get();
+        //    while (v8->child)
+        //    {
+        //        v8 = v8->child.get();
+        //    }
+        //    while (v6->child || v6->next)
+        //    {
+        //        v6 = v6->next ? v6->next.get() : v6->child.get();
+        //    }
+        //    auto v10 = v6->text + v6->length;
+        //    auto v11 = v8->text;
+        //    return std::string(v11, v10 - v11);
+        //};
+    };
+    static_assert(sizeof(ParseToken) == 40);
+    using ParseFn = bool (CommandRegistry::*)(
+        void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&,
+        std::vector<std::string>&) const;
+
     struct Overload {
-        using FactoryFn = std::unique_ptr<Command>(*)();
+        using FactoryFn = std::unique_ptr<class Command>(*)();
 
         CommandVersion version;                    // 0
         FactoryFn factory;                         // 8
@@ -166,10 +198,9 @@ public:
             return convert<Type, uint64_t>(value);
         }
     };
-
     
     template <typename T>
-    inline static std::unique_ptr<Command> allocateCommand() {
+    inline static std::unique_ptr<class Command> allocateCommand() {
         return std::make_unique<T>();
     }
     inline void registerOverload(
@@ -247,7 +278,7 @@ public:
              "HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@"
              "DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@"
              "V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
-        {typeid(std::unique_ptr<Command>).name(),
+        {typeid(std::unique_ptr<class Command>).name(),
          dlsym_real(
              "??$parse@V?$unique_ptr@VCommand@@U?$default_delete@VCommand@@@std@@@std@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
         {typeid(RelativeFloat).name(),
@@ -314,6 +345,7 @@ public:
         void* target, CommandRegistry::ParseToken const& token, CommandOrigin const&, int, std::string&,
         std::vector<std::string>&) const
     {
+        //fmt::print(token.toString() + '\n');
         auto data = getEnumData(token);
         *(Type*)target = IDConverter{}(data);
         return true;

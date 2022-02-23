@@ -116,6 +116,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\ByteArrayTag.hpp" />
     <ClInclude Include="Header\MC\ByteTag.hpp" />
     <ClInclude Include="Header\MC\ColorFormat.hpp" />
+    <ClInclude Include="Header\MC\CommandFlag.hpp" />
     <ClInclude Include="Header\MC\CommandMessage.hpp" />
     <ClInclude Include="Header\MC\CommandPosition.hpp" />
     <ClInclude Include="Header\MC\CommandOrigin.hpp" />
