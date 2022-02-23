@@ -7,6 +7,8 @@
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
 #include "ItemStackNetIdVariant.hpp"
+#include "MC/I18n.hpp"
+#include "MC/PropertiesSettings.hpp"
 class Tag;
 class ItemActor;
 class CompoundTag;
@@ -35,6 +37,8 @@ public:
 	LIAPI bool setLore(const std::vector<std::string>& lores);
     LIAPI std::unique_ptr<CompoundTag> getNbt();
     LIAPI bool setNbt(CompoundTag* nbt);
+    LIAPI string getStandardName(const Localization& language);
+
 #undef AFTER_EXTRA
 
 public:
