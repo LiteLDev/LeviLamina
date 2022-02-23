@@ -6,7 +6,6 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-#include "Command.hpp"
 #include <string_view>
 
 enum class CommandParameterDataType {

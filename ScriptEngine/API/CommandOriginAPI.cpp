@@ -17,6 +17,7 @@
 #include <MC/CompoundTag.hpp>
 #include <MC/Mob.hpp>
 #include <MC/Dimension.hpp>
+#include <MC/Command.hpp>
 #include <third-party/magic_enum/magic_enum.hpp>
 
 //////////////////// Class Definition ////////////////////

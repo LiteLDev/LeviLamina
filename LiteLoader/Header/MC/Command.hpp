@@ -6,6 +6,7 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "CommandRegistry.hpp"
+#include "CommandParameterData.hpp"
 #include "CommandFlag.hpp"
 class CommandRegistry;
 //class CommandRegistry::Symbol;

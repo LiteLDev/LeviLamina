@@ -10,6 +10,7 @@
 #include <functional>
 class CommandOrigin;
 class Actor;
+class Player;
 
 #undef BEFORE_EXTRA
 
