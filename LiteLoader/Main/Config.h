@@ -23,7 +23,7 @@ struct CommandLineOption
 {
     bool noColorOption = false;
 };
-enum class SeverStatus
+enum class LLServerStatus
 {
     Starting, Running, Stopping
 };
@@ -54,7 +54,7 @@ struct LLConfig
     bool enableWelcomeText = true;
 
     // Runtime Config
-    SeverStatus serverStatus = SeverStatus::Starting;
+    LLServerStatus serverStatus = LLServerStatus::Starting;
 };
 extern LLConfig globalConfig;
 extern CommandLineOption commandLineOption;

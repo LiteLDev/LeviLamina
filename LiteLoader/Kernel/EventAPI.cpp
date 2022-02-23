@@ -2018,7 +2018,7 @@ TClasslessInstanceHook(void, "?startServerThread@ServerInstance@@QEAAXXZ")
     Global<Level> = Global<Minecraft>->getLevel();
     Global<ServerLevel> = (ServerLevel*)Global<Minecraft>->getLevel();
     //Global<ServerNetworkHandler> = Global<Minecraft>->getServerNetworkHandler();
-    LL::globalConfig.serverStatus = LL::SeverStatus::Running;
+    LL::globalConfig.serverStatus = LL::LLServerStatus::Running;
 
     IF_LISTENED(ServerStartedEvent)
     {
@@ -2031,7 +2031,7 @@ TClasslessInstanceHook(void, "?startServerThread@ServerInstance@@QEAAXXZ")
 ////////////// ServerStopped //////////////
 TClasslessInstanceHook(void, "??1DedicatedServer@@UEAA@XZ")
 {
-    LL::globalConfig.serverStatus = LL::SeverStatus::Stopping;
+    LL::globalConfig.serverStatus = LL::LLServerStatus::Stopping;
 
     IF_LISTENED(ServerStoppedEvent)
     {

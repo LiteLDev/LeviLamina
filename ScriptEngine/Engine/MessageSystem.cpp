@@ -1,6 +1,7 @@
 #include "MessageSystem.h"
 #include <API/APIHelp.h>
 #include <Tools/Utils.h>
+#include <LLAPI.h>
 #include "LocalShareData.h"
 #include "GlobalShareData.h"
 #include <process.h>
@@ -366,6 +367,8 @@ void InitMessageSystem()
     std::thread([]() {
         while (true)
         {
+            if (LL::getServerStatus() >= LL::ServerStatus::Stopping)
+                return;
             MessageSystemLoopOnce();
             Sleep(5);
         }

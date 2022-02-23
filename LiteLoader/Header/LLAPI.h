@@ -136,4 +136,11 @@ namespace LL
 
     LIAPI std::unordered_map<std::string, LL::Plugin*> getAllPlugins();
 
+    // Server Status
+    enum class ServerStatus
+    {
+        Starting, Running, Stopping
+    };
+    LIAPI ServerStatus getServerStatus();
+
 }; // namespace LL
