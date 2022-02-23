@@ -21,6 +21,7 @@
 #include <MC/ListTag.hpp>
 #include <MC/CompoundTag.hpp>
 #include <PlayerInfoAPI.h>
+#include <SafeGuardRecord.h>
 #include <string>
 #include <vector>
 #include <unordered_map>
@@ -884,6 +885,8 @@ Local<Value> PlayerClass::crash(const Arguments& args)
         if (!player)
             return Local<Value>();
 
+        RecordOperation(ENGINE_OWN_DATA()->pluginName, "Crash Player",
+            "Execute player.crash() to crash player <" + player->getRealName() + ">");
         return Boolean::newBoolean(player->crashClient());
     }
     CATCH("Fail in crashPlayer!");

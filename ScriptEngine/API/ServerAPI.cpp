@@ -4,7 +4,7 @@
 #include <ServerAPI.h>
 #include "McAPI.h"
 #include <MC/ServerNetworkHandler.hpp>
-
+#include <SafeGuardRecord.h>
 
 Local<Value> McClass::setMotd(const Arguments& args)
 {
@@ -19,6 +19,7 @@ Local<Value> McClass::setMotd(const Arguments& args)
 
 Local<Value> McClass::crashBDS(const Arguments& args)               //===========???
 {
+    RecordOperation(ENGINE_OWN_DATA()->pluginName, "Crash Server", "Execute mc.crash() to crash server.");
     char* c = new char[10];
     delete c;
     delete c;
