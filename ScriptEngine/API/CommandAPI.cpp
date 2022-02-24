@@ -63,6 +63,7 @@ bool LxlRemoveCmdCallback(script::ScriptEngine* engine)
     erase_if(localShareData->commandCallbacks, [&engine](auto& data) {
         return data.second.fromEngine == engine;
     });
+    return true;
 }
 
 Local<Value> convertResult(DynamicCommand::Result const& result)
