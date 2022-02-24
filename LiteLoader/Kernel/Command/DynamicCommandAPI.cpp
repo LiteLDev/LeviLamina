@@ -586,6 +586,8 @@ DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class Dynami
     }
     commandInstance->enumRanges.swap(convertedEnumRanges);
     Global<CommandRegistry>->registerCommand(commandInstance->name, commandInstance->description->c_str(), commandInstance->permission, commandInstance->flag, commandInstance->flag);
+    if (!commandInstance->alias.empty())
+        Global<CommandRegistry>->registerAlias(commandInstance->name, commandInstance->alias);
     auto builder = commandInstance->initCommandBuilder();
     for (auto& overload : commandInstance->overloads)
     {

@@ -272,6 +272,8 @@ Local<Value> CommandClass::setAlias(const Arguments& args)
     CHECK_ARG_TYPE(args[0], ValueKind::kString)
     try
     {
+        if (registered)
+            return Boolean::newBoolean(true); //TODO
         return Boolean::newBoolean(get()->setAlias(args[0].toStr()));
     }
     CATCH("Fail in setAlias!")
