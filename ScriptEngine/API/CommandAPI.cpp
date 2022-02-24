@@ -41,6 +41,7 @@ ClassDefine<CommandClass> CommandClassBuilder =
         .instanceProperty("registered", &CommandClass::isRegistered)
 
         .instanceFunction("setEnum", &CommandClass::setEnum)
+        .instanceFunction("setAlias", &CommandClass::setAlias)
         //.instanceFunction("newParameter", &CommandClass::newParameter)
         .instanceFunction("mandatory", &CommandClass::mandatory)
         .instanceFunction("optional", &CommandClass::optional)
@@ -262,6 +263,17 @@ Local<Value> CommandClass::getName()
         return String::newString(get()->getCommandName());
     }
     CATCH("Fail in getCommandName!")
+}
+
+Local<Value> CommandClass::setAlias(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1)
+    CHECK_ARG_TYPE(args[0], ValueKind::kString)
+    try
+    {
+        return Boolean::newBoolean(get()->setAlias(args[0].toStr()));
+    }
+    CATCH("Fail in setAlias!")
 }
 
 // string, vector<string>
