@@ -787,9 +787,9 @@ inline ParameterIndex DynamicCommandInstance::mandatory(std::string const& name,
 {
     return mandatory(name, type, description, "", parameterOption);
 };
-inline ParameterIndex DynamicCommandInstance::mandatory(std::string const& name, DynamicCommand::ParameterType type)
+inline ParameterIndex DynamicCommandInstance::mandatory(std::string const& name, DynamicCommand::ParameterType type, CommandParameterOption parameterOption)
 {
-    return mandatory(name, type, "", "", (CommandParameterOption)0);
+    return mandatory(name, type, "", "", parameterOption);
 };
 
 inline ParameterIndex DynamicCommandInstance::optional(std::string const& name, DynamicCommand::ParameterType type, std::string const& description, std::string const& identifier, CommandParameterOption parameterOption)
@@ -802,9 +802,9 @@ inline ParameterIndex DynamicCommandInstance::optional(std::string const& name, 
     return optional(name, type, description, "", parameterOption);
 }
 
-inline ParameterIndex DynamicCommandInstance::optional(std::string const& name, DynamicCommand::ParameterType type)
+inline ParameterIndex DynamicCommandInstance::optional(std::string const& name, DynamicCommand::ParameterType type, CommandParameterOption parameterOption)
 {
-    return optional(name, type, "", "", (CommandParameterOption)0);
+    return optional(name, type, "", "", parameterOption);
 }
 
 inline bool DynamicCommandInstance::addOverload(std::vector<ParameterIndex>&& params)
@@ -1067,22 +1067,26 @@ void testRegCommand(std::string const& name = "dyncmd")
         },
         CommandPermissionLevel::Any);
 }
+#include <ScheduleAPI.h>
 inline void testSoftEnum()
 {
     using Param = DynamicCommand::ParameterData;
     using ParamType = DynamicCommand::ParameterType;
-    auto command = DynamicCommand::createCommand("dynsoft", "dynamic command for soft enum", CommandPermissionLevel::GameMasters);
-
-    auto change = command->mandatory("operation", ParamType::Enum, 
-        command->setEnum("DynSoft_Change",{"add","remove"}), (CommandParameterOption)1);
+    auto command = DynamicCommand::createCommand("dynsoft", "dynamic command for soft enum", CommandPermissionLevel::Any);
+    auto change = command->mandatory(
+        "operation",
+        ParamType::Enum,
+        command->setEnum("DynSoft_Change", {"add", "remove"}),
+        (CommandParameterOption)(CommandParameterOption::EnumAutocompleteExpansion | CommandParameterOption::HasSemanticConstraint));
     auto list = command->mandatory("operation", ParamType::Enum, 
         command->setEnum("DynSoft_List",{"list"}), (CommandParameterOption)1);
-    auto test = command->mandatory("operation", ParamType::Enum, "Block", (CommandParameterOption)1);
+    //auto test = command->mandatory("operation", ParamType::Enum, "Block", (CommandParameterOption)1);
     auto name = command->mandatory("name", ParamType::SoftEnum, 
         command->setSoftEnum("DynNames", {"aaa"}));
 
-    //command->addOverload({change, name});
-    command->addOverload({"Block", "name"}); // enum in bds
+
+
+    command->addOverload({change, name});
     command->addOverload({list});
     command->setCallback(
         [](DynamicCommand const& cmd, CommandOrigin const& origin, CommandOutput& output,
@@ -1108,11 +1112,53 @@ inline void testSoftEnum()
             }
         });
     DynamicCommand::setup(std::move(command));
+    Global<CommandRegistry>->addEnumValueConstraints("DynSoft_Change", {"remove"}, SemanticConstraint::RequiresElevatedPermissions);
+    Global<CommandRegistry>->addEnumValueConstraints("DynSoft_Change", {"add"}, SemanticConstraint::NoneConstraint);
 }
-
+inline void testEnums()
+{
+    auto packet = Global<CommandRegistry>->serializeAvailableCommands();
+    auto enumNames = packet.getEnumNames();
+    std::ostringstream oss;
+    for (auto& name : enumNames)
+    {
+        oss << std::endl
+            << fmt::format("enum {}{}", name, '{');
+        auto enumValues = packet.getEnumValues(name);
+        for (auto& value : enumValues)
+        {
+            oss << std::endl
+                << fmt::format("\t{},", value);
+        }
+        oss << std::endl
+            << fmt::format("{};", '}');
+    }
+    auto softEnumNames = packet.getSoftEnumNames();
+    for (auto& name : softEnumNames)
+    {
+        oss << std::endl
+            << fmt::format("enum {}{}/* SoftEnum */", name, '{');
+        auto enumValues = packet.getSoftEnumValues(name);
+        for (auto& value : enumValues)
+        {
+            oss << std::endl
+                << fmt::format("\t{},", value);
+        }
+        oss << std::endl
+            << fmt::format("{};", '}');
+    }
+    WriteAllFile("BDSEnum.hpp", oss.str(), false);
+}
+#include <MC/EnchantUtils.hpp>
+#include <MC/I18n.hpp>
 TClasslessInstanceHook2("TestDynamicCommand_startServerThread", void, "?startServerThread@ServerInstance@@QEAAXXZ")
 {
     original(this);
+    testEnums();
+    I18n::chooseLanguage(*I18n::getLanguage("zh_CN"));
+    for (auto i = 0; i < 0x25; ++i) {
+        logger.warn("{}", EnchantUtils::getEnchantNameAndLevel((Enchant::Type)i, 0));
+    }
     testRegCommand("dynenum");
     testSoftEnum();
     auto packet = Global<CommandRegistry>->serializeAvailableCommands();
@@ -1174,6 +1220,11 @@ TClasslessInstanceHook2("TestDynamicCommand_attack", bool, "?attack@Player@@UEAA
 //{
 //    logger.info("Command({})::run()", getCommandName());
 //}
+
+TClasslessInstanceHook(bool, "?hasCommandsEnabled@LevelData@@QEBA_NXZ")
+{
+    return true;
+}
 
 TInstanceHook(CommandParameterData&, "?addOptions@CommandParameterData@@QEAAAEAV1@W4CommandParameterOption@@@Z",
               CommandParameterData, CommandParameterOption option)

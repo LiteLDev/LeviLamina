@@ -7,6 +7,7 @@
 // Include Headers or Declare Types Here
 enum CommandPermissionLevel : char;
 enum class CommandFlagValue : char;
+enum SemanticConstraint : unsigned char;
 class CommandParameterData;
 #include "CommandFlag.hpp"
 #include <memory>

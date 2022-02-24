@@ -31,7 +31,8 @@
 //////////////////// Class Definition ////////////////////
 
 ClassDefine<void> PermissionStaticBuilder = EnumDefineBuilder<CommandPermissionLevel>::build("PermType");
-ClassDefine<void> ParamStaticBuilder = EnumDefineBuilder<DynamicCommand::ParameterType>::build("ParamType");
+ClassDefine<void> ParamTypeStaticBuilder = EnumDefineBuilder<DynamicCommand::ParameterType>::build("ParamType");
+ClassDefine<void> ParamOptionStaticBuilder = EnumDefineBuilder<CommandParameterOption>::build("ParamOption");
 
 ClassDefine<CommandClass> CommandClassBuilder =
     defineClass<CommandClass>("LLSE_Command")
@@ -55,6 +56,13 @@ ClassDefine<CommandClass> CommandClassBuilder =
         .build();
 
 //////////////////// Helper ////////////////////
+
+bool LxlRemoveCmdCallback(script::ScriptEngine* engine)
+{
+    erase_if(localShareData->commandCallbacks, [&engine](auto& data) {
+        return data.second.fromEngine == engine;
+    });
+}
 
 Local<Value> convertResult(DynamicCommand::Result const& result)
 {
@@ -182,7 +190,7 @@ Local<Value> McClass::createCommand(const Arguments& args)
     {
         auto name = args[0].toStr();
         auto instance = DynamicCommand::getInstance(name);
-        if (instance) 
+        if (instance)
         {
             logger.warn("Dynamic command {} already exists, changes will not be applied except for setOverload!", name);
             return CommandClass::newCommand(const_cast<std::add_pointer_t<std::remove_cv_t<std::remove_pointer_t<decltype(instance)>>>>(instance));
@@ -313,6 +321,7 @@ Local<Value> CommandClass::newParameter(const Arguments& args)
     }
     CATCH("Fail in newParameter!")
 }
+
 // name, type, description, identifier, option
 // name, type, description, option
 Local<Value> CommandClass::mandatory(const Arguments& args)
@@ -342,6 +351,7 @@ Local<Value> CommandClass::mandatory(const Arguments& args)
     }
     CATCH("Fail in newParameter!")
 }
+
 // name, type, description, identifier, option
 // name, type, description, option
 Local<Value> CommandClass::optional(const Arguments& args)
@@ -437,7 +447,7 @@ Local<Value> CommandClass::addOverload(const Arguments& args)
     CATCH("Fail in addOverload!")
 }
 
-// function (command, origin, output, results){}
+// [function (command, origin, output, results){}], force
 Local<Value> CommandClass::setCallback(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 1);
@@ -447,8 +457,19 @@ Local<Value> CommandClass::setCallback(const Arguments& args)
         auto func = args[0].asFunction();
         DynamicCommandInstance* command = get();
         auto& commandName = command->getCommandName();
+        bool force = false;
+        if (args.size() > 1)
+        {
+            CHECK_ARG_TYPE(args[0], ValueKind::kBoolean);
+            force = args[1].asBoolean().value();
+        }
+
         if (localShareData->commandCallbacks.find(commandName) != localShareData->commandCallbacks.end())
+        {
+            if (!force)
+                return Local<Value>();
             localShareData->commandCallbacks.erase(commandName);
+        }
         localShareData->commandCallbacks[commandName] = {EngineScope::currentEngine(), 0, script::Global<Function>(func)};
         if (registered)
             return Boolean::newBoolean(true);
@@ -466,7 +487,8 @@ Local<Value> CommandClass::setCallback(const Arguments& args)
                     auto outp = CommandOutputClass::newCommandOutput(&output);
                     for (auto& [name, param] : results)
                         args.set(name, convertResult(param));
-                    localShareData->commandCallbacks[commandName].func.get().call({}, cmd, ori, outp, args);
+                    if (localShareData->commandCallbacks.find(commandName) != localShareData->commandCallbacks.end())
+                        localShareData->commandCallbacks[commandName].func.get().call({}, cmd, ori, outp, args);
                 }
                 CATCH_C("Fail in executing command \"" + commandName + "\"!")
                 return nullptr;
@@ -496,7 +518,7 @@ Local<Value> CommandClass::toString(const Arguments& args)
 {
     try
     {
-        return String::newString(fmt::format("<Command({})>",get()->getCommandName()));
+        return String::newString(fmt::format("<Command({})>", get()->getCommandName()));
     }
     CATCH("Fail in toString!");
 }
@@ -566,4 +588,3 @@ Local<Value> CommandClass::getSoftEnumNames(const Arguments& args)
     }
     CATCH("");
 }
-

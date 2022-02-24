@@ -53,7 +53,7 @@ class Actor;
 //                      break;
 //              }
 //          },
-//          CommandPermissionLevel::Any);
+//          CommandPermissionLevel::GameMasters);
 //
 //   ## Another Example
 //      using ParamType = DynamicCommand::ParameterType;
@@ -286,8 +286,8 @@ public:
                 (int)offset,
                 optional,
                 (int)offset + std::max(8, (int)sizeof(T))};
-            if ((int)option)
-                param.addOptions(option);
+            param.addOptions(option);
+            //logger.warn(Global<CommandRegistry>->describe(param));
             return std::move(param);
         }
 
@@ -374,7 +374,7 @@ public:
     /*0*/ virtual ~DynamicCommand();
     /*1*/ virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    LIAPI static std::unique_ptr<class DynamicCommandInstance> createCommand(std::string const& name, std::string const& description, CommandPermissionLevel permission = CommandPermissionLevel::Any, CommandFlag flag1 = {(CommandFlagValue)0x80}, CommandFlag flag2 = {(CommandFlagValue)0}, HMODULE handler = GetCurrentModule());
+    LIAPI static std::unique_ptr<class DynamicCommandInstance> createCommand(std::string const& name, std::string const& description, CommandPermissionLevel permission = CommandPermissionLevel::GameMasters, CommandFlag flag1 = {(CommandFlagValue)0x80}, CommandFlag flag2 = {(CommandFlagValue)0}, HMODULE handler = GetCurrentModule());
     LIAPI static std::unique_ptr<class DynamicCommandInstance> createCommand(
         std::string const& name,
         std::string const& description,
@@ -382,7 +382,7 @@ public:
         std::vector<ParameterData>&& params,
         std::vector<std::vector<std::string>>&& overloads,
         CallBackFn callback,
-        CommandPermissionLevel permission = CommandPermissionLevel::Any,
+        CommandPermissionLevel permission = CommandPermissionLevel::GameMasters,
         CommandFlag flag1 = {(CommandFlagValue)0x80},
         CommandFlag flag2 = {(CommandFlagValue)0},
         HMODULE handler = GetCurrentModule());
@@ -395,7 +395,7 @@ public:
         std::vector<ParameterData>&& params,
         std::vector<std::vector<std::string>>&& overloads,
         CallBackFn callback,
-        CommandPermissionLevel permission = CommandPermissionLevel::Any,
+        CommandPermissionLevel permission = CommandPermissionLevel::GameMasters,
         CommandFlag flag1 = {(CommandFlagValue)0x80},
         CommandFlag flag2 = {(CommandFlagValue)0},
         HMODULE handler = GetCurrentModule())
@@ -445,14 +445,17 @@ private:
 
 public:
     // Parameter Pointers to DynamicCommand Extra Part
-    std::unordered_map<std::string, DynamicCommand::ParameterPtr> parameterPtrs = {};
     size_t commandSize = sizeof(DynamicCommand);
+    std::unordered_map<std::string, DynamicCommand::ParameterPtr> parameterPtrs = {};
 
     // Use unique_ptr to keep the address of enumName.c_str() immutable
     std::vector<std::unique_ptr<std::string>> enumNames = {};
     std::vector<std::string> enumValues = {};
     // unordered_map{ enumName, pair{ enumIndex, enumSize } }
     std::unordered_map<std::string_view, std::pair<size_t, size_t>> enumRanges = {};
+
+    // unordered_map{ enumName, pair{ enumIndex, enumConstraint } }
+    std::unordered_map<std::string_view, std::pair<size_t, SemanticConstraint>> enumConstraints = {};
 
     std::vector<DynamicCommand::ParameterData> parameterDatas = {};
 
@@ -480,10 +483,10 @@ public:
     LIAPI ParameterIndex findParameterIndex(std::string const& param);
     LIAPI ParameterIndex mandatory(std::string const& name, DynamicCommand::ParameterType type, std::string const& description, std::string const& identifier, CommandParameterOption parameterOption = (CommandParameterOption)0);
     LIAPI ParameterIndex mandatory(std::string const& name, DynamicCommand::ParameterType type, std::string const& description, CommandParameterOption parameterOption = (CommandParameterOption)0);
-    LIAPI ParameterIndex mandatory(std::string const& name, DynamicCommand::ParameterType type);
+    LIAPI ParameterIndex mandatory(std::string const& name, DynamicCommand::ParameterType type, CommandParameterOption parameterOption = CommandParameterOption::None);
     LIAPI ParameterIndex optional(std::string const& name, DynamicCommand::ParameterType type, std::string const& description, std::string const& identifier, CommandParameterOption parameterOption = (CommandParameterOption)0);
     LIAPI ParameterIndex optional(std::string const& name, DynamicCommand::ParameterType type, std::string const& description, CommandParameterOption parameterOption = (CommandParameterOption)0);
-    LIAPI ParameterIndex optional(std::string const& name, DynamicCommand::ParameterType type);
+    LIAPI ParameterIndex optional(std::string const& name, DynamicCommand::ParameterType type, CommandParameterOption parameterOption = CommandParameterOption::None);
 
     LIAPI bool addOverload(std::vector<ParameterIndex>&& params);
     LIAPI bool addOverload(std::vector<std::string>&& params);
@@ -514,4 +517,8 @@ public:
     {
         return DynamicCommand::getInstance(getCommandName()) != nullptr;
     };
+    inline void onExecute(DynamicCommand const& command, CommandOrigin const& origin, CommandOutput& output) const {
+
+    };
+
 };

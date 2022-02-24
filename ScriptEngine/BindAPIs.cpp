@@ -51,7 +51,8 @@ void BindAPIs(ScriptEngine *engine)
     engine->registerNativeClass(TextClassBuilder);
 
     engine->registerNativeClass(PermissionStaticBuilder);
-    engine->registerNativeClass(ParamStaticBuilder);
+    engine->registerNativeClass(ParamTypeStaticBuilder);
+    engine->registerNativeClass(ParamOptionStaticBuilder);
     engine->registerNativeClass(OriginTypeStaticBuilder);
 
     //////////////// 实例类 ////////////////

@@ -199,6 +199,7 @@ bool PluginManager::unloadPlugin(const std::string& name)
     LxlRemoveTimeTaskData(engine);
     LxlRemoveAllEventListeners(engine);
     LxlRemoveCmdRegister(engine);
+    LxlRemoveCmdCallBack(engine);
     LxlRemoveAllExportedFuncs(engine);
     engine->getData().reset();
 

@@ -2,8 +2,11 @@
 #include "CommandCompatibleAPI.h"
 #include <DynamicCommandAPI.h>
 
-extern ClassDefine<void> ParamStaticBuilder;
+extern ClassDefine<void> ParamTypeStaticBuilder;
 extern ClassDefine<void> PermissionStaticBuilder;
+extern ClassDefine<void> ParamOptionStaticBuilder;
+
+bool LxlRemoveCmdCallback(script::ScriptEngine* engine);
 
 class CommandClass : public ScriptClass
 {
@@ -56,4 +59,5 @@ public:
     Local<Value> getSoftEnumValues(const Arguments& args);
     Local<Value> getSoftEnumNames(const Arguments& args);
 };
+
 extern ClassDefine<CommandClass> CommandClassBuilder;
