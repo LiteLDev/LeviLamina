@@ -49,7 +49,7 @@ ClassDefine<CommandClass> CommandClassBuilder =
         .instanceFunction("addSoftEnumValues", &CommandClass::addSoftEnumValues)
         .instanceFunction("removeSoftEnumValues", &CommandClass::removeSoftEnumValues)
         .instanceFunction("getSoftEnumValues", &CommandClass::getSoftEnumValues)
-        //.instanceFunction("getSoftEnumNames", &CommandClass::getSoftEnumNames)
+        .instanceFunction("getSoftEnumNames", &CommandClass::getSoftEnumNames)
         .instanceFunction("overload", &CommandClass::addOverload)
         .instanceFunction("setCallback", &CommandClass::setCallback)
         .instanceFunction("setup", &CommandClass::setup)
@@ -68,6 +68,7 @@ bool LxlRemoveCmdCallback(script::ScriptEngine* engine)
 
 Local<Value> convertResult(DynamicCommand::Result const& result)
 {
+    fmt::format("{name}{health}", fmt::arg("name", "BugJump"));
     if (!result.isSet)
         return Local<Value>(); //null
     switch (result.type)
@@ -288,7 +289,7 @@ Local<Value> CommandClass::setEnum(const Arguments& args)
     try
     {
         if (registered)
-            return Boolean::newBoolean(true); //TODO
+            return Local<Value>(); //TODO
         auto enumName = args[0].toStr();
         auto enumArr = args[1].asArray();
         if (enumArr.size() == 0 || !enumArr.get(0).isString())
@@ -298,7 +299,7 @@ Local<Value> CommandClass::setEnum(const Arguments& args)
         {
             enumValues.push_back(enumArr.get(i).toStr());
         }
-        return Boolean::newBoolean(!get()->setEnum(enumName, std::move(enumValues)).empty());
+        return String::newString(get()->setEnum(enumName, std::move(enumValues)));
     }
     CATCH("Fail in setEnum!")
 }
@@ -462,7 +463,7 @@ Local<Value> CommandClass::addOverload(const Arguments& args)
     CATCH("Fail in addOverload!")
 }
 
-// [function (command, origin, output, results){}], force
+// function (command, origin, output, results){}
 Local<Value> CommandClass::setCallback(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 1);
@@ -472,19 +473,6 @@ Local<Value> CommandClass::setCallback(const Arguments& args)
         auto func = args[0].asFunction();
         DynamicCommandInstance* command = get();
         auto& commandName = command->getCommandName();
-        bool force = false;
-        if (args.size() > 1)
-        {
-            CHECK_ARG_TYPE(args[0], ValueKind::kBoolean);
-            force = args[1].asBoolean().value();
-        }
-
-        if (localShareData->commandCallbacks.find(commandName) != localShareData->commandCallbacks.end())
-        {
-            if (!force)
-                return Local<Value>();
-            localShareData->commandCallbacks.erase(commandName);
-        }
         localShareData->commandCallbacks[commandName] = {EngineScope::currentEngine(), 0, script::Global<Function>(func)};
         if (registered)
             return Boolean::newBoolean(true);
@@ -493,6 +481,11 @@ Local<Value> CommandClass::setCallback(const Arguments& args)
                std::unordered_map<std::string, DynamicCommand::Result>& results) {
                 auto instance = command.getInstance();
                 auto& commandName = instance->getCommandName();
+                if (localShareData->commandCallbacks.find(commandName) == localShareData->commandCallbacks.end())
+                {
+                    logger.warn("Command {} failed to execute, is the plugin unloaded?", commandName);
+                    return nullptr;
+                }
                 EngineScope enter(localShareData->commandCallbacks[commandName].fromEngine);
                 try
                 {
@@ -502,8 +495,7 @@ Local<Value> CommandClass::setCallback(const Arguments& args)
                     auto outp = CommandOutputClass::newCommandOutput(&output);
                     for (auto& [name, param] : results)
                         args.set(name, convertResult(param));
-                    if (localShareData->commandCallbacks.find(commandName) != localShareData->commandCallbacks.end())
-                        localShareData->commandCallbacks[commandName].func.get().call({}, cmd, ori, outp, args);
+                    localShareData->commandCallbacks[commandName].func.get().call({}, cmd, ori, outp, args);
                 }
                 CATCH_C("Fail in executing command \"" + commandName + "\"!")
                 return nullptr;
