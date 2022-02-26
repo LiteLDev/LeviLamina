@@ -172,7 +172,7 @@ public:
                 auto& val = dAccess<std::pair<std::string, int>>(command, offset);
                 if constexpr (std::is_same_v<std::remove_cv_t<T>, int> || std::is_enum_v<T>)
                 {
-                    return static_cast<T const&>(val.second);
+                    return static_cast<T const>(val.second);
                 }
                 else if constexpr (std::is_same_v<std::remove_cv_t<T>, std::string>)
                 {

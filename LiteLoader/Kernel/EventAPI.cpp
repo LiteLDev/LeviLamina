@@ -1282,7 +1282,8 @@ TInstanceHook(void, "?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0
 TInstanceHook(void, "?onProjectileHit@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z",
       Block, BlockSource* bs, BlockPos* bp, Actor* actor)
 {
-    if (bp->x&bp->y&bp->z==0) //actor->getPos().distanceTo(bp->center())>5)         //???
+    // Exclude default position BlockPos::Zero
+    if ((bp->x | bp->y | bp->z) == 0) //actor->getPos().distanceTo(bp->center())>5)
         return original(this, bs, bp, actor);
     IF_LISTENED(ProjectileHitBlockEvent)
     {

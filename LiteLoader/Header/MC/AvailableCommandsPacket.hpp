@@ -13,6 +13,7 @@ class AvailableCommandsPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
     struct EnumData
     {
         std::string name;

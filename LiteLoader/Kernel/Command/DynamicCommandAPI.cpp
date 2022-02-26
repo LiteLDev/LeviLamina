@@ -560,7 +560,14 @@ std::unique_ptr<Command>* DynamicCommand::commandBuilder2(std::unique_ptr<Comman
         break;
 DynamicCommand::~DynamicCommand()
 {
-    auto& commandIns = *dynamicCommandInstances.at(getCommandName());
+    auto& commandName = getCommandName();
+    auto iter = dynamicCommandInstances.find(commandName);
+    if (iter == dynamicCommandInstances.end()) 
+    {
+        logger.error("Error in DynamicCommand::~DynamicCommand(), command \"{}\" not found", commandName);
+        return;
+    }
+    auto& commandIns = *iter->second;
     for (auto& [name, parameter] : commandIns.parameterPtrs)
     {
         auto offset = parameter.getOffset();
@@ -1414,11 +1421,64 @@ void setupEchoCommand()
     DynamicCommand::setup(std::move(command));
 }
 
+#ifdef ENABLE_COMMAND_UNREGISTER
+// "remove command" command
+void setupRemoveCommand()
+{
+    auto command = DynamicCommand::createCommand("unregister", "unregister command", CommandPermissionLevel::Any);
+    command->setAlias("remove");
+    auto name = command->mandatory("name", ParamType::SoftEnum,
+                                   command->setSoftEnum("CommandNames", {}));
+    command->addOverload(name);
+    command->setCallback(
+        [](DynamicCommand const& cmd, CommandOrigin const& origin, CommandOutput& output,
+           std::unordered_map<std::string, Result>& results) {
+            auto& name = results["name"].getRaw<std::string>();
+            auto fullName = Global<CommandRegistry>->getCommandFullName(name);
+            if (fullName == cmd.getCommandName()) {
+                output.success("Request unregister itself");
+                Schedule::delay([fullName]() {
+                    auto res = Global<CommandRegistry>->unregisterCommand(fullName);
+                    if (res)
+                    {
+                        dynamicCommandInstances.erase(fullName);
+                        logger.info("unregister command " + fullName);
+                        ((DynamicCommandInstance*)0)->setSoftEnum("CommandNames", getEnumValuesFromBDS("CommandName"));
+                    }
+                    else
+                        logger.error("error in unregister command " + fullName);
+                    },20);
+                return;
+            }
+            auto res = Global<CommandRegistry>->unregisterCommand(fullName);
+            if (res) {
+                dynamicCommandInstances.erase(fullName);
+                output.success("unregister command " + fullName);
+                cmd.getInstance()->setSoftEnum("CommandNames", getEnumValuesFromBDS("CommandName"));
+            }
+            else
+                output.error("error in unregister command " + fullName);
+        });
+    DynamicCommand::setup(std::move(command));
+    command->setSoftEnum("CommandNames", getEnumValuesFromBDS("CommandName"));
+}
+#endif // ENABLE_COMMAND_UNREGISTER
+
+
 TClasslessInstanceHook2("SetupBetaCommand_startServerThread", void, "?startServerThread@ServerInstance@@QEAAXXZ")
 {
     original(this);
     Global<Level> = Global<Minecraft>->getLevel();
     setupEnumCommand();
+#ifdef ENABLE_COMMAND_UNREGISTER
+    Global<CommandRegistry>->test();
+    Global<CommandRegistry>->unregisterCommand("enum");
+    Global<CommandRegistry>->test();
+    auto packet = Global<CommandRegistry>->serializeAvailableCommands();
+    setupEnumCommand();
+    auto packet2 = Global<CommandRegistry>->serializeAvailableCommands();
+    setupRemoveCommand();
+#endif // ENABLE_COMMAND_UNREGISTER
     setupEchoCommand();
 }
 #endif // LITELOADER_VERSION_STATUS == LL::Version::Beta
