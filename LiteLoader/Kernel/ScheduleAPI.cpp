@@ -81,10 +81,33 @@ public:
                 const ScheduleTaskData& t = top();
                 if (t.leftTime >= 0)
                     break;
+                pop();
 
                 //timeout
                 try {
+                    if (!t.task)
+                        continue;
                     t.task();
+
+                    switch (t.type) {
+                    case ScheduleTaskData::TaskType::InfiniteRepeat: {
+                        ScheduleTaskData sche{ std::move(t) };
+                        sche.leftTime = sche.interval;
+                        push(std::move(sche));
+                        break;
+                    }
+                    case ScheduleTaskData::TaskType::Repeat: {
+                        if (t.count > 0) {
+                            ScheduleTaskData sche{ std::move(t) };
+                            sche.leftTime = sche.interval;
+                            --sche.count;
+                            push(std::move(sche));
+                        }
+                        break;
+                    }
+                    default:
+                        break;
+                    }
                 }
                 catch (const seh_exception& e) {
                     logger.error("SEH exception occurred in ScheduleTask!");
@@ -106,27 +129,6 @@ public:
                     if (auto plugin = LL::getPlugin(t.handler))
                         logger.error("Plugin: {}", plugin->name);
                 }
-
-                switch (t.type) {
-                case ScheduleTaskData::TaskType::InfiniteRepeat: {
-                    ScheduleTaskData sche{ std::move(t) };
-                    sche.leftTime = sche.interval;
-                    push(std::move(sche));
-                    break;
-                }
-                case ScheduleTaskData::TaskType::Repeat: {
-                    if (t.count > 0) {
-                        ScheduleTaskData sche{ std::move(t) };
-                        sche.leftTime = sche.interval;
-                        --sche.count;
-                        push(std::move(sche));
-                    }
-                    break;
-                }
-                default:
-                    break;
-                }
-                pop();
             }
         }
         catch (...) {

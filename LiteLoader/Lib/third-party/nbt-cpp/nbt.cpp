@@ -752,7 +752,7 @@ void compound_tag::make_heavy() {
 	for (auto & pair : value) {
 		tags::tag & each = *pair.second;
 		if (each.id() == tag_id::tag_list) {
-			list_tag & list = dynamic_cast<list_tag &>(each);
+			list_tag & list = (list_tag&)(each);
 			if (!list.heavy())
 				pair.second = std::make_unique<tag_list_tag>(list.as_tags());
 		}
