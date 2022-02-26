@@ -38,6 +38,8 @@
 #include <MC/ItemStackDescriptor.hpp>
 #include <MC/NetworkItemStackDescriptor.hpp>
 
+extern Logger logger;
+
 NetworkIdentifier* Player::getNetworkIdentifier() 
 {
     return (NetworkIdentifier*)(getUserEntityIdentifierComponent());
@@ -731,19 +733,49 @@ bool Player::isValid(Player* player)
 bool Player::sendSimpleFormPacket(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(int)> callback) const
 {
     return sendSimpleForm(title, content, buttons, images, [callback](Player* pl, int id) {
-        callback(id);
+        if (!callback || !Player::isValid(pl))
+            return;
+        try
+        {
+            callback(id);
+        }
+        catch (...)
+        {
+            logger.error("Exception occurred in custom-form packet callback!");
+            logger.error("Player: {}", pl->getName());
+        }
     });
 }
 bool Player::sendModalFormPacket(const string& title, const string& content, const string& button1, const string& button2, std::function<void(bool)> callback)
 {
     return sendModalForm(title,content,button1,button2, [callback](Player* pl, bool res) {
-        callback(res);
+        if (!callback || !Player::isValid(pl))
+            return;
+        try
+        {
+            callback(res);
+        }
+        catch (...)
+        {
+            logger.error("Exception occurred in modal-form packet callback!");
+            logger.error("Player: {}", pl->getName());
+        }
     });
 }
 
 bool Player::sendCustomFormPacket(const std::string& data, std::function<void(string)> callback)
 {
     return sendCustomForm(data, [callback](Player* pl, string res) {
-        callback(res);
+        if (!callback || !Player::isValid(pl))
+            return;
+        try
+        {
+            callback(res);
+        }
+        catch (...)
+        {
+            logger.error("Exception occurred in custom-form packet callback!");
+            logger.error("Player: {}", pl->getName());
+        }
     });
 }
