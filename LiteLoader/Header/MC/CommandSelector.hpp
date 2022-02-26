@@ -24,4 +24,7 @@ public:
 template <typename T>
 class WildcardCommandSelector : public CommandSelectorBase
 {
+public:
+    WildcardCommandSelector()
+        : CommandSelectorBase(std::is_same_v<T, Player>){};
 };

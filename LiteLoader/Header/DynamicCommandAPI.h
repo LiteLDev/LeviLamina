@@ -167,12 +167,16 @@ public:
         inline enable_if_supported_t<T, T const&> getRaw() const
         {
 #ifdef USE_PARSE_ENUM_STRING
-            if constexpr (std::is_same_v<std::remove_cv_t<T>, int> || std::is_enum_v<T>)
+            if (type == ParameterType::Enum)
             {
-                if (type == ParameterType::Enum)
+                auto& val = dAccess<std::pair<std::string, int>>(command, offset);
+                if constexpr (std::is_same_v<std::remove_cv_t<T>, int> || std::is_enum_v<T>)
                 {
-                    auto& value = getRaw<std::string>();
-                    return -1;
+                    return static_cast<T const&>(val.second);
+                }
+                else if constexpr (std::is_same_v<std::remove_cv_t<T>, std::string>)
+                {
+                    return static_cast<T const&>(val.first);
                 }
             }
 #else

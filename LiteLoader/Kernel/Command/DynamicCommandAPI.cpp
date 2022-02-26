@@ -18,6 +18,41 @@
 
 extern Logger logger;
 
+#define ForEachParameterType(func) \
+    func(Bool);                    \
+    func(Int);                     \
+    func(Float);                   \
+    func(String);                  \
+    func(Actor);                   \
+    func(Player);                  \
+    func(BlockPos);                \
+    func(Vec3);                    \
+    func(RawText);                 \
+    func(Message);                 \
+    func(JsonValue);               \
+    func(Item);                    \
+    func(Block);                   \
+    func(Effect);                  \
+    func(Enum);                    \
+    func(SoftEnum);                \
+    func(ActorType);               \
+    func(Command);                 \
+    func(WildcardSelector);
+
+#define CatchDynamicCommandError(func, handler)                                                                   \
+    catch (const seh_exception& e)                                                                                \
+    {                                                                                                             \
+        OutputError("Uncaught SEH Exception Detected!", e.code(), TextEncoding::toUTF8(e.what()), func, handler); \
+    }                                                                                                             \
+    catch (const std::exception& e)                                                                               \
+    {                                                                                                             \
+        OutputError("Uncaught C++ Exception Detected!", errno, TextEncoding::toUTF8(e.what()), func, handler);    \
+    }                                                                                                             \
+    catch (...)                                                                                                   \
+    {                                                                                                             \
+        OutputError("Uncaught Exception Detected!", -1, "", func, handler);                                       \
+    }
+
 // global variable and function
 namespace
 {
@@ -37,6 +72,7 @@ typedef bool Bool;
 typedef int Int;
 typedef float Float;
 typedef std::string String;
+typedef WildcardCommandSelector<Actor> WildcardSelector;
 typedef CommandSelector<Actor> Actor;
 typedef CommandSelector<Player> Player;
 typedef CommandPosition BlockPos;
@@ -47,21 +83,19 @@ typedef Json::Value JsonValue;
 typedef CommandItem Item;
 typedef Block const* Block;
 typedef MobEffect const* Effect;
-#ifdef ENABLE_PARAMETER_TYPE_POSTFIX
-typedef int Postfix;
-#endif // ENABLE_PARAMETER_TYPE_POSTFIX
 //typedef CommandPosition Position;
 #ifdef USE_PARSE_ENUM_STRING
-typedef std::string Enum;
+typedef std::pair<std::string, int> Enum;
 #else
 typedef int Enum;
 #endif // USE_PARSE_ENUM_STRING
 typedef std::string SoftEnum;
 typedef ActorDefinitionIdentifier const* ActorType;
 typedef std::unique_ptr<Command> Command;
+#ifdef ENABLE_PARAMETER_TYPE_POSTFIX
+typedef int Postfix;
+#endif // ENABLE_PARAMETER_TYPE_POSTFIX
 } // namespace ParameterDataType
-
-
 auto const ParameterSizeMap = std::unordered_map<ParameterType, size_t>{
     {ParameterType::Bool, std::max((size_t)8, sizeof(ParameterDataType::Bool))},
     {ParameterType::Int, std::max((size_t)8, sizeof(ParameterDataType::Int))},
@@ -85,6 +119,7 @@ auto const ParameterSizeMap = std::unordered_map<ParameterType, size_t>{
     {ParameterType::Postfix, std::max((size_t)8, sizeof(ParameterDataType::Postfix))},
 #endif // ENABLE_PARAMETER_TYPE_POSTFIX
 };
+
 inline void OutputError(std::string errorMsg, int errorCode, std::string errorWhat, std::string func, HMODULE handler)
 {
     logger.error(errorMsg);
@@ -93,20 +128,6 @@ inline void OutputError(std::string errorMsg, int errorCode, std::string errorWh
     if (auto plugin = LL::getPlugin(handler))
         logger.error("In Plugin <{}>", plugin->name);
 }
-
-#define CatchDynamicCommandError(func, handler)                                                                   \
-    catch (const seh_exception& e)                                                                                \
-    {                                                                                                             \
-        OutputError("Uncaught SEH Exception Detected!", e.code(), TextEncoding::toUTF8(e.what()), func, handler); \
-    }                                                                                                             \
-    catch (const std::exception& e)                                                                               \
-    {                                                                                                             \
-        OutputError("Uncaught C++ Exception Detected!", errno, TextEncoding::toUTF8(e.what()), func, handler);    \
-    }                                                                                                             \
-    catch (...)                                                                                                   \
-    {                                                                                                             \
-        OutputError("Uncaught Exception Detected!", -1, "", func, handler);                                       \
-    }
 
 inline std::vector<std::string> getEnumNamesFromBDS()
 {
@@ -130,6 +151,52 @@ inline std::vector<std::string> getSoftEnumValuesFromBDS(std::string const& name
 }
 
 } // namespace
+
+#pragma region Command init and destroy
+
+template <typename T>
+inline void destruct(void* command, size_t offset)
+{
+    dAccess<T>(command, offset).~T();
+}
+
+template <typename T>
+inline void initValue(void* command, size_t offset)
+{
+    dAccess<T>(command, offset) = T();
+}
+template <>
+inline void initValue<std::string>(void* command, size_t offset)
+{
+    dAccess<std::string>(command, offset).basic_string::basic_string();
+}
+template <>
+inline void initValue<CommandItem>(void* command, size_t offset)
+{
+    dAccess<CommandItem>(command, offset).CommandItem::CommandItem();
+}
+template <>
+inline void initValue<CommandMessage>(void* command, size_t offset)
+{
+    dAccess<CommandMessage>(command, offset).CommandMessage::CommandMessage();
+}
+template <>
+inline void initValue<CommandSelector<Actor>>(void* command, size_t offset)
+{
+    dAccess<CommandSelector<Actor>>(command, offset).CommandSelector<Actor>::CommandSelector<Actor>();
+}
+template <>
+inline void initValue<CommandSelector<Player>>(void* command, size_t offset)
+{
+    dAccess<CommandSelector<Player>>(command, offset).CommandSelector<Player>::CommandSelector<Player>();
+}
+template <>
+inline void initValue<WildcardCommandSelector<Actor>>(void* command, size_t offset)
+{
+    dAccess<WildcardCommandSelector<Actor>>(command, offset).WildcardCommandSelector<Actor>::WildcardCommandSelector<Actor>();
+}
+
+#pragma endregionto
 
 #pragma region ParameterPtr
 
@@ -338,7 +405,7 @@ std::string DynamicCommand::Result::toDebugString() const
         case ParameterType::Effect:
             return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, isSet ? getRaw<MobEffect const*>()->getComponentName().getString() : "nullptr");
         case ParameterType::Enum:
-            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, getRaw<std::string>());
+            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, fmt::format("{}({})", getRaw<std::string>(), getRaw<int>()));
         case ParameterType::SoftEnum:
             return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, getRaw<std::string>());
         case ParameterType::ActorType:
@@ -383,6 +450,10 @@ inline char DynamicCommand::builderCallbackHanler(DCCallback* cb, DCArgs* args, 
     return 'p';
 }
 
+#define CaseInitBreak(type)                                  \
+    case ParameterType::type:                                \
+        initValue<ParameterDataType::type>(command, offset); \
+        break;
 std::unique_ptr<Command>* DynamicCommand::commandBuilder2(std::unique_ptr<Command>* rtn, std::string name)
 {
     assert(dynamicCommandInstances.count(name));
@@ -400,82 +471,92 @@ std::unique_ptr<Command>* DynamicCommand::commandBuilder2(std::unique_ptr<Comman
         dAccess<bool>(command, offset + ParameterSizeMap.at(param.type)) = false; //XXXX_isSet;
         switch (param.type)
         {
-            case ParameterType::Bool:
-                dAccess<bool>(command, offset) = bool();
-                break;
-            case ParameterType::Int:
-                dAccess<int>(command, offset) = int();
-                break;
-            case ParameterType::Float:
-                dAccess<float>(command, offset) = float();
-                break;
-            case ParameterType::Actor:
-                dAccess<CommandSelector<Actor>>(command, offset).CommandSelector<Actor>::CommandSelector();
-                break;
-            case ParameterType::Player:
-                dAccess<CommandSelector<Player>>(command, offset).CommandSelector<Player>::CommandSelector();
-                break;
-            case ParameterType::String:
-                dAccess<std::string>(command, offset).basic_string::basic_string();
-                break;
-            case ParameterType::BlockPos:
-                dAccess<CommandPosition>(command, offset).CommandPosition::CommandPosition();
-                break;
-            case ParameterType::Vec3:
-                dAccess<CommandPositionFloat>(command, offset).CommandPositionFloat::CommandPositionFloat();
-                break;
-            case ParameterType::RawText:
-                dAccess<CommandRawText>(command, offset).CommandRawText::CommandRawText();
-                break;
-            case ParameterType::Message:
-                dAccess<CommandMessage>(command, offset).CommandMessage::CommandMessage();
-                break;
-            case ParameterType::JsonValue:
-                dAccess<Json::Value>(command, offset).Json::Value::Value();
-                break;
-            case ParameterType::Item:
-                dAccess<CommandItem>(command, offset).CommandItem::CommandItem();
-                break;
-            case ParameterType::Block:
-                dAccess<Block const*>(command, offset) = nullptr;
-                break;
-            case ParameterType::Effect:
-                dAccess<MobEffect const*>(command, offset) = nullptr;
-                break;
-                //case ParameterType::Position:
-                //    dAccess<CommandPosition>(command, offset).CommandPosition::CommandPosition();
-                break;
-            case ParameterType::Enum:
-#ifdef USE_PARSE_ENUM_STRING
-                dAccess<std::string>(command, offset).basic_string::basic_string();
-#else
-                dAccess<int>(command, offset) = -1;
-#endif // USE_PARSE_ENUM_STRING
-
-                break;
-            case ParameterType::SoftEnum:
-                dAccess<std::string>(command, offset).basic_string::basic_string();
-                break;
-            case ParameterType::ActorType:
-                dAccess<ActorDefinitionIdentifier const*>(command, offset) = nullptr;
-                break;
-            case ParameterType::Command:
-                dAccess<std::unique_ptr<Command>>(command, offset).std::unique_ptr<Command>::unique_ptr();
-                break;
-#ifdef ENABLE_PARAMETER_TYPE_POSTFIX
-            case ParameterType::Postfix:
-                dAccess<int>(command, offset) = 0;
-#endif // ENABLE_PARAMETER_TYPE_POSTFIX
-                break;
+            ForEachParameterType(CaseInitBreak);
             default:
-                logger.error("Unknown Parameter Type {}", (int)param.type);
                 break;
         }
+        //        switch (param.type)
+        //        {
+        //            case ParameterType::Bool:
+        //                dAccess<bool>(command, offset) = bool();
+        //                break;
+        //            case ParameterType::Int:
+        //                dAccess<int>(command, offset) = int();
+        //                break;
+        //            case ParameterType::Float:
+        //                dAccess<float>(command, offset) = float();
+        //                break;
+        //            case ParameterType::Actor:
+        //                dAccess<CommandSelector<Actor>>(command, offset).CommandSelector<Actor>::CommandSelector();
+        //                break;
+        //            case ParameterType::Player:
+        //                dAccess<CommandSelector<Player>>(command, offset).CommandSelector<Player>::CommandSelector();
+        //                break;
+        //            case ParameterType::String:
+        //                dAccess<std::string>(command, offset).basic_string::basic_string();
+        //                break;
+        //            case ParameterType::BlockPos:
+        //                dAccess<CommandPosition>(command, offset).CommandPosition::CommandPosition();
+        //                break;
+        //            case ParameterType::Vec3:
+        //                dAccess<CommandPositionFloat>(command, offset).CommandPositionFloat::CommandPositionFloat();
+        //                break;
+        //            case ParameterType::RawText:
+        //                dAccess<CommandRawText>(command, offset).CommandRawText::CommandRawText();
+        //                break;
+        //            case ParameterType::Message:
+        //                dAccess<CommandMessage>(command, offset).CommandMessage::CommandMessage();
+        //                break;
+        //            case ParameterType::JsonValue:
+        //                dAccess<Json::Value>(command, offset).Json::Value::Value();
+        //                break;
+        //            case ParameterType::Item:
+        //                dAccess<CommandItem>(command, offset).CommandItem::CommandItem();
+        //                break;
+        //            case ParameterType::Block:
+        //                dAccess<Block const*>(command, offset) = nullptr;
+        //                break;
+        //            case ParameterType::Effect:
+        //                dAccess<MobEffect const*>(command, offset) = nullptr;
+        //                break;
+        //                //case ParameterType::Position:
+        //                //    dAccess<CommandPosition>(command, offset).CommandPosition::CommandPosition();
+        //                break;
+        //            case ParameterType::Enum:
+        //#ifdef USE_PARSE_ENUM_STRING
+        //                dAccess<std::string>(command, offset).basic_string::basic_string();
+        //#else
+        //                dAccess<int>(command, offset) = -1;
+        //#endif // USE_PARSE_ENUM_STRING
+        //
+        //                break;
+        //            case ParameterType::SoftEnum:
+        //                dAccess<std::string>(command, offset).basic_string::basic_string();
+        //                break;
+        //            case ParameterType::ActorType:
+        //                dAccess<ActorDefinitionIdentifier const*>(command, offset) = nullptr;
+        //                break;
+        //            case ParameterType::Command:
+        //                dAccess<std::unique_ptr<Command>>(command, offset).std::unique_ptr<Command>::unique_ptr();
+        //                break;
+        //#ifdef ENABLE_PARAMETER_TYPE_POSTFIX
+        //            case ParameterType::Postfix:
+        //                dAccess<int>(command, offset) = 0;
+        //#endif // ENABLE_PARAMETER_TYPE_POSTFIX
+        //                break;
+        //            default:
+        //                logger.error("Unknown Parameter Type {}", (int)param.type);
+        //                break;
+        //        }
     }
     rtn->swap(std::unique_ptr<Command>((Command*)command));
     return rtn;
 }
 
+#define CaseDestructBreak(type)                          \
+    case ParameterType::type:                            \
+        destruct<ParameterDataType::type>(this, offset); \
+        break;
 DynamicCommand::~DynamicCommand()
 {
     auto& commandIns = *dynamicCommandInstances.at(getCommandName());
@@ -484,70 +565,78 @@ DynamicCommand::~DynamicCommand()
         auto offset = parameter.getOffset();
         switch (parameter.type)
         {
-            case ParameterType::Bool:
-                break;
-            case ParameterType::Int:
-                break;
-            case ParameterType::Float:
-                break;
-            case ParameterType::Actor:
-                dAccess<CommandSelector<Actor>>(this, offset).CommandSelectorBase::~CommandSelectorBase();
-                break;
-            case ParameterType::Player:
-                dAccess<CommandSelector<Player>>(this, offset).CommandSelectorBase::~CommandSelectorBase();
-                break;
-            case ParameterType::String:
-                dAccess<std::string>(this, offset).~basic_string();
-                break;
-            case ParameterType::BlockPos:
-                dAccess<CommandPosition>(this, offset).~CommandPosition();
-                break;
-            case ParameterType::Vec3:
-                dAccess<CommandPositionFloat>(this, offset).~CommandPositionFloat();
-                break;
-            case ParameterType::RawText:
-                dAccess<CommandRawText>(this, offset).~CommandRawText();
-                break;
-            case ParameterType::Message:
-                dAccess<CommandMessage>(this, offset).~CommandMessage();
-                break;
-            case ParameterType::JsonValue:
-                dAccess<Json::Value>(this, offset).~Value();
-                break;
-            case ParameterType::Item:
-                dAccess<CommandItem>(this, offset).~CommandItem();
-                break;
-            case ParameterType::Block:
-                dAccess<Block const*>(this, offset) = nullptr;
-                break;
-            case ParameterType::Effect:
-                dAccess<MobEffect const*>(this, offset) = nullptr;
-                break;
-                //case ParameterType::Position:
-                //    dAccess<CommandPosition>(this, offset).~CommandPosition();
-                //    break;
-            case ParameterType::Enum:
-#ifdef USE_PARSE_ENUM_STRING
-                dAccess<std::string>(this, offset).~basic_string();
-#endif // USE_PARSE_ENUM_STRING
-                break;
-            case ParameterType::SoftEnum:
-                dAccess<std::string>(this, offset).~basic_string();
-                break;
-            case ParameterType::ActorType:
-                dAccess<ActorDefinitionIdentifier const*>(this, offset) = nullptr;
-                break;
-            case ParameterType::Command:
-                dAccess<std::unique_ptr<Command>>(this, offset).~unique_ptr<Command>();
-                break;
-#ifdef ENABLE_PARAMETER_TYPE_POSTFIX
-            case ParameterType::Postfix:
-                break;
-#endif // ENABLE_PARAMETER_TYPE_POSTFIX
+            ForEachParameterType(CaseDestructBreak);
             default:
-                logger.error("Unknown Parameter Type {}", (int)parameter.type);
                 break;
         }
+        //        switch (parameter.type)
+        //        {
+        //            case ParameterType::Bool:
+        //                destruct<ParameterDataType::Bool>(this, offset);
+        //                break;
+        //            case ParameterType::Int:
+        //                destruct<ParameterDataType::Int>(this, offset);
+        //                break;
+        //            case ParameterType::Float:
+        //                destruct<ParameterDataType::Float>(this, offset);
+        //                break;
+        //            case ParameterType::Actor:
+        //                destruct<ParameterDataType::Actor>(this, offset);
+        //                break;
+        //            case ParameterType::Player:
+        //                destruct<ParameterDataType::Player>(this, offset);
+        //                break;
+        //            case ParameterType::String:
+        //                destruct<ParameterDataType::String>(this, offset);
+        //                break;
+        //            case ParameterType::BlockPos:
+        //                destruct<ParameterDataType::BlockPos>(this, offset);
+        //                break;
+        //            case ParameterType::Vec3:
+        //                destruct<ParameterDataType::Vec3>(this, offset);
+        //                break;
+        //            case ParameterType::RawText:
+        //                destruct<ParameterDataType::RawText>(this, offset);
+        //                break;
+        //            case ParameterType::Message:
+        //                destruct<ParameterDataType::Message>(this, offset);
+        //                break;
+        //            case ParameterType::JsonValue:
+        //                destruct<ParameterDataType::JsonValue>(this, offset);
+        //                break;
+        //            case ParameterType::Item:
+        //                destruct<ParameterDataType::Item>(this, offset);
+        //                break;
+        //            case ParameterType::Block:
+        //                destruct<ParameterDataType::Block>(this, offset);
+        //                break;
+        //            case ParameterType::Effect:
+        //                destruct<ParameterDataType::Effect>(this, offset);
+        //                break;
+        //            //case ParameterType::Position:
+        //            //    destruct<ParameterDataType::Position>(this, offset);
+        //            //    break;
+        //            case ParameterType::Enum:
+        //                destruct<ParameterDataType::Enum>(this, offset);
+        //                break;
+        //            case ParameterType::SoftEnum:
+        //                destruct<ParameterDataType::SoftEnum>(this, offset);
+        //                break;
+        //            case ParameterType::ActorType:
+        //                destruct<ParameterDataType::ActorType>(this, offset);
+        //                break;
+        //            case ParameterType::Command:
+        //                destruct<ParameterDataType::Command>(this, offset);
+        //                break;
+        //#ifdef ENABLE_PARAMETER_TYPE_POSTFIX
+        //            case ParameterType::Postfix:
+        //                destruct<ParameterDataType::Postfix>(this, offset);
+        //                break;
+        //#endif // ENABLE_PARAMETER_TYPE_POSTFIX
+        //            default:
+        //                logger.error("Unknown Parameter Type {}", (int)parameter.type);
+        //                break;
+        //        }
     }
 }
 
@@ -591,21 +680,6 @@ DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class Dynami
         return false;
     //commandInstance->updateSoftEnum();
     auto namesInBds = getEnumNamesFromBDS();
-#if false
-    for (auto& [name, range] : commandInstance->enumRanges)
-    {
-        if (std::find(namesInBds.begin(), namesInBds.end(), name) != namesInBds.end())
-            __debugbreak();
-        std::vector<std::pair<std::string, uint64_t>> values;
-        size_t index = range.first;
-        for (auto& iter = commandInstance->enumValues.begin() + range.first; iter != commandInstance->enumValues.begin() + range.first + range.second; ++iter)
-        {
-            values.emplace_back(*iter, index);
-            index++;
-        }
-        Global<CommandRegistry>->_addEnumValuesInternal(name.data(), values, typeid_t<CommandRegistry>::count++, &CommandRegistry::parseEnumString).val;
-    }
-#else
     std::unordered_map<std::string_view, std::pair<size_t, size_t>> convertedEnumRanges;
     for (auto& [name, range] : commandInstance->enumRanges)
     {
@@ -641,10 +715,14 @@ DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class Dynami
             values.emplace_back(*iter, index);
             index++;
         }
+#ifdef USE_PARSE_ENUM_STRING
+        Global<CommandRegistry>->_addEnumValuesInternal(fixedView.data(), values, typeid_t<CommandRegistry>::count++, &CommandRegistry::parseEnumStringAndInt).val;
+#else
         Global<CommandRegistry>->_addEnumValuesInternal(fixedView.data(), values, typeid_t<CommandRegistry>::count++, &CommandRegistry::parseEnum<int>).val;
+#endif // USE_PARSE_ENUM_STRING
     }
     commandInstance->enumRanges.swap(convertedEnumRanges);
-#endif // USE_PARSE_ENUM_STRING
+
     Global<CommandRegistry>->registerCommand(commandInstance->name, commandInstance->description->c_str(), commandInstance->permission, commandInstance->flag, commandInstance->flag);
     if (!commandInstance->alias.empty())
         Global<CommandRegistry>->registerAlias(commandInstance->name, commandInstance->alias);
@@ -1031,6 +1109,7 @@ inline DynamicCommand::BuilderFn DynamicCommandInstance::initCommandBuilder()
 
 #include <MC/Actor.hpp>
 #include <MC/Player.hpp>
+#include <MC/Minecraft.hpp>
 
 void testRegCommand(std::string const& name = "dyncmd")
 {
@@ -1124,6 +1203,7 @@ void testRegCommand(std::string const& name = "dyncmd")
         },
         // dynamic command callback
         [](DynamicCommand const& command, CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, Result>& results) {
+            logger.warn(results["testEnum"].toDebugString());
             auto& action = results["testEnum"].getRaw<std::string>();
             switch (do_hash(action.c_str()))
             {
@@ -1182,6 +1262,7 @@ inline void testEnums()
 TClasslessInstanceHook2("TestDynamicCommand_startServerThread", void, "?startServerThread@ServerInstance@@QEAAXXZ")
 {
     original(this);
+    Global<Level> = Global<Minecraft>->getLevel();
     testEnums();
     I18n::chooseLanguage(*I18n::getLanguage("zh_CN"));
     for (auto i = 0; i < 0x25; ++i)
@@ -1335,6 +1416,7 @@ void setupEchoCommand()
 TClasslessInstanceHook2("SetupBetaCommand_startServerThread", void, "?startServerThread@ServerInstance@@QEAAXXZ")
 {
     original(this);
+    Global<Level> = Global<Minecraft>->getLevel();
     setupEnumCommand();
     setupEchoCommand();
 }
