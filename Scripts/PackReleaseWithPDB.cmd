@@ -4,8 +4,8 @@ cd ..
 
 del /F /Q RELEASE\Chakra.dll 2>nul
 del /F /Q RELEASE\LiteLoader.dll 2>nul
-del /F /Q RELEASE\plugins\LiteLoader\LiteLoader.*.dll 2>nul
 rmdir /s /q RELEASE\plugins\LiteLoader\pdb 2>nul
+del /F /Q RELEASE\plugins\LiteLoader\LiteLoader.*.dll 2>nul
 del /F /Q RELEASE\plugins\LiteLoader\LLAutoUpdate.dll 2>nul
 del /F /Q RELEASE\SymDB2.exe 2>nul
 del /F /Q RELEASE\*.zip 2>nul
@@ -18,6 +18,8 @@ echo.
 copy /Y x64\Release\Chakra.dll RELEASE\Chakra.dll
 copy /Y x64\Release\LiteLoader.dll RELEASE\LiteLoader.dll
 copy /Y x64\Release\LiteLoader.*.dll RELEASE\plugins\LiteLoader\
+mkdir RELEASE\plugins\LiteLoader\pdb
+copy /Y x64\Release\*.pdb RELEASE\plugins\LiteLoader\pdb\
 copy /Y x64\Release\LLAutoUpdate.dll RELEASE\plugins\LiteLoader\LLAutoUpdate.dll
 copy /Y Tools\SymDB2.exe RELEASE\SymDB2.exe
 
