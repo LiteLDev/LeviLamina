@@ -1,12 +1,15 @@
 #pragma once
 #include "Global.h"
 class Actor;
+#define USE_PARSE_ENUM_STRING
+//#define ENABLE_PARAMETER_TYPE_POSTFIX
 #include "MC/Command.hpp"
 #include "MC/CommandRegistry.hpp"
 #include "MC/CommandSelector.hpp"
 #include "MC/CommandPosition.hpp"
 #include "MC/CommandParameterData.hpp"
 #include "Utils/WinHelper.h"
+#include <third-party/magic_enum/magic_enum.hpp>
 
 ///////////////////////////////////////////////////////
 // Dynamic Command Registry
@@ -117,25 +120,29 @@ class DynamicCommand : public Command
 public:
     enum class ParameterType
     {
-        Bool,      //bool
-        Int,       //int
-        Float,     //float
-        String,    //std::string
-        Actor,     //CommandSelector<Actor>
-        Player,    //CommandSelector<Player>
-        BlockPos,  //CommandPosition
-        Vec3,      //CommandPositionFloat
-        RawText,   //CommandRawText
-        Message,   //CommandMessage
-        JsonValue, //Json::Value
-        Item,      //CommandItem
-        Block,     //Block const*
-        Effect,    //MobEffect const*
-        Enum,      //ENUM
-        SoftEnum,  //SOFT_ENUM
-        ActorType, //ActorDefinitionIdentifier const*
-        Command,   //std::unique_ptr<Command>
+        Bool,             //bool
+        Int,              //int
+        Float,            //float
+        String,           //std::string
+        Actor,            //CommandSelector<Actor>
+        Player,           //CommandSelector<Player>
+        BlockPos,         //CommandPosition
+        Vec3,             //CommandPositionFloat
+        RawText,          //CommandRawText
+        Message,          //CommandMessage
+        JsonValue,        //Json::Value
+        Item,             //CommandItem
+        Block,            //Block const*
+        Effect,           //MobEffect const*
+        Enum,             //ENUM
+        SoftEnum,         //SOFT_ENUM
+        ActorType,        //ActorDefinitionIdentifier const*
+        Command,          //std::unique_ptr<Command>
         WildcardSelector, //WildcardCommandSelector<Actor>
+#ifdef ENABLE_PARAMETER_TYPE_POSTFIX
+        Postfix,          //int?
+#endif // ENABLE_PARAMETER_TYPE_POSTFIX
+
     };
     struct ParameterPtr;
 
@@ -159,13 +166,24 @@ public:
         template <typename T>
         inline enable_if_supported_t<T, T const&> getRaw() const
         {
+#ifdef USE_PARSE_ENUM_STRING
+            if constexpr (std::is_same_v<std::remove_cv_t<T>, int>||std::is_enum_v<T>)
+            {
+                if (type == ParameterType::Enum)
+                {
+                    auto& value = getRaw<std::string>();
+                    return -1;
+                }
+            }
+#else
             if constexpr (std::is_same_v<std::remove_cv_t<T>, std::string>) {
                 if (type == ParameterType::Enum)
                     return getEnumValue();
             }
+#endif // USE_PARSE_ENUM_STRING
             if (checkTempateType<T>(type))
                 return dAccess<T>(command, offset);
-            throw std::runtime_error("Unsupported Result Type");
+            throw std::runtime_error(fmt::format("Raw type not match, parameter Type: {}, data type: {}", magic_enum::enum_name(type), typeid(T).name()));
         }
 
         template <typename T>
@@ -257,6 +275,7 @@ public:
 
     public:
         ParameterData() = delete;
+        LIAPI ParameterData(ParameterData const&);
         LIAPI ParameterData(std::string const& name, DynamicCommand::ParameterType type, bool optional = false, std::string const& enumOptions = "", std::string const& identifier = "", CommandParameterOption parameterOption = (CommandParameterOption)0);
         LIAPI ParameterData(std::string const& name, DynamicCommand::ParameterType type, std::string const& enumOptions = "", std::string const& identifier = "", CommandParameterOption parameterOption = (CommandParameterOption)0);
         LIAPI CommandParameterData makeParameterData() const;
@@ -271,6 +290,8 @@ public:
                 return CommandParameterDataType::ENUM;
             else if constexpr (type == ParameterType::SoftEnum)
                 return CommandParameterDataType::SOFT_ENUM;
+            //else if constexpr (type == ParameterType::Postfix)
+            //    return CommandParameterDataType::POSIFIX;
             else
                 return CommandParameterDataType::NORMAL;
         }
@@ -350,7 +371,7 @@ private:
             //case ParameterType::Position:
             //    return std::is_same_v<ParameterDataType::Position, std::remove_cv_t<_Ty>> || std::is_same_v<BlockPos, std::remove_cv_t<_Ty>> || std::is_same_v<Vec3, std::remove_cv_t<_Ty>>;
             case ParameterType::Enum:
-                return std::is_integral_v<_Ty> || std::is_same_v<std::string, std::remove_cv_t<_Ty>> || std::is_enum_v<_Ty>;
+                return std::is_same_v<int, std::remove_cv_t<_Ty>> || std::is_same_v<std::string, std::remove_cv_t<_Ty>> || std::is_enum_v<_Ty>;
             case ParameterType::SoftEnum:
                 return std::is_same_v<std::string, std::remove_cv_t<_Ty>>;
             case ParameterType::ActorType:
@@ -488,6 +509,7 @@ public:
     LIAPI ParameterIndex optional(std::string const& name, DynamicCommand::ParameterType type, std::string const& description, CommandParameterOption parameterOption = (CommandParameterOption)0);
     LIAPI ParameterIndex optional(std::string const& name, DynamicCommand::ParameterType type, CommandParameterOption parameterOption = CommandParameterOption::None);
 
+    //LIAPI bool addOverload();
     LIAPI bool addOverload(std::vector<ParameterIndex>&& params);
     LIAPI bool addOverload(std::vector<std::string>&& params);
     LIAPI bool addOverload(std::vector<char const*>&& params);
@@ -498,10 +520,36 @@ public:
     LIAPI void removeCallback() const;
     //LIAPI bool updateSoftEnum(std::string const& name = "") const;
     LIAPI std::string setSoftEnum(std::string const& name, std::vector<std::string> const& values) const;
-    LIAPI std::string addSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const;
-    LIAPI std::string removeSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const;
+    LIAPI bool addSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const;
+    LIAPI bool removeSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const;
     LIAPI std::vector<std::string> getSoftEnumValues(std::string const& name) const;
     LIAPI std::vector<std::string> getSoftEnumNames() const;
+
+
+    template <typename T>
+    inline std::enable_if_t<fmt::v8::detail::is_string<T>::value, ParameterIndex>
+        toIndex(T const& arg)
+    {
+        return findParameterIndex(arg);
+    }
+    template <typename T>
+    inline std::enable_if_t<!fmt::v8::detail::is_string<T>::value, ParameterIndex>
+        toIndex(T const& arg) = delete;
+    template <>
+    inline ParameterIndex toIndex(ParameterIndex const& arg)
+    {
+        return arg;
+    }
+    template <>
+    inline ParameterIndex toIndex(DynamicCommand::ParameterData const& arg)
+    {
+        return newParameter(DynamicCommand::ParameterData(arg));
+    }
+    template <typename... Args>
+    inline bool addOverload(Args const& ...args)
+    {
+        return addOverload(std::vector<ParameterIndex>{toIndex(args)...});
+    }
 
     template <typename T>
     inline bool addOverload(std::initializer_list<T>&& params)

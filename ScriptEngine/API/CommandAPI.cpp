@@ -68,7 +68,6 @@ bool LxlRemoveCmdCallback(script::ScriptEngine* engine)
 
 Local<Value> convertResult(DynamicCommand::Result const& result)
 {
-    fmt::format("{name}{health}", fmt::arg("name", "BugJump"));
     if (!result.isSet)
         return Local<Value>(); //null
     switch (result.type)
@@ -541,7 +540,7 @@ Local<Value> CommandClass::setSoftEnum(const Arguments& args)
         auto enums = parseStringList(args[1].asArray());
         return String::newString(get()->setSoftEnum(name, std::move(enums)));
     }
-    CATCH("");
+    CATCH("Fail in setSoftEnum!");
 }
 
 Local<Value> CommandClass::addSoftEnumValues(const Arguments& args)
@@ -553,9 +552,9 @@ Local<Value> CommandClass::addSoftEnumValues(const Arguments& args)
     {
         auto name = args[0].toStr();
         auto enums = parseStringList(args[1].asArray());
-        return String::newString(get()->addSoftEnumValues(name, std::move(enums)));
+        return Boolean::newBoolean(get()->addSoftEnumValues(name, std::move(enums)));
     }
-    CATCH("");
+    CATCH("Fail in addSoftEnumValues!");
 }
 
 Local<Value> CommandClass::removeSoftEnumValues(const Arguments& args)
@@ -567,9 +566,9 @@ Local<Value> CommandClass::removeSoftEnumValues(const Arguments& args)
     {
         auto name = args[0].toStr();
         auto enums = parseStringList(args[1].asArray());
-        return String::newString(get()->removeSoftEnumValues(name, std::move(enums)));
+        return Boolean::newBoolean(get()->removeSoftEnumValues(name, std::move(enums)));
     }
-    CATCH("");
+    CATCH("Fail in removeSoftEnumValues!");
 }
 
 Local<Value> CommandClass::getSoftEnumValues(const Arguments& args)

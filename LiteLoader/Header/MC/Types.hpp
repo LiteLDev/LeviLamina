@@ -1093,19 +1093,6 @@ struct InvertableFilter
     bool inverted;
 };
 
-class CommandOutputParameter
-{
-    std::string str;
-    int type;
-
-public:
-    MCINLINE CommandOutputParameter(std::string str, int type)
-        : str(std::move(str))
-        , type(type)
-    {
-    }
-};
-
 template <typename T>
 class CommandSelectorResults
 {

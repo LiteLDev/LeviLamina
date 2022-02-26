@@ -340,6 +340,17 @@ public:
         *(int*)target = (int)data;
         return true;
     }
+    bool parseEnumString(void* target,
+                         CommandRegistry::ParseToken const& token,
+                         CommandOrigin const&,
+                         int,
+                         std::string&,
+                         std::vector<std::string>&) const
+    {
+        auto data = token.toString();
+        *(std::string*)target = data;
+        return true;
+    }
 
     template <typename Type, typename IDConverter = CommandRegistry::DefaultIdConverter<Type>>
     bool parseEnum(

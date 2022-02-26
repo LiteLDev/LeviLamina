@@ -5,6 +5,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "CommandOutputParameter.hpp"
 
 #undef BEFORE_EXTRA
 
