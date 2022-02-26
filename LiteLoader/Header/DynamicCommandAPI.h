@@ -140,8 +140,8 @@ public:
         Command,          //std::unique_ptr<Command>
         WildcardSelector, //WildcardCommandSelector<Actor>
 #ifdef ENABLE_PARAMETER_TYPE_POSTFIX
-        Postfix,          //int?
-#endif // ENABLE_PARAMETER_TYPE_POSTFIX
+        Postfix, //int?
+#endif           // ENABLE_PARAMETER_TYPE_POSTFIX
 
     };
     struct ParameterPtr;
@@ -167,7 +167,7 @@ public:
         inline enable_if_supported_t<T, T const&> getRaw() const
         {
 #ifdef USE_PARSE_ENUM_STRING
-            if constexpr (std::is_same_v<std::remove_cv_t<T>, int>||std::is_enum_v<T>)
+            if constexpr (std::is_same_v<std::remove_cv_t<T>, int> || std::is_enum_v<T>)
             {
                 if (type == ParameterType::Enum)
                 {
@@ -176,7 +176,8 @@ public:
                 }
             }
 #else
-            if constexpr (std::is_same_v<std::remove_cv_t<T>, std::string>) {
+            if constexpr (std::is_same_v<std::remove_cv_t<T>, std::string>)
+            {
                 if (type == ParameterType::Enum)
                     return getEnumValue();
             }
@@ -500,7 +501,7 @@ public:
     LIAPI std::string const& setEnum(std::string const& description, std::vector<std::string> const& values);
     LIAPI std::string const& getEnumValue(int index) const;
     LIAPI ParameterIndex newParameter(DynamicCommand::ParameterData&& data);
-    LIAPI ParameterIndex newParameter(std::string const& name, DynamicCommand::ParameterType type,  bool optional = false, std::string const& description = "", std::string const& identifier = "", CommandParameterOption parameterOption = (CommandParameterOption)0);
+    LIAPI ParameterIndex newParameter(std::string const& name, DynamicCommand::ParameterType type, bool optional = false, std::string const& description = "", std::string const& identifier = "", CommandParameterOption parameterOption = (CommandParameterOption)0);
     LIAPI ParameterIndex findParameterIndex(std::string const& param);
     LIAPI ParameterIndex mandatory(std::string const& name, DynamicCommand::ParameterType type, std::string const& description, std::string const& identifier, CommandParameterOption parameterOption = (CommandParameterOption)0);
     LIAPI ParameterIndex mandatory(std::string const& name, DynamicCommand::ParameterType type, std::string const& description, CommandParameterOption parameterOption = (CommandParameterOption)0);
@@ -546,7 +547,7 @@ public:
         return newParameter(DynamicCommand::ParameterData(arg));
     }
     template <typename... Args>
-    inline bool addOverload(Args const& ...args)
+    inline bool addOverload(Args const&... args)
     {
         return addOverload(std::vector<ParameterIndex>{toIndex(args)...});
     }
@@ -568,5 +569,4 @@ public:
     inline void onExecute(DynamicCommand const& command, CommandOrigin const& origin, CommandOutput& output) const {
 
     };
-
 };

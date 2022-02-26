@@ -2062,7 +2062,7 @@ THook(std::ostream&,
       "??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z",
       std::ostream& _this, const char* str, unsigned size)
 {
-    IF_LISTENED(ConsoleOutputEvent)
+    IF_LISTENED(true||ConsoleOutputEvent)
     {
         if (&_this == &std::cout)
         {
