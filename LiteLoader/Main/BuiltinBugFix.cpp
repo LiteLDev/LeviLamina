@@ -36,10 +36,10 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
 TClasslessInstanceHook(bool, "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
       ReadOnlyBinaryStream* a2)
 {
-    ReadOnlyBinaryStream pkt(a2->getData(), 0);
+    ReadOnlyBinaryStream pkt(a2->getData(), false);
     pkt.getUnsignedVarInt();
-    if (pkt.getUnsignedVarInt() >= 0xfff) return 0;
-    if (pkt.getUnsignedVarInt() >= 0xfff) return 0;
+    if (pkt.getUnsignedVarInt() >= 0xfff) return false;
+    if (pkt.getUnsignedVarInt() >= 0xfff) return false;
     return original(this, a2);
 }
 
@@ -117,7 +117,7 @@ TInstanceHook(ItemActor*, "?_drop@Actor@@IEAAPEBVItemActor@@AEBVItemStack@@_N@Z"
     if (!dAccess<bool, 0x2c>(out))
     {
         auto num = dAccess<int, 0x20>(out);
-        if (num > 0 && num == 1)
+        if (num == 1)
         {
             auto v17 = *(Vec2*)((char*)out + 0x14);
             this->setRot(v17);
@@ -159,8 +159,8 @@ TInstanceHook(void, "?moveView@Player@@UEAAXXZ",
 #include <MC/ChunkViewSource.hpp>
 inline bool Interval(int a1)
 {
-    if (a1 < 0x5ffffff && a1 > -0x5ffffff) return 1;
-    return 0;
+    if (a1 < 0x5ffffff && a1 > -0x5ffffff) return true;
+    return false;
 }
 TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NV?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z",
     BlockPos& a1, int a2, bool a3, std::function<void(class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)> a4)

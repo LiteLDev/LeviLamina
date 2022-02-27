@@ -86,7 +86,7 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
     string pluginName = std::filesystem::path(filePath).filename().u8string();
     if (PluginManager::getPlugin(pluginName))
     {
-        logger.error("This plugin has been loaded by LiteLoader. You cannot load it twice.");
+        //logger.error("This plugin has been loaded by LiteLoader. You cannot load it twice.");
         return false;
     }
 

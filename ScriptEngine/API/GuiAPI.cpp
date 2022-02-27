@@ -66,6 +66,8 @@ bool SimpleFormClass::sendForm(Form::SimpleForm* form, Player* player, script::L
         {
             if (!EngineManager::isValid(engine))
                 return;
+            if (callback.isEmpty())
+                return;
 
             EngineScope scope(engine);
             try
@@ -159,6 +161,11 @@ bool CustomFormClass::sendForm(Form::CustomForm* form, Player* player, script::L
         [engine{EngineScope::currentEngine()}, callback{std::move(callbackFunc)}]
     (Player* pl, string data)
     {
+        if (!EngineManager::isValid(engine))
+            return;
+        if (callback.isEmpty())
+            return;
+
         EngineScope scope(engine);
         try
         {
