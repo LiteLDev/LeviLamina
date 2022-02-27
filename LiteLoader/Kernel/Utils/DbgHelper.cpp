@@ -130,9 +130,10 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l)
 	HANDLE hProcess = GetCurrentProcess();
 	HANDLE hThread = GetCurrentThread();
 	DWORD threadId = GetCurrentThreadId();
+	bool cacheSymbol = LL::globalConfig.cacheErrorStackTracebackSymbol;
 	bool res = false;
 
-	std::thread printThread([e,hProcess,hThread,threadId,&res,&debugLogger]()
+	std::thread printThread([e,hProcess,hThread,threadId,cacheSymbol,&res,&debugLogger]()
 	{
 		LoadSymbols();
 		CreateModuleMap(hProcess);
@@ -202,7 +203,9 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l)
                 debugLogger.error("at ???????? (0x????????)");
 		}
 		cout << endl;
-		CleanupSymbols();
+
+		if(!cacheSymbol)
+			CleanupSymbols();
 		res = true;
 	});
 

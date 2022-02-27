@@ -49,6 +49,7 @@ struct LLConfig
     bool enableAntiGive = true;
     bool enableUnlockCmd = true;
     bool enableErrorStackTraceback = true;
+    bool cacheErrorStackTracebackSymbol = false;
     bool enableUnoccupyPort19132 = true;
     bool enableCheckRunningBDS = true;
     bool enableWelcomeText = true;

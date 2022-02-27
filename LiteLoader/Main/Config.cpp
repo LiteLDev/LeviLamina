@@ -39,7 +39,10 @@ namespace LL {
                     }},
                     {"FixListenPort", {{"enabled", conf.enableFixListenPort}}},
                     {"AntiGive", {{"enabled", conf.enableAntiGive}}},
-                    {"ErrorStackTraceback", {{"enabled", conf.enableErrorStackTraceback}}},
+                    {"ErrorStackTraceback", {
+                        {"enabled", conf.enableErrorStackTraceback},
+                        {"cacheSymbol", conf.cacheErrorStackTracebackSymbol}
+                    }},
                     {"UnoccupyPort19132", {{"enabled", conf.enableUnoccupyPort19132}}},
                     {"CheckRunningBDS", {{"enabled", conf.enableCheckRunningBDS}}},
                     {"WelcomeText", {{"enabled", conf.enableWelcomeText}}}
@@ -129,6 +132,7 @@ namespace LL {
             if (modules.find("ErrorStackTraceback") != modules.end()) {
                 const nlohmann::json& setting = modules.at("ErrorStackTraceback");
                 conf.enableErrorStackTraceback = setting.value("enabled", true);
+                conf.cacheErrorStackTracebackSymbol = setting.value("cacheSymbol", false);
             }
         }
     }
