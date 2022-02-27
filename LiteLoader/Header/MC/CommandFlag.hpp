@@ -1,7 +1,7 @@
 #pragma once
 
 
-enum class CommandFlagValue : char
+enum class CommandFlagValue : unsigned short
 {
     None = 0,
     Usage = 1,

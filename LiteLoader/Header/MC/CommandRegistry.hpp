@@ -6,7 +6,7 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 enum CommandPermissionLevel : char;
-enum class CommandFlagValue : char;
+enum class CommandFlagValue : unsigned short;
 enum SemanticConstraint : unsigned char;
 class CommandParameterData;
 #include "CommandFlag.hpp"
@@ -22,7 +22,6 @@ class CommandParameterData;
 #include "CommandRawText.hpp"
 #include "CommandItem.hpp"
 #include "CommandIntegerRange.hpp"
-#include "AvailableCommandsPacket.hpp"
 
 
 #pragma region typeid
@@ -355,9 +354,9 @@ public:
     using CommandOverrideFunctor = std::function<void __cdecl(struct CommandFlag&, class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>> const&)>;
     using ParamSymbols = std::array<Symbol, 21>;
 
-    std::function<void(const Packet&)> mGetScoreForObjective;                               // 0
-    std::function<void(const Packet&)> mNetworkUpdateCallback;                              // 64
-    std::vector<ParseRule> mRules;                                                          // 128
+    std::function<void(const class Packet&)> mGetScoreForObjective;  // 0
+    std::function<void(const class Packet&)> mNetworkUpdateCallback; // 64
+    std::vector<ParseRule> mRules;                                   // 128
     // map<command version, ParseTable>
     std::map<unsigned int, ParseTable> mParseTableMap;                                      // 152
     std::vector<OptionalParameterChain> mOptionals;                                         // 168

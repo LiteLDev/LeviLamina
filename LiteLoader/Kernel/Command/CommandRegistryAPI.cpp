@@ -1,6 +1,7 @@
 #define COMMAND_REGISTRY_EXTRA
 #include <MC/CommandRegistry.hpp>
 #include <MC/CommandParameterData.hpp>
+#include <MC/AvailableCommandsPacket.hpp>
 #include <vector>
 #include <RegCommandAPI.h>
 #include <LoggerAPI.h>
