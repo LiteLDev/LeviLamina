@@ -5,7 +5,6 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-#define ENABLE_COMMAND_UNREGISTER
 enum CommandPermissionLevel : char;
 enum class CommandFlagValue : char;
 enum SemanticConstraint : unsigned char;
@@ -93,7 +92,6 @@ inline typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentif
 };
 
 #pragma endregion
-#include "../LoggerAPI.h"
 #undef BEFORE_EXTRA
 
 class CommandRegistry {
@@ -113,6 +111,14 @@ public:
         inline bool operator==(Symbol const& right) const
         {
             return val == right.val;
+        }
+        inline std::string toString() const
+        {
+            return Global<CommandRegistry>->symbolToString(*this);
+        }
+        inline std::string toDebugString() const
+        {
+            return fmt::format("<Symbol {}({})>", toString(), val);
         }
     };
 
@@ -142,6 +148,10 @@ public:
         //    auto v11 = v8->text;
         //    return std::string(v11, v10 - v11);
         //};
+        inline std::string toDebugString() const
+        {
+            return fmt::format("<ParseToken {}>", toString());
+        }
     };
     static_assert(sizeof(ParseToken) == 40);
     using ParseFn = bool (CommandRegistry::*)(
@@ -165,6 +175,11 @@ public:
             factory(factory),
             params(std::forward<std::vector<CommandParameterData>>(args)),
             unk(255) {}
+
+        inline std::string toDebugString() const
+        {
+            return fmt::format("<Overload {}>", params.size());
+        }
     };
 
     struct Signature {
@@ -186,12 +201,38 @@ public:
             Symbol symbol,
             CommandFlag flag)
             : name(name), desc(desc), perm(perm), main_symbol(symbol), flag(flag) {}
+
+        inline std::string toDebugString() const
+        {
+            return fmt::format("<Signature {}>", name);
+        }
     };
 
     struct SoftEnum {
         std::string name;               // 0
         std::vector<std::string> list;  // 32
     };
+
+    struct Enum
+    {
+        std::string name;                                                                           // 0
+        typeid_t<CommandRegistry> type;                                                             // 32
+        ParseFn parse;                                                                              // 40
+        std::vector<std::tuple<unsigned long, unsigned long, unsigned long, unsigned long>> values; //48
+
+        inline std::string toDebugString() const
+        {
+            return fmt::format("<Enum {}>", name);
+        }
+    };
+
+    LIAPI static std::vector<std::string> getEnumNames();
+    LIAPI static std::vector<std::string> getSoftEnumNames();
+    LIAPI static std::vector<std::string> getEnumValues(std::string const& name);
+    LIAPI static std::vector<std::string> getSoftEnumValues(std::string const& name);
+    LIAPI static std::string getCommandFullName(std::string const& name);
+    // Experiment
+    LIAPI bool unregisterCommand(std::string const& name);
 
     template <typename Type>
     struct DefaultIdConverter {
@@ -206,35 +247,76 @@ public:
             return convert<Type, uint64_t>(value);
         }
     };
-#ifdef ENABLE_COMMAND_UNREGISTER
+
+#ifdef COMMAND_REGISTRY_EXTRA
+    inline static std::string toString(std::vector<Symbol> const& syms)
+    {
+        std::ostringstream oss;
+        bool first=true;
+        for (auto& sym : syms) {
+            if (!first)
+                oss << ", ";
+            oss << sym.toString();
+            first = false;
+        }
+        return oss.str();
+    }
     struct ParseRule
     {
         Symbol sym;
         std::function<ParseToken*(ParseToken&, Symbol)> func;
         std::vector<Symbol> syms;
         CommandVersion version;
+        inline std::string toDebugString() const
+        {
+            
+            return fmt::format("<ParseRule {} - [{}]>", sym.toDebugString(), toString(syms));
+        }
     };
     struct ParseTable
     {
         std::map<Symbol, std::vector<Symbol>> first;
         std::map<Symbol, std::vector<Symbol>> follow;
         std::map<std::pair<Symbol, Symbol>, int> predict;
+        inline std::string toDebugString() const
+        {
+            std::ostringstream oss;
+            bool f = true;
+            for (auto& [k,v] : first)
+            {
+                if (!f)
+                    oss << ", ";
+                oss << k.toString() << ":[" << toString(v) << "]";
+                f = false;
+            }
+            oss << "\n";
+            for (auto& [k,v] : follow)
+            {
+                if (!f)
+                    oss << ", ";
+                oss << k.toString() << ":[" << toString(v) << "]";
+                f = false;
+            }
+            return fmt::format("<ParseTable>[{}]", oss.str());
+        }
     };
     struct OptionalParameterChain
     {
         int parameterCount;
         int followingRuleIndex;
         Symbol paramSymbol;
-    };
-    struct Enum
-    {
-        std::string name;                                                                           // 0
-        typeid_t<CommandRegistry> type;                                                             // 32
-        ParseFn parse;                                                                              // 40
-        std::vector<std::tuple<unsigned long, unsigned long, unsigned long, unsigned long>> values; //48
+        inline std::string toDebugString() const
+        {
+            return fmt::format("<OptionalParameterChain {},{},{}>", parameterCount, followingRuleIndex, paramSymbol.toDebugString());
+        }
     };
     struct Factorization
     {
+        Symbol sym;
+        inline std::string toDebugString() const
+        {
+            return fmt::format("<Factorization {}>", sym.toDebugString());
+        }
     };
     struct RegistryState
     {
@@ -255,13 +337,28 @@ public:
         Symbol mValue;
         Symbol mEnum;
         std::vector<unsigned char> mConstraints;
+        inline std::string toDebugString() const
+        {
+            std::ostringstream oss;
+            bool first = true;
+            for (auto& i : mConstraints)
+            {
+                if (!first)
+                    oss << ", ";
+                oss << (int)i;
+                first = false;
+            }
+            return fmt::format("<ConstrainedValue {} - {} - [{}]>", mValue.toDebugString(), mEnum.toDebugString(), oss.str());
+        }
     };
+
     using CommandOverrideFunctor = std::function<void __cdecl(struct CommandFlag&, class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>> const&)>;
     using ParamSymbols = std::array<Symbol, 21>;
 
     std::function<void(const Packet&)> mGetScoreForObjective;                               // 0
     std::function<void(const Packet&)> mNetworkUpdateCallback;                              // 64
     std::vector<ParseRule> mRules;                                                          // 128
+    // map<command version, ParseTable>
     std::map<unsigned int, ParseTable> mParseTableMap;                                      // 152
     std::vector<OptionalParameterChain> mOptionals;                                         // 168
     std::vector<std::string> mEnumValues;                                                   // 192
@@ -286,81 +383,9 @@ public:
     CommandOverrideFunctor mCommandOverrideFunctor;                                         // 640
     //704
 
-    inline static Logger logger = Logger("RemoveCommand");
+    inline void printAll() const;
+    inline void printSize() const;
 
-    inline bool removeSymbol(Symbol symbol)
-    {
-        auto iter = std::find(mCommandSymbols.begin(), mCommandSymbols.end(), symbol);
-        if (iter == mCommandSymbols.end())
-            return false;
-        logger.warn("Remove Symbol {}", symbol.toIndex());
-        mCommandSymbols.erase(iter);
-        return true;
-    }
-    inline size_t removeRules(Symbol symbol)
-    {
-        size_t count = 0;
-        for (auto iter = mRules.begin(); iter != mRules.end();) {
-            if (iter->sym == symbol)
-            {
-                count++;
-                logger.warn("Remove ParseRule {}", symbol.toIndex());
-                iter = mRules.erase(iter);
-            }
-            else
-            {
-                ++iter;
-            }
-        }
-        return count;
-    }
-    LIAPI std::string getCommandFullName(std::string const& name)
-    {
-        auto sig = findCommand(name);
-        if (sig)
-            return sig->name;
-        return "";
-    }
-    LIAPI bool unregisterCommand(std::string const& name)
-    {
-        auto command = getCommandFullName(name);
-        if (command.empty())
-            return false;
-        auto alias = getAliases(name);
-        //mRules//bad
-        //mParseTableMap//zero
-        //mEnumValues, mEnums, mEnumValueLookup, mCommandSymbols, mSignatures, mAliases
-        //mConstrainedValues, mConstrainedValueLookup, mTypeLookup
-        auto iter = std::find_if(mEnums.begin(), mEnums.end(), [](Enum const& e) { return e.name == "CommandName"; });
-        for (auto i = iter->values.begin(); i != iter->values.end(); ) {
-            auto& enumValue = mEnumValues.at(std::get<3>(*i));
-            if (enumValue == command||std::find(alias.begin(), alias.end(), enumValue)!=alias.end())
-            {
-                logger.warn("Remove Enum Value: {}", enumValue);
-                mEnumValueLookup.erase(enumValue);
-                i = iter->values.erase(i);
-                static size_t removeIndex = 0;
-                enumValue = fmt::format("removed_{}", removeIndex++);
-            }
-            else
-            {
-                ++i;
-            }
-        }
-        auto sig = mSignatures.find(command);
-        if (sig == mSignatures.end())
-            return false;
-        if (!removeSymbol(sig->second.main_symbol))
-            return false;
-        removeSymbol(sig->second.alt_symbol);
-        removeRules(sig->second.main_symbol);
-        removeRules(sig->second.alt_symbol);
-        logger.warn("Remove Signature {}", sig->second.name);
-        mSignatures.erase(sig);
-        logger.warn("Remove Aliases", sig->second.name);
-        mAliases.erase(command);
-        return true;
-    }
     void test()
     {
         auto mParseTableMapCopy = mParseTableMap;
@@ -406,7 +431,7 @@ public:
         static_assert(offsetof(CommandRegistry, mArgs) == 552);
         static_assert(offsetof(CommandRegistry, mCommandOverrideFunctor) == 640);
     }
-#endif ENABLE_COMMAND_UNREGISTER
+#endif COMMAND_REGISTRY_EXTRA
 
     template <typename T>
     inline static std::unique_ptr<class Command> allocateCommand() {

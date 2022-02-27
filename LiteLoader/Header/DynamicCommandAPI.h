@@ -17,8 +17,10 @@ class Actor;
 // [Example]
 //   ## One Example:
 //      // Direct setup of dynamic command with necessary information
+//      using ParamType = DynamicCommand::ParameterType;
+//      using Param = DynamicCommand::ParameterData;
 //      DynamicCommand::setup(
-//          "dynenum",         // command name
+//          "testenum",        // command name
 //          "dynamic command", // command description
 //          {
 //              // enums{enumName, {values...}}
@@ -29,28 +31,35 @@ class Actor;
 //              // parameters(type, name, [optional], [enumOptions(also enumName)], [identifier])
 //              // identifier: used to identify unique parameter data, if idnetifier is not set,
 //              //   it is set to be the same as enumOptions or name (identifier = enumOptions.empty() ? name:enumOptions)
-//              DynamicCommandInstance::ParameterData(DynamicCommand::ParameterType::Enum, "testEnum", "TestEnum1"),
-//              DynamicCommandInstance::ParameterData(DynamicCommand::ParameterType::Enum, "testEnum", "TestEnum2"),
-//              DynamicCommandInstance::ParameterData(DynamicCommand::ParameterType::Int, "testInt", true),
+//              Param("testEnum", ParamType::Enum, "TestEnum1"),
+//              Param("testEnum", ParamType::Enum, "TestEnum2"),
+//              Param("testInt", ParamType::Int, true),
 //          },
 //          {
 //              // overloads{ (type == Enum ? enumOptions : name) ...}
-//              {"TestEnum1", "testInt"},
-//              {"TestEnum2"},
+//              {"TestEnum1", "testInt"}, // testenum <add|remove> [testInt]
+//              {"TestEnum2"},            // testenum <list>
 //          },
 //          // dynamic command callback
-//          [](CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, DynamicCommand::Result>& results) {
+//          [](DynamicCommand const& command, CommandOrigin const& origin, CommandOutput& output,
+//             std::unordered_map<std::string, DynamicCommand::Result>& results) {
 //              auto& action = results["testEnum"].get<std::string>();
 //              switch (do_hash(action.c_str()))
 //              {
-//                  case do_hash("list"):
-//                      output.success(fmt::format("testEnum: {}", action));
 //                  case do_hash("add"):
+//                      if (results["testInt"].isSet)
+//                          output.success(fmt::format("add {}", results["testInt"].getRaw<int>()));
+//                      else
+//                          output.success("add nothing");
+//                      break;
 //                  case do_hash("remove"):
 //                      if (results["testInt"].isSet)
-//                          output.success(fmt::format("testInt is {}", results["testInt"].get<int>()));
+//                          output.success(fmt::format("remove {}", results["testInt"].getRaw<int>()));
 //                      else
-//                          output.success("testInt is not set");
+//                          output.success("remove nothing");
+//                      break;
+//                  case do_hash("list"):
+//                      output.success("list");
 //                      break;
 //                  default:
 //                      break;
@@ -60,29 +69,27 @@ class Actor;
 //
 //   ## Another Example
 //      using ParamType = DynamicCommand::ParameterType;
-//      using Result = DynamicCommand::Result;
-//      using ParameterIndex = DynamicCommandInstance::ParameterIndex;
 //      // create a dynamic command
-//      auto command = DynamicCommand::createCommand("dyncmd", "dynamic command", CommandPermissionLevel::GameMasters);
+//      auto command = DynamicCommand::createCommand("testcmd", "dynamic command", CommandPermissionLevel::GameMasters);
 //
 //      auto& optionsAdd = command->setEnum("TestOperation1", {"add", "remove"});
 //      auto& optionsList = command->setEnum("TestOperation2", {"list"});
 //
-//      ParameterIndex actionAdd = command->newParameter(ParamType::Enum, "testEnum", optionsAdd, (CommandParameterOption)1);
-//      ParameterIndex actionList = command->newParameter(ParamType::Enum, "testEnum", optionsList, (CommandParameterOption)1);
-//      ParameterIndex stringParam = command->newParameter(ParamType::String, "testString");
+//      command->mandatory("testEnum", ParamType::Enum, optionsAdd, CommandParameterOption::EnumAutocompleteExpansion);
+//      command->mandatory("testEnum", ParamType::Enum, optionsList, CommandParameterOption::EnumAutocompleteExpansion);
+//      command->mandatory("testString", ParamType::String);
 //
-//      command->addOverload({actionAdd, stringParam}); // dyncmd <add|remove> <testString:string>
-//      command->addOverload({"TestOperation2"});       // dyncmd <list>
+//      command->addOverload({optionsAdd, "testString"}); // dyncmd <add|remove> <testString:string>
+//      command->addOverload({"TestOperation2"});         // dyncmd <list>
 //
-//      command->setCallback([](CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, Result>& results) {
-//          switch (do_hash(results["testEnum"].get<std::string>().c_str()))
+//      command->setCallback([](DynamicCommand const& command, CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, Result>& results) {
+//          switch (do_hash(results["testEnum"].getRaw<std::string>().c_str()))
 //          {
 //              case do_hash("add"):
-//                  output.success(fmt::format("Add - {}", results["testString"].get<std::string>()));
+//                  output.success(fmt::format("Add - {}", results["testString"].getRaw<std::string>()));
 //                  break;
 //              case do_hash("remove"):
-//                  output.success(fmt::format("Remove - {}", results["testString"].get<std::string>()));
+//                  output.success(fmt::format("Remove - {}", results["testString"].getRaw<std::string>()));
 //                  break;
 //              case do_hash("list"):
 //                  output.success("List");
@@ -172,7 +179,7 @@ public:
                 auto& val = dAccess<std::pair<std::string, int>>(command, offset);
                 if constexpr (std::is_same_v<std::remove_cv_t<T>, int> || std::is_enum_v<T>)
                 {
-                    return static_cast<T const>(val.second);
+                    return static_cast<T const&>(val.second);
                 }
                 else if constexpr (std::is_same_v<std::remove_cv_t<T>, std::string>)
                 {
@@ -429,6 +436,9 @@ public:
         return setup(createCommand(name, description, std::move(enums), std::move(params), std::move(overloads), std::move(callback), permission, flag1, flag2, handler));
     };
 
+    // Experiment
+    LIAPI static bool unregisterCommand(std::string const& name);
+
     LIAPI static bool updateAvailableCommands();
 
     LIAPI DynamicCommandInstance const* getInstance() const;
@@ -480,8 +490,8 @@ public:
     // unordered_map{ enumName, pair{ enumIndex, enumSize } }
     std::unordered_map<std::string_view, std::pair<size_t, size_t>> enumRanges = {};
 
-    // unordered_map{ enumName, pair{ enumIndex, enumConstraint } }
-    std::unordered_map<std::string_view, std::pair<size_t, SemanticConstraint>> enumConstraints = {};
+    //// unordered_map{ enumName, pair{ enumIndex, enumConstraint } }
+    //std::unordered_map<std::string_view, std::pair<size_t, SemanticConstraint>> enumConstraints = {};
 
     std::vector<DynamicCommand::ParameterData> parameterDatas = {};
 
@@ -523,13 +533,12 @@ public:
     LIAPI std::vector<CommandParameterData> buildOverload(std::vector<ParameterIndex> const& overload);
     LIAPI void setCallback(DynamicCommand::CallBackFn&& callback) const;
     LIAPI void removeCallback() const;
-    //LIAPI bool updateSoftEnum(std::string const& name = "") const;
-    LIAPI std::string setSoftEnum(std::string const& name, std::vector<std::string> const& values) const;
-    LIAPI bool addSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const;
-    LIAPI bool removeSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const;
-    LIAPI std::vector<std::string> getSoftEnumValues(std::string const& name) const;
-    LIAPI std::vector<std::string> getSoftEnumNames() const;
-
+    //LIAPI static bool updateSoftEnum(std::string const& name = "") const;
+    LIAPI static std::string setSoftEnum(std::string const& name, std::vector<std::string> const& values);
+    LIAPI static bool addSoftEnumValues(std::string const& name, std::vector<std::string> const& values);
+    LIAPI static bool removeSoftEnumValues(std::string const& name, std::vector<std::string> const& values);
+    LIAPI static std::vector<std::string> getSoftEnumValues(std::string const& name);
+    LIAPI static std::vector<std::string> getSoftEnumNames();
 
     template <typename T>
     inline std::enable_if_t<fmt::v8::detail::is_string<T>::value, ParameterIndex>
