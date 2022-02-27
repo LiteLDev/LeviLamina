@@ -28,10 +28,14 @@
 #include <Windows.h>
 #include <delayimp.h>
 
-extern "C" {
+#ifdef __cplusplus
+#define EXTERN_C_SymDBHelper extern "C"
+#else
+#define EXTERN_C_SymDBHelper extern
+#endif
+
 // LiteLoader Api to Fetch Function Address
-void* dlsym_real(char const* name);
-}
+EXTERN_C_SymDBHelper void* dlsym_real(char const* name);
 
 static size_t __strlen(const char* sz) {
     const char* szEnd = sz;
@@ -64,7 +68,7 @@ static unsigned IndexFromPImgThunkData(PCImgThunkData pitdCur, PCImgThunkData pi
     return (unsigned)(pitdCur - pitdBase);
 }
 
-extern "C" IMAGE_DOS_HEADER __ImageBase;
+EXTERN_C_SymDBHelper IMAGE_DOS_HEADER __ImageBase;
 
 #define PtrFromRVA(RVA) (((PBYTE)&__ImageBase) + (RVA))
 
@@ -141,10 +145,10 @@ static int WINAPI FLoadedAtPreferredAddress(PIMAGE_NT_HEADERS pinh, HMODULE hmod
 #define InterlockedExchangePointer(Target, Value) (PVOID)(LONG_PTR) InterlockedExchange((PLONG)(Target), (LONG)(LONG_PTR)(Value))
 /*typedef unsigned long *PULONG_PTR;*/
 #endif
-extern "C" FARPROC WINAPI
+EXTERN_C_SymDBHelper FARPROC WINAPI
     __delayLoadHelper2(PCImgDelayDescr pidd, FARPROC* ppfnIATEntry);
 #include <stdio.h>
-extern "C" FARPROC WINAPI
+EXTERN_C_SymDBHelper FARPROC WINAPI
     __delayLoadHelper2(PCImgDelayDescr pidd, FARPROC* ppfnIATEntry) {
 
     InternalImgDelayDescr idd = {
@@ -193,12 +197,14 @@ extern "C" FARPROC WINAPI
         if (__pfnDliNotifyHook2)
             hmod = (HMODULE)(((*__pfnDliNotifyHook2)(dliNotePreLoadLibrary, &dli)));
         if (hmod == 0)
-        #ifdef _MSC_VER
-            hmod = LoadLibrary((LPCWSTR)dli.szDll);
-        #else
+        #ifdef __clang__
             hmod = LoadLibrary(dli.szDll);
+        #elif __GNUC__
+            hmod = LoadLibrary(dli.szDll);
+        #elif _MSC_VER
+            hmod = LoadLibrary((LPCWSTR)dli.szDll);
         #endif
-        
+
         
         if (hmod == 0) {
             dli.dwLastError = GetLastError();
@@ -305,3 +311,5 @@ HRESULT WINAPI __HrLoadAllImportsForDll(LPCSTR szDll) {
     }
     return hrRet;
 }
+
+#undef EXTERN_C_SymDBHelper
