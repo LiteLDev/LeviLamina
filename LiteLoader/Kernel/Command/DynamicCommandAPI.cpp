@@ -11,6 +11,7 @@
 #include <MC/ActorDefinitionIdentifier.hpp>
 #include <MC/Level.hpp>
 #include <MC/Block.hpp>
+#include <ScheduleAPI.h>
 #include <MC/Minecraft.hpp>
 #include <MC/LoopbackPacketSender.hpp>
 #include <third-party/dyncall/dyncall_callback.h>

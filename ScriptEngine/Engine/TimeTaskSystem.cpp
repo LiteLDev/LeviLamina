@@ -67,6 +67,9 @@ int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
             auto& taskData = timeTaskMap.at(id);
 
             EngineScope scope(engine);
+            if (taskData.func.isEmpty())
+                return;
+
             if (taskData.paras.empty())
                 taskData.func.get().call();
             else
@@ -98,8 +101,12 @@ int NewTimeout(Local<String> func, int timeout)
                 return;
             if (!EngineManager::isValid(engine))
                 return;
+
             auto& taskData = timeTaskMap.at(id);
             EngineScope scope(engine);
+            if (taskData.code.isEmpty())
+                return;
+
             engine->eval(taskData.code.get().toString());
             timeTaskMap.erase(id);
         }
@@ -132,6 +139,9 @@ int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
             auto& taskData = timeTaskMap.at(id);
 
             EngineScope scope(engine);
+            if (taskData.func.isEmpty())
+                return;
+
             if (taskData.paras.empty())
                 taskData.func.get().call();
             else
@@ -166,8 +176,12 @@ int NewInterval(Local<String> func, int timeout)
                 timeTaskMap.erase(id);
                 return;
             }
+
             auto& taskData = timeTaskMap.at(id);
             EngineScope scope(engine);
+            if (taskData.code.isEmpty())
+                return;
+
             engine->eval(taskData.code.get().toString());
         }
         TIMETASK_CATCH("setInterval");
