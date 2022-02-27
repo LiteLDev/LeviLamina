@@ -93,7 +93,7 @@ LL::Plugin* LL::PluginManager::getPlugin(std::string name, bool includeScriptPlu
         return res;
     try
     {
-        name = filesystem::path(name).filename().u8string();
+        name = filesystem::path(name).filename().replace_extension("").u8string();
         return GetPlugin_Raw(name, includeScriptPlugin);
     }
     catch(...)
