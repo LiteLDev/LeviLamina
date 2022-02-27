@@ -962,7 +962,7 @@ void EnableEventListener(int eventId)
         Event::LiquidSpreadEvent::subscribe([](const LiquidSpreadEvent& ev) {
             IF_LISTENED(EVENT_TYPES::onLiquidFlow)
             {
-                CallEvent(EVENT_TYPES::onLiquidFlow, BlockClass::newBlock(ev.mBlockInstance), IntPos::newPos(ev.mTarget));
+                CallEvent(EVENT_TYPES::onLiquidFlow, BlockClass::newBlock(ev.mBlockInstance), IntPos::newPos(ev.mTarget, ev.mDimensionId));
             }
             IF_LISTENED_END(EVENT_TYPES::onLiquidFlow);
         });
