@@ -182,7 +182,7 @@ Local<Value> McClass::runcmdEx(const Arguments& args)
 }
 
 //name, description, permission, flag, alias
-Local<Value> McClass::createCommand(const Arguments& args)
+Local<Value> McClass::newCommand(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
@@ -228,7 +228,7 @@ Local<Value> McClass::createCommand(const Arguments& args)
             return Boolean::newBoolean(false);
         }
     }
-    CATCH("Fail in getCommandName!")
+    CATCH("Fail in newCommand!")
 }
 
 //////////////////// Command APIs ////////////////////
@@ -580,7 +580,7 @@ Local<Value> CommandClass::getSoftEnumValues(const Arguments& args)
         auto name = args[0].toStr();
         return getStringArray(get()->getSoftEnumValues(name));
     }
-    CATCH("");
+    CATCH("getSoftEnumValues");
 }
 
 Local<Value> CommandClass::getSoftEnumNames(const Arguments& args)

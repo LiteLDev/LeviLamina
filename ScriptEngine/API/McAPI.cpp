@@ -6,7 +6,7 @@ ClassDefine<void> McClassBuilder =
 		.function("runcmd", &McClass::runcmd)
 		.function("runcmdEx", &McClass::runcmdEx)
 		.function("regPlayerCmd", &McClass::regPlayerCmd)
-		.function("createCommand", &McClass::createCommand)
+		.function("newCommand", &McClass::newCommand)
 		.function("broadcast", &McClass::broadcast)
 		.function("listen", &McClass::listen)
 		.function("getPlayer", &McClass::getPlayer)

@@ -119,7 +119,7 @@ Local<Value> CommandOriginClass::getPlayer()
             return Local<Value>();
         return PlayerClass::newPlayer((Player*)player);
     }
-    CATCH("Fail in getEntity!");
+    CATCH("Fail in getPlayer!");
 }
 
 Local<Value> CommandOriginClass::getNbt(const Arguments& args)

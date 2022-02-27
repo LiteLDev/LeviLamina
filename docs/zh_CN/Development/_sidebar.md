@@ -30,7 +30,6 @@
   - [📋 NBT 普通数据类型](zh_CN/Development/NbtAPI/NBTValue.md)
   - [📚 NBT 列表类型](zh_CN/Development/NbtAPI/NBTList.md)
   - [📒 NBT 标签类型](zh_CN/Development/NbtAPI/NBTCompound.md)
-  
 - 图形界面与表单
   
   - [📊 表单](zh_CN/Development/GuiAPI/Form.md)
