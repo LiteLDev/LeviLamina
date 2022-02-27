@@ -158,6 +158,7 @@ log(result.output);
 | 属性         | 含义                        | 类型             |
 | ------------ | --------------------------- | ---------------- |
 | ori.type      | 指令执行主体类型              | `OriginType`     |
+| ori.name      | 指令执行主体的名称             | `String`        |
 | ori.pos       | 指令执行主体的坐标             | `FloatPos`       |
 | ori.blockPos  | 指令执行主体的方块坐标          | `IntPos`         |
 | ori.entity    | 执行指令的实体（可空）          | `Entity`         |
