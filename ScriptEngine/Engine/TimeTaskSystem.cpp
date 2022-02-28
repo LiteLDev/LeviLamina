@@ -60,6 +60,8 @@ int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
         [engine{EngineScope::currentEngine()}, id{timeTaskId}]()
     {
         try {
+            if (LL::isServerStopping())
+                return;
             if (timeTaskMap.find(id) == timeTaskMap.end())
                 return;
             if (!EngineManager::isValid(engine))
@@ -97,6 +99,8 @@ int NewTimeout(Local<String> func, int timeout)
         [engine{ EngineScope::currentEngine() }, id{ timeTaskId }]()
     {
         try {
+            if (LL::isServerStopping())
+                return;
             if (timeTaskMap.find(id) == timeTaskMap.end())
                 return;
             if (!EngineManager::isValid(engine))
@@ -128,6 +132,8 @@ int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
         [engine{ EngineScope::currentEngine() }, id{ timeTaskId }]()
     {
         try {
+            if (LL::isServerStopping())
+                return;
             if (timeTaskMap.find(id) == timeTaskMap.end())
                 return;
             if (!EngineManager::isValid(engine))
@@ -168,6 +174,8 @@ int NewInterval(Local<String> func, int timeout)
         [engine{ EngineScope::currentEngine() }, id{ timeTaskId }]()
     {
         try {
+            if (LL::isServerStopping())
+                return;
             if (timeTaskMap.find(id) == timeTaskMap.end())
                 return;
             if (!EngineManager::isValid(engine))

@@ -153,3 +153,13 @@ LL::ServerStatus LL::getServerStatus()
 {
     return (LL::ServerStatus)(LL::globalConfig.serverStatus);
 }
+
+bool LL::isServerStarting()
+{
+    return getServerStatus() == LL::ServerStatus::Starting;
+}
+
+bool LL::isServerStopping()
+{
+    return getServerStatus() == LL::ServerStatus::Stopping;
+}

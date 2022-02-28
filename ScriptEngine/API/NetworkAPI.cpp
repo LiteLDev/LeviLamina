@@ -288,6 +288,8 @@ Local<Value> NetworkClass::httpGet(const Arguments& args)
             [callback{ std::move(callbackFunc) }, engine{ EngineScope::currentEngine() }]
             (int status, string body)
         {
+            if (LL::isServerStopping())
+                return;
             if (!EngineManager::isValid(engine))
                 return;
 
@@ -326,6 +328,8 @@ Local<Value> NetworkClass::httpPost(const Arguments& args)
             [callback{ std::move(callbackFunc) }, engine{ EngineScope::currentEngine() }]
             (int status, string data)
         {
+            if (LL::isServerStopping())
+                return;
             if (!EngineManager::isValid(engine))
                 return;
 

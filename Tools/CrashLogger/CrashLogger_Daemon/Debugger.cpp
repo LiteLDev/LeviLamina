@@ -58,6 +58,7 @@ bool InitDebugger()
 		printf("[CrashLogger][ERROR] Fail to attach Debugger! Error Code: %d\n", GetLastError());
 		return false;
 	}
+	DebugSetProcessKillOnExit(false);
 	return true;
 }
 

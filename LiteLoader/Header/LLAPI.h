@@ -142,5 +142,7 @@ namespace LL
         Starting, Running, Stopping
     };
     LIAPI ServerStatus getServerStatus();
+    LIAPI bool isServerStarting();
+    LIAPI bool isServerStopping();
 
 }; // namespace LL
