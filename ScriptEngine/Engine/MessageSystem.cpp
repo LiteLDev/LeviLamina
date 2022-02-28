@@ -2,8 +2,10 @@
 #include <API/APIHelp.h>
 #include <Tools/Utils.h>
 #include <LLAPI.h>
+#include <EventAPI.h>
 #include "LocalShareData.h"
 #include "GlobalShareData.h"
+#include <processthreadsapi.h>
 #include <process.h>
 #include <exception>
 using namespace std;
@@ -364,13 +366,37 @@ void InitMessageSystem()
 {
     globalShareData->messageSystemHandlers[LLSE_MODULE_TYPE] = { ModuleMessage::handle, ModuleMessage::cleanup };
 
+    Event::ServerStoppedEvent::subscribe([](const auto& ev) {
+        EndMessageSystemLoop();
+        return true;
+    });
+
     std::thread([]() {
+        globalShareData->messageThreads[LLSE_BACKEND_TYPE] = GetCurrentThread();
         while (true)
         {
+            MessageSystemLoopOnce();
+            SleepEx(5, true);
             if (LL::getServerStatus() >= LL::ServerStatus::Stopping)
                 return;
-            MessageSystemLoopOnce();
-            Sleep(5);
         }
     }).detach();
+}
+
+//Helper
+void APCEmptyHelper(ULONG_PTR)
+{
+    ;
+}
+
+bool EndMessageSystemLoop()
+{
+    auto res = globalShareData->messageThreads.find(LLSE_BACKEND_TYPE);
+    if (res == globalShareData->messageThreads.end())
+        return false;
+
+    QueueUserAPC(APCEmptyHelper, res->second, 0);
+    globalShareData->messageThreads.erase(LLSE_BACKEND_TYPE);
+    Sleep(1);
+    return true;
 }

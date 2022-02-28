@@ -83,3 +83,4 @@ public:
 ///////////////////////////// Funcs /////////////////////////////
 void InitMessageSystem();
 void MessageSystemLoopOnce();
+bool EndMessageSystemLoop();

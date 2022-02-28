@@ -39,6 +39,7 @@ struct GlobalDataType
 	//模块消息系统
 	int messageSystemNextId = 0;
 	std::map<std::string, MessageHandlers> messageSystemHandlers;
+	std::map<std::string, HANDLE> messageThreads;
 
 	//fastlog多线程锁
 	std::mutex fastlogLock;
