@@ -28,6 +28,13 @@ std::unordered_map<int, TimeTaskData> timeTaskMap;
         PrintException(e); \
         logger.error("In Plugin: " + ENGINE_GET_DATA(engine)->pluginName); \
     } \
+    catch (const seh_exception& e) \
+    { \
+        logger.error("Error occurred in {}", TASK_TYPE); \
+        logger.error("SEH Uncaught Exception Detected!"); \
+        logger.error(TextEncoding::toUTF8(e.what())); \
+        logger.error("In Plugin: " + ENGINE_GET_DATA(engine)->pluginName); \
+    } \
     catch (const std::exception& e) \
     { \
         logger.error("Error occurred in {}", TASK_TYPE); \
@@ -35,14 +42,12 @@ std::unordered_map<int, TimeTaskData> timeTaskMap;
         logger.error(TextEncoding::toUTF8(e.what())); \
         logger.error("In Plugin: " + ENGINE_GET_DATA(engine)->pluginName); \
     } \
-    catch (const seh_exception& e) \
+    catch (...) \
     { \
         logger.error("Error occurred in {}", TASK_TYPE); \
-        logger.error("SEH Uncaught Exception Detected!"); \
-        logger.error(TextEncoding::toUTF8(e.what())); \
+        logger.error("Uncaught Exception Detected!"); \
         logger.error("In Plugin: " + ENGINE_GET_DATA(engine)->pluginName); \
     }
-
 
 
 //////////////////// API ////////////////////
@@ -66,12 +71,12 @@ int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
                 return;
             if (!EngineManager::isValid(engine))
                 return;
-            auto& taskData = timeTaskMap.at(id);
 
-            EngineScope scope(engine);
+            auto& taskData = timeTaskMap.at(id);
             if (taskData.func.isEmpty())
                 return;
 
+            EngineScope scope(engine);
             if (taskData.paras.empty())
                 taskData.func.get().call();
             else
@@ -107,10 +112,10 @@ int NewTimeout(Local<String> func, int timeout)
                 return;
 
             auto& taskData = timeTaskMap.at(id);
-            EngineScope scope(engine);
             if (taskData.code.isEmpty())
                 return;
 
+            EngineScope scope(engine);
             engine->eval(taskData.code.get().toString());
             timeTaskMap.erase(id);
         }
@@ -142,12 +147,12 @@ int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
                 timeTaskMap.erase(id);
                 return;
             }
-            auto& taskData = timeTaskMap.at(id);
 
-            EngineScope scope(engine);
+            auto& taskData = timeTaskMap.at(id);
             if (taskData.func.isEmpty())
                 return;
 
+            EngineScope scope(engine);
             if (taskData.paras.empty())
                 taskData.func.get().call();
             else
@@ -186,10 +191,10 @@ int NewInterval(Local<String> func, int timeout)
             }
 
             auto& taskData = timeTaskMap.at(id);
-            EngineScope scope(engine);
             if (taskData.code.isEmpty())
                 return;
 
+            EngineScope scope(engine);
             engine->eval(taskData.code.get().toString());
         }
         TIMETASK_CATCH("setInterval");

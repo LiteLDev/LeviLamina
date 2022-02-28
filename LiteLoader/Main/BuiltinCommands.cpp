@@ -178,17 +178,26 @@ void LLListPluginsCommand(CommandOutput& output)
 {
     auto plugins = LL::getAllPlugins();
     std::ostringstream oss;
-    oss << "Plugin Lists [" << plugins.size() << "]\n\n";
+    oss << "Plugin Lists [" << plugins.size() << "]\n";
+
     for (auto& [name, plugin] : plugins)
     {
         // Plugin Lists[1]
         // - LiteLoader [v1.0.0] (LiteLoader.dll)
         //   xxxxx  (Plugin Introduction)
+
+        string pluginName = name;
+        if (pluginName.find("§") == string::npos)
+            pluginName = "§b" + pluginName;
+        string introduction = plugin->introduction;
+        if (introduction.find("§") == string::npos)
+            introduction = "§7" + introduction;
+
         auto fileName = std::filesystem::path(plugin->filePath).filename().u8string();
-        oss << fmt::format("- {} [v{}] ({})\n  {}\n\n",
-                           name, plugin->version.toString(), fileName, plugin->introduction);
+        oss << fmt::format("- {} §a[v{}] §8({})\n  {}\n",
+            pluginName, plugin->version.toString(), fileName, introduction);
     }
-    oss << "* Send command \"ll list <Plugin Name>\" for more information" << std::endl;
+    oss << "\n* Send command \"ll list <Plugin Name>\" for more information";
     output.success(oss.str());
 }
 

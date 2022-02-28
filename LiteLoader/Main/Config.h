@@ -83,3 +83,11 @@ bool LoadLLConfig();
 #define LL_UPDATE_INFO_RECORD "plugins/LiteLoader/Update/Update.ini"
 
 #define LL_UPDATE_OTHER_FILES_RECORD "plugins/LiteLoader/Versions.ini"
+
+
+/////////////////////// Addon Helper ///////////////////////
+
+#define ZIP_PROGRAM_PATH "./plugins/LiteLoader/7z/7za.exe"
+#define ADDON_INSTALL_TEMP_DIR "./plugins/LiteLoader/Temp/"
+#define ADDON_INSTALL_MAX_WAIT 30000
+#define VALID_ADDON_FILE_EXTENSION std::set<string>({".mcpack", ".mcaddon", ".zip"})
