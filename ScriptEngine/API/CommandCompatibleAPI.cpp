@@ -129,24 +129,6 @@ Local<Value> McClass::sendCmdOutput(const Arguments& args)
     CATCH("Fail in SendCmdOutput!");
 }
 
-
-//////////////////// LXL Event Callbacks ////////////////////
-
-void RegisterBuiltinCmds()
-{
-    //调试引擎
-    RegisterCmd(LLSE_DEBUG_CMD, "LXL " + string(LLSE_MODULE_TYPE) + " Engine Real-time Debugging", 4);
-    
-    //热管理
-    RegisterCmd("lxl list", "List current loaded LXL plugins", 4);
-    RegisterCmd("lxl load", "Load a new LXL plugin", 4);
-    RegisterCmd("lxl unload", "Unload an existing LXL plugin", 4);
-    RegisterCmd("lxl reload", "Reload an existing LXL plugin / all LXL plugins", 4);
-    RegisterCmd("lxl version", "Get the version of LiteXLoader", 4);
-
-    logger.info("Builtin Cmds Registered.");
-}
-
 void ProcessRegCmdQueue()
 {
     for (auto& cmdData : toRegCmdQueue)
@@ -154,56 +136,6 @@ void ProcessRegCmdQueue()
         RegisterCmd(cmdData.cmd, cmdData.describe, cmdData.level);
     }
     toRegCmdQueue.clear();
-}
-
-bool ProcessDebugEngine(const string& cmd)
-{
-#define OUTPUT_DEBUG_SIGN() std::cout << "> " << std::flush
-    extern bool globalDebug;
-    extern ScriptEngine *debugEngine;
-
-    if (cmd == LLSE_DEBUG_CMD)
-    {
-        if (globalDebug)
-        {
-            //EndDebug
-            logger.info("Debug mode ended");
-            globalDebug = false;
-        }
-        else
-        {
-            //StartDebug
-            logger.info("Debug mode begins");
-            globalDebug = true;
-            OUTPUT_DEBUG_SIGN();
-        }
-        return false;
-    }
-    if (globalDebug)
-    {
-        EngineScope enter(debugEngine);
-        try
-        {
-            if (cmd == "stop")
-            {
-                return true;
-            }
-            else
-            {
-                auto result = debugEngine->eval(cmd);
-                PrintValue(std::cout, result);
-                cout << endl;
-                OUTPUT_DEBUG_SIGN();
-            }
-        }
-        catch (Exception& e)
-        {
-            PrintException(e);
-            OUTPUT_DEBUG_SIGN();
-        }
-        return false;
-    }
-    return true;
 }
 
 string LxlFindCmdReg(bool isPlayerCmd, const string& cmd, vector<string>& receiveParas, bool *fromOtherEngine)

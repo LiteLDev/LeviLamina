@@ -649,4 +649,18 @@ public:
     BlockInstance* mBlockInstance;
 };
 
+class ScriptPluginManagerEvent : public EventTemplate<ScriptPluginManagerEvent>
+{
+public:
+    enum class Operation
+    { Load, Unload, Reload };
+
+    Operation operation;
+    std::string target;
+    std::string otherInfo;
+    std::string pluginExtention;
+
+    bool success = false;
+};
+
 }; // namespace Event

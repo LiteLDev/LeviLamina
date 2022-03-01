@@ -1,4 +1,5 @@
 #pragma once
 #include <string>
 
-bool ProcessHotManageCmd(const std::string& cmd);
+bool ProcessDebugEngine(const std::string& cmd);
+bool ProcessOldHotManageCommand(std::string& cmd);
