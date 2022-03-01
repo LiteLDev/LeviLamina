@@ -1,16 +1,24 @@
-## [LiteLoader Release Note] 
-LiteLoaderBDS-2.1.2 update has been released, automatic update has been pushed 
-This is an important bug fix update! 
+## [LiteLoader Release Note]
+LiteLoaderBDS-2.1.3 update has been released, automatic update has been pushed 
+This is a bug fix update, please update as soon as possible
 ## [New features]
- - Added some color-related APIs
- - Script engine exported registerPlugin API
- - Exported the new allowlist API
- - Finished some i18n work
+- Added dynamic command registration interface (DynamicCommandAPI)
+- Added text encoding conversion interface (I18nAPI)
+- Added CompoundTag::toPrettySNBT beautification output interface
+- Provide support for NetworkNBT format
+- Provided annotation support for all json interfaces of scripting engine
+- Added the symbol cache switch for PrintCurrentStackTraceback
+- Added addons management and query commands
+- Upgraded the included LLMoney version
 ## [Bug Fix]
- - Fix a serious remote call deadlock problem in the scripting engine.
-Fix the problem of script engine ll.require working abnormally. 
- - Fix a possible error reported by getXuid
- - Fix the problem that the PlayerDrop event triggers incorrectly
- - Fix the issue that the player respawn event triggers abnormally
- - The problem that may occur when the crossbow fires fireworks rockets is fixed.
- - The problem with AddonInstaller is fixed.
+- The script engine fixes the problem that the database cannot be closed
+- Fix the problem that StructureTemplate class exists
+- Scripting engine fixes the problem of repeated loading of ll.require
+- Script engine fixes the problem that some object data is not updated after setNbt
+- Scripting engine fixes the problem of missing onLiquidFlow event dimension
+- Scripting engine fixes item.clone
+- Scripting engine provides binary interface for base64 conversion
+- Scripting engine adds engine validity check for multiple callbacks, improving stability
+- Fix some problems of SymDBHelper in SDK
+- Provide UTF8 conversion for most of the abnormal output to avoid the crash caused by local encoding in the output process.
+- Fix the problem of crash caused by inputting full-angle characters in the background.
