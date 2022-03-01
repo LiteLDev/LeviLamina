@@ -380,29 +380,26 @@ ItemStack* Level::getItemStackFromId(short a2, int a3) {
 
 void Level::broadcastText(const string& a1, TextType ty) 
 {
-    auto players = getAllPlayers();
-    for (auto& sp : players) 
-    {
-        sp->sendTextPacket(a1, ty);
-    }
+    Global<Level>->forEachPlayer([&](Player& sp) -> bool {
+        sp.sendTextPacket(a1, ty);
+        return true;
+    });
 }
 
 void Level::broadcastTitle(const string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration)
 {
-    auto players = getAllPlayers();
-    for (auto& sp : players) 
-    {
-        sp->sendTitlePacket(text, Type, FadeInDuration, RemainDuration, FadeOutDuration);
-    }
+    Global<Level>->forEachPlayer([&](Player& sp) -> bool {
+        sp.sendTitlePacket(text, Type, FadeInDuration, RemainDuration, FadeOutDuration);
+        return true;
+    });
 }
 
 void Level::sendPacketForAllPlayer(Packet& pkt)
 {
-    auto players = getAllPlayers();
-    for (auto& sp : players)
-    {
-        sp->sendNetworkPacket(pkt);
-    }
+    Global<Level>->forEachPlayer([&](Player& sp) -> bool {
+        sp.sendNetworkPacket(pkt);
+        return true;
+    });
 }
 
 std::string Level::getCurrentLevelName()
