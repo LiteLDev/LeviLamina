@@ -173,6 +173,8 @@ Local<Value> BlockClass::setNbt(const Arguments& args)
             return Local<Value>();    //Null
         
         block->setNbt(nbt);
+        // update Pre Data
+        preloadData(pos.getBlockPos(), pos.getDimensionId());
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in setNbt!")

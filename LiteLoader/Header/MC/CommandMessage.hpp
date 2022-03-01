@@ -12,7 +12,13 @@ class CommandMessage {
 
 #define AFTER_EXTRA
 // Add Member There
-char filler[32];
+    struct MessageComponent
+    /*{
+        char filler[200];
+        void* unk[2];
+        std::vector<void*> unk2[5];
+    }*/;
+    std::vector<MessageComponent> components;
 
 #undef AFTER_EXTRA
 

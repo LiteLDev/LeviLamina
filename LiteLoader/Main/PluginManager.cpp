@@ -6,6 +6,7 @@
 #include <Utils/StringHelper.h>
 #include <Utils/WinHelper.h>
 #include <Utils/STLHelper.h>
+#include <I18nAPI.h>
 #include <MC/Level.hpp>
 #include <MC/Player.hpp>
 #include <Windows.h>
@@ -92,7 +93,7 @@ LL::Plugin* LL::PluginManager::getPlugin(std::string name, bool includeScriptPlu
         return res;
     try
     {
-        name = filesystem::path(name).filename().u8string();
+        name = filesystem::path(name).filename().replace_extension("").u8string();
         return GetPlugin_Raw(name, includeScriptPlugin);
     }
     catch(...)
@@ -183,7 +184,7 @@ bool LL::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
             if (outputResult)
             {
                 logger.error("Plugin <{}> throws an std::exception in onPostInit", pluginFileName);
-                logger.error("Exception: ", e.what());
+                logger.error("Exception: ", TextEncoding::toUTF8(e.what()));
                 logger.error("Fail to init this plugin!");
             }
             return false;

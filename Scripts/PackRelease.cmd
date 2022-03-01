@@ -4,7 +4,8 @@ cd ..
 
 del /F /Q RELEASE\Chakra.dll 2>nul
 del /F /Q RELEASE\LiteLoader.dll 2>nul
-del /F /Q RELEAES\plugins\LiteLoader\LiteLoader.*.dll 2>nul
+del /F /Q RELEASE\plugins\LiteLoader\LiteLoader.*.dll 2>nul
+rmdir /s /q RELEASE\plugins\LiteLoader\pdb 2>nul
 del /F /Q RELEASE\plugins\LiteLoader\LLAutoUpdate.dll 2>nul
 del /F /Q RELEASE\SymDB2.exe 2>nul
 del /F /Q RELEASE\*.zip 2>nul

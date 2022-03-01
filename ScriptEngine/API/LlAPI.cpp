@@ -37,8 +37,8 @@ Local<Value> LlClass::registerPlugin(const Arguments& args)
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     if (args.size() >= 2)
         CHECK_ARG_TYPE(args[1], ValueKind::kString);
-    if (args.size() >= 3)
-        CHECK_ARG_TYPE(args[2], ValueKind::kObject);
+    //if (args.size() >= 3)
+    //    CHECK_ARG_TYPE(args[2], ValueKind::kObject);
     if (args.size() >= 4)
         CHECK_ARG_TYPE(args[3], ValueKind::kObject);
 
@@ -49,26 +49,58 @@ Local<Value> LlClass::registerPlugin(const Arguments& args)
         LL::Version ver = LL::Version(1, 0, 0);
         if (args.size() >= 3)
         {
-            Local<Object> verInfo = args[2].asObject();
-            if (verInfo.has("major"))
+            if (args[2].isArray())
             {
-                Local<Value> major = verInfo.get("major");
-                if (major.isNumber())
-                    ver.major = major.toInt();
+                Local<Array> verInfo = args[2].asArray();
+                if (verInfo.size() >= 1)
+                {
+                    Local<Value> major = verInfo.get(0);
+                    if (major.isNumber())
+                        ver.major = major.toInt();
+                }
+                if (verInfo.size() >= 2)
+                {
+                    Local<Value> minor = verInfo.get(1);
+                    if (minor.isNumber())
+                        ver.minor = minor.toInt();
+                }
+                if (verInfo.size() >= 3)
+                {
+                    Local<Value> revision = verInfo.get(2);
+                    if (revision.isNumber())
+                        ver.revision = revision.toInt();
+                }
             }
-            if (verInfo.has("minor"))
+            else if (args[2].isObject())
             {
-                Local<Value> minor = verInfo.get("minor");
-                if (minor.isNumber())
-                    ver.minor = minor.toInt();
+                Local<Object> verInfo = args[2].asObject();
+                if (verInfo.has("major"))
+                {
+                    Local<Value> major = verInfo.get("major");
+                    if (major.isNumber())
+                        ver.major = major.toInt();
+                }
+                if (verInfo.has("minor"))
+                {
+                    Local<Value> minor = verInfo.get("minor");
+                    if (minor.isNumber())
+                        ver.minor = minor.toInt();
+                }
+                if (verInfo.has("revision"))
+                {
+                    Local<Value> revision = verInfo.get("revision");
+                    if (revision.isNumber())
+                        ver.revision = revision.toInt();
+                }
             }
-            if (verInfo.has("revision"))
+            else
             {
-                Local<Value> revision = verInfo.get("revision");
-                if (revision.isNumber())
-                    ver.revision = revision.toInt();
+                logger.error("Wrong type of argument!");
+                logger.error("In API: registerPlugin");
+                return Boolean::newBoolean(false);
             }
         }
+
         map<string, string> other;
         if (args.size() >= 4)
         {
@@ -122,9 +154,9 @@ Local<Value> LlClass::listPlugins(const Arguments& args)
     {
         Local<Array> plugins = Array::newArray();
         auto list = PluginManager::getAllPlugins();
-        for(auto pluginName : list)
+        for(auto &plugin : list)
         {
-            plugins.add(String::newString(pluginName));
+            plugins.add(String::newString(plugin.second->name));
         }
         return plugins;
     }

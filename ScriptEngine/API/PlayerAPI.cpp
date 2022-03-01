@@ -21,6 +21,7 @@
 #include <MC/ListTag.hpp>
 #include <MC/CompoundTag.hpp>
 #include <PlayerInfoAPI.h>
+#include <SafeGuardRecord.h>
 #include <string>
 #include <vector>
 #include <unordered_map>
@@ -884,6 +885,8 @@ Local<Value> PlayerClass::crash(const Arguments& args)
         if (!player)
             return Local<Value>();
 
+        RecordOperation(ENGINE_OWN_DATA()->pluginName, "Crash Player",
+            "Execute player.crash() to crash player <" + player->getRealName() + ">");
         return Boolean::newBoolean(player->crashClient());
     }
     CATCH("Fail in crashPlayer!");
@@ -1109,6 +1112,11 @@ Local<Value> PlayerClass::sendSimpleForm(const Arguments& args)
             callback{ script::Global(args[4].asFunction()) }]
         (int chosen)
         {
+            if (LL::isServerStopping())
+                return;
+            if (!EngineManager::isValid(engine))
+                return;
+
             Player* pl = Level::getPlayer(id);
             if (!pl)
                 return;
@@ -1151,6 +1159,11 @@ Local<Value> PlayerClass::sendModalForm(const Arguments& args)
             callback{ script::Global(args[4].asFunction()) }]
         (bool chosen)
         {
+            if (LL::isServerStopping())
+                return;
+            if (!EngineManager::isValid(engine))
+                return;
+
             Player* pl = Level::getPlayer(id);
             if (!pl)
                 return;
@@ -1192,6 +1205,11 @@ Local<Value> PlayerClass::sendCustomForm(const Arguments& args)
             callback{ script::Global(args[1].asFunction()) }]
             (string result)
         {
+            if (LL::isServerStopping())
+                return;
+            if (!EngineManager::isValid(engine))
+                return;
+
             Player* pl = Level::getPlayer(id);
             if (!pl)
                 return;
@@ -1214,7 +1232,7 @@ Local<Value> PlayerClass::sendCustomForm(const Arguments& args)
     catch (const fifo_json::exception& e)
     {
         logger.error("Fail to parse Json string in sendCustomForm!");
-        logger.error(e.what());
+        logger.error(TextEncoding::toUTF8(e.what()));
 
         return Local<Value>();
     }

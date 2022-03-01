@@ -2,6 +2,7 @@
 #include "TimeTaskSystem.h"
 #include "MessageSystem.h"
 #include <Engine/EngineOwnData.h>
+#include <Engine/EngineManager.h>
 #include <ScheduleAPI.h>
 #include <Utils/STLHelper.h>
 #include <map>
@@ -27,21 +28,26 @@ std::unordered_map<int, TimeTaskData> timeTaskMap;
         PrintException(e); \
         logger.error("In Plugin: " + ENGINE_GET_DATA(engine)->pluginName); \
     } \
-    catch (const std::exception& e) \
-    { \
-        logger.error("Error occurred in {}", TASK_TYPE); \
-        logger.error("C++ Uncaught Exception Detected!"); \
-        logger.error(e.what()); \
-        logger.error("In Plugin: " + ENGINE_GET_DATA(engine)->pluginName); \
-    } \
     catch (const seh_exception& e) \
     { \
         logger.error("Error occurred in {}", TASK_TYPE); \
         logger.error("SEH Uncaught Exception Detected!"); \
-        logger.error(e.what()); \
+        logger.error(TextEncoding::toUTF8(e.what())); \
+        logger.error("In Plugin: " + ENGINE_GET_DATA(engine)->pluginName); \
+    } \
+    catch (const std::exception& e) \
+    { \
+        logger.error("Error occurred in {}", TASK_TYPE); \
+        logger.error("C++ Uncaught Exception Detected!"); \
+        logger.error(TextEncoding::toUTF8(e.what())); \
+        logger.error("In Plugin: " + ENGINE_GET_DATA(engine)->pluginName); \
+    } \
+    catch (...) \
+    { \
+        logger.error("Error occurred in {}", TASK_TYPE); \
+        logger.error("Uncaught Exception Detected!"); \
         logger.error("In Plugin: " + ENGINE_GET_DATA(engine)->pluginName); \
     }
-
 
 
 //////////////////// API ////////////////////
@@ -59,9 +65,16 @@ int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
         [engine{EngineScope::currentEngine()}, id{timeTaskId}]()
     {
         try {
+            if (LL::isServerStopping())
+                return;
             if (timeTaskMap.find(id) == timeTaskMap.end())
                 return;
+            if (!EngineManager::isValid(engine))
+                return;
+
             auto& taskData = timeTaskMap.at(id);
+            if (taskData.func.isEmpty())
+                return;
 
             EngineScope scope(engine);
             if (taskData.paras.empty())
@@ -91,9 +104,17 @@ int NewTimeout(Local<String> func, int timeout)
         [engine{ EngineScope::currentEngine() }, id{ timeTaskId }]()
     {
         try {
+            if (LL::isServerStopping())
+                return;
             if (timeTaskMap.find(id) == timeTaskMap.end())
                 return;
+            if (!EngineManager::isValid(engine))
+                return;
+
             auto& taskData = timeTaskMap.at(id);
+            if (taskData.code.isEmpty())
+                return;
+
             EngineScope scope(engine);
             engine->eval(taskData.code.get().toString());
             timeTaskMap.erase(id);
@@ -116,9 +137,20 @@ int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
         [engine{ EngineScope::currentEngine() }, id{ timeTaskId }]()
     {
         try {
+            if (LL::isServerStopping())
+                return;
             if (timeTaskMap.find(id) == timeTaskMap.end())
                 return;
+            if (!EngineManager::isValid(engine))
+            {
+                timeTaskMap[id].task.cancel();
+                timeTaskMap.erase(id);
+                return;
+            }
+
             auto& taskData = timeTaskMap.at(id);
+            if (taskData.func.isEmpty())
+                return;
 
             EngineScope scope(engine);
             if (taskData.paras.empty())
@@ -147,9 +179,21 @@ int NewInterval(Local<String> func, int timeout)
         [engine{ EngineScope::currentEngine() }, id{ timeTaskId }]()
     {
         try {
+            if (LL::isServerStopping())
+                return;
             if (timeTaskMap.find(id) == timeTaskMap.end())
                 return;
+            if (!EngineManager::isValid(engine))
+            {
+                timeTaskMap[id].task.cancel();
+                timeTaskMap.erase(id);
+                return;
+            }
+
             auto& taskData = timeTaskMap.at(id);
+            if (taskData.code.isEmpty())
+                return;
+
             EngineScope scope(engine);
             engine->eval(taskData.code.get().toString());
         }

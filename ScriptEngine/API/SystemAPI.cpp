@@ -1,6 +1,7 @@
 #include "SystemAPI.h"
 #include "APIHelp.h"
 #include <Engine/TimeTaskSystem.h>
+#include <Engine/EngineManager.h>
 #include <filesystem>
 #include <fstream>
 #include <Tools/Utils.h>
@@ -38,6 +39,11 @@ Local<Value> SystemClass::cmd(const Arguments& args)
             [callback{ std::move(callbackFunc) }, engine{ EngineScope::currentEngine() }]
         (int exitCode, string output)
         {
+            if (LL::isServerStopping())
+                return;
+            if (!EngineManager::isValid(engine))
+                return;
+
             EngineScope scope(engine);
             try
             {
@@ -73,6 +79,11 @@ Local<Value> SystemClass::newProcess(const Arguments& args)
             [callback{ std::move(callbackFunc) }, engine{ EngineScope::currentEngine() }]
         (int exitCode, string output)
         {
+            if (LL::isServerStopping())
+                return;
+            if (!EngineManager::isValid(engine))
+                return;
+
             EngineScope scope(engine);
             try
             {

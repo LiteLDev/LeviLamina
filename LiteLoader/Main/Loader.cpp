@@ -10,6 +10,7 @@
 #include <Utils/StringHelper.h>
 #include <Utils/WinHelper.h>
 #include <LLAPI.h>
+#include <I18nAPI.h>
 #include "Config.h"
 #include "Version.h"
 #include <ScriptEngine/Configs.h>
@@ -146,7 +147,7 @@ void LL::LoadMain() {
                 ((void (*)()) fn)();
             } catch (std::exception &e) {
                 logger.error("Plugin <{}> throws an std::exception in onPostInit", name);
-                logger.error("Exception: ", e.what());
+                logger.error("Exception: ", TextEncoding::toUTF8(e.what()));
                 logger.error("Fail to init this plugin!");
             }
             catch (...)

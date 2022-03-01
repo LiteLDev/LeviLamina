@@ -23,7 +23,7 @@ copy /Y x64\Release\Chakra.lib LiteLoaderSDK\Lib
 xcopy Tools\llvm-dlltool-msys2\* LiteLoaderSDK\Tools\llvm-dlltool-msys2 /E /Q /Y
 copy /Y Tools\LibraryBuilder.exe LiteLoaderSDK\Tools
 copy /Y Tools\SymDB2.exe LiteLoaderSDK\Tools
-copy /Y Tools\DownloadSDK.cmd LiteLoaderSDK\Tools
+copy /Y Tools\*.cmd LiteLoaderSDK\Tools
 
 if [%1] neq [action] goto Zipped
 echo.

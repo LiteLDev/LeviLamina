@@ -5,12 +5,11 @@
 
 // std::string -> std::wstring
 LIAPI std::wstring str2wstr(const std::string& str);
+LIAPI std::wstring str2wstr(const std::string& str, UINT codePage);
 
 // std::wstring -> std::string
 LIAPI std::string wstr2str(const std::wstring& wstr);
-
-// ANSI string -> std::wstring
-LIAPI std::wstring ANSI2Unicode(const std::string& str);
+LIAPI std::string wstr2str(const std::wstring& wstr, UINT codePage);
 
 // "2021-03-24"  ->  ["2021", "03", "24"]  (use '-' as split pattern)
 LIAPI std::vector<std::string> SplitStrWithPattern(const std::string& str, const std::string& pattern);

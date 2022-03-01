@@ -3,6 +3,8 @@
 #include <API/BlockAPI.h>
 #include <API/BlockEntityAPI.h>
 #include <API/CommandAPI.h>
+#include <API/CommandOriginAPI.h>
+#include <API/CommandOutputAPI.h>
 #include <API/DeviceAPI.h>
 #include <API/DataAPI.h>
 #include <API/ItemAPI.h>
@@ -48,6 +50,10 @@ void BindAPIs(ScriptEngine *engine)
     engine->registerNativeClass(NbtStaticBuilder);
     engine->registerNativeClass(TextClassBuilder);
 
+    engine->registerNativeClass(PermissionStaticBuilder);
+    engine->registerNativeClass(ParamTypeStaticBuilder);
+    engine->registerNativeClass(ParamOptionStaticBuilder);
+    engine->registerNativeClass(OriginTypeStaticBuilder);
 
     //////////////// 实例类 ////////////////
 
@@ -81,4 +87,7 @@ void BindAPIs(ScriptEngine *engine)
     engine->registerNativeClass<NbtByteArrayClass>(NbtByteArrayClassBuilder);
     engine->registerNativeClass<NbtListClass>(NbtListClassBuilder);
     engine->registerNativeClass<NbtCompoundClass>(NbtCompoundClassBuilder);
+    engine->registerNativeClass<CommandClass>(CommandClassBuilder);
+    engine->registerNativeClass<CommandOriginClass>(CommandOriginClassBuilder);
+    engine->registerNativeClass<CommandOutputClass>(CommandOutputClassBuilder);
 }

@@ -7,7 +7,6 @@
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
 #include "MobEffectInstance.hpp"
-#include "Command.hpp"
 #include "Tick.hpp"
 class Actor;
 class Player;

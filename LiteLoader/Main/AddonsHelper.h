@@ -8,20 +8,12 @@ void InitAddonsHelper();
 struct Addon
 {
     enum class Type { ResourcePack, BehaviorPack  };
-    struct Module
-    {
-        std::string description;
-        LL::Version version;
-        std::string uuid;
-    };
-
     std::string name;
     std::string description;
     Type type;
     LL::Version version;
     std::string uuid;
     std::string directory;
-    std::vector<Module> modules;
 };
 
 class AddonsManager

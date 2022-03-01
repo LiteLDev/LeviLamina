@@ -5,26 +5,19 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
-enum CommandPermissionLevel : char {
+#include "CommandRegistry.hpp"
+#include "CommandParameterData.hpp"
+#include "CommandFlag.hpp"
+class CommandRegistry;
+//class CommandRegistry::Symbol;
+enum CommandPermissionLevel : char
+{
     Any = 0,
     GameMasters = 1,
     Admin = 2,
     HostPlayer = 3,
     Console = 4,
     Internal = 5,
-};
-
-enum class CommandFlagValue : char {
-    None = 0,
-    Usage = 1,
-    Visibility2 = 2,
-    Visibility4 = 4,
-    Visibility6 = 6,
-    Sync = 8,
-    Execute = 16,
-    Type = 32,
-    Cheat = 64,
 };
 
 enum class OriginType : char {
@@ -35,27 +28,17 @@ enum class OriginType : char {
     Test = 4,
     AutomationPlayer = 5,
     ClientAutomation = 6,
-    DedicatedServer = 7,
+    Server = 7,
     Actor = 8,
     Virtual = 9,
     GameArgument = 10,
     ActorServer = 11,
+    Precompiled = 12,
+    GameDirectorEntity = 13,
+    Script = 14,
     ExecuteContext = 15,
-};
 
-struct CommandFlag {
-    CommandFlagValue value;
-
-    constexpr bool operator==(CommandFlag const& rhs) const noexcept {
-        return value == rhs.value;
-    }
-    constexpr bool operator!=(CommandFlag const& rhs) const noexcept {
-        return value != rhs.value;
-    }
-    CommandFlag& operator|=(CommandFlag const& rhs) {
-        value = (CommandFlagValue)((char)rhs.value | (char)value);
-        return *this;
-    }
+    DedicatedServer = 7,//Server
 };
 
 class CommandOutput;
@@ -68,11 +51,11 @@ class Command {
 // Add Member There
 
 protected:
-    int unk8;          // 8
-    void* unk16;       // 16
-    int unk24;         // 24
-    unsigned char b28; // 28
-    CommandFlag flag;  // 30
+    int version;                       // 8
+    CommandRegistry* registry;         // 16
+    CommandRegistry::Symbol symbol;    // 24, 
+    CommandPermissionLevel permission; // 28
+    CommandFlag flag;                  // 30
 
 public:
     template <typename T>

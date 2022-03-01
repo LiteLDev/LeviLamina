@@ -2,6 +2,7 @@
 #include "FileSystemAPI.h"
 #include <Engine/TimeTaskSystem.h>
 #include <Engine/LocalShareData.h>
+#include <Engine/EngineManager.h>
 #include <filesystem>
 #include <fstream>
 #include <string>
@@ -253,6 +254,11 @@ Local<Value> FileClass::read(const Arguments& args)
         pool.enqueue([cnt, fp{ &file }, isBinary { isBinary }, lock { &lock },
             callback{ std::move(callbackFunc) }, engine{ EngineScope::currentEngine() }] ()
         {
+            if (LL::isServerStopping())
+                return;
+            if (!EngineManager::isValid(engine))
+                return;
+
             char* buf = new char[cnt];
             lock->lock();
             fp->read(buf, cnt);
@@ -289,6 +295,11 @@ Local<Value> FileClass::readLine(const Arguments& args)
         pool.enqueue([fp{ &file }, lock{ &lock },
             callback{ std::move(callbackFunc) }, engine{ EngineScope::currentEngine() }] ()
         {
+            if (LL::isServerStopping())
+                return;
+            if (!EngineManager::isValid(engine))
+                return;
+
             string buf;
             lock->lock();
             getline(*fp, buf);
@@ -322,6 +333,11 @@ Local<Value> FileClass::readAll(const Arguments& args)
         pool.enqueue([fp{ &file }, isBinary{ isBinary }, lock{ &lock },
             callback{ std::move(callbackFunc) }, engine{ EngineScope::currentEngine() }]()
         {
+            if (LL::isServerStopping())
+                return;
+            if (!EngineManager::isValid(engine))
+                return;
+
             lock->lock();
             string res((std::istreambuf_iterator<char>(*fp)), std::istreambuf_iterator<char>());
             lock->unlock();
@@ -375,6 +391,11 @@ Local<Value> FileClass::write(const Arguments& args)
         pool.enqueue([fp{ &file }, lock{ &lock }, data{ std::move(data) }, isString, 
             callback{ std::move(callbackFunc) }, engine{ EngineScope::currentEngine() }]()
         {
+            if (LL::isServerStopping())
+                return;
+            if (!EngineManager::isValid(engine))
+                return;
+
             lock->lock();
             if (isString)
                 *fp << data;
@@ -420,6 +441,11 @@ Local<Value> FileClass::writeLine(const Arguments& args)
         pool.enqueue([fp{ &file }, lock{ &lock }, data{ std::move(data) }, 
             callback{ std::move(callbackFunc) }, engine{ EngineScope::currentEngine() }]()
         {
+            if (LL::isServerStopping())
+                return;
+            if (!EngineManager::isValid(engine))
+                return;
+
             lock->lock();
             *fp << data << "\n";
             bool isOk = !fp->fail() && !fp->bad();

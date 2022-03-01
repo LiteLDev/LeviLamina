@@ -1086,26 +1086,11 @@ enum class InventorySourceType
     NONIMPLEMENTEDTODO = 99999
 };
 
-
-
 template <typename T>
 struct InvertableFilter
 {
     T value;
     bool inverted;
-};
-
-class CommandOutputParameter
-{
-    std::string str;
-    int type;
-
-public:
-    MCINLINE CommandOutputParameter(std::string str, int type)
-        : str(std::move(str))
-        , type(type)
-    {
-    }
 };
 
 template <typename T>

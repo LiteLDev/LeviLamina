@@ -10,9 +10,15 @@
 
 using namespace std;
 
-std::string LL::getDataPath(const std::string &pluginName) {
-    filesystem::create_directory("plugins\\LiteLoader");
-    return "plugins\\LiteLoader\\" + pluginName;
+std::string LL::getDataPath(const std::string &pluginName)
+{
+    string dataPath = "plugins\\LiteLoader\\" + pluginName;
+    if (!filesystem::exists(dataPath))
+    {
+        std::error_code ec;
+        filesystem::create_directories(dataPath, ec);
+    }
+    return dataPath;
 }
 
 std::string LL::getLoaderVersionString() {
@@ -141,4 +147,19 @@ LL::Version LL::Version::parse(const std::string &str) {
         ver.revision = stoi(res[2]);
     
     return ver;
+}
+
+LL::ServerStatus LL::getServerStatus()
+{
+    return (LL::ServerStatus)(LL::globalConfig.serverStatus);
+}
+
+bool LL::isServerStarting()
+{
+    return getServerStatus() == LL::ServerStatus::Starting;
+}
+
+bool LL::isServerStopping()
+{
+    return getServerStatus() == LL::ServerStatus::Stopping;
 }

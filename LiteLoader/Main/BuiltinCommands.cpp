@@ -167,7 +167,6 @@ public:
     }
 };
 
-
 void LLUpgradeCommand(CommandOutput& output, bool isForce)
 {
     std::thread([isForce]() {
@@ -179,17 +178,26 @@ void LLListPluginsCommand(CommandOutput& output)
 {
     auto plugins = LL::getAllPlugins();
     std::ostringstream oss;
-    oss << "Plugin Lists [" << plugins.size() << "]\n\n";
+    oss << "Plugin Lists [" << plugins.size() << "]\n";
+
     for (auto& [name, plugin] : plugins)
     {
         // Plugin Lists[1]
         // - LiteLoader [v1.0.0] (LiteLoader.dll)
         //   xxxxx  (Plugin Introduction)
+
+        string pluginName = name;
+        if (pluginName.find("§") == string::npos)
+            pluginName = "§b" + pluginName;
+        string introduction = plugin->introduction;
+        if (introduction.find("§") == string::npos)
+            introduction = "§7" + introduction;
+
         auto fileName = std::filesystem::path(plugin->filePath).filename().u8string();
-        oss << fmt::format("- {} [v{}] ({})\n  {}\n\n",
-                           name, plugin->version.toString(), fileName, plugin->introduction);
+        oss << fmt::format("- {} §a[v{}] §8({})\n  {}\n",
+            pluginName, plugin->version.toString(), fileName, introduction);
     }
-    oss << "* Send command \"ll list <Plugin Name>\" for more information" << std::endl;
+    oss << "\n* Send command \"ll list <Plugin Name>\" for more information";
     output.success(oss.str());
 }
 
@@ -203,7 +211,7 @@ void LLPluginInfoCommand(CommandOutput& output, const string& pluginName)
         string pluginType = plugin->type == Plugin::PluginType::ScriptPlugin ? "Script Plugin" : "DLL Plugin";
 
         oss << "Plugin <" << pluginName << ">\n\n";
-        oss << "- Name:  " << plugin->name << '(' << fn << ")\n";
+        oss << "- Name:  " << plugin->name << ' (' << fn << ")\n";
         oss << "- Introduction:  " << plugin->introduction << "\n";
         oss << "- Version:  v" << plugin->version.toString(true) << "\n";
         oss << "- Type:  " << pluginType << "\n";
@@ -315,12 +323,21 @@ class LLCommand : public Command
     Operation operation;
     UpgradeOption upgradeOption;
     bool hasUpgradeOption, hasPluginNameSet;
-    string pluginNameToDoOperation;
+    CommandRawText pluginNameToDoOperation;
 
 public:
 
     void execute(CommandOrigin const& ori, CommandOutput& output) const override
     {
+        std::string pluginName = "";
+        if (hasPluginNameSet) {
+            pluginName = pluginNameToDoOperation;
+            if (pluginName.size() > 1 && pluginName[0] == '"' && pluginName[pluginName.size() - 1] == '"' && pluginName[pluginName.size() - 2] != '\\')
+            {
+                pluginName.erase(0, 1);
+                pluginName.pop_back();
+            }
+        }
         switch (operation)
         {
             case Operation::Version:
@@ -333,23 +350,23 @@ public:
                 if (!hasPluginNameSet)
                     LLListPluginsCommand(output);
                 else
-                    LLPluginInfoCommand(output, pluginNameToDoOperation);
+                    LLPluginInfoCommand(output, pluginName);
                 break;
             case Operation::Load:
                 if (hasPluginNameSet)
-                    LLLoadPluginCommand(output, pluginNameToDoOperation);
+                    LLLoadPluginCommand(output, pluginName);
                 else
                     output.error("You must provide a valid path of LiteLoader plugin!");
                 break;
             case Operation::Unload:
                 if (hasPluginNameSet)
-                    LLUnloadPluginCommand(output, pluginNameToDoOperation);
+                    LLUnloadPluginCommand(output, pluginName);
                 else
                     output.error("You must provide a valid name of LiteLoader plugin!");
                 break;
             case Operation::Reload:
                 if (hasPluginNameSet)
-                    LLReloadPluginCommand(output, pluginNameToDoOperation, false);
+                    LLReloadPluginCommand(output, pluginName, false);
                 else
                     LLReloadPluginCommand(output, "", true);
                 break;
@@ -391,7 +408,7 @@ public:
         registry->registerOverload<LLCommand>(
             "ll",
             makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_FreeFilePath").addOptions((CommandParameterOption)1),
-            makeMandatory<CommandParameterDataType::NORMAL>(&LLCommand::pluginNameToDoOperation, "PluginPath"));
+            makeMandatory<CommandParameterDataType::NORMAL>(&LLCommand::pluginNameToDoOperation, "PluginPath", nullptr, &LLCommand::hasPluginNameSet));
 
         // ll unload
         registry->addEnum<Operation>("Operation_MustPluginName", {

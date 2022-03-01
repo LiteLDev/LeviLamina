@@ -72,12 +72,14 @@
 
 ### Base64解码为数据
 
-`data.fromBase64(base64)`
+`data.fromBase64(base64, isBinary)`
 
 - 参数：
   - base64 : `String`  
     要解码的base64字符串
+  - isBinary : `Boolean`  
+    返回数据类型是否为二进制数据，默认为 false
 - 返回值：解码后的数据
-- 返回值类型：`ByteBuffer`
+- 返回值类型：`String` 或 `ByteBuffer`
 
 <br>

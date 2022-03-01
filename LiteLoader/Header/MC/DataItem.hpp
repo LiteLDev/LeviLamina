@@ -172,6 +172,9 @@ public:
     template <typename T>
     inline static std::unique_ptr<DataItem> create(unsigned short key, T const& value);
 
+    template <typename T>
+    inline static std::unique_ptr<DataItem> create(ActorDataIDs key, T const& value);
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DATAITEM
@@ -229,4 +232,10 @@ template <typename T>
 inline static std::unique_ptr<DataItem> DataItem::create(unsigned short key, T const& value)
 {
     return std::unique_ptr<DataItem>(new DataItem2(key, value));
+}
+
+template <typename T>
+inline static std::unique_ptr<DataItem> DataItem::create(ActorDataIDs key, T const& value)
+{
+    return std::unique_ptr<DataItem>(new DataItem2((unsigned short)key, value));
 }

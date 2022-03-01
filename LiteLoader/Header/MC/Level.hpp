@@ -81,6 +81,9 @@ public:
     LIAPI static void broadcastTitle(const string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
     LIAPI static void sendPacketForAllPlayer(Packet& pkt);
 
+    LIAPI static std::string getCurrentLevelName();
+    LIAPI static std::string getCurrentLevelPath();
+
  public:
     static void dummy() { ; }
     struct ServerCommandOrigin {
@@ -190,6 +193,12 @@ public:
     {
         std::vector<class Actor*> (Level::*rv)() const;
         *((void**)&rv) = dlsym("?getRuntimeActorList@Level@@UEBA?AV?$vector@PEAVActor@@V?$allocator@PEAVActor@@@std@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline class PacketSender* getPacketSender() const
+    {
+        class PacketSender* (Level::*rv)() const;
+        *((void**)&rv) = dlsym("?getPacketSender@Level@@UEBAPEAVPacketSender@@XZ");
         return (this->*rv)();
     }
     /*

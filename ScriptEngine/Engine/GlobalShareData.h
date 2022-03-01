@@ -1,4 +1,5 @@
 #include <API/APIHelp.h>
+#include "EngineManager.h"
 #include <vector>
 #include <list>
 #include <string>
@@ -15,14 +16,6 @@ struct ExportedFuncData
 	script::Global<Function> func;
 };
 
-//全局引擎数据
-struct ScriptEngineData
-{
-	string moduleType;
-	string pluginName;
-	ScriptEngine* engine;
-};
-
 //消息系统处理函数信息
 struct MessageHandlers
 {
@@ -33,11 +26,8 @@ struct MessageHandlers
 //全局共享数据
 struct GlobalDataType
 {
-	//所有插件名单
-	std::vector<std::string> pluginsList;
-
-	//总引擎表
-	std::vector<ScriptEngineData> engines;
+	//引擎管理器表
+	std::list<ScriptEngine*> globalEngineList;
 
 	//注册过的命令
 	std::unordered_map<std::string, std::string> playerRegisteredCmd;
@@ -49,6 +39,7 @@ struct GlobalDataType
 	//模块消息系统
 	int messageSystemNextId = 0;
 	std::map<std::string, MessageHandlers> messageSystemHandlers;
+	std::map<std::string, HANDLE> messageThreads;
 
 	//fastlog多线程锁
 	std::mutex fastlogLock;
@@ -67,5 +58,3 @@ extern GlobalDataType* globalShareData;
 //////////////////// APIs ////////////////////
 
 void InitGlobalShareData();
-void AddToGlobalPluginsList(const std::string& name);
-void RemoveFromGlobalPluginsList(const std::string& name);

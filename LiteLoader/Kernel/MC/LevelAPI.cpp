@@ -3,6 +3,7 @@
 #include <utility>
 #include <vector>
 #include <cctype>
+#include <fstream>
 #include <MC/Actor.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/Spawner.hpp>
@@ -18,6 +19,7 @@
 #include <MC/MinecraftCommands.hpp>
 #include <MC/Tick.hpp>
 #include <MC/Packet.hpp>
+#include <MC/PropertiesSettings.hpp>
 
 
 Actor* Level::getEntity(ActorUniqueID uniqueId)
@@ -378,27 +380,52 @@ ItemStack* Level::getItemStackFromId(short a2, int a3) {
 
 void Level::broadcastText(const string& a1, TextType ty) 
 {
-    auto players = getAllPlayers();
-    for (auto& sp : players) 
-    {
-        sp->sendTextPacket(a1, ty);
-    }
+    Global<Level>->forEachPlayer([&](Player& sp) -> bool {
+        sp.sendTextPacket(a1, ty);
+        return true;
+    });
 }
 
 void Level::broadcastTitle(const string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration)
 {
-    auto players = getAllPlayers();
-    for (auto& sp : players) 
-    {
-        sp->sendTitlePacket(text, Type, FadeInDuration, RemainDuration, FadeOutDuration);
-    }
+    Global<Level>->forEachPlayer([&](Player& sp) -> bool {
+        sp.sendTitlePacket(text, Type, FadeInDuration, RemainDuration, FadeOutDuration);
+        return true;
+    });
 }
 
 void Level::sendPacketForAllPlayer(Packet& pkt)
 {
-    auto players = getAllPlayers();
-    for (auto& sp : players)
+    Global<Level>->forEachPlayer([&](Player& sp) -> bool {
+        sp.sendNetworkPacket(pkt);
+        return true;
+    });
+}
+
+std::string Level::getCurrentLevelName()
+{
+    try
     {
-        sp->sendNetworkPacket(pkt);
+        return Global<PropertiesSettings>->getLevelName();
     }
+    catch (...)
+    {
+        std::ifstream fin("server.properties");
+        string buf;
+        while (getline(fin, buf))
+        {
+            if (buf.find("level-name=") != string::npos)
+            {
+                if (buf.back() == '\n')  buf.pop_back();
+                if (buf.back() == '\r')  buf.pop_back();
+                return buf.substr(11);
+            }
+        }
+    }
+    return "";
+}
+
+std::string Level::getCurrentLevelPath()
+{
+    return "./worlds/" + getCurrentLevelName();
 }

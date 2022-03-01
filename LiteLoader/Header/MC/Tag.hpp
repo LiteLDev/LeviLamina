@@ -90,12 +90,12 @@ public:
     template <typename T>
     inline static std::unique_ptr<Tag> asTag(std::unique_ptr<T>&& tag)
     {
-        return std::unique_ptr<Tag>(dynamic_cast<Tag*>(tag.release()));
+        return std::unique_ptr<Tag>((Tag*)(tag.release()));
     }
     template <typename T>
     inline static std::unique_ptr<T> asTypedTag(std::unique_ptr<Tag> tag)
     {
-        return std::unique_ptr<T>(dynamic_cast<T*>(tag.release()));
+        return std::unique_ptr<T>((T*)(tag.release()));
     }
 
 #undef AFTER_EXTRA

@@ -64,6 +64,13 @@ bool SimpleFormClass::sendForm(Form::SimpleForm* form, Player* player, script::L
         [engine{ EngineScope::currentEngine() }, callback{ std::move(callbackFunc) }]
         (Player* pl, int chosen)
         {
+            if (LL::isServerStopping())
+                return;
+            if (!EngineManager::isValid(engine))
+                return;
+            if (callback.isEmpty())
+                return;
+
             EngineScope scope(engine);
             try
             {
@@ -156,6 +163,13 @@ bool CustomFormClass::sendForm(Form::CustomForm* form, Player* player, script::L
         [engine{EngineScope::currentEngine()}, callback{std::move(callbackFunc)}]
     (Player* pl, string data)
     {
+        if (LL::isServerStopping())
+            return;
+        if (!EngineManager::isValid(engine))
+            return;
+        if (callback.isEmpty())
+            return;
+
         EngineScope scope(engine);
         try
         {
@@ -322,7 +336,8 @@ bool CallFormCallback(Player* player, unsigned formId, const string& data)
 
     try
     {
-        for (auto engine : currentModuleEngines)
+        auto engines = EngineManager::getLocalEngines();
+        for (auto engine : engines)
         {
             EngineScope enter(engine);
             FormCallbackData callback;

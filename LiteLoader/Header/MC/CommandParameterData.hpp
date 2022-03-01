@@ -6,15 +6,29 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-#include "CommandRegistry.hpp"
 #include <string_view>
 
 enum class CommandParameterDataType {
     NORMAL,
     ENUM,
-    SOFT_ENUM
+    SOFT_ENUM,
+    POSIFIX,
 };
-enum CommandParameterOption;
+enum SemanticConstraint: unsigned char
+{
+    NoneConstraint = 0,
+    RequiresCheatsEnabled=1,
+    RequiresElevatedPermissions=2,
+    RequiresHostPermissions=4,
+    VALUE_MASK=8,
+};
+enum CommandParameterOption : unsigned char
+{
+    None = 0,
+    EnumAutocompleteExpansion = 1,
+    HasSemanticConstraint = 2, //be used in block or item name enum
+    EnumAsChainedCommand = 4,  //be used in NewExecuteCommand
+};
 class CommandRegistry;
 
 #undef BEFORE_EXTRA
@@ -38,16 +52,14 @@ public:
     int offset;                    // 64
     int flag_offset;               // 68
     bool mand;                     // 72
-    bool pad73;                    // 73
+    unsigned char options;         // 73
 
     CommandParameterData()
-        : tid(0) {
-    }
+        : tid(tid){};
 
     CommandParameterData(
         typeid_t<CommandRegistry> tid, ParseFn parser, std::string_view describe,
         CommandParameterDataType type, char const* enumName, int offset, bool optional, int flag_offset)
-
         : tid(tid)
         , parser(parser)
         , name(describe)
@@ -57,8 +69,7 @@ public:
         , offset(offset)
         , flag_offset(flag_offset)
         , mand(optional)
-        , pad73(false) {
-    }
+        , options(0){};
 
 #undef AFTER_EXTRA
 

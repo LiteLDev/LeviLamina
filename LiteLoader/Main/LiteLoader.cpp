@@ -13,7 +13,7 @@
 #include "Loader.h"
 #include "AutoUpgrade.h"
 #include "CrashLogger.h"
-#include <TranslationAPI.h>
+#include <I18nAPI.h>
 #include "AddonsHelper.h"
 #include <EventAPI.h>
 #include "Version.h"
@@ -220,12 +220,6 @@ void LLMain()
 
     // Builtin CrashLogger
     LL::InitCrashLogger(LL::globalConfig.enableCrashLogger);
-
-    // Register Myself
-    LL::registerPlugin("LiteLoaderBDS", "Strong plugin loader for Bedrock Dedicated Server", LL::getLoaderVersion(),
-    {
-        {"GitHub","github.com/LiteLDev/LiteLoaderBDS"} 
-    });
 
     // Addon Helper
     if (LL::globalConfig.enableAddonsHelper)

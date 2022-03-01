@@ -49,7 +49,160 @@ log(result.output);
 [Lua] 
 ```
 
-### 注册一个新的玩家命令  
+### 注册指令
+
+`mc.newCommand(cmd,description[,permission,flag,alias])`
+- 参数：
+  - cmd : `String`  
+    待注册的命令
+  - description : `String`  
+    命令描述文本  
+  - permission : `PermType`  
+    （可选参数）指令执行所需权限，默认值 `Any`
+  - flag : `Integer`  
+    （可选参数）默认值 `0x80` 
+- 返回值：指令对象
+- 返回值类型：`Command`
+
+## 指令对象 API
+
+### 指令对象 - 函数
+
+#### 设置指令别名
+
+`Command.setAlias(alias)`
+- 参数：
+  - alias : `String`  
+    指令别名
+- 返回值：是否成功设置
+- 返回值类型：`Boolean`
+
+#### 设置指令枚举选项
+
+`Command.setEnum(name,values)`
+- 参数：
+  - name : `String`  
+    枚举名，用于设置参数时区分枚举
+  - values : `Array<String>`  
+    枚举值
+- 返回值：是否成功设置
+- 返回值类型：`Boolean`
+
+#### 设置必选参数
+
+`Command.mandatory(name,type[,enumName,identifier,enumOptions])`
+- 参数：
+  - name : `String`  
+    参数名，用于执行指令时识别参数
+  - type : `ParamType`  
+    参数类型
+  - enumName : `String`  
+    枚举名，仅 `ParamType` 为 `Enum` 时有效，用于区分枚举选项
+  - identifier : `String`  
+    参数标识，特殊情况下用于唯一识别参数，一般可用 `enumName` 或 `name` 代替
+  - enumOptions : `Integer`  
+    枚举选项，设置为 `1` 可在指令提示中展开枚举选项，如 <action : TagChangeAction> 会变成 <add|remove>
+- 返回值：是否成功设置
+- 返回值类型：`Boolean`
+
+#### 设置可选参数
+
+`Command.optional(name,type[,enumName,identifier,enumOptions])`
+- 参数：
+  - name : `String`  
+    参数名，用于执行指令时识别参数
+  - type : `ParamType`  
+    参数类型
+  - enumName : `String`  
+    枚举名，仅 `ParamType` 为 `Enum` 时有效，用于区分枚举选项
+  - identifier : `String`  
+    参数标识，特殊情况下用于唯一识别参数，一般可用 `enumName` 或 `name` 代替
+  - enumOptions : `Integer`  
+    枚举选项，设置为 `1` 可在指令提示中展开枚举选项，如 <action : TagChangeAction> 会变成 <add|remove>
+- 返回值：是否成功设置
+- 返回值类型：`Boolean`
+
+#### 设置指令重载
+
+`Command.overload(params)`
+- 参数：
+  - params : `Array<String>`  
+    参数标识符，重载所用到的参数列表，可用 参数标识符、枚举名、参数名，注意不能使用无法区分具体参数的标识符，如两个参数都叫 `action` 但枚举选项不同，此时应该使用枚举名而不是参数名
+- 返回值：是否成功设置
+- 返回值类型：`Boolean`
+
+#### 设置指令回调
+
+`Command.setCallback(callback)`
+- 参数：
+  - callback : `Function(cmd,origin,output,results)`  
+    注册的这个命令被执行时，接口自动调用的回调函数。
+- 返回值：是否成功设置
+- 返回值类型：`Boolean`
+
+#### 安装指令
+
+`Command.setup()`
+- 参数：
+- 返回值：是否成功设置
+- 返回值类型：`Boolean`
+
+## CommandOrigin 对象 API
+
+`CommandOrigin` 表示执行指令的主体。
+
+### CommandOrigin 对象 - 属性
+
+对于某个特定的 `CommandOrigin` 对象`ori`，有以下这些属性
+
+| 属性         | 含义                        | 类型             |
+| ------------ | --------------------------- | ---------------- |
+| ori.type      | 指令执行主体类型              | `OriginType`     |
+| ori.name      | 指令执行主体的名称             | `String`        |
+| ori.pos       | 指令执行主体的坐标             | `FloatPos`       |
+| ori.blockPos  | 指令执行主体的方块坐标          | `IntPos`         |
+| ori.entity    | 执行指令的实体（可空）          | `Entity`         |
+| ori.player    | 执行指令的玩家（可空）          | `Player`         |
+
+## CommandOrigin 对象 API
+
+`CommandOrigin` 用于控制指令输出。
+
+### CommandOrigin 对象 - 函数
+
+#### 添加成功信息
+
+`outp.success(msg)`
+
+- 参数：
+  - msg : `String`  
+    要添加的输出的信息
+- 返回值：是否成功添加
+- 返回值类型：`Boolean`
+
+#### 添加错误信息
+
+`outp.error(msg)`
+
+- 参数：
+  - msg : `String`  
+    要添加的输出的信息
+- 返回值：是否成功添加
+- 返回值类型：`Boolean`
+
+#### 添加普通信息
+
+`outp.addMessage(msg)`
+
+- 参数：
+  - msg : `String`  
+    要添加的输出的信息
+- 返回值：是否成功添加
+- 返回值类型：`Boolean`
+
+## 假指令 API
+
+### 注册一个新的玩家命令（假指令）  
 
 `mc.regPlayerCmd(cmd,description,callback[,level])`
 
@@ -83,7 +236,7 @@ mc.regPlayerCmd("fly on","Turn on the fly mode",function(pl,args){
 
 ```
 
-### 注册一个新的后台控制台命令  
+### 注册一个新的后台控制台命令（假指令）  
 
 `mc.regConsoleCmd(cmd,description,callback)`
 

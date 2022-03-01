@@ -20,3 +20,19 @@ namespace Schedule
     LIAPI ScheduleTask nextTick(std::function<void(void)> task)
     { return nextTick(task, nullptr); }
 }
+
+LIAPI std::wstring ANSI2Unicode(const std::string& str)
+{
+    std::wstring ret;
+    std::mbstate_t state = {};
+    const char* src = str.data();
+    size_t len = std::mbsrtowcs(nullptr, &src, 0, &state);
+    if (static_cast<size_t>(-1) != len) {
+        std::unique_ptr< wchar_t[] > buff(new wchar_t[len + 1]);
+        len = std::mbsrtowcs(buff.get(), &src, len, &state);
+        if (static_cast<size_t>(-1) != len) {
+            ret.assign(buff.get(), len);
+        }
+    }
+    return ret;
+}

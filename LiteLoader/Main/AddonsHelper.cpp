@@ -8,111 +8,39 @@
 #include <MC/CommandPosition.hpp>
 #include <MC/CommandRegistry.hpp>
 #include <MC/PropertiesSettings.hpp>
+#include <MC/Level.hpp>
 #include <GlobalServiceAPI.h>
 #include <Utils/WinHelper.h>
 #include <Utils/FileHelper.h>
 #include <third-party/Nlohmann/json.hpp>
+#include <Main/Config.h>
 #include <LoggerAPI.h>
+#include <I18nAPI.h>
 #include <filesystem>
 #include <set>
 #include <vector>
 using namespace std;
 using namespace RegisterCommandHelper;
 
-#define ZIP_PROGRAM_PATH "./plugins/LiteLoader/7z/7za.exe"
-#define ADDON_INSTALL_TEMP_DIR "./plugins/LiteLoader/Temp/"
-#define ADDON_INSTALL_MAX_WAIT 30000
-#define VALID_ADDON_FILE_EXTENSION std::set<string>({".mcpack", ".mcaddon", ".zip"})
-
 Logger addonLogger("AddonHelper");
 std::vector<Addon> addons;
 
-
-void AutoInstallAddons()
-{
-    std::error_code ec;
-    if (!filesystem::exists(LL::globalConfig.addonsInstallPath))
-    {
-        filesystem::create_directories(LL::globalConfig.addonsInstallPath ,ec);
-        addonLogger.warn("Directory created. You can move compressed Addon files to {} to get installed at next launch.",
-            LL::globalConfig.addonsInstallPath);
-        return;
-    }
-    std::vector<string> toInstallList;
-
-    filesystem::directory_iterator ent(LL::globalConfig.addonsInstallPath);
-    for (auto& file : ent)
-    {
-        if (!file.is_regular_file())
-            continue;
-
-        if (VALID_ADDON_FILE_EXTENSION.find(file.path().extension().u8string()) != VALID_ADDON_FILE_EXTENSION.end())
-        {
-            toInstallList.push_back(file.path().lexically_normal().u8string());
-        }
-    }
-
-    if (toInstallList.empty())
-        return;
-
-    addonLogger.warn("{} new addon(s) found to install. Working...", toInstallList.size());
-
-    int cnt = 0;
-    for (auto& path : toInstallList)
-        if (!AddonsManager::install(path))
-        {
-            //filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
-            break;
-        }
-        else
-        {
-            ++cnt;
-            addonLogger.warn("Addon {} has beed installed.", path);
-        }
-
-    if (cnt == 0)
-    {
-        addonLogger.error("No addon was installed.");
-        return;
-    }
-    else
-    {
-        addonLogger.warn("{} addon(s) was installed.", cnt);
-        return;
-    }
-}
-
 //Helper
-std::string GetCurrentLevelPath()
+std::string GetAddonJsonFile(Addon::Type type)
 {
-    try
+    string addonListFile = Level::getCurrentLevelPath();
+    switch (type)
     {
-        return "./worlds/" + Global<PropertiesSettings>->getLevelName();
+    case Addon::Type::BehaviorPack:
+        return addonListFile + "/world_behavior_packs.json";
+        break;
+    case Addon::Type::ResourcePack:
+        return addonListFile + "/world_resource_packs.json";
+        break;
+    default:
+        break;
     }
-    catch (...)
-    {
-        ifstream fin("server.properties");
-        string buf;
-        while (getline(fin, buf))
-        {
-            if (buf.find("level-name=") != string::npos)
-            {
-                if (buf.back() == '\n')  buf.pop_back();
-                if (buf.back() == '\r')  buf.pop_back();
-                return "./worlds/" + buf.substr(11);
-            }
-        }
-    }
-}
-
-void BuildAddonList()
-{
-    string levelPath = GetCurrentLevelPath();
-
-    //behavior_packs
-    string path = levelPath + "/world_behavior_packs.json";
-
-    //??? TODO
+    return "";
 }
 
 //Helper
@@ -126,7 +54,7 @@ bool InstallAddonToLevel(std::string addonDir, std::string addonName)
     // parse addon data
     try
     {
-        auto manifest = nlohmann::json::parse(*ReadAllFile(addonDir + "/manifest.json"), nullptr, false, true);
+        auto manifest = nlohmann::json::parse(*ReadAllFile(addonDir + "/manifest.json"), nullptr, true, true);
         string type = manifest["modules"][0]["type"];
         if (type == "resources")
         {
@@ -147,13 +75,13 @@ bool InstallAddonToLevel(std::string addonDir, std::string addonName)
     catch (const std::exception &e)
     {
         addonLogger.error("Fail to parse the manifest data of addon {}!", addonName);
-        addonLogger.error("Error: {}", e.what());
+        addonLogger.error("Error: {}", TextEncoding::toUTF8(e.what()));
         addonLogger.error("* Install progress aborted!");
         return false;
     }
 
     // copy files
-    string levelPath = GetCurrentLevelPath();
+    string levelPath = Level::getCurrentLevelPath();
     string toPath = levelPath + subPath + "/" + addonName;
 
     std::error_code ec;
@@ -161,12 +89,7 @@ bool InstallAddonToLevel(std::string addonDir, std::string addonName)
     filesystem::copy(addonDir, toPath, filesystem::copy_options::recursive, ec);
 
     // add addon to list file
-    string addonListFile = levelPath;
-    if (addonType == Addon::Type::ResourcePack)
-        addonListFile += "/world_resource_packs.json";
-    else if (addonType == Addon::Type::BehaviorPack)
-        addonListFile += "/world_behavior_packs.json";
-
+    string addonListFile = GetAddonJsonFile(addonType);
     if (!filesystem::exists(addonListFile))
     {
         ofstream fout(addonListFile);
@@ -190,7 +113,7 @@ bool InstallAddonToLevel(std::string addonDir, std::string addonName)
     catch (const std::exception& e)
     {
         addonLogger.error("Fail to insert the addon {} into {}!", addonName, addonListFile);
-        addonLogger.error("Error: {}", e.what());
+        addonLogger.error("Error: {}", TextEncoding::toUTF8(e.what()));
         addonLogger.error("* Install progress aborted!");
         return false;
     }
@@ -290,15 +213,13 @@ bool AddonsManager::install(std::string packPath)
     {
         addonLogger.error("Uncaught SEH Exception Detected!");
         addonLogger.error("In AddonsInstaller");
-        //addonLogger.error("Error: Code[{}] {}", e.code(), e.what());
-        cout << "Error: Code[" << e.code() << "] " << e.what() << endl;     //TODO Issue #223
+        addonLogger.error("Error: Code[{}] {}", e.code(), TextEncoding::toUTF8(e.what()));
     }
     catch (const std::exception& e)
     {
         addonLogger.error("Uncaught C++ Exception Detected!");
         addonLogger.error("In AddonsInstaller");
-        //addonLogger.error("Error: {}", e.what());
-        cout << "Error: " << e.what() << endl;     //TODO Issue #223
+        addonLogger.error("Error: Code[{}] {}", -1, TextEncoding::toUTF8(e.what()));
     }
     catch (...)
     {
@@ -310,7 +231,60 @@ bool AddonsManager::install(std::string packPath)
 
 bool AddonsManager::uninstall(std::string nameOrUuid)
 {
+    try
+    {
+        auto addon = getAddon(nameOrUuid);
+        if (!addon)
+        {
+            addonLogger.error("Addon no found!");
+            return false;
+        }
 
+        auto jsonFile = GetAddonJsonFile(addon->type);
+        if (!filesystem::exists(jsonFile))
+        {
+            addonLogger.error("Addon config no found!");
+            return false;
+        }
+
+        auto addonJsonContent = ReadAllFile(jsonFile);
+        if(!addonJsonContent || addonJsonContent->empty())
+        {
+            addonLogger.error("Addon config no found!");
+            return false;
+        }
+
+        auto addonJson = fifo_json::parse(*addonJsonContent, nullptr, true, true);
+        int id = 0;
+        for (auto item : addonJson)
+        {
+            if (item["pack_id"] == addon->uuid)
+            {
+                addonJson.erase(id);
+                bool res = WriteAllFile(jsonFile, addonJson.dump(4));
+                if(!res)
+                {
+                    addonLogger.error("Fail to remove addon <{}> from config file!", addon->name);
+                    return false;
+                }
+                std::error_code ec;
+                filesystem::remove_all(addon->directory,ec);
+                for (auto i = addons.begin(); i != addons.end(); ++i)
+                    if (i->uuid == addon->uuid)
+                    {
+                        addons.erase(i);
+                        break;
+                    }
+                addonLogger.info("Addon <{}> uninstalled.");
+                return true;
+            }
+            ++id;
+        }
+        addonLogger.error("Addon <{}> no found!", addon->name);
+    }
+    catch(...)
+    { }
+    return false;
 }
 
 std::vector<Addon*> AddonsManager::getAllAddons()
@@ -329,6 +303,30 @@ Addon* AddonsManager::getAddon(std::string nameOrUuid)
     return nullptr;
 }
 
+void ListAllAddons(CommandOutput& output)
+{
+    if (addons.empty())
+    {
+        output.success("No addon is installed.");
+        return;
+    }
+
+    output.success("Addons: " + to_string(addons.size()) + " addon(s) installed:");
+    for (auto& addon : addons)
+    {
+        string addonName = addon.name;
+        if (addonName.find("§") == string::npos)
+            addonName = "§b" + addonName;
+        string desc = addon.description;
+        if (desc.find("§") == string::npos)
+            desc = "§7" + desc;
+
+        std::string addonType = (addon.type == Addon::Type::ResourcePack ? "ResourcePack" : "BehaviorPack");
+        output.success(fmt::format("- {} §a[v{}] §8({})", addonName, addon.version.toString(), addonType));
+        output.success(fmt::format("  {}", desc));
+    }
+}
+
 class AddonsCommand : public Command {
     enum class Operation
     {
@@ -344,12 +342,15 @@ public:
         switch (operation)
         {
         case Operation::List:
+            ListAllAddons(output);
             break;
         case Operation::Install:
             if (AddonsManager::install(target))
                 output.success();
             break;
         case Operation::Uninstall:
+            if (AddonsManager::uninstall(target))
+                output.success();
             break;
         default:
             break;
@@ -357,7 +358,7 @@ public:
     }
 
     static void setup(CommandRegistry* registry) {
-        registry->registerCommand("addons", "LiteLoaderBDS - Addons Helper",
+        registry->registerCommand("addons", "LiteLoaderBDS Addons Helper",
             CommandPermissionLevel::GameMasters, { (CommandFlagValue)0 }, { (CommandFlagValue)0x80 });
 
         // addons list
@@ -381,6 +382,8 @@ public:
 
         // addons uninstall
         vector<string> addonsList;
+        for (auto& addon : addons)
+            addonsList.push_back(addon.name);
         registry->addSoftEnum("AddonName", addonsList);
 
         registry->addEnum<Operation>("Operation_Addons_Uninstall", {
@@ -394,14 +397,143 @@ public:
     }
 };
 
+void FindAddons(string jsonPath, string packsDir)
+{
+    try
+    {
+        if (!filesystem::exists(jsonPath) || !filesystem::exists(packsDir))
+            return;
+
+        auto content = ReadAllFile(jsonPath);
+        if (!content)
+        {
+            addonLogger.warn("Fail to load {}! Fail to enumerate addons.", jsonPath);
+        }
+        if (content->empty())
+            return;
+
+        auto addonList = nlohmann::json::parse(*content, nullptr, true, true);
+        if (addonList.empty())
+            return;
+
+        std::set<string> validPackIDs;
+        for (auto addon : addonList)
+        {
+            validPackIDs.insert(std::string(addon["pack_id"]));
+        }
+
+        filesystem::directory_iterator ent(packsDir);
+        for (auto& dir : ent)
+        {
+            if (!dir.is_directory())
+                continue;
+            
+            auto manifestFile = ReadAllFile((dir.path()/"manifest.json").u8string());
+            if (!manifestFile || manifestFile->empty())
+                continue;
+
+            auto manifest = nlohmann::json::parse(*manifestFile, nullptr, true, true);
+            auto header = manifest["header"];
+            auto uuid = header["uuid"];
+            if (validPackIDs.find(uuid) != validPackIDs.end())
+            {
+                Addon addon;
+                addon.name = header["name"];
+                addon.description = header["description"];
+                addon.uuid = uuid;
+                addon.directory = dir.path().u8string();
+
+                auto ver = header["version"];
+                addon.version = LL::Version(ver[0],ver[1],ver[2]);
+
+                string type = manifest["modules"][0]["type"];
+                if (type == "resources")
+                    addon.type = Addon::Type::ResourcePack;
+                else if (type == "data")
+                    addon.type = Addon::Type::BehaviorPack;
+                else
+                    continue;
+
+                addons.push_back(std::move(addon));
+            }
+        }
+    }
+    catch (...)
+    {
+        return;
+    }
+}
+
+void BuildAddonsList()
+{
+    string levelPath = Level::getCurrentLevelPath();
+
+    FindAddons(levelPath + "/world_behavior_packs.json", levelPath + "/behavior_packs");
+    FindAddons(levelPath + "/world_resource_packs.json", levelPath + "/resource_packs");
+}
+
+
+void AutoInstallAddons()
+{
+    std::error_code ec;
+    if (!filesystem::exists(LL::globalConfig.addonsInstallPath))
+    {
+        filesystem::create_directories(LL::globalConfig.addonsInstallPath, ec);
+        addonLogger.warn("Directory created. You can move compressed Addon files to {} to get installed at next launch.",
+            LL::globalConfig.addonsInstallPath);
+        return;
+    }
+    std::vector<string> toInstallList;
+
+    filesystem::directory_iterator ent(LL::globalConfig.addonsInstallPath);
+    for (auto& file : ent)
+    {
+        if (!file.is_regular_file())
+            continue;
+
+        if (VALID_ADDON_FILE_EXTENSION.find(file.path().extension().u8string()) != VALID_ADDON_FILE_EXTENSION.end())
+        {
+            toInstallList.push_back(file.path().lexically_normal().u8string());
+        }
+    }
+
+    if (toInstallList.empty())
+        return;
+
+    addonLogger.warn("{} new addon(s) found to install. Working...", toInstallList.size());
+
+    int cnt = 0;
+    for (auto& path : toInstallList)
+        if (!AddonsManager::install(path))
+        {
+            //filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
+            break;
+        }
+        else
+        {
+            ++cnt;
+            addonLogger.warn("Addon {} has beed installed.", path);
+        }
+
+    if (cnt == 0)
+    {
+        addonLogger.error("No addon was installed.");
+        return;
+    }
+    else
+    {
+        addonLogger.warn("{} addon(s) was installed.", cnt);
+        return;
+    }
+}
+
 void InitAddonsHelper()
 {
     AutoInstallAddons();
-    /*BuildAddonList();
+    BuildAddonsList();
 
     Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
         AddonsCommand::setup(ev.mCommandRegistry);
         return true;
-    });*/
-    //TODO
+    });
 }

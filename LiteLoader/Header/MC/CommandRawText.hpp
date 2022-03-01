@@ -12,7 +12,14 @@ class CommandRawText {
 
 #define AFTER_EXTRA
 // Add Member There
+    std::string text;
 
+public:
+inline operator std::string()const
+{
+    return text;
+}
+#define DISABLE_CONSTRUCTOR_PREVENTION_COMMANDRAWTEXT
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDRAWTEXT

@@ -2,6 +2,7 @@
 #include <Engine/GlobalShareData.h>
 #include <Engine/EngineOwnData.h>
 #include <Engine/LoaderHelper.h>
+#include <Engine/EngineManager.h>
 #include <Tools/IniHelper.h>
 #include <PluginManager.h>
 #include <list>
@@ -24,7 +25,6 @@ ScriptEngine *debugEngine;
 bool globalDebug = false;
 
 //前置声明
-extern std::vector<ScriptEngine*> currentModuleEngines;
 extern void BindAPIs(ScriptEngine *engine);
 
 //预加载依赖库
@@ -45,7 +45,7 @@ void LoadDepends()
             catch (std::exception e)
             {
                 logger.warn("Fail to load dependence " + i.path().filename().string() + ".");
-                logger.warn(e.what());
+                logger.warn(TextEncoding::toUTF8(e.what()));
             }
             catch (...)
             {
@@ -59,13 +59,8 @@ void LoadDepends()
 void LoadDebugEngine()
 {
     //启动引擎
-    debugEngine = NewEngine();
-    currentModuleEngines.push_back(debugEngine);
-    globalShareData->engines.push_back({ LLSE_DEBUG_ENGINE_NAME, LLSE_MODULE_TYPE, debugEngine });
+    debugEngine = EngineManager::newEngine(LLSE_DEBUG_ENGINE_NAME);
     EngineScope enter(debugEngine);
-
-    //setData
-    ENGINE_OWN_DATA()->pluginName = LLSE_DEBUG_ENGINE_NAME;
 
     //绑定API
     try {

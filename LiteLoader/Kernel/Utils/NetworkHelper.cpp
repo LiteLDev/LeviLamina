@@ -59,8 +59,7 @@ bool HttpGet(const string &url, const function<void(int, string)> &callback, int
     return true;
 }
 
-bool
-HttpPost(const string &url, const string &data, const string &type, const std::function<void(int, string)> &callback,
+bool HttpPost(const string &url, const string &data, const string &type, const std::function<void(int, string)> &callback,
          int timeout) {
     string host, path;
     SplitHttpUrl(url, host, path);

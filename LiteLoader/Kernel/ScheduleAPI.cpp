@@ -7,6 +7,7 @@
 #include <LoggerAPI.h>
 #include <LLAPI.h>
 #include <Utils/DbgHelper.h>
+#include <I18nAPI.h>
 
 using namespace std;
 
@@ -80,21 +81,44 @@ public:
                 const ScheduleTaskData& t = top();
                 if (t.leftTime >= 0)
                     break;
+                pop();
 
                 //timeout
                 try {
+                    if (!t.task)
+                        continue;
                     t.task();
+
+                    switch (t.type) {
+                    case ScheduleTaskData::TaskType::InfiniteRepeat: {
+                        ScheduleTaskData sche{ std::move(t) };
+                        sche.leftTime = sche.interval;
+                        push(std::move(sche));
+                        break;
+                    }
+                    case ScheduleTaskData::TaskType::Repeat: {
+                        if (t.count > 0) {
+                            ScheduleTaskData sche{ std::move(t) };
+                            sche.leftTime = sche.interval;
+                            --sche.count;
+                            push(std::move(sche));
+                        }
+                        break;
+                    }
+                    default:
+                        break;
+                    }
                 }
                 catch (const seh_exception& e) {
                     logger.error("SEH exception occurred in ScheduleTask!");
-                    logger.error("{}", e.what());
+                    logger.error("{}", TextEncoding::toUTF8(e.what()));
                     logger.error("TaskId: {}", t.taskId);
                     if (auto plugin = LL::getPlugin(t.handler))
                         logger.error("Plugin: {}", plugin->name);
                 }
                 catch (const std::exception& e) {
                     logger.error("Exception occurred in ScheduleTask!");
-                    logger.error("{}", e.what());
+                    logger.error("{}", TextEncoding::toUTF8(e.what()));
                     logger.error("TaskId: {}", t.taskId);
                     if (auto plugin = LL::getPlugin(t.handler))
                         logger.error("Plugin: {}", plugin->name);
@@ -105,27 +129,6 @@ public:
                     if (auto plugin = LL::getPlugin(t.handler))
                         logger.error("Plugin: {}", plugin->name);
                 }
-
-                switch (t.type) {
-                case ScheduleTaskData::TaskType::InfiniteRepeat: {
-                    ScheduleTaskData sche{ std::move(t) };
-                    sche.leftTime = sche.interval;
-                    push(std::move(sche));
-                    break;
-                }
-                case ScheduleTaskData::TaskType::Repeat: {
-                    if (t.count > 0) {
-                        ScheduleTaskData sche{ std::move(t) };
-                        sche.leftTime = sche.interval;
-                        --sche.count;
-                        push(std::move(sche));
-                    }
-                    break;
-                }
-                default:
-                    break;
-                }
-                pop();
             }
         }
         catch (...) {
@@ -142,7 +145,7 @@ ScheduleTaskQueueType taskQueue;
 namespace Schedule {
     ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay, HMODULE handler)
     {
-        if (LL::globalConfig.serverStatus >= LL::SeverStatus::Stopping)
+        if (LL::globalConfig.serverStatus >= LL::LLServerStatus::Stopping)
             return ScheduleTask((unsigned) -1);
         ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, tickDelay, -1, -1, handler);
         //locker.lock();
@@ -153,7 +156,7 @@ namespace Schedule {
 
     ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickRepeat, int maxCount, HMODULE handler)
     {
-        if (LL::globalConfig.serverStatus >= LL::SeverStatus::Stopping)
+        if (LL::globalConfig.serverStatus >= LL::LLServerStatus::Stopping)
             return ScheduleTask((unsigned) -1);
         ScheduleTaskData::TaskType type = maxCount < 0 ?
                                           ScheduleTaskData::TaskType::InfiniteRepeat
@@ -168,7 +171,7 @@ namespace Schedule {
     ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay,
         unsigned long long tickRepeat, int maxCount, HMODULE handler)
     {
-        if (LL::globalConfig.serverStatus >= LL::SeverStatus::Stopping)
+        if (LL::globalConfig.serverStatus >= LL::LLServerStatus::Stopping)
             return ScheduleTask((unsigned)-1);
         ScheduleTaskData::TaskType type = maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat
                                                        : ScheduleTaskData::TaskType::Repeat;
@@ -181,7 +184,7 @@ namespace Schedule {
 
     ScheduleTask nextTick(std::function<void(void)> task, HMODULE handler)
     {
-        if (LL::globalConfig.serverStatus >= LL::SeverStatus::Stopping)
+        if (LL::globalConfig.serverStatus >= LL::LLServerStatus::Stopping)
             return ScheduleTask((unsigned) -1);
         ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, 1, -1, -1, handler);
         //locker.lock();

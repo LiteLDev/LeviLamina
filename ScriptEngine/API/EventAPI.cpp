@@ -180,7 +180,7 @@ string EventTypeToString(EVENT_TYPES e)
     { \
         logger.error("Event Callback Failed!"); \
         logger.error("C++ Uncaught Exception Detected!"); \
-        logger.error(e.what()); \
+        logger.error(TextEncoding::toUTF8(e.what())); \
         logger.error("In Event: " + EventTypeToString(TYPE)); \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
     } \
@@ -188,7 +188,7 @@ string EventTypeToString(EVENT_TYPES e)
     { \
         logger.error("Event Callback Failed!"); \
         logger.error("SEH Uncaught Exception Detected!"); \
-        logger.error(e.what()); \
+        logger.error(TextEncoding::toUTF8(e.what())); \
         logger.error("In Event: " + EventTypeToString(TYPE)); \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
     } \
@@ -962,7 +962,7 @@ void EnableEventListener(int eventId)
         Event::LiquidSpreadEvent::subscribe([](const LiquidSpreadEvent& ev) {
             IF_LISTENED(EVENT_TYPES::onLiquidFlow)
             {
-                CallEvent(EVENT_TYPES::onLiquidFlow, BlockClass::newBlock(ev.mBlockInstance), IntPos::newPos(ev.mTarget));
+                CallEvent(EVENT_TYPES::onLiquidFlow, BlockClass::newBlock(ev.mBlockInstance), IntPos::newPos(ev.mTarget, ev.mDimensionId));
             }
             IF_LISTENED_END(EVENT_TYPES::onLiquidFlow);
         });
@@ -1246,10 +1246,13 @@ THook(void, "?tick@ServerLevel@@UEAAXXZ",
 {
     try
     {
-        for (auto engine : currentModuleEngines)
+        for (auto engine : globalShareData->globalEngineList)
         {
-            EngineScope enter(engine);
-            engine->messageQueue()->loopQueue(script::utils::MessageQueue::LoopType::kLoopOnce);
+            if (EngineManager::getEngineType(engine) == LLSE_BACKEND_TYPE)
+            {
+                EngineScope enter(engine);
+                engine->messageQueue()->loopQueue(script::utils::MessageQueue::LoopType::kLoopOnce);
+            }
         }
     }
     catch (...)
