@@ -886,7 +886,7 @@ ParameterIndex DynamicCommandInstance::newParameter(DynamicCommand::ParameterDat
             auto iter = std::find(namesInBds.begin(), namesInBds.end(), data.description);
             if (iter == namesInBds.end())
                 throw("Enum " + std::string(data.description) + "not found in command and BDS");
-#ifndef USE_PARSE_ENUM_STRING
+#ifndef USE_PARSE_ENUM_STRING_ // fix Enum
             setEnum(*iter, CommandRegistry::getEnumValues(*iter));
 #endif // USE_PARSE_ENUM_STRING
         }
