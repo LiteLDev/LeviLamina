@@ -135,6 +135,9 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l)
 
 	std::thread printThread([e,hProcess,hThread,threadId,cacheSymbol,&res,&debugLogger]()
 	{
+		// Set global SEH-Exception handler
+		_set_se_translator(seh_exception::TranslateSEHtoCE);
+
 		LoadSymbols();
 		CreateModuleMap(hProcess);
 

@@ -372,6 +372,9 @@ void InitMessageSystem()
     });
 
     std::thread([]() {
+        // Set global SEH-Exception handler
+        _set_se_translator(seh_exception::TranslateSEHtoCE);
+
         globalShareData->messageThreads[LLSE_BACKEND_TYPE] = GetCurrentThread();
         while (true)
         {

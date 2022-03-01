@@ -170,6 +170,9 @@ public:
 void LLUpgradeCommand(CommandOutput& output, bool isForce)
 {
     std::thread([isForce]() {
+        // Set global SEH-Exception handler
+        _set_se_translator(seh_exception::TranslateSEHtoCE);
+
         LL::CheckAutoUpdate(true, isForce);
     }).detach();
 }

@@ -147,43 +147,50 @@ std::string applyTextStyle(const fmt::v8::text_style& ts, const S& format_str)
 
 void Logger::endlImpl(HMODULE hPlugin, OutputStream& o)
 {
-    std::string title = o.logger->title;
-    if (!title.empty())
-        title = "[" + title + "]";
-    if (checkLogLevel(o.logger->consoleLevel, o.level))
+    try
     {
-        fmt::print(
-            o.consoleFormat, 
-            applyTextStyle(LL::globalConfig.colorLog ? fg(fmt::color::light_blue) : fmt::text_style(), 
-                fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(nullptr)))),
-            applyTextStyle(getModeColor(o.levelPrefix), o.levelPrefix), 
-            applyTextStyle(LL::globalConfig.colorLog ? o.style : fmt::text_style(), title),
-            applyTextStyle(LL::globalConfig.colorLog ? o.style : fmt::text_style(), o.os.str()));
-
-    }
-
-    if (checkLogLevel(o.logger->fileLevel, o.level))
-    {
-        if (o.logger->ofs.is_open() || PluginOwnData::hasImpl(hPlugin, LOGGER_CURRENT_FILE))
+        std::string title = o.logger->title;
+        if (!title.empty())
+            title = "[" + title + "]";
+        if (checkLogLevel(o.logger->consoleLevel, o.level))
         {
-            auto fileContent = fmt::format(o.fileFormat, fmt::localtime(_time64(nullptr)), o.levelPrefix, title,
-                                           o.os.str());
-            if (o.logger->ofs.is_open())
-                o.logger->ofs << fileContent << std::flush;
-            else
-                PluginOwnData::getImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE)
-                    << fileContent << std::flush;
-        }
-    }
-    if (checkLogLevel(o.logger->playerLevel, o.level) && o.logger->player && Player::isValid(o.logger->player))
-        o.logger->player->sendTextPacket(
-            fmt::format(o.playerFormat, fmt::localtime(_time64(nullptr)), o.levelPrefix, title,
-                        o.os.str()));
+            fmt::print(
+                o.consoleFormat,
+                applyTextStyle(LL::globalConfig.colorLog ? fg(fmt::color::light_blue) : fmt::text_style(),
+                    fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(nullptr)))),
+                applyTextStyle(getModeColor(o.levelPrefix), o.levelPrefix),
+                applyTextStyle(LL::globalConfig.colorLog ? o.style : fmt::text_style(), title),
+                applyTextStyle(LL::globalConfig.colorLog ? o.style : fmt::text_style(), o.os.str()));
 
-    o.locked = false;
-    o.os.str("");
-    o.os.clear();
-    unlockImpl(hPlugin);
+        }
+
+        if (checkLogLevel(o.logger->fileLevel, o.level))
+        {
+            if (o.logger->ofs.is_open() || PluginOwnData::hasImpl(hPlugin, LOGGER_CURRENT_FILE))
+            {
+                auto fileContent = fmt::format(o.fileFormat, fmt::localtime(_time64(nullptr)), o.levelPrefix, title,
+                    o.os.str());
+                if (o.logger->ofs.is_open())
+                    o.logger->ofs << fileContent << std::flush;
+                else
+                    PluginOwnData::getImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE)
+                    << fileContent << std::flush;
+            }
+        }
+        if (checkLogLevel(o.logger->playerLevel, o.level) && o.logger->player && Player::isValid(o.logger->player))
+            o.logger->player->sendTextPacket(
+                fmt::format(o.playerFormat, fmt::localtime(_time64(nullptr)), o.levelPrefix, title,
+                    o.os.str()));
+
+        o.locked = false;
+        o.os.str("");
+        o.os.clear();
+        unlockImpl(hPlugin);
+    }
+    catch (...)
+    {
+        unlockImpl(hPlugin);
+    }
 }
 
 Logger::Logger(const std::string& title)
