@@ -81,7 +81,6 @@ public:
                 const ScheduleTaskData& t = top();
                 if (t.leftTime >= 0)
                     break;
-                pop();
 
                 //timeout
                 try {
@@ -129,6 +128,7 @@ public:
                     if (auto plugin = LL::getPlugin(t.handler))
                         logger.error("Plugin: {}", plugin->name);
                 }
+                pop();
             }
         }
         catch (...) {
