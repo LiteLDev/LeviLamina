@@ -8,7 +8,7 @@
 
 #undef BEFORE_EXTRA
 
-class PlayerSkinPacket {
+class PlayerSkinPacket : public Packet{
 
 #define AFTER_EXTRA
 // Add Member There

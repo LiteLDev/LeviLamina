@@ -7,7 +7,7 @@
 // Include Headers or Declare Types Here
 #include "PlayerListEntry.hpp"
 
-enum PlayerListPacketType
+enum class PlayerListPacketType
 {
     Add,
     Remove

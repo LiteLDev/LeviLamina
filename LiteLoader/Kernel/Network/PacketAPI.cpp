@@ -2,8 +2,9 @@
 #include <MC/MinecraftPackets.hpp>
 
 #define INCLUDE_ALL_PACKET
-//#define SIZE_STATIC_ASSERT
 #define SIZE_STATIC_ASSERT_IF_DEFINE
+//#define SIZE_STATIC_ASSERT
+//#define GENERATE_PACKET
 
 #ifdef INCLUDE_ALL_PACKET
 
@@ -67,7 +68,7 @@
 #include <MC/SetDifficultyPacket.hpp>
 #include <MC/ChangeDimensionPacket.hpp>
 #include <MC/SetPlayerGameTypePacket.hpp>
-//#include <MC/PlayerListPacket.hpp>
+#include <MC/PlayerListPacket.hpp>
 #include <MC/SimpleEventPacket.hpp>
 #include <MC/EventPacket.hpp>
 #include <MC/SpawnExperienceOrbPacket.hpp>
@@ -898,7 +899,7 @@ static_assert(sizeof(SetCommandsEnabledPacket) == 0x38 || sizeof(SetCommandsEnab
 static_assert(sizeof(SetDifficultyPacket) == 0x38 || sizeof(SetDifficultyPacket) == 48, "size of SetDifficultyPacket should be 56 or 48(default)");
 static_assert(sizeof(ChangeDimensionPacket) == 0x48 || sizeof(ChangeDimensionPacket) == 48, "size of ChangeDimensionPacket should be 72 or 48(default)");
 static_assert(sizeof(SetPlayerGameTypePacket) == 0x38 || sizeof(SetPlayerGameTypePacket) == 48, "size of SetPlayerGameTypePacket should be 56 or 48(default)");
-//static_assert(sizeof(PlayerListPacket) == 0x50 || sizeof(PlayerListPacket) == 48, "size of PlayerListPacket should be 80 or 48(default)");
+static_assert(sizeof(PlayerListPacket) == 0x50 || sizeof(PlayerListPacket) == 48, "size of PlayerListPacket should be 80 or 48(default)");
 static_assert(sizeof(SimpleEventPacket) == 0x38 || sizeof(SimpleEventPacket) == 48, "size of SimpleEventPacket should be 56 or 48(default)");
 static_assert(sizeof(EventPacket) == 0x140 || sizeof(EventPacket) == 48, "size of EventPacket should be 320 or 48(default)");
 static_assert(sizeof(SpawnExperienceOrbPacket) == 0x40 || sizeof(SpawnExperienceOrbPacket) == 48, "size of SpawnExperienceOrbPacket should be 64 or 48(default)");
@@ -928,7 +929,7 @@ static_assert(sizeof(AddBehaviorTreePacket) == 0x50 || sizeof(AddBehaviorTreePac
 static_assert(sizeof(StructureBlockUpdatePacket) == 0xF0 || sizeof(StructureBlockUpdatePacket) == 48, "size of StructureBlockUpdatePacket should be 240 or 48(default)");
 static_assert(sizeof(ShowStoreOfferPacket) == 0x78 || sizeof(ShowStoreOfferPacket) == 48, "size of ShowStoreOfferPacket should be 120 or 48(default)");
 static_assert(sizeof(PurchaseReceiptPacket) == 0x48 || sizeof(PurchaseReceiptPacket) == 48, "size of PurchaseReceiptPacket should be 72 or 48(default)");
-//static_assert(sizeof(PlayerSkinPacket) == 0x2E8 || sizeof(PlayerSkinPacket) == 48, "size of PlayerSkinPacket should be 744 or 48(default)");
+static_assert(sizeof(PlayerSkinPacket) == 0x2E8 || sizeof(PlayerSkinPacket) == 48, "size of PlayerSkinPacket should be 744 or 48(default)");
 static_assert(sizeof(SubClientLoginPacket) == 0x38 || sizeof(SubClientLoginPacket) == 48, "size of SubClientLoginPacket should be 56 or 48(default)");
 static_assert(sizeof(AutomationClientConnectPacket) == 0x50 || sizeof(AutomationClientConnectPacket) == 48, "size of AutomationClientConnectPacket should be 80 or 48(default)");
 static_assert(sizeof(SetLastHurtByPacket) == 0x38 || sizeof(SetLastHurtByPacket) == 48, "size of SetLastHurtByPacket should be 56 or 48(default)");
@@ -953,10 +954,10 @@ static_assert(sizeof(UpdateSoftEnumPacket) == 0x70 || sizeof(UpdateSoftEnumPacke
 static_assert(sizeof(NetworkStackLatencyPacket) == 0x40 || sizeof(NetworkStackLatencyPacket) == 48, "size of NetworkStackLatencyPacket should be 64 or 48(default)");
 static_assert(sizeof(ScriptCustomEventPacket) == 0x60 || sizeof(ScriptCustomEventPacket) == 48, "size of ScriptCustomEventPacket should be 96 or 48(default)");
 static_assert(sizeof(SpawnParticleEffectPacket) == 0x70 || sizeof(SpawnParticleEffectPacket) == 48, "size of SpawnParticleEffectPacket should be 112 or 48(default)");
-//static_assert(sizeof(AvailableActorIdentifiersPacket) == 0x48 || sizeof(AvailableActorIdentifiersPacket) == 48, "size of AvailableActorIdentifiersPacket should be 72 or 48(default)");
+static_assert(sizeof(AvailableActorIdentifiersPacket) == 0x48 || sizeof(AvailableActorIdentifiersPacket) == 48, "size of AvailableActorIdentifiersPacket should be 72 or 48(default)");
 static_assert(sizeof(LevelSoundEventPacketV2) == 0x70 || sizeof(LevelSoundEventPacketV2) == 48, "size of LevelSoundEventPacketV2 should be 112 or 48(default)");
 static_assert(sizeof(NetworkChunkPublisherUpdatePacket) == 0x40 || sizeof(NetworkChunkPublisherUpdatePacket) == 48, "size of NetworkChunkPublisherUpdatePacket should be 64 or 48(default)");
-//static_assert(sizeof(BiomeDefinitionListPacket) == 0x48 || sizeof(BiomeDefinitionListPacket) == 48, "size of BiomeDefinitionListPacket should be 72 or 48(default)");
+static_assert(sizeof(BiomeDefinitionListPacket) == 0x48 || sizeof(BiomeDefinitionListPacket) == 48, "size of BiomeDefinitionListPacket should be 72 or 48(default)");
 static_assert(sizeof(LevelSoundEventPacket) == 0x70 || sizeof(LevelSoundEventPacket) == 48, "size of LevelSoundEventPacket should be 112 or 48(default)");
 static_assert(sizeof(LevelEventGenericPacket) == 0x40 || sizeof(LevelEventGenericPacket) == 48, "size of LevelEventGenericPacket should be 64 or 48(default)");
 static_assert(sizeof(LecternUpdatePacket) == 0x48 || sizeof(LecternUpdatePacket) == 48, "size of LecternUpdatePacket should be 72 or 48(default)");
@@ -997,7 +998,7 @@ static_assert(sizeof(CorrectPlayerMovePredictionPacket) == 0x58 || sizeof(Correc
 static_assert(sizeof(ItemComponentPacket) == 0x48 || sizeof(ItemComponentPacket) == 48, "size of ItemComponentPacket should be 72 or 48(default)");
 static_assert(sizeof(FilterTextPacket) == 0x58 || sizeof(FilterTextPacket) == 48, "size of FilterTextPacket should be 88 or 48(default)");
 static_assert(sizeof(ClientboundDebugRendererPacket) == 0x88 || sizeof(ClientboundDebugRendererPacket) == 48, "size of ClientboundDebugRendererPacket should be 136 or 48(default)");
-//static_assert(sizeof(SyncActorPropertyPacket) == 0x48 || sizeof(SyncActorPropertyPacket) == 48, "size of SyncActorPropertyPacket should be 72 or 48(default)");
+static_assert(sizeof(SyncActorPropertyPacket) == 0x48 || sizeof(SyncActorPropertyPacket) == 48, "size of SyncActorPropertyPacket should be 72 or 48(default)");
 static_assert(sizeof(AddVolumeEntityPacket) == 0x100 || sizeof(AddVolumeEntityPacket) == 48, "size of AddVolumeEntityPacket should be 256 or 48(default)");
 static_assert(sizeof(RemoveVolumeEntityPacket) == 0x38 || sizeof(RemoveVolumeEntityPacket) == 48, "size of RemoveVolumeEntityPacket should be 56 or 48(default)");
 static_assert(sizeof(SimulationTypePacket) == 0x38 || sizeof(SimulationTypePacket) == 48, "size of SimulationTypePacket should be 56 or 48(default)");

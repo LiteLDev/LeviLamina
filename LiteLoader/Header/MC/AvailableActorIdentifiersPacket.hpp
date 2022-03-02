@@ -8,7 +8,7 @@
 
 #undef BEFORE_EXTRA
 
-class AvailableActorIdentifiersPacket {
+class AvailableActorIdentifiersPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There

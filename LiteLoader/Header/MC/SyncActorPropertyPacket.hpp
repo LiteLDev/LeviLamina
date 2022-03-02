@@ -8,7 +8,7 @@
 
 #undef BEFORE_EXTRA
 
-class SyncActorPropertyPacket {
+class SyncActorPropertyPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There

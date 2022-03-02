@@ -8,7 +8,7 @@
 
 #undef BEFORE_EXTRA
 
-class BiomeDefinitionListPacket {
+class BiomeDefinitionListPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
