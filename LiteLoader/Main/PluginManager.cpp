@@ -77,7 +77,7 @@ bool LL::PluginManager::unRegisterPlugin(std::string name)
 //Helper
 LL::Plugin* GetPlugin_Raw(std::string name, bool includeScriptPlugin) {
     for (auto& it : plugins) {
-        if (it.second.name == name)
+        if (it.second.name == name || filesystem::path(it.second.filePath).filename().u8string() == name)
         {
             if (!includeScriptPlugin && it.second.type == LL::Plugin::PluginType::ScriptPlugin)
                 continue;
