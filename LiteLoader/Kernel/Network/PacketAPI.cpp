@@ -574,8 +574,8 @@ void __initPacketSize()
 #define SET_PACKET_SIZE(type)                            \
     if (getVftableAddr<type>() == *(void**)packet.get()) \
     {                                                    \
-        PACKET_SIZE<type> = size;                        \
-        continue;                                           \
+        PACKET_SIZE<type> = size - 16;                   \
+        continue;                                        \
     }
     int packetId = -1;
     while (packetId < 200)
@@ -739,12 +739,12 @@ void __autoFill(std::string const& className)
     {
         if (content.substr(startOffset, endOffset - startOffset) != "\n")
         {
-            __debugbreak();
             startOffset = content.find("\n\n", startOffset)+1;
+            __debugbreak();
         }
         content.insert(startOffset, filler);
     }
-    logger.warn("add or change filler in file {}, size: {} ", filePath.filename(), getPacketSize<T>() - 48);
+    logger.warn("add or change filler in file {}, size: {} ", filePath.filename().string(), getPacketSize<T>() - 48);
     WriteAllFile(filePath.string(), content);
     return;
 }
