@@ -15,6 +15,7 @@ class SubChunkPacket : public Packet {
 // Add Member There
 public:
     struct SubChunkPacketData;
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKPACKET

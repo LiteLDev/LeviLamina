@@ -1,10 +1,13 @@
 ﻿#include <MC/Packet.hpp>
 #include <MC/MinecraftPackets.hpp>
+#include <LoggerAPI.h>
 
 #define INCLUDE_ALL_PACKET
 #define SIZE_STATIC_ASSERT_IF_DEFINE
 //#define SIZE_STATIC_ASSERT
 //#define GENERATE_PACKET
+
+extern Logger logger;
 
 #ifdef INCLUDE_ALL_PACKET
 
@@ -539,16 +542,54 @@ class PlayerAuthInputPacket;
 template <typename T>
 inline void* VFTABLE_ADDR;
 template <typename T>
-inline void* getVftableAddr()
+inline size_t PACKET_SIZE;
+
+inline void __initPacketVftable()
 {
+    static bool inited = false;
+    if (inited)
+        return;
+    inited = true;
 #define INIT_ADDR(type) \
     VFTABLE_ADDR<type> = dlsym_real("??_7" #type "@@6B@");
-    static bool inited = ([]() {
-        ForEachPacket(INIT_ADDR);
-        return true;
-    })();
-    return VFTABLE_ADDR<T>;
+
+    ForEachPacket(INIT_ADDR);
+
 #undef INIT_ADDR
+}
+
+template <typename T>
+inline void* getVftableAddr()
+{
+    __initPacketVftable();
+    return VFTABLE_ADDR<T>;
+}
+
+void __initPacketSize()
+{
+    static bool inited = false;
+    if (inited)
+        return;
+    inited = true;
+#define SET_PACKET_SIZE(type)                            \
+    if (getVftableAddr<type>() == *(void**)packet.get()) \
+    {                                                    \
+        PACKET_SIZE<type> = size;                        \
+        continue;                                           \
+    }
+    int packetId = -1;
+    while (packetId < 200)
+    {
+        auto packet = MinecraftPackets::createPacket(++packetId);
+        if (packet)
+        {
+            auto size = _msize((void**)packet.get() - 2);
+
+            ForEachPacket(SET_PACKET_SIZE);
+            __debugbreak();
+        }
+    }
+#undef SET_PACKET_SIZE
 }
 
 std::string getClassName(Packet* packet)
@@ -557,7 +598,8 @@ std::string getClassName(Packet* packet)
     if (getVftableAddr<class type>() == *(void**)packet) \
         return #type;
     ForEachPacket(RETURN_IF_FIND);
-    return "";
+    __debugbreak();
+    return fmt::format("Unknown({})", packet->getId());
 #undef RETURN_IF_FIND
 }
 
@@ -579,10 +621,18 @@ inline void forEachPacket(std::function<void(Packet const& packet, std::string c
     }
 }
 
+template <typename T>
+inline size_t getPacketSize()
+{
+    __initPacketSize();
+    return PACKET_SIZE<T>;
+}
+
 #pragma region Packet Command
 
 #include <DynamicCommandAPI.h>
 #include <MC/Minecraft.hpp>
+#include <filesystem>
 #include <Utils/FileHelper.h>
 using Param = DynamicCommand::ParameterData;
 using ParamType = DynamicCommand::ParameterType;
@@ -606,16 +656,17 @@ inline bool replaceString(std::string& content, std::string const& start, std::s
     return true;
 
 }
-void onExecute(DynamicCommand const& cmd, CommandOrigin const& origin, CommandOutput& output,
-               std::unordered_map<std::string, Result>& results)
+
+void autoGenerate()
 {
     auto file = ReadAllFile(__FILE__, false);
     if (!file)
         __debugbreak();
     auto& content = file.value();
-    
+
     std::ostringstream oss;
 
+    // add static assert
     oss << std::endl;
     forEachPacket([&](Packet const& packet, std::string className, size_t size) {
         oss << fmt::format("static_assert(sizeof({}) == 0x{:X}, \"size of {} should be {}\");\n", className, size, className, size);
@@ -634,6 +685,7 @@ void onExecute(DynamicCommand const& cmd, CommandOrigin const& origin, CommandOu
     oss.clear();
     oss.str("");
 
+    // add include
     oss << std::endl;
     forEachPacket([&](Packet const& packet, std::string className, size_t size) {
         oss << fmt::format("#include <MC/{}.hpp>\n", className);
@@ -642,14 +694,83 @@ void onExecute(DynamicCommand const& cmd, CommandOrigin const& origin, CommandOu
     replaceString(content, "#ifdef INCLUDE_ALL_PACKET\n", "#endif", oss.str());
     oss.clear();
     oss.str("");
+
     WriteAllFile(__FILE__, content, false);
-    output.success("Pkt Command execute Success");
+}
+template <typename T>
+void __autoFill(std::string const& className)
+{
+    if (sizeof(T) == getPacketSize<T>())
+        return;
+
+    std::filesystem::path McDir = std::filesystem::path(__FILE__).parent_path().parent_path().parent_path().append("Header").append("MC");
+
+    std::filesystem::path filePath = McDir.append(fmt::format("{}.hpp", className));
+    auto file = ReadAllFile(filePath.string());
+    if (!file)
+    {
+        __debugbreak();
+        return;
+    }
+    auto& content = file.value();
+    size_t fillerSize = getPacketSize<T>() - sizeof(T);
+    std::string filler = fmt::format("    char filler[{}];\n", getPacketSize<T>() - 48);
+
+    auto startOffset = content.find("// Add Member There");
+    if (startOffset == content.npos)
+    {
+        startOffset = content.find("#define AFTER_EXTRA");
+        if (startOffset == content.npos)
+        {
+            __debugbreak();
+            return;
+        }
+        filler = "// Add Member There\n" + filler;
+    }
+
+    startOffset += std::string("// Add Member There").size()+1;
+    auto endOffset = content.find("#undef", startOffset);
+
+    if (sizeof(T) != 48)
+    {
+        replaceString(content, "filler[", "]", std::to_string(getPacketSize<T>()-48));
+    }
+    else
+    {
+        if (content.substr(startOffset, endOffset - startOffset) != "\n")
+        {
+            __debugbreak();
+            startOffset = content.find("\n\n", startOffset)+1;
+        }
+        content.insert(startOffset, filler);
+    }
+    logger.warn("add or change filler in file {}, size: {} ", filePath.filename(), getPacketSize<T>() - 48);
+    WriteAllFile(filePath.string(), content);
+    return;
+}
+void autoFill()
+{
+#define AUTO_FILL(type)\
+    __autoFill<type>(#type);
+    ForEachPacket(AUTO_FILL);
+#undef AUTO_FILL;
+}
+
+void onExecute(DynamicCommand const& cmd, CommandOrigin const& origin, CommandOutput& output,
+               std::unordered_map<std::string, Result>& results)
+{
+    autoGenerate();
+    autoFill();
+    output.success("Generate finished");
 }
 
 TClasslessInstanceHook2("SetupPacketCommand_startServerThread", void, "?startServerThread@ServerInstance@@QEAAXXZ")
 {
     original(this);
     Global<Level> = Global<Minecraft>->getLevel();
+    autoGenerate();
+    autoFill();
+
     auto command = DynamicCommand::createCommand("pkt", "packet");
     command->addOverload();
     command->setCallback(onExecute);
