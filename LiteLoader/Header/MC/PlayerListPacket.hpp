@@ -39,6 +39,7 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
     /*
     inline enum StreamReadResult _read(class ReadOnlyBinaryStream& a0){
         enum StreamReadResult (PlayerListPacket::*rv)(class ReadOnlyBinaryStream&);
