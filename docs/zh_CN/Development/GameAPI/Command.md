@@ -223,6 +223,32 @@ log(result.output);
 - 返回值：是否成功添加
 - 返回值类型：`Boolean`
 
+```jacascript
+[Js]
+mc.listen("onServerStarted", _ => {
+    let cmd = mc.newCommand("manager", "Command Description", PermType.GameMasters);
+    cmd.setAlias("mgr");
+    cmd.setEnum("ChangeAction", ["add", "remove"]);
+    cmd.setEnum("ListAction", ["list"]);
+    cmd.mandatory("action", ParamType.Enum, "ChangeAction", 1);
+    cmd.mandatory("action", ParamType.Enum, "ListAction", 1);
+    cmd.mandatory("name", ParamType.RawText);
+    cmd.overload(["ChangeAction", "name"]);
+    cmd.overload(["ListAction"]);
+    cmd.setCallback((_cmd, _ori, out, res) => {
+        switch (res.action) {
+            case "add":
+                return out.success(`add "${res.name}"`);
+            case "remove":
+                return out.success(`remove "${res.name}"`);
+            case "list":
+                return out.success(`Name List:`);
+        }
+    });
+    cmd.setup();
+});
+```
+
 ## 假指令 API
 
 ### 注册一个新的玩家命令（假指令）  
@@ -258,6 +284,7 @@ mc.regPlayerCmd("fly on","Turn on the fly mode",function(pl,args){
 });
 
 ```
+
 
 ### 注册一个新的后台控制台命令（假指令）  
 
