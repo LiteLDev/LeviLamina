@@ -1,6 +1,5 @@
 #pragma once
 
-
 enum class CommandFlagValue : unsigned short
 {
     None = 0,

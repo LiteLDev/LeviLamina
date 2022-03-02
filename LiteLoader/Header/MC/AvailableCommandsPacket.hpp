@@ -6,7 +6,8 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-#include "CommandRegistry.hpp"
+#include "CommandFlag.hpp"
+enum CommandPermissionLevel : char;
 
 #undef BEFORE_EXTRA
 
@@ -29,7 +30,7 @@ public:
     struct ParamData
     {
         std::string desc;
-        CommandRegistry::Symbol sym;
+        unsigned int sym;
     };
     struct OverloadData
     {

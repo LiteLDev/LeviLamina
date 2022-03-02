@@ -21,6 +21,17 @@ void CommandRegistry::registerOverload(std::string const& name, Overload::Factor
 }*/
 
 extern Logger logger;
+
+CommandRegistry::Overload::Overload(CommandVersion version,
+                                    FactoryFn factory,
+                                    std::vector<CommandParameterData>&& args)
+    : version(version)
+    , factory(factory)
+    , params(std::forward<std::vector<CommandParameterData>>(args))
+    , unk(255){};
+
+CommandRegistry::Overload::~Overload(){};
+
 std::vector<std::string> CommandRegistry::getEnumNames()
 {
     if (!Global<CommandRegistry>)

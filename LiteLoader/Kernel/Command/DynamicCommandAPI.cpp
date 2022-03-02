@@ -62,11 +62,11 @@ namespace
 //static std::string latestAllocateName = "";
 std::unordered_map<std::string, std::unique_ptr<DynamicCommandInstance>> dynamicCommandInstances;
 
-typedef DynamicCommand::Result Result;
-typedef DynamicCommand::ParameterType ParameterType;
-typedef DynamicCommand::ParameterPtr ParameterPtr;
-typedef DynamicCommand::ParameterData ParameterData;
-typedef DynamicCommandInstance::ParameterIndex ParameterIndex;
+using Result = DynamicCommand::Result;
+using ParameterType = DynamicCommand::ParameterType;
+using ParameterPtr = DynamicCommand::ParameterPtr;
+using ParameterData = DynamicCommand::ParameterData;
+using ParameterIndex = DynamicCommandInstance::ParameterIndex;
 
 namespace ParameterDataType
 {

@@ -1,4 +1,4 @@
-#include <MC/Packet.hpp>
+﻿#include <MC/Packet.hpp>
 #include <MC/MinecraftPackets.hpp>
 
 #define INCLUDE_ALL_PACKET

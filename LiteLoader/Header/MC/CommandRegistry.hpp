@@ -167,17 +167,15 @@ public:
         double  a = 0;                             // 48
         double  b = 0;                             // 56
         double  c = 0;                             // 64
-        inline Overload(CommandVersion version,
-            FactoryFn factory,
-            std::vector<CommandParameterData>&& args)
-            : version(version),
-            factory(factory),
-            params(std::forward<std::vector<CommandParameterData>>(args)),
-            unk(255) {}
+        LIAPI Overload(CommandVersion version,
+                        FactoryFn factory,
+                        std::vector<CommandParameterData>&& args);
 
-        inline std::string toDebugString() const
+        LIAPI ~Overload();
+
+        inline std::string toDebugString()
         {
-            return fmt::format("<Overload {}>", params.size());
+            return fmt::format("<Overload>");
         }
     };
 
