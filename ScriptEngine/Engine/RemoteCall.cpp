@@ -24,8 +24,8 @@ void inline StringTrim(string& str)
 
 void RemoteSyncCallRequest(ModuleMessage& msg)
 {
-    logger.debug("*** Remote call request received.");
-    logger.debug("*** Current Module:{}", LLSE_MODULE_TYPE);
+    //logger.debug("*** Remote call request received.");
+    //logger.debug("*** Current Module:{}", LLSE_MODULE_TYPE);
 
     istringstream sin(msg.getData());
 
@@ -49,17 +49,17 @@ void RemoteSyncCallRequest(ModuleMessage& msg)
             argsVector.push_back(JsonToValue(arg));
         }
 
-        logger.debug("*** Before remote call execute");
+        //logger.debug("*** Before remote call execute");
         Local<Value> result = funcData->func.get().call({}, argsVector);
-        logger.debug("*** After remote call execute");
+        //logger.debug("*** After remote call execute");
         
         //Feedback
-        logger.debug("*** Before remote call result return");
+        //logger.debug("*** Before remote call result return");
         if (!msg.sendResult(ModuleMessage::MessageType::RemoteSyncCallReturn, ValueToJson(result)))
         {
             logger.error("Fail to post remote call result return!");
         }
-        logger.debug("*** After remote call result return");
+        //logger.debug("*** After remote call result return");
     }
     catch (const Exception& e)
     {
@@ -77,6 +77,16 @@ void RemoteSyncCallRequest(ModuleMessage& msg)
             logger.error("Fail to post remote call result return!");
         }
     }
+    catch (const std::out_of_range& e)
+    {
+        logger.error(string("Fail to import! Function [") + funcName + "] has not been exported!");
+
+        //Feedback
+        if (!msg.sendResult(ModuleMessage::MessageType::RemoteSyncCallReturn, "[null]"))
+        {
+            logger.error("Fail to post remote call result return!");;
+        }
+    }
     catch (...)
     {
         logger.error("Error occurred in remote engine!");
@@ -91,8 +101,8 @@ void RemoteSyncCallRequest(ModuleMessage& msg)
 
 void RemoteSyncCallReturn(ModuleMessage& msg)
 {
-    logger.debug("*** Remote call result message received.");
-    logger.debug("*** Result: {}", msg.getData());
+    //logger.debug("*** Remote call result message received.");
+    //logger.debug("*** Result: {}", msg.getData());
     remoteResultMap[msg.getId()] = msg.getData();
     OperationCount(to_string(msg.getId())).done();
 }
@@ -103,7 +113,7 @@ void RemoteSyncCallReturn(ModuleMessage& msg)
 Local<Value> MakeRemoteCall(const string& funcName, const Arguments& args)
 {
     //Remote Call
-    logger.debug("*** Remote Call begin");
+    //logger.debug("*** Remote Call begin");
 
     ExportedFuncData* data;
     try {
@@ -120,23 +130,23 @@ Local<Value> MakeRemoteCall(const string& funcName, const Arguments& args)
     for (int i = 0; i < args.size(); ++i)
         sout << "\n" << ValueToJson(args[i]);
 
-    logger.debug("*** Before remote call request send");
+    //logger.debug("*** Before remote call request send");
     auto sendResult = ModuleMessage::sendTo(data->engine, ModuleMessage::MessageType::RemoteSyncCallRequest, sout.str());
     if (!sendResult)
     {
         logger.error("Fail to send remote load request!");
         return Local<Value>();
     }
-    logger.debug("*** After remote call request send");
+    //logger.debug("*** After remote call request send");
 
-    logger.debug("*** Before wait for remote call result");
+    //logger.debug("*** Before wait for remote call result");
     auto returnResult = sendResult.waitForOneResult(LLSE_MAXWAIT_REMOTE_CALL);
     if (!returnResult)
     {
         logger.error(tr("remoteCall.timeout.fail"));
         return Local<Value>();
     }
-    logger.debug("*** After wait for remote call result");
+    //logger.debug("*** After wait for remote call result");
 
     int msgId = sendResult.getMsgId();
     Local<Value> res = JsonToValue(remoteResultMap[msgId]);

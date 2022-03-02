@@ -67,12 +67,14 @@ int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
         try {
             if (LL::isServerStopping())
                 return;
-            if (timeTaskMap.find(id) == timeTaskMap.end())
-                return;
             if (!EngineManager::isValid(engine))
                 return;
 
-            auto& taskData = timeTaskMap.at(id);
+            auto t = timeTaskMap.find(id);
+            if(t == timeTaskMap.end())
+                return;
+
+            auto& taskData = t->second;
             if (taskData.func.isEmpty())
                 return;
 
@@ -106,12 +108,14 @@ int NewTimeout(Local<String> func, int timeout)
         try {
             if (LL::isServerStopping())
                 return;
-            if (timeTaskMap.find(id) == timeTaskMap.end())
-                return;
             if (!EngineManager::isValid(engine))
                 return;
 
-            auto& taskData = timeTaskMap.at(id);
+            auto t = timeTaskMap.find(id);
+            if (t == timeTaskMap.end())
+                return;
+
+            auto& taskData = t->second;
             if (taskData.code.isEmpty())
                 return;
 
@@ -139,8 +143,6 @@ int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
         try {
             if (LL::isServerStopping())
                 return;
-            if (timeTaskMap.find(id) == timeTaskMap.end())
-                return;
             if (!EngineManager::isValid(engine))
             {
                 timeTaskMap[id].task.cancel();
@@ -148,7 +150,11 @@ int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
                 return;
             }
 
-            auto& taskData = timeTaskMap.at(id);
+            auto t = timeTaskMap.find(id);
+            if (t == timeTaskMap.end())
+                return;
+
+            auto& taskData = t->second;
             if (taskData.func.isEmpty())
                 return;
 
@@ -181,8 +187,6 @@ int NewInterval(Local<String> func, int timeout)
         try {
             if (LL::isServerStopping())
                 return;
-            if (timeTaskMap.find(id) == timeTaskMap.end())
-                return;
             if (!EngineManager::isValid(engine))
             {
                 timeTaskMap[id].task.cancel();
@@ -190,7 +194,11 @@ int NewInterval(Local<String> func, int timeout)
                 return;
             }
 
-            auto& taskData = timeTaskMap.at(id);
+            auto t = timeTaskMap.find(id);
+            if (t == timeTaskMap.end())
+                return;
+
+            auto& taskData = t->second;
             if (taskData.code.isEmpty())
                 return;
 

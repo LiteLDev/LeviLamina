@@ -359,7 +359,7 @@ void MessageSystemLoopOnce()
         }
     }
     //messageLoopLock.unlock();
-    logger.debug("Engine-{} Message Loop.", LLSE_MODULE_TYPE);
+    //logger.debug("Engine-{} Message Loop.", LLSE_MODULE_TYPE);
 }
 
 void InitMessageSystem()

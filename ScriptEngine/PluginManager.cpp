@@ -61,7 +61,7 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
         }
 
         //Remote Load
-        logger.debug("Remote Load begin");
+        //logger.debug("Remote Load begin");
 
         ostringstream sout;
         sout << isHotLoad << "\n" << filePath;
