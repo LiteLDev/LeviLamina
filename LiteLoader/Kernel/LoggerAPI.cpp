@@ -7,27 +7,13 @@
 #include <LoggerAPI.h>
 #include "Main/Config.h"
 #include <MC/Player.hpp>
+#include <unordered_map>
+#include <regex>
 
 #define LOGGER_CURRENT_TITLE "ll_plugin_logger_title"
 #define LOGGER_CURRENT_FILE "ll_plugin_logger_file"
-#define LOGGER_CURRENT_LOCK "ll_plugin_logger_lock"
 
-void Logger::initLockImpl(HMODULE hPlugin)
-{
-    //if (!PluginOwnData::hasImpl(hPlugin, LOGGER_CURRENT_LOCK))
-    //    PluginOwnData::setImpl<CsLock>(hPlugin, LOGGER_CURRENT_LOCK);             //May cause DeadLock?
-}
-
-void Logger::lockImpl(HMODULE hPlugin)
-{
-    //initLockImpl(hPlugin);
-    //PluginOwnData::getImpl<CsLock>(hPlugin, LOGGER_CURRENT_LOCK).lock();          //May cause DeadLock?
-}
-
-void Logger::unlockImpl(HMODULE hPlugin)
-{
-    //PluginOwnData::getImpl<CsLock>(hPlugin, LOGGER_CURRENT_LOCK).unlock();        //May cause DeadLock?
-}
+std::unordered_map<std::string, CsLock> lockerList;
 
 bool Logger::setDefaultFileImpl(HMODULE hPlugin, const std::string& logFile, bool appendMode = true)
 {
@@ -77,6 +63,26 @@ bool Logger::setFile(nullptr_t)
     if (ofs.is_open())
         ofs.close();
     return true;
+}
+
+bool Logger::tryLock()
+{
+    return lockerList[title].tryLock();
+}
+
+bool Logger::lock()
+{
+    return lockerList[title].lock();
+}
+
+bool Logger::unlock()
+{
+    return lockerList[title].unlock();
+}
+
+CsLock& Logger::getLocker()
+{
+    return lockerList[title];
 }
 
 Logger::OutputStream::OutputStream() = default;
@@ -147,43 +153,72 @@ std::string applyTextStyle(const fmt::v8::text_style& ts, const S& format_str)
 
 void Logger::endlImpl(HMODULE hPlugin, OutputStream& o)
 {
-    std::string title = o.logger->title;
-    if (!title.empty())
-        title = "[" + title + "]";
-    if (checkLogLevel(o.logger->consoleLevel, o.level))
+    try
     {
-        fmt::print(
-            o.consoleFormat, 
-            applyTextStyle(LL::globalConfig.colorLog ? fg(fmt::color::light_blue) : fmt::text_style(), 
-                fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(nullptr)))),
-            applyTextStyle(getModeColor(o.levelPrefix), o.levelPrefix), 
-            applyTextStyle(LL::globalConfig.colorLog ? o.style : fmt::text_style(), title),
-            applyTextStyle(LL::globalConfig.colorLog ? o.style : fmt::text_style(), o.os.str()));
+        CsLockHolder lock(o.logger->getLocker());
 
-    }
+        std::string title = o.logger->title;
+        if (!title.empty())
+            title = "[" + title + "]";
 
-    if (checkLogLevel(o.logger->fileLevel, o.level))
-    {
-        if (o.logger->ofs.is_open() || PluginOwnData::hasImpl(hPlugin, LOGGER_CURRENT_FILE))
+        auto& text = o.os.str();
+        bool filterBanned = false;
+        //Output Filter
+        if (LL::globalConfig.enableOutputFilter)
+            for (auto& regexStr : LL::globalConfig.outputFilterRegex)
+            {
+                try
+                {
+                    std::regex re(regexStr);
+                    if (std::regex_search(text, re) || std::regex_search(title, re))
+                    {
+                        filterBanned = true;
+                        break;
+                    }
+                }
+                catch (...)
+                { }
+            }
+
+        if (checkLogLevel(o.logger->consoleLevel, o.level) && !filterBanned)
         {
-            auto fileContent = fmt::format(o.fileFormat, fmt::localtime(_time64(nullptr)), o.levelPrefix, title,
-                                           o.os.str());
-            if (o.logger->ofs.is_open())
-                o.logger->ofs << fileContent << std::flush;
-            else
-                PluginOwnData::getImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE)
-                    << fileContent << std::flush;
-        }
-    }
-    if (checkLogLevel(o.logger->playerLevel, o.level) && o.logger->player && Player::isValid(o.logger->player))
-        o.logger->player->sendTextPacket(
-            fmt::format(o.playerFormat, fmt::localtime(_time64(nullptr)), o.levelPrefix, title,
-                        o.os.str()));
+            fmt::print(
+                o.consoleFormat,
+                applyTextStyle(LL::globalConfig.colorLog ? fg(fmt::color::light_blue) : fmt::text_style(),
+                    fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(nullptr)))),
+                applyTextStyle(getModeColor(o.levelPrefix), o.levelPrefix),
+                applyTextStyle(LL::globalConfig.colorLog ? o.style : fmt::text_style(), title),
+                applyTextStyle(LL::globalConfig.colorLog ? o.style : fmt::text_style(), text));
 
-    o.locked = false;
-    o.os.str("");
-    o.os.clear();
-    unlockImpl(hPlugin);
+        }
+
+        if (checkLogLevel(o.logger->fileLevel, o.level) && (LL::globalConfig.onlyFilterConsoleOutput || !filterBanned))
+        {
+            if (o.logger->ofs.is_open() || PluginOwnData::hasImpl(hPlugin, LOGGER_CURRENT_FILE))
+            {
+                auto fileContent = fmt::format(o.fileFormat, fmt::localtime(_time64(nullptr)), o.levelPrefix, title, text);
+                if (o.logger->ofs.is_open())
+                    o.logger->ofs << fileContent << std::flush;
+                else
+                    PluginOwnData::getImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE)
+                    << fileContent << std::flush;
+            }
+        }
+
+        if (checkLogLevel(o.logger->playerLevel, o.level) && o.logger->player && Player::isValid(o.logger->player)
+            && (LL::globalConfig.onlyFilterConsoleOutput || !filterBanned))
+        {
+            o.logger->player->sendTextPacket(
+                fmt::format(o.playerFormat, fmt::localtime(_time64(nullptr)), o.levelPrefix, title, text));
+        }
+
+        o.os.str("");
+        o.os.clear();
+    }
+    catch (...)
+    {
+        ;
+    }
 }
 
 Logger::Logger(const std::string& title)
@@ -225,3 +260,8 @@ Logger::Logger(const std::string& title)
                          fmt::fg(fmt::color::red) | fmt::emphasis::bold,
                          "FATAL"};
 }
+
+//For compatibility
+void Logger::initLockImpl(HMODULE hPlugin) { ; }
+void Logger::lockImpl(HMODULE hPlugin) { ; }
+void Logger::unlockImpl(HMODULE hPlugin) { ; }

@@ -12,6 +12,15 @@ CsLock::~CsLock() {
         DeleteCriticalSection(&cslock);
 }
 
+bool CsLock::tryLock()
+{
+    if (!inited) {
+        inited = true;
+        InitializeCriticalSection(&cslock);
+    }
+    return TryEnterCriticalSection(&cslock);
+}
+
 bool CsLock::lock() {
     if (!inited) {
         inited = true;

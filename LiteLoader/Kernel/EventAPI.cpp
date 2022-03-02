@@ -286,6 +286,7 @@ DECLARE_EVENT_DATA(ServerStartedEvent);
 DECLARE_EVENT_DATA(ServerStoppedEvent);
 DECLARE_EVENT_DATA(RegCmdEvent);
 DECLARE_EVENT_DATA(PlayerBedEnterEvent);
+DECLARE_EVENT_DATA(ScriptPluginManagerEvent);
 
 
 #ifdef ENABLE_SEH_PROTECTION

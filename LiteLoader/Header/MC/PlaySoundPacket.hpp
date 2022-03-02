@@ -13,7 +13,7 @@ class PlaySoundPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
-    char filler[104];
+    char filler[56];
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYSOUNDPACKET

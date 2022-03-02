@@ -359,7 +359,7 @@ void MessageSystemLoopOnce()
         }
     }
     //messageLoopLock.unlock();
-    logger.debug("Engine-{} Message Loop.", LLSE_MODULE_TYPE);
+    //logger.debug("Engine-{} Message Loop.", LLSE_MODULE_TYPE);
 }
 
 void InitMessageSystem()
@@ -372,10 +372,15 @@ void InitMessageSystem()
     });
 
     std::thread([]() {
+        // Set global SEH-Exception handler
+        _set_se_translator(seh_exception::TranslateSEHtoCE);
+
         globalShareData->messageThreads[LLSE_BACKEND_TYPE] = GetCurrentThread();
         while (true)
         {
             MessageSystemLoopOnce();
+            if (LL::getServerStatus() >= LL::ServerStatus::Stopping)
+                return;
             SleepEx(5, true);
             if (LL::getServerStatus() >= LL::ServerStatus::Stopping)
                 return;

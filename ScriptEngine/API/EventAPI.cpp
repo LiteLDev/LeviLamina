@@ -13,6 +13,7 @@
 #include <Engine/EngineOwnData.h>
 #include <Engine/GlobalShareData.h>
 #include <Engine/LocalShareData.h>
+#include <BuiltinCommands.h>
 #include "APIHelp.h"
 #include "BaseAPI.h"
 #include "BlockAPI.h"
@@ -1165,7 +1166,7 @@ void InitBasicEventListeners()
             // PreProcess
             if (!ProcessDebugEngine(cmd))
                 return false;
-            if (!ProcessHotManageCmd(ev.mCommand))
+            if (!ProcessOldHotManageCommand(ev.mCommand))
                 return false;
 
             //CallEvents
@@ -1204,6 +1205,35 @@ void InitBasicEventListeners()
             logger.error("Event Callback Failed!");
             logger.error("Uncaught Exception Detected!");
             logger.error("In Event: onConsoleCmd");
+        }
+        return true;
+    });
+
+// Plugin Hot Management
+    Event::ScriptPluginManagerEvent::subscribe_ref([](ScriptPluginManagerEvent& ev)
+    {
+        if (ev.pluginExtention != LLSE_PLUGINS_EXTENSION)
+            return true;
+
+        switch (ev.operation)
+        {
+        case ScriptPluginManagerEvent::Operation::Load:
+            if (PluginManager::loadPlugin(ev.target, true, true))
+                ev.success = true;
+            break;
+
+        case ScriptPluginManagerEvent::Operation::Unload:
+            if (PluginManager::unloadPlugin(ev.target))
+                ev.success = true;
+            break;
+
+        case ScriptPluginManagerEvent::Operation::Reload:
+            if (PluginManager::reloadPlugin(ev.target))
+                ev.success = true;
+            break;
+
+        default:
+            break;
         }
         return true;
     });

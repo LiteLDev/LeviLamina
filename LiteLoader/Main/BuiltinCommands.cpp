@@ -170,6 +170,9 @@ public:
 void LLUpgradeCommand(CommandOutput& output, bool isForce)
 {
     std::thread([isForce]() {
+        // Set global SEH-Exception handler
+        _set_se_translator(seh_exception::TranslateSEHtoCE);
+
         LL::CheckAutoUpdate(true, isForce);
     }).detach();
 }
@@ -248,57 +251,38 @@ void LLHelpCommand(CommandOutput& output)
         "Welcome to our github project to get more information ~");
 }
 
-//Helper
-string RemoveInvalidPartOfPluginName(const string& name)
-{
-    auto pos = name.find(LLSE_COMMAND_FINISHED_SYMBOL);
-    if (pos != string::npos)
-    {
-        return name.substr(0, pos);
-    }
-    return name;
-}
-
 void LLLoadPluginCommand(CommandOutput& output, const string& path)
 {
-    if (path.find(LLSE_COMMAND_FINISHED_SYMBOL) != string::npos) //ScriptPlugin & Finished
-        output.success();
-
     if (PluginManager::loadPlugin(path, true))
-        output.success("Plugin " + RemoveInvalidPartOfPluginName(path) + " loaded successfully.");
+        output.success("Plugin <" + path + "> loaded successfully.");
     else
         output.error("Fail to load plugin " + path);
 }
 
 void LLUnloadPluginCommand(CommandOutput& output, const string& pluginName)
 {
-    if (pluginName.find(LLSE_COMMAND_FINISHED_SYMBOL) != string::npos) //ScriptPlugin & Finished
-        output.success();
-
     if (PluginManager::unloadPlugin(pluginName, true))
-        output.success("Plugin " + RemoveInvalidPartOfPluginName(pluginName) + " unloaded successfully.");
+        output.success("Plugin <" + pluginName + "> unloaded successfully.");
     else
-        output.error("Fail to unload plugin " + RemoveInvalidPartOfPluginName(pluginName));
+        output.error("Fail to unload plugin " + pluginName);
 }
 
 void LLReloadPluginCommand(CommandOutput& output, const string& pluginName, bool reloadAll)
 {
     if (!reloadAll)
     {
-        if (pluginName.find(LLSE_COMMAND_FINISHED_SYMBOL) != string::npos) //ScriptPlugin & Finished
-            output.success();
-
         if (PluginManager::reloadPlugin(pluginName, true))
-            output.success("Plugin " + RemoveInvalidPartOfPluginName(pluginName) + " reloaded successfully.");
+            output.success("Plugin <" + pluginName + "> reloaded successfully.");
         else
-            output.error("Fail to reload plugin " + RemoveInvalidPartOfPluginName(pluginName));
+            output.error("Fail to reload plugin <" + pluginName + ">");
     }
     else
     {
-        if (PluginManager::reloadAllPlugins(true))
-            output.success("Plugins reloaded successfully.");
+        int cnt = PluginManager::reloadAllPlugins(true);
+        if (cnt > 0)
+            output.success(std::to_string(cnt) + " plugins reloaded successfully.");
         else
-            output.error("Fail to reload all plugins");
+            output.error("Fail to reload any plugin!");
     }
 }
 

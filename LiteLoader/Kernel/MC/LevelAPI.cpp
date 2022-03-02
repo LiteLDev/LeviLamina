@@ -404,22 +404,17 @@ void Level::sendPacketForAllPlayer(Packet& pkt)
 
 std::string Level::getCurrentLevelName()
 {
-    try
-    {
+    if (Global<PropertiesSettings>)
         return Global<PropertiesSettings>->getLevelName();
-    }
-    catch (...)
+    std::ifstream fin("server.properties");
+    string buf;
+    while (getline(fin, buf))
     {
-        std::ifstream fin("server.properties");
-        string buf;
-        while (getline(fin, buf))
+        if (buf.find("level-name=") != string::npos)
         {
-            if (buf.find("level-name=") != string::npos)
-            {
-                if (buf.back() == '\n')  buf.pop_back();
-                if (buf.back() == '\r')  buf.pop_back();
-                return buf.substr(11);
-            }
+            if (buf.back() == '\n') buf.pop_back();
+            if (buf.back() == '\r') buf.pop_back();
+            return buf.substr(11);
         }
     }
     return "";

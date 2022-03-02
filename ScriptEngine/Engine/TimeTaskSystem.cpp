@@ -67,12 +67,14 @@ int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
         try {
             if (LL::isServerStopping())
                 return;
-            if (timeTaskMap.find(id) == timeTaskMap.end())
-                return;
             if (!EngineManager::isValid(engine))
                 return;
 
-            auto& taskData = timeTaskMap.at(id);
+            auto t = timeTaskMap.find(id);
+            if(t == timeTaskMap.end())
+                return;
+
+            auto& taskData = t->second;
             if (taskData.func.isEmpty())
                 return;
 
@@ -83,12 +85,15 @@ int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
             {
                 vector<Local<Value>> args;
                 for (auto& para : taskData.paras)
-                    args.emplace_back(para.get());
+                    if (para.isEmpty())
+                        return;
+                    else
+                        args.emplace_back(para.get());
                 taskData.func.get().call({}, args);
             }
             timeTaskMap.erase(id);
         }
-        TIMETASK_CATCH("setTimeout");
+        TIMETASK_CATCH("setTimeout-Function");
     }, timeout / 50);
     return timeTaskId;
 }
@@ -106,12 +111,14 @@ int NewTimeout(Local<String> func, int timeout)
         try {
             if (LL::isServerStopping())
                 return;
-            if (timeTaskMap.find(id) == timeTaskMap.end())
-                return;
             if (!EngineManager::isValid(engine))
                 return;
 
-            auto& taskData = timeTaskMap.at(id);
+            auto t = timeTaskMap.find(id);
+            if (t == timeTaskMap.end())
+                return;
+
+            auto& taskData = t->second;
             if (taskData.code.isEmpty())
                 return;
 
@@ -119,7 +126,7 @@ int NewTimeout(Local<String> func, int timeout)
             engine->eval(taskData.code.get().toString());
             timeTaskMap.erase(id);
         }
-        TIMETASK_CATCH("setTimeout");
+        TIMETASK_CATCH("setTimeout-String");
     }, timeout / 50);
     return timeTaskId;
 }
@@ -139,8 +146,6 @@ int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
         try {
             if (LL::isServerStopping())
                 return;
-            if (timeTaskMap.find(id) == timeTaskMap.end())
-                return;
             if (!EngineManager::isValid(engine))
             {
                 timeTaskMap[id].task.cancel();
@@ -148,7 +153,11 @@ int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
                 return;
             }
 
-            auto& taskData = timeTaskMap.at(id);
+            auto t = timeTaskMap.find(id);
+            if (t == timeTaskMap.end())
+                return;
+
+            auto& taskData = t->second;
             if (taskData.func.isEmpty())
                 return;
 
@@ -159,11 +168,14 @@ int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
             {
                 vector<Local<Value>> args;
                 for (auto& para : taskData.paras)
-                    args.emplace_back(para.get());
+                    if (para.isEmpty())
+                        return;
+                    else
+                        args.emplace_back(para.get());
                 taskData.func.get().call({}, args);
             }
         }
-        TIMETASK_CATCH("setInterval");
+        TIMETASK_CATCH("setInterval-Function");
     }, timeout / 50);
     return timeTaskId;
 }
@@ -181,8 +193,6 @@ int NewInterval(Local<String> func, int timeout)
         try {
             if (LL::isServerStopping())
                 return;
-            if (timeTaskMap.find(id) == timeTaskMap.end())
-                return;
             if (!EngineManager::isValid(engine))
             {
                 timeTaskMap[id].task.cancel();
@@ -190,14 +200,18 @@ int NewInterval(Local<String> func, int timeout)
                 return;
             }
 
-            auto& taskData = timeTaskMap.at(id);
+            auto t = timeTaskMap.find(id);
+            if (t == timeTaskMap.end())
+                return;
+
+            auto& taskData = t->second;
             if (taskData.code.isEmpty())
                 return;
 
             EngineScope scope(engine);
             engine->eval(taskData.code.get().toString());
         }
-        TIMETASK_CATCH("setInterval");
+        TIMETASK_CATCH("setInterval-String");
     }, timeout / 50);
     return timeTaskId;
 }

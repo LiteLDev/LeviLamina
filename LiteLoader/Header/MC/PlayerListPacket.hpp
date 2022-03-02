@@ -5,21 +5,25 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-class SerializedSkin;
+#include "PlayerListEntry.hpp"
+
+enum class PlayerListPacketType
+{
+    Add,
+    Remove
+};
 
 #undef BEFORE_EXTRA
 
-class PlayerListPacket {
+class PlayerListPacket : public Packet
+{
 
 #define AFTER_EXTRA
 // Add Member There
 public:
-    ActorUniqueID uid;
-    mce::UUID uuid;
-    std::string name, xuid, platform_online_id;
-    enum BuildPlatform platform;
-    SerializedSkin skin;
-    bool teacher, host;
+public:
+    std::vector<class PlayerListEntry> entries;
+    enum PlayerListPacketType type;
 
 #undef AFTER_EXTRA
 
@@ -35,6 +39,7 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
     /*
     inline enum StreamReadResult _read(class ReadOnlyBinaryStream& a0){
         enum StreamReadResult (PlayerListPacket::*rv)(class ReadOnlyBinaryStream&);

@@ -21,8 +21,21 @@ void CommandRegistry::registerOverload(std::string const& name, Overload::Factor
 }*/
 
 extern Logger logger;
+
+CommandRegistry::Overload::Overload(CommandVersion version,
+                                    FactoryFn factory,
+                                    std::vector<CommandParameterData>&& args)
+    : version(version)
+    , factory(factory)
+    , params(std::forward<std::vector<CommandParameterData>>(args))
+    , unk(255){};
+
+CommandRegistry::Overload::~Overload(){};
+
 std::vector<std::string> CommandRegistry::getEnumNames()
 {
+    if (!Global<CommandRegistry>)
+        return {};
     std::vector<std::string> results;
     for (auto& e : Global<CommandRegistry>->mEnums)
         results.push_back(e.name);
@@ -33,6 +46,8 @@ std::vector<std::string> CommandRegistry::getEnumNames()
 }
 std::vector<std::string> CommandRegistry::getSoftEnumNames()
 {
+    if (!Global<CommandRegistry>)
+        return {};
     std::vector<std::string> results;
     for (auto& e : Global<CommandRegistry>->mSoftEnums)
         results.push_back(e.name);
@@ -43,6 +58,8 @@ std::vector<std::string> CommandRegistry::getSoftEnumNames()
 }
 std::vector<std::string> CommandRegistry::getEnumValues(std::string const& name)
 {
+    if (!Global<CommandRegistry>)
+        return {};
     std::vector<std::string> results;
     auto& enums = Global<CommandRegistry>->mEnums;
     auto iter = std::find_if(enums.begin(), enums.end(), [&](CommandRegistry::Enum const& r) { return r.name == name; });
@@ -57,6 +74,8 @@ std::vector<std::string> CommandRegistry::getEnumValues(std::string const& name)
 }
 std::vector<std::string> CommandRegistry::getSoftEnumValues(std::string const& name)
 {
+    if (!Global<CommandRegistry>)
+        return {};
     std::vector<std::string> results;
     auto& enums = Global<CommandRegistry>->mSoftEnums;
     auto iter = std::find_if(enums.begin(), enums.end(), [&](CommandRegistry::SoftEnum const& r) { return r.name == name; });
@@ -69,6 +88,8 @@ std::vector<std::string> CommandRegistry::getSoftEnumValues(std::string const& n
 }
 std::string CommandRegistry::getCommandFullName(std::string const& name)
 {
+    if (!Global<CommandRegistry>)
+        return "";
     auto sig = Global<CommandRegistry>->findCommand(name);
     if (sig)
         return sig->name;

@@ -93,6 +93,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\MC\ColorFormatAPI.cpp" />
     <ClCompile Include="Kernel\MC\I18nAPI.cpp" />
     <ClCompile Include="Kernel\AllowListAPI.cpp" />
+    <ClCompile Include="Kernel\Network\PacketAPI.cpp" />
     <ClCompile Include="Kernel\Scoreboard\ObjectiveAPI.cpp" />
     <ClCompile Include="Kernel\Utils\DbgHelper.cpp" />
     <ClCompile Include="Kernel\SimulatedPlayerAPI.cpp" />
@@ -184,7 +185,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\Spawner.hpp" />
     <ClCompile Include="Kernel\MC\ActorAPI.cpp" />
     <ClCompile Include="Kernel\MC\ActorDamageSource.cpp" />
-    <ClCompile Include="Kernel\Network\BinaryStream.cpp" />
+    <ClCompile Include="Kernel\Network\BinaryStreamAPI.cpp" />
     <ClCompile Include="Kernel\MC\BlockActorAPI.cpp" />
     <ClCompile Include="Kernel\MC\BlockAPI.cpp" />
     <ClCompile Include="Kernel\MC\BlockInstanceAPI.cpp" />

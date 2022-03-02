@@ -1422,9 +1422,9 @@ inline void __appendPrettyList(std::ostringstream& oss, ListTag& tag, unsigned i
         if (!first)
         {
             oss << format.mSeparator;
+            if (format.mExpandInList[childrenType])
+                __appendPrettyReturnSpace(oss, level + 1, format);
         }
-        if (format.mExpandInList[childrenType])
-            __appendPrettyReturnSpace(oss, level + 1, format);
         __appendPrettySNBT<type>(oss, *static_cast<type*>(child), level + 1, format);
         first = false;
     }

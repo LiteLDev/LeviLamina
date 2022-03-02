@@ -185,18 +185,32 @@ Local<Value> LlClass::require(const Arguments& args)
 
         //插件目录
         existing = false;
-        auto list = GetFileNameList(LLSE_PLUGINS_LOAD_DIR);
-        for (auto fileName : list)
+        string requirePath = "";
+        
+        //Direct
+        std::error_code ec;
+        if (filesystem::exists(require, ec))
         {
-            if (fileName == require)
+            requirePath = require;
+            existing = true;
+        }
+        else
+        {
+            auto list = GetFileNameList(LLSE_PLUGINS_LOAD_DIR);
+            for (auto fileName : list)
             {
-                existing = true;
-                break;
+                if (fileName == require)
+                {
+                    requirePath = string(LLSE_PLUGINS_LOAD_DIR) + "/" + require;
+                    existing = true;
+                    break;
+                }
             }
         }
+
         if (existing)
         { 
-            bool success = PluginManager::loadPlugin(string(LLSE_PLUGINS_LOAD_DIR) + "/" + require);
+            bool success = PluginManager::loadPlugin(requirePath);
             if (success)
             {
                 logger.info(thisName + tr("lxlapi.require.success") + require);
@@ -211,7 +225,7 @@ Local<Value> LlClass::require(const Arguments& args)
 
         //依赖库目录
         existing = false;
-        list = GetFileNameList(LLSE_DEPENDS_DIR);
+        auto list = GetFileNameList(LLSE_DEPENDS_DIR);
         for (auto fileName : list)
         {
             if (fileName == require)

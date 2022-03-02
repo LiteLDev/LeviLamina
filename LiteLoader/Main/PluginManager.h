@@ -27,7 +27,7 @@ namespace LL
         static bool loadPlugin(std::string pluginFilePath, bool outputStatus = false, bool isHotLoad = false);
         static bool unloadPlugin(std::string pluginName, bool outputStatus = false);
         static bool reloadPlugin(std::string pluginName, bool outputStatus = false);
-        static bool reloadAllPlugins(bool outputStatus = false);
+        static int reloadAllPlugins(bool outputStatus = false);
 
         static LIAPI bool unRegisterPlugin(std::string name);
     };

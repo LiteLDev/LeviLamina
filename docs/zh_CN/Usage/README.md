@@ -10,7 +10,7 @@
 
 ### 对于 Windows 用户
 
-1. 前往 [MineBBS](https://www.minebbs.com/liteloader/) 或 [GitHub Release](https://github.com/LiteLDev/LiteLoader/releases) 下载最新的 `LiteLoader-版本号.zip` 压缩包
+1. 前往 [MineBBS](https://www.minebbs.com/liteloader/) 或 [GitHub Release](https://github.com/LiteLDev/LiteLoader/releases) 下载最新的 `LiteLoader-版本号.zip` 压缩包
 2. 将压缩文件内的所有内容解压到 `bedrock_server.exe` 所在的目录。如果解压的过程中提示文件有冲突，选择覆盖即可。
 3. 保证 `bedrock_server.pdb`文件存在。运行 `SymDB2.exe` 来生成  
    - 符号文件 `bedrock_server.symdb2`
@@ -67,24 +67,26 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 - `ll load ./plugins/xxxx.js`  
   **热加载** 位于指定路径的插件。路径是相对于BDS根目录的相对路径。
 - `ll unload xxxx.lua`  
-  **热卸载 **在插件列表中名为 xxxx.lua 的插件
+  **热卸载** 在插件列表中名为 xxxx.lua 的插件
 - `ll reload xxxx.dll`  
-  **重新加载 **在插件列表中名为 xxxx.dll 的插件
+  **重新加载** 在插件列表中名为 xxxx.dll 的插件
 - `ll reload`  
   **重新加载** 插件列表中的所有插件
 - `ll version`  
   输出当前安装的LL版本
 - `ll upgrade`  
-  手动检查LiteLoader自动更新
+  手动检查`LiteLoaderBDS`自动更新
 
-#### 热管理功能 使用警示 ⚠
+#### 热管理功能 常见问题 & 解答
 
 - 热卸载插件后，此插件注册的命令不会被删除。玩家使用那些命令时，会提示命令不存在
 - 如果你的插件有导出的函数被其他插件 Import，则当你卸载 / 重载此插件后，其他插件对应的 Import 会失效  
 - 请勿在服务器尚未启动完毕，或者服务器中有大量玩家时卸载或者重载插件！否则服务器有可能发生崩溃
 - 热加载 / 热重载一个插件之后，插件注册的`onServerStarted`事件会被立刻调用一次，玩家进服事件`onPlayerJoin`会被逐个调用一次（因为此时服务器已经开启完毕了）
 
-插件热管理机制仅供调试插件时使用。在 **生产环境中最好避免使用**，以免出现一些奇奇怪怪的问题。
+>[!WARNING]
+>
+>插件热管理机制仅供调试插件时使用。在 **生产环境中请避免使用**，以免出现问题
 
 ## 📡 脚本引擎 - 实时调试模式
 

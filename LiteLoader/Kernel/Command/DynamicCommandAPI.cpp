@@ -62,11 +62,11 @@ namespace
 //static std::string latestAllocateName = "";
 std::unordered_map<std::string, std::unique_ptr<DynamicCommandInstance>> dynamicCommandInstances;
 
-typedef DynamicCommand::Result Result;
-typedef DynamicCommand::ParameterType ParameterType;
-typedef DynamicCommand::ParameterPtr ParameterPtr;
-typedef DynamicCommand::ParameterData ParameterData;
-typedef DynamicCommandInstance::ParameterIndex ParameterIndex;
+using Result = DynamicCommand::Result;
+using ParameterType = DynamicCommand::ParameterType;
+using ParameterPtr = DynamicCommand::ParameterPtr;
+using ParameterData = DynamicCommand::ParameterData;
+using ParameterIndex = DynamicCommandInstance::ParameterIndex;
 
 namespace ParameterDataType
 {
@@ -886,7 +886,7 @@ ParameterIndex DynamicCommandInstance::newParameter(DynamicCommand::ParameterDat
             auto iter = std::find(namesInBds.begin(), namesInBds.end(), data.description);
             if (iter == namesInBds.end())
                 throw("Enum " + std::string(data.description) + "not found in command and BDS");
-#ifndef USE_PARSE_ENUM_STRING
+#ifndef USE_PARSE_ENUM_STRING_ // fix Enum
             setEnum(*iter, CommandRegistry::getEnumValues(*iter));
 #endif // USE_PARSE_ENUM_STRING
         }
@@ -1010,7 +1010,7 @@ inline std::vector<CommandParameterData> DynamicCommandInstance::buildOverload(s
 //        }
 //    }
 //}
-std::string DynamicCommandInstance::setSoftEnum(std::string const& name, std::vector<std::string> const& values)
+std::string DynamicCommandInstance::setSoftEnum(std::string const& name, std::vector<std::string> const& values) const
 {
     auto names = CommandRegistry::getSoftEnumNames();
     if (std::find(names.begin(), names.end(), name) == names.end())
@@ -1021,7 +1021,7 @@ std::string DynamicCommandInstance::setSoftEnum(std::string const& name, std::ve
     CommandSoftEnumRegistry(Global<CommandRegistry>).updateSoftEnum(SoftEnumUpdateType::Set, name, values);
     return name;
 }
-bool DynamicCommandInstance::addSoftEnumValues(std::string const& name, std::vector<std::string> const& values)
+bool DynamicCommandInstance::addSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const
 {
     auto names = CommandRegistry::getSoftEnumNames();
     if (std::find(names.begin(), names.end(), name) == names.end())
@@ -1032,7 +1032,7 @@ bool DynamicCommandInstance::addSoftEnumValues(std::string const& name, std::vec
     CommandSoftEnumRegistry(Global<CommandRegistry>).updateSoftEnum(SoftEnumUpdateType::Add, name, values);
     return true;
 };
-bool DynamicCommandInstance::removeSoftEnumValues(std::string const& name, std::vector<std::string> const& values)
+bool DynamicCommandInstance::removeSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const
 {
     CommandSoftEnumRegistry(Global<CommandRegistry>).updateSoftEnum(SoftEnumUpdateType::Remove, name, values);
     return true;
@@ -1350,8 +1350,8 @@ void onEnumExecute(DynamicCommand const& cmd, CommandOrigin const& origin, Comma
 {
     auto enumNames = Global<CommandRegistry>->getEnumNames();
     auto softEnumNames = Global<CommandRegistry>->getSoftEnumNames();
-    DynamicCommandInstance::setSoftEnum("EnumNameList", enumNames);
-    DynamicCommandInstance::addSoftEnumValues("EnumNameList", softEnumNames);
+    cmd.getInstance()->setSoftEnum("EnumNameList", enumNames);
+    cmd.getInstance()->addSoftEnumValues("EnumNameList", softEnumNames);
     if (results["name"].isSet)
     {
         auto& enumName = results["name"].getRaw<std::string>();
@@ -1400,13 +1400,13 @@ void setupEnumCommand()
     auto command = DynamicCommand::createCommand("enum", "get command enum names or values", CommandPermissionLevel::Any);
     command->setAlias("enums");
     auto name = command->mandatory("name", ParamType::SoftEnum,
-                                   DynamicCommandInstance::setSoftEnum("EnumNameList", {}));
+                                   command->setSoftEnum("EnumNameList", {}));
     command->addOverload(name);
     command->addOverload();
     command->setCallback(onEnumExecute);
-    DynamicCommand::setup(std::move(command));
-    DynamicCommandInstance::setSoftEnum("EnumNameList", packet.getEnumNames());
-    DynamicCommandInstance::addSoftEnumValues("EnumNameList", packet.getSoftEnumNames());
+    auto cmd = DynamicCommand::setup(std::move(command));
+    cmd->setSoftEnum("EnumNameList", packet.getEnumNames());
+    cmd->addSoftEnumValues("EnumNameList", packet.getSoftEnumNames());
 }
 
 // echo command

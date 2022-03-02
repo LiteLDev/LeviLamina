@@ -55,6 +55,3 @@ public:
     Local<Value> addStepSlider(const Arguments& args);
 };
 extern ClassDefine<CustomFormClass> CustomFormClassBuilder;
-
-// 表单回调
-bool CallFormCallback(Player* player, unsigned formId, const std::string& data);

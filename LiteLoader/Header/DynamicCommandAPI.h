@@ -4,10 +4,12 @@ class Actor;
 #define USE_PARSE_ENUM_STRING
 //#define ENABLE_PARAMETER_TYPE_POSTFIX
 #include "MC/Command.hpp"
+#include "MC/CommandOrigin.hpp"
+#include "MC/CommandOutput.hpp"
+#include "MC/CommandParameterData.hpp"
 #include "MC/CommandRegistry.hpp"
 #include "MC/CommandSelector.hpp"
 #include "MC/CommandPosition.hpp"
-#include "MC/CommandParameterData.hpp"
 #include "Utils/WinHelper.h"
 #include <third-party/magic_enum/magic_enum.hpp>
 
@@ -534,9 +536,9 @@ public:
     LIAPI void setCallback(DynamicCommand::CallBackFn&& callback) const;
     LIAPI void removeCallback() const;
     //LIAPI static bool updateSoftEnum(std::string const& name = "") const;
-    LIAPI static std::string setSoftEnum(std::string const& name, std::vector<std::string> const& values);
-    LIAPI static bool addSoftEnumValues(std::string const& name, std::vector<std::string> const& values);
-    LIAPI static bool removeSoftEnumValues(std::string const& name, std::vector<std::string> const& values);
+    LIAPI std::string setSoftEnum(std::string const& name, std::vector<std::string> const& values) const;
+    LIAPI bool addSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const;
+    LIAPI bool removeSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const;
     LIAPI static std::vector<std::string> getSoftEnumValues(std::string const& name);
     LIAPI static std::vector<std::string> getSoftEnumNames();
 

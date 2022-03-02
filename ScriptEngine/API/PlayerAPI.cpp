@@ -1328,11 +1328,12 @@ Local<Value> PlayerClass::getExtraData(const Arguments& args)
         if (key.empty())
             return Local<Value>();
 
-        return ENGINE_OWN_DATA()->playerDataDB.at(player->getRealName() + "-" + key).get();
-    }
-    catch (const std::out_of_range& e)
-    {
-        return Local<Value>();
+        auto& db = ENGINE_OWN_DATA()->playerDataDB;
+        auto res = db.find(player->getRealName() + "-" + key);
+        if (res == db.end() || res->second.isEmpty())
+            return Local<Value>();
+        else
+            return res->second.get();
     }
     CATCH("Fail in getExtraData!");
 }
