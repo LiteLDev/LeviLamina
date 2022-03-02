@@ -85,12 +85,15 @@ int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
             {
                 vector<Local<Value>> args;
                 for (auto& para : taskData.paras)
-                    args.emplace_back(para.get());
+                    if (para.isEmpty())
+                        return;
+                    else
+                        args.emplace_back(para.get());
                 taskData.func.get().call({}, args);
             }
             timeTaskMap.erase(id);
         }
-        TIMETASK_CATCH("setTimeout");
+        TIMETASK_CATCH("setTimeout-Function");
     }, timeout / 50);
     return timeTaskId;
 }
@@ -123,7 +126,7 @@ int NewTimeout(Local<String> func, int timeout)
             engine->eval(taskData.code.get().toString());
             timeTaskMap.erase(id);
         }
-        TIMETASK_CATCH("setTimeout");
+        TIMETASK_CATCH("setTimeout-String");
     }, timeout / 50);
     return timeTaskId;
 }
@@ -165,11 +168,14 @@ int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
             {
                 vector<Local<Value>> args;
                 for (auto& para : taskData.paras)
-                    args.emplace_back(para.get());
+                    if (para.isEmpty())
+                        return;
+                    else
+                        args.emplace_back(para.get());
                 taskData.func.get().call({}, args);
             }
         }
-        TIMETASK_CATCH("setInterval");
+        TIMETASK_CATCH("setInterval-Function");
     }, timeout / 50);
     return timeTaskId;
 }
@@ -205,7 +211,7 @@ int NewInterval(Local<String> func, int timeout)
             EngineScope scope(engine);
             engine->eval(taskData.code.get().toString());
         }
-        TIMETASK_CATCH("setInterval");
+        TIMETASK_CATCH("setInterval-String");
     }, timeout / 50);
     return timeTaskId;
 }

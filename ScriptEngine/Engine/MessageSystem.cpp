@@ -379,6 +379,8 @@ void InitMessageSystem()
         while (true)
         {
             MessageSystemLoopOnce();
+            if (LL::getServerStatus() >= LL::ServerStatus::Stopping)
+                return;
             SleepEx(5, true);
             if (LL::getServerStatus() >= LL::ServerStatus::Stopping)
                 return;
