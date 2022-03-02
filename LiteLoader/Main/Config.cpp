@@ -45,7 +45,12 @@ namespace LL {
                     }},
                     {"UnoccupyPort19132", {{"enabled", conf.enableUnoccupyPort19132}}},
                     {"CheckRunningBDS", {{"enabled", conf.enableCheckRunningBDS}}},
-                    {"WelcomeText", {{"enabled", conf.enableWelcomeText}}}
+                    {"WelcomeText", {{"enabled", conf.enableWelcomeText}}},
+                    {"OutputFilter", {
+                        {"enabled", conf.enableOutputFilter},
+                        {"onlyFilterConsoleOutput", conf.onlyFilterConsoleOutput},
+                        {"filterRegex", conf.outputFilterRegex}
+                    }}
                 }
             }
         };
@@ -133,6 +138,12 @@ namespace LL {
                 const nlohmann::json& setting = modules.at("ErrorStackTraceback");
                 conf.enableErrorStackTraceback = setting.value("enabled", true);
                 conf.cacheErrorStackTracebackSymbol = setting.value("cacheSymbol", false);
+            }
+            if (modules.find("OutputFilter") != modules.end()) {
+                const nlohmann::json& setting = modules.at("OutputFilter");
+                conf.enableOutputFilter = setting.value("enabled", false);
+                conf.onlyFilterConsoleOutput = setting.value("onlyFilterConsoleOutput", true);
+                conf.outputFilterRegex = setting.value("filterRegex", std::vector<std::string>());
             }
         }
     }

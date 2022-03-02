@@ -54,6 +54,10 @@ struct LLConfig
     bool enableCheckRunningBDS = true;
     bool enableWelcomeText = true;
 
+    bool enableOutputFilter = false;
+    bool onlyFilterConsoleOutput = true;
+    std::vector<std::string> outputFilterRegex;
+
     // Runtime Config
     LLServerStatus serverStatus = LLServerStatus::Starting;
 };
