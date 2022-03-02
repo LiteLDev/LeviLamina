@@ -101,7 +101,7 @@ log(result.output);
   - identifier : `String`  
     参数标识，特殊情况下用于唯一识别参数，一般可用 `enumName` 或 `name` 代替
   - enumOptions : `Integer`  
-    枚举选项，设置为 `1` 可在指令提示中展开枚举选项，如 <action : TagChangeAction> 会变成 <add|remove>
+    枚举选项，设置为 `1` 可在指令提示中展开枚举选项，如 `<action : TagChangeAction>` 会变成 `<add|remove>`
 - 返回值：是否成功设置
 - 返回值类型：`Boolean`
 
@@ -118,7 +118,7 @@ log(result.output);
   - identifier : `String`  
     参数标识，特殊情况下用于唯一识别参数，一般可用 `enumName` 或 `name` 代替
   - enumOptions : `Integer`  
-    枚举选项，设置为 `1` 可在指令提示中展开枚举选项，如 <action : TagChangeAction> 会变成 <add|remove>
+    枚举选项，设置为 `1` 可在指令提示中展开枚举选项，如 `<action : TagChangeAction>` 会变成 `<add|remove>`
 - 返回值：是否成功设置
 - 返回值类型：`Boolean`
 
@@ -139,6 +139,29 @@ log(result.output);
     注册的这个命令被执行时，接口自动调用的回调函数。
 - 返回值：是否成功设置
 - 返回值类型：`Boolean`
+
+> `results` 为 `paramName-value` 键值对，其中值的类型和参数类型对应关系如下
+
+| 参数类型         | 值类型|含义|
+| ------------ | -------------- | ---|
+| `ParamType.Bool`      | `Boolean`|布尔值|     
+| `ParamType.Int`       | `Integer`|整数|     
+| `ParamType.Float`     | `Float`|浮点数|   
+| `ParamType.String`    | `String`|字符串|   
+| `ParamType.Actor`     | `Array<Actor>`|实体目标选择器|   
+| `ParamType.Player`    | `Array<Player>`|玩家目标选择器|   
+| `ParamType.BlockPos`  | `IntPos`|整数坐标|   
+| `ParamType.Vec3`      | `FloatPos`|浮点数坐标|     
+| `ParamType.RawText`   | `String`|原始字符串（可包含特殊字符，如逗号空格）|   
+| `ParamType.Message`   | `String`|消息类型，同 `/say` 指令参数，会自动展开目标选择器等|   
+| `ParamType.JsonValue` | `String`|`json`字符串|   
+| `ParamType.Item`      | `Item`|物品类型| 
+| `ParamType.Block`     | `Block`|方块类型|   
+| `ParamType.Effect`    | `String`|效果类型|   
+| `ParamType.Enum`      | `String`|枚举|   
+| `ParamType.SoftEnum`  | `String`|可变枚举|   
+| `ParamType.ActorType` | `String`|实体类型|   
+| `ParamType.Command`   | `String`|指令名称，*测试|   
 
 #### 安装指令
 
