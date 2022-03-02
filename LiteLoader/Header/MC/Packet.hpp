@@ -9,6 +9,7 @@
 class ReadOnlyBinaryStream;
 class BinaryStream;
 class ServerPlayer;
+class NetworkIdentifier;
 enum StreamReadResult;
 enum class PacketReliability {
     Relible,

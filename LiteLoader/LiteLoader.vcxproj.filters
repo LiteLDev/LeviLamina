@@ -312,6 +312,9 @@
     <ClCompile Include="Kernel\I18nAPI_LL.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\Network\PacketAPI.cpp">
+      <Filter>Kernel\Network</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">

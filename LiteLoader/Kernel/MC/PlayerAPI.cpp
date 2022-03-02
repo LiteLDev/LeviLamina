@@ -384,7 +384,6 @@ bool Player::deleteScore(const string& key)
 ////////////////////////// Packet //////////////////////////
 
 static_assert(sizeof(TextPacket) == 216);
-static_assert(sizeof(PlaySoundPacket) == 152);
 static_assert(sizeof(TransferPacket) == 88);
 
 bool Player::sendTextPacket(string text, TextType Type) const

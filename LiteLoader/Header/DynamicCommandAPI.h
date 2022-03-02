@@ -4,6 +4,8 @@ class Actor;
 #define USE_PARSE_ENUM_STRING
 //#define ENABLE_PARAMETER_TYPE_POSTFIX
 #include "MC/Command.hpp"
+#include "MC/CommandOrigin.hpp"
+#include "MC/CommandOutput.hpp"
 #include "MC/CommandRegistry.hpp"
 #include "MC/CommandSelector.hpp"
 #include "MC/CommandPosition.hpp"
