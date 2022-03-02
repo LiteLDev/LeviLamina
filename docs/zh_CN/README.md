@@ -1,6 +1,6 @@
 # LiteLoader BDS - LL帮助中心 
 
-[![GitHub license](https://img.shields.io/github/license/LiteLDev/LiteLoaderBDS)](https://github.com/LiteLDev/LiteLoaderBDS/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-GPLv3-orange)](https://github.com/LiteLDev/LiteLoaderBDS/blob/main/LICENSE)
 [![Build](https://img.shields.io/badge/build-passing-brightgreen)](#)
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/LiteLDev/LiteLoader?include_prereleases)
 
@@ -13,22 +13,30 @@
 
 ## 🔨 加载器安装 与 使用指南
 
-这里介绍了如何为BDS服务端安装`LiteLoaderBDS`加载器，以及如何安装 LL 插件  
+这里介绍了如何为BDS服务端安装`LiteLoaderBDS`加载器，如何修改配置，以及如何安装 LL 插件  
 
-👉[点击此处](zh_CN/Usage/)👈 查看 LiteLoaderBDS 安装和使用文档
+👉[点击此处](zh_CN/Usage/)👈 查看 `LiteLoaderBDS` 安装和使用文档
+
+<br>
+
+## ❓常见问题
+
+安装和使用 `LiteLoaderBDS` 过程中遇到问题？这里有一些常见问题的解决方法
+
+👉[点击此处](zh_CN/QA/)👈 查看常见问题与解决方法
 
 <br>
 
 ## ⛳ C++ 插件 - 开发指南 与 API文档
 
-使用 `C++`, `Golang` 等编译型语言语言开发 LL 插件，拥有海量API，自由实现你的任意想法
+使用 `C++`, `Golang` 等编译型语言语言开发 LL 插件，拥有海量API，自由实现你的任意想法
 
 👉[点击此处](zh_CN/Development/)👈 查看 C++ 插件开发文档 
 
 <br>
 
 ## 🎯 脚本插件 - 开发指南 与 API文档
-使用 `JavaScript`, `Lua` 等脚本语言开发 LL 插件，容易上手，功能强大
+使用 `JavaScript`, `Lua` 等脚本语言开发 LL 插件，容易上手，功能强大
 
 👉[点击此处](zh_CN/Development/)👈 查看 脚本插件开发文档 
 
