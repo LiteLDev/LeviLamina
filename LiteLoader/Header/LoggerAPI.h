@@ -50,7 +50,6 @@ class Player;
 using std::string;
 
 #define LOGGER_CURRENT_FILE "ll_plugin_logger_file"
-#define LOGGER_CURRENT_LOCK "ll_plugin_logger_lock"
 
 template<bool B, class T = void>
 using enable_if_type = typename std::enable_if<B, T>::type;
@@ -75,7 +74,7 @@ public:
         fmt::text_style style;
         std::string levelPrefix;
         std::ostringstream os;
-        bool locked = false;
+        bool locked = false; //Deprecated
 
         LIAPI explicit OutputStream(Logger* logger, int level,
                                     std::string&& consoleFormat,
@@ -87,35 +86,26 @@ public:
         template <typename T>
         OutputStream& operator<<(T t)
         {
-            if (!locked)
-            {
-                lock();
-                locked = true;
-            }
+            logger->lock();
             os << t;
+            logger->unlock();
             return *this;
         }
 
         template <>
         OutputStream& operator<<(std::wstring wstr)
         {
-            if (!locked)
-            {
-                lock();
-                locked = true;
-            }
+            logger->lock();
             os << wstr2str(wstr);
+            logger->unlock();
             return *this;
         }
         template <>
         OutputStream& operator<<(const wchar_t* wstr)
         {
-            if (!locked)
-            {
-                lock();
-                locked = true;
-            }
+            logger->lock();
             os << wstr2str(wstr);
+            logger->unlock();
             return *this;
         }
 
@@ -158,15 +148,8 @@ public:
     };
 
 private:
-
-    LIAPI static void initLockImpl(HMODULE hPlugin);
-
-    LIAPI static void lockImpl(HMODULE hPlugin);
-
-    LIAPI static void unlockImpl(HMODULE hPlugin);
  
     LIAPI static bool setDefaultFileImpl(HMODULE hPlugin, const std::string& logFile, bool appendMode);
-
     LIAPI static bool setDefaultFileImpl(HMODULE hPlugin, nullptr_t);
 
     LIAPI static void endlImpl(HMODULE hPlugin, OutputStream& o);
@@ -184,21 +167,6 @@ public:
         setFile(nullptr);
     }
 
-    inline static void initLock()
-    {
-        return initLockImpl(GetCurrentModule());
-    };
-
-    inline static void lock()
-    {
-        return lockImpl(GetCurrentModule());
-    };
-
-    inline static void unlock()
-    {
-        return unlockImpl(GetCurrentModule());
-    };
-
     inline static bool setDefaultFile(const std::string& logFile, bool appendMode)
     {
         return setDefaultFileImpl(GetCurrentModule(), logFile, appendMode);
@@ -215,8 +183,11 @@ public:
     };
 
     LIAPI bool setFile(const std::string& logFile, bool appendMode = true);
-
     LIAPI bool setFile(nullptr_t);
+
+    LIAPI bool tryLock();
+    LIAPI bool lock();
+    LIAPI bool unlock();
 
     OutputStream debug;
     OutputStream info;
@@ -225,7 +196,16 @@ public:
     OutputStream fatal;
 
     inline Logger(): Logger("") {}
-
     LIAPI explicit Logger(const std::string &title);
+
+private:
+    LIAPI CsLock& getLocker();
+
+
+    //For compatibility
+private:
+    LIAPI static void initLockImpl(HMODULE hPlugin);
+    LIAPI static void lockImpl(HMODULE hPlugin);
+    LIAPI static void unlockImpl(HMODULE hPlugin);
 
 };

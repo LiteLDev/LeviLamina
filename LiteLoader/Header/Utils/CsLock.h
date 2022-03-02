@@ -12,14 +12,15 @@ class CsLock
 public:
     LIAPI CsLock();
     LIAPI ~CsLock();
+    LIAPI bool tryLock();
     LIAPI bool lock();
     LIAPI bool unlock();
 };
 
 class CsLockHolder
 {
-    CsLock lock;
+    CsLock &locker;
 public:
-    LIAPI CsLockHolder() { lock.lock(); }
-    LIAPI ~CsLockHolder() { lock.unlock(); }
+    LIAPI CsLockHolder(CsLock &lock) :locker(lock) { locker.lock(); }
+    LIAPI ~CsLockHolder() { locker.unlock(); }
 };

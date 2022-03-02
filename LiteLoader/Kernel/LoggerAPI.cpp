@@ -7,27 +7,12 @@
 #include <LoggerAPI.h>
 #include "Main/Config.h"
 #include <MC/Player.hpp>
+#include <unordered_map>
 
 #define LOGGER_CURRENT_TITLE "ll_plugin_logger_title"
 #define LOGGER_CURRENT_FILE "ll_plugin_logger_file"
-#define LOGGER_CURRENT_LOCK "ll_plugin_logger_lock"
 
-void Logger::initLockImpl(HMODULE hPlugin)
-{
-    //if (!PluginOwnData::hasImpl(hPlugin, LOGGER_CURRENT_LOCK))
-    //    PluginOwnData::setImpl<CsLock>(hPlugin, LOGGER_CURRENT_LOCK);             //May cause DeadLock?
-}
-
-void Logger::lockImpl(HMODULE hPlugin)
-{
-    //initLockImpl(hPlugin);
-    //PluginOwnData::getImpl<CsLock>(hPlugin, LOGGER_CURRENT_LOCK).lock();          //May cause DeadLock?
-}
-
-void Logger::unlockImpl(HMODULE hPlugin)
-{
-    //PluginOwnData::getImpl<CsLock>(hPlugin, LOGGER_CURRENT_LOCK).unlock();        //May cause DeadLock?
-}
+std::unordered_map<std::string, CsLock> lockerList;
 
 bool Logger::setDefaultFileImpl(HMODULE hPlugin, const std::string& logFile, bool appendMode = true)
 {
@@ -77,6 +62,26 @@ bool Logger::setFile(nullptr_t)
     if (ofs.is_open())
         ofs.close();
     return true;
+}
+
+bool Logger::tryLock()
+{
+    return lockerList[title].tryLock();
+}
+
+bool Logger::lock()
+{
+    return lockerList[title].lock();
+}
+
+bool Logger::unlock()
+{
+    return lockerList[title].unlock();
+}
+
+CsLock& Logger::getLocker()
+{
+    return lockerList[title];
 }
 
 Logger::OutputStream::OutputStream() = default;
@@ -149,6 +154,8 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o)
 {
     try
     {
+        CsLockHolder lock(o.logger->getLocker());
+
         std::string title = o.logger->title;
         if (!title.empty())
             title = "[" + title + "]";
@@ -182,14 +189,12 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o)
                 fmt::format(o.playerFormat, fmt::localtime(_time64(nullptr)), o.levelPrefix, title,
                     o.os.str()));
 
-        o.locked = false;
         o.os.str("");
         o.os.clear();
-        unlockImpl(hPlugin);
     }
     catch (...)
     {
-        unlockImpl(hPlugin);
+        ;
     }
 }
 
@@ -232,3 +237,7 @@ Logger::Logger(const std::string& title)
                          fmt::fg(fmt::color::red) | fmt::emphasis::bold,
                          "FATAL"};
 }
+
+void Logger::initLockImpl(HMODULE hPlugin) { ; }
+void Logger::lockImpl(HMODULE hPlugin) { ; }
+void Logger::unlockImpl(HMODULE hPlugin) { ; }
