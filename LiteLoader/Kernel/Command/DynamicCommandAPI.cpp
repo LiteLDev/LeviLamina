@@ -1082,8 +1082,7 @@ inline DynamicCommand::BuilderFn DynamicCommandInstance::initCommandBuilder()
 
 #pragma endregion
 
-constexpr auto LL_VERSION_BETA = LL::Version::Beta;
-#if LL_VERSION_BETA == LITELOADER_VERSION_STATUS
+#ifdef DEBUG
 #define successf(...) success(fmt::format(__VA_ARGS__))
 #define errorf(...) error(fmt::format(__VA_ARGS__))
 using Param = DynamicCommand::ParameterData;
