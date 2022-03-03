@@ -219,6 +219,8 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o)
     catch (...)
     {
         std::cerr << "Error in Logger::endlImpl" << std::endl;
+        o.os.str("");
+        o.os.clear();
     }
 }
 
