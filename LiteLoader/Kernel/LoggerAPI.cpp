@@ -25,7 +25,7 @@ bool Logger::setDefaultFileImpl(HMODULE hPlugin, const std::string& logFile, boo
     else
     {
         std::error_code ec;
-        std::filesystem::create_directories(std::filesystem::path(logFile).remove_filename(), ec);
+        std::filesystem::create_directories(std::filesystem::path(str2wstr(logFile)).remove_filename(), ec);
 
         auto& res = PluginOwnData::setImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE, logFile,
                                                           appendMode ? std::ios::app : std::ios::out);
@@ -52,7 +52,7 @@ bool Logger::setFile(const std::string& logFile, bool appendMode)
     else
     {
         std::error_code ec;
-        std::filesystem::create_directories(std::filesystem::path(logFile).remove_filename(), ec);
+        std::filesystem::create_directories(std::filesystem::path(str2wstr(logFile)).remove_filename(), ec);
         ofs.open(logFile, appendMode ? std::ios::app : std::ios::out);
         return ofs.is_open();
     }
@@ -217,7 +217,7 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o)
     }
     catch (...)
     {
-        ;
+        std::cerr << "Error in Logger::endlImpl" << std::endl;
     }
 }
 

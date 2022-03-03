@@ -38,7 +38,7 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
     if (filePath == LLSE_DEBUG_ENGINE_NAME)
         return true;
 
-    string suffix = filesystem::path(filePath).extension().u8string();
+    string suffix = filesystem::path(str2wstr(filePath)).extension().u8string();
 
     if (suffix != LLSE_PLUGINS_EXTENSION)
     {
@@ -83,14 +83,14 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
     }
 
     //判重
-    string pluginName = std::filesystem::path(filePath).filename().u8string();
+    string pluginName = std::filesystem::path(str2wstr(filePath)).filename().u8string();
     if (PluginManager::getPlugin(pluginName))
     {
         //logger.error("This plugin has been loaded by LiteLoader. You cannot load it twice.");
         return false;
     }
 
-    if (!filesystem::exists(filePath))
+    if (!filesystem::exists(str2wstr(filePath)))
     {
         logger.error("Plugin no found! Check the path you input again.");
         return false;

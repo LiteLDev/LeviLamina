@@ -16,7 +16,7 @@ enum class ActorDataIDs : unsigned short
     AIR                                 = 7,   // Short
     POTION_COLOR                        = 8,   // Int (ARGB!)
     POTION_AMBIENT                      = 9,   // Byte
-    JUMP_DURATION                       = 10,  // Byte (not Int64£¿)
+    JUMP_DURATION                       = 10,  // Byte (not Int64?)
     HURT_TIME                           = 11,  // Int (minecart/boat)
     HURT_DIRECTION                      = 12,  // Int (minecart/boat)
     PADDLE_TIME_LEFT                    = 13,  // Float

@@ -18,9 +18,9 @@ using fifo_json = basic_json<workaround_fifo_map>;
 inline fifo_json CreateJson(const std::string& path, const std::string& defContent, bool allowComment = true)
 {
     fifo_json jsonConf;
-    if (!filesystem::exists(path))
+    if (!filesystem::exists(str2wstr(path)))
     {
-        //´´½¨ÐÂµÄ
+        //åˆ›å»ºæ–°çš„
         CreateDirs(path);
 
         if (defContent != "")
@@ -48,7 +48,7 @@ inline fifo_json CreateJson(const std::string& path, const std::string& defConte
     }
     else
     {
-        //ÒÑ´æÔÚ
+        //å·²å­˜åœ¨
         auto jsonTexts = ReadAllFile(path);
         if (!jsonTexts)
         {

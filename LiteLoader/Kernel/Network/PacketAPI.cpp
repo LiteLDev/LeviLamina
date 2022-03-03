@@ -703,7 +703,7 @@ void __autoFill(std::string const& className)
     if (sizeof(T) == getPacketSize<T>())
         return;
 
-    std::filesystem::path McDir = std::filesystem::path(__FILE__).parent_path().parent_path().parent_path().append("Header").append("MC");
+    std::filesystem::path McDir = std::filesystem::path(__FILEW__).parent_path().parent_path().parent_path().append("Header").append("MC");
 
     std::filesystem::path filePath = McDir.append(fmt::format("{}.hpp", className));
     auto file = ReadAllFile(filePath.string());
