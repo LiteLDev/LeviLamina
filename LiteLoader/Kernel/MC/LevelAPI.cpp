@@ -211,7 +211,6 @@ Container* Level::getContainer(Vec3 pos, int dim)
 }
 
 Actor* Level::getDamageSourceEntity(ActorDamageSource* ads) {
-    char v83;
     ActorUniqueID v6 = ads->getDamagingEntityUniqueID();
     return Global<Level>->getEntity(v6);
 }
@@ -316,7 +315,7 @@ std::vector<Actor*> Level::getAllEntities()
 Player* Level::getPlayer(const string& info) {
     string target{info};
     std::transform(target.begin(), target.end(), target.begin(), ::tolower); //lower case the string
-    int delta = INT_MAX;                                                        //c++ int max
+    size_t delta = UINT64_MAX;                                                  //c++ int max
     Player* found = nullptr;
     Global<Level>->forEachPlayer([&](Player& sp) -> bool {
         Player* p = &sp;
@@ -331,7 +330,7 @@ Player* Level::getPlayer(const string& info) {
         //模糊匹配
         if (pName.find(target) == 0) {
             //0 ís the index where the "target" appear in "pName"
-            int curDelta = pName.length() - target.length();
+            size_t curDelta = pName.length() - target.length();
             if (curDelta == 0) {
                 found = p;
                 return false;

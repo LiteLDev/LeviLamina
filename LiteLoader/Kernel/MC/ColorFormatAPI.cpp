@@ -72,7 +72,7 @@ std::unordered_map<unsigned char, const char*> const decorationToColorCodeMap = 
 
 std::string nearestColorCodeFromColor(mce::Color const& color)
 {
-    float minDst = 10000000.0f;
+    double minDst = 10000000.0f;
     std::string minCode = "";
     for (auto& [code, codeColor] : colorCodeToColorMap)
     {

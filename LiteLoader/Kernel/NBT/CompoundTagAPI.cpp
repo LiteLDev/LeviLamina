@@ -1300,7 +1300,7 @@ inline void __appendPrettySpace(std::ostringstream& oss, unsigned int level, Pre
 {
     if (level > format.mMaxLevel)
         return;
-    for (int i = 0; i < level; i++)
+    for (unsigned i = 0; i < level; i++)
     {
         oss << format.mIndent;
     }

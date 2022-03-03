@@ -55,8 +55,6 @@
 
 static_assert(offsetof(InventoryAction, source) == 0x0);
 static_assert(offsetof(InventoryAction, slot) == 0x0c);
-static_assert(offsetof(InventoryAction, from) == 0x10);
-static_assert(offsetof(InventoryAction, to) == 0xa0);
 static_assert(offsetof(InventorySource, type) == 0x0);
 static_assert(offsetof(InventorySource, container) == 0x04);
 static_assert(offsetof(InventorySource, flags) == 0x08);
@@ -1984,7 +1982,7 @@ TClasslessInstanceHook(void, "?onScoreChanged@ServerScoreboard@@UEAAXAEBUScorebo
 {
     IF_LISTENED(PlayerScoreChangedEvent)
     {
-        int id = a1->id;
+        __int64 id = a1->id;
 
         Player* player = nullptr;
         auto pls = Level::getAllPlayers();

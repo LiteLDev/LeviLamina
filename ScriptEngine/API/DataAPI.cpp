@@ -11,7 +11,7 @@
 #include <Utils/StringHelper.h>
 #include <Tools/JsonHelper.h>
 #include <EconomicSystem.h>
-#include <third-party/cpp-base64/base64.h>
+#include <cpp-base64/base64.h>
 using namespace std;
 
 

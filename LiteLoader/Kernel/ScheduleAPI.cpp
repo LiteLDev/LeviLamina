@@ -21,7 +21,8 @@ public:
     };
     unsigned int taskId;
     TaskType type;
-    int leftTime, interval, count;
+    unsigned long long leftTime, interval;
+    int count;
     std::function<void(void)> task;
     HMODULE handler;
 

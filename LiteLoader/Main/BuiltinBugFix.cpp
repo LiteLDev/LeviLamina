@@ -1,4 +1,4 @@
-#include <unordered_map>
+﻿#include <unordered_map>
 
 #include <Main/Config.h>
 #include <Main/LiteLoader.h>
@@ -72,33 +72,46 @@ TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ")
 #include <MC/InventorySource.hpp>
 #include <MC/InventoryTransaction.hpp>
 #include <MC/InventoryAction.hpp>
+#include <MC/Level.hpp>
+#include <MC/ElementBlock.hpp>
 #include <MC/IContainerManager.hpp>
+#include <MC/ColorFormat.hpp>
+#include <magic_enum/magic_enum.hpp>
 
-TInstanceHook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z",
+inline bool itemMayFromReducer(ItemStack const& item)
+{
+    return item.isNull() || (ElementBlock::isElement(item) && !item.hasUserData());
+}
+
+TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z",
               ServerNetworkHandler, NetworkIdentifier const& netid, InventoryTransactionPacket* pk)
 {
     if (globalConfig.enableAntiGive)
     {
         auto sp = (Player*)this->getServerPlayer(netid);
-        auto data = (InventoryTransaction*)(*((__int64*)pk + 10) + 16);
-        auto a = dAccess<std::unordered_map<InventorySource*, void*>, 0>(data);
+        auto& actions = pk->transaction->data.actions;
         bool abnormal = false;
-        for (auto& i : a)
-            if ((int)*(&i.first) == 99999)
+        bool mayFromReducer = true;
+        for (auto& action : actions)
+            if (action.first.type == InventorySourceType::NONIMPLEMENTEDTODO)
             {
-                auto icm = sp->getContainerManager().lock();
-                if (icm)
+                for (auto& a : action.second)
                 {
-                    auto id = VirtualCall<int>(icm.get(), 0x18);
-                    if ((int)id == 22) return original(this, netid, pk);
+                    auto fromDesc = ItemStack::fromDescriptor(a.fromDescriptor, *Global<Level>->getBlockPalette(), true);
+                    auto toDesc = ItemStack::fromDescriptor(a.fromDescriptor, *Global<Level>->getBlockPalette(), true);
+                    if (!itemMayFromReducer(fromDesc) || !itemMayFromReducer(toDesc) || !itemMayFromReducer(a.fromItem) || !itemMayFromReducer(a.toItem))
+                    {
+                        if (mayFromReducer)
+                            logger.warn << "Player(" << sp->getRealName() << ") item data error!" << Logger::endl;
+                        if (!toDesc.isNull())
+                            logger.warn("Item: {}", toDesc.toString());
+                        mayFromReducer = false;
+                    }
                 }
                 abnormal = true;
             }
         if (abnormal)
-        {
-            logger.warn << "Player(" << sp->getRealName() << ") item data error!" << Logger::endl;
-            return nullptr;
-        }
+            return;
     }
     return original(this, netid, pk);
 }

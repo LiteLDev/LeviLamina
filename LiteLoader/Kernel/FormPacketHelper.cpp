@@ -4,7 +4,7 @@
 #include <I18nAPI.h>
 
 #include <Impl/FormPacketHelper.h>
-#include <third-party/Nlohmann/fifo_json.hpp>
+#include <Nlohmann/fifo_json.hpp>
 #include <Utils/DbgHelper.h>
 #include <Main/LiteLoader.h>
 

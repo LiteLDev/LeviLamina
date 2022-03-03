@@ -120,6 +120,7 @@ fmt::text_style getModeColor(string a1)
         case H("ERROR"): return fmt::fg(fmt::terminal_color::bright_red);
         case H("FATAL"): return fmt::fg(fmt::color::red);
     }
+    return fmt::fg(fmt::color::white);
 }
 
 template <typename S, typename Char = fmt::v8::char_t<S>>

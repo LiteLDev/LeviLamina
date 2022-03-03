@@ -70,6 +70,7 @@ THook(void*, "??0ChunkSource@@QEAA@V?$unique_ptr@VChunkSource@@U?$default_delete
 // ?activate@RakNetServerLocator@@AEAAXXZ
 TInstanceHook(void*, "?_activate@RakNetServerLocator@@AEAAXXZ", RakNetServerLocator)
 {
+    constexpr auto h = do_hash("?_activate@RakNetServerLocator@@AEAAXXZ");
     static bool set = false;
     if (!set)
     {

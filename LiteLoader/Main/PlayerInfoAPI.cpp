@@ -4,7 +4,7 @@
 #include <Main/LiteLoader.h>
 #include <PlayerInfoAPI.h>
 #include <exception>
-#include <third-party/SQLiteCpp/SQLiteCpp.h>
+#include <SQLiteCpp/SQLiteCpp.h>
 
 #define PlayerDatabasePath "plugins/LiteLoader/PlayerDB.db"
 std::unique_ptr<SQLite::Database> db;

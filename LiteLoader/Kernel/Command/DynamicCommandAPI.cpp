@@ -15,7 +15,7 @@
 #include <ScheduleAPI.h>
 #include <MC/Minecraft.hpp>
 #include <MC/LoopbackPacketSender.hpp>
-#include <third-party/dyncall/dyncall_callback.h>
+#include <dyncall/dyncall_callback.h>
 #include <MC/CommandUtils.hpp>
 #include <MC/CommandSoftEnumRegistry.hpp>
 
@@ -164,20 +164,20 @@ inline void initValue<CommandMessage>(void* command, size_t offset)
 template <>
 inline void initValue<CommandSelector<Actor>>(void* command, size_t offset)
 {
-    dAccess<CommandSelector<Actor>>(command, offset).CommandSelector<Actor>::CommandSelector<Actor>();
+    dAccess<CommandSelector<Actor>>(command, offset).CommandSelector<Actor>::CommandSelector();
 }
 template <>
 inline void initValue<CommandSelector<Player>>(void* command, size_t offset)
 {
-    dAccess<CommandSelector<Player>>(command, offset).CommandSelector<Player>::CommandSelector<Player>();
+    dAccess<CommandSelector<Player>>(command, offset).CommandSelector<Player>::CommandSelector();
 }
 template <>
 inline void initValue<WildcardCommandSelector<Actor>>(void* command, size_t offset)
 {
-    dAccess<WildcardCommandSelector<Actor>>(command, offset).WildcardCommandSelector<Actor>::WildcardCommandSelector<Actor>();
+    dAccess<WildcardCommandSelector<Actor>>(command, offset).WildcardCommandSelector<Actor>::WildcardCommandSelector();
 }
 
-#pragma endregionto
+#pragma endregion
 
 #pragma region ParameterPtr
 
@@ -321,7 +321,8 @@ inline std::string const& DynamicCommand::Result::getEnumValue() const
     {
         return getRaw<std::string>();
     }
-    return "";
+    static std::string const EMPTY_STRING = "";
+    return EMPTY_STRING;
 }
 
 inline ParameterType DynamicCommand::Result::getType() const
@@ -336,6 +337,7 @@ inline std::string DynamicCommand::Result::getName() const
         if (ptr.getOffset() == offset)
             return name;
     }
+    return "";
 }
 
 std::string DynamicCommand::Result::toDebugString() const
@@ -399,7 +401,7 @@ std::string DynamicCommand::Result::toDebugString() const
 #endif // ENABLE_PARAMETER_TYPE_POSTFIX
         default:
             logger.error("Unknown Parameter Type {}, name: {}", typeName, name);
-            break;
+            return "";
     }
 }
 
@@ -1080,7 +1082,8 @@ inline DynamicCommand::BuilderFn DynamicCommandInstance::initCommandBuilder()
 
 #pragma endregion
 
-#if LITELOADER_VERSION_STATUS == LL::Version::Beta
+constexpr auto LL_VERSION_BETA = LL::Version::Beta;
+#if LL_VERSION_BETA == LITELOADER_VERSION_STATUS
 #define successf(...) success(fmt::format(__VA_ARGS__))
 #define errorf(...) error(fmt::format(__VA_ARGS__))
 using Param = DynamicCommand::ParameterData;

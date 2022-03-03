@@ -1,6 +1,6 @@
 #include "LocalShareData.h"
 #include <Configs.h>
-#include <third-party/ThreadPool/ThreadPool.hpp>
+#include <ThreadPool/ThreadPool.hpp>
 #include <mutex>
 
 //DLL本地共享数据

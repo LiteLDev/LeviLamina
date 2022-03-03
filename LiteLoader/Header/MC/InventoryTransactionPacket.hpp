@@ -6,6 +6,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include <MC/ComplexInventoryTransaction.hpp>
 
 #undef BEFORE_EXTRA
 
@@ -13,6 +14,11 @@ class InventoryTransactionPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    TypedClientNetId<struct ItemStackRequestIdTag, int, 0> requestId;            //48
+    std::vector<std::pair<ContainerEnumName, std::vector<unsigned char>>> slots; //56
+    std::unique_ptr<ComplexInventoryTransaction> transaction;                    //80
+    bool isClientSide;                                                           //88
 
 #undef AFTER_EXTRA
 

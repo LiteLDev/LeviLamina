@@ -273,7 +273,7 @@ bool Player::refreshAttributes(std::vector<Attribute const*> const& attributes)
 {
     BinaryStream wp;
     wp.writeUnsignedVarInt64(getRuntimeID()); // EntityId
-    wp.writeUnsignedVarInt(attributes.size());
+    wp.writeUnsignedVarInt((unsigned)attributes.size());
     for (auto attribute : attributes)
     {
         auto& instance = getAttribute(*attribute);

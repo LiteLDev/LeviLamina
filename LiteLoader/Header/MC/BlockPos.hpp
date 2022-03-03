@@ -4,7 +4,8 @@ class Vec3;
 class BlockPos {
 public:
     int x, y, z;
-    inline BlockPos(){};
+    inline BlockPos()
+        : BlockPos(0, 0, 0){};
     inline BlockPos(int mx, int my, int mz)
         : x(mx)
         , y(my)

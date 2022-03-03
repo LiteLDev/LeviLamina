@@ -62,7 +62,7 @@ THook(void, "?_appendLogEntryMetadata@LogDetails@BedrockLog@@AEAAXAEAV?$basic_st
 
 #include "LiteLoader.h"
 THook(void, "?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4ZZ",
-      int a1, int a2, __int64 a3, int a4, int a5, __int64 a6, int a7, __int64 a8, ...)
+      int a1, int a2, int a3, int a4, int a5, __int64 a6, int a7, __int64 a8, ...)
 {
     va_list va;
     auto text = (char*)a8;
@@ -75,10 +75,10 @@ THook(void, "?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@
     if (a7 == 600) {
         string text = "Done (" + fmt::format("{:.1f}", (endTime - startTime) * 1.0 / 1000) + "s)! For help, type \"help\" or \"?\"";
         return SymCall("?log_va@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4PEAD@Z",
-                       void, unsigned int, unsigned int, int, int, unsigned int, __int64, __int64, __int64, __int64)(a1, a2, a3, a4, a5, a6, a7, (__int64)text.c_str(), (__int64)va);
+                       void, int, int, int, int, int, __int64, int, __int64, __int64)(a1, a2, a3, a4, a5, a6, a7, (__int64)text.c_str(), (__int64)va);
     }
     return SymCall("?log_va@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4PEAD@Z",
-                   void, unsigned int, unsigned int, int, int, unsigned int, __int64, __int64, __int64, __int64)(a1, a2, a3, a4, a5, a6, a7, a8, (__int64)va);
+                   void, int, int, int, int, int, __int64, int, __int64, __int64)(a1, a2, a3, a4, a5, a6, a7, a8, (__int64)va);
 }
 
 #include <MC/ColorFormat.hpp>

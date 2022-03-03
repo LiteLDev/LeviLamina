@@ -14,13 +14,13 @@ struct ScorePacketInfo {
 public:
 #define DISABLE_CONSTRUCTOR_PREVENTION_SCOREPACKETINFO
 
-    ScoreboardId sid;
-    std::string obj_name;
-    uint32_t score;
-    IdentityDefinition::Type type;
-    unsigned long long pid;
-    ActorUniqueID aid;
-    std::string fake_name;
+    ScoreboardId sid;              //0
+    std::string obj_name;          //16
+    uint32_t score;                //48
+    IdentityDefinition::Type type; //52
+    unsigned long long pid;        //56
+    ActorUniqueID aid;             //64
+    std::string fake_name;         //72
 
     ScorePacketInfo(ScoreboardId* s, string obj_name, IdentityDefinition::Type type, unsigned num, const string& fake)
         : sid(*s)

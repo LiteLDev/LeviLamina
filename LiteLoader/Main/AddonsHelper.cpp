@@ -12,7 +12,7 @@
 #include <GlobalServiceAPI.h>
 #include <Utils/WinHelper.h>
 #include <Utils/FileHelper.h>
-#include <third-party/Nlohmann/json.hpp>
+#include <Nlohmann/json.hpp>
 #include <Main/Config.h>
 #include <LoggerAPI.h>
 #include <I18nAPI.h>

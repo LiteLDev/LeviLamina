@@ -52,7 +52,7 @@ namespace TextEncoding
         int bytes_consumed;
 
         return DetectEncoding(
-            text.c_str(), text.size(),
+            text.c_str(), (int)text.size(),
             nullptr, nullptr, nullptr,
             UNKNOWN_ENCODING,
             UNKNOWN_LANGUAGE,
