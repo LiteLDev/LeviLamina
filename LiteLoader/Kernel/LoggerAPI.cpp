@@ -245,21 +245,21 @@ Logger::Logger(const std::string& title)
                         3,
                         "{} {} {} {}\n",
                         "[{:%Y-%m-%d %H:%M:%S} {}]{} {}\n",
-                        "§l§e[{}{}]{} {}\n",
+                        "§e[{}{}]{} {}\n",
                         fmt::fg(fmt::terminal_color::yellow) | fmt::emphasis::bold,
                         "WARN"};
     error = OutputStream{this,
                          2,
                          "{} {} {} {}\n",
                          "[{:%Y-%m-%d %H:%M:%S} {}]{} {}\n",
-                         "§l§c[{}{}]{} {}\n",
+                         "§c[{}{}]{} {}\n",
                          fmt::fg(fmt::color::red2) | fmt::emphasis::bold,
                          "ERROR"};
     fatal = OutputStream{this,
                          1,
                          "{} {} {} {}\n",
                          "[{:%Y-%m-%d %H:%M:%S} {}]{} {}\n",
-                         "§l§4[{}{}]{} {}\n",
+                         "§4[{}{}]{} {}\n",
                          fmt::fg(fmt::color::red) | fmt::emphasis::bold,
                          "FATAL"};
 }
