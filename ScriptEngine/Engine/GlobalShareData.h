@@ -41,9 +41,6 @@ struct GlobalDataType
 	std::map<std::string, MessageHandlers> messageSystemHandlers;
 	std::map<std::string, HANDLE> messageThreads;
 
-	//fastlog多线程锁
-	std::mutex fastlogLock;
-
 	//OperationCount
 	std::map<std::string, int> operationCountData;
 };

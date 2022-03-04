@@ -77,10 +77,9 @@ Local<Value> FastLog(const Arguments& args)
             PrintValue(sout, args[i]);
         sout << endl;
 
-        pool.enqueue([str{ sout.str() }]() {
-            lock_guard<mutex> lock(globalShareData->fastlogLock);
-            cout.write(str.c_str(), str.size());
-            cout.flush();
+        pool.enqueue([str{ sout.str() }, pluginName{ ENGINE_OWN_DATA()->pluginName }]() {
+            Logger fastLogger(pluginName);
+            fastLogger.info(str);
         });
         return Boolean::newBoolean(true);
     }
