@@ -1,4 +1,5 @@
 #include <Utils/FileHelper.h>
+#include <Utils/StringHelper.h>
 #include <io.h>
 #include <filesystem>
 using namespace std;
@@ -82,5 +83,5 @@ vector<string> GetFileNameList(const std::string& dir)
 bool CreateDirs(const string path)
 {
     std::error_code ec;
-    return std::filesystem::create_directories(std::filesystem::path(path).remove_filename(), ec);
+    return std::filesystem::create_directories(std::filesystem::path(str2wstr(path)).remove_filename(), ec);
 }

@@ -189,7 +189,7 @@ Local<Value> LlClass::require(const Arguments& args)
         
         //Direct
         std::error_code ec;
-        if (filesystem::exists(require, ec))
+        if (filesystem::exists(str2wstr(require), ec))
         {
             requirePath = require;
             existing = true;

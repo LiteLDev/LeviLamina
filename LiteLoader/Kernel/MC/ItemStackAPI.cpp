@@ -18,9 +18,7 @@ static_assert(sizeof(ItemInstance) == 136);
 
 ItemStack *ItemStack::create() {
     try {
-        auto *a = (ItemStack *) new char[sizeof(ItemStack)];
-        ItemStack *item = SymCall("??0ItemStack@@QEAA@XZ", ItemStack*, ItemStack*)(a);
-        return item;
+        return new ItemStack();
     } catch (...) {
         return nullptr;
     }

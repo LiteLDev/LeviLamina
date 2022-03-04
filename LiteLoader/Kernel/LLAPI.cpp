@@ -13,10 +13,10 @@ using namespace std;
 std::string LL::getDataPath(const std::string &pluginName)
 {
     string dataPath = "plugins\\LiteLoader\\" + pluginName;
-    if (!filesystem::exists(dataPath))
+    if (!filesystem::exists(str2wstr(dataPath)))
     {
         std::error_code ec;
-        filesystem::create_directories(dataPath, ec);
+        filesystem::create_directories(str2wstr(dataPath), ec);
     }
     return dataPath;
 }

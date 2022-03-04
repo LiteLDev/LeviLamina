@@ -151,7 +151,7 @@ Local<Value> FileClass::getPath()
 Local<Value> FileClass::getAbsolutePath()
 {
     try {
-        return String::newString(canonical(filesystem::path(path)).u8string());
+        return String::newString(canonical(filesystem::path(str2wstr(path))).u8string());
     }
     CATCH("Fail in getAbsolutePath!");
 }
@@ -610,7 +610,7 @@ Local<Value> PathExists(const Arguments& args)
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
     try{
-        return Boolean::newBoolean(filesystem::exists(args[0].asString().toString()));
+        return Boolean::newBoolean(filesystem::exists(str2wstr(args[0].asString().toString())));
     }
     catch(const filesystem_error& e)
     {

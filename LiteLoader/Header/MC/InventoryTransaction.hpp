@@ -5,6 +5,8 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "InventoryTransactionItemGroup.hpp"
+#include "InventoryAction.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -15,6 +17,7 @@ class InventoryTransaction {
 public:
     std::unordered_map<class InventorySource, std::vector<class InventoryAction>> actions; // 0x0
     std::vector<class InventoryTransactionItemGroup> items;                                // 0x40
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYTRANSACTION

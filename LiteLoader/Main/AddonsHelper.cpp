@@ -12,7 +12,7 @@
 #include <GlobalServiceAPI.h>
 #include <Utils/WinHelper.h>
 #include <Utils/FileHelper.h>
-#include <third-party/Nlohmann/json.hpp>
+#include <Nlohmann/json.hpp>
 #include <Main/Config.h>
 #include <LoggerAPI.h>
 #include <I18nAPI.h>
@@ -149,18 +149,18 @@ bool AddonsManager::install(std::string packPath)
 {
     try
     {
-        if (!filesystem::exists(packPath))
+        if (!filesystem::exists(str2wstr(packPath)))
         {
             addonLogger.error("Addon file no found!");
             return false;
         }
-        if (VALID_ADDON_FILE_EXTENSION.find(filesystem::path(packPath).extension().u8string()) == VALID_ADDON_FILE_EXTENSION.end())
+        if (VALID_ADDON_FILE_EXTENSION.find(filesystem::path(str2wstr(packPath)).extension().u8string()) == VALID_ADDON_FILE_EXTENSION.end())
         {
             addonLogger.error("Unsupported type of file found!");
             return false;
         }
 
-        string name = filesystem::path(packPath).filename().u8string();
+        string name = filesystem::path(str2wstr(packPath)).filename().u8string();
         addonLogger.warn("Installing addon <{}>...", name);
 
         std::error_code ec;
@@ -168,14 +168,14 @@ bool AddonsManager::install(std::string packPath)
         {
             string newPath = packPath;
             ReplaceStr(newPath, ".mcpack", ".zip");
-            filesystem::rename(packPath, newPath, ec);
+            filesystem::rename(str2wstr(packPath), newPath, ec);
             packPath = newPath;
         }
         if (EndsWith(packPath, ".mcaddon"))
         {
             string newPath = packPath;
             ReplaceStr(newPath, ".mcaddon", ".zip");
-            filesystem::rename(packPath, newPath, ec);
+            filesystem::rename(str2wstr(packPath), newPath, ec);
             packPath = newPath;
         }
 
@@ -198,15 +198,15 @@ bool AddonsManager::install(std::string packPath)
 
         for (auto& dir : paths)
         {
-            string addonName = filesystem::path(dir).filename().u8string();
+            string addonName = filesystem::path(str2wstr(dir)).filename().u8string();
             if (addonName.empty() || addonName == "Temp")
-                addonName = filesystem::path(packPath).stem().u8string();
+                addonName = filesystem::path(str2wstr(dir)).stem().u8string();
             if (!InstallAddonToLevel(dir, addonName))
                 return false;
         }
 
         filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
-        filesystem::remove_all(packPath, ec);
+        filesystem::remove_all(str2wstr(packPath), ec);
         return true;
     }
     catch (const seh_exception& e)
@@ -241,7 +241,7 @@ bool AddonsManager::uninstall(std::string nameOrUuid)
         }
 
         auto jsonFile = GetAddonJsonFile(addon->type);
-        if (!filesystem::exists(jsonFile))
+        if (!filesystem::exists(str2wstr(jsonFile)))
         {
             addonLogger.error("Addon config no found!");
             return false;
@@ -268,7 +268,7 @@ bool AddonsManager::uninstall(std::string nameOrUuid)
                     return false;
                 }
                 std::error_code ec;
-                filesystem::remove_all(addon->directory,ec);
+                filesystem::remove_all(str2wstr(addon->directory), ec);
                 for (auto i = addons.begin(); i != addons.end(); ++i)
                     if (i->uuid == addon->uuid)
                     {
@@ -401,7 +401,7 @@ void FindAddons(string jsonPath, string packsDir)
 {
     try
     {
-        if (!filesystem::exists(jsonPath) || !filesystem::exists(packsDir))
+        if (!filesystem::exists(str2wstr(jsonPath)) || !filesystem::exists(str2wstr(packsDir)))
             return;
 
         auto content = ReadAllFile(jsonPath);
@@ -422,7 +422,7 @@ void FindAddons(string jsonPath, string packsDir)
             validPackIDs.insert(std::string(addon["pack_id"]));
         }
 
-        filesystem::directory_iterator ent(packsDir);
+        filesystem::directory_iterator ent(str2wstr(packsDir));
         for (auto& dir : ent)
         {
             if (!dir.is_directory())
@@ -476,16 +476,16 @@ void BuildAddonsList()
 void AutoInstallAddons()
 {
     std::error_code ec;
-    if (!filesystem::exists(LL::globalConfig.addonsInstallPath))
+    if (!filesystem::exists(str2wstr(LL::globalConfig.addonsInstallPath)))
     {
-        filesystem::create_directories(LL::globalConfig.addonsInstallPath, ec);
+        filesystem::create_directories(str2wstr(LL::globalConfig.addonsInstallPath), ec);
         addonLogger.warn("Directory created. You can move compressed Addon files to {} to get installed at next launch.",
             LL::globalConfig.addonsInstallPath);
         return;
     }
     std::vector<string> toInstallList;
 
-    filesystem::directory_iterator ent(LL::globalConfig.addonsInstallPath);
+    filesystem::directory_iterator ent(str2wstr(LL::globalConfig.addonsInstallPath));
     for (auto& file : ent)
     {
         if (!file.is_regular_file())

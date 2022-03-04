@@ -69,7 +69,8 @@ public:
     LIAPI static Container* getContainer(Vec3 pos, int dim);
 
     //Item
-    LIAPI static ItemStack* getItemStackFromId(short a2 = 0, int a3 = 0);
+    // The return value should be freed by the developer if it is no longer used
+    LIAPI static ItemStack* getItemStackFromId(short itemId, int aux = 0);
 
     //Helper
     LIAPI static BlockSource* getBlockSource(int dimid);

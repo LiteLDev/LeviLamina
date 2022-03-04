@@ -25,7 +25,7 @@ bool Logger::setDefaultFileImpl(HMODULE hPlugin, const std::string& logFile, boo
     else
     {
         std::error_code ec;
-        std::filesystem::create_directories(std::filesystem::path(logFile).remove_filename(), ec);
+        std::filesystem::create_directories(std::filesystem::path(str2wstr(logFile)).remove_filename(), ec);
 
         auto& res = PluginOwnData::setImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE, logFile,
                                                           appendMode ? std::ios::app : std::ios::out);
@@ -52,7 +52,7 @@ bool Logger::setFile(const std::string& logFile, bool appendMode)
     else
     {
         std::error_code ec;
-        std::filesystem::create_directories(std::filesystem::path(logFile).remove_filename(), ec);
+        std::filesystem::create_directories(std::filesystem::path(str2wstr(logFile)).remove_filename(), ec);
         ofs.open(logFile, appendMode ? std::ios::app : std::ios::out);
         return ofs.is_open();
     }
@@ -120,6 +120,7 @@ fmt::text_style getModeColor(string a1)
         case H("ERROR"): return fmt::fg(fmt::terminal_color::bright_red);
         case H("FATAL"): return fmt::fg(fmt::color::red);
     }
+    return fmt::fg(fmt::color::white);
 }
 
 template <typename S, typename Char = fmt::v8::char_t<S>>
@@ -217,7 +218,9 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o)
     }
     catch (...)
     {
-        ;
+        std::cerr << "Error in Logger::endlImpl" << std::endl;
+        o.os.str("");
+        o.os.clear();
     }
 }
 
@@ -242,21 +245,21 @@ Logger::Logger(const std::string& title)
                         3,
                         "{} {} {} {}\n",
                         "[{:%Y-%m-%d %H:%M:%S} {}]{} {}\n",
-                        "§l§e[{}{}]{} {}\n",
+                        "§e[{}{}]{} {}\n",
                         fmt::fg(fmt::terminal_color::yellow) | fmt::emphasis::bold,
                         "WARN"};
     error = OutputStream{this,
                          2,
                          "{} {} {} {}\n",
                          "[{:%Y-%m-%d %H:%M:%S} {}]{} {}\n",
-                         "§l§c[{}{}]{} {}\n",
+                         "§c[{}{}]{} {}\n",
                          fmt::fg(fmt::color::red2) | fmt::emphasis::bold,
                          "ERROR"};
     fatal = OutputStream{this,
                          1,
                          "{} {} {} {}\n",
                          "[{:%Y-%m-%d %H:%M:%S} {}]{} {}\n",
-                         "§l§4[{}{}]{} {}\n",
+                         "§4[{}{}]{} {}\n",
                          fmt::fg(fmt::color::red) | fmt::emphasis::bold,
                          "FATAL"};
 }

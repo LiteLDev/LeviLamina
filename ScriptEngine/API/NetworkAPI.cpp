@@ -2,8 +2,8 @@
 #include <Utils/NetworkHelper.h>
 #include <Engine/TimeTaskSystem.h>
 #include <Engine/EngineManager.h>
-#include <third-party/httplib/httplib.h>
-#include <third-party/LightWebSocketClient/include/WebSocketClient.h>
+#include <httplib/httplib.h>
+#include <LightWebSocketClient/include/WebSocketClient.h>
 #include "NetworkAPI.h"
 #include <SafeGuardRecord.h>
 #include <string>

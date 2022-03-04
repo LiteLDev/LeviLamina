@@ -18,7 +18,7 @@
 #include <MC/Mob.hpp>
 #include <MC/Dimension.hpp>
 #include <MC/Command.hpp>
-#include <third-party/magic_enum/magic_enum.hpp>
+#include <magic_enum/magic_enum.hpp>
 
 //////////////////// Class Definition ////////////////////
 ClassDefine<void> OriginTypeStaticBuilder = EnumDefineBuilder<OriginType>::build("OriginType");

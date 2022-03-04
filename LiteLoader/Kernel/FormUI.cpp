@@ -1,6 +1,6 @@
 #include <FormUI.h>
 #include <memory>
-#include <third-party/Nlohmann/fifo_json.hpp>
+#include <Nlohmann/fifo_json.hpp>
 #include <Impl/FormPacketHelper.h>
 
 #include <MC/BinaryStream.hpp>
@@ -26,7 +26,7 @@ namespace Form {
             }
             return button.dump();
         }
-        catch (const fifo_json::exception &e) {
+        catch (const fifo_json::exception &) {
             logger.error("Fail to generate Button in Simple Form serialize!");
             return "";
         }
@@ -64,7 +64,7 @@ namespace Form {
             }
             return form.dump();
         }
-        catch (const fifo_json::exception &e) {
+        catch (const fifo_json::exception &) {
             logger.error("Fail to generate Simple Form in serialize!");
             return "";
         }
@@ -113,7 +113,7 @@ namespace Form {
             itemAdd["text"] = text;
             return itemAdd.dump();
         }
-        catch (const fifo_json::exception &e) {
+        catch (const fifo_json::exception &) {
             logger.error("Fail to generate Label in Custom Form serialize!");
             return "";
         }
@@ -130,7 +130,7 @@ namespace Form {
                 itemAdd["default"] = def;
             return itemAdd.dump();
         }
-        catch (const fifo_json::exception &e) {
+        catch (const fifo_json::exception &) {
             logger.error("Fail to generate Input in Custom Form serialize!");
             return "";
         }
@@ -145,7 +145,7 @@ namespace Form {
                 itemAdd["default"] = def;
             return itemAdd.dump();
         }
-        catch (const fifo_json::exception &e) {
+        catch (const fifo_json::exception &) {
             logger.error("Fail to generate Toggle in Custom Form serialize!");
             return "";
         }
@@ -166,7 +166,7 @@ namespace Form {
                 itemAdd["default"] = def;
             return itemAdd.dump();
         }
-        catch (const fifo_json::exception &e) {
+        catch (const fifo_json::exception &) {
             logger.error("Fail to generate Dropdown in Custom Form serialize!");
             return "";
         }
@@ -188,7 +188,7 @@ namespace Form {
             }
             return itemAdd.dump();
         }
-        catch (const fifo_json::exception &e) {
+        catch (const fifo_json::exception &) {
             logger.error("Fail to generate Slider in Custom Form serialize!");
             return "";
         }
@@ -205,13 +205,13 @@ namespace Form {
                 items.push_back(str);
             itemAdd["steps"] = items;
 
-            int maxIndex = items.size() - 1;
+            size_t maxIndex = items.size() - 1;
             if (def >= 0 && def <= maxIndex) {
                 itemAdd["default"] = def;
             }
             return itemAdd.dump();
         }
-        catch (const fifo_json::exception &e) {
+        catch (const fifo_json::exception &) {
             logger.error("Fail to generate StepSlider in Custom Form serialize!");
             return "";
         }
@@ -293,7 +293,7 @@ namespace Form {
             }
             return form.dump();
         }
-        catch (const fifo_json::exception &e) {
+        catch (const fifo_json::exception &) {
             logger.error("Fail to generate Custom Form in serialize!");
             return "";
         }

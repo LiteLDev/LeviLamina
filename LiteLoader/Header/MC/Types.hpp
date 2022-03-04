@@ -373,9 +373,10 @@ public:
     {
         return *get();
     }
-    //inline operator ->() {
-
-    //}
+    inline operator bool() const
+    {
+        return get() != nullptr;
+    }
 };
 
 template <typename T>
@@ -796,9 +797,9 @@ enum class PlayerScoreSetFunction : char
     Remove = 2
 };
 
-enum class ContainerID : int8_t
+enum class ContainerID : uint8_t
 {
-    Invalid = -1,
+    Invalid = 0xff,
     Inventory = 0,
     First = 1,
     Last = 100,

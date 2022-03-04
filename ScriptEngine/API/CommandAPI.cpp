@@ -24,7 +24,7 @@
 #include <MC/Dimension.hpp>
 #include <ScriptEngine/API/BaseAPI.h>
 #include <ScriptEngine/API/EntityAPI.h>
-#include <third-party/magic_enum/magic_enum.hpp>
+#include <magic_enum/magic_enum.hpp>
 #include <MC/JsonHelpers.hpp>
 
 

@@ -130,7 +130,7 @@ Local<Value> ContainerClass::removeItem(const Arguments& args)
 	CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
 
 	try {
-		container->removeItem(args[0].toInt(), args[1].toInt());
+		container->removeItem_s(args[0].toInt(), args[1].toInt());
 		return Boolean::newBoolean(true);
 	}
 	CATCH("Fail in removeItem!");

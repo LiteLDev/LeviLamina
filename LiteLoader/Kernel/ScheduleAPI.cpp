@@ -21,13 +21,14 @@ public:
     };
     unsigned int taskId;
     TaskType type;
-    int leftTime, interval, count;
+    long long leftTime, interval;
+    int count;
     std::function<void(void)> task;
     HMODULE handler;
 
     ScheduleTaskData::ScheduleTaskData(TaskType type, std::function<void(void)> task, unsigned long long delay,
                                        unsigned long long interval, int count, HMODULE handler)
-            : type(type), task(task), leftTime(delay), interval(interval), count(count), taskId(nextTaskId++) ,handler(handler) {}
+            : type(type), task(task), leftTime((long long)delay), interval((long long)interval), count(count), taskId(nextTaskId++) ,handler(handler) {}
 
     inline unsigned int getTaskId() {
         return taskId;
@@ -79,7 +80,7 @@ public:
                 if (empty())
                     break;
                 const ScheduleTaskData& t = top();
-                if (t.leftTime >= 0)
+                if (t.leftTime > 0)
                     break;
 
                 //timeout

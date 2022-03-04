@@ -15,13 +15,13 @@ namespace mce
 std::string mce::Color::toConsoleCode(bool foreground) const
 {
     fmt::v8::rgb rgb;
-    rgb.r = r * 0xff;
-    rgb.g = g * 0xff;
-    rgb.b = b * 0xff;
+    rgb.r = (uint8_t)(r * 0xff);
+    rgb.g = (uint8_t)(g * 0xff);
+    rgb.b = (uint8_t)(b * 0xff);
     if (foreground)
-        return fmt::v8::detail::make_foreground_color<char>(fmt::v8::detail::color_type(rgb));
+        return std::string(fmt::v8::detail::make_foreground_color<char>(fmt::v8::detail::color_type(rgb)));
     else
-        return fmt::v8::detail::make_background_color<char>(fmt::v8::detail::color_type(rgb));
+        return std::string(fmt::v8::detail::make_background_color<char>(fmt::v8::detail::color_type(rgb)));
 }
 std::string mce::Color::toNearestColorCode() const
 {

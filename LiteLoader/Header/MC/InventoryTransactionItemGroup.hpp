@@ -5,6 +5,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "CompoundTag.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -12,6 +13,9 @@ class InventoryTransactionItemGroup {
 
 #define AFTER_EXTRA
 // Add Member There
+    unsigned short itemId;            //0
+    int count;                        //4
+    std::unique_ptr<CompoundTag> tag; //8
 
 #undef AFTER_EXTRA
 

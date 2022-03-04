@@ -20,6 +20,7 @@
 #include <MC/Tick.hpp>
 #include <MC/Packet.hpp>
 #include <MC/PropertiesSettings.hpp>
+#include <MC/LoopbackPacketSender.hpp>
 
 
 Actor* Level::getEntity(ActorUniqueID uniqueId)
@@ -211,7 +212,6 @@ Container* Level::getContainer(Vec3 pos, int dim)
 }
 
 Actor* Level::getDamageSourceEntity(ActorDamageSource* ads) {
-    char v83;
     ActorUniqueID v6 = ads->getDamagingEntityUniqueID();
     return Global<Level>->getEntity(v6);
 }
@@ -316,7 +316,7 @@ std::vector<Actor*> Level::getAllEntities()
 Player* Level::getPlayer(const string& info) {
     string target{info};
     std::transform(target.begin(), target.end(), target.begin(), ::tolower); //lower case the string
-    int delta = INT_MAX;                                                        //c++ int max
+    size_t delta = UINT64_MAX;                                                  //c++ int max
     Player* found = nullptr;
     Global<Level>->forEachPlayer([&](Player& sp) -> bool {
         Player* p = &sp;
@@ -331,7 +331,7 @@ Player* Level::getPlayer(const string& info) {
         //模糊匹配
         if (pName.find(target) == 0) {
             //0 ís the index where the "target" appear in "pName"
-            int curDelta = pName.length() - target.length();
+            size_t curDelta = pName.length() - target.length();
             if (curDelta == 0) {
                 found = p;
                 return false;
@@ -368,18 +368,18 @@ bool Level::createExplosion(Vec3 pos, int dimId, Actor* source, float radius, bo
     return true;
 }
 
-ItemStack* Level::getItemStackFromId(short a2, int a3) {
-    // TODO: Should item be constructed
-    Item* itemCreate = (Item*)new char[552];
-    Item* item = SymCall("??0Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z", Item*, Item*, string, short)(itemCreate, "", a2);
-    auto* a = (ItemStack*)new char[272];
-    ItemStack* itemStackCreate = SymCall("??0ItemStack@@QEAA@XZ", ItemStack*, ItemStack*)(a);
-    ItemStack* itemStack = SymCall("??0ItemStack@@QEAA@AEBVItem@@HH@Z", ItemStack*, ItemStack*, Item &, int, int)(itemStackCreate, *item, 1, a3);
-    return itemStack;
+#include <MC/ItemRegistry.hpp>
+ItemStack* Level::getItemStackFromId(short itemId, int aux) {
+    auto item = ItemRegistry::getItem(itemId);
+    if (item)
+        return new ItemStack(*item, 1, aux);
+    return nullptr;
 }
 
 void Level::broadcastText(const string& a1, TextType ty) 
 {
+    if (!Global<Level>)
+        return;
     Global<Level>->forEachPlayer([&](Player& sp) -> bool {
         sp.sendTextPacket(a1, ty);
         return true;
@@ -388,6 +388,8 @@ void Level::broadcastText(const string& a1, TextType ty)
 
 void Level::broadcastTitle(const string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration)
 {
+    if (!Global<Level>)
+        return;
     Global<Level>->forEachPlayer([&](Player& sp) -> bool {
         sp.sendTitlePacket(text, Type, FadeInDuration, RemainDuration, FadeOutDuration);
         return true;
@@ -396,10 +398,11 @@ void Level::broadcastTitle(const string& text, TitleType Type, int FadeInDuratio
 
 void Level::sendPacketForAllPlayer(Packet& pkt)
 {
-    Global<Level>->forEachPlayer([&](Player& sp) -> bool {
-        sp.sendNetworkPacket(pkt);
-        return true;
-    });
+    if (!Global<Level>)
+        return;
+    auto sender = (LoopbackPacketSender*)Global<Level>->getPacketSender();
+    if (sender)
+        return sender->sendBroadcast(pkt);
 }
 
 std::string Level::getCurrentLevelName()
