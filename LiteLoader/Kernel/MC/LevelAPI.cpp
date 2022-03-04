@@ -368,14 +368,12 @@ bool Level::createExplosion(Vec3 pos, int dimId, Actor* source, float radius, bo
     return true;
 }
 
-ItemStack* Level::getItemStackFromId(short a2, int a3) {
-    // TODO: Should item be constructed
-    Item* itemCreate = (Item*)new char[552];
-    Item* item = SymCall("??0Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z", Item*, Item*, string, short)(itemCreate, "", a2);
-    auto* a = (ItemStack*)new char[272];
-    ItemStack* itemStackCreate = SymCall("??0ItemStack@@QEAA@XZ", ItemStack*, ItemStack*)(a);
-    ItemStack* itemStack = SymCall("??0ItemStack@@QEAA@AEBVItem@@HH@Z", ItemStack*, ItemStack*, Item &, int, int)(itemStackCreate, *item, 1, a3);
-    return itemStack;
+#include <MC/ItemRegistry.hpp>
+ItemStack* Level::getItemStackFromId(short itemId, int aux) {
+    auto item = ItemRegistry::getItem(itemId);
+    if (item)
+        return new ItemStack(*item, 1, aux);
+    return nullptr;
 }
 
 void Level::broadcastText(const string& a1, TextType ty) 

@@ -373,9 +373,10 @@ public:
     {
         return *get();
     }
-    //inline operator ->() {
-
-    //}
+    inline operator bool() const
+    {
+        return get() != nullptr;
+    }
 };
 
 template <typename T>
