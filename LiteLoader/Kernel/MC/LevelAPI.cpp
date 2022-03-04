@@ -20,6 +20,7 @@
 #include <MC/Tick.hpp>
 #include <MC/Packet.hpp>
 #include <MC/PropertiesSettings.hpp>
+#include <MC/LoopbackPacketSender.hpp>
 
 
 Actor* Level::getEntity(ActorUniqueID uniqueId)
@@ -379,6 +380,8 @@ ItemStack* Level::getItemStackFromId(short a2, int a3) {
 
 void Level::broadcastText(const string& a1, TextType ty) 
 {
+    if (!Global<Level>)
+        return;
     Global<Level>->forEachPlayer([&](Player& sp) -> bool {
         sp.sendTextPacket(a1, ty);
         return true;
@@ -387,6 +390,8 @@ void Level::broadcastText(const string& a1, TextType ty)
 
 void Level::broadcastTitle(const string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration)
 {
+    if (!Global<Level>)
+        return;
     Global<Level>->forEachPlayer([&](Player& sp) -> bool {
         sp.sendTitlePacket(text, Type, FadeInDuration, RemainDuration, FadeOutDuration);
         return true;
@@ -395,10 +400,11 @@ void Level::broadcastTitle(const string& text, TitleType Type, int FadeInDuratio
 
 void Level::sendPacketForAllPlayer(Packet& pkt)
 {
-    Global<Level>->forEachPlayer([&](Player& sp) -> bool {
-        sp.sendNetworkPacket(pkt);
-        return true;
-    });
+    if (!Global<Level>)
+        return;
+    auto sender = (LoopbackPacketSender*)Global<Level>->getPacketSender();
+    if (sender)
+        return sender->sendBroadcast(pkt);
 }
 
 std::string Level::getCurrentLevelName()
