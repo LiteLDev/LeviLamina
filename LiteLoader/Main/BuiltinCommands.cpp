@@ -392,7 +392,7 @@ public:
         registry->registerOverload<LLCommand>(
             "ll",
             makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_FreeFilePath").addOptions((CommandParameterOption)1),
-            makeMandatory<CommandParameterDataType::NORMAL>(&LLCommand::pluginNameToDoOperation, "PluginPath", nullptr, &LLCommand::hasPluginNameSet));
+            makeMandatory<CommandParameterDataType::NORMAL>(&LLCommand::pluginNameToDoOperation, "pluginPath", nullptr, &LLCommand::hasPluginNameSet));
 
         // ll unload
         registry->addEnum<Operation>("Operation_MustPluginName", {
@@ -401,7 +401,7 @@ public:
         registry->registerOverload<LLCommand>(
             "ll",
             makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_MustPluginName").addOptions((CommandParameterOption)1),
-            makeMandatory<CommandParameterDataType::SOFT_ENUM>((std::string LLCommand::*)&LLCommand::pluginNameToDoOperation, "PluginName", "PluginName", &LLCommand::hasPluginNameSet));
+            makeMandatory<CommandParameterDataType::SOFT_ENUM>((std::string LLCommand::*)&LLCommand::pluginNameToDoOperation, "pluginName", "PluginName", &LLCommand::hasPluginNameSet));
 
         // ll list & reload
         registry->addEnum<Operation>("Operation_OptionalPluginName", {
@@ -412,7 +412,7 @@ public:
         registry->registerOverload<LLCommand>(
             "ll",
             makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_OptionalPluginName").addOptions((CommandParameterOption)1),
-            makeOptional<CommandParameterDataType::SOFT_ENUM>((std::string LLCommand::*)&LLCommand::pluginNameToDoOperation, "PluginName", "Name of plugin", &LLCommand::hasPluginNameSet));
+            makeOptional<CommandParameterDataType::SOFT_ENUM>((std::string LLCommand::*)&LLCommand::pluginNameToDoOperation, "pluginName", "PluginName", &LLCommand::hasPluginNameSet));
 
         // ll upgrade
         registry->addEnum<Operation>("Operation_WithOption", {
