@@ -175,16 +175,25 @@ inline bool Interval(int a1)
     if (a1 < 0x5ffffff && a1 > -0x5ffffff) return true;
     return false;
 }
-TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NV?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z",
-    BlockPos& a1, int a2, bool a3, std::function<void(class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)> a4)
+template <typename T>
+inline bool validPosition(T const& pos)
 {
-    if (Interval(a1.x) && Interval(a1.y) && Interval(a1.z))
+    return Interval(static_cast<int>(pos.x)) && Interval(static_cast<int>(pos.y)) && Interval(static_cast<int>(pos.z));
+}
+TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NV?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z",
+    BlockPos const& a1, int a2, bool a3, std::function<void(class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)> a4)
+{
+    if (validPosition(a1))
         return original(this, a1, a2, a3, a4);
     Player* pl = movingViewPlayer;
     if (pl->isPlayer())
     {
         logger.warn << "Player(" << pl->getRealName() << ") sent invalid MoveView Packet!" << Logger::endl;
-        pl->setPos(pl->getPosOld());
+        auto& pos = pl->getPosOld();
+        if (validPosition(pos))
+            pl->setPos(pl->getPosOld());
+        else
+            pl->setPos(Global<Level>->getDefaultSpawn().bottomCenter());
     }
     return 0;
 }
