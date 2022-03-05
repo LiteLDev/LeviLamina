@@ -29,7 +29,7 @@ bool LL::PluginManager::registerPlugin(HMODULE handler, std::string name, std::s
                 return data.second.handler == handler;
             });                           
         }
-        else if (getPlugin(name) != nullptr) {          
+        else if (getPlugin(name) != nullptr) {
             return false;                                      //Reject overwriting other's data
         }
     }
@@ -165,8 +165,15 @@ bool LL::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
         auto lib = LoadLibrary(str2wstr(pluginFilePath).c_str());
         if (lib)
         {
-            if (getPlugin(lib) == nullptr)
-                RegisterPlugin(lib, pluginFileName, pluginFileName, LL::Version(1, 0, 0), {});
+            if (getPlugin(lib) == nullptr) {
+                if (!RegisterPlugin(lib, pluginFileName, pluginFileName, LL::Version(1, 0, 0), {}))
+                {
+                    logger.error("Failed to register plugin {}!", pluginFilePath);
+                    if (getPlugin(pluginFileName))
+                        logger.error("A plugin named {} has been registered", pluginFileName);
+                    return false;
+                }
+            };
         }
         else
         {
@@ -175,6 +182,8 @@ bool LL::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
             return false;
         }
 
+        if (!getPlugin(lib))
+            return false;
         //  Call onPostInit
         auto fn = GetProcAddress(getPlugin(lib)->handler, "onPostInit");
         if (fn) {

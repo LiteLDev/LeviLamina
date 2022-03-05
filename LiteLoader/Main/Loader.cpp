@@ -123,7 +123,12 @@ void LL::LoadMain() {
             logger.info("Plugin <{}> loaded", pluginFileName);
 
             if (PluginManager::getPlugin(lib) == nullptr) {
-                RegisterPlugin(lib, pluginFileName, pluginFileName, LL::Version(1, 0, 0), {});
+                if (!RegisterPlugin(lib, pluginFileName, pluginFileName, LL::Version(1, 0, 0), {}))
+                {
+                    logger.error("Failed to register plugin {}!", path.u8string());
+                    if (getPlugin(pluginFileName))
+                        logger.error("A plugin named {} has been registered", pluginFileName);
+                }
             }
         }
         else
