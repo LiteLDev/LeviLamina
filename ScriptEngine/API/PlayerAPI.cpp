@@ -684,12 +684,25 @@ Local<Value> PlayerClass::talkAs(const Arguments& args)
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
     try {
-        Player* target = nullptr;
-        if (args.size() > 1) {
-            if (IsInstanceOf<PlayerClass>(args[1])) {
-                target = PlayerClass::extract(args[1]);
-            }
-        }
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        player->sendTextTalkPacket(args[0].toStr(), nullptr);
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in talkAs!");
+}
+
+Local<Value> PlayerClass::talkTo(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+
+    try {
+        Player* target = PlayerClass::extract(args[1]);
+        if (!target)
+            return Local<Value>();
         Player* player = get();
         if (!player)
             return Local<Value>();
@@ -697,7 +710,7 @@ Local<Value> PlayerClass::talkAs(const Arguments& args)
         player->sendTextTalkPacket(args[0].toStr(), target);
         return Boolean::newBoolean(true);
     }
-    CATCH("Fail in talkAs!");
+    CATCH("Fail in talkTo!");
 }
 
 Local<Value> PlayerClass::getHand(const Arguments& args)

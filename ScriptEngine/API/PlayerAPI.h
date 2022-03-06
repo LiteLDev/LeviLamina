@@ -48,6 +48,7 @@ public:
     Local<Value> kick(const Arguments& args);
     Local<Value> tell(const Arguments& args);
     Local<Value> talkAs(const Arguments& args);
+    Local<Value> talkTo(const Arguments& args);
     Local<Value> rename(const Arguments& args);
     Local<Value> transServer(const Arguments& args);
     Local<Value> crash(const Arguments& args);
