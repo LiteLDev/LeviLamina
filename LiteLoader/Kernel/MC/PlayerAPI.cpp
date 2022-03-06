@@ -651,7 +651,7 @@ bool Player::sendTextTalkPacket(const string& msg)
 bool Player::sendTextTalkPacket(const string& msg, Player* target)
 {
     auto packet = TextPacket::createChat(getName(), msg, getXuid(), "");
-    if (player == nullptr)
+    if (target == nullptr)
     {
         Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), packet);
         return true;
@@ -671,7 +671,7 @@ bool Player::sendTextTalkPacket(const string& msg, Player* target)
         logger.error("In Event: PlayerChatEvent");
         PrintCurrentStackTraceback();
     }
-    player->sendNetworkPacket(packet);
+    target->sendNetworkPacket(packet);
     return true;
 }
 
