@@ -53,18 +53,23 @@ void PluginInit()
 
 ```javascript
 //注册关服命令
-mc.regPlayerCmd("stop","关闭服务器", (pl,args) => {
-    //鉴权
-    if(!pl.isOP())
-        return true;
-    pl.tell("停服命令执行成功",1);
-    mc.broadcast("玩家" + pl.realName + "执行停服命令。服务器将在5秒之后关闭");
-    
-    //执行关服命令
-    setTimeout(() => {
-        mc.runcmd("stop");
-    },5000);
-},1);
+mc.listen("onServerStarted", () => {
+    const cmd = mc.newCommand("关服", "关闭服务器", PermType.GameMasters);
+    cmd.overload();
+    cmd.setCallback((_cmd, ori, out, _res) => {
+        const pl = ori.player;
+        //鉴权
+        if (!pl.isOP()) return;
+        out.success("停服命令执行成功");
+        mc.broadcast(`玩家${pl.realName}执行停服命令。服务器将在5秒之后关闭`);
+
+        //执行关服命令
+        setTimeout(() => {
+            mc.runcmd("stop");
+        }, 5000);
+    });
+    cmd.setup();
+});
 ```
 
 <br/>
