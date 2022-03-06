@@ -84,7 +84,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("getArmor", &PlayerClass::getArmor)
         .instanceFunction("getEnderChest", &PlayerClass::getEnderChest)
         .instanceFunction("getRespawnPosition",&PlayerClass::getRespawnPosition)
-        .instanceFunction("setRespawnPosition",&PlayerClass::getRespawnPosition)
+        .instanceFunction("setRespawnPosition",&PlayerClass::setRespawnPosition)
         .instanceFunction("refreshItems", &PlayerClass::refreshItems)
 
         .instanceFunction("getScore", &PlayerClass::getScore)
