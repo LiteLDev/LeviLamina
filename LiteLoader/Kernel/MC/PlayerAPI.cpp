@@ -645,11 +645,33 @@ bool Player::sendCommandRequestPacket(const string& cmd)
 
 bool Player::sendTextTalkPacket(const string& msg) 
 {
-    auto packet = MinecraftPackets::createPacket(0x09);
-    dAccess<unsigned char, 48>(packet.get()) = 1;
-    dAccess<string, 56>(packet.get()) = "";
-    dAccess<string, 88>(packet.get()) = msg;
-    Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((TextPacket*)packet.get()));
+    return sendTextTalkPacket(msg, nullptr);
+}
+#include <Utils/DbgHelper.h>
+bool Player::sendTextTalkPacket(const string& msg, Player* target)
+{
+    auto packet = TextPacket::createChat(getName(), msg, getXuid(), "");
+    if (player == nullptr)
+    {
+        Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), packet);
+        return true;
+    }
+    try
+    {
+        Event::PlayerChatEvent ev;
+        ev.mMessage = msg;
+        ev.mPlayer = this;
+        if (!ev.call())
+            return false;
+    }
+    catch (...)
+    {
+        logger.error("Event Callback Failed!");
+        logger.error("Uncaught Exception Detected!");
+        logger.error("In Event: PlayerChatEvent");
+        PrintCurrentStackTraceback();
+    }
+    player->sendNetworkPacket(packet);
     return true;
 }
 

@@ -22,7 +22,7 @@ std::unordered_map<std::string, const char*> const colorCodeToConsoleMap = {
     {"§e", "\x1b[38;2;255;255;085m"}, //YELLOW
     {"§f", "\x1b[38;2;255;255;255m"}, //WHITE
     {"§g", "\x1b[38;2;221;214;005m"}, //MINECOIN_GOLD
-    {"§", ""},                        //ESCAPE
+    //{"§", ""},                        //ESCAPE
     {"§l", "\x1b[1m"},                //BOLD
     {"§o", "\x1b[3m"},                //ITALIC
     {"§k", ""},                       //OBFUSCATED
