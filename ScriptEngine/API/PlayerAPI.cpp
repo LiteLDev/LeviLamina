@@ -684,11 +684,17 @@ Local<Value> PlayerClass::talkAs(const Arguments& args)
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
     try {
+        Player* target = nullptr;
+        if (args.size() > 1) {
+            if (IsInstanceOf<PlayerClass>(args[1])) {
+                target = PlayerClass::extract(args[1]);
+            }
+        }
         Player* player = get();
         if (!player)
             return Local<Value>();
 
-        player->sendTextTalkPacket(args[0].toStr());
+        player->sendTextTalkPacket(args[0].toStr(), target);
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in talkAs!");
