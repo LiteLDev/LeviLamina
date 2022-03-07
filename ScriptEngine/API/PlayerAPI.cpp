@@ -820,7 +820,6 @@ Local<Value> PlayerClass::setRespawnPosition(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument in GetBlock!");
                 logger.error("Wrong type of argument in setRespawnPosition!");
                 return Local<Value>();
             }
