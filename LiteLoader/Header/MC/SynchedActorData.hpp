@@ -136,6 +136,9 @@ class SynchedActorData {
 #define AFTER_EXTRA
 // Add Member There
 public:
+    template <typename T>
+    MCAPI void set(unsigned short id, T const& val);
+
 
 #undef AFTER_EXTRA
 
