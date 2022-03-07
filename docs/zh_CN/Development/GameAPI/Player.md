@@ -384,6 +384,19 @@ pl.rename("newname");
 
 <br>
 
+#### 修改玩家的重生坐标  
+
+`mc.setRespawnPosition(pos)`  
+`mc.setRespawnPosition(x,y,z,dimid)`
+
+- 参数：
+  - pos : `IntPos`  
+    重生坐标（或者使用x, y, z, dimid来确定重生位置）
+- 返回值：是否成功修改
+- 返回值类型：`Boolean`
+
+<br>
+
 #### 给予玩家一个物品
 
 `pl.giveItem(item)`

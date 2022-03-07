@@ -68,6 +68,7 @@ public:
     Local<Value> getArmor(const Arguments& args);
     Local<Value> getEnderChest(const Arguments& args);
     Local<Value> getRespawnPosition(const Arguments& args);
+    Local<Value> setRespawnPosition(const Arguments& args);
     Local<Value> refreshItems(const Arguments& args);
 
     Local<Value> getScore(const Arguments& args);

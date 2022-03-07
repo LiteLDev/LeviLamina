@@ -84,6 +84,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("getArmor", &PlayerClass::getArmor)
         .instanceFunction("getEnderChest", &PlayerClass::getEnderChest)
         .instanceFunction("getRespawnPosition",&PlayerClass::getRespawnPosition)
+        .instanceFunction("setRespawnPosition",&PlayerClass::setRespawnPosition)
         .instanceFunction("refreshItems", &PlayerClass::refreshItems)
 
         .instanceFunction("getScore", &PlayerClass::getScore)
@@ -783,6 +784,64 @@ Local<Value> PlayerClass::getRespawnPosition(const Arguments& args)
         return IntPos::newPos(position.first,position.second);
     }
     CATCH("Fail in getRespawnPosition!")
+}
+
+Local<Value> PlayerClass::setRespawnPosition(const Arguments& args)
+{
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        IntVec4 pos;
+        if (args.size() == 1)
+        {
+            // IntPos
+            if (IsInstanceOf<IntPos>(args[0]))
+            {
+                // IntPos
+                IntPos* posObj = IntPos::extractPos(args[0]);
+                if (posObj->dim < 0)
+                    return Boolean::newBoolean(false);
+                else
+                {
+                    pos = *posObj;
+                }
+            }
+            else if (IsInstanceOf<FloatPos>(args[0]))
+            {
+                // FloatPos
+                FloatPos* posObj = FloatPos::extractPos(args[0]);
+                if (posObj->dim < 0)
+                    return Boolean::newBoolean(false);
+                else
+                {
+                    pos = posObj->toIntVec4();
+                }
+            }
+            else
+            {
+                logger.error("Wrong type of argument in setRespawnPosition!");
+                return Local<Value>();
+            }
+        }
+        else if (args.size() == 4)
+        {
+            // Number Pos
+            CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
+            pos = {args[0].toInt(), args[1].toInt(), args[2].toInt(), args[3].toInt()};
+        }
+        else
+        {
+            logger.error("Wrong number of arguments in setRespawnPosition!");
+            return Local<Value>();
+        }
+        player->setRespawnPosition(pos.getBlockPos(), pos.dim);
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setRespawnPosition!")
 }
 
 Local<Value> PlayerClass::refreshItems(const Arguments& args)

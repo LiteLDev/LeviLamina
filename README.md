@@ -55,18 +55,25 @@ void PluginInit()
 #### Script language sample plugin (Use Js as an example)
 ```javascript
 //Register for shutdown command
-mc.regPlayerCmd("stop","close server", (pl,args) => {
-    //Check for Permissions
-    if(!pl.isOP())
-        return true;
-    pl.tell("stop command executed successfully",1);
-    mc.broadcast("Player" + pl.realName + "Execute the stop command. The server will be shut down after 5 seconds");
-    
-    //Execute stop command
-    setTimeout(() => {
-        mc.runcmd("stop");
-    },5000);
-},1);
+mc.listen("onServerStarted", () => {
+    const cmd = mc.newCommand("stopsvr", "close server", PermType.GameMasters);
+    cmd.overload();
+    cmd.setCallback((_cmd, ori, out, _res) => {
+        const pl = ori.player;
+        //Check for Permissions
+        if (!pl.isOP()) return;
+        out.success("stop command executed successfully");
+        mc.broadcast(
+            `Player${pl.realName}Execute the stop command. The server will be shut down after 5 seconds`
+        );
+
+        //Execute stop command
+        setTimeout(() => {
+            mc.runcmd("stop");
+        }, 5000);
+    });
+    cmd.setup();
+});
 ```
 
 <br/>
@@ -200,8 +207,8 @@ Code hint, auto-completion, auto-documentation, error alert, runtime debugging .
 
 ![LXLDevHelper](docs/assets/LXLDevHelper.gif)
 
-[点击这里](https://www.minebbs.com/resources/lxldevhelper.2672/)
-查看扩展说明与介绍  
+[Click here](https://www.minebbs.com/resources/lxldevhelper.2672/)
+View more description and introduction of this extension  
 VSCode extension store search `LXL`, install **LXLDevHelper** and experience it instantly!
 
 <br>
