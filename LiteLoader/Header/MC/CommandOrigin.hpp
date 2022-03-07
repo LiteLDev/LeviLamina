@@ -8,6 +8,7 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 class ServerPlayer;
+enum CommandOriginType : char;
 
 #undef BEFORE_EXTRA
 
