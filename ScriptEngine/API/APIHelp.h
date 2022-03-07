@@ -182,6 +182,71 @@ struct EnumDefineBuilder
     {
         return Number::newNumber(static_cast<int>(val));
     }
+    inline static Local<Value> keys()
+    {
+        try
+        {
+            auto arr = Array::newArray();
+            for (auto& name : magic_enum::enum_names<Type>())
+            {
+                arr.add(String::newString(name));
+            }
+            return arr;
+        }
+        catch (const std::exception&)
+        {
+            logger.error("Error in " __FUNCTION__);
+        }
+        return Local<Value>();
+    }
+    inline static Local<Value> toObject()
+    {
+        try
+        {
+            auto obj = Object::newObject();
+            for (auto& [value, name] : magic_enum::enum_entries<Type>())
+            {
+                obj.set(String::newString(name), Number::newNumber((int)value));
+            }
+            return obj;
+        }
+        catch (const std::exception&)
+        {
+            logger.error("Error in " __FUNCTION__);
+        }
+        return Local<Value>();
+    }
+    inline static Local<Value> getName(const Arguments& args)
+    {
+        try
+        {
+            if (args.size() < 1)
+                return Local<Value>();
+            if (args[0].isString())
+                return magic_enum::enum_cast<Type>(args[0].toStr()).has_value() ? args[0] : Local<Value>();
+            if (args[0].isNumber())
+                return String::newString(magic_enum::enum_name(static_cast<Type>(args[0].toInt())));
+            return Local<Value>();
+        }
+        catch (const std::exception&)
+        {
+            logger.error("Error in " __FUNCTION__);
+        }
+        return Local<Value>();
+    }
+
+    inline static Local<Value> toString()
+    {
+        try
+        {
+            return String::newString(typeid(Type).name()+5);
+        }
+        catch (const std::exception&)
+        {
+            logger.error("Error in " __FUNCTION__);
+        }
+        return Local<Value>();
+    }
     template <Type val, std::enable_if_t<std::is_enum_v<Type>, char> max = static_cast<char>(*magic_enum::enum_values<Type>().rbegin())>
     inline static void buildBuilder(script::ClassDefineBuilder<void>& builder)
     {
@@ -189,17 +254,37 @@ struct EnumDefineBuilder
             return;
         if constexpr (!magic_enum::enum_name(val).empty())
         {
-            //fmt::print("{} = {},\n", magic_enum::enum_name(val), static_cast<int>(val));
+            fmt::print("{} = {},\n", magic_enum::enum_name(val), static_cast<int>(val));
             builder.property(magic_enum::enum_name(val).data(), &serialize<val>);
         }
         buildBuilder<static_cast<Type>((static_cast<char>(val) + 1)), max>(builder);
     }
     template <std::enable_if_t<std::is_enum_v<Type>, char> max = static_cast<char>(*magic_enum::enum_values<Type>().rbegin())>
-    inline static ClassDefine<void> build(std::string const& name)
+    inline static ClassDefine<void> build(std::string const& enumName)
     {
-        script::ClassDefineBuilder<void> builder = defineClass(name);
-        //fmt::print("枚举 {} 可能取值：\n", name);
-        buildBuilder<*magic_enum::enum_values<Type>().begin(), max>(builder);
+        script::ClassDefineBuilder<void> builder = defineClass(enumName);
+        //fmt::print("枚举 {} 可能取值：\n", enumName);
+        //buildBuilder<*magic_enum::enum_values<Type>().begin(), max>(builder);
+
+        for (auto& [val, name] : magic_enum::enum_entries<Type>())
+        {
+            //fmt::print("{} = {},\n", name, static_cast<int>(val));
+            builder.property(std::string(name), [=]() -> Local<Value> {
+                try
+                {
+                    return Number::newNumber(static_cast<int>(val));
+                }
+                catch (const std::exception&)
+                {
+                    logger.error("Error in get {}.{}", enumName, name);
+                }
+                return Local<Value>();
+            });
+        }
+
+        builder.property("keys", &keys);
+        //builder.property("object", &toObject);
+        builder.function("getName", &getName);
         //fmt::print("\n");
         return builder.build();
     }
