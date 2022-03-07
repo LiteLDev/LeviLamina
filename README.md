@@ -208,7 +208,7 @@ Code hint, auto-completion, auto-documentation, error alert, runtime debugging .
 ![LXLDevHelper](docs/assets/LXLDevHelper.gif)
 
 [Click here](https://www.minebbs.com/resources/lxldevhelper.2672/)
-View extended description and introduction  
+View more description and introduction of this extension  
 VSCode extension store search `LXL`, install **LXLDevHelper** and experience it instantly!
 
 <br>
