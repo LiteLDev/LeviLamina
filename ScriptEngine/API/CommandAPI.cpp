@@ -462,6 +462,55 @@ Local<Value> CommandClass::addOverload(const Arguments& args)
     CATCH("Fail in addOverload!")
 }
 
+std::nullptr_t onExecute(DynamicCommand const& command, CommandOrigin const& origin, CommandOutput& output,
+               std::unordered_map<std::string, DynamicCommand::Result>& results)
+{
+    auto instance = command.getInstance();
+    auto& commandName = instance->getCommandName();
+    if (localShareData->commandCallbacks.find(commandName) == localShareData->commandCallbacks.end())
+    {
+        logger.warn("Command {} failed to execute, is the plugin unloaded?", commandName);
+        return nullptr;
+    }
+    EngineScope enter(localShareData->commandCallbacks[commandName].fromEngine);
+    try
+    {
+        Local<Object> args = Object::newObject();
+        auto cmd = CommandClass::newCommand(const_cast<DynamicCommandInstance*>(instance));
+        auto ori = CommandOriginClass::newCommandOrigin(&origin);
+        auto outp = CommandOutputClass::newCommandOutput(&output);
+        for (auto& [name, param] : results)
+            args.set(name, convertResult(param));
+        localShareData->commandCallbacks[commandName].func.get().call({}, cmd, ori, outp, args);
+    }
+    CATCH_C("Fail in executing command \"" + commandName + "\"!")
+    return nullptr;
+}
+
+// not complete
+std::nullptr_t onExecute2(DynamicCommand const& command, CommandOrigin const& origin, CommandOutput& output,
+               std::unordered_map<std::string, DynamicCommand::Result>& results)
+{
+    auto instance = command.getInstance();
+    auto& commandName = instance->getCommandName();
+    if (localShareData->commandCallbacks.find(commandName) == localShareData->commandCallbacks.end())
+    {
+        logger.warn("Command {} failed to execute, is the plugin unloaded?", commandName);
+        return nullptr;
+    }
+    EngineScope enter(localShareData->commandCallbacks[commandName].fromEngine);
+    try
+    {
+        //auto ctx = CommandContextClass::newCommandContext(&command, &origin, &output, &results);
+        //Local<Object> args = Object::newObject();
+        //for (auto& [name, param] : results)
+        //    args.set(name, convertResult(param));
+        //localShareData->commandCallbacks[commandName].func.get().call({}, ctx, args);
+    }
+    CATCH_C("Fail in executing command \"" + commandName + "\"!")
+    return nullptr;
+}
+
 // function (command, origin, output, results){}
 Local<Value> CommandClass::setCallback(const Arguments& args)
 {
@@ -475,39 +524,21 @@ Local<Value> CommandClass::setCallback(const Arguments& args)
         localShareData->commandCallbacks[commandName] = {EngineScope::currentEngine(), 0, script::Global<Function>(func)};
         if (registered)
             return Boolean::newBoolean(true);
-        get()->setCallback(
-            [](DynamicCommand const& command, CommandOrigin const& origin, CommandOutput& output,
-               std::unordered_map<std::string, DynamicCommand::Result>& results) {
-                auto instance = command.getInstance();
-                auto& commandName = instance->getCommandName();
-                if (localShareData->commandCallbacks.find(commandName) == localShareData->commandCallbacks.end())
-                {
-                    logger.warn("Command {} failed to execute, is the plugin unloaded?", commandName);
-                    return nullptr;
-                }
-                EngineScope enter(localShareData->commandCallbacks[commandName].fromEngine);
-                try
-                {
-                    Local<Object> args = Object::newObject();
-                    auto cmd = CommandClass::newCommand(const_cast<DynamicCommandInstance*>(instance));
-                    auto ori = CommandOriginClass::newCommandOrigin(&origin);
-                    auto outp = CommandOutputClass::newCommandOutput(&output);
-                    for (auto& [name, param] : results)
-                        args.set(name, convertResult(param));
-                    localShareData->commandCallbacks[commandName].func.get().call({}, cmd, ori, outp, args);
-                }
-                CATCH_C("Fail in executing command \"" + commandName + "\"!")
-                return nullptr;
-            });
+        get()->setCallback(onExecute);
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in setCallback!")
 }
 
+// setup(Function<Command, Origin, Output, Map<String, Any>>)
 Local<Value> CommandClass::setup(const Arguments& args)
 {
     try
     {
+        if (args.size() > 0)
+        {
+            setCallback(args);
+        }
         if (registered)
             return Boolean::newBoolean(true);
         return Boolean::newBoolean(DynamicCommand::setup(std::move(uptr)));
