@@ -495,6 +495,9 @@ public:
     //// unordered_map{ enumName, pair{ enumIndex, enumConstraint } }
     //std::unordered_map<std::string_view, std::pair<size_t, SemanticConstraint>> enumConstraints = {};
 
+    // SoftEnum
+    mutable std::unordered_map<std::string, std::vector<std::string>> softEnums;
+
     std::vector<DynamicCommand::ParameterData> parameterDatas = {};
 
 private:
@@ -509,6 +512,7 @@ private:
 
     LIAPI bool setBuilder(DynamicCommand::BuilderFn builder);
     LIAPI DynamicCommand::BuilderFn initCommandBuilder();
+    LIAPI std::vector<CommandParameterData> buildOverload(std::vector<ParameterIndex> const& overload);
 
 public:
     virtual ~DynamicCommandInstance();
@@ -532,7 +536,6 @@ public:
     LIAPI bool addOverload(std::vector<char const*>&& params);
     LIAPI bool addOverload(std::vector<DynamicCommand::ParameterData>&& params);
     LIAPI bool setAlias(std::string const& alias);
-    LIAPI std::vector<CommandParameterData> buildOverload(std::vector<ParameterIndex> const& overload);
     LIAPI void setCallback(DynamicCommand::CallBackFn&& callback) const;
     LIAPI void removeCallback() const;
     //LIAPI static bool updateSoftEnum(std::string const& name = "") const;

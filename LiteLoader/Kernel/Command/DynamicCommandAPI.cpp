@@ -61,6 +61,7 @@ namespace
 {
 //static std::string latestAllocateName = "";
 std::unordered_map<std::string, std::unique_ptr<DynamicCommandInstance>> dynamicCommandInstances;
+std::vector<std::unique_ptr<DynamicCommandInstance>> delaySetupCommandInstances;
 
 using Result = DynamicCommand::Result;
 using ParameterType = DynamicCommand::ParameterType;
@@ -659,9 +660,28 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(std:
 {
     return DynamicCommandInstance::create(name, description, permission, flag1 |= flag2, handler);
 }
-
+#include <LLAPI.h>
+#include <EventAPI.h>
+#include <LiteLoader/Main/Config.h>
 DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class DynamicCommandInstance> commandInstance)
 {
+    if (LL::globalConfig.serverStatus == LL::LLServerStatus::Starting)
+    {
+        bool first = delaySetupCommandInstances.size() == 0;
+        auto& uptr = delaySetupCommandInstances.emplace_back(std::move(commandInstance));
+        if (first)
+        {
+            Event::ServerStartedEvent::subscribe_ref([](Event::ServerStartedEvent&) -> bool {
+                for (auto& command : delaySetupCommandInstances)
+                {
+                    DynamicCommand::setup(std::move(command));
+                };
+                delaySetupCommandInstances.clear();
+                return true;
+            });
+        }
+        return uptr.get();
+    }
     if (!commandInstance)
         return false;
     if (!commandInstance->callback)
@@ -669,6 +689,33 @@ DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class Dynami
     if (commandInstance->overloads.empty())
         return false;
     //commandInstance->updateSoftEnum();
+
+    for (auto& param : commandInstance->parameterDatas) 
+    {
+        if (param.type == ParameterType::Enum)
+        {
+            if (commandInstance->enumRanges.count(param.description) == 0)
+            {
+                auto namesInBds = CommandRegistry::getEnumNames();
+                auto iter = std::find(namesInBds.begin(), namesInBds.end(), param.description);
+                if (iter == namesInBds.end())
+                    throw("Enum " + std::string(param.description) + "not found in command and BDS");
+#ifndef USE_PARSE_ENUM_STRING_ // fix Enum
+                commandInstance->setEnum(*iter, CommandRegistry::getEnumValues(*iter));
+#endif // USE_PARSE_ENUM_STRING
+            }
+        }
+        else if (param.type == ParameterType::SoftEnum)
+        {
+            if (commandInstance->softEnums.count(param.description) == 0)
+            {
+                auto namesInBds = CommandRegistry::getSoftEnumNames();
+                auto iter = std::find(namesInBds.begin(), namesInBds.end(), param.description);
+                if (iter == namesInBds.end())
+                    commandInstance->setSoftEnum(param.description, {});
+            }
+        }
+    }
     auto namesInBds = CommandRegistry::getEnumNames();
     std::unordered_map<std::string_view, std::pair<size_t, size_t>> convertedEnumRanges;
     for (auto& [name, range] : commandInstance->enumRanges)
@@ -712,6 +759,11 @@ DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class Dynami
 #endif // USE_PARSE_ENUM_STRING
     }
     commandInstance->enumRanges.swap(convertedEnumRanges);
+
+    for (auto& [name, values] : commandInstance->softEnums)
+    {
+        Global<CommandRegistry>->addSoftEnum(name, values);
+    }
 
     Global<CommandRegistry>->registerCommand(commandInstance->name, commandInstance->description->c_str(), commandInstance->permission, commandInstance->flag, commandInstance->flag);
     if (!commandInstance->alias.empty())
@@ -880,26 +932,6 @@ ParameterIndex DynamicCommandInstance::newParameter(DynamicCommand::ParameterDat
                                              [&](DynamicCommand::ParameterData const& data) { return data.identifier == identifier; }))
         throw std::runtime_error("parameter identifier already exists");
     data.offset = offset;
-    if (data.type == ParameterType::Enum)
-    {
-        auto namesInBds = CommandRegistry::getEnumNames();
-        if (enumRanges.count(data.description) == 0)
-        {
-            auto iter = std::find(namesInBds.begin(), namesInBds.end(), data.description);
-            if (iter == namesInBds.end())
-                throw("Enum " + std::string(data.description) + "not found in command and BDS");
-#ifndef USE_PARSE_ENUM_STRING_ // fix Enum
-            setEnum(*iter, CommandRegistry::getEnumValues(*iter));
-#endif // USE_PARSE_ENUM_STRING
-        }
-    }
-    else if (data.type == ParameterType::SoftEnum)
-    {
-        auto namesInBds = getSoftEnumNames();
-        auto iter = std::find(namesInBds.begin(), namesInBds.end(), data.description);
-        if (iter == namesInBds.end())
-            setSoftEnum(data.description, {});
-    }
     parameterDatas.emplace_back(std::move(data));
     return {this, parameterDatas.size() - 1};
 }
@@ -1014,29 +1046,74 @@ inline std::vector<CommandParameterData> DynamicCommandInstance::buildOverload(s
 //}
 std::string DynamicCommandInstance::setSoftEnum(std::string const& name, std::vector<std::string> const& values) const
 {
-    auto names = CommandRegistry::getSoftEnumNames();
-    if (std::find(names.begin(), names.end(), name) == names.end())
+    if (!hasRegistered())
     {
-        Global<CommandRegistry>->addSoftEnum(name, values);
-        return name;
+        softEnums.emplace(name, values);
     }
-    CommandSoftEnumRegistry(Global<CommandRegistry>).updateSoftEnum(SoftEnumUpdateType::Set, name, values);
+    else
+    {
+        if (!Global<CommandRegistry>)
+            return "";
+        auto names = CommandRegistry::getSoftEnumNames();
+        if (std::find(names.begin(), names.end(), name) == names.end())
+        {
+            Global<CommandRegistry>->addSoftEnum(name, values);
+            return name;
+        }
+        CommandSoftEnumRegistry(Global<CommandRegistry>).updateSoftEnum(SoftEnumUpdateType::Set, name, values);
+    }
     return name;
 }
 bool DynamicCommandInstance::addSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const
 {
-    auto names = CommandRegistry::getSoftEnumNames();
-    if (std::find(names.begin(), names.end(), name) == names.end())
+    if (!hasRegistered()) 
     {
-        Global<CommandRegistry>->addSoftEnum(name, values);
-        return true;
+        auto iter = softEnums.find(name);
+        if (iter != softEnums.end())
+        {
+            iter->second.insert(iter->second.end(), values.begin(), values.end());
+        }
+        else
+        {
+            setSoftEnum(name, values);
+        }
     }
-    CommandSoftEnumRegistry(Global<CommandRegistry>).updateSoftEnum(SoftEnumUpdateType::Add, name, values);
+    else
+    {
+        if (!Global<CommandRegistry>)
+            return false;
+        auto names = CommandRegistry::getSoftEnumNames();
+        if (std::find(names.begin(), names.end(), name) == names.end())
+        {
+            Global<CommandRegistry>->addSoftEnum(name, values);
+            return true;
+        }
+        CommandSoftEnumRegistry(Global<CommandRegistry>).updateSoftEnum(SoftEnumUpdateType::Add, name, values);
+    }
     return true;
 };
 bool DynamicCommandInstance::removeSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const
 {
-    CommandSoftEnumRegistry(Global<CommandRegistry>).updateSoftEnum(SoftEnumUpdateType::Remove, name, values);
+    if (!hasRegistered())
+    {
+        auto iter = softEnums.find(name);
+        if (iter != softEnums.end())
+        {
+            auto tmp = std::remove_if(
+                iter->second.begin(), iter->second.end(),
+                [values](std::string const& val) {
+                    return std::find(values.begin(), values.end(), val) != values.end();
+                });
+            iter->second.erase(tmp, iter->second.end());
+            return true;
+        }
+        return false;
+    }
+    else
+    {
+        if (Global<CommandRegistry>)
+            CommandSoftEnumRegistry(Global<CommandRegistry>).updateSoftEnum(SoftEnumUpdateType::Remove, name, values);
+    }
     return true;
 }
 inline std::vector<std::string> DynamicCommandInstance::getSoftEnumValues(std::string const& name)
@@ -1082,14 +1159,14 @@ inline DynamicCommand::BuilderFn DynamicCommandInstance::initCommandBuilder()
 
 #pragma endregion
 
-#ifdef DEBUG
+#ifndef DEBUG
 #define successf(...) success(fmt::format(__VA_ARGS__))
 #define errorf(...) error(fmt::format(__VA_ARGS__))
 using Param = DynamicCommand::ParameterData;
 using ParamType = DynamicCommand::ParameterType;
 using ParamIndex = DynamicCommandInstance::ParameterIndex;
 
-#ifdef TEST_DYNAMIC_COMMAND
+#ifndef TEST_DYNAMIC_COMMAND
 
 #include <MC/Actor.hpp>
 #include <MC/Player.hpp>
@@ -1181,8 +1258,8 @@ void setupTestEnumCommand()
             // parameters(type, name, [optional], [enumOptions(also enumName)], [identifier])
             // identifier: used to identify unique parameter data, if idnetifier is not set,
             //   it is set to be the same as enumOptions or name (identifier = enumOptions.empty() ? name:enumOptions)
-            Param("testEnum", ParamType::Enum, "TestEnum1"),
-            Param("testEnum", ParamType::Enum, "TestEnum2"),
+            Param("testEnum", ParamType::Enum, "TestEnum1", "", CommandParameterOption::EnumAutocompleteExpansion),
+            Param("testEnum", ParamType::Enum, "TestEnum2", "", CommandParameterOption::EnumAutocompleteExpansion),
             Param("testInt", ParamType::Int, true),
         },
         {
@@ -1294,20 +1371,20 @@ void setupRemoveCommand()
             else
                 output.error("error in unregister command " + fullName);
         });
-    DynamicCommand::setup(std::move(command));
     command->setSoftEnum("CommandNames", CommandRegistry::getEnumValues("CommandName"));
+    DynamicCommand::setup(std::move(command));
 }
 
 #include <MC/EnchantUtils.hpp>
 #include <MC/I18n.hpp>
 TClasslessInstanceHook2("TestDynamicCommand_startServerThread", void, "?startServerThread@ServerInstance@@QEAAXXZ")
 {
-    original(this);
     Global<Level> = Global<Minecraft>->getLevel();
     setupRemoveCommand();
     setupTestEnumCommand();
     setupTestParamCommand();
     setupExampleCommand();
+    original(this);
 
 #ifdef COMMAND_REGISTRY_EXTRA
     Global<CommandRegistry>->printAll();
@@ -1428,9 +1505,8 @@ void setupEchoCommand()
 #include <MC/MinecraftCommands.hpp>
 TClasslessInstanceHook2("SetupBetaCommand_startServerThread", void, "?startServerThread@ServerInstance@@QEAAXXZ")
 {
-    original(this);
-    Global<Level> = Global<Minecraft>->getLevel();
     setupEnumCommand();
     setupEchoCommand();
+    original(this);
 }
 #endif // LITELOADER_VERSION_STATUS == LL::Version::Beta
