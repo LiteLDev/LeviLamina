@@ -853,7 +853,19 @@ inline DynamicCommandInstance::~DynamicCommandInstance()
 
 inline std::unique_ptr<DynamicCommandInstance> DynamicCommandInstance::create(std::string const& name, std::string const& description, CommandPermissionLevel permission, CommandFlag flag, HMODULE handler)
 {
-    if (Global<CommandRegistry>->findCommand(name))
+    if (LL::globalConfig.serverStatus != LL::LLServerStatus::Running)
+    {
+        for (auto& cmd : delaySetupCommandInstances)
+        {
+            if (cmd->name == name)
+            {
+                logger.error("Command \"{}\" already exists", name);
+                return {};
+            }
+        }
+
+    }
+    else if (Global<CommandRegistry>->findCommand(name))
     {
         logger.error("Command \"{}\" already exists", name);
         return {};
