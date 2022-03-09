@@ -129,29 +129,28 @@ class DynamicCommand : public Command
 public:
     enum class ParameterType
     {
-        Bool,             //bool
-        Int,              //int
-        Float,            //float
-        String,           //std::string
-        Actor,            //CommandSelector<Actor>
-        Player,           //CommandSelector<Player>
-        BlockPos,         //CommandPosition
-        Vec3,             //CommandPositionFloat
-        RawText,          //CommandRawText
-        Message,          //CommandMessage
-        JsonValue,        //Json::Value
-        Item,             //CommandItem
-        Block,            //Block const*
-        Effect,           //MobEffect const*
-        Enum,             //ENUM
-        SoftEnum,         //SOFT_ENUM
-        ActorType,        //ActorDefinitionIdentifier const*
-        Command,          //std::unique_ptr<Command>
-        WildcardSelector, //WildcardCommandSelector<Actor>
+        Bool,             // bool
+        Int,              // int
+        Float,            // float
+        String,           // std::string
+        Actor,            // CommandSelector<Actor>
+        Player,           // CommandSelector<Player>
+        BlockPos,         // CommandPosition
+        Vec3,             // CommandPositionFloat
+        RawText,          // CommandRawText
+        Message,          // CommandMessage
+        JsonValue,        // Json::Value
+        Item,             // CommandItem
+        Block,            // Block const*
+        Effect,           // MobEffect const*
+        Enum,             // ENUM
+        SoftEnum,         // SOFT_ENUM
+        ActorType,        // ActorDefinitionIdentifier const*
+        Command,          // std::unique_ptr<Command>
+        WildcardSelector, // WildcardCommandSelector<Actor>
 #ifdef ENABLE_PARAMETER_TYPE_POSTFIX
-        Postfix, //int?
+        Postfix, // int?
 #endif           // ENABLE_PARAMETER_TYPE_POSTFIX
-
     };
     struct ParameterPtr;
 
@@ -164,6 +163,7 @@ public:
         DynamicCommand const* command;
         DynamicCommandInstance const* instance;
         CommandOrigin const* origin;
+
         LIAPI Result(ParameterPtr const* ptr, DynamicCommand const* command, CommandOrigin const* origin, DynamicCommandInstance const* instance = nullptr);
         LIAPI Result();
         LIAPI std::string const& getEnumValue() const;
@@ -213,7 +213,7 @@ public:
             get() const
         {
             static_assert(is_supported_result_type_v<T> || (std::is_lvalue_reference_v<T> && is_supported_result_type_v<std::remove_reference_t<T>>),
-                          "Unsupported Result Type");
+                          "Unsupported Result Type in " __FUNCTION__);
             if constexpr (std::is_lvalue_reference_v<T>)
                 return getRaw<std::remove_reference_t<T>>();
             else
@@ -304,8 +304,8 @@ public:
                 return CommandParameterDataType::ENUM;
             else if constexpr (type == ParameterType::SoftEnum)
                 return CommandParameterDataType::SOFT_ENUM;
-            //else if constexpr (type == ParameterType::Postfix)
-            //    return CommandParameterDataType::POSIFIX;
+            // else if constexpr (type == ParameterType::Postfix)
+            //     return CommandParameterDataType::POSIFIX;
             else
                 return CommandParameterDataType::NORMAL;
         }
@@ -322,7 +322,7 @@ public:
                 optional,
                 (int)offset + std::max(8, (int)sizeof(T))};
             param.addOptions(option);
-            //logger.warn(Global<CommandRegistry>->describe(param));
+            // logger.warn(Global<CommandRegistry>->describe(param));
             return std::move(param);
         }
 
@@ -382,8 +382,8 @@ private:
                 return std::is_same_v<Block const*, std::remove_cv_t<_Ty>>;
             case ParameterType::Effect:
                 return std::is_same_v<MobEffect const*, std::remove_cv_t<_Ty>>;
-            //case ParameterType::Position:
-            //    return std::is_same_v<ParameterDataType::Position, std::remove_cv_t<_Ty>> || std::is_same_v<BlockPos, std::remove_cv_t<_Ty>> || std::is_same_v<Vec3, std::remove_cv_t<_Ty>>;
+            // case ParameterType::Position:
+            //     return std::is_same_v<ParameterDataType::Position, std::remove_cv_t<_Ty>> || std::is_same_v<BlockPos, std::remove_cv_t<_Ty>> || std::is_same_v<Vec3, std::remove_cv_t<_Ty>>;
             case ParameterType::Enum:
                 return std::is_same_v<int, std::remove_cv_t<_Ty>> || std::is_same_v<std::string, std::remove_cv_t<_Ty>> || std::is_enum_v<_Ty>;
             case ParameterType::SoftEnum:
@@ -398,7 +398,7 @@ private:
         }
         return false;
     }
-    //LIAPI static std::unique_ptr<Command> commandBuilder();
+    // LIAPI static std::unique_ptr<Command> commandBuilder();
 
     LIAPI static char builderCallbackHanler(DCCallback* cb, DCArgs* args, DCValue* result, void* userdata);
     LIAPI static std::unique_ptr<Command>* commandBuilder2(std::unique_ptr<Command>* rtn, std::string name);
@@ -493,7 +493,7 @@ public:
     std::unordered_map<std::string_view, std::pair<size_t, size_t>> enumRanges = {};
 
     //// unordered_map{ enumName, pair{ enumIndex, enumConstraint } }
-    //std::unordered_map<std::string_view, std::pair<size_t, SemanticConstraint>> enumConstraints = {};
+    // std::unordered_map<std::string_view, std::pair<size_t, SemanticConstraint>> enumConstraints = {};
 
     // SoftEnum
     mutable std::unordered_map<std::string, std::vector<std::string>> softEnums;
@@ -530,7 +530,7 @@ public:
     LIAPI ParameterIndex optional(std::string const& name, DynamicCommand::ParameterType type, std::string const& description, CommandParameterOption parameterOption = (CommandParameterOption)0);
     LIAPI ParameterIndex optional(std::string const& name, DynamicCommand::ParameterType type, CommandParameterOption parameterOption = CommandParameterOption::None);
 
-    //LIAPI bool addOverload();
+    // LIAPI bool addOverload();
     LIAPI bool addOverload(std::vector<ParameterIndex>&& params);
     LIAPI bool addOverload(std::vector<std::string>&& params);
     LIAPI bool addOverload(std::vector<char const*>&& params);
@@ -538,7 +538,7 @@ public:
     LIAPI bool setAlias(std::string const& alias);
     LIAPI void setCallback(DynamicCommand::CallBackFn&& callback) const;
     LIAPI void removeCallback() const;
-    //LIAPI static bool updateSoftEnum(std::string const& name = "") const;
+    // LIAPI static bool updateSoftEnum(std::string const& name = "") const;
     LIAPI std::string setSoftEnum(std::string const& name, std::vector<std::string> const& values) const;
     LIAPI bool addSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const;
     LIAPI bool removeSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const;
