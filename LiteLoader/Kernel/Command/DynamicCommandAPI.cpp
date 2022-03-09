@@ -678,10 +678,15 @@ bool DynamicCommand::unregisterCommand(std::string const& name)
 
 inline bool DynamicCommand::updateAvailableCommands()
 {
+    if (!Global<CommandRegistry>)
+        return false;
     auto packet = Global<CommandRegistry>->serializeAvailableCommands();
+    if (!Global<Level>)
+        return false;
     auto sender = (LoopbackPacketSender*)Global<Level>->getPacketSender();
-    if (sender)
-        sender->sendBroadcast(packet);
+    if (!sender)
+        return false;
+    sender->sendBroadcast(packet);
     return true;
 }
 
