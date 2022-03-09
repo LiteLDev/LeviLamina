@@ -20,7 +20,14 @@ public:
     static MCRESULT _runcmd(void* origin, const std::string& cmd) {
         if (!Global<MinecraftCommands>)
             return {0};
-        return Global<MinecraftCommands>->executeCommand(std::make_shared<CommandContext>(cmd, (CommandOrigin*)origin), false);
+        try
+        {
+            return Global<MinecraftCommands>->executeCommand(std::make_shared<CommandContext>(cmd, (CommandOrigin*)origin), false);
+        }
+        catch (...)
+        {
+        }
+        return {0};
     }
 
 #undef AFTER_EXTRA
