@@ -21,6 +21,7 @@ public:
     LIAPI static std::unique_ptr<ShortTag> create(short val = 0);
     LIAPI bool set(short val);
     LIAPI short get();
+    LIAPI operator short() const;
 
 #undef AFTER_EXTRA
 

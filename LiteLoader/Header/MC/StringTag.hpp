@@ -21,6 +21,7 @@ public:
     LIAPI static std::unique_ptr<StringTag> create(std::string val = "");
     LIAPI bool set(std::string const& val);
     LIAPI std::string get();
+    LIAPI operator std::string() const;
 
 #undef AFTER_EXTRA
 

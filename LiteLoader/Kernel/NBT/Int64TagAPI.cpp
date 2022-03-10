@@ -25,3 +25,10 @@ bool Int64Tag::set(int64_t val) {
 int64_t Int64Tag::get() {
     return value();
 }
+
+Int64Tag::operator int64_t() const
+{
+    if (!this)
+        return 0;
+    return val;
+}

@@ -21,6 +21,7 @@ public:
     LIAPI static std::unique_ptr<ByteTag> create(unsigned char val = 0);
     LIAPI bool set(unsigned char val);
     LIAPI unsigned char get();
+    LIAPI operator unsigned char() const;
 
 #undef AFTER_EXTRA
 

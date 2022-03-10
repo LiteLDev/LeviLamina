@@ -21,6 +21,7 @@ public:
     LIAPI static std::unique_ptr<IntTag> create(int val = 0);
     LIAPI bool set(int val);
     LIAPI int get();
+    LIAPI operator int() const;
 
 #undef AFTER_EXTRA
 

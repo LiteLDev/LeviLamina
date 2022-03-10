@@ -21,6 +21,7 @@ public:
     LIAPI static std::unique_ptr<Int64Tag> create(int64_t val = 0);
     LIAPI bool set(int64_t val);
     LIAPI int64_t get();
+    LIAPI operator int64_t() const;
 
 #undef AFTER_EXTRA
 

@@ -25,3 +25,10 @@ bool StringTag::set(std::string const& val) {
 std::string StringTag::get() {
     return value();
 }
+
+StringTag::operator std::string() const
+{
+    if (!this)
+        return "";
+    return val;
+}

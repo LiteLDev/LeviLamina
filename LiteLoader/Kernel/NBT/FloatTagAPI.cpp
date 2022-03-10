@@ -25,3 +25,10 @@ bool FloatTag::set(float val) {
 float FloatTag::get() {
     return value();
 }
+
+FloatTag::operator float() const
+{
+    if (!this)
+        return 0.0f;
+    return val;
+}

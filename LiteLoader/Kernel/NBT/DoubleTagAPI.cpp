@@ -25,3 +25,10 @@ bool DoubleTag::set(double val) {
 double DoubleTag::get() {
     return value();
 }
+
+DoubleTag::operator double() const
+{
+    if (!this)
+        return 0.0;
+    return val;
+}

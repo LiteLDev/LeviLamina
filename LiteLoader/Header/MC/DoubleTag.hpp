@@ -21,6 +21,7 @@ public:
     LIAPI static std::unique_ptr<DoubleTag> create(double val = 0.0);
     LIAPI bool set(double val);
     LIAPI double get();
+    LIAPI operator double() const;
 
 #undef AFTER_EXTRA
 

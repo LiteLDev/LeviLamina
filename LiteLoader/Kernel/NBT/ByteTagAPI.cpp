@@ -25,3 +25,10 @@ bool ByteTag::set(unsigned char val) {
 unsigned char ByteTag::get() {
     return value();
 }
+
+ByteTag::operator unsigned char() const
+{
+    if (!this)
+        return 0;
+    return val;
+}
