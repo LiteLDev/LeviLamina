@@ -210,25 +210,7 @@ std::string nearestColorCodeFromConsoleCode(std::string const& code)
     return "";
 }
 
-std::string& transferConsoleColorToColorCode(std::string& str)
-{
-    size_t size = str.size();
-    for (size_t pos = str.find('\x1b'); pos < size - 2; pos = str.find('\x1b', pos))
-    {
-        size_t endPos = str.find('m', pos);
-        size_t codeSize = endPos - pos + 1;
-        auto consoleCode = str.substr(pos, codeSize);
-        std::string mcCode = nearestColorCodeFromConsoleCode(consoleCode);
-        if (mcCode.empty())
-            mcCode = "\\x" + Util::toHex(consoleCode.substr(0, 1)) + consoleCode.substr(1);
-        str.replace(pos, codeSize, mcCode);
-        pos += 3;
-        size += 3 - codeSize;
-    }
-    return str;
-}
-
-std::string& transferColorCodeToConsole(std::string& str, bool keepColorCode)
+std::string& convertToColsole(std::string& str, bool keepColorCode)
 {
     size_t size = str.size();
     for (size_t pos = str.find("§"); pos < size - 2; pos = str.find("§", pos))
@@ -248,6 +230,34 @@ std::string& transferColorCodeToConsole(std::string& str, bool keepColorCode)
         }
     }
     return str;
+}
+
+std::string& convertToMc(std::string& str)
+{
+    size_t size = str.size();
+    for (size_t pos = str.find('\x1b'); pos < size - 2; pos = str.find('\x1b', pos))
+    {
+        size_t endPos = str.find('m', pos);
+        size_t codeSize = endPos - pos + 1;
+        auto consoleCode = str.substr(pos, codeSize);
+        std::string mcCode = nearestColorCodeFromConsoleCode(consoleCode);
+        if (mcCode.empty())
+            mcCode = "\\x" + Util::toHex(consoleCode.substr(0, 1)) + consoleCode.substr(1);
+        str.replace(pos, codeSize, mcCode);
+        pos += 3;
+        size += 3 - codeSize;
+    }
+    return str;
+}
+
+std::string& transferConsoleColorToColorCode(std::string& str)
+{
+    return convertToMc(str);
+}
+
+std::string& transferColorCodeToConsole(std::string& str, bool keepColorCode)
+{
+    return convertToColsole(str, keepColorCode);
 }
 
 #ifdef DEBUG

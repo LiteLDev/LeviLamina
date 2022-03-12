@@ -22,7 +22,12 @@ LIAPI mce::Color ColorFromConsoleCode(std::string const& consoleCode);
 LIAPI std::string consoleCodeFromColorCode(std::string const& mcCode);
 LIAPI std::string nearestColorCodeFromConsoleCode(std::string const& consoleCode);
 
+LIAPI std::string& convertToMc(std::string& str);
+LIAPI std::string& convertToColsole(std::string& str, bool keepColorCode = false);
+
+[[deprecated("Use convertToMc instead")]]
 LIAPI std::string& transferConsoleColorToColorCode(std::string& str);
+[[deprecated("Use convertToColsole instead")]]
 LIAPI std::string& transferColorCodeToConsole(std::string& str, bool keepColorCode = false);
 
 #undef AFTER_EXTRA

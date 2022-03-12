@@ -58,13 +58,13 @@ std::string const& DefaultSuffix<Tag::Type::IntArray> = "]";
 
 inline void PrettySnbtFormat::ValueFormat::toPlayerFormat()
 {
-    ColorFormat::transferConsoleColorToColorCode(mPrefix);
-    ColorFormat::transferConsoleColorToColorCode(mSuffix);
+    ColorFormat::convertToMc(mPrefix);
+    ColorFormat::convertToMc(mSuffix);
 }
 inline void PrettySnbtFormat::ValueFormat::toConsoleFormat()
 {
-    ColorFormat::transferColorCodeToConsole(mPrefix);
-    ColorFormat::transferColorCodeToConsole(mSuffix);
+    ColorFormat::convertToColsole(mPrefix);
+    ColorFormat::convertToColsole(mSuffix);
 }
 PrettySnbtFormat::PrettySnbtFormat()
 {
@@ -161,9 +161,9 @@ void PrettySnbtFormat::switchToPlayerFormat()
 {
     if (mForPlayer)
         return;
-    ColorFormat::transferConsoleColorToColorCode(mIndent);
-    ColorFormat::transferConsoleColorToColorCode(mSeparator);
-    ColorFormat::transferConsoleColorToColorCode(mColon);
+    ColorFormat::convertToMc(mIndent);
+    ColorFormat::convertToMc(mSeparator);
+    ColorFormat::convertToMc(mColon);
     mKeyFormat.toPlayerFormat();
     for (auto& format : mValueFormats)
     {
@@ -175,9 +175,9 @@ void PrettySnbtFormat::switchToConsoleFormat()
 {
     if (!mForPlayer)
         return;
-    ColorFormat::transferColorCodeToConsole(mIndent);
-    ColorFormat::transferColorCodeToConsole(mSeparator);
-    ColorFormat::transferColorCodeToConsole(mColon);
+    ColorFormat::convertToColsole(mIndent);
+    ColorFormat::convertToColsole(mSeparator);
+    ColorFormat::convertToColsole(mColon);
     mKeyFormat.toConsoleFormat();
     for (auto& format : mValueFormats)
     {

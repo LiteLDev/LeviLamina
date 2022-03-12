@@ -19,6 +19,7 @@
 #include <filesystem>
 #include <set>
 #include <vector>
+#include <MC/ColorFormat.hpp>
 using namespace std;
 using namespace RegisterCommandHelper;
 
