@@ -102,15 +102,7 @@ TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin
             if (LL::globalConfig.colorLog)
                 serverLogger.info << ColorFormat::convertToColsole(line, false) << Logger::endl;
             else
-            {
-                size_t size = str.size();
-                for (size_t pos = line.find("§"); pos < size - 2; pos = line.find("§", pos))
-                {
-                    str.erase(pos, 3);
-                    size -= 3;
-                }
-                serverLogger.info << line << Logger::endl;
-            }
+                serverLogger.info << ColorFormat::removeColorCode(line) << Logger::endl;
         }
         return rv;
     }

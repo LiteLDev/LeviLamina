@@ -44,15 +44,15 @@ std::string GetAddonJsonFile(Addon::Type type)
     return "";
 }
 
-
-
-std::optional<Addon> parseAddon(std::filesystem::path addonPath)
+std::optional<Addon> parseAddonFromPath(std::filesystem::path addonPath)
 {
     try
     {
-        auto manifestFile = ReadAllFile(addonPath.append("manifest.json").u8string());
+        auto manifestPath = addonPath;
+        manifestPath.append("manifest.json");
+        auto manifestFile = ReadAllFile(manifestPath.u8string());
         if (!manifestFile || manifestFile->empty())
-            return std::nullopt;
+            throw "manifest.json not found!";
 
         auto manifest = nlohmann::json::parse(*manifestFile, nullptr, true, true);
         auto header = manifest["header"];
@@ -72,7 +72,7 @@ std::optional<Addon> parseAddon(std::filesystem::path addonPath)
         else if (type == "data")
             addon.type = Addon::Type::BehaviorPack;
         else
-            return std::nullopt;
+            throw "Unknown type of addon pack!";
 
         return addon;
     }
@@ -81,54 +81,126 @@ std::optional<Addon> parseAddon(std::filesystem::path addonPath)
         addonLogger.error("Uncaught SEH Exception Detected!");
         addonLogger.error("In " __FUNCTION__ " " + addonPath.u8string());
         addonLogger.error("Error: Code[{}] {}", e.code(), TextEncoding::toUTF8(e.what()));
+        __debugbreak();
     }
     catch (const std::exception& e)
     {
         addonLogger.error("Uncaught C++ Exception Detected!");
         addonLogger.error("In " __FUNCTION__ " " + addonPath.u8string());
         addonLogger.error("Error: Code[{}] {}", -1, TextEncoding::toUTF8(e.what()));
+        __debugbreak();
     }
     catch (...)
     {
         addonLogger.error("Uncaught Exception Detected!");
         addonLogger.error("In " __FUNCTION__ " " + addonPath.u8string());
+        __debugbreak();
     }
     return std::nullopt;
 }
 
-//Helper
-bool InstallAddonToLevel(std::string addonDir, std::string addonName)
+bool RemoveAddonFromList(Addon& addon)
 {
-    Addon::Type addonType;
-    string subPath = "";
-    string uuid;
-    LL::Version version;
+    auto jsonFile = GetAddonJsonFile(addon.type);
+    if (!filesystem::exists(str2wstr(jsonFile)))
+    {
+        addonLogger.error("Addon config not found!");
+        return false;
+    }
 
-    // parse addon data
+    auto addonJsonContent = ReadAllFile(jsonFile);
+    if (!addonJsonContent || addonJsonContent->empty())
+    {
+        addonLogger.error("Addon config not found!");
+        return false;
+    }
+    auto addonJson = fifo_json::parse(*addonJsonContent, nullptr, true, true);
+    int id = 0;
+    for (auto item : addonJson)
+    {
+        if (item["pack_id"] == addon.uuid)
+        {
+            addonJson.erase(id);
+            bool res = WriteAllFile(jsonFile, addonJson.dump(4));
+            if (!res)
+            {
+                addonLogger.error("Fail to remove addon <{}> from config file!", addon.getPrintName());
+                return false;
+            }
+            addonLogger.info("Success to remove addon <{}> from config file.", addon.getPrintName());
+            return true;
+        }
+        ++id;
+    }
+    addonLogger.error("Addon <{}> not found!", addon.getPrintName());
+    return false;
+}
+
+bool AddAddonToList(Addon& addon)
+{
+    string addonListFile = GetAddonJsonFile(addon.type);
+    if (!filesystem::exists(str2wstr(addonListFile)))
+    {
+        ofstream fout(addonListFile);
+        fout << "[]" << flush;
+    }
+
     try
     {
-        auto addon = parseAddon(str2wstr(addonDir));
-        if (!addon.has_value())
-            throw "Error in parseAddon";
-        
-        addonType = addon->type;
-        if (addonType == Addon::Type::ResourcePack)
-            subPath = "/resource_packs";
-        else if (addonType == Addon::Type::BehaviorPack)
-            subPath = "/behavior_packs";
-        else
-            throw "Unknown type of addon pack!";
 
-        uuid = addon->uuid;
-        version = addon->version;
+        bool exists = false;
+        auto addonList = nlohmann::json::parse(*ReadAllFile(addonListFile), nullptr, false, true);
+        // Auto fix Addon List File
+        if (!addonList.is_array())
+        {
+            auto backupPath = filesystem::path(str2wstr(addonListFile)).stem().u8string() + "_error.json";
+            addonLogger.error("Invalid Addon List File {}, backup to {} and reset to default", addonListFile, backupPath);
+            std::error_code ec;
+            std::filesystem::rename(str2wstr(addonListFile), filesystem::path(addonListFile).remove_filename().append(str2wstr(backupPath)), ec);
+            addonList = "[]"_json;
+        }
+        for (auto& addonData : addonList)
+        {
+            if (addonData["pack_id"] == addon.uuid)
+            {
+                addonData["version"] = {addon.version.major, addon.version.minor, addon.version.revision};
+                exists = true;
+                break;
+            }
+        }
+        if (!exists)
+        {
+            auto newAddonData = nlohmann::json::object();
+            newAddonData["pack_id"] = addon.uuid;
+            newAddonData["version"] = {addon.version.major, addon.version.minor, addon.version.revision};
+            addonList.push_back(newAddonData);
+        }
+        bool res = WriteAllFile(addonListFile, addonList.dump(4));
+        if (!res)
+            throw "Fail to write data back to addon list file!";
+        addonLogger.info("Success to add addon <{}> to config file.", addon.getPrintName());
+        return true;
     }
-    catch (const std::exception &e)
+    catch (const std::exception& e)
     {
-        addonLogger.error("Fail to parse the manifest data of addon {}!", addonName);
+        addonLogger.error("Fail to insert the addon {} into {}!", addon.getPrintName(), addonListFile);
         addonLogger.error("Error: {}", TextEncoding::toUTF8(e.what()));
         addonLogger.error("* Install progress aborted!");
         return false;
     }
+}
+
+bool InstallAddonToLevel(std::string addonDir, std::string addonName)
+{
+    auto addon = parseAddonFromPath(str2wstr(addonDir));
+    if (!addon.has_value())
+        return false;
+    std::string subPath;
+    if (addon->type == Addon::Type::ResourcePack)
+        subPath = "/resource_packs";
+    else if (addon->type == Addon::Type::BehaviorPack)
+        subPath = "/behavior_packs";
+
 
     // copy files
     string levelPath = Level::getCurrentLevelPath();
@@ -137,8 +209,8 @@ bool InstallAddonToLevel(std::string addonDir, std::string addonName)
     // Avoid duplicate names or update addon if same uuid
     while (filesystem::exists(str2wstr(toPath)))
     {
-        auto addon = parseAddon(str2wstr(toPath));
-        if (addon.has_value() && addon->uuid != uuid)
+        auto tmp = parseAddonFromPath(str2wstr(toPath));
+        if (tmp.has_value() && tmp->uuid != addon->uuid)
         {
             toPath += "_";
         }
@@ -154,55 +226,7 @@ bool InstallAddonToLevel(std::string addonDir, std::string addonName)
     filesystem::copy(str2wstr(addonDir), str2wstr(toPath), filesystem::copy_options::recursive, ec);
 
     // add addon to list file
-    string addonListFile = GetAddonJsonFile(addonType);
-    if (!filesystem::exists(str2wstr(addonListFile)))
-    {
-        ofstream fout(addonListFile);
-        fout << "[]" << flush;
-    }
-
-    try
-    {
-
-        bool exists = false;
-        auto addonList = nlohmann::json::parse(*ReadAllFile(addonListFile), nullptr, false, true);
-        // Auto fix Addon List File
-        if (!addonList.is_array()) {
-            auto backupPath = filesystem::path(str2wstr(addonListFile)).stem().u8string() + "_error.json";
-            addonLogger.error("Invalid Addon List File {}, backup to {} and reset to default", addonListFile, backupPath);
-            std::error_code ec;
-            std::filesystem::rename(str2wstr(addonListFile), filesystem::path(addonListFile).remove_filename().append(str2wstr(backupPath)), ec);
-            addonList = "[]"_json;
-        }
-        for (auto& addonData : addonList)
-        {
-            if (addonData["pack_id"] == uuid)
-            {
-                addonData["version"] = {version.major, version.minor, version.revision};
-                exists = true;
-                break;
-            }
-        }
-        if (!exists)
-        {
-            auto newAddonData = nlohmann::json::object();
-            newAddonData["pack_id"] = uuid;
-            newAddonData["version"] = {version.major, version.minor, version.revision};
-            addonList.push_back(newAddonData);
-        }
-        bool res = WriteAllFile(addonListFile, addonList.dump(4));
-        if (!res)
-            throw "Fail to write data back to addon list file!";
-
-        return true;
-    }
-    catch (const std::exception& e)
-    {
-        addonLogger.error("Fail to insert the addon {} into {}!", addonName, addonListFile);
-        addonLogger.error("Error: {}", TextEncoding::toUTF8(e.what()));
-        addonLogger.error("* Install progress aborted!");
-        return false;
-    }
+    return AddAddonToList(*addon);
 }
 
 void FindManifest(vector<string> &result, const string& path)
@@ -231,13 +255,21 @@ void FindManifest(vector<string> &result, const string& path)
     return;
 }
 
+std::string Addon::getPrintName() const
+{
+    if (LL::globalConfig.colorLog)
+        return ColorFormat::convertToColsole(std::string(name));
+    else
+        return ColorFormat::removeColorCode(std::string(name));
+}
+
 bool AddonsManager::install(std::string packPath)
 {
     try
     {
         if (!filesystem::exists(str2wstr(packPath)))
         {
-            addonLogger.error("Addon file no found!");
+            addonLogger.error("Addon file not found!");
             return false;
         }
         if (VALID_ADDON_FILE_EXTENSION.find(filesystem::path(str2wstr(packPath)).extension().u8string()) == VALID_ADDON_FILE_EXTENSION.end())
@@ -292,7 +324,7 @@ bool AddonsManager::install(std::string packPath)
         }
 
         filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
-        filesystem::remove_all(str2wstr(packPath), ec);
+        //filesystem::remove_all(str2wstr(packPath), ec);
         return true;
     }
     catch (const seh_exception& e)
@@ -315,6 +347,44 @@ bool AddonsManager::install(std::string packPath)
     return false;
 }
 
+bool AddonsManager::disable(std::string nameOrUuid)
+{
+    try
+    {
+        auto addon = getAddon(nameOrUuid);
+        if (!addon)
+            return false;
+        if (RemoveAddonFromList(*addon))
+        {
+            addon->enable = false;
+            return true;
+        }
+
+    }
+    catch(...)
+    { }
+    return false;
+}
+
+bool AddonsManager::enable(std::string nameOrUuid)
+{
+    try
+    {
+        auto addon = getAddon(nameOrUuid);
+        if (!addon)
+            return false;
+        if (AddAddonToList(*addon))
+        {
+            addon->enable = true;
+            return true;
+        }
+
+    }
+    catch(...)
+    { }
+    return false;
+}
+
 bool AddonsManager::uninstall(std::string nameOrUuid)
 {
     try
@@ -322,51 +392,19 @@ bool AddonsManager::uninstall(std::string nameOrUuid)
         auto addon = getAddon(nameOrUuid);
         if (!addon)
         {
-            addonLogger.error("Addon no found!");
+            addonLogger.error("Addon not found!");
             return false;
         }
-
-        auto jsonFile = GetAddonJsonFile(addon->type);
-        if (!filesystem::exists(str2wstr(jsonFile)))
-        {
-            addonLogger.error("Addon config no found!");
-            return false;
-        }
-
-        auto addonJsonContent = ReadAllFile(jsonFile);
-        if(!addonJsonContent || addonJsonContent->empty())
-        {
-            addonLogger.error("Addon config no found!");
-            return false;
-        }
-
-        auto addonJson = fifo_json::parse(*addonJsonContent, nullptr, true, true);
-        int id = 0;
-        for (auto item : addonJson)
-        {
-            if (item["pack_id"] == addon->uuid)
+        RemoveAddonFromList(*addon);
+        std::error_code ec;
+        filesystem::remove_all(str2wstr(addon->directory), ec);
+        for (auto i = addons.begin(); i != addons.end(); ++i)
+            if (i->uuid == addon->uuid)
             {
-                addonJson.erase(id);
-                bool res = WriteAllFile(jsonFile, addonJson.dump(4));
-                if(!res)
-                {
-                    addonLogger.error("Fail to remove addon <{}> from config file!", addon->name);
-                    return false;
-                }
-                std::error_code ec;
-                filesystem::remove_all(str2wstr(addon->directory), ec);
-                for (auto i = addons.begin(); i != addons.end(); ++i)
-                    if (i->uuid == addon->uuid)
-                    {
-                        addons.erase(i);
-                        break;
-                    }
-                addonLogger.info("Addon <{}> uninstalled.", addon->name);
-                return true;
+                addons.erase(i);
+                break;
             }
-            ++id;
-        }
-        addonLogger.error("Addon <{}> no found!", addon->name);
+        addonLogger.info("Addon <{}> uninstalled.", addon->getPrintName());
     }
     catch(...)
     { }
@@ -398,9 +436,9 @@ void ListAllAddons(CommandOutput& output)
     }
 
     output.success("Addons: " + to_string(addons.size()) + " addon(s) installed:");
-    int index = 1;
-    for (auto& addon : addons)
+    for (auto index = 0;index<addons.size();++index)
     {
+        auto& addon = addons[index];
         string addonName = addon.name;
         if (addonName.find("§") == string::npos)
             addonName = "§b" + addonName;
@@ -409,22 +447,52 @@ void ListAllAddons(CommandOutput& output)
             desc = "§7" + desc;
 
         std::string addonType = (addon.type == Addon::Type::ResourcePack ? "ResourcePack" : "BehaviorPack");
-        output.success(fmt::format(" §e{}§r - {} §a[v{}] §8({})", index++, addonName, addon.version.toString(), addonType));
-        output.success(fmt::format("     {}", desc));
+        if (addon.enable)
+        {
+            output.success(fmt::format("§e{:>2}§r: {} §a[v{}] §8({})", index + 1, addonName, addon.version.toString(), addonType));
+            output.success(fmt::format("    {}", desc));
+        }
+        else
+        {
+            output.success(fmt::format("§e{:>2}§r: §8{} [v{}] ({})", index + 1, ColorFormat::removeColorCode(addonName), addon.version.toString(), addonType));
+            output.success(fmt::format("    §8Disabled"));
+        }
+        
     }
 }
 
 class AddonsCommand : public Command {
     enum class Operation
     {
-        List, Install, Uninstall
+        List, Install, Uninstall, Enable, Disable
     };
 
-    Operation operation;
+    Operation operation = static_cast<Operation>(-1);
     std::string target;
     int index = -1;
-    bool target_isSet;
-    bool index_isSet;
+    bool target_isSet = false;
+    bool index_isSet = false;
+
+    inline Addon* getSelectedAddon(CommandOutput& output) const
+    {
+        Addon* addon = nullptr;
+        if (target_isSet) {
+            auto addon = AddonsManager::getAddon(target);
+            if (addon)
+                return addon;
+            else
+                output.error(fmt::format("Addon {} Not Found", target));
+        }
+        else
+        {
+            auto addons = AddonsManager::getAllAddons();
+            if (index - 1 >= 0 && index - 1 < static_cast<int>(addons.size()))
+                return addons[index - 1];
+            else
+                output.error(fmt::format("Addon index {} out of range", index));
+        }
+        return nullptr;
+    }
 
 public:
     void execute(CommandOrigin const& ori, CommandOutput& output) const override
@@ -439,18 +507,26 @@ public:
                 output.success();
             break;
         case Operation::Uninstall:
-            if (target_isSet)
-            {
-                if (AddonsManager::uninstall(target))
-                    output.success();
-            }
-            else
-            {
-                auto addon = AddonsManager::getAllAddons()[index - 1];
-                if (AddonsManager::uninstall(addon->uuid))
-                    output.success();
-            }
+        {
+            auto addon = getSelectedAddon(output);
+            if (addon && AddonsManager::uninstall(addon->uuid))
+                output.success();
             break;
+        }
+        case Operation::Enable:
+        {
+            auto addon = getSelectedAddon(output);
+            if (addon && AddonsManager::enable(addon->uuid))
+                output.success();
+            break;
+        }
+        case Operation::Disable:
+        {
+            auto addon = getSelectedAddon(output);
+            if (addon && AddonsManager::disable(addon->uuid))
+                output.success();
+            break;
+        }
         default:
             break;
         }
@@ -485,17 +561,20 @@ public:
             addonsList.push_back(addon.name);
         registry->addSoftEnum("AddonName", addonsList);
 
-        registry->addEnum<Operation>("Operation_Addons_Uninstall", {
-            {"uninstall", Operation::Uninstall}
+        registry->addEnum<Operation>("Operation_Addons_Others", {
+            {"uninstall", Operation::Uninstall},
+            {"remove", Operation::Uninstall},
+            {"enable", Operation::Enable},
+            {"disable", Operation::Disable},
         });
         registry->registerOverload<AddonsCommand>(
             "addons",
-            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "Operation", "Operation_Addons_Uninstall").addOptions((CommandParameterOption)1),
+            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "Operation", "Operation_Addons_Others").addOptions((CommandParameterOption)1),
             makeMandatory<CommandParameterDataType::SOFT_ENUM>(&AddonsCommand::target, "AddonName", "AddonName", &AddonsCommand::target_isSet)
         );
         registry->registerOverload<AddonsCommand>(
             "addons",
-            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "Operation", "Operation_Addons_Uninstall").addOptions((CommandParameterOption)1),
+            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "Operation", "Operation_Addons_Others").addOptions((CommandParameterOption)1),
             makeMandatory<CommandParameterDataType::NORMAL>(&AddonsCommand::index, "AddonIndex", nullptr, &AddonsCommand::index_isSet)
         );
     }
@@ -533,13 +612,12 @@ void FindAddons(string jsonPath, string packsDir)
         {
             if (!dir.is_directory())
                 continue;
-            auto addon = parseAddon(dir);
+            auto addon = parseAddonFromPath(dir);
             if (!addon)
                 continue;
             if (validPackIDs.find(addon->uuid) != validPackIDs.end())
-            {
-                addons.emplace_back(std::move(*addon));
-            }
+                addon->enable = true;
+            addons.emplace_back(std::move(*addon));
         }
     }
     catch (...)
@@ -554,6 +632,15 @@ void BuildAddonsList()
 
     FindAddons(levelPath + "/world_behavior_packs.json", levelPath + "/behavior_packs");
     FindAddons(levelPath + "/world_resource_packs.json", levelPath + "/resource_packs");
+
+    std::sort(addons.begin(), addons.end(),
+              [](Addon const& _Left, Addon const& _Right) {
+                  if (_Left.enable && !_Right.enable)
+                      return true;
+                  if (_Left.type == Addon::Type::ResourcePack && _Right.type == Addon::Type::BehaviorPack)
+                      return true;
+                  return false;
+              });
 }
 
 
@@ -615,7 +702,7 @@ void InitAddonsHelper()
 {
     AutoInstallAddons();
     BuildAddonsList();
-
+    
     Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
         AddonsCommand::setup(ev.mCommandRegistry);
         return true;

@@ -210,6 +210,29 @@ std::string nearestColorCodeFromConsoleCode(std::string const& code)
     return "";
 }
 
+std::string convertToColsole(std::string&& str, bool keepColorCode)
+{
+    convertToColsole(str, keepColorCode);
+    return std::move(str);
+}
+
+std::string& removeColorCode(std::string& str)
+{
+    size_t size = str.size();
+    for (size_t pos = str.find("§"); pos < size - 2; pos = str.find("§", pos))
+    {
+        str.erase(pos, 3);
+        size -= 3;
+    }
+    return str;
+}
+
+std::string removeColorCode(std::string&& str)
+{
+    removeColorCode(str);
+    return std::move(str);
+}
+
 std::string& convertToColsole(std::string& str, bool keepColorCode)
 {
     size_t size = str.size();
@@ -248,6 +271,12 @@ std::string& convertToMc(std::string& str)
         size += 3 - codeSize;
     }
     return str;
+}
+
+std::string convertToMc(std::string&& str)
+{
+    convertToMc(str);
+    return std::move(str);
 }
 
 std::string& transferConsoleColorToColorCode(std::string& str)

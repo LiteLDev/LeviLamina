@@ -14,6 +14,9 @@ struct Addon
     LL::Version version;
     std::string uuid;
     std::string directory;
+    bool enable = false;
+
+    std::string getPrintName() const;
 };
 
 class AddonsManager
@@ -21,6 +24,9 @@ class AddonsManager
 public:
     static bool install(std::string path);
     static bool uninstall(std::string nameOrUuid);
+
+    static bool enable(std::string nameOrUuid);
+    static bool disable(std::string nameOrUuid);
 
     static std::vector<Addon*> getAllAddons();
     static Addon* getAddon(std::string nameOrUuid);
