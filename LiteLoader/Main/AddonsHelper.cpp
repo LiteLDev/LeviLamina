@@ -85,12 +85,12 @@ bool InstallAddonToLevel(std::string addonDir, std::string addonName)
     string toPath = levelPath + subPath + "/" + addonName;
 
     std::error_code ec;
-    filesystem::create_directories(toPath,ec);
-    filesystem::copy(addonDir, toPath, filesystem::copy_options::recursive, ec);
+    filesystem::create_directories(str2wstr(toPath), ec);
+    filesystem::copy(str2wstr(addonDir), str2wstr(toPath), filesystem::copy_options::recursive, ec);
 
     // add addon to list file
     string addonListFile = GetAddonJsonFile(addonType);
-    if (!filesystem::exists(addonListFile))
+    if (!filesystem::exists(str2wstr(addonListFile)))
     {
         ofstream fout(addonListFile);
         fout << "[]" << flush;
@@ -121,7 +121,7 @@ bool InstallAddonToLevel(std::string addonDir, std::string addonName)
 
 void FindManifest(vector<string> &result, const string& path)
 {
-    filesystem::directory_iterator ent(path);
+    filesystem::directory_iterator ent(str2wstr(path));
 
     bool foundManifest = false;
     for (auto& file : ent)
@@ -137,10 +137,10 @@ void FindManifest(vector<string> &result, const string& path)
     if (!foundManifest)
     {
         //No manifest file
-        filesystem::directory_iterator ent2(path);
+        filesystem::directory_iterator ent2(str2wstr(path));
         for (auto& file : ent2)
             if (file.is_directory())
-                FindManifest(result, file.path().string());
+                FindManifest(result, file.path().u8string());
     }
     return;
 }
@@ -168,14 +168,14 @@ bool AddonsManager::install(std::string packPath)
         {
             string newPath = packPath;
             ReplaceStr(newPath, ".mcpack", ".zip");
-            filesystem::rename(str2wstr(packPath), newPath, ec);
+            filesystem::rename(str2wstr(packPath), str2wstr(newPath), ec);
             packPath = newPath;
         }
         if (EndsWith(packPath, ".mcaddon"))
         {
             string newPath = packPath;
             ReplaceStr(newPath, ".mcaddon", ".zip");
-            filesystem::rename(str2wstr(packPath), newPath, ec);
+            filesystem::rename(str2wstr(packPath), str2wstr(newPath), ec);
             packPath = newPath;
         }
 
@@ -200,7 +200,7 @@ bool AddonsManager::install(std::string packPath)
         {
             string addonName = filesystem::path(str2wstr(dir)).filename().u8string();
             if (addonName.empty() || addonName == "Temp")
-                addonName = filesystem::path(str2wstr(dir)).stem().u8string();
+                addonName = filesystem::path(str2wstr(packPath)).stem().u8string();
             if (!InstallAddonToLevel(dir, addonName))
                 return false;
         }
@@ -212,19 +212,19 @@ bool AddonsManager::install(std::string packPath)
     catch (const seh_exception& e)
     {
         addonLogger.error("Uncaught SEH Exception Detected!");
-        addonLogger.error("In AddonsInstaller");
+        addonLogger.error("In " __FUNCTION__);
         addonLogger.error("Error: Code[{}] {}", e.code(), TextEncoding::toUTF8(e.what()));
     }
     catch (const std::exception& e)
     {
         addonLogger.error("Uncaught C++ Exception Detected!");
-        addonLogger.error("In AddonsInstaller");
+        addonLogger.error("In " __FUNCTION__);
         addonLogger.error("Error: Code[{}] {}", -1, TextEncoding::toUTF8(e.what()));
     }
     catch (...)
     {
         addonLogger.error("Uncaught Exception Detected!");
-        addonLogger.error("In AddonsInstaller");
+        addonLogger.error("In " __FUNCTION__);
     }
     return false;
 }
@@ -427,8 +427,9 @@ void FindAddons(string jsonPath, string packsDir)
         {
             if (!dir.is_directory())
                 continue;
-            
-            auto manifestFile = ReadAllFile((dir.path()/"manifest.json").u8string());
+            auto mainfestPath = dir.path();
+            mainfestPath.append("manifest.json");
+            auto manifestFile = ReadAllFile(mainfestPath.u8string());
             if (!manifestFile || manifestFile->empty())
                 continue;
 

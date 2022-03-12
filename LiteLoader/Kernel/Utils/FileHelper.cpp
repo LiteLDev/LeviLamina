@@ -38,7 +38,7 @@ std::optional<std::string> ReadAllFile(const std::string& filePath, bool isBinar
     if (isBinary)
         mode |= std::ios_base::binary;
 
-    fRead.open(filePath, mode);
+    fRead.open(str2wstr(filePath), mode);
     if (!fRead.is_open()) {
         return std::nullopt;
     }
@@ -56,7 +56,7 @@ bool WriteAllFile(const std::string& filePath, const std::string& content, bool 
     if (isBinary)
         mode |= std::ios_base::binary;
 
-    fWrite.open(filePath, mode);
+    fWrite.open(str2wstr(filePath), mode);
     if (!fWrite.is_open()) {
         return false;
     }
