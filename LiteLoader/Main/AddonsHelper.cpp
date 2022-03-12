@@ -352,7 +352,7 @@ bool AddonsManager::disable(std::string nameOrUuid)
 {
     try
     {
-        auto addon = findAddon(nameOrUuid);
+        auto addon = findAddon(nameOrUuid, true);
         if (!addon)
             return false;
         if (RemoveAddonFromList(*addon))
@@ -371,7 +371,7 @@ bool AddonsManager::enable(std::string nameOrUuid)
 {
     try
     {
-        auto addon = findAddon(nameOrUuid);
+        auto addon = findAddon(nameOrUuid, true);
         if (!addon)
             return false;
         if (AddAddonToList(*addon))
@@ -390,7 +390,7 @@ bool AddonsManager::uninstall(std::string nameOrUuid)
 {
     try
     {
-        auto addon = findAddon(nameOrUuid);
+        auto addon = findAddon(nameOrUuid, true);
         if (!addon)
         {
             addonLogger.error("Addon not found!");
@@ -420,12 +420,35 @@ std::vector<Addon*> AddonsManager::getAllAddons()
     return res;
 }
 
-Addon* AddonsManager::findAddon(std::string nameOrUuid)
+Addon* AddonsManager::findAddon(std::string nameOrUuid, bool fuzzy)
 {
+    Addon* possible = nullptr;
+    bool multiMatch = false;
     for (auto& addon : addons)
-        if (ColorFormat::removeColorCode(std::string(addon.name)) == ColorFormat::removeColorCode(std::string(nameOrUuid)) || addon.uuid == nameOrUuid)
+    {
+        if (addon.uuid == nameOrUuid)
             return &addon;
-    return nullptr;
+        std::string addonName = addon.name;
+        std::string targetName = nameOrUuid;
+        if (ColorFormat::removeColorCode(addonName) == ColorFormat::removeColorCode(targetName))
+            return &addon;
+        if (!fuzzy)
+            continue;
+        // Simple fuzzy matching
+        std::transform(addonName.begin(), addonName.end(), addonName.begin(), ::tolower);
+        std::transform(targetName.begin(), targetName.end(), targetName.begin(), ::tolower);
+        if (StartsWith(addonName, targetName))
+        {
+            if (possible)
+                multiMatch = true;
+            else
+                possible = &addon;
+        }
+    }
+    if (multiMatch)
+        return nullptr;
+    else
+        return possible;
 }
 
 void ListAllAddons(CommandOutput& output)
@@ -491,7 +514,7 @@ class AddonsCommand : public Command {
     {
         Addon* addon = nullptr;
         if (target_isSet) {
-            auto addon = AddonsManager::findAddon(target);
+            auto addon = AddonsManager::findAddon(target, true);
             if (addon)
                 return addon;
             else
@@ -553,7 +576,7 @@ public:
     }
 
     static void setup(CommandRegistry* registry) {
-        registry->registerCommand("addons", "LiteLoaderBDS Addons Helper",
+        registry->registerCommand("addons", "LiteLoaderBDS Addons Helper (Restart required after addon changes)",
             CommandPermissionLevel::GameMasters, { (CommandFlagValue)0 }, { (CommandFlagValue)0x80 });
 
         // addons list
