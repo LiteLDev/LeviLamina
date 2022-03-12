@@ -170,7 +170,14 @@ bool InstallAddonToLevel(std::string addonDir, std::string addonName)
         newAddonData["version"] = version;
 
         bool exists = false;
-        auto addonList = nlohmann::json::parse(*ReadAllFile(addonListFile));
+        auto addonList = nlohmann::json::parse(*ReadAllFile(addonListFile), nullptr, false, true);
+        if (!addonList.is_array()) {
+            auto backupPath = filesystem::path(str2wstr(addonListFile)).stem().u8string() + "_error.json";
+            addonLogger.error("Invalid Addon List File {}, backup to {} and reset to default", addonListFile, backupPath);
+            std::error_code ec;
+            std::filesystem::rename(str2wstr(addonListFile), filesystem::path(addonListFile).remove_filename().append(str2wstr(backupPath)), ec);
+            addonList = "[]"_json;
+        }
         for (auto& addonData : addonList)
         {
             if (addonData["pack_id"] == uuid) {
@@ -549,7 +556,7 @@ void AutoInstallAddons()
         if (!file.is_regular_file())
             continue;
 
-        if (VALID_ADDON_FILE_EXTENSION.find(file.path().extension().u8string()) != VALID_ADDON_FILE_EXTENSION.end())
+        if (VALID_ADDON_FILE_EXTENSION.count(file.path().extension().u8string()) > 0)
         {
             toInstallList.push_back(file.path().lexically_normal().u8string());
         }
