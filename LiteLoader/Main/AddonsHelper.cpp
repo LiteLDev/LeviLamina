@@ -20,6 +20,7 @@
 #include <set>
 #include <vector>
 #include <MC/ColorFormat.hpp>
+#include <magic_enum/magic_enum.hpp>
 using namespace std;
 using namespace RegisterCommandHelper;
 
@@ -351,7 +352,7 @@ bool AddonsManager::disable(std::string nameOrUuid)
 {
     try
     {
-        auto addon = getAddon(nameOrUuid);
+        auto addon = findAddon(nameOrUuid);
         if (!addon)
             return false;
         if (RemoveAddonFromList(*addon))
@@ -370,7 +371,7 @@ bool AddonsManager::enable(std::string nameOrUuid)
 {
     try
     {
-        auto addon = getAddon(nameOrUuid);
+        auto addon = findAddon(nameOrUuid);
         if (!addon)
             return false;
         if (AddAddonToList(*addon))
@@ -389,7 +390,7 @@ bool AddonsManager::uninstall(std::string nameOrUuid)
 {
     try
     {
-        auto addon = getAddon(nameOrUuid);
+        auto addon = findAddon(nameOrUuid);
         if (!addon)
         {
             addonLogger.error("Addon not found!");
@@ -419,10 +420,10 @@ std::vector<Addon*> AddonsManager::getAllAddons()
     return res;
 }
 
-Addon* AddonsManager::getAddon(std::string nameOrUuid)
+Addon* AddonsManager::findAddon(std::string nameOrUuid)
 {
     for (auto& addon : addons)
-        if (addon.name == nameOrUuid || addon.uuid == nameOrUuid)
+        if (ColorFormat::removeColorCode(std::string(addon.name)) == ColorFormat::removeColorCode(std::string(nameOrUuid)) || addon.uuid == nameOrUuid)
             return &addon;
     return nullptr;
 }
@@ -461,6 +462,19 @@ void ListAllAddons(CommandOutput& output)
     }
 }
 
+void ShowAddon(CommandOutput& output, Addon& addon)
+{
+    std::ostringstream oss;
+    oss << "Addon <" << addon.name << "§r>" << (addon.enable ? " §aEnabled" : " §cDisabled") << "\n\n";
+    oss << "- §aName§r:  " << addon.name << "\n";
+    oss << "- §aUUID§r:  " << addon.uuid << "\n";
+    oss << "- §aIntroduction§r:  " << addon.description << "\n";
+    oss << "- §aVersion§r:  v" << addon.version.toString(true) << "\n";
+    oss << "- §aType§r:  " << magic_enum::enum_name(addon.type) << "\n";
+    oss << "- §aDirectory§r:  " << addon.directory << "\n";
+    output.success(oss.str());
+}
+
 class AddonsCommand : public Command {
     enum class Operation
     {
@@ -477,7 +491,7 @@ class AddonsCommand : public Command {
     {
         Addon* addon = nullptr;
         if (target_isSet) {
-            auto addon = AddonsManager::getAddon(target);
+            auto addon = AddonsManager::findAddon(target);
             if (addon)
                 return addon;
             else
@@ -499,36 +513,42 @@ public:
     {
         switch (operation)
         {
-        case Operation::List:
-            ListAllAddons(output);
-            break;
-        case Operation::Install:
-            if (AddonsManager::install(target))
-                output.success();
-            break;
-        case Operation::Uninstall:
-        {
-            auto addon = getSelectedAddon(output);
-            if (addon && AddonsManager::uninstall(addon->uuid))
-                output.success();
-            break;
-        }
-        case Operation::Enable:
-        {
-            auto addon = getSelectedAddon(output);
-            if (addon && AddonsManager::enable(addon->uuid))
-                output.success();
-            break;
-        }
-        case Operation::Disable:
-        {
-            auto addon = getSelectedAddon(output);
-            if (addon && AddonsManager::disable(addon->uuid))
-                output.success();
-            break;
-        }
-        default:
-            break;
+            case Operation::List:
+                if (target_isSet || index_isSet)
+                {
+                    if (auto addon = getSelectedAddon(output))
+                        ShowAddon(output, *addon);
+                }
+                else
+                    ListAllAddons(output);
+                break;
+            case Operation::Install:
+                if (AddonsManager::install(target))
+                    output.success();
+                break;
+            case Operation::Uninstall:
+            {
+                auto addon = getSelectedAddon(output);
+                if (addon && AddonsManager::uninstall(addon->uuid))
+                    output.success();
+                break;
+            }
+            case Operation::Enable:
+            {
+                auto addon = getSelectedAddon(output);
+                if (addon && AddonsManager::enable(addon->uuid))
+                    output.success();
+                break;
+            }
+            case Operation::Disable:
+            {
+                auto addon = getSelectedAddon(output);
+                if (addon && AddonsManager::disable(addon->uuid))
+                    output.success();
+                break;
+            }
+            default:
+                break;
         }
     }
 
@@ -542,7 +562,13 @@ public:
         });
         registry->registerOverload<AddonsCommand>(
             "addons",
-            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "Operation", "Operation_Addons_List").addOptions((CommandParameterOption)1)
+            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "Operation", "Operation_Addons_List").addOptions((CommandParameterOption)1),
+            makeOptional<CommandParameterDataType::SOFT_ENUM>(&AddonsCommand::target, "AddonName", "AddonName", &AddonsCommand::target_isSet)
+        );
+        registry->registerOverload<AddonsCommand>(
+            "addons",
+            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "Operation", "Operation_Addons_List").addOptions((CommandParameterOption)1),
+            makeOptional<CommandParameterDataType::NORMAL>(&AddonsCommand::index, "AddonIndex", nullptr, &AddonsCommand::index_isSet)
         );
 
         // addons install

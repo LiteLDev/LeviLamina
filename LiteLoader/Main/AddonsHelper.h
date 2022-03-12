@@ -29,5 +29,5 @@ public:
     static bool disable(std::string nameOrUuid);
 
     static std::vector<Addon*> getAllAddons();
-    static Addon* getAddon(std::string nameOrUuid);
+    static Addon* findAddon(std::string nameOrUuid);
 };
