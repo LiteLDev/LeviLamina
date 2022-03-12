@@ -43,6 +43,58 @@ std::string GetAddonJsonFile(Addon::Type type)
     return "";
 }
 
+
+
+std::optional<Addon> parseAddon(std::filesystem::path addonPath)
+{
+    try
+    {
+        auto manifestFile = ReadAllFile(addonPath.u8string());
+        if (!manifestFile || manifestFile->empty())
+            return std::nullopt;
+
+        auto manifest = nlohmann::json::parse(*manifestFile, nullptr, true, true);
+        auto header = manifest["header"];
+        auto uuid = header["uuid"];
+        Addon addon;
+        addon.name = header["name"];
+        addon.description = header["description"];
+        addon.uuid = uuid;
+        addon.directory = addonPath.u8string();
+
+        auto ver = header["version"];
+        addon.version = LL::Version(ver[0], ver[1], ver[2]);
+
+        string type = manifest["modules"][0]["type"];
+        if (type == "resources")
+            addon.type = Addon::Type::ResourcePack;
+        else if (type == "data")
+            addon.type = Addon::Type::BehaviorPack;
+        else
+            return std::nullopt;
+
+        return addon;
+    }
+    catch (const seh_exception& e)
+    {
+        addonLogger.error("Uncaught SEH Exception Detected!");
+        addonLogger.error("In " __FUNCTION__ " " + addonPath.u8string());
+        addonLogger.error("Error: Code[{}] {}", e.code(), TextEncoding::toUTF8(e.what()));
+    }
+    catch (const std::exception& e)
+    {
+        addonLogger.error("Uncaught C++ Exception Detected!");
+        addonLogger.error("In " __FUNCTION__ " " + addonPath.u8string());
+        addonLogger.error("Error: Code[{}] {}", -1, TextEncoding::toUTF8(e.what()));
+    }
+    catch (...)
+    {
+        addonLogger.error("Uncaught Exception Detected!");
+        addonLogger.error("In " __FUNCTION__ " " + addonPath.u8string());
+    }
+    return std::nullopt;
+}
+
 //Helper
 bool InstallAddonToLevel(std::string addonDir, std::string addonName)
 {
@@ -84,6 +136,21 @@ bool InstallAddonToLevel(std::string addonDir, std::string addonName)
     string levelPath = Level::getCurrentLevelPath();
     string toPath = levelPath + subPath + "/" + addonName;
 
+    // Avoid duplicate names or update addon if same uuid
+    while (filesystem::exists(str2wstr(toPath)))
+    {
+        auto addon = parseAddon(str2wstr(toPath));
+        if (addon.has_value() && addon->uuid != uuid)
+        {
+            toPath += "_";
+        }
+        else
+        {
+            std::error_code ec;
+            filesystem::remove_all(str2wstr(toPath), ec);
+            break;
+        }
+    }
     std::error_code ec;
     filesystem::create_directories(str2wstr(toPath), ec);
     filesystem::copy(str2wstr(addonDir), str2wstr(toPath), filesystem::copy_options::recursive, ec);
@@ -102,8 +169,18 @@ bool InstallAddonToLevel(std::string addonDir, std::string addonName)
         newAddonData["pack_id"] = uuid;
         newAddonData["version"] = version;
 
+        bool exists = false;
         auto addonList = nlohmann::json::parse(*ReadAllFile(addonListFile));
-        addonList.push_back(newAddonData);
+        for (auto& addonData : addonList)
+        {
+            if (addonData["pack_id"] == uuid) {
+                addonData["version"] = version;
+                exists = true;
+                break;
+            }
+        }
+        if (!exists)
+            addonList.push_back(newAddonData);
         bool res = WriteAllFile(addonListFile, addonList.dump(4));
         if (!res)
             throw "Fail to write data back to addon list file!";
@@ -201,8 +278,9 @@ bool AddonsManager::install(std::string packPath)
             string addonName = filesystem::path(str2wstr(dir)).filename().u8string();
             if (addonName.empty() || addonName == "Temp")
                 addonName = filesystem::path(str2wstr(packPath)).stem().u8string();
-            if (!InstallAddonToLevel(dir, addonName))
-                return false;
+            if (!InstallAddonToLevel(dir, addonName)) {
+                addonLogger.error("Error in Install Addon {} To Level", addonName);
+            }
         }
 
         filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
@@ -419,7 +497,9 @@ void FindAddons(string jsonPath, string packsDir)
         std::set<string> validPackIDs;
         for (auto addon : addonList)
         {
-            validPackIDs.insert(std::string(addon["pack_id"]));
+            auto pkid = addon.at("pack_id");
+            if (pkid && pkid.is_string())
+                validPackIDs.insert(pkid.get<std::string>());
         }
 
         filesystem::directory_iterator ent(str2wstr(packsDir));
@@ -427,35 +507,12 @@ void FindAddons(string jsonPath, string packsDir)
         {
             if (!dir.is_directory())
                 continue;
-            auto mainfestPath = dir.path();
-            mainfestPath.append("manifest.json");
-            auto manifestFile = ReadAllFile(mainfestPath.u8string());
-            if (!manifestFile || manifestFile->empty())
+            auto addon = parseAddon(dir);
+            if (!addon)
                 continue;
-
-            auto manifest = nlohmann::json::parse(*manifestFile, nullptr, true, true);
-            auto header = manifest["header"];
-            auto uuid = header["uuid"];
-            if (validPackIDs.find(uuid) != validPackIDs.end())
+            if (validPackIDs.find(addon->uuid) != validPackIDs.end())
             {
-                Addon addon;
-                addon.name = header["name"];
-                addon.description = header["description"];
-                addon.uuid = uuid;
-                addon.directory = dir.path().u8string();
-
-                auto ver = header["version"];
-                addon.version = LL::Version(ver[0],ver[1],ver[2]);
-
-                string type = manifest["modules"][0]["type"];
-                if (type == "resources")
-                    addon.type = Addon::Type::ResourcePack;
-                else if (type == "data")
-                    addon.type = Addon::Type::BehaviorPack;
-                else
-                    continue;
-
-                addons.push_back(std::move(addon));
+                addons.emplace_back(std::move(*addon));
             }
         }
     }
