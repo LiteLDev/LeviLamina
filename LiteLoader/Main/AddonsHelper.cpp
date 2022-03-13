@@ -633,27 +633,32 @@ void FindAddons(string jsonPath, string packsDir)
 {
     try
     {
-        if (!filesystem::exists(str2wstr(jsonPath)) || !filesystem::exists(str2wstr(packsDir)))
+        if (!filesystem::exists(str2wstr(jsonPath)) && !filesystem::exists(str2wstr(packsDir)))
             return;
+        if (!filesystem::exists(str2wstr(jsonPath)))
+            WriteAllFile(jsonPath, "[]");
+        if (!filesystem::exists(str2wstr(packsDir)))
+            filesystem::create_directories(str2wstr(packsDir));
 
         auto content = ReadAllFile(jsonPath);
-        if (!content)
+        if (!content || content->empty())
         {
-            addonLogger.warn("Fail to load {}! Fail to enumerate addons.", jsonPath);
+            WriteAllFile(jsonPath, "[]");
+            content = "[]";
         }
-        if (content->empty())
-            return;
-
-        auto addonList = nlohmann::json::parse(*content, nullptr, true, true);
-        if (addonList.empty())
-            return;
-
         std::set<string> validPackIDs;
-        for (auto addon : addonList)
+        try
         {
-            auto pkid = addon.at("pack_id");
-            if (pkid.is_string())
-                validPackIDs.insert(pkid.get<std::string>());
+            auto addonList = nlohmann::json::parse(*content, nullptr, true, true);
+            for (auto addon : addonList)
+            {
+                std::string pktid = addon["pack_id"];
+                validPackIDs.insert(pktid);
+            }
+        }
+        catch (const std::exception&)
+        {
+            addonLogger.error("Error in parse enabled addons list");
         }
 
         filesystem::directory_iterator ent(str2wstr(packsDir));
