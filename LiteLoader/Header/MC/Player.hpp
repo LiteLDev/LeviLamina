@@ -47,6 +47,7 @@ public:
     LIAPI float getAvgPacketLoss();
     LIAPI string getClientId();
     LIAPI int getDeviceType();
+    LIAPI bool isOperator();
     LIAPI bool isOP();
 
 

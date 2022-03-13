@@ -1,4 +1,4 @@
-﻿#include <MC/Minecraft.hpp>
+#include <MC/Minecraft.hpp>
 
 #include <MC/Actor.hpp>
 #include <MC/Mob.hpp>
@@ -322,9 +322,14 @@ int Player::getDeviceType()
     return getPlatform();
 }
 
-bool Player::isOP()
+bool Player::isOperator()
 {
     return (int)getPlayerPermissionLevel() >= 2;
+}
+
+bool Player::isOP()
+{
+    return isOperator();
 }
 
 bool Player::crashClient() 
