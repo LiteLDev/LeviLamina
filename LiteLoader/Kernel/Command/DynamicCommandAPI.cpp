@@ -431,17 +431,18 @@ inline char DynamicCommand::builderCallbackHanler(DCCallback* cb, DCArgs* args, 
 {
     DynamicCommandInstance& command = *(DynamicCommandInstance*)userdata;
     auto arg1 = (std::unique_ptr<Command>*)dcbArgPointer(args);
-    DynamicCommand::commandBuilder2(arg1, command.getCommandName());
+    DynamicCommand::commandBuilder(arg1, command.getCommandName());
     return 'p';
 }
 
+std::unique_ptr<Command>* DynamicCommand::commandBuilder(std::unique_ptr<Command>* rtn, std::string name)
+{
 #define CaseInitBreak(type)                                  \
     case ParameterType::type:                                \
         initValue<ParameterDataType::type>(command, offset); \
         break;
-std::unique_ptr<Command>* DynamicCommand::commandBuilder2(std::unique_ptr<Command>* rtn, std::string name)
-{
-    assert(dynamicCommandInstances.count(name));
+
+    assert(dynamicCommandInstances.count(name) == 1);
     if (dynamicCommandInstances.count(name) == 0)
     {
         logger.error("Error in allocate dynamic command");
@@ -578,6 +579,8 @@ bool DynamicCommand::onServerCommandsRegister(CommandRegistry& registry)
         auto handler = command->handler;
         try
         {
+            if (!LL::getPlugin(handler))
+                throw "Plugin that registered command \"" + name + "\" not found";
             auto res = DynamicCommand::_setup(std::move(command));
             if (!res)
                 throw "Command \"" + name + "\" setup failed";
@@ -588,12 +591,13 @@ bool DynamicCommand::onServerCommandsRegister(CommandRegistry& registry)
     return true;
 }
 
+DynamicCommand::~DynamicCommand()
+{
 #define CaseDestructBreak(type)                          \
     case ParameterType::type:                            \
         destruct<ParameterDataType::type>(this, offset); \
         break;
-DynamicCommand::~DynamicCommand()
-{
+
     auto& commandName = getCommandName();
     auto iter = dynamicCommandInstances.find(commandName);
     if (iter == dynamicCommandInstances.end())
@@ -654,8 +658,7 @@ DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class Dynami
         auto& uptr = delaySetupCommandInstances.emplace_back(std::move(commandInstance));
         return uptr.get();
     }
-    logger.warn("register command after RegCmdEvent is unstable!");
-    logger.warn("registering command {}!", commandInstance->getCommandName());
+    logger.warn("Registering command \"{}\" after RegCmdEvent, note that this is unstable!", commandInstance->getCommandName());
     return DynamicCommand::_setup(std::move(commandInstance));
 }
 
@@ -1051,14 +1054,14 @@ inline DynamicCommand::BuilderFn DynamicCommandInstance::initCommandBuilder()
 
 #pragma endregion
 
-#ifndef DEBUG
+#ifdef DEBUG
 #define successf(...) success(fmt::format(__VA_ARGS__))
 #define errorf(...) error(fmt::format(__VA_ARGS__))
 using Param = DynamicCommand::ParameterData;
 using ParamType = DynamicCommand::ParameterType;
 using ParamIndex = DynamicCommandInstance::ParameterIndex;
 
-#ifndef TEST_DYNAMIC_COMMAND
+#ifdef TEST_DYNAMIC_COMMAND
 
 #include <MC/Actor.hpp>
 #include <MC/Player.hpp>

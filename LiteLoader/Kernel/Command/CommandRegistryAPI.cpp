@@ -103,7 +103,7 @@ bool CommandRegistry::unregisterCommand(std::string const& name)
         logger.error("unregister command is only enabled in debug mode");
         return false;
     }
-    logger.warn("Unregister Command {}!", name);
+    logger.warn("Unregister Command \"{}\"!", name);
     try
     {
         auto command = getCommandFullName(name);

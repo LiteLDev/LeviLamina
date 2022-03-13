@@ -2054,6 +2054,7 @@ TInstanceHook(void, "?setup@ChangeSettingCommand@@SAXAEAVCommandRegistry@@@Z",
         RegCmdEvent ev{};
         ev.mCommandRegistry = this;
         ev.call();
+        // setup dynamic command
         DynamicCommand::onServerCommandsRegister(*this);
     }
     IF_LISTENED_END(RegCmdEvent)
