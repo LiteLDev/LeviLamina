@@ -55,7 +55,7 @@
 
 
 #include <utility>
-#include "../Global.h"
+#include "Global.h"
 
 class ServerPlayer;
 class Player;
