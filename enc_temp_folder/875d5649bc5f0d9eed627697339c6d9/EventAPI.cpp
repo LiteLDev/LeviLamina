@@ -52,6 +52,7 @@
 #include <MC/InventoryAction.hpp>
 #include <MC/InventorySource.hpp>
 #include <MC/Util.hpp>
+
 #include <DynamicCommandAPI.h>
 
 static_assert(offsetof(InventoryAction, source) == 0x0);
@@ -140,7 +141,10 @@ bool EventManager<EVENT>::call(EVENT& ev)
         try {
             bool res = i->isRef ? i->callbackRef(ev) : i->callback(ev);
             if (!res)
+            {
+                //logger.info("Event {} be blocked by plugin {}", typeid(EVENT).name(), i->pluginName);
                 passToBDS = false;
+            }
         }
         catch (const seh_exception& e)
         {
@@ -2054,6 +2058,7 @@ TInstanceHook(void, "?setup@ChangeSettingCommand@@SAXAEAVCommandRegistry@@@Z",
         RegCmdEvent ev{};
         ev.mCommandRegistry = this;
         ev.call();
+        // setup dynamic command
         DynamicCommand::onServerCommandsRegister(*this);
     }
     IF_LISTENED_END(RegCmdEvent)

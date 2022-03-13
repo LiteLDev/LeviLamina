@@ -402,9 +402,13 @@ private:
 
     LIAPI static char builderCallbackHanler(DCCallback* cb, DCArgs* args, DCValue* result, void* userdata);
     LIAPI static std::unique_ptr<Command>* commandBuilder2(std::unique_ptr<Command>* rtn, std::string name);
+    LIAPI static DynamicCommandInstance* _setup(std::unique_ptr<class DynamicCommandInstance> commandInstance);
+
+public:
+    static bool onServerCommandsRegister(CommandRegistry& registry);
 
     friend class DynamicCommandInstance;
-
+    
 public:
     /*0*/ virtual ~DynamicCommand();
     /*1*/ virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;

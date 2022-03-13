@@ -95,8 +95,15 @@ std::string CommandRegistry::getCommandFullName(std::string const& name)
         return sig->name;
     return "";
 }
+
+#include <Main/Config.h>
 bool CommandRegistry::unregisterCommand(std::string const& name)
 {
+    if (!LL::globalConfig.debugMode) {
+        logger.error("unregister command is only enabled in debug mode");
+        return false;
+    }
+    logger.warn("Unregister Command {}!", name);
     try
     {
         auto command = getCommandFullName(name);

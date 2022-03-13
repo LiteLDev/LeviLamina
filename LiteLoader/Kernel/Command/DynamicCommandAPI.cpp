@@ -59,7 +59,7 @@ extern Logger logger;
 // global variable and function
 namespace
 {
-// static std::string latestAllocateName = "";
+bool serverCommandsRegistered = false;
 std::unordered_map<std::string, std::unique_ptr<DynamicCommandInstance>> dynamicCommandInstances;
 std::vector<std::unique_ptr<DynamicCommandInstance>> delaySetupCommandInstances;
 
@@ -465,89 +465,14 @@ std::unique_ptr<Command>* DynamicCommand::commandBuilder2(std::unique_ptr<Comman
     return rtn;
 }
 
-#define CaseDestructBreak(type)                          \
-    case ParameterType::type:                            \
-        destruct<ParameterDataType::type>(this, offset); \
-        break;
-DynamicCommand::~DynamicCommand()
+DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicCommandInstance> commandInstance)
 {
-    auto& commandName = getCommandName();
-    auto iter = dynamicCommandInstances.find(commandName);
-    if (iter == dynamicCommandInstances.end())
-    {
-        logger.error("Error in DynamicCommand::~DynamicCommand(), command \"{}\" not found", commandName);
-        return;
-    }
-    auto& commandIns = *iter->second;
-    for (auto& [name, parameter] : commandIns.parameterPtrs)
-    {
-        auto offset = parameter.getOffset();
-        switch (parameter.type)
-        {
-            ForEachParameterType(CaseDestructBreak);
-            default:
-                break;
-        }
-    }
-}
-
-void DynamicCommand::execute(CommandOrigin const& origin, CommandOutput& output) const
-{
-    auto iter = dynamicCommandInstances.find(getCommandName());
-    if (iter == dynamicCommandInstances.end())
-    {
-        return output.error("Dynamic Command Not Found");
-    }
-    auto& commandIns = *iter->second;
-    if (!commandIns.callback)
-    {
-        return output.error(fmt::format("Command {} has been removed.", getCommandName()));
-    }
-    try
-    {
-        std::unordered_map<std::string, Result> results;
-
-        for (auto& [name, param] : commandIns.parameterPtrs)
-        {
-            results.emplace(name, param.getResult(this, &origin));
-        }
-        commandIns.callback(*this, origin, output, results);
-    }
-    CatchDynamicCommandError("DynamicCommand::execute", commandIns.handler);
-}
-
-std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(std::string const& name, std::string const& description, CommandPermissionLevel permission, CommandFlag flag1, CommandFlag flag2, HMODULE handler)
-{
-    return DynamicCommandInstance::create(name, description, permission, flag1 |= flag2, handler);
-}
-#include <LLAPI.h>
-#include <EventAPI.h>
-#include <LiteLoader/Main/Config.h>
-DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class DynamicCommandInstance> commandInstance)
-{
-    if (LL::globalConfig.serverStatus == LL::LLServerStatus::Starting)
-    {
-        bool first = delaySetupCommandInstances.size() == 0;
-        auto& uptr = delaySetupCommandInstances.emplace_back(std::move(commandInstance));
-        if (first)
-        {
-            Event::ServerStartedEvent::subscribe_ref([](Event::ServerStartedEvent&) -> bool {
-                for (auto& command : delaySetupCommandInstances)
-                {
-                    DynamicCommand::setup(std::move(command));
-                };
-                delaySetupCommandInstances.clear();
-                return true;
-            });
-        }
-        return uptr.get();
-    }
     if (!commandInstance)
-        return false;
+        return nullptr;
     if (!commandInstance->callback)
-        return false;
+        return nullptr;
     if (commandInstance->overloads.empty())
-        return false;
+        return nullptr;
     // commandInstance->updateSoftEnum();
 
     for (auto& param : commandInstance->parameterDatas)
@@ -642,6 +567,96 @@ DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class Dynami
     auto res = dynamicCommandInstances.emplace(commandInstance->name, std::move(commandInstance));
     updateAvailableCommands();
     return res.first->second.get();
+}
+
+bool DynamicCommand::onServerCommandsRegister(CommandRegistry& registry)
+{
+    serverCommandsRegistered = true;
+    for (auto& command : delaySetupCommandInstances)
+    {
+        std::string name = command->getCommandName();
+        auto handler = command->handler;
+        try
+        {
+            auto res = DynamicCommand::_setup(std::move(command));
+            if (!res)
+                throw "Command \"" + name + "\" setup failed";
+        }
+        CatchDynamicCommandError("DynamicCommand::_setup - " + name, handler);
+    };
+    delaySetupCommandInstances.clear();
+    return true;
+}
+
+#define CaseDestructBreak(type)                          \
+    case ParameterType::type:                            \
+        destruct<ParameterDataType::type>(this, offset); \
+        break;
+DynamicCommand::~DynamicCommand()
+{
+    auto& commandName = getCommandName();
+    auto iter = dynamicCommandInstances.find(commandName);
+    if (iter == dynamicCommandInstances.end())
+    {
+        logger.error("Error in DynamicCommand::~DynamicCommand(), command \"{}\" not found", commandName);
+        return;
+    }
+    auto& commandIns = *iter->second;
+    for (auto& [name, parameter] : commandIns.parameterPtrs)
+    {
+        auto offset = parameter.getOffset();
+        switch (parameter.type)
+        {
+            ForEachParameterType(CaseDestructBreak);
+            default:
+                break;
+        }
+    }
+}
+
+void DynamicCommand::execute(CommandOrigin const& origin, CommandOutput& output) const
+{
+    auto iter = dynamicCommandInstances.find(getCommandName());
+    if (iter == dynamicCommandInstances.end())
+    {
+        return output.error("Dynamic Command Not Found");
+    }
+    auto& commandIns = *iter->second;
+    if (!commandIns.callback)
+    {
+        return output.error(fmt::format("Command {} has been removed.", getCommandName()));
+    }
+    try
+    {
+        std::unordered_map<std::string, Result> results;
+
+        for (auto& [name, param] : commandIns.parameterPtrs)
+        {
+            results.emplace(name, param.getResult(this, &origin));
+        }
+        commandIns.callback(*this, origin, output, results);
+    }
+    CatchDynamicCommandError("DynamicCommand::execute", commandIns.handler);
+}
+
+std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(std::string const& name, std::string const& description, CommandPermissionLevel permission, CommandFlag flag1, CommandFlag flag2, HMODULE handler)
+{
+    return DynamicCommandInstance::create(name, description, permission, flag1 |= flag2, handler);
+}
+#include <LLAPI.h>
+#include <EventAPI.h>
+#include <Main/Config.h>
+
+DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class DynamicCommandInstance> commandInstance)
+{
+    if (!serverCommandsRegistered)
+    {
+        auto& uptr = delaySetupCommandInstances.emplace_back(std::move(commandInstance));
+        return uptr.get();
+    }
+    logger.warn("register command after RegCmdEvent is unstable!");
+    logger.warn("registering command {}!", commandInstance->getCommandName());
+    return DynamicCommand::_setup(std::move(commandInstance));
 }
 
 std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(std::string const& name, std::string const& description, std::unordered_map<std::string, std::vector<std::string>>&& enums, std::vector<ParameterData>&& params, std::vector<std::vector<std::string>>&& overloads, CallBackFn callback, CommandPermissionLevel permission, CommandFlag flag1, CommandFlag flag2, HMODULE handler)
@@ -1036,14 +1051,14 @@ inline DynamicCommand::BuilderFn DynamicCommandInstance::initCommandBuilder()
 
 #pragma endregion
 
-#ifdef DEBUG
+#ifndef DEBUG
 #define successf(...) success(fmt::format(__VA_ARGS__))
 #define errorf(...) error(fmt::format(__VA_ARGS__))
 using Param = DynamicCommand::ParameterData;
 using ParamType = DynamicCommand::ParameterType;
 using ParamIndex = DynamicCommandInstance::ParameterIndex;
 
-#ifdef TEST_DYNAMIC_COMMAND
+#ifndef TEST_DYNAMIC_COMMAND
 
 #include <MC/Actor.hpp>
 #include <MC/Player.hpp>
@@ -1252,18 +1267,12 @@ void setupRemoveCommand()
     DynamicCommand::setup(std::move(command));
 }
 
-#include <MC/EnchantUtils.hpp>
-#include <MC/I18n.hpp>
-TClasslessInstanceHook2("TestDynamicCommand_startServerThread", void, "?startServerThread@ServerInstance@@QEAAXXZ")
-{
-    Global<Level> = Global<Minecraft>->getLevel();
+bool testCommandInited = ([]() {
     setupRemoveCommand();
     setupTestEnumCommand();
     setupTestParamCommand();
     setupExampleCommand();
-    original(this);
-
-#ifdef COMMAND_REGISTRY_EXTRA
+#if false
     Global<CommandRegistry>->printAll();
     Schedule::delayRepeat(
         []() {
@@ -1276,7 +1285,8 @@ TClasslessInstanceHook2("TestDynamicCommand_startServerThread", void, "?startSer
         },
         200, 2);
 #endif // COMMAND_REGISTRY_EXTRA
-};
+    return true;
+})();
 
 // TInstanceHook(void, "?run@Command@@QEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z",
 //               Command, class CommandOrigin const& origin, class CommandOutput& output)
@@ -1293,8 +1303,8 @@ TClasslessInstanceHook(bool, "?hasCommandsEnabled@LevelData@@QEBA_NXZ")
 TInstanceHook(CommandParameterData&, "?addOptions@CommandParameterData@@QEAAAEAV1@W4CommandParameterOption@@@Z",
               CommandParameterData, CommandParameterOption option)
 {
-    logger.warn("name: {}, type: {}, desc: {}, option: {:x}",
-                name, magic_enum::enum_name(type), desc ? desc : "", (int)option);
+    //logger.warn("CommandParameterData::addOptions - name: {}, type: {}, desc: {}, option: {:x}",
+    //            name, magic_enum::enum_name(type), desc ? desc : "", (int)option);
     return original(this, option);
 }
 
@@ -1382,11 +1392,11 @@ void setupEchoCommand()
         });
     DynamicCommand::setup(std::move(command));
 }
-#include <MC/MinecraftCommands.hpp>
-TClasslessInstanceHook2("SetupBetaCommand_startServerThread", void, "?startServerThread@ServerInstance@@QEAAXXZ")
-{
+
+bool debugCommandInited = ([]() {
     setupEnumCommand();
     setupEchoCommand();
-    original(this);
-}
+    return true;
+    })();
+
 #endif // LITELOADER_VERSION_STATUS == LL::Version::Beta
