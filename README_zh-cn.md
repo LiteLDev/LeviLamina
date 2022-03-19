@@ -52,16 +52,14 @@ void PluginInit()
 #### 脚本语言示例插件
 
 ```javascript
-//注册关服命令
+// 注册关服命令
 mc.listen("onServerStarted", () => {
-    const cmd = mc.newCommand("关服", "关闭服务器", PermType.GameMasters);
+    const cmd = mc.newCommand("stopsvr", "关闭服务器", PermType.GameMasters);
     cmd.overload();
     cmd.setCallback((_cmd, ori, out, _res) => {
         const pl = ori.player;
-        //鉴权
-        if (!pl.isOP()) return;
-        out.success("停服命令执行成功");
-        mc.broadcast(`玩家${pl.realName}执行停服命令。服务器将在5秒之后关闭`);
+        out.success("关服命令执行成功");
+        mc.broadcast(`玩家${pl.realName}执行了关服命令。服务器将在5秒之后关闭`);
 
         //执行关服命令
         setTimeout(() => {
@@ -120,6 +118,17 @@ mc.listen("onServerStarted", () => {
 3. 运行 `bedrock_server_mod.exe` 开服
 
 ### 对于 Linux 用户
+
+#### 安装脚本
+
+```
+wget https://github.com/LiteLDev/LiteLoaderBDS/raw/beta/Scripts/install.sh
+chmod +x install.sh
+./install.sh
+```
+
+#### Docker
+
 在终端中输入：
 ```
 docker pull shrbox/liteloaderbds

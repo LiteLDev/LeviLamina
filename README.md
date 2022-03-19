@@ -120,6 +120,17 @@ mc.listen("onServerStarted", () => {
 5. Execute `bedrock_server_mod.exe` and enjoy it !
 
 ### For Linux
+
+#### Installation script
+
+```
+wget https://github.com/LiteLDev/LiteLoaderBDS/raw/beta/Scripts/install.sh
+chmod +x install.sh
+./install.sh
+```
+
+#### Docker
+
 Enter the following lines in your terminal: 
 ```
 docker pull shrbox/liteloaderbds
