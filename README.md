@@ -30,6 +30,8 @@ making it easy to learn and extremely flexible.
 
 #### C++ language sample plugin
 ```c++
+// Template project: https://github.com/LiteLDev/PluginTemplate
+// More examples: https://github.com/LiteLDev/LiteLoaderPlugins
 #include <EventAPI.h>
 #include <LoggerAPI.h>
 #include <LLAPI.h>
@@ -39,9 +41,8 @@ Logger logger("AttackLog");
 
 void PluginInit()
 {
-    LL::registerPlugin("PluginName", "Introduction", LL::Version(1, 0, 0));
     logger.info("Plugin xxx has been loaded.");
-    //Subscribe Player-Attack Event
+    // Subscribe Player-Attack Event
     Event::PlayerAttackEvent::subscribe([](const Event::PlayerAttackEvent& ev) {
         Player* player = ev.mPlayer;
         Actor* actor = ev.mTarget;
@@ -54,20 +55,18 @@ void PluginInit()
 ```
 #### Script language sample plugin (Use Js as an example)
 ```javascript
-//Register for shutdown command
+// Register for shutdown command
 mc.listen("onServerStarted", () => {
     const cmd = mc.newCommand("stopsvr", "close server", PermType.GameMasters);
     cmd.overload();
     cmd.setCallback((_cmd, ori, out, _res) => {
         const pl = ori.player;
-        //Check for Permissions
-        if (!pl.isOP()) return;
         out.success("stop command executed successfully");
         mc.broadcast(
             `Player${pl.realName}Execute the stop command. The server will be shut down after 5 seconds`
         );
 
-        //Execute stop command
+        // Execute stop command
         setTimeout(() => {
             mc.runcmd("stop");
         }, 5000);
