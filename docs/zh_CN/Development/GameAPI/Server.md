@@ -22,3 +22,15 @@
 - 返回值类型：`Boolean`
 
 <br>
+
+### 设置服务器最大玩家数  
+
+`mc.setMaxPlayers(num)`
+
+- 参数：
+  - num : `Number`  
+    最大玩家数  
+- 返回值：是否设置成功
+- 返回值类型：`Boolean`
+
+<br>

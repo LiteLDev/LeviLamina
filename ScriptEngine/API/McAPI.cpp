@@ -37,4 +37,5 @@ ClassDefine<void> McClassBuilder =
 		.function("getAllScoreObjective", &McClass::getAllScoreObjectives)
 		.function("getDisplayObjectives", &McClass::getDisplayObjective)
 		.function("crash", &McClass::crashBDS)
-		.build();
+        	.function("setMaxPlayers", &McClass::setMaxNumPlayers)
+        	.build();
