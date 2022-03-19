@@ -3,7 +3,7 @@
 codename=$(lsb_release -c --short)
 BDSVER="1.18.12.01"
 LLVER="2.1.3"
-sudo apt install -y wget software-properties-common
+sudo apt install -y wget software-properties-common unzip
 sudo dpkg --add-architecture i386
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo apt-key add winehq.key
