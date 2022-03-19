@@ -121,7 +121,7 @@ mc.listen("onServerStarted", () => {
 
 ### For Linux
 
-#### Installation script
+#### Installation script(Ubuntu)
 
 ```
 wget https://github.com/LiteLDev/LiteLoaderBDS/raw/beta/Scripts/install.sh
