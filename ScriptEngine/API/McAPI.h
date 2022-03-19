@@ -37,6 +37,8 @@ public:
     static Local<Value> sendCmdOutput(const Arguments& args);
     static Local<Value> crashBDS(const Arguments& args);
 
+    static Local<Value> setMaxNumPlayers(const Arguments& args);
+
     static Local<Value> newIntPos(const Arguments& args);
     static Local<Value> newFloatPos(const Arguments& args);
 
