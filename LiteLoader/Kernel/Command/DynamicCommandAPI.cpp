@@ -131,6 +131,7 @@ inline void OutputError(std::string errorMsg, int errorCode, std::string errorWh
     logger.error("In Function ({})", func);
     if (auto plugin = LL::getPlugin(handler))
         logger.error("In Plugin <{}>", plugin->name);
+    __debugbreak();
 }
 
 } // namespace
@@ -468,106 +469,112 @@ std::unique_ptr<Command>* DynamicCommand::commandBuilder(std::unique_ptr<Command
 
 DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicCommandInstance> commandInstance)
 {
-    if (!commandInstance)
-        return nullptr;
-    if (!commandInstance->callback)
-        return nullptr;
-    if (commandInstance->overloads.empty())
-        return nullptr;
-    // commandInstance->updateSoftEnum();
-
-    for (auto& param : commandInstance->parameterDatas)
+    std::string name = commandInstance->getCommandName();
+    auto handler = commandInstance->handler;
+    try
     {
-        if (param.type == ParameterType::Enum)
-        {
-            // clone BDS's enum
-            if (commandInstance->enumRanges.count(param.description) == 0)
-            {
-                auto namesInBds = CommandRegistry::getEnumNames();
-                auto iter = std::find(namesInBds.begin(), namesInBds.end(), param.description);
-                if (iter == namesInBds.end())
-                    throw("Enum " + std::string(param.description) + "not found in command and BDS");
-#ifndef USE_PARSE_ENUM_STRING_ // fix Enum
-                commandInstance->setEnum(*iter, CommandRegistry::getEnumValues(*iter));
-#endif // USE_PARSE_ENUM_STRING
-            }
-        }
-        else if (param.type == ParameterType::SoftEnum)
-        {
-            // add empty Soft Enum if not found in command and BDS
-            if (commandInstance->softEnums.count(param.description) == 0)
-            {
-                auto namesInBds = CommandRegistry::getSoftEnumNames();
-                auto iter = std::find(namesInBds.begin(), namesInBds.end(), param.description);
-                if (iter == namesInBds.end())
-                    commandInstance->setSoftEnum(param.description, {});
-            }
-        }
-    }
+        if (!commandInstance)
+            return nullptr;
+        if (!commandInstance->callback)
+            return nullptr;
+        if (commandInstance->overloads.empty())
+            return nullptr;
+        // commandInstance->updateSoftEnum();
 
-    // fix enum name with prefix '_...' if Enum name is exists in BDS
-    auto namesInBds = CommandRegistry::getEnumNames();
-    std::unordered_map<std::string_view, std::pair<size_t, size_t>> convertedEnumRanges;
-    for (auto& [name, range] : commandInstance->enumRanges)
-    {
-        std::string fixedName = name.data();
-        while (std::find(namesInBds.begin(), namesInBds.end(), fixedName) != namesInBds.end())
+        for (auto& param : commandInstance->parameterDatas)
         {
-            fixedName.append("_");
-        }
-        std::string_view fixedView = name;
-        if (fixedName != name)
-        {
-            for (auto& namePtr : commandInstance->enumNames)
+            if (param.type == ParameterType::Enum)
             {
-                if (*namePtr == name)
+                // clone BDS's enum
+                if (commandInstance->enumRanges.count(param.description) == 0)
                 {
-                    namePtr->swap(fixedName);
-                    fixedView = *namePtr;
-                    for (auto& data : commandInstance->parameterDatas)
-                    {
-                        if (data.description == fixedName)
-                        {
-                            data.description = *namePtr;
-                        }
-                    }
-                    break;
+                    auto namesInBds = CommandRegistry::getEnumNames();
+                    auto iter = std::find(namesInBds.begin(), namesInBds.end(), param.description);
+                    if (iter == namesInBds.end())
+                        throw("Enum " + std::string(param.description) + "not found in command and BDS");
+#ifndef USE_PARSE_ENUM_STRING_ // fix Enum
+                    commandInstance->setEnum(*iter, CommandRegistry::getEnumValues(*iter));
+#endif // USE_PARSE_ENUM_STRING
+                }
+            }
+            else if (param.type == ParameterType::SoftEnum)
+            {
+                // add empty Soft Enum if not found in command and BDS
+                if (commandInstance->softEnums.count(param.description) == 0)
+                {
+                    auto namesInBds = CommandRegistry::getSoftEnumNames();
+                    auto iter = std::find(namesInBds.begin(), namesInBds.end(), param.description);
+                    if (iter == namesInBds.end())
+                        commandInstance->setSoftEnum(param.description, {});
                 }
             }
         }
-        std::vector<std::pair<std::string, uint64_t>> values;
-        size_t index = range.first;
-        for (auto& iter = commandInstance->enumValues.begin() + range.first; iter != commandInstance->enumValues.begin() + range.first + range.second; ++iter)
+
+        // fix enum name with prefix '_...' if Enum name is exists in BDS
+        auto namesInBds = CommandRegistry::getEnumNames();
+        std::unordered_map<std::string_view, std::pair<size_t, size_t>> convertedEnumRanges;
+        for (auto& [name, range] : commandInstance->enumRanges)
         {
-            values.emplace_back(*iter, index);
-            index++;
-        }
+            std::string fixedName = name.data();
+            while (std::find(namesInBds.begin(), namesInBds.end(), fixedName) != namesInBds.end())
+            {
+                fixedName.append("_");
+            }
+            std::string_view fixedView = name;
+            if (fixedName != name)
+            {
+                for (auto& namePtr : commandInstance->enumNames)
+                {
+                    if (*namePtr == name)
+                    {
+                        namePtr->swap(fixedName);
+                        fixedView = *namePtr;
+                        for (auto& data : commandInstance->parameterDatas)
+                        {
+                            if (data.description == fixedName)
+                            {
+                                data.description = *namePtr;
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+            std::vector<std::pair<std::string, uint64_t>> values;
+            size_t index = range.first;
+            for (auto& iter = commandInstance->enumValues.begin() + range.first; iter != commandInstance->enumValues.begin() + range.first + range.second; ++iter)
+            {
+                values.emplace_back(*iter, index);
+                index++;
+            }
 #ifdef USE_PARSE_ENUM_STRING
-        Global<CommandRegistry>->_addEnumValuesInternal(fixedView.data(), values, typeid_t<CommandRegistry>::count++, &CommandRegistry::parseEnumStringAndInt).val;
+            Global<CommandRegistry>->_addEnumValuesInternal(fixedView.data(), values, typeid_t<CommandRegistry>::count++, &CommandRegistry::parseEnumStringAndInt).val;
 #else
-        Global<CommandRegistry>->_addEnumValuesInternal(fixedView.data(), values, typeid_t<CommandRegistry>::count++, &CommandRegistry::parseEnum<int>).val;
+            Global<CommandRegistry>->_addEnumValuesInternal(fixedView.data(), values, typeid_t<CommandRegistry>::count++, &CommandRegistry::parseEnum<int>).val;
 #endif // USE_PARSE_ENUM_STRING
-    }
-    commandInstance->enumRanges.swap(convertedEnumRanges);
+        }
+        commandInstance->enumRanges.swap(convertedEnumRanges);
 
-    // add Soft Enum to BDS
-    for (auto& [name, values] : commandInstance->softEnums)
-    {
-        Global<CommandRegistry>->addSoftEnum(name, values);
-    }
+        // add Soft Enum to BDS
+        for (auto& [name, values] : commandInstance->softEnums)
+        {
+            Global<CommandRegistry>->addSoftEnum(name, values);
+        }
 
-    Global<CommandRegistry>->registerCommand(commandInstance->name, commandInstance->description->c_str(), commandInstance->permission, commandInstance->flag, commandInstance->flag);
-    if (!commandInstance->alias.empty())
-        Global<CommandRegistry>->registerAlias(commandInstance->name, commandInstance->alias);
-    auto builder = commandInstance->initCommandBuilder();
-    for (auto& overload : commandInstance->overloads)
-    {
-        Global<CommandRegistry>->registerOverload(commandInstance->name, builder, commandInstance->buildOverload(overload));
+        Global<CommandRegistry>->registerCommand(commandInstance->name, commandInstance->description->c_str(), commandInstance->permission, commandInstance->flag, commandInstance->flag);
+        if (!commandInstance->alias.empty())
+            Global<CommandRegistry>->registerAlias(commandInstance->name, commandInstance->alias);
+        auto builder = commandInstance->initCommandBuilder();
+        for (auto& overload : commandInstance->overloads)
+        {
+            Global<CommandRegistry>->registerOverload(commandInstance->name, builder, commandInstance->buildOverload(overload));
+        }
+        // commandInstance->overloads.clear();
+        auto res = dynamicCommandInstances.emplace(commandInstance->name, std::move(commandInstance));
+        return res.first->second.get();
     }
-    // commandInstance->overloads.clear();
-    auto res = dynamicCommandInstances.emplace(commandInstance->name, std::move(commandInstance));
-    updateAvailableCommands();
-    return res.first->second.get();
+    CatchDynamicCommandError("DynamicCommand::_setup - " + name, handler);
+    return nullptr;
 }
 
 bool DynamicCommand::onServerCommandsRegister(CommandRegistry& registry)
@@ -579,7 +586,7 @@ bool DynamicCommand::onServerCommandsRegister(CommandRegistry& registry)
         auto handler = command->handler;
         try
         {
-            if (!LL::getPlugin(handler))
+            if (!LL::getPlugin(handler) && handler != GetCurrentModule())
                 throw "Plugin that registered command \"" + name + "\" not found";
             auto res = DynamicCommand::_setup(std::move(command));
             if (!res)
@@ -659,7 +666,9 @@ DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class Dynami
         return uptr.get();
     }
     logger.warn("Registering command \"{}\" after RegCmdEvent, note that this is unstable!", commandInstance->getCommandName());
-    return DynamicCommand::_setup(std::move(commandInstance));
+    auto ptr = DynamicCommand::_setup(std::move(commandInstance));
+    updateAvailableCommands();
+    return ptr;
 }
 
 std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(std::string const& name, std::string const& description, std::unordered_map<std::string, std::vector<std::string>>&& enums, std::vector<ParameterData>&& params, std::vector<std::vector<std::string>>&& overloads, CallBackFn callback, CommandPermissionLevel permission, CommandFlag flag1, CommandFlag flag2, HMODULE handler)
@@ -696,11 +705,9 @@ bool DynamicCommand::unregisterCommand(std::string const& name)
 
 inline bool DynamicCommand::updateAvailableCommands()
 {
-    if (!Global<CommandRegistry>)
+    if (!Global<CommandRegistry> || !Global<Level>)
         return false;
     auto packet = Global<CommandRegistry>->serializeAvailableCommands();
-    if (!Global<Level>)
-        return false;
     auto sender = (LoopbackPacketSender*)Global<Level>->getPacketSender();
     if (!sender)
         return false;
@@ -1306,8 +1313,8 @@ TClasslessInstanceHook(bool, "?hasCommandsEnabled@LevelData@@QEBA_NXZ")
 TInstanceHook(CommandParameterData&, "?addOptions@CommandParameterData@@QEAAAEAV1@W4CommandParameterOption@@@Z",
               CommandParameterData, CommandParameterOption option)
 {
-    //logger.warn("CommandParameterData::addOptions - name: {}, type: {}, desc: {}, option: {:x}",
-    //            name, magic_enum::enum_name(type), desc ? desc : "", (int)option);
+    // logger.warn("CommandParameterData::addOptions - name: {}, type: {}, desc: {}, option: {:x}",
+    //             name, magic_enum::enum_name(type), desc ? desc : "", (int)option);
     return original(this, option);
 }
 
@@ -1400,6 +1407,6 @@ bool debugCommandInited = ([]() {
     setupEnumCommand();
     setupEchoCommand();
     return true;
-    })();
+})();
 
 #endif // LITELOADER_VERSION_STATUS == LL::Version::Beta
