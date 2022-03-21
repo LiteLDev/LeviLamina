@@ -152,8 +152,8 @@ Everything's done! Next, you can install **LiteLoader** plugins!
 
 `LiteLoader` main plugin distribution channels.
 
-- MineBBS Forum: [Click here to go for exploration](https://www.minebbs.com/resources/?prefix_id=59)
-- GitHub Discussion: [Discussions - LiteLDev/LiteLoaderBDS](https://github.com/LiteLDev/LiteLoaderBDS/discussions)
+- [Official Forum](https://forum.litebds.com/)
+- [MineBBS](https://www.minebbs.com/resources/?prefix_id=59)
 
 ### Plugin installation
 

@@ -146,8 +146,8 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 
 `LiteLoader`主要插件发布渠道：
 
-- MineBBS论坛：[点击这里 前往发现更多](https://www.minebbs.com/resources/?prefix_id=59)
-- GitHub Discussion：[Discussions · LiteLDev/LiteLoaderBDS](https://github.com/LiteLDev/LiteLoaderBDS/discussions)
+- [官方论坛](https://forum.litebds.com/)
+- [MineBBS](https://www.minebbs.com/resources/?prefix_id=59)
 
 ### 插件的安装
 

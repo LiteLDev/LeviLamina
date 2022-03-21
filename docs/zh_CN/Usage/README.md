@@ -1,12 +1,6 @@
 # LiteLoaderBDS - LL安装与使用指南
 
-## 🎨 项目简介
-
-`LiteLoaderBDS`（以下简称**LL**）是一个基岩版官方服务端 `Bedrock Dedicated Server`（以下简称**BDS**）的插件框架，提供强大的跨语言脚本插件支持能力和稳定的开发API支持。  
-
-`LiteLoaderBDS` 主要发布和更新于 **GitHub** 和 **MineBBS**。你可以在哪里下载到`LiteLoaderBDS`的最新版本以及绝大多数相关插件
-
-## 💻 加载器安装
+## 💻 安装
 
 ### 对于 Windows 用户
 
@@ -20,10 +14,20 @@
 
 ### 对于 Linux 用户
 
+#### 安装脚本(Ubuntu)
+
+```
+wget https://github.com/LiteLDev/LiteLoaderBDS/raw/beta/Scripts/install.sh
+chmod +x install.sh
+./install.sh
+```
+
+#### Docker
+
 LiteLoaderBDS 采用 Wine 兼容层对 Linux 服务器提供BDS支持，同时拥有高性能的服务器运行体验以及Linux系统的多种优势。  
 为了简化普通用户的安装难度，我们提供了打包好的`docker`镜像，可供直接下载部署使用：
 
-保证系统已经成功安装docker，并能流畅连接到Docker Hub。  
+保证系统已经成功安装docker，并能流畅连接到Docker Hub或设置的镜像源。  
 在终端中输入：
 
 ```
@@ -47,8 +51,8 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 
 `LiteLoader`主要插件发布渠道：
 
-- MineBBS论坛：[点击这里 前往发现更多](https://www.minebbs.com/resources/?prefix_id=59)
-- GitHub Discussion：[Discussions · LiteLDev/LiteLoaderBDS](https://github.com/LiteLDev/LiteLoaderBDS/discussions)
+- [官方论坛](https://forum.litebds.com/)
+- [MineBBS](https://www.minebbs.com/resources/?prefix_id=59)
 
 ### 插件的安装
 
@@ -57,6 +61,10 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 3. 运行`bedrock_server_mod.exe` 开服
 
 > 没错，，就这么简单~
+
+### 安装资源包/Addon
+将`.mcpack`、`.mcaddon`或`.zip`格式的资源包/Addon复制到`plugins/AddonsHelper`文件夹内，重新启动服务器，LiteLoader会为你自动配置资源包/Addon。  
+你可以通过`addons`指令对资源包和Addon进行管理
 
 ## 🔌 插件热管理
 

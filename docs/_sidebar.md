@@ -1,4 +1,2 @@
-- 🎨 Welcome to LiteLoaderBDS Project !
-- 💻 Introduction about the project 👉
-- 
-
+- [Development of script plugin](zh_CN/Development/)
+- [Maintenance document](zh_CN/Maintenance/)

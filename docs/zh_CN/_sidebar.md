@@ -1,7 +1,2 @@
-- 🎨 项目简介
-- 🔨 加载器安装与使用指南
-- 🎯 插件开发指南与API文档
-- 🎬 参与LiteLoaderBDS开发
-- 💡 开源地址
-- 💕 赞助作者
-
+- [脚本插件开发](zh_CN/Development/)
+- [维护与支持](zh_CN/Maintenance/)
