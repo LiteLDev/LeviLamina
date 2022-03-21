@@ -29,6 +29,7 @@ ClassDefine<WSClientClass> WSClientClassBuilder =
         .constructor(&WSClientClass::constructor)
         .instanceProperty("status", &WSClientClass::getStatus)
         .instanceFunction("connect", &WSClientClass::connect)
+        .instanceFunction("connectAsync", &WSClientClass::connectAsync)
         .instanceFunction("send", &WSClientClass::send)
         .instanceFunction("listen", &WSClientClass::listen)
         .instanceFunction("close", &WSClientClass::close)
@@ -43,9 +44,10 @@ ClassDefine<WSClientClass> WSClientClassBuilder =
 
 //生成函数
 WSClientClass::WSClientClass(const Local<Object>& scriptObj)
-    :ScriptClass(scriptObj)
+    : ScriptClass(scriptObj)
+    , ws(std::make_shared<WebSocketClient>())
 {
-    ws.OnTextReceived([nowList{ &listeners[int(WSClientEvents::onTextReceived)] }]
+    ws->OnTextReceived([nowList{ &listeners[int(WSClientEvents::onTextReceived)] }]
     (WebSocketClient& client, string msg)
     {
         if (!nowList->empty())
@@ -56,7 +58,7 @@ WSClientClass::WSClientClass(const Local<Object>& scriptObj)
             }
     });
 
-    ws.OnBinaryReceived([nowList{ &listeners[int(WSClientEvents::onBinaryReceived)] }]
+    ws->OnBinaryReceived([nowList{ &listeners[int(WSClientEvents::onBinaryReceived)] }]
     (WebSocketClient& client, vector<uint8_t> data)
     {
         if (!nowList->empty())
@@ -67,7 +69,7 @@ WSClientClass::WSClientClass(const Local<Object>& scriptObj)
             }
     });
 
-    ws.OnError([nowList{ &listeners[int(WSClientEvents::onError)] }]
+    ws->OnError([nowList{ &listeners[int(WSClientEvents::onError)] }]
     (WebSocketClient& client, string msg)
     {
         if (!nowList->empty())
@@ -78,7 +80,7 @@ WSClientClass::WSClientClass(const Local<Object>& scriptObj)
             }
     });
 
-    ws.OnLostConnection([nowList{ &listeners[int(WSClientEvents::onLostConnection)] }]
+    ws->OnLostConnection([nowList{ &listeners[int(WSClientEvents::onLostConnection)] }]
     (WebSocketClient& client, int code)
     {
         if (!nowList->empty())
@@ -91,9 +93,10 @@ WSClientClass::WSClientClass(const Local<Object>& scriptObj)
 }
 
 WSClientClass::WSClientClass()
-    :ScriptClass(ScriptClass::ConstructFromCpp<WSClientClass>{})
+    : ScriptClass(ScriptClass::ConstructFromCpp<WSClientClass>{})
+    , ws(std::make_shared<WebSocketClient>())
 {
-    ws.OnTextReceived([ nowList {&listeners[int(WSClientEvents::onTextReceived)]} ]
+    ws->OnTextReceived([ nowList {&listeners[int(WSClientEvents::onTextReceived)]} ]
         (WebSocketClient& client, string msg)
     {
         if (!nowList->empty())
@@ -104,7 +107,7 @@ WSClientClass::WSClientClass()
             }
     });
 
-    ws.OnBinaryReceived([nowList{ &listeners[int(WSClientEvents::onBinaryReceived)] }]
+    ws->OnBinaryReceived([nowList{ &listeners[int(WSClientEvents::onBinaryReceived)] }]
         (WebSocketClient& client, vector<uint8_t> data)
     {
         if(!nowList->empty())
@@ -115,7 +118,7 @@ WSClientClass::WSClientClass()
             }
     });
 
-    ws.OnError([nowList{ &listeners[int(WSClientEvents::onError)] }]
+    ws->OnError([nowList{ &listeners[int(WSClientEvents::onError)] }]
         (WebSocketClient& client, string msg)
     {
         if (!nowList->empty())
@@ -126,7 +129,7 @@ WSClientClass::WSClientClass()
             }
     });
 
-    ws.OnLostConnection([nowList{ &listeners[int(WSClientEvents::onLostConnection)] }]
+    ws->OnLostConnection([nowList{ &listeners[int(WSClientEvents::onLostConnection)] }]
         (WebSocketClient& client, int code)
     {
         if (!nowList->empty())
@@ -163,7 +166,7 @@ void WSClientClass::addListener(const string& event, Local<Function> func)
 Local<Value> WSClientClass::getStatus()
 {
     try {
-        return Number::newNumber((int)ws.GetStatus());
+        return Number::newNumber((int)ws->GetStatus());
     }
     catch (const std::runtime_error& e)
     {
@@ -176,11 +179,13 @@ Local<Value> WSClientClass::connect(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
-
+    //if (args.size() > 1 && args[1].isFunction())
+    //    return connectAsync(args);
     try {
+
         string target = args[0].toStr();
         RecordOperation(ENGINE_OWN_DATA()->pluginName, "ConnectToWebsocketServer", target);
-        ws.Connect(target);
+        ws->Connect(target);
         return Boolean::newBoolean(true);
     }
     catch (const std::runtime_error& e)
@@ -190,15 +195,67 @@ Local<Value> WSClientClass::connect(const Arguments& args)
     CATCH("Fail in connect!");
 }
 
+// 异步连接ws客户端
+Local<Value> WSClientClass::connectAsync(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kFunction);
+
+    try
+    {
+        string target = args[0].toStr();
+        RecordOperation(ENGINE_OWN_DATA()->pluginName, "ConnectToWebsocketServer", target);
+
+        script::Global<Function> callbackFunc{args[1].asFunction()};
+        thread(
+            [ws{this->ws}, target, callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}]() {
+                _set_se_translator(seh_exception::TranslateSEHtoCE);
+                try
+                {
+                    ws->Connect(target);
+                    if (!EngineManager::isValid(engine) || engine->isDestroying() || LL::isServerStopping())
+                        return;
+                    EngineScope enter(engine);
+                    NewTimeout(callback.get(), {Boolean::newBoolean(true)}, 0);
+                }
+                catch (const std::runtime_error& e)
+                {
+                    if (!EngineManager::isValid(engine) || engine->isDestroying() || LL::isServerStopping())
+                        return;
+                    EngineScope enter(engine);
+                    NewTimeout(callback.get(), {Boolean::newBoolean(false)}, 0);
+                }
+                catch (const seh_exception& e)
+                {
+                    logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
+                    logger.error("In WSClientClass::connectAsync");
+                }
+                catch (...)
+                {
+                    logger.error("WSClientClass::connectAsync Failed!");
+                    logger.error("Uncaught Exception Detected!");
+                }
+            })
+            .detach();
+        return Boolean::newBoolean(true);
+    }
+    catch (const std::runtime_error& e)
+    {
+        return Boolean::newBoolean(false);
+    }
+    CATCH("Fail in connectAsync!");
+}
+
 Local<Value> WSClientClass::send(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 1);
 
     try {
         if (args[0].isString())
-            ws.SendText(args[0].toStr());
+            ws->SendText(args[0].toStr());
         else if (args[0].isByteBuffer())
-            ws.SendBinary((char*)args[0].asByteBuffer().getRawBytes(), args[0].asByteBuffer().byteLength());
+            ws->SendBinary((char*)args[0].asByteBuffer().getRawBytes(), args[0].asByteBuffer().byteLength());
         else
         {
             logger.error("Wrong type of argument in WSClientSend!");
@@ -233,7 +290,7 @@ Local<Value> WSClientClass::listen(const Arguments& args)
 Local<Value> WSClientClass::close(const Arguments& args)
 {
     try {
-        ws.Close();
+        ws->Close();
         return Boolean::newBoolean(true);
     }
     catch (const std::runtime_error& e)
@@ -246,7 +303,7 @@ Local<Value> WSClientClass::close(const Arguments& args)
 Local<Value> WSClientClass::shutdown(const Arguments& args)
 {
     try {
-        ws.Shutdown();
+        ws->Shutdown();
         return Boolean::newBoolean(true);
     }
     catch (const std::runtime_error& e)

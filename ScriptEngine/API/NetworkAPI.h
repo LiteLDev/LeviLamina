@@ -40,19 +40,20 @@ extern ClassDefine<void> NetworkClassBuilder;
 class WSClientClass : public ScriptClass
 {
 private:
-    WebSocketClient ws;
+    std::shared_ptr<WebSocketClient> ws;
     std::list<ListenerListType> listeners[(int)WSClientEvents::EVENT_COUNT];
     void addListener(const string& event, Local<Function> func);
 
 public:
     explicit WSClientClass(const Local<Object>& scriptObj);
     explicit WSClientClass();
-    ~WSClientClass() { ws.Shutdown(); }
+    ~WSClientClass() { ws->Shutdown(); }
     static WSClientClass* constructor(const Arguments& args);
 
     Local<Value> getStatus();
 
     Local<Value> connect(const Arguments& args);
+    Local<Value> connectAsync(const Arguments& args);
     Local<Value> send(const Arguments& args);
     Local<Value> listen(const Arguments& args);
     Local<Value> close(const Arguments& args);
