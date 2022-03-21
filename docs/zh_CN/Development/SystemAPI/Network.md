@@ -101,6 +101,25 @@
 
 <br>
 
+#### 异步创建连接
+
+`wsc.connectAsync(target,callback)`
+
+- 参数：
+  - target : `String`  
+    要连接的目标地址，形如`ws://hostname[:port][/path/path][?query=value]`
+  - callback : `Function`
+    当连接成功或者失败时执行的回调函数。
+- 返回值：是否成功开始尝试连接
+- 返回值类型：`Boolean` 
+
+注：参数callback的回调函数原型：`function(success)`  
+
+- success : `Boolean`    
+  WebSocket 连接是否成功
+
+<br>
+
 #### 发送文本 / 二进制消息
 
 `wsc.send(msg)`
