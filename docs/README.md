@@ -43,7 +43,7 @@ Using `JavaScript` and `Lua` to develop plugin is easy and efficient.
 
 We welcome your contributions to `LiteLoaderBDS`
 
-👉[Click here](zh_CN/Maintance/)👈 to read the documentation of development and maintenance
+👉[Click here](zh_CN/Maintenance/)👈 to read the documentation of development and maintenance
 <br>
 
 ## 📞 Contact us
