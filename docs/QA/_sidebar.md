@@ -1,1 +1,2 @@
+- [Common problem](QA/)
 - [👈 Back to home](/)

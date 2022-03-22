@@ -1,1 +1,2 @@
+- [Installation and usage](Usage/)
 - [👈 Back to home](/)
