@@ -15,7 +15,7 @@
 
 ## 🔨 Installation and Usage
 
-👉[Click here](zh_CN/Usage/)👈 to read `LiteLoaderBDS` the documentation
+👉[Click here](Usage/)👈 to read `LiteLoaderBDS` the documentation
 <br>
 
 ## ❓Common problem

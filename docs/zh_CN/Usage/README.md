@@ -62,7 +62,7 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 
 > 没错，，就这么简单~
 
-### 安装资源包/Addon
+## 安装资源包/Addon
 将`.mcpack`、`.mcaddon`或`.zip`格式的资源包/Addon复制到`plugins/AddonsHelper`文件夹内，重新启动服务器，LiteLoader会为你自动配置资源包/Addon。  
 你可以通过`addons`指令对资源包和Addon进行管理
 
