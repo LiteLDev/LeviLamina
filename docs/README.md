@@ -22,7 +22,7 @@
 
 Meet some problem while installing or using `LiteLoaderBDS`? There are some common solution.
 
-👉[Click here](zh_CN/QA/)👈 to read common problem and its sulution.
+👉[Click here](QA/)👈 to read common problem and its sulution.
 
 <br>
 
