@@ -56,7 +56,7 @@ Everything's done! Next, you can install **LiteLoader** plugins!
 For more **installation and usage guides**,  come to 👉[LiteLoader documentation](https://docs.litebds.com/#/en/Usage/)👈 to view
 
 ## Installation ResourcePacks/Addon
-将`.mcpack`、`.mcaddon`或`.zip`格式的ResourcePacks/Addon复制到`plugins/AddonsHelper`文件夹内，重新启动服务器，LiteLoader会为你自动配置ResourcePacks/Addon  
+Copy `.mcpack`, `.mcaddon` or `.zip` to `plugins/AddonsHelper` and restart server  
 You can manage ResourcePacks and Addons by using `addons` command
 
 ## 🔌 Plugins hot management
