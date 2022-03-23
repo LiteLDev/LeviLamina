@@ -63,13 +63,14 @@ bool LL::PluginManager::registerPlugin(HMODULE handler, std::string name, std::s
 
 bool LL::PluginManager::unRegisterPlugin(std::string name)
 {
-    if (getPlugin(name) == nullptr)
+    auto plugin = getPlugin(name);
+    if (plugin == nullptr)
     { 
         return false;
     }
     else
     {
-        plugins.erase(name);
+        plugins.erase(plugin->name);
         return true;
     }
 }
