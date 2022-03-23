@@ -27,3 +27,7 @@ LL会在开服时输出服务器版本及协议版本，你也可以通过`/vers
 
 - `127`  
 插件与当前版本的LiteLoaderBDS不适配
+
+## 在Wine上无法启动服务器
+尝试删除`plugins/LiteLoader/LLAutoUpdate.dll`  
+如果你的服务器的可用内存少于1.2GB，请尝试释放内存，因为在低内存环境中LiteLoaderBDS可能无法正常启动

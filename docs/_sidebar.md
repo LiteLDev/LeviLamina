@@ -1,5 +1,5 @@
-- [Description](/)
+- [Home](/)
 - [Installation and Usage](Usage/)
-- [Common problem](QA/)
+- [Common problems](QA/)
 - [Development of script plugin](zh_CN/Development/)
 - [Maintenance document](zh_CN/Maintenance/)

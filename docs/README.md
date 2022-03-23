@@ -18,7 +18,7 @@
 👉[Click here](Usage/)👈 to read `LiteLoaderBDS` the documentation
 <br>
 
-## ❓Common problem
+## ❓Common problems
 
 Meet some problem while installing or using `LiteLoaderBDS`? There are some common solution.
 

@@ -28,3 +28,7 @@ The dependent library is missing, please check whether the plugin installation i
 
 - `127`  
 The plugin is not compatible with the current version of LiteLoaderBDS
+
+## Can't start server on Wine
+Try to remove `plugins/LiteLoader/LLAutoUpdate.dll`  
+If your server has free memory less than 1.2GB, try to release memory, because in low memory environment, LiteLoaderBDS may not start normally
