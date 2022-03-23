@@ -571,7 +571,7 @@ Local<Value> PlayerClass::isOP(const Arguments& args)
         if (!player)
             return Local<Value>();
 
-        return Boolean::newBoolean(player->isOP());
+        return Boolean::newBoolean(player->isOperator());
     }
     CATCH("Fail in IsOP!")
 }

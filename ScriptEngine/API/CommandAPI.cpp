@@ -611,17 +611,14 @@ Local<Value> CommandClass::getSoftEnumValues(const Arguments& args)
         auto name = args[0].toStr();
         return getStringArray(get()->getSoftEnumValues(name));
     }
-    CATCH("getSoftEnumValues");
+    CATCH("Fail in getSoftEnumValues");
 }
 
 Local<Value> CommandClass::getSoftEnumNames(const Arguments& args)
 {
-    CHECK_ARGS_COUNT(args, 1);
-    CHECK_ARG_TYPE(args[0], ValueKind::kString);
     try
     {
-        auto name = args[0].toStr();
         return getStringArray(get()->getSoftEnumNames());
     }
-    CATCH("");
+    CATCH("Fail in getSoftEnumNames");
 }
