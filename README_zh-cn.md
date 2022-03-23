@@ -331,14 +331,13 @@ PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](
 
 ## 📞 联系我们
 
-LiteLoader QQ交流群：656669024 [点击加入](https://jq.qq.com/?_wv=1027&k=lagwtrfh)  
-LiteLoader QQ交流2群：850517473 [点击加入](https://jq.qq.com/?_wv=1027&k=zeUbrETH)    
-Discord 频道：#LiteLoaderBDS  [点击加入](https://discord.gg/4tBQHc9u7p)  
-Telegram 频道：#LiteLoader [点击加入](https://t.me/LiteLoader)
-
+QQ 1群: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh)  
+QQ 2群: [850517473](https://jq.qq.com/?_wv=1027&k=zeUbrETH)  
+Discord服务器: [LiteLoaderBDS](https://discord.gg/4tBQHc9u7p)  
+Telegram频道: [@LiteLoader](https://t.me/LiteLoader)  
 欢迎反馈崩溃和版本适配问题，以及参与相关技术讨论与交流
 
 ## 💕赞助作者💕
 
-项目已接入爱发电 [赞助我们(爱发电)](https://afdian.net/@liteldev) [赞助我们(爱发电)](https://afdian.net/@LiteXLoader?tab=home)    
-Patreon Sponser [Click Here](https://www.patreon.com/litexloader) 
+[爱发电](https://afdian.net/@liteldev) [爱发电(LLSE)](https://afdian.net/@LiteXLoader?tab=home)  
+[Patreon(LLSE)](https://www.patreon.com/litexloader)

@@ -321,12 +321,12 @@ as [CLion](https://www.jetbrains.com/clion/)**.
 
 ## 📞 Contact us
 
-LiteLoader TencentQQ 1 Group: 656669024 [Click to join](https://jq.qq.com/?_wv=1027&k=lagwtrfh)  
-LiteLoader TencentQQ 2 Group：850517473 [Click to join](https://jq.qq.com/?_wv=1027&k=zeUbrETH)    
-Discord Channel: #LiteLoaderBDS [Click to Join](https://discord.gg/4tBQHc9u7p)  
-Telegram channel: #LiteLoader [Click to Join](https://t.me/LiteLoader)
+QQ Group: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh)  
+QQ Group 2: [850517473](https://jq.qq.com/?_wv=1027&k=zeUbrETH)  
+Discord Server: [LiteLoaderBDS](https://discord.gg/4tBQHc9u7p)  
+Telegram Channel: [@LiteLoader](https://t.me/LiteLoader)
 
 ## 💕Sponsorship💕
 
-The project is connected to Love Power [Sponsor Us (Love Power)](https://afdian.net/@liteldev) [Sponsor Us (Love Power)](https://afdian.net/@LiteXLoader?tab=home)    
-Also welcome for Patreon Sponser [Click Here](https://www.patreon.com/litexloader) 
+[Afdian](https://afdian.net/@liteldev) [Afdian(LLSE)](https://afdian.net/@LiteXLoader?tab=home)  
+[Patreon(LLSE)](https://www.patreon.com/litexloader)

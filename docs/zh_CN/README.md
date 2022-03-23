@@ -45,17 +45,3 @@
 
 👉[点击此处](zh_CN/Maintenance/)👈查看 LL项目维护与支持文档
 <br>
-
-## 📞 联系我们
-
-QQ 1群：[656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh)  
-QQ 2群：[850517473](https://jq.qq.com/?_wv=1027&k=zeUbrETH)    
-Discord服务器：[LiteLoaderBDS](https://discord.gg/4tBQHc9u7p)  
-Telegram频道：[@LiteLoader](https://t.me/LiteLoader)
-
-<br>
-
-## 💕赞助作者💕
-
-项目已接入爱发电 [赞助我们(爱发电)](https://afdian.net/@liteldev) [赞助我们(爱发电)](https://afdian.net/@LiteXLoader?tab=home)  
-Patreon Sponser [Click Here](https://www.patreon.com/litexloader)

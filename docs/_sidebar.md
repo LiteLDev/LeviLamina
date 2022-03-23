@@ -1,4 +1,4 @@
-- [Description](https://github.com/LiteLDev/LiteLoaderBDS)
+- [Description](/)
 - [Installation and Usage](Usage/)
 - [Common problem](QA/)
 - [Development of script plugin](zh_CN/Development/)

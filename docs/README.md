@@ -44,17 +44,3 @@ Using `JavaScript` and `Lua` to develop plugin is easy and efficient.
 We welcome your contributions to `LiteLoaderBDS`
 
 👉[Click here](zh_CN/Maintenance/)👈 to read the documentation of development and maintenance
-<br>
-
-## 📞 Contact us
-
-QQ Group: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh)  
-QQ Group 2: [850517473](https://jq.qq.com/?_wv=1027&k=zeUbrETH)    
-Discord Server: [LiteLoaderBDS](https://discord.gg/4tBQHc9u7p)  
-Telegram Channel: [@LiteLoader](https://t.me/LiteLoader)
-<br>
-
-## 💕 Donate
-
-[Afdian](https://afdian.net/@liteldev)  
-[Patreon(LLScriptEngine)](https://www.patreon.com/litexloader)  
