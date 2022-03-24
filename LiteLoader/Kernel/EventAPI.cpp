@@ -1653,6 +1653,27 @@ TInstanceHook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@H_N1@Z",
     return original(this, src, damage, unk1_1, unk2_0);
 }
 
+TInstanceHook(int64_t, "?getDamageAfterMagicAbsorb@Mob@@UEAAHAEBVActorDamageSource@@H@Z", Mob, ActorDamageSource* src, int damage)
+{
+    if (src->getCause() == ActorDamageCause::Magic)
+    {
+        IF_LISTENED(MobHurtEvent)
+        {
+            if (this)
+            {
+                MobHurtEvent ev{};
+                ev.mMob = this;
+                ev.mDamageSource = src;
+                ev.mDamage = damage;
+                if (!ev.call())
+                    return 0;
+                damage = ev.mDamage;
+            }
+        }
+        IF_LISTENED_END(MobHurtEvent)
+    }
+    return original(this, src, damage);
+}
 
 //////////////// PlayerUseItem & PlayerEat ////////////////
 #include <MC/ComponentItem.hpp>
