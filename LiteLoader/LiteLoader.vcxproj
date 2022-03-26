@@ -91,6 +91,7 @@ LibraryBuilder.exe
   <ItemGroup>
     <ClCompile Include="Kernel\Command\DynamicCommandAPI.cpp" />
     <ClCompile Include="Kernel\DB\Any.cpp" />
+    <ClCompile Include="Kernel\DB\ConnParams.cpp" />
     <ClCompile Include="Kernel\DB\Exception.cpp" />
     <ClCompile Include="Kernel\DB\Row.cpp" />
     <ClCompile Include="Kernel\DB\RowSet.cpp" />
@@ -114,6 +115,7 @@ LibraryBuilder.exe
     <ClCompile Include="Main\BuiltinBugFix.cpp" />
     <ClInclude Include="Header\AllowListAPI.h" />
     <ClInclude Include="Header\DB\Any.h" />
+    <ClInclude Include="Header\DB\ConnParams.h" />
     <ClInclude Include="Header\DB\Exception.h" />
     <ClInclude Include="Header\DB\RowSet.h" />
     <ClInclude Include="Header\DB\Row.h" />

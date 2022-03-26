@@ -15,15 +15,25 @@ inline R any_to(T v)
 {
     return (R)v;
 }
-template <typename T>
-inline std::string any_to(T v)
-{
-    return std::to_string(v);
-}
-template <typename T>
+template <>
 inline std::string any_to(bool v)
 {
     return v ? "true" : "false";
+}
+template <>
+inline std::string any_to(int64_t v)
+{
+    return std::to_string(v);
+}
+template <>
+inline std::string any_to(uint64_t v)
+{
+    return std::to_string(v);
+}
+template <>
+inline std::string any_to(double v)
+{
+    return std::to_string(v);
 }
 template <>
 inline const char* any_to(const std::string& str)
@@ -132,6 +142,27 @@ struct DateTime
     Time time;
 };
 
+} // namespace DB
+
+template <>
+inline std::string any_to(DB::Date v)
+{
+    return std::to_string(v.year) + "-" + std::to_string(v.month) + "-" + std::to_string(v.day);
+}
+template <>
+inline std::string any_to(DB::Time v)
+{
+    return std::to_string(v.hour) + ":" + std::to_string(v.minute) + ":" + std::to_string(v.second);
+}
+template <>
+inline std::string any_to(DB::DateTime v)
+{
+    return any_to<std::string>(v.date) + " " + any_to<std::string>(v.time);
+}
+
+namespace DB
+{
+
 /**
  * @brief Any class to store some SQL basic types
  * 
@@ -166,13 +197,16 @@ class Any
     inline static constexpr bool is_cpp_basic_type()
     {
         return std::is_same<T, bool>::value ||
+               std::is_same<T, char>::value ||
+               std::is_same<T, unsigned char>::value ||
+               std::is_same<T, short>::value ||
+               std::is_same<T, unsigned short>::value ||
+               std::is_same<T, int>::value ||
+               std::is_same<T, unsigned int>::value ||
                std::is_same<T, int64_t>::value ||
                std::is_same<T, uint64_t>::value ||
-               std::is_same<T, double>::value ||
-               std::is_same<T, std::string>::value ||
-               std::is_same<T, Date>::value ||
-               std::is_same<T, Time>::value ||
-               std::is_same<T, DateTime>::value;
+               std::is_same<T, float>::value ||
+               std::is_same<T, double>::value;
     }
 
 public:
@@ -356,6 +390,7 @@ public:
     template <typename T>
     inline T get() const
     {
+        is_cpp_basic_type<char>();
         switch (type)
         {
             case Type::Boolean:
@@ -389,19 +424,19 @@ public:
                 }
                 return ::any_to<T>(*value.string);
             case Type::Date:
-                if constexpr (std::is_same_v<T, Date>::value)
+                if constexpr (std::is_same<T, Date>::value)
                 {
                     return (T)*value.date;
                 }
                 return ::any_to<T>(*value.date);
             case Type::Time:
-                if constexpr (std::is_same_v<T, Time>::value)
+                if constexpr (std::is_same<T, Time>::value)
                 {
                     return (T)*value.time;
                 }
                 return ::any_to<T>(*value.time);
             case Type::DateTime:
-                if constexpr (std::is_same_v<T, DateTime>::value)
+                if constexpr (std::is_same<T, DateTime>::value)
                 {
                     return (T)*value.datetime;
                 }

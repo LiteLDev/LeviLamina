@@ -333,6 +333,9 @@
     <ClCompile Include="Kernel\DB\RowSet.cpp">
       <Filter>Kernel\DB</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\DB\ConnParams.cpp">
+      <Filter>Kernel\DB</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -702,6 +705,9 @@
       <Filter>Header\DB</Filter>
     </ClInclude>
     <ClInclude Include="Header\DB\Exception.h">
+      <Filter>Header\DB</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\DB\ConnParams.h">
       <Filter>Header\DB</Filter>
     </ClInclude>
   </ItemGroup>
