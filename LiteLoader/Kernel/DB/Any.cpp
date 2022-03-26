@@ -5,6 +5,8 @@ namespace DB
 
 Any::Any()
 {
+    type = Type::Null;
+    value.boolean = false;
 }
 Any::Any(bool v)
 {
@@ -65,6 +67,47 @@ Any::~Any()
     {
         delete value.datetime;
     }
+}
+
+bool Any::is_null() const
+{
+    return type == Type::Null;
+}
+bool Any::is_boolean() const
+{
+    return type == Type::Boolean;
+}
+bool Any::is_integer() const
+{
+    return type == Type::Integer || type == Type::UInteger;
+}
+bool Any::is_uinteger() const
+{
+    return type == Type::UInteger;
+}
+bool Any::is_floating() const
+{
+    return type == Type::Floating;
+}
+bool Any::is_string() const
+{
+    return type == Type::String;
+}
+bool Any::is_date() const
+{
+    return type == Type::Date;
+}
+bool Any::is_time() const
+{
+    return type == Type::Time;
+}
+bool Any::is_datetime() const
+{
+    return type == Type::DateTime;
+}
+bool Any::is_number() const
+{
+    return type == Type::Integer || type == Type::UInteger || type == Type::Floating;
 }
 
 } // namespace DB
