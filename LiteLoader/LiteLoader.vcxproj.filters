@@ -58,6 +58,12 @@
     <Filter Include="Main">
       <UniqueIdentifier>{573131eb-b7d5-464e-b1d7-d2a041d60f35}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Kernel\DB">
+      <UniqueIdentifier>{d47eee0a-ceaf-48ec-b747-856b3378b49a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\DB">
+      <UniqueIdentifier>{39f6d3f7-c1b7-4418-862e-85ed1198ff67}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kernel\Utils\CsLock.cpp">
@@ -314,6 +320,18 @@
     </ClCompile>
     <ClCompile Include="Kernel\Network\PacketAPI.cpp">
       <Filter>Kernel\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\DB\Row.cpp">
+      <Filter>Kernel\DB</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\DB\Any.cpp">
+      <Filter>Kernel\DB</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\DB\Exception.cpp">
+      <Filter>Kernel\DB</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\DB\RowSet.cpp">
+      <Filter>Kernel\DB</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -670,6 +688,21 @@
     </ClInclude>
     <ClInclude Include="Header\RegCommandAPI.h">
       <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\DB\RowSet.h">
+      <Filter>Header\DB</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\DB\Session.h">
+      <Filter>Header\DB</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\DB\Any.h">
+      <Filter>Header\DB</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\DB\Row.h">
+      <Filter>Header\DB</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\DB\Exception.h">
+      <Filter>Header\DB</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
