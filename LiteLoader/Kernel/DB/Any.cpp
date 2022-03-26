@@ -48,6 +48,52 @@ Any::Any(const DateTime& v)
     type = Type::DateTime;
     value.datetime = new DateTime(v);
 }
+Any::Any(char v)
+{
+    type = Type::Integer;
+    value.integer = v;
+}
+Any::Any(unsigned char v)
+{
+    type = Type::UInteger;
+    value.uinteger = v;
+}
+Any::Any(short v)
+{
+    type = Type::Integer;
+    value.integer = v;
+}
+Any::Any(unsigned short v)
+{
+    type = Type::UInteger;
+    value.uinteger = v;
+}
+Any::Any(int v)
+{
+    type = Type::Integer;
+    value.integer = v;
+}
+Any::Any(unsigned int v)
+{
+    type = Type::UInteger;
+    value.uinteger = v;
+}
+Any::Any(long v)
+{
+    type = Type::Integer;
+    value.integer = v;
+}
+Any::Any(unsigned long v)
+{
+    type = Type::UInteger;
+    value.uinteger = v;
+}
+Any::Any(float v)
+{
+    type = Type::Floating;
+    value.floating = v;
+}
+
 
 Any::~Any()
 {
