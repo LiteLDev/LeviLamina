@@ -72,12 +72,18 @@ WSClientClass::WSClientClass(const Local<Object>& scriptObj)
     ws->OnError([nowList{ &listeners[int(WSClientEvents::onError)] }]
     (WebSocketClient& client, string msg)
     {
-        if (!nowList->empty())
-            for (auto& listener : *nowList)
-            {
-                EngineScope enter(listener.engine);
-                NewTimeout(listener.func.get(), { String::newString(msg) }, 1);
-            }
+        _set_se_translator(seh_exception::TranslateSEHtoCE);
+        try
+        {
+            if (!nowList->empty())
+                for (auto& listener : *nowList)
+                {
+                    EngineScope enter(listener.engine);
+                    NewTimeout(listener.func.get(), {String::newString(msg)}, 1);
+                }
+        }
+        CATCH_C("WebSocket onError callback");
+        return nullptr;
     });
 
     ws->OnLostConnection([nowList{ &listeners[int(WSClientEvents::onLostConnection)] }]
@@ -132,12 +138,18 @@ WSClientClass::WSClientClass()
     ws->OnLostConnection([nowList{ &listeners[int(WSClientEvents::onLostConnection)] }]
         (WebSocketClient& client, int code)
     {
-        if (!nowList->empty())
-            for (auto& listener : *nowList)
-            {
-                EngineScope enter(listener.engine);
-                NewTimeout(listener.func.get(), { Number::newNumber(code) }, 1);
-            }
+        _set_se_translator(seh_exception::TranslateSEHtoCE);
+        try
+        {
+            if (!nowList->empty())
+                for (auto& listener : *nowList)
+                {
+                    EngineScope enter(listener.engine);
+                    NewTimeout(listener.func.get(), {String::newString(msg)}, 1);
+                }
+        }
+        CATCH_C("WebSocket onError callback");
+        return nullptr;
     });
 }
 
@@ -172,7 +184,7 @@ Local<Value> WSClientClass::getStatus()
     {
         return Local<Value>();
     }
-    CATCH("Fail in connect!");
+    CATCH("Fail in getStatus!");
 }
 
 Local<Value> WSClientClass::connect(const Arguments& args)
