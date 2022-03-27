@@ -10,6 +10,7 @@
 using namespace std;
 
 int timeTaskId = 0;
+CsLock locker;
 struct TimeTaskData
 {
     ScheduleTask task;
@@ -54,6 +55,7 @@ std::unordered_map<int, TimeTaskData> timeTaskMap;
 
 int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
 {
+    CsLockHolder lock(locker);
     ++timeTaskId;
 
     timeTaskMap[timeTaskId].func = func;
@@ -69,6 +71,9 @@ int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
                 return;
             if (!EngineManager::isValid(engine))
                 return;
+            // lock after enter EngineScope to prevent deadlock
+            EngineScope scope(engine);
+            CsLockHolder lock(locker);
 
             auto t = timeTaskMap.find(id);
             if(t == timeTaskMap.end())
@@ -78,7 +83,6 @@ int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
             if (taskData.func.isEmpty())
                 return;
 
-            EngineScope scope(engine);
             if (taskData.paras.empty())
                 taskData.func.get().call();
             else
@@ -100,6 +104,7 @@ int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
 
 int NewTimeout(Local<String> func, int timeout)
 {
+    CsLockHolder lock(locker);
     ++timeTaskId;
 
     timeTaskMap[timeTaskId].code = func;
@@ -113,6 +118,8 @@ int NewTimeout(Local<String> func, int timeout)
                 return;
             if (!EngineManager::isValid(engine))
                 return;
+            CsLockHolder lock(locker);
+            EngineScope scope(engine);
 
             auto t = timeTaskMap.find(id);
             if (t == timeTaskMap.end())
@@ -122,7 +129,6 @@ int NewTimeout(Local<String> func, int timeout)
             if (taskData.code.isEmpty())
                 return;
 
-            EngineScope scope(engine);
             engine->eval(taskData.code.get().toString());
             timeTaskMap.erase(id);
         }
@@ -133,6 +139,7 @@ int NewTimeout(Local<String> func, int timeout)
 
 int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
 {
+    CsLockHolder lock(locker);
     ++timeTaskId;
 
     timeTaskMap[timeTaskId].func = func;
@@ -148,10 +155,13 @@ int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
                 return;
             if (!EngineManager::isValid(engine))
             {
+                CsLockHolder lock(locker);
                 timeTaskMap[id].task.cancel();
                 timeTaskMap.erase(id);
                 return;
             }
+            EngineScope scope(engine);
+            CsLockHolder lock(locker);
 
             auto t = timeTaskMap.find(id);
             if (t == timeTaskMap.end())
@@ -161,7 +171,6 @@ int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
             if (taskData.func.isEmpty())
                 return;
 
-            EngineScope scope(engine);
             if (taskData.paras.empty())
                 taskData.func.get().call();
             else
@@ -195,10 +204,13 @@ int NewInterval(Local<String> func, int timeout)
                 return;
             if (!EngineManager::isValid(engine))
             {
+                CsLockHolder lock(locker);
                 timeTaskMap[id].task.cancel();
                 timeTaskMap.erase(id);
                 return;
             }
+            CsLockHolder lock(locker);
+            EngineScope scope(engine);
 
             auto t = timeTaskMap.find(id);
             if (t == timeTaskMap.end())
@@ -208,7 +220,6 @@ int NewInterval(Local<String> func, int timeout)
             if (taskData.code.isEmpty())
                 return;
 
-            EngineScope scope(engine);
             engine->eval(taskData.code.get().toString());
         }
         TIMETASK_CATCH("setInterval-String");
@@ -218,6 +229,7 @@ int NewInterval(Local<String> func, int timeout)
 
 bool ClearTimeTask(int id)
 {
+    CsLockHolder lock(locker);
     try
     {
         timeTaskMap.at(id).task.cancel();
@@ -235,6 +247,7 @@ bool ClearTimeTask(int id)
 
 void LxlRemoveTimeTaskData(ScriptEngine* engine)
 {
+    CsLockHolder lock(locker);
     erase_if(timeTaskMap, [engine](auto& dataPair) {
         if (dataPair.second.engine == engine)
         {

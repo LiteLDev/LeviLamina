@@ -39,12 +39,14 @@ public:
     }
 };
 
+std::vector<ScheduleTaskData> pendingTaskList;
+std::vector<unsigned int> pendingCancelList;
+bool pendingClear = false;
 
 class ScheduleTaskQueueType
         : public priority_queue<ScheduleTaskData, vector<ScheduleTaskData>, greater<ScheduleTaskData>> {
 public:
     bool remove(unsigned int taskId) {
-        locker.lock();
         size_t size = c.size();
         bool removed = false;
 
@@ -55,23 +57,45 @@ public:
                 std::make_heap(c.begin(), c.end(), comp);  //重排二叉堆
                 removed = true;
             }
-        locker.unlock();
         return removed;
     }
 
     void clear() {
-        locker.lock();
         c.clear();
-        locker.unlock();
     }
 
-    inline void tick() {
-        locker.lock();
-        if (c.empty()) {
+    inline void tick()
+    {
+        if (pendingClear) {
+            clear();
+            locker.lock();
+            pendingTaskList.clear();
+            pendingCancelList.clear();
+            pendingClear = false;
             locker.unlock();
             return;
         }
-
+        if (!pendingTaskList.empty())
+        {
+            locker.lock();
+            for (auto& task : pendingTaskList)
+            {
+                push(std::move(task));
+            }
+            pendingTaskList.clear();
+            locker.unlock();
+        }
+        if (c.empty()) {
+            return;
+        }
+        if (!pendingCancelList.empty()) {
+            locker.lock();
+            for (auto tid : pendingCancelList) {
+                remove(tid);
+            }
+            pendingCancelList.clear();
+            locker.unlock();
+        }
         try {
             for (size_t i = 0; i < c.size(); ++i)
                 --c[i].leftTime;
@@ -136,7 +160,7 @@ public:
             logger.error("Exception occurred in ScheduleTask!");
             PrintCurrentStackTraceback();
         }
-        locker.unlock();
+
     }
 };
 
@@ -149,9 +173,9 @@ namespace Schedule {
         if (LL::globalConfig.serverStatus >= LL::LLServerStatus::Stopping)
             return ScheduleTask((unsigned) -1);
         ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, tickDelay, -1, -1, handler);
-        //locker.lock();
-        taskQueue.push(sche);
-        //locker.unlock();
+        locker.lock();
+        pendingTaskList.push_back(sche);
+        locker.unlock();
         return ScheduleTask(sche.getTaskId());
     }
 
@@ -163,9 +187,9 @@ namespace Schedule {
                                           ScheduleTaskData::TaskType::InfiniteRepeat
                                                        : ScheduleTaskData::TaskType::Repeat;
         ScheduleTaskData sche(type, task, tickRepeat, tickRepeat, maxCount, handler);
-        //locker.lock();
-        taskQueue.push(sche);
-        //locker.unlock();
+        locker.lock();
+        pendingTaskList.push_back(sche);
+        locker.unlock();
         return ScheduleTask(sche.getTaskId());
     }
 
@@ -177,9 +201,9 @@ namespace Schedule {
         ScheduleTaskData::TaskType type = maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat
                                                        : ScheduleTaskData::TaskType::Repeat;
         ScheduleTaskData sche(type, task, tickDelay, tickRepeat, maxCount, handler);
-        //locker.lock();
-        taskQueue.push(sche);
-        //locker.unlock();
+        locker.lock();
+        pendingTaskList.push_back(sche);
+        locker.unlock();
         return ScheduleTask(sche.getTaskId());
     }
 
@@ -188,9 +212,9 @@ namespace Schedule {
         if (LL::globalConfig.serverStatus >= LL::LLServerStatus::Stopping)
             return ScheduleTask((unsigned) -1);
         ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, 1, -1, -1, handler);
-        //locker.lock();
-        taskQueue.push(sche);
-        //locker.unlock();
+        locker.lock();
+        pendingTaskList.push_back(sche);
+        locker.unlock();
         return ScheduleTask(sche.getTaskId());
     }
 }
@@ -201,8 +225,9 @@ THook(void, "?tick@ServerLevel@@UEAAXXZ",
     taskQueue.tick();
 }
 
-void EndScheduleSystem() {
-    taskQueue.clear();
+void EndScheduleSystem()
+{
+    pendingClear = true;
 }
 
 
@@ -211,7 +236,7 @@ ScheduleTask::ScheduleTask(unsigned int taskId)
 
 bool ScheduleTask::cancel() {
     locker.lock();
-    bool res = taskQueue.remove(taskId);
+    pendingCancelList.push_back(taskId);
     locker.unlock();
-    return res;
+    return true;
 }

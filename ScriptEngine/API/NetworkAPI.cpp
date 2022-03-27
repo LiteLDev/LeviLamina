@@ -72,18 +72,12 @@ WSClientClass::WSClientClass(const Local<Object>& scriptObj)
     ws->OnError([nowList{ &listeners[int(WSClientEvents::onError)] }]
     (WebSocketClient& client, string msg)
     {
-        _set_se_translator(seh_exception::TranslateSEHtoCE);
-        try
-        {
-            if (!nowList->empty())
-                for (auto& listener : *nowList)
-                {
-                    EngineScope enter(listener.engine);
-                    NewTimeout(listener.func.get(), {String::newString(msg)}, 1);
-                }
-        }
-        CATCH_C("WebSocket onError callback");
-        return nullptr;
+        if (!nowList->empty())
+            for (auto& listener : *nowList)
+            {
+                EngineScope enter(listener.engine);
+                NewTimeout(listener.func.get(), {String::newString(msg)}, 1);
+            }
     });
 
     ws->OnLostConnection([nowList{ &listeners[int(WSClientEvents::onLostConnection)] }]
@@ -125,19 +119,14 @@ WSClientClass::WSClientClass()
     });
 
     ws->OnError([nowList{ &listeners[int(WSClientEvents::onError)] }]
-        (WebSocketClient& client, string msg) {
-        _set_se_translator(seh_exception::TranslateSEHtoCE);
-        try
-        {
-            if (!nowList->empty())
-                for (auto& listener : *nowList)
-                {
-                    EngineScope enter(listener.engine);
-                    NewTimeout(listener.func.get(), {String::newString(msg)}, 1);
-                }
-        }
-        CATCH_C("WebSocket onError callback");
-        return nullptr;
+        (WebSocketClient& client, string msg)
+    {
+        if (!nowList->empty())
+            for (auto& listener : *nowList)
+            {
+                EngineScope enter(listener.engine);
+                NewTimeout(listener.func.get(), { String::newString(msg) }, 1);
+            }
     });
 
     ws->OnLostConnection([nowList{ &listeners[int(WSClientEvents::onLostConnection)] }]
