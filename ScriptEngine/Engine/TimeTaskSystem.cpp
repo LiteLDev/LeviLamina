@@ -191,6 +191,7 @@ int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
 
 int NewInterval(Local<String> func, int timeout)
 {
+    CsLockHolder lock(locker);
     ++timeTaskId;
 
     timeTaskMap[timeTaskId].code = func;
