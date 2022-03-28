@@ -39,8 +39,8 @@ public:
     }
 };
 
-std::vector<ScheduleTaskData> pendingTaskList;
-std::vector<unsigned int> pendingCancelList;
+std::vector<ScheduleTaskData> pendingTaskList{};
+std::vector<unsigned int> pendingCancelList{};
 bool pendingClear = false;
 
 class ScheduleTaskQueueType
@@ -227,7 +227,9 @@ THook(void, "?tick@ServerLevel@@UEAAXXZ",
 
 void EndScheduleSystem()
 {
+    locker.lock();
     pendingClear = true;
+    locker.unlock();
 }
 
 

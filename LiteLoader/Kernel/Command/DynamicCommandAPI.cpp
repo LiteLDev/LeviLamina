@@ -62,6 +62,8 @@ namespace
 bool serverCommandsRegistered = false;
 std::unordered_map<std::string, std::unique_ptr<DynamicCommandInstance>> dynamicCommandInstances;
 std::vector<std::unique_ptr<DynamicCommandInstance>> delaySetupCommandInstances;
+CsLock delaySetupLock;
+
 
 using Result = DynamicCommand::Result;
 using ParameterType = DynamicCommand::ParameterType;
@@ -470,6 +472,9 @@ std::unique_ptr<Command>* DynamicCommand::commandBuilder(std::unique_ptr<Command
 DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicCommandInstance> commandInstance)
 {
     std::string name = commandInstance->getCommandName();
+#ifdef DEBUG
+    logger.info("Setting up command \"{}\"", name);
+#endif // DEBUG
     auto handler = commandInstance->handler;
     try
     {
@@ -580,6 +585,7 @@ DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicComm
 bool DynamicCommand::onServerCommandsRegister(CommandRegistry& registry)
 {
     serverCommandsRegistered = true;
+    delaySetupLock.lock();
     for (auto& command : delaySetupCommandInstances)
     {
         std::string name = command->getCommandName();
@@ -595,6 +601,7 @@ bool DynamicCommand::onServerCommandsRegister(CommandRegistry& registry)
         CatchDynamicCommandError("DynamicCommand::_setup - " + name, handler);
     };
     delaySetupCommandInstances.clear();
+    delaySetupLock.unlock();
     return true;
 }
 
@@ -660,14 +667,19 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(std:
 
 DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class DynamicCommandInstance> commandInstance)
 {
+    auto ptr = commandInstance.get();
     if (!serverCommandsRegistered)
     {
+        delaySetupLock.lock();
         auto& uptr = delaySetupCommandInstances.emplace_back(std::move(commandInstance));
+        delaySetupLock.unlock();
         return uptr.get();
     }
-    logger.warn("Registering command \"{}\" after RegCmdEvent, note that this is unstable!", commandInstance->getCommandName());
-    auto ptr = DynamicCommand::_setup(std::move(commandInstance));
-    updateAvailableCommands();
+    //logger.warn("Registering command \"{}\" after RegCmdEvent, note that this is unstable!", commandInstance->getCommandName());
+    Schedule::nextTick([instance{commandInstance.release()}]() {
+        DynamicCommand::_setup(std::unique_ptr<class DynamicCommandInstance>(instance));
+        updateAvailableCommands();
+        });
     return ptr;
 }
 
@@ -694,6 +706,12 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(std:
 
 bool DynamicCommand::unregisterCommand(std::string const& name)
 {
+#ifdef DEBUG
+    Schedule::nextTick([tid = std::this_thread::get_id()]() {
+        // Call DynamicCommand::unregisterCommand in other thread is not allowed!
+        assert(tid == std::this_thread::get_id());
+    });
+#endif // DEBUG
     if (Global<CommandRegistry>->unregisterCommand(name))
     {
         dynamicCommandInstances.erase(name);
@@ -705,6 +723,13 @@ bool DynamicCommand::unregisterCommand(std::string const& name)
 
 inline bool DynamicCommand::updateAvailableCommands()
 {
+#ifdef DEBUG
+    Schedule::nextTick([tid = std::this_thread::get_id()]() {
+        // Call DynamicCommand::updateAvailableCommands in other thread is not allowed!
+        assert(tid == std::this_thread::get_id());
+    });
+#endif // DEBUG
+
     if (!Global<CommandRegistry> || !Global<Level>)
         return false;
     auto packet = Global<CommandRegistry>->serializeAvailableCommands();
@@ -1062,6 +1087,7 @@ inline DynamicCommand::BuilderFn DynamicCommandInstance::initCommandBuilder()
 #pragma endregion
 
 #ifdef DEBUG
+#define TEST_DYNAMIC_COMMAND
 #define successf(...) success(fmt::format(__VA_ARGS__))
 #define errorf(...) error(fmt::format(__VA_ARGS__))
 using Param = DynamicCommand::ParameterData;
@@ -1403,10 +1429,11 @@ void setupEchoCommand()
     DynamicCommand::setup(std::move(command));
 }
 
-bool debugCommandInited = ([]() {
+TClasslessInstanceHook2("startServerThread_RegisterDebugCommand", void, "?startServerThread@ServerInstance@@QEAAXXZ")
+{
+    original(this);
     setupEnumCommand();
     setupEchoCommand();
-    return true;
-})();
+}
 
-#endif // LITELOADER_VERSION_STATUS == LL::Version::Beta
+#endif // DEBUG

@@ -2041,13 +2041,14 @@ TClasslessInstanceHook(void, "?startServerThread@ServerInstance@@QEAAXXZ")
     Global<ServerLevel> = (ServerLevel*)Global<Minecraft>->getLevel();
     //Global<ServerNetworkHandler> = Global<Minecraft>->getServerNetworkHandler();
     LL::globalConfig.serverStatus = LL::LLServerStatus::Running;
-
-    IF_LISTENED(ServerStartedEvent)
-    {
-        ServerStartedEvent ev{};
-        ev.call();
-    }
-    IF_LISTENED_END(ServerStartedEvent)
+    Schedule::nextTick([]() {
+        IF_LISTENED(ServerStartedEvent)
+        {
+            ServerStartedEvent ev{};
+            ev.call();
+        }
+        IF_LISTENED_END(ServerStartedEvent)
+    });
 }
 
 ////////////// ServerStopped //////////////
