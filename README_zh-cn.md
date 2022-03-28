@@ -295,12 +295,12 @@ PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](
 [OpenSSL](https://github.com/openssl/openssl) Apache-2.0 License  
 [SimpleIni](https://github.com/brofield/simpleini) MIT License  
 [Nlohmann-Json](https://github.com/nlohmann/json) MIT License  
-[nbt-cpp](https://github.com/handtruth/nbt-cpp) MIT License  
+[nbt-cpp](https://github.com/handtruth/nbt-cpp) MIT License    
 [Hash](https://github.com/Chocobo1/Hash) GPL v3    
 [ThreadPool](https://github.com/jhasse/ThreadPool) Zlib License    
-[LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) MIT License
-[magic_enum](https://github.com/Neargye/magic_enum) MIT License
-[dyncall](https://www.dyncall.org/index) ISC license
+[LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) MIT License    
+[magic_enum](https://github.com/Neargye/magic_enum) MIT License    
+[dyncall](https://www.dyncall.org/index) ISC license    
 
 ### 额外限制和例外
 
