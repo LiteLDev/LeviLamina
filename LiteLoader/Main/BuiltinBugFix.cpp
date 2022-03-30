@@ -50,21 +50,26 @@ TClasslessInstanceHook(void*, "?_read@PurchaseReceiptPacket@@EEAA?AW4StreamReadR
     return (void*)1;
 }
 
+int num = 0;
 // Fix the listening port twice
 TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ")
 {
+    num++;
     if (globalConfig.enableFixListenPort)
     {
         if (!ipInformationLogged)
         {
             ipInformationLogged = true;
-            return original(this);
+            original(this);
+            return 1;
         }
         return 0;
     }
     else
-    {
-        return original(this);
+    {     
+        original(this);
+        if (num == 2) Logger("Server").info("Done (" + fmt::format("{:.1f}", (endTime - startTime) * 1.0 / 1000) + "s)! For help, type \"help\" or \"?\"");
+        return 1;
     }
 }
 

@@ -72,10 +72,8 @@ THook(void, "?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@
     }
     //std::cout << a7 << std::endl;
     va_start(va, a8);
-    if (a7 == 600) {
-        string text = "Done (" + fmt::format("{:.1f}", (endTime - startTime) * 1.0 / 1000) + "s)! For help, type \"help\" or \"?\"";
-        return SymCall("?log_va@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4PEAD@Z",
-                       void, int, int, int, int, int, __int64, int, __int64, __int64)(a1, a2, a3, a4, a5, a6, a7, (__int64)text.c_str(), (__int64)va);
+    if (a7 == 600) {    
+        return;
     }
     return SymCall("?log_va@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4PEAD@Z",
                    void, int, int, int, int, int, __int64, int, __int64, __int64)(a1, a2, a3, a4, a5, a6, a7, a8, (__int64)va);
