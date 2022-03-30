@@ -1,28 +1,37 @@
-This is a bug fix update, fix several problems that may cause crash. Please update as soon as possible
 ## [New features]
-New dynamic command registration interface (DynamicCommandAPI)
-New text encoding conversion interface (I18nAPI)
-Added built-in OutputFilter regex output filtering function
-Added addons automatic installation, management and query commands
-Added CompoundTag::toPrettySNBT beautification output interface
-Provided support for NetworkNBT format
-Provide comment support for all json interfaces of scripting engine
-Added a symbol cache switch for PrintCurrentStackTraceback
-Upgraded the included LLMoney version
+
+- Add packet filler auto complete
+- Modify llse pl.talkAs, add pl.talkTo
+- Add callback param to llse command.setup
+- Add auto delay setup dynamic command
+- Add some NBT APIs
+- Add SynchedActorData APIs
+- Add addon update support in AddonsHelper
+- Add auto fix Addon List File
+- Addon Command support match without color, #298
+- Add simple fuzzy matching in addons command, #298
+- Add isOperator API
+- Add mc.setMaxPlayers(num)
+- Add wsc.connectAsync
+
 ## [Bug fixes]
-Repair the problem of incorrect content of some packet classes
-Repair the problems of StructureTemplate class.
-Repair the problem of error reporting in hot management command
-Add lock to Logger to solve the problem of probable collapse of service when multi-threaded output
-The script engine fixes the problem that the database cannot be closed.
-Scripting engine fixes the problem of repeated loading of ll.require
-Scripting engine fixes the problem that some object data is not updated after setNbt
-Scripting engine fixes missing onLiquidFlow event dimension
-Scripting engine fixes item.clone
-Scripting engine provides binary interface for base64 conversion
-Scripting engine fixes possible problems with TimeTask, adds security checks
-Scripting engine adds engine validity checks for multiple callbacks, improving stability
-Scripting engine fixes the problem that V8 output abnormal information triggers debugger and causes crash.
-Fix some problems of SymDBHelper in SDK.
-Provide UTF8 conversion for most of the output, to avoid the crash caused by local encoding
-Repair the problem of crashing caused by inputting full-angle characters in the background
+
+- Fix `ll list`
+- Fix "Fix abnormal items", fix warning
+- Fix logger error after exception
+- Fix broadcast crash
+- Add check in "Fix move view crash"
+- Fix sendTextTalkPacket and add target param
+- Fix origin.type #301
+- Fix dynamic command register before server started
+- Fix DynamicCommand::updateAvailableCommands crash
+- Fix _runcmd crash
+- Fix Addons Helper, #223
+- Fix Addons Command and support remove by index
+- Fix llse getSoftEnumNames, #315
+- Fix unable to reload LLSE plugin, #316
+- MobHurtEvent Add MagicDamage, #313
+- Try fix crash in LLSE WebSocket onError callback
+- Fix Schedule
+- Fix LLSE TimeTaskSystem
+- Fix dynamic command crash, #304, #283
