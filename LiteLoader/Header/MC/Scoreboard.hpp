@@ -10,7 +10,7 @@ class Objective;
 struct PlayerScore;
 
 struct ScoreInfo {
-    char filler[20];
+    char filler[16];
     Objective* getObjective() {
         return dAccess<Objective*>(this, 0);
     }
