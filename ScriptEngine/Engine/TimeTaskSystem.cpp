@@ -118,8 +118,8 @@ int NewTimeout(Local<String> func, int timeout)
                 return;
             if (!EngineManager::isValid(engine))
                 return;
-            CsLockHolder lock(locker);
             EngineScope scope(engine);
+            CsLockHolder lock(locker);
 
             auto t = timeTaskMap.find(id);
             if (t == timeTaskMap.end())
@@ -210,8 +210,8 @@ int NewInterval(Local<String> func, int timeout)
                 timeTaskMap.erase(id);
                 return;
             }
-            CsLockHolder lock(locker);
             EngineScope scope(engine);
+            CsLockHolder lock(locker);
 
             auto t = timeTaskMap.find(id);
             if (t == timeTaskMap.end())
@@ -230,15 +230,17 @@ int NewInterval(Local<String> func, int timeout)
 
 bool ClearTimeTask(int id)
 {
-    CsLockHolder lock(locker);
     try
     {
+        // dangerous
+        EngineScope enter(timeTaskMap.at(id).engine);
+        CsLockHolder lock(locker);
         timeTaskMap.at(id).task.cancel();
         timeTaskMap.erase(id);
     }
     catch (...)
     {
-        ;
+        logger.error("Fail in ClearTimeTask");
     }
     return true;
 }
@@ -248,6 +250,7 @@ bool ClearTimeTask(int id)
 
 void LxlRemoveTimeTaskData(ScriptEngine* engine)
 {
+    EngineScope scope(engine);
     CsLockHolder lock(locker);
     erase_if(timeTaskMap, [engine](auto& dataPair) {
         if (dataPair.second.engine == engine)
