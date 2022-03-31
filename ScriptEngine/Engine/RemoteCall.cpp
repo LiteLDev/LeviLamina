@@ -131,6 +131,7 @@ Local<Value> MakeRemoteCall(const string& funcName, const Arguments& args)
         sout << "\n" << ValueToJson(args[i]);
 
     //logger.debug("*** Before remote call request send");
+    //EngineScope enter(data->engine);
     auto sendResult = ModuleMessage::sendTo(data->engine, ModuleMessage::MessageType::RemoteSyncCallRequest, sout.str());
     if (!sendResult)
     {

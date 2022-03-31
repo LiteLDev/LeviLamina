@@ -47,6 +47,8 @@ private:
 public:
     explicit WSClientClass(const Local<Object>& scriptObj);
     explicit WSClientClass();
+    void initListeners();
+    void initListeners_s();
     ~WSClientClass() { ws->Shutdown(); }
     static WSClientClass* constructor(const Arguments& args);
 

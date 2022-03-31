@@ -270,6 +270,7 @@ Local<Value> FileClass::read(const Arguments& args)
             {
                 Local<Value> res = isBinary ? ByteBuffer::newByteBuffer(buf, bytes).asValue() : String::newString(string_view(buf, bytes)).asValue();
                 delete buf;
+                // dangerous
                 NewTimeout(callback.get(), { res }, 1);
             }
             catch (const Exception& e)

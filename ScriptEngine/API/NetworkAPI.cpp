@@ -8,6 +8,7 @@
 #include <SafeGuardRecord.h>
 #include <string>
 #include <vector>
+#include <ScheduleAPI.h>
 using namespace std;
 
 using namespace cyanray;
@@ -47,97 +48,118 @@ WSClientClass::WSClientClass(const Local<Object>& scriptObj)
     : ScriptClass(scriptObj)
     , ws(std::make_shared<WebSocketClient>())
 {
-    ws->OnTextReceived([nowList{ &listeners[int(WSClientEvents::onTextReceived)] }]
-    (WebSocketClient& client, string msg)
-    {
-        if (!nowList->empty())
-            for (auto& listener : *nowList)
-            {
-                EngineScope enter(listener.engine);
-                NewTimeout(listener.func.get(), { String::newString(msg) }, 1);
-            }
-    });
-
-    ws->OnBinaryReceived([nowList{ &listeners[int(WSClientEvents::onBinaryReceived)] }]
-    (WebSocketClient& client, vector<uint8_t> data)
-    {
-        if (!nowList->empty())
-            for (auto& listener : *nowList)
-            {
-                EngineScope enter(listener.engine);
-                NewTimeout(listener.func.get(), { ByteBuffer::newByteBuffer(data.data(),data.size()) }, 1);
-            }
-    });
-
-    ws->OnError([nowList{ &listeners[int(WSClientEvents::onError)] }]
-    (WebSocketClient& client, string msg)
-    {
-        if (!nowList->empty())
-            for (auto& listener : *nowList)
-            {
-                EngineScope enter(listener.engine);
-                NewTimeout(listener.func.get(), {String::newString(msg)}, 1);
-            }
-    });
-
-    ws->OnLostConnection([nowList{ &listeners[int(WSClientEvents::onLostConnection)] }]
-    (WebSocketClient& client, int code)
-    {
-        if (!nowList->empty())
-            for (auto& listener : *nowList)
-            {
-                EngineScope enter(listener.engine);
-                NewTimeout(listener.func.get(), { Number::newNumber(code) }, 1);
-            }
-    });
+    initListeners_s();
 }
 
 WSClientClass::WSClientClass()
     : ScriptClass(ScriptClass::ConstructFromCpp<WSClientClass>{})
     , ws(std::make_shared<WebSocketClient>())
 {
-    ws->OnTextReceived([ nowList {&listeners[int(WSClientEvents::onTextReceived)]} ]
-        (WebSocketClient& client, string msg)
-    {
+    initListeners_s();
+}
+
+void WSClientClass::initListeners()
+{
+    ws->OnTextReceived([nowList{&listeners[int(WSClientEvents::onTextReceived)]}](WebSocketClient& client, string msg) {
         if (!nowList->empty())
             for (auto& listener : *nowList)
             {
+                if (!EngineManager::isValid(listener.engine))
+                    return;
                 EngineScope enter(listener.engine);
-                NewTimeout(listener.func.get(), { String::newString(msg) }, 1);
+                // dangerous
+                NewTimeout(listener.func.get(), {String::newString(msg)}, 1);
             }
     });
 
-    ws->OnBinaryReceived([nowList{ &listeners[int(WSClientEvents::onBinaryReceived)] }]
-        (WebSocketClient& client, vector<uint8_t> data)
-    {
-        if(!nowList->empty())
-            for (auto& listener : *nowList)
-            {
-                EngineScope enter(listener.engine);
-                NewTimeout(listener.func.get(), { ByteBuffer::newByteBuffer(data.data(),data.size()) }, 1);
-            }
-    });
-
-    ws->OnError([nowList{ &listeners[int(WSClientEvents::onError)] }]
-        (WebSocketClient& client, string msg)
-    {
+    ws->OnBinaryReceived([nowList{&listeners[int(WSClientEvents::onBinaryReceived)]}](WebSocketClient& client, vector<uint8_t> data) {
         if (!nowList->empty())
             for (auto& listener : *nowList)
             {
+                if (!EngineManager::isValid(listener.engine))
+                    return;
                 EngineScope enter(listener.engine);
-                NewTimeout(listener.func.get(), { String::newString(msg) }, 1);
+                NewTimeout(listener.func.get(), {ByteBuffer::newByteBuffer(data.data(), data.size())}, 1);
             }
     });
 
-    ws->OnLostConnection([nowList{ &listeners[int(WSClientEvents::onLostConnection)] }]
-        (WebSocketClient& client, int code)
-    {
+    ws->OnError([nowList{&listeners[int(WSClientEvents::onError)]}](WebSocketClient& client, string msg) {
         if (!nowList->empty())
             for (auto& listener : *nowList)
             {
+                if (!EngineManager::isValid(listener.engine))
+                    return;
                 EngineScope enter(listener.engine);
-                NewTimeout(listener.func.get(), { Number::newNumber(code) }, 1);
+                NewTimeout(listener.func.get(), {String::newString(msg)}, 1);
             }
+    });
+
+    ws->OnLostConnection([nowList{&listeners[int(WSClientEvents::onLostConnection)]}](WebSocketClient& client, int code) {
+        if (!nowList->empty())
+            for (auto& listener : *nowList)
+            {
+                if (!EngineManager::isValid(listener.engine))
+                    return;
+                EngineScope enter(listener.engine);
+                NewTimeout(listener.func.get(), {Number::newNumber(code)}, 1);
+            }
+    });
+}
+
+void WSClientClass::initListeners_s()
+{
+    ws->OnTextReceived([nowList{&listeners[int(WSClientEvents::onTextReceived)]}, ws = std::weak_ptr(ws)](WebSocketClient& client, string msg) {
+        Schedule::nextTick([nowList, msg = std::move(msg), ws]() {
+            if (ws.expired())
+                return;
+            if (!nowList->empty())
+                for (auto& listener : *nowList)
+                {
+                    if (!EngineManager::isValid(listener.engine))
+                        return;
+                    EngineScope enter(listener.engine);
+                    listener.func.get().call({}, {String::newString(msg)});
+                }
+        });
+    });
+
+    ws->OnBinaryReceived([nowList{&listeners[int(WSClientEvents::onBinaryReceived)]}](WebSocketClient& client, vector<uint8_t> data) {
+        Schedule::nextTick([nowList, data = std::move(data)]() mutable {
+            if (!nowList->empty())
+                for (auto& listener : *nowList)
+                {
+                    if (!EngineManager::isValid(listener.engine))
+                        return;
+                    EngineScope enter(listener.engine);
+                    listener.func.get().call({}, {ByteBuffer::newByteBuffer(data.data(), data.size())});
+                }
+        });
+    });
+
+    ws->OnError([nowList{&listeners[int(WSClientEvents::onError)]}](WebSocketClient& client, string msg) {
+        Schedule::nextTick([nowList, msg = std::move(msg)]() {
+            if (!nowList->empty())
+                for (auto& listener : *nowList)
+                {
+                    if (!EngineManager::isValid(listener.engine))
+                        return;
+                    EngineScope enter(listener.engine);
+                    listener.func.get().call({}, {String::newString(msg)});
+                }
+        });
+    });
+
+    ws->OnLostConnection([nowList{&listeners[int(WSClientEvents::onLostConnection)]}](WebSocketClient& client, int code) {
+        Schedule::nextTick([nowList, code]() {
+            if (!nowList->empty())
+                for (auto& listener : *nowList)
+                {
+                    if (!EngineManager::isValid(listener.engine))
+                        return;
+                    EngineScope enter(listener.engine);
+                    listener.func.get().call({}, {Number::newNumber(code)});
+                }
+        });
     });
 }
 
@@ -213,18 +235,32 @@ Local<Value> WSClientClass::connectAsync(const Arguments& args)
                 _set_se_translator(seh_exception::TranslateSEHtoCE);
                 try
                 {
-                    ws->Connect(target);
-                    if (!EngineManager::isValid(engine) || engine->isDestroying() || LL::isServerStopping())
-                        return;
-                    EngineScope enter(engine);
-                    NewTimeout(callback.get(), {Boolean::newBoolean(true)}, 0);
-                }
-                catch (const std::runtime_error& e)
-                {
-                    if (!EngineManager::isValid(engine) || engine->isDestroying() || LL::isServerStopping())
-                        return;
-                    EngineScope enter(engine);
-                    NewTimeout(callback.get(), {Boolean::newBoolean(false)}, 0);
+                    bool result = false;
+                    try
+                    {
+                        ws->Connect(target);
+                        result = true;
+                    }
+                    catch (const std::runtime_error& e)
+                    {
+                        result = false;
+                    }
+                    //if (!EngineManager::isValid(engine) || engine->isDestroying() || LL::isServerStopping())
+                    //    return;
+                    //EngineScope enter(engine);
+                    //// fix get on empty Global
+                    //if (callback.isEmpty())
+                    //    return;
+                    //NewTimeout(callback.get(), {Boolean::newBoolean(result)}, 0);
+                    Schedule::nextTick([engine, callback = std::move(callback), result]() {
+                         if (!EngineManager::isValid(engine) || engine->isDestroying() || LL::isServerStopping())
+                             return;
+                         EngineScope enter(engine);
+                        // fix get on empty Global
+                         if (callback.isEmpty())
+                             return;
+                         NewTimeout(callback.get(), {Boolean::newBoolean(result)}, 0);
+                    });
                 }
                 catch (const seh_exception& e)
                 {
@@ -341,27 +377,28 @@ Local<Value> NetworkClass::httpGet(const Arguments& args)
 
         script::Global<Function> callbackFunc{ args[1].asFunction() };
 
-        return Boolean::newBoolean(HttpGet(target,
-            [callback{ std::move(callbackFunc) }, engine{ EngineScope::currentEngine() }]
-            (int status, string body)
-        {
-            if (LL::isServerStopping())
-                return;
-            if (!EngineManager::isValid(engine))
-                return;
+        return Boolean::newBoolean(HttpGet(
+            target,
+            [callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}](int status, string body) {
+                Schedule::nextTick([engine, callback = std::move(callback), status, body = std::move(body)]() {
+                    if (LL::isServerStopping())
+                        return;
+                    if (!EngineManager::isValid(engine))
+                        return;
 
-            EngineScope scope(engine);
-            try
-            {
-                NewTimeout(callback.get(), { Number::newNumber(status), String::newString(body) }, 1);
-            }
-            catch (const Exception& e)
-            {
-                logger.error("HttpGet Callback Failed!");
-                logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                PrintException(e);
-            }
-        }));
+                    EngineScope scope(engine);
+                    try
+                    {
+                        NewTimeout(callback.get(), {Number::newNumber(status), String::newString(body)}, 1);
+                    }
+                    catch (const Exception& e)
+                    {
+                        logger.error("HttpGet Callback Failed!");
+                        logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+                        PrintException(e);
+                    }
+                });
+            }));
     }
     CATCH("Fail in HttpGet");
 }
@@ -381,27 +418,28 @@ Local<Value> NetworkClass::httpPost(const Arguments& args)
 
         script::Global<Function> callbackFunc{ args[3].asFunction() };
 
-        return Boolean::newBoolean(HttpPost(target, args[1].toStr(), args[2].toStr(),
-            [callback{ std::move(callbackFunc) }, engine{ EngineScope::currentEngine() }]
-            (int status, string data)
-        {
-            if (LL::isServerStopping())
-                return;
-            if (!EngineManager::isValid(engine))
-                return;
+        return Boolean::newBoolean(HttpPost(
+            target, args[1].toStr(), args[2].toStr(),
+            [callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}](int status, string body) {
+                Schedule::nextTick([engine, callback = std::move(callback), status, body = std::move(body)]() {
+                    if (LL::isServerStopping())
+                        return;
+                    if (!EngineManager::isValid(engine))
+                        return;
 
-            EngineScope scope(engine);
-            try
-            {
-                NewTimeout(callback.get(), { Number::newNumber(status), String::newString(data) }, 1);
-            }
-            catch (const Exception& e)
-            {
-                logger.error("HttpPost Callback Failed!");
-                logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                PrintException(e);
-            }
-        }));
+                    EngineScope scope(engine);
+                    try
+                    {
+                        NewTimeout(callback.get(), {Number::newNumber(status), String::newString(body)}, 1);
+                    }
+                    catch (const Exception& e)
+                    {
+                        logger.error("HttpPost Callback Failed!");
+                        logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+                        PrintException(e);
+                    }
+                });
+            }));
     }
     CATCH("Fail in HttpPost");
 }

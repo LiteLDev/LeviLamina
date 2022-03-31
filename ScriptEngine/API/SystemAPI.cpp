@@ -6,6 +6,7 @@
 #include <fstream>
 #include <Tools/Utils.h>
 #include <SafeGuardRecord.h>
+#include <ScheduleAPI.h>
 
 using namespace std::filesystem;
 
@@ -36,26 +37,27 @@ Local<Value> SystemClass::cmd(const Arguments& args)
         script::Global<Function> callbackFunc{ args[1].asFunction() };
 
         return Boolean::newBoolean(NewProcess("cmd /c" + cmd,
-            [callback{ std::move(callbackFunc) }, engine{ EngineScope::currentEngine() }]
-        (int exitCode, string output)
-        {
-            if (LL::isServerStopping())
-                return;
-            if (!EngineManager::isValid(engine))
-                return;
+            [callback{ std::move(callbackFunc) }, engine{ EngineScope::currentEngine() }](int exitCode, string output) {
+                Schedule::nextTick(
+                    [engine, callback = std::move(callback), exitCode, output = std::move(output)]() {
+                        if (LL::isServerStopping())
+                            return;
+                        if (!EngineManager::isValid(engine))
+                            return;
 
-            EngineScope scope(engine);
-            try
-            {
-                NewTimeout(callback.get(), { Number::newNumber(exitCode), String::newString(output) }, 1);
+                        EngineScope scope(engine);
+                        try
+                        {
+                            NewTimeout(callback.get(), {Number::newNumber(exitCode), String::newString(output)}, 1);
+                        }
+                        catch (const Exception& e)
+                        {
+                            logger.error("SystemCmd Callback Failed!");
+                            logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+                            logger.error << e << ::Logger::endl;
+                        }
+                    });
             }
-            catch (const Exception& e)
-            {
-                logger.error("SystemCmd Callback Failed!");
-                logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                logger.error << e << ::Logger::endl;
-            }
-        }
         , args.size() >= 3 ? args[2].toInt() : -1));
     }
     CATCH("Fail in SystemCmd");
@@ -76,26 +78,27 @@ Local<Value> SystemClass::newProcess(const Arguments& args)
         script::Global<Function> callbackFunc{ args[1].asFunction() };
 
         return Boolean::newBoolean(NewProcess(process,
-            [callback{ std::move(callbackFunc) }, engine{ EngineScope::currentEngine() }]
-        (int exitCode, string output)
-        {
-            if (LL::isServerStopping())
-                return;
-            if (!EngineManager::isValid(engine))
-                return;
+            [callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}](int exitCode, string output) {
+                Schedule::nextTick(
+                    [engine, callback = std::move(callback), exitCode, output = std::move(output)]() {
+                        if (LL::isServerStopping())
+                            return;
+                        if (!EngineManager::isValid(engine))
+                            return;
 
-            EngineScope scope(engine);
-            try
-            {
-                NewTimeout(callback.get(), { Number::newNumber(exitCode), String::newString(output) }, 1);
+                        EngineScope scope(engine);
+                        try
+                        {
+                            NewTimeout(callback.get(), {Number::newNumber(exitCode), String::newString(output)}, 1);
+                        }
+                        catch (const Exception& e)
+                        {
+                            logger.error("newProcess Callback Failed!");
+                            logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+                            logger.error << e << ::Logger::endl;
+                        }
+                    });
             }
-            catch (const Exception& e)
-            {
-                logger.error("SystemNewProcess Callback Failed!");
-                logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                PrintException(e);
-            }
-        }
         , args.size() >= 3 ? args[2].toInt() : -1));
     }
     CATCH("Fail in SystemCmd");
