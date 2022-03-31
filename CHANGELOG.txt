@@ -1,37 +1,5 @@
-## [New features]
-
-- Add packet filler auto complete
-- Modify llse pl.talkAs, add pl.talkTo
-- Add callback param to llse command.setup
-- Add auto delay setup dynamic command
-- Add some NBT APIs
-- Add SynchedActorData APIs
-- Add addon update support in AddonsHelper
-- Add auto fix Addon List File
-- Addon Command support match without color, #298
-- Add simple fuzzy matching in addons command, #298
-- Add isOperator API
-- Add mc.setMaxPlayers(num)
-- Add wsc.connectAsync
-
 ## [Bug fixes]
 
-- Fix `ll list`
-- Fix "Fix abnormal items", fix warning
-- Fix logger error after exception
-- Fix broadcast crash
-- Add check in "Fix move view crash"
-- Fix sendTextTalkPacket and add target param
-- Fix origin.type #301
-- Fix dynamic command register before server started
-- Fix DynamicCommand::updateAvailableCommands crash
-- Fix _runcmd crash
-- Fix Addons Helper, #223
-- Fix Addons Command and support remove by index
-- Fix llse getSoftEnumNames, #315
-- Fix unable to reload LLSE plugin, #316
-- MobHurtEvent Add MagicDamage, #313
-- Try fix crash in LLSE WebSocket onError callback
-- Fix Schedule
-- Fix LLSE TimeTaskSystem
-- Fix dynamic command crash, #304, #283
+- Fix 0tick schedule repeat #324
+- Fix Scoreboard::getScore #229
+- Fix server startup time, #322
