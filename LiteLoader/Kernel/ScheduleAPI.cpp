@@ -104,7 +104,7 @@ public:
                 if (empty())
                     break;
                 const ScheduleTaskData& t = top();
-                if (t.leftTime > 0)
+                 if (t.leftTime > 0)
                     break;
 
                 //timeout
@@ -186,7 +186,7 @@ namespace Schedule {
         ScheduleTaskData::TaskType type = maxCount < 0 ?
                                           ScheduleTaskData::TaskType::InfiniteRepeat
                                                        : ScheduleTaskData::TaskType::Repeat;
-        ScheduleTaskData sche(type, task, tickRepeat, tickRepeat, maxCount, handler);
+        ScheduleTaskData sche(type, task, std::max(tickRepeat, 1ull), std::max(tickRepeat, 1ull), maxCount, handler);
         locker.lock();
         pendingTaskList.push_back(sche);
         locker.unlock();
@@ -200,7 +200,7 @@ namespace Schedule {
             return ScheduleTask((unsigned)-1);
         ScheduleTaskData::TaskType type = maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat
                                                        : ScheduleTaskData::TaskType::Repeat;
-        ScheduleTaskData sche(type, task, tickDelay, tickRepeat, maxCount, handler);
+        ScheduleTaskData sche(type, task, tickDelay, std::max(tickRepeat, 1ull), maxCount, handler);
         locker.lock();
         pendingTaskList.push_back(sche);
         locker.unlock();
