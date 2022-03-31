@@ -1,5 +1,7 @@
+This is a bug fix update, fix several problems that may cause lag.Please update as soon as possible
+
 ## [Bug fixes]
 
 - Fix 0tick schedule repeat #324
 - Fix Scoreboard::getScore #229
-- Fix server startup time, #322
+- Fix server startup time #322
