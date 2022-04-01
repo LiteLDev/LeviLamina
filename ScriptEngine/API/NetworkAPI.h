@@ -49,7 +49,14 @@ public:
     explicit WSClientClass();
     void initListeners();
     void initListeners_s();
-    ~WSClientClass() { ws->Shutdown(); }
+    ~WSClientClass() { 
+        ws->Shutdown();
+        ws.reset();
+        for (auto& listener : listeners) {
+            listener.clear();
+        }
+        listeners->clear();
+    }
     static WSClientClass* constructor(const Arguments& args);
 
     Local<Value> getStatus();

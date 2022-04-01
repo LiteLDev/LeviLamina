@@ -194,16 +194,16 @@ bool PluginManager::unloadPlugin(const std::string& name)
     auto engine = EngineManager::getEngine(name);
     if (!engine)
         return false;
-
     LxlCallEventsOnHotUnload(engine);
     LxlRemoveTimeTaskData(engine);
     LxlRemoveAllEventListeners(engine);
     LxlRemoveCmdRegister(engine);
     LxlRemoveCmdCallback(engine);
     LxlRemoveAllExportedFuncs(engine);
-    engine->getData().reset();
 
     EngineManager::unRegisterEngine(engine);
+    engine->getData().reset();
+
     PluginManager::unRegisterPlugin(name);
     Schedule::nextTick([engine]() {
         engine->destroy();

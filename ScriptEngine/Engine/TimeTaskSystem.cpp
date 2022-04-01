@@ -96,10 +96,10 @@ void assertTickThread()
         return true;
     })();
     if (tid == thread::id()) {
-        Schedule::nextTick([tid = std::this_thread::get_id()]() {
-            if (tid != std::this_thread::get_id())
-                __debugbreak();
-        });
+        //Schedule::nextTick([tid = std::this_thread::get_id()]() {
+        //    if (tid != std::this_thread::get_id())
+        //        __debugbreak();
+        //});
     }
     else
     {

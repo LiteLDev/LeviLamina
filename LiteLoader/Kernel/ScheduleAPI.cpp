@@ -68,8 +68,9 @@ public:
     {
         if (pendingClear) {
             clear();
+            std::vector<ScheduleTaskData> tmpList;
             locker.lock();
-            pendingTaskList.clear();
+            pendingTaskList.swap(tmpList);
             pendingCancelList.clear();
             pendingClear = false;
             locker.unlock();
@@ -77,24 +78,31 @@ public:
         }
         if (!pendingTaskList.empty())
         {
+            std::vector<ScheduleTaskData> tmpList;
             locker.lock();
-            for (auto& task : pendingTaskList)
+            tmpList.swap(pendingTaskList);
+            locker.unlock();
+            for (auto& task : tmpList)
             {
                 push(std::move(task));
             }
-            pendingTaskList.clear();
-            locker.unlock();
+            tmpList.clear();
         }
         if (c.empty()) {
             return;
         }
-        if (!pendingCancelList.empty()) {
+        if (!pendingCancelList.empty())
+        { 
+            std::vector<uint32_t> tmpList;
             locker.lock();
-            for (auto tid : pendingCancelList) {
+            // ScheduleTaskData destructor may trigger ScriptX's lock
+            tmpList.swap(pendingCancelList);
+            locker.unlock();
+            for (auto tid : tmpList)
+            {
                 remove(tid);
             }
-            pendingCancelList.clear();
-            locker.unlock();
+            tmpList.clear();
         }
         try {
             for (size_t i = 0; i < c.size(); ++i)
