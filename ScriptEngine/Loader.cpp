@@ -95,7 +95,7 @@ void LoadMain()
     for (auto& i : files) {
         if (i.is_regular_file() && i.path().extension() == LLSE_PLUGINS_EXTENSION)
         {
-            if (PluginManager::loadPlugin(i.path().string()))
+            if (PluginManager::loadPlugin(i.path().u8string()))
                 ++count;
         }
     }
