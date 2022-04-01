@@ -49,7 +49,9 @@ public:
     explicit WSClientClass();
     void initListeners();
     void initListeners_s();
+    void clearListeners();
     ~WSClientClass() { 
+        clearListeners();
         ws->Shutdown();
         ws.reset();
         for (auto& listener : listeners) {

@@ -9,7 +9,7 @@
 #include <vector>
 using namespace std;
 
-int timeTaskId = 0;
+atomic_int timeTaskId = 0;
 CsLock locker;
 struct TimeTaskData
 {
@@ -18,6 +18,14 @@ struct TimeTaskData
     vector<script::Global<Value>> paras;
     script::Global<String> code;
     ScriptEngine *engine;
+    inline void swap(TimeTaskData& rhs)
+    {
+        std::swap(rhs.task, task);
+        rhs.func.swap(func);
+        rhs.paras.swap(paras);
+        rhs.code.swap(code);
+        std::swap(rhs.engine, engine);
+    }
 };
 std::unordered_map<int, TimeTaskData> timeTaskMap;
 
@@ -85,6 +93,7 @@ std::unordered_map<int, TimeTaskData> timeTaskMap;
 //        timeout / 50);
 //}
 
+//#define CHECK_THREAD_ID
 
 void assertTickThread()
 {
@@ -114,18 +123,16 @@ int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
 #ifdef CHECK_THREAD_ID
     assertTickThread();
 #endif // CHECK_THREAD_ID
-    if (EngineScope::currentEngine() == nullptr)
-        throw std::logic_error("call setTimeout-Function without a ::script::EngineScope");
-    CsLockHolder lock(locker);
-    ++timeTaskId;
+    int tid = ++timeTaskId;
+    TimeTaskData data;
 
-    timeTaskMap[timeTaskId].func = func;
-    timeTaskMap[timeTaskId].engine = EngineScope::currentEngine();
+    data.func = func;
+    data.engine = EngineScope::currentEngine();
     for (auto& para : paras)
-        timeTaskMap[timeTaskId].paras.emplace_back(std::move(para));
+        data.paras.emplace_back(std::move(para));
 
-    timeTaskMap[timeTaskId].task = Schedule::delay(
-        [engine{EngineScope::currentEngine()}, id{timeTaskId}]()
+    data.task = Schedule::delay(
+        [engine{EngineScope::currentEngine()}, id{tid}]()
     {
         try {
             if (LL::isServerStopping())
@@ -134,13 +141,18 @@ int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
                 return;
             // lock after enter EngineScope to prevent deadlock
             EngineScope scope(engine);
-            CsLockHolder lock(locker);
-
+            TimeTaskData taskData;
+            locker.lock();
             auto t = timeTaskMap.find(id);
-            if(t == timeTaskMap.end())
+            if (t == timeTaskMap.end())
+            {
+                locker.unlock();
                 return;
+            }
+            t->second.swap(taskData);
+            timeTaskMap.erase(id);
+            locker.unlock();
 
-            auto& taskData = t->second;
             if (taskData.func.isEmpty())
                 return;
             auto func = taskData.func.get();
@@ -158,11 +170,13 @@ int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
                         args.emplace_back(para.get());
                 func.call({}, args);
             }
-            timeTaskMap.erase(id);
         }
         TIMETASK_CATCH("setTimeout-Function");
     }, timeout / 50);
-    return timeTaskId;
+    locker.lock();
+    data.swap(timeTaskMap[tid]);
+    locker.unlock();
+    return tid;
 }
 
 int NewTimeout(Local<String> func, int timeout)
@@ -170,16 +184,14 @@ int NewTimeout(Local<String> func, int timeout)
 #ifdef CHECK_THREAD_ID
     assertTickThread();
 #endif // CHECK_THREAD_ID
-    if (EngineScope::currentEngine() == nullptr)
-        throw std::logic_error("call setTimeout-String without a ::script::EngineScope");
-    CsLockHolder lock(locker);
-    ++timeTaskId;
+    int tid = ++timeTaskId;
+    TimeTaskData data;
 
-    timeTaskMap[timeTaskId].code = func;
-    timeTaskMap[timeTaskId].engine = EngineScope::currentEngine();
+    data.code = func;
+    data.engine = EngineScope::currentEngine();
 
-    timeTaskMap[timeTaskId].task = Schedule::delay(
-        [engine{ EngineScope::currentEngine() }, id{ timeTaskId }]()
+    data.task = Schedule::delay(
+        [engine{EngineScope::currentEngine()}, id{tid}]()
     {
         try {
             if (LL::isServerStopping())
@@ -187,22 +199,30 @@ int NewTimeout(Local<String> func, int timeout)
             if (!EngineManager::isValid(engine))
                 return;
             EngineScope scope(engine);
-            CsLockHolder lock(locker);
-
+            TimeTaskData taskData;
+            locker.lock();
             auto t = timeTaskMap.find(id);
             if (t == timeTaskMap.end())
+            {
+                locker.unlock();
                 return;
+            }
+            t->second.swap(taskData);
+            timeTaskMap.erase(id);
+            locker.unlock();
 
-            auto& taskData = t->second;
             if (taskData.code.isEmpty())
                 return;
             auto code = taskData.code.get().toString();
             engine->eval(code);
-            timeTaskMap.erase(id);
         }
         TIMETASK_CATCH("setTimeout-String");
     }, timeout / 50);
-    return timeTaskId;
+
+    locker.lock();
+    data.swap(timeTaskMap[tid]);
+    locker.unlock();
+    return tid;
 }
 
 int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
@@ -210,44 +230,46 @@ int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
 #ifdef CHECK_THREAD_ID
     assertTickThread();
 #endif // CHECK_THREAD_ID
-    if (EngineScope::currentEngine() == nullptr)
-        throw std::logic_error("call setInterval-Function without a ::script::EngineScope");
-    CsLockHolder lock(locker);
-    ++timeTaskId;
+    int tid = ++ timeTaskId;
+    TimeTaskData data;
 
-    timeTaskMap[timeTaskId].func = func;
-    timeTaskMap[timeTaskId].engine = EngineScope::currentEngine();
+    data.func = func;
+    data.engine = EngineScope::currentEngine();
     for (auto& para : paras)
-        timeTaskMap[timeTaskId].paras.emplace_back(std::move(para));
+        data.paras.emplace_back(std::move(para));
 
-    timeTaskMap[timeTaskId].task = Schedule::repeat(
-        [engine{ EngineScope::currentEngine() }, id{ timeTaskId }]()
+    data.task = Schedule::repeat(
+        [engine{EngineScope::currentEngine()}, id{tid}]()
     {
         try {
             if (LL::isServerStopping())
                 return;
             if (!EngineManager::isValid(engine))
             {
-                // dangerous
-                __debugbreak();
-                CsLockHolder lock(locker);
-                timeTaskMap[id].task.cancel();
-                timeTaskMap.erase(id);
+                ClearTimeTask(id);
                 return;
             }
             EngineScope scope(engine);
-            CsLockHolder lock(locker);
+
+            locker.lock();
 
             auto t = timeTaskMap.find(id);
-            if (t == timeTaskMap.end())
+            if (t == timeTaskMap.end()) {
+                locker.unlock();
                 return;
+            }
 
-            auto& taskData = t->second;
+            TimeTaskData& taskData = t->second;
+
             if (taskData.func.isEmpty())
+            {
+                locker.unlock();
                 return;
+            }
             auto func = taskData.func.get();
             if (taskData.paras.empty())
             {
+                locker.unlock();
                 func.call();
             }
             else
@@ -255,15 +277,23 @@ int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
                 vector<Local<Value>> args;
                 for (auto& para : taskData.paras)
                     if (para.isEmpty())
+                    {
+                        locker.unlock();
                         return;
+                    }
                     else
                         args.emplace_back(para.get());
+                locker.unlock();
                 func.call({}, args);
             }
         }
         TIMETASK_CATCH("setInterval-Function");
     }, timeout / 50);
-    return timeTaskId;
+
+    locker.lock();
+    data.swap(timeTaskMap[tid]);
+    locker.unlock();
+    return tid;
 }
 
 int NewInterval(Local<String> func, int timeout)
@@ -271,45 +301,50 @@ int NewInterval(Local<String> func, int timeout)
 #ifdef CHECK_THREAD_ID
     assertTickThread();
 #endif // CHECK_THREAD_ID
-    if (EngineScope::currentEngine() == nullptr)
-        throw std::logic_error("call setInterval-String without a ::script::EngineScope");
-    CsLockHolder lock(locker);
-    ++timeTaskId;
+    int tid = ++ timeTaskId;
+    TimeTaskData data;
 
-    timeTaskMap[timeTaskId].code = func;
-    timeTaskMap[timeTaskId].engine = EngineScope::currentEngine();
+    data.code = func;
+    data.engine = EngineScope::currentEngine();
 
-    timeTaskMap[timeTaskId].task = Schedule::repeat(
-        [engine{ EngineScope::currentEngine() }, id{ timeTaskId }]()
+    data.task = Schedule::repeat(
+        [engine{EngineScope::currentEngine()}, id{tid}]()
     {
         try {
             if (LL::isServerStopping())
                 return;
             if (!EngineManager::isValid(engine))
             {
-                // dangerous
-                __debugbreak();
-                CsLockHolder lock(locker);
-                timeTaskMap[id].task.cancel();
-                timeTaskMap.erase(id);
+                ClearTimeTask(id);
                 return;
             }
             EngineScope scope(engine);
-            CsLockHolder lock(locker);
+            locker.lock();
 
             auto t = timeTaskMap.find(id);
             if (t == timeTaskMap.end())
+            {
+                locker.unlock();
                 return;
+            }
+            TimeTaskData& taskData = t->second;
 
-            auto& taskData = t->second;
             if (taskData.code.isEmpty())
+            {
+                locker.unlock();
                 return;
+            }
             auto code = taskData.code.get().toString();
+            locker.unlock();
             engine->eval(code);
         }
         TIMETASK_CATCH("setInterval-String");
     }, timeout / 50);
-    return timeTaskId;
+
+    locker.lock();
+    data.swap(timeTaskMap[tid]);
+    locker.unlock();
+    return tid;
 }
 
 bool ClearTimeTask(int id)
@@ -319,11 +354,15 @@ bool ClearTimeTask(int id)
 #endif // CHECK_THREAD_ID
     try
     {
-        if (EngineScope::currentEngine() == nullptr)
-            throw std::logic_error("call " __FUNCTION__ " without a ::script::EngineScope");
-        CsLockHolder lock(locker);
-        timeTaskMap.at(id).task.cancel();
-        timeTaskMap.erase(id);
+        TimeTaskData data;
+        locker.lock();
+        auto it = timeTaskMap.find(id);
+        if (it != timeTaskMap.end())
+        {
+            data.swap(timeTaskMap[id]);
+            timeTaskMap.erase(id);
+        }
+        locker.unlock();
     }
     catch (...)
     {
@@ -340,14 +379,30 @@ void LxlRemoveTimeTaskData(ScriptEngine* engine)
 #ifdef CHECK_THREAD_ID
     assertTickThread();
 #endif // CHECK_THREAD_ID
-    EngineScope scope(engine);
-    CsLockHolder lock(locker);
-    erase_if(timeTaskMap, [engine](auto& dataPair) {
-        if (dataPair.second.engine == engine)
+    // dangerous
+    //EngineScope scope(engine);
+    //CsLockHolder lock(locker);
+    //erase_if(timeTaskMap, [engine](auto& dataPair) {
+    //    if (dataPair.second.engine == engine)
+    //    {
+    //        dataPair.second.task.cancel();
+    //        return true;
+    //    }
+    //    return false;
+    //});
+    std::unordered_map<int, TimeTaskData> tmpMap;
+    locker.lock();
+    for (auto it = timeTaskMap.begin(); it != timeTaskMap.end();)
+    {
+        if (it->second.engine == engine)
         {
-            dataPair.second.task.cancel();
-            return true;
+            it->second.swap(tmpMap[it->first]);
+            it = timeTaskMap.erase(it);
         }
-        return false;
-    });
+        else
+            ++it;
+    }
+    locker.unlock();
+    tmpMap.clear();
+
 }

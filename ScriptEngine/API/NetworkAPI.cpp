@@ -48,14 +48,14 @@ WSClientClass::WSClientClass(const Local<Object>& scriptObj)
     : ScriptClass(scriptObj)
     , ws(std::make_shared<WebSocketClient>())
 {
-    initListeners_s();
+    initListeners();
 }
 
 WSClientClass::WSClientClass()
     : ScriptClass(ScriptClass::ConstructFromCpp<WSClientClass>{})
     , ws(std::make_shared<WebSocketClient>())
 {
-    initListeners_s();
+    initListeners();
 }
 
 void WSClientClass::initListeners()
@@ -175,6 +175,14 @@ void WSClientClass::initListeners_s()
                 }
         });
     });
+}
+
+void WSClientClass::clearListeners()
+{
+    ws->OnTextReceived([](WebSocketClient&, std::string) {});
+    ws->OnBinaryReceived([](WebSocketClient&, std::vector<uint8_t>) {});
+    ws->OnError([](WebSocketClient&, std::string) {});
+    ws->OnLostConnection([](WebSocketClient&, int) {});
 }
 
 WSClientClass* WSClientClass::constructor(const Arguments& args)
