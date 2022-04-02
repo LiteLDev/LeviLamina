@@ -50,14 +50,9 @@ public:
     void initListeners();
     void initListeners_s();
     void clearListeners();
-    ~WSClientClass() { 
-        clearListeners();
+    ~WSClientClass()
+    {
         ws->Shutdown();
-        ws.reset();
-        for (auto& listener : listeners) {
-            listener.clear();
-        }
-        listeners->clear();
     }
     static WSClientClass* constructor(const Arguments& args);
 
