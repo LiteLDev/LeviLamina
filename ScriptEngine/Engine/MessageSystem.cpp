@@ -284,11 +284,13 @@ ModuleMessageResult::~ModuleMessageResult()
 bool ModuleMessageResult::waitForAllResults(int maxWaitTime)
 {
     return waitForResultCount(getSentCount());
+    return waitForResultCount(getSentCount(), maxWaitTime);
 }
 
 bool ModuleMessageResult::waitForOneResult(int maxWaitTime)
 {
     return waitForResultCount(1);
+    return waitForResultCount(1, maxWaitTime);
 }
 
 bool ModuleMessageResult::waitForResultCount(int targetCount, int maxWaitTime)

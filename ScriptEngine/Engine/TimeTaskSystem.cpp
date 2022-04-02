@@ -9,7 +9,7 @@
 #include <vector>
 using namespace std;
 
-atomic_int timeTaskId = 0;
+std::atomic_int timeTaskId = 0;
 CsLock locker;
 struct TimeTaskData
 {
@@ -21,10 +21,10 @@ struct TimeTaskData
     inline void swap(TimeTaskData& rhs)
     {
         std::swap(rhs.task, task);
-        rhs.func.swap(func);
-        rhs.paras.swap(paras);
-        rhs.code.swap(code);
         std::swap(rhs.engine, engine);
+        rhs.code.swap(code);
+        rhs.paras.swap(paras);
+        rhs.func.swap(func);
     }
 };
 std::unordered_map<int, TimeTaskData> timeTaskMap;
@@ -142,16 +142,15 @@ int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
             // lock after enter EngineScope to prevent deadlock
             EngineScope scope(engine);
             TimeTaskData taskData;
-            locker.lock();
-            auto t = timeTaskMap.find(id);
-            if (t == timeTaskMap.end())
             {
-                locker.unlock();
-                return;
+                CsLockHolder lock(locker);
+
+                auto t = timeTaskMap.find(id);
+                if (t == timeTaskMap.end())
+                    return;
+                t->second.swap(taskData);
+                timeTaskMap.erase(id);
             }
-            t->second.swap(taskData);
-            timeTaskMap.erase(id);
-            locker.unlock();
 
             if (taskData.func.isEmpty())
                 return;
@@ -173,9 +172,8 @@ int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
         }
         TIMETASK_CATCH("setTimeout-Function");
     }, timeout / 50);
-    locker.lock();
+    CsLockHolder lock(locker);
     data.swap(timeTaskMap[tid]);
-    locker.unlock();
     return tid;
 }
 
@@ -200,16 +198,15 @@ int NewTimeout(Local<String> func, int timeout)
                 return;
             EngineScope scope(engine);
             TimeTaskData taskData;
-            locker.lock();
-            auto t = timeTaskMap.find(id);
-            if (t == timeTaskMap.end())
             {
-                locker.unlock();
-                return;
+                CsLockHolder lock(locker);
+
+                auto t = timeTaskMap.find(id);
+                if (t == timeTaskMap.end())
+                    return;
+                t->second.swap(taskData);
+                timeTaskMap.erase(id);
             }
-            t->second.swap(taskData);
-            timeTaskMap.erase(id);
-            locker.unlock();
 
             if (taskData.code.isEmpty())
                 return;
@@ -219,9 +216,8 @@ int NewTimeout(Local<String> func, int timeout)
         TIMETASK_CATCH("setTimeout-String");
     }, timeout / 50);
 
-    locker.lock();
+    CsLockHolder lock(locker);
     data.swap(timeTaskMap[tid]);
-    locker.unlock();
     return tid;
 }
 
@@ -250,49 +246,42 @@ int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
                 return;
             }
             EngineScope scope(engine);
-
-            locker.lock();
-
-            auto t = timeTaskMap.find(id);
-            if (t == timeTaskMap.end()) {
-                locker.unlock();
-                return;
-            }
-
-            TimeTaskData& taskData = t->second;
-
-            if (taskData.func.isEmpty())
+            Local<Value> func = Local<Value>();
+            vector<Local<Value>> args;
             {
-                locker.unlock();
+                CsLockHolder lock(locker);
+
+                auto t = timeTaskMap.find(id);
+                if (t == timeTaskMap.end())
+                    return;
+
+                TimeTaskData& taskData = t->second;
+
+                if (taskData.func.isEmpty())
+                    return;
+                func = taskData.func.get();
+                if (!taskData.paras.empty())
+                {
+                    vector<Local<Value>> args;
+                    for (auto& para : taskData.paras)
+                        if (para.isEmpty())
+                            return;
+                        else
+                            args.emplace_back(para.get());
+                }
+            }
+            if (!func.isFunction())
                 return;
-            }
-            auto func = taskData.func.get();
-            if (taskData.paras.empty())
-            {
-                locker.unlock();
-                func.call();
-            }
+            if (args.size() > 0)
+                func.asFunction().call({}, args);
             else
-            {
-                vector<Local<Value>> args;
-                for (auto& para : taskData.paras)
-                    if (para.isEmpty())
-                    {
-                        locker.unlock();
-                        return;
-                    }
-                    else
-                        args.emplace_back(para.get());
-                locker.unlock();
-                func.call({}, args);
-            }
+                func.asFunction().call();
         }
         TIMETASK_CATCH("setInterval-Function");
     }, timeout / 50);
 
-    locker.lock();
+    CsLockHolder lock(locker);
     data.swap(timeTaskMap[tid]);
-    locker.unlock();
     return tid;
 }
 
@@ -319,31 +308,27 @@ int NewInterval(Local<String> func, int timeout)
                 return;
             }
             EngineScope scope(engine);
-            locker.lock();
-
-            auto t = timeTaskMap.find(id);
-            if (t == timeTaskMap.end())
+            std::string code;
             {
-                locker.unlock();
-                return;
-            }
-            TimeTaskData& taskData = t->second;
+                CsLockHolder lock(locker);
 
-            if (taskData.code.isEmpty())
-            {
-                locker.unlock();
-                return;
+                auto t = timeTaskMap.find(id);
+                if (t == timeTaskMap.end())
+                    return;
+                TimeTaskData& taskData = t->second;
+
+                if (taskData.code.isEmpty())
+                    return;
+                code = taskData.code.get().toString();
             }
-            auto code = taskData.code.get().toString();
-            locker.unlock();
-            engine->eval(code);
+            if (!code.empty())
+                engine->eval(code);
         }
         TIMETASK_CATCH("setInterval-String");
     }, timeout / 50);
 
-    locker.lock();
+    CsLockHolder lock(locker);
     data.swap(timeTaskMap[tid]);
-    locker.unlock();
     return tid;
 }
 
@@ -352,17 +337,16 @@ bool ClearTimeTask(int id)
 #ifdef CHECK_THREAD_ID
     assertTickThread();
 #endif // CHECK_THREAD_ID
+    TimeTaskData data;
     try
     {
-        TimeTaskData data;
-        locker.lock();
+        CsLockHolder lock(locker);
         auto it = timeTaskMap.find(id);
         if (it != timeTaskMap.end())
         {
             data.swap(timeTaskMap[id]);
             timeTaskMap.erase(id);
         }
-        locker.unlock();
     }
     catch (...)
     {
@@ -391,18 +375,24 @@ void LxlRemoveTimeTaskData(ScriptEngine* engine)
     //    return false;
     //});
     std::unordered_map<int, TimeTaskData> tmpMap;
-    locker.lock();
-    for (auto it = timeTaskMap.begin(); it != timeTaskMap.end();)
+    try
     {
-        if (it->second.engine == engine)
+        CsLockHolder lock(locker);
+        for (auto it = timeTaskMap.begin(); it != timeTaskMap.end();)
         {
-            it->second.swap(tmpMap[it->first]);
-            it = timeTaskMap.erase(it);
+            if (it->second.engine == engine)
+            {
+                it->second.swap(tmpMap[it->first]);
+                it = timeTaskMap.erase(it);
+            }
+            else
+                ++it;
         }
-        else
-            ++it;
     }
-    locker.unlock();
+    catch (...)
+    {
+        logger.info("Fail in LxlRemoveTimeTaskData");
+    }
     tmpMap.clear();
 
 }
