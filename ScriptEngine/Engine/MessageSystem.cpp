@@ -283,13 +283,11 @@ ModuleMessageResult::~ModuleMessageResult()
 
 bool ModuleMessageResult::waitForAllResults(int maxWaitTime)
 {
-    return waitForResultCount(getSentCount());
     return waitForResultCount(getSentCount(), maxWaitTime);
 }
 
 bool ModuleMessageResult::waitForOneResult(int maxWaitTime)
 {
-    return waitForResultCount(1);
     return waitForResultCount(1, maxWaitTime);
 }
 
@@ -326,12 +324,12 @@ bool ModuleMessageResult::cancel()
     return true;
 }
 
-
 ///////////////////////////// Funcs /////////////////////////////
 void MessageSystemLoopOnce()
 {
     //if (!messageLoopLock.try_lock())
     //    return;
+    SRWLockSharedHolder lock(globalShareData->engineListLock);
     for (auto engine : globalShareData->globalEngineList)
     {
         if (EngineManager::getEngineType(engine) == LLSE_BACKEND_TYPE)
@@ -373,6 +371,7 @@ void InitMessageSystem()
         return true;
     });
 
+    // dangerous?
     std::thread([]() {
         // Set global SEH-Exception handler
         _set_se_translator(seh_exception::TranslateSEHtoCE);

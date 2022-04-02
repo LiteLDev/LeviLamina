@@ -1276,6 +1276,8 @@ THook(void, "?tick@ServerLevel@@UEAAXXZ",
 {
     try
     {
+        // may deadlock in loopQueue?
+        SRWLockSharedHolder lock(globalShareData->engineListLock);
         for (auto engine : globalShareData->globalEngineList)
         {
             if (EngineManager::getEngineType(engine) == LLSE_BACKEND_TYPE)

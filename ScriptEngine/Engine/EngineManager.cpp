@@ -10,6 +10,7 @@ using namespace script;
 
 bool EngineManager::unRegisterEngine(ScriptEngine* toDelete)
 {
+    SRWLockHolder lock(globalShareData->engineListLock);
     for(auto engine = globalShareData->globalEngineList.begin(); engine != globalShareData->globalEngineList.end(); ++engine)
         if (*engine == toDelete)
         {
@@ -21,6 +22,7 @@ bool EngineManager::unRegisterEngine(ScriptEngine* toDelete)
 
 bool EngineManager::registerEngine(ScriptEngine* engine)
 {
+    SRWLockHolder lock(globalShareData->engineListLock);
     globalShareData->globalEngineList.push_back(engine);
     return true;
 }
@@ -45,6 +47,7 @@ ScriptEngine* EngineManager::newEngine(string pluginName)
 
 bool EngineManager::isValid(ScriptEngine* engine, bool onlyCheckLocal)
 {
+    SRWLockSharedHolder lock(globalShareData->engineListLock);
     for (auto i = globalShareData->globalEngineList.begin(); i != globalShareData->globalEngineList.end(); ++i)
         if (*i == engine)
         {
@@ -59,6 +62,7 @@ bool EngineManager::isValid(ScriptEngine* engine, bool onlyCheckLocal)
 std::vector<ScriptEngine*> EngineManager::getLocalEngines()
 {
     std::vector<ScriptEngine*> res;
+    SRWLockSharedHolder lock(globalShareData->engineListLock);
     for (auto& engine : globalShareData->globalEngineList)
     {
         if (getEngineType(engine) == LLSE_BACKEND_TYPE)
@@ -70,6 +74,7 @@ std::vector<ScriptEngine*> EngineManager::getLocalEngines()
 std::vector<ScriptEngine*> EngineManager::getGlobalEngines()
 {
     std::vector<ScriptEngine*> res;
+    SRWLockSharedHolder lock(globalShareData->engineListLock);
     for (auto& engine : globalShareData->globalEngineList)
     {
         res.push_back(engine);
@@ -79,6 +84,7 @@ std::vector<ScriptEngine*> EngineManager::getGlobalEngines()
 
 ScriptEngine* EngineManager::getEngine(std::string name, bool onlyLocalEngine)
 {
+    SRWLockSharedHolder lock(globalShareData->engineListLock);
     for (auto& engine : globalShareData->globalEngineList)
     {
         if (onlyLocalEngine && getEngineType(engine) != LLSE_BACKEND_TYPE)

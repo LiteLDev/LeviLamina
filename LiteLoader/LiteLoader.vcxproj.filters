@@ -315,6 +315,9 @@
     <ClCompile Include="Kernel\Network\PacketAPI.cpp">
       <Filter>Kernel\Network</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\Utils\SRWLock.cpp">
+      <Filter>Kernel\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -670,6 +673,9 @@
     </ClInclude>
     <ClInclude Include="Header\RegCommandAPI.h">
       <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Utils\SRWLock.h">
+      <Filter>Header\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
