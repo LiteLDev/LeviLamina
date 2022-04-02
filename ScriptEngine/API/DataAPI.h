@@ -50,6 +50,7 @@ class DbClass : public ScriptClass
 {
 private:
     std::unique_ptr<KVDB> kvdb;
+    int unloadCallbackIndex = -1;
 
 public:
 	explicit DbClass(const Local<Object>& scriptObj, const string& dir);

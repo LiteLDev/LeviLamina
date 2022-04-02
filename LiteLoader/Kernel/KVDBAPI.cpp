@@ -2,6 +2,7 @@
 #include <KVDBAPI.h>
 #include <LoggerAPI.h>
 #include <Utils/FileHelper.h>
+#include <I18nAPI.h>
 
 Logger levelDBLogger("LevelDB");
 
@@ -43,7 +44,7 @@ void KVDB::_init(const char* path, bool create, bool read_cache, int cache_sz, i
         levelDBLogger.error("Fail to load KVDB <{}>", path);
         auto output = error(status);
         output.erase(std::remove(output.begin(), output.end(), '\n'), output.end());
-        levelDBLogger.error("{}", output);
+        levelDBLogger.error("{}", TextEncoding::toUTF8(output));
     }
 }
 

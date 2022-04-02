@@ -33,6 +33,20 @@ struct EngineOwnData
 
     //玩家绑定数据
     std::unordered_map<std::string,script::Global<Value>> playerDataDB;
+
+    //Unload Callbacks, use for close database...
+    int index = 0;
+    std::unordered_map<int, std::function<void(ScriptEngine*)>> unloadCallbacks;
+    inline int addUnloadCallback(std::function<void(ScriptEngine*)>&& cb)
+    {
+        unloadCallbacks[++index] = cb;
+        return index;
+    }
+    inline bool removeUnloadCallback(int index)
+    {
+        return unloadCallbacks.erase(index);
+    }
+
 };
 
 // 引擎附加数据

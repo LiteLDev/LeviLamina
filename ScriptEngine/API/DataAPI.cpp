@@ -91,14 +91,24 @@ ClassDefine<ConfIniClass> ConfIniClassBuilder =
 //生成函数
 DbClass::DbClass(const Local<Object>& scriptObj, const string &dir)
     :ScriptClass(scriptObj),kvdb(KVDB::create(dir))
-{ }
+{
+    unloadCallbackIndex = ENGINE_OWN_DATA()->addUnloadCallback([&](ScriptEngine* engine) {
+        kvdb.reset();
+    });
+}
 
 DbClass::DbClass(const string& dir)
-    : ScriptClass(script::ScriptClass::ConstructFromCpp<DbClass>{}), kvdb(KVDB::create(dir))
-{ }
+    : ScriptClass(script::ScriptClass::ConstructFromCpp<DbClass>{})
+    , kvdb(KVDB::create(dir))
+{
+    unloadCallbackIndex = ENGINE_OWN_DATA()->addUnloadCallback([&](ScriptEngine* engine) {
+        kvdb.reset();
+        });
+}
 
 DbClass::~DbClass()
-{ }
+{
+}
 
 DbClass* DbClass::constructor(const Arguments& args)
 {
@@ -167,6 +177,8 @@ Local<Value> DbClass::del(const Arguments& args)
 
 Local<Value> DbClass::close(const Arguments& args)
 {
+    ENGINE_OWN_DATA()->removeUnloadCallback(unloadCallbackIndex);
+    unloadCallbackIndex = -1;
     try
     {
         kvdb.reset();

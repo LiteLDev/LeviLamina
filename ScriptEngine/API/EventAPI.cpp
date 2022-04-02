@@ -340,7 +340,11 @@ bool LxlCallEventsOnHotUnload(ScriptEngine* engine)
     auto players = Level::getAllPlayers();
     for (auto& pl : players)
         FakeCallEvent(engine, EVENT_TYPES::onLeft, PlayerClass::newPlayer(pl));
-
+    for (auto& [index, cb] : ENGINE_GET_DATA(engine)->unloadCallbacks)
+    {
+        cb(engine);
+    }
+    ENGINE_GET_DATA(engine)->unloadCallbacks.clear();
     return true;
 }
 
@@ -1284,7 +1288,7 @@ THook(void, "?tick@ServerLevel@@UEAAXXZ",
         }
         for (auto engine : tmpList)
         {
-            if (EngineManager::getEngineType(engine) == LLSE_BACKEND_TYPE)
+            if (EngineManager::isValid(engine) && EngineManager::getEngineType(engine) == LLSE_BACKEND_TYPE)
             {
                 EngineScope enter(engine);
                 engine->messageQueue()->loopQueue(script::utils::MessageQueue::LoopType::kLoopOnce);
