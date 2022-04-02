@@ -21,6 +21,8 @@
 #include <MC/Packet.hpp>
 #include <MC/PropertiesSettings.hpp>
 #include <MC/LoopbackPacketSender.hpp>
+#include <MC/ServerCommandOrigin.hpp>
+#include <MC/PlayerCommandOrigin.hpp>
 
 
 Actor* Level::getEntity(ActorUniqueID uniqueId)
@@ -217,36 +219,49 @@ Actor* Level::getDamageSourceEntity(ActorDamageSource* ads) {
 }
 
 void* Level::ServerCommandOrigin::fake_vtbl[26];
-static_assert(offsetof(Level::ServerCommandOrigin, Perm) == 64);
+
+CompoundTag& getServerOriginTag()
+{
+    static auto cached = CompoundTag::fromSNBT(R"({"CommandPermissionLevel":4b,"DimensionId":"Overworld","OriginType":7b,"RequestId":"00000000-0000-0000-0000-000000000000"})");
+    return *cached;
+}
+
+std::unique_ptr<CompoundTag> getPlayerOriginTag(Player& player)
+{
+    static auto cached = CompoundTag::fromSNBT(R"({"OriginType":0b,"PlayerId":0l})");
+    auto tag = cached->clone();
+    tag->putInt64("PlayerId", player.getUniqueID());
+    return std::move(tag);
+}
 
 bool Level::executeCommand(const string& cmd) {
-    ServerCommandOrigin origin;
-    return MinecraftCommands::_runcmd(&origin, cmd);
+    auto origin = ::ServerCommandOrigin::load(getServerOriginTag(), *Global<ServerLevel>);
+    return MinecraftCommands::_runcmd(origin.get(), cmd);
 }
 
 std::unordered_map<void*, string*> resultOfOrigin;
 
 std::pair<bool, string> Level::executeCommandEx(const string& cmd) {
-    ServerCommandOrigin origin;
+    auto origin = ::ServerCommandOrigin::load(getServerOriginTag(), *Global<ServerLevel>);
     string val;
-    resultOfOrigin[&origin] = &val;
-    bool rv = MinecraftCommands::_runcmd(&origin, cmd);
+    resultOfOrigin[origin.get()] = &val;
+    bool rv = MinecraftCommands::_runcmd(origin.get(), cmd);
     return {rv, std::move(val)};
 }
 
 
 static void* FAKE_PORGVTBL[26];
 bool Level::executeCommandAs(Player* pl, const string& cmd) {
-    void** filler[5];
-    ServerCommandOrigin origin;
-    SymCall("??0PlayerCommandOrigin@@QEAA@AEAVPlayer@@@Z", void, void*, ServerPlayer*)(
-        filler, (ServerPlayer*)pl);
-    if (FAKE_PORGVTBL[1] == nullptr) {
-        memcpy(FAKE_PORGVTBL, ((void**)filler[0]) - 1, sizeof(FAKE_PORGVTBL));
-        FAKE_PORGVTBL[1] = (void*)dummy;
-    }
-    filler[0] = FAKE_PORGVTBL + 1;
-    return MinecraftCommands::_runcmd(filler, cmd);
+    //void** filler[5]; // warning: memory leak
+    //SymCall("??0PlayerCommandOrigin@@QEAA@AEAVPlayer@@@Z", void, void*, ServerPlayer*)(
+    //    filler, (ServerPlayer*)pl);
+    //if (FAKE_PORGVTBL[1] == nullptr) {
+    //    memcpy(FAKE_PORGVTBL, ((void**)filler[0]) - 1, sizeof(FAKE_PORGVTBL));
+    //    FAKE_PORGVTBL[1] = (void*)dummy;
+    //}
+    //filler[0] = FAKE_PORGVTBL + 1;
+    auto origin = PlayerCommandOrigin::load(*getPlayerOriginTag(*pl), *Global<Level>);
+    return MinecraftCommands::_runcmd(origin.get(), cmd);
 }
 
 

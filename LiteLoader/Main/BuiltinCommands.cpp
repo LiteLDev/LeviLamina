@@ -433,6 +433,9 @@ public:
 
     void execute(CommandOrigin const& ori, CommandOutput& output) const override
     {
+#ifdef DEBUG
+        Logger("CommandOrigin").warn(ori.serialize().toSNBT());
+#endif // DEBUG
         LLVersionCommand(output);
     }
 
