@@ -269,20 +269,20 @@ Local<Value> WSClientClass::connectAsync(const Arguments& args)
                     }
                     if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
                         return;
-                    //EngineScope enter(engine);
-                    //// fix get on empty Global
-                    //if (callback.isEmpty())
-                    //    return;
-                    //NewTimeout(callback.get(), {Boolean::newBoolean(result)}, 0);
-                    Schedule::nextTick([engine, callback = std::move(callback), result]() {
-                         if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
-                             return;
-                         EngineScope enter(engine);
-                        // fix get on empty Global
-                         if (callback.isEmpty())
-                             return;
-                         callback.get().call({}, {Boolean::newBoolean(result)});
-                    });
+                    EngineScope enter(engine);
+                    // fix get on empty Global
+                    if (callback.isEmpty())
+                        return;
+                    NewTimeout(callback.get(), {Boolean::newBoolean(result)}, 0);
+                    //Schedule::nextTick([engine, callback = std::move(callback), result]() {
+                    //    if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
+                    //        return;
+                    //    EngineScope enter(engine);
+                    //    // fix get on empty Global
+                    //    if (callback.isEmpty())
+                    //        return;
+                    //    callback.get().call({}, {Boolean::newBoolean(result)});
+                    //});
                 }
                 catch (const seh_exception& e)
                 {

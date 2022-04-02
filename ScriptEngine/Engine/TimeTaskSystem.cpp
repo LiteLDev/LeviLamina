@@ -9,7 +9,7 @@
 #include <vector>
 using namespace std;
 
-std::atomic_int timeTaskId = 0;
+std::atomic_uint timeTaskId = 0;
 CsLock locker;
 struct TimeTaskData
 {
@@ -120,9 +120,6 @@ void assertTickThread()
 
 int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
 {
-#ifdef CHECK_THREAD_ID
-    assertTickThread();
-#endif // CHECK_THREAD_ID
     int tid = ++timeTaskId;
     TimeTaskData data;
 
@@ -179,9 +176,6 @@ int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
 
 int NewTimeout(Local<String> func, int timeout)
 {
-#ifdef CHECK_THREAD_ID
-    assertTickThread();
-#endif // CHECK_THREAD_ID
     int tid = ++timeTaskId;
     TimeTaskData data;
 
@@ -223,9 +217,6 @@ int NewTimeout(Local<String> func, int timeout)
 
 int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
 {
-#ifdef CHECK_THREAD_ID
-    assertTickThread();
-#endif // CHECK_THREAD_ID
     int tid = ++ timeTaskId;
     TimeTaskData data;
 
@@ -287,9 +278,6 @@ int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
 
 int NewInterval(Local<String> func, int timeout)
 {
-#ifdef CHECK_THREAD_ID
-    assertTickThread();
-#endif // CHECK_THREAD_ID
     int tid = ++ timeTaskId;
     TimeTaskData data;
 
@@ -334,9 +322,7 @@ int NewInterval(Local<String> func, int timeout)
 
 bool ClearTimeTask(int id)
 {
-#ifdef CHECK_THREAD_ID
-    assertTickThread();
-#endif // CHECK_THREAD_ID
+    assert(EngineScope::currentEngine() != nullptr);
     TimeTaskData data;
     try
     {
@@ -360,20 +346,8 @@ bool ClearTimeTask(int id)
 
 void LxlRemoveTimeTaskData(ScriptEngine* engine)
 {
-#ifdef CHECK_THREAD_ID
-    assertTickThread();
-#endif // CHECK_THREAD_ID
-    // dangerous
-    //EngineScope scope(engine);
-    //CsLockHolder lock(locker);
-    //erase_if(timeTaskMap, [engine](auto& dataPair) {
-    //    if (dataPair.second.engine == engine)
-    //    {
-    //        dataPair.second.task.cancel();
-    //        return true;
-    //    }
-    //    return false;
-    //});
+    // enter scope to prevent script::Global::~Global() from crashing
+    EngineScope enter(engine);
     std::unordered_map<int, TimeTaskData> tmpMap;
     try
     {
@@ -394,5 +368,4 @@ void LxlRemoveTimeTaskData(ScriptEngine* engine)
         logger.info("Fail in LxlRemoveTimeTaskData");
     }
     tmpMap.clear();
-
 }
