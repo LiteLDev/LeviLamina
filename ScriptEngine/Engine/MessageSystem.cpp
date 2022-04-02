@@ -329,10 +329,15 @@ void MessageSystemLoopOnce()
 {
     //if (!messageLoopLock.try_lock())
     //    return;
-    SRWLockSharedHolder lock(globalShareData->engineListLock);
-    for (auto engine : globalShareData->globalEngineList)
+    std::list<ScriptEngine*> tmpList;
     {
-        if (EngineManager::getEngineType(engine) == LLSE_BACKEND_TYPE)
+        SRWLockSharedHolder lock(globalShareData->engineListLock);
+        // low efficiency
+        tmpList = globalShareData->globalEngineList;
+    }
+    for (auto engine : tmpList)
+    {
+        if (EngineManager::isValid(engine) && EngineManager::getEngineType(engine) == LLSE_BACKEND_TYPE)
         {
             try
             {

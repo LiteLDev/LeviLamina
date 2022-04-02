@@ -1276,9 +1276,13 @@ THook(void, "?tick@ServerLevel@@UEAAXXZ",
 {
     try
     {
-        // may deadlock in loopQueue?
-        SRWLockSharedHolder lock(globalShareData->engineListLock);
-        for (auto engine : globalShareData->globalEngineList)
+        std::list<ScriptEngine*> tmpList;
+        {
+            SRWLockSharedHolder lock(globalShareData->engineListLock);
+            // low efficiency
+            tmpList = globalShareData->globalEngineList;
+        }
+        for (auto engine : tmpList)
         {
             if (EngineManager::getEngineType(engine) == LLSE_BACKEND_TYPE)
             {
