@@ -133,7 +133,6 @@ inline void OutputError(std::string errorMsg, int errorCode, std::string errorWh
     logger.error("In Function ({})", func);
     if (auto plugin = LL::getPlugin(handler))
         logger.error("In Plugin <{}>", plugin->name);
-    __debugbreak();
 }
 
 } // namespace

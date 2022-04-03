@@ -95,6 +95,8 @@ std::unordered_map<int, TimeTaskData> timeTaskMap;
 
 //#define CHECK_THREAD_ID
 
+#ifdef DEBUG    
+
 void assertTickThread()
 {
     static thread::id tid = thread::id();
@@ -104,19 +106,22 @@ void assertTickThread()
         });
         return true;
     })();
-    if (tid == thread::id()) {
-        //Schedule::nextTick([tid = std::this_thread::get_id()]() {
-        //    if (tid != std::this_thread::get_id())
-        //        __debugbreak();
-        //});
+    if (tid == thread::id())
+    {
+        // Schedule::nextTick([tid = std::this_thread::get_id()]() {
+        //     if (tid != std::this_thread::get_id())
+        //         __debugbreak();
+        // });
     }
     else
     {
         if (tid != std::this_thread::get_id())
             __debugbreak();
     }
-
 }
+
+#endif // DEBUG
+
 
 int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
 {

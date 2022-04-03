@@ -89,13 +89,11 @@ std::optional<Addon> parseAddonFromPath(std::filesystem::path addonPath)
         addonLogger.error("Uncaught C++ Exception Detected!");
         addonLogger.error("In " __FUNCTION__ " " + addonPath.u8string());
         addonLogger.error("Error: Code[{}] {}", -1, TextEncoding::toUTF8(e.what()));
-        __debugbreak();
     }
     catch (...)
     {
         addonLogger.error("Uncaught Exception Detected!");
         addonLogger.error("In " __FUNCTION__ " " + addonPath.u8string());
-        __debugbreak();
     }
     return std::nullopt;
 }

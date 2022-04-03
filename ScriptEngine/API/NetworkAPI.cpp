@@ -118,8 +118,6 @@ void WSClientClass::initListeners_s()
             if (!nowList->empty())
                 for (auto& listener : *nowList)
                 {
-                    if (listener.engine != engine)
-                        __debugbreak();
                     listener.func.get().call({}, {String::newString(msg)});
                 }
         });
@@ -135,8 +133,6 @@ void WSClientClass::initListeners_s()
             if (!nowList->empty())
                 for (auto& listener : *nowList)
                 {
-                    if (listener.engine != engine)
-                        __debugbreak();
                     listener.func.get().call({}, {ByteBuffer::newByteBuffer(data.data(), data.size())});
                 }
         });
@@ -152,8 +148,6 @@ void WSClientClass::initListeners_s()
             if (!nowList->empty())
                 for (auto& listener : *nowList)
                 {
-                    if (listener.engine != engine)
-                        __debugbreak();
                     listener.func.get().call({}, {String::newString(msg)});
                 }
         });
@@ -169,8 +163,6 @@ void WSClientClass::initListeners_s()
             if (!nowList->empty())
                 for (auto& listener : *nowList)
                 {
-                    if (listener.engine != engine)
-                        __debugbreak();
                     listener.func.get().call({}, {Number::newNumber(code)});
                 }
         });
