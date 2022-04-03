@@ -149,7 +149,7 @@ void Welcome()
          << "\r" << R"(         | |___| | ||  __/ |__| (_) | (_| | (_| |  __/ |               )" << endl
          << "\r" << R"(         |_____|_|\__\___|_____\___/ \__,_|\__,_|\___|_|               )" << endl
          << "\r" << R"(                                                                       )" << endl
-         << "\r" << R"(       --------   Light-Weight BDS Plugin Loader   --------            )" << endl
+         << "\r" << R"(       --------   Light-Weight BDS Plugin Loader   ----------          )" << endl
          << "\r" << R"(                                                                       )" << endl;
 }
 
