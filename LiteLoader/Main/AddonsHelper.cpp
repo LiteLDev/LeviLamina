@@ -323,7 +323,7 @@ bool AddonsManager::install(std::string packPath)
         }
 
         filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
-        //filesystem::remove_all(str2wstr(packPath), ec);
+        filesystem::remove_all(str2wstr(packPath), ec);
         return true;
     }
     catch (const seh_exception& e)

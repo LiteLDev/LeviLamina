@@ -201,11 +201,14 @@ void LLMain()
     // Check Running BDS(Requires Config)
     CheckRunningBDS();
 
-    // Initialize Player Database
-    InitPlayerDatabase();
-
     // I18n
     Translation::load("plugins/LiteLoader/LangPack/" + LL::globalConfig.language + ".json");
+
+    // Builtin CrashLogger
+    LL::InitCrashLogger(LL::globalConfig.enableCrashLogger);
+
+    // Initialize Player Database
+    InitPlayerDatabase();
 
     // Rename Window
     HWND hwnd = GetConsoleWindow();
@@ -217,9 +220,6 @@ void LLMain()
 
     // DebugMode
     CheckDevMode();
-
-    // Builtin CrashLogger
-    LL::InitCrashLogger(LL::globalConfig.enableCrashLogger);
 
     // Addon Helper
     if (LL::globalConfig.enableAddonsHelper)
