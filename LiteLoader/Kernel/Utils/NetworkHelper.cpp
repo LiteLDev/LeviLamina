@@ -4,6 +4,7 @@
 #include <httplib/httplib.h>
 #include <Utils/DbgHelper.h>
 #include <thread>
+#include <I18nAPI.h>
 
 using namespace std;
 
@@ -49,6 +50,12 @@ bool HttpGet(const string &url, const function<void(int, string)> &callback, int
             logger.error("In HttpGet callback");
             PrintCurrentStackTraceback();
         }
+        catch (const std::exception& e)
+        {
+            logger.error("Uncaught C++ Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
+            logger.error("In HttpGet callback");
+            PrintCurrentStackTraceback();
+        }
         catch (...) {
             logger.error("HttpGet Callback Failed!");
             logger.error("Uncaught Exception Detected!");
@@ -84,6 +91,12 @@ bool HttpPost(const string &url, const string &data, const string &type, const s
         catch (const seh_exception &e) {
             logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
             logger.error("In HttpPost callback");
+            PrintCurrentStackTraceback();
+        }
+        catch (const std::exception& e)
+        {
+            logger.error("Uncaught C++ Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
+            logger.error("In HttpGet callback");
             PrintCurrentStackTraceback();
         }
         catch (...) {
