@@ -54,7 +54,8 @@ std::optional<Addon> parseAddonFromPath(std::filesystem::path addonPath)
         auto manifestFile = ReadAllFile(manifestPath.u8string());
         if (!manifestFile || manifestFile->empty())
             throw "manifest.json not found!";
-
+        ReplaceStr(*manifestFile, "\n", " ");
+        ReplaceStr(*manifestFile, "\t", " ");
         auto manifest = nlohmann::json::parse(*manifestFile, nullptr, true, true);
         auto header = manifest["header"];
         auto uuid = header["uuid"];
@@ -82,7 +83,6 @@ std::optional<Addon> parseAddonFromPath(std::filesystem::path addonPath)
         addonLogger.error("Uncaught SEH Exception Detected!");
         addonLogger.error("In " __FUNCTION__ " " + addonPath.u8string());
         addonLogger.error("Error: Code[{}] {}", e.code(), TextEncoding::toUTF8(e.what()));
-        __debugbreak();
     }
     catch (const std::exception& e)
     {
