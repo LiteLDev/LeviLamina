@@ -266,15 +266,6 @@ Local<Value> WSClientClass::connectAsync(const Arguments& args)
                     if (callback.isEmpty())
                         return;
                     NewTimeout(callback.get(), {Boolean::newBoolean(result)}, 0);
-                    //Schedule::nextTick([engine, callback = std::move(callback), result]() {
-                    //    if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
-                    //        return;
-                    //    EngineScope enter(engine);
-                    //    // fix get on empty Global
-                    //    if (callback.isEmpty())
-                    //        return;
-                    //    callback.get().call({}, {Boolean::newBoolean(result)});
-                    //});
                 }
                 catch (const seh_exception& e)
                 {
@@ -393,28 +384,22 @@ Local<Value> NetworkClass::httpGet(const Arguments& args)
 
         return Boolean::newBoolean(HttpGet(
             target,
-            [callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}](int status, string body) mutable {
+            [callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}](int status, string body) {
                 if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
                     return;
-                Schedule::nextTick([engine, callback = std::move(callback), status, body = std::move(body)]() {
-                    if (LL::isServerStopping())
-                        return;
-                    if (!EngineManager::isValid(engine))
-                        return;
 
-                    EngineScope scope(engine);
-                    try
-                    {
-                        //NewTimeout(callback.get(), {Number::newNumber(status), String::newString(body)}, 1);
-                        callback.get().call({}, {Number::newNumber(status), String::newString(body)});
-                    }
-                    catch (const Exception& e)
-                    {
-                        logger.error("HttpGet Callback Failed!");
-                        logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                        PrintException(e);
-                    }
-                });
+                EngineScope scope(engine);
+                try
+                {
+                    NewTimeout(callback.get(), {Number::newNumber(status), String::newString(body)}, 1);
+                    //callback.get().call({}, {Number::newNumber(status), String::newString(body)});
+                }
+                catch (const Exception& e)
+                {
+                    logger.error("HttpGet Callback Failed!");
+                    logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+                    PrintException(e);
+                }
             }));
     }
     CATCH("Fail in HttpGet");
@@ -437,28 +422,22 @@ Local<Value> NetworkClass::httpPost(const Arguments& args)
 
         return Boolean::newBoolean(HttpPost(
             target, args[1].toStr(), args[2].toStr(),
-            [callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}](int status, string body) mutable {
+            [callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}](int status, string body) {
                 if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
                     return;
-                Schedule::nextTick([engine, callback = std::move(callback), status, body = std::move(body)]() {
-                    if (LL::isServerStopping())
-                        return;
-                    if (!EngineManager::isValid(engine))
-                        return;
 
-                    EngineScope scope(engine);
-                    try
-                    {
-                        //NewTimeout(callback.get(), {Number::newNumber(status), String::newString(body)}, 1);
-                        callback.get().call({}, {Number::newNumber(status), String::newString(body)});
-                    }
-                    catch (const Exception& e)
-                    {
-                        logger.error("HttpPost Callback Failed!");
-                        logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                        PrintException(e);
-                    }
-                });
+                EngineScope scope(engine);
+                try
+                {
+                     NewTimeout(callback.get(), {Number::newNumber(status), String::newString(body)}, 1);
+                    //callback.get().call({}, {Number::newNumber(status), String::newString(body)});
+                }
+                catch (const Exception& e)
+                {
+                    logger.error("HttpPost Callback Failed!");
+                    logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+                    PrintException(e);
+                }
             }));
     }
     CATCH("Fail in HttpPost");
