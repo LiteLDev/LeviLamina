@@ -110,18 +110,37 @@ void RemoteSyncCallReturn(ModuleMessage& msg)
 
 //////////////////// Remote Call ////////////////////
 
+Local<Value> MakeRemoteCallSameModule(ExportedFuncData* data, const Arguments& args)
+{
+    EngineScope enter(data->engine);
+    std::vector<script::Local<Value>> values;
+    for (int i = 0; i < args.size(); ++i) {
+        values.emplace_back(args[i]);
+    }
+    return data->func.get().call({}, values);
+}
+
+
 Local<Value> MakeRemoteCall(const string& funcName, const Arguments& args)
 {
     //Remote Call
     //logger.debug("*** Remote Call begin");
-
     ExportedFuncData* data;
     try {
         data = &(globalShareData->exportedFuncs).at(funcName);
     }
     catch (const std::out_of_range& e)
     {
-        logger.error(string("Fail to import! Function [") + funcName + "] has not been exported!");
+        logger.error("Fail to import! Function [{}] has not been exported!", funcName);
+        return Local<Value>();
+    }
+    if (data->fromEngineType == LLSE_MODULE_TYPE) {
+        return MakeRemoteCallSameModule(data, args);
+    }
+
+    if (LL::isServerStarting())
+    {
+        logger.error("Call remote function cross-module is not allowed before the server is started");
         return Local<Value>();
     }
 
