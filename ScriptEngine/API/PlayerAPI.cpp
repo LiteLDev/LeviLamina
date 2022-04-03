@@ -32,7 +32,7 @@ using namespace std;
 //////////////////// Class Definition ////////////////////
 
 ClassDefine<PlayerClass> PlayerClassBuilder =
-    defineClass<PlayerClass>("LXL_Player")
+    defineClass<PlayerClass>("LLSE_Player")
         .constructor(nullptr)
         .instanceFunction("getRawPtr", &PlayerClass::getRawPtr)
 

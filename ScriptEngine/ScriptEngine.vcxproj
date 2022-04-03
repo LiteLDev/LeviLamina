@@ -127,7 +127,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{3524e651-fdfa-498d-be39-7df750172672}</ProjectGuid>
-    <RootNamespace>LiteXLoaderJs</RootNamespace>
+    <RootNamespace>LLSEJs</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>ScriptEngine</ProjectName>
   </PropertyGroup>

@@ -153,7 +153,7 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
             PluginManager::registerPlugin(filePath, pluginName, pluginName, LL::Version(1, 0, 0), {});
 
         if (isHotLoad)
-            LxlCallEventsOnHotLoad(engine);
+            LLSECallEventsOnHotLoad(engine);
         logger.info(pluginName + " loaded.");
         return true;
     }
@@ -194,12 +194,12 @@ bool PluginManager::unloadPlugin(const std::string& name)
     auto engine = EngineManager::getEngine(name);
     if (!engine)
         return false;
-    LxlCallEventsOnHotUnload(engine);
-    LxlRemoveTimeTaskData(engine);
-    LxlRemoveAllEventListeners(engine);
-    LxlRemoveCmdRegister(engine);
-    LxlRemoveCmdCallback(engine);
-    LxlRemoveAllExportedFuncs(engine);
+    LLSECallEventsOnHotUnload(engine);
+    LLSERemoveTimeTaskData(engine);
+    LLSERemoveAllEventListeners(engine);
+    LLSERemoveCmdRegister(engine);
+    LLSERemoveCmdCallback(engine);
+    LLSERemoveAllExportedFuncs(engine);
 
     EngineManager::unRegisterEngine(engine);
     engine->getData().reset();

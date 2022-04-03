@@ -21,6 +21,15 @@
 
 <br>
 
+### 获取LiteLoader加载器版本字符串
+
+`ll.versionString()`
+
+- 返回值：加载器版本
+- 返回值类型： `String`
+
+<br>
+
 ### 检查LiteLoader加载器版本
 
 `ll.requireVersion(major[,minor,revision])`

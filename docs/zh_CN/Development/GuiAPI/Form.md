@@ -1,4 +1,4 @@
-# LiteXLoader - GUI表单界面文档
+# LLSE - GUI表单界面文档
 
 > 这里API使你可以在游戏中创建、修改或者影响 **GUI界面**
 

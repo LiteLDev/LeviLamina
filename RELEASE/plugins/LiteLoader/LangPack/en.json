@@ -16,8 +16,8 @@
     "base.getDimName.1":                    "Nether",
     "base.getDimName.2":                    "End",
     "base.getDimName.unknown":              "Other dimension",
-    "lxlapi.require.success":               " - Plugin require loaded successfully. Loaded: ",
-    "lxlapi.require.fail":                  " - Plugin require load failed",
-    "lxlapi.require.download.success":      " - Successfully downloaded require! Path: ",
-    "lxlapi.require.network.fail":          " - Download plugin require failed! Code: "
+    "llseapi.require.success":               " - Plugin require loaded successfully. Loaded: ",
+    "llseapi.require.fail":                  " - Plugin require load failed",
+    "llseapi.require.download.success":      " - Successfully downloaded require! Path: ",
+    "llseapi.require.network.fail":          " - Download plugin require failed! Code: "
 }

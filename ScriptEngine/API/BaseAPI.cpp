@@ -282,3 +282,12 @@ Local<Value> McClass::getBDSVersion(const Arguments& args)
     }
     CATCH("Fail in GetBDSVersion!")
 }
+
+Local<Value> McClass::getServerProtocolVersion(const Arguments& args)
+{
+    try
+    {
+        return Number::newNumber(LL::getServerProtocolVersion());
+    }
+    CATCH("Fail in GetServerProtocolVersion!")
+}

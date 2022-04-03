@@ -18,6 +18,7 @@ using namespace std;
 ClassDefine<void> LlClassBuilder =
     defineClass("ll")
         .function("version", &LlClass::version)
+        .function("versionString", &LlClass::version)
         .function("requireVersion", &LlClass::requireVersion)
         .function("listPlugins", &LlClass::listPlugins)
         .function("import", &LlClass::importFunc)
@@ -116,7 +117,7 @@ Local<Value> LlClass::registerPlugin(const Arguments& args)
         return Boolean::newBoolean(PluginManager::registerPlugin(ENGINE_OWN_DATA()->pluginFilePath,
             name, introduction, ver, other));
     }
-    CATCH("Fail in LxlRegisterPlugin!")
+    CATCH("Fail in LLSERegisterPlugin!")
 }
 
 Local<Value> LlClass::version(const Arguments& args)
@@ -129,7 +130,16 @@ Local<Value> LlClass::version(const Arguments& args)
         ver.set("isBeta", LITELOADER_VERSION_STATUS != LL::Version::Status::Release);
         return ver;
     }
-    CATCH("Fail in LxlGetVersion!")
+    CATCH("Fail in LLSEGetVersion!")
+}
+
+Local<Value> LlClass::versionString(const Arguments& args)
+{
+    try
+    {
+        return String::newString(LL::getLoaderVersionString());
+    }
+    CATCH("Fail in LLSEGetVersionString!")
 }
 
 Local<Value> LlClass::requireVersion(const Arguments& args)
@@ -145,7 +155,7 @@ Local<Value> LlClass::requireVersion(const Arguments& args)
         return Boolean::newBoolean(!IsVersionLess(LITELOADER_VERSION_MAJOR, LITELOADER_VERSION_MINOR, LITELOADER_VERSION_REVISION,
             args[0].toInt(), (args.size() >= 2) ? args[1].toInt() : 0, (args.size() >= 3) ? args[2].toInt() : 0));
     }
-    CATCH("Fail in LxlRequireVersion!")
+    CATCH("Fail in LLSERequireVersion!")
 }
 
 Local<Value> LlClass::listPlugins(const Arguments& args)
@@ -160,7 +170,7 @@ Local<Value> LlClass::listPlugins(const Arguments& args)
         }
         return plugins;
     }
-    CATCH("Fail in LxlListPlugins!")
+    CATCH("Fail in LLSEListPlugins!")
 }
 
 Local<Value> LlClass::require(const Arguments& args)
@@ -179,7 +189,7 @@ Local<Value> LlClass::require(const Arguments& args)
         //已加载插件
         if (PluginManager::getPlugin(require) != nullptr)
         {
-            logger.info(thisName + tr("lxlapi.require.success") + require);
+            logger.info(thisName + tr("llseapi.require.success") + require);
             return Boolean::newBoolean(true);
         }
 
@@ -213,12 +223,12 @@ Local<Value> LlClass::require(const Arguments& args)
             bool success = PluginManager::loadPlugin(requirePath);
             if (success)
             {
-                logger.info(thisName + tr("lxlapi.require.success") + require);
+                logger.info(thisName + tr("llseapi.require.success") + require);
                 return Boolean::newBoolean(true);
             }
             else
             {
-                logger.error(thisName + tr("lxlapi.require.fail"));
+                logger.error(thisName + tr("llseapi.require.fail"));
                 return Boolean::newBoolean(false);
             }
         }
@@ -239,12 +249,12 @@ Local<Value> LlClass::require(const Arguments& args)
             bool success = PluginManager::loadPlugin(string(LLSE_DEPENDS_DIR) + "/" + require);
             if (success)
             {
-                logger.info(thisName + tr("lxlapi.require.success") + require);
+                logger.info(thisName + tr("llseapi.require.success") + require);
                 return Boolean::newBoolean(true);
             }
             else
             {
-                logger.error(thisName + tr("lxlapi.require.fail"));
+                logger.error(thisName + tr("llseapi.require.fail"));
                 return Boolean::newBoolean(false);
             }
         }
@@ -252,7 +262,7 @@ Local<Value> LlClass::require(const Arguments& args)
         //HTTP(s)下载
         if (args.size() == 1)
         {
-            logger.error(thisName + tr("lxlapi.require.fail"));
+            logger.error(thisName + tr("llseapi.require.fail"));
             return Boolean::newBoolean(false);
         }
 
@@ -262,27 +272,27 @@ Local<Value> LlClass::require(const Arguments& args)
 
         if (!HttpGetSync(remotePath, &status, &result) || status != 200)
         {
-            logger.error(thisName + tr("lxlapi.require.network.fail") + to_string(status));
+            logger.error(thisName + tr("llseapi.require.network.fail") + to_string(status));
             return Boolean::newBoolean(false);
         }
         WriteAllFile(downloadPath, result, false);
 
-        logger.info(thisName + tr("lxlapi.require.download.success") + downloadPath);
+        logger.info(thisName + tr("llseapi.require.download.success") + downloadPath);
 
         //下载完毕安装
         bool success = PluginManager::loadPlugin(downloadPath);
         if (success)
         {
-            logger.info(thisName + tr("lxlapi.require.success") + require);
+            logger.info(thisName + tr("llseapi.require.success") + require);
             return Boolean::newBoolean(true);
         }
         else
         {
-            logger.error(thisName + tr("lxlapi.require.fail"));
+            logger.error(thisName + tr("llseapi.require.fail"));
             return Boolean::newBoolean(false);
         }
     }
-    CATCH("Fail in LxlRequire!")
+    CATCH("Fail in LLSERequire!")
 }
 
 Local<Value> LlClass::eval(const Arguments& args)
@@ -293,5 +303,5 @@ Local<Value> LlClass::eval(const Arguments& args)
     {
         return EngineScope::currentEngine()->eval(args[0].toStr());
     }
-    CATCH("Fail in LxlEval!")
+    CATCH("Fail in LLSEEval!")
 }

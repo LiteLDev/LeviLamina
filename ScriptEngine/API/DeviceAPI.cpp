@@ -10,7 +10,7 @@ using namespace std;
 //////////////////// Class Definition ////////////////////
 
 ClassDefine<DeviceClass> DeviceClassBuilder =
-	defineClass<DeviceClass>("LXL_Device")
+	defineClass<DeviceClass>("LLSE_Device")
 		.constructor(nullptr)
         .instanceProperty("ip", &DeviceClass::getIP)
 		.instanceProperty("avgPing", &DeviceClass::getAvgPing)

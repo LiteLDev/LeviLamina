@@ -8,10 +8,10 @@
 void InitBasicEventListeners();
 void EnableEventListener(int eventId);
 
-bool LxlAddEventListener(ScriptEngine* engine, const std::string& eventName, const Local<Function>& func);
-bool LxlRemoveAllEventListeners(ScriptEngine* engine);
-bool LxlCallEventsOnHotLoad(ScriptEngine* engine);
-bool LxlCallEventsOnHotUnload(ScriptEngine* engine);
+bool LLSEAddEventListener(ScriptEngine* engine, const std::string& eventName, const Local<Function>& func);
+bool LLSERemoveAllEventListeners(ScriptEngine* engine);
+bool LLSECallEventsOnHotLoad(ScriptEngine* engine);
+bool LLSECallEventsOnHotUnload(ScriptEngine* engine);
 
 //////////////////// Callback ////////////////////
 

@@ -8,7 +8,7 @@ using namespace std;
 //////////////////// Class Definition ////////////////////
 
 ClassDefine<ContainerClass> ContainerClassBuilder =
-	defineClass<ContainerClass>("LXL_Container")
+	defineClass<ContainerClass>("LLSE_Container")
 		.constructor(nullptr)
 		.instanceFunction("getRawPtr", &ContainerClass::getRawPtr)
 

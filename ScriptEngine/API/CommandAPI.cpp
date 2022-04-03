@@ -58,7 +58,7 @@ ClassDefine<CommandClass> CommandClassBuilder =
 
 //////////////////// Helper ////////////////////
 
-bool LxlRemoveCmdCallback(script::ScriptEngine* engine)
+bool LLSERemoveCmdCallback(script::ScriptEngine* engine)
 {
     erase_if(localShareData->commandCallbacks, [&engine](auto& data) {
         return data.second.fromEngine == engine;

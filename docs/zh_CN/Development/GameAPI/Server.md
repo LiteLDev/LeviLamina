@@ -11,6 +11,15 @@
 
 <br>
 
+### 获取BDS服务端协议版本
+
+`mc.getServerProtocolVersion()`
+
+- 返回值：服务端协议版本
+- 返回值类型：`Number`
+
+<br>
+
 ### 设置服务器Motd字符串  
 
 `mc.setMotd(motd)`

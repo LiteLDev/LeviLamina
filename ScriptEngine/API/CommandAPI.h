@@ -6,7 +6,7 @@ extern ClassDefine<void> ParamTypeStaticBuilder;
 extern ClassDefine<void> PermissionStaticBuilder;
 extern ClassDefine<void> ParamOptionStaticBuilder;
 
-bool LxlRemoveCmdCallback(script::ScriptEngine* engine);
+bool LLSERemoveCmdCallback(script::ScriptEngine* engine);
 
 class CommandClass : public ScriptClass
 {
