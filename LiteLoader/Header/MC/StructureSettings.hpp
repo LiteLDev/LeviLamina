@@ -30,12 +30,13 @@ private:
 char filler[96];
 
 public:
-    inline StructureSettings(BlockPos const& size, bool ignoreEntities, bool ignoreBlocks) {
-        SymCall("??0StructureSettings@@QEAA@XZ", StructureSettings*, StructureSettings*)(this);
-        setIgnoreBlocks(ignoreBlocks);
-        setIgnoreEntities(ignoreEntities);
-        setStructureSize(size);
-    };
+inline StructureSettings(BlockPos const& size, bool ignoreEntities, bool ignoreBlocks)
+    : StructureSettings()
+{
+    setIgnoreBlocks(ignoreBlocks);
+    setIgnoreEntities(ignoreEntities);
+    setStructureSize(size);
+};
 
 #undef AFTER_EXTRA
 
