@@ -36,20 +36,20 @@ void LoadDepends()
         {
             try
             {
-                auto content = ReadAllFile(i.path().string());
+                auto content = ReadAllFile(i.path().u8string());
                 if (!content)
                     throw("Fail to open plugin file!");
                 depends.emplace_back(*content);
-                logger.info("Dependence " + i.path().filename().string() + " loaded.");
+                logger.info("Dependence " + i.path().filename().u8string() + " loaded.");
             }
             catch (std::exception e)
             {
-                logger.warn("Fail to load dependence " + i.path().filename().string() + ".");
+                logger.warn("Fail to load dependence " + i.path().filename().u8string() + ".");
                 logger.warn(TextEncoding::toUTF8(e.what()));
             }
             catch (...)
             {
-                logger.warn("Fail to load dependence " + i.path().filename().string() + ".");
+                logger.warn("Fail to load dependence " + i.path().filename().u8string() + ".");
             }
         }
     }

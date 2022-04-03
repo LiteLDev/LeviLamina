@@ -196,7 +196,7 @@ bool CompoundTag::setBlockActor(BlockActor* ble) const
 {
     void* vtbl = dlsym("??_7DefaultDataLoadHelper@@6B@");
     ble->load(*Global<Level>, *this, (DataLoadHelper&)vtbl);
-    ble->setChanged();
+    ble->refreshData();
     return true;
 }
 
