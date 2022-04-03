@@ -76,11 +76,14 @@ std::string Actor::getTypeName() const {
     }
 }
 
+#include <MC/ActorDamageSource.hpp>
 bool Actor::hurtEntity(int damage) {
-    char a[16];
-    ActorDamageSource& ad = SymCall("??0ActorDamageSource@@QEAA@W4ActorDamageCause@@@Z",
-                                    ActorDamageSource&, ActorDamageSource*, ActorDamageCause)((ActorDamageSource*)a, ActorDamageCause::None);
-    return ((Mob*)this)->_hurt(ad, damage, true, false);
+    char source[16];
+    (*(ActorDamageSource*)source).ActorDamageSource::ActorDamageSource(ActorDamageCause::None);
+
+    auto res = ((Mob*)this)->_hurt((*(ActorDamageSource*)source), damage, true, false);
+    (*(ActorDamageSource*)source).~ActorDamageSource();
+    return res;
 }
 
 Vec2* Actor::getDirection() const {

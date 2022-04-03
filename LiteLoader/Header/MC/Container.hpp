@@ -23,6 +23,7 @@ public:
 	LIAPI int getSize();
 
 	LIAPI bool hasContainer(Vec3& pos, int dim);
+    // static??
     LIAPI Container* getContainerAt(Vec3& pos, int dim);
 #undef AFTER_EXTRA
 

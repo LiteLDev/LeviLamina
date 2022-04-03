@@ -236,7 +236,7 @@ std::unique_ptr<CompoundTag> getPlayerOriginTag(Player& player)
 
 bool Level::executeCommand(const string& cmd) {
     auto origin = ::ServerCommandOrigin::load(getServerOriginTag(), *Global<ServerLevel>);
-    return MinecraftCommands::_runcmd(origin.get(), cmd);
+    return MinecraftCommands::_runcmd(std::move(origin), cmd);
 }
 
 std::unordered_map<void*, string*> resultOfOrigin;
@@ -245,7 +245,7 @@ std::pair<bool, string> Level::executeCommandEx(const string& cmd) {
     auto origin = ::ServerCommandOrigin::load(getServerOriginTag(), *Global<ServerLevel>);
     string val;
     resultOfOrigin[origin.get()] = &val;
-    bool rv = MinecraftCommands::_runcmd(origin.get(), cmd);
+    bool rv = MinecraftCommands::_runcmd(std::move(origin), cmd);
     return {rv, std::move(val)};
 }
 
@@ -261,7 +261,7 @@ bool Level::executeCommandAs(Player* pl, const string& cmd) {
     //}
     //filler[0] = FAKE_PORGVTBL + 1;
     auto origin = PlayerCommandOrigin::load(*getPlayerOriginTag(*pl), *Global<Level>);
-    return MinecraftCommands::_runcmd(origin.get(), cmd);
+    return MinecraftCommands::_runcmd(std::move(origin), cmd);
 }
 
 

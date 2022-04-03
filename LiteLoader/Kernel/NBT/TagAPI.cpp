@@ -95,7 +95,7 @@ Tag::Type Tag::getTagType() const {
 
 void Tag::destroy() {
     try {
-        SymCall("??1CompoundTag@@UEAA@XZ", void, Tag*)(this);
+        this->~Tag();
     } catch (...) {
         ;
     }

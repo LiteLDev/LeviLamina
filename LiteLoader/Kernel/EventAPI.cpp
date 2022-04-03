@@ -895,7 +895,6 @@ TInstanceHook(bool, "?useOn@SeedItemComponentLegacy@@QEAA_NAEAVItemStack@@AEAVAc
     return original(this, a2, a3, a4, a5, a6);
 }
 
-
 /////////////////// PlayerOpenContainer ///////////////////
 TClasslessInstanceHook(__int64, "?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z", void* a2)
 {
@@ -1901,16 +1900,17 @@ TClasslessInstanceHook(Actor*,
 }
 
 #include <MC/CrossbowItem.hpp>
+#include <MC/ActorDefinitionIdentifier.hpp>
+static_assert(sizeof(ActorDefinitionIdentifier) == 176);
 TInstanceHook(void, "?_shootFirework@CrossbowItem@@AEBAXAEBVItemInstance@@AEAVPlayer@@@Z",
     CrossbowItem, void* a1, Player* a2)
 {
     IF_LISTENED(ProjectileSpawnEvent)
     {
-        auto identifier = new char[176];
+        ActorDefinitionIdentifier identifier("minecraft:fireworks_rocket");
         ProjectileSpawnEvent ev{};
         ev.mShooter = a2;
-        ev.mIdentifier = SymCall("??0ActorDefinitionIdentifier@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
-            ActorDefinitionIdentifier*, ActorDefinitionIdentifier*, string)((ActorDefinitionIdentifier*)identifier, "minecraft:fireworks_rocket");
+        ev.mIdentifier = &identifier;
         ev.mType = this->getFullItemName();
 
         if (!ev.call())
@@ -1925,11 +1925,10 @@ TClasslessInstanceHook(void, "?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEA
 {
     IF_LISTENED(ProjectileSpawnEvent)
     {
-        auto identifier = new char[176];
+        ActorDefinitionIdentifier identifier("minecraft:thrown_trident");
         ProjectileSpawnEvent ev{};
         ev.mShooter = a3;
-        ev.mIdentifier = SymCall("??0ActorDefinitionIdentifier@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
-            ActorDefinitionIdentifier*, ActorDefinitionIdentifier*, string)((ActorDefinitionIdentifier*)identifier, "minecraft:thrown_trident");
+        ev.mIdentifier = &identifier;
         ev.mType = a2->getTypeName();
 
         if (!ev.call())

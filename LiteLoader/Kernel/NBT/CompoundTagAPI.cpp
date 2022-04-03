@@ -262,12 +262,12 @@ public:
     virtual void* writeString(gsl::basic_string_span<char const, -1> string_span)
     {
         return SymCall("?writeString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z",
-                       void*, void*, gsl::basic_string_span<char const, -1>)((void*)this, string_span);
+                       void*, void*, gsl::basic_string_span<char const, -1>)((void*)this, std::move(string_span));
     }
-    virtual void* writeLongString(void* string_span)
+    virtual void* writeLongString(gsl::basic_string_span<char const, -1> string_span)
     {
         return SymCall("?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z",
-                       void*, void*, void*)((void*)this, string_span);
+                       void*, void*, gsl::basic_string_span<char const, -1>)((void*)this, std::move(string_span));
     }
     virtual void writeFloat(float data)
     {

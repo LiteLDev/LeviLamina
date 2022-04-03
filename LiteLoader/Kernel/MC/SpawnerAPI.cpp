@@ -9,11 +9,9 @@ Mob* Spawner::spawnMob(Vec3& pos, int dim, std::string name) {
     try {
         if (name.find("minecraft:") == 0)
             name = name.substr(10);
-        char a[168];
         Vec3 vec{pos.x, pos.y, pos.z};
-        ActorDefinitionIdentifier* ad = SymCall("??0ActorDefinitionIdentifier@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
-                                                ActorDefinitionIdentifier*, ActorDefinitionIdentifier*, std::string&)((ActorDefinitionIdentifier*)a, name);
-        return spawnMob(*Level::getBlockSource(dim), *ad, nullptr, vec, 0, 1, 0);
+        ActorDefinitionIdentifier identifier(name);
+        return spawnMob(*Level::getBlockSource(dim), identifier, nullptr, vec, 0, 1, 0);
     } catch (...) {
         return nullptr;
     }
