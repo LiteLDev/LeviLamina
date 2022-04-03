@@ -13,7 +13,7 @@
 //////////////////// Class Definition ////////////////////
 
 ClassDefine<ItemClass> ItemClassBuilder =
-    defineClass<ItemClass>("LXL_Item")
+    defineClass<ItemClass>("LLSE_Item")
         .constructor(nullptr)
         .instanceFunction("getRawPtr", &ItemClass::getRawPtr)
 

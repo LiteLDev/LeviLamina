@@ -7,6 +7,7 @@ class McClass
 {
 public:
     static Local<Value> getBDSVersion(const Arguments& args);
+    static Local<Value> getServerProtocolVersion(const Arguments& args);
 
     static Local<Value> runcmd(const Arguments& args);
     static Local<Value> runcmdEx(const Arguments& args);

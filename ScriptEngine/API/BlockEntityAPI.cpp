@@ -10,7 +10,7 @@
 //////////////////// Class Definition ////////////////////
 
 ClassDefine<BlockEntityClass> BlockEntityClassBuilder =
-	defineClass<BlockEntityClass>("LXL_BlockEntity")
+	defineClass<BlockEntityClass>("LLSE_BlockEntity")
 		.constructor(nullptr)
 		.instanceFunction("getRawPtr", &BlockEntityClass::getRawPtr)
 

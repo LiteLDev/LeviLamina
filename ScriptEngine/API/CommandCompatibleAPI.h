@@ -3,16 +3,16 @@
 #include <string>
 #include <vector>
 
-//////////////////// LXL Event Callbacks ////////////////////
+//////////////////// LLSE Event Callbacks ////////////////////
 
 class Player;
 //helper
 std::vector<std::string> SplitCmdLine(const std::string& paras);
 
 // 命令回调查询
-std::string LxlFindCmdReg(bool isPlayerCmd, const std::string& cmd, std::vector<std::string>& receiveParas, bool* fromOtherEngine);
+std::string LLSEFindCmdReg(bool isPlayerCmd, const std::string& cmd, std::vector<std::string>& receiveParas, bool* fromOtherEngine);
 // 删除指定引擎的所有命令
-bool LxlRemoveCmdRegister(script::ScriptEngine* engine);
+bool LLSERemoveCmdRegister(script::ScriptEngine* engine);
 
 // 处理命令延迟注册
 void ProcessRegCmdQueue();

@@ -1,4 +1,4 @@
-# LiteXLoader - LLSE插件开发概述
+# LLSE - LLSE插件开发概述
 
 ## ⛳  放在前面
 

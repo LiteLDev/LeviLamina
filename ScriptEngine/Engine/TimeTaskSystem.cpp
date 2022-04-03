@@ -344,7 +344,7 @@ bool ClearTimeTask(int id)
 
 ///////////////////////// Func /////////////////////////
 
-void LxlRemoveTimeTaskData(ScriptEngine* engine)
+void LLSERemoveTimeTaskData(ScriptEngine* engine)
 {
     // enter scope to prevent script::Global::~Global() from crashing
     EngineScope enter(engine);
@@ -365,7 +365,7 @@ void LxlRemoveTimeTaskData(ScriptEngine* engine)
     }
     catch (...)
     {
-        logger.info("Fail in LxlRemoveTimeTaskData");
+        logger.info("Fail in LLSERemoveTimeTaskData");
     }
     tmpMap.clear();
 }

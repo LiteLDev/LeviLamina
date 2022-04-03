@@ -284,7 +284,7 @@ Local<Value> McClass::listen(const Arguments& args)
     CHECK_ARG_TYPE(args[1], ValueKind::kFunction);
 
     try{
-        return Boolean::newBoolean(LxlAddEventListener(EngineScope::currentEngine(),args[0].toStr(),args[1].asFunction()));
+        return Boolean::newBoolean(LLSEAddEventListener(EngineScope::currentEngine(),args[0].toStr(),args[1].asFunction()));
     }
     CATCH("Fail to Bind Listener!");
 }
@@ -292,7 +292,7 @@ Local<Value> McClass::listen(const Arguments& args)
 
 //////////////////// Funcs ////////////////////
 
-bool LxlAddEventListener(ScriptEngine *engine, const string &eventName, const Local<Function> &func)
+bool LLSEAddEventListener(ScriptEngine *engine, const string &eventName, const Local<Function> &func)
 {
     try {
         int eventId = int(EventsMap.at(eventName));
@@ -311,7 +311,7 @@ bool LxlAddEventListener(ScriptEngine *engine, const string &eventName, const Lo
     }
 }
 
-bool LxlRemoveAllEventListeners(ScriptEngine* engine)
+bool LLSERemoveAllEventListeners(ScriptEngine* engine)
 {
     for (auto& listeners : listenerList)
     {
@@ -322,7 +322,7 @@ bool LxlRemoveAllEventListeners(ScriptEngine* engine)
     return true;
 }
 
-bool LxlCallEventsOnHotLoad(ScriptEngine* engine)
+bool LLSECallEventsOnHotLoad(ScriptEngine* engine)
 {
     FakeCallEvent(engine, EVENT_TYPES::onServerStarted);
 
@@ -335,7 +335,7 @@ bool LxlCallEventsOnHotLoad(ScriptEngine* engine)
     return true;
 }
 
-bool LxlCallEventsOnHotUnload(ScriptEngine* engine)
+bool LLSECallEventsOnHotUnload(ScriptEngine* engine)
 {
     auto players = Level::getAllPlayers();
     for (auto& pl : players)
@@ -1122,11 +1122,11 @@ void InitBasicEventListeners()
 
             vector<string> paras;
             bool isFromOtherEngine = false;
-            string prefix = LxlFindCmdReg(true, cmd, paras, &isFromOtherEngine);
+            string prefix = LLSEFindCmdReg(true, cmd, paras, &isFromOtherEngine);
 
             if (!prefix.empty())
             {
-                //Lxl Registered Cmd
+                //LLSE Registered Cmd
                 int perm = localShareData->playerCmdCallbacks[prefix].perm;
 
                 if (player->getCommandPermissionLevel() >= perm)
@@ -1178,11 +1178,11 @@ void InitBasicEventListeners()
             //CallEvents
             vector<string> paras;
             bool isFromOtherEngine = false;
-            string prefix = LxlFindCmdReg(false, cmd, paras, &isFromOtherEngine);
+            string prefix = LLSEFindCmdReg(false, cmd, paras, &isFromOtherEngine);
 
             if (!prefix.empty())
             {
-                //Lxl Registered Cmd
+                //LLSE Registered Cmd
 
                 bool callbackRes = CallServerCmdCallback(prefix, paras);
                 IF_LISTENED(EVENT_TYPES::onConsoleCmd)

@@ -16,4 +16,4 @@ bool ClearTimeTask(int id);
 
 ///////////////////////// Func /////////////////////////
 
-void LxlRemoveTimeTaskData(ScriptEngine* engine);
+void LLSERemoveTimeTaskData(ScriptEngine* engine);

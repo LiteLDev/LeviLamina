@@ -155,7 +155,7 @@ Local<Value> MakeRemoteCall(const string& funcName, const Arguments& args)
     return res;
 }
 
-bool LxlExportFunc(ScriptEngine *engine, const Local<Function> &func, const string &exportName)
+bool LLSEExportFunc(ScriptEngine *engine, const Local<Function> &func, const string &exportName)
 {
     ExportedFuncData* funcData = &(globalShareData->exportedFuncs)[exportName];
     funcData->engine = engine;
@@ -164,7 +164,7 @@ bool LxlExportFunc(ScriptEngine *engine, const Local<Function> &func, const stri
     return true;
 }
 
-bool LxlRemoveAllExportedFuncs(ScriptEngine* engine)
+bool LLSERemoveAllExportedFuncs(ScriptEngine* engine)
 {
     erase_if(globalShareData->exportedFuncs, [&engine](auto& data) {
         return data.second.engine == engine;
@@ -182,9 +182,9 @@ Local<Value> LlClass::exportFunc(const Arguments& args)
     CHECK_ARG_TYPE(args[1], ValueKind::kString);
 
     try {
-        return Boolean::newBoolean(LxlExportFunc(EngineScope::currentEngine(), args[0].asFunction(), args[1].toStr()));
+        return Boolean::newBoolean(LLSEExportFunc(EngineScope::currentEngine(), args[0].asFunction(), args[1].toStr()));
     }
-    CATCH("Fail in LxlExport!");
+    CATCH("Fail in LLSEExport!");
 }
 
 Local<Value> LlClass::importFunc(const Arguments &args)
@@ -203,5 +203,5 @@ Local<Value> LlClass::importFunc(const Arguments &args)
             return MakeRemoteCall(funcName, args);
         });
     }
-    CATCH("Fail in LxlImport!")
+    CATCH("Fail in LLSEImport!")
 }
