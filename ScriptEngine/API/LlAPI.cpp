@@ -18,7 +18,7 @@ using namespace std;
 ClassDefine<void> LlClassBuilder =
     defineClass("ll")
         .function("version", &LlClass::version)
-        .function("versionString", &LlClass::version)
+        .function("versionString", &LlClass::versionString)
         .function("requireVersion", &LlClass::requireVersion)
         .function("listPlugins", &LlClass::listPlugins)
         .function("import", &LlClass::importFunc)
