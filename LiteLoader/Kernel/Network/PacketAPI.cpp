@@ -6,6 +6,7 @@
 #define SIZE_STATIC_ASSERT_IF_DEFINE
 //#define SIZE_STATIC_ASSERT
 //#define GENERATE_PACKET
+//#define FILL_PACKET
 
 extern Logger logger;
 
@@ -186,7 +187,7 @@ extern Logger logger;
 
 #endif INCLUDE_ALL_PACKET
 
-#pragma region For Each Packet Macro
+#pragma region ForEachPacketMacro
 
 class ShowProfilePacket;
 class SetDefaultGameTypePacket;
@@ -750,10 +751,14 @@ void __autoFill(std::string const& className)
 }
 void autoFill()
 {
+#ifdef FILL_PACKET
+
 #define AUTO_FILL(type)\
     __autoFill<type>(#type);
     ForEachPacket(AUTO_FILL);
 #undef AUTO_FILL;
+
+#endif // FILL_PACKET
 }
 
 void onExecute(DynamicCommand const& cmd, CommandOrigin const& origin, CommandOutput& output,
