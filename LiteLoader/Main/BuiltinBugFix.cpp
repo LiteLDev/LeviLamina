@@ -34,7 +34,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
 
 //Fix bug
 TClasslessInstanceHook(bool, "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
-      ReadOnlyBinaryStream* a2)
+    ReadOnlyBinaryStream* a2)
 {
     ReadOnlyBinaryStream pkt(a2->getData(), false);
     pkt.getUnsignedVarInt();
@@ -44,8 +44,15 @@ TClasslessInstanceHook(bool, "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4Stream
 }
 
 //Fix bug
-TClasslessInstanceHook(void*, "?_read@PurchaseReceiptPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z"
-    ,ReadOnlyBinaryStream* a2)
+TClasslessInstanceHook(void*, "?_read@PurchaseReceiptPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
+    ReadOnlyBinaryStream* a2)
+{
+    return (void*)1;
+}
+
+// Fix bug
+TClasslessInstanceHook(void*, "?_read@EduUriResourcePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
+    ReadOnlyBinaryStream* a2)
 {
     return (void*)1;
 }
