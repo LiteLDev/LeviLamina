@@ -36,6 +36,10 @@ CallbackFn* importFunc(std::string const& nameSpace, std::string const& funcName
         return nullptr;
     return &iter->second.callback;
 }
+bool hasFunc(std::string const& nameSpace, std::string const& funcName)
+{
+    return exportedFuncs.find(nameSpace + "::" + funcName) != exportedFuncs.end();
+}
 
 bool removeFunc(std::string&& key)
 {
@@ -86,11 +90,7 @@ auto TestRemoteCall = ([]() -> bool {
     std::thread([]() {
         Sleep(5000);
         Schedule::nextTick([]() {
-            RemoteCall::exportAs(
-                "Test", "test",
-                [](std::string const& arg) -> int {
-                    return 1;
-                });
+            RemoteCall::exportAs("TestNameSpace", "StrSize", [](std::string const& arg) -> size_t { return arg.size(); });
 
             RemoteCall::exportAs("Test", "test2", TestExport);
             auto func = RemoteCall::importAs<decltype(TestExport)>("Test", "test2");

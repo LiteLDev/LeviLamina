@@ -3,9 +3,21 @@
 #include "Utils/WinHelper.h"
 #include "third-party/Nlohmann/json.hpp"
 
+///////////////////////////////////////////////////////
+// Remote Call API 
 // Mainly designed for scripting engines
 // Please call it in MC_SERVER thread or in ScheduleAPI
 // make sure the callback parameter type can be converted to json
+//
+// [Usage]
+// RemoteCall::exportAs("TestNameSpace", "strSize", [](std::string const& arg) -> int { return arg.size(); });
+// 
+// // in other plugin
+// auto strSize = RemoteCall::importAs<int(std::string const& arg)>("TestNameSpace", "strSize");
+// logger.info("Size of str: {}", strSize("12345678"));
+//
+/////////////////////////////////////////////////////
+
 namespace RemoteCall
 {
 // Use string as value type because it is easy to convert between script types and native types
@@ -36,10 +48,13 @@ LIAPI CallbackFn* importFunc(std::string const& nameSpace, std::string const& fu
 template <typename RTN, typename... Args>
 inline bool _importAs(std::string const& nameSpace, std::string const& funcName, std::function<RTN(Args...)>& func)
 {
-    auto rawFunc = importFunc(nameSpace, funcName);
-    if (!rawFunc)
-        return false;
-    func = [rawFunc](Args... args) -> RTN {
+    func = [nameSpace, funcName](Args... args) -> RTN {
+        auto rawFunc = importFunc(nameSpace, funcName);
+        if (!rawFunc)
+        {
+            logger.error("Fail to import! Function [{}::{}] has not been exported", nameSpace, funcName);
+            return RTN();
+        }
         auto res = (*rawFunc)(std::vector<std::string>{pack(args)...});
         return extra<RTN>(res);
     };
@@ -64,6 +79,7 @@ inline bool _exportAs(std::string const& nameSpace, std::string const& funcName,
     return exportFunc(nameSpace, funcName, std::move(cb), GetCurrentModule());
 }
 
+LIAPI bool hasFunc(std::string const& nameSpace, std::string const& funcName);
 LIAPI bool removeFunc(std::string const& nameSpace, std::string const& funcName);
 LIAPI int removeNameSpace(std::string const& nameSpace);
 LIAPI int removeFuncs(std::vector<std::pair<std::string, std::string>> funcs);
