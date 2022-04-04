@@ -8,6 +8,7 @@ struct BindType
 {
     Any value;
     std::string name;
+    int idx = -1;
 };
 
 /**
@@ -21,7 +22,6 @@ template <typename T>
 struct BindSequenceType
 {
     T values;
-    std::vector<std::string> names;
     static_assert(std::is_same<typename T::value_type, Any>::value, "Container value type must be DB::Any");
 };
 /**
@@ -49,10 +49,10 @@ struct IntoType
 class Stmt
 {
 
+protected:
     ResultSet* results = nullptr;
 
 public:
-
     virtual ~Stmt();
     /**
      * @brief Bind a value to a statement parameter.
@@ -71,8 +71,16 @@ public:
      */
     virtual Stmt& bind(const Any& value, const std::string& name) = 0;
     /**
+     * @brief Bind a value to the next statement parameter.
+     * 
+     * @param value Value to bind
+     * @throws std::runtime_error If error occurs
+     */
+    virtual Stmt& bind(const Any& value) = 0;
+    /**
      * @brief Close the statement.
      * 
+     * @warning DO NOT ACCESS THIS OBJECT AFTER CALLING THIS METHOD!!!
      */
     virtual void close() = 0;
     /**
@@ -95,12 +103,81 @@ public:
     virtual int getParamsCount() = 0;
 
     /**
-     * @brief Operator, to bind values.
+     * @brief Operator, to bind single values.
      * 
-     * @param u The return value of DB::bind
+     * @param b The return value of DB::bind
      * @return Stmt& *this
      */
-    //virtual Stmt& operator,(const BindType& u) = 0;
+    virtual Stmt& operator,(const BindType& b) = 0;
+    /**
+     * @brief Operator, to bind a sequence container.
+     * 
+     * @param b The return value of DB::bind
+     * @return Stmt& *this
+     */
+    template <typename T>
+    inline Stmt& operator,(const BindSequenceType<T>& b)
+    {
+        for (auto& v : b.values)
+        {
+            bind(v);
+        }
+        return *this;
+    }
+    /**
+     * @brief Operator, to bind a row.
+     * 
+     * @param b The return value of DB::bind
+     * @return Stmt& *this
+     */
+    template <>
+    inline Stmt& operator,(const BindSequenceType<Row>& b)
+    {
+        if (b.values.header.size())
+        {
+            BindSequenceType<Row> copy = b;
+            copy.values.forEach([&](const std::string& name, Any& value) {
+                bind(value, name);
+                return true;
+            });
+        }
+        else
+        {
+            for (auto& v : b.values)
+            {
+                bind(v);
+            }
+        }
+        return *this;
+    }
+    /**
+     * @brief Operator, to bind a map container.
+     * 
+     * @param b The return value of DB::bind
+     * @return Stmt& *this
+     */
+    template <typename T>
+    inline Stmt& operator,(const BindMapType<T>& b)
+    {
+        for (auto& v : b.values)
+        {
+            bind(v.second, v.first);
+        }
+        return *this;
+    }
+
+    /**
+     * @brief Friend function to convert a set of result to T.
+     * 
+     * @tparam T  The type to convert to
+     * @param res A set of rows
+     * @return T  The converted value
+     */
+    template <typename T>
+    friend T results_to(const ResultSet& res)
+    {
+        throw std::bad_cast();
+    }
     /**
      * @brief Operator, to set where to store results.
      * 
@@ -110,14 +187,61 @@ public:
     template <typename T>
     inline Stmt& operator,(IntoType<T>& i)
     {
-        
+        if (results)
+        {
+            i.value = results_to<T>(*results);
+        }
+        else
+        {
+            throw std::runtime_error("$Core$ DB::Stmt::operator,: No results to store");
+        }
+        return *this;
     }
-    
+    template <>
+    inline Stmt& operator,(IntoType<ResultSet>& i)
+    {
+        if (results)
+        {
+            i.value = *results;
+        }
+        else
+        {
+            throw std::runtime_error("$Core$ DB::Stmt::operator,: No results to store");
+        }
+        return *this;
+    }
+    template <>
+    inline Stmt& operator,(IntoType<Row>& i)
+    {
+        if (results)
+        {
+            if (results->size())
+            {
+                i.value = results->at(0);
+            }
+            else
+            {
+                throw std::runtime_error("$Core$ DB::Stmt::operator,: The result set is empty");
+            }
+        }
+        else
+        {
+            throw std::runtime_error("$Core$ DB::Stmt::operator,: No results to store");
+        }
+        return *this;
+    }
 };
 
-inline BindType bind(const Any& value)
+template <typename T>
+inline void destroy(T* ptr)
 {
-    return BindType{value};
+    delete ptr;
+    ptr = 0;
+}
+
+inline BindType bind(const Any& value, int idx = -1)
+{
+    return BindType{value, std::string(), idx};
 }
 inline BindType bind(const std::string& name, const Any& value)
 {
@@ -195,7 +319,8 @@ inline BindMapType<std::unordered_map<std::string, Any>> bind(const std::unorder
 inline BindMapType<std::map<std::string, Any>> bind(const std::initializer_list<std::pair<std::string, Any>>& values)
 {
     std::map<std::string, Any> result;
-    for (auto& pair : values) {
+    for (auto& pair : values)
+    {
         result.insert(std::make_pair(pair.first, pair.second));
     }
     return BindMapType<std::map<std::string, Any>>{result};

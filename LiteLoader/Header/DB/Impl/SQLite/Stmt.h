@@ -3,7 +3,8 @@
 struct sqlite3;
 struct sqlite3_stmt;
 
-namespace DB {
+namespace DB
+{
 
 class SQLiteStmt : public Stmt
 {
@@ -11,20 +12,26 @@ class SQLiteStmt : public Stmt
     sqlite3_stmt* stmt = nullptr;
     int boundParamsCount = 0;
     int totalParamsCount = 0;
+    bool onHeap = false;
+    std::vector<int> boundIndexes;
+
+    SQLiteStmt(sqlite3_stmt* stmt);
+    int getNextParamIndex();
 
 public:
-
-    LIAPI SQLiteStmt(sqlite3_stmt* stmt);
     ~SQLiteStmt();
     Stmt& bind(const Any& value, int index);
     Stmt& bind(const Any& value, const std::string& name);
+    Stmt& bind(const Any& value);
     void close();
     int getUnboundParamsCount();
     int getBoundParamsCount();
     int getParamsCount();
 
-    LIAPI static Stmt&& create(sqlite3* db, const std::string& sql);
+    Stmt& operator,(const BindType& b);
 
+    LIAPI static Stmt& create(sqlite3* db, const std::string& sql);
+    LIAPI static Stmt& create(sqlite3_stmt* stmt);
 };
 
 } // namespace DB

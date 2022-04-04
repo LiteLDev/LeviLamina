@@ -339,9 +339,6 @@
     <ClCompile Include="Kernel\DB\Any.cpp">
       <Filter>Kernel\DB</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\DB\Exception.cpp">
-      <Filter>Kernel\DB</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\DB\RowSet.cpp">
       <Filter>Kernel\DB</Filter>
     </ClCompile>
@@ -726,9 +723,6 @@
       <Filter>Header\DB</Filter>
     </ClInclude>
     <ClInclude Include="Header\DB\Row.h">
-      <Filter>Header\DB</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\DB\Exception.h">
       <Filter>Header\DB</Filter>
     </ClInclude>
     <ClInclude Include="Header\DB\ConnParams.h">

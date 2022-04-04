@@ -189,6 +189,13 @@ public:
      * @throw std::out_of_range If the column does not exist
      */
     LIAPI Any& at(const std::string& column);
+    /**
+     * @brief Traverse the row
+     * 
+     * @param cb The function to call for each element.
+     * @note  Return false in callback function to stop the iteration
+     */
+    LIAPI void forEach(std::function<bool(const std::string&, Any&)> cb);
 };
 
 } // namespace DB

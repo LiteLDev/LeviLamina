@@ -92,7 +92,6 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\Command\DynamicCommandAPI.cpp" />
     <ClCompile Include="Kernel\DB\Any.cpp" />
     <ClCompile Include="Kernel\DB\ConnParams.cpp" />
-    <ClCompile Include="Kernel\DB\Exception.cpp" />
     <ClCompile Include="Kernel\DB\Impl\SQLite\Session.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)SQLite\</ObjectFileName>
     </ClCompile>
@@ -124,7 +123,6 @@ LibraryBuilder.exe
     <ClInclude Include="Header\AllowListAPI.h" />
     <ClInclude Include="Header\DB\Any.h" />
     <ClInclude Include="Header\DB\ConnParams.h" />
-    <ClInclude Include="Header\DB\Exception.h" />
     <ClInclude Include="Header\DB\Impl\SQLite\Session.h" />
     <ClInclude Include="Header\DB\Impl\SQLite\Stmt.h" />
     <ClInclude Include="Header\DB\RowSet.h" />

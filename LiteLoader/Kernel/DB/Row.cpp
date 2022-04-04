@@ -1,5 +1,4 @@
 #include <DB/Row.h>
-#include <DB/Exception.h>
 
 namespace DB
 {
@@ -156,6 +155,13 @@ Any& Row::operator[](const std::string& name)
 Any& Row::at(const std::string& name)
 {
     return std::vector<Any>::at(header.at(name));
+}
+void Row::forEach(std::function<bool(const std::string&, Any&)> cb)
+{
+    for (auto& pair : this->header)
+    {
+        if (!cb(pair.first, this->at(pair.first))) break;
+    }
 }
 
 } // namespace DB

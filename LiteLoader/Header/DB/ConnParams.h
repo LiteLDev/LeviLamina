@@ -2,7 +2,8 @@
 #include "Any.h"
 #include <unordered_map>
 
-namespace DB {
+namespace DB
+{
 
 /**
  * @brief Connection parameters
@@ -10,9 +11,8 @@ namespace DB {
  */
 class ConnParams : public std::unordered_map<std::string, Any>
 {
-    
-public:
 
+public:
     ConnParams() = default;
     /**
      * @brief Construct a new ConnParams object
@@ -33,7 +33,6 @@ public:
      * @param str Connection string like `mysql://localhost:3306?key1=value1&key2=value2`
      */
     LIAPI ConnParams(const std::string& str);
-
 };
 
 } // namespace DB
