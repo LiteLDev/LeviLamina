@@ -110,68 +110,21 @@ void RemoteSyncCallReturn(ModuleMessage& msg)
 
 //////////////////// Remote Call ////////////////////
 
-Local<Value> MakeRemoteCallSameModule(ExportedFuncData* data, const Arguments& args)
-{
-    EngineScope enter(data->engine);
-    std::vector<script::Local<Value>> values;
-    for (int i = 0; i < args.size(); ++i) {
-        values.emplace_back(args[i]);
-    }
-    return data->func.get().call({}, values);
-}
-
-
 Local<Value> MakeRemoteCall(const string& funcName, const Arguments& args)
 {
-    //Remote Call
-    //logger.debug("*** Remote Call begin");
-    ExportedFuncData* data;
-    try {
-        data = &(globalShareData->exportedFuncs).at(funcName);
-    }
-    catch (const std::out_of_range& e)
+    auto data = globalShareData->exportedFuncs.find(funcName);
+    if (data == globalShareData->exportedFuncs.end())
     {
         logger.error("Fail to import! Function [{}] has not been exported!", funcName);
         return Local<Value>();
     }
-    if (data->fromEngineType == LLSE_MODULE_TYPE) {
-        return MakeRemoteCallSameModule(data, args);
-    }
 
-    if (LL::isServerStarting())
-    {
-        logger.error("Call remote function cross-module is not allowed before the server is started");
-        return Local<Value>();
-    }
-
-    ostringstream sout;
-    sout << funcName;
+    std::vector<std::string> params;
     for (int i = 0; i < args.size(); ++i)
-        sout << "\n" << ValueToJson(args[i]);
-
-    //logger.debug("*** Before remote call request send");
-    //EngineScope enter(data->engine);
-    auto sendResult = ModuleMessage::sendTo(data->engine, ModuleMessage::MessageType::RemoteSyncCallRequest, sout.str());
-    if (!sendResult)
     {
-        logger.error("Fail to send remote load request!");
-        return Local<Value>();
+        params.emplace_back(ValueToJson(args[i]));
     }
-    //logger.debug("*** After remote call request send");
-
-    //logger.debug("*** Before wait for remote call result");
-    auto returnResult = sendResult.waitForOneResult(LLSE_MAXWAIT_REMOTE_CALL);
-    if (!returnResult)
-    {
-        logger.error(tr("remoteCall.timeout.fail"));
-        return Local<Value>();
-    }
-    //logger.debug("*** After wait for remote call result");
-
-    int msgId = sendResult.getMsgId();
-    Local<Value> res = JsonToValue(remoteResultMap[msgId]);
-    remoteResultMap.erase(msgId);
-    return res;
+    return JsonToValue(data->second.callback(std::move(params)));
 }
 
 bool LLSEExportFunc(ScriptEngine *engine, const Local<Function> &func, const string &exportName)
@@ -180,6 +133,24 @@ bool LLSEExportFunc(ScriptEngine *engine, const Local<Function> &func, const str
     funcData->engine = engine;
     funcData->func = script::Global<Function>(func);
     funcData->fromEngineType = LLSE_MODULE_TYPE;
+    funcData->callback = [exportName](std::vector<std::string> params) -> std::string {
+        auto data = globalShareData->exportedFuncs.find(exportName);
+        if (data == globalShareData->exportedFuncs.end())
+        {
+            logger.error("Exported function \"{}\" not found", exportName);
+            return "";
+        }
+        auto engine = data->second.engine;
+        if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
+            return "";
+        EngineScope enter(data->second.engine);
+        std::vector<script::Local<Value>> scriptParams;
+        for (auto& param : params)
+        {
+            scriptParams.emplace_back(JsonToValue(param));
+        }
+        return ValueToJson(data->second.func.get().call({}, scriptParams));
+    };
     return true;
 }
 
@@ -200,7 +171,8 @@ Local<Value> LlClass::exportFunc(const Arguments& args)
     CHECK_ARG_TYPE(args[0], ValueKind::kFunction);
     CHECK_ARG_TYPE(args[1], ValueKind::kString);
 
-    try {
+    try
+    {
         return Boolean::newBoolean(LLSEExportFunc(EngineScope::currentEngine(), args[0].asFunction(), args[1].toStr()));
     }
     CATCH("Fail in LLSEExport!");
@@ -217,8 +189,13 @@ Local<Value> LlClass::importFunc(const Arguments &args)
 
         //远程调用
         return Function::newFunction([funcName{ funcName }]
-        (const Arguments& args)->Local<Value>
-        {
+        (const Arguments& args)->Local<Value> {
+#ifdef DEBUG
+            auto startTime = clock();
+            auto res = MakeRemoteCall(funcName, args);
+            logger.info("MakeRemoteCall time: {}s", (clock() - startTime) / 1000.0);
+            return res;
+#endif // DEBUG
             return MakeRemoteCall(funcName, args);
         });
     }

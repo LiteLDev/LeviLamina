@@ -15,6 +15,7 @@ struct ExportedFuncData
     std::string fromEngineType;
     ScriptEngine* engine;
     script::Global<Function> func;
+    std::function<std::string(std::vector<std::string>)> callback;
 };
 
 //消息系统处理函数信息
