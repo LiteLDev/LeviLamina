@@ -318,6 +318,9 @@
     <ClCompile Include="Kernel\Utils\SRWLock.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\RemoteCallAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -676,6 +679,9 @@
     </ClInclude>
     <ClInclude Include="Header\Utils\SRWLock.h">
       <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\RemoteCallAPI.h">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -153,9 +153,13 @@ bool LLSEExportFunc(ScriptEngine *engine, const Local<Function> &func, const str
     };
     return true;
 }
-
+bool LLSERemoveAllExportedFuncs_Debug(ScriptEngine* engine);
 bool LLSERemoveAllExportedFuncs(ScriptEngine* engine)
 {
+    if (LL::isDebugMode())
+    {
+        return LLSERemoveAllExportedFuncs_Debug(engine);
+    }
     erase_if(globalShareData->exportedFuncs, [&engine](auto& data) {
         return data.second.engine == engine;
     });
@@ -167,6 +171,10 @@ bool LLSERemoveAllExportedFuncs(ScriptEngine* engine)
 
 Local<Value> LlClass::exportFunc(const Arguments& args)
 {
+    if (LL::isDebugMode())
+    {
+        return exportFunc_Debug(args);
+    }
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kFunction);
     CHECK_ARG_TYPE(args[1], ValueKind::kString);
@@ -180,6 +188,10 @@ Local<Value> LlClass::exportFunc(const Arguments& args)
 
 Local<Value> LlClass::importFunc(const Arguments &args)
 {
+    if (LL::isDebugMode())
+    {
+        return importFunc_Debug(args);
+    }
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 

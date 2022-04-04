@@ -97,6 +97,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\MC\I18nAPI.cpp" />
     <ClCompile Include="Kernel\AllowListAPI.cpp" />
     <ClCompile Include="Kernel\Network\PacketAPI.cpp" />
+    <ClCompile Include="Kernel\RemoteCallAPI.cpp" />
     <ClCompile Include="Kernel\Scoreboard\ObjectiveAPI.cpp" />
     <ClCompile Include="Kernel\Utils\DbgHelper.cpp" />
     <ClCompile Include="Kernel\SimulatedPlayerAPI.cpp" />
@@ -262,6 +263,7 @@ LibraryBuilder.exe
     <ResourceCompile Include="Resource\LiteLoader.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Header\RemoteCallAPI.h" />
     <ClInclude Include="Header\TranslationAPI.h" />
     <ClInclude Include="Header\Utils\DbgHelper.h" />
     <ClInclude Include="Header\Utils\SRWLock.h" />

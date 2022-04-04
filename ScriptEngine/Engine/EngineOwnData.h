@@ -26,6 +26,9 @@ struct EngineOwnData
     //表单回调
     std::map<unsigned, FormCallbackData> formCallbacks;
 
+    //RemoteCall Exported Functions: pair<nameSpace, funcName>
+    std::vector<std::pair<std::string, std::string>> exportFuncs;
+
     //LoggerAPI
     bool toConsole = true;
     ::Logger logger = ::Logger("");
