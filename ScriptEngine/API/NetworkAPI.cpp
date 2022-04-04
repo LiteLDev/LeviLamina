@@ -246,6 +246,9 @@ Local<Value> WSClientClass::connectAsync(const Arguments& args)
         script::Global<Function> callbackFunc{args[1].asFunction()};
         thread(
             [ws{this->ws}, target, callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}]() mutable {
+#ifdef DEBUG
+                SetThreadDescription(GetCurrentThread(), L"LLSE Connect WebSocket");
+#endif // DEBUG
                 _set_se_translator(seh_exception::TranslateSEHtoCE);
                 try
                 {
