@@ -130,6 +130,8 @@ Local<Value> MakeRemoteCall(const string& funcName, const Arguments& args)
 bool LLSEExportFunc(ScriptEngine *engine, const Local<Function> &func, const string &exportName)
 {
     ExportedFuncData* funcData = &(globalShareData->exportedFuncs)[exportName];
+    if (funcData->engine)
+        return false;
     funcData->engine = engine;
     funcData->func = script::Global<Function>(func);
     funcData->fromEngineType = LLSE_MODULE_TYPE;

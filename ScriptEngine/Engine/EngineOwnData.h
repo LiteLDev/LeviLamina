@@ -14,6 +14,22 @@ struct FormCallbackData
     script::Global<script::Function> func;
 };
 
+struct RemoteCallData
+{
+    std::string nameSpace;
+    std::string funcName;
+    script::Global<Function> callback;
+};
+
+/*
+struct SimpleCallbackData
+{
+    ScriptEngine* engine;
+    script::Global<script::Function> func;
+    std::vector<script::Global<Value>> values;
+};
+*/
+
 class Player;
 
 struct EngineOwnData
@@ -26,8 +42,28 @@ struct EngineOwnData
     //表单回调
     std::map<unsigned, FormCallbackData> formCallbacks;
 
-    //RemoteCall Exported Functions: pair<nameSpace, funcName>
-    std::vector<std::pair<std::string, std::string>> exportFuncs;
+    //RemoteCall Exported Functions: unordered_map<nameSpace, funcName>
+    std::unordered_map<std::string, RemoteCallData> exportFuncs;
+
+    /*
+    uint64_t simpleCallbackIndex = 0;
+    std::unordered_map<uint64_t, SimpleCallbackData> simpleCallbacks;
+
+    inline uint64_t addSimpleCallback(script::Local<Function> func, std::vector<script::Local<Value>> values)
+    {
+        auto index = ++simpleCallbackIndex;
+        std::vector<script::Global<Value>> globalValues;
+        for (auto& value : values)
+            globalValues.emplace_back(value);
+        SimpleCallbackData data{EngineScope::currentEngine(), script::Global<Function>(func), std::move(globalValues)};
+        simpleCallbacks.emplace(index, std::move(data));
+        return index;
+    }
+    inline bool removeSimpleCallback(uint64_t index)
+    {
+        return simpleCallbacks.erase(index);
+    }
+    */
 
     //LoggerAPI
     bool toConsole = true;

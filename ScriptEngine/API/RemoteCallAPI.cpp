@@ -35,20 +35,34 @@ Local<Value> MakeRemoteCall_Debug(const string& nameSpace, const string& funcNam
 
 bool LLSEExportFunc_Debug(ScriptEngine* engine, const Local<Function>& func, const string& nameSpace, const string& funcName)
 {
-    script::Global<Function> callback = script::Global<Function>(func);
-    RemoteCall::CallbackFn cb = [engine, scriptCallback = std::move(callback)](std::vector<std::string> params) -> std::string {
+    // Putting script::Global value into lambda capture list may cause crash
+    //script::Global<Function> callback = script::Global<Function>(func);
+    std::string identifier = nameSpace + "::" + funcName;
+    RemoteCall::CallbackFn cb = [engine, identifier /*, scriptCallback = std::move(callback)*/](std::vector<std::string> params) -> std::string {
         if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
             return "";
         EngineScope enter(engine);
-        std::vector<script::Local<Value>> scriptParams;
-        for (auto& param : params)
+        try
         {
-            scriptParams.emplace_back(JsonToValue(param));
+            auto iter = ENGINE_GET_DATA(engine)->exportFuncs.find(identifier);
+            if (iter == ENGINE_GET_DATA(engine)->exportFuncs.end())
+            {
+                logger.debug("");
+                return "";
+            }
+            auto scriptCallback = iter->second.callback.get();
+            std::vector<script::Local<Value>> scriptParams;
+            for (auto& param : params)
+            {
+                scriptParams.emplace_back(JsonToValue(param));
+            }
+            return ValueToJson(scriptCallback.call({}, scriptParams));
         }
-        return ValueToJson(scriptCallback.get().call({}, scriptParams));
+        CATCH_WITHOUT_RETURN("Fail in Remote Call");
+        return "";
     };
     if (RemoteCall::exportFunc(nameSpace, funcName, std::move(cb))) {
-        ENGINE_GET_DATA(engine)->exportFuncs.emplace_back(nameSpace, funcName);
+        ENGINE_GET_DATA(engine)->exportFuncs.emplace(identifier, RemoteCallData{nameSpace, funcName, script::Global<Function>(func)});
         return true;
     }
     return false;
@@ -58,7 +72,12 @@ bool LLSERemoveAllExportedFuncs_Debug(ScriptEngine* engine)
 {
     // enter scope to prevent crash in script::Global::~Global()
     EngineScope enter(engine);
-    int count = RemoteCall::removeFuncs(ENGINE_GET_DATA(engine)->exportFuncs);
+    std::vector<std::pair<std::string, std::string>> funcs;
+    for (auto& [key, data] : ENGINE_GET_DATA(engine)->exportFuncs)
+    {
+        funcs.emplace_back(data.nameSpace, data.funcName);
+    }
+    int count = RemoteCall::removeFuncs(std::move(funcs));
     ENGINE_GET_DATA(engine)->exportFuncs.clear();
     return count;
 }
