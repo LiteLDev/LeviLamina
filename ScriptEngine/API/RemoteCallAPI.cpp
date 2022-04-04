@@ -30,7 +30,7 @@ Local<Value> MakeRemoteCall_Debug(const string& nameSpace, const string& funcNam
     {
         params.emplace_back(ValueToJson(args[i]));
     }
-    return JsonToValue(func(std::move(params)));
+    return JsonToValue((*func)(std::move(params)));
 }
 
 bool LLSEExportFunc_Debug(ScriptEngine* engine, const Local<Function>& func, const string& nameSpace, const string& funcName)

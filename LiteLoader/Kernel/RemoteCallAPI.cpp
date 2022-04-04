@@ -26,7 +26,7 @@ bool exportFunc(std::string const& nameSpace, std::string const& funcName, Callb
     return true;
 }
 
-CallbackFn importFunc(std::string const& nameSpace, std::string const& funcName)
+CallbackFn* importFunc(std::string const& nameSpace, std::string const& funcName)
 {
     if (!LL::isDebugMode())
     {
@@ -36,7 +36,7 @@ CallbackFn importFunc(std::string const& nameSpace, std::string const& funcName)
     auto iter = exportedFuncs.find(nameSpace + "::" + funcName);
     if (iter == exportedFuncs.end())
         return nullptr;
-    return iter->second.callback;
+    return &iter->second.callback;
 }
 
 bool removeFunc(std::string&& key)
@@ -79,22 +79,28 @@ int removeFuncs(std::vector<std::pair<std::string, std::string>> funcs)
 
 
 #ifdef DEBUG
-inline int TestExport(std::string const& a0, int a1, int a2)
+#include <ScheduleAPI.h>
+int TestExport(std::string const& a0, int a1, int a2)
 {
     return static_cast<int>(a0.size()) + a1;
 }
+auto TestRemoteCall = ([]() -> bool {
+    std::thread([]() {
+        Sleep(5000);
+        Schedule::nextTick([]() {
+            RemoteCall::exportAs(
+                "Test", "test",
+                [](std::string const& arg) -> int {
+                    return 1;
+                });
 
-inline auto test = RemoteCall::exportAs(
-    "Test", "test",
-    [](std::string const& arg) -> int {
-        return 1;
-    });
+            RemoteCall::exportAs("Test", "test2", TestExport);
 
-inline auto test2 = RemoteCall::exportAs("Test", "test2", TestExport);
-
-inline auto testImport2 = ([]() {
-    auto func = RemoteCall::importAs<std::function<decltype(TestExport)>>("Test", "test2");
-    auto size = func("TestParam", 5, 10);
+            auto func = RemoteCall::importAs<std::function<decltype(TestExport)>>("Test", "test2");
+            auto size = func("TestParam", 5, 10);
+        });
+    }).detach();
     return true;
 })();
+
 #endif // DEBUG

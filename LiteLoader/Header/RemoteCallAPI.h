@@ -31,13 +31,16 @@ struct ExportedFuncData
 };
 
 LIAPI bool exportFunc(std::string const& nameSpace, std::string const& funcName, CallbackFn&& callback, HMODULE handler = GetCurrentModule());
-LIAPI CallbackFn importFunc(std::string const& nameSpace, std::string const& funcName);
+LIAPI CallbackFn* importFunc(std::string const& nameSpace, std::string const& funcName);
 
 template <typename RTN, typename... Args>
 inline bool _importAs(std::string const& nameSpace, std::string const& funcName, std::function<RTN(Args...)>& func)
 {
-    func = [rawFunc = importFunc(nameSpace, funcName)](Args... args) -> RTN {
-        auto res = rawFunc(std::vector<std::string>{pack(args)...});
+    auto rawFunc = importFunc(nameSpace, funcName);
+    if (!rawFunc)
+        return false;
+    func = [rawFunc](Args... args) -> RTN {
+        auto res = (*rawFunc)(std::vector<std::string>{pack(args)...});
         return extra<RTN>(res);
     };
     return true;
