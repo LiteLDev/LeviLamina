@@ -12,8 +12,7 @@ std::unordered_map<std::string, RemoteCall::ExportedFuncData> exportedFuncs;
 bool exportFunc(std::string const& nameSpace, std::string const& funcName, CallbackFn&& callback, HMODULE handler)
 {
     if (!LL::isDebugMode()) {
-        logger.error("LL RemoteCall can only use in debug mode");
-        return false;
+        logger.warn("please use LL RemoteCall in debug mode");
     }
     if (nameSpace.find("::") != nameSpace.npos)
     {
@@ -30,8 +29,7 @@ CallbackFn* importFunc(std::string const& nameSpace, std::string const& funcName
 {
     if (!LL::isDebugMode())
     {
-        logger.error("LL RemoteCall can only use in debug mode");
-        return nullptr;
+        logger.warn("please use LL RemoteCall in debug mode");
     }
     auto iter = exportedFuncs.find(nameSpace + "::" + funcName);
     if (iter == exportedFuncs.end())
@@ -95,8 +93,8 @@ auto TestRemoteCall = ([]() -> bool {
                 });
 
             RemoteCall::exportAs("Test", "test2", TestExport);
-
-            auto func = RemoteCall::importAs<std::function<decltype(TestExport)>>("Test", "test2");
+            auto func = RemoteCall::importAs<decltype(TestExport)>("Test", "test2");
+            auto func2 = RemoteCall::importAs<std::function<decltype(TestExport)>>("Test", "test2");
             auto size = func("TestParam", 5, 10);
         });
     }).detach();

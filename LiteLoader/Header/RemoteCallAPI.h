@@ -68,10 +68,10 @@ LIAPI bool removeFunc(std::string const& nameSpace, std::string const& funcName)
 LIAPI int removeNameSpace(std::string const& nameSpace);
 LIAPI int removeFuncs(std::vector<std::pair<std::string, std::string>> funcs);
 
-template <typename CB>
-inline CB importAs(std::string const& nameSpace, std::string const& funcName)
+template <typename CB, typename Func = std::conditional_t<std::is_function_v<CB>, std::function<CB>, CB>>
+inline Func importAs(std::string const& nameSpace, std::string const& funcName)
 {
-    CB callback;
+    Func callback;
     bool res = _importAs(nameSpace, funcName, callback);
     return callback;
 }
