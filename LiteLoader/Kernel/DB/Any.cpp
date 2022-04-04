@@ -33,6 +33,16 @@ Any::Any(const std::string& v)
     type = Type::String;
     value.string = new std::string(v);
 }
+Any::Any(const char* v)
+{
+    type = Type::String;
+    value.string = new std::string(v);
+}
+Any::Any(char* v, size_t len)
+{
+    type = Type::String;
+    value.string = new std::string(v, len);
+}
 Any::Any(const Date& v)
 {
     type = Type::Date;
@@ -93,7 +103,11 @@ Any::Any(float v)
     type = Type::Floating;
     value.floating = v;
 }
-
+Any::Any(const ByteArray& v)
+{
+    type = Type::Blob;
+    value.blob = new ByteArray(v);
+}
 
 Any::~Any()
 {
@@ -112,6 +126,10 @@ Any::~Any()
     else if (type == Type::DateTime)
     {
         delete value.datetime;
+    }
+    else if (type == Type::Blob)
+    {
+        delete value.blob;
     }
 }
 
@@ -154,6 +172,39 @@ bool Any::is_datetime() const
 bool Any::is_number() const
 {
     return type == Type::Integer || type == Type::UInteger || type == Type::Floating;
+}
+bool Any::is_blob() const
+{
+    return type == Type::Blob;
+}
+
+std::string Any::type2str(Any::Type type)
+{
+    switch (type)
+    {
+        case Type::Null:
+            return "null";
+        case Type::Boolean:
+            return "boolean";
+        case Type::Integer:
+            return "integer";
+        case Type::UInteger:
+            return "uinteger";
+        case Type::Floating:
+            return "floating";
+        case Type::String:
+            return "string";
+        case Type::Date:
+            return "date";
+        case Type::Time:
+            return "time";
+        case Type::DateTime:
+            return "datetime";
+        case Type::Blob:
+            return "blob";
+        default:
+            return "unknown";
+    }
 }
 
 } // namespace DB

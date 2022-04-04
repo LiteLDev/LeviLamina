@@ -93,8 +93,16 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\DB\Any.cpp" />
     <ClCompile Include="Kernel\DB\ConnParams.cpp" />
     <ClCompile Include="Kernel\DB\Exception.cpp" />
+    <ClCompile Include="Kernel\DB\Impl\SQLite\Session.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)SQLite\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="Kernel\DB\Impl\SQLite\Stmt.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)SQLite\</ObjectFileName>
+    </ClCompile>
     <ClCompile Include="Kernel\DB\Row.cpp" />
     <ClCompile Include="Kernel\DB\RowSet.cpp" />
+    <ClCompile Include="Kernel\DB\Session.cpp" />
+    <ClCompile Include="Kernel\DB\Stmt.cpp" />
     <ClCompile Include="Kernel\I18nAPI_LL.cpp" />
     <ClCompile Include="Kernel\NBT\PrettySnbtFormatAPI.cpp" />
     <ClCompile Include="Kernel\Compatibility.cpp" />
@@ -117,9 +125,13 @@ LibraryBuilder.exe
     <ClInclude Include="Header\DB\Any.h" />
     <ClInclude Include="Header\DB\ConnParams.h" />
     <ClInclude Include="Header\DB\Exception.h" />
+    <ClInclude Include="Header\DB\Impl\SQLite\Session.h" />
+    <ClInclude Include="Header\DB\Impl\SQLite\Stmt.h" />
     <ClInclude Include="Header\DB\RowSet.h" />
     <ClInclude Include="Header\DB\Row.h" />
     <ClInclude Include="Header\DB\Session.h" />
+    <ClInclude Include="Header\DB\Stmt.h" />
+    <ClInclude Include="Header\DB\Types.h" />
     <ClInclude Include="Header\Impl\FormPacketHelper.h" />
     <ClInclude Include="Header\Impl\ObjectivePacketHelper.h" />
     <ClInclude Include="Header\LoggerAPI.h" />

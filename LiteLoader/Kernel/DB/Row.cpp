@@ -19,7 +19,7 @@ RowHeader::RowHeader(const std::initializer_list<std::string>& list)
 {
     for (auto& name : list)
     {
-        (*this)[name] = size() - 1;
+        (*this)[name] = (int)size() - 1;
     }
 }
 
@@ -28,20 +28,55 @@ int RowHeader::add(const std::string& name)
     return (*this)[name];
 }
 
+bool RowHeader::contains(const std::string& name) const
+{
+    return find(name) != std::unordered_map<std::string, int>::end();
+}
+
+void RowHeader::remove(const std::string& name)
+{
+    erase(name);
+}
+
+int& RowHeader::at(const std::string& name)
+{
+    return std::unordered_map<std::string, int>::at(name);
+}
+
+size_t RowHeader::size() const
+{
+    return std::unordered_map<std::string, int>::size();
+}
+
+std::unordered_map<std::string, int>::iterator RowHeader::begin()
+{
+    return std::unordered_map<std::string, int>::begin();
+}
+
+std::unordered_map<std::string, int>::iterator RowHeader::end()
+{
+    return std::unordered_map<std::string, int>::end();
+}
+
 int& RowHeader::operator[](const std::string& name)
 {
     if (!count(name))
     {
-        return std::unordered_map<std::string, int>::operator[](name) = size() - 1;
+        return std::unordered_map<std::string, int>::operator[](name) = (int)size() - 1;
     }
     return std::unordered_map<std::string, int>::operator[](name);
 }
 
+Row::Row(RowHeader& header)
+    : header(header)
+{
+}
 Row::Row(const std::initializer_list<Any>& list, RowHeader& header)
     : std::vector<Any>(list)
     , header(header)
 {
-    if (list.size() != header.size()) {
+    if (list.size() != header.size())
+    {
         throw std::invalid_argument("$Core$ Row::Row: row and header mismatch");
     }
 }
@@ -80,6 +115,11 @@ Row::Row(const std::initializer_list<std::pair<std::string, Any>>& list)
     {
         this->push_back(pair.second);
     }
+}
+Row::Row(const std::initializer_list<Any>& list)
+    : std::vector<Any>(list)
+    , header(RowHeader())
+{
 }
 Row::Row(Row&& row) noexcept
     : header(row.header)

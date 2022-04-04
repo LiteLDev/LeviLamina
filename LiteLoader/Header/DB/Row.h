@@ -10,7 +10,7 @@ namespace DB
  * @brief The header of a row
  * 
  */
-class RowHeader : public std::unordered_map<std::string, int>
+class RowHeader : private std::unordered_map<std::string, int>
 {
 public:
     /**
@@ -23,15 +23,71 @@ public:
      * 
      * @param list An initializer list like `{"col1", "col2", "col3"}`
      */
-    RowHeader(const std::initializer_list<std::string>& list);
+    LIAPI RowHeader(const std::initializer_list<std::string>& list);
+    /// Move constructor
+    RowHeader(RowHeader&& other) noexcept = default;
+    /// Copy constructor
+    RowHeader(const RowHeader& other) = default;
     /**
      * @brief Add a column to the header
      * 
-     * @param name The name of the column
+     * @param  name The name of the column
      * @return int The index of the column
      */
-    int add(const std::string& name);
-    int& operator[](const std::string& name);
+    LIAPI int add(const std::string& name);
+    /**
+     * @brief Get whether the header contains a column
+     * 
+     * @param  name The name of the column
+     * @return true The column exists
+     */
+    LIAPI bool contains(const std::string& name) const;
+    /**
+     * @brief Remove a column from the header
+     * 
+     * @param name The name of the column
+     */
+    LIAPI void remove(const std::string& name);
+    /**
+     * @brief Get the size of the header
+     * 
+     * @return int The size of the header
+     */
+    LIAPI size_t size() const;
+    /**
+     * @brief Get the index of a column
+     * 
+     * @param  name The name of the column
+     * @return int The index of the column
+     * @throws std::out_of_range If the column does not exist
+     */
+    LIAPI int& at(const std::string& name);
+    /**
+     * @brief Get the iterator to the first element
+     * 
+     * @return std::unordered_map<std::string, int>::iterator The iterator
+     */
+    LIAPI std::unordered_map<std::string, int>::iterator begin();
+    /**
+     * @brief Get the iterator to the last element
+     * 
+     * @return std::unordered_map<std::string, int>::iterator The iterator
+     */
+    LIAPI std::unordered_map<std::string, int>::iterator end();
+
+    /**
+     * @brief Get the index of a column
+     * 
+     * @param  name The name of the column
+     * @return int The index of the column
+     * @note   It will create the column(= add) if it does not exist
+     */
+    LIAPI int& operator[](const std::string& name);
+
+    /// Move assignment operator
+    RowHeader& operator=(RowHeader&& other) noexcept = default;
+    /// Copy assignment operator
+    RowHeader& operator=(const RowHeader& other) = default;
 };
 
 /**
@@ -44,6 +100,12 @@ public:
     RowHeader& header; //!< The header of the row(references, to avoid copying)
 
     Row() = default;
+    /**
+     * @brief Construct a new Row object.
+     * 
+     * @param header The header(column names) of the row(references)
+     */
+    LIAPI Row(RowHeader& header);
     /**
      * @brief Construct a new Row object.
      * 
@@ -97,6 +159,12 @@ public:
      * @endcode
      */
     LIAPI Row(const std::initializer_list<std::pair<std::string, Any>>& list);
+    /**
+     * @brief Constuct a new Row object without header.
+     * 
+     * @param list   List of values
+     */
+    LIAPI Row(const std::initializer_list<Any>& list);
     /// Move constructor
     LIAPI Row(Row&& other) noexcept;
     /// Copy constructor

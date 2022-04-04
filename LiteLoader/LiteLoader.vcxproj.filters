@@ -64,6 +64,18 @@
     <Filter Include="Header\DB">
       <UniqueIdentifier>{39f6d3f7-c1b7-4418-862e-85ed1198ff67}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header\DB\Impl">
+      <UniqueIdentifier>{d935bcb1-83d6-4fc5-bac1-104c98ac7b92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\DB\Impl\SQLite">
+      <UniqueIdentifier>{19c29bec-ff40-4c20-be8c-9fd752fe4477}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel\DB\Impl">
+      <UniqueIdentifier>{a6b1e662-95cb-4d69-a4ec-c93bd8278adb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel\DB\Impl\SQLite">
+      <UniqueIdentifier>{5661b9a4-01e6-445e-8565-b34f504cd4e2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kernel\Utils\CsLock.cpp">
@@ -334,6 +346,18 @@
       <Filter>Kernel\DB</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\DB\ConnParams.cpp">
+      <Filter>Kernel\DB</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\DB\Session.cpp">
+      <Filter>Kernel\DB</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\DB\Impl\SQLite\Stmt.cpp">
+      <Filter>Kernel\DB\Impl\SQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\DB\Impl\SQLite\Session.cpp">
+      <Filter>Kernel\DB\Impl\SQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\DB\Stmt.cpp">
       <Filter>Kernel\DB</Filter>
     </ClCompile>
   </ItemGroup>
@@ -708,6 +732,18 @@
       <Filter>Header\DB</Filter>
     </ClInclude>
     <ClInclude Include="Header\DB\ConnParams.h">
+      <Filter>Header\DB</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\DB\Impl\SQLite\Stmt.h">
+      <Filter>Header\DB\Impl\SQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\DB\Impl\SQLite\Session.h">
+      <Filter>Header\DB\Impl\SQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\DB\Types.h">
+      <Filter>Header\DB</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\DB\Stmt.h">
       <Filter>Header\DB</Filter>
     </ClInclude>
   </ItemGroup>

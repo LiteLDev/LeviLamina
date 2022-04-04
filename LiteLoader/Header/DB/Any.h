@@ -1,164 +1,78 @@
 #pragma once
 #include "../Global.h"
-#include "../Utils/StringHelper.h"
+#include "Types.h"
 
-/**
- * @brief Convert T to R
- * 
- * @tparam R Return type
- * @tparam T Input type
- * @param v  Input value
- * @return R Result
- */
-template <typename R, typename T>
-inline R any_to(T v)
-{
-    return (R)v;
-}
-template <>
-inline std::string any_to(bool v)
-{
-    return v ? "true" : "false";
-}
-template <>
-inline std::string any_to(int64_t v)
-{
-    return std::to_string(v);
-}
-template <>
-inline std::string any_to(uint64_t v)
-{
-    return std::to_string(v);
-}
-template <>
-inline std::string any_to(double v)
-{
-    return std::to_string(v);
-}
-template <>
-inline const char* any_to(const std::string& str)
-{
-    return str.c_str();
-}
-template <>
-inline char* any_to(const std::string& str)
-{
-    return const_cast<char*>(str.c_str());
-}
-template <>
-inline std::wstring any_to(const std::string& str)
-{
-    return str2wstr(str);
-}
-template <>
-inline bool any_to(const std::string& str)
-{
-    return str == "true" || str == "1";
-}
-template <>
-inline char any_to(const std::string& str)
-{
-    if (str.size() == 1)
-    {
-        return str[0];
-    }
-    return (char)std::stoi(str);
-}
-template <>
-inline unsigned char any_to(const std::string& str)
-{
-    return (unsigned char)std::stoi(str);
-}
-template <>
-inline short any_to(const std::string& str)
-{
-    return (short)std::stoi(str);
-}
-template <>
-inline unsigned short any_to(const std::string& str)
-{
-    return (unsigned short)std::stoi(str);
-}
-template <>
-inline int any_to(const std::string& str)
-{
-    return std::stoi(str);
-}
-template <>
-inline unsigned int any_to(const std::string& str)
-{
-    return std::stoul(str);
-}
-template <>
-inline long any_to(const std::string& str)
-{
-    return std::stol(str);
-}
-template <>
-inline unsigned long any_to(const std::string& str)
-{
-    return std::stoul(str);
-}
-template <>
-inline int64_t any_to(const std::string& str)
-{
-    return std::stoll(str);
-}
-template <>
-inline uint64_t any_to(const std::string& str)
-{
-    return std::stoull(str);
-}
-template <>
-inline float any_to(const std::string& str)
-{
-    return std::stof(str);
-}
-template <>
-inline double any_to(const std::string& str)
-{
-    return std::stod(str);
-}
+#pragma region AnyConversion
 
 namespace DB
 {
-
-struct Date
-{
-    int year;
-    int month;
-    int day;
-};
-struct Time
-{
-    int hour;
-    int minute;
-    int second;
-    int timezone = -1;
-};
-struct DateTime
-{
-    Date date;
-    Time time;
-};
-
+// Declare Any class
+class Any;
 } // namespace DB
 
-template <>
-inline std::string any_to(DB::Date v)
+template <typename T>
+inline std::vector<DB::Any> to_any_container(const std::vector<T>& v)
 {
-    return std::to_string(v.year) + "-" + std::to_string(v.month) + "-" + std::to_string(v.day);
+    std::vector<Any> result;
+    for (auto& i : v)
+    {
+        result.push_back(Any(i));
+    }
+    return result;
 }
-template <>
-inline std::string any_to(DB::Time v)
+template <typename T>
+inline std::set<DB::Any> to_any_container(const std::set<T>& v)
 {
-    return std::to_string(v.hour) + ":" + std::to_string(v.minute) + ":" + std::to_string(v.second);
+    std::set<Any> result;
+    for (auto& i : v)
+    {
+        result.insert(Any(i));
+    }
+    return result;
 }
-template <>
-inline std::string any_to(DB::DateTime v)
+template <typename T>
+inline std::list<DB::Any> to_any_container(const std::list<T>& v)
 {
-    return any_to<std::string>(v.date) + " " + any_to<std::string>(v.time);
+    std::list<Any> result;
+    for (auto& i : v)
+    {
+        result.push_back(Any(i));
+    }
+    return result;
 }
+template <typename T>
+inline std::unordered_set<DB::Any> to_any_container(const std::unordered_set<T>& v)
+{
+    std::unordered_set<Any> result;
+    for (auto& i : v)
+    {
+        result.insert(Any(i));
+    }
+    return result;
+}
+template <typename K, typename V>
+inline std::map<K, DB::Any> to_any_container(const std::map<K, V>& v)
+{
+    std::map<K, Any> result;
+    for (auto& i : v)
+    {
+        result.insert(std::make_pair(i.first, Any(i.second)));
+    }
+    return result;
+}
+template <typename K, typename V>
+inline std::unordered_map<K, DB::Any> to_any_unordered_map(const std::unordered_map<K, V>& v)
+{
+    std::unordered_map<K, Any> result;
+    for (auto& i : v)
+    {
+        result.insert(std::make_pair(i.first, Any(i.second)));
+    }
+    return result;
+}
+
+#pragma endregion
+
 
 namespace DB
 {
@@ -179,37 +93,24 @@ class Any
         Date* date;
         Time* time;
         DateTime* datetime;
-    } value;
-    enum class Type
-    {
-        Null,
-        Boolean,
-        Integer,
-        UInteger,
-        Floating,
-        String,
-        Date,
-        Time,
-        DateTime
-    } type = Type::Null;
-
-    template <typename T>
-    inline static constexpr bool is_cpp_basic_type()
-    {
-        return std::is_same<T, bool>::value ||
-               std::is_same<T, char>::value ||
-               std::is_same<T, unsigned char>::value ||
-               std::is_same<T, short>::value ||
-               std::is_same<T, unsigned short>::value ||
-               std::is_same<T, int>::value ||
-               std::is_same<T, unsigned int>::value ||
-               std::is_same<T, int64_t>::value ||
-               std::is_same<T, uint64_t>::value ||
-               std::is_same<T, float>::value ||
-               std::is_same<T, double>::value;
-    }
+        ByteArray* blob;
+    } value; ///< Value
 
 public:
+    enum class Type : char
+    {
+        Null = 0,
+        Boolean = 1,
+        Integer = 2,
+        UInteger = 3,
+        Floating = 4,
+        String = 5,
+        Date = 6,
+        Time = 7,
+        DateTime = 8,
+        Blob = 9
+    } type = Type::Null; ///< Type of the value
+
     /**
      * @brief Construct a new Any object with null value.
      * 
@@ -245,6 +146,19 @@ public:
      * @param v The string value
      */
     LIAPI Any(const std::string& v);
+    /**
+     * @brief Construct a new Any object with const char* value.
+     * 
+     * @param v The const char* value
+     */
+    LIAPI Any(const char* v);
+    /**
+     * @brief Construct a new Any object with char* value.
+     * 
+     * @param v   The char* value
+     * @param len The length of the char* value
+     */
+    LIAPI Any(char* v, size_t len);
     /**
      * @brief Construct a new Any object with date value.
      * 
@@ -317,6 +231,12 @@ public:
      * @param v The float value
      */
     LIAPI Any(float v);
+    /**
+     * @brief Construct a new Any object with byte array value.
+     * 
+     * @param v The byte array value
+     */
+    LIAPI Any(const ByteArray& v);
 
     /// Destructor
     ~Any();
@@ -367,22 +287,77 @@ public:
      */
     LIAPI bool is_datetime() const;
     /**
+     * @brief Get if the value is blob.
+     * 
+     */
+    LIAPI bool is_blob() const;
+    /**
      * @brief Get if the value is floating or (unsigned) integer.
      * 
      */
     LIAPI bool is_number() const;
 
     /**
+     * @brief Get the number value as T
+     * 
+     * @tparam T             The C++ basic number type to convert to, such as int, long, double, etc.
+     * @return T             The value
+     * @throws std::bad_cast If the value cannot be converted to T or the value is not a number
+     * @note   You can use Any::is_number() to check if the value is a number before calling this function.
+     */
+    template <typename T>
+    inline T get_number() const
+    {
+        switch (type)
+        {
+            case Type::Boolean:
+                return static_cast<T>(value.boolean);
+            case Type::Integer:
+            case Type::UInteger:
+                return static_cast<T>(value.integer);
+            case Type::Floating:
+                return static_cast<T>(value.floating);
+            case Type::String:
+            case Type::Date:
+            case Type::Time:
+            case Type::DateTime:
+            case Type::Blob:
+            default:
+                throw std::bad_cast();
+        }
+    }
+
+    /**
+     * @brief Friend function to convert Any to T.
+     * 
+     * @tparam T The type to convert to
+     * @param v  The Any object
+     * @return T The converted value
+     */
+    template <typename T>
+    inline friend T any_to(const Any& v)
+    {
+        throw std::bad_cast();
+    }
+    /**
      * @brief Get the value as T.
      * 
-     * @tparam T The type of the value
-     * @return T The value
-     * @par Custom type conversion
+     * @tparam T             The type of the value
+     * @return T             The value
+     * @throws std::bad_cast If the value cannot be converted to T
+     * @par Custom Type Conversion
      * Define a custom type conversion function for the type T
      * @code
      * template <>
-     * inline MyClass any_to(int64_t v) {
-     *     return MyClass(v);
+     * MyClass any_to(const Any& v) {
+     *     MyClass result;
+     *     switch (v.type) {
+     *     case Any::Type::String:
+     *         result.a = *v.value.string;
+     *     default:
+     *         throw std::bad_cast();
+     *     }
+     *     return result;
      * }
      * @endcode
      * @see any_to
@@ -390,60 +365,333 @@ public:
     template <typename T>
     inline T get() const
     {
-        is_cpp_basic_type<char>();
+        return any_to<T>();
+    }
+    /**
+     * @brief Get the value as string
+     * 
+     * @tparam T             = bool
+     * @return bool          The value
+     * @throws std::bad_cast If the value cannot be converted to string
+     */
+    template <>
+    inline bool get() const
+    {
         switch (type)
         {
             case Type::Boolean:
-                if constexpr (is_cpp_basic_type<T>())
-                {
-                    return (T)value.boolean;
-                }
-                return ::any_to<T>(value.boolean);
+                return value.boolean;
             case Type::Integer:
-                if constexpr (is_cpp_basic_type<T>())
-                {
-                    return (T)value.integer;
-                }
-                return ::any_to<T>(value.integer);
             case Type::UInteger:
-                if constexpr (is_cpp_basic_type<T>())
-                {
-                    return (T)value.uinteger;
-                }
-                return ::any_to<T>(value.uinteger);
             case Type::Floating:
-                if constexpr (is_cpp_basic_type<T>())
-                {
-                    return (T)value.floating;
-                }
-                return ::any_to<T>(value.floating);
+                return (bool)value.integer;
             case Type::String:
-                if constexpr (std::is_same<T, std::string>::value)
-                {
-                    return (T)*value.string;
-                }
-                return ::any_to<T>(*value.string);
             case Type::Date:
-                if constexpr (std::is_same<T, Date>::value)
-                {
-                    return (T)*value.date;
-                }
-                return ::any_to<T>(*value.date);
             case Type::Time:
-                if constexpr (std::is_same<T, Time>::value)
-                {
-                    return (T)*value.time;
-                }
-                return ::any_to<T>(*value.time);
             case Type::DateTime:
-                if constexpr (std::is_same<T, DateTime>::value)
-                {
-                    return (T)*value.datetime;
-                }
-                return ::any_to<T>(*value.datetime);
+            case Type::Blob:
+            default:
+                throw std::bad_cast();
         }
-        return T();
     }
+    /**
+     * @brief Get the value as char
+     * 
+     * @tparam T             = char
+     * @return char          The value
+     * @throws std::bad_cast If the value cannot be converted to char
+     */
+    template <>
+    inline char get() const
+    {
+        return get_number<char>();
+    }
+    /**
+     * @brief Get the value as unsigned char
+     * 
+     * @tparam T             = unsigned char
+     * @return unsigned char The value
+     * @throws std::bad_cast If the value cannot be converted to unsigned char
+     */
+    template <>
+    inline unsigned char get() const
+    {
+        return get_number<unsigned char>();
+    }
+    /**
+     * @brief Get the value as short
+     * 
+     * @tparam T             = short
+     * @return short         The value
+     * @throws std::bad_cast If the value cannot be converted to short
+     */
+    template <>
+    inline short get() const
+    {
+        return get_number<short>();
+    }
+    /**
+     * @brief Get the value as unsigned short
+     * 
+     * @tparam T             = unsigned short
+     * @return unsigned short The value
+     * @throws std::bad_cast If the value cannot be converted to unsigned short
+     */
+    template <>
+    inline unsigned short get() const
+    {
+        return get_number<unsigned short>();
+    }
+    /**
+     * @brief Get the value as int
+     * 
+     * @tparam T             = int
+     * @return int           The value
+     * @throws std::bad_cast If the value cannot be converted to int
+     */
+    template <>
+    inline int get() const
+    {
+        return get_number<int>();
+    }
+    /**
+     * @brief Get the value as unsigned int
+     * 
+     * @tparam T             = unsigned int
+     * @return unsigned int  The value
+     * @throws std::bad_cast If the value cannot be converted to unsigned int
+     */
+    template <>
+    inline unsigned int get() const
+    {
+        return get_number<unsigned int>();
+    }
+    /**
+     * @brief Get the value as long
+     * 
+     * @tparam T             = long
+     * @return long          The value
+     * @throws std::bad_cast If the value cannot be converted to long
+     */
+    template <>
+    inline long get() const
+    {
+        return get_number<long>();
+    }
+    /**
+     * @brief Get the value as unsigned long
+     * 
+     * @tparam T             = unsigned long
+     * @return unsigned long The value
+     * @throws std::bad_cast If the value cannot be converted to unsigned long
+     */
+    template <>
+    inline unsigned long get() const
+    {
+        return get_number<unsigned long>();
+    }
+    /**
+     * @brief Get the value as long long
+     * 
+     * @tparam T             = long long
+     * @return long long     The value
+     * @throws std::bad_cast If the value cannot be converted to long long
+     */
+    template <>
+    inline long long get() const
+    {
+        return get_number<long long>();
+    }
+    /**
+     * @brief Get the value as unsigned long long
+     * 
+     * @tparam T             = unsigned long long
+     * @return unsigned long long The value
+     * @throws std::bad_cast If the value cannot be converted to unsigned long long
+     */
+    template <>
+    inline unsigned long long get() const
+    {
+        return get_number<unsigned long long>();
+    }
+    /**
+     * @brief Get the value as double.
+     * 
+     * @tparam T             = double
+     * @return double        The value
+     * @throws std::bad_cast If the value cannot be converted to double
+     */
+    template <>
+    inline double get() const
+    {
+        return get_number<double>();
+    }
+    /**
+     * @brief Get the value as float.
+     * 
+     * @tparam T             = float
+     * @return float         The value
+     * @throws std::bad_cast If the value cannot be converted to float
+     */
+    template <>
+    inline float get() const
+    {
+        return get_number<float>();
+    }
+    /**
+     * @brief Get the value as string.
+     * 
+     * @tparam T             = std::string
+     * @return std::string   The value
+     * @throws std::bad_cast If the value cannot be converted to string
+     */
+    template <>
+    std::string get() const
+    {
+        switch (type)
+        {
+            case Type::Boolean:
+                return value.boolean ? "true" : "false";
+            case Type::Integer:
+                return std::to_string(value.integer);
+            case Type::UInteger:
+                return std::to_string(value.uinteger);
+            case Type::Floating:
+                return std::to_string(value.floating);
+            case Type::String:
+                return *value.string;
+            case Type::Date:
+                return std::to_string(value.date->year) + "-" +
+                       std::to_string(value.date->month) + "-" +
+                       std::to_string(value.date->day);
+                break;
+            case Type::Time:
+                return std::to_string(value.time->hour) + ":" +
+                       std::to_string(value.time->minute) + ":" +
+                       std::to_string(value.time->second);
+            case Type::DateTime:
+                return std::to_string(value.datetime->date.year) + "-" +
+                       std::to_string(value.datetime->date.month) + "-" +
+                       std::to_string(value.datetime->date.day) + " " +
+                       std::to_string(value.datetime->time.hour) + ":" +
+                       std::to_string(value.datetime->time.minute) + ":" +
+                       std::to_string(value.datetime->time.second);
+            case Type::Blob:
+                return std::string(value.blob->begin(), value.blob->end());
+            default:
+                throw std::bad_cast();
+        }
+    }
+    /**
+     * @brief Get the value as Date
+     * 
+     * @tparam T             = DB::Date
+     * @return DB::Date      The value
+     * @throws std::bad_cast If the value cannot be converted to DB::Date
+     */
+    template <>
+    Date get() const
+    {
+        switch (type)
+        {
+            case Type::Date:
+                return *value.date;
+            case Type::DateTime:
+                return value.datetime->date;
+            case Type::String:
+            case Type::Integer:
+            case Type::UInteger:
+            case Type::Floating:
+            case Type::Time:
+            case Type::Blob:
+            default:
+                throw std::bad_cast();
+        }
+    }
+    /**
+     * @brief Get the value as Time
+     * 
+     * @tparam T             = DB::Time
+     * @return DB::Time      The value
+     * @throws std::bad_cast If the value cannot be converted to DB::Time
+     */
+    template <>
+    Time get() const
+    {
+        switch (type)
+        {
+            case Type::Time:
+                return *value.time;
+            case Type::DateTime:
+                return value.datetime->time;
+            case Type::String:
+            case Type::Integer:
+            case Type::UInteger:
+            case Type::Floating:
+            case Type::Date:
+            case Type::Blob:
+            default:
+                throw std::bad_cast();
+        }
+    }
+    /**
+     * @brief Get the value as DateTime
+     * 
+     * @tparam T             = DB::DateTime
+     * @return DB::DateTime  The value
+     * @throws std::bad_cast If the value cannot be converted to DB::DateTime
+     */
+    template <>
+    DateTime get() const
+    {
+        switch (type)
+        {
+            case Type::DateTime:
+                return *value.datetime;
+            case Type::String:
+            case Type::Integer:
+            case Type::UInteger:
+            case Type::Floating:
+            case Type::Date:
+            case Type::Time:
+            case Type::Blob:
+            default:
+                throw std::bad_cast();
+        }
+    }
+    /**
+     * @brief Get the value as ByteArray
+     * 
+     * @tparam T             = DB::ByteArray
+     * @return DB::ByteArray The value
+     * @throws std::bad_cast If the value cannot be converted to DB::ByteArray
+     */
+    template <>
+    ByteArray get() const
+    {
+        switch (type)
+        {
+            case Type::Blob:
+                return *value.blob;
+            case Type::String:
+            case Type::Integer:
+            case Type::UInteger:
+            case Type::Floating:
+            case Type::Date:
+            case Type::Time:
+            case Type::DateTime:
+            default:
+                throw std::bad_cast();
+        }
+    }
+
+    /**
+     * @brief Convert Any::Type to string.
+     * 
+     * @param type         The Any::Type value
+     * @return std::string The string value
+     */
+    LIAPI static std::string type2str(Any::Type type);
 };
 
 } // namespace DB
