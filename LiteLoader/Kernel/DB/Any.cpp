@@ -114,22 +114,27 @@ Any::~Any()
     if (type == Type::String)
     {
         delete value.string;
+        value.string = nullptr;
     }
     else if (type == Type::Date)
     {
         delete value.date;
+        value.date = nullptr;
     }
     else if (type == Type::Time)
     {
         delete value.time;
+        value.time = nullptr;
     }
     else if (type == Type::DateTime)
     {
         delete value.datetime;
+        value.datetime = nullptr;
     }
     else if (type == Type::Blob)
     {
         delete value.blob;
+        value.blob = nullptr;
     }
 }
 
