@@ -24,14 +24,3 @@ void RegisterSimpleServerLogger()
         });
     }
 }
-
-TInstanceHook(void, "?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z", 
-    CommandRegistry, std::string const& name, char const* description, enum CommandPermissionLevel perm, struct CommandFlag& flag1, struct CommandFlag& flag2)
-{
-    if (LL::globalConfig.debugMode)
-    {
-        static Logger logger("RegCommand");
-        logger.debug("RegsterCommand \"{}\"");
-    }
-    return original(this, name, description, perm, flag1, flag2);
-}

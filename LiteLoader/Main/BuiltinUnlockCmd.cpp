@@ -1,16 +1,24 @@
 #include "Global.h"
 #include <Main/Config.h>
 #include <MC/CommandParameterData.hpp>
+#include <LoggerAPI.h>
 /////////////////// Built in UnlockCmd ///////////////////
 
 bool isUnlockCmdEnabled = true;
 
-TClasslessInstanceHook(void, "?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z",
-                       void* a2, void* a3, char a4, short a5, short a6)
+TInstanceHook(void, "?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z",
+              CommandRegistry, std::string const& name, char const* description, enum CommandPermissionLevel perm, short flag1, short flag2)
 {
     if (LL::globalConfig.enableUnlockCmd)
-        a5 |= 0x80;
-    return original(this, a2, a3, a4, a5, a6);
+        flag1 |= 0x80;
+
+    //if (LL::globalConfig.debugMode)
+    //{
+    //    static Logger logger("RegCommand");
+    //    logger.consoleLevel = logger.debug.level;
+    //    logger.debug("RegsterCommand \"{}\"", name);
+    //}
+    return original(this, name, description, perm, flag1, flag2);
 }
 
 class CommandSelectorBase;
