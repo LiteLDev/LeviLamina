@@ -65,5 +65,34 @@ ConnParams::ConnParams(const std::string& str)
         }
     }
 }
+ConnParams::ConnParams(const char* str)
+    : std::unordered_map<std::string, Any>()
+{
+    auto res1 = SplitStrWithPattern(str, "://");
+    if (res1.size() >= 2)
+    {
+        insert({"protocol", res1[0]});
+    }
+    auto res2 = SplitStrWithPattern(res1[2], "?");
+    auto addr = res2[0];
+    auto res3 = SplitStrWithPattern(addr, ":");
+    if (res3.size() == 2)
+    {
+        insert({"port", std::stoi(res3[1])});
+    }
+    insert({"host", res3[0]});
+    if (res2.size() >= 2)
+    {
+        auto params = SplitStrWithPattern(res2[1], "&");
+        for (auto& param : params)
+        {
+            auto res4 = SplitStrWithPattern(param, "=");
+            if (res4.size() == 2)
+            {
+                insert({res4[0], res4[1]});
+            }
+        }
+    }
+}
 
 } // namespace DB

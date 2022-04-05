@@ -10,63 +10,76 @@ namespace DB
 class Any;
 } // namespace DB
 
+/**
+ * @brief Friend function to convert Any to T.
+ * 
+ * @tparam T The type to convert to
+ * @param v  The Any object
+ * @return T The converted value
+ */
+template <typename T>
+inline T any_to(const DB::Any& v)
+{
+    throw std::bad_cast();
+}
+
 template <typename T>
 inline std::vector<DB::Any> to_any_container(const std::vector<T>& v)
 {
-    std::vector<Any> result;
+    std::vector<DB::Any> result;
     for (auto& i : v)
     {
-        result.push_back(Any(i));
+        result.push_back(DB::Any(i));
     }
     return result;
 }
 template <typename T>
 inline std::set<DB::Any> to_any_container(const std::set<T>& v)
 {
-    std::set<Any> result;
+    std::set<DB::Any> result;
     for (auto& i : v)
     {
-        result.insert(Any(i));
+        result.insert(DB::Any(i));
     }
     return result;
 }
 template <typename T>
 inline std::list<DB::Any> to_any_container(const std::list<T>& v)
 {
-    std::list<Any> result;
+    std::list<DB::Any> result;
     for (auto& i : v)
     {
-        result.push_back(Any(i));
+        result.push_back(DB::Any(i));
     }
     return result;
 }
 template <typename T>
 inline std::unordered_set<DB::Any> to_any_container(const std::unordered_set<T>& v)
 {
-    std::unordered_set<Any> result;
+    std::unordered_set<DB::Any> result;
     for (auto& i : v)
     {
-        result.insert(Any(i));
+        result.insert(DB::Any(i));
     }
     return result;
 }
 template <typename K, typename V>
 inline std::map<K, DB::Any> to_any_container(const std::map<K, V>& v)
 {
-    std::map<K, Any> result;
+    std::map<K, DB::Any> result;
     for (auto& i : v)
     {
-        result.insert(std::make_pair(i.first, Any(i.second)));
+        result.insert(std::make_pair(i.first, DB::Any(i.second)));
     }
     return result;
 }
 template <typename K, typename V>
 inline std::unordered_map<K, DB::Any> to_any_unordered_map(const std::unordered_map<K, V>& v)
 {
-    std::unordered_map<K, Any> result;
+    std::unordered_map<K, DB::Any> result;
     for (auto& i : v)
     {
-        result.insert(std::make_pair(i.first, Any(i.second)));
+        result.insert(std::make_pair(i.first, DB::Any(i.second)));
     }
     return result;
 }
@@ -239,7 +252,7 @@ public:
     LIAPI Any(const ByteArray& v);
 
     /// Destructor
-    ~Any();
+    LIAPI ~Any();
 
     /**
      * @brief Get if the value is null.
@@ -335,10 +348,7 @@ public:
      * @return T The converted value
      */
     template <typename T>
-    inline friend T any_to(const Any& v)
-    {
-        throw std::bad_cast();
-    }
+    friend T any_to(const Any& v);
     /**
      * @brief Get the value as T.
      * 

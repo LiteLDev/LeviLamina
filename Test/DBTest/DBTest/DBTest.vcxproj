@@ -144,7 +144,6 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\..\..\..\vcpkg\packages\sqlite3_x64-windows-static\lib\sqlite3.lib" />
     <Library Include="..\..\..\x64\Release\LiteLoader.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

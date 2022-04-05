@@ -4,6 +4,19 @@
 namespace DB
 {
 
+/**
+ * @brief Friend function to convert a set of result to T.
+ * 
+ * @tparam T  The type to convert to
+ * @param res A set of rows
+ * @return T  The converted value
+ */
+template <typename T>
+inline T results_to(const ResultSet& res)
+{
+    throw std::bad_cast();
+}
+
 struct BindType
 {
     Any value;
@@ -57,26 +70,33 @@ public:
     /**
      * @brief Bind a value to a statement parameter.
      * 
-     * @param value Value to bind
-     * @param index Parameter index
+     * @param value               Value to bind
+     * @param index               Parameter index
      * @throws std::runtime_error If error occurs
      */
     virtual Stmt& bind(const Any& value, int index) = 0;
     /**
      * @brief Bind a value to a statement parameter.
      * 
-     * @param value Value to bind
-     * @param name  Parameter name
+     * @param value               Value to bind
+     * @param name                Parameter name
      * @throws std::runtime_error If error occurs
      */
     virtual Stmt& bind(const Any& value, const std::string& name) = 0;
     /**
      * @brief Bind a value to the next statement parameter.
      * 
-     * @param value Value to bind
+     * @param value               Value to bind
      * @throws std::runtime_error If error occurs
      */
     virtual Stmt& bind(const Any& value) = 0;
+    /**
+     * @brief Get the query results.
+     * 
+     * @return ResultSet&         Result set
+     * @throws std::runtime_error If the result is not available
+     */
+    virtual ResultSet getResults();
     /**
      * @brief Close the statement.
      * 
@@ -101,6 +121,18 @@ public:
      * @return int The number of parameters
      */
     virtual int getParamsCount() = 0;
+    /**
+     * @brief Get the session type
+     * 
+     * @return DB::DBType The database type
+     */
+    virtual DBType getType() = 0;
+    /**
+     * @brief Get wether the statement is executed or not.
+     * 
+     * @return bool Return true if the statement is executed, false otherwise
+     */
+    virtual bool isExecuted() = 0;
 
     /**
      * @brief Operator, to bind single values.
@@ -174,10 +206,7 @@ public:
      * @return T  The converted value
      */
     template <typename T>
-    friend T results_to(const ResultSet& res)
-    {
-        throw std::bad_cast();
-    }
+    friend T results_to(const ResultSet& res);
     /**
      * @brief Operator, to set where to store results.
      * 
@@ -236,7 +265,7 @@ template <typename T>
 inline void destroy(T* ptr)
 {
     delete ptr;
-    ptr = 0;
+    ptr = nullptr;
 }
 
 inline BindType bind(const Any& value, int idx = -1)
@@ -261,17 +290,17 @@ inline BindSequenceType<std::vector<T>> bind(const std::vector<T>& values)
 template <typename T>
 inline BindSequenceType<std::set<T>> bind(const std::set<T>& values)
 {
-    return BindSequenceType<std::set<T>>{values};
+    return BindSequenceType<std::set<T>>{to_any_container(values)};
 }
 template <typename T>
 inline BindSequenceType<std::list<T>> bind(const std::list<T>& values)
 {
-    return BindSequenceType<std::list<T>>{values};
+    return BindSequenceType<std::list<T>>{to_any_container(values)};
 }
 template <typename T>
-inline BindSequenceType<std::initializer_list<T>> bind(const std::initializer_list<T>& values)
+inline BindSequenceType<std::vector<T>> bind(const std::initializer_list<T>& values)
 {
-    return BindSequenceType<std::initializer_list<T>>{values};
+    return BindSequenceType<std::vector<T>>{to_any_container(std::vector<T>(values))};
 }
 template <>
 inline BindSequenceType<std::vector<Any>> bind(const std::vector<Any>& values)
@@ -289,9 +318,9 @@ inline BindSequenceType<std::list<Any>> bind(const std::list<Any>& values)
     return BindSequenceType<std::list<Any>>{values};
 }
 template <>
-inline BindSequenceType<std::initializer_list<Any>> bind(const std::initializer_list<Any>& values)
+inline BindSequenceType<std::vector<Any>> bind(const std::initializer_list<Any>& values)
 {
-    return BindSequenceType<std::initializer_list<Any>>{values};
+    return BindSequenceType<std::vector<Any>>{std::vector<Any>(values)};
 }
 
 

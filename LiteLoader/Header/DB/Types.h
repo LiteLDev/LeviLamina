@@ -4,7 +4,7 @@
 namespace DB
 {
 
-enum DBType : char
+enum class DBType : char
 {
     None,
     SQLite,

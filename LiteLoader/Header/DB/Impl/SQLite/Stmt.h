@@ -17,6 +17,7 @@ class SQLiteStmt : public Stmt
 
     SQLiteStmt(sqlite3_stmt* stmt);
     int getNextParamIndex();
+    void process();
 
 public:
     ~SQLiteStmt();
@@ -27,6 +28,8 @@ public:
     int getUnboundParamsCount();
     int getBoundParamsCount();
     int getParamsCount();
+    DBType getType();
+    bool isExecuted();
 
     Stmt& operator,(const BindType& b);
 

@@ -26,8 +26,5 @@
     <Library Include="..\..\..\x64\Release\LiteLoader.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="..\..\..\..\vcpkg\packages\sqlite3_x64-windows-static\lib\sqlite3.lib">
-      <Filter>Lib</Filter>
-    </Library>
   </ItemGroup>
 </Project>

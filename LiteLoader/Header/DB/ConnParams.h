@@ -33,6 +33,12 @@ public:
      * @param str Connection string like `mysql://localhost:3306?key1=value1&key2=value2`
      */
     LIAPI ConnParams(const std::string& str);
+    /**
+     * @brief Construct a new ConnParams object
+     * 
+     * @param str Connection string like `mysql://localhost:3306?key1=value1&key2=value2`
+     */
+    LIAPI ConnParams(const char* str);
 };
 
 } // namespace DB

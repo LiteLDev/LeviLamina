@@ -34,7 +34,13 @@ bool RowHeader::contains(const std::string& name) const
 
 void RowHeader::remove(const std::string& name)
 {
+    auto i = at(name);
     erase(name);
+    for (auto& [k, v] : *this) {
+        if (v > i) {
+            v--;
+        }
+    }
 }
 
 int& RowHeader::at(const std::string& name)
@@ -147,9 +153,9 @@ Row& Row::operator=(const Row& row)
 Any& Row::operator[](const std::string& name)
 {
     auto idx = header[name];
-    if (idx < size())
+    if (idx < (int)size())
         return std::vector<Any>::at(idx);
-    resize(idx + 1, Any());
+    resize((size_t)idx + 1, Any());
     return std::vector<Any>::at(idx);
 }
 Any& Row::at(const std::string& name)

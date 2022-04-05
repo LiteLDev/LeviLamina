@@ -23,6 +23,59 @@ int SQLiteStmt::getNextParamIndex()
     return result + 1;
 }
 
+void SQLiteStmt::process()
+{
+    RowHeader header;
+    int colCnt = sqlite3_column_count(stmt);
+    for (int i = 0; i < colCnt; i++)
+    {
+        header.add(sqlite3_column_name(stmt, i));
+    }
+    auto result = new ResultSet(header);
+    while (true)
+    {
+        auto res = sqlite3_step(stmt);
+        if (res == SQLITE_DONE)
+        {
+            break;
+        }
+        if (res != SQLITE_ROW)
+        {
+            continue;
+        }
+        Row row(header);
+        for (int i = 0; i < colCnt; i++)
+        {
+            switch (sqlite3_column_type(stmt, i))
+            {
+                case SQLITE_INTEGER:
+                    row.push_back(sqlite3_column_int64(stmt, i));
+                    break;
+                case SQLITE_FLOAT:
+                    row.push_back(sqlite3_column_double(stmt, i));
+                    break;
+                case SQLITE_TEXT:
+                    row.push_back(std::string(reinterpret_cast<const char*>(sqlite3_column_text(stmt, i))));
+                    break;
+                case SQLITE_BLOB:
+                    row.push_back(ByteArray(
+                        reinterpret_cast<const uint8_t*>(sqlite3_column_blob(stmt, i)),
+                        reinterpret_cast<const uint8_t*>(sqlite3_column_blob(stmt, i)) + sqlite3_column_bytes(stmt, i)));
+                    break;
+                case SQLITE_NULL:
+                    row.push_back(Any());
+                    break;
+                default:
+                    delete result;
+                    result = 0;
+                    throw std::runtime_error("$SQLite$ SQLiteSession::query: Unknown column type!");
+            }
+        }
+        result->push_back(row);
+    }
+    results = result;
+}
+
 SQLiteStmt::~SQLiteStmt()
 {
     if (!onHeap)
@@ -51,6 +104,21 @@ Stmt& SQLiteStmt::bind(const Any& value, int index)
         case Any::Type::Integer:
             res = sqlite3_bind_int64(stmt, index, value.get<int64_t>());
             break;
+        case Any::Type::UInteger:
+        {
+            uint64_t val = value.get<uint64_t>();
+            if (val > LLONG_MAX)
+            {
+                // The conversion of uint64 to double may result in loss of precision,
+                // so it is recommended to use string/blob for big numbers
+                res = sqlite3_bind_double(stmt, index, (double)val);
+            }
+            else
+            {
+                res = sqlite3_bind_int64(stmt, index, (int64_t)val);
+            }
+            break;
+        }
         case Any::Type::Floating:
             res = sqlite3_bind_double(stmt, index, value.get<double>());
             break;
@@ -61,7 +129,7 @@ Stmt& SQLiteStmt::bind(const Any& value, int index)
             res = sqlite3_bind_text(stmt, index, value.get<std::string>().c_str(), -1, SQLITE_TRANSIENT);
             break;
         case Any::Type::Blob:
-            res = sqlite3_bind_blob(stmt, index, value.get<ByteArray>().data(), value.get<ByteArray>().size(), SQLITE_TRANSIENT);
+            res = sqlite3_bind_blob(stmt, index, value.get<ByteArray>().data(), (int)value.get<ByteArray>().size(), SQLITE_TRANSIENT);
             break;
         default:
             throw std::runtime_error("$SQLite$ SQLiteStmt::bind: Unsupported type");
@@ -71,6 +139,10 @@ Stmt& SQLiteStmt::bind(const Any& value, int index)
         throw std::runtime_error("$SQLite$ SQLiteStmt::bind: Failed to bind " + Any::type2str(type) + " to index " + std::to_string(index));
     }
     boundIndexes.push_back(index);
+    if (getUnboundParamsCount() == 0)
+    {
+        process();
+    }
     return *this;
 }
 Stmt& SQLiteStmt::bind(const Any& value, const std::string& name)
@@ -86,6 +158,10 @@ void SQLiteStmt::close()
 {
     sqlite3_finalize(stmt);
     stmt = nullptr;
+    if (results)
+    {
+        destroy(results);
+    }
     if (onHeap)
     {
         destroy(this);
@@ -96,13 +172,25 @@ int SQLiteStmt::getUnboundParamsCount()
 {
     return totalParamsCount - boundParamsCount;
 }
+
 int SQLiteStmt::getBoundParamsCount()
 {
     return boundParamsCount;
 }
+
 int SQLiteStmt::getParamsCount()
 {
     return totalParamsCount;
+}
+
+DBType SQLiteStmt::getType()
+{
+    return DBType::SQLite;
+}
+
+bool SQLiteStmt::isExecuted()
+{
+    return sqlite3_stmt_status(stmt, SQLITE_STMTSTATUS_RUN, 0);
 }
 
 Stmt &SQLiteStmt::operator,(const BindType&b)
