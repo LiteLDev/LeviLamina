@@ -45,12 +45,22 @@ std::string GetAddonJsonFile(Addon::Type type)
     return "";
 }
 
+inline bool isManifestFile(std::string const& filename)
+{
+    return filename == "manifest.json"|| filename == "pack_manifest.json";
+}
+
 std::optional<Addon> parseAddonFromPath(std::filesystem::path addonPath)
 {
     try
     {
         auto manifestPath = addonPath;
         manifestPath.append("manifest.json");
+        if (!filesystem::exists(manifestPath))
+        {
+            manifestPath = addonPath;
+            manifestPath.append("pack_manifest.json");
+        }
         auto manifestFile = ReadAllFile(manifestPath.u8string());
         if (!manifestFile || manifestFile->empty())
             throw "manifest.json not found!";
@@ -236,7 +246,7 @@ void FindManifest(vector<string> &result, const string& path)
     for (auto& file : ent)
     {
         auto path = file.path();
-        if (path.filename() == "manifest.json")
+        if (isManifestFile(path.filename().u8string()))
         {
             result.push_back(filesystem::canonical(path).parent_path().u8string());
             foundManifest = true;
