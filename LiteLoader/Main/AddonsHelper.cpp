@@ -73,7 +73,7 @@ std::optional<Addon> parseAddonFromPath(std::filesystem::path addonPath)
         if (!manifestFile || manifestFile->empty())
             throw "manifest.json not found!";
 
-        std::string content = FixManifest(*manifestFile);
+        std::string content = FixMojangJson(*manifestFile);
         
         auto manifest = nlohmann::json::parse(content, nullptr, true, true);
         auto header = manifest["header"];
