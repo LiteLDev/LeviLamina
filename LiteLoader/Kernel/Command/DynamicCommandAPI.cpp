@@ -1302,26 +1302,6 @@ void setupRemoveCommand()
     DynamicCommand::setup(std::move(command));
 }
 
-bool testCommandInited = ([]() {
-    setupRemoveCommand();
-    setupTestEnumCommand();
-    setupTestParamCommand();
-    setupExampleCommand();
-#if false
-    Global<CommandRegistry>->printAll();
-    Schedule::delayRepeat(
-        []() {
-            static bool Switch = true;
-            if (Switch)
-                Global<Level>->runcmd("remove example");
-            else
-                setupExampleCommand();
-            Switch = !Switch;
-        },
-        200, 2);
-#endif // COMMAND_REGISTRY_EXTRA
-    return true;
-})();
 
 // TInstanceHook(void, "?run@Command@@QEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z",
 //               Command, class CommandOrigin const& origin, class CommandOutput& output)
@@ -1430,6 +1410,25 @@ void setupEchoCommand()
 
 TClasslessInstanceHook2("startServerThread_RegisterDebugCommand", void, "?startServerThread@ServerInstance@@QEAAXXZ")
 {
+#ifdef DEBUG
+    setupRemoveCommand();
+    setupTestEnumCommand();
+    setupTestParamCommand();
+    setupExampleCommand();
+#if false
+    Global<CommandRegistry>->printAll();
+    Schedule::delayRepeat(
+        []() {
+            static bool Switch = true;
+            if (Switch)
+                Global<Level>->runcmd("remove example");
+            else
+                setupExampleCommand();
+            Switch = !Switch;
+        },
+        200, 2);
+#endif // COMMAND_REGISTRY_EXTRA
+#endif // DEBUG
     original(this);
     setupEnumCommand();
     setupEchoCommand();

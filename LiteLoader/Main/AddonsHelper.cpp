@@ -50,6 +50,14 @@ inline bool isManifestFile(std::string const& filename)
     return filename == "manifest.json"|| filename == "pack_manifest.json";
 }
 
+#include <MC/JsonHelpers.hpp>
+inline std::string FixMojangJson(std::string const& content)
+{
+    Json::Value value;
+    JsonHelpers::parseJson(content, value);
+    return JsonHelpers::serialize(value);
+}
+
 std::optional<Addon> parseAddonFromPath(std::filesystem::path addonPath)
 {
     try
@@ -64,9 +72,10 @@ std::optional<Addon> parseAddonFromPath(std::filesystem::path addonPath)
         auto manifestFile = ReadAllFile(manifestPath.u8string());
         if (!manifestFile || manifestFile->empty())
             throw "manifest.json not found!";
-        ReplaceStr(*manifestFile, "\n", " ");
-        ReplaceStr(*manifestFile, "\t", " ");
-        auto manifest = nlohmann::json::parse(*manifestFile, nullptr, true, true);
+
+        std::string content = FixManifest(*manifestFile);
+        
+        auto manifest = nlohmann::json::parse(content, nullptr, true, true);
         auto header = manifest["header"];
         auto uuid = header["uuid"];
         Addon addon;
