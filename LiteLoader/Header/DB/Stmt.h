@@ -137,14 +137,14 @@ public:
     /**
      * @brief Operator, to bind single values.
      * 
-     * @param b The return value of DB::bind
+     * @param b The return value of DB::use
      * @return Stmt& *this
      */
     virtual Stmt& operator,(const BindType& b) = 0;
     /**
      * @brief Operator, to bind a sequence container.
      * 
-     * @param b The return value of DB::bind
+     * @param b The return value of DB::use
      * @return Stmt& *this
      */
     template <typename T>
@@ -159,7 +159,7 @@ public:
     /**
      * @brief Operator, to bind a row.
      * 
-     * @param b The return value of DB::bind
+     * @param b The return value of DB::use
      * @return Stmt& *this
      */
     template <>
@@ -268,57 +268,57 @@ inline void destroy(T* ptr)
     ptr = nullptr;
 }
 
-inline BindType bind(const Any& value, int idx = -1)
+inline BindType use(const Any& value, int idx = -1)
 {
     return BindType{value, std::string(), idx};
 }
-inline BindType bind(const std::string& name, const Any& value)
+inline BindType use(const std::string& name, const Any& value)
 {
     return BindType{value, name};
 }
-inline BindSequenceType<Row> bind(const Row& values)
+inline BindSequenceType<Row> use(const Row& values)
 {
     return BindSequenceType<Row>{values};
 }
 
 
 template <typename T>
-inline BindSequenceType<std::vector<T>> bind(const std::vector<T>& values)
+inline BindSequenceType<std::vector<T>> use(const std::vector<T>& values)
 {
     return BindSequenceType<std::vector<Any>>{to_any_container(values)};
 }
 template <typename T>
-inline BindSequenceType<std::set<T>> bind(const std::set<T>& values)
+inline BindSequenceType<std::set<T>> use(const std::set<T>& values)
 {
     return BindSequenceType<std::set<T>>{to_any_container(values)};
 }
 template <typename T>
-inline BindSequenceType<std::list<T>> bind(const std::list<T>& values)
+inline BindSequenceType<std::list<T>> use(const std::list<T>& values)
 {
     return BindSequenceType<std::list<T>>{to_any_container(values)};
 }
 template <typename T>
-inline BindSequenceType<std::vector<T>> bind(const std::initializer_list<T>& values)
+inline BindSequenceType<std::vector<T>> use(const std::initializer_list<T>& values)
 {
     return BindSequenceType<std::vector<T>>{to_any_container(std::vector<T>(values))};
 }
 template <>
-inline BindSequenceType<std::vector<Any>> bind(const std::vector<Any>& values)
+inline BindSequenceType<std::vector<Any>> use(const std::vector<Any>& values)
 {
     return BindSequenceType<std::vector<Any>>{values};
 }
 template <>
-inline BindSequenceType<std::set<Any>> bind(const std::set<Any>& values)
+inline BindSequenceType<std::set<Any>> use(const std::set<Any>& values)
 {
     return BindSequenceType<std::set<Any>>{values};
 }
 template <>
-inline BindSequenceType<std::list<Any>> bind(const std::list<Any>& values)
+inline BindSequenceType<std::list<Any>> use(const std::list<Any>& values)
 {
     return BindSequenceType<std::list<Any>>{values};
 }
 template <>
-inline BindSequenceType<std::vector<Any>> bind(const std::initializer_list<Any>& values)
+inline BindSequenceType<std::vector<Any>> use(const std::initializer_list<Any>& values)
 {
     return BindSequenceType<std::vector<Any>>{std::vector<Any>(values)};
 }
@@ -326,26 +326,26 @@ inline BindSequenceType<std::vector<Any>> bind(const std::initializer_list<Any>&
 
 // Map
 template <typename T>
-inline BindMapType<std::map<std::string, T>> bind(const std::map<std::string, T>& values)
+inline BindMapType<std::map<std::string, T>> use(const std::map<std::string, T>& values)
 {
     return BindMapType<std::map<std::string, T>>{values};
 }
 template <typename T>
-inline BindMapType<std::unordered_map<std::string, T>> bind(const std::unordered_map<std::string, T>& values)
+inline BindMapType<std::unordered_map<std::string, T>> use(const std::unordered_map<std::string, T>& values)
 {
     return BindMapType<std::unordered_map<std::string, T>>{values};
 }
 template <>
-inline BindMapType<std::map<std::string, Any>> bind(const std::map<std::string, Any>& values)
+inline BindMapType<std::map<std::string, Any>> use(const std::map<std::string, Any>& values)
 {
     return BindMapType<std::map<std::string, Any>>{values};
 }
 template <>
-inline BindMapType<std::unordered_map<std::string, Any>> bind(const std::unordered_map<std::string, Any>& values)
+inline BindMapType<std::unordered_map<std::string, Any>> use(const std::unordered_map<std::string, Any>& values)
 {
     return BindMapType<std::unordered_map<std::string, Any>>{values};
 }
-inline BindMapType<std::map<std::string, Any>> bind(const std::initializer_list<std::pair<std::string, Any>>& values)
+inline BindMapType<std::map<std::string, Any>> use(const std::initializer_list<std::pair<std::string, Any>>& values)
 {
     std::map<std::string, Any> result;
     for (auto& pair : values)

@@ -11,14 +11,17 @@ void Session::setDebugOutput(bool enable)
 {
     debugOutput = enable;
 }
+
 bool Session::changeUser(const std::string& user, const std::string& password)
 {
     throw std::runtime_error("$Core$ Session::changeUser: Not implemented");
 }
+
 bool Session::changeDatabase(const std::string& database)
 {
     throw std::runtime_error("$Core$ Session::changeDatabase: Not implemented");
 }
+
 ResultSet Session::query(const std::string& query)
 {
     bool headerSet = false;
@@ -35,8 +38,13 @@ ResultSet Session::query(const std::string& query)
     });
     return result;
 }
+
 void Session::destroy()
 {
+    if (isOpen())
+    {
+        close();
+    }
     DB::destroy(this);
 }
 
