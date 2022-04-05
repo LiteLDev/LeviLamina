@@ -2,6 +2,20 @@ This is a bug fix update, fix several problems that may cause lag.Please update 
 
 ## [Bug fixes]
 
-- Fix 0tick schedule repeat #324
-- Fix Scoreboard::getScore #229
-- Fix server startup time #322
+- Fix LLSE Hot Management crash (load/reload/unload)
+- Fix loading error of non-ascii filename plugin
+- Fix LLSE setTimeout and setInterval crash
+- Fix LLSE network related crash and deadlock
+- Fix LLSE remote call deadlock
+- Fix LLSE onMobHurt Event, #325
+- Fix runcmd, #309
+- Fix memory leak
+  - Level::executeCommandAs
+  - ProjectileSpawnEvent
+  - Actor::hurtEntity
+  - Spawner::spawnMob
+- Fix AddonsHelper crash
+- Fix AddonsHelper parse error
+- Change Welcome Text
+
+
