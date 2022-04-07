@@ -28,7 +28,7 @@ public:
      * 
      * @param enable Enable or not
      */
-    void setDebugOutput(bool enable);
+    LIAPI void setDebugOutput(bool enable);
     /**
      * @brief Change current user.
      * 
