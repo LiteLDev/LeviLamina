@@ -1217,8 +1217,8 @@ void InitBasicEventListeners()
 
 // Plugin Hot Management
     Event::ScriptPluginManagerEvent::subscribe_ref([](ScriptPluginManagerEvent& ev) {
-        if (!LL::isDebugMode())
-            return false;
+        // if (!LL::isDebugMode())
+        //     return false;
         if (ev.pluginExtention != LLSE_PLUGINS_EXTENSION)
             return true;
 

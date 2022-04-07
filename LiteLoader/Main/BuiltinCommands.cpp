@@ -253,9 +253,8 @@ void LLHelpCommand(CommandOutput& output)
 
 void LLLoadPluginCommand(CommandOutput& output, const string& path)
 {
-    if (!LL::isDebugMode()) {
-        return;
-    }
+    // if (!LL::isDebugMode())
+    //     return;
     if (PluginManager::loadPlugin(path, true))
         output.success("Plugin <" + path + "> loaded successfully.");
     else
@@ -264,10 +263,8 @@ void LLLoadPluginCommand(CommandOutput& output, const string& path)
 
 void LLUnloadPluginCommand(CommandOutput& output, const string& pluginName)
 {
-    if (!LL::isDebugMode())
-    {
-        return;
-    }
+    // if (!LL::isDebugMode())
+    //     return;
     if (PluginManager::unloadPlugin(pluginName, true))
         output.success("Plugin <" + pluginName + "> unloaded successfully.");
     else
@@ -276,10 +273,8 @@ void LLUnloadPluginCommand(CommandOutput& output, const string& pluginName)
 
 void LLReloadPluginCommand(CommandOutput& output, const string& pluginName, bool reloadAll)
 {
-    if (!LL::isDebugMode())
-    {
-        return;
-    }
+    //if (!LL::isDebugMode())
+    //    return;
     if (!reloadAll)
     {
         if (PluginManager::reloadPlugin(pluginName, true))
