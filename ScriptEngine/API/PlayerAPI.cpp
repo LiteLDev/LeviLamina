@@ -590,6 +590,8 @@ Local<Value> PlayerClass::setPermLevel(const Arguments& args)
         int newPerm = args[0].asNumber().toInt32();
         if (newPerm >= 0 || newPerm <= 4)
         {
+            RecordOperation(ENGINE_OWN_DATA()->pluginName, "Set Permission Level",
+                fmt::format("Set Player {} Permission Level as {}.", player->getRealName(), newPerm));
             player->setPermissions((CommandPermissionLevel)newPerm);
             res = true;
         }

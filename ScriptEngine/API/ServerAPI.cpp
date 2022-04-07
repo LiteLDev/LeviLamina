@@ -19,9 +19,13 @@ Local<Value> McClass::setMotd(const Arguments& args)
 
 Local<Value> McClass::crashBDS(const Arguments& args)               //===========???
 {
-    RecordOperation(ENGINE_OWN_DATA()->pluginName, "Crash Server", "Execute mc.crash() to crash server.");
-    throw;
-    return Boolean::newBoolean(true);
+    if (LL::isDebugMode())
+    {
+        RecordOperation(ENGINE_OWN_DATA()->pluginName, "Crash Server", "Execute mc.crash() to crash server.");
+        throw;
+        return Boolean::newBoolean(true);
+    }
+    return Boolean::newBoolean(false);
 }
 
 Local<Value> McClass::setMaxNumPlayers(const Arguments& args)

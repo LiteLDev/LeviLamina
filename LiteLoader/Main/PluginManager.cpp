@@ -131,6 +131,8 @@ std::unordered_map<std::string, LL::Plugin*> LL::PluginManager::getAllPlugins(bo
 
 bool LL::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, bool isHotLoad)
 {
+    if (!LL::isDebugMode())
+        return false;
     try
     {
         filesystem::path path(filesystem::path(str2wstr(pluginFilePath)).lexically_normal());
@@ -244,6 +246,8 @@ bool LL::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
 
 bool LL::PluginManager::unloadPlugin(string pluginName, bool outputResult)
 {
+    if (!LL::isDebugMode())
+        return false;
     try
     {
         LL::Plugin* plugin = getPlugin(pluginName);
@@ -294,6 +298,8 @@ bool LL::PluginManager::unloadPlugin(string pluginName, bool outputResult)
 
 bool LL::PluginManager::reloadPlugin(string pluginName, bool outputResult)
 {
+    if (!LL::isDebugMode())
+        return false;
     try
     {
         LL::Plugin* plugin = getPlugin(pluginName);
@@ -344,6 +350,8 @@ bool LL::PluginManager::reloadPlugin(string pluginName, bool outputResult)
 
 int LL::PluginManager::reloadAllPlugins(bool outputResult)
 {
+    if (!LL::isDebugMode())
+        return false;
     try
     {
         auto plugins = getAllPlugins(true);
@@ -392,6 +400,8 @@ int LL::PluginManager::reloadAllPlugins(bool outputResult)
 
 bool LL::PluginManager::callEventAtHotLoad(std::string pluginName)
 {
+    if (!LL::isDebugMode())
+        return false;
     Schedule::nextTick([pluginName]() {
         Event::ServerStartedEvent().callToPlugin(pluginName);       // ServerStartedEvent
     });
@@ -418,6 +428,8 @@ bool LL::PluginManager::callEventAtHotLoad(std::string pluginName)
 
 bool LL::PluginManager::callEventAtHotUnload(std::string pluginName)
 {
+    if (!LL::isDebugMode())
+        return false;
     auto players = Level::getAllPlayers();
     for (auto& pl : players)                        // PlayerLeftEvent
     {
