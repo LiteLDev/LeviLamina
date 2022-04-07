@@ -24,8 +24,6 @@ SOFTWARE.
 (function(){
     if(typeof require != "undefined") {
         log('require already exist');
-        // if require already exist, just exit IIFE
-        return;
     }
 
     let coreModules = new Map([]);
@@ -392,7 +390,14 @@ For Compatibility
 */
 globalThis.file = File;
 globalThis.lxl = ll;
-DirectionAngle.prototype.valueOf = function()
-{
-    return this.toFacing();
-}
+DirectionAngle.prototype.valueOf = DirectionAngle.prototype.toFacing
+globalThis.LXL_Block = LLSE_Block
+globalThis.LXL_BlockEntity = LLSE_BlockEntity
+globalThis.LXL_Container = LLSE_Container
+globalThis.LXL_Device = LLSE_Device
+globalThis.LXL_Entity = LLSE_Entity
+globalThis.LXL_SimpleForm = LLSE_SimpleForm
+globalThis.LXL_CustomForm = LLSE_CustomForm
+globalThis.LXL_Item = LLSE_Item
+globalThis.LXL_Player = LLSE_Player
+globalThis.LXL_Objective = LLSE_Objective
