@@ -250,6 +250,10 @@ public:
      * @param v The byte array value
      */
     LIAPI Any(const ByteArray& v);
+    /// Copy constructor
+    LIAPI Any(const Any& v);
+    /// Copy assignment operator
+    LIAPI Any& operator=(const Any& v);
 
     /// Destructor
     LIAPI ~Any();

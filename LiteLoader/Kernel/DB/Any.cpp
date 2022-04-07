@@ -108,6 +108,37 @@ Any::Any(const ByteArray& v)
     type = Type::Blob;
     value.blob = new ByteArray(v);
 }
+Any::Any(const Any& v)
+{
+    *this = v;
+}
+
+Any& Any::operator=(const Any& v)
+{
+    if (this == &v)
+        return *this;
+    type = v.type;
+    value = v.value;
+    switch (type)
+    {
+        case Type::String:
+            value.string = new std::string(*v.value.string);
+            break;
+        case Type::Date:
+            value.date = new Date(*v.value.date);
+            break;
+        case Type::Time:
+            value.time = new Time(*v.value.time);
+            break;
+        case Type::DateTime:
+            value.datetime = new DateTime(*v.value.datetime);
+            break;
+        case Type::Blob:
+            value.blob = new ByteArray(*v.value.blob);
+            break;
+    }
+    return *this;
+}
 
 Any::~Any()
 {
