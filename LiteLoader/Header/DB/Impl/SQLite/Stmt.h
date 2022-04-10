@@ -6,6 +6,8 @@ struct sqlite3_stmt;
 namespace DB
 {
 
+class SQLiteSession;
+
 class SQLiteStmt : public Stmt
 {
 
@@ -34,6 +36,7 @@ public:
     Stmt& operator,(const BindType& b);
 
     LIAPI static Stmt& create(sqlite3* db, const std::string& sql);
+    LIAPI static Stmt& create(SQLiteSession& sess, const std::string& sql);
     LIAPI static Stmt& create(sqlite3_stmt* stmt);
 };
 

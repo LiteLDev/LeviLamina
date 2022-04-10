@@ -1,8 +1,14 @@
 #pragma once
 #include "RowSet.h"
 
+#define IF_ENDBG if (debugOutput)
+
+class Logger;
+
 namespace DB
 {
+
+extern Logger logger;
 
 /**
  * @brief Friend function to convert a set of result to T.
@@ -63,10 +69,17 @@ class Stmt
 {
 
 protected:
+    bool debugOutput = false;
     ResultSet* results = nullptr;
 
 public:
     virtual ~Stmt();
+    /**
+     * @brief Turn on/off debug output.
+     *
+     * @param enable Enable or not
+     */
+    LIAPI void setDebugOutput(bool enable);
     /**
      * @brief Bind a value to a statement parameter.
      * 

@@ -1,4 +1,6 @@
 #include <DB/Impl/SQLite/Stmt.h>
+#include <DB/Impl/SQLite/Session.h>
+#include <LoggerAPI.h>
 #include <third-party/sqlite3/sqlite3.h>
 
 namespace DB
@@ -20,6 +22,7 @@ int SQLiteStmt::getNextParamIndex()
             result++;
         }
     }
+    IF_ENDBG logger.debug("SQLiteStmt::getNextParamIndex: The next param index is {}", result + 1);
     return result + 1;
 }
 
@@ -29,7 +32,9 @@ void SQLiteStmt::process()
     int colCnt = sqlite3_column_count(stmt);
     for (int i = 0; i < colCnt; i++)
     {
-        header.add(sqlite3_column_name(stmt, i));
+        auto name = sqlite3_column_name(stmt, i);
+        IF_ENDBG logger.debug("SQLiteStmt::process: Column Name {}: {}", i, name);
+        header.add(name);
     }
     auto result = new ResultSet(header);
     while (true)
@@ -193,7 +198,7 @@ bool SQLiteStmt::isExecuted()
     return sqlite3_stmt_status(stmt, SQLITE_STMTSTATUS_RUN, 0);
 }
 
-Stmt &SQLiteStmt::operator,(const BindType&b)
+Stmt &SQLiteStmt::operator,(const BindType& b)
 {
     if (b.name.empty() && b.idx == -1)
     {
@@ -225,6 +230,13 @@ Stmt& SQLiteStmt::create(sqlite3* db, const std::string& sql)
     SQLiteStmt* result = new SQLiteStmt(stmt);
     result->onHeap = true;
     return *result;
+}
+Stmt& SQLiteStmt::create(SQLiteSession& sess, const std::string& sql)
+{
+    auto& stmt = create(sess.conn, sql);
+    stmt.setDebugOutput(sess.debugOutput);
+    if (sess.debugOutput) logger.debug("SQLiteStmt::create: Prepared > " + sql);
+    return stmt;
 }
 Stmt& SQLiteStmt::create(sqlite3_stmt* stmt)
 {

@@ -25,7 +25,7 @@ SQLiteSession::~SQLiteSession()
 void SQLiteSession::open(const ConnParams& params)
 {
     // see https://www.sqlite.org/c3ref/open.html
-    auto p = params;
+    auto p = params; // Copy to avoid modifying the origin.
     if (!p.getRaw().empty())
     {
         auto res = sqlite3_open_v2(p.getRaw().c_str(), &conn, SQLITE_OPEN_URI, nullptr);
@@ -38,7 +38,7 @@ void SQLiteSession::open(const ConnParams& params)
     if (path.empty())
     {
         path = ":memory:";
-        //throw std::invalid_argument("SQLiteSession::SQLiteSession: No path specified!");
+        // throw std::invalid_argument("SQLiteSession::SQLiteSession: No path specified!");
     }
     auto flags = 0;
     if (p.get<bool>({"create", "create_if_not_exist", "createifnotexist"}, true, false))
@@ -86,18 +86,12 @@ void SQLiteSession::open(const ConnParams& params)
     {
         throw std::runtime_error("SQLiteSession::open: Failed to open database: " + std::string(sqlite3_errmsg(conn)));
     }
-    if (debugOutput)
-    {
-        logger.info("SQLiteSession::open: Opened database: " + std::string(path));
-    }
+    IF_ENDBG logger.debug("SQLiteSession::open: Opened database: " + std::string(path));
 }
 
 bool SQLiteSession::execute(const std::string& query)
 {
-    if (debugOutput)
-    {
-        logger.info("SQLiteSession::execute: Executing > " + query);
-    }
+    IF_ENDBG logger.debug("SQLiteSession::execute: Executing > " + query);
     auto res = sqlite3_exec(conn, query.c_str(), nullptr, nullptr, nullptr);
     if (res != SQLITE_OK)
     {
@@ -108,12 +102,10 @@ bool SQLiteSession::execute(const std::string& query)
 
 void SQLiteSession::query(const std::string& query, std::function<bool(const Row&)> callback)
 {
-    if (debugOutput)
-    {
-        logger.info("SQLiteSession::query: Querying > " + query);
-    }
+    IF_ENDBG logger.debug("SQLiteSession::query: Querying > " + query);
     sqlite3_stmt* stmt = nullptr;
     auto res = sqlite3_prepare_v2(conn, query.c_str(), -1, &stmt, nullptr);
+    IF_ENDBG logger.debug("SQLiteSession::query: Prepared > " + query);
     if (res != SQLITE_OK)
     {
         sqlite3_finalize(stmt);
@@ -123,7 +115,9 @@ void SQLiteSession::query(const std::string& query, std::function<bool(const Row
     RowHeader header;
     for (int i = 0; i < cols; i++)
     {
-        header.add(sqlite3_column_name(stmt, i));
+        auto name = sqlite3_column_name(stmt, i);
+        IF_ENDBG logger.debug("SQLiteSession::query: Column Name {}: {}", i, name);
+        header.add(name);
     }
     while (true)
     {
@@ -182,15 +176,13 @@ void SQLiteSession::close()
     {
         lastStmt->close();
         lastStmt = nullptr;
+        IF_ENDBG logger.debug("SQLiteSession::close: Closed the last statement");
     }
     if (conn)
     {
         sqlite3_close_v2(conn);
         conn = nullptr;
-        if (debugOutput)
-        {
-            logger.info("SQLiteSession::close: Closed database");
-        }
+        IF_ENDBG logger.debug("SQLiteSession::close: Closed database");
     }
 }
 
@@ -210,6 +202,7 @@ Stmt& SQLiteSession::operator<<(const std::string& query)
     {
         lastStmt->close();
         lastStmt = 0;
+        IF_ENDBG logger.debug("SQLiteSession::operator<<: Closed the last statement");
     }
     auto& stmt = prepare(query);
     lastStmt = &stmt;

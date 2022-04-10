@@ -7,6 +7,11 @@ Stmt::~Stmt()
 {
 }
 
+void Stmt::setDebugOutput(bool enable)
+{
+    debugOutput = enable;
+}
+
 ResultSet Stmt::getResults() 
 {
     if (!results)

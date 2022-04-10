@@ -36,6 +36,14 @@ ResultSet Session::query(const std::string& query)
         result.push_back(row);
         return true;
     });
+    IF_ENDBG
+    {
+        logger.debug("Session::query: Results >");
+        for (auto& str : SplitStrWithPattern(result.toTableString(), "\n"))
+        {
+            logger.debug(str);
+        }
+    }
     return result;
 }
 

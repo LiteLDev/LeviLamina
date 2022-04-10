@@ -24,6 +24,8 @@ public:
     DBType getType();
 
     Stmt& operator<<(const std::string& query);
+
+    friend class SQLiteStmt;
 };
 
 } // namespace DB
