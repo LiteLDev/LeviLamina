@@ -222,7 +222,7 @@ public:
         }
         else
         {
-            throw std::runtime_error("$Core$ DB::Stmt::operator,: No results to store");
+            throw std::runtime_error("DB::Stmt::operator,: No results to store");
         }
         return *this;
     }
@@ -235,7 +235,7 @@ public:
         }
         else
         {
-            throw std::runtime_error("$Core$ DB::Stmt::operator,: No results to store");
+            throw std::runtime_error("DB::Stmt::operator,: No results to store");
         }
         return *this;
     }
@@ -250,12 +250,12 @@ public:
             }
             else
             {
-                throw std::runtime_error("$Core$ DB::Stmt::operator,: The result set is empty");
+                throw std::runtime_error("DB::Stmt::operator,: The result set is empty");
             }
         }
         else
         {
-            throw std::runtime_error("$Core$ DB::Stmt::operator,: No results to store");
+            throw std::runtime_error("DB::Stmt::operator,: No results to store");
         }
         return *this;
     }

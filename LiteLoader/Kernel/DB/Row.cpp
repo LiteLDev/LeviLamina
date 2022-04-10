@@ -82,7 +82,7 @@ Row::Row(const std::initializer_list<Any>& list, RowHeader& header)
 {
     if (list.size() != header.size())
     {
-        throw std::invalid_argument("$Core$ Row::Row: row and header mismatch");
+        throw std::invalid_argument("Row::Row: row and header mismatch");
     }
 }
 Row::Row(std::vector<Any>&& list, RowHeader& header)
@@ -92,7 +92,7 @@ Row::Row(std::vector<Any>&& list, RowHeader& header)
     if (size() != header.size())
     {
         list = std::move(*this); // Restore
-        throw std::invalid_argument("$Core$ Row::Row: row and header mismatch");
+        throw std::invalid_argument("Row::Row: row and header mismatch");
     }
 }
 Row::Row(const std::vector<Any>& list, RowHeader& header)
@@ -101,7 +101,7 @@ Row::Row(const std::vector<Any>& list, RowHeader& header)
 {
     if (list.size() != header.size())
     {
-        throw std::invalid_argument("$Core$ Row::Row: row and header mismatch");
+        throw std::invalid_argument("Row::Row: row and header mismatch");
     }
 }
 Row::Row(const std::initializer_list<std::pair<std::string, Any>>& list, RowHeader& header)

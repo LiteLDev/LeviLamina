@@ -16,56 +16,60 @@ SQLiteSession::SQLiteSession(const ConnParams& params)
 
 SQLiteSession::~SQLiteSession()
 {
-    close();
+    if (isOpen())
+    {
+        close();
+    }
 }
 
 void SQLiteSession::open(const ConnParams& params)
 {
     // see https://www.sqlite.org/c3ref/open.html
-    if (params.count("uri"))
+    auto p = params;
+    if (!p.getRaw().empty())
     {
-        auto res = sqlite3_open_v2(params.at("uri").get<std::string>().c_str(), &conn, SQLITE_OPEN_URI, nullptr);
+        auto res = sqlite3_open_v2(p.getRaw().c_str(), &conn, SQLITE_OPEN_URI, nullptr);
         if (res != SQLITE_OK)
         {
-            throw std::runtime_error("$Core$ SQLiteSession::SQLiteSession: Failed to open database: " + std::string(sqlite3_errmsg(conn)));
+            throw std::runtime_error("SQLiteSession::SQLiteSession: Failed to open database: " + std::string(sqlite3_errmsg(conn)));
         }
     }
-    if (!params.count("path"))
+    auto path = p.getPath();
+    if (path.empty())
     {
-        throw std::invalid_argument("$SQLite$ SQLiteSession::SQLiteSession: No path specified!");
+        path = ":memory:";
+        //throw std::invalid_argument("SQLiteSession::SQLiteSession: No path specified!");
     }
-    // If path == ":memory:", use in-memory database
-    auto path = params.at("path").get<std::string>().c_str();
     auto flags = 0;
-    if (params.count("create") && params.at("create").get<bool>())
+    if (p.get<bool>({"create", "create_if_not_exist", "createifnotexist"}, true, false))
     {
         flags |= SQLITE_OPEN_CREATE;
     }
-    if (params.count("readonly") && params.at("readonly").get<bool>())
+    if (p.get<bool>({"readonly", "readonly_mode", "readonlymode", "r"}, false, false))
     {
         flags |= SQLITE_OPEN_READONLY;
     }
-    if (params.count("readwrite") && params.at("readwrite").get<bool>())
+    if (p.get<bool>({"readwrite", "readwrite_mode", "readwritemode", "read_write", "rw"}, false, false))
     {
         flags |= SQLITE_OPEN_READWRITE;
     }
-    if (params.count("nomutex") && params.at("nomutex").get<bool>())
-    {
-        flags |= SQLITE_OPEN_NOMUTEX;
-    }
-    if (params.count("fullmutex") && params.at("fullmutex").get<bool>())
-    {
-        flags |= SQLITE_OPEN_FULLMUTEX;
-    }
-    if (params.count("sharedcache") && params.at("sharedcache").get<bool>())
-    {
-        flags |= SQLITE_OPEN_SHAREDCACHE;
-    }
-    if (params.count("privatecache") && params.at("privatecache").get<bool>())
+    if (p.get<bool>({"privatecache", "private_cache"}, false, false))
     {
         flags |= SQLITE_OPEN_PRIVATECACHE;
     }
-    if (params.count("nofollow") && params.at("nofollow").get<bool>())
+    if (p.get<bool>({"sharedcache", "shared_cache"}, false, false))
+    {
+        flags |= SQLITE_OPEN_SHAREDCACHE;
+    }
+    if (p.get<bool>({"nomutex", "no_mutex"}, false, false))
+    {
+        flags |= SQLITE_OPEN_NOMUTEX;
+    }
+    if (p.get<bool>({"fullmutex", "full_mutex"}, false, false))
+    {
+        flags |= SQLITE_OPEN_FULLMUTEX;
+    }
+    if (p.get<bool>({"nofollow", "no_follow"}, false, false))
     {
         flags |= SQLITE_OPEN_NOFOLLOW;
     }
@@ -77,14 +81,14 @@ void SQLiteSession::open(const ConnParams& params)
     {
         flags |= SQLITE_OPEN_CREATE;
     }
-    auto res = sqlite3_open_v2(path, &conn, flags, nullptr);
+    auto res = sqlite3_open_v2(path.c_str(), &conn, flags, nullptr);
     if (res != SQLITE_OK)
     {
-        throw std::runtime_error("$SQLite$ SQLiteSession::open: Failed to open database: " + std::string(sqlite3_errmsg(conn)));
+        throw std::runtime_error("SQLiteSession::open: Failed to open database: " + std::string(sqlite3_errmsg(conn)));
     }
     if (debugOutput)
     {
-        logger.info("$SQLite$ SQLiteSession::open: Opened database: " + std::string(path));
+        logger.info("SQLiteSession::open: Opened database: " + std::string(path));
     }
 }
 
@@ -92,7 +96,7 @@ bool SQLiteSession::execute(const std::string& query)
 {
     if (debugOutput)
     {
-        logger.info("$SQLite$ SQLiteSession::execute: Executing | " + query);
+        logger.info("SQLiteSession::execute: Executing > " + query);
     }
     auto res = sqlite3_exec(conn, query.c_str(), nullptr, nullptr, nullptr);
     if (res != SQLITE_OK)
@@ -106,14 +110,14 @@ void SQLiteSession::query(const std::string& query, std::function<bool(const Row
 {
     if (debugOutput)
     {
-        logger.info("$SQLite$ SQLiteSession::query: Querying | " + query);
+        logger.info("SQLiteSession::query: Querying > " + query);
     }
     sqlite3_stmt* stmt = nullptr;
     auto res = sqlite3_prepare_v2(conn, query.c_str(), -1, &stmt, nullptr);
     if (res != SQLITE_OK)
     {
         sqlite3_finalize(stmt);
-        throw std::runtime_error("$SQLite$ SQLiteSession::query: Failed to prepare query: " + std::string(sqlite3_errmsg(conn)));
+        throw std::runtime_error("SQLiteSession::query: Failed to prepare query: " + std::string(sqlite3_errmsg(conn)));
     }
     int cols = sqlite3_column_count(stmt);
     RowHeader header;
@@ -156,7 +160,7 @@ void SQLiteSession::query(const std::string& query, std::function<bool(const Row
                     break;
                 default:
                     sqlite3_finalize(stmt);
-                    throw std::runtime_error("$SQLite$ SQLiteSession::query: Unknown column type!");
+                    throw std::runtime_error("SQLiteSession::query: Unknown column type!");
             }
         }
         if (!callback(row))
@@ -174,14 +178,19 @@ Stmt& SQLiteSession::prepare(const std::string& query)
 
 void SQLiteSession::close()
 {
-    if (conn)
-    {
-        sqlite3_close_v2(conn);
-    }
     if (lastStmt)
     {
         lastStmt->close();
-        lastStmt = 0;
+        lastStmt = nullptr;
+    }
+    if (conn)
+    {
+        sqlite3_close_v2(conn);
+        conn = nullptr;
+        if (debugOutput)
+        {
+            logger.info("SQLiteSession::close: Closed database");
+        }
     }
 }
 

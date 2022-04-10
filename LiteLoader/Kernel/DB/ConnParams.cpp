@@ -15,7 +15,7 @@ ConnParams::ConnParams(const std::initializer_list<Any>& list)
         {
             if (item.is_string())
             {
-                throw std::invalid_argument("$Core$ ConnParams::ConnParams: key must be string");
+                throw std::invalid_argument("ConnParams::ConnParams: Key must be string");
             }
             keyName = item.get<std::string>();
             key = false;

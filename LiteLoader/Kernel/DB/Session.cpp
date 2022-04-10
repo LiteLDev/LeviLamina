@@ -14,12 +14,12 @@ void Session::setDebugOutput(bool enable)
 
 bool Session::changeUser(const std::string& user, const std::string& password)
 {
-    throw std::runtime_error("$Core$ Session::changeUser: Not implemented");
+    throw std::runtime_error("Session::changeUser: Not implemented");
 }
 
 bool Session::changeDatabase(const std::string& database)
 {
-    throw std::runtime_error("$Core$ Session::changeDatabase: Not implemented");
+    throw std::runtime_error("Session::changeDatabase: Not implemented");
 }
 
 ResultSet Session::query(const std::string& query)
@@ -63,7 +63,7 @@ Session& Session::create(const ConnParams& params)
     }
     else
     {
-        throw std::runtime_error("$Core$ Session::create: Unknown/Unsupported database type");
+        throw std::runtime_error("Session::create: Unknown/Unsupported database type");
     }
 }
 Session& Session::create(DBType type)
@@ -73,7 +73,7 @@ Session& Session::create(DBType type)
         case DBType::SQLite:
             return *new SQLiteSession();
         default:
-            throw std::runtime_error("$Core$ Session::create: Unknown/Unsupported database type");
+            throw std::runtime_error("Session::create: Unknown/Unsupported database type");
     }
 }
 Session& Session::create(DBType type, const ConnParams& params)
@@ -83,7 +83,7 @@ Session& Session::create(DBType type, const ConnParams& params)
         case DBType::SQLite:
             return *new SQLiteSession(params);
         default:
-            throw std::runtime_error("$Core$ Session::create: Unknown/Unsupported database type");
+            throw std::runtime_error("Session::create: Unknown/Unsupported database type");
     }
 }
 Session& Session::create(DBType type, const std::string& host, uint16_t port, const std::string& user, const std::string& password, const std::string& database)
@@ -99,7 +99,7 @@ Session& Session::create(DBType type, const std::string& host, uint16_t port, co
         case DBType::SQLite:
             return *new SQLiteSession(params);
         default:
-            throw std::runtime_error("$Core$ Session::create: Unknown/Unsupported database type");
+            throw std::runtime_error("Session::create: Unknown/Unsupported database type");
     }
 }
 Session& Session::create(DBType type, const std::string& path)
@@ -109,7 +109,7 @@ Session& Session::create(DBType type, const std::string& path)
         case DBType::SQLite:
             return *new SQLiteSession(path);
         default:
-            throw std::runtime_error("$Core$ Session::create: Unknown/Unsupported database type");
+            throw std::runtime_error("Session::create: Unknown/Unsupported database type");
     }
 }
 

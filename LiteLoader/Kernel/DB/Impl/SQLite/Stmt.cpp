@@ -68,7 +68,7 @@ void SQLiteStmt::process()
                 default:
                     delete result;
                     result = 0;
-                    throw std::runtime_error("$SQLite$ SQLiteSession::query: Unknown column type!");
+                    throw std::runtime_error("SQLiteSession::query: Unknown column type!");
             }
         }
         result->push_back(row);
@@ -88,11 +88,11 @@ Stmt& SQLiteStmt::bind(const Any& value, int index)
 {
     if (index < 0 || index > totalParamsCount)
     {
-        throw std::invalid_argument("$SQLite$ SQLiteStmt::bind: Invalid parameter `index`");
+        throw std::invalid_argument("SQLiteStmt::bind: Invalid parameter `index`");
     }
     if (getUnboundParamsCount() == 0)
     {
-        throw std::runtime_error("$SQLite$ SQLiteStmt::bind: All the parameters are already bound");
+        throw std::runtime_error("SQLiteStmt::bind: All the parameters are already bound");
     }
     int res = SQLITE_OK;
     auto type = value.type;
@@ -132,11 +132,11 @@ Stmt& SQLiteStmt::bind(const Any& value, int index)
             res = sqlite3_bind_blob(stmt, index, value.get<ByteArray>().data(), (int)value.get<ByteArray>().size(), SQLITE_TRANSIENT);
             break;
         default:
-            throw std::runtime_error("$SQLite$ SQLiteStmt::bind: Unsupported type");
+            throw std::runtime_error("SQLiteStmt::bind: Unsupported type");
     }
     if (res != SQLITE_OK)
     {
-        throw std::runtime_error("$SQLite$ SQLiteStmt::bind: Failed to bind " + Any::type2str(type) + " to index " + std::to_string(index));
+        throw std::runtime_error("SQLiteStmt::bind: Failed to bind " + Any::type2str(type) + " to index " + std::to_string(index));
     }
     boundIndexes.push_back(index);
     if (getUnboundParamsCount() == 0)
@@ -209,7 +209,7 @@ Stmt &SQLiteStmt::operator,(const BindType&b)
     }
     else
     {
-        throw std::invalid_argument("$SQLite$ SQLiteStmt::operator,: Parameter `b`(const BindType&) is invalid");
+        throw std::invalid_argument("SQLiteStmt::operator,: Parameter `b`(const BindType&) is invalid");
     }
     return *this;
 }
@@ -220,7 +220,7 @@ Stmt& SQLiteStmt::create(sqlite3* db, const std::string& sql)
     int res = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
     if (res != SQLITE_OK)
     {
-        throw std::runtime_error("$SQLite$ SQLiteStmt::create: Failed to prepare statement: " + std::string(sqlite3_errmsg(db)));
+        throw std::runtime_error("SQLiteStmt::create: Failed to prepare statement: " + std::string(sqlite3_errmsg(db)));
     }
     SQLiteStmt* result = new SQLiteStmt(stmt);
     result->onHeap = true;
