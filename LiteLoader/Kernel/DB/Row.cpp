@@ -15,61 +15,68 @@ RowHeader getRowHeader(std::initializer_list<std::pair<std::string, Any>> list)
 }
 
 RowHeader::RowHeader(const std::initializer_list<std::string>& list)
+    : std::vector<std::string>(list)
 {
-    for (auto& name : list)
-    {
-        (*this)[name] = (int)size() - 1;
-    }
 }
 
-int RowHeader::add(const std::string& name)
+size_t RowHeader::add(const std::string& name)
 {
-    return (*this)[name];
+    push_back(name);
+    return size() - 1;
 }
 
-bool RowHeader::contains(const std::string& name) const
+bool RowHeader::contains(const std::string& name)
 {
-    return find(name) != std::unordered_map<std::string, int>::end();
+    return std::find(begin(), end(), name) != std::vector<std::string>::end();
 }
 
 void RowHeader::remove(const std::string& name)
 {
-    auto i = at(name);
-    erase(name);
-    for (auto& [k, v] : *this) {
-        if (v > i) {
-            v--;
-        }
-    }
+    auto it = std::find(begin(), end(), name);
+    if (it != end())
+        erase(it);
 }
 
-int& RowHeader::at(const std::string& name)
+size_t RowHeader::at(const std::string& name)
 {
-    return std::unordered_map<std::string, int>::at(name);
+    for (size_t i = 0; i < size(); ++i)
+    {
+        if (at(i) == name)
+            return i;
+    }
+    throw std::out_of_range("Column " + name + " is not found");
+}
+std::string& RowHeader::at(size_t index)
+{
+    return std::vector<std::string>::at(index);
 }
 
 size_t RowHeader::size() const
 {
-    return std::unordered_map<std::string, int>::size();
+    return std::vector<std::string>::size();
 }
 
-std::unordered_map<std::string, int>::iterator RowHeader::begin()
+std::vector<std::string>::iterator RowHeader::begin()
 {
-    return std::unordered_map<std::string, int>::begin();
+    return std::vector<std::string>::begin();
 }
 
-std::unordered_map<std::string, int>::iterator RowHeader::end()
+std::vector<std::string>::iterator RowHeader::end()
 {
-    return std::unordered_map<std::string, int>::end();
+    return std::vector<std::string>::end();
 }
 
-int& RowHeader::operator[](const std::string& name)
+size_t RowHeader::operator[](const std::string& name)
 {
-    if (!count(name))
+    if (contains(name))
     {
-        return std::unordered_map<std::string, int>::operator[](name) = (int)size() - 1;
+        return at(name);
     }
-    return std::unordered_map<std::string, int>::operator[](name);
+    return add(name);
+}
+std::string& RowHeader::operator[](size_t index)
+{
+    return at(index);
 }
 
 Row::Row(RowHeader& header)
@@ -129,12 +136,12 @@ Row::Row(const std::initializer_list<Any>& list)
 Row::Row(Row&& row) noexcept
     : header(row.header)
 {
-    this->swap(row);
+    *this = std::move(row);
 }
 Row::Row(const Row& row)
     : header(row.header)
 {
-    this->assign(row.begin(), row.end());
+    *this = row;
 }
 
 Row& Row::operator=(Row&& row) noexcept
@@ -158,15 +165,28 @@ Any& Row::operator[](const std::string& name)
     resize((size_t)idx + 1, Any());
     return std::vector<Any>::at(idx);
 }
+Any& Row::operator[](size_t idx)
+{
+    if (idx < size())
+        return std::vector<Any>::at(idx);
+    resize((size_t)idx + 1, Any());
+    return std::vector<Any>::at(idx);
+}
+
 Any& Row::at(const std::string& name)
 {
     return std::vector<Any>::at(header.at(name));
 }
+Any& Row::at(size_t idx)
+{
+    return std::vector<Any>::at(idx);
+}
+
 void Row::forEach(std::function<bool(const std::string&, Any&)> cb)
 {
-    for (auto& pair : this->header)
+    for (auto& col : this->header)
     {
-        if (!cb(pair.first, this->at(pair.first))) break;
+        if (!cb(col, this->at(col))) break;
     }
 }
 

@@ -10,7 +10,7 @@ namespace DB
  * @brief The header of a row
  * 
  */
-class RowHeader : private std::unordered_map<std::string, int>
+class RowHeader : private std::vector<std::string>
 {
 public:
     /**
@@ -34,14 +34,14 @@ public:
      * @param  name The name of the column
      * @return int The index of the column
      */
-    LIAPI int add(const std::string& name);
+    LIAPI size_t add(const std::string& name);
     /**
      * @brief Get whether the header contains a column
      * 
      * @param  name The name of the column
      * @return true The column exists
      */
-    LIAPI bool contains(const std::string& name) const;
+    LIAPI bool contains(const std::string& name);
     /**
      * @brief Remove a column from the header
      * 
@@ -58,22 +58,30 @@ public:
      * @brief Get the index of a column
      * 
      * @param  name The name of the column
-     * @return int The index of the column
+     * @return int  The index of the column
      * @throws std::out_of_range If the column does not exist
      */
-    LIAPI int& at(const std::string& name);
+    LIAPI size_t at(const std::string& name);
+    /**
+     * @brief Get the index of a column
+     * 
+     * @param  index        The index of the column
+     * @return std::string& The name of the column
+     * @throws std::out_of_range If the column does not exist
+     */
+    LIAPI std::string& at(size_t index);
     /**
      * @brief Get the iterator to the first element
      * 
      * @return std::unordered_map<std::string, int>::iterator The iterator
      */
-    LIAPI std::unordered_map<std::string, int>::iterator begin();
+    LIAPI std::vector<std::string>::iterator begin();
     /**
      * @brief Get the iterator to the last element
      * 
      * @return std::unordered_map<std::string, int>::iterator The iterator
      */
-    LIAPI std::unordered_map<std::string, int>::iterator end();
+    LIAPI std::vector<std::string>::iterator end();
 
     /**
      * @brief Get the index of a column
@@ -82,7 +90,14 @@ public:
      * @return int The index of the column
      * @note   It will create the column(= add) if it does not exist
      */
-    LIAPI int& operator[](const std::string& name);
+    LIAPI size_t operator[](const std::string& name);
+    /**
+     * @brief Get the name of a column
+     * 
+     * @param  index The index of the column
+     * @return std::string& The name of the column
+     */
+    LIAPI std::string& operator[](size_t index);
 
     /// Move assignment operator
     RowHeader& operator=(RowHeader&& other) noexcept = default;
@@ -184,11 +199,27 @@ public:
     /**
      * @brief Get the value of a column
      * 
+     * @param index  The index of the column
+     * @return Any&  The value of the column
+     * @note It will create a new Any object if the column doesn't exist
+     */
+    LIAPI Any& operator[](size_t index);
+    /**
+     * @brief Get the value of a column
+     * 
      * @param column The name of the column
      * @return Any&  The value of the column
      * @throw std::out_of_range If the column does not exist
      */
     LIAPI Any& at(const std::string& column);
+    /**
+     * @brief Get the value of a column
+     * 
+     * @param index  The index of the column
+     * @return Any&  The value of the column
+     * @throw std::out_of_range If the column does not exist
+     */
+    LIAPI Any& at(size_t index);
     /**
      * @brief Traverse the row
      * 
