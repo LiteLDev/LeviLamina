@@ -338,6 +338,7 @@
     </ClCompile>
     <ClCompile Include="Kernel\RemoteCallAPI.cpp">
       <Filter>Kernel</Filter>
+    </ClCompile>
     <ClCompile Include="Kernel\DB\Row.cpp">
       <Filter>Kernel\DB</Filter>
     </ClCompile>
@@ -723,6 +724,7 @@
     </ClInclude>
     <ClInclude Include="Header\RemoteCallAPI.h">
       <Filter>Header</Filter>
+    </ClInclude>
     <ClInclude Include="Header\DB\RowSet.h">
       <Filter>Header\DB</Filter>
     </ClInclude>
