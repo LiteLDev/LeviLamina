@@ -86,17 +86,17 @@ extern std::unordered_map<CommandOrigin const*, string*> resultOfOrigin;
 TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z",
                        class CommandOrigin const& origin, class CommandOutput const& output)
 {
+    std::stringbuf tmpBuf;
+    auto oldBuf = std::cout.rdbuf();
+    std::cout.rdbuf(&tmpBuf);
+    auto rv = original(this, origin, output);
+    std::cout.rdbuf(oldBuf);
+
     auto it = resultOfOrigin.find(&origin);
-    if (it == resultOfOrigin.end())
+    if (it == resultOfOrigin.end() && !it->second /*&& !it->second->empty()*/)
     {
         auto& log = output.getSuccessCount() > 0 ? serverLogger.info : serverLogger.error;
-        std::stringbuf sbuf;
-        auto oBuf = std::cout.rdbuf();
-        std::cout.rdbuf(&sbuf);
-        auto rv = original(this, origin, output);
-        std::cout.rdbuf(oBuf);
-        auto str = sbuf.str();
-        std::istringstream iss(str);
+        std::istringstream iss(tmpBuf.str());
         string line;
         while (getline(iss, line))
         {
@@ -107,14 +107,10 @@ TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin
         }
         return rv;
     }
-    std::stringbuf sbuf;
-    auto oBuf = std::cout.rdbuf();
-    std::cout.rdbuf(&sbuf);
-    auto rv = original(this, origin, output);
-    std::cout.rdbuf(oBuf);
-    it->second->assign(sbuf.str());
+    it->second->assign(tmpBuf.str());
     while (it->second->size() && (it->second->back() == '\n' || it->second->back() == '\r'))
         it->second->pop_back();
+    it->second = nullptr;
     resultOfOrigin.erase(it);
     return rv;
 }
