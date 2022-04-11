@@ -95,6 +95,7 @@ public:
         unsigned char Perm;
         static void* fake_vtbl[26];
 
+        [[deprecated]]
         ServerCommandOrigin()
         {
             if (fake_vtbl[1] == nullptr) {
@@ -103,7 +104,7 @@ public:
             }
             myVTBL = fake_vtbl + 1;
             Name = "Server";
-            Perm = 5;
+            Perm = 4;
             lvl = Global<ServerLevel>;
         }
     };

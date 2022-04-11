@@ -18,7 +18,7 @@
 //////////////////// Class Definition ////////////////////
 
 ClassDefine<EntityClass> EntityClassBuilder =
-    defineClass<EntityClass>("LXL_Entity")
+    defineClass<EntityClass>("LLSE_Entity")
         .constructor(nullptr)
         .instanceFunction("getRawPtr", &EntityClass::getRawPtr)
 

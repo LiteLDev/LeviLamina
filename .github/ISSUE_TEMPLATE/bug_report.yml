@@ -20,6 +20,7 @@ body:
     options:
       - Core 核心
       - ScriptEngine 脚本引擎
+      - AddonsHelper
       - SymDB2
   validations:
     required: true

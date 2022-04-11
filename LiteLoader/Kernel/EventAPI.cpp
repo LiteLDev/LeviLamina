@@ -895,7 +895,6 @@ TInstanceHook(bool, "?useOn@SeedItemComponentLegacy@@QEAA_NAEAVItemStack@@AEAVAc
     return original(this, a2, a3, a4, a5, a6);
 }
 
-
 /////////////////// PlayerOpenContainer ///////////////////
 TClasslessInstanceHook(__int64, "?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z", void* a2)
 {
@@ -1062,11 +1061,27 @@ TInstanceHook(bool, "?canOpenContainerScreen@Player@@UEAA_NXZ",Player)
     IF_LISTENED_END(PlayerOpenContainerScreenEvent)
     return original(this);
 }
+
+bool IsMcServerThread()
+{
+    static auto threadid = std::thread::id();
+    if (threadid == std::thread::id())
+    {
+        PWSTR desc;
+        GetThreadDescription(GetCurrentThread(), &desc);
+        bool res = std::wstring(desc) == L"MC_SERVER";
+        LocalFree(desc);
+        if (res)
+            threadid = std::this_thread::get_id();
+        return res;
+    }
+    return threadid == std::this_thread::get_id();
+}
+
 /////////////////// PlayerCmdEvent & ConsoleCmd ///////////////////
 TClasslessInstanceHook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z",
        MCRESULT* rtn, std::shared_ptr<CommandContext> context, bool print)
 {
-
     Player* sp;
     string cmd;
 
@@ -1087,6 +1102,11 @@ TClasslessInstanceHook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCR
     catch (...)
     {
         return rtn;
+    }
+
+    if (LL::isDebugMode() && !IsMcServerThread())
+    {
+        logger.warn("The thread executing the command \"{}\" is not the \"MC_SERVER\" thread");
     }
     if (sp)
     {
@@ -1901,16 +1921,17 @@ TClasslessInstanceHook(Actor*,
 }
 
 #include <MC/CrossbowItem.hpp>
+#include <MC/ActorDefinitionIdentifier.hpp>
+static_assert(sizeof(ActorDefinitionIdentifier) == 176);
 TInstanceHook(void, "?_shootFirework@CrossbowItem@@AEBAXAEBVItemInstance@@AEAVPlayer@@@Z",
     CrossbowItem, void* a1, Player* a2)
 {
     IF_LISTENED(ProjectileSpawnEvent)
     {
-        auto identifier = new char[176];
+        ActorDefinitionIdentifier identifier("minecraft:fireworks_rocket");
         ProjectileSpawnEvent ev{};
         ev.mShooter = a2;
-        ev.mIdentifier = SymCall("??0ActorDefinitionIdentifier@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
-            ActorDefinitionIdentifier*, ActorDefinitionIdentifier*, string)((ActorDefinitionIdentifier*)identifier, "minecraft:fireworks_rocket");
+        ev.mIdentifier = &identifier;
         ev.mType = this->getFullItemName();
 
         if (!ev.call())
@@ -1925,11 +1946,10 @@ TClasslessInstanceHook(void, "?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEA
 {
     IF_LISTENED(ProjectileSpawnEvent)
     {
-        auto identifier = new char[176];
+        ActorDefinitionIdentifier identifier("minecraft:thrown_trident");
         ProjectileSpawnEvent ev{};
         ev.mShooter = a3;
-        ev.mIdentifier = SymCall("??0ActorDefinitionIdentifier@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
-            ActorDefinitionIdentifier*, ActorDefinitionIdentifier*, string)((ActorDefinitionIdentifier*)identifier, "minecraft:thrown_trident");
+        ev.mIdentifier = &identifier;
         ev.mType = a2->getTypeName();
 
         if (!ev.call())
@@ -2041,13 +2061,14 @@ TClasslessInstanceHook(void, "?startServerThread@ServerInstance@@QEAAXXZ")
     Global<ServerLevel> = (ServerLevel*)Global<Minecraft>->getLevel();
     //Global<ServerNetworkHandler> = Global<Minecraft>->getServerNetworkHandler();
     LL::globalConfig.serverStatus = LL::LLServerStatus::Running;
-
-    IF_LISTENED(ServerStartedEvent)
-    {
-        ServerStartedEvent ev{};
-        ev.call();
-    }
-    IF_LISTENED_END(ServerStartedEvent)
+    Schedule::nextTick([]() {
+        IF_LISTENED(ServerStartedEvent)
+        {
+            ServerStartedEvent ev{};
+            ev.call();
+        }
+        IF_LISTENED_END(ServerStartedEvent)
+    });
 }
 
 ////////////// ServerStopped //////////////

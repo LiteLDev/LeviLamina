@@ -3,7 +3,8 @@
 ClassDefine<void> McClassBuilder =
 	defineClass("mc")
 		.function("getBDSVersion", &McClass::getBDSVersion)
-		.function("runcmd", &McClass::runcmd)
+        	.function("getServerProtocolVersion", &McClass::getServerProtocolVersion)
+        	.function("runcmd", &McClass::runcmd)
 		.function("runcmdEx", &McClass::runcmdEx)
 		.function("regPlayerCmd", &McClass::regPlayerCmd)
 		.function("newCommand", &McClass::newCommand)

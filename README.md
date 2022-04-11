@@ -202,7 +202,7 @@ If you have a revision request or need to add an API, please feel free to contac
 <br>
 
 ### Example Plugins
-[Click here](https://github.com/LiteLDev) [Click here](https://github.com/LiteLDev-LXL) for more open source LiteLoader plugins as sample plugins.
+[Click here](https://github.com/LiteLDev) for more open source LiteLoader plugins as sample plugins.
 You can use them directly in production environments
 You can also learn plugin development methods and tips here
 
@@ -215,11 +215,11 @@ Helps you do better with **script plugins**!
 Code hint, auto-completion, auto-documentation, error alert, runtime debugging ....
 
 
-![LXLDevHelper](docs/assets/LXLDevHelper.gif)
+![LLScriptHelper](docs/assets/LXLDevHelper.gif)
 
-[Click here](https://www.minebbs.com/resources/lxldevhelper.2672/)
+[Click here](https://www.minebbs.com/resources/llscripthelper.2672/)
 View more description and introduction of this extension  
-VSCode extension store search `LXL`, install **LXLDevHelper** and experience it instantly!
+VSCode extension store search `LLScriptHelper`, install **LLScriptHelper** and experience it instantly!
 
 <br>
 
@@ -289,9 +289,9 @@ You must accept the Minecraft EULA.
 [nbt-cpp](https://github.com/handtruth/nbt-cpp) MIT License  
 [Hash](https://github.com/Chocobo1/Hash) GPL v3    
 [ThreadPool](https://github.com/jhasse/ThreadPool) Zlib License    
-[LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) MIT License
-[magic_enum](https://github.com/Neargye/magic_enum) MIT License
-[dyncall](https://www.dyncall.org/index) ISC license
+[LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) MIT License    
+[magic_enum](https://github.com/Neargye/magic_enum) MIT License    
+[dyncall](https://www.dyncall.org/index) ISC license    
 
 ### Extra Restrictions & Exceptions
 

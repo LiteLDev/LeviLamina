@@ -141,6 +141,13 @@ LIAPI int Scoreboard::getScore(const std::string& objname, const std::string& id
         return 0;
 
     auto scores = Global<Scoreboard>->getIdScores(identity);
+#ifdef DEBUG
+    struct voids
+    {
+        void** filler[100];
+    };
+    auto& vs = *(voids*&)scores; // -> sizeof(ScoreInfo) == 16
+#endif // DEBUG
     for (auto& it : scores)
         if (it.getObjective() == obj)
             return it.getCount();

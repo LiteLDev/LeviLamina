@@ -28,7 +28,13 @@ public:
 
     ScheduleTaskData::ScheduleTaskData(TaskType type, std::function<void(void)> task, unsigned long long delay,
                                        unsigned long long interval, int count, HMODULE handler)
-            : type(type), task(task), leftTime((long long)delay), interval((long long)interval), count(count), taskId(nextTaskId++) ,handler(handler) {}
+        : type(type)
+        , task(task)
+        , leftTime((long long)delay)
+        , interval((long long)interval)
+        , count(count)
+        , taskId(++nextTaskId)
+        , handler(handler){};
 
     inline unsigned int getTaskId() {
         return taskId;
@@ -39,12 +45,14 @@ public:
     }
 };
 
+std::vector<ScheduleTaskData> pendingTaskList{};
+std::vector<unsigned int> pendingCancelList{};
+bool pendingClear = false;
 
 class ScheduleTaskQueueType
         : public priority_queue<ScheduleTaskData, vector<ScheduleTaskData>, greater<ScheduleTaskData>> {
 public:
     bool remove(unsigned int taskId) {
-        locker.lock();
         size_t size = c.size();
         bool removed = false;
 
@@ -55,23 +63,53 @@ public:
                 std::make_heap(c.begin(), c.end(), comp);  //重排二叉堆
                 removed = true;
             }
-        locker.unlock();
         return removed;
     }
 
     void clear() {
-        locker.lock();
         c.clear();
-        locker.unlock();
     }
 
-    inline void tick() {
-        locker.lock();
-        if (c.empty()) {
+    inline void tick()
+    {
+        if (pendingClear) {
+            clear();
+            std::vector<ScheduleTaskData> tmpList;
+            locker.lock();
+            pendingTaskList.swap(tmpList);
+            pendingCancelList.clear();
+            pendingClear = false;
             locker.unlock();
             return;
         }
-
+        if (!pendingTaskList.empty())
+        {
+            std::vector<ScheduleTaskData> tmpList;
+            locker.lock();
+            tmpList.swap(pendingTaskList);
+            locker.unlock();
+            for (auto& task : tmpList)
+            {
+                push(std::move(task));
+            }
+            tmpList.clear();
+        }
+        if (c.empty()) {
+            return;
+        }
+        if (!pendingCancelList.empty())
+        { 
+            std::vector<uint32_t> tmpList;
+            locker.lock();
+            // ScheduleTaskData destructor may trigger ScriptX's lock
+            tmpList.swap(pendingCancelList);
+            locker.unlock();
+            for (auto tid : tmpList)
+            {
+                remove(tid);
+            }
+            tmpList.clear();
+        }
         try {
             for (size_t i = 0; i < c.size(); ++i)
                 --c[i].leftTime;
@@ -80,7 +118,7 @@ public:
                 if (empty())
                     break;
                 const ScheduleTaskData& t = top();
-                if (t.leftTime > 0)
+                 if (t.leftTime > 0)
                     break;
 
                 //timeout
@@ -136,7 +174,7 @@ public:
             logger.error("Exception occurred in ScheduleTask!");
             PrintCurrentStackTraceback();
         }
-        locker.unlock();
+
     }
 };
 
@@ -149,9 +187,9 @@ namespace Schedule {
         if (LL::globalConfig.serverStatus >= LL::LLServerStatus::Stopping)
             return ScheduleTask((unsigned) -1);
         ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, tickDelay, -1, -1, handler);
-        //locker.lock();
-        taskQueue.push(sche);
-        //locker.unlock();
+        locker.lock();
+        pendingTaskList.push_back(sche);
+        locker.unlock();
         return ScheduleTask(sche.getTaskId());
     }
 
@@ -162,10 +200,10 @@ namespace Schedule {
         ScheduleTaskData::TaskType type = maxCount < 0 ?
                                           ScheduleTaskData::TaskType::InfiniteRepeat
                                                        : ScheduleTaskData::TaskType::Repeat;
-        ScheduleTaskData sche(type, task, tickRepeat, tickRepeat, maxCount, handler);
-        //locker.lock();
-        taskQueue.push(sche);
-        //locker.unlock();
+        ScheduleTaskData sche(type, task, std::max(tickRepeat, 1ull), std::max(tickRepeat, 1ull), maxCount, handler);
+        locker.lock();
+        pendingTaskList.push_back(sche);
+        locker.unlock();
         return ScheduleTask(sche.getTaskId());
     }
 
@@ -176,10 +214,10 @@ namespace Schedule {
             return ScheduleTask((unsigned)-1);
         ScheduleTaskData::TaskType type = maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat
                                                        : ScheduleTaskData::TaskType::Repeat;
-        ScheduleTaskData sche(type, task, tickDelay, tickRepeat, maxCount, handler);
-        //locker.lock();
-        taskQueue.push(sche);
-        //locker.unlock();
+        ScheduleTaskData sche(type, task, tickDelay, std::max(tickRepeat, 1ull), maxCount, handler);
+        locker.lock();
+        pendingTaskList.push_back(sche);
+        locker.unlock();
         return ScheduleTask(sche.getTaskId());
     }
 
@@ -188,9 +226,9 @@ namespace Schedule {
         if (LL::globalConfig.serverStatus >= LL::LLServerStatus::Stopping)
             return ScheduleTask((unsigned) -1);
         ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, 1, -1, -1, handler);
-        //locker.lock();
-        taskQueue.push(sche);
-        //locker.unlock();
+        locker.lock();
+        pendingTaskList.push_back(sche);
+        locker.unlock();
         return ScheduleTask(sche.getTaskId());
     }
 }
@@ -201,8 +239,11 @@ THook(void, "?tick@ServerLevel@@UEAAXXZ",
     taskQueue.tick();
 }
 
-void EndScheduleSystem() {
-    taskQueue.clear();
+void EndScheduleSystem()
+{
+    locker.lock();
+    pendingClear = true;
+    locker.unlock();
 }
 
 
@@ -211,7 +252,7 @@ ScheduleTask::ScheduleTask(unsigned int taskId)
 
 bool ScheduleTask::cancel() {
     locker.lock();
-    bool res = taskQueue.remove(taskId);
+    pendingCancelList.push_back(taskId);
     locker.unlock();
-    return res;
+    return true;
 }

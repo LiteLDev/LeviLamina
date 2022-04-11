@@ -58,7 +58,7 @@ ClassDefine<CommandClass> CommandClassBuilder =
 
 //////////////////// Helper ////////////////////
 
-bool LxlRemoveCmdCallback(script::ScriptEngine* engine)
+bool LLSERemoveCmdCallback(script::ScriptEngine* engine)
 {
     erase_if(localShareData->commandCallbacks, [&engine](auto& data) {
         return data.second.fromEngine == engine;
@@ -462,7 +462,7 @@ Local<Value> CommandClass::addOverload(const Arguments& args)
     CATCH("Fail in addOverload!")
 }
 
-std::nullptr_t onExecute(DynamicCommand const& command, CommandOrigin const& origin, CommandOutput& output,
+void onExecute(DynamicCommand const& command, CommandOrigin const& origin, CommandOutput& output,
                std::unordered_map<std::string, DynamicCommand::Result>& results)
 {
     auto instance = command.getInstance();
@@ -470,7 +470,7 @@ std::nullptr_t onExecute(DynamicCommand const& command, CommandOrigin const& ori
     if (localShareData->commandCallbacks.find(commandName) == localShareData->commandCallbacks.end())
     {
         logger.warn("Command {} failed to execute, is the plugin unloaded?", commandName);
-        return nullptr;
+        return;
     }
     EngineScope enter(localShareData->commandCallbacks[commandName].fromEngine);
     try
@@ -483,12 +483,11 @@ std::nullptr_t onExecute(DynamicCommand const& command, CommandOrigin const& ori
             args.set(name, convertResult(param));
         localShareData->commandCallbacks[commandName].func.get().call({}, cmd, ori, outp, args);
     }
-    CATCH_C("Fail in executing command \"" + commandName + "\"!")
-    return nullptr;
+    CATCH_WITHOUT_RETURN("Fail in executing command \"" + commandName + "\"!")
 }
 
 // not complete
-std::nullptr_t onExecute2(DynamicCommand const& command, CommandOrigin const& origin, CommandOutput& output,
+void onExecute2(DynamicCommand const& command, CommandOrigin const& origin, CommandOutput& output,
                std::unordered_map<std::string, DynamicCommand::Result>& results)
 {
     auto instance = command.getInstance();
@@ -496,7 +495,7 @@ std::nullptr_t onExecute2(DynamicCommand const& command, CommandOrigin const& or
     if (localShareData->commandCallbacks.find(commandName) == localShareData->commandCallbacks.end())
     {
         logger.warn("Command {} failed to execute, is the plugin unloaded?", commandName);
-        return nullptr;
+        return;
     }
     EngineScope enter(localShareData->commandCallbacks[commandName].fromEngine);
     try
@@ -507,8 +506,7 @@ std::nullptr_t onExecute2(DynamicCommand const& command, CommandOrigin const& or
         //    args.set(name, convertResult(param));
         //localShareData->commandCallbacks[commandName].func.get().call({}, ctx, args);
     }
-    CATCH_C("Fail in executing command \"" + commandName + "\"!")
-    return nullptr;
+    CATCH_WITHOUT_RETURN("Fail in executing command \"" + commandName + "\"!")
 }
 
 // function (command, origin, output, results){}

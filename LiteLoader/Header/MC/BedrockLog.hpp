@@ -6,6 +6,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+enum LogAreaID;
 
 #undef BEFORE_EXTRA
 

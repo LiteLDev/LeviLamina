@@ -333,6 +333,11 @@
     <ClCompile Include="Kernel\Network\PacketAPI.cpp">
       <Filter>Kernel\Network</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\Utils\SRWLock.cpp">
+      <Filter>Kernel\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\RemoteCallAPI.cpp">
+      <Filter>Kernel</Filter>
     <ClCompile Include="Kernel\DB\Row.cpp">
       <Filter>Kernel\DB</Filter>
     </ClCompile>
@@ -713,6 +718,11 @@
     <ClInclude Include="Header\RegCommandAPI.h">
       <Filter>Header\Command</Filter>
     </ClInclude>
+    <ClInclude Include="Header\Utils\SRWLock.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\RemoteCallAPI.h">
+      <Filter>Header</Filter>
     <ClInclude Include="Header\DB\RowSet.h">
       <Filter>Header\DB</Filter>
     </ClInclude>

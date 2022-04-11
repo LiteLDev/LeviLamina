@@ -30,38 +30,39 @@ Local<Value> Log(const Arguments& args)
     CATCH("Fail in Log!");
 }
 
+//#include <LiteLoader/Main/Config.h>
 Local<Value> ColorLog(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 1);
 
     try {
-        char color = 15;
+        std::string prefix = "";
         switch (H(args[0].asString().toString().c_str()))
         {
-            case H("dk_blue")  : color = 1;  break;
-            case H("dk_green") : color = 2;  break;
-            case H("bt_blue")  : color = 3;  break;
-            case H("dk_red")   : color = 4;  break;
-            case H("purple")   : color = 5;  break;
-            case H("dk_yellow"): color = 6;  break;
-            case H("grey")     : color = 7;  break;
-            case H("sky_blue") : color = 9;  break;
-            case H("blue")     : color = 9;  break;
-            case H("green")    : color = 10; break;
-            case H("cyan")     : color = 11; break;
-            case H("red")      : color = 12; break;
-            case H("pink")     : color = 13; break;
-            case H("yellow")   : color = 14; break;
-            case H("white")    : color = 15; break;
+            case H("dk_blue")  : prefix = "\x1b[34m";  break;
+            case H("dk_green") : prefix = "\x1b[32m";  break;
+            case H("bt_blue")  : prefix = "\x1b[36m";  break;
+            case H("dk_red")   : prefix = "\x1b[31m";  break;
+            case H("purple")   : prefix = "\x1b[35m";  break;
+            case H("dk_yellow"): prefix = "\x1b[33m";  break;
+            case H("grey")     : prefix = "\x1b[37m";  break;
+            case H("sky_blue") : prefix = "\x1b[94m";  break;
+            case H("blue")     : prefix = "\x1b[94m";  break;
+            case H("green")    : prefix = "\x1b[92m"; break;
+            case H("cyan")     : prefix = "\x1b[36m"; break;
+            case H("red")      : prefix = "\x1b[91m"; break;
+            case H("pink")     : prefix = "\x1b[95m"; break;
+            case H("yellow")   : prefix = "\x1b[93m"; break;
+            case H("white")    : prefix = "\x1b[97m"; break;
             default: logger.error("Invalid color!");break;
         }
-        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
-
+        //if (!LL::globalConfig.colorLog)
+        //    prefix = "";
         auto& infoOut = ENGINE_OWN_DATA()->logger.info;
+        infoOut << prefix;
         for (int i = 1; i < args.size(); ++i)
             PrintValue(infoOut, args[i]);
-        infoOut << Logger::endl;
-        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+        infoOut << "\x1b[0m" << Logger::endl;
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in Log!");

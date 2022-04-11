@@ -20,6 +20,7 @@ copy /Y x64\Release\LiteLoader.dll RELEASE\LiteLoader.dll
 copy /Y x64\Release\LiteLoader.*.dll RELEASE\plugins\LiteLoader\
 copy /Y x64\Release\LLAutoUpdate.dll RELEASE\plugins\LiteLoader\LLAutoUpdate.dll
 copy /Y Tools\SymDB2.exe RELEASE\SymDB2.exe
+copy /Y ScriptEngine\BaseLib\* RELEASE\plugins\lib\
 
 if [%1] neq [action] goto Zipped
 echo.

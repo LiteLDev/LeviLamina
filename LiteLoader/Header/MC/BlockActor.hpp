@@ -8,6 +8,7 @@
 class Block;
 class Container;
 class CompoundTag;
+class BlockSource;
 
 #undef BEFORE_EXTRA
 
@@ -18,8 +19,10 @@ class BlockActor {
 public:
     
     LIAPI bool refreshData();
+    LIAPI bool refreshData(BlockSource* bs);
     LIAPI std::unique_ptr<CompoundTag> getNbt();
     LIAPI bool setNbt(CompoundTag* nbt);
+    LIAPI bool setNbt(CompoundTag* nbt, BlockSource* bs);
     static unsigned int getBlockEntityType(Block* block);
 
 #undef AFTER_EXTRA

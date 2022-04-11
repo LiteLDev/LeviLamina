@@ -283,12 +283,12 @@ ModuleMessageResult::~ModuleMessageResult()
 
 bool ModuleMessageResult::waitForAllResults(int maxWaitTime)
 {
-    return waitForResultCount(getSentCount());
+    return waitForResultCount(getSentCount(), maxWaitTime);
 }
 
 bool ModuleMessageResult::waitForOneResult(int maxWaitTime)
 {
-    return waitForResultCount(1);
+    return waitForResultCount(1, maxWaitTime);
 }
 
 bool ModuleMessageResult::waitForResultCount(int targetCount, int maxWaitTime)
@@ -324,15 +324,20 @@ bool ModuleMessageResult::cancel()
     return true;
 }
 
-
 ///////////////////////////// Funcs /////////////////////////////
 void MessageSystemLoopOnce()
 {
     //if (!messageLoopLock.try_lock())
     //    return;
-    for (auto engine : globalShareData->globalEngineList)
+    std::list<ScriptEngine*> tmpList;
     {
-        if (EngineManager::getEngineType(engine) == LLSE_BACKEND_TYPE)
+        SRWLockSharedHolder lock(globalShareData->engineListLock);
+        // low efficiency
+        tmpList = globalShareData->globalEngineList;
+    }
+    for (auto engine : tmpList)
+    {
+        if (EngineManager::isValid(engine) && EngineManager::getEngineType(engine) == LLSE_BACKEND_TYPE)
         {
             try
             {
@@ -371,7 +376,11 @@ void InitMessageSystem()
         return true;
     });
 
+    // dangerous?
     std::thread([]() {
+#ifdef DEBUG
+        SetThreadDescription(GetCurrentThread(), L"LLSE MessageSystem " _CRT_WIDE(LLSE_MODULE_TYPE));
+#endif // DEBUG
         // Set global SEH-Exception handler
         _set_se_translator(seh_exception::TranslateSEHtoCE);
 

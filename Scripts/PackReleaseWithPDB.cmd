@@ -22,6 +22,7 @@ mkdir RELEASE\plugins\LiteLoader\pdb
 copy /Y x64\Release\*.pdb RELEASE\plugins\LiteLoader\pdb\
 copy /Y x64\Release\LLAutoUpdate.dll RELEASE\plugins\LiteLoader\LLAutoUpdate.dll
 copy /Y Tools\SymDB2.exe RELEASE\SymDB2.exe
+copy /Y ScriptEngine\BaseLib\* RELEASE\plugins\lib\
 
 if [%1] neq [action] goto Zipped
 echo.

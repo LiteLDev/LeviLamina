@@ -155,6 +155,35 @@ bool inline IsInstanceOf(Local<Value> v)
     }
 
 
+// 截获引擎异常_Constructor
+#define CATCH_WITHOUT_RETURN(LOG) \
+    catch(const Exception& e) \
+    { \
+        logger.error(LOG##"\n"); PrintException(e); \
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
+    } \
+    catch(const std::exception &e) \
+    { \
+        logger.error("C++ Uncaught Exception Detected!"); \
+        logger.error(TextEncoding::toUTF8(e.what())); \
+        logger.error(std::string("In API: ") + __FUNCTION__); \
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
+    } \
+    catch(const seh_exception &e) \
+    { \
+        logger.error("SEH Uncaught Exception Detected!"); \
+        logger.error(TextEncoding::toUTF8(e.what())); \
+        logger.error(std::string("In API: ") + __FUNCTION__); \
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
+    } \
+    catch(...) \
+    { \
+        logger.error("Uncaught Exception Detected!"); \
+        logger.error(std::string("In API: ") + __FUNCTION__); \
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
+    }
+
+
 // 判断是否为浮点数
 bool CheckIsFloat(const Local<Value>& num);
 

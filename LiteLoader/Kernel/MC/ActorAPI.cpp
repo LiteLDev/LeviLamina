@@ -64,23 +64,19 @@ bool Actor::isOnGround() const {
     return (dAccess<bool, 472>(this)); // IDA DirectActorProxyImpl<IMobMovementProxy>::isOnGround
 }
 #include <MC/ActorDefinitionIdentifier.hpp>
-std::string Actor::getTypeName() const {
-    /*string res = SymCall("?EntityTypeToString@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorType@@W4ActorTypeNamespaceRules@@@Z",
-        string, int, int) (Raw_GetEntityTypeId(actor), 1);*/
-    if (isPlayer())
-        return "minecraft:player";
-    else {
-        return getActorIdentifier().getCanonicalName();
-        //HashedString hash = dAccess<HashedString>(this, 880); //IDA Actor::Actor
-        //return hash.getString();
-    }
+std::string Actor::getTypeName() const
+{
+    return getActorIdentifier().getCanonicalName();
 }
 
+#include <MC/ActorDamageSource.hpp>
 bool Actor::hurtEntity(int damage) {
-    char a[16];
-    ActorDamageSource& ad = SymCall("??0ActorDamageSource@@QEAA@W4ActorDamageCause@@@Z",
-                                    ActorDamageSource&, ActorDamageSource*, ActorDamageCause)((ActorDamageSource*)a, ActorDamageCause::None);
-    return ((Mob*)this)->_hurt(ad, damage, true, false);
+    char source[16];
+    (*(ActorDamageSource*)source).ActorDamageSource::ActorDamageSource(ActorDamageCause::None);
+
+    auto res = ((Mob*)this)->_hurt((*(ActorDamageSource*)source), damage, true, false);
+    (*(ActorDamageSource*)source).~ActorDamageSource();
+    return res;
 }
 
 Vec2* Actor::getDirection() const {

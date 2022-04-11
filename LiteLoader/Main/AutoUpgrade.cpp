@@ -432,6 +432,9 @@ void LL::InitAutoUpdateCheck()
     AddPreload();
 
     std::thread([]() {
+#ifdef DEBUG
+        SetThreadDescription(GetCurrentThread(), L"LiteLoaderAutoUpdate");
+#endif // DEBUG
         _set_se_translator(seh_exception::TranslateSEHtoCE);
         while (true)
         {

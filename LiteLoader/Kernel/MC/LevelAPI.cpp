@@ -13,6 +13,7 @@
 #include <MC/CommandContext.hpp>
 #include <MC/CompoundTag.hpp>
 #include <MC/Dimension.hpp>
+#include <MC/DropperBlockActor.hpp>
 #include <MC/ItemActor.hpp>
 #include <MC/ItemStack.hpp>
 #include <MC/Level.hpp>
@@ -21,6 +22,8 @@
 #include <MC/Packet.hpp>
 #include <MC/PropertiesSettings.hpp>
 #include <MC/LoopbackPacketSender.hpp>
+#include <MC/ServerCommandOrigin.hpp>
+#include <MC/PlayerCommandOrigin.hpp>
 
 
 Actor* Level::getEntity(ActorUniqueID uniqueId)
@@ -199,16 +202,12 @@ bool Level::hasContainer(Vec3 pos, int dim)
     return getContainer(pos,dim) != nullptr;
 }
 
-class DropperBlockActor;
 Container* Level::getContainer(Vec3 pos, int dim)
 {
     // VirtualCall<Container*>(getBlockEntity(), 224); // IDA ChestBlockActor::`vftable'{for `RandomizableBlockActorContainerBase'}
     
     // This function didn't use 'this' pointer
-    Container* container = SymCall("?_getContainerAt@DropperBlockActor@@AEAAPEAVContainer@@AEAVBlockSource@@AEBVVec3@@@Z",
-        Container*, DropperBlockActor*, BlockSource*, Vec3*)(nullptr, Level::getBlockSource(dim), &pos);
-
-    return container;
+    return ((DropperBlockActor*)nullptr)->_getContainerAt(*Level::getBlockSource(dim), pos);
 }
 
 Actor* Level::getDamageSourceEntity(ActorDamageSource* ads) {
@@ -217,36 +216,43 @@ Actor* Level::getDamageSourceEntity(ActorDamageSource* ads) {
 }
 
 void* Level::ServerCommandOrigin::fake_vtbl[26];
-static_assert(offsetof(Level::ServerCommandOrigin, Perm) == 64);
 
-bool Level::executeCommand(const string& cmd) {
-    ServerCommandOrigin origin;
-    return MinecraftCommands::_runcmd(&origin, cmd);
+CompoundTag& getServerOriginTag()
+{
+    static auto cached = CompoundTag::fromSNBT(R"({"CommandPermissionLevel":4b,"DimensionId":"Overworld","OriginType":7b,"RequestId":"00000000-0000-0000-0000-000000000000"})");
+    return *cached;
 }
 
-std::unordered_map<void*, string*> resultOfOrigin;
+std::unique_ptr<CompoundTag> getPlayerOriginTag(Player& player)
+{
+    static auto cached = CompoundTag::fromSNBT(R"({"OriginType":0b,"PlayerId":0l})");
+    auto tag = cached->clone();
+    tag->putInt64("PlayerId", player.getUniqueID());
+    return std::move(tag);
+}
 
-std::pair<bool, string> Level::executeCommandEx(const string& cmd) {
-    ServerCommandOrigin origin;
+bool Level::executeCommand(const string& cmd) {
+    auto origin = ::ServerCommandOrigin::load(getServerOriginTag(), *Global<ServerLevel>);
+    return MinecraftCommands::_runcmd(std::move(origin), cmd);
+}
+
+std::unordered_map<CommandOrigin const*, string*> resultOfOrigin;
+
+std::pair<bool, string> Level::executeCommandEx(const string& cmd)
+{
+    auto origin = ::ServerCommandOrigin::load(getServerOriginTag(), *Global<ServerLevel>);
     string val;
-    resultOfOrigin[&origin] = &val;
-    bool rv = MinecraftCommands::_runcmd(&origin, cmd);
+    resultOfOrigin[origin.get()] = &val;
+    bool rv = MinecraftCommands::_runcmd(std::move(origin), cmd);
     return {rv, std::move(val)};
 }
 
 
 static void* FAKE_PORGVTBL[26];
 bool Level::executeCommandAs(Player* pl, const string& cmd) {
-    void** filler[5];
-    ServerCommandOrigin origin;
-    SymCall("??0PlayerCommandOrigin@@QEAA@AEAVPlayer@@@Z", void, void*, ServerPlayer*)(
-        filler, (ServerPlayer*)pl);
-    if (FAKE_PORGVTBL[1] == nullptr) {
-        memcpy(FAKE_PORGVTBL, ((void**)filler[0]) - 1, sizeof(FAKE_PORGVTBL));
-        FAKE_PORGVTBL[1] = (void*)dummy;
-    }
-    filler[0] = FAKE_PORGVTBL + 1;
-    return MinecraftCommands::_runcmd(filler, cmd);
+    auto tag = getPlayerOriginTag(*pl);
+    auto origin = PlayerCommandOrigin::load(*tag, *Global<Level>);
+    return MinecraftCommands::_runcmd(std::move(origin), cmd);
 }
 
 
@@ -320,7 +326,8 @@ Player* Level::getPlayer(const string& info) {
     Player* found = nullptr;
     Global<Level>->forEachPlayer([&](Player& sp) -> bool {
         Player* p = &sp;
-        if (p->getXuid() == target) {
+        if (p->getXuid() == target || p->getRealName() == info)
+        {
             found = p;
             return false;
         }
@@ -334,7 +341,6 @@ Player* Level::getPlayer(const string& info) {
             size_t curDelta = pName.length() - target.length();
             if (curDelta == 0) {
                 found = p;
-                return false;
             }
 
             if (curDelta < delta) {

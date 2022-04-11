@@ -22,7 +22,9 @@ public:
 	LIAPI std::vector<const ItemStack*> getAllSlots();
 	LIAPI int getSize();
 
+    // static??
 	LIAPI bool hasContainer(Vec3& pos, int dim);
+    // static??
     LIAPI Container* getContainerAt(Vec3& pos, int dim);
 #undef AFTER_EXTRA
 

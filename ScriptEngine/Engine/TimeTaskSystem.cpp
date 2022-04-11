@@ -9,7 +9,8 @@
 #include <vector>
 using namespace std;
 
-int timeTaskId = 0;
+std::atomic_uint timeTaskId = 0;
+CsLock locker;
 struct TimeTaskData
 {
     ScheduleTask task;
@@ -17,6 +18,14 @@ struct TimeTaskData
     vector<script::Global<Value>> paras;
     script::Global<String> code;
     ScriptEngine *engine;
+    inline void swap(TimeTaskData& rhs)
+    {
+        std::swap(rhs.task, task);
+        std::swap(rhs.engine, engine);
+        rhs.code.swap(code);
+        rhs.paras.swap(paras);
+        rhs.func.swap(func);
+    }
 };
 std::unordered_map<int, TimeTaskData> timeTaskMap;
 
@@ -52,35 +61,106 @@ std::unordered_map<int, TimeTaskData> timeTaskMap;
 
 //////////////////// API ////////////////////
 
+//void NewTimeout_s(script::Global<Function> func, vector<script::Local<Value>> paras, int timeout, ScriptEngine* engine)
+//{
+//    std::vector<script::Global<Value>> tmp;
+//    if (paras.size() > 0) {
+//        EngineScope enter(engine);
+//        for (auto& para : paras)
+//            tmp.emplace_back(std::move(para));
+//    }
+//    Schedule::delay(
+//        [engine, func = std::move(func), paras = std::move(tmp)]() {
+//            if (LL::isServerStopping())
+//                return;
+//            if (!EngineManager::isValid(engine))
+//                return;
+//            EngineScope enter(engine);
+//            if (paras.empty()) {
+//                func.get().call();
+//            }
+//            else
+//            {
+//                vector<Local<Value>> args;
+//                for (auto& para : paras)
+//                    if (para.isEmpty())
+//                        return;
+//                    else
+//                        args.emplace_back(para.get());
+//                func.get().call({}, args);
+//            }
+//        },
+//        timeout / 50);
+//}
+
+//#define CHECK_THREAD_ID
+
+#ifdef DEBUG    
+
+void assertTickThread()
+{
+    static thread::id tid = thread::id();
+    static bool inited = ([]() {
+        Schedule::nextTick([]() {
+            tid = std::this_thread::get_id();
+        });
+        return true;
+    })();
+    if (tid == thread::id())
+    {
+        // Schedule::nextTick([tid = std::this_thread::get_id()]() {
+        //     if (tid != std::this_thread::get_id())
+        //         __debugbreak();
+        // });
+    }
+    else
+    {
+        if (tid != std::this_thread::get_id())
+            __debugbreak();
+    }
+}
+
+#endif // DEBUG
+
+
 int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
 {
-    ++timeTaskId;
+    int tid = ++timeTaskId;
+    TimeTaskData data;
 
-    timeTaskMap[timeTaskId].func = func;
-    timeTaskMap[timeTaskId].engine = EngineScope::currentEngine();
+    data.func = func;
+    data.engine = EngineScope::currentEngine();
     for (auto& para : paras)
-        timeTaskMap[timeTaskId].paras.emplace_back(std::move(para));
+        data.paras.emplace_back(std::move(para));
 
-    timeTaskMap[timeTaskId].task = Schedule::delay(
-        [engine{EngineScope::currentEngine()}, id{timeTaskId}]()
+    data.task = Schedule::delay(
+        [engine{EngineScope::currentEngine()}, id{tid}]()
     {
         try {
             if (LL::isServerStopping())
                 return;
             if (!EngineManager::isValid(engine))
                 return;
+            // lock after enter EngineScope to prevent deadlock
+            EngineScope scope(engine);
+            TimeTaskData taskData;
+            {
+                CsLockHolder lock(locker);
 
-            auto t = timeTaskMap.find(id);
-            if(t == timeTaskMap.end())
-                return;
+                auto t = timeTaskMap.find(id);
+                if (t == timeTaskMap.end())
+                    return;
+                t->second.swap(taskData);
+                timeTaskMap.erase(id);
+            }
 
-            auto& taskData = t->second;
             if (taskData.func.isEmpty())
                 return;
-
-            EngineScope scope(engine);
+            auto func = taskData.func.get();
             if (taskData.paras.empty())
-                taskData.func.get().call();
+            {
+                func.call();
+            }
             else
             {
                 vector<Local<Value>> args;
@@ -89,143 +169,179 @@ int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
                         return;
                     else
                         args.emplace_back(para.get());
-                taskData.func.get().call({}, args);
+                func.call({}, args);
             }
-            timeTaskMap.erase(id);
         }
         TIMETASK_CATCH("setTimeout-Function");
     }, timeout / 50);
-    return timeTaskId;
+    CsLockHolder lock(locker);
+    data.swap(timeTaskMap[tid]);
+    return tid;
 }
 
 int NewTimeout(Local<String> func, int timeout)
 {
-    ++timeTaskId;
+    int tid = ++timeTaskId;
+    TimeTaskData data;
 
-    timeTaskMap[timeTaskId].code = func;
-    timeTaskMap[timeTaskId].engine = EngineScope::currentEngine();
+    data.code = func;
+    data.engine = EngineScope::currentEngine();
 
-    timeTaskMap[timeTaskId].task = Schedule::delay(
-        [engine{ EngineScope::currentEngine() }, id{ timeTaskId }]()
+    data.task = Schedule::delay(
+        [engine{EngineScope::currentEngine()}, id{tid}]()
     {
         try {
             if (LL::isServerStopping())
                 return;
             if (!EngineManager::isValid(engine))
                 return;
+            EngineScope scope(engine);
+            TimeTaskData taskData;
+            {
+                CsLockHolder lock(locker);
 
-            auto t = timeTaskMap.find(id);
-            if (t == timeTaskMap.end())
-                return;
+                auto t = timeTaskMap.find(id);
+                if (t == timeTaskMap.end())
+                    return;
+                t->second.swap(taskData);
+                timeTaskMap.erase(id);
+            }
 
-            auto& taskData = t->second;
             if (taskData.code.isEmpty())
                 return;
-
-            EngineScope scope(engine);
-            engine->eval(taskData.code.get().toString());
-            timeTaskMap.erase(id);
+            auto code = taskData.code.get().toString();
+            engine->eval(code);
         }
         TIMETASK_CATCH("setTimeout-String");
     }, timeout / 50);
-    return timeTaskId;
+
+    CsLockHolder lock(locker);
+    data.swap(timeTaskMap[tid]);
+    return tid;
 }
 
 int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
 {
-    ++timeTaskId;
+    int tid = ++ timeTaskId;
+    TimeTaskData data;
 
-    timeTaskMap[timeTaskId].func = func;
-    timeTaskMap[timeTaskId].engine = EngineScope::currentEngine();
+    data.func = func;
+    data.engine = EngineScope::currentEngine();
     for (auto& para : paras)
-        timeTaskMap[timeTaskId].paras.emplace_back(std::move(para));
+        data.paras.emplace_back(std::move(para));
 
-    timeTaskMap[timeTaskId].task = Schedule::repeat(
-        [engine{ EngineScope::currentEngine() }, id{ timeTaskId }]()
+    data.task = Schedule::repeat(
+        [engine{EngineScope::currentEngine()}, id{tid}]()
     {
         try {
             if (LL::isServerStopping())
                 return;
             if (!EngineManager::isValid(engine))
             {
-                timeTaskMap[id].task.cancel();
-                timeTaskMap.erase(id);
+                ClearTimeTask(id);
                 return;
             }
-
-            auto t = timeTaskMap.find(id);
-            if (t == timeTaskMap.end())
-                return;
-
-            auto& taskData = t->second;
-            if (taskData.func.isEmpty())
-                return;
-
             EngineScope scope(engine);
-            if (taskData.paras.empty())
-                taskData.func.get().call();
-            else
+            Local<Value> func = Local<Value>();
+            vector<Local<Value>> args;
             {
-                vector<Local<Value>> args;
-                for (auto& para : taskData.paras)
-                    if (para.isEmpty())
-                        return;
-                    else
-                        args.emplace_back(para.get());
-                taskData.func.get().call({}, args);
+                CsLockHolder lock(locker);
+
+                auto t = timeTaskMap.find(id);
+                if (t == timeTaskMap.end())
+                    return;
+
+                TimeTaskData& taskData = t->second;
+
+                if (taskData.func.isEmpty())
+                    return;
+                func = taskData.func.get();
+                if (!taskData.paras.empty())
+                {
+                    vector<Local<Value>> args;
+                    for (auto& para : taskData.paras)
+                        if (para.isEmpty())
+                            return;
+                        else
+                            args.emplace_back(para.get());
+                }
             }
+            if (!func.isFunction())
+                return;
+            if (args.size() > 0)
+                func.asFunction().call({}, args);
+            else
+                func.asFunction().call();
         }
         TIMETASK_CATCH("setInterval-Function");
     }, timeout / 50);
-    return timeTaskId;
+
+    CsLockHolder lock(locker);
+    data.swap(timeTaskMap[tid]);
+    return tid;
 }
 
 int NewInterval(Local<String> func, int timeout)
 {
-    ++timeTaskId;
+    int tid = ++ timeTaskId;
+    TimeTaskData data;
 
-    timeTaskMap[timeTaskId].code = func;
-    timeTaskMap[timeTaskId].engine = EngineScope::currentEngine();
+    data.code = func;
+    data.engine = EngineScope::currentEngine();
 
-    timeTaskMap[timeTaskId].task = Schedule::repeat(
-        [engine{ EngineScope::currentEngine() }, id{ timeTaskId }]()
+    data.task = Schedule::repeat(
+        [engine{EngineScope::currentEngine()}, id{tid}]()
     {
         try {
             if (LL::isServerStopping())
                 return;
             if (!EngineManager::isValid(engine))
             {
-                timeTaskMap[id].task.cancel();
-                timeTaskMap.erase(id);
+                ClearTimeTask(id);
                 return;
             }
-
-            auto t = timeTaskMap.find(id);
-            if (t == timeTaskMap.end())
-                return;
-
-            auto& taskData = t->second;
-            if (taskData.code.isEmpty())
-                return;
-
             EngineScope scope(engine);
-            engine->eval(taskData.code.get().toString());
+            std::string code;
+            {
+                CsLockHolder lock(locker);
+
+                auto t = timeTaskMap.find(id);
+                if (t == timeTaskMap.end())
+                    return;
+                TimeTaskData& taskData = t->second;
+
+                if (taskData.code.isEmpty())
+                    return;
+                code = taskData.code.get().toString();
+            }
+            if (!code.empty())
+                engine->eval(code);
         }
         TIMETASK_CATCH("setInterval-String");
     }, timeout / 50);
-    return timeTaskId;
+
+    CsLockHolder lock(locker);
+    data.swap(timeTaskMap[tid]);
+    return tid;
 }
 
 bool ClearTimeTask(int id)
 {
+    assert(EngineScope::currentEngine() != nullptr);
+    TimeTaskData data;
     try
     {
-        timeTaskMap.at(id).task.cancel();
-        timeTaskMap.erase(id);
+        CsLockHolder lock(locker);
+        auto it = timeTaskMap.find(id);
+        if (it != timeTaskMap.end())
+        {
+            data.swap(timeTaskMap[id]);
+            timeTaskMap.erase(id);
+        }
     }
     catch (...)
     {
-        ;
+        logger.error("Fail in ClearTimeTask");
     }
     return true;
 }
@@ -233,14 +349,28 @@ bool ClearTimeTask(int id)
 
 ///////////////////////// Func /////////////////////////
 
-void LxlRemoveTimeTaskData(ScriptEngine* engine)
+void LLSERemoveTimeTaskData(ScriptEngine* engine)
 {
-    erase_if(timeTaskMap, [engine](auto& dataPair) {
-        if (dataPair.second.engine == engine)
+    // enter scope to prevent script::Global::~Global() from crashing
+    EngineScope enter(engine);
+    std::unordered_map<int, TimeTaskData> tmpMap;
+    try
+    {
+        CsLockHolder lock(locker);
+        for (auto it = timeTaskMap.begin(); it != timeTaskMap.end();)
         {
-            dataPair.second.task.cancel();
-            return true;
+            if (it->second.engine == engine)
+            {
+                it->second.swap(tmpMap[it->first]);
+                it = timeTaskMap.erase(it);
+            }
+            else
+                ++it;
         }
-        return false;
-    });
+    }
+    catch (...)
+    {
+        logger.info("Fail in LLSERemoveTimeTaskData");
+    }
+    tmpMap.clear();
 }

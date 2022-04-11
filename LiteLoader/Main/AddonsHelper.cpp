@@ -45,17 +45,37 @@ std::string GetAddonJsonFile(Addon::Type type)
     return "";
 }
 
+inline bool isManifestFile(std::string const& filename)
+{
+    return filename == "manifest.json"|| filename == "pack_manifest.json";
+}
+
+#include <MC/JsonHelpers.hpp>
+inline std::string FixMojangJson(std::string const& content)
+{
+    Json::Value value;
+    JsonHelpers::parseJson(content, value);
+    return JsonHelpers::serialize(value);
+}
+
 std::optional<Addon> parseAddonFromPath(std::filesystem::path addonPath)
 {
     try
     {
         auto manifestPath = addonPath;
         manifestPath.append("manifest.json");
+        if (!filesystem::exists(manifestPath))
+        {
+            manifestPath = addonPath;
+            manifestPath.append("pack_manifest.json");
+        }
         auto manifestFile = ReadAllFile(manifestPath.u8string());
         if (!manifestFile || manifestFile->empty())
             throw "manifest.json not found!";
 
-        auto manifest = nlohmann::json::parse(*manifestFile, nullptr, true, true);
+        std::string content = FixMojangJson(*manifestFile);
+        
+        auto manifest = nlohmann::json::parse(content, nullptr, true, true);
         auto header = manifest["header"];
         auto uuid = header["uuid"];
         Addon addon;
@@ -82,20 +102,17 @@ std::optional<Addon> parseAddonFromPath(std::filesystem::path addonPath)
         addonLogger.error("Uncaught SEH Exception Detected!");
         addonLogger.error("In " __FUNCTION__ " " + addonPath.u8string());
         addonLogger.error("Error: Code[{}] {}", e.code(), TextEncoding::toUTF8(e.what()));
-        __debugbreak();
     }
     catch (const std::exception& e)
     {
         addonLogger.error("Uncaught C++ Exception Detected!");
         addonLogger.error("In " __FUNCTION__ " " + addonPath.u8string());
         addonLogger.error("Error: Code[{}] {}", -1, TextEncoding::toUTF8(e.what()));
-        __debugbreak();
     }
     catch (...)
     {
         addonLogger.error("Uncaught Exception Detected!");
         addonLogger.error("In " __FUNCTION__ " " + addonPath.u8string());
-        __debugbreak();
     }
     return std::nullopt;
 }
@@ -238,7 +255,7 @@ void FindManifest(vector<string> &result, const string& path)
     for (auto& file : ent)
     {
         auto path = file.path();
-        if (path.filename() == "manifest.json")
+        if (isManifestFile(path.filename().u8string()))
         {
             result.push_back(filesystem::canonical(path).parent_path().u8string());
             foundManifest = true;
@@ -325,7 +342,7 @@ bool AddonsManager::install(std::string packPath)
         }
 
         filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
-        //filesystem::remove_all(str2wstr(packPath), ec);
+        filesystem::remove_all(str2wstr(packPath), ec);
         return true;
     }
     catch (const seh_exception& e)

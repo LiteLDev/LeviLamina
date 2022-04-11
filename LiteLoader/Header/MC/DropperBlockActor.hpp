@@ -12,6 +12,7 @@ class DropperBlockActor {
 
 #define AFTER_EXTRA
 // Add Member There
+    friend class Level;
 
 #undef AFTER_EXTRA
 

@@ -149,7 +149,7 @@ void Welcome()
          << "\r" << R"(         | |___| | ||  __/ |__| (_) | (_| | (_| |  __/ |               )" << endl
          << "\r" << R"(         |_____|_|\__\___|_____\___/ \__,_|\__,_|\___|_|               )" << endl
          << "\r" << R"(                                                                       )" << endl
-         << "\r" << R"(       --------   Light-Weight BDS Plugin Loader   --------            )" << endl
+         << "\r" << R"(       --------   Light-Weight BDS Plugin Loader   ----------          )" << endl
          << "\r" << R"(                                                                       )" << endl;
 }
 
@@ -201,11 +201,14 @@ void LLMain()
     // Check Running BDS(Requires Config)
     CheckRunningBDS();
 
-    // Initialize Player Database
-    InitPlayerDatabase();
-
     // I18n
     Translation::load("plugins/LiteLoader/LangPack/" + LL::globalConfig.language + ".json");
+
+    // Builtin CrashLogger
+    LL::InitCrashLogger(LL::globalConfig.enableCrashLogger);
+
+    // Initialize Player Database
+    InitPlayerDatabase();
 
     // Rename Window
     HWND hwnd = GetConsoleWindow();
@@ -217,9 +220,6 @@ void LLMain()
 
     // DebugMode
     CheckDevMode();
-
-    // Builtin CrashLogger
-    LL::InitCrashLogger(LL::globalConfig.enableCrashLogger);
 
     // Addon Helper
     if (LL::globalConfig.enableAddonsHelper)
@@ -245,7 +245,6 @@ void LLMain()
         logger.info("\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");
         if (LL::globalConfig.enableAutoUpdate)
             LL::InitAutoUpdateCheck();
-        endTime = clock();
         return true;
     });
 

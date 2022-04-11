@@ -61,8 +61,9 @@ THook(void, "?_appendLogEntryMetadata@LogDetails@BedrockLog@@AEAAXAEAV?$basic_st
 }
 
 #include "LiteLoader.h"
+#include <MC/BedrockLog.hpp>
 THook(void, "?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4ZZ",
-      int a1, int a2, int a3, int a4, int a5, __int64 a6, int a7, __int64 a8, ...)
+      enum BedrockLog::LogCategory a1, class std::bitset<3> a2, enum BedrockLog::LogRule a3, enum LogAreaID a4, unsigned int a5, char const* a6, int a7, char const* a8, ...)
 {
     va_list va;
     auto text = (char*)a8;
@@ -72,48 +73,44 @@ THook(void, "?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@
     }
     //std::cout << a7 << std::endl;
     va_start(va, a8);
-    if (a7 == 600) {
-        string text = "Done (" + fmt::format("{:.1f}", (endTime - startTime) * 1.0 / 1000) + "s)! For help, type \"help\" or \"?\"";
-        return SymCall("?log_va@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4PEAD@Z",
-                       void, int, int, int, int, int, __int64, int, __int64, __int64)(a1, a2, a3, a4, a5, a6, a7, (__int64)text.c_str(), (__int64)va);
+    if (a7 == 600) {    
+        return;
     }
-    return SymCall("?log_va@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4PEAD@Z",
-                   void, int, int, int, int, int, __int64, int, __int64, __int64)(a1, a2, a3, a4, a5, a6, a7, a8, (__int64)va);
+    return BedrockLog::log_va(a1, a2, a3, a4, a5, a6, a7, a8, va);
 }
 
 #include <MC/ColorFormat.hpp>
-extern std::unordered_map<void*, string*> resultOfOrigin;
+#include <MC/CommandOrigin.hpp>
+#include <MC/CommandOutput.hpp>
+extern std::unordered_map<CommandOrigin const*, string*> resultOfOrigin;
 TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z",
-                       void* ori, void* out)
+                       class CommandOrigin const& origin, class CommandOutput const& output)
 {
-    auto it = resultOfOrigin.find(ori);
-    if (it == resultOfOrigin.end())
+    std::stringbuf tmpBuf;
+    auto oldBuf = std::cout.rdbuf();
+    std::cout.rdbuf(&tmpBuf);
+    auto rv = original(this, origin, output);
+    std::cout.rdbuf(oldBuf);
+
+    auto it = resultOfOrigin.find(&origin);
+    if (it == resultOfOrigin.end() || !it->second /*|| !it->second->empty()*/)
     {
-        std::stringbuf sbuf;
-        auto oBuf = std::cout.rdbuf();
-        std::cout.rdbuf(&sbuf);
-        auto rv = original(this, ori, out);
-        std::cout.rdbuf(oBuf);
-        auto str = sbuf.str();
-        std::istringstream iss(str);
+        auto& log = output.getSuccessCount() > 0 ? serverLogger.info : serverLogger.error;
+        std::istringstream iss(tmpBuf.str());
         string line;
         while (getline(iss, line))
         {
             if (LL::globalConfig.colorLog)
-                serverLogger.info << ColorFormat::convertToColsole(line, false) << Logger::endl;
+                log << ColorFormat::convertToColsole(line, false) << Logger::endl;
             else
-                serverLogger.info << ColorFormat::removeColorCode(line) << Logger::endl;
+                log << ColorFormat::removeColorCode(line) << Logger::endl;
         }
         return rv;
     }
-    std::stringbuf sbuf;
-    auto oBuf = std::cout.rdbuf();
-    std::cout.rdbuf(&sbuf);
-    auto rv = original(this, ori, out);
-    std::cout.rdbuf(oBuf);
-    it->second->assign(sbuf.str());
+    it->second->assign(tmpBuf.str());
     while (it->second->size() && (it->second->back() == '\n' || it->second->back() == '\r'))
         it->second->pop_back();
+    it->second = nullptr;
     resultOfOrigin.erase(it);
     return rv;
 }

@@ -50,13 +50,6 @@ LIAPI bool Container::hasContainer(Vec3& pos, int dim) {
     return getContainerAt(pos, dim) != nullptr;
 }
 
-class DropperBlockActor;
 LIAPI Container* Container::getContainerAt(Vec3& pos, int dim) {
-    Vec3 vec{pos.x, pos.y, pos.z};
-
-    // This function didn't use 'this' pointer
-    Container* container = SymCall("?_getContainerAt@DropperBlockActor@@AEAAPEAVContainer@@AEAVBlockSource@@AEBVVec3@@@Z",
-                                   Container*, DropperBlockActor*, BlockSource*, Vec3*)(nullptr, Level::getBlockSource(dim), &vec);
-
-    return container;
+    return Level::getContainer(pos, dim);
 }

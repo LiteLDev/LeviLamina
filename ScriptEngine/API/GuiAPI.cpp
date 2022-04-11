@@ -16,7 +16,7 @@ using namespace Form;
 //////////////////// Class Definition ////////////////////
 
 ClassDefine<SimpleFormClass> SimpleFormClassBuilder =
-    defineClass<SimpleFormClass>("LXL_SimpleForm")
+    defineClass<SimpleFormClass>("LLSE_SimpleForm")
         .constructor(nullptr)
         .instanceFunction("setTitle", &SimpleFormClass::setTitle)
         .instanceFunction("setContent", &SimpleFormClass::setContent)
@@ -24,7 +24,7 @@ ClassDefine<SimpleFormClass> SimpleFormClassBuilder =
         .build();
 
 ClassDefine<CustomFormClass> CustomFormClassBuilder =
-    defineClass<CustomFormClass>("LXL_CustomForm")
+    defineClass<CustomFormClass>("LLSE_CustomForm")
         .constructor(nullptr)
         .instanceFunction("setTitle", &CustomFormClass::setTitle)
         .instanceFunction("addLabel", &CustomFormClass::addLabel)

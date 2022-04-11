@@ -31,3 +31,9 @@ LL会在开服时输出服务器版本及协议版本，你也可以通过`/vers
 ## 在Wine上无法启动服务器
 尝试删除`plugins/LiteLoader/LLAutoUpdate.dll`  
 如果你的服务器的可用内存少于1.2GB，请尝试释放内存，因为在低内存环境中LiteLoaderBDS可能无法正常启动
+
+## 如果崩溃日志存在错误怎么办？
+从[Release](https://github.com/LiteLDev/LiteLoaderBDS/releases)下载对应版本的`PDB.zip`，将其解压至以下任一文件夹内:
+- `./`
+- `./plugins/`
+- `./plugins/lib`

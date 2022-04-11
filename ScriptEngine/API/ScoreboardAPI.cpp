@@ -11,7 +11,7 @@ using namespace std;
 //////////////////// Class Definition ////////////////////
 
 ClassDefine<ObjectiveClass> ObjectiveClassBuilder =
-	defineClass<ObjectiveClass>("LXL_Objective")
+	defineClass<ObjectiveClass>("LLSE_Objective")
 		.constructor(nullptr)
 		.instanceProperty("name", &ObjectiveClass::getName)
 		.instanceProperty("displayName", &ObjectiveClass::getDisplayName)

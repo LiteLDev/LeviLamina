@@ -284,7 +284,7 @@ Local<Value> McClass::listen(const Arguments& args)
     CHECK_ARG_TYPE(args[1], ValueKind::kFunction);
 
     try{
-        return Boolean::newBoolean(LxlAddEventListener(EngineScope::currentEngine(),args[0].toStr(),args[1].asFunction()));
+        return Boolean::newBoolean(LLSEAddEventListener(EngineScope::currentEngine(),args[0].toStr(),args[1].asFunction()));
     }
     CATCH("Fail to Bind Listener!");
 }
@@ -292,7 +292,7 @@ Local<Value> McClass::listen(const Arguments& args)
 
 //////////////////// Funcs ////////////////////
 
-bool LxlAddEventListener(ScriptEngine *engine, const string &eventName, const Local<Function> &func)
+bool LLSEAddEventListener(ScriptEngine *engine, const string &eventName, const Local<Function> &func)
 {
     try {
         int eventId = int(EventsMap.at(eventName));
@@ -311,7 +311,7 @@ bool LxlAddEventListener(ScriptEngine *engine, const string &eventName, const Lo
     }
 }
 
-bool LxlRemoveAllEventListeners(ScriptEngine* engine)
+bool LLSERemoveAllEventListeners(ScriptEngine* engine)
 {
     for (auto& listeners : listenerList)
     {
@@ -322,7 +322,7 @@ bool LxlRemoveAllEventListeners(ScriptEngine* engine)
     return true;
 }
 
-bool LxlCallEventsOnHotLoad(ScriptEngine* engine)
+bool LLSECallEventsOnHotLoad(ScriptEngine* engine)
 {
     FakeCallEvent(engine, EVENT_TYPES::onServerStarted);
 
@@ -335,12 +335,16 @@ bool LxlCallEventsOnHotLoad(ScriptEngine* engine)
     return true;
 }
 
-bool LxlCallEventsOnHotUnload(ScriptEngine* engine)
+bool LLSECallEventsOnHotUnload(ScriptEngine* engine)
 {
     auto players = Level::getAllPlayers();
     for (auto& pl : players)
         FakeCallEvent(engine, EVENT_TYPES::onLeft, PlayerClass::newPlayer(pl));
-
+    for (auto& [index, cb] : ENGINE_GET_DATA(engine)->unloadCallbacks)
+    {
+        cb(engine);
+    }
+    ENGINE_GET_DATA(engine)->unloadCallbacks.clear();
     return true;
 }
 
@@ -855,9 +859,11 @@ void EnableEventListener(int eventId)
                 Actor* source = nullptr;
                 if (ev.mDamageSource->isEntitySource())
                 {
-                    source = Level::getEntity(ev.mDamageSource->getDamagingEntityUniqueID());
+                    auto getEntityUniqueID = (decltype(&ActorDamageSource::getDamagingEntityUniqueID))&ActorDamageSource::__unk_vfn_8;
                     if (ev.mDamageSource->isChildEntitySource())
-                        source = source->getOwner();
+                        source = Level::getEntity((ev.mDamageSource->*getEntityUniqueID)());
+                    else
+                        source = Level::getEntity(ev.mDamageSource->getDamagingEntityUniqueID());
                 }
 
                 CallEvent(EVENT_TYPES::onMobHurt, EntityClass::newEntity(ev.mMob),
@@ -1116,11 +1122,11 @@ void InitBasicEventListeners()
 
             vector<string> paras;
             bool isFromOtherEngine = false;
-            string prefix = LxlFindCmdReg(true, cmd, paras, &isFromOtherEngine);
+            string prefix = LLSEFindCmdReg(true, cmd, paras, &isFromOtherEngine);
 
             if (!prefix.empty())
             {
-                //Lxl Registered Cmd
+                //LLSE Registered Cmd
                 int perm = localShareData->playerCmdCallbacks[prefix].perm;
 
                 if (player->getCommandPermissionLevel() >= perm)
@@ -1172,11 +1178,11 @@ void InitBasicEventListeners()
             //CallEvents
             vector<string> paras;
             bool isFromOtherEngine = false;
-            string prefix = LxlFindCmdReg(false, cmd, paras, &isFromOtherEngine);
+            string prefix = LLSEFindCmdReg(false, cmd, paras, &isFromOtherEngine);
 
             if (!prefix.empty())
             {
-                //Lxl Registered Cmd
+                //LLSE Registered Cmd
 
                 bool callbackRes = CallServerCmdCallback(prefix, paras);
                 IF_LISTENED(EVENT_TYPES::onConsoleCmd)
@@ -1210,8 +1216,9 @@ void InitBasicEventListeners()
     });
 
 // Plugin Hot Management
-    Event::ScriptPluginManagerEvent::subscribe_ref([](ScriptPluginManagerEvent& ev)
-    {
+    Event::ScriptPluginManagerEvent::subscribe_ref([](ScriptPluginManagerEvent& ev) {
+        // if (!LL::isDebugMode())
+        //     return false;
         if (ev.pluginExtention != LLSE_PLUGINS_EXTENSION)
             return true;
 
@@ -1276,9 +1283,15 @@ THook(void, "?tick@ServerLevel@@UEAAXXZ",
 {
     try
     {
-        for (auto engine : globalShareData->globalEngineList)
+        std::list<ScriptEngine*> tmpList;
         {
-            if (EngineManager::getEngineType(engine) == LLSE_BACKEND_TYPE)
+            SRWLockSharedHolder lock(globalShareData->engineListLock);
+            // low efficiency
+            tmpList = globalShareData->globalEngineList;
+        }
+        for (auto engine : tmpList)
+        {
+            if (EngineManager::isValid(engine) && EngineManager::getEngineType(engine) == LLSE_BACKEND_TYPE)
             {
                 EngineScope enter(engine);
                 engine->messageQueue()->loopQueue(script::utils::MessageQueue::LoopType::kLoopOnce);

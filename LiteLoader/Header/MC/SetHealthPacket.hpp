@@ -13,6 +13,7 @@ class SetHealthPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+    char filler[8];
 
 #undef AFTER_EXTRA
 

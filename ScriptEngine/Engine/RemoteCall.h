@@ -4,8 +4,8 @@
 
 //////////////////// Funcs ////////////////////
 
-bool LxlExportFunc(ScriptEngine* engine, const Local<Function>& func, const string& exportName);
-bool LxlRemoveAllExportedFuncs(ScriptEngine* engine);
+bool LLSEExportFunc(ScriptEngine* engine, const Local<Function>& func, const string& exportName);
+bool LLSERemoveAllExportedFuncs(ScriptEngine* engine);
 
 class ModuleMessage;
 void RemoteSyncCallRequest(ModuleMessage& msg);

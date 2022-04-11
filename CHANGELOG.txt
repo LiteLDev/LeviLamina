@@ -1,28 +1,21 @@
-This is a bug fix update, fix several problems that may cause crash. Please update as soon as possible
-## [New features]
-New dynamic command registration interface (DynamicCommandAPI)
-New text encoding conversion interface (I18nAPI)
-Added built-in OutputFilter regex output filtering function
-Added addons automatic installation, management and query commands
-Added CompoundTag::toPrettySNBT beautification output interface
-Provided support for NetworkNBT format
-Provide comment support for all json interfaces of scripting engine
-Added a symbol cache switch for PrintCurrentStackTraceback
-Upgraded the included LLMoney version
+This is a bug fix update, fix several problems that may cause lag.Please update as soon as possible
+
 ## [Bug fixes]
-Repair the problem of incorrect content of some packet classes
-Repair the problems of StructureTemplate class.
-Repair the problem of error reporting in hot management command
-Add lock to Logger to solve the problem of probable collapse of service when multi-threaded output
-The script engine fixes the problem that the database cannot be closed.
-Scripting engine fixes the problem of repeated loading of ll.require
-Scripting engine fixes the problem that some object data is not updated after setNbt
-Scripting engine fixes missing onLiquidFlow event dimension
-Scripting engine fixes item.clone
-Scripting engine provides binary interface for base64 conversion
-Scripting engine fixes possible problems with TimeTask, adds security checks
-Scripting engine adds engine validity checks for multiple callbacks, improving stability
-Scripting engine fixes the problem that V8 output abnormal information triggers debugger and causes crash.
-Fix some problems of SymDBHelper in SDK.
-Provide UTF8 conversion for most of the output, to avoid the crash caused by local encoding
-Repair the problem of crashing caused by inputting full-angle characters in the background
+
+- Fix LLSE Hot Management crash (load/reload/unload)
+- Fix loading error of non-ascii filename plugin
+- Fix LLSE setTimeout and setInterval crash
+- Fix LLSE network related crash and deadlock
+- Fix LLSE remote call deadlock
+- Fix LLSE onMobHurt Event, #325
+- Fix runcmd, #309
+- Fix memory leak
+  - Level::executeCommandAs
+  - ProjectileSpawnEvent
+  - Actor::hurtEntity
+  - Spawner::spawnMob
+- Fix AddonsHelper crash
+- Fix AddonsHelper parse error
+- Change Welcome Text
+
+

@@ -386,7 +386,8 @@ void testAll()
 }
 TClasslessInstanceHook2("TestColorFormat", void, "?startServerThread@ServerInstance@@QEAAXXZ")
 {
-    ColorFormat::testAll();
+    if (false)
+        ColorFormat::testAll();
     original(this);
 #endif // DEBUG
 }

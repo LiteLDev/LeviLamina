@@ -18,7 +18,6 @@
 
 using namespace LL;
 
-bool ipInformationLogged = false;
 
 //Fix bug
 TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z",
@@ -34,7 +33,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
 
 //Fix bug
 TClasslessInstanceHook(bool, "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
-      ReadOnlyBinaryStream* a2)
+    ReadOnlyBinaryStream* a2)
 {
     ReadOnlyBinaryStream pkt(a2->getData(), false);
     pkt.getUnsignedVarInt();
@@ -44,8 +43,15 @@ TClasslessInstanceHook(bool, "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4Stream
 }
 
 //Fix bug
-TClasslessInstanceHook(void*, "?_read@PurchaseReceiptPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z"
-    ,ReadOnlyBinaryStream* a2)
+TClasslessInstanceHook(void*, "?_read@PurchaseReceiptPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
+    ReadOnlyBinaryStream* a2)
+{
+    return (void*)1;
+}
+
+// Fix bug
+TClasslessInstanceHook(void*, "?_read@EduUriResourcePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
+    ReadOnlyBinaryStream* a2)
 {
     return (void*)1;
 }
@@ -53,18 +59,29 @@ TClasslessInstanceHook(void*, "?_read@PurchaseReceiptPacket@@EEAA?AW4StreamReadR
 // Fix the listening port twice
 TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ")
 {
+    static bool isFirstLog = true;
     if (globalConfig.enableFixListenPort)
     {
-        if (!ipInformationLogged)
+        if (isFirstLog)
         {
-            ipInformationLogged = true;
-            return original(this);
+            isFirstLog = false;
+            original(this);
+            endTime = clock();
+            Logger("Server").info("Done (" + fmt::format("{:.1f}", (endTime - startTime) * 1.0 / 1000) + "s)! For help, type \"help\" or \"?\"");
+            return 1;
         }
         return 0;
     }
     else
-    {
-        return original(this);
+    {     
+        original(this);
+        if (!isFirstLog)
+        {
+            endTime = clock();
+            Logger("Server").info("Done (" + fmt::format("{:.1f}", (endTime - startTime) * 1.0 / 1000) + "s)! For help, type \"help\" or \"?\""); 
+        }
+        isFirstLog = false;
+        return 1;
     }
 }
 

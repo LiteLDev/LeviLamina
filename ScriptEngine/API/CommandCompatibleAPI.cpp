@@ -26,7 +26,7 @@ bool RegisterCmd(const string& cmd, const string& describe, int cmdLevel)
 }
 
 // Helper
-void LxlRegisterNewCmd(bool isPlayerCmd, string cmd, const string& describe, int level, Local<Function> func)
+void LLSERegisterNewCmd(bool isPlayerCmd, string cmd, const string& describe, int level, Local<Function> func)
 {
     if (cmd[0] == '/')
         cmd = cmd.erase(0, 1);
@@ -49,7 +49,7 @@ void LxlRegisterNewCmd(bool isPlayerCmd, string cmd, const string& describe, int
         toRegCmdQueue.push_back({ cmd, describe, level });
 }
 
-bool LxlRemoveCmdRegister(ScriptEngine* engine)
+bool LLSERemoveCmdRegister(ScriptEngine* engine)
 {
     erase_if(localShareData->playerCmdCallbacks, [&engine](auto& data) {
         return data.second.fromEngine == engine;
@@ -82,7 +82,7 @@ Local<Value> McClass::regPlayerCmd(const Arguments& args)
                 level = newLevel;
         }
 
-        LxlRegisterNewCmd(true, cmd, describe, level, args[2].asFunction());
+        LLSERegisterNewCmd(true, cmd, describe, level, args[2].asFunction());
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in RegisterPlayerCmd!");
@@ -99,7 +99,7 @@ Local<Value> McClass::regConsoleCmd(const Arguments& args)
         string cmd = args[0].asString().toString();
         string describe = args[1].asString().toString();
 
-        LxlRegisterNewCmd(false, cmd, describe, 4, args[2].asFunction());
+        LLSERegisterNewCmd(false, cmd, describe, 4, args[2].asFunction());
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in RegisterConsoleCmd!");
@@ -138,7 +138,7 @@ void ProcessRegCmdQueue()
     toRegCmdQueue.clear();
 }
 
-string LxlFindCmdReg(bool isPlayerCmd, const string& cmd, vector<string>& receiveParas, bool *fromOtherEngine)
+string LLSEFindCmdReg(bool isPlayerCmd, const string& cmd, vector<string>& receiveParas, bool *fromOtherEngine)
 {
     std::unordered_map<std::string, std::string>& registeredMap =
         isPlayerCmd ? globalShareData->playerRegisteredCmd : globalShareData->consoleRegisteredCmd;

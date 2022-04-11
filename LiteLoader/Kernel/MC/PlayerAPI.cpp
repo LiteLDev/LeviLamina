@@ -695,28 +695,26 @@ bool Player::sendRawFormPacket(unsigned formId, const string& data) const
 
 bool Player::sendSimpleForm(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(Player*, int)> callback) const
 {
-    string model = u8R"({"title": "%s","content":"%s","buttons":%s,"type":"form"})";
-    model = model.replace(model.find("%s"), 2, title);
-    model = model.replace(model.find("%s"), 2, content);
-
-    fifo_json buttonText;
+    nlohmann::json model = R"({"title": "","content":"","buttons":[],"type":"form"})"_json;
+    model["title"] = title;
+    model["content"] = content;
     for (int i = 0; i < buttons.size(); ++i)
     {
-        fifo_json oneButton;
+        nlohmann::json oneButton = "{}"_json;
         oneButton["text"] = buttons[i];
         if (!images[i].empty())
         {
-            fifo_json image;
+            nlohmann::json image = "{}"_json;
             image["type"] = images[i].find("textures/") == 0 ? "path" : "url";
             image["data"] = images[i];
             oneButton["image"] = image;
         }
-        buttonText.push_back(oneButton);
+        model["buttons"].push_back(oneButton);
     }
-    model = model.replace(model.find("%s"), 2, buttonText.dump());
+    std::string data = model.dump();
 
     unsigned formId = NewFormId();
-    if (!sendRawFormPacket(formId, model))
+    if (!sendRawFormPacket(formId, data))
         return false;
     SetSimpleFormPacketCallback(formId, callback);
     return true;
@@ -724,14 +722,14 @@ bool Player::sendSimpleForm(const string& title, const string& content, const ve
 
 bool Player::sendModalForm(const string& title, const string& content, const string& button1, const string& button2, std::function<void(Player*, bool)> callback) const
 {
-    string model = R"({"title":"%s","content":"%s","button1":"%s","button2":"%s","type":"modal"})";
-    model = model.replace(model.find("%s"), 2, title);
-    model = model.replace(model.find("%s"), 2, content);
-    model = model.replace(model.find("%s"), 2, button1);
-    model = model.replace(model.find("%s"), 2, button2);
-
+    nlohmann::json model = R"({"title":"","content":"","button1":"","button2":"","type":"modal"})"_json;
+    model["title"] = title;
+    model["content"] = content;
+    model["button1"] = button1;
+    model["button2"] = button2;
+    std::string data = model.dump();
     unsigned formId = NewFormId();
-    if (!sendRawFormPacket(formId, model))
+    if (!sendRawFormPacket(formId, data))
         return false;
     SetModalFormPacketCallback(formId, callback);
     return true;

@@ -17,7 +17,7 @@
 //////////////////// Class Definition ////////////////////
 
 ClassDefine<BlockClass> BlockClassBuilder =
-    defineClass<BlockClass>("LXL_Block")
+    defineClass<BlockClass>("LLSE_Block")
         .constructor(nullptr)
         .instanceFunction("getRawPtr", &BlockClass::getRawPtr)
         

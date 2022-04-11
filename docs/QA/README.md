@@ -32,3 +32,9 @@ The plugin is not compatible with the current version of LiteLoaderBDS
 ## Can't start server on Wine
 Try to remove `plugins/LiteLoader/LLAutoUpdate.dll`  
 If your server has free memory less than 1.2GB, try to release memory, because in low memory environment, LiteLoaderBDS may not start normally
+
+## What if the crash log has errors?
+Download the corresponding version of `PDB.zip` from [Release](https://github.com/LiteLDev/LiteLoaderBDS/releases), and extract it to one of the following folders:
+- `./`
+- `./plugins/`
+- `./plugins/lib`

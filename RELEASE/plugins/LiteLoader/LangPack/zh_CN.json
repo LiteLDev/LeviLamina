@@ -1,8 +1,8 @@
 {
-    "init.loadConfig.fail":                 "LXL配置文件加载失败！",
+    "init.loadConfig.fail":                 "LLSE配置文件加载失败！",
     "init.fileMapping.fail":                "全局共享数据加载失败！",
     "init.mapFile.fail":                    "全局共享数据映射失败！",
-    "init.llMoney.noFound":                 "LLMoney.dll 未找到！LXL经济系统将不会工作",
+    "init.llMoney.noFound":                 "LLMoney.dll 未找到！LLSE经济系统将不会工作",
     "init.idFile.fail":                     "初始化唯一识别文件失败！错误码：",
     "api.parseJson.fail":                   "Json解析发生错误！",
     "remoteCall.createMessageThread.fail":  "创建消息循环失败！",
@@ -16,8 +16,8 @@
     "base.getDimName.1":                    "下界",
     "base.getDimName.2":                    "末地",
     "base.getDimName.unknown":              "其他维度",
-    "lxlapi.require.success":               " - 插件依赖包加载成功。已加载：",
-    "lxlapi.require.fail":                  " - 插件依赖包加载失败！",
-    "lxlapi.require.download.success":      " - 插件依赖包拉取成功！已安装到路径：",
-    "lxlapi.require.network.fail":          " - 插件依赖包拉取网络请求失败！错误码："   
+    "llseapi.require.success":               " - 插件依赖包加载成功。已加载：",
+    "llseapi.require.fail":                  " - 插件依赖包加载失败！",
+    "llseapi.require.download.success":      " - 插件依赖包拉取成功！已安装到路径：",
+    "llseapi.require.network.fail":          " - 插件依赖包拉取网络请求失败！错误码："   
 }

@@ -10,7 +10,7 @@
 //////////////////// Class Definition ////////////////////
 
 ClassDefine<BlockEntityClass> BlockEntityClassBuilder =
-	defineClass<BlockEntityClass>("LXL_BlockEntity")
+	defineClass<BlockEntityClass>("LLSE_BlockEntity")
 		.constructor(nullptr)
 		.instanceFunction("getRawPtr", &BlockEntityClass::getRawPtr)
 
@@ -86,7 +86,7 @@ Local<Value> BlockEntityClass::setNbt(const Arguments& args)
 		if (!nbt)
 			return Local<Value>();    //Null
 
-		blockEntity->setNbt(nbt);
+		blockEntity->setNbt(nbt, Level::getBlockSource(dim));
 		return Boolean::newBoolean(true);
 	}
 	CATCH("Fail in setNbt!")
