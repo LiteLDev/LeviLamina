@@ -93,7 +93,7 @@ TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin
     std::cout.rdbuf(oldBuf);
 
     auto it = resultOfOrigin.find(&origin);
-    if (it == resultOfOrigin.end() && !it->second /*&& !it->second->empty()*/)
+    if (it == resultOfOrigin.end() || !it->second /*|| !it->second->empty()*/)
     {
         auto& log = output.getSuccessCount() > 0 ? serverLogger.info : serverLogger.error;
         std::istringstream iss(tmpBuf.str());

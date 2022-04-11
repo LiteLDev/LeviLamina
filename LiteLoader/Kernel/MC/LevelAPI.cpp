@@ -238,7 +238,8 @@ bool Level::executeCommand(const string& cmd) {
 
 std::unordered_map<CommandOrigin const*, string*> resultOfOrigin;
 
-std::pair<bool, string> Level::executeCommandEx(const string& cmd) {
+std::pair<bool, string> Level::executeCommandEx(const string& cmd)
+{
     auto origin = ::ServerCommandOrigin::load(getServerOriginTag(), *Global<ServerLevel>);
     string val;
     resultOfOrigin[origin.get()] = &val;
