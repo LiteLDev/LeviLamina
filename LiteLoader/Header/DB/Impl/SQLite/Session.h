@@ -19,6 +19,7 @@ public:
     bool execute(const std::string& query);
     void query(const std::string& query, std::function<bool(const Row&)> callback);
     Stmt& prepare(const std::string& query);
+    std::string getLastError() const;
     void close();
     bool isOpen();
     DBType getType();

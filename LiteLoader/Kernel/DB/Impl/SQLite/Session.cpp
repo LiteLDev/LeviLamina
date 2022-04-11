@@ -167,7 +167,12 @@ void SQLiteSession::query(const std::string& query, std::function<bool(const Row
 
 Stmt& SQLiteSession::prepare(const std::string& query)
 {
-    return SQLiteStmt::create(conn, query);
+    return SQLiteStmt::create(*this, query);
+}
+
+std::string SQLiteSession::getLastError() const
+{
+	return std::string(sqlite3_errmsg(conn));
 }
 
 void SQLiteSession::close()

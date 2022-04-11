@@ -91,6 +91,7 @@ SQLiteStmt::~SQLiteStmt()
 
 Stmt& SQLiteStmt::bind(const Any& value, int index)
 {
+    ++index; // Index starts at 1, but we need to start at 0
     if (index < 0 || index > totalParamsCount)
     {
         throw std::invalid_argument("SQLiteStmt::bind: Invalid parameter `index`");
@@ -141,9 +142,15 @@ Stmt& SQLiteStmt::bind(const Any& value, int index)
     }
     if (res != SQLITE_OK)
     {
-        throw std::runtime_error("SQLiteStmt::bind: Failed to bind " + Any::type2str(type) + " to index " + std::to_string(index));
+        std::string e = fmt::format("SQLiteStmt::bind: Failed to bind {} to parameter at index {}",
+                                    Any::type2str(type), index);
+        if (session) {
+            e += ": " + session->getLastError();
+        }
+        throw std::runtime_error(e);
     }
-    boundIndexes.push_back(index);
+    boundParamsCount++;
+    boundIndexes.push_back(index - 1);
     if (getUnboundParamsCount() == 0)
     {
         process();
@@ -152,11 +159,11 @@ Stmt& SQLiteStmt::bind(const Any& value, int index)
 }
 Stmt& SQLiteStmt::bind(const Any& value, const std::string& name)
 {
-    return bind(value, sqlite3_bind_parameter_index(stmt, name.c_str()));
+    return bind(value, sqlite3_bind_parameter_index(stmt, name.c_str()) - 1);
 }
 Stmt& SQLiteStmt::bind(const Any& value)
 {
-    return bind(value, boundParamsCount);
+    return bind(value, getNextParamIndex());
 }
 
 void SQLiteStmt::close()
@@ -198,7 +205,7 @@ bool SQLiteStmt::isExecuted()
     return sqlite3_stmt_status(stmt, SQLITE_STMTSTATUS_RUN, 0);
 }
 
-Stmt &SQLiteStmt::operator,(const BindType& b)
+Stmt &SQLiteStmt::operator,(const BindType&b)
 {
     if (b.name.empty() && b.idx == -1)
     {
@@ -219,29 +226,19 @@ Stmt &SQLiteStmt::operator,(const BindType& b)
     return *this;
 }
 
-Stmt& SQLiteStmt::create(sqlite3* db, const std::string& sql)
+Stmt& SQLiteStmt::create(SQLiteSession& sess, const std::string& sql)
 {
     sqlite3_stmt* stmt = nullptr;
-    int res = sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    int res = sqlite3_prepare_v2(sess.conn, sql.c_str(), -1, &stmt, nullptr);
     if (res != SQLITE_OK)
     {
-        throw std::runtime_error("SQLiteStmt::create: Failed to prepare statement: " + std::string(sqlite3_errmsg(db)));
+        throw std::runtime_error("SQLiteStmt::create: Failed to prepare statement: " + sess.getLastError());
     }
     SQLiteStmt* result = new SQLiteStmt(stmt);
     result->onHeap = true;
-    return *result;
-}
-Stmt& SQLiteStmt::create(SQLiteSession& sess, const std::string& sql)
-{
-    auto& stmt = create(sess.conn, sql);
-    stmt.setDebugOutput(sess.debugOutput);
+    result->session = &sess;
+    result->setDebugOutput(sess.debugOutput);
     if (sess.debugOutput) logger.debug("SQLiteStmt::create: Prepared > " + sql);
-    return stmt;
-}
-Stmt& SQLiteStmt::create(sqlite3_stmt* stmt)
-{
-    SQLiteStmt* result = new SQLiteStmt(stmt);
-    result->onHeap = true;
     return *result;
 }
 

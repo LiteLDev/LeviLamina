@@ -47,6 +47,11 @@ ResultSet Session::query(const std::string& query)
     return result;
 }
 
+std::string Session::getLastError() const
+{
+	throw std::runtime_error("Session::getLastError: Not implemented");
+}
+
 void Session::destroy()
 {
     if (isOpen())

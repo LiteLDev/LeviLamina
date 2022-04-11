@@ -82,6 +82,12 @@ public:
      */
     virtual Stmt& prepare(const std::string& query) = 0;
     /**
+     * @brief Get the last error message
+     * 
+     * @return std::string Error message
+     */
+	virtual std::string getLastError() const;
+    /**
      * @brief Close the session.
      * 
      */

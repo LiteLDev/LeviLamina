@@ -11,6 +11,7 @@ class SQLiteSession;
 class SQLiteStmt : public Stmt
 {
 
+    SQLiteSession* session = nullptr;
     sqlite3_stmt* stmt = nullptr;
     int boundParamsCount = 0;
     int totalParamsCount = 0;
@@ -35,9 +36,7 @@ public:
 
     Stmt& operator,(const BindType& b);
 
-    LIAPI static Stmt& create(sqlite3* db, const std::string& sql);
     LIAPI static Stmt& create(SQLiteSession& sess, const std::string& sql);
-    LIAPI static Stmt& create(sqlite3_stmt* stmt);
 };
 
 } // namespace DB
