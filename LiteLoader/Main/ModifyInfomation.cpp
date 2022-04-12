@@ -82,6 +82,7 @@ THook(void, "?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@
 #include <MC/ColorFormat.hpp>
 #include <MC/CommandOrigin.hpp>
 #include <MC/CommandOutput.hpp>
+bool IsMcServerThread();
 extern std::unordered_map<CommandOrigin const*, string*> resultOfOrigin;
 TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z",
                        class CommandOrigin const& origin, class CommandOutput const& output)
@@ -91,6 +92,11 @@ TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin
     std::cout.rdbuf(&tmpBuf);
     auto rv = original(this, origin, output);
     std::cout.rdbuf(oldBuf);
+    if (LL::isDebugMode() && !IsMcServerThread())
+    {
+        logger.warn("The thread executing the CommandOutputSender::send is not the \"MC_SERVER\" thread");
+        logger.warn("Output: {}", tmpBuf.str());
+    }
 
     auto it = resultOfOrigin.find(&origin);
     if (it == resultOfOrigin.end() || !it->second /*|| !it->second->empty()*/)

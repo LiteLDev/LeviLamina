@@ -1106,7 +1106,7 @@ TClasslessInstanceHook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCR
 
     if (LL::isDebugMode() && !IsMcServerThread())
     {
-        logger.warn("The thread executing the command \"{}\" is not the \"MC_SERVER\" thread");
+        logger.warn("The thread executing the command \"{}\" is not the \"MC_SERVER\" thread", cmd);
     }
     if (sp)
     {
