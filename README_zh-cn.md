@@ -101,7 +101,7 @@ mc.listen("onServerStarted", () => {
 - 🏆 应用生态健全
   - 海量现有插件，成熟发布平台，即刻 👉[前往MineBBS](https://www.minebbs.com/resources/?prefix_id=67)👈 查找并下载你喜欢的 LL 插件  
 - 🏃 开源 & 社区共建
-  - 项目采用 `GPL-3.0` 开源许可证，**永远不会** 收费或者推出商业版。  
+  - 项目采用 `AGPL-3.0` 开源许可证，**永远不会** 收费或者推出商业版。  
   - 设计思想采取 **去中心化** 设计，放心享受 **自由** 的插件加载框架！  
 
 ------
@@ -285,9 +285,9 @@ PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](
 - 如果您违反了 **EULA**，任何法律责任都与开发者**无关**
 - **开发者不对您负责，开发者没有义务为你编写代码、为你使用造成的任何后果负责**
 
-另外，您需要遵守本项目的`GPL-3.0`开源许可证条款，以及下列提到的各关联项目的开源许可证条款
+另外，您需要遵守本项目的`AGPL-3.0`开源许可证条款，以及下列提到的各关联项目的开源许可证条款
 
-[LiteLoader](https://github.com/LiteLDev/LiteLoader) GPLv3以及额外限制和例外  
+[LiteLoader](https://github.com/LiteLDev/LiteLoader) AGPLv3以及额外限制和例外  
 [BedrockX](https://github.com/Sysca11/BedrockX) GPLv3以及额外限制和例外   
 [ElementZero](https://github.com/Element-0/ElementZero) GPLv3  
 [ScriptX](https://github.com/Tencent/ScriptX) Apache License Version 2.0    

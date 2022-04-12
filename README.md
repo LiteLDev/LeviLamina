@@ -104,7 +104,7 @@ mc.listen("onServerStarted", () => {
 - 🏆 Sound app ecosystem
   - A large number of existing plugins, mature publishing platform, instantly 👉[Go to MineBBS](https://www.minebbs.com/resources/?prefix_id=67)👈 to find and download your favorite LL plugins  
 - 🏃 Open Source & Community Building
-  - The project is licensed under the `GPL-3.0` open source license and will **never** be charged for or released as a commercial version.  
+  - The project is licensed under the `AGPL-3.0` open source license and will **never** be charged for or released as a commercial version.  
   - The design philosophy is **decentralised** and you can be assured of a **free** plugin loading framework!  
 ------
 
@@ -278,7 +278,7 @@ You must accept the Minecraft EULA.
 - If you violate the **EULA**, any legal liability is **IRRELEVANT** to the developers.
 - **NO WARRANTY**.
 
-[LiteLoader](https://github.com/LiteLDev/LiteLoader) GPLv3 with extra restrictions&exceptions  
+[LiteLoader](https://github.com/LiteLDev/LiteLoader) AGPLv3 with extra restrictions&exceptions  
 [BedrockX](https://github.com/Sysca11/BedrockX) GPLv3 with extra restrictions&exceptions  
 [ElementZero](https://github.com/Element-0/ElementZero) GPLv3  
 [ScriptX](https://github.com/Tencent/ScriptX) Apache License Version 2.0    
