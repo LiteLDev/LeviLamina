@@ -5,6 +5,7 @@
 #include <MC/ItemStack.hpp>
 #include <MC/CommandParameterData.hpp>
 #include <MC/CommandRegistry.hpp>
+#include <magic_enum/magic_enum.hpp>
 using namespace Event;
 
 
@@ -22,5 +23,17 @@ void RegisterSimpleServerLogger()
             logger.info("<{}> /{}", ev.mPlayer->getRealName(), ev.mCommand);
             return true;
         });
+    }
+}
+
+#include <MC/Command.hpp>
+TInstanceHook(void, "?setPermissions@Player@@UEAAXW4CommandPermissionLevel@@@Z",
+              Player, CommandPermissionLevel perm)
+{
+    if (LL::globalConfig.enableSimpleServerLogger)
+    {
+        static Logger logger("Permissions");
+        logger.info("<{}> {}({}) -> {}({})",
+                    getRealName(), magic_enum::enum_name(getCommandPermissionLevel()), (int)getCommandPermissionLevel(), magic_enum::enum_name(perm), (int)perm);
     }
 }

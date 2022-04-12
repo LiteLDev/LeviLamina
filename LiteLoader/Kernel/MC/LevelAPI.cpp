@@ -236,9 +236,10 @@ bool Level::executeCommand(const string& cmd) {
     return MinecraftCommands::_runcmd(std::move(origin), cmd);
 }
 
-std::unordered_map<void*, string*> resultOfOrigin;
+std::unordered_map<CommandOrigin const*, string*> resultOfOrigin;
 
-std::pair<bool, string> Level::executeCommandEx(const string& cmd) {
+std::pair<bool, string> Level::executeCommandEx(const string& cmd)
+{
     auto origin = ::ServerCommandOrigin::load(getServerOriginTag(), *Global<ServerLevel>);
     string val;
     resultOfOrigin[origin.get()] = &val;
@@ -249,15 +250,8 @@ std::pair<bool, string> Level::executeCommandEx(const string& cmd) {
 
 static void* FAKE_PORGVTBL[26];
 bool Level::executeCommandAs(Player* pl, const string& cmd) {
-    //void** filler[5]; // warning: memory leak
-    //SymCall("??0PlayerCommandOrigin@@QEAA@AEAVPlayer@@@Z", void, void*, ServerPlayer*)(
-    //    filler, (ServerPlayer*)pl);
-    //if (FAKE_PORGVTBL[1] == nullptr) {
-    //    memcpy(FAKE_PORGVTBL, ((void**)filler[0]) - 1, sizeof(FAKE_PORGVTBL));
-    //    FAKE_PORGVTBL[1] = (void*)dummy;
-    //}
-    //filler[0] = FAKE_PORGVTBL + 1;
-    auto origin = PlayerCommandOrigin::load(*getPlayerOriginTag(*pl), *Global<Level>);
+    auto tag = getPlayerOriginTag(*pl);
+    auto origin = PlayerCommandOrigin::load(*tag, *Global<Level>);
     return MinecraftCommands::_runcmd(std::move(origin), cmd);
 }
 
@@ -332,7 +326,8 @@ Player* Level::getPlayer(const string& info) {
     Player* found = nullptr;
     Global<Level>->forEachPlayer([&](Player& sp) -> bool {
         Player* p = &sp;
-        if (p->getXuid() == target) {
+        if (p->getXuid() == target || p->getRealName() == info)
+        {
             found = p;
             return false;
         }
@@ -346,7 +341,6 @@ Player* Level::getPlayer(const string& info) {
             size_t curDelta = pName.length() - target.length();
             if (curDelta == 0) {
                 found = p;
-                return false;
             }
 
             if (curDelta < delta) {

@@ -18,7 +18,6 @@
 
 using namespace LL;
 
-bool ipInformationLogged = false;
 
 //Fix bug
 TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z",
@@ -57,17 +56,18 @@ TClasslessInstanceHook(void*, "?_read@EduUriResourcePacket@@EEAA?AW4StreamReadRe
     return (void*)1;
 }
 
-int num = 0;
 // Fix the listening port twice
 TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ")
 {
-    num++;
+    static bool isFirstLog = true;
     if (globalConfig.enableFixListenPort)
     {
-        if (!ipInformationLogged)
+        if (isFirstLog)
         {
-            ipInformationLogged = true;
+            isFirstLog = false;
             original(this);
+            endTime = clock();
+            Logger("Server").info("Done (" + fmt::format("{:.1f}", (endTime - startTime) * 1.0 / 1000) + "s)! For help, type \"help\" or \"?\"");
             return 1;
         }
         return 0;
@@ -75,10 +75,12 @@ TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ")
     else
     {     
         original(this);
-        if (num == 2) {
+        if (!isFirstLog)
+        {
             endTime = clock();
             Logger("Server").info("Done (" + fmt::format("{:.1f}", (endTime - startTime) * 1.0 / 1000) + "s)! For help, type \"help\" or \"?\""); 
         }
+        isFirstLog = false;
         return 1;
     }
 }

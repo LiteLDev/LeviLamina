@@ -80,38 +80,37 @@ THook(void, "?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@
 }
 
 #include <MC/ColorFormat.hpp>
-extern std::unordered_map<void*, string*> resultOfOrigin;
+#include <MC/CommandOrigin.hpp>
+#include <MC/CommandOutput.hpp>
+extern std::unordered_map<CommandOrigin const*, string*> resultOfOrigin;
 TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z",
-                       void* ori, void* out)
+                       class CommandOrigin const& origin, class CommandOutput const& output)
 {
-    auto it = resultOfOrigin.find(ori);
-    if (it == resultOfOrigin.end())
+    std::stringbuf tmpBuf;
+    auto oldBuf = std::cout.rdbuf();
+    std::cout.rdbuf(&tmpBuf);
+    auto rv = original(this, origin, output);
+    std::cout.rdbuf(oldBuf);
+
+    auto it = resultOfOrigin.find(&origin);
+    if (it == resultOfOrigin.end() || !it->second /*|| !it->second->empty()*/)
     {
-        std::stringbuf sbuf;
-        auto oBuf = std::cout.rdbuf();
-        std::cout.rdbuf(&sbuf);
-        auto rv = original(this, ori, out);
-        std::cout.rdbuf(oBuf);
-        auto str = sbuf.str();
-        std::istringstream iss(str);
+        auto& log = output.getSuccessCount() > 0 ? serverLogger.info : serverLogger.error;
+        std::istringstream iss(tmpBuf.str());
         string line;
         while (getline(iss, line))
         {
             if (LL::globalConfig.colorLog)
-                serverLogger.info << ColorFormat::convertToColsole(line, false) << Logger::endl;
+                log << ColorFormat::convertToColsole(line, false) << Logger::endl;
             else
-                serverLogger.info << ColorFormat::removeColorCode(line) << Logger::endl;
+                log << ColorFormat::removeColorCode(line) << Logger::endl;
         }
         return rv;
     }
-    std::stringbuf sbuf;
-    auto oBuf = std::cout.rdbuf();
-    std::cout.rdbuf(&sbuf);
-    auto rv = original(this, ori, out);
-    std::cout.rdbuf(oBuf);
-    it->second->assign(sbuf.str());
+    it->second->assign(tmpBuf.str());
     while (it->second->size() && (it->second->back() == '\n' || it->second->back() == '\r'))
         it->second->pop_back();
+    it->second = nullptr;
     resultOfOrigin.erase(it);
     return rv;
 }

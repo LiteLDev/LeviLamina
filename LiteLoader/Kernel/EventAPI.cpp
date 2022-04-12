@@ -1061,11 +1061,27 @@ TInstanceHook(bool, "?canOpenContainerScreen@Player@@UEAA_NXZ",Player)
     IF_LISTENED_END(PlayerOpenContainerScreenEvent)
     return original(this);
 }
+
+bool IsMcServerThread()
+{
+    static auto threadid = std::thread::id();
+    if (threadid == std::thread::id())
+    {
+        PWSTR desc;
+        GetThreadDescription(GetCurrentThread(), &desc);
+        bool res = std::wstring(desc) == L"MC_SERVER";
+        LocalFree(desc);
+        if (res)
+            threadid = std::this_thread::get_id();
+        return res;
+    }
+    return threadid == std::this_thread::get_id();
+}
+
 /////////////////// PlayerCmdEvent & ConsoleCmd ///////////////////
 TClasslessInstanceHook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z",
        MCRESULT* rtn, std::shared_ptr<CommandContext> context, bool print)
 {
-
     Player* sp;
     string cmd;
 
@@ -1086,6 +1102,11 @@ TClasslessInstanceHook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCR
     catch (...)
     {
         return rtn;
+    }
+
+    if (LL::isDebugMode() && !IsMcServerThread())
+    {
+        logger.warn("The thread executing the command \"{}\" is not the \"MC_SERVER\" thread");
     }
     if (sp)
     {
