@@ -304,6 +304,10 @@ Although we expected to build an open-source community, but forcing everything o
 you can write plugins based on `LiteLoader` with ANY open-source license or even don't publish your source code. but if
 you modified the framework, or write a new framework based on this framework, you MUST open-source it.
 
+If you want to reproduce and distribute this framework, you have to get our authorization!
+
+
+
 <br/>
 
 ## 🏆 Acknowledgement
