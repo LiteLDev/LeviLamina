@@ -101,6 +101,11 @@ jobs:
         run: |
           echo ::set-output name=tag::${GITHUB_REF#refs/*/}
           mv LiteLoader.zip LiteLoader-${GITHUB_REF#refs/*/}.zip
+          
+          curl -X POST https://api.github.com/repos/LiteLDev/AutoUpdate-MineBBS/dispatches \
+          -H "Accept: application/vnd.github.everest-preview+json" \
+          -H "Authorization: token ${{ secrets.MB_TOKEN }}" \
+          --data '{"event_type": "webhook"}'
         shell: bash
 
       - name: Create New Release
