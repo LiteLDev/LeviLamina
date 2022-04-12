@@ -1,0 +1,22 @@
+This is a bug fix update, fix several problems that may cause lag.Please update as soon as possible
+
+[HEADING=1][Bug fixes][/HEADING]
+[LIST]
+[*]Fix LLSE Hot Management crash (load/reload/unload)
+[*]Fix loading error of non-ascii filename plugin
+[*]Fix LLSE setTimeout and setInterval crash
+[*]Fix LLSE network related crash and deadlock
+[*]Fix LLSE remote call deadlock
+[*]Fix LLSE onMobHurt Event, [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/325']#325[/URL]
+[*]Fix runcmd, [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/309']#309[/URL]
+[*]Fix memory leak
+[LIST]
+[*]Level::executeCommandAs
+[*]ProjectileSpawnEvent
+[*]Actor::hurtEntity
+[*]Spawner::spawnMob
+[/LIST]
+[*]Fix AddonsHelper crash
+[*]Fix AddonsHelper parse error
+[*]Change Welcome Text
+[/LIST]
