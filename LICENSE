@@ -1,4 +1,4 @@
-Copyright (c) 2020-2022 BDSLiteLoader Developers 
+Copyright (c) 2020-2022 LiteLoaderBDS Developers 
 This Project Use GNU Affero v3 License with extra limitations
 If you encounter any problems with the translation, please refer to the Chinese version
 
@@ -7,9 +7,9 @@ or using it for commercial propose.
 2. Always follow Minecraft‘s EULA (https://account.mojang.com/documents/minecraft_eula)
 
 1. 如果你提供服务器托管服务，你可以免费使用这个框架，但你不应该对这个框架进行私下更改或者作为卖点。去除版权以及赞助商的信息是一件非常可耻的事情！如果您修复或调整了代码，请提交PR，而不是将其设为私有或用于商业用途。
-2. 严格遵守Minecraft的EULA https://account.mojang.com/documents/minecraft_eula
 
-                   GNU AFFERO GENERAL PUBLIC LICENSE
+2. 严格遵守Minecraft的EULA https://account.mojang.com/documents/minecraft_eula
+                    GNU AFFERO GENERAL PUBLIC LICENSE
                        Version 3, 19 November 2007
 
  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
