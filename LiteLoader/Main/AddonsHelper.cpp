@@ -596,6 +596,11 @@ public:
         registry->registerCommand("addons", "LiteLoaderBDS Addons Helper (Restart required after addon changes)",
             CommandPermissionLevel::GameMasters, { (CommandFlagValue)0 }, { (CommandFlagValue)0x80 });
 
+        vector<string> addonsList;
+        for (auto& addon : addons)
+            addonsList.push_back(addon.name);
+        registry->addSoftEnum("AddonName", addonsList);
+
         // addons list
         registry->addEnum<Operation>("Operation_Addons_List", {
             {"list", Operation::List}
@@ -622,10 +627,6 @@ public:
         );
 
         // addons uninstall
-        vector<string> addonsList;
-        for (auto& addon : addons)
-            addonsList.push_back(addon.name);
-        registry->addSoftEnum("AddonName", addonsList);
 
         registry->addEnum<Operation>("Operation_Addons_Others", {
             {"uninstall", Operation::Uninstall},
