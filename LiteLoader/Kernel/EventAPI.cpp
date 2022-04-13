@@ -1874,18 +1874,19 @@ TInstanceHook(bool, "?canAddPassenger@Actor@@UEBA_NAEAV1@@Z",
 
 
 ////////////// EntityStepOnPressurePlate //////////////
-TClasslessInstanceHook(void, "?entityInside@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z",
-      BlockSource* a2, BlockPos* a3, Actor* a4)
+TClasslessInstanceHook(bool, "?shouldTriggerEntityInside@BasePressurePlateBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z",
+                       BlockSource* a2, BlockPos* a3, Actor* a4)
 {
     IF_LISTENED(EntityStepOnPressurePlateEvent)
     {
         EntityStepOnPressurePlateEvent ev{};
         ev.mActor = a4;
         ev.mBlockInstance = Level::getBlockInstance(a3, a4->getDimensionId());
-        ev.call();
+        if (!ev.call())
+            return false;
     }
     IF_LISTENED_END(EntityStepOnPressurePlateEvent)
-    original(this, a2, a3, a4);
+    return original(this, a2, a3, a4);
 }
 
 ////////////// ProjectileSpawn //////////////
