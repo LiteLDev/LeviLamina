@@ -99,24 +99,39 @@ TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin
     }
 
     auto it = resultOfOrigin.find(&origin);
-    if (it == resultOfOrigin.end() || !it->second /*|| !it->second->empty()*/)
+    if (it != resultOfOrigin.end())
     {
-        auto& log = output.getSuccessCount() > 0 ? serverLogger.info : serverLogger.error;
-        std::istringstream iss(tmpBuf.str());
-        string line;
-        while (getline(iss, line))
+        try
         {
-            if (LL::globalConfig.colorLog)
-                log << ColorFormat::convertToColsole(line, false) << Logger::endl;
-            else
-                log << ColorFormat::removeColorCode(line) << Logger::endl;
+            // May crash for incomprehensible reasons
+            it->second->assign(tmpBuf.str());
+            while (it->second->size() && (it->second->back() == '\n' || it->second->back() == '\r'))
+                it->second->pop_back();
+            it->second = nullptr;
+            resultOfOrigin.erase(it);
+            return rv;
         }
-        return rv;
+        catch (...)
+        {
+            if (LL::isDebugMode())
+            {
+                logger.warn("Output: {}", tmpBuf.str());
+                logger.warn("size of resultOfOrigin: {}", resultOfOrigin.size());
+            }
+#ifdef DEBUG
+            __debugbreak();
+#endif // DEBUG
+        }
     }
-    it->second->assign(tmpBuf.str());
-    while (it->second->size() && (it->second->back() == '\n' || it->second->back() == '\r'))
-        it->second->pop_back();
-    it->second = nullptr;
-    resultOfOrigin.erase(it);
+    auto& log = output.getSuccessCount() > 0 ? serverLogger.info : serverLogger.error;
+    std::istringstream iss(tmpBuf.str());
+    string line;
+    while (getline(iss, line))
+    {
+        if (LL::globalConfig.colorLog)
+            log << ColorFormat::convertToColsole(line, false) << Logger::endl;
+        else
+            log << ColorFormat::removeColorCode(line) << Logger::endl;
+    }
     return rv;
 }
