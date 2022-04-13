@@ -172,7 +172,7 @@ void SQLiteStmt::close()
     stmt = nullptr;
     if (results)
     {
-        destroy(results);
+        destroy(&results);
     }
     if (onHeap)
     {
