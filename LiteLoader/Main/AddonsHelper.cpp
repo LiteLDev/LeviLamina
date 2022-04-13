@@ -602,13 +602,13 @@ public:
         });
         registry->registerOverload<AddonsCommand>(
             "addons",
-            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "Operation", "Operation_Addons_List").addOptions((CommandParameterOption)1),
-            makeOptional<CommandParameterDataType::SOFT_ENUM>(&AddonsCommand::target, "AddonName", "AddonName", &AddonsCommand::target_isSet)
+            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "operation", "Operation_Addons_List").addOptions((CommandParameterOption)1),
+            makeOptional<CommandParameterDataType::SOFT_ENUM>(&AddonsCommand::target, "addonName", "AddonName", &AddonsCommand::target_isSet)
         );
         registry->registerOverload<AddonsCommand>(
             "addons",
-            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "Operation", "Operation_Addons_List").addOptions((CommandParameterOption)1),
-            makeOptional<CommandParameterDataType::NORMAL>(&AddonsCommand::index, "AddonIndex", nullptr, &AddonsCommand::index_isSet)
+            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "operation", "Operation_Addons_List").addOptions((CommandParameterOption)1),
+            makeOptional<CommandParameterDataType::NORMAL>(&AddonsCommand::index, "addonIndex", nullptr, &AddonsCommand::index_isSet)
         );
 
         // addons install
@@ -617,8 +617,8 @@ public:
         });
         registry->registerOverload<AddonsCommand>(
             "addons",
-            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "Operation", "Operation_Addons_Install").addOptions((CommandParameterOption)1),
-            makeMandatory<CommandParameterDataType::NORMAL>(&AddonsCommand::target, "Target")
+            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "operation", "Operation_Addons_Install").addOptions((CommandParameterOption)1),
+            makeMandatory<CommandParameterDataType::NORMAL>(&AddonsCommand::target, "addonName")
         );
 
         // addons uninstall
@@ -635,13 +635,13 @@ public:
         });
         registry->registerOverload<AddonsCommand>(
             "addons",
-            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "Operation", "Operation_Addons_Others").addOptions((CommandParameterOption)1),
-            makeMandatory<CommandParameterDataType::SOFT_ENUM>(&AddonsCommand::target, "AddonName", "AddonName", &AddonsCommand::target_isSet)
+            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "operation", "Operation_Addons_Others").addOptions((CommandParameterOption)1),
+            makeMandatory<CommandParameterDataType::SOFT_ENUM>(&AddonsCommand::target, "addonName", "AddonName", &AddonsCommand::target_isSet)
         );
         registry->registerOverload<AddonsCommand>(
             "addons",
-            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "Operation", "Operation_Addons_Others").addOptions((CommandParameterOption)1),
-            makeMandatory<CommandParameterDataType::NORMAL>(&AddonsCommand::index, "AddonIndex", nullptr, &AddonsCommand::index_isSet)
+            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "operation", "Operation_Addons_Others").addOptions((CommandParameterOption)1),
+            makeMandatory<CommandParameterDataType::NORMAL>(&AddonsCommand::index, "addonIndex", nullptr, &AddonsCommand::index_isSet)
         );
     }
 };

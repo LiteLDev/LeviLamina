@@ -12,7 +12,7 @@ extern Logger logger;
 
 /**
  * @brief Friend function to convert a set of result to T.
- * 
+ *
  * @tparam T  The type to convert to
  * @param res A set of rows
  * @return T  The converted value
@@ -31,9 +31,9 @@ struct BindType
 };
 
 /**
- * @brief Structure to store a sequential container 
+ * @brief Structure to store a sequential container
  *        to bind multiple parameters at once.
- * 
+ *
  * @tparam T Type of sequence container, must have begin() and end() methods
  * @tparam The value type of the container must be DB::Any.
  */
@@ -46,9 +46,9 @@ struct BindSequenceType
 /**
  * @brief Structure to store a map(relevance) container
  *        to bind multiple parameters at once.
- * 
+ *
  * @tparam T Type of map container, must have begin() and end() methods
- * @note   The key type of the map must be std::string, 
+ * @note   The key type of the map must be std::string,
  *         and the value type of the map must be DB::Any.
  */
 template <typename T>
@@ -82,7 +82,7 @@ public:
     LIAPI void setDebugOutput(bool enable);
     /**
      * @brief Bind a value to a statement parameter.
-     * 
+     *
      * @param value               Value to bind
      * @param index               Parameter index
      * @throws std::runtime_error If error occurs
@@ -90,7 +90,7 @@ public:
     virtual Stmt& bind(const Any& value, int index) = 0;
     /**
      * @brief Bind a value to a statement parameter.
-     * 
+     *
      * @param value               Value to bind
      * @param name                Parameter name
      * @throws std::runtime_error If error occurs
@@ -98,65 +98,65 @@ public:
     virtual Stmt& bind(const Any& value, const std::string& name) = 0;
     /**
      * @brief Bind a value to the next statement parameter.
-     * 
+     *
      * @param value               Value to bind
      * @throws std::runtime_error If error occurs
      */
     virtual Stmt& bind(const Any& value) = 0;
     /**
      * @brief Get the query results.
-     * 
+     *
      * @return ResultSet&         Result set
      * @throws std::runtime_error If the result is not available
      */
     virtual ResultSet getResults();
     /**
      * @brief Close the statement.
-     * 
+     *
      * @warning DO NOT ACCESS THIS OBJECT AFTER CALLING THIS METHOD!!!
      */
     virtual void close() = 0;
     /**
      * @brief Get the number of the unbound parameters.
-     * 
+     *
      * @return int The number of the unbound parameters
      */
     virtual int getUnboundParamsCount() = 0;
     /**
      * @brief Get the number of the bound parameters.
-     * 
+     *
      * @return int The number of the bound parameters
      */
     virtual int getBoundParamsCount() = 0;
     /**
      * @brief Get the number of parameters.
-     * 
+     *
      * @return int The number of parameters
      */
     virtual int getParamsCount() = 0;
     /**
      * @brief Get the session type
-     * 
+     *
      * @return DB::DBType The database type
      */
     virtual DBType getType() = 0;
     /**
      * @brief Get wether the statement is executed or not.
-     * 
+     *
      * @return bool Return true if the statement is executed, false otherwise
      */
     virtual bool isExecuted() = 0;
 
     /**
      * @brief Operator, to bind single values.
-     * 
+     *
      * @param b The return value of DB::use
      * @return Stmt& *this
      */
     virtual Stmt& operator,(const BindType& b) = 0;
     /**
      * @brief Operator, to bind a sequence container.
-     * 
+     *
      * @param b The return value of DB::use
      * @return Stmt& *this
      */
@@ -171,7 +171,7 @@ public:
     }
     /**
      * @brief Operator, to bind a row.
-     * 
+     *
      * @param b The return value of DB::use
      * @return Stmt& *this
      */
@@ -197,7 +197,7 @@ public:
     }
     /**
      * @brief Operator, to bind a map container.
-     * 
+     *
      * @param b The return value of DB::bind
      * @return Stmt& *this
      */
@@ -213,7 +213,7 @@ public:
 
     /**
      * @brief Friend function to convert a set of result to T.
-     * 
+     *
      * @tparam T  The type to convert to
      * @param res A set of rows
      * @return T  The converted value
@@ -222,7 +222,7 @@ public:
     friend T results_to(const ResultSet& res);
     /**
      * @brief Operator, to set where to store results.
-     * 
+     *
      * @param i The return value of DB::into
      * @return Stmt& *this
      */
@@ -278,7 +278,12 @@ template <typename T>
 inline void destroy(T* ptr)
 {
     delete ptr;
-    ptr = nullptr;
+}
+template <typename T>
+inline void destroy(T** ptr)
+{
+    delete *ptr;
+    *ptr = nullptr;
 }
 
 inline BindType use(const Any& value, int idx = -1)
