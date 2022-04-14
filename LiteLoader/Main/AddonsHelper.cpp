@@ -331,7 +331,7 @@ bool AddonsManager::install(std::string packPath)
 
         vector<string> paths;
         FindManifest(paths, ADDON_INSTALL_TEMP_DIR);
-
+		
         for (auto& dir : paths)
         {
             string addonName = filesystem::path(str2wstr(dir)).filename().u8string();
