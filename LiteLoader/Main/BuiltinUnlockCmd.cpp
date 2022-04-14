@@ -6,18 +6,17 @@
 
 bool isUnlockCmdEnabled = true;
 
+// ==> LiteLoader/Main/SimpleServerLogger.cpp
+void LogCommandRegistration(std::string const& name, char const* description, enum CommandPermissionLevel perm, short flag1, short flag2);
+
 TInstanceHook(void, "?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z",
               CommandRegistry, std::string const& name, char const* description, enum CommandPermissionLevel perm, short flag1, short flag2)
 {
     if (LL::globalConfig.enableUnlockCmd)
         flag1 |= 0x80;
+    if (LL::globalConfig.debugMode)
+        LogCommandRegistration(name, description, perm, flag1, flag2);
 
-    //if (LL::globalConfig.debugMode)
-    //{
-    //    static Logger logger("RegCommand");
-    //    logger.consoleLevel = logger.debug.level;
-    //    logger.debug("RegsterCommand \"{}\"", name);
-    //}
     return original(this, name, description, perm, flag1, flag2);
 }
 

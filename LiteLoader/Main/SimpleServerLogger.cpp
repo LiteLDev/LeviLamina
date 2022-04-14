@@ -37,3 +37,12 @@ TInstanceHook(void, "?setPermissions@Player@@UEAAXW4CommandPermissionLevel@@@Z",
                     getRealName(), magic_enum::enum_name(getCommandPermissionLevel()), (int)getCommandPermissionLevel(), magic_enum::enum_name(perm), (int)perm);
     }
 }
+
+// ==> LiteLoader/Main/BuiltinUnlockCmd.cpp
+#include <MC/I18n.hpp>
+void LogCommandRegistration(std::string const& name, char const* description, enum CommandPermissionLevel perm, short flag1, short flag2)
+{
+    static Logger logger("RegsterCommand");
+    logger.consoleLevel = logger.debug.level;
+    logger.debug("{:<18} - {:<12} - {}", name, magic_enum::enum_name(perm), I18n::get(description));
+}
