@@ -5,7 +5,7 @@
 namespace DB
 {
 
-Logger logger("LLDB");
+Logger dbLogger("LLDB");
 
 void Session::setDebugOutput(bool enable)
 {
@@ -38,10 +38,10 @@ ResultSet Session::query(const std::string& query)
     });
     IF_ENDBG
     {
-        logger.debug("Session::query: Results >");
+        dbLogger.debug("Session::query: Results >");
         for (auto& str : SplitStrWithPattern(result.toTableString(), "\n"))
         {
-            logger.debug(str);
+            dbLogger.debug(str);
         }
     }
     return result;
