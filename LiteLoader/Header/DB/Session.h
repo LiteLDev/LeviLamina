@@ -8,7 +8,7 @@ class Logger;
 namespace DB
 {
 
-extern Logger logger;
+extern Logger dbLogger;
 
 class Session
 {

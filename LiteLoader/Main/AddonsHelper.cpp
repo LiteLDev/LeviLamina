@@ -331,7 +331,7 @@ bool AddonsManager::install(std::string packPath)
 
         vector<string> paths;
         FindManifest(paths, ADDON_INSTALL_TEMP_DIR);
-
+		
         for (auto& dir : paths)
         {
             string addonName = filesystem::path(str2wstr(dir)).filename().u8string();
@@ -596,19 +596,24 @@ public:
         registry->registerCommand("addons", "LiteLoaderBDS Addons Helper (Restart required after addon changes)",
             CommandPermissionLevel::GameMasters, { (CommandFlagValue)0 }, { (CommandFlagValue)0x80 });
 
+        vector<string> addonsList;
+        for (auto& addon : addons)
+            addonsList.push_back(addon.name);
+        registry->addSoftEnum("AddonName", addonsList);
+
         // addons list
         registry->addEnum<Operation>("Operation_Addons_List", {
             {"list", Operation::List}
         });
         registry->registerOverload<AddonsCommand>(
             "addons",
-            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "Operation", "Operation_Addons_List").addOptions((CommandParameterOption)1),
-            makeOptional<CommandParameterDataType::SOFT_ENUM>(&AddonsCommand::target, "AddonName", "AddonName", &AddonsCommand::target_isSet)
+            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "operation", "Operation_Addons_List").addOptions((CommandParameterOption)1),
+            makeOptional<CommandParameterDataType::SOFT_ENUM>(&AddonsCommand::target, "addonName", "AddonName", &AddonsCommand::target_isSet)
         );
         registry->registerOverload<AddonsCommand>(
             "addons",
-            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "Operation", "Operation_Addons_List").addOptions((CommandParameterOption)1),
-            makeOptional<CommandParameterDataType::NORMAL>(&AddonsCommand::index, "AddonIndex", nullptr, &AddonsCommand::index_isSet)
+            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "operation", "Operation_Addons_List").addOptions((CommandParameterOption)1),
+            makeOptional<CommandParameterDataType::NORMAL>(&AddonsCommand::index, "addonIndex", nullptr, &AddonsCommand::index_isSet)
         );
 
         // addons install
@@ -617,15 +622,11 @@ public:
         });
         registry->registerOverload<AddonsCommand>(
             "addons",
-            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "Operation", "Operation_Addons_Install").addOptions((CommandParameterOption)1),
-            makeMandatory<CommandParameterDataType::NORMAL>(&AddonsCommand::target, "Target")
+            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "operation", "Operation_Addons_Install").addOptions((CommandParameterOption)1),
+            makeMandatory<CommandParameterDataType::NORMAL>(&AddonsCommand::target, "addonName")
         );
 
         // addons uninstall
-        vector<string> addonsList;
-        for (auto& addon : addons)
-            addonsList.push_back(addon.name);
-        registry->addSoftEnum("AddonName", addonsList);
 
         registry->addEnum<Operation>("Operation_Addons_Others", {
             {"uninstall", Operation::Uninstall},
@@ -635,13 +636,13 @@ public:
         });
         registry->registerOverload<AddonsCommand>(
             "addons",
-            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "Operation", "Operation_Addons_Others").addOptions((CommandParameterOption)1),
-            makeMandatory<CommandParameterDataType::SOFT_ENUM>(&AddonsCommand::target, "AddonName", "AddonName", &AddonsCommand::target_isSet)
+            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "operation", "Operation_Addons_Others").addOptions((CommandParameterOption)1),
+            makeMandatory<CommandParameterDataType::SOFT_ENUM>(&AddonsCommand::target, "addonName", "AddonName", &AddonsCommand::target_isSet)
         );
         registry->registerOverload<AddonsCommand>(
             "addons",
-            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "Operation", "Operation_Addons_Others").addOptions((CommandParameterOption)1),
-            makeMandatory<CommandParameterDataType::NORMAL>(&AddonsCommand::index, "AddonIndex", nullptr, &AddonsCommand::index_isSet)
+            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "operation", "Operation_Addons_Others").addOptions((CommandParameterOption)1),
+            makeMandatory<CommandParameterDataType::NORMAL>(&AddonsCommand::index, "addonIndex", nullptr, &AddonsCommand::index_isSet)
         );
     }
 };

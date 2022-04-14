@@ -22,7 +22,7 @@ int SQLiteStmt::getNextParamIndex()
             result++;
         }
     }
-    IF_ENDBG logger.debug("SQLiteStmt::getNextParamIndex: The next param index is {}", result + 1);
+    IF_ENDBG dbLogger.debug("SQLiteStmt::getNextParamIndex: The next param index is {}", result + 1);
     return result + 1;
 }
 
@@ -33,7 +33,7 @@ void SQLiteStmt::process()
     for (int i = 0; i < colCnt; i++)
     {
         auto name = sqlite3_column_name(stmt, i);
-        IF_ENDBG logger.debug("SQLiteStmt::process: Column Name {}: {}", i, name);
+        IF_ENDBG dbLogger.debug("SQLiteStmt::process: Column Name {}: {}", i, name);
         header.add(name);
     }
     auto result = new ResultSet(header);
@@ -172,7 +172,7 @@ void SQLiteStmt::close()
     stmt = nullptr;
     if (results)
     {
-        destroy(results);
+        destroy(&results);
     }
     if (onHeap)
     {
@@ -238,7 +238,7 @@ Stmt& SQLiteStmt::create(SQLiteSession& sess, const std::string& sql)
     result->onHeap = true;
     result->session = &sess;
     result->setDebugOutput(sess.debugOutput);
-    if (sess.debugOutput) logger.debug("SQLiteStmt::create: Prepared > " + sql);
+    if (sess.debugOutput) dbLogger.debug("SQLiteStmt::create: Prepared > " + sql);
     return *result;
 }
 

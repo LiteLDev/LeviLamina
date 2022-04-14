@@ -3,13 +3,15 @@
 #### `"onMobDie"` - 生物死亡
 
 - 监听函数原型
-  `function(mob,source)`
+  `function(mob,source,cause)`
 - 参数：
   - mob : `Entity`  
     死亡的实体对象
-
   - source : `Entity`  
     伤害来源的实体对象（可能为`Null`）
+  - cause : `Integer`  
+    死亡原因
+
 - 拦截事件：不可以拦截
 
 注意，当玩家死亡时，除了触发`onPlayerDie`事件，这个事件同样也会被触发一次
@@ -19,7 +21,7 @@
 #### `"onMobHurt"` - 生物受伤（包括玩家）
 
 - 监听函数原型
-  `function(mob,source,damage)`
+  `function(mob,source,damage,cause)`
 - 参数：
   - mob : `Entity`  
     受伤的实体对象
@@ -27,7 +29,8 @@
     伤害来源的实体对象（可能为`Null`）
   - damage : `Integer`  
     受到的伤害数值
-
+  - cause : `Integer`   
+    受伤原因
 - 拦截事件：函数返回`false`
 
 <br>

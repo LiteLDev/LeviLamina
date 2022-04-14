@@ -1,21 +1,28 @@
-This is a bug fix update, fix several problems that may cause lag.Please update as soon as possible
+This is a bug fix update.Please update as soon as possible
 
-## [Bug fixes]
+## [New Features]
 
-- Fix LLSE Hot Management crash (load/reload/unload)
-- Fix loading error of non-ascii filename plugin
-- Fix LLSE setTimeout and setInterval crash
-- Fix LLSE network related crash and deadlock
-- Fix LLSE remote call deadlock
-- Fix LLSE onMobHurt Event, #325
-- Fix runcmd, #309
-- Fix memory leak
-  - Level::executeCommandAs
-  - ProjectileSpawnEvent
-  - Actor::hurtEntity
-  - Spawner::spawnMob
-- Fix AddonsHelper crash
-- Fix AddonsHelper parse error
-- Change Welcome Text
+- Add ConnParams APIs
+- Add RowSet::print API
+- Add RowSet::toTableString API 
+- Log all command registrations in `debug mode`, #320
+## [Bug Fixes]
 
+- Fix StepOnPressurePlateEvent #350
+- Fix bug for simple form without buttons, #344
+- Try to prevent the command from crashing 
+- Fix build and get player by exact name
+- Fix LLSE colorLog, #340
+- Fix BaseLib
+- Fix Server Started info output
+- Try to temporarily fix command crasher, #341
+- Try fix help command crash, #341
+- Fix #333
+- Fix onEat event can't listen to potion & milk, #281
 
+## [Changes]
+
+- Better exception/debug message
+- Update SimpleServerLogger
+- Set some APIs to be available only in `debug mode`
+- LLSE setBossbar added Color parameter #328

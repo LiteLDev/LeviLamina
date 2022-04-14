@@ -236,14 +236,17 @@ bool Level::executeCommand(const string& cmd) {
     return MinecraftCommands::_runcmd(std::move(origin), cmd);
 }
 
-std::unordered_map<CommandOrigin const*, string*> resultOfOrigin;
+std::unordered_map<CommandOrigin const*, string*> resultOfOrigin = {};
 
 std::pair<bool, string> Level::executeCommandEx(const string& cmd)
 {
     auto origin = ::ServerCommandOrigin::load(getServerOriginTag(), *Global<ServerLevel>);
     string val;
-    resultOfOrigin[origin.get()] = &val;
+    auto ptr = origin.get();
+    resultOfOrigin[ptr] = &val;
     bool rv = MinecraftCommands::_runcmd(std::move(origin), cmd);
+    if (resultOfOrigin.count(ptr))
+        resultOfOrigin.erase(ptr);
     return {rv, std::move(val)};
 }
 

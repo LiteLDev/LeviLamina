@@ -1106,7 +1106,7 @@ TClasslessInstanceHook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCR
 
     if (LL::isDebugMode() && !IsMcServerThread())
     {
-        logger.warn("The thread executing the command \"{}\" is not the \"MC_SERVER\" thread");
+        logger.warn("The thread executing the command \"{}\" is not the \"MC_SERVER\" thread", cmd);
     }
     if (sp)
     {
@@ -1727,6 +1727,42 @@ TInstanceHook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z", GameMode ,
     return original(this, it);
 }
 
+THook(ItemStack*, "?use@BucketItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z", Item* _this, ItemStack* a1, Player* a2)
+{
+    if (_this->getFullItemName() == "minecraft:milk_bucket")
+    {
+        IF_LISTENED(PlayerEatEvent)
+        {
+            PlayerEatEvent ev{};
+            ev.mPlayer = a2;
+            ev.mFoodItem = a1;
+            if (!ev.call())
+            {
+                return a1;
+            }
+        }
+        IF_LISTENED_END(PlayerEatEvent)
+    }
+    return original(_this, a1, a2);
+}
+
+
+THook(ItemStack*, "?use@PotionItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z", void* _this, ItemStack* a1, Player* a2)
+{
+    IF_LISTENED(PlayerEatEvent)
+    {
+        PlayerEatEvent ev{};
+        ev.mPlayer = a2;
+        ev.mFoodItem = a1;
+        if (!ev.call())
+        {
+            return a1;
+        }
+    }
+    IF_LISTENED_END(PlayerEatEvent)
+    return original(_this, a1, a2);
+}
+
 /////////////////// MobDie ///////////////////
 TInstanceHook(bool, "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z", Mob, ActorDamageSource* ads)
 {
@@ -1874,18 +1910,19 @@ TInstanceHook(bool, "?canAddPassenger@Actor@@UEBA_NAEAV1@@Z",
 
 
 ////////////// EntityStepOnPressurePlate //////////////
-TClasslessInstanceHook(void, "?entityInside@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z",
-      BlockSource* a2, BlockPos* a3, Actor* a4)
+TClasslessInstanceHook(bool, "?shouldTriggerEntityInside@BasePressurePlateBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z",
+                       BlockSource* a2, BlockPos* a3, Actor* a4)
 {
     IF_LISTENED(EntityStepOnPressurePlateEvent)
     {
         EntityStepOnPressurePlateEvent ev{};
         ev.mActor = a4;
         ev.mBlockInstance = Level::getBlockInstance(a3, a4->getDimensionId());
-        ev.call();
+        if (!ev.call())
+            return false;
     }
     IF_LISTENED_END(EntityStepOnPressurePlateEvent)
-    original(this, a2, a3, a4);
+    return original(this, a2, a3, a4);
 }
 
 ////////////// ProjectileSpawn //////////////

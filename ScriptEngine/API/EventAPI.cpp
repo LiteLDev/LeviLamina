@@ -868,7 +868,7 @@ void EnableEventListener(int eventId)
 
                 CallEvent(EVENT_TYPES::onMobHurt, EntityClass::newEntity(ev.mMob),
                     source ? EntityClass::newEntity(source) : Local<Value>(),
-                    Number::newNumber(ev.mDamage));
+                          Number::newNumber(ev.mDamage), Number::newNumber((int)ev.mDamageSource->getCause()));
             }
             IF_LISTENED_END(EVENT_TYPES::onMobHurt)
         });
@@ -897,7 +897,7 @@ void EnableEventListener(int eventId)
                 }
 
                 CallEvent(EVENT_TYPES::onMobDie, EntityClass::newEntity((Actor*)ev.mMob),
-                    (source ? EntityClass::newEntity(source) : Local<Value>()));
+                          (source ? EntityClass::newEntity(source) : Local<Value>()), Number::newNumber((int)ev.mDamageSource->getCause()));
             }
             IF_LISTENED_END(EVENT_TYPES::onMobDie);
         });

@@ -669,13 +669,15 @@ pl.removeSidebar();
 
   - percent : `Integer`  
     血条中的血量百分比，有效范围为0~100。0为空血条，100为满
+  - colour : `Integer`  
+    血条颜色(默认值为2(RED))
 - 返回值：是否成功设置
 - 返回值类型：`Boolean`
 
 ```clike
 [Js]
 //对于一个玩家对象pl
-pl.setBossBar("Hello ~ ",80);
+pl.setBossBar("Hello ~ ",80,0);
 [Lua]
 
 ```

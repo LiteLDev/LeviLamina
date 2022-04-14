@@ -1122,7 +1122,8 @@ Local<Value> PlayerClass::setBossBar(const Arguments& args)
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
-    
+    if (args.size() >= 3)
+        CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
     try{
         Player* player = get();
         if (!player)
@@ -1134,8 +1135,10 @@ Local<Value> PlayerClass::setBossBar(const Arguments& args)
         else if(percent > 100)
             percent = 100;
         float value = (float)percent / 100;
-
-        player->sendBossEventPacket(BossEvent::Show, args[0].toStr(), value, BossEventColour::Red);     //Set
+        BossEventColour colour = BossEventColour::Red;
+        if (args.size() >= 3)
+            colour = (BossEventColour)args[2].toInt();
+        player->sendBossEventPacket(BossEvent::Show, args[0].toStr(), value, colour); // Set
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in setBossBar!")

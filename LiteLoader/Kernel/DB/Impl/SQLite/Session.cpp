@@ -86,12 +86,12 @@ void SQLiteSession::open(const ConnParams& params)
     {
         throw std::runtime_error("SQLiteSession::open: Failed to open database: " + std::string(sqlite3_errmsg(conn)));
     }
-    IF_ENDBG logger.debug("SQLiteSession::open: Opened database: " + std::string(path));
+    IF_ENDBG dbLogger.debug("SQLiteSession::open: Opened database: " + std::string(path));
 }
 
 bool SQLiteSession::execute(const std::string& query)
 {
-    IF_ENDBG logger.debug("SQLiteSession::execute: Executing > " + query);
+    IF_ENDBG dbLogger.debug("SQLiteSession::execute: Executing > " + query);
     auto res = sqlite3_exec(conn, query.c_str(), nullptr, nullptr, nullptr);
     if (res != SQLITE_OK)
     {
@@ -102,10 +102,10 @@ bool SQLiteSession::execute(const std::string& query)
 
 void SQLiteSession::query(const std::string& query, std::function<bool(const Row&)> callback)
 {
-    IF_ENDBG logger.debug("SQLiteSession::query: Querying > " + query);
+    IF_ENDBG dbLogger.debug("SQLiteSession::query: Querying > " + query);
     sqlite3_stmt* stmt = nullptr;
     auto res = sqlite3_prepare_v2(conn, query.c_str(), -1, &stmt, nullptr);
-    IF_ENDBG logger.debug("SQLiteSession::query: Prepared > " + query);
+    IF_ENDBG dbLogger.debug("SQLiteSession::query: Prepared > " + query);
     if (res != SQLITE_OK)
     {
         sqlite3_finalize(stmt);
@@ -116,7 +116,7 @@ void SQLiteSession::query(const std::string& query, std::function<bool(const Row
     for (int i = 0; i < cols; i++)
     {
         auto name = sqlite3_column_name(stmt, i);
-        IF_ENDBG logger.debug("SQLiteSession::query: Column Name {}: {}", i, name);
+        IF_ENDBG dbLogger.debug("SQLiteSession::query: Column Name {}: {}", i, name);
         header.add(name);
     }
     while (true)
@@ -181,13 +181,17 @@ void SQLiteSession::close()
     {
         lastStmt->close();
         lastStmt = nullptr;
-        IF_ENDBG logger.debug("SQLiteSession::close: Closed the last statement");
+        IF_ENDBG dbLogger.debug("SQLiteSession::close: Closed the last statement");
     }
     if (conn)
     {
-        sqlite3_close_v2(conn);
+        auto res = sqlite3_close(conn);
+        if (res != SQLITE_OK)
+        {
+			throw std::runtime_error("SQLiteSession::close: Failed to close database: " + std::string(sqlite3_errmsg(conn)));
+        }
         conn = nullptr;
-        IF_ENDBG logger.debug("SQLiteSession::close: Closed database");
+        IF_ENDBG dbLogger.debug("SQLiteSession::close: Closed database");
     }
 }
 
@@ -207,7 +211,7 @@ Stmt& SQLiteSession::operator<<(const std::string& query)
     {
         lastStmt->close();
         lastStmt = 0;
-        IF_ENDBG logger.debug("SQLiteSession::operator<<: Closed the last statement");
+        IF_ENDBG dbLogger.debug("SQLiteSession::operator<<: Closed the last statement");
     }
     auto& stmt = prepare(query);
     lastStmt = &stmt;
