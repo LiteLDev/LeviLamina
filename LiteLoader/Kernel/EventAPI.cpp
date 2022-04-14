@@ -1727,6 +1727,42 @@ TInstanceHook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z", GameMode ,
     return original(this, it);
 }
 
+THook(ItemStack*, "?use@BucketItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z", Item* _this, ItemStack* a1, Player* a2)
+{
+    if (_this->getFullItemName() == "minecraft:milk_bucket")
+    {
+        IF_LISTENED(PlayerEatEvent)
+        {
+            PlayerEatEvent ev{};
+            ev.mPlayer = a2;
+            ev.mFoodItem = a1;
+            if (!ev.call())
+            {
+                return a1;
+            }
+        }
+        IF_LISTENED_END(PlayerEatEvent)
+    }
+    return original(_this, a1, a2);
+}
+
+
+THook(ItemStack*, "?use@PotionItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z", void* _this, ItemStack* a1, Player* a2)
+{
+    IF_LISTENED(PlayerEatEvent)
+    {
+        PlayerEatEvent ev{};
+        ev.mPlayer = a2;
+        ev.mFoodItem = a1;
+        if (!ev.call())
+        {
+            return a1;
+        }
+    }
+    IF_LISTENED_END(PlayerEatEvent)
+    return original(_this, a1, a2);
+}
+
 /////////////////// MobDie ///////////////////
 TInstanceHook(bool, "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z", Mob, ActorDamageSource* ads)
 {
