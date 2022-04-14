@@ -195,6 +195,7 @@ inline bool Interval(int a1)
 template <typename T>
 inline bool validPosition(T const& pos)
 {
+    if (isnan(static_cast<float>(pos.x)) || isnan(static_cast<float>(pos.z))) return false;
     return Interval(static_cast<int>(pos.x)) && Interval(static_cast<int>(pos.y)) && Interval(static_cast<int>(pos.z));
 }
 TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NV?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z",
@@ -213,6 +214,15 @@ TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NV?
             pl->setPos(Global<Level>->getDefaultSpawn().bottomCenter());
     }
     return 0;
+}
+
+TInstanceHook(void, "?move@Player@@UEAAXAEBVVec3@@@Z", Player, Vec3 pos)
+{
+    if (validPosition(pos))
+        return original(this, pos);
+    logger.warn << "Player(" << this->getRealName() << ") sent invalid Move Packet!" << Logger::endl;
+    this->kick("error move");
+    return;
 }
 
 //fix Wine Stop
