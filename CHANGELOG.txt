@@ -5,7 +5,7 @@ This is a bug fix update.Please update as soon as possible
 - Add ConnParams APIs
 - Add RowSet::print API
 - Add RowSet::toTableString API 
-- Log all command registrations in debug mode, #320
+- Log all command registrations in `debug mode`, #320
 ## [Bug Fixes]
 
 - Fix StepOnPressurePlateEvent #350
@@ -24,5 +24,5 @@ This is a bug fix update.Please update as soon as possible
 
 - Better exception/debug message
 - Update SimpleServerLogger
-- Set some APIs to be available only in debug mode
+- Set some APIs to be available only in `debug mode`
 - LLSE setBossbar added Color parameter #328

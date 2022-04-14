@@ -1,22 +1,26 @@
-This is a bug fix update, fix several problems that may cause lag.Please update as soon as possible
-
-[HEADING=1][Bug fixes][/HEADING]
+[HEADING=1][新内容][/HEADING]
 [LIST]
-[*]Fix LLSE Hot Management crash (load/reload/unload)
-[*]Fix loading error of non-ascii filename plugin
-[*]Fix LLSE setTimeout and setInterval crash
-[*]Fix LLSE network related crash and deadlock
-[*]Fix LLSE remote call deadlock
-[*]Fix LLSE onMobHurt Event, [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/325']#325[/URL]
-[*]Fix runcmd, [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/309']#309[/URL]
-[*]Fix memory leak
-[LIST]
-[*]Level::executeCommandAs
-[*]ProjectileSpawnEvent
-[*]Actor::hurtEntity
-[*]Spawner::spawnMob
+[*]新添ConnParams APIs
+[*]新添RowSet::print API
+[*]新添 RowSet::toTableString API
+[*]在调试模式下输出所有命令的注册情况, [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/320']#320[/URL]
 [/LIST]
-[*]Fix AddonsHelper crash
-[*]Fix AddonsHelper parse error
-[*]Change Welcome Text
+[HEADING=1][BUG修复][/HEADING]
+[LIST]
+[*]修复StepOnPressurePlateEvent事件, [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/350']#350[/URL]
+[*]修复没有按钮的表单造成的错误, [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/344']#344[/URL]
+[*]修复Level::getPlayer从真实名字来获取玩家
+[*]修复LLSE的colorLog, [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/340']#340[/URL]
+[*]修复BaseLib的一些问题
+[*]修复开服成功信息消失的BUG
+[*]尝试修复命令概率性崩溃, [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/341']#341[/URL]
+[*]尝试修复help崩溃, [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/341']#341[/URL]
+[*]修复 [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/333']#333[/URL]
+[*]修复onEat事件不能监听药水和牛奶, [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/281']#281[/URL]
+[/LIST]
+[HEADING=1][改变][/HEADING]
+[LIST]
+[*]更好的异常/调试信息
+[*]将一些API设置为只在调试模式下可用
+[*]为LLSE的setBossbar增加颜色参数, [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/328']#328[/URL]
 [/LIST]
