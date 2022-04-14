@@ -11,7 +11,7 @@ class Any;
 } // namespace DB
 
 /**
- * @brief Friend function to convert Any to T.
+ * @brief Function to convert Any to T.
  * 
  * @tparam T The type to convert to
  * @param v  The Any object
@@ -86,7 +86,6 @@ inline std::unordered_map<K, DB::Any> to_any_unordered_map(const std::unordered_
 
 #pragma endregion
 
-
 namespace DB
 {
 
@@ -96,6 +95,8 @@ namespace DB
  */
 class Any
 {
+
+public:
     union Value
     {
         bool boolean;
@@ -109,7 +110,6 @@ class Any
         ByteArray* blob;
     } value; ///< Value
 
-public:
     enum class Type : char
     {
         Null = 0,
@@ -345,15 +345,6 @@ public:
     }
 
     /**
-     * @brief Friend function to convert Any to T.
-     * 
-     * @tparam T The type to convert to
-     * @param v  The Any object
-     * @return T The converted value
-     */
-    template <typename T>
-    friend T any_to(const Any& v);
-    /**
      * @brief Get the value as T.
      * 
      * @tparam T             The type of the value
@@ -379,7 +370,7 @@ public:
     template <typename T>
     inline T get() const
     {
-        return any_to<T>();
+        return any_to<T>(*this);
     }
     /**
      * @brief Get the value as string

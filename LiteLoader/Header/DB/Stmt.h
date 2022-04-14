@@ -8,7 +8,7 @@ class Logger;
 namespace DB
 {
 
-extern Logger logger;
+extern Logger dbLogger;
 
 /**
  * @brief Friend function to convert a set of result to T.
