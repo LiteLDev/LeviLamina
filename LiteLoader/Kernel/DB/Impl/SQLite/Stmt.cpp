@@ -26,59 +26,17 @@ int SQLiteStmt::getNextParamIndex()
     return result + 1;
 }
 
-void SQLiteStmt::process()
+void SQLiteStmt::fetchResultHeader()
 {
     RowHeader header;
     int colCnt = sqlite3_column_count(stmt);
     for (int i = 0; i < colCnt; i++)
     {
         auto name = sqlite3_column_name(stmt, i);
-        IF_ENDBG dbLogger.debug("SQLiteStmt::process: Column Name {}: {}", i, name);
+        IF_ENDBG dbLogger.debug("SQLiteStmt::fetchResultHeader: Column Name[{}]: {}", i, name);
         header.add(name);
     }
-    auto result = new ResultSet(header);
-    while (true)
-    {
-        auto res = sqlite3_step(stmt);
-        if (res == SQLITE_DONE)
-        {
-            break;
-        }
-        if (res != SQLITE_ROW)
-        {
-            continue;
-        }
-        Row row(header);
-        for (int i = 0; i < colCnt; i++)
-        {
-            switch (sqlite3_column_type(stmt, i))
-            {
-                case SQLITE_INTEGER:
-                    row.push_back(sqlite3_column_int64(stmt, i));
-                    break;
-                case SQLITE_FLOAT:
-                    row.push_back(sqlite3_column_double(stmt, i));
-                    break;
-                case SQLITE_TEXT:
-                    row.push_back(std::string(reinterpret_cast<const char*>(sqlite3_column_text(stmt, i))));
-                    break;
-                case SQLITE_BLOB:
-                    row.push_back(ByteArray(
-                        reinterpret_cast<const uint8_t*>(sqlite3_column_blob(stmt, i)),
-                        reinterpret_cast<const uint8_t*>(sqlite3_column_blob(stmt, i)) + sqlite3_column_bytes(stmt, i)));
-                    break;
-                case SQLITE_NULL:
-                    row.push_back(Any());
-                    break;
-                default:
-                    delete result;
-                    result = 0;
-                    throw std::runtime_error("SQLiteSession::query: Unknown column type!");
-            }
-        }
-        result->push_back(row);
-    }
-    results = result;
+    resultHeader = header;
 }
 
 SQLiteStmt::~SQLiteStmt()
@@ -96,7 +54,7 @@ Stmt& SQLiteStmt::bind(const Any& value, int index)
     {
         throw std::invalid_argument("SQLiteStmt::bind: Invalid parameter `index`");
     }
-    if (getUnboundParamsCount() == 0)
+    if (getUnboundParams() == 0)
     {
         throw std::runtime_error("SQLiteStmt::bind: All the parameters are already bound");
     }
@@ -151,9 +109,9 @@ Stmt& SQLiteStmt::bind(const Any& value, int index)
     }
     boundParamsCount++;
     boundIndexes.push_back(index - 1);
-    if (getUnboundParamsCount() == 0)
+    if (!getUnboundParams() && session)
     {
-        process();
+        affectedRowsCount = session->getAffectedRows();
     }
     return *this;
 }
@@ -166,26 +124,146 @@ Stmt& SQLiteStmt::bind(const Any& value)
     return bind(value, getNextParamIndex());
 }
 
+bool SQLiteStmt::step()
+{
+	int res = sqlite3_step(stmt);
+	if (res == SQLITE_ROW)
+	{
+		if (resultHeader.empty())
+		{
+			fetchResultHeader();
+		}
+        IF_ENDBG dbLogger.debug("SQLiteStmt::step: Successfully");
+        stepped = true;
+		return true;
+	}
+	else if (res == SQLITE_DONE)
+	{
+		IF_ENDBG dbLogger.debug("SQLiteStmt::step: Failed: Done");
+        stepped = false;
+		return false;
+	}
+	else
+	{
+		throw std::runtime_error("SQLiteStmt::step: Failed to step");
+	}
+}
+
+bool SQLiteStmt::next()
+{
+    return step();
+}
+
+Row SQLiteStmt::fetch()
+{
+    if (resultHeader.empty())
+    {
+		fetchResultHeader();
+    }
+    Row row(resultHeader);
+    for (int i = 0; i < resultHeader.size(); i++)
+    {
+        switch (sqlite3_column_type(stmt, i))
+        {
+            case SQLITE_INTEGER:
+                row.push_back(sqlite3_column_int64(stmt, i));
+                break;
+            case SQLITE_FLOAT:
+                row.push_back(sqlite3_column_double(stmt, i));
+                break;
+            case SQLITE_TEXT:
+                row.push_back(std::string(reinterpret_cast<const char*>(sqlite3_column_text(stmt, i))));
+                break;
+            case SQLITE_BLOB:
+                row.push_back(ByteArray(
+                    reinterpret_cast<const uint8_t*>(sqlite3_column_blob(stmt, i)),
+                    reinterpret_cast<const uint8_t*>(sqlite3_column_blob(stmt, i)) + sqlite3_column_bytes(stmt, i)));
+                break;
+            case SQLITE_NULL:
+                row.push_back(Any());
+                break;
+            default:
+                throw std::runtime_error("SQLiteSession::query: Unknown column type!");
+        }
+    }
+    return row;
+}
+
+bool SQLiteStmt::done()
+{
+    if (stepped) return false;
+    return !step();
+}
+
+Stmt& SQLiteStmt::fetchAll(std::function<bool(const Row&)> cb)
+{
+    while (step())
+    {
+		if (!cb(fetch()))
+		{
+            IF_ENDBG dbLogger.debug("SQLiteStmt::fetchAll: Stopped fetching");
+			break;
+		}
+    }
+}
+
+ResultSet SQLiteStmt::fetchAll()
+{
+    if (resultHeader.empty())
+    {
+        fetchResultHeader();
+    }
+    ResultSet result(resultHeader);
+	while (step()) result.push_back(fetch());
+    IF_ENDBG dbLogger.debug("SQLiteStmt::fetchAll: Fetched {} rows", result.size());
+    return result;
+}
+
+ResultSet SQLiteStmt::fetchAll(RowHeader& header)
+{
+    if (resultHeader.empty())
+    {
+        fetchResultHeader();
+    }
+	header = resultHeader;
+    ResultSet result(header);
+    while (step()) result.push_back(fetch());
+    IF_ENDBG dbLogger.debug("SQLiteStmt::fetchAll: Fetched {} rows", result.size());
+    return result;
+}
+
+Stmt& SQLiteStmt::reset()
+{
+    auto res = sqlite3_reset(stmt);
+    if (res != SQLITE_OK)
+    {
+		throw std::runtime_error("SQLiteStmt::reset: Failed to reset");
+    }
+    IF_ENDBG dbLogger.debug("SQLiteStmt::reset: Reset successfully");
+	return *this;
+}
+
 void SQLiteStmt::close()
 {
     sqlite3_finalize(stmt);
     stmt = nullptr;
-    if (results)
-    {
-        destroy(&results);
-    }
     if (onHeap)
     {
         destroy(this);
     }
 }
 
-int SQLiteStmt::getUnboundParamsCount()
+int SQLiteStmt::getAffectedRows() 
+{
+    return affectedRowsCount;
+}
+
+int SQLiteStmt::getUnboundParams()
 {
     return totalParamsCount - boundParamsCount;
 }
 
-int SQLiteStmt::getBoundParamsCount()
+int SQLiteStmt::getBoundParams()
 {
     return boundParamsCount;
 }
@@ -198,11 +276,6 @@ int SQLiteStmt::getParamsCount()
 DBType SQLiteStmt::getType()
 {
     return DBType::SQLite;
-}
-
-bool SQLiteStmt::isExecuted()
-{
-    return sqlite3_stmt_status(stmt, SQLITE_STMTSTATUS_RUN, 0);
 }
 
 Stmt &SQLiteStmt::operator,(const BindType&b)

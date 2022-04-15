@@ -103,66 +103,8 @@ bool SQLiteSession::execute(const std::string& query)
 void SQLiteSession::query(const std::string& query, std::function<bool(const Row&)> callback)
 {
     IF_ENDBG dbLogger.debug("SQLiteSession::query: Querying > " + query);
-    sqlite3_stmt* stmt = nullptr;
-    auto res = sqlite3_prepare_v2(conn, query.c_str(), -1, &stmt, nullptr);
-    IF_ENDBG dbLogger.debug("SQLiteSession::query: Prepared > " + query);
-    if (res != SQLITE_OK)
-    {
-        sqlite3_finalize(stmt);
-        throw std::runtime_error("SQLiteSession::query: Failed to prepare query: " + std::string(sqlite3_errmsg(conn)));
-    }
-    int cols = sqlite3_column_count(stmt);
-    RowHeader header;
-    for (int i = 0; i < cols; i++)
-    {
-        auto name = sqlite3_column_name(stmt, i);
-        IF_ENDBG dbLogger.debug("SQLiteSession::query: Column Name {}: {}", i, name);
-        header.add(name);
-    }
-    while (true)
-    {
-        res = sqlite3_step(stmt);
-        if (res == SQLITE_DONE)
-        {
-            break;
-        }
-        if (res != SQLITE_ROW)
-        {
-            continue;
-        }
-        Row row(header);
-        for (int i = 0; i < cols; i++)
-        {
-            switch (sqlite3_column_type(stmt, i))
-            {
-                case SQLITE_INTEGER:
-                    row.push_back(sqlite3_column_int64(stmt, i));
-                    break;
-                case SQLITE_FLOAT:
-                    row.push_back(sqlite3_column_double(stmt, i));
-                    break;
-                case SQLITE_TEXT:
-                    row.push_back(std::string(reinterpret_cast<const char*>(sqlite3_column_text(stmt, i))));
-                    break;
-                case SQLITE_BLOB:
-                    row.push_back(ByteArray(
-                        reinterpret_cast<const uint8_t*>(sqlite3_column_blob(stmt, i)),
-                        reinterpret_cast<const uint8_t*>(sqlite3_column_blob(stmt, i)) + sqlite3_column_bytes(stmt, i)));
-                    break;
-                case SQLITE_NULL:
-                    row.push_back(Any());
-                    break;
-                default:
-                    sqlite3_finalize(stmt);
-                    throw std::runtime_error("SQLiteSession::query: Unknown column type!");
-            }
-        }
-        if (!callback(row))
-        {
-            break;
-        }
-    }
-    sqlite3_finalize(stmt);
+	auto& stmt = prepare(query);
+    stmt.fetchAll(callback);
 }
 
 Stmt& SQLiteSession::prepare(const std::string& query)
@@ -173,6 +115,11 @@ Stmt& SQLiteSession::prepare(const std::string& query)
 std::string SQLiteSession::getLastError() const
 {
 	return std::string(sqlite3_errmsg(conn));
+}
+
+int SQLiteSession::getAffectedRows() const
+{
+	return sqlite3_changes(conn);
 }
 
 void SQLiteSession::close()

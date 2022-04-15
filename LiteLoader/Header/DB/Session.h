@@ -88,6 +88,12 @@ public:
      */
 	virtual std::string getLastError() const;
     /**
+     * @brief Get the number of affected rows by the last query.
+     * 
+     * @return int Number of affected rows
+	 */
+	virtual int getAffectedRows() const = 0;
+    /**
      * @brief Close the session.
      * 
      */

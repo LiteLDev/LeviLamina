@@ -56,6 +56,11 @@ size_t RowHeader::size() const
     return std::vector<std::string>::size();
 }
 
+bool RowHeader::empty() const
+{
+	return std::vector<std::string>::empty();
+}
+
 std::vector<std::string>::iterator RowHeader::begin()
 {
     return std::vector<std::string>::begin();
