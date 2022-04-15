@@ -44,12 +44,12 @@ class TeleportDimensionCommand : public Command
         switch (DimensionId)
         {
             case TeleportDimensionCommand::DimensionType::OverWorld:
-                if (actorDimensionId != 0)
-                    result = {pos.x / 8, pos.y, pos.z / 8};
+                if (actorDimensionId == 1)
+                    result = {pos.x * 8, pos.y, pos.z * 8};
                 break;
             case TeleportDimensionCommand::DimensionType::Nether:
                 if (actorDimensionId != 1)
-                    result = {pos.x * 8, pos.y, pos.z * 8};
+                    result = {pos.x / 8, pos.y, pos.z / 8};
                 break;
             case TeleportDimensionCommand::DimensionType::TheEnd:
                 if (actorDimensionId != 2)
@@ -424,6 +424,7 @@ public:
         registry->addEnum<Operation>("Operation_WithOption", {
             {"upgrade", Operation::Upgrade},
         });
+		
         registry->addEnum<UpgradeOption>("UpgradeOption", {{"force", UpgradeOption::Force}});
         registry->registerOverload<LLCommand>(
             "ll",
