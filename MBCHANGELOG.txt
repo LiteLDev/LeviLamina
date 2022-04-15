@@ -23,4 +23,5 @@
 [*]更好的异常/调试信息
 [*]将一些API设置为只在调试模式下可用
 [*]为LLSE的setBossbar增加颜色参数, [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/328']#328[/URL]
+[*]为onMobDie/onMobHurt添加了原因参数, [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/339']#339[/URL]
 [/LIST]
