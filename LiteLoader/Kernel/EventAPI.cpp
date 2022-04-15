@@ -1105,7 +1105,10 @@ TClasslessInstanceHook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCR
             if (!ev.call())
                 return rtn;
 
-            context->getCmd() = ev.mCommand;
+            if (ev.mCommand.empty() || ev.mCommand.at(0) != '/')
+                context->getCmd() = "/" + ev.mCommand;
+            else
+                context->getCmd() = ev.mCommand;
         }
         IF_LISTENED_END(PlayerCmdEvent)
     }
@@ -1120,7 +1123,10 @@ TClasslessInstanceHook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCR
             if (!ev.call())
                 return rtn;
 
-            context->getCmd() = ev.mCommand;
+            if (ev.mCommand.empty() || ev.mCommand.at(0) != '/')
+                context->getCmd() = "/" + ev.mCommand;
+            else
+                context->getCmd() = ev.mCommand;
         }
         IF_LISTENED_END(ConsoleCmdEvent)
     }
