@@ -1,29 +1,7 @@
 This is a bug fix update.Please update as soon as possible
 
-## [New Features]
-
-- Add ConnParams APIs
-- Add RowSet::print API
-- Add RowSet::toTableString API 
-- Log all command registrations in `debug mode`, #320
 ## [Bug Fixes]
 
-- Fix StepOnPressurePlateEvent #350
-- Fix bug for simple form without buttons, #344
-- Try to prevent the command from crashing 
-- Fix build and get player by exact name
-- Fix LLSE colorLog, #340
-- Fix BaseLib
-- Fix Server Started info output
-- Try to temporarily fix command crasher, #341
-- Try fix help command crash, #341
-- Fix #333
-- Fix onEat event can't listen to potion & milk, #281
-
-## [Changes]
-
-- Better exception/debug message
-- Update SimpleServerLogger
-- Set some APIs to be available only in `debug mode`
-- LLSE setBossbar added Color parameter #328
-- Add cause to onMobDie/onMobHurt event, #339
+- Fix `/tpdim` #355
+- Fix empty command output
+- Update ServerStartedEvent and fix load error
