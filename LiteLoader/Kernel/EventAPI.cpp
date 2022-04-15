@@ -1062,22 +1062,6 @@ TInstanceHook(bool, "?canOpenContainerScreen@Player@@UEAA_NXZ",Player)
     return original(this);
 }
 
-bool IsMcServerThread()
-{
-    static auto threadid = std::thread::id();
-    if (threadid == std::thread::id())
-    {
-        PWSTR desc;
-        GetThreadDescription(GetCurrentThread(), &desc);
-        bool res = std::wstring(desc) == L"MC_SERVER";
-        LocalFree(desc);
-        if (res)
-            threadid = std::this_thread::get_id();
-        return res;
-    }
-    return threadid == std::this_thread::get_id();
-}
-
 /////////////////// PlayerCmdEvent & ConsoleCmd ///////////////////
 TClasslessInstanceHook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z",
        MCRESULT* rtn, std::shared_ptr<CommandContext> context, bool print)
@@ -1104,7 +1088,7 @@ TClasslessInstanceHook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCR
         return rtn;
     }
 
-    if (LL::isDebugMode() && !IsMcServerThread())
+    if (LL::isDebugMode() && LL::globalConfig.tickThreadId != std::this_thread::get_id())
     {
         logger.warn("The thread executing the command \"{}\" is not the \"MC_SERVER\" thread", cmd);
     }
@@ -2089,23 +2073,26 @@ TClasslessInstanceHook(void, "?onScoreChanged@ServerScoreboard@@UEAAXAEBUScorebo
     return original(this, a1, a2);
 }
 
+
 #include <MC/Minecraft.hpp>
 ////////////// ServerStarted //////////////
-TClasslessInstanceHook(void, "?startServerThread@ServerInstance@@QEAAXXZ")
+TClasslessInstanceHook(void, "?sendServerThreadStarted@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z",
+    class ServerInstance& ins)
 {
-    original(this);
+    LL::globalConfig.tickThreadId = std::this_thread::get_id();
     Global<Level> = Global<Minecraft>->getLevel();
     Global<ServerLevel> = (ServerLevel*)Global<Minecraft>->getLevel();
     //Global<ServerNetworkHandler> = Global<Minecraft>->getServerNetworkHandler();
     LL::globalConfig.serverStatus = LL::LLServerStatus::Running;
-    Schedule::nextTick([]() {
-        IF_LISTENED(ServerStartedEvent)
-        {
-            ServerStartedEvent ev{};
-            ev.call();
-        }
-        IF_LISTENED_END(ServerStartedEvent)
-    });
+
+    IF_LISTENED(ServerStartedEvent)
+    {
+        ServerStartedEvent ev{};
+        ev.call();
+    }
+    IF_LISTENED_END(ServerStartedEvent)
+
+    original(this, ins);
 }
 
 ////////////// ServerStopped //////////////

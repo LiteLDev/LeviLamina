@@ -2,6 +2,7 @@
 
 #include <Nlohmann/json.hpp>
 #include <string>
+#include <thread>
 
 /////////////////////// CrashLogger ///////////////////////
 // When comes with these plugins, disable builtin CrashLogger since they will cause crash
@@ -60,6 +61,7 @@ struct LLConfig
 
     // Runtime Config
     LLServerStatus serverStatus = LLServerStatus::Starting;
+    std::thread::id tickThreadId;
 };
 extern LLConfig globalConfig;
 extern CommandLineOption commandLineOption;
