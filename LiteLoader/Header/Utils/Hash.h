@@ -9,22 +9,6 @@ constexpr uint64_t do_hash(const char* x);
 constexpr uint64_t do_hash(const char* x, int len);
 constexpr uint64_t do_hash2(string_view x);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 constexpr uint64_t do_hash(const char* x) {
     // ap hash
     uint64_t rval = 0;
@@ -49,15 +33,15 @@ constexpr uint64_t do_hash(const char* x, int len) {
     }
     return rval;
 }
+
 constexpr uint64_t do_hash2(string_view x) {
     // ap hash
     uint64_t rval = 0;
-    for (size_t i = 0; i < x.size(); ++i) {
-        if (i & 1) {
-            rval ^= (~((rval << 11) ^ x[i] ^ (rval >> 5)));
-        } else {
-            rval ^= (~((rval << 7) ^ x[i] ^ (rval >> 3)));
-        }
+    for (size_t i = 0; i < x.size(); ++i)
+    {
+        rval *= 128;
+        rval += x[i];
+        rval += 4;
     }
     return rval;
 }

@@ -6,7 +6,9 @@
 #include <string_view>
 #include <thread>
 #include <unordered_map>
+
 #include <vector>
+#include <mutex>
 #include <Windows.h>
 #include "../LiteLoader/Header/Utils/Hash.h"
 #include "../LiteLoader/Header/third-party/detours/detours.h"
@@ -19,7 +21,7 @@
 
 using std::list;
 using std::string, std::string_view;
-using std::unordered_map, std::vector;
+using std::unordered_map, std::unordered_multimap, std::vector;
 struct aphash {
     size_t operator()(const string &x) const {
         uint64_t rval = 0;
@@ -33,31 +35,6 @@ struct aphash {
         return rval;
     }
 };
-struct SymDBBase {
-    // constexpr static int SEGMENT_MAX = 8;
-    constexpr static int SEGMENT_HASH_ORDERED = 0;
-    constexpr static int SEGMENT_RVA_INT      = 1;
-    constexpr static int SEGMENT_STRINGS_IDX  = 2;
-    constexpr static int SEGMENT_STRINGS      = 3;
-    constexpr static int SEGMENT_COUNT        = 4;
-};
-
-typedef int s32;
-typedef int64_t s64;
-typedef uint64_t u64;
-typedef uint32_t u32;
-typedef uint16_t u16;
-typedef uint8_t u8;
-template <int BKDR_MUL = 131, int BKDR_ADD = 0>
-constexpr u64 BKDRHash(const char *x, int len) {
-    u64 rval = 0;
-    for (size_t i = 0; i < len; ++i) {
-        rval *= BKDR_MUL;
-        rval += x[i];
-        rval += BKDR_ADD;
-    }
-    return rval;
-}
 
 namespace MemoryMappedFile
 {
@@ -150,10 +127,59 @@ PDB_NO_DISCARD static bool HasValidDBIStreams(const PDB::RawFile& rawPdbFile, co
 }
 } // namespace
 
-int fnstat = 0;
-static uintptr_t BaseAdr;
-unordered_map<string, int, aphash>* FuncMap;
-void InitFastDlsym(const PDB::RawFile& rawPdbFile, const PDB::DBIStream& dbiStream);
+bool fastDlsymStat = 0;
+static uintptr_t imageBaseAddr;
+
+std::mutex dlsymLock;
+unordered_map<string, int, aphash>* funcMap;
+unordered_multimap<int, string*>* rvaMap;
+
+void InitFastDlsym(const PDB::RawFile& rawPdbFile, const PDB::DBIStream& dbiStream)
+{
+    Info("[SymBol] Loading symbols from pdb...");
+    funcMap = new unordered_map<string, int, aphash>;
+    const PDB::ImageSectionStream imageSectionStream = dbiStream.CreateImageSectionStream(rawPdbFile);
+    const PDB::CoalescedMSFStream symbolRecordStream = dbiStream.CreateSymbolRecordStream(rawPdbFile);
+    const PDB::PublicSymbolStream publicSymbolStream = dbiStream.CreatePublicSymbolStream(rawPdbFile);
+    {
+        const PDB::ArrayView<PDB::HashRecord> hashRecords = publicSymbolStream.GetRecords();
+        const size_t count = hashRecords.GetLength();
+
+        for (const PDB::HashRecord& hashRecord : hashRecords)
+        {
+            const PDB::CodeView::DBI::Record* record = publicSymbolStream.GetRecord(symbolRecordStream, hashRecord);
+            const uint32_t rva = imageSectionStream.ConvertSectionOffsetToRVA(record->data.S_PUB32.section, record->data.S_PUB32.offset);
+            if (rva == 0u)
+            {
+                continue;
+            }
+            funcMap->emplace(record->data.S_PUB32.name, rva);
+        }
+        fastDlsymStat = 1;
+        dlsymLock.lock();
+        void* exportTableFn = GetProcAddress(GetModuleHandle(nullptr), "?initializeLogging@DedicatedServer@@AEAAXXZ");
+        void* symdbFn = 0;
+        auto iter = funcMap->find(string("?initializeLogging@DedicatedServer@@AEAAXXZ"));
+        if (iter != funcMap->end())
+        {
+            symdbFn = (void*)(imageBaseAddr + iter->second);
+        }
+        dlsymLock.unlock();
+        Info("[SymBol] Fast Dlsym Loaded <{}>", funcMap->size());
+        fflush(stdout);
+    }
+}
+void InitReverseLookup()
+{
+    Info("[SymBol] Loading Reverse Lookup Table");
+    rvaMap = new unordered_multimap<int, string*>(funcMap->size());
+    dlsymLock.lock();
+	for (auto& pair : *funcMap)
+	{
+        rvaMap->insert({pair.second, (string*)&pair.first});
+	}
+    dlsymLock.unlock();	
+}
 
 void rawPdb()
 {
@@ -190,66 +216,40 @@ void rawPdb()
     InitFastDlsym(rawPdbFile, dbiStream);
 }
 
-CRITICAL_SECTION dlsymLock;
-
-void InitFastDlsym(const PDB::RawFile& rawPdbFile, const PDB::DBIStream& dbiStream)
+extern _declspec(dllexport) std::vector<string> dlsym_reverse(int addr)
 {
-    Info("[SymBol] Loading symbols from pdb...");
-    InitializeCriticalSection(&dlsymLock);
-    FuncMap = new unordered_map<string, int, aphash>;
-    const PDB::ImageSectionStream imageSectionStream = dbiStream.CreateImageSectionStream(rawPdbFile);
-    const PDB::CoalescedMSFStream symbolRecordStream = dbiStream.CreateSymbolRecordStream(rawPdbFile);
-    const PDB::PublicSymbolStream publicSymbolStream = dbiStream.CreatePublicSymbolStream(rawPdbFile);
-    {
-        const PDB::ArrayView<PDB::HashRecord> hashRecords = publicSymbolStream.GetRecords();
-        const size_t count = hashRecords.GetLength();
-
-        for (const PDB::HashRecord& hashRecord : hashRecords)
-        {
-            const PDB::CodeView::DBI::Record* record = publicSymbolStream.GetRecord(symbolRecordStream, hashRecord);
-            const uint32_t rva = imageSectionStream.ConvertSectionOffsetToRVA(record->data.S_PUB32.section, record->data.S_PUB32.offset);
-            if (rva == 0u)
-            {
-                continue;
-            }
-            FuncMap->emplace(record->data.S_PUB32.name, rva);
-        }	
-        fnstat = 1;
-        EnterCriticalSection(&dlsymLock);
-        void* exportTableFn = GetProcAddress(GetModuleHandle(nullptr), "?initializeLogging@DedicatedServer@@AEAAXXZ");
-        void* symdbFn = 0;
-        auto iter = FuncMap->find(string("?initializeLogging@DedicatedServer@@AEAAXXZ"));
-        if (iter != FuncMap->end())
-        {
-            symdbFn = (void*)(BaseAdr + iter->second);
-        }
-        LeaveCriticalSection(&dlsymLock);
-        Info("[SymBol] FastDlsymInited <{}>", FuncMap->size());
-        fflush(stdout);
-    }
+    if (!rvaMap)
+        InitReverseLookup();
+	addr = addr - imageBaseAddr;
+    auto const iter = rvaMap->equal_range(addr);
+    std::vector<string> ret;
+	for (auto it = iter.first; it != iter.second; ++it)
+	{
+		ret.push_back(*it->second);
+	}
+	return ret;
 }
-
 
 extern "C" _declspec(dllexport) void* dlsym_real(const char* x) {
     std::error_code ec;
-    BaseAdr = (uintptr_t)GetModuleHandle(NULL);
+    imageBaseAddr = (uintptr_t)GetModuleHandle(NULL);
     static_assert(sizeof(GetModuleHandle(NULL)) == 8);
-    if (fnstat == 0) {
+    if (fastDlsymStat == 0) {
         rawPdb();
     }
-    for (; fnstat == 0;) {
+    for (; fastDlsymStat == 0;) {
         std::this_thread::sleep_for(std::chrono::seconds(2));
     }
-    if (fnstat == 1) {
-        EnterCriticalSection(&dlsymLock);
-        auto iter = FuncMap->find(string(x));
-        if (iter != FuncMap->end()) {
-            LeaveCriticalSection(&dlsymLock);
-            return (void *)(BaseAdr + iter->second);
+    if (fastDlsymStat == 1) {
+        dlsymLock.lock();
+        auto iter = funcMap->find(string(x));
+        if (iter != funcMap->end()) {
+            dlsymLock.unlock();
+            return (void *)(imageBaseAddr + iter->second);
         } else {
             Error("Could not find function in memory: {}", x);
         }
-        LeaveCriticalSection(&dlsymLock);
+        dlsymLock.unlock();
     }
     return nullptr;
 }
