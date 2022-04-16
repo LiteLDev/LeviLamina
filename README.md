@@ -289,18 +289,18 @@ You must accept the Minecraft EULA.
 [LiteLoader](https://github.com/LiteLDev/LiteLoader) AGPLv3 with extra restrictions&exceptions  
 [BedrockX](https://github.com/Sysca11/BedrockX) GPLv3 with extra restrictions&exceptions  
 [ElementZero](https://github.com/Element-0/ElementZero) GPLv3  
-[ScriptX](https://github.com/Tencent/ScriptX) Apache License Version 2.0
+[ScriptX](https://github.com/Tencent/ScriptX) Apache License Version 2.0  
 [ChakraCore](https://github.com/chakra-core/ChakraCore) MIT License  
 [OpenSSL](https://github.com/openssl/openssl) Apache-2.0 License  
 [SimpleIni](https://github.com/brofield/simpleini) MIT License  
 [Nlohmann-Json](https://github.com/nlohmann/json) MIT License  
 [nbt-cpp](https://github.com/handtruth/nbt-cpp) MIT License  
-[Hash](https://github.com/Chocobo1/Hash) GPL v3
-[ThreadPool](https://github.com/jhasse/ThreadPool) Zlib License
-[LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) MIT License
-[magic_enum](https://github.com/Neargye/magic_enum) MIT License
-[dyncall](https://www.dyncall.org/index) ISC license
-[RawPDB](https://github.com/MolecularMatters/raw_pdb) BSD 2-Clause License
+[Hash](https://github.com/Chocobo1/Hash) GPL v3  
+[ThreadPool](https://github.com/jhasse/ThreadPool) Zlib License  
+[LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) MIT License  
+[magic_enum](https://github.com/Neargye/magic_enum) MIT License  
+[dyncall](https://www.dyncall.org/index) ISC license  
+[RawPDB](https://github.com/MolecularMatters/raw_pdb) BSD 2-Clause License  
 
 ### Extra Restrictions & Exceptions
 
