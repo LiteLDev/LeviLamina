@@ -165,14 +165,14 @@ void InitFastDlsym(const PDB::RawFile& rawPdbFile, const PDB::DBIStream& dbiStre
                 {
                     const uint32_t rva = imageSectionStream.ConvertSectionOffsetToRVA(record->data.S_LPROC32.section, record->data.S_LPROC32.offset);
                     string name = record->data.S_LPROC32.name;
-                    //if (name.find("lambda") != name.npos) {
+                    if (name.find("lambda") != name.npos) {
                         funcMap->emplace(record->data.S_LPROC32.name, rva);
-                   // }
+                   }
                 }
             });
         }
 
-		std::ofstream os;
+		/*std::ofstream os;
         os.open("SymList.txt");
         string str; 
         for (auto iter = funcMap->begin(); funcMap->end() != iter; iter++)
@@ -180,7 +180,7 @@ void InitFastDlsym(const PDB::RawFile& rawPdbFile, const PDB::DBIStream& dbiStre
             str += fmt::sprintf("[%08d] %s\n",iter->second,iter->first);
         }
         os << str;
-        os.close();
+        os.close();*/
 		
         fastDlsymStat = 1;
         dlsymLock.lock();
