@@ -12,11 +12,11 @@
 #include <Windows.h>
 #include "../LiteLoader/Header/Utils/Hash.h"
 #include "../LiteLoader/Header/third-party/detours/detours.h"
-#include "../LiteLoader/Lib/third-party/rawpdb/PDB.h"
-#include "../LiteLoader/Lib/third-party/rawpdb/PDB_RawFile.h"
-#include "../LiteLoader/Lib/third-party/rawpdb/PDB_InfoStream.h"
-#include "../LiteLoader/Lib/third-party/rawpdb/PDB_DBIStream.h"
-#include "../LiteLoader/Lib/third-party/rawpdb/Foundation/PDB_DisableWarningsPop.h"
+#include "../LiteLoader/Header/third-party/rawpdb/PDB.h"
+#include "../LiteLoader/Header/third-party/rawpdb/PDB_RawFile.h"
+#include "../LiteLoader/Header/third-party/rawpdb/PDB_InfoStream.h"
+#include "../LiteLoader/Header/third-party/rawpdb/PDB_DBIStream.h"
+#include "../LiteLoader/Header/third-party/rawpdb/Foundation/PDB_DisableWarningsPop.h"
 #include "Logger.h"
 #include "../LiteLoader/Header/third-party/FMT/printf.h"
 #include <iomanip>
