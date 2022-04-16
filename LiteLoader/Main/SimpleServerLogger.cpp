@@ -36,6 +36,7 @@ TInstanceHook(void, "?setPermissions@Player@@UEAAXW4CommandPermissionLevel@@@Z",
         logger.info("<{}> {}({}) -> {}({})",
                     getRealName(), magic_enum::enum_name(getCommandPermissionLevel()), (int)getCommandPermissionLevel(), magic_enum::enum_name(perm), (int)perm);
     }
+    return original(this, perm);
 }
 
 // ==> LiteLoader/Main/BuiltinUnlockCmd.cpp
