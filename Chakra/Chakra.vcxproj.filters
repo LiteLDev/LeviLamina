@@ -9,6 +9,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="LibRawPDB">
+      <UniqueIdentifier>{94e9eeb6-9584-429b-b521-dc91324f80f4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -28,9 +31,59 @@
     <ClCompile Include="SymDB.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\LiteLoader\Lib\third-party\rawpdb\PDB_DirectMSFStream.cpp">
+      <Filter>LibRawPDB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LiteLoader\Lib\third-party\rawpdb\PDB_GlobalSymbolStream.cpp">
+      <Filter>LibRawPDB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LiteLoader\Lib\third-party\rawpdb\PDB_ImageSectionStream.cpp">
+      <Filter>LibRawPDB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LiteLoader\Lib\third-party\rawpdb\PDB_InfoStream.cpp">
+      <Filter>LibRawPDB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LiteLoader\Lib\third-party\rawpdb\PDB_IPIStream.cpp">
+      <Filter>LibRawPDB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LiteLoader\Lib\third-party\rawpdb\PDB_ModuleInfoStream.cpp">
+      <Filter>LibRawPDB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LiteLoader\Lib\third-party\rawpdb\PDB_ModuleSymbolStream.cpp">
+      <Filter>LibRawPDB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LiteLoader\Lib\third-party\rawpdb\PDB_PCH.cpp">
+      <Filter>LibRawPDB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LiteLoader\Lib\third-party\rawpdb\PDB_PublicSymbolStream.cpp">
+      <Filter>LibRawPDB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LiteLoader\Lib\third-party\rawpdb\PDB_RawFile.cpp">
+      <Filter>LibRawPDB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LiteLoader\Lib\third-party\rawpdb\PDB_SectionContributionStream.cpp">
+      <Filter>LibRawPDB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LiteLoader\Lib\third-party\rawpdb\PDB_SourceFileStream.cpp">
+      <Filter>LibRawPDB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LiteLoader\Lib\third-party\rawpdb\PDB_Types.cpp">
+      <Filter>LibRawPDB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LiteLoader\Lib\third-party\rawpdb\PDB.cpp">
+      <Filter>LibRawPDB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LiteLoader\Lib\third-party\rawpdb\PDB_CoalescedMSFStream.cpp">
+      <Filter>LibRawPDB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LiteLoader\Lib\third-party\rawpdb\PDB_DBIStream.cpp">
+      <Filter>LibRawPDB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LiteLoader\Lib\third-party\rawpdb\PDB_DBITypes.cpp">
+      <Filter>LibRawPDB</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\LiteLoader\Lib\third-party\detours\detours.lib" />
-    <Library Include="..\LiteLoader\Lib\third-party\rawpdb\RawPDB.lib" />
   </ItemGroup>
 </Project>

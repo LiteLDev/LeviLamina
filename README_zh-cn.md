@@ -35,14 +35,14 @@ Logger logger("AttackLog");
 
 void PluginInit()
 {
-	LL::registerPlugin("PluginName", "Introduction", LL::Version(1, 0, 0));
+ LL::registerPlugin("PluginName", "Introduction", LL::Version(1, 0, 0));
     logger.info("插件 xxx 已加载.");
     //监听玩家攻击事件
     Event::PlayerAttackEvent::subscribe([](const Event::PlayerAttackEvent& ev) {
         Player* player = ev.mPlayer;
         Actor* actor = ev.mTarget;
         logger.info(u8"玩家:{} 攻击了 {} | 坐标 {} 维度 {}", 
-        	player->getRealName(), actor->getTypeName(), actor->getPos().toString(),
+         player->getRealName(), actor->getTypeName(), actor->getPos().toString(),
             std::to_string(actor->getDimensionId()));
         return true;
     });
@@ -85,7 +85,6 @@ mc.listen("onServerStarted", () => {
   - 对于脚本语言插件，拥有多语言代码补全库、强大的VSCode插件、热加载系统 ......众多辅助工具，帮你更有效地写好每一行代码
   - 版本更新时，将保证 API 基本 **向下兼容**，插件几乎不需要随版本更新而修改代码。`LiteLoader`系列独有符号查找技术，跨版本 **自动适配** 不再是梦想
 
-
 - 📋 开发文档完善，讲解详细
   - 欢迎 👉[移步 LiteLoader 文档站](https://docs.litebds.com/)👈 查看更多  
 
@@ -114,7 +113,7 @@ mc.listen("onServerStarted", () => {
 2. 将压缩文件内的所有内容解压到 `bedrock_server.exe` 所在的目录。如果解压的过程中提示文件有冲突，选择覆盖即可。
 3. 保证 `bedrock_server.pdb`文件存在。  
    运行 `SymDB2.exe` 来生成符号文件（`bedrock_server.symdb2`）和有导出符号的BDS（`bedrock_server_mod.exe`）  
-4. 当控制台输出 `请按任意键继续. . . ` 时，按任意键关闭窗口
+4. 当控制台输出 `请按任意键继续. . .` 时，按任意键关闭窗口
 3. 运行 `bedrock_server_mod.exe` 开服
 
 ### 对于 Linux 用户
@@ -130,10 +129,12 @@ chmod +x install.sh
 #### Docker
 
 在终端中输入：
+
 ```
 docker pull shrbox/liteloaderbds
 docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ```
+
 启动服务器：`docker container start liteloader`  
 强制停止服务器（不推荐）：`docker container stop liteloader`  
 进入控制台：`docker attach liteloader`  
@@ -248,7 +249,7 @@ NC不仅需要用户，也需要开发人员。欢迎大家在 [MineBBS](https:/
 ## 🔨 构建项目
 
 > 前往 [`GitHub Actions`](https://github.com/LiteLDev/LiteLoaderBDS/actions) 来获取最新的构建工件(artifact)
->   
+>
 > 当然，如果您愿意自己构建项目，或者向 LiteLoader 贡献代码，您可以按照以下说明自行构建项目
 
 1. 安装最新的 **Microsoft Visual Studio** 和标准的 C++ 桌面开发套件
@@ -288,19 +289,20 @@ PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](
 另外，您需要遵守本项目的`AGPL-3.0`开源许可证条款，以及下列提到的各关联项目的开源许可证条款
 
 [LiteLoader](https://github.com/LiteLDev/LiteLoader) AGPLv3以及额外限制和例外  
-[BedrockX](https://github.com/Sysca11/BedrockX) GPLv3以及额外限制和例外   
+[BedrockX](https://github.com/Sysca11/BedrockX) GPLv3以及额外限制和例外
 [ElementZero](https://github.com/Element-0/ElementZero) GPLv3  
-[ScriptX](https://github.com/Tencent/ScriptX) Apache License Version 2.0    
+[ScriptX](https://github.com/Tencent/ScriptX) Apache License Version 2.0
 [ChakraCore](https://github.com/chakra-core/ChakraCore) MIT License  
 [OpenSSL](https://github.com/openssl/openssl) Apache-2.0 License  
 [SimpleIni](https://github.com/brofield/simpleini) MIT License  
 [Nlohmann-Json](https://github.com/nlohmann/json) MIT License  
-[nbt-cpp](https://github.com/handtruth/nbt-cpp) MIT License    
-[Hash](https://github.com/Chocobo1/Hash) GPL v3    
-[ThreadPool](https://github.com/jhasse/ThreadPool) Zlib License    
-[LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) MIT License    
-[magic_enum](https://github.com/Neargye/magic_enum) MIT License    
-[dyncall](https://www.dyncall.org/index) ISC license    
+[nbt-cpp](https://github.com/handtruth/nbt-cpp) MIT License
+[Hash](https://github.com/Chocobo1/Hash) GPL v3
+[ThreadPool](https://github.com/jhasse/ThreadPool) Zlib License
+[LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) MIT License
+[magic_enum](https://github.com/Neargye/magic_enum) MIT License
+[dyncall](https://www.dyncall.org/index) ISC license
+[RawPDB](https://github.com/MolecularMatters/raw_pdb) BSD 2-Clause License
 
 ### 额外限制和例外
 

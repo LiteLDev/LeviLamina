@@ -10,11 +10,11 @@
 #include <Windows.h>
 #include "../LiteLoader/Header/Utils/Hash.h"
 #include "../LiteLoader/Header/third-party/detours/detours.h"
-#include "../LiteLoader/Header/third-party/rawpdb/PDB.h"
-#include "../LiteLoader/Header/third-party/rawpdb/PDB_RawFile.h"
-#include "../LiteLoader/Header/third-party/rawpdb/PDB_InfoStream.h"
-#include "../LiteLoader/Header/third-party/rawpdb/PDB_DBIStream.h"
-#include "../LiteLoader/Header/third-party/rawpdb/Foundation/PDB_DisableWarningsPop.h"
+#include "../LiteLoader/Lib/third-party/rawpdb/PDB.h"
+#include "../LiteLoader/Lib/third-party/rawpdb/PDB_RawFile.h"
+#include "../LiteLoader/Lib/third-party/rawpdb/PDB_InfoStream.h"
+#include "../LiteLoader/Lib/third-party/rawpdb/PDB_DBIStream.h"
+#include "../LiteLoader/Lib/third-party/rawpdb/Foundation/PDB_DisableWarningsPop.h"
 #include "Logger.h"
 
 using std::list;
@@ -161,7 +161,7 @@ void rawPdb()
     MemoryMappedFile::Handle pdbFile = MemoryMappedFile::Open(pdbPath);
     if (!pdbFile.baseAddress)
     {
-        Error("bedrock_server.pdb Not found");
+        Error("bedrock_server.pdb not found");
         return;
     }
     if (IsError(PDB::ValidateFile(pdbFile.baseAddress)))
@@ -194,7 +194,7 @@ CRITICAL_SECTION dlsymLock;
 
 void InitFastDlsym(const PDB::RawFile& rawPdbFile, const PDB::DBIStream& dbiStream)
 {
-    Info("[SymBol] Loading bedrock_server.pdb symbols...");
+    Info("[SymBol] Loading symbols from pdb...");
     InitializeCriticalSection(&dlsymLock);
     FuncMap = new unordered_map<string, int, aphash>;
     const PDB::ImageSectionStream imageSectionStream = dbiStream.CreateImageSectionStream(rawPdbFile);

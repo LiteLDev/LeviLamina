@@ -1,4 +1,4 @@
-# LiteLoaderBDS - Epoch-making & Cross-language Bedrock Dedicated Servers Plugin Loader.
+# LiteLoaderBDS - Epoch-making & Cross-language Bedrock Dedicated Servers Plugin Loader
 
 [![status](https://img.shields.io/github/workflow/status/LiteLDev/LiteLoader/Build%20LiteLoader?style=for-the-badge)](https://github.com/LiteLDev/LiteLoader/actions)
 [![Discord](https://img.shields.io/discord/849252980430864384?style=for-the-badge)](https://discord.gg/27KTrxHc9t)
@@ -29,6 +29,7 @@ making it easy to learn and extremely flexible.
 > - They have interface that is easy to use and intuitive!!
 
 #### C++ language sample plugin
+
 ```c++
 // Template project: https://github.com/LiteLDev/PluginTemplate
 // More examples: https://github.com/LiteLDev/LiteLoaderPlugins
@@ -47,13 +48,15 @@ void PluginInit()
         Player* player = ev.mPlayer;
         Actor* actor = ev.mTarget;
         logger.info("Player:{} attacks {} | at {} in Dimension {}", 
-        	player->getRealName(), actor->getTypeName(), actor->getPos().toString(),
+         player->getRealName(), actor->getTypeName(), actor->getPos().toString(),
             std::to_string(actor->getDimensionId()));
         return true;
     });
 }
 ```
+
 #### Script language sample plugin (Use Js as an example)
+
 ```javascript
 // Register for shutdown command
 mc.listen("onServerStarted", () => {
@@ -78,6 +81,7 @@ mc.listen("onServerStarted", () => {
 <br/>
 
 ## 💎 Advantage
+
 - 💻 Support for developing plugins in many different languages, Keeping the API uniform
 
 | Supported languages | `C++`，`Golang`，`JavaScript`，`Lua` |
@@ -106,17 +110,18 @@ mc.listen("onServerStarted", () => {
 - 🏃 Open Source & Community Building
   - The project is licensed under the `AGPL-3.0` open source license and will **never** be charged for or released as a commercial version.  
   - The design philosophy is **decentralised** and you can be assured of a **free** plugin loading framework!  
+
 ------
 
 ## 💻 Install
 
 ### For Windows
 
-1. Download the latest <code>LiteLoader-<i>version</i>.zip</code> from [Releases](https://github.com/LiteLDev/LiteLoader/releases) or [Actions](https://github.com/LiteLDev/LiteLoader/actions), 
+1. Download the latest <code>LiteLoader-<i>version</i>.zip</code> from [Releases](https://github.com/LiteLDev/LiteLoader/releases) or [Actions](https://github.com/LiteLDev/LiteLoader/actions),
 2. Unzip everything into the directory of `bedrock_server.exe`. If you are prompted with conflicting files during the decompression process, just select `Overwrite`.
-3. Ensure that the `bedrock_server.pdb` file exists.    
+3. Ensure that the `bedrock_server.pdb` file exists.
    Run `SymDB2.exe` to generate the symbol file (`bedrock_server.symdb2`) and the BDS with the exported symbols (`bedrock_server_mod.exe`)  
-4. When the console output `Press any key to continue. . . ` , press any key to close the window
+4. When the console output `Press any key to continue. . .` , press any key to close the window
 5. Execute `bedrock_server_mod.exe` and enjoy it !
 
 ### For Linux
@@ -131,11 +136,13 @@ chmod +x install.sh
 
 #### Docker
 
-Enter the following lines in your terminal: 
+Enter the following lines in your terminal:
+
 ```
 docker pull shrbox/liteloaderbds
 docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ```
+
 Start server: `docker container start liteloader`  
 Force stop server(not recommended): `docker container stop liteloader`  
 Enter console: `docker attach liteloader`  
@@ -181,6 +188,7 @@ You can use `ll upgrade` command at console to check for update manually too.
 ## 📕 LiteLoader plugin development
 
 ### Developing plugins with C++
+
 1. Go to the [LiteLoader plugin template repository](https://github.com/LiteLDev/PluginTemplate) to download project templates, or create your own project repository based on the templates and download the code locally
 1. Open the Template.sln project file
 1. Start writing the plugin code in Plugin.cpp
@@ -188,7 +196,7 @@ You can use `ll upgrade` command at console to check for update manually too.
 1. Copy the plugin to the plugins directory for testing
 
 For plugins development examples and guidance, please come to 👉[LiteLoader documentation](https://docs.litebds.com/#/en/Usage/)👈  
-If you have a revision request or need to add an API, please contact the author or post an Issue 
+If you have a revision request or need to add an API, please contact the author or post an Issue
 
 ### Developing plugins using scripting Languages
 
@@ -202,6 +210,7 @@ If you have a revision request or need to add an API, please feel free to contac
 <br>
 
 ### Example Plugins
+
 [Click here](https://github.com/LiteLDev) for more open source LiteLoader plugins as sample plugins.
 You can use them directly in production environments
 You can also learn plugin development methods and tips here
@@ -213,7 +222,6 @@ You can also learn plugin development methods and tips here
 Use the LiteLoader development helper plugin developed by Moxicat
 Helps you do better with **script plugins**!  
 Code hint, auto-completion, auto-documentation, error alert, runtime debugging ....
-
 
 ![LLScriptHelper](docs/assets/LXLDevHelper.gif)
 
@@ -239,7 +247,7 @@ View related installation and usage instructions
 ## 🔨 Build project
 
 > Go to [`GitHub Actions`](https://github.com/LiteLDev/LiteLoaderBDS/actions) to get the latest build artifact
->   
+>
 > Of course, if you prefer to build the project yourself, or contribute code to LiteLoader, you can build the project yourself by following these instructions
 
 1. install the latest **Microsoft Visual Studio** and the standard C++ desktop development suite
@@ -281,17 +289,18 @@ You must accept the Minecraft EULA.
 [LiteLoader](https://github.com/LiteLDev/LiteLoader) AGPLv3 with extra restrictions&exceptions  
 [BedrockX](https://github.com/Sysca11/BedrockX) GPLv3 with extra restrictions&exceptions  
 [ElementZero](https://github.com/Element-0/ElementZero) GPLv3  
-[ScriptX](https://github.com/Tencent/ScriptX) Apache License Version 2.0    
+[ScriptX](https://github.com/Tencent/ScriptX) Apache License Version 2.0
 [ChakraCore](https://github.com/chakra-core/ChakraCore) MIT License  
 [OpenSSL](https://github.com/openssl/openssl) Apache-2.0 License  
 [SimpleIni](https://github.com/brofield/simpleini) MIT License  
 [Nlohmann-Json](https://github.com/nlohmann/json) MIT License  
 [nbt-cpp](https://github.com/handtruth/nbt-cpp) MIT License  
-[Hash](https://github.com/Chocobo1/Hash) GPL v3    
-[ThreadPool](https://github.com/jhasse/ThreadPool) Zlib License    
-[LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) MIT License    
-[magic_enum](https://github.com/Neargye/magic_enum) MIT License    
-[dyncall](https://www.dyncall.org/index) ISC license    
+[Hash](https://github.com/Chocobo1/Hash) GPL v3
+[ThreadPool](https://github.com/jhasse/ThreadPool) Zlib License
+[LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) MIT License
+[magic_enum](https://github.com/Neargye/magic_enum) MIT License
+[dyncall](https://www.dyncall.org/index) ISC license
+[RawPDB](https://github.com/MolecularMatters/raw_pdb) BSD 2-Clause License
 
 ### Extra Restrictions & Exceptions
 
@@ -306,8 +315,6 @@ you modified the framework, or write a new framework based on this framework, yo
 
 If you want to reproduce and distribute this framework, you have to get our authorization!
 
-
-
 <br/>
 
 ## 🏆 Acknowledgement
@@ -321,7 +328,6 @@ If you want to reproduce and distribute this framework, you have to get our auth
 **Thanks to [JetBrains](https://www.jetbrains.com/) for allocating free open-source licences for IDEs such
 as [CLion](https://www.jetbrains.com/clion/)**.  
 [<img src="https://upload.cc/i1/2021/12/29/XNohu5.png" width="200"/>](https://www.jetbrains.com/)
-
 
 ## 📞 Contact us
 
