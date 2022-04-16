@@ -18,6 +18,8 @@
 #include "../LiteLoader/Lib/third-party/rawpdb/PDB_DBIStream.h"
 #include "../LiteLoader/Lib/third-party/rawpdb/Foundation/PDB_DisableWarningsPop.h"
 #include "Logger.h"
+#include "../LiteLoader/Header/third-party/FMT/printf.h"
+#include <iomanip>
 
 using std::list;
 using std::string, std::string_view;
@@ -149,12 +151,37 @@ void InitFastDlsym(const PDB::RawFile& rawPdbFile, const PDB::DBIStream& dbiStre
         {
             const PDB::CodeView::DBI::Record* record = publicSymbolStream.GetRecord(symbolRecordStream, hashRecord);
             const uint32_t rva = imageSectionStream.ConvertSectionOffsetToRVA(record->data.S_PUB32.section, record->data.S_PUB32.offset);
-            if (rva == 0u)
-            {
-                continue;
-            }
+            if (rva == 0u) continue;
             funcMap->emplace(record->data.S_PUB32.name, rva);
         }
+        const PDB::ModuleInfoStream moduleInfoStream = dbiStream.CreateModuleInfoStream(rawPdbFile);
+        const PDB::ArrayView<PDB::ModuleInfoStream::Module> modules = moduleInfoStream.GetModules();
+        for (const PDB::ModuleInfoStream::Module& module : modules)
+        {
+            if (!module.HasSymbolStream()) continue;
+            const PDB::ModuleSymbolStream moduleSymbolStream = module.CreateSymbolStream(rawPdbFile);
+            moduleSymbolStream.ForEachSymbol([&imageSectionStream](const PDB::CodeView::DBI::Record* record) {
+                if (record->header.kind == PDB::CodeView::DBI::SymbolRecordKind::S_LPROC32)
+                {
+                    const uint32_t rva = imageSectionStream.ConvertSectionOffsetToRVA(record->data.S_LPROC32.section, record->data.S_LPROC32.offset);
+                    string name = record->data.S_LPROC32.name;
+                    if (name.find("lambda") != name.npos) {
+                        funcMap->emplace(record->data.S_LPROC32.name, rva);
+                    }
+                }
+            });
+        }
+
+		std::ofstream os;
+        os.open("SymList.txt");
+        string str; 
+        for (auto iter = funcMap->begin(); funcMap->end() != iter; iter++)
+        {
+            str += fmt::sprintf("[%08d] %s\n",iter->second,iter->first);
+        }
+        os << str;
+        os.close();
+		
         fastDlsymStat = 1;
         dlsymLock.lock();
         void* exportTableFn = GetProcAddress(GetModuleHandle(nullptr), "?initializeLogging@DedicatedServer@@AEAAXXZ");
