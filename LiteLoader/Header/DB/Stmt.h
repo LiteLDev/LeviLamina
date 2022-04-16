@@ -127,7 +127,7 @@ public:
     virtual bool done() = 0;
     /**
      * @brief Fetch the next row.
-     * 
+     *
      * @return Row The next row
      * @throws std::runtime_error If there is no row to fetch
      * @par Example
@@ -141,8 +141,8 @@ public:
      * @endcode
      * @par Impletementation
      * @see SQLiteStmt::fetch
-	 */
-	virtual Row fetch() = 0;
+     */
+    virtual Row fetch() = 0;
     /**
      * @brief Fetch all the result rows.
      *
@@ -164,14 +164,14 @@ public:
     virtual Stmt& fetchAll(std::function<bool(const Row&)> cb) = 0;
     /**
      * @brief Fetch all the result rows.
-     * 
+     *
      * @return ResultSet The result rows
-     * @note   Do not use the returned ResultSet after closing the statement 
+     * @note   Do not use the returned ResultSet after closing the statement
      *          because the RowHeader in *this object will be deleted
      * @par Impletementation
      * @see SQLiteStmt::fetchAll
      */
-	virtual ResultSet fetchAll() = 0;
+    virtual ResultSet fetchAll() = 0;
     /**
      * @brief Fetch all the result rows.
      *
@@ -180,7 +180,7 @@ public:
      * @par Impletementation
      * @see SQLiteStmt::fetchAll
      */
-	virtual ResultSet fetchAll(RowHeader& header) = 0;
+    virtual ResultSet fetchAll(RowHeader& header) = 0;
     /**
      * @brief Reset the statement(unbind all the parameters).
      *
@@ -271,7 +271,7 @@ public:
     template <>
     inline Stmt& operator,(const BindSequenceType<Row>& b)
     {
-        if (b.values.header.size())
+        if (b.values.header->size())
         {
             BindSequenceType<Row> copy = b;
             copy.values.forEach([&](const std::string& name, Any& value) {
@@ -315,12 +315,12 @@ public:
         if (step()) i.value = row_to<T>(next());
         return *this;
     }
-	/**
-	 * @brief Operator, to store a set of results.
-	 *
-	 * @param i The return value of DB::into
-	 * @return Stmt& *this
-	 */
+    /**
+     * @brief Operator, to store a set of results.
+     *
+     * @param i The return value of DB::into
+     * @return Stmt& *this
+     */
     template <typename T>
     inline Stmt& operator,(IntoType<std::vector<T>>& i)
     {
@@ -330,12 +330,12 @@ public:
         });
         return *this;
     }
-	/**
-	 * @brief Operator, to store a set of results.
-	 *
-	 * @param i The return value of DB::into
-	 * @return Stmt& *this
-	 */
+    /**
+     * @brief Operator, to store a set of results.
+     *
+     * @param i The return value of DB::into
+     * @return Stmt& *this
+     */
     template <>
     inline Stmt& operator,(IntoType<ResultSet>& i)
     {

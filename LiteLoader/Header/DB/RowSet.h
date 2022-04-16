@@ -9,29 +9,24 @@ namespace DB
 
 class RowSet : public std::vector<Row>
 {
+
+    using Base = std::vector<Row>;
+
 public:
-    RowHeader& header; //!< The header of the rows(references, to avoid copying)
+    std::shared_ptr<RowHeader> header; //!< The header of the rows
 
     /**
      * @brief Construct a new Row Set object
      *
-     * @param header The header(column names) of rows(references)
+     * @param header  The header(column names) of rows(shared_ptr)
      */
-    LIAPI RowSet(RowHeader& header);
+    LIAPI RowSet(const std::shared_ptr<RowHeader>& header = nullptr);
     /**
-     * @brief Construct a new Row Set object with provided rows
+     * @brief Construct a new Row Set object
      *
-     * @param rows   Vector of rows
-     * @param header The header(column names) of rows(references)
+     * @param header  The header(column names) of rows
      */
-    LIAPI RowSet(const std::vector<Row>& rows, RowHeader& header);
-    /**
-     * @brief Construct a new Row Set object with provided rows(move)
-     *
-     * @param rows   Vector of rows(rvalue)
-     * @param header The header(column names) of rows(references)
-     */
-    LIAPI RowSet(std::vector<Row>&& rows, RowHeader& header);
+    LIAPI RowSet(const RowHeader& header);
     /// Move constructor
     LIAPI RowSet(RowSet&& set) noexcept;
     /// Copy constructor
@@ -41,6 +36,19 @@ public:
     /// Copy assignment operator
     LIAPI RowSet& operator=(const RowSet& set);
 
+    /**
+     * @brief Add a row to the set.
+     *
+     * @param row  The row to add
+     */
+    LIAPI void add(const Row& row);
+    /**
+     * @brief Add a row to the set.
+     *
+     * @param row  The row to add
+     * @see   add(const Row&)
+     */
+    LIAPI void push_back(const Row& row);
     /**
      * @brief Convert to the table string.
      *

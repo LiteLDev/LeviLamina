@@ -103,7 +103,7 @@ bool SQLiteSession::execute(const std::string& query)
 void SQLiteSession::query(const std::string& query, std::function<bool(const Row&)> callback)
 {
     IF_ENDBG dbLogger.debug("SQLiteSession::query: Querying > " + query);
-	auto& stmt = prepare(query);
+    auto& stmt = prepare(query);
     stmt.fetchAll(callback);
 }
 
@@ -114,12 +114,12 @@ Stmt& SQLiteSession::prepare(const std::string& query)
 
 std::string SQLiteSession::getLastError() const
 {
-	return std::string(sqlite3_errmsg(conn));
+    return std::string(sqlite3_errmsg(conn));
 }
 
 int SQLiteSession::getAffectedRows() const
 {
-	return sqlite3_changes(conn);
+    return sqlite3_changes(conn);
 }
 
 void SQLiteSession::close()
@@ -135,7 +135,7 @@ void SQLiteSession::close()
         auto res = sqlite3_close(conn);
         if (res != SQLITE_OK)
         {
-			throw std::runtime_error("SQLiteSession::close: Failed to close database: " + std::string(sqlite3_errmsg(conn)));
+            throw std::runtime_error("SQLiteSession::close: Failed to close database: " + std::string(sqlite3_errmsg(conn)));
         }
         conn = nullptr;
         IF_ENDBG dbLogger.debug("SQLiteSession::close: Closed database");

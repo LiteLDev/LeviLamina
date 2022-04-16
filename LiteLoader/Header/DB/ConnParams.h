@@ -91,7 +91,7 @@ public:
 
     /**
      * @brief Get the value of one of the keys.
-     * 
+     *
      * @tparam T           The type of the value
      * @param keys         The keys (If ignoreCase is true, keys must be lowercase)
      * @param ignoreCase   Whether to ignore the case of the key

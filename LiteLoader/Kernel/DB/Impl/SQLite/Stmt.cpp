@@ -102,7 +102,8 @@ Stmt& SQLiteStmt::bind(const Any& value, int index)
     {
         std::string e = fmt::format("SQLiteStmt::bind: Failed to bind {} to parameter at index {}",
                                     Any::type2str(type), index);
-        if (session) {
+        if (session)
+        {
             e += ": " + session->getLastError();
         }
         throw std::runtime_error(e);
@@ -126,27 +127,27 @@ Stmt& SQLiteStmt::bind(const Any& value)
 
 bool SQLiteStmt::step()
 {
-	int res = sqlite3_step(stmt);
-	if (res == SQLITE_ROW)
-	{
-		if (resultHeader.empty())
-		{
-			fetchResultHeader();
-		}
+    int res = sqlite3_step(stmt);
+    if (res == SQLITE_ROW)
+    {
+        if (resultHeader.empty())
+        {
+            fetchResultHeader();
+        }
         IF_ENDBG dbLogger.debug("SQLiteStmt::step: Successfully");
         stepped = true;
-		return true;
-	}
-	else if (res == SQLITE_DONE)
-	{
-		IF_ENDBG dbLogger.debug("SQLiteStmt::step: Failed: Done");
+        return true;
+    }
+    else if (res == SQLITE_DONE)
+    {
+        IF_ENDBG dbLogger.debug("SQLiteStmt::step: Failed: Done");
         stepped = false;
-		return false;
-	}
-	else
-	{
-		throw std::runtime_error("SQLiteStmt::step: Failed to step");
-	}
+        return false;
+    }
+    else
+    {
+        throw std::runtime_error("SQLiteStmt::step: Failed to step");
+    }
 }
 
 bool SQLiteStmt::next()
@@ -158,7 +159,7 @@ Row SQLiteStmt::fetch()
 {
     if (resultHeader.empty())
     {
-		fetchResultHeader();
+        fetchResultHeader();
     }
     Row row(resultHeader);
     for (int i = 0; i < resultHeader.size(); i++)
@@ -199,11 +200,11 @@ Stmt& SQLiteStmt::fetchAll(std::function<bool(const Row&)> cb)
 {
     while (step())
     {
-		if (!cb(fetch()))
-		{
+        if (!cb(fetch()))
+        {
             IF_ENDBG dbLogger.debug("SQLiteStmt::fetchAll: Stopped fetching");
-			break;
-		}
+            break;
+        }
     }
 }
 
@@ -214,7 +215,7 @@ ResultSet SQLiteStmt::fetchAll()
         fetchResultHeader();
     }
     ResultSet result(resultHeader);
-	while (step()) result.push_back(fetch());
+    while (step()) result.push_back(fetch());
     IF_ENDBG dbLogger.debug("SQLiteStmt::fetchAll: Fetched {} rows", result.size());
     return result;
 }
@@ -225,7 +226,7 @@ ResultSet SQLiteStmt::fetchAll(RowHeader& header)
     {
         fetchResultHeader();
     }
-	header = resultHeader;
+    header = resultHeader;
     ResultSet result(header);
     while (step()) result.push_back(fetch());
     IF_ENDBG dbLogger.debug("SQLiteStmt::fetchAll: Fetched {} rows", result.size());
@@ -237,10 +238,10 @@ Stmt& SQLiteStmt::reset()
     auto res = sqlite3_reset(stmt);
     if (res != SQLITE_OK)
     {
-		throw std::runtime_error("SQLiteStmt::reset: Failed to reset");
+        throw std::runtime_error("SQLiteStmt::reset: Failed to reset");
     }
     IF_ENDBG dbLogger.debug("SQLiteStmt::reset: Reset successfully");
-	return *this;
+    return *this;
 }
 
 void SQLiteStmt::close()
@@ -253,7 +254,7 @@ void SQLiteStmt::close()
     }
 }
 
-int SQLiteStmt::getAffectedRows() 
+int SQLiteStmt::getAffectedRows()
 {
     return affectedRowsCount;
 }

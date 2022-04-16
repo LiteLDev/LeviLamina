@@ -25,13 +25,12 @@ bool Session::changeDatabase(const std::string& database)
 ResultSet Session::query(const std::string& query)
 {
     bool headerSet = false;
-    RowHeader header;
-    ResultSet result(header);
+    ResultSet result;
     this->query(query, [&](const Row& row) {
         if (!headerSet)
         {
+            result.header = row.header;
             headerSet = true;
-            header = row.header;
         }
         result.push_back(row);
         return true;
@@ -49,7 +48,7 @@ ResultSet Session::query(const std::string& query)
 
 std::string Session::getLastError() const
 {
-	throw std::runtime_error("Session::getLastError: Not implemented");
+    throw std::runtime_error("Session::getLastError: Not implemented");
 }
 
 void Session::destroy()
