@@ -165,9 +165,9 @@ void InitFastDlsym(const PDB::RawFile& rawPdbFile, const PDB::DBIStream& dbiStre
                 {
                     const uint32_t rva = imageSectionStream.ConvertSectionOffsetToRVA(record->data.S_LPROC32.section, record->data.S_LPROC32.offset);
                     string name = record->data.S_LPROC32.name;
-                    if (name.find("lambda") != name.npos) {
+                    //if (name.find("lambda") != name.npos) {
                         funcMap->emplace(record->data.S_LPROC32.name, rva);
-                    }
+                   // }
                 }
             });
         }

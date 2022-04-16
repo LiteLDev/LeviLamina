@@ -10,8 +10,9 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{0136A4C1-10AF-480B-B845-006821CE5054}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Chakra</RootNamespace>
+    <RootNamespace>vcruntime140_1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>vcruntime140_1</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -31,7 +32,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <TargetName>Chakra</TargetName>
+    <TargetName>vcruntime140_1</TargetName>
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
@@ -43,7 +44,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;CHAKRA_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;VCRUNTIME140_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
@@ -65,6 +66,7 @@ copy /Y "$(TargetPath)" "$(LocalDebuggerWorkingDirectory)\"
   <ItemGroup>
     <ClInclude Include="Logger.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="vcruntime.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\LiteLoader\Lib\third-party\rawpdb\PDB.cpp">
@@ -118,9 +120,9 @@ copy /Y "$(TargetPath)" "$(LocalDebuggerWorkingDirectory)\"
     <ClCompile Include="..\LiteLoader\Lib\third-party\rawpdb\PDB_Types.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Chakra.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="SymDB.cpp" />
+    <ClCompile Include="vcruntime140.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\LiteLoader\Lib\third-party\detours\detours.lib" />

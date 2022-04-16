@@ -3,11 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31521.260
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chakra", "Chakra\Chakra.vcxproj", "{0136A4C1-10AF-480B-B845-006821CE5054}"
-	ProjectSection(ProjectDependencies) = postProject
-		{17BA7B67-A5C7-4FC3-9D6C-2917C9200255} = {17BA7B67-A5C7-4FC3-9D6C-2917C9200255}
-	EndProjectSection
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LiteLoader", "LiteLoader\LiteLoader.vcxproj", "{A52A258C-73B1-4F64-B4F6-2859CE6262C5}"
 	ProjectSection(ProjectDependencies) = postProject
 		{0136A4C1-10AF-480B-B845-006821CE5054} = {0136A4C1-10AF-480B-B845-006821CE5054}
@@ -26,6 +21,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScriptEngine", "ScriptEngin
 		{0136A4C1-10AF-480B-B845-006821CE5054} = {0136A4C1-10AF-480B-B845-006821CE5054}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vcruntime140_1", "Vcruntime140\Vcruntime140.vcxproj", "{0136A4C1-10AF-480B-B845-006821CE5054}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Js|x64 = Js|x64
@@ -33,12 +30,6 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0136A4C1-10AF-480B-B845-006821CE5054}.Js|x64.ActiveCfg = Release|x64
-		{0136A4C1-10AF-480B-B845-006821CE5054}.Js|x64.Build.0 = Release|x64
-		{0136A4C1-10AF-480B-B845-006821CE5054}.Lua|x64.ActiveCfg = Release|x64
-		{0136A4C1-10AF-480B-B845-006821CE5054}.Lua|x64.Build.0 = Release|x64
-		{0136A4C1-10AF-480B-B845-006821CE5054}.Release|x64.ActiveCfg = Release|x64
-		{0136A4C1-10AF-480B-B845-006821CE5054}.Release|x64.Build.0 = Release|x64
 		{A52A258C-73B1-4F64-B4F6-2859CE6262C5}.Js|x64.ActiveCfg = Release|x64
 		{A52A258C-73B1-4F64-B4F6-2859CE6262C5}.Js|x64.Build.0 = Release|x64
 		{A52A258C-73B1-4F64-B4F6-2859CE6262C5}.Lua|x64.ActiveCfg = Release|x64
@@ -63,6 +54,12 @@ Global
 		{3524E651-FDFA-498D-BE39-7DF750172672}.Lua|x64.Build.0 = Lua|x64
 		{3524E651-FDFA-498D-BE39-7DF750172672}.Release|x64.ActiveCfg = Lua|x64
 		{3524E651-FDFA-498D-BE39-7DF750172672}.Release|x64.Build.0 = Lua|x64
+		{0136A4C1-10AF-480B-B845-006821CE5054}.Js|x64.ActiveCfg = Release|x64
+		{0136A4C1-10AF-480B-B845-006821CE5054}.Js|x64.Build.0 = Release|x64
+		{0136A4C1-10AF-480B-B845-006821CE5054}.Lua|x64.ActiveCfg = Release|x64
+		{0136A4C1-10AF-480B-B845-006821CE5054}.Lua|x64.Build.0 = Release|x64
+		{0136A4C1-10AF-480B-B845-006821CE5054}.Release|x64.ActiveCfg = Release|x64
+		{0136A4C1-10AF-480B-B845-006821CE5054}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

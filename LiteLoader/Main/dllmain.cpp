@@ -2,8 +2,8 @@
 #pragma comment(lib, "Lib/bedrock_server_var.lib")
 #pragma comment(lib, "Lib/SymDBHelper.lib")
 
-#pragma comment(linker, "/export:HookFunction=Chakra.HookFunction")
-#pragma comment(linker, "/export:dlsym_real=Chakra.dlsym_real")
+#pragma comment(linker, "/export:HookFunction=vcruntime140_1.HookFunction")
+#pragma comment(linker, "/export:dlsym_real=vcruntime140_1.dlsym_real")
 
 #include <Windows.h>
 BOOL WINAPI DllMain(HMODULE, DWORD ul_reason_for_call, LPVOID)

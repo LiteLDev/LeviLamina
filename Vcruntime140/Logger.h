@@ -71,7 +71,7 @@ inline void loadconfig()
     fmt::print(ColorLog ? fmt::fg(color2) : fmt::text_style(), fmt::format(prefix, fmt::localtime(_time64(0))));
 #define LOG(color1, color2, prefix)                                         \
     LOG_PREFIX(prefix, color1, color2);                                     \
-    std::string str = fmt::format("[Chakra] ", fmt::localtime(_time64(0))); \
+    std::string str = fmt::format("[Vcruntime140] ", fmt::localtime(_time64(0))); \
     str += fmt::format(formatStr, args...);                                 \
     str.append(1, '\n');
 

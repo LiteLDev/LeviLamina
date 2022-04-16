@@ -20,11 +20,11 @@
     <ClInclude Include="Logger.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="vcruntime.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Chakra.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="dllmain.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -81,6 +81,9 @@
     </ClCompile>
     <ClCompile Include="..\LiteLoader\Lib\third-party\rawpdb\PDB_DBITypes.cpp">
       <Filter>LibRawPDB</Filter>
+    </ClCompile>
+    <ClCompile Include="vcruntime140.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

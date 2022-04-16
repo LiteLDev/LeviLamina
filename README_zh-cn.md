@@ -302,6 +302,7 @@ PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](
 [LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) MIT License  
 [magic_enum](https://github.com/Neargye/magic_enum) MIT License  
 [dyncall](https://www.dyncall.org/index) ISC license  
+[vcproxy](https://github.com/pr701/vcproxy) MIT License 
 [RawPDB](https://github.com/MolecularMatters/raw_pdb) BSD 2-Clause License  
 
 ### 额外限制和例外
