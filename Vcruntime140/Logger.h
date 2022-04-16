@@ -2,14 +2,13 @@
 #ifndef FMT_HEADER_ONLY
 #define FMT_HEADER_ONLY
 #endif
-#include "FMT/chrono.h"
-#include "FMT/color.h"
-#include "FMT/core.h"
-#include "FMT/os.h"
-#include "FMT/format.h"
-#include <string>
-
+#include "../LiteLoader/Header/third-party/FMT/chrono.h"
+#include "../LiteLoader/Header/third-party/FMT/color.h"
+#include "../LiteLoader/Header/third-party/FMT/core.h"
+#include "../LiteLoader/Header/third-party/FMT/os.h"
+#include "../LiteLoader/Header/third-party/FMT/format.h"
 #include "../LiteLoader/Header/third-party/Nlohmann/json.hpp"
+#include <string>
 #include <filesystem>
 #include <fstream>
 #include <iostream>
@@ -71,7 +70,7 @@ inline void loadconfig()
     fmt::print(ColorLog ? fmt::fg(color2) : fmt::text_style(), fmt::format(prefix, fmt::localtime(_time64(0))));
 #define LOG(color1, color2, prefix)                                         \
     LOG_PREFIX(prefix, color1, color2);                                     \
-    std::string str = fmt::format("[Vcruntime140] ", fmt::localtime(_time64(0))); \
+    std::string str = fmt::format("[VCRuntime140] ", fmt::localtime(_time64(0))); \
     str += fmt::format(formatStr, args...);                                 \
     str.append(1, '\n');
 
