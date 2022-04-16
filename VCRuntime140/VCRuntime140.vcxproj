@@ -75,7 +75,7 @@ copy /Y "$(TargetPath)" "$(LocalDebuggerWorkingDirectory)\"
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\LiteLoader\Lib\third-party\detours\detours.lib" />
-    <Library Include="..\LiteLoader\Lib\third-party\rawpdb\RawPDB.lib" />
+    <Library Include="..\LiteLoader\Lib\third-party\rawpdb\rawpdb.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

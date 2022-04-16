@@ -39,7 +39,7 @@
     <Library Include="..\LiteLoader\Lib\third-party\detours\detours.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="..\LiteLoader\Lib\third-party\rawpdb\RawPDB.lib">
+    <Library Include="..\LiteLoader\Lib\third-party\rawpdb\rawpdb.lib">
       <Filter>Lib</Filter>
     </Library>
   </ItemGroup>
