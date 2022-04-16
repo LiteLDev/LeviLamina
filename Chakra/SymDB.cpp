@@ -10,6 +10,11 @@
 #include <Windows.h>
 #include "../LiteLoader/Header/Utils/Hash.h"
 #include "../LiteLoader/Header/third-party/detours/detours.h"
+#include "../LiteLoader/Header/third-party/rawpdb/PDB.h"
+#include "../LiteLoader/Header/third-party/rawpdb/PDB_RawFile.h"
+#include "../LiteLoader/Header/third-party/rawpdb/PDB_InfoStream.h"
+#include "../LiteLoader/Header/third-party/rawpdb/PDB_DBIStream.h"
+#include "../LiteLoader/Header/third-party/rawpdb/Foundation/PDB_DisableWarningsPop.h"
 #include "Logger.h"
 
 using std::list;
@@ -54,211 +59,186 @@ constexpr u64 BKDRHash(const char *x, int len) {
     return rval;
 }
 
-struct SymDBReader : SymDBBase {
-    int SEGOFF[SEGMENT_COUNT], SIZSEG[SEGMENT_COUNT];
-    std::ifstream ifs;
-    u64 *hashes;
-    u64 *hashes_end;
-    template <typename T>
-    T _pfread(int off = -1) {
-        if (off != -1)
-            ifs.seekg({off});
-        T rv;
-        ifs.read((char *)&rv, sizeof(T));
-        return rv;
-    }
-    SymDBReader(const char *fn) {
-        ifs.open(fn, std::ios::binary);
-        for (int &off : SEGOFF) {
-            off = _pfread<int>();
-        }
-        for (int &siz : SIZSEG) {
-            siz = _pfread<int>();
-        }
-        if (SEGOFF[0] != 8 * SEGMENT_COUNT) {
-            printf("SymDB format error detected!!\n");
-        }
-        int seg_begin = SEGOFF[SEGMENT_HASH_ORDERED];
-        int seg_siz   = SIZSEG[SEGMENT_HASH_ORDERED];
-        char *buf     = (char *)malloc(seg_siz);
-        ifs.seekg({seg_begin});
-        ifs.read(buf, seg_siz);
-        hashes     = (u64 *)buf;
-        hashes_end = hashes + (seg_siz / 8);
-    }
-    ~SymDBReader() { free(hashes); }
-    int lookupInternal(u64 hash, int length, u64 hash2, const char *symname) {
-        // step 1:lookup internal index
-        u64 *lbound = std::lower_bound(hashes, hashes_end, hash);
-        if (lbound == hashes_end || *lbound != hash)
-            return -1;
-        int internalIdx = int(std::distance(hashes, lbound));
-        int matchCount  = 0;
-        for (u64 *start = lbound; start < hashes_end; ++start) {
-            if (*start == hash)
-                ++matchCount;
-            else
-                break;
-        }
-        // printf("internalIdx [%d,%d)\n", internalIdx, internalIdx+matchCount);
-        // step 2:load string offsets
-        ifs.seekg({SEGOFF[SEGMENT_STRINGS_IDX] + internalIdx * 4});
-        int string_off[256];
-        for (int i = 0; i <= matchCount; ++i) {
-            // string_off[i] = _pfread<int>(SEGOFF[SEGMENT_STRINGS_IDX] + (internalIdx + i) * 4);
-            string_off[i] = _pfread<int>();
-        }
-        int idx_hits[128];
-        int siz_idx_hits = 0;
-        for (int i = 0; i < matchCount; ++i) {
-            int strlength = string_off[i + 1] - string_off[i];
-            if (length == strlength) {
-                idx_hits[siz_idx_hits++] = internalIdx + i;
-            }
-        }
-        if (siz_idx_hits == 0) {
-            return -1;
-        }
-        int retval = -1;
-        for (int i = 0; i < siz_idx_hits; ++i) {
-            int nowidx = idx_hits[i];
-            int strptr = string_off[i] + SEGOFF[SEGMENT_STRINGS];
-            ifs.seekg({strptr});
-            if (symname != nullptr) {
-                static constexpr auto CMPSTR = [](std::ifstream &ifs, const char *symname) -> bool {
-                    for (char const *compare = symname; *compare; ++compare) {
-                        if (*compare != ifs.get())
-                            return false;
-                    }
-                    return true;
-                };
-                if (CMPSTR(ifs, symname)) {
-                    return _pfread<int>(SEGOFF[SEGMENT_RVA_INT] + nowidx * 4);
-                }
-            } else {
-                static constexpr auto HASHSTR = [](std::ifstream &ifs, int len) -> u64 {
-                    u64 rv = 0;
-                    while (len-- > 0) {
-                        rv = 131 * rv + char(ifs.get());
-                    }
-                    return rv;
-                };
-                if (HASHSTR(ifs, length) == hash2) {
-                    if (retval != -1) {
-                        printf("hash coll detected!\n");
-                        exit(1);
-                    }
-                    retval = _pfread<int>(SEGOFF[SEGMENT_RVA_INT] + nowidx * 4);
-                }
-            }
-        }
-        return retval;
-    }
-    int getsym(const char *name) {
-        int len = int(strlen(name));
-        return lookupInternal(do_hash(name, len), len, 0, name);
-    }
-    std::string rva2name(int rva) {
-        int siz_rva = SIZSEG[SEGMENT_RVA_INT];
-        char *buf   = new char[siz_rva];
-        ifs.seekg({SEGOFF[SEGMENT_RVA_INT]});
-        ifs.read(buf, siz_rva);
-        int *need  = (int *)buf;
-        int *end   = need + siz_rva / 4;
-        int *found = std::find(need, end, rva);
-        if (found == end) {
-            return "(nil)";
-        }
-        int internalId = int(std::distance(need, found));
-        int soff       = _pfread<int>(SEGOFF[SEGMENT_STRINGS_IDX] + internalId * 4);
-        int slen       = _pfread<int>(SEGOFF[SEGMENT_STRINGS_IDX] + internalId * 4 + 4) - soff;
-        ifs.seekg({int(SEGOFF[SEGMENT_STRINGS] + soff)});
-        std::string rv;
-        rv.resize(slen, 0);
-        ifs.read(rv.data(), slen);
-        delete[] buf;
-        return rv;
-    }
-    void dumpall(unordered_map<string, int, aphash>* hashMap) {
-        int siz_rva = SIZSEG[SEGMENT_RVA_INT];
-        char *buf   = new char[siz_rva];
-        ifs.seekg({SEGOFF[SEGMENT_RVA_INT]});
-        ifs.read(buf, siz_rva);
-        int *need = (int *)buf;
-        int *end  = need + siz_rva / 4;
-        for (int a = 0; need + a != end; a++) {
-            int *rva       = need + a;
-            int internalId = int(std::distance(need, rva));
-            int soff       = _pfread<int>(SEGOFF[SEGMENT_STRINGS_IDX] + internalId * 4);
-            int slen       = _pfread<int>(SEGOFF[SEGMENT_STRINGS_IDX] + internalId * 4 + 4) - soff;
-            ifs.seekg({int(SEGOFF[SEGMENT_STRINGS] + soff)});
-            std::string rv;
-            rv.resize(slen, 0);
-            ifs.read((char *)rv.data(), slen);
-            hashMap->insert({rv.data(), *rva});
-            //hashMap[rv] = *rva;
-            // printf("[%08d] %s\n", *rva, rv.c_str());
-            rv.shrink_to_fit();
-        }
-
-        delete[] buf;
-    }
+namespace MemoryMappedFile
+{
+struct Handle
+{
+    HANDLE file;
+    HANDLE fileMapping;
+    void* baseAddress;
 };
+	
+MemoryMappedFile::Handle Open(const wchar_t* path)
+{
+    HANDLE file = CreateFileW(path, GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_READONLY, nullptr);
+    if (file == INVALID_HANDLE_VALUE)
+    {
+        return Handle{INVALID_HANDLE_VALUE, INVALID_HANDLE_VALUE, nullptr};
+    }
+
+    HANDLE fileMapping = CreateFileMappingW(file, nullptr, PAGE_READONLY, 0, 0, nullptr);
+    if (fileMapping == nullptr)
+    {
+        CloseHandle(file);
+
+        return Handle{INVALID_HANDLE_VALUE, INVALID_HANDLE_VALUE, nullptr};
+    }
+
+    void* baseAddress = MapViewOfFile(fileMapping, FILE_MAP_READ, 0, 0, 0);
+    if (baseAddress == nullptr)
+    {
+        CloseHandle(fileMapping);
+        CloseHandle(file);
+
+        return Handle{INVALID_HANDLE_VALUE, INVALID_HANDLE_VALUE, nullptr};
+    }
+
+    return Handle{file, fileMapping, baseAddress};
+}
+
+
+void Close(Handle& handle)
+{
+    UnmapViewOfFile(handle.baseAddress);
+    CloseHandle(handle.fileMapping);
+    CloseHandle(handle.file);
+
+    handle.file = nullptr;
+    handle.fileMapping = nullptr;
+    handle.baseAddress = nullptr;
+}
+} // namespace MemoryMappedFile
+namespace
+{
+PDB_NO_DISCARD static bool IsError(PDB::ErrorCode errorCode)
+{
+    switch (errorCode)
+    {
+        case PDB::ErrorCode::Success:
+            return false;
+
+        case PDB::ErrorCode::InvalidSuperBlock:
+            Error("Invalid Superblock");
+            return true;
+
+        case PDB::ErrorCode::InvalidFreeBlockMap:
+            Error("Invalid free block map");
+            return true;
+
+        case PDB::ErrorCode::InvalidSignature:
+            Error("Invalid stream signature");
+            return true;
+
+        case PDB::ErrorCode::InvalidStreamIndex:
+            Error("Invalid stream index");
+            return true;
+
+        case PDB::ErrorCode::UnknownVersion:
+            Error("Unknown version");
+            return true;
+    }
+    return true;
+}
+
+PDB_NO_DISCARD static bool HasValidDBIStreams(const PDB::RawFile& rawPdbFile, const PDB::DBIStream& dbiStream)
+{
+    if (IsError(dbiStream.HasValidImageSectionStream(rawPdbFile))) return false;
+    if (IsError(dbiStream.HasValidPublicSymbolStream(rawPdbFile)))return false;
+    if (IsError(dbiStream.HasValidGlobalSymbolStream(rawPdbFile))) return false;
+    if (IsError(dbiStream.HasValidSectionContributionStream(rawPdbFile))) return false;
+    return true;
+}
+} // namespace
+
 int fnstat = 0;
-static SymDBReader *SymDB;
 static uintptr_t BaseAdr;
-unordered_map<string, int, aphash> *FuncMap;
+unordered_map<string, int, aphash>* FuncMap;
+void InitFastDlsym(const PDB::RawFile& rawPdbFile, const PDB::DBIStream& dbiStream);
+
+void rawPdb()
+{
+    const wchar_t* const pdbPath = LR"(./bedrock_server.pdb)";
+    MemoryMappedFile::Handle pdbFile = MemoryMappedFile::Open(pdbPath);
+    if (!pdbFile.baseAddress)
+    {
+        Error("bedrock_server.pdb Not found");
+        return;
+    }
+    if (IsError(PDB::ValidateFile(pdbFile.baseAddress)))
+    {
+        MemoryMappedFile::Close(pdbFile);
+        return;
+    }
+    const PDB::RawFile rawPdbFile = PDB::CreateRawFile(pdbFile.baseAddress);
+    if (IsError(PDB::HasValidDBIStream(rawPdbFile)))
+    {
+        MemoryMappedFile::Close(pdbFile);
+        return;
+    }
+    const PDB::InfoStream infoStream(rawPdbFile);
+    if (infoStream.UsesDebugFastLink())
+    {
+        MemoryMappedFile::Close(pdbFile);
+        return;
+    }
+    const PDB::DBIStream dbiStream = PDB::CreateDBIStream(rawPdbFile);
+    if (!HasValidDBIStreams(rawPdbFile, dbiStream))
+    {
+        MemoryMappedFile::Close(pdbFile);
+        return;
+    }
+    InitFastDlsym(rawPdbFile, dbiStream);
+}
 
 CRITICAL_SECTION dlsymLock;
-void InitFastDlsym() {
-    Info("[SymDB] Loading symbols...");
+
+void InitFastDlsym(const PDB::RawFile& rawPdbFile, const PDB::DBIStream& dbiStream)
+{
+    Info("[SymBol] Loading bedrock_server.pdb symbols...");
     InitializeCriticalSection(&dlsymLock);
     FuncMap = new unordered_map<string, int, aphash>;
-    SymDB->dumpall(FuncMap);
-    fnstat = 1;
-    SymDB    = nullptr;
-    SymDB    = new SymDBReader("bedrock_server.symdb2");
-    EnterCriticalSection(&dlsymLock);
-    void* exportTableFn = GetProcAddress(GetModuleHandle(nullptr), "?initializeLogging@DedicatedServer@@AEAAXXZ");
-    void* symdbFn = 0;
-    auto iter     = FuncMap->find(string("?initializeLogging@DedicatedServer@@AEAAXXZ"));
-    if (iter != FuncMap->end()) {
-        symdbFn = (void *)(BaseAdr + iter->second);
+    const PDB::ImageSectionStream imageSectionStream = dbiStream.CreateImageSectionStream(rawPdbFile);
+    const PDB::CoalescedMSFStream symbolRecordStream = dbiStream.CreateSymbolRecordStream(rawPdbFile);
+    const PDB::PublicSymbolStream publicSymbolStream = dbiStream.CreatePublicSymbolStream(rawPdbFile);
+    {
+        const PDB::ArrayView<PDB::HashRecord> hashRecords = publicSymbolStream.GetRecords();
+        const size_t count = hashRecords.GetLength();
+
+        for (const PDB::HashRecord& hashRecord : hashRecords)
+        {
+            const PDB::CodeView::DBI::Record* record = publicSymbolStream.GetRecord(symbolRecordStream, hashRecord);
+            const uint32_t rva = imageSectionStream.ConvertSectionOffsetToRVA(record->data.S_PUB32.section, record->data.S_PUB32.offset);
+            if (rva == 0u)
+            {
+                continue;
+            }
+            FuncMap->emplace(record->data.S_PUB32.name, rva);
+        }	
+        fnstat = 1;
+        EnterCriticalSection(&dlsymLock);
+        void* exportTableFn = GetProcAddress(GetModuleHandle(nullptr), "?initializeLogging@DedicatedServer@@AEAAXXZ");
+        void* symdbFn = 0;
+        auto iter = FuncMap->find(string("?initializeLogging@DedicatedServer@@AEAAXXZ"));
+        if (iter != FuncMap->end())
+        {
+            symdbFn = (void*)(BaseAdr + iter->second);
+        }
+        LeaveCriticalSection(&dlsymLock);
+        Info("[SymBol] FastDlsymInited <{}>", FuncMap->size());
+        fflush(stdout);
     }
-    LeaveCriticalSection(&dlsymLock);
-    Info("[SymDB] FastDlsymInited <{}>", FuncMap->size());
-    fflush(stdout);
 }
+
 
 extern "C" _declspec(dllexport) void* dlsym_real(const char* x) {
     std::error_code ec;
-    if (SymDB == nullptr) {
-        if (!std::filesystem::exists("bedrock_server.symdb2",ec)) {
-            printf("SymDB not found\ntry to run SymDB2.exe\n");
-            std::this_thread::sleep_for(std::chrono::seconds(10));
-            exit(1);
-        }
-        /* if (LL::isDebugMode()) {       
-            printf(R"(================ LiteLoader ===============\n)");
-            printf(R"( ____             __  __           _      \n)");
-            printf(R"(|  _ \  _____   _|  \/  | ___   __| | ___ \n)");
-            printf(R"(| | | |/ _ \ \ / / |\/| |/ _ \ / _` |/ _ \\n)");
-            printf(R"(| |_| |  __/\ V /| |  | | (_) | (_| |  __/\n)");
-            printf(R"(|____/ \___| \_/ |_|  |_|\___/ \__,_|\___|\n)");
-            printf("[Debug] You Are In DevelopMode, FastDlsym Won't Be Load\n\n");
-            fnstat = 2;
-            FuncMap = new unordered_map<string, int, aphash>;
-        }
-        */
-        SymDB     = new SymDBReader("bedrock_server.symdb2");
-        BaseAdr = (uintptr_t)GetModuleHandle(NULL);
-        static_assert(sizeof(GetModuleHandle(NULL)) == 8);
-    }
+    BaseAdr = (uintptr_t)GetModuleHandle(NULL);
+    static_assert(sizeof(GetModuleHandle(NULL)) == 8);
     if (fnstat == 0) {
-        InitFastDlsym();
+        rawPdb();
     }
     for (; fnstat == 0;) {
-        std::this_thread::sleep_for(std::chrono::seconds(1));
+        std::this_thread::sleep_for(std::chrono::seconds(2));
     }
     if (fnstat == 1) {
         EnterCriticalSection(&dlsymLock);
@@ -271,12 +251,7 @@ extern "C" _declspec(dllexport) void* dlsym_real(const char* x) {
         }
         LeaveCriticalSection(&dlsymLock);
     }
-    auto rv = SymDB->getsym(x);
-    if (rv == -1) {
-        Error("Cannot find symbol in SymDB: {}", x);
-        return nullptr;
-    }
-    return (void *)(BaseAdr + rv);
+    return nullptr;
 }
 inline static void HookFunction__begin() {
     DetourTransactionBegin();

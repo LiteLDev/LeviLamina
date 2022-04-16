@@ -31,5 +31,6 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\LiteLoader\Lib\third-party\detours\detours.lib" />
+    <Library Include="..\LiteLoader\Lib\third-party\rawpdb\RawPDB.lib" />
   </ItemGroup>
 </Project>
