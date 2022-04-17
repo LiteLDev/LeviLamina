@@ -10,6 +10,8 @@ namespace DB
 
 extern Logger dbLogger;
 
+class Session;
+
 /**
  * @brief Structure to store a single value to bind to a prepared statement.
  *
@@ -203,12 +205,17 @@ public:
     /**
      * @brief Close the statement.
      *
-     * @warning  DO NOT ACCESS THIS OBJECT AFTER CALLING THIS METHOD!!!
      *
      * @par Impletementation
      * @see SQLiteStmt::close
      */
     virtual void close() = 0;
+    /**
+     * @brief Destory the statement object and release the memory.
+     * 
+     * @warning  DO NOT ACCESS THIS OBJECT AFTER CALLING THIS METHOD!!!
+     */
+    virtual void destroy() = 0;
     /**
      * @brief Get the number of rows affected by the statement.
      *
@@ -258,6 +265,12 @@ public:
      */
     virtual int getParamsCount() const = 0;
     /**
+     * @brief Get the session.
+     *
+     * @return Session*  The session ptr
+     */
+    virtual Session* getSession() const = 0;
+    /**
      * @brief Get the session type
      *
      * @return DB::DBType  The database type
@@ -303,8 +316,7 @@ public:
     {
         if (b.values.header && b.values.header->size())
         {
-            BindSequenceType<Row> copy = b;
-            copy.values.forEach([&](const std::string& name, Any& value) {
+            b.values.forEach([&](const std::string& name, const Any& value) {
                 bind(value, name);
                 return true;
             });

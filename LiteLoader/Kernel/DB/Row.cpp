@@ -208,11 +208,21 @@ Any& Row::at(size_t idx)
     return std::vector<Any>::at(idx);
 }
 
-void Row::forEach(std::function<bool(const std::string&, Any&)> cb)
+void Row::forEach_ref(std::function<bool(const std::string&, Any&)> cb)
 {
     for (auto& col : *this->header)
     {
         if (!cb(col, this->at(col))) break;
+    }
+}
+
+void Row::forEach(std::function<bool(const std::string&, const Any&)> cb) const
+{
+    int i = 0;
+    for (auto& col : *this->header)
+    {
+        if (!cb(col, this->data()[i])) break;
+        i++;
     }
 }
 

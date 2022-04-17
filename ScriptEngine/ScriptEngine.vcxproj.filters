@@ -161,6 +161,9 @@
     <ClCompile Include="API\RemoteCallAPI.cpp">
       <Filter>API</Filter>
     </ClCompile>
+    <ClCompile Include="API\DatabaseAPI.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API\BaseAPI.h">
@@ -302,6 +305,9 @@
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="API\RemoteCallAPI.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\DatabaseAPI.h">
       <Filter>API</Filter>
     </ClInclude>
   </ItemGroup>

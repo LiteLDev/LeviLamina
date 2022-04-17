@@ -16,6 +16,8 @@ protected:
     bool debugOutput = false;
 
 public:
+    std::vector<Stmt*> stmts; ///< List of statements opened by prepare method.
+
     /// Destructor
     virtual ~Session() = default;
     /**
@@ -107,7 +109,7 @@ public:
      *
      * @return uint64_t  The row id of the last inserted row
      */
-	virtual uint64_t getLastInsertId() const = 0;
+    virtual uint64_t getLastInsertId() const = 0;
     /**
      * @brief Close the session.
      *

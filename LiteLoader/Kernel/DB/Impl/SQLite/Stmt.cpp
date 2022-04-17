@@ -185,7 +185,7 @@ Row SQLiteStmt::fetch()
                 ByteArray arr(
                     reinterpret_cast<const uint8_t*>(sqlite3_column_blob(stmt, i)),
                     reinterpret_cast<const uint8_t*>(sqlite3_column_blob(stmt, i)) +
-                                                     sqlite3_column_bytes(stmt, i));
+                        sqlite3_column_bytes(stmt, i));
                 IF_ENDBG
                 {
                     std::string out = "SQLiteStmt::fetch: Fetched BLOB type column: " + std::to_string(i) + " ";
@@ -266,9 +266,25 @@ void SQLiteStmt::close()
 {
     sqlite3_finalize(stmt);
     stmt = nullptr;
+}
+
+void SQLiteStmt::destroy()
+{
+    if (stmt)
+    {
+        close();
+    }
     if (onHeap)
     {
-        destroy(this);
+        if (session)
+        {
+            auto it = std::find(session->stmts.begin(), session->stmts.end(), this);
+            if (it != session->stmts.end())
+            {
+                session->stmts.erase(it);
+            }
+        }
+        DB::destroy(this);
     }
 }
 
@@ -295,6 +311,11 @@ int SQLiteStmt::getBoundParams() const
 int SQLiteStmt::getParamsCount() const
 {
     return totalParamsCount;
+}
+
+Session* SQLiteStmt::getSession() const
+{
+    return session;
 }
 
 DBType SQLiteStmt::getType() const

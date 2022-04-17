@@ -9,7 +9,6 @@ class SQLiteSession : public Session
 {
 
     sqlite3* conn = nullptr;
-    Stmt* lastStmt = nullptr;
 
 public:
     SQLiteSession();

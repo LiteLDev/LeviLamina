@@ -7,6 +7,7 @@
 #include <API/CommandOutputAPI.h>
 #include <API/DeviceAPI.h>
 #include <API/DataAPI.h>
+#include <API/DatabaseAPI.h>
 #include <API/ItemAPI.h>
 #include <API/ContainerAPI.h>
 #include <API/EntityAPI.h>
@@ -24,19 +25,19 @@
 #include <API/McAPI.h>
 #include <API/GameUtilsAPI.h>
 
-void BindAPIs(ScriptEngine *engine)
+void BindAPIs(ScriptEngine* engine)
 {
-    
+
     //////////////// 全局函数 ////////////////
 
-	engine->set("log", Function::newFunction(Log));
-	engine->set("colorLog", Function::newFunction(ColorLog));
+    engine->set("log", Function::newFunction(Log));
+    engine->set("colorLog", Function::newFunction(ColorLog));
     engine->set("fastLog", Function::newFunction(FastLog));
 
-    engine->set("setTimeout",Function::newFunction(SetTimeout));
-    engine->set("setInterval",Function::newFunction(SetInterval));
-    engine->set("clearInterval",Function::newFunction(ClearInterval));
-    
+    engine->set("setTimeout", Function::newFunction(SetTimeout));
+    engine->set("setInterval", Function::newFunction(SetInterval));
+    engine->set("clearInterval", Function::newFunction(ClearInterval));
+
 
     //////////////// 静态类 ////////////////
 
@@ -61,7 +62,9 @@ void BindAPIs(ScriptEngine *engine)
     engine->registerNativeClass<FloatPos>(FloatPosBuilder);
     engine->registerNativeClass<DirectionAngle>(DirectionAngleBuilder);
     engine->registerNativeClass<BlockClass>(BlockClassBuilder);
-    engine->registerNativeClass<DbClass>(DbClassBuilder);
+    engine->registerNativeClass<KVDBClass>(KVDBClassBuilder);
+    engine->registerNativeClass<DBSessionClass>(DBSessionClassBuilder);
+    engine->registerNativeClass<DBStmtClass>(DBStmtClassBuilder);
     engine->registerNativeClass<ConfJsonClass>(ConfJsonClassBuilder);
     engine->registerNativeClass<ConfIniClass>(ConfIniClassBuilder);
     engine->registerNativeClass<DeviceClass>(DeviceClassBuilder);
@@ -75,7 +78,7 @@ void BindAPIs(ScriptEngine *engine)
     engine->registerNativeClass<ItemClass>(ItemClassBuilder);
     engine->registerNativeClass<PlayerClass>(PlayerClassBuilder);
     engine->registerNativeClass<ObjectiveClass>(ObjectiveClassBuilder);
-    //engine->registerNativeClass<PacketClass>(PacketClassBuilder);
+    // engine->registerNativeClass<PacketClass>(PacketClassBuilder);
     engine->registerNativeClass<NbtEndClass>(NbtEndClassBuilder);
     engine->registerNativeClass<NbtByteClass>(NbtByteClassBuilder);
     engine->registerNativeClass<NbtShortClass>(NbtShortClassBuilder);

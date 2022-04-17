@@ -109,7 +109,9 @@ void SQLiteSession::query(const std::string& query, std::function<bool(const Row
 
 Stmt& SQLiteSession::prepare(const std::string& query)
 {
-    return SQLiteStmt::create(*this, query);
+    auto& stmt = SQLiteStmt::create(*this, query);
+    stmts.push_back(&stmt);
+    return stmt;
 }
 
 std::string SQLiteSession::getLastError() const
@@ -124,16 +126,14 @@ uint64_t SQLiteSession::getAffectedRows() const
 
 uint64_t SQLiteSession::getLastInsertId() const
 {
-	return sqlite3_last_insert_rowid(conn);
+    return sqlite3_last_insert_rowid(conn);
 }
 
 void SQLiteSession::close()
 {
-    if (lastStmt)
+    while (!stmts.empty())
     {
-        lastStmt->close();
-        lastStmt = nullptr;
-        IF_ENDBG dbLogger.debug("SQLiteSession::close: Closed the last statement");
+        stmts[0]->destroy();
     }
     if (conn)
     {
@@ -159,15 +159,7 @@ DBType SQLiteSession::getType()
 
 Stmt& SQLiteSession::operator<<(const std::string& query)
 {
-    if (lastStmt)
-    {
-        lastStmt->close();
-        lastStmt = 0;
-        IF_ENDBG dbLogger.debug("SQLiteSession::operator<<: Closed the last statement");
-    }
-    auto& stmt = prepare(query);
-    lastStmt = &stmt;
-    return stmt;
+    return prepare(query);
 }
 
 } // namespace DB

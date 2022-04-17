@@ -21,7 +21,7 @@ public:
     static Local<Value> toBase64(const Arguments& args);
     static Local<Value> fromBase64(const Arguments& args);
 
-    //For Compatibility
+    // For Compatibility
     static Local<Value> openConfig(const Arguments& args);
     static Local<Value> openDB(const Arguments& args);
 };
@@ -45,35 +45,6 @@ extern ClassDefine<void> MoneyClassBuilder;
 
 
 //////////////////// Classes ////////////////////
-
-class DbClass : public ScriptClass
-{
-private:
-    std::unique_ptr<KVDB> kvdb;
-    int unloadCallbackIndex = -1;
-
-public:
-	explicit DbClass(const Local<Object>& scriptObj, const string& dir);
-    explicit DbClass(const string& dir);
-    ~DbClass();
-    static DbClass* constructor(const Arguments& args);
-
-    bool isValid()
-    {
-        return kvdb->isValid();
-    }
-
-    Local<Value> get(const Arguments& args);
-    Local<Value> set(const Arguments& args);
-    Local<Value> del(const Arguments& args);
-    Local<Value> close(const Arguments& args);
-    Local<Value> listKey(const Arguments& args);
-
-    //For Compatibility
-    static Local<Value> newDb(const string& dir);
-};
-extern ClassDefine<DbClass> DbClassBuilder;
-
 
 class ConfBaseClass
 {
@@ -116,7 +87,7 @@ public:
     virtual Local<Value> close(const Arguments& args) override;
     virtual Local<Value> write(const Arguments& args) override;
 
-    //For Compatibility
+    // For Compatibility
     static Local<Value> newConf(const string& path, const string& defContent = "");
 };
 extern ClassDefine<ConfJsonClass> ConfJsonClassBuilder;
@@ -152,7 +123,7 @@ public:
     virtual Local<Value> close(const Arguments& args) override;
     virtual Local<Value> write(const Arguments& args) override;
 
-    //For Compatibility
+    // For Compatibility
     static Local<Value> newConf(const string& path, const string& defContent = "");
 };
 extern ClassDefine<ConfIniClass> ConfIniClassBuilder;

@@ -237,12 +237,19 @@ public:
      */
     LIAPI Any& at(size_t index);
     /**
+     * @brief Traverse the row(references)
+     *
+     * @param cb  The function to call for each element
+     * @note  Return false in callback function to stop the iteration
+     */
+    LIAPI void forEach_ref(std::function<bool(const std::string&, Any&)> cb);
+    /**
      * @brief Traverse the row
      *
      * @param cb  The function to call for each element
      * @note  Return false in callback function to stop the iteration
      */
-    LIAPI void forEach(std::function<bool(const std::string&, Any&)> cb);
+    LIAPI void forEach(std::function<bool(const std::string&, const Any&)> cb) const;
 };
 
 } // namespace DB
