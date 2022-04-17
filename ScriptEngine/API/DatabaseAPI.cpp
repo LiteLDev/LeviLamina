@@ -32,6 +32,7 @@ ClassDefine<DBStmtClass> DBStmtClassBuilder =
 
         .instanceFunction("bind", &DBStmtClass::bind)
         .instanceFunction("step", &DBStmtClass::step)
+        .instanceFunction("execute", &DBStmtClass::execute)
         .instanceFunction("fetch", &DBStmtClass::fetch)
         .instanceFunction("fetchAll", &DBStmtClass::fetchAll)
         .instanceFunction("reset", &DBStmtClass::reset)
@@ -526,6 +527,17 @@ Local<Value> DBStmtClass::step(const Arguments& args)
         return Boolean::newBoolean(stmt.step());
     }
     CATCH("Fail in step!")
+}
+
+Local<Value> DBStmtClass::execute(const Arguments& args)
+{
+	CHECK_ARGS_COUNT(args, 0);
+
+	try
+	{
+		return Boolean::newBoolean(stmt.execute());
+	}
+	CATCH("Fail in execute!")
 }
 
 Local<Value> DBStmtClass::fetch(const Arguments& args)

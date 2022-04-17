@@ -33,6 +33,7 @@ public:
     Stmt& bind(const Any& value);
     bool step();
     bool next();
+    bool execute();
     bool done();
     Row fetch();
     Stmt& fetchAll(std::function<bool(const Row&)> cb);

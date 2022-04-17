@@ -125,6 +125,16 @@ public:
      */
     virtual bool next() = 0;
     /**
+     * @brief Execute the statement(=step).
+     * 
+     * @return bool  True if the statement is executed successfully and there is no result rows,
+     *               false if error occurs or there is result rows.
+     * 
+     * @par Implementation
+     * @see SQLiteStmt::execute
+     */
+	virtual bool execute() = 0;
+    /**
      * @brief Get weather all the rows have been fetched.
      *
      * @return bool  True if all the rows have been fetched

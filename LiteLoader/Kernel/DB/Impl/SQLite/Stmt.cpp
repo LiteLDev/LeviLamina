@@ -156,6 +156,21 @@ bool SQLiteStmt::next()
     return step();
 }
 
+bool SQLiteStmt::execute()
+{
+    int res = sqlite3_step(stmt);
+    if (res == SQLITE_DONE)
+        return true;
+    else
+        return false;
+}
+
+bool SQLiteStmt::done()
+{
+    if (stepped) return false;
+    return !step();
+}
+
 Row SQLiteStmt::fetch()
 {
     if (resultHeader.empty())
@@ -207,12 +222,6 @@ Row SQLiteStmt::fetch()
         }
     }
     return row;
-}
-
-bool SQLiteStmt::done()
-{
-    if (stepped) return false;
-    return !step();
 }
 
 Stmt& SQLiteStmt::fetchAll(std::function<bool(const Row&)> cb)
