@@ -243,4 +243,44 @@ std::string Any::type2str(Any::Type type)
     }
 }
 
+Any Any::str2any(const std::string& str)
+{
+    if (str.empty())
+        return Any();
+    bool isInteger = true;
+    bool isFloating = false;
+    bool first = true;
+    for (auto& ch : str)
+    {
+        if (first && ch == '-')
+        {
+            first = false;
+            continue;
+        }
+        if (ch >= '0' && ch <= '9')
+            continue;
+        if (ch == '.')
+        {
+            if (isFloating) isFloating = false;
+            else
+            {
+                isInteger = false;
+                isFloating = true;
+            }
+            continue;
+        }
+    }
+    if (isFloating)
+        return Any(std::stod(str));
+    else if (isInteger)
+    {
+        auto floating = std::stod(str);
+        if (floating > ULLONG_MAX || floating < LLONG_MIN) return Any(floating);
+        else if (floating > LLONG_MAX) return Any(std::stoull(str));
+        return Any(std::stoll(str));
+    }
+    else
+        return Any(str);
+}
+
 } // namespace DB
