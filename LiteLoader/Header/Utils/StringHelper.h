@@ -25,3 +25,38 @@ LIAPI bool EndsWith(const std::string& str, const std::string& end);
 
 // "hello {Jim}" -> "hello {{Jim}}"  (for FMT bug)
 LIAPI std::string FixCurlyBracket(std::string str);
+
+/**
+ * @brief Integer to hex string.
+ * 
+ * @tparam T      The integer type
+ * @param  value  The integer value
+ * @param  upper  Whether to use upper case (0x1A or 0x1a)
+ * @param  no0x   Whether to omit 0x prefix
+ * @param  noLeadingZero  Whether to omit leading zero
+ * @return std::string    The hex string
+ * 
+ * @par Example
+ * @code
+ * IntToHexStr(15); // "F"
+ * IntToHexStr(16, true, true, false); // "0000000F"
+ * @endcode
+ */
+template <typename T>
+std::string IntToHexStr(const T& value, bool upper = true, bool no0x = true,
+                        bool noLeadingZero = true)
+{
+    std::string result;
+    if (value < 0) result += '-';
+    if (!no0x) result += "0x";
+	auto hexStr = upper ? "0123456789ABCDEF" : "0123456789abcdef";
+    bool leadingZero = true;
+    for (int i = sizeof(T) * 2; i > 0; --i)
+    {
+        auto hex = (value >> (i - 1) * 4) & 0xF;
+        if (noLeadingZero && leadingZero && hex == 0) continue;
+		leadingZero = false;
+        result += hexStr[hex];
+    }
+    return result;
+}

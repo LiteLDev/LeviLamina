@@ -20,7 +20,8 @@ public:
     void query(const std::string& query, std::function<bool(const Row&)> callback);
     Stmt& prepare(const std::string& query);
     std::string getLastError() const;
-    int getAffectedRows() const;
+    uint64_t getAffectedRows() const;
+    uint64_t getLastInsertId() const;
     void close();
     bool isOpen();
     DBType getType();

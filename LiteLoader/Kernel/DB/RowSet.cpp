@@ -40,7 +40,10 @@ RowSet& RowSet::operator=(const RowSet& set)
 void RowSet::add(const Row& row)
 {
     if (header)
-        header->check(row);
+    {
+        if (!header->check(row))
+            throw std::runtime_error("RowSet::add: Row doesn't match header");
+    }
     else if (row.header)
         header = row.header;
     Base::push_back(row);

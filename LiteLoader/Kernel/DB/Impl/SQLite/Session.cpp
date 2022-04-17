@@ -117,9 +117,14 @@ std::string SQLiteSession::getLastError() const
     return std::string(sqlite3_errmsg(conn));
 }
 
-int SQLiteSession::getAffectedRows() const
+uint64_t SQLiteSession::getAffectedRows() const
 {
     return sqlite3_changes(conn);
+}
+
+uint64_t SQLiteSession::getLastInsertId() const
+{
+	return sqlite3_last_insert_rowid(conn);
 }
 
 void SQLiteSession::close()

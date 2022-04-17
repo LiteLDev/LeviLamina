@@ -21,21 +21,25 @@ public:
     /**
      * @brief Open the database connection.
      *
+     * @par Implementation
+     * @see SQLiteSession::open
      */
     virtual void open(const ConnParams& params) = 0;
     /**
      * @brief Turn on/off debug output.
      *
-     * @param enable Enable or not
+     * @param enable  Enable or not
      */
     LIAPI void setDebugOutput(bool enable);
     /**
      * @brief Change current user.
      *
-     * @param  user Username
-     * @param  pass Password
-     * @return bool Success or not
-     * @throws std::runtime_error If not implemented
+     * @param  user  Username
+     * @param  pass  Password
+     * @return bool  Success or not
+     * @throws std::runtime_error  If not implemented
+     * @par Implementation
+     *  None
      */
     virtual bool changeUser(const std::string& user, const std::string& password);
     /**
@@ -44,13 +48,18 @@ public:
      * @param  database Database name
      * @return bool     Success or not
      * @throws std::runtime_error If not implemented
+     * @par Implementation
+     *  None
      */
     virtual bool changeDatabase(const std::string& database);
     /**
      * @brief Execute a query.
      *
-     * @param  query    Query to execute
-     * @param  callback Callback to process results
+     * @param  query     Query to execute
+     * @param  callback  Callback to process results
+     *
+     * @par Implementation
+     * @see SQLiteSession::query
      */
     virtual void query(const std::string& query, std::function<bool(const Row&)> callback) = 0;
     /**
@@ -90,9 +99,15 @@ public:
     /**
      * @brief Get the number of affected rows by the last query.
      *
-     * @return int Number of affected rows
+     * @return uint64_t Number of affected rows
      */
-    virtual int getAffectedRows() const = 0;
+    virtual uint64_t getAffectedRows() const = 0;
+    /**
+     * @brief Get the last insert id
+     *
+     * @return uint64_t  The row id of the last inserted row
+     */
+	virtual uint64_t getLastInsertId() const = 0;
     /**
      * @brief Close the session.
      *
