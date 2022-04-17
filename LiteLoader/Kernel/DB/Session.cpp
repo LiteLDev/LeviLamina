@@ -67,7 +67,8 @@ Stmt& Session::operator<<(const std::string& query)
 
 Session& Session::create(const ConnParams& params)
 {
-    auto type = params.at("type").get<std::string>();
+    ConnParams copy = params;
+    auto type = copy.getScheme();
     std::transform(type.begin(), type.end(), type.begin(), ::tolower);
     if (type == "sqlite" || type == "sqlite3")
     {

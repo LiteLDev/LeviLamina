@@ -168,6 +168,8 @@ ConnParams::ConnParams(const std::string& str)
 {
     raw = str;
     auto url = ParseURL(str);
+    
+    if (!url.scheme.empty()) insert({"scheme", url.scheme});
     if (!url.host.empty()) insert({"host", url.host});
     if (url.port) insert({"port", url.port});
     if (!url.user.empty()) insert({"user", url.user});
@@ -176,7 +178,7 @@ ConnParams::ConnParams(const std::string& str)
     {
         std::string path = url.path;
         if (path[0] == '/') path = path.substr(1);
-        insert({"path", url.path});
+        insert({"path", path});
     }
     if (!url.fragment.empty()) insert({"fragment", url.fragment});
     for (auto& pair : url.query)
@@ -189,6 +191,11 @@ ConnParams::ConnParams(const char* str)
 {
     raw = str;
     *this = ConnParams(std::string(str));
+}
+
+std::string ConnParams::getScheme()
+{
+    return get<std::string>({"scheme", "protocol", "type"}, true);
 }
 
 std::string ConnParams::getHost()
@@ -213,7 +220,7 @@ std::string ConnParams::getPassword()
 
 std::string ConnParams::getDatabase()
 {
-    return get<std::string>({"database", "db", "db_name", "dbname"}, true);
+    return get<std::string>({"database", "db", "db_name", "dbname", "path"}, true);
 }
 
 std::string ConnParams::getPath()
