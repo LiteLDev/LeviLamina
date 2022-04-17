@@ -225,6 +225,7 @@ Stmt& SQLiteStmt::fetchAll(std::function<bool(const Row&)> cb)
             break;
         }
     }
+    return *this;
 }
 
 ResultSet SQLiteStmt::fetchAll()
