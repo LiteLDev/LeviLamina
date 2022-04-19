@@ -156,15 +156,6 @@ bool SQLiteStmt::next()
     return step();
 }
 
-bool SQLiteStmt::execute()
-{
-    int res = sqlite3_step(stmt);
-    if (res == SQLITE_DONE)
-        return true;
-    else
-        return false;
-}
-
 bool SQLiteStmt::done()
 {
     if (stepped) return false;
@@ -332,7 +323,7 @@ DBType SQLiteStmt::getType() const
     return DBType::SQLite;
 }
 
-Stmt &SQLiteStmt::operator,(const BindType&b)
+Stmt &SQLiteStmt::operator,(const BindType& b)
 {
     if (b.name.empty() && b.idx == -1)
     {
@@ -365,6 +356,13 @@ Stmt& SQLiteStmt::create(SQLiteSession& sess, const std::string& sql)
     result->onHeap = true;
     result->session = &sess;
     result->setDebugOutput(sess.debugOutput);
+    // If the sql has no parameters, we can execute it immediately
+    if (result->getParamsCount() == 0)
+    {
+        result->step();
+        result->affectedRowCount = sess.getAffectedRows();
+        result->insertRowId = sess.getLastInsertId();
+    }
     if (sess.debugOutput) dbLogger.debug("SQLiteStmt::create: Prepared > " + sql);
     return *result;
 }

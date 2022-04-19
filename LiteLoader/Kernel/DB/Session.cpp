@@ -70,7 +70,7 @@ Session& Session::create(const ConnParams& params)
     ConnParams copy = params;
     auto type = copy.getScheme();
     std::transform(type.begin(), type.end(), type.begin(), ::tolower);
-    if (type == "sqlite" || type == "sqlite3")
+    if (type == "sqlite" || type == "sqlite3" || type == "file")
     {
         return *new SQLiteSession(params);
     }
