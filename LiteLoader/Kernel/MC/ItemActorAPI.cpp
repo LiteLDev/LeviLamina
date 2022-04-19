@@ -6,14 +6,14 @@ ItemStack* ItemActor::getItemStack() {
 }
 
 int ItemActor::getDespawnTime() {
-    return dAccess<int, 499 * 4>(this); //ItemActor::normalTick
+    return dAccess<int, 503 * 4>(this); // ItemActor::normalTick
 }
 
 bool ItemActor::setDespawnTime(int a1) {
-    dAccess<int, 499 * 4>(this) = a1;
+    dAccess<int, 503 * 4>(this) = a1;
     return true;
 }
 
 int ItemActor::getLatestSpawnTime() {
-    return dAccess<int, 494 * 4>(this);
+    return dAccess<int, 498 * 4>(this);
 }
