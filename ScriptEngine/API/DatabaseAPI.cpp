@@ -398,7 +398,8 @@ Local<Value> DBSessionClass::close(const Arguments& args)
         session.close();
         return Boolean::newBoolean(true);
     }
-    CATCH("Fail in close!")
+    CATCH_WITHOUT_RETURN("Fail in close!");
+    return Boolean::newBoolean(false);
 }
 Local<Value> DBSessionClass::isOpen(const Arguments& args)
 {
@@ -513,9 +514,10 @@ Local<Value> DBStmtClass::bind(const Arguments& args)
                 }
             }
         }
-        return Local<Value>();
+        return Boolean::newBoolean(true);
     }
-    CATCH("Fail in bind!")
+    CATCH_WITHOUT_RETURN("Fail in bind!");
+    return Boolean::newBoolean(false);
 }
 
 Local<Value> DBStmtClass::step(const Arguments& args)
@@ -526,7 +528,8 @@ Local<Value> DBStmtClass::step(const Arguments& args)
     {
         return Boolean::newBoolean(stmt.step());
     }
-    CATCH("Fail in step!")
+    CATCH_WITHOUT_RETURN("Fail in step!");
+    return Boolean::newBoolean(false);
 }
 
 Local<Value> DBStmtClass::fetch(const Arguments& args)
@@ -576,7 +579,8 @@ Local<Value> DBStmtClass::reset(const Arguments& args)
         stmt.reset();
         return Boolean::newBoolean(true);
     }
-    CATCH("Fail in reset!")
+    CATCH_WITHOUT_RETURN("Fail in reset!");
+    return Boolean::newBoolean(false);
 }
 
 Local<Value> DBStmtClass::clear(const Arguments& args)
@@ -588,5 +592,6 @@ Local<Value> DBStmtClass::clear(const Arguments& args)
         stmt.clear();
         return Boolean::newBoolean(true);
     }
-    CATCH("Fail in clear!")
+    CATCH_WITHOUT_RETURN("Fail in clear!");
+    return Boolean::newBoolean(false);
 }
