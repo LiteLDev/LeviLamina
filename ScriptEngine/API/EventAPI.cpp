@@ -859,7 +859,7 @@ void EnableEventListener(int eventId)
                 Actor* source = nullptr;
                 if (ev.mDamageSource->isEntitySource())
                 {
-                    auto getEntityUniqueID = (decltype(&ActorDamageSource::getDamagingEntityUniqueID))&ActorDamageSource::__unk_vfn_8;
+                    auto getEntityUniqueID = (decltype(&ActorDamageSource::getDamagingEntityUniqueID))&ActorDamageSource::__unk_vfn_11;
                     if (ev.mDamageSource->isChildEntitySource())
                         source = Level::getEntity((ev.mDamageSource->*getEntityUniqueID)());
                     else
