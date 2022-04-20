@@ -16,8 +16,8 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TELEPORTROTATIONDATA
 public:
-    class TeleportRotationData& operator=(class TeleportRotationData const &) = delete;
-    TeleportRotationData(class TeleportRotationData const &) = delete;
+    class TeleportRotationData& operator=(class TeleportRotationData const &) = default;
+    TeleportRotationData(class TeleportRotationData const&) = default;
     TeleportRotationData() = delete;
 #endif
 

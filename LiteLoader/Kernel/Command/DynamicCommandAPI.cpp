@@ -390,7 +390,7 @@ std::string DynamicCommand::Result::toDebugString() const
         case ParameterType::Block:
             return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, isSet ? getRaw<Block const*>()->toDebugString() : "nullptr");
         case ParameterType::Effect:
-            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, isSet ? getRaw<MobEffect const*>()->getComponentName().getString() : "nullptr");
+            return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, isSet ? getRaw<MobEffect const*>()->getResourceName() : "nullptr");
         case ParameterType::Enum:
             return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet, fmt::format("{}({})", getRaw<std::string>(), getRaw<int>()));
         case ParameterType::SoftEnum:

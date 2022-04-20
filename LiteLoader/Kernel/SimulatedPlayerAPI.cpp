@@ -8,7 +8,7 @@ bool SimulatedPlayer::simulateDestory()
 {
     FaceID face = FaceID::Unknown;
     auto block = getBlockFromViewVector(face);
-    return simulateDestroyBlock(block.getPosition(), (unsigned char)face);
+    return simulateDestroyBlock(block.getPosition(), (ScriptFacing)face);
 }
 
 bool SimulatedPlayer::simulateUseItem()

@@ -159,7 +159,7 @@ bool Actor::stopFire() {
 
 
 Vec3 Actor::getCameraPos() const {
-    Vec3 pos = *(Vec3*)&getStateVector();
+    Vec3 pos = *(Vec3*)&getPosDelta();
     if (isSneaking()) {
         pos.y += -0.125;
     } else {
@@ -186,7 +186,7 @@ BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bo
     auto viewPos = pos + (viewVec * maxDistance);
     auto player = isPlayer() ? (Player*)this : nullptr;
     int maxDisManhattan = (int)((maxDistance + 1) * 2);
-    HitResult result = bs.clip(pos, viewPos, includeLiquid, solidOnly, maxDisManhattan, ignoreBorderBlocks, fullOnly, nullptr);
+    HitResult result = bs.clip(pos, viewPos, includeLiquid, solidOnly, maxDisManhattan, ignoreBorderBlocks, fullOnly, nullptr,nullptr);
     if (result.isHit() || (includeLiquid && result.isHitLiquid())) {
         BlockPos bpos{};
         if (includeLiquid && result.isHitLiquid()) {
@@ -211,7 +211,7 @@ Actor* Actor::getActorFromViewVector(float maxDistance) {
     auto& bs = getRegion();
     auto pos = getCameraPos();
     auto viewVec = getViewVector(1.0f);
-    auto aabb = *(AABB*)&_getAABBShapeNonConst();
+    auto aabb = *(AABB*)&getAABB();
     auto player = isPlayer() ? (Player*)this : nullptr;
     Actor* result = nullptr;
     float distance = 0.0f;

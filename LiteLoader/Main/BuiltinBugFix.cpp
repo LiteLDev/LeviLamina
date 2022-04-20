@@ -209,7 +209,7 @@ TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NV?
         logger.warn << "Player(" << pl->getRealName() << ") sent invalid MoveView Packet!" << Logger::endl;
         auto& pos = pl->getPosPrev();
         if (validPosition(pos))
-            pl->setPos(pl->getPosOld());
+            pl->setPos(pl->getPosition());
         else
             pl->setPos(Global<Level>->getDefaultSpawn().bottomCenter());
     }
