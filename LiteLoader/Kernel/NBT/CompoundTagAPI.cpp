@@ -154,13 +154,13 @@ void CompoundTag::setItemStack(ItemStack* item)
 
 std::unique_ptr<CompoundTag> CompoundTag::fromBlock(Block* blk)
 {
-    auto tag = (CompoundTag*)((uintptr_t)blk + 96);
+    auto tag = (CompoundTag*)((uintptr_t)blk + 104);//Block::Block
     return tag->clone();
 }
 
 void CompoundTag::setBlock(Block* blk)
 {
-    auto tag = (CompoundTag*)((uintptr_t)blk + 96);
+    auto tag = (CompoundTag*)((uintptr_t)blk + 104);
     tag->deepCopy(*this);
 }
 
