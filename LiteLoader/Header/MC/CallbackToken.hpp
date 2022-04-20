@@ -17,15 +17,15 @@ class CallbackToken {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CALLBACKTOKEN
 public:
-    class CallbackToken& operator=(class CallbackToken const&) = delete;
-    CallbackToken(class CallbackToken const&) = delete;
+    class CallbackToken& operator=(class CallbackToken const &) = delete;
+    CallbackToken(class CallbackToken const &) = delete;
 #endif
 
 public:
     MCAPI CallbackToken();
     MCAPI CallbackToken(class std::weak_ptr<class CallbackTokenCancelState>);
     MCAPI void cancelCallback();
-    MCAPI class CallbackToken& operator=(class CallbackToken&&);
+    MCAPI class CallbackToken & operator=(class CallbackToken &&);
     MCAPI void release();
     MCAPI ~CallbackToken();
 

@@ -18,55 +18,35 @@ class NetherGenerator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERGENERATOR
 public:
-    class NetherGenerator& operator=(class NetherGenerator const&) = delete;
-    NetherGenerator(class NetherGenerator const&) = delete;
+    class NetherGenerator& operator=(class NetherGenerator const &) = delete;
+    NetherGenerator(class NetherGenerator const &) = delete;
     NetherGenerator() = delete;
 #endif
 
 public:
     /*
-    inline void addHardcodedSpawnAreas(class LevelChunk& a0){
-        void (NetherGenerator::*rv)(class LevelChunk&);
-        *((void**)&rv) = dlsym("?addHardcodedSpawnAreas@NetherGenerator@@UEAAXAEAVLevelChunk@@@Z");
-        return (this->*rv)(std::forward<class LevelChunk&>(a0));
-    }
-    inline void debugRender(){
-        void (NetherGenerator::*rv)();
-        *((void**)&rv) = dlsym("?debugRender@NetherGenerator@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void decorateWorldGenLoadChunk(class Biome& a0, class LevelChunk& a1, class BlockVolumeTarget& a2, class Random& a3, class ChunkPos const& a4) const{
-        void (NetherGenerator::*rv)(class Biome&, class LevelChunk&, class BlockVolumeTarget&, class Random&, class ChunkPos const&) const;
+    inline void decorateWorldGenLoadChunk(class Biome & a0, class LevelChunk & a1, class BlockVolumeTarget & a2, class Random & a3, class ChunkPos const & a4) const{
+        void (NetherGenerator::*rv)(class Biome &, class LevelChunk &, class BlockVolumeTarget &, class Random &, class ChunkPos const &) const;
         *((void**)&rv) = dlsym("?decorateWorldGenLoadChunk@NetherGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z");
-        return (this->*rv)(std::forward<class Biome&>(a0), std::forward<class LevelChunk&>(a1), std::forward<class BlockVolumeTarget&>(a2), std::forward<class Random&>(a3), std::forward<class ChunkPos const&>(a4));
+        return (this->*rv)(std::forward<class Biome &>(a0), std::forward<class LevelChunk &>(a1), std::forward<class BlockVolumeTarget &>(a2), std::forward<class Random &>(a3), std::forward<class ChunkPos const &>(a4));
     }
-    inline void decorateWorldGenPostProcess(class Biome& a0, class LevelChunk& a1, class BlockSource& a2, class Random& a3) const{
-        void (NetherGenerator::*rv)(class Biome&, class LevelChunk&, class BlockSource&, class Random&) const;
+    inline void decorateWorldGenPostProcess(class Biome & a0, class LevelChunk & a1, class BlockSource & a2, class Random & a3) const{
+        void (NetherGenerator::*rv)(class Biome &, class LevelChunk &, class BlockSource &, class Random &) const;
         *((void**)&rv) = dlsym("?decorateWorldGenPostProcess@NetherGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z");
-        return (this->*rv)(std::forward<class Biome&>(a0), std::forward<class LevelChunk&>(a1), std::forward<class BlockSource&>(a2), std::forward<class Random&>(a3));
-    }
-    inline bool findNearestFeature(enum StructureFeatureType a0, class BlockPos const& a1, class BlockPos& a2, bool a3){
-        bool (NetherGenerator::*rv)(enum StructureFeatureType, class BlockPos const&, class BlockPos&, bool);
-        *((void**)&rv) = dlsym("?findNearestFeature@NetherGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_N@Z");
-        return (this->*rv)(std::forward<enum StructureFeatureType>(a0), std::forward<class BlockPos const&>(a1), std::forward<class BlockPos&>(a2), std::forward<bool>(a3));
+        return (this->*rv)(std::forward<class Biome &>(a0), std::forward<class LevelChunk &>(a1), std::forward<class BlockSource &>(a2), std::forward<class Random &>(a3));
     }
     inline class BlockPos findSpawnPosition() const{
         class BlockPos (NetherGenerator::*rv)() const;
         *((void**)&rv) = dlsym("?findSpawnPosition@NetherGenerator@@UEBA?AVBlockPos@@XZ");
         return (this->*rv)();
     }
-    inline void garbageCollectBlueprints(class buffer_span<class ChunkPos> a0){
-        void (NetherGenerator::*rv)(class buffer_span<class ChunkPos>);
-        *((void**)&rv) = dlsym("?garbageCollectBlueprints@NetherGenerator@@UEAAXV?$buffer_span@VChunkPos@@@@@Z");
-        return (this->*rv)(std::forward<class buffer_span<class ChunkPos>>(a0));
-    }
-    inline class BiomeArea getBiomeArea(class BoundingBox const& a0, unsigned int a1) const{
-        class BiomeArea (NetherGenerator::*rv)(class BoundingBox const&, unsigned int) const;
+    inline class BiomeArea getBiomeArea(class BoundingBox const & a0, unsigned int a1) const{
+        class BiomeArea (NetherGenerator::*rv)(class BoundingBox const &, unsigned int) const;
         *((void**)&rv) = dlsym("?getBiomeArea@NetherGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z");
-        return (this->*rv)(std::forward<class BoundingBox const&>(a0), std::forward<unsigned int>(a1));
+        return (this->*rv)(std::forward<class BoundingBox const &>(a0), std::forward<unsigned int>(a1));
     }
-    inline class BiomeSource const& getBiomeSource() const{
-        class BiomeSource const& (NetherGenerator::*rv)() const;
+    inline class BiomeSource const & getBiomeSource() const{
+        class BiomeSource const & (NetherGenerator::*rv)() const;
         *((void**)&rv) = dlsym("?getBiomeSource@NetherGenerator@@UEBAAEBVBiomeSource@@XZ");
         return (this->*rv)();
     }
@@ -75,45 +55,35 @@ public:
         *((void**)&rv) = dlsym("?getBlockVolumeDimensions@NetherGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ");
         return (this->*rv)();
     }
-    inline enum StructureFeatureType getFeatureTypeAt(class BlockPos const& a0){
-        enum StructureFeatureType (NetherGenerator::*rv)(class BlockPos const&);
-        *((void**)&rv) = dlsym("?getFeatureTypeAt@NetherGenerator@@UEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline void loadChunk(class LevelChunk& a0, bool a1){
-        void (NetherGenerator::*rv)(class LevelChunk&, bool);
+    inline void loadChunk(class LevelChunk & a0, bool a1){
+        void (NetherGenerator::*rv)(class LevelChunk &, bool);
         *((void**)&rv) = dlsym("?loadChunk@NetherGenerator@@UEAAXAEAVLevelChunk@@_N@Z");
-        return (this->*rv)(std::forward<class LevelChunk&>(a0), std::forward<bool>(a1));
+        return (this->*rv)(std::forward<class LevelChunk &>(a0), std::forward<bool>(a1));
     }
-    inline bool postProcess(class ChunkViewSource& a0){
-        bool (NetherGenerator::*rv)(class ChunkViewSource&);
+    inline bool postProcess(class ChunkViewSource & a0){
+        bool (NetherGenerator::*rv)(class ChunkViewSource &);
         *((void**)&rv) = dlsym("?postProcess@NetherGenerator@@UEAA_NAEAVChunkViewSource@@@Z");
-        return (this->*rv)(std::forward<class ChunkViewSource&>(a0));
+        return (this->*rv)(std::forward<class ChunkViewSource &>(a0));
     }
-    inline void postProcessMobsAt(class BlockSource& a0, int a1, int a2, class Random& a3){
-        void (NetherGenerator::*rv)(class BlockSource&, int, int, class Random&);
-        *((void**)&rv) = dlsym("?postProcessMobsAt@NetherGenerator@@UEAAXAEAVBlockSource@@HHAEAVRandom@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<class Random&>(a3));
-    }
-    inline void prepareAndComputeHeights(class BlockVolume& a0, class ChunkPos const& a1, std::vector<short>& a2, bool a3, int a4){
-        void (NetherGenerator::*rv)(class BlockVolume&, class ChunkPos const&, std::vector<short>&, bool, int);
+    inline void prepareAndComputeHeights(class BlockVolume & a0, class ChunkPos const & a1, std::vector<short> & a2, bool a3, int a4){
+        void (NetherGenerator::*rv)(class BlockVolume &, class ChunkPos const &, std::vector<short> &, bool, int);
         *((void**)&rv) = dlsym("?prepareAndComputeHeights@NetherGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z");
-        return (this->*rv)(std::forward<class BlockVolume&>(a0), std::forward<class ChunkPos const&>(a1), std::forward<std::vector<short>&>(a2), std::forward<bool>(a3), std::forward<int>(a4));
+        return (this->*rv)(std::forward<class BlockVolume &>(a0), std::forward<class ChunkPos const &>(a1), std::forward<std::vector<short> &>(a2), std::forward<bool>(a3), std::forward<int>(a4));
     }
-    inline void prepareHeights(class BlockVolume& a0, class ChunkPos const& a1, bool a2){
-        void (NetherGenerator::*rv)(class BlockVolume&, class ChunkPos const&, bool);
+    inline void prepareHeights(class BlockVolume & a0, class ChunkPos const & a1, bool a2){
+        void (NetherGenerator::*rv)(class BlockVolume &, class ChunkPos const &, bool);
         *((void**)&rv) = dlsym("?prepareHeights@NetherGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z");
-        return (this->*rv)(std::forward<class BlockVolume&>(a0), std::forward<class ChunkPos const&>(a1), std::forward<bool>(a2));
+        return (this->*rv)(std::forward<class BlockVolume &>(a0), std::forward<class ChunkPos const &>(a1), std::forward<bool>(a2));
     }
     */
-    MCAPI NetherGenerator(class Dimension&, unsigned int, class Biome const*);
-    MCAPI void buildSurfaces(class BlockVolume&, class LevelChunk&, class ChunkPos const&);
-    MCAPI class Util::MultidimensionalArray<float, 5, 5, 17> generateDensityCellsForChunk(class ChunkPos const&) const;
+    MCAPI NetherGenerator(class Dimension &, unsigned int, class Biome const *, std::unique_ptr<class StructureFeatureRegistry>);
+    MCAPI void buildSurfaces(class BlockVolume &, class LevelChunk &, class ChunkPos const &);
+    MCAPI class Util::MultidimensionalArray<float, 5, 5, 17> generateDensityCellsForChunk(class ChunkPos const &) const;
 
 protected:
 
 private:
-    MCAPI std::unique_ptr<class BiomeSource> _makeBiomeSource(class LevelData const&, class BiomeRegistry const&) const;
-    MCAPI void _prepareHeights(class BlockVolume&, class ChunkPos const&, bool, std::vector<short>*, int);
+    MCAPI void _prepareHeights(class BlockVolume &, class ChunkPos const &, bool, std::vector<short> *, int);
+    MCAPI static std::unique_ptr<class BiomeSource> _makeBiomeSource(class Dimension &);
 
 };

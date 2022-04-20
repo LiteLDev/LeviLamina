@@ -15,8 +15,8 @@ struct TradeItem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADEITEM
 public:
-    struct TradeItem& operator=(struct TradeItem const&) = delete;
-    TradeItem(struct TradeItem const&) = delete;
+    struct TradeItem& operator=(struct TradeItem const &) = delete;
+    TradeItem(struct TradeItem const &) = delete;
     TradeItem() = delete;
 #endif
 

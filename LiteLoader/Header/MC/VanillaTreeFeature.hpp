@@ -18,19 +18,19 @@ class VanillaTreeFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLATREEFEATURE
 public:
-    class VanillaTreeFeature& operator=(class VanillaTreeFeature const&) = delete;
-    VanillaTreeFeature(class VanillaTreeFeature const&) = delete;
+    class VanillaTreeFeature& operator=(class VanillaTreeFeature const &) = delete;
+    VanillaTreeFeature(class VanillaTreeFeature const &) = delete;
     VanillaTreeFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~VanillaTreeFeature();
-    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 
 protected:
 
 private:
-    MCAPI static void _buildVanillaCanopyVariants(class JsonUtil::JsonSchemaObjectNode<class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>, struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature> >&, class std::function<class ITreeCanopyWrapper& (struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>* )>);
-    MCAPI static void _buildVanillaTrunkVariants(class JsonUtil::JsonSchemaObjectNode<class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>, struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature> >&, class std::function<class ITreeTrunkWrapper& (struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>* )>);
+    MCAPI static void _buildVanillaCanopyVariants(class JsonUtil::JsonSchemaObjectNode<class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>, struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>> &, class std::function<class ITreeCanopyWrapper & (struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature> *)>);
+    MCAPI static void _buildVanillaTrunkVariants(class JsonUtil::JsonSchemaObjectNode<class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>, struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>> &, class std::function<class ITreeTrunkWrapper & (struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature> *)>);
 
 };

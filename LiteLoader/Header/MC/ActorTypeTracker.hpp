@@ -17,14 +17,14 @@ class ActorTypeTracker {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORTYPETRACKER
 public:
-    class ActorTypeTracker& operator=(class ActorTypeTracker const&) = delete;
-    ActorTypeTracker(class ActorTypeTracker const&) = delete;
+    class ActorTypeTracker& operator=(class ActorTypeTracker const &) = delete;
+    ActorTypeTracker(class ActorTypeTracker const &) = delete;
 #endif
 
 public:
     MCAPI ActorTypeTracker();
-    MCAPI void markSeenType(class Actor const&);
-    MCAPI bool shouldSendPropertyUpdate(class Actor const&);
+    MCAPI void markSeenType(class Actor const &);
+    MCAPI bool shouldSendPropertyUpdate(class Actor const &);
     MCAPI ~ActorTypeTracker();
 
 protected:

@@ -18,15 +18,15 @@ class HarvestFarmBlockDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HARVESTFARMBLOCKDEFINITION
 public:
-    class HarvestFarmBlockDefinition& operator=(class HarvestFarmBlockDefinition const&) = delete;
-    HarvestFarmBlockDefinition(class HarvestFarmBlockDefinition const&) = delete;
+    class HarvestFarmBlockDefinition& operator=(class HarvestFarmBlockDefinition const &) = delete;
+    HarvestFarmBlockDefinition(class HarvestFarmBlockDefinition const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~HarvestFarmBlockDefinition();
     MCAPI HarvestFarmBlockDefinition();
-    MCAPI void initialize(class EntityContext&, class HarvestFarmBlockGoal&);
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HarvestFarmBlockDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class HarvestFarmBlockGoal &);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HarvestFarmBlockDefinition>> &);
 
 protected:
 

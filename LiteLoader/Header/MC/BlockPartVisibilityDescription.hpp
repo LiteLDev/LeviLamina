@@ -17,8 +17,8 @@ struct BlockPartVisibilityDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPARTVISIBILITYDESCRIPTION
 public:
-    struct BlockPartVisibilityDescription& operator=(struct BlockPartVisibilityDescription const&) = delete;
-    BlockPartVisibilityDescription(struct BlockPartVisibilityDescription const&) = delete;
+    struct BlockPartVisibilityDescription& operator=(struct BlockPartVisibilityDescription const &) = delete;
+    BlockPartVisibilityDescription(struct BlockPartVisibilityDescription const &) = delete;
 #endif
 
 public:

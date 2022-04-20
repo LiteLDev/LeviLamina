@@ -17,13 +17,13 @@ class WeaponRecipes {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAPONRECIPES
 public:
-    class WeaponRecipes& operator=(class WeaponRecipes const&) = delete;
-    WeaponRecipes(class WeaponRecipes const&) = delete;
+    class WeaponRecipes& operator=(class WeaponRecipes const &) = delete;
+    WeaponRecipes(class WeaponRecipes const &) = delete;
     WeaponRecipes() = delete;
 #endif
 
 public:
-    MCAPI static void addRecipes(class Recipes&);
+    MCAPI static void addRecipes(class Recipes &);
 
 protected:
 

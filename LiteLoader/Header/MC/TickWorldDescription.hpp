@@ -18,15 +18,15 @@ class TickWorldDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKWORLDDESCRIPTION
 public:
-    class TickWorldDescription& operator=(class TickWorldDescription const&) = delete;
-    TickWorldDescription(class TickWorldDescription const&) = delete;
+    class TickWorldDescription& operator=(class TickWorldDescription const &) = delete;
+    TickWorldDescription(class TickWorldDescription const &) = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~TickWorldDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~TickWorldDescription(){
          (TickWorldDescription::*rv)();

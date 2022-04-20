@@ -17,8 +17,8 @@ class SwoopAttackGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWOOPATTACKGOAL
 public:
-    class SwoopAttackGoal& operator=(class SwoopAttackGoal const&) = delete;
-    SwoopAttackGoal(class SwoopAttackGoal const&) = delete;
+    class SwoopAttackGoal& operator=(class SwoopAttackGoal const &) = delete;
+    SwoopAttackGoal(class SwoopAttackGoal const &) = delete;
     SwoopAttackGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
 
 protected:
 

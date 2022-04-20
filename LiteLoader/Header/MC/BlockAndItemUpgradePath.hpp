@@ -15,13 +15,13 @@ class BlockAndItemUpgradePath {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKANDITEMUPGRADEPATH
 public:
-    class BlockAndItemUpgradePath& operator=(class BlockAndItemUpgradePath const&) = delete;
-    BlockAndItemUpgradePath(class BlockAndItemUpgradePath const&) = delete;
+    class BlockAndItemUpgradePath& operator=(class BlockAndItemUpgradePath const &) = delete;
+    BlockAndItemUpgradePath(class BlockAndItemUpgradePath const &) = delete;
 #endif
 
 public:
     MCAPI BlockAndItemUpgradePath();
-    MCAPI bool process(std::string&);
+    MCAPI bool process(std::string &);
 
 protected:
 

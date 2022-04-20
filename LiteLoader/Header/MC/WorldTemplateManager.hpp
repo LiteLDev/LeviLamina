@@ -19,14 +19,14 @@ class WorldTemplateManager {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDTEMPLATEMANAGER
 public:
-    class WorldTemplateManager& operator=(class WorldTemplateManager const&) = delete;
-    WorldTemplateManager(class WorldTemplateManager const&) = delete;
+    class WorldTemplateManager& operator=(class WorldTemplateManager const &) = delete;
+    WorldTemplateManager(class WorldTemplateManager const &) = delete;
     WorldTemplateManager() = delete;
 #endif
 
 public:
     /*0*/ virtual ~WorldTemplateManager();
-    /*1*/ virtual struct WorldTemplateInfo const* findInstalledWorldTemplateByUUID(std::vector<class mce::UUID> const&) const;
+    /*1*/ virtual struct WorldTemplateInfo const * findInstalledWorldTemplateByUUID(std::vector<class mce::UUID> const &) const;
     /*
     inline  ~WorldTemplateManager(){
          (WorldTemplateManager::*rv)();
@@ -34,15 +34,15 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI WorldTemplateManager(class PackManifestFactory&, class IContentKeyProvider const&, class PackSourceFactory&, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager> > const&, bool);
-    MCAPI struct WorldTemplateInfo const* findInstalledWorldTemplate(struct PackIdVersion const&) const;
-    MCAPI class Core::PathBuffer<std::string > getWorldTemplatesPath() const;
+    MCAPI WorldTemplateManager(class PackManifestFactory &, class IContentKeyProvider const &, class PackSourceFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, bool);
+    MCAPI struct WorldTemplateInfo const * findInstalledWorldTemplate(struct PackIdVersion const &) const;
+    MCAPI class Core::PathBuffer<std::string> getWorldTemplatesPath() const;
 
 protected:
 
 private:
     MCAPI void _initialize();
     MCAPI void _initializePackSources();
-    MCAPI void _onDiscoverWorldTemplate(class Pack const&);
+    MCAPI void _onDiscoverWorldTemplate(class Pack const &);
 
 };

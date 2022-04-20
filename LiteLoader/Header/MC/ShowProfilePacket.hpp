@@ -18,16 +18,16 @@ class ShowProfilePacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHOWPROFILEPACKET
 public:
-    class ShowProfilePacket& operator=(class ShowProfilePacket const&) = delete;
-    ShowProfilePacket(class ShowProfilePacket const&) = delete;
+    class ShowProfilePacket& operator=(class ShowProfilePacket const &) = delete;
+    ShowProfilePacket(class ShowProfilePacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ShowProfilePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     MCAPI ShowProfilePacket();
 
 protected:

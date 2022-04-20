@@ -15,8 +15,8 @@ class ServerPlayerBroadcastMoveSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPLAYERBROADCASTMOVESYSTEM
 public:
-    class ServerPlayerBroadcastMoveSystem& operator=(class ServerPlayerBroadcastMoveSystem const&) = delete;
-    ServerPlayerBroadcastMoveSystem(class ServerPlayerBroadcastMoveSystem const&) = delete;
+    class ServerPlayerBroadcastMoveSystem& operator=(class ServerPlayerBroadcastMoveSystem const &) = delete;
+    ServerPlayerBroadcastMoveSystem(class ServerPlayerBroadcastMoveSystem const &) = delete;
     ServerPlayerBroadcastMoveSystem() = delete;
 #endif
 

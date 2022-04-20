@@ -17,17 +17,17 @@ class PacketViolationHandler {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKETVIOLATIONHANDLER
 public:
-    class PacketViolationHandler& operator=(class PacketViolationHandler const&) = delete;
-    PacketViolationHandler(class PacketViolationHandler const&) = delete;
+    class PacketViolationHandler& operator=(class PacketViolationHandler const &) = delete;
+    PacketViolationHandler(class PacketViolationHandler const &) = delete;
 #endif
 
 public:
     MCAPI PacketViolationHandler();
-    MCAPI enum PacketViolationResponse checkForViolation(enum MinecraftPacketIds, enum StreamReadResult, class NetworkIdentifier const&, bool*);
+    MCAPI enum PacketViolationResponse checkForViolation(enum MinecraftPacketIds, enum StreamReadResult, class NetworkIdentifier const &, bool *);
 
 protected:
 
 private:
-    MCAPI enum PacketViolationResponse _handleViolation(enum MinecraftPacketIds, enum StreamReadResult, class NetworkIdentifier const&, bool*);
+    MCAPI enum PacketViolationResponse _handleViolation(enum MinecraftPacketIds, enum StreamReadResult, class NetworkIdentifier const &, bool *);
 
 };

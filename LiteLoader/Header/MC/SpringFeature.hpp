@@ -18,20 +18,20 @@ class SpringFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPRINGFEATURE
 public:
-    class SpringFeature& operator=(class SpringFeature const&) = delete;
-    SpringFeature(class SpringFeature const&) = delete;
+    class SpringFeature& operator=(class SpringFeature const &) = delete;
+    SpringFeature(class SpringFeature const &) = delete;
     SpringFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SpringFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-    MCAPI SpringFeature(class Block const&);
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+    MCAPI SpringFeature(class Block const &);
 
 protected:
 
 private:
-    MCAPI bool isValidSpringBorderBlock(class BlockLegacy const&, class BlockSource&) const;
+    MCAPI bool isValidSpringBorderBlock(class BlockLegacy const &, class BlockSource &) const;
 
 };

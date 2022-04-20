@@ -17,8 +17,8 @@ struct BlockDestroyTimeDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDESTROYTIMEDESCRIPTION
 public:
-    struct BlockDestroyTimeDescription& operator=(struct BlockDestroyTimeDescription const&) = delete;
-    BlockDestroyTimeDescription(struct BlockDestroyTimeDescription const&) = delete;
+    struct BlockDestroyTimeDescription& operator=(struct BlockDestroyTimeDescription const &) = delete;
+    BlockDestroyTimeDescription(struct BlockDestroyTimeDescription const &) = delete;
     BlockDestroyTimeDescription() = delete;
 #endif
 

@@ -18,15 +18,15 @@ class CraftHandleNonImplemented_DEPRECATEDASKTYLAING : public CraftHandlerBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTHANDLENONIMPLEMENTED_DEPRECATEDASKTYLAING
 public:
-    class CraftHandleNonImplemented_DEPRECATEDASKTYLAING& operator=(class CraftHandleNonImplemented_DEPRECATEDASKTYLAING const&) = delete;
-    CraftHandleNonImplemented_DEPRECATEDASKTYLAING(class CraftHandleNonImplemented_DEPRECATEDASKTYLAING const&) = delete;
+    class CraftHandleNonImplemented_DEPRECATEDASKTYLAING& operator=(class CraftHandleNonImplemented_DEPRECATEDASKTYLAING const &) = delete;
+    CraftHandleNonImplemented_DEPRECATEDASKTYLAING(class CraftHandleNonImplemented_DEPRECATEDASKTYLAING const &) = delete;
     CraftHandleNonImplemented_DEPRECATEDASKTYLAING() = delete;
 #endif
 
 public:
     /*0*/ virtual ~CraftHandleNonImplemented_DEPRECATEDASKTYLAING();
     /*3*/ virtual void endRequestBatch();
-    /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+    /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /*5*/ virtual void _postCraftRequest(bool);
 
 protected:

@@ -17,8 +17,8 @@ class LevelChunkGarbageCollector {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCHUNKGARBAGECOLLECTOR
 public:
-    class LevelChunkGarbageCollector& operator=(class LevelChunkGarbageCollector const&) = delete;
-    LevelChunkGarbageCollector(class LevelChunkGarbageCollector const&) = delete;
+    class LevelChunkGarbageCollector& operator=(class LevelChunkGarbageCollector const &) = delete;
+    LevelChunkGarbageCollector(class LevelChunkGarbageCollector const &) = delete;
     LevelChunkGarbageCollector() = delete;
 #endif
 

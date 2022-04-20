@@ -17,20 +17,20 @@ class FeatureRegistry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEATUREREGISTRY
 public:
-    class FeatureRegistry& operator=(class FeatureRegistry const&) = delete;
-    FeatureRegistry(class FeatureRegistry const&) = delete;
+    class FeatureRegistry& operator=(class FeatureRegistry const &) = delete;
+    FeatureRegistry(class FeatureRegistry const &) = delete;
 #endif
 
 public:
     MCAPI FeatureRegistry();
-    MCAPI void forEachFeature(class std::function<void (class HashedString const& , class WeakRefT<struct FeatureRefTraits>)>) const;
+    MCAPI void forEachFeature(class std::function<void (class HashedString const &, class WeakRefT<struct FeatureRefTraits>)>) const;
     MCAPI std::vector<std::string> getLargeFeaturePasses() const;
     MCAPI std::vector<std::string> getSmallFeaturePasses() const;
-    MCAPI bool isFeaturePassDefined(std::string const&) const;
-    MCAPI void loadFromDefinitions(class IWorldRegistriesProvider&, class ResourcePackManager const&, class Experiments const&);
-    MCAPI class WeakRefT<struct FeatureRefTraits> lookupByName(std::string const&) const;
-    MCAPI class WeakRefT<struct FeatureRefTraits> lookupOrReserveFeature(std::string const&);
-    MCAPI class WeakRefT<struct FeatureRefTraits> reserveFeature(std::string const&);
+    MCAPI bool isFeaturePassDefined(std::string const &) const;
+    MCAPI void loadFromDefinitions(class IWorldRegistriesProvider &, class ResourcePackManager const &, class Experiments const &);
+    MCAPI class WeakRefT<struct FeatureRefTraits> lookupByName(std::string const &) const;
+    MCAPI class WeakRefT<struct FeatureRefTraits> lookupOrReserveFeature(std::string const &);
+    MCAPI class WeakRefT<struct FeatureRefTraits> reserveFeature(std::string const &);
     MCAPI void setLargeFeaturePasses(std::vector<std::string>);
     MCAPI void setSmallFeaturePasses(std::vector<std::string>);
     MCAPI static std::string const AFTER_SKY_PASS;
@@ -49,8 +49,8 @@ public:
 protected:
 
 private:
-    MCAPI std::string const _featureNamespaceFromInput(std::string const&, std::string const&);
-    MCAPI void _registerFeature(std::string const&, std::unique_ptr<class IFeature>);
-    MCAPI void _setupFeature(class IWorldRegistriesProvider&, class ResourcePackManager const&, std::string const&, std::string const&, class SemVersion const&);
+    MCAPI std::string const _featureNamespaceFromInput(std::string const &, std::string const &);
+    MCAPI void _registerFeature(std::string const &, std::unique_ptr<class IFeature>);
+    MCAPI void _setupFeature(class IWorldRegistriesProvider &, class ResourcePackManager const &, std::string const &, std::string const &, class SemVersion const &);
 
 };

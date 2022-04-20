@@ -17,8 +17,8 @@ class DiggerItemComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIGGERITEMCOMPONENT
 public:
-    class DiggerItemComponent& operator=(class DiggerItemComponent const&) = delete;
-    DiggerItemComponent(class DiggerItemComponent const&) = delete;
+    class DiggerItemComponent& operator=(class DiggerItemComponent const &) = delete;
+    DiggerItemComponent(class DiggerItemComponent const &) = delete;
     DiggerItemComponent() = delete;
 #endif
 
@@ -29,7 +29,7 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
     /*
     inline bool isNetworkComponent() const{
         bool (DiggerItemComponent::*rv)() const;
@@ -37,9 +37,9 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*);
+    MCAPI bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *);
     MCAPI static void bindType();
-    MCAPI static class HashedString const& getIdentifier();
+    MCAPI static class HashedString const & getIdentifier();
 
 protected:
 

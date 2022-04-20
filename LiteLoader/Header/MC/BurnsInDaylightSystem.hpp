@@ -17,15 +17,15 @@ class BurnsInDaylightSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BURNSINDAYLIGHTSYSTEM
 public:
-    class BurnsInDaylightSystem& operator=(class BurnsInDaylightSystem const&) = delete;
-    BurnsInDaylightSystem(class BurnsInDaylightSystem const&) = delete;
+    class BurnsInDaylightSystem& operator=(class BurnsInDaylightSystem const &) = delete;
+    BurnsInDaylightSystem(class BurnsInDaylightSystem const &) = delete;
     BurnsInDaylightSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BurnsInDaylightSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

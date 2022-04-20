@@ -18,8 +18,8 @@ class Random {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOM
 public:
-    class Random& operator=(class Random const&) = delete;
-    Random(class Random const&) = delete;
+    class Random& operator=(class Random const &) = delete;
+    Random(class Random const &) = delete;
 #endif
 
 public:
@@ -76,17 +76,16 @@ public:
     }
     */
     MCAPI Random();
-    MCAPI Random(unsigned int, bool);
     MCAPI float nextFloat(float, float);
     MCAPI float nextGaussianFloat();
     MCAPI int nextGaussianInt(int);
     MCAPI int nextInt(int, int);
     MCAPI int nextIntInclusive(int, int);
-    MCAPI static class Random& getThreadLocal();
+    MCAPI static class Random & getThreadLocal();
 
 protected:
 
 private:
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random, class std::allocator<class Random> > mThreadLocalRandom;
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random, class std::allocator<class Random>> mThreadLocalRandom;
 
 };

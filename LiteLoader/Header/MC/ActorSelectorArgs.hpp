@@ -15,8 +15,8 @@ struct ActorSelectorArgs {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSELECTORARGS
 public:
-    struct ActorSelectorArgs& operator=(struct ActorSelectorArgs const&) = delete;
-    ActorSelectorArgs(struct ActorSelectorArgs const&) = delete;
+    struct ActorSelectorArgs& operator=(struct ActorSelectorArgs const &) = delete;
+    ActorSelectorArgs(struct ActorSelectorArgs const &) = delete;
     ActorSelectorArgs() = delete;
 #endif
 

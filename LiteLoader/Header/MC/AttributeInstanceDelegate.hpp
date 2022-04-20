@@ -17,8 +17,8 @@ class AttributeInstanceDelegate {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTEINSTANCEDELEGATE
 public:
-    class AttributeInstanceDelegate& operator=(class AttributeInstanceDelegate const&) = delete;
-    AttributeInstanceDelegate(class AttributeInstanceDelegate const&) = delete;
+    class AttributeInstanceDelegate& operator=(class AttributeInstanceDelegate const &) = delete;
+    AttributeInstanceDelegate(class AttributeInstanceDelegate const &) = delete;
     AttributeInstanceDelegate() = delete;
 #endif
 
@@ -26,8 +26,9 @@ public:
     /*0*/ virtual ~AttributeInstanceDelegate();
     /*1*/ virtual void tick();
     /*2*/ virtual void notify(__int64);
-    /*3*/ virtual bool change(float, float, struct AttributeBuffInfo);
-    /*4*/ virtual float getBuffValue(class AttributeBuff const&) const;
+    /*3*/ virtual bool willChange(float, float, class AttributeBuff const &);
+    /*4*/ virtual float change(float, float, class AttributeBuff const &);
+    /*5*/ virtual float getBuffValueWithModifiers(class AttributeBuff const &) const;
     /*
     inline  ~AttributeInstanceDelegate(){
          (AttributeInstanceDelegate::*rv)();
@@ -35,11 +36,11 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI AttributeInstanceDelegate(class AttributeInstance const&);
+    MCAPI AttributeInstanceDelegate(class AttributeInstance const &);
 
 protected:
-    MCAPI class AttributeInstance const& _getInstance() const;
-    MCAPI class AttributeInstance* _getMutableInstance() const;
+    MCAPI class AttributeInstance const & _getInstance() const;
+    MCAPI class AttributeInstance * _getMutableInstance() const;
 
 private:
 

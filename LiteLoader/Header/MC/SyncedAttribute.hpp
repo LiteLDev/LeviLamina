@@ -15,8 +15,8 @@ class SyncedAttribute {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SYNCEDATTRIBUTE
 public:
-    class SyncedAttribute& operator=(class SyncedAttribute const&) = delete;
-    SyncedAttribute(class SyncedAttribute const&) = delete;
+    class SyncedAttribute& operator=(class SyncedAttribute const &) = delete;
+    SyncedAttribute(class SyncedAttribute const &) = delete;
     SyncedAttribute() = delete;
 #endif
 

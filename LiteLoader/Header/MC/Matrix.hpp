@@ -17,13 +17,14 @@ class Matrix {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MATRIX
 public:
-    class Matrix& operator=(class Matrix const&) = delete;
-    Matrix(class Matrix const&) = delete;
+    class Matrix& operator=(class Matrix const &) = delete;
+    Matrix(class Matrix const &) = delete;
     Matrix() = delete;
 #endif
 
 public:
-    MCAPI void transform3(struct glm::vec<3, float, 0>&, float&) const;
+    MCAPI Matrix(struct glm::qua<float, 0> const &);
+    MCAPI void transform3(struct glm::vec<3, float, 0> &, float &) const;
 
 protected:
 

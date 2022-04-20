@@ -18,15 +18,15 @@ class NavigationSwimDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONSWIMDESCRIPTION
 public:
-    class NavigationSwimDescription& operator=(class NavigationSwimDescription const&) = delete;
-    NavigationSwimDescription(class NavigationSwimDescription const&) = delete;
+    class NavigationSwimDescription& operator=(class NavigationSwimDescription const &) = delete;
+    NavigationSwimDescription(class NavigationSwimDescription const &) = delete;
     NavigationSwimDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~NavigationSwimDescription();
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~NavigationSwimDescription(){
          (NavigationSwimDescription::*rv)();

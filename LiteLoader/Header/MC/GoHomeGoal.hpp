@@ -17,8 +17,8 @@ class GoHomeGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GOHOMEGOAL
 public:
-    class GoHomeGoal& operator=(class GoHomeGoal const&) = delete;
-    GoHomeGoal(class GoHomeGoal const&) = delete;
+    class GoHomeGoal& operator=(class GoHomeGoal const &) = delete;
+    GoHomeGoal(class GoHomeGoal const &) = delete;
     GoHomeGoal() = delete;
 #endif
 
@@ -30,16 +30,14 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI GoHomeGoal(class Mob&, float, int, float, std::vector<class DefinitionTrigger>, std::vector<class DefinitionTrigger>);
-    MCAPI static int const GIVE_UP_TICKS;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI GoHomeGoal(class Mob &);
 
 protected:
-    MCAPI class AutomaticID<class Dimension, int> _getHomeDimension() const;
-    MCAPI class BlockPos _getHomePos() const;
-    MCAPI void _triggerOnFailedEvents();
 
 private:
+    MCAPI bool _hasReachedHome() const;
     MCAPI bool _hasRequiredComponents() const;
+    MCAPI void _triggerOnFailedEvents();
 
 };

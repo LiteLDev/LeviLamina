@@ -18,15 +18,15 @@ class OpenDoorAnnotationDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OPENDOORANNOTATIONDESCRIPTION
 public:
-    class OpenDoorAnnotationDescription& operator=(class OpenDoorAnnotationDescription const&) = delete;
-    OpenDoorAnnotationDescription(class OpenDoorAnnotationDescription const&) = delete;
+    class OpenDoorAnnotationDescription& operator=(class OpenDoorAnnotationDescription const &) = delete;
+    OpenDoorAnnotationDescription(class OpenDoorAnnotationDescription const &) = delete;
     OpenDoorAnnotationDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~OpenDoorAnnotationDescription();
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~OpenDoorAnnotationDescription(){
          (OpenDoorAnnotationDescription::*rv)();

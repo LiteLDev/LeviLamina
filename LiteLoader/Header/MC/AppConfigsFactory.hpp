@@ -17,8 +17,8 @@ class AppConfigsFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_APPCONFIGSFACTORY
 public:
-    class AppConfigsFactory& operator=(class AppConfigsFactory const&) = delete;
-    AppConfigsFactory(class AppConfigsFactory const&) = delete;
+    class AppConfigsFactory& operator=(class AppConfigsFactory const &) = delete;
+    AppConfigsFactory(class AppConfigsFactory const &) = delete;
     AppConfigsFactory() = delete;
 #endif
 

@@ -18,8 +18,8 @@ class ServerLevel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERLEVEL
 public:
-    class ServerLevel& operator=(class ServerLevel const&) = delete;
-    ServerLevel(class ServerLevel const&) = delete;
+    class ServerLevel& operator=(class ServerLevel const &) = delete;
+    ServerLevel(class ServerLevel const &) = delete;
     ServerLevel() = delete;
 #endif
 
@@ -30,65 +30,90 @@ public:
         *((void**)&rv) = dlsym("?setServerTickOffset@ServerLevel@@UEAAX_J@Z");
         return (this->*rv)(std::forward<__int64>(a0));
     }
-    inline void decrementTagCache(std::string const& a0, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType> >& a1){
-        void (ServerLevel::*rv)(std::string const&, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType> >&);
-        *((void**)&rv) = dlsym("?decrementTagCache@ServerLevel@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$TagRegistry@U?$IDType@ULevelTagIDType@@@@U?$IDType@ULevelTagSetIDType@@@@@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType> >&>(a1));
+    inline void consolidateLevelChunkMetaData(class LevelChunk & a0){
+        void (ServerLevel::*rv)(class LevelChunk &);
+        *((void**)&rv) = dlsym("?consolidateLevelChunkMetaData@ServerLevel@@UEAAXAEAVLevelChunk@@@Z");
+        return (this->*rv)(std::forward<class LevelChunk &>(a0));
     }
-    inline class ResourcePackManager* getClientResourcePackManager() const{
-        class ResourcePackManager* (ServerLevel::*rv)() const;
+    inline class Dimension * createDimension(class AutomaticID<class Dimension, int> a0){
+        class Dimension * (ServerLevel::*rv)(class AutomaticID<class Dimension, int>);
+        *((void**)&rv) = dlsym("?createDimension@ServerLevel@@UEAAPEAVDimension@@V?$AutomaticID@VDimension@@H@@@Z");
+        return (this->*rv)(std::forward<class AutomaticID<class Dimension, int>>(a0));
+    }
+    inline void decrementTagCache(std::string const & a0, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> & a1){
+        void (ServerLevel::*rv)(std::string const &, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> &);
+        *((void**)&rv) = dlsym("?decrementTagCache@ServerLevel@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$TagRegistry@U?$IDType@ULevelTagIDType@@@@U?$IDType@ULevelTagSetIDType@@@@@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> &>(a1));
+    }
+    inline class ResourcePackManager * getClientResourcePackManager() const{
+        class ResourcePackManager * (ServerLevel::*rv)() const;
         *((void**)&rv) = dlsym("?getClientResourcePackManager@ServerLevel@@UEBAPEAVResourcePackManager@@XZ");
         return (this->*rv)();
     }
-    inline class LevelEventCoordinator& getLevelEventCoordinator(){
-        class LevelEventCoordinator& (ServerLevel::*rv)();
+    inline class std::shared_ptr<class LevelChunkMetaDataDictionary> getLevelChunkMetaDataDictionary() const{
+        class std::shared_ptr<class LevelChunkMetaDataDictionary> (ServerLevel::*rv)() const;
+        *((void**)&rv) = dlsym("?getLevelChunkMetaDataDictionary@ServerLevel@@UEBA?AV?$shared_ptr@VLevelChunkMetaDataDictionary@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline class LevelEventCoordinator & getLevelEventCoordinator(){
+        class LevelEventCoordinator & (ServerLevel::*rv)();
         *((void**)&rv) = dlsym("?getLevelEventCoordinator@ServerLevel@@UEAAAEAVLevelEventCoordinator@@XZ");
         return (this->*rv)();
     }
-    inline class PositionTrackingDB::PositionTrackingDBServer* getPositionTrackerDBServer() const{
-        class PositionTrackingDB::PositionTrackingDBServer* (ServerLevel::*rv)() const;
+    inline class PositionTrackingDB::PositionTrackingDBServer * getPositionTrackerDBServer() const{
+        class PositionTrackingDB::PositionTrackingDBServer * (ServerLevel::*rv)() const;
         *((void**)&rv) = dlsym("?getPositionTrackerDBServer@ServerLevel@@UEBAPEAVPositionTrackingDBServer@PositionTrackingDB@@XZ");
         return (this->*rv)();
     }
-    inline class ResourcePackManager* getServerResourcePackManager() const{
-        class ResourcePackManager* (ServerLevel::*rv)() const;
+    inline class ResourcePackManager * getServerResourcePackManager() const{
+        class ResourcePackManager * (ServerLevel::*rv)() const;
         *((void**)&rv) = dlsym("?getServerResourcePackManager@ServerLevel@@UEBAPEAVResourcePackManager@@XZ");
         return (this->*rv)();
     }
-    inline class Random& getThreadRandom() const{
-        class Random& (ServerLevel::*rv)() const;
+    inline class Random & getThreadRandom() const{
+        class Random & (ServerLevel::*rv)() const;
         *((void**)&rv) = dlsym("?getThreadRandom@ServerLevel@@UEBAAEAVRandom@@XZ");
         return (this->*rv)();
     }
-    inline class TradeTables* getTradeTables(){
-        class TradeTables* (ServerLevel::*rv)();
+    inline class TradeTables * getTradeTables(){
+        class TradeTables * (ServerLevel::*rv)();
         *((void**)&rv) = dlsym("?getTradeTables@ServerLevel@@UEAAPEAVTradeTables@@XZ");
         return (this->*rv)();
     }
-    inline void incrementTagCache(std::string const& a0, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType> >& a1){
-        void (ServerLevel::*rv)(std::string const&, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType> >&);
+    inline void incrementTagCache(std::string const & a0, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> & a1){
+        void (ServerLevel::*rv)(std::string const &, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> &);
         *((void**)&rv) = dlsym("?incrementTagCache@ServerLevel@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$TagRegistry@U?$IDType@ULevelTagIDType@@@@U?$IDType@ULevelTagSetIDType@@@@@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType> >&>(a1));
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> &>(a1));
     }
-    inline bool initialize(std::string const& a0, class LevelSettings const& a1, class LevelData* a2, class Experiments const& a3, std::string const* a4){
-        bool (ServerLevel::*rv)(std::string const&, class LevelSettings const&, class LevelData*, class Experiments const&, std::string const*);
+    inline bool initialize(std::string const & a0, class LevelSettings const & a1, class LevelData * a2, class Experiments const & a3, std::string const * a4){
+        bool (ServerLevel::*rv)(std::string const &, class LevelSettings const &, class LevelData *, class Experiments const &, std::string const *);
         *((void**)&rv) = dlsym("?initialize@ServerLevel@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVLevelSettings@@PEAVLevelData@@AEBVExperiments@@PEBV23@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class LevelSettings const&>(a1), std::forward<class LevelData*>(a2), std::forward<class Experiments const&>(a3), std::forward<std::string const*>(a4));
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class LevelSettings const &>(a1), std::forward<class LevelData *>(a2), std::forward<class Experiments const &>(a3), std::forward<std::string const *>(a4));
+    }
+    inline void initializeLevelChunkMetaData(class LevelChunk & a0){
+        void (ServerLevel::*rv)(class LevelChunk &);
+        *((void**)&rv) = dlsym("?initializeLevelChunkMetaData@ServerLevel@@UEAAXAEAVLevelChunk@@@Z");
+        return (this->*rv)(std::forward<class LevelChunk &>(a0));
     }
     inline void loadFunctionManager(){
         void (ServerLevel::*rv)();
         *((void**)&rv) = dlsym("?loadFunctionManager@ServerLevel@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void runCommand(class Command& a0, class CommandOrigin& a1, enum CommandOriginSystem a2){
-        void (ServerLevel::*rv)(class Command&, class CommandOrigin&, enum CommandOriginSystem);
-        *((void**)&rv) = dlsym("?runCommand@ServerLevel@@UEAAXAEAVCommand@@AEAVCommandOrigin@@W4CommandOriginSystem@@@Z");
-        return (this->*rv)(std::forward<class Command&>(a0), std::forward<class CommandOrigin&>(a1), std::forward<enum CommandOriginSystem>(a2));
+    inline void onChunkLoaded(class ChunkSource & a0, class LevelChunk & a1){
+        void (ServerLevel::*rv)(class ChunkSource &, class LevelChunk &);
+        *((void**)&rv) = dlsym("?onChunkLoaded@ServerLevel@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z");
+        return (this->*rv)(std::forward<class ChunkSource &>(a0), std::forward<class LevelChunk &>(a1));
     }
-    inline void runCommand(class HashedString const& a0, class CommandOrigin& a1, enum CommandOriginSystem a2, enum CurrentCmdVersion a3){
-        void (ServerLevel::*rv)(class HashedString const&, class CommandOrigin&, enum CommandOriginSystem, enum CurrentCmdVersion);
+    inline void runCommand(class Command & a0, class CommandOrigin & a1, enum CommandOriginSystem a2){
+        void (ServerLevel::*rv)(class Command &, class CommandOrigin &, enum CommandOriginSystem);
+        *((void**)&rv) = dlsym("?runCommand@ServerLevel@@UEAAXAEAVCommand@@AEAVCommandOrigin@@W4CommandOriginSystem@@@Z");
+        return (this->*rv)(std::forward<class Command &>(a0), std::forward<class CommandOrigin &>(a1), std::forward<enum CommandOriginSystem>(a2));
+    }
+    inline void runCommand(class HashedString const & a0, class CommandOrigin & a1, enum CommandOriginSystem a2, enum CurrentCmdVersion a3){
+        void (ServerLevel::*rv)(class HashedString const &, class CommandOrigin &, enum CommandOriginSystem, enum CurrentCmdVersion);
         *((void**)&rv) = dlsym("?runCommand@ServerLevel@@UEAAXAEBVHashedString@@AEAVCommandOrigin@@W4CommandOriginSystem@@W4CurrentCmdVersion@@@Z");
-        return (this->*rv)(std::forward<class HashedString const&>(a0), std::forward<class CommandOrigin&>(a1), std::forward<enum CommandOriginSystem>(a2), std::forward<enum CurrentCmdVersion>(a3));
+        return (this->*rv)(std::forward<class HashedString const &>(a0), std::forward<class CommandOrigin &>(a1), std::forward<enum CommandOriginSystem>(a2), std::forward<enum CurrentCmdVersion>(a3));
     }
     inline void saveAdditionalData(){
         void (ServerLevel::*rv)();
@@ -116,11 +141,11 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ServerLevel(class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface> > const&, std::unique_ptr<class LevelStorage>, std::unique_ptr<class LevelLooseFileStorage>, class IMinecraftEventing&, class ResourcePackManager&, class ResourcePackManager&, class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager> >, class MinecraftCommands&, class Scheduler&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner> > const&, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>);
-    MCAPI class MinecraftCommands& getCommands();
-    MCAPI class FunctionManager& getFunctionManager();
-    MCAPI class MobEvents const& getMobEvents() const;
-    MCAPI class MobEvents& getMobEvents();
+    MCAPI ServerLevel(class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> const &, std::unique_ptr<class LevelStorage>, std::unique_ptr<class LevelLooseFileStorage>, class IMinecraftEventing &, class ResourcePackManager &, class ResourcePackManager &, class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class MinecraftCommands &, class Scheduler &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner>> const &, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>, class std::weak_ptr<class ItemRegistry>, class std::weak_ptr<class BlockTypeRegistry>);
+    MCAPI class MinecraftCommands & getCommands();
+    MCAPI class FunctionManager & getFunctionManager();
+    MCAPI class MobEvents const & getMobEvents() const;
+    MCAPI class MobEvents & getMobEvents();
     MCAPI void setShouldSendSleepMessage(bool);
     MCAPI bool shouldSendSleepMessage() const;
     MCAPI class Bedrock::NonOwnerPointer<class VolumeEntityManagerServer> tryGetVolumeEntityManager() const;

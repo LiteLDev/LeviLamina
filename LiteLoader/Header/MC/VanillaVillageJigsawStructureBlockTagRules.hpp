@@ -17,13 +17,13 @@ class VanillaVillageJigsawStructureBlockTagRules {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAVILLAGEJIGSAWSTRUCTUREBLOCKTAGRULES
 public:
-    class VanillaVillageJigsawStructureBlockTagRules& operator=(class VanillaVillageJigsawStructureBlockTagRules const&) = delete;
-    VanillaVillageJigsawStructureBlockTagRules(class VanillaVillageJigsawStructureBlockTagRules const&) = delete;
+    class VanillaVillageJigsawStructureBlockTagRules& operator=(class VanillaVillageJigsawStructureBlockTagRules const &) = delete;
+    VanillaVillageJigsawStructureBlockTagRules(class VanillaVillageJigsawStructureBlockTagRules const &) = delete;
     VanillaVillageJigsawStructureBlockTagRules() = delete;
 #endif
 
 public:
-    MCAPI static void initialize(class JigsawStructureRegistry&);
+    MCAPI static void initialize(class JigsawStructureRegistry &);
 
 protected:
 

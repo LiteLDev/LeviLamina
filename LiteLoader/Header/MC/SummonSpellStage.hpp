@@ -15,8 +15,8 @@ class SummonSpellStage {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUMMONSPELLSTAGE
 public:
-    class SummonSpellStage& operator=(class SummonSpellStage const&) = delete;
-    SummonSpellStage(class SummonSpellStage const&) = delete;
+    class SummonSpellStage& operator=(class SummonSpellStage const &) = delete;
+    SummonSpellStage(class SummonSpellStage const &) = delete;
     SummonSpellStage() = delete;
 #endif
 

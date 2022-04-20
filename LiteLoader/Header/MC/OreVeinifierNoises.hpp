@@ -17,18 +17,18 @@ class OreVeinifierNoises {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OREVEINIFIERNOISES
 public:
-    class OreVeinifierNoises& operator=(class OreVeinifierNoises const&) = delete;
+    class OreVeinifierNoises& operator=(class OreVeinifierNoises const &) = delete;
     OreVeinifierNoises() = delete;
 #endif
 
 public:
-    MCAPI OreVeinifierNoises(class OreVeinifierNoises const&);
+    MCAPI OreVeinifierNoises(class OreVeinifierNoises const &);
     MCAPI ~OreVeinifierNoises();
-    MCAPI static class OreVeinifierNoises make(class XoroshiroPositionalRandomFactory const&);
+    MCAPI static class OreVeinifierNoises make(class XoroshiroPositionalRandomFactory const &);
 
 protected:
 
 private:
-    MCAPI OreVeinifierNoises(class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0> > >, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0> > >, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0> > >, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0> > >, class XoroshiroPositionalRandomFactory);
+    MCAPI OreVeinifierNoises(class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class XoroshiroPositionalRandomFactory);
 
 };

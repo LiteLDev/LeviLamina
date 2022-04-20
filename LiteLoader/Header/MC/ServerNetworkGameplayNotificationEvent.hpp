@@ -15,8 +15,8 @@ struct ServerNetworkGameplayNotificationEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERNETWORKGAMEPLAYNOTIFICATIONEVENT
 public:
-    struct ServerNetworkGameplayNotificationEvent& operator=(struct ServerNetworkGameplayNotificationEvent const&) = delete;
-    ServerNetworkGameplayNotificationEvent(struct ServerNetworkGameplayNotificationEvent const&) = delete;
+    struct ServerNetworkGameplayNotificationEvent& operator=(struct ServerNetworkGameplayNotificationEvent const &) = delete;
+    ServerNetworkGameplayNotificationEvent(struct ServerNetworkGameplayNotificationEvent const &) = delete;
     ServerNetworkGameplayNotificationEvent() = delete;
 #endif
 

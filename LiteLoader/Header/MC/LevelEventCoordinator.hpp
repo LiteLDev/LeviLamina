@@ -17,8 +17,8 @@ class LevelEventCoordinator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELEVENTCOORDINATOR
 public:
-    class LevelEventCoordinator& operator=(class LevelEventCoordinator const&) = delete;
-    LevelEventCoordinator(class LevelEventCoordinator const&) = delete;
+    class LevelEventCoordinator& operator=(class LevelEventCoordinator const &) = delete;
+    LevelEventCoordinator(class LevelEventCoordinator const &) = delete;
 #endif
 
 public:
@@ -31,13 +31,13 @@ public:
     }
     */
     MCAPI LevelEventCoordinator();
-    MCAPI void registerLevelGameplayHandler(std::unique_ptr<class LevelGameplayHandler>);
-    MCAPI void sendEvent(class EventRef<struct LevelGameplayEvent<void> > const&);
-    MCAPI void sendLevelBiomesRegistered(class BiomeRegistry&);
-    MCAPI void sendLevelInitialized(class Level&);
-    MCAPI void sendLevelRemovedActor(class Level&, class Actor&);
+    MCAPI void registerLevelGameplayHandler(std::unique_ptr<class LevelGameplayHandler> &&);
+    MCAPI void sendEvent(class EventRef<struct LevelGameplayEvent<void>> const &);
+    MCAPI void sendLevelBiomesRegistered(class BiomeRegistry &);
+    MCAPI void sendLevelInitialized(class Level &);
+    MCAPI void sendLevelRemovedActor(class Level &, class Actor &);
     MCAPI void sendLevelTick();
-    MCAPI void sendLevelWeatherChanged(std::string const&, bool, bool);
+    MCAPI void sendLevelWeatherChanged(std::string const &, bool, bool);
 
 protected:
 

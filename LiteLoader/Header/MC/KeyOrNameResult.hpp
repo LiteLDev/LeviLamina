@@ -15,8 +15,8 @@ struct KeyOrNameResult {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_KEYORNAMERESULT
 public:
-    struct KeyOrNameResult& operator=(struct KeyOrNameResult const&) = delete;
-    KeyOrNameResult(struct KeyOrNameResult const&) = delete;
+    struct KeyOrNameResult& operator=(struct KeyOrNameResult const &) = delete;
+    KeyOrNameResult(struct KeyOrNameResult const &) = delete;
     KeyOrNameResult() = delete;
 #endif
 

@@ -17,14 +17,14 @@ class ScriptItems {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTITEMS
 public:
-    class ScriptItems& operator=(class ScriptItems const&) = delete;
-    ScriptItems(class ScriptItems const&) = delete;
+    class ScriptItems& operator=(class ScriptItems const &) = delete;
+    ScriptItems(class ScriptItems const &) = delete;
 #endif
 
 public:
     MCAPI ScriptItems();
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptItemType> get(class Scripting::WeakLifetimeScope&, std::string const&);
-    MCAPI static void bind(class Scripting::ModuleBindingBuilder&, struct Scripting::Version);
+    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptItemType> get(class Scripting::WeakLifetimeScope &, std::string const &);
+    MCAPI static void bind(class Scripting::ModuleBindingBuilder &, struct Scripting::Version);
 
 protected:
 

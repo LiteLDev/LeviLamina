@@ -18,8 +18,8 @@ struct OnTargetEscapeDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONTARGETESCAPEDEFINITION
 public:
-    struct OnTargetEscapeDefinition& operator=(struct OnTargetEscapeDefinition const&) = delete;
-    OnTargetEscapeDefinition(struct OnTargetEscapeDefinition const&) = delete;
+    struct OnTargetEscapeDefinition& operator=(struct OnTargetEscapeDefinition const &) = delete;
+    OnTargetEscapeDefinition(struct OnTargetEscapeDefinition const &) = delete;
     OnTargetEscapeDefinition() = delete;
 #endif
 

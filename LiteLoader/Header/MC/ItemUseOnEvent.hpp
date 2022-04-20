@@ -15,13 +15,13 @@ struct ItemUseOnEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMUSEONEVENT
 public:
-    struct ItemUseOnEvent& operator=(struct ItemUseOnEvent const&) = delete;
+    struct ItemUseOnEvent& operator=(struct ItemUseOnEvent const &) = delete;
     ItemUseOnEvent() = delete;
 #endif
 
 public:
-    MCAPI ItemUseOnEvent(struct ItemUseOnEvent const&);
-    MCAPI ItemUseOnEvent(struct ItemUseOnEvent&&);
+    MCAPI ItemUseOnEvent(struct ItemUseOnEvent &&);
+    MCAPI ItemUseOnEvent(struct ItemUseOnEvent const &);
     MCAPI ~ItemUseOnEvent();
 
 protected:

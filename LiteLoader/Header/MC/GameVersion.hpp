@@ -17,18 +17,18 @@ class GameVersion {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEVERSION
 public:
-    class GameVersion& operator=(class GameVersion const&) = delete;
-    GameVersion(class GameVersion const&) = delete;
+    class GameVersion& operator=(class GameVersion const &) = delete;
+    GameVersion(class GameVersion const &) = delete;
 #endif
 
 public:
-    MCAPI GameVersion(class ListTag const&);
+    MCAPI GameVersion(class ListTag const &);
     MCAPI GameVersion(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int);
     MCAPI GameVersion();
-    MCAPI std::string const& asString() const;
-    MCAPI bool operator<(class GameVersion const&) const;
-    MCAPI class GameVersion& operator=(class GameVersion&&);
-    MCAPI bool operator>=(class GameVersion const&) const;
+    MCAPI std::string const & asString() const;
+    MCAPI bool operator<(class GameVersion const &) const;
+    MCAPI class GameVersion & operator=(class GameVersion &&);
+    MCAPI bool operator>=(class GameVersion const &) const;
     MCAPI std::unique_ptr<class ListTag> serialize() const;
     MCAPI ~GameVersion();
     MCAPI static class GameVersion current();

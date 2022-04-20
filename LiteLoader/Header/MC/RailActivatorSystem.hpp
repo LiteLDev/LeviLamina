@@ -17,19 +17,19 @@ class RailActivatorSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAILACTIVATORSYSTEM
 public:
-    class RailActivatorSystem& operator=(class RailActivatorSystem const&) = delete;
-    RailActivatorSystem(class RailActivatorSystem const&) = delete;
+    class RailActivatorSystem& operator=(class RailActivatorSystem const &) = delete;
+    RailActivatorSystem(class RailActivatorSystem const &) = delete;
     RailActivatorSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~RailActivatorSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 
 private:
-    MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class RailActivatorComponent>&);
+    MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class RailActivatorComponent> &);
 
 };

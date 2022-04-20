@@ -17,8 +17,8 @@ class RunAroundLikeCrazyGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RUNAROUNDLIKECRAZYGOAL
 public:
-    class RunAroundLikeCrazyGoal& operator=(class RunAroundLikeCrazyGoal const&) = delete;
-    RunAroundLikeCrazyGoal(class RunAroundLikeCrazyGoal const&) = delete;
+    class RunAroundLikeCrazyGoal& operator=(class RunAroundLikeCrazyGoal const &) = delete;
+    RunAroundLikeCrazyGoal(class RunAroundLikeCrazyGoal const &) = delete;
     RunAroundLikeCrazyGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline void start(){
         void (RunAroundLikeCrazyGoal::*rv)();
@@ -38,7 +38,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI RunAroundLikeCrazyGoal(class Mob&, float);
+    MCAPI RunAroundLikeCrazyGoal(class Mob &, float);
 
 protected:
 

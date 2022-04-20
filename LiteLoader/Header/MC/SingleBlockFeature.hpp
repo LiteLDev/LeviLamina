@@ -17,18 +17,18 @@ class SingleBlockFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SINGLEBLOCKFEATURE
 public:
-    class SingleBlockFeature& operator=(class SingleBlockFeature const&) = delete;
-    SingleBlockFeature(class SingleBlockFeature const&) = delete;
+    class SingleBlockFeature& operator=(class SingleBlockFeature const &) = delete;
+    SingleBlockFeature(class SingleBlockFeature const &) = delete;
     SingleBlockFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SingleBlockFeature();
-    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 
 protected:
 
 private:
-    MCAPI class Block const* _mayAttach(class IBlockWorldGenAPI&, class BlockPos const&) const;
+    MCAPI class Block const * _mayAttach(class IBlockWorldGenAPI &, class BlockPos const &) const;
 
 };

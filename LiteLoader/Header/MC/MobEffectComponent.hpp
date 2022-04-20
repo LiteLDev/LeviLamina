@@ -17,13 +17,13 @@ class MobEffectComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEFFECTCOMPONENT
 public:
-    class MobEffectComponent& operator=(class MobEffectComponent const&) = delete;
-    MobEffectComponent(class MobEffectComponent const&) = delete;
+    class MobEffectComponent& operator=(class MobEffectComponent const &) = delete;
+    MobEffectComponent(class MobEffectComponent const &) = delete;
 #endif
 
 public:
     MCAPI MobEffectComponent();
-    MCAPI class MobEffectComponent& operator=(class MobEffectComponent&&);
+    MCAPI class MobEffectComponent & operator=(class MobEffectComponent &&);
     MCAPI ~MobEffectComponent();
 
 protected:

@@ -18,15 +18,15 @@ class ChargeHeldItemDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHARGEHELDITEMDEFINITION
 public:
-    class ChargeHeldItemDefinition& operator=(class ChargeHeldItemDefinition const&) = delete;
-    ChargeHeldItemDefinition(class ChargeHeldItemDefinition const&) = delete;
+    class ChargeHeldItemDefinition& operator=(class ChargeHeldItemDefinition const &) = delete;
+    ChargeHeldItemDefinition(class ChargeHeldItemDefinition const &) = delete;
     ChargeHeldItemDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ChargeHeldItemDefinition();
-    MCAPI void initialize(class EntityContext&, class ChargeHeldItemGoal&);
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ChargeHeldItemDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class ChargeHeldItemGoal &);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ChargeHeldItemDefinition>> &);
 
 protected:
 

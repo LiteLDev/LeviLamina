@@ -17,8 +17,8 @@ class MoveToBlockGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOBLOCKGOAL
 public:
-    class MoveToBlockGoal& operator=(class MoveToBlockGoal const&) = delete;
-    MoveToBlockGoal(class MoveToBlockGoal const&) = delete;
+    class MoveToBlockGoal& operator=(class MoveToBlockGoal const &) = delete;
+    MoveToBlockGoal(class MoveToBlockGoal const &) = delete;
     MoveToBlockGoal() = delete;
 #endif
 
@@ -30,15 +30,15 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI MoveToBlockGoal(class Mob&, float, int, int, int, int, float, class Vec3, float, enum TargetSelectionMethod, std::vector<class DefinitionTrigger>, std::vector<class DefinitionTrigger>, std::vector<class ItemDescriptor>);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI MoveToBlockGoal(class Mob &, float, int, int, int, int, float, class Vec3, float, enum TargetSelectionMethod, std::vector<class DefinitionTrigger>, std::vector<class DefinitionTrigger>, std::vector<class ItemDescriptor>);
 
 protected:
 
 private:
     MCAPI void _checkIfStuck();
-    MCAPI bool _isValidTarget(class Block const&) const;
+    MCAPI bool _isValidTarget(class Block const &) const;
     MCAPI void _moveToBlock();
-    MCAPI bool _pathIsValid(class Path const*);
+    MCAPI bool _pathIsValid(class Path const *);
 
 };

@@ -17,8 +17,8 @@ class SkinInfoData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKININFODATA
 public:
-    class SkinInfoData& operator=(class SkinInfoData const&) = delete;
-    SkinInfoData(class SkinInfoData const&) = delete;
+    class SkinInfoData& operator=(class SkinInfoData const &) = delete;
+    SkinInfoData(class SkinInfoData const &) = delete;
     SkinInfoData() = delete;
 #endif
 

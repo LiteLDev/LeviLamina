@@ -18,8 +18,8 @@ class MeleeWeaponEnchant : public Enchant {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MELEEWEAPONENCHANT
 public:
-    class MeleeWeaponEnchant& operator=(class MeleeWeaponEnchant const&) = delete;
-    MeleeWeaponEnchant(class MeleeWeaponEnchant const&) = delete;
+    class MeleeWeaponEnchant& operator=(class MeleeWeaponEnchant const &) = delete;
+    MeleeWeaponEnchant(class MeleeWeaponEnchant const &) = delete;
     MeleeWeaponEnchant() = delete;
 #endif
 
@@ -29,9 +29,9 @@ public:
     /*3*/ virtual int getMaxCost(int) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual int getMaxLevel() const;
-    /*7*/ virtual float getDamageBonus(int, class Actor const&) const;
-    /*8*/ virtual void doPostAttack(class Actor&, class Actor&, int) const;
-    /*9*/ virtual void doPostHurt(class ItemInstance&, class Actor&, class Actor&, int) const;
+    /*7*/ virtual float getDamageBonus(int, class Actor const &) const;
+    /*8*/ virtual void doPostAttack(class Actor &, class Actor &, int) const;
+    /*9*/ virtual void doPostHurt(class ItemInstance &, class Actor &, class Actor &, int) const;
     /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual void __unk_vfn_12();

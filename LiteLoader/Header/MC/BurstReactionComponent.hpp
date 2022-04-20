@@ -17,8 +17,8 @@ class BurstReactionComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BURSTREACTIONCOMPONENT
 public:
-    class BurstReactionComponent& operator=(class BurstReactionComponent const&) = delete;
-    BurstReactionComponent(class BurstReactionComponent const&) = delete;
+    class BurstReactionComponent& operator=(class BurstReactionComponent const &) = delete;
+    BurstReactionComponent(class BurstReactionComponent const &) = delete;
     BurstReactionComponent() = delete;
 #endif
 
@@ -26,7 +26,7 @@ public:
     /*0*/ virtual ~BurstReactionComponent();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual void _onEnd(class LabTableReaction&, class BlockSource&);
+    /*3*/ virtual void _onEnd(class LabTableReaction &, class BlockSource &);
 
 protected:
 

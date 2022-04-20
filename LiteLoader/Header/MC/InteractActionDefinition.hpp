@@ -19,14 +19,14 @@ class InteractActionDefinition : public BehaviorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERACTACTIONDEFINITION
 public:
-    class InteractActionDefinition& operator=(class InteractActionDefinition const&) = delete;
-    InteractActionDefinition(class InteractActionDefinition const&) = delete;
+    class InteractActionDefinition& operator=(class InteractActionDefinition const &) = delete;
+    InteractActionDefinition(class InteractActionDefinition const &) = delete;
     InteractActionDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~InteractActionDefinition();
-    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 
 protected:
 

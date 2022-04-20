@@ -17,8 +17,8 @@ class IResourcePackRepository {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IRESOURCEPACKREPOSITORY
 public:
-    class IResourcePackRepository& operator=(class IResourcePackRepository const&) = delete;
-    IResourcePackRepository(class IResourcePackRepository const&) = delete;
+    class IResourcePackRepository& operator=(class IResourcePackRepository const &) = delete;
+    IResourcePackRepository(class IResourcePackRepository const &) = delete;
     IResourcePackRepository() = delete;
 #endif
 

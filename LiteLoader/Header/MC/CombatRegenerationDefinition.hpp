@@ -18,13 +18,13 @@ class CombatRegenerationDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMBATREGENERATIONDEFINITION
 public:
-    class CombatRegenerationDefinition& operator=(class CombatRegenerationDefinition const&) = delete;
-    CombatRegenerationDefinition(class CombatRegenerationDefinition const&) = delete;
+    class CombatRegenerationDefinition& operator=(class CombatRegenerationDefinition const &) = delete;
+    CombatRegenerationDefinition(class CombatRegenerationDefinition const &) = delete;
     CombatRegenerationDefinition() = delete;
 #endif
 
 public:
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class CombatRegenerationDefinition> >&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class CombatRegenerationDefinition>> &);
 
 protected:
 

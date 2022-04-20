@@ -18,8 +18,8 @@ class WitherTargetHighestDamage : public TargetGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WITHERTARGETHIGHESTDAMAGE
 public:
-    class WitherTargetHighestDamage& operator=(class WitherTargetHighestDamage const&) = delete;
-    WitherTargetHighestDamage(class WitherTargetHighestDamage const&) = delete;
+    class WitherTargetHighestDamage& operator=(class WitherTargetHighestDamage const &) = delete;
+    WitherTargetHighestDamage(class WitherTargetHighestDamage const &) = delete;
     WitherTargetHighestDamage() = delete;
 #endif
 
@@ -28,13 +28,13 @@ public:
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
     /*4*/ virtual void start();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*10*/ virtual bool _canAttack(class Mob*, class Actor*, bool, bool, struct MobDescriptor const* *);
-    MCAPI WitherTargetHighestDamage(class WitherBoss&, std::vector<struct MobDescriptor> const&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    /*10*/ virtual bool _canAttack(class Mob *, class Actor *, bool, bool, struct MobDescriptor const **);
+    MCAPI WitherTargetHighestDamage(class WitherBoss &, std::vector<struct MobDescriptor> const &);
 
 protected:
 
 private:
-    MCAPI class Player* getHighestDamageTarget();
+    MCAPI class Player * getHighestDamageTarget();
 
 };

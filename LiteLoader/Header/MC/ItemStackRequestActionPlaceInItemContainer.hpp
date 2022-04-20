@@ -16,8 +16,8 @@ class ItemStackRequestActionPlaceInItemContainer : public ItemStackRequestAction
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONPLACEINITEMCONTAINER
 public:
-    class ItemStackRequestActionPlaceInItemContainer& operator=(class ItemStackRequestActionPlaceInItemContainer const&) = delete;
-    ItemStackRequestActionPlaceInItemContainer(class ItemStackRequestActionPlaceInItemContainer const&) = delete;
+    class ItemStackRequestActionPlaceInItemContainer& operator=(class ItemStackRequestActionPlaceInItemContainer const &) = delete;
+    ItemStackRequestActionPlaceInItemContainer(class ItemStackRequestActionPlaceInItemContainer const &) = delete;
     ItemStackRequestActionPlaceInItemContainer() = delete;
 #endif
 

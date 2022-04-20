@@ -15,8 +15,8 @@ class VillagerCelebrationGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VILLAGERCELEBRATIONGOAL
 public:
-    class VillagerCelebrationGoal& operator=(class VillagerCelebrationGoal const&) = delete;
-    VillagerCelebrationGoal(class VillagerCelebrationGoal const&) = delete;
+    class VillagerCelebrationGoal& operator=(class VillagerCelebrationGoal const &) = delete;
+    VillagerCelebrationGoal(class VillagerCelebrationGoal const &) = delete;
     VillagerCelebrationGoal() = delete;
 #endif
 
@@ -28,7 +28,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline bool canUse(){
         bool (VillagerCelebrationGoal::*rv)();
@@ -36,7 +36,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI VillagerCelebrationGoal(class Mob&);
+    MCAPI VillagerCelebrationGoal(class Mob &);
 
 protected:
 

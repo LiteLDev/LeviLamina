@@ -17,20 +17,20 @@ class CompoundTagUpdaterBuilder {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDTAGUPDATERBUILDER
 public:
-    class CompoundTagUpdaterBuilder& operator=(class CompoundTagUpdaterBuilder const&) = delete;
-    CompoundTagUpdaterBuilder(class CompoundTagUpdaterBuilder const&) = delete;
+    class CompoundTagUpdaterBuilder& operator=(class CompoundTagUpdaterBuilder const &) = delete;
+    CompoundTagUpdaterBuilder(class CompoundTagUpdaterBuilder const &) = delete;
     CompoundTagUpdaterBuilder() = delete;
 #endif
 
 public:
-    MCAPI class CompoundTagUpdaterBuilder& edit(std::string const&, class std::function<void (class CompoundTagEditHelper& )>&&);
-    MCAPI class CompoundTagUpdaterBuilder& match(std::string const&, std::string);
-    MCAPI class CompoundTagUpdaterBuilder& matchLiteral(std::string const&, std::string);
-    MCAPI class CompoundTagUpdaterBuilder& popVisit();
-    MCAPI class CompoundTagUpdaterBuilder& remove(std::string const&);
-    MCAPI class CompoundTagUpdaterBuilder& rename(std::string const&, std::string const&);
-    MCAPI class CompoundTagUpdaterBuilder& tryEdit(std::string const&, class std::function<void (class CompoundTagEditHelper& )>&&);
-    MCAPI class CompoundTagUpdaterBuilder& visit(std::string const&);
+    MCAPI class CompoundTagUpdaterBuilder & edit(std::string const &, class std::function<void (class CompoundTagEditHelper &)> &&);
+    MCAPI class CompoundTagUpdaterBuilder & match(std::string const &, std::string);
+    MCAPI class CompoundTagUpdaterBuilder & matchLiteral(std::string const &, std::string);
+    MCAPI class CompoundTagUpdaterBuilder & popVisit();
+    MCAPI class CompoundTagUpdaterBuilder & remove(std::string const &);
+    MCAPI class CompoundTagUpdaterBuilder & rename(std::string const &, std::string const &);
+    MCAPI class CompoundTagUpdaterBuilder & tryEdit(std::string const &, class std::function<void (class CompoundTagEditHelper &)> &&);
+    MCAPI class CompoundTagUpdaterBuilder & visit(std::string const &);
 
 protected:
 

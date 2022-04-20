@@ -18,14 +18,14 @@ class BossDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOSSDEFINITION
 public:
-    class BossDefinition& operator=(class BossDefinition const&) = delete;
-    BossDefinition(class BossDefinition const&) = delete;
+    class BossDefinition& operator=(class BossDefinition const &) = delete;
+    BossDefinition(class BossDefinition const &) = delete;
 #endif
 
 public:
     MCAPI BossDefinition();
-    MCAPI void initialize(class EntityContext&, class BossComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BossDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class BossComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BossDefinition>> &);
 
 protected:
 

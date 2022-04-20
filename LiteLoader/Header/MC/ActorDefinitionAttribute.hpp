@@ -15,8 +15,8 @@ class ActorDefinitionAttribute {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITIONATTRIBUTE
 public:
-    class ActorDefinitionAttribute& operator=(class ActorDefinitionAttribute const&) = delete;
-    ActorDefinitionAttribute(class ActorDefinitionAttribute const&) = delete;
+    class ActorDefinitionAttribute& operator=(class ActorDefinitionAttribute const &) = delete;
+    ActorDefinitionAttribute(class ActorDefinitionAttribute const &) = delete;
     ActorDefinitionAttribute() = delete;
 #endif
 

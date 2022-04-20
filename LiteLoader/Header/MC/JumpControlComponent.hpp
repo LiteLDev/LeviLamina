@@ -17,27 +17,27 @@ class JumpControlComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JUMPCONTROLCOMPONENT
 public:
-    class JumpControlComponent& operator=(class JumpControlComponent const&) = delete;
-    JumpControlComponent(class JumpControlComponent const&) = delete;
+    class JumpControlComponent& operator=(class JumpControlComponent const &) = delete;
+    JumpControlComponent(class JumpControlComponent const &) = delete;
 #endif
 
 public:
     MCAPI JumpControlComponent();
     MCAPI int getAnimationDuration() const;
     MCAPI float getDistanceScale() const;
-    MCAPI int getJumpDelay(class Mob const&) const;
-    MCAPI float getJumpPower(class Mob const&) const;
+    MCAPI int getJumpDelay(class Mob const &) const;
+    MCAPI float getJumpPower(class Mob const &) const;
     MCAPI bool getJumping() const;
     MCAPI bool getSwimming() const;
-    MCAPI void initMultiTypeJumpComponent(class Mob&, class ActorDefinitionDescriptor&);
-    MCAPI void initializeFromDefinition(class Mob&, struct JumpControlDescription*);
-    MCAPI class JumpControlComponent& operator=(class JumpControlComponent&&);
-    MCAPI void resetSpeedModifier(class Mob&);
+    MCAPI void initMultiTypeJumpComponent(class Mob &, class ActorDefinitionDescriptor &);
+    MCAPI void initializeFromDefinition(class Mob &, struct JumpControlDescription *);
+    MCAPI class JumpControlComponent & operator=(class JumpControlComponent &&);
+    MCAPI void resetSpeedModifier(class Mob &);
     MCAPI void setInternalType(std::unique_ptr<class JumpControl>);
-    MCAPI void setJumpType(class Mob&, enum JumpType);
+    MCAPI void setJumpType(class Mob &, enum JumpType);
     MCAPI void setJumping(bool);
     MCAPI void setSwimming(bool);
-    MCAPI void update(class Mob&);
+    MCAPI void update(class Mob &);
 
 protected:
 

@@ -17,14 +17,14 @@ class LevelDbSequentialFile {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELDBSEQUENTIALFILE
 public:
-    class LevelDbSequentialFile& operator=(class LevelDbSequentialFile const&) = delete;
-    LevelDbSequentialFile(class LevelDbSequentialFile const&) = delete;
+    class LevelDbSequentialFile& operator=(class LevelDbSequentialFile const &) = delete;
+    LevelDbSequentialFile(class LevelDbSequentialFile const &) = delete;
     LevelDbSequentialFile() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LevelDbSequentialFile();
-    /*1*/ virtual class leveldb::Status Read(unsigned __int64, class leveldb::Slice*, char*);
+    /*1*/ virtual class leveldb::Status Read(unsigned __int64, class leveldb::Slice *, char *);
     /*2*/ virtual class leveldb::Status Skip(unsigned __int64);
 
 protected:

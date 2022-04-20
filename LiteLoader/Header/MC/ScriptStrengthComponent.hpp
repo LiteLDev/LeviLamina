@@ -18,8 +18,8 @@ class ScriptStrengthComponent : public ScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTSTRENGTHCOMPONENT
 public:
-    class ScriptStrengthComponent& operator=(class ScriptStrengthComponent const&) = delete;
-    ScriptStrengthComponent(class ScriptStrengthComponent const&) = delete;
+    class ScriptStrengthComponent& operator=(class ScriptStrengthComponent const &) = delete;
+    ScriptStrengthComponent(class ScriptStrengthComponent const &) = delete;
     ScriptStrengthComponent() = delete;
 #endif
 

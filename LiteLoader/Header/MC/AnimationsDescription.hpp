@@ -18,15 +18,15 @@ class AnimationsDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATIONSDESCRIPTION
 public:
-    class AnimationsDescription& operator=(class AnimationsDescription const&) = delete;
-    AnimationsDescription(class AnimationsDescription const&) = delete;
+    class AnimationsDescription& operator=(class AnimationsDescription const &) = delete;
+    AnimationsDescription(class AnimationsDescription const &) = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~AnimationsDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~AnimationsDescription(){
          (AnimationsDescription::*rv)();

@@ -18,17 +18,17 @@ class CartographyInputContainerValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CARTOGRAPHYINPUTCONTAINERVALIDATION
 public:
-    class CartographyInputContainerValidation& operator=(class CartographyInputContainerValidation const&) = delete;
-    CartographyInputContainerValidation(class CartographyInputContainerValidation const&) = delete;
+    class CartographyInputContainerValidation& operator=(class CartographyInputContainerValidation const &) = delete;
+    CartographyInputContainerValidation(class CartographyInputContainerValidation const &) = delete;
     CartographyInputContainerValidation() = delete;
 #endif
 
 public:
     /*0*/ virtual ~CartographyInputContainerValidation();
-    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
-    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
 
 protected:
 

@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "persona.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,12 +18,12 @@ class SubClientConnectionRequest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCLIENTCONNECTIONREQUEST
 public:
-    class SubClientConnectionRequest& operator=(class SubClientConnectionRequest const&) = delete;
+    class SubClientConnectionRequest& operator=(class SubClientConnectionRequest const &) = delete;
     SubClientConnectionRequest() = delete;
 #endif
 
 public:
-    MCAPI SubClientConnectionRequest(class SubClientConnectionRequest const&);
+    MCAPI SubClientConnectionRequest(class SubClientConnectionRequest const &);
     MCAPI std::vector<class AnimatedImageData> getAnimatedImageData() const;
     MCAPI std::string getArmSize() const;
     MCAPI std::vector<unsigned char> getCapeData() const;
@@ -32,6 +33,7 @@ public:
     MCAPI unsigned __int64 getClientRandomId() const;
     MCAPI std::string getDeviceId() const;
     MCAPI std::vector<class SerializedPersonaPieceHandle> getPersonaPieces() const;
+    MCAPI class std::unordered_map<enum persona::PieceType, class TintMapColor, struct std::hash<enum persona::PieceType>, struct std::equal_to<enum persona::PieceType>, class std::allocator<struct std::pair<enum persona::PieceType const, class TintMapColor>>> getPieceTintColors() const;
     MCAPI std::string getPlatformId() const;
     MCAPI std::string getPlatformOfflineId() const;
     MCAPI std::string getPlatformOnlineId() const;
@@ -52,15 +54,15 @@ public:
     MCAPI bool isPremiumSkin() const;
     MCAPI bool isPrimaryUser() const;
     MCAPI std::string toString();
-    MCAPI bool verify(std::vector<std::string> const&, __int64);
+    MCAPI bool verify(std::vector<std::string> const &, __int64);
     MCAPI bool verifySelfSigned();
     MCAPI ~SubClientConnectionRequest();
-    MCAPI static class SubClientConnectionRequest fromString(std::string const&);
+    MCAPI static class SubClientConnectionRequest fromString(std::string const &);
 
 protected:
 
 private:
-    MCAPI SubClientConnectionRequest(std::unique_ptr<class WebToken>, std::string const&);
+    MCAPI SubClientConnectionRequest(std::unique_ptr<class WebToken>, std::string const &);
     MCAPI std::unique_ptr<class Certificate> validate(std::unique_ptr<class Certificate>, __int64) const;
 
 };

@@ -17,14 +17,14 @@ class MinecraftGameTestHelperProvider {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTGAMETESTHELPERPROVIDER
 public:
-    class MinecraftGameTestHelperProvider& operator=(class MinecraftGameTestHelperProvider const&) = delete;
-    MinecraftGameTestHelperProvider(class MinecraftGameTestHelperProvider const&) = delete;
+    class MinecraftGameTestHelperProvider& operator=(class MinecraftGameTestHelperProvider const &) = delete;
+    MinecraftGameTestHelperProvider(class MinecraftGameTestHelperProvider const &) = delete;
     MinecraftGameTestHelperProvider() = delete;
 #endif
 
 public:
     /*0*/ virtual ~MinecraftGameTestHelperProvider();
-    /*1*/ virtual std::unique_ptr<class gametest::BaseGameTestHelper> createGameTestHelper(class gametest::BaseGameTestInstance&);
+    /*1*/ virtual std::unique_ptr<class gametest::BaseGameTestHelper> createGameTestHelper(class gametest::BaseGameTestInstance &);
     /*2*/ virtual std::unique_ptr<class gametest::IGameTestHelperProvider> clone();
 
 protected:

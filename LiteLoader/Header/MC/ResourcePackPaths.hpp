@@ -15,13 +15,13 @@ namespace ResourcePackPaths {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI class Core::PathBuffer<std::string > getCachedBehaviorPacksPath();
-    MCAPI class Core::PathBuffer<std::string > getCachedResourcePacksPath();
-    MCAPI class Core::PathBuffer<std::string > getPremiumBehaviorPackPath();
-    MCAPI class Core::PathBuffer<std::string > getPremiumPackPath();
-    MCAPI class Core::PathBuffer<std::string > getPremiumResourcePackPath();
-    MCAPI class Core::PathBuffer<std::string > getPremiumWorldTemplatePath();
-    MCAPI class Core::PathBuffer<std::string > getTemporaryPremiumBehaviorPacksPath();
-    MCAPI class Core::PathBuffer<std::string > getTemporaryPremiumResourcePacksPath();
+    MCAPI class Core::PathBuffer<std::string> getCachedBehaviorPacksPath();
+    MCAPI class Core::PathBuffer<std::string> getCachedResourcePacksPath();
+    MCAPI class Core::PathBuffer<std::string> getPremiumBehaviorPackPath();
+    MCAPI class Core::PathBuffer<std::string> getPremiumPackPath();
+    MCAPI class Core::PathBuffer<std::string> getPremiumResourcePackPath();
+    MCAPI class Core::PathBuffer<std::string> getPremiumWorldTemplatePath();
+    MCAPI class Core::PathBuffer<std::string> getTemporaryPremiumBehaviorPacksPath();
+    MCAPI class Core::PathBuffer<std::string> getTemporaryPremiumResourcePacksPath();
 
 };

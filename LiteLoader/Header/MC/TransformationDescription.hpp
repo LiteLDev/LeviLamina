@@ -18,8 +18,8 @@ struct TransformationDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRANSFORMATIONDESCRIPTION
 public:
-    struct TransformationDescription& operator=(struct TransformationDescription const&) = delete;
-    TransformationDescription(struct TransformationDescription const&) = delete;
+    struct TransformationDescription& operator=(struct TransformationDescription const &) = delete;
+    TransformationDescription(struct TransformationDescription const &) = delete;
 #endif
 
 public:

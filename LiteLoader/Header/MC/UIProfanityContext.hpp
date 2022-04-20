@@ -17,13 +17,13 @@ class UIProfanityContext {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UIPROFANITYCONTEXT
 public:
-    class UIProfanityContext& operator=(class UIProfanityContext const&) = delete;
-    UIProfanityContext(class UIProfanityContext const&) = delete;
+    class UIProfanityContext& operator=(class UIProfanityContext const &) = delete;
+    UIProfanityContext(class UIProfanityContext const &) = delete;
     UIProfanityContext() = delete;
 #endif
 
 public:
-    MCAPI std::string filterProfanityFromString(enum ProfanityFilterContext, std::string const&, bool) const;
+    MCAPI std::string filterProfanityFromString(enum ProfanityFilterContext, std::string const &, bool) const;
 
 protected:
 

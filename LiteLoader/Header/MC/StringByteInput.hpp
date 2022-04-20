@@ -17,8 +17,8 @@ class StringByteInput {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRINGBYTEINPUT
 public:
-    class StringByteInput& operator=(class StringByteInput const&) = delete;
-    StringByteInput(class StringByteInput const&) = delete;
+    class StringByteInput& operator=(class StringByteInput const &) = delete;
+    StringByteInput(class StringByteInput const &) = delete;
     StringByteInput() = delete;
 #endif
 
@@ -32,10 +32,10 @@ public:
         *((void**)&rv) = dlsym("??1StringByteInput@@UEAA@XZ");
         return (this->*rv)();
     }
-    inline bool readBytes(void* a0, unsigned __int64 a1){
-        bool (StringByteInput::*rv)(void*, unsigned __int64);
+    inline bool readBytes(void * a0, unsigned __int64 a1){
+        bool (StringByteInput::*rv)(void *, unsigned __int64);
         *((void**)&rv) = dlsym("?readBytes@StringByteInput@@UEAA_NPEAX_K@Z");
-        return (this->*rv)(std::forward<void*>(a0), std::forward<unsigned __int64>(a1));
+        return (this->*rv)(std::forward<void *>(a0), std::forward<unsigned __int64>(a1));
     }
     */
 

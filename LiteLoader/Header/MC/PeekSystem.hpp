@@ -17,15 +17,15 @@ class PeekSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PEEKSYSTEM
 public:
-    class PeekSystem& operator=(class PeekSystem const&) = delete;
-    PeekSystem(class PeekSystem const&) = delete;
+    class PeekSystem& operator=(class PeekSystem const &) = delete;
+    PeekSystem(class PeekSystem const &) = delete;
     PeekSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~PeekSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

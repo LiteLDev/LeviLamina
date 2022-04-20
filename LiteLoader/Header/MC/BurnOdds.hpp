@@ -17,8 +17,8 @@ class BurnOdds {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BURNODDS
 public:
-    class BurnOdds& operator=(class BurnOdds const&) = delete;
-    BurnOdds(class BurnOdds const&) = delete;
+    class BurnOdds& operator=(class BurnOdds const &) = delete;
+    BurnOdds(class BurnOdds const &) = delete;
     BurnOdds() = delete;
 #endif
 

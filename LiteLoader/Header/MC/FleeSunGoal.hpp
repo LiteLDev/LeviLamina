@@ -18,8 +18,8 @@ class FleeSunGoal : public FindCoverGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLEESUNGOAL
 public:
-    class FleeSunGoal& operator=(class FleeSunGoal const&) = delete;
-    FleeSunGoal(class FleeSunGoal const&) = delete;
+    class FleeSunGoal& operator=(class FleeSunGoal const &) = delete;
+    FleeSunGoal(class FleeSunGoal const &) = delete;
     FleeSunGoal() = delete;
 #endif
 
@@ -28,8 +28,8 @@ public:
     /*1*/ virtual bool canUse();
     /*3*/ virtual void __unk_vfn_3();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI FleeSunGoal(class Mob&, float);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI FleeSunGoal(class Mob &, float);
 
 protected:
 

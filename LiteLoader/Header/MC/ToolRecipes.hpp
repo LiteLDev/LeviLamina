@@ -17,13 +17,13 @@ class ToolRecipes {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TOOLRECIPES
 public:
-    class ToolRecipes& operator=(class ToolRecipes const&) = delete;
-    ToolRecipes(class ToolRecipes const&) = delete;
+    class ToolRecipes& operator=(class ToolRecipes const &) = delete;
+    ToolRecipes(class ToolRecipes const &) = delete;
     ToolRecipes() = delete;
 #endif
 
 public:
-    MCAPI static void addRecipes(class Recipes&);
+    MCAPI static void addRecipes(class Recipes &);
 
 protected:
 

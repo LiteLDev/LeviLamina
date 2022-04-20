@@ -17,8 +17,8 @@ class EntityOptionalOwnerRef {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYOPTIONALOWNERREF
 public:
-    class EntityOptionalOwnerRef& operator=(class EntityOptionalOwnerRef const&) = delete;
-    EntityOptionalOwnerRef(class EntityOptionalOwnerRef const&) = delete;
+    class EntityOptionalOwnerRef& operator=(class EntityOptionalOwnerRef const &) = delete;
+    EntityOptionalOwnerRef(class EntityOptionalOwnerRef const &) = delete;
 #endif
 
 public:

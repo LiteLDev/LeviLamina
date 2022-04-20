@@ -18,13 +18,13 @@ class TargetNearbyDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TARGETNEARBYDEFINITION
 public:
-    class TargetNearbyDefinition& operator=(class TargetNearbyDefinition const&) = delete;
-    TargetNearbyDefinition(class TargetNearbyDefinition const&) = delete;
+    class TargetNearbyDefinition& operator=(class TargetNearbyDefinition const &) = delete;
+    TargetNearbyDefinition(class TargetNearbyDefinition const &) = delete;
     TargetNearbyDefinition() = delete;
 #endif
 
 public:
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TargetNearbyDefinition> >&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TargetNearbyDefinition>> &);
 
 protected:
 

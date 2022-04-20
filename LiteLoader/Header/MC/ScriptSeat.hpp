@@ -17,8 +17,8 @@ class ScriptSeat {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTSEAT
 public:
-    class ScriptSeat& operator=(class ScriptSeat const&) = delete;
-    ScriptSeat(class ScriptSeat const&) = delete;
+    class ScriptSeat& operator=(class ScriptSeat const &) = delete;
+    ScriptSeat(class ScriptSeat const &) = delete;
     ScriptSeat() = delete;
 #endif
 

@@ -17,15 +17,15 @@ class OutOfWorldSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OUTOFWORLDSYSTEM
 public:
-    class OutOfWorldSystem& operator=(class OutOfWorldSystem const&) = delete;
-    OutOfWorldSystem(class OutOfWorldSystem const&) = delete;
+    class OutOfWorldSystem& operator=(class OutOfWorldSystem const &) = delete;
+    OutOfWorldSystem(class OutOfWorldSystem const &) = delete;
     OutOfWorldSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~OutOfWorldSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

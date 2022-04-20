@@ -15,8 +15,8 @@ struct DamageCondition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAMAGECONDITION
 public:
-    struct DamageCondition& operator=(struct DamageCondition const&) = delete;
-    DamageCondition(struct DamageCondition const&) = delete;
+    struct DamageCondition& operator=(struct DamageCondition const &) = delete;
+    DamageCondition(struct DamageCondition const &) = delete;
     DamageCondition() = delete;
 #endif
 

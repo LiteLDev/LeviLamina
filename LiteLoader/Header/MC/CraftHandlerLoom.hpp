@@ -18,18 +18,18 @@ class CraftHandlerLoom : public CraftHandlerBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTHANDLERLOOM
 public:
-    class CraftHandlerLoom& operator=(class CraftHandlerLoom const&) = delete;
-    CraftHandlerLoom(class CraftHandlerLoom const&) = delete;
+    class CraftHandlerLoom& operator=(class CraftHandlerLoom const &) = delete;
+    CraftHandlerLoom(class CraftHandlerLoom const &) = delete;
     CraftHandlerLoom() = delete;
 #endif
 
 public:
     /*0*/ virtual ~CraftHandlerLoom();
     /*3*/ virtual void endRequestBatch();
-    /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+    /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /*5*/ virtual void _postCraftRequest(bool);
     /*7*/ virtual void __unk_vfn_7();
-    MCAPI CraftHandlerLoom(class ItemStackRequestActionCraftHandler&);
+    MCAPI CraftHandlerLoom(class ItemStackRequestActionCraftHandler &);
 
 protected:
 

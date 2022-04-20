@@ -18,16 +18,16 @@ class SwingEventResponse {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWINGEVENTRESPONSE
 public:
-    class SwingEventResponse& operator=(class SwingEventResponse const&) = delete;
-    SwingEventResponse(class SwingEventResponse const&) = delete;
+    class SwingEventResponse& operator=(class SwingEventResponse const &) = delete;
+    SwingEventResponse(class SwingEventResponse const &) = delete;
     SwingEventResponse() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SwingEventResponse();
-    /*1*/ virtual std::string const& getName() const;
-    /*2*/ virtual void executeAction(class RenderParams&) const;
-    /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection> >&, class Factory<class EventResponse> const&) const;
+    /*1*/ virtual std::string const & getName() const;
+    /*2*/ virtual void executeAction(class RenderParams &) const;
+    /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
     MCAPI static std::string const NameID;
 
 protected:

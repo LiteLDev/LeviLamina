@@ -17,15 +17,15 @@ class EntityGoalFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYGOALFACTORY
 public:
-    class EntityGoalFactory& operator=(class EntityGoalFactory const&) = delete;
-    EntityGoalFactory(class EntityGoalFactory const&) = delete;
+    class EntityGoalFactory& operator=(class EntityGoalFactory const &) = delete;
+    EntityGoalFactory(class EntityGoalFactory const &) = delete;
     EntityGoalFactory() = delete;
 #endif
 
 public:
-    MCAPI class IJsonDefinitionSerializer* tryGetDefinitionSerializer(std::string const&);
+    MCAPI class IJsonDefinitionSerializer * tryGetDefinitionSerializer(std::string const &);
     MCAPI ~EntityGoalFactory();
-    MCAPI static void addGoals(class EntityContext&, class DefinitionInstanceGroup const&);
+    MCAPI static void addGoals(class EntityContext &, class DefinitionInstanceGroup const &);
 
 protected:
 

@@ -21,10 +21,10 @@ public:
 #endif
 
 public:
-    MCAPI GameTestResult(struct GameTestResult const&);
-    MCAPI struct GameTestResult& operator=(struct GameTestResult&&);
-    MCAPI struct GameTestResult& operator=(struct GameTestResult const&);
-    MCAPI bool operator==(struct GameTestResult const&) const;
+    MCAPI GameTestResult(struct GameTestResult const &);
+    MCAPI struct GameTestResult & operator=(struct GameTestResult &&);
+    MCAPI struct GameTestResult & operator=(struct GameTestResult const &);
+    MCAPI bool operator==(struct GameTestResult const &) const;
     MCAPI ~GameTestResult();
 
 protected:

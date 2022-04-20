@@ -2,8 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Bedrock.hpp"
-#include "Automation.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -48,27 +46,27 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTCOMMANDS
 public:
-    class MinecraftCommands& operator=(class MinecraftCommands const&) = delete;
-    MinecraftCommands(class MinecraftCommands const&) = delete;
+    class MinecraftCommands& operator=(class MinecraftCommands const &) = delete;
+    MinecraftCommands(class MinecraftCommands const &) = delete;
     MinecraftCommands() = delete;
 #endif
 
 public:
     /*0*/ virtual ~MinecraftCommands();
-    MCAPI MinecraftCommands(class Minecraft&, class gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient> >);
-    MCAPI class Command* compileCommand(class HashedString const&, class CommandOrigin&, enum CurrentCmdVersion, class std::function<void (std::string const& )>);
+    MCAPI MinecraftCommands(class Minecraft &);
+    MCAPI class Command * compileCommand(class HashedString const &, class CommandOrigin &, enum CurrentCmdVersion, class std::function<void (std::string const &)>);
     MCAPI struct MCRESULT executeCommand(class std::shared_ptr<class CommandContext>, bool) const;
-    MCAPI class CommandRegistry& getRegistry();
-    MCAPI void handleOutput(class CommandOrigin const&, class CommandOutput const&) const;
-    MCAPI void initCoreEnums(class IWorldRegistriesProvider const&, class ActorFactory const&, class Experiments const&, class BaseGameVersion const&);
-    MCAPI void initCoreEnumsServer(class ActorDefinitionGroup const&);
-    MCAPI struct MCRESULT requestCommandExecution(std::unique_ptr<class CommandOrigin>, std::string const&, int, bool) const;
-    MCAPI void runCommand(class Command&, class CommandOrigin&);
-    MCAPI void runCommand(class HashedString const&, class CommandOrigin&, enum CurrentCmdVersion);
-    MCAPI void setRegistryNetworkUpdateCallback(class std::function<void (class Packet const& )>) const;
-    MCAPI static enum CommandOutputType getOutputType(class CommandOrigin const&);
-    MCAPI static void initBlockEnum(class CommandRegistry&, class BaseGameVersion const&);
-    MCAPI static void initItemEnum(class CommandRegistry&, class BaseGameVersion const&);
+    MCAPI class CommandRegistry & getRegistry();
+    MCAPI void handleOutput(class CommandOrigin const &, class CommandOutput const &) const;
+    MCAPI void initCoreEnums(class IWorldRegistriesProvider const &, class ActorFactory const &, class Experiments const &, class BaseGameVersion const &);
+    MCAPI void initCoreEnumsServer(class ActorDefinitionGroup const &);
+    MCAPI struct MCRESULT requestCommandExecution(std::unique_ptr<class CommandOrigin>, std::string const &, int, bool) const;
+    MCAPI void runCommand(class Command &, class CommandOrigin &);
+    MCAPI void runCommand(class HashedString const &, class CommandOrigin &, enum CurrentCmdVersion);
+    MCAPI void setRegistryNetworkUpdateCallback(class std::function<void (class Packet const &)>) const;
+    MCAPI static enum CommandOutputType getOutputType(class CommandOrigin const &);
+    MCAPI static void initBlockEnum(class CommandRegistry &, class BaseGameVersion const &);
+    MCAPI static void initItemEnum(class CommandRegistry &, class BaseGameVersion const &);
 
 protected:
 

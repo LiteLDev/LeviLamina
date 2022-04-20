@@ -15,12 +15,12 @@ struct GeneticVariant {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GENETICVARIANT
 public:
-    struct GeneticVariant& operator=(struct GeneticVariant const&) = delete;
+    struct GeneticVariant& operator=(struct GeneticVariant const &) = delete;
     GeneticVariant() = delete;
 #endif
 
 public:
-    MCAPI GeneticVariant(struct GeneticVariant const&);
+    MCAPI GeneticVariant(struct GeneticVariant const &);
     MCAPI ~GeneticVariant();
 
 protected:

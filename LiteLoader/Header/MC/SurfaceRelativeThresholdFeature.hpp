@@ -17,13 +17,13 @@ class SurfaceRelativeThresholdFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SURFACERELATIVETHRESHOLDFEATURE
 public:
-    class SurfaceRelativeThresholdFeature& operator=(class SurfaceRelativeThresholdFeature const&) = delete;
-    SurfaceRelativeThresholdFeature(class SurfaceRelativeThresholdFeature const&) = delete;
+    class SurfaceRelativeThresholdFeature& operator=(class SurfaceRelativeThresholdFeature const &) = delete;
+    SurfaceRelativeThresholdFeature(class SurfaceRelativeThresholdFeature const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~SurfaceRelativeThresholdFeature();
-    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     MCAPI SurfaceRelativeThresholdFeature();
 
 protected:

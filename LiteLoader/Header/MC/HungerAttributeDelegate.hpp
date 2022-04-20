@@ -18,8 +18,8 @@ class HungerAttributeDelegate : public AttributeInstanceDelegate {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HUNGERATTRIBUTEDELEGATE
 public:
-    class HungerAttributeDelegate& operator=(class HungerAttributeDelegate const&) = delete;
-    HungerAttributeDelegate(class HungerAttributeDelegate const&) = delete;
+    class HungerAttributeDelegate& operator=(class HungerAttributeDelegate const &) = delete;
+    HungerAttributeDelegate(class HungerAttributeDelegate const &) = delete;
     HungerAttributeDelegate() = delete;
 #endif
 
@@ -27,7 +27,7 @@ public:
     /*0*/ virtual ~HungerAttributeDelegate();
     /*1*/ virtual void tick();
     /*2*/ virtual void notify(__int64);
-    MCAPI HungerAttributeDelegate(class AttributeInstance const&, class Player*);
+    MCAPI HungerAttributeDelegate(class AttributeInstance const &, class Player *);
 
 protected:
 

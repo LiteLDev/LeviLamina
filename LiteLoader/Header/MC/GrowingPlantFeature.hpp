@@ -17,13 +17,13 @@ class GrowingPlantFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROWINGPLANTFEATURE
 public:
-    class GrowingPlantFeature& operator=(class GrowingPlantFeature const&) = delete;
-    GrowingPlantFeature(class GrowingPlantFeature const&) = delete;
+    class GrowingPlantFeature& operator=(class GrowingPlantFeature const &) = delete;
+    GrowingPlantFeature(class GrowingPlantFeature const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~GrowingPlantFeature();
-    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     MCAPI GrowingPlantFeature();
 
 protected:

@@ -17,8 +17,8 @@ struct BlockBakedMaterialDataComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKBAKEDMATERIALDATACOMPONENT
 public:
-    struct BlockBakedMaterialDataComponent& operator=(struct BlockBakedMaterialDataComponent const&) = delete;
-    BlockBakedMaterialDataComponent(struct BlockBakedMaterialDataComponent const&) = delete;
+    struct BlockBakedMaterialDataComponent& operator=(struct BlockBakedMaterialDataComponent const &) = delete;
+    BlockBakedMaterialDataComponent(struct BlockBakedMaterialDataComponent const &) = delete;
     BlockBakedMaterialDataComponent() = delete;
 #endif
 

@@ -17,20 +17,20 @@ class DynamicJumpControlDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DYNAMICJUMPCONTROLDESCRIPTION
 public:
-    class DynamicJumpControlDescription& operator=(class DynamicJumpControlDescription const&) = delete;
-    DynamicJumpControlDescription(class DynamicJumpControlDescription const&) = delete;
+    class DynamicJumpControlDescription& operator=(class DynamicJumpControlDescription const &) = delete;
+    DynamicJumpControlDescription(class DynamicJumpControlDescription const &) = delete;
     DynamicJumpControlDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~DynamicJumpControlDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*
-    inline void serializeData(class Json::Value& a0) const{
-        void (DynamicJumpControlDescription::*rv)(class Json::Value&) const;
+    inline void serializeData(class Json::Value & a0) const{
+        void (DynamicJumpControlDescription::*rv)(class Json::Value &) const;
         *((void**)&rv) = dlsym("?serializeData@DynamicJumpControlDescription@@UEBAXAEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0));
+        return (this->*rv)(std::forward<class Json::Value &>(a0));
     }
     inline  ~DynamicJumpControlDescription(){
          (DynamicJumpControlDescription::*rv)();

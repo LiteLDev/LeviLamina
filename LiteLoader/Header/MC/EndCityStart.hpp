@@ -18,17 +18,16 @@ class EndCityStart : public StructureStart {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDCITYSTART
 public:
-    class EndCityStart& operator=(class EndCityStart const&) = delete;
-    EndCityStart(class EndCityStart const&) = delete;
+    class EndCityStart& operator=(class EndCityStart const &) = delete;
+    EndCityStart(class EndCityStart const &) = delete;
     EndCityStart() = delete;
 #endif
 
 public:
     /*0*/ virtual ~EndCityStart();
     /*2*/ virtual bool isValid() const;
-    /*3*/ virtual enum StructureFeatureType getType() const;
-    MCAPI EndCityStart(class Dimension&, class TheEndGenerator&, class Random&, class ChunkPos const&);
-    MCAPI static int getYPositionForFeature(class ChunkPos const&, class Dimension&, class TheEndGenerator&);
+    MCAPI EndCityStart(class Dimension &, class Random &, class ChunkPos const &);
+    MCAPI static int getYPositionForFeature(class ChunkPos const &, class Dimension &);
 
 protected:
 

@@ -17,14 +17,14 @@ class PlayerRespawnBlockRadiusRandomizer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERRESPAWNBLOCKRADIUSRANDOMIZER
 public:
-    class PlayerRespawnBlockRadiusRandomizer& operator=(class PlayerRespawnBlockRadiusRandomizer const&) = delete;
-    PlayerRespawnBlockRadiusRandomizer(class PlayerRespawnBlockRadiusRandomizer const&) = delete;
+    class PlayerRespawnBlockRadiusRandomizer& operator=(class PlayerRespawnBlockRadiusRandomizer const &) = delete;
+    PlayerRespawnBlockRadiusRandomizer(class PlayerRespawnBlockRadiusRandomizer const &) = delete;
     PlayerRespawnBlockRadiusRandomizer() = delete;
 #endif
 
 public:
-    MCAPI bool getNextPosition(class Vec3&, bool);
-    MCAPI void init(unsigned int, class Random&);
+    MCAPI bool getNextPosition(class Vec3 &, bool);
+    MCAPI void init(unsigned int, class Random &);
 
 protected:
 

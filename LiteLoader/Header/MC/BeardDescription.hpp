@@ -17,14 +17,14 @@ class BeardDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEARDDESCRIPTION
 public:
-    class BeardDescription& operator=(class BeardDescription const&) = delete;
-    BeardDescription(class BeardDescription const&) = delete;
+    class BeardDescription& operator=(class BeardDescription const &) = delete;
+    BeardDescription(class BeardDescription const &) = delete;
     BeardDescription() = delete;
 #endif
 
 public:
-    MCAPI BeardDescription(class BeardingDescriptionCache, struct BeardKernel const&);
-    MCAPI float calculateContribution(class BlockPos const&) const;
+    MCAPI BeardDescription(class BeardingDescriptionCache, struct BeardKernel const &);
+    MCAPI float calculateContribution(class BlockPos const &) const;
 
 protected:
 

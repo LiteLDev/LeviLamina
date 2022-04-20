@@ -18,16 +18,16 @@ class ExperienceRewardDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPERIENCEREWARDDEFINITION
 public:
-    class ExperienceRewardDefinition& operator=(class ExperienceRewardDefinition const&) = delete;
-    ExperienceRewardDefinition(class ExperienceRewardDefinition const&) = delete;
+    class ExperienceRewardDefinition& operator=(class ExperienceRewardDefinition const &) = delete;
+    ExperienceRewardDefinition(class ExperienceRewardDefinition const &) = delete;
     ExperienceRewardDefinition() = delete;
 #endif
 
 public:
-    MCAPI void addBredExpressionNode(class ExpressionNode const&);
-    MCAPI void addDeathExpressionNode(class ExpressionNode const&);
-    MCAPI void initialize(class EntityContext&, class ExperienceRewardComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ExperienceRewardDefinition> >&);
+    MCAPI void addBredExpressionNode(class ExpressionNode const &);
+    MCAPI void addDeathExpressionNode(class ExpressionNode const &);
+    MCAPI void initialize(class EntityContext &, class ExperienceRewardComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ExperienceRewardDefinition>> &);
 
 protected:
 

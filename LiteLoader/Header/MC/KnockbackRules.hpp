@@ -14,11 +14,11 @@ namespace KnockbackRules {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void doKnockbackAttack(class Mob&, class Mob&, class Vec2 const&, float, float);
-    MCAPI void doKnockbackAttack(class Mob&, class Mob&, class Vec3 const&, float, float);
-    MCAPI float getScaledKnockbackForce(class Actor const&, float);
-    MCAPI bool isKnockbackResistant(class Actor const&);
-    MCAPI bool shouldApplyKnockback(class Mob const&);
-    MCAPI bool useLegacyKnockback(class Level const&);
+    MCAPI void doKnockbackAttack(class Mob &, class Mob &, class Vec2 const &, float, float);
+    MCAPI void doKnockbackAttack(class Mob &, class Mob &, class Vec3 const &, float, float);
+    MCAPI float getScaledKnockbackForce(class Actor const &, float);
+    MCAPI bool isKnockbackResistant(class Actor const &);
+    MCAPI bool shouldApplyKnockback(class Mob const &);
+    MCAPI bool useLegacyKnockback(class Level const &);
 
 };

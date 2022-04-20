@@ -17,8 +17,8 @@ class Scheduler {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCHEDULER
 public:
-    class Scheduler& operator=(class Scheduler const&) = delete;
-    Scheduler(class Scheduler const&) = delete;
+    class Scheduler& operator=(class Scheduler const &) = delete;
+    Scheduler(class Scheduler const &) = delete;
     Scheduler() = delete;
 #endif
 
@@ -26,8 +26,8 @@ public:
     /*0*/ virtual ~Scheduler();
     MCAPI Scheduler(std::string, unsigned int);
     MCAPI void changeThread(class std::thread::id);
-    MCAPI class WorkerPool& getCoroutinePool();
-    MCAPI void processCoroutines(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> >, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> >);
+    MCAPI class WorkerPool & getCoroutinePool();
+    MCAPI void processCoroutines(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
     MCAPI void queueCallback(class std::shared_ptr<class BackgroundTaskBase>);
     MCAPI void setTargetFPS(unsigned int);
     MCAPI static float const AVERAGE_TASK_TOLERANCE;

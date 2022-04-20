@@ -18,8 +18,8 @@ class TextObjectScore {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTOBJECTSCORE
 public:
-    class TextObjectScore& operator=(class TextObjectScore const&) = delete;
-    TextObjectScore(class TextObjectScore const&) = delete;
+    class TextObjectScore& operator=(class TextObjectScore const &) = delete;
+    TextObjectScore(class TextObjectScore const &) = delete;
     TextObjectScore() = delete;
 #endif
 
@@ -27,7 +27,7 @@ public:
     /*0*/ virtual ~TextObjectScore();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual class Json::Value asJsonValue() const;
-    /*3*/ virtual class Json::Value resolve(struct ResolveData const&) const;
+    /*3*/ virtual class Json::Value resolve(struct ResolveData const &) const;
     /*
     inline std::string asString() const{
         std::string (TextObjectScore::*rv)() const;

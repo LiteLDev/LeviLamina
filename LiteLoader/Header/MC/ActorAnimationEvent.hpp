@@ -17,15 +17,15 @@ class ActorAnimationEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORANIMATIONEVENT
 public:
-    class ActorAnimationEvent& operator=(class ActorAnimationEvent const&) = delete;
-    ActorAnimationEvent(class ActorAnimationEvent const&) = delete;
+    class ActorAnimationEvent& operator=(class ActorAnimationEvent const &) = delete;
+    ActorAnimationEvent(class ActorAnimationEvent const &) = delete;
     ActorAnimationEvent() = delete;
 #endif
 
 public:
-    MCAPI ActorAnimationEvent(class ActorAnimationEvent&&);
-    MCAPI ActorAnimationEvent(float, std::string const&, enum CurrentCmdVersion, enum MolangVersion);
-    MCAPI void fire(class RenderParams&, class Actor*) const;
+    MCAPI ActorAnimationEvent(class ActorAnimationEvent &&);
+    MCAPI ActorAnimationEvent(float, std::string const &, enum CurrentCmdVersion, enum MolangVersion);
+    MCAPI void fire(class RenderParams &, class Actor *) const;
     MCAPI ~ActorAnimationEvent();
 
 protected:

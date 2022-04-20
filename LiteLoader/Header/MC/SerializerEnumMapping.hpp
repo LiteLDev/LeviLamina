@@ -17,14 +17,14 @@ class SerializerEnumMapping {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERIALIZERENUMMAPPING
 public:
-    class SerializerEnumMapping& operator=(class SerializerEnumMapping const&) = delete;
-    SerializerEnumMapping(class SerializerEnumMapping const&) = delete;
+    class SerializerEnumMapping& operator=(class SerializerEnumMapping const &) = delete;
+    SerializerEnumMapping(class SerializerEnumMapping const &) = delete;
     SerializerEnumMapping() = delete;
 #endif
 
 public:
-    MCAPI bool lookup(std::string const&, __int64&) const;
-    MCAPI bool lookup(__int64, std::string&) const;
+    MCAPI bool lookup(std::string const &, __int64 &) const;
+    MCAPI bool lookup(__int64, std::string &) const;
 
 protected:
 

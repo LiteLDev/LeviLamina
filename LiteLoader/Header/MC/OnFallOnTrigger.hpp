@@ -15,8 +15,8 @@ struct OnFallOnTrigger {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONFALLONTRIGGER
 public:
-    struct OnFallOnTrigger& operator=(struct OnFallOnTrigger const&) = delete;
-    OnFallOnTrigger(struct OnFallOnTrigger const&) = delete;
+    struct OnFallOnTrigger& operator=(struct OnFallOnTrigger const &) = delete;
+    OnFallOnTrigger(struct OnFallOnTrigger const &) = delete;
     OnFallOnTrigger() = delete;
 #endif
 

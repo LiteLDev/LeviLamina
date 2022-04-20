@@ -14,7 +14,7 @@ namespace WitherBossSpawnUtilities {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI std::unique_ptr<class BlockPatternBuilder> createWitherBuilder(class BlockSource&);
-    MCAPI std::unique_ptr<class BlockPatternBuilder> createWitherBuilderForTShape(class BlockSource&);
+    MCAPI std::unique_ptr<class BlockPatternBuilder> createWitherBuilder(class BlockSource &);
+    MCAPI std::unique_ptr<class BlockPatternBuilder> createWitherBuilderForTShape(class BlockSource &);
 
 };

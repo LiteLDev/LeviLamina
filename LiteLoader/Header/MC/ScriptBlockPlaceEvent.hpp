@@ -15,8 +15,8 @@ struct ScriptBlockPlaceEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKPLACEEVENT
 public:
-    struct ScriptBlockPlaceEvent& operator=(struct ScriptBlockPlaceEvent const&) = delete;
-    ScriptBlockPlaceEvent(struct ScriptBlockPlaceEvent const&) = delete;
+    struct ScriptBlockPlaceEvent& operator=(struct ScriptBlockPlaceEvent const &) = delete;
+    ScriptBlockPlaceEvent(struct ScriptBlockPlaceEvent const &) = delete;
     ScriptBlockPlaceEvent() = delete;
 #endif
 

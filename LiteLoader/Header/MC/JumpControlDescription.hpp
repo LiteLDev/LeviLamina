@@ -18,8 +18,8 @@ struct JumpControlDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JUMPCONTROLDESCRIPTION
 public:
-    struct JumpControlDescription& operator=(struct JumpControlDescription const&) = delete;
-    JumpControlDescription(struct JumpControlDescription const&) = delete;
+    struct JumpControlDescription& operator=(struct JumpControlDescription const &) = delete;
+    JumpControlDescription(struct JumpControlDescription const &) = delete;
     JumpControlDescription() = delete;
 #endif
 

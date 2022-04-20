@@ -23,13 +23,13 @@ struct ResultDetails {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNCLIMATEFINDER
 public:
-    class SpawnClimateFinder& operator=(class SpawnClimateFinder const&) = delete;
-    SpawnClimateFinder(class SpawnClimateFinder const&) = delete;
+    class SpawnClimateFinder& operator=(class SpawnClimateFinder const &) = delete;
+    SpawnClimateFinder(class SpawnClimateFinder const &) = delete;
     SpawnClimateFinder() = delete;
 #endif
 
 public:
-    MCAPI SpawnClimateFinder(std::vector<struct ClimateParameters>, struct OverworldNoises3d const&, class DimensionHeightRange const&);
+    MCAPI SpawnClimateFinder(std::vector<struct ClimateParameters>, struct OverworldNoises3d const &, class DimensionHeightRange const &);
     MCAPI class BlockPos findSpawnPosition() const;
     MCAPI ~SpawnClimateFinder();
 

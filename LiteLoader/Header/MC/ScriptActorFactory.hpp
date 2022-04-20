@@ -15,14 +15,14 @@ class ScriptActorFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTACTORFACTORY
 public:
-    class ScriptActorFactory& operator=(class ScriptActorFactory const&) = delete;
-    ScriptActorFactory(class ScriptActorFactory const&) = delete;
+    class ScriptActorFactory& operator=(class ScriptActorFactory const &) = delete;
+    ScriptActorFactory(class ScriptActorFactory const &) = delete;
     ScriptActorFactory() = delete;
 #endif
 
 public:
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptActor> createHandle(class Actor const*, class Scripting::WeakLifetimeScope const&);
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptActor> getHandle(class Actor const*, class Scripting::WeakLifetimeScope const&);
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptActor> createHandle(class Actor const *, class Scripting::WeakLifetimeScope const &);
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptActor> getHandle(class Actor const *, class Scripting::WeakLifetimeScope const &);
 
 protected:
 

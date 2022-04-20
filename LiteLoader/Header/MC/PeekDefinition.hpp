@@ -18,13 +18,13 @@ class PeekDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PEEKDEFINITION
 public:
-    class PeekDefinition& operator=(class PeekDefinition const&) = delete;
-    PeekDefinition(class PeekDefinition const&) = delete;
+    class PeekDefinition& operator=(class PeekDefinition const &) = delete;
+    PeekDefinition(class PeekDefinition const &) = delete;
     PeekDefinition() = delete;
 #endif
 
 public:
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class PeekDefinition> >&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class PeekDefinition>> &);
 
 protected:
 

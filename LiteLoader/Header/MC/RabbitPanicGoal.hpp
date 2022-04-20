@@ -18,8 +18,8 @@ class RabbitPanicGoal : public PanicGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RABBITPANICGOAL
 public:
-    class RabbitPanicGoal& operator=(class RabbitPanicGoal const&) = delete;
-    RabbitPanicGoal(class RabbitPanicGoal const&) = delete;
+    class RabbitPanicGoal& operator=(class RabbitPanicGoal const &) = delete;
+    RabbitPanicGoal(class RabbitPanicGoal const &) = delete;
     RabbitPanicGoal() = delete;
 #endif
 

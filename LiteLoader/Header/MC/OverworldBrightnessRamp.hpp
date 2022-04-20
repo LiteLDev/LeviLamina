@@ -18,8 +18,8 @@ class OverworldBrightnessRamp : public DimensionBrightnessRamp {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERWORLDBRIGHTNESSRAMP
 public:
-    class OverworldBrightnessRamp& operator=(class OverworldBrightnessRamp const&) = delete;
-    OverworldBrightnessRamp(class OverworldBrightnessRamp const&) = delete;
+    class OverworldBrightnessRamp& operator=(class OverworldBrightnessRamp const &) = delete;
+    OverworldBrightnessRamp(class OverworldBrightnessRamp const &) = delete;
     OverworldBrightnessRamp() = delete;
 #endif
 

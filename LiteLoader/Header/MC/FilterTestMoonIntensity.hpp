@@ -19,14 +19,14 @@ class FilterTestMoonIntensity : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERTESTMOONINTENSITY
 public:
-    class FilterTestMoonIntensity& operator=(class FilterTestMoonIntensity const&) = delete;
-    FilterTestMoonIntensity(class FilterTestMoonIntensity const&) = delete;
+    class FilterTestMoonIntensity& operator=(class FilterTestMoonIntensity const &) = delete;
+    FilterTestMoonIntensity(class FilterTestMoonIntensity const &) = delete;
     FilterTestMoonIntensity() = delete;
 #endif
 
 public:
     /*0*/ virtual ~FilterTestMoonIntensity();
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*
     inline  ~FilterTestMoonIntensity(){

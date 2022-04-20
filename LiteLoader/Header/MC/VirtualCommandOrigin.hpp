@@ -19,21 +19,21 @@ class VirtualCommandOrigin : public CommandOrigin {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VIRTUALCOMMANDORIGIN
 public:
-    class VirtualCommandOrigin& operator=(class VirtualCommandOrigin const&) = delete;
-    VirtualCommandOrigin(class VirtualCommandOrigin const&) = delete;
+    class VirtualCommandOrigin& operator=(class VirtualCommandOrigin const &) = delete;
+    VirtualCommandOrigin(class VirtualCommandOrigin const &) = delete;
     VirtualCommandOrigin() = delete;
 #endif
 
 public:
     /*0*/ virtual ~VirtualCommandOrigin();
-    /*1*/ virtual std::string const& getRequestId() const;
+    /*1*/ virtual std::string const & getRequestId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual class BlockPos getBlockPosition() const;
     /*4*/ virtual class Vec3 getWorldPosition() const;
     /*5*/ virtual class std::optional<class Vec2> getRotation() const;
-    /*6*/ virtual class Level* getLevel() const;
-    /*7*/ virtual class Dimension* getDimension() const;
-    /*8*/ virtual class Actor* getEntity() const;
+    /*6*/ virtual class Level * getLevel() const;
+    /*7*/ virtual class Dimension * getDimension() const;
+    /*8*/ virtual class Actor * getEntity() const;
     /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
     /*11*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
@@ -43,21 +43,21 @@ public:
     /*15*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
     /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
-    /*19*/ virtual class NetworkIdentifier const& getSourceId() const;
+    /*19*/ virtual class NetworkIdentifier const & getSourceId() const;
     /*20*/ virtual unsigned char getSourceSubId() const;
-    /*21*/ virtual class CommandOrigin const& getOutputReceiver() const;
+    /*21*/ virtual class CommandOrigin const & getOutputReceiver() const;
     /*22*/ virtual struct CommandOriginIdentity getIdentity() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
-    /*26*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
+    /*26*/ virtual void handleCommandOutputCallback(class Json::Value &&) const;
     /*27*/ virtual void updateValues();
-    /*28*/ virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const&) const;
+    /*28*/ virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const &) const;
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
-    MCAPI VirtualCommandOrigin(class CommandOrigin const&, class CommandOrigin const&, class CommandPositionFloat const&, int);
-    MCAPI VirtualCommandOrigin(class CommandOrigin const&, class Actor&, class CommandPositionFloat const&, int);
-    MCAPI VirtualCommandOrigin(std::unique_ptr<class CommandOrigin>, std::unique_ptr<class CommandOrigin>, class CommandPositionFloat const&, int);
-    MCAPI class CommandOrigin* getOrigin() const;
-    MCAPI static std::unique_ptr<class VirtualCommandOrigin> load(class CompoundTag const&, class ServerLevel&);
+    MCAPI VirtualCommandOrigin(class CommandOrigin const &, class CommandOrigin const &, class CommandPositionFloat const &, int);
+    MCAPI VirtualCommandOrigin(class CommandOrigin const &, class Actor &, class CommandPositionFloat const &, int);
+    MCAPI VirtualCommandOrigin(std::unique_ptr<class CommandOrigin>, std::unique_ptr<class CommandOrigin>, class CommandPositionFloat const &, int);
+    MCAPI class CommandOrigin * getOrigin() const;
+    MCAPI static std::unique_ptr<class VirtualCommandOrigin> load(class CompoundTag const &, class ServerLevel &);
 
 protected:
 

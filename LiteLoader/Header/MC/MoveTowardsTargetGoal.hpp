@@ -17,8 +17,8 @@ class MoveTowardsTargetGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOWARDSTARGETGOAL
 public:
-    class MoveTowardsTargetGoal& operator=(class MoveTowardsTargetGoal const&) = delete;
-    MoveTowardsTargetGoal(class MoveTowardsTargetGoal const&) = delete;
+    class MoveTowardsTargetGoal& operator=(class MoveTowardsTargetGoal const &) = delete;
+    MoveTowardsTargetGoal(class MoveTowardsTargetGoal const &) = delete;
     MoveTowardsTargetGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline  ~MoveTowardsTargetGoal(){
          (MoveTowardsTargetGoal::*rv)();
@@ -43,7 +43,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI MoveTowardsTargetGoal(class Mob&, float, float);
+    MCAPI MoveTowardsTargetGoal(class Mob &, float, float);
 
 protected:
 

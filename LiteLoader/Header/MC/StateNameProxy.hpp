@@ -15,8 +15,8 @@ struct StateNameProxy {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STATENAMEPROXY
 public:
-    struct StateNameProxy& operator=(struct StateNameProxy const&) = delete;
-    StateNameProxy(struct StateNameProxy const&) = delete;
+    struct StateNameProxy& operator=(struct StateNameProxy const &) = delete;
+    StateNameProxy(struct StateNameProxy const &) = delete;
     StateNameProxy() = delete;
 #endif
 

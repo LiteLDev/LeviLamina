@@ -18,15 +18,15 @@ class ExplosionDecayFunction : public LootItemFunction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPLOSIONDECAYFUNCTION
 public:
-    class ExplosionDecayFunction& operator=(class ExplosionDecayFunction const&) = delete;
-    ExplosionDecayFunction(class ExplosionDecayFunction const&) = delete;
+    class ExplosionDecayFunction& operator=(class ExplosionDecayFunction const &) = delete;
+    ExplosionDecayFunction(class ExplosionDecayFunction const &) = delete;
     ExplosionDecayFunction() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ExplosionDecayFunction();
-    /*1*/ virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
-    /*3*/ virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
+    /*1*/ virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
+    /*3*/ virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
 
 protected:
 

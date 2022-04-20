@@ -17,14 +17,14 @@ class NoodleCavifierNoises {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NOODLECAVIFIERNOISES
 public:
-    class NoodleCavifierNoises& operator=(class NoodleCavifierNoises const&) = delete;
+    class NoodleCavifierNoises& operator=(class NoodleCavifierNoises const &) = delete;
     NoodleCavifierNoises() = delete;
 #endif
 
 public:
-    MCAPI NoodleCavifierNoises(class NoodleCavifierNoises const&);
+    MCAPI NoodleCavifierNoises(class NoodleCavifierNoises const &);
     MCAPI ~NoodleCavifierNoises();
-    MCAPI static class NoodleCavifierNoises make(class XoroshiroPositionalRandomFactory const&);
+    MCAPI static class NoodleCavifierNoises make(class XoroshiroPositionalRandomFactory const &);
 
 protected:
 

@@ -14,15 +14,6 @@ namespace FoodConstants {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI extern float const EXHAUSTION_ATTACK;
-    MCAPI extern float const EXHAUSTION_DAMAGE;
-    MCAPI extern float const EXHAUSTION_HEAL;
-    MCAPI extern float const EXHAUSTION_JUMP;
-    MCAPI extern float const EXHAUSTION_MINE;
-    MCAPI extern float const EXHAUSTION_SPRINT;
-    MCAPI extern float const EXHAUSTION_SPRINT_JUMP;
-    MCAPI extern float const EXHAUSTION_SWIM;
-    MCAPI extern float const EXHAUSTION_WALK;
     MCAPI extern float const FOOD_SATURATION_GOOD;
     MCAPI extern float const FOOD_SATURATION_LOW;
     MCAPI extern float const FOOD_SATURATION_MAX;

@@ -17,29 +17,24 @@ class CraftHandlerCrafting {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTHANDLERCRAFTING
 public:
-    class CraftHandlerCrafting& operator=(class CraftHandlerCrafting const&) = delete;
-    CraftHandlerCrafting(class CraftHandlerCrafting const&) = delete;
+    class CraftHandlerCrafting& operator=(class CraftHandlerCrafting const &) = delete;
+    CraftHandlerCrafting(class CraftHandlerCrafting const &) = delete;
     CraftHandlerCrafting() = delete;
 #endif
 
 public:
     /*0*/ virtual ~CraftHandlerCrafting();
-    /*1*/ virtual enum ItemStackNetResult handleConsumedItem(enum ContainerEnumName, unsigned char, class ItemStack const&);
+    /*1*/ virtual enum ItemStackNetResult handleConsumedItem(enum ContainerEnumName, unsigned char, class ItemStack const &);
     /*2*/ virtual enum ItemStackNetResult preHandleAction(enum ItemStackRequestActionType);
     /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
-    /*
-    inline class Recipes const* _getLevelRecipes() const{
-        class Recipes const* (CraftHandlerCrafting::*rv)() const;
-        *((void**)&rv) = dlsym("?_getLevelRecipes@CraftHandlerCrafting@@EEBAPEBVRecipes@@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
+    /*5*/ virtual void __unk_vfn_5();
+    /*6*/ virtual class Recipes const * _getLevelRecipes() const;
 
 protected:
 
 private:
-    MCAPI enum ItemStackNetResult _handleAutoCraft(class ItemStackRequestActionCraftRecipeAuto const&);
-    MCAPI enum ItemStackNetResult _handleCraftOutput(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 12> const&);
+    MCAPI enum ItemStackNetResult _handleAutoCraft(class ItemStackRequestActionCraftRecipeAuto const &);
+    MCAPI enum ItemStackNetResult _handleCraftOutput(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 12> const &);
 
 };

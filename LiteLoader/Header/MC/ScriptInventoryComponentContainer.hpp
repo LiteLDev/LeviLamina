@@ -24,7 +24,7 @@ public:
 public:
     /*0*/ virtual ~ScriptInventoryComponentContainer();
     /*5*/ virtual class Scripting::Result<int> getEmptySlotsCount() const;
-    /*11*/ virtual class Container* _tryGetContainer() const;
+    /*11*/ virtual class Container * _tryGetContainer() const;
     /*
     inline  ~ScriptInventoryComponentContainer(){
          (ScriptInventoryComponentContainer::*rv)();
@@ -32,10 +32,9 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptInventoryComponentContainer(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&);
-    MCAPI ScriptInventoryComponentContainer(class ScriptInventoryComponentContainer const&);
-    MCAPI class ScriptInventoryComponentContainer& operator=(class ScriptInventoryComponentContainer const&);
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptInventoryComponentContainer> bind(struct Scripting::Version);
+    MCAPI ScriptInventoryComponentContainer(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &);
+    MCAPI ScriptInventoryComponentContainer(class ScriptInventoryComponentContainer const &);
+    MCAPI class ScriptInventoryComponentContainer & operator=(class ScriptInventoryComponentContainer const &);
 
 protected:
 

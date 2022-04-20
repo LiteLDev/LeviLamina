@@ -17,16 +17,16 @@ class AgeableComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGEABLECOMPONENT
 public:
-    class AgeableComponent& operator=(class AgeableComponent const&) = delete;
-    AgeableComponent(class AgeableComponent const&) = delete;
+    class AgeableComponent& operator=(class AgeableComponent const &) = delete;
+    AgeableComponent(class AgeableComponent const &) = delete;
     AgeableComponent() = delete;
 #endif
 
 public:
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI int getAge() const;
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void setAge(int);
 
 protected:

@@ -15,8 +15,8 @@ class VolumeCreationDataComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VOLUMECREATIONDATACOMPONENT
 public:
-    class VolumeCreationDataComponent& operator=(class VolumeCreationDataComponent const&) = delete;
-    VolumeCreationDataComponent(class VolumeCreationDataComponent const&) = delete;
+    class VolumeCreationDataComponent& operator=(class VolumeCreationDataComponent const &) = delete;
+    VolumeCreationDataComponent(class VolumeCreationDataComponent const &) = delete;
     VolumeCreationDataComponent() = delete;
 #endif
 

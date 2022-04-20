@@ -19,14 +19,14 @@ class FilterTestDaytime : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERTESTDAYTIME
 public:
-    class FilterTestDaytime& operator=(class FilterTestDaytime const&) = delete;
-    FilterTestDaytime(class FilterTestDaytime const&) = delete;
+    class FilterTestDaytime& operator=(class FilterTestDaytime const &) = delete;
+    FilterTestDaytime(class FilterTestDaytime const &) = delete;
     FilterTestDaytime() = delete;
 #endif
 
 public:
     /*0*/ virtual ~FilterTestDaytime();
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*
     inline  ~FilterTestDaytime(){

@@ -14,6 +14,6 @@ namespace BehaviorNodeUtils {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void lookAt(class Actor&, class Vec3 const&, float, float);
+    MCAPI void lookAt(class Actor &, class Vec3 const &, float, float);
 
 };

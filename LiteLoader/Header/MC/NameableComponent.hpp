@@ -17,15 +17,14 @@ class NameableComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAMEABLECOMPONENT
 public:
-    class NameableComponent& operator=(class NameableComponent const&) = delete;
-    NameableComponent(class NameableComponent const&) = delete;
+    class NameableComponent& operator=(class NameableComponent const &) = delete;
+    NameableComponent(class NameableComponent const &) = delete;
 #endif
 
 public:
     MCAPI NameableComponent();
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
-    MCAPI void initFromDefinition(class Actor&, class NameableDefinition const&);
-    MCAPI void nameEntity(class Actor&, std::string const&);
+    MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
+    MCAPI void nameEntity(class Actor &, std::string const &);
 
 protected:
 

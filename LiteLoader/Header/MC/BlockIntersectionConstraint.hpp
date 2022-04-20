@@ -17,15 +17,15 @@ class BlockIntersectionConstraint {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKINTERSECTIONCONSTRAINT
 public:
-    class BlockIntersectionConstraint& operator=(class BlockIntersectionConstraint const&) = delete;
-    BlockIntersectionConstraint(class BlockIntersectionConstraint const&) = delete;
+    class BlockIntersectionConstraint& operator=(class BlockIntersectionConstraint const &) = delete;
+    BlockIntersectionConstraint(class BlockIntersectionConstraint const &) = delete;
     BlockIntersectionConstraint() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BlockIntersectionConstraint();
-    /*1*/ virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, enum Rotation const&) const;
-    MCAPI BlockIntersectionConstraint(class StructureTemplate&);
+    /*1*/ virtual bool isSatisfied(class IBlockWorldGenAPI const &, class BlockPos const &, enum Rotation const &) const;
+    MCAPI BlockIntersectionConstraint(class StructureTemplate &);
 
 protected:
 

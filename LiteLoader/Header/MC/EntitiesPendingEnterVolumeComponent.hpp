@@ -15,12 +15,13 @@ class EntitiesPendingEnterVolumeComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITIESPENDINGENTERVOLUMECOMPONENT
 public:
-    class EntitiesPendingEnterVolumeComponent& operator=(class EntitiesPendingEnterVolumeComponent const&) = delete;
-    EntitiesPendingEnterVolumeComponent(class EntitiesPendingEnterVolumeComponent const&) = delete;
+    class EntitiesPendingEnterVolumeComponent& operator=(class EntitiesPendingEnterVolumeComponent const &) = delete;
+    EntitiesPendingEnterVolumeComponent(class EntitiesPendingEnterVolumeComponent const &) = delete;
     EntitiesPendingEnterVolumeComponent() = delete;
 #endif
 
 public:
+    MCAPI EntitiesPendingEnterVolumeComponent(class EntitiesPendingEnterVolumeComponent &&);
     MCAPI ~EntitiesPendingEnterVolumeComponent();
 
 protected:

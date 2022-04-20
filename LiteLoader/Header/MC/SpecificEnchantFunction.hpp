@@ -19,20 +19,20 @@ class SpecificEnchantFunction : public LootItemFunction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPECIFICENCHANTFUNCTION
 public:
-    class SpecificEnchantFunction& operator=(class SpecificEnchantFunction const&) = delete;
-    SpecificEnchantFunction(class SpecificEnchantFunction const&) = delete;
+    class SpecificEnchantFunction& operator=(class SpecificEnchantFunction const &) = delete;
+    SpecificEnchantFunction(class SpecificEnchantFunction const &) = delete;
     SpecificEnchantFunction() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SpecificEnchantFunction();
-    /*1*/ virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
-    /*3*/ virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
-    MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>>&);
+    /*1*/ virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
+    /*3*/ virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
+    MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 protected:
 
 private:
-    MCAPI void _applyInner(class ItemStackBase&, class Random&, class LootTableContext&, bool);
+    MCAPI void _applyInner(class ItemStackBase &, class Random &, class LootTableContext &, bool);
 
 };

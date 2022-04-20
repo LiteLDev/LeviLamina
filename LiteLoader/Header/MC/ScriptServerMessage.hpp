@@ -15,8 +15,8 @@ struct ScriptServerMessage {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTSERVERMESSAGE
 public:
-    struct ScriptServerMessage& operator=(struct ScriptServerMessage const&) = delete;
-    ScriptServerMessage(struct ScriptServerMessage const&) = delete;
+    struct ScriptServerMessage& operator=(struct ScriptServerMessage const &) = delete;
+    ScriptServerMessage(struct ScriptServerMessage const &) = delete;
     ScriptServerMessage() = delete;
 #endif
 

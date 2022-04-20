@@ -18,20 +18,20 @@ class SHPrisonHall : public StructurePiece {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHPRISONHALL
 public:
-    class SHPrisonHall& operator=(class SHPrisonHall const&) = delete;
-    SHPrisonHall(class SHPrisonHall const&) = delete;
+    class SHPrisonHall& operator=(class SHPrisonHall const &) = delete;
+    SHPrisonHall(class SHPrisonHall const &) = delete;
     SHPrisonHall() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SHPrisonHall();
-    /*2*/ virtual class PoolElementStructurePiece* asPoolElement();
+    /*2*/ virtual class PoolElementStructurePiece * asPoolElement();
     /*3*/ virtual enum StructurePieceType getType() const;
-    /*4*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
-    /*5*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    /*6*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
-    /*10*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
-    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
+    /*4*/ virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
+    /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
+    /*6*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
+    /*10*/ virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);
+    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
 
 protected:
 

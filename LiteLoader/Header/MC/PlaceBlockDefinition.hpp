@@ -19,8 +19,8 @@ class PlaceBlockDefinition : public BehaviorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLACEBLOCKDEFINITION
 public:
-    class PlaceBlockDefinition& operator=(class PlaceBlockDefinition const&) = delete;
-    PlaceBlockDefinition(class PlaceBlockDefinition const&) = delete;
+    class PlaceBlockDefinition& operator=(class PlaceBlockDefinition const &) = delete;
+    PlaceBlockDefinition(class PlaceBlockDefinition const &) = delete;
     PlaceBlockDefinition() = delete;
 #endif
 

@@ -17,8 +17,8 @@ struct CrashDumpEventData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMPEVENTDATA
 public:
-    struct CrashDumpEventData& operator=(struct CrashDumpEventData const&) = delete;
-    CrashDumpEventData(struct CrashDumpEventData const&) = delete;
+    struct CrashDumpEventData& operator=(struct CrashDumpEventData const &) = delete;
+    CrashDumpEventData(struct CrashDumpEventData const &) = delete;
     CrashDumpEventData() = delete;
 #endif
 

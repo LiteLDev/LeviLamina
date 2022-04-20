@@ -18,8 +18,8 @@ class SetScoreboardIdentityPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETSCOREBOARDIDENTITYPACKET
 public:
-    class SetScoreboardIdentityPacket& operator=(class SetScoreboardIdentityPacket const&) = delete;
-    SetScoreboardIdentityPacket(class SetScoreboardIdentityPacket const&) = delete;
+    class SetScoreboardIdentityPacket& operator=(class SetScoreboardIdentityPacket const &) = delete;
+    SetScoreboardIdentityPacket(class SetScoreboardIdentityPacket const &) = delete;
     SetScoreboardIdentityPacket() = delete;
 #endif
 
@@ -27,8 +27,8 @@ public:
     /*0*/ virtual ~SetScoreboardIdentityPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~SetScoreboardIdentityPacket(){
          (SetScoreboardIdentityPacket::*rv)();
@@ -36,7 +36,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI static class SetScoreboardIdentityPacket change(struct ScoreboardId const&, struct PlayerScoreboardId const&);
+    MCAPI static class SetScoreboardIdentityPacket change(struct ScoreboardId const &, struct PlayerScoreboardId const &);
 
 protected:
 

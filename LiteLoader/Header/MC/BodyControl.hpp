@@ -17,13 +17,13 @@ class BodyControl {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BODYCONTROL
 public:
-    class BodyControl& operator=(class BodyControl const&) = delete;
-    BodyControl(class BodyControl const&) = delete;
+    class BodyControl& operator=(class BodyControl const &) = delete;
+    BodyControl(class BodyControl const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~BodyControl();
-    /*1*/ virtual void clientTick(class Mob&);
+    /*1*/ virtual void clientTick(class Mob &);
     /*
     inline  ~BodyControl(){
          (BodyControl::*rv)();

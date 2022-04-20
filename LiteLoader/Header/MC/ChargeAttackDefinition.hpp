@@ -18,15 +18,15 @@ class ChargeAttackDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHARGEATTACKDEFINITION
 public:
-    class ChargeAttackDefinition& operator=(class ChargeAttackDefinition const&) = delete;
-    ChargeAttackDefinition(class ChargeAttackDefinition const&) = delete;
+    class ChargeAttackDefinition& operator=(class ChargeAttackDefinition const &) = delete;
+    ChargeAttackDefinition(class ChargeAttackDefinition const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ChargeAttackDefinition();
     MCAPI ChargeAttackDefinition();
-    MCAPI void initialize(class EntityContext&, class ChargeAttackGoal&);
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ChargeAttackDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class ChargeAttackGoal &);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ChargeAttackDefinition>> &);
 
 protected:
 

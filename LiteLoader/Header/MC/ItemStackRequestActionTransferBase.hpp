@@ -17,25 +17,25 @@ class ItemStackRequestActionTransferBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONTRANSFERBASE
 public:
-    class ItemStackRequestActionTransferBase& operator=(class ItemStackRequestActionTransferBase const&) = delete;
-    ItemStackRequestActionTransferBase(class ItemStackRequestActionTransferBase const&) = delete;
+    class ItemStackRequestActionTransferBase& operator=(class ItemStackRequestActionTransferBase const &) = delete;
+    ItemStackRequestActionTransferBase(class ItemStackRequestActionTransferBase const &) = delete;
     ItemStackRequestActionTransferBase() = delete;
 #endif
 
 public:
     /*
-    inline bool _read(class ReadOnlyBinaryStream& a0){
-        bool (ItemStackRequestActionTransferBase::*rv)(class ReadOnlyBinaryStream&);
+    inline bool _read(class ReadOnlyBinaryStream & a0){
+        bool (ItemStackRequestActionTransferBase::*rv)(class ReadOnlyBinaryStream &);
         *((void**)&rv) = dlsym("?_read@ItemStackRequestActionTransferBase@@MEAA_NAEAVReadOnlyBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class ReadOnlyBinaryStream&>(a0));
+        return (this->*rv)(std::forward<class ReadOnlyBinaryStream &>(a0));
     }
-    inline void _write(class BinaryStream& a0) const{
-        void (ItemStackRequestActionTransferBase::*rv)(class BinaryStream&) const;
+    inline void _write(class BinaryStream & a0) const{
+        void (ItemStackRequestActionTransferBase::*rv)(class BinaryStream &) const;
         *((void**)&rv) = dlsym("?_write@ItemStackRequestActionTransferBase@@MEBAXAEAVBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class BinaryStream&>(a0));
+        return (this->*rv)(std::forward<class BinaryStream &>(a0));
     }
     */
-    MCAPI struct ItemStackRequestSlotInfo const& getSrc() const;
+    MCAPI struct ItemStackRequestSlotInfo const & getSrc() const;
 
 protected:
 

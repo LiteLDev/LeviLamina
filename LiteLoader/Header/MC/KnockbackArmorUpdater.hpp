@@ -17,8 +17,8 @@ class KnockbackArmorUpdater {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_KNOCKBACKARMORUPDATER
 public:
-    class KnockbackArmorUpdater& operator=(class KnockbackArmorUpdater const&) = delete;
-    KnockbackArmorUpdater(class KnockbackArmorUpdater const&) = delete;
+    class KnockbackArmorUpdater& operator=(class KnockbackArmorUpdater const &) = delete;
+    KnockbackArmorUpdater(class KnockbackArmorUpdater const &) = delete;
     KnockbackArmorUpdater() = delete;
 #endif
 
@@ -40,7 +40,7 @@ public:
     /*14*/ virtual void __unk_vfn_14();
     /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual void __unk_vfn_16();
-    /*17*/ virtual enum EventResult onActorEquippedArmor(class Actor&, class ItemInstance const&, enum ArmorSlot);
+    /*17*/ virtual enum EventResult onActorEquippedArmor(class Actor &, class ItemInstance const &, enum ArmorSlot);
     /*
     inline  ~KnockbackArmorUpdater(){
          (KnockbackArmorUpdater::*rv)();

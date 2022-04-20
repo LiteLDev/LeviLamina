@@ -16,13 +16,13 @@ struct GoalDefinition {
 #undef AFTER_EXTRA
 
 public:
-    MCAPI GoalDefinition(struct GoalDefinition&&);
-    MCAPI GoalDefinition(struct GoalDefinition const&);
+    MCAPI GoalDefinition(struct GoalDefinition &&);
+    MCAPI GoalDefinition(struct GoalDefinition const &);
     MCAPI GoalDefinition();
     MCAPI enum POIType _getPOITypeFromString(std::string);
-    MCAPI struct GoalDefinition& operator=(struct GoalDefinition&&);
-    MCAPI struct GoalDefinition& operator=(struct GoalDefinition const&);
-    MCAPI bool parse(struct ConstDeserializeDataParams const&, int);
+    MCAPI struct GoalDefinition & operator=(struct GoalDefinition &&);
+    MCAPI struct GoalDefinition & operator=(struct GoalDefinition const &);
+    MCAPI bool parse(struct ConstDeserializeDataParams const &, int);
     MCAPI ~GoalDefinition();
 
 protected:

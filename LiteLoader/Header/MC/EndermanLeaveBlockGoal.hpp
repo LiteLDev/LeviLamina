@@ -17,8 +17,8 @@ class EndermanLeaveBlockGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDERMANLEAVEBLOCKGOAL
 public:
-    class EndermanLeaveBlockGoal& operator=(class EndermanLeaveBlockGoal const&) = delete;
-    EndermanLeaveBlockGoal(class EndermanLeaveBlockGoal const&) = delete;
+    class EndermanLeaveBlockGoal& operator=(class EndermanLeaveBlockGoal const &) = delete;
+    EndermanLeaveBlockGoal(class EndermanLeaveBlockGoal const &) = delete;
     EndermanLeaveBlockGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI EndermanLeaveBlockGoal(class EnderMan&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI EndermanLeaveBlockGoal(class EnderMan &);
 
 protected:
 

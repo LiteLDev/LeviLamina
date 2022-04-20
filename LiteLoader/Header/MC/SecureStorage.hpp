@@ -17,8 +17,8 @@ class SecureStorage {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SECURESTORAGE
 public:
-    class SecureStorage& operator=(class SecureStorage const&) = delete;
-    SecureStorage(class SecureStorage const&) = delete;
+    class SecureStorage& operator=(class SecureStorage const &) = delete;
+    SecureStorage(class SecureStorage const &) = delete;
     SecureStorage() = delete;
 #endif
 

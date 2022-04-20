@@ -18,8 +18,8 @@ struct OnHurtByPlayerDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONHURTBYPLAYERDEFINITION
 public:
-    struct OnHurtByPlayerDefinition& operator=(struct OnHurtByPlayerDefinition const&) = delete;
-    OnHurtByPlayerDefinition(struct OnHurtByPlayerDefinition const&) = delete;
+    struct OnHurtByPlayerDefinition& operator=(struct OnHurtByPlayerDefinition const &) = delete;
+    OnHurtByPlayerDefinition(struct OnHurtByPlayerDefinition const &) = delete;
     OnHurtByPlayerDefinition() = delete;
 #endif
 

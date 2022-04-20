@@ -17,8 +17,8 @@ class PetSleepWithOwnerState {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PETSLEEPWITHOWNERSTATE
 public:
-    class PetSleepWithOwnerState& operator=(class PetSleepWithOwnerState const&) = delete;
-    PetSleepWithOwnerState(class PetSleepWithOwnerState const&) = delete;
+    class PetSleepWithOwnerState& operator=(class PetSleepWithOwnerState const &) = delete;
+    PetSleepWithOwnerState(class PetSleepWithOwnerState const &) = delete;
     PetSleepWithOwnerState() = delete;
 #endif
 

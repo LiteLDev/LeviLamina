@@ -18,20 +18,19 @@ class StrongholdStart : public StructureStart {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRONGHOLDSTART
 public:
-    class StrongholdStart& operator=(class StrongholdStart const&) = delete;
-    StrongholdStart(class StrongholdStart const&) = delete;
+    class StrongholdStart& operator=(class StrongholdStart const &) = delete;
+    StrongholdStart(class StrongholdStart const &) = delete;
     StrongholdStart() = delete;
 #endif
 
 public:
     /*0*/ virtual ~StrongholdStart();
     /*2*/ virtual bool isValid() const;
-    /*3*/ virtual enum StructureFeatureType getType() const;
-    MCAPI StrongholdStart(class Dimension&, class Random&, int, int);
+    MCAPI StrongholdStart(class Dimension &, class Random &, int, int);
 
 protected:
 
 private:
-    MCAPI void _initializePieceSet(class Random&);
+    MCAPI void _initializePieceSet(class Random &);
 
 };

@@ -17,8 +17,8 @@ class ShulkerPeekGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHULKERPEEKGOAL
 public:
-    class ShulkerPeekGoal& operator=(class ShulkerPeekGoal const&) = delete;
-    ShulkerPeekGoal(class ShulkerPeekGoal const&) = delete;
+    class ShulkerPeekGoal& operator=(class ShulkerPeekGoal const &) = delete;
+    ShulkerPeekGoal(class ShulkerPeekGoal const &) = delete;
     ShulkerPeekGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI ShulkerPeekGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI ShulkerPeekGoal(class Mob &);
 
 protected:
 

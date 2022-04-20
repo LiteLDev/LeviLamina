@@ -18,9 +18,9 @@ enum EAxis;
 #undef AFTER_EXTRA
 
 public:
-    MCAPI ProjectileComponent(class ProjectileComponent const&);
+    MCAPI ProjectileComponent(class ProjectileComponent const &);
     MCAPI ProjectileComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag&);
+    MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI enum ProjectileAnchor getAnchor();
     MCAPI bool getCatchFire() const;
     MCAPI bool getEnchantChanneling() const;
@@ -31,41 +31,41 @@ public:
     MCAPI class Vec3 getOffset();
     MCAPI enum LevelSoundEvent getShootSound();
     MCAPI bool getShootTarget();
-    MCAPI class Vec3 getShooterAngle(class Actor&) const;
+    MCAPI class Vec3 getShooterAngle(class Actor &) const;
     MCAPI float getThrowPower() const;
     MCAPI float getUncertainty(enum Difficulty) const;
     MCAPI float getUncertaintyBase() const;
     MCAPI float getUncertaintyMultiplier() const;
-    MCAPI void handleMovementGravity(class Actor&);
-    MCAPI void handleMovementHoming(class Actor&);
-    MCAPI void hurt(class Actor&, class ActorDamageSource const&);
+    MCAPI void handleMovementGravity(class Actor &);
+    MCAPI void handleMovementHoming(class Actor &);
+    MCAPI void hurt(class Actor &, class ActorDamageSource const &);
     MCAPI int incrementFlightTime();
     MCAPI int incrementLife();
     MCAPI int incrementOnGroundTime();
-    MCAPI void initFromDefinition(class Actor&);
-    MCAPI void lerpMotion(class Actor&, class Vec3 const&);
-    MCAPI void onHit(class Actor&, class HitResult const&);
-    MCAPI class ProjectileComponent& operator=(class ProjectileComponent const&);
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
-    MCAPI void setActiveTarget(class Actor&, class Actor*);
+    MCAPI void initFromDefinition(class Actor &);
+    MCAPI void lerpMotion(class Actor &, class Vec3 const &);
+    MCAPI void onHit(class Actor &, class HitResult const &);
+    MCAPI class ProjectileComponent & operator=(class ProjectileComponent const &);
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
+    MCAPI void setActiveTarget(class Actor &, class Actor *);
     MCAPI void setCachedHitResult(class HitResult);
     MCAPI void setChanneling();
-    MCAPI void setEnchantImpaler(int const&);
+    MCAPI void setEnchantImpaler(int const &);
     MCAPI void setHitResult(class HitResult);
     MCAPI void setKnockbackForce(float);
     MCAPI void setNoPhysics(bool);
     MCAPI void setOwnerId(struct ActorUniqueID);
     MCAPI void setPotionEffect(int);
     MCAPI void setSplashRange(float);
-    MCAPI void shoot(class Actor&, class Actor&);
-    MCAPI void shoot(class Actor&, class Vec3 const&, float, float, class Vec3 const&, class Actor*);
+    MCAPI void shoot(class Actor &, class Actor &);
+    MCAPI void shoot(class Actor &, class Vec3 const &, float, float, class Vec3 const &, class Actor *);
     MCAPI ~ProjectileComponent();
     MCAPI static unsigned int const DELAY_ON_HIT;
 
 protected:
 
 private:
-    MCAPI void _handleLightningOnHit(class Actor&);
-    MCAPI void _selectNextMoveDirection(class Actor&, enum ProjectileComponent::EAxis);
+    MCAPI void _handleLightningOnHit(class Actor &);
+    MCAPI void _selectNextMoveDirection(class Actor &, enum ProjectileComponent::EAxis);
 
 };

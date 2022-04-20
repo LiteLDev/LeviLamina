@@ -18,8 +18,8 @@ class ScriptInventoryComponent2 : public ScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTINVENTORYCOMPONENT2
 public:
-    class ScriptInventoryComponent2& operator=(class ScriptInventoryComponent2 const&) = delete;
-    ScriptInventoryComponent2(class ScriptInventoryComponent2 const&) = delete;
+    class ScriptInventoryComponent2& operator=(class ScriptInventoryComponent2 const &) = delete;
+    ScriptInventoryComponent2(class ScriptInventoryComponent2 const &) = delete;
     ScriptInventoryComponent2() = delete;
 #endif
 
@@ -34,12 +34,12 @@ public:
     */
     MCAPI class Scripting::Result<int> getAdditionalSlotsPerStrength() const;
     MCAPI class Scripting::Result<bool> getCanBeSiphonedFrom() const;
-    MCAPI class Scripting::Result<std::string > getContainerType() const;
+    MCAPI class Scripting::Result<std::string> getContainerType() const;
     MCAPI class Scripting::Result<int> getInventorySize() const;
-    MCAPI class Scripting::Result<class Scripting::WeakTypedObjectHandle<class ScriptInventoryComponentContainer> > getOrCreateContainer();
+    MCAPI class Scripting::Result<class Scripting::WeakTypedObjectHandle<class ScriptInventoryComponentContainer>> getOrCreateContainer();
     MCAPI class Scripting::Result<bool> getPrivate() const;
     MCAPI class Scripting::Result<bool> getRestrictToOwner() const;
-    MCAPI class ScriptInventoryComponent2& operator=(class ScriptInventoryComponent2&&);
+    MCAPI class ScriptInventoryComponent2 & operator=(class ScriptInventoryComponent2 &&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptInventoryComponent2> bind(struct Scripting::Version);
 
 protected:

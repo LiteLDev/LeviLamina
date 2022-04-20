@@ -17,15 +17,15 @@ class ScaleByAgeSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCALEBYAGESYSTEM
 public:
-    class ScaleByAgeSystem& operator=(class ScaleByAgeSystem const&) = delete;
-    ScaleByAgeSystem(class ScaleByAgeSystem const&) = delete;
+    class ScaleByAgeSystem& operator=(class ScaleByAgeSystem const &) = delete;
+    ScaleByAgeSystem(class ScaleByAgeSystem const &) = delete;
     ScaleByAgeSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScaleByAgeSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

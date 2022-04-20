@@ -17,13 +17,20 @@ class ContentTierManager {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTENTTIERMANAGER
 public:
-    class ContentTierManager& operator=(class ContentTierManager const&) = delete;
-    ContentTierManager(class ContentTierManager const&) = delete;
+    class ContentTierManager& operator=(class ContentTierManager const &) = delete;
+    ContentTierManager(class ContentTierManager const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ContentTierManager();
     /*1*/ virtual class ContentTierInfo getContentTierInfo() const;
+    /*
+    inline  ~ContentTierManager(){
+         (ContentTierManager::*rv)();
+        *((void**)&rv) = dlsym("??1ContentTierManager@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ContentTierManager();
 
 protected:

@@ -17,14 +17,14 @@ class ExternalRecipeStore {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXTERNALRECIPESTORE
 public:
-    class ExternalRecipeStore& operator=(class ExternalRecipeStore const&) = delete;
-    ExternalRecipeStore(class ExternalRecipeStore const&) = delete;
+    class ExternalRecipeStore& operator=(class ExternalRecipeStore const &) = delete;
+    ExternalRecipeStore(class ExternalRecipeStore const &) = delete;
     ExternalRecipeStore() = delete;
 #endif
 
 public:
-    MCAPI void registerBlockReduction(class ItemStack const&, std::vector<class ItemStack>&&);
-    MCAPI void setBlockReducer(class BlockReducer*);
+    MCAPI void registerBlockReduction(class ItemStack const &, std::vector<class ItemStack> &&);
+    MCAPI void setBlockReducer(class BlockReducer *);
 
 protected:
 

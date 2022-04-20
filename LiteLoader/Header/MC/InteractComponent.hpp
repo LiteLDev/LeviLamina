@@ -17,20 +17,19 @@ class InteractComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERACTCOMPONENT
 public:
-    class InteractComponent& operator=(class InteractComponent const&) = delete;
-    InteractComponent(class InteractComponent const&) = delete;
+    class InteractComponent& operator=(class InteractComponent const &) = delete;
+    InteractComponent(class InteractComponent const &) = delete;
     InteractComponent() = delete;
 #endif
 
 public:
     MCAPI short getCooldownCounter() const;
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
-    MCAPI void initFromDefinition(class Actor&, class InteractDefinition const&);
+    MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     MCAPI void setCooldownCounter(short);
 
 protected:
 
 private:
-    MCAPI bool _runInteraction(class Actor&, struct Interaction const&, class Player&, class ActorInteraction&);
+    MCAPI bool _runInteraction(class Actor &, struct Interaction const &, class Player &, class ActorInteraction &);
 
 };

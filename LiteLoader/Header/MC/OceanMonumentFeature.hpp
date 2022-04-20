@@ -18,25 +18,20 @@ class OceanMonumentFeature : public StructureFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCEANMONUMENTFEATURE
 public:
-    class OceanMonumentFeature& operator=(class OceanMonumentFeature const&) = delete;
-    OceanMonumentFeature(class OceanMonumentFeature const&) = delete;
+    class OceanMonumentFeature& operator=(class OceanMonumentFeature const &) = delete;
+    OceanMonumentFeature(class OceanMonumentFeature const &) = delete;
     OceanMonumentFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~OceanMonumentFeature();
-    /*2*/ virtual bool getNearestGeneratedFeature(class Dimension&, class BiomeSource const&, class BlockPos const&, class BlockPos&, class IPreliminarySurfaceProvider const&, bool);
-    /*3*/ virtual bool isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&);
-    /*4*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
-    /*
-    inline  ~OceanMonumentFeature(){
-         (OceanMonumentFeature::*rv)();
-        *((void**)&rv) = dlsym("??1OceanMonumentFeature@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual bool shouldAddHardcodedSpawnAreas() const;
+    /*2*/ virtual bool shouldPostProcessMobs() const;
+    /*3*/ virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
+    /*4*/ virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry &);
+    /*5*/ virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &);
+    /*6*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
     MCAPI OceanMonumentFeature(unsigned int);
-    MCAPI static void initMobSpawnTypes(class HardcodedSpawnAreaRegistry&);
 
 protected:
 

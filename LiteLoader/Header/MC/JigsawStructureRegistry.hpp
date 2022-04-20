@@ -17,18 +17,18 @@ class JigsawStructureRegistry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JIGSAWSTRUCTUREREGISTRY
 public:
-    class JigsawStructureRegistry& operator=(class JigsawStructureRegistry const&) = delete;
-    JigsawStructureRegistry(class JigsawStructureRegistry const&) = delete;
+    class JigsawStructureRegistry& operator=(class JigsawStructureRegistry const &) = delete;
+    JigsawStructureRegistry(class JigsawStructureRegistry const &) = delete;
 #endif
 
 public:
     MCAPI JigsawStructureRegistry();
-    MCAPI class JigsawStructureActorRulesRegistry& getJigsawStructureActorRulesRegistry();
-    MCAPI class JigsawStructureBlockRulesRegistry& getJigsawStructureBlockRulesRegistry();
-    MCAPI class JigsawStructureBlockTagRulesRegistry& getJigsawStructureBlockTagRulesRegistry();
-    MCAPI class JigsawStructureElementRegistry& getJigsawStructureElementRegistry();
-    MCAPI class StructureTemplatePool const* lookupByName(std::string) const;
-    MCAPI void registerPool(std::unique_ptr<class StructureTemplatePool>&&);
+    MCAPI class JigsawStructureActorRulesRegistry & getJigsawStructureActorRulesRegistry();
+    MCAPI class JigsawStructureBlockRulesRegistry & getJigsawStructureBlockRulesRegistry();
+    MCAPI class JigsawStructureBlockTagRulesRegistry & getJigsawStructureBlockTagRulesRegistry();
+    MCAPI class JigsawStructureElementRegistry & getJigsawStructureElementRegistry();
+    MCAPI class StructureTemplatePool const * lookupByName(std::string) const;
+    MCAPI void registerPool(std::unique_ptr<class StructureTemplatePool> &&);
     MCAPI ~JigsawStructureRegistry();
 
 protected:

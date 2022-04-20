@@ -17,28 +17,16 @@ class ContainerScreenValidatorBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERSCREENVALIDATORBASE
 public:
-    class ContainerScreenValidatorBase& operator=(class ContainerScreenValidatorBase const&) = delete;
-    ContainerScreenValidatorBase(class ContainerScreenValidatorBase const&) = delete;
+    class ContainerScreenValidatorBase& operator=(class ContainerScreenValidatorBase const &) = delete;
+    ContainerScreenValidatorBase(class ContainerScreenValidatorBase const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ContainerScreenValidatorBase();
+    /*1*/ virtual class std::shared_ptr<class ContainerValidationCommitObject> postCommitItemRemoved(int, class ItemStack const &);
+    /*2*/ virtual bool isCraftingImplemented();
+    /*3*/ virtual struct ContainerValidationCraftResult getCraftResult(class ContainerScreenContext const &, class ContainerScreenValidation &, std::unique_ptr<struct ContainerValidationCraftInputs>);
     /*
-    inline void clear(){
-        void (ContainerScreenValidatorBase::*rv)();
-        *((void**)&rv) = dlsym("?clear@ContainerScreenValidatorBase@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void onItemRemoved(int a0, class ItemStack const& a1){
-        void (ContainerScreenValidatorBase::*rv)(int, class ItemStack const&);
-        *((void**)&rv) = dlsym("?onItemRemoved@ContainerScreenValidatorBase@@UEAAXHAEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStack const&>(a1));
-    }
-    inline void commitResults(class ContainerScreenContext const& a0){
-        void (ContainerScreenValidatorBase::*rv)(class ContainerScreenContext const&);
-        *((void**)&rv) = dlsym("?commitResults@ContainerScreenValidatorBase@@UEAAXAEBVContainerScreenContext@@@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0));
-    }
     inline  ~ContainerScreenValidatorBase(){
          (ContainerScreenValidatorBase::*rv)();
         *((void**)&rv) = dlsym("??1ContainerScreenValidatorBase@@UEAA@XZ");

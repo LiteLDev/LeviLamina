@@ -23,25 +23,26 @@ struct Descriptions {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEATURETERRAINADJUSTMENTS
 public:
-    class FeatureTerrainAdjustments& operator=(class FeatureTerrainAdjustments const&) = delete;
-    FeatureTerrainAdjustments(class FeatureTerrainAdjustments const&) = delete;
+    class FeatureTerrainAdjustments& operator=(class FeatureTerrainAdjustments const &) = delete;
+    FeatureTerrainAdjustments(class FeatureTerrainAdjustments const &) = delete;
     FeatureTerrainAdjustments() = delete;
 #endif
 
 public:
-    MCAPI void setBeardAndShaver(class BoundingBox const&, int, float, float);
-    MCAPI void setBeardifier(class BoundingBox const&, int);
-    MCAPI void setBury(class BoundingBox const&);
-    MCAPI struct FeatureTerrainAdjustments::Descriptions take(class ChunkPos const&);
+    MCAPI struct FeatureTerrainAdjustments::Descriptions at(class ChunkPos const &);
+    MCAPI void garbageCollectDescriptions();
+    MCAPI class std::shared_ptr<bool> setBeardAndShaver(class BoundingBox const &, int, float, float);
+    MCAPI class std::shared_ptr<bool> setBeardifier(class BoundingBox const &, int);
+    MCAPI class std::shared_ptr<bool> setBury(class BoundingBox const &);
     MCAPI ~FeatureTerrainAdjustments();
-    MCAPI static float calculateContribution(struct FeatureTerrainAdjustments::Descriptions const&, class BlockPos const&, float);
-    MCAPI static struct BeardKernel& getBeardKernel();
-    MCAPI static bool shouldDoTerrainAdjustments(struct FeatureTerrainAdjustments::Descriptions const&);
+    MCAPI static float calculateContribution(struct FeatureTerrainAdjustments::Descriptions const &, class BlockPos const &, float);
+    MCAPI static struct BeardKernel & getBeardKernel();
+    MCAPI static bool shouldDoTerrainAdjustments(struct FeatureTerrainAdjustments::Descriptions const &);
 
 protected:
 
 private:
-    MCAPI void _insertDescriptions(std::vector<class ChunkPos> const&, class std::function<void (struct FeatureTerrainAdjustments::Descriptions& )>&&);
+    MCAPI class std::shared_ptr<bool> _insertDescriptions(std::vector<class ChunkPos> const &, class std::function<void (struct FeatureTerrainAdjustments::Descriptions &, class std::weak_ptr<bool>)> &&);
     MCAPI static struct BeardKernel mBeardKernel;
 
 };

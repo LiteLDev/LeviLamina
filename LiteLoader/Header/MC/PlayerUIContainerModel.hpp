@@ -18,8 +18,8 @@ class PlayerUIContainerModel : public PlayerUIContainerModelBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERUICONTAINERMODEL
 public:
-    class PlayerUIContainerModel& operator=(class PlayerUIContainerModel const&) = delete;
-    PlayerUIContainerModel(class PlayerUIContainerModel const&) = delete;
+    class PlayerUIContainerModel& operator=(class PlayerUIContainerModel const &) = delete;
+    PlayerUIContainerModel(class PlayerUIContainerModel const &) = delete;
     PlayerUIContainerModel() = delete;
 #endif
 
@@ -32,7 +32,7 @@ public:
     /*17*/ virtual void __unk_vfn_17();
     /*19*/ virtual void __unk_vfn_19();
     /*21*/ virtual int _getContainerOffset() const;
-    MCAPI PlayerUIContainerModel(enum ContainerEnumName, class Player&);
+    MCAPI PlayerUIContainerModel(enum ContainerEnumName, class Player &);
 
 protected:
 

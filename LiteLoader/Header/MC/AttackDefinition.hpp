@@ -19,14 +19,14 @@ class AttackDefinition : public BehaviorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTACKDEFINITION
 public:
-    class AttackDefinition& operator=(class AttackDefinition const&) = delete;
-    AttackDefinition(class AttackDefinition const&) = delete;
+    class AttackDefinition& operator=(class AttackDefinition const &) = delete;
+    AttackDefinition(class AttackDefinition const &) = delete;
     AttackDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~AttackDefinition();
-    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 
 protected:
 

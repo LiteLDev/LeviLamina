@@ -19,25 +19,25 @@ class PermissionsFile {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERMISSIONSFILE
 public:
-    class PermissionsFile& operator=(class PermissionsFile const&) = delete;
-    PermissionsFile(class PermissionsFile const&) = delete;
+    class PermissionsFile& operator=(class PermissionsFile const &) = delete;
+    PermissionsFile(class PermissionsFile const &) = delete;
     PermissionsFile() = delete;
 #endif
 
 public:
-    MCAPI PermissionsFile(class Core::Path const&);
-    MCAPI void applyPlayerPermissionsFromDisk(class Player&, class UserEntityIdentifierComponent const&, enum CommandPermissionLevel);
-    MCAPI class std::unordered_map<std::string, enum PlayerPermissionLevel, struct std::hash<std::string >, struct std::equal_to<std::string >, class std::allocator<struct std::pair<std::string const, enum PlayerPermissionLevel> > > const& getPermissions() const;
+    MCAPI PermissionsFile(class Core::Path const &);
+    MCAPI void applyPlayerPermissionsFromDisk(class Player &, class UserEntityIdentifierComponent const &, enum CommandPermissionLevel);
+    MCAPI class std::unordered_map<std::string, enum PlayerPermissionLevel, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum PlayerPermissionLevel>>> const & getPermissions() const;
     MCAPI std::vector<std::string> getXUIDsByPermission(enum PlayerPermissionLevel) const;
-    MCAPI bool isPermissionsSet(std::string const&, enum PlayerPermissionLevel) const;
-    MCAPI void persistPlayerPermissionsToDisk(std::string const&, enum PlayerPermissionLevel);
-    MCAPI void persistPlayerPermissionsToDisk(class UserEntityIdentifierComponent const&, enum PlayerPermissionLevel);
+    MCAPI bool isPermissionsSet(std::string const &, enum PlayerPermissionLevel) const;
+    MCAPI void persistPlayerPermissionsToDisk(std::string const &, enum PlayerPermissionLevel);
+    MCAPI void persistPlayerPermissionsToDisk(class UserEntityIdentifierComponent const &, enum PlayerPermissionLevel);
     MCAPI enum FileReadResult reload();
 
 protected:
 
 private:
     MCAPI class std::tuple<enum FileReadResult, class Json::Value> readPermissionFile();
-    MCAPI void setDefaultPlayerPermission(class Player&, enum CommandPermissionLevel);
+    MCAPI void setDefaultPlayerPermission(class Player &, enum CommandPermissionLevel);
 
 };

@@ -19,7 +19,7 @@ class BiomeFilterGroup : public FilterGroup {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMEFILTERGROUP
 public:
-    class BiomeFilterGroup& operator=(class BiomeFilterGroup const&) = delete;
+    class BiomeFilterGroup& operator=(class BiomeFilterGroup const &) = delete;
     BiomeFilterGroup() = delete;
 #endif
 
@@ -33,8 +33,8 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI BiomeFilterGroup(class BiomeFilterGroup const&);
-    MCAPI void finalizeParsedValue(class IWorldRegistriesProvider&);
+    MCAPI BiomeFilterGroup(class BiomeFilterGroup const &);
+    MCAPI void finalizeParsedValue(class IWorldRegistriesProvider &);
 
 protected:
 

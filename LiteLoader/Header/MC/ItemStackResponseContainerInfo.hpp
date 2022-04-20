@@ -15,13 +15,13 @@ struct ItemStackResponseContainerInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKRESPONSECONTAINERINFO
 public:
-    struct ItemStackResponseContainerInfo& operator=(struct ItemStackResponseContainerInfo const&) = delete;
-    ItemStackResponseContainerInfo(struct ItemStackResponseContainerInfo const&) = delete;
+    struct ItemStackResponseContainerInfo& operator=(struct ItemStackResponseContainerInfo const &) = delete;
+    ItemStackResponseContainerInfo(struct ItemStackResponseContainerInfo const &) = delete;
     ItemStackResponseContainerInfo() = delete;
 #endif
 
 public:
-    MCAPI ItemStackResponseContainerInfo(struct ItemStackResponseContainerInfo&&);
+    MCAPI ItemStackResponseContainerInfo(struct ItemStackResponseContainerInfo &&);
     MCAPI ItemStackResponseContainerInfo(enum ContainerEnumName);
     MCAPI ~ItemStackResponseContainerInfo();
 

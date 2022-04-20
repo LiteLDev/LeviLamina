@@ -17,8 +17,8 @@ class RestrictOpenDoorGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESTRICTOPENDOORGOAL
 public:
-    class RestrictOpenDoorGoal& operator=(class RestrictOpenDoorGoal const&) = delete;
-    RestrictOpenDoorGoal(class RestrictOpenDoorGoal const&) = delete;
+    class RestrictOpenDoorGoal& operator=(class RestrictOpenDoorGoal const &) = delete;
+    RestrictOpenDoorGoal(class RestrictOpenDoorGoal const &) = delete;
     RestrictOpenDoorGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI RestrictOpenDoorGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI RestrictOpenDoorGoal(class Mob &);
 
 protected:
 

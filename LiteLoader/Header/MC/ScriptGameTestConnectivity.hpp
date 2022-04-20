@@ -15,12 +15,12 @@ class ScriptGameTestConnectivity {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTGAMETESTCONNECTIVITY
 public:
-    class ScriptGameTestConnectivity& operator=(class ScriptGameTestConnectivity const&) = delete;
+    class ScriptGameTestConnectivity& operator=(class ScriptGameTestConnectivity const &) = delete;
     ScriptGameTestConnectivity() = delete;
 #endif
 
 public:
-    MCAPI ScriptGameTestConnectivity(class ScriptGameTestConnectivity const&);
+    MCAPI ScriptGameTestConnectivity(class ScriptGameTestConnectivity const &);
     MCAPI ScriptGameTestConnectivity(bool, bool, bool, bool);
 
 protected:

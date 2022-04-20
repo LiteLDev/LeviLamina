@@ -17,13 +17,13 @@ class GameEventMovementTracker {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEEVENTMOVEMENTTRACKER
 public:
-    class GameEventMovementTracker& operator=(class GameEventMovementTracker const&) = delete;
-    GameEventMovementTracker(class GameEventMovementTracker const&) = delete;
+    class GameEventMovementTracker& operator=(class GameEventMovementTracker const &) = delete;
+    GameEventMovementTracker(class GameEventMovementTracker const &) = delete;
     GameEventMovementTracker() = delete;
 #endif
 
 public:
-    MCAPI GameEventMovementTracker(class Mob&);
+    MCAPI GameEventMovementTracker(class Mob &);
     MCAPI void trackMovement(bool);
 
 protected:

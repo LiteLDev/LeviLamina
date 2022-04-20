@@ -18,8 +18,8 @@ class HurtByTargetGoal : public TargetGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HURTBYTARGETGOAL
 public:
-    class HurtByTargetGoal& operator=(class HurtByTargetGoal const&) = delete;
-    HurtByTargetGoal(class HurtByTargetGoal const&) = delete;
+    class HurtByTargetGoal& operator=(class HurtByTargetGoal const &) = delete;
+    HurtByTargetGoal(class HurtByTargetGoal const &) = delete;
     HurtByTargetGoal() = delete;
 #endif
 
@@ -27,9 +27,9 @@ public:
     /*0*/ virtual ~HurtByTargetGoal();
     /*1*/ virtual bool canUse();
     /*4*/ virtual void start();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*11*/ virtual void alertOther(class Mob*, class Mob*);
-    MCAPI HurtByTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&, bool);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    /*11*/ virtual void alertOther(class Mob *, class Mob *);
+    MCAPI HurtByTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, bool);
 
 protected:
 

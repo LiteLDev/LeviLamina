@@ -18,15 +18,15 @@ class DefendVillageTargetDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFENDVILLAGETARGETDEFINITION
 public:
-    class DefendVillageTargetDefinition& operator=(class DefendVillageTargetDefinition const&) = delete;
-    DefendVillageTargetDefinition(class DefendVillageTargetDefinition const&) = delete;
-    DefendVillageTargetDefinition() = delete;
+    class DefendVillageTargetDefinition& operator=(class DefendVillageTargetDefinition const &) = delete;
+    DefendVillageTargetDefinition(class DefendVillageTargetDefinition const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~DefendVillageTargetDefinition();
-    MCAPI void initialize(class EntityContext&, class DefendVillageTargetGoal&);
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DefendVillageTargetDefinition> >&);
+    MCAPI DefendVillageTargetDefinition();
+    MCAPI void initialize(class EntityContext &, class DefendVillageTargetGoal &);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DefendVillageTargetDefinition>> &);
 
 protected:
 

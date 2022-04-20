@@ -18,8 +18,8 @@ class GameRulesChangedPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMERULESCHANGEDPACKET
 public:
-    class GameRulesChangedPacket& operator=(class GameRulesChangedPacket const&) = delete;
-    GameRulesChangedPacket(class GameRulesChangedPacket const&) = delete;
+    class GameRulesChangedPacket& operator=(class GameRulesChangedPacket const &) = delete;
+    GameRulesChangedPacket(class GameRulesChangedPacket const &) = delete;
     GameRulesChangedPacket() = delete;
 #endif
 
@@ -27,8 +27,8 @@ public:
     /*0*/ virtual ~GameRulesChangedPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 
 protected:
 

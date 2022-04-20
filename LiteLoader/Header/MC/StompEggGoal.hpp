@@ -18,21 +18,21 @@ class StompEggGoal : public StompBlockGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STOMPEGGGOAL
 public:
-    class StompEggGoal& operator=(class StompEggGoal const&) = delete;
-    StompEggGoal(class StompEggGoal const&) = delete;
+    class StompEggGoal& operator=(class StompEggGoal const &) = delete;
+    StompEggGoal(class StompEggGoal const &) = delete;
     StompEggGoal() = delete;
 #endif
 
 public:
     /*0*/ virtual ~StompEggGoal();
     /*3*/ virtual void __unk_vfn_3();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*18*/ virtual void _createBreakProgressParticles(class Level&, class BlockSource&, class BlockPos);
-    /*19*/ virtual void _createDestroyParticles(class Level&, class BlockSource&, class BlockPos);
-    /*20*/ virtual void _playBreakProgressSound(class Level&, class BlockSource&, class BlockPos);
-    /*21*/ virtual void _playDestroySound(class Level&, class BlockSource&, class BlockPos);
+    /*18*/ virtual void _createBreakProgressParticles(class Level &, class BlockSource &, class BlockPos);
+    /*19*/ virtual void _createDestroyParticles(class Level &, class BlockSource &, class BlockPos);
+    /*20*/ virtual void _playBreakProgressSound(class Level &, class BlockSource &, class BlockPos);
+    /*21*/ virtual void _playDestroySound(class Level &, class BlockSource &, class BlockPos);
 
 protected:
 

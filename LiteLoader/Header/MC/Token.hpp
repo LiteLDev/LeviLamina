@@ -17,14 +17,14 @@ struct Token {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TOKEN
 public:
-    struct Token& operator=(struct Token const&) = delete;
-    Token(struct Token const&) = delete;
+    struct Token& operator=(struct Token const &) = delete;
+    Token(struct Token const &) = delete;
     Token() = delete;
 #endif
 
 public:
-    MCAPI Token(std::string const&);
-    MCAPI std::string const& getText(std::string const&) const;
+    MCAPI Token(std::string const &);
+    MCAPI std::string const & getText(std::string const &) const;
     MCAPI ~Token();
 
 protected:

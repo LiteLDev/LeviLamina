@@ -17,16 +17,16 @@ class ActorLimitedLifetimeComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORLIMITEDLIFETIMECOMPONENT
 public:
-    class ActorLimitedLifetimeComponent& operator=(class ActorLimitedLifetimeComponent const&) = delete;
-    ActorLimitedLifetimeComponent(class ActorLimitedLifetimeComponent const&) = delete;
+    class ActorLimitedLifetimeComponent& operator=(class ActorLimitedLifetimeComponent const &) = delete;
+    ActorLimitedLifetimeComponent(class ActorLimitedLifetimeComponent const &) = delete;
 #endif
 
 public:
     MCAPI ActorLimitedLifetimeComponent();
-    MCAPI void addAdditionalSaveData(class Actor const&, class CompoundTag&) const;
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&);
-    MCAPI static void convertFromLegacyData(class CompoundTag const&, class CompoundTag&);
-    MCAPI static bool needsLegacyConversion(class CompoundTag const&);
+    MCAPI void addAdditionalSaveData(class Actor const &, class CompoundTag &) const;
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &);
+    MCAPI static void convertFromLegacyData(class CompoundTag const &, class CompoundTag &);
+    MCAPI static bool needsLegacyConversion(class CompoundTag const &);
 
 protected:
 

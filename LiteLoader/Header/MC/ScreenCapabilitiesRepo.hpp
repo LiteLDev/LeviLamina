@@ -17,13 +17,13 @@ class ScreenCapabilitiesRepo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCREENCAPABILITIESREPO
 public:
-    class ScreenCapabilitiesRepo& operator=(class ScreenCapabilitiesRepo const&) = delete;
-    ScreenCapabilitiesRepo(class ScreenCapabilitiesRepo const&) = delete;
+    class ScreenCapabilitiesRepo& operator=(class ScreenCapabilitiesRepo const &) = delete;
+    ScreenCapabilitiesRepo(class ScreenCapabilitiesRepo const &) = delete;
 #endif
 
 public:
     MCAPI ScreenCapabilitiesRepo();
-    MCAPI std::unique_ptr<class IScreenCapabilities> get(std::string const&) const;
+    MCAPI std::unique_ptr<class IScreenCapabilities> get(std::string const &) const;
 
 protected:
 

@@ -14,8 +14,8 @@ namespace FogCommandUtil {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI bool pop(std::string const&, std::string const&, class CommandOutput&, class Player&, class FogCommandComponent&);
-    MCAPI bool push(std::string const&, std::string const&, class CommandOutput&, class Player&, class FogCommandComponent&);
-    MCAPI bool remove(std::string const&, std::string const&, class CommandOutput&, class Player&, class FogCommandComponent&);
+    MCAPI bool pop(std::string const &, std::string const &, class CommandOutput &, class Player &, class FogCommandComponent &);
+    MCAPI bool push(std::string const &, std::string const &, class CommandOutput &, class Player &, class FogCommandComponent &);
+    MCAPI bool remove(std::string const &, std::string const &, class CommandOutput &, class Player &, class FogCommandComponent &);
 
 };

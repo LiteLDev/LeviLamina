@@ -17,13 +17,13 @@ class TripodCameraComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRIPODCAMERACOMPONENT
 public:
-    class TripodCameraComponent& operator=(class TripodCameraComponent const&) = delete;
-    TripodCameraComponent(class TripodCameraComponent const&) = delete;
+    class TripodCameraComponent& operator=(class TripodCameraComponent const &) = delete;
+    TripodCameraComponent(class TripodCameraComponent const &) = delete;
     TripodCameraComponent() = delete;
 #endif
 
 public:
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+    MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
 
 protected:
 

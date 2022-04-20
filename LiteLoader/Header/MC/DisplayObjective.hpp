@@ -17,14 +17,14 @@ class DisplayObjective {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DISPLAYOBJECTIVE
 public:
-    class DisplayObjective& operator=(class DisplayObjective const&) = delete;
-    DisplayObjective(class DisplayObjective const&) = delete;
+    class DisplayObjective& operator=(class DisplayObjective const &) = delete;
+    DisplayObjective(class DisplayObjective const &) = delete;
     DisplayObjective() = delete;
 #endif
 
 public:
-    MCAPI std::string const getBelowNameStringForId(struct ScoreboardId const&) const;
-    MCAPI class Objective const& getObjective() const;
+    MCAPI std::string const getBelowNameStringForId(struct ScoreboardId const &) const;
+    MCAPI class Objective const & getObjective() const;
     MCAPI bool isValid() const;
 
 protected:

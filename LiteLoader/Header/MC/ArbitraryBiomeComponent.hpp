@@ -15,8 +15,8 @@ class ArbitraryBiomeComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ARBITRARYBIOMECOMPONENT
 public:
-    class ArbitraryBiomeComponent& operator=(class ArbitraryBiomeComponent const&) = delete;
-    ArbitraryBiomeComponent(class ArbitraryBiomeComponent const&) = delete;
+    class ArbitraryBiomeComponent& operator=(class ArbitraryBiomeComponent const &) = delete;
+    ArbitraryBiomeComponent(class ArbitraryBiomeComponent const &) = delete;
     ArbitraryBiomeComponent() = delete;
 #endif
 

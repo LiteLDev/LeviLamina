@@ -17,13 +17,13 @@ class LootTables {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTTABLES
 public:
-    class LootTables& operator=(class LootTables const&) = delete;
-    LootTables(class LootTables const&) = delete;
+    class LootTables& operator=(class LootTables const &) = delete;
+    LootTables(class LootTables const &) = delete;
     LootTables() = delete;
 #endif
 
 public:
-    MCAPI class LootTable* lookupByName(std::string const&, class ResourcePackManager&);
+    MCAPI class LootTable * lookupByName(std::string const &, class ResourcePackManager &);
     MCAPI ~LootTables();
 
 protected:

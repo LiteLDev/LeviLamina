@@ -18,13 +18,13 @@ class BlockClimberDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCLIMBERDEFINITION
 public:
-    class BlockClimberDefinition& operator=(class BlockClimberDefinition const&) = delete;
-    BlockClimberDefinition(class BlockClimberDefinition const&) = delete;
+    class BlockClimberDefinition& operator=(class BlockClimberDefinition const &) = delete;
+    BlockClimberDefinition(class BlockClimberDefinition const &) = delete;
     BlockClimberDefinition() = delete;
 #endif
 
 public:
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BlockClimberDefinition> >&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BlockClimberDefinition>> &);
 
 protected:
 

@@ -17,16 +17,16 @@ class LookAtSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATSYSTEM
 public:
-    class LookAtSystem& operator=(class LookAtSystem const&) = delete;
-    LookAtSystem(class LookAtSystem const&) = delete;
+    class LookAtSystem& operator=(class LookAtSystem const &) = delete;
+    LookAtSystem(class LookAtSystem const &) = delete;
     LookAtSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LookAtSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
-    MCAPI static void tickLookAtComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class LookAtComponent>&);
+    /*2*/ virtual void tick(class EntityRegistry &);
+    MCAPI static void tickLookAtComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class LookAtComponent> &);
 
 protected:
 

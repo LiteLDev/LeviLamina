@@ -17,24 +17,24 @@ class EncryptedProxyEnv {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCRYPTEDPROXYENV
 public:
-    class EncryptedProxyEnv& operator=(class EncryptedProxyEnv const&) = delete;
-    EncryptedProxyEnv(class EncryptedProxyEnv const&) = delete;
+    class EncryptedProxyEnv& operator=(class EncryptedProxyEnv const &) = delete;
+    EncryptedProxyEnv(class EncryptedProxyEnv const &) = delete;
     EncryptedProxyEnv() = delete;
 #endif
 
 public:
     /*0*/ virtual ~EncryptedProxyEnv();
-    /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const&, class leveldb::SequentialFile* *);
-    /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const&, class leveldb::RandomAccessFile* *);
-    /*3*/ virtual class leveldb::Status NewWritableFile(std::string const&, class leveldb::WritableFile* *);
+    /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
+    /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
+    /*3*/ virtual class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual class leveldb::Status DeleteFileA(std::string const&);
+    /*7*/ virtual class leveldb::Status DeleteFileA(std::string const &);
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void __unk_vfn_10();
-    /*11*/ virtual class leveldb::Status RenameFile(std::string const&, std::string const&);
+    /*11*/ virtual class leveldb::Status RenameFile(std::string const &, std::string const &);
 
 protected:
 

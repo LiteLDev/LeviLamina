@@ -17,22 +17,15 @@ class OceanMonumentStart {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCEANMONUMENTSTART
 public:
-    class OceanMonumentStart& operator=(class OceanMonumentStart const&) = delete;
-    OceanMonumentStart(class OceanMonumentStart const&) = delete;
+    class OceanMonumentStart& operator=(class OceanMonumentStart const &) = delete;
+    OceanMonumentStart(class OceanMonumentStart const &) = delete;
     OceanMonumentStart() = delete;
 #endif
 
 public:
     /*0*/ virtual ~OceanMonumentStart();
-    /*1*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    /*
-    inline enum StructureFeatureType getType() const{
-        enum StructureFeatureType (OceanMonumentStart::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@OceanMonumentStart@@UEBA?AW4StructureFeatureType@@XZ");
-        return (this->*rv)();
-    }
-    */
-    MCAPI void createMonument(class Dimension&, class Random&, int, int);
+    /*1*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
+    MCAPI void createMonument(class Dimension &, class Random &, int, int);
 
 protected:
 

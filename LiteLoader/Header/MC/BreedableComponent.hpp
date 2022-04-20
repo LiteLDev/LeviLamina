@@ -17,29 +17,32 @@ class BreedableComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREEDABLECOMPONENT
 public:
-    class BreedableComponent& operator=(class BreedableComponent const&) = delete;
-    BreedableComponent(class BreedableComponent const&) = delete;
+    class BreedableComponent& operator=(class BreedableComponent const &) = delete;
+    BreedableComponent(class BreedableComponent const &) = delete;
 #endif
 
 public:
     MCAPI BreedableComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag&);
-    MCAPI bool canMate(class Actor const&, class Actor const&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI bool canMate(class Actor const &, class Actor const &) const;
     MCAPI void decrementBreedCooldown();
     MCAPI void decrementLoveTimer();
     MCAPI int getBreedCooldown() const;
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+    MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     MCAPI int getLoveTimer() const;
-    MCAPI void mate(class Actor&, class Actor&);
-    MCAPI bool meetsSittingRequirements(class Actor const&) const;
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
-    MCAPI void resetLove(class Actor&);
+    MCAPI void mate(class Actor &, class Actor &);
+    MCAPI bool meetsSittingRequirements(class Actor const &) const;
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
+    MCAPI void resetLove(class Actor &);
     MCAPI void setLoveTimer(int);
 
 protected:
 
 private:
-    MCAPI void _handleMate(class Actor&, class Actor&);
-    MCAPI void _handlePregnancy(class Actor&, class Actor&);
+    MCAPI bool _canBreed(class Actor &, class Player &, class ItemStack const &);
+    MCAPI void _handleMate(class Actor &, class Actor &);
+    MCAPI void _handlePregnancy(class Actor &, class Actor &);
+    MCAPI bool _meetsEnvironmentRequirements(class Actor &) const;
+    MCAPI void _useBreedItem(class Actor &, class Player &, class ItemStack const &);
 
 };

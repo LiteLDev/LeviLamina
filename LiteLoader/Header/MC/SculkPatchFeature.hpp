@@ -17,19 +17,17 @@ class SculkPatchFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCULKPATCHFEATURE
 public:
-    class SculkPatchFeature& operator=(class SculkPatchFeature const&) = delete;
-    SculkPatchFeature(class SculkPatchFeature const&) = delete;
+    class SculkPatchFeature& operator=(class SculkPatchFeature const &) = delete;
+    SculkPatchFeature(class SculkPatchFeature const &) = delete;
     SculkPatchFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SculkPatchFeature();
-    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 
 protected:
 
 private:
-    MCAPI void _placeGround(class IBlockWorldGenAPI&, std::vector<class BlockPos>&, class BlockPos, int) const;
-    MCAPI std::vector<class BlockPos> _placeGroundPatch(class IBlockWorldGenAPI&, class Random&, class BlockPos const&, int, int) const;
 
 };

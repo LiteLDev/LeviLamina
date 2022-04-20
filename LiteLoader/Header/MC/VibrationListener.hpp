@@ -17,25 +17,34 @@ class VibrationListener {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VIBRATIONLISTENER
 public:
-    class VibrationListener& operator=(class VibrationListener const&) = delete;
-    VibrationListener(class VibrationListener const&) = delete;
+    class VibrationListener& operator=(class VibrationListener const &) = delete;
+    VibrationListener(class VibrationListener const &) = delete;
     VibrationListener() = delete;
 #endif
 
 public:
     /*0*/ virtual ~VibrationListener();
-    /*1*/ virtual void handleGameEvent(class GameEvent const&, class BlockPos const&, class Actor const*, class BlockSource&);
-    /*2*/ virtual class BlockPos getOwnerPos() const;
-    /*3*/ virtual bool isEventInRange(class GameEvent const&, class BlockPos const&) const;
-    MCAPI VibrationListener(class std::function<void (struct Tick, class BlockPos)>, class std::function<class BlockPos (void)>, int, enum VibrationListener::OwnerType);
-    MCAPI class GameEvent const& getGameEvent() const;
-    MCAPI unsigned __int64 getRange() const;
-    MCAPI bool isWaiting() const;
-    MCAPI void stopWaiting();
-    MCAPI static int getGameEventFrequency(class GameEvent const&);
+    /*1*/ virtual void handleGameEvent(class GameEvent const &, class BlockPos const &, class Actor *, class BlockSource &);
+    /*
+    inline unsigned int getRange() const{
+        unsigned int (VibrationListener::*rv)() const;
+        *((void**)&rv) = dlsym("?getRange@VibrationListener@@UEBAIXZ");
+        return (this->*rv)();
+    }
+    inline class GameEvents::PositionSource const & getPositionSource() const{
+        class GameEvents::PositionSource const & (VibrationListener::*rv)() const;
+        *((void**)&rv) = dlsym("?getPositionSource@VibrationListener@@UEBAAEBVPositionSource@GameEvents@@XZ");
+        return (this->*rv)();
+    }
+    */
+    MCAPI VibrationListener(std::unique_ptr<class VibrationListenerConfig> &&, class GameEvents::PositionSource, unsigned int, enum VibrationListener::OwnerType);
+    MCAPI class GameEvent const & getGameEvent() const;
+    MCAPI void tick(class BlockSource &);
+    MCAPI static int getGameEventFrequency(class GameEvent const &);
 
 protected:
 
 private:
+    MCAPI void _sendSignal(class BlockSource &, class GameEvent const &, class Actor const *, class BlockPos const &, class GameEvents::PositionSource const &);
 
 };

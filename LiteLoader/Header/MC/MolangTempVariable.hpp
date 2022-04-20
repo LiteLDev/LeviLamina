@@ -15,13 +15,13 @@ struct MolangTempVariable {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGTEMPVARIABLE
 public:
-    struct MolangTempVariable& operator=(struct MolangTempVariable const&) = delete;
-    MolangTempVariable(struct MolangTempVariable const&) = delete;
+    struct MolangTempVariable& operator=(struct MolangTempVariable const &) = delete;
+    MolangTempVariable(struct MolangTempVariable const &) = delete;
     MolangTempVariable() = delete;
 #endif
 
 public:
-    MCAPI MolangTempVariable(class HashedString const&);
+    MCAPI MolangTempVariable(class HashedString const &);
     MCAPI ~MolangTempVariable();
 
 protected:

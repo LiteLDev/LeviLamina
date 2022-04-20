@@ -17,30 +17,30 @@ class TestSummaryDisplayer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TESTSUMMARYDISPLAYER
 public:
-    class TestSummaryDisplayer& operator=(class TestSummaryDisplayer const&) = delete;
-    TestSummaryDisplayer(class TestSummaryDisplayer const&) = delete;
+    class TestSummaryDisplayer& operator=(class TestSummaryDisplayer const &) = delete;
+    TestSummaryDisplayer(class TestSummaryDisplayer const &) = delete;
     TestSummaryDisplayer() = delete;
 #endif
 
 public:
     /*0*/ virtual ~TestSummaryDisplayer();
     /*
-    inline void onTestPassed(class gametest::BaseGameTestInstance& a0){
-        void (TestSummaryDisplayer::*rv)(class gametest::BaseGameTestInstance&);
+    inline void onTestPassed(class gametest::BaseGameTestInstance & a0){
+        void (TestSummaryDisplayer::*rv)(class gametest::BaseGameTestInstance &);
         *((void**)&rv) = dlsym("?onTestPassed@TestSummaryDisplayer@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z");
-        return (this->*rv)(std::forward<class gametest::BaseGameTestInstance&>(a0));
+        return (this->*rv)(std::forward<class gametest::BaseGameTestInstance &>(a0));
     }
-    inline void onTestFailed(class gametest::BaseGameTestInstance& a0){
-        void (TestSummaryDisplayer::*rv)(class gametest::BaseGameTestInstance&);
+    inline void onTestFailed(class gametest::BaseGameTestInstance & a0){
+        void (TestSummaryDisplayer::*rv)(class gametest::BaseGameTestInstance &);
         *((void**)&rv) = dlsym("?onTestFailed@TestSummaryDisplayer@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z");
-        return (this->*rv)(std::forward<class gametest::BaseGameTestInstance&>(a0));
+        return (this->*rv)(std::forward<class gametest::BaseGameTestInstance &>(a0));
     }
     */
 
 protected:
 
 private:
-    MCAPI void _say(std::string const&, std::string const&) const;
+    MCAPI void _say(std::string const &, std::string const &) const;
     MCAPI void _showTestSummaryIfAllDone() const;
 
 };

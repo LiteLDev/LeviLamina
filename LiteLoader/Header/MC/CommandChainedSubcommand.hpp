@@ -15,13 +15,13 @@ class CommandChainedSubcommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDCHAINEDSUBCOMMAND
 public:
-    class CommandChainedSubcommand& operator=(class CommandChainedSubcommand const&) = delete;
-    CommandChainedSubcommand(class CommandChainedSubcommand const&) = delete;
+    class CommandChainedSubcommand& operator=(class CommandChainedSubcommand const &) = delete;
+    CommandChainedSubcommand(class CommandChainedSubcommand const &) = delete;
     CommandChainedSubcommand() = delete;
 #endif
 
 public:
-    MCAPI class Command* getCommand() const;
+    MCAPI class Command * getCommand() const;
     MCAPI void setCommand(std::unique_ptr<class Command>);
 
 protected:

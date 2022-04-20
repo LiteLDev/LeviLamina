@@ -18,30 +18,30 @@ class OverworldBiomeBuilder {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERWORLDBIOMEBUILDER
 public:
-    class OverworldBiomeBuilder& operator=(class OverworldBiomeBuilder const&) = delete;
-    OverworldBiomeBuilder(class OverworldBiomeBuilder const&) = delete;
+    class OverworldBiomeBuilder& operator=(class OverworldBiomeBuilder const &) = delete;
+    OverworldBiomeBuilder(class OverworldBiomeBuilder const &) = delete;
 #endif
 
 public:
     MCAPI OverworldBiomeBuilder();
-    MCAPI void addBiomes(std::vector<struct BiomeNoiseTarget>&, class BiomeRegistry const&) const;
+    MCAPI void addBiomes(std::vector<struct BiomeNoiseTarget> &, class BiomeRegistry const &) const;
     MCAPI std::vector<struct ClimateParameters> getWorldSpawnParameters() const;
 
 protected:
 
 private:
-    MCAPI void _addHighSlice(std::vector<struct BiomeNoiseTarget>&, struct ClimateUtils::Parameter const&) const;
-    MCAPI void _addInlandBiomes(std::vector<struct BiomeNoiseTarget>&) const;
-    MCAPI void _addLowSlice(std::vector<struct BiomeNoiseTarget>&, struct ClimateUtils::Parameter const&) const;
-    MCAPI void _addMidSlice(std::vector<struct BiomeNoiseTarget>&, struct ClimateUtils::Parameter const&) const;
-    MCAPI void _addPeaks(std::vector<struct BiomeNoiseTarget>&, struct ClimateUtils::Parameter const&) const;
-    MCAPI void _addSurfaceBiome(std::vector<struct BiomeNoiseTarget>&, struct ClimateUtils::Parameter const&, struct ClimateUtils::Parameter const&, struct ClimateUtils::Parameter const&, struct ClimateUtils::Parameter const&, struct ClimateUtils::Parameter const&, float, class Biome*) const;
-    MCAPI void _addUndergroundBiome(std::vector<struct BiomeNoiseTarget>&, struct ClimateUtils::Parameter const&, struct ClimateUtils::Parameter const&, struct ClimateUtils::Parameter const&, struct ClimateUtils::Parameter const&, struct ClimateUtils::Parameter const&, float, class Biome*) const;
-    MCAPI void _addValleys(std::vector<struct BiomeNoiseTarget>&, struct ClimateUtils::Parameter const&) const;
-    MCAPI static struct ClimateUtils::Parameter const* const EROSIONS;
+    MCAPI void _addHighSlice(std::vector<struct BiomeNoiseTarget> &, struct ClimateUtils::Parameter const &) const;
+    MCAPI void _addInlandBiomes(std::vector<struct BiomeNoiseTarget> &) const;
+    MCAPI void _addLowSlice(std::vector<struct BiomeNoiseTarget> &, struct ClimateUtils::Parameter const &) const;
+    MCAPI void _addMidSlice(std::vector<struct BiomeNoiseTarget> &, struct ClimateUtils::Parameter const &) const;
+    MCAPI void _addPeaks(std::vector<struct BiomeNoiseTarget> &, struct ClimateUtils::Parameter const &) const;
+    MCAPI void _addSurfaceBiome(std::vector<struct BiomeNoiseTarget> &, struct ClimateUtils::Parameter const &, struct ClimateUtils::Parameter const &, struct ClimateUtils::Parameter const &, struct ClimateUtils::Parameter const &, struct ClimateUtils::Parameter const &, float, class Biome *) const;
+    MCAPI void _addUndergroundBiome(std::vector<struct BiomeNoiseTarget> &, struct ClimateUtils::Parameter const &, struct ClimateUtils::Parameter const &, struct ClimateUtils::Parameter const &, struct ClimateUtils::Parameter const &, struct ClimateUtils::Parameter const &, float, class Biome *) const;
+    MCAPI void _addValleys(std::vector<struct BiomeNoiseTarget> &, struct ClimateUtils::Parameter const &) const;
+    MCAPI static struct ClimateUtils::Parameter const *const EROSIONS;
     MCAPI static struct ClimateUtils::Parameter const FULL_RANGE;
-    MCAPI static struct ClimateUtils::Parameter const* const HUMIDITIES;
-    MCAPI static struct ClimateUtils::Parameter const* const TEMPERATURES;
+    MCAPI static struct ClimateUtils::Parameter const *const HUMIDITIES;
+    MCAPI static struct ClimateUtils::Parameter const *const TEMPERATURES;
     MCAPI static struct ClimateUtils::Parameter const coastContinentalness;
     MCAPI static struct ClimateUtils::Parameter const deepOceanContinentalness;
     MCAPI static struct ClimateUtils::Parameter const dripstoneCavesContinentalness;

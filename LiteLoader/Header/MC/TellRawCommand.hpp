@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class TellRawCommand {
+class TellRawCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,15 +18,15 @@ class TellRawCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TELLRAWCOMMAND
 public:
-    class TellRawCommand& operator=(class TellRawCommand const&) = delete;
-    TellRawCommand(class TellRawCommand const&) = delete;
+    class TellRawCommand& operator=(class TellRawCommand const &) = delete;
+    TellRawCommand(class TellRawCommand const &) = delete;
     TellRawCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~TellRawCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 

@@ -22,8 +22,8 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCONTAINERMODEL
 public:
-    class LevelContainerModel& operator=(class LevelContainerModel const&) = delete;
-    LevelContainerModel(class LevelContainerModel const&) = delete;
+    class LevelContainerModel& operator=(class LevelContainerModel const &) = delete;
+    LevelContainerModel(class LevelContainerModel const &) = delete;
     LevelContainerModel() = delete;
 #endif
 
@@ -40,17 +40,17 @@ public:
     /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual void __unk_vfn_17();
     /*19*/ virtual void __unk_vfn_19();
-    /*20*/ virtual class Container* _getContainer() const;
+    /*20*/ virtual class Container * _getContainer() const;
     /*21*/ virtual int _getContainerOffset() const;
-    /*22*/ virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
-    MCAPI LevelContainerModel(enum ContainerEnumName, int, class Player&, struct ActorUniqueID, enum ContainerCategory);
-    MCAPI LevelContainerModel(enum ContainerEnumName, int, class Player&, enum BlockActorType, class BlockPos const&, enum ContainerCategory);
-    MCAPI static class Container* getContainerHelper(class Player&, enum BlockActorType, class BlockPos const&);
+    /*22*/ virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
+    MCAPI LevelContainerModel(enum ContainerEnumName, int, class Player &, struct ActorUniqueID, enum ContainerCategory);
+    MCAPI LevelContainerModel(enum ContainerEnumName, int, class Player &, enum BlockActorType, class BlockPos const &, enum ContainerCategory);
+    MCAPI static class Container * getContainerHelper(class Player &, enum BlockActorType, class BlockPos const &);
 
 protected:
 
 private:
-    MCAPI class Actor* _getEntity() const;
+    MCAPI class Actor * _getEntity() const;
     MCAPI void _refreshSlot(int);
 
 };

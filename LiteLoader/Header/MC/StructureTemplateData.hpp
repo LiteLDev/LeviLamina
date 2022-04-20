@@ -17,8 +17,8 @@ class StructureTemplateData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURETEMPLATEDATA
 public:
-    class StructureTemplateData& operator=(class StructureTemplateData const&) = delete;
-    StructureTemplateData(class StructureTemplateData const&) = delete;
+    class StructureTemplateData& operator=(class StructureTemplateData const &) = delete;
+    StructureTemplateData(class StructureTemplateData const &) = delete;
     StructureTemplateData() = delete;
 #endif
 
@@ -31,22 +31,21 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI class StructureBlockPalette const* getPalette(std::string const&) const;
-    MCAPI bool load(class CompoundTag const&);
+    MCAPI class StructureBlockPalette const * getPalette(std::string const &) const;
+    MCAPI bool load(class CompoundTag const &);
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     MCAPI static std::string const DEFAULT_PALETTE_NAME;
 
 protected:
-    MCAPI enum StructureLoadResult _parseBlockIndices(class CompoundTag const&);
-    MCAPI enum StructureLoadResult _parseEntities(class CompoundTag const&);
-    MCAPI enum StructureLoadResult _parseFormatVersion(class CompoundTag const&);
-    MCAPI enum StructureLoadResult _parsePalettes(class CompoundTag const&);
-    MCAPI enum StructureLoadResult _parseSize(class CompoundTag const&);
-    MCAPI void _saveBlockIndices(class CompoundTag&) const;
-    MCAPI void _savePalettes(class CompoundTag&) const;
-    MCAPI void _saveStructureTag(class CompoundTag&) const;
+    MCAPI enum StructureLoadResult _parseBlockIndices(class CompoundTag const &);
+    MCAPI enum StructureLoadResult _parseEntities(class CompoundTag const &);
+    MCAPI enum StructureLoadResult _parseFormatVersion(class CompoundTag const &);
+    MCAPI enum StructureLoadResult _parsePalettes(class CompoundTag const &);
+    MCAPI enum StructureLoadResult _parseSize(class CompoundTag const &);
+    MCAPI void _saveBlockIndices(class CompoundTag &) const;
+    MCAPI void _savePalettes(class CompoundTag &) const;
+    MCAPI void _saveStructureTag(class CompoundTag &) const;
 
 private:
-    MCAPI void _contentErrorMissingField(std::string const&) const;
 
 };

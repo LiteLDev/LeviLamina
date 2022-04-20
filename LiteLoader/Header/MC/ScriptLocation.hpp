@@ -15,8 +15,8 @@ class ScriptLocation {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTLOCATION
 public:
-    class ScriptLocation& operator=(class ScriptLocation const&) = delete;
-    ScriptLocation(class ScriptLocation const&) = delete;
+    class ScriptLocation& operator=(class ScriptLocation const &) = delete;
+    ScriptLocation(class ScriptLocation const &) = delete;
     ScriptLocation() = delete;
 #endif
 

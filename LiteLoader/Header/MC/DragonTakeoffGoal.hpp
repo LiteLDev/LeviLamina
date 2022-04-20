@@ -17,8 +17,8 @@ class DragonTakeoffGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONTAKEOFFGOAL
 public:
-    class DragonTakeoffGoal& operator=(class DragonTakeoffGoal const&) = delete;
-    DragonTakeoffGoal(class DragonTakeoffGoal const&) = delete;
+    class DragonTakeoffGoal& operator=(class DragonTakeoffGoal const &) = delete;
+    DragonTakeoffGoal(class DragonTakeoffGoal const &) = delete;
     DragonTakeoffGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI DragonTakeoffGoal(class EnderDragon&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI DragonTakeoffGoal(class EnderDragon &);
 
 protected:
 

@@ -17,20 +17,20 @@ class ItemStackRequestActionCraftBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONCRAFTBASE
 public:
-    class ItemStackRequestActionCraftBase& operator=(class ItemStackRequestActionCraftBase const&) = delete;
-    ItemStackRequestActionCraftBase(class ItemStackRequestActionCraftBase const&) = delete;
+    class ItemStackRequestActionCraftBase& operator=(class ItemStackRequestActionCraftBase const &) = delete;
+    ItemStackRequestActionCraftBase(class ItemStackRequestActionCraftBase const &) = delete;
     ItemStackRequestActionCraftBase() = delete;
 #endif
 
 public:
     /*
-    inline void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette& a0, bool a1){
-        void (ItemStackRequestActionCraftBase::*rv)(class BlockPalette&, bool);
+    inline void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette & a0, bool a1){
+        void (ItemStackRequestActionCraftBase::*rv)(class BlockPalette &, bool);
         *((void**)&rv) = dlsym("?postLoadItems_DEPRECATEDASKTYLAING@ItemStackRequestActionCraftBase@@UEAAXAEAVBlockPalette@@_N@Z");
-        return (this->*rv)(std::forward<class BlockPalette&>(a0), std::forward<bool>(a1));
+        return (this->*rv)(std::forward<class BlockPalette &>(a0), std::forward<bool>(a1));
     }
-    inline class ItemStackRequestActionCraftBase const* getCraftAction() const{
-        class ItemStackRequestActionCraftBase const* (ItemStackRequestActionCraftBase::*rv)() const;
+    inline class ItemStackRequestActionCraftBase const * getCraftAction() const{
+        class ItemStackRequestActionCraftBase const * (ItemStackRequestActionCraftBase::*rv)() const;
         *((void**)&rv) = dlsym("?getCraftAction@ItemStackRequestActionCraftBase@@UEBAPEBV1@XZ");
         return (this->*rv)();
     }

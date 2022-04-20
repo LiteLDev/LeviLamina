@@ -18,23 +18,23 @@ class EnchantingInputContainerValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCHANTINGINPUTCONTAINERVALIDATION
 public:
-    class EnchantingInputContainerValidation& operator=(class EnchantingInputContainerValidation const&) = delete;
-    EnchantingInputContainerValidation(class EnchantingInputContainerValidation const&) = delete;
+    class EnchantingInputContainerValidation& operator=(class EnchantingInputContainerValidation const &) = delete;
+    EnchantingInputContainerValidation(class EnchantingInputContainerValidation const &) = delete;
     EnchantingInputContainerValidation() = delete;
 #endif
 
 public:
     /*0*/ virtual ~EnchantingInputContainerValidation();
-    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const&) const;
+    /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const &) const;
     /*5*/ virtual void __unk_vfn_5();
-    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /*
-    inline int getAvailableSetCount(int a0, class ItemStackBase const& a1) const{
-        int (EnchantingInputContainerValidation::*rv)(int, class ItemStackBase const&) const;
+    inline int getAvailableSetCount(int a0, class ItemStackBase const & a1) const{
+        int (EnchantingInputContainerValidation::*rv)(int, class ItemStackBase const &) const;
         *((void**)&rv) = dlsym("?getAvailableSetCount@EnchantingInputContainerValidation@@UEBAHHAEBVItemStackBase@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStackBase const&>(a1));
+        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStackBase const &>(a1));
     }
     */
 

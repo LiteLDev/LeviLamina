@@ -18,14 +18,14 @@ class HopMoveControl : public MoveControl {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOPMOVECONTROL
 public:
-    class HopMoveControl& operator=(class HopMoveControl const&) = delete;
-    HopMoveControl(class HopMoveControl const&) = delete;
+    class HopMoveControl& operator=(class HopMoveControl const &) = delete;
+    HopMoveControl(class HopMoveControl const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~HopMoveControl();
-    /*2*/ virtual void tick(class MoveControlComponent&, class Mob&);
-    /*3*/ virtual void setWantedPosition(class MoveControlComponent&, class Mob&, class Vec3 const&, float);
+    /*2*/ virtual void tick(class MoveControlComponent &, class Mob &);
+    /*3*/ virtual void setWantedPosition(class MoveControlComponent &, class Mob &, class Vec3 const &, float);
     MCAPI HopMoveControl();
 
 protected:

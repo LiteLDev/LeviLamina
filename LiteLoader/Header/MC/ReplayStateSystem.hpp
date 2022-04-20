@@ -15,8 +15,8 @@ class ReplayStateSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPLAYSTATESYSTEM
 public:
-    class ReplayStateSystem& operator=(class ReplayStateSystem const&) = delete;
-    ReplayStateSystem(class ReplayStateSystem const&) = delete;
+    class ReplayStateSystem& operator=(class ReplayStateSystem const &) = delete;
+    ReplayStateSystem(class ReplayStateSystem const &) = delete;
     ReplayStateSystem() = delete;
 #endif
 

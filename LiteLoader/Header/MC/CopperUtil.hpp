@@ -16,6 +16,6 @@ namespace CopperUtil {
 #undef AFTER_EXTRA
     MCAPI extern class mce::Color const WAX_OFF_COLOR;
     MCAPI extern class mce::Color const WAX_ON_COLOR;
-    MCAPI void trySendWaxingTelemetryEventToClient(class Player&, class BlockLegacy const&);
+    MCAPI void trySendWaxingTelemetryEventToClient(class Player &, class BlockLegacy const &);
 
 };

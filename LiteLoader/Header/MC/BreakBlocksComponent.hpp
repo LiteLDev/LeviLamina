@@ -17,15 +17,15 @@ class BreakBlocksComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREAKBLOCKSCOMPONENT
 public:
-    class BreakBlocksComponent& operator=(class BreakBlocksComponent const&) = delete;
-    BreakBlocksComponent(class BreakBlocksComponent const&) = delete;
+    class BreakBlocksComponent& operator=(class BreakBlocksComponent const &) = delete;
+    BreakBlocksComponent(class BreakBlocksComponent const &) = delete;
     BreakBlocksComponent() = delete;
 #endif
 
 public:
-    MCAPI void breakNearbyBlocks(class Actor&);
-    MCAPI void initFromDefinition(class Actor&);
-    MCAPI bool isBreakable(class Actor&, class BlockLegacy const&) const;
+    MCAPI void breakNearbyBlocks(class Actor &);
+    MCAPI void initFromDefinition(class Actor &);
+    MCAPI bool isBreakable(class Actor &, class BlockLegacy const &) const;
 
 protected:
 

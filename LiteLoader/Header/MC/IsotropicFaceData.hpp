@@ -15,8 +15,8 @@ class IsotropicFaceData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISOTROPICFACEDATA
 public:
-    class IsotropicFaceData& operator=(class IsotropicFaceData const&) = delete;
-    IsotropicFaceData(class IsotropicFaceData const&) = delete;
+    class IsotropicFaceData& operator=(class IsotropicFaceData const &) = delete;
+    IsotropicFaceData(class IsotropicFaceData const &) = delete;
 #endif
 
 public:

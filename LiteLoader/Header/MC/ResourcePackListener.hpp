@@ -17,8 +17,8 @@ class ResourcePackListener {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKLISTENER
 public:
-    class ResourcePackListener& operator=(class ResourcePackListener const&) = delete;
-    ResourcePackListener(class ResourcePackListener const&) = delete;
+    class ResourcePackListener& operator=(class ResourcePackListener const &) = delete;
+    ResourcePackListener(class ResourcePackListener const &) = delete;
     ResourcePackListener() = delete;
 #endif
 
@@ -35,10 +35,10 @@ public:
         *((void**)&rv) = dlsym("?onFullPackStackInvalid@ResourcePackListener@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void onResourceManagerDestroyed(class ResourcePackManager& a0){
-        void (ResourcePackListener::*rv)(class ResourcePackManager&);
+    inline void onResourceManagerDestroyed(class ResourcePackManager & a0){
+        void (ResourcePackListener::*rv)(class ResourcePackManager &);
         *((void**)&rv) = dlsym("?onResourceManagerDestroyed@ResourcePackListener@@UEAAXAEAVResourcePackManager@@@Z");
-        return (this->*rv)(std::forward<class ResourcePackManager&>(a0));
+        return (this->*rv)(std::forward<class ResourcePackManager &>(a0));
     }
     inline void onLanguageSubpacksChanged(){
         void (ResourcePackListener::*rv)();

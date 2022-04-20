@@ -18,8 +18,8 @@ class ScriptNavigationWalkComponent : public NavigationScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTNAVIGATIONWALKCOMPONENT
 public:
-    class ScriptNavigationWalkComponent& operator=(class ScriptNavigationWalkComponent const&) = delete;
-    ScriptNavigationWalkComponent(class ScriptNavigationWalkComponent const&) = delete;
+    class ScriptNavigationWalkComponent& operator=(class ScriptNavigationWalkComponent const &) = delete;
+    ScriptNavigationWalkComponent(class ScriptNavigationWalkComponent const &) = delete;
     ScriptNavigationWalkComponent() = delete;
 #endif
 

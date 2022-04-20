@@ -17,13 +17,13 @@ struct VolumeFogDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VOLUMEFOGDEFINITION
 public:
-    struct VolumeFogDefinition& operator=(struct VolumeFogDefinition const&) = delete;
-    VolumeFogDefinition(struct VolumeFogDefinition const&) = delete;
+    struct VolumeFogDefinition& operator=(struct VolumeFogDefinition const &) = delete;
+    VolumeFogDefinition(struct VolumeFogDefinition const &) = delete;
     VolumeFogDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&, class VolumeFogComponent&) const;
+    MCAPI void initialize(class EntityContext &, class VolumeFogComponent &) const;
 
 protected:
 

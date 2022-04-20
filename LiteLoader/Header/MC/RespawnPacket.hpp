@@ -44,16 +44,16 @@ return #var;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESPAWNPACKET
 public:
-    class RespawnPacket& operator=(class RespawnPacket const&) = delete;
-    RespawnPacket(class RespawnPacket const&) = delete;
+    class RespawnPacket& operator=(class RespawnPacket const &) = delete;
+    RespawnPacket(class RespawnPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~RespawnPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~RespawnPacket(){
          (RespawnPacket::*rv)();
@@ -61,7 +61,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI RespawnPacket(class Vec3 const&, enum PlayerRespawnState const&);
+    MCAPI RespawnPacket(class Vec3 const &, enum PlayerRespawnState const &);
     MCAPI RespawnPacket();
 
 protected:

@@ -17,23 +17,23 @@ class ScriptDebugger {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTDEBUGGER
 public:
-    class ScriptDebugger& operator=(class ScriptDebugger const&) = delete;
-    ScriptDebugger(class ScriptDebugger const&) = delete;
+    class ScriptDebugger& operator=(class ScriptDebugger const &) = delete;
+    ScriptDebugger(class ScriptDebugger const &) = delete;
     ScriptDebugger() = delete;
 #endif
 
 public:
     /*0*/ virtual bool listen(unsigned short);
-    /*1*/ virtual bool connect(std::string const&, unsigned short);
+    /*1*/ virtual bool connect(std::string const &, unsigned short);
     /*2*/ virtual void close();
     /*3*/ virtual ~ScriptDebugger();
-    MCAPI ScriptDebugger(class Scripting::ScriptEngine&, class IScriptDebuggerWatchdog&);
+    MCAPI ScriptDebugger(class Scripting::ScriptEngine &, class IScriptDebuggerWatchdog &);
     MCAPI void checkConnections();
 
 protected:
 
 private:
-    MCAPI class Scripting::IDebuggerController* _createController();
+    MCAPI class Scripting::IDebuggerController * _createController();
     MCAPI void _releaseController();
 
 };

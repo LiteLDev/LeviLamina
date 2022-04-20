@@ -17,14 +17,14 @@ class JigsawBlockInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JIGSAWBLOCKINFO
 public:
-    class JigsawBlockInfo& operator=(class JigsawBlockInfo const&) = delete;
-    JigsawBlockInfo(class JigsawBlockInfo const&) = delete;
+    class JigsawBlockInfo& operator=(class JigsawBlockInfo const &) = delete;
+    JigsawBlockInfo(class JigsawBlockInfo const &) = delete;
     JigsawBlockInfo() = delete;
 #endif
 
 public:
-    MCAPI JigsawBlockInfo(class BlockPos const&, class Block const*, class Block const*, class JigsawEditorData);
-    MCAPI class JigsawBlockInfo& operator=(class JigsawBlockInfo&&);
+    MCAPI JigsawBlockInfo(class BlockPos const &, class Block const *, class Block const *, class JigsawEditorData);
+    MCAPI class JigsawBlockInfo & operator=(class JigsawBlockInfo &&);
 
 protected:
 

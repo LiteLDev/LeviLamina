@@ -15,13 +15,13 @@ class LegacyStructureActorInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYSTRUCTUREACTORINFO
 public:
-    class LegacyStructureActorInfo& operator=(class LegacyStructureActorInfo const&) = delete;
-    LegacyStructureActorInfo(class LegacyStructureActorInfo const&) = delete;
+    class LegacyStructureActorInfo& operator=(class LegacyStructureActorInfo const &) = delete;
+    LegacyStructureActorInfo(class LegacyStructureActorInfo const &) = delete;
     LegacyStructureActorInfo() = delete;
 #endif
 
 public:
-    MCAPI LegacyStructureActorInfo(class Vec3 const&, class BlockPos const&, class CompoundTag);
+    MCAPI LegacyStructureActorInfo(class Vec3 const &, class BlockPos const &, class CompoundTag);
 
 protected:
 

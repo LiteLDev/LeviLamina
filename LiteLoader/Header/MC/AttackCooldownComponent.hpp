@@ -17,14 +17,14 @@ class AttackCooldownComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTACKCOOLDOWNCOMPONENT
 public:
-    class AttackCooldownComponent& operator=(class AttackCooldownComponent const&) = delete;
-    AttackCooldownComponent(class AttackCooldownComponent const&) = delete;
+    class AttackCooldownComponent& operator=(class AttackCooldownComponent const &) = delete;
+    AttackCooldownComponent(class AttackCooldownComponent const &) = delete;
     AttackCooldownComponent() = delete;
 #endif
 
 public:
-    MCAPI AttackCooldownComponent(class AttackCooldownComponent&&);
-    MCAPI class AttackCooldownComponent& operator=(class AttackCooldownComponent&&);
+    MCAPI AttackCooldownComponent(class AttackCooldownComponent &&);
+    MCAPI class AttackCooldownComponent & operator=(class AttackCooldownComponent &&);
     MCAPI ~AttackCooldownComponent();
 
 protected:

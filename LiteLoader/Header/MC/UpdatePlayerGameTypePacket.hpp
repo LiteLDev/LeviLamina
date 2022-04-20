@@ -18,16 +18,16 @@ class UpdatePlayerGameTypePacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATEPLAYERGAMETYPEPACKET
 public:
-    class UpdatePlayerGameTypePacket& operator=(class UpdatePlayerGameTypePacket const&) = delete;
-    UpdatePlayerGameTypePacket(class UpdatePlayerGameTypePacket const&) = delete;
+    class UpdatePlayerGameTypePacket& operator=(class UpdatePlayerGameTypePacket const &) = delete;
+    UpdatePlayerGameTypePacket(class UpdatePlayerGameTypePacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~UpdatePlayerGameTypePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~UpdatePlayerGameTypePacket(){
          (UpdatePlayerGameTypePacket::*rv)();
@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI UpdatePlayerGameTypePacket(enum GameType, struct ActorUniqueID const&);
+    MCAPI UpdatePlayerGameTypePacket(enum GameType, struct ActorUniqueID const &);
     MCAPI UpdatePlayerGameTypePacket();
 
 protected:

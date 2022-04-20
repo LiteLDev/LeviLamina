@@ -17,13 +17,13 @@ struct Trade {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADE
 public:
-    struct Trade& operator=(struct Trade const&) = delete;
-    Trade(struct Trade const&) = delete;
+    struct Trade& operator=(struct Trade const &) = delete;
+    Trade(struct Trade const &) = delete;
     Trade() = delete;
 #endif
 
 public:
-    MCAPI struct Trade& operator=(struct Trade&&);
+    MCAPI struct Trade & operator=(struct Trade &&);
     MCAPI ~Trade();
 
 protected:

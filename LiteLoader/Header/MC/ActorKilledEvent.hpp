@@ -15,8 +15,8 @@ class ActorKilledEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORKILLEDEVENT
 public:
-    class ActorKilledEvent& operator=(class ActorKilledEvent const&) = delete;
-    ActorKilledEvent(class ActorKilledEvent const&) = delete;
+    class ActorKilledEvent& operator=(class ActorKilledEvent const &) = delete;
+    ActorKilledEvent(class ActorKilledEvent const &) = delete;
     ActorKilledEvent() = delete;
 #endif
 

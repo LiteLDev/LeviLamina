@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Json.hpp"
 #include "ActorCommandOrigin.hpp"
 
 #define BEFORE_EXTRA
@@ -19,8 +18,8 @@ class ActorServerCommandOrigin : public ActorCommandOrigin {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSERVERCOMMANDORIGIN
 public:
-    class ActorServerCommandOrigin& operator=(class ActorServerCommandOrigin const&) = delete;
-    ActorServerCommandOrigin(class ActorServerCommandOrigin const&) = delete;
+    class ActorServerCommandOrigin& operator=(class ActorServerCommandOrigin const &) = delete;
+    ActorServerCommandOrigin(class ActorServerCommandOrigin const &) = delete;
     ActorServerCommandOrigin() = delete;
 #endif
 
@@ -35,12 +34,12 @@ public:
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*20*/ virtual unsigned char getSourceSubId() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
-    /*26*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
+    /*26*/ virtual void __unk_vfn_26();
     /*27*/ virtual void updateValues();
     /*29*/ virtual class CompoundTag serialize() const;
-    MCAPI ActorServerCommandOrigin(class Actor&);
+    MCAPI ActorServerCommandOrigin(class Actor &);
     MCAPI void setTargetOther(struct ActorUniqueID);
-    MCAPI static std::unique_ptr<class ActorServerCommandOrigin> load(class CompoundTag const&, class Level&);
+    MCAPI static std::unique_ptr<class ActorServerCommandOrigin> load(class CompoundTag const &, class Level &);
 
 protected:
 

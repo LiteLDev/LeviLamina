@@ -16,9 +16,9 @@ struct CommandOriginData {
 #undef AFTER_EXTRA
 
 public:
-    MCAPI CommandOriginData(struct CommandOriginData const&);
+    MCAPI CommandOriginData(struct CommandOriginData const &);
     MCAPI CommandOriginData();
-    MCAPI struct CommandOriginData& operator=(struct CommandOriginData const&);
+    MCAPI struct CommandOriginData & operator=(struct CommandOriginData const &);
     MCAPI ~CommandOriginData();
 
 protected:

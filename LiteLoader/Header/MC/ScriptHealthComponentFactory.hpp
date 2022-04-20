@@ -17,14 +17,14 @@ class ScriptHealthComponentFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTHEALTHCOMPONENTFACTORY
 public:
-    class ScriptHealthComponentFactory& operator=(class ScriptHealthComponentFactory const&) = delete;
-    ScriptHealthComponentFactory(class ScriptHealthComponentFactory const&) = delete;
+    class ScriptHealthComponentFactory& operator=(class ScriptHealthComponentFactory const &) = delete;
+    ScriptHealthComponentFactory(class ScriptHealthComponentFactory const &) = delete;
     ScriptHealthComponentFactory() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScriptHealthComponentFactory();
-    /*1*/ virtual class Scripting::StrongTypedObjectHandle<class ScriptActorComponent> createComponent(class WeakEntityRef, class Scripting::WeakLifetimeScope const&, std::string const&);
+    /*1*/ virtual class Scripting::StrongTypedObjectHandle<class ScriptActorComponent> createComponent(class WeakEntityRef, class Scripting::WeakLifetimeScope const &, std::string const &);
     /*2*/ virtual bool hasComponent(class WeakEntityRef) const;
 
 protected:

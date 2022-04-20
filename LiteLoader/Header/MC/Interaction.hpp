@@ -17,18 +17,18 @@ struct Interaction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERACTION
 public:
-    struct Interaction& operator=(struct Interaction const&) = delete;
+    struct Interaction& operator=(struct Interaction const &) = delete;
 #endif
 
 public:
-    MCAPI Interaction(struct Interaction const&);
+    MCAPI Interaction(struct Interaction const &);
     MCAPI Interaction();
-    MCAPI void addActorDefinitionIdentifierByName(std::string const&);
-    MCAPI void addLevelSoundEventByName(std::string const&);
-    MCAPI void setCooldown(float const&);
-    MCAPI void setCooldownAfterBeingAttacked(float const&);
-    MCAPI void setParticleType(std::string const&);
-    MCAPI void setTransformItem(std::string const&);
+    MCAPI void addActorDefinitionIdentifierByName(std::string const &);
+    MCAPI void addLevelSoundEventByName(std::string const &);
+    MCAPI void setCooldown(float const &);
+    MCAPI void setCooldownAfterBeingAttacked(float const &);
+    MCAPI void setParticleType(std::string const &);
+    MCAPI void setTransformItem(std::string const &);
     MCAPI ~Interaction();
 
 protected:

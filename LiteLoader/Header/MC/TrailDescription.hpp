@@ -18,15 +18,15 @@ class TrailDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRAILDESCRIPTION
 public:
-    class TrailDescription& operator=(class TrailDescription const&) = delete;
-    TrailDescription(class TrailDescription const&) = delete;
+    class TrailDescription& operator=(class TrailDescription const &) = delete;
+    TrailDescription(class TrailDescription const &) = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~TrailDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~TrailDescription(){
          (TrailDescription::*rv)();

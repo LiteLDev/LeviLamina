@@ -17,8 +17,8 @@ class MobSpawnInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBSPAWNINFO
 public:
-    class MobSpawnInfo& operator=(class MobSpawnInfo const&) = delete;
-    MobSpawnInfo(class MobSpawnInfo const&) = delete;
+    class MobSpawnInfo& operator=(class MobSpawnInfo const &) = delete;
+    MobSpawnInfo(class MobSpawnInfo const &) = delete;
     MobSpawnInfo() = delete;
 #endif
 

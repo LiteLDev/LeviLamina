@@ -18,8 +18,8 @@ class UPNPInterface {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPNPINTERFACE
 public:
-    class UPNPInterface& operator=(class UPNPInterface const&) = delete;
-    UPNPInterface(class UPNPInterface const&) = delete;
+    class UPNPInterface& operator=(class UPNPInterface const &) = delete;
+    UPNPInterface(class UPNPInterface const &) = delete;
     UPNPInterface() = delete;
 #endif
 
@@ -36,7 +36,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI UPNPInterface(class Bedrock::NonOwnerPointer<class AppPlatform> const&);
+    MCAPI UPNPInterface(class Bedrock::NonOwnerPointer<class AppPlatform> const &);
     MCAPI void reset();
     MCAPI void tick();
 

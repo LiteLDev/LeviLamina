@@ -17,18 +17,18 @@ class AdmireItemComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADMIREITEMCOMPONENT
 public:
-    class AdmireItemComponent& operator=(class AdmireItemComponent const&) = delete;
-    AdmireItemComponent(class AdmireItemComponent const&) = delete;
+    class AdmireItemComponent& operator=(class AdmireItemComponent const &) = delete;
+    AdmireItemComponent(class AdmireItemComponent const &) = delete;
     AdmireItemComponent() = delete;
 #endif
 
 public:
-    MCAPI AdmireItemComponent(class AdmireItemComponent&&);
-    MCAPI class ItemStack const& getAdmireItem() const;
-    MCAPI struct Tick const& getAdmireUntil() const;
+    MCAPI AdmireItemComponent(class AdmireItemComponent &&);
+    MCAPI class ItemStack const & getAdmireItem() const;
+    MCAPI struct Tick const & getAdmireUntil() const;
     MCAPI class WeakEntityRef getItemOwnerRef() const;
     MCAPI bool isAdmiring() const;
-    MCAPI void onAdmireItemPickedUp(class Actor const&, class ItemStack const&, class Actor*);
+    MCAPI void onAdmireItemPickedUp(class Actor const &, class ItemStack const &, class Actor *);
     MCAPI void stopAdmiring();
     MCAPI ~AdmireItemComponent();
 

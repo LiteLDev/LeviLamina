@@ -19,15 +19,15 @@ class ActorHasEquipmentTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORHASEQUIPMENTTEST
 public:
-    class ActorHasEquipmentTest& operator=(class ActorHasEquipmentTest const&) = delete;
-    ActorHasEquipmentTest(class ActorHasEquipmentTest const&) = delete;
+    class ActorHasEquipmentTest& operator=(class ActorHasEquipmentTest const &) = delete;
+    ActorHasEquipmentTest(class ActorHasEquipmentTest const &) = delete;
     ActorHasEquipmentTest() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorHasEquipmentTest();
-    /*1*/ virtual bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*1*/ virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*5*/ virtual class Json::Value _serializeDomain() const;

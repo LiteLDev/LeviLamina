@@ -18,25 +18,20 @@ class PillagerOutpostFeature : public StructureFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PILLAGEROUTPOSTFEATURE
 public:
-    class PillagerOutpostFeature& operator=(class PillagerOutpostFeature const&) = delete;
-    PillagerOutpostFeature(class PillagerOutpostFeature const&) = delete;
+    class PillagerOutpostFeature& operator=(class PillagerOutpostFeature const &) = delete;
+    PillagerOutpostFeature(class PillagerOutpostFeature const &) = delete;
     PillagerOutpostFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~PillagerOutpostFeature();
-    /*2*/ virtual bool getNearestGeneratedFeature(class Dimension&, class BiomeSource const&, class BlockPos const&, class BlockPos&, class IPreliminarySurfaceProvider const&, bool);
-    /*3*/ virtual bool isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&);
-    /*4*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
-    /*
-    inline  ~PillagerOutpostFeature(){
-         (PillagerOutpostFeature::*rv)();
-        *((void**)&rv) = dlsym("??1PillagerOutpostFeature@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual bool shouldAddHardcodedSpawnAreas() const;
+    /*2*/ virtual bool shouldPostProcessMobs() const;
+    /*3*/ virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
+    /*4*/ virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry &);
+    /*5*/ virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &);
+    /*6*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
     MCAPI PillagerOutpostFeature(unsigned int);
-    MCAPI static void initMobSpawnTypes(class HardcodedSpawnAreaRegistry&);
 
 protected:
 

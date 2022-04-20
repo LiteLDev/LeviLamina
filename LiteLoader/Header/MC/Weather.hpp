@@ -18,15 +18,15 @@ class Weather : public BlockSourceListener {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEATHER
 public:
-    class Weather& operator=(class Weather const&) = delete;
-    Weather(class Weather const&) = delete;
+    class Weather& operator=(class Weather const &) = delete;
+    Weather(class Weather const &) = delete;
     Weather() = delete;
 #endif
 
 public:
     /*0*/ virtual ~Weather();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void onSourceDestroyed(class BlockSource&);
+    /*2*/ virtual void onSourceDestroyed(class BlockSource &);
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*6*/ virtual void __unk_vfn_6();
@@ -50,29 +50,29 @@ public:
     /*25*/ virtual void __unk_vfn_25();
     /*26*/ virtual void __unk_vfn_26();
     /*27*/ virtual void __unk_vfn_27();
-    /*28*/ virtual void levelEvent(enum LevelEvent, class Vec3 const&, int);
-    MCAPI Weather(class Dimension&, class IRandom&);
-    MCAPI int calcSnowBlockDepth(class BlockSource&, class BlockPos const&, int) const;
-    MCAPI bool canPlaceTopSnow(class BlockSource&, class BlockPos const&, bool, bool, int*) const;
+    /*28*/ virtual void levelEvent(enum LevelEvent, class Vec3 const &, int);
+    MCAPI Weather(class Dimension &, class IRandom &);
+    MCAPI int calcSnowBlockDepth(class BlockSource &, class BlockPos const &, int) const;
+    MCAPI bool canPlaceTopSnow(class BlockSource &, class BlockPos const &, bool, bool, int *) const;
     MCAPI float getFogLevel() const;
     MCAPI float getLightningLevel(float) const;
     MCAPI float getRainLevel(float) const;
     MCAPI bool isLightning() const;
-    MCAPI bool isPrecipitatingAt(class BlockSource&, class BlockPos const&) const;
+    MCAPI bool isPrecipitatingAt(class BlockSource &, class BlockPos const &) const;
     MCAPI bool isRaining() const;
-    MCAPI bool isRainingAt(class BlockSource&, class BlockPos const&) const;
-    MCAPI bool isSnowingAt(class BlockSource&, class BlockPos const&) const;
+    MCAPI bool isRainingAt(class BlockSource &, class BlockPos const &) const;
+    MCAPI bool isSnowingAt(class BlockSource &, class BlockPos const &) const;
     MCAPI void serverTick();
     MCAPI void setSkyFlashTime(int);
     MCAPI void setTargetLightningLevel(float);
     MCAPI void setTargetRainLevel(float);
     MCAPI void stop();
     MCAPI void tick();
-    MCAPI bool tryToPlaceTopSnow(class BlockSource&, class BlockPos const&, bool, bool);
-    MCAPI static int calcLightningCycleTime(class IRandom&);
-    MCAPI static int calcRainCycleTime(class IRandom&);
-    MCAPI static int calcRainDuration(class IRandom&);
-    MCAPI static void rebuildTopSnowToDepth(class BlockSource&, class BlockPos const&, int);
+    MCAPI bool tryToPlaceTopSnow(class BlockSource &, class BlockPos const &, bool, bool);
+    MCAPI static int calcLightningCycleTime(class IRandom &);
+    MCAPI static int calcRainCycleTime(class IRandom &);
+    MCAPI static int calcRainDuration(class IRandom &);
+    MCAPI static void rebuildTopSnowToDepth(class BlockSource &, class BlockPos const &, int);
 
 protected:
 

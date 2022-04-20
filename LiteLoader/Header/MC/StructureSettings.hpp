@@ -41,8 +41,8 @@ inline StructureSettings(BlockPos const& size, bool ignoreEntities, bool ignoreB
 #undef AFTER_EXTRA
 
 public:
-    MCAPI StructureSettings(class StructureSettings&&);
-    MCAPI StructureSettings(class StructureSettings const&);
+    MCAPI StructureSettings(class StructureSettings &&);
+    MCAPI StructureSettings(class StructureSettings const &);
     MCAPI StructureSettings();
     MCAPI enum AnimationMode getAnimationMode() const;
     MCAPI float getAnimationSeconds() const;
@@ -53,14 +53,15 @@ public:
     MCAPI float getIntegrityValue() const;
     MCAPI struct ActorUniqueID getLastTouchedByPlayerID() const;
     MCAPI enum Mirror getMirror() const;
-    MCAPI std::string const& getPaletteName() const;
-    MCAPI class Vec3 const& getPivot() const;
+    MCAPI std::string const & getPaletteName() const;
+    MCAPI class Vec3 const & getPivot() const;
     MCAPI enum Rotation getRotation() const;
-    MCAPI class BlockPos const& getStructureOffset() const;
-    MCAPI class BlockPos const& getStructureSize() const;
+    MCAPI class BlockPos const & getStructureOffset() const;
+    MCAPI class BlockPos const & getStructureSize() const;
     MCAPI bool isAnimated() const;
-    MCAPI class StructureSettings& operator=(class StructureSettings&&);
-    MCAPI class StructureSettings& operator=(class StructureSettings const&);
+    MCAPI class StructureSettings & operator=(class StructureSettings &&);
+    MCAPI class StructureSettings & operator=(class StructureSettings const &);
+    MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool);
     MCAPI void setAnimationMode(enum AnimationMode);
     MCAPI void setAnimationSeconds(float);
     MCAPI void setIgnoreBlocks(bool);
@@ -71,11 +72,12 @@ public:
     MCAPI void setLastTouchedByPlayerID(struct ActorUniqueID);
     MCAPI void setMirror(enum Mirror);
     MCAPI void setPaletteName(std::string);
-    MCAPI void setPivot(class Vec3 const&);
+    MCAPI void setPivot(class Vec3 const &);
     MCAPI void setReloadActorEquipment(bool);
     MCAPI void setRotation(enum Rotation);
-    MCAPI void setStructureOffset(class BlockPos const&);
-    MCAPI void setStructureSize(class BlockPos const&);
+    MCAPI void setStructureOffset(class BlockPos const &);
+    MCAPI void setStructureSize(class BlockPos const &);
+    MCAPI bool shouldAllowNonTickingPlayerAndTickingAreaChunks() const;
     MCAPI ~StructureSettings();
     MCAPI static class BlockPos const DEFAULT_STRUCTURE_OFFSET;
     MCAPI static class BlockPos const DEFAULT_STRUCTURE_SIZE;

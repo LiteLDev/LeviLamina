@@ -18,8 +18,8 @@ class HudContainerModel : public ContainerModel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HUDCONTAINERMODEL
 public:
-    class HudContainerModel& operator=(class HudContainerModel const&) = delete;
-    HudContainerModel(class HudContainerModel const&) = delete;
+    class HudContainerModel& operator=(class HudContainerModel const &) = delete;
+    HudContainerModel(class HudContainerModel const &) = delete;
     HudContainerModel() = delete;
 #endif
 
@@ -35,7 +35,7 @@ public:
     /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual void __unk_vfn_17();
     /*19*/ virtual void __unk_vfn_19();
-    /*20*/ virtual class Container* _getContainer() const;
+    /*20*/ virtual class Container * _getContainer() const;
     /*21*/ virtual int _getContainerOffset() const;
 
 protected:

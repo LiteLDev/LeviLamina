@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class EffectCommand {
+class EffectCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,19 +18,19 @@ class EffectCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EFFECTCOMMAND
 public:
-    class EffectCommand& operator=(class EffectCommand const&) = delete;
-    EffectCommand(class EffectCommand const&) = delete;
+    class EffectCommand& operator=(class EffectCommand const &) = delete;
+    EffectCommand(class EffectCommand const &) = delete;
     EffectCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~EffectCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 
 private:
-    MCAPI void clear(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI void clear(class CommandOrigin const &, class CommandOutput &) const;
 
 };

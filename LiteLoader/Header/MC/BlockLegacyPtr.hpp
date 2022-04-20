@@ -17,8 +17,8 @@ class BlockLegacyPtr {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLEGACYPTR
 public:
-    class BlockLegacyPtr& operator=(class BlockLegacyPtr const&) = delete;
-    BlockLegacyPtr(class BlockLegacyPtr const&) = delete;
+    class BlockLegacyPtr& operator=(class BlockLegacyPtr const &) = delete;
+    BlockLegacyPtr(class BlockLegacyPtr const &) = delete;
     BlockLegacyPtr() = delete;
 #endif
 

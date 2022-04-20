@@ -18,8 +18,8 @@ class ScriptBlockWaterContainerComponent : public BaseScriptBlockLiquidContainer
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKWATERCONTAINERCOMPONENT
 public:
-    class ScriptBlockWaterContainerComponent& operator=(class ScriptBlockWaterContainerComponent const&) = delete;
-    ScriptBlockWaterContainerComponent(class ScriptBlockWaterContainerComponent const&) = delete;
+    class ScriptBlockWaterContainerComponent& operator=(class ScriptBlockWaterContainerComponent const &) = delete;
+    ScriptBlockWaterContainerComponent(class ScriptBlockWaterContainerComponent const &) = delete;
     ScriptBlockWaterContainerComponent() = delete;
 #endif
 
@@ -32,12 +32,12 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI class Scripting::Result<void> addDye(class ScriptItemType const&);
+    MCAPI class Scripting::Result<void> addDye(class ScriptItemType const &);
     MCAPI class Scripting::Result<class ScriptColor> getCustomColor();
-    MCAPI class ScriptBlockWaterContainerComponent& operator=(class ScriptBlockWaterContainerComponent&&);
-    MCAPI class Scripting::Result<void> setCustomColor(class ScriptColor const&);
+    MCAPI class ScriptBlockWaterContainerComponent & operator=(class ScriptBlockWaterContainerComponent &&);
+    MCAPI class Scripting::Result<void> setCustomColor(class ScriptColor const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockWaterContainerComponent> bind(struct Scripting::Version);
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockWaterContainerComponent> tryCreate(class BlockSource&, class BlockPos, class Scripting::WeakLifetimeScope const&);
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockWaterContainerComponent> tryCreate(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
 
 protected:
 

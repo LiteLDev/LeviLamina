@@ -17,8 +17,8 @@ class NoiseCellInterpolator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NOISECELLINTERPOLATOR
 public:
-    class NoiseCellInterpolator& operator=(class NoiseCellInterpolator const&) = delete;
-    NoiseCellInterpolator(class NoiseCellInterpolator const&) = delete;
+    class NoiseCellInterpolator& operator=(class NoiseCellInterpolator const &) = delete;
+    NoiseCellInterpolator(class NoiseCellInterpolator const &) = delete;
     NoiseCellInterpolator() = delete;
 #endif
 

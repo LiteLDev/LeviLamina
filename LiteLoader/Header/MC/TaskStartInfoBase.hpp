@@ -17,8 +17,8 @@ struct TaskStartInfoBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TASKSTARTINFOBASE
 public:
-    struct TaskStartInfoBase& operator=(struct TaskStartInfoBase const&) = delete;
-    TaskStartInfoBase(struct TaskStartInfoBase const&) = delete;
+    struct TaskStartInfoBase& operator=(struct TaskStartInfoBase const &) = delete;
+    TaskStartInfoBase(struct TaskStartInfoBase const &) = delete;
     TaskStartInfoBase() = delete;
 #endif
 

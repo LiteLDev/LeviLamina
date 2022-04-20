@@ -17,8 +17,8 @@ class AsyncTracker {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ASYNCTRACKER
 public:
-    class AsyncTracker& operator=(class AsyncTracker const&) = delete;
-    AsyncTracker(class AsyncTracker const&) = delete;
+    class AsyncTracker& operator=(class AsyncTracker const &) = delete;
+    AsyncTracker(class AsyncTracker const &) = delete;
     AsyncTracker() = delete;
 #endif
 

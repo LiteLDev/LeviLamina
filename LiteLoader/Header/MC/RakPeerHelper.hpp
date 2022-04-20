@@ -19,19 +19,19 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKPEERHELPER
 public:
-    class RakPeerHelper& operator=(class RakPeerHelper const&) = delete;
-    RakPeerHelper(class RakPeerHelper const&) = delete;
+    class RakPeerHelper& operator=(class RakPeerHelper const &) = delete;
+    RakPeerHelper(class RakPeerHelper const &) = delete;
     RakPeerHelper() = delete;
 #endif
 
 public:
-    MCAPI enum RakNet::StartupResult peerStartup(class RakNet::RakPeerInterface*, struct ConnectionDefinition const&);
+    MCAPI enum RakNet::StartupResult peerStartup(class RakNet::RakPeerInterface *, struct ConnectionDefinition const &);
 
 protected:
 
 private:
     MCAPI void LogIPSupport();
-    MCAPI void _resetToIPv6Only(class gsl::span<struct RakNet::SocketDescriptor, 2>, int&);
-    MCAPI enum RakNet::StartupResult _startupInternal(class gsl::not_null<class RakNet::RakPeerInterface* >, struct ConnectionDefinition const&, struct RakNet::SocketDescriptor*, int&, int);
+    MCAPI void _resetToIPv6Only(class gsl::span<struct RakNet::SocketDescriptor, 2>, int &);
+    MCAPI enum RakNet::StartupResult _startupInternal(class gsl::not_null<class RakNet::RakPeerInterface *>, struct ConnectionDefinition const &, struct RakNet::SocketDescriptor *, int &, int);
 
 };

@@ -15,8 +15,8 @@ class ItemPack {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMPACK
 public:
-    class ItemPack& operator=(class ItemPack const&) = delete;
-    ItemPack(class ItemPack const&) = delete;
+    class ItemPack& operator=(class ItemPack const &) = delete;
+    ItemPack(class ItemPack const &) = delete;
     ItemPack() = delete;
 #endif
 

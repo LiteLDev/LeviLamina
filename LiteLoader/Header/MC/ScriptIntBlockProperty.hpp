@@ -17,8 +17,8 @@ class ScriptIntBlockProperty {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTINTBLOCKPROPERTY
 public:
-    class ScriptIntBlockProperty& operator=(class ScriptIntBlockProperty const&) = delete;
-    ScriptIntBlockProperty(class ScriptIntBlockProperty const&) = delete;
+    class ScriptIntBlockProperty& operator=(class ScriptIntBlockProperty const &) = delete;
+    ScriptIntBlockProperty(class ScriptIntBlockProperty const &) = delete;
     ScriptIntBlockProperty() = delete;
 #endif
 
@@ -31,10 +31,10 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptIntBlockProperty(class ScriptIntBlockProperty&&);
-    MCAPI ScriptIntBlockProperty(std::string, class ItemState const&, std::vector<int>, class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>);
+    MCAPI ScriptIntBlockProperty(class ScriptIntBlockProperty &&);
+    MCAPI ScriptIntBlockProperty(std::string, class ItemState const &, std::vector<int>, class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>);
     MCAPI class Scripting::Result<int> getState() const;
-    MCAPI class ScriptIntBlockProperty& operator=(class ScriptIntBlockProperty&&);
+    MCAPI class ScriptIntBlockProperty & operator=(class ScriptIntBlockProperty &&);
     MCAPI class Scripting::Result<void> setState(int);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptIntBlockProperty> bind(struct Scripting::Version);
 

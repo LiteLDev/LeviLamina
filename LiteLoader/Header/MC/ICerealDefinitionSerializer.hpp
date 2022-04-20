@@ -15,8 +15,8 @@ class ICerealDefinitionSerializer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICEREALDEFINITIONSERIALIZER
 public:
-    class ICerealDefinitionSerializer& operator=(class ICerealDefinitionSerializer const&) = delete;
-    ICerealDefinitionSerializer(class ICerealDefinitionSerializer const&) = delete;
+    class ICerealDefinitionSerializer& operator=(class ICerealDefinitionSerializer const &) = delete;
+    ICerealDefinitionSerializer(class ICerealDefinitionSerializer const &) = delete;
     ICerealDefinitionSerializer() = delete;
 #endif
 

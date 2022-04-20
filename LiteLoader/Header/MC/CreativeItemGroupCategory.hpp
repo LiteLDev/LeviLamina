@@ -17,8 +17,8 @@ class CreativeItemGroupCategory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CREATIVEITEMGROUPCATEGORY
 public:
-    class CreativeItemGroupCategory& operator=(class CreativeItemGroupCategory const&) = delete;
-    CreativeItemGroupCategory(class CreativeItemGroupCategory const&) = delete;
+    class CreativeItemGroupCategory& operator=(class CreativeItemGroupCategory const &) = delete;
+    CreativeItemGroupCategory(class CreativeItemGroupCategory const &) = delete;
     CreativeItemGroupCategory() = delete;
 #endif
 
@@ -31,11 +31,11 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI class CreativeGroupInfo* addAnonymousGroup();
-    MCAPI class CreativeGroupInfo* addChildGroup(class HashedString const&, class ItemInstance const&);
-    MCAPI class CreativeGroupInfo* getChildGroup(class HashedString const&);
+    MCAPI class CreativeGroupInfo * addAnonymousGroup();
+    MCAPI class CreativeGroupInfo * addChildGroup(class HashedString const &, class ItemInstance const &);
+    MCAPI class CreativeGroupInfo * getChildGroup(class HashedString const &);
     MCAPI enum CreativeItemCategory getCreativeCategory();
-    MCAPI class CreativeGroupInfo* getOrAddTailAnonymousGroup();
+    MCAPI class CreativeGroupInfo * getOrAddTailAnonymousGroup();
 
 protected:
 

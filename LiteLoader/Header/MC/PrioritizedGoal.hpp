@@ -17,8 +17,8 @@ class PrioritizedGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PRIORITIZEDGOAL
 public:
-    class PrioritizedGoal& operator=(class PrioritizedGoal const&) = delete;
-    PrioritizedGoal(class PrioritizedGoal const&) = delete;
+    class PrioritizedGoal& operator=(class PrioritizedGoal const &) = delete;
+    PrioritizedGoal(class PrioritizedGoal const &) = delete;
     PrioritizedGoal() = delete;
 #endif
 

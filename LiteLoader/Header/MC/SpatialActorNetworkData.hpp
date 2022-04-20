@@ -28,28 +28,28 @@ struct DebugSendRateModifiers {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPATIALACTORNETWORKDATA
 public:
-    class SpatialActorNetworkData& operator=(class SpatialActorNetworkData const&) = delete;
-    SpatialActorNetworkData(class SpatialActorNetworkData const&) = delete;
+    class SpatialActorNetworkData& operator=(class SpatialActorNetworkData const &) = delete;
+    SpatialActorNetworkData(class SpatialActorNetworkData const &) = delete;
     SpatialActorNetworkData() = delete;
 #endif
 
 public:
-    MCAPI SpatialActorNetworkData(class Actor&);
+    MCAPI SpatialActorNetworkData(class Actor &);
     MCAPI void enableAutoSend(bool);
-    MCAPI void handleClientData(class MoveActorAbsoluteData const&);
+    MCAPI void handleClientData(class MoveActorAbsoluteData const &);
     MCAPI bool isAutoSendEnabled() const;
-    MCAPI bool isOptimizationsEnabled() const;
     MCAPI void sendUpdate(bool, bool, bool);
     MCAPI bool shouldSendMotionPredictionHintsPacket() const;
     MCAPI bool shouldSendUpdate(bool, bool) const;
-    MCAPI static struct SpatialActorNetworkData::DebugSpatialPacketModifiers& getDebugSpatialPacketModifiers();
+    MCAPI static struct SpatialActorNetworkData::DebugSpatialPacketModifiers & getDebugSpatialPacketModifiers();
 
 protected:
 
 private:
     MCAPI std::vector<struct NetworkIdentifierWithSubId> _findRelevantPlayersToSendUpdate();
-    MCAPI unsigned __int64 _getOptimizationScore(struct ActorUniqueID const&) const;
+    MCAPI unsigned __int64 _getOptimizationScore(struct ActorUniqueID const &) const;
     MCAPI void _initializeLastSentValues();
+    MCAPI bool _shouldUpdateBasedOptimizationOnScore(struct ActorUniqueID const &) const;
     MCAPI static struct SpatialActorNetworkData::DebugSendRateModifiers mDebugSendRateModifiers;
     MCAPI static struct SpatialActorNetworkData::DebugSpatialPacketModifiers mDebugSpatialPacketModifiers;
 

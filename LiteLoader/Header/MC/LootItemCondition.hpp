@@ -18,8 +18,8 @@ class LootItemCondition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMCONDITION
 public:
-    class LootItemCondition& operator=(class LootItemCondition const&) = delete;
-    LootItemCondition(class LootItemCondition const&) = delete;
+    class LootItemCondition& operator=(class LootItemCondition const &) = delete;
+    LootItemCondition(class LootItemCondition const &) = delete;
     LootItemCondition() = delete;
 #endif
 

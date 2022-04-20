@@ -18,8 +18,8 @@ class Trade2Ingredient1ContainerValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADE2INGREDIENT1CONTAINERVALIDATION
 public:
-    class Trade2Ingredient1ContainerValidation& operator=(class Trade2Ingredient1ContainerValidation const&) = delete;
-    Trade2Ingredient1ContainerValidation(class Trade2Ingredient1ContainerValidation const&) = delete;
+    class Trade2Ingredient1ContainerValidation& operator=(class Trade2Ingredient1ContainerValidation const &) = delete;
+    Trade2Ingredient1ContainerValidation(class Trade2Ingredient1ContainerValidation const &) = delete;
     Trade2Ingredient1ContainerValidation() = delete;
 #endif
 
@@ -28,7 +28,7 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
-    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
 
 protected:
 

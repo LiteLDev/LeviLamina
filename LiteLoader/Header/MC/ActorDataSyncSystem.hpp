@@ -17,15 +17,15 @@ class ActorDataSyncSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDATASYNCSYSTEM
 public:
-    class ActorDataSyncSystem& operator=(class ActorDataSyncSystem const&) = delete;
-    ActorDataSyncSystem(class ActorDataSyncSystem const&) = delete;
+    class ActorDataSyncSystem& operator=(class ActorDataSyncSystem const &) = delete;
+    ActorDataSyncSystem(class ActorDataSyncSystem const &) = delete;
     ActorDataSyncSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorDataSyncSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

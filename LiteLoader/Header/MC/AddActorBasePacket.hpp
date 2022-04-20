@@ -15,8 +15,8 @@ class AddActorBasePacket {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADDACTORBASEPACKET
 public:
-    class AddActorBasePacket& operator=(class AddActorBasePacket const&) = delete;
-    AddActorBasePacket(class AddActorBasePacket const&) = delete;
+    class AddActorBasePacket& operator=(class AddActorBasePacket const &) = delete;
+    AddActorBasePacket(class AddActorBasePacket const &) = delete;
     AddActorBasePacket() = delete;
 #endif
 

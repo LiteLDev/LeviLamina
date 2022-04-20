@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class SpawnPointCommand {
+class SpawnPointCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,15 +18,15 @@ class SpawnPointCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNPOINTCOMMAND
 public:
-    class SpawnPointCommand& operator=(class SpawnPointCommand const&) = delete;
-    SpawnPointCommand(class SpawnPointCommand const&) = delete;
+    class SpawnPointCommand& operator=(class SpawnPointCommand const &) = delete;
+    SpawnPointCommand(class SpawnPointCommand const &) = delete;
     SpawnPointCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SpawnPointCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 

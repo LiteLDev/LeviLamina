@@ -18,15 +18,15 @@ class BreakBlocksDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREAKBLOCKSDESCRIPTION
 public:
-    class BreakBlocksDescription& operator=(class BreakBlocksDescription const&) = delete;
-    BreakBlocksDescription(class BreakBlocksDescription const&) = delete;
+    class BreakBlocksDescription& operator=(class BreakBlocksDescription const &) = delete;
+    BreakBlocksDescription(class BreakBlocksDescription const &) = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~BreakBlocksDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~BreakBlocksDescription(){
          (BreakBlocksDescription::*rv)();

@@ -18,16 +18,16 @@ class CameraShakePacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERASHAKEPACKET
 public:
-    class CameraShakePacket& operator=(class CameraShakePacket const&) = delete;
-    CameraShakePacket(class CameraShakePacket const&) = delete;
+    class CameraShakePacket& operator=(class CameraShakePacket const &) = delete;
+    CameraShakePacket(class CameraShakePacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~CameraShakePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~CameraShakePacket(){
          (CameraShakePacket::*rv)();

@@ -18,16 +18,16 @@ class EduUriResourcePacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUURIRESOURCEPACKET
 public:
-    class EduUriResourcePacket& operator=(class EduUriResourcePacket const&) = delete;
-    EduUriResourcePacket(class EduUriResourcePacket const&) = delete;
+    class EduUriResourcePacket& operator=(class EduUriResourcePacket const &) = delete;
+    EduUriResourcePacket(class EduUriResourcePacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~EduUriResourcePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~EduUriResourcePacket(){
          (EduUriResourcePacket::*rv)();
@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI EduUriResourcePacket(struct EduSharedUriResource const&);
+    MCAPI EduUriResourcePacket(struct EduSharedUriResource const &);
     MCAPI EduUriResourcePacket();
 
 protected:

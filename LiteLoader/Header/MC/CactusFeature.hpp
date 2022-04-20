@@ -18,15 +18,15 @@ class CactusFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CACTUSFEATURE
 public:
-    class CactusFeature& operator=(class CactusFeature const&) = delete;
-    CactusFeature(class CactusFeature const&) = delete;
+    class CactusFeature& operator=(class CactusFeature const &) = delete;
+    CactusFeature(class CactusFeature const &) = delete;
     CactusFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~CactusFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 protected:
 

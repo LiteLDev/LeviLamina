@@ -17,8 +17,8 @@ class StructureTelemetryClientData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURETELEMETRYCLIENTDATA
 public:
-    class StructureTelemetryClientData& operator=(class StructureTelemetryClientData const&) = delete;
-    StructureTelemetryClientData(class StructureTelemetryClientData const&) = delete;
+    class StructureTelemetryClientData& operator=(class StructureTelemetryClientData const &) = delete;
+    StructureTelemetryClientData(class StructureTelemetryClientData const &) = delete;
     StructureTelemetryClientData() = delete;
 #endif
 

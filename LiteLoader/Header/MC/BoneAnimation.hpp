@@ -17,13 +17,13 @@ class BoneAnimation {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BONEANIMATION
 public:
-    class BoneAnimation& operator=(class BoneAnimation const&) = delete;
+    class BoneAnimation& operator=(class BoneAnimation const &) = delete;
     BoneAnimation() = delete;
 #endif
 
 public:
-    MCAPI BoneAnimation(class BoneAnimation const&);
-    MCAPI class BoneAnimationChannel& addAnimationChannel(enum BoneTransformType);
+    MCAPI BoneAnimation(class BoneAnimation const &);
+    MCAPI class BoneAnimationChannel & addAnimationChannel(enum BoneTransformType);
     MCAPI void setRotationRelativeMode(enum BoneAnimationRelativeMode);
 
 protected:

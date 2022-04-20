@@ -15,8 +15,8 @@ class GameTestSaveData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETESTSAVEDATA
 public:
-    class GameTestSaveData& operator=(class GameTestSaveData const&) = delete;
-    GameTestSaveData(class GameTestSaveData const&) = delete;
+    class GameTestSaveData& operator=(class GameTestSaveData const &) = delete;
+    GameTestSaveData(class GameTestSaveData const &) = delete;
     GameTestSaveData() = delete;
 #endif
 

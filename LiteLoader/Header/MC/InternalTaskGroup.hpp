@@ -17,8 +17,8 @@ class InternalTaskGroup {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERNALTASKGROUP
 public:
-    class InternalTaskGroup& operator=(class InternalTaskGroup const&) = delete;
-    InternalTaskGroup(class InternalTaskGroup const&) = delete;
+    class InternalTaskGroup& operator=(class InternalTaskGroup const &) = delete;
+    InternalTaskGroup(class InternalTaskGroup const &) = delete;
     InternalTaskGroup() = delete;
 #endif
 
@@ -35,10 +35,10 @@ public:
         *((void**)&rv) = dlsym("?processCoroutines@InternalTaskGroup@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void taskComplete(class gsl::not_null<class BackgroundTaskBase* > a0){
-        void (InternalTaskGroup::*rv)(class gsl::not_null<class BackgroundTaskBase* >);
+    inline void taskComplete(class gsl::not_null<class BackgroundTaskBase *> a0){
+        void (InternalTaskGroup::*rv)(class gsl::not_null<class BackgroundTaskBase *>);
         *((void**)&rv) = dlsym("?taskComplete@InternalTaskGroup@@UEAAXV?$not_null@PEAVBackgroundTaskBase@@@gsl@@@Z");
-        return (this->*rv)(std::forward<class gsl::not_null<class BackgroundTaskBase* >>(a0));
+        return (this->*rv)(std::forward<class gsl::not_null<class BackgroundTaskBase *>>(a0));
     }
     inline void taskRegister(class std::shared_ptr<class BackgroundTaskBase> a0){
         void (InternalTaskGroup::*rv)(class std::shared_ptr<class BackgroundTaskBase>);

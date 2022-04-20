@@ -17,8 +17,8 @@ class IRandom {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IRANDOM
 public:
-    class IRandom& operator=(class IRandom const&) = delete;
-    IRandom(class IRandom const&) = delete;
+    class IRandom& operator=(class IRandom const &) = delete;
+    IRandom(class IRandom const &) = delete;
     IRandom() = delete;
 #endif
 

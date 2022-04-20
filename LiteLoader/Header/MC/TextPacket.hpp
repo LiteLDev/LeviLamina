@@ -19,16 +19,16 @@ class TextPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTPACKET
 public:
-    class TextPacket& operator=(class TextPacket const&) = delete;
-    TextPacket(class TextPacket const&) = delete;
+    class TextPacket& operator=(class TextPacket const &) = delete;
+    TextPacket(class TextPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~TextPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~TextPacket(){
          (TextPacket::*rv)();
@@ -37,15 +37,15 @@ public:
     }
     */
     MCAPI TextPacket();
-    MCAPI static class TextPacket createAnnouncement(std::string const&, std::string const&, std::string const&, std::string const&);
-    MCAPI static class TextPacket createChat(std::string const&, std::string const&, std::string const&, std::string const&);
-    MCAPI static class TextPacket createJukeboxPopup(std::string const&, std::vector<std::string> const&);
-    MCAPI static class TextPacket createSystemMessage(std::string const&);
-    MCAPI static class TextPacket createTextObjectMessage(class ResolvedTextObject const&, std::string, std::string);
-    MCAPI static class TextPacket createTextObjectWhisperMessage(class ResolvedTextObject const&, std::string const&, std::string const&);
-    MCAPI static class TextPacket createTranslated(std::string const&, std::vector<std::string> const&);
-    MCAPI static class TextPacket createTranslatedAnnouncement(std::string const&, std::string const&, std::string const&, std::string const&);
-    MCAPI static class TextPacket createWhisper(std::string const&, std::string const&, std::string const&, std::string const&);
+    MCAPI static class TextPacket createAnnouncement(std::string const &, std::string const &, std::string const &, std::string const &);
+    MCAPI static class TextPacket createChat(std::string const &, std::string const &, std::string const &, std::string const &);
+    MCAPI static class TextPacket createJukeboxPopup(std::string const &, std::vector<std::string> const &);
+    MCAPI static class TextPacket createSystemMessage(std::string const &);
+    MCAPI static class TextPacket createTextObjectMessage(class ResolvedTextObject const &, std::string, std::string);
+    MCAPI static class TextPacket createTextObjectWhisperMessage(class ResolvedTextObject const &, std::string const &, std::string const &);
+    MCAPI static class TextPacket createTranslated(std::string const &, std::vector<std::string> const &);
+    MCAPI static class TextPacket createTranslatedAnnouncement(std::string const &, std::string const &, std::string const &, std::string const &);
+    MCAPI static class TextPacket createWhisper(std::string const &, std::string const &, std::string const &, std::string const &);
 
 protected:
 

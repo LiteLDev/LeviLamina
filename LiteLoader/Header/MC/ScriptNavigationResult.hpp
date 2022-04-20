@@ -20,8 +20,8 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTNAVIGATIONRESULT
 public:
-    struct ScriptNavigationResult& operator=(struct ScriptNavigationResult const&) = delete;
-    ScriptNavigationResult(struct ScriptNavigationResult const&) = delete;
+    struct ScriptNavigationResult& operator=(struct ScriptNavigationResult const &) = delete;
+    ScriptNavigationResult(struct ScriptNavigationResult const &) = delete;
     ScriptNavigationResult() = delete;
 #endif
 

@@ -23,15 +23,15 @@ struct NetSerializationCallbacks {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPONENTNETRELEVANCYREGISTRY
 public:
-    class ComponentNetRelevancyRegistry& operator=(class ComponentNetRelevancyRegistry const&) = delete;
-    ComponentNetRelevancyRegistry(class ComponentNetRelevancyRegistry const&) = delete;
+    class ComponentNetRelevancyRegistry& operator=(class ComponentNetRelevancyRegistry const &) = delete;
+    ComponentNetRelevancyRegistry(class ComponentNetRelevancyRegistry const &) = delete;
     ComponentNetRelevancyRegistry() = delete;
 #endif
 
 public:
-    MCAPI class DefinitionInstanceGroup getFilteredDefinitionsForServer(class DefinitionInstanceGroup const&) const;
-    MCAPI struct ComponentNetRelevancyRegistry::NetSerializationCallbacks& registerNetSerialization(class HashedString const&, class std::function<bool (class DefinitionInstanceGroup const& , class CompoundTag& )>);
-    MCAPI bool serializeComponentDefinitionsForClient(class DefinitionInstanceGroup const&, class CompoundTag&) const;
+    MCAPI class DefinitionInstanceGroup getFilteredDefinitionsForServer(class DefinitionInstanceGroup const &) const;
+    MCAPI struct ComponentNetRelevancyRegistry::NetSerializationCallbacks & registerNetSerialization(class HashedString const &, class std::function<bool (class DefinitionInstanceGroup const &, class CompoundTag &)>);
+    MCAPI bool serializeComponentDefinitionsForClient(class DefinitionInstanceGroup const &, class CompoundTag &) const;
     MCAPI ~ComponentNetRelevancyRegistry();
 
 protected:

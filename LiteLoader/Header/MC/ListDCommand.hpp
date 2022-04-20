@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class ListDCommand {
+class ListDCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,15 +18,15 @@ class ListDCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LISTDCOMMAND
 public:
-    class ListDCommand& operator=(class ListDCommand const&) = delete;
-    ListDCommand(class ListDCommand const&) = delete;
+    class ListDCommand& operator=(class ListDCommand const &) = delete;
+    ListDCommand(class ListDCommand const &) = delete;
     ListDCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ListDCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 

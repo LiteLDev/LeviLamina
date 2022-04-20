@@ -17,18 +17,18 @@ class MobEvents {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEVENTS
 public:
-    class MobEvents& operator=(class MobEvents const&) = delete;
-    MobEvents(class MobEvents const&) = delete;
+    class MobEvents& operator=(class MobEvents const &) = delete;
+    MobEvents(class MobEvents const &) = delete;
     MobEvents() = delete;
 #endif
 
 public:
     /*0*/ virtual ~MobEvents();
-    MCAPI MobEvents(class LevelStorage&);
+    MCAPI MobEvents(class LevelStorage &);
     MCAPI bool areEventsEnabled() const;
-    MCAPI void deserialize(class CompoundTag const&);
-    MCAPI class MobEvent const& getEvent(enum MobEventsIndex) const;
-    MCAPI enum MobEventsIndex getIndexFromName(std::string const&) const;
+    MCAPI void deserialize(class CompoundTag const &);
+    MCAPI class MobEvent const & getEvent(enum MobEventsIndex) const;
+    MCAPI enum MobEventsIndex getIndexFromName(std::string const &) const;
     MCAPI bool isEnabled(enum MobEventsIndex) const;
     MCAPI std::unique_ptr<class CompoundTag> serialize() const;
     MCAPI void setEnabled(enum MobEventsIndex, bool);

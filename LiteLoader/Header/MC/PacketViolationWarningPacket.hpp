@@ -18,16 +18,16 @@ class PacketViolationWarningPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKETVIOLATIONWARNINGPACKET
 public:
-    class PacketViolationWarningPacket& operator=(class PacketViolationWarningPacket const&) = delete;
-    PacketViolationWarningPacket(class PacketViolationWarningPacket const&) = delete;
+    class PacketViolationWarningPacket& operator=(class PacketViolationWarningPacket const &) = delete;
+    PacketViolationWarningPacket(class PacketViolationWarningPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~PacketViolationWarningPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~PacketViolationWarningPacket(){
          (PacketViolationWarningPacket::*rv)();
@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI PacketViolationWarningPacket(enum StreamReadResult, enum PacketViolationResponse, enum MinecraftPacketIds, std::string const&);
+    MCAPI PacketViolationWarningPacket(enum StreamReadResult, enum PacketViolationResponse, enum MinecraftPacketIds, std::string const &);
     MCAPI PacketViolationWarningPacket();
 
 protected:

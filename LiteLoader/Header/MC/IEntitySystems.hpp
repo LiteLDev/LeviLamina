@@ -15,8 +15,8 @@ class IEntitySystems {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IENTITYSYSTEMS
 public:
-    class IEntitySystems& operator=(class IEntitySystems const&) = delete;
-    IEntitySystems(class IEntitySystems const&) = delete;
+    class IEntitySystems& operator=(class IEntitySystems const &) = delete;
+    IEntitySystems(class IEntitySystems const &) = delete;
     IEntitySystems() = delete;
 #endif
 

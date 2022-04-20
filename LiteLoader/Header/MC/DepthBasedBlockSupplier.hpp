@@ -17,14 +17,14 @@ class DepthBasedBlockSupplier {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEPTHBASEDBLOCKSUPPLIER
 public:
-    class DepthBasedBlockSupplier& operator=(class DepthBasedBlockSupplier const&) = delete;
-    DepthBasedBlockSupplier(class DepthBasedBlockSupplier const&) = delete;
+    class DepthBasedBlockSupplier& operator=(class DepthBasedBlockSupplier const &) = delete;
+    DepthBasedBlockSupplier(class DepthBasedBlockSupplier const &) = delete;
     DepthBasedBlockSupplier() = delete;
 #endif
 
 public:
-    MCAPI DepthBasedBlockSupplier(class XoroshiroPositionalRandomFactory, class Block const*);
-    MCAPI class Block const* getBlock(class BlockPos const&, class Block const*) const;
+    MCAPI DepthBasedBlockSupplier(class XoroshiroPositionalRandomFactory, class Block const *);
+    MCAPI class Block const * getBlock(class BlockPos const &, class Block const *) const;
 
 protected:
 

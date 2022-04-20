@@ -17,15 +17,15 @@ class LegacyBlockPlacementProcessor {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYBLOCKPLACEMENTPROCESSOR
 public:
-    class LegacyBlockPlacementProcessor& operator=(class LegacyBlockPlacementProcessor const&) = delete;
-    LegacyBlockPlacementProcessor(class LegacyBlockPlacementProcessor const&) = delete;
+    class LegacyBlockPlacementProcessor& operator=(class LegacyBlockPlacementProcessor const &) = delete;
+    LegacyBlockPlacementProcessor(class LegacyBlockPlacementProcessor const &) = delete;
     LegacyBlockPlacementProcessor() = delete;
 #endif
 
 public:
-    MCAPI LegacyBlockPlacementProcessor(class LegacyStructureSettings const&);
-    MCAPI class Block const* applyBlockRules(class BlockSource&, class BlockPos&, class Block const*, class BlockPos const&);
-    MCAPI class BlockPos& applyGravity(class BlockSource&, int, class BlockPos&) const;
+    MCAPI LegacyBlockPlacementProcessor(class LegacyStructureSettings const &);
+    MCAPI class Block const * applyBlockRules(class BlockSource &, class BlockPos &, class Block const *, class BlockPos const &);
+    MCAPI class BlockPos & applyGravity(class BlockSource &, int, class BlockPos &) const;
     MCAPI ~LegacyBlockPlacementProcessor();
 
 protected:

@@ -19,8 +19,8 @@ enum PaletteName;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOLIAGECOLOR
 public:
-    class FoliageColor& operator=(class FoliageColor const&) = delete;
-    FoliageColor(class FoliageColor const&) = delete;
+    class FoliageColor& operator=(class FoliageColor const &) = delete;
+    FoliageColor(class FoliageColor const &) = delete;
     FoliageColor() = delete;
 #endif
 
@@ -33,7 +33,7 @@ public:
     MCAPI static int getMapBirchColor(float, float);
     MCAPI static int getMapEvergreenColor(float, float);
     MCAPI static int getMapFoliageColor(float, float);
-    MCAPI static int getMapGrassColor(class BlockSource&, class BlockPos const&);
+    MCAPI static int getMapGrassColor(class BlockSource &, class BlockPos const &);
     MCAPI static int getMapGrassColor(float, float);
 
 protected:

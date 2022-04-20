@@ -17,8 +17,8 @@ class FlushableStorageAreaEnv {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLUSHABLESTORAGEAREAENV
 public:
-    class FlushableStorageAreaEnv& operator=(class FlushableStorageAreaEnv const&) = delete;
-    FlushableStorageAreaEnv(class FlushableStorageAreaEnv const&) = delete;
+    class FlushableStorageAreaEnv& operator=(class FlushableStorageAreaEnv const &) = delete;
+    FlushableStorageAreaEnv(class FlushableStorageAreaEnv const &) = delete;
     FlushableStorageAreaEnv() = delete;
 #endif
 

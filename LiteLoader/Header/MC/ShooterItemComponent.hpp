@@ -17,7 +17,7 @@ class ShooterItemComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHOOTERITEMCOMPONENT
 public:
-    class ShooterItemComponent& operator=(class ShooterItemComponent const&) = delete;
+    class ShooterItemComponent& operator=(class ShooterItemComponent const &) = delete;
     ShooterItemComponent() = delete;
 #endif
 
@@ -28,7 +28,7 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
     /*
     inline bool isNetworkComponent() const{
         bool (ShooterItemComponent::*rv)() const;
@@ -36,18 +36,18 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ShooterItemComponent(class ShooterItemComponent const&);
-    MCAPI ShooterItemComponent(class ComponentItem*);
-    MCAPI bool releaseUsing(class ItemStack&, class Player*, int) const;
-    MCAPI bool use(class ItemStack&, class Player&) const;
+    MCAPI ShooterItemComponent(class ShooterItemComponent const &);
+    MCAPI ShooterItemComponent(class ComponentItem *);
+    MCAPI bool releaseUsing(class ItemStack &, class Player *, int) const;
+    MCAPI bool use(class ItemStack &, class Player &) const;
     MCAPI static void bindType();
-    MCAPI static class HashedString const& getIdentifier();
+    MCAPI static class HashedString const & getIdentifier();
 
 protected:
 
 private:
-    MCAPI void _consumeAmmunition(class Player*, class ItemStack const&, int, bool, bool) const;
-    MCAPI int _getAmmunition(class Player const*, bool, class ItemStack&, bool&) const;
-    MCAPI void _shootProjectiles(class ItemStack&, class Player*, int) const;
+    MCAPI void _consumeAmmunition(class Player *, class ItemStack const &, int, bool, bool) const;
+    MCAPI int _getAmmunition(class Player const *, bool, class ItemStack &, bool &) const;
+    MCAPI void _shootProjectiles(class ItemStack &, class Player *, int) const;
 
 };

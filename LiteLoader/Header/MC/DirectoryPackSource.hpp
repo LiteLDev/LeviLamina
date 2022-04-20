@@ -18,8 +18,8 @@ class DirectoryPackSource {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIRECTORYPACKSOURCE
 public:
-    class DirectoryPackSource& operator=(class DirectoryPackSource const&) = delete;
-    DirectoryPackSource(class DirectoryPackSource const&) = delete;
+    class DirectoryPackSource& operator=(class DirectoryPackSource const &) = delete;
+    DirectoryPackSource(class DirectoryPackSource const &) = delete;
     DirectoryPackSource() = delete;
 #endif
 
@@ -29,22 +29,22 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual class PackSourceReport load(class IPackManifestFactory&, class IContentKeyProvider const&);
+    /*5*/ virtual class PackSourceReport load(class IPackManifestFactory &, class IContentKeyProvider const &);
     /*
     inline  ~DirectoryPackSource(){
          (DirectoryPackSource::*rv)();
         *((void**)&rv) = dlsym("??1DirectoryPackSource@@UEAA@XZ");
         return (this->*rv)();
     }
-    inline void forEachPack(class std::function<void (class Pack& )> a0){
-        void (DirectoryPackSource::*rv)(class std::function<void (class Pack& )>);
+    inline void forEachPack(class std::function<void (class Pack &)> a0){
+        void (DirectoryPackSource::*rv)(class std::function<void (class Pack &)>);
         *((void**)&rv) = dlsym("?forEachPack@DirectoryPackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<void (class Pack& )>>(a0));
+        return (this->*rv)(std::forward<class std::function<void (class Pack &)>>(a0));
     }
-    inline void forEachPackConst(class std::function<void (class Pack const& )> a0) const{
-        void (DirectoryPackSource::*rv)(class std::function<void (class Pack const& )>) const;
+    inline void forEachPackConst(class std::function<void (class Pack const &)> a0) const{
+        void (DirectoryPackSource::*rv)(class std::function<void (class Pack const &)>) const;
         *((void**)&rv) = dlsym("?forEachPackConst@DirectoryPackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<void (class Pack const& )>>(a0));
+        return (this->*rv)(std::forward<class std::function<void (class Pack const &)>>(a0));
     }
     inline enum PackOrigin getPackOrigin() const{
         enum PackOrigin (DirectoryPackSource::*rv)() const;
@@ -57,8 +57,8 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI DirectoryPackSource(class Core::Path const&, enum PackType, enum PackOrigin, bool);
-    MCAPI static void checkAndRemoveIncompletePacks(class Core::Path const&);
+    MCAPI DirectoryPackSource(class Core::Path const &, enum PackType, enum PackOrigin, bool);
+    MCAPI static void checkAndRemoveIncompletePacks(class Core::Path const &);
 
 protected:
 

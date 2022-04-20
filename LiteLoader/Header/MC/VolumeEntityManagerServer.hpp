@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Core.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -18,22 +17,24 @@ class VolumeEntityManagerServer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VOLUMEENTITYMANAGERSERVER
 public:
-    class VolumeEntityManagerServer& operator=(class VolumeEntityManagerServer const&) = delete;
-    VolumeEntityManagerServer(class VolumeEntityManagerServer const&) = delete;
+    class VolumeEntityManagerServer& operator=(class VolumeEntityManagerServer const &) = delete;
+    VolumeEntityManagerServer(class VolumeEntityManagerServer const &) = delete;
     VolumeEntityManagerServer() = delete;
 #endif
 
 public:
     /*0*/ virtual ~VolumeEntityManagerServer();
     MCAPI VolumeEntityManagerServer(class StackRefResultT<struct EntityRegistryRefTraits>);
-    MCAPI class StackRefResultT<struct EntityRefTraits> createVolume(std::string const&, std::string const&);
-    MCAPI std::vector<class WeakRefT<struct EntityRefTraits>> getAllVolumesOverlappingChunkPosition(class ChunkPos const&, class AutomaticID<class Dimension, int>) const;
-    MCAPI void loadVolumeFiles(class Core::PathBuffer<std::string > const&, bool);
-    MCAPI void sendAllVolumesToClient(class UserEntityIdentifierComponent const&, class NetworkIdentifier const&, class PacketSender&) const;
+    MCAPI struct std::pair<enum VolumeEntityManagerServer::CreateVolumeResult, class StackRefResultT<struct EntityRefTraits>> createVolume(class PacketSender &, std::string const &, class BlockPos const &, class BlockPos const &, class AutomaticID<class Dimension, int>, std::string const &);
+    MCAPI std::vector<class WeakRefT<struct EntityRefTraits>> getAllVolumesOverlappingChunkPosition(class ChunkPos const &, class AutomaticID<class Dimension, int>) const;
+    MCAPI void loadVolumeFiles(class ResourcePackManager const &, bool);
+    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> removeAllVolumes(class AutomaticID<class Dimension, int>, class PacketSender &);
+    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> removeVolumes(std::string const &, class AutomaticID<class Dimension, int>, class PacketSender &);
+    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> removeVolumes(class BlockPos const &, class AutomaticID<class Dimension, int>, class PacketSender &);
+    MCAPI void sendAllVolumesToClient(class UserEntityIdentifierComponent const &, class NetworkIdentifier const &, class PacketSender &) const;
 
 protected:
 
 private:
-    MCAPI std::string _findUsableName() const;
 
 };

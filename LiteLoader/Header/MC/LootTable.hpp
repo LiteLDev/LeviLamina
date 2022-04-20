@@ -18,20 +18,20 @@ class LootTable {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTTABLE
 public:
-    class LootTable& operator=(class LootTable const&) = delete;
-    LootTable(class LootTable const&) = delete;
+    class LootTable& operator=(class LootTable const &) = delete;
+    LootTable(class LootTable const &) = delete;
     LootTable() = delete;
 #endif
 
 public:
-    MCAPI void deserialize(class Json::Value const&);
-    MCAPI void fill(class Container&, class Random&, class LootTableContext&);
-    MCAPI std::vector<class ItemStack> getRandomItems(class Random&, class LootTableContext&) const;
+    MCAPI void deserialize(class Json::Value const &);
+    MCAPI void fill(class Container &, class Random &, class LootTableContext &);
+    MCAPI std::vector<class ItemStack> getRandomItems(class Random &, class LootTableContext &) const;
 
 protected:
 
 private:
-    MCAPI std::vector<int> getAvailableSlots(class Container&, class Random&);
-    MCAPI void shuffleAndSplitItems(std::vector<class ItemStack>&, int, class Random&);
+    MCAPI std::vector<int> getAvailableSlots(class Container &, class Random &);
+    MCAPI void shuffleAndSplitItems(std::vector<class ItemStack> &, int, class Random &);
 
 };

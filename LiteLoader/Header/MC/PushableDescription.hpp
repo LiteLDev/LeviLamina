@@ -18,8 +18,8 @@ struct PushableDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PUSHABLEDESCRIPTION
 public:
-    struct PushableDescription& operator=(struct PushableDescription const&) = delete;
-    PushableDescription(struct PushableDescription const&) = delete;
+    struct PushableDescription& operator=(struct PushableDescription const &) = delete;
+    PushableDescription(struct PushableDescription const &) = delete;
 #endif
 
 public:

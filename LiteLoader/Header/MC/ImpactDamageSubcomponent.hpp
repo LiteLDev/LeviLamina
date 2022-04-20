@@ -18,16 +18,16 @@ class ImpactDamageSubcomponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IMPACTDAMAGESUBCOMPONENT
 public:
-    class ImpactDamageSubcomponent& operator=(class ImpactDamageSubcomponent const&) = delete;
-    ImpactDamageSubcomponent(class ImpactDamageSubcomponent const&) = delete;
+    class ImpactDamageSubcomponent& operator=(class ImpactDamageSubcomponent const &) = delete;
+    ImpactDamageSubcomponent(class ImpactDamageSubcomponent const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ImpactDamageSubcomponent();
-    /*1*/ virtual void readfromJSON(class Json::Value&, class SemVersion const&);
-    /*2*/ virtual void writetoJSON(class Json::Value&) const;
-    /*3*/ virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
-    /*4*/ virtual char const* getName();
+    /*1*/ virtual void readfromJSON(class Json::Value &, class SemVersion const &);
+    /*2*/ virtual void writetoJSON(class Json::Value &) const;
+    /*3*/ virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
+    /*4*/ virtual char const * getName();
     MCAPI ImpactDamageSubcomponent();
 
 protected:

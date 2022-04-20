@@ -17,8 +17,8 @@ class RiseToLiquidLevelGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RISETOLIQUIDLEVELGOAL
 public:
-    class RiseToLiquidLevelGoal& operator=(class RiseToLiquidLevelGoal const&) = delete;
-    RiseToLiquidLevelGoal(class RiseToLiquidLevelGoal const&) = delete;
+    class RiseToLiquidLevelGoal& operator=(class RiseToLiquidLevelGoal const &) = delete;
+    RiseToLiquidLevelGoal(class RiseToLiquidLevelGoal const &) = delete;
     RiseToLiquidLevelGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI RiseToLiquidLevelGoal(class Mob&, float, float, float);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI RiseToLiquidLevelGoal(class Mob &, float, float, float);
 
 protected:
 

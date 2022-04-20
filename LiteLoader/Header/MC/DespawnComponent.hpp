@@ -17,19 +17,19 @@ class DespawnComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DESPAWNCOMPONENT
 public:
-    class DespawnComponent& operator=(class DespawnComponent const&) = delete;
-    DespawnComponent(class DespawnComponent const&) = delete;
+    class DespawnComponent& operator=(class DespawnComponent const &) = delete;
+    DespawnComponent(class DespawnComponent const &) = delete;
     DespawnComponent() = delete;
 #endif
 
 public:
-    MCAPI void onDespawn(class Actor&);
-    MCAPI void tick(class Actor&);
+    MCAPI void onDespawn(class Actor &);
+    MCAPI void tick(class Actor &);
 
 protected:
 
 private:
-    MCAPI bool _tryStandardDespawnRules(class Actor&) const;
-    MCAPI class DespawnDefinition const& getDefinition(class Actor&) const;
+    MCAPI bool _tryStandardDespawnRules(class Actor &) const;
+    MCAPI class DespawnDefinition const & getDefinition(class Actor &) const;
 
 };

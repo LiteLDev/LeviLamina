@@ -15,8 +15,8 @@ struct FilterInputs {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERINPUTS
 public:
-    struct FilterInputs& operator=(struct FilterInputs const&) = delete;
-    FilterInputs(struct FilterInputs const&) = delete;
+    struct FilterInputs& operator=(struct FilterInputs const &) = delete;
+    FilterInputs(struct FilterInputs const &) = delete;
     FilterInputs() = delete;
 #endif
 

@@ -17,18 +17,18 @@ class ParticleTypeMap {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARTICLETYPEMAP
 public:
-    class ParticleTypeMap& operator=(class ParticleTypeMap const&) = delete;
-    ParticleTypeMap(class ParticleTypeMap const&) = delete;
+    class ParticleTypeMap& operator=(class ParticleTypeMap const &) = delete;
+    ParticleTypeMap(class ParticleTypeMap const &) = delete;
     ParticleTypeMap() = delete;
 #endif
 
 public:
-    MCAPI static std::string const& getParticleName(enum ParticleType);
-    MCAPI static enum ParticleType getParticleTypeId(std::string const&);
+    MCAPI static std::string const & getParticleName(enum ParticleType);
+    MCAPI static enum ParticleType getParticleTypeId(std::string const &);
 
 protected:
 
 private:
-    MCAPI static class BidirectionalUnorderedMap<enum ParticleType, std::string > const map;
+    MCAPI static class BidirectionalUnorderedMap<enum ParticleType, std::string> const map;
 
 };

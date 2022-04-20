@@ -17,14 +17,14 @@ class RuntimeIdentifierDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RUNTIMEIDENTIFIERDESCRIPTION
 public:
-    class RuntimeIdentifierDescription& operator=(class RuntimeIdentifierDescription const&) = delete;
-    RuntimeIdentifierDescription(class RuntimeIdentifierDescription const&) = delete;
+    class RuntimeIdentifierDescription& operator=(class RuntimeIdentifierDescription const &) = delete;
+    RuntimeIdentifierDescription(class RuntimeIdentifierDescription const &) = delete;
     RuntimeIdentifierDescription() = delete;
 #endif
 
 public:
     /*0*/ virtual ~RuntimeIdentifierDescription();
-    /*1*/ virtual char const* getJsonName() const;
+    /*1*/ virtual char const * getJsonName() const;
     /*
     inline  ~RuntimeIdentifierDescription(){
          (RuntimeIdentifierDescription::*rv)();

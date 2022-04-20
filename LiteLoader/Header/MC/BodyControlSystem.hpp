@@ -17,15 +17,15 @@ class BodyControlSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BODYCONTROLSYSTEM
 public:
-    class BodyControlSystem& operator=(class BodyControlSystem const&) = delete;
-    BodyControlSystem(class BodyControlSystem const&) = delete;
+    class BodyControlSystem& operator=(class BodyControlSystem const &) = delete;
+    BodyControlSystem(class BodyControlSystem const &) = delete;
     BodyControlSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BodyControlSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

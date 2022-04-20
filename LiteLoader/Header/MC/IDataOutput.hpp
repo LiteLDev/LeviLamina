@@ -17,8 +17,8 @@ class IDataOutput {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IDATAOUTPUT
 public:
-    class IDataOutput& operator=(class IDataOutput const&) = delete;
-    IDataOutput(class IDataOutput const&) = delete;
+    class IDataOutput& operator=(class IDataOutput const &) = delete;
+    IDataOutput(class IDataOutput const &) = delete;
     IDataOutput() = delete;
 #endif
 

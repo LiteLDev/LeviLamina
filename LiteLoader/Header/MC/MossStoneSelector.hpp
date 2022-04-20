@@ -17,14 +17,14 @@ class MossStoneSelector {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOSSSTONESELECTOR
 public:
-    class MossStoneSelector& operator=(class MossStoneSelector const&) = delete;
-    MossStoneSelector(class MossStoneSelector const&) = delete;
+    class MossStoneSelector& operator=(class MossStoneSelector const &) = delete;
+    MossStoneSelector(class MossStoneSelector const &) = delete;
     MossStoneSelector() = delete;
 #endif
 
 public:
     /*0*/ virtual ~MossStoneSelector();
-    /*1*/ virtual class Block const& next(class Random&, int, int, int, bool) const;
+    /*1*/ virtual class Block const & next(class Random &, int, int, int, bool) const;
     /*
     inline  ~MossStoneSelector(){
          (MossStoneSelector::*rv)();

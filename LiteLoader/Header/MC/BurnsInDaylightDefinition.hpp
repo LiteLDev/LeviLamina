@@ -18,13 +18,13 @@ class BurnsInDaylightDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BURNSINDAYLIGHTDEFINITION
 public:
-    class BurnsInDaylightDefinition& operator=(class BurnsInDaylightDefinition const&) = delete;
-    BurnsInDaylightDefinition(class BurnsInDaylightDefinition const&) = delete;
+    class BurnsInDaylightDefinition& operator=(class BurnsInDaylightDefinition const &) = delete;
+    BurnsInDaylightDefinition(class BurnsInDaylightDefinition const &) = delete;
     BurnsInDaylightDefinition() = delete;
 #endif
 
 public:
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BurnsInDaylightDefinition> >&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BurnsInDaylightDefinition>> &);
 
 protected:
 

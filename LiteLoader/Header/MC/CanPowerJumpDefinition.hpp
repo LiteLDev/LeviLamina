@@ -18,14 +18,14 @@ struct CanPowerJumpDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CANPOWERJUMPDEFINITION
 public:
-    struct CanPowerJumpDefinition& operator=(struct CanPowerJumpDefinition const&) = delete;
-    CanPowerJumpDefinition(struct CanPowerJumpDefinition const&) = delete;
+    struct CanPowerJumpDefinition& operator=(struct CanPowerJumpDefinition const &) = delete;
+    CanPowerJumpDefinition(struct CanPowerJumpDefinition const &) = delete;
     CanPowerJumpDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&);
-    MCAPI void uninitialize(class EntityContext&);
+    MCAPI void initialize(class EntityContext &);
+    MCAPI void uninitialize(class EntityContext &);
 
 protected:
 

@@ -17,13 +17,13 @@ class Cavifier {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAVIFIER
 public:
-    class Cavifier& operator=(class Cavifier const&) = delete;
-    Cavifier(class Cavifier const&) = delete;
+    class Cavifier& operator=(class Cavifier const &) = delete;
+    Cavifier(class Cavifier const &) = delete;
     Cavifier() = delete;
 #endif
 
 public:
-    MCAPI Cavifier(class CavifierNoises const&, float, float);
+    MCAPI Cavifier(class CavifierNoises const &, float, float);
     MCAPI float cavify(class Vec3, int, float) const;
 
 protected:

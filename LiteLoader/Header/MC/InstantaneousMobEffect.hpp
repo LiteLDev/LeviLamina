@@ -18,8 +18,8 @@ class InstantaneousMobEffect : public MobEffect {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSTANTANEOUSMOBEFFECT
 public:
-    class InstantaneousMobEffect& operator=(class InstantaneousMobEffect const&) = delete;
-    InstantaneousMobEffect(class InstantaneousMobEffect const&) = delete;
+    class InstantaneousMobEffect& operator=(class InstantaneousMobEffect const &) = delete;
+    InstantaneousMobEffect(class InstantaneousMobEffect const &) = delete;
     InstantaneousMobEffect() = delete;
 #endif
 
@@ -27,7 +27,7 @@ public:
     /*0*/ virtual ~InstantaneousMobEffect();
     /*4*/ virtual bool isInstantaneous() const;
     /*6*/ virtual bool isDurationEffectTick(int, int) const;
-    MCAPI InstantaneousMobEffect(int, std::string const&, std::string const&, bool, int, int);
+    MCAPI InstantaneousMobEffect(int, std::string const &, std::string const &, bool, int, int);
 
 protected:
 

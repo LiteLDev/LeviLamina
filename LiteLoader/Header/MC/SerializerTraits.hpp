@@ -17,32 +17,34 @@ struct SerializerTraits {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERIALIZERTRAITS
 public:
-    struct SerializerTraits& operator=(struct SerializerTraits const&) = delete;
+    struct SerializerTraits& operator=(struct SerializerTraits const &) = delete;
 #endif
 
 public:
-    MCAPI SerializerTraits(struct SerializerTraits&&);
-    MCAPI SerializerTraits(struct SerializerTraits const&);
+    MCAPI SerializerTraits(struct SerializerTraits &&);
+    MCAPI SerializerTraits(struct SerializerTraits const &);
     MCAPI SerializerTraits();
-    MCAPI struct SerializerTraits& arrayLengthConstraint(unsigned __int64, unsigned __int64);
-    MCAPI struct SerializerTraits& enumMapper(class SerializerEnumMapping const*);
-    MCAPI struct SerializerTraits& error(std::string);
-    MCAPI struct SerializerTraits& factory(class entt::meta_any (* )(std::string const& ), class entt::meta_any (* )(std::string const& , void* ));
-    MCAPI struct SerializerTraits& memberName(std::string const&);
-    MCAPI struct SerializerTraits& minConstraint(float);
-    MCAPI struct SerializerTraits& operator=(struct SerializerTraits&&);
-    MCAPI struct SerializerTraits& rangeConstraint(float, float);
-    MCAPI struct SerializerTraits& required();
-    MCAPI struct SerializerTraits& validate(class std::function<bool (class entt::meta_any& , class SerializerContext& )>);
+    MCAPI struct SerializerTraits & arrayLengthConstraint(unsigned __int64, unsigned __int64);
+    MCAPI struct SerializerTraits & enumMapper(class SerializerEnumMapping const *);
+    MCAPI std::string const & error() const;
+    MCAPI struct SerializerTraits & factory(class entt::meta_any ( *)(std::string const &), class entt::meta_any ( *)(std::string const &, void *));
+    MCAPI bool isArrayMaxLengthConstraintSet() const;
+    MCAPI bool isArrayMinLengthConstraintSet() const;
+    MCAPI bool isMaxConstraintSet() const;
+    MCAPI bool isMinConstraintSet() const;
+    MCAPI struct SerializerTraits & maxConstraint(float);
+    MCAPI struct SerializerTraits & memberName(std::string const &);
+    MCAPI struct SerializerTraits & minConstraint(float);
+    MCAPI struct SerializerTraits & operator=(struct SerializerTraits &&);
+    MCAPI struct SerializerTraits & rangeConstraint(float, float);
+    MCAPI struct SerializerTraits & required();
+    MCAPI struct SerializerTraits & validate(class std::function<bool (class entt::meta_any &, class SerializerContext &)>);
     MCAPI ~SerializerTraits();
 
 protected:
 
 private:
-    MCAPI std::string errorOr(std::string const&) const;
     MCAPI bool isEnum() const;
-    MCAPI bool performValidation(class entt::meta_any, class SerializerContext&) const;
-    MCAPI bool remapEnum(std::string const&, __int64&) const;
-    MCAPI bool remapEnum(__int64, std::string&) const;
+    MCAPI bool performValidation(class entt::meta_any, class SerializerContext &) const;
 
 };

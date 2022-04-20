@@ -17,13 +17,13 @@ class GrowsCropComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROWSCROPCOMPONENT
 public:
-    class GrowsCropComponent& operator=(class GrowsCropComponent const&) = delete;
-    GrowsCropComponent(class GrowsCropComponent const&) = delete;
+    class GrowsCropComponent& operator=(class GrowsCropComponent const &) = delete;
+    GrowsCropComponent(class GrowsCropComponent const &) = delete;
 #endif
 
 public:
     MCAPI GrowsCropComponent();
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
 
 protected:
 

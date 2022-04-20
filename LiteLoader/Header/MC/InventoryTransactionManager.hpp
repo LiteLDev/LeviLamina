@@ -17,16 +17,16 @@ class InventoryTransactionManager {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYTRANSACTIONMANAGER
 public:
-    class InventoryTransactionManager& operator=(class InventoryTransactionManager const&) = delete;
-    InventoryTransactionManager(class InventoryTransactionManager const&) = delete;
+    class InventoryTransactionManager& operator=(class InventoryTransactionManager const &) = delete;
+    InventoryTransactionManager(class InventoryTransactionManager const &) = delete;
     InventoryTransactionManager() = delete;
 #endif
 
 public:
-    MCAPI void _createServerSideAction(class ItemStack const&, class ItemStack const&);
+    MCAPI void _createServerSideAction(class ItemStack const &, class ItemStack const &);
     MCAPI void _logExpectedActions() const;
-    MCAPI void addAction(class InventoryAction const&, bool);
-    MCAPI void addExpectedAction(class InventoryAction const&);
+    MCAPI void addAction(class InventoryAction const &, bool);
+    MCAPI void addExpectedAction(class InventoryAction const &);
     MCAPI void forceBalanceTransaction();
     MCAPI void resetExpectedActions();
     MCAPI ~InventoryTransactionManager();

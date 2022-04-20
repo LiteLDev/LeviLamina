@@ -17,13 +17,13 @@ struct PageContent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PAGECONTENT
 public:
-    PageContent(struct PageContent const&) = delete;
+    PageContent(struct PageContent const &) = delete;
     PageContent() = delete;
 #endif
 
 public:
     MCAPI std::unique_ptr<class CompoundTag> createTag() const;
-    MCAPI struct PageContent& operator=(struct PageContent const&);
+    MCAPI struct PageContent & operator=(struct PageContent const &);
     MCAPI ~PageContent();
 
 protected:

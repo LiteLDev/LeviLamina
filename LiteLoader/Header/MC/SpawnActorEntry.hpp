@@ -15,8 +15,8 @@ struct SpawnActorEntry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNACTORENTRY
 public:
-    struct SpawnActorEntry& operator=(struct SpawnActorEntry const&) = delete;
-    SpawnActorEntry(struct SpawnActorEntry const&) = delete;
+    struct SpawnActorEntry& operator=(struct SpawnActorEntry const &) = delete;
+    SpawnActorEntry(struct SpawnActorEntry const &) = delete;
     SpawnActorEntry() = delete;
 #endif
 

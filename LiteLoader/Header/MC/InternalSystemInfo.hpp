@@ -15,8 +15,8 @@ class InternalSystemInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERNALSYSTEMINFO
 public:
-    class InternalSystemInfo& operator=(class InternalSystemInfo const&) = delete;
-    InternalSystemInfo(class InternalSystemInfo const&) = delete;
+    class InternalSystemInfo& operator=(class InternalSystemInfo const &) = delete;
+    InternalSystemInfo(class InternalSystemInfo const &) = delete;
     InternalSystemInfo() = delete;
 #endif
 

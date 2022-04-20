@@ -18,15 +18,15 @@ class SlimeRandomDirectionDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLIMERANDOMDIRECTIONDEFINITION
 public:
-    class SlimeRandomDirectionDefinition& operator=(class SlimeRandomDirectionDefinition const&) = delete;
-    SlimeRandomDirectionDefinition(class SlimeRandomDirectionDefinition const&) = delete;
+    class SlimeRandomDirectionDefinition& operator=(class SlimeRandomDirectionDefinition const &) = delete;
+    SlimeRandomDirectionDefinition(class SlimeRandomDirectionDefinition const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~SlimeRandomDirectionDefinition();
     MCAPI SlimeRandomDirectionDefinition();
-    MCAPI void initialize(class EntityContext&, class SlimeRandomDirectionGoal&);
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeRandomDirectionDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class SlimeRandomDirectionGoal &);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeRandomDirectionDefinition>> &);
 
 protected:
 

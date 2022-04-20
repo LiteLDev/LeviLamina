@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct ActorUseItemEvent {
+class ActorUseItemEvent {
 
 #define AFTER_EXTRA
 
@@ -15,8 +15,8 @@ struct ActorUseItemEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORUSEITEMEVENT
 public:
-    struct ActorUseItemEvent& operator=(struct ActorUseItemEvent const&) = delete;
-    ActorUseItemEvent(struct ActorUseItemEvent const&) = delete;
+    class ActorUseItemEvent& operator=(class ActorUseItemEvent const &) = delete;
+    ActorUseItemEvent(class ActorUseItemEvent const &) = delete;
     ActorUseItemEvent() = delete;
 #endif
 

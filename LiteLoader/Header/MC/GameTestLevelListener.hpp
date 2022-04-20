@@ -17,8 +17,8 @@ class GameTestLevelListener {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETESTLEVELLISTENER
 public:
-    class GameTestLevelListener& operator=(class GameTestLevelListener const&) = delete;
-    GameTestLevelListener(class GameTestLevelListener const&) = delete;
+    class GameTestLevelListener& operator=(class GameTestLevelListener const &) = delete;
+    GameTestLevelListener(class GameTestLevelListener const &) = delete;
     GameTestLevelListener() = delete;
 #endif
 
@@ -30,7 +30,10 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual enum EventResult onLevelTick();
-    MCAPI GameTestLevelListener(class gametest::GameTestTicker&);
+    /*7*/ virtual void __unk_vfn_7();
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual enum EventResult onEvent(struct LevelNotificationEvent const &);
+    MCAPI GameTestLevelListener(class gametest::GameTestTicker &);
 
 protected:
 

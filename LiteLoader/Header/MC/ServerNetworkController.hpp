@@ -17,16 +17,16 @@ class ServerNetworkController {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERNETWORKCONTROLLER
 public:
-    class ServerNetworkController& operator=(class ServerNetworkController const&) = delete;
-    ServerNetworkController(class ServerNetworkController const&) = delete;
+    class ServerNetworkController& operator=(class ServerNetworkController const &) = delete;
+    ServerNetworkController(class ServerNetworkController const &) = delete;
     ServerNetworkController() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ServerNetworkController();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual bool isHost(class mce::UUID const&) const;
-    /*3*/ virtual bool canChangePermission(class mce::UUID const&, class ServerPlayer const&) const;
+    /*2*/ virtual bool isHost(class mce::UUID const &) const;
+    /*3*/ virtual bool canChangePermission(class mce::UUID const &, class ServerPlayer const &) const;
     /*
     inline bool isDedicatedServer() const{
         bool (ServerNetworkController::*rv)() const;
@@ -34,7 +34,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ServerNetworkController(bool, class mce::UUID const&, class std::function<bool (class ServerPlayer const& , enum AbilitiesIndex)>);
+    MCAPI ServerNetworkController(bool, class mce::UUID const &, class std::function<bool (class ServerPlayer const &, enum AbilitiesIndex)>);
 
 protected:
 

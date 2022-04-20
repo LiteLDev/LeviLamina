@@ -15,8 +15,8 @@ class ScriptTickListener {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTTICKLISTENER
 public:
-    class ScriptTickListener& operator=(class ScriptTickListener const&) = delete;
-    ScriptTickListener(class ScriptTickListener const&) = delete;
+    class ScriptTickListener& operator=(class ScriptTickListener const &) = delete;
+    ScriptTickListener(class ScriptTickListener const &) = delete;
     ScriptTickListener() = delete;
 #endif
 
@@ -25,10 +25,9 @@ public:
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual void __unk_vfn_4();
+    /*4*/ virtual enum EventResult onLevelRemovedPlayer(class Level &, class Player &);
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual enum EventResult onLevelTick();
-    MCAPI ScriptTickListener(class Scripting::ScriptEngine&);
 
 protected:
 

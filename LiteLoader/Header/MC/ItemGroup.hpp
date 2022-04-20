@@ -17,15 +17,15 @@ class ItemGroup {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMGROUP
 public:
-    class ItemGroup& operator=(class ItemGroup const&) = delete;
-    ItemGroup(class ItemGroup const&) = delete;
+    class ItemGroup& operator=(class ItemGroup const &) = delete;
+    ItemGroup(class ItemGroup const &) = delete;
     ItemGroup() = delete;
 #endif
 
 public:
-    MCAPI ItemGroup(class ItemInstance const&);
+    MCAPI ItemGroup(class ItemInstance const &);
     MCAPI bool isEmpty() const;
-    MCAPI class ItemGroup& operator=(class ItemGroup&&);
+    MCAPI class ItemGroup & operator=(class ItemGroup &&);
     MCAPI ~ItemGroup();
 
 protected:

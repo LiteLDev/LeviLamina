@@ -18,21 +18,21 @@ class SimplePlayerContainer : public SimpleContainer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLEPLAYERCONTAINER
 public:
-    class SimplePlayerContainer& operator=(class SimplePlayerContainer const&) = delete;
-    SimplePlayerContainer(class SimplePlayerContainer const&) = delete;
+    class SimplePlayerContainer& operator=(class SimplePlayerContainer const &) = delete;
+    SimplePlayerContainer(class SimplePlayerContainer const &) = delete;
     SimplePlayerContainer() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SimplePlayerContainer();
     /*1*/ virtual void init();
-    /*9*/ virtual void setItem(int, class ItemStack const&);
-    /*16*/ virtual void startOpen(class Player&);
-    /*17*/ virtual void stopOpen(class Player&);
+    /*9*/ virtual void setItem(int, class ItemStack const &);
+    /*16*/ virtual void startOpen(class Player &);
+    /*17*/ virtual void stopOpen(class Player &);
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
     /*31*/ virtual void __unk_vfn_31();
-    MCAPI SimplePlayerContainer(class Player&, std::string const&, bool, int, enum ContainerType);
+    MCAPI SimplePlayerContainer(class Player &, std::string const &, bool, int, enum ContainerType);
 
 protected:
 

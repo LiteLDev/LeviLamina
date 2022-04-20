@@ -17,13 +17,13 @@ class MinecraftScheduler {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTSCHEDULER
 public:
-    class MinecraftScheduler& operator=(class MinecraftScheduler const&) = delete;
-    MinecraftScheduler(class MinecraftScheduler const&) = delete;
+    class MinecraftScheduler& operator=(class MinecraftScheduler const &) = delete;
+    MinecraftScheduler(class MinecraftScheduler const &) = delete;
     MinecraftScheduler() = delete;
 #endif
 
 public:
-    MCAPI static class Scheduler& client();
+    MCAPI static class Scheduler & client();
     MCAPI static void destroyClientSingleton();
 
 protected:

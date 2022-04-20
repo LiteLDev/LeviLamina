@@ -17,81 +17,23 @@ class JsonLoader {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JSONLOADER
 public:
-    class JsonLoader& operator=(class JsonLoader const&) = delete;
-    JsonLoader(class JsonLoader const&) = delete;
+    class JsonLoader& operator=(class JsonLoader const &) = delete;
+    JsonLoader(class JsonLoader const &) = delete;
+    JsonLoader() = delete;
 #endif
 
 public:
     /*0*/ virtual ~JsonLoader();
-    /*1*/ virtual bool isBool() const;
-    /*2*/ virtual bool isInt() const;
-    /*3*/ virtual bool isString() const;
-    /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual bool isArray() const;
-    /*6*/ virtual bool doSerialize(bool&);
-    /*7*/ virtual bool doSerialize(signed char&);
-    /*8*/ virtual bool doSerialize(unsigned char&);
-    /*9*/ virtual bool doSerialize(short&);
-    /*10*/ virtual bool doSerialize(unsigned short&);
-    /*11*/ virtual bool doSerialize(int&);
-    /*12*/ virtual bool doSerialize(unsigned int&);
-    /*13*/ virtual bool doSerialize(__int64&);
-    /*14*/ virtual bool doSerialize(unsigned __int64&);
-    /*15*/ virtual bool doSerialize(float&);
-    /*16*/ virtual bool doSerialize(double&);
-    /*17*/ virtual bool doSerialize(std::string&);
-    /*18*/ virtual bool doBeginMember(char const*, bool);
-    /*19*/ virtual bool doBeginMember(unsigned __int64, std::string&);
-    /*20*/ virtual void __unk_vfn_20();
-    /*21*/ virtual bool doBeginArray(unsigned __int64&);
-    /*22*/ virtual bool doBeginArrayItem(unsigned __int64);
-    /*23*/ virtual void __unk_vfn_23();
-    /*24*/ virtual void __unk_vfn_24();
-    /*25*/ virtual bool doBeginObject(unsigned __int64&);
     /*
-    inline bool doEndObject(){
-        bool (JsonLoader::*rv)();
-        *((void**)&rv) = dlsym("?doEndObject@JsonLoader@@EEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool doEndArray(){
-        bool (JsonLoader::*rv)();
-        *((void**)&rv) = dlsym("?doEndArray@JsonLoader@@EEAA_NXZ");
-        return (this->*rv)();
-    }
     inline  ~JsonLoader(){
          (JsonLoader::*rv)();
         *((void**)&rv) = dlsym("??1JsonLoader@@UEAA@XZ");
         return (this->*rv)();
     }
-    inline bool doBeginObject(){
-        bool (JsonLoader::*rv)();
-        *((void**)&rv) = dlsym("?doBeginObject@JsonLoader@@EEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isObject() const{
-        bool (JsonLoader::*rv)() const;
-        *((void**)&rv) = dlsym("?isObject@JsonLoader@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool doEndMember(){
-        bool (JsonLoader::*rv)();
-        *((void**)&rv) = dlsym("?doEndMember@JsonLoader@@EEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool doEndArrayItem(){
-        bool (JsonLoader::*rv)();
-        *((void**)&rv) = dlsym("?doEndArrayItem@JsonLoader@@EEAA_NXZ");
-        return (this->*rv)();
-    }
     */
-    MCAPI JsonLoader();
 
 protected:
 
 private:
-    MCAPI void _loadJson(std::string const&);
-    MCAPI void _useJson(class rapidjson::GenericValue<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator> >&);
-    MCAPI void _useJson(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator>&);
 
 };

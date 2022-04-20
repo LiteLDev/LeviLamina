@@ -18,8 +18,8 @@ class LootPoolEntry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTPOOLENTRY
 public:
-    class LootPoolEntry& operator=(class LootPoolEntry const&) = delete;
-    LootPoolEntry(class LootPoolEntry const&) = delete;
+    class LootPoolEntry& operator=(class LootPoolEntry const &) = delete;
+    LootPoolEntry(class LootPoolEntry const &) = delete;
     LootPoolEntry() = delete;
 #endif
 
@@ -33,7 +33,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value const&);
+    MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value const &);
 
 protected:
 

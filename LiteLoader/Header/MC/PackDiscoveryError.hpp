@@ -18,15 +18,15 @@ class PackDiscoveryError : public PackError {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKDISCOVERYERROR
 public:
-    class PackDiscoveryError& operator=(class PackDiscoveryError const&) = delete;
-    PackDiscoveryError(class PackDiscoveryError const&) = delete;
+    class PackDiscoveryError& operator=(class PackDiscoveryError const &) = delete;
+    PackDiscoveryError(class PackDiscoveryError const &) = delete;
     PackDiscoveryError() = delete;
 #endif
 
 public:
     /*0*/ virtual ~PackDiscoveryError();
-    /*2*/ virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& getLocErrorMessageMap() const;
-    /*3*/ virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& getEventErrorMessageMap() const;
+    /*2*/ virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string>>> const & getLocErrorMessageMap() const;
+    /*3*/ virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string>>> const & getEventErrorMessageMap() const;
     /*
     inline  ~PackDiscoveryError(){
          (PackDiscoveryError::*rv)();

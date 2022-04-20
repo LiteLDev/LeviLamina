@@ -14,11 +14,11 @@ namespace ActorContainerDiffHelperImpl {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI std::vector<class gsl::not_null<class AttributeInstance const* >> const _createListOfPointers(class BaseAttributeMap const&);
-    MCAPI std::vector<class gsl::not_null<class DataItem const* >> const _createListOfPointers(class SynchedActorData const&);
-    MCAPI std::vector<class gsl::not_null<class MobEffectInstance const* >> const _createListOfPointers(std::vector<class MobEffectInstance> const&);
-    MCAPI std::vector<std::unique_ptr<class DataItem>> _getDiff(class SynchedActorData const&, class SynchedActorData const&);
-    MCAPI std::vector<class gsl::not_null<class AttributeInstance const* >> const _getDiff(class BaseAttributeMap const&, class BaseAttributeMap const&);
-    MCAPI std::vector<class gsl::not_null<class MobEffectInstance const* >> const _getDiff(std::vector<class MobEffectInstance> const&, std::vector<class MobEffectInstance> const&);
+    MCAPI std::vector<class gsl::not_null<class AttributeInstance const *>> const _createListOfPointers(class BaseAttributeMap const &);
+    MCAPI std::vector<class gsl::not_null<class DataItem const *>> const _createListOfPointers(class SynchedActorData const &);
+    MCAPI std::vector<class gsl::not_null<class MobEffectInstance const *>> const _createListOfPointers(std::vector<class MobEffectInstance> const &);
+    MCAPI std::vector<std::unique_ptr<class DataItem>> _getDiff(class SynchedActorData const &, class SynchedActorData const &);
+    MCAPI std::vector<class gsl::not_null<class AttributeInstance const *>> const _getDiff(class BaseAttributeMap const &, class BaseAttributeMap const &);
+    MCAPI std::vector<class gsl::not_null<class MobEffectInstance const *>> const _getDiff(std::vector<class MobEffectInstance> const &, std::vector<class MobEffectInstance> const &);
 
 };

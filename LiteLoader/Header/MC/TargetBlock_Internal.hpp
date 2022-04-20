@@ -14,6 +14,6 @@ namespace TargetBlock_Internal {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void createPoweredBlockComponentAtPos(class BlockSource&, class BlockPos const&);
+    MCAPI void createPoweredBlockComponentAtPos(class BlockSource &, class BlockPos const &);
 
 };

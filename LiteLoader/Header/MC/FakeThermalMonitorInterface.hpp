@@ -17,8 +17,8 @@ class FakeThermalMonitorInterface {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FAKETHERMALMONITORINTERFACE
 public:
-    class FakeThermalMonitorInterface& operator=(class FakeThermalMonitorInterface const&) = delete;
-    FakeThermalMonitorInterface(class FakeThermalMonitorInterface const&) = delete;
+    class FakeThermalMonitorInterface& operator=(class FakeThermalMonitorInterface const &) = delete;
+    FakeThermalMonitorInterface(class FakeThermalMonitorInterface const &) = delete;
 #endif
 
 public:

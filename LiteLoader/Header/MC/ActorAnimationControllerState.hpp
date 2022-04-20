@@ -17,13 +17,13 @@ class ActorAnimationControllerState {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORANIMATIONCONTROLLERSTATE
 public:
-    class ActorAnimationControllerState& operator=(class ActorAnimationControllerState const&) = delete;
-    ActorAnimationControllerState(class ActorAnimationControllerState const&) = delete;
+    class ActorAnimationControllerState& operator=(class ActorAnimationControllerState const &) = delete;
+    ActorAnimationControllerState(class ActorAnimationControllerState const &) = delete;
     ActorAnimationControllerState() = delete;
 #endif
 
 public:
-    MCAPI class StateAnimationVariable& addVariable(std::string const&);
+    MCAPI class StateAnimationVariable & addVariable(std::string const &);
     MCAPI void setBlendTransitionTime(float);
 
 protected:

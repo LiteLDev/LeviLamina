@@ -21,12 +21,12 @@ public:
 #endif
 
 public:
-    MCAPI PositionTrackingId(class PositionTrackingId&&);
-    MCAPI PositionTrackingId(class PositionTrackingId const&);
-    MCAPI void fromTag(class Tag const*);
+    MCAPI PositionTrackingId(class PositionTrackingId &&);
+    MCAPI PositionTrackingId(class PositionTrackingId const &);
+    MCAPI void fromTag(class Tag const *);
     MCAPI std::unique_ptr<class Tag> getTag() const;
-    MCAPI class PositionTrackingId& operator=(class PositionTrackingId&&);
-    MCAPI class PositionTrackingId& operator=(class PositionTrackingId const&);
+    MCAPI class PositionTrackingId & operator=(class PositionTrackingId &&);
+    MCAPI class PositionTrackingId & operator=(class PositionTrackingId const &);
     MCAPI std::string const toString() const;
     MCAPI static class PositionTrackingId const INVALID_ID;
 

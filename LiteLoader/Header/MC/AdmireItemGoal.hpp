@@ -17,8 +17,8 @@ class AdmireItemGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADMIREITEMGOAL
 public:
-    class AdmireItemGoal& operator=(class AdmireItemGoal const&) = delete;
-    AdmireItemGoal(class AdmireItemGoal const&) = delete;
+    class AdmireItemGoal& operator=(class AdmireItemGoal const &) = delete;
+    AdmireItemGoal(class AdmireItemGoal const &) = delete;
     AdmireItemGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline bool canContinueToUse(){
         bool (AdmireItemGoal::*rv)();
@@ -38,11 +38,11 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI AdmireItemGoal(class Mob&, enum LevelSoundEvent, struct FloatRange, class DefinitionTrigger const&, class DefinitionTrigger const&);
+    MCAPI AdmireItemGoal(class Mob &, enum LevelSoundEvent, struct FloatRange, class DefinitionTrigger const &, class DefinitionTrigger const &);
 
 protected:
 
 private:
-    MCAPI void _tryPlaceItemInInventory(class ContainerComponent&, class ShareableComponent const&);
+    MCAPI void _tryPlaceItemInInventory(class ContainerComponent &, class ShareableComponent const &);
 
 };

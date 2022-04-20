@@ -17,8 +17,8 @@ class HealthAttributeDelegate {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HEALTHATTRIBUTEDELEGATE
 public:
-    class HealthAttributeDelegate& operator=(class HealthAttributeDelegate const&) = delete;
-    HealthAttributeDelegate(class HealthAttributeDelegate const&) = delete;
+    class HealthAttributeDelegate& operator=(class HealthAttributeDelegate const &) = delete;
+    HealthAttributeDelegate(class HealthAttributeDelegate const &) = delete;
     HealthAttributeDelegate() = delete;
 #endif
 
@@ -26,9 +26,10 @@ public:
     /*0*/ virtual ~HealthAttributeDelegate();
     /*1*/ virtual void tick();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool change(float, float, struct AttributeBuffInfo);
-    /*4*/ virtual float getBuffValue(class AttributeBuff const&) const;
-    MCAPI HealthAttributeDelegate(class AttributeInstance const&, class Mob*);
+    /*3*/ virtual bool willChange(float, float, class AttributeBuff const &);
+    /*4*/ virtual float change(float, float, class AttributeBuff const &);
+    /*5*/ virtual float getBuffValueWithModifiers(class AttributeBuff const &) const;
+    MCAPI HealthAttributeDelegate(class AttributeInstance const &, class Mob *);
 
 protected:
 

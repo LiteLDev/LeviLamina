@@ -17,14 +17,14 @@ class IllagerBeastBlockedComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ILLAGERBEASTBLOCKEDCOMPONENT
 public:
-    class IllagerBeastBlockedComponent& operator=(class IllagerBeastBlockedComponent const&) = delete;
-    IllagerBeastBlockedComponent(class IllagerBeastBlockedComponent const&) = delete;
+    class IllagerBeastBlockedComponent& operator=(class IllagerBeastBlockedComponent const &) = delete;
+    IllagerBeastBlockedComponent(class IllagerBeastBlockedComponent const &) = delete;
     IllagerBeastBlockedComponent() = delete;
 #endif
 
 public:
-    MCAPI void initFromDefinition(class Actor&);
-    MCAPI void onBlocked(class Actor&, class ActorDamageSource const&, class Actor&);
+    MCAPI void initFromDefinition(class Actor &);
+    MCAPI void onBlocked(class Actor &, class ActorDamageSource const &, class Actor &);
 
 protected:
 

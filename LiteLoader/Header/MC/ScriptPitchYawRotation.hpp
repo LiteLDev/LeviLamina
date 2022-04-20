@@ -17,8 +17,8 @@ struct ScriptPitchYawRotation {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPITCHYAWROTATION
 public:
-    struct ScriptPitchYawRotation& operator=(struct ScriptPitchYawRotation const&) = delete;
-    ScriptPitchYawRotation(struct ScriptPitchYawRotation const&) = delete;
+    struct ScriptPitchYawRotation& operator=(struct ScriptPitchYawRotation const &) = delete;
+    ScriptPitchYawRotation(struct ScriptPitchYawRotation const &) = delete;
     ScriptPitchYawRotation() = delete;
 #endif
 

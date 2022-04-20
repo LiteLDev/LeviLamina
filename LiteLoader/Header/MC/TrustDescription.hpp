@@ -18,15 +18,15 @@ class TrustDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRUSTDESCRIPTION
 public:
-    class TrustDescription& operator=(class TrustDescription const&) = delete;
-    TrustDescription(class TrustDescription const&) = delete;
+    class TrustDescription& operator=(class TrustDescription const &) = delete;
+    TrustDescription(class TrustDescription const &) = delete;
     TrustDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~TrustDescription();
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~TrustDescription(){
          (TrustDescription::*rv)();

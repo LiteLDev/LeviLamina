@@ -17,17 +17,17 @@ class ActorInteraction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORINTERACTION
 public:
-    class ActorInteraction& operator=(class ActorInteraction const&) = delete;
-    ActorInteraction(class ActorInteraction const&) = delete;
+    class ActorInteraction& operator=(class ActorInteraction const &) = delete;
+    ActorInteraction(class ActorInteraction const &) = delete;
     ActorInteraction() = delete;
 #endif
 
 public:
     MCAPI ActorInteraction(bool);
     MCAPI void capture(class std::function<void (void)>);
-    MCAPI std::string const& getInteractText() const;
+    MCAPI std::string const & getInteractText() const;
     MCAPI void interact();
-    MCAPI void setInteractText(std::string const&);
+    MCAPI void setInteractText(std::string const &);
     MCAPI bool shouldCapture() const;
     MCAPI ~ActorInteraction();
 

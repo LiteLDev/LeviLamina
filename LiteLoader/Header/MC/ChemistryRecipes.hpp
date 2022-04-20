@@ -17,13 +17,13 @@ class ChemistryRecipes {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHEMISTRYRECIPES
 public:
-    class ChemistryRecipes& operator=(class ChemistryRecipes const&) = delete;
-    ChemistryRecipes(class ChemistryRecipes const&) = delete;
+    class ChemistryRecipes& operator=(class ChemistryRecipes const &) = delete;
+    ChemistryRecipes(class ChemistryRecipes const &) = delete;
     ChemistryRecipes() = delete;
 #endif
 
 public:
-    MCAPI static void addRecipes(class Recipes&);
+    MCAPI static void addRecipes(class Recipes &);
 
 protected:
 

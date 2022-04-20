@@ -25,13 +25,13 @@ struct Result {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILEARCHIVER
 public:
-    class FileArchiver& operator=(class FileArchiver const&) = delete;
-    FileArchiver(class FileArchiver const&) = delete;
+    class FileArchiver& operator=(class FileArchiver const &) = delete;
+    FileArchiver(class FileArchiver const &) = delete;
     FileArchiver() = delete;
 #endif
 
 public:
-    MCAPI class std::future<struct FileArchiver::Result> archivePack(class Core::Path const&, class Core::Path const&, class std::function<void (struct FileArchiver::Result& )>);
+    MCAPI class std::future<struct FileArchiver::Result> archivePack(class Core::Path const &, class Core::Path const &, class std::function<void (struct FileArchiver::Result &)>);
     MCAPI static std::string const EXTENSION_ADDON;
     MCAPI static std::string const EXTENSION_RESOURCEPACK;
     MCAPI static std::string const EXTENSION_TEMPLATE;
@@ -41,6 +41,6 @@ public:
 protected:
 
 private:
-    MCAPI void _printLevelResultMessage(struct FileArchiver::Result const&);
+    MCAPI void _printLevelResultMessage(struct FileArchiver::Result const &);
 
 };

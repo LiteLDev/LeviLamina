@@ -15,7 +15,7 @@ namespace FilterList {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI struct FilterTest::Definition const* findFilterDefinition(std::string const&);
+    MCAPI struct FilterTest::Definition const * findFilterDefinition(std::string const &);
     MCAPI void initialize();
 
 };

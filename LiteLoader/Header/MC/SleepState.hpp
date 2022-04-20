@@ -17,8 +17,8 @@ class SleepState {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLEEPSTATE
 public:
-    class SleepState& operator=(class SleepState const&) = delete;
-    SleepState(class SleepState const&) = delete;
+    class SleepState& operator=(class SleepState const &) = delete;
+    SleepState(class SleepState const &) = delete;
     SleepState() = delete;
 #endif
 

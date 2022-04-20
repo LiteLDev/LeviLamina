@@ -18,8 +18,8 @@ class ScriptItemComponent : public ScriptObject {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTITEMCOMPONENT
 public:
-    class ScriptItemComponent& operator=(class ScriptItemComponent const&) = delete;
-    ScriptItemComponent(class ScriptItemComponent const&) = delete;
+    class ScriptItemComponent& operator=(class ScriptItemComponent const &) = delete;
+    ScriptItemComponent(class ScriptItemComponent const &) = delete;
     ScriptItemComponent() = delete;
 #endif
 
@@ -32,9 +32,8 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptItemComponent(class Scripting::WeakTypedObjectHandle<class ScriptItemStack>, class Scripting::WeakLifetimeScope const&, std::string const&);
-    MCAPI std::string const& getId() const;
-    MCAPI bool valid() const;
+    MCAPI ScriptItemComponent(class Scripting::WeakTypedObjectHandle<class ScriptItemStack>, class Scripting::WeakLifetimeScope const &, std::string const &);
+    MCAPI std::string const & getId() const;
 
 protected:
 

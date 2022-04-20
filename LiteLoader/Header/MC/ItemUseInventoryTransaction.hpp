@@ -24,31 +24,31 @@ public:
 
 public:
     /*0*/ virtual ~ItemUseInventoryTransaction();
-    /*1*/ virtual void read(class ReadOnlyBinaryStream&);
-    /*2*/ virtual void write(class BinaryStream&) const;
+    /*1*/ virtual void read(class ReadOnlyBinaryStream &);
+    /*2*/ virtual void write(class BinaryStream &) const;
     /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual enum InventoryTransactionError handle(class Player&, bool) const;
-    /*5*/ virtual void onTransactionError(class Player&, enum InventoryTransactionError) const;
+    /*4*/ virtual enum InventoryTransactionError handle(class Player &, bool) const;
+    /*5*/ virtual void onTransactionError(class Player &, enum InventoryTransactionError) const;
     /*
     inline  ~ItemUseInventoryTransaction(){
          (ItemUseInventoryTransaction::*rv)();
         *((void**)&rv) = dlsym("??1ItemUseInventoryTransaction@@UEAA@XZ");
         return (this->*rv)();
     }
-    inline void postLoadItems(class BlockPalette& a0, bool a1){
-        void (ItemUseInventoryTransaction::*rv)(class BlockPalette&, bool);
+    inline void postLoadItems(class BlockPalette & a0, bool a1){
+        void (ItemUseInventoryTransaction::*rv)(class BlockPalette &, bool);
         *((void**)&rv) = dlsym("?postLoadItems@ItemUseInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z");
-        return (this->*rv)(std::forward<class BlockPalette&>(a0), std::forward<bool>(a1));
+        return (this->*rv)(std::forward<class BlockPalette &>(a0), std::forward<bool>(a1));
     }
     */
-    MCAPI ItemUseInventoryTransaction(class ItemUseInventoryTransaction const&);
-    MCAPI class ItemUseInventoryTransaction& operator=(class ItemUseInventoryTransaction const&);
-    MCAPI void resendBlocksAroundArea(class Player&, class BlockPos const&, unsigned char) const;
-    MCAPI class ItemUseInventoryTransaction& setSelectedItem(class ItemStack const&);
+    MCAPI ItemUseInventoryTransaction(class ItemUseInventoryTransaction const &);
+    MCAPI class ItemUseInventoryTransaction & operator=(class ItemUseInventoryTransaction const &);
+    MCAPI void resendBlocksAroundArea(class Player &, class BlockPos const &, unsigned char) const;
+    MCAPI class ItemUseInventoryTransaction & setSelectedItem(class ItemStack const &);
 
 protected:
 
 private:
-    MCAPI static class BidirectionalUnorderedMap<enum ItemUseInventoryTransaction::ActionType, std::string > const actionTypeMap;
+    MCAPI static class BidirectionalUnorderedMap<enum ItemUseInventoryTransaction::ActionType, std::string> const actionTypeMap;
 
 };

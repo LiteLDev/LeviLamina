@@ -15,13 +15,13 @@ class ScriptPluginManagerResult {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLUGINMANAGERRESULT
 public:
-    class ScriptPluginManagerResult& operator=(class ScriptPluginManagerResult const&) = delete;
-    ScriptPluginManagerResult(class ScriptPluginManagerResult const&) = delete;
+    class ScriptPluginManagerResult& operator=(class ScriptPluginManagerResult const &) = delete;
+    ScriptPluginManagerResult(class ScriptPluginManagerResult const &) = delete;
     ScriptPluginManagerResult() = delete;
 #endif
 
 public:
-    MCAPI class ScriptPluginResult& getOrCreatePluginResults(struct Scripting::ModuleDescriptor const&);
+    MCAPI class ScriptPluginResult & getOrCreatePluginResults(struct Scripting::ModuleDescriptor const &);
     MCAPI void writeToContentLog() const;
     MCAPI ~ScriptPluginManagerResult();
 

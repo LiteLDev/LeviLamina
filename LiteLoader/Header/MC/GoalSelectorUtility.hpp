@@ -14,7 +14,7 @@ namespace GoalSelectorUtility {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void tickGoals(class Mob&, bool);
-    MCAPI void tryStartGoals(class Mob&, bool);
+    MCAPI void tickGoals(class Mob &, bool);
+    MCAPI void tryStartGoals(class Mob &, bool);
 
 };

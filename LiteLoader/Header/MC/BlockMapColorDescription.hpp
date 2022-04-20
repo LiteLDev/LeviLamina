@@ -17,8 +17,8 @@ struct BlockMapColorDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKMAPCOLORDESCRIPTION
 public:
-    struct BlockMapColorDescription& operator=(struct BlockMapColorDescription const&) = delete;
-    BlockMapColorDescription(struct BlockMapColorDescription const&) = delete;
+    struct BlockMapColorDescription& operator=(struct BlockMapColorDescription const &) = delete;
+    BlockMapColorDescription(struct BlockMapColorDescription const &) = delete;
     BlockMapColorDescription() = delete;
 #endif
 

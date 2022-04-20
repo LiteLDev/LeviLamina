@@ -32,14 +32,14 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TAGMEMORYCHUNK
 public:
-    struct TagMemoryChunk& operator=(struct TagMemoryChunk const&) = delete;
-    TagMemoryChunk(struct TagMemoryChunk const&) = delete;
+    struct TagMemoryChunk& operator=(struct TagMemoryChunk const &) = delete;
+    TagMemoryChunk(struct TagMemoryChunk const &) = delete;
     TagMemoryChunk() = delete;
 #endif
 
 public:
     MCAPI struct TagMemoryChunk copy() const;
-    MCAPI bool operator!=(struct TagMemoryChunk const&) const;
+    MCAPI bool operator!=(struct TagMemoryChunk const &) const;
     MCAPI ~TagMemoryChunk();
 
 protected:

@@ -15,13 +15,13 @@ struct MolangEntityVariable {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGENTITYVARIABLE
 public:
-    struct MolangEntityVariable& operator=(struct MolangEntityVariable const&) = delete;
-    MolangEntityVariable(struct MolangEntityVariable const&) = delete;
+    struct MolangEntityVariable& operator=(struct MolangEntityVariable const &) = delete;
+    MolangEntityVariable(struct MolangEntityVariable const &) = delete;
     MolangEntityVariable() = delete;
 #endif
 
 public:
-    MCAPI MolangEntityVariable(class HashedString const&);
+    MCAPI MolangEntityVariable(class HashedString const &);
     MCAPI ~MolangEntityVariable();
 
 protected:

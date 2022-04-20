@@ -15,8 +15,8 @@ struct BlockDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDESCRIPTION
 public:
-    struct BlockDescription& operator=(struct BlockDescription const&) = delete;
-    BlockDescription(struct BlockDescription const&) = delete;
+    struct BlockDescription& operator=(struct BlockDescription const &) = delete;
+    BlockDescription(struct BlockDescription const &) = delete;
     BlockDescription() = delete;
 #endif
 

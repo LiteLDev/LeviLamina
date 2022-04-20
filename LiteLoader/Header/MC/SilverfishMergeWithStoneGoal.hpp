@@ -18,8 +18,8 @@ class SilverfishMergeWithStoneGoal : public RandomStrollGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SILVERFISHMERGEWITHSTONEGOAL
 public:
-    class SilverfishMergeWithStoneGoal& operator=(class SilverfishMergeWithStoneGoal const&) = delete;
-    SilverfishMergeWithStoneGoal(class SilverfishMergeWithStoneGoal const&) = delete;
+    class SilverfishMergeWithStoneGoal& operator=(class SilverfishMergeWithStoneGoal const &) = delete;
+    SilverfishMergeWithStoneGoal(class SilverfishMergeWithStoneGoal const &) = delete;
     SilverfishMergeWithStoneGoal() = delete;
 #endif
 
@@ -29,10 +29,10 @@ public:
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual bool canBeInterrupted();
     /*4*/ virtual void start();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    MCAPI SilverfishMergeWithStoneGoal(class Silverfish&);
+    MCAPI SilverfishMergeWithStoneGoal(class Silverfish &);
 
 protected:
 

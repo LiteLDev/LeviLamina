@@ -17,22 +17,22 @@ class ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONCRAFTNONIMPLEMENTED_DEPRECATEDASKTYLAING
 public:
-    class ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING& operator=(class ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING const&) = delete;
-    ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING(class ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING const&) = delete;
+    class ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING& operator=(class ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING const &) = delete;
+    ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING(class ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
     /*
-    inline void _write(class BinaryStream& a0) const{
-        void (ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING::*rv)(class BinaryStream&) const;
-        *((void**)&rv) = dlsym("?_write@ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING@@MEBAXAEAVBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class BinaryStream&>(a0));
-    }
-    inline bool _read(class ReadOnlyBinaryStream& a0){
-        bool (ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING::*rv)(class ReadOnlyBinaryStream&);
+    inline bool _read(class ReadOnlyBinaryStream & a0){
+        bool (ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING::*rv)(class ReadOnlyBinaryStream &);
         *((void**)&rv) = dlsym("?_read@ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING@@MEAA_NAEAVReadOnlyBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class ReadOnlyBinaryStream&>(a0));
+        return (this->*rv)(std::forward<class ReadOnlyBinaryStream &>(a0));
+    }
+    inline void _write(class BinaryStream & a0) const{
+        void (ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING::*rv)(class BinaryStream &) const;
+        *((void**)&rv) = dlsym("?_write@ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING@@MEBAXAEAVBinaryStream@@@Z");
+        return (this->*rv)(std::forward<class BinaryStream &>(a0));
     }
     */
     MCAPI ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();

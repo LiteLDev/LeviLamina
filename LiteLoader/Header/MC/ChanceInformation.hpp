@@ -17,14 +17,14 @@ class ChanceInformation {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHANCEINFORMATION
 public:
-    class ChanceInformation& operator=(class ChanceInformation const&) = delete;
-    ChanceInformation(class ChanceInformation const&) = delete;
+    class ChanceInformation& operator=(class ChanceInformation const &) = delete;
+    ChanceInformation(class ChanceInformation const &) = delete;
     ChanceInformation() = delete;
 #endif
 
 public:
     MCAPI bool isValid() const;
-    MCAPI bool roll(class Random&) const;
+    MCAPI bool roll(class Random &) const;
     MCAPI void set(unsigned int, unsigned int);
     MCAPI void set(float);
 

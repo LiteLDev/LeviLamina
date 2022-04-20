@@ -18,14 +18,14 @@ struct FireImmuneDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FIREIMMUNEDEFINITION
 public:
-    struct FireImmuneDefinition& operator=(struct FireImmuneDefinition const&) = delete;
-    FireImmuneDefinition(struct FireImmuneDefinition const&) = delete;
+    struct FireImmuneDefinition& operator=(struct FireImmuneDefinition const &) = delete;
+    FireImmuneDefinition(struct FireImmuneDefinition const &) = delete;
     FireImmuneDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&);
-    MCAPI void uninitialize(class EntityContext&);
+    MCAPI void initialize(class EntityContext &);
+    MCAPI void uninitialize(class EntityContext &);
 
 protected:
 

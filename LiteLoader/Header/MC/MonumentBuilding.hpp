@@ -18,31 +18,31 @@ class MonumentBuilding : public OceanMonumentPiece {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MONUMENTBUILDING
 public:
-    class MonumentBuilding& operator=(class MonumentBuilding const&) = delete;
-    MonumentBuilding(class MonumentBuilding const&) = delete;
+    class MonumentBuilding& operator=(class MonumentBuilding const &) = delete;
+    MonumentBuilding(class MonumentBuilding const &) = delete;
     MonumentBuilding() = delete;
 #endif
 
 public:
     /*0*/ virtual ~MonumentBuilding();
-    /*2*/ virtual class PoolElementStructurePiece* asPoolElement();
+    /*2*/ virtual class PoolElementStructurePiece * asPoolElement();
     /*3*/ virtual enum StructurePieceType getType() const;
-    /*4*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
-    /*5*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    /*6*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
-    /*10*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
-    MCAPI MonumentBuilding(class Random&, short, int, int, int&);
+    /*4*/ virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
+    /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
+    /*6*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
+    /*10*/ virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);
+    MCAPI MonumentBuilding(class Random &, short, int, int, int &);
 
 protected:
 
 private:
-    MCAPI void generateEntranceArchs(class BlockSource&, class Random&, class BoundingBox const&);
-    MCAPI void generateEntranceWall(class BlockSource&, class Random&, class BoundingBox const&);
-    MCAPI void generateLowerWall(class BlockSource&, class Random&, class BoundingBox const&);
-    MCAPI void generateMiddleWall(class BlockSource&, class Random&, class BoundingBox const&);
-    MCAPI void generateRoofPiece(class BlockSource&, class Random&, class BoundingBox const&);
-    MCAPI std::vector<class std::shared_ptr<class RoomDefinition>> generateRoomGraph(class Random&);
-    MCAPI void generateUpperWall(class BlockSource&, class Random&, class BoundingBox const&);
-    MCAPI void generateWing(bool, int, class BlockSource&, class Random&, class BoundingBox const&);
+    MCAPI void generateEntranceArchs(class BlockSource &, class Random &, class BoundingBox const &);
+    MCAPI void generateEntranceWall(class BlockSource &, class Random &, class BoundingBox const &);
+    MCAPI void generateLowerWall(class BlockSource &, class Random &, class BoundingBox const &);
+    MCAPI void generateMiddleWall(class BlockSource &, class Random &, class BoundingBox const &);
+    MCAPI void generateRoofPiece(class BlockSource &, class Random &, class BoundingBox const &);
+    MCAPI std::vector<class std::shared_ptr<class RoomDefinition>> generateRoomGraph(class Random &);
+    MCAPI void generateUpperWall(class BlockSource &, class Random &, class BoundingBox const &);
+    MCAPI void generateWing(bool, int, class BlockSource &, class Random &, class BoundingBox const &);
 
 };

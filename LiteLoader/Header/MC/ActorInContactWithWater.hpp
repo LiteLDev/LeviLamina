@@ -19,14 +19,14 @@ class ActorInContactWithWater : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORINCONTACTWITHWATER
 public:
-    class ActorInContactWithWater& operator=(class ActorInContactWithWater const&) = delete;
-    ActorInContactWithWater(class ActorInContactWithWater const&) = delete;
+    class ActorInContactWithWater& operator=(class ActorInContactWithWater const &) = delete;
+    ActorInContactWithWater(class ActorInContactWithWater const &) = delete;
     ActorInContactWithWater() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorInContactWithWater();
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*
     inline  ~ActorInContactWithWater(){

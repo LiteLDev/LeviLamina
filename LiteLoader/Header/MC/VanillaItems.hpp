@@ -17,14 +17,14 @@ class VanillaItems {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAITEMS
 public:
-    class VanillaItems& operator=(class VanillaItems const&) = delete;
-    VanillaItems(class VanillaItems const&) = delete;
+    class VanillaItems& operator=(class VanillaItems const &) = delete;
+    VanillaItems(class VanillaItems const &) = delete;
     VanillaItems() = delete;
 #endif
 
 public:
-    MCAPI static void registerItems(class BaseGameVersion const&, class Experiments const&, bool);
-    MCAPI static void serverInitCreativeItemsCallback(class ActorInfoRegistry*, class BlockDefinitionGroup*, class CreativeItemRegistry*, bool, class BaseGameVersion const&, class Experiments const&);
+    MCAPI static void registerItems(class BaseGameVersion const &, class Experiments const &, bool);
+    MCAPI static void serverInitCreativeItemsCallback(class ActorInfoRegistry *, class BlockDefinitionGroup *, class CreativeItemRegistry *, bool, class BaseGameVersion const &, class Experiments const &);
     MCAPI static void unregisterItems();
 
 protected:

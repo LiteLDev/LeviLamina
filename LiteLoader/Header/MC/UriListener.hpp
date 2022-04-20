@@ -17,8 +17,8 @@ class UriListener {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_URILISTENER
 public:
-    class UriListener& operator=(class UriListener const&) = delete;
-    UriListener(class UriListener const&) = delete;
+    class UriListener& operator=(class UriListener const &) = delete;
+    UriListener(class UriListener const &) = delete;
     UriListener() = delete;
 #endif
 

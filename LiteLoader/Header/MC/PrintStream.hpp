@@ -17,21 +17,21 @@ class PrintStream {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PRINTSTREAM
 public:
-    class PrintStream& operator=(class PrintStream const&) = delete;
-    PrintStream(class PrintStream const&) = delete;
+    class PrintStream& operator=(class PrintStream const &) = delete;
+    PrintStream(class PrintStream const &) = delete;
     PrintStream() = delete;
 #endif
 
 public:
     /*0*/ virtual ~PrintStream();
     /*
-    inline void print(std::string const& a0){
-        void (PrintStream::*rv)(std::string const&);
+    inline void print(std::string const & a0){
+        void (PrintStream::*rv)(std::string const &);
         *((void**)&rv) = dlsym("?print@PrintStream@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
+        return (this->*rv)(std::forward<std::string const &>(a0));
     }
     */
-    MCAPI void println(std::string const&);
+    MCAPI void println(std::string const &);
 
 protected:
 

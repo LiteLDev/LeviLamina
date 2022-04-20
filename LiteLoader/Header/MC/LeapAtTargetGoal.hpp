@@ -17,8 +17,8 @@ class LeapAtTargetGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEAPATTARGETGOAL
 public:
-    class LeapAtTargetGoal& operator=(class LeapAtTargetGoal const&) = delete;
-    LeapAtTargetGoal(class LeapAtTargetGoal const&) = delete;
+    class LeapAtTargetGoal& operator=(class LeapAtTargetGoal const &) = delete;
+    LeapAtTargetGoal(class LeapAtTargetGoal const &) = delete;
     LeapAtTargetGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI LeapAtTargetGoal(class Mob&, float, bool, bool);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI LeapAtTargetGoal(class Mob &, float, bool, bool);
 
 protected:
 

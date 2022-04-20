@@ -17,15 +17,15 @@ class ExplodeSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPLODESYSTEM
 public:
-    class ExplodeSystem& operator=(class ExplodeSystem const&) = delete;
-    ExplodeSystem(class ExplodeSystem const&) = delete;
+    class ExplodeSystem& operator=(class ExplodeSystem const &) = delete;
+    ExplodeSystem(class ExplodeSystem const &) = delete;
     ExplodeSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ExplodeSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

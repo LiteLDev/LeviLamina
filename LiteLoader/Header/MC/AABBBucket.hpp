@@ -17,8 +17,8 @@ struct AABBBucket {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AABBBUCKET
 public:
-    struct AABBBucket& operator=(struct AABBBucket const&) = delete;
-    AABBBucket(struct AABBBucket const&) = delete;
+    struct AABBBucket& operator=(struct AABBBucket const &) = delete;
+    AABBBucket(struct AABBBucket const &) = delete;
     AABBBucket() = delete;
 #endif
 

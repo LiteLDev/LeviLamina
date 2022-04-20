@@ -17,14 +17,14 @@ class DanceComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DANCECOMPONENT
 public:
-    class DanceComponent& operator=(class DanceComponent const&) = delete;
-    DanceComponent(class DanceComponent const&) = delete;
+    class DanceComponent& operator=(class DanceComponent const &) = delete;
+    DanceComponent(class DanceComponent const &) = delete;
 #endif
 
 public:
     MCAPI DanceComponent();
-    MCAPI bool inListenDistance(class Vec3 const&) const;
-    MCAPI void initFromDefinition(class Actor&);
+    MCAPI bool inListenDistance(class Vec3 const &) const;
+    MCAPI void initFromDefinition(class Actor &);
 
 protected:
 

@@ -17,8 +17,8 @@ class NapGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAPGOAL
 public:
-    class NapGoal& operator=(class NapGoal const&) = delete;
-    NapGoal(class NapGoal const&) = delete;
+    class NapGoal& operator=(class NapGoal const &) = delete;
+    NapGoal(class NapGoal const &) = delete;
     NapGoal() = delete;
 #endif
 
@@ -30,13 +30,13 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI NapGoal(class Mob&, float, float, float, float, class ActorFilterGroup const&, class ActorFilterGroup const&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI NapGoal(class Mob &, float, float, float, float, class ActorFilterGroup const &, class ActorFilterGroup const &);
 
 protected:
 
 private:
-    MCAPI bool _canSleep(struct Tick const&) const;
+    MCAPI bool _canSleep(struct Tick const &) const;
     MCAPI bool _detectsMobs() const;
     MCAPI void _setCooldown();
     MCAPI static float const MOB_DETECT_TIME;

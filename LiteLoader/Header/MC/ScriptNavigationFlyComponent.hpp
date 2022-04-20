@@ -18,8 +18,8 @@ class ScriptNavigationFlyComponent : public NavigationScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTNAVIGATIONFLYCOMPONENT
 public:
-    class ScriptNavigationFlyComponent& operator=(class ScriptNavigationFlyComponent const&) = delete;
-    ScriptNavigationFlyComponent(class ScriptNavigationFlyComponent const&) = delete;
+    class ScriptNavigationFlyComponent& operator=(class ScriptNavigationFlyComponent const &) = delete;
+    ScriptNavigationFlyComponent(class ScriptNavigationFlyComponent const &) = delete;
     ScriptNavigationFlyComponent() = delete;
 #endif
 

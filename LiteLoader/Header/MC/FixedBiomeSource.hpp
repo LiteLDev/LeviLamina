@@ -17,24 +17,24 @@ class FixedBiomeSource {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FIXEDBIOMESOURCE
 public:
-    class FixedBiomeSource& operator=(class FixedBiomeSource const&) = delete;
-    FixedBiomeSource(class FixedBiomeSource const&) = delete;
+    class FixedBiomeSource& operator=(class FixedBiomeSource const &) = delete;
+    FixedBiomeSource(class FixedBiomeSource const &) = delete;
     FixedBiomeSource() = delete;
 #endif
 
 public:
     /*0*/ virtual ~FixedBiomeSource();
-    /*1*/ virtual void fillBiomes(class LevelChunk&, class ChunkLocalNoiseCache const&) const;
-    /*2*/ virtual class BiomeArea getBiomeArea(class BoundingBox const&, unsigned int) const;
+    /*1*/ virtual void fillBiomes(class LevelChunk &, class ChunkLocalNoiseCache const &) const;
+    /*2*/ virtual class BiomeArea getBiomeArea(class BoundingBox const &, unsigned int) const;
     /*3*/ virtual bool containsOnly(int, int, int, int, class gsl::span<int const, -1>) const;
     /*
-    inline class Biome const* getBiome(int a0, int a1, int a2) const{
-        class Biome const* (FixedBiomeSource::*rv)(int, int, int) const;
+    inline class Biome const * getBiome(int a0, int a1, int a2) const{
+        class Biome const * (FixedBiomeSource::*rv)(int, int, int) const;
         *((void**)&rv) = dlsym("?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@HHH@Z");
         return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<int>(a2));
     }
     */
-    MCAPI FixedBiomeSource(class Biome const&);
+    MCAPI FixedBiomeSource(class Biome const &);
 
 protected:
 

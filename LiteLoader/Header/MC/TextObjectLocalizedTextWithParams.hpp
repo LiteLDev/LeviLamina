@@ -18,8 +18,8 @@ class TextObjectLocalizedTextWithParams {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTOBJECTLOCALIZEDTEXTWITHPARAMS
 public:
-    class TextObjectLocalizedTextWithParams& operator=(class TextObjectLocalizedTextWithParams const&) = delete;
-    TextObjectLocalizedTextWithParams(class TextObjectLocalizedTextWithParams const&) = delete;
+    class TextObjectLocalizedTextWithParams& operator=(class TextObjectLocalizedTextWithParams const &) = delete;
+    TextObjectLocalizedTextWithParams(class TextObjectLocalizedTextWithParams const &) = delete;
     TextObjectLocalizedTextWithParams() = delete;
 #endif
 
@@ -27,8 +27,8 @@ public:
     /*0*/ virtual ~TextObjectLocalizedTextWithParams();
     /*1*/ virtual std::string asString() const;
     /*2*/ virtual class Json::Value asJsonValue() const;
-    /*3*/ virtual class Json::Value resolve(struct ResolveData const&) const;
-    MCAPI TextObjectLocalizedTextWithParams(std::string, std::vector<std::string> const&);
+    /*3*/ virtual class Json::Value resolve(struct ResolveData const &) const;
+    MCAPI TextObjectLocalizedTextWithParams(std::string, std::vector<std::string> const &);
 
 protected:
 

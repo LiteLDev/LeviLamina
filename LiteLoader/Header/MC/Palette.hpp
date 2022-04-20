@@ -17,8 +17,8 @@ class Palette {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PALETTE
 public:
-    class Palette& operator=(class Palette const&) = delete;
-    Palette(class Palette const&) = delete;
+    class Palette& operator=(class Palette const &) = delete;
+    Palette(class Palette const &) = delete;
     Palette() = delete;
 #endif
 
@@ -40,7 +40,7 @@ public:
     MCAPI static class mce::Color const WHITE;
     MCAPI static class mce::Color const YELLOW;
     MCAPI static enum PaletteColor fromByte(unsigned char);
-    MCAPI static class mce::Color const& getColor(enum PaletteColor);
+    MCAPI static class mce::Color const & getColor(enum PaletteColor);
 
 protected:
 

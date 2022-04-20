@@ -15,8 +15,8 @@ struct OnPlayerDestroyedTrigger {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONPLAYERDESTROYEDTRIGGER
 public:
-    struct OnPlayerDestroyedTrigger& operator=(struct OnPlayerDestroyedTrigger const&) = delete;
-    OnPlayerDestroyedTrigger(struct OnPlayerDestroyedTrigger const&) = delete;
+    struct OnPlayerDestroyedTrigger& operator=(struct OnPlayerDestroyedTrigger const &) = delete;
+    OnPlayerDestroyedTrigger(struct OnPlayerDestroyedTrigger const &) = delete;
     OnPlayerDestroyedTrigger() = delete;
 #endif
 

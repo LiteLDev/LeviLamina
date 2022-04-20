@@ -17,8 +17,8 @@ struct ScriptTickEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTTICKEVENT
 public:
-    struct ScriptTickEvent& operator=(struct ScriptTickEvent const&) = delete;
-    ScriptTickEvent(struct ScriptTickEvent const&) = delete;
+    struct ScriptTickEvent& operator=(struct ScriptTickEvent const &) = delete;
+    ScriptTickEvent(struct ScriptTickEvent const &) = delete;
     ScriptTickEvent() = delete;
 #endif
 

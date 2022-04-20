@@ -17,14 +17,14 @@ class IndexSet {
 
 public:
     MCAPI IndexSet();
-    MCAPI IndexSet(class IndexSet&&);
-    MCAPI IndexSet(class IndexSet const&);
+    MCAPI IndexSet(class IndexSet &&);
+    MCAPI IndexSet(class IndexSet const &);
     MCAPI void clear();
     MCAPI bool contains(unsigned __int64) const;
-    MCAPI std::vector<unsigned __int64> const& getPacked() const;
+    MCAPI std::vector<unsigned __int64> const & getPacked() const;
     MCAPI void insert(unsigned __int64);
-    MCAPI class IndexSet& operator=(class IndexSet const&);
-    MCAPI bool operator==(class IndexSet const&) const;
+    MCAPI class IndexSet & operator=(class IndexSet const &);
+    MCAPI bool operator==(class IndexSet const &) const;
     MCAPI void remove(unsigned __int64);
     MCAPI ~IndexSet();
 

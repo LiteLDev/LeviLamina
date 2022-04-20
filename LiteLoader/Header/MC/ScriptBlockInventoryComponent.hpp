@@ -18,7 +18,7 @@ class ScriptBlockInventoryComponent : public ScriptObject {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKINVENTORYCOMPONENT
 public:
-    class ScriptBlockInventoryComponent& operator=(class ScriptBlockInventoryComponent const&) = delete;
+    class ScriptBlockInventoryComponent& operator=(class ScriptBlockInventoryComponent const &) = delete;
     ScriptBlockInventoryComponent() = delete;
 #endif
 
@@ -31,12 +31,12 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptBlockInventoryComponent(class ScriptBlockInventoryComponent&&);
-    MCAPI ScriptBlockInventoryComponent(class ScriptBlockInventoryComponent const&);
-    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptBlockInventoryComponentContainer> > getOrCreateContainer();
-    MCAPI class ScriptBlockInventoryComponent& operator=(class ScriptBlockInventoryComponent&&);
+    MCAPI ScriptBlockInventoryComponent(class ScriptBlockInventoryComponent &&);
+    MCAPI ScriptBlockInventoryComponent(class ScriptBlockInventoryComponent const &);
+    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptBlockInventoryComponentContainer>> getOrCreateContainer();
+    MCAPI class ScriptBlockInventoryComponent & operator=(class ScriptBlockInventoryComponent &&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockInventoryComponent> bind(struct Scripting::Version);
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockInventoryComponent> tryCreate(class BlockSource&, class BlockPos, class Scripting::WeakLifetimeScope const&);
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockInventoryComponent> tryCreate(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
 
 protected:
 

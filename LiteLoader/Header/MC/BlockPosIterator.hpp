@@ -17,18 +17,18 @@ class BlockPosIterator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPOSITERATOR
 public:
-    class BlockPosIterator& operator=(class BlockPosIterator const&) = delete;
-    BlockPosIterator(class BlockPosIterator const&) = delete;
+    class BlockPosIterator& operator=(class BlockPosIterator const &) = delete;
+    BlockPosIterator(class BlockPosIterator const &) = delete;
     BlockPosIterator() = delete;
 #endif
 
 public:
-    MCAPI BlockPosIterator(class BlockPos const&, class BlockPos const&);
+    MCAPI BlockPosIterator(class BlockPos const &, class BlockPos const &);
     MCAPI class BlockPosIterator begin() const;
     MCAPI class BlockPosIterator end() const;
-    MCAPI bool operator!=(class BlockPosIterator const&) const;
-    MCAPI class BlockPos const& operator*();
-    MCAPI class BlockPosIterator& operator++();
+    MCAPI bool operator!=(class BlockPosIterator const &) const;
+    MCAPI class BlockPos const & operator*();
+    MCAPI class BlockPosIterator & operator++();
 
 protected:
 

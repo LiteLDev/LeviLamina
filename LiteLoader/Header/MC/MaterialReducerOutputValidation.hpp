@@ -18,8 +18,8 @@ class MaterialReducerOutputValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MATERIALREDUCEROUTPUTVALIDATION
 public:
-    class MaterialReducerOutputValidation& operator=(class MaterialReducerOutputValidation const&) = delete;
-    MaterialReducerOutputValidation(class MaterialReducerOutputValidation const&) = delete;
+    class MaterialReducerOutputValidation& operator=(class MaterialReducerOutputValidation const &) = delete;
+    MaterialReducerOutputValidation(class MaterialReducerOutputValidation const &) = delete;
     MaterialReducerOutputValidation() = delete;
 #endif
 
@@ -29,13 +29,13 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*7*/ virtual void __unk_vfn_7();
-    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
-    /*9*/ virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
+    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
+    /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
     /*
-    inline bool canDestroy(class ContainerScreenContext const& a0) const{
-        bool (MaterialReducerOutputValidation::*rv)(class ContainerScreenContext const&) const;
+    inline bool canDestroy(class ContainerScreenContext const & a0) const{
+        bool (MaterialReducerOutputValidation::*rv)(class ContainerScreenContext const &) const;
         *((void**)&rv) = dlsym("?canDestroy@MaterialReducerOutputValidation@@UEBA_NAEBVContainerScreenContext@@@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0));
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
     }
     */
 

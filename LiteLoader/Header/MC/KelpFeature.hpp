@@ -18,15 +18,15 @@ class KelpFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_KELPFEATURE
 public:
-    class KelpFeature& operator=(class KelpFeature const&) = delete;
-    KelpFeature(class KelpFeature const&) = delete;
+    class KelpFeature& operator=(class KelpFeature const &) = delete;
+    KelpFeature(class KelpFeature const &) = delete;
     KelpFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~KelpFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 protected:
 

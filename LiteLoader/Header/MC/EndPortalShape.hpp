@@ -17,14 +17,14 @@ class EndPortalShape {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDPORTALSHAPE
 public:
-    class EndPortalShape& operator=(class EndPortalShape const&) = delete;
-    EndPortalShape(class EndPortalShape const&) = delete;
+    class EndPortalShape& operator=(class EndPortalShape const &) = delete;
+    EndPortalShape(class EndPortalShape const &) = delete;
     EndPortalShape() = delete;
 #endif
 
 public:
-    MCAPI EndPortalShape(class BlockSource&, class BlockPos);
-    MCAPI bool isValid(class BlockSource&);
+    MCAPI EndPortalShape(class BlockSource &, class BlockPos);
+    MCAPI bool isValid(class BlockSource &);
     MCAPI ~EndPortalShape();
 
 protected:

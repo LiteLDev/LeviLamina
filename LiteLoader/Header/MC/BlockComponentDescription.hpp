@@ -17,8 +17,8 @@ struct BlockComponentDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCOMPONENTDESCRIPTION
 public:
-    struct BlockComponentDescription& operator=(struct BlockComponentDescription const&) = delete;
-    BlockComponentDescription(struct BlockComponentDescription const&) = delete;
+    struct BlockComponentDescription& operator=(struct BlockComponentDescription const &) = delete;
+    BlockComponentDescription(struct BlockComponentDescription const &) = delete;
     BlockComponentDescription() = delete;
 #endif
 

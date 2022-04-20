@@ -18,16 +18,16 @@ class MoveActorAbsolutePacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEACTORABSOLUTEPACKET
 public:
-    class MoveActorAbsolutePacket& operator=(class MoveActorAbsolutePacket const&) = delete;
-    MoveActorAbsolutePacket(class MoveActorAbsolutePacket const&) = delete;
+    class MoveActorAbsolutePacket& operator=(class MoveActorAbsolutePacket const &) = delete;
+    MoveActorAbsolutePacket(class MoveActorAbsolutePacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~MoveActorAbsolutePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~MoveActorAbsolutePacket(){
          (MoveActorAbsolutePacket::*rv)();
@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI MoveActorAbsolutePacket(class MoveActorAbsoluteData const&);
+    MCAPI MoveActorAbsolutePacket(class MoveActorAbsoluteData const &);
     MCAPI MoveActorAbsolutePacket();
 
 protected:

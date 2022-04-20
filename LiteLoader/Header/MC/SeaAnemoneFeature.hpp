@@ -18,15 +18,15 @@ class SeaAnemoneFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SEAANEMONEFEATURE
 public:
-    class SeaAnemoneFeature& operator=(class SeaAnemoneFeature const&) = delete;
-    SeaAnemoneFeature(class SeaAnemoneFeature const&) = delete;
+    class SeaAnemoneFeature& operator=(class SeaAnemoneFeature const &) = delete;
+    SeaAnemoneFeature(class SeaAnemoneFeature const &) = delete;
     SeaAnemoneFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SeaAnemoneFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 protected:
 

@@ -17,8 +17,8 @@ class SetBlockReactionComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETBLOCKREACTIONCOMPONENT
 public:
-    class SetBlockReactionComponent& operator=(class SetBlockReactionComponent const&) = delete;
-    SetBlockReactionComponent(class SetBlockReactionComponent const&) = delete;
+    class SetBlockReactionComponent& operator=(class SetBlockReactionComponent const &) = delete;
+    SetBlockReactionComponent(class SetBlockReactionComponent const &) = delete;
     SetBlockReactionComponent() = delete;
 #endif
 
@@ -26,7 +26,7 @@ public:
     /*0*/ virtual ~SetBlockReactionComponent();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual void _onEnd(class LabTableReaction&, class BlockSource&);
+    /*3*/ virtual void _onEnd(class LabTableReaction &, class BlockSource &);
 
 protected:
 

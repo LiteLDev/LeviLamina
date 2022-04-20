@@ -18,13 +18,13 @@ class MoveControlDolphinDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVECONTROLDOLPHINDESCRIPTION
 public:
-    class MoveControlDolphinDescription& operator=(class MoveControlDolphinDescription const&) = delete;
-    MoveControlDolphinDescription(class MoveControlDolphinDescription const&) = delete;
+    class MoveControlDolphinDescription& operator=(class MoveControlDolphinDescription const &) = delete;
+    MoveControlDolphinDescription(class MoveControlDolphinDescription const &) = delete;
     MoveControlDolphinDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~MoveControlDolphinDescription();
     /*
     inline  ~MoveControlDolphinDescription(){

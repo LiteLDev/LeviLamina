@@ -18,14 +18,14 @@ struct CanFlyDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CANFLYDEFINITION
 public:
-    struct CanFlyDefinition& operator=(struct CanFlyDefinition const&) = delete;
-    CanFlyDefinition(struct CanFlyDefinition const&) = delete;
+    struct CanFlyDefinition& operator=(struct CanFlyDefinition const &) = delete;
+    CanFlyDefinition(struct CanFlyDefinition const &) = delete;
     CanFlyDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&);
-    MCAPI void uninitialize(class EntityContext&);
+    MCAPI void initialize(class EntityContext &);
+    MCAPI void uninitialize(class EntityContext &);
 
 protected:
 

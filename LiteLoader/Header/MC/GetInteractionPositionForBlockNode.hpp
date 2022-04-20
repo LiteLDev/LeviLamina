@@ -18,14 +18,14 @@ class GetInteractionPositionForBlockNode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GETINTERACTIONPOSITIONFORBLOCKNODE
 public:
-    class GetInteractionPositionForBlockNode& operator=(class GetInteractionPositionForBlockNode const&) = delete;
-    GetInteractionPositionForBlockNode(class GetInteractionPositionForBlockNode const&) = delete;
+    class GetInteractionPositionForBlockNode& operator=(class GetInteractionPositionForBlockNode const &) = delete;
+    GetInteractionPositionForBlockNode(class GetInteractionPositionForBlockNode const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~GetInteractionPositionForBlockNode();
-    /*1*/ virtual enum BehaviorStatus tick(class Actor&);
-    /*2*/ virtual void initializeFromDefinition(class Actor&);
+    /*1*/ virtual enum BehaviorStatus tick(class Actor &);
+    /*2*/ virtual void initializeFromDefinition(class Actor &);
     MCAPI GetInteractionPositionForBlockNode();
 
 protected:

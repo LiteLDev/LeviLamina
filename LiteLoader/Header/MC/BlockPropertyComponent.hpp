@@ -17,8 +17,8 @@ struct BlockPropertyComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPROPERTYCOMPONENT
 public:
-    struct BlockPropertyComponent& operator=(struct BlockPropertyComponent const&) = delete;
-    BlockPropertyComponent(struct BlockPropertyComponent const&) = delete;
+    struct BlockPropertyComponent& operator=(struct BlockPropertyComponent const &) = delete;
+    BlockPropertyComponent(struct BlockPropertyComponent const &) = delete;
     BlockPropertyComponent() = delete;
 #endif
 

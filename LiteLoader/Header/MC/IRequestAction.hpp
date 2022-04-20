@@ -19,16 +19,16 @@ enum RequestActionType;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IREQUESTACTION
 public:
-    class IRequestAction& operator=(class IRequestAction const&) = delete;
-    IRequestAction(class IRequestAction const&) = delete;
+    class IRequestAction& operator=(class IRequestAction const &) = delete;
+    IRequestAction(class IRequestAction const &) = delete;
     IRequestAction() = delete;
 #endif
 
 public:
     /*0*/ virtual ~IRequestAction();
-    /*1*/ virtual void execute(class ServerLevel&, class Dimension&) = 0;
-    /*2*/ virtual void serialize(class CompoundTag&);
-    /*3*/ virtual bool operator==(class IRequestAction&) const;
+    /*1*/ virtual void execute(class ServerLevel &, class Dimension &) = 0;
+    /*2*/ virtual void serialize(class CompoundTag &);
+    /*3*/ virtual bool operator==(class IRequestAction &) const;
     /*
     inline  ~IRequestAction(){
          (IRequestAction::*rv)();
@@ -36,8 +36,8 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI IRequestAction(enum IRequestAction::RequestActionType const&);
-    MCAPI static bool isValidTag(class CompoundTag const&);
+    MCAPI IRequestAction(enum IRequestAction::RequestActionType const &);
+    MCAPI static bool isValidTag(class CompoundTag const &);
 
 protected:
 

@@ -18,8 +18,8 @@ struct LootTableDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTTABLEDEFINITION
 public:
-    struct LootTableDefinition& operator=(struct LootTableDefinition const&) = delete;
-    LootTableDefinition(struct LootTableDefinition const&) = delete;
+    struct LootTableDefinition& operator=(struct LootTableDefinition const &) = delete;
+    LootTableDefinition(struct LootTableDefinition const &) = delete;
     LootTableDefinition() = delete;
 #endif
 

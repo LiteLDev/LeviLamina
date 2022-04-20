@@ -18,16 +18,16 @@ struct IntRange {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTRANGE
 public:
-    struct IntRange& operator=(struct IntRange const&) = delete;
-    IntRange(struct IntRange const&) = delete;
+    struct IntRange& operator=(struct IntRange const &) = delete;
+    IntRange(struct IntRange const &) = delete;
     IntRange() = delete;
 #endif
 
 public:
     MCAPI IntRange(int, int);
     MCAPI IntRange(int);
-    MCAPI int getValue(class Random&) const;
-    MCAPI int getValueInclusive(class Random&) const;
+    MCAPI int getValue(class Random &) const;
+    MCAPI int getValueInclusive(class Random &) const;
     MCAPI bool isInRangeInclusive(int) const;
     MCAPI bool parseJson(class Json::Value, int, int);
 

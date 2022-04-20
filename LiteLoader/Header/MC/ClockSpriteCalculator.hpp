@@ -17,14 +17,14 @@ class ClockSpriteCalculator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLOCKSPRITECALCULATOR
 public:
-    class ClockSpriteCalculator& operator=(class ClockSpriteCalculator const&) = delete;
-    ClockSpriteCalculator(class ClockSpriteCalculator const&) = delete;
+    class ClockSpriteCalculator& operator=(class ClockSpriteCalculator const &) = delete;
+    ClockSpriteCalculator(class ClockSpriteCalculator const &) = delete;
 #endif
 
 public:
     MCAPI ClockSpriteCalculator();
-    MCAPI int update(class Actor&, bool);
-    MCAPI int update(class BlockSource const&, class Vec3 const&, bool);
+    MCAPI int update(class Actor &, bool);
+    MCAPI int update(class BlockSource const &, class Vec3 const &, bool);
 
 protected:
 

@@ -18,16 +18,16 @@ class BreakDoorAnnotationDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREAKDOORANNOTATIONDESCRIPTION
 public:
-    class BreakDoorAnnotationDescription& operator=(class BreakDoorAnnotationDescription const&) = delete;
-    BreakDoorAnnotationDescription(class BreakDoorAnnotationDescription const&) = delete;
+    class BreakDoorAnnotationDescription& operator=(class BreakDoorAnnotationDescription const &) = delete;
+    BreakDoorAnnotationDescription(class BreakDoorAnnotationDescription const &) = delete;
     BreakDoorAnnotationDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~BreakDoorAnnotationDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~BreakDoorAnnotationDescription(){
          (BreakDoorAnnotationDescription::*rv)();

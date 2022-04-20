@@ -17,17 +17,17 @@ class RegistryKey {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REGISTRYKEY
 public:
-    class RegistryKey& operator=(class RegistryKey const&) = delete;
-    RegistryKey(class RegistryKey const&) = delete;
+    class RegistryKey& operator=(class RegistryKey const &) = delete;
+    RegistryKey(class RegistryKey const &) = delete;
     RegistryKey() = delete;
 #endif
 
 public:
     MCAPI operator bool() const;
-    MCAPI bool readValue(char const*, unsigned long&) const;
-    MCAPI bool readValue(char const*, std::string&) const;
+    MCAPI bool readValue(char const *, unsigned long &) const;
+    MCAPI bool readValue(char const *, std::string &) const;
     MCAPI ~RegistryKey();
-    MCAPI static class RegistryKey open(struct HKEY__*, char const*, unsigned long);
+    MCAPI static class RegistryKey open(struct HKEY__*, char const *, unsigned long);
 
 protected:
 

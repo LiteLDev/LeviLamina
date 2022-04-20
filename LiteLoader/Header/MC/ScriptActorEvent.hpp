@@ -17,8 +17,8 @@ struct ScriptActorEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTACTOREVENT
 public:
-    struct ScriptActorEvent& operator=(struct ScriptActorEvent const&) = delete;
-    ScriptActorEvent(struct ScriptActorEvent const&) = delete;
+    struct ScriptActorEvent& operator=(struct ScriptActorEvent const &) = delete;
+    ScriptActorEvent(struct ScriptActorEvent const &) = delete;
     ScriptActorEvent() = delete;
 #endif
 

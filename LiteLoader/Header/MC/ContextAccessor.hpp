@@ -15,8 +15,8 @@ class ContextAccessor {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTEXTACCESSOR
 public:
-    class ContextAccessor& operator=(class ContextAccessor const&) = delete;
-    ContextAccessor(class ContextAccessor const&) = delete;
+    class ContextAccessor& operator=(class ContextAccessor const &) = delete;
+    ContextAccessor(class ContextAccessor const &) = delete;
     ContextAccessor() = delete;
 #endif
 

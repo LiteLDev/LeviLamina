@@ -17,17 +17,17 @@ class LevelDataWrapper {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELDATAWRAPPER
 public:
-    class LevelDataWrapper& operator=(class LevelDataWrapper const&) = delete;
-    LevelDataWrapper(class LevelDataWrapper const&) = delete;
+    class LevelDataWrapper& operator=(class LevelDataWrapper const &) = delete;
+    LevelDataWrapper(class LevelDataWrapper const &) = delete;
 #endif
 
 public:
     MCAPI LevelDataWrapper();
-    MCAPI class LevelData const& operator*() const;
-    MCAPI class LevelData& operator*();
-    MCAPI class LevelData* operator->();
-    MCAPI class LevelData const* operator->() const;
-    MCAPI void setLevelData(class LevelData&);
+    MCAPI class LevelData const & operator*() const;
+    MCAPI class LevelData & operator*();
+    MCAPI class LevelData * operator->();
+    MCAPI class LevelData const * operator->() const;
+    MCAPI void setLevelData(class LevelData &);
     MCAPI ~LevelDataWrapper();
 
 protected:

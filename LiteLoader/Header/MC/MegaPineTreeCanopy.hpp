@@ -18,14 +18,14 @@ class MegaPineTreeCanopy {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MEGAPINETREECANOPY
 public:
-    class MegaPineTreeCanopy& operator=(class MegaPineTreeCanopy const&) = delete;
-    MegaPineTreeCanopy(class MegaPineTreeCanopy const&) = delete;
+    class MegaPineTreeCanopy& operator=(class MegaPineTreeCanopy const &) = delete;
+    MegaPineTreeCanopy(class MegaPineTreeCanopy const &) = delete;
     MegaPineTreeCanopy() = delete;
 #endif
 
 public:
     /*0*/ virtual ~MegaPineTreeCanopy();
-    /*1*/ virtual class std::optional<class BlockPos> placeCanopy(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, std::vector<class BlockPos> const&) const;
+    /*1*/ virtual class std::optional<class BlockPos> placeCanopy(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &, struct TreeHelper::TreeParams const &, std::vector<class BlockPos> const &) const;
 
 protected:
 

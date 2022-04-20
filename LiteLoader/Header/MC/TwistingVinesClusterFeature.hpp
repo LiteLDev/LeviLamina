@@ -18,19 +18,19 @@ class TwistingVinesClusterFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TWISTINGVINESCLUSTERFEATURE
 public:
-    class TwistingVinesClusterFeature& operator=(class TwistingVinesClusterFeature const&) = delete;
-    TwistingVinesClusterFeature(class TwistingVinesClusterFeature const&) = delete;
+    class TwistingVinesClusterFeature& operator=(class TwistingVinesClusterFeature const &) = delete;
+    TwistingVinesClusterFeature(class TwistingVinesClusterFeature const &) = delete;
     TwistingVinesClusterFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~TwistingVinesClusterFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 protected:
 
 private:
-    MCAPI void _placeVineString(class BlockSource&, class Random&, class BlockPos const&, int, int, int) const;
+    MCAPI void _placeVineString(class BlockSource &, class Random &, class BlockPos const &, int, int, int) const;
 
 };

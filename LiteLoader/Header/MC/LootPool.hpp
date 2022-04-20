@@ -18,16 +18,16 @@ class LootPool {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTPOOL
 public:
-    class LootPool& operator=(class LootPool const&) = delete;
-    LootPool(class LootPool const&) = delete;
+    class LootPool& operator=(class LootPool const &) = delete;
+    LootPool(class LootPool const &) = delete;
     LootPool() = delete;
 #endif
 
 public:
-    MCAPI void deserialize(class Json::Value const&);
+    MCAPI void deserialize(class Json::Value const &);
 
 protected:
-    MCAPI void addRandomItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
+    MCAPI void addRandomItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
 
 private:
 

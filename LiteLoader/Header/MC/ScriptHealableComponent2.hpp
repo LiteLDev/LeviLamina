@@ -18,8 +18,8 @@ class ScriptHealableComponent2 : public ScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTHEALABLECOMPONENT2
 public:
-    class ScriptHealableComponent2& operator=(class ScriptHealableComponent2 const&) = delete;
-    ScriptHealableComponent2(class ScriptHealableComponent2 const&) = delete;
+    class ScriptHealableComponent2& operator=(class ScriptHealableComponent2 const &) = delete;
+    ScriptHealableComponent2(class ScriptHealableComponent2 const &) = delete;
     ScriptHealableComponent2() = delete;
 #endif
 
@@ -32,10 +32,10 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptHealableComponent2(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
+    MCAPI ScriptHealableComponent2(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class Scripting::Result<class ActorFilterGroup> getFilters() const;
     MCAPI class Scripting::Result<bool> getForceUse() const;
-    MCAPI class Scripting::Result<std::vector<struct FeedItem> > getItems() const;
+    MCAPI class Scripting::Result<std::vector<struct FeedItem>> getItems() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptHealableComponent2> bind(struct Scripting::Version);
 
 protected:

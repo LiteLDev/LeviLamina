@@ -15,8 +15,8 @@ class PlayerUseNameTagEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERUSENAMETAGEVENT
 public:
-    class PlayerUseNameTagEvent& operator=(class PlayerUseNameTagEvent const&) = delete;
-    PlayerUseNameTagEvent(class PlayerUseNameTagEvent const&) = delete;
+    class PlayerUseNameTagEvent& operator=(class PlayerUseNameTagEvent const &) = delete;
+    PlayerUseNameTagEvent(class PlayerUseNameTagEvent const &) = delete;
     PlayerUseNameTagEvent() = delete;
 #endif
 

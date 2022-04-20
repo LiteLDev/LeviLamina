@@ -14,6 +14,6 @@ namespace ScriptSignals {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void bind(class Scripting::ModuleBindingBuilder&, struct Scripting::Version);
+    MCAPI void bind(class Scripting::ModuleBindingBuilder &, struct Scripting::Version);
 
 };

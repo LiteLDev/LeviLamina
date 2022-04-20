@@ -18,8 +18,8 @@ class RandomFlyingGoal : public RandomStrollGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMFLYINGGOAL
 public:
-    class RandomFlyingGoal& operator=(class RandomFlyingGoal const&) = delete;
-    RandomFlyingGoal(class RandomFlyingGoal const&) = delete;
+    class RandomFlyingGoal& operator=(class RandomFlyingGoal const &) = delete;
+    RandomFlyingGoal(class RandomFlyingGoal const &) = delete;
     RandomFlyingGoal() = delete;
 #endif
 
@@ -27,15 +27,15 @@ public:
     /*0*/ virtual ~RandomFlyingGoal();
     /*1*/ virtual bool canUse();
     /*3*/ virtual bool canBeInterrupted();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual bool _setWantedPosition();
-    MCAPI RandomFlyingGoal(class Mob&, float, int, int, bool);
+    MCAPI RandomFlyingGoal(class Mob &, float, int, int, bool);
 
 protected:
 
 private:
-    MCAPI bool _getTreePos(class Vec3&) const;
+    MCAPI bool _getTreePos(class Vec3 &) const;
 
 };

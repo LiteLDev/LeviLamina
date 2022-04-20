@@ -17,17 +17,16 @@ class ItemAcquisitionMethodMap {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMACQUISITIONMETHODMAP
 public:
-    class ItemAcquisitionMethodMap& operator=(class ItemAcquisitionMethodMap const&) = delete;
-    ItemAcquisitionMethodMap(class ItemAcquisitionMethodMap const&) = delete;
+    class ItemAcquisitionMethodMap& operator=(class ItemAcquisitionMethodMap const &) = delete;
+    ItemAcquisitionMethodMap(class ItemAcquisitionMethodMap const &) = delete;
     ItemAcquisitionMethodMap() = delete;
 #endif
 
 public:
-    MCAPI static std::string const& getItemAcquisitionMethodName(enum ItemAcquisitionMethod);
 
 protected:
 
 private:
-    MCAPI static class BidirectionalUnorderedMap<enum ItemAcquisitionMethod, std::string > const mMap;
+    MCAPI static class BidirectionalUnorderedMap<enum ItemAcquisitionMethod, std::string> const mMap;
 
 };

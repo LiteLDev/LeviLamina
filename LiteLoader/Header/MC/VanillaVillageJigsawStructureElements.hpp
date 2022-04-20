@@ -18,13 +18,13 @@ class VanillaVillageJigsawStructureElements {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAVILLAGEJIGSAWSTRUCTUREELEMENTS
 public:
-    class VanillaVillageJigsawStructureElements& operator=(class VanillaVillageJigsawStructureElements const&) = delete;
-    VanillaVillageJigsawStructureElements(class VanillaVillageJigsawStructureElements const&) = delete;
+    class VanillaVillageJigsawStructureElements& operator=(class VanillaVillageJigsawStructureElements const &) = delete;
+    VanillaVillageJigsawStructureElements(class VanillaVillageJigsawStructureElements const &) = delete;
     VanillaVillageJigsawStructureElements() = delete;
 #endif
 
 public:
-    MCAPI static void initialize(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager> >, class FeatureRegistry&, class JigsawStructureRegistry&);
+    MCAPI static void initialize(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class FeatureRegistry &, class JigsawStructureRegistry &);
 
 protected:
 

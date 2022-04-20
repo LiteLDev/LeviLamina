@@ -24,20 +24,20 @@ LIAPI ServerPlayer* getPlayer() const;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDORIGIN
 public:
-    class CommandOrigin& operator=(class CommandOrigin const&) = delete;
-    CommandOrigin(class CommandOrigin const&) = delete;
+    class CommandOrigin& operator=(class CommandOrigin const &) = delete;
+    CommandOrigin(class CommandOrigin const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~CommandOrigin();
-    /*1*/ virtual std::string const& getRequestId() const = 0;
+    /*1*/ virtual std::string const & getRequestId() const = 0;
     /*2*/ virtual std::string getName() const = 0;
     /*3*/ virtual class BlockPos getBlockPosition() const = 0;
     /*4*/ virtual class Vec3 getWorldPosition() const = 0;
     /*5*/ virtual class std::optional<class Vec2> getRotation() const = 0;
-    /*6*/ virtual class Level* getLevel() const = 0;
-    /*7*/ virtual class Dimension* getDimension() const = 0;
-    /*8*/ virtual class Actor* getEntity() const = 0;
+    /*6*/ virtual class Level * getLevel() const = 0;
+    /*7*/ virtual class Dimension * getDimension() const = 0;
+    /*8*/ virtual class Actor * getEntity() const = 0;
     /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const = 0;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const = 0;
     /*11*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
@@ -48,25 +48,25 @@ public:
     /*16*/ virtual bool isWorldBuilder() const;
     /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
-    /*19*/ virtual class NetworkIdentifier const& getSourceId() const;
+    /*19*/ virtual class NetworkIdentifier const & getSourceId() const;
     /*20*/ virtual unsigned char getSourceSubId() const;
-    /*21*/ virtual class CommandOrigin const& getOutputReceiver() const;
+    /*21*/ virtual class CommandOrigin const & getOutputReceiver() const;
     /*22*/ virtual struct CommandOriginIdentity getIdentity() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const = 0;
     /*24*/ virtual struct CommandOriginData toCommandOriginData() const;
-    /*25*/ virtual class mce::UUID const& getUUID() const;
-    /*26*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
+    /*25*/ virtual class mce::UUID const & getUUID() const;
+    /*26*/ virtual void handleCommandOutputCallback(class Json::Value &&) const;
     /*27*/ virtual void updateValues();
-    /*28*/ virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const&) const;
+    /*28*/ virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const &) const;
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const = 0;
-    /*31*/ virtual void _setUUID(class mce::UUID const&);
+    /*31*/ virtual void _setUUID(class mce::UUID const &);
     MCAPI CommandOrigin();
-    MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const&, class BlockPos const&, bool) const;
-    MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const&) const;
-    MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const&, class BlockPos const&, bool) const;
-    MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const&) const;
-    MCAPI static std::unique_ptr<class CommandOrigin> fromCommandOriginData(struct CommandOriginData const&, class Bedrock::NonOwnerPointer<class ILevel> const&, class NetworkIdentifier const&, unsigned char);
+    MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const &, class BlockPos const &, int, bool) const;
+    MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const &, int) const;
+    MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const &, class BlockPos const &, int, bool) const;
+    MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const &, int) const;
+    MCAPI static std::unique_ptr<class CommandOrigin> fromCommandOriginData(struct CommandOriginData const &, class Bedrock::NonOwnerPointer<class ILevel> const &, class NetworkIdentifier const &, unsigned char);
 
 protected:
     MCAPI static class NetworkIdentifier sUnknownSource;

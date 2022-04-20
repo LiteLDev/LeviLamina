@@ -18,14 +18,14 @@ class SimpleTreeCanopy {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLETREECANOPY
 public:
-    class SimpleTreeCanopy& operator=(class SimpleTreeCanopy const&) = delete;
-    SimpleTreeCanopy(class SimpleTreeCanopy const&) = delete;
+    class SimpleTreeCanopy& operator=(class SimpleTreeCanopy const &) = delete;
+    SimpleTreeCanopy(class SimpleTreeCanopy const &) = delete;
     SimpleTreeCanopy() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SimpleTreeCanopy();
-    /*1*/ virtual class std::optional<class BlockPos> placeCanopy(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, std::vector<class BlockPos> const&) const;
+    /*1*/ virtual class std::optional<class BlockPos> placeCanopy(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &, struct TreeHelper::TreeParams const &, std::vector<class BlockPos> const &) const;
 
 protected:
 

@@ -17,8 +17,8 @@ struct ChunksLoadedInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKSLOADEDINFO
 public:
-    struct ChunksLoadedInfo& operator=(struct ChunksLoadedInfo const&) = delete;
-    ChunksLoadedInfo(struct ChunksLoadedInfo const&) = delete;
+    struct ChunksLoadedInfo& operator=(struct ChunksLoadedInfo const &) = delete;
+    ChunksLoadedInfo(struct ChunksLoadedInfo const &) = delete;
     ChunksLoadedInfo() = delete;
 #endif
 

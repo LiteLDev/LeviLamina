@@ -17,14 +17,14 @@ struct Shareable {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAREABLE
 public:
-    struct Shareable& operator=(struct Shareable const&) = delete;
-    Shareable(struct Shareable const&) = delete;
+    struct Shareable& operator=(struct Shareable const &) = delete;
+    Shareable(struct Shareable const &) = delete;
     Shareable() = delete;
 #endif
 
 public:
-    MCAPI void setCraftInto(std::string const&);
-    MCAPI void setItem(std::string const&);
+    MCAPI void setCraftInto(std::string const &);
+    MCAPI void setItem(std::string const &);
 
 protected:
 

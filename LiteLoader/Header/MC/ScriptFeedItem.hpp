@@ -17,8 +17,8 @@ class ScriptFeedItem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTFEEDITEM
 public:
-    class ScriptFeedItem& operator=(class ScriptFeedItem const&) = delete;
-    ScriptFeedItem(class ScriptFeedItem const&) = delete;
+    class ScriptFeedItem& operator=(class ScriptFeedItem const &) = delete;
+    ScriptFeedItem(class ScriptFeedItem const &) = delete;
     ScriptFeedItem() = delete;
 #endif
 

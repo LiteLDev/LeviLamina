@@ -18,8 +18,8 @@ class NBCastleSmallCorridorRightTurnPiece : public NetherFortressPiece {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NBCASTLESMALLCORRIDORRIGHTTURNPIECE
 public:
-    class NBCastleSmallCorridorRightTurnPiece& operator=(class NBCastleSmallCorridorRightTurnPiece const&) = delete;
-    NBCastleSmallCorridorRightTurnPiece(class NBCastleSmallCorridorRightTurnPiece const&) = delete;
+    class NBCastleSmallCorridorRightTurnPiece& operator=(class NBCastleSmallCorridorRightTurnPiece const &) = delete;
+    NBCastleSmallCorridorRightTurnPiece(class NBCastleSmallCorridorRightTurnPiece const &) = delete;
     NBCastleSmallCorridorRightTurnPiece() = delete;
 #endif
 
@@ -27,8 +27,8 @@ public:
     /*0*/ virtual ~NBCastleSmallCorridorRightTurnPiece();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual enum StructurePieceType getType() const;
-    /*4*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
-    /*5*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    /*4*/ virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
+    /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /*6*/ virtual void __unk_vfn_6();
     /*10*/ virtual void __unk_vfn_10();
 

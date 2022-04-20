@@ -16,13 +16,13 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TELEPORTROTATIONDATA
 public:
-    class TeleportRotationData& operator=(class TeleportRotationData const&) = delete;
-    TeleportRotationData(class TeleportRotationData const&) = default;
+    class TeleportRotationData& operator=(class TeleportRotationData const &) = delete;
+    TeleportRotationData(class TeleportRotationData const &) = delete;
     TeleportRotationData() = delete;
 #endif
 
 public:
-    MCAPI TeleportRotationData(class RelativeFloat const&, class RelativeFloat const&, class std::optional<class Vec2> const&);
+    MCAPI TeleportRotationData(class RelativeFloat const &, class RelativeFloat const &, class std::optional<class Vec2> const &);
 
 protected:
 

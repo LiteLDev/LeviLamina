@@ -12,6 +12,6 @@ namespace DepthBasedBlockSupplierUtils {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-    MCAPI class Block const* getDepthBasedBlock(int, class IRandom&, class Block const*, class Block const*);
+    MCAPI class Block const * getDepthBasedBlock(int, class IRandom &, class Block const *, class Block const *);
 
 };

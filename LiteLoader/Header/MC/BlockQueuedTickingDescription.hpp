@@ -9,7 +9,7 @@
 
 #undef BEFORE_EXTRA
 
-struct BlockQueuedTickingDescription {
+class BlockQueuedTickingDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -18,12 +18,17 @@ struct BlockQueuedTickingDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKQUEUEDTICKINGDESCRIPTION
 public:
-    struct BlockQueuedTickingDescription& operator=(struct BlockQueuedTickingDescription const&) = delete;
-    BlockQueuedTickingDescription(struct BlockQueuedTickingDescription const&) = delete;
+    class BlockQueuedTickingDescription& operator=(class BlockQueuedTickingDescription const &) = delete;
+    BlockQueuedTickingDescription(class BlockQueuedTickingDescription const &) = delete;
     BlockQueuedTickingDescription() = delete;
 #endif
 
 public:
+    /*0*/ virtual ~BlockQueuedTickingDescription();
+    /*1*/ virtual std::string const & getName() const;
+    /*2*/ virtual void initializeComponent(class EntityContext &) const;
+    /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &) const;
+    MCAPI static std::string const NameID;
 
 protected:
 

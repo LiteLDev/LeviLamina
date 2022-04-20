@@ -18,15 +18,15 @@ class AllowListEntry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ALLOWLISTENTRY
 public:
-    class AllowListEntry& operator=(class AllowListEntry const&) = delete;
-    AllowListEntry(class AllowListEntry const&) = delete;
+    class AllowListEntry& operator=(class AllowListEntry const &) = delete;
+    AllowListEntry(class AllowListEntry const &) = delete;
     AllowListEntry() = delete;
 #endif
 
 public:
     /*0*/ virtual ~AllowListEntry();
-    /*1*/ virtual void serialize(class Json::Value&);
-    /*2*/ virtual void deserialize(class Json::Value&);
+    /*1*/ virtual void serialize(class Json::Value &);
+    /*2*/ virtual void deserialize(class Json::Value &);
     /*
     inline  ~AllowListEntry(){
          (AllowListEntry::*rv)();

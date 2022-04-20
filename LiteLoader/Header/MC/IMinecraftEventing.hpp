@@ -16,17 +16,17 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IMINECRAFTEVENTING
 public:
-    class IMinecraftEventing& operator=(class IMinecraftEventing const&) = delete;
-    IMinecraftEventing(class IMinecraftEventing const&) = delete;
+    class IMinecraftEventing& operator=(class IMinecraftEventing const &) = delete;
+    IMinecraftEventing(class IMinecraftEventing const &) = delete;
     IMinecraftEventing() = delete;
 #endif
 
 public:
     /*
-    inline void updatePlayerUndergroundStatus(class Player* a0, bool a1){
-        void (IMinecraftEventing::*rv)(class Player*, bool);
+    inline void updatePlayerUndergroundStatus(class Player * a0, bool a1){
+        void (IMinecraftEventing::*rv)(class Player *, bool);
         *((void**)&rv) = dlsym("?updatePlayerUndergroundStatus@IMinecraftEventing@@UEAAXPEAVPlayer@@_N@Z");
-        return (this->*rv)(std::forward<class Player*>(a0), std::forward<bool>(a1));
+        return (this->*rv)(std::forward<class Player *>(a0), std::forward<bool>(a1));
     }
     inline  ~IMinecraftEventing(){
          (IMinecraftEventing::*rv)();

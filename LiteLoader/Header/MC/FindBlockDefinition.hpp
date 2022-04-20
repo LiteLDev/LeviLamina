@@ -19,14 +19,14 @@ class FindBlockDefinition : public BehaviorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FINDBLOCKDEFINITION
 public:
-    class FindBlockDefinition& operator=(class FindBlockDefinition const&) = delete;
-    FindBlockDefinition(class FindBlockDefinition const&) = delete;
+    class FindBlockDefinition& operator=(class FindBlockDefinition const &) = delete;
+    FindBlockDefinition(class FindBlockDefinition const &) = delete;
     FindBlockDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~FindBlockDefinition();
-    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 
 protected:
 

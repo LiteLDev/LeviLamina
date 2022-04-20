@@ -17,15 +17,15 @@ class CommandBlockSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDBLOCKSYSTEM
 public:
-    class CommandBlockSystem& operator=(class CommandBlockSystem const&) = delete;
-    CommandBlockSystem(class CommandBlockSystem const&) = delete;
+    class CommandBlockSystem& operator=(class CommandBlockSystem const &) = delete;
+    CommandBlockSystem(class CommandBlockSystem const &) = delete;
     CommandBlockSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~CommandBlockSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

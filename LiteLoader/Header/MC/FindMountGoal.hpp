@@ -17,8 +17,8 @@ class FindMountGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FINDMOUNTGOAL
 public:
-    class FindMountGoal& operator=(class FindMountGoal const&) = delete;
-    FindMountGoal(class FindMountGoal const&) = delete;
+    class FindMountGoal& operator=(class FindMountGoal const &) = delete;
+    FindMountGoal(class FindMountGoal const &) = delete;
     FindMountGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI FindMountGoal(class Mob&, float, int, bool, bool, float, int);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI FindMountGoal(class Mob &, float, int, bool, bool, float, int);
     MCAPI bool isInMountRange();
 
 protected:

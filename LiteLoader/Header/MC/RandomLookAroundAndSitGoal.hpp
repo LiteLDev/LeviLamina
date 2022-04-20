@@ -17,8 +17,8 @@ class RandomLookAroundAndSitGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMLOOKAROUNDANDSITGOAL
 public:
-    class RandomLookAroundAndSitGoal& operator=(class RandomLookAroundAndSitGoal const&) = delete;
-    RandomLookAroundAndSitGoal(class RandomLookAroundAndSitGoal const&) = delete;
+    class RandomLookAroundAndSitGoal& operator=(class RandomLookAroundAndSitGoal const &) = delete;
+    RandomLookAroundAndSitGoal(class RandomLookAroundAndSitGoal const &) = delete;
     RandomLookAroundAndSitGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI RandomLookAroundAndSitGoal(class Mob&, int, int, int, int, float);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI RandomLookAroundAndSitGoal(class Mob &, int, int, int, int, float);
 
 protected:
 

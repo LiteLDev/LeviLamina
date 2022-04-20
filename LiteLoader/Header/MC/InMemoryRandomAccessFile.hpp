@@ -17,14 +17,14 @@ class InMemoryRandomAccessFile {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INMEMORYRANDOMACCESSFILE
 public:
-    class InMemoryRandomAccessFile& operator=(class InMemoryRandomAccessFile const&) = delete;
-    InMemoryRandomAccessFile(class InMemoryRandomAccessFile const&) = delete;
+    class InMemoryRandomAccessFile& operator=(class InMemoryRandomAccessFile const &) = delete;
+    InMemoryRandomAccessFile(class InMemoryRandomAccessFile const &) = delete;
     InMemoryRandomAccessFile() = delete;
 #endif
 
 public:
     /*0*/ virtual ~InMemoryRandomAccessFile();
-    /*1*/ virtual class leveldb::Status Read(unsigned __int64, unsigned __int64, class leveldb::Slice*, char*) const;
+    /*1*/ virtual class leveldb::Status Read(unsigned __int64, unsigned __int64, class leveldb::Slice *, char *) const;
     MCAPI InMemoryRandomAccessFile(class std::shared_ptr<class InMemoryFile>);
 
 protected:

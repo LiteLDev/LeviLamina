@@ -17,8 +17,8 @@ class EntityComponentFactoryBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYCOMPONENTFACTORYBASE
 public:
-    class EntityComponentFactoryBase& operator=(class EntityComponentFactoryBase const&) = delete;
-    EntityComponentFactoryBase(class EntityComponentFactoryBase const&) = delete;
+    class EntityComponentFactoryBase& operator=(class EntityComponentFactoryBase const &) = delete;
+    EntityComponentFactoryBase(class EntityComponentFactoryBase const &) = delete;
     EntityComponentFactoryBase() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI void addComponents(class EntityContext&, class DefinitionInstanceGroup const&) const;
-    MCAPI void removeComponents(class EntityContext&, class DefinitionInstanceGroup const&) const;
+    MCAPI void addComponents(class EntityContext &, class DefinitionInstanceGroup const &) const;
+    MCAPI void removeComponents(class EntityContext &, class DefinitionInstanceGroup const &) const;
 
 protected:
 

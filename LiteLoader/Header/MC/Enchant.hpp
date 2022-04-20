@@ -98,8 +98,8 @@ enum class Type : uint8_t
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCHANT
 public:
-    class Enchant& operator=(class Enchant const&) = delete;
-    Enchant(class Enchant const&) = delete;
+    class Enchant& operator=(class Enchant const &) = delete;
+    Enchant(class Enchant const &) = delete;
     Enchant() = delete;
 #endif
 
@@ -110,10 +110,10 @@ public:
     /*3*/ virtual int getMaxCost(int) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual int getMaxLevel() const;
-    /*6*/ virtual int getDamageProtection(int, class ActorDamageSource const&) const;
-    /*7*/ virtual float getDamageBonus(int, class Actor const&) const;
-    /*8*/ virtual void doPostAttack(class Actor&, class Actor&, int) const;
-    /*9*/ virtual void doPostHurt(class ItemInstance&, class Actor&, class Actor&, int) const;
+    /*6*/ virtual int getDamageProtection(int, class ActorDamageSource const &) const;
+    /*7*/ virtual float getDamageBonus(int, class Actor const &) const;
+    /*8*/ virtual void doPostAttack(class Actor &, class Actor &, int) const;
+    /*9*/ virtual void doPostHurt(class ItemInstance &, class Actor &, class Actor &, int) const;
     /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual void __unk_vfn_12();
@@ -153,12 +153,19 @@ public:
     */
     MCAPI Enchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int, bool);
     MCAPI std::string getDescriptionId() const;
-    MCAPI class HashedString const& getStringId() const;
+    MCAPI enum Enchant::Type getEnchantType() const;
+    MCAPI class HashedString const & getStringId() const;
     MCAPI bool isAvailable() const;
     MCAPI bool isDisabled() const;
+    MCAPI static enum Enchant::Slot enchantSlotFromString(class gsl::basic_string_span<char const, -1>);
+    MCAPI static class Enchant const * getEnchant(enum Enchant::Type const &);
     MCAPI static void initEnchants();
+    MCAPI static class std::unordered_map<class HashedString, enum Enchant::Type, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, enum Enchant::Type>>> mEnchantNameToType;
+    MCAPI static class std::unordered_map<enum Enchant::Slot, std::string, struct EnchantSlotEnumHasher, struct std::equal_to<enum Enchant::Slot>, class std::allocator<struct std::pair<enum Enchant::Slot const, std::string>>> mEnchantSlotTypeEnumToStringMap;
+    MCAPI static class std::unordered_map<std::string, enum Enchant::Slot, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum Enchant::Slot>>> mEnchantSlotTypeNameToEnumMap;
     MCAPI static std::vector<std::unique_ptr<class Enchant>> mEnchants;
     MCAPI static void shutdownEnchants();
+    MCAPI static std::string stringFromEnchantSlot(enum Enchant::Slot const &);
 
 protected:
 

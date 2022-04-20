@@ -15,12 +15,12 @@ struct AliasInfoDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ALIASINFODESCRIPTION
 public:
-    struct AliasInfoDescription& operator=(struct AliasInfoDescription const&) = delete;
+    struct AliasInfoDescription& operator=(struct AliasInfoDescription const &) = delete;
     AliasInfoDescription() = delete;
 #endif
 
 public:
-    MCAPI AliasInfoDescription(struct AliasInfoDescription const&);
+    MCAPI AliasInfoDescription(struct AliasInfoDescription const &);
     MCAPI ~AliasInfoDescription();
 
 protected:

@@ -18,15 +18,14 @@ class BuriedTreasureStart : public StructureStart {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BURIEDTREASURESTART
 public:
-    class BuriedTreasureStart& operator=(class BuriedTreasureStart const&) = delete;
-    BuriedTreasureStart(class BuriedTreasureStart const&) = delete;
+    class BuriedTreasureStart& operator=(class BuriedTreasureStart const &) = delete;
+    BuriedTreasureStart(class BuriedTreasureStart const &) = delete;
     BuriedTreasureStart() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BuriedTreasureStart();
-    /*2*/ virtual bool isValid() const;
-    /*3*/ virtual enum StructureFeatureType getType() const;
+    MCAPI BuriedTreasureStart(class Dimension &, class Random &, int, int);
 
 protected:
 

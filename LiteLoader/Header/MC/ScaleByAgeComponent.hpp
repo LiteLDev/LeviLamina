@@ -17,13 +17,13 @@ class ScaleByAgeComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCALEBYAGECOMPONENT
 public:
-    class ScaleByAgeComponent& operator=(class ScaleByAgeComponent const&) = delete;
-    ScaleByAgeComponent(class ScaleByAgeComponent const&) = delete;
+    class ScaleByAgeComponent& operator=(class ScaleByAgeComponent const &) = delete;
+    ScaleByAgeComponent(class ScaleByAgeComponent const &) = delete;
 #endif
 
 public:
     MCAPI ScaleByAgeComponent();
-    MCAPI void _initializeScale(class EntityContext&);
+    MCAPI void _initializeScale(class EntityContext &);
 
 protected:
 

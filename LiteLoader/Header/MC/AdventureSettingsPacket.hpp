@@ -18,16 +18,16 @@ class AdventureSettingsPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADVENTURESETTINGSPACKET
 public:
-    class AdventureSettingsPacket& operator=(class AdventureSettingsPacket const&) = delete;
-    AdventureSettingsPacket(class AdventureSettingsPacket const&) = delete;
+    class AdventureSettingsPacket& operator=(class AdventureSettingsPacket const &) = delete;
+    AdventureSettingsPacket(class AdventureSettingsPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~AdventureSettingsPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~AdventureSettingsPacket(){
          (AdventureSettingsPacket::*rv)();
@@ -35,9 +35,9 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI AdventureSettingsPacket(struct AdventureSettings const&, class Abilities const&, struct ActorUniqueID, bool);
+    MCAPI AdventureSettingsPacket(struct AdventureSettings const &, class Abilities const &, struct ActorUniqueID, bool);
     MCAPI AdventureSettingsPacket();
-    MCAPI void fillIn(struct AdventureSettings&, class Abilities&) const;
+    MCAPI void fillIn(struct AdventureSettings &, class Abilities &) const;
 
 protected:
 

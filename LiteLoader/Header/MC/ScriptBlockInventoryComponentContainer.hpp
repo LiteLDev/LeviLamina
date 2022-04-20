@@ -18,15 +18,15 @@ class ScriptBlockInventoryComponentContainer : public ScriptContainer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKINVENTORYCOMPONENTCONTAINER
 public:
-    ScriptBlockInventoryComponentContainer(class ScriptBlockInventoryComponentContainer const&) = delete;
+    ScriptBlockInventoryComponentContainer(class ScriptBlockInventoryComponentContainer const &) = delete;
     ScriptBlockInventoryComponentContainer() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScriptBlockInventoryComponentContainer();
     /*5*/ virtual class Scripting::Result<int> getEmptySlotsCount() const;
-    /*11*/ virtual class Container* _tryGetContainer() const;
-    MCAPI class ScriptBlockInventoryComponentContainer& operator=(class ScriptBlockInventoryComponentContainer const&);
+    /*11*/ virtual class Container * _tryGetContainer() const;
+    MCAPI class ScriptBlockInventoryComponentContainer & operator=(class ScriptBlockInventoryComponentContainer const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockInventoryComponentContainer> bind(struct Scripting::Version);
 
 protected:

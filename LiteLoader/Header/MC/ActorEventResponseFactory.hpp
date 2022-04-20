@@ -17,14 +17,14 @@ class ActorEventResponseFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOREVENTRESPONSEFACTORY
 public:
-    class ActorEventResponseFactory& operator=(class ActorEventResponseFactory const&) = delete;
-    ActorEventResponseFactory(class ActorEventResponseFactory const&) = delete;
+    class ActorEventResponseFactory& operator=(class ActorEventResponseFactory const &) = delete;
+    ActorEventResponseFactory(class ActorEventResponseFactory const &) = delete;
     ActorEventResponseFactory() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorEventResponseFactory();
-    /*1*/ virtual void initializeFactory(class Experiments const&);
+    /*1*/ virtual void initializeFactory(class Experiments const &);
     /*
     inline  ~ActorEventResponseFactory(){
          (ActorEventResponseFactory::*rv)();

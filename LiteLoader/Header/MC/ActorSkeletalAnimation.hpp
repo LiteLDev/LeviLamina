@@ -17,28 +17,28 @@ class ActorSkeletalAnimation {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSKELETALANIMATION
 public:
-    class ActorSkeletalAnimation& operator=(class ActorSkeletalAnimation const&) = delete;
-    ActorSkeletalAnimation(class ActorSkeletalAnimation const&) = delete;
+    class ActorSkeletalAnimation& operator=(class ActorSkeletalAnimation const &) = delete;
+    ActorSkeletalAnimation(class ActorSkeletalAnimation const &) = delete;
     ActorSkeletalAnimation() = delete;
 #endif
 
 public:
-    MCAPI ActorSkeletalAnimation(std::string const&, std::string const&);
-    MCAPI class ActorAnimationEvent& addActorEvent(float, std::string const&, enum CurrentCmdVersion, enum MolangVersion);
-    MCAPI class BoneAnimation& addBoneAnimation(std::string const&);
-    MCAPI class ActorParticleEffectEvent& addParticleEffectEvent(float);
-    MCAPI class ActorSoundEffectEvent& addSoundEffectEvent(float);
+    MCAPI ActorSkeletalAnimation(std::string const &, std::string const &);
+    MCAPI class ActorAnimationEvent & addActorEvent(float, std::string const &, enum CurrentCmdVersion, enum MolangVersion);
+    MCAPI class BoneAnimation & addBoneAnimation(std::string const &);
+    MCAPI class ActorParticleEffectEvent & addParticleEffectEvent(float);
+    MCAPI class ActorSoundEffectEvent & addSoundEffectEvent(float);
     MCAPI void calculateAnimationLength();
-    MCAPI std::vector<class BoneAnimation>& getBoneAnimations();
+    MCAPI std::vector<class BoneAnimation> & getBoneAnimations();
     MCAPI void initPrecomputedInterpolation();
     MCAPI void removeIrrelevantKeyFramesAndConvertAllFloatKeyFramesToSimplifiedVersion();
-    MCAPI void setAnimTimeUpdate(class ExpressionNode const&);
+    MCAPI void setAnimTimeUpdate(class ExpressionNode const &);
     MCAPI void setAnimationLength(float);
-    MCAPI void setBlendWeight(class ExpressionNode const&);
-    MCAPI void setLoopDelay(class ExpressionNode const&);
+    MCAPI void setBlendWeight(class ExpressionNode const &);
+    MCAPI void setLoopDelay(class ExpressionNode const &);
     MCAPI void setLoopMode(enum AnimationLoopMode);
     MCAPI void setShouldOverridePreviousAnimation(bool);
-    MCAPI void setStartDelay(class ExpressionNode const&);
+    MCAPI void setStartDelay(class ExpressionNode const &);
     MCAPI void sortEvents();
     MCAPI void sortParticleEffectEvents();
     MCAPI void sortSoundEffectEvents();

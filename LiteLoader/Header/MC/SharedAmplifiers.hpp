@@ -17,8 +17,8 @@ class SharedAmplifiers {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAREDAMPLIFIERS
 public:
-    class SharedAmplifiers& operator=(class SharedAmplifiers const&) = delete;
-    SharedAmplifiers(class SharedAmplifiers const&) = delete;
+    class SharedAmplifiers& operator=(class SharedAmplifiers const &) = delete;
+    SharedAmplifiers(class SharedAmplifiers const &) = delete;
     SharedAmplifiers() = delete;
 #endif
 

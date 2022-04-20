@@ -15,8 +15,8 @@ class CommandArea {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDAREA
 public:
-    class CommandArea& operator=(class CommandArea const&) = delete;
-    CommandArea(class CommandArea const&) = delete;
+    class CommandArea& operator=(class CommandArea const &) = delete;
+    CommandArea(class CommandArea const &) = delete;
     CommandArea() = delete;
 #endif
 

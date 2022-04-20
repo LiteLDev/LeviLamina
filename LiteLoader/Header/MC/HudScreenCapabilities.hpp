@@ -17,8 +17,8 @@ struct HudScreenCapabilities {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HUDSCREENCAPABILITIES
 public:
-    struct HudScreenCapabilities& operator=(struct HudScreenCapabilities const&) = delete;
-    HudScreenCapabilities(struct HudScreenCapabilities const&) = delete;
+    struct HudScreenCapabilities& operator=(struct HudScreenCapabilities const &) = delete;
+    HudScreenCapabilities(struct HudScreenCapabilities const &) = delete;
     HudScreenCapabilities() = delete;
 #endif
 

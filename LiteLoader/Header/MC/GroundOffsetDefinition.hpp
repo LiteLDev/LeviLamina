@@ -18,13 +18,13 @@ struct GroundOffsetDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROUNDOFFSETDEFINITION
 public:
-    struct GroundOffsetDefinition& operator=(struct GroundOffsetDefinition const&) = delete;
-    GroundOffsetDefinition(struct GroundOffsetDefinition const&) = delete;
+    struct GroundOffsetDefinition& operator=(struct GroundOffsetDefinition const &) = delete;
+    GroundOffsetDefinition(struct GroundOffsetDefinition const &) = delete;
     GroundOffsetDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&);
+    MCAPI void initialize(class EntityContext &);
 
 protected:
 

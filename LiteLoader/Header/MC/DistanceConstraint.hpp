@@ -17,15 +17,15 @@ class DistanceConstraint {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DISTANCECONSTRAINT
 public:
-    class DistanceConstraint& operator=(class DistanceConstraint const&) = delete;
-    DistanceConstraint(class DistanceConstraint const&) = delete;
+    class DistanceConstraint& operator=(class DistanceConstraint const &) = delete;
+    DistanceConstraint(class DistanceConstraint const &) = delete;
     DistanceConstraint() = delete;
 #endif
 
 public:
     MCAPI DistanceConstraint(float, float, float);
-    MCAPI float setup(class Vec3 const&, class Vec3 const&, float, float);
-    MCAPI void solve(class Vec3&, class Vec3&);
+    MCAPI float setup(class Vec3 const &, class Vec3 const &, float, float);
+    MCAPI void solve(class Vec3 &, class Vec3 &);
 
 protected:
 

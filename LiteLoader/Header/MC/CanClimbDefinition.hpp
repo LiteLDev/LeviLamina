@@ -18,14 +18,14 @@ struct CanClimbDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CANCLIMBDEFINITION
 public:
-    struct CanClimbDefinition& operator=(struct CanClimbDefinition const&) = delete;
-    CanClimbDefinition(struct CanClimbDefinition const&) = delete;
+    struct CanClimbDefinition& operator=(struct CanClimbDefinition const &) = delete;
+    CanClimbDefinition(struct CanClimbDefinition const &) = delete;
     CanClimbDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&);
-    MCAPI void uninitialize(class EntityContext&);
+    MCAPI void initialize(class EntityContext &);
+    MCAPI void uninitialize(class EntityContext &);
 
 protected:
 

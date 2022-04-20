@@ -18,16 +18,16 @@ class GuardianAttackDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GUARDIANATTACKDEFINITION
 public:
-    class GuardianAttackDefinition& operator=(class GuardianAttackDefinition const&) = delete;
-    GuardianAttackDefinition(class GuardianAttackDefinition const&) = delete;
+    class GuardianAttackDefinition& operator=(class GuardianAttackDefinition const &) = delete;
+    GuardianAttackDefinition(class GuardianAttackDefinition const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~GuardianAttackDefinition();
-    /*1*/ virtual bool validateMobType(class Mob&);
+    /*1*/ virtual bool validateMobType(class Mob &);
     MCAPI GuardianAttackDefinition();
-    MCAPI void initialize(class EntityContext&, class GuardianAttackGoal&);
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GuardianAttackDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class GuardianAttackGoal &);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GuardianAttackDefinition>> &);
 
 protected:
 

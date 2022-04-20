@@ -18,16 +18,16 @@ class UpdateBlockSyncedPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATEBLOCKSYNCEDPACKET
 public:
-    class UpdateBlockSyncedPacket& operator=(class UpdateBlockSyncedPacket const&) = delete;
-    UpdateBlockSyncedPacket(class UpdateBlockSyncedPacket const&) = delete;
+    class UpdateBlockSyncedPacket& operator=(class UpdateBlockSyncedPacket const &) = delete;
+    UpdateBlockSyncedPacket(class UpdateBlockSyncedPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~UpdateBlockSyncedPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~UpdateBlockSyncedPacket(){
          (UpdateBlockSyncedPacket::*rv)();
@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI UpdateBlockSyncedPacket(class BlockPos const&, unsigned int, unsigned int, unsigned char, struct ActorBlockSyncMessage const&);
+    MCAPI UpdateBlockSyncedPacket(class BlockPos const &, unsigned int, unsigned int, unsigned char, struct ActorBlockSyncMessage const &);
     MCAPI UpdateBlockSyncedPacket();
 
 protected:

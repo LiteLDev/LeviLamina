@@ -17,12 +17,12 @@ struct EduSharedUriResource {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUSHAREDURIRESOURCE
 public:
-    struct EduSharedUriResource& operator=(struct EduSharedUriResource const&) = delete;
-    EduSharedUriResource(struct EduSharedUriResource const&) = delete;
+    struct EduSharedUriResource& operator=(struct EduSharedUriResource const &) = delete;
+    EduSharedUriResource(struct EduSharedUriResource const &) = delete;
 #endif
 
 public:
-    MCAPI EduSharedUriResource(class CompoundTag const&);
+    MCAPI EduSharedUriResource(class CompoundTag const &);
     MCAPI EduSharedUriResource();
     MCAPI ~EduSharedUriResource();
 

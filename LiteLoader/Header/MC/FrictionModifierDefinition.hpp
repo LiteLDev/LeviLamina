@@ -18,8 +18,8 @@ struct FrictionModifierDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FRICTIONMODIFIERDEFINITION
 public:
-    struct FrictionModifierDefinition& operator=(struct FrictionModifierDefinition const&) = delete;
-    FrictionModifierDefinition(struct FrictionModifierDefinition const&) = delete;
+    struct FrictionModifierDefinition& operator=(struct FrictionModifierDefinition const &) = delete;
+    FrictionModifierDefinition(struct FrictionModifierDefinition const &) = delete;
     FrictionModifierDefinition() = delete;
 #endif
 

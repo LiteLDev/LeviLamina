@@ -15,8 +15,8 @@ class ServerCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERCOMMAND
 public:
-    class ServerCommand& operator=(class ServerCommand const&) = delete;
-    ServerCommand(class ServerCommand const&) = delete;
+    class ServerCommand& operator=(class ServerCommand const &) = delete;
+    ServerCommand(class ServerCommand const &) = delete;
     ServerCommand() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     */
 
 protected:
-    MCAPI static class Minecraft* mGame;
+    MCAPI static class Minecraft * mGame;
 
 private:
 

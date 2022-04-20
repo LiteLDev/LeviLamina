@@ -17,8 +17,8 @@ class JumpInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JUMPINFO
 public:
-    class JumpInfo& operator=(class JumpInfo const&) = delete;
-    JumpInfo(class JumpInfo const&) = delete;
+    class JumpInfo& operator=(class JumpInfo const &) = delete;
+    JumpInfo(class JumpInfo const &) = delete;
     JumpInfo() = delete;
 #endif
 

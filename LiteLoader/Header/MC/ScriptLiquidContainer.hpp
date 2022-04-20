@@ -17,8 +17,8 @@ class ScriptLiquidContainer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTLIQUIDCONTAINER
 public:
-    class ScriptLiquidContainer& operator=(class ScriptLiquidContainer const&) = delete;
-    ScriptLiquidContainer(class ScriptLiquidContainer const&) = delete;
+    class ScriptLiquidContainer& operator=(class ScriptLiquidContainer const &) = delete;
+    ScriptLiquidContainer(class ScriptLiquidContainer const &) = delete;
     ScriptLiquidContainer() = delete;
 #endif
 

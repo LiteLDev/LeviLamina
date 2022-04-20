@@ -17,13 +17,13 @@ class SubChunkPos {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKPOS
 public:
-    class SubChunkPos& operator=(class SubChunkPos const&) = delete;
-    SubChunkPos(class SubChunkPos const&) = delete;
+    class SubChunkPos& operator=(class SubChunkPos const &) = delete;
+    SubChunkPos(class SubChunkPos const &) = delete;
     SubChunkPos() = delete;
 #endif
 
 public:
-    MCAPI SubChunkPos(class BlockPos const&);
+    MCAPI SubChunkPos(class BlockPos const &);
     MCAPI operator class BlockPos() const;
     MCAPI static class SubChunkPos const MAX;
     MCAPI static class SubChunkPos const MIN;

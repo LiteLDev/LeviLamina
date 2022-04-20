@@ -15,8 +15,8 @@ class EcsEventDispatcher {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ECSEVENTDISPATCHER
 public:
-    class EcsEventDispatcher& operator=(class EcsEventDispatcher const&) = delete;
-    EcsEventDispatcher(class EcsEventDispatcher const&) = delete;
+    class EcsEventDispatcher& operator=(class EcsEventDispatcher const &) = delete;
+    EcsEventDispatcher(class EcsEventDispatcher const &) = delete;
     EcsEventDispatcher() = delete;
 #endif
 

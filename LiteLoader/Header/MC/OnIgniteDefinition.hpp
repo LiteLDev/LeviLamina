@@ -18,8 +18,8 @@ struct OnIgniteDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONIGNITEDEFINITION
 public:
-    struct OnIgniteDefinition& operator=(struct OnIgniteDefinition const&) = delete;
-    OnIgniteDefinition(struct OnIgniteDefinition const&) = delete;
+    struct OnIgniteDefinition& operator=(struct OnIgniteDefinition const &) = delete;
+    OnIgniteDefinition(struct OnIgniteDefinition const &) = delete;
     OnIgniteDefinition() = delete;
 #endif
 

@@ -14,6 +14,6 @@ namespace PlayerTickPolicy {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI std::unique_ptr<struct IPlayerTickPolicy> createPolicy(struct PlayerTickConfig const&);
+    MCAPI std::unique_ptr<struct IPlayerTickPolicy> createPolicy(struct PlayerTickConfig const &);
 
 };

@@ -18,8 +18,8 @@ class BlastFurnaceContainerScreenValidator : public FurnaceContainerScreenValida
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLASTFURNACECONTAINERSCREENVALIDATOR
 public:
-    class BlastFurnaceContainerScreenValidator& operator=(class BlastFurnaceContainerScreenValidator const&) = delete;
-    BlastFurnaceContainerScreenValidator(class BlastFurnaceContainerScreenValidator const&) = delete;
+    class BlastFurnaceContainerScreenValidator& operator=(class BlastFurnaceContainerScreenValidator const &) = delete;
+    BlastFurnaceContainerScreenValidator(class BlastFurnaceContainerScreenValidator const &) = delete;
 #endif
 
 public:

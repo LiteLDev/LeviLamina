@@ -19,16 +19,16 @@ class SetItemDamageFunction : public LootItemFunction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETITEMDAMAGEFUNCTION
 public:
-    class SetItemDamageFunction& operator=(class SetItemDamageFunction const&) = delete;
-    SetItemDamageFunction(class SetItemDamageFunction const&) = delete;
+    class SetItemDamageFunction& operator=(class SetItemDamageFunction const &) = delete;
+    SetItemDamageFunction(class SetItemDamageFunction const &) = delete;
     SetItemDamageFunction() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SetItemDamageFunction();
-    /*1*/ virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
-    /*3*/ virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
-    MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>>&);
+    /*1*/ virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
+    /*3*/ virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
+    MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 protected:
 

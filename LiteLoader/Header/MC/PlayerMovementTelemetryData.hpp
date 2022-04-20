@@ -17,8 +17,8 @@ class PlayerMovementTelemetryData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERMOVEMENTTELEMETRYDATA
 public:
-    class PlayerMovementTelemetryData& operator=(class PlayerMovementTelemetryData const&) = delete;
-    PlayerMovementTelemetryData(class PlayerMovementTelemetryData const&) = delete;
+    class PlayerMovementTelemetryData& operator=(class PlayerMovementTelemetryData const &) = delete;
+    PlayerMovementTelemetryData(class PlayerMovementTelemetryData const &) = delete;
 #endif
 
 public:

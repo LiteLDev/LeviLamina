@@ -17,16 +17,16 @@ class PathfinderNode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PATHFINDERNODE
 public:
-    class PathfinderNode& operator=(class PathfinderNode const&) = delete;
+    class PathfinderNode& operator=(class PathfinderNode const &) = delete;
     PathfinderNode() = delete;
 #endif
 
 public:
-    MCAPI PathfinderNode(class PathfinderNode const&);
-    MCAPI PathfinderNode(class BlockPos const&, enum NodeType);
-    MCAPI float distanceTo(class PathfinderNode*) const;
-    MCAPI float distanceToSqr(class PathfinderNode*) const;
-    MCAPI bool equals(class PathfinderNode*);
+    MCAPI PathfinderNode(class PathfinderNode const &);
+    MCAPI PathfinderNode(class BlockPos const &, enum NodeType);
+    MCAPI float distanceTo(class PathfinderNode *) const;
+    MCAPI float distanceToSqr(class PathfinderNode *) const;
+    MCAPI bool equals(class PathfinderNode *);
     MCAPI enum NodeType getType() const;
     MCAPI bool inOpenSet();
 

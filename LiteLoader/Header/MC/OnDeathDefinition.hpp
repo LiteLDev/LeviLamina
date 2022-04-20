@@ -18,8 +18,8 @@ struct OnDeathDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONDEATHDEFINITION
 public:
-    struct OnDeathDefinition& operator=(struct OnDeathDefinition const&) = delete;
-    OnDeathDefinition(struct OnDeathDefinition const&) = delete;
+    struct OnDeathDefinition& operator=(struct OnDeathDefinition const &) = delete;
+    OnDeathDefinition(struct OnDeathDefinition const &) = delete;
     OnDeathDefinition() = delete;
 #endif
 

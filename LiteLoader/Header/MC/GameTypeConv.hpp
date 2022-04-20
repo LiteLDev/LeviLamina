@@ -17,6 +17,6 @@ namespace GameTypeConv {
     MCAPI std::string gameTypeToNonLocString(enum GameType);
     MCAPI std::string gameTypeToString(enum GameType);
     MCAPI enum GameType intToGameType(int);
-    MCAPI enum GameType stringToGameType(std::string const&);
+    MCAPI enum GameType stringToGameType(std::string const &);
 
 };

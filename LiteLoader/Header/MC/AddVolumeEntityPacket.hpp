@@ -18,8 +18,8 @@ class AddVolumeEntityPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADDVOLUMEENTITYPACKET
 public:
-    class AddVolumeEntityPacket& operator=(class AddVolumeEntityPacket const&) = delete;
-    AddVolumeEntityPacket(class AddVolumeEntityPacket const&) = delete;
+    class AddVolumeEntityPacket& operator=(class AddVolumeEntityPacket const &) = delete;
+    AddVolumeEntityPacket(class AddVolumeEntityPacket const &) = delete;
     AddVolumeEntityPacket() = delete;
 #endif
 
@@ -27,8 +27,8 @@ public:
     /*0*/ virtual ~AddVolumeEntityPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~AddVolumeEntityPacket(){
          (AddVolumeEntityPacket::*rv)();
@@ -36,7 +36,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI AddVolumeEntityPacket(class EntityContext const&, class CompoundTag, class SemVersion const&);
+    MCAPI AddVolumeEntityPacket(class EntityContext const &, class CompoundTag, class SemVersion const &);
 
 protected:
 

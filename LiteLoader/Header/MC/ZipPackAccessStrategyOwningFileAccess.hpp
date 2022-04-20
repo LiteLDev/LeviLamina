@@ -17,15 +17,15 @@ class ZipPackAccessStrategyOwningFileAccess : public ZipPackAccessStrategy {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ZIPPACKACCESSSTRATEGYOWNINGFILEACCESS
 public:
-    class ZipPackAccessStrategyOwningFileAccess& operator=(class ZipPackAccessStrategyOwningFileAccess const&) = delete;
-    ZipPackAccessStrategyOwningFileAccess(class ZipPackAccessStrategyOwningFileAccess const&) = delete;
+    class ZipPackAccessStrategyOwningFileAccess& operator=(class ZipPackAccessStrategyOwningFileAccess const &) = delete;
+    ZipPackAccessStrategyOwningFileAccess(class ZipPackAccessStrategyOwningFileAccess const &) = delete;
     ZipPackAccessStrategyOwningFileAccess() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ZipPackAccessStrategyOwningFileAccess();
     /*18*/ virtual bool canRecurse() const;
-    MCAPI ZipPackAccessStrategyOwningFileAccess(class std::shared_ptr<class IFileAccess>, class ResourceLocation const&, class Core::Path const&);
+    MCAPI ZipPackAccessStrategyOwningFileAccess(class std::shared_ptr<class IFileAccess>, class ResourceLocation const &, class Core::Path const &);
 
 protected:
 

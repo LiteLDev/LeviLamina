@@ -17,13 +17,13 @@ class ConsumeItemNode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONSUMEITEMNODE
 public:
-    class ConsumeItemNode& operator=(class ConsumeItemNode const&) = delete;
-    ConsumeItemNode(class ConsumeItemNode const&) = delete;
+    class ConsumeItemNode& operator=(class ConsumeItemNode const &) = delete;
+    ConsumeItemNode(class ConsumeItemNode const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ConsumeItemNode();
-    /*1*/ virtual enum BehaviorStatus tick(class Actor&);
+    /*1*/ virtual enum BehaviorStatus tick(class Actor &);
     MCAPI ConsumeItemNode();
 
 protected:

@@ -17,8 +17,8 @@ struct FileChunkInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILECHUNKINFO
 public:
-    struct FileChunkInfo& operator=(struct FileChunkInfo const&) = delete;
-    FileChunkInfo(struct FileChunkInfo const&) = delete;
+    struct FileChunkInfo& operator=(struct FileChunkInfo const &) = delete;
+    FileChunkInfo(struct FileChunkInfo const &) = delete;
     FileChunkInfo() = delete;
 #endif
 

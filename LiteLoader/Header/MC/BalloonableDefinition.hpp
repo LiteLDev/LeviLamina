@@ -18,13 +18,13 @@ class BalloonableDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BALLOONABLEDEFINITION
 public:
-    class BalloonableDefinition& operator=(class BalloonableDefinition const&) = delete;
-    BalloonableDefinition(class BalloonableDefinition const&) = delete;
+    class BalloonableDefinition& operator=(class BalloonableDefinition const &) = delete;
+    BalloonableDefinition(class BalloonableDefinition const &) = delete;
     BalloonableDefinition() = delete;
 #endif
 
 public:
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BalloonableDefinition> >&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BalloonableDefinition>> &);
 
 protected:
 

@@ -18,17 +18,17 @@ class VanillaBlockStateTransformUtils {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLABLOCKSTATETRANSFORMUTILS
 public:
-    class VanillaBlockStateTransformUtils& operator=(class VanillaBlockStateTransformUtils const&) = delete;
-    VanillaBlockStateTransformUtils(class VanillaBlockStateTransformUtils const&) = delete;
+    class VanillaBlockStateTransformUtils& operator=(class VanillaBlockStateTransformUtils const &) = delete;
+    VanillaBlockStateTransformUtils(class VanillaBlockStateTransformUtils const &) = delete;
     VanillaBlockStateTransformUtils() = delete;
 #endif
 
 public:
-    MCAPI static class Block const* transformBlock(class Block const&, enum CommonDirection);
-    MCAPI static class Block const* transformBlock(class Block const&, enum Facing::Name);
-    MCAPI static class Block const* transformBlock(class Block const&, enum Rotation, enum Mirror);
-    MCAPI static class Block const* transformStandingRotation(class Block const&, enum Rotation, enum Mirror);
-    MCAPI static class Block const* transformTorchFacingDirection(class Block const&, enum Rotation, enum Mirror);
+    MCAPI static class Block const * transformBlock(class Block const &, enum CommonDirection);
+    MCAPI static class Block const * transformBlock(class Block const &, enum Facing::Name);
+    MCAPI static class Block const * transformBlock(class Block const &, enum Rotation, enum Mirror);
+    MCAPI static class Block const * transformStandingRotation(class Block const &, enum Rotation, enum Mirror);
+    MCAPI static class Block const * transformTorchFacingDirection(class Block const &, enum Rotation, enum Mirror);
 
 protected:
 

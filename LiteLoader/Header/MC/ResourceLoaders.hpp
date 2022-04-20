@@ -21,6 +21,7 @@ namespace ResourceLoaders {
     MCAPI extern std::string const IMGEXT_TARGA;
     MCAPI extern std::string const IMGEXT_TEXTURESET;
     MCAPI extern class BackwardsCompatTextureGroup backCompatGroup;
+    MCAPI extern class std::map<enum ResourceFileSystem, std::unique_ptr<class ResourceLoader>, struct std::less<enum ResourceFileSystem>, class std::allocator<struct std::pair<enum ResourceFileSystem const, std::unique_ptr<class ResourceLoader>>>> loaders;
     MCAPI extern std::vector<std::string> const supportedImageExtensions;
 
 };

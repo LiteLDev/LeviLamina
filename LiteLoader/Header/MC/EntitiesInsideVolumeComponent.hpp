@@ -15,8 +15,8 @@ class EntitiesInsideVolumeComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITIESINSIDEVOLUMECOMPONENT
 public:
-    class EntitiesInsideVolumeComponent& operator=(class EntitiesInsideVolumeComponent const&) = delete;
-    EntitiesInsideVolumeComponent(class EntitiesInsideVolumeComponent const&) = delete;
+    class EntitiesInsideVolumeComponent& operator=(class EntitiesInsideVolumeComponent const &) = delete;
+    EntitiesInsideVolumeComponent(class EntitiesInsideVolumeComponent const &) = delete;
     EntitiesInsideVolumeComponent() = delete;
 #endif
 

@@ -17,17 +17,17 @@ class BinaryHeap {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BINARYHEAP
 public:
-    class BinaryHeap& operator=(class BinaryHeap const&) = delete;
-    BinaryHeap(class BinaryHeap const&) = delete;
+    class BinaryHeap& operator=(class BinaryHeap const &) = delete;
+    BinaryHeap(class BinaryHeap const &) = delete;
 #endif
 
 public:
     MCAPI BinaryHeap();
-    MCAPI void changeCost(class PathfinderNode*, float);
+    MCAPI void changeCost(class PathfinderNode *, float);
     MCAPI void clear();
-    MCAPI class PathfinderNode* insert(class PathfinderNode*);
+    MCAPI class PathfinderNode * insert(class PathfinderNode *);
     MCAPI bool isEmpty();
-    MCAPI class PathfinderNode* pop();
+    MCAPI class PathfinderNode * pop();
     MCAPI ~BinaryHeap();
 
 protected:

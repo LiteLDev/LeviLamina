@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "ContainerScreenValidatorBase.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class SmithingTableContainerScreenValidator {
+class SmithingTableContainerScreenValidator : public ContainerScreenValidatorBase {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,8 +18,8 @@ class SmithingTableContainerScreenValidator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMITHINGTABLECONTAINERSCREENVALIDATOR
 public:
-    class SmithingTableContainerScreenValidator& operator=(class SmithingTableContainerScreenValidator const&) = delete;
-    SmithingTableContainerScreenValidator(class SmithingTableContainerScreenValidator const&) = delete;
+    class SmithingTableContainerScreenValidator& operator=(class SmithingTableContainerScreenValidator const &) = delete;
+    SmithingTableContainerScreenValidator(class SmithingTableContainerScreenValidator const &) = delete;
 #endif
 
 public:

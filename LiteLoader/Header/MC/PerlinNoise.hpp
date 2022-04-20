@@ -17,24 +17,24 @@ class PerlinNoise {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERLINNOISE
 public:
-    class PerlinNoise& operator=(class PerlinNoise const&) = delete;
+    class PerlinNoise& operator=(class PerlinNoise const &) = delete;
     PerlinNoise() = delete;
 #endif
 
 public:
-    MCAPI PerlinNoise(class PerlinNoise const&);
-    MCAPI PerlinNoise(class IRandom&, int, int);
-    MCAPI PerlinNoise(class IRandom&, struct YBlendingBugSettings, int, int);
+    MCAPI PerlinNoise(class PerlinNoise const &);
+    MCAPI PerlinNoise(class IRandom &, int, int);
+    MCAPI PerlinNoise(class IRandom &, struct YBlendingBugSettings, int, int);
     MCAPI PerlinNoise(unsigned int, int, int);
-    MCAPI void getRegion(float*, class Vec2 const&, int, int, class Vec2 const&, float) const;
-    MCAPI void getRegion(float*, class Vec3 const&, int, int, int, class Vec3 const&) const;
-    MCAPI float getValue(class Vec3 const&) const;
-    MCAPI float getValueNormalized(class Vec3 const&) const;
+    MCAPI void getRegion(float *, class Vec2 const &, int, int, class Vec2 const &, float) const;
+    MCAPI void getRegion(float *, class Vec3 const &, int, int, int, class Vec3 const &) const;
+    MCAPI float getValue(class Vec3 const &) const;
+    MCAPI float getValueNormalized(class Vec3 const &) const;
     MCAPI ~PerlinNoise();
 
 protected:
 
 private:
-    MCAPI void _init(class IRandom&, struct YBlendingBugSettings);
+    MCAPI void _init(class IRandom &, struct YBlendingBugSettings);
 
 };

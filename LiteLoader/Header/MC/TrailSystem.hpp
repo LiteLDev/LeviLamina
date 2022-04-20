@@ -17,19 +17,19 @@ class TrailSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRAILSYSTEM
 public:
-    class TrailSystem& operator=(class TrailSystem const&) = delete;
-    TrailSystem(class TrailSystem const&) = delete;
+    class TrailSystem& operator=(class TrailSystem const &) = delete;
+    TrailSystem(class TrailSystem const &) = delete;
     TrailSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~TrailSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 
 private:
-    MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class TrailComponent>&);
+    MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class TrailComponent> &);
 
 };

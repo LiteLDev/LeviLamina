@@ -17,16 +17,16 @@ class PhysicsComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PHYSICSCOMPONENT
 public:
-    class PhysicsComponent& operator=(class PhysicsComponent const&) = delete;
-    PhysicsComponent(class PhysicsComponent const&) = delete;
+    class PhysicsComponent& operator=(class PhysicsComponent const &) = delete;
+    PhysicsComponent(class PhysicsComponent const &) = delete;
     PhysicsComponent() = delete;
 #endif
 
 public:
-    MCAPI bool _isAffectedByGravity(class SynchedActorData const&) const;
-    MCAPI bool isAffectedByGravity(struct IActorMovementProxy const&) const;
-    MCAPI void setAffectedByGravity(struct IActorMovementProxy&, bool) const;
-    MCAPI void setHasCollision(class Actor&, bool);
+    MCAPI bool _isAffectedByGravity(class SynchedActorData const &) const;
+    MCAPI bool isAffectedByGravity(struct IActorMovementProxy const &) const;
+    MCAPI void setAffectedByGravity(struct IActorMovementProxy &, bool) const;
+    MCAPI void setHasCollision(class Actor &, bool);
 
 protected:
 

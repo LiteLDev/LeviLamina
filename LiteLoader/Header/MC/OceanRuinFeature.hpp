@@ -18,24 +18,19 @@ class OceanRuinFeature : public StructureFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCEANRUINFEATURE
 public:
-    class OceanRuinFeature& operator=(class OceanRuinFeature const&) = delete;
-    OceanRuinFeature(class OceanRuinFeature const&) = delete;
+    class OceanRuinFeature& operator=(class OceanRuinFeature const &) = delete;
+    OceanRuinFeature(class OceanRuinFeature const &) = delete;
     OceanRuinFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~OceanRuinFeature();
-    /*2*/ virtual bool getNearestGeneratedFeature(class Dimension&, class BiomeSource const&, class BlockPos const&, class BlockPos&, class IPreliminarySurfaceProvider const&, bool);
-    /*3*/ virtual bool isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&);
-    /*4*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
-    /*
-    inline  ~OceanRuinFeature(){
-         (OceanRuinFeature::*rv)();
-        *((void**)&rv) = dlsym("??1OceanRuinFeature@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
-    MCAPI OceanRuinFeature(class OverworldGenerator&, class OceanMonumentFeature&, unsigned int, class BaseGameVersion const&);
+    /*1*/ virtual bool shouldAddHardcodedSpawnAreas() const;
+    /*2*/ virtual bool shouldPostProcessMobs() const;
+    /*3*/ virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
+    /*5*/ virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &);
+    /*6*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
+    MCAPI OceanRuinFeature(class OceanMonumentFeature &, unsigned int, class BaseGameVersion const &);
 
 protected:
 

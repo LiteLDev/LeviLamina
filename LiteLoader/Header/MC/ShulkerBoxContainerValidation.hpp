@@ -18,17 +18,17 @@ class ShulkerBoxContainerValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHULKERBOXCONTAINERVALIDATION
 public:
-    class ShulkerBoxContainerValidation& operator=(class ShulkerBoxContainerValidation const&) = delete;
-    ShulkerBoxContainerValidation(class ShulkerBoxContainerValidation const&) = delete;
+    class ShulkerBoxContainerValidation& operator=(class ShulkerBoxContainerValidation const &) = delete;
+    ShulkerBoxContainerValidation(class ShulkerBoxContainerValidation const &) = delete;
     ShulkerBoxContainerValidation() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ShulkerBoxContainerValidation();
-    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
-    /*9*/ virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
+    /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 
 protected:
 

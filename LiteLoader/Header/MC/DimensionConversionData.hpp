@@ -17,14 +17,14 @@ class DimensionConversionData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONCONVERSIONDATA
 public:
-    class DimensionConversionData& operator=(class DimensionConversionData const&) = delete;
-    DimensionConversionData(class DimensionConversionData const&) = delete;
+    class DimensionConversionData& operator=(class DimensionConversionData const &) = delete;
+    DimensionConversionData(class DimensionConversionData const &) = delete;
     DimensionConversionData() = delete;
 #endif
 
 public:
     MCAPI int getNetherScale() const;
-    MCAPI class Vec3 const& getOverworldSpawnPoint() const;
+    MCAPI class Vec3 const & getOverworldSpawnPoint() const;
 
 protected:
 

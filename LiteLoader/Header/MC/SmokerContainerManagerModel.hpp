@@ -18,14 +18,14 @@ class SmokerContainerManagerModel : public FurnaceContainerManagerModel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMOKERCONTAINERMANAGERMODEL
 public:
-    class SmokerContainerManagerModel& operator=(class SmokerContainerManagerModel const&) = delete;
-    SmokerContainerManagerModel(class SmokerContainerManagerModel const&) = delete;
+    class SmokerContainerManagerModel& operator=(class SmokerContainerManagerModel const &) = delete;
+    SmokerContainerManagerModel(class SmokerContainerManagerModel const &) = delete;
     SmokerContainerManagerModel() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SmokerContainerManagerModel();
-    MCAPI SmokerContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
+    MCAPI SmokerContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
 protected:
 

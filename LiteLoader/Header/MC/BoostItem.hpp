@@ -8,7 +8,7 @@
 
 #undef BEFORE_EXTRA
 
-struct BoostItem {
+class BoostItem {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,13 +17,13 @@ struct BoostItem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOOSTITEM
 public:
-    struct BoostItem& operator=(struct BoostItem const&) = delete;
-    BoostItem(struct BoostItem const&) = delete;
+    class BoostItem& operator=(class BoostItem const &) = delete;
+    BoostItem(class BoostItem const &) = delete;
     BoostItem() = delete;
 #endif
 
 public:
-    MCAPI void setReplacementItemDescriptor(class ItemDescriptor const&);
+    MCAPI void setReplacementItemDescriptor(class ItemDescriptor const &);
     MCAPI ~BoostItem();
 
 protected:

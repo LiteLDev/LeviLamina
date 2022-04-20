@@ -14,6 +14,6 @@ namespace BoatFrictionHelper {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI float getFrictionBasedOnCollision(class BlockSource&, class BlockPos const&);
+    MCAPI float getFrictionBasedOnCollision(class BlockSource &, class BlockPos const &);
 
 };

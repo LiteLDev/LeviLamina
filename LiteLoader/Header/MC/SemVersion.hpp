@@ -25,28 +25,28 @@ struct any_version_constructor {
 #undef AFTER_EXTRA
 
 public:
-    MCAPI SemVersion(class SemVersion const&);
-    MCAPI SemVersion(unsigned short, unsigned short, unsigned short, std::string const&, std::string const&);
+    MCAPI SemVersion(class SemVersion const &);
+    MCAPI SemVersion(unsigned short, unsigned short, unsigned short, std::string const &, std::string const &);
     MCAPI SemVersion(struct SemVersion::any_version_constructor);
     MCAPI SemVersion();
-    MCAPI std::string const& asString() const;
+    MCAPI std::string const & asString() const;
     MCAPI unsigned short getMajor() const;
     MCAPI unsigned short getMinor() const;
     MCAPI unsigned short getPatch() const;
     MCAPI bool isAnyVersion() const;
     MCAPI bool isValid() const;
-    MCAPI bool operator<(class SemVersion const&) const;
-    MCAPI bool operator<=(class SemVersion const&) const;
-    MCAPI class SemVersion& operator=(class SemVersion const&);
-    MCAPI bool operator==(class SemVersion const&) const;
-    MCAPI bool operator>(class SemVersion const&) const;
-    MCAPI bool operator>=(class SemVersion const&) const;
-    MCAPI bool satisfies(class SemVersion const&) const;
+    MCAPI bool operator<(class SemVersion const &) const;
+    MCAPI bool operator<=(class SemVersion const &) const;
+    MCAPI class SemVersion & operator=(class SemVersion const &);
+    MCAPI bool operator==(class SemVersion const &) const;
+    MCAPI bool operator>(class SemVersion const &) const;
+    MCAPI bool operator>=(class SemVersion const &) const;
+    MCAPI bool satisfies(class SemVersion const &) const;
     MCAPI ~SemVersion();
     MCAPI static struct SemVersion::any_version_constructor const AnyVersionConstructor;
-    MCAPI static enum SemVersion::MatchType fromJson(class Json::Value const&, class SemVersion&, enum SemVersion::ParseOption);
-    MCAPI static enum SemVersion::MatchType fromJsonArray(class Json::Value const&, class SemVersion&);
-    MCAPI static enum SemVersion::MatchType fromString(std::string const&, class SemVersion&, enum SemVersion::ParseOption);
+    MCAPI static enum SemVersion::MatchType fromJson(class Json::Value const &, class SemVersion &, enum SemVersion::ParseOption);
+    MCAPI static enum SemVersion::MatchType fromJsonArray(class Json::Value const &, class SemVersion &);
+    MCAPI static enum SemVersion::MatchType fromString(std::string const &, class SemVersion &, enum SemVersion::ParseOption);
 
 protected:
 

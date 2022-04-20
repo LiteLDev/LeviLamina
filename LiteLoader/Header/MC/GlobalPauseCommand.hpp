@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class GlobalPauseCommand {
+class GlobalPauseCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,14 +18,14 @@ class GlobalPauseCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLOBALPAUSECOMMAND
 public:
-    class GlobalPauseCommand& operator=(class GlobalPauseCommand const&) = delete;
-    GlobalPauseCommand(class GlobalPauseCommand const&) = delete;
+    class GlobalPauseCommand& operator=(class GlobalPauseCommand const &) = delete;
+    GlobalPauseCommand(class GlobalPauseCommand const &) = delete;
     GlobalPauseCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~GlobalPauseCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 
 protected:
 

@@ -17,8 +17,8 @@ class VarIntDataOutput {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VARINTDATAOUTPUT
 public:
-    class VarIntDataOutput& operator=(class VarIntDataOutput const&) = delete;
-    VarIntDataOutput(class VarIntDataOutput const&) = delete;
+    class VarIntDataOutput& operator=(class VarIntDataOutput const &) = delete;
+    VarIntDataOutput(class VarIntDataOutput const &) = delete;
     VarIntDataOutput() = delete;
 #endif
 
@@ -32,7 +32,7 @@ public:
     /*6*/ virtual void writeShort(short);
     /*7*/ virtual void writeInt(int);
     /*8*/ virtual void writeLongLong(__int64);
-    /*9*/ virtual void writeBytes(void const*, unsigned __int64);
+    /*9*/ virtual void writeBytes(void const *, unsigned __int64);
     /*
     inline  ~VarIntDataOutput(){
          (VarIntDataOutput::*rv)();

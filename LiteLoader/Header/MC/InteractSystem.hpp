@@ -17,15 +17,15 @@ class InteractSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERACTSYSTEM
 public:
-    class InteractSystem& operator=(class InteractSystem const&) = delete;
-    InteractSystem(class InteractSystem const&) = delete;
+    class InteractSystem& operator=(class InteractSystem const &) = delete;
+    InteractSystem(class InteractSystem const &) = delete;
     InteractSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~InteractSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct ProjectileHitEvent {
+class ProjectileHitEvent {
 
 #define AFTER_EXTRA
 
@@ -15,12 +15,12 @@ struct ProjectileHitEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROJECTILEHITEVENT
 public:
-    struct ProjectileHitEvent& operator=(struct ProjectileHitEvent const&) = delete;
+    class ProjectileHitEvent& operator=(class ProjectileHitEvent const &) = delete;
+    ProjectileHitEvent(class ProjectileHitEvent const &) = delete;
     ProjectileHitEvent() = delete;
 #endif
 
 public:
-    MCAPI ProjectileHitEvent(struct ProjectileHitEvent const&);
     MCAPI ~ProjectileHitEvent();
 
 protected:

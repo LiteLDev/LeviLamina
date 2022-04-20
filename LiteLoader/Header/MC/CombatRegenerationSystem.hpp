@@ -17,15 +17,15 @@ class CombatRegenerationSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMBATREGENERATIONSYSTEM
 public:
-    class CombatRegenerationSystem& operator=(class CombatRegenerationSystem const&) = delete;
-    CombatRegenerationSystem(class CombatRegenerationSystem const&) = delete;
+    class CombatRegenerationSystem& operator=(class CombatRegenerationSystem const &) = delete;
+    CombatRegenerationSystem(class CombatRegenerationSystem const &) = delete;
     CombatRegenerationSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~CombatRegenerationSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

@@ -17,15 +17,15 @@ class AsynchronousIPResolver {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ASYNCHRONOUSIPRESOLVER
 public:
-    class AsynchronousIPResolver& operator=(class AsynchronousIPResolver const&) = delete;
-    AsynchronousIPResolver(class AsynchronousIPResolver const&) = delete;
+    class AsynchronousIPResolver& operator=(class AsynchronousIPResolver const &) = delete;
+    AsynchronousIPResolver(class AsynchronousIPResolver const &) = delete;
     AsynchronousIPResolver() = delete;
 #endif
 
 public:
     MCAPI AsynchronousIPResolver(std::string);
     MCAPI std::string getIp() const;
-    MCAPI std::string const& getOriginalUrl() const;
+    MCAPI std::string const & getOriginalUrl() const;
     MCAPI bool isDone() const;
     MCAPI ~AsynchronousIPResolver();
 

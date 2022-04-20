@@ -18,14 +18,14 @@ class PhysicsDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PHYSICSDEFINITION
 public:
-    class PhysicsDefinition& operator=(class PhysicsDefinition const&) = delete;
-    PhysicsDefinition(class PhysicsDefinition const&) = delete;
+    class PhysicsDefinition& operator=(class PhysicsDefinition const &) = delete;
+    PhysicsDefinition(class PhysicsDefinition const &) = delete;
 #endif
 
 public:
     MCAPI PhysicsDefinition();
-    MCAPI void initialize(class EntityContext&, class PhysicsComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class PhysicsDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class PhysicsComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class PhysicsDefinition>> &);
 
 protected:
 

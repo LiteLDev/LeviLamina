@@ -18,8 +18,8 @@ class ScriptLeashableComponent : public ScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTLEASHABLECOMPONENT
 public:
-    class ScriptLeashableComponent& operator=(class ScriptLeashableComponent const&) = delete;
-    ScriptLeashableComponent(class ScriptLeashableComponent const&) = delete;
+    class ScriptLeashableComponent& operator=(class ScriptLeashableComponent const &) = delete;
+    ScriptLeashableComponent(class ScriptLeashableComponent const &) = delete;
     ScriptLeashableComponent() = delete;
 #endif
 
@@ -32,9 +32,9 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptLeashableComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
+    MCAPI ScriptLeashableComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class Scripting::Result<float> getSoftDistance() const;
-    MCAPI class Scripting::Result<void> leash(class ScriptActor&) const;
+    MCAPI class Scripting::Result<void> leash(class ScriptActor &) const;
     MCAPI class Scripting::Result<void> unleash() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptLeashableComponent> bind(struct Scripting::Version);
 

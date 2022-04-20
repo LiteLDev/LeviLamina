@@ -15,8 +15,8 @@ class BoneOrientationTransform {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BONEORIENTATIONTRANSFORM
 public:
-    class BoneOrientationTransform& operator=(class BoneOrientationTransform const&) = delete;
-    BoneOrientationTransform(class BoneOrientationTransform const&) = delete;
+    class BoneOrientationTransform& operator=(class BoneOrientationTransform const &) = delete;
+    BoneOrientationTransform(class BoneOrientationTransform const &) = delete;
 #endif
 
 public:

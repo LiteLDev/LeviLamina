@@ -17,8 +17,8 @@ class glTFExporter {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLTFEXPORTER
 public:
-    class glTFExporter& operator=(class glTFExporter const&) = delete;
-    glTFExporter(class glTFExporter const&) = delete;
+    class glTFExporter& operator=(class glTFExporter const &) = delete;
+    glTFExporter(class glTFExporter const &) = delete;
     glTFExporter() = delete;
 #endif
 

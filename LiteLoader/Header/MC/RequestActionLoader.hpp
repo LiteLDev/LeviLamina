@@ -18,14 +18,14 @@ class RequestActionLoader {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REQUESTACTIONLOADER
 public:
-    class RequestActionLoader& operator=(class RequestActionLoader const&) = delete;
-    RequestActionLoader(class RequestActionLoader const&) = delete;
+    class RequestActionLoader& operator=(class RequestActionLoader const &) = delete;
+    RequestActionLoader(class RequestActionLoader const &) = delete;
     RequestActionLoader() = delete;
 #endif
 
 public:
-    MCAPI static bool isValidTag(enum IRequestAction::RequestActionType, class CompoundTag const&);
-    MCAPI static std::unique_ptr<class IRequestAction> load(enum IRequestAction::RequestActionType, class CompoundTag const&, class ICommandOriginLoader&, std::string const&);
+    MCAPI static bool isValidTag(enum IRequestAction::RequestActionType, class CompoundTag const &);
+    MCAPI static std::unique_ptr<class IRequestAction> load(enum IRequestAction::RequestActionType, class CompoundTag const &, class ICommandOriginLoader &, std::string const &);
 
 protected:
 

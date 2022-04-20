@@ -18,16 +18,16 @@ class DecoratorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DECORATORDEFINITION
 public:
-    class DecoratorDefinition& operator=(class DecoratorDefinition const&) = delete;
-    DecoratorDefinition(class DecoratorDefinition const&) = delete;
+    class DecoratorDefinition& operator=(class DecoratorDefinition const &) = delete;
+    DecoratorDefinition(class DecoratorDefinition const &) = delete;
     DecoratorDefinition() = delete;
 #endif
 
 public:
-    MCAPI class BehaviorDefinition const* get() const;
+    MCAPI class BehaviorDefinition const * get() const;
 
 protected:
-    MCAPI static std::unique_ptr<class BehaviorDefinition> _decoratorLoadChildBehavior(class Json::Value, class BehaviorFactory const&, class BehaviorTreeDefinitionPtr);
+    MCAPI static std::unique_ptr<class BehaviorDefinition> _decoratorLoadChildBehavior(class Json::Value, class BehaviorFactory const &, class BehaviorTreeDefinitionPtr);
 
 private:
 

@@ -15,12 +15,12 @@ struct ActorAcquiredItemEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORACQUIREDITEMEVENT
 public:
-    struct ActorAcquiredItemEvent& operator=(struct ActorAcquiredItemEvent const&) = delete;
+    struct ActorAcquiredItemEvent& operator=(struct ActorAcquiredItemEvent const &) = delete;
     ActorAcquiredItemEvent() = delete;
 #endif
 
 public:
-    MCAPI ActorAcquiredItemEvent(struct ActorAcquiredItemEvent const&);
+    MCAPI ActorAcquiredItemEvent(struct ActorAcquiredItemEvent const &);
     MCAPI ~ActorAcquiredItemEvent();
 
 protected:

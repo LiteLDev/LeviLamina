@@ -15,8 +15,8 @@ struct MessageEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MESSAGEEVENT
 public:
-    struct MessageEvent& operator=(struct MessageEvent const&) = delete;
-    MessageEvent(struct MessageEvent const&) = delete;
+    struct MessageEvent& operator=(struct MessageEvent const &) = delete;
+    MessageEvent(struct MessageEvent const &) = delete;
     MessageEvent() = delete;
 #endif
 

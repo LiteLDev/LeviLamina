@@ -18,39 +18,39 @@ class StructureManager {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREMANAGER
 public:
-    class StructureManager& operator=(class StructureManager const&) = delete;
-    StructureManager(class StructureManager const&) = delete;
+    class StructureManager& operator=(class StructureManager const &) = delete;
+    StructureManager(class StructureManager const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~StructureManager();
     MCAPI StructureManager();
     MCAPI void clearAndShutdownStructurePlacement();
-    MCAPI class StructureTemplateDataResponsePacket createStructureDataExportPacket(std::string const&, class ResourcePackManager const*, class LevelStorage*, enum StructureTemplateResponseType);
-    MCAPI enum StructureDeleteResult deleteStructure(std::string const&, class LevelStorage&);
-    MCAPI class StructureTemplate& getOrCreate(std::string const&);
-    MCAPI class LegacyStructureTemplate& getOrCreateLegacy(std::string const&);
-    MCAPI class StructureTemplate* getStructure(std::string const&) const;
-    MCAPI bool load(class StructureTemplate&, class ResourcePackManager const*, class LevelStorage*);
-    MCAPI void loadPlacementQueue(class LevelStorage&, class Level&, class Dimension&);
-    MCAPI void loadPlacementQueueItem(std::string const&, class CompoundTag const&, class Level&, class Dimension&);
+    MCAPI class StructureTemplateDataResponsePacket createStructureDataExportPacket(std::string const &, class ResourcePackManager const *, class LevelStorage *, enum StructureTemplateResponseType);
+    MCAPI enum StructureDeleteResult deleteStructure(std::string const &, class LevelStorage &);
+    MCAPI class StructureTemplate & getOrCreate(std::string const &);
+    MCAPI class LegacyStructureTemplate & getOrCreateLegacy(std::string const &);
+    MCAPI class StructureTemplate * getStructure(std::string const &) const;
+    MCAPI bool load(class StructureTemplate &, class ResourcePackManager const *, class LevelStorage *);
+    MCAPI void loadPlacementQueue(class LevelStorage &, class Level &, class Dimension &);
+    MCAPI void loadPlacementQueueItem(std::string const &, class CompoundTag const &, class Level &, class Dimension &);
     MCAPI void queueLoad(std::unique_ptr<class StructureAnimationData>);
-    MCAPI bool readStructure(class StructureTemplate&);
-    MCAPI void saveToLevel(class StructureTemplate const&, class LevelStorage&);
-    MCAPI void tick(class Dimension const&);
-    MCAPI enum QueueRequestResult tryPlaceStructureInWorld(std::unique_ptr<class CommandArea>, class ServerLevel&, class Dimension&, class BoundingBox const&, class BlockPos const&, class StructureSettings const&, class StructureTemplate const&, std::unique_ptr<class StructureAnimationData>);
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024> > getStructurePath(std::string const&);
+    MCAPI bool readStructure(class StructureTemplate &);
+    MCAPI void saveToLevel(class StructureTemplate const &, class LevelStorage &);
+    MCAPI void tick(class Dimension const &);
+    MCAPI enum QueueRequestResult tryPlaceStructureInWorld(std::unique_ptr<class CommandArea>, class ServerLevel &, class Dimension &, class BoundingBox const &, class BlockPos const &, class StructureSettings const &, class StructureTemplate const &, std::unique_ptr<class StructureAnimationData>);
+    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> getStructurePath(std::string const &);
 
 protected:
 
 private:
-    MCAPI std::string _createLevelStorageId(std::string const&, std::string const&);
-    MCAPI bool _placeSegment(class Dimension&, class StructureAnimationData&, class ChunkLoadActionList&, class BoundingBox const&, class std::function<enum ChunksLoadedStatus (struct Tick)> const&);
-    MCAPI bool _placeSegment(class StructureAnimationData&);
-    MCAPI class LegacyStructureTemplate* _readLegacyStructure(std::string const&);
-    MCAPI void _removePlacementQueueItem(std::string const&, class StructureAnimationData&);
-    MCAPI void _savePlacementQueueItem(std::string const&, class StructureAnimationData&);
-    MCAPI static char const* BEHAVIOR_PACK_STRUCTURES_FOLDER;
-    MCAPI static char const* LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX;
+    MCAPI std::string _createLevelStorageId(std::string const &, std::string const &);
+    MCAPI bool _placeSegment(class Dimension &, class StructureAnimationData &, class ChunkLoadActionList &, class BoundingBox const &, class std::function<enum ChunksLoadedStatus (struct Tick)> const &);
+    MCAPI bool _placeSegment(class StructureAnimationData &);
+    MCAPI class LegacyStructureTemplate * _readLegacyStructure(std::string const &);
+    MCAPI void _removePlacementQueueItem(std::string const &, class StructureAnimationData &);
+    MCAPI void _savePlacementQueueItem(std::string const &, class StructureAnimationData &);
+    MCAPI static char const * BEHAVIOR_PACK_STRUCTURES_FOLDER;
+    MCAPI static char const * LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX;
 
 };

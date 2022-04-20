@@ -17,13 +17,13 @@ class ParticlesBlockExplosionEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARTICLESBLOCKEXPLOSIONEVENT
 public:
-    class ParticlesBlockExplosionEvent& operator=(class ParticlesBlockExplosionEvent const&) = delete;
-    ParticlesBlockExplosionEvent(class ParticlesBlockExplosionEvent const&) = delete;
+    class ParticlesBlockExplosionEvent& operator=(class ParticlesBlockExplosionEvent const &) = delete;
+    ParticlesBlockExplosionEvent(class ParticlesBlockExplosionEvent const &) = delete;
     ParticlesBlockExplosionEvent() = delete;
 #endif
 
 public:
-    MCAPI void addExplodePosition(class Vec3 const&);
+    MCAPI void addExplodePosition(class Vec3 const &);
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     MCAPI ~ParticlesBlockExplosionEvent();
 

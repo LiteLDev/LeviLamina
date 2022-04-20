@@ -15,13 +15,13 @@ class ServerPlayerMovementCorrectionSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPLAYERMOVEMENTCORRECTIONSYSTEM
 public:
-    class ServerPlayerMovementCorrectionSystem& operator=(class ServerPlayerMovementCorrectionSystem const&) = delete;
-    ServerPlayerMovementCorrectionSystem(class ServerPlayerMovementCorrectionSystem const&) = delete;
+    class ServerPlayerMovementCorrectionSystem& operator=(class ServerPlayerMovementCorrectionSystem const &) = delete;
+    ServerPlayerMovementCorrectionSystem(class ServerPlayerMovementCorrectionSystem const &) = delete;
     ServerPlayerMovementCorrectionSystem() = delete;
 #endif
 
 public:
-    MCAPI static void _afterMovementSimulation(class Player&, class PlayerAuthInputPacket const&, class ReplayStateComponent const&);
+    MCAPI static void _afterMovementSimulation(class Player &, class PlayerAuthInputPacket const &, class ReplayStateComponent const &);
     MCAPI static struct TickingSystemWithInfo create();
 
 protected:

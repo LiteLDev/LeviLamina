@@ -15,8 +15,8 @@ struct AdventureSettings {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADVENTURESETTINGS
 public:
-    struct AdventureSettings& operator=(struct AdventureSettings const&) = delete;
-    AdventureSettings(struct AdventureSettings const&) = delete;
+    struct AdventureSettings& operator=(struct AdventureSettings const &) = delete;
+    AdventureSettings(struct AdventureSettings const &) = delete;
 #endif
 
 public:

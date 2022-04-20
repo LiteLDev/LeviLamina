@@ -17,14 +17,14 @@ class ScriptPlugin {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLUGIN
 public:
-    class ScriptPlugin& operator=(class ScriptPlugin const&) = delete;
-    ScriptPlugin(class ScriptPlugin const&) = delete;
+    class ScriptPlugin& operator=(class ScriptPlugin const &) = delete;
+    ScriptPlugin(class ScriptPlugin const &) = delete;
     ScriptPlugin() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScriptPlugin();
-    /*1*/ virtual class std::optional<std::string > onLoadScript(std::string const&);
+    /*1*/ virtual class std::optional<std::string> onLoadScript(std::string const &);
     /*
     inline  ~ScriptPlugin(){
          (ScriptPlugin::*rv)();
@@ -32,13 +32,13 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptPlugin(class ScriptPlugin&&);
+    MCAPI ScriptPlugin(class ScriptPlugin &&);
     MCAPI bool hasErrors() const;
     MCAPI std::vector<std::string> reportErrors() const;
 
 protected:
 
 private:
-    MCAPI class std::optional<std::string > _loadScript(std::string const&);
+    MCAPI class std::optional<std::string> _loadScript(std::string const &);
 
 };

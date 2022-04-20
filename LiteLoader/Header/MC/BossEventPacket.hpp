@@ -30,16 +30,16 @@ class BossEventPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOSSEVENTPACKET
 public:
-    class BossEventPacket& operator=(class BossEventPacket const&) = delete;
-    BossEventPacket(class BossEventPacket const&) = delete;
+    class BossEventPacket& operator=(class BossEventPacket const &) = delete;
+    BossEventPacket(class BossEventPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~BossEventPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~BossEventPacket(){
          (BossEventPacket::*rv)();
@@ -47,8 +47,8 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI BossEventPacket(enum BossEventUpdateType, class RaidBossComponent&);
-    MCAPI BossEventPacket(enum BossEventUpdateType, struct ActorUniqueID, class BossComponent&);
+    MCAPI BossEventPacket(enum BossEventUpdateType, class RaidBossComponent &);
+    MCAPI BossEventPacket(enum BossEventUpdateType, struct ActorUniqueID, class BossComponent &);
     MCAPI BossEventPacket();
 
 protected:

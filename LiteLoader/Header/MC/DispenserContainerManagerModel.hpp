@@ -18,15 +18,15 @@ class DispenserContainerManagerModel : public LevelContainerManagerModel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DISPENSERCONTAINERMANAGERMODEL
 public:
-    class DispenserContainerManagerModel& operator=(class DispenserContainerManagerModel const&) = delete;
-    DispenserContainerManagerModel(class DispenserContainerManagerModel const&) = delete;
+    class DispenserContainerManagerModel& operator=(class DispenserContainerManagerModel const &) = delete;
+    DispenserContainerManagerModel(class DispenserContainerManagerModel const &) = delete;
     DispenserContainerManagerModel() = delete;
 #endif
 
 public:
     /*0*/ virtual ~DispenserContainerManagerModel();
     /*16*/ virtual class ContainerScreenContext _postInit();
-    MCAPI DispenserContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
+    MCAPI DispenserContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
 protected:
 

@@ -17,15 +17,15 @@ class SchedulerSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCHEDULERSYSTEM
 public:
-    class SchedulerSystem& operator=(class SchedulerSystem const&) = delete;
-    SchedulerSystem(class SchedulerSystem const&) = delete;
+    class SchedulerSystem& operator=(class SchedulerSystem const &) = delete;
+    SchedulerSystem(class SchedulerSystem const &) = delete;
     SchedulerSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SchedulerSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

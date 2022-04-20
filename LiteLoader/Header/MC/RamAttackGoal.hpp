@@ -17,8 +17,8 @@ class RamAttackGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAMATTACKGOAL
 public:
-    class RamAttackGoal& operator=(class RamAttackGoal const&) = delete;
-    RamAttackGoal(class RamAttackGoal const&) = delete;
+    class RamAttackGoal& operator=(class RamAttackGoal const &) = delete;
+    RamAttackGoal(class RamAttackGoal const &) = delete;
     RamAttackGoal() = delete;
 #endif
 
@@ -30,15 +30,15 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI RamAttackGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI RamAttackGoal(class Mob &);
 
 protected:
     MCAPI bool _initiateRamAttack();
 
 private:
     MCAPI bool _hasChargePath();
-    MCAPI bool _pathablePos(class BlockSource const&, class BlockPos);
+    MCAPI bool _pathablePos(class BlockSource const &, class BlockPos);
     MCAPI void _resetCooldown();
     MCAPI void _tryKnockbackTarget();
 

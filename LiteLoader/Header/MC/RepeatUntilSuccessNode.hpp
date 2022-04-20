@@ -17,14 +17,14 @@ class RepeatUntilSuccessNode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPEATUNTILSUCCESSNODE
 public:
-    class RepeatUntilSuccessNode& operator=(class RepeatUntilSuccessNode const&) = delete;
-    RepeatUntilSuccessNode(class RepeatUntilSuccessNode const&) = delete;
+    class RepeatUntilSuccessNode& operator=(class RepeatUntilSuccessNode const &) = delete;
+    RepeatUntilSuccessNode(class RepeatUntilSuccessNode const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~RepeatUntilSuccessNode();
-    /*1*/ virtual enum BehaviorStatus tick(class Actor&);
-    /*2*/ virtual void initializeFromDefinition(class Actor&);
+    /*1*/ virtual enum BehaviorStatus tick(class Actor &);
+    /*2*/ virtual void initializeFromDefinition(class Actor &);
     MCAPI RepeatUntilSuccessNode();
 
 protected:

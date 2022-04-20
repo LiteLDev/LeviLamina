@@ -18,8 +18,8 @@ class TextObjectLocalizedText {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTOBJECTLOCALIZEDTEXT
 public:
-    class TextObjectLocalizedText& operator=(class TextObjectLocalizedText const&) = delete;
-    TextObjectLocalizedText(class TextObjectLocalizedText const&) = delete;
+    class TextObjectLocalizedText& operator=(class TextObjectLocalizedText const &) = delete;
+    TextObjectLocalizedText(class TextObjectLocalizedText const &) = delete;
     TextObjectLocalizedText() = delete;
 #endif
 
@@ -28,10 +28,10 @@ public:
     /*1*/ virtual std::string asString() const;
     /*2*/ virtual class Json::Value asJsonValue() const;
     /*
-    inline class Json::Value resolve(struct ResolveData const& a0) const{
-        class Json::Value (TextObjectLocalizedText::*rv)(struct ResolveData const&) const;
+    inline class Json::Value resolve(struct ResolveData const & a0) const{
+        class Json::Value (TextObjectLocalizedText::*rv)(struct ResolveData const &) const;
         *((void**)&rv) = dlsym("?resolve@TextObjectLocalizedText@@UEBA?AVValue@Json@@AEBUResolveData@@@Z");
-        return (this->*rv)(std::forward<struct ResolveData const&>(a0));
+        return (this->*rv)(std::forward<struct ResolveData const &>(a0));
     }
     */
     MCAPI TextObjectLocalizedText(std::string);

@@ -18,14 +18,14 @@ class GrowsCropDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROWSCROPDEFINITION
 public:
-    class GrowsCropDefinition& operator=(class GrowsCropDefinition const&) = delete;
-    GrowsCropDefinition(class GrowsCropDefinition const&) = delete;
+    class GrowsCropDefinition& operator=(class GrowsCropDefinition const &) = delete;
+    GrowsCropDefinition(class GrowsCropDefinition const &) = delete;
 #endif
 
 public:
     MCAPI GrowsCropDefinition();
-    MCAPI void initialize(class EntityContext&, class GrowsCropComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GrowsCropDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class GrowsCropComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GrowsCropDefinition>> &);
 
 protected:
 

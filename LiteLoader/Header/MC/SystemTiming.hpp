@@ -15,8 +15,8 @@ class SystemTiming {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SYSTEMTIMING
 public:
-    class SystemTiming& operator=(class SystemTiming const&) = delete;
-    SystemTiming(class SystemTiming const&) = delete;
+    class SystemTiming& operator=(class SystemTiming const &) = delete;
+    SystemTiming(class SystemTiming const &) = delete;
     SystemTiming() = delete;
 #endif
 

@@ -18,15 +18,15 @@ class WaterMovementDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WATERMOVEMENTDESCRIPTION
 public:
-    class WaterMovementDescription& operator=(class WaterMovementDescription const&) = delete;
-    WaterMovementDescription(class WaterMovementDescription const&) = delete;
+    class WaterMovementDescription& operator=(class WaterMovementDescription const &) = delete;
+    WaterMovementDescription(class WaterMovementDescription const &) = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~WaterMovementDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~WaterMovementDescription(){
          (WaterMovementDescription::*rv)();

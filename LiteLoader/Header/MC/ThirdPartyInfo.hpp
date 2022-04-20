@@ -15,11 +15,11 @@ class ThirdPartyInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_THIRDPARTYINFO
 public:
-    class ThirdPartyInfo& operator=(class ThirdPartyInfo const&) = delete;
+    class ThirdPartyInfo& operator=(class ThirdPartyInfo const &) = delete;
 #endif
 
 public:
-    MCAPI ThirdPartyInfo(class ThirdPartyInfo const&);
+    MCAPI ThirdPartyInfo(class ThirdPartyInfo const &);
     MCAPI ThirdPartyInfo();
     MCAPI ~ThirdPartyInfo();
 

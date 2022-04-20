@@ -15,8 +15,8 @@ struct ContainerValidationSlotData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERVALIDATIONSLOTDATA
 public:
-    struct ContainerValidationSlotData& operator=(struct ContainerValidationSlotData const&) = delete;
-    ContainerValidationSlotData(struct ContainerValidationSlotData const&) = delete;
+    struct ContainerValidationSlotData& operator=(struct ContainerValidationSlotData const &) = delete;
+    ContainerValidationSlotData(struct ContainerValidationSlotData const &) = delete;
     ContainerValidationSlotData() = delete;
 #endif
 

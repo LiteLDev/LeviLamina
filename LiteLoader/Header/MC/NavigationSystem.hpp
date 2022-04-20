@@ -17,15 +17,15 @@ class NavigationSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONSYSTEM
 public:
-    class NavigationSystem& operator=(class NavigationSystem const&) = delete;
-    NavigationSystem(class NavigationSystem const&) = delete;
+    class NavigationSystem& operator=(class NavigationSystem const &) = delete;
+    NavigationSystem(class NavigationSystem const &) = delete;
     NavigationSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~NavigationSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

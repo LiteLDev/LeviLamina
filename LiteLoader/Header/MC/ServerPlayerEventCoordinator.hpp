@@ -17,18 +17,18 @@ class ServerPlayerEventCoordinator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPLAYEREVENTCOORDINATOR
 public:
-    class ServerPlayerEventCoordinator& operator=(class ServerPlayerEventCoordinator const&) = delete;
-    ServerPlayerEventCoordinator(class ServerPlayerEventCoordinator const&) = delete;
+    class ServerPlayerEventCoordinator& operator=(class ServerPlayerEventCoordinator const &) = delete;
+    ServerPlayerEventCoordinator(class ServerPlayerEventCoordinator const &) = delete;
     ServerPlayerEventCoordinator() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ServerPlayerEventCoordinator();
-    MCAPI void sendPlayerAuthInputApplied(class Player&);
-    MCAPI void sendPlayerAuthInputReceived(class Player&);
-    MCAPI void sendPlayerMovementAnomaly(class Player&, class Vec3 const&, float, float);
-    MCAPI void sendPlayerMovementCorrected(class Player&, class Vec3 const&, float, float);
-    MCAPI void sendPlayerOnGround(class Player&);
+    MCAPI void sendPlayerAuthInputApplied(class Player &);
+    MCAPI void sendPlayerAuthInputReceived(class Player &);
+    MCAPI void sendPlayerMovementAnomaly(class Player &, class Vec3 const &, float, float);
+    MCAPI void sendPlayerMovementCorrected(class Player &, class Vec3 const &, float, float);
+    MCAPI void sendPlayerOnGround(class Player &);
 
 protected:
 

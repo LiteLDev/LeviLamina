@@ -17,8 +17,8 @@ class IPackManifestFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IPACKMANIFESTFACTORY
 public:
-    class IPackManifestFactory& operator=(class IPackManifestFactory const&) = delete;
-    IPackManifestFactory(class IPackManifestFactory const&) = delete;
+    class IPackManifestFactory& operator=(class IPackManifestFactory const &) = delete;
+    IPackManifestFactory(class IPackManifestFactory const &) = delete;
     IPackManifestFactory() = delete;
 #endif
 

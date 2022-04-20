@@ -18,8 +18,8 @@ class RandomBreachingGoal : public RandomStrollGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMBREACHINGGOAL
 public:
-    class RandomBreachingGoal& operator=(class RandomBreachingGoal const&) = delete;
-    RandomBreachingGoal(class RandomBreachingGoal const&) = delete;
+    class RandomBreachingGoal& operator=(class RandomBreachingGoal const &) = delete;
+    RandomBreachingGoal(class RandomBreachingGoal const &) = delete;
     RandomBreachingGoal() = delete;
 #endif
 
@@ -30,11 +30,11 @@ public:
     /*3*/ virtual bool canBeInterrupted();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual bool _setWantedPosition();
-    MCAPI RandomBreachingGoal(class Mob&, float, int, int, int, float);
+    MCAPI RandomBreachingGoal(class Mob &, float, int, int, int, float);
 
 protected:
 

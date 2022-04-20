@@ -15,13 +15,13 @@ class AddRiderComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADDRIDERCOMPONENT
 public:
-    class AddRiderComponent& operator=(class AddRiderComponent const&) = delete;
-    AddRiderComponent(class AddRiderComponent const&) = delete;
+    class AddRiderComponent& operator=(class AddRiderComponent const &) = delete;
+    AddRiderComponent(class AddRiderComponent const &) = delete;
     AddRiderComponent() = delete;
 #endif
 
 public:
-    MCAPI void reloadComponent(class Actor&);
+    MCAPI void reloadComponent(class Actor &);
     MCAPI ~AddRiderComponent();
 
 protected:

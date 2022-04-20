@@ -18,14 +18,14 @@ class EntitySensorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYSENSORDEFINITION
 public:
-    class EntitySensorDefinition& operator=(class EntitySensorDefinition const&) = delete;
-    EntitySensorDefinition(class EntitySensorDefinition const&) = delete;
+    class EntitySensorDefinition& operator=(class EntitySensorDefinition const &) = delete;
+    EntitySensorDefinition(class EntitySensorDefinition const &) = delete;
 #endif
 
 public:
     MCAPI EntitySensorDefinition();
-    MCAPI void initialize(class EntityContext&, class EntitySensorComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EntitySensorDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class EntitySensorComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EntitySensorDefinition>> &);
 
 protected:
 

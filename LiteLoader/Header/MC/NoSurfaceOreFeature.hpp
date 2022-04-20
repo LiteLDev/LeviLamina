@@ -17,15 +17,15 @@ class NoSurfaceOreFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NOSURFACEOREFEATURE
 public:
-    class NoSurfaceOreFeature& operator=(class NoSurfaceOreFeature const&) = delete;
-    NoSurfaceOreFeature(class NoSurfaceOreFeature const&) = delete;
+    class NoSurfaceOreFeature& operator=(class NoSurfaceOreFeature const &) = delete;
+    NoSurfaceOreFeature(class NoSurfaceOreFeature const &) = delete;
     NoSurfaceOreFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~NoSurfaceOreFeature();
-    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
-    MCAPI NoSurfaceOreFeature(struct IntRange, class BlockDescriptor const&, class BlockDescriptor const&, class BlockDescriptor const&);
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
+    MCAPI NoSurfaceOreFeature(struct IntRange, class BlockDescriptor const &, class BlockDescriptor const &, class BlockDescriptor const &);
 
 protected:
 

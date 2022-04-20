@@ -17,8 +17,8 @@ class RandomizableBlockActorFillingContainer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMIZABLEBLOCKACTORFILLINGCONTAINER
 public:
-    class RandomizableBlockActorFillingContainer& operator=(class RandomizableBlockActorFillingContainer const&) = delete;
-    RandomizableBlockActorFillingContainer(class RandomizableBlockActorFillingContainer const&) = delete;
+    class RandomizableBlockActorFillingContainer& operator=(class RandomizableBlockActorFillingContainer const &) = delete;
+    RandomizableBlockActorFillingContainer(class RandomizableBlockActorFillingContainer const &) = delete;
     RandomizableBlockActorFillingContainer() = delete;
 #endif
 
@@ -29,28 +29,28 @@ public:
         *((void**)&rv) = dlsym("??1RandomizableBlockActorFillingContainer@@UEAA@XZ");
         return (this->*rv)();
     }
-    inline void dropContents(class BlockSource& a0, class Vec3 const& a1, bool a2){
-        void (RandomizableBlockActorFillingContainer::*rv)(class BlockSource&, class Vec3 const&, bool);
+    inline void dropContents(class BlockSource & a0, class Vec3 const & a1, bool a2){
+        void (RandomizableBlockActorFillingContainer::*rv)(class BlockSource &, class Vec3 const &, bool);
         *((void**)&rv) = dlsym("?dropContents@RandomizableBlockActorFillingContainer@@UEAAXAEAVBlockSource@@AEBVVec3@@_N@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Vec3 const&>(a1), std::forward<bool>(a2));
+        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class Vec3 const &>(a1), std::forward<bool>(a2));
     }
-    inline void initializeContainerContents(class BlockSource& a0){
-        void (RandomizableBlockActorFillingContainer::*rv)(class BlockSource&);
+    inline void initializeContainerContents(class BlockSource & a0){
+        void (RandomizableBlockActorFillingContainer::*rv)(class BlockSource &);
         *((void**)&rv) = dlsym("?initializeContainerContents@RandomizableBlockActorFillingContainer@@UEAAXAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
+        return (this->*rv)(std::forward<class BlockSource &>(a0));
     }
     inline void setContainerChanged(int a0){
         void (RandomizableBlockActorFillingContainer::*rv)(int);
         *((void**)&rv) = dlsym("?setContainerChanged@RandomizableBlockActorFillingContainer@@UEAAXH@Z");
         return (this->*rv)(std::forward<int>(a0));
     }
-    inline void startOpen(class Player& a0){
-        void (RandomizableBlockActorFillingContainer::*rv)(class Player&);
+    inline void startOpen(class Player & a0){
+        void (RandomizableBlockActorFillingContainer::*rv)(class Player &);
         *((void**)&rv) = dlsym("?startOpen@RandomizableBlockActorFillingContainer@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0));
+        return (this->*rv)(std::forward<class Player &>(a0));
     }
     */
-    MCAPI RandomizableBlockActorFillingContainer(enum BlockActorType, std::string const&, class BlockPos const&, int, enum ContainerType);
+    MCAPI RandomizableBlockActorFillingContainer(enum BlockActorType, std::string const &, class BlockPos const &, int, enum ContainerType);
 
 protected:
 

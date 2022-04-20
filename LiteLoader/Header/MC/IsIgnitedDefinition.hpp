@@ -18,14 +18,14 @@ struct IsIgnitedDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISIGNITEDDEFINITION
 public:
-    struct IsIgnitedDefinition& operator=(struct IsIgnitedDefinition const&) = delete;
-    IsIgnitedDefinition(struct IsIgnitedDefinition const&) = delete;
+    struct IsIgnitedDefinition& operator=(struct IsIgnitedDefinition const &) = delete;
+    IsIgnitedDefinition(struct IsIgnitedDefinition const &) = delete;
     IsIgnitedDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&);
-    MCAPI void uninitialize(class EntityContext&);
+    MCAPI void initialize(class EntityContext &);
+    MCAPI void uninitialize(class EntityContext &);
 
 protected:
 

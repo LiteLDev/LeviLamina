@@ -15,8 +15,8 @@ class FogCommandSettings {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOGCOMMANDSETTINGS
 public:
-    class FogCommandSettings& operator=(class FogCommandSettings const&) = delete;
-    FogCommandSettings(class FogCommandSettings const&) = delete;
+    class FogCommandSettings& operator=(class FogCommandSettings const &) = delete;
+    FogCommandSettings(class FogCommandSettings const &) = delete;
     FogCommandSettings() = delete;
 #endif
 

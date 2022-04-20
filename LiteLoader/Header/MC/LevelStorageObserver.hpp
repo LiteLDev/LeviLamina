@@ -17,13 +17,13 @@ class LevelStorageObserver {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSTORAGEOBSERVER
 public:
-    class LevelStorageObserver& operator=(class LevelStorageObserver const&) = delete;
-    LevelStorageObserver(class LevelStorageObserver const&) = delete;
+    class LevelStorageObserver& operator=(class LevelStorageObserver const &) = delete;
+    LevelStorageObserver(class LevelStorageObserver const &) = delete;
     LevelStorageObserver() = delete;
 #endif
 
 public:
-    MCAPI void onSave(std::string const&);
+    MCAPI void onSave(std::string const &);
 
 protected:
 

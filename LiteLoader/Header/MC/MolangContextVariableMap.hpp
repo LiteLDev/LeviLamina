@@ -15,8 +15,8 @@ class MolangContextVariableMap {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGCONTEXTVARIABLEMAP
 public:
-    class MolangContextVariableMap& operator=(class MolangContextVariableMap const&) = delete;
-    MolangContextVariableMap(class MolangContextVariableMap const&) = delete;
+    class MolangContextVariableMap& operator=(class MolangContextVariableMap const &) = delete;
+    MolangContextVariableMap(class MolangContextVariableMap const &) = delete;
     MolangContextVariableMap() = delete;
 #endif
 

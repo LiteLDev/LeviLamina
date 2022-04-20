@@ -17,14 +17,14 @@ class ScreenHandlerBeacon {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCREENHANDLERBEACON
 public:
-    class ScreenHandlerBeacon& operator=(class ScreenHandlerBeacon const&) = delete;
-    ScreenHandlerBeacon(class ScreenHandlerBeacon const&) = delete;
+    class ScreenHandlerBeacon& operator=(class ScreenHandlerBeacon const &) = delete;
+    ScreenHandlerBeacon(class ScreenHandlerBeacon const &) = delete;
     ScreenHandlerBeacon() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScreenHandlerBeacon();
-    /*1*/ virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const&);
+    /*1*/ virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const &);
     /*2*/ virtual enum ItemStackNetResult endRequest();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void postRequest(bool);
@@ -32,6 +32,6 @@ public:
 protected:
 
 private:
-    MCAPI enum ItemStackNetResult _handleBeaconPaymentAction(class ItemStackRequestActionBeaconPayment const&);
+    MCAPI enum ItemStackNetResult _handleBeaconPaymentAction(class ItemStackRequestActionBeaconPayment const &);
 
 };

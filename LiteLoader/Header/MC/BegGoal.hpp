@@ -17,8 +17,8 @@ class BegGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEGGOAL
 public:
-    class BegGoal& operator=(class BegGoal const&) = delete;
-    BegGoal(class BegGoal const&) = delete;
+    class BegGoal& operator=(class BegGoal const &) = delete;
+    BegGoal(class BegGoal const &) = delete;
     BegGoal() = delete;
 #endif
 
@@ -30,12 +30,12 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI BegGoal(class Mob&, std::vector<class ItemDescriptor> const&, float, int, int);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI BegGoal(class Mob &, std::vector<class ItemDescriptor> const &, float, int, int);
 
 protected:
 
 private:
-    MCAPI bool _playerHoldingInteresting(class Player*);
+    MCAPI bool _playerHoldingInteresting(class Player *);
 
 };

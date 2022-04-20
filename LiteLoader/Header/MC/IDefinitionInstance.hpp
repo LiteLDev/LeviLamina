@@ -17,8 +17,8 @@ class IDefinitionInstance {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IDEFINITIONINSTANCE
 public:
-    class IDefinitionInstance& operator=(class IDefinitionInstance const&) = delete;
-    IDefinitionInstance(class IDefinitionInstance const&) = delete;
+    class IDefinitionInstance& operator=(class IDefinitionInstance const &) = delete;
+    IDefinitionInstance(class IDefinitionInstance const &) = delete;
     IDefinitionInstance() = delete;
 #endif
 

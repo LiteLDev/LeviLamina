@@ -17,22 +17,22 @@ class ScriptMinecraftModuleFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMINECRAFTMODULEFACTORY
 public:
-    class ScriptMinecraftModuleFactory& operator=(class ScriptMinecraftModuleFactory const&) = delete;
-    ScriptMinecraftModuleFactory(class ScriptMinecraftModuleFactory const&) = delete;
+    class ScriptMinecraftModuleFactory& operator=(class ScriptMinecraftModuleFactory const &) = delete;
+    ScriptMinecraftModuleFactory(class ScriptMinecraftModuleFactory const &) = delete;
     ScriptMinecraftModuleFactory() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScriptMinecraftModuleFactory();
-    MCAPI ScriptMinecraftModuleFactory(class ServerLevel*, class MinecraftCommands*);
-    MCAPI static class std::unordered_map<std::string, std::unique_ptr<class IComponentFactory>, struct std::hash<std::string >, struct std::equal_to<std::string >, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class IComponentFactory> > > >& getActorComponentFactoriesV1();
+    MCAPI ScriptMinecraftModuleFactory(class ServerLevel *, class MinecraftCommands *, std::unique_ptr<class ScriptMinecraftCommonModuleFactory>);
+    MCAPI static class std::unordered_map<std::string, std::unique_ptr<class IComponentFactory>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class IComponentFactory>>>> & getActorComponentFactoriesV1();
     MCAPI static std::string getModuleUUIDAsString();
-    MCAPI static struct Scripting::ModuleDescriptor makeModuleDescriptorFor(struct Scripting::Version&&);
+    MCAPI static struct Scripting::ModuleDescriptor makeModuleDescriptorFor(struct Scripting::Version &&);
 
 protected:
 
 private:
-    MCAPI static char const* ModuleName;
+    MCAPI static char const * ModuleName;
     MCAPI static class mce::UUID const ModuleUUID;
 
 };

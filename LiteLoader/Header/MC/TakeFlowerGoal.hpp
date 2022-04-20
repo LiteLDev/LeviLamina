@@ -17,8 +17,8 @@ class TakeFlowerGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TAKEFLOWERGOAL
 public:
-    class TakeFlowerGoal& operator=(class TakeFlowerGoal const&) = delete;
-    TakeFlowerGoal(class TakeFlowerGoal const&) = delete;
+    class TakeFlowerGoal& operator=(class TakeFlowerGoal const &) = delete;
+    TakeFlowerGoal(class TakeFlowerGoal const &) = delete;
     TakeFlowerGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
 
 protected:
 

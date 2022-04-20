@@ -23,18 +23,18 @@ struct FeatureArea {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RECTLAYOUTFEATURE
 public:
-    class RectLayoutFeature& operator=(class RectLayoutFeature const&) = delete;
-    RectLayoutFeature(class RectLayoutFeature const&) = delete;
+    class RectLayoutFeature& operator=(class RectLayoutFeature const &) = delete;
+    RectLayoutFeature(class RectLayoutFeature const &) = delete;
     RectLayoutFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~RectLayoutFeature();
-    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 
 protected:
 
 private:
-    MCAPI class std::optional<struct RectLayoutFeature::FeatureArea> _tryPlaceFeature(class Vec2 const&, int, class std::array<class std::array<unsigned char, 16>, 16> const&) const;
+    MCAPI class std::optional<struct RectLayoutFeature::FeatureArea> _tryPlaceFeature(class Vec2 const &, int, class std::array<class std::array<unsigned char, 16>, 16> const &) const;
 
 };

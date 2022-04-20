@@ -18,16 +18,16 @@ class UpdateSubChunkBlocksPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATESUBCHUNKBLOCKSPACKET
 public:
-    class UpdateSubChunkBlocksPacket& operator=(class UpdateSubChunkBlocksPacket const&) = delete;
-    UpdateSubChunkBlocksPacket(class UpdateSubChunkBlocksPacket const&) = delete;
+    class UpdateSubChunkBlocksPacket& operator=(class UpdateSubChunkBlocksPacket const &) = delete;
+    UpdateSubChunkBlocksPacket(class UpdateSubChunkBlocksPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~UpdateSubChunkBlocksPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~UpdateSubChunkBlocksPacket(){
          (UpdateSubChunkBlocksPacket::*rv)();
@@ -35,9 +35,9 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI UpdateSubChunkBlocksPacket(std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const&, std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const&);
+    MCAPI UpdateSubChunkBlocksPacket(std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const &, std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const &);
     MCAPI UpdateSubChunkBlocksPacket();
-    MCAPI void setSubChunkPosition(class SubChunkPos const&);
+    MCAPI void setSubChunkPosition(class SubChunkPos const &);
 
 protected:
 

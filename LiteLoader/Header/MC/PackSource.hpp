@@ -17,8 +17,8 @@ class PackSource {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSOURCE
 public:
-    class PackSource& operator=(class PackSource const&) = delete;
-    PackSource(class PackSource const&) = delete;
+    class PackSource& operator=(class PackSource const &) = delete;
+    PackSource(class PackSource const &) = delete;
     PackSource() = delete;
 #endif
 
@@ -40,8 +40,8 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI class Pack* fetchPack(struct PackIdVersion const&);
-    MCAPI void resolveUpgradeDependencies(class Pack&, class IContentKeyProvider const&);
+    MCAPI class Pack * fetchPack(struct PackIdVersion const &);
+    MCAPI void resolveUpgradeDependencies(class Pack &, class IContentKeyProvider const &);
 
 protected:
 

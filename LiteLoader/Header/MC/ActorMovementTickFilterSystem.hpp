@@ -8,7 +8,7 @@
 
 #undef BEFORE_EXTRA
 
-class ActorMovementTickFilterSystem {
+struct ActorMovementTickFilterSystem {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,15 +17,12 @@ class ActorMovementTickFilterSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORMOVEMENTTICKFILTERSYSTEM
 public:
-    class ActorMovementTickFilterSystem& operator=(class ActorMovementTickFilterSystem const&) = delete;
-    ActorMovementTickFilterSystem(class ActorMovementTickFilterSystem const&) = delete;
+    struct ActorMovementTickFilterSystem& operator=(struct ActorMovementTickFilterSystem const &) = delete;
+    ActorMovementTickFilterSystem(struct ActorMovementTickFilterSystem const &) = delete;
     ActorMovementTickFilterSystem() = delete;
 #endif
 
 public:
-    /*0*/ virtual ~ActorMovementTickFilterSystem();
-    /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
 
 protected:
 

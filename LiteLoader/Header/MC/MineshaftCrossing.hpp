@@ -18,20 +18,20 @@ class MineshaftCrossing : public MineshaftPiece {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINESHAFTCROSSING
 public:
-    class MineshaftCrossing& operator=(class MineshaftCrossing const&) = delete;
-    MineshaftCrossing(class MineshaftCrossing const&) = delete;
+    class MineshaftCrossing& operator=(class MineshaftCrossing const &) = delete;
+    MineshaftCrossing(class MineshaftCrossing const &) = delete;
     MineshaftCrossing() = delete;
 #endif
 
 public:
     /*0*/ virtual ~MineshaftCrossing();
-    /*2*/ virtual class PoolElementStructurePiece* asPoolElement();
+    /*2*/ virtual class PoolElementStructurePiece * asPoolElement();
     /*3*/ virtual enum StructurePieceType getType() const;
-    /*4*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
-    /*5*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    /*6*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
-    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
-    MCAPI void _placeSupportPillar(class BlockSource&, class BoundingBox const&, int, int, int, int);
+    /*4*/ virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
+    /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
+    /*6*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
+    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
+    MCAPI void _placeSupportPillar(class BlockSource &, class BoundingBox const &, int, int, int, int);
 
 protected:
 

@@ -17,13 +17,13 @@ class LegacyBodyControl {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYBODYCONTROL
 public:
-    class LegacyBodyControl& operator=(class LegacyBodyControl const&) = delete;
-    LegacyBodyControl(class LegacyBodyControl const&) = delete;
+    class LegacyBodyControl& operator=(class LegacyBodyControl const &) = delete;
+    LegacyBodyControl(class LegacyBodyControl const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~LegacyBodyControl();
-    /*1*/ virtual void clientTick(class Mob&);
+    /*1*/ virtual void clientTick(class Mob &);
     MCAPI LegacyBodyControl();
 
 protected:

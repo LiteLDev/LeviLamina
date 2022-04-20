@@ -18,18 +18,18 @@ class MegaTreeTrunk {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MEGATREETRUNK
 public:
-    class MegaTreeTrunk& operator=(class MegaTreeTrunk const&) = delete;
-    MegaTreeTrunk(class MegaTreeTrunk const&) = delete;
+    class MegaTreeTrunk& operator=(class MegaTreeTrunk const &) = delete;
+    MegaTreeTrunk(class MegaTreeTrunk const &) = delete;
     MegaTreeTrunk() = delete;
 #endif
 
 public:
     /*0*/ virtual ~MegaTreeTrunk();
-    /*1*/ virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, class ITreeCanopy const*) const;
+    /*1*/ virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &, struct TreeHelper::TreeParams const &, class ITreeCanopy const *) const;
 
 protected:
 
 private:
-    MCAPI bool _prepareSpawn(class IBlockWorldGenAPI&, class BlockPos const&, int, struct TreeHelper::TreeParams const&) const;
+    MCAPI bool _prepareSpawn(class IBlockWorldGenAPI &, class BlockPos const &, int, struct TreeHelper::TreeParams const &) const;
 
 };

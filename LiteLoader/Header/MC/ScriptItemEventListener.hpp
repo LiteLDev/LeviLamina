@@ -15,8 +15,8 @@ class ScriptItemEventListener {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTITEMEVENTLISTENER
 public:
-    class ScriptItemEventListener& operator=(class ScriptItemEventListener const&) = delete;
-    ScriptItemEventListener(class ScriptItemEventListener const&) = delete;
+    class ScriptItemEventListener& operator=(class ScriptItemEventListener const &) = delete;
+    ScriptItemEventListener(class ScriptItemEventListener const &) = delete;
     ScriptItemEventListener() = delete;
 #endif
 
@@ -37,7 +37,10 @@ public:
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void __unk_vfn_14();
     /*15*/ virtual void __unk_vfn_15();
-    MCAPI ScriptItemEventListener(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
+    /*16*/ virtual enum EventResult onEvent(struct ItemDefinitionEventTriggeredEvent const &);
+    /*17*/ virtual enum EventResult onEvent(struct ItemUseOnEvent const &);
+    /*18*/ virtual enum EventResult onEvent(struct ItemUseEvent const &);
+    MCAPI ScriptItemEventListener(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 
 protected:
 

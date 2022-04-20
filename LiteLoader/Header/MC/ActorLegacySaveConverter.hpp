@@ -17,40 +17,40 @@ class ActorLegacySaveConverter {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORLEGACYSAVECONVERTER
 public:
-    class ActorLegacySaveConverter& operator=(class ActorLegacySaveConverter const&) = delete;
-    ActorLegacySaveConverter(class ActorLegacySaveConverter const&) = delete;
+    class ActorLegacySaveConverter& operator=(class ActorLegacySaveConverter const &) = delete;
+    ActorLegacySaveConverter(class ActorLegacySaveConverter const &) = delete;
     ActorLegacySaveConverter() = delete;
 #endif
 
 public:
-    MCAPI static void convertSave(class Actor&, class CompoundTag const&);
+    MCAPI static void convertSave(class Actor &, class CompoundTag const &);
 
 protected:
 
 private:
-    MCAPI static void convertBoat(class Actor&, class CompoundTag const&);
-    MCAPI static void convertChicken(class Actor&, class CompoundTag const&);
-    MCAPI static void convertCow(class Actor&, class CompoundTag const&);
-    MCAPI static void convertCreeper(class Actor&, class CompoundTag const&);
-    MCAPI static void convertEnderman(class Actor&, class CompoundTag const&);
-    MCAPI static void convertHorse(class Actor&, class CompoundTag const&);
-    MCAPI static void convertIronGolem(class Actor&, class CompoundTag const&);
-    MCAPI static void convertMinecart(class Actor&, class CompoundTag const&);
-    MCAPI static void convertMinecartHopper(class Actor&, class CompoundTag const&);
-    MCAPI static void convertMinecartTNT(class Actor&, class CompoundTag const&);
-    MCAPI static void convertOcelot(class Actor&, class CompoundTag const&);
-    MCAPI static void convertPig(class Actor&, class CompoundTag const&);
-    MCAPI static void convertRabbit(class Actor&, class CompoundTag const&);
-    MCAPI static void convertSheep(class Actor&, class CompoundTag const&);
-    MCAPI static void convertSilverfish(class Actor&, class CompoundTag const&);
-    MCAPI static void convertSkeleton(class Actor&, class CompoundTag const&);
-    MCAPI static void convertSlime(class Actor&, class CompoundTag const&);
-    MCAPI static void convertSnowgolem(class Actor&, class CompoundTag const&);
-    MCAPI static void convertSpider(class Actor&, class CompoundTag const&);
-    MCAPI static void convertSquid(class Actor&, class CompoundTag const&);
-    MCAPI static void convertVillager(class Actor&, class CompoundTag const&);
-    MCAPI static void convertWolf(class Actor&, class CompoundTag const&);
-    MCAPI static void convertZombie(class Actor&, class CompoundTag const&);
-    MCAPI static void convertZombieVillager(class Actor&, class CompoundTag const&);
+    MCAPI static void convertBoat(class Actor &, class CompoundTag const &);
+    MCAPI static void convertChicken(class Actor &, class CompoundTag const &);
+    MCAPI static void convertCow(class Actor &, class CompoundTag const &);
+    MCAPI static void convertCreeper(class Actor &, class CompoundTag const &);
+    MCAPI static void convertEnderman(class Actor &, class CompoundTag const &);
+    MCAPI static void convertHorse(class Actor &, class CompoundTag const &);
+    MCAPI static void convertIronGolem(class Actor &, class CompoundTag const &);
+    MCAPI static void convertMinecart(class Actor &, class CompoundTag const &);
+    MCAPI static void convertMinecartHopper(class Actor &, class CompoundTag const &);
+    MCAPI static void convertMinecartTNT(class Actor &, class CompoundTag const &);
+    MCAPI static void convertOcelot(class Actor &, class CompoundTag const &);
+    MCAPI static void convertPig(class Actor &, class CompoundTag const &);
+    MCAPI static void convertRabbit(class Actor &, class CompoundTag const &);
+    MCAPI static void convertSheep(class Actor &, class CompoundTag const &);
+    MCAPI static void convertSilverfish(class Actor &, class CompoundTag const &);
+    MCAPI static void convertSkeleton(class Actor &, class CompoundTag const &);
+    MCAPI static void convertSlime(class Actor &, class CompoundTag const &);
+    MCAPI static void convertSnowgolem(class Actor &, class CompoundTag const &);
+    MCAPI static void convertSpider(class Actor &, class CompoundTag const &);
+    MCAPI static void convertSquid(class Actor &, class CompoundTag const &);
+    MCAPI static void convertVillager(class Actor &, class CompoundTag const &);
+    MCAPI static void convertWolf(class Actor &, class CompoundTag const &);
+    MCAPI static void convertZombie(class Actor &, class CompoundTag const &);
+    MCAPI static void convertZombieVillager(class Actor &, class CompoundTag const &);
 
 };

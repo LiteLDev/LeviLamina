@@ -17,6 +17,7 @@ namespace VanillaGameVersions {
     MCAPI extern class BaseGameVersion const BeeUpdate;
     MCAPI extern class BaseGameVersion const CavesAndCliffsUpdate;
     MCAPI extern class BaseGameVersion const CavesAndCliffsUpdate_U1;
+    MCAPI extern class BaseGameVersion const CavesAndCliffsUpdate_U3;
     MCAPI extern class BaseGameVersion const CavesAndCliffs_Part1;
     MCAPI extern class BaseGameVersion const CavesAndCliffs_Part1_U1;
     MCAPI extern class BaseGameVersion const LastLegacyGeneratorUpdate;

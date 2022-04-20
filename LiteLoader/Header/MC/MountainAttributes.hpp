@@ -15,8 +15,8 @@ struct MountainAttributes {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOUNTAINATTRIBUTES
 public:
-    struct MountainAttributes& operator=(struct MountainAttributes const&) = delete;
-    MountainAttributes(struct MountainAttributes const&) = delete;
+    struct MountainAttributes& operator=(struct MountainAttributes const &) = delete;
+    MountainAttributes(struct MountainAttributes const &) = delete;
     MountainAttributes() = delete;
 #endif
 

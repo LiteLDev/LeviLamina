@@ -17,13 +17,13 @@ class RoleChecker {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ROLECHECKER
 public:
-    class RoleChecker& operator=(class RoleChecker const&) = delete;
-    RoleChecker(class RoleChecker const&) = delete;
+    class RoleChecker& operator=(class RoleChecker const &) = delete;
+    RoleChecker(class RoleChecker const &) = delete;
 #endif
 
 public:
     MCAPI RoleChecker();
-    MCAPI void checkRole(std::string const&, class std::function<void (enum ADRole, std::string const& , std::string const& )>);
+    MCAPI void checkRole(std::string const &, class std::function<void (enum ADRole, std::string const &, std::string const &)>);
     MCAPI bool lookupInProgress() const;
     MCAPI ~RoleChecker();
 

@@ -18,8 +18,8 @@ class ScriptBlockType : public ScriptObject {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKTYPE
 public:
-    class ScriptBlockType& operator=(class ScriptBlockType const&) = delete;
-    ScriptBlockType(class ScriptBlockType const&) = delete;
+    class ScriptBlockType& operator=(class ScriptBlockType const &) = delete;
+    ScriptBlockType(class ScriptBlockType const &) = delete;
     ScriptBlockType() = delete;
 #endif
 
@@ -32,11 +32,12 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation> > createDefaultBlockPermutation() const;
+    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>> createDefaultBlockPermutation() const;
+    MCAPI class BlockLegacy const & getBlock() const;
     MCAPI std::string getId() const;
-    MCAPI class ScriptBlockType& operator=(class ScriptBlockType&&);
+    MCAPI class ScriptBlockType & operator=(class ScriptBlockType &&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockType> bind(struct Scripting::Version);
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockType> getOrCreateHandle(class Scripting::WeakLifetimeScope const&, class BlockLegacy const&);
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockType> getOrCreateHandle(class Scripting::WeakLifetimeScope const &, class BlockLegacy const &);
 
 protected:
 

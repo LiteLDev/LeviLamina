@@ -18,15 +18,15 @@ class AreaAttackDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AREAATTACKDEFINITION
 public:
-    class AreaAttackDefinition& operator=(class AreaAttackDefinition const&) = delete;
-    AreaAttackDefinition(class AreaAttackDefinition const&) = delete;
+    class AreaAttackDefinition& operator=(class AreaAttackDefinition const &) = delete;
+    AreaAttackDefinition(class AreaAttackDefinition const &) = delete;
 #endif
 
 public:
     MCAPI AreaAttackDefinition();
-    MCAPI void initialize(class EntityContext&, class AreaAttackComponent&);
-    MCAPI void setDamageCause(std::string const&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AreaAttackDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class AreaAttackComponent &);
+    MCAPI void setDamageCause(std::string const &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AreaAttackDefinition>> &);
 
 protected:
 

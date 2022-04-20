@@ -18,15 +18,15 @@ class RideableDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RIDEABLEDEFINITION
 public:
-    class RideableDefinition& operator=(class RideableDefinition const&) = delete;
-    RideableDefinition(class RideableDefinition const&) = delete;
+    class RideableDefinition& operator=(class RideableDefinition const &) = delete;
+    RideableDefinition(class RideableDefinition const &) = delete;
     RideableDefinition() = delete;
 #endif
 
 public:
-    MCAPI void addFamilyTypeByName(std::string const&);
-    MCAPI void initialize(class EntityContext&, class RideableComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RideableDefinition> >&);
+    MCAPI void addFamilyTypeByName(std::string const &);
+    MCAPI void initialize(class EntityContext &, class RideableComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RideableDefinition>> &);
 
 protected:
 

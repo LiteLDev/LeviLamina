@@ -17,14 +17,13 @@ class ScriptDefinitionTrigger {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTDEFINITIONTRIGGER
 public:
-    class ScriptDefinitionTrigger& operator=(class ScriptDefinitionTrigger const&) = delete;
-    ScriptDefinitionTrigger(class ScriptDefinitionTrigger const&) = delete;
+    class ScriptDefinitionTrigger& operator=(class ScriptDefinitionTrigger const &) = delete;
+    ScriptDefinitionTrigger(class ScriptDefinitionTrigger const &) = delete;
+    ScriptDefinitionTrigger() = delete;
 #endif
 
 public:
-    MCAPI ScriptDefinitionTrigger(class DefinitionTrigger const&);
-    MCAPI ScriptDefinitionTrigger();
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptDefinitionTrigger> bind(struct Scripting::Version);
+    MCAPI static class Scripting::ClassBindingBuilder<class DefinitionTrigger> bind(struct Scripting::Version);
 
 protected:
 

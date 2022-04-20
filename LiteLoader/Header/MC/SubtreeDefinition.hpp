@@ -19,14 +19,14 @@ class SubtreeDefinition : public BehaviorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBTREEDEFINITION
 public:
-    class SubtreeDefinition& operator=(class SubtreeDefinition const&) = delete;
-    SubtreeDefinition(class SubtreeDefinition const&) = delete;
+    class SubtreeDefinition& operator=(class SubtreeDefinition const &) = delete;
+    SubtreeDefinition(class SubtreeDefinition const &) = delete;
     SubtreeDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SubtreeDefinition();
-    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 
 protected:
 

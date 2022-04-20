@@ -17,14 +17,14 @@ class ValidatorRegistry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VALIDATORREGISTRY
 public:
-    class ValidatorRegistry& operator=(class ValidatorRegistry const&) = delete;
-    ValidatorRegistry(class ValidatorRegistry const&) = delete;
+    class ValidatorRegistry& operator=(class ValidatorRegistry const &) = delete;
+    ValidatorRegistry(class ValidatorRegistry const &) = delete;
     ValidatorRegistry() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ValidatorRegistry();
-    MCAPI static void registerValidators(class gsl::basic_string_span<char const, -1>, class std::function<class ContentTierIncompatibleReason (class PackInstance const& , class ContentTierInfo const& )>, class std::function<class ContentTierIncompatibleReason (struct SubpackInfo const& , class ContentTierInfo const& )>);
+    MCAPI static void registerValidators(class gsl::basic_string_span<char const, -1>, class std::function<class ContentTierIncompatibleReason (class PackInstance const &, class ContentTierInfo const &)>, class std::function<class ContentTierIncompatibleReason (struct SubpackInfo const &, class ContentTierInfo const &)>);
 
 protected:
 

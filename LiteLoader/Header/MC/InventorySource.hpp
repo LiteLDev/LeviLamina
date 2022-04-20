@@ -46,13 +46,13 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYSOURCE
 public:
-    class InventorySource& operator=(class InventorySource const&) = delete;
-    InventorySource(class InventorySource const&) = delete;
+    class InventorySource& operator=(class InventorySource const &) = delete;
+    InventorySource(class InventorySource const &) = delete;
     InventorySource() = delete;
 #endif
 
 public:
-    MCAPI bool operator==(class InventorySource const&) const;
+    MCAPI bool operator==(class InventorySource const &) const;
     MCAPI std::string toString() const;
 
 protected:

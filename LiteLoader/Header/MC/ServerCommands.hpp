@@ -14,7 +14,7 @@ namespace ServerCommands {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void setupCommonEnums(class CommandRegistry&);
-    MCAPI void setupStandardServer(class Minecraft&, std::string const&, std::string const&, class PermissionsFile*);
+    MCAPI void setupCommonEnums(class CommandRegistry &);
+    MCAPI void setupStandardServer(class Minecraft &, std::string const &, std::string const &, class PermissionsFile *);
 
 };

@@ -17,13 +17,13 @@ struct GiveableTrigger {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GIVEABLETRIGGER
 public:
-    struct GiveableTrigger& operator=(struct GiveableTrigger const&) = delete;
+    struct GiveableTrigger& operator=(struct GiveableTrigger const &) = delete;
     GiveableTrigger() = delete;
 #endif
 
 public:
-    MCAPI GiveableTrigger(struct GiveableTrigger const&);
-    MCAPI void addItem(class ItemDescriptor const&);
+    MCAPI GiveableTrigger(struct GiveableTrigger const &);
+    MCAPI void addItem(class ItemDescriptor const &);
     MCAPI ~GiveableTrigger();
 
 protected:

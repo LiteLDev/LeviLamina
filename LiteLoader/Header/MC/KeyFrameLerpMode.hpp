@@ -17,13 +17,13 @@ class KeyFrameLerpMode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_KEYFRAMELERPMODE
 public:
-    KeyFrameLerpMode(class KeyFrameLerpMode const&) = delete;
+    KeyFrameLerpMode(class KeyFrameLerpMode const &) = delete;
     KeyFrameLerpMode() = delete;
 #endif
 
 public:
-    MCAPI struct glm::mat<4, 4, float, 0> const& getPrecomputedCubicCoeffs() const;
-    MCAPI class KeyFrameLerpMode& operator=(class KeyFrameLerpMode const&);
+    MCAPI struct glm::mat<4, 4, float, 0> const & getPrecomputedCubicCoeffs() const;
+    MCAPI class KeyFrameLerpMode & operator=(class KeyFrameLerpMode const &);
     MCAPI void setLerpStyle(enum KeyFrameLerpStyle);
 
 protected:

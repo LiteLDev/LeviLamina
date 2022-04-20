@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class ToggleDownfallCommand {
+class ToggleDownfallCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,15 +18,15 @@ class ToggleDownfallCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TOGGLEDOWNFALLCOMMAND
 public:
-    class ToggleDownfallCommand& operator=(class ToggleDownfallCommand const&) = delete;
-    ToggleDownfallCommand(class ToggleDownfallCommand const&) = delete;
+    class ToggleDownfallCommand& operator=(class ToggleDownfallCommand const &) = delete;
+    ToggleDownfallCommand(class ToggleDownfallCommand const &) = delete;
     ToggleDownfallCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ToggleDownfallCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 

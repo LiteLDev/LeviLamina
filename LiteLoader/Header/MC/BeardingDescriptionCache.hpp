@@ -15,13 +15,13 @@ class BeardingDescriptionCache {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEARDINGDESCRIPTIONCACHE
 public:
-    class BeardingDescriptionCache& operator=(class BeardingDescriptionCache const&) = delete;
-    BeardingDescriptionCache(class BeardingDescriptionCache const&) = delete;
+    class BeardingDescriptionCache& operator=(class BeardingDescriptionCache const &) = delete;
+    BeardingDescriptionCache(class BeardingDescriptionCache const &) = delete;
     BeardingDescriptionCache() = delete;
 #endif
 
 public:
-    MCAPI BeardingDescriptionCache(class BoundingBox const&, int);
+    MCAPI BeardingDescriptionCache(class BoundingBox const &, int);
 
 protected:
 

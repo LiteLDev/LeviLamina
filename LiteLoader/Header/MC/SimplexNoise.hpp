@@ -17,16 +17,16 @@ class SimplexNoise {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLEXNOISE
 public:
-    class SimplexNoise& operator=(class SimplexNoise const&) = delete;
-    SimplexNoise(class SimplexNoise const&) = delete;
+    class SimplexNoise& operator=(class SimplexNoise const &) = delete;
+    SimplexNoise(class SimplexNoise const &) = delete;
     SimplexNoise() = delete;
 #endif
 
 public:
-    MCAPI SimplexNoise(class IRandom&, bool);
-    MCAPI void _add(float*, float, float, int, int, float, float, float) const;
-    MCAPI float _getValue(class Vec2 const&) const;
-    MCAPI float _getValue(class Vec3 const&) const;
+    MCAPI SimplexNoise(class IRandom &, bool);
+    MCAPI void _add(float *, float, float, int, int, float, float, float) const;
+    MCAPI float _getValue(class Vec2 const &) const;
+    MCAPI float _getValue(class Vec3 const &) const;
 
 protected:
 

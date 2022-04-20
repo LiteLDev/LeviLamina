@@ -17,14 +17,14 @@ class AgentBodyControl {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTBODYCONTROL
 public:
-    class AgentBodyControl& operator=(class AgentBodyControl const&) = delete;
-    AgentBodyControl(class AgentBodyControl const&) = delete;
+    class AgentBodyControl& operator=(class AgentBodyControl const &) = delete;
+    AgentBodyControl(class AgentBodyControl const &) = delete;
     AgentBodyControl() = delete;
 #endif
 
 public:
     /*0*/ virtual ~AgentBodyControl();
-    /*1*/ virtual void clientTick(class Mob&);
+    /*1*/ virtual void clientTick(class Mob &);
 
 protected:
 

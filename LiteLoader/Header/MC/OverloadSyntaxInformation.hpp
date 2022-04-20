@@ -15,13 +15,13 @@ class OverloadSyntaxInformation {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERLOADSYNTAXINFORMATION
 public:
-    class OverloadSyntaxInformation& operator=(class OverloadSyntaxInformation const&) = delete;
-    OverloadSyntaxInformation(class OverloadSyntaxInformation const&) = delete;
+    class OverloadSyntaxInformation& operator=(class OverloadSyntaxInformation const &) = delete;
+    OverloadSyntaxInformation(class OverloadSyntaxInformation const &) = delete;
     OverloadSyntaxInformation() = delete;
 #endif
 
 public:
-    MCAPI OverloadSyntaxInformation(std::string const&, unsigned int, unsigned int);
+    MCAPI OverloadSyntaxInformation(std::string const &, unsigned int, unsigned int);
 
 protected:
 

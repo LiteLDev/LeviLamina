@@ -19,9 +19,10 @@ public:
 #endif
 
 public:
-    MCAPI ScriptItemUseOnEvent(struct ScriptItemUseOnEvent const&);
-    MCAPI struct ScriptItemUseOnEvent& operator=(struct ScriptItemUseOnEvent&&);
-    MCAPI struct ScriptItemUseOnEvent& operator=(struct ScriptItemUseOnEvent const&);
+    MCAPI ScriptItemUseOnEvent(struct ScriptItemUseOnEvent const &);
+    MCAPI ScriptItemUseOnEvent(class Scripting::StrongTypedObjectHandle<class ScriptItemStack>, struct ItemUseOnEvent const &, class Scripting::WeakLifetimeScope const &);
+    MCAPI struct ScriptItemUseOnEvent & operator=(struct ScriptItemUseOnEvent &&);
+    MCAPI struct ScriptItemUseOnEvent & operator=(struct ScriptItemUseOnEvent const &);
 
 protected:
 

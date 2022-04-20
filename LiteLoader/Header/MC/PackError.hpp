@@ -18,18 +18,18 @@ class PackError {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKERROR
 public:
-    class PackError& operator=(class PackError const&) = delete;
-    PackError(class PackError const&) = delete;
+    class PackError& operator=(class PackError const &) = delete;
+    PackError(class PackError const &) = delete;
     PackError() = delete;
 #endif
 
 public:
     /*0*/ virtual ~PackError();
     /*1*/ virtual std::string getLocErrorMessage() const;
-    /*2*/ virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& getLocErrorMessageMap() const = 0;
-    /*3*/ virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& getEventErrorMessageMap() const = 0;
+    /*2*/ virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string>>> const & getLocErrorMessageMap() const = 0;
+    /*3*/ virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string>>> const & getEventErrorMessageMap() const = 0;
     MCAPI std::string getEventErrorMessage() const;
-    MCAPI void serialize(class Json::Value&);
+    MCAPI void serialize(class Json::Value &);
 
 protected:
 

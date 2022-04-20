@@ -17,15 +17,15 @@ class BreakBlocksSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREAKBLOCKSSYSTEM
 public:
-    class BreakBlocksSystem& operator=(class BreakBlocksSystem const&) = delete;
-    BreakBlocksSystem(class BreakBlocksSystem const&) = delete;
+    class BreakBlocksSystem& operator=(class BreakBlocksSystem const &) = delete;
+    BreakBlocksSystem(class BreakBlocksSystem const &) = delete;
     BreakBlocksSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BreakBlocksSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

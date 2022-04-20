@@ -17,8 +17,8 @@ class ProjectileItemComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROJECTILEITEMCOMPONENT
 public:
-    class ProjectileItemComponent& operator=(class ProjectileItemComponent const&) = delete;
-    ProjectileItemComponent(class ProjectileItemComponent const&) = delete;
+    class ProjectileItemComponent& operator=(class ProjectileItemComponent const &) = delete;
+    ProjectileItemComponent(class ProjectileItemComponent const &) = delete;
     ProjectileItemComponent() = delete;
 #endif
 
@@ -29,7 +29,7 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
     /*
     inline bool isNetworkComponent() const{
         bool (ProjectileItemComponent::*rv)() const;
@@ -37,10 +37,10 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI class Vec3 getShootDir(class Player const&, float) const;
-    MCAPI class Actor* shootProjectile(class BlockSource&, class Vec3 const&, class Vec3 const&, float, class Player*) const;
+    MCAPI class Vec3 getShootDir(class Player const &, float) const;
+    MCAPI class Actor * shootProjectile(class BlockSource &, class Vec3 const &, class Vec3 const &, float, class Player *) const;
     MCAPI static void bindType();
-    MCAPI static class HashedString const& getIdentifier();
+    MCAPI static class HashedString const & getIdentifier();
 
 protected:
 

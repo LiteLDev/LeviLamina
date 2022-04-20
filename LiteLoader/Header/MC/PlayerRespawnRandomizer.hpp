@@ -15,8 +15,8 @@ class PlayerRespawnRandomizer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERRESPAWNRANDOMIZER
 public:
-    class PlayerRespawnRandomizer& operator=(class PlayerRespawnRandomizer const&) = delete;
-    PlayerRespawnRandomizer(class PlayerRespawnRandomizer const&) = delete;
+    class PlayerRespawnRandomizer& operator=(class PlayerRespawnRandomizer const &) = delete;
+    PlayerRespawnRandomizer(class PlayerRespawnRandomizer const &) = delete;
     PlayerRespawnRandomizer() = delete;
 #endif
 

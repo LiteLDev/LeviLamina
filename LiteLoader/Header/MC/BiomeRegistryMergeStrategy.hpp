@@ -17,14 +17,14 @@ class BiomeRegistryMergeStrategy {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMEREGISTRYMERGESTRATEGY
 public:
-    class BiomeRegistryMergeStrategy& operator=(class BiomeRegistryMergeStrategy const&) = delete;
-    BiomeRegistryMergeStrategy(class BiomeRegistryMergeStrategy const&) = delete;
+    class BiomeRegistryMergeStrategy& operator=(class BiomeRegistryMergeStrategy const &) = delete;
+    BiomeRegistryMergeStrategy(class BiomeRegistryMergeStrategy const &) = delete;
     BiomeRegistryMergeStrategy() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BiomeRegistryMergeStrategy();
-    /*1*/ virtual void mergeFiles(std::vector<class LoadedResourceData> const&);
+    /*1*/ virtual void mergeFiles(std::vector<class LoadedResourceData> const &);
     /*
     inline  ~BiomeRegistryMergeStrategy(){
          (BiomeRegistryMergeStrategy::*rv)();

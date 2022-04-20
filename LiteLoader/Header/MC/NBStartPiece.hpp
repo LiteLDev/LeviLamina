@@ -18,8 +18,8 @@ class NBStartPiece : public NBBridgeCrossing {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NBSTARTPIECE
 public:
-    class NBStartPiece& operator=(class NBStartPiece const&) = delete;
-    NBStartPiece(class NBStartPiece const&) = delete;
+    class NBStartPiece& operator=(class NBStartPiece const &) = delete;
+    NBStartPiece(class NBStartPiece const &) = delete;
     NBStartPiece() = delete;
 #endif
 
@@ -29,14 +29,7 @@ public:
     /*3*/ virtual enum StructurePieceType getType() const;
     /*6*/ virtual void __unk_vfn_6();
     /*10*/ virtual void __unk_vfn_10();
-    /*
-    inline  ~NBStartPiece(){
-         (NBStartPiece::*rv)();
-        *((void**)&rv) = dlsym("??1NBStartPiece@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
-    MCAPI NBStartPiece(class Random&, int, int);
+    MCAPI NBStartPiece(class Random &, int, int);
 
 protected:
 

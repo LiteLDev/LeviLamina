@@ -18,17 +18,17 @@ class LoomDyeContainerValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOMDYECONTAINERVALIDATION
 public:
-    class LoomDyeContainerValidation& operator=(class LoomDyeContainerValidation const&) = delete;
-    LoomDyeContainerValidation(class LoomDyeContainerValidation const&) = delete;
+    class LoomDyeContainerValidation& operator=(class LoomDyeContainerValidation const &) = delete;
+    LoomDyeContainerValidation(class LoomDyeContainerValidation const &) = delete;
     LoomDyeContainerValidation() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LoomDyeContainerValidation();
-    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
-    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
 
 protected:
 

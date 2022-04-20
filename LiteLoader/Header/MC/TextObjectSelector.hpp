@@ -18,8 +18,8 @@ class TextObjectSelector {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTOBJECTSELECTOR
 public:
-    class TextObjectSelector& operator=(class TextObjectSelector const&) = delete;
-    TextObjectSelector(class TextObjectSelector const&) = delete;
+    class TextObjectSelector& operator=(class TextObjectSelector const &) = delete;
+    TextObjectSelector(class TextObjectSelector const &) = delete;
     TextObjectSelector() = delete;
 #endif
 
@@ -27,7 +27,7 @@ public:
     /*0*/ virtual ~TextObjectSelector();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual class Json::Value asJsonValue() const;
-    /*3*/ virtual class Json::Value resolve(struct ResolveData const&) const;
+    /*3*/ virtual class Json::Value resolve(struct ResolveData const &) const;
     /*
     inline std::string asString() const{
         std::string (TextObjectSelector::*rv)() const;

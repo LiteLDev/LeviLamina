@@ -18,15 +18,15 @@ class BonusChestFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BONUSCHESTFEATURE
 public:
-    class BonusChestFeature& operator=(class BonusChestFeature const&) = delete;
-    BonusChestFeature(class BonusChestFeature const&) = delete;
+    class BonusChestFeature& operator=(class BonusChestFeature const &) = delete;
+    BonusChestFeature(class BonusChestFeature const &) = delete;
     BonusChestFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BonusChestFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /*
     inline  ~BonusChestFeature(){
          (BonusChestFeature::*rv)();
@@ -38,6 +38,6 @@ public:
 protected:
 
 private:
-    MCAPI bool _place(class BlockSource&, class BlockPos const&, class Random&) const;
+    MCAPI bool _place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 };

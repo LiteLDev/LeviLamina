@@ -17,11 +17,11 @@ class PackSourceReport {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSOURCEREPORT
 public:
-    class PackSourceReport& operator=(class PackSourceReport const&) = delete;
+    class PackSourceReport& operator=(class PackSourceReport const &) = delete;
 #endif
 
 public:
-    MCAPI PackSourceReport(class PackSourceReport const&);
+    MCAPI PackSourceReport(class PackSourceReport const &);
     MCAPI PackSourceReport();
     MCAPI bool hasErrors() const;
     MCAPI ~PackSourceReport();

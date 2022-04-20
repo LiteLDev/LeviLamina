@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class ImmutableWorldCommand {
+class ImmutableWorldCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,15 +18,15 @@ class ImmutableWorldCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IMMUTABLEWORLDCOMMAND
 public:
-    class ImmutableWorldCommand& operator=(class ImmutableWorldCommand const&) = delete;
-    ImmutableWorldCommand(class ImmutableWorldCommand const&) = delete;
+    class ImmutableWorldCommand& operator=(class ImmutableWorldCommand const &) = delete;
+    ImmutableWorldCommand(class ImmutableWorldCommand const &) = delete;
     ImmutableWorldCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ImmutableWorldCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 

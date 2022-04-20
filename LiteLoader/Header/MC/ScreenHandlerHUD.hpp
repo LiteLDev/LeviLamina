@@ -17,14 +17,14 @@ class ScreenHandlerHUD {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCREENHANDLERHUD
 public:
-    class ScreenHandlerHUD& operator=(class ScreenHandlerHUD const&) = delete;
-    ScreenHandlerHUD(class ScreenHandlerHUD const&) = delete;
+    class ScreenHandlerHUD& operator=(class ScreenHandlerHUD const &) = delete;
+    ScreenHandlerHUD(class ScreenHandlerHUD const &) = delete;
     ScreenHandlerHUD() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScreenHandlerHUD();
-    /*1*/ virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const&);
+    /*1*/ virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const &);
 
 protected:
 

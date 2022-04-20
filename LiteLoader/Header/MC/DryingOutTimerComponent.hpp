@@ -17,17 +17,17 @@ class DryingOutTimerComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRYINGOUTTIMERCOMPONENT
 public:
-    class DryingOutTimerComponent& operator=(class DryingOutTimerComponent const&) = delete;
-    DryingOutTimerComponent(class DryingOutTimerComponent const&) = delete;
+    class DryingOutTimerComponent& operator=(class DryingOutTimerComponent const &) = delete;
+    DryingOutTimerComponent(class DryingOutTimerComponent const &) = delete;
     DryingOutTimerComponent() = delete;
 #endif
 
 public:
-    MCAPI DryingOutTimerComponent(class DryingOutTimerComponent&&);
-    MCAPI void addAdditionalSaveData(class CompoundTag&);
+    MCAPI DryingOutTimerComponent(class DryingOutTimerComponent &&);
+    MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI bool canBeAffectedByWaterBottle() const;
-    MCAPI class DryingOutTimerComponent& operator=(class DryingOutTimerComponent&&);
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI class DryingOutTimerComponent & operator=(class DryingOutTimerComponent &&);
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void refillTimeWithWaterBottle(struct Tick);
     MCAPI ~DryingOutTimerComponent();
 

@@ -17,14 +17,14 @@ struct PackedItemUseLegacyInventoryTransaction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKEDITEMUSELEGACYINVENTORYTRANSACTION
 public:
-    struct PackedItemUseLegacyInventoryTransaction& operator=(struct PackedItemUseLegacyInventoryTransaction const&) = delete;
-    PackedItemUseLegacyInventoryTransaction(struct PackedItemUseLegacyInventoryTransaction const&) = delete;
+    struct PackedItemUseLegacyInventoryTransaction& operator=(struct PackedItemUseLegacyInventoryTransaction const &) = delete;
+    PackedItemUseLegacyInventoryTransaction(struct PackedItemUseLegacyInventoryTransaction const &) = delete;
     PackedItemUseLegacyInventoryTransaction() = delete;
 #endif
 
 public:
-    MCAPI PackedItemUseLegacyInventoryTransaction(struct PackedItemUseLegacyInventoryTransaction&&);
-    MCAPI struct PackedItemUseLegacyInventoryTransaction& operator=(struct PackedItemUseLegacyInventoryTransaction&&);
+    MCAPI PackedItemUseLegacyInventoryTransaction(struct PackedItemUseLegacyInventoryTransaction &&);
+    MCAPI struct PackedItemUseLegacyInventoryTransaction & operator=(struct PackedItemUseLegacyInventoryTransaction &&);
     MCAPI ~PackedItemUseLegacyInventoryTransaction();
 
 protected:

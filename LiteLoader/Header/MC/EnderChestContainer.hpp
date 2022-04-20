@@ -18,16 +18,16 @@ class EnderChestContainer : public FillingContainer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDERCHESTCONTAINER
 public:
-    class EnderChestContainer& operator=(class EnderChestContainer const&) = delete;
-    EnderChestContainer(class EnderChestContainer const&) = delete;
+    class EnderChestContainer& operator=(class EnderChestContainer const &) = delete;
+    EnderChestContainer(class EnderChestContainer const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~EnderChestContainer();
     /*1*/ virtual void init();
-    /*9*/ virtual void setItem(int, class ItemStack const&);
-    /*16*/ virtual void startOpen(class Player&);
-    /*17*/ virtual void stopOpen(class Player&);
+    /*9*/ virtual void setItem(int, class ItemStack const &);
+    /*16*/ virtual void startOpen(class Player &);
+    /*17*/ virtual void stopOpen(class Player &);
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
     /*31*/ virtual void __unk_vfn_31();

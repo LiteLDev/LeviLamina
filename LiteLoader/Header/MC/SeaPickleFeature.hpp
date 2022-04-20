@@ -18,15 +18,15 @@ class SeaPickleFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SEAPICKLEFEATURE
 public:
-    class SeaPickleFeature& operator=(class SeaPickleFeature const&) = delete;
-    SeaPickleFeature(class SeaPickleFeature const&) = delete;
+    class SeaPickleFeature& operator=(class SeaPickleFeature const &) = delete;
+    SeaPickleFeature(class SeaPickleFeature const &) = delete;
     SeaPickleFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SeaPickleFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 protected:
 

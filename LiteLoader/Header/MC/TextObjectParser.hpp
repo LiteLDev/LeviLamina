@@ -29,8 +29,8 @@ struct ServerData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTOBJECTPARSER
 public:
-    class TextObjectParser& operator=(class TextObjectParser const&) = delete;
-    TextObjectParser(class TextObjectParser const&) = delete;
+    class TextObjectParser& operator=(class TextObjectParser const &) = delete;
+    TextObjectParser(class TextObjectParser const &) = delete;
     TextObjectParser() = delete;
 #endif
 
@@ -46,16 +46,16 @@ public:
     MCAPI static std::string const RAW_TEXT_ERROR_TEXT_NOT_STRING;
     MCAPI static std::string const RAW_TEXT_ERROR_TRANSLATE_NOT_STRING;
     MCAPI static std::string const RAW_TEXT_ERROR_WITH_NOT_ARRAY_OR_RAW_TEXT;
-    MCAPI static bool textObjectFromJsonServer(class Json::Value const&, class TextObjectRoot&, struct TextObjectParser::ServerData, struct TextObjectParser::ErrorLocalization&);
-    MCAPI static bool textObjectFromJsonString(std::string const&, class TextObjectRoot&, std::string&);
+    MCAPI static bool textObjectFromJsonServer(class Json::Value const &, class TextObjectRoot &, struct TextObjectParser::ServerData, struct TextObjectParser::ErrorLocalization &);
+    MCAPI static bool textObjectFromJsonString(std::string const &, class TextObjectRoot &, std::string &);
 
 protected:
 
 private:
-    MCAPI static bool _getObjectsFromTextObject(class Json::Value const&, class TextObjectRoot&, struct TextObjectParser::ServerData*, struct TextObjectParser::ErrorLocalization&);
-    MCAPI static bool _parseScoreTextObject(class TextObjectRoot&, class Json::Value const&, struct TextObjectParser::ServerData*, struct TextObjectParser::ErrorLocalization&);
-    MCAPI static bool _parseSelectorTextObject(class TextObjectRoot&, std::string, struct TextObjectParser::ServerData*, struct TextObjectParser::ErrorLocalization&);
-    MCAPI static bool _textObjectFromJson(class Json::Value const&, class TextObjectRoot&, struct TextObjectParser::ServerData*, struct TextObjectParser::ErrorLocalization&);
-    MCAPI static bool _textObjectFromString(std::string const&, class TextObjectRoot&, struct TextObjectParser::ServerData*, struct TextObjectParser::ErrorLocalization&);
+    MCAPI static bool _getObjectsFromTextObject(class Json::Value const &, class TextObjectRoot &, struct TextObjectParser::ServerData *, struct TextObjectParser::ErrorLocalization &);
+    MCAPI static bool _parseScoreTextObject(class TextObjectRoot &, class Json::Value const &, struct TextObjectParser::ServerData *, struct TextObjectParser::ErrorLocalization &);
+    MCAPI static bool _parseSelectorTextObject(class TextObjectRoot &, std::string, struct TextObjectParser::ServerData *, struct TextObjectParser::ErrorLocalization &);
+    MCAPI static bool _textObjectFromJson(class Json::Value const &, class TextObjectRoot &, struct TextObjectParser::ServerData *, struct TextObjectParser::ErrorLocalization &);
+    MCAPI static bool _textObjectFromString(std::string const &, class TextObjectRoot &, struct TextObjectParser::ServerData *, struct TextObjectParser::ErrorLocalization &);
 
 };

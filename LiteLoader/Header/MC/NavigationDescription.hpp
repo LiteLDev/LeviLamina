@@ -18,8 +18,8 @@ struct NavigationDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONDESCRIPTION
 public:
-    struct NavigationDescription& operator=(struct NavigationDescription const&) = delete;
-    NavigationDescription(struct NavigationDescription const&) = delete;
+    struct NavigationDescription& operator=(struct NavigationDescription const &) = delete;
+    NavigationDescription(struct NavigationDescription const &) = delete;
 #endif
 
 public:

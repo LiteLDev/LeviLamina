@@ -17,8 +17,8 @@ class TerrainBurstReactionComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TERRAINBURSTREACTIONCOMPONENT
 public:
-    class TerrainBurstReactionComponent& operator=(class TerrainBurstReactionComponent const&) = delete;
-    TerrainBurstReactionComponent(class TerrainBurstReactionComponent const&) = delete;
+    class TerrainBurstReactionComponent& operator=(class TerrainBurstReactionComponent const &) = delete;
+    TerrainBurstReactionComponent(class TerrainBurstReactionComponent const &) = delete;
     TerrainBurstReactionComponent() = delete;
 #endif
 
@@ -26,7 +26,7 @@ public:
     /*0*/ virtual ~TerrainBurstReactionComponent();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual void _onEnd(class LabTableReaction&, class BlockSource&);
+    /*3*/ virtual void _onEnd(class LabTableReaction &, class BlockSource &);
 
 protected:
 

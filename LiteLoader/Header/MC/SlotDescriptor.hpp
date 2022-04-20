@@ -17,13 +17,13 @@ struct SlotDescriptor {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLOTDESCRIPTOR
 public:
-    struct SlotDescriptor& operator=(struct SlotDescriptor const&) = delete;
+    struct SlotDescriptor& operator=(struct SlotDescriptor const &) = delete;
 #endif
 
 public:
-    MCAPI SlotDescriptor(struct SlotDescriptor const&);
+    MCAPI SlotDescriptor(struct SlotDescriptor const &);
     MCAPI SlotDescriptor();
-    MCAPI void addAcceptedItem(class ItemDescriptor const&);
+    MCAPI void addAcceptedItem(class ItemDescriptor const &);
     MCAPI ~SlotDescriptor();
 
 protected:

@@ -18,15 +18,15 @@ class ControlledByPlayerDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTROLLEDBYPLAYERDEFINITION
 public:
-    class ControlledByPlayerDefinition& operator=(class ControlledByPlayerDefinition const&) = delete;
-    ControlledByPlayerDefinition(class ControlledByPlayerDefinition const&) = delete;
+    class ControlledByPlayerDefinition& operator=(class ControlledByPlayerDefinition const &) = delete;
+    ControlledByPlayerDefinition(class ControlledByPlayerDefinition const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ControlledByPlayerDefinition();
     MCAPI ControlledByPlayerDefinition();
-    MCAPI void initialize(class EntityContext&, class ControlledByPlayerGoal&);
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ControlledByPlayerDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class ControlledByPlayerGoal &);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ControlledByPlayerDefinition>> &);
 
 protected:
 

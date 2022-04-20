@@ -17,15 +17,15 @@ class ActorLimitedLifetimeTickSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORLIMITEDLIFETIMETICKSYSTEM
 public:
-    class ActorLimitedLifetimeTickSystem& operator=(class ActorLimitedLifetimeTickSystem const&) = delete;
-    ActorLimitedLifetimeTickSystem(class ActorLimitedLifetimeTickSystem const&) = delete;
+    class ActorLimitedLifetimeTickSystem& operator=(class ActorLimitedLifetimeTickSystem const &) = delete;
+    ActorLimitedLifetimeTickSystem(class ActorLimitedLifetimeTickSystem const &) = delete;
     ActorLimitedLifetimeTickSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorLimitedLifetimeTickSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

@@ -17,14 +17,14 @@ class GameTestInstanceLedger {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETESTINSTANCELEDGER
 public:
-    class GameTestInstanceLedger& operator=(class GameTestInstanceLedger const&) = delete;
-    GameTestInstanceLedger(class GameTestInstanceLedger const&) = delete;
+    class GameTestInstanceLedger& operator=(class GameTestInstanceLedger const &) = delete;
+    GameTestInstanceLedger(class GameTestInstanceLedger const &) = delete;
     GameTestInstanceLedger() = delete;
 #endif
 
 public:
     /*0*/ virtual ~GameTestInstanceLedger();
-    /*1*/ virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
+    /*1*/ virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance &);
     MCAPI void clear(class AutomaticID<class Dimension, int>);
 
 protected:

@@ -17,26 +17,26 @@ class GoalSelectorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GOALSELECTORCOMPONENT
 public:
-    class GoalSelectorComponent& operator=(class GoalSelectorComponent const&) = delete;
-    GoalSelectorComponent(class GoalSelectorComponent const&) = delete;
+    class GoalSelectorComponent& operator=(class GoalSelectorComponent const &) = delete;
+    GoalSelectorComponent(class GoalSelectorComponent const &) = delete;
     GoalSelectorComponent() = delete;
 #endif
 
 public:
     MCAPI void addGoal(int, std::unique_ptr<class Goal>);
-    MCAPI void buildDebugInfo(std::string&) const;
+    MCAPI void buildDebugInfo(std::string &) const;
     MCAPI void clearAllGoals();
     MCAPI void clearNonTargetedGoals();
     MCAPI void clearTargetGoals();
-    MCAPI std::vector<struct std::pair<unsigned short, class PrioritizedGoal>>& getGoalMap();
-    MCAPI void onPlayerDimensionChanged(class Player*, class AutomaticID<class Dimension, int>);
+    MCAPI std::vector<struct std::pair<unsigned short, class PrioritizedGoal>> & getGoalMap();
+    MCAPI void onPlayerDimensionChanged(class Player *, class AutomaticID<class Dimension, int>);
     MCAPI void stopAllGoals();
     MCAPI void stopNonTargetedGoals();
 
 protected:
 
 private:
-    MCAPI void _eraseGoals(bool (* )(struct std::pair<unsigned short, class PrioritizedGoal>& ));
-    MCAPI class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<struct std::pair<unsigned short, class PrioritizedGoal> > > > _findGoalByKey(unsigned short) const;
+    MCAPI void _eraseGoals(bool ( *)(struct std::pair<unsigned short, class PrioritizedGoal> &));
+    MCAPI class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<struct std::pair<unsigned short, class PrioritizedGoal>>>> _findGoalByKey(unsigned short) const;
 
 };

@@ -18,14 +18,14 @@ class SwimWithEntityDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWIMWITHENTITYDEFINITION
 public:
-    class SwimWithEntityDefinition& operator=(class SwimWithEntityDefinition const&) = delete;
-    SwimWithEntityDefinition(class SwimWithEntityDefinition const&) = delete;
+    class SwimWithEntityDefinition& operator=(class SwimWithEntityDefinition const &) = delete;
+    SwimWithEntityDefinition(class SwimWithEntityDefinition const &) = delete;
     SwimWithEntityDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SwimWithEntityDefinition();
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwimWithEntityDefinition> >&);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwimWithEntityDefinition>> &);
 
 protected:
 

@@ -17,19 +17,19 @@ class AreaAttackSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AREAATTACKSYSTEM
 public:
-    class AreaAttackSystem& operator=(class AreaAttackSystem const&) = delete;
-    AreaAttackSystem(class AreaAttackSystem const&) = delete;
+    class AreaAttackSystem& operator=(class AreaAttackSystem const &) = delete;
+    AreaAttackSystem(class AreaAttackSystem const &) = delete;
     AreaAttackSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~AreaAttackSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 
 private:
-    MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class AreaAttackComponent>&);
+    MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class AreaAttackComponent> &);
 
 };

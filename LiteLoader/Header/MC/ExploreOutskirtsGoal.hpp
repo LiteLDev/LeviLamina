@@ -17,8 +17,8 @@ class ExploreOutskirtsGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPLOREOUTSKIRTSGOAL
 public:
-    class ExploreOutskirtsGoal& operator=(class ExploreOutskirtsGoal const&) = delete;
-    ExploreOutskirtsGoal(class ExploreOutskirtsGoal const&) = delete;
+    class ExploreOutskirtsGoal& operator=(class ExploreOutskirtsGoal const &) = delete;
+    ExploreOutskirtsGoal(class ExploreOutskirtsGoal const &) = delete;
     ExploreOutskirtsGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI ExploreOutskirtsGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI ExploreOutskirtsGoal(class Mob &);
 
 protected:
 

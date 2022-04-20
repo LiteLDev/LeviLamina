@@ -17,8 +17,8 @@ class WSAStartupSingleton {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WSASTARTUPSINGLETON
 public:
-    class WSAStartupSingleton& operator=(class WSAStartupSingleton const&) = delete;
-    WSAStartupSingleton(class WSAStartupSingleton const&) = delete;
+    class WSAStartupSingleton& operator=(class WSAStartupSingleton const &) = delete;
+    WSAStartupSingleton(class WSAStartupSingleton const &) = delete;
     WSAStartupSingleton() = delete;
 #endif
 

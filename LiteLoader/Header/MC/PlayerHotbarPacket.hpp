@@ -18,16 +18,16 @@ class PlayerHotbarPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERHOTBARPACKET
 public:
-    class PlayerHotbarPacket& operator=(class PlayerHotbarPacket const&) = delete;
-    PlayerHotbarPacket(class PlayerHotbarPacket const&) = delete;
+    class PlayerHotbarPacket& operator=(class PlayerHotbarPacket const &) = delete;
+    PlayerHotbarPacket(class PlayerHotbarPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~PlayerHotbarPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~PlayerHotbarPacket(){
          (PlayerHotbarPacket::*rv)();

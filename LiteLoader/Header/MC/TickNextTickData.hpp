@@ -17,15 +17,15 @@ class TickNextTickData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKNEXTTICKDATA
 public:
-    class TickNextTickData& operator=(class TickNextTickData const&) = delete;
-    TickNextTickData(class TickNextTickData const&) = delete;
+    class TickNextTickData& operator=(class TickNextTickData const &) = delete;
+    TickNextTickData(class TickNextTickData const &) = delete;
     TickNextTickData() = delete;
 #endif
 
 public:
-    MCAPI TickNextTickData(class BlockPos const&, class Block const&, struct Tick const&, int);
-    MCAPI bool operator==(class TickNextTickData const&) const;
-    MCAPI bool operator>(class TickNextTickData const&) const;
+    MCAPI TickNextTickData(class BlockPos const &, class Block const &, struct Tick const &, int);
+    MCAPI bool operator==(class TickNextTickData const &) const;
+    MCAPI bool operator>(class TickNextTickData const &) const;
 
 protected:
 

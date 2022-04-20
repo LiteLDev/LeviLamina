@@ -18,16 +18,16 @@ class LegacyIceFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYICEFEATURE
 public:
-    class LegacyIceFeature& operator=(class LegacyIceFeature const&) = delete;
-    LegacyIceFeature(class LegacyIceFeature const&) = delete;
+    class LegacyIceFeature& operator=(class LegacyIceFeature const &) = delete;
+    LegacyIceFeature(class LegacyIceFeature const &) = delete;
     LegacyIceFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LegacyIceFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-    MCAPI LegacyIceFeature(class FeatureRegistry const&);
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+    MCAPI LegacyIceFeature(class FeatureRegistry const &);
 
 protected:
 

@@ -18,13 +18,13 @@ class LootItemConditions {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMCONDITIONS
 public:
-    class LootItemConditions& operator=(class LootItemConditions const&) = delete;
-    LootItemConditions(class LootItemConditions const&) = delete;
+    class LootItemConditions& operator=(class LootItemConditions const &) = delete;
+    LootItemConditions(class LootItemConditions const &) = delete;
     LootItemConditions() = delete;
 #endif
 
 public:
-    MCAPI static bool allApply(std::vector<std::unique_ptr<class LootItemCondition>> const&, class Random&, class LootTableContext&);
+    MCAPI static bool allApply(std::vector<std::unique_ptr<class LootItemCondition>> const &, class Random &, class LootTableContext &);
     MCAPI static std::vector<std::unique_ptr<class LootItemCondition>> deserialize(class Json::Value);
 
 protected:

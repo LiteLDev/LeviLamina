@@ -15,8 +15,8 @@ struct ActorFactoryData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORFACTORYDATA
 public:
-    struct ActorFactoryData& operator=(struct ActorFactoryData const&) = delete;
-    ActorFactoryData(struct ActorFactoryData const&) = delete;
+    struct ActorFactoryData& operator=(struct ActorFactoryData const &) = delete;
+    ActorFactoryData(struct ActorFactoryData const &) = delete;
     ActorFactoryData() = delete;
 #endif
 

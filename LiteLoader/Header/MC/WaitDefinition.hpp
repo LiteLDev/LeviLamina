@@ -19,14 +19,14 @@ class WaitDefinition : public BehaviorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WAITDEFINITION
 public:
-    class WaitDefinition& operator=(class WaitDefinition const&) = delete;
-    WaitDefinition(class WaitDefinition const&) = delete;
+    class WaitDefinition& operator=(class WaitDefinition const &) = delete;
+    WaitDefinition(class WaitDefinition const &) = delete;
     WaitDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~WaitDefinition();
-    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 
 protected:
 

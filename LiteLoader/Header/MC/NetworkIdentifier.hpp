@@ -21,24 +21,24 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKIDENTIFIER
 public:
-    class NetworkIdentifier& operator=(class NetworkIdentifier const&) = delete;
-    NetworkIdentifier(class NetworkIdentifier const&) = delete;
+    class NetworkIdentifier& operator=(class NetworkIdentifier const &) = delete;
+    NetworkIdentifier(class NetworkIdentifier const &) = delete;
     NetworkIdentifier() = delete;
 #endif
 
 public:
-    MCAPI NetworkIdentifier(struct RakNet::RakNetGUID const&);
-    MCAPI NetworkIdentifier(struct sockaddr_in6 const&);
-    MCAPI NetworkIdentifier(struct sockaddr_in const&);
+    MCAPI NetworkIdentifier(struct RakNet::RakNetGUID const &);
+    MCAPI NetworkIdentifier(struct sockaddr_in6 const &);
+    MCAPI NetworkIdentifier(struct sockaddr_in const &);
     MCAPI std::string getAddress() const;
     MCAPI unsigned __int64 getHash() const;
     MCAPI bool isUnassigned() const;
-    MCAPI bool operator==(class NetworkIdentifier const&) const;
+    MCAPI bool operator==(class NetworkIdentifier const &) const;
     MCAPI std::string toString() const;
 
 protected:
 
 private:
-    MCAPI bool equalsTypeData(class NetworkIdentifier const&) const;
+    MCAPI bool equalsTypeData(class NetworkIdentifier const &) const;
 
 };

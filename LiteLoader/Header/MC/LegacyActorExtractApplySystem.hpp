@@ -15,8 +15,8 @@ class LegacyActorExtractApplySystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYACTOREXTRACTAPPLYSYSTEM
 public:
-    class LegacyActorExtractApplySystem& operator=(class LegacyActorExtractApplySystem const&) = delete;
-    LegacyActorExtractApplySystem(class LegacyActorExtractApplySystem const&) = delete;
+    class LegacyActorExtractApplySystem& operator=(class LegacyActorExtractApplySystem const &) = delete;
+    LegacyActorExtractApplySystem(class LegacyActorExtractApplySystem const &) = delete;
     LegacyActorExtractApplySystem() = delete;
 #endif
 

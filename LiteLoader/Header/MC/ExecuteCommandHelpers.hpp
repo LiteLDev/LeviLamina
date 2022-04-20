@@ -12,7 +12,7 @@ namespace ExecuteCommandHelpers {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-    MCAPI void handleResult(class Command const&, std::vector<class Actor const* > const&, class CommandOutput&);
-    MCAPI void runCommand(class Command const&, class CommandOrigin const&, class Actor const&, std::vector<class Actor const* >&, class CommandOutput&);
+    MCAPI void handleResult(class Command const &, std::vector<class Actor const *> const &, class CommandOutput &);
+    MCAPI void runCommand(class Command const &, class CommandOrigin const &, class Actor const &, std::vector<class Actor const *> &, class CommandOutput &);
 
 };

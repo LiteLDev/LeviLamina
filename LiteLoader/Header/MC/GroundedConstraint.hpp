@@ -17,15 +17,15 @@ class GroundedConstraint {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROUNDEDCONSTRAINT
 public:
-    class GroundedConstraint& operator=(class GroundedConstraint const&) = delete;
-    GroundedConstraint(class GroundedConstraint const&) = delete;
+    class GroundedConstraint& operator=(class GroundedConstraint const &) = delete;
+    GroundedConstraint(class GroundedConstraint const &) = delete;
     GroundedConstraint() = delete;
 #endif
 
 public:
     /*0*/ virtual ~GroundedConstraint();
-    /*1*/ virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, enum Rotation const&) const;
-    MCAPI GroundedConstraint(class StructureTemplate&);
+    /*1*/ virtual bool isSatisfied(class IBlockWorldGenAPI const &, class BlockPos const &, enum Rotation const &) const;
+    MCAPI GroundedConstraint(class StructureTemplate &);
 
 protected:
 

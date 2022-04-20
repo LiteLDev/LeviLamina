@@ -19,14 +19,14 @@ class ActorRandomChanceTest : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORRANDOMCHANCETEST
 public:
-    class ActorRandomChanceTest& operator=(class ActorRandomChanceTest const&) = delete;
-    ActorRandomChanceTest(class ActorRandomChanceTest const&) = delete;
+    class ActorRandomChanceTest& operator=(class ActorRandomChanceTest const &) = delete;
+    ActorRandomChanceTest(class ActorRandomChanceTest const &) = delete;
     ActorRandomChanceTest() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorRandomChanceTest();
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*6*/ virtual class Json::Value _serializeValue() const;
 

@@ -18,25 +18,25 @@ class NetworkChunkSource : public ChunkSource {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKCHUNKSOURCE
 public:
-    class NetworkChunkSource& operator=(class NetworkChunkSource const&) = delete;
-    NetworkChunkSource(class NetworkChunkSource const&) = delete;
+    class NetworkChunkSource& operator=(class NetworkChunkSource const &) = delete;
+    NetworkChunkSource(class NetworkChunkSource const &) = delete;
     NetworkChunkSource() = delete;
 #endif
 
 public:
     /*0*/ virtual ~NetworkChunkSource();
-    /*3*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const&);
-    /*4*/ virtual class std::shared_ptr<class LevelChunk> getRandomChunk(class Random&);
-    /*6*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const&, enum ChunkSource::LoadMode, bool);
-    /*7*/ virtual class std::shared_ptr<class LevelChunk> getOrLoadChunk(class ChunkPos const&, enum ChunkSource::LoadMode, bool);
-    /*8*/ virtual bool postProcess(class ChunkViewSource&);
-    /*9*/ virtual void checkAndReplaceChunk(class ChunkViewSource&, class LevelChunk&);
-    /*15*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
-    /*18*/ virtual bool isWithinWorldLimit(class ChunkPos const&) const;
-    /*19*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const* getChunkMap();
-    /*20*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const& getStorage() const;
-    /*21*/ virtual void clearDeletedEntities();
-    /*22*/ virtual bool canCreateViews() const;
+    /*3*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
+    /*4*/ virtual class std::shared_ptr<class LevelChunk> getRandomChunk(class Random &);
+    /*6*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum ChunkSource::LoadMode, bool);
+    /*7*/ virtual class std::shared_ptr<class LevelChunk> getOrLoadChunk(class ChunkPos const &, enum ChunkSource::LoadMode, bool);
+    /*8*/ virtual bool postProcess(class ChunkViewSource &);
+    /*9*/ virtual void checkAndReplaceChunk(class ChunkViewSource &, class LevelChunk &);
+    /*17*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
+    /*21*/ virtual bool isWithinWorldLimit(class ChunkPos const &) const;
+    /*22*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const * getChunkMap();
+    /*23*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const & getStorage() const;
+    /*24*/ virtual void clearDeletedEntities();
+    /*25*/ virtual bool canCreateViews() const;
 
 protected:
 

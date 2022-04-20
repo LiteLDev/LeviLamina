@@ -15,12 +15,12 @@ struct PlayerShootArrowEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSHOOTARROWEVENT
 public:
-    struct PlayerShootArrowEvent& operator=(struct PlayerShootArrowEvent const&) = delete;
+    struct PlayerShootArrowEvent& operator=(struct PlayerShootArrowEvent const &) = delete;
     PlayerShootArrowEvent() = delete;
 #endif
 
 public:
-    MCAPI PlayerShootArrowEvent(struct PlayerShootArrowEvent const&);
+    MCAPI PlayerShootArrowEvent(struct PlayerShootArrowEvent const &);
     MCAPI ~PlayerShootArrowEvent();
 
 protected:

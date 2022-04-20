@@ -18,16 +18,16 @@ class UpdateTradePacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATETRADEPACKET
 public:
-    class UpdateTradePacket& operator=(class UpdateTradePacket const&) = delete;
-    UpdateTradePacket(class UpdateTradePacket const&) = delete;
+    class UpdateTradePacket& operator=(class UpdateTradePacket const &) = delete;
+    UpdateTradePacket(class UpdateTradePacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~UpdateTradePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~UpdateTradePacket(){
          (UpdateTradePacket::*rv)();
@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI UpdateTradePacket(enum ContainerID, enum ContainerType, int, std::string const&, class CompoundTag&&, struct ActorUniqueID const&, struct ActorUniqueID const&, int, bool, bool);
+    MCAPI UpdateTradePacket(enum ContainerID, enum ContainerType, int, std::string const &, class CompoundTag &&, struct ActorUniqueID const &, struct ActorUniqueID const &, int, bool, bool);
     MCAPI UpdateTradePacket();
 
 protected:

@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-class MolangMemberVariable {
+struct MolangMemberVariable {
 
 #define AFTER_EXTRA
 
@@ -15,8 +15,8 @@ class MolangMemberVariable {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGMEMBERVARIABLE
 public:
-    class MolangMemberVariable& operator=(class MolangMemberVariable const&) = delete;
-    MolangMemberVariable(class MolangMemberVariable const&) = delete;
+    struct MolangMemberVariable& operator=(struct MolangMemberVariable const &) = delete;
+    MolangMemberVariable(struct MolangMemberVariable const &) = delete;
     MolangMemberVariable() = delete;
 #endif
 

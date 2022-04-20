@@ -18,27 +18,27 @@ class PortalShape {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PORTALSHAPE
 public:
-    class PortalShape& operator=(class PortalShape const&) = delete;
-    PortalShape(class PortalShape const&) = delete;
+    class PortalShape& operator=(class PortalShape const &) = delete;
+    PortalShape(class PortalShape const &) = delete;
     PortalShape() = delete;
 #endif
 
 public:
-    MCAPI PortalShape(class BlockSource const&, class BlockPos const&, enum PortalAxis);
-    MCAPI void createPortalBlocks(class WorldChangeTransaction&) const;
+    MCAPI PortalShape(class BlockSource const &, class BlockPos const &, enum PortalAxis);
+    MCAPI void createPortalBlocks(class WorldChangeTransaction &) const;
     MCAPI class PortalRecord createRecord() const;
-    MCAPI void evaluate(class BlockPos const&, class BlockSource const&);
+    MCAPI void evaluate(class BlockPos const &, class BlockSource const &);
     MCAPI int getNumberOfPortalBlocks() const;
     MCAPI bool isFilled() const;
     MCAPI bool isValid() const;
-    MCAPI void removePortalBlocks(class WorldChangeTransaction&, class BlockPos const&) const;
+    MCAPI void removePortalBlocks(class WorldChangeTransaction &, class BlockPos const &) const;
     MCAPI void setAxis(enum PortalAxis);
-    MCAPI void updateNeighboringBlocks(class BlockSource&, class Vec3 const&) const;
+    MCAPI void updateNeighboringBlocks(class BlockSource &, class Vec3 const &) const;
 
 protected:
 
 private:
-    MCAPI int _calculatePortalHeight(class BlockSource const&);
-    MCAPI int _getDistanceUntilEdge(class BlockPos const&, enum Facing::Name, class BlockSource const&) const;
+    MCAPI int _calculatePortalHeight(class BlockSource const &);
+    MCAPI int _getDistanceUntilEdge(class BlockPos const &, enum Facing::Name, class BlockSource const &) const;
 
 };

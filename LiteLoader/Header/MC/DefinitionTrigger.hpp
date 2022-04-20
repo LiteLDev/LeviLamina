@@ -16,18 +16,18 @@ class DefinitionTrigger {
 #undef AFTER_EXTRA
 
 public:
-    MCAPI DefinitionTrigger(class DefinitionTrigger&&);
-    MCAPI DefinitionTrigger(class DefinitionTrigger const&);
+    MCAPI DefinitionTrigger(class DefinitionTrigger &&);
     MCAPI DefinitionTrigger();
-    MCAPI bool canTrigger(class RenderParams&) const;
-    MCAPI bool canTrigger(class Actor const&, class VariantParameterList const&) const;
-    MCAPI class DefinitionTrigger& operator=(class DefinitionTrigger const&);
-    MCAPI class DefinitionTrigger& operator=(class DefinitionTrigger&&);
+    MCAPI DefinitionTrigger(class DefinitionTrigger const &);
+    MCAPI bool canTrigger(class RenderParams &) const;
+    MCAPI bool canTrigger(class Actor const &, class VariantParameterList const &) const;
+    MCAPI class DefinitionTrigger & operator=(class DefinitionTrigger const &);
+    MCAPI class DefinitionTrigger & operator=(class DefinitionTrigger &&);
     MCAPI std::unique_ptr<class CompoundTag> toCompoundTag() const;
     MCAPI ~DefinitionTrigger();
     MCAPI static class BidirectionalUnorderedMap<std::string, enum FilterSubject> TargetEnumValues;
     MCAPI static void bindType();
-    MCAPI static class DefinitionTrigger fromCompoundTag(class CompoundTag const&);
+    MCAPI static class DefinitionTrigger fromCompoundTag(class CompoundTag const &);
 
 protected:
 

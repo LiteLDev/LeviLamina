@@ -19,8 +19,8 @@ class ServerInstance {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERINSTANCE
 public:
-    class ServerInstance& operator=(class ServerInstance const&) = delete;
-    ServerInstance(class ServerInstance const&) = delete;
+    class ServerInstance& operator=(class ServerInstance const &) = delete;
+    ServerInstance(class ServerInstance const &) = delete;
     ServerInstance() = delete;
 #endif
 
@@ -71,10 +71,10 @@ public:
         *((void**)&rv) = dlsym("?onAppSuspended@ServerInstance@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void onCriticalDiskError(bool a0, enum Core::LevelStorageState const& a1){
-        void (ServerInstance::*rv)(bool, enum Core::LevelStorageState const&);
+    inline void onCriticalDiskError(bool a0, enum Core::LevelStorageState const & a1){
+        void (ServerInstance::*rv)(bool, enum Core::LevelStorageState const &);
         *((void**)&rv) = dlsym("?onCriticalDiskError@ServerInstance@@UEAAX_NAEBW4LevelStorageState@Core@@@Z");
-        return (this->*rv)(std::forward<bool>(a0), std::forward<enum Core::LevelStorageState const&>(a1));
+        return (this->*rv)(std::forward<bool>(a0), std::forward<enum Core::LevelStorageState const &>(a1));
     }
     inline void onLevelCorrupt(){
         void (ServerInstance::*rv)();
@@ -97,15 +97,15 @@ public:
         return (this->*rv)(std::forward<bool>(a0));
     }
     */
-    MCAPI ServerInstance(class IMinecraftApp&, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerInstanceEventCoordinator> > const&);
+    MCAPI ServerInstance(class IMinecraftApp &, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerInstanceEventCoordinator>> const &);
     MCAPI void disconnectAllClientsWithMessage(std::string);
     MCAPI bool enableItemStackNetManager() const;
-    MCAPI bool initializeServer(class IMinecraftApp&, class AllowList&, class PermissionsFile*, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager> > const&, class std::chrono::duration<__int64, struct std::ratio<1, 1> >, std::string, std::string, std::string, class LevelSettings, int, bool, struct ConnectionDefinition, bool, std::vector<std::string> const&, std::string, class mce::UUID const&, class IMinecraftEventing&, class IResourcePackRepository&, class IContentTierManager const&, class ResourcePackManager&, class std::function<std::unique_ptr<class LevelStorage> (class Scheduler& )>, std::unique_ptr<class LevelLooseFileStorage>, std::string const&, class LevelData*, std::string, std::string, std::unique_ptr<class EducationOptions>, class ResourcePackManager*, class std::function<void (void)>, class std::function<void (void)>, class ServerMetrics*, class DebugEndPoint*, bool, class std::shared_ptr<class Core::FileStorageArea>, unsigned short, bool, bool, class std::optional<struct PlayerMovementSettings>, class std::optional<struct ScriptSettings>, class Experiments const&, enum TransportLayer, float);
+    MCAPI bool initializeServer(class IMinecraftApp &, class AllowList &, class PermissionsFile *, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, class std::chrono::duration<__int64, struct std::ratio<1, 1>>, std::string, std::string, std::string, class LevelSettings, int, bool, struct ConnectionDefinition, bool, std::vector<std::string> const &, std::string, class mce::UUID const &, class IMinecraftEventing &, class IResourcePackRepository &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentTierManager const>> const &, class ResourcePackManager &, class std::function<std::unique_ptr<class LevelStorage> (class Scheduler &)>, std::unique_ptr<class LevelLooseFileStorage>, std::string const &, class LevelData *, std::string, std::string, std::unique_ptr<class EducationOptions>, class ResourcePackManager *, class std::function<void (void)>, class std::function<void (void)>, class ServerMetrics *, class DebugEndPoint *, bool, class std::shared_ptr<class Core::FileStorageArea>, unsigned short, bool, bool, class std::optional<struct PlayerMovementSettings>, class std::optional<struct ScriptSettings>, class Experiments const &, enum TransportLayer, float);
     MCAPI void leaveGameSync();
     MCAPI void queueForServerThread(class std::function<void (void)>);
     MCAPI void setWakeupFrequency(int);
     MCAPI void startServerThread();
-    MCAPI static class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> > const SERVER_MAX_DELAY_BEFORE_SLOWDOWN;
+    MCAPI static class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const SERVER_MAX_DELAY_BEFORE_SLOWDOWN;
 
 protected:
 

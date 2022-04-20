@@ -17,15 +17,15 @@ class FlockingSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOCKINGSYSTEM
 public:
-    class FlockingSystem& operator=(class FlockingSystem const&) = delete;
-    FlockingSystem(class FlockingSystem const&) = delete;
+    class FlockingSystem& operator=(class FlockingSystem const &) = delete;
+    FlockingSystem(class FlockingSystem const &) = delete;
     FlockingSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~FlockingSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

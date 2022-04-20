@@ -16,10 +16,11 @@ struct EducationLevelSettings {
 #undef AFTER_EXTRA
 
 public:
-    MCAPI EducationLevelSettings(struct EducationLevelSettings const&);
+    MCAPI EducationLevelSettings(struct EducationLevelSettings const &);
     MCAPI EducationLevelSettings();
-    MCAPI struct EducationLevelSettings& operator=(struct EducationLevelSettings const&);
-    MCAPI void save(class LevelLooseFileStorage const&);
+    MCAPI class std::function<void (struct CommandFlag &, std::string const &)> getCommandOverrideFunctor() const;
+    MCAPI struct EducationLevelSettings & operator=(struct EducationLevelSettings const &);
+    MCAPI void save(class LevelLooseFileStorage const &);
     MCAPI ~EducationLevelSettings();
 
 protected:

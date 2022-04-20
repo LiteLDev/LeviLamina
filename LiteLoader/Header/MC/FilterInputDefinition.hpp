@@ -15,14 +15,14 @@ struct FilterInputDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERINPUTDEFINITION
 public:
-    struct FilterInputDefinition& operator=(struct FilterInputDefinition const&) = delete;
-    FilterInputDefinition(struct FilterInputDefinition const&) = delete;
+    struct FilterInputDefinition& operator=(struct FilterInputDefinition const &) = delete;
+    FilterInputDefinition(struct FilterInputDefinition const &) = delete;
     FilterInputDefinition() = delete;
 #endif
 
 public:
     MCAPI FilterInputDefinition(int);
-    MCAPI FilterInputDefinition(class FilterInput, std::string const&);
+    MCAPI FilterInputDefinition(class FilterInput, std::string const &);
     MCAPI ~FilterInputDefinition();
 
 protected:

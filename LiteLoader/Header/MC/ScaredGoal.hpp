@@ -17,8 +17,8 @@ class ScaredGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCAREDGOAL
 public:
-    class ScaredGoal& operator=(class ScaredGoal const&) = delete;
-    ScaredGoal(class ScaredGoal const&) = delete;
+    class ScaredGoal& operator=(class ScaredGoal const &) = delete;
+    ScaredGoal(class ScaredGoal const &) = delete;
     ScaredGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI ScaredGoal(class Mob&, int);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI ScaredGoal(class Mob &, int);
 
 protected:
 

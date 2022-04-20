@@ -15,10 +15,10 @@ namespace ItemTransactionLogger {
 
 #undef AFTER_EXTRA
     MCAPI void initializeLogger(bool);
-    MCAPI void log(class InventoryAction const&, std::string);
-    MCAPI void log(class InventoryTransactionPacket const&, std::string);
-    MCAPI void log(class ItemStack const&, std::string);
-    MCAPI void log(class ItemStackResponsePacket const&, std::string);
+    MCAPI void log(class InventoryAction const &, std::string);
+    MCAPI void log(class InventoryTransactionPacket const &, std::string);
+    MCAPI void log(class ItemStack const &, std::string);
+    MCAPI void log(class ItemStackResponsePacket const &, std::string);
     MCAPI void log(std::string);
 
 };

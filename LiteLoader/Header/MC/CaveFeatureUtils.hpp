@@ -24,11 +24,11 @@ struct CarvingParameters {
 };
 
 #undef AFTER_EXTRA
-    MCAPI int getDistance_1_16(class Random&);
-    MCAPI int getDistance_1_18(class Random&);
-    MCAPI float getTunnelThickness_1_16(class Random&);
-    MCAPI float getTunnelThickness_1_18(class Random&);
-    MCAPI bool isDiggable_1_16(class Block const&, class Block const&);
-    MCAPI bool isDiggable_1_18(class Block const&, class Block const&);
+    MCAPI int getDistance_1_16(class Random &);
+    MCAPI int getDistance_1_18(class Random &);
+    MCAPI float getTunnelThickness_1_16(class Random &);
+    MCAPI float getTunnelThickness_1_18(class Random &);
+    MCAPI bool isDiggable_1_16(class Block const &, class Block const &);
+    MCAPI bool isDiggable_1_18(class Block const &, class Block const &);
 
 };

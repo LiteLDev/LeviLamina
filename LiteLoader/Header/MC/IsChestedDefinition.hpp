@@ -18,14 +18,14 @@ struct IsChestedDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISCHESTEDDEFINITION
 public:
-    struct IsChestedDefinition& operator=(struct IsChestedDefinition const&) = delete;
-    IsChestedDefinition(struct IsChestedDefinition const&) = delete;
+    struct IsChestedDefinition& operator=(struct IsChestedDefinition const &) = delete;
+    IsChestedDefinition(struct IsChestedDefinition const &) = delete;
     IsChestedDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&);
-    MCAPI void uninitialize(class EntityContext&);
+    MCAPI void initialize(class EntityContext &);
+    MCAPI void uninitialize(class EntityContext &);
 
 protected:
 

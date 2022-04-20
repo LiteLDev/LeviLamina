@@ -17,14 +17,14 @@ class PauseManager {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PAUSEMANAGER
 public:
-    class PauseManager& operator=(class PauseManager const&) = delete;
-    PauseManager(class PauseManager const&) = delete;
+    class PauseManager& operator=(class PauseManager const &) = delete;
+    PauseManager(class PauseManager const &) = delete;
     PauseManager() = delete;
 #endif
 
 public:
     MCAPI static enum SimulationType const DEFAULT_SIMULATION_TYPE;
-    MCAPI static enum SimulationType getSimulationType(class StackRefResultT<struct SharePtrRefTraits<class PauseManager const> >);
+    MCAPI static enum SimulationType getSimulationType(class StackRefResultT<struct SharePtrRefTraits<class PauseManager const>>);
 
 protected:
 

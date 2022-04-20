@@ -15,8 +15,8 @@ struct MolangQueryFunctionPtr {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGQUERYFUNCTIONPTR
 public:
-    struct MolangQueryFunctionPtr& operator=(struct MolangQueryFunctionPtr const&) = delete;
-    MolangQueryFunctionPtr(struct MolangQueryFunctionPtr const&) = delete;
+    struct MolangQueryFunctionPtr& operator=(struct MolangQueryFunctionPtr const &) = delete;
+    MolangQueryFunctionPtr(struct MolangQueryFunctionPtr const &) = delete;
     MolangQueryFunctionPtr() = delete;
 #endif
 

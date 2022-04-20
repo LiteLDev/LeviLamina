@@ -17,22 +17,22 @@ class BreakDoorAnnotationComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREAKDOORANNOTATIONCOMPONENT
 public:
-    class BreakDoorAnnotationComponent& operator=(class BreakDoorAnnotationComponent const&) = delete;
-    BreakDoorAnnotationComponent(class BreakDoorAnnotationComponent const&) = delete;
+    class BreakDoorAnnotationComponent& operator=(class BreakDoorAnnotationComponent const &) = delete;
+    BreakDoorAnnotationComponent(class BreakDoorAnnotationComponent const &) = delete;
 #endif
 
 public:
     MCAPI BreakDoorAnnotationComponent();
-    MCAPI bool canMobBreakDoor(class Mob&, class Path const&) const;
-    MCAPI void clearProgress(class Mob&);
-    MCAPI void initFromDefinition(class Actor&);
-    MCAPI void obstructionCheck(class Mob&);
-    MCAPI void onComponentRemoved(class EntityContext&);
+    MCAPI bool canMobBreakDoor(class Mob &, class Path const &) const;
+    MCAPI void clearProgress(class Mob &);
+    MCAPI void initFromDefinition(class Actor &);
+    MCAPI void obstructionCheck(class Mob &);
+    MCAPI void onComponentRemoved(class EntityContext &);
 
 protected:
 
 private:
-    MCAPI void _cleanUp(class Mob&);
-    MCAPI bool _shouldBreakDoor(class Mob&);
+    MCAPI void _cleanUp(class Mob &);
+    MCAPI bool _shouldBreakDoor(class Mob &);
 
 };

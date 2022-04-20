@@ -17,8 +17,8 @@ class ShiftedDurationAmplifier {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHIFTEDDURATIONAMPLIFIER
 public:
-    class ShiftedDurationAmplifier& operator=(class ShiftedDurationAmplifier const&) = delete;
-    ShiftedDurationAmplifier(class ShiftedDurationAmplifier const&) = delete;
+    class ShiftedDurationAmplifier& operator=(class ShiftedDurationAmplifier const &) = delete;
+    ShiftedDurationAmplifier(class ShiftedDurationAmplifier const &) = delete;
     ShiftedDurationAmplifier() = delete;
 #endif
 

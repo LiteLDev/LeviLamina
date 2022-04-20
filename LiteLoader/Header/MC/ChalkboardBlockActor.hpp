@@ -18,52 +18,52 @@ class ChalkboardBlockActor : public BlockActor {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHALKBOARDBLOCKACTOR
 public:
-    class ChalkboardBlockActor& operator=(class ChalkboardBlockActor const&) = delete;
-    ChalkboardBlockActor(class ChalkboardBlockActor const&) = delete;
+    class ChalkboardBlockActor& operator=(class ChalkboardBlockActor const &) = delete;
+    ChalkboardBlockActor(class ChalkboardBlockActor const &) = delete;
     ChalkboardBlockActor() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ChalkboardBlockActor();
-    /*1*/ virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
-    /*2*/ virtual bool save(class CompoundTag&) const;
-    /*4*/ virtual void saveBlockData(class CompoundTag&, class BlockSource&) const;
-    /*5*/ virtual void loadBlockData(class CompoundTag const&, class BlockSource&, class DataLoadHelper&);
-    /*6*/ virtual void onCustomTagLoadDone(class BlockSource&);
-    /*7*/ virtual void tick(class BlockSource&);
-    /*8*/ virtual void onChanged(class BlockSource&);
-    /*11*/ virtual void onPlace(class BlockSource&);
+    /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+    /*2*/ virtual bool save(class CompoundTag &) const;
+    /*4*/ virtual void saveBlockData(class CompoundTag &, class BlockSource &) const;
+    /*5*/ virtual void loadBlockData(class CompoundTag const &, class BlockSource &, class DataLoadHelper &);
+    /*6*/ virtual void onCustomTagLoadDone(class BlockSource &);
+    /*7*/ virtual void tick(class BlockSource &);
+    /*8*/ virtual void onChanged(class BlockSource &);
+    /*11*/ virtual void onPlace(class BlockSource &);
     /*12*/ virtual void __unk_vfn_12();
-    /*13*/ virtual void onRemoved(class BlockSource&);
+    /*13*/ virtual void onRemoved(class BlockSource &);
     /*14*/ virtual void triggerEvent(int, int);
     /*16*/ virtual void __unk_vfn_16();
-    /*17*/ virtual float getShadowRadius(class BlockSource&) const;
-    /*19*/ virtual class BlockActor* getCrackEntity(class BlockSource&, class BlockPos const&);
-    /*25*/ virtual std::string getImmersiveReaderText(class BlockSource&);
-    /*27*/ virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
+    /*17*/ virtual float getShadowRadius(class BlockSource &) const;
+    /*19*/ virtual class BlockActor * getCrackEntity(class BlockSource &, class BlockPos const &);
+    /*25*/ virtual std::string getImmersiveReaderText(class BlockSource &);
+    /*27*/ virtual class PistonBlockActor * getOwningPiston(class BlockSource &);
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
-    /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
-    /*35*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
-    /*36*/ virtual bool _playerCanUpdate(class Player const&) const;
-    MCAPI ChalkboardBlockActor(class BlockPos const&);
+    /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
+    /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
+    /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
+    MCAPI ChalkboardBlockActor(class BlockPos const &);
     MCAPI enum ChalkboardSize const getChalkboardSize() const;
     MCAPI bool getLocked() const;
     MCAPI int getTextCharCount() const;
-    MCAPI void setText(std::string const&);
-    MCAPI void validate(class BlockSource&);
-    MCAPI static std::vector<class BlockPos> calculateAllBlocks(class BlockPos const&, enum ChalkboardSize, int);
-    MCAPI static bool canCreateChalkboard(class Actor*, class BlockSource&, class BlockPos const&, enum ChalkboardSize, unsigned char, int, std::vector<class BlockPos>&, class ItemStack const&, bool);
-    MCAPI static class ChalkboardBlockActor* convertFromEntity(class BlockSource&, class CompoundTag const&);
-    MCAPI static class ChalkboardBlockActor* createChalkboard(class Actor*, class BlockSource&, class BlockPos const&, enum ChalkboardSize, unsigned char, int, bool, class ItemStack const&, std::string);
+    MCAPI void setText(std::string const &);
+    MCAPI void validate(class BlockSource &);
+    MCAPI static std::vector<class BlockPos> calculateAllBlocks(class BlockPos const &, enum ChalkboardSize, int);
+    MCAPI static bool canCreateChalkboard(class Actor *, class BlockSource &, class BlockPos const &, enum ChalkboardSize, unsigned char, int, std::vector<class BlockPos> &, class ItemStack const &, bool);
+    MCAPI static class ChalkboardBlockActor * convertFromEntity(class BlockSource &, class CompoundTag const &);
+    MCAPI static class ChalkboardBlockActor * createChalkboard(class Actor *, class BlockSource &, class BlockPos const &, enum ChalkboardSize, unsigned char, int, bool, class ItemStack const &, std::string);
 
 protected:
 
 private:
-    MCAPI static struct ChalkboardBlockActor::ChalkboardFinder _findChalkboard(class BlockSource&, class BlockPos const&);
+    MCAPI static struct ChalkboardBlockActor::ChalkboardFinder _findChalkboard(class BlockSource &, class BlockPos const &);
 
 };

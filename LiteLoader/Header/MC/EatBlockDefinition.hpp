@@ -18,16 +18,16 @@ class EatBlockDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EATBLOCKDEFINITION
 public:
-    class EatBlockDefinition& operator=(class EatBlockDefinition const&) = delete;
-    EatBlockDefinition(class EatBlockDefinition const&) = delete;
+    class EatBlockDefinition& operator=(class EatBlockDefinition const &) = delete;
+    EatBlockDefinition(class EatBlockDefinition const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~EatBlockDefinition();
     MCAPI EatBlockDefinition();
-    MCAPI void addSuccessChanceExpressionNode(class ExpressionNode const&);
-    MCAPI void initialize(class EntityContext&, class EatBlockGoal&);
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EatBlockDefinition> >&);
+    MCAPI void addSuccessChanceExpressionNode(class ExpressionNode const &);
+    MCAPI void initialize(class EntityContext &, class EatBlockGoal &);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EatBlockDefinition>> &);
 
 protected:
 

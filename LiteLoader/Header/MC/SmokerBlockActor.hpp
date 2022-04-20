@@ -17,8 +17,8 @@ class SmokerBlockActor {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMOKERBLOCKACTOR
 public:
-    class SmokerBlockActor& operator=(class SmokerBlockActor const&) = delete;
-    SmokerBlockActor(class SmokerBlockActor const&) = delete;
+    class SmokerBlockActor& operator=(class SmokerBlockActor const &) = delete;
+    SmokerBlockActor(class SmokerBlockActor const &) = delete;
     SmokerBlockActor() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI SmokerBlockActor(class BlockPos const&);
+    MCAPI SmokerBlockActor(class BlockPos const &);
 
 protected:
 

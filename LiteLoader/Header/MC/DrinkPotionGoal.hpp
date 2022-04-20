@@ -17,8 +17,8 @@ class DrinkPotionGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRINKPOTIONGOAL
 public:
-    class DrinkPotionGoal& operator=(class DrinkPotionGoal const&) = delete;
-    DrinkPotionGoal(class DrinkPotionGoal const&) = delete;
+    class DrinkPotionGoal& operator=(class DrinkPotionGoal const &) = delete;
+    DrinkPotionGoal(class DrinkPotionGoal const &) = delete;
     DrinkPotionGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline void start(){
         void (DrinkPotionGoal::*rv)();
@@ -38,12 +38,12 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI DrinkPotionGoal(class Mob&, float, std::vector<struct DrinkPotionData> const&);
+    MCAPI DrinkPotionGoal(class Mob &, float, std::vector<struct DrinkPotionData> const &);
 
 protected:
 
 private:
-    MCAPI void _updateEquipment(class ItemStack const&);
+    MCAPI void _updateEquipment(class ItemStack const &);
     MCAPI static class mce::UUID const SPEED_MODIFIER_DRINKING_UUID;
     MCAPI static int const THROTTLE_COOLDOWN;
 

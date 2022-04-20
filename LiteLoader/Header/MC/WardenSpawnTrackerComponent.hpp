@@ -17,18 +17,19 @@ class WardenSpawnTrackerComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WARDENSPAWNTRACKERCOMPONENT
 public:
-    class WardenSpawnTrackerComponent& operator=(class WardenSpawnTrackerComponent const&) = delete;
-    WardenSpawnTrackerComponent(class WardenSpawnTrackerComponent const&) = delete;
+    class WardenSpawnTrackerComponent& operator=(class WardenSpawnTrackerComponent const &) = delete;
+    WardenSpawnTrackerComponent(class WardenSpawnTrackerComponent const &) = delete;
     WardenSpawnTrackerComponent() = delete;
 #endif
 
 public:
-    MCAPI void addAdditionalSaveData(class CompoundTag&);
-    MCAPI void copyWarningLevelFrom(class WardenSpawnTrackerComponent const&);
-    MCAPI enum LevelSoundEvent getSoundEventForCurrentWarningLevel();
-    MCAPI bool increaseWarningLevel();
-    MCAPI bool isAtMaxWarningLevel() const;
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI bool canIncreaseThreatLevel() const;
+    MCAPI bool canSummonWarden() const;
+    MCAPI void copyDataFrom(class WardenSpawnTrackerComponent const &);
+    MCAPI class std::optional<enum LevelSoundEvent> getSoundEventForCurrentThreatLevel() const;
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
+    MCAPI void tryIncreaseThreatLevel();
 
 protected:
 

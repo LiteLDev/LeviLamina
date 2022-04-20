@@ -18,16 +18,16 @@ class AnimateEntityPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATEENTITYPACKET
 public:
-    class AnimateEntityPacket& operator=(class AnimateEntityPacket const&) = delete;
-    AnimateEntityPacket(class AnimateEntityPacket const&) = delete;
+    class AnimateEntityPacket& operator=(class AnimateEntityPacket const &) = delete;
+    AnimateEntityPacket(class AnimateEntityPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~AnimateEntityPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~AnimateEntityPacket(){
          (AnimateEntityPacket::*rv)();
@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI AnimateEntityPacket(std::vector<class ActorRuntimeID> const&, std::string const&, std::string const&, float, std::string const&, enum MolangVersion, std::string const&);
+    MCAPI AnimateEntityPacket(std::vector<class ActorRuntimeID> const &, std::string const &, std::string const &, float, std::string const &, enum MolangVersion, std::string const &);
     MCAPI AnimateEntityPacket();
 
 protected:

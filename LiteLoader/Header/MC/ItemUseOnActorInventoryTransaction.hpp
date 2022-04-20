@@ -17,30 +17,30 @@ class ItemUseOnActorInventoryTransaction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMUSEONACTORINVENTORYTRANSACTION
 public:
-    class ItemUseOnActorInventoryTransaction& operator=(class ItemUseOnActorInventoryTransaction const&) = delete;
-    ItemUseOnActorInventoryTransaction(class ItemUseOnActorInventoryTransaction const&) = delete;
+    class ItemUseOnActorInventoryTransaction& operator=(class ItemUseOnActorInventoryTransaction const &) = delete;
+    ItemUseOnActorInventoryTransaction(class ItemUseOnActorInventoryTransaction const &) = delete;
     ItemUseOnActorInventoryTransaction() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ItemUseOnActorInventoryTransaction();
-    /*1*/ virtual void read(class ReadOnlyBinaryStream&);
-    /*2*/ virtual void write(class BinaryStream&) const;
+    /*1*/ virtual void read(class ReadOnlyBinaryStream &);
+    /*2*/ virtual void write(class BinaryStream &) const;
     /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual enum InventoryTransactionError handle(class Player&, bool) const;
+    /*4*/ virtual enum InventoryTransactionError handle(class Player &, bool) const;
     /*
-    inline void onTransactionError(class Player& a0, enum InventoryTransactionError a1) const{
-        void (ItemUseOnActorInventoryTransaction::*rv)(class Player&, enum InventoryTransactionError) const;
+    inline void onTransactionError(class Player & a0, enum InventoryTransactionError a1) const{
+        void (ItemUseOnActorInventoryTransaction::*rv)(class Player &, enum InventoryTransactionError) const;
         *((void**)&rv) = dlsym("?onTransactionError@ItemUseOnActorInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0), std::forward<enum InventoryTransactionError>(a1));
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<enum InventoryTransactionError>(a1));
     }
-    inline void postLoadItems(class BlockPalette& a0, bool a1){
-        void (ItemUseOnActorInventoryTransaction::*rv)(class BlockPalette&, bool);
+    inline void postLoadItems(class BlockPalette & a0, bool a1){
+        void (ItemUseOnActorInventoryTransaction::*rv)(class BlockPalette &, bool);
         *((void**)&rv) = dlsym("?postLoadItems@ItemUseOnActorInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z");
-        return (this->*rv)(std::forward<class BlockPalette&>(a0), std::forward<bool>(a1));
+        return (this->*rv)(std::forward<class BlockPalette &>(a0), std::forward<bool>(a1));
     }
     */
-    MCAPI class ItemUseOnActorInventoryTransaction& setSelectedItem(class ItemStack const&);
+    MCAPI class ItemUseOnActorInventoryTransaction & setSelectedItem(class ItemStack const &);
 
 protected:
 

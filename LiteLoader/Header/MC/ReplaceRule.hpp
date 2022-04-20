@@ -15,8 +15,8 @@ struct ReplaceRule {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPLACERULE
 public:
-    struct ReplaceRule& operator=(struct ReplaceRule const&) = delete;
-    ReplaceRule(struct ReplaceRule const&) = delete;
+    struct ReplaceRule& operator=(struct ReplaceRule const &) = delete;
+    ReplaceRule(struct ReplaceRule const &) = delete;
     ReplaceRule() = delete;
 #endif
 

@@ -18,15 +18,15 @@ class TestAction : public IRequestAction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TESTACTION
 public:
-    class TestAction& operator=(class TestAction const&) = delete;
-    TestAction(class TestAction const&) = delete;
+    class TestAction& operator=(class TestAction const &) = delete;
+    TestAction(class TestAction const &) = delete;
     TestAction() = delete;
 #endif
 
 public:
     /*0*/ virtual ~TestAction();
-    /*1*/ virtual void execute(class ServerLevel&, class Dimension&);
-    /*3*/ virtual bool operator==(class IRequestAction&) const;
+    /*1*/ virtual void execute(class ServerLevel &, class Dimension &);
+    /*3*/ virtual bool operator==(class IRequestAction &) const;
 
 protected:
 

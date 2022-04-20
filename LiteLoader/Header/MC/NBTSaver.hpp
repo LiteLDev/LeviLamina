@@ -17,111 +17,24 @@ class NBTSaver {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NBTSAVER
 public:
-    class NBTSaver& operator=(class NBTSaver const&) = delete;
-    NBTSaver(class NBTSaver const&) = delete;
+    class NBTSaver& operator=(class NBTSaver const &) = delete;
+    NBTSaver(class NBTSaver const &) = delete;
+    NBTSaver() = delete;
 #endif
 
 public:
     /*0*/ virtual ~NBTSaver();
-    /*1*/ virtual bool doSerialize(std::string const&);
-    /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool doSerialize(float);
-    /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void __unk_vfn_7();
-    /*8*/ virtual void __unk_vfn_8();
-    /*9*/ virtual void __unk_vfn_9();
-    /*10*/ virtual void __unk_vfn_10();
-    /*11*/ virtual void __unk_vfn_11();
-    /*12*/ virtual void __unk_vfn_12();
-    /*13*/ virtual bool doBeginMember(char const*, bool);
-    /*14*/ virtual bool doBeginMember(unsigned __int64, std::string const&);
-    /*15*/ virtual bool doEndMember();
-    /*16*/ virtual bool doBeginArray(unsigned __int64);
-    /*17*/ virtual bool doBeginArrayItem(unsigned __int64);
-    /*18*/ virtual bool doEndArrayItem();
-    /*19*/ virtual void __unk_vfn_19();
-    /*20*/ virtual void __unk_vfn_20();
-    /*21*/ virtual bool doBeginObject();
     /*
-    inline bool doSerialize(unsigned __int64 a0){
-        bool (NBTSaver::*rv)(unsigned __int64);
-        *((void**)&rv) = dlsym("?doSerialize@NBTSaver@@EEAA_N_K@Z");
-        return (this->*rv)(std::forward<unsigned __int64>(a0));
-    }
-    inline bool doSerialize(__int64 a0){
-        bool (NBTSaver::*rv)(__int64);
-        *((void**)&rv) = dlsym("?doSerialize@NBTSaver@@EEAA_N_J@Z");
-        return (this->*rv)(std::forward<__int64>(a0));
-    }
-    inline bool doSerialize(double a0){
-        bool (NBTSaver::*rv)(double);
-        *((void**)&rv) = dlsym("?doSerialize@NBTSaver@@EEAA_NN@Z");
-        return (this->*rv)(std::forward<double>(a0));
-    }
-    inline bool doEndArray(){
-        bool (NBTSaver::*rv)();
-        *((void**)&rv) = dlsym("?doEndArray@NBTSaver@@EEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool doEndObject(){
-        bool (NBTSaver::*rv)();
-        *((void**)&rv) = dlsym("?doEndObject@NBTSaver@@EEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool doBeginObject(unsigned __int64 a0){
-        bool (NBTSaver::*rv)(unsigned __int64);
-        *((void**)&rv) = dlsym("?doBeginObject@NBTSaver@@EEAA_N_K@Z");
-        return (this->*rv)(std::forward<unsigned __int64>(a0));
-    }
-    inline bool doSerialize(signed char a0){
-        bool (NBTSaver::*rv)(signed char);
-        *((void**)&rv) = dlsym("?doSerialize@NBTSaver@@EEAA_NC@Z");
-        return (this->*rv)(std::forward<signed char>(a0));
-    }
-    inline bool doSerialize(unsigned char a0){
-        bool (NBTSaver::*rv)(unsigned char);
-        *((void**)&rv) = dlsym("?doSerialize@NBTSaver@@EEAA_NE@Z");
-        return (this->*rv)(std::forward<unsigned char>(a0));
-    }
-    inline bool doSerialize(bool a0){
-        bool (NBTSaver::*rv)(bool);
-        *((void**)&rv) = dlsym("?doSerialize@NBTSaver@@EEAA_N_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline bool doSerialize(unsigned short a0){
-        bool (NBTSaver::*rv)(unsigned short);
-        *((void**)&rv) = dlsym("?doSerialize@NBTSaver@@EEAA_NG@Z");
-        return (this->*rv)(std::forward<unsigned short>(a0));
-    }
-    inline bool doSerialize(short a0){
-        bool (NBTSaver::*rv)(short);
-        *((void**)&rv) = dlsym("?doSerialize@NBTSaver@@EEAA_NF@Z");
-        return (this->*rv)(std::forward<short>(a0));
-    }
-    inline bool doSerialize(int a0){
-        bool (NBTSaver::*rv)(int);
-        *((void**)&rv) = dlsym("?doSerialize@NBTSaver@@EEAA_NH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline bool doSerialize(unsigned int a0){
-        bool (NBTSaver::*rv)(unsigned int);
-        *((void**)&rv) = dlsym("?doSerialize@NBTSaver@@EEAA_NI@Z");
-        return (this->*rv)(std::forward<unsigned int>(a0));
-    }
     inline  ~NBTSaver(){
          (NBTSaver::*rv)();
         *((void**)&rv) = dlsym("??1NBTSaver@@UEAA@XZ");
         return (this->*rv)();
     }
     */
-    MCAPI NBTSaver();
     MCAPI class CompoundTag getSavedCompoundTag();
 
 protected:
 
 private:
-    MCAPI bool _serializeTag(std::unique_ptr<class Tag>);
 
 };

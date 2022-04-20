@@ -18,21 +18,21 @@ class WeepingVinesClusterFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEEPINGVINESCLUSTERFEATURE
 public:
-    class WeepingVinesClusterFeature& operator=(class WeepingVinesClusterFeature const&) = delete;
-    WeepingVinesClusterFeature(class WeepingVinesClusterFeature const&) = delete;
+    class WeepingVinesClusterFeature& operator=(class WeepingVinesClusterFeature const &) = delete;
+    WeepingVinesClusterFeature(class WeepingVinesClusterFeature const &) = delete;
     WeepingVinesClusterFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~WeepingVinesClusterFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 protected:
 
 private:
-    MCAPI bool _isInvalidPlacementLocation(class BlockSource&, class BlockPos const&) const;
-    MCAPI void _placeRoofNetherWart(class BlockSource&, class BlockPos const&, class Random&) const;
-    MCAPI void _placeRoofWeepingVines(class BlockSource&, class BlockPos const&, class Random&) const;
+    MCAPI bool _isInvalidPlacementLocation(class BlockSource &, class BlockPos const &) const;
+    MCAPI void _placeRoofNetherWart(class BlockSource &, class BlockPos const &, class Random &) const;
+    MCAPI void _placeRoofWeepingVines(class BlockSource &, class BlockPos const &, class Random &) const;
 
 };

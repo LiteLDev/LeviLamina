@@ -32,7 +32,7 @@ enum PieceType;
     MCAPI extern std::string const NONE_PIECE_PATH;
     MCAPI extern class mce::UUID const NO_PIECE_SELECTED;
     MCAPI extern class HashedString const USE_BLINKING_ANIMATION_VARIABLE;
-    MCAPI enum persona::PieceType pieceTypeFromString(std::string const&);
-    MCAPI std::string const& stringFromPieceType(enum persona::PieceType, bool);
+    MCAPI enum persona::PieceType pieceTypeFromString(std::string const &);
+    MCAPI std::string const & stringFromPieceType(enum persona::PieceType, bool);
 
 };

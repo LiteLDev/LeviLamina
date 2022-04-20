@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,33 +18,34 @@ struct SubChunk {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNK
 public:
-    struct SubChunk& operator=(struct SubChunk const&) = delete;
-    SubChunk(struct SubChunk const&) = delete;
+    struct SubChunk& operator=(struct SubChunk const &) = delete;
+    SubChunk(struct SubChunk const &) = delete;
+    SubChunk() = delete;
 #endif
 
 public:
-    MCAPI SubChunk();
-    MCAPI void deserialize(class IDataInput&, class BlockPalette const&);
-    MCAPI void fetchBlocks(class BlockPos const&, class BlockPos const&, short, class BlockVolume&) const;
-    MCAPI void fetchBlocksInBox(class BlockPos const&, class BoundingBox const&, class std::function<bool (class Block const& )> const&, std::vector<class BlockDataFetchResult<class Block>>&) const;
-    MCAPI void fetchBlocksInCylinder(class BlockPos const&, class BlockPos const&, unsigned int, unsigned int, class std::function<bool (class Block const& )> const&, std::vector<class BlockDataFetchResult<class Block>>&) const;
+    MCAPI void deserialize(class IDataInput &, class BlockPalette const &);
+    MCAPI void fetchBlocks(class BlockPos const &, class BlockPos const &, short, class BlockVolume &) const;
+    MCAPI void fetchBlocksInBox(class BlockPos const &, class BoundingBox const &, class std::function<bool (class Block const &)> const &, std::vector<class BlockDataFetchResult<class Block>> &) const;
+    MCAPI void fetchBlocksInCylinder(class BlockPos const &, class BlockPos const &, unsigned int, unsigned int, class std::function<bool (class Block const &)> const &, std::vector<class BlockDataFetchResult<class Block>> &) const;
     MCAPI struct SubChunkBrightnessStorage::LightPair getLight(unsigned short) const;
-    MCAPI void initialize(class Block const*, bool, bool, class SpinLock&, signed char);
-    MCAPI bool isUniform(class Block const&) const;
-    MCAPI struct SubChunk& operator=(struct SubChunk&&);
+    MCAPI void initialize(class Block const *, bool, bool, class SpinLock &, signed char);
+    MCAPI bool isUniform(class Block const &) const;
+    MCAPI struct SubChunk & operator=(struct SubChunk &&);
     MCAPI void prune(enum SubChunkStorageUnit::PruneType);
-    MCAPI void reset(class Block const*, bool, bool);
-    MCAPI void serialize(class IDataOutput&, bool) const;
+    MCAPI std::string recalculateHashAndSerialize(bool);
+    MCAPI void reset(class Block const *, bool, bool);
+    MCAPI void serialize(class IDataOutput &, bool) const;
     MCAPI void setBlockLight(unsigned short, unsigned char);
-    MCAPI void setFromBlockVolume(class BlockVolume const&, short);
+    MCAPI void setFromBlockVolume(class BlockVolume const &, short);
     MCAPI void setSkyLight(unsigned short, unsigned char);
     MCAPI ~SubChunk();
 
 protected:
     MCAPI void _createBlockLightStorage();
-    MCAPI void _replaceBlocks(unsigned char, std::unique_ptr<class SubChunkStorage<class Block>>, class std::lock_guard<class SpinLock>&);
+    MCAPI void _replaceBlocks(unsigned char, std::unique_ptr<class SubChunkStorage<class Block>>, class Bedrock::Threading::LockGuard<class SpinLock> &);
     MCAPI void _resetLight(bool, bool);
-    MCAPI void _setBlock(unsigned char, unsigned short, class Block const&);
+    MCAPI void _setBlock(unsigned char, unsigned short, class Block const &);
 
 private:
 

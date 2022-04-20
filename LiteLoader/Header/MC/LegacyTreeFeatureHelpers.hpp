@@ -14,7 +14,7 @@ namespace LegacyTreeFeatureHelpers {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void _placeTrees(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, int, class RenderParams&, class WeakRefT<struct FeatureRefTraits>, class std::function<class WeakRefT<struct FeatureRefTraits> (class Random& )> const&);
-    MCAPI void _setupForestCount(float, int&, class Random&);
+    MCAPI void _placeTrees(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, int, class RenderParams &, class WeakRefT<struct FeatureRefTraits>, class std::function<class WeakRefT<struct FeatureRefTraits> (class Random &)> const &);
+    MCAPI void _setupForestCount(float, int &, class Random &);
 
 };

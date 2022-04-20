@@ -17,8 +17,8 @@ class PanicGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PANICGOAL
 public:
-    class PanicGoal& operator=(class PanicGoal const&) = delete;
-    PanicGoal(class PanicGoal const&) = delete;
+    class PanicGoal& operator=(class PanicGoal const &) = delete;
+    PanicGoal(class PanicGoal const &) = delete;
     PanicGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline  ~PanicGoal(){
          (PanicGoal::*rv)();
@@ -38,7 +38,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI PanicGoal(class Mob&, float, bool, enum LevelSoundEvent, struct FloatRange, bool, bool, std::vector<enum ActorDamageCause>);
+    MCAPI PanicGoal(class Mob &, float, bool, enum LevelSoundEvent, struct FloatRange, bool, bool, std::vector<enum ActorDamageCause>);
 
 protected:
 

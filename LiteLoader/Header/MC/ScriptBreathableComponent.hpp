@@ -18,8 +18,8 @@ class ScriptBreathableComponent : public ScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBREATHABLECOMPONENT
 public:
-    class ScriptBreathableComponent& operator=(class ScriptBreathableComponent const&) = delete;
-    ScriptBreathableComponent(class ScriptBreathableComponent const&) = delete;
+    class ScriptBreathableComponent& operator=(class ScriptBreathableComponent const &) = delete;
+    ScriptBreathableComponent(class ScriptBreathableComponent const &) = delete;
     ScriptBreathableComponent() = delete;
 #endif
 
@@ -32,15 +32,15 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptBreathableComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
-    MCAPI class Scripting::Result<std::vector<class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>> > getBreatheBlocks() const;
+    MCAPI ScriptBreathableComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
+    MCAPI class Scripting::Result<std::vector<class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>>> getBreatheBlocks() const;
     MCAPI class Scripting::Result<bool> getBreathesAir() const;
     MCAPI class Scripting::Result<bool> getBreathesLava() const;
     MCAPI class Scripting::Result<bool> getBreathesSolids() const;
     MCAPI class Scripting::Result<bool> getBreathesWater() const;
     MCAPI class Scripting::Result<bool> getGeneratesBubbles() const;
     MCAPI class Scripting::Result<float> getInhaleTime() const;
-    MCAPI class Scripting::Result<std::vector<class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>> > getNonBreatheBlocks() const;
+    MCAPI class Scripting::Result<std::vector<class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>>> getNonBreatheBlocks() const;
     MCAPI class Scripting::Result<int> getSuffocateTime() const;
     MCAPI class Scripting::Result<int> getTotalSupply() const;
     MCAPI class Scripting::Result<void> setAirSupply(short) const;

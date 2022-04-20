@@ -17,8 +17,8 @@ struct BlockFrictionDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKFRICTIONDESCRIPTION
 public:
-    struct BlockFrictionDescription& operator=(struct BlockFrictionDescription const&) = delete;
-    BlockFrictionDescription(struct BlockFrictionDescription const&) = delete;
+    struct BlockFrictionDescription& operator=(struct BlockFrictionDescription const &) = delete;
+    BlockFrictionDescription(struct BlockFrictionDescription const &) = delete;
     BlockFrictionDescription() = delete;
 #endif
 

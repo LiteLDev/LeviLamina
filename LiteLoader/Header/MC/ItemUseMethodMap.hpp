@@ -17,17 +17,17 @@ class ItemUseMethodMap {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMUSEMETHODMAP
 public:
-    class ItemUseMethodMap& operator=(class ItemUseMethodMap const&) = delete;
-    ItemUseMethodMap(class ItemUseMethodMap const&) = delete;
+    class ItemUseMethodMap& operator=(class ItemUseMethodMap const &) = delete;
+    ItemUseMethodMap(class ItemUseMethodMap const &) = delete;
     ItemUseMethodMap() = delete;
 #endif
 
 public:
-    MCAPI static std::string const& getItemUseMethodName(enum ItemUseMethod);
+    MCAPI static std::string const & getItemUseMethodName(enum ItemUseMethod);
 
 protected:
 
 private:
-    MCAPI static class BidirectionalUnorderedMap<enum ItemUseMethod, std::string > const mMap;
+    MCAPI static class BidirectionalUnorderedMap<enum ItemUseMethod, std::string> const mMap;
 
 };

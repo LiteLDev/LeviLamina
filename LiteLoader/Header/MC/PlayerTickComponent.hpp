@@ -17,15 +17,15 @@ struct PlayerTickComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERTICKCOMPONENT
 public:
-    struct PlayerTickComponent& operator=(struct PlayerTickComponent const&) = delete;
-    PlayerTickComponent(struct PlayerTickComponent const&) = delete;
+    struct PlayerTickComponent& operator=(struct PlayerTickComponent const &) = delete;
+    PlayerTickComponent(struct PlayerTickComponent const &) = delete;
     PlayerTickComponent() = delete;
 #endif
 
 public:
-    MCAPI PlayerTickComponent(struct PlayerTickComponent&&);
+    MCAPI PlayerTickComponent(struct PlayerTickComponent &&);
     MCAPI PlayerTickComponent(std::unique_ptr<struct IPlayerTickPolicy>);
-    MCAPI struct PlayerTickComponent& operator=(struct PlayerTickComponent&&);
+    MCAPI struct PlayerTickComponent & operator=(struct PlayerTickComponent &&);
     MCAPI ~PlayerTickComponent();
 
 protected:

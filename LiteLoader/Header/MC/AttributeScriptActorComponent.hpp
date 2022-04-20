@@ -18,15 +18,15 @@ class AttributeScriptActorComponent : public ScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTESCRIPTACTORCOMPONENT
 public:
-    class AttributeScriptActorComponent& operator=(class AttributeScriptActorComponent const&) = delete;
-    AttributeScriptActorComponent(class AttributeScriptActorComponent const&) = delete;
+    class AttributeScriptActorComponent& operator=(class AttributeScriptActorComponent const &) = delete;
+    AttributeScriptActorComponent(class AttributeScriptActorComponent const &) = delete;
     AttributeScriptActorComponent() = delete;
 #endif
 
 public:
     /*0*/ virtual ~AttributeScriptActorComponent();
     /*4*/ virtual class Scripting::Result<float> getCurrent() const;
-    /*5*/ virtual class Scripting::Result<void> setCurrent(float const&) const;
+    /*5*/ virtual class Scripting::Result<void> setCurrent(float const &) const;
     /*6*/ virtual class Scripting::Result<float> getValue() const;
     MCAPI class Scripting::Result<void> resetToDefaultValue() const;
     MCAPI class Scripting::Result<void> resetToMaxValue() const;

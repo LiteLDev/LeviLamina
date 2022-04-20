@@ -15,14 +15,14 @@ struct PackInstanceId {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKINSTANCEID
 public:
-    struct PackInstanceId& operator=(struct PackInstanceId const&) = delete;
-    PackInstanceId(struct PackInstanceId const&) = delete;
+    struct PackInstanceId& operator=(struct PackInstanceId const &) = delete;
+    PackInstanceId(struct PackInstanceId const &) = delete;
     PackInstanceId() = delete;
 #endif
 
 public:
-    MCAPI PackInstanceId(struct PackInstanceId&&);
-    MCAPI PackInstanceId(struct PackIdVersion const&, std::string const&);
+    MCAPI PackInstanceId(struct PackInstanceId &&);
+    MCAPI PackInstanceId(struct PackIdVersion const &, std::string const &);
     MCAPI ~PackInstanceId();
 
 protected:

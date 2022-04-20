@@ -17,8 +17,8 @@ struct PacksInfoData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSINFODATA
 public:
-    struct PacksInfoData& operator=(struct PacksInfoData const&) = delete;
-    PacksInfoData(struct PacksInfoData const&) = delete;
+    struct PacksInfoData& operator=(struct PacksInfoData const &) = delete;
+    PacksInfoData(struct PacksInfoData const &) = delete;
     PacksInfoData() = delete;
 #endif
 

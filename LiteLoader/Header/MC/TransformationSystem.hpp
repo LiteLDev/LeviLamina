@@ -17,15 +17,15 @@ class TransformationSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRANSFORMATIONSYSTEM
 public:
-    class TransformationSystem& operator=(class TransformationSystem const&) = delete;
-    TransformationSystem(class TransformationSystem const&) = delete;
+    class TransformationSystem& operator=(class TransformationSystem const &) = delete;
+    TransformationSystem(class TransformationSystem const &) = delete;
     TransformationSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~TransformationSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

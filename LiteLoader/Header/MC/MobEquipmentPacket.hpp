@@ -18,16 +18,16 @@ class MobEquipmentPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEQUIPMENTPACKET
 public:
-    class MobEquipmentPacket& operator=(class MobEquipmentPacket const&) = delete;
-    MobEquipmentPacket(class MobEquipmentPacket const&) = delete;
+    class MobEquipmentPacket& operator=(class MobEquipmentPacket const &) = delete;
+    MobEquipmentPacket(class MobEquipmentPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~MobEquipmentPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~MobEquipmentPacket(){
          (MobEquipmentPacket::*rv)();
@@ -35,8 +35,8 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI MobEquipmentPacket(class ActorRuntimeID, class ItemStack const&, int, int, enum ContainerID);
-    MCAPI MobEquipmentPacket(class ActorRuntimeID, class NetworkItemStackDescriptor const&, int, int, enum ContainerID);
+    MCAPI MobEquipmentPacket(class ActorRuntimeID, class ItemStack const &, int, int, enum ContainerID);
+    MCAPI MobEquipmentPacket(class ActorRuntimeID, class NetworkItemStackDescriptor const &, int, int, enum ContainerID);
     MCAPI MobEquipmentPacket();
 
 protected:

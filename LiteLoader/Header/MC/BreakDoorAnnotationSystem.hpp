@@ -17,15 +17,15 @@ class BreakDoorAnnotationSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREAKDOORANNOTATIONSYSTEM
 public:
-    class BreakDoorAnnotationSystem& operator=(class BreakDoorAnnotationSystem const&) = delete;
-    BreakDoorAnnotationSystem(class BreakDoorAnnotationSystem const&) = delete;
+    class BreakDoorAnnotationSystem& operator=(class BreakDoorAnnotationSystem const &) = delete;
+    BreakDoorAnnotationSystem(class BreakDoorAnnotationSystem const &) = delete;
     BreakDoorAnnotationSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BreakDoorAnnotationSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

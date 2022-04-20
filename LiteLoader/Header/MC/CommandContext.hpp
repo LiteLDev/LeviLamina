@@ -43,14 +43,14 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDCONTEXT
 public:
-    class CommandContext& operator=(class CommandContext const&) = delete;
-    CommandContext(class CommandContext const&) = delete;
+    class CommandContext& operator=(class CommandContext const &) = delete;
+    CommandContext(class CommandContext const &) = delete;
     CommandContext() = delete;
 #endif
 
 public:
-    MCAPI CommandContext(std::string const&, std::unique_ptr<class CommandOrigin>, int);
-    MCAPI class CommandOrigin const& getCommandOrigin() const;
+    MCAPI CommandContext(std::string const &, std::unique_ptr<class CommandOrigin>, int);
+    MCAPI class CommandOrigin const & getCommandOrigin() const;
 
 protected:
 

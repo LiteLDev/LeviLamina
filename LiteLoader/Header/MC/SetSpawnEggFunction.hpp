@@ -19,16 +19,16 @@ class SetSpawnEggFunction : public LootItemFunction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETSPAWNEGGFUNCTION
 public:
-    class SetSpawnEggFunction& operator=(class SetSpawnEggFunction const&) = delete;
-    SetSpawnEggFunction(class SetSpawnEggFunction const&) = delete;
+    class SetSpawnEggFunction& operator=(class SetSpawnEggFunction const &) = delete;
+    SetSpawnEggFunction(class SetSpawnEggFunction const &) = delete;
     SetSpawnEggFunction() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SetSpawnEggFunction();
-    /*1*/ virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
-    /*3*/ virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
-    MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>>&);
+    /*1*/ virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
+    /*3*/ virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
+    MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 protected:
 

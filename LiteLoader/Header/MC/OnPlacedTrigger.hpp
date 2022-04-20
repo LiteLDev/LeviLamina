@@ -15,8 +15,8 @@ struct OnPlacedTrigger {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONPLACEDTRIGGER
 public:
-    struct OnPlacedTrigger& operator=(struct OnPlacedTrigger const&) = delete;
-    OnPlacedTrigger(struct OnPlacedTrigger const&) = delete;
+    struct OnPlacedTrigger& operator=(struct OnPlacedTrigger const &) = delete;
+    OnPlacedTrigger(struct OnPlacedTrigger const &) = delete;
     OnPlacedTrigger() = delete;
 #endif
 

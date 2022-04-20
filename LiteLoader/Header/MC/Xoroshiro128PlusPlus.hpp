@@ -15,8 +15,8 @@ class Xoroshiro128PlusPlus {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_XOROSHIRO128PLUSPLUS
 public:
-    class Xoroshiro128PlusPlus& operator=(class Xoroshiro128PlusPlus const&) = delete;
-    Xoroshiro128PlusPlus(class Xoroshiro128PlusPlus const&) = delete;
+    class Xoroshiro128PlusPlus& operator=(class Xoroshiro128PlusPlus const &) = delete;
+    Xoroshiro128PlusPlus(class Xoroshiro128PlusPlus const &) = delete;
     Xoroshiro128PlusPlus() = delete;
 #endif
 

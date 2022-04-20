@@ -18,16 +18,16 @@ class SetLastHurtByPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETLASTHURTBYPACKET
 public:
-    class SetLastHurtByPacket& operator=(class SetLastHurtByPacket const&) = delete;
-    SetLastHurtByPacket(class SetLastHurtByPacket const&) = delete;
+    class SetLastHurtByPacket& operator=(class SetLastHurtByPacket const &) = delete;
+    SetLastHurtByPacket(class SetLastHurtByPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~SetLastHurtByPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~SetLastHurtByPacket(){
          (SetLastHurtByPacket::*rv)();

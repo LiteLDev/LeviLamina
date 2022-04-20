@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Json.hpp"
 #include "JsonUtil.hpp"
 
 #define BEFORE_EXTRA
@@ -19,22 +18,18 @@ class HealableDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HEALABLEDEFINITION
 public:
-    class HealableDefinition& operator=(class HealableDefinition const&) = delete;
-    HealableDefinition(class HealableDefinition const&) = delete;
+    class HealableDefinition& operator=(class HealableDefinition const &) = delete;
+    HealableDefinition(class HealableDefinition const &) = delete;
 #endif
 
 public:
     MCAPI HealableDefinition();
-    MCAPI void addFeedItem(struct FeedItem const&);
-    MCAPI void addFeedItemByName(std::string const&);
-    MCAPI void deserializeData(class Json::Value&, class SemVersion const&);
-    MCAPI void serializeData(class Json::Value&) const;
-    MCAPI ~HealableDefinition();
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HealableDefinition> >&);
+    MCAPI void addFeedItem(struct FeedItem const &);
+    MCAPI void addFeedItemByName(std::string const &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HealableDefinition>> &);
 
 protected:
 
 private:
-    MCAPI void _loadEffects(struct FeedItem&, class Json::Value&);
 
 };

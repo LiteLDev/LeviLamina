@@ -17,19 +17,19 @@ class CompoundTagUpdaterContext {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDTAGUPDATERCONTEXT
 public:
-    class CompoundTagUpdaterContext& operator=(class CompoundTagUpdaterContext const&) = delete;
-    CompoundTagUpdaterContext(class CompoundTagUpdaterContext const&) = delete;
+    class CompoundTagUpdaterContext& operator=(class CompoundTagUpdaterContext const &) = delete;
+    CompoundTagUpdaterContext(class CompoundTagUpdaterContext const &) = delete;
 #endif
 
 public:
     MCAPI CompoundTagUpdaterContext();
     MCAPI class CompoundTagUpdaterBuilder addUpdater(unsigned char, unsigned char, unsigned char);
     MCAPI void sortUpdaters();
-    MCAPI enum CompoundTagUpdaterResult update(class CompoundTag&, unsigned int);
+    MCAPI enum CompoundTagUpdaterResult update(class CompoundTag &, unsigned int);
 
 protected:
 
 private:
-    MCAPI static bool comparisonPredicate(std::unique_ptr<class CompoundTagUpdater> const&, std::unique_ptr<class CompoundTagUpdater> const&);
+    MCAPI static bool comparisonPredicate(std::unique_ptr<class CompoundTagUpdater> const &, std::unique_ptr<class CompoundTagUpdater> const &);
 
 };

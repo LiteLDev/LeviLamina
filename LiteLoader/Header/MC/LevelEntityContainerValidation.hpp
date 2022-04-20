@@ -18,8 +18,8 @@ class LevelEntityContainerValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELENTITYCONTAINERVALIDATION
 public:
-    class LevelEntityContainerValidation& operator=(class LevelEntityContainerValidation const&) = delete;
-    LevelEntityContainerValidation(class LevelEntityContainerValidation const&) = delete;
+    class LevelEntityContainerValidation& operator=(class LevelEntityContainerValidation const &) = delete;
+    LevelEntityContainerValidation(class LevelEntityContainerValidation const &) = delete;
     LevelEntityContainerValidation() = delete;
 #endif
 
@@ -28,8 +28,8 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
-    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
-    /*9*/ virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
+    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
+    /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 
 protected:
 

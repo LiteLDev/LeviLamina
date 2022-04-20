@@ -17,8 +17,8 @@ class IJsonSerializable {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IJSONSERIALIZABLE
 public:
-    class IJsonSerializable& operator=(class IJsonSerializable const&) = delete;
-    IJsonSerializable(class IJsonSerializable const&) = delete;
+    class IJsonSerializable& operator=(class IJsonSerializable const &) = delete;
+    IJsonSerializable(class IJsonSerializable const &) = delete;
     IJsonSerializable() = delete;
 #endif
 

@@ -17,8 +17,8 @@ class SwimIdleGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWIMIDLEGOAL
 public:
-    class SwimIdleGoal& operator=(class SwimIdleGoal const&) = delete;
-    SwimIdleGoal(class SwimIdleGoal const&) = delete;
+    class SwimIdleGoal& operator=(class SwimIdleGoal const &) = delete;
+    SwimIdleGoal(class SwimIdleGoal const &) = delete;
     SwimIdleGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline void tick(){
         void (SwimIdleGoal::*rv)();

@@ -15,8 +15,8 @@ struct TradeTier {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADETIER
 public:
-    struct TradeTier& operator=(struct TradeTier const&) = delete;
-    TradeTier(struct TradeTier const&) = delete;
+    struct TradeTier& operator=(struct TradeTier const &) = delete;
+    TradeTier(struct TradeTier const &) = delete;
     TradeTier() = delete;
 #endif
 

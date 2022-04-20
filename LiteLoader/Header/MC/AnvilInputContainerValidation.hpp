@@ -18,8 +18,8 @@ class AnvilInputContainerValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANVILINPUTCONTAINERVALIDATION
 public:
-    class AnvilInputContainerValidation& operator=(class AnvilInputContainerValidation const&) = delete;
-    AnvilInputContainerValidation(class AnvilInputContainerValidation const&) = delete;
+    class AnvilInputContainerValidation& operator=(class AnvilInputContainerValidation const &) = delete;
+    AnvilInputContainerValidation(class AnvilInputContainerValidation const &) = delete;
     AnvilInputContainerValidation() = delete;
 #endif
 
@@ -29,10 +29,10 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*
-    inline int getContainerOffset(class ContainerScreenContext const& a0) const{
-        int (AnvilInputContainerValidation::*rv)(class ContainerScreenContext const&) const;
+    inline int getContainerOffset(class ContainerScreenContext const & a0) const{
+        int (AnvilInputContainerValidation::*rv)(class ContainerScreenContext const &) const;
         *((void**)&rv) = dlsym("?getContainerOffset@AnvilInputContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0));
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
     }
     */
 

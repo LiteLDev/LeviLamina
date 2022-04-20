@@ -19,8 +19,8 @@ class VanillaAppConfigs : public AppConfigs {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAAPPCONFIGS
 public:
-    class VanillaAppConfigs& operator=(class VanillaAppConfigs const&) = delete;
-    VanillaAppConfigs(class VanillaAppConfigs const&) = delete;
+    class VanillaAppConfigs& operator=(class VanillaAppConfigs const &) = delete;
+    VanillaAppConfigs(class VanillaAppConfigs const &) = delete;
     VanillaAppConfigs() = delete;
 #endif
 
@@ -42,16 +42,18 @@ public:
     /*14*/ virtual void __unk_vfn_14();
     /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual void __unk_vfn_16();
-    /*18*/ virtual void __unk_vfn_18();
+    /*17*/ virtual void __unk_vfn_17();
     /*19*/ virtual void __unk_vfn_19();
-    /*21*/ virtual void __unk_vfn_21();
-    /*23*/ virtual void __unk_vfn_23();
+    /*20*/ virtual void __unk_vfn_20();
+    /*22*/ virtual void __unk_vfn_22();
     /*24*/ virtual void __unk_vfn_24();
     /*25*/ virtual void __unk_vfn_25();
     /*26*/ virtual void __unk_vfn_26();
     /*27*/ virtual void __unk_vfn_27();
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
+    /*30*/ virtual void __unk_vfn_30();
+    /*31*/ virtual void __unk_vfn_31();
 
 protected:
 

@@ -17,14 +17,14 @@ class MoveToNode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETONODE
 public:
-    class MoveToNode& operator=(class MoveToNode const&) = delete;
-    MoveToNode(class MoveToNode const&) = delete;
+    class MoveToNode& operator=(class MoveToNode const &) = delete;
+    MoveToNode(class MoveToNode const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~MoveToNode();
-    /*1*/ virtual enum BehaviorStatus tick(class Actor&);
-    /*2*/ virtual void initializeFromDefinition(class Actor&);
+    /*1*/ virtual enum BehaviorStatus tick(class Actor &);
+    /*2*/ virtual void initializeFromDefinition(class Actor &);
     MCAPI MoveToNode();
 
 protected:

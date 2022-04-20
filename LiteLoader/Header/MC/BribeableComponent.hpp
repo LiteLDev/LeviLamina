@@ -17,22 +17,24 @@ class BribeableComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BRIBEABLECOMPONENT
 public:
-    class BribeableComponent& operator=(class BribeableComponent const&) = delete;
-    BribeableComponent(class BribeableComponent const&) = delete;
+    class BribeableComponent& operator=(class BribeableComponent const &) = delete;
+    BribeableComponent(class BribeableComponent const &) = delete;
 #endif
 
 public:
     MCAPI BribeableComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag&);
-    MCAPI bool clientBribeCheck(class Actor&);
-    MCAPI int& getBribeCooldown();
-    MCAPI int& getBribeTimer();
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
-    MCAPI void resetBribe(class Actor&);
+    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI bool clientBribeCheck(class Actor &);
+    MCAPI int & getBribeCooldown();
+    MCAPI int & getBribeTimer();
+    MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
+    MCAPI void resetBribe(class Actor &);
 
 protected:
 
 private:
+    MCAPI void _bribe(class Actor &, class Player &);
+    MCAPI bool _canBribe(class ItemStack const &);
 
 };

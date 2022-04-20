@@ -17,19 +17,19 @@ class GoalSelectorSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GOALSELECTORSYSTEM
 public:
-    class GoalSelectorSystem& operator=(class GoalSelectorSystem const&) = delete;
-    GoalSelectorSystem(class GoalSelectorSystem const&) = delete;
+    class GoalSelectorSystem& operator=(class GoalSelectorSystem const &) = delete;
+    GoalSelectorSystem(class GoalSelectorSystem const &) = delete;
     GoalSelectorSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~GoalSelectorSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 
 private:
-    MCAPI static void _tickGoalSelectorComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class GoalSelectorComponent>&);
+    MCAPI static void _tickGoalSelectorComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class GoalSelectorComponent> &);
 
 };

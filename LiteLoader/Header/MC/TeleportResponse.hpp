@@ -18,16 +18,16 @@ class TeleportResponse {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TELEPORTRESPONSE
 public:
-    class TeleportResponse& operator=(class TeleportResponse const&) = delete;
-    TeleportResponse(class TeleportResponse const&) = delete;
+    class TeleportResponse& operator=(class TeleportResponse const &) = delete;
+    TeleportResponse(class TeleportResponse const &) = delete;
     TeleportResponse() = delete;
 #endif
 
 public:
     /*0*/ virtual ~TeleportResponse();
-    /*1*/ virtual std::string const& getName() const;
-    /*2*/ virtual void executeAction(class RenderParams&) const;
-    /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection> >&, class Factory<class EventResponse> const&) const;
+    /*1*/ virtual std::string const & getName() const;
+    /*2*/ virtual void executeAction(class RenderParams &) const;
+    /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
     MCAPI static std::string const NameID;
 
 protected:

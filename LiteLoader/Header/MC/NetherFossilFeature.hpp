@@ -18,20 +18,20 @@ class NetherFossilFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERFOSSILFEATURE
 public:
-    class NetherFossilFeature& operator=(class NetherFossilFeature const&) = delete;
-    NetherFossilFeature(class NetherFossilFeature const&) = delete;
+    class NetherFossilFeature& operator=(class NetherFossilFeature const &) = delete;
+    NetherFossilFeature(class NetherFossilFeature const &) = delete;
     NetherFossilFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~NetherFossilFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-    MCAPI NetherFossilFeature(std::vector<class Block const* >&&, bool);
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+    MCAPI NetherFossilFeature(std::vector<class Block const *> &&, bool);
 
 protected:
 
 private:
-    MCAPI static std::string const* const STRUCTURE_LOCATION_FOSSIL;
+    MCAPI static std::string const *const STRUCTURE_LOCATION_FOSSIL;
 
 };

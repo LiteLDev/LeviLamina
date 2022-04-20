@@ -18,14 +18,14 @@ struct IsHiddenWhenInvisibleDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISHIDDENWHENINVISIBLEDEFINITION
 public:
-    struct IsHiddenWhenInvisibleDefinition& operator=(struct IsHiddenWhenInvisibleDefinition const&) = delete;
-    IsHiddenWhenInvisibleDefinition(struct IsHiddenWhenInvisibleDefinition const&) = delete;
+    struct IsHiddenWhenInvisibleDefinition& operator=(struct IsHiddenWhenInvisibleDefinition const &) = delete;
+    IsHiddenWhenInvisibleDefinition(struct IsHiddenWhenInvisibleDefinition const &) = delete;
     IsHiddenWhenInvisibleDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&);
-    MCAPI void uninitialize(class EntityContext&);
+    MCAPI void initialize(class EntityContext &);
+    MCAPI void uninitialize(class EntityContext &);
 
 protected:
 

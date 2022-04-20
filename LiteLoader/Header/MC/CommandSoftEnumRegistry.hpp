@@ -19,14 +19,14 @@ class CommandSoftEnumRegistry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDSOFTENUMREGISTRY
 public:
-    class CommandSoftEnumRegistry& operator=(class CommandSoftEnumRegistry const&) = delete;
-    CommandSoftEnumRegistry(class CommandSoftEnumRegistry const&) = delete;
+    class CommandSoftEnumRegistry& operator=(class CommandSoftEnumRegistry const &) = delete;
+    CommandSoftEnumRegistry(class CommandSoftEnumRegistry const &) = delete;
     CommandSoftEnumRegistry() = delete;
 #endif
 
 public:
-    MCAPI CommandSoftEnumRegistry(class CommandRegistry*);
-    MCAPI void updateSoftEnum(enum SoftEnumUpdateType, std::string const&, std::vector<std::string>);
+    MCAPI CommandSoftEnumRegistry(class CommandRegistry *);
+    MCAPI void updateSoftEnum(enum SoftEnumUpdateType, std::string const &, std::vector<std::string>);
     MCAPI ~CommandSoftEnumRegistry();
 
 protected:

@@ -14,7 +14,7 @@ namespace FlowerHelper {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI class Block const& getRandomFlowerBlock(class Biome const&, class BlockPos const&, class Random&, class BiomeRegistry&, class PerlinSimplexNoise const&);
-    MCAPI class Block const& getRandomFlowerBlock(enum FlowerPlacementType, class BlockPos const&, class Random&, class PerlinSimplexNoise const&);
+    MCAPI class Block const & getRandomFlowerBlock(class Biome const &, class BlockPos const &, class Random &, class BiomeRegistry &, class PerlinSimplexNoise const &);
+    MCAPI class Block const & getRandomFlowerBlock(enum FlowerPlacementType, class BlockPos const &, class Random &, class PerlinSimplexNoise const &);
 
 };

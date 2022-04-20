@@ -17,8 +17,8 @@ struct BlockUnitCubeComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKUNITCUBECOMPONENT
 public:
-    struct BlockUnitCubeComponent& operator=(struct BlockUnitCubeComponent const&) = delete;
-    BlockUnitCubeComponent(struct BlockUnitCubeComponent const&) = delete;
+    struct BlockUnitCubeComponent& operator=(struct BlockUnitCubeComponent const &) = delete;
+    BlockUnitCubeComponent(struct BlockUnitCubeComponent const &) = delete;
     BlockUnitCubeComponent() = delete;
 #endif
 

@@ -15,12 +15,12 @@ struct PlayerArmorExchangeEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERARMOREXCHANGEEVENT
 public:
-    struct PlayerArmorExchangeEvent& operator=(struct PlayerArmorExchangeEvent const&) = delete;
+    struct PlayerArmorExchangeEvent& operator=(struct PlayerArmorExchangeEvent const &) = delete;
     PlayerArmorExchangeEvent() = delete;
 #endif
 
 public:
-    MCAPI PlayerArmorExchangeEvent(struct PlayerArmorExchangeEvent const&);
+    MCAPI PlayerArmorExchangeEvent(struct PlayerArmorExchangeEvent const &);
     MCAPI ~PlayerArmorExchangeEvent();
 
 protected:

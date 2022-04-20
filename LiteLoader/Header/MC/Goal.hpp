@@ -17,8 +17,8 @@ class Goal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GOAL
 public:
-    class Goal& operator=(class Goal const&) = delete;
-    Goal(class Goal const&) = delete;
+    class Goal& operator=(class Goal const &) = delete;
+    Goal(class Goal const &) = delete;
 #endif
 
 public:
@@ -27,6 +27,11 @@ public:
     inline bool isTargetGoal() const{
         bool (Goal::*rv)() const;
         *((void**)&rv) = dlsym("?isTargetGoal@Goal@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canBeInterrupted(){
+        bool (Goal::*rv)();
+        *((void**)&rv) = dlsym("?canBeInterrupted@Goal@@UEAA_NXZ");
         return (this->*rv)();
     }
     inline void tick(){
@@ -44,15 +49,10 @@ public:
         *((void**)&rv) = dlsym("?start@Goal@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void onPlayerDimensionChanged(class Player* a0, class AutomaticID<class Dimension, int> a1){
-        void (Goal::*rv)(class Player*, class AutomaticID<class Dimension, int>);
+    inline void onPlayerDimensionChanged(class Player * a0, class AutomaticID<class Dimension, int> a1){
+        void (Goal::*rv)(class Player *, class AutomaticID<class Dimension, int>);
         *((void**)&rv) = dlsym("?onPlayerDimensionChanged@Goal@@UEAAXPEAVPlayer@@V?$AutomaticID@VDimension@@H@@@Z");
-        return (this->*rv)(std::forward<class Player*>(a0), std::forward<class AutomaticID<class Dimension, int>>(a1));
-    }
-    inline bool canBeInterrupted(){
-        bool (Goal::*rv)();
-        *((void**)&rv) = dlsym("?canBeInterrupted@Goal@@UEAA_NXZ");
-        return (this->*rv)();
+        return (this->*rv)(std::forward<class Player *>(a0), std::forward<class AutomaticID<class Dimension, int>>(a1));
     }
     inline bool canContinueToUse(){
         bool (Goal::*rv)();

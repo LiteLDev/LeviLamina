@@ -18,14 +18,14 @@ struct IsStunnedDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISSTUNNEDDEFINITION
 public:
-    struct IsStunnedDefinition& operator=(struct IsStunnedDefinition const&) = delete;
-    IsStunnedDefinition(struct IsStunnedDefinition const&) = delete;
+    struct IsStunnedDefinition& operator=(struct IsStunnedDefinition const &) = delete;
+    IsStunnedDefinition(struct IsStunnedDefinition const &) = delete;
     IsStunnedDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&);
-    MCAPI void uninitialize(class EntityContext&);
+    MCAPI void initialize(class EntityContext &);
+    MCAPI void uninitialize(class EntityContext &);
 
 protected:
 

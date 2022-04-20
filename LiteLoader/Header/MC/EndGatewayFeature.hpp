@@ -18,15 +18,15 @@ class EndGatewayFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDGATEWAYFEATURE
 public:
-    class EndGatewayFeature& operator=(class EndGatewayFeature const&) = delete;
-    EndGatewayFeature(class EndGatewayFeature const&) = delete;
+    class EndGatewayFeature& operator=(class EndGatewayFeature const &) = delete;
+    EndGatewayFeature(class EndGatewayFeature const &) = delete;
     EndGatewayFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~EndGatewayFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /*
     inline  ~EndGatewayFeature(){
          (EndGatewayFeature::*rv)();

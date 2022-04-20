@@ -17,8 +17,8 @@ class FollowTargetCaptainGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOLLOWTARGETCAPTAINGOAL
 public:
-    class FollowTargetCaptainGoal& operator=(class FollowTargetCaptainGoal const&) = delete;
-    FollowTargetCaptainGoal(class FollowTargetCaptainGoal const&) = delete;
+    class FollowTargetCaptainGoal& operator=(class FollowTargetCaptainGoal const &) = delete;
+    FollowTargetCaptainGoal(class FollowTargetCaptainGoal const &) = delete;
     FollowTargetCaptainGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline void stop(){
         void (FollowTargetCaptainGoal::*rv)();
@@ -38,7 +38,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI FollowTargetCaptainGoal(class Mob&, float, float, float);
+    MCAPI FollowTargetCaptainGoal(class Mob &, float, float, float);
 
 protected:
 

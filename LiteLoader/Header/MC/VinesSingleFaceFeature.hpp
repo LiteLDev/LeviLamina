@@ -17,14 +17,14 @@ class VinesSingleFaceFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VINESSINGLEFACEFEATURE
 public:
-    class VinesSingleFaceFeature& operator=(class VinesSingleFaceFeature const&) = delete;
-    VinesSingleFaceFeature(class VinesSingleFaceFeature const&) = delete;
+    class VinesSingleFaceFeature& operator=(class VinesSingleFaceFeature const &) = delete;
+    VinesSingleFaceFeature(class VinesSingleFaceFeature const &) = delete;
     VinesSingleFaceFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~VinesSingleFaceFeature();
-    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 
 protected:
 

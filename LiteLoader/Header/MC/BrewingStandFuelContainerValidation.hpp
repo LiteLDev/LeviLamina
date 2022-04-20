@@ -18,17 +18,17 @@ class BrewingStandFuelContainerValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREWINGSTANDFUELCONTAINERVALIDATION
 public:
-    class BrewingStandFuelContainerValidation& operator=(class BrewingStandFuelContainerValidation const&) = delete;
-    BrewingStandFuelContainerValidation(class BrewingStandFuelContainerValidation const&) = delete;
+    class BrewingStandFuelContainerValidation& operator=(class BrewingStandFuelContainerValidation const &) = delete;
+    BrewingStandFuelContainerValidation(class BrewingStandFuelContainerValidation const &) = delete;
     BrewingStandFuelContainerValidation() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BrewingStandFuelContainerValidation();
-    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
-    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
 
 protected:
 

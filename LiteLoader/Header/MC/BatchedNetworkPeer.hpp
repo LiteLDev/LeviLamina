@@ -18,18 +18,18 @@ class BatchedNetworkPeer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BATCHEDNETWORKPEER
 public:
-    class BatchedNetworkPeer& operator=(class BatchedNetworkPeer const&) = delete;
-    BatchedNetworkPeer(class BatchedNetworkPeer const&) = delete;
+    class BatchedNetworkPeer& operator=(class BatchedNetworkPeer const &) = delete;
+    BatchedNetworkPeer(class BatchedNetworkPeer const &) = delete;
     BatchedNetworkPeer() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BatchedNetworkPeer();
-    /*1*/ virtual void sendPacket(std::string const&, enum NetworkPeer::Reliability, int, unsigned short, enum Compressibility);
-    /*2*/ virtual enum NetworkPeer::DataStatus receivePacket(std::string&, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> > > > const&);
+    /*1*/ virtual void sendPacket(std::string const &, enum NetworkPeer::Reliability, int, unsigned short, enum Compressibility);
+    /*2*/ virtual enum NetworkPeer::DataStatus receivePacket(std::string &, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>> const &);
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void update();
-    /*5*/ virtual void flush(class std::function<void (void)>&&);
+    /*5*/ virtual void flush(class std::function<void (void)> &&);
     /*
     inline struct NetworkPeer::NetworkStatus getNetworkStatus() const{
         struct NetworkPeer::NetworkStatus (BatchedNetworkPeer::*rv)() const;
@@ -37,7 +37,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI BatchedNetworkPeer(class std::shared_ptr<class NetworkPeer>, class Scheduler&);
+    MCAPI BatchedNetworkPeer(class std::shared_ptr<class NetworkPeer>, class Scheduler &);
 
 protected:
 

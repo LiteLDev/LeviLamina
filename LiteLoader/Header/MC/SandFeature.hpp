@@ -18,16 +18,16 @@ class SandFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SANDFEATURE
 public:
-    class SandFeature& operator=(class SandFeature const&) = delete;
-    SandFeature(class SandFeature const&) = delete;
+    class SandFeature& operator=(class SandFeature const &) = delete;
+    SandFeature(class SandFeature const &) = delete;
     SandFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SandFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-    MCAPI SandFeature(class Block const&, int);
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+    MCAPI SandFeature(class Block const &, int);
 
 protected:
 

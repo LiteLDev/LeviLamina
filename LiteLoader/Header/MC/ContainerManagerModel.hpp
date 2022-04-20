@@ -17,8 +17,8 @@ class ContainerManagerModel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERMANAGERMODEL
 public:
-    class ContainerManagerModel& operator=(class ContainerManagerModel const&) = delete;
-    ContainerManagerModel(class ContainerManagerModel const&) = delete;
+    class ContainerManagerModel& operator=(class ContainerManagerModel const &) = delete;
+    ContainerManagerModel(class ContainerManagerModel const &) = delete;
     ContainerManagerModel() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void setContainerType(enum ContainerType);
     /*5*/ virtual void serverInitItemStackIds();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const = 0;
-    /*7*/ virtual void setSlot(int, class ItemStack const&, bool) = 0;
-    /*8*/ virtual class ItemStack const& getSlot(int) const = 0;
+    /*7*/ virtual void setSlot(int, class ItemStack const &, bool) = 0;
+    /*8*/ virtual class ItemStack const & getSlot(int) const = 0;
     /*9*/ virtual void setData(int, int) = 0;
     /*10*/ virtual void broadcastChanges() = 0;
     /*11*/ virtual void debitPlayerLevels(int);
@@ -47,17 +47,17 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ContainerManagerModel(enum ContainerID, class Player&);
+    MCAPI ContainerManagerModel(enum ContainerID, class Player &);
     MCAPI void postInit();
 
 protected:
     MCAPI void _addContainer(class std::shared_ptr<class ContainerModel>);
-    MCAPI class ContainerScreenContext _containerScreenContext(class BlockPos const&);
+    MCAPI class ContainerScreenContext _containerScreenContext(class BlockPos const &);
     MCAPI class ContainerScreenContext _containerScreenContext(struct ActorUniqueID);
     MCAPI class std::shared_ptr<class ContainerModel> _getContainer(enum ContainerEnumName) const;
-    MCAPI bool _isPlayerInRangeOfPosition(class BlockPos const&, float) const;
-    MCAPI void _serverInitItemStackIds(class ContainerModel*);
-    MCAPI static void _appendCopies(std::vector<class ItemStack>&, std::vector<class ItemStack> const&);
+    MCAPI bool _isPlayerInRangeOfPosition(class BlockPos const &, float) const;
+    MCAPI void _serverInitItemStackIds(class ContainerModel *);
+    MCAPI static void _appendCopies(std::vector<class ItemStack> &, std::vector<class ItemStack> const &);
 
 private:
 

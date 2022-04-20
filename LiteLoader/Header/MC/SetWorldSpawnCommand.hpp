@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class SetWorldSpawnCommand {
+class SetWorldSpawnCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,15 +18,15 @@ class SetWorldSpawnCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETWORLDSPAWNCOMMAND
 public:
-    class SetWorldSpawnCommand& operator=(class SetWorldSpawnCommand const&) = delete;
-    SetWorldSpawnCommand(class SetWorldSpawnCommand const&) = delete;
+    class SetWorldSpawnCommand& operator=(class SetWorldSpawnCommand const &) = delete;
+    SetWorldSpawnCommand(class SetWorldSpawnCommand const &) = delete;
     SetWorldSpawnCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SetWorldSpawnCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 

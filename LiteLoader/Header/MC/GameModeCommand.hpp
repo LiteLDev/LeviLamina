@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class GameModeCommand {
+class GameModeCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,15 +18,15 @@ class GameModeCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEMODECOMMAND
 public:
-    class GameModeCommand& operator=(class GameModeCommand const&) = delete;
-    GameModeCommand(class GameModeCommand const&) = delete;
+    class GameModeCommand& operator=(class GameModeCommand const &) = delete;
+    GameModeCommand(class GameModeCommand const &) = delete;
     GameModeCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~GameModeCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 

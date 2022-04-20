@@ -14,14 +14,16 @@ namespace Automation {
 // Add Member There
 	class AutomationClient;
 #undef AFTER_EXTRA
-    MCAPI extern char const* Body;
-    MCAPI extern char const* BodyData;
-    MCAPI extern char const* Header;
-    MCAPI extern char const* HeaderData;
-    MCAPI extern char const* MsgPurpose;
-    MCAPI extern char const* RequestId;
-    MCAPI extern char const* StatusCode;
-    MCAPI extern char const* StatusMsg;
-    MCAPI extern char const* VersionData;
+    MCAPI extern char const * Body;
+    MCAPI extern char const * BodyData;
+    MCAPI extern char const * Header;
+    MCAPI extern char const * HeaderData;
+    MCAPI enum Automation::MessagePurpose MessagePurposeTypeFromString(std::string const &);
+    MCAPI std::string MessagePurposeTypeToString(enum Automation::MessagePurpose);
+    MCAPI extern char const * MsgPurpose;
+    MCAPI extern char const * RequestId;
+    MCAPI extern char const * StatusCode;
+    MCAPI extern char const * StatusMsg;
+    MCAPI extern char const * VersionData;
 
 };

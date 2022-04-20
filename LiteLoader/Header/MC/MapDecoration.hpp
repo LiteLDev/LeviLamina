@@ -19,16 +19,16 @@ enum Type;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAPDECORATION
 public:
-    class MapDecoration& operator=(class MapDecoration const&) = delete;
-    MapDecoration(class MapDecoration const&) = delete;
+    class MapDecoration& operator=(class MapDecoration const &) = delete;
+    MapDecoration(class MapDecoration const &) = delete;
     MapDecoration() = delete;
 #endif
 
 public:
-    MCAPI MapDecoration(enum MapDecoration::Type, signed char, signed char, signed char, std::string const&, class mce::Color const&);
-    MCAPI class mce::Color const& getColor() const;
+    MCAPI MapDecoration(enum MapDecoration::Type, signed char, signed char, signed char, std::string const &, class mce::Color const &);
+    MCAPI class mce::Color const & getColor() const;
     MCAPI enum MapDecoration::Type getImg() const;
-    MCAPI std::string const& getLabel() const;
+    MCAPI std::string const & getLabel() const;
     MCAPI signed char getRot() const;
     MCAPI signed char getX() const;
     MCAPI signed char getY() const;

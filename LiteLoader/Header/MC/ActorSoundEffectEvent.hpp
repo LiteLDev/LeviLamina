@@ -15,8 +15,8 @@ class ActorSoundEffectEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSOUNDEFFECTEVENT
 public:
-    class ActorSoundEffectEvent& operator=(class ActorSoundEffectEvent const&) = delete;
-    ActorSoundEffectEvent(class ActorSoundEffectEvent const&) = delete;
+    class ActorSoundEffectEvent& operator=(class ActorSoundEffectEvent const &) = delete;
+    ActorSoundEffectEvent(class ActorSoundEffectEvent const &) = delete;
     ActorSoundEffectEvent() = delete;
 #endif
 

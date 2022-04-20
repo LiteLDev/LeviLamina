@@ -17,14 +17,14 @@ class InMemoryWritableFile {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INMEMORYWRITABLEFILE
 public:
-    class InMemoryWritableFile& operator=(class InMemoryWritableFile const&) = delete;
-    InMemoryWritableFile(class InMemoryWritableFile const&) = delete;
+    class InMemoryWritableFile& operator=(class InMemoryWritableFile const &) = delete;
+    InMemoryWritableFile(class InMemoryWritableFile const &) = delete;
     InMemoryWritableFile() = delete;
 #endif
 
 public:
     /*0*/ virtual ~InMemoryWritableFile();
-    /*1*/ virtual class leveldb::Status Append(class leveldb::Slice const&);
+    /*1*/ virtual class leveldb::Status Append(class leveldb::Slice const &);
     /*2*/ virtual class leveldb::Status Close();
     /*
     inline class leveldb::Status Sync(){

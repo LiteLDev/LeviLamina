@@ -17,8 +17,8 @@ class RollGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ROLLGOAL
 public:
-    class RollGoal& operator=(class RollGoal const&) = delete;
-    RollGoal(class RollGoal const&) = delete;
+    class RollGoal& operator=(class RollGoal const &) = delete;
+    RollGoal(class RollGoal const &) = delete;
     RollGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline bool canBeInterrupted(){
         bool (RollGoal::*rv)();
@@ -38,11 +38,11 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI RollGoal(class Mob&, float);
+    MCAPI RollGoal(class Mob &, float);
 
 protected:
 
 private:
-    MCAPI void _handleRoll(int, class Vec3&, float&, float&) const;
+    MCAPI void _handleRoll(int, class Vec3 &, float &, float &) const;
 
 };

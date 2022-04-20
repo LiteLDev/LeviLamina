@@ -18,16 +18,16 @@ struct SkinData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKINDATA
 public:
-    struct SkinData& operator=(struct SkinData const&) = delete;
-    SkinData(struct SkinData const&) = delete;
+    struct SkinData& operator=(struct SkinData const &) = delete;
+    SkinData(struct SkinData const &) = delete;
     SkinData() = delete;
 #endif
 
 public:
-    MCAPI SkinData(class Actor const&);
-    MCAPI SkinData(class Json::Value const&);
-    MCAPI void applyToActor(class Actor&) const;
-    MCAPI bool softMatch(struct SkinData const&, bool&) const;
+    MCAPI SkinData(class Actor const &);
+    MCAPI SkinData(class Json::Value const &);
+    MCAPI void applyToActor(class Actor &) const;
+    MCAPI bool softMatch(struct SkinData const &, bool &) const;
 
 protected:
 

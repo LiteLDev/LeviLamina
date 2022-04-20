@@ -15,8 +15,8 @@ class IScriptBlockProperty {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISCRIPTBLOCKPROPERTY
 public:
-    class IScriptBlockProperty& operator=(class IScriptBlockProperty const&) = delete;
-    IScriptBlockProperty(class IScriptBlockProperty const&) = delete;
+    class IScriptBlockProperty& operator=(class IScriptBlockProperty const &) = delete;
+    IScriptBlockProperty(class IScriptBlockProperty const &) = delete;
     IScriptBlockProperty() = delete;
 #endif
 

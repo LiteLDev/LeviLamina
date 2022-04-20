@@ -18,16 +18,16 @@ class LevelEventPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELEVENTPACKET
 public:
-    class LevelEventPacket& operator=(class LevelEventPacket const&) = delete;
-    LevelEventPacket(class LevelEventPacket const&) = delete;
+    class LevelEventPacket& operator=(class LevelEventPacket const &) = delete;
+    LevelEventPacket(class LevelEventPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~LevelEventPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~LevelEventPacket(){
          (LevelEventPacket::*rv)();
@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI LevelEventPacket(enum LevelEvent, class Vec3 const&, int);
+    MCAPI LevelEventPacket(enum LevelEvent, class Vec3 const &, int);
     MCAPI LevelEventPacket(enum LevelEvent, float, float, float, int);
     MCAPI LevelEventPacket();
 

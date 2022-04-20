@@ -17,15 +17,15 @@ class NpcDialogueStorage {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCDIALOGUESTORAGE
 public:
-    class NpcDialogueStorage& operator=(class NpcDialogueStorage const&) = delete;
-    NpcDialogueStorage(class NpcDialogueStorage const&) = delete;
+    class NpcDialogueStorage& operator=(class NpcDialogueStorage const &) = delete;
+    NpcDialogueStorage(class NpcDialogueStorage const &) = delete;
     NpcDialogueStorage() = delete;
 #endif
 
 public:
-    MCAPI struct NpcDialogueScene const* getScene(std::string const&) const;
-    MCAPI void init(class ResourcePackManager&);
-    MCAPI bool parseFile(std::string const&, std::string const&, enum CurrentCmdVersion);
+    MCAPI struct NpcDialogueScene const * getScene(std::string const &) const;
+    MCAPI void init(class ResourcePackManager &);
+    MCAPI bool parseFile(std::string const &, std::string const &, enum CurrentCmdVersion);
 
 protected:
 

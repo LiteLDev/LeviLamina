@@ -17,8 +17,8 @@ class PacketSender {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKETSENDER
 public:
-    class PacketSender& operator=(class PacketSender const&) = delete;
-    PacketSender(class PacketSender const&) = delete;
+    class PacketSender& operator=(class PacketSender const &) = delete;
+    PacketSender(class PacketSender const &) = delete;
     PacketSender() = delete;
 #endif
 

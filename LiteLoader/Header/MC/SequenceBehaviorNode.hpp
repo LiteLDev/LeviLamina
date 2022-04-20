@@ -17,18 +17,18 @@ class SequenceBehaviorNode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SEQUENCEBEHAVIORNODE
 public:
-    class SequenceBehaviorNode& operator=(class SequenceBehaviorNode const&) = delete;
-    SequenceBehaviorNode(class SequenceBehaviorNode const&) = delete;
+    class SequenceBehaviorNode& operator=(class SequenceBehaviorNode const &) = delete;
+    SequenceBehaviorNode(class SequenceBehaviorNode const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~SequenceBehaviorNode();
-    /*1*/ virtual enum BehaviorStatus tick(class Actor&);
+    /*1*/ virtual enum BehaviorStatus tick(class Actor &);
     /*
-    inline void initializeFromDefinition(class Actor& a0){
-        void (SequenceBehaviorNode::*rv)(class Actor&);
+    inline void initializeFromDefinition(class Actor & a0){
+        void (SequenceBehaviorNode::*rv)(class Actor &);
         *((void**)&rv) = dlsym("?initializeFromDefinition@SequenceBehaviorNode@@MEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
+        return (this->*rv)(std::forward<class Actor &>(a0));
     }
     */
     MCAPI SequenceBehaviorNode();

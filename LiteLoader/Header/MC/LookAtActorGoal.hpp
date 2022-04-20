@@ -17,8 +17,8 @@ class LookAtActorGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATACTORGOAL
 public:
-    class LookAtActorGoal& operator=(class LookAtActorGoal const&) = delete;
-    LookAtActorGoal(class LookAtActorGoal const&) = delete;
+    class LookAtActorGoal& operator=(class LookAtActorGoal const &) = delete;
+    LookAtActorGoal(class LookAtActorGoal const &) = delete;
     LookAtActorGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline  ~LookAtActorGoal(){
          (LookAtActorGoal::*rv)();
@@ -38,11 +38,11 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI LookAtActorGoal(class Mob&, float, float, int, int, int, int);
+    MCAPI LookAtActorGoal(class Mob &, float, float, int, int, int, int);
 
 protected:
 
 private:
-    MCAPI bool _withinFieldOfView(class Actor&);
+    MCAPI bool _withinFieldOfView(class Actor &);
 
 };

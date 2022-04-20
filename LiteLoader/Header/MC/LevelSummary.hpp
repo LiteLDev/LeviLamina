@@ -18,18 +18,18 @@ class LevelSummary {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSUMMARY
 public:
-    class LevelSummary& operator=(class LevelSummary const&) = delete;
-    LevelSummary(class LevelSummary const&) = delete;
+    class LevelSummary& operator=(class LevelSummary const &) = delete;
+    LevelSummary(class LevelSummary const &) = delete;
     LevelSummary() = delete;
 #endif
 
 public:
-    MCAPI static class Core::PathBuffer<std::string > const CUSTOM_ICON_FILENAME;
+    MCAPI static class Core::PathBuffer<std::string> const CUSTOM_ICON_FILENAME;
     MCAPI static std::string const DEFAULT_WORLD_ICON_FILENAME;
     MCAPI static std::string const INVALID_LEVEL_ID;
-    MCAPI static class Core::PathBuffer<std::string > const WORLD_ICON_FILENAME;
-    MCAPI static class Core::PathBuffer<std::string > buildCustomIconPath(class Core::Path const&);
-    MCAPI static class Core::PathBuffer<std::string > buildWorldIconPath(class Core::Path const&);
+    MCAPI static class Core::PathBuffer<std::string> const WORLD_ICON_FILENAME;
+    MCAPI static class Core::PathBuffer<std::string> buildCustomIconPath(class Core::Path const &);
+    MCAPI static class Core::PathBuffer<std::string> buildWorldIconPath(class Core::Path const &);
 
 protected:
 

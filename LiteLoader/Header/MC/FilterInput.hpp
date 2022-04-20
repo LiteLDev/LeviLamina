@@ -17,13 +17,13 @@ class FilterInput {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERINPUT
 public:
-    FilterInput(class FilterInput const&) = delete;
+    FilterInput(class FilterInput const &) = delete;
     FilterInput() = delete;
 #endif
 
 public:
     MCAPI FilterInput(int);
-    MCAPI class FilterInput& operator=(class FilterInput const&);
+    MCAPI class FilterInput & operator=(class FilterInput const &);
     MCAPI ~FilterInput();
 
 protected:

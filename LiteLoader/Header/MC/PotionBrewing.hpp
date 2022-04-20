@@ -31,33 +31,33 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POTIONBREWING
 public:
-    class PotionBrewing& operator=(class PotionBrewing const&) = delete;
-    PotionBrewing(class PotionBrewing const&) = delete;
+    class PotionBrewing& operator=(class PotionBrewing const &) = delete;
+    PotionBrewing(class PotionBrewing const &) = delete;
     PotionBrewing() = delete;
 #endif
 
 public:
-    MCAPI static void addContainerRecipe(class Item const&, class PotionBrewing::Ingredient const&, class Item const&);
-    MCAPI static void addPotionMix(class ItemDescriptor const&, class PotionBrewing::Ingredient const&, class ItemDescriptor const&);
-    MCAPI static int getFuelValue(class ItemDescriptor const&);
-    MCAPI static bool hasMix(class ItemInstance const&, class ItemDescriptor const&);
+    MCAPI static void addContainerRecipe(class Item const &, class PotionBrewing::Ingredient const &, class Item const &);
+    MCAPI static void addPotionMix(class ItemDescriptor const &, class PotionBrewing::Ingredient const &, class ItemDescriptor const &);
+    MCAPI static int getFuelValue(class ItemDescriptor const &);
+    MCAPI static bool hasMix(class ItemInstance const &, class ItemDescriptor const &);
     MCAPI static void initPotionBrewing();
-    MCAPI static bool isFuel(class ItemDescriptor const&);
-    MCAPI static bool isIngredient(class ItemDescriptor const&);
-    MCAPI static bool isPotionRecipeInput(class ItemDescriptor const&);
-    MCAPI static class ItemInstance mix(class ItemDescriptor const&, class ItemInstance const&);
+    MCAPI static bool isFuel(class ItemDescriptor const &);
+    MCAPI static bool isIngredient(class ItemDescriptor const &);
+    MCAPI static bool isPotionRecipeInput(class ItemDescriptor const &);
+    MCAPI static class ItemInstance mix(class ItemDescriptor const &, class ItemInstance const &);
     MCAPI static void shutdown();
 
 protected:
 
 private:
-    MCAPI static void addChemistryMix(class ItemInstance const&, class PotionBrewing::Ingredient const&, class ItemInstance const&);
-    MCAPI static class ItemInstance getChemistryMix(class ItemDescriptor const&, class ItemDescriptor const&);
+    MCAPI static void addChemistryMix(class ItemInstance const &, class PotionBrewing::Ingredient const &, class ItemInstance const &);
+    MCAPI static class ItemInstance getChemistryMix(class ItemDescriptor const &, class ItemDescriptor const &);
     MCAPI static std::vector<class PotionBrewing::Mix<class ItemInstance>> mChemistryMixes;
-    MCAPI static std::vector<class PotionBrewing::Mix<class Item const& >> mContainerMixes;
+    MCAPI static std::vector<class PotionBrewing::Mix<class Item const &>> mContainerMixes;
     MCAPI static std::vector<class PotionBrewing::Mix<class ItemDescriptor>> mPotionMixes;
     MCAPI static std::vector<class PotionBrewing::Ingredient> mValidContainers;
-    MCAPI static class std::unordered_set<class PotionBrewing::Ingredient, struct std::hash<class PotionBrewing::Ingredient>, struct std::equal_to<class PotionBrewing::Ingredient>, class std::allocator<class PotionBrewing::Ingredient> > mValidIngredients;
-    MCAPI static class std::unordered_set<class PotionBrewing::Ingredient, struct std::hash<class PotionBrewing::Ingredient>, struct std::equal_to<class PotionBrewing::Ingredient>, class std::allocator<class PotionBrewing::Ingredient> > mValidRecipeInputs;
+    MCAPI static class std::unordered_set<class PotionBrewing::Ingredient, struct std::hash<class PotionBrewing::Ingredient>, struct std::equal_to<class PotionBrewing::Ingredient>, class std::allocator<class PotionBrewing::Ingredient>> mValidIngredients;
+    MCAPI static class std::unordered_set<class PotionBrewing::Ingredient, struct std::hash<class PotionBrewing::Ingredient>, struct std::equal_to<class PotionBrewing::Ingredient>, class std::allocator<class PotionBrewing::Ingredient>> mValidRecipeInputs;
 
 };

@@ -17,8 +17,8 @@ struct ScriptBeforePistonActionEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBEFOREPISTONACTIONEVENT
 public:
-    struct ScriptBeforePistonActionEvent& operator=(struct ScriptBeforePistonActionEvent const&) = delete;
-    ScriptBeforePistonActionEvent(struct ScriptBeforePistonActionEvent const&) = delete;
+    struct ScriptBeforePistonActionEvent& operator=(struct ScriptBeforePistonActionEvent const &) = delete;
+    ScriptBeforePistonActionEvent(struct ScriptBeforePistonActionEvent const &) = delete;
     ScriptBeforePistonActionEvent() = delete;
 #endif
 

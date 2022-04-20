@@ -18,8 +18,8 @@ class VexCopyOwnerTargetGoal : public TargetGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VEXCOPYOWNERTARGETGOAL
 public:
-    class VexCopyOwnerTargetGoal& operator=(class VexCopyOwnerTargetGoal const&) = delete;
-    VexCopyOwnerTargetGoal(class VexCopyOwnerTargetGoal const&) = delete;
+    class VexCopyOwnerTargetGoal& operator=(class VexCopyOwnerTargetGoal const &) = delete;
+    VexCopyOwnerTargetGoal(class VexCopyOwnerTargetGoal const &) = delete;
     VexCopyOwnerTargetGoal() = delete;
 #endif
 
@@ -27,8 +27,8 @@ public:
     /*0*/ virtual ~VexCopyOwnerTargetGoal();
     /*1*/ virtual bool canUse();
     /*4*/ virtual void start();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI VexCopyOwnerTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI VexCopyOwnerTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &);
 
 protected:
 

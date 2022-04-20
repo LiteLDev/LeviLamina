@@ -15,8 +15,8 @@ class RopePoints {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ROPEPOINTS
 public:
-    class RopePoints& operator=(class RopePoints const&) = delete;
-    RopePoints(class RopePoints const&) = delete;
+    class RopePoints& operator=(class RopePoints const &) = delete;
+    RopePoints(class RopePoints const &) = delete;
     RopePoints() = delete;
 #endif
 

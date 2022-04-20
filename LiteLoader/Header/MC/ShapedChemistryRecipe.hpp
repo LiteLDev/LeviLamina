@@ -18,20 +18,20 @@ class ShapedChemistryRecipe : public ShapedRecipe {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAPEDCHEMISTRYRECIPE
 public:
-    class ShapedChemistryRecipe& operator=(class ShapedChemistryRecipe const&) = delete;
-    ShapedChemistryRecipe(class ShapedChemistryRecipe const&) = delete;
+    class ShapedChemistryRecipe& operator=(class ShapedChemistryRecipe const &) = delete;
+    ShapedChemistryRecipe(class ShapedChemistryRecipe const &) = delete;
     ShapedChemistryRecipe() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ShapedChemistryRecipe();
-    /*1*/ virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const;
-    /*4*/ virtual std::vector<class ItemInstance> const& getResultItem() const;
+    /*1*/ virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
+    /*4*/ virtual std::vector<class ItemInstance> const & getResultItem() const;
     /*5*/ virtual bool isShapeless() const;
-    /*6*/ virtual bool matches(class CraftingContainer&, class Level&) const;
-    /*8*/ virtual class mce::UUID const& getId() const;
+    /*6*/ virtual bool matches(class CraftingContainer &, class Level &) const;
+    /*8*/ virtual class mce::UUID const & getId() const;
     /*10*/ virtual bool isMultiRecipe() const;
-    MCAPI ShapedChemistryRecipe(class gsl::basic_string_span<char const, -1>, int, int, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, int, class mce::UUID const*);
+    MCAPI ShapedChemistryRecipe(class gsl::basic_string_span<char const, -1>, int, int, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int, class mce::UUID const *);
     MCAPI static class mce::UUID const ID;
 
 protected:

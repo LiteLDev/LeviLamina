@@ -17,21 +17,21 @@ class ScriptGameTestModuleFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTGAMETESTMODULEFACTORY
 public:
-    class ScriptGameTestModuleFactory& operator=(class ScriptGameTestModuleFactory const&) = delete;
-    ScriptGameTestModuleFactory(class ScriptGameTestModuleFactory const&) = delete;
+    class ScriptGameTestModuleFactory& operator=(class ScriptGameTestModuleFactory const &) = delete;
+    ScriptGameTestModuleFactory(class ScriptGameTestModuleFactory const &) = delete;
     ScriptGameTestModuleFactory() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScriptGameTestModuleFactory();
-    MCAPI ScriptGameTestModuleFactory(class gametest::GameTestRegistry&);
+    MCAPI ScriptGameTestModuleFactory(class gametest::GameTestRegistry &);
     MCAPI static std::string getModuleUUIDAsString();
 
 protected:
 
 private:
     MCAPI void _addV1();
-    MCAPI static char const* ModuleName;
+    MCAPI static char const * ModuleName;
     MCAPI static class mce::UUID ModuleUUID;
 
 };

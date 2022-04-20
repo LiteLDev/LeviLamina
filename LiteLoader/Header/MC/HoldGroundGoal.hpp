@@ -17,8 +17,8 @@ class HoldGroundGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOLDGROUNDGOAL
 public:
-    class HoldGroundGoal& operator=(class HoldGroundGoal const&) = delete;
-    HoldGroundGoal(class HoldGroundGoal const&) = delete;
+    class HoldGroundGoal& operator=(class HoldGroundGoal const &) = delete;
+    HoldGroundGoal(class HoldGroundGoal const &) = delete;
     HoldGroundGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI HoldGroundGoal(class Mob&, float, bool, float, class DefinitionTrigger const&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI HoldGroundGoal(class Mob &, float, bool, float, class DefinitionTrigger const &);
 
 protected:
 

@@ -18,13 +18,13 @@ class NavigationGenericDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONGENERICDESCRIPTION
 public:
-    class NavigationGenericDescription& operator=(class NavigationGenericDescription const&) = delete;
-    NavigationGenericDescription(class NavigationGenericDescription const&) = delete;
+    class NavigationGenericDescription& operator=(class NavigationGenericDescription const &) = delete;
+    NavigationGenericDescription(class NavigationGenericDescription const &) = delete;
     NavigationGenericDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~NavigationGenericDescription();
     /*
     inline  ~NavigationGenericDescription(){

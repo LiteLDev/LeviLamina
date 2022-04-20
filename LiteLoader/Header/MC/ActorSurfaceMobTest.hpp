@@ -19,14 +19,14 @@ class ActorSurfaceMobTest : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSURFACEMOBTEST
 public:
-    class ActorSurfaceMobTest& operator=(class ActorSurfaceMobTest const&) = delete;
-    ActorSurfaceMobTest(class ActorSurfaceMobTest const&) = delete;
+    class ActorSurfaceMobTest& operator=(class ActorSurfaceMobTest const &) = delete;
+    ActorSurfaceMobTest(class ActorSurfaceMobTest const &) = delete;
     ActorSurfaceMobTest() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorSurfaceMobTest();
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
 
 protected:

@@ -17,18 +17,18 @@ class ItemEventCoordinator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMEVENTCOORDINATOR
 public:
-    class ItemEventCoordinator& operator=(class ItemEventCoordinator const&) = delete;
-    ItemEventCoordinator(class ItemEventCoordinator const&) = delete;
+    class ItemEventCoordinator& operator=(class ItemEventCoordinator const &) = delete;
+    ItemEventCoordinator(class ItemEventCoordinator const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ItemEventCoordinator();
     MCAPI ItemEventCoordinator();
-    MCAPI class ItemGameplayHandler& getItemGameplayHandler();
-    MCAPI void onItemModifiedActor(class ItemStackBase const&, class Actor const&);
-    MCAPI void onItemSpawnedActor(class ItemStackBase const&, class Actor const&);
+    MCAPI class ItemGameplayHandler & getItemGameplayHandler();
+    MCAPI void onItemModifiedActor(class ItemStackBase const &, class Actor const &);
+    MCAPI void onItemSpawnedActor(class ItemStackBase const &, class Actor const &);
     MCAPI void registerItemGameplayHandler(std::unique_ptr<class ItemGameplayHandler>);
-    MCAPI enum CoordinatorResult sendEvent(class EventRef<struct MutableItemGameplayEvent<enum CoordinatorResult> >);
+    MCAPI enum CoordinatorResult sendEvent(class EventRef<struct MutableItemGameplayEvent<enum CoordinatorResult>>);
 
 protected:
 

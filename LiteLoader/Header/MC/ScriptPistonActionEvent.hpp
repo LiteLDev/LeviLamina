@@ -17,14 +17,14 @@ struct ScriptPistonActionEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPISTONACTIONEVENT
 public:
-    ScriptPistonActionEvent(struct ScriptPistonActionEvent const&) = delete;
+    ScriptPistonActionEvent(struct ScriptPistonActionEvent const &) = delete;
     ScriptPistonActionEvent() = delete;
 #endif
 
 public:
-    MCAPI ScriptPistonActionEvent(struct PistonActionEvent const&, class Scripting::WeakLifetimeScope const&);
-    MCAPI struct ScriptPistonActionEvent& operator=(struct ScriptPistonActionEvent&&);
-    MCAPI struct ScriptPistonActionEvent& operator=(struct ScriptPistonActionEvent const&);
+    MCAPI ScriptPistonActionEvent(struct PistonActionEvent const &, class Scripting::WeakLifetimeScope const &);
+    MCAPI struct ScriptPistonActionEvent & operator=(struct ScriptPistonActionEvent &&);
+    MCAPI struct ScriptPistonActionEvent & operator=(struct ScriptPistonActionEvent const &);
     MCAPI ~ScriptPistonActionEvent();
 
 protected:

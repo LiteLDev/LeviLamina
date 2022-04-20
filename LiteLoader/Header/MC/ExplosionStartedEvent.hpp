@@ -15,13 +15,13 @@ struct ExplosionStartedEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPLOSIONSTARTEDEVENT
 public:
-    struct ExplosionStartedEvent& operator=(struct ExplosionStartedEvent const&) = delete;
+    struct ExplosionStartedEvent& operator=(struct ExplosionStartedEvent const &) = delete;
     ExplosionStartedEvent() = delete;
 #endif
 
 public:
-    MCAPI ExplosionStartedEvent(struct ExplosionStartedEvent&&);
-    MCAPI ExplosionStartedEvent(struct ExplosionStartedEvent const&);
+    MCAPI ExplosionStartedEvent(struct ExplosionStartedEvent &&);
+    MCAPI ExplosionStartedEvent(struct ExplosionStartedEvent const &);
     MCAPI ~ExplosionStartedEvent();
 
 protected:

@@ -19,16 +19,16 @@ class SmeltItemFunction : public LootItemFunction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMELTITEMFUNCTION
 public:
-    class SmeltItemFunction& operator=(class SmeltItemFunction const&) = delete;
-    SmeltItemFunction(class SmeltItemFunction const&) = delete;
+    class SmeltItemFunction& operator=(class SmeltItemFunction const &) = delete;
+    SmeltItemFunction(class SmeltItemFunction const &) = delete;
     SmeltItemFunction() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SmeltItemFunction();
-    /*1*/ virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
-    /*3*/ virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
-    MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>>&);
+    /*1*/ virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
+    /*3*/ virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
+    MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 protected:
 

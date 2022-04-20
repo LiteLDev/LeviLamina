@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class SaveCommand {
+class SaveCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -19,15 +20,15 @@ enum State;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SAVECOMMAND
 public:
-    class SaveCommand& operator=(class SaveCommand const&) = delete;
-    SaveCommand(class SaveCommand const&) = delete;
+    class SaveCommand& operator=(class SaveCommand const &) = delete;
+    SaveCommand(class SaveCommand const &) = delete;
     SaveCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SaveCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 
@@ -35,8 +36,8 @@ private:
     MCAPI static std::vector<struct SnapshotFilenameAndLength> mSaveAllFileList;
     MCAPI static class std::mutex mSaveAllMutex;
     MCAPI static enum SaveCommand::State mState;
-    MCAPI static void saveHold(class CommandOutput&);
-    MCAPI static void saveResume(class CommandOutput&);
-    MCAPI static void saveState(class CommandOutput&);
+    MCAPI static void saveHold(class CommandOutput &);
+    MCAPI static void saveResume(class CommandOutput &);
+    MCAPI static void saveState(class CommandOutput &);
 
 };

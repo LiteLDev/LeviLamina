@@ -17,8 +17,8 @@ class ClientLevelEventCoordinator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTLEVELEVENTCOORDINATOR
 public:
-    class ClientLevelEventCoordinator& operator=(class ClientLevelEventCoordinator const&) = delete;
-    ClientLevelEventCoordinator(class ClientLevelEventCoordinator const&) = delete;
+    class ClientLevelEventCoordinator& operator=(class ClientLevelEventCoordinator const &) = delete;
+    ClientLevelEventCoordinator(class ClientLevelEventCoordinator const &) = delete;
     ClientLevelEventCoordinator() = delete;
 #endif
 

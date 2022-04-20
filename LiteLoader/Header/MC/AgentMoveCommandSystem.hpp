@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "EventPacket.hpp"
 
 #define BEFORE_EXTRA
 
@@ -16,19 +15,18 @@ class AgentMoveCommandSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTMOVECOMMANDSYSTEM
 public:
-    class AgentMoveCommandSystem& operator=(class AgentMoveCommandSystem const&) = delete;
-    AgentMoveCommandSystem(class AgentMoveCommandSystem const&) = delete;
+    class AgentMoveCommandSystem& operator=(class AgentMoveCommandSystem const &) = delete;
+    AgentMoveCommandSystem(class AgentMoveCommandSystem const &) = delete;
     AgentMoveCommandSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~AgentMoveCommandSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
-    MCAPI static void cleanUp(class EntityContext&, float);
-    MCAPI static void initialize(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentComponents::Agent, class FlagComponent<struct AgentComponents::InitializingFlag>, class AgentComponents::Move>&);
-    MCAPI static void sendPacket(class Player const*, enum EventPacket::AgentResult);
-    MCAPI static void tickMove(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentComponents::Agent, class FlagComponent<struct AgentComponents::ExecutingFlag>, class AgentComponents::Move>&);
+    /*2*/ virtual void tick(class EntityRegistry &);
+    MCAPI static void cleanUp(class EntityContext &, float);
+    MCAPI static void initialize(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentComponents::Agent, struct AgentComponents::ActionDetails, class FlagComponent<struct AgentComponents::InitializingFlag>, class AgentComponents::Move> &);
+    MCAPI static void tickMove(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentComponents::Agent, struct AgentComponents::ActionDetails, class FlagComponent<struct AgentComponents::ExecutingFlag>, class AgentComponents::Move> &);
 
 protected:
 

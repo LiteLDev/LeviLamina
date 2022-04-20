@@ -18,19 +18,19 @@ class TradeTables {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADETABLES
 public:
-    class TradeTables& operator=(class TradeTables const&) = delete;
-    TradeTables(class TradeTables const&) = delete;
+    class TradeTables& operator=(class TradeTables const &) = delete;
+    TradeTables(class TradeTables const &) = delete;
     TradeTables() = delete;
 #endif
 
 public:
-    MCAPI struct TradeTable* fetchTable(std::string const&);
-    MCAPI void reload(class Level&);
+    MCAPI struct TradeTable * fetchTable(std::string const &);
+    MCAPI void reload(class Level &);
     MCAPI ~TradeTables();
 
 protected:
 
 private:
-    MCAPI void _parseAndStoreTradeTable(class ResourcePackManager*, class Core::Path const&);
+    MCAPI void _parseAndStoreTradeTable(class ResourcePackManager *, class Core::Path const &);
 
 };

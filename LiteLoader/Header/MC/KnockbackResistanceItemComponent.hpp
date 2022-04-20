@@ -17,8 +17,8 @@ class KnockbackResistanceItemComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_KNOCKBACKRESISTANCEITEMCOMPONENT
 public:
-    class KnockbackResistanceItemComponent& operator=(class KnockbackResistanceItemComponent const&) = delete;
-    KnockbackResistanceItemComponent(class KnockbackResistanceItemComponent const&) = delete;
+    class KnockbackResistanceItemComponent& operator=(class KnockbackResistanceItemComponent const &) = delete;
+    KnockbackResistanceItemComponent(class KnockbackResistanceItemComponent const &) = delete;
     KnockbackResistanceItemComponent() = delete;
 #endif
 
@@ -29,7 +29,7 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
     /*
     inline bool isNetworkComponent() const{
         bool (KnockbackResistanceItemComponent::*rv)() const;
@@ -39,7 +39,7 @@ public:
     */
     MCAPI float getProtectionValue() const;
     MCAPI static void bindType();
-    MCAPI static class HashedString const& getIdentifier();
+    MCAPI static class HashedString const & getIdentifier();
 
 protected:
 

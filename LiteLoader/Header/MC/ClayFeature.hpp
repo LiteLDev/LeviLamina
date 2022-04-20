@@ -18,15 +18,15 @@ class ClayFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLAYFEATURE
 public:
-    class ClayFeature& operator=(class ClayFeature const&) = delete;
-    ClayFeature(class ClayFeature const&) = delete;
+    class ClayFeature& operator=(class ClayFeature const &) = delete;
+    ClayFeature(class ClayFeature const &) = delete;
     ClayFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ClayFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     MCAPI ClayFeature(int);
 
 protected:

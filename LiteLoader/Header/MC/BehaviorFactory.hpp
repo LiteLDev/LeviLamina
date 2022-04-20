@@ -18,14 +18,14 @@ class BehaviorFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEHAVIORFACTORY
 public:
-    class BehaviorFactory& operator=(class BehaviorFactory const&) = delete;
-    BehaviorFactory(class BehaviorFactory const&) = delete;
+    class BehaviorFactory& operator=(class BehaviorFactory const &) = delete;
+    BehaviorFactory(class BehaviorFactory const &) = delete;
 #endif
 
 public:
     MCAPI BehaviorFactory();
-    MCAPI std::unique_ptr<class BehaviorDefinition> loadNodeDefinition(std::string const&, class Json::Value, class BehaviorTreeDefinitionPtr&) const;
-    MCAPI void registerNodePair(std::string const&, class std::function<std::unique_ptr<class BehaviorDefinition> (void)>, class std::function<std::unique_ptr<class BehaviorNode> (void)>);
+    MCAPI std::unique_ptr<class BehaviorDefinition> loadNodeDefinition(std::string const &, class Json::Value, class BehaviorTreeDefinitionPtr &) const;
+    MCAPI void registerNodePair(std::string const &, class std::function<std::unique_ptr<class BehaviorDefinition> (void)>, class std::function<std::unique_ptr<class BehaviorNode> (void)>);
 
 protected:
 

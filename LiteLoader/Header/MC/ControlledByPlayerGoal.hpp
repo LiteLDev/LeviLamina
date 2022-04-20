@@ -17,8 +17,8 @@ class ControlledByPlayerGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTROLLEDBYPLAYERGOAL
 public:
-    class ControlledByPlayerGoal& operator=(class ControlledByPlayerGoal const&) = delete;
-    ControlledByPlayerGoal(class ControlledByPlayerGoal const&) = delete;
+    class ControlledByPlayerGoal& operator=(class ControlledByPlayerGoal const &) = delete;
+    ControlledByPlayerGoal(class ControlledByPlayerGoal const &) = delete;
     ControlledByPlayerGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI ControlledByPlayerGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI ControlledByPlayerGoal(class Mob &);
 
 protected:
 

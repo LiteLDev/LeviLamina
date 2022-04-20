@@ -17,8 +17,8 @@ class ScriptBoolBlockProperty {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBOOLBLOCKPROPERTY
 public:
-    class ScriptBoolBlockProperty& operator=(class ScriptBoolBlockProperty const&) = delete;
-    ScriptBoolBlockProperty(class ScriptBoolBlockProperty const&) = delete;
+    class ScriptBoolBlockProperty& operator=(class ScriptBoolBlockProperty const &) = delete;
+    ScriptBoolBlockProperty(class ScriptBoolBlockProperty const &) = delete;
     ScriptBoolBlockProperty() = delete;
 #endif
 
@@ -31,10 +31,10 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptBoolBlockProperty(class ScriptBoolBlockProperty&&);
-    MCAPI ScriptBoolBlockProperty(std::string, class ItemState const&, std::vector<bool>, class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>);
+    MCAPI ScriptBoolBlockProperty(class ScriptBoolBlockProperty &&);
+    MCAPI ScriptBoolBlockProperty(std::string, class ItemState const &, std::vector<bool>, class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>);
     MCAPI class Scripting::Result<bool> getState() const;
-    MCAPI class ScriptBoolBlockProperty& operator=(class ScriptBoolBlockProperty&&);
+    MCAPI class ScriptBoolBlockProperty & operator=(class ScriptBoolBlockProperty &&);
     MCAPI class Scripting::Result<void> setState(bool);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBoolBlockProperty> bind(struct Scripting::Version);
 

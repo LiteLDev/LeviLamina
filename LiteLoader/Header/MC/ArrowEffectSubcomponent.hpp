@@ -19,16 +19,16 @@ class ArrowEffectSubcomponent : public MobEffectSubcomponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ARROWEFFECTSUBCOMPONENT
 public:
-    class ArrowEffectSubcomponent& operator=(class ArrowEffectSubcomponent const&) = delete;
-    ArrowEffectSubcomponent(class ArrowEffectSubcomponent const&) = delete;
+    class ArrowEffectSubcomponent& operator=(class ArrowEffectSubcomponent const &) = delete;
+    ArrowEffectSubcomponent(class ArrowEffectSubcomponent const &) = delete;
     ArrowEffectSubcomponent() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ArrowEffectSubcomponent();
-    /*2*/ virtual void writetoJSON(class Json::Value&) const;
-    /*3*/ virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
-    /*4*/ virtual char const* getName();
+    /*2*/ virtual void writetoJSON(class Json::Value &) const;
+    /*3*/ virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
+    /*4*/ virtual char const * getName();
 
 protected:
 

@@ -17,18 +17,18 @@ class TransformationComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRANSFORMATIONCOMPONENT
 public:
-    class TransformationComponent& operator=(class TransformationComponent const&) = delete;
-    TransformationComponent(class TransformationComponent const&) = delete;
+    class TransformationComponent& operator=(class TransformationComponent const &) = delete;
+    TransformationComponent(class TransformationComponent const &) = delete;
 #endif
 
 public:
     MCAPI TransformationComponent();
     MCAPI int getDelayTicks() const;
-    MCAPI void initFromDefinition(class Actor&);
-    MCAPI void maintainOldData(class Actor&, class Actor&, struct TransformationDescription const&, struct ActorUniqueID const&, class Level const&);
-    MCAPI void reloadComponent(class Actor&);
+    MCAPI void initFromDefinition(class Actor &);
+    MCAPI void maintainOldData(class Actor &, class Actor &, struct TransformationDescription const &, struct ActorUniqueID const &, class Level const &);
+    MCAPI void reloadComponent(class Actor &);
     MCAPI void setDelayTicks(int);
-    MCAPI void transformIfAble(class Actor&, bool);
+    MCAPI void transformIfAble(class Actor &, bool);
 
 protected:
 

@@ -17,8 +17,8 @@ class ResourcePackFileDownloaderManager {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKFILEDOWNLOADERMANAGER
 public:
-    class ResourcePackFileDownloaderManager& operator=(class ResourcePackFileDownloaderManager const&) = delete;
-    ResourcePackFileDownloaderManager(class ResourcePackFileDownloaderManager const&) = delete;
+    class ResourcePackFileDownloaderManager& operator=(class ResourcePackFileDownloaderManager const &) = delete;
+    ResourcePackFileDownloaderManager(class ResourcePackFileDownloaderManager const &) = delete;
     ResourcePackFileDownloaderManager() = delete;
 #endif
 

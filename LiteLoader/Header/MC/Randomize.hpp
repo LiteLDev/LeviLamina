@@ -17,16 +17,17 @@ class Randomize {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMIZE
 public:
-    class Randomize& operator=(class Randomize const&) = delete;
-    Randomize(class Randomize const&) = delete;
+    class Randomize& operator=(class Randomize const &) = delete;
+    Randomize(class Randomize const &) = delete;
     Randomize() = delete;
 #endif
 
 public:
-    MCAPI Randomize(class Random&);
+    MCAPI Randomize(class Random &);
     MCAPI bool chance(int, int) const;
     MCAPI bool chanceAllButOneIn(int) const;
     MCAPI bool chanceFloatGreaterThan(float) const;
+    MCAPI bool chanceFloatLessOrEqual(float) const;
     MCAPI bool chanceFloatLessThan(float) const;
     MCAPI bool chanceOneIn(int) const;
     MCAPI float nextFloat() const;

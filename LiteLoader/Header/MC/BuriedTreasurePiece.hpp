@@ -18,24 +18,24 @@ class BuriedTreasurePiece : public StructurePiece {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BURIEDTREASUREPIECE
 public:
-    class BuriedTreasurePiece& operator=(class BuriedTreasurePiece const&) = delete;
-    BuriedTreasurePiece(class BuriedTreasurePiece const&) = delete;
+    class BuriedTreasurePiece& operator=(class BuriedTreasurePiece const &) = delete;
+    BuriedTreasurePiece(class BuriedTreasurePiece const &) = delete;
     BuriedTreasurePiece() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BuriedTreasurePiece();
-    /*2*/ virtual class PoolElementStructurePiece* asPoolElement();
+    /*2*/ virtual class PoolElementStructurePiece * asPoolElement();
     /*3*/ virtual enum StructurePieceType getType() const;
-    /*4*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
-    /*5*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    /*6*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
-    /*10*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
-    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
+    /*4*/ virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
+    /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
+    /*6*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
+    /*10*/ virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);
+    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
 
 protected:
 
 private:
-    MCAPI bool _isCovered(class BlockSource const&, class BlockPos const&) const;
+    MCAPI bool _isCovered(class BlockSource const &, class BlockPos const &) const;
 
 };

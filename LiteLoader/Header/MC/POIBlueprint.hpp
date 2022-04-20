@@ -15,8 +15,8 @@ class POIBlueprint {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POIBLUEPRINT
 public:
-    class POIBlueprint& operator=(class POIBlueprint const&) = delete;
-    POIBlueprint(class POIBlueprint const&) = delete;
+    class POIBlueprint& operator=(class POIBlueprint const &) = delete;
+    POIBlueprint(class POIBlueprint const &) = delete;
     POIBlueprint() = delete;
 #endif
 

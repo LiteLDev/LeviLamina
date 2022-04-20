@@ -18,22 +18,22 @@ class ItemLockHelper {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMLOCKHELPER
 public:
-    class ItemLockHelper& operator=(class ItemLockHelper const&) = delete;
-    ItemLockHelper(class ItemLockHelper const&) = delete;
+    class ItemLockHelper& operator=(class ItemLockHelper const &) = delete;
+    ItemLockHelper(class ItemLockHelper const &) = delete;
     ItemLockHelper() = delete;
 #endif
 
 public:
-    MCAPI static bool canMoveItemSlots(class Actor const&, class ItemStackBase const&);
-    MCAPI static enum ItemLockMode getItemLockMode(class ItemStackBase const&);
-    MCAPI static bool isItemLocked(class ItemStackBase const&);
-    MCAPI static bool isItemLockedInSlot(class ItemStackBase const&);
-    MCAPI static bool shouldKeepOnDeath(class Actor const&, class ItemStackBase const&);
-    MCAPI static bool shouldKeepOnDeath(class ItemStackBase const&);
+    MCAPI static bool canMoveItemSlots(class Actor const &, class ItemStackBase const &);
+    MCAPI static enum ItemLockMode getItemLockMode(class ItemStackBase const &);
+    MCAPI static bool isItemLocked(class ItemStackBase const &);
+    MCAPI static bool isItemLockedInSlot(class ItemStackBase const &);
+    MCAPI static bool shouldKeepOnDeath(class Actor const &, class ItemStackBase const &);
+    MCAPI static bool shouldKeepOnDeath(class ItemStackBase const &);
 
 protected:
 
 private:
-    MCAPI static bool _parseItemLockMode(class ItemStackBase&, class Json::Value const&);
+    MCAPI static bool _parseItemLockMode(class ItemStackBase &, class Json::Value const &);
 
 };

@@ -17,13 +17,13 @@ class CrashDumpGameplayData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMPGAMEPLAYDATA
 public:
-    class CrashDumpGameplayData& operator=(class CrashDumpGameplayData const&) = delete;
-    CrashDumpGameplayData(class CrashDumpGameplayData const&) = delete;
+    class CrashDumpGameplayData& operator=(class CrashDumpGameplayData const &) = delete;
+    CrashDumpGameplayData(class CrashDumpGameplayData const &) = delete;
     CrashDumpGameplayData() = delete;
 #endif
 
 public:
-    MCAPI static struct CrashDumpFormatEntryImpl const* const kFormat;
+    MCAPI static struct CrashDumpFormatEntryImpl const *const kFormat;
 
 protected:
 

@@ -17,13 +17,13 @@ class AmbientSoundComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AMBIENTSOUNDCOMPONENT
 public:
-    class AmbientSoundComponent& operator=(class AmbientSoundComponent const&) = delete;
-    AmbientSoundComponent(class AmbientSoundComponent const&) = delete;
+    class AmbientSoundComponent& operator=(class AmbientSoundComponent const &) = delete;
+    AmbientSoundComponent(class AmbientSoundComponent const &) = delete;
     AmbientSoundComponent() = delete;
 #endif
 
 public:
-    MCAPI static void setAmbientSoundRemainingTime(class Actor&, float);
+    MCAPI static void setAmbientSoundRemainingTime(class Actor &, float);
 
 protected:
 

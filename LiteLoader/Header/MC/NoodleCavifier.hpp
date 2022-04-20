@@ -17,16 +17,16 @@ class NoodleCavifier {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NOODLECAVIFIER
 public:
-    class NoodleCavifier& operator=(class NoodleCavifier const&) = delete;
-    NoodleCavifier(class NoodleCavifier const&) = delete;
+    class NoodleCavifier& operator=(class NoodleCavifier const &) = delete;
+    NoodleCavifier(class NoodleCavifier const &) = delete;
     NoodleCavifier() = delete;
 #endif
 
 public:
-    MCAPI NoodleCavifier(class NoodleCavifierNoises const&, short);
-    MCAPI float cavify(float, class BlockPos const&) const;
-    MCAPI void fillNoiseAtPos(class Vec3 const&, int, float);
-    MCAPI class std::array<class NoiseCellInterpolator* , 4> getInterpolators(int, int);
+    MCAPI NoodleCavifier(class NoodleCavifierNoises const &, short);
+    MCAPI float cavify(float, class BlockPos const &) const;
+    MCAPI void fillNoiseAtPos(class Vec3 const &, int, float);
+    MCAPI class std::array<class NoiseCellInterpolator *, 4> getInterpolators(int, int);
 
 protected:
 

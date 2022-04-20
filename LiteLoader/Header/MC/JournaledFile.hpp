@@ -18,20 +18,21 @@ class JournaledFile {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JOURNALEDFILE
 public:
-    class JournaledFile& operator=(class JournaledFile const&) = delete;
-    JournaledFile(class JournaledFile const&) = delete;
+    class JournaledFile& operator=(class JournaledFile const &) = delete;
+    JournaledFile(class JournaledFile const &) = delete;
     JournaledFile() = delete;
 #endif
 
 public:
-    MCAPI JournaledFile(class std::function<class Core::Result (class Core::Path)>&&);
+    MCAPI JournaledFile(class std::function<class Core::Result (class Core::Path)> &&);
+    MCAPI class Core::Result close();
     MCAPI class Core::Result open(class Core::Path, class Core::FileOpenMode, enum Core::FileBufferingMode);
-    MCAPI class Core::Result write(void const*, unsigned __int64);
+    MCAPI class Core::Result write(void const *, unsigned __int64);
     MCAPI ~JournaledFile();
-    MCAPI static class Core::PathBuffer<std::string > findBackupPath(class Core::Path);
-    MCAPI static class Core::PathBuffer<std::string > findReadPath(class Core::Path);
+    MCAPI static class Core::PathBuffer<std::string> findBackupPath(class Core::Path);
+    MCAPI static class Core::PathBuffer<std::string> findReadPath(class Core::Path);
     MCAPI static bool isOldFile(class Core::Path);
-    MCAPI static void populateImportantFiles(class Core::Path, std::vector<std::string>&);
+    MCAPI static void populateImportantFiles(class Core::Path, std::vector<std::string> &);
     MCAPI static class Core::Result replaceHeadFileWithBackup(class Core::Path);
 
 protected:

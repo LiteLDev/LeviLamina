@@ -15,13 +15,13 @@ class ErrorPathStack {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ERRORPATHSTACK
 public:
-    class ErrorPathStack& operator=(class ErrorPathStack const&) = delete;
-    ErrorPathStack(class ErrorPathStack const&) = delete;
+    class ErrorPathStack& operator=(class ErrorPathStack const &) = delete;
+    ErrorPathStack(class ErrorPathStack const &) = delete;
     ErrorPathStack() = delete;
 #endif
 
 public:
-    MCAPI ErrorPathStack(std::vector<std::string>&, std::string const&);
+    MCAPI ErrorPathStack(std::vector<std::string> &, std::string const &);
     MCAPI ~ErrorPathStack();
 
 protected:

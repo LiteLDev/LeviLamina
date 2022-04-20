@@ -18,13 +18,13 @@ class FormJsonValidator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FORMJSONVALIDATOR
 public:
-    class FormJsonValidator& operator=(class FormJsonValidator const&) = delete;
-    FormJsonValidator(class FormJsonValidator const&) = delete;
+    class FormJsonValidator& operator=(class FormJsonValidator const &) = delete;
+    FormJsonValidator(class FormJsonValidator const &) = delete;
     FormJsonValidator() = delete;
 #endif
 
 public:
-    MCAPI static class JsonValidator::Property getContentItemProperty(class JsonValidator::Property const&, class JsonValidator::Property const&, class JsonValidator::Property const&, class JsonValidator::Property const&, class JsonValidator::Property const&, class JsonValidator::Property const&);
+    MCAPI static class JsonValidator::Property getContentItemProperty(class JsonValidator::Property const &, class JsonValidator::Property const &, class JsonValidator::Property const &, class JsonValidator::Property const &, class JsonValidator::Property const &, class JsonValidator::Property const &);
     MCAPI static class JsonValidator::Property getControlLockedProperty();
     MCAPI static class JsonValidator::Property getDropdownProperty(bool);
     MCAPI static class JsonValidator::Property getLabelProperty();

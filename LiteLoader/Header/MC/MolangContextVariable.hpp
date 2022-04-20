@@ -15,13 +15,13 @@ struct MolangContextVariable {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGCONTEXTVARIABLE
 public:
-    struct MolangContextVariable& operator=(struct MolangContextVariable const&) = delete;
-    MolangContextVariable(struct MolangContextVariable const&) = delete;
+    struct MolangContextVariable& operator=(struct MolangContextVariable const &) = delete;
+    MolangContextVariable(struct MolangContextVariable const &) = delete;
     MolangContextVariable() = delete;
 #endif
 
 public:
-    MCAPI MolangContextVariable(class HashedString const&);
+    MCAPI MolangContextVariable(class HashedString const &);
     MCAPI ~MolangContextVariable();
 
 protected:

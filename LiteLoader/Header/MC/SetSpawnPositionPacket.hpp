@@ -18,16 +18,16 @@ class SetSpawnPositionPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETSPAWNPOSITIONPACKET
 public:
-    class SetSpawnPositionPacket& operator=(class SetSpawnPositionPacket const&) = delete;
-    SetSpawnPositionPacket(class SetSpawnPositionPacket const&) = delete;
+    class SetSpawnPositionPacket& operator=(class SetSpawnPositionPacket const &) = delete;
+    SetSpawnPositionPacket(class SetSpawnPositionPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~SetSpawnPositionPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~SetSpawnPositionPacket(){
          (SetSpawnPositionPacket::*rv)();
@@ -35,8 +35,8 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI SetSpawnPositionPacket(class AutomaticID<class Dimension, int>, class BlockPos const&, class BlockPos const&);
-    MCAPI SetSpawnPositionPacket(enum SpawnPositionType, class AutomaticID<class Dimension, int>, class BlockPos const&);
+    MCAPI SetSpawnPositionPacket(class AutomaticID<class Dimension, int>, class BlockPos const &, class BlockPos const &);
+    MCAPI SetSpawnPositionPacket(enum SpawnPositionType, class AutomaticID<class Dimension, int>, class BlockPos const &);
     MCAPI SetSpawnPositionPacket();
 
 protected:

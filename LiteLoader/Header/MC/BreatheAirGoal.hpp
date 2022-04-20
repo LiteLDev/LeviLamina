@@ -17,8 +17,8 @@ class BreatheAirGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREATHEAIRGOAL
 public:
-    class BreatheAirGoal& operator=(class BreatheAirGoal const&) = delete;
-    BreatheAirGoal(class BreatheAirGoal const&) = delete;
+    class BreatheAirGoal& operator=(class BreatheAirGoal const &) = delete;
+    BreatheAirGoal(class BreatheAirGoal const &) = delete;
     BreatheAirGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline bool canBeInterrupted(){
         bool (BreatheAirGoal::*rv)();
@@ -38,7 +38,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI BreatheAirGoal(class Mob&);
+    MCAPI BreatheAirGoal(class Mob &);
 
 protected:
 

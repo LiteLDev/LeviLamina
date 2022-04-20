@@ -17,22 +17,22 @@ class DefinitionInstanceGroup {
 
 public:
     MCAPI DefinitionInstanceGroup();
-    MCAPI DefinitionInstanceGroup(class DefinitionInstanceGroup&&);
-    MCAPI DefinitionInstanceGroup(class DefinitionInstanceGroup const&);
-    MCAPI void add(class std::shared_ptr<class IDefinitionInstance> const&);
+    MCAPI DefinitionInstanceGroup(class DefinitionInstanceGroup &&);
+    MCAPI DefinitionInstanceGroup(class DefinitionInstanceGroup const &);
+    MCAPI void add(class std::shared_ptr<class IDefinitionInstance> const &);
     MCAPI void clear();
-    MCAPI void combine(class DefinitionInstanceGroup const&);
-    MCAPI bool contains(class DefinitionInstanceGroup const&) const;
-    MCAPI class DefinitionInstanceGroup& operator=(class DefinitionInstanceGroup&&);
-    MCAPI class DefinitionInstanceGroup& operator=(class DefinitionInstanceGroup const&);
-    MCAPI bool overlaps(class DefinitionInstanceGroup const&) const;
-    MCAPI void remove(class std::shared_ptr<class IDefinitionInstance> const&);
-    MCAPI void subtract(class DefinitionInstanceGroup const&);
+    MCAPI void combine(class DefinitionInstanceGroup const &);
+    MCAPI bool contains(class DefinitionInstanceGroup const &) const;
+    MCAPI class DefinitionInstanceGroup & operator=(class DefinitionInstanceGroup &&);
+    MCAPI class DefinitionInstanceGroup & operator=(class DefinitionInstanceGroup const &);
+    MCAPI bool overlaps(class DefinitionInstanceGroup const &) const;
+    MCAPI void remove(class std::shared_ptr<class IDefinitionInstance> const &);
+    MCAPI void subtract(class DefinitionInstanceGroup const &);
     MCAPI ~DefinitionInstanceGroup();
 
 protected:
 
 private:
-    MCAPI std::string const& _getDefinitionNameFromTypeId(unsigned short const&) const;
+    MCAPI std::string const & _getDefinitionNameFromTypeId(unsigned short const &) const;
 
 };

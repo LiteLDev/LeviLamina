@@ -15,8 +15,8 @@ struct ScriptPlayerLeaveEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLAYERLEAVEEVENT
 public:
-    struct ScriptPlayerLeaveEvent& operator=(struct ScriptPlayerLeaveEvent const&) = delete;
-    ScriptPlayerLeaveEvent(struct ScriptPlayerLeaveEvent const&) = delete;
+    struct ScriptPlayerLeaveEvent& operator=(struct ScriptPlayerLeaveEvent const &) = delete;
+    ScriptPlayerLeaveEvent(struct ScriptPlayerLeaveEvent const &) = delete;
     ScriptPlayerLeaveEvent() = delete;
 #endif
 

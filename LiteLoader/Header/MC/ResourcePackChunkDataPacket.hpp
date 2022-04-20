@@ -18,16 +18,16 @@ class ResourcePackChunkDataPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKCHUNKDATAPACKET
 public:
-    class ResourcePackChunkDataPacket& operator=(class ResourcePackChunkDataPacket const&) = delete;
-    ResourcePackChunkDataPacket(class ResourcePackChunkDataPacket const&) = delete;
+    class ResourcePackChunkDataPacket& operator=(class ResourcePackChunkDataPacket const &) = delete;
+    ResourcePackChunkDataPacket(class ResourcePackChunkDataPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ResourcePackChunkDataPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~ResourcePackChunkDataPacket(){
          (ResourcePackChunkDataPacket::*rv)();
@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ResourcePackChunkDataPacket(std::string const&, int, unsigned __int64, std::vector<unsigned char> const&);
+    MCAPI ResourcePackChunkDataPacket(std::string const &, int, unsigned __int64, std::vector<unsigned char> const &);
     MCAPI ResourcePackChunkDataPacket();
 
 protected:

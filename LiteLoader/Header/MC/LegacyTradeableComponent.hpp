@@ -17,48 +17,49 @@ class LegacyTradeableComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYTRADEABLECOMPONENT
 public:
-    class LegacyTradeableComponent& operator=(class LegacyTradeableComponent const&) = delete;
-    LegacyTradeableComponent(class LegacyTradeableComponent const&) = delete;
+    class LegacyTradeableComponent& operator=(class LegacyTradeableComponent const &) = delete;
+    LegacyTradeableComponent(class LegacyTradeableComponent const &) = delete;
 #endif
 
 public:
     MCAPI void DecrementMerchantTimer();
     MCAPI void IncrementTradeTier();
     MCAPI LegacyTradeableComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag&);
-    MCAPI class UpdateTradePacket createDataPacket(class Actor&, enum ContainerID);
+    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI class UpdateTradePacket createDataPacket(class Actor &, enum ContainerID);
     MCAPI bool getAddRecipeOnUpdate() const;
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
-    MCAPI class Player const* getLastPlayerTradeName() const;
-    MCAPI class MerchantRecipeList* getOffers(class Actor&);
+    MCAPI std::string const & getDisplayName() const;
+    MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
+    MCAPI class Player const * getLastPlayerTradeName() const;
+    MCAPI class MerchantRecipeList * getOffers(class Actor &);
     MCAPI bool getResetLockedOnFirstTrade() const;
     MCAPI int getRiches() const;
     MCAPI int getTradeTier() const;
     MCAPI int getUpdateMerchantTimer() const;
-    MCAPI std::string const& loadDisplayName(class Actor&);
-    MCAPI void loadOffersFromTag(class CompoundTag const*);
-    MCAPI void notifyTrade(class Actor&, int);
-    MCAPI class LegacyTradeableComponent& operator=(class LegacyTradeableComponent&&);
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
-    MCAPI void reloadComponent(class Actor&);
-    MCAPI void restockAllRecipes(class Actor&);
+    MCAPI std::string const & loadDisplayName(class Actor &);
+    MCAPI void loadOffersFromTag(class CompoundTag const *);
+    MCAPI void notifyTrade(class Actor &, int);
+    MCAPI class LegacyTradeableComponent & operator=(class LegacyTradeableComponent &&);
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
+    MCAPI void reloadComponent(class Actor &);
+    MCAPI void restockAllRecipes(class Actor &);
     MCAPI void setAddRecipeOnUpdate(bool);
-    MCAPI void setOffers(class MerchantRecipeList&);
+    MCAPI void setOffers(class MerchantRecipeList &);
     MCAPI void setResetLockedOnFirstTrade(bool);
     MCAPI void setRiches(int);
     MCAPI void setTradeTier(int);
-    MCAPI bool shouldConvertTrades(class Actor&) const;
-    MCAPI bool shouldPersistTrades(class Actor&) const;
-    MCAPI void updateTradeTier(class Actor&);
+    MCAPI bool shouldConvertTrades(class Actor &) const;
+    MCAPI bool shouldPersistTrades(class Actor &) const;
+    MCAPI void updateTradeTier(class Actor &);
     MCAPI ~LegacyTradeableComponent();
-    MCAPI static bool isUseNewTradeScreen(class Actor const&);
+    MCAPI static bool isUseNewTradeScreen(class Actor const &);
 
 protected:
 
 private:
-    MCAPI struct TradeTable* _getTradeTable(class Actor&);
-    MCAPI void _rearrangeTradeList(class Actor&, std::vector<struct Trade>&, unsigned __int64);
-    MCAPI bool _refreshTrades(class Actor&);
-    MCAPI void _updateMaxTradeTier(class Actor&, int);
+    MCAPI struct TradeTable * _getTradeTable(class Actor &);
+    MCAPI void _rearrangeTradeList(class Actor &, std::vector<struct Trade> &, unsigned __int64);
+    MCAPI bool _refreshTrades(class Actor &);
+    MCAPI void _updateMaxTradeTier(class Actor &, int);
 
 };

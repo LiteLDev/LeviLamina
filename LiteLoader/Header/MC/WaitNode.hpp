@@ -17,14 +17,14 @@ class WaitNode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WAITNODE
 public:
-    class WaitNode& operator=(class WaitNode const&) = delete;
-    WaitNode(class WaitNode const&) = delete;
+    class WaitNode& operator=(class WaitNode const &) = delete;
+    WaitNode(class WaitNode const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~WaitNode();
-    /*1*/ virtual enum BehaviorStatus tick(class Actor&);
-    /*2*/ virtual void initializeFromDefinition(class Actor&);
+    /*1*/ virtual enum BehaviorStatus tick(class Actor &);
+    /*2*/ virtual void initializeFromDefinition(class Actor &);
     MCAPI WaitNode();
 
 protected:

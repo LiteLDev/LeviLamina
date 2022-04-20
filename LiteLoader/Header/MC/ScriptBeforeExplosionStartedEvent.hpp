@@ -17,8 +17,8 @@ struct ScriptBeforeExplosionStartedEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBEFOREEXPLOSIONSTARTEDEVENT
 public:
-    struct ScriptBeforeExplosionStartedEvent& operator=(struct ScriptBeforeExplosionStartedEvent const&) = delete;
-    ScriptBeforeExplosionStartedEvent(struct ScriptBeforeExplosionStartedEvent const&) = delete;
+    struct ScriptBeforeExplosionStartedEvent& operator=(struct ScriptBeforeExplosionStartedEvent const &) = delete;
+    ScriptBeforeExplosionStartedEvent(struct ScriptBeforeExplosionStartedEvent const &) = delete;
     ScriptBeforeExplosionStartedEvent() = delete;
 #endif
 

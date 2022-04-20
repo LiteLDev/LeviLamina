@@ -19,14 +19,14 @@ class ActorPassengerCountTest : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORPASSENGERCOUNTTEST
 public:
-    class ActorPassengerCountTest& operator=(class ActorPassengerCountTest const&) = delete;
-    ActorPassengerCountTest(class ActorPassengerCountTest const&) = delete;
+    class ActorPassengerCountTest& operator=(class ActorPassengerCountTest const &) = delete;
+    ActorPassengerCountTest(class ActorPassengerCountTest const &) = delete;
     ActorPassengerCountTest() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorPassengerCountTest();
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*6*/ virtual class Json::Value _serializeValue() const;
     /*

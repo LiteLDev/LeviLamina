@@ -17,14 +17,14 @@ class LootItemKilledByPlayerCondition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMKILLEDBYPLAYERCONDITION
 public:
-    class LootItemKilledByPlayerCondition& operator=(class LootItemKilledByPlayerCondition const&) = delete;
-    LootItemKilledByPlayerCondition(class LootItemKilledByPlayerCondition const&) = delete;
+    class LootItemKilledByPlayerCondition& operator=(class LootItemKilledByPlayerCondition const &) = delete;
+    LootItemKilledByPlayerCondition(class LootItemKilledByPlayerCondition const &) = delete;
     LootItemKilledByPlayerCondition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LootItemKilledByPlayerCondition();
-    /*1*/ virtual bool applies(class Random&, class LootTableContext&);
+    /*1*/ virtual bool applies(class Random &, class LootTableContext &);
 
 protected:
 

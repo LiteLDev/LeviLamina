@@ -17,13 +17,13 @@ struct DamageSensorTrigger {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAMAGESENSORTRIGGER
 public:
-    struct DamageSensorTrigger& operator=(struct DamageSensorTrigger const&) = delete;
+    struct DamageSensorTrigger& operator=(struct DamageSensorTrigger const &) = delete;
 #endif
 
 public:
-    MCAPI DamageSensorTrigger(struct DamageSensorTrigger const&);
+    MCAPI DamageSensorTrigger(struct DamageSensorTrigger const &);
     MCAPI DamageSensorTrigger();
-    MCAPI void setCause(std::string const&);
+    MCAPI void setCause(std::string const &);
     MCAPI ~DamageSensorTrigger();
 
 protected:

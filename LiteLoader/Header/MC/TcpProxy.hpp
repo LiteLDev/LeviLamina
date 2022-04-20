@@ -17,8 +17,8 @@ class TcpProxy {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TCPPROXY
 public:
-    class TcpProxy& operator=(class TcpProxy const&) = delete;
-    TcpProxy(class TcpProxy const&) = delete;
+    class TcpProxy& operator=(class TcpProxy const &) = delete;
+    TcpProxy(class TcpProxy const &) = delete;
     TcpProxy() = delete;
 #endif
 

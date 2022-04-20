@@ -18,15 +18,15 @@ class SlimeAttackDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLIMEATTACKDEFINITION
 public:
-    class SlimeAttackDefinition& operator=(class SlimeAttackDefinition const&) = delete;
-    SlimeAttackDefinition(class SlimeAttackDefinition const&) = delete;
+    class SlimeAttackDefinition& operator=(class SlimeAttackDefinition const &) = delete;
+    SlimeAttackDefinition(class SlimeAttackDefinition const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~SlimeAttackDefinition();
     MCAPI SlimeAttackDefinition();
-    MCAPI void initialize(class EntityContext&, class SlimeAttackGoal&);
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeAttackDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class SlimeAttackGoal &);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeAttackDefinition>> &);
 
 protected:
 

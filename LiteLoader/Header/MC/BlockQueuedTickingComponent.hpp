@@ -17,13 +17,13 @@ struct BlockQueuedTickingComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKQUEUEDTICKINGCOMPONENT
 public:
-    struct BlockQueuedTickingComponent& operator=(struct BlockQueuedTickingComponent const&) = delete;
-    BlockQueuedTickingComponent(struct BlockQueuedTickingComponent const&) = delete;
+    struct BlockQueuedTickingComponent& operator=(struct BlockQueuedTickingComponent const &) = delete;
+    BlockQueuedTickingComponent(struct BlockQueuedTickingComponent const &) = delete;
     BlockQueuedTickingComponent() = delete;
 #endif
 
 public:
-    MCAPI struct BlockQueuedTickingComponent& operator=(struct BlockQueuedTickingComponent&&);
+    MCAPI struct BlockQueuedTickingComponent & operator=(struct BlockQueuedTickingComponent &&);
     MCAPI ~BlockQueuedTickingComponent();
 
 protected:

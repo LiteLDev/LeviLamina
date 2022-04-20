@@ -17,16 +17,16 @@ class GameTestRunner {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETESTRUNNER
 public:
-    class GameTestRunner& operator=(class GameTestRunner const&) = delete;
-    GameTestRunner(class GameTestRunner const&) = delete;
+    class GameTestRunner& operator=(class GameTestRunner const &) = delete;
+    GameTestRunner(class GameTestRunner const &) = delete;
     GameTestRunner() = delete;
 #endif
 
 public:
-    MCAPI static void clearMarkers(class Level&);
-    MCAPI static std::vector<class gametest::GameTestBatch> groupTestsIntoBatches(class gametest::GameTestRegistry&, std::vector<class std::shared_ptr<class gametest::BaseGameTestFunction>> const&, int);
-    MCAPI static void runTest(class std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker&);
-    MCAPI static std::unique_ptr<class gametest::BaseGameTestBatchRunner> runTests(class Dimension&, class gametest::GameTestRegistry&, std::unique_ptr<class gametest::IGameTestHelperProvider>, class gametest::GameTestTicker&, struct gametest::TestParameters&&);
+    MCAPI static void clearMarkers(class Level &);
+    MCAPI static std::vector<class gametest::GameTestBatch> groupTestsIntoBatches(class gametest::GameTestRegistry &, std::vector<class std::shared_ptr<class gametest::BaseGameTestFunction>> const &, int);
+    MCAPI static void runTest(class std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker &);
+    MCAPI static std::unique_ptr<class gametest::BaseGameTestBatchRunner> runTests(class Dimension &, class gametest::GameTestRegistry &, std::unique_ptr<class gametest::IGameTestHelperProvider>, class gametest::GameTestTicker &, struct gametest::TestParameters &&);
 
 protected:
 

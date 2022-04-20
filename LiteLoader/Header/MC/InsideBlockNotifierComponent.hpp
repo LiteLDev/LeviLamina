@@ -17,16 +17,16 @@ class InsideBlockNotifierComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEBLOCKNOTIFIERCOMPONENT
 public:
-    class InsideBlockNotifierComponent& operator=(class InsideBlockNotifierComponent const&) = delete;
-    InsideBlockNotifierComponent(class InsideBlockNotifierComponent const&) = delete;
+    class InsideBlockNotifierComponent& operator=(class InsideBlockNotifierComponent const &) = delete;
+    InsideBlockNotifierComponent(class InsideBlockNotifierComponent const &) = delete;
     InsideBlockNotifierComponent() = delete;
 #endif
 
 public:
-    MCAPI std::vector<class InsideBlockEventMap> const& getBlockList() const;
-    MCAPI bool isTrackedBlock(class Block const&) const;
+    MCAPI std::vector<class InsideBlockEventMap> const & getBlockList() const;
+    MCAPI bool isTrackedBlock(class Block const &) const;
     MCAPI void resetBlocksInsideState();
-    MCAPI void setInsideBlock(class Block const&, bool);
+    MCAPI void setInsideBlock(class Block const &, bool);
 
 protected:
 

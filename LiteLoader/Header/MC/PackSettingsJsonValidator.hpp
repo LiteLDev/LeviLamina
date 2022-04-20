@@ -18,8 +18,8 @@ class PackSettingsJsonValidator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSETTINGSJSONVALIDATOR
 public:
-    class PackSettingsJsonValidator& operator=(class PackSettingsJsonValidator const&) = delete;
-    PackSettingsJsonValidator(class PackSettingsJsonValidator const&) = delete;
+    class PackSettingsJsonValidator& operator=(class PackSettingsJsonValidator const &) = delete;
+    PackSettingsJsonValidator(class PackSettingsJsonValidator const &) = delete;
     PackSettingsJsonValidator() = delete;
 #endif
 

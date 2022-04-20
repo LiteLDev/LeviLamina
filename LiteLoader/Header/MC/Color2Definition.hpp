@@ -18,8 +18,8 @@ struct Color2Definition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COLOR2DEFINITION
 public:
-    struct Color2Definition& operator=(struct Color2Definition const&) = delete;
-    Color2Definition(struct Color2Definition const&) = delete;
+    struct Color2Definition& operator=(struct Color2Definition const &) = delete;
+    Color2Definition(struct Color2Definition const &) = delete;
     Color2Definition() = delete;
 #endif
 

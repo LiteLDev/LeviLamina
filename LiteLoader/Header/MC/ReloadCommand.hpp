@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class ReloadCommand {
+class ReloadCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,15 +18,15 @@ class ReloadCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RELOADCOMMAND
 public:
-    class ReloadCommand& operator=(class ReloadCommand const&) = delete;
-    ReloadCommand(class ReloadCommand const&) = delete;
+    class ReloadCommand& operator=(class ReloadCommand const &) = delete;
+    ReloadCommand(class ReloadCommand const &) = delete;
     ReloadCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ReloadCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 

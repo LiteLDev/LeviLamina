@@ -17,16 +17,16 @@ class ActorSkeletalAnimationPtr {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSKELETALANIMATIONPTR
 public:
-    ActorSkeletalAnimationPtr(class ActorSkeletalAnimationPtr const&) = delete;
+    ActorSkeletalAnimationPtr(class ActorSkeletalAnimationPtr const &) = delete;
     ActorSkeletalAnimationPtr() = delete;
 #endif
 
 public:
-    MCAPI class HashedString const& getName() const;
+    MCAPI class HashedString const & getName() const;
     MCAPI bool isNull() const;
-    MCAPI class ActorSkeletalAnimation const* operator->() const;
-    MCAPI class ActorSkeletalAnimation* operator->();
-    MCAPI class ActorSkeletalAnimationPtr& operator=(class ActorSkeletalAnimationPtr const&);
+    MCAPI class ActorSkeletalAnimation const * operator->() const;
+    MCAPI class ActorSkeletalAnimation * operator->();
+    MCAPI class ActorSkeletalAnimationPtr & operator=(class ActorSkeletalAnimationPtr const &);
     MCAPI ~ActorSkeletalAnimationPtr();
     MCAPI static class ActorSkeletalAnimationPtr const NONE;
 

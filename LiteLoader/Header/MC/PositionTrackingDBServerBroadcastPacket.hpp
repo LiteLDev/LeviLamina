@@ -18,16 +18,16 @@ class PositionTrackingDBServerBroadcastPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POSITIONTRACKINGDBSERVERBROADCASTPACKET
 public:
-    class PositionTrackingDBServerBroadcastPacket& operator=(class PositionTrackingDBServerBroadcastPacket const&) = delete;
-    PositionTrackingDBServerBroadcastPacket(class PositionTrackingDBServerBroadcastPacket const&) = delete;
+    class PositionTrackingDBServerBroadcastPacket& operator=(class PositionTrackingDBServerBroadcastPacket const &) = delete;
+    PositionTrackingDBServerBroadcastPacket(class PositionTrackingDBServerBroadcastPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~PositionTrackingDBServerBroadcastPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~PositionTrackingDBServerBroadcastPacket(){
          (PositionTrackingDBServerBroadcastPacket::*rv)();

@@ -18,16 +18,16 @@ class SlimeMoveControlDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLIMEMOVECONTROLDESCRIPTION
 public:
-    class SlimeMoveControlDescription& operator=(class SlimeMoveControlDescription const&) = delete;
-    SlimeMoveControlDescription(class SlimeMoveControlDescription const&) = delete;
+    class SlimeMoveControlDescription& operator=(class SlimeMoveControlDescription const &) = delete;
+    SlimeMoveControlDescription(class SlimeMoveControlDescription const &) = delete;
     SlimeMoveControlDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~SlimeMoveControlDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~SlimeMoveControlDescription(){
          (SlimeMoveControlDescription::*rv)();

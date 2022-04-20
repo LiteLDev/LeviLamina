@@ -15,8 +15,8 @@ struct GameRuleId {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMERULEID
 public:
-    struct GameRuleId& operator=(struct GameRuleId const&) = delete;
-    GameRuleId(struct GameRuleId const&) = delete;
+    struct GameRuleId& operator=(struct GameRuleId const &) = delete;
+    GameRuleId(struct GameRuleId const &) = delete;
     GameRuleId() = delete;
 #endif
 

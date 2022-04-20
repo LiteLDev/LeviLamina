@@ -18,8 +18,8 @@ class HideGoal : public MoveToPOIGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HIDEGOAL
 public:
-    class HideGoal& operator=(class HideGoal const&) = delete;
-    HideGoal(class HideGoal const&) = delete;
+    class HideGoal& operator=(class HideGoal const &) = delete;
+    HideGoal(class HideGoal const &) = delete;
     HideGoal() = delete;
 #endif
 
@@ -30,12 +30,12 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*16*/ virtual unsigned __int64 _getRepathTime() const;
     /*17*/ virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType) const;
-    MCAPI HideGoal(class Mob&, float, float, float, enum POIType);
+    MCAPI HideGoal(class Mob &, float, float, float, enum POIType);
 
 protected:
 

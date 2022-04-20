@@ -19,14 +19,14 @@ class FilterTestHasTradeSupply : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERTESTHASTRADESUPPLY
 public:
-    class FilterTestHasTradeSupply& operator=(class FilterTestHasTradeSupply const&) = delete;
-    FilterTestHasTradeSupply(class FilterTestHasTradeSupply const&) = delete;
+    class FilterTestHasTradeSupply& operator=(class FilterTestHasTradeSupply const &) = delete;
+    FilterTestHasTradeSupply(class FilterTestHasTradeSupply const &) = delete;
     FilterTestHasTradeSupply() = delete;
 #endif
 
 public:
     /*0*/ virtual ~FilterTestHasTradeSupply();
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*
     inline  ~FilterTestHasTradeSupply(){

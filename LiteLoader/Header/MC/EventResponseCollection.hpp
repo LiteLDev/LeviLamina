@@ -18,8 +18,8 @@ struct EventResponseCollection {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EVENTRESPONSECOLLECTION
 public:
-    struct EventResponseCollection& operator=(struct EventResponseCollection const&) = delete;
-    EventResponseCollection(struct EventResponseCollection const&) = delete;
+    struct EventResponseCollection& operator=(struct EventResponseCollection const &) = delete;
+    EventResponseCollection(struct EventResponseCollection const &) = delete;
     EventResponseCollection() = delete;
 #endif
 

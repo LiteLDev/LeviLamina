@@ -16,14 +16,14 @@ class AddRiderDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADDRIDERDEFINITION
 public:
-    class AddRiderDefinition& operator=(class AddRiderDefinition const&) = delete;
-    AddRiderDefinition(class AddRiderDefinition const&) = delete;
+    class AddRiderDefinition& operator=(class AddRiderDefinition const &) = delete;
+    AddRiderDefinition(class AddRiderDefinition const &) = delete;
     AddRiderDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&, class AddRiderComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AddRiderDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class AddRiderComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AddRiderDefinition>> &);
 
 protected:
 

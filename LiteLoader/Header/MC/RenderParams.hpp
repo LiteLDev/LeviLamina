@@ -17,18 +17,19 @@ class RenderParams {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RENDERPARAMS
 public:
-    class RenderParams& operator=(class RenderParams const&) = delete;
+    class RenderParams& operator=(class RenderParams const &) = delete;
 #endif
 
 public:
-    MCAPI RenderParams(class RenderParams const&);
-    MCAPI RenderParams(class RenderParams&&);
+    MCAPI RenderParams(class RenderParams const &);
+    MCAPI RenderParams(class RenderParams &&);
     MCAPI RenderParams();
-    MCAPI class Actor* getActorTarget(enum FilterSubject const&) const;
-    MCAPI class RenderParams& init(class BaseActorRenderContext*, class Actor*, class AnimationComponent*, class MolangVariableMap*, class std::shared_ptr<class DataDrivenModel>, float, float, int, bool, class std::function<float (void)>);
-    MCAPI float& operator[](unsigned __int64);
+    MCAPI class Actor * getActorTarget(enum FilterSubject const &) const;
+    MCAPI class RenderParams & init(class BaseActorRenderContext *, class Actor *, class AnimationComponent *, class MolangVariableMap *, class std::shared_ptr<class DataDrivenModel>, float, float, int, bool, class std::function<float (void)>);
+    MCAPI class RenderParams & operator=(class RenderParams &&);
+    MCAPI float & operator[](unsigned __int64);
     MCAPI ~RenderParams();
-    MCAPI static class RenderParams& getRenderParams(class Actor&);
+    MCAPI static class RenderParams & getRenderParams(class Actor &);
 
 protected:
 

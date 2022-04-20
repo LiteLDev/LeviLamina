@@ -19,14 +19,14 @@ class RepeatUntilFailureDefinition : public BehaviorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPEATUNTILFAILUREDEFINITION
 public:
-    class RepeatUntilFailureDefinition& operator=(class RepeatUntilFailureDefinition const&) = delete;
-    RepeatUntilFailureDefinition(class RepeatUntilFailureDefinition const&) = delete;
+    class RepeatUntilFailureDefinition& operator=(class RepeatUntilFailureDefinition const &) = delete;
+    RepeatUntilFailureDefinition(class RepeatUntilFailureDefinition const &) = delete;
     RepeatUntilFailureDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~RepeatUntilFailureDefinition();
-    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 
 protected:
 

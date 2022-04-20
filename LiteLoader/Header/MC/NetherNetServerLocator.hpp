@@ -2,14 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "RakNet.hpp"
+#include "StubServerLocator.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class NetherNetServerLocator {
+class NetherNetServerLocator : public StubServerLocator {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -24,15 +24,15 @@ struct ServerData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERNETSERVERLOCATOR
 public:
-    class NetherNetServerLocator& operator=(class NetherNetServerLocator const&) = delete;
-    NetherNetServerLocator(class NetherNetServerLocator const&) = delete;
+    class NetherNetServerLocator& operator=(class NetherNetServerLocator const &) = delete;
+    NetherNetServerLocator(class NetherNetServerLocator const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~NetherNetServerLocator();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual void startAnnouncingServer(std::string const&, std::string const&, enum GameType, int, int, bool);
+    /*3*/ virtual void startAnnouncingServer(std::string const &, std::string const &, enum GameType, int, int, bool);
     /*4*/ virtual void stopAnnouncingServer();
     /*5*/ virtual void startServerDiscovery(struct PortPair);
     /*6*/ virtual void stopServerDiscovery();
@@ -43,15 +43,17 @@ public:
     /*11*/ virtual void update();
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
+    /*14*/ virtual void __unk_vfn_14();
     MCAPI NetherNetServerLocator();
 
 protected:
 
 private:
-    MCAPI void _onBroadcastResponseCallback(unsigned __int64, void const*, int);
-    MCAPI void _setBroadcastDiscoveryResponse(struct NetherNetServerLocator::ServerData const&);
+    MCAPI bool _isNetherNetOverLANAllowed() const;
+    MCAPI void _onBroadcastResponseCallback(unsigned __int64, void const *, int);
+    MCAPI void _setBroadcastDiscoveryResponse(struct NetherNetServerLocator::ServerData const &);
     MCAPI void _setIsAnnouncing(bool);
     MCAPI void _setIsDiscovering(bool);
-    MCAPI struct PingedCompatibleServer _transformFrom(unsigned __int64, struct NetherNetServerLocator::ServerData const&);
+    MCAPI struct PingedCompatibleServer _transformFrom(unsigned __int64, struct NetherNetServerLocator::ServerData const &);
 
 };

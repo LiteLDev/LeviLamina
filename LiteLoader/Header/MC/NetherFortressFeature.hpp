@@ -18,24 +18,19 @@ class NetherFortressFeature : public StructureFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERFORTRESSFEATURE
 public:
-    class NetherFortressFeature& operator=(class NetherFortressFeature const&) = delete;
-    NetherFortressFeature(class NetherFortressFeature const&) = delete;
+    class NetherFortressFeature& operator=(class NetherFortressFeature const &) = delete;
+    NetherFortressFeature(class NetherFortressFeature const &) = delete;
     NetherFortressFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~NetherFortressFeature();
-    /*3*/ virtual bool isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&);
-    /*4*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
-    /*
-    inline  ~NetherFortressFeature(){
-         (NetherFortressFeature::*rv)();
-        *((void**)&rv) = dlsym("??1NetherFortressFeature@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
-    MCAPI NetherFortressFeature(unsigned int&, class BaseGameVersion const&);
-    MCAPI static void initMobSpawnTypes(class HardcodedSpawnAreaRegistry&);
+    /*1*/ virtual bool shouldAddHardcodedSpawnAreas() const;
+    /*2*/ virtual bool shouldPostProcessMobs() const;
+    /*4*/ virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry &);
+    /*5*/ virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &);
+    /*6*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
+    MCAPI NetherFortressFeature(unsigned int &, class BaseGameVersion const &);
 
 protected:
 

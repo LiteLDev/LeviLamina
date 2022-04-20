@@ -17,15 +17,15 @@ class MountTamingSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOUNTTAMINGSYSTEM
 public:
-    class MountTamingSystem& operator=(class MountTamingSystem const&) = delete;
-    MountTamingSystem(class MountTamingSystem const&) = delete;
+    class MountTamingSystem& operator=(class MountTamingSystem const &) = delete;
+    MountTamingSystem(class MountTamingSystem const &) = delete;
     MountTamingSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~MountTamingSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

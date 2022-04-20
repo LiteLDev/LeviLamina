@@ -17,8 +17,8 @@ class GuardianAttackGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GUARDIANATTACKGOAL
 public:
-    class GuardianAttackGoal& operator=(class GuardianAttackGoal const&) = delete;
-    GuardianAttackGoal(class GuardianAttackGoal const&) = delete;
+    class GuardianAttackGoal& operator=(class GuardianAttackGoal const &) = delete;
+    GuardianAttackGoal(class GuardianAttackGoal const &) = delete;
     GuardianAttackGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI GuardianAttackGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI GuardianAttackGoal(class Mob &);
 
 protected:
 

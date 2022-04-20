@@ -17,21 +17,21 @@ class BuoyancyComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUOYANCYCOMPONENT
 public:
-    class BuoyancyComponent& operator=(class BuoyancyComponent const&) = delete;
-    BuoyancyComponent(class BuoyancyComponent const&) = delete;
+    class BuoyancyComponent& operator=(class BuoyancyComponent const &) = delete;
+    BuoyancyComponent(class BuoyancyComponent const &) = delete;
 #endif
 
 public:
     MCAPI BuoyancyComponent();
-    MCAPI bool canFloat(class Actor const&) const;
+    MCAPI bool canFloat(class Actor const &) const;
     MCAPI float getBaseBuoyancy() const;
     MCAPI float getBigWaveProbability() const;
     MCAPI float getBigWaveSpeedMultiplier() const;
     MCAPI double getTimer() const;
     MCAPI void increaseTimer(float);
-    MCAPI void loadData(std::string const&, class SemVersion const&);
-    MCAPI bool needToResurface(class Actor const&) const;
-    MCAPI class BuoyancyComponent& operator=(class BuoyancyComponent&&);
+    MCAPI void loadData(std::string const &, class SemVersion const &);
+    MCAPI bool needToResurface(class Actor const &) const;
+    MCAPI class BuoyancyComponent & operator=(class BuoyancyComponent &&);
     MCAPI bool shouldApplyGravity() const;
     MCAPI bool shouldSimulateWaves() const;
 

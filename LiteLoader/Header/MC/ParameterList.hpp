@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "RTree.hpp"
 
 #define BEFORE_EXTRA
 
@@ -15,13 +16,15 @@ class ParameterList {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARAMETERLIST
 public:
-    class ParameterList& operator=(class ParameterList const&) = delete;
-    ParameterList(class ParameterList const&) = delete;
+    class ParameterList& operator=(class ParameterList const &) = delete;
+    ParameterList(class ParameterList const &) = delete;
     ParameterList() = delete;
 #endif
 
 public:
-    MCAPI ParameterList(class ParameterList&&);
+    MCAPI ParameterList(class ParameterList &&);
+    MCAPI ParameterList(std::vector<struct BiomeNoiseTarget> const &);
+    MCAPI class Biome * findTarget(struct TargetPoint const &, struct RTree::Hint *) const;
     MCAPI ~ParameterList();
 
 protected:

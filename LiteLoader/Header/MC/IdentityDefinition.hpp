@@ -25,17 +25,17 @@ enum class Type : char
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IDENTITYDEFINITION
 public:
-    class IdentityDefinition& operator=(class IdentityDefinition const&) = delete;
-    IdentityDefinition(class IdentityDefinition const&) = delete;
+    class IdentityDefinition& operator=(class IdentityDefinition const &) = delete;
+    IdentityDefinition(class IdentityDefinition const &) = delete;
     IdentityDefinition() = delete;
 #endif
 
 public:
-    MCAPI struct ActorUniqueID const& getEntityId() const;
-    MCAPI std::string const& getFakePlayerName() const;
+    MCAPI struct ActorUniqueID const & getEntityId() const;
+    MCAPI std::string const & getFakePlayerName() const;
     MCAPI enum IdentityDefinition::Type getIdentityType() const;
-    MCAPI std::string const& getName(class std::function<std::string const& (struct ActorUniqueID)> const&) const;
-    MCAPI struct PlayerScoreboardId const& getPlayerId() const;
+    MCAPI std::string const & getName(class std::function<std::string const & (struct ActorUniqueID)> const &) const;
+    MCAPI struct PlayerScoreboardId const & getPlayerId() const;
     MCAPI bool isEntityType() const;
     MCAPI bool isPlayerType() const;
     MCAPI bool isValid() const;

@@ -20,8 +20,8 @@ enum RunOneResult;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BACKGROUNDWORKER
 public:
-    class BackgroundWorker& operator=(class BackgroundWorker const&) = delete;
-    BackgroundWorker(class BackgroundWorker const&) = delete;
+    class BackgroundWorker& operator=(class BackgroundWorker const &) = delete;
+    BackgroundWorker(class BackgroundWorker const &) = delete;
     BackgroundWorker() = delete;
 #endif
 
@@ -41,7 +41,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI BackgroundWorker(std::string, bool, class Bedrock::Threading::OSThreadPriority const&, class std::optional<unsigned __int64>, class WorkerPool&, bool);
+    MCAPI BackgroundWorker(std::string, bool, class Bedrock::Threading::OSThreadPriority const &, class std::optional<unsigned __int64>, class WorkerPool &, bool);
     MCAPI unsigned __int64 getApproximateTaskCount() const;
     MCAPI class std::thread::id getThreadId() const;
     MCAPI bool isIdle() const;
@@ -50,13 +50,13 @@ public:
     MCAPI void resortPriorityQueue();
     MCAPI void start();
     MCAPI void wake();
-    MCAPI static class BackgroundWorker* getLocal();
+    MCAPI static class BackgroundWorker * getLocal();
 
 protected:
 
 private:
     MCAPI bool _processNextTask();
     MCAPI enum BackgroundWorker::RunOneResult _runOneTask();
-    MCAPI static class BackgroundWorker* gLocalWorkerMappingSingleton;
+    MCAPI static class BackgroundWorker * gLocalWorkerMappingSingleton;
 
 };

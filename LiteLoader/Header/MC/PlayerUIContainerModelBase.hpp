@@ -18,8 +18,8 @@ class PlayerUIContainerModelBase : public ContainerModel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERUICONTAINERMODELBASE
 public:
-    class PlayerUIContainerModelBase& operator=(class PlayerUIContainerModelBase const&) = delete;
-    PlayerUIContainerModelBase(class PlayerUIContainerModelBase const&) = delete;
+    class PlayerUIContainerModelBase& operator=(class PlayerUIContainerModelBase const &) = delete;
+    PlayerUIContainerModelBase(class PlayerUIContainerModelBase const &) = delete;
     PlayerUIContainerModelBase() = delete;
 #endif
 
@@ -36,10 +36,10 @@ public:
     /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual void __unk_vfn_17();
     /*19*/ virtual void __unk_vfn_19();
-    /*20*/ virtual class Container* _getContainer() const;
+    /*20*/ virtual class Container * _getContainer() const;
     /*21*/ virtual int _getContainerOffset() const;
-    /*22*/ virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
-    MCAPI PlayerUIContainerModelBase(enum ContainerEnumName, class Player&, int, enum ContainerCategory);
+    /*22*/ virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
+    MCAPI PlayerUIContainerModelBase(enum ContainerEnumName, class Player &, int, enum ContainerCategory);
 
 protected:
     MCAPI void _refreshContainer(bool);

@@ -19,15 +19,15 @@ class FilterTestDimensionWeather : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERTESTDIMENSIONWEATHER
 public:
-    class FilterTestDimensionWeather& operator=(class FilterTestDimensionWeather const&) = delete;
-    FilterTestDimensionWeather(class FilterTestDimensionWeather const&) = delete;
+    class FilterTestDimensionWeather& operator=(class FilterTestDimensionWeather const &) = delete;
+    FilterTestDimensionWeather(class FilterTestDimensionWeather const &) = delete;
     FilterTestDimensionWeather() = delete;
 #endif
 
 public:
     /*0*/ virtual ~FilterTestDimensionWeather();
-    /*1*/ virtual bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*1*/ virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*6*/ virtual class Json::Value _serializeValue() const;
 

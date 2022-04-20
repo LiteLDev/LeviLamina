@@ -17,16 +17,16 @@ class ItemStackNetManagerScreen {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKNETMANAGERSCREEN
 public:
-    class ItemStackNetManagerScreen& operator=(class ItemStackNetManagerScreen const&) = delete;
-    ItemStackNetManagerScreen(class ItemStackNetManagerScreen const&) = delete;
+    class ItemStackNetManagerScreen& operator=(class ItemStackNetManagerScreen const &) = delete;
+    ItemStackNetManagerScreen(class ItemStackNetManagerScreen const &) = delete;
     ItemStackNetManagerScreen() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ItemStackNetManagerScreen();
-    MCAPI ItemStackNetManagerScreen(class EntityRegistry&);
-    MCAPI class EntityContext& getEntity();
-    MCAPI class EntityContext const& getEntity() const;
+    MCAPI ItemStackNetManagerScreen(class EntityRegistry &);
+    MCAPI class EntityContext & getEntity();
+    MCAPI class EntityContext const & getEntity() const;
 
 protected:
 

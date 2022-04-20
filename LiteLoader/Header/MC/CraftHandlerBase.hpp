@@ -18,19 +18,19 @@ class CraftHandlerBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTHANDLERBASE
 public:
-    class CraftHandlerBase& operator=(class CraftHandlerBase const&) = delete;
-    CraftHandlerBase(class CraftHandlerBase const&) = delete;
+    class CraftHandlerBase& operator=(class CraftHandlerBase const &) = delete;
+    CraftHandlerBase(class CraftHandlerBase const &) = delete;
     CraftHandlerBase() = delete;
 #endif
 
 public:
     /*0*/ virtual ~CraftHandlerBase();
-    /*1*/ virtual enum ItemStackNetResult handleConsumedItem(enum ContainerEnumName, unsigned char, class ItemStack const&);
+    /*1*/ virtual enum ItemStackNetResult handleConsumedItem(enum ContainerEnumName, unsigned char, class ItemStack const &);
     /*2*/ virtual enum ItemStackNetResult preHandleAction(enum ItemStackRequestActionType);
     /*3*/ virtual void endRequestBatch();
-    /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&) = 0;
+    /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &) = 0;
     /*5*/ virtual void _postCraftRequest(bool);
-    /*6*/ virtual class Recipes const* _getLevelRecipes() const;
+    /*6*/ virtual class Recipes const * _getLevelRecipes() const;
     /*
     inline void endRequestBatch(){
         void (CraftHandlerBase::*rv)();
@@ -43,10 +43,10 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI CraftHandlerBase(class ItemStackRequestActionCraftHandler&);
+    MCAPI CraftHandlerBase(class ItemStackRequestActionCraftHandler &);
 
 protected:
-    MCAPI class std::tuple<enum ItemStackNetResult, class Recipe const* > _getRecipeFromNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&);
+    MCAPI class std::tuple<enum ItemStackNetResult, class Recipe const *> _getRecipeFromNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum ContainerEnumName);
     MCAPI struct ItemStackRequestHandlerSlotInfo _validateRequestSlot(struct ItemStackRequestSlotInfo);
 

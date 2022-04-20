@@ -17,20 +17,20 @@ class POIInstance {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POIINSTANCE
 public:
-    class POIInstance& operator=(class POIInstance const&) = delete;
-    POIInstance(class POIInstance const&) = delete;
+    class POIInstance& operator=(class POIInstance const &) = delete;
+    POIInstance(class POIInstance const &) = delete;
     POIInstance() = delete;
 #endif
 
 public:
-    MCAPI POIInstance(class BlockPos const&, bool, std::string, enum POIType, float, unsigned __int64, unsigned __int64, std::string, std::string, std::string);
-    MCAPI class BlockPos const& getPosition() const;
+    MCAPI POIInstance(class BlockPos const &, bool, std::string, enum POIType, float, unsigned __int64, unsigned __int64, std::string, std::string, std::string);
+    MCAPI class BlockPos const & getPosition() const;
     MCAPI float getRadius() const;
-    MCAPI class AABB getSecondBlockFullAABB(class BlockSource&);
-    MCAPI class HashedString const& getSoundEvent() const;
+    MCAPI class AABB getSecondBlockFullAABB(class BlockSource &);
+    MCAPI class HashedString const & getSoundEvent() const;
     MCAPI void incrementArrivalFailureCount();
     MCAPI void resetArrivalFailureCount();
-    MCAPI void trySpawnParticles(class BlockSource&, class Random&, int) const;
+    MCAPI void trySpawnParticles(class BlockSource &, class Random &, int) const;
     MCAPI bool useBoundingBox() const;
 
 protected:

@@ -15,13 +15,13 @@ struct ScriptScoreTargetSelectorOption {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTSCORETARGETSELECTOROPTION
 public:
-    ScriptScoreTargetSelectorOption(struct ScriptScoreTargetSelectorOption const&) = delete;
+    ScriptScoreTargetSelectorOption(struct ScriptScoreTargetSelectorOption const &) = delete;
     ScriptScoreTargetSelectorOption() = delete;
 #endif
 
 public:
-    MCAPI struct ScriptScoreTargetSelectorOption& operator=(struct ScriptScoreTargetSelectorOption&&);
-    MCAPI struct ScriptScoreTargetSelectorOption& operator=(struct ScriptScoreTargetSelectorOption const&);
+    MCAPI struct ScriptScoreTargetSelectorOption & operator=(struct ScriptScoreTargetSelectorOption &&);
+    MCAPI struct ScriptScoreTargetSelectorOption & operator=(struct ScriptScoreTargetSelectorOption const &);
     MCAPI ~ScriptScoreTargetSelectorOption();
 
 protected:

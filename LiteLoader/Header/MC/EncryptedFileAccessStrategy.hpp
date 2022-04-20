@@ -19,8 +19,8 @@ class EncryptedFileAccessStrategy : public DirectoryPackAccessStrategy {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCRYPTEDFILEACCESSSTRATEGY
 public:
-    class EncryptedFileAccessStrategy& operator=(class EncryptedFileAccessStrategy const&) = delete;
-    EncryptedFileAccessStrategy(class EncryptedFileAccessStrategy const&) = delete;
+    class EncryptedFileAccessStrategy& operator=(class EncryptedFileAccessStrategy const &) = delete;
+    EncryptedFileAccessStrategy(class EncryptedFileAccessStrategy const &) = delete;
     EncryptedFileAccessStrategy() = delete;
 #endif
 
@@ -29,22 +29,22 @@ public:
     /*4*/ virtual bool isWritable() const;
     /*5*/ virtual void setIsTrusted(bool);
     /*6*/ virtual bool isTrusted() const;
-    /*7*/ virtual bool hasAsset(class Core::Path const&, bool) const;
-    /*9*/ virtual bool getAsset(class Core::Path const&, std::string&, bool) const;
-    /*10*/ virtual bool deleteAsset(class Core::PathBuffer<std::string > const&);
-    /*11*/ virtual bool writeAsset(class Core::Path const&, std::string const&);
-    /*16*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const;
+    /*7*/ virtual bool hasAsset(class Core::Path const &, bool) const;
+    /*9*/ virtual bool getAsset(class Core::Path const &, std::string &, bool) const;
+    /*10*/ virtual bool deleteAsset(class Core::PathBuffer<std::string> const &);
+    /*11*/ virtual bool writeAsset(class Core::Path const &, std::string const &);
+    /*16*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const &) const;
     /*17*/ virtual enum PackAccessAssetGenerationResult generateAssetSet();
     /*19*/ virtual void unload();
     /*21*/ virtual class ContentIdentity readContentIdentity() const;
-    MCAPI EncryptedFileAccessStrategy(class ResourceLocation const&, class ContentIdentity const&, class IContentKeyProvider const&, bool, class std::optional<class std::unordered_map<class Core::PathBuffer<std::string >, std::string, struct std::hash<class Core::PathBuffer<std::string > >, struct std::equal_to<class Core::PathBuffer<std::string > >, class std::allocator<struct std::pair<class Core::PathBuffer<std::string > const, std::string > > > >);
-    MCAPI static bool isValidEncryptedPack(class Core::Path const&, class ContentIdentity&);
+    MCAPI EncryptedFileAccessStrategy(class ResourceLocation const &, class ContentIdentity const &, class IContentKeyProvider const &, bool, class std::optional<class std::unordered_map<class Core::PathBuffer<std::string>, std::string, struct std::hash<class Core::PathBuffer<std::string>>, struct std::equal_to<class Core::PathBuffer<std::string>>, class std::allocator<struct std::pair<class Core::PathBuffer<std::string> const, std::string>>>>);
+    MCAPI static bool isValidEncryptedPack(class Core::Path const &, class ContentIdentity &);
 
 protected:
     MCAPI std::string _getContentsFile();
 
 private:
-    MCAPI static bool _getContentIdentityFromEncryptedStream(std::string&, class ContentIdentity&);
-    MCAPI static void _transformStream(std::string&, std::string const&, unsigned __int64);
+    MCAPI static bool _getContentIdentityFromEncryptedStream(std::string &, class ContentIdentity &);
+    MCAPI static void _transformStream(std::string &, std::string const &, unsigned __int64);
 
 };

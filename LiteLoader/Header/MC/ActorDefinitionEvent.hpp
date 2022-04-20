@@ -15,8 +15,8 @@ struct ActorDefinitionEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITIONEVENT
 public:
-    struct ActorDefinitionEvent& operator=(struct ActorDefinitionEvent const&) = delete;
-    ActorDefinitionEvent(struct ActorDefinitionEvent const&) = delete;
+    struct ActorDefinitionEvent& operator=(struct ActorDefinitionEvent const &) = delete;
+    ActorDefinitionEvent(struct ActorDefinitionEvent const &) = delete;
     ActorDefinitionEvent() = delete;
 #endif
 

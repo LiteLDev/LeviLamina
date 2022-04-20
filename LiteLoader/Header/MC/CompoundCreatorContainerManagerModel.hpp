@@ -18,21 +18,21 @@ class CompoundCreatorContainerManagerModel : public ContainerManagerModel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDCREATORCONTAINERMANAGERMODEL
 public:
-    class CompoundCreatorContainerManagerModel& operator=(class CompoundCreatorContainerManagerModel const&) = delete;
-    CompoundCreatorContainerManagerModel(class CompoundCreatorContainerManagerModel const&) = delete;
+    class CompoundCreatorContainerManagerModel& operator=(class CompoundCreatorContainerManagerModel const &) = delete;
+    CompoundCreatorContainerManagerModel(class CompoundCreatorContainerManagerModel const &) = delete;
     CompoundCreatorContainerManagerModel() = delete;
 #endif
 
 public:
     /*0*/ virtual ~CompoundCreatorContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
-    /*7*/ virtual void setSlot(int, class ItemStack const&, bool);
-    /*8*/ virtual class ItemStack const& getSlot(int) const;
+    /*7*/ virtual void setSlot(int, class ItemStack const &, bool);
+    /*8*/ virtual class ItemStack const & getSlot(int) const;
     /*9*/ virtual void setData(int, int);
     /*10*/ virtual void broadcastChanges();
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
-    MCAPI CompoundCreatorContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
+    MCAPI CompoundCreatorContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
 protected:
 

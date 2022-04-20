@@ -17,15 +17,15 @@ class PlayerTickSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERTICKSYSTEM
 public:
-    class PlayerTickSystem& operator=(class PlayerTickSystem const&) = delete;
-    PlayerTickSystem(class PlayerTickSystem const&) = delete;
+    class PlayerTickSystem& operator=(class PlayerTickSystem const &) = delete;
+    PlayerTickSystem(class PlayerTickSystem const &) = delete;
     PlayerTickSystem() = delete;
 #endif
 
 public:
     MCAPI static struct TickingSystemWithInfo create();
-    MCAPI static void onTickAdded(struct PlayerTickComponent&, unsigned __int64);
-    MCAPI static bool shouldTickMovementSystemOnEntity(class EntityContext const&);
+    MCAPI static void onTickAdded(struct PlayerTickComponent &, unsigned __int64);
+    MCAPI static bool shouldTickMovementSystemOnEntity(class EntityContext const &);
 
 protected:
 

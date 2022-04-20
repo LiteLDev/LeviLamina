@@ -17,8 +17,8 @@ class RandomThreadCheckManager {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMTHREADCHECKMANAGER
 public:
-    class RandomThreadCheckManager& operator=(class RandomThreadCheckManager const&) = delete;
-    RandomThreadCheckManager(class RandomThreadCheckManager const&) = delete;
+    class RandomThreadCheckManager& operator=(class RandomThreadCheckManager const &) = delete;
+    RandomThreadCheckManager(class RandomThreadCheckManager const &) = delete;
     RandomThreadCheckManager() = delete;
 #endif
 
@@ -30,6 +30,7 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void onAppResumed();
+    MCAPI static void invalidateThreadIndex();
 
 protected:
 

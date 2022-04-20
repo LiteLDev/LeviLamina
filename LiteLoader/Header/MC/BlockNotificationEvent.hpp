@@ -15,8 +15,8 @@ struct BlockNotificationEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKNOTIFICATIONEVENT
 public:
-    struct BlockNotificationEvent& operator=(struct BlockNotificationEvent const&) = delete;
-    BlockNotificationEvent(struct BlockNotificationEvent const&) = delete;
+    struct BlockNotificationEvent& operator=(struct BlockNotificationEvent const &) = delete;
+    BlockNotificationEvent(struct BlockNotificationEvent const &) = delete;
     BlockNotificationEvent() = delete;
 #endif
 

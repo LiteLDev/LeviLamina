@@ -18,15 +18,15 @@ class HellFireFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HELLFIREFEATURE
 public:
-    class HellFireFeature& operator=(class HellFireFeature const&) = delete;
-    HellFireFeature(class HellFireFeature const&) = delete;
+    class HellFireFeature& operator=(class HellFireFeature const &) = delete;
+    HellFireFeature(class HellFireFeature const &) = delete;
     HellFireFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~HellFireFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /*
     inline  ~HellFireFeature(){
          (HellFireFeature::*rv)();

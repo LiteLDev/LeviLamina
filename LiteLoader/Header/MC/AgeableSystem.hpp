@@ -17,15 +17,15 @@ class AgeableSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGEABLESYSTEM
 public:
-    class AgeableSystem& operator=(class AgeableSystem const&) = delete;
-    AgeableSystem(class AgeableSystem const&) = delete;
+    class AgeableSystem& operator=(class AgeableSystem const &) = delete;
+    AgeableSystem(class AgeableSystem const &) = delete;
     AgeableSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~AgeableSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

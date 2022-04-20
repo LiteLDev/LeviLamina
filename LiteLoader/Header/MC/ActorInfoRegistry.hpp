@@ -17,18 +17,18 @@ class ActorInfoRegistry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORINFOREGISTRY
 public:
-    class ActorInfoRegistry& operator=(class ActorInfoRegistry const&) = delete;
-    ActorInfoRegistry(class ActorInfoRegistry const&) = delete;
+    class ActorInfoRegistry& operator=(class ActorInfoRegistry const &) = delete;
+    ActorInfoRegistry(class ActorInfoRegistry const &) = delete;
 #endif
 
 public:
     MCAPI ActorInfoRegistry();
-    MCAPI struct ActorInfo const& getActorInfo(unsigned int) const;
-    MCAPI unsigned int getActorInfoId(std::string const&) const;
-    MCAPI unsigned int getActorInfoId(unsigned __int64 const&) const;
+    MCAPI struct ActorInfo const & getActorInfo(unsigned int) const;
+    MCAPI unsigned int getActorInfoId(std::string const &) const;
+    MCAPI unsigned int getActorInfoId(unsigned __int64 const &) const;
     MCAPI std::vector<struct ActorInfo> getActorInfoList() const;
     MCAPI bool isSpawnEggAvailable(std::string);
-    MCAPI void registerActorInfo(struct ActorInfo const&);
+    MCAPI void registerActorInfo(struct ActorInfo const &);
     MCAPI void setSpawnEggAvailable(std::string, bool);
 
 protected:

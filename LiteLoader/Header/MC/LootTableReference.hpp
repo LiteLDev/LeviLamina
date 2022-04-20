@@ -18,15 +18,15 @@ class LootTableReference {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTTABLEREFERENCE
 public:
-    class LootTableReference& operator=(class LootTableReference const&) = delete;
-    LootTableReference(class LootTableReference const&) = delete;
+    class LootTableReference& operator=(class LootTableReference const &) = delete;
+    LootTableReference(class LootTableReference const &) = delete;
     LootTableReference() = delete;
 #endif
 
 public:
-    /*0*/ virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
+    /*0*/ virtual bool _createItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
     /*1*/ virtual ~LootTableReference();
-    MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value, int, int, std::vector<std::unique_ptr<class LootItemCondition>>&);
+    MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value, int, int, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 protected:
 

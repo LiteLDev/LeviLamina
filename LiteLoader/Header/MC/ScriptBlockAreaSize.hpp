@@ -15,13 +15,13 @@ class ScriptBlockAreaSize {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKAREASIZE
 public:
-    class ScriptBlockAreaSize& operator=(class ScriptBlockAreaSize const&) = delete;
-    ScriptBlockAreaSize(class ScriptBlockAreaSize const&) = delete;
+    class ScriptBlockAreaSize& operator=(class ScriptBlockAreaSize const &) = delete;
+    ScriptBlockAreaSize(class ScriptBlockAreaSize const &) = delete;
     ScriptBlockAreaSize() = delete;
 #endif
 
 public:
-    MCAPI bool operator==(class ScriptBlockAreaSize const&) const;
+    MCAPI bool operator==(class ScriptBlockAreaSize const &) const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockAreaSize> bind(struct Scripting::Version);
 
 protected:

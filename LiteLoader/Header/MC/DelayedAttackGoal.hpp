@@ -18,8 +18,8 @@ class DelayedAttackGoal : public MeleeAttackGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DELAYEDATTACKGOAL
 public:
-    class DelayedAttackGoal& operator=(class DelayedAttackGoal const&) = delete;
-    DelayedAttackGoal(class DelayedAttackGoal const&) = delete;
+    class DelayedAttackGoal& operator=(class DelayedAttackGoal const &) = delete;
+    DelayedAttackGoal(class DelayedAttackGoal const &) = delete;
     DelayedAttackGoal() = delete;
 #endif
 
@@ -31,16 +31,17 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*10*/ virtual void _attemptMoveToTarget(class Actor&);
-    MCAPI DelayedAttackGoal(class Mob&);
+    /*10*/ virtual void _attemptMoveToTarget(class Actor &);
+    MCAPI DelayedAttackGoal(class Mob &);
 
 protected:
 
 private:
-    MCAPI void _attemptStartAttacking(class Actor*) const;
+    MCAPI void _attemptAttack(class Actor *);
+    MCAPI void _attemptStartAttacking(class Actor *) const;
     MCAPI void _manageAttackTime();
 
 };

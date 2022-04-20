@@ -17,17 +17,17 @@ class BalloonableComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BALLOONABLECOMPONENT
 public:
-    class BalloonableComponent& operator=(class BalloonableComponent const&) = delete;
-    BalloonableComponent(class BalloonableComponent const&) = delete;
+    class BalloonableComponent& operator=(class BalloonableComponent const &) = delete;
+    BalloonableComponent(class BalloonableComponent const &) = delete;
     BalloonableComponent() = delete;
 #endif
 
 public:
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+    MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
 
 protected:
 
 private:
-    MCAPI bool attach(class Actor&, class Actor&, class ItemStack&);
+    MCAPI bool attach(class Actor &, class Actor &, class ItemStack &);
 
 };

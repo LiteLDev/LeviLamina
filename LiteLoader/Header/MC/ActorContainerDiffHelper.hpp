@@ -14,8 +14,8 @@ namespace ActorContainerDiffHelper {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void applyIfChanged(std::vector<class MobEffectInstance>&, std::vector<class MobEffectInstance> const&, std::vector<class MobEffectInstance> const&);
-    MCAPI void applyIfChanged(class BaseAttributeMap&, class BaseAttributeMap const&, class BaseAttributeMap const&);
-    MCAPI void applyIfChanged(class SynchedActorData&, class SynchedActorData const&, class SynchedActorData const&, class Actor*);
+    MCAPI void applyIfChanged(std::vector<class MobEffectInstance> &, std::vector<class MobEffectInstance> const &, std::vector<class MobEffectInstance> const &);
+    MCAPI void applyIfChanged(class BaseAttributeMap &, class BaseAttributeMap const &, class BaseAttributeMap const &);
+    MCAPI void applyIfChanged(class SynchedActorData &, class SynchedActorData const &, class SynchedActorData const &, class Actor *);
 
 };

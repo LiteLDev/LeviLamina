@@ -15,12 +15,12 @@ struct BlockDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDEFINITION
 public:
-    struct BlockDefinition& operator=(struct BlockDefinition const&) = delete;
+    struct BlockDefinition& operator=(struct BlockDefinition const &) = delete;
     BlockDefinition() = delete;
 #endif
 
 public:
-    MCAPI BlockDefinition(struct BlockDefinition const&);
+    MCAPI BlockDefinition(struct BlockDefinition const &);
     MCAPI ~BlockDefinition();
 
 protected:

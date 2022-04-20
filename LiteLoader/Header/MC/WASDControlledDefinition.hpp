@@ -18,14 +18,14 @@ struct WASDControlledDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WASDCONTROLLEDDEFINITION
 public:
-    struct WASDControlledDefinition& operator=(struct WASDControlledDefinition const&) = delete;
-    WASDControlledDefinition(struct WASDControlledDefinition const&) = delete;
+    struct WASDControlledDefinition& operator=(struct WASDControlledDefinition const &) = delete;
+    WASDControlledDefinition(struct WASDControlledDefinition const &) = delete;
     WASDControlledDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&);
-    MCAPI void uninitialize(class EntityContext&);
+    MCAPI void initialize(class EntityContext &);
+    MCAPI void uninitialize(class EntityContext &);
 
 protected:
 

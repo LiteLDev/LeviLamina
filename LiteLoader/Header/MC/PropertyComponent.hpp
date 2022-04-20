@@ -17,19 +17,20 @@ class PropertyComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROPERTYCOMPONENT
 public:
-    class PropertyComponent& operator=(class PropertyComponent const&) = delete;
-    PropertyComponent(class PropertyComponent const&) = delete;
+    class PropertyComponent& operator=(class PropertyComponent const &) = delete;
+    PropertyComponent(class PropertyComponent const &) = delete;
     PropertyComponent() = delete;
 #endif
 
 public:
-    MCAPI PropertyComponent(class PropertyComponent&&);
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
-    MCAPI class PropertyInstance* getProperty(class HashedString const&);
-    MCAPI class PropertyInstance const* getProperty(unsigned __int64 const&) const;
-    MCAPI class PropertyInstance* getProperty(unsigned __int64 const&);
-    MCAPI bool hasProperty(unsigned __int64 const&) const;
-    MCAPI class PropertyComponent& operator=(class PropertyComponent&&);
+    MCAPI PropertyComponent(class PropertyComponent &&);
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
+    MCAPI void addProperty(class PropertyInstance const &);
+    MCAPI class PropertyInstance * getProperty(class HashedString const &);
+    MCAPI class PropertyInstance const * getProperty(unsigned __int64 const &) const;
+    MCAPI class PropertyInstance * getProperty(unsigned __int64 const &);
+    MCAPI bool hasProperty(unsigned __int64 const &) const;
+    MCAPI class PropertyComponent & operator=(class PropertyComponent &&);
     MCAPI class CompoundTag updateDirtyProperties();
 
 protected:

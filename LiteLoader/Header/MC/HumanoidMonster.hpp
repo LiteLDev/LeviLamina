@@ -17,8 +17,8 @@ class HumanoidMonster {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HUMANOIDMONSTER
 public:
-    class HumanoidMonster& operator=(class HumanoidMonster const&) = delete;
-    HumanoidMonster(class HumanoidMonster const&) = delete;
+    class HumanoidMonster& operator=(class HumanoidMonster const &) = delete;
+    HumanoidMonster(class HumanoidMonster const &) = delete;
     HumanoidMonster() = delete;
 #endif
 
@@ -29,15 +29,15 @@ public:
         *((void**)&rv) = dlsym("??1HumanoidMonster@@UEAA@XZ");
         return (this->*rv)();
     }
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (HumanoidMonster::*rv)(class CompoundTag&);
+    inline void addAdditionalSaveData(class CompoundTag & a0){
+        void (HumanoidMonster::*rv)(class CompoundTag &);
         *((void**)&rv) = dlsym("?addAdditionalSaveData@HumanoidMonster@@MEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
+        return (this->*rv)(std::forward<class CompoundTag &>(a0));
     }
-    inline bool doHurtTarget(class Actor* a0, enum ActorDamageCause const& a1){
-        bool (HumanoidMonster::*rv)(class Actor*, enum ActorDamageCause const&);
+    inline bool doHurtTarget(class Actor * a0, enum ActorDamageCause const & a1){
+        bool (HumanoidMonster::*rv)(class Actor *, enum ActorDamageCause const &);
         *((void**)&rv) = dlsym("?doHurtTarget@HumanoidMonster@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z");
-        return (this->*rv)(std::forward<class Actor*>(a0), std::forward<enum ActorDamageCause const&>(a1));
+        return (this->*rv)(std::forward<class Actor *>(a0), std::forward<enum ActorDamageCause const &>(a1));
     }
     inline int getItemUseDuration() const{
         int (HumanoidMonster::*rv)() const;
@@ -49,10 +49,10 @@ public:
         *((void**)&rv) = dlsym("?normalTick@HumanoidMonster@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (HumanoidMonster::*rv)(class CompoundTag const&, class DataLoadHelper&);
+    inline void readAdditionalSaveData(class CompoundTag const & a0, class DataLoadHelper & a1){
+        void (HumanoidMonster::*rv)(class CompoundTag const &, class DataLoadHelper &);
         *((void**)&rv) = dlsym("?readAdditionalSaveData@HumanoidMonster@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
+        return (this->*rv)(std::forward<class CompoundTag const &>(a0), std::forward<class DataLoadHelper &>(a1));
     }
     */
 

@@ -20,15 +20,15 @@ enum ParseState;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HTTPHEADERS
 public:
-    class HttpHeaders& operator=(class HttpHeaders const&) = delete;
-    HttpHeaders(class HttpHeaders const&) = delete;
+    class HttpHeaders& operator=(class HttpHeaders const &) = delete;
+    HttpHeaders(class HttpHeaders const &) = delete;
     HttpHeaders() = delete;
 #endif
 
 public:
     MCAPI void clear();
-    MCAPI bool getHeader(std::string const&, std::string&) const;
-    MCAPI enum HttpHeaders::ParseState parse(class RakNet::BitStream&);
+    MCAPI bool getHeader(std::string const &, std::string &) const;
+    MCAPI enum HttpHeaders::ParseState parse(class RakNet::BitStream &);
     MCAPI ~HttpHeaders();
 
 protected:

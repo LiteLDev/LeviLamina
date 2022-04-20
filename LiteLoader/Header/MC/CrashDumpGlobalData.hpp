@@ -17,13 +17,13 @@ class CrashDumpGlobalData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMPGLOBALDATA
 public:
-    class CrashDumpGlobalData& operator=(class CrashDumpGlobalData const&) = delete;
-    CrashDumpGlobalData(class CrashDumpGlobalData const&) = delete;
+    class CrashDumpGlobalData& operator=(class CrashDumpGlobalData const &) = delete;
+    CrashDumpGlobalData(class CrashDumpGlobalData const &) = delete;
     CrashDumpGlobalData() = delete;
 #endif
 
 public:
-    MCAPI static struct CrashDumpFormatEntryImpl const* const kFormat;
+    MCAPI static struct CrashDumpFormatEntryImpl const *const kFormat;
 
 protected:
 

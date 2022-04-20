@@ -15,8 +15,8 @@ class PlayerAddExpEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERADDEXPEVENT
 public:
-    class PlayerAddExpEvent& operator=(class PlayerAddExpEvent const&) = delete;
-    PlayerAddExpEvent(class PlayerAddExpEvent const&) = delete;
+    class PlayerAddExpEvent& operator=(class PlayerAddExpEvent const &) = delete;
+    PlayerAddExpEvent(class PlayerAddExpEvent const &) = delete;
     PlayerAddExpEvent() = delete;
 #endif
 

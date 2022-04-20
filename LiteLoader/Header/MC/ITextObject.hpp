@@ -17,8 +17,8 @@ class ITextObject {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEXTOBJECT
 public:
-    class ITextObject& operator=(class ITextObject const&) = delete;
-    ITextObject(class ITextObject const&) = delete;
+    class ITextObject& operator=(class ITextObject const &) = delete;
+    ITextObject(class ITextObject const &) = delete;
     ITextObject() = delete;
 #endif
 

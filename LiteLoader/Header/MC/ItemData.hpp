@@ -15,8 +15,8 @@ class ItemData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMDATA
 public:
-    class ItemData& operator=(class ItemData const&) = delete;
-    ItemData(class ItemData const&) = delete;
+    class ItemData& operator=(class ItemData const &) = delete;
+    ItemData(class ItemData const &) = delete;
     ItemData() = delete;
 #endif
 

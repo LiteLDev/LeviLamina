@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class WSServerCommand {
+class WSServerCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,15 +18,15 @@ class WSServerCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WSSERVERCOMMAND
 public:
-    class WSServerCommand& operator=(class WSServerCommand const&) = delete;
-    WSServerCommand(class WSServerCommand const&) = delete;
+    class WSServerCommand& operator=(class WSServerCommand const &) = delete;
+    WSServerCommand(class WSServerCommand const &) = delete;
     WSServerCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~WSServerCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 

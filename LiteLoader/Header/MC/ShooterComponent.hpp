@@ -17,15 +17,14 @@ class ShooterComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHOOTERCOMPONENT
 public:
-    class ShooterComponent& operator=(class ShooterComponent const&) = delete;
-    ShooterComponent(class ShooterComponent const&) = delete;
+    class ShooterComponent& operator=(class ShooterComponent const &) = delete;
+    ShooterComponent(class ShooterComponent const &) = delete;
 #endif
 
 public:
     MCAPI ShooterComponent();
     MCAPI int getAuxValue();
-    MCAPI void initFromDefinition(class Actor&, class ShooterDefinition const&);
-    MCAPI void onShoot(class Actor&);
+    MCAPI void onShoot(class Actor &);
     MCAPI ~ShooterComponent();
 
 protected:

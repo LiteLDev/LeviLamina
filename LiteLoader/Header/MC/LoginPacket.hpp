@@ -18,17 +18,17 @@ class LoginPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOGINPACKET
 public:
-    class LoginPacket& operator=(class LoginPacket const&) = delete;
-    LoginPacket(class LoginPacket const&) = delete;
+    class LoginPacket& operator=(class LoginPacket const &) = delete;
+    LoginPacket(class LoginPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~LoginPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
+    /*3*/ virtual void write(class BinaryStream &) const;
     /*5*/ virtual bool disallowBatching() const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     MCAPI LoginPacket();
 
 protected:

@@ -18,8 +18,8 @@ class ScriptBlockSnowContainerComponent : public BaseScriptBlockLiquidContainerC
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKSNOWCONTAINERCOMPONENT
 public:
-    class ScriptBlockSnowContainerComponent& operator=(class ScriptBlockSnowContainerComponent const&) = delete;
-    ScriptBlockSnowContainerComponent(class ScriptBlockSnowContainerComponent const&) = delete;
+    class ScriptBlockSnowContainerComponent& operator=(class ScriptBlockSnowContainerComponent const &) = delete;
+    ScriptBlockSnowContainerComponent(class ScriptBlockSnowContainerComponent const &) = delete;
     ScriptBlockSnowContainerComponent() = delete;
 #endif
 
@@ -32,9 +32,9 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI class ScriptBlockSnowContainerComponent& operator=(class ScriptBlockSnowContainerComponent&&);
+    MCAPI class ScriptBlockSnowContainerComponent & operator=(class ScriptBlockSnowContainerComponent &&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockSnowContainerComponent> bind(struct Scripting::Version);
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockSnowContainerComponent> tryCreate(class BlockSource&, class BlockPos, class Scripting::WeakLifetimeScope const&);
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockSnowContainerComponent> tryCreate(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
 
 protected:
 

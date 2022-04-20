@@ -17,13 +17,13 @@ class AtlasItemManager {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATLASITEMMANAGER
 public:
-    class AtlasItemManager& operator=(class AtlasItemManager const&) = delete;
-    AtlasItemManager(class AtlasItemManager const&) = delete;
+    class AtlasItemManager& operator=(class AtlasItemManager const &) = delete;
+    AtlasItemManager(class AtlasItemManager const &) = delete;
     AtlasItemManager() = delete;
 #endif
 
 public:
-    MCAPI class TextureAtlasItem const& getTextureItem(std::string const&) const;
+    MCAPI class TextureAtlasItem const & getTextureItem(std::string const &) const;
 
 protected:
 

@@ -17,8 +17,8 @@ class NetworkDebugManager {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKDEBUGMANAGER
 public:
-    class NetworkDebugManager& operator=(class NetworkDebugManager const&) = delete;
-    NetworkDebugManager(class NetworkDebugManager const&) = delete;
+    class NetworkDebugManager& operator=(class NetworkDebugManager const &) = delete;
+    NetworkDebugManager(class NetworkDebugManager const &) = delete;
     NetworkDebugManager() = delete;
 #endif
 

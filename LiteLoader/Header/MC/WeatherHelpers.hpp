@@ -14,8 +14,8 @@ namespace WeatherHelpers {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI class BlockPos const getTopRainBlockPos(class LevelChunk*, class BlockPos const&);
-    MCAPI bool shouldFreeze(class BlockSource&, class BlockPos const&, bool);
-    MCAPI bool shouldSnow(class BlockSource&, class BlockPos const&);
+    MCAPI class BlockPos const getTopRainBlockPos(class LevelChunk *, class BlockPos const &);
+    MCAPI bool shouldFreeze(class BlockSource &, class BlockPos const &, bool);
+    MCAPI bool shouldSnow(class BlockSource &, class BlockPos const &);
 
 };

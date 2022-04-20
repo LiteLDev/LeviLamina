@@ -18,16 +18,16 @@ class LegacySmallMushroomsFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYSMALLMUSHROOMSFEATURE
 public:
-    class LegacySmallMushroomsFeature& operator=(class LegacySmallMushroomsFeature const&) = delete;
-    LegacySmallMushroomsFeature(class LegacySmallMushroomsFeature const&) = delete;
+    class LegacySmallMushroomsFeature& operator=(class LegacySmallMushroomsFeature const &) = delete;
+    LegacySmallMushroomsFeature(class LegacySmallMushroomsFeature const &) = delete;
     LegacySmallMushroomsFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LegacySmallMushroomsFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-    MCAPI LegacySmallMushroomsFeature(class FeatureRegistry const&);
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+    MCAPI LegacySmallMushroomsFeature(class FeatureRegistry const &);
 
 protected:
 

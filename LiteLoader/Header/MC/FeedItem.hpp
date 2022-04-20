@@ -22,13 +22,13 @@ struct Effect {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEEDITEM
 public:
-    struct FeedItem& operator=(struct FeedItem const&) = delete;
+    struct FeedItem& operator=(struct FeedItem const &) = delete;
     FeedItem() = delete;
 #endif
 
 public:
-    MCAPI FeedItem(struct FeedItem const&);
-    MCAPI void addEffect(struct FeedItem::Effect const&);
+    MCAPI FeedItem(struct FeedItem const &);
+    MCAPI void addEffect(struct FeedItem::Effect const &);
     MCAPI ~FeedItem();
 
 protected:

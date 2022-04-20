@@ -15,8 +15,8 @@ class PosibleTransformation {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POSIBLETRANSFORMATION
 public:
-    class PosibleTransformation& operator=(class PosibleTransformation const&) = delete;
-    PosibleTransformation(class PosibleTransformation const&) = delete;
+    class PosibleTransformation& operator=(class PosibleTransformation const &) = delete;
+    PosibleTransformation(class PosibleTransformation const &) = delete;
     PosibleTransformation() = delete;
 #endif
 

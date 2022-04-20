@@ -14,6 +14,6 @@ namespace VanillaActors {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void registerVanillaActorData(class BaseGameVersion const&, class Experiments const&);
+    MCAPI void registerVanillaActorData(class BaseGameVersion const &, class Experiments const &);
 
 };

@@ -17,8 +17,8 @@ unsigned long long t;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICK
 public:
-    struct Tick& operator=(struct Tick const&) = delete;
-    Tick(struct Tick const&) = delete;
+    struct Tick& operator=(struct Tick const &) = delete;
+    Tick(struct Tick const &) = delete;
     Tick() = delete;
 #endif
 

@@ -17,8 +17,8 @@ class OculusPlatformMessagePump {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCULUSPLATFORMMESSAGEPUMP
 public:
-    class OculusPlatformMessagePump& operator=(class OculusPlatformMessagePump const&) = delete;
-    OculusPlatformMessagePump(class OculusPlatformMessagePump const&) = delete;
+    class OculusPlatformMessagePump& operator=(class OculusPlatformMessagePump const &) = delete;
+    OculusPlatformMessagePump(class OculusPlatformMessagePump const &) = delete;
     OculusPlatformMessagePump() = delete;
 #endif
 

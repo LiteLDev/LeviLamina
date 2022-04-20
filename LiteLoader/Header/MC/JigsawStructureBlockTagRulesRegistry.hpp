@@ -17,14 +17,14 @@ class JigsawStructureBlockTagRulesRegistry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JIGSAWSTRUCTUREBLOCKTAGRULESREGISTRY
 public:
-    class JigsawStructureBlockTagRulesRegistry& operator=(class JigsawStructureBlockTagRulesRegistry const&) = delete;
-    JigsawStructureBlockTagRulesRegistry(class JigsawStructureBlockTagRulesRegistry const&) = delete;
+    class JigsawStructureBlockTagRulesRegistry& operator=(class JigsawStructureBlockTagRulesRegistry const &) = delete;
+    JigsawStructureBlockTagRulesRegistry(class JigsawStructureBlockTagRulesRegistry const &) = delete;
     JigsawStructureBlockTagRulesRegistry() = delete;
 #endif
 
 public:
-    MCAPI std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const* lookupByName(std::string) const;
-    MCAPI void registerBlockTagRules(std::string, std::unique_ptr<std::vector<class std::unique_ptr<class StructurePoolBlockTagRule, struct std::default_delete<class StructurePoolBlockTagRule> >>>&&);
+    MCAPI std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const * lookupByName(std::string) const;
+    MCAPI void registerBlockTagRules(std::string, std::unique_ptr<std::vector<class std::unique_ptr<class StructurePoolBlockTagRule, struct std::default_delete<class StructurePoolBlockTagRule>>>> &&);
     MCAPI ~JigsawStructureBlockTagRulesRegistry();
 
 protected:

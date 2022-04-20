@@ -18,21 +18,21 @@ class RedstoneTorchCapacitor : public ProducerComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REDSTONETORCHCAPACITOR
 public:
-    class RedstoneTorchCapacitor& operator=(class RedstoneTorchCapacitor const&) = delete;
-    RedstoneTorchCapacitor(class RedstoneTorchCapacitor const&) = delete;
+    class RedstoneTorchCapacitor& operator=(class RedstoneTorchCapacitor const &) = delete;
+    RedstoneTorchCapacitor(class RedstoneTorchCapacitor const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~RedstoneTorchCapacitor();
     /*1*/ virtual int getStrength() const;
     /*7*/ virtual void __unk_vfn_7();
-    /*10*/ virtual bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
-    /*11*/ virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
-    /*12*/ virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
-    /*13*/ virtual void checkLock(class CircuitSystem&, class BlockPos const&);
-    /*14*/ virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
-    /*15*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
-    /*16*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
+    /*10*/ virtual bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
+    /*11*/ virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
+    /*12*/ virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
+    /*13*/ virtual void checkLock(class CircuitSystem &, class BlockPos const &);
+    /*14*/ virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
+    /*15*/ virtual void cacheValues(class CircuitSystem &, class BlockPos const &);
+    /*16*/ virtual void updateDependencies(class CircuitSceneGraph &, class BlockPos const &);
     /*17*/ virtual void __unk_vfn_17();
     /*18*/ virtual bool isHalfPulse() const;
     /*20*/ virtual void __unk_vfn_20();
@@ -52,6 +52,6 @@ public:
 protected:
 
 private:
-    MCAPI int FindStrongestStrength(class BlockPos const&, class CircuitSystem&, bool&);
+    MCAPI int FindStrongestStrength(class BlockPos const &, class CircuitSystem &, bool &);
 
 };

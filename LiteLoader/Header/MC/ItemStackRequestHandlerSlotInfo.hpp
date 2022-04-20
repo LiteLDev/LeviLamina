@@ -17,8 +17,8 @@ struct ItemStackRequestHandlerSlotInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTHANDLERSLOTINFO
 public:
-    struct ItemStackRequestHandlerSlotInfo& operator=(struct ItemStackRequestHandlerSlotInfo const&) = delete;
-    ItemStackRequestHandlerSlotInfo(struct ItemStackRequestHandlerSlotInfo const&) = delete;
+    struct ItemStackRequestHandlerSlotInfo& operator=(struct ItemStackRequestHandlerSlotInfo const &) = delete;
+    ItemStackRequestHandlerSlotInfo(struct ItemStackRequestHandlerSlotInfo const &) = delete;
     ItemStackRequestHandlerSlotInfo() = delete;
 #endif
 

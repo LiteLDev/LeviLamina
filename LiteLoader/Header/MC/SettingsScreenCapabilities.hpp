@@ -17,8 +17,8 @@ struct SettingsScreenCapabilities {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETTINGSSCREENCAPABILITIES
 public:
-    struct SettingsScreenCapabilities& operator=(struct SettingsScreenCapabilities const&) = delete;
-    SettingsScreenCapabilities(struct SettingsScreenCapabilities const&) = delete;
+    struct SettingsScreenCapabilities& operator=(struct SettingsScreenCapabilities const &) = delete;
+    SettingsScreenCapabilities(struct SettingsScreenCapabilities const &) = delete;
     SettingsScreenCapabilities() = delete;
 #endif
 

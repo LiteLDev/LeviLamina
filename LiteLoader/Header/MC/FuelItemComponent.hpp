@@ -17,8 +17,8 @@ class FuelItemComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FUELITEMCOMPONENT
 public:
-    class FuelItemComponent& operator=(class FuelItemComponent const&) = delete;
-    FuelItemComponent(class FuelItemComponent const&) = delete;
+    class FuelItemComponent& operator=(class FuelItemComponent const &) = delete;
+    FuelItemComponent(class FuelItemComponent const &) = delete;
     FuelItemComponent() = delete;
 #endif
 
@@ -29,7 +29,7 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
     /*
     inline bool isNetworkComponent() const{
         bool (FuelItemComponent::*rv)() const;
@@ -38,7 +38,7 @@ public:
     }
     */
     MCAPI static void bindType();
-    MCAPI static class HashedString const& getIdentifier();
+    MCAPI static class HashedString const & getIdentifier();
 
 protected:
 

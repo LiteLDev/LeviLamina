@@ -17,14 +17,14 @@ class IsSpawnableDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISSPAWNABLEDESCRIPTION
 public:
-    class IsSpawnableDescription& operator=(class IsSpawnableDescription const&) = delete;
-    IsSpawnableDescription(class IsSpawnableDescription const&) = delete;
+    class IsSpawnableDescription& operator=(class IsSpawnableDescription const &) = delete;
+    IsSpawnableDescription(class IsSpawnableDescription const &) = delete;
     IsSpawnableDescription() = delete;
 #endif
 
 public:
     /*0*/ virtual ~IsSpawnableDescription();
-    /*1*/ virtual char const* getJsonName() const;
+    /*1*/ virtual char const * getJsonName() const;
 
 protected:
 

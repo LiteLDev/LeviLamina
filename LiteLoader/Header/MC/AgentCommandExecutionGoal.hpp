@@ -17,8 +17,8 @@ class AgentCommandExecutionGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMMANDEXECUTIONGOAL
 public:
-    class AgentCommandExecutionGoal& operator=(class AgentCommandExecutionGoal const&) = delete;
-    AgentCommandExecutionGoal(class AgentCommandExecutionGoal const&) = delete;
+    class AgentCommandExecutionGoal& operator=(class AgentCommandExecutionGoal const &) = delete;
+    AgentCommandExecutionGoal(class AgentCommandExecutionGoal const &) = delete;
     AgentCommandExecutionGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline bool canBeInterrupted(){
         bool (AgentCommandExecutionGoal::*rv)();
@@ -38,7 +38,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI AgentCommandExecutionGoal(class Mob&);
+    MCAPI AgentCommandExecutionGoal(class Mob &);
 
 protected:
 

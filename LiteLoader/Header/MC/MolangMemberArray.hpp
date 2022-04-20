@@ -17,25 +17,29 @@ struct MolangMemberArray {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGMEMBERARRAY
 public:
-    struct MolangMemberArray& operator=(struct MolangMemberArray const&) = delete;
-    MolangMemberArray(struct MolangMemberArray const&) = delete;
+    struct MolangMemberArray& operator=(struct MolangMemberArray const &) = delete;
+    MolangMemberArray(struct MolangMemberArray const &) = delete;
     MolangMemberArray() = delete;
 #endif
 
 public:
     MCAPI MolangMemberArray(enum MolangStruct_BaseAndPattern, int, int);
-    MCAPI MolangMemberArray(enum MolangStruct_MinAndMax, struct MolangMemberArray&&, struct MolangMemberArray&&);
+    MCAPI MolangMemberArray(enum MolangStruct_MinAndMax, struct MolangMemberArray &&, struct MolangMemberArray &&);
     MCAPI MolangMemberArray(enum MolangStruct_PoseIndexAndHurtTime, int, int);
-    MCAPI MolangMemberArray(enum MolangStruct_RGB, class mce::Color const&);
-    MCAPI MolangMemberArray(enum MolangStruct_RGBA, class mce::Color const&);
+    MCAPI MolangMemberArray(enum MolangStruct_RGB, class mce::Color const &);
+    MCAPI MolangMemberArray(enum MolangStruct_RGBA, class mce::Color const &);
     MCAPI MolangMemberArray(enum MolangStruct_RotYAndPosY, float, float);
-    MCAPI MolangMemberArray(enum MolangStruct_TRS, struct MolangMemberArray&&, struct MolangMemberArray&&, struct MolangMemberArray&&);
+    MCAPI MolangMemberArray(enum MolangStruct_SpeedAndDirection, float, class Vec3 const &);
+    MCAPI MolangMemberArray(enum MolangStruct_TRS, struct MolangMemberArray &&, struct MolangMemberArray &&, struct MolangMemberArray &&);
     MCAPI MolangMemberArray(enum MolangStruct_TentacleAngleAndSwimRotation, float, float);
-    MCAPI MolangMemberArray(enum MolangStruct_XY, class Vec2 const&);
-    MCAPI MolangMemberArray(enum MolangStruct_XYZ, class Vec3 const&);
-    MCAPI struct MolangScriptArg const* get(class HashedString const&) const;
-    MCAPI struct MolangScriptArg& getOrAdd(class HashedString const&);
-    MCAPI bool operator==(struct MolangMemberArray const&) const;
+    MCAPI MolangMemberArray(enum MolangStruct_UV, float, float);
+    MCAPI MolangMemberArray(enum MolangStruct_XY, class Vec2 const &);
+    MCAPI MolangMemberArray(enum MolangStruct_XYZ, class Vec3 const &);
+    MCAPI void add(class HashedString const &, struct MolangScriptArg const &);
+    MCAPI struct MolangScriptArg const * get(class HashedString const &) const;
+    MCAPI std::vector<struct MolangMemberVariable> const * getMembers() const;
+    MCAPI struct MolangScriptArg & getOrAdd(class HashedString const &);
+    MCAPI bool operator==(struct MolangMemberArray const &) const;
     MCAPI ~MolangMemberArray();
 
 protected:

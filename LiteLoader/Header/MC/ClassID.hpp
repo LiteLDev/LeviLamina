@@ -17,8 +17,8 @@ class ClassID {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLASSID
 public:
-    class ClassID& operator=(class ClassID const&) = delete;
-    ClassID(class ClassID const&) = delete;
+    class ClassID& operator=(class ClassID const &) = delete;
+    ClassID(class ClassID const &) = delete;
     ClassID() = delete;
 #endif
 

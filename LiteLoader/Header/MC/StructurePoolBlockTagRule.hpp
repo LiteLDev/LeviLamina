@@ -15,13 +15,13 @@ class StructurePoolBlockTagRule {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREPOOLBLOCKTAGRULE
 public:
-    class StructurePoolBlockTagRule& operator=(class StructurePoolBlockTagRule const&) = delete;
-    StructurePoolBlockTagRule(class StructurePoolBlockTagRule const&) = delete;
+    class StructurePoolBlockTagRule& operator=(class StructurePoolBlockTagRule const &) = delete;
+    StructurePoolBlockTagRule(class StructurePoolBlockTagRule const &) = delete;
     StructurePoolBlockTagRule() = delete;
 #endif
 
 public:
-    MCAPI StructurePoolBlockTagRule(std::unique_ptr<class IStructurePoolBlockTagPredicate>&&, std::string, std::string);
+    MCAPI StructurePoolBlockTagRule(std::unique_ptr<class IStructurePoolBlockTagPredicate> &&, std::string, std::string);
 
 protected:
 

@@ -18,13 +18,13 @@ class LevelLooseFileStorage {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELLOOSEFILESTORAGE
 public:
-    class LevelLooseFileStorage& operator=(class LevelLooseFileStorage const&) = delete;
-    LevelLooseFileStorage(class LevelLooseFileStorage const&) = delete;
+    class LevelLooseFileStorage& operator=(class LevelLooseFileStorage const &) = delete;
+    LevelLooseFileStorage(class LevelLooseFileStorage const &) = delete;
     LevelLooseFileStorage() = delete;
 #endif
 
 public:
-    MCAPI LevelLooseFileStorage(class Core::Path const&, class ContentIdentity const&, class IContentKeyProvider const&);
+    MCAPI LevelLooseFileStorage(class Core::Path const &, class ContentIdentity const &, class IContentKeyProvider const &);
     MCAPI std::unique_ptr<class PackAccessStrategy> getAccessStrategy() const;
 
 protected:

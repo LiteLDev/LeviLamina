@@ -17,12 +17,22 @@ class StoneCutterContainerScreenValidator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STONECUTTERCONTAINERSCREENVALIDATOR
 public:
-    class StoneCutterContainerScreenValidator& operator=(class StoneCutterContainerScreenValidator const&) = delete;
-    StoneCutterContainerScreenValidator(class StoneCutterContainerScreenValidator const&) = delete;
+    class StoneCutterContainerScreenValidator& operator=(class StoneCutterContainerScreenValidator const &) = delete;
+    StoneCutterContainerScreenValidator(class StoneCutterContainerScreenValidator const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~StoneCutterContainerScreenValidator();
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual struct ContainerValidationCraftResult getCraftResult(class ContainerScreenContext const &, class ContainerScreenValidation &, std::unique_ptr<struct ContainerValidationCraftInputs>);
+    /*
+    inline bool isCraftingImplemented(){
+        bool (StoneCutterContainerScreenValidator::*rv)();
+        *((void**)&rv) = dlsym("?isCraftingImplemented@StoneCutterContainerScreenValidator@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI StoneCutterContainerScreenValidator();
 
 protected:

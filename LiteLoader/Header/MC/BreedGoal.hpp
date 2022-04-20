@@ -17,8 +17,8 @@ class BreedGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREEDGOAL
 public:
-    class BreedGoal& operator=(class BreedGoal const&) = delete;
-    BreedGoal(class BreedGoal const&) = delete;
+    class BreedGoal& operator=(class BreedGoal const &) = delete;
+    BreedGoal(class BreedGoal const &) = delete;
     BreedGoal() = delete;
 #endif
 
@@ -30,13 +30,13 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI BreedGoal(class Mob&, float);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI BreedGoal(class Mob &, float);
 
 protected:
 
 private:
     MCAPI bool _isCloseEnoughToBreed(class Vec3, class Vec2, class Vec3, class Vec2) const;
-    MCAPI class Mob* _moveToFreePartner() const;
+    MCAPI class Mob * _moveToFreePartner() const;
 
 };

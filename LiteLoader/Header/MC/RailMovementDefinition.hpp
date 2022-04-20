@@ -18,14 +18,14 @@ class RailMovementDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAILMOVEMENTDEFINITION
 public:
-    class RailMovementDefinition& operator=(class RailMovementDefinition const&) = delete;
-    RailMovementDefinition(class RailMovementDefinition const&) = delete;
+    class RailMovementDefinition& operator=(class RailMovementDefinition const &) = delete;
+    RailMovementDefinition(class RailMovementDefinition const &) = delete;
 #endif
 
 public:
     MCAPI RailMovementDefinition();
-    MCAPI void initialize(class EntityContext&, class RailMovementComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RailMovementDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class RailMovementComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RailMovementDefinition>> &);
 
 protected:
 

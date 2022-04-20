@@ -17,8 +17,8 @@ class PlayDeadGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYDEADGOAL
 public:
-    class PlayDeadGoal& operator=(class PlayDeadGoal const&) = delete;
-    PlayDeadGoal(class PlayDeadGoal const&) = delete;
+    class PlayDeadGoal& operator=(class PlayDeadGoal const &) = delete;
+    PlayDeadGoal(class PlayDeadGoal const &) = delete;
     PlayDeadGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI PlayDeadGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI PlayDeadGoal(class Mob &);
 
 protected:
 

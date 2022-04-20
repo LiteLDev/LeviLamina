@@ -17,21 +17,21 @@ class BlockUtils {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKUTILS
 public:
-    class BlockUtils& operator=(class BlockUtils const&) = delete;
-    BlockUtils(class BlockUtils const&) = delete;
+    class BlockUtils& operator=(class BlockUtils const &) = delete;
+    BlockUtils(class BlockUtils const &) = delete;
     BlockUtils() = delete;
 #endif
 
 public:
-    MCAPI static bool allowsNetherVegetation(class BlockLegacy const&);
-    MCAPI static bool canGrowTreeWithBeehive(class Block const&);
-    MCAPI static float getLiquidBlockHeight(class Block const&, class BlockPos const&);
-    MCAPI static bool isBeehiveBlock(class BlockLegacy const&);
-    MCAPI static bool isDownwardFlowingLiquid(class Block const&);
-    MCAPI static bool isFullFlowingLiquid(class Block const&);
-    MCAPI static bool isLiquidSource(class Block const&);
-    MCAPI static bool isThinFenceOrWallBlock(class Block const&);
-    MCAPI static bool isWaterSource(class Block const&);
+    MCAPI static bool allowsNetherVegetation(class BlockLegacy const &);
+    MCAPI static bool canGrowTreeWithBeehive(class Block const &);
+    MCAPI static float getLiquidBlockHeight(class Block const &, class BlockPos const &);
+    MCAPI static bool isBeehiveBlock(class BlockLegacy const &);
+    MCAPI static bool isDownwardFlowingLiquid(class Block const &);
+    MCAPI static bool isFullFlowingLiquid(class Block const &);
+    MCAPI static bool isLiquidSource(class Block const &);
+    MCAPI static bool isThinFenceOrWallBlock(class Block const &);
+    MCAPI static bool isWaterSource(class Block const &);
 
 protected:
 

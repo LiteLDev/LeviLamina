@@ -17,8 +17,8 @@ class BatteryMonitorInterface {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BATTERYMONITORINTERFACE
 public:
-    class BatteryMonitorInterface& operator=(class BatteryMonitorInterface const&) = delete;
-    BatteryMonitorInterface(class BatteryMonitorInterface const&) = delete;
+    class BatteryMonitorInterface& operator=(class BatteryMonitorInterface const &) = delete;
+    BatteryMonitorInterface(class BatteryMonitorInterface const &) = delete;
     BatteryMonitorInterface() = delete;
 #endif
 

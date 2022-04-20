@@ -18,26 +18,26 @@ class GameRules {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMERULES
 public:
-    class GameRules& operator=(class GameRules const&) = delete;
+    class GameRules& operator=(class GameRules const &) = delete;
 #endif
 
 public:
-    MCAPI GameRules(class GameRules const&);
+    MCAPI GameRules(class GameRules const &);
     MCAPI GameRules();
     MCAPI std::unique_ptr<class GameRulesChangedPacket> createAllGameRulesPacket() const;
-    MCAPI void deserializeRules(class GameRulesChangedPacketData const&);
+    MCAPI void deserializeRules(class GameRulesChangedPacketData const &);
     MCAPI bool getBool(struct GameRuleId, bool) const;
     MCAPI int getInt(struct GameRuleId) const;
-    MCAPI class GameRule const* getRule(struct GameRuleId) const;
-    MCAPI std::vector<class GameRule> const& getRules() const;
-    MCAPI void getTagData(class CompoundTag const&);
+    MCAPI class GameRule const * getRule(struct GameRuleId) const;
+    MCAPI std::vector<class GameRule> const & getRules() const;
+    MCAPI void getTagData(class CompoundTag const &);
     MCAPI bool hasRule(struct GameRuleId) const;
-    MCAPI struct GameRuleId nameToGameRuleIndex(std::string const&) const;
+    MCAPI struct GameRuleId nameToGameRuleIndex(std::string const &) const;
     MCAPI void setMarketplaceOverrides();
-    MCAPI std::unique_ptr<class GameRulesChangedPacket> setRule(struct GameRuleId, int, bool, bool*, bool*, class GameRule::ValidationError*);
-    MCAPI std::unique_ptr<class GameRulesChangedPacket> setRule(struct GameRuleId, float, bool, bool*, bool*, class GameRule::ValidationError*);
-    MCAPI std::unique_ptr<class GameRulesChangedPacket> setRule(struct GameRuleId, bool, bool, bool*, bool*, class GameRule::ValidationError*);
-    MCAPI void setTagData(class CompoundTag&) const;
+    MCAPI std::unique_ptr<class GameRulesChangedPacket> setRule(struct GameRuleId, int, bool, bool *, bool *, class GameRule::ValidationError *);
+    MCAPI std::unique_ptr<class GameRulesChangedPacket> setRule(struct GameRuleId, float, bool, bool *, bool *, class GameRule::ValidationError *);
+    MCAPI std::unique_ptr<class GameRulesChangedPacket> setRule(struct GameRuleId, bool, bool, bool *, bool *, class GameRule::ValidationError *);
+    MCAPI void setTagData(class CompoundTag &) const;
     MCAPI ~GameRules();
     MCAPI static unsigned int const DEFAULT_PLAYER_SPAWN_RADIUS;
     MCAPI static int const DEFAULT_RANDOMTICKSPEED;
@@ -50,9 +50,9 @@ public:
 protected:
 
 private:
-    MCAPI class GameRule& _registerRule(std::string const&, struct GameRuleId);
+    MCAPI class GameRule & _registerRule(std::string const &, struct GameRuleId);
     MCAPI void _registerRules();
-    MCAPI std::unique_ptr<class GameRulesChangedPacket> _setGameRule(class GameRule*, union GameRule::Value, enum GameRule::Type, bool, bool*, bool*, class GameRule::ValidationError*);
-    MCAPI std::unique_ptr<class GameRulesChangedPacket> _setRule(struct GameRuleId, union GameRule::Value, enum GameRule::Type, bool, bool*, bool*, class GameRule::ValidationError*);
+    MCAPI std::unique_ptr<class GameRulesChangedPacket> _setGameRule(class GameRule *, union GameRule::Value, enum GameRule::Type, bool, bool *, bool *, class GameRule::ValidationError *);
+    MCAPI std::unique_ptr<class GameRulesChangedPacket> _setRule(struct GameRuleId, union GameRule::Value, enum GameRule::Type, bool, bool *, bool *, class GameRule::ValidationError *);
 
 };

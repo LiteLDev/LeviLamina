@@ -19,14 +19,14 @@ class ActorIsColorTest : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORISCOLORTEST
 public:
-    class ActorIsColorTest& operator=(class ActorIsColorTest const&) = delete;
-    ActorIsColorTest(class ActorIsColorTest const&) = delete;
+    class ActorIsColorTest& operator=(class ActorIsColorTest const &) = delete;
+    ActorIsColorTest(class ActorIsColorTest const &) = delete;
     ActorIsColorTest() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorIsColorTest();
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*6*/ virtual class Json::Value _serializeValue() const;
     /*

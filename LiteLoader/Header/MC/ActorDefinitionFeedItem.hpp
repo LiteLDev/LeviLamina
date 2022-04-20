@@ -15,8 +15,8 @@ struct ActorDefinitionFeedItem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITIONFEEDITEM
 public:
-    struct ActorDefinitionFeedItem& operator=(struct ActorDefinitionFeedItem const&) = delete;
-    ActorDefinitionFeedItem(struct ActorDefinitionFeedItem const&) = delete;
+    struct ActorDefinitionFeedItem& operator=(struct ActorDefinitionFeedItem const &) = delete;
+    ActorDefinitionFeedItem(struct ActorDefinitionFeedItem const &) = delete;
     ActorDefinitionFeedItem() = delete;
 #endif
 

@@ -15,17 +15,17 @@ class IFoodItemComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IFOODITEMCOMPONENT
 public:
-    class IFoodItemComponent& operator=(class IFoodItemComponent const&) = delete;
-    IFoodItemComponent(class IFoodItemComponent const&) = delete;
+    class IFoodItemComponent& operator=(class IFoodItemComponent const &) = delete;
+    IFoodItemComponent(class IFoodItemComponent const &) = delete;
     IFoodItemComponent() = delete;
 #endif
 
 public:
-    MCAPI static char const* const CAN_ALWAYS_EAT;
-    MCAPI static char const* const NUTRITION;
-    MCAPI static char const* const ON_CONSUME;
-    MCAPI static char const* const SATURATION_MODIFIER;
-    MCAPI static char const* const USING_CONVERTS_TO;
+    MCAPI static char const *const CAN_ALWAYS_EAT;
+    MCAPI static char const *const NUTRITION;
+    MCAPI static char const *const ON_CONSUME;
+    MCAPI static char const *const SATURATION_MODIFIER;
+    MCAPI static char const *const USING_CONVERTS_TO;
 
 protected:
 

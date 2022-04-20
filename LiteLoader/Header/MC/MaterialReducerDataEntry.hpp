@@ -15,8 +15,8 @@ class MaterialReducerDataEntry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MATERIALREDUCERDATAENTRY
 public:
-    class MaterialReducerDataEntry& operator=(class MaterialReducerDataEntry const&) = delete;
-    MaterialReducerDataEntry(class MaterialReducerDataEntry const&) = delete;
+    class MaterialReducerDataEntry& operator=(class MaterialReducerDataEntry const &) = delete;
+    MaterialReducerDataEntry(class MaterialReducerDataEntry const &) = delete;
     MaterialReducerDataEntry() = delete;
 #endif
 

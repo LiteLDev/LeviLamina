@@ -14,7 +14,7 @@ namespace VoronoiZoomMultiNoise {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI class Vec3 getGridOffset(class SimplePositionalRandomFactory const&, class BlockPos);
-    MCAPI unsigned int getZoomedVoronoiCellIndex(class BlockPos, std::vector<class Vec3> const&, unsigned int, unsigned int, unsigned int);
+    MCAPI class Vec3 getGridOffset(class SimplePositionalRandomFactory const &, class BlockPos);
+    MCAPI unsigned int getZoomedVoronoiCellIndex(class BlockPos, std::vector<class Vec3> const &, unsigned int, unsigned int, unsigned int);
 
 };

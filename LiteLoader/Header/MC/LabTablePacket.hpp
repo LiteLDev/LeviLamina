@@ -18,16 +18,16 @@ class LabTablePacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LABTABLEPACKET
 public:
-    class LabTablePacket& operator=(class LabTablePacket const&) = delete;
-    LabTablePacket(class LabTablePacket const&) = delete;
+    class LabTablePacket& operator=(class LabTablePacket const &) = delete;
+    LabTablePacket(class LabTablePacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~LabTablePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~LabTablePacket(){
          (LabTablePacket::*rv)();
@@ -35,8 +35,8 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI LabTablePacket(class BlockPos const&, enum LabTableReactionType);
-    MCAPI LabTablePacket(enum LabTablePacket::Type, class BlockPos const&);
+    MCAPI LabTablePacket(class BlockPos const &, enum LabTableReactionType);
+    MCAPI LabTablePacket(enum LabTablePacket::Type, class BlockPos const &);
     MCAPI LabTablePacket();
 
 protected:

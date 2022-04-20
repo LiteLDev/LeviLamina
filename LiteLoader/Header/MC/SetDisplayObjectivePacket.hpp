@@ -19,16 +19,16 @@ class SetDisplayObjectivePacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETDISPLAYOBJECTIVEPACKET
 public:
-    class SetDisplayObjectivePacket& operator=(class SetDisplayObjectivePacket const&) = delete;
-    SetDisplayObjectivePacket(class SetDisplayObjectivePacket const&) = delete;
+    class SetDisplayObjectivePacket& operator=(class SetDisplayObjectivePacket const &) = delete;
+    SetDisplayObjectivePacket(class SetDisplayObjectivePacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~SetDisplayObjectivePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~SetDisplayObjectivePacket(){
          (SetDisplayObjectivePacket::*rv)();
@@ -36,7 +36,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI SetDisplayObjectivePacket(std::string const&, std::string const&, std::string const&, std::string const&, enum ObjectiveSortOrder);
+    MCAPI SetDisplayObjectivePacket(std::string const &, std::string const &, std::string const &, std::string const &, enum ObjectiveSortOrder);
     MCAPI SetDisplayObjectivePacket();
 
 protected:

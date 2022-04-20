@@ -21,7 +21,8 @@ struct NbtToBlockCache {
 enum NBTState;
 
 #undef AFTER_EXTRA
+    MCAPI extern class std::unordered_map<class HashedString, class std::function<void (int, class CompoundTag &)>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::function<void (int, class CompoundTag &)>>>> BLOCK_REPLACE_DATA_MAP;
     MCAPI void clearNBTToBlockCache();
-    MCAPI struct std::pair<enum BlockSerializationUtils::NBTState, class Block const* > tryGetBlockFromNBT(class CompoundTag const&, struct BlockSerializationUtils::NbtToBlockCache*);
+    MCAPI struct std::pair<enum BlockSerializationUtils::NBTState, class Block const *> tryGetBlockFromNBT(class CompoundTag const &, struct BlockSerializationUtils::NbtToBlockCache *);
 
 };

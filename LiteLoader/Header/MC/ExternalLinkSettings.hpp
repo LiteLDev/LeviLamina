@@ -15,8 +15,8 @@ class ExternalLinkSettings {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXTERNALLINKSETTINGS
 public:
-    class ExternalLinkSettings& operator=(class ExternalLinkSettings const&) = delete;
-    ExternalLinkSettings(class ExternalLinkSettings const&) = delete;
+    class ExternalLinkSettings& operator=(class ExternalLinkSettings const &) = delete;
+    ExternalLinkSettings(class ExternalLinkSettings const &) = delete;
     ExternalLinkSettings() = delete;
 #endif
 

@@ -18,8 +18,8 @@ struct PreferredPathDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PREFERREDPATHDESCRIPTION
 public:
-    struct PreferredPathDescription& operator=(struct PreferredPathDescription const&) = delete;
-    PreferredPathDescription(struct PreferredPathDescription const&) = delete;
+    struct PreferredPathDescription& operator=(struct PreferredPathDescription const &) = delete;
+    PreferredPathDescription(struct PreferredPathDescription const &) = delete;
 #endif
 
 public:

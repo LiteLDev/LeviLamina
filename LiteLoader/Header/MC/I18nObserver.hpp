@@ -17,8 +17,8 @@ class I18nObserver {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_I18NOBSERVER
 public:
-    class I18nObserver& operator=(class I18nObserver const&) = delete;
-    I18nObserver(class I18nObserver const&) = delete;
+    class I18nObserver& operator=(class I18nObserver const &) = delete;
+    I18nObserver(class I18nObserver const &) = delete;
     I18nObserver() = delete;
 #endif
 

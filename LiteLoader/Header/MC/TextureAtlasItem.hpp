@@ -15,8 +15,8 @@ class TextureAtlasItem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTUREATLASITEM
 public:
-    class TextureAtlasItem& operator=(class TextureAtlasItem const&) = delete;
-    TextureAtlasItem(class TextureAtlasItem const&) = delete;
+    class TextureAtlasItem& operator=(class TextureAtlasItem const &) = delete;
+    TextureAtlasItem(class TextureAtlasItem const &) = delete;
     TextureAtlasItem() = delete;
 #endif
 

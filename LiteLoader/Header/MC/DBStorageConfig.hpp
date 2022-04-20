@@ -15,8 +15,8 @@ struct DBStorageConfig {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DBSTORAGECONFIG
 public:
-    struct DBStorageConfig& operator=(struct DBStorageConfig const&) = delete;
-    DBStorageConfig(struct DBStorageConfig const&) = delete;
+    struct DBStorageConfig& operator=(struct DBStorageConfig const &) = delete;
+    DBStorageConfig(struct DBStorageConfig const &) = delete;
     DBStorageConfig() = delete;
 #endif
 

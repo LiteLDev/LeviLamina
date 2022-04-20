@@ -21,16 +21,24 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MODALFORMREQUESTPACKET
 public:
-    class ModalFormRequestPacket& operator=(class ModalFormRequestPacket const&) = delete;
-    ModalFormRequestPacket(class ModalFormRequestPacket const&) = delete;
+    class ModalFormRequestPacket& operator=(class ModalFormRequestPacket const &) = delete;
+    ModalFormRequestPacket(class ModalFormRequestPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ModalFormRequestPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    /*
+    inline  ~ModalFormRequestPacket(){
+         (ModalFormRequestPacket::*rv)();
+        *((void**)&rv) = dlsym("??1ModalFormRequestPacket@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
+    MCAPI ModalFormRequestPacket(unsigned int, std::string const &);
     MCAPI ModalFormRequestPacket();
 
 protected:

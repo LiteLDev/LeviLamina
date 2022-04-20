@@ -18,8 +18,8 @@ class HotbarContainerValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOTBARCONTAINERVALIDATION
 public:
-    class HotbarContainerValidation& operator=(class HotbarContainerValidation const&) = delete;
-    HotbarContainerValidation(class HotbarContainerValidation const&) = delete;
+    class HotbarContainerValidation& operator=(class HotbarContainerValidation const &) = delete;
+    HotbarContainerValidation(class HotbarContainerValidation const &) = delete;
     HotbarContainerValidation() = delete;
 #endif
 
@@ -27,14 +27,14 @@ public:
     /*0*/ virtual ~HotbarContainerValidation();
     /*2*/ virtual void __unk_vfn_2();
     /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const&, class ItemStackBase const&) const;
+    /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     /*6*/ virtual void __unk_vfn_6();
-    /*9*/ virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
+    /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
     /*
-    inline bool canItemMoveToContainer(class ItemStackBase const& a0) const{
-        bool (HotbarContainerValidation::*rv)(class ItemStackBase const&) const;
+    inline bool canItemMoveToContainer(class ItemStackBase const & a0) const{
+        bool (HotbarContainerValidation::*rv)(class ItemStackBase const &) const;
         *((void**)&rv) = dlsym("?canItemMoveToContainer@HotbarContainerValidation@@UEBA_NAEBVItemStackBase@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const&>(a0));
+        return (this->*rv)(std::forward<class ItemStackBase const &>(a0));
     }
     */
 

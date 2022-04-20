@@ -17,20 +17,20 @@ class MultifaceFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MULTIFACEFEATURE
 public:
-    class MultifaceFeature& operator=(class MultifaceFeature const&) = delete;
-    MultifaceFeature(class MultifaceFeature const&) = delete;
-    MultifaceFeature() = delete;
+    class MultifaceFeature& operator=(class MultifaceFeature const &) = delete;
+    MultifaceFeature(class MultifaceFeature const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~MultifaceFeature();
-    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
+    MCAPI MultifaceFeature();
 
 protected:
 
 private:
-    MCAPI class std::optional<class BlockPos> _placeBlockIfPossible(class BlockSource&, class BlockPos const&, class Random&, std::vector<unsigned char> const&) const;
+    MCAPI class std::optional<class BlockPos> _placeBlockIfPossible(class BlockSource &, class BlockPos const &, class Random &, std::vector<unsigned char> const &) const;
     MCAPI static std::vector<unsigned char> _getShuffledDirections(std::vector<unsigned char>);
-    MCAPI static std::vector<unsigned char> _getShuffledDirectionsExcept(unsigned char, std::vector<unsigned char> const&);
+    MCAPI static std::vector<unsigned char> _getShuffledDirectionsExcept(unsigned char, std::vector<unsigned char> const &);
 
 };

@@ -17,14 +17,14 @@ class SmoothStoneSelector {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMOOTHSTONESELECTOR
 public:
-    class SmoothStoneSelector& operator=(class SmoothStoneSelector const&) = delete;
-    SmoothStoneSelector(class SmoothStoneSelector const&) = delete;
+    class SmoothStoneSelector& operator=(class SmoothStoneSelector const &) = delete;
+    SmoothStoneSelector(class SmoothStoneSelector const &) = delete;
     SmoothStoneSelector() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SmoothStoneSelector();
-    /*1*/ virtual class Block const& next(class Random&, int, int, int, bool) const;
+    /*1*/ virtual class Block const & next(class Random &, int, int, int, bool) const;
     /*
     inline  ~SmoothStoneSelector(){
          (SmoothStoneSelector::*rv)();

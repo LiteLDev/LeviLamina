@@ -41,9 +41,9 @@ public:
 #endif
 
 public:
-    MCAPI InventoryAction(class InventoryAction const&);
-    MCAPI class InventoryAction& operator=(class InventoryAction const&);
-    MCAPI void postLoadItems(class BlockPalette&, bool);
+    MCAPI InventoryAction(class InventoryAction const &);
+    MCAPI class InventoryAction & operator=(class InventoryAction const &);
+    MCAPI void postLoadItems(class BlockPalette &, bool);
     MCAPI ~InventoryAction();
 
 protected:

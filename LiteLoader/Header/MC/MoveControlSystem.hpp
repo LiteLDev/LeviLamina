@@ -17,15 +17,15 @@ class MoveControlSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVECONTROLSYSTEM
 public:
-    class MoveControlSystem& operator=(class MoveControlSystem const&) = delete;
-    MoveControlSystem(class MoveControlSystem const&) = delete;
+    class MoveControlSystem& operator=(class MoveControlSystem const &) = delete;
+    MoveControlSystem(class MoveControlSystem const &) = delete;
     MoveControlSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~MoveControlSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

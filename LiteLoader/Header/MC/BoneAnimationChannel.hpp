@@ -17,13 +17,13 @@ class BoneAnimationChannel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BONEANIMATIONCHANNEL
 public:
-    class BoneAnimationChannel& operator=(class BoneAnimationChannel const&) = delete;
-    BoneAnimationChannel(class BoneAnimationChannel const&) = delete;
+    class BoneAnimationChannel& operator=(class BoneAnimationChannel const &) = delete;
+    BoneAnimationChannel(class BoneAnimationChannel const &) = delete;
     BoneAnimationChannel() = delete;
 #endif
 
 public:
-    MCAPI class KeyFrameTransform& addKeyFrame(float);
+    MCAPI class KeyFrameTransform & addKeyFrame(float);
     MCAPI void sortKeyFrames();
 
 protected:

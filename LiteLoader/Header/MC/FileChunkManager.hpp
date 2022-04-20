@@ -17,14 +17,14 @@ class FileChunkManager {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILECHUNKMANAGER
 public:
-    class FileChunkManager& operator=(class FileChunkManager const&) = delete;
-    FileChunkManager(class FileChunkManager const&) = delete;
+    class FileChunkManager& operator=(class FileChunkManager const &) = delete;
+    FileChunkManager(class FileChunkManager const &) = delete;
 #endif
 
 public:
     MCAPI FileChunkManager();
     MCAPI struct FileChunkInfo getChunkInfo(int) const;
-    MCAPI std::vector<struct FileChunkInfo> const& getChunks() const;
+    MCAPI std::vector<struct FileChunkInfo> const & getChunks() const;
     MCAPI int getTotalNumberOfChunks();
     MCAPI void reset();
     MCAPI void reset(unsigned __int64, unsigned int);

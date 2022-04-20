@@ -14,6 +14,6 @@ namespace ActorUtil {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void startFizzEffect(class Actor&);
+    MCAPI void startFizzEffect(class Actor &);
 
 };

@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Json.hpp"
 #include "JsonUtil.hpp"
 
 #define BEFORE_EXTRA
@@ -19,21 +18,17 @@ class SpawnActorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNACTORDEFINITION
 public:
-    class SpawnActorDefinition& operator=(class SpawnActorDefinition const&) = delete;
-    SpawnActorDefinition(class SpawnActorDefinition const&) = delete;
+    class SpawnActorDefinition& operator=(class SpawnActorDefinition const &) = delete;
+    SpawnActorDefinition(class SpawnActorDefinition const &) = delete;
     SpawnActorDefinition() = delete;
 #endif
 
 public:
-    MCAPI void deserializeData(class Json::Value&, class SemVersion const&);
-    MCAPI void initialize(class EntityContext&, class SpawnActorComponent&) const;
-    MCAPI void serializeData(class Json::Value&) const;
-    MCAPI ~SpawnActorDefinition();
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SpawnActorDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class SpawnActorComponent &) const;
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SpawnActorDefinition>> &);
 
 protected:
 
 private:
-    MCAPI void _parseSpawnEntry(class Json::Value&, class SemVersion const&);
 
 };

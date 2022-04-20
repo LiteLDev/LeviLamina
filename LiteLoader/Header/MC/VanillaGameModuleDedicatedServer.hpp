@@ -17,8 +17,8 @@ class VanillaGameModuleDedicatedServer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAGAMEMODULEDEDICATEDSERVER
 public:
-    class VanillaGameModuleDedicatedServer& operator=(class VanillaGameModuleDedicatedServer const&) = delete;
-    VanillaGameModuleDedicatedServer(class VanillaGameModuleDedicatedServer const&) = delete;
+    class VanillaGameModuleDedicatedServer& operator=(class VanillaGameModuleDedicatedServer const &) = delete;
+    VanillaGameModuleDedicatedServer(class VanillaGameModuleDedicatedServer const &) = delete;
     VanillaGameModuleDedicatedServer() = delete;
 #endif
 
@@ -27,7 +27,7 @@ public:
     /*1*/ virtual std::unique_ptr<class GameModuleServer> createGameModuleServer();
     /*2*/ virtual class std::shared_ptr<class IInPackagePacks> createInPackagePacks();
     /*3*/ virtual void registerMolangQueries();
-    /*4*/ virtual void registerServerInstanceHandler(class ServerInstanceEventCoordinator&);
+    /*4*/ virtual void registerServerInstanceHandler(class ServerInstanceEventCoordinator &);
 
 protected:
 

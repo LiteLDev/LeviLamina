@@ -17,15 +17,15 @@ class TargetNearbySystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TARGETNEARBYSYSTEM
 public:
-    class TargetNearbySystem& operator=(class TargetNearbySystem const&) = delete;
-    TargetNearbySystem(class TargetNearbySystem const&) = delete;
+    class TargetNearbySystem& operator=(class TargetNearbySystem const &) = delete;
+    TargetNearbySystem(class TargetNearbySystem const &) = delete;
     TargetNearbySystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~TargetNearbySystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

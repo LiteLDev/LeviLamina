@@ -17,8 +17,8 @@ class Control {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTROL
 public:
-    class Control& operator=(class Control const&) = delete;
-    Control(class Control const&) = delete;
+    class Control& operator=(class Control const &) = delete;
+    Control(class Control const &) = delete;
     Control() = delete;
 #endif
 

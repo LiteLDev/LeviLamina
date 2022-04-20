@@ -17,8 +17,8 @@ class NetherFortressPiece {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERFORTRESSPIECE
 public:
-    class NetherFortressPiece& operator=(class NetherFortressPiece const&) = delete;
-    NetherFortressPiece(class NetherFortressPiece const&) = delete;
+    class NetherFortressPiece& operator=(class NetherFortressPiece const &) = delete;
+    NetherFortressPiece(class NetherFortressPiece const &) = delete;
     NetherFortressPiece() = delete;
 #endif
 
@@ -29,23 +29,23 @@ public:
         *((void**)&rv) = dlsym("??1NetherFortressPiece@@UEAA@XZ");
         return (this->*rv)();
     }
-    inline void addHardcodedSpawnAreas(class LevelChunk& a0) const{
-        void (NetherFortressPiece::*rv)(class LevelChunk&) const;
+    inline void addHardcodedSpawnAreas(class LevelChunk & a0) const{
+        void (NetherFortressPiece::*rv)(class LevelChunk &) const;
         *((void**)&rv) = dlsym("?addHardcodedSpawnAreas@NetherFortressPiece@@UEBAXAEAVLevelChunk@@@Z");
-        return (this->*rv)(std::forward<class LevelChunk&>(a0));
+        return (this->*rv)(std::forward<class LevelChunk &>(a0));
     }
-    inline bool postProcess(class BlockSource& a0, class Random& a1, class BoundingBox const& a2){
-        bool (NetherFortressPiece::*rv)(class BlockSource&, class Random&, class BoundingBox const&);
+    inline bool postProcess(class BlockSource & a0, class Random & a1, class BoundingBox const & a2){
+        bool (NetherFortressPiece::*rv)(class BlockSource &, class Random &, class BoundingBox const &);
         *((void**)&rv) = dlsym("?postProcess@NetherFortressPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Random&>(a1), std::forward<class BoundingBox const&>(a2));
+        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class Random &>(a1), std::forward<class BoundingBox const &>(a2));
     }
     */
-    MCAPI std::unique_ptr<class NetherFortressPiece> findAndCreateBridgePieceFactory(std::string const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, int, int, int);
-    MCAPI class StructurePiece* generateAndAddPiece(class NBStartPiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, int, int, int, bool);
-    MCAPI class StructurePiece* generateChildForward(class NBStartPiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, bool);
-    MCAPI class StructurePiece* generateChildLeft(class NBStartPiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, bool);
-    MCAPI class StructurePiece* generateChildRight(class NBStartPiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, bool);
-    MCAPI std::unique_ptr<class NetherFortressPiece> generatePiece(class NBStartPiece&, std::vector<class PieceWeight>&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, int, int, int);
+    MCAPI std::unique_ptr<class NetherFortressPiece> findAndCreateBridgePieceFactory(std::string const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
+    MCAPI class StructurePiece * generateAndAddPiece(class NBStartPiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int, bool);
+    MCAPI class StructurePiece * generateChildForward(class NBStartPiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, bool);
+    MCAPI class StructurePiece * generateChildLeft(class NBStartPiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, bool);
+    MCAPI class StructurePiece * generateChildRight(class NBStartPiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, bool);
+    MCAPI std::unique_ptr<class NetherFortressPiece> generatePiece(class NBStartPiece &, std::vector<class PieceWeight> &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
 
 protected:
 

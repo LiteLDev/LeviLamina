@@ -19,14 +19,14 @@ class BreakBlockDefinition : public BehaviorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREAKBLOCKDEFINITION
 public:
-    class BreakBlockDefinition& operator=(class BreakBlockDefinition const&) = delete;
-    BreakBlockDefinition(class BreakBlockDefinition const&) = delete;
+    class BreakBlockDefinition& operator=(class BreakBlockDefinition const &) = delete;
+    BreakBlockDefinition(class BreakBlockDefinition const &) = delete;
     BreakBlockDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BreakBlockDefinition();
-    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 
 protected:
 

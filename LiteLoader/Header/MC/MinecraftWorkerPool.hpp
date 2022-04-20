@@ -18,8 +18,8 @@ class MinecraftWorkerPool {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTWORKERPOOL
 public:
-    class MinecraftWorkerPool& operator=(class MinecraftWorkerPool const&) = delete;
-    MinecraftWorkerPool(class MinecraftWorkerPool const&) = delete;
+    class MinecraftWorkerPool& operator=(class MinecraftWorkerPool const &) = delete;
+    MinecraftWorkerPool(class MinecraftWorkerPool const &) = delete;
     MinecraftWorkerPool() = delete;
 #endif
 

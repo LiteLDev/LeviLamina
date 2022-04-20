@@ -15,8 +15,8 @@ struct MolangActorIdArrayPtr {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGACTORIDARRAYPTR
 public:
-    struct MolangActorIdArrayPtr& operator=(struct MolangActorIdArrayPtr const&) = delete;
-    MolangActorIdArrayPtr(struct MolangActorIdArrayPtr const&) = delete;
+    struct MolangActorIdArrayPtr& operator=(struct MolangActorIdArrayPtr const &) = delete;
+    MolangActorIdArrayPtr(struct MolangActorIdArrayPtr const &) = delete;
     MolangActorIdArrayPtr() = delete;
 #endif
 

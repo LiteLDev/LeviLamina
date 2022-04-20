@@ -18,8 +18,8 @@ struct WantsJockeyDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WANTSJOCKEYDEFINITION
 public:
-    struct WantsJockeyDefinition& operator=(struct WantsJockeyDefinition const&) = delete;
-    WantsJockeyDefinition(struct WantsJockeyDefinition const&) = delete;
+    struct WantsJockeyDefinition& operator=(struct WantsJockeyDefinition const &) = delete;
+    WantsJockeyDefinition(struct WantsJockeyDefinition const &) = delete;
     WantsJockeyDefinition() = delete;
 #endif
 

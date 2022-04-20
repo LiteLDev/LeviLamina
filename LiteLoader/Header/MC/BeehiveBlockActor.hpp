@@ -24,40 +24,40 @@ struct Occupant {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEEHIVEBLOCKACTOR
 public:
-    class BeehiveBlockActor& operator=(class BeehiveBlockActor const&) = delete;
-    BeehiveBlockActor(class BeehiveBlockActor const&) = delete;
+    class BeehiveBlockActor& operator=(class BeehiveBlockActor const &) = delete;
+    BeehiveBlockActor(class BeehiveBlockActor const &) = delete;
     BeehiveBlockActor() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BeehiveBlockActor();
-    /*1*/ virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
-    /*2*/ virtual bool save(class CompoundTag&) const;
-    /*4*/ virtual void saveBlockData(class CompoundTag&, class BlockSource&) const;
-    /*5*/ virtual void loadBlockData(class CompoundTag const&, class BlockSource&, class DataLoadHelper&);
-    /*6*/ virtual void onCustomTagLoadDone(class BlockSource&);
-    /*7*/ virtual void tick(class BlockSource&);
-    /*8*/ virtual void onChanged(class BlockSource&);
-    /*11*/ virtual void onPlace(class BlockSource&);
+    /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+    /*2*/ virtual bool save(class CompoundTag &) const;
+    /*4*/ virtual void saveBlockData(class CompoundTag &, class BlockSource &) const;
+    /*5*/ virtual void loadBlockData(class CompoundTag const &, class BlockSource &, class DataLoadHelper &);
+    /*6*/ virtual void onCustomTagLoadDone(class BlockSource &);
+    /*7*/ virtual void tick(class BlockSource &);
+    /*8*/ virtual void onChanged(class BlockSource &);
+    /*11*/ virtual void onPlace(class BlockSource &);
     /*12*/ virtual void __unk_vfn_12();
-    /*13*/ virtual void onRemoved(class BlockSource&);
+    /*13*/ virtual void onRemoved(class BlockSource &);
     /*14*/ virtual void triggerEvent(int, int);
     /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual void __unk_vfn_17();
-    /*19*/ virtual class BlockActor* getCrackEntity(class BlockSource&, class BlockPos const&);
-    /*27*/ virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
+    /*19*/ virtual class BlockActor * getCrackEntity(class BlockSource &, class BlockPos const &);
+    /*27*/ virtual class PistonBlockActor * getOwningPiston(class BlockSource &);
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
-    /*35*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
-    /*36*/ virtual bool _playerCanUpdate(class Player const&) const;
+    /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
+    /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
     MCAPI void disableBeeSpawn();
-    MCAPI void evictAll(class BlockSource&, bool);
-    MCAPI void saveUserData(class CompoundTag&) const;
-    MCAPI bool tryAdmit(class Actor&);
+    MCAPI void evictAll(class BlockSource &, bool);
+    MCAPI void saveUserData(class CompoundTag &) const;
+    MCAPI bool tryAdmit(class Actor &);
     MCAPI static unsigned int const MAX_OCCUPANCY;
     MCAPI static enum BlockActorType const TypeId;
     MCAPI static std::string const TypeString;
@@ -65,9 +65,9 @@ public:
 protected:
 
 private:
-    MCAPI class Actor* _revive(class BlockSource&, struct BeehiveBlockActor::Occupant const&, unsigned char);
-    MCAPI bool _tickOccupant(class BlockSource&, struct BeehiveBlockActor::Occupant&);
-    MCAPI void _trySpawnBees(class BlockSource&);
-    MCAPI static bool _validSpawnDirection(class BlockSource&, class BlockPos const&, unsigned char);
+    MCAPI class Actor * _revive(class BlockSource &, struct BeehiveBlockActor::Occupant const &, unsigned char);
+    MCAPI bool _tickOccupant(class BlockSource &, struct BeehiveBlockActor::Occupant &);
+    MCAPI void _trySpawnBees(class BlockSource &);
+    MCAPI static bool _validSpawnDirection(class BlockSource &, class BlockPos const &, unsigned char);
 
 };

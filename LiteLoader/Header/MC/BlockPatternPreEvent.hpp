@@ -15,8 +15,8 @@ class BlockPatternPreEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPATTERNPREEVENT
 public:
-    class BlockPatternPreEvent& operator=(class BlockPatternPreEvent const&) = delete;
-    BlockPatternPreEvent(class BlockPatternPreEvent const&) = delete;
+    class BlockPatternPreEvent& operator=(class BlockPatternPreEvent const &) = delete;
+    BlockPatternPreEvent(class BlockPatternPreEvent const &) = delete;
     BlockPatternPreEvent() = delete;
 #endif
 

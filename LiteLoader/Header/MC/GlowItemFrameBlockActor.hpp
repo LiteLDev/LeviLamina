@@ -18,31 +18,31 @@ class GlowItemFrameBlockActor : public ItemFrameBlockActor {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLOWITEMFRAMEBLOCKACTOR
 public:
-    class GlowItemFrameBlockActor& operator=(class GlowItemFrameBlockActor const&) = delete;
-    GlowItemFrameBlockActor(class GlowItemFrameBlockActor const&) = delete;
+    class GlowItemFrameBlockActor& operator=(class GlowItemFrameBlockActor const &) = delete;
+    GlowItemFrameBlockActor(class GlowItemFrameBlockActor const &) = delete;
     GlowItemFrameBlockActor() = delete;
 #endif
 
 public:
     /*0*/ virtual ~GlowItemFrameBlockActor();
-    /*4*/ virtual void saveBlockData(class CompoundTag&, class BlockSource&) const;
-    /*5*/ virtual void loadBlockData(class CompoundTag const&, class BlockSource&, class DataLoadHelper&);
-    /*6*/ virtual void onCustomTagLoadDone(class BlockSource&);
-    /*11*/ virtual void onPlace(class BlockSource&);
+    /*4*/ virtual void saveBlockData(class CompoundTag &, class BlockSource &) const;
+    /*5*/ virtual void loadBlockData(class CompoundTag const &, class BlockSource &, class DataLoadHelper &);
+    /*6*/ virtual void onCustomTagLoadDone(class BlockSource &);
+    /*11*/ virtual void onPlace(class BlockSource &);
     /*12*/ virtual void __unk_vfn_12();
-    /*13*/ virtual void onRemoved(class BlockSource&);
+    /*13*/ virtual void onRemoved(class BlockSource &);
     /*14*/ virtual void triggerEvent(int, int);
     /*16*/ virtual void __unk_vfn_16();
-    /*17*/ virtual float getShadowRadius(class BlockSource&) const;
-    /*19*/ virtual class BlockActor* getCrackEntity(class BlockSource&, class BlockPos const&);
-    /*27*/ virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
+    /*17*/ virtual float getShadowRadius(class BlockSource &) const;
+    /*19*/ virtual class BlockActor * getCrackEntity(class BlockSource &, class BlockPos const &);
+    /*27*/ virtual class PistonBlockActor * getOwningPiston(class BlockSource &);
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
-    /*36*/ virtual bool _playerCanUpdate(class Player const&) const;
+    /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
     MCAPI GlowItemFrameBlockActor(class BlockPos);
 
 protected:

@@ -17,8 +17,8 @@ class ContainerSizeChangeListener {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERSIZECHANGELISTENER
 public:
-    class ContainerSizeChangeListener& operator=(class ContainerSizeChangeListener const&) = delete;
-    ContainerSizeChangeListener(class ContainerSizeChangeListener const&) = delete;
+    class ContainerSizeChangeListener& operator=(class ContainerSizeChangeListener const &) = delete;
+    ContainerSizeChangeListener(class ContainerSizeChangeListener const &) = delete;
     ContainerSizeChangeListener() = delete;
 #endif
 

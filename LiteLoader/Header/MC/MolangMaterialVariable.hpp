@@ -15,8 +15,8 @@ struct MolangMaterialVariable {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGMATERIALVARIABLE
 public:
-    struct MolangMaterialVariable& operator=(struct MolangMaterialVariable const&) = delete;
-    MolangMaterialVariable(struct MolangMaterialVariable const&) = delete;
+    struct MolangMaterialVariable& operator=(struct MolangMaterialVariable const &) = delete;
+    MolangMaterialVariable(struct MolangMaterialVariable const &) = delete;
     MolangMaterialVariable() = delete;
 #endif
 

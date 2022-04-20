@@ -18,8 +18,8 @@ class WorkGoal : public MoveToPOIGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORKGOAL
 public:
-    class WorkGoal& operator=(class WorkGoal const&) = delete;
-    WorkGoal(class WorkGoal const&) = delete;
+    class WorkGoal& operator=(class WorkGoal const &) = delete;
+    WorkGoal(class WorkGoal const &) = delete;
     WorkGoal() = delete;
 #endif
 
@@ -31,9 +31,19 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
+    /*18*/ virtual void useWorkstation();
+    /*
+    inline  ~WorkGoal(){
+         (WorkGoal::*rv)();
+        *((void**)&rv) = dlsym("??1WorkGoal@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
+    MCAPI WorkGoal(class Mob &);
+    MCAPI void playPOISoundEvent() const;
 
 protected:
 

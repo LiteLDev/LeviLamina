@@ -17,8 +17,8 @@ class EducationOptions {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUCATIONOPTIONS
 public:
-    class EducationOptions& operator=(class EducationOptions const&) = delete;
-    EducationOptions(class EducationOptions const&) = delete;
+    class EducationOptions& operator=(class EducationOptions const &) = delete;
+    EducationOptions(class EducationOptions const &) = delete;
     EducationOptions() = delete;
 #endif
 
@@ -29,14 +29,14 @@ public:
         *((void**)&rv) = dlsym("??1EducationOptions@@UEAA@XZ");
         return (this->*rv)();
     }
-    inline void onActiveResourcePacksChanged(class ResourcePackManager& a0){
-        void (EducationOptions::*rv)(class ResourcePackManager&);
+    inline void onActiveResourcePacksChanged(class ResourcePackManager & a0){
+        void (EducationOptions::*rv)(class ResourcePackManager &);
         *((void**)&rv) = dlsym("?onActiveResourcePacksChanged@EducationOptions@@UEAAXAEAVResourcePackManager@@@Z");
-        return (this->*rv)(std::forward<class ResourcePackManager&>(a0));
+        return (this->*rv)(std::forward<class ResourcePackManager &>(a0));
     }
     */
-    MCAPI EducationOptions(class ResourcePackManager*);
-    MCAPI void init(class LevelData const&);
+    MCAPI EducationOptions(class ResourcePackManager *);
+    MCAPI void init(class LevelData const &);
     MCAPI static class gsl::basic_string_span<char const, -1> const CHEMISTRY_ENABLED;
     MCAPI static bool isBaseCodeBuilderEnabled();
     MCAPI static bool isChemistryEnabled();

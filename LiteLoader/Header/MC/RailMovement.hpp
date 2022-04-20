@@ -17,13 +17,13 @@ class RailMovement {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAILMOVEMENT
 public:
-    class RailMovement& operator=(class RailMovement const&) = delete;
-    RailMovement(class RailMovement const&) = delete;
+    class RailMovement& operator=(class RailMovement const &) = delete;
+    RailMovement(class RailMovement const &) = delete;
     RailMovement() = delete;
 #endif
 
 public:
-    MCAPI static bool getPos(class Actor&, class Vec3&, class Vec3);
+    MCAPI static bool getPos(class Actor &, class Vec3 &, class Vec3);
 
 protected:
 

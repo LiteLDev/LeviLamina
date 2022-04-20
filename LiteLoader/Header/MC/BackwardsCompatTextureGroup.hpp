@@ -17,8 +17,8 @@ class BackwardsCompatTextureGroup {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BACKWARDSCOMPATTEXTUREGROUP
 public:
-    class BackwardsCompatTextureGroup& operator=(class BackwardsCompatTextureGroup const&) = delete;
-    BackwardsCompatTextureGroup(class BackwardsCompatTextureGroup const&) = delete;
+    class BackwardsCompatTextureGroup& operator=(class BackwardsCompatTextureGroup const &) = delete;
+    BackwardsCompatTextureGroup(class BackwardsCompatTextureGroup const &) = delete;
     BackwardsCompatTextureGroup() = delete;
 #endif
 

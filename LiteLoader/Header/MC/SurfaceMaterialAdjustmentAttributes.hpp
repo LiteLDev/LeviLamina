@@ -17,13 +17,14 @@ struct SurfaceMaterialAdjustmentAttributes {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SURFACEMATERIALADJUSTMENTATTRIBUTES
 public:
-    struct SurfaceMaterialAdjustmentAttributes& operator=(struct SurfaceMaterialAdjustmentAttributes const&) = delete;
-    SurfaceMaterialAdjustmentAttributes(struct SurfaceMaterialAdjustmentAttributes const&) = delete;
+    struct SurfaceMaterialAdjustmentAttributes& operator=(struct SurfaceMaterialAdjustmentAttributes const &) = delete;
+    SurfaceMaterialAdjustmentAttributes(struct SurfaceMaterialAdjustmentAttributes const &) = delete;
     SurfaceMaterialAdjustmentAttributes() = delete;
 #endif
 
 public:
-    MCAPI struct SurfaceMaterialAdjustmentEvaluated evaluateAdjustments(class RenderParams&, class gsl::not_null<class PerlinSimplexNoise* >, class BlockPos const&, int, int) const;
+    MCAPI struct SurfaceMaterialAdjustmentEvaluated evaluateAdjustments(class RenderParams &, class gsl::not_null<class PerlinSimplexNoise *>, class BlockPos const &, int, int) const;
+    MCAPI ~SurfaceMaterialAdjustmentAttributes();
 
 protected:
 

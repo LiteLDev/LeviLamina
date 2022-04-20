@@ -17,12 +17,12 @@ class StructureEditorData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREEDITORDATA
 public:
-    class StructureEditorData& operator=(class StructureEditorData const&) = delete;
+    class StructureEditorData& operator=(class StructureEditorData const &) = delete;
 #endif
 
 public:
-    MCAPI StructureEditorData(class StructureEditorData&&);
-    MCAPI StructureEditorData(class StructureEditorData const&);
+    MCAPI StructureEditorData(class StructureEditorData &&);
+    MCAPI StructureEditorData(class StructureEditorData const &);
     MCAPI StructureEditorData();
     MCAPI std::string getAnimationModeAsString() const;
     MCAPI float getAnimationSeconds() const;
@@ -32,17 +32,18 @@ public:
     MCAPI unsigned int getIntegritySeed() const;
     MCAPI float getIntegrityValue() const;
     MCAPI enum Mirror getMirror() const;
-    MCAPI class Vec3 const& getPivot() const;
+    MCAPI class Vec3 const & getPivot() const;
     MCAPI enum StructureRedstoneSaveMode getRedstoneSaveMode() const;
     MCAPI enum Rotation getRotation() const;
     MCAPI bool getShowBoundingBox() const;
     MCAPI enum StructureBlockType getStructureBlockType() const;
-    MCAPI std::string const& getStructureName() const;
-    MCAPI class BlockPos const& getStructureOffset() const;
-    MCAPI class StructureSettings const& getStructureSettings() const;
-    MCAPI class BlockPos const& getStructureSize() const;
-    MCAPI void load(class CompoundTag const&, class DataLoadHelper&);
-    MCAPI void save(class CompoundTag&) const;
+    MCAPI std::string const & getStructureName() const;
+    MCAPI class BlockPos const & getStructureOffset() const;
+    MCAPI class StructureSettings const & getStructureSettings() const;
+    MCAPI class BlockPos const & getStructureSize() const;
+    MCAPI void load(class CompoundTag const &, class DataLoadHelper &);
+    MCAPI void save(class CompoundTag &) const;
+    MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool);
     MCAPI void setAnimationMode(enum AnimationMode);
     MCAPI void setAnimationSeconds(float);
     MCAPI void setAnimationTicks(unsigned int);
@@ -56,8 +57,8 @@ public:
     MCAPI void setShowBoundingBox(bool);
     MCAPI void setStructureBlockType(enum StructureBlockType);
     MCAPI void setStructureName(class gsl::basic_string_span<char const, -1>);
-    MCAPI void setStructureOffset(class BlockPos const&);
-    MCAPI void setStructureSize(class BlockPos const&);
+    MCAPI void setStructureOffset(class BlockPos const &);
+    MCAPI void setStructureSize(class BlockPos const &);
     MCAPI ~StructureEditorData();
     MCAPI static std::string const DEFAULT_EXPORT_NAME;
     MCAPI static std::string const DEFAULT_STRUCTURE_NAMESPACE;
@@ -65,7 +66,7 @@ public:
     MCAPI static class BlockPos const MIN_STRUCTURE_OFFSET;
     MCAPI static class BlockPos const MIN_STRUCTURE_SIZE;
     MCAPI static char const NAMESPACE_DELIMITER;
-    MCAPI static class BlockPos getOrientedBounds(class BlockPos const&, enum Rotation);
+    MCAPI static class BlockPos getOrientedBounds(class BlockPos const &, enum Rotation);
 
 protected:
 

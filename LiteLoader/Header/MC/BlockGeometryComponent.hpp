@@ -17,13 +17,13 @@ struct BlockGeometryComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKGEOMETRYCOMPONENT
 public:
-    struct BlockGeometryComponent& operator=(struct BlockGeometryComponent const&) = delete;
-    BlockGeometryComponent(struct BlockGeometryComponent const&) = delete;
+    struct BlockGeometryComponent& operator=(struct BlockGeometryComponent const &) = delete;
+    BlockGeometryComponent(struct BlockGeometryComponent const &) = delete;
     BlockGeometryComponent() = delete;
 #endif
 
 public:
-    MCAPI struct BlockGeometryComponent& operator=(struct BlockGeometryComponent&&);
+    MCAPI struct BlockGeometryComponent & operator=(struct BlockGeometryComponent &&);
     MCAPI ~BlockGeometryComponent();
 
 protected:

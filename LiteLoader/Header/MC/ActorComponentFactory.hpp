@@ -17,24 +17,17 @@ class ActorComponentFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORCOMPONENTFACTORY
 public:
-    class ActorComponentFactory& operator=(class ActorComponentFactory const&) = delete;
-    ActorComponentFactory(class ActorComponentFactory const&) = delete;
+    class ActorComponentFactory& operator=(class ActorComponentFactory const &) = delete;
+    ActorComponentFactory(class ActorComponentFactory const &) = delete;
     ActorComponentFactory() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorComponentFactory();
-    /*
-    inline  ~ActorComponentFactory(){
-         (ActorComponentFactory::*rv)();
-        *((void**)&rv) = dlsym("??1ActorComponentFactory@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 
 private:
-    MCAPI void _initialize();
+    MCAPI void _initialize(class BaseGameVersion const &, class Experiments const &);
 
 };

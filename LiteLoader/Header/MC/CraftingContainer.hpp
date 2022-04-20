@@ -18,21 +18,21 @@ class CraftingContainer : public Container {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTINGCONTAINER
 public:
-    class CraftingContainer& operator=(class CraftingContainer const&) = delete;
-    CraftingContainer(class CraftingContainer const&) = delete;
+    class CraftingContainer& operator=(class CraftingContainer const &) = delete;
+    CraftingContainer(class CraftingContainer const &) = delete;
     CraftingContainer() = delete;
 #endif
 
 public:
     /*0*/ virtual ~CraftingContainer();
     /*1*/ virtual void init();
-    /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const& )>);
-    /*5*/ virtual class ItemStack const& getItem(int) const;
-    /*9*/ virtual void setItem(int, class ItemStack const&);
+    /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
+    /*5*/ virtual class ItemStack const & getItem(int) const;
+    /*9*/ virtual void setItem(int, class ItemStack const &);
     /*14*/ virtual int getContainerSize() const;
     /*15*/ virtual int getMaxStackSize() const;
-    /*16*/ virtual void startOpen(class Player&);
-    /*17*/ virtual void stopOpen(class Player&);
+    /*16*/ virtual void startOpen(class Player &);
+    /*17*/ virtual void stopOpen(class Player &);
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
     /*24*/ virtual void setContainerChanged(int);
@@ -45,7 +45,7 @@ public:
     }
     */
     MCAPI CraftingContainer(int, int);
-    MCAPI class ItemStack const& getItem(int, int) const;
+    MCAPI class ItemStack const & getItem(int, int) const;
 
 protected:
 

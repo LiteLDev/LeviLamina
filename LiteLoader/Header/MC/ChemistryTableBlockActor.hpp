@@ -17,17 +17,17 @@ class ChemistryTableBlockActor {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHEMISTRYTABLEBLOCKACTOR
 public:
-    class ChemistryTableBlockActor& operator=(class ChemistryTableBlockActor const&) = delete;
-    ChemistryTableBlockActor(class ChemistryTableBlockActor const&) = delete;
+    class ChemistryTableBlockActor& operator=(class ChemistryTableBlockActor const &) = delete;
+    ChemistryTableBlockActor(class ChemistryTableBlockActor const &) = delete;
     ChemistryTableBlockActor() = delete;
 #endif
 
 public:
     /*
-    inline void startOpen(class Player& a0){
-        void (ChemistryTableBlockActor::*rv)(class Player&);
+    inline void startOpen(class Player & a0){
+        void (ChemistryTableBlockActor::*rv)(class Player &);
         *((void**)&rv) = dlsym("?startOpen@ChemistryTableBlockActor@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0));
+        return (this->*rv)(std::forward<class Player &>(a0));
     }
     inline int getContainerSize() const{
         int (ChemistryTableBlockActor::*rv)() const;
@@ -39,68 +39,68 @@ public:
         *((void**)&rv) = dlsym("?getMaxStackSize@ChemistryTableBlockActor@@UEBAHXZ");
         return (this->*rv)();
     }
-    inline class Container* getContainer(){
-        class Container* (ChemistryTableBlockActor::*rv)();
+    inline class Container * getContainer(){
+        class Container * (ChemistryTableBlockActor::*rv)();
         *((void**)&rv) = dlsym("?getContainer@ChemistryTableBlockActor@@UEAAPEAVContainer@@XZ");
         return (this->*rv)();
     }
-    inline class Container const* getContainer() const{
-        class Container const* (ChemistryTableBlockActor::*rv)() const;
+    inline class Container const * getContainer() const{
+        class Container const * (ChemistryTableBlockActor::*rv)() const;
         *((void**)&rv) = dlsym("?getContainer@ChemistryTableBlockActor@@UEBAPEBVContainer@@XZ");
         return (this->*rv)();
     }
-    inline class ItemStack const& getItem(int a0) const{
-        class ItemStack const& (ChemistryTableBlockActor::*rv)(int) const;
+    inline class ItemStack const & getItem(int a0) const{
+        class ItemStack const & (ChemistryTableBlockActor::*rv)(int) const;
         *((void**)&rv) = dlsym("?getItem@ChemistryTableBlockActor@@UEBAAEBVItemStack@@H@Z");
         return (this->*rv)(std::forward<int>(a0));
     }
-    inline void load(class Level& a0, class CompoundTag const& a1, class DataLoadHelper& a2){
-        void (ChemistryTableBlockActor::*rv)(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    inline void load(class Level & a0, class CompoundTag const & a1, class DataLoadHelper & a2){
+        void (ChemistryTableBlockActor::*rv)(class Level &, class CompoundTag const &, class DataLoadHelper &);
         *((void**)&rv) = dlsym("?load@ChemistryTableBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class Level&>(a0), std::forward<class CompoundTag const&>(a1), std::forward<class DataLoadHelper&>(a2));
+        return (this->*rv)(std::forward<class Level &>(a0), std::forward<class CompoundTag const &>(a1), std::forward<class DataLoadHelper &>(a2));
     }
-    inline void onRemoved(class BlockSource& a0){
-        void (ChemistryTableBlockActor::*rv)(class BlockSource&);
+    inline void onRemoved(class BlockSource & a0){
+        void (ChemistryTableBlockActor::*rv)(class BlockSource &);
         *((void**)&rv) = dlsym("?onRemoved@ChemistryTableBlockActor@@UEAAXAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
+        return (this->*rv)(std::forward<class BlockSource &>(a0));
     }
-    inline bool save(class CompoundTag& a0) const{
-        bool (ChemistryTableBlockActor::*rv)(class CompoundTag&) const;
+    inline bool save(class CompoundTag & a0) const{
+        bool (ChemistryTableBlockActor::*rv)(class CompoundTag &) const;
         *((void**)&rv) = dlsym("?save@ChemistryTableBlockActor@@UEBA_NAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
+        return (this->*rv)(std::forward<class CompoundTag &>(a0));
     }
-    inline void serverInitItemStackIds(int a0, int a1, class std::function<void (int, class ItemStack const& )> a2){
-        void (ChemistryTableBlockActor::*rv)(int, int, class std::function<void (int, class ItemStack const& )>);
+    inline void serverInitItemStackIds(int a0, int a1, class std::function<void (int, class ItemStack const &)> a2){
+        void (ChemistryTableBlockActor::*rv)(int, int, class std::function<void (int, class ItemStack const &)>);
         *((void**)&rv) = dlsym("?serverInitItemStackIds@ChemistryTableBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<class std::function<void (int, class ItemStack const& )>>(a2));
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<class std::function<void (int, class ItemStack const &)>>(a2));
     }
-    inline void setItem(int a0, class ItemStack const& a1){
-        void (ChemistryTableBlockActor::*rv)(int, class ItemStack const&);
+    inline void setItem(int a0, class ItemStack const & a1){
+        void (ChemistryTableBlockActor::*rv)(int, class ItemStack const &);
         *((void**)&rv) = dlsym("?setItem@ChemistryTableBlockActor@@UEAAXHAEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStack const&>(a1));
+        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStack const &>(a1));
     }
-    inline void stopOpen(class Player& a0){
-        void (ChemistryTableBlockActor::*rv)(class Player&);
+    inline void stopOpen(class Player & a0){
+        void (ChemistryTableBlockActor::*rv)(class Player &);
         *((void**)&rv) = dlsym("?stopOpen@ChemistryTableBlockActor@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0));
+        return (this->*rv)(std::forward<class Player &>(a0));
     }
-    inline void tick(class BlockSource& a0){
-        void (ChemistryTableBlockActor::*rv)(class BlockSource&);
+    inline void tick(class BlockSource & a0){
+        void (ChemistryTableBlockActor::*rv)(class BlockSource &);
         *((void**)&rv) = dlsym("?tick@ChemistryTableBlockActor@@UEAAXAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
+        return (this->*rv)(std::forward<class BlockSource &>(a0));
     }
     */
     MCAPI bool isSameType(enum ChemistryTableType) const;
-    MCAPI void playerOpenLabTable(class Player&);
-    MCAPI void reset(class BlockSource&);
-    MCAPI void serverCombine(class BlockSource&, std::vector<class ItemStack> const&);
-    MCAPI void serverLabTablePacket_DEPRECATED(class LabTablePacket const&, class BlockSource&);
+    MCAPI void playerOpenLabTable(class Player &);
+    MCAPI void reset(class BlockSource &);
+    MCAPI void serverCombine(class BlockSource &, std::vector<class ItemStack> const &);
+    MCAPI void serverLabTablePacket_DEPRECATED(class LabTablePacket const &, class BlockSource &);
 
 protected:
 
 private:
-    MCAPI std::unique_ptr<class LabTableReaction> _createReaction(class Random&, std::vector<class ItemStack> const&);
-    MCAPI void _popPendingReactionOutput(class BlockSource&);
-    MCAPI enum ChemistryTableType _updateType(class BlockSource&);
+    MCAPI std::unique_ptr<class LabTableReaction> _createReaction(class Random &, std::vector<class ItemStack> const &);
+    MCAPI void _popPendingReactionOutput(class BlockSource &);
+    MCAPI enum ChemistryTableType _updateType(class BlockSource &);
 
 };

@@ -18,23 +18,23 @@ class LabTableInputValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LABTABLEINPUTVALIDATION
 public:
-    class LabTableInputValidation& operator=(class LabTableInputValidation const&) = delete;
-    LabTableInputValidation(class LabTableInputValidation const&) = delete;
+    class LabTableInputValidation& operator=(class LabTableInputValidation const &) = delete;
+    LabTableInputValidation(class LabTableInputValidation const &) = delete;
     LabTableInputValidation() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LabTableInputValidation();
-    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*7*/ virtual void __unk_vfn_7();
-    /*9*/ virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
+    /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
     /*
-    inline bool canDestroy(class ContainerScreenContext const& a0) const{
-        bool (LabTableInputValidation::*rv)(class ContainerScreenContext const&) const;
+    inline bool canDestroy(class ContainerScreenContext const & a0) const{
+        bool (LabTableInputValidation::*rv)(class ContainerScreenContext const &) const;
         *((void**)&rv) = dlsym("?canDestroy@LabTableInputValidation@@UEBA_NAEBVContainerScreenContext@@@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0));
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
     }
     */
 

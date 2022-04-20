@@ -17,8 +17,8 @@ class TestConfig {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TESTCONFIG
 public:
-    class TestConfig& operator=(class TestConfig const&) = delete;
-    TestConfig(class TestConfig const&) = delete;
+    class TestConfig& operator=(class TestConfig const &) = delete;
+    TestConfig(class TestConfig const &) = delete;
     TestConfig() = delete;
 #endif
 

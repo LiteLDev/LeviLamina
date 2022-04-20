@@ -18,13 +18,13 @@ class NavigationWalkDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONWALKDESCRIPTION
 public:
-    class NavigationWalkDescription& operator=(class NavigationWalkDescription const&) = delete;
-    NavigationWalkDescription(class NavigationWalkDescription const&) = delete;
+    class NavigationWalkDescription& operator=(class NavigationWalkDescription const &) = delete;
+    NavigationWalkDescription(class NavigationWalkDescription const &) = delete;
     NavigationWalkDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~NavigationWalkDescription();
     /*
     inline  ~NavigationWalkDescription(){

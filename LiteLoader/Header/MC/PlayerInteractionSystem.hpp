@@ -17,13 +17,13 @@ class PlayerInteractionSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERINTERACTIONSYSTEM
 public:
-    class PlayerInteractionSystem& operator=(class PlayerInteractionSystem const&) = delete;
-    PlayerInteractionSystem(class PlayerInteractionSystem const&) = delete;
+    class PlayerInteractionSystem& operator=(class PlayerInteractionSystem const &) = delete;
+    PlayerInteractionSystem(class PlayerInteractionSystem const &) = delete;
     PlayerInteractionSystem() = delete;
 #endif
 
 public:
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+    MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
 
 protected:
 

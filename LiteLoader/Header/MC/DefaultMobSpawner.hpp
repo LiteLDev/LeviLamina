@@ -18,14 +18,14 @@ class DefaultMobSpawner : public BaseMobSpawner {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFAULTMOBSPAWNER
 public:
-    class DefaultMobSpawner& operator=(class DefaultMobSpawner const&) = delete;
-    DefaultMobSpawner(class DefaultMobSpawner const&) = delete;
+    class DefaultMobSpawner& operator=(class DefaultMobSpawner const &) = delete;
+    DefaultMobSpawner(class DefaultMobSpawner const &) = delete;
     DefaultMobSpawner() = delete;
 #endif
 
 public:
     /*0*/ virtual ~DefaultMobSpawner();
-    /*4*/ virtual class BlockPos const& getPos();
+    /*4*/ virtual class BlockPos const & getPos();
 
 protected:
 

@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class StructureCommand {
+class StructureCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,23 +18,23 @@ class StructureCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURECOMMAND
 public:
-    class StructureCommand& operator=(class StructureCommand const&) = delete;
-    StructureCommand(class StructureCommand const&) = delete;
+    class StructureCommand& operator=(class StructureCommand const &) = delete;
+    StructureCommand(class StructureCommand const &) = delete;
     StructureCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~StructureCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 
 private:
-    MCAPI void _delete(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI void _delete(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI std::string _getFullName() const;
-    MCAPI bool _isValidSize(class BlockPos const&, class DimensionHeightRange const&, class CommandOutput&) const;
-    MCAPI void _load(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI void _save(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI bool _isValidSize(class BlockPos const &, class DimensionHeightRange const &, class CommandOutput &) const;
+    MCAPI void _load(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI void _save(class CommandOrigin const &, class CommandOutput &) const;
 
 };

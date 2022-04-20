@@ -17,15 +17,15 @@ class HopperSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOPPERSYSTEM
 public:
-    class HopperSystem& operator=(class HopperSystem const&) = delete;
-    HopperSystem(class HopperSystem const&) = delete;
+    class HopperSystem& operator=(class HopperSystem const &) = delete;
+    HopperSystem(class HopperSystem const &) = delete;
     HopperSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~HopperSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

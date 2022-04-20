@@ -17,15 +17,15 @@ class ActorUpdatePreviousPositionSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORUPDATEPREVIOUSPOSITIONSYSTEM
 public:
-    class ActorUpdatePreviousPositionSystem& operator=(class ActorUpdatePreviousPositionSystem const&) = delete;
-    ActorUpdatePreviousPositionSystem(class ActorUpdatePreviousPositionSystem const&) = delete;
+    class ActorUpdatePreviousPositionSystem& operator=(class ActorUpdatePreviousPositionSystem const &) = delete;
+    ActorUpdatePreviousPositionSystem(class ActorUpdatePreviousPositionSystem const &) = delete;
     ActorUpdatePreviousPositionSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorUpdatePreviousPositionSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

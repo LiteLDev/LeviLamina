@@ -16,13 +16,13 @@ class SerializedPersonaPieceHandle {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERIALIZEDPERSONAPIECEHANDLE
 public:
-    class SerializedPersonaPieceHandle& operator=(class SerializedPersonaPieceHandle const&) = delete;
-    SerializedPersonaPieceHandle(class SerializedPersonaPieceHandle const&) = delete;
+    class SerializedPersonaPieceHandle& operator=(class SerializedPersonaPieceHandle const &) = delete;
+    SerializedPersonaPieceHandle(class SerializedPersonaPieceHandle const &) = delete;
     SerializedPersonaPieceHandle() = delete;
 #endif
 
 public:
-    MCAPI SerializedPersonaPieceHandle(std::string const&, enum persona::PieceType, class mce::UUID, bool, std::string const&);
+    MCAPI SerializedPersonaPieceHandle(std::string const &, enum persona::PieceType, class mce::UUID, bool, std::string const &);
 
 protected:
 

@@ -18,15 +18,15 @@ class BehaviorTreeDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEHAVIORTREEDESCRIPTION
 public:
-    class BehaviorTreeDescription& operator=(class BehaviorTreeDescription const&) = delete;
-    BehaviorTreeDescription(class BehaviorTreeDescription const&) = delete;
+    class BehaviorTreeDescription& operator=(class BehaviorTreeDescription const &) = delete;
+    BehaviorTreeDescription(class BehaviorTreeDescription const &) = delete;
     BehaviorTreeDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~BehaviorTreeDescription();
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~BehaviorTreeDescription(){
          (BehaviorTreeDescription::*rv)();

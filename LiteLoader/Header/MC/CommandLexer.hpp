@@ -17,8 +17,8 @@ class CommandLexer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDLEXER
 public:
-    class CommandLexer& operator=(class CommandLexer const&) = delete;
-    CommandLexer(class CommandLexer const&) = delete;
+    class CommandLexer& operator=(class CommandLexer const &) = delete;
+    CommandLexer(class CommandLexer const &) = delete;
     CommandLexer() = delete;
 #endif
 

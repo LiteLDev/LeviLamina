@@ -17,14 +17,14 @@ class LookAtActorNode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATACTORNODE
 public:
-    class LookAtActorNode& operator=(class LookAtActorNode const&) = delete;
-    LookAtActorNode(class LookAtActorNode const&) = delete;
+    class LookAtActorNode& operator=(class LookAtActorNode const &) = delete;
+    LookAtActorNode(class LookAtActorNode const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~LookAtActorNode();
-    /*1*/ virtual enum BehaviorStatus tick(class Actor&);
-    /*2*/ virtual void initializeFromDefinition(class Actor&);
+    /*1*/ virtual enum BehaviorStatus tick(class Actor &);
+    /*2*/ virtual void initializeFromDefinition(class Actor &);
     MCAPI LookAtActorNode();
 
 protected:

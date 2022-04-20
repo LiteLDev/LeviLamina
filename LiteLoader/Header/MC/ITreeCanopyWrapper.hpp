@@ -15,8 +15,8 @@ class ITreeCanopyWrapper {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITREECANOPYWRAPPER
 public:
-    class ITreeCanopyWrapper& operator=(class ITreeCanopyWrapper const&) = delete;
-    ITreeCanopyWrapper(class ITreeCanopyWrapper const&) = delete;
+    class ITreeCanopyWrapper& operator=(class ITreeCanopyWrapper const &) = delete;
+    ITreeCanopyWrapper(class ITreeCanopyWrapper const &) = delete;
     ITreeCanopyWrapper() = delete;
 #endif
 

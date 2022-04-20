@@ -14,7 +14,7 @@ namespace FreezingSystemInternal {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void processFreezeEffect(class Actor&, class FreezingComponent const&);
-    MCAPI void tickFreezeComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class FreezingComponent>&);
+    MCAPI void processFreezeEffect(class Actor &, class FreezingComponent const &);
+    MCAPI void tickFreezeComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class FreezingComponent> &);
 
 };

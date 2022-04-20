@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Json.hpp"
 #include "JsonUtil.hpp"
 
 #define BEFORE_EXTRA
@@ -19,23 +18,19 @@ class DamageSensorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAMAGESENSORDEFINITION
 public:
-    class DamageSensorDefinition& operator=(class DamageSensorDefinition const&) = delete;
-    DamageSensorDefinition(class DamageSensorDefinition const&) = delete;
+    class DamageSensorDefinition& operator=(class DamageSensorDefinition const &) = delete;
+    DamageSensorDefinition(class DamageSensorDefinition const &) = delete;
     DamageSensorDefinition() = delete;
 #endif
 
 public:
-    MCAPI void addDamageSensorTrigger(struct DamageSensorTrigger const&);
-    MCAPI void deserializeData(class Json::Value&, class SemVersion const&);
-    MCAPI void initialize(class EntityContext&, class DamageSensorComponent&) const;
-    MCAPI void serializeData(class Json::Value&) const;
-    MCAPI void uninitialize(class EntityContext&, class DamageSensorComponent&) const;
-    MCAPI ~DamageSensorDefinition();
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DamageSensorDefinition> >&);
+    MCAPI void addDamageSensorTrigger(struct DamageSensorTrigger const &);
+    MCAPI void initialize(class EntityContext &, class DamageSensorComponent &) const;
+    MCAPI void uninitialize(class EntityContext &, class DamageSensorComponent &) const;
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DamageSensorDefinition>> &);
 
 protected:
 
 private:
-    MCAPI void deserializeTrigger(class Json::Value&, class SemVersion const&);
 
 };

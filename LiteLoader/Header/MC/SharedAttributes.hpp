@@ -17,8 +17,8 @@ class SharedAttributes {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAREDATTRIBUTES
 public:
-    class SharedAttributes& operator=(class SharedAttributes const&) = delete;
-    SharedAttributes(class SharedAttributes const&) = delete;
+    class SharedAttributes& operator=(class SharedAttributes const &) = delete;
+    SharedAttributes(class SharedAttributes const &) = delete;
     SharedAttributes() = delete;
 #endif
 
@@ -33,19 +33,19 @@ public:
     MCAPI static class Attribute const LUCK;
     MCAPI static class Attribute const MOVEMENT_SPEED;
     MCAPI static class Attribute const UNDERWATER_MOVEMENT_SPEED;
-    MCAPI static bool checkIsDeprecated(std::string&);
-    MCAPI static class TemporalAttributeBuff loadAttributeBuff(class CompoundTag const&);
-    MCAPI static class std::shared_ptr<class AttributeModifier> loadAttributeModifier(class CompoundTag const&);
-    MCAPI static void loadAttributes(class BaseAttributeMap*, class ListTag const*);
-    MCAPI static std::unique_ptr<class ListTag> saveAttributes(class BaseAttributeMap*);
+    MCAPI static bool checkIsDeprecated(std::string &);
+    MCAPI static class TemporalAttributeBuff loadAttributeBuff(class CompoundTag const &);
+    MCAPI static class std::shared_ptr<class AttributeModifier> loadAttributeModifier(class CompoundTag const &);
+    MCAPI static void loadAttributes(class BaseAttributeMap *, class ListTag const *);
+    MCAPI static std::unique_ptr<class ListTag> saveAttributes(class BaseAttributeMap *);
 
 protected:
 
 private:
-    MCAPI static class AttributeInstance* _legacyGetInstance(class BaseAttributeMap&, std::string const&);
-    MCAPI static std::string const& _legacyGetName(std::string const&);
-    MCAPI static void _loadAttribute(class AttributeInstance&, class CompoundTag const*);
-    MCAPI static std::unique_ptr<class CompoundTag> _saveAttribute(class AttributeInstance const&);
-    MCAPI static std::unique_ptr<class CompoundTag> _saveAttributeModifier(class AttributeModifier const&);
+    MCAPI static class AttributeInstance * _legacyGetInstance(class BaseAttributeMap &, std::string const &);
+    MCAPI static std::string const & _legacyGetName(std::string const &);
+    MCAPI static void _loadAttribute(class AttributeInstance &, class CompoundTag const *);
+    MCAPI static std::unique_ptr<class CompoundTag> _saveAttribute(class AttributeInstance const &);
+    MCAPI static std::unique_ptr<class CompoundTag> _saveAttributeModifier(class AttributeModifier const &);
 
 };

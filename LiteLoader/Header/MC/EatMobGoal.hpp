@@ -15,8 +15,8 @@ class EatMobGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EATMOBGOAL
 public:
-    class EatMobGoal& operator=(class EatMobGoal const&) = delete;
-    EatMobGoal(class EatMobGoal const&) = delete;
+    class EatMobGoal& operator=(class EatMobGoal const &) = delete;
+    EatMobGoal(class EatMobGoal const &) = delete;
     EatMobGoal() = delete;
 #endif
 
@@ -28,8 +28,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI EatMobGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI EatMobGoal(class Mob &);
 
 protected:
 

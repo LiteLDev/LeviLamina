@@ -17,15 +17,15 @@ class BossSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOSSSYSTEM
 public:
-    class BossSystem& operator=(class BossSystem const&) = delete;
-    BossSystem(class BossSystem const&) = delete;
+    class BossSystem& operator=(class BossSystem const &) = delete;
+    BossSystem(class BossSystem const &) = delete;
     BossSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BossSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

@@ -16,16 +16,16 @@ class ScriptMessagePacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMESSAGEPACKET
 public:
-    class ScriptMessagePacket& operator=(class ScriptMessagePacket const&) = delete;
-    ScriptMessagePacket(class ScriptMessagePacket const&) = delete;
+    class ScriptMessagePacket& operator=(class ScriptMessagePacket const &) = delete;
+    ScriptMessagePacket(class ScriptMessagePacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScriptMessagePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~ScriptMessagePacket(){
          (ScriptMessagePacket::*rv)();
@@ -33,10 +33,10 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptMessagePacket(std::string const&, std::string const&);
+    MCAPI ScriptMessagePacket(std::string const &, std::string const &);
     MCAPI ScriptMessagePacket();
-    MCAPI std::string const& getMessageId() const;
-    MCAPI std::string const& getMessageValue() const;
+    MCAPI std::string const & getMessageId() const;
+    MCAPI std::string const & getMessageValue() const;
 
 protected:
 

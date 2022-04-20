@@ -17,13 +17,13 @@ class EducationEditionOfferValue {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUCATIONEDITIONOFFERVALUE
 public:
-    class EducationEditionOfferValue& operator=(class EducationEditionOfferValue const&) = delete;
-    EducationEditionOfferValue(class EducationEditionOfferValue const&) = delete;
+    class EducationEditionOfferValue& operator=(class EducationEditionOfferValue const &) = delete;
+    EducationEditionOfferValue(class EducationEditionOfferValue const &) = delete;
     EducationEditionOfferValue() = delete;
 #endif
 
 public:
-    MCAPI class EducationEditionOfferValue& operator=(enum EducationEditionOffer);
+    MCAPI class EducationEditionOfferValue & operator=(enum EducationEditionOffer);
 
 protected:
 

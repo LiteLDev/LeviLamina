@@ -14,7 +14,7 @@ namespace EntityGlobalComponentsUtility {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void initializeGlobalComponents(class EntityRegistry&);
-    MCAPI void removeGlobalComponents(class EntityRegistry&);
+    MCAPI void initializeGlobalComponents(class EntityRegistry &);
+    MCAPI void removeGlobalComponents(class EntityRegistry &);
 
 };

@@ -18,17 +18,17 @@ class DefinitionEventLoader {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFINITIONEVENTLOADER
 public:
-    class DefinitionEventLoader& operator=(class DefinitionEventLoader const&) = delete;
-    DefinitionEventLoader(class DefinitionEventLoader const&) = delete;
+    class DefinitionEventLoader& operator=(class DefinitionEventLoader const &) = delete;
+    DefinitionEventLoader(class DefinitionEventLoader const &) = delete;
     DefinitionEventLoader() = delete;
 #endif
 
 public:
-    MCAPI static class DefinitionEvent loadEvent(class Json::Value, class SemVersion const&, enum TypeExecutingEvent, class EventResponseFactory const*);
+    MCAPI static class DefinitionEvent loadEvent(class Json::Value, class SemVersion const &, enum TypeExecutingEvent, class EventResponseFactory const *);
 
 protected:
 
 private:
-    MCAPI static void _loadCollection(class DefinitionEvent&, class Json::Value, class SemVersion const&, enum TypeExecutingEvent, class EventResponseFactory const*);
+    MCAPI static void _loadCollection(class DefinitionEvent &, class Json::Value, class SemVersion const &, enum TypeExecutingEvent, class EventResponseFactory const *);
 
 };

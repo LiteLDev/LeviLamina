@@ -18,14 +18,14 @@ class ItemStackDescriptor {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKDESCRIPTOR
 public:
-    class ItemStackDescriptor& operator=(class ItemStackDescriptor const&) = delete;
-    ItemStackDescriptor(class ItemStackDescriptor const&) = delete;
+    class ItemStackDescriptor& operator=(class ItemStackDescriptor const &) = delete;
+    ItemStackDescriptor(class ItemStackDescriptor const &) = delete;
 #endif
 
 public:
-    MCAPI ItemStackDescriptor(class Item const&, int, unsigned short, class CompoundTag const*);
+    MCAPI ItemStackDescriptor(class Item const &, int, unsigned short, class CompoundTag const *);
     MCAPI ItemStackDescriptor();
-    MCAPI class ItemStackDescriptor& operator=(class ItemStackDescriptor&&);
+    MCAPI class ItemStackDescriptor & operator=(class ItemStackDescriptor &&);
     MCAPI ~ItemStackDescriptor();
 
 protected:

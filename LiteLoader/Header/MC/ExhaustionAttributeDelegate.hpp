@@ -18,8 +18,8 @@ class ExhaustionAttributeDelegate : public AttributeInstanceDelegate {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXHAUSTIONATTRIBUTEDELEGATE
 public:
-    class ExhaustionAttributeDelegate& operator=(class ExhaustionAttributeDelegate const&) = delete;
-    ExhaustionAttributeDelegate(class ExhaustionAttributeDelegate const&) = delete;
+    class ExhaustionAttributeDelegate& operator=(class ExhaustionAttributeDelegate const &) = delete;
+    ExhaustionAttributeDelegate(class ExhaustionAttributeDelegate const &) = delete;
     ExhaustionAttributeDelegate() = delete;
 #endif
 
@@ -27,7 +27,7 @@ public:
     /*0*/ virtual ~ExhaustionAttributeDelegate();
     /*1*/ virtual void tick();
     /*2*/ virtual void notify(__int64);
-    MCAPI ExhaustionAttributeDelegate(class AttributeInstance const&);
+    MCAPI ExhaustionAttributeDelegate(class AttributeInstance const &);
 
 protected:
 

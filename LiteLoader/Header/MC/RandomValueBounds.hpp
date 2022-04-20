@@ -18,15 +18,15 @@ class RandomValueBounds {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMVALUEBOUNDS
 public:
-    class RandomValueBounds& operator=(class RandomValueBounds const&) = delete;
-    RandomValueBounds(class RandomValueBounds const&) = delete;
+    class RandomValueBounds& operator=(class RandomValueBounds const &) = delete;
+    RandomValueBounds(class RandomValueBounds const &) = delete;
     RandomValueBounds() = delete;
 #endif
 
 public:
-    MCAPI void deserialize(class Json::Value const&);
-    MCAPI float getFloat(class Random&) const;
-    MCAPI int getInt(class Random&) const;
+    MCAPI void deserialize(class Json::Value const &);
+    MCAPI float getFloat(class Random &) const;
+    MCAPI int getInt(class Random &) const;
     MCAPI float getMax() const;
     MCAPI float getMin() const;
 

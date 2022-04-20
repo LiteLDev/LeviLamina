@@ -15,13 +15,13 @@ struct WebSocketPacketData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEBSOCKETPACKETDATA
 public:
-    struct WebSocketPacketData& operator=(struct WebSocketPacketData const&) = delete;
-    WebSocketPacketData(struct WebSocketPacketData const&) = delete;
+    struct WebSocketPacketData& operator=(struct WebSocketPacketData const &) = delete;
+    WebSocketPacketData(struct WebSocketPacketData const &) = delete;
     WebSocketPacketData() = delete;
 #endif
 
 public:
-    MCAPI WebSocketPacketData(std::string const&);
+    MCAPI WebSocketPacketData(std::string const &);
 
 protected:
 

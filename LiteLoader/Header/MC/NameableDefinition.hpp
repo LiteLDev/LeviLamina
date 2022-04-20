@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Json.hpp"
 #include "JsonUtil.hpp"
 
 #define BEFORE_EXTRA
@@ -19,22 +18,19 @@ class NameableDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAMEABLEDEFINITION
 public:
-    class NameableDefinition& operator=(class NameableDefinition const&) = delete;
-    NameableDefinition(class NameableDefinition const&) = delete;
+    class NameableDefinition& operator=(class NameableDefinition const &) = delete;
+    NameableDefinition(class NameableDefinition const &) = delete;
 #endif
 
 public:
     MCAPI NameableDefinition();
-    MCAPI void addNameAction(struct NameAction const&);
-    MCAPI void deserializeData(class Json::Value&, class SemVersion const&);
-    MCAPI void initialize(class EntityContext&, class NameableComponent&) const;
-    MCAPI void serializeData(class Json::Value&) const;
+    MCAPI void addNameAction(struct NameAction const &);
+    MCAPI void initialize(class EntityContext &, class NameableComponent &) const;
     MCAPI ~NameableDefinition();
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NameableDefinition> >&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NameableDefinition>> &);
 
 protected:
 
 private:
-    MCAPI void parseNameActions(class Json::Value&, class SemVersion const&);
 
 };

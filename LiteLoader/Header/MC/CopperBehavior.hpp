@@ -17,23 +17,23 @@ class CopperBehavior {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COPPERBEHAVIOR
 public:
-    class CopperBehavior& operator=(class CopperBehavior const&) = delete;
-    CopperBehavior(class CopperBehavior const&) = delete;
+    class CopperBehavior& operator=(class CopperBehavior const &) = delete;
+    CopperBehavior(class CopperBehavior const &) = delete;
     CopperBehavior() = delete;
 #endif
 
 public:
-    MCAPI class Block const& getCorrespondingWaxedBlock(class Block const&) const;
+    MCAPI class Block const & getCorrespondingWaxedBlock(class Block const &) const;
     MCAPI bool isWaxable() const;
     MCAPI bool isWaxed() const;
-    MCAPI bool tryDecrementAge(class BlockSource&, class BlockPos const&) const;
-    MCAPI bool tryIncrementAge(class BlockSource&, class BlockPos const&, float, float) const;
-    MCAPI bool use(class Player&, class BlockPos const&, unsigned char) const;
+    MCAPI bool tryDecrementAge(class BlockSource &, class BlockPos const &) const;
+    MCAPI bool tryIncrementAge(class BlockSource &, class BlockPos const &, float, float) const;
+    MCAPI bool use(class Player &, class BlockPos const &, unsigned char) const;
     MCAPI ~CopperBehavior();
 
 protected:
 
 private:
-    MCAPI void _incrementAge(class BlockSource&, class Block const&, class BlockPos const&, float) const;
+    MCAPI void _incrementAge(class BlockSource &, class Block const &, class BlockPos const &, float) const;
 
 };

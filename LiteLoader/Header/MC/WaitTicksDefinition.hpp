@@ -19,14 +19,14 @@ class WaitTicksDefinition : public BehaviorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WAITTICKSDEFINITION
 public:
-    class WaitTicksDefinition& operator=(class WaitTicksDefinition const&) = delete;
-    WaitTicksDefinition(class WaitTicksDefinition const&) = delete;
+    class WaitTicksDefinition& operator=(class WaitTicksDefinition const &) = delete;
+    WaitTicksDefinition(class WaitTicksDefinition const &) = delete;
     WaitTicksDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~WaitTicksDefinition();
-    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 
 protected:
 

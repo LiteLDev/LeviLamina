@@ -18,15 +18,13 @@ class ScriptColorComponent : public ScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTCOLORCOMPONENT
 public:
-    class ScriptColorComponent& operator=(class ScriptColorComponent const&) = delete;
-    ScriptColorComponent(class ScriptColorComponent const&) = delete;
+    class ScriptColorComponent& operator=(class ScriptColorComponent const &) = delete;
+    ScriptColorComponent(class ScriptColorComponent const &) = delete;
     ScriptColorComponent() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScriptColorComponent();
-    /*4*/ virtual class Scripting::Result<int> getValue() const;
-    /*5*/ virtual class Scripting::Result<void> setValue(int const&) const;
     /*
     inline  ~ScriptColorComponent(){
          (ScriptColorComponent::*rv)();
@@ -34,7 +32,6 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptColorComponent> bind(struct Scripting::Version);
 
 protected:
 

@@ -17,8 +17,8 @@ class ItemState {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTATE
 public:
-    class ItemState& operator=(class ItemState const&) = delete;
-    ItemState(class ItemState const&) = delete;
+    class ItemState& operator=(class ItemState const &) = delete;
+    ItemState(class ItemState const &) = delete;
     ItemState() = delete;
 #endif
 
@@ -31,7 +31,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI static void forEachState(class std::function<bool (class ItemState const& )>);
+    MCAPI static void forEachState(class std::function<bool (class ItemState const &)>);
 
 protected:
 

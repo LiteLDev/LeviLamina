@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct ServerInstanceLeaveGameDoneEvent {
+class ServerInstanceLeaveGameDoneEvent {
 
 #define AFTER_EXTRA
 
@@ -15,8 +15,8 @@ struct ServerInstanceLeaveGameDoneEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERINSTANCELEAVEGAMEDONEEVENT
 public:
-    struct ServerInstanceLeaveGameDoneEvent& operator=(struct ServerInstanceLeaveGameDoneEvent const&) = delete;
-    ServerInstanceLeaveGameDoneEvent(struct ServerInstanceLeaveGameDoneEvent const&) = delete;
+    class ServerInstanceLeaveGameDoneEvent& operator=(class ServerInstanceLeaveGameDoneEvent const &) = delete;
+    ServerInstanceLeaveGameDoneEvent(class ServerInstanceLeaveGameDoneEvent const &) = delete;
     ServerInstanceLeaveGameDoneEvent() = delete;
 #endif
 

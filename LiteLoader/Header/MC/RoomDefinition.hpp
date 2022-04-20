@@ -17,15 +17,15 @@ class RoomDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ROOMDEFINITION
 public:
-    class RoomDefinition& operator=(class RoomDefinition const&) = delete;
+    class RoomDefinition& operator=(class RoomDefinition const &) = delete;
     RoomDefinition() = delete;
 #endif
 
 public:
-    MCAPI RoomDefinition(class RoomDefinition const&);
+    MCAPI RoomDefinition(class RoomDefinition const &);
     MCAPI RoomDefinition(int);
     MCAPI bool findSource(int);
-    MCAPI void setConnection(unsigned char const&, class std::shared_ptr<class RoomDefinition>);
+    MCAPI void setConnection(unsigned char const &, class std::shared_ptr<class RoomDefinition>);
     MCAPI void updateOpenings();
     MCAPI ~RoomDefinition();
 

@@ -18,16 +18,16 @@ class SetBlockProperty {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETBLOCKPROPERTY
 public:
-    class SetBlockProperty& operator=(class SetBlockProperty const&) = delete;
-    SetBlockProperty(class SetBlockProperty const&) = delete;
+    class SetBlockProperty& operator=(class SetBlockProperty const &) = delete;
+    SetBlockProperty(class SetBlockProperty const &) = delete;
     SetBlockProperty() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SetBlockProperty();
-    /*1*/ virtual std::string const& getName() const;
-    /*2*/ virtual void executeAction(class RenderParams&) const;
-    /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection> >&, class Factory<class EventResponse> const&) const;
+    /*1*/ virtual std::string const & getName() const;
+    /*2*/ virtual void executeAction(class RenderParams &) const;
+    /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
     MCAPI static std::string const NameID;
 
 protected:

@@ -16,8 +16,8 @@ class MoveOutdoorsGoal : public BaseMoveToBlockGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEOUTDOORSGOAL
 public:
-    class MoveOutdoorsGoal& operator=(class MoveOutdoorsGoal const&) = delete;
-    MoveOutdoorsGoal(class MoveOutdoorsGoal const&) = delete;
+    class MoveOutdoorsGoal& operator=(class MoveOutdoorsGoal const &) = delete;
+    MoveOutdoorsGoal(class MoveOutdoorsGoal const &) = delete;
     MoveOutdoorsGoal() = delete;
 #endif
 
@@ -27,11 +27,11 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*11*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
-    MCAPI MoveOutdoorsGoal(class Mob&);
+    /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
+    MCAPI MoveOutdoorsGoal(class Mob &);
 
 protected:
 

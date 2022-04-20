@@ -19,8 +19,8 @@ class MingleGoal : public MoveToPOIGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINGLEGOAL
 public:
-    class MingleGoal& operator=(class MingleGoal const&) = delete;
-    MingleGoal(class MingleGoal const&) = delete;
+    class MingleGoal& operator=(class MingleGoal const &) = delete;
+    MingleGoal(class MingleGoal const &) = delete;
     MingleGoal() = delete;
 #endif
 
@@ -32,17 +32,17 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    MCAPI MingleGoal(class Mob&, float, float, float, struct ActorDefinitionIdentifier, float);
+    MCAPI MingleGoal(class Mob &, float, float, float, struct ActorDefinitionIdentifier, float);
 
 protected:
 
 private:
     MCAPI void _findNewPartner(struct ActorUniqueID);
-    MCAPI bool _isWithinInteractRange(class Actor&) const;
-    MCAPI bool _validatePartnerState(enum MingleComponent::MingleState, class MingleComponent&, bool);
+    MCAPI bool _isWithinInteractRange(class Actor &) const;
+    MCAPI bool _validatePartnerState(enum MingleComponent::MingleState, class MingleComponent &, bool);
     MCAPI static int const FIND_PARTNER_INTERVAL_TICKS;
     MCAPI static int const SPEAK_INTERVAL_TICKS_MAX;
     MCAPI static int const SPEAK_INTERVAL_TICKS_MIN;

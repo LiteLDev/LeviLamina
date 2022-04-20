@@ -17,8 +17,8 @@ class ITickingArea {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITICKINGAREA
 public:
-    class ITickingArea& operator=(class ITickingArea const&) = delete;
-    ITickingArea(class ITickingArea const&) = delete;
+    class ITickingArea& operator=(class ITickingArea const &) = delete;
+    ITickingArea(class ITickingArea const &) = delete;
     ITickingArea() = delete;
 #endif
 

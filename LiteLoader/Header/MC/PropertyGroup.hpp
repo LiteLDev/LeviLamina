@@ -18,23 +18,23 @@ class PropertyGroup {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROPERTYGROUP
 public:
-    class PropertyGroup& operator=(class PropertyGroup const&) = delete;
-    PropertyGroup(class PropertyGroup const&) = delete;
+    class PropertyGroup& operator=(class PropertyGroup const &) = delete;
+    PropertyGroup(class PropertyGroup const &) = delete;
 #endif
 
 public:
     MCAPI PropertyGroup();
     MCAPI class CompoundTag getPropertyDescriptionsAsCompound(bool) const;
-    MCAPI void initPropertiesOnComponent(class PropertyComponent&) const;
-    MCAPI void registerProperty(class std::shared_ptr<struct CustomPropertyDescription>);
+    MCAPI void initPropertiesOnComponent(class PropertyComponent &) const;
+    MCAPI void registerProperty(class std::shared_ptr<struct PropertyDescription>);
     MCAPI ~PropertyGroup();
     MCAPI static int const MAX_ENUM_SIZE;
-    MCAPI static bool loadPropertiesFromJson(std::vector<class std::shared_ptr<struct CustomPropertyDescription>>&, class Json::Value const&);
-    MCAPI static bool loadPropertyFromJson(struct CustomPropertyDescription&, std::string const&, class Json::Value const&);
+    MCAPI static bool loadPropertiesFromJson(std::vector<class std::shared_ptr<struct PropertyDescription>> &, class Json::Value const &);
+    MCAPI static bool loadPropertyFromJson(struct PropertyDescription &, std::string const &, class Json::Value const &);
 
 protected:
 
 private:
-    MCAPI static class std::unordered_map<class HashedString, class std::shared_ptr<struct CustomPropertyDescription>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::shared_ptr<struct CustomPropertyDescription> > > > MinecraftEngineProperties;
+    MCAPI static class std::unordered_map<class HashedString, class std::shared_ptr<struct PropertyDescription>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::shared_ptr<struct PropertyDescription>>>> MinecraftEngineProperties;
 
 };

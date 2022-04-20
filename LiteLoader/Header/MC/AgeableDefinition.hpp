@@ -18,19 +18,19 @@ class AgeableDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGEABLEDEFINITION
 public:
-    class AgeableDefinition& operator=(class AgeableDefinition const&) = delete;
-    AgeableDefinition(class AgeableDefinition const&) = delete;
+    class AgeableDefinition& operator=(class AgeableDefinition const &) = delete;
+    AgeableDefinition(class AgeableDefinition const &) = delete;
     AgeableDefinition() = delete;
 #endif
 
 public:
-    MCAPI void addDropItem(class ItemDescriptor const&);
-    MCAPI void addFeedItem(struct ActorDefinitionFeedItem const&);
-    MCAPI void addFeedItemByName(std::string const&);
+    MCAPI void addDropItem(class ItemDescriptor const &);
+    MCAPI void addFeedItem(struct ActorDefinitionFeedItem const &);
+    MCAPI void addFeedItemByName(std::string const &);
     MCAPI bool canGrowUp() const;
     MCAPI int getTicksAsBaby() const;
-    MCAPI void initialize(class EntityContext&, class AgeableComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AgeableDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class AgeableComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AgeableDefinition>> &);
 
 protected:
 

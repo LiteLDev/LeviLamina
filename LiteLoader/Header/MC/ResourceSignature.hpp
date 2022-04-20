@@ -18,20 +18,20 @@ class ResourceSignature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCESIGNATURE
 public:
-    class ResourceSignature& operator=(class ResourceSignature const&) = delete;
-    ResourceSignature(class ResourceSignature const&) = delete;
+    class ResourceSignature& operator=(class ResourceSignature const &) = delete;
+    ResourceSignature(class ResourceSignature const &) = delete;
     ResourceSignature() = delete;
 #endif
 
 public:
     MCAPI ~ResourceSignature();
-    MCAPI static class Core::PathBuffer<std::string > const SIGNATURE_FILENAME;
+    MCAPI static class Core::PathBuffer<std::string> const SIGNATURE_FILENAME;
 
 protected:
 
 private:
-    MCAPI bool _areKnownFilesValid(class PackAccessStrategy const&, bool);
-    MCAPI bool _checkSignedFiles(class PackAccessStrategy const&) const;
-    MCAPI void _loadSignaturesFile(class Core::Path const&, class PackAccessStrategy const&);
+    MCAPI bool _areKnownFilesValid(class PackAccessStrategy const &, bool);
+    MCAPI bool _checkSignedFiles(class PackAccessStrategy const &) const;
+    MCAPI void _loadSignaturesFile(class Core::Path const &, class PackAccessStrategy const &);
 
 };

@@ -18,15 +18,15 @@ class PersistentDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERSISTENTDESCRIPTION
 public:
-    class PersistentDescription& operator=(class PersistentDescription const&) = delete;
-    PersistentDescription(class PersistentDescription const&) = delete;
+    class PersistentDescription& operator=(class PersistentDescription const &) = delete;
+    PersistentDescription(class PersistentDescription const &) = delete;
     PersistentDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~PersistentDescription();
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~PersistentDescription(){
          (PersistentDescription::*rv)();

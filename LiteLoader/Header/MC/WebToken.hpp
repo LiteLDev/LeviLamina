@@ -25,23 +25,23 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEBTOKEN
 public:
-    class WebToken& operator=(class WebToken const&) = delete;
-    WebToken(class WebToken const&) = delete;
+    class WebToken& operator=(class WebToken const &) = delete;
+    WebToken(class WebToken const &) = delete;
     WebToken() = delete;
 #endif
 
 public:
     MCAPI WebToken(std::string);
     MCAPI std::string toString() const;
-    MCAPI bool verifyWithIncludedKey(std::vector<std::string> const&) const;
+    MCAPI bool verifyWithIncludedKey(std::vector<std::string> const &) const;
     MCAPI ~WebToken();
-    MCAPI static std::unique_ptr<class WebToken> createFromData(class Json::Value const&, class PrivateKeyManager const&);
+    MCAPI static std::unique_ptr<class WebToken> createFromData(class Json::Value const &, class PrivateKeyManager const &);
 
 protected:
 
 private:
-    MCAPI void _parse(class Json::Value&, std::string const&);
+    MCAPI void _parse(class Json::Value &, std::string const &);
     MCAPI std::string _signatureToDER() const;
-    MCAPI static std::string _DERToBinary(std::string const&, int);
+    MCAPI static std::string _DERToBinary(std::string const &, int);
 
 };

@@ -15,8 +15,8 @@ class ActorStandOnBlockEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSTANDONBLOCKEVENT
 public:
-    class ActorStandOnBlockEvent& operator=(class ActorStandOnBlockEvent const&) = delete;
-    ActorStandOnBlockEvent(class ActorStandOnBlockEvent const&) = delete;
+    class ActorStandOnBlockEvent& operator=(class ActorStandOnBlockEvent const &) = delete;
+    ActorStandOnBlockEvent(class ActorStandOnBlockEvent const &) = delete;
     ActorStandOnBlockEvent() = delete;
 #endif
 

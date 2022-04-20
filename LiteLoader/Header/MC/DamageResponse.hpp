@@ -18,20 +18,21 @@ class DamageResponse {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAMAGERESPONSE
 public:
-    class DamageResponse& operator=(class DamageResponse const&) = delete;
-    DamageResponse(class DamageResponse const&) = delete;
+    class DamageResponse& operator=(class DamageResponse const &) = delete;
+    DamageResponse(class DamageResponse const &) = delete;
     DamageResponse() = delete;
 #endif
 
 public:
     /*0*/ virtual ~DamageResponse();
-    /*1*/ virtual std::string const& getName() const;
-    /*2*/ virtual void executeAction(class RenderParams&) const;
-    /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection> >&, class Factory<class EventResponse> const&) const;
+    /*1*/ virtual std::string const & getName() const;
+    /*2*/ virtual void executeAction(class RenderParams &) const;
+    /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
     MCAPI static std::string const NameID;
 
 protected:
 
 private:
+    MCAPI void repairOrHurtItem(int const &, class RenderParams &) const;
 
 };

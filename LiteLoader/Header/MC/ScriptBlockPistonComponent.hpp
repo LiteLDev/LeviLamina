@@ -18,7 +18,7 @@ class ScriptBlockPistonComponent : public ScriptObject {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKPISTONCOMPONENT
 public:
-    class ScriptBlockPistonComponent& operator=(class ScriptBlockPistonComponent const&) = delete;
+    class ScriptBlockPistonComponent& operator=(class ScriptBlockPistonComponent const &) = delete;
     ScriptBlockPistonComponent() = delete;
 #endif
 
@@ -31,17 +31,17 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptBlockPistonComponent(class ScriptBlockPistonComponent const&);
-    MCAPI ScriptBlockPistonComponent(class ScriptBlockPistonComponent&&);
-    MCAPI class Scripting::Result<std::vector<class BlockPos> > getAttachedBlocks();
+    MCAPI ScriptBlockPistonComponent(class ScriptBlockPistonComponent const &);
+    MCAPI ScriptBlockPistonComponent(class ScriptBlockPistonComponent &&);
+    MCAPI class Scripting::Result<std::vector<class BlockPos>> getAttachedBlocks();
     MCAPI class Scripting::Result<bool> isExpanded();
     MCAPI class Scripting::Result<bool> isExpanding();
     MCAPI class Scripting::Result<bool> isMoving();
     MCAPI class Scripting::Result<bool> isRetracted();
     MCAPI class Scripting::Result<bool> isRetracting();
-    MCAPI class ScriptBlockPistonComponent& operator=(class ScriptBlockPistonComponent&&);
+    MCAPI class ScriptBlockPistonComponent & operator=(class ScriptBlockPistonComponent &&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockPistonComponent> bind(struct Scripting::Version);
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockPistonComponent> tryCreate(class BlockSource&, class BlockPos, class Scripting::WeakLifetimeScope const&);
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockPistonComponent> tryCreate(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
 
 protected:
 

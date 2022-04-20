@@ -17,8 +17,8 @@ class NetheriteArmorEquippedListener {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERITEARMOREQUIPPEDLISTENER
 public:
-    class NetheriteArmorEquippedListener& operator=(class NetheriteArmorEquippedListener const&) = delete;
-    NetheriteArmorEquippedListener(class NetheriteArmorEquippedListener const&) = delete;
+    class NetheriteArmorEquippedListener& operator=(class NetheriteArmorEquippedListener const &) = delete;
+    NetheriteArmorEquippedListener(class NetheriteArmorEquippedListener const &) = delete;
     NetheriteArmorEquippedListener() = delete;
 #endif
 
@@ -40,7 +40,7 @@ public:
     /*14*/ virtual void __unk_vfn_14();
     /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual void __unk_vfn_16();
-    /*17*/ virtual enum EventResult onActorEquippedArmor(class Actor&, class ItemInstance const&, enum ArmorSlot);
+    /*17*/ virtual enum EventResult onActorEquippedArmor(class Actor &, class ItemInstance const &, enum ArmorSlot);
     /*
     inline  ~NetheriteArmorEquippedListener(){
          (NetheriteArmorEquippedListener::*rv)();

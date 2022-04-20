@@ -18,14 +18,14 @@ class SwoopAttackDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWOOPATTACKDEFINITION
 public:
-    class SwoopAttackDefinition& operator=(class SwoopAttackDefinition const&) = delete;
-    SwoopAttackDefinition(class SwoopAttackDefinition const&) = delete;
+    class SwoopAttackDefinition& operator=(class SwoopAttackDefinition const &) = delete;
+    SwoopAttackDefinition(class SwoopAttackDefinition const &) = delete;
     SwoopAttackDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SwoopAttackDefinition();
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwoopAttackDefinition> >&);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwoopAttackDefinition>> &);
 
 protected:
 

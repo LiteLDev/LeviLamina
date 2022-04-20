@@ -20,16 +20,16 @@ enum Subtype;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLEEVENTPACKET
 public:
-    class SimpleEventPacket& operator=(class SimpleEventPacket const&) = delete;
-    SimpleEventPacket(class SimpleEventPacket const&) = delete;
+    class SimpleEventPacket& operator=(class SimpleEventPacket const &) = delete;
+    SimpleEventPacket(class SimpleEventPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~SimpleEventPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~SimpleEventPacket(){
          (SimpleEventPacket::*rv)();
@@ -37,9 +37,9 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI SimpleEventPacket(enum SimpleEventPacket::Subtype const&);
+    MCAPI SimpleEventPacket(enum SimpleEventPacket::Subtype const &);
     MCAPI SimpleEventPacket();
-    MCAPI enum SimpleEventPacket::Subtype const& getSubtype() const;
+    MCAPI enum SimpleEventPacket::Subtype const & getSubtype() const;
 
 protected:
 

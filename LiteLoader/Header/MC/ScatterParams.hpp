@@ -24,19 +24,19 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCATTERPARAMS
 public:
-    class ScatterParams& operator=(class ScatterParams const&) = delete;
-    ScatterParams(class ScatterParams const&) = delete;
+    class ScatterParams& operator=(class ScatterParams const &) = delete;
+    ScatterParams(class ScatterParams const &) = delete;
 #endif
 
 public:
     MCAPI ScatterParams();
-    MCAPI class ScatterParams::ScatteredPositions scatter(class RenderParams&, class BlockPos const&, class Random&) const;
+    MCAPI class ScatterParams::ScatteredPositions scatter(class RenderParams &, class BlockPos const &, class Random &) const;
     MCAPI ~ScatterParams();
-    MCAPI static void initMolangParams(class RenderParams&, class BlockPos const&, class Random&);
+    MCAPI static void initMolangParams(class RenderParams &, class BlockPos const &, class Random &);
 
 protected:
 
 private:
-    MCAPI class BlockPos _getPos(unsigned int, class BlockPos const&, class Random&, class RenderParams&) const;
+    MCAPI class BlockPos _getPos(unsigned int, class BlockPos const &, class Random &, class RenderParams &) const;
 
 };

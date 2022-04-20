@@ -17,8 +17,8 @@ class SpinLock {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPINLOCK
 public:
-    class SpinLock& operator=(class SpinLock const&) = delete;
-    SpinLock(class SpinLock const&) = delete;
+    class SpinLock& operator=(class SpinLock const &) = delete;
+    SpinLock(class SpinLock const &) = delete;
 #endif
 
 public:

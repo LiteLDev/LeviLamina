@@ -17,8 +17,8 @@ class SchedulerComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCHEDULERCOMPONENT
 public:
-    class SchedulerComponent& operator=(class SchedulerComponent const&) = delete;
-    SchedulerComponent(class SchedulerComponent const&) = delete;
+    class SchedulerComponent& operator=(class SchedulerComponent const &) = delete;
+    SchedulerComponent(class SchedulerComponent const &) = delete;
     SchedulerComponent() = delete;
 #endif
 

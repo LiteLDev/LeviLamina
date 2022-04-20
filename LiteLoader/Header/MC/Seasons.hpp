@@ -17,14 +17,14 @@ class Seasons {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SEASONS
 public:
-    class Seasons& operator=(class Seasons const&) = delete;
-    Seasons(class Seasons const&) = delete;
+    class Seasons& operator=(class Seasons const &) = delete;
+    Seasons(class Seasons const &) = delete;
     Seasons() = delete;
 #endif
 
 public:
-    MCAPI Seasons(class Dimension&);
-    MCAPI void postProcess(class LevelChunk&, class BlockSource&, class ChunkPos const&);
+    MCAPI Seasons(class Dimension &);
+    MCAPI void postProcess(class LevelChunk &, class BlockSource &, class ChunkPos const &);
     MCAPI void tick();
     MCAPI ~Seasons();
 

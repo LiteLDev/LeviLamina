@@ -18,15 +18,15 @@ class CoralHangFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORALHANGFEATURE
 public:
-    class CoralHangFeature& operator=(class CoralHangFeature const&) = delete;
-    CoralHangFeature(class CoralHangFeature const&) = delete;
+    class CoralHangFeature& operator=(class CoralHangFeature const &) = delete;
+    CoralHangFeature(class CoralHangFeature const &) = delete;
     CoralHangFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~CoralHangFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 protected:
 

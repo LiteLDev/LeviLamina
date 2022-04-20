@@ -17,8 +17,8 @@ class ScatteredFeaturePiece {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCATTEREDFEATUREPIECE
 public:
-    class ScatteredFeaturePiece& operator=(class ScatteredFeaturePiece const&) = delete;
-    ScatteredFeaturePiece(class ScatteredFeaturePiece const&) = delete;
+    class ScatteredFeaturePiece& operator=(class ScatteredFeaturePiece const &) = delete;
+    ScatteredFeaturePiece(class ScatteredFeaturePiece const &) = delete;
     ScatteredFeaturePiece() = delete;
 #endif
 
@@ -32,7 +32,7 @@ public:
     */
 
 protected:
-    MCAPI bool updateAverageGroundHeight(class BlockSource&, class BoundingBox const&, int);
+    MCAPI bool updateAverageGroundHeight(class BlockSource &, class BoundingBox const &, int);
 
 private:
 

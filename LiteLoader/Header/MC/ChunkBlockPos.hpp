@@ -31,13 +31,13 @@ ChunkBlockPos(char x, short y, char z)
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKBLOCKPOS
 public:
-    class ChunkBlockPos& operator=(class ChunkBlockPos const&) = delete;
-    ChunkBlockPos(class ChunkBlockPos const&) = delete;
+    class ChunkBlockPos& operator=(class ChunkBlockPos const &) = delete;
+    ChunkBlockPos(class ChunkBlockPos const &) = delete;
     ChunkBlockPos() = delete;
 #endif
 
 public:
-    MCAPI ChunkBlockPos(class BlockPos const&, short);
+    MCAPI ChunkBlockPos(class BlockPos const &, short);
     MCAPI ChunkBlockPos(unsigned char, class ChunkLocalHeight, unsigned char);
     MCAPI class Pos toPos() const;
     MCAPI static class ChunkBlockPos from2D(unsigned char, unsigned char);

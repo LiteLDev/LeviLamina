@@ -19,14 +19,14 @@ class FilterTestDifficulty : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERTESTDIFFICULTY
 public:
-    class FilterTestDifficulty& operator=(class FilterTestDifficulty const&) = delete;
-    FilterTestDifficulty(class FilterTestDifficulty const&) = delete;
+    class FilterTestDifficulty& operator=(class FilterTestDifficulty const &) = delete;
+    FilterTestDifficulty(class FilterTestDifficulty const &) = delete;
     FilterTestDifficulty() = delete;
 #endif
 
 public:
     /*0*/ virtual ~FilterTestDifficulty();
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*6*/ virtual class Json::Value _serializeValue() const;
     /*

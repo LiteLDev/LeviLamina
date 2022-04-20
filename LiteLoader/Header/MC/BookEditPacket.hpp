@@ -18,15 +18,15 @@ class BookEditPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOOKEDITPACKET
 public:
-    class BookEditPacket& operator=(class BookEditPacket const&) = delete;
+    class BookEditPacket& operator=(class BookEditPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~BookEditPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~BookEditPacket(){
          (BookEditPacket::*rv)();
@@ -34,14 +34,14 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI BookEditPacket(class BookEditPacket const&);
+    MCAPI BookEditPacket(class BookEditPacket const &);
     MCAPI BookEditPacket();
     MCAPI struct PageContent getPage() const;
 
 protected:
 
 private:
-    MCAPI void _readPage(class ReadOnlyBinaryStream&);
-    MCAPI void _writePage(class BinaryStream&) const;
+    MCAPI void _readPage(class ReadOnlyBinaryStream &);
+    MCAPI void _writePage(class BinaryStream &) const;
 
 };

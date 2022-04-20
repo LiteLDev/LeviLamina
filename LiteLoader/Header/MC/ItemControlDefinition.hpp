@@ -18,13 +18,13 @@ struct ItemControlDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMCONTROLDEFINITION
 public:
-    struct ItemControlDefinition& operator=(struct ItemControlDefinition const&) = delete;
-    ItemControlDefinition(struct ItemControlDefinition const&) = delete;
+    struct ItemControlDefinition& operator=(struct ItemControlDefinition const &) = delete;
+    ItemControlDefinition(struct ItemControlDefinition const &) = delete;
     ItemControlDefinition() = delete;
 #endif
 
 public:
-    MCAPI void addItemByName(std::string const&);
+    MCAPI void addItemByName(std::string const &);
 
 protected:
 

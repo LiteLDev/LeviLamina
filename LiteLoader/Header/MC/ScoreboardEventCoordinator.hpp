@@ -17,8 +17,8 @@ class ScoreboardEventCoordinator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOREBOARDEVENTCOORDINATOR
 public:
-    class ScoreboardEventCoordinator& operator=(class ScoreboardEventCoordinator const&) = delete;
-    ScoreboardEventCoordinator(class ScoreboardEventCoordinator const&) = delete;
+    class ScoreboardEventCoordinator& operator=(class ScoreboardEventCoordinator const &) = delete;
+    ScoreboardEventCoordinator(class ScoreboardEventCoordinator const &) = delete;
     ScoreboardEventCoordinator() = delete;
 #endif
 
@@ -31,7 +31,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI void sendOnScoreChanged(struct ScoreboardId const&, std::string const&, int);
+    MCAPI void sendOnScoreChanged(struct ScoreboardId const &, std::string const &, int);
 
 protected:
 

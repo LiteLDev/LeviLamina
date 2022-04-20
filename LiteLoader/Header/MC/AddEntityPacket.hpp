@@ -18,16 +18,16 @@ class AddEntityPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADDENTITYPACKET
 public:
-    class AddEntityPacket& operator=(class AddEntityPacket const&) = delete;
-    AddEntityPacket(class AddEntityPacket const&) = delete;
+    class AddEntityPacket& operator=(class AddEntityPacket const &) = delete;
+    AddEntityPacket(class AddEntityPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~AddEntityPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~AddEntityPacket(){
          (AddEntityPacket::*rv)();
@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI AddEntityPacket(class EntityContext const&);
+    MCAPI AddEntityPacket(class EntityContext const &);
     MCAPI AddEntityPacket();
 
 protected:

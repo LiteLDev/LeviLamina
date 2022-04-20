@@ -17,14 +17,14 @@ class ScriptLavaMovementComponentFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTLAVAMOVEMENTCOMPONENTFACTORY
 public:
-    class ScriptLavaMovementComponentFactory& operator=(class ScriptLavaMovementComponentFactory const&) = delete;
-    ScriptLavaMovementComponentFactory(class ScriptLavaMovementComponentFactory const&) = delete;
+    class ScriptLavaMovementComponentFactory& operator=(class ScriptLavaMovementComponentFactory const &) = delete;
+    ScriptLavaMovementComponentFactory(class ScriptLavaMovementComponentFactory const &) = delete;
     ScriptLavaMovementComponentFactory() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScriptLavaMovementComponentFactory();
-    /*1*/ virtual class Scripting::StrongTypedObjectHandle<class ScriptActorComponent> createComponent(class WeakEntityRef, class Scripting::WeakLifetimeScope const&, std::string const&);
+    /*1*/ virtual class Scripting::StrongTypedObjectHandle<class ScriptActorComponent> createComponent(class WeakEntityRef, class Scripting::WeakLifetimeScope const &, std::string const &);
     /*2*/ virtual bool hasComponent(class WeakEntityRef) const;
 
 protected:

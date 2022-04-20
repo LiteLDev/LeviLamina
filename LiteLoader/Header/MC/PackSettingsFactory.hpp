@@ -18,14 +18,14 @@ class PackSettingsFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSETTINGSFACTORY
 public:
-    class PackSettingsFactory& operator=(class PackSettingsFactory const&) = delete;
-    PackSettingsFactory(class PackSettingsFactory const&) = delete;
+    class PackSettingsFactory& operator=(class PackSettingsFactory const &) = delete;
+    PackSettingsFactory(class PackSettingsFactory const &) = delete;
     PackSettingsFactory() = delete;
 #endif
 
 public:
-    MCAPI class PackSettings* getPackSettings(class PackManifest const&);
-    MCAPI class PackSettings* loadPackSettings(struct PackIdVersion const&, class Json::Value const&);
+    MCAPI class PackSettings * getPackSettings(class PackManifest const &);
+    MCAPI class PackSettings * loadPackSettings(struct PackIdVersion const &, class Json::Value const &);
 
 protected:
 

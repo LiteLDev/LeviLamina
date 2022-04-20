@@ -18,16 +18,16 @@ class LegacyForestFoliageFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYFORESTFOLIAGEFEATURE
 public:
-    class LegacyForestFoliageFeature& operator=(class LegacyForestFoliageFeature const&) = delete;
-    LegacyForestFoliageFeature(class LegacyForestFoliageFeature const&) = delete;
+    class LegacyForestFoliageFeature& operator=(class LegacyForestFoliageFeature const &) = delete;
+    LegacyForestFoliageFeature(class LegacyForestFoliageFeature const &) = delete;
     LegacyForestFoliageFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LegacyForestFoliageFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-    MCAPI LegacyForestFoliageFeature(enum LegacyForestFoliageFeature::Type, class FeatureRegistry&);
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+    MCAPI LegacyForestFoliageFeature(enum LegacyForestFoliageFeature::Type, class FeatureRegistry &);
 
 protected:
 

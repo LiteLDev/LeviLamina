@@ -17,8 +17,8 @@ class AttributeBuff {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTEBUFF
 public:
-    class AttributeBuff& operator=(class AttributeBuff const&) = delete;
-    AttributeBuff(class AttributeBuff const&) = delete;
+    class AttributeBuff& operator=(class AttributeBuff const &) = delete;
+    AttributeBuff(class AttributeBuff const &) = delete;
     AttributeBuff() = delete;
 #endif
 
@@ -35,17 +35,21 @@ public:
     }
     */
     MCAPI float getAmount() const;
+    MCAPI enum ActorDamageCause getCause() const;
     MCAPI unsigned __int64 getId() const;
     MCAPI int getOperand() const;
+    MCAPI class ActorDamageSource const & getSource() const;
     MCAPI enum AttributeBuffType getType() const;
+    MCAPI bool operator==(class AttributeBuff const &) const;
     MCAPI void setAmplificationAmount(int, float);
     MCAPI void setId(unsigned __int64);
     MCAPI void setOperand(int);
-    MCAPI void setSource(class Actor*);
+    MCAPI void setSource(class Actor *);
     MCAPI void setValueAmplifier(class std::shared_ptr<class Amplifier>);
     MCAPI static enum ActorDamageCause buffTypeToDamageCause(enum AttributeBuffType);
 
 protected:
+    MCAPI AttributeBuff(float, int, enum AttributeBuffType);
 
 private:
 

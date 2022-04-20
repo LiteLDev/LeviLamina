@@ -17,14 +17,14 @@ class FindActorNode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FINDACTORNODE
 public:
-    class FindActorNode& operator=(class FindActorNode const&) = delete;
-    FindActorNode(class FindActorNode const&) = delete;
+    class FindActorNode& operator=(class FindActorNode const &) = delete;
+    FindActorNode(class FindActorNode const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~FindActorNode();
-    /*1*/ virtual enum BehaviorStatus tick(class Actor&);
-    /*2*/ virtual void initializeFromDefinition(class Actor&);
+    /*1*/ virtual enum BehaviorStatus tick(class Actor &);
+    /*2*/ virtual void initializeFromDefinition(class Actor &);
     MCAPI FindActorNode();
 
 protected:

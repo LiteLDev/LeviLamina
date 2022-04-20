@@ -2,12 +2,13 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "ContainerScreenValidatorBase.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
-class Trade1ContainerScreenValidator {
+class Trade1ContainerScreenValidator : public ContainerScreenValidatorBase {
 
 #define AFTER_EXTRA
 
@@ -15,8 +16,8 @@ class Trade1ContainerScreenValidator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADE1CONTAINERSCREENVALIDATOR
 public:
-    class Trade1ContainerScreenValidator& operator=(class Trade1ContainerScreenValidator const&) = delete;
-    Trade1ContainerScreenValidator(class Trade1ContainerScreenValidator const&) = delete;
+    class Trade1ContainerScreenValidator& operator=(class Trade1ContainerScreenValidator const &) = delete;
+    Trade1ContainerScreenValidator(class Trade1ContainerScreenValidator const &) = delete;
 #endif
 
 public:

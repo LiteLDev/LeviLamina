@@ -17,8 +17,8 @@ class EquipItemComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EQUIPITEMCOMPONENT
 public:
-    class EquipItemComponent& operator=(class EquipItemComponent const&) = delete;
-    EquipItemComponent(class EquipItemComponent const&) = delete;
+    class EquipItemComponent& operator=(class EquipItemComponent const &) = delete;
+    EquipItemComponent(class EquipItemComponent const &) = delete;
     EquipItemComponent() = delete;
 #endif
 

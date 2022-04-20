@@ -18,8 +18,8 @@ class ChestContainerManagerModel : public LevelContainerManagerModel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHESTCONTAINERMANAGERMODEL
 public:
-    class ChestContainerManagerModel& operator=(class ChestContainerManagerModel const&) = delete;
-    ChestContainerManagerModel(class ChestContainerManagerModel const&) = delete;
+    class ChestContainerManagerModel& operator=(class ChestContainerManagerModel const &) = delete;
+    ChestContainerManagerModel(class ChestContainerManagerModel const &) = delete;
     ChestContainerManagerModel() = delete;
 #endif
 
@@ -27,8 +27,8 @@ public:
     /*0*/ virtual ~ChestContainerManagerModel();
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
-    MCAPI ChestContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&, enum BlockActorType);
-    MCAPI ChestContainerManagerModel(enum ContainerID, class Player&, struct ActorUniqueID);
+    MCAPI ChestContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &, enum BlockActorType);
+    MCAPI ChestContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID);
 
 protected:
 

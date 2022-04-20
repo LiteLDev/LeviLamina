@@ -17,16 +17,16 @@ class OreVeinifier {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OREVEINIFIER
 public:
-    class OreVeinifier& operator=(class OreVeinifier const&) = delete;
-    OreVeinifier(class OreVeinifier const&) = delete;
+    class OreVeinifier& operator=(class OreVeinifier const &) = delete;
+    OreVeinifier(class OreVeinifier const &) = delete;
     OreVeinifier() = delete;
 #endif
 
 public:
-    MCAPI OreVeinifier(class OreVeinifierNoises const&);
-    MCAPI void fillNoiseAtPos(class Vec3 const&, int, float);
-    MCAPI class Block const* getVeinBlockOrFallback(class Vec3, class Block const*) const;
-    MCAPI class std::array<class NoiseCellInterpolator* , 3> resetAndGetInterpolators();
+    MCAPI OreVeinifier(class OreVeinifierNoises const &);
+    MCAPI void fillNoiseAtPos(class Vec3 const &, int, float);
+    MCAPI class Block const * getVeinBlockOrFallback(class Vec3, class Block const *) const;
+    MCAPI class std::array<class NoiseCellInterpolator *, 3> resetAndGetInterpolators();
 
 protected:
 

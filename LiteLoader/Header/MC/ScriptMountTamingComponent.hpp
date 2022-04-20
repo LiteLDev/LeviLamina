@@ -18,8 +18,8 @@ class ScriptMountTamingComponent : public ScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMOUNTTAMINGCOMPONENT
 public:
-    class ScriptMountTamingComponent& operator=(class ScriptMountTamingComponent const&) = delete;
-    ScriptMountTamingComponent(class ScriptMountTamingComponent const&) = delete;
+    class ScriptMountTamingComponent& operator=(class ScriptMountTamingComponent const &) = delete;
+    ScriptMountTamingComponent(class ScriptMountTamingComponent const &) = delete;
     ScriptMountTamingComponent() = delete;
 #endif
 
@@ -32,7 +32,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptMountTamingComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
+    MCAPI ScriptMountTamingComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class Scripting::Result<void> setTamed(bool) const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMountTamingComponent> bind(struct Scripting::Version);
 

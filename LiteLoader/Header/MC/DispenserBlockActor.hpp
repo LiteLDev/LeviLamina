@@ -17,17 +17,17 @@ class DispenserBlockActor {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DISPENSERBLOCKACTOR
 public:
-    class DispenserBlockActor& operator=(class DispenserBlockActor const&) = delete;
-    DispenserBlockActor(class DispenserBlockActor const&) = delete;
+    class DispenserBlockActor& operator=(class DispenserBlockActor const &) = delete;
+    DispenserBlockActor(class DispenserBlockActor const &) = delete;
     DispenserBlockActor() = delete;
 #endif
 
 public:
     /*
-    inline void stopOpen(class Player& a0){
-        void (DispenserBlockActor::*rv)(class Player&);
+    inline void stopOpen(class Player & a0){
+        void (DispenserBlockActor::*rv)(class Player &);
         *((void**)&rv) = dlsym("?stopOpen@DispenserBlockActor@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0));
+        return (this->*rv)(std::forward<class Player &>(a0));
     }
     inline int getContainerSize() const{
         int (DispenserBlockActor::*rv)() const;
@@ -44,28 +44,28 @@ public:
         *((void**)&rv) = dlsym("??1DispenserBlockActor@@UEAA@XZ");
         return (this->*rv)();
     }
-    inline std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& a0){
-        std::unique_ptr<class BlockActorDataPacket> (DispenserBlockActor::*rv)(class BlockSource&);
+    inline std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource & a0){
+        std::unique_ptr<class BlockActorDataPacket> (DispenserBlockActor::*rv)(class BlockSource &);
         *((void**)&rv) = dlsym("?_getUpdatePacket@DispenserBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
+        return (this->*rv)(std::forward<class BlockSource &>(a0));
     }
-    inline void _onUpdatePacket(class CompoundTag const& a0, class BlockSource& a1){
-        void (DispenserBlockActor::*rv)(class CompoundTag const&, class BlockSource&);
+    inline void _onUpdatePacket(class CompoundTag const & a0, class BlockSource & a1){
+        void (DispenserBlockActor::*rv)(class CompoundTag const &, class BlockSource &);
         *((void**)&rv) = dlsym("?_onUpdatePacket@DispenserBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class BlockSource&>(a1));
+        return (this->*rv)(std::forward<class CompoundTag const &>(a0), std::forward<class BlockSource &>(a1));
     }
-    inline class Container const* getContainer() const{
-        class Container const* (DispenserBlockActor::*rv)() const;
+    inline class Container const * getContainer() const{
+        class Container const * (DispenserBlockActor::*rv)() const;
         *((void**)&rv) = dlsym("?getContainer@DispenserBlockActor@@UEBAPEBVContainer@@XZ");
         return (this->*rv)();
     }
-    inline class Container* getContainer(){
-        class Container* (DispenserBlockActor::*rv)();
+    inline class Container * getContainer(){
+        class Container * (DispenserBlockActor::*rv)();
         *((void**)&rv) = dlsym("?getContainer@DispenserBlockActor@@UEAAPEAVContainer@@XZ");
         return (this->*rv)();
     }
-    inline class ItemStack const& getItem(int a0) const{
-        class ItemStack const& (DispenserBlockActor::*rv)(int) const;
+    inline class ItemStack const & getItem(int a0) const{
+        class ItemStack const & (DispenserBlockActor::*rv)(int) const;
         *((void**)&rv) = dlsym("?getItem@DispenserBlockActor@@UEBAAEBVItemStack@@H@Z");
         return (this->*rv)(std::forward<int>(a0));
     }
@@ -79,35 +79,35 @@ public:
         *((void**)&rv) = dlsym("?getRandomSlot@DispenserBlockActor@@UEAAHXZ");
         return (this->*rv)();
     }
-    inline void load(class Level& a0, class CompoundTag const& a1, class DataLoadHelper& a2){
-        void (DispenserBlockActor::*rv)(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    inline void load(class Level & a0, class CompoundTag const & a1, class DataLoadHelper & a2){
+        void (DispenserBlockActor::*rv)(class Level &, class CompoundTag const &, class DataLoadHelper &);
         *((void**)&rv) = dlsym("?load@DispenserBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class Level&>(a0), std::forward<class CompoundTag const&>(a1), std::forward<class DataLoadHelper&>(a2));
+        return (this->*rv)(std::forward<class Level &>(a0), std::forward<class CompoundTag const &>(a1), std::forward<class DataLoadHelper &>(a2));
     }
     inline void onMove(){
         void (DispenserBlockActor::*rv)();
         *((void**)&rv) = dlsym("?onMove@DispenserBlockActor@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline bool save(class CompoundTag& a0) const{
-        bool (DispenserBlockActor::*rv)(class CompoundTag&) const;
+    inline bool save(class CompoundTag & a0) const{
+        bool (DispenserBlockActor::*rv)(class CompoundTag &) const;
         *((void**)&rv) = dlsym("?save@DispenserBlockActor@@UEBA_NAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
+        return (this->*rv)(std::forward<class CompoundTag &>(a0));
     }
-    inline void serverInitItemStackIds(int a0, int a1, class std::function<void (int, class ItemStack const& )> a2){
-        void (DispenserBlockActor::*rv)(int, int, class std::function<void (int, class ItemStack const& )>);
+    inline void serverInitItemStackIds(int a0, int a1, class std::function<void (int, class ItemStack const &)> a2){
+        void (DispenserBlockActor::*rv)(int, int, class std::function<void (int, class ItemStack const &)>);
         *((void**)&rv) = dlsym("?serverInitItemStackIds@DispenserBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<class std::function<void (int, class ItemStack const& )>>(a2));
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<class std::function<void (int, class ItemStack const &)>>(a2));
     }
-    inline void setItem(int a0, class ItemStack const& a1){
-        void (DispenserBlockActor::*rv)(int, class ItemStack const&);
+    inline void setItem(int a0, class ItemStack const & a1){
+        void (DispenserBlockActor::*rv)(int, class ItemStack const &);
         *((void**)&rv) = dlsym("?setItem@DispenserBlockActor@@UEAAXHAEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStack const&>(a1));
+        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStack const &>(a1));
     }
-    inline void startOpen(class Player& a0){
-        void (DispenserBlockActor::*rv)(class Player&);
+    inline void startOpen(class Player & a0){
+        void (DispenserBlockActor::*rv)(class Player &);
         *((void**)&rv) = dlsym("?startOpen@DispenserBlockActor@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0));
+        return (this->*rv)(std::forward<class Player &>(a0));
     }
     */
     MCAPI DispenserBlockActor(class BlockPos, enum BlockActorType);

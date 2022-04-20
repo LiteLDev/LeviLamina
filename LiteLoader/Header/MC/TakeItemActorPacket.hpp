@@ -18,16 +18,16 @@ class TakeItemActorPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TAKEITEMACTORPACKET
 public:
-    class TakeItemActorPacket& operator=(class TakeItemActorPacket const&) = delete;
-    TakeItemActorPacket(class TakeItemActorPacket const&) = delete;
+    class TakeItemActorPacket& operator=(class TakeItemActorPacket const &) = delete;
+    TakeItemActorPacket(class TakeItemActorPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~TakeItemActorPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~TakeItemActorPacket(){
          (TakeItemActorPacket::*rv)();

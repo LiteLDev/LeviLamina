@@ -15,12 +15,12 @@ struct SummonSpellData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUMMONSPELLDATA
 public:
-    struct SummonSpellData& operator=(struct SummonSpellData const&) = delete;
+    struct SummonSpellData& operator=(struct SummonSpellData const &) = delete;
     SummonSpellData() = delete;
 #endif
 
 public:
-    MCAPI SummonSpellData(struct SummonSpellData const&);
+    MCAPI SummonSpellData(struct SummonSpellData const &);
     MCAPI ~SummonSpellData();
 
 protected:

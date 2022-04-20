@@ -17,8 +17,8 @@ class ChargeAttackGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHARGEATTACKGOAL
 public:
-    class ChargeAttackGoal& operator=(class ChargeAttackGoal const&) = delete;
-    ChargeAttackGoal(class ChargeAttackGoal const&) = delete;
+    class ChargeAttackGoal& operator=(class ChargeAttackGoal const &) = delete;
+    ChargeAttackGoal(class ChargeAttackGoal const &) = delete;
     ChargeAttackGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI ChargeAttackGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI ChargeAttackGoal(class Mob &);
 
 protected:
 

@@ -18,8 +18,8 @@ class NearestAttackableTargetGoal : public TargetGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NEARESTATTACKABLETARGETGOAL
 public:
-    class NearestAttackableTargetGoal& operator=(class NearestAttackableTargetGoal const&) = delete;
-    NearestAttackableTargetGoal(class NearestAttackableTargetGoal const&) = delete;
+    class NearestAttackableTargetGoal& operator=(class NearestAttackableTargetGoal const &) = delete;
+    NearestAttackableTargetGoal(class NearestAttackableTargetGoal const &) = delete;
     NearestAttackableTargetGoal() = delete;
 #endif
 
@@ -28,8 +28,8 @@ public:
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
     /*4*/ virtual void start();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*11*/ virtual struct ActorUniqueID _findTarget(struct MobDescriptor const* *);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    /*11*/ virtual struct ActorUniqueID _findTarget(struct MobDescriptor const **);
     /*
     inline  ~NearestAttackableTargetGoal(){
          (NearestAttackableTargetGoal::*rv)();
@@ -37,11 +37,11 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI NearestAttackableTargetGoal(class Mob&);
+    MCAPI NearestAttackableTargetGoal(class Mob &);
 
 protected:
     MCAPI bool _canStartSearching();
-    MCAPI bool _isTargetVisible(class Mob const&, float, float) const;
+    MCAPI bool _isTargetVisible(class Mob const &, float, float) const;
 
 private:
     MCAPI bool _selectTarget();

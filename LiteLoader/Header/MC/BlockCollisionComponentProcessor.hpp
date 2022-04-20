@@ -18,13 +18,13 @@ class BlockCollisionComponentProcessor {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCOLLISIONCOMPONENTPROCESSOR
 public:
-    class BlockCollisionComponentProcessor& operator=(class BlockCollisionComponentProcessor const&) = delete;
-    BlockCollisionComponentProcessor(class BlockCollisionComponentProcessor const&) = delete;
+    class BlockCollisionComponentProcessor& operator=(class BlockCollisionComponentProcessor const &) = delete;
+    BlockCollisionComponentProcessor(class BlockCollisionComponentProcessor const &) = delete;
     BlockCollisionComponentProcessor() = delete;
 #endif
 
 public:
-    MCAPI static void _tryBake(struct BlockRotationComponent const*, struct BlockCollisionComponent*);
+    MCAPI static void _tryBake(struct BlockRotationComponent const *, struct BlockCollisionComponent *);
     MCAPI static std::unique_ptr<class Util::EntityComponentProcessor> getProcessor();
 
 protected:

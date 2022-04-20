@@ -18,8 +18,8 @@ class SmithingTableInputContainerValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMITHINGTABLEINPUTCONTAINERVALIDATION
 public:
-    class SmithingTableInputContainerValidation& operator=(class SmithingTableInputContainerValidation const&) = delete;
-    SmithingTableInputContainerValidation(class SmithingTableInputContainerValidation const&) = delete;
+    class SmithingTableInputContainerValidation& operator=(class SmithingTableInputContainerValidation const &) = delete;
+    SmithingTableInputContainerValidation(class SmithingTableInputContainerValidation const &) = delete;
     SmithingTableInputContainerValidation() = delete;
 #endif
 
@@ -28,7 +28,7 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
-    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
 
 protected:
 

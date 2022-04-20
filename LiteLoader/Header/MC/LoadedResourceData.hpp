@@ -15,8 +15,8 @@ class LoadedResourceData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOADEDRESOURCEDATA
 public:
-    class LoadedResourceData& operator=(class LoadedResourceData const&) = delete;
-    LoadedResourceData(class LoadedResourceData const&) = delete;
+    class LoadedResourceData& operator=(class LoadedResourceData const &) = delete;
+    LoadedResourceData(class LoadedResourceData const &) = delete;
     LoadedResourceData() = delete;
 #endif
 

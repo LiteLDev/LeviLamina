@@ -18,21 +18,21 @@ class RandomDyeFunction : public LootItemFunction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMDYEFUNCTION
 public:
-    class RandomDyeFunction& operator=(class RandomDyeFunction const&) = delete;
-    RandomDyeFunction(class RandomDyeFunction const&) = delete;
+    class RandomDyeFunction& operator=(class RandomDyeFunction const &) = delete;
+    RandomDyeFunction(class RandomDyeFunction const &) = delete;
     RandomDyeFunction() = delete;
 #endif
 
 public:
     /*0*/ virtual ~RandomDyeFunction();
-    /*1*/ virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
-    /*3*/ virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
+    /*1*/ virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
+    /*3*/ virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
 
 protected:
 
 private:
-    MCAPI void _applyBase(class ItemStackBase&, class Random&) const;
-    MCAPI class mce::Color _getRandomArmorColor(class Random&) const;
-    MCAPI class mce::Color _getRandomDyeColor(class Random&) const;
+    MCAPI void _applyBase(class ItemStackBase &, class Random &) const;
+    MCAPI class mce::Color _getRandomArmorColor(class Random &) const;
+    MCAPI class mce::Color _getRandomDyeColor(class Random &) const;
 
 };

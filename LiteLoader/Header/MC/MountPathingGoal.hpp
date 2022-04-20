@@ -17,8 +17,8 @@ class MountPathingGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOUNTPATHINGGOAL
 public:
-    class MountPathingGoal& operator=(class MountPathingGoal const&) = delete;
-    MountPathingGoal(class MountPathingGoal const&) = delete;
+    class MountPathingGoal& operator=(class MountPathingGoal const &) = delete;
+    MountPathingGoal(class MountPathingGoal const &) = delete;
     MountPathingGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual float _getAttackReachSqr();
@@ -46,7 +46,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI MountPathingGoal(class Mob&, float, float, bool);
+    MCAPI MountPathingGoal(class Mob &, float, float, bool);
 
 protected:
 

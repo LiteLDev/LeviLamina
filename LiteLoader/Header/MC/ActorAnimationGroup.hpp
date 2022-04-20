@@ -18,17 +18,17 @@ class ActorAnimationGroup {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORANIMATIONGROUP
 public:
-    class ActorAnimationGroup& operator=(class ActorAnimationGroup const&) = delete;
-    ActorAnimationGroup(class ActorAnimationGroup const&) = delete;
+    class ActorAnimationGroup& operator=(class ActorAnimationGroup const &) = delete;
+    ActorAnimationGroup(class ActorAnimationGroup const &) = delete;
 #endif
 
 public:
+    /*0*/ virtual ~ActorAnimationGroup();
     MCAPI ActorAnimationGroup();
-    MCAPI class ActorSkeletalAnimationPtr getActorAnimation(class HashedString const&);
-    MCAPI class std::shared_ptr<class ActorAnimationInfo> getActorAnimationInfo(class HashedString const&);
-    MCAPI void loadActorAnimation(std::string const&, class Core::Path const&, class PackStats&, class SemVersion const&, enum CurrentCmdVersion, bool);
-    MCAPI void loadActorAnimationsSync(class ResourcePackManager&);
-    MCAPI ~ActorAnimationGroup();
+    MCAPI class ActorSkeletalAnimationPtr getActorAnimation(class HashedString const &);
+    MCAPI class std::shared_ptr<class ActorAnimationInfo> getActorAnimationInfo(class HashedString const &);
+    MCAPI void loadActorAnimation(std::string const &, class Core::Path const &, class PackStats &, class SemVersion const &, enum CurrentCmdVersion, bool);
+    MCAPI void loadActorAnimationsSync(class ResourcePackManager &);
 
 protected:
 

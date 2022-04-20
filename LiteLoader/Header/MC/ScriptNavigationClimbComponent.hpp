@@ -18,8 +18,8 @@ class ScriptNavigationClimbComponent : public NavigationScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTNAVIGATIONCLIMBCOMPONENT
 public:
-    class ScriptNavigationClimbComponent& operator=(class ScriptNavigationClimbComponent const&) = delete;
-    ScriptNavigationClimbComponent(class ScriptNavigationClimbComponent const&) = delete;
+    class ScriptNavigationClimbComponent& operator=(class ScriptNavigationClimbComponent const &) = delete;
+    ScriptNavigationClimbComponent(class ScriptNavigationClimbComponent const &) = delete;
     ScriptNavigationClimbComponent() = delete;
 #endif
 

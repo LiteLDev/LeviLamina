@@ -18,14 +18,14 @@ class OnPlayerDestroyedTriggerDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONPLAYERDESTROYEDTRIGGERDESCRIPTION
 public:
-    class OnPlayerDestroyedTriggerDescription& operator=(class OnPlayerDestroyedTriggerDescription const&) = delete;
-    OnPlayerDestroyedTriggerDescription(class OnPlayerDestroyedTriggerDescription const&) = delete;
+    class OnPlayerDestroyedTriggerDescription& operator=(class OnPlayerDestroyedTriggerDescription const &) = delete;
+    OnPlayerDestroyedTriggerDescription(class OnPlayerDestroyedTriggerDescription const &) = delete;
     OnPlayerDestroyedTriggerDescription() = delete;
 #endif
 
 public:
     /*0*/ virtual ~OnPlayerDestroyedTriggerDescription();
-    /*1*/ virtual std::string const& getName() const;
+    /*1*/ virtual std::string const & getName() const;
     MCAPI static std::string const NameID;
 
 protected:

@@ -17,15 +17,15 @@ class MinecraftGameTestBatchRunner {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTGAMETESTBATCHRUNNER
 public:
-    class MinecraftGameTestBatchRunner& operator=(class MinecraftGameTestBatchRunner const&) = delete;
-    MinecraftGameTestBatchRunner(class MinecraftGameTestBatchRunner const&) = delete;
+    class MinecraftGameTestBatchRunner& operator=(class MinecraftGameTestBatchRunner const &) = delete;
+    MinecraftGameTestBatchRunner(class MinecraftGameTestBatchRunner const &) = delete;
     MinecraftGameTestBatchRunner() = delete;
 #endif
 
 public:
     /*0*/ virtual ~MinecraftGameTestBatchRunner();
-    /*1*/ virtual class std::shared_ptr<class gametest::BaseGameTestInstance> _createGameTestInstance(class gametest::BaseGameTestFunction&);
-    /*2*/ virtual void _runTest(class std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker&);
+    /*1*/ virtual class std::shared_ptr<class gametest::BaseGameTestInstance> _createGameTestInstance(class gametest::BaseGameTestFunction &);
+    /*2*/ virtual void _runTest(class std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker &);
 
 protected:
 

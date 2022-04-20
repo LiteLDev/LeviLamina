@@ -17,8 +17,8 @@ class SendEventGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SENDEVENTGOAL
 public:
-    class SendEventGoal& operator=(class SendEventGoal const&) = delete;
-    SendEventGoal(class SendEventGoal const&) = delete;
+    class SendEventGoal& operator=(class SendEventGoal const &) = delete;
+    SendEventGoal(class SendEventGoal const &) = delete;
     SendEventGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI SendEventGoal(class Mob&, std::vector<struct SendEventData> const&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI SendEventGoal(class Mob &, std::vector<struct SendEventData> const &);
 
 protected:
 

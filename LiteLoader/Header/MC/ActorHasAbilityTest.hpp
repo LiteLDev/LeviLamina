@@ -19,14 +19,14 @@ class ActorHasAbilityTest : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORHASABILITYTEST
 public:
-    class ActorHasAbilityTest& operator=(class ActorHasAbilityTest const&) = delete;
-    ActorHasAbilityTest(class ActorHasAbilityTest const&) = delete;
+    class ActorHasAbilityTest& operator=(class ActorHasAbilityTest const &) = delete;
+    ActorHasAbilityTest(class ActorHasAbilityTest const &) = delete;
     ActorHasAbilityTest() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorHasAbilityTest();
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*6*/ virtual class Json::Value _serializeValue() const;
     /*

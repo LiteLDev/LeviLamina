@@ -15,8 +15,8 @@ class SideBySideComparisonFeatureToggleSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIDEBYSIDECOMPARISONFEATURETOGGLESYSTEM
 public:
-    class SideBySideComparisonFeatureToggleSystem& operator=(class SideBySideComparisonFeatureToggleSystem const&) = delete;
-    SideBySideComparisonFeatureToggleSystem(class SideBySideComparisonFeatureToggleSystem const&) = delete;
+    class SideBySideComparisonFeatureToggleSystem& operator=(class SideBySideComparisonFeatureToggleSystem const &) = delete;
+    SideBySideComparisonFeatureToggleSystem(class SideBySideComparisonFeatureToggleSystem const &) = delete;
     SideBySideComparisonFeatureToggleSystem() = delete;
 #endif
 

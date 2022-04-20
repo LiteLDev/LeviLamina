@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class ParticleCommand {
+class ParticleCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,15 +18,15 @@ class ParticleCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARTICLECOMMAND
 public:
-    class ParticleCommand& operator=(class ParticleCommand const&) = delete;
-    ParticleCommand(class ParticleCommand const&) = delete;
+    class ParticleCommand& operator=(class ParticleCommand const &) = delete;
+    ParticleCommand(class ParticleCommand const &) = delete;
     ParticleCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ParticleCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 

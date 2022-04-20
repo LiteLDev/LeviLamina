@@ -17,8 +17,8 @@ class WeaponItemComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAPONITEMCOMPONENT
 public:
-    class WeaponItemComponent& operator=(class WeaponItemComponent const&) = delete;
-    WeaponItemComponent(class WeaponItemComponent const&) = delete;
+    class WeaponItemComponent& operator=(class WeaponItemComponent const &) = delete;
+    WeaponItemComponent(class WeaponItemComponent const &) = delete;
     WeaponItemComponent() = delete;
 #endif
 
@@ -29,7 +29,7 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
     /*
     inline bool isNetworkComponent() const{
         bool (WeaponItemComponent::*rv)() const;
@@ -37,13 +37,13 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI WeaponItemComponent(class ComponentItem*);
-    MCAPI void appendFormattedHovertext(class ItemStackBase const&, std::string&, bool) const;
-    MCAPI void hitActor(class ItemStack&, class Actor&, class Mob&) const;
-    MCAPI void hitBlock(class ItemStack&, class Block const&, class BlockPos const&, class Mob&) const;
-    MCAPI void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
+    MCAPI WeaponItemComponent(class ComponentItem *);
+    MCAPI void appendFormattedHovertext(class ItemStackBase const &, std::string &, bool) const;
+    MCAPI void hitActor(class ItemStack &, class Actor &, class Mob &) const;
+    MCAPI void hitBlock(class ItemStack &, class Block const &, class BlockPos const &, class Mob &) const;
+    MCAPI void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     MCAPI static void bindType();
-    MCAPI static class HashedString const& getIdentifier();
+    MCAPI static class HashedString const & getIdentifier();
 
 protected:
 

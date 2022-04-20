@@ -14,6 +14,6 @@ namespace VanillaDimensionFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void registerDimensionTypes(class Factory<class Dimension, class Level& , class Scheduler& >&);
+    MCAPI void registerDimensionTypes(class Factory<class Dimension, class Level &, class Scheduler &> &);
 
 };

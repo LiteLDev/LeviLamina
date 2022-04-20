@@ -18,8 +18,8 @@ struct OnStartTakeoffDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONSTARTTAKEOFFDEFINITION
 public:
-    struct OnStartTakeoffDefinition& operator=(struct OnStartTakeoffDefinition const&) = delete;
-    OnStartTakeoffDefinition(struct OnStartTakeoffDefinition const&) = delete;
+    struct OnStartTakeoffDefinition& operator=(struct OnStartTakeoffDefinition const &) = delete;
+    OnStartTakeoffDefinition(struct OnStartTakeoffDefinition const &) = delete;
     OnStartTakeoffDefinition() = delete;
 #endif
 

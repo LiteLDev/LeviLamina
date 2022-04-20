@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class DedicatedWSServerCommand {
+class DedicatedWSServerCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,19 +18,19 @@ class DedicatedWSServerCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEDICATEDWSSERVERCOMMAND
 public:
-    class DedicatedWSServerCommand& operator=(class DedicatedWSServerCommand const&) = delete;
-    DedicatedWSServerCommand(class DedicatedWSServerCommand const&) = delete;
+    class DedicatedWSServerCommand& operator=(class DedicatedWSServerCommand const &) = delete;
+    DedicatedWSServerCommand(class DedicatedWSServerCommand const &) = delete;
     DedicatedWSServerCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~DedicatedWSServerCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&, class IMinecraftApp&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &, class IMinecraftApp &);
 
 protected:
 
 private:
-    MCAPI static class IMinecraftApp* mApp;
+    MCAPI static class IMinecraftApp * mApp;
 
 };

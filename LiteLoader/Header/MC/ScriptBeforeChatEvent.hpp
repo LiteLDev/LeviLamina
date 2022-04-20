@@ -17,8 +17,8 @@ struct ScriptBeforeChatEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBEFORECHATEVENT
 public:
-    struct ScriptBeforeChatEvent& operator=(struct ScriptBeforeChatEvent const&) = delete;
-    ScriptBeforeChatEvent(struct ScriptBeforeChatEvent const&) = delete;
+    struct ScriptBeforeChatEvent& operator=(struct ScriptBeforeChatEvent const &) = delete;
+    ScriptBeforeChatEvent(struct ScriptBeforeChatEvent const &) = delete;
     ScriptBeforeChatEvent() = delete;
 #endif
 

@@ -15,12 +15,12 @@ struct ActorInsideBlockEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORINSIDEBLOCKEVENT
 public:
-    struct ActorInsideBlockEvent& operator=(struct ActorInsideBlockEvent const&) = delete;
+    struct ActorInsideBlockEvent& operator=(struct ActorInsideBlockEvent const &) = delete;
     ActorInsideBlockEvent() = delete;
 #endif
 
 public:
-    MCAPI ActorInsideBlockEvent(struct ActorInsideBlockEvent const&);
+    MCAPI ActorInsideBlockEvent(struct ActorInsideBlockEvent const &);
     MCAPI ~ActorInsideBlockEvent();
 
 protected:

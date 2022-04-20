@@ -31,29 +31,29 @@ public:
 #endif
 
 public:
-    MCAPI HashedString(class HashedString&&);
+    MCAPI HashedString(class HashedString &&);
     MCAPI HashedString(std::nullptr_t);
-    MCAPI HashedString(class HashedString const&);
-    MCAPI HashedString(std::string const&);
-    MCAPI HashedString(char const*);
-    MCAPI HashedString(unsigned __int64, char const*);
-    MCAPI char const* c_str() const;
+    MCAPI HashedString(class HashedString const &);
+    MCAPI HashedString(std::string const &);
+    MCAPI HashedString(char const *);
+    MCAPI HashedString(unsigned __int64, char const *);
+    MCAPI char const * c_str() const;
     MCAPI void clear();
     MCAPI bool empty() const;
     MCAPI unsigned __int64 getHash() const;
-    MCAPI std::string const& getString() const;
+    MCAPI std::string const & getString() const;
     MCAPI bool isEmpty() const;
-    MCAPI bool operator!=(class HashedString const&) const;
-    MCAPI bool operator<(class HashedString const&) const;
-    MCAPI class HashedString& operator=(class HashedString&&);
-    MCAPI class HashedString& operator=(class HashedString const&);
-    MCAPI bool operator==(class HashedString const&) const;
+    MCAPI operator class gsl::basic_string_span<char const, -1>() const;
+    MCAPI bool operator!=(class HashedString const &) const;
+    MCAPI bool operator<(class HashedString const &) const;
+    MCAPI class HashedString & operator=(class HashedString &&);
+    MCAPI class HashedString & operator=(class HashedString const &);
+    MCAPI bool operator==(class HashedString const &) const;
     MCAPI ~HashedString();
-    MCAPI static void bindType();
-    MCAPI static unsigned __int64 computeHash(std::string const&);
-    MCAPI static unsigned __int64 computeHash(char const*);
+    MCAPI static unsigned __int64 computeHash(std::string const &);
+    MCAPI static unsigned __int64 computeHash(char const *);
     MCAPI static class HashedString defaultErrorValue;
-    MCAPI static class HashedString const& getEmptyString();
+    MCAPI static class HashedString const & getEmptyString();
 
 protected:
 

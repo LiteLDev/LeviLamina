@@ -17,8 +17,8 @@ class JumpToBlockGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JUMPTOBLOCKGOAL
 public:
-    class JumpToBlockGoal& operator=(class JumpToBlockGoal const&) = delete;
-    JumpToBlockGoal(class JumpToBlockGoal const&) = delete;
+    class JumpToBlockGoal& operator=(class JumpToBlockGoal const &) = delete;
+    JumpToBlockGoal(class JumpToBlockGoal const &) = delete;
     JumpToBlockGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline bool canBeInterrupted(){
         bool (JumpToBlockGoal::*rv)();
@@ -38,17 +38,17 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI JumpToBlockGoal(class Mob&);
+    MCAPI JumpToBlockGoal(class Mob &);
     MCAPI void resetCooldown();
 
 protected:
 
 private:
-    MCAPI bool _calculateJumpCurve(class BlockPos const&, struct JumpToBlockGoal::WeightedJumpToBlockPos&);
+    MCAPI bool _calculateJumpCurve(class BlockPos const &, struct JumpToBlockGoal::WeightedJumpToBlockPos &);
     MCAPI void _clearGoalState();
-    MCAPI bool _findCandidateBlocks(class NavigationComponent&);
+    MCAPI bool _findCandidateBlocks(class NavigationComponent &);
     MCAPI bool _findJumpableBlocks(bool);
     MCAPI bool _findTargetBlock();
-    MCAPI bool _validTransition(class Vec3 const&, class Vec3 const&) const;
+    MCAPI bool _validTransition(class Vec3 const &, class Vec3 const &) const;
 
 };

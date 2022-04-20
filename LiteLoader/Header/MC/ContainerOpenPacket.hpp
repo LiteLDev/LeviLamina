@@ -18,16 +18,16 @@ class ContainerOpenPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINEROPENPACKET
 public:
-    class ContainerOpenPacket& operator=(class ContainerOpenPacket const&) = delete;
-    ContainerOpenPacket(class ContainerOpenPacket const&) = delete;
+    class ContainerOpenPacket& operator=(class ContainerOpenPacket const &) = delete;
+    ContainerOpenPacket(class ContainerOpenPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ContainerOpenPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~ContainerOpenPacket(){
          (ContainerOpenPacket::*rv)();
@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ContainerOpenPacket(enum ContainerID, enum ContainerType, class BlockPos const&, struct ActorUniqueID const&);
+    MCAPI ContainerOpenPacket(enum ContainerID, enum ContainerType, class BlockPos const &, struct ActorUniqueID const &);
     MCAPI ContainerOpenPacket();
 
 protected:

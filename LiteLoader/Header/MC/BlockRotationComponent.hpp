@@ -17,13 +17,14 @@ struct BlockRotationComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKROTATIONCOMPONENT
 public:
-    struct BlockRotationComponent& operator=(struct BlockRotationComponent const&) = delete;
-    BlockRotationComponent(struct BlockRotationComponent const&) = delete;
+    struct BlockRotationComponent& operator=(struct BlockRotationComponent const &) = delete;
+    BlockRotationComponent(struct BlockRotationComponent const &) = delete;
     BlockRotationComponent() = delete;
 #endif
 
 public:
-    MCAPI bool isAxisAligned() const;
+    MCAPI BlockRotationComponent(class Vec3 const &);
+    MCAPI void setRotationDegrees(class Vec3 const &);
 
 protected:
 

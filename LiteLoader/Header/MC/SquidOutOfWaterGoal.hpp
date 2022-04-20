@@ -17,8 +17,8 @@ class SquidOutOfWaterGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SQUIDOUTOFWATERGOAL
 public:
-    class SquidOutOfWaterGoal& operator=(class SquidOutOfWaterGoal const&) = delete;
-    SquidOutOfWaterGoal(class SquidOutOfWaterGoal const&) = delete;
+    class SquidOutOfWaterGoal& operator=(class SquidOutOfWaterGoal const &) = delete;
+    SquidOutOfWaterGoal(class SquidOutOfWaterGoal const &) = delete;
     SquidOutOfWaterGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline void stop(){
         void (SquidOutOfWaterGoal::*rv)();

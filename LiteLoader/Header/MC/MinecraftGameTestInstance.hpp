@@ -17,8 +17,8 @@ class MinecraftGameTestInstance {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTGAMETESTINSTANCE
 public:
-    class MinecraftGameTestInstance& operator=(class MinecraftGameTestInstance const&) = delete;
-    MinecraftGameTestInstance(class MinecraftGameTestInstance const&) = delete;
+    class MinecraftGameTestInstance& operator=(class MinecraftGameTestInstance const &) = delete;
+    MinecraftGameTestInstance(class MinecraftGameTestInstance const &) = delete;
     MinecraftGameTestInstance() = delete;
 #endif
 
@@ -38,7 +38,7 @@ public:
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void __unk_vfn_14();
-    /*15*/ virtual class BlockSource& getBlockSource() const;
+    /*15*/ virtual class BlockSource & getBlockSource() const;
 
 protected:
 

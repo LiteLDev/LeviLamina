@@ -18,14 +18,15 @@ class MinecraftGameTest : public BlockSourceListener {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTGAMETEST
 public:
-    class MinecraftGameTest& operator=(class MinecraftGameTest const&) = delete;
-    MinecraftGameTest(class MinecraftGameTest const&) = delete;
+    class MinecraftGameTest& operator=(class MinecraftGameTest const &) = delete;
+    MinecraftGameTest(class MinecraftGameTest const &) = delete;
+    MinecraftGameTest() = delete;
 #endif
 
 public:
     /*0*/ virtual ~MinecraftGameTest();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void onSourceDestroyed(class BlockSource&);
+    /*2*/ virtual void onSourceDestroyed(class BlockSource &);
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*6*/ virtual void __unk_vfn_6();
@@ -47,21 +48,21 @@ public:
     /*23*/ virtual void __unk_vfn_23();
     /*24*/ virtual void __unk_vfn_24();
     /*25*/ virtual void __unk_vfn_25();
-    /*26*/ virtual void onLevelDestruction(std::string const&);
-    MCAPI MinecraftGameTest();
-    MCAPI void clearAllTests(class BlockSource&);
-    MCAPI class gametest::GameTestRegistry& getRegistry();
-    MCAPI class gametest::GameTestTicker& getTicker();
-    MCAPI void loadExistingTests(class Level&);
-    MCAPI void registerDefaultGameBatches(class Level&);
+    /*26*/ virtual void onLevelDestruction(std::string const &);
+    MCAPI MinecraftGameTest(class Level &);
+    MCAPI void clearAllTests(class BlockSource &);
+    MCAPI class gametest::GameTestRegistry & getRegistry();
+    MCAPI class gametest::GameTestTicker & getTicker();
+    MCAPI void loadExistingTests(class Level &);
+    MCAPI void registerDefaultGameBatches(class Level &);
     MCAPI void registerNativeGameTests();
-    MCAPI std::string runTest(std::string const&, class Dimension&, struct gametest::TestParameters const&);
-    MCAPI std::string runTestAt(class BlockSource&, class BlockPos const&, class std::optional<enum Rotation>);
-    MCAPI std::vector<class std::shared_ptr<class gametest::BaseGameTestInstance>> const& runTests(class Dimension&, struct gametest::TestParameters&&);
+    MCAPI std::string runTest(std::string const &, class Dimension &, struct gametest::TestParameters const &);
+    MCAPI std::string runTestAt(class BlockSource &, class BlockPos const &, class std::optional<enum Rotation>);
+    MCAPI std::vector<class std::shared_ptr<class gametest::BaseGameTestInstance>> const & runTests(class Dimension &, struct gametest::TestParameters &&);
 
 protected:
 
 private:
-    MCAPI void _runTestPreparation(class gametest::BaseGameTestFunction const&);
+    MCAPI void _runTestPreparation(class gametest::BaseGameTestFunction const &);
 
 };

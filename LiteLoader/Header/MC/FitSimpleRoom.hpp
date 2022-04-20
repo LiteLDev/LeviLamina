@@ -17,20 +17,20 @@ class FitSimpleRoom {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FITSIMPLEROOM
 public:
-    class FitSimpleRoom& operator=(class FitSimpleRoom const&) = delete;
-    FitSimpleRoom(class FitSimpleRoom const&) = delete;
+    class FitSimpleRoom& operator=(class FitSimpleRoom const &) = delete;
+    FitSimpleRoom(class FitSimpleRoom const &) = delete;
     FitSimpleRoom() = delete;
 #endif
 
 public:
     /*0*/ virtual ~FitSimpleRoom();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual std::unique_ptr<class OceanMonumentPiece> create(int&, class std::shared_ptr<class RoomDefinition>, class Random&);
+    /*2*/ virtual std::unique_ptr<class OceanMonumentPiece> create(int &, class std::shared_ptr<class RoomDefinition>, class Random &);
     /*
-    inline bool fits(class RoomDefinition const& a0) const{
-        bool (FitSimpleRoom::*rv)(class RoomDefinition const&) const;
+    inline bool fits(class RoomDefinition const & a0) const{
+        bool (FitSimpleRoom::*rv)(class RoomDefinition const &) const;
         *((void**)&rv) = dlsym("?fits@FitSimpleRoom@@UEBA_NAEBVRoomDefinition@@@Z");
-        return (this->*rv)(std::forward<class RoomDefinition const&>(a0));
+        return (this->*rv)(std::forward<class RoomDefinition const &>(a0));
     }
     */
 

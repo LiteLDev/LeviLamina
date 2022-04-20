@@ -17,18 +17,18 @@ class RepeatUntilFailureNode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPEATUNTILFAILURENODE
 public:
-    class RepeatUntilFailureNode& operator=(class RepeatUntilFailureNode const&) = delete;
-    RepeatUntilFailureNode(class RepeatUntilFailureNode const&) = delete;
+    class RepeatUntilFailureNode& operator=(class RepeatUntilFailureNode const &) = delete;
+    RepeatUntilFailureNode(class RepeatUntilFailureNode const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~RepeatUntilFailureNode();
-    /*1*/ virtual enum BehaviorStatus tick(class Actor&);
+    /*1*/ virtual enum BehaviorStatus tick(class Actor &);
     /*
-    inline void initializeFromDefinition(class Actor& a0){
-        void (RepeatUntilFailureNode::*rv)(class Actor&);
+    inline void initializeFromDefinition(class Actor & a0){
+        void (RepeatUntilFailureNode::*rv)(class Actor &);
         *((void**)&rv) = dlsym("?initializeFromDefinition@RepeatUntilFailureNode@@MEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
+        return (this->*rv)(std::forward<class Actor &>(a0));
     }
     */
     MCAPI RepeatUntilFailureNode();

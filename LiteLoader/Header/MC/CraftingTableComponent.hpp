@@ -17,13 +17,13 @@ struct CraftingTableComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTINGTABLECOMPONENT
 public:
-    struct CraftingTableComponent& operator=(struct CraftingTableComponent const&) = delete;
-    CraftingTableComponent(struct CraftingTableComponent const&) = delete;
+    struct CraftingTableComponent& operator=(struct CraftingTableComponent const &) = delete;
+    CraftingTableComponent(struct CraftingTableComponent const &) = delete;
     CraftingTableComponent() = delete;
 #endif
 
 public:
-    MCAPI struct CraftingTableComponent& operator=(struct CraftingTableComponent&&);
+    MCAPI struct CraftingTableComponent & operator=(struct CraftingTableComponent &&);
     MCAPI ~CraftingTableComponent();
 
 protected:

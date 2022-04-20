@@ -18,14 +18,14 @@ class MonsterRoomFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MONSTERROOMFEATURE
 public:
-    class MonsterRoomFeature& operator=(class MonsterRoomFeature const&) = delete;
-    MonsterRoomFeature(class MonsterRoomFeature const&) = delete;
+    class MonsterRoomFeature& operator=(class MonsterRoomFeature const &) = delete;
+    MonsterRoomFeature(class MonsterRoomFeature const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~MonsterRoomFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /*
     inline  ~MonsterRoomFeature(){
          (MonsterRoomFeature::*rv)();

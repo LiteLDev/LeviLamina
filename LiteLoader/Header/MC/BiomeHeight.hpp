@@ -17,8 +17,8 @@ class BiomeHeight {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMEHEIGHT
 public:
-    class BiomeHeight& operator=(class BiomeHeight const&) = delete;
-    BiomeHeight(class BiomeHeight const&) = delete;
+    class BiomeHeight& operator=(class BiomeHeight const &) = delete;
+    BiomeHeight(class BiomeHeight const &) = delete;
     BiomeHeight() = delete;
 #endif
 

@@ -15,8 +15,8 @@ struct CommandSyntaxInformation {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDSYNTAXINFORMATION
 public:
-    struct CommandSyntaxInformation& operator=(struct CommandSyntaxInformation const&) = delete;
-    CommandSyntaxInformation(struct CommandSyntaxInformation const&) = delete;
+    struct CommandSyntaxInformation& operator=(struct CommandSyntaxInformation const &) = delete;
+    CommandSyntaxInformation(struct CommandSyntaxInformation const &) = delete;
 #endif
 
 public:

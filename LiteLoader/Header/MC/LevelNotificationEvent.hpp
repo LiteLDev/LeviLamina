@@ -15,8 +15,8 @@ struct LevelNotificationEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELNOTIFICATIONEVENT
 public:
-    struct LevelNotificationEvent& operator=(struct LevelNotificationEvent const&) = delete;
-    LevelNotificationEvent(struct LevelNotificationEvent const&) = delete;
+    struct LevelNotificationEvent& operator=(struct LevelNotificationEvent const &) = delete;
+    LevelNotificationEvent(struct LevelNotificationEvent const &) = delete;
     LevelNotificationEvent() = delete;
 #endif
 

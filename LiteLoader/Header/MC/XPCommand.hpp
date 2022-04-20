@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class XPCommand {
+class XPCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,15 +18,15 @@ class XPCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_XPCOMMAND
 public:
-    class XPCommand& operator=(class XPCommand const&) = delete;
-    XPCommand(class XPCommand const&) = delete;
+    class XPCommand& operator=(class XPCommand const &) = delete;
+    XPCommand(class XPCommand const &) = delete;
     XPCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~XPCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 

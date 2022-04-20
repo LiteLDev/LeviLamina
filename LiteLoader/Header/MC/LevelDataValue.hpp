@@ -15,8 +15,8 @@ struct LevelDataValue {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELDATAVALUE
 public:
-    struct LevelDataValue& operator=(struct LevelDataValue const&) = delete;
-    LevelDataValue(struct LevelDataValue const&) = delete;
+    struct LevelDataValue& operator=(struct LevelDataValue const &) = delete;
+    LevelDataValue(struct LevelDataValue const &) = delete;
     LevelDataValue() = delete;
 #endif
 

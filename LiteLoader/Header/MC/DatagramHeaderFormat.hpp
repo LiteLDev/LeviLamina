@@ -18,14 +18,14 @@ class DatagramHeaderFormat {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DATAGRAMHEADERFORMAT
 public:
-    class DatagramHeaderFormat& operator=(class DatagramHeaderFormat const&) = delete;
-    DatagramHeaderFormat(class DatagramHeaderFormat const&) = delete;
+    class DatagramHeaderFormat& operator=(class DatagramHeaderFormat const &) = delete;
+    DatagramHeaderFormat(class DatagramHeaderFormat const &) = delete;
     DatagramHeaderFormat() = delete;
 #endif
 
 public:
-    MCAPI void Deserialize(class RakNet::BitStream*);
-    MCAPI void Serialize(class RakNet::BitStream*);
+    MCAPI void Deserialize(class RakNet::BitStream *);
+    MCAPI void Serialize(class RakNet::BitStream *);
 
 protected:
 

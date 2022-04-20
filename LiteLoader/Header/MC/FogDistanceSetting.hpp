@@ -17,8 +17,8 @@ struct FogDistanceSetting {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOGDISTANCESETTING
 public:
-    struct FogDistanceSetting& operator=(struct FogDistanceSetting const&) = delete;
-    FogDistanceSetting(struct FogDistanceSetting const&) = delete;
+    struct FogDistanceSetting& operator=(struct FogDistanceSetting const &) = delete;
+    FogDistanceSetting(struct FogDistanceSetting const &) = delete;
     FogDistanceSetting() = delete;
 #endif
 

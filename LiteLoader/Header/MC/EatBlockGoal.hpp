@@ -17,8 +17,8 @@ class EatBlockGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EATBLOCKGOAL
 public:
-    class EatBlockGoal& operator=(class EatBlockGoal const&) = delete;
-    EatBlockGoal(class EatBlockGoal const&) = delete;
+    class EatBlockGoal& operator=(class EatBlockGoal const &) = delete;
+    EatBlockGoal(class EatBlockGoal const &) = delete;
     EatBlockGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline void stop(){
         void (EatBlockGoal::*rv)();
@@ -38,8 +38,8 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI EatBlockGoal(class Mob&);
-    MCAPI float getEatSuccessChance(class Actor&) const;
+    MCAPI EatBlockGoal(class Mob &);
+    MCAPI float getEatSuccessChance(class Actor &) const;
 
 protected:
 

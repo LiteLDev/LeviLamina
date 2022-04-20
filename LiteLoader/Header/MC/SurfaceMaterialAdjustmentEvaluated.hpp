@@ -17,14 +17,14 @@ struct SurfaceMaterialAdjustmentEvaluated {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SURFACEMATERIALADJUSTMENTEVALUATED
 public:
-    struct SurfaceMaterialAdjustmentEvaluated& operator=(struct SurfaceMaterialAdjustmentEvaluated const&) = delete;
-    SurfaceMaterialAdjustmentEvaluated(struct SurfaceMaterialAdjustmentEvaluated const&) = delete;
+    struct SurfaceMaterialAdjustmentEvaluated& operator=(struct SurfaceMaterialAdjustmentEvaluated const &) = delete;
+    SurfaceMaterialAdjustmentEvaluated(struct SurfaceMaterialAdjustmentEvaluated const &) = delete;
     SurfaceMaterialAdjustmentEvaluated() = delete;
 #endif
 
 public:
     MCAPI bool empty() const;
-    MCAPI void makeAdjustments(struct SurfaceMaterialBlocks&, int) const;
+    MCAPI void makeAdjustments(struct SurfaceMaterialBlocks &, int) const;
     MCAPI ~SurfaceMaterialAdjustmentEvaluated();
 
 protected:

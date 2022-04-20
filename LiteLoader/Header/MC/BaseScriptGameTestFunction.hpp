@@ -15,15 +15,15 @@ class BaseScriptGameTestFunction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASESCRIPTGAMETESTFUNCTION
 public:
-    class BaseScriptGameTestFunction& operator=(class BaseScriptGameTestFunction const&) = delete;
-    BaseScriptGameTestFunction(class BaseScriptGameTestFunction const&) = delete;
+    class BaseScriptGameTestFunction& operator=(class BaseScriptGameTestFunction const &) = delete;
+    BaseScriptGameTestFunction(class BaseScriptGameTestFunction const &) = delete;
     BaseScriptGameTestFunction() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BaseScriptGameTestFunction();
-    /*1*/ virtual std::unique_ptr<class gametest::IGameTestFunctionContext> createContext(class gametest::BaseGameTestHelper&) const;
-    /*2*/ virtual std::unique_ptr<class gametest::IGameTestFunctionRunResult> run(class gametest::BaseGameTestHelper&, class gametest::IGameTestFunctionContext&) const = 0;
+    /*1*/ virtual std::unique_ptr<class gametest::IGameTestFunctionContext> createContext(class gametest::BaseGameTestHelper &) const;
+    /*2*/ virtual std::unique_ptr<class gametest::IGameTestFunctionRunResult> run(class gametest::BaseGameTestHelper &, class gametest::IGameTestFunctionContext &) const = 0;
     /*
     inline  ~BaseScriptGameTestFunction(){
          (BaseScriptGameTestFunction::*rv)();
@@ -31,13 +31,14 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI BaseScriptGameTestFunction(class Scripting::WeakLifetimeScope, std::string const&);
+    MCAPI BaseScriptGameTestFunction(class Scripting::WeakLifetimeScope, std::string const &);
     MCAPI void addTag(std::string);
     MCAPI void setBatch(std::string);
     MCAPI void setMaxAttempts(int);
     MCAPI void setMaxTicks(int);
     MCAPI void setPadding(int);
     MCAPI void setRequired(bool);
+    MCAPI void setRequiredSuccesses(int);
     MCAPI void setRotate(bool);
     MCAPI void setSetupTicks(int);
     MCAPI void setStructureName(std::string);

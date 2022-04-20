@@ -18,8 +18,8 @@ struct ContainerDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERDESCRIPTION
 public:
-    struct ContainerDescription& operator=(struct ContainerDescription const&) = delete;
-    ContainerDescription(struct ContainerDescription const&) = delete;
+    struct ContainerDescription& operator=(struct ContainerDescription const &) = delete;
+    ContainerDescription(struct ContainerDescription const &) = delete;
     ContainerDescription() = delete;
 #endif
 

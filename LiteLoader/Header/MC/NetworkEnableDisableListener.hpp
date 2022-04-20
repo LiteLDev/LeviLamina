@@ -18,8 +18,8 @@ class NetworkEnableDisableListener {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKENABLEDISABLELISTENER
 public:
-    class NetworkEnableDisableListener& operator=(class NetworkEnableDisableListener const&) = delete;
-    NetworkEnableDisableListener(class NetworkEnableDisableListener const&) = delete;
+    class NetworkEnableDisableListener& operator=(class NetworkEnableDisableListener const &) = delete;
+    NetworkEnableDisableListener(class NetworkEnableDisableListener const &) = delete;
     NetworkEnableDisableListener() = delete;
 #endif
 
@@ -32,7 +32,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI NetworkEnableDisableListener(class Bedrock::NonOwnerPointer<class AppPlatform> const&);
+    MCAPI NetworkEnableDisableListener(class Bedrock::NonOwnerPointer<class AppPlatform> const &);
     MCAPI void disable();
     MCAPI bool isDisabled() const;
     MCAPI bool isEnabled() const;

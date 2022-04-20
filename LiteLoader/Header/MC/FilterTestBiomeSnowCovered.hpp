@@ -19,14 +19,14 @@ class FilterTestBiomeSnowCovered : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERTESTBIOMESNOWCOVERED
 public:
-    class FilterTestBiomeSnowCovered& operator=(class FilterTestBiomeSnowCovered const&) = delete;
-    FilterTestBiomeSnowCovered(class FilterTestBiomeSnowCovered const&) = delete;
+    class FilterTestBiomeSnowCovered& operator=(class FilterTestBiomeSnowCovered const &) = delete;
+    FilterTestBiomeSnowCovered(class FilterTestBiomeSnowCovered const &) = delete;
     FilterTestBiomeSnowCovered() = delete;
 #endif
 
 public:
     /*0*/ virtual ~FilterTestBiomeSnowCovered();
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*
     inline  ~FilterTestBiomeSnowCovered(){

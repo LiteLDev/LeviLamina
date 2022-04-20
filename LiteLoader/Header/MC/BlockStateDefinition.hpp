@@ -17,18 +17,18 @@ struct BlockStateDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSTATEDEFINITION
 public:
-    struct BlockStateDefinition& operator=(struct BlockStateDefinition const&) = delete;
-    BlockStateDefinition(struct BlockStateDefinition const&) = delete;
+    struct BlockStateDefinition& operator=(struct BlockStateDefinition const &) = delete;
+    BlockStateDefinition(struct BlockStateDefinition const &) = delete;
     BlockStateDefinition() = delete;
 #endif
 
 public:
-    MCAPI struct BlockStateDefinition& operator=(struct BlockStateDefinition&&);
+    MCAPI struct BlockStateDefinition & operator=(struct BlockStateDefinition &&);
     MCAPI ~BlockStateDefinition();
 
 protected:
 
 private:
-    MCAPI void _copy(struct BlockStateDefinition const&);
+    MCAPI void _copy(struct BlockStateDefinition const &);
 
 };

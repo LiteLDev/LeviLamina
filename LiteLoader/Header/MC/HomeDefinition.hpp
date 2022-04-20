@@ -18,14 +18,14 @@ class HomeDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOMEDEFINITION
 public:
-    class HomeDefinition& operator=(class HomeDefinition const&) = delete;
-    HomeDefinition(class HomeDefinition const&) = delete;
+    class HomeDefinition& operator=(class HomeDefinition const &) = delete;
+    HomeDefinition(class HomeDefinition const &) = delete;
 #endif
 
 public:
     MCAPI HomeDefinition();
-    MCAPI void initialize(class EntityContext&, class HomeComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HomeDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class HomeComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HomeDefinition>> &);
 
 protected:
 

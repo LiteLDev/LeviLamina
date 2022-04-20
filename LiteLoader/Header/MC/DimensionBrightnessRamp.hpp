@@ -17,8 +17,8 @@ class DimensionBrightnessRamp {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONBRIGHTNESSRAMP
 public:
-    class DimensionBrightnessRamp& operator=(class DimensionBrightnessRamp const&) = delete;
-    DimensionBrightnessRamp(class DimensionBrightnessRamp const&) = delete;
+    class DimensionBrightnessRamp& operator=(class DimensionBrightnessRamp const &) = delete;
+    DimensionBrightnessRamp(class DimensionBrightnessRamp const &) = delete;
     DimensionBrightnessRamp() = delete;
 #endif
 

@@ -19,14 +19,14 @@ class FilterTestBiomeHumid : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERTESTBIOMEHUMID
 public:
-    class FilterTestBiomeHumid& operator=(class FilterTestBiomeHumid const&) = delete;
-    FilterTestBiomeHumid(class FilterTestBiomeHumid const&) = delete;
+    class FilterTestBiomeHumid& operator=(class FilterTestBiomeHumid const &) = delete;
+    FilterTestBiomeHumid(class FilterTestBiomeHumid const &) = delete;
     FilterTestBiomeHumid() = delete;
 #endif
 
 public:
     /*0*/ virtual ~FilterTestBiomeHumid();
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*
     inline  ~FilterTestBiomeHumid(){

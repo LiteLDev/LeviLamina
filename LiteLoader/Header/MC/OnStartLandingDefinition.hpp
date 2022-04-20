@@ -18,8 +18,8 @@ struct OnStartLandingDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONSTARTLANDINGDEFINITION
 public:
-    struct OnStartLandingDefinition& operator=(struct OnStartLandingDefinition const&) = delete;
-    OnStartLandingDefinition(struct OnStartLandingDefinition const&) = delete;
+    struct OnStartLandingDefinition& operator=(struct OnStartLandingDefinition const &) = delete;
+    OnStartLandingDefinition(struct OnStartLandingDefinition const &) = delete;
     OnStartLandingDefinition() = delete;
 #endif
 

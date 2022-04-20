@@ -17,15 +17,15 @@ class BreedableSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREEDABLESYSTEM
 public:
-    class BreedableSystem& operator=(class BreedableSystem const&) = delete;
-    BreedableSystem(class BreedableSystem const&) = delete;
+    class BreedableSystem& operator=(class BreedableSystem const &) = delete;
+    BreedableSystem(class BreedableSystem const &) = delete;
     BreedableSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BreedableSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

@@ -17,13 +17,13 @@ class ScriptBlockTypes {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKTYPES
 public:
-    class ScriptBlockTypes& operator=(class ScriptBlockTypes const&) = delete;
-    ScriptBlockTypes(class ScriptBlockTypes const&) = delete;
+    class ScriptBlockTypes& operator=(class ScriptBlockTypes const &) = delete;
+    ScriptBlockTypes(class ScriptBlockTypes const &) = delete;
 #endif
 
 public:
     MCAPI ScriptBlockTypes();
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptBlockType> get(class Scripting::WeakLifetimeScope&, std::string const&);
+    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptBlockType> get(class Scripting::WeakLifetimeScope &, std::string const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockTypes> bind(struct Scripting::Version);
 
 protected:

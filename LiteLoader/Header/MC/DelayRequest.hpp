@@ -15,8 +15,8 @@ class DelayRequest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DELAYREQUEST
 public:
-    class DelayRequest& operator=(class DelayRequest const&) = delete;
-    DelayRequest(class DelayRequest const&) = delete;
+    class DelayRequest& operator=(class DelayRequest const &) = delete;
+    DelayRequest(class DelayRequest const &) = delete;
     DelayRequest() = delete;
 #endif
 

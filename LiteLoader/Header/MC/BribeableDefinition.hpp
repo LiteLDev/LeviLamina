@@ -18,15 +18,15 @@ class BribeableDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BRIBEABLEDEFINITION
 public:
-    class BribeableDefinition& operator=(class BribeableDefinition const&) = delete;
-    BribeableDefinition(class BribeableDefinition const&) = delete;
+    class BribeableDefinition& operator=(class BribeableDefinition const &) = delete;
+    BribeableDefinition(class BribeableDefinition const &) = delete;
     BribeableDefinition() = delete;
 #endif
 
 public:
-    MCAPI void addBribeItem(class ItemDescriptor const&);
-    MCAPI void initialize(class EntityContext&, class BribeableComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BribeableDefinition> >&);
+    MCAPI void addBribeItem(class ItemDescriptor const &);
+    MCAPI void initialize(class EntityContext &, class BribeableComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BribeableDefinition>> &);
 
 protected:
 

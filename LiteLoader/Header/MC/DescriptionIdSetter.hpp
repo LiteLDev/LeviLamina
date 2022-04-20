@@ -17,8 +17,8 @@ class DescriptionIdSetter {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DESCRIPTIONIDSETTER
 public:
-    class DescriptionIdSetter& operator=(class DescriptionIdSetter const&) = delete;
-    DescriptionIdSetter(class DescriptionIdSetter const&) = delete;
+    class DescriptionIdSetter& operator=(class DescriptionIdSetter const &) = delete;
+    DescriptionIdSetter(class DescriptionIdSetter const &) = delete;
     DescriptionIdSetter() = delete;
 #endif
 

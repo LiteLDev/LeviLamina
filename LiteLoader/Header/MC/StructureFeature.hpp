@@ -17,18 +17,20 @@ class StructureFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREFEATURE
 public:
-    class StructureFeature& operator=(class StructureFeature const&) = delete;
-    StructureFeature(class StructureFeature const&) = delete;
+    class StructureFeature& operator=(class StructureFeature const &) = delete;
+    StructureFeature(class StructureFeature const &) = delete;
     StructureFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~StructureFeature();
-    /*1*/ virtual bool postProcess(class BlockSource&, class Random&, int, int);
-    /*2*/ virtual bool getNearestGeneratedFeature(class Dimension&, class BiomeSource const&, class BlockPos const&, class BlockPos&, class IPreliminarySurfaceProvider const&, bool);
-    /*3*/ virtual bool isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&) = 0;
-    /*4*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&) = 0;
-    /*5*/ virtual class StructureStart* getStructureAt(int, int, int);
+    /*1*/ virtual bool shouldAddHardcodedSpawnAreas() const;
+    /*2*/ virtual bool shouldPostProcessMobs() const;
+    /*3*/ virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
+    /*4*/ virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry &);
+    /*5*/ virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &) = 0;
+    /*6*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &) = 0;
+    /*7*/ virtual class StructureStart * getStructureAt(int, int, int);
     /*
     inline  ~StructureFeature(){
          (StructureFeature::*rv)();
@@ -36,22 +38,25 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI StructureFeature(unsigned int);
-    MCAPI class BlockPos chunkStartAtSurfaceLevel(class IPreliminarySurfaceProvider const&, class ChunkPos, int);
-    MCAPI void createBlueprints(class Dimension&, class ChunkPos const&, class BiomeSource const&, class IPreliminarySurfaceProvider const&);
+    MCAPI StructureFeature(unsigned int, enum StructureFeatureType);
+    MCAPI void addHardcodedSpawnAreas(class LevelChunk &);
+    MCAPI class BlockPos chunkStartAtSurfaceLevel(class IPreliminarySurfaceProvider const &, class ChunkPos, int);
+    MCAPI void createBlueprints(class Dimension &, class ChunkPos const &, class BiomeSource const &, class IPreliminarySurfaceProvider const &);
     MCAPI void debugRender();
     MCAPI std::vector<class ChunkPos> findFarAwayStructures(class buffer_span<class ChunkPos>, unsigned int);
-    MCAPI void foreachIntersectingStructureStart(class BoundingBox const&, class std::function<void (class StructureStart& )>);
+    MCAPI void foreachIntersectingStructureStart(class BoundingBox const &, class std::function<void (class StructureStart &)>);
     MCAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos>, unsigned int);
-    MCAPI void generateHardcodedMobSpawns(class LevelChunk&);
+    MCAPI enum StructureFeatureType getType() const;
     MCAPI bool isInsideBoundingFeature(int, int, int);
-    MCAPI void postProcessMobsAt(class BlockSource&, int, int, class Random&);
+    MCAPI bool postProcess(class BlockSource &, class Random &, int, int);
+    MCAPI void postProcessMobsAt(class BlockSource &, int, int, class Random &);
     MCAPI void waitForFeatureBlueprints();
-    MCAPI static bool findNearestFeaturePositionBySpacing(class Dimension&, class IPreliminarySurfaceProvider const&, class StructureFeature&, class BiomeSource const&, class BlockPos const&, class BlockPos&, int, int, int, bool, int, bool);
-    MCAPI static class ChunkPos getChunkPosInSpace(class ChunkPos const&, class Random&, unsigned int, int, int, int, bool);
-    MCAPI static void setRandomSeedFor(class Random&, int, int, int, unsigned int);
+    MCAPI static bool findNearestFeaturePositionBySpacing(class Dimension &, class IPreliminarySurfaceProvider const &, class StructureFeature &, class BiomeSource const &, class BlockPos const &, class BlockPos &, int, int, int, bool, int, bool);
+    MCAPI static class ChunkPos getChunkPosInSpace(class ChunkPos const &, class Random &, unsigned int, int, int, int, bool);
+    MCAPI static void setRandomSeedFor(class Random &, int, int, int, unsigned int);
 
 protected:
+    MCAPI void addFeature(class Dimension &, class Random &, class ChunkPos const &, class BiomeSource const &, class IPreliminarySurfaceProvider const &);
 
 private:
 

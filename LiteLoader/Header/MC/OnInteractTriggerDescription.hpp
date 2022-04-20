@@ -18,17 +18,17 @@ class OnInteractTriggerDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONINTERACTTRIGGERDESCRIPTION
 public:
-    class OnInteractTriggerDescription& operator=(class OnInteractTriggerDescription const&) = delete;
-    OnInteractTriggerDescription(class OnInteractTriggerDescription const&) = delete;
+    class OnInteractTriggerDescription& operator=(class OnInteractTriggerDescription const &) = delete;
+    OnInteractTriggerDescription(class OnInteractTriggerDescription const &) = delete;
     OnInteractTriggerDescription() = delete;
 #endif
 
 public:
     /*0*/ virtual ~OnInteractTriggerDescription();
-    /*1*/ virtual std::string const& getName() const;
+    /*1*/ virtual std::string const & getName() const;
     /*4*/ virtual bool isNetworkComponent() const;
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
     MCAPI static std::string const NameID;
 
 protected:

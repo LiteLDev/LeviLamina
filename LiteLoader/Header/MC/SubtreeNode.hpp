@@ -17,14 +17,14 @@ class SubtreeNode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBTREENODE
 public:
-    class SubtreeNode& operator=(class SubtreeNode const&) = delete;
-    SubtreeNode(class SubtreeNode const&) = delete;
+    class SubtreeNode& operator=(class SubtreeNode const &) = delete;
+    SubtreeNode(class SubtreeNode const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~SubtreeNode();
-    /*1*/ virtual enum BehaviorStatus tick(class Actor&);
-    /*2*/ virtual void initializeFromDefinition(class Actor&);
+    /*1*/ virtual enum BehaviorStatus tick(class Actor &);
+    /*2*/ virtual void initializeFromDefinition(class Actor &);
     MCAPI SubtreeNode();
 
 protected:

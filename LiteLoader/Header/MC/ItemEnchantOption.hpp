@@ -15,13 +15,13 @@ class ItemEnchantOption {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMENCHANTOPTION
 public:
-    class ItemEnchantOption& operator=(class ItemEnchantOption const&) = delete;
-    ItemEnchantOption(class ItemEnchantOption const&) = delete;
+    class ItemEnchantOption& operator=(class ItemEnchantOption const &) = delete;
+    ItemEnchantOption(class ItemEnchantOption const &) = delete;
     ItemEnchantOption() = delete;
 #endif
 
 public:
-    MCAPI ItemEnchantOption(class ItemEnchantOption&&);
+    MCAPI ItemEnchantOption(class ItemEnchantOption &&);
     MCAPI ~ItemEnchantOption();
 
 protected:

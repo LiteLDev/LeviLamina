@@ -17,13 +17,13 @@ struct NameAction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAMEACTION
 public:
-    struct NameAction& operator=(struct NameAction const&) = delete;
+    struct NameAction& operator=(struct NameAction const &) = delete;
     NameAction() = delete;
 #endif
 
 public:
-    MCAPI NameAction(struct NameAction const&);
-    MCAPI void addNameFilterByName(std::string const&);
+    MCAPI NameAction(struct NameAction const &);
+    MCAPI void addNameFilterByName(std::string const &);
     MCAPI ~NameAction();
 
 protected:

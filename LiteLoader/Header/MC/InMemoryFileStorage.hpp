@@ -18,18 +18,18 @@ class InMemoryFileStorage {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INMEMORYFILESTORAGE
 public:
-    class InMemoryFileStorage& operator=(class InMemoryFileStorage const&) = delete;
-    InMemoryFileStorage(class InMemoryFileStorage const&) = delete;
+    class InMemoryFileStorage& operator=(class InMemoryFileStorage const &) = delete;
+    InMemoryFileStorage(class InMemoryFileStorage const &) = delete;
     InMemoryFileStorage() = delete;
 #endif
 
 public:
-    MCAPI InMemoryFileStorage(class leveldb::Env*);
-    MCAPI class std::shared_ptr<class InMemoryFile> createFile(class Core::Path const&);
-    MCAPI bool deleteFile(class Core::Path const&);
-    MCAPI bool findFile(class Core::Path const&, class std::shared_ptr<class InMemoryFile>&);
+    MCAPI InMemoryFileStorage(class leveldb::Env *);
+    MCAPI class std::shared_ptr<class InMemoryFile> createFile(class Core::Path const &);
+    MCAPI bool deleteFile(class Core::Path const &);
+    MCAPI bool findFile(class Core::Path const &, class std::shared_ptr<class InMemoryFile> &);
     MCAPI void flushToDisk();
-    MCAPI void populateFileList(std::vector<std::string>&);
+    MCAPI void populateFileList(std::vector<std::string> &);
     MCAPI ~InMemoryFileStorage();
 
 protected:

@@ -17,8 +17,8 @@ class SharedModifiers {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAREDMODIFIERS
 public:
-    class SharedModifiers& operator=(class SharedModifiers const&) = delete;
-    SharedModifiers(class SharedModifiers const&) = delete;
+    class SharedModifiers& operator=(class SharedModifiers const &) = delete;
+    SharedModifiers(class SharedModifiers const &) = delete;
     SharedModifiers() = delete;
 #endif
 

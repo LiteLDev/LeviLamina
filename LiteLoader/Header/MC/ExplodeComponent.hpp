@@ -17,20 +17,19 @@ class ExplodeComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPLODECOMPONENT
 public:
-    class ExplodeComponent& operator=(class ExplodeComponent const&) = delete;
-    ExplodeComponent(class ExplodeComponent const&) = delete;
+    class ExplodeComponent& operator=(class ExplodeComponent const &) = delete;
+    ExplodeComponent(class ExplodeComponent const &) = delete;
 #endif
 
 public:
     MCAPI ExplodeComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag&);
-    MCAPI void explode(class Actor&, class Vec3 const&);
+    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void explode(class Actor &, class Vec3 const &);
     MCAPI int getFuseLength() const;
     MCAPI int getInitialFuseLength() const;
     MCAPI bool getIsFuseLit() const;
-    MCAPI void initFromDefinition(class Actor&, class ExplodeDefinition const&);
     MCAPI bool isFuseLit() const;
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI bool requiresTntExplodeGameRuleEnabled() const;
     MCAPI void setAllowUnderwater(bool);
     MCAPI void setFuseLength(int);

@@ -17,8 +17,8 @@ struct GameTestReport {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETESTREPORT
 public:
-    struct GameTestReport& operator=(struct GameTestReport const&) = delete;
-    GameTestReport(struct GameTestReport const&) = delete;
+    struct GameTestReport& operator=(struct GameTestReport const &) = delete;
+    GameTestReport(struct GameTestReport const &) = delete;
     GameTestReport() = delete;
 #endif
 

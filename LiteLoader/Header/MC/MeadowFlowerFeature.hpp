@@ -18,19 +18,19 @@ class MeadowFlowerFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MEADOWFLOWERFEATURE
 public:
-    class MeadowFlowerFeature& operator=(class MeadowFlowerFeature const&) = delete;
-    MeadowFlowerFeature(class MeadowFlowerFeature const&) = delete;
+    class MeadowFlowerFeature& operator=(class MeadowFlowerFeature const &) = delete;
+    MeadowFlowerFeature(class MeadowFlowerFeature const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~MeadowFlowerFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     MCAPI MeadowFlowerFeature();
 
 protected:
 
 private:
-    MCAPI int getRandomArrayIndex(class BlockPos const&, unsigned __int64, float) const;
+    MCAPI int getRandomArrayIndex(class BlockPos const &, unsigned __int64, float) const;
 
 };

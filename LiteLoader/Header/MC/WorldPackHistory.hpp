@@ -18,23 +18,23 @@ class WorldPackHistory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDPACKHISTORY
 public:
-    class WorldPackHistory& operator=(class WorldPackHistory const&) = delete;
+    class WorldPackHistory& operator=(class WorldPackHistory const &) = delete;
     WorldPackHistory() = delete;
 #endif
 
 public:
-    MCAPI WorldPackHistory(class WorldPackHistory&&);
-    MCAPI WorldPackHistory(class WorldPackHistory const&);
+    MCAPI WorldPackHistory(class WorldPackHistory &&);
+    MCAPI WorldPackHistory(class WorldPackHistory const &);
     MCAPI bool getCanBeRedownloaded() const;
-    MCAPI class std::unordered_map<std::string, std::string, struct std::hash<std::string >, struct std::equal_to<std::string >, class std::allocator<struct std::pair<std::string const, std::string > > > const& getLocalizedNames() const;
-    MCAPI struct PackIdVersion const& getPackIdVersion() const;
-    MCAPI class mce::UUID const& getSourceUUID() const;
+    MCAPI class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> const & getLocalizedNames() const;
+    MCAPI struct PackIdVersion const & getPackIdVersion() const;
+    MCAPI class mce::UUID const & getSourceUUID() const;
     MCAPI int getSubpackCount() const;
-    MCAPI std::string const& getUnlocalizedName() const;
+    MCAPI std::string const & getUnlocalizedName() const;
     MCAPI bool hasLocalizedNames() const;
     MCAPI bool hasSourceUUID() const;
     MCAPI bool hasSubpacks() const;
-    MCAPI bool initializeFromJson(class Json::Value const&);
+    MCAPI bool initializeFromJson(class Json::Value const &);
     MCAPI ~WorldPackHistory();
 
 protected:

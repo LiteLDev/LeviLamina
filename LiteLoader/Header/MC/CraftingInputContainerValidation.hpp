@@ -18,8 +18,8 @@ class CraftingInputContainerValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTINGINPUTCONTAINERVALIDATION
 public:
-    class CraftingInputContainerValidation& operator=(class CraftingInputContainerValidation const&) = delete;
-    CraftingInputContainerValidation(class CraftingInputContainerValidation const&) = delete;
+    class CraftingInputContainerValidation& operator=(class CraftingInputContainerValidation const &) = delete;
+    CraftingInputContainerValidation(class CraftingInputContainerValidation const &) = delete;
     CraftingInputContainerValidation() = delete;
 #endif
 
@@ -28,8 +28,8 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
-    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
-    /*9*/ virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
+    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
+    /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 
 protected:
 

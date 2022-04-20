@@ -17,14 +17,14 @@ class HopperComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOPPERCOMPONENT
 public:
-    class HopperComponent& operator=(class HopperComponent const&) = delete;
-    HopperComponent(class HopperComponent const&) = delete;
+    class HopperComponent& operator=(class HopperComponent const &) = delete;
+    HopperComponent(class HopperComponent const &) = delete;
 #endif
 
 public:
     MCAPI HopperComponent();
     MCAPI class BlockPos getLastPosition() const;
-    MCAPI bool pullInItems(class Actor&);
+    MCAPI bool pullInItems(class Actor &);
 
 protected:
 

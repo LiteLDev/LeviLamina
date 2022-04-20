@@ -18,8 +18,8 @@ class StompAttackGoal : public MeleeAttackGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STOMPATTACKGOAL
 public:
-    class StompAttackGoal& operator=(class StompAttackGoal const&) = delete;
-    StompAttackGoal(class StompAttackGoal const&) = delete;
+    class StompAttackGoal& operator=(class StompAttackGoal const &) = delete;
+    StompAttackGoal(class StompAttackGoal const &) = delete;
     StompAttackGoal() = delete;
 #endif
 
@@ -31,7 +31,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
 

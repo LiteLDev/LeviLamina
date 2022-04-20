@@ -17,29 +17,29 @@ class VanillaBlockUpdater {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLABLOCKUPDATER
 public:
-    class VanillaBlockUpdater& operator=(class VanillaBlockUpdater const&) = delete;
-    VanillaBlockUpdater(class VanillaBlockUpdater const&) = delete;
+    class VanillaBlockUpdater& operator=(class VanillaBlockUpdater const &) = delete;
+    VanillaBlockUpdater(class VanillaBlockUpdater const &) = delete;
     VanillaBlockUpdater() = delete;
 #endif
 
 public:
     MCAPI static void destroy();
-    MCAPI static class CompoundTagUpdaterContext& get();
+    MCAPI static class CompoundTagUpdaterContext & get();
     MCAPI static void initialize();
 
 protected:
 
 private:
-    MCAPI static void addBaseUpdater(class CompoundTagUpdaterContext&);
-    MCAPI static void addRailUpdater_1_14_0(std::string const&, class CompoundTagUpdaterContext&);
-    MCAPI static void addUpdaters_1_10_0(class CompoundTagUpdaterContext&);
-    MCAPI static void addUpdaters_1_12_0(class CompoundTagUpdaterContext&);
-    MCAPI static void addUpdaters_1_13_0(class CompoundTagUpdaterContext&);
-    MCAPI static void addUpdaters_1_14_0(class CompoundTagUpdaterContext&);
-    MCAPI static void addUpdaters_1_15_0(class CompoundTagUpdaterContext&);
-    MCAPI static void addUpdaters_1_16_0(class CompoundTagUpdaterContext&);
-    MCAPI static void addUpdaters_1_16_210(class CompoundTagUpdaterContext&);
-    MCAPI static void addUpdaters_1_18_10(class CompoundTagUpdaterContext&);
+    MCAPI static void addBaseUpdater(class CompoundTagUpdaterContext &);
+    MCAPI static void addRailUpdater_1_14_0(std::string const &, class CompoundTagUpdaterContext &);
+    MCAPI static void addUpdaters_1_10_0(class CompoundTagUpdaterContext &);
+    MCAPI static void addUpdaters_1_12_0(class CompoundTagUpdaterContext &);
+    MCAPI static void addUpdaters_1_13_0(class CompoundTagUpdaterContext &);
+    MCAPI static void addUpdaters_1_14_0(class CompoundTagUpdaterContext &);
+    MCAPI static void addUpdaters_1_15_0(class CompoundTagUpdaterContext &);
+    MCAPI static void addUpdaters_1_16_0(class CompoundTagUpdaterContext &);
+    MCAPI static void addUpdaters_1_16_210(class CompoundTagUpdaterContext &);
+    MCAPI static void addUpdaters_1_18_10(class CompoundTagUpdaterContext &);
     MCAPI static std::unique_ptr<class CompoundTagUpdaterContext> mContext;
 
 };

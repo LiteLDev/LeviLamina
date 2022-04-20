@@ -15,8 +15,8 @@ class ActionEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTIONEVENT
 public:
-    class ActionEvent& operator=(class ActionEvent const&) = delete;
-    ActionEvent(class ActionEvent const&) = delete;
+    class ActionEvent& operator=(class ActionEvent const &) = delete;
+    ActionEvent(class ActionEvent const &) = delete;
     ActionEvent() = delete;
 #endif
 

@@ -18,14 +18,14 @@ class MountTameableDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOUNTTAMEABLEDEFINITION
 public:
-    class MountTameableDefinition& operator=(class MountTameableDefinition const&) = delete;
-    MountTameableDefinition(class MountTameableDefinition const&) = delete;
+    class MountTameableDefinition& operator=(class MountTameableDefinition const &) = delete;
+    MountTameableDefinition(class MountTameableDefinition const &) = delete;
 #endif
 
 public:
     MCAPI MountTameableDefinition();
-    MCAPI void initialize(class EntityContext&, class MountTamingComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MountTameableDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class MountTamingComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MountTameableDefinition>> &);
 
 protected:
 

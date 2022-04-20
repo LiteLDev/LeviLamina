@@ -12,6 +12,6 @@ namespace AgentCommandHelper {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-    MCAPI bool isInRange(class CommandOrigin const&, class CommandOutput&, class Player&, class Agent&);
+    MCAPI bool isInRange(class CommandOrigin const &, class CommandOutput &, class Player &, class Agent &);
 
 };

@@ -18,8 +18,8 @@ class SmokerContainerScreenValidator : public FurnaceContainerScreenValidator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMOKERCONTAINERSCREENVALIDATOR
 public:
-    class SmokerContainerScreenValidator& operator=(class SmokerContainerScreenValidator const&) = delete;
-    SmokerContainerScreenValidator(class SmokerContainerScreenValidator const&) = delete;
+    class SmokerContainerScreenValidator& operator=(class SmokerContainerScreenValidator const &) = delete;
+    SmokerContainerScreenValidator(class SmokerContainerScreenValidator const &) = delete;
 #endif
 
 public:

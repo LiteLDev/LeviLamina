@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class DialogueCommand {
+class DialogueCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,15 +18,15 @@ class DialogueCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIALOGUECOMMAND
 public:
-    class DialogueCommand& operator=(class DialogueCommand const&) = delete;
-    DialogueCommand(class DialogueCommand const&) = delete;
+    class DialogueCommand& operator=(class DialogueCommand const &) = delete;
+    DialogueCommand(class DialogueCommand const &) = delete;
     DialogueCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~DialogueCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 

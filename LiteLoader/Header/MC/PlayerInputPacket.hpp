@@ -18,16 +18,16 @@ class PlayerInputPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERINPUTPACKET
 public:
-    class PlayerInputPacket& operator=(class PlayerInputPacket const&) = delete;
-    PlayerInputPacket(class PlayerInputPacket const&) = delete;
+    class PlayerInputPacket& operator=(class PlayerInputPacket const &) = delete;
+    PlayerInputPacket(class PlayerInputPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~PlayerInputPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     MCAPI PlayerInputPacket();
 
 protected:

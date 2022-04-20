@@ -30,9 +30,9 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptComponent(class ScriptComponent const&);
-    MCAPI std::string const& getId() const;
-    MCAPI class ScriptComponent& operator=(class ScriptComponent const&);
+    MCAPI ScriptComponent(class ScriptComponent const &);
+    MCAPI std::string const & getId() const;
+    MCAPI class ScriptComponent & operator=(class ScriptComponent const &);
 
 protected:
 

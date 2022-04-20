@@ -17,8 +17,8 @@ struct LootComponentDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTCOMPONENTDESCRIPTION
 public:
-    struct LootComponentDescription& operator=(struct LootComponentDescription const&) = delete;
-    LootComponentDescription(struct LootComponentDescription const&) = delete;
+    struct LootComponentDescription& operator=(struct LootComponentDescription const &) = delete;
+    LootComponentDescription(struct LootComponentDescription const &) = delete;
     LootComponentDescription() = delete;
 #endif
 

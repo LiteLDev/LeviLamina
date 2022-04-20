@@ -17,17 +17,17 @@ class BaseMobSpawner {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASEMOBSPAWNER
 public:
-    class BaseMobSpawner& operator=(class BaseMobSpawner const&) = delete;
-    BaseMobSpawner(class BaseMobSpawner const&) = delete;
+    class BaseMobSpawner& operator=(class BaseMobSpawner const &) = delete;
+    BaseMobSpawner(class BaseMobSpawner const &) = delete;
     BaseMobSpawner() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BaseMobSpawner();
-    /*1*/ virtual void tick(class BlockSource&);
-    /*2*/ virtual void load(class CompoundTag const&);
-    /*3*/ virtual void save(class CompoundTag&);
-    /*4*/ virtual class BlockPos const& getPos() = 0;
+    /*1*/ virtual void tick(class BlockSource &);
+    /*2*/ virtual void load(class CompoundTag const &);
+    /*3*/ virtual void save(class CompoundTag &);
+    /*4*/ virtual class BlockPos const & getPos() = 0;
     /*
     inline  ~BaseMobSpawner(){
          (BaseMobSpawner::*rv)();
@@ -36,12 +36,12 @@ public:
     }
     */
     MCAPI BaseMobSpawner(struct ActorDefinitionIdentifier);
-    MCAPI class Actor* createAndAddDisplayEntity(class BlockSource&);
+    MCAPI class Actor * createAndAddDisplayEntity(class BlockSource &);
     MCAPI void setEntityId(struct ActorDefinitionIdentifier);
-    MCAPI class Mob* tryGetOrCreateDisplayEntity(class BlockSource&);
+    MCAPI class Mob * tryGetOrCreateDisplayEntity(class BlockSource &);
 
 protected:
-    MCAPI void _delay(class BlockSource&);
+    MCAPI void _delay(class BlockSource &);
 
 private:
 

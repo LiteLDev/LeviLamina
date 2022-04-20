@@ -17,14 +17,14 @@ class InMemorySequentialFile {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INMEMORYSEQUENTIALFILE
 public:
-    class InMemorySequentialFile& operator=(class InMemorySequentialFile const&) = delete;
-    InMemorySequentialFile(class InMemorySequentialFile const&) = delete;
+    class InMemorySequentialFile& operator=(class InMemorySequentialFile const &) = delete;
+    InMemorySequentialFile(class InMemorySequentialFile const &) = delete;
     InMemorySequentialFile() = delete;
 #endif
 
 public:
     /*0*/ virtual ~InMemorySequentialFile();
-    /*1*/ virtual class leveldb::Status Read(unsigned __int64, class leveldb::Slice*, char*);
+    /*1*/ virtual class leveldb::Status Read(unsigned __int64, class leveldb::Slice *, char *);
     /*2*/ virtual class leveldb::Status Skip(unsigned __int64);
     MCAPI InMemorySequentialFile(class std::shared_ptr<class InMemoryFile>);
 
