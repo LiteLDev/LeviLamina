@@ -388,6 +388,17 @@ struct SharePtrRefTraits;
 template <typename T>
 class SubChunkStorage;
 
+enum class ScriptFacing
+{
+    Unknown = -1,
+    Down = 0,
+    Up = 1,
+    North = 2,
+    South = 3,
+    West = 4,
+    East = 5,
+};
+
 template <typename T, typename T2>
 class TagRegistry;
 
