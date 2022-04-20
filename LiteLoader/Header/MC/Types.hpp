@@ -293,6 +293,9 @@ class TypedClientNetId
 {
 public:
     T2 netId;
+
+    virtual void clientInit(TypedClientNetId<T, T2, unk>);
+    virtual void clientInit();
 };
 
 template <typename T, typename T2, int unk>
