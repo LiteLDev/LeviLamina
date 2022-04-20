@@ -119,7 +119,7 @@ Local<Value> convertResult(DynamicCommand::Result const& result)
         case DynamicCommand::ParameterType::Block:
             return BlockClass::newBlock(const_cast<Block*>(result.getRaw<Block const*>()), const_cast<BlockPos*>(&BlockPos::MIN), -1);
         case DynamicCommand::ParameterType::Effect:
-            return String::newString(result.getRaw<MobEffect const*>()->getComponentName().getString());
+            return String::newString(result.getRaw<MobEffect const*>()->getResourceName());
         case DynamicCommand::ParameterType::Enum:
             return String::newString(result.getRaw<std::string>());
         case DynamicCommand::ParameterType::SoftEnum:
