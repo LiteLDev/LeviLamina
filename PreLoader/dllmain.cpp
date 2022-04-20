@@ -4,7 +4,7 @@
 #include "vcruntime.h"
 void fixUpLibDir();
 void loadDlls();
-#pragma comment(linker, "/export:GetServerSymbol=vcruntime140_1.dlsym_real")
+#pragma comment(linker, "/export:GetServerSymbol=preloader.dlsym_real")
 
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved)
 {

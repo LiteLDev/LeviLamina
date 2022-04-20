@@ -29,7 +29,7 @@ public:
 	enum InitializationMethod;
 
     LIAPI std::string getTypeName() const;
-    LIAPI Vec3 getPosition() const;
+    LIAPI Vec3 getFeetPosition() const;
     LIAPI BlockSource* getBlockSource() const;
     LIAPI Vec2* getDirection() const;
     LIAPI ActorUniqueID getActorUniqueId() const;

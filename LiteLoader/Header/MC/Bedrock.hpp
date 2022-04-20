@@ -71,9 +71,18 @@ public:
     ThreadLocalObject(ThreadLocalObject const&) = delete;
     ThreadLocalObject(ThreadLocalObject const&&) = delete;
 };
-
+template <typename T>
+class LockGuard
+{
+    MCAPI LockGuard(T);
+    MCAPI ~LockGuard();
+};
 } // namespace Threading
-class SessionInfo {
+
+class ScopeExit;
+
+class SessionInfo
+{
 public:
     SessionInfo() = delete;
     SessionInfo(SessionInfo const&) = delete;

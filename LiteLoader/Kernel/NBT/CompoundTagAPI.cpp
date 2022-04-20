@@ -91,10 +91,11 @@ class ByteTag const* CompoundTag::getByteTag(class gsl::basic_string_span<char c
     return const_cast<Tag*>(get(key))->asByteTag();
 };
 
-class ShortTag const* CompoundTag::getShortTag(class gsl::basic_string_span<char const, -1> key) const
-{
-    return const_cast<Tag*>(get(key))->asShortTag();
-};
+// BDS has implemented this interface
+//class ShortTag const* CompoundTag::getShortTag(class gsl::basic_string_span<char const, -1> key) const
+//{
+//    return const_cast<Tag*>(get(key))->asShortTag();
+//};
 
 class FloatTag const* CompoundTag::getFloatTag(class gsl::basic_string_span<char const, -1> key) const
 {

@@ -450,9 +450,10 @@ bool Player::sendNotePacket(unsigned int tone)
     }
     BinaryStream wp;
     wp.writeUnsignedChar(82);
-    wp.writeFloat(getPos().x);
-    wp.writeFloat(getPos().y);
-    wp.writeFloat(getPos().z);
+    auto& PlayerPos = getPosition();
+    wp.writeFloat(PlayerPos.x);
+    wp.writeFloat(PlayerPos.y);
+    wp.writeFloat(PlayerPos.z);
     wp.writeVarInt(tone * 2);
     wp.writeString("");
     wp.writeBool(false);

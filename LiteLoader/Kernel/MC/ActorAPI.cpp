@@ -30,7 +30,8 @@ UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() const {
     return SymCall("??$tryGetComponent@VUserEntityIdentifierComponent@@@Actor@@QEAAPEAVUserEntityIdentifierComponent@@XZ", UserEntityIdentifierComponent*, Actor*)((Actor*)this);
 }
 
-MCINLINE Vec3 Actor::getPosition() const {
+MCINLINE Vec3 Actor::getFeetPosition() const
+{
     return CommandUtils::getFeetPos(this);
 }
 
@@ -84,7 +85,7 @@ Vec2* Actor::getDirection() const {
 }
 
 BlockPos Actor::getBlockPos() {
-    return getPos().add(0,-1.0,0).toBlockPos();
+    return getPosition().add(0,-1.0,0).toBlockPos();
 }
 
 BlockInstance Actor::getBlockStandingOn() const

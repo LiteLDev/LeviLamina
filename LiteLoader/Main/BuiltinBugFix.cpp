@@ -207,7 +207,7 @@ TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NV?
     if (pl->isPlayer())
     {
         logger.warn << "Player(" << pl->getRealName() << ") sent invalid MoveView Packet!" << Logger::endl;
-        auto& pos = pl->getPosOld();
+        auto& pos = pl->getPosPrev();
         if (validPosition(pos))
             pl->setPos(pl->getPosOld());
         else

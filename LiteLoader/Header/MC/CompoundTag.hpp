@@ -46,7 +46,8 @@ public:
 
     // get tag
     LIAPI class ByteTag const* getByteTag(class gsl::basic_string_span<char const, -1> key) const;
-    LIAPI class ShortTag const* getShortTag(class gsl::basic_string_span<char const, -1> key) const;
+    //BDS has implemented this interface
+    //LIAPI class ShortTag const* getShortTag(class gsl::basic_string_span<char const, -1> key) const;
     LIAPI class FloatTag const* getFloatTag(class gsl::basic_string_span<char const, -1> key) const;
     LIAPI class DoubleTag const* getDoubleTag(class gsl::basic_string_span<char const, -1> key) const;
     LIAPI class ByteArrayTag const* getByteArrayTag(class gsl::basic_string_span<char const, -1> key) const;
