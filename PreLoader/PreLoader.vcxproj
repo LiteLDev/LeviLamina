@@ -58,7 +58,7 @@
       <AdditionalLibraryDirectories>$(SolutionDir)\LiteLoader\Lib\third-party;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>if exist "$(LocalDebuggerWorkingDirectory)\plugins\" (
+      <Command>if exist "$(LocalDebuggerWorkingDirectory)\" (
 copy /Y "$(TargetPath)" "$(LocalDebuggerWorkingDirectory)\"
 )</Command>
     </PostBuildEvent>

@@ -48,10 +48,10 @@ TInstanceHook(void, "?initCoreEnums@MinecraftCommands@@QEAAXAEBVIWorldRegistries
 }
 
 // LevelStorage & DBStorage
-TInstanceHook(DBStorage*, "??0DBStorage@@QEAA@UDBStorageConfig@@@Z",
-      DBStorage, struct DBStorageConfig* config)
+TInstanceHook(DBStorage*, "??0DBStorage@@QEAA@UDBStorageConfig@@V?$not_null@V?$NonOwnerPointer@VLevelDbEnv@@@Bedrock@@@gsl@@@Z",
+              DBStorage, struct DBStorageConfig* config, void* a3)
 {
-    auto ret = original(this, config);
+    auto ret = original(this, config,a3);
     Global<LevelStorage> = (LevelStorage*)this;
     Global<DBStorage> = this;
     return ret;

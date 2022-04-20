@@ -1192,8 +1192,8 @@ TClasslessInstanceHook(unsigned short,
 }
 
 /////////////////// BlockChanged ///////////////////
-TInstanceHook(void, "?_blockChanged@BlockSource@@IEAAXAEBVBlockPos@@IAEBVBlock@@1HPEBUActorBlockSyncMessage@@@Z",
-      BlockSource , BlockPos* bp, int a3, Block* afterBlock, Block* beforeBlock, int a6, void* a7)
+TInstanceHook(void, "?_blockChanged@BlockSource@@IEAAXAEBVBlockPos@@IAEBVBlock@@1HPEBUActorBlockSyncMessage@@PEAVActor@@@Z",
+              BlockSource, BlockPos* bp, int a3, Block* afterBlock, Block* beforeBlock, int a6, void* a7, Actor* ac)
 {
     IF_LISTENED(BlockChangedEvent)
     {
@@ -1205,7 +1205,7 @@ TInstanceHook(void, "?_blockChanged@BlockSource@@IEAAXAEBVBlockPos@@IAEBVBlock@@
             return;
     }
     IF_LISTENED_END(BlockChangedEvent)
-    return original(this, bp, a3, afterBlock, beforeBlock, a6, a7);
+    return original(this, bp, a3, afterBlock, beforeBlock, a6, a7,ac);
 }
 
 /////////////////// BlockExploded ///////////////////
@@ -1642,8 +1642,8 @@ TInstanceHook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAE
 
 
 /////////////////// MobHurt ///////////////////
-TInstanceHook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@H_N1@Z",
-      Mob, ActorDamageSource& src, int damage, bool unk1_1, bool unk2_0)
+TInstanceHook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@M_N1@Z",
+              Mob, ActorDamageSource& src, float damage, bool unk1_1, bool unk2_0)
 {
     IF_LISTENED(MobHurtEvent)
     {
@@ -1663,7 +1663,7 @@ TInstanceHook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@H_N1@Z",
     return original(this, src, damage, unk1_1, unk2_0);
 }
 
-TInstanceHook(int64_t, "?getDamageAfterMagicAbsorb@Mob@@UEAAHAEBVActorDamageSource@@H@Z", Mob, ActorDamageSource* src, int damage)
+TInstanceHook(float, "?getDamageAfterResistanceEffect@Mob@@UEBAMAEBVActorDamageSource@@M@Z", Mob, ActorDamageSource* src, float damage)
 {
     if (src->getCause() == ActorDamageCause::Magic)
     {
