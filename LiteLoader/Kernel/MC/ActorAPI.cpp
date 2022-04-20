@@ -159,11 +159,11 @@ bool Actor::stopFire() {
 
 
 Vec3 Actor::getCameraPos() const {
-    Vec3 pos = *(Vec3*)&getPosDelta();
+    Vec3 pos = getPosDelta();
     if (isSneaking()) {
-        pos.y += -0.125;
+        pos.add(0, -0.125, 0);
     } else {
-        pos.y += ((Player*)this)->getCameraOffset();
+        pos.add(0, ((Player*)this)->getCameraOffset(), 0);
     }
     return pos;
 }
@@ -186,7 +186,7 @@ BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bo
     auto viewPos = pos + (viewVec * maxDistance);
     auto player = isPlayer() ? (Player*)this : nullptr;
     int maxDisManhattan = (int)((maxDistance + 1) * 2);
-    HitResult result = bs.clip(pos, viewPos, includeLiquid, solidOnly, maxDisManhattan, ignoreBorderBlocks, fullOnly, nullptr,nullptr);
+    HitResult result = bs.clip(pos, viewPos, includeLiquid, solidOnly, maxDisManhattan, ignoreBorderBlocks, fullOnly, nullptr, BlockSource::ClipParameters::CHECK_ALL_BLOCKS);
     if (result.isHit() || (includeLiquid && result.isHitLiquid())) {
         BlockPos bpos{};
         if (includeLiquid && result.isHitLiquid()) {

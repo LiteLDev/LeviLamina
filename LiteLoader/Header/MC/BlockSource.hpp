@@ -14,7 +14,12 @@ class BlockSource {
 #define AFTER_EXTRA
 // Add Member There
 public:
+struct ClipParameters
+{
+    MCAPI static const std::function<bool(class Block const&)> CHECK_ALL_BLOCKS;
+};
 	LIAPI BlockInstance getBlockInstance(BlockPos);
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSOURCE
