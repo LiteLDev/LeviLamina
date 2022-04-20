@@ -16,9 +16,9 @@ class InventoryTransactionPacket : public Packet {
 // Add Member There
 public:
     TypedClientNetId<struct ItemStackRequestIdTag, int, 0> requestId;            //48
-    std::vector<std::pair<ContainerEnumName, std::vector<unsigned char>>> slots; //56
-    std::unique_ptr<ComplexInventoryTransaction> transaction;                    //80
-    bool isClientSide;                                                           //88
+    std::vector<std::pair<ContainerEnumName, std::vector<unsigned char>>> slots; //64
+    std::unique_ptr<ComplexInventoryTransaction> transaction;                    //88
+    bool isClientSide;                                                           //96
 
 #undef AFTER_EXTRA
 
