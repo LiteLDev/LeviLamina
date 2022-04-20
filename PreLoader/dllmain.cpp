@@ -10,7 +10,6 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
 {
     if (ul_reason_for_call == DLL_PROCESS_ATTACH)
     {
-        proxy::init_runtime();
         system("chcp 65001>nul");
         loadconfig();
         fixUpLibDir();
@@ -18,7 +17,6 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
     }
     if (ul_reason_for_call == DLL_PROCESS_DETACH)
     {
-        proxy::free_runtime();
     }
     return TRUE;
 }
