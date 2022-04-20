@@ -66,7 +66,7 @@
       <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <DelayLoadDLLs>bedrock_server.dll</DelayLoadDLLs>
-      <AdditionalDependencies>$(SolutionDir)LiteLoader\Lib\third-party\leveldb\leveldb.lib;$(SolutionDir)LiteLoader\Lib\third-party\openssl\libcrypto.lib;$(SolutionDir)LiteLoader\Lib\third-party\openssl\libssl.lib;$(TargetDir)PreLoader.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)LiteLoader\Lib\third-party\leveldb\leveldb.lib;$(SolutionDir)LiteLoader\Lib\third-party\openssl\libcrypto.lib;$(SolutionDir)LiteLoader\Lib\third-party\openssl\libssl.lib;$(TargetDir)LLPreLoader.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>if exist "$(TargetDir)LiteLoader.lib" (

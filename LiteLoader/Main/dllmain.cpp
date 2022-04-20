@@ -2,8 +2,10 @@
 #pragma comment(lib, "Lib/bedrock_server_var.lib")
 #pragma comment(lib, "Lib/SymDBHelper.lib")
 
-#pragma comment(linker, "/export:HookFunction=preloader.HookFunction")
-#pragma comment(linker, "/export:dlsym_real=preloader.dlsym_real")
+#pragma comment(linker, "/export:HookFunction=LLPreLoader.HookFunction")
+#pragma comment(linker, "/export:dlsym_real=LLPreLoader.dlsym_real")
+#pragma comment(linker, "/export:?dlsym_reverse@@YA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@H@Z=LLPreLoader.?dlsym_reverse@@YA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@H@Z")
+
 
 #include <Windows.h>
 BOOL WINAPI DllMain(HMODULE, DWORD ul_reason_for_call, LPVOID)
