@@ -112,7 +112,7 @@ mc.listen("onServerStarted", () => {
 1. 前往 [MineBBS](https://www.minebbs.com/liteloader/) 或 [GitHub Release](https://github.com/LiteLDev/LiteLoader/releases) 下载最新的 `LiteLoader-版本号.zip`
 2. 将压缩文件内的所有内容解压到 `bedrock_server.exe` 所在的目录。如果解压的过程中提示文件有冲突，选择覆盖即可。
 3. 保证 `bedrock_server.pdb`文件存在。  
-   运行 `SymDB2.exe` 来生成符号文件（`bedrock_server.symdb2`）和有导出符号的BDS（`bedrock_server_mod.exe`）  
+   运行 `LLPeEditor.exe` 来生成具有导出符号的BDS（`bedrock_server_mod.exe`）  
 4. 当控制台输出 `请按任意键继续. . .` 时，按任意键关闭窗口
 3. 运行 `bedrock_server_mod.exe` 开服
 

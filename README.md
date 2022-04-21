@@ -120,7 +120,7 @@ mc.listen("onServerStarted", () => {
 1. Download the latest <code>LiteLoader-<i>version</i>.zip</code> from [Releases](https://github.com/LiteLDev/LiteLoader/releases) or [Actions](https://github.com/LiteLDev/LiteLoader/actions),
 2. Unzip everything into the directory of `bedrock_server.exe`. If you are prompted with conflicting files during the decompression process, just select `Overwrite`.
 3. Ensure that the `bedrock_server.pdb` file exists.
-   Run `SymDB2.exe` to generate the symbol file (`bedrock_server.symdb2`) and the BDS with the exported symbols (`bedrock_server_mod.exe`)  
+   Run `LLPeEditor.exe` to generate the BDS with the exported symbols (`bedrock_server_mod.exe`)  
 4. When the console output `Press any key to continue. . .` , press any key to close the window
 5. Execute `bedrock_server_mod.exe` and enjoy it !
 
