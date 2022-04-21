@@ -70,15 +70,15 @@ bool loadLiteLoader() {
 	return true;
 }
 
-void DelLLUnifiedOutput()
+void DelChakra()
 {
-    if (exists(path(TEXT(".\\plugins\\LiteLoader\\LLUnifiedOutput.dll"))))
+    if (exists(path(TEXT(".\\Chakra.dll"))))
     {
-        remove(path(TEXT(".\\plugins\\LiteLoader\\LLUnifiedOutput.dll")));
+        remove(path(TEXT(".\\Chakra.dll")));
     }
-    if (exists(path(TEXT(".\\plugins\\LiteLoader\\LLUnifiedOutput.pdb"))))
+    if (exists(path(TEXT(".\\ChakraCore.dll"))))
     {
-        remove(path(TEXT(".\\plugins\\LiteLoader\\LLUnifiedOutput.pdb")));
+        remove(path(TEXT(".\\ChakraCore.dll")));
     }
 }
 void loadLLAutoUpdate()
@@ -91,7 +91,7 @@ void loadLLAutoUpdate()
 
 void loadDlls() {
     loadLLAutoUpdate();
-    DelLLUnifiedOutput();
+    DelChakra();
 	if (exists(path(TEXT(".\\plugins\\preload.conf")))) {
 		std::wifstream dllList(TEXT(".\\plugins\\preload.conf"));
 		if (dllList) {
