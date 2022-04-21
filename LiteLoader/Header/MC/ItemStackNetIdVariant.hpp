@@ -22,7 +22,11 @@ struct ItemStackNetIdVariant
 
 #define AFTER_EXTRA
 // Add Member There
-    char filler[16];
+    std::variant<
+        TypedServerNetId<ItemStackNetIdTag, int, 0>, TypedClientNetId<ItemStackRequestIdTag, int, 0>,
+        TypedClientNetId<ItemStackLegacyRequestIdTag, int, 0>>
+        id;
+   
 	
 #undef AFTER_EXTRA
 

@@ -16,7 +16,7 @@ class ItemStackBase {
 // Add Member There
 private:
 //void* vtbl;
-    char filler[136];
+    char filler[128];
 
 public:
 LIAPI int getCount() const;
