@@ -12,9 +12,9 @@ void Session::setDebugOutput(bool enable)
     debugOutput = enable;
 }
 
-bool Session::change(const std::string& user, const std::string& password, const std::string& db)
+bool Session::relogin(const std::string& user, const std::string& password, const std::string& db)
 {
-    throw std::runtime_error("Session::change: Not implemented");
+    throw std::runtime_error("Session::relogin: Not implemented");
 }
 
 ResultSet Session::query(const std::string& query)
