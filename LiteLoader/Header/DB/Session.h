@@ -44,7 +44,7 @@ public:
      * @par Implementation
      *  None
      */
-    virtual bool change(const std::string& user, const std::string& password, const std::string& db = "");
+    virtual bool relogin(const std::string& user, const std::string& password, const std::string& db = "");
     /**
      * @brief Execute a query.
      *
