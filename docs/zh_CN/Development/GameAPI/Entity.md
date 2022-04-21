@@ -96,7 +96,7 @@
 `en.hurt(damage)`
 
 - 参数：
-  - damage : `Integer`  
+  - damage : `Float`  
     对实体造成的伤害数值
 - 返回值：是否造成伤害
 - 返回值类型：`Boolean`

@@ -71,7 +71,7 @@ std::string Actor::getTypeName() const
 }
 
 #include <MC/ActorDamageSource.hpp>
-bool Actor::hurtEntity(int damage) {
+bool Actor::hurtEntity(float damage) {
     char source[16];
     (*(ActorDamageSource*)source).ActorDamageSource::ActorDamageSource(ActorDamageCause::None);
 

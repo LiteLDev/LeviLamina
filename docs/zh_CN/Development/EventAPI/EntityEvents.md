@@ -27,7 +27,7 @@
     受伤的实体对象
   - source : `Entity`  
     伤害来源的实体对象（可能为`Null`）
-  - damage : `Integer`  
+  - damage : `Float`  
     受到的伤害数值
   - cause : `Integer`   
     受伤原因
