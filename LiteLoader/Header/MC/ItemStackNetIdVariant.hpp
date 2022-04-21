@@ -16,14 +16,14 @@ enum ItemStackNetIdType : unsigned char
 };
 #undef BEFORE_EXTRA
 
-struct ItemStackNetIdVariant {
+
+struct ItemStackNetIdVariant
+{
 
 #define AFTER_EXTRA
 // Add Member There
-    //std::variant<TypedXXXNetId<ItemStackXXXIdTag, int, 0>> id;
-    int netId;
-    unsigned char type;
-
+    char filler[16];
+	
 #undef AFTER_EXTRA
 
 public:

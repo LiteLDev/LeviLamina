@@ -8,7 +8,7 @@
 // Include Headers or Declare Types Here
 #include "NetworkItemStackDescriptor.hpp"
 #include "Block.hpp"
-static_assert(sizeof(NetworkItemStackDescriptor) == 128);
+static_assert(sizeof(NetworkItemStackDescriptor) == 152);
 
 #undef BEFORE_EXTRA
 
