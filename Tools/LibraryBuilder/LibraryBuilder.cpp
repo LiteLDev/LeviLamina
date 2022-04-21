@@ -132,14 +132,14 @@ int main(int argc, char **argv)
     error_code ec;
     filesystem::remove_all("temp", ec);
     filesystem::create_directory("temp", ec);
-    filesystem::copy_file(exeRunPath + "/SymDB2.exe", "temp/SymDB2.exe", filesystem::copy_options::overwrite_existing, ec);
+    filesystem::copy_file(exeRunPath + "/LLPeEditor.exe", "temp/LLPeEditor.exe", filesystem::copy_options::overwrite_existing, ec);
     filesystem::copy_file(bdsPath + "/bedrock_server.exe", "temp/bedrock_server.exe", filesystem::copy_options::overwrite_existing, ec);
     filesystem::copy_file(bdsPath + "/bedrock_server.pdb", "temp/bedrock_server.pdb", filesystem::copy_options::overwrite_existing, ec);
 
     //Running process
-    cout << "\n----Running SymDB2..." << endl;
+    cout << "\n----Running LLPeEditor..." << endl;
     filesystem::current_path(exeRunPath + "/temp");
-    system("SymDB2.exe -def -noMod -noSymdb -noPause -keepOri");
+    system("LLPeEditor.exe -def -noMod -noSymdb -noPause -keepOri");
     filesystem::current_path(exeRunPath);
 
     cout << "\n---- Running LLVM-DLLTool..." << endl;
