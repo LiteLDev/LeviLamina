@@ -12,14 +12,9 @@ void Session::setDebugOutput(bool enable)
     debugOutput = enable;
 }
 
-bool Session::changeUser(const std::string& user, const std::string& password)
+bool Session::change(const std::string& user, const std::string& password, const std::string& db)
 {
-    throw std::runtime_error("Session::changeUser: Not implemented");
-}
-
-bool Session::changeDatabase(const std::string& database)
-{
-    throw std::runtime_error("Session::changeDatabase: Not implemented");
+    throw std::runtime_error("Session::change: Not implemented");
 }
 
 ResultSet Session::query(const std::string& query)

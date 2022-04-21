@@ -93,11 +93,7 @@ bool SQLiteSession::execute(const std::string& query)
 {
     IF_ENDBG dbLogger.debug("SQLiteSession::execute: Executing > " + query);
     auto res = sqlite3_exec(conn, query.c_str(), nullptr, nullptr, nullptr);
-    if (res != SQLITE_OK)
-    {
-        return false;
-    }
-    return true;
+    return res == SQLITE_OK;
 }
 
 void SQLiteSession::query(const std::string& query, std::function<bool(const Row&)> callback)

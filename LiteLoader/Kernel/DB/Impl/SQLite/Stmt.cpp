@@ -10,6 +10,7 @@ SQLiteStmt::SQLiteStmt(sqlite3_stmt* stmt)
     : stmt(stmt)
 {
     totalParamsCount = sqlite3_bind_parameter_count(stmt);
+    if (!totalParamsCount) step(); // Execute without params
 }
 
 int SQLiteStmt::getNextParamIndex()
@@ -52,7 +53,7 @@ Stmt& SQLiteStmt::bind(const Any& value, int index)
     ++index; // Index starts at 1, but we need to start at 0
     if (index < 0 || index > totalParamsCount)
     {
-        throw std::invalid_argument("SQLiteStmt::bind: Invalid parameter `index`");
+        throw std::invalid_argument("SQLiteStmt::bind: Invalid argument `index`");
     }
     if (getUnboundParams() == 0)
     {
@@ -110,11 +111,8 @@ Stmt& SQLiteStmt::bind(const Any& value, int index)
     }
     boundParamsCount++;
     boundIndexes.push_back(index - 1);
-    if (!getUnboundParams() && session)
-    {
-        affectedRowCount = session->getAffectedRows();
-        insertRowId = session->getLastInsertId();
-    }
+    if (!getUnboundParams())
+        step();  // Execute the statement if all the parameters are bound
     return *this;
 }
 Stmt& SQLiteStmt::bind(const Any& value, const std::string& name)
@@ -129,6 +127,16 @@ Stmt& SQLiteStmt::bind(const Any& value)
 bool SQLiteStmt::step()
 {
     int res = sqlite3_step(stmt);
+    if (res == SQLITE_ROW || res == SQLITE_DONE)
+    {
+        if (session && !executed)
+        {
+            affectedRowCount = session->getAffectedRows();
+            insertRowId = session->getLastInsertId();
+            executed = true;
+        }
+        ++steps;
+    }
     if (res == SQLITE_ROW)
     {
         if (resultHeader.empty())
@@ -141,7 +149,7 @@ bool SQLiteStmt::step()
     }
     else if (res == SQLITE_DONE)
     {
-        IF_ENDBG dbLogger.debug("SQLiteStmt::step: Failed: Done");
+        IF_ENDBG dbLogger.debug("SQLiteStmt::step: The statment is done");
         stepped = false;
         return false;
     }
@@ -323,7 +331,7 @@ DBType SQLiteStmt::getType() const
     return DBType::SQLite;
 }
 
-Stmt &SQLiteStmt::operator,(const BindType& b)
+Stmt &SQLiteStmt::operator,(const BindType&b)
 {
     if (b.name.empty() && b.idx == -1)
     {
@@ -357,7 +365,7 @@ Stmt& SQLiteStmt::create(SQLiteSession& sess, const std::string& sql)
     result->session = &sess;
     result->setDebugOutput(sess.debugOutput);
     // If the sql has no parameters, we can execute it immediately
-    //if (result->getParamsCount() == 0)
+    // if (result->getParamsCount() == 0)
     //{
     //    result->step();
     //    result->affectedRowCount = sess.getAffectedRows();

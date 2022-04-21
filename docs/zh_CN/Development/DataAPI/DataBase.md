@@ -313,14 +313,14 @@ stmt.bind(114514, 7);  // 将会绑定到h
 
 <br>
 
-#### 步进到下一行结果 / 执行下一步
+#### 步进到下一行结果
 
 `stmt.step()`  
 `stmt.next()`
 
 - 返回值：执行成功与否
 - 返回值类型：`Boolean`
-- **注意：在绑定完所有参数后，必须执行一次本函数来执行您的语句，哪怕您不需要获取结果!(详见下方示例)**
+- **注意：所有参数绑定完成后会自动执行语句，执行完后此时的step就在第一行上，所以应使用do...while语句遍历，而不是while语句，否则将导致第一行被跳过**
 
 <br>
 
@@ -381,14 +381,15 @@ function initdb() {
       player  CHAR(100) NOT NULL,
       coins   INTEGER   NOT NULL
     );`); // 这里创建数据表后SQLite会自动添加一个隐藏的ROWID行，insertId就是这个隐藏的ROWID行的值
+    // 另：如果数据库自带INTEGER类型主键，则ROWID即为该主键
 }
-// 使用while语句
+// 使用do...while语句
 function loadData() {
   let stmt = session.prepare("SELECT * FROM test");
-  while (stmt.step()) { // 第一次执行时步进到第一行，并成功获取到结果，返回true；最后一行时再步进则返回false
+  do { // 准备并执行后，默认在第一行
     let row = stmt.fetch();
     dat[row.player] = row.coins;
-  }
+  } while (stmt.step()); // 第一次执行时步进到第二行，并成功获取到结果，返回true；最后一行时再步进则返回false
 }
 // 使用回调函数
 function loadData2() {
@@ -403,7 +404,7 @@ function writeData() {
   for (let i = 0; i < keys.length; i++) {
     let v = modified[keys[i]];
     stmt.bind([keys[i], v]); // 绑定数组参数
-    stmt.step(); // 必须调用step才会执行
+    // 绑定完成后自动执行语句
     stmt.clear(); // 清除已经绑定的值
   }
 }

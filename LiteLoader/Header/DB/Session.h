@@ -34,26 +34,17 @@ public:
      */
     LIAPI void setDebugOutput(bool enable);
     /**
-     * @brief Change current user.
+     * @brief Change current user and database.
      *
      * @param  user  Username
      * @param  pass  Password
+     * @param  db    Database name
      * @return bool  Success or not
      * @throws std::runtime_error  If not implemented
      * @par Implementation
      *  None
      */
-    virtual bool changeUser(const std::string& user, const std::string& password);
-    /**
-     * @brief Change current database.
-     *
-     * @param  database Database name
-     * @return bool     Success or not
-     * @throws std::runtime_error If not implemented
-     * @par Implementation
-     *  None
-     */
-    virtual bool changeDatabase(const std::string& database);
+    virtual bool change(const std::string& user, const std::string& password, const std::string& db = "");
     /**
      * @brief Execute a query.
      *

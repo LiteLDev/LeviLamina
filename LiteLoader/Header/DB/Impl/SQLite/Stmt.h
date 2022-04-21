@@ -1,6 +1,6 @@
+#pragma once
 #include "../../Stmt.h"
 
-struct sqlite3;
 struct sqlite3_stmt;
 
 namespace DB
@@ -16,10 +16,12 @@ class SQLiteStmt : public Stmt
     RowHeader resultHeader;
     int boundParamsCount = 0;
     int totalParamsCount = 0;
+    int steps = 0;
     uint64_t affectedRowCount = -1;
     uint64_t insertRowId = -1;
     bool onHeap = false;
     bool stepped = false;
+    bool executed = false;
     std::vector<int> boundIndexes;
 
     SQLiteStmt(sqlite3_stmt* stmt);
