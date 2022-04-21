@@ -159,7 +159,7 @@ bool Actor::stopFire() {
 
 
 Vec3 Actor::getCameraPos() const {
-    Vec3 pos = getPosDelta();
+    auto& pos = this->getPosition();
     if (isSneaking()) {
         pos.add(0, -0.125, 0);
     } else {
@@ -178,10 +178,11 @@ Tick* Actor::getLastTick() const {
         return nullptr;
     return (Tick*)&lc->getLastTick();
 }
+enum ActorLocation;
 
 BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bool solidOnly, float maxDistance, bool ignoreBorderBlocks, bool fullOnly) const {
     auto& bs = getRegion();
-    auto&& pos = getCameraPos();
+    auto& pos = getCameraPos();
     auto viewVec = getViewVector(1.0f);
     auto viewPos = pos + (viewVec * maxDistance);
     auto player = isPlayer() ? (Player*)this : nullptr;
