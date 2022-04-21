@@ -6,7 +6,6 @@ env:
   SOLUTION_FILE_PATH: .
   BUILD_CONFIGURATION: Release
   Platform: X64
-  ChakraCore_version: cc_windows_all_1_11_24
 
 jobs:
   build:
