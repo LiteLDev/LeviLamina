@@ -1,6 +1,20 @@
-[HEADING=1][BUG修复][/HEADING]
+[HEADING=1][LiteLoader Release Note][/HEADING]
+LiteLoaderBDS-2.2.0更新已发布，适用于BDS 1.18.30，协议号503
+本次更新变化较大，不支持自动更新，请全部覆盖安装！！！
+ 注：安装不完整会导致加载器不能正常加载。
+
+[HEADING=1][主要改变][/HEADING]
 [LIST]
-[*]修复[ICODE]/tpdim[/ICODE]指令 [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/355']#355[/URL]
-[*]修复空指令输出问题
-[*]更新ServerStartedEvent并修复加载错误
+[*]删除SymDB2相关内容，采用更快的直接读取bedrock_server.pdb符号数据。
+[*]SymDB2.exe 改名为 LLPeEditor.exe
+[*]移除 Chakra.dll,ChakraCore.dll,新添 LLPreLoader.dll
+[/LIST]
+[HEADING=1][适配1.18.30][/HEADING]
+[LIST]
+[*]适用于新版本的BDS 1.18.30服务器（协议号503），请确保全部覆盖安装。[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/363']#363[/URL]
+[/LIST]
+[HEADING=1][新内容][/HEADING]
+[LIST]
+[*]修复死亡无敌BUG(MC BUG)
+[*]为LL和LLSE添加SQL数据库支持(目前只支持SQLite3)
 [/LIST]

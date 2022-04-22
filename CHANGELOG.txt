@@ -1,14 +1,17 @@
 ## [LiteLoader Release Note]
-LiteLoaderBDS-2.2.0 update has been released, adapted to BDS-1.18.30
-This update has a lot of changes, please overwrite and install them all~
+LiteLoaderBDS-2.2.0 update has been released, adapted to BDS-1.18.30, ProtocolVersion 503
+This update has a lot of changes and `not support AutoUpgrade` ,please overwrite and install them all~
 Incomplete installation will cause the loader to work improperly, please pay attention to it.
 
 ## [Major Changes]
-
+- Remove SymDB2 module, now it will read symbol data from bedrock_server.pdb directly.
+- SymDB2.exe renamed to `LLPeEditor.exe`
+- Remove Chakra.dll,ChakraCore.dll,Add LLPreLoader.dll
 
 ## [Adaptation to BDS 1.18.30]
-- Adapt to the new version of BDS 1.18.30 server, please make sure to install the update completely.
+- Adapt to the new version of BDS 1.18.30 server, please make sure to install the update completely. #363
 
 
 ## [New features]
-- Temporary Fix for death invulnerability(MC BUG)
+- Fix for death invulnerability(MC BUG)
+- Add SQL database support for LL and LLSE(now only support SQLite3)
