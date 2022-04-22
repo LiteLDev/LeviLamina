@@ -12,7 +12,19 @@ class VarIntDataOutput {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    BinaryStream* stream;
 
+    // Manually delete it after you finish using it
+    static VarIntDataOutput* newVarIntDataOutput(BinaryStream* bs) {
+        struct VarIntDataOutput_C {
+            __int64 vtbl;
+            BinaryStream* stream;
+        }* CStruct      = new VarIntDataOutput_C();
+        CStruct->stream = bs;
+        CStruct->vtbl   = (__int64)dlsym("??_7VarIntDataOutput@@6B@");
+        return (VarIntDataOutput*)CStruct;
+    };
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VARINTDATAOUTPUT

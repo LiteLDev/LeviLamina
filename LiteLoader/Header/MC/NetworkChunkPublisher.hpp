@@ -12,7 +12,13 @@ class NetworkChunkPublisher {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    ChunkViewSource* getChunkViewSource() {
+        // in function NetworkChunkPublisher::clearRegion
+        // - Call ChunkViewSource::clear(ChunkViewSource* this);
 
+        return *((ChunkViewSource**)((__int64)this + 0xE0));
+    }
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKCHUNKPUBLISHER
