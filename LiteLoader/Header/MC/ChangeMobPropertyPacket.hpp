@@ -11,7 +11,14 @@
 class ChangeMobPropertyPacket : public Packet {
 
 #define AFTER_EXTRA
-
+public:
+    ActorUniqueID mUid;
+    string mProperty;
+    bool mBool;
+	string mString;
+	int mInt;
+	float mFloat;
+	
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHANGEMOBPROPERTYPACKET
