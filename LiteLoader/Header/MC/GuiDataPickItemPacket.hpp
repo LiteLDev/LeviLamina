@@ -18,16 +18,16 @@ class GuiDataPickItemPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GUIDATAPICKITEMPACKET
 public:
-    class GuiDataPickItemPacket& operator=(class GuiDataPickItemPacket const&) = delete;
-    GuiDataPickItemPacket(class GuiDataPickItemPacket const&) = delete;
+    class GuiDataPickItemPacket& operator=(class GuiDataPickItemPacket const &) = delete;
+    GuiDataPickItemPacket(class GuiDataPickItemPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~GuiDataPickItemPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~GuiDataPickItemPacket(){
          (GuiDataPickItemPacket::*rv)();
@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI GuiDataPickItemPacket(std::string const&, std::string const&, int const&);
+    MCAPI GuiDataPickItemPacket(std::string const &, std::string const &, int const &);
     MCAPI GuiDataPickItemPacket();
 
 protected:

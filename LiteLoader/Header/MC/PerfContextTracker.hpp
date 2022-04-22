@@ -17,15 +17,15 @@ class PerfContextTracker {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERFCONTEXTTRACKER
 public:
-    class PerfContextTracker& operator=(class PerfContextTracker const&) = delete;
-    PerfContextTracker(class PerfContextTracker const&) = delete;
+    class PerfContextTracker& operator=(class PerfContextTracker const &) = delete;
+    PerfContextTracker(class PerfContextTracker const &) = delete;
 #endif
 
 public:
     MCAPI PerfContextTracker();
     MCAPI void incrementPacketReceivedInfo(unsigned int);
     MCAPI void incrementPacketSentInfo(unsigned int);
-    MCAPI static class PerfContextTracker& getInstance();
+    MCAPI static class PerfContextTracker & getInstance();
 
 protected:
 

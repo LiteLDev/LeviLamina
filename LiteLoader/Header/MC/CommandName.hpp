@@ -15,8 +15,8 @@ struct CommandName {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDNAME
 public:
-    struct CommandName& operator=(struct CommandName const&) = delete;
-    CommandName(struct CommandName const&) = delete;
+    struct CommandName& operator=(struct CommandName const &) = delete;
+    CommandName(struct CommandName const &) = delete;
     CommandName() = delete;
 #endif
 

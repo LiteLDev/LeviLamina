@@ -18,15 +18,15 @@ class DelayedAttackDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DELAYEDATTACKDEFINITION
 public:
-    class DelayedAttackDefinition& operator=(class DelayedAttackDefinition const&) = delete;
-    DelayedAttackDefinition(class DelayedAttackDefinition const&) = delete;
+    class DelayedAttackDefinition& operator=(class DelayedAttackDefinition const &) = delete;
+    DelayedAttackDefinition(class DelayedAttackDefinition const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~DelayedAttackDefinition();
     MCAPI DelayedAttackDefinition();
-    MCAPI void initialize(class EntityContext&, class DelayedAttackGoal&);
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DelayedAttackDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class DelayedAttackGoal &);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DelayedAttackDefinition>> &);
 
 protected:
 

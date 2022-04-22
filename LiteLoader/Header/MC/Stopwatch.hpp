@@ -17,15 +17,15 @@ class Stopwatch {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STOPWATCH
 public:
-    class Stopwatch& operator=(class Stopwatch const&) = delete;
-    Stopwatch(class Stopwatch const&) = delete;
+    class Stopwatch& operator=(class Stopwatch const &) = delete;
+    Stopwatch(class Stopwatch const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~Stopwatch();
     /*1*/ virtual double stop();
     /*2*/ virtual double stopContinue();
-    /*3*/ virtual void print(std::string const&);
+    /*3*/ virtual void print(std::string const &);
     /*
     inline  ~Stopwatch(){
          (Stopwatch::*rv)();

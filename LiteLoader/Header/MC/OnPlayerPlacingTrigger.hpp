@@ -15,14 +15,14 @@ struct OnPlayerPlacingTrigger {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONPLAYERPLACINGTRIGGER
 public:
-    struct OnPlayerPlacingTrigger& operator=(struct OnPlayerPlacingTrigger const&) = delete;
-    OnPlayerPlacingTrigger(struct OnPlayerPlacingTrigger const&) = delete;
+    struct OnPlayerPlacingTrigger& operator=(struct OnPlayerPlacingTrigger const &) = delete;
+    OnPlayerPlacingTrigger(struct OnPlayerPlacingTrigger const &) = delete;
     OnPlayerPlacingTrigger() = delete;
 #endif
 
 public:
-    MCAPI OnPlayerPlacingTrigger(struct OnPlayerPlacingTrigger&&);
-    MCAPI struct OnPlayerPlacingTrigger& operator=(struct OnPlayerPlacingTrigger&&);
+    MCAPI OnPlayerPlacingTrigger(struct OnPlayerPlacingTrigger &&);
+    MCAPI struct OnPlayerPlacingTrigger & operator=(struct OnPlayerPlacingTrigger &&);
     MCAPI ~OnPlayerPlacingTrigger();
 
 protected:

@@ -15,13 +15,13 @@ struct BiomeDecorationFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMEDECORATIONFEATURE
 public:
-    struct BiomeDecorationFeature& operator=(struct BiomeDecorationFeature const&) = delete;
+    struct BiomeDecorationFeature& operator=(struct BiomeDecorationFeature const &) = delete;
     BiomeDecorationFeature() = delete;
 #endif
 
 public:
-    MCAPI BiomeDecorationFeature(struct BiomeDecorationFeature&&);
-    MCAPI BiomeDecorationFeature(struct BiomeDecorationFeature const&);
+    MCAPI BiomeDecorationFeature(struct BiomeDecorationFeature &&);
+    MCAPI BiomeDecorationFeature(struct BiomeDecorationFeature const &);
     MCAPI ~BiomeDecorationFeature();
 
 protected:

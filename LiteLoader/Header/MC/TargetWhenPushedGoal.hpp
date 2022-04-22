@@ -17,8 +17,8 @@ class TargetWhenPushedGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TARGETWHENPUSHEDGOAL
 public:
-    class TargetWhenPushedGoal& operator=(class TargetWhenPushedGoal const&) = delete;
-    TargetWhenPushedGoal(class TargetWhenPushedGoal const&) = delete;
+    class TargetWhenPushedGoal& operator=(class TargetWhenPushedGoal const &) = delete;
+    TargetWhenPushedGoal(class TargetWhenPushedGoal const &) = delete;
     TargetWhenPushedGoal() = delete;
 #endif
 
@@ -40,10 +40,10 @@ public:
         *((void**)&rv) = dlsym("?canContinueToUse@TargetWhenPushedGoal@@UEAA_NXZ");
         return (this->*rv)();
     }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (TargetWhenPushedGoal::*rv)(std::string&) const;
+    inline void appendDebugInfo(std::string & a0) const{
+        void (TargetWhenPushedGoal::*rv)(std::string &) const;
         *((void**)&rv) = dlsym("?appendDebugInfo@TargetWhenPushedGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
+        return (this->*rv)(std::forward<std::string &>(a0));
     }
     */
 

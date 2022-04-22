@@ -17,17 +17,18 @@ class AttributeCollection {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTECOLLECTION
 public:
-    class AttributeCollection& operator=(class AttributeCollection const&) = delete;
-    AttributeCollection(class AttributeCollection const&) = delete;
+    class AttributeCollection& operator=(class AttributeCollection const &) = delete;
+    AttributeCollection(class AttributeCollection const &) = delete;
     AttributeCollection() = delete;
 #endif
 
 public:
-    MCAPI static bool hasAttribute(class HashedString const&);
+    MCAPI static bool hasAttribute(class HashedString const &);
 
 protected:
 
 private:
-    MCAPI static class AttributeCollection& instance();
+    MCAPI class Attribute & getAttribute(class HashedString const &);
+    MCAPI static class AttributeCollection & instance();
 
 };

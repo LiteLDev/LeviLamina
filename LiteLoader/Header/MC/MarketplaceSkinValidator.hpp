@@ -17,13 +17,13 @@ class MarketplaceSkinValidator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MARKETPLACESKINVALIDATOR
 public:
-    class MarketplaceSkinValidator& operator=(class MarketplaceSkinValidator const&) = delete;
-    MarketplaceSkinValidator(class MarketplaceSkinValidator const&) = delete;
+    class MarketplaceSkinValidator& operator=(class MarketplaceSkinValidator const &) = delete;
+    MarketplaceSkinValidator(class MarketplaceSkinValidator const &) = delete;
     MarketplaceSkinValidator() = delete;
 #endif
 
 public:
-    MCAPI static bool checkIfValid(std::string const&);
+    MCAPI static bool checkIfValid(std::string const &);
 
 protected:
 

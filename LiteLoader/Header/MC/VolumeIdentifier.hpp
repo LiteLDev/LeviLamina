@@ -17,8 +17,8 @@ struct VolumeIdentifier {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VOLUMEIDENTIFIER
 public:
-    struct VolumeIdentifier& operator=(struct VolumeIdentifier const&) = delete;
-    VolumeIdentifier(struct VolumeIdentifier const&) = delete;
+    struct VolumeIdentifier& operator=(struct VolumeIdentifier const &) = delete;
+    VolumeIdentifier(struct VolumeIdentifier const &) = delete;
     VolumeIdentifier() = delete;
 #endif
 

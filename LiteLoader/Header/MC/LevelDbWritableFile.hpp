@@ -18,18 +18,18 @@ class LevelDbWritableFile {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELDBWRITABLEFILE
 public:
-    class LevelDbWritableFile& operator=(class LevelDbWritableFile const&) = delete;
-    LevelDbWritableFile(class LevelDbWritableFile const&) = delete;
+    class LevelDbWritableFile& operator=(class LevelDbWritableFile const &) = delete;
+    LevelDbWritableFile(class LevelDbWritableFile const &) = delete;
     LevelDbWritableFile() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LevelDbWritableFile();
-    /*1*/ virtual class leveldb::Status Append(class leveldb::Slice const&);
+    /*1*/ virtual class leveldb::Status Append(class leveldb::Slice const &);
     /*2*/ virtual class leveldb::Status Close();
     /*3*/ virtual class leveldb::Status Flush();
     /*4*/ virtual class leveldb::Status Sync();
-    MCAPI LevelDbWritableFile(std::string, class Core::File&&);
+    MCAPI LevelDbWritableFile(std::string, class Core::File &&);
 
 protected:
 

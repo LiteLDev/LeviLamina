@@ -18,14 +18,14 @@ class PacketViolationDetectedTelemetryData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKETVIOLATIONDETECTEDTELEMETRYDATA
 public:
-    class PacketViolationDetectedTelemetryData& operator=(class PacketViolationDetectedTelemetryData const&) = delete;
-    PacketViolationDetectedTelemetryData(class PacketViolationDetectedTelemetryData const&) = delete;
+    class PacketViolationDetectedTelemetryData& operator=(class PacketViolationDetectedTelemetryData const &) = delete;
+    PacketViolationDetectedTelemetryData(class PacketViolationDetectedTelemetryData const &) = delete;
     PacketViolationDetectedTelemetryData() = delete;
 #endif
 
 public:
-    MCAPI PacketViolationDetectedTelemetryData(struct ExtendedStreamReadResult const&, enum PacketViolationResponse, enum MinecraftPacketIds, class NetworkIdentifier const&);
-    MCAPI void WriteEventData(class Social::Events::Event&) const;
+    MCAPI PacketViolationDetectedTelemetryData(struct ExtendedStreamReadResult const &, enum PacketViolationResponse, enum MinecraftPacketIds, class NetworkIdentifier const &);
+    MCAPI void WriteEventData(class Social::Events::Event &) const;
     MCAPI ~PacketViolationDetectedTelemetryData();
 
 protected:

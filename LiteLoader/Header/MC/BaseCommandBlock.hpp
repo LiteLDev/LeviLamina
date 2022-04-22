@@ -17,24 +17,24 @@ class BaseCommandBlock {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASECOMMANDBLOCK
 public:
-    class BaseCommandBlock& operator=(class BaseCommandBlock const&) = delete;
-    BaseCommandBlock(class BaseCommandBlock const&) = delete;
+    class BaseCommandBlock& operator=(class BaseCommandBlock const &) = delete;
+    BaseCommandBlock(class BaseCommandBlock const &) = delete;
 #endif
 
 public:
     MCAPI BaseCommandBlock();
-    MCAPI std::string const& getCommand() const;
+    MCAPI std::string const & getCommand() const;
     MCAPI std::string getLastOutput() const;
-    MCAPI std::string const& getName() const;
+    MCAPI std::string const & getName() const;
     MCAPI int getTickDelay() const;
     MCAPI bool getTrackOutput() const;
-    MCAPI void load(class CompoundTag const&, class DataLoadHelper&);
-    MCAPI bool performCommand(class BlockSource&, struct ActorUniqueID const&);
-    MCAPI bool save(class CompoundTag&) const;
-    MCAPI void setCommand(class BlockSource&, struct ActorUniqueID const&, std::string const&);
-    MCAPI void setCommand(class BlockSource&, class BlockPos const&, std::string const&);
-    MCAPI void setLastOutput(std::string const&, std::vector<std::string> const&);
-    MCAPI void setName(std::string const&);
+    MCAPI void load(class CompoundTag const &, class DataLoadHelper &);
+    MCAPI bool performCommand(class BlockSource &, struct ActorUniqueID const &);
+    MCAPI bool save(class CompoundTag &) const;
+    MCAPI void setCommand(class BlockSource &, struct ActorUniqueID const &, std::string const &);
+    MCAPI void setCommand(class BlockSource &, class BlockPos const &, std::string const &);
+    MCAPI void setLastOutput(std::string const &, std::vector<std::string> const &);
+    MCAPI void setName(std::string const &);
     MCAPI void setShouldExecuteOnFirstTick(bool);
     MCAPI void setTickDelay(int);
     MCAPI void setTrackOutput(bool);
@@ -44,9 +44,9 @@ public:
 protected:
 
 private:
-    MCAPI bool _performCommand(class BlockSource&, class CommandOrigin const&, bool&);
-    MCAPI void _setCommand(class BlockSource&, class CommandOrigin const&, std::string const&);
-    MCAPI void compile(class CommandOrigin const&, class Level&);
+    MCAPI bool _performCommand(class BlockSource &, class CommandOrigin const &, bool &);
+    MCAPI void _setCommand(class BlockSource &, class CommandOrigin const &, std::string const &);
+    MCAPI void compile(class CommandOrigin const &, class Level &);
     MCAPI static std::string const DefaultCommandBlockName;
 
 };

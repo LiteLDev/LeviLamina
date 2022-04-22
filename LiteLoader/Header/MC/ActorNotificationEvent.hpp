@@ -15,8 +15,8 @@ struct ActorNotificationEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORNOTIFICATIONEVENT
 public:
-    struct ActorNotificationEvent& operator=(struct ActorNotificationEvent const&) = delete;
-    ActorNotificationEvent(struct ActorNotificationEvent const&) = delete;
+    struct ActorNotificationEvent& operator=(struct ActorNotificationEvent const &) = delete;
+    ActorNotificationEvent(struct ActorNotificationEvent const &) = delete;
     ActorNotificationEvent() = delete;
 #endif
 

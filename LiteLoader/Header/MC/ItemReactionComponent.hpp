@@ -17,8 +17,8 @@ class ItemReactionComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMREACTIONCOMPONENT
 public:
-    class ItemReactionComponent& operator=(class ItemReactionComponent const&) = delete;
-    ItemReactionComponent(class ItemReactionComponent const&) = delete;
+    class ItemReactionComponent& operator=(class ItemReactionComponent const &) = delete;
+    ItemReactionComponent(class ItemReactionComponent const &) = delete;
     ItemReactionComponent() = delete;
 #endif
 
@@ -26,7 +26,7 @@ public:
     /*0*/ virtual ~ItemReactionComponent();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual void _onEnd(class LabTableReaction&, class BlockSource&);
+    /*3*/ virtual void _onEnd(class LabTableReaction &, class BlockSource &);
 
 protected:
 

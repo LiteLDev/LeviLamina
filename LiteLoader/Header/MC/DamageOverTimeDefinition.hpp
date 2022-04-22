@@ -18,14 +18,14 @@ class DamageOverTimeDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAMAGEOVERTIMEDEFINITION
 public:
-    class DamageOverTimeDefinition& operator=(class DamageOverTimeDefinition const&) = delete;
-    DamageOverTimeDefinition(class DamageOverTimeDefinition const&) = delete;
+    class DamageOverTimeDefinition& operator=(class DamageOverTimeDefinition const &) = delete;
+    DamageOverTimeDefinition(class DamageOverTimeDefinition const &) = delete;
     DamageOverTimeDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&, class DamageOverTimeComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DamageOverTimeDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class DamageOverTimeComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DamageOverTimeDefinition>> &);
 
 protected:
 

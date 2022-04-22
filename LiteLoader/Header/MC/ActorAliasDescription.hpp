@@ -18,14 +18,14 @@ class ActorAliasDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORALIASDESCRIPTION
 public:
-    class ActorAliasDescription& operator=(class ActorAliasDescription const&) = delete;
-    ActorAliasDescription(class ActorAliasDescription const&) = delete;
+    class ActorAliasDescription& operator=(class ActorAliasDescription const &) = delete;
+    ActorAliasDescription(class ActorAliasDescription const &) = delete;
     ActorAliasDescription() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorAliasDescription();
-    /*1*/ virtual char const* getJsonName() const;
+    /*1*/ virtual char const * getJsonName() const;
     /*
     inline  ~ActorAliasDescription(){
          (ActorAliasDescription::*rv)();
@@ -33,7 +33,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI void parse(class Json::Value&, bool);
+    MCAPI void parse(class Json::Value &, bool);
 
 protected:
 

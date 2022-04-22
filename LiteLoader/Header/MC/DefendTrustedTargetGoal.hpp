@@ -18,8 +18,8 @@ class DefendTrustedTargetGoal : public NearestAttackableTargetGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFENDTRUSTEDTARGETGOAL
 public:
-    class DefendTrustedTargetGoal& operator=(class DefendTrustedTargetGoal const&) = delete;
-    DefendTrustedTargetGoal(class DefendTrustedTargetGoal const&) = delete;
+    class DefendTrustedTargetGoal& operator=(class DefendTrustedTargetGoal const &) = delete;
+    DefendTrustedTargetGoal(class DefendTrustedTargetGoal const &) = delete;
     DefendTrustedTargetGoal() = delete;
 #endif
 
@@ -27,12 +27,12 @@ public:
     /*0*/ virtual ~DefendTrustedTargetGoal();
     /*1*/ virtual bool canUse();
     /*4*/ virtual void start();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI DefendTrustedTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&, float, int, bool, int, enum LevelSoundEvent, class DefinitionTrigger const&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI DefendTrustedTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int, bool, int, enum LevelSoundEvent, class DefinitionTrigger const &);
 
 protected:
 
 private:
-    MCAPI struct ActorUniqueID _findTrustedTarget(class TrustComponent const&);
+    MCAPI struct ActorUniqueID _findTrustedTarget(class TrustComponent const &);
 
 };

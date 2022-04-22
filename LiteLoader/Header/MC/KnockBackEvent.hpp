@@ -15,8 +15,8 @@ class KnockBackEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_KNOCKBACKEVENT
 public:
-    class KnockBackEvent& operator=(class KnockBackEvent const&) = delete;
-    KnockBackEvent(class KnockBackEvent const&) = delete;
+    class KnockBackEvent& operator=(class KnockBackEvent const &) = delete;
+    KnockBackEvent(class KnockBackEvent const &) = delete;
     KnockBackEvent() = delete;
 #endif
 

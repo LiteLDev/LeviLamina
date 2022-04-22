@@ -17,15 +17,15 @@ class SubscribedObjectives {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBSCRIBEDOBJECTIVES
 public:
-    class SubscribedObjectives& operator=(class SubscribedObjectives const&) = delete;
-    SubscribedObjectives(class SubscribedObjectives const&) = delete;
+    class SubscribedObjectives& operator=(class SubscribedObjectives const &) = delete;
+    SubscribedObjectives(class SubscribedObjectives const &) = delete;
     SubscribedObjectives() = delete;
 #endif
 
 public:
-    MCAPI void addObjective(std::string const&);
-    MCAPI void removeObjective(std::string const&);
-    MCAPI void sendEvent(std::string const&, int) const;
+    MCAPI void addObjective(std::string const &);
+    MCAPI void removeObjective(std::string const &);
+    MCAPI void sendEvent(std::string const &, int) const;
 
 protected:
 

@@ -15,16 +15,15 @@ class ActorMovementProxyComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORMOVEMENTPROXYCOMPONENT
 public:
-    class ActorMovementProxyComponent& operator=(class ActorMovementProxyComponent const&) = delete;
-    ActorMovementProxyComponent(class ActorMovementProxyComponent const&) = delete;
+    class ActorMovementProxyComponent& operator=(class ActorMovementProxyComponent const &) = delete;
+    ActorMovementProxyComponent(class ActorMovementProxyComponent const &) = delete;
     ActorMovementProxyComponent() = delete;
 #endif
 
 public:
-    MCAPI ActorMovementProxyComponent(class gsl::not_null<class std::shared_ptr<struct IActorMovementProxy> >);
+    MCAPI ActorMovementProxyComponent(class gsl::not_null<class std::shared_ptr<struct IActorMovementProxy>>);
     MCAPI class std::shared_ptr<struct IActorMovementProxy> getMovementProxy();
     MCAPI class std::shared_ptr<struct IActorMovementProxy const> getMovementProxy() const;
-    MCAPI ~ActorMovementProxyComponent();
 
 protected:
 

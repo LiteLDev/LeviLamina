@@ -17,15 +17,15 @@ class StructurePoolBlockTagPredicateBlockTagStringMatches {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREPOOLBLOCKTAGPREDICATEBLOCKTAGSTRINGMATCHES
 public:
-    class StructurePoolBlockTagPredicateBlockTagStringMatches& operator=(class StructurePoolBlockTagPredicateBlockTagStringMatches const&) = delete;
-    StructurePoolBlockTagPredicateBlockTagStringMatches(class StructurePoolBlockTagPredicateBlockTagStringMatches const&) = delete;
+    class StructurePoolBlockTagPredicateBlockTagStringMatches& operator=(class StructurePoolBlockTagPredicateBlockTagStringMatches const &) = delete;
+    StructurePoolBlockTagPredicateBlockTagStringMatches(class StructurePoolBlockTagPredicateBlockTagStringMatches const &) = delete;
     StructurePoolBlockTagPredicateBlockTagStringMatches() = delete;
 #endif
 
 public:
     /*0*/ virtual ~StructurePoolBlockTagPredicateBlockTagStringMatches();
-    /*1*/ virtual bool test(class Block const&, class CompoundTag const&) const;
-    MCAPI StructurePoolBlockTagPredicateBlockTagStringMatches(class Block const&, std::string, std::string);
+    /*1*/ virtual bool test(class Block const &, class CompoundTag const &) const;
+    MCAPI StructurePoolBlockTagPredicateBlockTagStringMatches(class Block const &, std::string, std::string);
 
 protected:
 

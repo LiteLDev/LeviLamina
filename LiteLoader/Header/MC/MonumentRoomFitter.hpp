@@ -17,8 +17,8 @@ class MonumentRoomFitter {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MONUMENTROOMFITTER
 public:
-    class MonumentRoomFitter& operator=(class MonumentRoomFitter const&) = delete;
-    MonumentRoomFitter(class MonumentRoomFitter const&) = delete;
+    class MonumentRoomFitter& operator=(class MonumentRoomFitter const &) = delete;
+    MonumentRoomFitter(class MonumentRoomFitter const &) = delete;
     MonumentRoomFitter() = delete;
 #endif
 

@@ -17,8 +17,8 @@ class NpcEventCoordinator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCEVENTCOORDINATOR
 public:
-    class NpcEventCoordinator& operator=(class NpcEventCoordinator const&) = delete;
-    NpcEventCoordinator(class NpcEventCoordinator const&) = delete;
+    class NpcEventCoordinator& operator=(class NpcEventCoordinator const &) = delete;
+    NpcEventCoordinator(class NpcEventCoordinator const &) = delete;
     NpcEventCoordinator() = delete;
 #endif
 

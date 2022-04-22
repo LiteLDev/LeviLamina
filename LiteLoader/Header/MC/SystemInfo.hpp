@@ -15,8 +15,8 @@ struct SystemInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SYSTEMINFO
 public:
-    struct SystemInfo& operator=(struct SystemInfo const&) = delete;
-    SystemInfo(struct SystemInfo const&) = delete;
+    struct SystemInfo& operator=(struct SystemInfo const &) = delete;
+    SystemInfo(struct SystemInfo const &) = delete;
     SystemInfo() = delete;
 #endif
 

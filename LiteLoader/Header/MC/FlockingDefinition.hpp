@@ -18,14 +18,14 @@ class FlockingDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOCKINGDEFINITION
 public:
-    class FlockingDefinition& operator=(class FlockingDefinition const&) = delete;
-    FlockingDefinition(class FlockingDefinition const&) = delete;
+    class FlockingDefinition& operator=(class FlockingDefinition const &) = delete;
+    FlockingDefinition(class FlockingDefinition const &) = delete;
 #endif
 
 public:
     MCAPI FlockingDefinition();
-    MCAPI void initialize(class EntityContext&, class FlockingComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FlockingDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class FlockingComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FlockingDefinition>> &);
 
 protected:
 

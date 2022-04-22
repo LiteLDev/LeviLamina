@@ -15,8 +15,8 @@ class IEntityRegistryOwner {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IENTITYREGISTRYOWNER
 public:
-    class IEntityRegistryOwner& operator=(class IEntityRegistryOwner const&) = delete;
-    IEntityRegistryOwner(class IEntityRegistryOwner const&) = delete;
+    class IEntityRegistryOwner& operator=(class IEntityRegistryOwner const &) = delete;
+    IEntityRegistryOwner(class IEntityRegistryOwner const &) = delete;
     IEntityRegistryOwner() = delete;
 #endif
 

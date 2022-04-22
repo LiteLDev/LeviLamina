@@ -18,14 +18,14 @@ class UnderwaterCanyonFeature : public CanyonFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UNDERWATERCANYONFEATURE
 public:
-    class UnderwaterCanyonFeature& operator=(class UnderwaterCanyonFeature const&) = delete;
-    UnderwaterCanyonFeature(class UnderwaterCanyonFeature const&) = delete;
+    class UnderwaterCanyonFeature& operator=(class UnderwaterCanyonFeature const &) = delete;
+    UnderwaterCanyonFeature(class UnderwaterCanyonFeature const &) = delete;
     UnderwaterCanyonFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~UnderwaterCanyonFeature();
-    /*1*/ virtual bool carve(class BlockVolume&, class BiomeSource const&, class Random&, class ChunkPos const&, class Vec3 const&, class Vec3 const&, int, int, int, int, int, int, float, float, class gsl::span<float const, -1>, struct WorldGenContext const&) const;
+    /*1*/ virtual bool carve(class BlockVolume &, class BiomeSource const &, class Random &, class ChunkPos const &, class Vec3 const &, class Vec3 const &, int, int, int, int, int, int, float, float, class gsl::span<float const, -1>, struct WorldGenContext const &) const;
     /*
     inline  ~UnderwaterCanyonFeature(){
          (UnderwaterCanyonFeature::*rv)();

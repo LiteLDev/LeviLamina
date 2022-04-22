@@ -17,8 +17,8 @@ class ChargeHeldItemGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHARGEHELDITEMGOAL
 public:
-    class ChargeHeldItemGoal& operator=(class ChargeHeldItemGoal const&) = delete;
-    ChargeHeldItemGoal(class ChargeHeldItemGoal const&) = delete;
+    class ChargeHeldItemGoal& operator=(class ChargeHeldItemGoal const &) = delete;
+    ChargeHeldItemGoal(class ChargeHeldItemGoal const &) = delete;
     ChargeHeldItemGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI ChargeHeldItemGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI ChargeHeldItemGoal(class Mob &);
 
 protected:
 

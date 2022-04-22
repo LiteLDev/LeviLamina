@@ -18,8 +18,8 @@ class FurnaceIngredientContainerValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FURNACEINGREDIENTCONTAINERVALIDATION
 public:
-    class FurnaceIngredientContainerValidation& operator=(class FurnaceIngredientContainerValidation const&) = delete;
-    FurnaceIngredientContainerValidation(class FurnaceIngredientContainerValidation const&) = delete;
+    class FurnaceIngredientContainerValidation& operator=(class FurnaceIngredientContainerValidation const &) = delete;
+    FurnaceIngredientContainerValidation(class FurnaceIngredientContainerValidation const &) = delete;
     FurnaceIngredientContainerValidation() = delete;
 #endif
 
@@ -30,10 +30,10 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*8*/ virtual void __unk_vfn_8();
     /*
-    inline int getContainerOffset(class ContainerScreenContext const& a0) const{
-        int (FurnaceIngredientContainerValidation::*rv)(class ContainerScreenContext const&) const;
+    inline int getContainerOffset(class ContainerScreenContext const & a0) const{
+        int (FurnaceIngredientContainerValidation::*rv)(class ContainerScreenContext const &) const;
         *((void**)&rv) = dlsym("?getContainerOffset@FurnaceIngredientContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0));
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
     }
     */
 

@@ -18,13 +18,13 @@ class MoveControlBasicDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVECONTROLBASICDESCRIPTION
 public:
-    class MoveControlBasicDescription& operator=(class MoveControlBasicDescription const&) = delete;
-    MoveControlBasicDescription(class MoveControlBasicDescription const&) = delete;
+    class MoveControlBasicDescription& operator=(class MoveControlBasicDescription const &) = delete;
+    MoveControlBasicDescription(class MoveControlBasicDescription const &) = delete;
     MoveControlBasicDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~MoveControlBasicDescription();
     /*
     inline  ~MoveControlBasicDescription(){

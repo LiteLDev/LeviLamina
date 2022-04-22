@@ -17,19 +17,19 @@ class ScriptServerNetworkEventHandler {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTSERVERNETWORKEVENTHANDLER
 public:
-    class ScriptServerNetworkEventHandler& operator=(class ScriptServerNetworkEventHandler const&) = delete;
-    ScriptServerNetworkEventHandler(class ScriptServerNetworkEventHandler const&) = delete;
+    class ScriptServerNetworkEventHandler& operator=(class ScriptServerNetworkEventHandler const &) = delete;
+    ScriptServerNetworkEventHandler(class ScriptServerNetworkEventHandler const &) = delete;
     ScriptServerNetworkEventHandler() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScriptServerNetworkEventHandler();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct ChatEvent&);
+    /*2*/ virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct ChatEvent &);
 
 protected:
 
 private:
-    MCAPI bool _handleChat(struct ChatEvent&, class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>) const;
+    MCAPI bool _handleChat(struct ChatEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>) const;
 
 };

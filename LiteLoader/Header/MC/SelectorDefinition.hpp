@@ -19,14 +19,14 @@ class SelectorDefinition : public BehaviorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SELECTORDEFINITION
 public:
-    class SelectorDefinition& operator=(class SelectorDefinition const&) = delete;
-    SelectorDefinition(class SelectorDefinition const&) = delete;
+    class SelectorDefinition& operator=(class SelectorDefinition const &) = delete;
+    SelectorDefinition(class SelectorDefinition const &) = delete;
     SelectorDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SelectorDefinition();
-    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 
 protected:
 

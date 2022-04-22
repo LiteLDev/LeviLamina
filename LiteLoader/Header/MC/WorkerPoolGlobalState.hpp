@@ -15,8 +15,8 @@ class WorkerPoolGlobalState {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORKERPOOLGLOBALSTATE
 public:
-    class WorkerPoolGlobalState& operator=(class WorkerPoolGlobalState const&) = delete;
-    WorkerPoolGlobalState(class WorkerPoolGlobalState const&) = delete;
+    class WorkerPoolGlobalState& operator=(class WorkerPoolGlobalState const &) = delete;
+    WorkerPoolGlobalState(class WorkerPoolGlobalState const &) = delete;
     WorkerPoolGlobalState() = delete;
 #endif
 

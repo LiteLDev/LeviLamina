@@ -12,6 +12,12 @@ namespace ActorInventoryUtils {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-    MCAPI class ItemStack const* getItem(class Actor const&, enum EquipmentSlot, int);
+    MCAPI void forEachItemOnActor(class Actor const &, class std::function<void (class ItemStack const &)>);
+    MCAPI void forEachItemOnActor(class Actor const &, enum EquipmentSlot, class CommandIntegerRange const &, class std::function<void (class ItemStack const &)>);
+    MCAPI void forEachItemOnActorHotbar(class Actor const &, class CommandIntegerRange const &, class std::function<void (class ItemStack const &)>);
+    MCAPI void forEachItemOnActorInventory(class Actor const &, class CommandIntegerRange const &, class std::function<void (class ItemStack const &)>);
+    MCAPI class ItemStack const * getItem(class Actor const &, enum EquipmentSlot, int);
+    MCAPI bool queryActorEquipmentSlotForItem(class Actor const &, class ItemInstance const &, enum EquipmentSlot, class CommandIntegerRange const &, class CommandIntegerRange const &);
+    MCAPI bool queryActorForItem(class Actor const &, class ItemInstance const &, class CommandIntegerRange const &);
 
 };

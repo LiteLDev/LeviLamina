@@ -19,28 +19,28 @@ class MemoryMappedFileAccess {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MEMORYMAPPEDFILEACCESS
 public:
-    class MemoryMappedFileAccess& operator=(class MemoryMappedFileAccess const&) = delete;
-    MemoryMappedFileAccess(class MemoryMappedFileAccess const&) = delete;
+    class MemoryMappedFileAccess& operator=(class MemoryMappedFileAccess const &) = delete;
+    MemoryMappedFileAccess(class MemoryMappedFileAccess const &) = delete;
     MemoryMappedFileAccess() = delete;
 #endif
 
 public:
     /*0*/ virtual ~MemoryMappedFileAccess();
-    /*1*/ virtual void* fopen(class Core::Path const&, std::string const&);
-    /*2*/ virtual int fclose(void*);
-    /*3*/ virtual int fseek(void*, __int64, int);
-    /*4*/ virtual __int64 ftell(void*);
+    /*1*/ virtual void * fopen(class Core::Path const &, std::string const &);
+    /*2*/ virtual int fclose(void *);
+    /*3*/ virtual int fseek(void *, __int64, int);
+    /*4*/ virtual __int64 ftell(void *);
     /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual class IFileWriteAccess* getWriteInterface();
+    /*6*/ virtual class IFileWriteAccess * getWriteInterface();
     /*7*/ virtual void unload();
     /*
-    inline class IFileReadAccess const* getReadInterface() const{
-        class IFileReadAccess const* (MemoryMappedFileAccess::*rv)() const;
+    inline class IFileReadAccess const * getReadInterface() const{
+        class IFileReadAccess const * (MemoryMappedFileAccess::*rv)() const;
         *((void**)&rv) = dlsym("?getReadInterface@MemoryMappedFileAccess@@UEBAPEBVIFileReadAccess@@XZ");
         return (this->*rv)();
     }
     */
-    MCAPI MemoryMappedFileAccess(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess> > const&, std::unique_ptr<class FileAccessTransforms>);
+    MCAPI MemoryMappedFileAccess(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const &, std::unique_ptr<class FileAccessTransforms>);
     MCAPI static class FileAccessTransforms const EMPTY_TRANSFORMS;
 
 protected:

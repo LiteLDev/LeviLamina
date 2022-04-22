@@ -16,8 +16,8 @@ class ScriptAddRiderComponent : public ScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTADDRIDERCOMPONENT
 public:
-    class ScriptAddRiderComponent& operator=(class ScriptAddRiderComponent const&) = delete;
-    ScriptAddRiderComponent(class ScriptAddRiderComponent const&) = delete;
+    class ScriptAddRiderComponent& operator=(class ScriptAddRiderComponent const &) = delete;
+    ScriptAddRiderComponent(class ScriptAddRiderComponent const &) = delete;
     ScriptAddRiderComponent() = delete;
 #endif
 
@@ -30,9 +30,9 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptAddRiderComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
-    MCAPI class Scripting::Result<std::string > getEntityType() const;
-    MCAPI class Scripting::Result<std::string > getSpawnEvent() const;
+    MCAPI ScriptAddRiderComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
+    MCAPI class Scripting::Result<std::string> getEntityType() const;
+    MCAPI class Scripting::Result<std::string> getSpawnEvent() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptAddRiderComponent> bind(struct Scripting::Version);
 
 protected:

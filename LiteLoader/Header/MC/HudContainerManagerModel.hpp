@@ -18,20 +18,20 @@ class HudContainerManagerModel : public ContainerManagerModel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HUDCONTAINERMANAGERMODEL
 public:
-    class HudContainerManagerModel& operator=(class HudContainerManagerModel const&) = delete;
-    HudContainerManagerModel(class HudContainerManagerModel const&) = delete;
+    class HudContainerManagerModel& operator=(class HudContainerManagerModel const &) = delete;
+    HudContainerManagerModel(class HudContainerManagerModel const &) = delete;
     HudContainerManagerModel() = delete;
 #endif
 
 public:
     /*0*/ virtual ~HudContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
-    /*7*/ virtual void setSlot(int, class ItemStack const&, bool);
-    /*8*/ virtual class ItemStack const& getSlot(int) const;
+    /*7*/ virtual void setSlot(int, class ItemStack const &, bool);
+    /*8*/ virtual class ItemStack const & getSlot(int) const;
     /*9*/ virtual void setData(int, int);
     /*10*/ virtual void broadcastChanges();
     /*16*/ virtual class ContainerScreenContext _postInit();
-    MCAPI HudContainerManagerModel(enum ContainerID, class Player&);
+    MCAPI HudContainerManagerModel(enum ContainerID, class Player &);
 
 protected:
 

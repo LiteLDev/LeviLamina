@@ -17,8 +17,8 @@ class DragonScanningGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONSCANNINGGOAL
 public:
-    class DragonScanningGoal& operator=(class DragonScanningGoal const&) = delete;
-    DragonScanningGoal(class DragonScanningGoal const&) = delete;
+    class DragonScanningGoal& operator=(class DragonScanningGoal const &) = delete;
+    DragonScanningGoal(class DragonScanningGoal const &) = delete;
     DragonScanningGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI DragonScanningGoal(class EnderDragon&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI DragonScanningGoal(class EnderDragon &);
 
 protected:
 

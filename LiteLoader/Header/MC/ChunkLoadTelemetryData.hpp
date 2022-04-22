@@ -18,13 +18,13 @@ struct ChunkLoadTelemetryData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKLOADTELEMETRYDATA
 public:
-    struct ChunkLoadTelemetryData& operator=(struct ChunkLoadTelemetryData const&) = delete;
-    ChunkLoadTelemetryData(struct ChunkLoadTelemetryData const&) = delete;
+    struct ChunkLoadTelemetryData& operator=(struct ChunkLoadTelemetryData const &) = delete;
+    ChunkLoadTelemetryData(struct ChunkLoadTelemetryData const &) = delete;
     ChunkLoadTelemetryData() = delete;
 #endif
 
 public:
-    MCAPI void recordLoadedChunk(class LevelChunk const&);
+    MCAPI void recordLoadedChunk(class LevelChunk const &);
     MCAPI class Json::Value toJson() const;
 
 protected:

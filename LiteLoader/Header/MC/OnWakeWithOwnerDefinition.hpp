@@ -18,8 +18,8 @@ struct OnWakeWithOwnerDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONWAKEWITHOWNERDEFINITION
 public:
-    struct OnWakeWithOwnerDefinition& operator=(struct OnWakeWithOwnerDefinition const&) = delete;
-    OnWakeWithOwnerDefinition(struct OnWakeWithOwnerDefinition const&) = delete;
+    struct OnWakeWithOwnerDefinition& operator=(struct OnWakeWithOwnerDefinition const &) = delete;
+    OnWakeWithOwnerDefinition(struct OnWakeWithOwnerDefinition const &) = delete;
     OnWakeWithOwnerDefinition() = delete;
 #endif
 

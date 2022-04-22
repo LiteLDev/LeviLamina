@@ -17,13 +17,13 @@ class ScopedGameTestTickingArea {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOPEDGAMETESTTICKINGAREA
 public:
-    class ScopedGameTestTickingArea& operator=(class ScopedGameTestTickingArea const&) = delete;
-    ScopedGameTestTickingArea(class ScopedGameTestTickingArea const&) = delete;
+    class ScopedGameTestTickingArea& operator=(class ScopedGameTestTickingArea const &) = delete;
+    ScopedGameTestTickingArea(class ScopedGameTestTickingArea const &) = delete;
     ScopedGameTestTickingArea() = delete;
 #endif
 
 public:
-    MCAPI ScopedGameTestTickingArea(class Dimension&, class BoundingBox const&, std::string const&);
+    MCAPI ScopedGameTestTickingArea(class Dimension &, class BoundingBox const &, std::string const &);
     MCAPI bool areChunksLoaded();
     MCAPI class std::shared_ptr<class ITickingArea> getTickingArea() const;
     MCAPI ~ScopedGameTestTickingArea();

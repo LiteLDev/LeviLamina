@@ -15,8 +15,8 @@ struct SubpackInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBPACKINFO
 public:
-    struct SubpackInfo& operator=(struct SubpackInfo const&) = delete;
-    SubpackInfo(struct SubpackInfo const&) = delete;
+    struct SubpackInfo& operator=(struct SubpackInfo const &) = delete;
+    SubpackInfo(struct SubpackInfo const &) = delete;
     SubpackInfo() = delete;
 #endif
 

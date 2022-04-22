@@ -17,8 +17,8 @@ class DragonStrafePlayerGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONSTRAFEPLAYERGOAL
 public:
-    class DragonStrafePlayerGoal& operator=(class DragonStrafePlayerGoal const&) = delete;
-    DragonStrafePlayerGoal(class DragonStrafePlayerGoal const&) = delete;
+    class DragonStrafePlayerGoal& operator=(class DragonStrafePlayerGoal const &) = delete;
+    DragonStrafePlayerGoal(class DragonStrafePlayerGoal const &) = delete;
     DragonStrafePlayerGoal() = delete;
 #endif
 
@@ -30,13 +30,13 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI DragonStrafePlayerGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI DragonStrafePlayerGoal(class Mob &);
 
 protected:
 
 private:
     MCAPI void navigateToNextPathNode();
-    MCAPI void setTarget(class Actor*);
+    MCAPI void setTarget(class Actor *);
 
 };

@@ -15,13 +15,13 @@ class LegacyStructureBlockInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYSTRUCTUREBLOCKINFO
 public:
-    class LegacyStructureBlockInfo& operator=(class LegacyStructureBlockInfo const&) = delete;
-    LegacyStructureBlockInfo(class LegacyStructureBlockInfo const&) = delete;
+    class LegacyStructureBlockInfo& operator=(class LegacyStructureBlockInfo const &) = delete;
+    LegacyStructureBlockInfo(class LegacyStructureBlockInfo const &) = delete;
     LegacyStructureBlockInfo() = delete;
 #endif
 
 public:
-    MCAPI LegacyStructureBlockInfo(class BlockPos const&, std::unique_ptr<class CompoundTag>, class Block const&, class Block const&);
+    MCAPI LegacyStructureBlockInfo(class BlockPos const &, std::unique_ptr<class CompoundTag>, class Block const &, class Block const &);
 
 protected:
 

@@ -17,17 +17,18 @@ class ImitateMobSoundsComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IMITATEMOBSOUNDSCOMPONENT
 public:
-    class ImitateMobSoundsComponent& operator=(class ImitateMobSoundsComponent const&) = delete;
-    ImitateMobSoundsComponent(class ImitateMobSoundsComponent const&) = delete;
+    class ImitateMobSoundsComponent& operator=(class ImitateMobSoundsComponent const &) = delete;
+    ImitateMobSoundsComponent(class ImitateMobSoundsComponent const &) = delete;
     ImitateMobSoundsComponent() = delete;
 #endif
 
 public:
-    MCAPI static enum LevelSoundEvent getRandomImitatedSound(class Randomize const&);
-    MCAPI static bool imitateNearbyMobs(class Actor&, class Randomize const&);
+    MCAPI static enum LevelSoundEvent getRandomImitatedSound(class Randomize const &);
+    MCAPI static bool imitateNearbyMobs(class Actor &, class Randomize const &);
 
 protected:
 
 private:
+    MCAPI static class std::unordered_map<enum ActorType, enum LevelSoundEvent, struct std::hash<enum ActorType>, struct std::equal_to<enum ActorType>, class std::allocator<struct std::pair<enum ActorType const, enum LevelSoundEvent>>> const imitateMobMap;
 
 };

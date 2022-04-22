@@ -17,8 +17,8 @@ class FindCoverGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FINDCOVERGOAL
 public:
-    class FindCoverGoal& operator=(class FindCoverGoal const&) = delete;
-    FindCoverGoal(class FindCoverGoal const&) = delete;
+    class FindCoverGoal& operator=(class FindCoverGoal const &) = delete;
+    FindCoverGoal(class FindCoverGoal const &) = delete;
     FindCoverGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI FindCoverGoal(class Mob&, float, float);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI FindCoverGoal(class Mob &, float, float);
 
 protected:
 

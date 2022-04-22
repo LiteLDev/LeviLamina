@@ -18,16 +18,16 @@ class MobEffectChangeDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEFFECTCHANGEDESCRIPTION
 public:
-    class MobEffectChangeDescription& operator=(class MobEffectChangeDescription const&) = delete;
-    MobEffectChangeDescription(class MobEffectChangeDescription const&) = delete;
+    class MobEffectChangeDescription& operator=(class MobEffectChangeDescription const &) = delete;
+    MobEffectChangeDescription(class MobEffectChangeDescription const &) = delete;
     MobEffectChangeDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~MobEffectChangeDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~MobEffectChangeDescription(){
          (MobEffectChangeDescription::*rv)();

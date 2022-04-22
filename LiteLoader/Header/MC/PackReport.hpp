@@ -18,17 +18,17 @@ class PackReport {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKREPORT
 public:
-    class PackReport& operator=(class PackReport const&) = delete;
+    class PackReport& operator=(class PackReport const &) = delete;
 #endif
 
 public:
-    MCAPI PackReport(class PackReport const&);
+    MCAPI PackReport(class PackReport const &);
     MCAPI PackReport();
-    MCAPI std::string const& getOriginalName() const;
-    MCAPI std::string const& getOriginalVersion() const;
-    MCAPI class PackReport& operator=(class PackReport&&);
-    MCAPI void serialize(class Json::Value&);
-    MCAPI void setLocation(class ResourceLocation const&);
+    MCAPI std::string const & getOriginalName() const;
+    MCAPI std::string const & getOriginalVersion() const;
+    MCAPI class PackReport & operator=(class PackReport &&);
+    MCAPI void serialize(class Json::Value &);
+    MCAPI void setLocation(class ResourceLocation const &);
     MCAPI bool wasUpgraded() const;
     MCAPI ~PackReport();
 

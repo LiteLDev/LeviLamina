@@ -18,8 +18,8 @@ class MoveToLavaGoal : public MoveToLiquidGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOLAVAGOAL
 public:
-    class MoveToLavaGoal& operator=(class MoveToLavaGoal const&) = delete;
-    MoveToLavaGoal(class MoveToLavaGoal const&) = delete;
+    class MoveToLavaGoal& operator=(class MoveToLavaGoal const &) = delete;
+    MoveToLavaGoal(class MoveToLavaGoal const &) = delete;
     MoveToLavaGoal() = delete;
 #endif
 
@@ -28,7 +28,7 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    MCAPI MoveToLavaGoal(class Mob&, float, int, int, int, float);
+    MCAPI MoveToLavaGoal(class Mob &, float, int, int, int, float);
 
 protected:
 

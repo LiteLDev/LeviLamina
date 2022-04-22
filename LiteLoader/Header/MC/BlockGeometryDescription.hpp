@@ -17,8 +17,8 @@ struct BlockGeometryDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKGEOMETRYDESCRIPTION
 public:
-    struct BlockGeometryDescription& operator=(struct BlockGeometryDescription const&) = delete;
-    BlockGeometryDescription(struct BlockGeometryDescription const&) = delete;
+    struct BlockGeometryDescription& operator=(struct BlockGeometryDescription const &) = delete;
+    BlockGeometryDescription(struct BlockGeometryDescription const &) = delete;
     BlockGeometryDescription() = delete;
 #endif
 

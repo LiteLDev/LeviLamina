@@ -18,21 +18,21 @@ class Trade2ContainerManagerModel : public ContainerManagerModel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADE2CONTAINERMANAGERMODEL
 public:
-    class Trade2ContainerManagerModel& operator=(class Trade2ContainerManagerModel const&) = delete;
-    Trade2ContainerManagerModel(class Trade2ContainerManagerModel const&) = delete;
+    class Trade2ContainerManagerModel& operator=(class Trade2ContainerManagerModel const &) = delete;
+    Trade2ContainerManagerModel(class Trade2ContainerManagerModel const &) = delete;
     Trade2ContainerManagerModel() = delete;
 #endif
 
 public:
     /*0*/ virtual ~Trade2ContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
-    /*7*/ virtual void setSlot(int, class ItemStack const&, bool);
-    /*8*/ virtual class ItemStack const& getSlot(int) const;
+    /*7*/ virtual void setSlot(int, class ItemStack const &, bool);
+    /*8*/ virtual class ItemStack const & getSlot(int) const;
     /*9*/ virtual void broadcastChanges();
     /*10*/ virtual void broadcastChanges();
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
-    MCAPI Trade2ContainerManagerModel(enum ContainerID, class Player&, struct ActorUniqueID const&);
+    MCAPI Trade2ContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
 
 protected:
 

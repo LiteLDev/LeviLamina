@@ -17,15 +17,15 @@ class LevelStorageEventing {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSTORAGEEVENTING
 public:
-    class LevelStorageEventing& operator=(class LevelStorageEventing const&) = delete;
-    LevelStorageEventing(class LevelStorageEventing const&) = delete;
+    class LevelStorageEventing& operator=(class LevelStorageEventing const &) = delete;
+    LevelStorageEventing(class LevelStorageEventing const &) = delete;
     LevelStorageEventing() = delete;
 #endif
 
 public:
-    MCAPI LevelStorageEventing(std::string const&, class LevelData const&, std::string const&);
-    MCAPI void fireDBStorageError(char const*);
-    MCAPI void fireEventWorldCorruptionCausedWorldShutdown(std::string const&, class std::optional<bool>);
+    MCAPI LevelStorageEventing(std::string const &, class LevelData const &, std::string const &);
+    MCAPI void fireDBStorageError(char const *);
+    MCAPI void fireEventWorldCorruptionCausedWorldShutdown(std::string const &, class std::optional<bool>);
 
 protected:
 

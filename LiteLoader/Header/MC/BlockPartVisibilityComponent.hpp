@@ -15,13 +15,13 @@ struct BlockPartVisibilityComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPARTVISIBILITYCOMPONENT
 public:
-    struct BlockPartVisibilityComponent& operator=(struct BlockPartVisibilityComponent const&) = delete;
-    BlockPartVisibilityComponent(struct BlockPartVisibilityComponent const&) = delete;
+    struct BlockPartVisibilityComponent& operator=(struct BlockPartVisibilityComponent const &) = delete;
+    BlockPartVisibilityComponent(struct BlockPartVisibilityComponent const &) = delete;
     BlockPartVisibilityComponent() = delete;
 #endif
 
 public:
-    MCAPI struct BlockPartVisibilityComponent& operator=(struct BlockPartVisibilityComponent&&);
+    MCAPI struct BlockPartVisibilityComponent & operator=(struct BlockPartVisibilityComponent &&);
     MCAPI ~BlockPartVisibilityComponent();
 
 protected:

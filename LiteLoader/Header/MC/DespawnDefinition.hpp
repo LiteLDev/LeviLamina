@@ -18,13 +18,13 @@ class DespawnDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DESPAWNDEFINITION
 public:
-    class DespawnDefinition& operator=(class DespawnDefinition const&) = delete;
-    DespawnDefinition(class DespawnDefinition const&) = delete;
+    class DespawnDefinition& operator=(class DespawnDefinition const &) = delete;
+    DespawnDefinition(class DespawnDefinition const &) = delete;
     DespawnDefinition() = delete;
 #endif
 
 public:
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DespawnDefinition> >&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DespawnDefinition>> &);
 
 protected:
 

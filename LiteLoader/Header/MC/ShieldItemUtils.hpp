@@ -17,13 +17,13 @@ class ShieldItemUtils {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHIELDITEMUTILS
 public:
-    class ShieldItemUtils& operator=(class ShieldItemUtils const&) = delete;
-    ShieldItemUtils(class ShieldItemUtils const&) = delete;
+    class ShieldItemUtils& operator=(class ShieldItemUtils const &) = delete;
+    ShieldItemUtils(class ShieldItemUtils const &) = delete;
     ShieldItemUtils() = delete;
 #endif
 
 public:
-    MCAPI static bool isBlockedDamageCause(class ActorDamageSource const&);
+    MCAPI static bool isBlockedDamageCause(class ActorDamageSource const &);
 
 protected:
 

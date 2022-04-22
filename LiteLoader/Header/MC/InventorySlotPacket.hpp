@@ -18,16 +18,16 @@ class InventorySlotPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYSLOTPACKET
 public:
-    class InventorySlotPacket& operator=(class InventorySlotPacket const&) = delete;
-    InventorySlotPacket(class InventorySlotPacket const&) = delete;
+    class InventorySlotPacket& operator=(class InventorySlotPacket const &) = delete;
+    InventorySlotPacket(class InventorySlotPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~InventorySlotPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~InventorySlotPacket(){
          (InventorySlotPacket::*rv)();
@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI InventorySlotPacket(enum ContainerID, unsigned int, class ItemStack const&);
+    MCAPI InventorySlotPacket(enum ContainerID, unsigned int, class ItemStack const &);
     MCAPI InventorySlotPacket();
 
 protected:

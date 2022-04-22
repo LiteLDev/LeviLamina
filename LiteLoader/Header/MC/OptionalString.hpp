@@ -15,8 +15,8 @@ struct OptionalString {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OPTIONALSTRING
 public:
-    struct OptionalString& operator=(struct OptionalString const&) = delete;
-    OptionalString(struct OptionalString const&) = delete;
+    struct OptionalString& operator=(struct OptionalString const &) = delete;
+    OptionalString(struct OptionalString const &) = delete;
     OptionalString() = delete;
 #endif
 

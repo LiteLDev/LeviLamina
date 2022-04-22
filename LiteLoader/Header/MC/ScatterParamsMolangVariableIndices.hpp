@@ -17,8 +17,8 @@ struct ScatterParamsMolangVariableIndices {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCATTERPARAMSMOLANGVARIABLEINDICES
 public:
-    struct ScatterParamsMolangVariableIndices& operator=(struct ScatterParamsMolangVariableIndices const&) = delete;
-    ScatterParamsMolangVariableIndices(struct ScatterParamsMolangVariableIndices const&) = delete;
+    struct ScatterParamsMolangVariableIndices& operator=(struct ScatterParamsMolangVariableIndices const &) = delete;
+    ScatterParamsMolangVariableIndices(struct ScatterParamsMolangVariableIndices const &) = delete;
     ScatterParamsMolangVariableIndices() = delete;
 #endif
 

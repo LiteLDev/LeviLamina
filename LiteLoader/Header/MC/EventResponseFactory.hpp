@@ -18,8 +18,8 @@ class EventResponseFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EVENTRESPONSEFACTORY
 public:
-    class EventResponseFactory& operator=(class EventResponseFactory const&) = delete;
-    EventResponseFactory(class EventResponseFactory const&) = delete;
+    class EventResponseFactory& operator=(class EventResponseFactory const &) = delete;
+    EventResponseFactory(class EventResponseFactory const &) = delete;
     EventResponseFactory() = delete;
 #endif
 
@@ -32,8 +32,8 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection> > const& getSchema() const;
-    MCAPI void initSchema(std::string const&, class SemVersion const&);
+    MCAPI class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> const & getSchema() const;
+    MCAPI void initSchema(std::string const &, class SemVersion const &);
 
 protected:
 

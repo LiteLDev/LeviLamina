@@ -17,8 +17,8 @@ class OfferFlowerGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OFFERFLOWERGOAL
 public:
-    class OfferFlowerGoal& operator=(class OfferFlowerGoal const&) = delete;
-    OfferFlowerGoal(class OfferFlowerGoal const&) = delete;
+    class OfferFlowerGoal& operator=(class OfferFlowerGoal const &) = delete;
+    OfferFlowerGoal(class OfferFlowerGoal const &) = delete;
     OfferFlowerGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI OfferFlowerGoal(class IronGolem&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI OfferFlowerGoal(class IronGolem &);
 
 protected:
 

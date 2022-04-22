@@ -17,19 +17,20 @@ class CommandAreaFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDAREAFACTORY
 public:
-    class CommandAreaFactory& operator=(class CommandAreaFactory const&) = delete;
-    CommandAreaFactory(class CommandAreaFactory const&) = delete;
+    class CommandAreaFactory& operator=(class CommandAreaFactory const &) = delete;
+    CommandAreaFactory(class CommandAreaFactory const &) = delete;
     CommandAreaFactory() = delete;
 #endif
 
 public:
-    MCAPI CommandAreaFactory(class Dimension&);
-    MCAPI std::unique_ptr<class CommandArea> findArea(class BlockPos const&, class BlockPos const&, bool) const;
-    MCAPI std::unique_ptr<class CommandArea> findAreaWithBuffer(class BlockPos const&, class BlockPos const&, bool) const;
+    MCAPI CommandAreaFactory(class Dimension &);
+    MCAPI std::unique_ptr<class CommandArea> findArea(class BlockPos const &, class BlockPos const &, bool, bool) const;
+    MCAPI std::unique_ptr<class CommandArea> findAreaWithBuffer(class BlockPos const &, class BlockPos const &, int, bool) const;
+    MCAPI static bool shouldAllowNonTickingPlayerAndTickingAreaChunks(int);
 
 protected:
 
 private:
-    MCAPI std::unique_ptr<class CommandArea> _getArea(struct Bounds const&, bool) const;
+    MCAPI std::unique_ptr<class CommandArea> _getArea(struct Bounds const &, bool, bool) const;
 
 };

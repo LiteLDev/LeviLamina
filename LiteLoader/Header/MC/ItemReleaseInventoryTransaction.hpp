@@ -17,27 +17,27 @@ class ItemReleaseInventoryTransaction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMRELEASEINVENTORYTRANSACTION
 public:
-    class ItemReleaseInventoryTransaction& operator=(class ItemReleaseInventoryTransaction const&) = delete;
-    ItemReleaseInventoryTransaction(class ItemReleaseInventoryTransaction const&) = delete;
+    class ItemReleaseInventoryTransaction& operator=(class ItemReleaseInventoryTransaction const &) = delete;
+    ItemReleaseInventoryTransaction(class ItemReleaseInventoryTransaction const &) = delete;
     ItemReleaseInventoryTransaction() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ItemReleaseInventoryTransaction();
-    /*1*/ virtual void read(class ReadOnlyBinaryStream&);
-    /*2*/ virtual void write(class BinaryStream&) const;
+    /*1*/ virtual void read(class ReadOnlyBinaryStream &);
+    /*2*/ virtual void write(class BinaryStream &) const;
     /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual enum InventoryTransactionError handle(class Player&, bool) const;
+    /*4*/ virtual enum InventoryTransactionError handle(class Player &, bool) const;
     /*
-    inline void onTransactionError(class Player& a0, enum InventoryTransactionError a1) const{
-        void (ItemReleaseInventoryTransaction::*rv)(class Player&, enum InventoryTransactionError) const;
+    inline void onTransactionError(class Player & a0, enum InventoryTransactionError a1) const{
+        void (ItemReleaseInventoryTransaction::*rv)(class Player &, enum InventoryTransactionError) const;
         *((void**)&rv) = dlsym("?onTransactionError@ItemReleaseInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0), std::forward<enum InventoryTransactionError>(a1));
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<enum InventoryTransactionError>(a1));
     }
-    inline void postLoadItems(class BlockPalette& a0, bool a1){
-        void (ItemReleaseInventoryTransaction::*rv)(class BlockPalette&, bool);
+    inline void postLoadItems(class BlockPalette & a0, bool a1){
+        void (ItemReleaseInventoryTransaction::*rv)(class BlockPalette &, bool);
         *((void**)&rv) = dlsym("?postLoadItems@ItemReleaseInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z");
-        return (this->*rv)(std::forward<class BlockPalette&>(a0), std::forward<bool>(a1));
+        return (this->*rv)(std::forward<class BlockPalette &>(a0), std::forward<bool>(a1));
     }
     */
 

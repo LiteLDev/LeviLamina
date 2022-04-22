@@ -17,7 +17,7 @@ class AttributeInstance {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTEINSTANCE
 public:
-    class AttributeInstance& operator=(class AttributeInstance const&) = delete;
+    class AttributeInstance& operator=(class AttributeInstance const &) = delete;
 #endif
 
 public:
@@ -30,35 +30,36 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI AttributeInstance(class AttributeInstance const&);
+    MCAPI AttributeInstance(class AttributeInstance const &);
     MCAPI AttributeInstance();
-    MCAPI void addBuff(class AttributeBuff const&);
-    MCAPI void addModifier(class AttributeModifier const&);
+    MCAPI void addBuff(class AttributeBuff const &);
+    MCAPI void addModifier(class AttributeModifier const &);
     MCAPI void addModifier(class std::shared_ptr<class AttributeModifier>);
-    MCAPI class Attribute const* getAttribute() const;
-    MCAPI std::vector<class TemporalAttributeBuff> const& getBuffs() const;
+    MCAPI class Attribute const * getAttribute() const;
+    MCAPI std::vector<class TemporalAttributeBuff> const & getBuffs() const;
     MCAPI float getCurrentValue() const;
     MCAPI float getDefaultValue(int) const;
     MCAPI class AttributeInstanceHandle getHandle() const;
-    MCAPI std::vector<class AttributeInstanceHandle> const& getListeners() const;
+    MCAPI std::vector<class AttributeInstanceHandle> const & getListeners() const;
     MCAPI float getMaxValue() const;
     MCAPI float getMinValue() const;
-    MCAPI class AttributeModifier getModifier(class mce::UUID const&) const;
+    MCAPI class AttributeModifier getModifier(class mce::UUID const &) const;
     MCAPI std::vector<class AttributeModifier> getModifiers(int) const;
     MCAPI std::vector<class AttributeModifier> getModifiers() const;
-    MCAPI bool hasModifier(class mce::UUID const&) const;
+    MCAPI bool hasModifier(class mce::UUID const &) const;
     MCAPI bool hasModifier(class std::shared_ptr<class AttributeModifier>) const;
     MCAPI bool hasModifiers() const;
     MCAPI bool hasTemporalBuffs() const;
+    MCAPI void inheritFrom(class AttributeInstance const &, class BaseAttributeMap *);
     MCAPI bool isValid() const;
     MCAPI void notify(__int64);
     MCAPI void recalculateModifiers();
-    MCAPI void registerListener(class AttributeInstance const&);
+    MCAPI void registerListener(class AttributeInstance const &);
     MCAPI void removeBuff(class std::shared_ptr<class AttributeBuff>);
     MCAPI void removeBuffs();
-    MCAPI void removeModifier(class AttributeModifier const&);
+    MCAPI void removeModifier(class AttributeModifier const &);
     MCAPI void removeModifier(class std::shared_ptr<class AttributeModifier>);
-    MCAPI bool removeModifier(class mce::UUID const&);
+    MCAPI bool removeModifier(class mce::UUID const &);
     MCAPI void resetToDefaultValue();
     MCAPI void resetToMaxValue();
     MCAPI void resetToMinValue();
@@ -74,8 +75,8 @@ public:
 protected:
 
 private:
-    MCAPI AttributeInstance(class BaseAttributeMap*, class Attribute const*);
-    MCAPI float _calculateValue(class AttributeBuff const&);
+    MCAPI AttributeInstance(class BaseAttributeMap *, class Attribute const *);
+    MCAPI float _calculateValue(class AttributeBuff const &);
     MCAPI float _calculateValue();
     MCAPI float _sanitizeValue(float);
 

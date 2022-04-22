@@ -17,25 +17,26 @@ class ScriptBlockEventListener {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKEVENTLISTENER
 public:
-    class ScriptBlockEventListener& operator=(class ScriptBlockEventListener const&) = delete;
-    ScriptBlockEventListener(class ScriptBlockEventListener const&) = delete;
+    class ScriptBlockEventListener& operator=(class ScriptBlockEventListener const &) = delete;
+    ScriptBlockEventListener(class ScriptBlockEventListener const &) = delete;
     ScriptBlockEventListener() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScriptBlockEventListener();
-    /*1*/ virtual enum EventResult onBlockPlacedByPlayer(class Player&, class Block const&, class BlockPos const&, bool);
-    /*2*/ virtual enum EventResult onBlockDestroyedByPlayer(class Player&, class Block const&, class BlockPos const&);
+    /*1*/ virtual enum EventResult onBlockPlacedByPlayer(class Player &, class Block const &, class BlockPos const &, bool);
+    /*2*/ virtual enum EventResult onBlockDestroyedByPlayer(class Player &, class Block const &, class BlockPos const &);
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual void __unk_vfn_5();
+    /*5*/ virtual enum EventResult onBlockDestructionStarted(class Player &, class BlockPos const &);
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual enum EventResult onBlockExploded(class BlockPos const&, class Block const&, class Actor*);
+    /*7*/ virtual enum EventResult onBlockExploded(class BlockPos const &, class Block const &, class Actor *);
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*10*/ virtual enum EventResult onEvent(struct ExplosionStartedEvent const&);
+    /*10*/ virtual enum EventResult onEvent(struct ExplosionStartedEvent const &);
     /*12*/ virtual void __unk_vfn_12();
-    /*13*/ virtual enum EventResult onEvent(struct PistonActionEvent const&);
+    /*13*/ virtual enum EventResult onEvent(struct PistonActionEvent const &);
+    /*14*/ virtual enum EventResult onEvent(struct LeverActionEvent const &);
 
 protected:
 

@@ -18,15 +18,15 @@ class BucketableDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUCKETABLEDESCRIPTION
 public:
-    class BucketableDescription& operator=(class BucketableDescription const&) = delete;
-    BucketableDescription(class BucketableDescription const&) = delete;
+    class BucketableDescription& operator=(class BucketableDescription const &) = delete;
+    BucketableDescription(class BucketableDescription const &) = delete;
     BucketableDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~BucketableDescription();
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~BucketableDescription(){
          (BucketableDescription::*rv)();

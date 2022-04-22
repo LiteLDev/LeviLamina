@@ -172,7 +172,7 @@ BlockActor* Level::getBlockEntity(const BlockPos& pos, BlockSource* blockSource)
 
 bool Level::setBlock(const BlockPos& pos, int dim, Block* block) {
     BlockSource* bs = getBlockSource(dim);
-    return bs->setBlock(pos, *block, 3, nullptr); // updateFlag = 3 from IDA SetBlockCommand::execute()
+    return bs->setBlock(pos, *block, 3, nullptr,nullptr); // updateFlag = 3 from IDA SetBlockCommand::execute()
 }
 
 bool Level::setBlock(const BlockPos& pos, int dim, const string& name, unsigned short tileData) {

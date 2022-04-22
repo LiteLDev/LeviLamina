@@ -17,13 +17,13 @@ class CircuitComponentList {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CIRCUITCOMPONENTLIST
 public:
-    class CircuitComponentList& operator=(class CircuitComponentList const&) = delete;
-    CircuitComponentList(class CircuitComponentList const&) = delete;
+    class CircuitComponentList& operator=(class CircuitComponentList const &) = delete;
+    CircuitComponentList(class CircuitComponentList const &) = delete;
     CircuitComponentList() = delete;
 #endif
 
 public:
-    MCAPI bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
+    MCAPI bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
     MCAPI ~CircuitComponentList();
 
 protected:

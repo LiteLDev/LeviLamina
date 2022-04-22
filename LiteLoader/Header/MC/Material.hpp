@@ -17,8 +17,8 @@ class Material {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MATERIAL
 public:
-    class Material& operator=(class Material const&) = delete;
-    Material(class Material const&) = delete;
+    class Material& operator=(class Material const &) = delete;
+    Material(class Material const &) = delete;
     Material() = delete;
 #endif
 
@@ -35,10 +35,10 @@ public:
     MCAPI bool isSuperHot() const;
     MCAPI bool isTopSolid(bool, bool) const;
     MCAPI bool isType(enum MaterialType) const;
-    MCAPI bool operator!=(class Material const&) const;
-    MCAPI bool operator==(class Material const&) const;
+    MCAPI bool operator!=(class Material const &) const;
+    MCAPI bool operator==(class Material const &) const;
     MCAPI static void addMaterial(std::unique_ptr<class Material>);
-    MCAPI static class Material const& getMaterial(enum MaterialType);
+    MCAPI static class Material const & getMaterial(enum MaterialType);
     MCAPI static void initMaterials();
     MCAPI static void teardownMaterials();
 

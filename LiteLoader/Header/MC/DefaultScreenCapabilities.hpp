@@ -17,8 +17,8 @@ struct DefaultScreenCapabilities {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFAULTSCREENCAPABILITIES
 public:
-    struct DefaultScreenCapabilities& operator=(struct DefaultScreenCapabilities const&) = delete;
-    DefaultScreenCapabilities(struct DefaultScreenCapabilities const&) = delete;
+    struct DefaultScreenCapabilities& operator=(struct DefaultScreenCapabilities const &) = delete;
+    DefaultScreenCapabilities(struct DefaultScreenCapabilities const &) = delete;
     DefaultScreenCapabilities() = delete;
 #endif
 

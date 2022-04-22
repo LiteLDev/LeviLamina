@@ -17,8 +17,8 @@ class SneezeGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SNEEZEGOAL
 public:
-    class SneezeGoal& operator=(class SneezeGoal const&) = delete;
-    SneezeGoal(class SneezeGoal const&) = delete;
+    class SneezeGoal& operator=(class SneezeGoal const &) = delete;
+    SneezeGoal(class SneezeGoal const &) = delete;
     SneezeGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
 
 protected:
 

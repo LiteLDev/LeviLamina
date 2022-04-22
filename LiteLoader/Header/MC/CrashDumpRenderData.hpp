@@ -17,13 +17,13 @@ class CrashDumpRenderData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMPRENDERDATA
 public:
-    class CrashDumpRenderData& operator=(class CrashDumpRenderData const&) = delete;
-    CrashDumpRenderData(class CrashDumpRenderData const&) = delete;
+    class CrashDumpRenderData& operator=(class CrashDumpRenderData const &) = delete;
+    CrashDumpRenderData(class CrashDumpRenderData const &) = delete;
     CrashDumpRenderData() = delete;
 #endif
 
 public:
-    MCAPI static struct CrashDumpFormatEntryImpl const* const kFormat;
+    MCAPI static struct CrashDumpFormatEntryImpl const *const kFormat;
 
 protected:
 

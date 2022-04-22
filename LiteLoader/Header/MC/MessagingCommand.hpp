@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class MessagingCommand {
+class MessagingCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,13 +18,14 @@ class MessagingCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MESSAGINGCOMMAND
 public:
-    class MessagingCommand& operator=(class MessagingCommand const&) = delete;
-    MessagingCommand(class MessagingCommand const&) = delete;
+    class MessagingCommand& operator=(class MessagingCommand const &) = delete;
+    MessagingCommand(class MessagingCommand const &) = delete;
     MessagingCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~MessagingCommand();
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const = 0;
     /*
     inline  ~MessagingCommand(){
          (MessagingCommand::*rv)();
@@ -34,7 +36,7 @@ public:
 
 protected:
     MCAPI MessagingCommand(bool, bool);
-    MCAPI bool checkChatPermissions(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI bool checkChatPermissions(class CommandOrigin const &, class CommandOutput &) const;
 
 private:
 

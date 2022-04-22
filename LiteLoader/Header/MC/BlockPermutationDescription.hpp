@@ -15,8 +15,8 @@ class BlockPermutationDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPERMUTATIONDESCRIPTION
 public:
-    class BlockPermutationDescription& operator=(class BlockPermutationDescription const&) = delete;
-    BlockPermutationDescription(class BlockPermutationDescription const&) = delete;
+    class BlockPermutationDescription& operator=(class BlockPermutationDescription const &) = delete;
+    BlockPermutationDescription(class BlockPermutationDescription const &) = delete;
     BlockPermutationDescription() = delete;
 #endif
 

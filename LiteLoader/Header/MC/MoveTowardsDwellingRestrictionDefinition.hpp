@@ -18,14 +18,14 @@ class MoveTowardsDwellingRestrictionDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOWARDSDWELLINGRESTRICTIONDEFINITION
 public:
-    class MoveTowardsDwellingRestrictionDefinition& operator=(class MoveTowardsDwellingRestrictionDefinition const&) = delete;
-    MoveTowardsDwellingRestrictionDefinition(class MoveTowardsDwellingRestrictionDefinition const&) = delete;
+    class MoveTowardsDwellingRestrictionDefinition& operator=(class MoveTowardsDwellingRestrictionDefinition const &) = delete;
+    MoveTowardsDwellingRestrictionDefinition(class MoveTowardsDwellingRestrictionDefinition const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~MoveTowardsDwellingRestrictionDefinition();
     MCAPI MoveTowardsDwellingRestrictionDefinition();
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MoveTowardsDwellingRestrictionDefinition> >&);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MoveTowardsDwellingRestrictionDefinition>> &);
 
 protected:
 

@@ -15,8 +15,8 @@ struct MolangMemberAccessor {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGMEMBERACCESSOR
 public:
-    struct MolangMemberAccessor& operator=(struct MolangMemberAccessor const&) = delete;
-    MolangMemberAccessor(struct MolangMemberAccessor const&) = delete;
+    struct MolangMemberAccessor& operator=(struct MolangMemberAccessor const &) = delete;
+    MolangMemberAccessor(struct MolangMemberAccessor const &) = delete;
     MolangMemberAccessor() = delete;
 #endif
 

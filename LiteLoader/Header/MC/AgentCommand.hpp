@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class AgentCommand {
+class AgentCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,26 +18,27 @@ class AgentCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMMAND
 public:
-    class AgentCommand& operator=(class AgentCommand const&) = delete;
-    AgentCommand(class AgentCommand const&) = delete;
+    class AgentCommand& operator=(class AgentCommand const &) = delete;
+    AgentCommand(class AgentCommand const &) = delete;
     AgentCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~AgentCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 
 private:
-    MCAPI void createAgent(class Player&, class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI void createAgentOutputSuccess(class CommandOutput&, bool) const;
-    MCAPI void directionCommand(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI void getPosition(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI void reportSuccess(bool, class CommandOutput&) const;
-    MCAPI void setAgentOwner(class Agent&, class Player&) const;
-    MCAPI void setItem(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI void tpAgent(class Player&, class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI void createAgent(class Player &, class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI void createAgentOutputSuccess(class CommandOutput &, bool) const;
+    MCAPI void directionCommand(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI void getPosition(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI void itemCommand(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI void reportSuccess(bool, class CommandOutput &) const;
+    MCAPI void setAgentOwner(class Agent &, class Player &) const;
+    MCAPI void setItem(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI void tpAgent(class Player &, class CommandOrigin const &, class CommandOutput &) const;
 
 };

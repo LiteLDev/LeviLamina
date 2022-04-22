@@ -17,8 +17,8 @@ struct CrashDumpFrameData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMPFRAMEDATA
 public:
-    struct CrashDumpFrameData& operator=(struct CrashDumpFrameData const&) = delete;
-    CrashDumpFrameData(struct CrashDumpFrameData const&) = delete;
+    struct CrashDumpFrameData& operator=(struct CrashDumpFrameData const &) = delete;
+    CrashDumpFrameData(struct CrashDumpFrameData const &) = delete;
     CrashDumpFrameData() = delete;
 #endif
 

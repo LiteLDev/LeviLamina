@@ -15,8 +15,8 @@ struct TickingSystemWithInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKINGSYSTEMWITHINFO
 public:
-    struct TickingSystemWithInfo& operator=(struct TickingSystemWithInfo const&) = delete;
-    TickingSystemWithInfo(struct TickingSystemWithInfo const&) = delete;
+    struct TickingSystemWithInfo& operator=(struct TickingSystemWithInfo const &) = delete;
+    TickingSystemWithInfo(struct TickingSystemWithInfo const &) = delete;
     TickingSystemWithInfo() = delete;
 #endif
 

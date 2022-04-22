@@ -17,26 +17,26 @@ class TeleportToSubcomponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TELEPORTTOSUBCOMPONENT
 public:
-    class TeleportToSubcomponent& operator=(class TeleportToSubcomponent const&) = delete;
-    TeleportToSubcomponent(class TeleportToSubcomponent const&) = delete;
+    class TeleportToSubcomponent& operator=(class TeleportToSubcomponent const &) = delete;
+    TeleportToSubcomponent(class TeleportToSubcomponent const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~TeleportToSubcomponent();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
-    /*4*/ virtual char const* getName();
+    /*3*/ virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
+    /*4*/ virtual char const * getName();
     /*
-    inline void readfromJSON(class Json::Value& a0, class SemVersion const& a1){
-        void (TeleportToSubcomponent::*rv)(class Json::Value&, class SemVersion const&);
+    inline void readfromJSON(class Json::Value & a0, class SemVersion const & a1){
+        void (TeleportToSubcomponent::*rv)(class Json::Value &, class SemVersion const &);
         *((void**)&rv) = dlsym("?readfromJSON@TeleportToSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0), std::forward<class SemVersion const&>(a1));
+        return (this->*rv)(std::forward<class Json::Value &>(a0), std::forward<class SemVersion const &>(a1));
     }
-    inline void writetoJSON(class Json::Value& a0) const{
-        void (TeleportToSubcomponent::*rv)(class Json::Value&) const;
+    inline void writetoJSON(class Json::Value & a0) const{
+        void (TeleportToSubcomponent::*rv)(class Json::Value &) const;
         *((void**)&rv) = dlsym("?writetoJSON@TeleportToSubcomponent@@UEBAXAEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0));
+        return (this->*rv)(std::forward<class Json::Value &>(a0));
     }
     */
     MCAPI TeleportToSubcomponent();

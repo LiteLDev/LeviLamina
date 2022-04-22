@@ -18,15 +18,15 @@ class TradeResupplyDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADERESUPPLYDESCRIPTION
 public:
-    class TradeResupplyDescription& operator=(class TradeResupplyDescription const&) = delete;
-    TradeResupplyDescription(class TradeResupplyDescription const&) = delete;
+    class TradeResupplyDescription& operator=(class TradeResupplyDescription const &) = delete;
+    TradeResupplyDescription(class TradeResupplyDescription const &) = delete;
     TradeResupplyDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~TradeResupplyDescription();
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~TradeResupplyDescription(){
          (TradeResupplyDescription::*rv)();

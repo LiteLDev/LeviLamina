@@ -18,21 +18,21 @@ class MaterialReducerContainerManagerModel : public ContainerManagerModel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MATERIALREDUCERCONTAINERMANAGERMODEL
 public:
-    class MaterialReducerContainerManagerModel& operator=(class MaterialReducerContainerManagerModel const&) = delete;
-    MaterialReducerContainerManagerModel(class MaterialReducerContainerManagerModel const&) = delete;
+    class MaterialReducerContainerManagerModel& operator=(class MaterialReducerContainerManagerModel const &) = delete;
+    MaterialReducerContainerManagerModel(class MaterialReducerContainerManagerModel const &) = delete;
     MaterialReducerContainerManagerModel() = delete;
 #endif
 
 public:
     /*0*/ virtual ~MaterialReducerContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
-    /*7*/ virtual void setSlot(int, class ItemStack const&, bool);
-    /*8*/ virtual class ItemStack const& getSlot(int) const;
+    /*7*/ virtual void setSlot(int, class ItemStack const &, bool);
+    /*8*/ virtual class ItemStack const & getSlot(int) const;
     /*9*/ virtual void setData(int, int);
     /*10*/ virtual void broadcastChanges();
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
-    MCAPI MaterialReducerContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
+    MCAPI MaterialReducerContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
 protected:
 

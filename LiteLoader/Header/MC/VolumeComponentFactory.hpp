@@ -15,8 +15,8 @@ class VolumeComponentFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VOLUMECOMPONENTFACTORY
 public:
-    class VolumeComponentFactory& operator=(class VolumeComponentFactory const&) = delete;
-    VolumeComponentFactory(class VolumeComponentFactory const&) = delete;
+    class VolumeComponentFactory& operator=(class VolumeComponentFactory const &) = delete;
+    VolumeComponentFactory(class VolumeComponentFactory const &) = delete;
     VolumeComponentFactory() = delete;
 #endif
 

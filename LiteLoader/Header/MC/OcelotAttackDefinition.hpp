@@ -18,15 +18,15 @@ class OcelotAttackDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCELOTATTACKDEFINITION
 public:
-    class OcelotAttackDefinition& operator=(class OcelotAttackDefinition const&) = delete;
-    OcelotAttackDefinition(class OcelotAttackDefinition const&) = delete;
+    class OcelotAttackDefinition& operator=(class OcelotAttackDefinition const &) = delete;
+    OcelotAttackDefinition(class OcelotAttackDefinition const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~OcelotAttackDefinition();
     MCAPI OcelotAttackDefinition();
-    MCAPI void initialize(class EntityContext&, class OcelotAttackGoal&);
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class OcelotAttackDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class OcelotAttackGoal &);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class OcelotAttackDefinition>> &);
 
 protected:
 

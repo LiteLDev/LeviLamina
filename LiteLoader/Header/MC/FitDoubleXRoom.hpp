@@ -17,15 +17,15 @@ class FitDoubleXRoom {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FITDOUBLEXROOM
 public:
-    class FitDoubleXRoom& operator=(class FitDoubleXRoom const&) = delete;
-    FitDoubleXRoom(class FitDoubleXRoom const&) = delete;
+    class FitDoubleXRoom& operator=(class FitDoubleXRoom const &) = delete;
+    FitDoubleXRoom(class FitDoubleXRoom const &) = delete;
     FitDoubleXRoom() = delete;
 #endif
 
 public:
     /*0*/ virtual ~FitDoubleXRoom();
-    /*1*/ virtual bool fits(class RoomDefinition const&) const;
-    /*2*/ virtual std::unique_ptr<class OceanMonumentPiece> create(int&, class std::shared_ptr<class RoomDefinition>, class Random&);
+    /*1*/ virtual bool fits(class RoomDefinition const &) const;
+    /*2*/ virtual std::unique_ptr<class OceanMonumentPiece> create(int &, class std::shared_ptr<class RoomDefinition>, class Random &);
 
 protected:
 

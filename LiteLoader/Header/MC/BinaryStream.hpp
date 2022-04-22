@@ -50,8 +50,8 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BINARYSTREAM
 public:
-    class BinaryStream& operator=(class BinaryStream const&) = delete;
-    BinaryStream(class BinaryStream const&) = delete;
+    class BinaryStream& operator=(class BinaryStream const &) = delete;
+    BinaryStream(class BinaryStream const &) = delete;
 #endif
 
 public:
@@ -63,7 +63,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI BinaryStream(std::string&, bool);
+    MCAPI BinaryStream(std::string &, bool);
     MCAPI BinaryStream();
     MCAPI std::string getAndReleaseData();
     MCAPI void reset();
@@ -88,6 +88,6 @@ public:
 protected:
 
 private:
-    MCAPI void write(void const*, unsigned __int64);
+    MCAPI void write(void const *, unsigned __int64);
 
 };

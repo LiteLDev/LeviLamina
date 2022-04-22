@@ -22,28 +22,29 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYTRANSACTION
 public:
-    class InventoryTransaction& operator=(class InventoryTransaction const&) = delete;
+    class InventoryTransaction& operator=(class InventoryTransaction const &) = delete;
     InventoryTransaction() = delete;
 #endif
 
 public:
-    MCAPI InventoryTransaction(class InventoryTransaction const&);
+    MCAPI InventoryTransaction(class InventoryTransaction const &);
     MCAPI void _logTransaction(bool) const;
-    MCAPI void addAction(class InventoryAction const&);
-    MCAPI enum InventoryTransactionError executeFull(class Player&, bool) const;
+    MCAPI void addAction(class InventoryAction const &);
+    MCAPI enum InventoryTransactionError executeFull(class Player &, bool) const;
     MCAPI void forceBalanceTransaction();
-    MCAPI std::vector<class InventoryAction> const& getActions(class InventorySource const&) const;
-    MCAPI void postLoadItems(class BlockPalette&, bool);
-    MCAPI void serialize(class BinaryStream&, bool) const;
+    MCAPI std::vector<class InventoryAction> const & getActions(class InventorySource const &) const;
+    MCAPI class std::function<enum InventoryTransactionError (class Player &, class InventoryAction const &, bool)> getVerifyFunction(class InventorySource const &) const;
+    MCAPI void postLoadItems(class BlockPalette &, bool);
+    MCAPI void serialize(class BinaryStream &, bool) const;
     MCAPI ~InventoryTransaction();
-    MCAPI static class InventoryTransaction deserialize(class ReadOnlyBinaryStream&);
+    MCAPI static class InventoryTransaction deserialize(class ReadOnlyBinaryStream &);
     MCAPI static std::string const getInventoryTransactionErrorName(enum InventoryTransactionError);
 
 protected:
 
 private:
-    MCAPI void _dropCreatedItems(class Player&) const;
-    MCAPI void addItemToContent(class ItemStack const&, int);
-    MCAPI static class BidirectionalUnorderedMap<enum InventoryTransactionError, std::string > const inventoryTransactionErrorMap;
+    MCAPI void _dropCreatedItems(class Player &) const;
+    MCAPI void addItemToContent(class ItemStack const &, int);
+    MCAPI static class BidirectionalUnorderedMap<enum InventoryTransactionError, std::string> const inventoryTransactionErrorMap;
 
 };

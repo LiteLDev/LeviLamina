@@ -17,14 +17,14 @@ class SpawnData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNDATA
 public:
-    class SpawnData& operator=(class SpawnData const&) = delete;
+    class SpawnData& operator=(class SpawnData const &) = delete;
     SpawnData() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SpawnData();
-    MCAPI SpawnData(class SpawnData const&);
-    MCAPI SpawnData(class CompoundTag const&);
+    MCAPI SpawnData(class SpawnData const &);
+    MCAPI SpawnData(class CompoundTag const &);
     MCAPI std::unique_ptr<class CompoundTag> save();
 
 protected:

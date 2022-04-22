@@ -17,8 +17,8 @@ class ItemStackRequestActionCraftRecipeOptional {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONCRAFTRECIPEOPTIONAL
 public:
-    class ItemStackRequestActionCraftRecipeOptional& operator=(class ItemStackRequestActionCraftRecipeOptional const&) = delete;
-    ItemStackRequestActionCraftRecipeOptional(class ItemStackRequestActionCraftRecipeOptional const&) = delete;
+    class ItemStackRequestActionCraftRecipeOptional& operator=(class ItemStackRequestActionCraftRecipeOptional const &) = delete;
+    ItemStackRequestActionCraftRecipeOptional(class ItemStackRequestActionCraftRecipeOptional const &) = delete;
 #endif
 
 public:
@@ -26,8 +26,8 @@ public:
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual void _write(class BinaryStream&) const;
-    /*5*/ virtual bool _read(class ReadOnlyBinaryStream&);
+    /*4*/ virtual void _write(class BinaryStream &) const;
+    /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
     /*
     inline int getFilteredStringIndex() const{
         int (ItemStackRequestActionCraftRecipeOptional::*rv)() const;
@@ -36,7 +36,7 @@ public:
     }
     */
     MCAPI ItemStackRequestActionCraftRecipeOptional();
-    MCAPI class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const& getRecipeNetId() const;
+    MCAPI class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const & getRecipeNetId() const;
 
 protected:
 

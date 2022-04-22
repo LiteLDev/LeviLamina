@@ -17,18 +17,18 @@ class CelebrateHuntComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CELEBRATEHUNTCOMPONENT
 public:
-    class CelebrateHuntComponent& operator=(class CelebrateHuntComponent const&) = delete;
-    CelebrateHuntComponent(class CelebrateHuntComponent const&) = delete;
+    class CelebrateHuntComponent& operator=(class CelebrateHuntComponent const &) = delete;
+    CelebrateHuntComponent(class CelebrateHuntComponent const &) = delete;
     CelebrateHuntComponent() = delete;
 #endif
 
 public:
-    MCAPI enum LevelSoundEvent const getCelebrateSound(class Mob const&) const;
+    MCAPI enum LevelSoundEvent const getCelebrateSound(class Mob const &) const;
     MCAPI struct Tick const getCelebrateUntil() const;
     MCAPI struct Tick const getNextSoundEventTick() const;
     MCAPI bool isCelebrating() const;
-    MCAPI void setNextSoundEventTick(class Mob const&);
-    MCAPI void startCelebrating(struct Tick const&);
+    MCAPI void setNextSoundEventTick(class Mob const &);
+    MCAPI void startCelebrating(struct Tick const &);
     MCAPI void stopCelebrating();
 
 protected:

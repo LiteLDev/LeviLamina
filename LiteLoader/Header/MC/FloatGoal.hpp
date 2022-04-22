@@ -17,8 +17,8 @@ class FloatGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOATGOAL
 public:
-    class FloatGoal& operator=(class FloatGoal const&) = delete;
-    FloatGoal(class FloatGoal const&) = delete;
+    class FloatGoal& operator=(class FloatGoal const &) = delete;
+    FloatGoal(class FloatGoal const &) = delete;
     FloatGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI FloatGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI FloatGoal(class Mob &);
 
 protected:
 

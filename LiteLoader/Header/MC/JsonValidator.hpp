@@ -25,13 +25,13 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JSONVALIDATOR
 public:
-    class JsonValidator& operator=(class JsonValidator const&) = delete;
-    JsonValidator(class JsonValidator const&) = delete;
+    class JsonValidator& operator=(class JsonValidator const &) = delete;
+    JsonValidator(class JsonValidator const &) = delete;
     JsonValidator() = delete;
 #endif
 
 public:
-    MCAPI static bool validate(class JsonValidator::Property const&, class Json::Value const&, std::vector<std::string>*);
+    MCAPI static bool validate(class JsonValidator::Property const &, class Json::Value const &, std::vector<std::string> *);
 
 protected:
 

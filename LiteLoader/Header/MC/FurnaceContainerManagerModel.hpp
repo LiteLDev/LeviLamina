@@ -18,16 +18,16 @@ class FurnaceContainerManagerModel : public ContainerManagerModel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FURNACECONTAINERMANAGERMODEL
 public:
-    class FurnaceContainerManagerModel& operator=(class FurnaceContainerManagerModel const&) = delete;
-    FurnaceContainerManagerModel(class FurnaceContainerManagerModel const&) = delete;
+    class FurnaceContainerManagerModel& operator=(class FurnaceContainerManagerModel const &) = delete;
+    FurnaceContainerManagerModel(class FurnaceContainerManagerModel const &) = delete;
     FurnaceContainerManagerModel() = delete;
 #endif
 
 public:
     /*0*/ virtual ~FurnaceContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
-    /*7*/ virtual void setSlot(int, class ItemStack const&, bool);
-    /*8*/ virtual class ItemStack const& getSlot(int) const;
+    /*7*/ virtual void setSlot(int, class ItemStack const &, bool);
+    /*8*/ virtual class ItemStack const & getSlot(int) const;
     /*9*/ virtual void setData(int, int);
     /*10*/ virtual void broadcastChanges();
     /*15*/ virtual bool isValid(float);
@@ -39,13 +39,13 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI FurnaceContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
+    MCAPI FurnaceContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
 protected:
-    MCAPI FurnaceContainerManagerModel(class HashedString const&, enum ContainerType, enum BlockActorType, enum ContainerID, class Player&, class BlockPos const&);
+    MCAPI FurnaceContainerManagerModel(class HashedString const &, enum ContainerType, enum BlockActorType, enum ContainerID, class Player &, class BlockPos const &);
 
 private:
-    MCAPI class FurnaceBlockActor* _getFurnaceEntity();
+    MCAPI class FurnaceBlockActor * _getFurnaceEntity();
     MCAPI void _updateResultSlotInfo();
 
 };

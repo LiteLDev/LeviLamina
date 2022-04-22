@@ -17,8 +17,8 @@ class ShiftedValueAmplifier {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHIFTEDVALUEAMPLIFIER
 public:
-    class ShiftedValueAmplifier& operator=(class ShiftedValueAmplifier const&) = delete;
-    ShiftedValueAmplifier(class ShiftedValueAmplifier const&) = delete;
+    class ShiftedValueAmplifier& operator=(class ShiftedValueAmplifier const &) = delete;
+    ShiftedValueAmplifier(class ShiftedValueAmplifier const &) = delete;
     ShiftedValueAmplifier() = delete;
 #endif
 

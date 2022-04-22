@@ -17,8 +17,8 @@ struct CraftingTableDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTINGTABLEDESCRIPTION
 public:
-    struct CraftingTableDescription& operator=(struct CraftingTableDescription const&) = delete;
-    CraftingTableDescription(struct CraftingTableDescription const&) = delete;
+    struct CraftingTableDescription& operator=(struct CraftingTableDescription const &) = delete;
+    CraftingTableDescription(struct CraftingTableDescription const &) = delete;
     CraftingTableDescription() = delete;
 #endif
 

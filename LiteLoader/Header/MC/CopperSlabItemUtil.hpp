@@ -14,6 +14,6 @@ namespace CopperSlabItemUtil {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void convertToDoubleBlock(class ItemStack&, class Actor&, class BlockPos const&, class Block const&, class Block const&);
+    MCAPI void convertToDoubleBlock(class ItemStack &, class Actor &, class BlockPos const &, class Block const &, class Block const &);
 
 };

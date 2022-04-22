@@ -17,8 +17,8 @@ class ShareItemsGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAREITEMSGOAL
 public:
-    class ShareItemsGoal& operator=(class ShareItemsGoal const&) = delete;
-    ShareItemsGoal(class ShareItemsGoal const&) = delete;
+    class ShareItemsGoal& operator=(class ShareItemsGoal const &) = delete;
+    ShareItemsGoal(class ShareItemsGoal const &) = delete;
     ShareItemsGoal() = delete;
 #endif
 
@@ -30,11 +30,11 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI ShareItemsGoal(class Mob&, std::vector<struct MobDescriptor> const&, float, int, float);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI ShareItemsGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int, float);
 
 protected:
-    MCAPI struct std::pair<int, class ItemStack> selectEntityToShareWith(std::vector<struct std::pair<int, class ItemStack>> const&);
+    MCAPI struct std::pair<int, class ItemStack> selectEntityToShareWith(std::vector<struct std::pair<int, class ItemStack>> const &);
 
 private:
 

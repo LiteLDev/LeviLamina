@@ -17,13 +17,13 @@ class ContainerWeakRef {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERWEAKREF
 public:
-    class ContainerWeakRef& operator=(class ContainerWeakRef const&) = delete;
-    ContainerWeakRef(class ContainerWeakRef const&) = delete;
+    class ContainerWeakRef& operator=(class ContainerWeakRef const &) = delete;
+    ContainerWeakRef(class ContainerWeakRef const &) = delete;
 #endif
 
 public:
-    MCAPI ContainerWeakRef(struct ActorUniqueID const&, enum ActorContainerType, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const&);
-    MCAPI ContainerWeakRef(class BlockPos const&, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const&);
+    MCAPI ContainerWeakRef(struct ActorUniqueID const &, enum ActorContainerType, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
+    MCAPI ContainerWeakRef(class BlockPos const &, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
     MCAPI ContainerWeakRef();
     MCAPI operator bool() const;
     MCAPI ~ContainerWeakRef();

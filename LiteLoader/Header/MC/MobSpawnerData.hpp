@@ -15,12 +15,12 @@ class MobSpawnerData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBSPAWNERDATA
 public:
-    class MobSpawnerData& operator=(class MobSpawnerData const&) = delete;
+    class MobSpawnerData& operator=(class MobSpawnerData const &) = delete;
     MobSpawnerData() = delete;
 #endif
 
 public:
-    MCAPI MobSpawnerData(class MobSpawnerData const&);
+    MCAPI MobSpawnerData(class MobSpawnerData const &);
     MCAPI ~MobSpawnerData();
 
 protected:

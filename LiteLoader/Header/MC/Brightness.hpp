@@ -21,10 +21,10 @@ public:
 #endif
 
 public:
-    MCAPI Brightness(struct Brightness const&);
-    MCAPI Brightness(unsigned char const&);
-    MCAPI struct Brightness& operator=(struct Brightness const&);
-    MCAPI struct Brightness& operator=(struct Brightness&&);
+    MCAPI Brightness(struct Brightness const &);
+    MCAPI Brightness(unsigned char const &);
+    MCAPI struct Brightness & operator=(struct Brightness const &);
+    MCAPI struct Brightness & operator=(struct Brightness &&);
 
 protected:
 

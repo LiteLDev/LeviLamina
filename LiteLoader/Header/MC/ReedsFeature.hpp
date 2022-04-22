@@ -18,15 +18,15 @@ class ReedsFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REEDSFEATURE
 public:
-    class ReedsFeature& operator=(class ReedsFeature const&) = delete;
-    ReedsFeature(class ReedsFeature const&) = delete;
+    class ReedsFeature& operator=(class ReedsFeature const &) = delete;
+    ReedsFeature(class ReedsFeature const &) = delete;
     ReedsFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ReedsFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 protected:
 

@@ -18,16 +18,16 @@ class SetActorDataPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETACTORDATAPACKET
 public:
-    class SetActorDataPacket& operator=(class SetActorDataPacket const&) = delete;
-    SetActorDataPacket(class SetActorDataPacket const&) = delete;
+    class SetActorDataPacket& operator=(class SetActorDataPacket const &) = delete;
+    SetActorDataPacket(class SetActorDataPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~SetActorDataPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~SetActorDataPacket(){
          (SetActorDataPacket::*rv)();
@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI SetActorDataPacket(class ActorRuntimeID, class SynchedActorData&, bool);
+    MCAPI SetActorDataPacket(class ActorRuntimeID, class SynchedActorData &, bool);
     MCAPI SetActorDataPacket();
 
 protected:

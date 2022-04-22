@@ -17,8 +17,8 @@ class SwellGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWELLGOAL
 public:
-    class SwellGoal& operator=(class SwellGoal const&) = delete;
-    SwellGoal(class SwellGoal const&) = delete;
+    class SwellGoal& operator=(class SwellGoal const &) = delete;
+    SwellGoal(class SwellGoal const &) = delete;
     SwellGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
 
 protected:
 

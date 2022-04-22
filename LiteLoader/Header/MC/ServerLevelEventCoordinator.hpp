@@ -17,16 +17,16 @@ class ServerLevelEventCoordinator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERLEVELEVENTCOORDINATOR
 public:
-    class ServerLevelEventCoordinator& operator=(class ServerLevelEventCoordinator const&) = delete;
-    ServerLevelEventCoordinator(class ServerLevelEventCoordinator const&) = delete;
+    class ServerLevelEventCoordinator& operator=(class ServerLevelEventCoordinator const &) = delete;
+    ServerLevelEventCoordinator(class ServerLevelEventCoordinator const &) = delete;
     ServerLevelEventCoordinator() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ServerLevelEventCoordinator();
-    MCAPI void sendLevelAddedPlayer(class Level&, class Player&);
-    MCAPI void sendLevelRemovedPlayer(class Level&, class Player&);
-    MCAPI void sendLevelSaveData(class Level&, class CompoundTag&);
+    MCAPI void sendLevelAddedPlayer(class Level &, class Player &);
+    MCAPI void sendLevelRemovedPlayer(class Level &, class Player &);
+    MCAPI void sendLevelSaveData(class Level &, class CompoundTag &);
 
 protected:
 

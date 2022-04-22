@@ -17,14 +17,14 @@ class GameRulesChangedPacketData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMERULESCHANGEDPACKETDATA
 public:
-    class GameRulesChangedPacketData& operator=(class GameRulesChangedPacketData const&) = delete;
-    GameRulesChangedPacketData(class GameRulesChangedPacketData const&) = delete;
+    class GameRulesChangedPacketData& operator=(class GameRulesChangedPacketData const &) = delete;
+    GameRulesChangedPacketData(class GameRulesChangedPacketData const &) = delete;
     GameRulesChangedPacketData() = delete;
 #endif
 
 public:
-    MCAPI void addRule(class GameRule const&);
-    MCAPI std::vector<class GameRule> const& getRules() const;
+    MCAPI void addRule(class GameRule const &);
+    MCAPI std::vector<class GameRule> const & getRules() const;
     MCAPI void setRules(std::vector<class GameRule>);
     MCAPI ~GameRulesChangedPacketData();
 

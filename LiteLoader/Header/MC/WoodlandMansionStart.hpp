@@ -17,27 +17,19 @@ class WoodlandMansionStart {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WOODLANDMANSIONSTART
 public:
-    class WoodlandMansionStart& operator=(class WoodlandMansionStart const&) = delete;
-    WoodlandMansionStart(class WoodlandMansionStart const&) = delete;
+    class WoodlandMansionStart& operator=(class WoodlandMansionStart const &) = delete;
+    WoodlandMansionStart(class WoodlandMansionStart const &) = delete;
     WoodlandMansionStart() = delete;
 #endif
 
 public:
     /*0*/ virtual ~WoodlandMansionStart();
-    /*1*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    /*
-    inline enum StructureFeatureType getType() const{
-        enum StructureFeatureType (WoodlandMansionStart::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@WoodlandMansionStart@@UEBA?AW4StructureFeatureType@@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 
 protected:
 
 private:
-    MCAPI void _create(class Dimension&, class OverworldGenerator&, class Random&, int, int);
-    MCAPI void _fillCobblestone(class BlockPos const&, class BlockSource&, class BoundingBox const&);
-    MCAPI void _makeStairs(class BlockPos const&, class Block const&, unsigned char, unsigned char, class BlockSource&, class BoundingBox const&);
+    MCAPI void _create(class Dimension &, class Random &, int, int);
+    MCAPI void _makeStairs(class BlockPos const &, class Block const &, unsigned char, unsigned char, class BlockSource &, class BoundingBox const &);
 
 };

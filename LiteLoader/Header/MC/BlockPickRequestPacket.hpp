@@ -18,16 +18,16 @@ class BlockPickRequestPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPICKREQUESTPACKET
 public:
-    class BlockPickRequestPacket& operator=(class BlockPickRequestPacket const&) = delete;
-    BlockPickRequestPacket(class BlockPickRequestPacket const&) = delete;
+    class BlockPickRequestPacket& operator=(class BlockPickRequestPacket const &) = delete;
+    BlockPickRequestPacket(class BlockPickRequestPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~BlockPickRequestPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     MCAPI BlockPickRequestPacket();
 
 protected:

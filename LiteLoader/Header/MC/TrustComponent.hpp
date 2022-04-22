@@ -17,17 +17,17 @@ class TrustComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRUSTCOMPONENT
 public:
-    class TrustComponent& operator=(class TrustComponent const&) = delete;
-    TrustComponent(class TrustComponent const&) = delete;
+    class TrustComponent& operator=(class TrustComponent const &) = delete;
+    TrustComponent(class TrustComponent const &) = delete;
 #endif
 
 public:
     MCAPI TrustComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag&);
+    MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI void assignTrustedPlayer(struct ActorUniqueID);
-    MCAPI class std::unordered_set<struct ActorUniqueID, struct std::hash<struct ActorUniqueID>, struct std::equal_to<struct ActorUniqueID>, class std::allocator<struct ActorUniqueID> > const& getTrustedPlayerIDs() const;
-    MCAPI void initFromDefinition(class Actor&);
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI class std::unordered_set<struct ActorUniqueID, struct std::hash<struct ActorUniqueID>, struct std::equal_to<struct ActorUniqueID>, class std::allocator<struct ActorUniqueID>> const & getTrustedPlayerIDs() const;
+    MCAPI void initFromDefinition(class Actor &);
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
 
 protected:
 

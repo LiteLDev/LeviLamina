@@ -1,6 +1,6 @@
+#pragma once
 #include "../../Stmt.h"
 
-struct sqlite3;
 struct sqlite3_stmt;
 
 namespace DB
@@ -16,9 +16,12 @@ class SQLiteStmt : public Stmt
     RowHeader resultHeader;
     int boundParamsCount = 0;
     int totalParamsCount = 0;
-    int affectedRowsCount = -1;
+    int steps = 0;
+    uint64_t affectedRowCount = -1;
+    uint64_t insertRowId = -1;
     bool onHeap = false;
     bool stepped = false;
+    bool executed = false;
     std::vector<int> boundIndexes;
 
     SQLiteStmt(sqlite3_stmt* stmt);
@@ -36,14 +39,21 @@ public:
     Row fetch();
     Stmt& fetchAll(std::function<bool(const Row&)> cb);
     ResultSet fetchAll();
-    ResultSet fetchAll(RowHeader& header);
-	Stmt& reset();
+    /**
+     * @see Stmt::reset for details
+     * @see https://www.sqlite.org/c3ref/reset.html
+     */
+    Stmt& reset();
+    Stmt& clear();
     void close();
-    int getAffectedRows();
-    int getUnboundParams();
-    int getBoundParams();
-    int getParamsCount();
-    DBType getType();
+    void destroy();
+    uint64_t getAffectedRows() const;
+    uint64_t getInsertId() const;
+    int getUnboundParams() const;
+    int getBoundParams() const;
+    int getParamsCount() const;
+    Session* getSession() const;
+    DBType getType() const;
 
     Stmt& operator,(const BindType& b);
 

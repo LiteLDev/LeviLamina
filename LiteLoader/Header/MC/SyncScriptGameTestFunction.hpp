@@ -16,15 +16,15 @@ class SyncScriptGameTestFunction : public BaseScriptGameTestFunction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SYNCSCRIPTGAMETESTFUNCTION
 public:
-    class SyncScriptGameTestFunction& operator=(class SyncScriptGameTestFunction const&) = delete;
-    SyncScriptGameTestFunction(class SyncScriptGameTestFunction const&) = delete;
+    class SyncScriptGameTestFunction& operator=(class SyncScriptGameTestFunction const &) = delete;
+    SyncScriptGameTestFunction(class SyncScriptGameTestFunction const &) = delete;
     SyncScriptGameTestFunction() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SyncScriptGameTestFunction();
-    /*2*/ virtual std::unique_ptr<class gametest::IGameTestFunctionRunResult> run(class gametest::BaseGameTestHelper&, class gametest::IGameTestFunctionContext&) const;
-    MCAPI SyncScriptGameTestFunction(class Scripting::WeakLifetimeScope, class Scripting::Closure<void (struct Scripting::TypedObjectHandle<class ScriptGameTestHelper>)>, std::string const&);
+    /*2*/ virtual std::unique_ptr<class gametest::IGameTestFunctionRunResult> run(class gametest::BaseGameTestHelper &, class gametest::IGameTestFunctionContext &) const;
+    MCAPI SyncScriptGameTestFunction(class Scripting::WeakLifetimeScope, class Scripting::Closure<void (struct Scripting::TypedObjectHandle<class ScriptGameTestHelper>)>, std::string const &);
 
 protected:
 

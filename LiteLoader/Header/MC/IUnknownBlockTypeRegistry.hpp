@@ -17,8 +17,8 @@ class IUnknownBlockTypeRegistry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IUNKNOWNBLOCKTYPEREGISTRY
 public:
-    class IUnknownBlockTypeRegistry& operator=(class IUnknownBlockTypeRegistry const&) = delete;
-    IUnknownBlockTypeRegistry(class IUnknownBlockTypeRegistry const&) = delete;
+    class IUnknownBlockTypeRegistry& operator=(class IUnknownBlockTypeRegistry const &) = delete;
+    IUnknownBlockTypeRegistry(class IUnknownBlockTypeRegistry const &) = delete;
     IUnknownBlockTypeRegistry() = delete;
 #endif
 

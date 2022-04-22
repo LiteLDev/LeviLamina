@@ -18,16 +18,16 @@ class DisconnectPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DISCONNECTPACKET
 public:
-    class DisconnectPacket& operator=(class DisconnectPacket const&) = delete;
-    DisconnectPacket(class DisconnectPacket const&) = delete;
+    class DisconnectPacket& operator=(class DisconnectPacket const &) = delete;
+    DisconnectPacket(class DisconnectPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~DisconnectPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~DisconnectPacket(){
          (DisconnectPacket::*rv)();
@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI DisconnectPacket(std::string const&, bool);
+    MCAPI DisconnectPacket(std::string const &, bool);
     MCAPI DisconnectPacket();
 
 protected:

@@ -22,18 +22,18 @@ inline class EntityContext& getStackRef() {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STACKRESULTSTORAGEENTITY
 public:
-    class StackResultStorageEntity& operator=(class StackResultStorageEntity const&) = delete;
-    StackResultStorageEntity(class StackResultStorageEntity const&) = delete;
+    class StackResultStorageEntity& operator=(class StackResultStorageEntity const &) = delete;
+    StackResultStorageEntity(class StackResultStorageEntity const &) = delete;
     StackResultStorageEntity() = delete;
 #endif
 
 public:
 
 protected:
-    MCAPI StackResultStorageEntity(class StackResultStorageEntity&&);
-    MCAPI StackResultStorageEntity(class OwnerStorageEntity const&);
-    MCAPI StackResultStorageEntity(class WeakStorageEntity const&);
-    MCAPI class EntityContext& _getStackRef() const;
+    MCAPI StackResultStorageEntity(class StackResultStorageEntity &&);
+    MCAPI StackResultStorageEntity(class OwnerStorageEntity const &);
+    MCAPI StackResultStorageEntity(class WeakStorageEntity const &);
+    MCAPI class EntityContext & _getStackRef() const;
     MCAPI bool _hasValue() const;
 
 private:

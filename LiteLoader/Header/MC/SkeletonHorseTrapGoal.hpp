@@ -17,8 +17,8 @@ class SkeletonHorseTrapGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKELETONHORSETRAPGOAL
 public:
-    class SkeletonHorseTrapGoal& operator=(class SkeletonHorseTrapGoal const&) = delete;
-    SkeletonHorseTrapGoal(class SkeletonHorseTrapGoal const&) = delete;
+    class SkeletonHorseTrapGoal& operator=(class SkeletonHorseTrapGoal const &) = delete;
+    SkeletonHorseTrapGoal(class SkeletonHorseTrapGoal const &) = delete;
     SkeletonHorseTrapGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline void start(){
         void (SkeletonHorseTrapGoal::*rv)();
@@ -38,11 +38,11 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI SkeletonHorseTrapGoal(class Horse&, int, float);
+    MCAPI SkeletonHorseTrapGoal(class Horse &, int, float);
 
 protected:
 
 private:
-    MCAPI class Skeleton* _createSkeleton(enum Difficulty const&, class Horse const&);
+    MCAPI class Skeleton * _createSkeleton(enum Difficulty const &, class Horse const &);
 
 };

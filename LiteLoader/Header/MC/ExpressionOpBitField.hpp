@@ -17,8 +17,8 @@ struct ExpressionOpBitField {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPRESSIONOPBITFIELD
 public:
-    struct ExpressionOpBitField& operator=(struct ExpressionOpBitField const&) = delete;
-    ExpressionOpBitField(struct ExpressionOpBitField const&) = delete;
+    struct ExpressionOpBitField& operator=(struct ExpressionOpBitField const &) = delete;
+    ExpressionOpBitField(struct ExpressionOpBitField const &) = delete;
     ExpressionOpBitField() = delete;
 #endif
 
@@ -26,6 +26,8 @@ public:
     MCAPI bool areBitsSet(enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp) const;
     MCAPI bool areBitsSet(enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp) const;
     MCAPI bool areBitsSet(enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp) const;
+    MCAPI bool areBitsSet(enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp) const;
+    MCAPI bool areBitsSet(enum ExpressionOp, enum ExpressionOp) const;
 
 protected:
 

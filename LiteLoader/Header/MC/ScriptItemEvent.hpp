@@ -15,8 +15,8 @@ class ScriptItemEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTITEMEVENT
 public:
-    class ScriptItemEvent& operator=(class ScriptItemEvent const&) = delete;
-    ScriptItemEvent(class ScriptItemEvent const&) = delete;
+    class ScriptItemEvent& operator=(class ScriptItemEvent const &) = delete;
+    ScriptItemEvent(class ScriptItemEvent const &) = delete;
     ScriptItemEvent() = delete;
 #endif
 

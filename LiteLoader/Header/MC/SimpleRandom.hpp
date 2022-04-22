@@ -17,8 +17,8 @@ class SimpleRandom {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLERANDOM
 public:
-    class SimpleRandom& operator=(class SimpleRandom const&) = delete;
-    SimpleRandom(class SimpleRandom const&) = delete;
+    class SimpleRandom& operator=(class SimpleRandom const &) = delete;
+    SimpleRandom(class SimpleRandom const &) = delete;
     SimpleRandom() = delete;
 #endif
 

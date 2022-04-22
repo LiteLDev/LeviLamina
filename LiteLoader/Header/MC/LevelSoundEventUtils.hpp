@@ -17,8 +17,8 @@ class LevelSoundEventUtils {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSOUNDEVENTUTILS
 public:
-    class LevelSoundEventUtils& operator=(class LevelSoundEventUtils const&) = delete;
-    LevelSoundEventUtils(class LevelSoundEventUtils const&) = delete;
+    class LevelSoundEventUtils& operator=(class LevelSoundEventUtils const &) = delete;
+    LevelSoundEventUtils(class LevelSoundEventUtils const &) = delete;
     LevelSoundEventUtils() = delete;
 #endif
 

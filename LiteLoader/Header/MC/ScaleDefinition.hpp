@@ -18,8 +18,8 @@ struct ScaleDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCALEDEFINITION
 public:
-    struct ScaleDefinition& operator=(struct ScaleDefinition const&) = delete;
-    ScaleDefinition(struct ScaleDefinition const&) = delete;
+    struct ScaleDefinition& operator=(struct ScaleDefinition const &) = delete;
+    ScaleDefinition(struct ScaleDefinition const &) = delete;
     ScaleDefinition() = delete;
 #endif
 

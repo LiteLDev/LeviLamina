@@ -9,7 +9,7 @@
 
 #undef BEFORE_EXTRA
 
-struct BlockPlacementFilterDescription {
+class BlockPlacementFilterDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -18,12 +18,27 @@ struct BlockPlacementFilterDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPLACEMENTFILTERDESCRIPTION
 public:
-    struct BlockPlacementFilterDescription& operator=(struct BlockPlacementFilterDescription const&) = delete;
-    BlockPlacementFilterDescription(struct BlockPlacementFilterDescription const&) = delete;
+    class BlockPlacementFilterDescription& operator=(class BlockPlacementFilterDescription const &) = delete;
+    BlockPlacementFilterDescription(class BlockPlacementFilterDescription const &) = delete;
     BlockPlacementFilterDescription() = delete;
 #endif
 
 public:
+    /*0*/ virtual ~BlockPlacementFilterDescription();
+    /*1*/ virtual std::string const & getName() const;
+    /*2*/ virtual void initializeComponent(class EntityContext &) const;
+    /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &) const;
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
+    /*
+    inline bool isNetworkComponent() const{
+        bool (BlockPlacementFilterDescription::*rv)() const;
+        *((void**)&rv) = dlsym("?isNetworkComponent@BlockPlacementFilterDescription@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
+    MCAPI static std::string const NameID;
 
 protected:
 

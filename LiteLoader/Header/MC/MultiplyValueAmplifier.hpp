@@ -17,8 +17,8 @@ class MultiplyValueAmplifier {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MULTIPLYVALUEAMPLIFIER
 public:
-    class MultiplyValueAmplifier& operator=(class MultiplyValueAmplifier const&) = delete;
-    MultiplyValueAmplifier(class MultiplyValueAmplifier const&) = delete;
+    class MultiplyValueAmplifier& operator=(class MultiplyValueAmplifier const &) = delete;
+    MultiplyValueAmplifier(class MultiplyValueAmplifier const &) = delete;
     MultiplyValueAmplifier() = delete;
 #endif
 

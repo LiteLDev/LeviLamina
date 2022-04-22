@@ -17,13 +17,13 @@ class LootComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTCOMPONENT
 public:
-    class LootComponent& operator=(class LootComponent const&) = delete;
-    LootComponent(class LootComponent const&) = delete;
+    class LootComponent& operator=(class LootComponent const &) = delete;
+    LootComponent(class LootComponent const &) = delete;
 #endif
 
 public:
     MCAPI LootComponent();
-    MCAPI void spawnResources(class BlockSource&, class BlockPos const&, class Block const&, std::vector<class Item const* >*, float, int, class ItemStack const&) const;
+    MCAPI void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, std::vector<class Item const *> *, float, int, class ItemStack const &) const;
 
 protected:
 

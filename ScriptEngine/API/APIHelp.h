@@ -50,6 +50,12 @@ bool inline IsInstanceOf(Local<Value> v)
     return EngineScope::currentEngine()->isInstanceOf<T>(v);
 }
 
+// 类型错误输出
+#define LOG_WRONG_ARGS \
+logger.error("Wrong type of argument!"); \
+logger.error(std::string("In API: ") + __FUNCTION__); \
+logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName)
+
 // 至少COUNT个参数
 #define CHECK_ARGS_COUNT(ARGS,COUNT) \
     if(ARGS.size()<COUNT) \

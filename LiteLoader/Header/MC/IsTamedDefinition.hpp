@@ -18,14 +18,14 @@ struct IsTamedDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISTAMEDDEFINITION
 public:
-    struct IsTamedDefinition& operator=(struct IsTamedDefinition const&) = delete;
-    IsTamedDefinition(struct IsTamedDefinition const&) = delete;
+    struct IsTamedDefinition& operator=(struct IsTamedDefinition const &) = delete;
+    IsTamedDefinition(struct IsTamedDefinition const &) = delete;
     IsTamedDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&);
-    MCAPI void uninitialize(class EntityContext&);
+    MCAPI void initialize(class EntityContext &);
+    MCAPI void uninitialize(class EntityContext &);
 
 protected:
 

@@ -17,8 +17,8 @@ class BaseContainerMenu {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASECONTAINERMENU
 public:
-    class BaseContainerMenu& operator=(class BaseContainerMenu const&) = delete;
-    BaseContainerMenu(class BaseContainerMenu const&) = delete;
+    class BaseContainerMenu& operator=(class BaseContainerMenu const &) = delete;
+    BaseContainerMenu(class BaseContainerMenu const &) = delete;
     BaseContainerMenu() = delete;
 #endif
 
@@ -77,7 +77,7 @@ public:
     */
 
 protected:
-    MCAPI void _saveLastSlots(class Container*);
+    MCAPI void _saveLastSlots(class Container *);
 
 private:
 

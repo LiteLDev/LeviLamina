@@ -18,12 +18,12 @@ struct AnimationScriptsDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATIONSCRIPTSDESCRIPTION
 public:
-    struct AnimationScriptsDescription& operator=(struct AnimationScriptsDescription const&) = delete;
+    struct AnimationScriptsDescription& operator=(struct AnimationScriptsDescription const &) = delete;
     AnimationScriptsDescription() = delete;
 #endif
 
 public:
-    MCAPI AnimationScriptsDescription(struct AnimationScriptsDescription const&);
+    MCAPI AnimationScriptsDescription(struct AnimationScriptsDescription const &);
 
 protected:
 

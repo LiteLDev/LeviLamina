@@ -18,8 +18,8 @@ class ContentLogFileEndPoint {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTENTLOGFILEENDPOINT
 public:
-    class ContentLogFileEndPoint& operator=(class ContentLogFileEndPoint const&) = delete;
-    ContentLogFileEndPoint(class ContentLogFileEndPoint const&) = delete;
+    class ContentLogFileEndPoint& operator=(class ContentLogFileEndPoint const &) = delete;
+    ContentLogFileEndPoint(class ContentLogFileEndPoint const &) = delete;
     ContentLogFileEndPoint() = delete;
 #endif
 
@@ -30,20 +30,20 @@ public:
         *((void**)&rv) = dlsym("?logOnlyOnce@ContentLogFileEndPoint@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isEnabled() const{
-        bool (ContentLogFileEndPoint::*rv)() const;
-        *((void**)&rv) = dlsym("?isEnabled@ContentLogFileEndPoint@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline void flush(){
         void (ContentLogFileEndPoint::*rv)();
         *((void**)&rv) = dlsym("?flush@ContentLogFileEndPoint@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void log(enum LogArea a0, enum LogLevel a1, char const* a2){
-        void (ContentLogFileEndPoint::*rv)(enum LogArea, enum LogLevel, char const*);
+    inline bool isEnabled() const{
+        bool (ContentLogFileEndPoint::*rv)() const;
+        *((void**)&rv) = dlsym("?isEnabled@ContentLogFileEndPoint@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline void log(enum LogArea a0, enum LogLevel a1, char const * a2){
+        void (ContentLogFileEndPoint::*rv)(enum LogArea, enum LogLevel, char const *);
         *((void**)&rv) = dlsym("?log@ContentLogFileEndPoint@@UEAAXW4LogArea@@W4LogLevel@@PEBD@Z");
-        return (this->*rv)(std::forward<enum LogArea>(a0), std::forward<enum LogLevel>(a1), std::forward<char const*>(a2));
+        return (this->*rv)(std::forward<enum LogArea>(a0), std::forward<enum LogLevel>(a1), std::forward<char const *>(a2));
     }
     inline void setEnabled(bool a0){
         void (ContentLogFileEndPoint::*rv)(bool);

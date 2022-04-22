@@ -2,12 +2,13 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
-class AllowListCommand {
+class AllowListCommand : public Command {
 
 #define AFTER_EXTRA
 
@@ -15,19 +16,19 @@ class AllowListCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ALLOWLISTCOMMAND
 public:
-    class AllowListCommand& operator=(class AllowListCommand const&) = delete;
-    AllowListCommand(class AllowListCommand const&) = delete;
+    class AllowListCommand& operator=(class AllowListCommand const &) = delete;
+    AllowListCommand(class AllowListCommand const &) = delete;
     AllowListCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~AllowListCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&, class AllowListFile&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &, class AllowListFile &);
 
 protected:
 
 private:
-    MCAPI static class AllowListFile* mAllowListFile;
+    MCAPI static class AllowListFile * mAllowListFile;
 
 };

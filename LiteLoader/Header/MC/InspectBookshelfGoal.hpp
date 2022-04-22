@@ -18,8 +18,8 @@ class InspectBookshelfGoal : public BaseMoveToBlockGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSPECTBOOKSHELFGOAL
 public:
-    class InspectBookshelfGoal& operator=(class InspectBookshelfGoal const&) = delete;
-    InspectBookshelfGoal(class InspectBookshelfGoal const&) = delete;
+    class InspectBookshelfGoal& operator=(class InspectBookshelfGoal const &) = delete;
+    InspectBookshelfGoal(class InspectBookshelfGoal const &) = delete;
     InspectBookshelfGoal() = delete;
 #endif
 
@@ -28,13 +28,13 @@ public:
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_3();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*11*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
-    /*13*/ virtual bool _canReach(class BlockPos const&);
+    /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
+    /*13*/ virtual bool _canReach(class BlockPos const &);
     /*17*/ virtual bool findTargetBlock();
-    MCAPI InspectBookshelfGoal(class Mob&, float, int, int, int, float);
+    MCAPI InspectBookshelfGoal(class Mob &, float, int, int, int, float);
 
 protected:
 

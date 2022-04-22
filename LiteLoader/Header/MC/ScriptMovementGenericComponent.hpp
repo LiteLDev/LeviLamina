@@ -18,8 +18,8 @@ class ScriptMovementGenericComponent : public MovementScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMOVEMENTGENERICCOMPONENT
 public:
-    class ScriptMovementGenericComponent& operator=(class ScriptMovementGenericComponent const&) = delete;
-    ScriptMovementGenericComponent(class ScriptMovementGenericComponent const&) = delete;
+    class ScriptMovementGenericComponent& operator=(class ScriptMovementGenericComponent const &) = delete;
+    ScriptMovementGenericComponent(class ScriptMovementGenericComponent const &) = delete;
     ScriptMovementGenericComponent() = delete;
 #endif
 

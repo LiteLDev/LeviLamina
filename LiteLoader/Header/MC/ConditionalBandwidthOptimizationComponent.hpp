@@ -17,15 +17,16 @@ class ConditionalBandwidthOptimizationComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONDITIONALBANDWIDTHOPTIMIZATIONCOMPONENT
 public:
-    class ConditionalBandwidthOptimizationComponent& operator=(class ConditionalBandwidthOptimizationComponent const&) = delete;
-    ConditionalBandwidthOptimizationComponent(class ConditionalBandwidthOptimizationComponent const&) = delete;
+    class ConditionalBandwidthOptimizationComponent& operator=(class ConditionalBandwidthOptimizationComponent const &) = delete;
     ConditionalBandwidthOptimizationComponent() = delete;
 #endif
 
 public:
-    MCAPI struct ConditionalBandwidthOptimization getCurrentOptimizationValues(class Actor&);
-    MCAPI void initFromDefinition(class Actor&, class ConditionalBandwidthOptimizationDefinition const&);
-    MCAPI class ConditionalBandwidthOptimizationComponent& operator=(class ConditionalBandwidthOptimizationComponent&&);
+    MCAPI ConditionalBandwidthOptimizationComponent(class ConditionalBandwidthOptimizationComponent &&);
+    MCAPI ConditionalBandwidthOptimizationComponent(class ConditionalBandwidthOptimizationComponent const &);
+    MCAPI struct ConditionalBandwidthOptimization getCurrentOptimizationValues(class Actor &);
+    MCAPI void initFromDefinition(class Actor &, class ConditionalBandwidthOptimizationDefinition const &);
+    MCAPI class ConditionalBandwidthOptimizationComponent & operator=(class ConditionalBandwidthOptimizationComponent &&);
     MCAPI ~ConditionalBandwidthOptimizationComponent();
 
 protected:

@@ -18,15 +18,15 @@ class TameableDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TAMEABLEDEFINITION
 public:
-    class TameableDefinition& operator=(class TameableDefinition const&) = delete;
-    TameableDefinition(class TameableDefinition const&) = delete;
+    class TameableDefinition& operator=(class TameableDefinition const &) = delete;
+    TameableDefinition(class TameableDefinition const &) = delete;
 #endif
 
 public:
     MCAPI TameableDefinition();
-    MCAPI void addTamingItemByName(std::string const&);
-    MCAPI void initialize(class EntityContext&, class TameableComponent&) const;
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TameableDefinition> >&);
+    MCAPI void addTamingItemByName(std::string const &);
+    MCAPI void initialize(class EntityContext &, class TameableComponent &) const;
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TameableDefinition>> &);
 
 protected:
 

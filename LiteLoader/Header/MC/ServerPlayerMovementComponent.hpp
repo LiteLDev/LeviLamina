@@ -15,13 +15,13 @@ struct ServerPlayerMovementComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPLAYERMOVEMENTCOMPONENT
 public:
-    struct ServerPlayerMovementComponent& operator=(struct ServerPlayerMovementComponent const&) = delete;
-    ServerPlayerMovementComponent(struct ServerPlayerMovementComponent const&) = delete;
+    struct ServerPlayerMovementComponent& operator=(struct ServerPlayerMovementComponent const &) = delete;
+    ServerPlayerMovementComponent(struct ServerPlayerMovementComponent const &) = delete;
     ServerPlayerMovementComponent() = delete;
 #endif
 
 public:
-    MCAPI ServerPlayerMovementComponent(struct ServerPlayerMovementComponent&&);
+    MCAPI ServerPlayerMovementComponent(struct ServerPlayerMovementComponent &&);
     MCAPI ~ServerPlayerMovementComponent();
 
 protected:

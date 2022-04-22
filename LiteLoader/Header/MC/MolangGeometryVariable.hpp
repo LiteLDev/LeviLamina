@@ -15,8 +15,8 @@ struct MolangGeometryVariable {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGGEOMETRYVARIABLE
 public:
-    struct MolangGeometryVariable& operator=(struct MolangGeometryVariable const&) = delete;
-    MolangGeometryVariable(struct MolangGeometryVariable const&) = delete;
+    struct MolangGeometryVariable& operator=(struct MolangGeometryVariable const &) = delete;
+    MolangGeometryVariable(struct MolangGeometryVariable const &) = delete;
     MolangGeometryVariable() = delete;
 #endif
 

@@ -17,27 +17,27 @@ class CircuitSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CIRCUITSYSTEM
 public:
-    class CircuitSystem& operator=(class CircuitSystem const&) = delete;
-    CircuitSystem(class CircuitSystem const&) = delete;
+    class CircuitSystem& operator=(class CircuitSystem const &) = delete;
+    CircuitSystem(class CircuitSystem const &) = delete;
 #endif
 
 public:
     MCAPI CircuitSystem();
-    MCAPI void evaluate(class BlockSource*);
-    MCAPI int getStrength(class BlockPos const&);
-    MCAPI void invalidatePos(class BlockPos const&);
-    MCAPI bool isAvailableAt(class BlockPos const&);
-    MCAPI void preSetupPoweredBlocks(class ChunkPos const&);
-    MCAPI void removeComponents(class BlockPos const&);
-    MCAPI void setStrength(class BlockPos const&, int);
-    MCAPI void updateBlocks(class BlockSource&, class BlockPos const&);
-    MCAPI void updateDependencies(class BlockSource*);
+    MCAPI void evaluate(class BlockSource *);
+    MCAPI int getStrength(class BlockPos const &);
+    MCAPI void invalidatePos(class BlockPos const &);
+    MCAPI bool isAvailableAt(class BlockPos const &);
+    MCAPI void preSetupPoweredBlocks(class ChunkPos const &);
+    MCAPI void removeComponents(class BlockPos const &);
+    MCAPI void setStrength(class BlockPos const &, int);
+    MCAPI void updateBlocks(class BlockSource &, class BlockPos const &);
+    MCAPI void updateDependencies(class BlockSource *);
 
 protected:
 
 private:
-    MCAPI class BaseCircuitComponent* createComponent(class BlockPos const&, unsigned char, std::unique_ptr<class BaseCircuitComponent>);
+    MCAPI class BaseCircuitComponent * createComponent(class BlockPos const &, unsigned char, std::unique_ptr<class BaseCircuitComponent>);
     MCAPI void evaluateComponents(bool);
-    MCAPI void updateIndividualBlock(class gsl::not_null<class BaseCircuitComponent* >, class BlockPos const&, class BlockPos const&, class BlockSource&);
+    MCAPI void updateIndividualBlock(class gsl::not_null<class BaseCircuitComponent *>, class BlockPos const &, class BlockPos const &, class BlockSource &);
 
 };

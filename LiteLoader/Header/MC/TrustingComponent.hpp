@@ -17,13 +17,13 @@ class TrustingComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRUSTINGCOMPONENT
 public:
-    class TrustingComponent& operator=(class TrustingComponent const&) = delete;
-    TrustingComponent(class TrustingComponent const&) = delete;
+    class TrustingComponent& operator=(class TrustingComponent const &) = delete;
+    TrustingComponent(class TrustingComponent const &) = delete;
 #endif
 
 public:
     MCAPI TrustingComponent();
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+    MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
 
 protected:
 

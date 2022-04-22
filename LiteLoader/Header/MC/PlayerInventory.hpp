@@ -23,8 +23,8 @@ struct SlotData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERINVENTORY
 public:
-    class PlayerInventory& operator=(class PlayerInventory const&) = delete;
-    PlayerInventory(class PlayerInventory const&) = delete;
+    class PlayerInventory& operator=(class PlayerInventory const &) = delete;
+    PlayerInventory(class PlayerInventory const &) = delete;
     PlayerInventory() = delete;
 #endif
 
@@ -40,35 +40,34 @@ public:
         *((void**)&rv) = dlsym("?containerContentChanged@PlayerInventory@@UEAAXH@Z");
         return (this->*rv)(std::forward<int>(a0));
     }
-    inline void createTransactionContext(class std::function<void (class Container& , int, class ItemStack const& , class ItemStack const& )> a0, class std::function<void (void)> a1){
-        void (PlayerInventory::*rv)(class std::function<void (class Container& , int, class ItemStack const& , class ItemStack const& )>, class std::function<void (void)>);
+    inline void createTransactionContext(class std::function<void (class Container &, int, class ItemStack const &, class ItemStack const &)> a0, class std::function<void (void)> a1){
+        void (PlayerInventory::*rv)(class std::function<void (class Container &, int, class ItemStack const &, class ItemStack const &)>, class std::function<void (void)>);
         *((void**)&rv) = dlsym("?createTransactionContext@PlayerInventory@@UEAAXV?$function@$$A6AXAEAVContainer@@HAEBVItemStack@@1@Z@std@@V?$function@$$A6AXXZ@3@@Z");
-        return (this->*rv)(std::forward<class std::function<void (class Container& , int, class ItemStack const& , class ItemStack const& )>>(a0), std::forward<class std::function<void (void)>>(a1));
+        return (this->*rv)(std::forward<class std::function<void (class Container &, int, class ItemStack const &, class ItemStack const &)>>(a0), std::forward<class std::function<void (void)>>(a1));
     }
     */
-    MCAPI bool add(class ItemStack&, bool);
-    MCAPI void addListener(class ContainerContentChangeListener*);
-    MCAPI bool canAdd(class ItemStack const&) const;
+    MCAPI bool add(class ItemStack &, bool);
+    MCAPI void addListener(class ContainerContentChangeListener *);
+    MCAPI bool canAdd(class ItemStack const &) const;
     MCAPI void clearSlot(int, enum ContainerID);
     MCAPI void clearVanishEnchantedItemsOnDeath();
     MCAPI int getContainerSize(enum ContainerID) const;
     MCAPI int getFirstEmptySlot() const;
     MCAPI int getHotbarSize() const;
-    MCAPI class ItemStack const& getItem(int, enum ContainerID) const;
-    MCAPI int getItemCount(class std::function<bool (class ItemStack const& )>);
+    MCAPI class ItemStack const & getItem(int, enum ContainerID) const;
+    MCAPI int getItemCount(class std::function<bool (class ItemStack const &)>);
     MCAPI enum ContainerID getSelectedContainerId();
-    MCAPI class ItemStack const& getSelectedItem();
+    MCAPI class ItemStack const & getSelectedItem();
     MCAPI struct PlayerInventory::SlotData getSelectedSlot() const;
-    MCAPI int getSlotWithItem(class ItemStack const&, bool, bool) const;
-    MCAPI std::vector<class ItemStack const* > getSlots() const;
+    MCAPI int getSlotWithItem(class ItemStack const &, bool, bool) const;
     MCAPI void removeItem(int, int, enum ContainerID);
-    MCAPI void removeListener(class ContainerContentChangeListener*);
+    MCAPI void removeListener(class ContainerContentChangeListener *);
     MCAPI bool removeResource(int);
     MCAPI bool selectSlot(int, enum ContainerID);
-    MCAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const& )>);
+    MCAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     MCAPI void setContainerChanged(int);
-    MCAPI void setItem(int, class ItemStack const&, enum ContainerID, bool);
-    MCAPI void setSelectedItem(class ItemStack const&);
+    MCAPI void setItem(int, class ItemStack const &, enum ContainerID, bool);
+    MCAPI void setSelectedItem(class ItemStack const &);
     MCAPI void setupDefaultInventory();
     MCAPI void swapSlots(int, int);
 

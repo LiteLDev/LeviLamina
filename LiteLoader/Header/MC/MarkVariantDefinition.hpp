@@ -18,8 +18,8 @@ struct MarkVariantDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MARKVARIANTDEFINITION
 public:
-    struct MarkVariantDefinition& operator=(struct MarkVariantDefinition const&) = delete;
-    MarkVariantDefinition(struct MarkVariantDefinition const&) = delete;
+    struct MarkVariantDefinition& operator=(struct MarkVariantDefinition const &) = delete;
+    MarkVariantDefinition(struct MarkVariantDefinition const &) = delete;
     MarkVariantDefinition() = delete;
 #endif
 

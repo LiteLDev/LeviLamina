@@ -17,8 +17,8 @@ class TransportInterface {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRANSPORTINTERFACE
 public:
-    class TransportInterface& operator=(class TransportInterface const&) = delete;
-    TransportInterface(class TransportInterface const&) = delete;
+    class TransportInterface& operator=(class TransportInterface const &) = delete;
+    TransportInterface(class TransportInterface const &) = delete;
     TransportInterface() = delete;
 #endif
 

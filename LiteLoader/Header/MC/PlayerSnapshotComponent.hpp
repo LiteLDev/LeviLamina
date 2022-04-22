@@ -17,8 +17,8 @@ struct PlayerSnapshotComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSNAPSHOTCOMPONENT
 public:
-    struct PlayerSnapshotComponent& operator=(struct PlayerSnapshotComponent const&) = delete;
-    PlayerSnapshotComponent(struct PlayerSnapshotComponent const&) = delete;
+    struct PlayerSnapshotComponent& operator=(struct PlayerSnapshotComponent const &) = delete;
+    PlayerSnapshotComponent(struct PlayerSnapshotComponent const &) = delete;
     PlayerSnapshotComponent() = delete;
 #endif
 

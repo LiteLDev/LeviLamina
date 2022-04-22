@@ -18,13 +18,13 @@ class EntityTypes {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYTYPES
 public:
-    class EntityTypes& operator=(class EntityTypes const&) = delete;
-    EntityTypes(class EntityTypes const&) = delete;
+    class EntityTypes& operator=(class EntityTypes const &) = delete;
+    EntityTypes(class EntityTypes const &) = delete;
     EntityTypes() = delete;
 #endif
 
 public:
-    MCAPI bool parseJson(class Json::Value const&);
+    MCAPI bool parseJson(class Json::Value const &);
     MCAPI ~EntityTypes();
 
 protected:

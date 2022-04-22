@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class CodeBuilderCommand {
+class CodeBuilderCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,15 +18,15 @@ class CodeBuilderCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CODEBUILDERCOMMAND
 public:
-    class CodeBuilderCommand& operator=(class CodeBuilderCommand const&) = delete;
-    CodeBuilderCommand(class CodeBuilderCommand const&) = delete;
+    class CodeBuilderCommand& operator=(class CodeBuilderCommand const &) = delete;
+    CodeBuilderCommand(class CodeBuilderCommand const &) = delete;
     CodeBuilderCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~CodeBuilderCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 

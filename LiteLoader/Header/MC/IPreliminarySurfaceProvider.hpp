@@ -17,8 +17,8 @@ class IPreliminarySurfaceProvider {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IPRELIMINARYSURFACEPROVIDER
 public:
-    class IPreliminarySurfaceProvider& operator=(class IPreliminarySurfaceProvider const&) = delete;
-    IPreliminarySurfaceProvider(class IPreliminarySurfaceProvider const&) = delete;
+    class IPreliminarySurfaceProvider& operator=(class IPreliminarySurfaceProvider const &) = delete;
+    IPreliminarySurfaceProvider(class IPreliminarySurfaceProvider const &) = delete;
     IPreliminarySurfaceProvider() = delete;
 #endif
 

@@ -18,9 +18,9 @@ namespace BlockColorUtil {
     MCAPI enum BlockColor fromInt(int);
     MCAPI enum BlockColor fromItemColor(enum ItemColor);
     MCAPI class mce::Color getColor(enum BlockColor);
-    MCAPI std::string const& getName(enum BlockColor);
-    MCAPI std::string const& getNameMixedCase(enum BlockColor);
-    MCAPI std::string const& getNameSnakeCase(enum BlockColor);
+    MCAPI std::string const & getName(enum BlockColor);
+    MCAPI std::string const & getNameMixedCase(enum BlockColor);
+    MCAPI std::string const & getNameSnakeCase(enum BlockColor);
     MCAPI int getRGBColor(enum BlockColor);
 
 };

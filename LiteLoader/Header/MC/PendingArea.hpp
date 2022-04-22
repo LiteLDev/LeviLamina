@@ -17,15 +17,15 @@ struct PendingArea {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PENDINGAREA
 public:
-    struct PendingArea& operator=(struct PendingArea const&) = delete;
-    PendingArea(struct PendingArea const&) = delete;
+    struct PendingArea& operator=(struct PendingArea const &) = delete;
+    PendingArea(struct PendingArea const &) = delete;
     PendingArea() = delete;
 #endif
 
 public:
     MCAPI struct TickingAreaDescription getDescription() const;
     MCAPI bool isEntityOwned() const;
-    MCAPI struct PendingArea& operator=(struct PendingArea&&);
+    MCAPI struct PendingArea & operator=(struct PendingArea &&);
     MCAPI class CompoundTag serialize(class AutomaticID<class Dimension, int>) const;
     MCAPI ~PendingArea();
 

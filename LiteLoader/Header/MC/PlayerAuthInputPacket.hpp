@@ -20,16 +20,16 @@ enum InputData;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERAUTHINPUTPACKET
 public:
-    class PlayerAuthInputPacket& operator=(class PlayerAuthInputPacket const&) = delete;
-    PlayerAuthInputPacket(class PlayerAuthInputPacket const&) = delete;
+    class PlayerAuthInputPacket& operator=(class PlayerAuthInputPacket const &) = delete;
+    PlayerAuthInputPacket(class PlayerAuthInputPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~PlayerAuthInputPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~PlayerAuthInputPacket(){
          (PlayerAuthInputPacket::*rv)();
@@ -37,10 +37,10 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI PlayerAuthInputPacket(class PlayerAuthInputPacket&&);
+    MCAPI PlayerAuthInputPacket(class PlayerAuthInputPacket &&);
     MCAPI PlayerAuthInputPacket();
     MCAPI bool getInput(enum PlayerAuthInputPacket::InputData) const;
-    MCAPI class PlayerAuthInputPacket& operator=(class PlayerAuthInputPacket&&);
+    MCAPI class PlayerAuthInputPacket & operator=(class PlayerAuthInputPacket &&);
     MCAPI struct PlayerActionComponent readIntoComponent() const;
     MCAPI void setInput(enum PlayerAuthInputPacket::InputData, bool);
     MCAPI class PlayerAuthInputPacket takeCopy() const;

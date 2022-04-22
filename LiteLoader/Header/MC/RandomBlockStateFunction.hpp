@@ -19,16 +19,16 @@ class RandomBlockStateFunction : public LootItemFunction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMBLOCKSTATEFUNCTION
 public:
-    class RandomBlockStateFunction& operator=(class RandomBlockStateFunction const&) = delete;
-    RandomBlockStateFunction(class RandomBlockStateFunction const&) = delete;
+    class RandomBlockStateFunction& operator=(class RandomBlockStateFunction const &) = delete;
+    RandomBlockStateFunction(class RandomBlockStateFunction const &) = delete;
     RandomBlockStateFunction() = delete;
 #endif
 
 public:
     /*0*/ virtual ~RandomBlockStateFunction();
-    /*1*/ virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
-    /*3*/ virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
-    MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>>&);
+    /*1*/ virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
+    /*3*/ virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
+    MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 protected:
 

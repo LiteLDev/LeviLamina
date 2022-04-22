@@ -17,8 +17,8 @@ struct BeardKernel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEARDKERNEL
 public:
-    struct BeardKernel& operator=(struct BeardKernel const&) = delete;
-    BeardKernel(struct BeardKernel const&) = delete;
+    struct BeardKernel& operator=(struct BeardKernel const &) = delete;
+    BeardKernel(struct BeardKernel const &) = delete;
 #endif
 
 public:

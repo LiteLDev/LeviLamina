@@ -18,15 +18,15 @@ class RangedAttackDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANGEDATTACKDEFINITION
 public:
-    class RangedAttackDefinition& operator=(class RangedAttackDefinition const&) = delete;
-    RangedAttackDefinition(class RangedAttackDefinition const&) = delete;
+    class RangedAttackDefinition& operator=(class RangedAttackDefinition const &) = delete;
+    RangedAttackDefinition(class RangedAttackDefinition const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~RangedAttackDefinition();
     MCAPI RangedAttackDefinition();
-    MCAPI void initialize(class EntityContext&, class RangedAttackGoal&);
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RangedAttackDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class RangedAttackGoal &);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RangedAttackDefinition>> &);
 
 protected:
 

@@ -31,23 +31,23 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MERCHANTRECIPELIST
 public:
-    class MerchantRecipeList& operator=(class MerchantRecipeList const&) = delete;
-    MerchantRecipeList(class MerchantRecipeList const&) = delete;
+    class MerchantRecipeList& operator=(class MerchantRecipeList const &) = delete;
+    MerchantRecipeList(class MerchantRecipeList const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~MerchantRecipeList();
-    /*1*/ virtual class MerchantRecipe* getRecipeFor(class ItemInstance const&, class ItemInstance const&, int);
-    /*2*/ virtual void addIfNewOrBetter(class MerchantRecipe*);
-    /*3*/ virtual class MerchantRecipe* getMatchingRecipeFor(class ItemInstance const&, class ItemInstance const&, class ItemInstance const&);
-    /*4*/ virtual class MerchantRecipe* getMatchingRecipeFor(class MerchantRecipe const&);
-    /*5*/ virtual void load(class CompoundTag const&);
+    /*1*/ virtual class MerchantRecipe * getRecipeFor(class ItemInstance const &, class ItemInstance const &, int);
+    /*2*/ virtual void addIfNewOrBetter(class MerchantRecipe *);
+    /*3*/ virtual class MerchantRecipe * getMatchingRecipeFor(class ItemInstance const &, class ItemInstance const &, class ItemInstance const &);
+    /*4*/ virtual class MerchantRecipe * getMatchingRecipeFor(class MerchantRecipe const &);
+    /*5*/ virtual void load(class CompoundTag const &);
     /*6*/ virtual std::unique_ptr<class CompoundTag> createTag(bool) const;
     MCAPI MerchantRecipeList();
     MCAPI void assignNetIds();
-    MCAPI class MerchantRecipe const* getRecipeByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&) const;
-    MCAPI class std::optional<unsigned __int64> getRecipeIndexByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&) const;
-    MCAPI bool isRequiredItem(class ItemInstance const&, class ItemInstance const&);
+    MCAPI class MerchantRecipe const * getRecipeByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &) const;
+    MCAPI class std::optional<unsigned __int64> getRecipeIndexByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &) const;
+    MCAPI bool isRequiredItem(class ItemInstance const &, class ItemInstance const &);
 
 protected:
 

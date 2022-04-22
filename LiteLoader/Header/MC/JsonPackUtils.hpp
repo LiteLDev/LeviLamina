@@ -15,12 +15,12 @@ namespace JsonPackUtils {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI bool readBoolAndReport(class Json::Value const&, std::string const&, std::vector<std::string>&, class PackReport&, bool, bool);
-    MCAPI int readIntAndReport(class Json::Value const&, std::string const&, std::vector<std::string>&, class PackReport&, bool, int);
-    MCAPI struct std::pair<class Json::Value const, enum PackParseErrorType> readRequiredValue(class Json::Value const&, std::string const&, enum Json::ValueType);
-    MCAPI std::string readStringAndReport(class Json::Value const&, std::string const&, std::vector<std::string>&, class PackReport&, bool);
-    MCAPI std::vector<std::string> readStringArrayAndReport(class Json::Value const&, std::string const&, std::vector<std::string>&, class PackReport&, bool);
-    MCAPI struct std::pair<class Json::Value const, enum PackParseErrorType> readValueAndReportErrors(class Json::Value const&, std::string const&, enum Json::ValueType, std::vector<std::string>&, class PackReport&, bool);
-    MCAPI std::string stringizePath(std::vector<std::string> const&);
+    MCAPI bool readBoolAndReport(class Json::Value const &, std::string const &, std::vector<std::string> &, class PackReport &, bool, bool);
+    MCAPI int readIntAndReport(class Json::Value const &, std::string const &, std::vector<std::string> &, class PackReport &, bool, int);
+    MCAPI struct std::pair<class Json::Value const, enum PackParseErrorType> readRequiredValue(class Json::Value const &, std::string const &, enum Json::ValueType);
+    MCAPI std::string readStringAndReport(class Json::Value const &, std::string const &, std::vector<std::string> &, class PackReport &, bool);
+    MCAPI std::vector<std::string> readStringArrayAndReport(class Json::Value const &, std::string const &, std::vector<std::string> &, class PackReport &, bool);
+    MCAPI struct std::pair<class Json::Value const, enum PackParseErrorType> readValueAndReportErrors(class Json::Value const &, std::string const &, enum Json::ValueType, std::vector<std::string> &, class PackReport &, bool);
+    MCAPI std::string stringizePath(std::vector<std::string> const &);
 
 };

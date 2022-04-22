@@ -17,8 +17,8 @@ class SavedData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SAVEDDATA
 public:
-    class SavedData& operator=(class SavedData const&) = delete;
-    SavedData(class SavedData const&) = delete;
+    class SavedData& operator=(class SavedData const &) = delete;
+    SavedData(class SavedData const &) = delete;
     SavedData() = delete;
 #endif
 

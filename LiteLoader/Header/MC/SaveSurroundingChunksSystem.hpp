@@ -17,19 +17,19 @@ class SaveSurroundingChunksSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SAVESURROUNDINGCHUNKSSYSTEM
 public:
-    class SaveSurroundingChunksSystem& operator=(class SaveSurroundingChunksSystem const&) = delete;
-    SaveSurroundingChunksSystem(class SaveSurroundingChunksSystem const&) = delete;
+    class SaveSurroundingChunksSystem& operator=(class SaveSurroundingChunksSystem const &) = delete;
+    SaveSurroundingChunksSystem(class SaveSurroundingChunksSystem const &) = delete;
     SaveSurroundingChunksSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SaveSurroundingChunksSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 
 private:
-    MCAPI static void _tickSaveSurroundingChunks(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class FlagComponent<struct SaveSurroundingChunksFlag> >&);
+    MCAPI static void _tickSaveSurroundingChunks(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class FlagComponent<struct SaveSurroundingChunksFlag>> &);
 
 };

@@ -18,8 +18,8 @@ class ScriptMovementBasicComponent : public ScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMOVEMENTBASICCOMPONENT
 public:
-    class ScriptMovementBasicComponent& operator=(class ScriptMovementBasicComponent const&) = delete;
-    ScriptMovementBasicComponent(class ScriptMovementBasicComponent const&) = delete;
+    class ScriptMovementBasicComponent& operator=(class ScriptMovementBasicComponent const &) = delete;
+    ScriptMovementBasicComponent(class ScriptMovementBasicComponent const &) = delete;
     ScriptMovementBasicComponent() = delete;
 #endif
 

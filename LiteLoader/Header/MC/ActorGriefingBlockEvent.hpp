@@ -15,12 +15,12 @@ struct ActorGriefingBlockEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORGRIEFINGBLOCKEVENT
 public:
-    struct ActorGriefingBlockEvent& operator=(struct ActorGriefingBlockEvent const&) = delete;
+    struct ActorGriefingBlockEvent& operator=(struct ActorGriefingBlockEvent const &) = delete;
     ActorGriefingBlockEvent() = delete;
 #endif
 
 public:
-    MCAPI ActorGriefingBlockEvent(struct ActorGriefingBlockEvent const&);
+    MCAPI ActorGriefingBlockEvent(struct ActorGriefingBlockEvent const &);
     MCAPI ~ActorGriefingBlockEvent();
 
 protected:

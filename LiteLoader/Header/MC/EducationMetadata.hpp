@@ -19,8 +19,8 @@ enum UserType;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUCATIONMETADATA
 public:
-    struct EducationMetadata& operator=(struct EducationMetadata const&) = delete;
-    EducationMetadata(struct EducationMetadata const&) = delete;
+    struct EducationMetadata& operator=(struct EducationMetadata const &) = delete;
+    EducationMetadata(struct EducationMetadata const &) = delete;
 #endif
 
 public:

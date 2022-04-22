@@ -15,8 +15,8 @@ class WorldTemplateManagerProxyCallbacks {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDTEMPLATEMANAGERPROXYCALLBACKS
 public:
-    class WorldTemplateManagerProxyCallbacks& operator=(class WorldTemplateManagerProxyCallbacks const&) = delete;
-    WorldTemplateManagerProxyCallbacks(class WorldTemplateManagerProxyCallbacks const&) = delete;
+    class WorldTemplateManagerProxyCallbacks& operator=(class WorldTemplateManagerProxyCallbacks const &) = delete;
+    WorldTemplateManagerProxyCallbacks(class WorldTemplateManagerProxyCallbacks const &) = delete;
     WorldTemplateManagerProxyCallbacks() = delete;
 #endif
 

@@ -18,13 +18,13 @@ class AdmireItemDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADMIREITEMDEFINITION
 public:
-    class AdmireItemDefinition& operator=(class AdmireItemDefinition const&) = delete;
-    AdmireItemDefinition(class AdmireItemDefinition const&) = delete;
+    class AdmireItemDefinition& operator=(class AdmireItemDefinition const &) = delete;
+    AdmireItemDefinition(class AdmireItemDefinition const &) = delete;
     AdmireItemDefinition() = delete;
 #endif
 
 public:
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AdmireItemDefinition> >&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AdmireItemDefinition>> &);
 
 protected:
 

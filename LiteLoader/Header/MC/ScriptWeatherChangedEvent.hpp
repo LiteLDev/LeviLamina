@@ -17,8 +17,8 @@ struct ScriptWeatherChangedEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTWEATHERCHANGEDEVENT
 public:
-    struct ScriptWeatherChangedEvent& operator=(struct ScriptWeatherChangedEvent const&) = delete;
-    ScriptWeatherChangedEvent(struct ScriptWeatherChangedEvent const&) = delete;
+    struct ScriptWeatherChangedEvent& operator=(struct ScriptWeatherChangedEvent const &) = delete;
+    ScriptWeatherChangedEvent(struct ScriptWeatherChangedEvent const &) = delete;
     ScriptWeatherChangedEvent() = delete;
 #endif
 

@@ -17,8 +17,8 @@ class DirectActorMovementProxy {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIRECTACTORMOVEMENTPROXY
 public:
-    class DirectActorMovementProxy& operator=(class DirectActorMovementProxy const&) = delete;
-    DirectActorMovementProxy(class DirectActorMovementProxy const&) = delete;
+    class DirectActorMovementProxy& operator=(class DirectActorMovementProxy const &) = delete;
+    DirectActorMovementProxy(class DirectActorMovementProxy const &) = delete;
     DirectActorMovementProxy() = delete;
 #endif
 

@@ -24,6 +24,6 @@ struct Parameter {
 };
 
 #undef AFTER_EXTRA
-    MCAPI __int64 squareDistance(class std::array<struct ClimateUtils::Parameter, 7> const&, struct ClimateUtils::TargetSpace const&);
+    MCAPI __int64 squareDistance(class std::array<struct ClimateUtils::Parameter, 7> const &, struct ClimateUtils::TargetSpace const &);
 
 };

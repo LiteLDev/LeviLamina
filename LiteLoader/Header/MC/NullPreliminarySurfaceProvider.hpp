@@ -17,8 +17,8 @@ class NullPreliminarySurfaceProvider {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NULLPRELIMINARYSURFACEPROVIDER
 public:
-    class NullPreliminarySurfaceProvider& operator=(class NullPreliminarySurfaceProvider const&) = delete;
-    NullPreliminarySurfaceProvider(class NullPreliminarySurfaceProvider const&) = delete;
+    class NullPreliminarySurfaceProvider& operator=(class NullPreliminarySurfaceProvider const &) = delete;
+    NullPreliminarySurfaceProvider(class NullPreliminarySurfaceProvider const &) = delete;
     NullPreliminarySurfaceProvider() = delete;
 #endif
 

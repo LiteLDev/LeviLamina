@@ -17,20 +17,20 @@ class PropertyInstance {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROPERTYINSTANCE
 public:
-    class PropertyInstance& operator=(class PropertyInstance const&) = delete;
-    PropertyInstance(class PropertyInstance const&) = delete;
-    PropertyInstance() = delete;
+    PropertyInstance(class PropertyInstance const &) = delete;
 #endif
 
 public:
-    MCAPI bool getBool() const;
-    MCAPI float getFloat() const;
-    MCAPI int getInt() const;
+    MCAPI PropertyInstance(class std::shared_ptr<struct PropertyDescription const>);
+    MCAPI PropertyInstance();
     MCAPI struct MolangScriptArg getMolangValue() const;
-    MCAPI struct CustomPropertyDescription const* getPropertyInfo() const;
-    MCAPI std::string getString() const;
-    MCAPI bool setCurrentState(class Tag const&);
+    MCAPI struct PropertyDescription const * getPropertyInfo() const;
+    MCAPI class Tag const * getValueTag() const;
+    MCAPI bool isDirty() const;
+    MCAPI class PropertyInstance & operator=(class PropertyInstance const &);
+    MCAPI bool setCurrentState(class Tag const &);
     MCAPI bool setCurrentState(int);
+    MCAPI void setDirty(bool);
     MCAPI bool setFloatValue(float);
     MCAPI bool setIntValue(int);
     MCAPI ~PropertyInstance();

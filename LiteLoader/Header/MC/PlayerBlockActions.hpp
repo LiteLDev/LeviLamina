@@ -17,17 +17,17 @@ class PlayerBlockActions {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERBLOCKACTIONS
 public:
-    class PlayerBlockActions& operator=(class PlayerBlockActions const&) = delete;
-    PlayerBlockActions(class PlayerBlockActions const&) = delete;
+    class PlayerBlockActions& operator=(class PlayerBlockActions const &) = delete;
+    PlayerBlockActions(class PlayerBlockActions const &) = delete;
     PlayerBlockActions() = delete;
 #endif
 
 public:
-    MCAPI struct PlayerBlockActionData const* findFirstOfType(enum PlayerActionType) const;
+    MCAPI struct PlayerBlockActionData const * findFirstOfType(enum PlayerActionType) const;
     MCAPI class gsl::span<struct PlayerBlockActionData const, -1> get() const;
     MCAPI ~PlayerBlockActions();
-    MCAPI static class PlayerBlockActions read(class ReadOnlyBinaryStream&);
-    MCAPI static void write(class PlayerBlockActions const&, class BinaryStream&);
+    MCAPI static class PlayerBlockActions read(class ReadOnlyBinaryStream &);
+    MCAPI static void write(class PlayerBlockActions const &, class BinaryStream &);
 
 protected:
 

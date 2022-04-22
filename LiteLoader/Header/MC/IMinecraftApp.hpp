@@ -17,8 +17,8 @@ class IMinecraftApp {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IMINECRAFTAPP
 public:
-    class IMinecraftApp& operator=(class IMinecraftApp const&) = delete;
-    IMinecraftApp(class IMinecraftApp const&) = delete;
+    class IMinecraftApp& operator=(class IMinecraftApp const &) = delete;
+    IMinecraftApp(class IMinecraftApp const &) = delete;
     IMinecraftApp() = delete;
 #endif
 

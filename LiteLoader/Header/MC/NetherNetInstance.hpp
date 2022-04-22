@@ -17,8 +17,8 @@ struct NetherNetInstance {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERNETINSTANCE
 public:
-    struct NetherNetInstance& operator=(struct NetherNetInstance const&) = delete;
-    NetherNetInstance(struct NetherNetInstance const&) = delete;
+    struct NetherNetInstance& operator=(struct NetherNetInstance const &) = delete;
+    NetherNetInstance(struct NetherNetInstance const &) = delete;
 #endif
 
 public:

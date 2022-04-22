@@ -15,8 +15,8 @@ class ActorParticleEffectEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORPARTICLEEFFECTEVENT
 public:
-    class ActorParticleEffectEvent& operator=(class ActorParticleEffectEvent const&) = delete;
-    ActorParticleEffectEvent(class ActorParticleEffectEvent const&) = delete;
+    class ActorParticleEffectEvent& operator=(class ActorParticleEffectEvent const &) = delete;
+    ActorParticleEffectEvent(class ActorParticleEffectEvent const &) = delete;
     ActorParticleEffectEvent() = delete;
 #endif
 

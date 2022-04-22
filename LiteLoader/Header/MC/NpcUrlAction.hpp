@@ -18,8 +18,8 @@ class NpcUrlAction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCURLACTION
 public:
-    class NpcUrlAction& operator=(class NpcUrlAction const&) = delete;
-    NpcUrlAction(class NpcUrlAction const&) = delete;
+    class NpcUrlAction& operator=(class NpcUrlAction const &) = delete;
+    NpcUrlAction(class NpcUrlAction const &) = delete;
 #endif
 
 public:

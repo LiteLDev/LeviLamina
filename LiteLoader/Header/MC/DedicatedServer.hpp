@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Core.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -19,12 +20,17 @@ enum StartResult;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEDICATEDSERVER
 public:
-    class DedicatedServer& operator=(class DedicatedServer const&) = delete;
-    DedicatedServer(class DedicatedServer const&) = delete;
+    class DedicatedServer& operator=(class DedicatedServer const &) = delete;
+    DedicatedServer(class DedicatedServer const &) = delete;
 #endif
 
 public:
     /*
+    inline bool isDedicatedServer() const{
+        bool (DedicatedServer::*rv)() const;
+        *((void**)&rv) = dlsym("?isDedicatedServer@DedicatedServer@@EEBA_NXZ");
+        return (this->*rv)();
+    }
     inline void onNetworkMaxPlayersChanged(unsigned int a0){
         void (DedicatedServer::*rv)(unsigned int);
         *((void**)&rv) = dlsym("?onNetworkMaxPlayersChanged@DedicatedServer@@EEAAXI@Z");
@@ -35,23 +41,18 @@ public:
         *((void**)&rv) = dlsym("??1DedicatedServer@@UEAA@XZ");
         return (this->*rv)();
     }
-    inline bool isDedicatedServer() const{
-        bool (DedicatedServer::*rv)() const;
-        *((void**)&rv) = dlsym("?isDedicatedServer@DedicatedServer@@EEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline class gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient> > getAutomationClient() const{
-        class gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient> > (DedicatedServer::*rv)() const;
+    inline class gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient>> getAutomationClient() const{
+        class gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient>> (DedicatedServer::*rv)() const;
         *((void**)&rv) = dlsym("?getAutomationClient@DedicatedServer@@EEBA?AV?$not_null@V?$NonOwnerPointer@VAutomationClient@Automation@@@Bedrock@@@gsl@@XZ");
         return (this->*rv)();
     }
-    inline class IGameModuleShared& getGameModule(){
-        class IGameModuleShared& (DedicatedServer::*rv)();
+    inline class IGameModuleShared & getGameModule(){
+        class IGameModuleShared & (DedicatedServer::*rv)();
         *((void**)&rv) = dlsym("?getGameModule@DedicatedServer@@EEAAAEAVIGameModuleShared@@XZ");
         return (this->*rv)();
     }
-    inline class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft> > getPrimaryMinecraft(){
-        class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft> > (DedicatedServer::*rv)();
+    inline class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> getPrimaryMinecraft(){
+        class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> (DedicatedServer::*rv)();
         *((void**)&rv) = dlsym("?getPrimaryMinecraft@DedicatedServer@@EEAA?AV?$not_null@V?$NonOwnerPointer@VMinecraft@@@Bedrock@@@gsl@@XZ");
         return (this->*rv)();
     }
@@ -67,12 +68,14 @@ public:
     }
     */
     MCAPI DedicatedServer();
-    MCAPI enum DedicatedServer::StartResult start(std::string const&);
+    MCAPI enum DedicatedServer::StartResult runDedicatedServerLoop(class Core::FilePathManager &, class PropertiesSettings &, class LevelSettings &, class AllowListFile &, std::unique_ptr<class PermissionsFile> &);
+    MCAPI enum DedicatedServer::StartResult start(std::string const &);
 
 protected:
 
 private:
     MCAPI void initalizeAppConfigs();
+    MCAPI void initializeHttp();
     MCAPI void initializeLogging();
 
 };

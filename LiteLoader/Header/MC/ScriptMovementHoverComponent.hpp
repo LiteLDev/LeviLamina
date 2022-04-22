@@ -18,8 +18,8 @@ class ScriptMovementHoverComponent : public MovementScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMOVEMENTHOVERCOMPONENT
 public:
-    class ScriptMovementHoverComponent& operator=(class ScriptMovementHoverComponent const&) = delete;
-    ScriptMovementHoverComponent(class ScriptMovementHoverComponent const&) = delete;
+    class ScriptMovementHoverComponent& operator=(class ScriptMovementHoverComponent const &) = delete;
+    ScriptMovementHoverComponent(class ScriptMovementHoverComponent const &) = delete;
     ScriptMovementHoverComponent() = delete;
 #endif
 

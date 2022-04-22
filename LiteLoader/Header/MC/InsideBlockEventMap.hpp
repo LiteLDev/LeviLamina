@@ -17,15 +17,15 @@ class InsideBlockEventMap {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEBLOCKEVENTMAP
 public:
-    class InsideBlockEventMap& operator=(class InsideBlockEventMap const&) = delete;
+    class InsideBlockEventMap& operator=(class InsideBlockEventMap const &) = delete;
     InsideBlockEventMap() = delete;
 #endif
 
 public:
-    MCAPI InsideBlockEventMap(class InsideBlockEventMap const&);
-    MCAPI InsideBlockEventMap(class Block const&, bool, bool, bool, class DefinitionTrigger const&, class DefinitionTrigger const&);
-    MCAPI class DefinitionTrigger const& getEnteredEvent() const;
-    MCAPI class DefinitionTrigger const& getExitedEvent() const;
+    MCAPI InsideBlockEventMap(class InsideBlockEventMap const &);
+    MCAPI InsideBlockEventMap(class Block const &, bool, bool, bool, class DefinitionTrigger const &, class DefinitionTrigger const &);
+    MCAPI class DefinitionTrigger const & getEnteredEvent() const;
+    MCAPI class DefinitionTrigger const & getExitedEvent() const;
     MCAPI bool isActorCurrentlyInside() const;
     MCAPI bool isWatchingIfActorEnters() const;
     MCAPI bool isWatchingIfActorExits() const;

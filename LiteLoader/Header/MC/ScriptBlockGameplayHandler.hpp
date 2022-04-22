@@ -17,8 +17,8 @@ class ScriptBlockGameplayHandler {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKGAMEPLAYHANDLER
 public:
-    class ScriptBlockGameplayHandler& operator=(class ScriptBlockGameplayHandler const&) = delete;
-    ScriptBlockGameplayHandler(class ScriptBlockGameplayHandler const&) = delete;
+    class ScriptBlockGameplayHandler& operator=(class ScriptBlockGameplayHandler const &) = delete;
+    ScriptBlockGameplayHandler(class ScriptBlockGameplayHandler const &) = delete;
     ScriptBlockGameplayHandler() = delete;
 #endif
 
@@ -28,14 +28,15 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct ExplosionStartedEvent&);
+    /*5*/ virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct ExplosionStartedEvent &);
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct PistonActionEvent const&);
+    /*7*/ virtual void __unk_vfn_7();
+    /*8*/ virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct PistonActionEvent const &);
 
 protected:
 
 private:
-    MCAPI bool _handleExplosionStartedEvent(struct ExplosionStartedEvent&, class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>) const;
-    MCAPI bool _handlePistonActionEvent(struct PistonActionEvent const&, class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>) const;
+    MCAPI bool _handleExplosionStartedEvent(struct ExplosionStartedEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>) const;
+    MCAPI bool _handlePistonActionEvent(struct PistonActionEvent const &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>) const;
 
 };

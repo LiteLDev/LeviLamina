@@ -15,14 +15,14 @@ struct StatesProxy {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STATESPROXY
 public:
-    struct StatesProxy& operator=(struct StatesProxy const&) = delete;
-    StatesProxy(struct StatesProxy const&) = delete;
+    struct StatesProxy& operator=(struct StatesProxy const &) = delete;
+    StatesProxy(struct StatesProxy const &) = delete;
     StatesProxy() = delete;
 #endif
 
 public:
-    MCAPI void fromMap(class std::map<struct StateNameProxy, struct CompoundProxy, struct std::less<struct StateNameProxy>, class std::allocator<struct std::pair<struct StateNameProxy const, struct CompoundProxy> > > const&);
-    MCAPI struct StatesProxy& operator=(struct StatesProxy&&);
+    MCAPI void fromMap(class std::map<struct StateNameProxy, struct CompoundProxy, struct std::less<struct StateNameProxy>, class std::allocator<struct std::pair<struct StateNameProxy const, struct CompoundProxy>>> const &);
+    MCAPI struct StatesProxy & operator=(struct StatesProxy &&);
 
 protected:
 

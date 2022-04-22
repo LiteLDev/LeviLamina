@@ -18,31 +18,31 @@ class SnapshotEnv {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SNAPSHOTENV
 public:
-    class SnapshotEnv& operator=(class SnapshotEnv const&) = delete;
-    SnapshotEnv(class SnapshotEnv const&) = delete;
+    class SnapshotEnv& operator=(class SnapshotEnv const &) = delete;
+    SnapshotEnv(class SnapshotEnv const &) = delete;
     SnapshotEnv() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SnapshotEnv();
-    /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const&, class leveldb::SequentialFile* *);
-    /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const&, class leveldb::RandomAccessFile* *);
-    /*3*/ virtual class leveldb::Status NewWritableFile(std::string const&, class leveldb::WritableFile* *);
-    /*4*/ virtual class leveldb::Status NewAppendableFile(std::string const&, class leveldb::WritableFile* *);
+    /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
+    /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
+    /*3*/ virtual class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
+    /*4*/ virtual class leveldb::Status NewAppendableFile(std::string const &, class leveldb::WritableFile **);
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual class leveldb::Status DeleteFileA(std::string const&);
+    /*7*/ virtual class leveldb::Status DeleteFileA(std::string const &);
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void __unk_vfn_10();
-    /*11*/ virtual class leveldb::Status RenameFile(std::string const&, std::string const&);
-    MCAPI SnapshotEnv(class leveldb::Env*);
-    MCAPI std::vector<struct SnapshotFilenameAndLength> createSnapshot(class Core::Path const&);
+    /*11*/ virtual class leveldb::Status RenameFile(std::string const &, std::string const &);
+    MCAPI SnapshotEnv(class leveldb::Env *);
+    MCAPI std::vector<struct SnapshotFilenameAndLength> createSnapshot(class Core::Path const &);
     MCAPI void releaseSnapshot();
 
 protected:
 
 private:
-    MCAPI bool _isQueuedForRemoval(class Core::PathBuffer<std::string > const&);
+    MCAPI bool _isQueuedForRemoval(class Core::PathBuffer<std::string> const &);
 
 };

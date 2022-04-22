@@ -17,33 +17,33 @@ class NullSecureStorage {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NULLSECURESTORAGE
 public:
-    class NullSecureStorage& operator=(class NullSecureStorage const&) = delete;
-    NullSecureStorage(class NullSecureStorage const&) = delete;
+    class NullSecureStorage& operator=(class NullSecureStorage const &) = delete;
+    NullSecureStorage(class NullSecureStorage const &) = delete;
     NullSecureStorage() = delete;
 #endif
 
 public:
     /*0*/ virtual ~NullSecureStorage();
     /*
-    inline bool remove(std::string const& a0){
-        bool (NullSecureStorage::*rv)(std::string const&);
+    inline bool remove(std::string const & a0){
+        bool (NullSecureStorage::*rv)(std::string const &);
         *((void**)&rv) = dlsym("?remove@NullSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
+        return (this->*rv)(std::forward<std::string const &>(a0));
     }
-    inline bool addOrUpdate(std::string const& a0, std::string const& a1){
-        bool (NullSecureStorage::*rv)(std::string const&, std::string const&);
+    inline bool addOrUpdate(std::string const & a0, std::string const & a1){
+        bool (NullSecureStorage::*rv)(std::string const &, std::string const &);
         *((void**)&rv) = dlsym("?addOrUpdate@NullSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1));
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<std::string const &>(a1));
     }
-    inline bool add(std::string const& a0, std::string const& a1){
-        bool (NullSecureStorage::*rv)(std::string const&, std::string const&);
+    inline bool add(std::string const & a0, std::string const & a1){
+        bool (NullSecureStorage::*rv)(std::string const &, std::string const &);
         *((void**)&rv) = dlsym("?add@NullSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1));
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<std::string const &>(a1));
     }
-    inline bool get(std::string const& a0, std::string& a1){
-        bool (NullSecureStorage::*rv)(std::string const&, std::string&);
+    inline bool get(std::string const & a0, std::string & a1){
+        bool (NullSecureStorage::*rv)(std::string const &, std::string &);
         *((void**)&rv) = dlsym("?get@NullSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV23@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string&>(a1));
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<std::string &>(a1));
     }
     */
 

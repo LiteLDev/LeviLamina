@@ -17,15 +17,15 @@ class ProjectileSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROJECTILESYSTEM
 public:
-    class ProjectileSystem& operator=(class ProjectileSystem const&) = delete;
-    ProjectileSystem(class ProjectileSystem const&) = delete;
+    class ProjectileSystem& operator=(class ProjectileSystem const &) = delete;
+    ProjectileSystem(class ProjectileSystem const &) = delete;
     ProjectileSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ProjectileSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

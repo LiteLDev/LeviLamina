@@ -18,15 +18,15 @@ class WaterlilyFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WATERLILYFEATURE
 public:
-    class WaterlilyFeature& operator=(class WaterlilyFeature const&) = delete;
-    WaterlilyFeature(class WaterlilyFeature const&) = delete;
+    class WaterlilyFeature& operator=(class WaterlilyFeature const &) = delete;
+    WaterlilyFeature(class WaterlilyFeature const &) = delete;
     WaterlilyFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~WaterlilyFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 protected:
 

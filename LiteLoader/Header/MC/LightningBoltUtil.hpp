@@ -14,6 +14,6 @@ namespace LightningBoltUtil {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void _clearCopperOnLightningStrike(class BlockSource&, class BlockPos const&);
+    MCAPI void _clearCopperOnLightningStrike(class BlockSource &, class BlockPos const &);
 
 };

@@ -18,17 +18,17 @@ class LoomInputContainerValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOMINPUTCONTAINERVALIDATION
 public:
-    class LoomInputContainerValidation& operator=(class LoomInputContainerValidation const&) = delete;
-    LoomInputContainerValidation(class LoomInputContainerValidation const&) = delete;
+    class LoomInputContainerValidation& operator=(class LoomInputContainerValidation const &) = delete;
+    LoomInputContainerValidation(class LoomInputContainerValidation const &) = delete;
     LoomInputContainerValidation() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LoomInputContainerValidation();
-    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
-    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
 
 protected:
 

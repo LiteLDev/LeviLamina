@@ -18,18 +18,18 @@ class BeaconContainerManagerModel : public LevelContainerManagerModel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEACONCONTAINERMANAGERMODEL
 public:
-    class BeaconContainerManagerModel& operator=(class BeaconContainerManagerModel const&) = delete;
-    BeaconContainerManagerModel(class BeaconContainerManagerModel const&) = delete;
+    class BeaconContainerManagerModel& operator=(class BeaconContainerManagerModel const &) = delete;
+    BeaconContainerManagerModel(class BeaconContainerManagerModel const &) = delete;
     BeaconContainerManagerModel() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BeaconContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
-    /*7*/ virtual void setSlot(int, class ItemStack const&, bool);
-    /*8*/ virtual class ItemStack const& getSlot(int) const;
+    /*7*/ virtual void setSlot(int, class ItemStack const &, bool);
+    /*8*/ virtual class ItemStack const & getSlot(int) const;
     /*16*/ virtual class ContainerScreenContext _postInit();
-    MCAPI BeaconContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
+    MCAPI BeaconContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
     MCAPI static int const PAYMENT_SLOT;
 
 protected:

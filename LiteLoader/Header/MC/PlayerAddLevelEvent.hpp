@@ -15,8 +15,8 @@ class PlayerAddLevelEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERADDLEVELEVENT
 public:
-    class PlayerAddLevelEvent& operator=(class PlayerAddLevelEvent const&) = delete;
-    PlayerAddLevelEvent(class PlayerAddLevelEvent const&) = delete;
+    class PlayerAddLevelEvent& operator=(class PlayerAddLevelEvent const &) = delete;
+    PlayerAddLevelEvent(class PlayerAddLevelEvent const &) = delete;
     PlayerAddLevelEvent() = delete;
 #endif
 

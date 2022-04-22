@@ -17,15 +17,15 @@ class InventoryMenu {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYMENU
 public:
-    class InventoryMenu& operator=(class InventoryMenu const&) = delete;
-    InventoryMenu(class InventoryMenu const&) = delete;
+    class InventoryMenu& operator=(class InventoryMenu const &) = delete;
+    InventoryMenu(class InventoryMenu const &) = delete;
     InventoryMenu() = delete;
 #endif
 
 public:
     /*
-    inline class Container* _getContainer() const{
-        class Container* (InventoryMenu::*rv)() const;
+    inline class Container * _getContainer() const{
+        class Container * (InventoryMenu::*rv)() const;
         *((void**)&rv) = dlsym("?_getContainer@InventoryMenu@@MEBAPEAVContainer@@XZ");
         return (this->*rv)();
     }
@@ -39,8 +39,8 @@ public:
         *((void**)&rv) = dlsym("?getItemCopies@InventoryMenu@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ");
         return (this->*rv)();
     }
-    inline class ItemStack const& getSlot(int a0) const{
-        class ItemStack const& (InventoryMenu::*rv)(int) const;
+    inline class ItemStack const & getSlot(int a0) const{
+        class ItemStack const & (InventoryMenu::*rv)(int) const;
         *((void**)&rv) = dlsym("?getSlot@InventoryMenu@@UEBAAEBVItemStack@@H@Z");
         return (this->*rv)(std::forward<int>(a0));
     }
@@ -54,13 +54,13 @@ public:
         *((void**)&rv) = dlsym("?serverInitItemStackIds@InventoryMenu@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void setSlot(int a0, class ItemStack const& a1, bool a2){
-        void (InventoryMenu::*rv)(int, class ItemStack const&, bool);
+    inline void setSlot(int a0, class ItemStack const & a1, bool a2){
+        void (InventoryMenu::*rv)(int, class ItemStack const &, bool);
         *((void**)&rv) = dlsym("?setSlot@InventoryMenu@@UEAAXHAEBVItemStack@@_N@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStack const&>(a1), std::forward<bool>(a2));
+        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStack const &>(a1), std::forward<bool>(a2));
     }
     */
-    MCAPI InventoryMenu(class Player&, class Container*);
+    MCAPI InventoryMenu(class Player &, class Container *);
 
 protected:
 

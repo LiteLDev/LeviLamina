@@ -2,12 +2,13 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
-class DamageCommand {
+class DamageCommand : public Command {
 
 #define AFTER_EXTRA
 
@@ -15,19 +16,19 @@ class DamageCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAMAGECOMMAND
 public:
-    class DamageCommand& operator=(class DamageCommand const&) = delete;
-    DamageCommand(class DamageCommand const&) = delete;
+    class DamageCommand& operator=(class DamageCommand const &) = delete;
+    DamageCommand(class DamageCommand const &) = delete;
     DamageCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~DamageCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 
 private:
-    MCAPI void _applyDamage(class CommandSelectorResults<class Actor>&, class ActorDamageSource const&, class CommandOutput&) const;
+    MCAPI void _applyDamage(class CommandSelectorResults<class Actor> &, class ActorDamageSource const &, class CommandOutput &) const;
 
 };

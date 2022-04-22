@@ -1,8 +1,120 @@
 #include <DB/ConnParams.h>
 #include <Utils/StringHelper.h>
+#include <LoggerAPI.h>
 
 namespace DB
 {
+
+#pragma region URL_Parser
+
+struct URL
+{
+    std::string scheme;
+    std::string user;
+    std::string password;
+    std::string host;
+    uint16_t port = 0;
+    std::string path;
+    std::map<std::string, std::string> query;
+    std::string fragment;
+};
+
+URL ParseURL(const std::string& url)
+{
+    URL result;
+    std::string cur = url;
+
+    size_t pos = cur.find("://");
+    if (pos != std::string::npos)
+    {
+        result.scheme = cur.substr(0, pos);
+        cur = cur.substr(pos + 3);
+    }
+    pos = cur.find('@');
+    auto pos0 = pos;
+    if (pos != std::string::npos)
+    {
+        std::string userInfo = cur.substr(0, pos);
+        pos = userInfo.find(':');
+        if (pos != std::string::npos)
+        {
+            result.user = userInfo.substr(0, pos);
+            result.password = userInfo.substr(pos + 1);
+        }
+        else
+            result.user = userInfo;
+        cur = cur.substr(pos0 + 1);
+    }
+    pos = cur.find_first_of("/?#");
+    auto pos1 = pos;
+    std::string address = cur.substr(0, pos);
+    pos = address.find(':');
+    if (pos != std::string::npos)
+    {
+        result.host = address.substr(0, pos);
+        result.port = static_cast<uint16_t>(std::stoi(address.substr(pos + 1)));
+    }
+    else
+        result.host = address;
+    if (pos1 == std::string::npos)
+        return result;
+    else
+        cur = cur.substr(pos1);
+
+    pos = cur.find_first_of("?#");
+    result.path = cur.substr(0, pos);
+    if (pos == std::string::npos)
+        return result;
+    else
+        cur = cur.substr(pos);
+    if (cur[0] == '?')
+    {
+        cur = cur.substr(1);
+        pos = cur.find('#');
+        std::string query = cur.substr(0, pos);
+        if (pos != std::string::npos)
+        {
+            result.fragment = cur.substr(pos + 1);
+        }
+        std::vector<std::string> pairs = SplitStrWithPattern(query, "&");
+        for (auto& pair : pairs)
+        {
+            std::string k, v;
+            pos = pair.find('=');
+            if (pos == std::string::npos)
+                k = pair;
+            else
+            {
+                k = pair.substr(0, pos);
+                v = pair.substr(pos + 1);
+            }
+            result.query.emplace(k, v);
+        }
+    }
+    else if (cur[0] == '#')
+    {
+        result.fragment = cur.substr(1);
+    }
+    return result;
+}
+
+extern Logger dbLogger;
+void PrintURL(const URL& url)
+{
+    dbLogger.debug("Parsed URL");
+    dbLogger.debug("scheme: {}", url.scheme);
+    dbLogger.debug("user: {}", url.user);
+    dbLogger.debug("password: {}", url.password);
+    dbLogger.debug("host: {}", url.host);
+    dbLogger.debug("port: {}", url.port);
+    dbLogger.debug("path: {}", url.path);
+    dbLogger.debug("query:");
+    for (auto& pair : url.query)
+        dbLogger.debug("- {}: {}", pair.first, pair.second);
+    dbLogger.debug("fragment: {}", url.fragment);
+}
+
+#pragma endregion
 
 ConnParams::ConnParams(const std::initializer_list<Any>& list)
     : std::unordered_map<std::string, Any>()
@@ -54,72 +166,36 @@ ConnParams::ConnParams(const std::initializer_list<std::pair<std::string, Any>>&
 ConnParams::ConnParams(const std::string& str)
     : std::unordered_map<std::string, Any>()
 {
-    if (str.find("://") == std::string::npos)
-    {
-        insert({"path", str});
-        return;
-    }
     raw = str;
-    auto res1 = SplitStrWithPattern(str, "://");
-    if (res1.size() >= 2)
+    auto url = ParseURL(str);
+    
+    if (!url.scheme.empty()) insert({"scheme", url.scheme});
+    if (!url.host.empty()) insert({"host", url.host});
+    if (url.port) insert({"port", url.port});
+    if (!url.user.empty()) insert({"user", url.user});
+    if (!url.password.empty()) insert({"password", url.password});
+    if (!url.path.empty())
     {
-        insert({"protocol", res1[0]});
+        std::string path = url.path;
+        if (path[0] == '/') path = path.substr(1);
+        insert({"path", path});
     }
-    auto res2 = SplitStrWithPattern(res1[2], "?");
-    auto& addr = res2[0];
-    auto res3 = SplitStrWithPattern(addr, ":");
-    if (res3.size() == 2)
+    if (!url.fragment.empty()) insert({"fragment", url.fragment});
+    for (auto& pair : url.query)
     {
-        insert({"port", std::stoi(res3[1])});
-    }
-    insert({"host", res3[0]});
-    if (res2.size() >= 2)
-    {
-        auto params = SplitStrWithPattern(res2[1], "&");
-        for (auto& param : params)
-        {
-            auto res4 = SplitStrWithPattern(param, "=");
-            if (res4.size() == 2)
-            {
-                insert({res4[0], res4[1]});
-            }
-        }
+        insert({pair.first, Any::str2any(pair.second)});
     }
 }
 ConnParams::ConnParams(const char* str)
     : std::unordered_map<std::string, Any>()
 {
-    if (std::string(str).find("://") == std::string::npos)
-    {
-        insert({"path", str});
-        return;
-    } 
     raw = str;
-    auto res1 = SplitStrWithPattern(str, "://");
-    if (res1.size() >= 2)
-    {
-        insert({"protocol", res1[0]});
-    }
-    auto res2 = SplitStrWithPattern(res1[2], "?");
-    auto& addr = res2[0];
-    auto res3 = SplitStrWithPattern(addr, ":");
-    if (res3.size() == 2)
-    {
-        insert({"port", std::stoi(res3[1])});
-    }
-    insert({"host", res3[0]});
-    if (res2.size() >= 2)
-    {
-        auto params = SplitStrWithPattern(res2[1], "&");
-        for (auto& param : params)
-        {
-            auto res4 = SplitStrWithPattern(param, "=");
-            if (res4.size() == 2)
-            {
-                insert({res4[0], res4[1]});
-            }
-        }
-    }
+    *this = ConnParams(std::string(str));
+}
+
+std::string ConnParams::getScheme()
+{
+    return get<std::string>({"scheme", "protocol", "type"}, true);
 }
 
 std::string ConnParams::getHost()
@@ -144,7 +220,7 @@ std::string ConnParams::getPassword()
 
 std::string ConnParams::getDatabase()
 {
-    return get<std::string>({"database", "db", "db_name", "dbname"}, true);
+    return get<std::string>({"database", "db", "db_name", "dbname", "path"}, true);
 }
 
 std::string ConnParams::getPath()

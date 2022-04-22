@@ -104,10 +104,11 @@ enum FileAccessType;
 
 #undef AFTER_EXTRA
     MCAPI unsigned __int64 operator&(enum Core::DirectoryIterationFlags, enum Core::DirectoryIterationFlags);
+    MCAPI enum Core::DirectoryIterationFlags operator|(enum Core::DirectoryIterationFlags, enum Core::DirectoryIterationFlags);
     MCAPI extern std::string const sLockBlobName;
     MCAPI extern std::string const sMultiChunkTag;
     MCAPI extern class std::shared_ptr<class Core::FileStorageArea> sRootStorageArea;
     MCAPI bool starts_with(class Core::StringSpan, class Core::StringSpan);
-    MCAPI class Core::Result transferDirectory(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&, class std::function<class Core::Result (class Core::Path const& , class Core::Path const& )> const&);
+    MCAPI class Core::Result transferDirectory(class Core::FileSystemImpl *, class Core::Path const &, class Core::FileSystemImpl *, class Core::Path const &, class std::function<class Core::Result (class Core::Path const &, class Core::Path const &)> const &);
 
 };

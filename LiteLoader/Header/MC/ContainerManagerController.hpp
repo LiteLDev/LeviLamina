@@ -17,8 +17,8 @@ class ContainerManagerController {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERMANAGERCONTROLLER
 public:
-    class ContainerManagerController& operator=(class ContainerManagerController const&) = delete;
-    ContainerManagerController(class ContainerManagerController const&) = delete;
+    class ContainerManagerController& operator=(class ContainerManagerController const &) = delete;
+    ContainerManagerController(class ContainerManagerController const &) = delete;
     ContainerManagerController() = delete;
 #endif
 

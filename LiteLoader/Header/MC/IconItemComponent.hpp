@@ -17,8 +17,8 @@ class IconItemComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICONITEMCOMPONENT
 public:
-    class IconItemComponent& operator=(class IconItemComponent const&) = delete;
-    IconItemComponent(class IconItemComponent const&) = delete;
+    class IconItemComponent& operator=(class IconItemComponent const &) = delete;
+    IconItemComponent(class IconItemComponent const &) = delete;
     IconItemComponent() = delete;
 #endif
 
@@ -29,7 +29,7 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
     /*
     inline bool isNetworkComponent() const{
         bool (IconItemComponent::*rv)() const;
@@ -38,7 +38,7 @@ public:
     }
     */
     MCAPI static void bindType();
-    MCAPI static class HashedString const& getIdentifier();
+    MCAPI static class HashedString const & getIdentifier();
 
 protected:
 

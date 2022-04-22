@@ -18,26 +18,26 @@ class SurvivalMode : public GameMode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SURVIVALMODE
 public:
-    class SurvivalMode& operator=(class SurvivalMode const&) = delete;
-    SurvivalMode(class SurvivalMode const&) = delete;
+    class SurvivalMode& operator=(class SurvivalMode const &) = delete;
+    SurvivalMode(class SurvivalMode const &) = delete;
     SurvivalMode() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SurvivalMode();
-    /*1*/ virtual bool startDestroyBlock(class BlockPos const&, unsigned char, bool&);
-    /*2*/ virtual bool destroyBlock(class BlockPos const&, unsigned char);
-    /*5*/ virtual void startBuildBlock(class BlockPos const&, unsigned char);
-    /*6*/ virtual bool buildBlock(class BlockPos const&, unsigned char, bool);
+    /*1*/ virtual bool startDestroyBlock(class BlockPos const &, unsigned char, bool &);
+    /*2*/ virtual bool destroyBlock(class BlockPos const &, unsigned char);
+    /*5*/ virtual void startBuildBlock(class BlockPos const &, unsigned char);
+    /*6*/ virtual bool buildBlock(class BlockPos const &, unsigned char, bool);
     /*9*/ virtual void tick();
-    /*11*/ virtual bool useItem(class ItemStack&);
-    /*12*/ virtual bool useItemOn(class ItemStack&, class BlockPos const&, unsigned char, class Vec3 const&, class Block const*);
-    /*13*/ virtual bool interact(class Actor&, class Vec3 const&);
-    /*14*/ virtual bool attack(class Actor&);
+    /*11*/ virtual bool useItem(class ItemStack &);
+    /*12*/ virtual bool useItemOn(class ItemStack &, class BlockPos const &, unsigned char, class Vec3 const &, class Block const *);
+    /*13*/ virtual bool interact(class Actor &, class Vec3 const &);
+    /*14*/ virtual bool attack(class Actor &);
     /*16*/ virtual void setTrialMode(bool);
     /*17*/ virtual bool isInTrialMode();
     /*18*/ virtual void registerUpsellScreenCallback(class std::function<void (bool)>);
-    MCAPI SurvivalMode(class Player&);
+    MCAPI SurvivalMode(class Player &);
 
 protected:
 

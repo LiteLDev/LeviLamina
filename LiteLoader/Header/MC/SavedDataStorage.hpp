@@ -17,21 +17,21 @@ class SavedDataStorage {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SAVEDDATASTORAGE
 public:
-    class SavedDataStorage& operator=(class SavedDataStorage const&) = delete;
-    SavedDataStorage(class SavedDataStorage const&) = delete;
+    class SavedDataStorage& operator=(class SavedDataStorage const &) = delete;
+    SavedDataStorage(class SavedDataStorage const &) = delete;
     SavedDataStorage() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SavedDataStorage();
-    MCAPI SavedDataStorage(class LevelStorage*);
-    MCAPI bool loadAndSet(class SavedData&, std::string const&);
+    MCAPI SavedDataStorage(class LevelStorage *);
+    MCAPI bool loadAndSet(class SavedData &, std::string const &);
     MCAPI void save();
-    MCAPI void set(std::string const&, class SavedData&);
+    MCAPI void set(std::string const &, class SavedData &);
 
 protected:
 
 private:
-    MCAPI void _save(class SavedData const&);
+    MCAPI void _save(class SavedData const &);
 
 };

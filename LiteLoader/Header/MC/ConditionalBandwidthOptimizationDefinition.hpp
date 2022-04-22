@@ -18,17 +18,17 @@ class ConditionalBandwidthOptimizationDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONDITIONALBANDWIDTHOPTIMIZATIONDEFINITION
 public:
-    class ConditionalBandwidthOptimizationDefinition& operator=(class ConditionalBandwidthOptimizationDefinition const&) = delete;
-    ConditionalBandwidthOptimizationDefinition(class ConditionalBandwidthOptimizationDefinition const&) = delete;
+    class ConditionalBandwidthOptimizationDefinition& operator=(class ConditionalBandwidthOptimizationDefinition const &) = delete;
+    ConditionalBandwidthOptimizationDefinition(class ConditionalBandwidthOptimizationDefinition const &) = delete;
     ConditionalBandwidthOptimizationDefinition() = delete;
 #endif
 
 public:
-    MCAPI void addConditionalBandwidthOptimization(struct ConditionalBandwidthOptimization const&);
-    MCAPI void addDefaultBandwidthOptimization(struct ConditionalBandwidthOptimization const&);
-    MCAPI void initialize(class EntityContext&, class ConditionalBandwidthOptimizationComponent&) const;
+    MCAPI void addConditionalBandwidthOptimization(struct ConditionalBandwidthOptimization const &);
+    MCAPI void addDefaultBandwidthOptimization(struct ConditionalBandwidthOptimization const &);
+    MCAPI void initialize(class EntityContext &, class ConditionalBandwidthOptimizationComponent &) const;
     MCAPI ~ConditionalBandwidthOptimizationDefinition();
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ConditionalBandwidthOptimizationDefinition> >&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ConditionalBandwidthOptimizationDefinition>> &);
 
 protected:
 

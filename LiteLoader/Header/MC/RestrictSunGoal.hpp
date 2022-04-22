@@ -17,8 +17,8 @@ class RestrictSunGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESTRICTSUNGOAL
 public:
-    class RestrictSunGoal& operator=(class RestrictSunGoal const&) = delete;
-    RestrictSunGoal(class RestrictSunGoal const&) = delete;
+    class RestrictSunGoal& operator=(class RestrictSunGoal const &) = delete;
+    RestrictSunGoal(class RestrictSunGoal const &) = delete;
     RestrictSunGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI RestrictSunGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI RestrictSunGoal(class Mob &);
 
 protected:
 

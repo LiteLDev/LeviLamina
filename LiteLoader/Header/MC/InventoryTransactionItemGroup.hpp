@@ -21,8 +21,8 @@ class InventoryTransactionItemGroup {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYTRANSACTIONITEMGROUP
 public:
-    class InventoryTransactionItemGroup& operator=(class InventoryTransactionItemGroup const&) = delete;
-    InventoryTransactionItemGroup(class InventoryTransactionItemGroup const&) = delete;
+    class InventoryTransactionItemGroup& operator=(class InventoryTransactionItemGroup const &) = delete;
+    InventoryTransactionItemGroup(class InventoryTransactionItemGroup const &) = delete;
     InventoryTransactionItemGroup() = delete;
 #endif
 

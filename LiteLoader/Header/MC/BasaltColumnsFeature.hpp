@@ -18,19 +18,19 @@ class BasaltColumnsFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASALTCOLUMNSFEATURE
 public:
-    class BasaltColumnsFeature& operator=(class BasaltColumnsFeature const&) = delete;
-    BasaltColumnsFeature(class BasaltColumnsFeature const&) = delete;
+    class BasaltColumnsFeature& operator=(class BasaltColumnsFeature const &) = delete;
+    BasaltColumnsFeature(class BasaltColumnsFeature const &) = delete;
     BasaltColumnsFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BasaltColumnsFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 protected:
 
 private:
-    MCAPI bool _placeColumnCluster(class BlockSource&, class BlockPos, int, int) const;
+    MCAPI bool _placeColumnCluster(class BlockSource &, class BlockPos, int, int) const;
 
 };

@@ -18,16 +18,16 @@ class AttackDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTACKDESCRIPTION
 public:
-    class AttackDescription& operator=(class AttackDescription const&) = delete;
-    AttackDescription(class AttackDescription const&) = delete;
+    class AttackDescription& operator=(class AttackDescription const &) = delete;
+    AttackDescription(class AttackDescription const &) = delete;
     AttackDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~AttackDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~AttackDescription(){
          (AttackDescription::*rv)();

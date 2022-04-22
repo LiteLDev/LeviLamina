@@ -17,24 +17,26 @@ class MountTamingComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOUNTTAMINGCOMPONENT
 public:
-    class MountTamingComponent& operator=(class MountTamingComponent const&) = delete;
-    MountTamingComponent(class MountTamingComponent const&) = delete;
+    class MountTamingComponent& operator=(class MountTamingComponent const &) = delete;
+    MountTamingComponent(class MountTamingComponent const &) = delete;
 #endif
 
 public:
     MCAPI MountTamingComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag&);
-    MCAPI void becomeTame(class Actor&, bool);
-    MCAPI int& getCounter();
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
-    MCAPI int& getTemper();
+    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void becomeTame(class Actor &, bool);
+    MCAPI int & getCounter();
+    MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
+    MCAPI int & getTemper();
     MCAPI int getTemperMod() const;
     MCAPI int getWaitCount() const;
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
-    MCAPI void tameToPlayer(class Actor&, class Player&, bool);
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
+    MCAPI void tameToPlayer(class Actor &, class Player &, bool);
 
 protected:
 
 private:
+    MCAPI void _feedItem(class Actor &, class Player &, int);
+    MCAPI static bool _autoReject(class ItemStack const &, class MountTameableDefinition const *);
 
 };

@@ -15,8 +15,8 @@ class BlockListEventMap {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLISTEVENTMAP
 public:
-    class BlockListEventMap& operator=(class BlockListEventMap const&) = delete;
-    BlockListEventMap(class BlockListEventMap const&) = delete;
+    class BlockListEventMap& operator=(class BlockListEventMap const &) = delete;
+    BlockListEventMap(class BlockListEventMap const &) = delete;
     BlockListEventMap() = delete;
 #endif
 

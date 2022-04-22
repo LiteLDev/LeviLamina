@@ -17,16 +17,16 @@ class ContentLogEndPoint {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTENTLOGENDPOINT
 public:
-    class ContentLogEndPoint& operator=(class ContentLogEndPoint const&) = delete;
-    ContentLogEndPoint(class ContentLogEndPoint const&) = delete;
+    class ContentLogEndPoint& operator=(class ContentLogEndPoint const &) = delete;
+    ContentLogEndPoint(class ContentLogEndPoint const &) = delete;
 #endif
 
 public:
     /*
-    inline void log(char const* a0){
-        void (ContentLogEndPoint::*rv)(char const*);
+    inline void log(char const * a0){
+        void (ContentLogEndPoint::*rv)(char const *);
         *((void**)&rv) = dlsym("?log@ContentLogEndPoint@@UEAAXPEBD@Z");
-        return (this->*rv)(std::forward<char const*>(a0));
+        return (this->*rv)(std::forward<char const *>(a0));
     }
     inline  ~ContentLogEndPoint(){
          (ContentLogEndPoint::*rv)();

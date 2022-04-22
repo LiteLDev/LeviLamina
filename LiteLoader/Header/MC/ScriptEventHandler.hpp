@@ -17,14 +17,14 @@ class ScriptEventHandler {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTEVENTHANDLER
 public:
-    class ScriptEventHandler& operator=(class ScriptEventHandler const&) = delete;
-    ScriptEventHandler(class ScriptEventHandler const&) = delete;
+    class ScriptEventHandler& operator=(class ScriptEventHandler const &) = delete;
+    ScriptEventHandler(class ScriptEventHandler const &) = delete;
 #endif
 
 public:
     MCAPI ScriptEventHandler();
-    MCAPI void registerSubHandler(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
-    MCAPI void unregisterSubHandler(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
+    MCAPI void registerSubHandler(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
+    MCAPI void unregisterSubHandler(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 
 protected:
 

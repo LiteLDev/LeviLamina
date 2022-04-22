@@ -15,13 +15,12 @@ struct ScriptBeforeItemDefinitionEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBEFOREITEMDEFINITIONEVENT
 public:
-    struct ScriptBeforeItemDefinitionEvent& operator=(struct ScriptBeforeItemDefinitionEvent const&) = delete;
-    ScriptBeforeItemDefinitionEvent(struct ScriptBeforeItemDefinitionEvent const&) = delete;
+    struct ScriptBeforeItemDefinitionEvent& operator=(struct ScriptBeforeItemDefinitionEvent const &) = delete;
+    ScriptBeforeItemDefinitionEvent(struct ScriptBeforeItemDefinitionEvent const &) = delete;
     ScriptBeforeItemDefinitionEvent() = delete;
 #endif
 
 public:
-    MCAPI ScriptBeforeItemDefinitionEvent(class Scripting::StrongTypedObjectHandle<class ScriptItemStack>, struct ItemDefinitionEventTriggeredEvent&, class Scripting::WeakLifetimeScope const&);
 
 protected:
 

@@ -17,13 +17,13 @@ class ChannelTransform {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHANNELTRANSFORM
 public:
-    class ChannelTransform& operator=(class ChannelTransform const&) = delete;
-    ChannelTransform(class ChannelTransform const&) = delete;
+    class ChannelTransform& operator=(class ChannelTransform const &) = delete;
+    ChannelTransform(class ChannelTransform const &) = delete;
     ChannelTransform() = delete;
 #endif
 
 public:
-    MCAPI bool getDataValues(class Vec3&, class Vec3&) const;
+    MCAPI bool getDataValues(class Vec3 &, class Vec3 &) const;
 
 protected:
 

@@ -17,8 +17,8 @@ class EntityComponentFactoryJson {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYCOMPONENTFACTORYJSON
 public:
-    class EntityComponentFactoryJson& operator=(class EntityComponentFactoryJson const&) = delete;
-    EntityComponentFactoryJson(class EntityComponentFactoryJson const&) = delete;
+    class EntityComponentFactoryJson& operator=(class EntityComponentFactoryJson const &) = delete;
+    EntityComponentFactoryJson(class EntityComponentFactoryJson const &) = delete;
     EntityComponentFactoryJson() = delete;
 #endif
 
@@ -31,7 +31,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI class IJsonDefinitionSerializer* tryGetDefinitionSerializer(std::string const&) const;
+    MCAPI class IJsonDefinitionSerializer * tryGetDefinitionSerializer(std::string const &) const;
 
 protected:
 

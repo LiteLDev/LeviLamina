@@ -17,8 +17,8 @@ class GameEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEEVENT
 public:
-    class GameEvent& operator=(class GameEvent const&) = delete;
-    GameEvent(class GameEvent const&) = delete;
+    class GameEvent& operator=(class GameEvent const &) = delete;
+    GameEvent(class GameEvent const &) = delete;
     GameEvent() = delete;
 #endif
 
@@ -26,7 +26,6 @@ public:
     MCAPI GameEvent(enum GameEventConfig::GameEvents, unsigned char);
     MCAPI enum GameEventConfig::GameEvents const getEventType() const;
     MCAPI float getRadius() const;
-    MCAPI unsigned __int64 getRadiusSqrd() const;
 
 protected:
 

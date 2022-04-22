@@ -17,8 +17,8 @@ struct BlockFlammableDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKFLAMMABLEDESCRIPTION
 public:
-    struct BlockFlammableDescription& operator=(struct BlockFlammableDescription const&) = delete;
-    BlockFlammableDescription(struct BlockFlammableDescription const&) = delete;
+    struct BlockFlammableDescription& operator=(struct BlockFlammableDescription const &) = delete;
+    BlockFlammableDescription(struct BlockFlammableDescription const &) = delete;
     BlockFlammableDescription() = delete;
 #endif
 

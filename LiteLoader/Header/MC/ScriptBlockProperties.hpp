@@ -17,8 +17,8 @@ class ScriptBlockProperties {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKPROPERTIES
 public:
-    class ScriptBlockProperties& operator=(class ScriptBlockProperties const&) = delete;
-    ScriptBlockProperties(class ScriptBlockProperties const&) = delete;
+    class ScriptBlockProperties& operator=(class ScriptBlockProperties const &) = delete;
+    ScriptBlockProperties(class ScriptBlockProperties const &) = delete;
     ScriptBlockProperties() = delete;
 #endif
 

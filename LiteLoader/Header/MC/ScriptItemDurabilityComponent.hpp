@@ -30,16 +30,14 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptItemDurabilityComponent(class ScriptItemDurabilityComponent const&);
-    MCAPI ScriptItemDurabilityComponent(class Scripting::WeakTypedObjectHandle<class ScriptItemStack>, class Scripting::WeakLifetimeScope const&);
+    MCAPI ScriptItemDurabilityComponent(class ScriptItemDurabilityComponent const &);
     MCAPI class Scripting::Result<int> getCurrentDamage();
     MCAPI class Scripting::Result<int> getDamageChance(int);
     MCAPI class Scripting::Result<struct FloatRange> getDamageRange();
     MCAPI class Scripting::Result<int> getMaxDamage();
-    MCAPI class ScriptItemDurabilityComponent& operator=(class ScriptItemDurabilityComponent const&);
+    MCAPI class ScriptItemDurabilityComponent & operator=(class ScriptItemDurabilityComponent const &);
     MCAPI void setCurrentDamage(int);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptItemDurabilityComponent> bind(struct Scripting::Version);
-    MCAPI static std::string const& getTypeName();
 
 protected:
 

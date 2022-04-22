@@ -27,18 +27,18 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BYTETAG
 public:
-    class ByteTag& operator=(class ByteTag const&) = delete;
-    ByteTag(class ByteTag const&) = delete;
+    class ByteTag& operator=(class ByteTag const &) = delete;
+    ByteTag(class ByteTag const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ByteTag();
     /*1*/ virtual void deleteChildren();
-    /*2*/ virtual void write(class IDataOutput&) const;
-    /*3*/ virtual void load(class IDataInput&);
+    /*2*/ virtual void write(class IDataOutput &) const;
+    /*3*/ virtual void load(class IDataInput &);
     /*4*/ virtual std::string toString() const;
     /*5*/ virtual enum Tag::Type getId() const;
-    /*6*/ virtual bool equals(class Tag const&) const;
+    /*6*/ virtual bool equals(class Tag const &) const;
     /*9*/ virtual std::unique_ptr<class Tag> copy() const;
     /*10*/ virtual unsigned __int64 hash() const;
     /*

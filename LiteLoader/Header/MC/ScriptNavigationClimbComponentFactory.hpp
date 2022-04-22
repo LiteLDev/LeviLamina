@@ -17,14 +17,14 @@ class ScriptNavigationClimbComponentFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTNAVIGATIONCLIMBCOMPONENTFACTORY
 public:
-    class ScriptNavigationClimbComponentFactory& operator=(class ScriptNavigationClimbComponentFactory const&) = delete;
-    ScriptNavigationClimbComponentFactory(class ScriptNavigationClimbComponentFactory const&) = delete;
+    class ScriptNavigationClimbComponentFactory& operator=(class ScriptNavigationClimbComponentFactory const &) = delete;
+    ScriptNavigationClimbComponentFactory(class ScriptNavigationClimbComponentFactory const &) = delete;
     ScriptNavigationClimbComponentFactory() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScriptNavigationClimbComponentFactory();
-    /*1*/ virtual class Scripting::StrongTypedObjectHandle<class ScriptActorComponent> createComponent(class WeakEntityRef, class Scripting::WeakLifetimeScope const&, std::string const&);
+    /*1*/ virtual class Scripting::StrongTypedObjectHandle<class ScriptActorComponent> createComponent(class WeakEntityRef, class Scripting::WeakLifetimeScope const &, std::string const &);
     /*2*/ virtual bool hasComponent(class WeakEntityRef) const;
 
 protected:

@@ -17,8 +17,8 @@ class _TickPtr {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION__TICKPTR
 public:
-    class _TickPtr& operator=(class _TickPtr const&) = delete;
-    _TickPtr(class _TickPtr const&) = delete;
+    class _TickPtr& operator=(class _TickPtr const &) = delete;
+    _TickPtr(class _TickPtr const &) = delete;
     _TickPtr() = delete;
 #endif
 

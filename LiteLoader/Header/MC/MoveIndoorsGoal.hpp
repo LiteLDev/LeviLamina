@@ -17,8 +17,8 @@ class MoveIndoorsGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEINDOORSGOAL
 public:
-    class MoveIndoorsGoal& operator=(class MoveIndoorsGoal const&) = delete;
-    MoveIndoorsGoal(class MoveIndoorsGoal const&) = delete;
+    class MoveIndoorsGoal& operator=(class MoveIndoorsGoal const &) = delete;
+    MoveIndoorsGoal(class MoveIndoorsGoal const &) = delete;
     MoveIndoorsGoal() = delete;
 #endif
 
@@ -30,13 +30,13 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI MoveIndoorsGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI MoveIndoorsGoal(class Mob &);
 
 protected:
 
 private:
-    MCAPI bool _isInside(class BlockPos const&);
+    MCAPI bool _isInside(class BlockPos const &);
     MCAPI void _startPathfinding();
 
 };

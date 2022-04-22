@@ -17,8 +17,8 @@ class LayDownGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LAYDOWNGOAL
 public:
-    class LayDownGoal& operator=(class LayDownGoal const&) = delete;
-    LayDownGoal(class LayDownGoal const&) = delete;
+    class LayDownGoal& operator=(class LayDownGoal const &) = delete;
+    LayDownGoal(class LayDownGoal const &) = delete;
     LayDownGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline void tick(){
         void (LayDownGoal::*rv)();
@@ -38,7 +38,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI LayDownGoal(class Mob&, int, int);
+    MCAPI LayDownGoal(class Mob &, int, int);
 
 protected:
 

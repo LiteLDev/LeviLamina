@@ -18,16 +18,16 @@ class SetActorLinkPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETACTORLINKPACKET
 public:
-    class SetActorLinkPacket& operator=(class SetActorLinkPacket const&) = delete;
-    SetActorLinkPacket(class SetActorLinkPacket const&) = delete;
+    class SetActorLinkPacket& operator=(class SetActorLinkPacket const &) = delete;
+    SetActorLinkPacket(class SetActorLinkPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~SetActorLinkPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~SetActorLinkPacket(){
          (SetActorLinkPacket::*rv)();
@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI SetActorLinkPacket(struct ActorLink const&);
+    MCAPI SetActorLinkPacket(struct ActorLink const &);
     MCAPI SetActorLinkPacket();
 
 protected:

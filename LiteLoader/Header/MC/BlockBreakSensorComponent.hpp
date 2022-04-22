@@ -17,16 +17,16 @@ class BlockBreakSensorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKBREAKSENSORCOMPONENT
 public:
-    class BlockBreakSensorComponent& operator=(class BlockBreakSensorComponent const&) = delete;
-    BlockBreakSensorComponent(class BlockBreakSensorComponent const&) = delete;
+    class BlockBreakSensorComponent& operator=(class BlockBreakSensorComponent const &) = delete;
+    BlockBreakSensorComponent(class BlockBreakSensorComponent const &) = delete;
 #endif
 
 public:
-    MCAPI BlockBreakSensorComponent(class BlockBreakSensorComponent&&);
+    MCAPI BlockBreakSensorComponent(class BlockBreakSensorComponent &&);
     MCAPI BlockBreakSensorComponent();
-    MCAPI void initialize(class Actor&);
-    MCAPI class BlockBreakSensorComponent& operator=(class BlockBreakSensorComponent&&);
-    MCAPI void updateSensorPos(class Vec3 const&);
+    MCAPI void initialize(class Actor &);
+    MCAPI class BlockBreakSensorComponent & operator=(class BlockBreakSensorComponent &&);
+    MCAPI void updateSensorPos(class Vec3 const &);
     MCAPI ~BlockBreakSensorComponent();
 
 protected:

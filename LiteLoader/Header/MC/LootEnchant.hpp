@@ -18,8 +18,8 @@ class LootEnchant : public Enchant {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTENCHANT
 public:
-    class LootEnchant& operator=(class LootEnchant const&) = delete;
-    LootEnchant(class LootEnchant const&) = delete;
+    class LootEnchant& operator=(class LootEnchant const &) = delete;
+    LootEnchant(class LootEnchant const &) = delete;
     LootEnchant() = delete;
 #endif
 
@@ -29,13 +29,14 @@ public:
     /*3*/ virtual int getMaxCost(int) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual int getMaxLevel() const;
-    /*8*/ virtual void doPostAttack(class Actor&, class Actor&, int) const;
-    /*9*/ virtual void doPostHurt(class ItemInstance&, class Actor&, class Actor&, int) const;
+    /*8*/ virtual void doPostAttack(class Actor &, class Actor &, int) const;
+    /*9*/ virtual void doPostHurt(class ItemInstance &, class Actor &, class Actor &, int) const;
     /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
+    MCAPI LootEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
 
 protected:
 

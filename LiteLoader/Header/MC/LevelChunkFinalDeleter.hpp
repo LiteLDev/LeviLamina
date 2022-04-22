@@ -17,13 +17,13 @@ struct LevelChunkFinalDeleter {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCHUNKFINALDELETER
 public:
-    struct LevelChunkFinalDeleter& operator=(struct LevelChunkFinalDeleter const&) = delete;
-    LevelChunkFinalDeleter(struct LevelChunkFinalDeleter const&) = delete;
+    struct LevelChunkFinalDeleter& operator=(struct LevelChunkFinalDeleter const &) = delete;
+    LevelChunkFinalDeleter(struct LevelChunkFinalDeleter const &) = delete;
     LevelChunkFinalDeleter() = delete;
 #endif
 
 public:
-    MCAPI void operator()(class LevelChunk*);
+    MCAPI void operator()(class LevelChunk *);
 
 protected:
 

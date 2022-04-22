@@ -17,8 +17,8 @@ class SlimeAttackGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLIMEATTACKGOAL
 public:
-    class SlimeAttackGoal& operator=(class SlimeAttackGoal const&) = delete;
-    SlimeAttackGoal(class SlimeAttackGoal const&) = delete;
+    class SlimeAttackGoal& operator=(class SlimeAttackGoal const &) = delete;
+    SlimeAttackGoal(class SlimeAttackGoal const &) = delete;
     SlimeAttackGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI SlimeAttackGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI SlimeAttackGoal(class Mob &);
 
 protected:
 

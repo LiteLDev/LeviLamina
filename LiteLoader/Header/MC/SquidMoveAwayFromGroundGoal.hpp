@@ -17,8 +17,8 @@ class SquidMoveAwayFromGroundGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SQUIDMOVEAWAYFROMGROUNDGOAL
 public:
-    class SquidMoveAwayFromGroundGoal& operator=(class SquidMoveAwayFromGroundGoal const&) = delete;
-    SquidMoveAwayFromGroundGoal(class SquidMoveAwayFromGroundGoal const&) = delete;
+    class SquidMoveAwayFromGroundGoal& operator=(class SquidMoveAwayFromGroundGoal const &) = delete;
+    SquidMoveAwayFromGroundGoal(class SquidMoveAwayFromGroundGoal const &) = delete;
     SquidMoveAwayFromGroundGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline void stop(){
         void (SquidMoveAwayFromGroundGoal::*rv)();

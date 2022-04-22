@@ -19,14 +19,14 @@ class ActorInCaravanTest : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORINCARAVANTEST
 public:
-    class ActorInCaravanTest& operator=(class ActorInCaravanTest const&) = delete;
-    ActorInCaravanTest(class ActorInCaravanTest const&) = delete;
+    class ActorInCaravanTest& operator=(class ActorInCaravanTest const &) = delete;
+    ActorInCaravanTest(class ActorInCaravanTest const &) = delete;
     ActorInCaravanTest() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorInCaravanTest();
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*
     inline  ~ActorInCaravanTest(){

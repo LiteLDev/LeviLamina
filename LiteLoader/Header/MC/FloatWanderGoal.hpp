@@ -17,8 +17,8 @@ class FloatWanderGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOATWANDERGOAL
 public:
-    class FloatWanderGoal& operator=(class FloatWanderGoal const&) = delete;
-    FloatWanderGoal(class FloatWanderGoal const&) = delete;
+    class FloatWanderGoal& operator=(class FloatWanderGoal const &) = delete;
+    FloatWanderGoal(class FloatWanderGoal const &) = delete;
     FloatWanderGoal() = delete;
 #endif
 
@@ -30,12 +30,12 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI FloatWanderGoal(class Mob&, float, float, float, bool, bool, struct FloatRange);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI FloatWanderGoal(class Mob &, float, float, float, bool, bool, struct FloatRange);
 
 protected:
 
 private:
-    MCAPI bool _canReach(class Vec3 const&, float);
+    MCAPI bool _canReach(class Vec3 const &, float);
 
 };

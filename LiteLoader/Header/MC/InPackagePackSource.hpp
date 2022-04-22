@@ -17,8 +17,8 @@ class InPackagePackSource {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INPACKAGEPACKSOURCE
 public:
-    class InPackagePackSource& operator=(class InPackagePackSource const&) = delete;
-    InPackagePackSource(class InPackagePackSource const&) = delete;
+    class InPackagePackSource& operator=(class InPackagePackSource const &) = delete;
+    InPackagePackSource(class InPackagePackSource const &) = delete;
     InPackagePackSource() = delete;
 #endif
 
@@ -28,30 +28,30 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual class PackSourceReport load(class IPackManifestFactory&, class IContentKeyProvider const&);
+    /*5*/ virtual class PackSourceReport load(class IPackManifestFactory &, class IContentKeyProvider const &);
     /*
-    inline enum PackOrigin getPackOrigin() const{
-        enum PackOrigin (InPackagePackSource::*rv)() const;
-        *((void**)&rv) = dlsym("?getPackOrigin@InPackagePackSource@@UEBA?AW4PackOrigin@@XZ");
-        return (this->*rv)();
-    }
     inline enum PackType getPackType() const{
         enum PackType (InPackagePackSource::*rv)() const;
         *((void**)&rv) = dlsym("?getPackType@InPackagePackSource@@UEBA?AW4PackType@@XZ");
         return (this->*rv)();
     }
-    inline void forEachPack(class std::function<void (class Pack& )> a0){
-        void (InPackagePackSource::*rv)(class std::function<void (class Pack& )>);
-        *((void**)&rv) = dlsym("?forEachPack@InPackagePackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<void (class Pack& )>>(a0));
+    inline enum PackOrigin getPackOrigin() const{
+        enum PackOrigin (InPackagePackSource::*rv)() const;
+        *((void**)&rv) = dlsym("?getPackOrigin@InPackagePackSource@@UEBA?AW4PackOrigin@@XZ");
+        return (this->*rv)();
     }
-    inline void forEachPackConst(class std::function<void (class Pack const& )> a0) const{
-        void (InPackagePackSource::*rv)(class std::function<void (class Pack const& )>) const;
+    inline void forEachPack(class std::function<void (class Pack &)> a0){
+        void (InPackagePackSource::*rv)(class std::function<void (class Pack &)>);
+        *((void**)&rv) = dlsym("?forEachPack@InPackagePackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z");
+        return (this->*rv)(std::forward<class std::function<void (class Pack &)>>(a0));
+    }
+    inline void forEachPackConst(class std::function<void (class Pack const &)> a0) const{
+        void (InPackagePackSource::*rv)(class std::function<void (class Pack const &)>) const;
         *((void**)&rv) = dlsym("?forEachPackConst@InPackagePackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<void (class Pack const& )>>(a0));
+        return (this->*rv)(std::forward<class std::function<void (class Pack const &)>>(a0));
     }
     */
-    MCAPI InPackagePackSource(class std::shared_ptr<class IInPackagePacks> const&, enum PackType);
+    MCAPI InPackagePackSource(class std::shared_ptr<class IInPackagePacks> const &, enum PackType);
 
 protected:
 

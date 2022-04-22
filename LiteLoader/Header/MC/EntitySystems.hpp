@@ -17,8 +17,8 @@ class EntitySystems {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYSYSTEMS
 public:
-    class EntitySystems& operator=(class EntitySystems const&) = delete;
-    EntitySystems(class EntitySystems const&) = delete;
+    class EntitySystems& operator=(class EntitySystems const &) = delete;
+    EntitySystems(class EntitySystems const &) = delete;
     EntitySystems() = delete;
 #endif
 
@@ -29,21 +29,21 @@ public:
         *((void**)&rv) = dlsym("??1EntitySystems@@UEAA@XZ");
         return (this->*rv)();
     }
-    inline void tickMovementCatchup(class EntityRegistry& a0){
-        void (EntitySystems::*rv)(class EntityRegistry&);
+    inline void tickMovementCatchup(class EntityRegistry & a0){
+        void (EntitySystems::*rv)(class EntityRegistry &);
         *((void**)&rv) = dlsym("?tickMovementCatchup@EntitySystems@@UEAAXAEAVEntityRegistry@@@Z");
-        return (this->*rv)(std::forward<class EntityRegistry&>(a0));
+        return (this->*rv)(std::forward<class EntityRegistry &>(a0));
     }
     */
     MCAPI EntitySystems(std::string);
-    MCAPI class PlayerInteractionSystem& getPlayerInteractionSystem();
-    MCAPI void registerEvents(class EntityRegistry&);
-    MCAPI void registerMovementTickingSystem(struct TickingSystemWithInfo&&);
-    MCAPI void registerSystem(std::unique_ptr<struct ISystem>, struct SystemInfo const&);
-    MCAPI void registerTickingSystem(struct TickingSystemWithInfo&&);
-    MCAPI void registerUnconditionalTickingSystem(struct TickingSystemWithInfo&&);
-    MCAPI void tick(class EntityRegistry&);
-    MCAPI void tickEditor(class EntityRegistry&);
+    MCAPI class PlayerInteractionSystem & getPlayerInteractionSystem();
+    MCAPI void registerEvents(class EntityRegistry &);
+    MCAPI void registerMovementTickingSystem(struct TickingSystemWithInfo &&);
+    MCAPI void registerSystem(std::unique_ptr<struct ISystem>, struct SystemInfo const &);
+    MCAPI void registerTickingSystem(struct TickingSystemWithInfo &&);
+    MCAPI void registerUnconditionalTickingSystem(struct TickingSystemWithInfo &&);
+    MCAPI void tick(class EntityRegistry &);
+    MCAPI void tickEditor(class EntityRegistry &);
 
 protected:
 

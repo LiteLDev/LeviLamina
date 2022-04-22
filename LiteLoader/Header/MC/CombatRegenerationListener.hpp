@@ -17,8 +17,8 @@ class CombatRegenerationListener {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMBATREGENERATIONLISTENER
 public:
-    class CombatRegenerationListener& operator=(class CombatRegenerationListener const&) = delete;
-    CombatRegenerationListener(class CombatRegenerationListener const&) = delete;
+    class CombatRegenerationListener& operator=(class CombatRegenerationListener const &) = delete;
+    CombatRegenerationListener(class CombatRegenerationListener const &) = delete;
     CombatRegenerationListener() = delete;
 #endif
 
@@ -32,7 +32,7 @@ public:
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual void __unk_vfn_8();
-    /*9*/ virtual enum EventResult onActorDeath(class Actor&, class ActorDamageSource const&, enum ActorType);
+    /*9*/ virtual enum EventResult onActorDeath(class Actor &, class ActorDamageSource const &, enum ActorType);
 
 protected:
 

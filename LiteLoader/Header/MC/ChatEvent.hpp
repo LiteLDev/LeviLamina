@@ -15,13 +15,13 @@ struct ChatEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHATEVENT
 public:
-    struct ChatEvent& operator=(struct ChatEvent const&) = delete;
+    struct ChatEvent& operator=(struct ChatEvent const &) = delete;
     ChatEvent() = delete;
 #endif
 
 public:
-    MCAPI ChatEvent(struct ChatEvent&&);
-    MCAPI ChatEvent(struct ChatEvent const&);
+    MCAPI ChatEvent(struct ChatEvent &&);
+    MCAPI ChatEvent(struct ChatEvent const &);
     MCAPI ~ChatEvent();
 
 protected:

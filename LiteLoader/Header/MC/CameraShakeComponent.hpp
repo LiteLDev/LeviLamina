@@ -17,8 +17,8 @@ class CameraShakeComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERASHAKECOMPONENT
 public:
-    class CameraShakeComponent& operator=(class CameraShakeComponent const&) = delete;
-    CameraShakeComponent(class CameraShakeComponent const&) = delete;
+    class CameraShakeComponent& operator=(class CameraShakeComponent const &) = delete;
+    CameraShakeComponent(class CameraShakeComponent const &) = delete;
     CameraShakeComponent() = delete;
 #endif
 

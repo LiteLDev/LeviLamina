@@ -18,8 +18,8 @@ class PlayerArmorDamagePacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERARMORDAMAGEPACKET
 public:
-    class PlayerArmorDamagePacket& operator=(class PlayerArmorDamagePacket const&) = delete;
-    PlayerArmorDamagePacket(class PlayerArmorDamagePacket const&) = delete;
+    class PlayerArmorDamagePacket& operator=(class PlayerArmorDamagePacket const &) = delete;
+    PlayerArmorDamagePacket(class PlayerArmorDamagePacket const &) = delete;
     PlayerArmorDamagePacket() = delete;
 #endif
 
@@ -27,8 +27,8 @@ public:
     /*0*/ virtual ~PlayerArmorDamagePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~PlayerArmorDamagePacket(){
          (PlayerArmorDamagePacket::*rv)();

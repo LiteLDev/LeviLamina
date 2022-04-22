@@ -17,25 +17,25 @@ class HoldBlockSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOLDBLOCKSYSTEM
 public:
-    class HoldBlockSystem& operator=(class HoldBlockSystem const&) = delete;
-    HoldBlockSystem(class HoldBlockSystem const&) = delete;
+    class HoldBlockSystem& operator=(class HoldBlockSystem const &) = delete;
+    HoldBlockSystem(class HoldBlockSystem const &) = delete;
     HoldBlockSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~HoldBlockSystem();
-    /*1*/ virtual void registerEvents(class entt::dispatcher&);
+    /*1*/ virtual void registerEvents(class entt::dispatcher &);
     /*
-    inline void tick(class EntityRegistry& a0){
-        void (HoldBlockSystem::*rv)(class EntityRegistry&);
+    inline void tick(class EntityRegistry & a0){
+        void (HoldBlockSystem::*rv)(class EntityRegistry &);
         *((void**)&rv) = dlsym("?tick@HoldBlockSystem@@UEAAXAEAVEntityRegistry@@@Z");
-        return (this->*rv)(std::forward<class EntityRegistry&>(a0));
+        return (this->*rv)(std::forward<class EntityRegistry &>(a0));
     }
     */
 
 protected:
 
 private:
-    MCAPI static void _holdBlockSystemOnActorDie(struct ActorDieEvent&);
+    MCAPI static void _holdBlockSystemOnActorDie(struct ActorDieEvent &);
 
 };

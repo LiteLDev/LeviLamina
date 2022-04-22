@@ -15,8 +15,8 @@ class TropicalFishInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TROPICALFISHINFO
 public:
-    class TropicalFishInfo& operator=(class TropicalFishInfo const&) = delete;
-    TropicalFishInfo(class TropicalFishInfo const&) = delete;
+    class TropicalFishInfo& operator=(class TropicalFishInfo const &) = delete;
+    TropicalFishInfo(class TropicalFishInfo const &) = delete;
     TropicalFishInfo() = delete;
 #endif
 

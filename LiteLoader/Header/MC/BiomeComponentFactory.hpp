@@ -17,14 +17,14 @@ class BiomeComponentFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMECOMPONENTFACTORY
 public:
-    class BiomeComponentFactory& operator=(class BiomeComponentFactory const&) = delete;
-    BiomeComponentFactory(class BiomeComponentFactory const&) = delete;
+    class BiomeComponentFactory& operator=(class BiomeComponentFactory const &) = delete;
+    BiomeComponentFactory(class BiomeComponentFactory const &) = delete;
     BiomeComponentFactory() = delete;
 #endif
 
 public:
     MCAPI BiomeComponentFactory(enum BiomeComponentFactory::FactoryScope);
-    MCAPI void processDataComponents(class Biome&, class IWorldRegistriesProvider&, class CompoundTag&) const;
+    MCAPI void processDataComponents(class Biome &, class IWorldRegistriesProvider &, class CompoundTag &) const;
     MCAPI void registrationFinished();
 
 protected:

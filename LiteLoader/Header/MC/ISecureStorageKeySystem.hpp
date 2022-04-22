@@ -17,8 +17,8 @@ class ISecureStorageKeySystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISECURESTORAGEKEYSYSTEM
 public:
-    class ISecureStorageKeySystem& operator=(class ISecureStorageKeySystem const&) = delete;
-    ISecureStorageKeySystem(class ISecureStorageKeySystem const&) = delete;
+    class ISecureStorageKeySystem& operator=(class ISecureStorageKeySystem const &) = delete;
+    ISecureStorageKeySystem(class ISecureStorageKeySystem const &) = delete;
     ISecureStorageKeySystem() = delete;
 #endif
 

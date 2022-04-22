@@ -17,14 +17,14 @@ class BlockSourceComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSOURCECOMPONENT
 public:
-    class BlockSourceComponent& operator=(class BlockSourceComponent const&) = delete;
-    BlockSourceComponent(class BlockSourceComponent const&) = delete;
+    class BlockSourceComponent& operator=(class BlockSourceComponent const &) = delete;
+    BlockSourceComponent(class BlockSourceComponent const &) = delete;
     BlockSourceComponent() = delete;
 #endif
 
 public:
-    MCAPI BlockSourceComponent(class Level&, class Dimension&, class ChunkSource&, bool);
-    MCAPI class StackRefResultT<struct SharePtrRefTraits<class BlockSource> > tryGetBlockSource() const;
+    MCAPI BlockSourceComponent(class Level &, class Dimension &, class ChunkSource &, bool);
+    MCAPI class StackRefResultT<struct SharePtrRefTraits<class BlockSource>> tryGetBlockSource() const;
 
 protected:
 

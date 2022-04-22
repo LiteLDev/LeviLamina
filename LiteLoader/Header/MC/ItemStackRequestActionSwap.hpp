@@ -18,8 +18,8 @@ class ItemStackRequestActionSwap : public ItemStackRequestActionTransferBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONSWAP
 public:
-    class ItemStackRequestActionSwap& operator=(class ItemStackRequestActionSwap const&) = delete;
-    ItemStackRequestActionSwap(class ItemStackRequestActionSwap const&) = delete;
+    class ItemStackRequestActionSwap& operator=(class ItemStackRequestActionSwap const &) = delete;
+    ItemStackRequestActionSwap(class ItemStackRequestActionSwap const &) = delete;
     ItemStackRequestActionSwap() = delete;
 #endif
 

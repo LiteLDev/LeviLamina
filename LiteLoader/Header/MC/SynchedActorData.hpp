@@ -154,37 +154,41 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SYNCHEDACTORDATA
 public:
-    class SynchedActorData& operator=(class SynchedActorData const&) = delete;
-    SynchedActorData(class SynchedActorData const&) = delete;
+    class SynchedActorData& operator=(class SynchedActorData const &) = delete;
+    SynchedActorData(class SynchedActorData const &) = delete;
 #endif
 
 public:
+    MCAPI SynchedActorData(class SynchedActorData &&);
     MCAPI SynchedActorData();
+    MCAPI bool _assignValues(class SynchedActorData const &, class Actor *);
     MCAPI class SynchedActorData _clone() const;
-    MCAPI bool assignValues(std::vector<std::unique_ptr<class DataItem>> const&, class Actor*);
-    MCAPI void forEachDataItem(class std::function<void (std::unique_ptr<class DataItem> const& )> const&) const;
-    MCAPI class CompoundTag const& getCompoundTag(unsigned short) const;
+    MCAPI bool assignValues(std::vector<std::unique_ptr<class DataItem>> const &, class Actor *);
+    MCAPI void forEachDataItem(class std::function<void (std::unique_ptr<class DataItem> const &)> const &) const;
+    MCAPI class CompoundTag const & getCompoundTag(unsigned short) const;
     MCAPI float getFloat(unsigned short) const;
     MCAPI int getInt(unsigned short) const;
     MCAPI __int64 getInt64(unsigned short) const;
     MCAPI signed char getInt8(unsigned short) const;
-    MCAPI class BlockPos getPos(unsigned short) const;
+    MCAPI class BlockPos getPosition(unsigned short) const;
     MCAPI short getShort(unsigned short) const;
-    MCAPI std::string const& getString(unsigned short) const;
+    MCAPI bool getStatusFlag(enum ActorFlags) const;
+    MCAPI std::string const & getString(unsigned short) const;
     MCAPI unsigned __int64 getValidDataItemCount() const;
     MCAPI class Vec3 getVec3(unsigned short) const;
     MCAPI bool hasData(unsigned short) const;
     MCAPI void markDirty(unsigned short);
-    MCAPI class SynchedActorData& operator=(class SynchedActorData&&);
+    MCAPI class SynchedActorData & operator=(class SynchedActorData &&);
     MCAPI std::vector<std::unique_ptr<class DataItem>> packAll() const;
     MCAPI std::vector<std::unique_ptr<class DataItem>> packDirty();
+    MCAPI void setStatusFlag(enum ActorFlags, bool);
     MCAPI ~SynchedActorData();
 
 protected:
 
 private:
-    MCAPI class DataItem* _find(unsigned short) const;
-    MCAPI class DataItem& _get(unsigned short);
+    MCAPI class DataItem * _find(unsigned short) const;
+    MCAPI class DataItem & _get(unsigned short);
     MCAPI void _resizeToContain(unsigned short);
 
 };

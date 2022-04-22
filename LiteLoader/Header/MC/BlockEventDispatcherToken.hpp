@@ -17,13 +17,13 @@ class BlockEventDispatcherToken {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKEVENTDISPATCHERTOKEN
 public:
-    class BlockEventDispatcherToken& operator=(class BlockEventDispatcherToken const&) = delete;
-    BlockEventDispatcherToken(class BlockEventDispatcherToken const&) = delete;
+    class BlockEventDispatcherToken& operator=(class BlockEventDispatcherToken const &) = delete;
+    BlockEventDispatcherToken(class BlockEventDispatcherToken const &) = delete;
     BlockEventDispatcherToken() = delete;
 #endif
 
 public:
-    MCAPI class BlockEventDispatcherToken& operator=(class BlockEventDispatcherToken&&);
+    MCAPI class BlockEventDispatcherToken & operator=(class BlockEventDispatcherToken &&);
     MCAPI ~BlockEventDispatcherToken();
 
 protected:

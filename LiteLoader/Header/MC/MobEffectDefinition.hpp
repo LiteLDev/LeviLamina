@@ -18,19 +18,20 @@ class MobEffectDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEFFECTDEFINITION
 public:
-    class MobEffectDefinition& operator=(class MobEffectDefinition const&) = delete;
-    MobEffectDefinition(class MobEffectDefinition const&) = delete;
+    class MobEffectDefinition& operator=(class MobEffectDefinition const &) = delete;
+    MobEffectDefinition(class MobEffectDefinition const &) = delete;
 #endif
 
 public:
     MCAPI MobEffectDefinition();
-    MCAPI void initialize(class EntityContext&, class MobEffectComponent&);
-    MCAPI void setEffectTimeInTicks(int const&);
-    MCAPI void setMobEffectByName(std::string const&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MobEffectDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class MobEffectComponent &);
+    MCAPI void setEffectTimeInTicks(int const &);
+    MCAPI void setMobEffectByName(std::string const &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MobEffectDefinition>> &);
 
 protected:
 
 private:
+    MCAPI static int _parseMobEffectId(std::string const &);
 
 };

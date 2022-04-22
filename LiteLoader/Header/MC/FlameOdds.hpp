@@ -17,8 +17,8 @@ class FlameOdds {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLAMEODDS
 public:
-    class FlameOdds& operator=(class FlameOdds const&) = delete;
-    FlameOdds(class FlameOdds const&) = delete;
+    class FlameOdds& operator=(class FlameOdds const &) = delete;
+    FlameOdds(class FlameOdds const &) = delete;
     FlameOdds() = delete;
 #endif
 

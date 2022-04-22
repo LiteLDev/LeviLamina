@@ -18,14 +18,14 @@ struct IsIllagerCaptainDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISILLAGERCAPTAINDEFINITION
 public:
-    struct IsIllagerCaptainDefinition& operator=(struct IsIllagerCaptainDefinition const&) = delete;
-    IsIllagerCaptainDefinition(struct IsIllagerCaptainDefinition const&) = delete;
+    struct IsIllagerCaptainDefinition& operator=(struct IsIllagerCaptainDefinition const &) = delete;
+    IsIllagerCaptainDefinition(struct IsIllagerCaptainDefinition const &) = delete;
     IsIllagerCaptainDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&);
-    MCAPI void uninitialize(class EntityContext&);
+    MCAPI void initialize(class EntityContext &);
+    MCAPI void uninitialize(class EntityContext &);
 
 protected:
 

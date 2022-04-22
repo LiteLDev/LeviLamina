@@ -17,14 +17,15 @@ struct BlockPlacementFilterComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPLACEMENTFILTERCOMPONENT
 public:
-    struct BlockPlacementFilterComponent& operator=(struct BlockPlacementFilterComponent const&) = delete;
-    BlockPlacementFilterComponent(struct BlockPlacementFilterComponent const&) = delete;
+    struct BlockPlacementFilterComponent& operator=(struct BlockPlacementFilterComponent const &) = delete;
+    BlockPlacementFilterComponent(struct BlockPlacementFilterComponent const &) = delete;
     BlockPlacementFilterComponent() = delete;
 #endif
 
 public:
-    MCAPI bool mayPlace(class BlockSource&, class BlockPos const&) const;
-    MCAPI bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
+    MCAPI bool mayPlace(class BlockSource &, class BlockPos const &) const;
+    MCAPI bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
+    MCAPI ~BlockPlacementFilterComponent();
 
 protected:
 

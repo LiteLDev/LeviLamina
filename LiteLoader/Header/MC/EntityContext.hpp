@@ -17,13 +17,13 @@ class EntityContext {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYCONTEXT
 public:
-    class EntityContext& operator=(class EntityContext const&) = delete;
-    EntityContext(class EntityContext const&) = delete;
+    class EntityContext& operator=(class EntityContext const &) = delete;
+    EntityContext(class EntityContext const &) = delete;
     EntityContext() = delete;
 #endif
 
 public:
-    MCAPI EntityContext(class EntityRegistry&, class EntityId);
+    MCAPI EntityContext(class EntityRegistry &, class EntityId);
     MCAPI class WeakRefT<struct EntityRefTraits> getWeakRef() const;
 
 protected:

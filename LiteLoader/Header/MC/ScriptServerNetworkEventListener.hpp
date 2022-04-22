@@ -17,16 +17,16 @@ class ScriptServerNetworkEventListener {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTSERVERNETWORKEVENTLISTENER
 public:
-    class ScriptServerNetworkEventListener& operator=(class ScriptServerNetworkEventListener const&) = delete;
-    ScriptServerNetworkEventListener(class ScriptServerNetworkEventListener const&) = delete;
+    class ScriptServerNetworkEventListener& operator=(class ScriptServerNetworkEventListener const &) = delete;
+    ScriptServerNetworkEventListener(class ScriptServerNetworkEventListener const &) = delete;
     ScriptServerNetworkEventListener() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScriptServerNetworkEventListener();
-    /*2*/ virtual enum EventResult onMessage(struct MessageEvent const&);
-    /*3*/ virtual enum EventResult onEvent(struct ChatEvent const&);
-    MCAPI ScriptServerNetworkEventListener(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
+    /*2*/ virtual enum EventResult onMessage(struct MessageEvent const &);
+    /*3*/ virtual enum EventResult onEvent(struct ChatEvent const &);
+    MCAPI ScriptServerNetworkEventListener(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 
 protected:
 

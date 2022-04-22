@@ -18,22 +18,22 @@ class DropperBlockActor {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DROPPERBLOCKACTOR
 public:
-    class DropperBlockActor& operator=(class DropperBlockActor const&) = delete;
-    DropperBlockActor(class DropperBlockActor const&) = delete;
+    class DropperBlockActor& operator=(class DropperBlockActor const &) = delete;
+    DropperBlockActor(class DropperBlockActor const &) = delete;
     DropperBlockActor() = delete;
 #endif
 
 public:
     /*
-    inline std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& a0){
-        std::unique_ptr<class BlockActorDataPacket> (DropperBlockActor::*rv)(class BlockSource&);
+    inline std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource & a0){
+        std::unique_ptr<class BlockActorDataPacket> (DropperBlockActor::*rv)(class BlockSource &);
         *((void**)&rv) = dlsym("?_getUpdatePacket@DropperBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
+        return (this->*rv)(std::forward<class BlockSource &>(a0));
     }
-    inline void _onUpdatePacket(class CompoundTag const& a0, class BlockSource& a1){
-        void (DropperBlockActor::*rv)(class CompoundTag const&, class BlockSource&);
+    inline void _onUpdatePacket(class CompoundTag const & a0, class BlockSource & a1){
+        void (DropperBlockActor::*rv)(class CompoundTag const &, class BlockSource &);
         *((void**)&rv) = dlsym("?_onUpdatePacket@DropperBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class BlockSource&>(a1));
+        return (this->*rv)(std::forward<class CompoundTag const &>(a0), std::forward<class BlockSource &>(a1));
     }
     inline std::string getName() const{
         std::string (DropperBlockActor::*rv)() const;
@@ -41,12 +41,12 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI bool pushOutItems(class BlockSource&);
+    MCAPI bool pushOutItems(class BlockSource &);
 
 protected:
 
 private:
-    MCAPI bool _addItem(class BlockSource&, class Container&, class ItemStack&, int);
-    MCAPI class Container* _getContainerAt(class BlockSource&, class Vec3 const&);
+    MCAPI bool _addItem(class BlockSource &, class Container &, class ItemStack &, int);
+    MCAPI class Container * _getContainerAt(class BlockSource &, class Vec3 const &);
 
 };

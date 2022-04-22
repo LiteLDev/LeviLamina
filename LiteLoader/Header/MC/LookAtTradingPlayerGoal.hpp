@@ -18,8 +18,8 @@ class LookAtTradingPlayerGoal : public LookAtActorGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATTRADINGPLAYERGOAL
 public:
-    class LookAtTradingPlayerGoal& operator=(class LookAtTradingPlayerGoal const&) = delete;
-    LookAtTradingPlayerGoal(class LookAtTradingPlayerGoal const&) = delete;
+    class LookAtTradingPlayerGoal& operator=(class LookAtTradingPlayerGoal const &) = delete;
+    LookAtTradingPlayerGoal(class LookAtTradingPlayerGoal const &) = delete;
     LookAtTradingPlayerGoal() = delete;
 #endif
 
@@ -28,8 +28,8 @@ public:
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_3();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI LookAtTradingPlayerGoal(class Mob&, float, float, int, int, int, int);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI LookAtTradingPlayerGoal(class Mob &, float, float, int, int, int, int);
 
 protected:
 

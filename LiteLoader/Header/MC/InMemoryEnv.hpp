@@ -17,24 +17,24 @@ class InMemoryEnv {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INMEMORYENV
 public:
-    class InMemoryEnv& operator=(class InMemoryEnv const&) = delete;
-    InMemoryEnv(class InMemoryEnv const&) = delete;
+    class InMemoryEnv& operator=(class InMemoryEnv const &) = delete;
+    InMemoryEnv(class InMemoryEnv const &) = delete;
     InMemoryEnv() = delete;
 #endif
 
 public:
     /*0*/ virtual ~InMemoryEnv();
-    /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const&, class leveldb::SequentialFile* *);
-    /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const&, class leveldb::RandomAccessFile* *);
-    /*3*/ virtual class leveldb::Status NewWritableFile(std::string const&, class leveldb::WritableFile* *);
-    /*4*/ virtual class leveldb::Status NewAppendableFile(std::string const&, class leveldb::WritableFile* *);
-    /*5*/ virtual bool FileExists(std::string const&);
-    /*6*/ virtual class leveldb::Status GetChildren(std::string const&, std::vector<std::string>*);
-    /*7*/ virtual class leveldb::Status DeleteFileA(std::string const&);
+    /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
+    /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
+    /*3*/ virtual class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
+    /*4*/ virtual class leveldb::Status NewAppendableFile(std::string const &, class leveldb::WritableFile **);
+    /*5*/ virtual bool FileExists(std::string const &);
+    /*6*/ virtual class leveldb::Status GetChildren(std::string const &, std::vector<std::string> *);
+    /*7*/ virtual class leveldb::Status DeleteFileA(std::string const &);
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void __unk_vfn_10();
-    /*11*/ virtual class leveldb::Status RenameFile(std::string const&, std::string const&);
+    /*11*/ virtual class leveldb::Status RenameFile(std::string const &, std::string const &);
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void __unk_vfn_14();

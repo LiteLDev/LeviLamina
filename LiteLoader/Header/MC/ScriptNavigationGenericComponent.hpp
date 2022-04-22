@@ -18,8 +18,8 @@ class ScriptNavigationGenericComponent : public NavigationScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTNAVIGATIONGENERICCOMPONENT
 public:
-    class ScriptNavigationGenericComponent& operator=(class ScriptNavigationGenericComponent const&) = delete;
-    ScriptNavigationGenericComponent(class ScriptNavigationGenericComponent const&) = delete;
+    class ScriptNavigationGenericComponent& operator=(class ScriptNavigationGenericComponent const &) = delete;
+    ScriptNavigationGenericComponent(class ScriptNavigationGenericComponent const &) = delete;
     ScriptNavigationGenericComponent() = delete;
 #endif
 

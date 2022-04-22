@@ -17,8 +17,8 @@ class SummonActorGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUMMONACTORGOAL
 public:
-    class SummonActorGoal& operator=(class SummonActorGoal const&) = delete;
-    SummonActorGoal(class SummonActorGoal const&) = delete;
+    class SummonActorGoal& operator=(class SummonActorGoal const &) = delete;
+    SummonActorGoal(class SummonActorGoal const &) = delete;
     SummonActorGoal() = delete;
 #endif
 
@@ -30,13 +30,13 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI SummonActorGoal(class Mob&, std::vector<struct SummonSpellData> const&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI SummonActorGoal(class Mob &, std::vector<struct SummonSpellData> const &);
 
 protected:
 
 private:
     MCAPI void _createSpellEntity(float, float, float, float, float, int, struct ActorDefinitionIdentifier) const;
-    MCAPI int _selectBestSpell(class Actor&) const;
+    MCAPI int _selectBestSpell(class Actor &) const;
 
 };

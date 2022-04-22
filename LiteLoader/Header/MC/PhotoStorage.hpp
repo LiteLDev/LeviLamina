@@ -18,13 +18,13 @@ class PhotoStorage {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PHOTOSTORAGE
 public:
-    class PhotoStorage& operator=(class PhotoStorage const&) = delete;
-    PhotoStorage(class PhotoStorage const&) = delete;
+    class PhotoStorage& operator=(class PhotoStorage const &) = delete;
+    PhotoStorage(class PhotoStorage const &) = delete;
     PhotoStorage() = delete;
 #endif
 
 public:
-    MCAPI PhotoStorage(class Core::Path const&);
+    MCAPI PhotoStorage(class Core::Path const &);
     MCAPI ~PhotoStorage();
     MCAPI static std::string const BOOKS_DIR;
     MCAPI static std::string const MANIFEST_NAME;

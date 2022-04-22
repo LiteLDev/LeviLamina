@@ -18,16 +18,16 @@ class StrengthDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRENGTHDESCRIPTION
 public:
-    class StrengthDescription& operator=(class StrengthDescription const&) = delete;
-    StrengthDescription(class StrengthDescription const&) = delete;
+    class StrengthDescription& operator=(class StrengthDescription const &) = delete;
+    StrengthDescription(class StrengthDescription const &) = delete;
     StrengthDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~StrengthDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~StrengthDescription(){
          (StrengthDescription::*rv)();

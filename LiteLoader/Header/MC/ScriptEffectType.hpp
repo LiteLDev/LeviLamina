@@ -17,13 +17,13 @@ class ScriptEffectType {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTEFFECTTYPE
 public:
-    class ScriptEffectType& operator=(class ScriptEffectType const&) = delete;
-    ScriptEffectType(class ScriptEffectType const&) = delete;
+    class ScriptEffectType& operator=(class ScriptEffectType const &) = delete;
+    ScriptEffectType(class ScriptEffectType const &) = delete;
     ScriptEffectType() = delete;
 #endif
 
 public:
-    MCAPI class MobEffect const& getEffect() const;
+    MCAPI class MobEffect const & getEffect() const;
     MCAPI std::string getName() const;
 
 protected:

@@ -19,14 +19,14 @@ class SequenceDefinition : public BehaviorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SEQUENCEDEFINITION
 public:
-    class SequenceDefinition& operator=(class SequenceDefinition const&) = delete;
-    SequenceDefinition(class SequenceDefinition const&) = delete;
+    class SequenceDefinition& operator=(class SequenceDefinition const &) = delete;
+    SequenceDefinition(class SequenceDefinition const &) = delete;
     SequenceDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SequenceDefinition();
-    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 
 protected:
 

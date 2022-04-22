@@ -17,15 +17,15 @@ class BalloonSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BALLOONSYSTEM
 public:
-    class BalloonSystem& operator=(class BalloonSystem const&) = delete;
-    BalloonSystem(class BalloonSystem const&) = delete;
+    class BalloonSystem& operator=(class BalloonSystem const &) = delete;
+    BalloonSystem(class BalloonSystem const &) = delete;
     BalloonSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BalloonSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

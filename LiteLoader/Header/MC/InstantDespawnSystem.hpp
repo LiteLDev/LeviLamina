@@ -17,15 +17,15 @@ class InstantDespawnSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSTANTDESPAWNSYSTEM
 public:
-    class InstantDespawnSystem& operator=(class InstantDespawnSystem const&) = delete;
-    InstantDespawnSystem(class InstantDespawnSystem const&) = delete;
+    class InstantDespawnSystem& operator=(class InstantDespawnSystem const &) = delete;
+    InstantDespawnSystem(class InstantDespawnSystem const &) = delete;
     InstantDespawnSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~InstantDespawnSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

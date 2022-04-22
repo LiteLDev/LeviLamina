@@ -18,16 +18,16 @@ class LegacySpringsFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYSPRINGSFEATURE
 public:
-    class LegacySpringsFeature& operator=(class LegacySpringsFeature const&) = delete;
-    LegacySpringsFeature(class LegacySpringsFeature const&) = delete;
+    class LegacySpringsFeature& operator=(class LegacySpringsFeature const &) = delete;
+    LegacySpringsFeature(class LegacySpringsFeature const &) = delete;
     LegacySpringsFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LegacySpringsFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-    MCAPI LegacySpringsFeature(class FeatureRegistry const&, class BaseGameVersion const&);
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+    MCAPI LegacySpringsFeature(class FeatureRegistry const &, class BaseGameVersion const &);
 
 protected:
 

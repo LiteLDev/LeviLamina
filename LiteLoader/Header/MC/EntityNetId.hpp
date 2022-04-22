@@ -17,13 +17,13 @@ class EntityNetId {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYNETID
 public:
-    class EntityNetId& operator=(class EntityNetId const&) = delete;
-    EntityNetId(class EntityNetId const&) = delete;
+    class EntityNetId& operator=(class EntityNetId const &) = delete;
+    EntityNetId(class EntityNetId const &) = delete;
     EntityNetId() = delete;
 #endif
 
 public:
-    MCAPI static class EntityNetId _serverGetEntityNetId(class EntityContext const&);
+    MCAPI static class EntityNetId _serverGetEntityNetId(class EntityContext const &);
 
 protected:
 

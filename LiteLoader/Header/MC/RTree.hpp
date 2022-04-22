@@ -29,18 +29,18 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RTREE
 public:
-    class RTree& operator=(class RTree const&) = delete;
-    RTree(class RTree const&) = delete;
+    class RTree& operator=(class RTree const &) = delete;
+    RTree(class RTree const &) = delete;
     RTree() = delete;
 #endif
 
 public:
     MCAPI ~RTree();
-    MCAPI static class std::optional<class RTree> create(std::vector<struct BiomeNoiseTarget> const&);
+    MCAPI static class std::optional<class RTree> create(std::vector<struct BiomeNoiseTarget> const &);
 
 protected:
 
 private:
-    MCAPI static class std::optional<class RTree::Node> build(std::vector<class RTree::Node>&&);
+    MCAPI static class std::optional<class RTree::Node> build(std::vector<class RTree::Node> &&);
 
 };

@@ -17,13 +17,13 @@ class ListTagIntAdder {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LISTTAGINTADDER
 public:
-    class ListTagIntAdder& operator=(class ListTagIntAdder const&) = delete;
-    ListTagIntAdder(class ListTagIntAdder const&) = delete;
+    class ListTagIntAdder& operator=(class ListTagIntAdder const &) = delete;
+    ListTagIntAdder(class ListTagIntAdder const &) = delete;
     ListTagIntAdder() = delete;
 #endif
 
 public:
-    MCAPI class ListTagIntAdder& operator()(int);
+    MCAPI class ListTagIntAdder & operator()(int);
     MCAPI ~ListTagIntAdder();
 
 protected:

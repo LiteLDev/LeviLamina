@@ -17,8 +17,8 @@ struct PlayerScoreboardId {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSCOREBOARDID
 public:
-    struct PlayerScoreboardId& operator=(struct PlayerScoreboardId const&) = delete;
-    PlayerScoreboardId(struct PlayerScoreboardId const&) = delete;
+    struct PlayerScoreboardId& operator=(struct PlayerScoreboardId const &) = delete;
+    PlayerScoreboardId(struct PlayerScoreboardId const &) = delete;
 #endif
 
 public:

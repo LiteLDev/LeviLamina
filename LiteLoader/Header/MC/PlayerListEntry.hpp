@@ -25,16 +25,16 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERLISTENTRY
 public:
-    class PlayerListEntry& operator=(class PlayerListEntry const&) = delete;
-    PlayerListEntry(class PlayerListEntry const&) = delete;
+    class PlayerListEntry& operator=(class PlayerListEntry const &) = delete;
+    PlayerListEntry(class PlayerListEntry const &) = delete;
     PlayerListEntry() = delete;
 #endif
 
 public:
-    MCAPI PlayerListEntry(class Player const&);
+    MCAPI PlayerListEntry(class Player const &);
     MCAPI class PlayerListEntry clone() const;
-    MCAPI bool read(class ReadOnlyBinaryStream&);
-    MCAPI void write(class BinaryStream&) const;
+    MCAPI bool read(class ReadOnlyBinaryStream &);
+    MCAPI void write(class BinaryStream &) const;
     MCAPI ~PlayerListEntry();
 
 protected:

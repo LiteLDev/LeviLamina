@@ -17,13 +17,14 @@ class SubChunkRelighter {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKRELIGHTER
 public:
-    class SubChunkRelighter& operator=(class SubChunkRelighter const&) = delete;
-    SubChunkRelighter(class SubChunkRelighter const&) = delete;
+    class SubChunkRelighter& operator=(class SubChunkRelighter const &) = delete;
+    SubChunkRelighter(class SubChunkRelighter const &) = delete;
     SubChunkRelighter() = delete;
 #endif
 
 public:
-    MCAPI struct SubChunk* _getAbsorption(struct SubChunkLightIndex, unsigned char&) const;
+    MCAPI SubChunkRelighter(class BlockSource &, unsigned __int64, class ChunkPos const &, bool, bool);
+    MCAPI struct SubChunk * _getAbsorption(struct SubChunkLightIndex, unsigned char &) const;
     MCAPI void _propagateBlockLight(struct SubChunkLightIndex, unsigned char);
     MCAPI void _propagateBlockLight();
     MCAPI void _propagateSkyLight(struct SubChunkLightIndex, unsigned char);
@@ -36,8 +37,8 @@ public:
     MCAPI void _setPropagatedBlockLightValue(struct SubChunkLightIndex, unsigned char);
     MCAPI void _setPropagatedSkyLightValue(struct SubChunkLightIndex, unsigned char);
     MCAPI void _setSkyLight(struct SubChunkLightIndex, struct Brightness, struct Brightness, struct Brightness, struct Brightness);
-    MCAPI void setBlockLight(class Pos const&, struct Brightness, struct Brightness, struct Brightness, struct Brightness);
-    MCAPI void setSkyLight(class Pos const&, struct Brightness, struct Brightness, struct Brightness, struct Brightness);
+    MCAPI void setBlockLight(class Pos const &, struct Brightness, struct Brightness, struct Brightness, struct Brightness);
+    MCAPI void setSkyLight(class Pos const &, struct Brightness, struct Brightness, struct Brightness, struct Brightness);
     MCAPI ~SubChunkRelighter();
     MCAPI static class std::bitset<196608> computeAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits();
     MCAPI static class std::bitset<196608> computeOuterEdgeOfComputationBits();
@@ -47,8 +48,9 @@ public:
 protected:
 
 private:
-    MCAPI struct SubChunk* _dirtySubChunk(struct SubChunkLightIndex, unsigned int&);
+    MCAPI struct SubChunk * _dirtySubChunk(struct SubChunkLightIndex, unsigned int &);
     MCAPI unsigned char _getLight(struct SubChunkLightIndex);
+    MCAPI struct SubChunkBrightnessStorage::LightPair _getLightPair(struct SubChunkLightIndex) const;
     MCAPI static class std::bitset<196608> mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits;
     MCAPI static class std::bitset<196608> mOuterEdgeOfComputationBits;
     MCAPI static class SpinLock sDarkSpinLock;

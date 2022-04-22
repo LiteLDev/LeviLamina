@@ -17,8 +17,8 @@ struct TickingAreaDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKINGAREADESCRIPTION
 public:
-    struct TickingAreaDescription& operator=(struct TickingAreaDescription const&) = delete;
-    TickingAreaDescription(struct TickingAreaDescription const&) = delete;
+    struct TickingAreaDescription& operator=(struct TickingAreaDescription const &) = delete;
+    TickingAreaDescription(struct TickingAreaDescription const &) = delete;
     TickingAreaDescription() = delete;
 #endif
 

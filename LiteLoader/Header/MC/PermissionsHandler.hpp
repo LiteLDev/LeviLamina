@@ -17,15 +17,15 @@ class PermissionsHandler {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERMISSIONSHANDLER
 public:
-    class PermissionsHandler& operator=(class PermissionsHandler const&) = delete;
-    PermissionsHandler(class PermissionsHandler const&) = delete;
+    class PermissionsHandler& operator=(class PermissionsHandler const &) = delete;
+    PermissionsHandler(class PermissionsHandler const &) = delete;
     PermissionsHandler() = delete;
 #endif
 
 public:
-    MCAPI bool loadSaveData(class CompoundTag const&);
-    MCAPI static enum PlayerPermissionLevel playerPermissionLevelFromString(std::string const&);
-    MCAPI static std::string playerPermissionLevelToString(enum PlayerPermissionLevel const&);
+    MCAPI bool loadSaveData(class CompoundTag const &);
+    MCAPI static enum PlayerPermissionLevel playerPermissionLevelFromString(std::string const &);
+    MCAPI static std::string playerPermissionLevelToString(enum PlayerPermissionLevel const &);
 
 protected:
 

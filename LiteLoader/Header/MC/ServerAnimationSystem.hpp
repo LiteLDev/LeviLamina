@@ -15,8 +15,8 @@ class ServerAnimationSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERANIMATIONSYSTEM
 public:
-    class ServerAnimationSystem& operator=(class ServerAnimationSystem const&) = delete;
-    ServerAnimationSystem(class ServerAnimationSystem const&) = delete;
+    class ServerAnimationSystem& operator=(class ServerAnimationSystem const &) = delete;
+    ServerAnimationSystem(class ServerAnimationSystem const &) = delete;
     ServerAnimationSystem() = delete;
 #endif
 

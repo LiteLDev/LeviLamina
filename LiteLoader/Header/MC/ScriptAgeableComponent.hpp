@@ -18,8 +18,8 @@ class ScriptAgeableComponent : public ScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTAGEABLECOMPONENT
 public:
-    class ScriptAgeableComponent& operator=(class ScriptAgeableComponent const&) = delete;
-    ScriptAgeableComponent(class ScriptAgeableComponent const&) = delete;
+    class ScriptAgeableComponent& operator=(class ScriptAgeableComponent const &) = delete;
+    ScriptAgeableComponent(class ScriptAgeableComponent const &) = delete;
     ScriptAgeableComponent() = delete;
 #endif
 
@@ -32,11 +32,11 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptAgeableComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
-    MCAPI class Scripting::Result<std::vector<std::string> > getDropItems() const;
+    MCAPI ScriptAgeableComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
+    MCAPI class Scripting::Result<std::vector<std::string>> getDropItems() const;
     MCAPI class Scripting::Result<float> getDuration() const;
-    MCAPI class Scripting::Result<std::vector<struct ActorDefinitionFeedItem> > getFeedItems() const;
-    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptDefinitionTrigger> > getGrowUp() const;
+    MCAPI class Scripting::Result<std::vector<struct ActorDefinitionFeedItem>> getFeedItems() const;
+    MCAPI class Scripting::Result<class DefinitionTrigger> getGrowUp() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptAgeableComponent> bind(struct Scripting::Version);
 
 protected:

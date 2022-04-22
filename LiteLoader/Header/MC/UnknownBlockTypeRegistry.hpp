@@ -17,18 +17,18 @@ class UnknownBlockTypeRegistry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UNKNOWNBLOCKTYPEREGISTRY
 public:
-    class UnknownBlockTypeRegistry& operator=(class UnknownBlockTypeRegistry const&) = delete;
-    UnknownBlockTypeRegistry(class UnknownBlockTypeRegistry const&) = delete;
+    class UnknownBlockTypeRegistry& operator=(class UnknownBlockTypeRegistry const &) = delete;
+    UnknownBlockTypeRegistry(class UnknownBlockTypeRegistry const &) = delete;
     UnknownBlockTypeRegistry() = delete;
 #endif
 
 public:
     /*0*/ virtual ~UnknownBlockTypeRegistry();
-    /*1*/ virtual class Block const& getUnknownBlock(class CompoundTag const&);
+    /*1*/ virtual class Block const & getUnknownBlock(class CompoundTag const &);
 
 protected:
 
 private:
-    MCAPI void _registerBlock(std::string const&, unsigned __int64);
+    MCAPI void _registerBlock(std::string const &, unsigned __int64);
 
 };

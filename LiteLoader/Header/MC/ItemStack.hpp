@@ -47,8 +47,8 @@ public:
 
 public:
     /*0*/ virtual ~ItemStack();
-    /*1*/ virtual void reinit(class Item const&, int, int);
-    /*2*/ virtual void reinit(class BlockLegacy const&, int);
+    /*1*/ virtual void reinit(class Item const &, int, int);
+    /*2*/ virtual void reinit(class BlockLegacy const &, int);
     /*3*/ virtual void reinit(class gsl::basic_string_span<char const, -1>, int, int);
     /*4*/ virtual void setNull();
     /*5*/ virtual std::string toString() const;
@@ -60,44 +60,44 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ItemStack(class ItemStack const&);
-    MCAPI ItemStack(class Block const&, int, class CompoundTag const*);
-    MCAPI ItemStack(class BlockLegacy const&, int);
-    MCAPI ItemStack(class Item const&);
-    MCAPI ItemStack(class Item const&, int);
-    MCAPI ItemStack(class Item const&, int, int);
-    MCAPI ItemStack(class Item const&, int, int, class CompoundTag const*);
-    MCAPI ItemStack(class ItemInstance const&);
-    MCAPI ItemStack(class RecipeIngredient const&);
-    MCAPI ItemStack(class gsl::basic_string_span<char const, -1>, int, int, class CompoundTag const*);
+    MCAPI ItemStack(class ItemStack const &);
+    MCAPI ItemStack(class Block const &, int, class CompoundTag const *);
+    MCAPI ItemStack(class BlockLegacy const &, int);
+    MCAPI ItemStack(class Item const &);
+    MCAPI ItemStack(class Item const &, int);
+    MCAPI ItemStack(class Item const &, int, int);
+    MCAPI ItemStack(class Item const &, int, int, class CompoundTag const *);
+    MCAPI ItemStack(class ItemInstance const &);
+    MCAPI ItemStack(class RecipeIngredient const &);
+    MCAPI ItemStack(class gsl::basic_string_span<char const, -1>, int, int, class CompoundTag const *);
     MCAPI ItemStack();
     MCAPI void __autoclassinit2(unsigned __int64);
-    MCAPI void _assignNetIdVariant(class ItemStack const&) const;
-    MCAPI void clientInitLegacyRequestId(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const&);
+    MCAPI void _assignNetIdVariant(class ItemStack const &) const;
+    MCAPI void clientInitLegacyRequestId(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &);
     MCAPI class ItemStack clone() const;
-    MCAPI float getDestroySpeed(class Block const&) const;
-    MCAPI struct ItemStackNetIdVariant const& getItemStackNetIdVariant() const;
+    MCAPI float getDestroySpeed(class Block const &) const;
+    MCAPI struct ItemStackNetIdVariant const & getItemStackNetIdVariant() const;
     MCAPI int getMaxUseDuration() const;
     MCAPI class ItemStack getStrippedNetworkItem() const;
     MCAPI bool hasItemStackNetId() const;
-    MCAPI bool inventoryTick(class Level&, class Actor&, int, bool);
-    MCAPI bool matchesAndNetIdVariantMatches(class ItemStack const&) const;
-    MCAPI bool matchesNetIdVariant(class ItemStack const&) const;
-    MCAPI void mineBlock(class Block const&, int, int, int, class Mob*);
-    MCAPI class ItemStack& operator=(class ItemStack const&);
-    MCAPI void playSoundIncrementally(class Mob&) const;
-    MCAPI void releaseUsing(class Player*, int);
-    MCAPI bool sameItemAndAuxAndBlockData(class ItemStack const&) const;
+    MCAPI bool inventoryTick(class Level &, class Actor &, int, bool);
+    MCAPI bool matchesAndNetIdVariantMatches(class ItemStack const &) const;
+    MCAPI bool matchesNetIdVariant(class ItemStack const &) const;
+    MCAPI void mineBlock(class Block const &, int, int, int, class Mob *);
+    MCAPI class ItemStack & operator=(class ItemStack const &);
+    MCAPI void playSoundIncrementally(class Mob &) const;
+    MCAPI void releaseUsing(class Player *, int);
+    MCAPI bool sameItemAndAuxAndBlockData(class ItemStack const &) const;
     MCAPI void serverInitNetId();
-    MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const* tryGetItemStackNetId() const;
-    MCAPI class ItemStack& use(class Player&);
+    MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const * tryGetItemStackNetId() const;
+    MCAPI class ItemStack & use(class Player &);
     MCAPI void useAsFuel();
-    MCAPI bool useOn(class Actor&, int, int, int, unsigned char, class Vec3 const&);
-    MCAPI enum ItemUseMethod useTimeDepleted(class Level*, class Player*);
+    MCAPI bool useOn(class Actor &, int, int, int, unsigned char, class Vec3 const &);
+    MCAPI enum ItemUseMethod useTimeDepleted(class Level *, class Player *);
     MCAPI static class ItemStack const EMPTY_ITEM;
-    MCAPI static class ItemStack fromDescriptor(class NetworkItemStackDescriptor const&, class BlockPalette&, bool);
-    MCAPI static class ItemStack fromTag(class CompoundTag const&);
-    MCAPI static class ItemStack fromTag(class CompoundTag const&, class Level&);
+    MCAPI static class ItemStack fromDescriptor(class NetworkItemStackDescriptor const &, class BlockPalette &, bool);
+    MCAPI static class ItemStack fromTag(class CompoundTag const &);
+    MCAPI static class ItemStack fromTag(class CompoundTag const &, class Level &);
 
 protected:
 

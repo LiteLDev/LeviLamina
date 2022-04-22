@@ -15,8 +15,8 @@ struct BlockLightFilterDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLIGHTFILTERDESCRIPTION
 public:
-    struct BlockLightFilterDescription& operator=(struct BlockLightFilterDescription const&) = delete;
-    BlockLightFilterDescription(struct BlockLightFilterDescription const&) = delete;
+    struct BlockLightFilterDescription& operator=(struct BlockLightFilterDescription const &) = delete;
+    BlockLightFilterDescription(struct BlockLightFilterDescription const &) = delete;
     BlockLightFilterDescription() = delete;
 #endif
 

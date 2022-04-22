@@ -18,16 +18,16 @@ class ItemComponentPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMCOMPONENTPACKET
 public:
-    class ItemComponentPacket& operator=(class ItemComponentPacket const&) = delete;
-    ItemComponentPacket(class ItemComponentPacket const&) = delete;
+    class ItemComponentPacket& operator=(class ItemComponentPacket const &) = delete;
+    ItemComponentPacket(class ItemComponentPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ItemComponentPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~ItemComponentPacket(){
          (ItemComponentPacket::*rv)();

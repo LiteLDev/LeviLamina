@@ -19,16 +19,16 @@ class SetItemLoreFunction : public LootItemFunction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETITEMLOREFUNCTION
 public:
-    class SetItemLoreFunction& operator=(class SetItemLoreFunction const&) = delete;
-    SetItemLoreFunction(class SetItemLoreFunction const&) = delete;
+    class SetItemLoreFunction& operator=(class SetItemLoreFunction const &) = delete;
+    SetItemLoreFunction(class SetItemLoreFunction const &) = delete;
     SetItemLoreFunction() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SetItemLoreFunction();
-    /*1*/ virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
-    /*3*/ virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
-    MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>>&);
+    /*1*/ virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
+    /*3*/ virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
+    MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 protected:
 

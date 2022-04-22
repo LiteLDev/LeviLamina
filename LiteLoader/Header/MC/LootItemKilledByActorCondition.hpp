@@ -18,14 +18,14 @@ class LootItemKilledByActorCondition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMKILLEDBYACTORCONDITION
 public:
-    class LootItemKilledByActorCondition& operator=(class LootItemKilledByActorCondition const&) = delete;
-    LootItemKilledByActorCondition(class LootItemKilledByActorCondition const&) = delete;
+    class LootItemKilledByActorCondition& operator=(class LootItemKilledByActorCondition const &) = delete;
+    LootItemKilledByActorCondition(class LootItemKilledByActorCondition const &) = delete;
     LootItemKilledByActorCondition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LootItemKilledByActorCondition();
-    /*1*/ virtual bool applies(class Random&, class LootTableContext&);
+    /*1*/ virtual bool applies(class Random &, class LootTableContext &);
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
 
 protected:

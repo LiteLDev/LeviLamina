@@ -17,8 +17,8 @@ class OcelotAttackGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCELOTATTACKGOAL
 public:
-    class OcelotAttackGoal& operator=(class OcelotAttackGoal const&) = delete;
-    OcelotAttackGoal(class OcelotAttackGoal const&) = delete;
+    class OcelotAttackGoal& operator=(class OcelotAttackGoal const &) = delete;
+    OcelotAttackGoal(class OcelotAttackGoal const &) = delete;
     OcelotAttackGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI OcelotAttackGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI OcelotAttackGoal(class Mob &);
 
 protected:
 

@@ -17,15 +17,15 @@ class LeashableComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEASHABLECOMPONENT
 public:
-    class LeashableComponent& operator=(class LeashableComponent const&) = delete;
-    LeashableComponent(class LeashableComponent const&) = delete;
+    class LeashableComponent& operator=(class LeashableComponent const &) = delete;
+    LeashableComponent(class LeashableComponent const &) = delete;
     LeashableComponent() = delete;
 #endif
 
 public:
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
-    MCAPI void leash(class Actor&, class Actor&);
-    MCAPI void unleash(class Actor&);
+    MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
+    MCAPI void leash(class Actor &, class Actor &);
+    MCAPI void unleash(class Actor &);
 
 protected:
 

@@ -30,15 +30,13 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptFoodComponent(class ScriptFoodComponent const&);
-    MCAPI ScriptFoodComponent(class Scripting::WeakTypedObjectHandle<class ScriptItemStack>, class Scripting::WeakLifetimeScope const&);
+    MCAPI ScriptFoodComponent(class ScriptFoodComponent const &);
     MCAPI class Scripting::Result<bool> getCanAlwaysEat();
     MCAPI class Scripting::Result<int> getNutrition();
     MCAPI class Scripting::Result<float> getSaturationModifier();
-    MCAPI class Scripting::Result<std::string > getUsingConvertsToItem();
-    MCAPI class ScriptFoodComponent& operator=(class ScriptFoodComponent const&);
+    MCAPI class Scripting::Result<std::string> getUsingConvertsToItem();
+    MCAPI class ScriptFoodComponent & operator=(class ScriptFoodComponent const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptFoodComponent> bind(struct Scripting::Version);
-    MCAPI static std::string const& getTypeName();
 
 protected:
 

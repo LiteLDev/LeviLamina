@@ -17,19 +17,19 @@ class GroupSizeSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROUPSIZESYSTEM
 public:
-    class GroupSizeSystem& operator=(class GroupSizeSystem const&) = delete;
-    GroupSizeSystem(class GroupSizeSystem const&) = delete;
+    class GroupSizeSystem& operator=(class GroupSizeSystem const &) = delete;
+    GroupSizeSystem(class GroupSizeSystem const &) = delete;
     GroupSizeSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~GroupSizeSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 
 private:
-    MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class GroupSizeComponent>&);
+    MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class GroupSizeComponent> &);
 
 };

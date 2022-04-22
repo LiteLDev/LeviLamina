@@ -17,8 +17,8 @@ class PickupItemsGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PICKUPITEMSGOAL
 public:
-    class PickupItemsGoal& operator=(class PickupItemsGoal const&) = delete;
-    PickupItemsGoal(class PickupItemsGoal const&) = delete;
+    class PickupItemsGoal& operator=(class PickupItemsGoal const &) = delete;
+    PickupItemsGoal(class PickupItemsGoal const &) = delete;
     PickupItemsGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline void stop(){
         void (PickupItemsGoal::*rv)();
@@ -38,13 +38,13 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI PickupItemsGoal(class Mob&, float, bool, int, float, bool, bool, int, bool, std::vector<class ItemDescriptor> const&);
+    MCAPI PickupItemsGoal(class Mob &, float, bool, int, int, float, bool, bool, int, bool, bool, std::vector<class ItemDescriptor> const &);
 
 protected:
 
 private:
-    MCAPI std::vector<class gsl::not_null<class ItemActor* >> _filterValidTargets(std::vector<struct DistanceSortedActor> const&) const;
-    MCAPI struct Shareable const* _getShareableItem(class ItemStack const&) const;
-    MCAPI void _pickItemUp(class ItemActor*);
+    MCAPI std::vector<class gsl::not_null<class ItemActor *>> _filterValidTargets(std::vector<struct DistanceSortedActor> const &) const;
+    MCAPI struct Shareable const * _getShareableItem(class ItemStack const &) const;
+    MCAPI void _pickItemUp(class ItemActor *);
 
 };

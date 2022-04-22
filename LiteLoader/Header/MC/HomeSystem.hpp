@@ -17,15 +17,15 @@ class HomeSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOMESYSTEM
 public:
-    class HomeSystem& operator=(class HomeSystem const&) = delete;
-    HomeSystem(class HomeSystem const&) = delete;
+    class HomeSystem& operator=(class HomeSystem const &) = delete;
+    HomeSystem(class HomeSystem const &) = delete;
     HomeSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~HomeSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

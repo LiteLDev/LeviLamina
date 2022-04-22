@@ -18,8 +18,8 @@ class BigEndianStringByteInput : public StringByteInput {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIGENDIANSTRINGBYTEINPUT
 public:
-    class BigEndianStringByteInput& operator=(class BigEndianStringByteInput const&) = delete;
-    BigEndianStringByteInput(class BigEndianStringByteInput const&) = delete;
+    class BigEndianStringByteInput& operator=(class BigEndianStringByteInput const &) = delete;
+    BigEndianStringByteInput(class BigEndianStringByteInput const &) = delete;
     BigEndianStringByteInput() = delete;
 #endif
 
@@ -31,17 +31,17 @@ public:
     /*7*/ virtual int readInt();
     /*8*/ virtual __int64 readLongLong();
     /*9*/ virtual void __unk_vfn_9();
-    /*11*/ virtual bool readBigEndianBytes(void*, unsigned __int64);
+    /*11*/ virtual bool readBigEndianBytes(void *, unsigned __int64);
     /*
     inline  ~BigEndianStringByteInput(){
          (BigEndianStringByteInput::*rv)();
         *((void**)&rv) = dlsym("??1BigEndianStringByteInput@@UEAA@XZ");
         return (this->*rv)();
     }
-    inline bool readBytes(void* a0, unsigned __int64 a1){
-        bool (BigEndianStringByteInput::*rv)(void*, unsigned __int64);
+    inline bool readBytes(void * a0, unsigned __int64 a1){
+        bool (BigEndianStringByteInput::*rv)(void *, unsigned __int64);
         *((void**)&rv) = dlsym("?readBytes@BigEndianStringByteInput@@UEAA_NPEAX_K@Z");
-        return (this->*rv)(std::forward<void*>(a0), std::forward<unsigned __int64>(a1));
+        return (this->*rv)(std::forward<void *>(a0), std::forward<unsigned __int64>(a1));
     }
     */
 

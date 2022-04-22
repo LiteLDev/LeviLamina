@@ -18,13 +18,13 @@ class WoodlandMansionPieces {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WOODLANDMANSIONPIECES
 public:
-    class WoodlandMansionPieces& operator=(class WoodlandMansionPieces const&) = delete;
-    WoodlandMansionPieces(class WoodlandMansionPieces const&) = delete;
+    class WoodlandMansionPieces& operator=(class WoodlandMansionPieces const &) = delete;
+    WoodlandMansionPieces(class WoodlandMansionPieces const &) = delete;
     WoodlandMansionPieces() = delete;
 #endif
 
 public:
-    MCAPI static void generateMansion(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager> >, class BlockPos const&, enum Rotation, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
+    MCAPI static void generateMansion(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class BlockPos const &, enum Rotation, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
 
 protected:
 

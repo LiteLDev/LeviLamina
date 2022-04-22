@@ -17,20 +17,23 @@ class ScriptGameTestRegistrationBuilder {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTGAMETESTREGISTRATIONBUILDER
 public:
-    class ScriptGameTestRegistrationBuilder& operator=(class ScriptGameTestRegistrationBuilder const&) = delete;
-    ScriptGameTestRegistrationBuilder(class ScriptGameTestRegistrationBuilder const&) = delete;
+    class ScriptGameTestRegistrationBuilder& operator=(class ScriptGameTestRegistrationBuilder const &) = delete;
+    ScriptGameTestRegistrationBuilder(class ScriptGameTestRegistrationBuilder const &) = delete;
     ScriptGameTestRegistrationBuilder() = delete;
 #endif
 
 public:
+    MCAPI ScriptGameTestRegistrationBuilder(class ScriptGameTestRegistrationBuilder &&);
+    MCAPI ScriptGameTestRegistrationBuilder(class std::shared_ptr<class BaseScriptGameTestFunction>);
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptGameTestRegistrationBuilder> batch(std::string);
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptGameTestRegistrationBuilder> maxAttempts(int);
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptGameTestRegistrationBuilder> maxTicks(int);
-    MCAPI class ScriptGameTestRegistrationBuilder& operator=(class ScriptGameTestRegistrationBuilder&&);
+    MCAPI class ScriptGameTestRegistrationBuilder & operator=(class ScriptGameTestRegistrationBuilder &&);
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptGameTestRegistrationBuilder> padding(int);
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptGameTestRegistrationBuilder> required(bool);
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptGameTestRegistrationBuilder> requiredSuccessfulAttempts(int);
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptGameTestRegistrationBuilder> rotate(bool);
+    MCAPI void setScriptObjectHandle(class Scripting::WeakTypedObjectHandle<class ScriptGameTestRegistrationBuilder>);
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptGameTestRegistrationBuilder> setupTicks(int);
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptGameTestRegistrationBuilder> structureName(std::string);
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptGameTestRegistrationBuilder> tag(std::string);

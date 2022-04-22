@@ -15,12 +15,12 @@ struct PlayerInteractEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERINTERACTEVENT
 public:
-    struct PlayerInteractEvent& operator=(struct PlayerInteractEvent const&) = delete;
+    struct PlayerInteractEvent& operator=(struct PlayerInteractEvent const &) = delete;
     PlayerInteractEvent() = delete;
 #endif
 
 public:
-    MCAPI PlayerInteractEvent(struct PlayerInteractEvent const&);
+    MCAPI PlayerInteractEvent(struct PlayerInteractEvent const &);
     MCAPI ~PlayerInteractEvent();
 
 protected:

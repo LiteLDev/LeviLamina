@@ -23,8 +23,8 @@ struct VolumeEntityDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VOLUMEENTITYMANAGER
 public:
-    class VolumeEntityManager& operator=(class VolumeEntityManager const&) = delete;
-    VolumeEntityManager(class VolumeEntityManager const&) = delete;
+    class VolumeEntityManager& operator=(class VolumeEntityManager const &) = delete;
+    VolumeEntityManager(class VolumeEntityManager const &) = delete;
     VolumeEntityManager() = delete;
 #endif
 
@@ -37,12 +37,14 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI unsigned __int64 getVolumeInstanceCount() const;
+    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const & getVolumeInstances(class AutomaticID<class Dimension, int>) const;
     MCAPI static bool isTriggerVolumesEnabled;
-    MCAPI static void registerComponentNetRelevancy(class ComponentNetRelevancyRegistry&);
+    MCAPI static void registerComponentNetRelevancy(class ComponentNetRelevancyRegistry &);
 
 protected:
     MCAPI VolumeEntityManager(class StackRefResultT<struct EntityRegistryRefTraits>);
-    MCAPI class OwnerPtrT<struct EntityRefTraits> _createVolumeEntity(class DefinitionInstanceGroup const&);
+    MCAPI class OwnerPtrT<struct EntityRefTraits> _createVolumeEntity(class DefinitionInstanceGroup const &);
 
 private:
 

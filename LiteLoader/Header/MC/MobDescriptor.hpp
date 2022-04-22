@@ -15,12 +15,12 @@ struct MobDescriptor {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBDESCRIPTOR
 public:
-    struct MobDescriptor& operator=(struct MobDescriptor const&) = delete;
+    struct MobDescriptor& operator=(struct MobDescriptor const &) = delete;
     MobDescriptor() = delete;
 #endif
 
 public:
-    MCAPI MobDescriptor(struct MobDescriptor const&);
+    MCAPI MobDescriptor(struct MobDescriptor const &);
     MCAPI ~MobDescriptor();
 
 protected:

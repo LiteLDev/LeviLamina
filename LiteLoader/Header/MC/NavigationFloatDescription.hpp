@@ -18,13 +18,13 @@ class NavigationFloatDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONFLOATDESCRIPTION
 public:
-    class NavigationFloatDescription& operator=(class NavigationFloatDescription const&) = delete;
-    NavigationFloatDescription(class NavigationFloatDescription const&) = delete;
+    class NavigationFloatDescription& operator=(class NavigationFloatDescription const &) = delete;
+    NavigationFloatDescription(class NavigationFloatDescription const &) = delete;
     NavigationFloatDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~NavigationFloatDescription();
     /*
     inline  ~NavigationFloatDescription(){

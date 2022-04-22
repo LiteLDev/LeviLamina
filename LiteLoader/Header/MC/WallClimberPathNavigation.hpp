@@ -18,18 +18,18 @@ class WallClimberPathNavigation : public PathNavigation {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WALLCLIMBERPATHNAVIGATION
 public:
-    class WallClimberPathNavigation& operator=(class WallClimberPathNavigation const&) = delete;
-    WallClimberPathNavigation(class WallClimberPathNavigation const&) = delete;
+    class WallClimberPathNavigation& operator=(class WallClimberPathNavigation const &) = delete;
+    WallClimberPathNavigation(class WallClimberPathNavigation const &) = delete;
     WallClimberPathNavigation() = delete;
 #endif
 
 public:
     /*0*/ virtual ~WallClimberPathNavigation();
-    /*2*/ virtual void tick(class NavigationComponent&, class Mob&);
-    /*4*/ virtual std::unique_ptr<class Path> createPath(class NavigationComponent&, class Mob&, class Vec3 const&);
-    /*5*/ virtual std::unique_ptr<class Path> createPath(class NavigationComponent&, class Mob&, class Actor&);
-    /*7*/ virtual bool moveTo(class NavigationComponent&, class Mob&, class Actor&, float);
-    /*11*/ virtual bool canUpdatePath(class Mob const&) const;
+    /*2*/ virtual void tick(class NavigationComponent &, class Mob &);
+    /*4*/ virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Vec3 const &);
+    /*5*/ virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Actor &);
+    /*7*/ virtual bool moveTo(class NavigationComponent &, class Mob &, class Actor &, float);
+    /*11*/ virtual bool canUpdatePath(class Mob const &) const;
 
 protected:
 

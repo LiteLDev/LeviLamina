@@ -17,20 +17,20 @@ class OpenDoorAnnotationComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OPENDOORANNOTATIONCOMPONENT
 public:
-    class OpenDoorAnnotationComponent& operator=(class OpenDoorAnnotationComponent const&) = delete;
-    OpenDoorAnnotationComponent(class OpenDoorAnnotationComponent const&) = delete;
+    class OpenDoorAnnotationComponent& operator=(class OpenDoorAnnotationComponent const &) = delete;
+    OpenDoorAnnotationComponent(class OpenDoorAnnotationComponent const &) = delete;
 #endif
 
 public:
-    MCAPI OpenDoorAnnotationComponent(class OpenDoorAnnotationComponent&&);
+    MCAPI OpenDoorAnnotationComponent(class OpenDoorAnnotationComponent &&);
     MCAPI OpenDoorAnnotationComponent();
-    MCAPI void checkPath(class Mob&);
-    MCAPI void initFromDefinition(class Actor&);
-    MCAPI void onComponentRemoved(class EntityContext&);
+    MCAPI void checkPath(class Mob &);
+    MCAPI void initFromDefinition(class Actor &);
+    MCAPI void onComponentRemoved(class EntityContext &);
 
 protected:
 
 private:
-    MCAPI void _cleanUp(class Mob const&);
+    MCAPI void _cleanUp(class Mob const &);
 
 };

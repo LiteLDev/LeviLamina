@@ -18,8 +18,8 @@ class ScriptMovementSkipComponent : public MovementScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMOVEMENTSKIPCOMPONENT
 public:
-    class ScriptMovementSkipComponent& operator=(class ScriptMovementSkipComponent const&) = delete;
-    ScriptMovementSkipComponent(class ScriptMovementSkipComponent const&) = delete;
+    class ScriptMovementSkipComponent& operator=(class ScriptMovementSkipComponent const &) = delete;
+    ScriptMovementSkipComponent(class ScriptMovementSkipComponent const &) = delete;
     ScriptMovementSkipComponent() = delete;
 #endif
 

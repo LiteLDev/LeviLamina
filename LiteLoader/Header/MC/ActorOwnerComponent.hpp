@@ -17,17 +17,17 @@ class ActorOwnerComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOROWNERCOMPONENT
 public:
-    class ActorOwnerComponent& operator=(class ActorOwnerComponent const&) = delete;
-    ActorOwnerComponent(class ActorOwnerComponent const&) = delete;
+    class ActorOwnerComponent& operator=(class ActorOwnerComponent const &) = delete;
+    ActorOwnerComponent(class ActorOwnerComponent const &) = delete;
     ActorOwnerComponent() = delete;
 #endif
 
 public:
-    MCAPI ActorOwnerComponent(class ActorOwnerComponent&&);
+    MCAPI ActorOwnerComponent(class ActorOwnerComponent &&);
     MCAPI ActorOwnerComponent(std::unique_ptr<class Actor>);
-    MCAPI class Actor& getActor();
-    MCAPI class Actor& getActor() const;
-    MCAPI class ActorOwnerComponent& operator=(class ActorOwnerComponent&&);
+    MCAPI class Actor & getActor();
+    MCAPI class Actor & getActor() const;
+    MCAPI class ActorOwnerComponent & operator=(class ActorOwnerComponent &&);
     MCAPI ~ActorOwnerComponent();
 
 protected:

@@ -17,13 +17,13 @@ class RopeAABB {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ROPEAABB
 public:
-    class RopeAABB& operator=(class RopeAABB const&) = delete;
-    RopeAABB(class RopeAABB const&) = delete;
+    class RopeAABB& operator=(class RopeAABB const &) = delete;
+    RopeAABB(class RopeAABB const &) = delete;
     RopeAABB() = delete;
 #endif
 
 public:
-    MCAPI bool getContactPoint(class Vec3 const&, float, struct AABBContactPoint&) const;
+    MCAPI bool getContactPoint(class Vec3 const &, float, struct AABBContactPoint &) const;
 
 protected:
 

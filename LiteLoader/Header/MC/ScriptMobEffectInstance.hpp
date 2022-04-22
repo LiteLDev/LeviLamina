@@ -17,15 +17,15 @@ class ScriptMobEffectInstance {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMOBEFFECTINSTANCE
 public:
-    class ScriptMobEffectInstance& operator=(class ScriptMobEffectInstance const&) = delete;
-    ScriptMobEffectInstance(class ScriptMobEffectInstance const&) = delete;
+    class ScriptMobEffectInstance& operator=(class ScriptMobEffectInstance const &) = delete;
+    ScriptMobEffectInstance(class ScriptMobEffectInstance const &) = delete;
     ScriptMobEffectInstance() = delete;
 #endif
 
 public:
     MCAPI std::string getDisplayName() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMobEffectInstance> bind(struct Scripting::Version);
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptMobEffectInstance> getHandle(class MobEffectInstance const*, class Scripting::WeakLifetimeScope const&);
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptMobEffectInstance> getHandle(class MobEffectInstance const *, class Scripting::WeakLifetimeScope const &);
 
 protected:
 

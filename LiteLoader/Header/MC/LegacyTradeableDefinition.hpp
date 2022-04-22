@@ -18,14 +18,14 @@ class LegacyTradeableDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYTRADEABLEDEFINITION
 public:
-    class LegacyTradeableDefinition& operator=(class LegacyTradeableDefinition const&) = delete;
-    LegacyTradeableDefinition(class LegacyTradeableDefinition const&) = delete;
+    class LegacyTradeableDefinition& operator=(class LegacyTradeableDefinition const &) = delete;
+    LegacyTradeableDefinition(class LegacyTradeableDefinition const &) = delete;
 #endif
 
 public:
     MCAPI LegacyTradeableDefinition();
-    MCAPI void initialize(class EntityContext&, class LegacyTradeableComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LegacyTradeableDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class LegacyTradeableComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LegacyTradeableDefinition>> &);
 
 protected:
 

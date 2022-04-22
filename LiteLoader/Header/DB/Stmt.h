@@ -10,6 +10,8 @@ namespace DB
 
 extern Logger dbLogger;
 
+class Session;
+
 /**
  * @brief Structure to store a single value to bind to a prepared statement.
  *
@@ -69,15 +71,16 @@ public:
     /**
      * @brief Turn on/off debug output.
      *
-     * @param enable Enable or not
+     * @param enable  Enable or not
      */
     LIAPI void setDebugOutput(bool enable);
     /**
      * @brief Bind a value to a statement parameter.
      *
-     * @param value               Value to bind
-     * @param index               Parameter index
-     * @throws std::runtime_error If error occurs
+     * @param value  Value to bind
+     * @param index  Parameter index
+     * @throws std::runtime_error  If error occurs
+     *
      * @par Implementation
      * @see SQLiteStmt::bind
      */
@@ -85,9 +88,10 @@ public:
     /**
      * @brief Bind a value to a statement parameter.
      *
-     * @param value               Value to bind
-     * @param name                Parameter name
-     * @throws std::runtime_error If error occurs
+     * @param value  Value to bind
+     * @param name   Parameter name
+     * @throws std::runtime_error  If error occurs
+     *
      * @par Impletementation
      * @see SQLiteStmt::bind
      */
@@ -95,8 +99,9 @@ public:
     /**
      * @brief Bind a value to the next statement parameter.
      *
-     * @param value               Value to bind
-     * @throws std::runtime_error If error occurs
+     * @param value  Value to bind
+     * @throws std::runtime_error  If error occurs
+     *
      * @par Impletementation
      * @see SQLiteStmt::bind
      */
@@ -104,7 +109,8 @@ public:
     /**
      * @brief Step to the next row(not fetch).
      *
-     * @return bool True if there is a next row
+     * @return bool  True if there is a next row
+     *
      * @par Impletementation
      * @see SQLiteStmt::step
      */
@@ -112,7 +118,8 @@ public:
     /**
      * @brief Step to the next row(=step).
      *
-     * @return bool True if there is a next row
+     * @return bool  True if there is a next row
+     *
      * @par Impletementation
      * @see SQLiteStmt::next
      */
@@ -120,16 +127,18 @@ public:
     /**
      * @brief Get weather all the rows have been fetched.
      *
-     * @return bool True if all the rows have been fetched
+     * @return bool  True if all the rows have been fetched
+     *
      * @par Impletementation
      * @see SQLiteStmt::done
      */
     virtual bool done() = 0;
     /**
      * @brief Fetch the next row.
-     * 
-     * @return Row The next row
-     * @throws std::runtime_error If there is no row to fetch
+     *
+     * @return Row  The next row
+     * @throws std::runtime_error  If there is no row to fetch
+     *
      * @par Example
      * @code
      * auto& stmt = sess.prepare("SELECT * FROM table");
@@ -139,16 +148,18 @@ public:
      * }
      * stmt.close();
      * @endcode
+     *
      * @par Impletementation
      * @see SQLiteStmt::fetch
-	 */
-	virtual Row fetch() = 0;
+     */
+    virtual Row fetch() = 0;
     /**
      * @brief Fetch all the result rows.
      *
-     * @param  cb    Callback function to handle the result rows
-     * @return Stmt& *this
+     * @param  cb     Callback function to handle the result rows
+     * @return Stmt&  *this
      * @note   Return false in callback to stop fetching
+     *
      * @par Example
      * @code
      * auto& stmt = sess.prepare("SELECT * FROM table");
@@ -158,91 +169,123 @@ public:
      * });
      * stmt.close();
      * @endcode
+     *
      * @par Impletementation
      * @see SQLiteStmt::fetchAll
      */
     virtual Stmt& fetchAll(std::function<bool(const Row&)> cb) = 0;
     /**
      * @brief Fetch all the result rows.
-     * 
-     * @return ResultSet The result rows
-     * @note   Do not use the returned ResultSet after closing the statement 
-     *          because the RowHeader in *this object will be deleted
+     *
+     * @return ResultSet  The result rows
+     *
      * @par Impletementation
      * @see SQLiteStmt::fetchAll
      */
-	virtual ResultSet fetchAll() = 0;
+    virtual ResultSet fetchAll() = 0;
     /**
-     * @brief Fetch all the result rows.
+     * @brief Reset the statement(keep the currently bound value to re-excute).
      *
-     * @return ResultSet The result rows
-     * @note   You can use the returned ResultSet after closing the statement
-     * @par Impletementation
-     * @see SQLiteStmt::fetchAll
-     */
-	virtual ResultSet fetchAll(RowHeader& header) = 0;
-    /**
-     * @brief Reset the statement(unbind all the parameters).
+     * @return Stmt&  *this
+     * @note   If you want to clear the bound value, use clear() instead.
      *
-     * @return Stmt& *this
      * @par Impletementation
      * @see SQLiteStmt::reset
      */
     virtual Stmt& reset() = 0;
     /**
+     * @brief Clear all the bound values.
+     *
+     * @return Stmt&  *this
+     *
+     * @par Impletementation
+     * @see SQLiteStmt::clear
+     */
+    virtual Stmt& clear() = 0;
+    /**
      * @brief Close the statement.
      *
-     * @warning DO NOT ACCESS THIS OBJECT AFTER CALLING THIS METHOD!!!
+     *
      * @par Impletementation
      * @see SQLiteStmt::close
      */
     virtual void close() = 0;
     /**
+     * @brief Destory the statement object and release the memory.
+     * 
+     * @warning  DO NOT ACCESS THIS OBJECT AFTER CALLING THIS METHOD!!!
+     */
+    virtual void destroy() = 0;
+    /**
      * @brief Get the number of rows affected by the statement.
      *
-     * @return int The number of rows affected
+     * @return int  The number of rows affected
+     * @note   It will return -1(ULLONG_MAX - 1) if the row count is not available
+     *
      * @par Impletementation
      * @see SQLiteStmt::getAffectedRows
      */
-    virtual int getAffectedRows() = 0;
+    virtual uint64_t getAffectedRows() const = 0;
+    /**
+     * @brief Get the insert id of the statement
+     *
+     * @return uint64_t  The insert id
+     * @throws std::runtime_error  If error occurs
+     * @note   It will return -1(ULLONG_MAX - 1) if the insert id is not available
+     *
+     * @par Implementation
+     * @see SQLiteStmt::getInsertId
+     */
+    virtual uint64_t getInsertId() const = 0;
     /**
      * @brief Get the number of the unbound parameters.
      *
-     * @return int The number of the unbound parameters
+     * @return int  The number of the unbound parameters
+     *
      * @par Impletementation
      * @see SQLiteStmt::getUnboundParams
      */
-    virtual int getUnboundParams() = 0;
+    virtual int getUnboundParams() const = 0;
     /**
      * @brief Get the number of the bound parameters.
      *
-     * @return int The number of the bound parameters
+     * @return int  The number of the bound parameters
+     *
      * @par Impletementation
      * @see SQLiteStmt::getBoundParams
      */
-    virtual int getBoundParams() = 0;
+    virtual int getBoundParams() const = 0;
     /**
      * @brief Get the number of parameters.
      *
-     * @return int The number of parameters
+     * @return int  The number of parameters
+     *
      * @par Impletementation
      * @see SQLiteStmt::getParamsCount
      */
-    virtual int getParamsCount() = 0;
+    virtual int getParamsCount() const = 0;
+    /**
+     * @brief Get the session.
+     *
+     * @return Session*  The session ptr
+     */
+    virtual Session* getSession() const = 0;
     /**
      * @brief Get the session type
      *
-     * @return DB::DBType The database type
+     * @return DB::DBType  The database type
+     *
      * @par Impletementation
      * @see SQLiteStmt::getType
      */
-    virtual DBType getType() = 0;
+    virtual DBType getType() const = 0;
 
     /**
      * @brief Operator, to bind single values.
      *
-     * @param b The return value of DB::use
-     * @return Stmt& *this
+     * @param  b      The return value of DB::use
+     * @return Stmt&  *this
+     *
      * @par Impletementation
      * @see SQLiteStmt::operator,
      */
@@ -250,8 +293,8 @@ public:
     /**
      * @brief Operator, to bind a sequence container.
      *
-     * @param b The return value of DB::use
-     * @return Stmt& *this
+     * @param  b      The return value of DB::use
+     * @return Stmt&  *this
      */
     template <typename T>
     inline Stmt& operator,(const BindSequenceType<T>& b)
@@ -265,16 +308,15 @@ public:
     /**
      * @brief Operator, to bind a row.
      *
-     * @param b The return value of DB::use
-     * @return Stmt& *this
+     * @param  b      The return value of DB::use
+     * @return Stmt&  *this
      */
     template <>
     inline Stmt& operator,(const BindSequenceType<Row>& b)
     {
-        if (b.values.header.size())
+        if (b.values.header && b.values.header->size())
         {
-            BindSequenceType<Row> copy = b;
-            copy.values.forEach([&](const std::string& name, Any& value) {
+            b.values.forEach([&](const std::string& name, const Any& value) {
                 bind(value, name);
                 return true;
             });
@@ -291,8 +333,8 @@ public:
     /**
      * @brief Operator, to bind a map container.
      *
-     * @param b The return value of DB::bind
-     * @return Stmt& *this
+     * @param  b      The return value of DB::bind
+     * @return Stmt&  *this
      */
     template <typename T>
     inline Stmt& operator,(const BindMapType<T>& b)
@@ -306,8 +348,8 @@ public:
     /**
      * @brief Operator, to store a row of results.
      *
-     * @param i The return value of DB::into
-     * @return Stmt& *this
+     * @param  i      The return value of DB::into
+     * @return Stmt&  *this
      */
     template <typename T>
     inline Stmt& operator,(IntoType<T>& i)
@@ -315,12 +357,12 @@ public:
         if (step()) i.value = row_to<T>(next());
         return *this;
     }
-	/**
-	 * @brief Operator, to store a set of results.
-	 *
-	 * @param i The return value of DB::into
-	 * @return Stmt& *this
-	 */
+    /**
+     * @brief Operator, to store a set of results.
+     *
+     * @param  i      The return value of DB::into
+     * @return Stmt&  *this
+     */
     template <typename T>
     inline Stmt& operator,(IntoType<std::vector<T>>& i)
     {
@@ -330,12 +372,12 @@ public:
         });
         return *this;
     }
-	/**
-	 * @brief Operator, to store a set of results.
-	 *
-	 * @param i The return value of DB::into
-	 * @return Stmt& *this
-	 */
+    /**
+     * @brief Operator, to store a set of results.
+     *
+     * @param  i      The return value of DB::into
+     * @return Stmt&  *this
+     */
     template <>
     inline Stmt& operator,(IntoType<ResultSet>& i)
     {
@@ -345,8 +387,8 @@ public:
     /**
      * @brief Operator, to store a row of results.
      *
-     * @param i The return value of DB::into
-     * @return Stmt& *this
+     * @param  i      The return value of DB::into
+     * @return Stmt&  *this
      */
     template <>
     inline Stmt& operator,(IntoType<Row>& i)

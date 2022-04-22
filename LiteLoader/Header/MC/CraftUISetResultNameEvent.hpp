@@ -15,8 +15,8 @@ class CraftUISetResultNameEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTUISETRESULTNAMEEVENT
 public:
-    class CraftUISetResultNameEvent& operator=(class CraftUISetResultNameEvent const&) = delete;
-    CraftUISetResultNameEvent(class CraftUISetResultNameEvent const&) = delete;
+    class CraftUISetResultNameEvent& operator=(class CraftUISetResultNameEvent const &) = delete;
+    CraftUISetResultNameEvent(class CraftUISetResultNameEvent const &) = delete;
     CraftUISetResultNameEvent() = delete;
 #endif
 

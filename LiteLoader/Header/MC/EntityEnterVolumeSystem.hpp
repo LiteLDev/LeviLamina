@@ -18,20 +18,20 @@ class EntityEnterVolumeSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYENTERVOLUMESYSTEM
 public:
-    class EntityEnterVolumeSystem& operator=(class EntityEnterVolumeSystem const&) = delete;
-    EntityEnterVolumeSystem(class EntityEnterVolumeSystem const&) = delete;
+    class EntityEnterVolumeSystem& operator=(class EntityEnterVolumeSystem const &) = delete;
+    EntityEnterVolumeSystem(class EntityEnterVolumeSystem const &) = delete;
     EntityEnterVolumeSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~EntityEnterVolumeSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
-    MCAPI EntityEnterVolumeSystem(class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const> >);
+    /*2*/ virtual void tick(class EntityRegistry &);
+    MCAPI EntityEnterVolumeSystem(class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>);
 
 protected:
 
 private:
-    MCAPI void _tick(class EntityContext&, class VolumeBoundsComponent&) const;
+    MCAPI void _tick(class EntityContext &, class VolumeBoundsComponent &) const;
 
 };

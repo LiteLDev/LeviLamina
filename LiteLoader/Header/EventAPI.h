@@ -534,7 +534,7 @@ class MobHurtEvent : public EventTemplate<MobHurtEvent>
 public:
     Mob* mMob;
     ActorDamageSource* mDamageSource;
-    int mDamage;
+    float mDamage;
 };
 
 class MobDieEvent : public EventTemplate<MobDieEvent>

@@ -17,15 +17,15 @@ class SpawnActorSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNACTORSYSTEM
 public:
-    class SpawnActorSystem& operator=(class SpawnActorSystem const&) = delete;
-    SpawnActorSystem(class SpawnActorSystem const&) = delete;
+    class SpawnActorSystem& operator=(class SpawnActorSystem const &) = delete;
+    SpawnActorSystem(class SpawnActorSystem const &) = delete;
     SpawnActorSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SpawnActorSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

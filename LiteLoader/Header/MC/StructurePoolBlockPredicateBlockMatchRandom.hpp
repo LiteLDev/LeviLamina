@@ -17,23 +17,23 @@ class StructurePoolBlockPredicateBlockMatchRandom {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREPOOLBLOCKPREDICATEBLOCKMATCHRANDOM
 public:
-    class StructurePoolBlockPredicateBlockMatchRandom& operator=(class StructurePoolBlockPredicateBlockMatchRandom const&) = delete;
-    StructurePoolBlockPredicateBlockMatchRandom(class StructurePoolBlockPredicateBlockMatchRandom const&) = delete;
+    class StructurePoolBlockPredicateBlockMatchRandom& operator=(class StructurePoolBlockPredicateBlockMatchRandom const &) = delete;
+    StructurePoolBlockPredicateBlockMatchRandom(class StructurePoolBlockPredicateBlockMatchRandom const &) = delete;
     StructurePoolBlockPredicateBlockMatchRandom() = delete;
 #endif
 
 public:
     /*0*/ virtual ~StructurePoolBlockPredicateBlockMatchRandom();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual bool test(class Block const&, class Randomize&) const;
+    /*2*/ virtual bool test(class Block const &, class Randomize &) const;
     /*
-    inline bool test(class BlockPos const& a0, class BlockPos const& a1, class Randomize& a2) const{
-        bool (StructurePoolBlockPredicateBlockMatchRandom::*rv)(class BlockPos const&, class BlockPos const&, class Randomize&) const;
+    inline bool test(class BlockPos const & a0, class BlockPos const & a1, class Randomize & a2) const{
+        bool (StructurePoolBlockPredicateBlockMatchRandom::*rv)(class BlockPos const &, class BlockPos const &, class Randomize &) const;
         *((void**)&rv) = dlsym("?test@StructurePoolBlockPredicateBlockMatchRandom@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class BlockPos const&>(a1), std::forward<class Randomize&>(a2));
+        return (this->*rv)(std::forward<class BlockPos const &>(a0), std::forward<class BlockPos const &>(a1), std::forward<class Randomize &>(a2));
     }
     */
-    MCAPI StructurePoolBlockPredicateBlockMatchRandom(class Block const&, float);
+    MCAPI StructurePoolBlockPredicateBlockMatchRandom(class Block const &, float);
 
 protected:
 

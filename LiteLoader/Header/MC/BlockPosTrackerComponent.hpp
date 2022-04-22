@@ -17,14 +17,14 @@ class BlockPosTrackerComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPOSTRACKERCOMPONENT
 public:
-    class BlockPosTrackerComponent& operator=(class BlockPosTrackerComponent const&) = delete;
-    BlockPosTrackerComponent(class BlockPosTrackerComponent const&) = delete;
+    class BlockPosTrackerComponent& operator=(class BlockPosTrackerComponent const &) = delete;
+    BlockPosTrackerComponent(class BlockPosTrackerComponent const &) = delete;
     BlockPosTrackerComponent() = delete;
 #endif
 
 public:
-    MCAPI BlockPosTrackerComponent(bool, class BlockPos const&);
-    MCAPI void onRemove(class Actor&);
+    MCAPI BlockPosTrackerComponent(bool, class BlockPos const &);
+    MCAPI void onRemove(class Actor &);
 
 protected:
 

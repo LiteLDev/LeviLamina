@@ -18,16 +18,16 @@ class ActorTickNeededComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORTICKNEEDEDCOMPONENT
 public:
-    class ActorTickNeededComponent& operator=(class ActorTickNeededComponent const&) = delete;
-    ActorTickNeededComponent(class ActorTickNeededComponent const&) = delete;
+    class ActorTickNeededComponent& operator=(class ActorTickNeededComponent const &) = delete;
+    ActorTickNeededComponent(class ActorTickNeededComponent const &) = delete;
     ActorTickNeededComponent() = delete;
 #endif
 
 public:
-    MCAPI ActorTickNeededComponent(class ActorTickNeededComponent&&);
-    MCAPI ActorTickNeededComponent(class BlockSource&);
-    MCAPI class WeakRefT<struct SharePtrRefTraits<class BlockSource> > getBlockSource();
-    MCAPI class ActorTickNeededComponent& operator=(class ActorTickNeededComponent&&);
+    MCAPI ActorTickNeededComponent(class ActorTickNeededComponent &&);
+    MCAPI ActorTickNeededComponent(class BlockSource &);
+    MCAPI class WeakRefT<struct SharePtrRefTraits<class BlockSource>> getBlockSource();
+    MCAPI class ActorTickNeededComponent & operator=(class ActorTickNeededComponent &&);
     MCAPI ~ActorTickNeededComponent();
 
 protected:

@@ -15,8 +15,8 @@ struct OverworldBlendRules {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERWORLDBLENDRULES
 public:
-    struct OverworldBlendRules& operator=(struct OverworldBlendRules const&) = delete;
-    OverworldBlendRules(struct OverworldBlendRules const&) = delete;
+    struct OverworldBlendRules& operator=(struct OverworldBlendRules const &) = delete;
+    OverworldBlendRules(struct OverworldBlendRules const &) = delete;
     OverworldBlendRules() = delete;
 #endif
 

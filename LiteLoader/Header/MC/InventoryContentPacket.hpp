@@ -18,16 +18,16 @@ class InventoryContentPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYCONTENTPACKET
 public:
-    class InventoryContentPacket& operator=(class InventoryContentPacket const&) = delete;
-    InventoryContentPacket(class InventoryContentPacket const&) = delete;
+    class InventoryContentPacket& operator=(class InventoryContentPacket const &) = delete;
+    InventoryContentPacket(class InventoryContentPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~InventoryContentPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~InventoryContentPacket(){
          (InventoryContentPacket::*rv)();
@@ -35,9 +35,9 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI InventoryContentPacket(enum ContainerID, std::vector<class ItemStack> const&);
+    MCAPI InventoryContentPacket(enum ContainerID, std::vector<class ItemStack> const &);
     MCAPI InventoryContentPacket();
-    MCAPI static class InventoryContentPacket fromPlayerInventoryId(enum ContainerID, class Player&);
+    MCAPI static class InventoryContentPacket fromPlayerInventoryId(enum ContainerID, class Player &);
 
 protected:
 

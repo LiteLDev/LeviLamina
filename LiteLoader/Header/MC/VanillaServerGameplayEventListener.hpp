@@ -17,47 +17,47 @@ class VanillaServerGameplayEventListener {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLASERVERGAMEPLAYEVENTLISTENER
 public:
-    class VanillaServerGameplayEventListener& operator=(class VanillaServerGameplayEventListener const&) = delete;
-    VanillaServerGameplayEventListener(class VanillaServerGameplayEventListener const&) = delete;
+    class VanillaServerGameplayEventListener& operator=(class VanillaServerGameplayEventListener const &) = delete;
+    VanillaServerGameplayEventListener(class VanillaServerGameplayEventListener const &) = delete;
     VanillaServerGameplayEventListener() = delete;
 #endif
 
 public:
     /*
-    inline enum EventResult onEvent(struct PlayerDamageEvent const& a0){
-        enum EventResult (VanillaServerGameplayEventListener::*rv)(struct PlayerDamageEvent const&);
+    inline enum EventResult onEvent(struct PlayerDamageEvent const & a0){
+        enum EventResult (VanillaServerGameplayEventListener::*rv)(struct PlayerDamageEvent const &);
         *((void**)&rv) = dlsym("?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerDamageEvent@@@Z");
-        return (this->*rv)(std::forward<struct PlayerDamageEvent const&>(a0));
+        return (this->*rv)(std::forward<struct PlayerDamageEvent const &>(a0));
     }
-    inline enum EventResult onEvent(struct ActorHurtEvent const& a0){
-        enum EventResult (VanillaServerGameplayEventListener::*rv)(struct ActorHurtEvent const&);
+    inline enum EventResult onEvent(struct ActorHurtEvent const & a0){
+        enum EventResult (VanillaServerGameplayEventListener::*rv)(struct ActorHurtEvent const &);
         *((void**)&rv) = dlsym("?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUActorHurtEvent@@@Z");
-        return (this->*rv)(std::forward<struct ActorHurtEvent const&>(a0));
+        return (this->*rv)(std::forward<struct ActorHurtEvent const &>(a0));
     }
-    inline enum EventResult onBlockInteractedWith(class Player& a0, class BlockPos const& a1){
-        enum EventResult (VanillaServerGameplayEventListener::*rv)(class Player&, class BlockPos const&);
+    inline enum EventResult onBlockInteractedWith(class Player & a0, class BlockPos const & a1){
+        enum EventResult (VanillaServerGameplayEventListener::*rv)(class Player &, class BlockPos const &);
         *((void**)&rv) = dlsym("?onBlockInteractedWith@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0), std::forward<class BlockPos const&>(a1));
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class BlockPos const &>(a1));
     }
-    inline enum EventResult onBlockPlacedByPlayer(class Player& a0, class Block const& a1, class BlockPos const& a2, bool a3){
-        enum EventResult (VanillaServerGameplayEventListener::*rv)(class Player&, class Block const&, class BlockPos const&, bool);
+    inline enum EventResult onBlockPlacedByPlayer(class Player & a0, class Block const & a1, class BlockPos const & a2, bool a3){
+        enum EventResult (VanillaServerGameplayEventListener::*rv)(class Player &, class Block const &, class BlockPos const &, bool);
         *((void**)&rv) = dlsym("?onBlockPlacedByPlayer@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlock@@AEBVBlockPos@@_N@Z");
-        return (this->*rv)(std::forward<class Player&>(a0), std::forward<class Block const&>(a1), std::forward<class BlockPos const&>(a2), std::forward<bool>(a3));
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class Block const &>(a1), std::forward<class BlockPos const &>(a2), std::forward<bool>(a3));
     }
-    inline enum EventResult onEvent(struct PlayerOpenContainerEvent const& a0){
-        enum EventResult (VanillaServerGameplayEventListener::*rv)(struct PlayerOpenContainerEvent const&);
+    inline enum EventResult onEvent(struct PlayerOpenContainerEvent const & a0){
+        enum EventResult (VanillaServerGameplayEventListener::*rv)(struct PlayerOpenContainerEvent const &);
         *((void**)&rv) = dlsym("?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z");
-        return (this->*rv)(std::forward<struct PlayerOpenContainerEvent const&>(a0));
+        return (this->*rv)(std::forward<struct PlayerOpenContainerEvent const &>(a0));
     }
-    inline enum EventResult onPlayerMovementAnomaly(class Player& a0, class Vec3 const& a1, float a2, float a3){
-        enum EventResult (VanillaServerGameplayEventListener::*rv)(class Player&, class Vec3 const&, float, float);
+    inline enum EventResult onPlayerMovementAnomaly(class Player & a0, class Vec3 const & a1, float a2, float a3){
+        enum EventResult (VanillaServerGameplayEventListener::*rv)(class Player &, class Vec3 const &, float, float);
         *((void**)&rv) = dlsym("?onPlayerMovementAnomaly@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z");
-        return (this->*rv)(std::forward<class Player&>(a0), std::forward<class Vec3 const&>(a1), std::forward<float>(a2), std::forward<float>(a3));
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class Vec3 const &>(a1), std::forward<float>(a2), std::forward<float>(a3));
     }
-    inline enum EventResult onPlayerMovementCorrected(class Player& a0, class Vec3 const& a1, float a2, float a3){
-        enum EventResult (VanillaServerGameplayEventListener::*rv)(class Player&, class Vec3 const&, float, float);
+    inline enum EventResult onPlayerMovementCorrected(class Player & a0, class Vec3 const & a1, float a2, float a3){
+        enum EventResult (VanillaServerGameplayEventListener::*rv)(class Player &, class Vec3 const &, float, float);
         *((void**)&rv) = dlsym("?onPlayerMovementCorrected@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z");
-        return (this->*rv)(std::forward<class Player&>(a0), std::forward<class Vec3 const&>(a1), std::forward<float>(a2), std::forward<float>(a3));
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class Vec3 const &>(a1), std::forward<float>(a2), std::forward<float>(a3));
     }
     */
 

@@ -18,8 +18,8 @@ class TridentChannelingEnchant {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRIDENTCHANNELINGENCHANT
 public:
-    class TridentChannelingEnchant& operator=(class TridentChannelingEnchant const&) = delete;
-    TridentChannelingEnchant(class TridentChannelingEnchant const&) = delete;
+    class TridentChannelingEnchant& operator=(class TridentChannelingEnchant const &) = delete;
+    TridentChannelingEnchant(class TridentChannelingEnchant const &) = delete;
     TridentChannelingEnchant() = delete;
 #endif
 

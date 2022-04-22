@@ -19,14 +19,14 @@ class ActorIsPersistentTest : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORISPERSISTENTTEST
 public:
-    class ActorIsPersistentTest& operator=(class ActorIsPersistentTest const&) = delete;
-    ActorIsPersistentTest(class ActorIsPersistentTest const&) = delete;
+    class ActorIsPersistentTest& operator=(class ActorIsPersistentTest const &) = delete;
+    ActorIsPersistentTest(class ActorIsPersistentTest const &) = delete;
     ActorIsPersistentTest() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorIsPersistentTest();
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
 
 protected:

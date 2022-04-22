@@ -17,25 +17,25 @@ class LodestoneCompassComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LODESTONECOMPASSCOMPONENT
 public:
-    class LodestoneCompassComponent& operator=(class LodestoneCompassComponent const&) = delete;
-    LodestoneCompassComponent(class LodestoneCompassComponent const&) = delete;
+    class LodestoneCompassComponent& operator=(class LodestoneCompassComponent const &) = delete;
+    LodestoneCompassComponent(class LodestoneCompassComponent const &) = delete;
     LodestoneCompassComponent() = delete;
 #endif
 
 public:
-    MCAPI LodestoneCompassComponent(class LodestoneCompassComponent&&);
-    MCAPI int getAnimationFrame(class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int> > > const&, class BlockPos const&, class AutomaticID<class Dimension, int> const&);
-    MCAPI void initialize(class PositionTrackingId const&);
-    MCAPI class LodestoneCompassComponent& operator=(class LodestoneCompassComponent&&);
-    MCAPI void setTrackOnlyInSameDimension(class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int> > > const&, bool);
+    MCAPI LodestoneCompassComponent(class LodestoneCompassComponent &&);
+    MCAPI int getAnimationFrame(class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> const &, class BlockPos const &, class AutomaticID<class Dimension, int> const &);
+    MCAPI void initialize(class PositionTrackingId const &);
+    MCAPI class LodestoneCompassComponent & operator=(class LodestoneCompassComponent &&);
+    MCAPI void setTrackOnlyInSameDimension(class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> const &, bool);
     MCAPI ~LodestoneCompassComponent();
     MCAPI static int getSpinningAnimationFrame();
-    MCAPI static class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int> > > makeCalculatorId(struct ActorUniqueID const&);
+    MCAPI static class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> makeCalculatorId(struct ActorUniqueID const &);
 
 protected:
 
 private:
-    MCAPI class LodestoneCompassComponentCalculator* _findCalculator(class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int> > > const&, bool);
+    MCAPI class LodestoneCompassComponentCalculator * _findCalculator(class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> const &, bool);
     MCAPI static class CompassSpriteCalculator mSpinningLodestone;
 
 };

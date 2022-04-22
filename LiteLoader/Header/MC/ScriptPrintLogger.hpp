@@ -17,18 +17,18 @@ class ScriptPrintLogger {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPRINTLOGGER
 public:
-    class ScriptPrintLogger& operator=(class ScriptPrintLogger const&) = delete;
-    ScriptPrintLogger(class ScriptPrintLogger const&) = delete;
+    class ScriptPrintLogger& operator=(class ScriptPrintLogger const &) = delete;
+    ScriptPrintLogger(class ScriptPrintLogger const &) = delete;
     ScriptPrintLogger() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScriptPrintLogger();
-    /*1*/ virtual void onInfo(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char> > const&) const;
-    /*2*/ virtual void onWarn(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char> > const&) const;
-    /*3*/ virtual void onError(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char> > const&) const;
-    /*4*/ virtual void onException(struct Scripting::ContextId, struct Scripting::Error const&) const;
-    /*5*/ virtual bool shouldPrintException(struct Scripting::Error const&) const;
+    /*1*/ virtual void onInfo(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char>> const &) const;
+    /*2*/ virtual void onWarn(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char>> const &) const;
+    /*3*/ virtual void onError(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char>> const &) const;
+    /*4*/ virtual void onException(struct Scripting::ContextId, struct Scripting::Error const &) const;
+    /*5*/ virtual bool shouldPrintException(struct Scripting::Error const &) const;
 
 protected:
 

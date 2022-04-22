@@ -17,8 +17,8 @@ class VarIntDataInput {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VARINTDATAINPUT
 public:
-    class VarIntDataInput& operator=(class VarIntDataInput const&) = delete;
-    VarIntDataInput(class VarIntDataInput const&) = delete;
+    class VarIntDataInput& operator=(class VarIntDataInput const &) = delete;
+    VarIntDataInput(class VarIntDataInput const &) = delete;
     VarIntDataInput() = delete;
 #endif
 
@@ -40,10 +40,10 @@ public:
         *((void**)&rv) = dlsym("??1VarIntDataInput@@UEAA@XZ");
         return (this->*rv)();
     }
-    inline bool readBytes(void* a0, unsigned __int64 a1){
-        bool (VarIntDataInput::*rv)(void*, unsigned __int64);
+    inline bool readBytes(void * a0, unsigned __int64 a1){
+        bool (VarIntDataInput::*rv)(void *, unsigned __int64);
         *((void**)&rv) = dlsym("?readBytes@VarIntDataInput@@UEAA_NPEAX_K@Z");
-        return (this->*rv)(std::forward<void*>(a0), std::forward<unsigned __int64>(a1));
+        return (this->*rv)(std::forward<void *>(a0), std::forward<unsigned __int64>(a1));
     }
     inline std::string readLongString(){
         std::string (VarIntDataInput::*rv)();

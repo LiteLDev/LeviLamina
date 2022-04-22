@@ -697,6 +697,15 @@ public:
      * @return std::string The string value
      */
     LIAPI static std::string type2str(Any::Type type);
+
+    /**
+     * @brief Convert string to Any.
+     * 
+     * @param str  The string
+     * @return Any The converted value
+     */
+    LIAPI static Any str2any(const std::string& str);
+
 };
 
 } // namespace DB

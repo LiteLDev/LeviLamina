@@ -18,15 +18,15 @@ class ScriptingCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTINGCOMMAND
 public:
-    class ScriptingCommand& operator=(class ScriptingCommand const&) = delete;
-    ScriptingCommand(class ScriptingCommand const&) = delete;
+    class ScriptingCommand& operator=(class ScriptingCommand const &) = delete;
+    ScriptingCommand(class ScriptingCommand const &) = delete;
     ScriptingCommand() = delete;
 #endif
 
 public:
-    MCAPI ScriptingCommand(std::string const&);
+    MCAPI ScriptingCommand(std::string const &);
     MCAPI std::string serializeJsonOutput() const;
-    MCAPI void setJsonOutput(class Json::Value&&);
+    MCAPI void setJsonOutput(class Json::Value &&);
 
 protected:
 

@@ -17,14 +17,14 @@ class WeakEntityRef {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAKENTITYREF
 public:
-    class WeakEntityRef& operator=(class WeakEntityRef const&) = delete;
-    WeakEntityRef(class WeakEntityRef const&) = delete;
+    class WeakEntityRef& operator=(class WeakEntityRef const &) = delete;
+    WeakEntityRef(class WeakEntityRef const &) = delete;
     WeakEntityRef() = delete;
 #endif
 
 public:
     MCAPI WeakEntityRef(class WeakRefT<struct EntityRefTraits>);
-    MCAPI class WeakEntityRef& operator=(class WeakEntityRef&&);
+    MCAPI class WeakEntityRef & operator=(class WeakEntityRef &&);
     MCAPI bool operator==(class WeakEntityRef) const;
     MCAPI bool operator==(class WeakRefT<struct EntityRefTraits>) const;
     MCAPI ~WeakEntityRef();

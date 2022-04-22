@@ -17,15 +17,15 @@ class Motive {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOTIVE
 public:
-    class Motive& operator=(class Motive const&) = delete;
-    Motive(class Motive const&) = delete;
+    class Motive& operator=(class Motive const &) = delete;
+    Motive(class Motive const &) = delete;
     Motive() = delete;
 #endif
 
 public:
     MCAPI std::string const getName() const;
-    MCAPI static std::vector<class Motive const* > getAllMotivesAsList();
-    MCAPI static class Motive const& getMotiveByName(std::string const&);
+    MCAPI static std::vector<class Motive const *> getAllMotivesAsList();
+    MCAPI static class Motive const & getMotiveByName(std::string const &);
     MCAPI static class Motive const mAlban;
     MCAPI static class Motive const mAztec;
     MCAPI static class Motive const mAztec2;
@@ -34,7 +34,7 @@ public:
     MCAPI static class Motive const mBust;
     MCAPI static class Motive const mCourbet;
     MCAPI static class Motive const mCreebet;
-    MCAPI static class Motive const& mDefaultImage;
+    MCAPI static class Motive const & mDefaultImage;
     MCAPI static class Motive const mDonkeyKong;
     MCAPI static class Motive const mEarth;
     MCAPI static class Motive const mFighters;

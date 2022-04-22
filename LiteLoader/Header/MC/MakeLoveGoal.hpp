@@ -17,8 +17,8 @@ class MakeLoveGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAKELOVEGOAL
 public:
-    class MakeLoveGoal& operator=(class MakeLoveGoal const&) = delete;
-    MakeLoveGoal(class MakeLoveGoal const&) = delete;
+    class MakeLoveGoal& operator=(class MakeLoveGoal const &) = delete;
+    MakeLoveGoal(class MakeLoveGoal const &) = delete;
     MakeLoveGoal() = delete;
 #endif
 
@@ -30,12 +30,12 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI MakeLoveGoal(class VillagerBase&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI MakeLoveGoal(class VillagerBase &);
 
 protected:
 
 private:
-    MCAPI class VillagerBase* _findMate() const;
+    MCAPI class VillagerBase * _findMate() const;
 
 };

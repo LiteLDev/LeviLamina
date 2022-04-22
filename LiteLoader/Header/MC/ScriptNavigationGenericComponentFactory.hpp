@@ -17,14 +17,14 @@ class ScriptNavigationGenericComponentFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTNAVIGATIONGENERICCOMPONENTFACTORY
 public:
-    class ScriptNavigationGenericComponentFactory& operator=(class ScriptNavigationGenericComponentFactory const&) = delete;
-    ScriptNavigationGenericComponentFactory(class ScriptNavigationGenericComponentFactory const&) = delete;
+    class ScriptNavigationGenericComponentFactory& operator=(class ScriptNavigationGenericComponentFactory const &) = delete;
+    ScriptNavigationGenericComponentFactory(class ScriptNavigationGenericComponentFactory const &) = delete;
     ScriptNavigationGenericComponentFactory() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScriptNavigationGenericComponentFactory();
-    /*1*/ virtual class Scripting::StrongTypedObjectHandle<class ScriptActorComponent> createComponent(class WeakEntityRef, class Scripting::WeakLifetimeScope const&, std::string const&);
+    /*1*/ virtual class Scripting::StrongTypedObjectHandle<class ScriptActorComponent> createComponent(class WeakEntityRef, class Scripting::WeakLifetimeScope const &, std::string const &);
     /*2*/ virtual bool hasComponent(class WeakEntityRef) const;
 
 protected:

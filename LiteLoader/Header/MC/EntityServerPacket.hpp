@@ -18,16 +18,16 @@ class EntityServerPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYSERVERPACKET
 public:
-    class EntityServerPacket& operator=(class EntityServerPacket const&) = delete;
-    EntityServerPacket(class EntityServerPacket const&) = delete;
+    class EntityServerPacket& operator=(class EntityServerPacket const &) = delete;
+    EntityServerPacket(class EntityServerPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~EntityServerPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const = 0;
     /*2*/ virtual std::string getName() const = 0;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~EntityServerPacket(){
          (EntityServerPacket::*rv)();
@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI EntityServerPacket(class EntityContext const&);
+    MCAPI EntityServerPacket(class EntityContext const &);
     MCAPI EntityServerPacket();
 
 protected:

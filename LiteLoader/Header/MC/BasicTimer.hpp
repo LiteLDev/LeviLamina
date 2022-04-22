@@ -17,8 +17,8 @@ class BasicTimer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASICTIMER
 public:
-    class BasicTimer& operator=(class BasicTimer const&) = delete;
-    BasicTimer(class BasicTimer const&) = delete;
+    class BasicTimer& operator=(class BasicTimer const &) = delete;
+    BasicTimer(class BasicTimer const &) = delete;
     BasicTimer() = delete;
 #endif
 

@@ -18,8 +18,8 @@ struct VariantDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VARIANTDEFINITION
 public:
-    struct VariantDefinition& operator=(struct VariantDefinition const&) = delete;
-    VariantDefinition(struct VariantDefinition const&) = delete;
+    struct VariantDefinition& operator=(struct VariantDefinition const &) = delete;
+    VariantDefinition(struct VariantDefinition const &) = delete;
     VariantDefinition() = delete;
 #endif
 

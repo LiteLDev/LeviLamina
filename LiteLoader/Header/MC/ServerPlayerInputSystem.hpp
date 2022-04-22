@@ -15,8 +15,8 @@ class ServerPlayerInputSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPLAYERINPUTSYSTEM
 public:
-    class ServerPlayerInputSystem& operator=(class ServerPlayerInputSystem const&) = delete;
-    ServerPlayerInputSystem(class ServerPlayerInputSystem const&) = delete;
+    class ServerPlayerInputSystem& operator=(class ServerPlayerInputSystem const &) = delete;
+    ServerPlayerInputSystem(class ServerPlayerInputSystem const &) = delete;
     ServerPlayerInputSystem() = delete;
 #endif
 

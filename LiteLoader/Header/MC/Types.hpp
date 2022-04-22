@@ -293,6 +293,9 @@ class TypedClientNetId
 {
 public:
     T2 netId;
+
+    virtual void clientInit(TypedClientNetId<T, T2, unk>);
+    virtual void clientInit();
 };
 
 template <typename T, typename T2, int unk>
@@ -387,6 +390,17 @@ struct SharePtrRefTraits;
 
 template <typename T>
 class SubChunkStorage;
+
+enum class ScriptFacing
+{
+    Unknown = -1,
+    Down = 0,
+    Up = 1,
+    North = 2,
+    South = 3,
+    West = 4,
+    East = 5,
+};
 
 template <typename T, typename T2>
 class TagRegistry;
@@ -995,6 +1009,10 @@ enum class MinecraftPacketIds : int
     PlayerStartItemCooldown           = 0xB0,
     ScriptMessage                     = 0xB1,
     CodeBuilderSource                 = 0xB2,
+    TickingAreasLoadStatus            = 0xB3,
+    DimensionData                     = 0xB4,
+    AgentActionEvent                  = 0xB5,
+    ChangeMobProperty 		          = 0xB6
 };
 
 enum ItemStackNetResult :unsigned char {

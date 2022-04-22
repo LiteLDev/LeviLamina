@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class StopCommand {
+class StopCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,19 +18,19 @@ class StopCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STOPCOMMAND
 public:
-    class StopCommand& operator=(class StopCommand const&) = delete;
-    StopCommand(class StopCommand const&) = delete;
+    class StopCommand& operator=(class StopCommand const &) = delete;
+    StopCommand(class StopCommand const &) = delete;
     StopCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~StopCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&, class DedicatedServer&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &, class DedicatedServer &);
 
 protected:
 
 private:
-    MCAPI static class DedicatedServer* mServer;
+    MCAPI static class DedicatedServer * mServer;
 
 };

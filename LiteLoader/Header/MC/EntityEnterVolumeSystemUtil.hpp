@@ -14,8 +14,8 @@ namespace EntityEnterVolumeSystemUtil {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void _addActor(class Actor const&, class EntitiesEnteredVolumeComponent&, class EntitiesInsideVolumeComponent&);
-    MCAPI bool _boundsContainsActor(class Actor const&, class VolumeBoundsComponent const&, class Dimension const&);
-    MCAPI void _removeEmptyComponents(class EntityContext&, class EntitiesEnteredVolumeComponent&, class EntitiesInsideVolumeComponent&);
+    MCAPI void _addActor(class Actor const &, class EntitiesEnteredVolumeComponent &, class EntitiesInsideVolumeComponent &);
+    MCAPI bool _boundsContainsActor(class Actor const &, class VolumeBoundsComponent const &, class Dimension const &);
+    MCAPI void _removeEmptyComponents(class EntityContext &, class EntitiesEnteredVolumeComponent &, class EntitiesInsideVolumeComponent &);
 
 };

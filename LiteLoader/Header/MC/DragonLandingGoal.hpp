@@ -17,8 +17,8 @@ class DragonLandingGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONLANDINGGOAL
 public:
-    class DragonLandingGoal& operator=(class DragonLandingGoal const&) = delete;
-    DragonLandingGoal(class DragonLandingGoal const&) = delete;
+    class DragonLandingGoal& operator=(class DragonLandingGoal const &) = delete;
+    DragonLandingGoal(class DragonLandingGoal const &) = delete;
     DragonLandingGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI DragonLandingGoal(class EnderDragon&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI DragonLandingGoal(class EnderDragon &);
 
 protected:
 

@@ -17,8 +17,8 @@ class PetSleepWithOwnerGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PETSLEEPWITHOWNERGOAL
 public:
-    class PetSleepWithOwnerGoal& operator=(class PetSleepWithOwnerGoal const&) = delete;
-    PetSleepWithOwnerGoal(class PetSleepWithOwnerGoal const&) = delete;
+    class PetSleepWithOwnerGoal& operator=(class PetSleepWithOwnerGoal const &) = delete;
+    PetSleepWithOwnerGoal(class PetSleepWithOwnerGoal const &) = delete;
     PetSleepWithOwnerGoal() = delete;
 #endif
 
@@ -28,10 +28,17 @@ public:
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
-    /*5*/ virtual void stop();
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI PetSleepWithOwnerGoal(class Mob&, float, int, int, float);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    /*
+    inline void stop(){
+        void (PetSleepWithOwnerGoal::*rv)();
+        *((void**)&rv) = dlsym("?stop@PetSleepWithOwnerGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
+    MCAPI PetSleepWithOwnerGoal(class Mob &, float, int, int, float);
     MCAPI void setState(std::unique_ptr<class PetSleepWithOwnerState>);
 
 protected:

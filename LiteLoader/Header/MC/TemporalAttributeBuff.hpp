@@ -17,7 +17,7 @@ class TemporalAttributeBuff {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEMPORALATTRIBUTEBUFF
 public:
-    class TemporalAttributeBuff& operator=(class TemporalAttributeBuff const&) = delete;
+    class TemporalAttributeBuff& operator=(class TemporalAttributeBuff const &) = delete;
     TemporalAttributeBuff() = delete;
 #endif
 
@@ -40,8 +40,8 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI TemporalAttributeBuff(class TemporalAttributeBuff const&);
-    MCAPI TemporalAttributeBuff(float, int, enum AttributeBuffType, bool, std::string const&);
+    MCAPI TemporalAttributeBuff(class TemporalAttributeBuff const &);
+    MCAPI TemporalAttributeBuff(float, int, enum AttributeBuffType, bool, std::string const &);
     MCAPI float getBaseAmount() const;
     MCAPI int getDuration() const;
     MCAPI int getLifeTimer() const;

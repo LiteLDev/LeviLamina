@@ -19,16 +19,16 @@ class RegionFile {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REGIONFILE
 public:
-    class RegionFile& operator=(class RegionFile const&) = delete;
-    RegionFile(class RegionFile const&) = delete;
+    class RegionFile& operator=(class RegionFile const &) = delete;
+    RegionFile(class RegionFile const &) = delete;
     RegionFile() = delete;
 #endif
 
 public:
     /*0*/ virtual ~RegionFile();
-    MCAPI RegionFile(class Core::Path const&);
+    MCAPI RegionFile(class Core::Path const &);
     MCAPI bool open();
-    MCAPI bool readChunk(int, int, class RakNet::BitStream* *);
+    MCAPI bool readChunk(int, int, class RakNet::BitStream **);
 
 protected:
 

@@ -17,13 +17,13 @@ class BoundingBox {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOUNDINGBOX
 public:
-    class BoundingBox& operator=(class BoundingBox const&) = delete;
-    BoundingBox(class BoundingBox const&) = delete;
+    class BoundingBox& operator=(class BoundingBox const &) = delete;
+    BoundingBox(class BoundingBox const &) = delete;
     BoundingBox() = delete;
 #endif
 
 public:
-    MCAPI BoundingBox(class BlockPos const&, class BlockPos const&, enum Rotation);
+    MCAPI BoundingBox(class BlockPos const &, class BlockPos const &, enum Rotation);
     MCAPI bool isValid() const;
     MCAPI static class BoundingBox orientBox(int, int, int, int, int, int, int, int, int, int);
 

@@ -18,15 +18,15 @@ class LootItemMatchToolCondition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMMATCHTOOLCONDITION
 public:
-    class LootItemMatchToolCondition& operator=(class LootItemMatchToolCondition const&) = delete;
-    LootItemMatchToolCondition(class LootItemMatchToolCondition const&) = delete;
+    class LootItemMatchToolCondition& operator=(class LootItemMatchToolCondition const &) = delete;
+    LootItemMatchToolCondition(class LootItemMatchToolCondition const &) = delete;
     LootItemMatchToolCondition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LootItemMatchToolCondition();
-    /*1*/ virtual bool applies(class Random&, class LootTableContext&);
-    MCAPI LootItemMatchToolCondition(struct IntRange, struct IntRange, std::string, std::vector<struct LootItemMatchToolCondition::EnchantInfo> const&);
+    /*1*/ virtual bool applies(class Random &, class LootTableContext &);
+    MCAPI LootItemMatchToolCondition(struct IntRange, struct IntRange, std::string, std::vector<struct LootItemMatchToolCondition::EnchantInfo> const &);
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
 
 protected:

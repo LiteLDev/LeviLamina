@@ -17,14 +17,14 @@ class LevelSoundEventMap {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSOUNDEVENTMAP
 public:
-    class LevelSoundEventMap& operator=(class LevelSoundEventMap const&) = delete;
-    LevelSoundEventMap(class LevelSoundEventMap const&) = delete;
+    class LevelSoundEventMap& operator=(class LevelSoundEventMap const &) = delete;
+    LevelSoundEventMap(class LevelSoundEventMap const &) = delete;
     LevelSoundEventMap() = delete;
 #endif
 
 public:
-    MCAPI static enum LevelSoundEvent getId(std::string const&);
-    MCAPI static std::string const& getName(enum LevelSoundEvent);
+    MCAPI static enum LevelSoundEvent getId(std::string const &);
+    MCAPI static std::string const & getName(enum LevelSoundEvent);
 
 protected:
 

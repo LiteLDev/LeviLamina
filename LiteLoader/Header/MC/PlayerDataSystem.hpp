@@ -15,15 +15,15 @@ namespace PlayerDataSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void forEachIdByPrecedence(struct PlayerStorageIds const&, class std::function<bool (std::string const& , std::string const& )>);
-    MCAPI class Core::PathBuffer<std::string > getPlayerFilename(class Core::Path const&, std::string const&);
-    MCAPI std::string getServerId(class LevelStorage&, struct PlayerStorageIds const&);
-    MCAPI std::unique_ptr<class CompoundTag> legacyLoadClientPlayer(std::string const&, class Core::Path const&);
-    MCAPI std::unique_ptr<class CompoundTag> legacyLoadPlayer(class LevelStorage&, std::string const&);
-    MCAPI std::unique_ptr<class CompoundTag> loadPlayerData(class LevelStorage&, struct PlayerStorageIds const&, bool);
-    MCAPI std::unique_ptr<class CompoundTag> loadPlayerDataFromTag(class LevelStorage&, class gsl::basic_string_span<char const, -1>);
+    MCAPI void forEachIdByPrecedence(struct PlayerStorageIds const &, class std::function<bool (std::string const &, std::string const &)>);
+    MCAPI class Core::PathBuffer<std::string> getPlayerFilename(class Core::Path const &, std::string const &);
+    MCAPI std::string getServerId(class LevelStorage &, struct PlayerStorageIds const &);
+    MCAPI std::unique_ptr<class CompoundTag> legacyLoadClientPlayer(std::string const &, class Core::Path const &);
+    MCAPI std::unique_ptr<class CompoundTag> legacyLoadPlayer(class LevelStorage &, std::string const &);
+    MCAPI std::unique_ptr<class CompoundTag> loadPlayerData(class LevelStorage &, struct PlayerStorageIds const &, bool);
+    MCAPI std::unique_ptr<class CompoundTag> loadPlayerDataFromTag(class LevelStorage &, class gsl::basic_string_span<char const, -1>);
     MCAPI std::string playerKey(class gsl::basic_string_span<char const, -1>);
-    MCAPI std::string serverKey(class LevelStorage&, class Player const&);
-    MCAPI std::string serverKey(class LevelStorage&, class gsl::basic_string_span<char const, -1>);
+    MCAPI std::string serverKey(class LevelStorage &, class Player const &);
+    MCAPI std::string serverKey(class LevelStorage &, class gsl::basic_string_span<char const, -1>);
 
 };

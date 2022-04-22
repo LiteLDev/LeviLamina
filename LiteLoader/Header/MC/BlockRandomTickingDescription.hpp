@@ -9,7 +9,7 @@
 
 #undef BEFORE_EXTRA
 
-struct BlockRandomTickingDescription {
+class BlockRandomTickingDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -18,12 +18,17 @@ struct BlockRandomTickingDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKRANDOMTICKINGDESCRIPTION
 public:
-    struct BlockRandomTickingDescription& operator=(struct BlockRandomTickingDescription const&) = delete;
-    BlockRandomTickingDescription(struct BlockRandomTickingDescription const&) = delete;
+    class BlockRandomTickingDescription& operator=(class BlockRandomTickingDescription const &) = delete;
+    BlockRandomTickingDescription(class BlockRandomTickingDescription const &) = delete;
     BlockRandomTickingDescription() = delete;
 #endif
 
 public:
+    /*0*/ virtual ~BlockRandomTickingDescription();
+    /*1*/ virtual std::string const & getName() const;
+    /*2*/ virtual void initializeComponent(class EntityContext &) const;
+    /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &) const;
+    MCAPI static std::string const NameID;
 
 protected:
 

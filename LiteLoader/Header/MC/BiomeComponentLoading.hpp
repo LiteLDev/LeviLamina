@@ -14,7 +14,7 @@ namespace BiomeComponentLoading {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void _read(std::string const&, class CompoundTag const&, std::vector<struct std::pair<class Biome* , unsigned int>>&, class IWorldRegistriesProvider&);
-    MCAPI void _write(std::string const&, class CompoundTag&, std::vector<struct std::pair<class Biome* , unsigned int>> const&);
+    MCAPI void _read(std::string const &, class CompoundTag const &, std::vector<struct std::pair<class Biome *, unsigned int>> &, class IWorldRegistriesProvider &);
+    MCAPI void _write(std::string const &, class CompoundTag &, std::vector<struct std::pair<class Biome *, unsigned int>> const &);
 
 };

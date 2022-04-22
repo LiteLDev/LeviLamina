@@ -17,13 +17,13 @@ class MolangVersionMapping {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGVERSIONMAPPING
 public:
-    class MolangVersionMapping& operator=(class MolangVersionMapping const&) = delete;
-    MolangVersionMapping(class MolangVersionMapping const&) = delete;
+    class MolangVersionMapping& operator=(class MolangVersionMapping const &) = delete;
+    MolangVersionMapping(class MolangVersionMapping const &) = delete;
     MolangVersionMapping() = delete;
 #endif
 
 public:
-    MCAPI static enum MolangVersion const getVersion(class SemVersion const&);
+    MCAPI static enum MolangVersion const getVersion(class SemVersion const &);
 
 protected:
 

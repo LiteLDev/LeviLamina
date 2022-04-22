@@ -17,27 +17,27 @@ class AngryComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANGRYCOMPONENT
 public:
-    class AngryComponent& operator=(class AngryComponent const&) = delete;
-    AngryComponent(class AngryComponent const&) = delete;
+    class AngryComponent& operator=(class AngryComponent const &) = delete;
+    AngryComponent(class AngryComponent const &) = delete;
 #endif
 
 public:
-    MCAPI AngryComponent(class AngryComponent&&);
+    MCAPI AngryComponent(class AngryComponent &&);
     MCAPI AngryComponent();
-    MCAPI bool canAttack(class Mob&, class Mob*, class Actor*, bool, bool);
-    MCAPI enum LevelSoundEvent const getAngrySound(class Mob const&) const;
+    MCAPI bool canAttack(class Mob &, class Mob *, class Actor *, bool, bool);
+    MCAPI enum LevelSoundEvent const getAngrySound(class Mob const &) const;
     MCAPI bool getBroadcastAnger() const;
     MCAPI bool getBroadcastAngerOnAttack() const;
     MCAPI bool getBroadcastAngerOnBeingAttacked() const;
-    MCAPI class ActorFilterGroup const& getBroadcastFilter() const;
+    MCAPI class ActorFilterGroup const & getBroadcastFilter() const;
     MCAPI int getBroadcastRange() const;
     MCAPI bool getHasTicked() const;
     MCAPI struct Tick const getNextSoundEventTick() const;
-    MCAPI class AngryComponent& operator=(class AngryComponent&&);
-    MCAPI void restartTimer(class Mob&);
-    MCAPI void setAngry(class Mob&, bool);
+    MCAPI class AngryComponent & operator=(class AngryComponent &&);
+    MCAPI void restartTimer(class Mob &);
+    MCAPI void setAngry(class Mob &, bool);
     MCAPI void setHasTicked(bool);
-    MCAPI void setNextSoundEventTick(class Mob const&);
+    MCAPI void setNextSoundEventTick(class Mob const &);
     MCAPI ~AngryComponent();
 
 protected:

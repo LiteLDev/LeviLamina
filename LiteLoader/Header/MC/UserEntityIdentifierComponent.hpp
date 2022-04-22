@@ -17,16 +17,16 @@ class UserEntityIdentifierComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_USERENTITYIDENTIFIERCOMPONENT
 public:
-    class UserEntityIdentifierComponent& operator=(class UserEntityIdentifierComponent const&) = delete;
-    UserEntityIdentifierComponent(class UserEntityIdentifierComponent const&) = delete;
+    class UserEntityIdentifierComponent& operator=(class UserEntityIdentifierComponent const &) = delete;
+    UserEntityIdentifierComponent(class UserEntityIdentifierComponent const &) = delete;
     UserEntityIdentifierComponent() = delete;
 #endif
 
 public:
-    MCAPI UserEntityIdentifierComponent(class NetworkIdentifier const&, unsigned char, class mce::UUID, std::unique_ptr<class Certificate>);
+    MCAPI UserEntityIdentifierComponent(class NetworkIdentifier const &, unsigned char, class mce::UUID, std::unique_ptr<class Certificate>);
     MCAPI bool isPrimaryClient() const;
-    MCAPI class UserEntityIdentifierComponent& operator=(class UserEntityIdentifierComponent&&);
-    MCAPI static class UserEntityIdentifierComponent* tryGetFromEntity(class EntityContext&);
+    MCAPI class UserEntityIdentifierComponent & operator=(class UserEntityIdentifierComponent &&);
+    MCAPI static class UserEntityIdentifierComponent * tryGetFromEntity(class EntityContext &);
 
 protected:
 

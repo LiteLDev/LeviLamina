@@ -17,8 +17,8 @@ class RandomHoverGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMHOVERGOAL
 public:
-    class RandomHoverGoal& operator=(class RandomHoverGoal const&) = delete;
-    RandomHoverGoal(class RandomHoverGoal const&) = delete;
+    class RandomHoverGoal& operator=(class RandomHoverGoal const &) = delete;
+    RandomHoverGoal(class RandomHoverGoal const &) = delete;
     RandomHoverGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI RandomHoverGoal(class Mob&, float, int, float, float, float, struct IntRange);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI RandomHoverGoal(class Mob &, float, int, float, float, float, struct IntRange);
 
 protected:
     MCAPI bool _computeNewTarget();

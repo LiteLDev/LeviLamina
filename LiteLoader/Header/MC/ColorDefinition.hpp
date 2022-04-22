@@ -18,13 +18,13 @@ struct ColorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COLORDEFINITION
 public:
-    struct ColorDefinition& operator=(struct ColorDefinition const&) = delete;
-    ColorDefinition(struct ColorDefinition const&) = delete;
+    struct ColorDefinition& operator=(struct ColorDefinition const &) = delete;
+    ColorDefinition(struct ColorDefinition const &) = delete;
     ColorDefinition() = delete;
 #endif
 
 public:
-    MCAPI void setColorChoice(int const&);
+    MCAPI void setColorChoice(int const &);
 
 protected:
 

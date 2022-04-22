@@ -17,13 +17,13 @@ class SortItemInstanceIdAux {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SORTITEMINSTANCEIDAUX
 public:
-    class SortItemInstanceIdAux& operator=(class SortItemInstanceIdAux const&) = delete;
-    SortItemInstanceIdAux(class SortItemInstanceIdAux const&) = delete;
+    class SortItemInstanceIdAux& operator=(class SortItemInstanceIdAux const &) = delete;
+    SortItemInstanceIdAux(class SortItemInstanceIdAux const &) = delete;
     SortItemInstanceIdAux() = delete;
 #endif
 
 public:
-    MCAPI bool operator()(class ItemInstance const&, class ItemInstance const&) const;
+    MCAPI bool operator()(class ItemInstance const &, class ItemInstance const &) const;
 
 protected:
 

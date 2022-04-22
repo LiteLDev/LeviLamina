@@ -18,14 +18,14 @@ class HurtOnConditionDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HURTONCONDITIONDEFINITION
 public:
-    class HurtOnConditionDefinition& operator=(class HurtOnConditionDefinition const&) = delete;
-    HurtOnConditionDefinition(class HurtOnConditionDefinition const&) = delete;
+    class HurtOnConditionDefinition& operator=(class HurtOnConditionDefinition const &) = delete;
+    HurtOnConditionDefinition(class HurtOnConditionDefinition const &) = delete;
     HurtOnConditionDefinition() = delete;
 #endif
 
 public:
-    MCAPI void addDamageCondition(struct DamageCondition const&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HurtOnConditionDefinition> >&);
+    MCAPI void addDamageCondition(struct DamageCondition const &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HurtOnConditionDefinition>> &);
 
 protected:
 

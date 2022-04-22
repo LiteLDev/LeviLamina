@@ -14,6 +14,6 @@ namespace VanillaBuiltInEntities {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void registerMappings(class BaseGameVersion const&);
+    MCAPI void registerMappings(class BaseGameVersion const &, class Experiments const &);
 
 };

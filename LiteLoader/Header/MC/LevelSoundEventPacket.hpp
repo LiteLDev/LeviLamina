@@ -18,16 +18,16 @@ class LevelSoundEventPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSOUNDEVENTPACKET
 public:
-    class LevelSoundEventPacket& operator=(class LevelSoundEventPacket const&) = delete;
-    LevelSoundEventPacket(class LevelSoundEventPacket const&) = delete;
+    class LevelSoundEventPacket& operator=(class LevelSoundEventPacket const &) = delete;
+    LevelSoundEventPacket(class LevelSoundEventPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~LevelSoundEventPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~LevelSoundEventPacket(){
          (LevelSoundEventPacket::*rv)();
@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI LevelSoundEventPacket(enum LevelSoundEvent, class Vec3 const&, int, std::string const&, bool, bool);
+    MCAPI LevelSoundEventPacket(enum LevelSoundEvent, class Vec3 const &, int, std::string const &, bool, bool);
     MCAPI LevelSoundEventPacket();
 
 protected:

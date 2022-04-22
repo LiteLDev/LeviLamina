@@ -15,8 +15,8 @@ struct ServerPlayerCurrentMovementComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPLAYERCURRENTMOVEMENTCOMPONENT
 public:
-    struct ServerPlayerCurrentMovementComponent& operator=(struct ServerPlayerCurrentMovementComponent const&) = delete;
-    ServerPlayerCurrentMovementComponent(struct ServerPlayerCurrentMovementComponent const&) = delete;
+    struct ServerPlayerCurrentMovementComponent& operator=(struct ServerPlayerCurrentMovementComponent const &) = delete;
+    ServerPlayerCurrentMovementComponent(struct ServerPlayerCurrentMovementComponent const &) = delete;
     ServerPlayerCurrentMovementComponent() = delete;
 #endif
 

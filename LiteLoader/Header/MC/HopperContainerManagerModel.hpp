@@ -18,16 +18,16 @@ class HopperContainerManagerModel : public LevelContainerManagerModel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOPPERCONTAINERMANAGERMODEL
 public:
-    class HopperContainerManagerModel& operator=(class HopperContainerManagerModel const&) = delete;
-    HopperContainerManagerModel(class HopperContainerManagerModel const&) = delete;
+    class HopperContainerManagerModel& operator=(class HopperContainerManagerModel const &) = delete;
+    HopperContainerManagerModel(class HopperContainerManagerModel const &) = delete;
     HopperContainerManagerModel() = delete;
 #endif
 
 public:
     /*0*/ virtual ~HopperContainerManagerModel();
     /*16*/ virtual class ContainerScreenContext _postInit();
-    MCAPI HopperContainerManagerModel(enum ContainerID, class Player&, struct ActorUniqueID const&);
-    MCAPI HopperContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
+    MCAPI HopperContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
+    MCAPI HopperContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
 protected:
 

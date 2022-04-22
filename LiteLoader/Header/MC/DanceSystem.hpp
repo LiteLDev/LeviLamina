@@ -17,15 +17,15 @@ class DanceSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DANCESYSTEM
 public:
-    class DanceSystem& operator=(class DanceSystem const&) = delete;
-    DanceSystem(class DanceSystem const&) = delete;
+    class DanceSystem& operator=(class DanceSystem const &) = delete;
+    DanceSystem(class DanceSystem const &) = delete;
     DanceSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~DanceSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

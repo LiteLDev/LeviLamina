@@ -15,8 +15,8 @@ class ChestBlockTryPairEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHESTBLOCKTRYPAIREVENT
 public:
-    class ChestBlockTryPairEvent& operator=(class ChestBlockTryPairEvent const&) = delete;
-    ChestBlockTryPairEvent(class ChestBlockTryPairEvent const&) = delete;
+    class ChestBlockTryPairEvent& operator=(class ChestBlockTryPairEvent const &) = delete;
+    ChestBlockTryPairEvent(class ChestBlockTryPairEvent const &) = delete;
     ChestBlockTryPairEvent() = delete;
 #endif
 

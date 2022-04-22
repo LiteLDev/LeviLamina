@@ -15,8 +15,8 @@ struct FilterParamDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERPARAMDEFINITION
 public:
-    struct FilterParamDefinition& operator=(struct FilterParamDefinition const&) = delete;
-    FilterParamDefinition(struct FilterParamDefinition const&) = delete;
+    struct FilterParamDefinition& operator=(struct FilterParamDefinition const &) = delete;
+    FilterParamDefinition(struct FilterParamDefinition const &) = delete;
     FilterParamDefinition() = delete;
 #endif
 

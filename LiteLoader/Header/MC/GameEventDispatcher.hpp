@@ -17,15 +17,14 @@ class GameEventDispatcher {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEEVENTDISPATCHER
 public:
-    class GameEventDispatcher& operator=(class GameEventDispatcher const&) = delete;
-    GameEventDispatcher(class GameEventDispatcher const&) = delete;
+    class GameEventDispatcher& operator=(class GameEventDispatcher const &) = delete;
+    GameEventDispatcher(class GameEventDispatcher const &) = delete;
     GameEventDispatcher() = delete;
 #endif
 
 public:
-    MCAPI void post(class GameEvent const&, class BlockPos const&, class Actor const*, class BlockSource&);
-    MCAPI void registerListener(class GameEventListener&);
-    MCAPI void unregisterListener(class GameEventListener&);
+    MCAPI void post(class GameEvent const &, class BlockPos const &, class Actor *, class BlockSource &);
+    MCAPI class gsl::final_action<class std::function<void (void)>> registerListener(class GameEventListener &);
 
 protected:
 

@@ -17,8 +17,8 @@ class ArmorItemComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ARMORITEMCOMPONENT
 public:
-    class ArmorItemComponent& operator=(class ArmorItemComponent const&) = delete;
-    ArmorItemComponent(class ArmorItemComponent const&) = delete;
+    class ArmorItemComponent& operator=(class ArmorItemComponent const &) = delete;
+    ArmorItemComponent(class ArmorItemComponent const &) = delete;
     ArmorItemComponent() = delete;
 #endif
 
@@ -29,7 +29,7 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
     /*
     inline bool isNetworkComponent() const{
         bool (ArmorItemComponent::*rv)() const;
@@ -39,7 +39,7 @@ public:
     */
     MCAPI enum ArmorTextureType getArmorTextureType() const;
     MCAPI static void bindType();
-    MCAPI static class HashedString const& getIdentifier();
+    MCAPI static class HashedString const & getIdentifier();
 
 protected:
 

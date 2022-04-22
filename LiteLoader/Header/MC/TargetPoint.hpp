@@ -15,8 +15,8 @@ struct TargetPoint {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TARGETPOINT
 public:
-    struct TargetPoint& operator=(struct TargetPoint const&) = delete;
-    TargetPoint(struct TargetPoint const&) = delete;
+    struct TargetPoint& operator=(struct TargetPoint const &) = delete;
+    TargetPoint(struct TargetPoint const &) = delete;
     TargetPoint() = delete;
 #endif
 

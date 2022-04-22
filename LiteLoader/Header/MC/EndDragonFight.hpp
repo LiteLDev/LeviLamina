@@ -24,18 +24,18 @@ struct GateWayGenerator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDDRAGONFIGHT
 public:
-    class EndDragonFight& operator=(class EndDragonFight const&) = delete;
-    EndDragonFight(class EndDragonFight const&) = delete;
+    class EndDragonFight& operator=(class EndDragonFight const &) = delete;
+    EndDragonFight(class EndDragonFight const &) = delete;
     EndDragonFight() = delete;
 #endif
 
 public:
-    MCAPI EndDragonFight(class BlockSource&);
-    MCAPI void loadData(class CompoundTag const&);
-    MCAPI void onCrystalDestroyed(class EnderCrystal const&, class ActorDamageSource const&);
+    MCAPI EndDragonFight(class BlockSource &);
+    MCAPI void loadData(class CompoundTag const &);
+    MCAPI void onCrystalDestroyed(class EnderCrystal const &, class ActorDamageSource const &);
     MCAPI void resetSpikeCrystals();
-    MCAPI void saveData(class CompoundTag&);
-    MCAPI void spawnNewGatewayChunks(class BlockPos const&, bool, bool);
+    MCAPI void saveData(class CompoundTag &);
+    MCAPI void spawnNewGatewayChunks(class BlockPos const &, bool, bool);
     MCAPI void tick();
     MCAPI void tryRespawn();
     MCAPI ~EndDragonFight();
@@ -43,20 +43,20 @@ public:
 protected:
 
 private:
-    MCAPI bool _canSpawnNewGateway(class ChunkViewSource*, class BlockPos const&) const;
+    MCAPI bool _canSpawnNewGateway(class ChunkViewSource *, class BlockPos const &) const;
     MCAPI void _createNewDragon();
     MCAPI struct BuildMatch _findExitPortal();
-    MCAPI void _initializeDragon(class EnderDragon&);
-    MCAPI void _makeEndIslandFeature(class BlockSource&, class BlockPos);
+    MCAPI void _initializeDragon(class EnderDragon &);
+    MCAPI void _makeEndIslandFeature(class BlockSource &, class BlockPos);
     MCAPI void _placeAndLinkNewGatewayPair();
-    MCAPI bool _setEndGatewayBlockActorExitPosition(class BlockSource&, class BlockSource&, class BlockPos const&, class BlockPos const&, bool);
+    MCAPI bool _setEndGatewayBlockActorExitPosition(class BlockSource &, class BlockSource &, class BlockPos const &, class BlockPos const &, bool);
     MCAPI void _setRespawnStage(enum RespawnAnimation);
     MCAPI void _spawnExitPortal(bool);
-    MCAPI void _spawnNewGatewayChunksTask(class std::tuple<enum EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator>&);
+    MCAPI void _spawnNewGatewayChunksTask(class std::tuple<enum EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator> &);
     MCAPI void _spawnNewGatewayPair();
-    MCAPI void _tickRespawnAnimation(std::vector<struct ActorUniqueID> const&, int);
+    MCAPI void _tickRespawnAnimation(std::vector<struct ActorUniqueID> const &, int);
     MCAPI void _updateCrystalCount();
-    MCAPI void _verifyExitPositionsTask(class std::tuple<enum EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator>&);
+    MCAPI void _verifyExitPositionsTask(class std::tuple<enum EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator> &);
     MCAPI static int const ARENA_SIZE_CHUNKS;
     MCAPI static class BlockPos const DEFAULT_PORTAL_LOCATION;
     MCAPI static int const GATEWAY_CHUNK_RADIUS;

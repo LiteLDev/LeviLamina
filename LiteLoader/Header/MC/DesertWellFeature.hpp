@@ -18,15 +18,15 @@ class DesertWellFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DESERTWELLFEATURE
 public:
-    class DesertWellFeature& operator=(class DesertWellFeature const&) = delete;
-    DesertWellFeature(class DesertWellFeature const&) = delete;
+    class DesertWellFeature& operator=(class DesertWellFeature const &) = delete;
+    DesertWellFeature(class DesertWellFeature const &) = delete;
     DesertWellFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~DesertWellFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 protected:
 

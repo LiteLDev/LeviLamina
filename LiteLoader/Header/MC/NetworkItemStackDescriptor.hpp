@@ -15,33 +15,26 @@ class NetworkItemStackDescriptor {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    ItemDescriptor mDescriptor;
-    unsigned short mCount; //72
-private:
-    int unk76;
-public:
-    bool mHasNetID;                   //80
-    ItemStackNetIdVariant mNetworkID; //84
-    unsigned int mBlockRuntimeID;     //92
-    std::string mIdentifier;
+    ItemDescriptor mDescriptor;//0
+    char filler[80];
 
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKITEMSTACKDESCRIPTOR
 public:
-    class NetworkItemStackDescriptor& operator=(class NetworkItemStackDescriptor const&) = delete;
-    NetworkItemStackDescriptor(class NetworkItemStackDescriptor const&) = delete;
+    class NetworkItemStackDescriptor& operator=(class NetworkItemStackDescriptor const &) = delete;
+    NetworkItemStackDescriptor(class NetworkItemStackDescriptor const &) = delete;
     NetworkItemStackDescriptor() = delete;
 #endif
 
 public:
-    MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor&&);
-    MCAPI NetworkItemStackDescriptor(class ItemStack const&);
-    MCAPI NetworkItemStackDescriptor(class ItemStackDescriptor const&);
-    MCAPI void read(class ReadOnlyBinaryStream&);
+    MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor &&);
+    MCAPI NetworkItemStackDescriptor(class ItemStack const &);
+    MCAPI NetworkItemStackDescriptor(class ItemStackDescriptor const &);
+    MCAPI void read(class ReadOnlyBinaryStream &);
     MCAPI void setIncludeNetIds(bool) const;
-    MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const* tryGetServerNetId() const;
-    MCAPI void write(class BinaryStream&) const;
+    MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const * tryGetServerNetId() const;
+    MCAPI void write(class BinaryStream &) const;
     MCAPI ~NetworkItemStackDescriptor();
 
 protected:

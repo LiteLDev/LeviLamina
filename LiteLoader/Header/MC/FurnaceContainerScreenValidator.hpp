@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "ContainerScreenValidatorBase.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class FurnaceContainerScreenValidator {
+class FurnaceContainerScreenValidator : public ContainerScreenValidatorBase {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,15 +18,13 @@ class FurnaceContainerScreenValidator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FURNACECONTAINERSCREENVALIDATOR
 public:
-    class FurnaceContainerScreenValidator& operator=(class FurnaceContainerScreenValidator const&) = delete;
-    FurnaceContainerScreenValidator(class FurnaceContainerScreenValidator const&) = delete;
+    class FurnaceContainerScreenValidator& operator=(class FurnaceContainerScreenValidator const &) = delete;
+    FurnaceContainerScreenValidator(class FurnaceContainerScreenValidator const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~FurnaceContainerScreenValidator();
-    /*1*/ virtual void onItemRemoved(int, class ItemStack const&);
-    /*2*/ virtual void commitResults(class ContainerScreenContext const&);
-    /*3*/ virtual void clear();
+    /*1*/ virtual class std::shared_ptr<class ContainerValidationCommitObject> postCommitItemRemoved(int, class ItemStack const &);
     /*
     inline  ~FurnaceContainerScreenValidator(){
          (FurnaceContainerScreenValidator::*rv)();

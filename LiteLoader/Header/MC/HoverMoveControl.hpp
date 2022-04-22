@@ -18,13 +18,13 @@ class HoverMoveControl : public MoveControl {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOVERMOVECONTROL
 public:
-    class HoverMoveControl& operator=(class HoverMoveControl const&) = delete;
-    HoverMoveControl(class HoverMoveControl const&) = delete;
+    class HoverMoveControl& operator=(class HoverMoveControl const &) = delete;
+    HoverMoveControl(class HoverMoveControl const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~HoverMoveControl();
-    /*2*/ virtual void tick(class MoveControlComponent&, class Mob&);
+    /*2*/ virtual void tick(class MoveControlComponent &, class Mob &);
     MCAPI HoverMoveControl();
 
 protected:

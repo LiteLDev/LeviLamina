@@ -18,8 +18,8 @@ class TridentRiptideEnchant {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRIDENTRIPTIDEENCHANT
 public:
-    class TridentRiptideEnchant& operator=(class TridentRiptideEnchant const&) = delete;
-    TridentRiptideEnchant(class TridentRiptideEnchant const&) = delete;
+    class TridentRiptideEnchant& operator=(class TridentRiptideEnchant const &) = delete;
+    TridentRiptideEnchant(class TridentRiptideEnchant const &) = delete;
     TridentRiptideEnchant() = delete;
 #endif
 

@@ -18,8 +18,8 @@ class RakWebSocketClient : public RakWebSocket {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKWEBSOCKETCLIENT
 public:
-    class RakWebSocketClient& operator=(class RakWebSocketClient const&) = delete;
-    RakWebSocketClient(class RakWebSocketClient const&) = delete;
+    class RakWebSocketClient& operator=(class RakWebSocketClient const &) = delete;
+    RakWebSocketClient(class RakWebSocketClient const &) = delete;
     RakWebSocketClient() = delete;
 #endif
 

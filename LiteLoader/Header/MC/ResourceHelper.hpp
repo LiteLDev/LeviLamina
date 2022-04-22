@@ -15,7 +15,7 @@ namespace ResourceHelper {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI bool deserializePackStackEntry(class Json::Value const&, struct PackInstanceId&, std::string const&);
-    MCAPI std::string stringifyResourceMetadataGeneratedWith(class ResourceMetadata const&);
+    MCAPI bool deserializePackStackEntry(class Json::Value const &, struct PackInstanceId &, std::string const &);
+    MCAPI std::string stringifyResourceMetadataGeneratedWith(class ResourceMetadata const &);
 
 };

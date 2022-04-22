@@ -17,8 +17,8 @@ class ScriptStringBlockProperty {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTSTRINGBLOCKPROPERTY
 public:
-    class ScriptStringBlockProperty& operator=(class ScriptStringBlockProperty const&) = delete;
-    ScriptStringBlockProperty(class ScriptStringBlockProperty const&) = delete;
+    class ScriptStringBlockProperty& operator=(class ScriptStringBlockProperty const &) = delete;
+    ScriptStringBlockProperty(class ScriptStringBlockProperty const &) = delete;
     ScriptStringBlockProperty() = delete;
 #endif
 
@@ -31,10 +31,10 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptStringBlockProperty(class ScriptStringBlockProperty&&);
-    MCAPI ScriptStringBlockProperty(std::string, class ItemState const&, std::vector<std::string>, class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>);
-    MCAPI class Scripting::Result<std::string > getState() const;
-    MCAPI class ScriptStringBlockProperty& operator=(class ScriptStringBlockProperty&&);
+    MCAPI ScriptStringBlockProperty(class ScriptStringBlockProperty &&);
+    MCAPI ScriptStringBlockProperty(std::string, class ItemState const &, std::vector<std::string>, class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>);
+    MCAPI class Scripting::Result<std::string> getState() const;
+    MCAPI class ScriptStringBlockProperty & operator=(class ScriptStringBlockProperty &&);
     MCAPI class Scripting::Result<void> setState(std::string);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptStringBlockProperty> bind(struct Scripting::Version);
 

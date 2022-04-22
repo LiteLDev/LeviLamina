@@ -17,8 +17,8 @@ class IWorldTemplateManager {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IWORLDTEMPLATEMANAGER
 public:
-    class IWorldTemplateManager& operator=(class IWorldTemplateManager const&) = delete;
-    IWorldTemplateManager(class IWorldTemplateManager const&) = delete;
+    class IWorldTemplateManager& operator=(class IWorldTemplateManager const &) = delete;
+    IWorldTemplateManager(class IWorldTemplateManager const &) = delete;
     IWorldTemplateManager() = delete;
 #endif
 

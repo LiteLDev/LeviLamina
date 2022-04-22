@@ -18,16 +18,16 @@ class SchedulerDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCHEDULERDEFINITION
 public:
-    class SchedulerDefinition& operator=(class SchedulerDefinition const&) = delete;
-    SchedulerDefinition(class SchedulerDefinition const&) = delete;
+    class SchedulerDefinition& operator=(class SchedulerDefinition const &) = delete;
+    SchedulerDefinition(class SchedulerDefinition const &) = delete;
 #endif
 
 public:
     MCAPI SchedulerDefinition();
-    MCAPI void initialize(class EntityContext&, class SchedulerComponent&);
-    MCAPI void setMaxDelayTicks(float const&);
-    MCAPI void setMinDelayTicks(float const&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SchedulerDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class SchedulerComponent &);
+    MCAPI void setMaxDelayTicks(float const &);
+    MCAPI void setMinDelayTicks(float const &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SchedulerDefinition>> &);
 
 protected:
 

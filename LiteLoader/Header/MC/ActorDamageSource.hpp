@@ -20,8 +20,8 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDAMAGESOURCE
 public:
-    class ActorDamageSource& operator=(class ActorDamageSource const&) = delete;
-    ActorDamageSource(class ActorDamageSource const&) = delete;
+    class ActorDamageSource& operator=(class ActorDamageSource const &) = delete;
+    ActorDamageSource(class ActorDamageSource const &) = delete;
     ActorDamageSource() = delete;
 #endif
 
@@ -31,18 +31,21 @@ public:
     /*2*/ virtual bool isChildEntitySource() const;
     /*3*/ virtual bool isBlockSource() const;
     /*4*/ virtual bool isFire() const;
-    /*5*/ virtual struct std::pair<std::string, std::vector<std::string> > getDeathMessage(std::string, class Actor*) const;
-    /*6*/ virtual bool getIsCreative() const;
-    /*7*/ virtual bool getIsWorldBuilder() const;
-    /*8*/ virtual void __unk_vfn_8();
-    /*9*/ virtual void __unk_vfn_9();
-    /*10*/ virtual enum ActorCategory getEntityCategories() const;
-    /*11*/ virtual bool getDamagingEntityIsCreative() const;
-    /*12*/ virtual bool getDamagingEntityIsWorldBuilder() const;
-    /*13*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
-    /*14*/ virtual enum ActorType getDamagingEntityType() const;
-    /*15*/ virtual enum ActorCategory getDamagingEntityCategories() const;
-    /*16*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
+    /*5*/ virtual bool isReducedByArmorReduction() const;
+    /*6*/ virtual bool isFallingBlockDamage() const;
+    /*7*/ virtual bool isFallDamage() const;
+    /*8*/ virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor *) const;
+    /*9*/ virtual bool getIsCreative() const;
+    /*10*/ virtual bool getIsWorldBuilder() const;
+    /*11*/ virtual void __unk_vfn_11();
+    /*12*/ virtual void __unk_vfn_12();
+    /*13*/ virtual enum ActorCategory getEntityCategories() const;
+    /*14*/ virtual bool getDamagingEntityIsCreative() const;
+    /*15*/ virtual bool getDamagingEntityIsWorldBuilder() const;
+    /*16*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
+    /*17*/ virtual enum ActorType getDamagingEntityType() const;
+    /*18*/ virtual enum ActorCategory getDamagingEntityCategories() const;
+    /*19*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
     /*
     inline enum ActorType getEntityType() const{
         enum ActorType (ActorDamageSource::*rv)() const;
@@ -59,8 +62,8 @@ public:
     MCAPI enum ActorDamageCause getCause() const;
     MCAPI void setCause(enum ActorDamageCause);
     MCAPI static std::vector<struct std::pair<std::string, enum ActorDamageCause>> generateDamageCauseCommandEnum();
-    MCAPI static enum ActorDamageCause lookupCause(std::string const&);
-    MCAPI static std::string const& lookupCauseName(enum ActorDamageCause);
+    MCAPI static enum ActorDamageCause lookupCause(std::string const &);
+    MCAPI static std::string const & lookupCauseName(enum ActorDamageCause);
 
 protected:
 

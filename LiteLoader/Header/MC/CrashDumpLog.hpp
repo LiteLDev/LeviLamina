@@ -17,25 +17,25 @@ class CrashDumpLog {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMPLOG
 public:
-    class CrashDumpLog& operator=(class CrashDumpLog const&) = delete;
-    CrashDumpLog(class CrashDumpLog const&) = delete;
+    class CrashDumpLog& operator=(class CrashDumpLog const &) = delete;
+    CrashDumpLog(class CrashDumpLog const &) = delete;
     CrashDumpLog() = delete;
 #endif
 
 public:
-    MCAPI static void logEvent(struct CrashDumpEventData const&);
-    MCAPI static void logFrame(struct CrashDumpFrameData const&);
-    MCAPI static void logKeyValue(struct CrashDumpKeyValueData const&);
-    MCAPI static void setAssertMessage(char const*, int, char const*, char const*);
-    MCAPI static bool setDeviceSessionID(std::string const&);
-    MCAPI static void setGameVersion(char const*);
-    MCAPI static void setPlatform(char const*);
+    MCAPI static void logEvent(struct CrashDumpEventData const &);
+    MCAPI static void logFrame(struct CrashDumpFrameData const &);
+    MCAPI static void logKeyValue(struct CrashDumpKeyValueData const &);
+    MCAPI static void setAssertMessage(char const *, int, char const *, char const *);
+    MCAPI static bool setDeviceSessionID(std::string const &);
+    MCAPI static void setGameVersion(char const *);
+    MCAPI static void setPlatform(char const *);
     MCAPI static void setTotalMemory(unsigned __int64);
     MCAPI static bool startCrashDumpLogThread();
     MCAPI static void stopCrashDumpLogThread();
 
 protected:
-    MCAPI static struct CrashDump_AllData* mAllData;
+    MCAPI static struct CrashDump_AllData * mAllData;
 
 private:
     MCAPI static void crashDumpLogThreadRoutine();

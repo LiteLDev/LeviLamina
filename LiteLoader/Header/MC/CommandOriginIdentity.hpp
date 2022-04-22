@@ -15,8 +15,8 @@ struct CommandOriginIdentity {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDORIGINIDENTITY
 public:
-    struct CommandOriginIdentity& operator=(struct CommandOriginIdentity const&) = delete;
-    CommandOriginIdentity(struct CommandOriginIdentity const&) = delete;
+    struct CommandOriginIdentity& operator=(struct CommandOriginIdentity const &) = delete;
+    CommandOriginIdentity(struct CommandOriginIdentity const &) = delete;
     CommandOriginIdentity() = delete;
 #endif
 

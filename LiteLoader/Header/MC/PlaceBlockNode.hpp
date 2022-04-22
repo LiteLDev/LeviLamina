@@ -17,13 +17,13 @@ class PlaceBlockNode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLACEBLOCKNODE
 public:
-    class PlaceBlockNode& operator=(class PlaceBlockNode const&) = delete;
-    PlaceBlockNode(class PlaceBlockNode const&) = delete;
+    class PlaceBlockNode& operator=(class PlaceBlockNode const &) = delete;
+    PlaceBlockNode(class PlaceBlockNode const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~PlaceBlockNode();
-    /*1*/ virtual enum BehaviorStatus tick(class Actor&);
+    /*1*/ virtual enum BehaviorStatus tick(class Actor &);
     MCAPI PlaceBlockNode();
 
 protected:

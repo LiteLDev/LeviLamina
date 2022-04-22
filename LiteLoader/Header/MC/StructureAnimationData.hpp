@@ -17,21 +17,21 @@ class StructureAnimationData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREANIMATIONDATA
 public:
-    class StructureAnimationData& operator=(class StructureAnimationData const&) = delete;
-    StructureAnimationData(class StructureAnimationData const&) = delete;
+    class StructureAnimationData& operator=(class StructureAnimationData const &) = delete;
+    StructureAnimationData(class StructureAnimationData const &) = delete;
     StructureAnimationData() = delete;
 #endif
 
 public:
-    MCAPI StructureAnimationData(class StructureAnimationData&&);
-    MCAPI StructureAnimationData(std::unique_ptr<class CommandArea>, unsigned __int64, std::string const&, class StructureSettings const&, unsigned char, class BlockPos const&);
-    MCAPI class BlockPos const& getPosition() const;
-    MCAPI std::string const& getStructureName() const;
-    MCAPI class StructureSettings const& getStructureSettings() const;
-    MCAPI class CompoundTag& serialize(class CompoundTag&);
+    MCAPI StructureAnimationData(class StructureAnimationData &&);
+    MCAPI StructureAnimationData(std::unique_ptr<class CommandArea>, unsigned __int64, std::string const &, class StructureSettings const &, unsigned char, class BlockPos const &);
+    MCAPI class BlockPos const & getPosition() const;
+    MCAPI std::string const & getStructureName() const;
+    MCAPI class StructureSettings const & getStructureSettings() const;
+    MCAPI class CompoundTag & serialize(class CompoundTag &);
     MCAPI void setCmdArea(std::unique_ptr<class CommandArea>);
     MCAPI ~StructureAnimationData();
-    MCAPI static class StructureAnimationData load(std::string const&, class CompoundTag const&);
+    MCAPI static class StructureAnimationData load(std::string const &, class CompoundTag const &);
 
 protected:
 

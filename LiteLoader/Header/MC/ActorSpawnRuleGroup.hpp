@@ -18,22 +18,22 @@ class ActorSpawnRuleGroup {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSPAWNRULEGROUP
 public:
-    class ActorSpawnRuleGroup& operator=(class ActorSpawnRuleGroup const&) = delete;
-    ActorSpawnRuleGroup(class ActorSpawnRuleGroup const&) = delete;
+    class ActorSpawnRuleGroup& operator=(class ActorSpawnRuleGroup const &) = delete;
+    ActorSpawnRuleGroup(class ActorSpawnRuleGroup const &) = delete;
     ActorSpawnRuleGroup() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorSpawnRuleGroup();
-    /*1*/ virtual std::string const& getRootKey();
-    /*2*/ virtual std::string const& getFileType();
-    /*3*/ virtual bool processPopulationControl(std::string const&, class Json::Value&);
-    /*4*/ virtual void readResourceFiles(class ResourcePackManager&, class std::unordered_map<std::string, std::string, struct std::hash<std::string >, struct std::equal_to<std::string >, class std::allocator<struct std::pair<std::string const, std::string > > >&);
-    MCAPI ActorSpawnRuleGroup(class ResourcePackManager&, class IWorldRegistriesProvider&);
-    MCAPI int getActorSpawnPool(struct ActorDefinitionIdentifier const&) const;
+    /*1*/ virtual std::string const & getRootKey();
+    /*2*/ virtual std::string const & getFileType();
+    /*3*/ virtual bool processPopulationControl(std::string const &, class Json::Value &);
+    /*4*/ virtual void readResourceFiles(class ResourcePackManager &, class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> &);
+    MCAPI ActorSpawnRuleGroup(class ResourcePackManager &, class IWorldRegistriesProvider &);
+    MCAPI int getActorSpawnPool(struct ActorDefinitionIdentifier const &) const;
     MCAPI int getDelayEnd(std::string) const;
-    MCAPI void offSetDelayByCurrentTick(struct Tick const&);
-    MCAPI void resetDelayEnd(class MobSpawnRules, unsigned __int64, class Random&);
+    MCAPI void offSetDelayByCurrentTick(struct Tick const &);
+    MCAPI void resetDelayEnd(class MobSpawnRules, unsigned __int64, class Random &);
 
 protected:
 

@@ -17,8 +17,8 @@ class FakeBatteryMonitorInterface {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FAKEBATTERYMONITORINTERFACE
 public:
-    class FakeBatteryMonitorInterface& operator=(class FakeBatteryMonitorInterface const&) = delete;
-    FakeBatteryMonitorInterface(class FakeBatteryMonitorInterface const&) = delete;
+    class FakeBatteryMonitorInterface& operator=(class FakeBatteryMonitorInterface const &) = delete;
+    FakeBatteryMonitorInterface(class FakeBatteryMonitorInterface const &) = delete;
 #endif
 
 public:

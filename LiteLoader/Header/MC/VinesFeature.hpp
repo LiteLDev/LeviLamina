@@ -18,15 +18,15 @@ class VinesFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VINESFEATURE
 public:
-    class VinesFeature& operator=(class VinesFeature const&) = delete;
-    VinesFeature(class VinesFeature const&) = delete;
+    class VinesFeature& operator=(class VinesFeature const &) = delete;
+    VinesFeature(class VinesFeature const &) = delete;
     VinesFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~VinesFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 protected:
 

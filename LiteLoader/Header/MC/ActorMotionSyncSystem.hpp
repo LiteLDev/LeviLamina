@@ -17,15 +17,15 @@ class ActorMotionSyncSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORMOTIONSYNCSYSTEM
 public:
-    class ActorMotionSyncSystem& operator=(class ActorMotionSyncSystem const&) = delete;
-    ActorMotionSyncSystem(class ActorMotionSyncSystem const&) = delete;
+    class ActorMotionSyncSystem& operator=(class ActorMotionSyncSystem const &) = delete;
+    ActorMotionSyncSystem(class ActorMotionSyncSystem const &) = delete;
     ActorMotionSyncSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorMotionSyncSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

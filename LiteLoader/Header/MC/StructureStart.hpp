@@ -17,16 +17,15 @@ class StructureStart {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURESTART
 public:
-    class StructureStart& operator=(class StructureStart const&) = delete;
-    StructureStart(class StructureStart const&) = delete;
+    class StructureStart& operator=(class StructureStart const &) = delete;
+    StructureStart(class StructureStart const &) = delete;
     StructureStart() = delete;
 #endif
 
 public:
     /*0*/ virtual ~StructureStart();
-    /*1*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    /*1*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /*2*/ virtual bool isValid() const;
-    /*3*/ virtual enum StructureFeatureType getType() const = 0;
     /*
     inline  ~StructureStart(){
          (StructureStart::*rv)();
@@ -38,8 +37,8 @@ public:
 protected:
     MCAPI void calculateBoundingBox();
     MCAPI void moveBoundingBoxes(int);
-    MCAPI void moveInsideHeights(class Random&, short, short);
-    MCAPI void moveToLevel(short, class Random&, int);
+    MCAPI void moveInsideHeights(class Random &, short, short);
+    MCAPI void moveToLevel(short, class Random &, int);
 
 private:
 

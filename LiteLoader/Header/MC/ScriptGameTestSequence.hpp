@@ -17,18 +17,23 @@ class ScriptGameTestSequence {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTGAMETESTSEQUENCE
 public:
-    class ScriptGameTestSequence& operator=(class ScriptGameTestSequence const&) = delete;
-    ScriptGameTestSequence(class ScriptGameTestSequence const&) = delete;
+    class ScriptGameTestSequence& operator=(class ScriptGameTestSequence const &) = delete;
+    ScriptGameTestSequence(class ScriptGameTestSequence const &) = delete;
     ScriptGameTestSequence() = delete;
 #endif
 
 public:
+    MCAPI ScriptGameTestSequence(class gametest::GameTestSequence &, class Scripting::WeakLifetimeScope);
+    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> getScriptObjectHandle() const;
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> thenExecute(class Scripting::Closure<void (void)>);
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> thenExecuteAfter(int, class Scripting::Closure<void (void)>);
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> thenExecuteFor(int, class Scripting::Closure<void (void)>);
     MCAPI void thenFail(std::string);
+    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> thenIdle(int);
+    MCAPI void thenSucceed();
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> thenWait(class Scripting::Closure<void (void)>);
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> thenWaitAfter(int, class Scripting::Closure<void (void)>);
+    MCAPI ~ScriptGameTestSequence();
 
 protected:
 

@@ -18,16 +18,16 @@ class LevelContainerManagerModel : public ContainerManagerModel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCONTAINERMANAGERMODEL
 public:
-    class LevelContainerManagerModel& operator=(class LevelContainerManagerModel const&) = delete;
-    LevelContainerManagerModel(class LevelContainerManagerModel const&) = delete;
+    class LevelContainerManagerModel& operator=(class LevelContainerManagerModel const &) = delete;
+    LevelContainerManagerModel(class LevelContainerManagerModel const &) = delete;
     LevelContainerManagerModel() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LevelContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
-    /*7*/ virtual void setSlot(int, class ItemStack const&, bool);
-    /*8*/ virtual class ItemStack const& getSlot(int) const;
+    /*7*/ virtual void setSlot(int, class ItemStack const &, bool);
+    /*8*/ virtual class ItemStack const & getSlot(int) const;
     /*9*/ virtual void setData(int, int);
     /*10*/ virtual void broadcastChanges();
     /*15*/ virtual bool isValid(float);
@@ -39,14 +39,14 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI LevelContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&, enum BlockActorType);
-    MCAPI LevelContainerManagerModel(enum ContainerID, class Player&, struct ActorUniqueID);
-    MCAPI class BlockPos const& getBlockPos() const;
+    MCAPI LevelContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &, enum BlockActorType);
+    MCAPI LevelContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID);
+    MCAPI class BlockPos const & getBlockPos() const;
     MCAPI struct ActorUniqueID getEntityUniqueID() const;
 
 protected:
-    MCAPI class BlockActor* _getBlockEntity();
-    MCAPI class Container* _getRawContainer();
+    MCAPI class BlockActor * _getBlockEntity();
+    MCAPI class Container * _getRawContainer();
 
 private:
 

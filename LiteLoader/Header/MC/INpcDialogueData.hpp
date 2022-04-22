@@ -17,8 +17,8 @@ struct INpcDialogueData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INPCDIALOGUEDATA
 public:
-    struct INpcDialogueData& operator=(struct INpcDialogueData const&) = delete;
-    INpcDialogueData(struct INpcDialogueData const&) = delete;
+    struct INpcDialogueData& operator=(struct INpcDialogueData const &) = delete;
+    INpcDialogueData(struct INpcDialogueData const &) = delete;
     INpcDialogueData() = delete;
 #endif
 

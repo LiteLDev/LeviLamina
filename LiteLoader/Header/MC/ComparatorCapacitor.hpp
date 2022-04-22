@@ -20,23 +20,23 @@ enum Mode;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPARATORCAPACITOR
 public:
-    class ComparatorCapacitor& operator=(class ComparatorCapacitor const&) = delete;
-    ComparatorCapacitor(class ComparatorCapacitor const&) = delete;
+    class ComparatorCapacitor& operator=(class ComparatorCapacitor const &) = delete;
+    ComparatorCapacitor(class ComparatorCapacitor const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ComparatorCapacitor();
     /*6*/ virtual bool canConsumePowerAnyDirection() const;
     /*7*/ virtual void __unk_vfn_7();
-    /*10*/ virtual bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
-    /*11*/ virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
-    /*12*/ virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
-    /*13*/ virtual void checkLock(class CircuitSystem&, class BlockPos const&);
-    /*14*/ virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
-    /*15*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
-    /*16*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
+    /*10*/ virtual bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
+    /*11*/ virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
+    /*12*/ virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
+    /*13*/ virtual void checkLock(class CircuitSystem &, class BlockPos const &);
+    /*14*/ virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
+    /*15*/ virtual void cacheValues(class CircuitSystem &, class BlockPos const &);
+    /*16*/ virtual void updateDependencies(class CircuitSceneGraph &, class BlockPos const &);
     /*17*/ virtual void __unk_vfn_17();
-    /*18*/ virtual void __unk_vfn_18();
+    /*18*/ virtual bool isHalfPulse() const;
     /*20*/ virtual void __unk_vfn_20();
     /*21*/ virtual bool isSecondaryPowered() const;
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;

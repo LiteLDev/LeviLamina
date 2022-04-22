@@ -31,7 +31,7 @@ public:
 public:
     /*0*/ virtual ~ActorFilterGroup();
     /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType) const;
-    /*3*/ virtual bool _handleUnknownMember(std::string const&, class Json::Value const&);
+    /*3*/ virtual bool _handleUnknownMember(std::string const &, class Json::Value const &);
     /*
     inline  ~ActorFilterGroup(){
          (ActorFilterGroup::*rv)();
@@ -39,16 +39,16 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ActorFilterGroup(class ActorFilterGroup const&);
-    MCAPI ActorFilterGroup(class ActorFilterGroup&&);
-    MCAPI bool evaluateActor(class Actor const&, class VariantParameterList const&) const;
-    MCAPI class ActorFilterGroup& operator=(class ActorFilterGroup const&);
+    MCAPI ActorFilterGroup(class ActorFilterGroup const &);
+    MCAPI bool evaluateActor(class Actor const &, class VariantParameterList const &) const;
+    MCAPI class ActorFilterGroup & operator=(class ActorFilterGroup const &);
+    MCAPI class ActorFilterGroup & operator=(class ActorFilterGroup &&);
     MCAPI static void initialize();
 
 protected:
-    MCAPI bool _addLegacyFilter(std::string const&, struct ActorFilterGroup::LegacyMapping const&, class FilterInput const&);
-    MCAPI bool _processLegacyArray(std::string const&, class Json::Value const&, struct ActorFilterGroup::LegacyMapping const&);
-    MCAPI bool _processLegacyMember(std::string const&, class Json::Value const&, struct ActorFilterGroup::LegacyMapping const&);
+    MCAPI bool _addLegacyFilter(std::string const &, struct ActorFilterGroup::LegacyMapping const &, class FilterInput const &);
+    MCAPI bool _processLegacyArray(std::string const &, class Json::Value const &, struct ActorFilterGroup::LegacyMapping const &);
+    MCAPI bool _processLegacyMember(std::string const &, class Json::Value const &, struct ActorFilterGroup::LegacyMapping const &);
 
 private:
 

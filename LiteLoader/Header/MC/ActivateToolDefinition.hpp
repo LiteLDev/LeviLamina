@@ -19,14 +19,14 @@ class ActivateToolDefinition : public BehaviorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTIVATETOOLDEFINITION
 public:
-    class ActivateToolDefinition& operator=(class ActivateToolDefinition const&) = delete;
-    ActivateToolDefinition(class ActivateToolDefinition const&) = delete;
+    class ActivateToolDefinition& operator=(class ActivateToolDefinition const &) = delete;
+    ActivateToolDefinition(class ActivateToolDefinition const &) = delete;
     ActivateToolDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActivateToolDefinition();
-    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 
 protected:
 

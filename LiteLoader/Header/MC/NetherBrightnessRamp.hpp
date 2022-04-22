@@ -18,8 +18,8 @@ class NetherBrightnessRamp : public DimensionBrightnessRamp {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERBRIGHTNESSRAMP
 public:
-    class NetherBrightnessRamp& operator=(class NetherBrightnessRamp const&) = delete;
-    NetherBrightnessRamp(class NetherBrightnessRamp const&) = delete;
+    class NetherBrightnessRamp& operator=(class NetherBrightnessRamp const &) = delete;
+    NetherBrightnessRamp(class NetherBrightnessRamp const &) = delete;
     NetherBrightnessRamp() = delete;
 #endif
 

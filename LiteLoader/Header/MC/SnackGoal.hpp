@@ -17,8 +17,8 @@ class SnackGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SNACKGOAL
 public:
-    class SnackGoal& operator=(class SnackGoal const&) = delete;
-    SnackGoal(class SnackGoal const&) = delete;
+    class SnackGoal& operator=(class SnackGoal const &) = delete;
+    SnackGoal(class SnackGoal const &) = delete;
     SnackGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline int getRandomEatingEnd() const{
         int (SnackGoal::*rv)() const;
@@ -38,14 +38,14 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI SnackGoal(class Mob&, std::vector<class ItemDescriptor> const&, float, float, float);
+    MCAPI SnackGoal(class Mob &, std::vector<class ItemDescriptor> const &, float, float, float);
 
 protected:
 
 private:
     MCAPI bool _hasSnackableItems();
-    MCAPI bool _isSnackableItem(class ItemStack const&) const;
-    MCAPI void _updateHand(class ItemStack const&);
+    MCAPI bool _isSnackableItem(class ItemStack const &) const;
+    MCAPI void _updateHand(class ItemStack const &);
     MCAPI static int const CHEW_CHANCE;
     MCAPI static int const EATING_TIME;
     MCAPI static float const PATH_RANGE;

@@ -18,16 +18,16 @@ class EmotePacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EMOTEPACKET
 public:
-    class EmotePacket& operator=(class EmotePacket const&) = delete;
-    EmotePacket(class EmotePacket const&) = delete;
+    class EmotePacket& operator=(class EmotePacket const &) = delete;
+    EmotePacket(class EmotePacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~EmotePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~EmotePacket(){
          (EmotePacket::*rv)();

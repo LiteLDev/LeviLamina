@@ -17,13 +17,13 @@ class CompoundTagUpdater {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDTAGUPDATER
 public:
-    class CompoundTagUpdater& operator=(class CompoundTagUpdater const&) = delete;
-    CompoundTagUpdater(class CompoundTagUpdater const&) = delete;
+    class CompoundTagUpdater& operator=(class CompoundTagUpdater const &) = delete;
+    CompoundTagUpdater(class CompoundTagUpdater const &) = delete;
     CompoundTagUpdater() = delete;
 #endif
 
 public:
-    MCAPI bool update(class CompoundTag&) const;
+    MCAPI bool update(class CompoundTag &) const;
     MCAPI ~CompoundTagUpdater();
 
 protected:

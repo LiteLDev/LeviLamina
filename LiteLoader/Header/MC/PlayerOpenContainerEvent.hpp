@@ -15,8 +15,8 @@ struct PlayerOpenContainerEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYEROPENCONTAINEREVENT
 public:
-    struct PlayerOpenContainerEvent& operator=(struct PlayerOpenContainerEvent const&) = delete;
-    PlayerOpenContainerEvent(struct PlayerOpenContainerEvent const&) = delete;
+    struct PlayerOpenContainerEvent& operator=(struct PlayerOpenContainerEvent const &) = delete;
+    PlayerOpenContainerEvent(struct PlayerOpenContainerEvent const &) = delete;
     PlayerOpenContainerEvent() = delete;
 #endif
 

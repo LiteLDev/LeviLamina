@@ -9,7 +9,7 @@
 
 #undef BEFORE_EXTRA
 
-struct BlockCreativeGroupDescription {
+class BlockCreativeGroupDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -18,12 +18,27 @@ struct BlockCreativeGroupDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCREATIVEGROUPDESCRIPTION
 public:
-    struct BlockCreativeGroupDescription& operator=(struct BlockCreativeGroupDescription const&) = delete;
-    BlockCreativeGroupDescription(struct BlockCreativeGroupDescription const&) = delete;
+    class BlockCreativeGroupDescription& operator=(class BlockCreativeGroupDescription const &) = delete;
+    BlockCreativeGroupDescription(class BlockCreativeGroupDescription const &) = delete;
     BlockCreativeGroupDescription() = delete;
 #endif
 
 public:
+    /*0*/ virtual ~BlockCreativeGroupDescription();
+    /*1*/ virtual std::string const & getName() const;
+    /*2*/ virtual void initializeComponent(class EntityContext &) const;
+    /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &) const;
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
+    /*
+    inline bool isNetworkComponent() const{
+        bool (BlockCreativeGroupDescription::*rv)() const;
+        *((void**)&rv) = dlsym("?isNetworkComponent@BlockCreativeGroupDescription@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
+    MCAPI static std::string const NameID;
 
 protected:
 

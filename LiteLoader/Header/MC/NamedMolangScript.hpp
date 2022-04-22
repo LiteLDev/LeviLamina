@@ -15,8 +15,8 @@ struct NamedMolangScript {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAMEDMOLANGSCRIPT
 public:
-    struct NamedMolangScript& operator=(struct NamedMolangScript const&) = delete;
-    NamedMolangScript(struct NamedMolangScript const&) = delete;
+    struct NamedMolangScript& operator=(struct NamedMolangScript const &) = delete;
+    NamedMolangScript(struct NamedMolangScript const &) = delete;
     NamedMolangScript() = delete;
 #endif
 

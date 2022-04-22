@@ -17,15 +17,15 @@ class DryingOutTimerSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRYINGOUTTIMERSYSTEM
 public:
-    class DryingOutTimerSystem& operator=(class DryingOutTimerSystem const&) = delete;
-    DryingOutTimerSystem(class DryingOutTimerSystem const&) = delete;
+    class DryingOutTimerSystem& operator=(class DryingOutTimerSystem const &) = delete;
+    DryingOutTimerSystem(class DryingOutTimerSystem const &) = delete;
     DryingOutTimerSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~DryingOutTimerSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

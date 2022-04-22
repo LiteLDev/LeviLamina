@@ -17,13 +17,14 @@ class WorldGenClimateMappingAttributes {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDGENCLIMATEMAPPINGATTRIBUTES
 public:
-    class WorldGenClimateMappingAttributes& operator=(class WorldGenClimateMappingAttributes const&) = delete;
-    WorldGenClimateMappingAttributes(class WorldGenClimateMappingAttributes const&) = delete;
+    class WorldGenClimateMappingAttributes& operator=(class WorldGenClimateMappingAttributes const &) = delete;
+    WorldGenClimateMappingAttributes(class WorldGenClimateMappingAttributes const &) = delete;
     WorldGenClimateMappingAttributes() = delete;
 #endif
 
 public:
-    MCAPI class WorldGenClimateMappingAttributes& operator=(class WorldGenClimateMappingAttributes&&);
+    MCAPI class WorldGenClimateMappingAttributes & operator=(class WorldGenClimateMappingAttributes &&);
+    MCAPI ~WorldGenClimateMappingAttributes();
 
 protected:
 

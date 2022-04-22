@@ -18,15 +18,15 @@ class LootingEnchantFunction : public LootItemFunction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTINGENCHANTFUNCTION
 public:
-    class LootingEnchantFunction& operator=(class LootingEnchantFunction const&) = delete;
-    LootingEnchantFunction(class LootingEnchantFunction const&) = delete;
+    class LootingEnchantFunction& operator=(class LootingEnchantFunction const &) = delete;
+    LootingEnchantFunction(class LootingEnchantFunction const &) = delete;
     LootingEnchantFunction() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LootingEnchantFunction();
-    /*1*/ virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
-    /*3*/ virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
+    /*1*/ virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
+    /*3*/ virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
 
 protected:
 

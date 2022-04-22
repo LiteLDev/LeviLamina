@@ -17,13 +17,13 @@ class BarterComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BARTERCOMPONENT
 public:
-    class BarterComponent& operator=(class BarterComponent const&) = delete;
-    BarterComponent(class BarterComponent const&) = delete;
+    class BarterComponent& operator=(class BarterComponent const &) = delete;
+    BarterComponent(class BarterComponent const &) = delete;
     BarterComponent() = delete;
 #endif
 
 public:
-    MCAPI void onBarterItemPickedUp(class Actor const&, struct ActorUniqueID, short);
+    MCAPI void onBarterItemPickedUp(class Actor const &, struct ActorUniqueID, short);
     MCAPI void stopBarter();
 
 protected:

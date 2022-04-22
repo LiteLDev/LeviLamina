@@ -57,14 +57,14 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_READONLYBINARYSTREAM
 public:
-    class ReadOnlyBinaryStream& operator=(class ReadOnlyBinaryStream const&) = delete;
-    ReadOnlyBinaryStream(class ReadOnlyBinaryStream const&) = delete;
+    class ReadOnlyBinaryStream& operator=(class ReadOnlyBinaryStream const &) = delete;
+    ReadOnlyBinaryStream(class ReadOnlyBinaryStream const &) = delete;
     ReadOnlyBinaryStream() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ReadOnlyBinaryStream();
-    /*1*/ virtual bool read(void*, unsigned __int64);
+    /*1*/ virtual bool read(void *, unsigned __int64);
     /*
     inline  ~ReadOnlyBinaryStream(){
          (ReadOnlyBinaryStream::*rv)();
@@ -72,8 +72,8 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ReadOnlyBinaryStream(std::string&&);
-    MCAPI ReadOnlyBinaryStream(std::string const&, bool);
+    MCAPI ReadOnlyBinaryStream(std::string &&);
+    MCAPI ReadOnlyBinaryStream(std::string const &, bool);
     MCAPI bool canReadBool() const;
     MCAPI bool getBool();
     MCAPI unsigned char getByte();
@@ -85,7 +85,7 @@ public:
     MCAPI __int64 getSignedInt64();
     MCAPI short getSignedShort();
     MCAPI std::string getString();
-    MCAPI bool getString(std::string&);
+    MCAPI bool getString(std::string &);
     MCAPI unsigned char getUnsignedChar();
     MCAPI unsigned int getUnsignedInt();
     MCAPI unsigned __int64 getUnsignedInt64();

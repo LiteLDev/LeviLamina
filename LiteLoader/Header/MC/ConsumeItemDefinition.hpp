@@ -19,8 +19,8 @@ class ConsumeItemDefinition : public BehaviorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONSUMEITEMDEFINITION
 public:
-    class ConsumeItemDefinition& operator=(class ConsumeItemDefinition const&) = delete;
-    ConsumeItemDefinition(class ConsumeItemDefinition const&) = delete;
+    class ConsumeItemDefinition& operator=(class ConsumeItemDefinition const &) = delete;
+    ConsumeItemDefinition(class ConsumeItemDefinition const &) = delete;
     ConsumeItemDefinition() = delete;
 #endif
 

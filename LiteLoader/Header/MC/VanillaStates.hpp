@@ -143,9 +143,9 @@ struct CachedItemStateMapPtr {
     MCAPI extern class ItemStateVariant<int> const WeepingVinesAge;
     MCAPI extern class ItemStateVariant<int> const WeirdoDirection;
     MCAPI extern class ItemStateVariant<enum WoodType> const WoodType;
-    MCAPI class ItemState const* getDataState(std::string const&);
-    MCAPI class ItemState const* getState(class HashedString const&);
-    MCAPI class ItemState const* getState(class HashedString const&, struct VanillaStates::CachedItemStateMapPtr&);
+    MCAPI class ItemState const * getDataState(std::string const &);
+    MCAPI class ItemState const * getState(class HashedString const &);
+    MCAPI class ItemState const * getState(class HashedString const &, struct VanillaStates::CachedItemStateMapPtr &);
     MCAPI void registerStates();
     MCAPI void unregisterStates();
 

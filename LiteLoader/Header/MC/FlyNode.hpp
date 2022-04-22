@@ -17,14 +17,14 @@ class FlyNode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLYNODE
 public:
-    class FlyNode& operator=(class FlyNode const&) = delete;
-    FlyNode(class FlyNode const&) = delete;
+    class FlyNode& operator=(class FlyNode const &) = delete;
+    FlyNode(class FlyNode const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~FlyNode();
-    /*1*/ virtual enum BehaviorStatus tick(class Actor&);
-    /*2*/ virtual void initializeFromDefinition(class Actor&);
+    /*1*/ virtual enum BehaviorStatus tick(class Actor &);
+    /*2*/ virtual void initializeFromDefinition(class Actor &);
     MCAPI FlyNode();
 
 protected:

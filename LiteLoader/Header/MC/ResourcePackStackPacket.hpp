@@ -18,16 +18,16 @@ class ResourcePackStackPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKSTACKPACKET
 public:
-    class ResourcePackStackPacket& operator=(class ResourcePackStackPacket const&) = delete;
-    ResourcePackStackPacket(class ResourcePackStackPacket const&) = delete;
+    class ResourcePackStackPacket& operator=(class ResourcePackStackPacket const &) = delete;
+    ResourcePackStackPacket(class ResourcePackStackPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ResourcePackStackPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~ResourcePackStackPacket(){
          (ResourcePackStackPacket::*rv)();
@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ResourcePackStackPacket(std::vector<struct PackInstanceId>, std::vector<struct PackInstanceId>, class BaseGameVersion const&, bool, class Experiments const&);
+    MCAPI ResourcePackStackPacket(std::vector<struct PackInstanceId>, std::vector<struct PackInstanceId>, class BaseGameVersion const &, bool, class Experiments const &);
     MCAPI ResourcePackStackPacket();
 
 protected:

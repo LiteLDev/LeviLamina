@@ -17,14 +17,14 @@ class ActorDefinitionPtr {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITIONPTR
 public:
-    class ActorDefinitionPtr& operator=(class ActorDefinitionPtr const&) = delete;
+    class ActorDefinitionPtr& operator=(class ActorDefinitionPtr const &) = delete;
 #endif
 
 public:
     MCAPI ActorDefinitionPtr();
-    MCAPI ActorDefinitionPtr(class ActorDefinitionGroup&, class ActorDefinition&);
-    MCAPI ActorDefinitionPtr(class ActorDefinitionPtr const&);
-    MCAPI class ActorDefinitionPtr& operator=(class ActorDefinitionPtr&&);
+    MCAPI ActorDefinitionPtr(class ActorDefinitionGroup &, class ActorDefinition &);
+    MCAPI ActorDefinitionPtr(class ActorDefinitionPtr const &);
+    MCAPI class ActorDefinitionPtr & operator=(class ActorDefinitionPtr &&);
     MCAPI ~ActorDefinitionPtr();
     MCAPI static class ActorDefinitionPtr const NONE;
 

@@ -18,8 +18,8 @@ class BaseMoveToBlockGoal : public BaseMoveToGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASEMOVETOBLOCKGOAL
 public:
-    class BaseMoveToBlockGoal& operator=(class BaseMoveToBlockGoal const&) = delete;
-    BaseMoveToBlockGoal(class BaseMoveToBlockGoal const&) = delete;
+    class BaseMoveToBlockGoal& operator=(class BaseMoveToBlockGoal const &) = delete;
+    BaseMoveToBlockGoal(class BaseMoveToBlockGoal const &) = delete;
     BaseMoveToBlockGoal() = delete;
 #endif
 
@@ -28,10 +28,10 @@ public:
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_3();
-    /*7*/ virtual void appendDebugInfo(std::string&) const = 0;
+    /*7*/ virtual void appendDebugInfo(std::string &) const = 0;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*11*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&) = 0;
+    /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &) = 0;
     /*14*/ virtual void _moveToBlock();
     /*17*/ virtual bool findTargetBlock();
     /*
@@ -41,7 +41,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI BaseMoveToBlockGoal(class Mob&, float, int, int, int, float, float);
+    MCAPI BaseMoveToBlockGoal(class Mob &, float, int, int, int, float, float);
 
 protected:
 

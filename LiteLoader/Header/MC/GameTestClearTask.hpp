@@ -17,8 +17,8 @@ class GameTestClearTask {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETESTCLEARTASK
 public:
-    class GameTestClearTask& operator=(class GameTestClearTask const&) = delete;
-    GameTestClearTask(class GameTestClearTask const&) = delete;
+    class GameTestClearTask& operator=(class GameTestClearTask const &) = delete;
+    GameTestClearTask(class GameTestClearTask const &) = delete;
     GameTestClearTask() = delete;
 #endif
 

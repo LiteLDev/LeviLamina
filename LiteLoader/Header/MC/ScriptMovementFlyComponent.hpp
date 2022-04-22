@@ -18,8 +18,8 @@ class ScriptMovementFlyComponent : public MovementScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMOVEMENTFLYCOMPONENT
 public:
-    class ScriptMovementFlyComponent& operator=(class ScriptMovementFlyComponent const&) = delete;
-    ScriptMovementFlyComponent(class ScriptMovementFlyComponent const&) = delete;
+    class ScriptMovementFlyComponent& operator=(class ScriptMovementFlyComponent const &) = delete;
+    ScriptMovementFlyComponent(class ScriptMovementFlyComponent const &) = delete;
     ScriptMovementFlyComponent() = delete;
 #endif
 

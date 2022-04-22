@@ -18,8 +18,8 @@ class TextObjectRoot {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTOBJECTROOT
 public:
-    class TextObjectRoot& operator=(class TextObjectRoot const&) = delete;
-    TextObjectRoot(class TextObjectRoot const&) = delete;
+    class TextObjectRoot& operator=(class TextObjectRoot const &) = delete;
+    TextObjectRoot(class TextObjectRoot const &) = delete;
     TextObjectRoot() = delete;
 #endif
 
@@ -27,7 +27,7 @@ public:
     /*0*/ virtual ~TextObjectRoot();
     /*1*/ virtual std::string asString() const;
     /*2*/ virtual class Json::Value asJsonValue() const;
-    /*3*/ virtual class Json::Value resolve(struct ResolveData const&) const;
+    /*3*/ virtual class Json::Value resolve(struct ResolveData const &) const;
     /*
     inline  ~TextObjectRoot(){
          (TextObjectRoot::*rv)();
@@ -38,7 +38,7 @@ public:
     MCAPI void addChild(std::unique_ptr<class ITextObject>);
     MCAPI void clear();
     MCAPI bool isEmpty() const;
-    MCAPI class ResolvedTextObject resolveRoot(class Actor const&, class Scoreboard const&) const;
+    MCAPI class ResolvedTextObject resolveRoot(class Actor const &, class Scoreboard const &) const;
 
 protected:
 

@@ -18,14 +18,14 @@ struct IsShakingDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISSHAKINGDEFINITION
 public:
-    struct IsShakingDefinition& operator=(struct IsShakingDefinition const&) = delete;
-    IsShakingDefinition(struct IsShakingDefinition const&) = delete;
+    struct IsShakingDefinition& operator=(struct IsShakingDefinition const &) = delete;
+    IsShakingDefinition(struct IsShakingDefinition const &) = delete;
     IsShakingDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&);
-    MCAPI void uninitialize(class EntityContext&);
+    MCAPI void initialize(class EntityContext &);
+    MCAPI void uninitialize(class EntityContext &);
 
 protected:
 

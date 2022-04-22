@@ -17,17 +17,16 @@ class LookAtComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATCOMPONENT
 public:
-    class LookAtComponent& operator=(class LookAtComponent const&) = delete;
-    LookAtComponent(class LookAtComponent const&) = delete;
+    class LookAtComponent& operator=(class LookAtComponent const &) = delete;
+    LookAtComponent(class LookAtComponent const &) = delete;
 #endif
 
 public:
     MCAPI LookAtComponent();
-    MCAPI int& getCoolingTime();
+    MCAPI int & getCoolingTime();
     MCAPI float getSearchRadius() const;
     MCAPI bool getTarget() const;
-    MCAPI void initFromDefinition(class Actor&, class LookAtDefinition const&);
-    MCAPI bool isLookingAtMe(class Actor&, class Actor&);
+    MCAPI bool isLookingAtMe(class Actor &, class Actor &);
 
 protected:
 

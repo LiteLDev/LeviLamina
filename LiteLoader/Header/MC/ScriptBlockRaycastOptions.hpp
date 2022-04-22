@@ -15,8 +15,8 @@ struct ScriptBlockRaycastOptions {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKRAYCASTOPTIONS
 public:
-    struct ScriptBlockRaycastOptions& operator=(struct ScriptBlockRaycastOptions const&) = delete;
-    ScriptBlockRaycastOptions(struct ScriptBlockRaycastOptions const&) = delete;
+    struct ScriptBlockRaycastOptions& operator=(struct ScriptBlockRaycastOptions const &) = delete;
+    ScriptBlockRaycastOptions(struct ScriptBlockRaycastOptions const &) = delete;
     ScriptBlockRaycastOptions() = delete;
 #endif
 

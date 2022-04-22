@@ -18,15 +18,15 @@ class HideDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HIDEDESCRIPTION
 public:
-    class HideDescription& operator=(class HideDescription const&) = delete;
-    HideDescription(class HideDescription const&) = delete;
+    class HideDescription& operator=(class HideDescription const &) = delete;
+    HideDescription(class HideDescription const &) = delete;
     HideDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~HideDescription();
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~HideDescription(){
          (HideDescription::*rv)();

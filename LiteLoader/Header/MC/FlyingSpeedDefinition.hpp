@@ -18,8 +18,8 @@ struct FlyingSpeedDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLYINGSPEEDDEFINITION
 public:
-    struct FlyingSpeedDefinition& operator=(struct FlyingSpeedDefinition const&) = delete;
-    FlyingSpeedDefinition(struct FlyingSpeedDefinition const&) = delete;
+    struct FlyingSpeedDefinition& operator=(struct FlyingSpeedDefinition const &) = delete;
+    FlyingSpeedDefinition(struct FlyingSpeedDefinition const &) = delete;
     FlyingSpeedDefinition() = delete;
 #endif
 

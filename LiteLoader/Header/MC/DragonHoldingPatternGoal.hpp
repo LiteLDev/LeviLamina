@@ -17,8 +17,8 @@ class DragonHoldingPatternGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONHOLDINGPATTERNGOAL
 public:
-    class DragonHoldingPatternGoal& operator=(class DragonHoldingPatternGoal const&) = delete;
-    DragonHoldingPatternGoal(class DragonHoldingPatternGoal const&) = delete;
+    class DragonHoldingPatternGoal& operator=(class DragonHoldingPatternGoal const &) = delete;
+    DragonHoldingPatternGoal(class DragonHoldingPatternGoal const &) = delete;
     DragonHoldingPatternGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI DragonHoldingPatternGoal(class EnderDragon&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI DragonHoldingPatternGoal(class EnderDragon &);
 
 protected:
 

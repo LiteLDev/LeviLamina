@@ -17,14 +17,14 @@ class PointedDripstoneFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POINTEDDRIPSTONEFEATURE
 public:
-    class PointedDripstoneFeature& operator=(class PointedDripstoneFeature const&) = delete;
-    PointedDripstoneFeature(class PointedDripstoneFeature const&) = delete;
+    class PointedDripstoneFeature& operator=(class PointedDripstoneFeature const &) = delete;
+    PointedDripstoneFeature(class PointedDripstoneFeature const &) = delete;
     PointedDripstoneFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~PointedDripstoneFeature();
-    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 
 protected:
 

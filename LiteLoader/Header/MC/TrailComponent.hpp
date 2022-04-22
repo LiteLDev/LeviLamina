@@ -17,13 +17,13 @@ class TrailComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRAILCOMPONENT
 public:
-    class TrailComponent& operator=(class TrailComponent const&) = delete;
-    TrailComponent(class TrailComponent const&) = delete;
+    class TrailComponent& operator=(class TrailComponent const &) = delete;
+    TrailComponent(class TrailComponent const &) = delete;
 #endif
 
 public:
     MCAPI TrailComponent();
-    MCAPI void initFromDefinition(class Actor&);
+    MCAPI void initFromDefinition(class Actor &);
 
 protected:
 

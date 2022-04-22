@@ -19,14 +19,14 @@ class ActorHasComponentTest : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORHASCOMPONENTTEST
 public:
-    class ActorHasComponentTest& operator=(class ActorHasComponentTest const&) = delete;
-    ActorHasComponentTest(class ActorHasComponentTest const&) = delete;
+    class ActorHasComponentTest& operator=(class ActorHasComponentTest const &) = delete;
+    ActorHasComponentTest(class ActorHasComponentTest const &) = delete;
     ActorHasComponentTest() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorHasComponentTest();
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*
     inline  ~ActorHasComponentTest(){

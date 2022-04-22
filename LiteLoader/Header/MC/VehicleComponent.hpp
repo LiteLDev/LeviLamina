@@ -15,12 +15,13 @@ struct VehicleComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VEHICLECOMPONENT
 public:
-    struct VehicleComponent& operator=(struct VehicleComponent const&) = delete;
+    struct VehicleComponent& operator=(struct VehicleComponent const &) = delete;
+    VehicleComponent(struct VehicleComponent const &) = delete;
     VehicleComponent() = delete;
 #endif
 
 public:
-    MCAPI VehicleComponent(struct VehicleComponent const&);
+    MCAPI struct VehicleComponent & operator=(struct VehicleComponent &&);
     MCAPI ~VehicleComponent();
 
 protected:

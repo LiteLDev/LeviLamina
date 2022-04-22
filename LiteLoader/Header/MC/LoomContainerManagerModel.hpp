@@ -18,21 +18,21 @@ class LoomContainerManagerModel : public ContainerManagerModel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOMCONTAINERMANAGERMODEL
 public:
-    class LoomContainerManagerModel& operator=(class LoomContainerManagerModel const&) = delete;
-    LoomContainerManagerModel(class LoomContainerManagerModel const&) = delete;
+    class LoomContainerManagerModel& operator=(class LoomContainerManagerModel const &) = delete;
+    LoomContainerManagerModel(class LoomContainerManagerModel const &) = delete;
     LoomContainerManagerModel() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LoomContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
-    /*7*/ virtual void setSlot(int, class ItemStack const&, bool);
-    /*8*/ virtual class ItemStack const& getSlot(int) const;
+    /*7*/ virtual void setSlot(int, class ItemStack const &, bool);
+    /*8*/ virtual class ItemStack const & getSlot(int) const;
     /*9*/ virtual void setData(int, int);
     /*10*/ virtual void broadcastChanges();
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
-    MCAPI LoomContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
+    MCAPI LoomContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
     MCAPI static int const BANNER_SLOT;
     MCAPI static int const DYE_SLOT;
     MCAPI static int const MATERIAL_SLOT;

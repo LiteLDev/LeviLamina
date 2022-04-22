@@ -22,8 +22,8 @@ struct MCRESULT {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MCRESULT
 public:
-    struct MCRESULT& operator=(struct MCRESULT const&) = delete;
-    MCRESULT(struct MCRESULT const&) = delete;
+    struct MCRESULT& operator=(struct MCRESULT const &) = delete;
+    MCRESULT(struct MCRESULT const &) = delete;
     MCRESULT() = delete;
 #endif
 

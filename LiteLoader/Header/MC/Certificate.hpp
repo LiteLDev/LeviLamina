@@ -19,14 +19,14 @@ class Certificate {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CERTIFICATE
 public:
-    class Certificate& operator=(class Certificate const&) = delete;
+    class Certificate& operator=(class Certificate const &) = delete;
     Certificate() = delete;
 #endif
 
 public:
-    MCAPI Certificate(class Certificate const&);
+    MCAPI Certificate(class Certificate const &);
     MCAPI __int64 getExpirationDate() const;
-    MCAPI class Json::Value getExtraData(std::string const&, class Json::Value const&) const;
+    MCAPI class Json::Value getExtraData(std::string const &, class Json::Value const &) const;
     MCAPI std::string getIdentityPublicKey() const;
     MCAPI __int64 getNotBeforeDate() const;
     MCAPI bool isValid() const;
@@ -37,6 +37,6 @@ public:
 protected:
 
 private:
-    MCAPI Certificate(class UnverifiedCertificate const&, std::unique_ptr<class Certificate>);
+    MCAPI Certificate(class UnverifiedCertificate const &, std::unique_ptr<class Certificate>);
 
 };

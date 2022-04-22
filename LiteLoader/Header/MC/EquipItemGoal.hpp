@@ -17,8 +17,8 @@ class EquipItemGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EQUIPITEMGOAL
 public:
-    class EquipItemGoal& operator=(class EquipItemGoal const&) = delete;
-    EquipItemGoal(class EquipItemGoal const&) = delete;
+    class EquipItemGoal& operator=(class EquipItemGoal const &) = delete;
+    EquipItemGoal(class EquipItemGoal const &) = delete;
     EquipItemGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline bool canContinueToUse(){
         bool (EquipItemGoal::*rv)();
@@ -38,11 +38,11 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI EquipItemGoal(class Mob&);
+    MCAPI EquipItemGoal(class Mob &);
 
 protected:
 
 private:
-    MCAPI void _dropItem(class ItemStack const&) const;
+    MCAPI void _dropItem(class ItemStack const &) const;
 
 };

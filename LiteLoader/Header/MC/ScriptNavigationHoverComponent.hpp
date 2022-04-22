@@ -18,8 +18,8 @@ class ScriptNavigationHoverComponent : public NavigationScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTNAVIGATIONHOVERCOMPONENT
 public:
-    class ScriptNavigationHoverComponent& operator=(class ScriptNavigationHoverComponent const&) = delete;
-    ScriptNavigationHoverComponent(class ScriptNavigationHoverComponent const&) = delete;
+    class ScriptNavigationHoverComponent& operator=(class ScriptNavigationHoverComponent const &) = delete;
+    ScriptNavigationHoverComponent(class ScriptNavigationHoverComponent const &) = delete;
     ScriptNavigationHoverComponent() = delete;
 #endif
 

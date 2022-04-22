@@ -18,16 +18,16 @@ class AnimatePacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATEPACKET
 public:
-    class AnimatePacket& operator=(class AnimatePacket const&) = delete;
-    AnimatePacket(class AnimatePacket const&) = delete;
+    class AnimatePacket& operator=(class AnimatePacket const &) = delete;
+    AnimatePacket(class AnimatePacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~AnimatePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~AnimatePacket(){
          (AnimatePacket::*rv)();
@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI AnimatePacket(enum AnimatePacket::Action, class Actor&);
+    MCAPI AnimatePacket(enum AnimatePacket::Action, class Actor &);
     MCAPI AnimatePacket(enum AnimatePacket::Action, class ActorRuntimeID);
     MCAPI AnimatePacket(enum AnimatePacket::Action, class ActorRuntimeID, float);
     MCAPI AnimatePacket();

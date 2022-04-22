@@ -17,21 +17,21 @@ class ActorDefinitionDiffList {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITIONDIFFLIST
 public:
-    class ActorDefinitionDiffList& operator=(class ActorDefinitionDiffList const&) = delete;
-    ActorDefinitionDiffList(class ActorDefinitionDiffList const&) = delete;
+    class ActorDefinitionDiffList& operator=(class ActorDefinitionDiffList const &) = delete;
+    ActorDefinitionDiffList(class ActorDefinitionDiffList const &) = delete;
     ActorDefinitionDiffList() = delete;
 #endif
 
 public:
-    MCAPI void addDefinition(std::string const&);
+    MCAPI void addDefinition(std::string const &);
     MCAPI class ActorDefinitionDescriptor buildAdditiveDescriptionFrom(unsigned __int64, unsigned __int64);
-    MCAPI std::string definitionListToString(std::string const&) const;
-    MCAPI class DefinitionInstanceGroup& getAddedDefinitionGroupMutable();
-    MCAPI class ActorDefinitionDescriptor& getChangedDescription();
-    MCAPI std::vector<struct DiffListPair> const& getDefinitionStack() const;
+    MCAPI std::string definitionListToString(std::string const &) const;
+    MCAPI class DefinitionInstanceGroup & getAddedDefinitionGroupMutable();
+    MCAPI class ActorDefinitionDescriptor & getChangedDescription();
+    MCAPI std::vector<struct DiffListPair> const & getDefinitionStack() const;
     MCAPI std::unique_ptr<class ActorDefinitionDescriptor> getDescription(bool);
-    MCAPI class DefinitionInstanceGroup& getRemovedDefinitionGroupMutable();
-    MCAPI void removeDefinition(std::string const&);
+    MCAPI class DefinitionInstanceGroup & getRemovedDefinitionGroupMutable();
+    MCAPI void removeDefinition(std::string const &);
     MCAPI unsigned __int64 size() const;
 
 protected:

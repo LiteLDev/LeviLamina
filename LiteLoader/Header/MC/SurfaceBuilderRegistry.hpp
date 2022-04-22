@@ -17,13 +17,13 @@ class SurfaceBuilderRegistry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SURFACEBUILDERREGISTRY
 public:
-    class SurfaceBuilderRegistry& operator=(class SurfaceBuilderRegistry const&) = delete;
-    SurfaceBuilderRegistry(class SurfaceBuilderRegistry const&) = delete;
+    class SurfaceBuilderRegistry& operator=(class SurfaceBuilderRegistry const &) = delete;
+    SurfaceBuilderRegistry(class SurfaceBuilderRegistry const &) = delete;
     SurfaceBuilderRegistry() = delete;
 #endif
 
 public:
-    MCAPI class ISurfaceBuilder* lookupForEntity(class EntityContext&) const;
+    MCAPI class ISurfaceBuilder * lookupForEntity(class EntityContext &) const;
 
 protected:
 

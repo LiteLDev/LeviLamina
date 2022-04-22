@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class QueryTargetCommand {
+class QueryTargetCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,15 +18,15 @@ class QueryTargetCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_QUERYTARGETCOMMAND
 public:
-    class QueryTargetCommand& operator=(class QueryTargetCommand const&) = delete;
-    QueryTargetCommand(class QueryTargetCommand const&) = delete;
+    class QueryTargetCommand& operator=(class QueryTargetCommand const &) = delete;
+    QueryTargetCommand(class QueryTargetCommand const &) = delete;
     QueryTargetCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~QueryTargetCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 

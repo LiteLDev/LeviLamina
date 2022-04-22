@@ -17,13 +17,14 @@ class GiveableComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GIVEABLECOMPONENT
 public:
-    class GiveableComponent& operator=(class GiveableComponent const&) = delete;
-    GiveableComponent(class GiveableComponent const&) = delete;
+    class GiveableComponent& operator=(class GiveableComponent const &) = delete;
+    GiveableComponent(class GiveableComponent const &) = delete;
     GiveableComponent() = delete;
 #endif
 
 public:
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+    MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
+    MCAPI ~GiveableComponent();
 
 protected:
 

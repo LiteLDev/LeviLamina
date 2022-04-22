@@ -17,8 +17,8 @@ class TemptGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEMPTGOAL
 public:
-    class TemptGoal& operator=(class TemptGoal const&) = delete;
-    TemptGoal(class TemptGoal const&) = delete;
+    class TemptGoal& operator=(class TemptGoal const &) = delete;
+    TemptGoal(class TemptGoal const &) = delete;
     TemptGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
 
 protected:
 

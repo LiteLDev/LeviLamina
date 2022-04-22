@@ -17,13 +17,13 @@ class AreaAttackComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AREAATTACKCOMPONENT
 public:
-    class AreaAttackComponent& operator=(class AreaAttackComponent const&) = delete;
-    AreaAttackComponent(class AreaAttackComponent const&) = delete;
+    class AreaAttackComponent& operator=(class AreaAttackComponent const &) = delete;
+    AreaAttackComponent(class AreaAttackComponent const &) = delete;
 #endif
 
 public:
     MCAPI AreaAttackComponent();
-    MCAPI class AreaAttackComponent& operator=(class AreaAttackComponent&&);
+    MCAPI class AreaAttackComponent & operator=(class AreaAttackComponent &&);
     MCAPI ~AreaAttackComponent();
 
 protected:

@@ -17,14 +17,14 @@ class JigsawStructureActorRulesRegistry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JIGSAWSTRUCTUREACTORRULESREGISTRY
 public:
-    class JigsawStructureActorRulesRegistry& operator=(class JigsawStructureActorRulesRegistry const&) = delete;
-    JigsawStructureActorRulesRegistry(class JigsawStructureActorRulesRegistry const&) = delete;
+    class JigsawStructureActorRulesRegistry& operator=(class JigsawStructureActorRulesRegistry const &) = delete;
+    JigsawStructureActorRulesRegistry(class JigsawStructureActorRulesRegistry const &) = delete;
     JigsawStructureActorRulesRegistry() = delete;
 #endif
 
 public:
-    MCAPI std::vector<std::unique_ptr<class StructurePoolActorRule>> const* lookupByName(std::string) const;
-    MCAPI void registerActorRules(std::string, std::unique_ptr<std::vector<class std::unique_ptr<class StructurePoolActorRule, struct std::default_delete<class StructurePoolActorRule> >>>&&);
+    MCAPI std::vector<std::unique_ptr<class StructurePoolActorRule>> const * lookupByName(std::string) const;
+    MCAPI void registerActorRules(std::string, std::unique_ptr<std::vector<class std::unique_ptr<class StructurePoolActorRule, struct std::default_delete<class StructurePoolActorRule>>>> &&);
     MCAPI ~JigsawStructureActorRulesRegistry();
 
 protected:

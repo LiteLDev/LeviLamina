@@ -15,12 +15,12 @@ struct BlockPatternEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPATTERNEVENT
 public:
-    struct BlockPatternEvent& operator=(struct BlockPatternEvent const&) = delete;
+    struct BlockPatternEvent& operator=(struct BlockPatternEvent const &) = delete;
     BlockPatternEvent() = delete;
 #endif
 
 public:
-    MCAPI BlockPatternEvent(struct BlockPatternEvent const&);
+    MCAPI BlockPatternEvent(struct BlockPatternEvent const &);
     MCAPI ~BlockPatternEvent();
 
 protected:

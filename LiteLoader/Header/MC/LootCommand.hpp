@@ -2,12 +2,13 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
-class LootCommand {
+class LootCommand : public Command {
 
 #define AFTER_EXTRA
 
@@ -15,22 +16,22 @@ class LootCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTCOMMAND
 public:
-    class LootCommand& operator=(class LootCommand const&) = delete;
-    LootCommand(class LootCommand const&) = delete;
+    class LootCommand& operator=(class LootCommand const &) = delete;
+    LootCommand(class LootCommand const &) = delete;
     LootCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LootCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI class ItemStack getToolItemStack(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI class ItemStack getToolItemStack(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 
 private:
-    MCAPI std::vector<class ItemStack> _getItemsFromSource(class CommandOrigin const&, class CommandOutput&, class ItemStack const&, class Level&, class AutomaticID<class Dimension, int>) const;
-    MCAPI void _outputSuccess(class CommandOutput&, int) const;
-    MCAPI void _placeItemsInTarget(class CommandOrigin const&, class CommandOutput&, std::vector<class ItemStack> const&) const;
+    MCAPI class std::optional<std::vector<class ItemStack>> _getItemsFromSource(class CommandOrigin const &, class CommandOutput &, class ItemStack const &, class Level &, class AutomaticID<class Dimension, int>) const;
+    MCAPI void _outputSuccess(class CommandOutput &, int) const;
+    MCAPI void _placeItemsInTarget(class CommandOrigin const &, class CommandOutput &, std::vector<class ItemStack> &) const;
 
 };

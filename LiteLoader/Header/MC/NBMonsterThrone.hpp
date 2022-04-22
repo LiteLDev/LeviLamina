@@ -18,8 +18,8 @@ class NBMonsterThrone : public NetherFortressPiece {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NBMONSTERTHRONE
 public:
-    class NBMonsterThrone& operator=(class NBMonsterThrone const&) = delete;
-    NBMonsterThrone(class NBMonsterThrone const&) = delete;
+    class NBMonsterThrone& operator=(class NBMonsterThrone const &) = delete;
+    NBMonsterThrone(class NBMonsterThrone const &) = delete;
     NBMonsterThrone() = delete;
 #endif
 
@@ -28,7 +28,7 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual enum StructurePieceType getType() const;
     /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /*6*/ virtual void __unk_vfn_6();
     /*10*/ virtual void __unk_vfn_10();
 

@@ -18,31 +18,24 @@ class BlockUnwalkableDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKUNWALKABLEDESCRIPTION
 public:
-    class BlockUnwalkableDescription& operator=(class BlockUnwalkableDescription const&) = delete;
-    BlockUnwalkableDescription(class BlockUnwalkableDescription const&) = delete;
+    class BlockUnwalkableDescription& operator=(class BlockUnwalkableDescription const &) = delete;
+    BlockUnwalkableDescription(class BlockUnwalkableDescription const &) = delete;
     BlockUnwalkableDescription() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BlockUnwalkableDescription();
-    /*1*/ virtual std::string const& getName() const;
-    /*2*/ virtual void initializeComponent(class EntityContext&) const;
-    /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription> >&, class BlockComponentFactory const&) const;
+    /*1*/ virtual std::string const & getName() const;
+    /*2*/ virtual void initializeComponent(class EntityContext &) const;
+    /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &) const;
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
     /*
     inline bool isNetworkComponent() const{
         bool (BlockUnwalkableDescription::*rv)() const;
         *((void**)&rv) = dlsym("?isNetworkComponent@BlockUnwalkableDescription@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline std::unique_ptr<class CompoundTag> buildNetworkTag() const{
-        std::unique_ptr<class CompoundTag> (BlockUnwalkableDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?buildNetworkTag@BlockUnwalkableDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void initializeFromNetwork(class CompoundTag const& a0){
-        void (BlockUnwalkableDescription::*rv)(class CompoundTag const&);
-        *((void**)&rv) = dlsym("?initializeFromNetwork@BlockUnwalkableDescription@@UEAAXAEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0));
     }
     */
     MCAPI static std::string const NameID;

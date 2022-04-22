@@ -17,16 +17,16 @@ class ContentTierIncompatibleReason {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTENTTIERINCOMPATIBLEREASON
 public:
-    class ContentTierIncompatibleReason& operator=(class ContentTierIncompatibleReason const&) = delete;
-    ContentTierIncompatibleReason(class ContentTierIncompatibleReason const&) = delete;
+    class ContentTierIncompatibleReason& operator=(class ContentTierIncompatibleReason const &) = delete;
+    ContentTierIncompatibleReason(class ContentTierIncompatibleReason const &) = delete;
     ContentTierIncompatibleReason() = delete;
 #endif
 
 public:
     MCAPI ContentTierIncompatibleReason(unsigned int);
-    MCAPI std::string getExpandedI18nErrorList(std::string const&, std::vector<std::string> const&) const;
+    MCAPI std::string getExpandedI18nErrorList(std::string const &, std::vector<std::string> const &) const;
     MCAPI static class ContentTierIncompatibleReason NoError;
-    MCAPI static std::string getExpandedI18nErrorList(unsigned int, std::string const&, std::vector<std::string> const&);
+    MCAPI static std::string getExpandedI18nErrorList(unsigned int, std::string const &, std::vector<std::string> const &);
 
 protected:
 

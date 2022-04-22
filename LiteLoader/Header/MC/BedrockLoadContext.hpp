@@ -15,13 +15,13 @@ class BedrockLoadContext {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCKLOADCONTEXT
 public:
-    class BedrockLoadContext& operator=(class BedrockLoadContext const&) = delete;
-    BedrockLoadContext(class BedrockLoadContext const&) = delete;
+    class BedrockLoadContext& operator=(class BedrockLoadContext const &) = delete;
+    BedrockLoadContext(class BedrockLoadContext const &) = delete;
     BedrockLoadContext() = delete;
 #endif
 
 public:
-    MCAPI BedrockLoadContext(class SemVersion const&);
+    MCAPI BedrockLoadContext(class SemVersion const &);
     MCAPI ~BedrockLoadContext();
 
 protected:

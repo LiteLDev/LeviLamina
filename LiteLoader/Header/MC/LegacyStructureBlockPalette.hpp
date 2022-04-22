@@ -17,13 +17,13 @@ class LegacyStructureBlockPalette {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYSTRUCTUREBLOCKPALETTE
 public:
-    class LegacyStructureBlockPalette& operator=(class LegacyStructureBlockPalette const&) = delete;
-    LegacyStructureBlockPalette(class LegacyStructureBlockPalette const&) = delete;
+    class LegacyStructureBlockPalette& operator=(class LegacyStructureBlockPalette const &) = delete;
+    LegacyStructureBlockPalette(class LegacyStructureBlockPalette const &) = delete;
 #endif
 
 public:
     MCAPI LegacyStructureBlockPalette();
-    MCAPI class Block const& getBlock(int);
+    MCAPI class Block const & getBlock(int);
     MCAPI ~LegacyStructureBlockPalette();
 
 protected:

@@ -23,25 +23,24 @@ struct BlockPositionData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREBLOCKPALETTE
 public:
-    class StructureBlockPalette& operator=(class StructureBlockPalette const&) = delete;
-    StructureBlockPalette(class StructureBlockPalette const&) = delete;
+    class StructureBlockPalette& operator=(class StructureBlockPalette const &) = delete;
+    StructureBlockPalette(class StructureBlockPalette const &) = delete;
 #endif
 
 public:
-    MCAPI StructureBlockPalette(class StructureBlockPalette&&);
+    MCAPI StructureBlockPalette(class StructureBlockPalette &&);
     MCAPI StructureBlockPalette();
     MCAPI unsigned __int64 addMapping(std::unique_ptr<class CompoundTag>);
-    MCAPI struct StructureBlockPalette::BlockPositionData const* getBlockPositionData(unsigned __int64) const;
-    MCAPI bool load(class CompoundTag const&, int);
+    MCAPI struct StructureBlockPalette::BlockPositionData const * getBlockPositionData(unsigned __int64) const;
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     MCAPI ~StructureBlockPalette();
 
 protected:
-    MCAPI enum StructureBlockPaletteLoadResult _parseBlockPositionData(class CompoundTag const&, int);
-    MCAPI enum StructureBlockPaletteLoadResult _parseBlockPositionDataList(class CompoundTag const&);
-    MCAPI void _saveBlockPositionDataList(class CompoundTag&) const;
+    MCAPI enum StructureBlockPaletteLoadResult _parseBlockPalette(class CompoundTag const &);
+    MCAPI enum StructureBlockPaletteLoadResult _parseBlockPositionData(class CompoundTag const &, int);
+    MCAPI enum StructureBlockPaletteLoadResult _parseBlockPositionDataList(class CompoundTag const &);
+    MCAPI void _saveBlockPositionDataList(class CompoundTag &) const;
 
 private:
-    MCAPI void _contentErrorMissingField(std::string const&) const;
 
 };

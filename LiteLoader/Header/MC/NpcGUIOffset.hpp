@@ -16,13 +16,13 @@ class NpcGUIOffset {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCGUIOFFSET
 public:
-    class NpcGUIOffset& operator=(class NpcGUIOffset const&) = delete;
-    NpcGUIOffset(class NpcGUIOffset const&) = delete;
+    class NpcGUIOffset& operator=(class NpcGUIOffset const &) = delete;
+    NpcGUIOffset(class NpcGUIOffset const &) = delete;
     NpcGUIOffset() = delete;
 #endif
 
 public:
-    MCAPI NpcGUIOffset(class Json::Value const&);
+    MCAPI NpcGUIOffset(class Json::Value const &);
 
 protected:
 

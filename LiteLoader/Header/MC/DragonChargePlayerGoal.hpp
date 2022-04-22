@@ -17,8 +17,8 @@ class DragonChargePlayerGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONCHARGEPLAYERGOAL
 public:
-    class DragonChargePlayerGoal& operator=(class DragonChargePlayerGoal const&) = delete;
-    DragonChargePlayerGoal(class DragonChargePlayerGoal const&) = delete;
+    class DragonChargePlayerGoal& operator=(class DragonChargePlayerGoal const &) = delete;
+    DragonChargePlayerGoal(class DragonChargePlayerGoal const &) = delete;
     DragonChargePlayerGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI DragonChargePlayerGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI DragonChargePlayerGoal(class Mob &);
 
 protected:
 

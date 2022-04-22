@@ -18,6 +18,7 @@
     <ClCompile Include="API\CommandCompatibleAPI.cpp" />
     <ClCompile Include="API\ContainerAPI.cpp" />
     <ClCompile Include="API\DataAPI.cpp" />
+    <ClCompile Include="API\DatabaseAPI.cpp" />
     <ClCompile Include="API\DeviceAPI.cpp" />
     <ClCompile Include="API\EntityAPI.cpp" />
     <ClCompile Include="API\EventAPI.cpp" />
@@ -66,6 +67,7 @@
     <ClInclude Include="API\CommandCompatibleAPI.h" />
     <ClInclude Include="API\ContainerAPI.h" />
     <ClInclude Include="API\DataAPI.h" />
+    <ClInclude Include="API\DatabaseAPI.h" />
     <ClInclude Include="API\DeviceAPI.h" />
     <ClInclude Include="API\EntityAPI.h" />
     <ClInclude Include="API\EventAPI.h" />

@@ -17,8 +17,8 @@ class SwimWithEntityGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWIMWITHENTITYGOAL
 public:
-    class SwimWithEntityGoal& operator=(class SwimWithEntityGoal const&) = delete;
-    SwimWithEntityGoal(class SwimWithEntityGoal const&) = delete;
+    class SwimWithEntityGoal& operator=(class SwimWithEntityGoal const &) = delete;
+    SwimWithEntityGoal(class SwimWithEntityGoal const &) = delete;
     SwimWithEntityGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline bool canBeInterrupted(){
         bool (SwimWithEntityGoal::*rv)();

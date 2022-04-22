@@ -28,14 +28,12 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptItemCooldownComponent(class ScriptItemCooldownComponent const&);
-    MCAPI ScriptItemCooldownComponent(class Scripting::WeakTypedObjectHandle<class ScriptItemStack>, class Scripting::WeakLifetimeScope const&);
-    MCAPI class Scripting::Result<std::string > getCooldownCategory();
+    MCAPI ScriptItemCooldownComponent(class ScriptItemCooldownComponent const &);
+    MCAPI class Scripting::Result<std::string> getCooldownCategory();
     MCAPI class Scripting::Result<int> getCooldownTicks();
-    MCAPI class ScriptItemCooldownComponent& operator=(class ScriptItemCooldownComponent const&);
-    MCAPI class Scripting::Result<void> startCooldown(class ScriptPlayer&);
+    MCAPI class ScriptItemCooldownComponent & operator=(class ScriptItemCooldownComponent const &);
+    MCAPI class Scripting::Result<void> startCooldown(class ScriptPlayer &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptItemCooldownComponent> bind(struct Scripting::Version);
-    MCAPI static std::string const& getTypeName();
 
 protected:
 

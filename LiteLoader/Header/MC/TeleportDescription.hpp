@@ -9,7 +9,7 @@
 
 #undef BEFORE_EXTRA
 
-struct TeleportDescription {
+class TeleportDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -18,11 +18,22 @@ struct TeleportDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TELEPORTDESCRIPTION
 public:
-    struct TeleportDescription& operator=(struct TeleportDescription const&) = delete;
-    TeleportDescription(struct TeleportDescription const&) = delete;
+    class TeleportDescription& operator=(class TeleportDescription const &) = delete;
+    TeleportDescription(class TeleportDescription const &) = delete;
 #endif
 
 public:
+    /*0*/ virtual char const * getJsonName() const;
+    /*1*/ virtual ~TeleportDescription();
+    /*2*/ virtual void deserializeData(struct DeserializeDataParams);
+    /*3*/ virtual void serializeData(class Json::Value &) const;
+    /*
+    inline  ~TeleportDescription(){
+         (TeleportDescription::*rv)();
+        *((void**)&rv) = dlsym("??1TeleportDescription@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI TeleportDescription();
 
 protected:

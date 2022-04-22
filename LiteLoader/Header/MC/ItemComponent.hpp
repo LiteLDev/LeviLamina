@@ -17,8 +17,8 @@ class ItemComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMCOMPONENT
 public:
-    class ItemComponent& operator=(class ItemComponent const&) = delete;
-    ItemComponent(class ItemComponent const&) = delete;
+    class ItemComponent& operator=(class ItemComponent const &) = delete;
+    ItemComponent(class ItemComponent const &) = delete;
     ItemComponent() = delete;
 #endif
 
@@ -30,24 +30,24 @@ public:
         *((void**)&rv) = dlsym("?isNetworkComponent@ItemComponent@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool useOn(class ItemStack& a0, class Actor& a1, class BlockPos const& a2, unsigned char a3, class Vec3 const& a4) const{
-        bool (ItemComponent::*rv)(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&) const;
+    inline bool useOn(class ItemStack & a0, class Actor & a1, class BlockPos const & a2, unsigned char a3, class Vec3 const & a4) const{
+        bool (ItemComponent::*rv)(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
         *((void**)&rv) = dlsym("?useOn@ItemComponent@@UEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Actor&>(a1), std::forward<class BlockPos const&>(a2), std::forward<unsigned char>(a3), std::forward<class Vec3 const&>(a4));
-    }
-    inline void initializeFromNetwork(class CompoundTag const& a0){
-        void (ItemComponent::*rv)(class CompoundTag const&);
-        *((void**)&rv) = dlsym("?initializeFromNetwork@ItemComponent@@UEAAXAEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0));
-    }
-    inline void writeSettings(){
-        void (ItemComponent::*rv)();
-        *((void**)&rv) = dlsym("?writeSettings@ItemComponent@@UEAAXXZ");
-        return (this->*rv)();
+        return (this->*rv)(std::forward<class ItemStack &>(a0), std::forward<class Actor &>(a1), std::forward<class BlockPos const &>(a2), std::forward<unsigned char>(a3), std::forward<class Vec3 const &>(a4));
     }
     inline bool checkComponentDataForContentErrors() const{
         bool (ItemComponent::*rv)() const;
         *((void**)&rv) = dlsym("?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline void initializeFromNetwork(class CompoundTag const & a0){
+        void (ItemComponent::*rv)(class CompoundTag const &);
+        *((void**)&rv) = dlsym("?initializeFromNetwork@ItemComponent@@UEAAXAEBVCompoundTag@@@Z");
+        return (this->*rv)(std::forward<class CompoundTag const &>(a0));
+    }
+    inline void writeSettings(){
+        void (ItemComponent::*rv)();
+        *((void**)&rv) = dlsym("?writeSettings@ItemComponent@@UEAAXXZ");
         return (this->*rv)();
     }
     inline std::unique_ptr<class CompoundTag> buildNetworkTag() const{
@@ -61,7 +61,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ItemComponent(class ComponentItem*);
+    MCAPI ItemComponent(class ComponentItem *);
 
 protected:
 

@@ -17,8 +17,8 @@ struct CrashDumpKeyValueData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMPKEYVALUEDATA
 public:
-    struct CrashDumpKeyValueData& operator=(struct CrashDumpKeyValueData const&) = delete;
-    CrashDumpKeyValueData(struct CrashDumpKeyValueData const&) = delete;
+    struct CrashDumpKeyValueData& operator=(struct CrashDumpKeyValueData const &) = delete;
+    CrashDumpKeyValueData(struct CrashDumpKeyValueData const &) = delete;
     CrashDumpKeyValueData() = delete;
 #endif
 

@@ -18,8 +18,8 @@ class MoveToWaterGoal : public MoveToLiquidGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOWATERGOAL
 public:
-    class MoveToWaterGoal& operator=(class MoveToWaterGoal const&) = delete;
-    MoveToWaterGoal(class MoveToWaterGoal const&) = delete;
+    class MoveToWaterGoal& operator=(class MoveToWaterGoal const &) = delete;
+    MoveToWaterGoal(class MoveToWaterGoal const &) = delete;
     MoveToWaterGoal() = delete;
 #endif
 
@@ -28,7 +28,7 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    MCAPI MoveToWaterGoal(class Mob&, float, int, int, int, float);
+    MCAPI MoveToWaterGoal(class Mob &, float, int, int, int, float);
 
 protected:
 

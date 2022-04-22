@@ -15,8 +15,8 @@ struct CrashDump_AllData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMP_ALLDATA
 public:
-    struct CrashDump_AllData& operator=(struct CrashDump_AllData const&) = delete;
-    CrashDump_AllData(struct CrashDump_AllData const&) = delete;
+    struct CrashDump_AllData& operator=(struct CrashDump_AllData const &) = delete;
+    CrashDump_AllData(struct CrashDump_AllData const &) = delete;
 #endif
 
 public:

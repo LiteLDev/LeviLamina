@@ -18,26 +18,26 @@ class LevelSettings {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSETTINGS
 public:
-    class LevelSettings& operator=(class LevelSettings const&) = delete;
+    class LevelSettings& operator=(class LevelSettings const &) = delete;
 #endif
 
 public:
-    MCAPI LevelSettings(class LevelSettings const&);
-    MCAPI LevelSettings(class LevelSettings&&);
-    MCAPI LevelSettings(class LevelData const&, class AutomaticID<class Dimension, int>);
+    MCAPI LevelSettings(class LevelSettings const &);
+    MCAPI LevelSettings(class LevelSettings &&);
+    MCAPI LevelSettings(class LevelData const &, class AutomaticID<class Dimension, int>);
     MCAPI LevelSettings();
     MCAPI bool achievementsWillBeDisabledOnLoad() const;
     MCAPI bool educationFeaturesEnabled() const;
-    MCAPI std::string const& educationProductID() const;
+    MCAPI std::string const & educationProductID() const;
     MCAPI bool forceGameType() const;
-    MCAPI class BaseGameVersion const& getBaseGameVersion() const;
-    MCAPI std::string const& getBiomeOverride() const;
+    MCAPI class BaseGameVersion const & getBaseGameVersion() const;
+    MCAPI std::string const & getBiomeOverride() const;
     MCAPI class Abilities getDefaultAbilities() const;
-    MCAPI struct EduSharedUriResource const& getEduSharedUriResource() const;
-    MCAPI class std::optional<struct EducationLevelSettings> const& getEducationLevelSettings() const;
-    MCAPI class Experiments const& getExperiments() const;
+    MCAPI struct EduSharedUriResource const & getEduSharedUriResource() const;
+    MCAPI class std::optional<struct EducationLevelSettings> const & getEducationLevelSettings() const;
+    MCAPI class Experiments const & getExperiments() const;
     MCAPI enum Difficulty getGameDifficulty() const;
-    MCAPI class GameRules const& getGameRules() const;
+    MCAPI class GameRules const & getGameRules() const;
     MCAPI enum GameType getGameType() const;
     MCAPI bool getImmutableWorld() const;
     MCAPI bool getLanBroadcastIntent() const;
@@ -47,7 +47,7 @@ public:
     MCAPI enum NetherWorldType getNetherType() const;
     MCAPI bool getOnlySpawnV1Villagers() const;
     MCAPI enum Social::GamePublishSetting getPlatformBroadcastIntent() const;
-    MCAPI unsigned int getSeed() const;
+    MCAPI class LevelSeed64 getSeed() const;
     MCAPI unsigned int getServerChunkTickRange() const;
     MCAPI struct SpawnSettings getSpawnSettings() const;
     MCAPI int getTime() const;
@@ -63,30 +63,30 @@ public:
     MCAPI bool isFromWorldTemplate() const;
     MCAPI bool isTexturepacksRequired() const;
     MCAPI bool isWorldTemplateOptionLocked() const;
-    MCAPI class LevelSettings& operator=(class LevelSettings&&);
-    MCAPI class LevelSettings& setBaseGameVersion(class BaseGameVersion const&);
-    MCAPI class LevelSettings& setCommandsEnabled(bool);
-    MCAPI class LevelSettings& setDefaultAbilities(class Abilities);
-    MCAPI class LevelSettings& setDifficulty(enum Difficulty);
-    MCAPI class LevelSettings& setEduSharedUriResource(struct EduSharedUriResource const&);
-    MCAPI class LevelSettings& setEducationFeaturesEnabled(bool);
-    MCAPI class LevelSettings& setEducationProductID(std::string);
-    MCAPI class LevelSettings& setForceGameType(bool);
-    MCAPI class LevelSettings& setGameRules(class GameRules);
-    MCAPI class LevelSettings& setGameType(enum GameType);
-    MCAPI class LevelSettings& setGeneratorType(enum GeneratorType);
+    MCAPI class LevelSettings & operator=(class LevelSettings &&);
+    MCAPI class LevelSettings & setBaseGameVersion(class BaseGameVersion const &);
+    MCAPI class LevelSettings & setCommandsEnabled(bool);
+    MCAPI class LevelSettings & setDefaultAbilities(class Abilities);
+    MCAPI class LevelSettings & setDifficulty(enum Difficulty);
+    MCAPI class LevelSettings & setEduSharedUriResource(struct EduSharedUriResource const &);
+    MCAPI class LevelSettings & setEducationFeaturesEnabled(bool);
+    MCAPI class LevelSettings & setEducationProductID(std::string);
+    MCAPI class LevelSettings & setForceGameType(bool);
+    MCAPI class LevelSettings & setGameRules(class GameRules);
+    MCAPI class LevelSettings & setGameType(enum GameType);
+    MCAPI class LevelSettings & setGeneratorType(enum GeneratorType);
     MCAPI void setOnlySpawnV1Villagers(bool);
-    MCAPI class LevelSettings& setOverrideSavedSettings(bool);
-    MCAPI class LevelSettings& setPlatformBroadcastIntent(enum Social::GamePublishSetting);
-    MCAPI class LevelSettings& setRandomSeed(unsigned int);
-    MCAPI class LevelSettings& setServerChunkTickRange(unsigned int);
-    MCAPI class LevelSettings& setSpawnSettings(struct SpawnSettings);
-    MCAPI class LevelSettings& setTexturePackRequired(bool);
-    MCAPI class LevelSettings& setUseMsaGamertagsOnly(bool);
-    MCAPI class LevelSettings& setXblBroadcastIntent(enum Social::GamePublishSetting);
+    MCAPI class LevelSettings & setOverrideSavedSettings(bool);
+    MCAPI class LevelSettings & setPlatformBroadcastIntent(enum Social::GamePublishSetting);
+    MCAPI class LevelSettings & setRandomSeed(class LevelSeed64);
+    MCAPI class LevelSettings & setServerChunkTickRange(unsigned int);
+    MCAPI class LevelSettings & setSpawnSettings(struct SpawnSettings);
+    MCAPI class LevelSettings & setTexturePackRequired(bool);
+    MCAPI class LevelSettings & setUseMsaGamertagsOnly(bool);
+    MCAPI class LevelSettings & setXblBroadcastIntent(enum Social::GamePublishSetting);
     MCAPI bool useMsaGamertagsOnly() const;
     MCAPI ~LevelSettings();
-    MCAPI static unsigned int parseSeedString(std::string const&, unsigned int);
+    MCAPI static class std::optional<class LevelSeed64> parseSeedString(std::string const &);
 
 protected:
 

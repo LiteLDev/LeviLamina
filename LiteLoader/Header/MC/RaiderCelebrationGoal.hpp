@@ -17,8 +17,8 @@ class RaiderCelebrationGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAIDERCELEBRATIONGOAL
 public:
-    class RaiderCelebrationGoal& operator=(class RaiderCelebrationGoal const&) = delete;
-    RaiderCelebrationGoal(class RaiderCelebrationGoal const&) = delete;
+    class RaiderCelebrationGoal& operator=(class RaiderCelebrationGoal const &) = delete;
+    RaiderCelebrationGoal(class RaiderCelebrationGoal const &) = delete;
     RaiderCelebrationGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI RaiderCelebrationGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI RaiderCelebrationGoal(class Mob &);
 
 protected:
 

@@ -18,18 +18,18 @@ class PackSettings {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSETTINGS
 public:
-    class PackSettings& operator=(class PackSettings const&) = delete;
-    PackSettings(class PackSettings const&) = delete;
+    class PackSettings& operator=(class PackSettings const &) = delete;
+    PackSettings(class PackSettings const &) = delete;
     PackSettings() = delete;
 #endif
 
 public:
-    MCAPI class Json::Value const& getAllSettings() const;
-    MCAPI void loadPackSettings(struct PackIdVersion const&, class Json::Value const&);
+    MCAPI class Json::Value const & getAllSettings() const;
+    MCAPI void loadPackSettings(struct PackIdVersion const &, class Json::Value const &);
 
 protected:
 
 private:
-    MCAPI void _initPackSetting(std::string const&, class Json::Value const&);
+    MCAPI void _initPackSetting(std::string const &, class Json::Value const &);
 
 };

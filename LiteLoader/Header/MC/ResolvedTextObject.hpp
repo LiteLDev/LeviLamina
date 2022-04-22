@@ -17,8 +17,8 @@ class ResolvedTextObject {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOLVEDTEXTOBJECT
 public:
-    class ResolvedTextObject& operator=(class ResolvedTextObject const&) = delete;
-    ResolvedTextObject(class ResolvedTextObject const&) = delete;
+    class ResolvedTextObject& operator=(class ResolvedTextObject const &) = delete;
+    ResolvedTextObject(class ResolvedTextObject const &) = delete;
     ResolvedTextObject() = delete;
 #endif
 

@@ -17,8 +17,8 @@ class SlimeRandomDirectionGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLIMERANDOMDIRECTIONGOAL
 public:
-    class SlimeRandomDirectionGoal& operator=(class SlimeRandomDirectionGoal const&) = delete;
-    SlimeRandomDirectionGoal(class SlimeRandomDirectionGoal const&) = delete;
+    class SlimeRandomDirectionGoal& operator=(class SlimeRandomDirectionGoal const &) = delete;
+    SlimeRandomDirectionGoal(class SlimeRandomDirectionGoal const &) = delete;
     SlimeRandomDirectionGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI SlimeRandomDirectionGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI SlimeRandomDirectionGoal(class Mob &);
 
 protected:
 

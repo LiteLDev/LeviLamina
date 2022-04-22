@@ -17,14 +17,14 @@ class SearchFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SEARCHFEATURE
 public:
-    class SearchFeature& operator=(class SearchFeature const&) = delete;
-    SearchFeature(class SearchFeature const&) = delete;
+    class SearchFeature& operator=(class SearchFeature const &) = delete;
+    SearchFeature(class SearchFeature const &) = delete;
     SearchFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SearchFeature();
-    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 
 protected:
 

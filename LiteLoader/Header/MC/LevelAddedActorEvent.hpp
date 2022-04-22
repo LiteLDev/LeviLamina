@@ -15,8 +15,8 @@ class LevelAddedActorEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELADDEDACTOREVENT
 public:
-    class LevelAddedActorEvent& operator=(class LevelAddedActorEvent const&) = delete;
-    LevelAddedActorEvent(class LevelAddedActorEvent const&) = delete;
+    class LevelAddedActorEvent& operator=(class LevelAddedActorEvent const &) = delete;
+    LevelAddedActorEvent(class LevelAddedActorEvent const &) = delete;
     LevelAddedActorEvent() = delete;
 #endif
 

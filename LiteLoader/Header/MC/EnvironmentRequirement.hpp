@@ -17,13 +17,13 @@ struct EnvironmentRequirement {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENVIRONMENTREQUIREMENT
 public:
-    struct EnvironmentRequirement& operator=(struct EnvironmentRequirement const&) = delete;
-    EnvironmentRequirement(struct EnvironmentRequirement const&) = delete;
+    struct EnvironmentRequirement& operator=(struct EnvironmentRequirement const &) = delete;
+    EnvironmentRequirement(struct EnvironmentRequirement const &) = delete;
     EnvironmentRequirement() = delete;
 #endif
 
 public:
-    MCAPI void addBlockDescriptor(class BlockDescriptor const&);
+    MCAPI void addBlockDescriptor(class BlockDescriptor const &);
     MCAPI ~EnvironmentRequirement();
 
 protected:

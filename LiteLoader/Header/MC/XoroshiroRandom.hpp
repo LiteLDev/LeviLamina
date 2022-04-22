@@ -17,8 +17,8 @@ class XoroshiroRandom {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_XOROSHIRORANDOM
 public:
-    class XoroshiroRandom& operator=(class XoroshiroRandom const&) = delete;
-    XoroshiroRandom(class XoroshiroRandom const&) = delete;
+    class XoroshiroRandom& operator=(class XoroshiroRandom const &) = delete;
+    XoroshiroRandom(class XoroshiroRandom const &) = delete;
     XoroshiroRandom() = delete;
 #endif
 

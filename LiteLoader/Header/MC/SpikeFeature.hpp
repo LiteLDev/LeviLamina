@@ -25,15 +25,15 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPIKEFEATURE
 public:
-    class SpikeFeature& operator=(class SpikeFeature const&) = delete;
-    SpikeFeature(class SpikeFeature const&) = delete;
+    class SpikeFeature& operator=(class SpikeFeature const &) = delete;
+    SpikeFeature(class SpikeFeature const &) = delete;
     SpikeFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SpikeFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /*
     inline  ~SpikeFeature(){
          (SpikeFeature::*rv)();
@@ -41,10 +41,10 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI SpikeFeature(class SpikeFeature::EndSpike const&);
-    MCAPI bool placeManually(class BlockSource&, class BlockPos const&, class Random&, class Actor*);
-    MCAPI void postProcessMobsAt(class BlockSource&, class BlockPos const&, class Random&) const;
-    MCAPI void setCrystalBeamTarget(class BlockPos const&);
+    MCAPI SpikeFeature(class SpikeFeature::EndSpike const &);
+    MCAPI bool placeManually(class BlockSource &, class BlockPos const &, class Random &, class Actor *);
+    MCAPI void postProcessMobsAt(class BlockSource &, class BlockPos const &, class Random &) const;
+    MCAPI void setCrystalBeamTarget(class BlockPos const &);
     MCAPI void setCrystalInvulnerable(bool);
 
 protected:

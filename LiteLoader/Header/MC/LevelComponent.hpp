@@ -15,13 +15,14 @@ class LevelComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCOMPONENT
 public:
-    class LevelComponent& operator=(class LevelComponent const&) = delete;
-    LevelComponent(class LevelComponent const&) = delete;
+    class LevelComponent& operator=(class LevelComponent const &) = delete;
+    LevelComponent(class LevelComponent const &) = delete;
     LevelComponent() = delete;
 #endif
 
 public:
     MCAPI LevelComponent(std::unique_ptr<class ILevel>);
+    MCAPI class ILevel & getLevel();
     MCAPI ~LevelComponent();
 
 protected:

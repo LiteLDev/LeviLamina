@@ -18,21 +18,21 @@ class GrindstoneContainerManagerModel : public ContainerManagerModel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GRINDSTONECONTAINERMANAGERMODEL
 public:
-    class GrindstoneContainerManagerModel& operator=(class GrindstoneContainerManagerModel const&) = delete;
-    GrindstoneContainerManagerModel(class GrindstoneContainerManagerModel const&) = delete;
+    class GrindstoneContainerManagerModel& operator=(class GrindstoneContainerManagerModel const &) = delete;
+    GrindstoneContainerManagerModel(class GrindstoneContainerManagerModel const &) = delete;
     GrindstoneContainerManagerModel() = delete;
 #endif
 
 public:
     /*0*/ virtual ~GrindstoneContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
-    /*7*/ virtual void setSlot(int, class ItemStack const&, bool);
-    /*8*/ virtual class ItemStack const& getSlot(int) const;
+    /*7*/ virtual void setSlot(int, class ItemStack const &, bool);
+    /*8*/ virtual class ItemStack const & getSlot(int) const;
     /*9*/ virtual void setData(int, int);
     /*10*/ virtual void broadcastChanges();
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
-    MCAPI GrindstoneContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
+    MCAPI GrindstoneContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
     MCAPI static int const ADDITIONAL_SLOT;
     MCAPI static int const INPUT_SLOT;
     MCAPI static int const RESULT_SLOT;

@@ -17,14 +17,14 @@ struct SurfaceMaterialAttributes {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SURFACEMATERIALATTRIBUTES
 public:
-    struct SurfaceMaterialAttributes& operator=(struct SurfaceMaterialAttributes const&) = delete;
+    struct SurfaceMaterialAttributes& operator=(struct SurfaceMaterialAttributes const &) = delete;
     SurfaceMaterialAttributes() = delete;
 #endif
 
 public:
-    MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes&&);
-    MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes const&);
-    MCAPI struct SurfaceMaterialAttributes& operator=(struct SurfaceMaterialAttributes&&);
+    MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes &&);
+    MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes const &);
+    MCAPI struct SurfaceMaterialAttributes & operator=(struct SurfaceMaterialAttributes &&);
     MCAPI ~SurfaceMaterialAttributes();
 
 protected:

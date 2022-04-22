@@ -18,8 +18,8 @@ struct FloatsInLiquidDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOATSINLIQUIDDEFINITION
 public:
-    struct FloatsInLiquidDefinition& operator=(struct FloatsInLiquidDefinition const&) = delete;
-    FloatsInLiquidDefinition(struct FloatsInLiquidDefinition const&) = delete;
+    struct FloatsInLiquidDefinition& operator=(struct FloatsInLiquidDefinition const &) = delete;
+    FloatsInLiquidDefinition(struct FloatsInLiquidDefinition const &) = delete;
     FloatsInLiquidDefinition() = delete;
 #endif
 

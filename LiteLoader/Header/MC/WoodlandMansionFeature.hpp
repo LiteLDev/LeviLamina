@@ -18,24 +18,19 @@ class WoodlandMansionFeature : public StructureFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WOODLANDMANSIONFEATURE
 public:
-    class WoodlandMansionFeature& operator=(class WoodlandMansionFeature const&) = delete;
-    WoodlandMansionFeature(class WoodlandMansionFeature const&) = delete;
+    class WoodlandMansionFeature& operator=(class WoodlandMansionFeature const &) = delete;
+    WoodlandMansionFeature(class WoodlandMansionFeature const &) = delete;
     WoodlandMansionFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~WoodlandMansionFeature();
-    /*2*/ virtual bool getNearestGeneratedFeature(class Dimension&, class BiomeSource const&, class BlockPos const&, class BlockPos&, class IPreliminarySurfaceProvider const&, bool);
-    /*3*/ virtual bool isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&);
-    /*4*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
-    /*
-    inline  ~WoodlandMansionFeature(){
-         (WoodlandMansionFeature::*rv)();
-        *((void**)&rv) = dlsym("??1WoodlandMansionFeature@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
-    MCAPI WoodlandMansionFeature(class OverworldGenerator&, unsigned int);
+    /*1*/ virtual bool shouldAddHardcodedSpawnAreas() const;
+    /*2*/ virtual bool shouldPostProcessMobs() const;
+    /*3*/ virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
+    /*5*/ virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &);
+    /*6*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
+    MCAPI WoodlandMansionFeature(unsigned int);
 
 protected:
 

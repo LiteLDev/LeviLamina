@@ -17,8 +17,8 @@ class VanillaInPackagePacks {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAINPACKAGEPACKS
 public:
-    class VanillaInPackagePacks& operator=(class VanillaInPackagePacks const&) = delete;
-    VanillaInPackagePacks(class VanillaInPackagePacks const&) = delete;
+    class VanillaInPackagePacks& operator=(class VanillaInPackagePacks const &) = delete;
+    VanillaInPackagePacks(class VanillaInPackagePacks const &) = delete;
     VanillaInPackagePacks() = delete;
 #endif
 

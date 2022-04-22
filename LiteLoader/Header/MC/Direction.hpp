@@ -19,19 +19,19 @@ enum Type;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIRECTION
 public:
-    class Direction& operator=(class Direction const&) = delete;
-    Direction(class Direction const&) = delete;
+    class Direction& operator=(class Direction const &) = delete;
+    Direction(class Direction const &) = delete;
     Direction() = delete;
 #endif
 
 public:
-    MCAPI static enum Direction::Type const* const DIRECTION_CLOCKWISE;
-    MCAPI static enum Direction::Type const* const DIRECTION_COUNTER_CLOCKWISE;
-    MCAPI static unsigned char const* const DIRECTION_FACING;
-    MCAPI static enum Direction::Type const* const DIRECTION_OPPOSITE;
-    MCAPI static enum Direction::Type const* const FACING_DIRECTION;
-    MCAPI static int const* const STEP_X;
-    MCAPI static int const* const STEP_Z;
+    MCAPI static enum Direction::Type const *const DIRECTION_CLOCKWISE;
+    MCAPI static enum Direction::Type const *const DIRECTION_COUNTER_CLOCKWISE;
+    MCAPI static unsigned char const *const DIRECTION_FACING;
+    MCAPI static enum Direction::Type const *const DIRECTION_OPPOSITE;
+    MCAPI static enum Direction::Type const *const FACING_DIRECTION;
+    MCAPI static int const *const STEP_X;
+    MCAPI static int const *const STEP_Z;
     MCAPI static enum Direction::Type convertFacingDirectionToDirection(unsigned char);
     MCAPI static enum Direction::Type getDirection(float, float);
 

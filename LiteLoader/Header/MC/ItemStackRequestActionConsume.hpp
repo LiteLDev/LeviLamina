@@ -18,8 +18,8 @@ class ItemStackRequestActionConsume : public ItemStackRequestActionTransferBase 
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONCONSUME
 public:
-    class ItemStackRequestActionConsume& operator=(class ItemStackRequestActionConsume const&) = delete;
-    ItemStackRequestActionConsume(class ItemStackRequestActionConsume const&) = delete;
+    class ItemStackRequestActionConsume& operator=(class ItemStackRequestActionConsume const &) = delete;
+    ItemStackRequestActionConsume(class ItemStackRequestActionConsume const &) = delete;
     ItemStackRequestActionConsume() = delete;
 #endif
 

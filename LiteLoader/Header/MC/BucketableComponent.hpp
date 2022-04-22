@@ -17,15 +17,15 @@ class BucketableComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUCKETABLECOMPONENT
 public:
-    class BucketableComponent& operator=(class BucketableComponent const&) = delete;
-    BucketableComponent(class BucketableComponent const&) = delete;
+    class BucketableComponent& operator=(class BucketableComponent const &) = delete;
+    BucketableComponent(class BucketableComponent const &) = delete;
 #endif
 
 public:
     MCAPI BucketableComponent();
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
-    MCAPI void initFromDefinition(class Actor&);
-    MCAPI static void implInteraction(class Actor&, class Player&);
+    MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
+    MCAPI void initFromDefinition(class Actor &);
+    MCAPI static void implInteraction(class Actor &, class Player &);
 
 protected:
 

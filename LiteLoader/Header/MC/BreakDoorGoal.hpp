@@ -17,8 +17,8 @@ class BreakDoorGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREAKDOORGOAL
 public:
-    class BreakDoorGoal& operator=(class BreakDoorGoal const&) = delete;
-    BreakDoorGoal(class BreakDoorGoal const&) = delete;
+    class BreakDoorGoal& operator=(class BreakDoorGoal const &) = delete;
+    BreakDoorGoal(class BreakDoorGoal const &) = delete;
     BreakDoorGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI BreakDoorGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI BreakDoorGoal(class Mob &);
 
 protected:
 

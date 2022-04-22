@@ -17,13 +17,13 @@ class ConsoleInputReader {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONSOLEINPUTREADER
 public:
-    class ConsoleInputReader& operator=(class ConsoleInputReader const&) = delete;
-    ConsoleInputReader(class ConsoleInputReader const&) = delete;
+    class ConsoleInputReader& operator=(class ConsoleInputReader const &) = delete;
+    ConsoleInputReader(class ConsoleInputReader const &) = delete;
 #endif
 
 public:
     MCAPI ConsoleInputReader();
-    MCAPI bool getLine(std::string&);
+    MCAPI bool getLine(std::string &);
     MCAPI void unblockReading();
     MCAPI ~ConsoleInputReader();
 

@@ -18,17 +18,17 @@ class AddPaintingPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADDPAINTINGPACKET
 public:
-    class AddPaintingPacket& operator=(class AddPaintingPacket const&) = delete;
-    AddPaintingPacket(class AddPaintingPacket const&) = delete;
+    class AddPaintingPacket& operator=(class AddPaintingPacket const &) = delete;
+    AddPaintingPacket(class AddPaintingPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~AddPaintingPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
-    MCAPI AddPaintingPacket(class Painting const&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    MCAPI AddPaintingPacket(class Painting const &);
     MCAPI AddPaintingPacket();
 
 protected:

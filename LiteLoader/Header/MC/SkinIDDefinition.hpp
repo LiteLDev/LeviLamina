@@ -18,8 +18,8 @@ struct SkinIDDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKINIDDEFINITION
 public:
-    struct SkinIDDefinition& operator=(struct SkinIDDefinition const&) = delete;
-    SkinIDDefinition(struct SkinIDDefinition const&) = delete;
+    struct SkinIDDefinition& operator=(struct SkinIDDefinition const &) = delete;
+    SkinIDDefinition(struct SkinIDDefinition const &) = delete;
     SkinIDDefinition() = delete;
 #endif
 

@@ -17,26 +17,26 @@ class BlockPatternBuilder {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPATTERNBUILDER
 public:
-    class BlockPatternBuilder& operator=(class BlockPatternBuilder const&) = delete;
-    BlockPatternBuilder(class BlockPatternBuilder const&) = delete;
+    class BlockPatternBuilder& operator=(class BlockPatternBuilder const &) = delete;
+    BlockPatternBuilder(class BlockPatternBuilder const &) = delete;
     BlockPatternBuilder() = delete;
 #endif
 
 public:
-    MCAPI class BlockPatternBuilder& aisle(int, ...);
-    MCAPI class BlockPatternBuilder& build();
-    MCAPI class BlockPatternBuilder& define(char, class Block const&);
-    MCAPI class BlockPatternBuilder& define(char, class std::function<bool (class BlockSource& , class BlockPos const& , class Block const& )>);
+    MCAPI class BlockPatternBuilder & aisle(int, ...);
+    MCAPI class BlockPatternBuilder & build();
+    MCAPI class BlockPatternBuilder & define(char, class Block const &);
+    MCAPI class BlockPatternBuilder & define(char, class std::function<bool (class BlockSource &, class BlockPos const &, class Block const &)>);
     MCAPI bool isReadyForMatch();
-    MCAPI struct BuildMatch match(class BlockPos const&);
-    MCAPI struct BuildMatch match(class BlockPos const&, int, int);
-    MCAPI struct BuildMatch match(class BlockPos const&, int, int, unsigned char, unsigned char);
-    MCAPI void replaceBlocks(char, struct BuildMatch, class Block const&);
-    MCAPI static std::unique_ptr<class BlockPatternBuilder> start(class BlockSource&);
+    MCAPI struct BuildMatch match(class BlockPos const &);
+    MCAPI struct BuildMatch match(class BlockPos const &, int, int);
+    MCAPI struct BuildMatch match(class BlockPos const &, int, int, unsigned char, unsigned char);
+    MCAPI void replaceBlocks(char, struct BuildMatch, class Block const &);
+    MCAPI static std::unique_ptr<class BlockPatternBuilder> start(class BlockSource &);
 
 protected:
 
 private:
-    MCAPI bool _fitsBlockPatternEntry(int, int, class BlockPos const&, class Block const&);
+    MCAPI bool _fitsBlockPatternEntry(int, int, class BlockPos const &, class Block const &);
 
 };

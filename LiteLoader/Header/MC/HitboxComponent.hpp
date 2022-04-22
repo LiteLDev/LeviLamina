@@ -17,14 +17,14 @@ class HitboxComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HITBOXCOMPONENT
 public:
-    class HitboxComponent& operator=(class HitboxComponent const&) = delete;
-    HitboxComponent(class HitboxComponent const&) = delete;
+    class HitboxComponent& operator=(class HitboxComponent const &) = delete;
+    HitboxComponent(class HitboxComponent const &) = delete;
     HitboxComponent() = delete;
 #endif
 
 public:
-    MCAPI void fromCompoundTag(class CompoundTag const&);
-    MCAPI void toCompoundTag(class CompoundTag&);
+    MCAPI void fromCompoundTag(class CompoundTag const &);
+    MCAPI void toCompoundTag(class CompoundTag &);
 
 protected:
 

@@ -18,8 +18,8 @@ class ScriptFeedItemEffect {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTFEEDITEMEFFECT
 public:
-    class ScriptFeedItemEffect& operator=(class ScriptFeedItemEffect const&) = delete;
-    ScriptFeedItemEffect(class ScriptFeedItemEffect const&) = delete;
+    class ScriptFeedItemEffect& operator=(class ScriptFeedItemEffect const &) = delete;
+    ScriptFeedItemEffect(class ScriptFeedItemEffect const &) = delete;
     ScriptFeedItemEffect() = delete;
 #endif
 

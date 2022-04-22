@@ -17,14 +17,14 @@ class BreakBlockNode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREAKBLOCKNODE
 public:
-    class BreakBlockNode& operator=(class BreakBlockNode const&) = delete;
-    BreakBlockNode(class BreakBlockNode const&) = delete;
+    class BreakBlockNode& operator=(class BreakBlockNode const &) = delete;
+    BreakBlockNode(class BreakBlockNode const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~BreakBlockNode();
-    /*1*/ virtual enum BehaviorStatus tick(class Actor&);
-    /*2*/ virtual void initializeFromDefinition(class Actor&);
+    /*1*/ virtual enum BehaviorStatus tick(class Actor &);
+    /*2*/ virtual void initializeFromDefinition(class Actor &);
     MCAPI BreakBlockNode();
 
 protected:

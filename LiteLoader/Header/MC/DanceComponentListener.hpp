@@ -18,15 +18,15 @@ class DanceComponentListener : public BlockSourceListener {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DANCECOMPONENTLISTENER
 public:
-    class DanceComponentListener& operator=(class DanceComponentListener const&) = delete;
-    DanceComponentListener(class DanceComponentListener const&) = delete;
+    class DanceComponentListener& operator=(class DanceComponentListener const &) = delete;
+    DanceComponentListener(class DanceComponentListener const &) = delete;
     DanceComponentListener() = delete;
 #endif
 
 public:
     /*0*/ virtual ~DanceComponentListener();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void onSourceDestroyed(class BlockSource&);
+    /*2*/ virtual void onSourceDestroyed(class BlockSource &);
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*6*/ virtual void __unk_vfn_6();
@@ -52,7 +52,7 @@ public:
     /*27*/ virtual void __unk_vfn_27();
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
-    /*30*/ virtual void levelSoundEvent(enum LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
+    /*30*/ virtual void levelSoundEvent(enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
 
 protected:
 

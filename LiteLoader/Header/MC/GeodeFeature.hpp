@@ -17,14 +17,14 @@ class GeodeFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GEODEFEATURE
 public:
-    class GeodeFeature& operator=(class GeodeFeature const&) = delete;
-    GeodeFeature(class GeodeFeature const&) = delete;
+    class GeodeFeature& operator=(class GeodeFeature const &) = delete;
+    GeodeFeature(class GeodeFeature const &) = delete;
     GeodeFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~GeodeFeature();
-    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 
 protected:
 

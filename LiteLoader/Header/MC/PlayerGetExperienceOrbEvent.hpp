@@ -15,8 +15,8 @@ class PlayerGetExperienceOrbEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERGETEXPERIENCEORBEVENT
 public:
-    class PlayerGetExperienceOrbEvent& operator=(class PlayerGetExperienceOrbEvent const&) = delete;
-    PlayerGetExperienceOrbEvent(class PlayerGetExperienceOrbEvent const&) = delete;
+    class PlayerGetExperienceOrbEvent& operator=(class PlayerGetExperienceOrbEvent const &) = delete;
+    PlayerGetExperienceOrbEvent(class PlayerGetExperienceOrbEvent const &) = delete;
     PlayerGetExperienceOrbEvent() = delete;
 #endif
 

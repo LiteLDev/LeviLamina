@@ -15,8 +15,8 @@ struct DrinkPotionData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRINKPOTIONDATA
 public:
-    struct DrinkPotionData& operator=(struct DrinkPotionData const&) = delete;
-    DrinkPotionData(struct DrinkPotionData const&) = delete;
+    struct DrinkPotionData& operator=(struct DrinkPotionData const &) = delete;
+    DrinkPotionData(struct DrinkPotionData const &) = delete;
     DrinkPotionData() = delete;
 #endif
 

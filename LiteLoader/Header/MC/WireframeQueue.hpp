@@ -15,8 +15,8 @@ class WireframeQueue {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WIREFRAMEQUEUE
 public:
-    class WireframeQueue& operator=(class WireframeQueue const&) = delete;
-    WireframeQueue(class WireframeQueue const&) = delete;
+    class WireframeQueue& operator=(class WireframeQueue const &) = delete;
+    WireframeQueue(class WireframeQueue const &) = delete;
     WireframeQueue() = delete;
 #endif
 

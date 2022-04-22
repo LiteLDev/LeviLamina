@@ -18,14 +18,14 @@ class BlastFurnaceContainerManagerModel : public FurnaceContainerManagerModel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLASTFURNACECONTAINERMANAGERMODEL
 public:
-    class BlastFurnaceContainerManagerModel& operator=(class BlastFurnaceContainerManagerModel const&) = delete;
-    BlastFurnaceContainerManagerModel(class BlastFurnaceContainerManagerModel const&) = delete;
+    class BlastFurnaceContainerManagerModel& operator=(class BlastFurnaceContainerManagerModel const &) = delete;
+    BlastFurnaceContainerManagerModel(class BlastFurnaceContainerManagerModel const &) = delete;
     BlastFurnaceContainerManagerModel() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BlastFurnaceContainerManagerModel();
-    MCAPI BlastFurnaceContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
+    MCAPI BlastFurnaceContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
 protected:
 

@@ -12,26 +12,20 @@ void Session::setDebugOutput(bool enable)
     debugOutput = enable;
 }
 
-bool Session::changeUser(const std::string& user, const std::string& password)
+bool Session::relogin(const std::string& user, const std::string& password, const std::string& db)
 {
-    throw std::runtime_error("Session::changeUser: Not implemented");
-}
-
-bool Session::changeDatabase(const std::string& database)
-{
-    throw std::runtime_error("Session::changeDatabase: Not implemented");
+    throw std::runtime_error("Session::relogin: Not implemented");
 }
 
 ResultSet Session::query(const std::string& query)
 {
     bool headerSet = false;
-    RowHeader header;
-    ResultSet result(header);
+    ResultSet result;
     this->query(query, [&](const Row& row) {
         if (!headerSet)
         {
+            result.header = row.header;
             headerSet = true;
-            header = row.header;
         }
         result.push_back(row);
         return true;
@@ -49,7 +43,7 @@ ResultSet Session::query(const std::string& query)
 
 std::string Session::getLastError() const
 {
-	throw std::runtime_error("Session::getLastError: Not implemented");
+    throw std::runtime_error("Session::getLastError: Not implemented");
 }
 
 void Session::destroy()
@@ -68,9 +62,10 @@ Stmt& Session::operator<<(const std::string& query)
 
 Session& Session::create(const ConnParams& params)
 {
-    auto type = params.at("type").get<std::string>();
+    ConnParams copy = params;
+    auto type = copy.getScheme();
     std::transform(type.begin(), type.end(), type.begin(), ::tolower);
-    if (type == "sqlite" || type == "sqlite3")
+    if (type == "sqlite" || type == "sqlite3" || type == "file")
     {
         return *new SQLiteSession(params);
     }

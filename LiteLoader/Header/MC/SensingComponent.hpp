@@ -17,15 +17,15 @@ class SensingComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SENSINGCOMPONENT
 public:
-    class SensingComponent& operator=(class SensingComponent const&) = delete;
-    SensingComponent(class SensingComponent const&) = delete;
+    class SensingComponent& operator=(class SensingComponent const &) = delete;
+    SensingComponent(class SensingComponent const &) = delete;
     SensingComponent() = delete;
 #endif
 
 public:
-    MCAPI bool canSee(class Mob&, class Actor const&);
+    MCAPI bool canSee(class Mob &, class Actor const &);
     MCAPI void reset();
-    MCAPI bool withinFOV(class Mob&, class Vec3 const&, float);
+    MCAPI bool withinFOV(class Mob &, class Vec3 const &, float);
 
 protected:
 

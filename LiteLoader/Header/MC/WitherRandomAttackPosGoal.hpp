@@ -18,8 +18,8 @@ class WitherRandomAttackPosGoal : public RandomStrollGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WITHERRANDOMATTACKPOSGOAL
 public:
-    class WitherRandomAttackPosGoal& operator=(class WitherRandomAttackPosGoal const&) = delete;
-    WitherRandomAttackPosGoal(class WitherRandomAttackPosGoal const&) = delete;
+    class WitherRandomAttackPosGoal& operator=(class WitherRandomAttackPosGoal const &) = delete;
+    WitherRandomAttackPosGoal(class WitherRandomAttackPosGoal const &) = delete;
     WitherRandomAttackPosGoal() = delete;
 #endif
 

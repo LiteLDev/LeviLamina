@@ -15,13 +15,13 @@ class AnimationComponentID {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATIONCOMPONENTID
 public:
-    class AnimationComponentID& operator=(class AnimationComponentID const&) = delete;
-    AnimationComponentID(class AnimationComponentID const&) = delete;
+    class AnimationComponentID& operator=(class AnimationComponentID const &) = delete;
+    AnimationComponentID(class AnimationComponentID const &) = delete;
     AnimationComponentID() = delete;
 #endif
 
 public:
-    MCAPI AnimationComponentID(struct ActorUniqueID const&, unsigned short, enum AttachableSlotIndex);
+    MCAPI AnimationComponentID(struct ActorUniqueID const &, unsigned short, enum AttachableSlotIndex);
 
 protected:
 

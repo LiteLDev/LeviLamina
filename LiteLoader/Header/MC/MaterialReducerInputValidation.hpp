@@ -18,32 +18,32 @@ class MaterialReducerInputValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MATERIALREDUCERINPUTVALIDATION
 public:
-    class MaterialReducerInputValidation& operator=(class MaterialReducerInputValidation const&) = delete;
-    MaterialReducerInputValidation(class MaterialReducerInputValidation const&) = delete;
+    class MaterialReducerInputValidation& operator=(class MaterialReducerInputValidation const &) = delete;
+    MaterialReducerInputValidation(class MaterialReducerInputValidation const &) = delete;
     MaterialReducerInputValidation() = delete;
 #endif
 
 public:
     /*0*/ virtual ~MaterialReducerInputValidation();
-    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const&) const;
+    /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const &) const;
     /*5*/ virtual void __unk_vfn_5();
     /*7*/ virtual void __unk_vfn_7();
-    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /*
-    inline bool canDestroy(class ContainerScreenContext const& a0) const{
-        bool (MaterialReducerInputValidation::*rv)(class ContainerScreenContext const&) const;
+    inline bool canDestroy(class ContainerScreenContext const & a0) const{
+        bool (MaterialReducerInputValidation::*rv)(class ContainerScreenContext const &) const;
         *((void**)&rv) = dlsym("?canDestroy@MaterialReducerInputValidation@@UEBA_NAEBVContainerScreenContext@@@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0));
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
     }
-    inline int getAvailableSetCount(int a0, class ItemStackBase const& a1) const{
-        int (MaterialReducerInputValidation::*rv)(int, class ItemStackBase const&) const;
+    inline int getAvailableSetCount(int a0, class ItemStackBase const & a1) const{
+        int (MaterialReducerInputValidation::*rv)(int, class ItemStackBase const &) const;
         *((void**)&rv) = dlsym("?getAvailableSetCount@MaterialReducerInputValidation@@UEBAHHAEBVItemStackBase@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStackBase const&>(a1));
+        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStackBase const &>(a1));
     }
     */
-    MCAPI MaterialReducerInputValidation(class ContainerScreenContext const&);
+    MCAPI MaterialReducerInputValidation(class ContainerScreenContext const &);
 
 protected:
 

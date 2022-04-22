@@ -17,8 +17,8 @@ class ServerMetrics {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERMETRICS
 public:
-    class ServerMetrics& operator=(class ServerMetrics const&) = delete;
-    ServerMetrics(class ServerMetrics const&) = delete;
+    class ServerMetrics& operator=(class ServerMetrics const &) = delete;
+    ServerMetrics(class ServerMetrics const &) = delete;
     ServerMetrics() = delete;
 #endif
 

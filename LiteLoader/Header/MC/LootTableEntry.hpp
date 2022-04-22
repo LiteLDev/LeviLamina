@@ -17,13 +17,13 @@ class LootTableEntry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTTABLEENTRY
 public:
-    class LootTableEntry& operator=(class LootTableEntry const&) = delete;
-    LootTableEntry(class LootTableEntry const&) = delete;
+    class LootTableEntry& operator=(class LootTableEntry const &) = delete;
+    LootTableEntry(class LootTableEntry const &) = delete;
     LootTableEntry() = delete;
 #endif
 
 public:
-    /*0*/ virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
+    /*0*/ virtual bool _createItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
     /*1*/ virtual ~LootTableEntry();
 
 protected:

@@ -30,7 +30,8 @@ UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() const {
     return SymCall("??$tryGetComponent@VUserEntityIdentifierComponent@@@Actor@@QEAAPEAVUserEntityIdentifierComponent@@XZ", UserEntityIdentifierComponent*, Actor*)((Actor*)this);
 }
 
-MCINLINE Vec3 Actor::getPosition() const {
+MCINLINE Vec3 Actor::getFeetPosition() const
+{
     return CommandUtils::getFeetPos(this);
 }
 
@@ -70,7 +71,7 @@ std::string Actor::getTypeName() const
 }
 
 #include <MC/ActorDamageSource.hpp>
-bool Actor::hurtEntity(int damage) {
+bool Actor::hurtEntity(float damage) {
     char source[16];
     (*(ActorDamageSource*)source).ActorDamageSource::ActorDamageSource(ActorDamageCause::None);
 
@@ -84,7 +85,7 @@ Vec2* Actor::getDirection() const {
 }
 
 BlockPos Actor::getBlockPos() {
-    return getPos().add(0,-1.0,0).toBlockPos();
+    return getPosition().add(0,-1.0,0).toBlockPos();
 }
 
 BlockInstance Actor::getBlockStandingOn() const
@@ -158,11 +159,11 @@ bool Actor::stopFire() {
 
 
 Vec3 Actor::getCameraPos() const {
-    Vec3 pos = *(Vec3*)&getStateVector();
+    auto& pos = this->getPosition();
     if (isSneaking()) {
-        pos.y += -0.125;
+        pos.add(0, -0.125, 0);
     } else {
-        pos.y += ((Player*)this)->getCameraOffset();
+        pos.add(0, ((Player*)this)->getCameraOffset(), 0);
     }
     return pos;
 }
@@ -177,15 +178,16 @@ Tick* Actor::getLastTick() const {
         return nullptr;
     return (Tick*)&lc->getLastTick();
 }
+enum ActorLocation;
 
 BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bool solidOnly, float maxDistance, bool ignoreBorderBlocks, bool fullOnly) const {
     auto& bs = getRegion();
-    auto&& pos = getCameraPos();
+    auto& pos = getCameraPos();
     auto viewVec = getViewVector(1.0f);
     auto viewPos = pos + (viewVec * maxDistance);
     auto player = isPlayer() ? (Player*)this : nullptr;
     int maxDisManhattan = (int)((maxDistance + 1) * 2);
-    HitResult result = bs.clip(pos, viewPos, includeLiquid, solidOnly, maxDisManhattan, ignoreBorderBlocks, fullOnly, nullptr);
+    HitResult result = bs.clip(pos, viewPos, includeLiquid, solidOnly, maxDisManhattan, ignoreBorderBlocks, fullOnly, nullptr, BlockSource::ClipParameters::CHECK_ALL_BLOCKS);
     if (result.isHit() || (includeLiquid && result.isHitLiquid())) {
         BlockPos bpos{};
         if (includeLiquid && result.isHitLiquid()) {
@@ -210,7 +212,7 @@ Actor* Actor::getActorFromViewVector(float maxDistance) {
     auto& bs = getRegion();
     auto pos = getCameraPos();
     auto viewVec = getViewVector(1.0f);
-    auto aabb = *(AABB*)&_getAABBShapeNonConst();
+    auto aabb = *(AABB*)&getAABB();
     auto player = isPlayer() ? (Player*)this : nullptr;
     Actor* result = nullptr;
     float distance = 0.0f;

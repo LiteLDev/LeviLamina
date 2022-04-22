@@ -17,8 +17,8 @@ class LookControlComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKCONTROLCOMPONENT
 public:
-    class LookControlComponent& operator=(class LookControlComponent const&) = delete;
-    LookControlComponent(class LookControlComponent const&) = delete;
+    class LookControlComponent& operator=(class LookControlComponent const &) = delete;
+    LookControlComponent(class LookControlComponent const &) = delete;
 #endif
 
 public:
@@ -29,16 +29,16 @@ public:
     MCAPI class Vec3 getWantedRotation() const;
     MCAPI float getXMax() const;
     MCAPI float getYMax() const;
-    MCAPI void initialize(class Mob&);
-    MCAPI class LookControlComponent& operator=(class LookControlComponent&&);
+    MCAPI void initialize(class Mob &);
+    MCAPI class LookControlComponent & operator=(class LookControlComponent &&);
     MCAPI void setHasWantedPosition(bool);
     MCAPI void setHasWantedRotation(bool);
     MCAPI void setInternalType(std::unique_ptr<class LookControl>);
-    MCAPI void setLookAtPosition(class Vec3 const&, float, float);
-    MCAPI void setLookAtPosition(class Actor const*, float, float);
-    MCAPI void setLookAtRotation(class Vec3 const&, float, float);
+    MCAPI void setLookAtPosition(class Vec3 const &, float, float);
+    MCAPI void setLookAtPosition(class Actor const *, float, float);
+    MCAPI void setLookAtRotation(class Vec3 const &, float, float);
     MCAPI void setYMax(float);
-    MCAPI void update(class Mob&);
+    MCAPI void update(class Mob &);
 
 protected:
 

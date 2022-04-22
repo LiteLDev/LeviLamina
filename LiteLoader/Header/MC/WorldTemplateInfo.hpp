@@ -18,17 +18,17 @@ struct WorldTemplateInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDTEMPLATEINFO
 public:
-    struct WorldTemplateInfo& operator=(struct WorldTemplateInfo const&) = delete;
-    WorldTemplateInfo(struct WorldTemplateInfo const&) = delete;
+    struct WorldTemplateInfo& operator=(struct WorldTemplateInfo const &) = delete;
+    WorldTemplateInfo(struct WorldTemplateInfo const &) = delete;
     WorldTemplateInfo() = delete;
 #endif
 
 public:
-    MCAPI WorldTemplateInfo(class WorldTemplatePackManifest const&);
-    MCAPI void addWorldTemplatePackSource(class WorldTemplatePackSource&);
-    MCAPI class WorldTemplatePackManifest const& getPackManifest() const;
-    MCAPI std::string const& getWorldName() const;
-    MCAPI class Core::PathBuffer<std::string > const& getWorldPath() const;
+    MCAPI WorldTemplateInfo(class WorldTemplatePackManifest const &);
+    MCAPI void addWorldTemplatePackSource(class WorldTemplatePackSource &);
+    MCAPI class WorldTemplatePackManifest const & getPackManifest() const;
+    MCAPI std::string const & getWorldName() const;
+    MCAPI class Core::PathBuffer<std::string> const & getWorldPath() const;
     MCAPI bool isVirtualCatalogItem() const;
     MCAPI ~WorldTemplateInfo();
 

@@ -17,8 +17,8 @@ class RiverFollowingGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RIVERFOLLOWINGGOAL
 public:
-    class RiverFollowingGoal& operator=(class RiverFollowingGoal const&) = delete;
-    RiverFollowingGoal(class RiverFollowingGoal const&) = delete;
+    class RiverFollowingGoal& operator=(class RiverFollowingGoal const &) = delete;
+    RiverFollowingGoal(class RiverFollowingGoal const &) = delete;
     RiverFollowingGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI RiverFollowingGoal(class Mob&, float, float);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI RiverFollowingGoal(class Mob &, float, float);
 
 protected:
     MCAPI void determineSteerDirection();

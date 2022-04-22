@@ -18,13 +18,14 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDINTEGERRANGE
 public:
-    class CommandIntegerRange& operator=(class CommandIntegerRange const&) = delete;
-    CommandIntegerRange(class CommandIntegerRange const&) = delete;
-    CommandIntegerRange() = delete;
+    class CommandIntegerRange& operator=(class CommandIntegerRange const &) = delete;
+    CommandIntegerRange(class CommandIntegerRange const &) = delete;
 #endif
 
 public:
     MCAPI CommandIntegerRange(int, int, bool);
+    MCAPI CommandIntegerRange();
+    MCAPI bool isWithinRange(int) const;
 
 protected:
 

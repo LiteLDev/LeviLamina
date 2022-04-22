@@ -17,19 +17,18 @@ class ScriptPluginResult {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLUGINRESULT
 public:
-    class ScriptPluginResult& operator=(class ScriptPluginResult const&) = delete;
-    ScriptPluginResult(class ScriptPluginResult const&) = delete;
+    class ScriptPluginResult& operator=(class ScriptPluginResult const &) = delete;
+    ScriptPluginResult(class ScriptPluginResult const &) = delete;
     ScriptPluginResult() = delete;
 #endif
 
 public:
-    MCAPI ScriptPluginResult(struct Scripting::ModuleDescriptor const&);
-    MCAPI void addError(std::string const&);
-    MCAPI void addErrors(std::vector<std::string> const&);
-    MCAPI void addInfo(std::string const&);
-    MCAPI void addWarning(std::string const&);
-    MCAPI std::vector<class std::variant<struct ScriptPluginResult::Error, struct ScriptPluginResult::Warning, struct ScriptPluginResult::Info>> const& getMessages() const;
-    MCAPI struct Scripting::ModuleDescriptor const& getModuleDescriptor() const;
+    MCAPI ScriptPluginResult(struct Scripting::ModuleDescriptor const &);
+    MCAPI void addError(std::string const &);
+    MCAPI void addErrors(std::vector<std::string> const &);
+    MCAPI void addWarning(std::string const &);
+    MCAPI std::vector<class std::variant<struct ScriptPluginResult::Error, struct ScriptPluginResult::Warning, struct ScriptPluginResult::Info>> const & getMessages() const;
+    MCAPI struct Scripting::ModuleDescriptor const & getModuleDescriptor() const;
     MCAPI ~ScriptPluginResult();
 
 protected:

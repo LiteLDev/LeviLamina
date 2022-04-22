@@ -15,8 +15,8 @@ struct PlayerDamageEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERDAMAGEEVENT
 public:
-    struct PlayerDamageEvent& operator=(struct PlayerDamageEvent const&) = delete;
-    PlayerDamageEvent(struct PlayerDamageEvent const&) = delete;
+    struct PlayerDamageEvent& operator=(struct PlayerDamageEvent const &) = delete;
+    PlayerDamageEvent(struct PlayerDamageEvent const &) = delete;
     PlayerDamageEvent() = delete;
 #endif
 

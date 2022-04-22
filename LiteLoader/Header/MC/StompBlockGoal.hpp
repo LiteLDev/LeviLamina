@@ -18,8 +18,8 @@ class StompBlockGoal : public BaseMoveToGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STOMPBLOCKGOAL
 public:
-    class StompBlockGoal& operator=(class StompBlockGoal const&) = delete;
-    StompBlockGoal(class StompBlockGoal const&) = delete;
+    class StompBlockGoal& operator=(class StompBlockGoal const &) = delete;
+    StompBlockGoal(class StompBlockGoal const &) = delete;
     StompBlockGoal() = delete;
 #endif
 
@@ -31,17 +31,17 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*11*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
-    /*13*/ virtual bool _canReach(class BlockPos const&);
+    /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
+    /*13*/ virtual bool _canReach(class BlockPos const &);
     /*14*/ virtual void _moveToBlock();
     /*17*/ virtual bool findTargetBlock();
-    /*18*/ virtual void _createBreakProgressParticles(class Level&, class BlockSource&, class BlockPos);
-    /*19*/ virtual void _createDestroyParticles(class Level&, class BlockSource&, class BlockPos);
-    /*20*/ virtual void _playBreakProgressSound(class Level&, class BlockSource&, class BlockPos);
-    /*21*/ virtual void _playDestroySound(class Level&, class BlockSource&, class BlockPos);
+    /*18*/ virtual void _createBreakProgressParticles(class Level &, class BlockSource &, class BlockPos);
+    /*19*/ virtual void _createDestroyParticles(class Level &, class BlockSource &, class BlockPos);
+    /*20*/ virtual void _playBreakProgressSound(class Level &, class BlockSource &, class BlockPos);
+    /*21*/ virtual void _playDestroySound(class Level &, class BlockSource &, class BlockPos);
 
 protected:
 

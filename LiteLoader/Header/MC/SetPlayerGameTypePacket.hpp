@@ -18,16 +18,16 @@ class SetPlayerGameTypePacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETPLAYERGAMETYPEPACKET
 public:
-    class SetPlayerGameTypePacket& operator=(class SetPlayerGameTypePacket const&) = delete;
-    SetPlayerGameTypePacket(class SetPlayerGameTypePacket const&) = delete;
+    class SetPlayerGameTypePacket& operator=(class SetPlayerGameTypePacket const &) = delete;
+    SetPlayerGameTypePacket(class SetPlayerGameTypePacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~SetPlayerGameTypePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     MCAPI SetPlayerGameTypePacket();
 
 protected:

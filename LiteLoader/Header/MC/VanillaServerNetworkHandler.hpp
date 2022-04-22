@@ -18,15 +18,15 @@ class VanillaServerNetworkHandler {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLASERVERNETWORKHANDLER
 public:
-    class VanillaServerNetworkHandler& operator=(class VanillaServerNetworkHandler const&) = delete;
-    VanillaServerNetworkHandler(class VanillaServerNetworkHandler const&) = delete;
+    class VanillaServerNetworkHandler& operator=(class VanillaServerNetworkHandler const &) = delete;
+    VanillaServerNetworkHandler(class VanillaServerNetworkHandler const &) = delete;
     VanillaServerNetworkHandler() = delete;
 #endif
 
 public:
     /*0*/ virtual ~VanillaServerNetworkHandler();
-    /*1*/ virtual void handle(class NetworkIdentifier const&, class ResourcePackClientResponsePacket const&);
-    MCAPI VanillaServerNetworkHandler(class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler> >, class ServerInstance&);
+    /*1*/ virtual void handle(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
+    MCAPI VanillaServerNetworkHandler(class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>, class ServerInstance &);
 
 protected:
 

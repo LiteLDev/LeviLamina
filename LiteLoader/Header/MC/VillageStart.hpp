@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "StructureStart.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class VillageStart {
+class VillageStart : public StructureStart {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,31 +18,15 @@ class VillageStart {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VILLAGESTART
 public:
-    class VillageStart& operator=(class VillageStart const&) = delete;
-    VillageStart(class VillageStart const&) = delete;
+    class VillageStart& operator=(class VillageStart const &) = delete;
+    VillageStart(class VillageStart const &) = delete;
     VillageStart() = delete;
 #endif
 
 public:
     /*0*/ virtual ~VillageStart();
-    /*
-    inline enum StructureFeatureType getType() const{
-        enum StructureFeatureType (VillageStart::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@VillageStart@@UEBA?AW4StructureFeatureType@@XZ");
-        return (this->*rv)();
-    }
-    inline bool isValid() const{
-        bool (VillageStart::*rv)() const;
-        *((void**)&rv) = dlsym("?isValid@VillageStart@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool postProcess(class BlockSource& a0, class Random& a1, class BoundingBox const& a2){
-        bool (VillageStart::*rv)(class BlockSource&, class Random&, class BoundingBox const&);
-        *((void**)&rv) = dlsym("?postProcess@VillageStart@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Random&>(a1), std::forward<class BoundingBox const&>(a2));
-    }
-    */
-    MCAPI VillageStart(class Dimension&, class BiomeSource const&, class Random&, int, int, class IPreliminarySurfaceProvider const&);
+    /*2*/ virtual bool isValid() const;
+    MCAPI VillageStart(class Dimension &, class BiomeSource const &, class Random &, int, int, class IPreliminarySurfaceProvider const &);
 
 protected:
 

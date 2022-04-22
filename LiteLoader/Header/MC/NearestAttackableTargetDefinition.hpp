@@ -18,17 +18,17 @@ class NearestAttackableTargetDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NEARESTATTACKABLETARGETDEFINITION
 public:
-    class NearestAttackableTargetDefinition& operator=(class NearestAttackableTargetDefinition const&) = delete;
-    NearestAttackableTargetDefinition(class NearestAttackableTargetDefinition const&) = delete;
+    class NearestAttackableTargetDefinition& operator=(class NearestAttackableTargetDefinition const &) = delete;
+    NearestAttackableTargetDefinition(class NearestAttackableTargetDefinition const &) = delete;
     NearestAttackableTargetDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~NearestAttackableTargetDefinition();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual bool validate(class Mob&);
-    MCAPI void initialize(class EntityContext&, class NearestAttackableTargetGoal&);
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NearestAttackableTargetDefinition> >&);
+    /*2*/ virtual bool validate(class Mob &);
+    MCAPI void initialize(class EntityContext &, class NearestAttackableTargetGoal &);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NearestAttackableTargetDefinition>> &);
 
 protected:
 

@@ -17,8 +17,8 @@ class Vec4 {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VEC4
 public:
-    class Vec4& operator=(class Vec4 const&) = delete;
-    Vec4(class Vec4 const&) = delete;
+    class Vec4& operator=(class Vec4 const &) = delete;
+    Vec4(class Vec4 const &) = delete;
     Vec4() = delete;
 #endif
 

@@ -17,8 +17,8 @@ struct ScriptBlockExplodedEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKEXPLODEDEVENT
 public:
-    struct ScriptBlockExplodedEvent& operator=(struct ScriptBlockExplodedEvent const&) = delete;
-    ScriptBlockExplodedEvent(struct ScriptBlockExplodedEvent const&) = delete;
+    struct ScriptBlockExplodedEvent& operator=(struct ScriptBlockExplodedEvent const &) = delete;
+    ScriptBlockExplodedEvent(struct ScriptBlockExplodedEvent const &) = delete;
     ScriptBlockExplodedEvent() = delete;
 #endif
 

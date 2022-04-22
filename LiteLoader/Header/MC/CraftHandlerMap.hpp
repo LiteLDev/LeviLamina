@@ -18,18 +18,18 @@ class CraftHandlerMap : public CraftHandlerBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTHANDLERMAP
 public:
-    class CraftHandlerMap& operator=(class CraftHandlerMap const&) = delete;
-    CraftHandlerMap(class CraftHandlerMap const&) = delete;
+    class CraftHandlerMap& operator=(class CraftHandlerMap const &) = delete;
+    CraftHandlerMap(class CraftHandlerMap const &) = delete;
     CraftHandlerMap() = delete;
 #endif
 
 public:
     /*0*/ virtual ~CraftHandlerMap();
     /*3*/ virtual void endRequestBatch();
-    /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+    /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /*5*/ virtual void _postCraftRequest(bool);
-    /*6*/ virtual class Recipes const* _getLevelRecipes() const;
-    MCAPI CraftHandlerMap(class Player&, class ItemStackRequestActionCraftHandler&);
+    /*6*/ virtual class Recipes const * _getLevelRecipes() const;
+    MCAPI CraftHandlerMap(class Player &, class ItemStackRequestActionCraftHandler &);
 
 protected:
 

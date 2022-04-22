@@ -17,8 +17,8 @@ class SharedBuffs {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAREDBUFFS
 public:
-    class SharedBuffs& operator=(class SharedBuffs const&) = delete;
-    SharedBuffs(class SharedBuffs const&) = delete;
+    class SharedBuffs& operator=(class SharedBuffs const &) = delete;
+    SharedBuffs(class SharedBuffs const &) = delete;
     SharedBuffs() = delete;
 #endif
 

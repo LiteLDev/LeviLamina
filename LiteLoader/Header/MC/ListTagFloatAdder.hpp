@@ -17,13 +17,13 @@ class ListTagFloatAdder {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LISTTAGFLOATADDER
 public:
-    class ListTagFloatAdder& operator=(class ListTagFloatAdder const&) = delete;
-    ListTagFloatAdder(class ListTagFloatAdder const&) = delete;
+    class ListTagFloatAdder& operator=(class ListTagFloatAdder const &) = delete;
+    ListTagFloatAdder(class ListTagFloatAdder const &) = delete;
     ListTagFloatAdder() = delete;
 #endif
 
 public:
-    MCAPI class ListTagFloatAdder& operator()(float);
+    MCAPI class ListTagFloatAdder & operator()(float);
     MCAPI ~ListTagFloatAdder();
 
 protected:

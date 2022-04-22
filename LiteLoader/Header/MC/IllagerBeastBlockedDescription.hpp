@@ -18,16 +18,16 @@ class IllagerBeastBlockedDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ILLAGERBEASTBLOCKEDDESCRIPTION
 public:
-    class IllagerBeastBlockedDescription& operator=(class IllagerBeastBlockedDescription const&) = delete;
-    IllagerBeastBlockedDescription(class IllagerBeastBlockedDescription const&) = delete;
+    class IllagerBeastBlockedDescription& operator=(class IllagerBeastBlockedDescription const &) = delete;
+    IllagerBeastBlockedDescription(class IllagerBeastBlockedDescription const &) = delete;
     IllagerBeastBlockedDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~IllagerBeastBlockedDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~IllagerBeastBlockedDescription(){
          (IllagerBeastBlockedDescription::*rv)();

@@ -17,8 +17,8 @@ class GameModuleServer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEMODULESERVER
 public:
-    class GameModuleServer& operator=(class GameModuleServer const&) = delete;
-    GameModuleServer(class GameModuleServer const&) = delete;
+    class GameModuleServer& operator=(class GameModuleServer const &) = delete;
+    GameModuleServer(class GameModuleServer const &) = delete;
 #endif
 
 public:

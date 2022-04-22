@@ -17,8 +17,8 @@ struct BlockDisplayNameDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDISPLAYNAMEDESCRIPTION
 public:
-    struct BlockDisplayNameDescription& operator=(struct BlockDisplayNameDescription const&) = delete;
-    BlockDisplayNameDescription(struct BlockDisplayNameDescription const&) = delete;
+    struct BlockDisplayNameDescription& operator=(struct BlockDisplayNameDescription const &) = delete;
+    BlockDisplayNameDescription(struct BlockDisplayNameDescription const &) = delete;
     BlockDisplayNameDescription() = delete;
 #endif
 

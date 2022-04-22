@@ -19,15 +19,15 @@ class FilterTestBiomeHasTag : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERTESTBIOMEHASTAG
 public:
-    class FilterTestBiomeHasTag& operator=(class FilterTestBiomeHasTag const&) = delete;
-    FilterTestBiomeHasTag(class FilterTestBiomeHasTag const&) = delete;
+    class FilterTestBiomeHasTag& operator=(class FilterTestBiomeHasTag const &) = delete;
+    FilterTestBiomeHasTag(class FilterTestBiomeHasTag const &) = delete;
     FilterTestBiomeHasTag() = delete;
 #endif
 
 public:
     /*0*/ virtual ~FilterTestBiomeHasTag();
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
-    /*3*/ virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
+    /*3*/ virtual void finalizeParsedValue(class IWorldRegistriesProvider &);
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*
     inline  ~FilterTestBiomeHasTag(){
@@ -40,6 +40,6 @@ public:
 protected:
 
 private:
-    MCAPI bool _evalBiome(class Biome const&, struct FilterContext const&) const;
+    MCAPI bool _evalBiome(class Biome const &, struct FilterContext const &) const;
 
 };

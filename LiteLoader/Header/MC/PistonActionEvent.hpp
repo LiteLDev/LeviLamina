@@ -15,8 +15,8 @@ struct PistonActionEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PISTONACTIONEVENT
 public:
-    struct PistonActionEvent& operator=(struct PistonActionEvent const&) = delete;
-    PistonActionEvent(struct PistonActionEvent const&) = delete;
+    struct PistonActionEvent& operator=(struct PistonActionEvent const &) = delete;
+    PistonActionEvent(struct PistonActionEvent const &) = delete;
     PistonActionEvent() = delete;
 #endif
 

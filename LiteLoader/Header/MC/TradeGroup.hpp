@@ -15,8 +15,8 @@ struct TradeGroup {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADEGROUP
 public:
-    struct TradeGroup& operator=(struct TradeGroup const&) = delete;
-    TradeGroup(struct TradeGroup const&) = delete;
+    struct TradeGroup& operator=(struct TradeGroup const &) = delete;
+    TradeGroup(struct TradeGroup const &) = delete;
     TradeGroup() = delete;
 #endif
 

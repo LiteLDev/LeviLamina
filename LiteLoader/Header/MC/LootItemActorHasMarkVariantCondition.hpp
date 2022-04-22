@@ -17,14 +17,14 @@ class LootItemActorHasMarkVariantCondition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMACTORHASMARKVARIANTCONDITION
 public:
-    class LootItemActorHasMarkVariantCondition& operator=(class LootItemActorHasMarkVariantCondition const&) = delete;
-    LootItemActorHasMarkVariantCondition(class LootItemActorHasMarkVariantCondition const&) = delete;
+    class LootItemActorHasMarkVariantCondition& operator=(class LootItemActorHasMarkVariantCondition const &) = delete;
+    LootItemActorHasMarkVariantCondition(class LootItemActorHasMarkVariantCondition const &) = delete;
     LootItemActorHasMarkVariantCondition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LootItemActorHasMarkVariantCondition();
-    /*1*/ virtual bool applies(class Random&, class LootTableContext&);
+    /*1*/ virtual bool applies(class Random &, class LootTableContext &);
 
 protected:
 

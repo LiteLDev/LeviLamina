@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class GameTestCommand {
+class GameTestCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,28 +18,28 @@ class GameTestCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETESTCOMMAND
 public:
-    class GameTestCommand& operator=(class GameTestCommand const&) = delete;
-    GameTestCommand(class GameTestCommand const&) = delete;
+    class GameTestCommand& operator=(class GameTestCommand const &) = delete;
+    GameTestCommand(class GameTestCommand const &) = delete;
     GameTestCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~GameTestCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void postScriptRegisterSetup(class CommandRegistry&);
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void postScriptRegisterSetup(class CommandRegistry &);
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 
 private:
-    MCAPI struct gametest::TestParameters _createTestParameters(class BlockSource&, class CommandOrigin const&) const;
-    MCAPI void _handleCreateTest(class BlockSource&, class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI void _handleRun(class BlockSource&, class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI void _handleRunNearbyTests(class BlockSource&, class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI void _handleRunSet(class BlockSource&, class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI void _handleRunThis(class BlockSource&, class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI void _handleShowPosition(class BlockSource&, class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI void _runTestAt(class BlockSource&, class CommandOutput*, class BlockPos const&, class std::optional<enum Rotation>) const;
-    MCAPI static class MinecraftGameTest* sGameTest;
+    MCAPI struct gametest::TestParameters _createTestParameters(class BlockSource &, class CommandOrigin const &) const;
+    MCAPI void _handleCreateTest(class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI void _handleRun(class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI void _handleRunNearbyTests(class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI void _handleRunSet(class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI void _handleRunThis(class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI void _handleShowPosition(class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI void _runTestAt(class BlockSource &, class CommandOutput *, class BlockPos const &, class std::optional<enum Rotation>) const;
+    MCAPI static class MinecraftGameTest * sGameTest;
 
 };

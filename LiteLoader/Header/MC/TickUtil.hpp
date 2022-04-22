@@ -14,11 +14,11 @@ namespace TickUtil {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI struct std::pair<class BlockPos, class BlockPos> chunkBoundsToGridBounds(class Pos const&, class Pos const&);
-    MCAPI void forRandomOffset(unsigned char, unsigned char, class Random&, class std::function<void (class Pos const& )>);
-    MCAPI struct Bounds getDeterministicBounds(struct Bounds const&);
-    MCAPI struct Bounds getLoadedChunkNeighborBounds(struct Bounds const&);
-    MCAPI class ChunkPos getLoadedChunkNeighborPos(class Pos const&, bool, bool);
-    MCAPI class ChunkPos getRandomInBounds(struct Bounds const&, class Random&);
+    MCAPI struct std::pair<class BlockPos, class BlockPos> chunkBoundsToGridBounds(class Pos const &, class Pos const &);
+    MCAPI void forRandomOffset(unsigned char, unsigned char, class Random &, class std::function<void (class Pos const &)>);
+    MCAPI struct Bounds getDeterministicBounds(struct Bounds const &);
+    MCAPI struct Bounds getLoadedChunkNeighborBounds(struct Bounds const &);
+    MCAPI class ChunkPos getLoadedChunkNeighborPos(class Pos const &, bool, bool);
+    MCAPI class ChunkPos getRandomInBounds(struct Bounds const &, class Random &);
 
 };

@@ -17,8 +17,8 @@ class BarterGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BARTERGOAL
 public:
-    class BarterGoal& operator=(class BarterGoal const&) = delete;
-    BarterGoal(class BarterGoal const&) = delete;
+    class BarterGoal& operator=(class BarterGoal const &) = delete;
+    BarterGoal(class BarterGoal const &) = delete;
     BarterGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline bool canContinueToUse(){
         bool (BarterGoal::*rv)();
@@ -38,7 +38,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI BarterGoal(class Mob&);
+    MCAPI BarterGoal(class Mob &);
 
 protected:
 

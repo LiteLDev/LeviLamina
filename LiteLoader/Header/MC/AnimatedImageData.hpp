@@ -16,13 +16,13 @@ class AnimatedImageData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATEDIMAGEDATA
 public:
-    class AnimatedImageData& operator=(class AnimatedImageData const&) = delete;
+    class AnimatedImageData& operator=(class AnimatedImageData const &) = delete;
     AnimatedImageData() = delete;
 #endif
 
 public:
-    MCAPI AnimatedImageData(class AnimatedImageData const&);
-    MCAPI AnimatedImageData(enum persona::AnimatedTextureType, enum persona::AnimationExpression, struct mce::Image const&, float);
+    MCAPI AnimatedImageData(class AnimatedImageData const &);
+    MCAPI AnimatedImageData(enum persona::AnimatedTextureType, enum persona::AnimationExpression, struct mce::Image const &, float);
 
 protected:
 

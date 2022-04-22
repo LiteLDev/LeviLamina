@@ -18,27 +18,27 @@ class OffhandContainerValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OFFHANDCONTAINERVALIDATION
 public:
-    class OffhandContainerValidation& operator=(class OffhandContainerValidation const&) = delete;
-    OffhandContainerValidation(class OffhandContainerValidation const&) = delete;
+    class OffhandContainerValidation& operator=(class OffhandContainerValidation const &) = delete;
+    OffhandContainerValidation(class OffhandContainerValidation const &) = delete;
     OffhandContainerValidation() = delete;
 #endif
 
 public:
     /*0*/ virtual ~OffhandContainerValidation();
-    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const&, class ItemStackBase const&) const;
+    /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     /*6*/ virtual void __unk_vfn_6();
     /*
-    inline bool canItemMoveToContainer(class ItemStackBase const& a0) const{
-        bool (OffhandContainerValidation::*rv)(class ItemStackBase const&) const;
+    inline bool canItemMoveToContainer(class ItemStackBase const & a0) const{
+        bool (OffhandContainerValidation::*rv)(class ItemStackBase const &) const;
         *((void**)&rv) = dlsym("?canItemMoveToContainer@OffhandContainerValidation@@UEBA_NAEBVItemStackBase@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const&>(a0));
+        return (this->*rv)(std::forward<class ItemStackBase const &>(a0));
     }
-    inline int getContainerOffset(class ContainerScreenContext const& a0) const{
-        int (OffhandContainerValidation::*rv)(class ContainerScreenContext const&) const;
+    inline int getContainerOffset(class ContainerScreenContext const & a0) const{
+        int (OffhandContainerValidation::*rv)(class ContainerScreenContext const &) const;
         *((void**)&rv) = dlsym("?getContainerOffset@OffhandContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0));
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
     }
     */
 

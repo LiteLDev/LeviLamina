@@ -17,8 +17,8 @@ class CompactionListenerEnv {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPACTIONLISTENERENV
 public:
-    class CompactionListenerEnv& operator=(class CompactionListenerEnv const&) = delete;
-    CompactionListenerEnv(class CompactionListenerEnv const&) = delete;
+    class CompactionListenerEnv& operator=(class CompactionListenerEnv const &) = delete;
+    CompactionListenerEnv(class CompactionListenerEnv const &) = delete;
     CompactionListenerEnv() = delete;
 #endif
 
@@ -37,7 +37,7 @@ public:
     /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
-    /*14*/ virtual void Schedule(void (* )(void* ), void*);
+    /*14*/ virtual void Schedule(void ( *)(void *), void *);
 
 protected:
 

@@ -17,15 +17,15 @@ class BuoyancySystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUOYANCYSYSTEM
 public:
-    class BuoyancySystem& operator=(class BuoyancySystem const&) = delete;
-    BuoyancySystem(class BuoyancySystem const&) = delete;
+    class BuoyancySystem& operator=(class BuoyancySystem const &) = delete;
+    BuoyancySystem(class BuoyancySystem const &) = delete;
     BuoyancySystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BuoyancySystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

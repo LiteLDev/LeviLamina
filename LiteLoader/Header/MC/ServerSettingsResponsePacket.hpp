@@ -18,16 +18,16 @@ class ServerSettingsResponsePacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERSETTINGSRESPONSEPACKET
 public:
-    class ServerSettingsResponsePacket& operator=(class ServerSettingsResponsePacket const&) = delete;
-    ServerSettingsResponsePacket(class ServerSettingsResponsePacket const&) = delete;
+    class ServerSettingsResponsePacket& operator=(class ServerSettingsResponsePacket const &) = delete;
+    ServerSettingsResponsePacket(class ServerSettingsResponsePacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ServerSettingsResponsePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     MCAPI ServerSettingsResponsePacket();
 
 protected:

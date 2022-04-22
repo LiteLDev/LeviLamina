@@ -17,8 +17,8 @@ class ActiveDirectoryIdentity {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTIVEDIRECTORYIDENTITY
 public:
-    class ActiveDirectoryIdentity& operator=(class ActiveDirectoryIdentity const&) = delete;
-    ActiveDirectoryIdentity(class ActiveDirectoryIdentity const&) = delete;
+    class ActiveDirectoryIdentity& operator=(class ActiveDirectoryIdentity const &) = delete;
+    ActiveDirectoryIdentity(class ActiveDirectoryIdentity const &) = delete;
     ActiveDirectoryIdentity() = delete;
 #endif
 

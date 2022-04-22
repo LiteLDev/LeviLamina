@@ -18,13 +18,13 @@ class GenericMoveControlDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GENERICMOVECONTROLDESCRIPTION
 public:
-    class GenericMoveControlDescription& operator=(class GenericMoveControlDescription const&) = delete;
-    GenericMoveControlDescription(class GenericMoveControlDescription const&) = delete;
+    class GenericMoveControlDescription& operator=(class GenericMoveControlDescription const &) = delete;
+    GenericMoveControlDescription(class GenericMoveControlDescription const &) = delete;
     GenericMoveControlDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~GenericMoveControlDescription();
     /*
     inline  ~GenericMoveControlDescription(){

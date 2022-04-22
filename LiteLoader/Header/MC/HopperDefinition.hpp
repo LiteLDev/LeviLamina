@@ -18,8 +18,8 @@ struct HopperDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOPPERDEFINITION
 public:
-    struct HopperDefinition& operator=(struct HopperDefinition const&) = delete;
-    HopperDefinition(struct HopperDefinition const&) = delete;
+    struct HopperDefinition& operator=(struct HopperDefinition const &) = delete;
+    HopperDefinition(struct HopperDefinition const &) = delete;
     HopperDefinition() = delete;
 #endif
 

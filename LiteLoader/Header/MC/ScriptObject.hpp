@@ -17,17 +17,17 @@ class ScriptObject {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTOBJECT
 public:
-    class ScriptObject& operator=(class ScriptObject const&) = delete;
-    ScriptObject(class ScriptObject const&) = delete;
+    class ScriptObject& operator=(class ScriptObject const &) = delete;
+    ScriptObject(class ScriptObject const &) = delete;
     ScriptObject() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScriptObject();
-    /*1*/ virtual struct Scripting::Error _functionError(std::string const&) const;
-    /*2*/ virtual struct Scripting::Error _getPropertyError(std::string const&) const;
-    /*3*/ virtual struct Scripting::Error _setPropertyError(std::string const&) const;
-    MCAPI ScriptObject(class Scripting::WeakLifetimeScope const&);
+    /*1*/ virtual struct Scripting::Error _functionError(std::string const &) const;
+    /*2*/ virtual struct Scripting::Error _getPropertyError(std::string const &) const;
+    /*3*/ virtual struct Scripting::Error _setPropertyError(std::string const &) const;
+    MCAPI ScriptObject(class Scripting::WeakLifetimeScope const &);
 
 protected:
 

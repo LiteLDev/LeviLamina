@@ -17,15 +17,15 @@ class TimerSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TIMERSYSTEM
 public:
-    class TimerSystem& operator=(class TimerSystem const&) = delete;
-    TimerSystem(class TimerSystem const&) = delete;
+    class TimerSystem& operator=(class TimerSystem const &) = delete;
+    TimerSystem(class TimerSystem const &) = delete;
     TimerSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~TimerSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

@@ -18,8 +18,8 @@ class ScriptUnderwaterMovementComponent : public AttributeScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTUNDERWATERMOVEMENTCOMPONENT
 public:
-    class ScriptUnderwaterMovementComponent& operator=(class ScriptUnderwaterMovementComponent const&) = delete;
-    ScriptUnderwaterMovementComponent(class ScriptUnderwaterMovementComponent const&) = delete;
+    class ScriptUnderwaterMovementComponent& operator=(class ScriptUnderwaterMovementComponent const &) = delete;
+    ScriptUnderwaterMovementComponent(class ScriptUnderwaterMovementComponent const &) = delete;
     ScriptUnderwaterMovementComponent() = delete;
 #endif
 

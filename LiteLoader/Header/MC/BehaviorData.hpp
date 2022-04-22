@@ -19,14 +19,14 @@ enum DataType;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEHAVIORDATA
 public:
-    class BehaviorData& operator=(class BehaviorData const&) = delete;
-    BehaviorData(class BehaviorData const&) = delete;
+    class BehaviorData& operator=(class BehaviorData const &) = delete;
+    BehaviorData(class BehaviorData const &) = delete;
     BehaviorData() = delete;
 #endif
 
 public:
-    MCAPI void copyData(std::string const&, std::string const&, class BehaviorData&);
-    MCAPI bool hasDataOfType(std::string const&, enum BehaviorData::DataType) const;
+    MCAPI void copyData(std::string const &, std::string const &, class BehaviorData &);
+    MCAPI bool hasDataOfType(std::string const &, enum BehaviorData::DataType) const;
 
 protected:
 

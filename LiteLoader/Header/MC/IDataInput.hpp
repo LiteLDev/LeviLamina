@@ -17,8 +17,8 @@ class IDataInput {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IDATAINPUT
 public:
-    class IDataInput& operator=(class IDataInput const&) = delete;
-    IDataInput(class IDataInput const&) = delete;
+    class IDataInput& operator=(class IDataInput const &) = delete;
+    IDataInput(class IDataInput const &) = delete;
     IDataInput() = delete;
 #endif
 

@@ -18,14 +18,14 @@ struct IsShearedDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISSHEAREDDEFINITION
 public:
-    struct IsShearedDefinition& operator=(struct IsShearedDefinition const&) = delete;
-    IsShearedDefinition(struct IsShearedDefinition const&) = delete;
+    struct IsShearedDefinition& operator=(struct IsShearedDefinition const &) = delete;
+    IsShearedDefinition(struct IsShearedDefinition const &) = delete;
     IsShearedDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&);
-    MCAPI void uninitialize(class EntityContext&);
+    MCAPI void initialize(class EntityContext &);
+    MCAPI void uninitialize(class EntityContext &);
 
 protected:
 

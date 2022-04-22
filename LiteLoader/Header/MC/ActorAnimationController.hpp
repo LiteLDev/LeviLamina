@@ -17,14 +17,14 @@ class ActorAnimationController {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORANIMATIONCONTROLLER
 public:
-    class ActorAnimationController& operator=(class ActorAnimationController const&) = delete;
-    ActorAnimationController(class ActorAnimationController const&) = delete;
+    class ActorAnimationController& operator=(class ActorAnimationController const &) = delete;
+    ActorAnimationController(class ActorAnimationController const &) = delete;
     ActorAnimationController() = delete;
 #endif
 
 public:
-    MCAPI class std::shared_ptr<class ActorAnimationControllerState>& addState(class HashedString const&);
-    MCAPI unsigned __int64 findStateIndex(std::string const&, bool, unsigned __int64) const;
+    MCAPI class std::shared_ptr<class ActorAnimationControllerState> & addState(class HashedString const &);
+    MCAPI unsigned __int64 findStateIndex(std::string const &, bool, unsigned __int64) const;
     MCAPI void resolveTransitionStateIndices();
 
 protected:

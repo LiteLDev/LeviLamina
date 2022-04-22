@@ -18,21 +18,21 @@ class HoverPathNavigation : public PathNavigation {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOVERPATHNAVIGATION
 public:
-    class HoverPathNavigation& operator=(class HoverPathNavigation const&) = delete;
-    HoverPathNavigation(class HoverPathNavigation const&) = delete;
+    class HoverPathNavigation& operator=(class HoverPathNavigation const &) = delete;
+    HoverPathNavigation(class HoverPathNavigation const &) = delete;
     HoverPathNavigation() = delete;
 #endif
 
 public:
     /*0*/ virtual ~HoverPathNavigation();
-    /*1*/ virtual void initializeInternal(class Mob&, struct NavigationDescription*);
-    /*2*/ virtual void tick(class NavigationComponent&, class Mob&);
-    /*3*/ virtual class Vec3 getTempMobPos(class Mob const&) const;
-    /*4*/ virtual std::unique_ptr<class Path> createPath(class NavigationComponent&, class Mob&, class Vec3 const&);
-    /*5*/ virtual std::unique_ptr<class Path> createPath(class NavigationComponent&, class Mob&, class Actor&);
-    /*9*/ virtual void stop(class NavigationComponent&, class Mob&);
-    /*11*/ virtual bool canUpdatePath(class Mob const&) const;
-    /*12*/ virtual void updatePath(class NavigationComponent&, class Mob&);
+    /*1*/ virtual void initializeInternal(class Mob &, struct NavigationDescription *);
+    /*2*/ virtual void tick(class NavigationComponent &, class Mob &);
+    /*3*/ virtual class Vec3 getTempMobPos(class Mob const &) const;
+    /*4*/ virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Vec3 const &);
+    /*5*/ virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Actor &);
+    /*9*/ virtual void stop(class NavigationComponent &, class Mob &);
+    /*11*/ virtual bool canUpdatePath(class Mob const &) const;
+    /*12*/ virtual void updatePath(class NavigationComponent &, class Mob &);
 
 protected:
 

@@ -15,14 +15,16 @@ class EntityRegistry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYREGISTRY
 public:
-    class EntityRegistry& operator=(class EntityRegistry const&) = delete;
-    EntityRegistry(class EntityRegistry const&) = delete;
+    class EntityRegistry& operator=(class EntityRegistry const &) = delete;
+    EntityRegistry(class EntityRegistry const &) = delete;
+    EntityRegistry() = delete;
 #endif
 
 public:
+    MCAPI ~EntityRegistry();
 
 protected:
-    MCAPI EntityRegistry();
+    MCAPI EntityRegistry(std::string);
 
 private:
 

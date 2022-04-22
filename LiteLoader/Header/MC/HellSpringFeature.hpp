@@ -18,15 +18,15 @@ class HellSpringFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HELLSPRINGFEATURE
 public:
-    class HellSpringFeature& operator=(class HellSpringFeature const&) = delete;
-    HellSpringFeature(class HellSpringFeature const&) = delete;
+    class HellSpringFeature& operator=(class HellSpringFeature const &) = delete;
+    HellSpringFeature(class HellSpringFeature const &) = delete;
     HellSpringFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~HellSpringFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /*
     inline  ~HellSpringFeature(){
          (HellSpringFeature::*rv)();
@@ -34,7 +34,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI HellSpringFeature(class Block const&, bool);
+    MCAPI HellSpringFeature(class Block const &, bool);
 
 protected:
 

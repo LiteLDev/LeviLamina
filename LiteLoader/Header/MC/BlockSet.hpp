@@ -15,8 +15,8 @@ class BlockSet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSET
 public:
-    class BlockSet& operator=(class BlockSet const&) = delete;
-    BlockSet(class BlockSet const&) = delete;
+    class BlockSet& operator=(class BlockSet const &) = delete;
+    BlockSet(class BlockSet const &) = delete;
     BlockSet() = delete;
 #endif
 

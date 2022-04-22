@@ -17,26 +17,26 @@ class TimerComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TIMERCOMPONENT
 public:
-    class TimerComponent& operator=(class TimerComponent const&) = delete;
-    TimerComponent(class TimerComponent const&) = delete;
+    class TimerComponent& operator=(class TimerComponent const &) = delete;
 #endif
 
 public:
-    MCAPI TimerComponent(class TimerComponent&&);
+    MCAPI TimerComponent(class TimerComponent &&);
+    MCAPI TimerComponent(class TimerComponent const &);
     MCAPI TimerComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag&);
+    MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI bool getHasExecuted() const;
     MCAPI bool getLooping() const;
-    MCAPI unsigned __int64 getTimeStamp(class Level const&);
-    MCAPI class TimerComponent& operator=(class TimerComponent&&);
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
-    MCAPI void restartTimer(class Actor&);
+    MCAPI unsigned __int64 getTimeStamp(class Level const &);
+    MCAPI class TimerComponent & operator=(class TimerComponent &&);
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
+    MCAPI void restartTimer(class Actor &);
     MCAPI void setHasExecuted(bool);
     MCAPI ~TimerComponent();
 
 protected:
 
 private:
-    MCAPI int getRandomTime(class Actor&);
+    MCAPI int getRandomTime(class Actor &);
 
 };

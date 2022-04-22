@@ -23,13 +23,13 @@ struct LockedChunk {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POSTPROCESSINGMANAGER
 public:
-    class PostprocessingManager& operator=(class PostprocessingManager const&) = delete;
-    PostprocessingManager(class PostprocessingManager const&) = delete;
+    class PostprocessingManager& operator=(class PostprocessingManager const &) = delete;
+    PostprocessingManager(class PostprocessingManager const &) = delete;
     PostprocessingManager() = delete;
 #endif
 
 public:
-    MCAPI class std::optional<std::vector<struct PostprocessingManager::LockedChunk> > tryLock(class ChunkPos const&, class ChunkSource&);
+    MCAPI class std::optional<std::vector<struct PostprocessingManager::LockedChunk>> tryLock(class ChunkPos const &, class ChunkSource &);
 
 protected:
 

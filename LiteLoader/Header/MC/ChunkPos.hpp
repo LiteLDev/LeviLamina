@@ -24,15 +24,15 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKPOS
 public:
-    class ChunkPos& operator=(class ChunkPos const&) = delete;
-    ChunkPos(class ChunkPos const&) = delete;
+    class ChunkPos& operator=(class ChunkPos const &) = delete;
+    ChunkPos(class ChunkPos const &) = delete;
     ChunkPos() = delete;
 #endif
 
 public:
-    MCAPI ChunkPos(class BlockPos const&);
-    MCAPI ChunkPos(class Vec3 const&);
-    MCAPI bool isWithinBounds(class ChunkPos const&, class ChunkPos const&) const;
+    MCAPI ChunkPos(class BlockPos const &);
+    MCAPI ChunkPos(class Vec3 const &);
+    MCAPI bool isWithinBounds(class ChunkPos const &, class ChunkPos const &) const;
     MCAPI class Vec3 toBlockSpaceVec3(float) const;
     MCAPI static class ChunkPos const INVALID;
     MCAPI static class ChunkPos const MAX;

@@ -14,8 +14,8 @@ namespace FlockingUtility {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI bool checkForSteeringCollision(class Actor&, class Vec3 const&, float, class Vec3&);
-    MCAPI void chooseRandomDirection(class Actor&, class Vec3&);
-    MCAPI void getWaterHeights(class Actor const&, float&, float&);
+    MCAPI bool checkForSteeringCollision(class Actor &, class Vec3 const &, float, class Vec3 &);
+    MCAPI void chooseRandomDirection(class Actor &, class Vec3 &);
+    MCAPI void getWaterHeights(class Actor const &, float &, float &);
 
 };

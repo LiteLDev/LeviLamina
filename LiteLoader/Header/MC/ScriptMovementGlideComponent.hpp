@@ -18,8 +18,8 @@ class ScriptMovementGlideComponent : public MovementScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMOVEMENTGLIDECOMPONENT
 public:
-    class ScriptMovementGlideComponent& operator=(class ScriptMovementGlideComponent const&) = delete;
-    ScriptMovementGlideComponent(class ScriptMovementGlideComponent const&) = delete;
+    class ScriptMovementGlideComponent& operator=(class ScriptMovementGlideComponent const &) = delete;
+    ScriptMovementGlideComponent(class ScriptMovementGlideComponent const &) = delete;
     ScriptMovementGlideComponent() = delete;
 #endif
 

@@ -18,13 +18,13 @@ struct SoundVolumeDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SOUNDVOLUMEDEFINITION
 public:
-    struct SoundVolumeDefinition& operator=(struct SoundVolumeDefinition const&) = delete;
-    SoundVolumeDefinition(struct SoundVolumeDefinition const&) = delete;
+    struct SoundVolumeDefinition& operator=(struct SoundVolumeDefinition const &) = delete;
+    SoundVolumeDefinition(struct SoundVolumeDefinition const &) = delete;
     SoundVolumeDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&);
+    MCAPI void initialize(class EntityContext &);
 
 protected:
 

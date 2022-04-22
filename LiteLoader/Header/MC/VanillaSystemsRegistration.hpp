@@ -15,7 +15,7 @@ namespace VanillaSystemsRegistration {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void registerSharedVanillaPlayerInteractionSystems(class EntitySystems&);
-    MCAPI void registerVanillaServerTickingSystems(class EntitySystems&, class Experiments const&, class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const> >);
+    MCAPI void registerSharedVanillaPlayerInteractionSystems(class EntitySystems &);
+    MCAPI void registerVanillaServerTickingSystems(class EntitySystems &, class Experiments const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>);
 
 };

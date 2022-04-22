@@ -15,13 +15,13 @@ struct BlockMaterialInstance {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKMATERIALINSTANCE
 public:
-    BlockMaterialInstance(struct BlockMaterialInstance const&) = delete;
+    BlockMaterialInstance(struct BlockMaterialInstance const &) = delete;
     BlockMaterialInstance() = delete;
 #endif
 
 public:
-    MCAPI struct BlockMaterialInstance& operator=(struct BlockMaterialInstance&&);
-    MCAPI struct BlockMaterialInstance& operator=(struct BlockMaterialInstance const&);
+    MCAPI struct BlockMaterialInstance & operator=(struct BlockMaterialInstance &&);
+    MCAPI struct BlockMaterialInstance & operator=(struct BlockMaterialInstance const &);
     MCAPI ~BlockMaterialInstance();
 
 protected:

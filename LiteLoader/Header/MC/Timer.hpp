@@ -17,8 +17,8 @@ class Timer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TIMER
 public:
-    class Timer& operator=(class Timer const&) = delete;
-    Timer(class Timer const&) = delete;
+    class Timer& operator=(class Timer const &) = delete;
+    Timer(class Timer const &) = delete;
     Timer() = delete;
 #endif
 

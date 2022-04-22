@@ -23,21 +23,21 @@ struct Constructor {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREALITEMCOMPONENTFACTORY
 public:
-    class CerealItemComponentFactory& operator=(class CerealItemComponentFactory const&) = delete;
-    CerealItemComponentFactory(class CerealItemComponentFactory const&) = delete;
+    class CerealItemComponentFactory& operator=(class CerealItemComponentFactory const &) = delete;
+    CerealItemComponentFactory(class CerealItemComponentFactory const &) = delete;
     CerealItemComponentFactory() = delete;
 #endif
 
 public:
-    MCAPI static class entt::meta_any constructComponent(std::string const&);
-    MCAPI static class std::shared_ptr<class ItemComponent> constructItemComponent(std::string const&);
-    MCAPI static class entt::meta_any getComponent(std::string const&, void*);
-    MCAPI static void setItemContext(class ComponentItem*);
+    MCAPI static class entt::meta_any constructComponent(std::string const &);
+    MCAPI static class std::shared_ptr<class ItemComponent> constructItemComponent(std::string const &);
+    MCAPI static class entt::meta_any getComponent(std::string const &, void *);
+    MCAPI static void setItemContext(class ComponentItem *);
 
 protected:
 
 private:
-    MCAPI static class ComponentItem* mItemContext;
-    MCAPI static class std::map<std::string, struct CerealItemComponentFactory::Constructor, struct std::less<std::string >, class std::allocator<struct std::pair<std::string const, struct CerealItemComponentFactory::Constructor> > > mRegisteredComponents;
+    MCAPI static class ComponentItem * mItemContext;
+    MCAPI static class std::map<std::string, struct CerealItemComponentFactory::Constructor, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, struct CerealItemComponentFactory::Constructor>>> mRegisteredComponents;
 
 };

@@ -17,20 +17,20 @@ class DripstoneClusterFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRIPSTONECLUSTERFEATURE
 public:
-    class DripstoneClusterFeature& operator=(class DripstoneClusterFeature const&) = delete;
-    DripstoneClusterFeature(class DripstoneClusterFeature const&) = delete;
+    class DripstoneClusterFeature& operator=(class DripstoneClusterFeature const &) = delete;
+    DripstoneClusterFeature(class DripstoneClusterFeature const &) = delete;
     DripstoneClusterFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~DripstoneClusterFeature();
-    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 
 protected:
 
 private:
-    MCAPI static int _getDripstoneHeight(class Random&, int, int, float, int);
-    MCAPI static bool _placeColumn(class IBlockWorldGenAPI&, class Random&, class BlockPos const&, int, int, float, double, int, float);
-    MCAPI static void _replaceBlocksWithDripstoneBlocks(class IBlockWorldGenAPI&, class BlockPos const&, int, unsigned char);
+    MCAPI static int _getDripstoneHeight(class Random &, int, int, float, int);
+    MCAPI static bool _placeColumn(class IBlockWorldGenAPI &, class Random &, class BlockPos const &, int, int, float, double, int, float);
+    MCAPI static void _replaceBlocksWithDripstoneBlocks(class IBlockWorldGenAPI &, class BlockPos const &, int, unsigned char);
 
 };

@@ -18,13 +18,13 @@ class BarterDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BARTERDEFINITION
 public:
-    class BarterDefinition& operator=(class BarterDefinition const&) = delete;
-    BarterDefinition(class BarterDefinition const&) = delete;
+    class BarterDefinition& operator=(class BarterDefinition const &) = delete;
+    BarterDefinition(class BarterDefinition const &) = delete;
     BarterDefinition() = delete;
 #endif
 
 public:
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BarterDefinition> >&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BarterDefinition>> &);
 
 protected:
 

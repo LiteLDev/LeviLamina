@@ -18,8 +18,8 @@ class ScriptLavaMovementComponent : public AttributeScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTLAVAMOVEMENTCOMPONENT
 public:
-    class ScriptLavaMovementComponent& operator=(class ScriptLavaMovementComponent const&) = delete;
-    ScriptLavaMovementComponent(class ScriptLavaMovementComponent const&) = delete;
+    class ScriptLavaMovementComponent& operator=(class ScriptLavaMovementComponent const &) = delete;
+    ScriptLavaMovementComponent(class ScriptLavaMovementComponent const &) = delete;
     ScriptLavaMovementComponent() = delete;
 #endif
 

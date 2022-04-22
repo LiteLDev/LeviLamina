@@ -17,14 +17,14 @@ class ScanSurfaceFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCANSURFACEFEATURE
 public:
-    class ScanSurfaceFeature& operator=(class ScanSurfaceFeature const&) = delete;
-    ScanSurfaceFeature(class ScanSurfaceFeature const&) = delete;
+    class ScanSurfaceFeature& operator=(class ScanSurfaceFeature const &) = delete;
+    ScanSurfaceFeature(class ScanSurfaceFeature const &) = delete;
     ScanSurfaceFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScanSurfaceFeature();
-    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 
 protected:
 

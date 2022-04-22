@@ -17,8 +17,8 @@ class BedrockItems {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCKITEMS
 public:
-    class BedrockItems& operator=(class BedrockItems const&) = delete;
-    BedrockItems(class BedrockItems const&) = delete;
+    class BedrockItems& operator=(class BedrockItems const &) = delete;
+    BedrockItems(class BedrockItems const &) = delete;
     BedrockItems() = delete;
 #endif
 

@@ -17,17 +17,17 @@ class BehaviorNode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEHAVIORNODE
 public:
-    class BehaviorNode& operator=(class BehaviorNode const&) = delete;
-    BehaviorNode(class BehaviorNode const&) = delete;
+    class BehaviorNode& operator=(class BehaviorNode const &) = delete;
+    BehaviorNode(class BehaviorNode const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~BehaviorNode();
     /*
-    inline void initializeFromDefinition(class Actor& a0){
-        void (BehaviorNode::*rv)(class Actor&);
+    inline void initializeFromDefinition(class Actor & a0){
+        void (BehaviorNode::*rv)(class Actor &);
         *((void**)&rv) = dlsym("?initializeFromDefinition@BehaviorNode@@MEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
+        return (this->*rv)(std::forward<class Actor &>(a0));
     }
     inline  ~BehaviorNode(){
          (BehaviorNode::*rv)();
@@ -36,7 +36,7 @@ public:
     }
     */
     MCAPI BehaviorNode();
-    MCAPI class BehaviorData& getBehaviorData();
+    MCAPI class BehaviorData & getBehaviorData();
 
 protected:
 

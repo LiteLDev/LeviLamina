@@ -15,8 +15,8 @@ struct ChemistryIngredient {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHEMISTRYINGREDIENT
 public:
-    struct ChemistryIngredient& operator=(struct ChemistryIngredient const&) = delete;
-    ChemistryIngredient(struct ChemistryIngredient const&) = delete;
+    struct ChemistryIngredient& operator=(struct ChemistryIngredient const &) = delete;
+    ChemistryIngredient(struct ChemistryIngredient const &) = delete;
     ChemistryIngredient() = delete;
 #endif
 

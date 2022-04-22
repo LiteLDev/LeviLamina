@@ -15,8 +15,8 @@ class EducationLocalLevelSettings {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUCATIONLOCALLEVELSETTINGS
 public:
-    class EducationLocalLevelSettings& operator=(class EducationLocalLevelSettings const&) = delete;
-    EducationLocalLevelSettings(class EducationLocalLevelSettings const&) = delete;
+    class EducationLocalLevelSettings& operator=(class EducationLocalLevelSettings const &) = delete;
+    EducationLocalLevelSettings(class EducationLocalLevelSettings const &) = delete;
     EducationLocalLevelSettings() = delete;
 #endif
 

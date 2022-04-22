@@ -17,8 +17,8 @@ struct CodeScreenCapabilities {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CODESCREENCAPABILITIES
 public:
-    struct CodeScreenCapabilities& operator=(struct CodeScreenCapabilities const&) = delete;
-    CodeScreenCapabilities(struct CodeScreenCapabilities const&) = delete;
+    struct CodeScreenCapabilities& operator=(struct CodeScreenCapabilities const &) = delete;
+    CodeScreenCapabilities(struct CodeScreenCapabilities const &) = delete;
     CodeScreenCapabilities() = delete;
 #endif
 

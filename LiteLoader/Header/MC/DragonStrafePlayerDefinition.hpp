@@ -18,15 +18,15 @@ class DragonStrafePlayerDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONSTRAFEPLAYERDEFINITION
 public:
-    class DragonStrafePlayerDefinition& operator=(class DragonStrafePlayerDefinition const&) = delete;
-    DragonStrafePlayerDefinition(class DragonStrafePlayerDefinition const&) = delete;
+    class DragonStrafePlayerDefinition& operator=(class DragonStrafePlayerDefinition const &) = delete;
+    DragonStrafePlayerDefinition(class DragonStrafePlayerDefinition const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~DragonStrafePlayerDefinition();
     MCAPI DragonStrafePlayerDefinition();
-    MCAPI void initialize(class EntityContext&, class DragonStrafePlayerGoal&);
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonStrafePlayerDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class DragonStrafePlayerGoal &);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonStrafePlayerDefinition>> &);
 
 protected:
 

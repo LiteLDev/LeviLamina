@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class KillCommand {
+class KillCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,15 +18,15 @@ class KillCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_KILLCOMMAND
 public:
-    class KillCommand& operator=(class KillCommand const&) = delete;
-    KillCommand(class KillCommand const&) = delete;
+    class KillCommand& operator=(class KillCommand const &) = delete;
+    KillCommand(class KillCommand const &) = delete;
     KillCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~KillCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 

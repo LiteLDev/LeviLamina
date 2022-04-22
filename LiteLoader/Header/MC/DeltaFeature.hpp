@@ -18,20 +18,20 @@ class DeltaFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DELTAFEATURE
 public:
-    class DeltaFeature& operator=(class DeltaFeature const&) = delete;
-    DeltaFeature(class DeltaFeature const&) = delete;
+    class DeltaFeature& operator=(class DeltaFeature const &) = delete;
+    DeltaFeature(class DeltaFeature const &) = delete;
     DeltaFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~DeltaFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 protected:
 
 private:
-    MCAPI class std::optional<class BlockPos> _findDeltaLevel(class BlockSource&, class BlockPos) const;
-    MCAPI bool _isValidPlacement(class BlockSource&, class BlockPos) const;
+    MCAPI class std::optional<class BlockPos> _findDeltaLevel(class BlockSource &, class BlockPos) const;
+    MCAPI bool _isValidPlacement(class BlockSource &, class BlockPos) const;
 
 };

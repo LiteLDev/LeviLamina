@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Json.hpp"
 #include "JsonUtil.hpp"
 
 #define BEFORE_EXTRA
@@ -19,18 +18,15 @@ class ShooterDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHOOTERDEFINITION
 public:
-    class ShooterDefinition& operator=(class ShooterDefinition const&) = delete;
-    ShooterDefinition(class ShooterDefinition const&) = delete;
+    class ShooterDefinition& operator=(class ShooterDefinition const &) = delete;
+    ShooterDefinition(class ShooterDefinition const &) = delete;
 #endif
 
 public:
     MCAPI ShooterDefinition();
-    MCAPI void deserializeData(class Json::Value const&, class SemVersion const&);
-    MCAPI void initialize(class EntityContext&, class ShooterComponent&) const;
-    MCAPI void serializeData(class Json::Value&) const;
-    MCAPI void setActorDefByName(std::string const&);
-    MCAPI ~ShooterDefinition();
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ShooterDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class ShooterComponent &) const;
+    MCAPI void setActorDefByName(std::string const &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ShooterDefinition>> &);
 
 protected:
 

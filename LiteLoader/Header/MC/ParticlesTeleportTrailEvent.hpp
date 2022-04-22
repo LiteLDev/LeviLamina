@@ -17,8 +17,8 @@ class ParticlesTeleportTrailEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARTICLESTELEPORTTRAILEVENT
 public:
-    class ParticlesTeleportTrailEvent& operator=(class ParticlesTeleportTrailEvent const&) = delete;
-    ParticlesTeleportTrailEvent(class ParticlesTeleportTrailEvent const&) = delete;
+    class ParticlesTeleportTrailEvent& operator=(class ParticlesTeleportTrailEvent const &) = delete;
+    ParticlesTeleportTrailEvent(class ParticlesTeleportTrailEvent const &) = delete;
     ParticlesTeleportTrailEvent() = delete;
 #endif
 

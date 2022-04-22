@@ -20,14 +20,14 @@ enum ParseResult;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDPACKSHISTORYFILE
 public:
-    class WorldPacksHistoryFile& operator=(class WorldPacksHistoryFile const&) = delete;
-    WorldPacksHistoryFile(class WorldPacksHistoryFile const&) = delete;
+    class WorldPacksHistoryFile& operator=(class WorldPacksHistoryFile const &) = delete;
+    WorldPacksHistoryFile(class WorldPacksHistoryFile const &) = delete;
 #endif
 
 public:
     MCAPI WorldPacksHistoryFile();
-    MCAPI std::vector<class WorldPackHistory> const& getPacks() const;
-    MCAPI enum WorldPacksHistoryFile::ParseResult initializeFromJson(class Json::Value const&);
+    MCAPI std::vector<class WorldPackHistory> const & getPacks() const;
+    MCAPI enum WorldPacksHistoryFile::ParseResult initializeFromJson(class Json::Value const &);
     MCAPI ~WorldPacksHistoryFile();
 
 protected:

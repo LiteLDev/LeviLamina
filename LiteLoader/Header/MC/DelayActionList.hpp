@@ -17,15 +17,15 @@ class DelayActionList {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DELAYACTIONLIST
 public:
-    class DelayActionList& operator=(class DelayActionList const&) = delete;
-    DelayActionList(class DelayActionList const&) = delete;
+    class DelayActionList& operator=(class DelayActionList const &) = delete;
+    DelayActionList(class DelayActionList const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~DelayActionList();
     MCAPI DelayActionList();
-    MCAPI enum QueueRequestResult queueRequestOrExecuteAction(class DelayRequest, class ServerLevel&, class Dimension&, unsigned __int64, bool);
-    MCAPI void tick(class ServerLevel&, class Dimension&, unsigned __int64);
+    MCAPI enum QueueRequestResult queueRequestOrExecuteAction(class DelayRequest, class ServerLevel &, class Dimension &, unsigned __int64, bool);
+    MCAPI void tick(class ServerLevel &, class Dimension &, unsigned __int64);
 
 protected:
 

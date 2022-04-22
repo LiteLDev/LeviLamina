@@ -17,8 +17,8 @@ class PlaySoundReactionComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYSOUNDREACTIONCOMPONENT
 public:
-    class PlaySoundReactionComponent& operator=(class PlaySoundReactionComponent const&) = delete;
-    PlaySoundReactionComponent(class PlaySoundReactionComponent const&) = delete;
+    class PlaySoundReactionComponent& operator=(class PlaySoundReactionComponent const &) = delete;
+    PlaySoundReactionComponent(class PlaySoundReactionComponent const &) = delete;
     PlaySoundReactionComponent() = delete;
 #endif
 
@@ -26,7 +26,7 @@ public:
     /*0*/ virtual ~PlaySoundReactionComponent();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual void _onEnd(class LabTableReaction&, class BlockSource&);
+    /*3*/ virtual void _onEnd(class LabTableReaction &, class BlockSource &);
 
 protected:
 

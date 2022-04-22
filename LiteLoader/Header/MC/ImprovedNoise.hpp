@@ -17,18 +17,18 @@ class ImprovedNoise {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IMPROVEDNOISE
 public:
-    class ImprovedNoise& operator=(class ImprovedNoise const&) = delete;
-    ImprovedNoise(class ImprovedNoise const&) = delete;
+    class ImprovedNoise& operator=(class ImprovedNoise const &) = delete;
+    ImprovedNoise(class ImprovedNoise const &) = delete;
     ImprovedNoise() = delete;
 #endif
 
 public:
-    MCAPI void _readArea(float*, class Vec3 const&, int, int, int, class Vec3 const&, float) const;
+    MCAPI void _readArea(float *, class Vec3 const &, int, int, int, class Vec3 const &, float) const;
 
 protected:
 
 private:
-    MCAPI void _blendCubeCorners(class Vec3 const&, int, int, int, float, float&, float&, float&, float&) const;
-    MCAPI void _init(class Vec3 const&, class IRandom&, struct YBlendingBugSettings);
+    MCAPI void _blendCubeCorners(class Vec3 const &, int, int, int, float, float &, float &, float &, float &) const;
+    MCAPI void _init(class Vec3 const &, class IRandom &, struct YBlendingBugSettings);
 
 };

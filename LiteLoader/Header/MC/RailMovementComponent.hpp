@@ -17,15 +17,15 @@ class RailMovementComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAILMOVEMENTCOMPONENT
 public:
-    class RailMovementComponent& operator=(class RailMovementComponent const&) = delete;
-    RailMovementComponent(class RailMovementComponent const&) = delete;
+    class RailMovementComponent& operator=(class RailMovementComponent const &) = delete;
+    RailMovementComponent(class RailMovementComponent const &) = delete;
 #endif
 
 public:
     MCAPI RailMovementComponent();
-    MCAPI bool canSnapOnRail(class Actor const&, class BlockPos&);
-    MCAPI void comeOffTrack(class Actor&);
-    MCAPI void moveAlongTrack(class Actor&, class Block const&, class BlockPos const&);
+    MCAPI bool canSnapOnRail(class Actor const &, class BlockPos &);
+    MCAPI void comeOffTrack(class Actor &);
+    MCAPI void moveAlongTrack(class Actor &, class Block const &, class BlockPos const &);
 
 protected:
 

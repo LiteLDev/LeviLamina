@@ -15,8 +15,8 @@ struct NetworkAddress {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKADDRESS
 public:
-    struct NetworkAddress& operator=(struct NetworkAddress const&) = delete;
-    NetworkAddress(struct NetworkAddress const&) = delete;
+    struct NetworkAddress& operator=(struct NetworkAddress const &) = delete;
+    NetworkAddress(struct NetworkAddress const &) = delete;
     NetworkAddress() = delete;
 #endif
 

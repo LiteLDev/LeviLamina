@@ -17,13 +17,13 @@ class ActorAnimationControllerPtr {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORANIMATIONCONTROLLERPTR
 public:
-    class ActorAnimationControllerPtr& operator=(class ActorAnimationControllerPtr const&) = delete;
-    ActorAnimationControllerPtr(class ActorAnimationControllerPtr const&) = delete;
+    class ActorAnimationControllerPtr& operator=(class ActorAnimationControllerPtr const &) = delete;
+    ActorAnimationControllerPtr(class ActorAnimationControllerPtr const &) = delete;
     ActorAnimationControllerPtr() = delete;
 #endif
 
 public:
-    MCAPI class HashedString const& getName() const;
+    MCAPI class HashedString const & getName() const;
     MCAPI bool isNull() const;
     MCAPI ~ActorAnimationControllerPtr();
     MCAPI static class ActorAnimationControllerPtr const NONE;

@@ -17,13 +17,13 @@ class Explosion {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPLOSION
 public:
-    class Explosion& operator=(class Explosion const&) = delete;
-    Explosion(class Explosion const&) = delete;
+    class Explosion& operator=(class Explosion const &) = delete;
+    Explosion(class Explosion const &) = delete;
     Explosion() = delete;
 #endif
 
 public:
-    MCAPI Explosion(class BlockSource&, class Actor*, class Vec3 const&, float);
+    MCAPI Explosion(class BlockSource &, class Actor *, class Vec3 const &, float);
     MCAPI void explode();
     MCAPI void overrideInWater(bool);
     MCAPI void setAllowUnderwater(bool);

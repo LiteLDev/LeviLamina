@@ -17,15 +17,15 @@ class DamageOverTimeSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAMAGEOVERTIMESYSTEM
 public:
-    class DamageOverTimeSystem& operator=(class DamageOverTimeSystem const&) = delete;
-    DamageOverTimeSystem(class DamageOverTimeSystem const&) = delete;
+    class DamageOverTimeSystem& operator=(class DamageOverTimeSystem const &) = delete;
+    DamageOverTimeSystem(class DamageOverTimeSystem const &) = delete;
     DamageOverTimeSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~DamageOverTimeSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

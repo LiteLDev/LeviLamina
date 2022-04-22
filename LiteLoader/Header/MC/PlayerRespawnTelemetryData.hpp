@@ -18,13 +18,13 @@ class PlayerRespawnTelemetryData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERRESPAWNTELEMETRYDATA
 public:
-    class PlayerRespawnTelemetryData& operator=(class PlayerRespawnTelemetryData const&) = delete;
-    PlayerRespawnTelemetryData(class PlayerRespawnTelemetryData const&) = delete;
+    class PlayerRespawnTelemetryData& operator=(class PlayerRespawnTelemetryData const &) = delete;
+    PlayerRespawnTelemetryData(class PlayerRespawnTelemetryData const &) = delete;
     PlayerRespawnTelemetryData() = delete;
 #endif
 
 public:
-    MCAPI void WriteEventData(class Social::Events::Event&) const;
+    MCAPI void WriteEventData(class Social::Events::Event &) const;
 
 protected:
 

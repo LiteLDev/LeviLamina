@@ -18,8 +18,8 @@ class FoodItemComponentLegacy {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOODITEMCOMPONENTLEGACY
 public:
-    class FoodItemComponentLegacy& operator=(class FoodItemComponentLegacy const&) = delete;
-    FoodItemComponentLegacy(class FoodItemComponentLegacy const&) = delete;
+    class FoodItemComponentLegacy& operator=(class FoodItemComponentLegacy const &) = delete;
+    FoodItemComponentLegacy(class FoodItemComponentLegacy const &) = delete;
     FoodItemComponentLegacy() = delete;
 #endif
 
@@ -28,9 +28,9 @@ public:
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual class Item const* eatItem(class ItemStack&, class Actor&, class Level&);
-    /*5*/ virtual bool use(class ItemStack&, class Player&);
-    /*6*/ virtual class Item const* useTimeDepleted(class ItemStack&, class Player&, class Level&);
+    /*4*/ virtual class Item const * eatItem(class ItemStack &, class Actor &, class Level &);
+    /*5*/ virtual bool use(class ItemStack &, class Player &);
+    /*6*/ virtual class Item const * useTimeDepleted(class ItemStack &, class Player &, class Level &);
     /*
     inline float getSaturationModifier() const{
         float (FoodItemComponentLegacy::*rv)() const;
@@ -48,16 +48,16 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI FoodItemComponentLegacy(class Item&);
+    MCAPI FoodItemComponentLegacy(class Item &);
     MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    MCAPI bool init(class Json::Value&, class SemVersion const&);
-    MCAPI static class Json::Value initializeFromNetwork(class CompoundTag const&);
+    MCAPI bool init(class Json::Value &, class SemVersion const &);
+    MCAPI static class Json::Value initializeFromNetwork(class CompoundTag const &);
 
 protected:
 
 private:
-    MCAPI void _applyEatEffects(class ItemStack const&, class Actor&, class Level&);
-    MCAPI void _loadEffects(class Json::Value&);
-    MCAPI void _loadRemoveEffects(class Json::Value&);
+    MCAPI void _applyEatEffects(class ItemStack const &, class Actor &, class Level &);
+    MCAPI void _loadEffects(class Json::Value &);
+    MCAPI void _loadRemoveEffects(class Json::Value &);
 
 };

@@ -15,8 +15,8 @@ struct OnStepOffTrigger {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONSTEPOFFTRIGGER
 public:
-    struct OnStepOffTrigger& operator=(struct OnStepOffTrigger const&) = delete;
-    OnStepOffTrigger(struct OnStepOffTrigger const&) = delete;
+    struct OnStepOffTrigger& operator=(struct OnStepOffTrigger const &) = delete;
+    OnStepOffTrigger(struct OnStepOffTrigger const &) = delete;
     OnStepOffTrigger() = delete;
 #endif
 

@@ -19,14 +19,14 @@ class LookAtActorDefinition : public BehaviorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATACTORDEFINITION
 public:
-    class LookAtActorDefinition& operator=(class LookAtActorDefinition const&) = delete;
-    LookAtActorDefinition(class LookAtActorDefinition const&) = delete;
+    class LookAtActorDefinition& operator=(class LookAtActorDefinition const &) = delete;
+    LookAtActorDefinition(class LookAtActorDefinition const &) = delete;
     LookAtActorDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LookAtActorDefinition();
-    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 
 protected:
 

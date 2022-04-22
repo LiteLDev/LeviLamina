@@ -18,21 +18,21 @@ class CraftHandlerEnchant : public CraftHandlerBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTHANDLERENCHANT
 public:
-    class CraftHandlerEnchant& operator=(class CraftHandlerEnchant const&) = delete;
-    CraftHandlerEnchant(class CraftHandlerEnchant const&) = delete;
+    class CraftHandlerEnchant& operator=(class CraftHandlerEnchant const &) = delete;
+    CraftHandlerEnchant(class CraftHandlerEnchant const &) = delete;
     CraftHandlerEnchant() = delete;
 #endif
 
 public:
     /*0*/ virtual ~CraftHandlerEnchant();
     /*3*/ virtual void endRequestBatch();
-    /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+    /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /*5*/ virtual void _postCraftRequest(bool);
 
 protected:
 
 private:
-    MCAPI class EnchantingContainerManagerModel& _getEnchantingModel() const;
-    MCAPI enum ItemStackNetResult _handleEnchant(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 12> const&);
+    MCAPI class EnchantingContainerManagerModel & _getEnchantingModel() const;
+    MCAPI enum ItemStackNetResult _handleEnchant(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 12> const &);
 
 };

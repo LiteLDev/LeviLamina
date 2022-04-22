@@ -23,17 +23,17 @@ inline class ItemStack const& getItem(int a0) const
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLESPARSECONTAINER
 public:
-    class SimpleSparseContainer& operator=(class SimpleSparseContainer const&) = delete;
-    SimpleSparseContainer(class SimpleSparseContainer const&) = delete;
+    class SimpleSparseContainer& operator=(class SimpleSparseContainer const &) = delete;
+    SimpleSparseContainer(class SimpleSparseContainer const &) = delete;
     SimpleSparseContainer() = delete;
 #endif
 
 public:
     /*
-    inline void serverInitItemStackIds(int a0, int a1, class std::function<void (int, class ItemStack const& )> a2){
-        void (SimpleSparseContainer::*rv)(int, int, class std::function<void (int, class ItemStack const& )>);
+    inline void serverInitItemStackIds(int a0, int a1, class std::function<void (int, class ItemStack const &)> a2){
+        void (SimpleSparseContainer::*rv)(int, int, class std::function<void (int, class ItemStack const &)>);
         *((void**)&rv) = dlsym("?serverInitItemStackIds@SimpleSparseContainer@@EEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<class std::function<void (int, class ItemStack const& )>>(a2));
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<class std::function<void (int, class ItemStack const &)>>(a2));
     }
     inline void containerContentChanged(int a0){
         void (SimpleSparseContainer::*rv)(int);
@@ -45,8 +45,8 @@ public:
         *((void**)&rv) = dlsym("?getContainerSize@SimpleSparseContainer@@UEBAHXZ");
         return (this->*rv)();
     }
-    inline class ItemStack const& getItem(int a0) const{
-        class ItemStack const& (SimpleSparseContainer::*rv)(int) const;
+    inline class ItemStack const & getItem(int a0) const{
+        class ItemStack const & (SimpleSparseContainer::*rv)(int) const;
         *((void**)&rv) = dlsym("?getItem@SimpleSparseContainer@@UEBAAEBVItemStack@@H@Z");
         return (this->*rv)(std::forward<int>(a0));
     }
@@ -55,29 +55,29 @@ public:
         *((void**)&rv) = dlsym("?getMaxStackSize@SimpleSparseContainer@@UEBAHXZ");
         return (this->*rv)();
     }
-    inline void setItem(int a0, class ItemStack const& a1){
-        void (SimpleSparseContainer::*rv)(int, class ItemStack const&);
+    inline void setItem(int a0, class ItemStack const & a1){
+        void (SimpleSparseContainer::*rv)(int, class ItemStack const &);
         *((void**)&rv) = dlsym("?setItem@SimpleSparseContainer@@UEAAXHAEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStack const&>(a1));
+        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStack const &>(a1));
     }
-    inline void startOpen(class Player& a0){
-        void (SimpleSparseContainer::*rv)(class Player&);
+    inline void startOpen(class Player & a0){
+        void (SimpleSparseContainer::*rv)(class Player &);
         *((void**)&rv) = dlsym("?startOpen@SimpleSparseContainer@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0));
+        return (this->*rv)(std::forward<class Player &>(a0));
     }
-    inline void stopOpen(class Player& a0){
-        void (SimpleSparseContainer::*rv)(class Player&);
+    inline void stopOpen(class Player & a0){
+        void (SimpleSparseContainer::*rv)(class Player &);
         *((void**)&rv) = dlsym("?stopOpen@SimpleSparseContainer@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0));
+        return (this->*rv)(std::forward<class Player &>(a0));
     }
     */
-    MCAPI SimpleSparseContainer(class Container&, enum SparseContainerBackingSetType, std::unique_ptr<class ISparseContainerSetListener>, std::unique_ptr<class IPlayerContainerSetter>);
+    MCAPI SimpleSparseContainer(class Container &, enum SparseContainerBackingSetType, std::unique_ptr<class ISparseContainerSetListener>, std::unique_ptr<class IPlayerContainerSetter>);
     MCAPI void clearItem(int);
     MCAPI void pushAllToBackingContainer();
 
 protected:
 
 private:
-    MCAPI void _setBackingContainerSlot(int, class ItemStack const&);
+    MCAPI void _setBackingContainerSlot(int, class ItemStack const &);
 
 };

@@ -17,21 +17,21 @@ class CSHA1 {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CSHA1
 public:
-    class CSHA1& operator=(class CSHA1 const&) = delete;
-    CSHA1(class CSHA1 const&) = delete;
+    class CSHA1& operator=(class CSHA1 const &) = delete;
+    CSHA1(class CSHA1 const &) = delete;
 #endif
 
 public:
     MCAPI CSHA1();
     MCAPI void Final();
-    MCAPI unsigned char* GetHash() const;
+    MCAPI unsigned char * GetHash() const;
     MCAPI void Reset();
-    MCAPI void Update(unsigned char const*, unsigned int);
+    MCAPI void Update(unsigned char const *, unsigned int);
     MCAPI ~CSHA1();
 
 protected:
 
 private:
-    MCAPI void Transform(unsigned int*, unsigned char const*);
+    MCAPI void Transform(unsigned int *, unsigned char const *);
 
 };

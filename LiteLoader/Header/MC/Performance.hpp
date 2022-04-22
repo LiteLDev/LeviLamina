@@ -17,8 +17,8 @@ class Performance {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERFORMANCE
 public:
-    class Performance& operator=(class Performance const&) = delete;
-    Performance(class Performance const&) = delete;
+    class Performance& operator=(class Performance const &) = delete;
+    Performance(class Performance const &) = delete;
     Performance() = delete;
 #endif
 

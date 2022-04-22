@@ -15,21 +15,21 @@ class LevelChunkTickingSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCHUNKTICKINGSYSTEM
 public:
-    class LevelChunkTickingSystem& operator=(class LevelChunkTickingSystem const&) = delete;
-    LevelChunkTickingSystem(class LevelChunkTickingSystem const&) = delete;
+    class LevelChunkTickingSystem& operator=(class LevelChunkTickingSystem const &) = delete;
+    LevelChunkTickingSystem(class LevelChunkTickingSystem const &) = delete;
     LevelChunkTickingSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LevelChunkTickingSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 
 private:
-    MCAPI static void _determineLevelChunksToTick(class Actor const&, class BlockSource&, class LoadedChunksComponent&, std::vector<class std::shared_ptr<class LevelChunk>>&, std::vector<class std::shared_ptr<class LevelChunk>>&, struct Tick const&);
-    MCAPI static void _tickLevelChunksAroundActor(class Actor&, class BlockSource&, class LoadedChunksComponent&);
-    MCAPI static void _tickLevelChunksAroundActorView(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorFlag>, class BlockSourceComponent, class LoadedChunksComponent>&);
+    MCAPI static void _determineLevelChunksToTick(class Actor const &, class BlockSource &, class LoadedChunksComponent &, std::vector<class std::shared_ptr<class LevelChunk>> &, std::vector<class std::shared_ptr<class LevelChunk>> &, struct Tick const &);
+    MCAPI static void _tickLevelChunksAroundActor(class Actor &, class BlockSource &, class LoadedChunksComponent &);
+    MCAPI static void _tickLevelChunksAroundActorView(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorFlag>, class BlockSourceComponent, class LoadedChunksComponent> &);
 
 };

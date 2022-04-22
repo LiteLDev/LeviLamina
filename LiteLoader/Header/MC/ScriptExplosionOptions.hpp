@@ -17,8 +17,8 @@ struct ScriptExplosionOptions {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTEXPLOSIONOPTIONS
 public:
-    struct ScriptExplosionOptions& operator=(struct ScriptExplosionOptions const&) = delete;
-    ScriptExplosionOptions(struct ScriptExplosionOptions const&) = delete;
+    struct ScriptExplosionOptions& operator=(struct ScriptExplosionOptions const &) = delete;
+    ScriptExplosionOptions(struct ScriptExplosionOptions const &) = delete;
     ScriptExplosionOptions() = delete;
 #endif
 

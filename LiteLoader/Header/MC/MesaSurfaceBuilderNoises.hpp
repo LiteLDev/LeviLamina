@@ -17,18 +17,18 @@ class MesaSurfaceBuilderNoises {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MESASURFACEBUILDERNOISES
 public:
-    class MesaSurfaceBuilderNoises& operator=(class MesaSurfaceBuilderNoises const&) = delete;
-    MesaSurfaceBuilderNoises(class MesaSurfaceBuilderNoises const&) = delete;
+    class MesaSurfaceBuilderNoises& operator=(class MesaSurfaceBuilderNoises const &) = delete;
+    MesaSurfaceBuilderNoises(class MesaSurfaceBuilderNoises const &) = delete;
     MesaSurfaceBuilderNoises() = delete;
 #endif
 
 public:
     MCAPI ~MesaSurfaceBuilderNoises();
-    MCAPI static class MesaSurfaceBuilderNoises make(class XoroshiroPositionalRandomFactory const&);
+    MCAPI static class MesaSurfaceBuilderNoises make(class XoroshiroPositionalRandomFactory const &);
 
 protected:
 
 private:
-    MCAPI MesaSurfaceBuilderNoises(class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0> > >, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0> > >, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0> > >, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0> > >);
+    MCAPI MesaSurfaceBuilderNoises(class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>);
 
 };

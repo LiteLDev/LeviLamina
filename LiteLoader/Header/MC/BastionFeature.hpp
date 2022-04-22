@@ -18,24 +18,19 @@ class BastionFeature : public StructureFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASTIONFEATURE
 public:
-    class BastionFeature& operator=(class BastionFeature const&) = delete;
-    BastionFeature(class BastionFeature const&) = delete;
+    class BastionFeature& operator=(class BastionFeature const &) = delete;
+    BastionFeature(class BastionFeature const &) = delete;
     BastionFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BastionFeature();
-    /*2*/ virtual bool getNearestGeneratedFeature(class Dimension&, class BiomeSource const&, class BlockPos const&, class BlockPos&, class IPreliminarySurfaceProvider const&, bool);
-    /*3*/ virtual bool isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&);
-    /*4*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
-    /*
-    inline  ~BastionFeature(){
-         (BastionFeature::*rv)();
-        *((void**)&rv) = dlsym("??1BastionFeature@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
-    MCAPI BastionFeature(unsigned int, class BaseGameVersion const&);
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual bool shouldPostProcessMobs() const;
+    /*3*/ virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
+    /*5*/ virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &);
+    /*6*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
+    MCAPI BastionFeature(unsigned int, class BaseGameVersion const &);
 
 protected:
 

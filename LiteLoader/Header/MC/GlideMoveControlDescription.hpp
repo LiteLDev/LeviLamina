@@ -18,16 +18,16 @@ class GlideMoveControlDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLIDEMOVECONTROLDESCRIPTION
 public:
-    class GlideMoveControlDescription& operator=(class GlideMoveControlDescription const&) = delete;
-    GlideMoveControlDescription(class GlideMoveControlDescription const&) = delete;
+    class GlideMoveControlDescription& operator=(class GlideMoveControlDescription const &) = delete;
+    GlideMoveControlDescription(class GlideMoveControlDescription const &) = delete;
     GlideMoveControlDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~GlideMoveControlDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~GlideMoveControlDescription(){
          (GlideMoveControlDescription::*rv)();

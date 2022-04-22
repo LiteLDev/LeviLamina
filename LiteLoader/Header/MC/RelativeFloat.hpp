@@ -30,8 +30,8 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RELATIVEFLOAT
 public:
-    class RelativeFloat& operator=(class RelativeFloat const&) = delete;
-    RelativeFloat(class RelativeFloat const&) = delete;
+    class RelativeFloat& operator=(class RelativeFloat const &) = delete;
+    RelativeFloat(class RelativeFloat const &) = delete;
 #endif
 
 public:

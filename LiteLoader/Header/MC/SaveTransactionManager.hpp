@@ -17,16 +17,16 @@ class SaveTransactionManager {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SAVETRANSACTIONMANAGER
 public:
-    class SaveTransactionManager& operator=(class SaveTransactionManager const&) = delete;
-    SaveTransactionManager(class SaveTransactionManager const&) = delete;
+    class SaveTransactionManager& operator=(class SaveTransactionManager const &) = delete;
+    SaveTransactionManager(class SaveTransactionManager const &) = delete;
     SaveTransactionManager() = delete;
 #endif
 
 public:
-    MCAPI SaveTransactionManager(class WorkerPool&, class Scheduler&, class std::function<void (bool)>);
+    /*0*/ virtual ~SaveTransactionManager();
+    MCAPI SaveTransactionManager(class WorkerPool &, class Scheduler &, class std::function<void (bool)>);
     MCAPI void onBeginCompaction();
     MCAPI void onEndCompaction();
-    MCAPI ~SaveTransactionManager();
 
 protected:
 

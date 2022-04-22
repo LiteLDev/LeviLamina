@@ -17,18 +17,18 @@ class SelectorBehaviorNode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SELECTORBEHAVIORNODE
 public:
-    class SelectorBehaviorNode& operator=(class SelectorBehaviorNode const&) = delete;
-    SelectorBehaviorNode(class SelectorBehaviorNode const&) = delete;
+    class SelectorBehaviorNode& operator=(class SelectorBehaviorNode const &) = delete;
+    SelectorBehaviorNode(class SelectorBehaviorNode const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~SelectorBehaviorNode();
-    /*1*/ virtual enum BehaviorStatus tick(class Actor&);
+    /*1*/ virtual enum BehaviorStatus tick(class Actor &);
     /*
-    inline void initializeFromDefinition(class Actor& a0){
-        void (SelectorBehaviorNode::*rv)(class Actor&);
+    inline void initializeFromDefinition(class Actor & a0){
+        void (SelectorBehaviorNode::*rv)(class Actor &);
         *((void**)&rv) = dlsym("?initializeFromDefinition@SelectorBehaviorNode@@MEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
+        return (this->*rv)(std::forward<class Actor &>(a0));
     }
     */
     MCAPI SelectorBehaviorNode();

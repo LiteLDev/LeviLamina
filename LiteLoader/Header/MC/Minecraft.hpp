@@ -19,8 +19,8 @@ class Minecraft {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFT
 public:
-    class Minecraft& operator=(class Minecraft const&) = delete;
-    Minecraft(class Minecraft const&) = delete;
+    class Minecraft& operator=(class Minecraft const &) = delete;
+    Minecraft(class Minecraft const &) = delete;
     Minecraft() = delete;
 #endif
 
@@ -49,20 +49,20 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI Minecraft(class IMinecraftApp&, class GameCallbacks&, class AllowList&, class PermissionsFile*, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager> > const&, class std::chrono::duration<__int64, struct std::ratio<1, 1> >, class IMinecraftEventing&, class NetworkHandler&, class PacketSender&, unsigned char, class Timer&, class Timer&, class IContentTierManager const&, class ServerMetrics*);
+    MCAPI Minecraft(class IMinecraftApp &, class GameCallbacks &, class AllowList &, class PermissionsFile *, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, class std::chrono::duration<__int64, struct std::ratio<1, 1>>, class IMinecraftEventing &, class NetworkHandler &, class PacketSender &, unsigned char, class Timer &, class Timer &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentTierManager const>> const &, class ServerMetrics *);
     MCAPI void activateAllowList();
-    MCAPI void configureGameTest(class Level&, class Experiments const&);
-    MCAPI void disconnectClient(class NetworkIdentifier const&, std::string const&);
-    MCAPI class MinecraftCommands& getCommands();
-    MCAPI class GameModuleServer& getGameModuleServer();
+    MCAPI void configureGameTest(class Level &, class Experiments const &);
+    MCAPI void disconnectClient(class NetworkIdentifier const &, std::string const &);
+    MCAPI class MinecraftCommands & getCommands();
+    MCAPI class GameModuleServer & getGameModuleServer();
     MCAPI class optional_ref<class MinecraftGameTest> getGameTest();
     MCAPI double getLastTimestep();
-    MCAPI class Level* getLevel() const;
-    MCAPI class NetworkHandler& getNetworkHandler();
-    MCAPI class ResourcePackManager& getResourceLoader();
+    MCAPI class Level * getLevel() const;
+    MCAPI class NetworkHandler & getNetworkHandler();
+    MCAPI class ResourcePackManager & getResourceLoader();
     MCAPI class Bedrock::NonOwnerPointer<class ServerNetworkHandler> getServerNetworkHandler();
-    MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager> > getStructureManager();
-    MCAPI bool hostMultiplayer(std::string const&, struct std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits> >, class Player*, class mce::UUID const&, std::unique_ptr<class NetEventCallback>, int, bool, bool, std::vector<std::string> const&, std::string, struct ConnectionDefinition const&, class std::unordered_map<struct PackIdVersion, std::string, struct std::hash<struct PackIdVersion>, struct std::equal_to<struct PackIdVersion>, class std::allocator<struct std::pair<struct PackIdVersion const, std::string > > > const&, class Scheduler&, class TextFilteringProcessor*);
+    MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>> getStructureManager();
+    MCAPI bool hostMultiplayer(std::string const &, struct std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits>>, class Player *, class mce::UUID const &, std::unique_ptr<class NetEventCallback>, int, bool, bool, std::vector<std::string> const &, std::string, struct ConnectionDefinition const &, class std::unordered_map<struct PackIdVersion, std::string, struct std::hash<struct PackIdVersion>, struct std::equal_to<struct PackIdVersion>, class std::allocator<struct std::pair<struct PackIdVersion const, std::string>>> const &, class Scheduler &, class TextFilteringProcessor *);
     MCAPI void init();
     MCAPI void initAsDedicatedServer();
     MCAPI bool isLeaveGameDone() const;

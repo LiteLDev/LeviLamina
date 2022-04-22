@@ -18,8 +18,8 @@ class ItemStackRequestActionTake : public ItemStackRequestActionTransferBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONTAKE
 public:
-    class ItemStackRequestActionTake& operator=(class ItemStackRequestActionTake const&) = delete;
-    ItemStackRequestActionTake(class ItemStackRequestActionTake const&) = delete;
+    class ItemStackRequestActionTake& operator=(class ItemStackRequestActionTake const &) = delete;
+    ItemStackRequestActionTake(class ItemStackRequestActionTake const &) = delete;
     ItemStackRequestActionTake() = delete;
 #endif
 

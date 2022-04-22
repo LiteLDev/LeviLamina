@@ -17,8 +17,8 @@ class AvoidBlockGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AVOIDBLOCKGOAL
 public:
-    class AvoidBlockGoal& operator=(class AvoidBlockGoal const&) = delete;
-    AvoidBlockGoal(class AvoidBlockGoal const&) = delete;
+    class AvoidBlockGoal& operator=(class AvoidBlockGoal const &) = delete;
+    AvoidBlockGoal(class AvoidBlockGoal const &) = delete;
     AvoidBlockGoal() = delete;
 #endif
 
@@ -30,12 +30,12 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI AvoidBlockGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI AvoidBlockGoal(class Mob &);
 
 protected:
 
 private:
-    MCAPI bool _isValidTarget(class Block const&) const;
+    MCAPI bool _isValidTarget(class Block const &) const;
 
 };

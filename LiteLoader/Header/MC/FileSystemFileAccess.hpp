@@ -18,27 +18,27 @@ class FileSystemFileAccess {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILESYSTEMFILEACCESS
 public:
-    class FileSystemFileAccess& operator=(class FileSystemFileAccess const&) = delete;
-    FileSystemFileAccess(class FileSystemFileAccess const&) = delete;
+    class FileSystemFileAccess& operator=(class FileSystemFileAccess const &) = delete;
+    FileSystemFileAccess(class FileSystemFileAccess const &) = delete;
     FileSystemFileAccess() = delete;
 #endif
 
 public:
     /*0*/ virtual ~FileSystemFileAccess();
-    /*1*/ virtual void* fopen(class Core::Path const&, std::string const&);
-    /*2*/ virtual int fclose(void*);
-    /*3*/ virtual int fseek(void*, __int64, int);
-    /*4*/ virtual __int64 ftell(void*);
+    /*1*/ virtual void * fopen(class Core::Path const &, std::string const &);
+    /*2*/ virtual int fclose(void *);
+    /*3*/ virtual int fseek(void *, __int64, int);
+    /*4*/ virtual __int64 ftell(void *);
     /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual class IFileWriteAccess* getWriteInterface();
+    /*6*/ virtual class IFileWriteAccess * getWriteInterface();
     /*
     inline void unload(){
         void (FileSystemFileAccess::*rv)();
         *((void**)&rv) = dlsym("?unload@FileSystemFileAccess@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline class IFileReadAccess const* getReadInterface() const{
-        class IFileReadAccess const* (FileSystemFileAccess::*rv)() const;
+    inline class IFileReadAccess const * getReadInterface() const{
+        class IFileReadAccess const * (FileSystemFileAccess::*rv)() const;
         *((void**)&rv) = dlsym("?getReadInterface@FileSystemFileAccess@@UEBAPEBVIFileReadAccess@@XZ");
         return (this->*rv)();
     }

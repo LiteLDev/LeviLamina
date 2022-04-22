@@ -15,8 +15,8 @@ struct ScriptPlayerJoinEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLAYERJOINEVENT
 public:
-    struct ScriptPlayerJoinEvent& operator=(struct ScriptPlayerJoinEvent const&) = delete;
-    ScriptPlayerJoinEvent(struct ScriptPlayerJoinEvent const&) = delete;
+    struct ScriptPlayerJoinEvent& operator=(struct ScriptPlayerJoinEvent const &) = delete;
+    ScriptPlayerJoinEvent(struct ScriptPlayerJoinEvent const &) = delete;
     ScriptPlayerJoinEvent() = delete;
 #endif
 

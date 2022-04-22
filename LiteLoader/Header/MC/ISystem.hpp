@@ -17,8 +17,8 @@ struct ISystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISYSTEM
 public:
-    struct ISystem& operator=(struct ISystem const&) = delete;
-    ISystem(struct ISystem const&) = delete;
+    struct ISystem& operator=(struct ISystem const &) = delete;
+    ISystem(struct ISystem const &) = delete;
     ISystem() = delete;
 #endif
 

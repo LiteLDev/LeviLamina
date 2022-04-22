@@ -8,7 +8,7 @@
 
 #undef BEFORE_EXTRA
 
-class ActorMapping {
+struct ActorMapping {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,14 +17,14 @@ class ActorMapping {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORMAPPING
 public:
-    class ActorMapping& operator=(class ActorMapping const&) = delete;
-    ActorMapping(class ActorMapping const&) = delete;
+    struct ActorMapping& operator=(struct ActorMapping const &) = delete;
+    ActorMapping(struct ActorMapping const &) = delete;
     ActorMapping() = delete;
 #endif
 
 public:
-    MCAPI ActorMapping(std::string const&, std::string const&, std::string const&);
-    MCAPI ActorMapping(std::string const&, std::string const&);
+    MCAPI ActorMapping(std::string const &, std::string const &, std::string const &);
+    MCAPI ActorMapping(std::string const &, std::string const &);
     MCAPI std::string getMappingName(enum ActorTypeNamespaceRules) const;
     MCAPI ~ActorMapping();
 

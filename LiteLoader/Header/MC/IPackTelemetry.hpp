@@ -17,8 +17,8 @@ class IPackTelemetry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IPACKTELEMETRY
 public:
-    class IPackTelemetry& operator=(class IPackTelemetry const&) = delete;
-    IPackTelemetry(class IPackTelemetry const&) = delete;
+    class IPackTelemetry& operator=(class IPackTelemetry const &) = delete;
+    IPackTelemetry(class IPackTelemetry const &) = delete;
     IPackTelemetry() = delete;
 #endif
 

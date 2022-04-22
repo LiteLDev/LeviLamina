@@ -18,8 +18,8 @@ struct WalkAnimationSpeedDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WALKANIMATIONSPEEDDEFINITION
 public:
-    struct WalkAnimationSpeedDefinition& operator=(struct WalkAnimationSpeedDefinition const&) = delete;
-    WalkAnimationSpeedDefinition(struct WalkAnimationSpeedDefinition const&) = delete;
+    struct WalkAnimationSpeedDefinition& operator=(struct WalkAnimationSpeedDefinition const &) = delete;
+    WalkAnimationSpeedDefinition(struct WalkAnimationSpeedDefinition const &) = delete;
     WalkAnimationSpeedDefinition() = delete;
 #endif
 

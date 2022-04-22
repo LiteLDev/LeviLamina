@@ -18,16 +18,16 @@ class NearestPrioritizedAttackableTargetGoal : public NearestAttackableTargetGoa
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NEARESTPRIORITIZEDATTACKABLETARGETGOAL
 public:
-    class NearestPrioritizedAttackableTargetGoal& operator=(class NearestPrioritizedAttackableTargetGoal const&) = delete;
-    NearestPrioritizedAttackableTargetGoal(class NearestPrioritizedAttackableTargetGoal const&) = delete;
+    class NearestPrioritizedAttackableTargetGoal& operator=(class NearestPrioritizedAttackableTargetGoal const &) = delete;
+    NearestPrioritizedAttackableTargetGoal(class NearestPrioritizedAttackableTargetGoal const &) = delete;
     NearestPrioritizedAttackableTargetGoal() = delete;
 #endif
 
 public:
     /*0*/ virtual ~NearestPrioritizedAttackableTargetGoal();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*11*/ virtual struct ActorUniqueID _findTarget(struct MobDescriptor const* *);
-    MCAPI NearestPrioritizedAttackableTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&, float, int, bool, int, bool, bool, int, float, bool, int, bool);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    /*11*/ virtual struct ActorUniqueID _findTarget(struct MobDescriptor const **);
+    MCAPI NearestPrioritizedAttackableTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int, bool, int, bool, bool, int, float, bool, int, bool);
 
 protected:
 

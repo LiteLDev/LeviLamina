@@ -17,8 +17,8 @@ class TargetGoalDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TARGETGOALDEFINITION
 public:
-    class TargetGoalDefinition& operator=(class TargetGoalDefinition const&) = delete;
-    TargetGoalDefinition(class TargetGoalDefinition const&) = delete;
+    class TargetGoalDefinition& operator=(class TargetGoalDefinition const &) = delete;
+    TargetGoalDefinition(class TargetGoalDefinition const &) = delete;
     TargetGoalDefinition() = delete;
 #endif
 
@@ -31,7 +31,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI void initialize(class EntityContext&, class TargetGoal&);
+    MCAPI void initialize(class EntityContext &, class TargetGoal &);
 
 protected:
 

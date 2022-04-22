@@ -17,14 +17,14 @@ class BaseGamePackSlices {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASEGAMEPACKSLICES
 public:
-    class BaseGamePackSlices& operator=(class BaseGamePackSlices const&) = delete;
-    BaseGamePackSlices(class BaseGamePackSlices const&) = delete;
+    class BaseGamePackSlices& operator=(class BaseGamePackSlices const &) = delete;
+    BaseGamePackSlices(class BaseGamePackSlices const &) = delete;
 #endif
 
 public:
     MCAPI BaseGamePackSlices();
-    MCAPI void addFromVersions(std::vector<class BaseGameVersion> const&, class IResourcePackRepository const&, class mce::UUID const&);
-    MCAPI void applyPackSlices(class BaseGameVersion const&, class IResourcePackRepository const&, class ResourcePackStack&) const;
+    MCAPI void addFromVersions(std::vector<class BaseGameVersion> const &, class IResourcePackRepository const &, class mce::UUID const &);
+    MCAPI void applyPackSlices(class BaseGameVersion const &, class IResourcePackRepository const &, class ResourcePackStack &) const;
     MCAPI ~BaseGamePackSlices();
 
 protected:

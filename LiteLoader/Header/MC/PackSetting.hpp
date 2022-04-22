@@ -18,13 +18,13 @@ class PackSetting {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSETTING
 public:
-    class PackSetting& operator=(class PackSetting const&) = delete;
-    PackSetting(class PackSetting const&) = delete;
+    class PackSetting& operator=(class PackSetting const &) = delete;
+    PackSetting(class PackSetting const &) = delete;
     PackSetting() = delete;
 #endif
 
 public:
-    MCAPI void set(class Json::Value const&);
+    MCAPI void set(class Json::Value const &);
     MCAPI ~PackSetting();
 
 protected:

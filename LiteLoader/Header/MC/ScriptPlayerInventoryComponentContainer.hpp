@@ -18,15 +18,15 @@ class ScriptPlayerInventoryComponentContainer : public ScriptInventoryComponentC
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLAYERINVENTORYCOMPONENTCONTAINER
 public:
-    class ScriptPlayerInventoryComponentContainer& operator=(class ScriptPlayerInventoryComponentContainer const&) = delete;
-    ScriptPlayerInventoryComponentContainer(class ScriptPlayerInventoryComponentContainer const&) = delete;
+    class ScriptPlayerInventoryComponentContainer& operator=(class ScriptPlayerInventoryComponentContainer const &) = delete;
+    ScriptPlayerInventoryComponentContainer(class ScriptPlayerInventoryComponentContainer const &) = delete;
     ScriptPlayerInventoryComponentContainer() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScriptPlayerInventoryComponentContainer();
-    /*11*/ virtual class Container* _tryGetContainer() const;
-    /*12*/ virtual void _balanceTransaction(class ItemStack const&) const;
+    /*11*/ virtual class Container * _tryGetContainer() const;
+    /*12*/ virtual void _balanceTransaction(class ItemStack const &) const;
     /*
     inline  ~ScriptPlayerInventoryComponentContainer(){
          (ScriptPlayerInventoryComponentContainer::*rv)();
@@ -34,7 +34,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptPlayerInventoryComponentContainer(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&);
+    MCAPI ScriptPlayerInventoryComponentContainer(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptPlayerInventoryComponentContainer> bind(struct Scripting::Version);
 
 protected:

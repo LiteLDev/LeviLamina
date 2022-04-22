@@ -15,13 +15,13 @@ class StructurePoolActorRule {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREPOOLACTORRULE
 public:
-    class StructurePoolActorRule& operator=(class StructurePoolActorRule const&) = delete;
-    StructurePoolActorRule(class StructurePoolActorRule const&) = delete;
+    class StructurePoolActorRule& operator=(class StructurePoolActorRule const &) = delete;
+    StructurePoolActorRule(class StructurePoolActorRule const &) = delete;
     StructurePoolActorRule() = delete;
 #endif
 
 public:
-    MCAPI StructurePoolActorRule(std::unique_ptr<class IStructurePoolActorPredicate>&&, std::string);
+    MCAPI StructurePoolActorRule(std::unique_ptr<class IStructurePoolActorPredicate> &&, std::string);
 
 protected:
 

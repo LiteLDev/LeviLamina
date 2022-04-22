@@ -18,8 +18,8 @@ struct OnFriendlyAngerDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONFRIENDLYANGERDEFINITION
 public:
-    struct OnFriendlyAngerDefinition& operator=(struct OnFriendlyAngerDefinition const&) = delete;
-    OnFriendlyAngerDefinition(struct OnFriendlyAngerDefinition const&) = delete;
+    struct OnFriendlyAngerDefinition& operator=(struct OnFriendlyAngerDefinition const &) = delete;
+    OnFriendlyAngerDefinition(struct OnFriendlyAngerDefinition const &) = delete;
     OnFriendlyAngerDefinition() = delete;
 #endif
 

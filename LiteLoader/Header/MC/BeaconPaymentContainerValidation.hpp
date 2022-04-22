@@ -18,29 +18,29 @@ class BeaconPaymentContainerValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEACONPAYMENTCONTAINERVALIDATION
 public:
-    class BeaconPaymentContainerValidation& operator=(class BeaconPaymentContainerValidation const&) = delete;
-    BeaconPaymentContainerValidation(class BeaconPaymentContainerValidation const&) = delete;
+    class BeaconPaymentContainerValidation& operator=(class BeaconPaymentContainerValidation const &) = delete;
+    BeaconPaymentContainerValidation(class BeaconPaymentContainerValidation const &) = delete;
     BeaconPaymentContainerValidation() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BeaconPaymentContainerValidation();
-    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const&) const;
+    /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const &) const;
     /*5*/ virtual void __unk_vfn_5();
     /*7*/ virtual void __unk_vfn_7();
-    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /*
-    inline bool canDestroy(class ContainerScreenContext const& a0) const{
-        bool (BeaconPaymentContainerValidation::*rv)(class ContainerScreenContext const&) const;
+    inline bool canDestroy(class ContainerScreenContext const & a0) const{
+        bool (BeaconPaymentContainerValidation::*rv)(class ContainerScreenContext const &) const;
         *((void**)&rv) = dlsym("?canDestroy@BeaconPaymentContainerValidation@@UEBA_NAEBVContainerScreenContext@@@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0));
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
     }
-    inline int getAvailableSetCount(int a0, class ItemStackBase const& a1) const{
-        int (BeaconPaymentContainerValidation::*rv)(int, class ItemStackBase const&) const;
+    inline int getAvailableSetCount(int a0, class ItemStackBase const & a1) const{
+        int (BeaconPaymentContainerValidation::*rv)(int, class ItemStackBase const &) const;
         *((void**)&rv) = dlsym("?getAvailableSetCount@BeaconPaymentContainerValidation@@UEBAHHAEBVItemStackBase@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStackBase const&>(a1));
+        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStackBase const &>(a1));
     }
     */
 

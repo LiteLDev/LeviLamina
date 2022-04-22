@@ -15,12 +15,12 @@ class SyncedPlayerMovementSettings {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SYNCEDPLAYERMOVEMENTSETTINGS
 public:
-    class SyncedPlayerMovementSettings& operator=(class SyncedPlayerMovementSettings const&) = delete;
-    SyncedPlayerMovementSettings(class SyncedPlayerMovementSettings const&) = delete;
+    class SyncedPlayerMovementSettings& operator=(class SyncedPlayerMovementSettings const &) = delete;
+    SyncedPlayerMovementSettings(class SyncedPlayerMovementSettings const &) = delete;
 #endif
 
 public:
-    MCAPI SyncedPlayerMovementSettings(struct PlayerMovementSettings const&);
+    MCAPI SyncedPlayerMovementSettings(struct PlayerMovementSettings const &);
     MCAPI SyncedPlayerMovementSettings();
 
 protected:

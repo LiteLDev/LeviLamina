@@ -17,15 +17,15 @@ class MobEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEVENT
 public:
-    class MobEvent& operator=(class MobEvent const&) = delete;
+    class MobEvent& operator=(class MobEvent const &) = delete;
     MobEvent() = delete;
 #endif
 
 public:
-    MCAPI MobEvent(class MobEvent const&);
+    MCAPI MobEvent(class MobEvent const &);
     MCAPI MobEvent(std::string, std::string, bool);
-    MCAPI std::string const& getLocalizableName() const;
-    MCAPI std::string const& getName() const;
+    MCAPI std::string const & getLocalizableName() const;
+    MCAPI std::string const & getName() const;
     MCAPI bool isEnabled() const;
     MCAPI ~MobEvent();
 

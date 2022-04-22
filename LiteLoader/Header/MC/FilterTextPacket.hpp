@@ -18,16 +18,16 @@ class FilterTextPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERTEXTPACKET
 public:
-    class FilterTextPacket& operator=(class FilterTextPacket const&) = delete;
-    FilterTextPacket(class FilterTextPacket const&) = delete;
+    class FilterTextPacket& operator=(class FilterTextPacket const &) = delete;
+    FilterTextPacket(class FilterTextPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~FilterTextPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~FilterTextPacket(){
          (FilterTextPacket::*rv)();
@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI FilterTextPacket(std::string const&, bool);
+    MCAPI FilterTextPacket(std::string const &, bool);
     MCAPI FilterTextPacket();
 
 protected:

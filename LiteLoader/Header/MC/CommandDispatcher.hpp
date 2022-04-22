@@ -17,13 +17,13 @@ class CommandDispatcher {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDDISPATCHER
 public:
-    class CommandDispatcher& operator=(class CommandDispatcher const&) = delete;
-    CommandDispatcher(class CommandDispatcher const&) = delete;
+    class CommandDispatcher& operator=(class CommandDispatcher const &) = delete;
+    CommandDispatcher(class CommandDispatcher const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~CommandDispatcher();
-    /*1*/ virtual int performCommand(class CommandOrigin const&, class Command&);
+    /*1*/ virtual int performCommand(class CommandOrigin const &, class Command &);
     MCAPI CommandDispatcher();
 
 protected:

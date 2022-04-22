@@ -15,8 +15,8 @@ class BackwardsCompatTextureInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BACKWARDSCOMPATTEXTUREINFO
 public:
-    class BackwardsCompatTextureInfo& operator=(class BackwardsCompatTextureInfo const&) = delete;
-    BackwardsCompatTextureInfo(class BackwardsCompatTextureInfo const&) = delete;
+    class BackwardsCompatTextureInfo& operator=(class BackwardsCompatTextureInfo const &) = delete;
+    BackwardsCompatTextureInfo(class BackwardsCompatTextureInfo const &) = delete;
     BackwardsCompatTextureInfo() = delete;
 #endif
 

@@ -17,19 +17,19 @@ class OnFireServerSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONFIRESERVERSYSTEM
 public:
-    class OnFireServerSystem& operator=(class OnFireServerSystem const&) = delete;
-    OnFireServerSystem(class OnFireServerSystem const&) = delete;
+    class OnFireServerSystem& operator=(class OnFireServerSystem const &) = delete;
+    OnFireServerSystem(class OnFireServerSystem const &) = delete;
     OnFireServerSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~OnFireServerSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 
 private:
-    MCAPI static void _tickServer(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class OnFireComponent>&);
+    MCAPI static void _tickServer(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class OnFireComponent> &);
 
 };

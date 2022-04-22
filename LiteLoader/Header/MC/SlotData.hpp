@@ -17,8 +17,8 @@ struct SlotData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLOTDATA
 public:
-    struct SlotData& operator=(struct SlotData const&) = delete;
-    SlotData(struct SlotData const&) = delete;
+    struct SlotData& operator=(struct SlotData const &) = delete;
+    SlotData(struct SlotData const &) = delete;
 #endif
 
 public:

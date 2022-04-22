@@ -17,8 +17,8 @@ struct ActiveDirectoryScreenCapabilities {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTIVEDIRECTORYSCREENCAPABILITIES
 public:
-    struct ActiveDirectoryScreenCapabilities& operator=(struct ActiveDirectoryScreenCapabilities const&) = delete;
-    ActiveDirectoryScreenCapabilities(struct ActiveDirectoryScreenCapabilities const&) = delete;
+    struct ActiveDirectoryScreenCapabilities& operator=(struct ActiveDirectoryScreenCapabilities const &) = delete;
+    ActiveDirectoryScreenCapabilities(struct ActiveDirectoryScreenCapabilities const &) = delete;
     ActiveDirectoryScreenCapabilities() = delete;
 #endif
 

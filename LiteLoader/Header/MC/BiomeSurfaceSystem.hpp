@@ -14,7 +14,7 @@ namespace BiomeSurfaceSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const&);
-    MCAPI void resolveBuilderImplementation(class EntityRegistry&, class SurfaceBuilderRegistry const&, unsigned int);
+    MCAPI void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const &);
+    MCAPI void resolveBuilderImplementation(class EntityRegistry &, class SurfaceBuilderRegistry const &, unsigned int);
 
 };

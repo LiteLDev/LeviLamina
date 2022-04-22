@@ -17,8 +17,8 @@ struct LibraryScreenCapabilities {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LIBRARYSCREENCAPABILITIES
 public:
-    struct LibraryScreenCapabilities& operator=(struct LibraryScreenCapabilities const&) = delete;
-    LibraryScreenCapabilities(struct LibraryScreenCapabilities const&) = delete;
+    struct LibraryScreenCapabilities& operator=(struct LibraryScreenCapabilities const &) = delete;
+    LibraryScreenCapabilities(struct LibraryScreenCapabilities const &) = delete;
     LibraryScreenCapabilities() = delete;
 #endif
 

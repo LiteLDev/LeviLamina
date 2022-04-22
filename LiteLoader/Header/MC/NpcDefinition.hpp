@@ -18,14 +18,14 @@ class NpcDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCDEFINITION
 public:
-    class NpcDefinition& operator=(class NpcDefinition const&) = delete;
-    NpcDefinition(class NpcDefinition const&) = delete;
+    class NpcDefinition& operator=(class NpcDefinition const &) = delete;
+    NpcDefinition(class NpcDefinition const &) = delete;
     NpcDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&, class NpcComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NpcDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class NpcComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NpcDefinition>> &);
 
 protected:
 

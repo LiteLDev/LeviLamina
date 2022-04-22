@@ -8,7 +8,7 @@
 // Include Headers or Declare Types Here
 #include "NetworkItemStackDescriptor.hpp"
 #include "Block.hpp"
-static_assert(sizeof(NetworkItemStackDescriptor) == 128);
+static_assert(sizeof(NetworkItemStackDescriptor) == 152);
 
 #undef BEFORE_EXTRA
 
@@ -45,16 +45,16 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTINGEVENTPACKET
 public:
-    class CraftingEventPacket& operator=(class CraftingEventPacket const&) = delete;
-    CraftingEventPacket(class CraftingEventPacket const&) = delete;
+    class CraftingEventPacket& operator=(class CraftingEventPacket const &) = delete;
+    CraftingEventPacket(class CraftingEventPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~CraftingEventPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     MCAPI CraftingEventPacket();
 
 protected:

@@ -17,8 +17,8 @@ class TargetNearbyComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TARGETNEARBYCOMPONENT
 public:
-    class TargetNearbyComponent& operator=(class TargetNearbyComponent const&) = delete;
-    TargetNearbyComponent(class TargetNearbyComponent const&) = delete;
+    class TargetNearbyComponent& operator=(class TargetNearbyComponent const &) = delete;
+    TargetNearbyComponent(class TargetNearbyComponent const &) = delete;
     TargetNearbyComponent() = delete;
 #endif
 

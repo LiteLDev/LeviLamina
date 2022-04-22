@@ -1,6 +1,8 @@
 ﻿#pragma once
 #include "Global.h"
 #include "Utils/Hash.h"
+#include <vector>
+#include <string>
 #include <thread>
 
 
@@ -11,6 +13,7 @@ extern "C" {
 LIAPI int HookFunction(void* oldfunc, void** poutold, void* newfunc);
 LIAPI void* dlsym_real(char const* name);
 }
+extern std::vector<std::string> dlsym_reverse(int addr);
 
 template <typename RTN = void, typename... Args>
 RTN inline VirtualCall(void const* _this, uintptr_t off, Args... args) {
@@ -34,27 +37,26 @@ inline const T& dAccess(void const* ptr, uintptr_t off) {
     return *(T*)(((uintptr_t)ptr) + off);
 }
 
-#define __WEAK __declspec(selectany)
 //#define GetServerSymbol(x) dlsym_real(x)
 template <CHash, CHash>
-__WEAK void* __ptr_cache;
+__declspec(selectany) void* __ptr_cache;
 template <CHash hash, CHash hash2>
-inline static void* dlsym_cache(const char* fn) {
-    if (!__ptr_cache<hash, hash2>) {
+inline static void* dlsym_cache(const char* fn)
+{
+    if (!__ptr_cache<hash, hash2>)
+    {
         __ptr_cache<hash, hash2> = dlsym_real(fn);
-        if (!__ptr_cache<hash, hash2>) {
-            printf("Cant found sym %s\n", fn);
-            std::this_thread::sleep_for(std::chrono::seconds(10));
-            exit(1);
-        }
     }
     return __ptr_cache<hash, hash2>;
 }
 #define VA_EXPAND(...) __VA_ARGS__
-//#define Call(fn, ret, ...) __CALL_IMP<do_hash(fn), ret, __VA_ARGS__>(fn)
-//#define SymCall(fn, ret, ...) (__imp_Call<ret, __VA_ARGS__>(fn))
-#define SymCall(fn, ret, ...) ((ret(*)(__VA_ARGS__))(dlsym_real(fn)))
-#define SYM(fn) (dlsym_real(fn))
+template <CHash hash, CHash hash2, typename ret, typename... p>
+static inline auto __imp_Call(const char* fn)
+{
+    return ((ret(*)(p...))(dlsym_cache<hash, hash2>(fn)));
+}
+#define SymCall(fn, ret, ...) (__imp_Call<do_hash(fn), do_hash2(fn), ret, __VA_ARGS__>(fn))
+#define SYM(fn) (dlsym_cache<do_hash(fn), do_hash2(fn)>(fn))
 #define dlsym(xx) SYM(xx)
 
 class THookRegister {

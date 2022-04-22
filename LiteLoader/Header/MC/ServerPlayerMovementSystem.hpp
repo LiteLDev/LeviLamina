@@ -17,15 +17,15 @@ class ServerPlayerMovementSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPLAYERMOVEMENTSYSTEM
 public:
-    class ServerPlayerMovementSystem& operator=(class ServerPlayerMovementSystem const&) = delete;
-    ServerPlayerMovementSystem(class ServerPlayerMovementSystem const&) = delete;
+    class ServerPlayerMovementSystem& operator=(class ServerPlayerMovementSystem const &) = delete;
+    ServerPlayerMovementSystem(class ServerPlayerMovementSystem const &) = delete;
     ServerPlayerMovementSystem() = delete;
 #endif
 
 public:
-    MCAPI static void _foreachTransactionPacket(struct PlayerActionComponent const&, bool, class std::function<void (class InventoryTransactionPacket& )> const&);
+    MCAPI static void _foreachTransactionPacket(struct PlayerActionComponent const &, bool, class std::function<void (class InventoryTransactionPacket &)> const &);
     MCAPI static struct TickingSystemWithInfo create();
-    MCAPI static void onPlayerAuthInputPacket(struct ServerPlayerMovementComponent&, class PlayerAuthInputPacket const&);
+    MCAPI static void onPlayerAuthInputPacket(struct ServerPlayerMovementComponent &, class PlayerAuthInputPacket const &);
 
 protected:
 

@@ -15,8 +15,8 @@ class PlayerRespawnEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERRESPAWNEVENT
 public:
-    class PlayerRespawnEvent& operator=(class PlayerRespawnEvent const&) = delete;
-    PlayerRespawnEvent(class PlayerRespawnEvent const&) = delete;
+    class PlayerRespawnEvent& operator=(class PlayerRespawnEvent const &) = delete;
+    PlayerRespawnEvent(class PlayerRespawnEvent const &) = delete;
     PlayerRespawnEvent() = delete;
 #endif
 

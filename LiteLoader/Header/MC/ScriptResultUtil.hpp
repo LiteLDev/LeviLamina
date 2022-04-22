@@ -14,6 +14,6 @@ namespace ScriptResultUtil {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI class std::optional<struct gametest::GameTestError> ScriptingResultToGameTestResult(class Scripting::ResultAny const&);
+    MCAPI class std::optional<struct gametest::GameTestError> ScriptingResultToGameTestResult(class Scripting::ResultAny const &);
 
 };

@@ -15,13 +15,13 @@ struct UsesSideBySideComparisonComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_USESSIDEBYSIDECOMPARISONCOMPONENT
 public:
-    struct UsesSideBySideComparisonComponent& operator=(struct UsesSideBySideComparisonComponent const&) = delete;
-    UsesSideBySideComparisonComponent(struct UsesSideBySideComparisonComponent const&) = delete;
+    struct UsesSideBySideComparisonComponent& operator=(struct UsesSideBySideComparisonComponent const &) = delete;
+    UsesSideBySideComparisonComponent(struct UsesSideBySideComparisonComponent const &) = delete;
     UsesSideBySideComparisonComponent() = delete;
 #endif
 
 public:
-    MCAPI struct UsesSideBySideComparisonComponent& operator=(struct UsesSideBySideComparisonComponent&&);
+    MCAPI struct UsesSideBySideComparisonComponent & operator=(struct UsesSideBySideComparisonComponent &&);
 
 protected:
 

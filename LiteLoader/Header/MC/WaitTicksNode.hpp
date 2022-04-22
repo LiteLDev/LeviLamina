@@ -17,14 +17,14 @@ class WaitTicksNode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WAITTICKSNODE
 public:
-    class WaitTicksNode& operator=(class WaitTicksNode const&) = delete;
-    WaitTicksNode(class WaitTicksNode const&) = delete;
+    class WaitTicksNode& operator=(class WaitTicksNode const &) = delete;
+    WaitTicksNode(class WaitTicksNode const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~WaitTicksNode();
-    /*1*/ virtual enum BehaviorStatus tick(class Actor&);
-    /*2*/ virtual void initializeFromDefinition(class Actor&);
+    /*1*/ virtual enum BehaviorStatus tick(class Actor &);
+    /*2*/ virtual void initializeFromDefinition(class Actor &);
     MCAPI WaitTicksNode();
 
 protected:

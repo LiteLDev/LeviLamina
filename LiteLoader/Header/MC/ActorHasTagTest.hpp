@@ -19,14 +19,14 @@ class ActorHasTagTest : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORHASTAGTEST
 public:
-    class ActorHasTagTest& operator=(class ActorHasTagTest const&) = delete;
-    ActorHasTagTest(class ActorHasTagTest const&) = delete;
+    class ActorHasTagTest& operator=(class ActorHasTagTest const &) = delete;
+    ActorHasTagTest(class ActorHasTagTest const &) = delete;
     ActorHasTagTest() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorHasTagTest();
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*
     inline  ~ActorHasTagTest(){

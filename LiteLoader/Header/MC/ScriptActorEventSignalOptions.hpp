@@ -15,13 +15,13 @@ struct ScriptActorEventSignalOptions {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTACTOREVENTSIGNALOPTIONS
 public:
-    ScriptActorEventSignalOptions(struct ScriptActorEventSignalOptions const&) = delete;
+    ScriptActorEventSignalOptions(struct ScriptActorEventSignalOptions const &) = delete;
     ScriptActorEventSignalOptions() = delete;
 #endif
 
 public:
-    MCAPI struct ScriptActorEventSignalOptions& operator=(struct ScriptActorEventSignalOptions&&);
-    MCAPI struct ScriptActorEventSignalOptions& operator=(struct ScriptActorEventSignalOptions const&);
+    MCAPI struct ScriptActorEventSignalOptions & operator=(struct ScriptActorEventSignalOptions &&);
+    MCAPI struct ScriptActorEventSignalOptions & operator=(struct ScriptActorEventSignalOptions const &);
     MCAPI ~ScriptActorEventSignalOptions();
 
 protected:

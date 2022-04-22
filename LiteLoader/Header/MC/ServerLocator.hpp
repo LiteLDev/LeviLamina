@@ -17,8 +17,8 @@ class ServerLocator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERLOCATOR
 public:
-    class ServerLocator& operator=(class ServerLocator const&) = delete;
-    ServerLocator(class ServerLocator const&) = delete;
+    class ServerLocator& operator=(class ServerLocator const &) = delete;
+    ServerLocator(class ServerLocator const &) = delete;
     ServerLocator() = delete;
 #endif
 

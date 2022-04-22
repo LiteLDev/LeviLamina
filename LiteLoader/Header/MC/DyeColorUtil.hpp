@@ -17,8 +17,8 @@ class DyeColorUtil {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DYECOLORUTIL
 public:
-    class DyeColorUtil& operator=(class DyeColorUtil const&) = delete;
-    DyeColorUtil(class DyeColorUtil const&) = delete;
+    class DyeColorUtil& operator=(class DyeColorUtil const &) = delete;
+    DyeColorUtil(class DyeColorUtil const &) = delete;
     DyeColorUtil() = delete;
 #endif
 
@@ -28,7 +28,7 @@ public:
     MCAPI static class std::array<short, 16> const DYE_AUX_VALUES;
     MCAPI static int getAuxValue(enum ItemColor);
     MCAPI static enum ItemColor getItemColor(int);
-    MCAPI static enum ItemColor getRandomItemColor(class Random&);
+    MCAPI static enum ItemColor getRandomItemColor(class Random &);
     MCAPI static class std::array<enum ItemColor, 20> const mColorMap;
 
 protected:

@@ -18,24 +18,24 @@ class ServerInstanceEventCoordinator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERINSTANCEEVENTCOORDINATOR
 public:
-    class ServerInstanceEventCoordinator& operator=(class ServerInstanceEventCoordinator const&) = delete;
-    ServerInstanceEventCoordinator(class ServerInstanceEventCoordinator const&) = delete;
+    class ServerInstanceEventCoordinator& operator=(class ServerInstanceEventCoordinator const &) = delete;
+    ServerInstanceEventCoordinator(class ServerInstanceEventCoordinator const &) = delete;
     ServerInstanceEventCoordinator() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ServerInstanceEventCoordinator();
-    MCAPI void registerServerInstanceEventHandler(std::unique_ptr<class ServerInstanceEventHandler>&&);
-    MCAPI void sendEvent(class EventRef<struct ServerInstanceGameplayEvent<void> > const&);
-    MCAPI void sendServerInitializeEnd(class ServerInstance&);
-    MCAPI void sendServerInitializeStart(class ServerInstance&);
-    MCAPI void sendServerLevelInitialized(class ServerInstance&, class Level&);
-    MCAPI void sendServerMinecraftInitialized(class ServerInstance&, class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft> > const&);
-    MCAPI void sendServerThreadStarted(class ServerInstance&);
-    MCAPI void sendServerThreadStopped(class ServerInstance&);
-    MCAPI void sendServerUpdateEnd(class ServerInstance&);
-    MCAPI void sendServerUpdateStart(class ServerInstance&);
-    MCAPI void sendStartLeaveGame(class ServerInstance&);
+    MCAPI void registerServerInstanceEventHandler(std::unique_ptr<class ServerInstanceEventHandler> &&);
+    MCAPI void sendEvent(class EventRef<struct ServerInstanceGameplayEvent<void>> const &);
+    MCAPI void sendServerInitializeEnd(class ServerInstance &);
+    MCAPI void sendServerInitializeStart(class ServerInstance &);
+    MCAPI void sendServerLevelInitialized(class ServerInstance &, class Level &);
+    MCAPI void sendServerMinecraftInitialized(class ServerInstance &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const &);
+    MCAPI void sendServerThreadStarted(class ServerInstance &);
+    MCAPI void sendServerThreadStopped(class ServerInstance &);
+    MCAPI void sendServerUpdateEnd(class ServerInstance &);
+    MCAPI void sendServerUpdateStart(class ServerInstance &);
+    MCAPI void sendStartLeaveGame(class ServerInstance &);
 
 protected:
 

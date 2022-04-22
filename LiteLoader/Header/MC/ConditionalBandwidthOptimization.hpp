@@ -17,14 +17,13 @@ struct ConditionalBandwidthOptimization {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONDITIONALBANDWIDTHOPTIMIZATION
 public:
-    ConditionalBandwidthOptimization(struct ConditionalBandwidthOptimization const&) = delete;
+    ConditionalBandwidthOptimization(struct ConditionalBandwidthOptimization const &) = delete;
     ConditionalBandwidthOptimization() = delete;
 #endif
 
 public:
-    MCAPI ConditionalBandwidthOptimization(struct ConditionalBandwidthOptimization&&);
-    MCAPI struct ConditionalBandwidthOptimization& operator=(struct ConditionalBandwidthOptimization&&);
-    MCAPI struct ConditionalBandwidthOptimization& operator=(struct ConditionalBandwidthOptimization const&);
+    MCAPI struct ConditionalBandwidthOptimization & operator=(struct ConditionalBandwidthOptimization &&);
+    MCAPI struct ConditionalBandwidthOptimization & operator=(struct ConditionalBandwidthOptimization const &);
     MCAPI ~ConditionalBandwidthOptimization();
 
 protected:

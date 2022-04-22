@@ -21,11 +21,11 @@ public:
 #endif
 
 public:
-    MCAPI ScriptChatEvent(struct ScriptChatEvent const&);
-    MCAPI ScriptChatEvent(struct ChatEvent const&, class Scripting::WeakLifetimeScope const&);
-    MCAPI void copyTo(struct ChatEvent&, class Scripting::WeakLifetimeScope const&) const;
-    MCAPI struct ScriptChatEvent& operator=(struct ScriptChatEvent&&);
-    MCAPI struct ScriptChatEvent& operator=(struct ScriptChatEvent const&);
+    MCAPI ScriptChatEvent(struct ScriptChatEvent const &);
+    MCAPI ScriptChatEvent(struct ChatEvent const &, class Scripting::WeakLifetimeScope const &);
+    MCAPI void copyTo(struct ChatEvent &, class Scripting::WeakLifetimeScope const &) const;
+    MCAPI struct ScriptChatEvent & operator=(struct ScriptChatEvent &&);
+    MCAPI struct ScriptChatEvent & operator=(struct ScriptChatEvent const &);
     MCAPI ~ScriptChatEvent();
 
 protected:

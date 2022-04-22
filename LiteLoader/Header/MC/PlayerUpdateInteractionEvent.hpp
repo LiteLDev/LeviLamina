@@ -15,8 +15,8 @@ class PlayerUpdateInteractionEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERUPDATEINTERACTIONEVENT
 public:
-    class PlayerUpdateInteractionEvent& operator=(class PlayerUpdateInteractionEvent const&) = delete;
-    PlayerUpdateInteractionEvent(class PlayerUpdateInteractionEvent const&) = delete;
+    class PlayerUpdateInteractionEvent& operator=(class PlayerUpdateInteractionEvent const &) = delete;
+    PlayerUpdateInteractionEvent(class PlayerUpdateInteractionEvent const &) = delete;
     PlayerUpdateInteractionEvent() = delete;
 #endif
 

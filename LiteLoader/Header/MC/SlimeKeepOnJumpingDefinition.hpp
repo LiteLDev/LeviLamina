@@ -18,15 +18,15 @@ class SlimeKeepOnJumpingDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLIMEKEEPONJUMPINGDEFINITION
 public:
-    class SlimeKeepOnJumpingDefinition& operator=(class SlimeKeepOnJumpingDefinition const&) = delete;
-    SlimeKeepOnJumpingDefinition(class SlimeKeepOnJumpingDefinition const&) = delete;
+    class SlimeKeepOnJumpingDefinition& operator=(class SlimeKeepOnJumpingDefinition const &) = delete;
+    SlimeKeepOnJumpingDefinition(class SlimeKeepOnJumpingDefinition const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~SlimeKeepOnJumpingDefinition();
     MCAPI SlimeKeepOnJumpingDefinition();
-    MCAPI void initialize(class EntityContext&, class SlimeKeepOnJumpingGoal&);
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeKeepOnJumpingDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class SlimeKeepOnJumpingGoal &);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeKeepOnJumpingDefinition>> &);
 
 protected:
 

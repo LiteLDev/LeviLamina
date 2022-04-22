@@ -17,19 +17,19 @@ class CompositePackSource {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOSITEPACKSOURCE
 public:
-    class CompositePackSource& operator=(class CompositePackSource const&) = delete;
-    CompositePackSource(class CompositePackSource const&) = delete;
+    class CompositePackSource& operator=(class CompositePackSource const &) = delete;
+    CompositePackSource(class CompositePackSource const &) = delete;
     CompositePackSource() = delete;
 #endif
 
 public:
     /*0*/ virtual ~CompositePackSource();
-    /*1*/ virtual void forEachPackConst(class std::function<void (class Pack const& )>) const;
-    /*2*/ virtual void forEachPack(class std::function<void (class Pack& )>);
+    /*1*/ virtual void forEachPackConst(class std::function<void (class Pack const &)>) const;
+    /*2*/ virtual void forEachPack(class std::function<void (class Pack &)>);
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual class PackSourceReport load(class IPackManifestFactory&, class IContentKeyProvider const&);
-    MCAPI CompositePackSource(std::vector<class PackSource* >&&);
+    /*5*/ virtual class PackSourceReport load(class IPackManifestFactory &, class IContentKeyProvider const &);
+    MCAPI CompositePackSource(std::vector<class PackSource *> &&);
 
 protected:
 

@@ -17,16 +17,16 @@ class OnFireComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONFIRECOMPONENT
 public:
-    class OnFireComponent& operator=(class OnFireComponent const&) = delete;
-    OnFireComponent(class OnFireComponent const&) = delete;
+    class OnFireComponent& operator=(class OnFireComponent const &) = delete;
+    OnFireComponent(class OnFireComponent const &) = delete;
     OnFireComponent() = delete;
 #endif
 
 public:
-    MCAPI void addAdditionalSaveData(class Actor const&, class CompoundTag&) const;
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&);
-    MCAPI static void convertFromLegacyData(class CompoundTag const&, class CompoundTag&);
-    MCAPI static bool needsLegacyConversion(class CompoundTag const&);
+    MCAPI void addAdditionalSaveData(class Actor const &, class CompoundTag &) const;
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &);
+    MCAPI static void convertFromLegacyData(class CompoundTag const &, class CompoundTag &);
+    MCAPI static bool needsLegacyConversion(class CompoundTag const &);
 
 protected:
 

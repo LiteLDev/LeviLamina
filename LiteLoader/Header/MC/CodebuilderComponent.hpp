@@ -15,16 +15,16 @@ class CodebuilderComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CODEBUILDERCOMPONENT
 public:
-    class CodebuilderComponent& operator=(class CodebuilderComponent const&) = delete;
-    CodebuilderComponent(class CodebuilderComponent const&) = delete;
+    class CodebuilderComponent& operator=(class CodebuilderComponent const &) = delete;
+    CodebuilderComponent(class CodebuilderComponent const &) = delete;
     CodebuilderComponent() = delete;
 #endif
 
 public:
     MCAPI enum CodeBuilderExecutionState::CodeStatus getCodeStatus() const;
     MCAPI void resetCodeStatus();
-    MCAPI void setCodeStatus(std::string const&);
-    MCAPI enum CodeBuilderExecutionState::CodeStatus stringToCodeStatus(std::string const&) const;
+    MCAPI void setCodeStatus(std::string const &);
+    MCAPI enum CodeBuilderExecutionState::CodeStatus stringToCodeStatus(std::string const &) const;
 
 protected:
 

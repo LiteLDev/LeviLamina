@@ -17,13 +17,13 @@ struct GeneDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GENEDEFINITION
 public:
-    struct GeneDefinition& operator=(struct GeneDefinition const&) = delete;
-    GeneDefinition(struct GeneDefinition const&) = delete;
+    struct GeneDefinition& operator=(struct GeneDefinition const &) = delete;
+    GeneDefinition(struct GeneDefinition const &) = delete;
     GeneDefinition() = delete;
 #endif
 
 public:
-    MCAPI void addGeneticVariant(struct GeneticVariant const&);
+    MCAPI void addGeneticVariant(struct GeneticVariant const &);
     MCAPI ~GeneDefinition();
 
 protected:

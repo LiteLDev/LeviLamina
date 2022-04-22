@@ -15,8 +15,8 @@ class MobSpawnerPermutation {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBSPAWNERPERMUTATION
 public:
-    class MobSpawnerPermutation& operator=(class MobSpawnerPermutation const&) = delete;
-    MobSpawnerPermutation(class MobSpawnerPermutation const&) = delete;
+    class MobSpawnerPermutation& operator=(class MobSpawnerPermutation const &) = delete;
+    MobSpawnerPermutation(class MobSpawnerPermutation const &) = delete;
     MobSpawnerPermutation() = delete;
 #endif
 

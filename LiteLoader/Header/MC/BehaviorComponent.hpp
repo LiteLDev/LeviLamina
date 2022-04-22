@@ -17,14 +17,14 @@ class BehaviorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEHAVIORCOMPONENT
 public:
-    class BehaviorComponent& operator=(class BehaviorComponent const&) = delete;
-    BehaviorComponent(class BehaviorComponent const&) = delete;
+    class BehaviorComponent& operator=(class BehaviorComponent const &) = delete;
+    BehaviorComponent(class BehaviorComponent const &) = delete;
 #endif
 
 public:
-    MCAPI BehaviorComponent(class BehaviorComponent&&);
+    MCAPI BehaviorComponent(class BehaviorComponent &&);
     MCAPI BehaviorComponent();
-    MCAPI class BehaviorComponent& operator=(class BehaviorComponent&&);
+    MCAPI class BehaviorComponent & operator=(class BehaviorComponent &&);
     MCAPI ~BehaviorComponent();
 
 protected:

@@ -18,14 +18,14 @@ class PropertyBag {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROPERTYBAG
 public:
-    class PropertyBag& operator=(class PropertyBag const&) = delete;
-    PropertyBag(class PropertyBag const&) = delete;
+    class PropertyBag& operator=(class PropertyBag const &) = delete;
+    PropertyBag(class PropertyBag const &) = delete;
 #endif
 
 public:
-    MCAPI PropertyBag(class Json::Value const&);
+    MCAPI PropertyBag(class Json::Value const &);
     MCAPI PropertyBag();
-    MCAPI class Json::Value const& toJsonValue() const;
+    MCAPI class Json::Value const & toJsonValue() const;
     MCAPI std::string toString() const;
     MCAPI static class PropertyBag EMPTY;
 

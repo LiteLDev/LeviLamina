@@ -18,14 +18,14 @@ class GenericMoveControl : public MoveControl {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GENERICMOVECONTROL
 public:
-    class GenericMoveControl& operator=(class GenericMoveControl const&) = delete;
-    GenericMoveControl(class GenericMoveControl const&) = delete;
+    class GenericMoveControl& operator=(class GenericMoveControl const &) = delete;
+    GenericMoveControl(class GenericMoveControl const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~GenericMoveControl();
-    /*1*/ virtual void initializeInternal(class Mob&, struct MoveControlDescription*);
-    /*2*/ virtual void tick(class MoveControlComponent&, class Mob&);
+    /*1*/ virtual void initializeInternal(class Mob &, struct MoveControlDescription *);
+    /*2*/ virtual void tick(class MoveControlComponent &, class Mob &);
     MCAPI GenericMoveControl();
 
 protected:

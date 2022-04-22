@@ -18,8 +18,8 @@ class TridentLoyaltyEnchant : public Enchant {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRIDENTLOYALTYENCHANT
 public:
-    class TridentLoyaltyEnchant& operator=(class TridentLoyaltyEnchant const&) = delete;
-    TridentLoyaltyEnchant(class TridentLoyaltyEnchant const&) = delete;
+    class TridentLoyaltyEnchant& operator=(class TridentLoyaltyEnchant const &) = delete;
+    TridentLoyaltyEnchant(class TridentLoyaltyEnchant const &) = delete;
     TridentLoyaltyEnchant() = delete;
 #endif
 
@@ -29,8 +29,8 @@ public:
     /*3*/ virtual int getMaxCost(int) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual int getMaxLevel() const;
-    /*8*/ virtual void doPostAttack(class Actor&, class Actor&, int) const;
-    /*9*/ virtual void doPostHurt(class ItemInstance&, class Actor&, class Actor&, int) const;
+    /*8*/ virtual void doPostAttack(class Actor &, class Actor &, int) const;
+    /*9*/ virtual void doPostHurt(class ItemInstance &, class Actor &, class Actor &, int) const;
     /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual void __unk_vfn_12();

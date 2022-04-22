@@ -18,8 +18,8 @@ struct DyeableDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DYEABLEDEFINITION
 public:
-    struct DyeableDefinition& operator=(struct DyeableDefinition const&) = delete;
-    DyeableDefinition(struct DyeableDefinition const&) = delete;
+    struct DyeableDefinition& operator=(struct DyeableDefinition const &) = delete;
+    DyeableDefinition(struct DyeableDefinition const &) = delete;
     DyeableDefinition() = delete;
 #endif
 

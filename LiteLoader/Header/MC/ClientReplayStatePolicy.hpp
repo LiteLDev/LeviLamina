@@ -17,19 +17,19 @@ class ClientReplayStatePolicy {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTREPLAYSTATEPOLICY
 public:
-    class ClientReplayStatePolicy& operator=(class ClientReplayStatePolicy const&) = delete;
-    ClientReplayStatePolicy(class ClientReplayStatePolicy const&) = delete;
+    class ClientReplayStatePolicy& operator=(class ClientReplayStatePolicy const &) = delete;
+    ClientReplayStatePolicy(class ClientReplayStatePolicy const &) = delete;
     ClientReplayStatePolicy() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ClientReplayStatePolicy();
     /*1*/ virtual bool isReplayNeeded(enum AdvanceFrameResult) const;
-    /*2*/ virtual bool canRewindToFrame(struct IActorMovementProxy&, unsigned __int64, unsigned __int64);
-    /*3*/ virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy&, class PlayerAuthInputPacket const&, unsigned __int64);
+    /*2*/ virtual bool canRewindToFrame(struct IActorMovementProxy &, unsigned __int64, unsigned __int64);
+    /*3*/ virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy &, class PlayerAuthInputPacket const &, unsigned __int64);
     /*4*/ virtual void flagUnsupportedMovement(unsigned __int64);
-    MCAPI bool _checkSupportedFrame(struct IActorMovementProxy&) const;
-    MCAPI bool _isSupportedMovementMode(struct IMobMovementProxy const&) const;
+    MCAPI bool _checkSupportedFrame(struct IActorMovementProxy &) const;
+    MCAPI bool _isSupportedMovementMode(struct IMobMovementProxy const &) const;
 
 protected:
 

@@ -18,14 +18,14 @@ class ZlibFileAccessWrapper {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ZLIBFILEACCESSWRAPPER
 public:
-    class ZlibFileAccessWrapper& operator=(class ZlibFileAccessWrapper const&) = delete;
-    ZlibFileAccessWrapper(class ZlibFileAccessWrapper const&) = delete;
+    class ZlibFileAccessWrapper& operator=(class ZlibFileAccessWrapper const &) = delete;
+    ZlibFileAccessWrapper(class ZlibFileAccessWrapper const &) = delete;
     ZlibFileAccessWrapper() = delete;
 #endif
 
 public:
-    MCAPI ZlibFileAccessWrapper(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess> >);
-    MCAPI struct zlib_filefunc64_32_def_s* getZipFunctions() const;
+    MCAPI ZlibFileAccessWrapper(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>>);
+    MCAPI struct zlib_filefunc64_32_def_s * getZipFunctions() const;
     MCAPI ~ZlibFileAccessWrapper();
 
 protected:

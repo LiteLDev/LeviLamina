@@ -18,13 +18,13 @@ class SlimeMoveControl : public MoveControl {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLIMEMOVECONTROL
 public:
-    class SlimeMoveControl& operator=(class SlimeMoveControl const&) = delete;
-    SlimeMoveControl(class SlimeMoveControl const&) = delete;
+    class SlimeMoveControl& operator=(class SlimeMoveControl const &) = delete;
+    SlimeMoveControl(class SlimeMoveControl const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~SlimeMoveControl();
-    /*2*/ virtual void tick(class MoveControlComponent&, class Mob&);
+    /*2*/ virtual void tick(class MoveControlComponent &, class Mob &);
     MCAPI SlimeMoveControl();
 
 protected:

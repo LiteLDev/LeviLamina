@@ -18,8 +18,8 @@ class ScriptNavigationFloatComponent : public NavigationScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTNAVIGATIONFLOATCOMPONENT
 public:
-    class ScriptNavigationFloatComponent& operator=(class ScriptNavigationFloatComponent const&) = delete;
-    ScriptNavigationFloatComponent(class ScriptNavigationFloatComponent const&) = delete;
+    class ScriptNavigationFloatComponent& operator=(class ScriptNavigationFloatComponent const &) = delete;
+    ScriptNavigationFloatComponent(class ScriptNavigationFloatComponent const &) = delete;
     ScriptNavigationFloatComponent() = delete;
 #endif
 

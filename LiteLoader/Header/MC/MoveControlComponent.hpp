@@ -17,8 +17,8 @@ class MoveControlComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVECONTROLCOMPONENT
 public:
-    class MoveControlComponent& operator=(class MoveControlComponent const&) = delete;
-    MoveControlComponent(class MoveControlComponent const&) = delete;
+    class MoveControlComponent& operator=(class MoveControlComponent const &) = delete;
+    MoveControlComponent(class MoveControlComponent const &) = delete;
 #endif
 
 public:
@@ -27,21 +27,21 @@ public:
     MCAPI float getMaxTurn() const;
     MCAPI bool getShouldBreach() const;
     MCAPI float getSpeedModifier() const;
-    MCAPI class Vec3 const& getWantedPosition() const;
-    MCAPI void initMultiTypeMovementComponent(class Mob&, class ActorDefinitionDescriptor&);
-    MCAPI void initializeFromDefinition(class Mob&, struct MoveControlDescription*);
-    MCAPI class MoveControlComponent& operator=(class MoveControlComponent&&);
+    MCAPI class Vec3 const & getWantedPosition() const;
+    MCAPI void initMultiTypeMovementComponent(class Mob &, class ActorDefinitionDescriptor &);
+    MCAPI void initializeFromDefinition(class Mob &, struct MoveControlDescription *);
+    MCAPI class MoveControlComponent & operator=(class MoveControlComponent &&);
     MCAPI void setHasWantedPosition(bool);
     MCAPI void setInternalType(std::unique_ptr<class MoveControl>);
     MCAPI void setMaxTurn(float);
     MCAPI void setShouldBreach(bool);
     MCAPI void setSpeedModifier(float);
-    MCAPI void setWantedPosition(class Mob&, class Vec3 const&, float);
-    MCAPI void update(class Mob&);
+    MCAPI void setWantedPosition(class Mob &, class Vec3 const &, float);
+    MCAPI void update(class Mob &);
 
 protected:
 
 private:
-    MCAPI void _setWantedPosition(class Vec3 const&);
+    MCAPI void _setWantedPosition(class Vec3 const &);
 
 };

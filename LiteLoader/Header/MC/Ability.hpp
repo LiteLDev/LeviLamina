@@ -20,8 +20,8 @@ enum Type;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ABILITY
 public:
-    class Ability& operator=(class Ability const&) = delete;
-    Ability(class Ability const&) = delete;
+    class Ability& operator=(class Ability const &) = delete;
+    Ability(class Ability const &) = delete;
     Ability() = delete;
 #endif
 

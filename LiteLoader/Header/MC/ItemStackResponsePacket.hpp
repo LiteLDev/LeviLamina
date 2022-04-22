@@ -18,16 +18,16 @@ class ItemStackResponsePacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKRESPONSEPACKET
 public:
-    class ItemStackResponsePacket& operator=(class ItemStackResponsePacket const&) = delete;
-    ItemStackResponsePacket(class ItemStackResponsePacket const&) = delete;
+    class ItemStackResponsePacket& operator=(class ItemStackResponsePacket const &) = delete;
+    ItemStackResponsePacket(class ItemStackResponsePacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ItemStackResponsePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~ItemStackResponsePacket(){
          (ItemStackResponsePacket::*rv)();
@@ -35,9 +35,9 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ItemStackResponsePacket(std::vector<struct ItemStackResponseInfo>&&);
+    MCAPI ItemStackResponsePacket(std::vector<struct ItemStackResponseInfo> &&);
     MCAPI ItemStackResponsePacket();
-    MCAPI std::vector<struct ItemStackResponseInfo> const& getResponses() const;
+    MCAPI std::vector<struct ItemStackResponseInfo> const & getResponses() const;
 
 protected:
 

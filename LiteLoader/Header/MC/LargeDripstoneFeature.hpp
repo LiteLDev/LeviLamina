@@ -17,14 +17,14 @@ class LargeDripstoneFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LARGEDRIPSTONEFEATURE
 public:
-    class LargeDripstoneFeature& operator=(class LargeDripstoneFeature const&) = delete;
-    LargeDripstoneFeature(class LargeDripstoneFeature const&) = delete;
+    class LargeDripstoneFeature& operator=(class LargeDripstoneFeature const &) = delete;
+    LargeDripstoneFeature(class LargeDripstoneFeature const &) = delete;
     LargeDripstoneFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LargeDripstoneFeature();
-    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 
 protected:
 

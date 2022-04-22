@@ -17,8 +17,8 @@ class FlushableEnv {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLUSHABLEENV
 public:
-    class FlushableEnv& operator=(class FlushableEnv const&) = delete;
-    FlushableEnv(class FlushableEnv const&) = delete;
+    class FlushableEnv& operator=(class FlushableEnv const &) = delete;
+    FlushableEnv(class FlushableEnv const &) = delete;
     FlushableEnv() = delete;
 #endif
 

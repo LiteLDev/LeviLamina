@@ -17,8 +17,8 @@ class NullSoundPlayer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NULLSOUNDPLAYER
 public:
-    class NullSoundPlayer& operator=(class NullSoundPlayer const&) = delete;
-    NullSoundPlayer(class NullSoundPlayer const&) = delete;
+    class NullSoundPlayer& operator=(class NullSoundPlayer const &) = delete;
+    NullSoundPlayer(class NullSoundPlayer const &) = delete;
     NullSoundPlayer() = delete;
 #endif
 
@@ -40,22 +40,22 @@ public:
     /*14*/ virtual void __unk_vfn_14();
     /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual void __unk_vfn_16();
-    /*17*/ virtual unsigned __int64 registerLoop(std::string const&, class std::function<void (struct LoopingSoundState& )>, float, float);
+    /*17*/ virtual unsigned __int64 registerLoop(std::string const &, class std::function<void (struct LoopingSoundState &)>, float, float);
     /*
-    inline bool isPlayingMusic(class Core::Path const& a0) const{
-        bool (NullSoundPlayer::*rv)(class Core::Path const&) const;
+    inline bool isPlayingMusic(class Core::Path const & a0) const{
+        bool (NullSoundPlayer::*rv)(class Core::Path const &) const;
         *((void**)&rv) = dlsym("?isPlayingMusic@NullSoundPlayer@@UEBA_NAEBVPath@Core@@@Z");
-        return (this->*rv)(std::forward<class Core::Path const&>(a0));
+        return (this->*rv)(std::forward<class Core::Path const &>(a0));
     }
-    inline bool isPlayingMusicEvent(std::string const& a0) const{
-        bool (NullSoundPlayer::*rv)(std::string const&) const;
+    inline bool isPlayingMusicEvent(std::string const & a0) const{
+        bool (NullSoundPlayer::*rv)(std::string const &) const;
         *((void**)&rv) = dlsym("?isPlayingMusicEvent@NullSoundPlayer@@UEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
+        return (this->*rv)(std::forward<std::string const &>(a0));
     }
-    inline bool getItem(std::string const& a0, class Core::Path const& a1, class SoundItem& a2) const{
-        bool (NullSoundPlayer::*rv)(std::string const&, class Core::Path const&, class SoundItem&) const;
+    inline bool getItem(std::string const & a0, class Core::Path const & a1, class SoundItem & a2) const{
+        bool (NullSoundPlayer::*rv)(std::string const &, class Core::Path const &, class SoundItem &) const;
         *((void**)&rv) = dlsym("?getItem@NullSoundPlayer@@UEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@AEAVSoundItem@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class Core::Path const&>(a1), std::forward<class SoundItem&>(a2));
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class Core::Path const &>(a1), std::forward<class SoundItem &>(a2));
     }
     inline bool isLoadingMusic() const{
         bool (NullSoundPlayer::*rv)() const;
@@ -92,55 +92,55 @@ public:
         *((void**)&rv) = dlsym("?fadeOut@NullSoundPlayer@@UEAAX_KM@Z");
         return (this->*rv)(std::forward<unsigned __int64>(a0), std::forward<float>(a1));
     }
-    inline void playMusic(std::string const& a0, float a1){
-        void (NullSoundPlayer::*rv)(std::string const&, float);
+    inline void playMusic(std::string const & a0, float a1){
+        void (NullSoundPlayer::*rv)(std::string const &, float);
         *((void**)&rv) = dlsym("?playMusic@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<float>(a1));
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<float>(a1));
     }
     inline void unregisterLoop(unsigned __int64 a0, bool a1){
         void (NullSoundPlayer::*rv)(unsigned __int64, bool);
         *((void**)&rv) = dlsym("?unregisterLoop@NullSoundPlayer@@UEAAX_K_N@Z");
         return (this->*rv)(std::forward<unsigned __int64>(a0), std::forward<bool>(a1));
     }
-    inline void playMusic(std::string const& a0, float a1, unsigned int& a2){
-        void (NullSoundPlayer::*rv)(std::string const&, float, unsigned int&);
+    inline void playMusic(std::string const & a0, float a1, unsigned int & a2){
+        void (NullSoundPlayer::*rv)(std::string const &, float, unsigned int &);
         *((void**)&rv) = dlsym("?playMusic@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MAEAI@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<float>(a1), std::forward<unsigned int&>(a2));
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<float>(a1), std::forward<unsigned int &>(a2));
     }
     inline void stopAllDelayedSoundActions(){
         void (NullSoundPlayer::*rv)();
         *((void**)&rv) = dlsym("?stopAllDelayedSoundActions@NullSoundPlayer@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void stop(std::string const& a0){
-        void (NullSoundPlayer::*rv)(std::string const&);
+    inline void stop(std::string const & a0){
+        void (NullSoundPlayer::*rv)(std::string const &);
         *((void**)&rv) = dlsym("?stop@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
+        return (this->*rv)(std::forward<std::string const &>(a0));
     }
     inline void stopAllSounds(){
         void (NullSoundPlayer::*rv)();
         *((void**)&rv) = dlsym("?stopAllSounds@NullSoundPlayer@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline class Core::PathBuffer<std::string > const getCurrentlyPlayingMusicName(){
-        class Core::PathBuffer<std::string > const (NullSoundPlayer::*rv)();
+    inline class Core::PathBuffer<std::string> const getCurrentlyPlayingMusicName(){
+        class Core::PathBuffer<std::string> const (NullSoundPlayer::*rv)();
         *((void**)&rv) = dlsym("?getCurrentlyPlayingMusicName@NullSoundPlayer@@UEAA?BV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
         return (this->*rv)();
     }
-    inline unsigned __int64 play(std::string const& a0, class Vec3 const& a1, float a2, float a3){
-        unsigned __int64 (NullSoundPlayer::*rv)(std::string const&, class Vec3 const&, float, float);
+    inline unsigned __int64 play(std::string const & a0, class Vec3 const & a1, float a2, float a3){
+        unsigned __int64 (NullSoundPlayer::*rv)(std::string const &, class Vec3 const &, float, float);
         *((void**)&rv) = dlsym("?play@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class Vec3 const&>(a1), std::forward<float>(a2), std::forward<float>(a3));
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class Vec3 const &>(a1), std::forward<float>(a2), std::forward<float>(a3));
     }
-    inline unsigned __int64 playUI(std::string const& a0, float a1, float a2){
-        unsigned __int64 (NullSoundPlayer::*rv)(std::string const&, float, float);
+    inline unsigned __int64 playUI(std::string const & a0, float a1, float a2){
+        unsigned __int64 (NullSoundPlayer::*rv)(std::string const &, float, float);
         *((void**)&rv) = dlsym("?playUI@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MM@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<float>(a1), std::forward<float>(a2));
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<float>(a1), std::forward<float>(a2));
     }
-    inline unsigned __int64 playAttached(std::string const& a0, class std::function<void (struct SoundInstanceProperties& )>&& a1){
-        unsigned __int64 (NullSoundPlayer::*rv)(std::string const&, class std::function<void (struct SoundInstanceProperties& )>&&);
+    inline unsigned __int64 playAttached(std::string const & a0, class std::function<void (struct SoundInstanceProperties &)> && a1){
+        unsigned __int64 (NullSoundPlayer::*rv)(std::string const &, class std::function<void (struct SoundInstanceProperties &)> &&);
         *((void**)&rv) = dlsym("?playAttached@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$function@$$A6AXAEAUSoundInstanceProperties@@@Z@3@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class std::function<void (struct SoundInstanceProperties& )>&&>(a1));
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class std::function<void (struct SoundInstanceProperties &)> &&>(a1));
     }
     inline class std::optional<struct LoopingSoundAttributes> tryGetLoopingSoundAttributes(unsigned __int64 a0) const{
         class std::optional<struct LoopingSoundAttributes> (NullSoundPlayer::*rv)(unsigned __int64) const;

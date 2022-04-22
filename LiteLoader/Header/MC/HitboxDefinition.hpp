@@ -18,15 +18,15 @@ class HitboxDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HITBOXDEFINITION
 public:
-    class HitboxDefinition& operator=(class HitboxDefinition const&) = delete;
-    HitboxDefinition(class HitboxDefinition const&) = delete;
+    class HitboxDefinition& operator=(class HitboxDefinition const &) = delete;
+    HitboxDefinition(class HitboxDefinition const &) = delete;
     HitboxDefinition() = delete;
 #endif
 
 public:
-    MCAPI void addAABB(struct HitboxJson const&);
-    MCAPI void initialize(class EntityContext&, class HitboxComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HitboxDefinition> >&);
+    MCAPI void addAABB(struct HitboxJson const &);
+    MCAPI void initialize(class EntityContext &, class HitboxComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HitboxDefinition>> &);
 
 protected:
 

@@ -17,16 +17,16 @@ class ClientPlayerEventCoordinator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTPLAYEREVENTCOORDINATOR
 public:
-    class ClientPlayerEventCoordinator& operator=(class ClientPlayerEventCoordinator const&) = delete;
-    ClientPlayerEventCoordinator(class ClientPlayerEventCoordinator const&) = delete;
+    class ClientPlayerEventCoordinator& operator=(class ClientPlayerEventCoordinator const &) = delete;
+    ClientPlayerEventCoordinator(class ClientPlayerEventCoordinator const &) = delete;
     ClientPlayerEventCoordinator() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ClientPlayerEventCoordinator();
-    MCAPI void sendPlayerDestroyedBlock(class Player&, class BlockLegacy const&);
-    MCAPI void sendPlayerInput(struct IPlayerMovementProxy&, class MoveInputHandler&);
-    MCAPI void sendStartDestroyBlock(class Player&, class BlockPos const&, unsigned char&);
+    MCAPI void sendPlayerDestroyedBlock(class Player &, class BlockLegacy const &);
+    MCAPI void sendPlayerInput(struct IPlayerMovementProxy &, class MoveInputHandler &);
+    MCAPI void sendStartDestroyBlock(class Player &, class BlockPos const &, unsigned char &);
 
 protected:
 

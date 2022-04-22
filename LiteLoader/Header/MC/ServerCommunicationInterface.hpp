@@ -18,22 +18,22 @@ class ServerCommunicationInterface {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERCOMMUNICATIONINTERFACE
 public:
-    class ServerCommunicationInterface& operator=(class ServerCommunicationInterface const&) = delete;
-    ServerCommunicationInterface(class ServerCommunicationInterface const&) = delete;
+    class ServerCommunicationInterface& operator=(class ServerCommunicationInterface const &) = delete;
+    ServerCommunicationInterface(class ServerCommunicationInterface const &) = delete;
     ServerCommunicationInterface() = delete;
 #endif
 
 public:
-    MCAPI void sendBandwidthMetric(unsigned __int64, unsigned __int64, unsigned __int64, unsigned __int64, std::string const&);
-    MCAPI void sendChunkLoadTelemtryData(struct ChunkLoadTelemetryData const&);
+    MCAPI void sendBandwidthMetric(unsigned __int64, unsigned __int64, unsigned __int64, unsigned __int64, std::string const &);
+    MCAPI void sendChunkLoadTelemtryData(struct ChunkLoadTelemetryData const &);
     MCAPI void sendServerStarted();
-    MCAPI void sendServerTickTime(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> >);
+    MCAPI void sendServerTickTime(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
     MCAPI ~ServerCommunicationInterface();
-    MCAPI static std::unique_ptr<class ServerCommunicationInterface> create(struct NetworkAddress const&);
+    MCAPI static std::unique_ptr<class ServerCommunicationInterface> create(struct NetworkAddress const &);
 
 protected:
 
 private:
-    MCAPI void communicate(std::string const&, class Json::Value const&);
+    MCAPI void communicate(std::string const &, class Json::Value const &);
 
 };

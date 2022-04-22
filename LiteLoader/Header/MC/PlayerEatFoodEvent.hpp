@@ -15,8 +15,8 @@ class PlayerEatFoodEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYEREATFOODEVENT
 public:
-    class PlayerEatFoodEvent& operator=(class PlayerEatFoodEvent const&) = delete;
-    PlayerEatFoodEvent(class PlayerEatFoodEvent const&) = delete;
+    class PlayerEatFoodEvent& operator=(class PlayerEatFoodEvent const &) = delete;
+    PlayerEatFoodEvent(class PlayerEatFoodEvent const &) = delete;
     PlayerEatFoodEvent() = delete;
 #endif
 

@@ -17,8 +17,8 @@ class IUIEventTelemetry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IUIEVENTTELEMETRY
 public:
-    class IUIEventTelemetry& operator=(class IUIEventTelemetry const&) = delete;
-    IUIEventTelemetry(class IUIEventTelemetry const&) = delete;
+    class IUIEventTelemetry& operator=(class IUIEventTelemetry const &) = delete;
+    IUIEventTelemetry(class IUIEventTelemetry const &) = delete;
     IUIEventTelemetry() = delete;
 #endif
 

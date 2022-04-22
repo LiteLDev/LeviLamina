@@ -17,8 +17,8 @@ class RangedAttackGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANGEDATTACKGOAL
 public:
-    class RangedAttackGoal& operator=(class RangedAttackGoal const&) = delete;
-    RangedAttackGoal(class RangedAttackGoal const&) = delete;
+    class RangedAttackGoal& operator=(class RangedAttackGoal const &) = delete;
+    RangedAttackGoal(class RangedAttackGoal const &) = delete;
     RangedAttackGoal() = delete;
 #endif
 
@@ -30,9 +30,9 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI RangedAttackGoal(class Mob&);
-    MCAPI void handleAttackBehavior(class Actor*, class Vec3 const&, float, bool);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI RangedAttackGoal(class Mob &);
+    MCAPI void handleAttackBehavior(class Actor *, class Vec3 const &, float, bool);
 
 protected:
 

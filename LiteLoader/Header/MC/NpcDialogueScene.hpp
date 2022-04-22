@@ -18,8 +18,8 @@ struct NpcDialogueScene {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCDIALOGUESCENE
 public:
-    struct NpcDialogueScene& operator=(struct NpcDialogueScene const&) = delete;
-    NpcDialogueScene(struct NpcDialogueScene const&) = delete;
+    struct NpcDialogueScene& operator=(struct NpcDialogueScene const &) = delete;
+    NpcDialogueScene(struct NpcDialogueScene const &) = delete;
     NpcDialogueScene() = delete;
 #endif
 

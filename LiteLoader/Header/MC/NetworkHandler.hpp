@@ -25,8 +25,8 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKHANDLER
 public:
-    class NetworkHandler& operator=(class NetworkHandler const&) = delete;
-    NetworkHandler(class NetworkHandler const&) = delete;
+    class NetworkHandler& operator=(class NetworkHandler const &) = delete;
+    NetworkHandler(class NetworkHandler const &) = delete;
     NetworkHandler() = delete;
 #endif
 
@@ -52,8 +52,8 @@ public:
         *((void**)&rv) = dlsym("?_onEnable@NetworkHandler@@EEAAXXZ");
         return (this->*rv)();
     }
-    inline class Social::GameConnectionInfo const& getConnectionInfo() const{
-        class Social::GameConnectionInfo const& (NetworkHandler::*rv)() const;
+    inline class Social::GameConnectionInfo const & getConnectionInfo() const{
+        class Social::GameConnectionInfo const & (NetworkHandler::*rv)() const;
         *((void**)&rv) = dlsym("?getConnectionInfo@NetworkHandler@@UEBAAEBVGameConnectionInfo@Social@@XZ");
         return (this->*rv)();
     }
@@ -67,50 +67,50 @@ public:
         *((void**)&rv) = dlsym("?getDefaultGamePortv6@NetworkHandler@@UEBAGXZ");
         return (this->*rv)();
     }
-    inline void onAllConnectionsClosed(std::string const& a0, bool a1){
-        void (NetworkHandler::*rv)(std::string const&, bool);
+    inline void onAllConnectionsClosed(std::string const & a0, bool a1){
+        void (NetworkHandler::*rv)(std::string const &, bool);
         *((void**)&rv) = dlsym("?onAllConnectionsClosed@NetworkHandler@@EEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<bool>(a1));
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<bool>(a1));
     }
-    inline void onAllRemoteConnectionsClosed(std::string const& a0, bool a1){
-        void (NetworkHandler::*rv)(std::string const&, bool);
+    inline void onAllRemoteConnectionsClosed(std::string const & a0, bool a1){
+        void (NetworkHandler::*rv)(std::string const &, bool);
         *((void**)&rv) = dlsym("?onAllRemoteConnectionsClosed@NetworkHandler@@EEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<bool>(a1));
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<bool>(a1));
     }
-    inline void onConnectionClosed(class NetworkIdentifier const& a0, std::string const& a1, bool a2){
-        void (NetworkHandler::*rv)(class NetworkIdentifier const&, std::string const&, bool);
+    inline void onConnectionClosed(class NetworkIdentifier const & a0, std::string const & a1, bool a2){
+        void (NetworkHandler::*rv)(class NetworkIdentifier const &, std::string const &, bool);
         *((void**)&rv) = dlsym("?onConnectionClosed@NetworkHandler@@EEAAXAEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z");
-        return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<std::string const&>(a1), std::forward<bool>(a2));
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<std::string const &>(a1), std::forward<bool>(a2));
     }
-    inline void onNewIncomingConnection(class NetworkIdentifier const& a0, class std::shared_ptr<class NetworkPeer> a1){
-        void (NetworkHandler::*rv)(class NetworkIdentifier const&, class std::shared_ptr<class NetworkPeer>);
+    inline void onNewIncomingConnection(class NetworkIdentifier const & a0, class std::shared_ptr<class NetworkPeer> a1){
+        void (NetworkHandler::*rv)(class NetworkIdentifier const &, class std::shared_ptr<class NetworkPeer>);
         *((void**)&rv) = dlsym("?onNewIncomingConnection@NetworkHandler@@EEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VNetworkPeer@@@std@@@Z");
-        return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class std::shared_ptr<class NetworkPeer>>(a1));
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class std::shared_ptr<class NetworkPeer>>(a1));
     }
-    inline void onNewIncomingLocalConnection(class NetworkIdentifier const& a0, class std::shared_ptr<class NetworkPeer> a1){
-        void (NetworkHandler::*rv)(class NetworkIdentifier const&, class std::shared_ptr<class NetworkPeer>);
+    inline void onNewIncomingLocalConnection(class NetworkIdentifier const & a0, class std::shared_ptr<class NetworkPeer> a1){
+        void (NetworkHandler::*rv)(class NetworkIdentifier const &, class std::shared_ptr<class NetworkPeer>);
         *((void**)&rv) = dlsym("?onNewIncomingLocalConnection@NetworkHandler@@EEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VNetworkPeer@@@std@@@Z");
-        return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class std::shared_ptr<class NetworkPeer>>(a1));
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class std::shared_ptr<class NetworkPeer>>(a1));
     }
-    inline void onNewOutgoingConnection(class NetworkIdentifier const& a0, class std::shared_ptr<class NetworkPeer> a1){
-        void (NetworkHandler::*rv)(class NetworkIdentifier const&, class std::shared_ptr<class NetworkPeer>);
+    inline void onNewOutgoingConnection(class NetworkIdentifier const & a0, class std::shared_ptr<class NetworkPeer> a1){
+        void (NetworkHandler::*rv)(class NetworkIdentifier const &, class std::shared_ptr<class NetworkPeer>);
         *((void**)&rv) = dlsym("?onNewOutgoingConnection@NetworkHandler@@EEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VNetworkPeer@@@std@@@Z");
-        return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class std::shared_ptr<class NetworkPeer>>(a1));
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class std::shared_ptr<class NetworkPeer>>(a1));
     }
-    inline void onNewOutgoingLocalConnection(class NetworkIdentifier const& a0, class std::shared_ptr<class NetworkPeer> a1){
-        void (NetworkHandler::*rv)(class NetworkIdentifier const&, class std::shared_ptr<class NetworkPeer>);
+    inline void onNewOutgoingLocalConnection(class NetworkIdentifier const & a0, class std::shared_ptr<class NetworkPeer> a1){
+        void (NetworkHandler::*rv)(class NetworkIdentifier const &, class std::shared_ptr<class NetworkPeer>);
         *((void**)&rv) = dlsym("?onNewOutgoingLocalConnection@NetworkHandler@@EEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VNetworkPeer@@@std@@@Z");
-        return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class std::shared_ptr<class NetworkPeer>>(a1));
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class std::shared_ptr<class NetworkPeer>>(a1));
     }
     inline void onOutgoingConnectionFailed(){
         void (NetworkHandler::*rv)();
         *((void**)&rv) = dlsym("?onOutgoingConnectionFailed@NetworkHandler@@EEAAXXZ");
         return (this->*rv)();
     }
-    inline void onWebsocketRequest(std::string const& a0, std::string const& a1, class std::function<void (void)> a2){
-        void (NetworkHandler::*rv)(std::string const&, std::string const&, class std::function<void (void)>);
+    inline void onWebsocketRequest(std::string const & a0, std::string const & a1, class std::function<void (void)> a2){
+        void (NetworkHandler::*rv)(std::string const &, std::string const &, class std::function<void (void)>);
         *((void**)&rv) = dlsym("?onWebsocketRequest@NetworkHandler@@EEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$function@$$A6AXXZ@3@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1), std::forward<class std::function<void (void)>>(a2));
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<std::string const &>(a1), std::forward<class std::function<void (void)>>(a2));
     }
     inline bool useIPv6Only() const{
         bool (NetworkHandler::*rv)() const;
@@ -118,39 +118,41 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI bool AddConnectionIfNeeded(unsigned __int64, class std::shared_ptr<struct NetherNetInstance> const&);
-    MCAPI NetworkHandler(class Scheduler&, std::vector<std::string> const&, struct NetworkHandlerToggles, class Bedrock::NonOwnerPointer<class NetworkDebugManager> const&);
+    MCAPI bool AddConnectionIfNeeded(unsigned __int64, class std::shared_ptr<struct NetherNetInstance> const &);
+    MCAPI NetworkHandler(class Scheduler &, std::vector<std::string> const &, struct NetworkHandlerToggles, class Bedrock::NonOwnerPointer<class NetworkDebugManager> const &);
     MCAPI void disconnect();
-    MCAPI void enableAsyncFlush(class NetworkIdentifier const&);
-    MCAPI std::vector<std::unique_ptr<class NetworkHandler::Connection>> const& getConnections() const;
-    MCAPI class Connector& getConnector();
-    MCAPI class std::weak_ptr<class EncryptedNetworkPeer> getEncryptedPeerForUser(class NetworkIdentifier const&);
+    MCAPI void enableAsyncFlush(class NetworkIdentifier const &);
+    MCAPI std::vector<std::unique_ptr<class NetworkHandler::Connection>> const & getConnections() const;
+    MCAPI class Connector & getConnector();
+    MCAPI class std::weak_ptr<class EncryptedNetworkPeer> getEncryptedPeerForUser(class NetworkIdentifier const &);
     MCAPI class NetworkIdentifier getLocalNetworkId() const;
-    MCAPI class NetworkStatistics const* getNetworkStatistics() const;
-    MCAPI class NetworkPeer* getPeerForUser(class NetworkIdentifier const&);
+    MCAPI class NetworkStatistics const * getNetworkStatistics() const;
+    MCAPI class NetworkPeer * getPeerForUser(class NetworkIdentifier const &);
     MCAPI class NetworkIdentifier getPrimaryNetworkId() const;
-    MCAPI class ResourcePackFileUploadManager& getResourcePackUploadManager(class PacketSender&, class NetworkIdentifier const&, std::string const&);
+    MCAPI class ResourcePackFileUploadManager & getResourcePackUploadManager(class PacketSender &, class NetworkIdentifier const &, std::string const &);
     MCAPI class NetworkIdentifier getServerId() const;
-    MCAPI class ServerLocator& getServerLocator();
-    MCAPI bool host(struct ConnectionDefinition const&);
+    MCAPI class ServerLocator & getServerLocator();
+    MCAPI bool host(struct ConnectionDefinition const &);
     MCAPI void initializeSelectedTransportType();
     MCAPI void initializeServerLocatorTransportType();
-    MCAPI bool isHostingPlayer(class NetworkIdentifier const&, unsigned char const&) const;
+    MCAPI bool isHostingPlayer(class NetworkIdentifier const &, unsigned char const &) const;
     MCAPI bool isServer() const;
-    MCAPI void registerServerInstance(class NetEventCallback&);
+    MCAPI void registerServerInstance(class NetEventCallback &);
     MCAPI void runEvents(bool);
-    MCAPI void send(class NetworkIdentifier const&, class Packet const&, unsigned char);
-    MCAPI void setCloseConnection(class NetworkIdentifier const&);
-    MCAPI void unregisterClientOrServerInstance(unsigned char const&);
-    MCAPI void update(std::vector<class WeakEntityRef> const*);
+    MCAPI void send(class NetworkIdentifier const &, class Packet const &, unsigned char);
+    MCAPI void setCloseConnection(class NetworkIdentifier const &);
+    MCAPI void unregisterClientOrServerInstance(unsigned char const &);
+    MCAPI void update(std::vector<class WeakEntityRef> const *);
     MCAPI static class std::shared_ptr<struct NetherNetInstance> mNetherNetInstance;
 
 protected:
 
 private:
-    MCAPI class NetworkHandler::Connection* _getConnectionFromId(class NetworkIdentifier const&) const;
-    MCAPI void _handlePacketViolation(enum StreamReadResult, enum PacketViolationResponse, enum MinecraftPacketIds, class NetworkIdentifier const&, class NetworkHandler::Connection&, unsigned char, std::string const&);
-    MCAPI void _sendInternal(class NetworkIdentifier const&, class Packet const&, std::string const&);
-    MCAPI bool _sortAndPacketizeEvents(class NetworkHandler::Connection&, class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> > >);
+    MCAPI class NetworkHandler::Connection * _getConnectionFromId(class NetworkIdentifier const &) const;
+    MCAPI void _handlePacketViolation(enum StreamReadResult, enum PacketViolationResponse, enum MinecraftPacketIds, class NetworkIdentifier const &, class NetworkHandler::Connection &, unsigned char, std::string const &);
+    MCAPI void _sendInternal(class NetworkIdentifier const &, class Packet const &, std::string const &);
+    MCAPI bool _sortAndPacketizeEvents(class NetworkHandler::Connection &, class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>);
+    MCAPI void onConnectionClosed(class NetworkIdentifier const &, std::string const &, bool);
+    MCAPI void onOutgoingConnectionFailed();
 
 };

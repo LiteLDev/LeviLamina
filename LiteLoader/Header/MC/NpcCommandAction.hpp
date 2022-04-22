@@ -24,17 +24,17 @@ struct SavedCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCCOMMANDACTION
 public:
-    class NpcCommandAction& operator=(class NpcCommandAction const&) = delete;
-    NpcCommandAction(class NpcCommandAction const&) = delete;
+    class NpcCommandAction& operator=(class NpcCommandAction const &) = delete;
+    NpcCommandAction(class NpcCommandAction const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~NpcCommandAction();
     /*1*/ virtual class Json::Value toJson();
-    /*2*/ virtual bool fromJson(class Json::Value const&);
+    /*2*/ virtual bool fromJson(class Json::Value const &);
     MCAPI NpcCommandAction();
-    MCAPI std::vector<struct NpcCommandAction::SavedCommand>& getCommands();
-    MCAPI void setCommands(std::vector<struct NpcCommandAction::SavedCommand>&&);
+    MCAPI std::vector<struct NpcCommandAction::SavedCommand> & getCommands();
+    MCAPI void setCommands(std::vector<struct NpcCommandAction::SavedCommand> &&);
     MCAPI static char const COMMAND_DELIMITER;
 
 protected:

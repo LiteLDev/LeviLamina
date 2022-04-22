@@ -15,8 +15,8 @@ class EntitiesExitedVolumeComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITIESEXITEDVOLUMECOMPONENT
 public:
-    class EntitiesExitedVolumeComponent& operator=(class EntitiesExitedVolumeComponent const&) = delete;
-    EntitiesExitedVolumeComponent(class EntitiesExitedVolumeComponent const&) = delete;
+    class EntitiesExitedVolumeComponent& operator=(class EntitiesExitedVolumeComponent const &) = delete;
+    EntitiesExitedVolumeComponent(class EntitiesExitedVolumeComponent const &) = delete;
     EntitiesExitedVolumeComponent() = delete;
 #endif
 

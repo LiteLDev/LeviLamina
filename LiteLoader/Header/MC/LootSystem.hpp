@@ -17,19 +17,19 @@ class LootSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTSYSTEM
 public:
-    class LootSystem& operator=(class LootSystem const&) = delete;
-    LootSystem(class LootSystem const&) = delete;
+    class LootSystem& operator=(class LootSystem const &) = delete;
+    LootSystem(class LootSystem const &) = delete;
     LootSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LootSystem();
-    /*1*/ virtual void registerEvents(class entt::dispatcher&);
+    /*1*/ virtual void registerEvents(class entt::dispatcher &);
     /*
-    inline void tick(class EntityRegistry& a0){
-        void (LootSystem::*rv)(class EntityRegistry&);
+    inline void tick(class EntityRegistry & a0){
+        void (LootSystem::*rv)(class EntityRegistry &);
         *((void**)&rv) = dlsym("?tick@LootSystem@@UEAAXAEAVEntityRegistry@@@Z");
-        return (this->*rv)(std::forward<class EntityRegistry&>(a0));
+        return (this->*rv)(std::forward<class EntityRegistry &>(a0));
     }
     */
 

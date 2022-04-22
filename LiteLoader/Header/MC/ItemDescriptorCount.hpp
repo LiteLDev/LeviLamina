@@ -20,14 +20,14 @@ class ItemDescriptorCount {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMDESCRIPTORCOUNT
 public:
-    class ItemDescriptorCount& operator=(class ItemDescriptorCount const&) = delete;
-    ItemDescriptorCount(class ItemDescriptorCount const&) = delete;
+    class ItemDescriptorCount& operator=(class ItemDescriptorCount const &) = delete;
+    ItemDescriptorCount(class ItemDescriptorCount const &) = delete;
 #endif
 
 public:
-    MCAPI ItemDescriptorCount(class Block const&, unsigned short);
-    MCAPI ItemDescriptorCount(class BlockLegacy const&, unsigned short);
-    MCAPI ItemDescriptorCount(class Item const&, int, unsigned short);
+    MCAPI ItemDescriptorCount(class Block const &, unsigned short);
+    MCAPI ItemDescriptorCount(class BlockLegacy const &, unsigned short);
+    MCAPI ItemDescriptorCount(class Item const &, int, unsigned short);
     MCAPI ItemDescriptorCount(class gsl::basic_string_span<char const, -1>, int, unsigned short);
     MCAPI ItemDescriptorCount();
     MCAPI short getStackSize() const;

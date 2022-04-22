@@ -17,18 +17,18 @@ class AttackNode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTACKNODE
 public:
-    class AttackNode& operator=(class AttackNode const&) = delete;
-    AttackNode(class AttackNode const&) = delete;
+    class AttackNode& operator=(class AttackNode const &) = delete;
+    AttackNode(class AttackNode const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~AttackNode();
-    /*1*/ virtual enum BehaviorStatus tick(class Actor&);
+    /*1*/ virtual enum BehaviorStatus tick(class Actor &);
     /*
-    inline void initializeFromDefinition(class Actor& a0){
-        void (AttackNode::*rv)(class Actor&);
+    inline void initializeFromDefinition(class Actor & a0){
+        void (AttackNode::*rv)(class Actor &);
         *((void**)&rv) = dlsym("?initializeFromDefinition@AttackNode@@EEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
+        return (this->*rv)(std::forward<class Actor &>(a0));
     }
     */
     MCAPI AttackNode();

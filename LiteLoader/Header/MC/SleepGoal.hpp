@@ -18,8 +18,8 @@ class SleepGoal : public MoveToPOIGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLEEPGOAL
 public:
-    class SleepGoal& operator=(class SleepGoal const&) = delete;
-    SleepGoal(class SleepGoal const&) = delete;
+    class SleepGoal& operator=(class SleepGoal const &) = delete;
+    SleepGoal(class SleepGoal const &) = delete;
     SleepGoal() = delete;
 #endif
 
@@ -31,11 +31,11 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*16*/ virtual unsigned __int64 _getRepathTime() const;
-    MCAPI SleepGoal(class Mob&, float, float, float, float, int, float);
+    MCAPI SleepGoal(class Mob &, float, float, float, float, int, float);
 
 protected:
 

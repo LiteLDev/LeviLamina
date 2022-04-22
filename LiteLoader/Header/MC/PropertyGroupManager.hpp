@@ -17,14 +17,14 @@ class PropertyGroupManager {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROPERTYGROUPMANAGER
 public:
-    class PropertyGroupManager& operator=(class PropertyGroupManager const&) = delete;
-    PropertyGroupManager(class PropertyGroupManager const&) = delete;
+    class PropertyGroupManager& operator=(class PropertyGroupManager const &) = delete;
+    PropertyGroupManager(class PropertyGroupManager const &) = delete;
 #endif
 
 public:
     MCAPI PropertyGroupManager();
-    MCAPI class PropertyGroup const* getPropertyGroup(class HashedString const&) const;
-    MCAPI void registerGroup(class HashedString const&, class PropertyGroup const&);
+    MCAPI class PropertyGroup const * getPropertyGroup(class HashedString const &) const;
+    MCAPI void registerGroup(class HashedString const &, class PropertyGroup const &);
     MCAPI ~PropertyGroupManager();
 
 protected:

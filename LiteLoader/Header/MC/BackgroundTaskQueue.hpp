@@ -17,8 +17,8 @@ class BackgroundTaskQueue {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BACKGROUNDTASKQUEUE
 public:
-    class BackgroundTaskQueue& operator=(class BackgroundTaskQueue const&) = delete;
-    BackgroundTaskQueue(class BackgroundTaskQueue const&) = delete;
+    class BackgroundTaskQueue& operator=(class BackgroundTaskQueue const &) = delete;
+    BackgroundTaskQueue(class BackgroundTaskQueue const &) = delete;
 #endif
 
 public:

@@ -17,14 +17,14 @@ class InstantDespawnComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSTANTDESPAWNCOMPONENT
 public:
-    class InstantDespawnComponent& operator=(class InstantDespawnComponent const&) = delete;
-    InstantDespawnComponent(class InstantDespawnComponent const&) = delete;
+    class InstantDespawnComponent& operator=(class InstantDespawnComponent const &) = delete;
+    InstantDespawnComponent(class InstantDespawnComponent const &) = delete;
     InstantDespawnComponent() = delete;
 #endif
 
 public:
-    MCAPI void onDespawn(class Actor&);
-    MCAPI void tick(class Actor&);
+    MCAPI void onDespawn(class Actor &);
+    MCAPI void tick(class Actor &);
 
 protected:
 

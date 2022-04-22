@@ -19,14 +19,14 @@ class InverterDefinition : public BehaviorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVERTERDEFINITION
 public:
-    class InverterDefinition& operator=(class InverterDefinition const&) = delete;
-    InverterDefinition(class InverterDefinition const&) = delete;
+    class InverterDefinition& operator=(class InverterDefinition const &) = delete;
+    InverterDefinition(class InverterDefinition const &) = delete;
     InverterDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~InverterDefinition();
-    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 
 protected:
 

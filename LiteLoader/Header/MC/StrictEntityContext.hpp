@@ -15,16 +15,17 @@ class StrictEntityContext {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRICTENTITYCONTEXT
 public:
-    class StrictEntityContext& operator=(class StrictEntityContext const&) = delete;
-    StrictEntityContext(class StrictEntityContext const&) = delete;
+    class StrictEntityContext& operator=(class StrictEntityContext const &) = delete;
+    StrictEntityContext(class StrictEntityContext const &) = delete;
     StrictEntityContext() = delete;
 #endif
 
 public:
-    MCAPI StrictEntityContext(class StrictEntityContext&&);
-    MCAPI StrictEntityContext(class EntityRegistryBase&, class EntityId);
-    MCAPI StrictEntityContext(class EntityContextBase const&);
-    MCAPI class StrictEntityContext& operator=(class StrictEntityContext&&);
+    MCAPI StrictEntityContext(class StrictEntityContext &&);
+    MCAPI StrictEntityContext(class EntityRegistryBase &, class EntityId);
+    MCAPI StrictEntityContext(class EntityContextBase const &);
+    MCAPI bool isNull() const;
+    MCAPI class StrictEntityContext & operator=(class StrictEntityContext &&);
 
 protected:
     MCAPI class EntityId _getEntityId() const;

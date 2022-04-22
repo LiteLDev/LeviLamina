@@ -18,8 +18,8 @@ class ServerMoveInputHandler : public MoveInput {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERMOVEINPUTHANDLER
 public:
-    class ServerMoveInputHandler& operator=(class ServerMoveInputHandler const&) = delete;
-    ServerMoveInputHandler(class ServerMoveInputHandler const&) = delete;
+    class ServerMoveInputHandler& operator=(class ServerMoveInputHandler const &) = delete;
+    ServerMoveInputHandler(class ServerMoveInputHandler const &) = delete;
 #endif
 
 public:
@@ -28,16 +28,16 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*5*/ virtual void __unk_vfn_5();
     /*9*/ virtual void __unk_vfn_9();
-    /*12*/ virtual class Vec3 const& getGazeDirection() const;
+    /*12*/ virtual class Vec3 const & getGazeDirection() const;
     /*
-    inline void registerInputHandlers(class InputHandler& a0){
-        void (ServerMoveInputHandler::*rv)(class InputHandler&);
+    inline void registerInputHandlers(class InputHandler & a0){
+        void (ServerMoveInputHandler::*rv)(class InputHandler &);
         *((void**)&rv) = dlsym("?registerInputHandlers@ServerMoveInputHandler@@UEAAXAEAVInputHandler@@@Z");
-        return (this->*rv)(std::forward<class InputHandler&>(a0));
+        return (this->*rv)(std::forward<class InputHandler &>(a0));
     }
     */
     MCAPI ServerMoveInputHandler();
-    MCAPI void digestPlayerInputPacket(class PlayerAuthInputPacket const&);
+    MCAPI void digestPlayerInputPacket(class PlayerAuthInputPacket const &);
 
 protected:
 

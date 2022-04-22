@@ -18,14 +18,14 @@ class BoostableDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOOSTABLEDEFINITION
 public:
-    class BoostableDefinition& operator=(class BoostableDefinition const&) = delete;
-    BoostableDefinition(class BoostableDefinition const&) = delete;
+    class BoostableDefinition& operator=(class BoostableDefinition const &) = delete;
+    BoostableDefinition(class BoostableDefinition const &) = delete;
     BoostableDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&, class BoostableComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BoostableDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class BoostableComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BoostableDefinition>> &);
 
 protected:
 

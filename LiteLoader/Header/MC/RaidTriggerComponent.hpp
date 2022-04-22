@@ -17,14 +17,14 @@ class RaidTriggerComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAIDTRIGGERCOMPONENT
 public:
-    class RaidTriggerComponent& operator=(class RaidTriggerComponent const&) = delete;
-    RaidTriggerComponent(class RaidTriggerComponent const&) = delete;
+    class RaidTriggerComponent& operator=(class RaidTriggerComponent const &) = delete;
+    RaidTriggerComponent(class RaidTriggerComponent const &) = delete;
     RaidTriggerComponent() = delete;
 #endif
 
 public:
-    MCAPI void initFromDefinition(class Actor&);
-    MCAPI void reloadComponent(class Actor&);
+    MCAPI void initFromDefinition(class Actor &);
+    MCAPI void reloadComponent(class Actor &);
 
 protected:
 

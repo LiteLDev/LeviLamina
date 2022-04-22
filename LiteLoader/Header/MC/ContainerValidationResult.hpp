@@ -17,15 +17,15 @@ struct ContainerValidationResult {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERVALIDATIONRESULT
 public:
-    struct ContainerValidationResult& operator=(struct ContainerValidationResult const&) = delete;
+    struct ContainerValidationResult& operator=(struct ContainerValidationResult const &) = delete;
     ContainerValidationResult() = delete;
 #endif
 
 public:
-    MCAPI ContainerValidationResult(struct ContainerValidationResult const&);
+    MCAPI ContainerValidationResult(struct ContainerValidationResult const &);
     MCAPI ContainerValidationResult(enum ContainerValidationOutcome);
     MCAPI bool isSuccess() const;
-    MCAPI struct ContainerValidationOperation const* tryGetOperation(enum ContainerValidationOperationType) const;
+    MCAPI struct ContainerValidationOperation const * tryGetOperation(enum ContainerValidationOperationType) const;
     MCAPI ~ContainerValidationResult();
 
 protected:

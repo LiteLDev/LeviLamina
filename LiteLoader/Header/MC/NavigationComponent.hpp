@@ -17,20 +17,20 @@ class NavigationComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONCOMPONENT
 public:
-    class NavigationComponent& operator=(class NavigationComponent const&) = delete;
-    NavigationComponent(class NavigationComponent const&) = delete;
+    class NavigationComponent& operator=(class NavigationComponent const &) = delete;
+    NavigationComponent(class NavigationComponent const &) = delete;
 #endif
 
 public:
-    MCAPI NavigationComponent(class NavigationComponent&&);
+    MCAPI NavigationComponent(class NavigationComponent &&);
     MCAPI NavigationComponent();
-    MCAPI std::unique_ptr<class Path> createPath(class Mob&, class Actor&);
-    MCAPI std::unique_ptr<class Path> createPath(class Mob&, class Vec3 const&);
+    MCAPI std::unique_ptr<class Path> createPath(class Mob &, class Actor &);
+    MCAPI std::unique_ptr<class Path> createPath(class Mob &, class Vec3 const &);
     MCAPI bool getAvoidDamageBlocks() const;
     MCAPI bool getAvoidPortals() const;
     MCAPI bool getAvoidSun() const;
     MCAPI bool getAvoidWater() const;
-    MCAPI std::vector<class BlockDescriptor> const& getBlocksToAvoid() const;
+    MCAPI std::vector<class BlockDescriptor> const & getBlocksToAvoid() const;
     MCAPI bool getCanBreach() const;
     MCAPI bool getCanFloat() const;
     MCAPI bool getCanJump() const;
@@ -46,23 +46,23 @@ public:
     MCAPI bool getIsAmphibious() const;
     MCAPI bool getIsFollowingRivers() const;
     MCAPI class Vec3 getLastStuckCheckPosition() const;
-    MCAPI float getMaxDistance(class Actor const&) const;
-    MCAPI class Path* getPath() const;
+    MCAPI float getMaxDistance(class Actor const &) const;
+    MCAPI class Path * getPath() const;
     MCAPI float getSpeed() const;
-    MCAPI class Vec3 const& getTargetOffset() const;
+    MCAPI class Vec3 const & getTargetOffset() const;
     MCAPI float getTerminationThreshold() const;
     MCAPI int getTickTimeout() const;
     MCAPI void incrementTick();
-    MCAPI void initMultiTypeNavigationComponent(class Mob&, class ActorDefinitionDescriptor&);
-    MCAPI void initializeFromDefinition(class Mob&, struct NavigationDescription*);
+    MCAPI void initMultiTypeNavigationComponent(class Mob &, class ActorDefinitionDescriptor &);
+    MCAPI void initializeFromDefinition(class Mob &, struct NavigationDescription *);
     MCAPI bool isDone() const;
-    MCAPI enum NodeType isFree(class Mob&, class BlockPos const&, class BlockPos const&, class BlockPos const&, enum CanJumpIntoNode);
+    MCAPI enum NodeType isFree(class Mob &, class BlockPos const &, class BlockPos const &, class BlockPos const &, enum CanJumpIntoNode);
     MCAPI bool isStuck(int) const;
-    MCAPI bool moveTo(class Mob&, class Actor&, float);
-    MCAPI bool moveTo(class Mob&, class Vec3 const&, float, class Vec3 const&);
-    MCAPI bool moveTo(class Mob&, class Vec3 const&, float);
-    MCAPI bool moveTo(class Mob&, std::unique_ptr<class Path>, float);
-    MCAPI class NavigationComponent& operator=(class NavigationComponent&&);
+    MCAPI bool moveTo(class Mob &, class Actor &, float);
+    MCAPI bool moveTo(class Mob &, class Vec3 const &, float, class Vec3 const &);
+    MCAPI bool moveTo(class Mob &, class Vec3 const &, float);
+    MCAPI bool moveTo(class Mob &, std::unique_ptr<class Path>, float);
+    MCAPI class NavigationComponent & operator=(class NavigationComponent &&);
     MCAPI void resetPath();
     MCAPI void setAvoidDamageBlocks(bool);
     MCAPI void setAvoidPortals(bool);
@@ -80,12 +80,12 @@ public:
     MCAPI void setIsFollowingRivers(bool);
     MCAPI void setPath(std::unique_ptr<class Path>);
     MCAPI void setSpeed(float);
-    MCAPI void setTargetOffset(class Vec3 const&);
+    MCAPI void setTargetOffset(class Vec3 const &);
     MCAPI void setTerminationThreshold(float);
-    MCAPI void stop(class Mob&);
-    MCAPI bool travel(class Mob&, float&, float&, float&);
-    MCAPI void update(class Mob&);
-    MCAPI void updateLastStuckCheck(class Mob const&);
+    MCAPI void stop(class Mob &);
+    MCAPI bool travel(class Mob &, float &, float &, float &);
+    MCAPI void update(class Mob &);
+    MCAPI void updateLastStuckCheck(class Mob const &);
     MCAPI ~NavigationComponent();
 
 protected:

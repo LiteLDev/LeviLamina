@@ -18,14 +18,14 @@ struct IsChargedDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISCHARGEDDEFINITION
 public:
-    struct IsChargedDefinition& operator=(struct IsChargedDefinition const&) = delete;
-    IsChargedDefinition(struct IsChargedDefinition const&) = delete;
+    struct IsChargedDefinition& operator=(struct IsChargedDefinition const &) = delete;
+    IsChargedDefinition(struct IsChargedDefinition const &) = delete;
     IsChargedDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&);
-    MCAPI void uninitialize(class EntityContext&);
+    MCAPI void initialize(class EntityContext &);
+    MCAPI void uninitialize(class EntityContext &);
 
 protected:
 

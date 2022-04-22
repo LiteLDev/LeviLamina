@@ -13,7 +13,7 @@
 
 using namespace std;
 
-static_assert(sizeof(ItemStack) == 144);
+static_assert(sizeof(ItemStack) == 160);
 static_assert(sizeof(ItemInstance) == 136);
 
 ItemStack *ItemStack::create() {

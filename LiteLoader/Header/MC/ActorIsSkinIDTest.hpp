@@ -19,14 +19,14 @@ class ActorIsSkinIDTest : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORISSKINIDTEST
 public:
-    class ActorIsSkinIDTest& operator=(class ActorIsSkinIDTest const&) = delete;
-    ActorIsSkinIDTest(class ActorIsSkinIDTest const&) = delete;
+    class ActorIsSkinIDTest& operator=(class ActorIsSkinIDTest const &) = delete;
+    ActorIsSkinIDTest(class ActorIsSkinIDTest const &) = delete;
     ActorIsSkinIDTest() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorIsSkinIDTest();
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*6*/ virtual class Json::Value _serializeValue() const;
     /*

@@ -18,14 +18,14 @@ class InsomniaDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSOMNIADEFINITION
 public:
-    class InsomniaDefinition& operator=(class InsomniaDefinition const&) = delete;
-    InsomniaDefinition(class InsomniaDefinition const&) = delete;
+    class InsomniaDefinition& operator=(class InsomniaDefinition const &) = delete;
+    InsomniaDefinition(class InsomniaDefinition const &) = delete;
     InsomniaDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&, class InsomniaComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InsomniaDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class InsomniaComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InsomniaDefinition>> &);
 
 protected:
 

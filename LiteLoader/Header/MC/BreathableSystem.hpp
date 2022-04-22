@@ -17,15 +17,15 @@ class BreathableSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREATHABLESYSTEM
 public:
-    class BreathableSystem& operator=(class BreathableSystem const&) = delete;
-    BreathableSystem(class BreathableSystem const&) = delete;
+    class BreathableSystem& operator=(class BreathableSystem const &) = delete;
+    BreathableSystem(class BreathableSystem const &) = delete;
     BreathableSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BreathableSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

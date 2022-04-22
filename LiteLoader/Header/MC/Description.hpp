@@ -18,13 +18,13 @@ struct Description {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DESCRIPTION
 public:
-    struct Description& operator=(struct Description const&) = delete;
-    Description(struct Description const&) = delete;
+    struct Description& operator=(struct Description const &) = delete;
+    Description(struct Description const &) = delete;
     Description() = delete;
 #endif
 
 public:
-    MCAPI struct Description* parseDescription(struct DeserializeDataParams);
+    MCAPI struct Description * parseDescription(struct DeserializeDataParams);
 
 protected:
 

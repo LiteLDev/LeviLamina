@@ -15,8 +15,8 @@ struct NameProxy {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAMEPROXY
 public:
-    struct NameProxy& operator=(struct NameProxy const&) = delete;
-    NameProxy(struct NameProxy const&) = delete;
+    struct NameProxy& operator=(struct NameProxy const &) = delete;
+    NameProxy(struct NameProxy const &) = delete;
     NameProxy() = delete;
 #endif
 

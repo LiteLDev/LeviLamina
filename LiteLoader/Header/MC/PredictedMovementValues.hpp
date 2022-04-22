@@ -17,8 +17,8 @@ struct PredictedMovementValues {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PREDICTEDMOVEMENTVALUES
 public:
-    struct PredictedMovementValues& operator=(struct PredictedMovementValues const&) = delete;
-    PredictedMovementValues(struct PredictedMovementValues const&) = delete;
+    struct PredictedMovementValues& operator=(struct PredictedMovementValues const &) = delete;
+    PredictedMovementValues(struct PredictedMovementValues const &) = delete;
     PredictedMovementValues() = delete;
 #endif
 

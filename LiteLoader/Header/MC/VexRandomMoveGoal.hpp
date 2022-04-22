@@ -17,8 +17,8 @@ class VexRandomMoveGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VEXRANDOMMOVEGOAL
 public:
-    class VexRandomMoveGoal& operator=(class VexRandomMoveGoal const&) = delete;
-    VexRandomMoveGoal(class VexRandomMoveGoal const&) = delete;
+    class VexRandomMoveGoal& operator=(class VexRandomMoveGoal const &) = delete;
+    VexRandomMoveGoal(class VexRandomMoveGoal const &) = delete;
     VexRandomMoveGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline bool canContinueToUse(){
         bool (VexRandomMoveGoal::*rv)();

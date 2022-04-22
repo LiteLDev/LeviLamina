@@ -15,8 +15,8 @@ struct ActorRemoveEffectEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORREMOVEEFFECTEVENT
 public:
-    struct ActorRemoveEffectEvent& operator=(struct ActorRemoveEffectEvent const&) = delete;
-    ActorRemoveEffectEvent(struct ActorRemoveEffectEvent const&) = delete;
+    struct ActorRemoveEffectEvent& operator=(struct ActorRemoveEffectEvent const &) = delete;
+    ActorRemoveEffectEvent(struct ActorRemoveEffectEvent const &) = delete;
     ActorRemoveEffectEvent() = delete;
 #endif
 

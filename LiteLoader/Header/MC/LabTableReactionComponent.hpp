@@ -17,28 +17,28 @@ class LabTableReactionComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LABTABLEREACTIONCOMPONENT
 public:
-    class LabTableReactionComponent& operator=(class LabTableReactionComponent const&) = delete;
-    LabTableReactionComponent(class LabTableReactionComponent const&) = delete;
+    class LabTableReactionComponent& operator=(class LabTableReactionComponent const &) = delete;
+    LabTableReactionComponent(class LabTableReactionComponent const &) = delete;
     LabTableReactionComponent() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LabTableReactionComponent();
     /*
-    inline void _onStart(class LabTableReaction& a0, class BlockSource& a1){
-        void (LabTableReactionComponent::*rv)(class LabTableReaction&, class BlockSource&);
+    inline void _onStart(class LabTableReaction & a0, class BlockSource & a1){
+        void (LabTableReactionComponent::*rv)(class LabTableReaction &, class BlockSource &);
         *((void**)&rv) = dlsym("?_onStart@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class LabTableReaction&>(a0), std::forward<class BlockSource&>(a1));
+        return (this->*rv)(std::forward<class LabTableReaction &>(a0), std::forward<class BlockSource &>(a1));
     }
-    inline void _onEnd(class LabTableReaction& a0, class BlockSource& a1){
-        void (LabTableReactionComponent::*rv)(class LabTableReaction&, class BlockSource&);
+    inline void _onEnd(class LabTableReaction & a0, class BlockSource & a1){
+        void (LabTableReactionComponent::*rv)(class LabTableReaction &, class BlockSource &);
         *((void**)&rv) = dlsym("?_onEnd@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class LabTableReaction&>(a0), std::forward<class BlockSource&>(a1));
+        return (this->*rv)(std::forward<class LabTableReaction &>(a0), std::forward<class BlockSource &>(a1));
     }
-    inline void _onTick(class LabTableReaction& a0, class BlockSource& a1){
-        void (LabTableReactionComponent::*rv)(class LabTableReaction&, class BlockSource&);
+    inline void _onTick(class LabTableReaction & a0, class BlockSource & a1){
+        void (LabTableReactionComponent::*rv)(class LabTableReaction &, class BlockSource &);
         *((void**)&rv) = dlsym("?_onTick@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class LabTableReaction&>(a0), std::forward<class BlockSource&>(a1));
+        return (this->*rv)(std::forward<class LabTableReaction &>(a0), std::forward<class BlockSource &>(a1));
     }
     inline  ~LabTableReactionComponent(){
          (LabTableReactionComponent::*rv)();

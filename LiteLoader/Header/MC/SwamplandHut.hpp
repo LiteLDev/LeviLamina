@@ -18,23 +18,23 @@ class SwamplandHut : public StructurePiece {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWAMPLANDHUT
 public:
-    class SwamplandHut& operator=(class SwamplandHut const&) = delete;
-    SwamplandHut(class SwamplandHut const&) = delete;
+    class SwamplandHut& operator=(class SwamplandHut const &) = delete;
+    SwamplandHut(class SwamplandHut const &) = delete;
     SwamplandHut() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SwamplandHut();
-    /*2*/ virtual class PoolElementStructurePiece* asPoolElement();
+    /*2*/ virtual class PoolElementStructurePiece * asPoolElement();
     /*3*/ virtual enum StructurePieceType getType() const;
-    /*4*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
-    /*5*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    /*6*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
-    /*10*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
-    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
+    /*4*/ virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
+    /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
+    /*6*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
+    /*10*/ virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);
+    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
 
 protected:
-    MCAPI void placeCauldron(class BlockSource&, class Random&, int, int, int, class BoundingBox const&);
+    MCAPI void placeCauldron(class BlockSource &, class Random &, int, int, int, class BoundingBox const &);
 
 private:
 

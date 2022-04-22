@@ -18,18 +18,18 @@ class AllowListFile {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ALLOWLISTFILE
 public:
-    class AllowListFile& operator=(class AllowListFile const&) = delete;
-    AllowListFile(class AllowListFile const&) = delete;
+    class AllowListFile& operator=(class AllowListFile const &) = delete;
+    AllowListFile(class AllowListFile const &) = delete;
     AllowListFile() = delete;
 #endif
 
 public:
-    MCAPI AllowListFile(class Core::Path const&);
-    MCAPI class AllowList& getAllowList() const;
+    MCAPI AllowListFile(class Core::Path const &);
+    MCAPI class AllowList & getAllowList() const;
     MCAPI enum FileReadResult reload();
     MCAPI void syncToDisc();
     MCAPI ~AllowListFile();
-    MCAPI static class AllowListFile loadFromDefaultLocations(class Core::IFileSystem&);
+    MCAPI static class AllowListFile loadFromDefaultLocations(class Core::IFileSystem &);
 
 protected:
 

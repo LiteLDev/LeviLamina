@@ -17,8 +17,8 @@ class NetworkStatistics {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKSTATISTICS
 public:
-    class NetworkStatistics& operator=(class NetworkStatistics const&) = delete;
-    NetworkStatistics(class NetworkStatistics const&) = delete;
+    class NetworkStatistics& operator=(class NetworkStatistics const &) = delete;
+    NetworkStatistics(class NetworkStatistics const &) = delete;
     NetworkStatistics() = delete;
 #endif
 

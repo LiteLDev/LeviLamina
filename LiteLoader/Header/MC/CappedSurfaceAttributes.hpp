@@ -22,15 +22,15 @@ struct MaterialLayer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAPPEDSURFACEATTRIBUTES
 public:
-    struct CappedSurfaceAttributes& operator=(struct CappedSurfaceAttributes const&) = delete;
-    CappedSurfaceAttributes(struct CappedSurfaceAttributes const&) = delete;
+    struct CappedSurfaceAttributes& operator=(struct CappedSurfaceAttributes const &) = delete;
+    CappedSurfaceAttributes(struct CappedSurfaceAttributes const &) = delete;
     CappedSurfaceAttributes() = delete;
 #endif
 
 public:
-    MCAPI class Block const* getCeilingMaterial(class Vec3 const&) const;
-    MCAPI class Block const* getFloorMaterial(class Vec3 const&) const;
-    MCAPI struct CappedSurfaceAttributes& operator=(struct CappedSurfaceAttributes&&);
+    MCAPI class Block const * getCeilingMaterial(class Vec3 const &) const;
+    MCAPI class Block const * getFloorMaterial(class Vec3 const &) const;
+    MCAPI struct CappedSurfaceAttributes & operator=(struct CappedSurfaceAttributes &&);
     MCAPI void tryInitializeNoise(unsigned int);
 
 protected:

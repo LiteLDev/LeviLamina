@@ -18,16 +18,16 @@ class ClientCacheMissResponsePacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTCACHEMISSRESPONSEPACKET
 public:
-    class ClientCacheMissResponsePacket& operator=(class ClientCacheMissResponsePacket const&) = delete;
-    ClientCacheMissResponsePacket(class ClientCacheMissResponsePacket const&) = delete;
+    class ClientCacheMissResponsePacket& operator=(class ClientCacheMissResponsePacket const &) = delete;
+    ClientCacheMissResponsePacket(class ClientCacheMissResponsePacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ClientCacheMissResponsePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~ClientCacheMissResponsePacket(){
          (ClientCacheMissResponsePacket::*rv)();

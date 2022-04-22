@@ -17,17 +17,17 @@ class InsomniaComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSOMNIACOMPONENT
 public:
-    class InsomniaComponent& operator=(class InsomniaComponent const&) = delete;
-    InsomniaComponent(class InsomniaComponent const&) = delete;
+    class InsomniaComponent& operator=(class InsomniaComponent const &) = delete;
+    InsomniaComponent(class InsomniaComponent const &) = delete;
     InsomniaComponent() = delete;
 #endif
 
 public:
-    MCAPI void addAdditionalSaveData(class CompoundTag&);
+    MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI int getInsomniaTimerTicks() const;
     MCAPI int getTicksUntilInsomnia() const;
     MCAPI int incrementTimeSinceRest();
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void restartTimer();
 
 protected:

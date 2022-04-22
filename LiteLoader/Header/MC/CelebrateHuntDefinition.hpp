@@ -18,13 +18,13 @@ class CelebrateHuntDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CELEBRATEHUNTDEFINITION
 public:
-    class CelebrateHuntDefinition& operator=(class CelebrateHuntDefinition const&) = delete;
-    CelebrateHuntDefinition(class CelebrateHuntDefinition const&) = delete;
+    class CelebrateHuntDefinition& operator=(class CelebrateHuntDefinition const &) = delete;
+    CelebrateHuntDefinition(class CelebrateHuntDefinition const &) = delete;
     CelebrateHuntDefinition() = delete;
 #endif
 
 public:
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class CelebrateHuntDefinition> >&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class CelebrateHuntDefinition>> &);
 
 protected:
 

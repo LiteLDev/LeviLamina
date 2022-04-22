@@ -18,8 +18,8 @@ class ActorDamageByBlockSource : public ActorDamageSource {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDAMAGEBYBLOCKSOURCE
 public:
-    class ActorDamageByBlockSource& operator=(class ActorDamageByBlockSource const&) = delete;
-    ActorDamageByBlockSource(class ActorDamageByBlockSource const&) = delete;
+    class ActorDamageByBlockSource& operator=(class ActorDamageByBlockSource const &) = delete;
+    ActorDamageByBlockSource(class ActorDamageByBlockSource const &) = delete;
     ActorDamageByBlockSource() = delete;
 #endif
 
@@ -28,18 +28,18 @@ public:
     /*1*/ virtual bool isEntitySource() const;
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool isBlockSource() const;
-    /*5*/ virtual struct std::pair<std::string, std::vector<std::string> > getDeathMessage(std::string, class Actor*) const;
-    /*6*/ virtual bool getIsCreative() const;
-    /*7*/ virtual bool getIsWorldBuilder() const;
-    /*8*/ virtual void __unk_vfn_8();
-    /*9*/ virtual void __unk_vfn_9();
-    /*10*/ virtual enum ActorCategory getEntityCategories() const;
+    /*8*/ virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor *) const;
+    /*9*/ virtual bool getIsCreative() const;
+    /*10*/ virtual bool getIsWorldBuilder() const;
     /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual void __unk_vfn_12();
-    /*13*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
-    /*14*/ virtual enum ActorType getDamagingEntityType() const;
+    /*13*/ virtual enum ActorCategory getEntityCategories() const;
+    /*14*/ virtual bool getDamagingEntityIsCreative() const;
     /*15*/ virtual void __unk_vfn_15();
-    /*16*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
+    /*16*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
+    /*17*/ virtual void __unk_vfn_17();
+    /*18*/ virtual void __unk_vfn_18();
+    /*19*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
 
 protected:
 

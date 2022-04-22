@@ -17,16 +17,16 @@ class SpawnGroupData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNGROUPDATA
 public:
-    class SpawnGroupData& operator=(class SpawnGroupData const&) = delete;
-    SpawnGroupData(class SpawnGroupData const&) = delete;
+    class SpawnGroupData& operator=(class SpawnGroupData const &) = delete;
+    SpawnGroupData(class SpawnGroupData const &) = delete;
     SpawnGroupData() = delete;
 #endif
 
 public:
-    MCAPI SpawnGroupData(std::string const&, class MobSpawnRules&);
-    MCAPI void addSpawnRules(class MobSpawnRules&);
-    MCAPI std::string const& getIdentifier() const;
-    MCAPI std::vector<class MobSpawnRules> const& getSpawnRules() const;
+    MCAPI SpawnGroupData(std::string const &, class MobSpawnRules &);
+    MCAPI void addSpawnRules(class MobSpawnRules &);
+    MCAPI std::string const & getIdentifier() const;
+    MCAPI std::vector<class MobSpawnRules> const & getSpawnRules() const;
 
 protected:
 

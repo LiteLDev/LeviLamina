@@ -18,16 +18,14 @@ class MineshaftStart : public StructureStart {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINESHAFTSTART
 public:
-    class MineshaftStart& operator=(class MineshaftStart const&) = delete;
-    MineshaftStart(class MineshaftStart const&) = delete;
+    class MineshaftStart& operator=(class MineshaftStart const &) = delete;
+    MineshaftStart(class MineshaftStart const &) = delete;
     MineshaftStart() = delete;
 #endif
 
 public:
     /*0*/ virtual ~MineshaftStart();
-    /*2*/ virtual bool isValid() const;
-    /*3*/ virtual enum StructureFeatureType getType() const;
-    MCAPI MineshaftStart(class Dimension const&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
+    MCAPI MineshaftStart(class Dimension const &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
 
 protected:
 

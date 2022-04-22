@@ -17,8 +17,8 @@ class KnockbackRoarGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_KNOCKBACKROARGOAL
 public:
-    class KnockbackRoarGoal& operator=(class KnockbackRoarGoal const&) = delete;
-    KnockbackRoarGoal(class KnockbackRoarGoal const&) = delete;
+    class KnockbackRoarGoal& operator=(class KnockbackRoarGoal const &) = delete;
+    KnockbackRoarGoal(class KnockbackRoarGoal const &) = delete;
     KnockbackRoarGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI KnockbackRoarGoal(class Mob&, int, int, int, int, int, int, class ActorFilterGroup const&, class ActorFilterGroup const&, class DefinitionTrigger, float);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI KnockbackRoarGoal(class Mob &);
 
 protected:
 

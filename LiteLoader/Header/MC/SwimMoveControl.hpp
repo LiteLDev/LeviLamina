@@ -18,14 +18,14 @@ class SwimMoveControl : public MoveControl {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWIMMOVECONTROL
 public:
-    class SwimMoveControl& operator=(class SwimMoveControl const&) = delete;
-    SwimMoveControl(class SwimMoveControl const&) = delete;
+    class SwimMoveControl& operator=(class SwimMoveControl const &) = delete;
+    SwimMoveControl(class SwimMoveControl const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~SwimMoveControl();
-    /*1*/ virtual void initializeInternal(class Mob&, struct MoveControlDescription*);
-    /*2*/ virtual void tick(class MoveControlComponent&, class Mob&);
+    /*1*/ virtual void initializeInternal(class Mob &, struct MoveControlDescription *);
+    /*2*/ virtual void tick(class MoveControlComponent &, class Mob &);
     MCAPI SwimMoveControl();
 
 protected:

@@ -17,13 +17,13 @@ class BehaviorTreeDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEHAVIORTREEDEFINITION
 public:
-    class BehaviorTreeDefinition& operator=(class BehaviorTreeDefinition const&) = delete;
-    BehaviorTreeDefinition(class BehaviorTreeDefinition const&) = delete;
+    class BehaviorTreeDefinition& operator=(class BehaviorTreeDefinition const &) = delete;
+    BehaviorTreeDefinition(class BehaviorTreeDefinition const &) = delete;
     BehaviorTreeDefinition() = delete;
 #endif
 
 public:
-    MCAPI class BehaviorDefinition const* getRoot() const;
+    MCAPI class BehaviorDefinition const * getRoot() const;
 
 protected:
 

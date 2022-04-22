@@ -18,16 +18,16 @@ class SplashPotionEffectSubcomponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPLASHPOTIONEFFECTSUBCOMPONENT
 public:
-    class SplashPotionEffectSubcomponent& operator=(class SplashPotionEffectSubcomponent const&) = delete;
-    SplashPotionEffectSubcomponent(class SplashPotionEffectSubcomponent const&) = delete;
+    class SplashPotionEffectSubcomponent& operator=(class SplashPotionEffectSubcomponent const &) = delete;
+    SplashPotionEffectSubcomponent(class SplashPotionEffectSubcomponent const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~SplashPotionEffectSubcomponent();
-    /*1*/ virtual void readfromJSON(class Json::Value&, class SemVersion const&);
-    /*2*/ virtual void writetoJSON(class Json::Value&) const;
-    /*3*/ virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
-    /*4*/ virtual char const* getName();
+    /*1*/ virtual void readfromJSON(class Json::Value &, class SemVersion const &);
+    /*2*/ virtual void writetoJSON(class Json::Value &) const;
+    /*3*/ virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
+    /*4*/ virtual char const * getName();
     /*
     inline  ~SplashPotionEffectSubcomponent(){
          (SplashPotionEffectSubcomponent::*rv)();
@@ -36,7 +36,7 @@ public:
     }
     */
     MCAPI SplashPotionEffectSubcomponent();
-    MCAPI void applyMobEffects(class MobEffectInstance const&, std::vector<class Actor* > const&, class Actor&, class std::shared_ptr<class Potion const> const&, float, class MobEffect*, class HitResult&, int);
+    MCAPI void applyMobEffects(class MobEffectInstance const &, std::vector<class Actor *> const &, class Actor &, class std::shared_ptr<class Potion const> const &, float, class MobEffect *, class HitResult &, int);
 
 protected:
 

@@ -8,7 +8,7 @@
 
 #undef BEFORE_EXTRA
 
-struct SlotDropChance {
+class SlotDropChance {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,13 +17,13 @@ struct SlotDropChance {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLOTDROPCHANCE
 public:
-    struct SlotDropChance& operator=(struct SlotDropChance const&) = delete;
-    SlotDropChance(struct SlotDropChance const&) = delete;
+    class SlotDropChance& operator=(class SlotDropChance const &) = delete;
+    SlotDropChance(class SlotDropChance const &) = delete;
     SlotDropChance() = delete;
 #endif
 
 public:
-    MCAPI void setEquipmentSlot(std::string const&);
+    MCAPI void setEquipmentSlot(std::string const &);
 
 protected:
 

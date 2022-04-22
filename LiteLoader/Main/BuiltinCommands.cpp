@@ -38,7 +38,7 @@ class TeleportDimensionCommand : public Command
     {
         if (CommandPos_isSet)
             return CommandPos.getPosition(ori, {0, 0, 0});
-        auto pos = actor->getPos();
+        auto pos = actor->getPosition();
         Vec3 result = pos;
         int actorDimensionId = actor->getDimensionId();
         switch (DimensionId)

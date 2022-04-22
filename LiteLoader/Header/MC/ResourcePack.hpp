@@ -18,39 +18,39 @@ class ResourcePack {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACK
 public:
-    class ResourcePack& operator=(class ResourcePack const&) = delete;
-    ResourcePack(class ResourcePack const&) = delete;
+    class ResourcePack& operator=(class ResourcePack const &) = delete;
+    ResourcePack(class ResourcePack const &) = delete;
     ResourcePack() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ResourcePack();
-    MCAPI ResourcePack(class Pack&);
+    MCAPI ResourcePack(class Pack &);
     MCAPI bool areKnownFilesValid();
-    MCAPI void forEachIn(class Core::Path const&, class std::function<void (class Core::Path const& )>, int, bool) const;
+    MCAPI void forEachIn(class Core::Path const &, class std::function<void (class Core::Path const &)>, int, bool) const;
     MCAPI void generateAssetSet();
-    MCAPI class PackManifest& getManifest();
+    MCAPI class PackManifest & getManifest();
     MCAPI enum PackCategory getPackCategory() const;
-    MCAPI class mce::UUID const& getPackId() const;
+    MCAPI class mce::UUID const & getPackId() const;
     MCAPI enum PackOrigin getPackOrigin() const;
-    MCAPI bool getResource(class Core::Path const&, std::string&, int) const;
-    MCAPI class ResourceLocation const& getResourceLocation() const;
-    MCAPI class SubpackInfoCollection const& getSubpackInfoStack() const;
-    MCAPI class SemVersion const& getVersion() const;
-    MCAPI bool hasResource(class Core::Path const&, int) const;
+    MCAPI bool getResource(class Core::Path const &, std::string &, int) const;
+    MCAPI class ResourceLocation const & getResourceLocation() const;
+    MCAPI class SubpackInfoCollection const & getSubpackInfoStack() const;
+    MCAPI class SemVersion const & getVersion() const;
+    MCAPI bool hasResource(class Core::Path const &, int) const;
     MCAPI bool isType(enum PackType) const;
     MCAPI bool isZipped() const;
     MCAPI void setAsSlicePack();
-    MCAPI void setLocale(std::string const&);
-    MCAPI void unregisterDeleteCallback(void*);
-    MCAPI static class Core::PathBuffer<std::string > const RESOURCE_PACK_BUG_ICON_PATH;
-    MCAPI static class Core::PathBuffer<std::string > const RESOURCE_PACK_ICON_PATH;
-    MCAPI static class Core::PathBuffer<std::string > const TEXTURES_LIST_PATH;
+    MCAPI void setLocale(std::string const &);
+    MCAPI void unregisterDeleteCallback(void *);
+    MCAPI static class Core::PathBuffer<std::string> const RESOURCE_PACK_BUG_ICON_PATH;
+    MCAPI static class Core::PathBuffer<std::string> const RESOURCE_PACK_ICON_PATH;
+    MCAPI static class Core::PathBuffer<std::string> const TEXTURES_LIST_PATH;
 
 protected:
 
 private:
-    MCAPI void _createSubpack(struct SubpackInfo const&);
+    MCAPI void _createSubpack(struct SubpackInfo const &);
     MCAPI void _createSubpacks();
     MCAPI void _generateIconPath();
 

@@ -17,8 +17,8 @@ class MoveTowardsHomeRestrictionGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOWARDSHOMERESTRICTIONGOAL
 public:
-    class MoveTowardsHomeRestrictionGoal& operator=(class MoveTowardsHomeRestrictionGoal const&) = delete;
-    MoveTowardsHomeRestrictionGoal(class MoveTowardsHomeRestrictionGoal const&) = delete;
+    class MoveTowardsHomeRestrictionGoal& operator=(class MoveTowardsHomeRestrictionGoal const &) = delete;
+    MoveTowardsHomeRestrictionGoal(class MoveTowardsHomeRestrictionGoal const &) = delete;
     MoveTowardsHomeRestrictionGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI MoveTowardsHomeRestrictionGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI MoveTowardsHomeRestrictionGoal(class Mob &);
 
 protected:
 

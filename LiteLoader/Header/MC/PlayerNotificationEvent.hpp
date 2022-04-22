@@ -15,8 +15,8 @@ struct PlayerNotificationEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERNOTIFICATIONEVENT
 public:
-    struct PlayerNotificationEvent& operator=(struct PlayerNotificationEvent const&) = delete;
-    PlayerNotificationEvent(struct PlayerNotificationEvent const&) = delete;
+    struct PlayerNotificationEvent& operator=(struct PlayerNotificationEvent const &) = delete;
+    PlayerNotificationEvent(struct PlayerNotificationEvent const &) = delete;
     PlayerNotificationEvent() = delete;
 #endif
 

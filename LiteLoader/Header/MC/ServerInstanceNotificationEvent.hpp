@@ -15,8 +15,8 @@ struct ServerInstanceNotificationEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERINSTANCENOTIFICATIONEVENT
 public:
-    struct ServerInstanceNotificationEvent& operator=(struct ServerInstanceNotificationEvent const&) = delete;
-    ServerInstanceNotificationEvent(struct ServerInstanceNotificationEvent const&) = delete;
+    struct ServerInstanceNotificationEvent& operator=(struct ServerInstanceNotificationEvent const &) = delete;
+    ServerInstanceNotificationEvent(struct ServerInstanceNotificationEvent const &) = delete;
     ServerInstanceNotificationEvent() = delete;
 #endif
 

@@ -17,8 +17,7 @@ class DebugInfoComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEBUGINFOCOMPONENT
 public:
-    class DebugInfoComponent& operator=(class DebugInfoComponent const&) = delete;
-    DebugInfoComponent(class DebugInfoComponent const&) = delete;
+    class DebugInfoComponent& operator=(class DebugInfoComponent const &) = delete;
     DebugInfoComponent() = delete;
 #endif
 
@@ -51,12 +50,15 @@ public:
     /*26*/ virtual void __unk_vfn_26();
     /*27*/ virtual void __unk_vfn_27();
     /*28*/ virtual void __unk_vfn_28();
-    /*29*/ virtual enum EventResult onEvent(struct ActorDefinitionEvent const&);
-    MCAPI DebugInfoComponent(class DebugInfoComponent&&);
-    MCAPI void addListener(class HashedString const&, class NetworkIdentifier, unsigned char);
+    /*29*/ virtual void __unk_vfn_29();
+    /*30*/ virtual void __unk_vfn_30();
+    /*31*/ virtual enum EventResult onEvent(struct ActorDefinitionEvent const &);
+    MCAPI DebugInfoComponent(class DebugInfoComponent &&);
+    MCAPI DebugInfoComponent(class DebugInfoComponent const &);
+    MCAPI void addListener(class HashedString const &, class NetworkIdentifier, unsigned char);
     MCAPI bool listenersEmpty() const;
-    MCAPI class DebugInfoComponent& operator=(class DebugInfoComponent&&);
-    MCAPI void removeListener(class HashedString const&, class NetworkIdentifier, unsigned char);
+    MCAPI class DebugInfoComponent & operator=(class DebugInfoComponent &&);
+    MCAPI void removeListener(class HashedString const &, class NetworkIdentifier, unsigned char);
 
 protected:
 

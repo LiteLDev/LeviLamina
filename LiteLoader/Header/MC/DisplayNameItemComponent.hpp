@@ -17,8 +17,8 @@ class DisplayNameItemComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DISPLAYNAMEITEMCOMPONENT
 public:
-    class DisplayNameItemComponent& operator=(class DisplayNameItemComponent const&) = delete;
-    DisplayNameItemComponent(class DisplayNameItemComponent const&) = delete;
+    class DisplayNameItemComponent& operator=(class DisplayNameItemComponent const &) = delete;
+    DisplayNameItemComponent(class DisplayNameItemComponent const &) = delete;
     DisplayNameItemComponent() = delete;
 #endif
 
@@ -29,7 +29,7 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
     /*
     inline bool isNetworkComponent() const{
         bool (DisplayNameItemComponent::*rv)() const;
@@ -37,9 +37,9 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI DisplayNameItemComponent(class ComponentItem*);
+    MCAPI DisplayNameItemComponent(class ComponentItem *);
     MCAPI static void bindType();
-    MCAPI static class HashedString const& getIdentifier();
+    MCAPI static class HashedString const & getIdentifier();
 
 protected:
 

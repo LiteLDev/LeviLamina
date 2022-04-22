@@ -17,14 +17,14 @@ class BlockStateCommandParam {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSTATECOMMANDPARAM
 public:
-    class BlockStateCommandParam& operator=(class BlockStateCommandParam const&) = delete;
-    BlockStateCommandParam(class BlockStateCommandParam const&) = delete;
+    class BlockStateCommandParam& operator=(class BlockStateCommandParam const &) = delete;
+    BlockStateCommandParam(class BlockStateCommandParam const &) = delete;
     BlockStateCommandParam() = delete;
 #endif
 
 public:
     MCAPI BlockStateCommandParam(std::string, std::string, enum BlockStateCommandParam::Type);
-    MCAPI bool setBlockState(class Block const* *, class CommandOutput&) const;
+    MCAPI bool setBlockState(class Block const **, class CommandOutput &) const;
     MCAPI ~BlockStateCommandParam();
 
 protected:

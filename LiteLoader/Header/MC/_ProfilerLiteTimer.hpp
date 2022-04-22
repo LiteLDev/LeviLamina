@@ -16,13 +16,13 @@ class _ProfilerLiteTimer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION__PROFILERLITETIMER
 public:
-    class _ProfilerLiteTimer& operator=(class _ProfilerLiteTimer const&) = delete;
-    _ProfilerLiteTimer(class _ProfilerLiteTimer const&) = delete;
+    class _ProfilerLiteTimer& operator=(class _ProfilerLiteTimer const &) = delete;
+    _ProfilerLiteTimer(class _ProfilerLiteTimer const &) = delete;
     _ProfilerLiteTimer() = delete;
 #endif
 
 public:
-    MCAPI _ProfilerLiteTimer(struct ProfilerLite::ScopedData&, class std::thread::id);
+    MCAPI _ProfilerLiteTimer(struct ProfilerLite::ScopedData &, class std::thread::id);
     MCAPI ~_ProfilerLiteTimer();
 
 protected:

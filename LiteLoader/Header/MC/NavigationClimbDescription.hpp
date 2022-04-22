@@ -18,13 +18,13 @@ class NavigationClimbDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONCLIMBDESCRIPTION
 public:
-    class NavigationClimbDescription& operator=(class NavigationClimbDescription const&) = delete;
-    NavigationClimbDescription(class NavigationClimbDescription const&) = delete;
+    class NavigationClimbDescription& operator=(class NavigationClimbDescription const &) = delete;
+    NavigationClimbDescription(class NavigationClimbDescription const &) = delete;
     NavigationClimbDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~NavigationClimbDescription();
     /*
     inline  ~NavigationClimbDescription(){

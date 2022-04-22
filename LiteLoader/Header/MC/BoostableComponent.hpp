@@ -17,8 +17,8 @@ class BoostableComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOOSTABLECOMPONENT
 public:
-    class BoostableComponent& operator=(class BoostableComponent const&) = delete;
-    BoostableComponent(class BoostableComponent const&) = delete;
+    class BoostableComponent& operator=(class BoostableComponent const &) = delete;
+    BoostableComponent(class BoostableComponent const &) = delete;
 #endif
 
 public:
@@ -26,9 +26,9 @@ public:
     MCAPI int getBoostTime() const;
     MCAPI int getBoostTimeTotal() const;
     MCAPI bool getIsBoosting() const;
-    MCAPI bool itemUseText(class Player const&, std::string&);
-    MCAPI bool onItemInteract(class Actor&, class ItemStack&, class Player&);
-    MCAPI void removePassenger(class Player&);
+    MCAPI bool itemUseText(class Player const &, std::string &);
+    MCAPI bool onItemInteract(class Actor &, class ItemStack &, class Player &);
+    MCAPI void removePassenger(class Player &);
     MCAPI void setBoostTime(int);
     MCAPI void setIsBoosting(bool);
     MCAPI static class std::shared_ptr<class AttributeModifier> getSpeedModifierBoosting();

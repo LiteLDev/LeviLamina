@@ -24,22 +24,22 @@ struct Entry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DENYLIST
 public:
-    class DenyList& operator=(class DenyList const&) = delete;
-    DenyList(class DenyList const&) = delete;
+    class DenyList& operator=(class DenyList const &) = delete;
+    DenyList(class DenyList const &) = delete;
     DenyList() = delete;
 #endif
 
 public:
-    MCAPI void addEntry(struct DenyList::Entry const&);
-    MCAPI enum DenyList::Duration getDuration(struct DenyList::Entry const&) const;
-    MCAPI std::string const& getMessage(struct DenyList::Entry const&) const;
-    MCAPI bool isBlocked(struct DenyList::Entry const&) const;
-    MCAPI void removeEntry(struct DenyList::Entry const&);
+    MCAPI void addEntry(struct DenyList::Entry const &);
+    MCAPI enum DenyList::Duration getDuration(struct DenyList::Entry const &) const;
+    MCAPI std::string const & getMessage(struct DenyList::Entry const &) const;
+    MCAPI bool isBlocked(struct DenyList::Entry const &) const;
+    MCAPI void removeEntry(struct DenyList::Entry const &);
     MCAPI ~DenyList();
 
 protected:
 
 private:
-    MCAPI bool isBlocked(struct DenyList::Entry const&, class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<struct DenyList::Entry> > >&) const;
+    MCAPI bool isBlocked(struct DenyList::Entry const &, class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<struct DenyList::Entry>>> &) const;
 
 };

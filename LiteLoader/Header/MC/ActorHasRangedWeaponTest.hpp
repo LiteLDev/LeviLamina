@@ -19,14 +19,14 @@ class ActorHasRangedWeaponTest : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORHASRANGEDWEAPONTEST
 public:
-    class ActorHasRangedWeaponTest& operator=(class ActorHasRangedWeaponTest const&) = delete;
-    ActorHasRangedWeaponTest(class ActorHasRangedWeaponTest const&) = delete;
+    class ActorHasRangedWeaponTest& operator=(class ActorHasRangedWeaponTest const &) = delete;
+    ActorHasRangedWeaponTest(class ActorHasRangedWeaponTest const &) = delete;
     ActorHasRangedWeaponTest() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorHasRangedWeaponTest();
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*
     inline  ~ActorHasRangedWeaponTest(){

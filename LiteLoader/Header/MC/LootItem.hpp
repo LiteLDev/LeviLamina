@@ -18,15 +18,15 @@ class LootItem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEM
 public:
-    class LootItem& operator=(class LootItem const&) = delete;
-    LootItem(class LootItem const&) = delete;
+    class LootItem& operator=(class LootItem const &) = delete;
+    LootItem(class LootItem const &) = delete;
     LootItem() = delete;
 #endif
 
 public:
-    /*0*/ virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
+    /*0*/ virtual bool _createItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
     /*1*/ virtual ~LootItem();
-    MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value const&, int, int, std::vector<std::unique_ptr<class LootItemCondition>>&);
+    MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value const &, int, int, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 protected:
 

@@ -17,13 +17,13 @@ class DebugAssertException {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEBUGASSERTEXCEPTION
 public:
-    class DebugAssertException& operator=(class DebugAssertException const&) = delete;
+    class DebugAssertException& operator=(class DebugAssertException const &) = delete;
     DebugAssertException() = delete;
 #endif
 
 public:
     /*0*/ virtual ~DebugAssertException();
-    /*1*/ virtual char const* what() const;
+    /*1*/ virtual char const * what() const;
     /*
     inline  ~DebugAssertException(){
          (DebugAssertException::*rv)();
@@ -31,13 +31,13 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI DebugAssertException(class DebugAssertException const&);
-    MCAPI DebugAssertException(char const*, char const*, char const*, int, char const*, char const*);
+    MCAPI DebugAssertException(class DebugAssertException const &);
+    MCAPI DebugAssertException(char const *, char const *, char const *, int, char const *, char const *);
     MCAPI static bool isEnabled();
 
 protected:
 
 private:
-    MCAPI static char const* WHAT;
+    MCAPI static char const *const WHAT;
 
 };

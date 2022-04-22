@@ -17,14 +17,14 @@ struct FilterStringMap {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERSTRINGMAP
 public:
-    struct FilterStringMap& operator=(struct FilterStringMap const&) = delete;
+    struct FilterStringMap& operator=(struct FilterStringMap const &) = delete;
     FilterStringMap() = delete;
 #endif
 
 public:
-    MCAPI FilterStringMap(struct FilterStringMap const&);
-    MCAPI FilterStringMap(class std::initializer_list<struct std::pair<std::string const, struct FilterInputDefinition> >);
-    MCAPI struct FilterStringMap& operator=(struct FilterStringMap&&);
+    MCAPI FilterStringMap(struct FilterStringMap const &);
+    MCAPI FilterStringMap(class std::initializer_list<struct std::pair<std::string const, struct FilterInputDefinition>>);
+    MCAPI struct FilterStringMap & operator=(struct FilterStringMap &&);
     MCAPI ~FilterStringMap();
 
 protected:

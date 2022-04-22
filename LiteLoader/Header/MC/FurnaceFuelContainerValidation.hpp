@@ -18,22 +18,22 @@ class FurnaceFuelContainerValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FURNACEFUELCONTAINERVALIDATION
 public:
-    class FurnaceFuelContainerValidation& operator=(class FurnaceFuelContainerValidation const&) = delete;
-    FurnaceFuelContainerValidation(class FurnaceFuelContainerValidation const&) = delete;
+    class FurnaceFuelContainerValidation& operator=(class FurnaceFuelContainerValidation const &) = delete;
+    FurnaceFuelContainerValidation(class FurnaceFuelContainerValidation const &) = delete;
     FurnaceFuelContainerValidation() = delete;
 #endif
 
 public:
     /*0*/ virtual ~FurnaceFuelContainerValidation();
-    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
-    /*3*/ virtual int getAvailableSetCount(int, class ItemStackBase const&) const;
-    /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const&) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
+    /*3*/ virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
+    /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const &) const;
     /*5*/ virtual void __unk_vfn_5();
     /*
-    inline int getContainerOffset(class ContainerScreenContext const& a0) const{
-        int (FurnaceFuelContainerValidation::*rv)(class ContainerScreenContext const&) const;
+    inline int getContainerOffset(class ContainerScreenContext const & a0) const{
+        int (FurnaceFuelContainerValidation::*rv)(class ContainerScreenContext const &) const;
         *((void**)&rv) = dlsym("?getContainerOffset@FurnaceFuelContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0));
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
     }
     */
 

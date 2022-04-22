@@ -18,16 +18,16 @@ class LegacySwampFoliageFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYSWAMPFOLIAGEFEATURE
 public:
-    class LegacySwampFoliageFeature& operator=(class LegacySwampFoliageFeature const&) = delete;
-    LegacySwampFoliageFeature(class LegacySwampFoliageFeature const&) = delete;
+    class LegacySwampFoliageFeature& operator=(class LegacySwampFoliageFeature const &) = delete;
+    LegacySwampFoliageFeature(class LegacySwampFoliageFeature const &) = delete;
     LegacySwampFoliageFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LegacySwampFoliageFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-    MCAPI LegacySwampFoliageFeature(class FeatureRegistry&);
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+    MCAPI LegacySwampFoliageFeature(class FeatureRegistry &);
 
 protected:
 

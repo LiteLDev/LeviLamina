@@ -17,18 +17,18 @@ class AquiferNoises {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AQUIFERNOISES
 public:
-    class AquiferNoises& operator=(class AquiferNoises const&) = delete;
+    class AquiferNoises& operator=(class AquiferNoises const &) = delete;
     AquiferNoises() = delete;
 #endif
 
 public:
-    MCAPI AquiferNoises(class AquiferNoises const&);
+    MCAPI AquiferNoises(class AquiferNoises const &);
     MCAPI ~AquiferNoises();
-    MCAPI static class AquiferNoises make(class XoroshiroPositionalRandomFactory const&);
+    MCAPI static class AquiferNoises make(class XoroshiroPositionalRandomFactory const &);
 
 protected:
 
 private:
-    MCAPI AquiferNoises(class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0> > >, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0> > >, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0> > >, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0> > >, class XoroshiroPositionalRandomFactory);
+    MCAPI AquiferNoises(class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class XoroshiroPositionalRandomFactory);
 
 };

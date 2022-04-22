@@ -17,17 +17,17 @@ class HideComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HIDECOMPONENT
 public:
-    class HideComponent& operator=(class HideComponent const&) = delete;
-    HideComponent(class HideComponent const&) = delete;
+    class HideComponent& operator=(class HideComponent const &) = delete;
+    HideComponent(class HideComponent const &) = delete;
 #endif
 
 public:
     MCAPI HideComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag&);
-    MCAPI void initFromDefinition(class Actor&);
+    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void initFromDefinition(class Actor &);
     MCAPI bool isInRaid();
     MCAPI bool isReactingToBell();
-    MCAPI void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     MCAPI void setInRaid();
     MCAPI void setNotHiding();
     MCAPI void setReactingToBell();

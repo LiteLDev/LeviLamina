@@ -17,8 +17,8 @@ struct FogDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOGDEFINITION
 public:
-    struct FogDefinition& operator=(struct FogDefinition const&) = delete;
-    FogDefinition(struct FogDefinition const&) = delete;
+    struct FogDefinition& operator=(struct FogDefinition const &) = delete;
+    FogDefinition(struct FogDefinition const &) = delete;
     FogDefinition() = delete;
 #endif
 

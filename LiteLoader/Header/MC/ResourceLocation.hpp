@@ -19,21 +19,21 @@ class ResourceLocation {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCELOCATION
 public:
-    class ResourceLocation& operator=(class ResourceLocation const&) = delete;
-    ResourceLocation(class ResourceLocation const&) = delete;
+    class ResourceLocation& operator=(class ResourceLocation const &) = delete;
+    ResourceLocation(class ResourceLocation const &) = delete;
 #endif
 
 public:
-    MCAPI ResourceLocation(class Core::Path const&);
-    MCAPI ResourceLocation(class Core::Path const&, enum ResourceFileSystem);
+    MCAPI ResourceLocation(class Core::Path const &);
+    MCAPI ResourceLocation(class Core::Path const &, enum ResourceFileSystem);
     MCAPI ResourceLocation();
-    MCAPI class Core::PathBuffer<std::string > getFullPath() const;
-    MCAPI class Core::PathBuffer<std::string > const& getRelativePath() const;
-    MCAPI bool operator==(class ResourceLocation const&) const;
-    MCAPI void serialize(class Json::Value&) const;
-    MCAPI void setRelativePath(class Core::PathBuffer<std::string > const&);
+    MCAPI class Core::PathBuffer<std::string> getFullPath() const;
+    MCAPI class Core::PathBuffer<std::string> const & getRelativePath() const;
+    MCAPI bool operator==(class ResourceLocation const &) const;
+    MCAPI void serialize(class Json::Value &) const;
+    MCAPI void setRelativePath(class Core::PathBuffer<std::string> const &);
     MCAPI ~ResourceLocation();
-    MCAPI static class ResourceLocation const& getEmptyLocation();
+    MCAPI static class ResourceLocation const & getEmptyLocation();
 
 protected:
 

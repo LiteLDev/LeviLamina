@@ -17,18 +17,18 @@ class ActivateToolNode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTIVATETOOLNODE
 public:
-    class ActivateToolNode& operator=(class ActivateToolNode const&) = delete;
-    ActivateToolNode(class ActivateToolNode const&) = delete;
+    class ActivateToolNode& operator=(class ActivateToolNode const &) = delete;
+    ActivateToolNode(class ActivateToolNode const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActivateToolNode();
-    /*1*/ virtual enum BehaviorStatus tick(class Actor&);
+    /*1*/ virtual enum BehaviorStatus tick(class Actor &);
     /*
-    inline void initializeFromDefinition(class Actor& a0){
-        void (ActivateToolNode::*rv)(class Actor&);
+    inline void initializeFromDefinition(class Actor & a0){
+        void (ActivateToolNode::*rv)(class Actor &);
         *((void**)&rv) = dlsym("?initializeFromDefinition@ActivateToolNode@@EEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
+        return (this->*rv)(std::forward<class Actor &>(a0));
     }
     */
     MCAPI ActivateToolNode();

@@ -24,13 +24,13 @@ inline operator std::string()const
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDRAWTEXT
 public:
-    class CommandRawText& operator=(class CommandRawText const&) = delete;
-    CommandRawText(class CommandRawText const&) = delete;
+    class CommandRawText& operator=(class CommandRawText const &) = delete;
+    CommandRawText(class CommandRawText const &) = delete;
     CommandRawText() = delete;
 #endif
 
 public:
-    MCAPI std::string const& getText() const;
+    MCAPI std::string const & getText() const;
 
 protected:
 

@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "persona.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -26,19 +27,19 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONNECTIONREQUEST
 public:
-    class ConnectionRequest& operator=(class ConnectionRequest const&) = delete;
+    class ConnectionRequest& operator=(class ConnectionRequest const &) = delete;
     ConnectionRequest() = delete;
 #endif
 
 public:
-    MCAPI ConnectionRequest(class ConnectionRequest const&);
+    MCAPI ConnectionRequest(class ConnectionRequest const &);
     MCAPI std::vector<class AnimatedImageData> getAnimatedImageData() const;
     MCAPI std::string getArmSize() const;
     MCAPI std::vector<unsigned char> getCapeData() const;
     MCAPI std::string getCapeId() const;
     MCAPI unsigned short getCapeImageHeight() const;
     MCAPI unsigned short getCapeImageWidth() const;
-    MCAPI class Certificate const* getCertificate() const;
+    MCAPI class Certificate const * getCertificate() const;
     MCAPI std::string getClientPlatformId() const;
     MCAPI std::string getClientPlatformOfflineId() const;
     MCAPI std::string getClientPlatformOnlineId() const;
@@ -48,6 +49,7 @@ public:
     MCAPI std::string getDeviceId() const;
     MCAPI enum BuildPlatform getDeviceOS() const;
     MCAPI std::vector<class SerializedPersonaPieceHandle> getPersonaPieces() const;
+    MCAPI class std::unordered_map<enum persona::PieceType, class TintMapColor, struct std::hash<enum persona::PieceType>, struct std::equal_to<enum persona::PieceType>, class std::allocator<struct std::pair<enum persona::PieceType const, class TintMapColor>>> getPieceTintColors() const;
     MCAPI std::string getPlayFabId() const;
     MCAPI std::string getSelfSignedId() const;
     MCAPI std::string getSkinAnimationData() const;
@@ -66,15 +68,15 @@ public:
     MCAPI bool isPersonaSkin() const;
     MCAPI bool isPremiumSkin() const;
     MCAPI std::string toString();
-    MCAPI bool verify(std::vector<std::string> const&, __int64);
+    MCAPI bool verify(std::vector<std::string> const &, __int64);
     MCAPI bool verifySelfSigned();
     MCAPI ~ConnectionRequest();
-    MCAPI static class ConnectionRequest fromString(std::string const&);
+    MCAPI static class ConnectionRequest fromString(std::string const &);
 
 protected:
 
 private:
-    MCAPI ConnectionRequest(std::unique_ptr<class WebToken>, std::string const&);
+    MCAPI ConnectionRequest(std::unique_ptr<class WebToken>, std::string const &);
     MCAPI std::unique_ptr<class Certificate> validate(std::unique_ptr<class Certificate>, __int64) const;
 
 };

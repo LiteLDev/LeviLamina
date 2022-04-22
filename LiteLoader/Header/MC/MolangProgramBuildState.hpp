@@ -17,15 +17,15 @@ struct MolangProgramBuildState {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGPROGRAMBUILDSTATE
 public:
-    struct MolangProgramBuildState& operator=(struct MolangProgramBuildState const&) = delete;
-    MolangProgramBuildState(struct MolangProgramBuildState const&) = delete;
+    struct MolangProgramBuildState& operator=(struct MolangProgramBuildState const &) = delete;
+    MolangProgramBuildState(struct MolangProgramBuildState const &) = delete;
     MolangProgramBuildState() = delete;
 #endif
 
 public:
     MCAPI unsigned __int64 allocateInstruction();
-    MCAPI void emplaceInstruction(class std::function<void (struct MolangEvalParams& )>);
-    MCAPI void emplaceInstruction(unsigned __int64, class std::function<void (struct MolangEvalParams& )>);
+    MCAPI void emplaceInstruction(class std::function<void (struct MolangEvalParams &)>);
+    MCAPI void emplaceInstruction(unsigned __int64, class std::function<void (struct MolangEvalParams &)>);
     MCAPI void insertJumpWithMaddAtIndex(unsigned __int64, unsigned __int64, float, float);
     MCAPI unsigned __int64 numInstructions() const;
     MCAPI void popForEachScope(unsigned __int64);

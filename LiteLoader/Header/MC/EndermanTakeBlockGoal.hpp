@@ -17,8 +17,8 @@ class EndermanTakeBlockGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDERMANTAKEBLOCKGOAL
 public:
-    class EndermanTakeBlockGoal& operator=(class EndermanTakeBlockGoal const&) = delete;
-    EndermanTakeBlockGoal(class EndermanTakeBlockGoal const&) = delete;
+    class EndermanTakeBlockGoal& operator=(class EndermanTakeBlockGoal const &) = delete;
+    EndermanTakeBlockGoal(class EndermanTakeBlockGoal const &) = delete;
     EndermanTakeBlockGoal() = delete;
 #endif
 
@@ -30,11 +30,11 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*10*/ virtual class BlockPos getRandomNearbyBlockPos(class Vec3 const&) const;
-    MCAPI EndermanTakeBlockGoal(class EnderMan&);
+    /*10*/ virtual class BlockPos getRandomNearbyBlockPos(class Vec3 const &) const;
+    MCAPI EndermanTakeBlockGoal(class EnderMan &);
 
 protected:
 

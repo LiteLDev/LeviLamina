@@ -17,30 +17,30 @@ class JigsawEditorData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JIGSAWEDITORDATA
 public:
-    class JigsawEditorData& operator=(class JigsawEditorData const&) = delete;
-    JigsawEditorData(class JigsawEditorData const&) = delete;
+    class JigsawEditorData& operator=(class JigsawEditorData const &) = delete;
+    JigsawEditorData(class JigsawEditorData const &) = delete;
 #endif
 
 public:
-    MCAPI JigsawEditorData(class JigsawEditorData&&);
-    MCAPI JigsawEditorData(std::string const&, std::string const&, std::string const&, std::string const&, enum JigsawJointType);
+    MCAPI JigsawEditorData(class JigsawEditorData &&);
+    MCAPI JigsawEditorData(std::string const &, std::string const &, std::string const &, std::string const &, enum JigsawJointType);
     MCAPI JigsawEditorData();
-    MCAPI std::string const& getFinalBlock() const;
-    MCAPI enum JigsawJointType const& getJointType() const;
-    MCAPI std::string const& getName() const;
-    MCAPI std::string const& getTarget() const;
-    MCAPI void load(class CompoundTag const&, class DataLoadHelper&);
-    MCAPI void save(class CompoundTag&) const;
-    MCAPI void setFinalBlock(std::string const&);
-    MCAPI void setJointType(enum JigsawJointType const&);
-    MCAPI void setName(std::string const&);
-    MCAPI void setTarget(std::string const&);
-    MCAPI void setTargetPool(std::string const&);
+    MCAPI std::string const & getFinalBlock() const;
+    MCAPI enum JigsawJointType const & getJointType() const;
+    MCAPI std::string const & getName() const;
+    MCAPI std::string const & getTarget() const;
+    MCAPI void load(class CompoundTag const &, class DataLoadHelper &);
+    MCAPI void save(class CompoundTag &) const;
+    MCAPI void setFinalBlock(std::string const &);
+    MCAPI void setJointType(enum JigsawJointType const &);
+    MCAPI void setName(std::string const &);
+    MCAPI void setTarget(std::string const &);
+    MCAPI void setTargetPool(std::string const &);
     MCAPI ~JigsawEditorData();
 
 protected:
 
 private:
-    MCAPI static class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const JOINT_TYPE_TO_NAME;
+    MCAPI static class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string>>> const JOINT_TYPE_TO_NAME;
 
 };

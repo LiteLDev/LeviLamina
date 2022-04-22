@@ -14,6 +14,6 @@ namespace LightningRodUtil {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void emitLightningRodParticles(class BlockSource&, class BlockPos const&, int);
+    MCAPI void emitLightningRodParticles(class BlockSource &, class BlockPos const &, int);
 
 };

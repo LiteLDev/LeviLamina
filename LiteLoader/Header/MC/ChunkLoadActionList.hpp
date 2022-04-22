@@ -17,25 +17,26 @@ class ChunkLoadActionList {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKLOADACTIONLIST
 public:
-    class ChunkLoadActionList& operator=(class ChunkLoadActionList const&) = delete;
-    ChunkLoadActionList(class ChunkLoadActionList const&) = delete;
+    class ChunkLoadActionList& operator=(class ChunkLoadActionList const &) = delete;
+    ChunkLoadActionList(class ChunkLoadActionList const &) = delete;
 #endif
 
 public:
     MCAPI ChunkLoadActionList();
-    MCAPI void addChunkLoadedRequest(class ChunkLoadedRequest, std::string const&, enum ChunksLoadedStatus, class LevelStorage&);
-    MCAPI void loadRequests(class LevelStorage&, class ICommandOriginLoader&, std::string const&);
-    MCAPI void onChunkLoaded(class LevelStorage&, class ChunkSource&, std::string const&, class LevelChunk&, struct Tick);
-    MCAPI void onStaticTickingAreaAdded(class LevelStorage&, class Dimension&, std::string const&, struct Tick);
-    MCAPI enum QueueRequestResult queueRequestOrExecuteAction(class ChunkLoadedRequest, class ServerLevel&, class LevelStorage&, class Dimension&);
-    MCAPI void tickRequests(class ServerLevel&, class Dimension&);
+    MCAPI void addChunkLoadedRequest(class ChunkLoadedRequest, std::string const &, enum ChunksLoadedStatus, class LevelStorage &);
+    MCAPI void loadRequests(class LevelStorage &, class ICommandOriginLoader &, std::string const &);
+    MCAPI void onChunkLoaded(class LevelStorage &, class ChunkSource &, std::string const &, class LevelChunk &, struct Tick);
+    MCAPI void onStaticTickingAreaAdded(class LevelStorage &, class Dimension &, std::string const &, struct Tick);
+    MCAPI enum QueueRequestResult queueRequestOrExecuteAction(class ChunkLoadedRequest, class ServerLevel &, class LevelStorage &, class Dimension &);
+    MCAPI void tickRequests(class ServerLevel &, class Dimension &);
     MCAPI ~ChunkLoadActionList();
 
 protected:
 
 private:
-    MCAPI void _addChunkLoadedRequest(class ChunkLoadedRequest, std::string const&, enum ChunksLoadedStatus, class LevelStorage&);
-    MCAPI bool _handleChunksLoadedStatusAsyncCallback(class ChunkLoadedRequest&, enum ChunksLoadedStatus, std::string const&, class LevelStorage&);
-    MCAPI void _saveRequest(class ChunkLoadedRequest&, std::string const&, enum ChunkRequestListType, class LevelStorage&);
+    MCAPI void _addChunkLoadedRequest(class ChunkLoadedRequest, std::string const &, enum ChunksLoadedStatus, class LevelStorage &);
+    MCAPI void _saveRequest(class ChunkLoadedRequest &, std::string const &, enum ChunkRequestListType, class LevelStorage &);
+    MCAPI void _updateAsyncList(class LevelStorage &, class Dimension &, class std::function<enum ChunksLoadedStatus (class ChunkLoadedRequest &)>);
+    MCAPI void _updateTickingList(class ServerLevel &, class Dimension &, class std::function<enum ChunksLoadedStatus (class ChunkLoadedRequest &)>);
 
 };

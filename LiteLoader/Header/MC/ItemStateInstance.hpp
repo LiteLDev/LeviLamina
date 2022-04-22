@@ -17,13 +17,13 @@ class ItemStateInstance {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTATEINSTANCE
 public:
-    class ItemStateInstance& operator=(class ItemStateInstance const&) = delete;
-    ItemStateInstance(class ItemStateInstance const&) = delete;
+    class ItemStateInstance& operator=(class ItemStateInstance const &) = delete;
+    ItemStateInstance(class ItemStateInstance const &) = delete;
     ItemStateInstance() = delete;
 #endif
 
 public:
-    MCAPI void initState(unsigned int&, unsigned int, unsigned int, class ItemState const&);
+    MCAPI void initState(unsigned int &, unsigned int, unsigned int, class ItemState const &);
     MCAPI bool isValidData(unsigned int) const;
 
 protected:

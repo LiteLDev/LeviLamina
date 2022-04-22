@@ -26,28 +26,29 @@ enum Type;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMERULE
 public:
-    class GameRule& operator=(class GameRule const&) = delete;
+    class GameRule& operator=(class GameRule const &) = delete;
     GameRule() = delete;
 #endif
 
 public:
-    MCAPI GameRule(class GameRule const&);
-    MCAPI GameRule(class GameRule&&);
-    MCAPI GameRule(std::string const&, bool);
+    MCAPI GameRule(class GameRule const &);
+    MCAPI GameRule(class GameRule &&);
+    MCAPI GameRule(std::string const &, bool);
     MCAPI bool allowUseInCommand() const;
     MCAPI bool canBeModifiedByPlayer() const;
     MCAPI bool getBool() const;
     MCAPI float getFloat() const;
     MCAPI int getInt() const;
-    MCAPI std::string const& getName() const;
+    MCAPI std::string const & getName() const;
     MCAPI enum GameRule::Type getType() const;
+    MCAPI union GameRule::Value const & getValue() const;
     MCAPI bool requiresCheats() const;
     MCAPI void resetType(enum GameRule::Type);
-    MCAPI bool setBool(bool, bool*, class GameRule::ValidationError*);
-    MCAPI bool setFloat(float, bool*, class GameRule::ValidationError*);
-    MCAPI bool setInt(int, bool*, class GameRule::ValidationError*);
-    MCAPI class GameRule& setTagDataNotFoundCallback(class std::function<void (class GameRule& )>);
-    MCAPI class GameRule& setValidateValueCallback(class std::function<bool (union GameRule::Value const& , class GameRule::ValidationError* )>);
+    MCAPI bool setBool(bool, bool *, class GameRule::ValidationError *);
+    MCAPI bool setFloat(float, bool *, class GameRule::ValidationError *);
+    MCAPI bool setInt(int, bool *, class GameRule::ValidationError *);
+    MCAPI class GameRule & setTagDataNotFoundCallback(class std::function<void (class GameRule &)>);
+    MCAPI class GameRule & setValidateValueCallback(class std::function<bool (union GameRule::Value const &, class GameRule::ValidationError *)>);
     MCAPI ~GameRule();
 
 protected:

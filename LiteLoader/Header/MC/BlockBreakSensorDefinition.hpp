@@ -18,14 +18,14 @@ class BlockBreakSensorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKBREAKSENSORDEFINITION
 public:
-    class BlockBreakSensorDefinition& operator=(class BlockBreakSensorDefinition const&) = delete;
-    BlockBreakSensorDefinition(class BlockBreakSensorDefinition const&) = delete;
+    class BlockBreakSensorDefinition& operator=(class BlockBreakSensorDefinition const &) = delete;
+    BlockBreakSensorDefinition(class BlockBreakSensorDefinition const &) = delete;
 #endif
 
 public:
     MCAPI BlockBreakSensorDefinition();
-    MCAPI void initialize(class EntityContext&, class BlockBreakSensorComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BlockBreakSensorDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class BlockBreakSensorComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BlockBreakSensorDefinition>> &);
 
 protected:
 

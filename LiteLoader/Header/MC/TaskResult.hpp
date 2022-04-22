@@ -17,8 +17,8 @@ class TaskResult {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TASKRESULT
 public:
-    class TaskResult& operator=(class TaskResult const&) = delete;
-    TaskResult(class TaskResult const&) = delete;
+    class TaskResult& operator=(class TaskResult const &) = delete;
+    TaskResult(class TaskResult const &) = delete;
 #endif
 
 public:
@@ -29,7 +29,7 @@ public:
     MCAPI ~TaskResult();
     MCAPI static class TaskResult const Done;
     MCAPI static class TaskResult const Requeue;
-    MCAPI static class TaskResult requeueAfter(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> >);
+    MCAPI static class TaskResult requeueAfter(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
 
 protected:
 

@@ -17,8 +17,8 @@ class ContainerContentChangeListener {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERCONTENTCHANGELISTENER
 public:
-    class ContainerContentChangeListener& operator=(class ContainerContentChangeListener const&) = delete;
-    ContainerContentChangeListener(class ContainerContentChangeListener const&) = delete;
+    class ContainerContentChangeListener& operator=(class ContainerContentChangeListener const &) = delete;
+    ContainerContentChangeListener(class ContainerContentChangeListener const &) = delete;
     ContainerContentChangeListener() = delete;
 #endif
 

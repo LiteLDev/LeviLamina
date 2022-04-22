@@ -18,15 +18,15 @@ class AbsorptionMobEffect : public MobEffect {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ABSORPTIONMOBEFFECT
 public:
-    class AbsorptionMobEffect& operator=(class AbsorptionMobEffect const&) = delete;
-    AbsorptionMobEffect(class AbsorptionMobEffect const&) = delete;
+    class AbsorptionMobEffect& operator=(class AbsorptionMobEffect const &) = delete;
+    AbsorptionMobEffect(class AbsorptionMobEffect const &) = delete;
     AbsorptionMobEffect() = delete;
 #endif
 
 public:
     /*0*/ virtual ~AbsorptionMobEffect();
-    /*1*/ virtual void applyEffects(class Actor*, int, int) const;
-    /*2*/ virtual void removeEffects(class Actor*);
+    /*1*/ virtual void applyEffects(class Actor *, int, int) const;
+    /*2*/ virtual void removeEffects(class Actor *);
 
 protected:
 

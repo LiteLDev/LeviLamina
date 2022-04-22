@@ -17,13 +17,13 @@ struct OnActorEnterVolumeDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONACTORENTERVOLUMEDEFINITION
 public:
-    struct OnActorEnterVolumeDefinition& operator=(struct OnActorEnterVolumeDefinition const&) = delete;
-    OnActorEnterVolumeDefinition(struct OnActorEnterVolumeDefinition const&) = delete;
+    struct OnActorEnterVolumeDefinition& operator=(struct OnActorEnterVolumeDefinition const &) = delete;
+    OnActorEnterVolumeDefinition(struct OnActorEnterVolumeDefinition const &) = delete;
     OnActorEnterVolumeDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&, class OnActorEnterVolumeComponent&) const;
+    MCAPI void initialize(class EntityContext &, class OnActorEnterVolumeComponent &) const;
 
 protected:
 

@@ -17,14 +17,14 @@ class CommandFunctionEntry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDFUNCTIONENTRY
 public:
-    class CommandFunctionEntry& operator=(class CommandFunctionEntry const&) = delete;
-    CommandFunctionEntry(class CommandFunctionEntry const&) = delete;
+    class CommandFunctionEntry& operator=(class CommandFunctionEntry const &) = delete;
+    CommandFunctionEntry(class CommandFunctionEntry const &) = delete;
     CommandFunctionEntry() = delete;
 #endif
 
 public:
     /*0*/ virtual ~CommandFunctionEntry();
-    /*1*/ virtual void execute(class FunctionManager&, class CommandOrigin const&, enum FunctionQueueOrder);
+    /*1*/ virtual void execute(class FunctionManager &, class CommandOrigin const &, enum FunctionQueueOrder);
 
 protected:
 

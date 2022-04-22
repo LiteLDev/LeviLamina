@@ -17,8 +17,8 @@ class CallbackTokenCancelState {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CALLBACKTOKENCANCELSTATE
 public:
-    class CallbackTokenCancelState& operator=(class CallbackTokenCancelState const&) = delete;
-    CallbackTokenCancelState(class CallbackTokenCancelState const&) = delete;
+    class CallbackTokenCancelState& operator=(class CallbackTokenCancelState const &) = delete;
+    CallbackTokenCancelState(class CallbackTokenCancelState const &) = delete;
 #endif
 
 public:

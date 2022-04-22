@@ -18,13 +18,13 @@ class NavigationHoverDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONHOVERDESCRIPTION
 public:
-    class NavigationHoverDescription& operator=(class NavigationHoverDescription const&) = delete;
-    NavigationHoverDescription(class NavigationHoverDescription const&) = delete;
+    class NavigationHoverDescription& operator=(class NavigationHoverDescription const &) = delete;
+    NavigationHoverDescription(class NavigationHoverDescription const &) = delete;
     NavigationHoverDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~NavigationHoverDescription();
     /*
     inline  ~NavigationHoverDescription(){

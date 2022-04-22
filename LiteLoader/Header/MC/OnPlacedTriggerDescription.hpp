@@ -18,14 +18,14 @@ class OnPlacedTriggerDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONPLACEDTRIGGERDESCRIPTION
 public:
-    class OnPlacedTriggerDescription& operator=(class OnPlacedTriggerDescription const&) = delete;
-    OnPlacedTriggerDescription(class OnPlacedTriggerDescription const&) = delete;
+    class OnPlacedTriggerDescription& operator=(class OnPlacedTriggerDescription const &) = delete;
+    OnPlacedTriggerDescription(class OnPlacedTriggerDescription const &) = delete;
     OnPlacedTriggerDescription() = delete;
 #endif
 
 public:
     /*0*/ virtual ~OnPlacedTriggerDescription();
-    /*1*/ virtual std::string const& getName() const;
+    /*1*/ virtual std::string const & getName() const;
     MCAPI static std::string const NameID;
 
 protected:

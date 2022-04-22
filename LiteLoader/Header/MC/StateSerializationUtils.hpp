@@ -14,6 +14,6 @@ namespace StateSerializationUtils {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI enum WallConnectionType fromJavaNbtString(std::string const&);
+    MCAPI enum WallConnectionType fromJavaNbtString(std::string const &);
 
 };

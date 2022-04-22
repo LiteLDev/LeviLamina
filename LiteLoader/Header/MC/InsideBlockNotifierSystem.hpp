@@ -17,15 +17,15 @@ class InsideBlockNotifierSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEBLOCKNOTIFIERSYSTEM
 public:
-    class InsideBlockNotifierSystem& operator=(class InsideBlockNotifierSystem const&) = delete;
-    InsideBlockNotifierSystem(class InsideBlockNotifierSystem const&) = delete;
+    class InsideBlockNotifierSystem& operator=(class InsideBlockNotifierSystem const &) = delete;
+    InsideBlockNotifierSystem(class InsideBlockNotifierSystem const &) = delete;
     InsideBlockNotifierSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~InsideBlockNotifierSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

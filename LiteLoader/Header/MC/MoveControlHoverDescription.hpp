@@ -18,13 +18,13 @@ class MoveControlHoverDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVECONTROLHOVERDESCRIPTION
 public:
-    class MoveControlHoverDescription& operator=(class MoveControlHoverDescription const&) = delete;
-    MoveControlHoverDescription(class MoveControlHoverDescription const&) = delete;
+    class MoveControlHoverDescription& operator=(class MoveControlHoverDescription const &) = delete;
+    MoveControlHoverDescription(class MoveControlHoverDescription const &) = delete;
     MoveControlHoverDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~MoveControlHoverDescription();
     /*
     inline  ~MoveControlHoverDescription(){

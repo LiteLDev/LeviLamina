@@ -18,22 +18,22 @@ class BrewingStandInputContainerValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREWINGSTANDINPUTCONTAINERVALIDATION
 public:
-    class BrewingStandInputContainerValidation& operator=(class BrewingStandInputContainerValidation const&) = delete;
-    BrewingStandInputContainerValidation(class BrewingStandInputContainerValidation const&) = delete;
+    class BrewingStandInputContainerValidation& operator=(class BrewingStandInputContainerValidation const &) = delete;
+    BrewingStandInputContainerValidation(class BrewingStandInputContainerValidation const &) = delete;
     BrewingStandInputContainerValidation() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BrewingStandInputContainerValidation();
-    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*8*/ virtual void __unk_vfn_8();
     /*
-    inline int getContainerOffset(class ContainerScreenContext const& a0) const{
-        int (BrewingStandInputContainerValidation::*rv)(class ContainerScreenContext const&) const;
+    inline int getContainerOffset(class ContainerScreenContext const & a0) const{
+        int (BrewingStandInputContainerValidation::*rv)(class ContainerScreenContext const &) const;
         *((void**)&rv) = dlsym("?getContainerOffset@BrewingStandInputContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0));
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
     }
     */
 

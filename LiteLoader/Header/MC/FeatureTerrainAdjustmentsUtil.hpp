@@ -14,6 +14,6 @@ namespace FeatureTerrainAdjustmentsUtil {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI std::vector<class ChunkPos> _findIntersectingChunks(class BlockPos const&, class BlockPos const&);
+    MCAPI std::vector<class ChunkPos> _findIntersectingChunks(class BlockPos const &, class BlockPos const &);
 
 };

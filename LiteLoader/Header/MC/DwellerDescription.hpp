@@ -18,16 +18,16 @@ class DwellerDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DWELLERDESCRIPTION
 public:
-    class DwellerDescription& operator=(class DwellerDescription const&) = delete;
-    DwellerDescription(class DwellerDescription const&) = delete;
+    class DwellerDescription& operator=(class DwellerDescription const &) = delete;
+    DwellerDescription(class DwellerDescription const &) = delete;
     DwellerDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~DwellerDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~DwellerDescription(){
          (DwellerDescription::*rv)();

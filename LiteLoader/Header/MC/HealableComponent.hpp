@@ -17,17 +17,18 @@ class HealableComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HEALABLECOMPONENT
 public:
-    class HealableComponent& operator=(class HealableComponent const&) = delete;
-    HealableComponent(class HealableComponent const&) = delete;
+    class HealableComponent& operator=(class HealableComponent const &) = delete;
+    HealableComponent(class HealableComponent const &) = delete;
     HealableComponent() = delete;
 #endif
 
 public:
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
-    MCAPI void initFromDefinition(class Actor&, class HealableDefinition const&);
+    MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
 
 protected:
 
 private:
+    MCAPI void _useFeedItem(class Actor &, class Player &, struct FeedItem const &);
+    MCAPI static bool _canHeal(class Actor &, class ItemStack const &, class HealableDefinition const *);
 
 };

@@ -15,12 +15,12 @@ struct SendEventData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SENDEVENTDATA
 public:
-    struct SendEventData& operator=(struct SendEventData const&) = delete;
+    struct SendEventData& operator=(struct SendEventData const &) = delete;
     SendEventData() = delete;
 #endif
 
 public:
-    MCAPI SendEventData(struct SendEventData const&);
+    MCAPI SendEventData(struct SendEventData const &);
     MCAPI ~SendEventData();
 
 protected:

@@ -17,8 +17,8 @@ class MoveThroughVillageGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETHROUGHVILLAGEGOAL
 public:
-    class MoveThroughVillageGoal& operator=(class MoveThroughVillageGoal const&) = delete;
-    MoveThroughVillageGoal(class MoveThroughVillageGoal const&) = delete;
+    class MoveThroughVillageGoal& operator=(class MoveThroughVillageGoal const &) = delete;
+    MoveThroughVillageGoal(class MoveThroughVillageGoal const &) = delete;
     MoveThroughVillageGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline bool canContinueToUse(){
         bool (MoveThroughVillageGoal::*rv)();
@@ -48,7 +48,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI MoveThroughVillageGoal(class Mob&, float, bool);
+    MCAPI MoveThroughVillageGoal(class Mob &, float, bool);
 
 protected:
 

@@ -17,8 +17,8 @@ class LevelDbFileLock {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELDBFILELOCK
 public:
-    class LevelDbFileLock& operator=(class LevelDbFileLock const&) = delete;
-    LevelDbFileLock(class LevelDbFileLock const&) = delete;
+    class LevelDbFileLock& operator=(class LevelDbFileLock const &) = delete;
+    LevelDbFileLock(class LevelDbFileLock const &) = delete;
     LevelDbFileLock() = delete;
 #endif
 

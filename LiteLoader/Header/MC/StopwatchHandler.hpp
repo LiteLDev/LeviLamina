@@ -17,8 +17,8 @@ class StopwatchHandler {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STOPWATCHHANDLER
 public:
-    class StopwatchHandler& operator=(class StopwatchHandler const&) = delete;
-    StopwatchHandler(class StopwatchHandler const&) = delete;
+    class StopwatchHandler& operator=(class StopwatchHandler const &) = delete;
+    StopwatchHandler(class StopwatchHandler const &) = delete;
     StopwatchHandler() = delete;
 #endif
 

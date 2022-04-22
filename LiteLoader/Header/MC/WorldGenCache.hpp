@@ -17,15 +17,15 @@ class WorldGenCache {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDGENCACHE
 public:
-    class WorldGenCache& operator=(class WorldGenCache const&) = delete;
-    WorldGenCache(class WorldGenCache const&) = delete;
+    class WorldGenCache& operator=(class WorldGenCache const &) = delete;
+    WorldGenCache(class WorldGenCache const &) = delete;
     WorldGenCache() = delete;
 #endif
 
 public:
     MCAPI WorldGenCache(class ChunkLocalNoiseCache, class SurfaceLevelCache);
-    MCAPI class ChunkLocalNoiseCache const& getChunkLocalNoiseCache() const;
-    MCAPI class SurfaceLevelCache const& getSurfaceLevelCache() const;
+    MCAPI class ChunkLocalNoiseCache const & getChunkLocalNoiseCache() const;
+    MCAPI class SurfaceLevelCache const & getSurfaceLevelCache() const;
     MCAPI ~WorldGenCache();
 
 protected:

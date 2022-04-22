@@ -17,8 +17,8 @@ class ScreenHandlerBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCREENHANDLERBASE
 public:
-    class ScreenHandlerBase& operator=(class ScreenHandlerBase const&) = delete;
-    ScreenHandlerBase(class ScreenHandlerBase const&) = delete;
+    class ScreenHandlerBase& operator=(class ScreenHandlerBase const &) = delete;
+    ScreenHandlerBase(class ScreenHandlerBase const &) = delete;
     ScreenHandlerBase() = delete;
 #endif
 
@@ -40,10 +40,10 @@ public:
         *((void**)&rv) = dlsym("?endRequestBatch@ScreenHandlerBase@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline enum ItemStackNetResult handleAction(class ItemStackRequestAction const& a0){
-        enum ItemStackNetResult (ScreenHandlerBase::*rv)(class ItemStackRequestAction const&);
+    inline enum ItemStackNetResult handleAction(class ItemStackRequestAction const & a0){
+        enum ItemStackNetResult (ScreenHandlerBase::*rv)(class ItemStackRequestAction const &);
         *((void**)&rv) = dlsym("?handleAction@ScreenHandlerBase@@UEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z");
-        return (this->*rv)(std::forward<class ItemStackRequestAction const&>(a0));
+        return (this->*rv)(std::forward<class ItemStackRequestAction const &>(a0));
     }
     inline  ~ScreenHandlerBase(){
          (ScreenHandlerBase::*rv)();
@@ -51,7 +51,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScreenHandlerBase(class ItemStackRequestActionHandler&);
+    MCAPI ScreenHandlerBase(class ItemStackRequestActionHandler &);
 
 protected:
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum ContainerEnumName);

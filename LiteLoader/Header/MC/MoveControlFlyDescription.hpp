@@ -18,13 +18,13 @@ class MoveControlFlyDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVECONTROLFLYDESCRIPTION
 public:
-    class MoveControlFlyDescription& operator=(class MoveControlFlyDescription const&) = delete;
-    MoveControlFlyDescription(class MoveControlFlyDescription const&) = delete;
+    class MoveControlFlyDescription& operator=(class MoveControlFlyDescription const &) = delete;
+    MoveControlFlyDescription(class MoveControlFlyDescription const &) = delete;
     MoveControlFlyDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~MoveControlFlyDescription();
     /*
     inline  ~MoveControlFlyDescription(){

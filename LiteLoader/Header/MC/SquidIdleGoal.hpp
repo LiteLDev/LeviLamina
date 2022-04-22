@@ -17,8 +17,8 @@ class SquidIdleGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SQUIDIDLEGOAL
 public:
-    class SquidIdleGoal& operator=(class SquidIdleGoal const&) = delete;
-    SquidIdleGoal(class SquidIdleGoal const&) = delete;
+    class SquidIdleGoal& operator=(class SquidIdleGoal const &) = delete;
+    SquidIdleGoal(class SquidIdleGoal const &) = delete;
     SquidIdleGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline void stop(){
         void (SquidIdleGoal::*rv)();

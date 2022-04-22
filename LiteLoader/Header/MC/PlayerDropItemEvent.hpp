@@ -15,8 +15,8 @@ class PlayerDropItemEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERDROPITEMEVENT
 public:
-    class PlayerDropItemEvent& operator=(class PlayerDropItemEvent const&) = delete;
-    PlayerDropItemEvent(class PlayerDropItemEvent const&) = delete;
+    class PlayerDropItemEvent& operator=(class PlayerDropItemEvent const &) = delete;
+    PlayerDropItemEvent(class PlayerDropItemEvent const &) = delete;
     PlayerDropItemEvent() = delete;
 #endif
 

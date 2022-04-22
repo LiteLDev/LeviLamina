@@ -24,7 +24,7 @@ struct CapabilityRegisterer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKMANIFEST
 public:
-    class PackManifest& operator=(class PackManifest const&) = delete;
+    class PackManifest& operator=(class PackManifest const &) = delete;
     PackManifest() = delete;
 #endif
 
@@ -38,20 +38,19 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI PackManifest(class PackManifest const&);
+    MCAPI PackManifest(class PackManifest const &);
     MCAPI PackManifest(enum ManifestType);
-    MCAPI void addModule(class ResourceInformation const&);
-    MCAPI void addPackCapability(class gsl::basic_string_span<char const, -1>);
-    MCAPI class ContentIdentity const& getContentIdentity() const;
-    MCAPI std::vector<struct PackIdVersion> const& getDependentPackIdentities() const;
+    MCAPI void addModule(class ResourceInformation const &);
+    MCAPI class ContentIdentity const & getContentIdentity() const;
+    MCAPI std::vector<struct PackIdVersion> const & getDependentPackIdentities() const;
     MCAPI std::string getDescription() const;
     MCAPI enum PackManifestFormat getFormatVersion() const;
-    MCAPI struct PackIdVersion const& getIdentity() const;
-    MCAPI class ResourceLocation const& getLocation() const;
+    MCAPI struct PackIdVersion const & getIdentity() const;
+    MCAPI class ResourceLocation const & getLocation() const;
     MCAPI enum ManifestOrigin getManifestOrigin() const;
-    MCAPI class ResourceMetadata const& getMetaData() const;
-    MCAPI class SemVersion const& getMinEngineVersion() const;
-    MCAPI std::vector<class ResourceInformation> const& getModules() const;
+    MCAPI class ResourceMetadata const & getMetaData() const;
+    MCAPI class SemVersion const & getMinEngineVersion() const;
+    MCAPI std::vector<class ResourceInformation> const & getModules() const;
     MCAPI std::string getName() const;
     MCAPI std::string getNameForTelemetry() const;
     MCAPI enum PackManifestFormat getOriginalFormatVersion() const;
@@ -59,24 +58,23 @@ public:
     MCAPI enum PackOrigin getPackOrigin() const;
     MCAPI unsigned __int64 getPackSize() const;
     MCAPI enum PackType getPackType() const;
-    MCAPI class BaseGameVersion const& getRequiredBaseGameVersion() const;
-    MCAPI bool hasClientData() const;
+    MCAPI class BaseGameVersion const & getRequiredBaseGameVersion() const;
     MCAPI bool hasClientScript() const;
     MCAPI bool hasPackCapability(class gsl::basic_string_span<char const, -1>) const;
     MCAPI bool hasPlugins() const;
     MCAPI bool isPremium() const;
-    MCAPI void serialize(enum PackManifestFormat, class Json::Value&) const;
+    MCAPI void serialize(enum PackManifestFormat, class Json::Value &) const;
     MCAPI void setLastModifiedDate(__int64);
-    MCAPI void setLocalizedNameKeywords(class std::unordered_map<std::string, std::string, struct std::hash<std::string >, struct std::equal_to<std::string >, class std::allocator<struct std::pair<std::string const, std::string > > > const&);
+    MCAPI void setLocalizedNameKeywords(class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> const &);
     MCAPI static std::string const MarioPackId;
 
 protected:
 
 private:
-    MCAPI void _serializeDependencies(class Json::Value&) const;
-    MCAPI void _serializeHeader(class Json::Value&) const;
-    MCAPI void _serializeModules(class Json::Value&) const;
-    MCAPI void _serializeVersion(class Json::Value&, class SemVersion const&) const;
-    MCAPI static class std::unordered_map<std::string, enum PackScope, struct std::hash<std::string >, struct std::equal_to<std::string >, class std::allocator<struct std::pair<std::string const, enum PackScope> > > const STRING_TO_PACK_SCOPE;
+    MCAPI void _serializeDependencies(class Json::Value &) const;
+    MCAPI void _serializeHeader(class Json::Value &) const;
+    MCAPI void _serializeModules(class Json::Value &) const;
+    MCAPI void _serializeVersion(class Json::Value &, class SemVersion const &) const;
+    MCAPI static class std::unordered_map<std::string, enum PackScope, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum PackScope>>> const STRING_TO_PACK_SCOPE;
 
 };

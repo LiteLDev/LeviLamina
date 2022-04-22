@@ -18,20 +18,20 @@ class AzaleaTreeAndRootsFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AZALEATREEANDROOTSFEATURE
 public:
-    class AzaleaTreeAndRootsFeature& operator=(class AzaleaTreeAndRootsFeature const&) = delete;
-    AzaleaTreeAndRootsFeature(class AzaleaTreeAndRootsFeature const&) = delete;
+    class AzaleaTreeAndRootsFeature& operator=(class AzaleaTreeAndRootsFeature const &) = delete;
+    AzaleaTreeAndRootsFeature(class AzaleaTreeAndRootsFeature const &) = delete;
     AzaleaTreeAndRootsFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~AzaleaTreeAndRootsFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 protected:
 
 private:
-    MCAPI bool _isLushGroundReplaceable(class BlockSource&, class BlockPos const&) const;
-    MCAPI bool _tryPlaceAzaleaTree(class BlockSource&, class BlockPos const&, class Random&, unsigned int) const;
+    MCAPI bool _isLushGroundReplaceable(class BlockSource &, class BlockPos const &) const;
+    MCAPI bool _tryPlaceAzaleaTree(class BlockSource &, class BlockPos const &, class Random &, unsigned int) const;
 
 };

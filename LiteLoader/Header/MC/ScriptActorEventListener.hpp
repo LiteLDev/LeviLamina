@@ -17,8 +17,8 @@ class ScriptActorEventListener {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTACTOREVENTLISTENER
 public:
-    class ScriptActorEventListener& operator=(class ScriptActorEventListener const&) = delete;
-    ScriptActorEventListener(class ScriptActorEventListener const&) = delete;
+    class ScriptActorEventListener& operator=(class ScriptActorEventListener const &) = delete;
+    ScriptActorEventListener(class ScriptActorEventListener const &) = delete;
     ScriptActorEventListener() = delete;
 #endif
 
@@ -33,7 +33,7 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void __unk_vfn_10();
-    /*11*/ virtual enum EventResult onActorCreated(class Actor&);
+    /*11*/ virtual enum EventResult onActorCreated(class Actor &);
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void __unk_vfn_14();
@@ -47,14 +47,17 @@ public:
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
     /*24*/ virtual void __unk_vfn_24();
-    /*25*/ virtual enum EventResult onEvent(struct ActorRemovedEvent const&);
-    /*26*/ virtual enum EventResult onEvent(struct ActorRemoveEffectEvent const&);
-    /*27*/ virtual void __unk_vfn_27();
+    /*25*/ virtual void __unk_vfn_25();
+    /*26*/ virtual enum EventResult onEvent(struct ActorRemovedEvent const &);
+    /*27*/ virtual enum EventResult onEvent(struct ActorRemoveEffectEvent const &);
     /*28*/ virtual void __unk_vfn_28();
-    /*29*/ virtual void __unk_vfn_29();
-    /*30*/ virtual void __unk_vfn_30();
-    /*31*/ virtual enum EventResult onEvent(struct ActorAddEffectEvent const&);
-    MCAPI ScriptActorEventListener(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
+    /*29*/ virtual enum EventResult onEvent(struct ActorDefinitionEndedEvent const &);
+    /*30*/ virtual enum EventResult onEvent(struct ActorHurtEvent const &);
+    /*31*/ virtual void __unk_vfn_31();
+    /*32*/ virtual enum EventResult onEvent(struct ActorAttackEvent const &);
+    /*33*/ virtual void __unk_vfn_33();
+    /*34*/ virtual enum EventResult onEvent(struct ActorAddEffectEvent const &);
+    MCAPI ScriptActorEventListener(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 
 protected:
 

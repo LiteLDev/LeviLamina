@@ -17,15 +17,15 @@ class BoostableSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOOSTABLESYSTEM
 public:
-    class BoostableSystem& operator=(class BoostableSystem const&) = delete;
-    BoostableSystem(class BoostableSystem const&) = delete;
+    class BoostableSystem& operator=(class BoostableSystem const &) = delete;
+    BoostableSystem(class BoostableSystem const &) = delete;
     BoostableSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BoostableSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

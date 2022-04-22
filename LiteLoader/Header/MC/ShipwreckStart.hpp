@@ -18,16 +18,14 @@ class ShipwreckStart : public StructureStart {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHIPWRECKSTART
 public:
-    class ShipwreckStart& operator=(class ShipwreckStart const&) = delete;
-    ShipwreckStart(class ShipwreckStart const&) = delete;
+    class ShipwreckStart& operator=(class ShipwreckStart const &) = delete;
+    ShipwreckStart(class ShipwreckStart const &) = delete;
     ShipwreckStart() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ShipwreckStart();
-    /*2*/ virtual bool isValid() const;
-    /*3*/ virtual enum StructureFeatureType getType() const;
-    MCAPI ShipwreckStart(class BiomeSource const&, class Random&, int, int, short);
+    MCAPI ShipwreckStart(class BiomeSource const &, class Random &, int, int, short);
 
 protected:
 

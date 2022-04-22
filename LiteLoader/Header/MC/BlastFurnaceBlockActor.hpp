@@ -17,8 +17,8 @@ class BlastFurnaceBlockActor {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLASTFURNACEBLOCKACTOR
 public:
-    class BlastFurnaceBlockActor& operator=(class BlastFurnaceBlockActor const&) = delete;
-    BlastFurnaceBlockActor(class BlastFurnaceBlockActor const&) = delete;
+    class BlastFurnaceBlockActor& operator=(class BlastFurnaceBlockActor const &) = delete;
+    BlastFurnaceBlockActor(class BlastFurnaceBlockActor const &) = delete;
     BlastFurnaceBlockActor() = delete;
 #endif
 

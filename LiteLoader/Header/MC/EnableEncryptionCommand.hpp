@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class EnableEncryptionCommand {
+class EnableEncryptionCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,19 +18,19 @@ class EnableEncryptionCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENABLEENCRYPTIONCOMMAND
 public:
-    class EnableEncryptionCommand& operator=(class EnableEncryptionCommand const&) = delete;
-    EnableEncryptionCommand(class EnableEncryptionCommand const&) = delete;
+    class EnableEncryptionCommand& operator=(class EnableEncryptionCommand const &) = delete;
+    EnableEncryptionCommand(class EnableEncryptionCommand const &) = delete;
     EnableEncryptionCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~EnableEncryptionCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&, class IMinecraftApp&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &, class IMinecraftApp &);
 
 protected:
 
 private:
-    MCAPI static class IMinecraftApp* mApp;
+    MCAPI static class IMinecraftApp * mApp;
 
 };

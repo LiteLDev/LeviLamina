@@ -15,8 +15,8 @@ struct SpawnSettings {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNSETTINGS
 public:
-    struct SpawnSettings& operator=(struct SpawnSettings const&) = delete;
-    SpawnSettings(struct SpawnSettings const&) = delete;
+    struct SpawnSettings& operator=(struct SpawnSettings const &) = delete;
+    SpawnSettings(struct SpawnSettings const &) = delete;
 #endif
 
 public:

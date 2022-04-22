@@ -18,13 +18,13 @@ class GroupSizeDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROUPSIZEDEFINITION
 public:
-    class GroupSizeDefinition& operator=(class GroupSizeDefinition const&) = delete;
-    GroupSizeDefinition(class GroupSizeDefinition const&) = delete;
+    class GroupSizeDefinition& operator=(class GroupSizeDefinition const &) = delete;
+    GroupSizeDefinition(class GroupSizeDefinition const &) = delete;
     GroupSizeDefinition() = delete;
 #endif
 
 public:
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GroupSizeDefinition> >&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GroupSizeDefinition>> &);
 
 protected:
 

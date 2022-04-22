@@ -15,6 +15,6 @@ namespace TheEndSpikeHelper {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI std::vector<class SpikeFeature::EndSpike> getSpikesForLevel(class Level&);
+    MCAPI std::vector<class SpikeFeature::EndSpike> getSpikesForLevel(class Level &);
 
 };

@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Json.hpp"
 #include "JsonUtil.hpp"
 
 #define BEFORE_EXTRA
@@ -19,15 +18,12 @@ struct EquipmentTableDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EQUIPMENTTABLEDEFINITION
 public:
-    struct EquipmentTableDefinition& operator=(struct EquipmentTableDefinition const&) = delete;
-    EquipmentTableDefinition(struct EquipmentTableDefinition const&) = delete;
+    struct EquipmentTableDefinition& operator=(struct EquipmentTableDefinition const &) = delete;
+    EquipmentTableDefinition(struct EquipmentTableDefinition const &) = delete;
     EquipmentTableDefinition() = delete;
 #endif
 
 public:
-    MCAPI void deserializeData(struct DeserializeDataParams);
-    MCAPI void serializeData(class Json::Value&) const;
-    MCAPI ~EquipmentTableDefinition();
 
 protected:
 

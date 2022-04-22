@@ -17,8 +17,8 @@ class TickingArea {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKINGAREA
 public:
-    class TickingArea& operator=(class TickingArea const&) = delete;
-    TickingArea(class TickingArea const&) = delete;
+    class TickingArea& operator=(class TickingArea const &) = delete;
+    TickingArea(class TickingArea const &) = delete;
     TickingArea() = delete;
 #endif
 
@@ -30,34 +30,39 @@ public:
     /*4*/ virtual bool isEntityOwned() const;
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual struct Bounds const& getBounds() const;
+    /*7*/ virtual struct Bounds const & getBounds() const;
     /*8*/ virtual bool isAlwaysActive() const;
     /*9*/ virtual float getMaxDistToPlayers() const;
     /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual struct TickingAreaDescription getDescription() const;
     /*13*/ virtual void __unk_vfn_13();
-    /*14*/ virtual void setLoadMode(enum TickingAreaLoadMode, class LevelStorage&);
+    /*14*/ virtual void setLoadMode(enum TickingAreaLoadMode, class LevelStorage &);
     /*15*/ virtual bool isPreloadDone() const;
-    /*16*/ virtual void tick(struct Tick const&, bool);
-    /*17*/ virtual void tickSeasons(class Random&);
-    /*18*/ virtual void updatePosition(class Vec3 const&);
-    /*19*/ virtual void updateAndCenter(class LevelStorage&, struct Tick);
-    /*20*/ virtual class Actor* findOwner(unsigned char&);
-    /*21*/ virtual void __unk_vfn_21();
+    /*16*/ virtual void tick(struct Tick const &, bool);
+    /*17*/ virtual void tickSeasons(class Random &);
+    /*18*/ virtual void updatePosition(class Vec3 const &);
+    /*19*/ virtual void updateAndCenter(class LevelStorage &, struct Tick);
+    /*20*/ virtual class Actor * findOwner(unsigned char &);
+    /*21*/ virtual bool entityHasBeenFound() const;
     /*22*/ virtual void setEntityFound();
     /*23*/ virtual bool isRemoved();
-    /*24*/ virtual void remove(class LevelStorage&);
-    /*25*/ virtual void onComponentChanged(unsigned int, float, bool, class LevelStorage&);
+    /*24*/ virtual void remove(class LevelStorage &);
+    /*25*/ virtual void onComponentChanged(unsigned int, float, bool, class LevelStorage &);
     /*
-    inline class mce::UUID const& getId() const{
-        class mce::UUID const& (TickingArea::*rv)() const;
+    inline class mce::UUID const & getId() const{
+        class mce::UUID const & (TickingArea::*rv)() const;
         *((void**)&rv) = dlsym("?getId@TickingArea@@UEBAAEBVUUID@mce@@XZ");
         return (this->*rv)();
     }
-    inline std::string const& getName() const{
-        std::string const& (TickingArea::*rv)() const;
+    inline std::string const & getName() const{
+        std::string const & (TickingArea::*rv)() const;
         *((void**)&rv) = dlsym("?getName@TickingArea@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline struct ActorUniqueID const & getEntityId() const{
+        struct ActorUniqueID const & (TickingArea::*rv)() const;
+        *((void**)&rv) = dlsym("?getEntityId@TickingArea@@UEBAAEBUActorUniqueID@@XZ");
         return (this->*rv)();
     }
     inline enum TickingAreaLoadMode getLoadMode() const{
@@ -65,50 +70,40 @@ public:
         *((void**)&rv) = dlsym("?getLoadMode@TickingArea@@UEBA?AW4TickingAreaLoadMode@@XZ");
         return (this->*rv)();
     }
-    inline struct ActorUniqueID const& getEntityId() const{
-        struct ActorUniqueID const& (TickingArea::*rv)() const;
-        *((void**)&rv) = dlsym("?getEntityId@TickingArea@@UEBAAEBUActorUniqueID@@XZ");
-        return (this->*rv)();
-    }
-    inline bool entityHasBeenFound() const{
-        bool (TickingArea::*rv)() const;
-        *((void**)&rv) = dlsym("?entityHasBeenFound@TickingArea@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline  ~TickingArea(){
          (TickingArea::*rv)();
         *((void**)&rv) = dlsym("??1TickingArea@@UEAA@XZ");
         return (this->*rv)();
     }
-    inline class BlockSource& getBlockSource(){
-        class BlockSource& (TickingArea::*rv)();
+    inline class BlockSource & getBlockSource(){
+        class BlockSource & (TickingArea::*rv)();
         *((void**)&rv) = dlsym("?getBlockSource@TickingArea@@UEAAAEAVBlockSource@@XZ");
         return (this->*rv)();
     }
-    inline class BlockSource const& getBlockSource() const{
-        class BlockSource const& (TickingArea::*rv)() const;
+    inline class BlockSource const & getBlockSource() const{
+        class BlockSource const & (TickingArea::*rv)() const;
         *((void**)&rv) = dlsym("?getBlockSource@TickingArea@@UEBAAEBVBlockSource@@XZ");
         return (this->*rv)();
     }
-    inline class ITickingAreaView const& getView() const{
-        class ITickingAreaView const& (TickingArea::*rv)() const;
+    inline class ITickingAreaView const & getView() const{
+        class ITickingAreaView const & (TickingArea::*rv)() const;
         *((void**)&rv) = dlsym("?getView@TickingArea@@UEBAAEBVITickingAreaView@@XZ");
         return (this->*rv)();
     }
-    inline class ITickingAreaView& getView(){
-        class ITickingAreaView& (TickingArea::*rv)();
+    inline class ITickingAreaView & getView(){
+        class ITickingAreaView & (TickingArea::*rv)();
         *((void**)&rv) = dlsym("?getView@TickingArea@@UEAAAEAVITickingAreaView@@XZ");
         return (this->*rv)();
     }
     */
-    MCAPI TickingArea(class Dimension&, class mce::UUID, struct Bounds const&, struct ActorUniqueID);
-    MCAPI TickingArea(class Dimension&, class mce::UUID, struct Bounds const&, struct ActorUniqueID, float);
-    MCAPI TickingArea(class Dimension&, class mce::UUID, std::string const&, struct Bounds const&, bool, enum TickingAreaLoadMode);
+    MCAPI TickingArea(class Dimension &, class mce::UUID, struct Bounds const &, struct ActorUniqueID);
+    MCAPI TickingArea(class Dimension &, class mce::UUID, struct Bounds const &, struct ActorUniqueID, float);
+    MCAPI TickingArea(class Dimension &, class mce::UUID, std::string const &, struct Bounds const &, bool, enum TickingAreaLoadMode);
 
 protected:
 
 private:
-    MCAPI TickingArea(class Dimension&, class mce::UUID, std::string const&, struct ActorUniqueID, struct Bounds const&, bool, float, bool, enum TickingAreaLoadMode);
-    MCAPI void _save(class LevelStorage&);
+    MCAPI TickingArea(class Dimension &, class mce::UUID, std::string const &, struct ActorUniqueID, struct Bounds const &, bool, float, bool, enum TickingAreaLoadMode);
+    MCAPI void _save(class LevelStorage &);
 
 };

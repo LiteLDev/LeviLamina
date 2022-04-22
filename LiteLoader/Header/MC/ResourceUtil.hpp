@@ -17,8 +17,8 @@ class ResourceUtil {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEUTIL
 public:
-    class ResourceUtil& operator=(class ResourceUtil const&) = delete;
-    ResourceUtil(class ResourceUtil const&) = delete;
+    class ResourceUtil& operator=(class ResourceUtil const &) = delete;
+    ResourceUtil(class ResourceUtil const &) = delete;
     ResourceUtil() = delete;
 #endif
 

@@ -17,8 +17,8 @@ class DirectPlayerMovementProxy {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIRECTPLAYERMOVEMENTPROXY
 public:
-    class DirectPlayerMovementProxy& operator=(class DirectPlayerMovementProxy const&) = delete;
-    DirectPlayerMovementProxy(class DirectPlayerMovementProxy const&) = delete;
+    class DirectPlayerMovementProxy& operator=(class DirectPlayerMovementProxy const &) = delete;
+    DirectPlayerMovementProxy(class DirectPlayerMovementProxy const &) = delete;
     DirectPlayerMovementProxy() = delete;
 #endif
 
@@ -34,25 +34,25 @@ public:
         *((void**)&rv) = dlsym("?getLoadingState@DirectPlayerMovementProxy@@UEBA?AW4LoadingState@@XZ");
         return (this->*rv)();
     }
-    inline struct IClientInstanceProxy* getClientInstance(){
-        struct IClientInstanceProxy* (DirectPlayerMovementProxy::*rv)();
+    inline struct IClientInstanceProxy * getClientInstance(){
+        struct IClientInstanceProxy * (DirectPlayerMovementProxy::*rv)();
         *((void**)&rv) = dlsym("?getClientInstance@DirectPlayerMovementProxy@@UEAAPEAUIClientInstanceProxy@@XZ");
         return (this->*rv)();
     }
-    inline struct IClientInstanceProxy const* getClientInstance() const{
-        struct IClientInstanceProxy const* (DirectPlayerMovementProxy::*rv)() const;
+    inline struct IClientInstanceProxy const * getClientInstance() const{
+        struct IClientInstanceProxy const * (DirectPlayerMovementProxy::*rv)() const;
         *((void**)&rv) = dlsym("?getClientInstance@DirectPlayerMovementProxy@@UEBAPEBUIClientInstanceProxy@@XZ");
         return (this->*rv)();
     }
-    inline void setLookBob(class Vec2 const& a0){
-        void (DirectPlayerMovementProxy::*rv)(class Vec2 const&);
+    inline void setLookBob(class Vec2 const & a0){
+        void (DirectPlayerMovementProxy::*rv)(class Vec2 const &);
         *((void**)&rv) = dlsym("?setLookBob@DirectPlayerMovementProxy@@UEAAXAEBVVec2@@@Z");
-        return (this->*rv)(std::forward<class Vec2 const&>(a0));
+        return (this->*rv)(std::forward<class Vec2 const &>(a0));
     }
-    inline void setLastLookBob(class Vec2 const& a0){
-        void (DirectPlayerMovementProxy::*rv)(class Vec2 const&);
+    inline void setLastLookBob(class Vec2 const & a0){
+        void (DirectPlayerMovementProxy::*rv)(class Vec2 const &);
         *((void**)&rv) = dlsym("?setLastLookBob@DirectPlayerMovementProxy@@UEAAXAEBVVec2@@@Z");
-        return (this->*rv)(std::forward<class Vec2 const&>(a0));
+        return (this->*rv)(std::forward<class Vec2 const &>(a0));
     }
     inline void registerFramewiseActionOrStop(){
         void (DirectPlayerMovementProxy::*rv)();
@@ -64,15 +64,15 @@ public:
         *((void**)&rv) = dlsym("?setJumpRidingScale@DirectPlayerMovementProxy@@UEAAXM@Z");
         return (this->*rv)(std::forward<float>(a0));
     }
-    inline void setCurrentLocalMoveVelocity(class Vec2 const& a0){
-        void (DirectPlayerMovementProxy::*rv)(class Vec2 const&);
+    inline void setCurrentLocalMoveVelocity(class Vec2 const & a0){
+        void (DirectPlayerMovementProxy::*rv)(class Vec2 const &);
         *((void**)&rv) = dlsym("?setCurrentLocalMoveVelocity@DirectPlayerMovementProxy@@UEAAXAEBVVec2@@@Z");
-        return (this->*rv)(std::forward<class Vec2 const&>(a0));
+        return (this->*rv)(std::forward<class Vec2 const &>(a0));
     }
-    inline void setLastDelta(class Vec3 const& a0){
-        void (DirectPlayerMovementProxy::*rv)(class Vec3 const&);
+    inline void setLastDelta(class Vec3 const & a0){
+        void (DirectPlayerMovementProxy::*rv)(class Vec3 const &);
         *((void**)&rv) = dlsym("?setLastDelta@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0));
+        return (this->*rv)(std::forward<class Vec3 const &>(a0));
     }
     inline void sendInput(){
         void (DirectPlayerMovementProxy::*rv)();
@@ -84,10 +84,10 @@ public:
         *((void**)&rv) = dlsym("?updateClientPlayerInputState@DirectPlayerMovementProxy@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void setLastPos(class Vec3 const& a0){
-        void (DirectPlayerMovementProxy::*rv)(class Vec3 const&);
+    inline void setLastPos(class Vec3 const & a0){
+        void (DirectPlayerMovementProxy::*rv)(class Vec3 const &);
         *((void**)&rv) = dlsym("?setLastPos@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0));
+        return (this->*rv)(std::forward<class Vec3 const &>(a0));
     }
     inline void sendPosition(){
         void (DirectPlayerMovementProxy::*rv)();
@@ -104,23 +104,23 @@ public:
         *((void**)&rv) = dlsym("?setEmotePlayedEndedEarly@DirectPlayerMovementProxy@@UEAAX_N@Z");
         return (this->*rv)(std::forward<bool>(a0));
     }
-    inline void sendClientAuthInput(){
-        void (DirectPlayerMovementProxy::*rv)();
-        *((void**)&rv) = dlsym("?sendClientAuthInput@DirectPlayerMovementProxy@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void fireEventPersonaEmotePlayed(){
         void (DirectPlayerMovementProxy::*rv)();
         *((void**)&rv) = dlsym("?fireEventPersonaEmotePlayed@DirectPlayerMovementProxy@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline struct IPlayerMovementProxy const* tryAsPlayer() const{
-        struct IPlayerMovementProxy const* (DirectPlayerMovementProxy::*rv)() const;
+    inline void sendClientAuthInput(){
+        void (DirectPlayerMovementProxy::*rv)();
+        *((void**)&rv) = dlsym("?sendClientAuthInput@DirectPlayerMovementProxy@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline struct IPlayerMovementProxy const * tryAsPlayer() const{
+        struct IPlayerMovementProxy const * (DirectPlayerMovementProxy::*rv)() const;
         *((void**)&rv) = dlsym("?tryAsPlayer@DirectPlayerMovementProxy@@UEBAPEBUIPlayerMovementProxy@@XZ");
         return (this->*rv)();
     }
-    inline struct IPlayerMovementProxy* tryAsPlayer(){
-        struct IPlayerMovementProxy* (DirectPlayerMovementProxy::*rv)();
+    inline struct IPlayerMovementProxy * tryAsPlayer(){
+        struct IPlayerMovementProxy * (DirectPlayerMovementProxy::*rv)();
         *((void**)&rv) = dlsym("?tryAsPlayer@DirectPlayerMovementProxy@@UEAAPEAUIPlayerMovementProxy@@XZ");
         return (this->*rv)();
     }
@@ -129,8 +129,8 @@ public:
         *((void**)&rv) = dlsym("?getJumpRidingScale@DirectPlayerMovementProxy@@UEAAMXZ");
         return (this->*rv)();
     }
-    inline class Player* _getPlayer(){
-        class Player* (DirectPlayerMovementProxy::*rv)();
+    inline class Player * _getPlayer(){
+        class Player * (DirectPlayerMovementProxy::*rv)();
         *((void**)&rv) = dlsym("?_getPlayer@DirectPlayerMovementProxy@@UEAAPEAVPlayer@@XZ");
         return (this->*rv)();
     }
@@ -149,10 +149,10 @@ public:
         *((void**)&rv) = dlsym("?isSleeping@DirectPlayerMovementProxy@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline void _onMovePlayerPacketNormal(class Vec3 const& a0, class Vec2 const& a1, float a2){
-        void (DirectPlayerMovementProxy::*rv)(class Vec3 const&, class Vec2 const&, float);
+    inline void _onMovePlayerPacketNormal(class Vec3 const & a0, class Vec2 const & a1, float a2){
+        void (DirectPlayerMovementProxy::*rv)(class Vec3 const &, class Vec2 const &, float);
         *((void**)&rv) = dlsym("?_onMovePlayerPacketNormal@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@AEBVVec2@@M@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0), std::forward<class Vec2 const&>(a1), std::forward<float>(a2));
+        return (this->*rv)(std::forward<class Vec3 const &>(a0), std::forward<class Vec2 const &>(a1), std::forward<float>(a2));
     }
     inline void _resetPos(bool a0){
         void (DirectPlayerMovementProxy::*rv)(bool);
@@ -169,10 +169,10 @@ public:
         *((void**)&rv) = dlsym("?areHandsBusy@DirectPlayerMovementProxy@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline void checkMovementStats(class Vec3 const& a0){
-        void (DirectPlayerMovementProxy::*rv)(class Vec3 const&);
+    inline void checkMovementStats(class Vec3 const & a0){
+        void (DirectPlayerMovementProxy::*rv)(class Vec3 const &);
         *((void**)&rv) = dlsym("?checkMovementStats@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0));
+        return (this->*rv)(std::forward<class Vec3 const &>(a0));
     }
     inline bool getAbilityBool(enum AbilitiesIndex a0) const{
         bool (DirectPlayerMovementProxy::*rv)(enum AbilitiesIndex) const;
@@ -189,8 +189,8 @@ public:
         *((void**)&rv) = dlsym("?getBob@DirectPlayerMovementProxy@@UEBAMXZ");
         return (this->*rv)();
     }
-    inline struct Tick const& getCurrentTick() const{
-        struct Tick const& (DirectPlayerMovementProxy::*rv)() const;
+    inline struct Tick const & getCurrentTick() const{
+        struct Tick const & (DirectPlayerMovementProxy::*rv)() const;
         *((void**)&rv) = dlsym("?getCurrentTick@DirectPlayerMovementProxy@@UEBAAEBUTick@@XZ");
         return (this->*rv)();
     }
@@ -214,8 +214,8 @@ public:
         *((void**)&rv) = dlsym("?getLookBob@DirectPlayerMovementProxy@@UEBA?AVVec2@@XZ");
         return (this->*rv)();
     }
-    inline class MoveInputHandler* getMoveInputHandler(){
-        class MoveInputHandler* (DirectPlayerMovementProxy::*rv)();
+    inline class MoveInputHandler * getMoveInputHandler(){
+        class MoveInputHandler * (DirectPlayerMovementProxy::*rv)();
         *((void**)&rv) = dlsym("?getMoveInputHandler@DirectPlayerMovementProxy@@UEAAPEAVMoveInputHandler@@XZ");
         return (this->*rv)();
     }
@@ -299,15 +299,15 @@ public:
         *((void**)&rv) = dlsym("?sendAdventureSettingsPacket@DirectPlayerMovementProxy@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void sendPacket(class PassengerJumpPacket& a0){
-        void (DirectPlayerMovementProxy::*rv)(class PassengerJumpPacket&);
+    inline void sendPacket(class PassengerJumpPacket & a0){
+        void (DirectPlayerMovementProxy::*rv)(class PassengerJumpPacket &);
         *((void**)&rv) = dlsym("?sendPacket@DirectPlayerMovementProxy@@UEAAXAEAVPassengerJumpPacket@@@Z");
-        return (this->*rv)(std::forward<class PassengerJumpPacket&>(a0));
+        return (this->*rv)(std::forward<class PassengerJumpPacket &>(a0));
     }
-    inline void sendPacket(class PlayerActionPacket& a0){
-        void (DirectPlayerMovementProxy::*rv)(class PlayerActionPacket&);
+    inline void sendPacket(class PlayerActionPacket & a0){
+        void (DirectPlayerMovementProxy::*rv)(class PlayerActionPacket &);
         *((void**)&rv) = dlsym("?sendPacket@DirectPlayerMovementProxy@@UEAAXAEAVPlayerActionPacket@@@Z");
-        return (this->*rv)(std::forward<class PlayerActionPacket&>(a0));
+        return (this->*rv)(std::forward<class PlayerActionPacket &>(a0));
     }
     inline void sendPlayerInput(){
         void (DirectPlayerMovementProxy::*rv)();
@@ -379,8 +379,8 @@ public:
         *((void**)&rv) = dlsym("?stopGliding@DirectPlayerMovementProxy@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline struct PlayerActionComponent* tryGetPlayerActionComponent(){
-        struct PlayerActionComponent* (DirectPlayerMovementProxy::*rv)();
+    inline struct PlayerActionComponent * tryGetPlayerActionComponent(){
+        struct PlayerActionComponent * (DirectPlayerMovementProxy::*rv)();
         *((void**)&rv) = dlsym("?tryGetPlayerActionComponent@DirectPlayerMovementProxy@@UEAAPEAUPlayerActionComponent@@XZ");
         return (this->*rv)();
     }

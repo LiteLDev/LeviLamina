@@ -18,15 +18,15 @@ class AvoidMobTypeDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AVOIDMOBTYPEDEFINITION
 public:
-    class AvoidMobTypeDefinition& operator=(class AvoidMobTypeDefinition const&) = delete;
-    AvoidMobTypeDefinition(class AvoidMobTypeDefinition const&) = delete;
+    class AvoidMobTypeDefinition& operator=(class AvoidMobTypeDefinition const &) = delete;
+    AvoidMobTypeDefinition(class AvoidMobTypeDefinition const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~AvoidMobTypeDefinition();
     MCAPI AvoidMobTypeDefinition();
-    MCAPI void initialize(class EntityContext&, class AvoidMobTypeGoal&);
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AvoidMobTypeDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class AvoidMobTypeGoal &);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AvoidMobTypeDefinition>> &);
 
 protected:
 

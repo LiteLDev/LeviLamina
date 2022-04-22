@@ -17,13 +17,13 @@ class SitComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SITCOMPONENT
 public:
-    class SitComponent& operator=(class SitComponent const&) = delete;
-    SitComponent(class SitComponent const&) = delete;
+    class SitComponent& operator=(class SitComponent const &) = delete;
+    SitComponent(class SitComponent const &) = delete;
     SitComponent() = delete;
 #endif
 
 public:
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+    MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
 
 protected:
 

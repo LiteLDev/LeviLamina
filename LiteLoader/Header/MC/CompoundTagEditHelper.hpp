@@ -17,19 +17,19 @@ class CompoundTagEditHelper {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDTAGEDITHELPER
 public:
-    class CompoundTagEditHelper& operator=(class CompoundTagEditHelper const&) = delete;
-    CompoundTagEditHelper(class CompoundTagEditHelper const&) = delete;
+    class CompoundTagEditHelper& operator=(class CompoundTagEditHelper const &) = delete;
+    CompoundTagEditHelper(class CompoundTagEditHelper const &) = delete;
     CompoundTagEditHelper() = delete;
 #endif
 
 public:
-    MCAPI class CompoundTag const* getParent() const;
-    MCAPI void replaceWith(std::string const&, std::unique_ptr<class Tag>);
+    MCAPI class CompoundTag const * getParent() const;
+    MCAPI void replaceWith(std::string const &, std::unique_ptr<class Tag>);
     MCAPI ~CompoundTagEditHelper();
 
 protected:
 
 private:
-    MCAPI void pushChild(std::string const&);
+    MCAPI void pushChild(std::string const &);
 
 };

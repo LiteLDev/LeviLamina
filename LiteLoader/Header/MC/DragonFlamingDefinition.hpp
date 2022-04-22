@@ -18,22 +18,22 @@ class DragonFlamingDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONFLAMINGDEFINITION
 public:
-    class DragonFlamingDefinition& operator=(class DragonFlamingDefinition const&) = delete;
-    DragonFlamingDefinition(class DragonFlamingDefinition const&) = delete;
+    class DragonFlamingDefinition& operator=(class DragonFlamingDefinition const &) = delete;
+    DragonFlamingDefinition(class DragonFlamingDefinition const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~DragonFlamingDefinition();
     /*
-    inline bool validateMobType(class Mob& a0){
-        bool (DragonFlamingDefinition::*rv)(class Mob&);
+    inline bool validateMobType(class Mob & a0){
+        bool (DragonFlamingDefinition::*rv)(class Mob &);
         *((void**)&rv) = dlsym("?validateMobType@DragonFlamingDefinition@@UEAA_NAEAVMob@@@Z");
-        return (this->*rv)(std::forward<class Mob&>(a0));
+        return (this->*rv)(std::forward<class Mob &>(a0));
     }
     */
     MCAPI DragonFlamingDefinition();
-    MCAPI void initialize(class EntityContext&, class DragonFlamingGoal&);
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonFlamingDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class DragonFlamingGoal &);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonFlamingDefinition>> &);
 
 protected:
 

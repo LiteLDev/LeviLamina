@@ -2,12 +2,13 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
-class NewExecuteCommand {
+class NewExecuteCommand : public Command {
 
 #define AFTER_EXTRA
 
@@ -15,18 +16,19 @@ class NewExecuteCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NEWEXECUTECOMMAND
 public:
-    class NewExecuteCommand& operator=(class NewExecuteCommand const&) = delete;
-    NewExecuteCommand(class NewExecuteCommand const&) = delete;
+    class NewExecuteCommand& operator=(class NewExecuteCommand const &) = delete;
+    NewExecuteCommand(class NewExecuteCommand const &) = delete;
     NewExecuteCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~NewExecuteCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&, int);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &, int);
 
 protected:
 
 private:
+    MCAPI bool _detectConditionSubcommand(class CommandOrigin const &, class CommandOutput &) const;
 
 };

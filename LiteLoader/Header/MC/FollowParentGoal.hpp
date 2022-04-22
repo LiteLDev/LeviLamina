@@ -17,8 +17,8 @@ class FollowParentGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOLLOWPARENTGOAL
 public:
-    class FollowParentGoal& operator=(class FollowParentGoal const&) = delete;
-    FollowParentGoal(class FollowParentGoal const&) = delete;
+    class FollowParentGoal& operator=(class FollowParentGoal const &) = delete;
+    FollowParentGoal(class FollowParentGoal const &) = delete;
     FollowParentGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline void stop(){
         void (FollowParentGoal::*rv)();
@@ -43,7 +43,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI FollowParentGoal(class Mob&, float);
+    MCAPI FollowParentGoal(class Mob &, float);
 
 protected:
 

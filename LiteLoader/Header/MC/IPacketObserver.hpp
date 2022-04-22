@@ -15,8 +15,8 @@ class IPacketObserver {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IPACKETOBSERVER
 public:
-    class IPacketObserver& operator=(class IPacketObserver const&) = delete;
-    IPacketObserver(class IPacketObserver const&) = delete;
+    class IPacketObserver& operator=(class IPacketObserver const &) = delete;
+    IPacketObserver(class IPacketObserver const &) = delete;
     IPacketObserver() = delete;
 #endif
 

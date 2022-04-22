@@ -17,14 +17,14 @@ class PlayerScoreboardEventListener {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSCOREBOARDEVENTLISTENER
 public:
-    class PlayerScoreboardEventListener& operator=(class PlayerScoreboardEventListener const&) = delete;
-    PlayerScoreboardEventListener(class PlayerScoreboardEventListener const&) = delete;
+    class PlayerScoreboardEventListener& operator=(class PlayerScoreboardEventListener const &) = delete;
+    PlayerScoreboardEventListener(class PlayerScoreboardEventListener const &) = delete;
     PlayerScoreboardEventListener() = delete;
 #endif
 
 public:
     /*0*/ virtual ~PlayerScoreboardEventListener();
-    /*1*/ virtual enum EventResult onScoreChanged(struct ScoreboardId const&, std::string const&, int);
+    /*1*/ virtual enum EventResult onScoreChanged(struct ScoreboardId const &, std::string const &, int);
     /*
     inline  ~PlayerScoreboardEventListener(){
          (PlayerScoreboardEventListener::*rv)();
@@ -32,8 +32,8 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI class SubscribedObjectives& getPlayerSubscriptions(struct ScoreboardId const&, class Player const&);
-    MCAPI void removePlayerSubscriptions(struct ScoreboardId const&);
+    MCAPI class SubscribedObjectives & getPlayerSubscriptions(struct ScoreboardId const &, class Player const &);
+    MCAPI void removePlayerSubscriptions(struct ScoreboardId const &);
 
 protected:
 

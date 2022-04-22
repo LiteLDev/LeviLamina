@@ -18,14 +18,14 @@ class InsideBlockNotifierDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEBLOCKNOTIFIERDEFINITION
 public:
-    class InsideBlockNotifierDefinition& operator=(class InsideBlockNotifierDefinition const&) = delete;
-    InsideBlockNotifierDefinition(class InsideBlockNotifierDefinition const&) = delete;
+    class InsideBlockNotifierDefinition& operator=(class InsideBlockNotifierDefinition const &) = delete;
+    InsideBlockNotifierDefinition(class InsideBlockNotifierDefinition const &) = delete;
     InsideBlockNotifierDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&, class InsideBlockNotifierComponent&) const;
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InsideBlockNotifierDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class InsideBlockNotifierComponent &) const;
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InsideBlockNotifierDefinition>> &);
 
 protected:
 

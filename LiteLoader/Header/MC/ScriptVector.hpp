@@ -15,15 +15,24 @@ class ScriptVector {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTVECTOR
 public:
-    class ScriptVector& operator=(class ScriptVector const&) = delete;
-    ScriptVector(class ScriptVector const&) = delete;
+    class ScriptVector& operator=(class ScriptVector const &) = delete;
+    ScriptVector(class ScriptVector const &) = delete;
     ScriptVector() = delete;
 #endif
 
 public:
-    MCAPI ScriptVector(class Vec3 const&);
-    MCAPI bool operator==(class ScriptVector const&) const;
+    MCAPI ScriptVector(class Vec3 const &);
+    MCAPI class ScriptVector normalized() const;
+    MCAPI static class ScriptVector add(class ScriptVector const &, class ScriptVector const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptVector> bind(struct Scripting::Version);
+    MCAPI static class ScriptVector cross(class ScriptVector const &, class ScriptVector const &);
+    MCAPI static class ScriptVector divide(class ScriptVector const &, class std::variant<float, class ScriptVector> const &);
+    MCAPI static class ScriptVector lerp(class ScriptVector const &, class ScriptVector const &, float);
+    MCAPI static class ScriptVector max(class ScriptVector const &, class ScriptVector const &);
+    MCAPI static class ScriptVector min(class ScriptVector const &, class ScriptVector const &);
+    MCAPI static class ScriptVector multiply(class ScriptVector const &, class std::variant<float, class ScriptVector> const &);
+    MCAPI static class ScriptVector slerp(class ScriptVector const &, class ScriptVector const &, float);
+    MCAPI static class ScriptVector subtract(class ScriptVector const &, class ScriptVector const &);
 
 protected:
 

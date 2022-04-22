@@ -859,7 +859,7 @@ void EnableEventListener(int eventId)
                 Actor* source = nullptr;
                 if (ev.mDamageSource->isEntitySource())
                 {
-                    auto getEntityUniqueID = (decltype(&ActorDamageSource::getDamagingEntityUniqueID))&ActorDamageSource::__unk_vfn_8;
+                    auto getEntityUniqueID = (decltype(&ActorDamageSource::getDamagingEntityUniqueID))&ActorDamageSource::__unk_vfn_11;
                     if (ev.mDamageSource->isChildEntitySource())
                         source = Level::getEntity((ev.mDamageSource->*getEntityUniqueID)());
                     else
@@ -868,7 +868,7 @@ void EnableEventListener(int eventId)
 
                 CallEvent(EVENT_TYPES::onMobHurt, EntityClass::newEntity(ev.mMob),
                     source ? EntityClass::newEntity(source) : Local<Value>(),
-                          Number::newNumber(ev.mDamage), Number::newNumber((int)ev.mDamageSource->getCause()));
+                          float(ev.mDamage), Number::newNumber((int)ev.mDamageSource->getCause()));
             }
             IF_LISTENED_END(EVENT_TYPES::onMobHurt)
         });

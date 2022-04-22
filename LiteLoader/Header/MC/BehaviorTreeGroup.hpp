@@ -17,14 +17,14 @@ class BehaviorTreeGroup {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEHAVIORTREEGROUP
 public:
-    class BehaviorTreeGroup& operator=(class BehaviorTreeGroup const&) = delete;
-    BehaviorTreeGroup(class BehaviorTreeGroup const&) = delete;
+    class BehaviorTreeGroup& operator=(class BehaviorTreeGroup const &) = delete;
+    BehaviorTreeGroup(class BehaviorTreeGroup const &) = delete;
     BehaviorTreeGroup() = delete;
 #endif
 
 public:
-    MCAPI BehaviorTreeGroup(class ResourcePackManager&, class BehaviorFactory&);
-    MCAPI class BehaviorTreeDefinitionPtr tryGetDefinition(std::string const&);
+    MCAPI BehaviorTreeGroup(class ResourcePackManager &, class BehaviorFactory &);
+    MCAPI class BehaviorTreeDefinitionPtr tryGetDefinition(std::string const &);
     MCAPI ~BehaviorTreeGroup();
 
 protected:

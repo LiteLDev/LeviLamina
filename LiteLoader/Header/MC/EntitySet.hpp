@@ -17,17 +17,17 @@ class EntitySet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYSET
 public:
-    class EntitySet& operator=(class EntitySet const&) = delete;
-    EntitySet(class EntitySet const&) = delete;
-    EntitySet() = delete;
+    class EntitySet& operator=(class EntitySet const &) = delete;
 #endif
 
 public:
-    MCAPI EntitySet(class EntitySet&&);
-    MCAPI bool add(class EntityContext const&);
-    MCAPI class std::_List_const_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned __int64 const, class WeakEntityRef> > > > erase(class std::_List_const_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned __int64 const, class WeakEntityRef> > > >);
-    MCAPI class WeakEntityRef find(class EntityContext const&) const;
-    MCAPI class EntitySet& operator=(class EntitySet&&);
+    MCAPI EntitySet(class EntitySet &&);
+    MCAPI EntitySet(class EntitySet const &);
+    MCAPI EntitySet();
+    MCAPI bool add(class EntityContext const &);
+    MCAPI class std::_List_const_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned __int64 const, class WeakEntityRef>>>> erase(class std::_List_const_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned __int64 const, class WeakEntityRef>>>>);
+    MCAPI class WeakEntityRef find(class EntityContext const &) const;
+    MCAPI class EntitySet & operator=(class EntitySet &&);
 
 protected:
 

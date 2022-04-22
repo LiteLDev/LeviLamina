@@ -17,8 +17,8 @@ class IContainerManager {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICONTAINERMANAGER
 public:
-    class IContainerManager& operator=(class IContainerManager const&) = delete;
-    IContainerManager(class IContainerManager const&) = delete;
+    class IContainerManager& operator=(class IContainerManager const &) = delete;
+    IContainerManager(class IContainerManager const &) = delete;
     IContainerManager() = delete;
 #endif
 

@@ -17,8 +17,8 @@ class ChunkBuildOrderPolicyBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKBUILDORDERPOLICYBASE
 public:
-    class ChunkBuildOrderPolicyBase& operator=(class ChunkBuildOrderPolicyBase const&) = delete;
-    ChunkBuildOrderPolicyBase(class ChunkBuildOrderPolicyBase const&) = delete;
+    class ChunkBuildOrderPolicyBase& operator=(class ChunkBuildOrderPolicyBase const &) = delete;
+    ChunkBuildOrderPolicyBase(class ChunkBuildOrderPolicyBase const &) = delete;
     ChunkBuildOrderPolicyBase() = delete;
 #endif
 

@@ -18,8 +18,8 @@ class AnvilMaterialContainerValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANVILMATERIALCONTAINERVALIDATION
 public:
-    class AnvilMaterialContainerValidation& operator=(class AnvilMaterialContainerValidation const&) = delete;
-    AnvilMaterialContainerValidation(class AnvilMaterialContainerValidation const&) = delete;
+    class AnvilMaterialContainerValidation& operator=(class AnvilMaterialContainerValidation const &) = delete;
+    AnvilMaterialContainerValidation(class AnvilMaterialContainerValidation const &) = delete;
     AnvilMaterialContainerValidation() = delete;
 #endif
 
@@ -28,7 +28,7 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
-    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
 
 protected:
 

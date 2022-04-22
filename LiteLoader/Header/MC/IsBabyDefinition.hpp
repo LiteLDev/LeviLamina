@@ -18,14 +18,14 @@ struct IsBabyDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISBABYDEFINITION
 public:
-    struct IsBabyDefinition& operator=(struct IsBabyDefinition const&) = delete;
-    IsBabyDefinition(struct IsBabyDefinition const&) = delete;
+    struct IsBabyDefinition& operator=(struct IsBabyDefinition const &) = delete;
+    IsBabyDefinition(struct IsBabyDefinition const &) = delete;
     IsBabyDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&);
-    MCAPI void uninitialize(class EntityContext&);
+    MCAPI void initialize(class EntityContext &);
+    MCAPI void uninitialize(class EntityContext &);
 
 protected:
 

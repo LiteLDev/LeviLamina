@@ -18,13 +18,13 @@ struct FamilyTypeDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FAMILYTYPEDEFINITION
 public:
-    struct FamilyTypeDefinition& operator=(struct FamilyTypeDefinition const&) = delete;
-    FamilyTypeDefinition(struct FamilyTypeDefinition const&) = delete;
+    struct FamilyTypeDefinition& operator=(struct FamilyTypeDefinition const &) = delete;
+    FamilyTypeDefinition(struct FamilyTypeDefinition const &) = delete;
     FamilyTypeDefinition() = delete;
 #endif
 
 public:
-    MCAPI void addFamilyName(std::string const&);
+    MCAPI void addFamilyName(std::string const &);
 
 protected:
 

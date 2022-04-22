@@ -18,16 +18,16 @@ class SetDifficultyPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETDIFFICULTYPACKET
 public:
-    class SetDifficultyPacket& operator=(class SetDifficultyPacket const&) = delete;
-    SetDifficultyPacket(class SetDifficultyPacket const&) = delete;
+    class SetDifficultyPacket& operator=(class SetDifficultyPacket const &) = delete;
+    SetDifficultyPacket(class SetDifficultyPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~SetDifficultyPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~SetDifficultyPacket(){
          (SetDifficultyPacket::*rv)();

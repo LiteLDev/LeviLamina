@@ -18,14 +18,14 @@ struct CollisionBoxDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COLLISIONBOXDEFINITION
 public:
-    struct CollisionBoxDefinition& operator=(struct CollisionBoxDefinition const&) = delete;
-    CollisionBoxDefinition(struct CollisionBoxDefinition const&) = delete;
+    struct CollisionBoxDefinition& operator=(struct CollisionBoxDefinition const &) = delete;
+    CollisionBoxDefinition(struct CollisionBoxDefinition const &) = delete;
     CollisionBoxDefinition() = delete;
 #endif
 
 public:
-    MCAPI void setHeight(float const&);
-    MCAPI void setWidth(float const&);
+    MCAPI void setHeight(float const &);
+    MCAPI void setWidth(float const &);
 
 protected:
 

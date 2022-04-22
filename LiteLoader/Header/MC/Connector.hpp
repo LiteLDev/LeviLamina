@@ -29,8 +29,8 @@ struct NatPunchInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONNECTOR
 public:
-    class Connector& operator=(class Connector const&) = delete;
-    Connector(class Connector const&) = delete;
+    class Connector& operator=(class Connector const &) = delete;
+    Connector(class Connector const &) = delete;
     Connector() = delete;
 #endif
 

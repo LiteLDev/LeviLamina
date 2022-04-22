@@ -18,13 +18,13 @@ class AmphibiousMoveControlDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AMPHIBIOUSMOVECONTROLDESCRIPTION
 public:
-    class AmphibiousMoveControlDescription& operator=(class AmphibiousMoveControlDescription const&) = delete;
-    AmphibiousMoveControlDescription(class AmphibiousMoveControlDescription const&) = delete;
+    class AmphibiousMoveControlDescription& operator=(class AmphibiousMoveControlDescription const &) = delete;
+    AmphibiousMoveControlDescription(class AmphibiousMoveControlDescription const &) = delete;
     AmphibiousMoveControlDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~AmphibiousMoveControlDescription();
     /*
     inline  ~AmphibiousMoveControlDescription(){

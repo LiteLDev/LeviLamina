@@ -18,21 +18,21 @@ class BrewingStandContainerManagerModel : public ContainerManagerModel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREWINGSTANDCONTAINERMANAGERMODEL
 public:
-    class BrewingStandContainerManagerModel& operator=(class BrewingStandContainerManagerModel const&) = delete;
-    BrewingStandContainerManagerModel(class BrewingStandContainerManagerModel const&) = delete;
+    class BrewingStandContainerManagerModel& operator=(class BrewingStandContainerManagerModel const &) = delete;
+    BrewingStandContainerManagerModel(class BrewingStandContainerManagerModel const &) = delete;
     BrewingStandContainerManagerModel() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BrewingStandContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
-    /*7*/ virtual void setSlot(int, class ItemStack const&, bool);
-    /*8*/ virtual class ItemStack const& getSlot(int) const;
+    /*7*/ virtual void setSlot(int, class ItemStack const &, bool);
+    /*8*/ virtual class ItemStack const & getSlot(int) const;
     /*9*/ virtual void setData(int, int);
     /*10*/ virtual void broadcastChanges();
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
-    MCAPI BrewingStandContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
+    MCAPI BrewingStandContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
 protected:
 

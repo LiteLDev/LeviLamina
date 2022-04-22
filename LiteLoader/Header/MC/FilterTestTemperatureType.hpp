@@ -19,14 +19,14 @@ class FilterTestTemperatureType : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERTESTTEMPERATURETYPE
 public:
-    class FilterTestTemperatureType& operator=(class FilterTestTemperatureType const&) = delete;
-    FilterTestTemperatureType(class FilterTestTemperatureType const&) = delete;
+    class FilterTestTemperatureType& operator=(class FilterTestTemperatureType const &) = delete;
+    FilterTestTemperatureType(class FilterTestTemperatureType const &) = delete;
     FilterTestTemperatureType() = delete;
 #endif
 
 public:
     /*0*/ virtual ~FilterTestTemperatureType();
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*6*/ virtual class Json::Value _serializeValue() const;
     /*

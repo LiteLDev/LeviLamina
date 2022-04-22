@@ -77,15 +77,15 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDTAGVARIANT
 public:
-    class CompoundTagVariant& operator=(class CompoundTagVariant const&) = delete;
-    CompoundTagVariant(class CompoundTagVariant const&) = delete;
+    class CompoundTagVariant& operator=(class CompoundTagVariant const &) = delete;
+    CompoundTagVariant(class CompoundTagVariant const &) = delete;
     CompoundTagVariant() = delete;
 #endif
 
 public:
-    MCAPI class Tag& emplace(class Tag&&);
-    MCAPI class Tag* get();
-    MCAPI class Tag const* get() const;
+    MCAPI class Tag & emplace(class Tag &&);
+    MCAPI class Tag * get();
+    MCAPI class Tag const * get() const;
     MCAPI ~CompoundTagVariant();
 
 protected:

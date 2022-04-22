@@ -17,14 +17,14 @@ class VanillaFeatures {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAFEATURES
 public:
-    class VanillaFeatures& operator=(class VanillaFeatures const&) = delete;
-    VanillaFeatures(class VanillaFeatures const&) = delete;
+    class VanillaFeatures& operator=(class VanillaFeatures const &) = delete;
+    VanillaFeatures(class VanillaFeatures const &) = delete;
     VanillaFeatures() = delete;
 #endif
 
 public:
-    MCAPI static void registerFeatureTypes(class FeatureTypeFactory&);
-    MCAPI static void registerFeatures(class FeatureRegistry&, class BaseGameVersion const&, class Experiments const&);
+    MCAPI static void registerFeatureTypes(class FeatureTypeFactory &);
+    MCAPI static void registerFeatures(class FeatureRegistry &, class BaseGameVersion const &, class Experiments const &);
 
 protected:
 

@@ -17,15 +17,15 @@ class GrowCropSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROWCROPSYSTEM
 public:
-    class GrowCropSystem& operator=(class GrowCropSystem const&) = delete;
-    GrowCropSystem(class GrowCropSystem const&) = delete;
+    class GrowCropSystem& operator=(class GrowCropSystem const &) = delete;
+    GrowCropSystem(class GrowCropSystem const &) = delete;
     GrowCropSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~GrowCropSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

@@ -17,18 +17,18 @@ class MobGameEventSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBGAMEEVENTSYSTEM
 public:
-    class MobGameEventSystem& operator=(class MobGameEventSystem const&) = delete;
-    MobGameEventSystem(class MobGameEventSystem const&) = delete;
+    class MobGameEventSystem& operator=(class MobGameEventSystem const &) = delete;
+    MobGameEventSystem(class MobGameEventSystem const &) = delete;
     MobGameEventSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~MobGameEventSystem();
-    /*1*/ virtual void registerEvents(class entt::dispatcher&);
+    /*1*/ virtual void registerEvents(class entt::dispatcher &);
 
 protected:
 
 private:
-    MCAPI static void _onMobDeathTimeComplete(struct MobDeathTimeCompleteEvent&);
+    MCAPI static void _onActorDie(struct ActorDieEvent &);
 
 };

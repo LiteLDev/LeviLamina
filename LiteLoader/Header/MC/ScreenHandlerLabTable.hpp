@@ -17,22 +17,22 @@ class ScreenHandlerLabTable {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCREENHANDLERLABTABLE
 public:
-    class ScreenHandlerLabTable& operator=(class ScreenHandlerLabTable const&) = delete;
-    ScreenHandlerLabTable(class ScreenHandlerLabTable const&) = delete;
+    class ScreenHandlerLabTable& operator=(class ScreenHandlerLabTable const &) = delete;
+    ScreenHandlerLabTable(class ScreenHandlerLabTable const &) = delete;
     ScreenHandlerLabTable() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScreenHandlerLabTable();
-    /*1*/ virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const&);
+    /*1*/ virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const &);
     /*2*/ virtual enum ItemStackNetResult endRequest();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void postRequest(bool);
-    MCAPI ScreenHandlerLabTable(class ContainerScreenContext const&, class ItemStackRequestActionHandler&);
+    MCAPI ScreenHandlerLabTable(class ContainerScreenContext const &, class ItemStackRequestActionHandler &);
 
 protected:
 
 private:
-    MCAPI enum ItemStackNetResult _handleLabTableCombine(class ItemStackRequestActionDataless<9> const&);
+    MCAPI enum ItemStackNetResult _handleLabTableCombine(class ItemStackRequestActionDataless<9> const &);
 
 };

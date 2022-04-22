@@ -17,14 +17,14 @@ class SnapshotWritableFile {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SNAPSHOTWRITABLEFILE
 public:
-    class SnapshotWritableFile& operator=(class SnapshotWritableFile const&) = delete;
-    SnapshotWritableFile(class SnapshotWritableFile const&) = delete;
+    class SnapshotWritableFile& operator=(class SnapshotWritableFile const &) = delete;
+    SnapshotWritableFile(class SnapshotWritableFile const &) = delete;
     SnapshotWritableFile() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SnapshotWritableFile();
-    /*1*/ virtual class leveldb::Status Append(class leveldb::Slice const&);
+    /*1*/ virtual class leveldb::Status Append(class leveldb::Slice const &);
     /*2*/ virtual class leveldb::Status Close();
     /*3*/ virtual class leveldb::Status Flush();
     /*4*/ virtual class leveldb::Status Sync();

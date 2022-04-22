@@ -18,13 +18,13 @@ class NavigationFlyDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONFLYDESCRIPTION
 public:
-    class NavigationFlyDescription& operator=(class NavigationFlyDescription const&) = delete;
-    NavigationFlyDescription(class NavigationFlyDescription const&) = delete;
+    class NavigationFlyDescription& operator=(class NavigationFlyDescription const &) = delete;
+    NavigationFlyDescription(class NavigationFlyDescription const &) = delete;
     NavigationFlyDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~NavigationFlyDescription();
     /*
     inline  ~NavigationFlyDescription(){

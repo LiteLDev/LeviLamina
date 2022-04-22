@@ -18,16 +18,14 @@ class RuinedPortalStart : public StructureStart {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RUINEDPORTALSTART
 public:
-    class RuinedPortalStart& operator=(class RuinedPortalStart const&) = delete;
-    RuinedPortalStart(class RuinedPortalStart const&) = delete;
+    class RuinedPortalStart& operator=(class RuinedPortalStart const &) = delete;
+    RuinedPortalStart(class RuinedPortalStart const &) = delete;
     RuinedPortalStart() = delete;
 #endif
 
 public:
     /*0*/ virtual ~RuinedPortalStart();
-    /*2*/ virtual bool isValid() const;
-    /*3*/ virtual enum StructureFeatureType getType() const;
-    MCAPI RuinedPortalStart(class BiomeRegistry&, class BiomeSource const&, int, int, class IPreliminarySurfaceProvider const&);
+    MCAPI RuinedPortalStart(class BiomeRegistry &, class BiomeSource const &, int, int, class IPreliminarySurfaceProvider const &);
 
 protected:
 

@@ -17,18 +17,18 @@ class ContentIdentity {
 
 public:
     MCAPI ContentIdentity();
-    MCAPI ContentIdentity(class ContentIdentity&&);
-    MCAPI ContentIdentity(class ContentIdentity const&);
-    MCAPI ContentIdentity(class mce::UUID const&);
+    MCAPI ContentIdentity(class ContentIdentity &&);
+    MCAPI ContentIdentity(class ContentIdentity const &);
+    MCAPI ContentIdentity(class mce::UUID const &);
     MCAPI std::string asString() const;
-    MCAPI class mce::UUID const& getAsUUID() const;
+    MCAPI class mce::UUID const & getAsUUID() const;
     MCAPI bool isValid() const;
-    MCAPI bool operator!=(class ContentIdentity const&) const;
-    MCAPI class ContentIdentity& operator=(class ContentIdentity const&);
-    MCAPI class ContentIdentity& operator=(class ContentIdentity&&);
-    MCAPI bool operator==(class ContentIdentity const&) const;
+    MCAPI bool operator!=(class ContentIdentity const &) const;
+    MCAPI class ContentIdentity & operator=(class ContentIdentity const &);
+    MCAPI class ContentIdentity & operator=(class ContentIdentity &&);
+    MCAPI bool operator==(class ContentIdentity const &) const;
     MCAPI static class ContentIdentity EMPTY;
-    MCAPI static class ContentIdentity fromString(std::string const&);
+    MCAPI static class ContentIdentity fromString(std::string const &);
 
 protected:
 

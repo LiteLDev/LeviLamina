@@ -18,15 +18,15 @@ class ProjectileDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROJECTILEDESCRIPTION
 public:
-    class ProjectileDescription& operator=(class ProjectileDescription const&) = delete;
-    ProjectileDescription(class ProjectileDescription const&) = delete;
+    class ProjectileDescription& operator=(class ProjectileDescription const &) = delete;
+    ProjectileDescription(class ProjectileDescription const &) = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~ProjectileDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~ProjectileDescription(){
          (ProjectileDescription::*rv)();

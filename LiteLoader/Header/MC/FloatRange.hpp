@@ -18,14 +18,14 @@ struct FloatRange {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOATRANGE
 public:
-    struct FloatRange& operator=(struct FloatRange const&) = delete;
-    FloatRange(struct FloatRange const&) = delete;
+    struct FloatRange& operator=(struct FloatRange const &) = delete;
+    FloatRange(struct FloatRange const &) = delete;
     FloatRange() = delete;
 #endif
 
 public:
-    MCAPI float getValue(class Random&) const;
-    MCAPI bool parseJson(class Json::Value const&, float, float);
+    MCAPI float getValue(class Random &) const;
+    MCAPI bool parseJson(class Json::Value const &, float, float);
 
 protected:
 

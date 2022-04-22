@@ -18,14 +18,14 @@ class InMemoryFile {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INMEMORYFILE
 public:
-    class InMemoryFile& operator=(class InMemoryFile const&) = delete;
-    InMemoryFile(class InMemoryFile const&) = delete;
+    class InMemoryFile& operator=(class InMemoryFile const &) = delete;
+    InMemoryFile(class InMemoryFile const &) = delete;
     InMemoryFile() = delete;
 #endif
 
 public:
-    MCAPI class Core::PathBuffer<std::string > getFilename() const;
-    MCAPI void rename(class Core::Path const&);
+    MCAPI class Core::PathBuffer<std::string> getFilename() const;
+    MCAPI void rename(class Core::Path const &);
 
 protected:
 

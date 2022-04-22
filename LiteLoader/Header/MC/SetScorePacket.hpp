@@ -18,8 +18,8 @@ class SetScorePacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETSCOREPACKET
 public:
-    class SetScorePacket& operator=(class SetScorePacket const&) = delete;
-    SetScorePacket(class SetScorePacket const&) = delete;
+    class SetScorePacket& operator=(class SetScorePacket const &) = delete;
+    SetScorePacket(class SetScorePacket const &) = delete;
     SetScorePacket() = delete;
 #endif
 
@@ -27,8 +27,8 @@ public:
     /*0*/ virtual ~SetScorePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~SetScorePacket(){
          (SetScorePacket::*rv)();
@@ -36,13 +36,13 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI static class SetScorePacket change(struct ScoreboardId const&, class Objective const&);
+    MCAPI static class SetScorePacket change(struct ScoreboardId const &, class Objective const &);
     MCAPI static class SetScorePacket change(std::vector<struct ScorePacketInfo>);
-    MCAPI static class SetScorePacket remove(struct ScoreboardId const&, class Objective const&);
+    MCAPI static class SetScorePacket remove(struct ScoreboardId const &, class Objective const &);
 
 protected:
 
 private:
-    MCAPI SetScorePacket(enum ScorePacketType, struct ScoreboardId const&, class Objective const&);
+    MCAPI SetScorePacket(enum ScorePacketType, struct ScoreboardId const &, class Objective const &);
 
 };

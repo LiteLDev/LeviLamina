@@ -18,8 +18,8 @@ class ScriptTameableComponent : public ScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTTAMEABLECOMPONENT
 public:
-    class ScriptTameableComponent& operator=(class ScriptTameableComponent const&) = delete;
-    ScriptTameableComponent(class ScriptTameableComponent const&) = delete;
+    class ScriptTameableComponent& operator=(class ScriptTameableComponent const &) = delete;
+    ScriptTameableComponent(class ScriptTameableComponent const &) = delete;
     ScriptTameableComponent() = delete;
 #endif
 
@@ -32,10 +32,10 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptTameableComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
+    MCAPI ScriptTameableComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class Scripting::Result<float> getProbability() const;
-    MCAPI class Scripting::Result<struct Scripting::TypedObjectHandle<class ScriptDefinitionTrigger> > getTameEvent() const;
-    MCAPI class Scripting::Result<std::vector<std::string> > getTameItems() const;
+    MCAPI class Scripting::Result<class DefinitionTrigger> getTameEvent() const;
+    MCAPI class Scripting::Result<std::vector<std::string>> getTameItems() const;
     MCAPI class Scripting::Result<bool> tame() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptTameableComponent> bind(struct Scripting::Version);
 

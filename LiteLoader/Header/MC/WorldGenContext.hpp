@@ -15,8 +15,8 @@ struct WorldGenContext {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDGENCONTEXT
 public:
-    struct WorldGenContext& operator=(struct WorldGenContext const&) = delete;
-    WorldGenContext(struct WorldGenContext const&) = delete;
+    struct WorldGenContext& operator=(struct WorldGenContext const &) = delete;
+    WorldGenContext(struct WorldGenContext const &) = delete;
     WorldGenContext() = delete;
 #endif
 

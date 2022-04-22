@@ -20,14 +20,14 @@ class ResourcePackFileUploadManager : public FileUploadManager {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKFILEUPLOADMANAGER
 public:
-    class ResourcePackFileUploadManager& operator=(class ResourcePackFileUploadManager const&) = delete;
-    ResourcePackFileUploadManager(class ResourcePackFileUploadManager const&) = delete;
+    class ResourcePackFileUploadManager& operator=(class ResourcePackFileUploadManager const &) = delete;
+    ResourcePackFileUploadManager(class ResourcePackFileUploadManager const &) = delete;
     ResourcePackFileUploadManager() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ResourcePackFileUploadManager();
-    /*2*/ virtual void uploadFileToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&);
+    /*2*/ virtual void uploadFileToRealmStorage(std::string const &, class Core::Path const &, int, std::string const &);
     /*
     inline  ~ResourcePackFileUploadManager(){
          (ResourcePackFileUploadManager::*rv)();
@@ -35,12 +35,12 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI void uploadResourcePack(std::string const&, class ResourceLocation const&, bool, bool, enum PackType, bool);
+    MCAPI void uploadResourcePack(std::string const &, class ResourceLocation const &, bool, bool, enum PackType);
 
 protected:
 
 private:
-    MCAPI void _uploadPackToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&);
-    MCAPI void _uploadResourcePackFolder(std::string const&, class ResourceLocation const&, class Core::Path const&, bool, class Json::Value const&);
+    MCAPI void _uploadPackToRealmStorage(std::string const &, class Core::Path const &, int, std::string const &);
+    MCAPI void _uploadResourcePackFolder(std::string const &, class ResourceLocation const &, class Core::Path const &, class Json::Value const &);
 
 };

@@ -15,8 +15,8 @@ struct MesaSurfaceAttributes {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MESASURFACEATTRIBUTES
 public:
-    struct MesaSurfaceAttributes& operator=(struct MesaSurfaceAttributes const&) = delete;
-    MesaSurfaceAttributes(struct MesaSurfaceAttributes const&) = delete;
+    struct MesaSurfaceAttributes& operator=(struct MesaSurfaceAttributes const &) = delete;
+    MesaSurfaceAttributes(struct MesaSurfaceAttributes const &) = delete;
     MesaSurfaceAttributes() = delete;
 #endif
 

@@ -17,21 +17,14 @@ class PillagerOutpostStart {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PILLAGEROUTPOSTSTART
 public:
-    class PillagerOutpostStart& operator=(class PillagerOutpostStart const&) = delete;
-    PillagerOutpostStart(class PillagerOutpostStart const&) = delete;
+    class PillagerOutpostStart& operator=(class PillagerOutpostStart const &) = delete;
+    PillagerOutpostStart(class PillagerOutpostStart const &) = delete;
     PillagerOutpostStart() = delete;
 #endif
 
 public:
     /*0*/ virtual ~PillagerOutpostStart();
-    /*1*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    /*
-    inline enum StructureFeatureType getType() const{
-        enum StructureFeatureType (PillagerOutpostStart::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@PillagerOutpostStart@@UEBA?AW4StructureFeatureType@@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 
 protected:
 

@@ -12,18 +12,25 @@ class SubChunkPos {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    int x;
+    int y;
+    int z;
+    inline SubChunkPos(int ix, int iy, int iz)
+        : x(ix)
+        , y(iy)
+        , z(iz) {}
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKPOS
 public:
-    class SubChunkPos& operator=(class SubChunkPos const&) = delete;
-    SubChunkPos(class SubChunkPos const&) = delete;
+    class SubChunkPos& operator=(class SubChunkPos const &) = delete;
+    SubChunkPos(class SubChunkPos const &) = delete;
     SubChunkPos() = delete;
 #endif
 
 public:
-    MCAPI SubChunkPos(class BlockPos const&);
+    MCAPI SubChunkPos(class BlockPos const &);
     MCAPI operator class BlockPos() const;
     MCAPI static class SubChunkPos const MAX;
     MCAPI static class SubChunkPos const MIN;

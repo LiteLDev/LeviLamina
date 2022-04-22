@@ -17,13 +17,13 @@ class RailActivatorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAILACTIVATORCOMPONENT
 public:
-    class RailActivatorComponent& operator=(class RailActivatorComponent const&) = delete;
-    RailActivatorComponent(class RailActivatorComponent const&) = delete;
+    class RailActivatorComponent& operator=(class RailActivatorComponent const &) = delete;
+    RailActivatorComponent(class RailActivatorComponent const &) = delete;
     RailActivatorComponent() = delete;
 #endif
 
 public:
-    MCAPI void ejectAllPassengers(class Actor&);
+    MCAPI void ejectAllPassengers(class Actor &);
 
 protected:
 

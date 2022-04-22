@@ -18,21 +18,21 @@ class ScoreboardIdentityRef {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOREBOARDIDENTITYREF
 public:
-    class ScoreboardIdentityRef& operator=(class ScoreboardIdentityRef const&) = delete;
-    ScoreboardIdentityRef(class ScoreboardIdentityRef const&) = delete;
+    class ScoreboardIdentityRef& operator=(class ScoreboardIdentityRef const &) = delete;
+    ScoreboardIdentityRef(class ScoreboardIdentityRef const &) = delete;
     ScoreboardIdentityRef() = delete;
 #endif
 
 public:
-    MCAPI struct ActorUniqueID const& getEntityId() const;
+    MCAPI struct ActorUniqueID const & getEntityId() const;
     MCAPI enum IdentityDefinition::Type getIdentityType() const;
-    MCAPI std::string const& getName(class std::function<std::string const& (struct ActorUniqueID)> const&) const;
-    MCAPI struct PlayerScoreboardId const& getPlayerId() const;
-    MCAPI bool hasScoreInObjective(class Objective const&) const;
-    MCAPI bool modifyScoreInObjective(int&, class Objective&, int, enum PlayerScoreSetFunction);
-    MCAPI bool removeFromObjective(class Scoreboard&, class Objective&);
+    MCAPI std::string const & getName(class std::function<std::string const & (struct ActorUniqueID)> const &) const;
+    MCAPI struct PlayerScoreboardId const & getPlayerId() const;
+    MCAPI bool hasScoreInObjective(class Objective const &) const;
+    MCAPI bool modifyScoreInObjective(int &, class Objective &, int, enum PlayerScoreSetFunction);
+    MCAPI bool removeFromObjective(class Scoreboard &, class Objective &);
     MCAPI static class ScoreboardIdentityRef const Undefined;
-    MCAPI static std::unique_ptr<class CompoundTag> serialize(class ScoreboardIdentityRef const&);
+    MCAPI static std::unique_ptr<class CompoundTag> serialize(class ScoreboardIdentityRef const &);
 
 protected:
 

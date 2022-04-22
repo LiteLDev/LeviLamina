@@ -15,14 +15,14 @@ struct ScriptBlockEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKEVENT
 public:
-    ScriptBlockEvent(struct ScriptBlockEvent const&) = delete;
+    ScriptBlockEvent(struct ScriptBlockEvent const &) = delete;
     ScriptBlockEvent() = delete;
 #endif
 
 public:
-    MCAPI ScriptBlockEvent(class Dimension&, class BlockPos const&, class Scripting::WeakLifetimeScope const&);
-    MCAPI struct ScriptBlockEvent& operator=(struct ScriptBlockEvent&&);
-    MCAPI struct ScriptBlockEvent& operator=(struct ScriptBlockEvent const&);
+    MCAPI ScriptBlockEvent(class Dimension &, class BlockPos const &, class Scripting::WeakLifetimeScope const &);
+    MCAPI struct ScriptBlockEvent & operator=(struct ScriptBlockEvent &&);
+    MCAPI struct ScriptBlockEvent & operator=(struct ScriptBlockEvent const &);
     MCAPI ~ScriptBlockEvent();
 
 protected:

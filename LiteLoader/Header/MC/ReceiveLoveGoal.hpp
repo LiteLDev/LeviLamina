@@ -17,8 +17,8 @@ class ReceiveLoveGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RECEIVELOVEGOAL
 public:
-    class ReceiveLoveGoal& operator=(class ReceiveLoveGoal const&) = delete;
-    ReceiveLoveGoal(class ReceiveLoveGoal const&) = delete;
+    class ReceiveLoveGoal& operator=(class ReceiveLoveGoal const &) = delete;
+    ReceiveLoveGoal(class ReceiveLoveGoal const &) = delete;
     ReceiveLoveGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline bool canUse(){
         bool (ReceiveLoveGoal::*rv)();
@@ -43,7 +43,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ReceiveLoveGoal(class VillagerBase&);
+    MCAPI ReceiveLoveGoal(class VillagerBase &);
 
 protected:
 

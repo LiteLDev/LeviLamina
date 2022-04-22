@@ -17,8 +17,8 @@ class GameCallbacks {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMECALLBACKS
 public:
-    class GameCallbacks& operator=(class GameCallbacks const&) = delete;
-    GameCallbacks(class GameCallbacks const&) = delete;
+    class GameCallbacks& operator=(class GameCallbacks const &) = delete;
+    GameCallbacks(class GameCallbacks const &) = delete;
     GameCallbacks() = delete;
 #endif
 

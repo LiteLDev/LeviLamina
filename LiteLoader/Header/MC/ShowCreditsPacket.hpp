@@ -31,16 +31,16 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHOWCREDITSPACKET
 public:
-    class ShowCreditsPacket& operator=(class ShowCreditsPacket const&) = delete;
-    ShowCreditsPacket(class ShowCreditsPacket const&) = delete;
+    class ShowCreditsPacket& operator=(class ShowCreditsPacket const &) = delete;
+    ShowCreditsPacket(class ShowCreditsPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ShowCreditsPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~ShowCreditsPacket(){
          (ShowCreditsPacket::*rv)();

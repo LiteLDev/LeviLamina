@@ -17,8 +17,8 @@ class ThermalMonitorInterface {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_THERMALMONITORINTERFACE
 public:
-    class ThermalMonitorInterface& operator=(class ThermalMonitorInterface const&) = delete;
-    ThermalMonitorInterface(class ThermalMonitorInterface const&) = delete;
+    class ThermalMonitorInterface& operator=(class ThermalMonitorInterface const &) = delete;
+    ThermalMonitorInterface(class ThermalMonitorInterface const &) = delete;
     ThermalMonitorInterface() = delete;
 #endif
 

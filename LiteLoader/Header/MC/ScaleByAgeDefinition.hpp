@@ -18,14 +18,14 @@ class ScaleByAgeDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCALEBYAGEDEFINITION
 public:
-    class ScaleByAgeDefinition& operator=(class ScaleByAgeDefinition const&) = delete;
-    ScaleByAgeDefinition(class ScaleByAgeDefinition const&) = delete;
+    class ScaleByAgeDefinition& operator=(class ScaleByAgeDefinition const &) = delete;
+    ScaleByAgeDefinition(class ScaleByAgeDefinition const &) = delete;
 #endif
 
 public:
     MCAPI ScaleByAgeDefinition();
-    MCAPI void initialize(class EntityContext&, class ScaleByAgeComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ScaleByAgeDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class ScaleByAgeComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ScaleByAgeDefinition>> &);
 
 protected:
 

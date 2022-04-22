@@ -75,14 +75,14 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDPARAMETERDATA
 public:
-    class CommandParameterData& operator=(class CommandParameterData const&) = delete;
+    class CommandParameterData& operator=(class CommandParameterData const &) = delete;
     CommandParameterData() = delete;
 #endif
 
 public:
-    MCAPI CommandParameterData(class CommandParameterData const&);
-    MCAPI CommandParameterData(class typeid_t<class CommandRegistry>, bool (CommandRegistry::*)(void* , struct CommandRegistry::ParseToken const& , class CommandOrigin const& , int, std::string& , std::vector<std::string>& ) const, char const*, enum CommandParameterDataType, char const*, int, bool, int);
-    MCAPI class CommandParameterData& addOptions(enum CommandParameterOption);
+    MCAPI CommandParameterData(class CommandParameterData const &);
+    MCAPI CommandParameterData(class typeid_t<class CommandRegistry>, bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const, char const *, enum CommandParameterDataType, char const *, int, bool, int);
+    MCAPI class CommandParameterData & addOptions(enum CommandParameterOption);
     MCAPI ~CommandParameterData();
 
 protected:

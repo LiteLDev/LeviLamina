@@ -18,8 +18,8 @@ class ScriptHealthComponent2 : public AttributeScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTHEALTHCOMPONENT2
 public:
-    class ScriptHealthComponent2& operator=(class ScriptHealthComponent2 const&) = delete;
-    ScriptHealthComponent2(class ScriptHealthComponent2 const&) = delete;
+    class ScriptHealthComponent2& operator=(class ScriptHealthComponent2 const &) = delete;
+    ScriptHealthComponent2(class ScriptHealthComponent2 const &) = delete;
     ScriptHealthComponent2() = delete;
 #endif
 

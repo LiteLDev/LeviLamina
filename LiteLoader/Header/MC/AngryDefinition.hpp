@@ -18,16 +18,16 @@ class AngryDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANGRYDEFINITION
 public:
-    class AngryDefinition& operator=(class AngryDefinition const&) = delete;
-    AngryDefinition(class AngryDefinition const&) = delete;
+    class AngryDefinition& operator=(class AngryDefinition const &) = delete;
+    AngryDefinition(class AngryDefinition const &) = delete;
 #endif
 
 public:
     MCAPI AngryDefinition();
-    MCAPI void addBroadcastTargetByName(std::string const&);
-    MCAPI void initialize(class EntityContext&, class AngryComponent&) const;
-    MCAPI void uninitialize(class EntityContext&, class AngryComponent&) const;
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AngryDefinition> >&);
+    MCAPI void addBroadcastTargetByName(std::string const &);
+    MCAPI void initialize(class EntityContext &, class AngryComponent &) const;
+    MCAPI void uninitialize(class EntityContext &, class AngryComponent &) const;
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AngryDefinition>> &);
 
 protected:
 

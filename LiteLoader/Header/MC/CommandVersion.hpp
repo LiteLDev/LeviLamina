@@ -21,17 +21,17 @@ CommandVersion(){};
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDVERSION
 public:
-    class CommandVersion& operator=(class CommandVersion const&) = delete;
-    CommandVersion(class CommandVersion const&) = delete;
+    class CommandVersion& operator=(class CommandVersion const &) = delete;
+    CommandVersion(class CommandVersion const &) = delete;
     CommandVersion() = delete;
 #endif
 
 public:
     MCAPI CommandVersion(int, int);
-    MCAPI bool covers(class CommandVersion const&) const;
+    MCAPI bool covers(class CommandVersion const &) const;
     MCAPI bool isCompatible(int) const;
     MCAPI static int const CurrentVersion;
-    MCAPI static enum CurrentCmdVersion const getVersionMapping(class SemVersion const&);
+    MCAPI static enum CurrentCmdVersion const getVersionMapping(class SemVersion const &);
 
 protected:
 

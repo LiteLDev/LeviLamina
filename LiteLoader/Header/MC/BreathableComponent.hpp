@@ -19,25 +19,25 @@ enum BreathableState;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREATHABLECOMPONENT
 public:
-    class BreathableComponent& operator=(class BreathableComponent const&) = delete;
-    BreathableComponent(class BreathableComponent const&) = delete;
+    class BreathableComponent& operator=(class BreathableComponent const &) = delete;
+    BreathableComponent(class BreathableComponent const &) = delete;
 #endif
 
 public:
     MCAPI BreathableComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag&);
-    MCAPI bool canBreathe(class Actor const&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI bool canBreathe(class Actor const &) const;
     MCAPI bool generatesBubbles() const;
     MCAPI int getAirRegenPerTick() const;
     MCAPI short getAirSupply() const;
-    MCAPI enum BreathableComponent::BreathableState& getBreathableState();
+    MCAPI enum BreathableComponent::BreathableState & getBreathableState();
     MCAPI float getInhaleTime() const;
     MCAPI short getMaxAirSupply() const;
     MCAPI int getSuffocateTime() const;
-    MCAPI class BreathableComponent& operator=(class BreathableComponent&&);
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI class BreathableComponent & operator=(class BreathableComponent &&);
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void setAirSupply(short);
-    MCAPI void updateBreathableState(class Actor&);
+    MCAPI void updateBreathableState(class Actor &);
 
 protected:
 

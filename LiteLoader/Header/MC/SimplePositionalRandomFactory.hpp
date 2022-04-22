@@ -17,17 +17,17 @@ class SimplePositionalRandomFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLEPOSITIONALRANDOMFACTORY
 public:
-    class SimplePositionalRandomFactory& operator=(class SimplePositionalRandomFactory const&) = delete;
-    SimplePositionalRandomFactory(class SimplePositionalRandomFactory const&) = delete;
+    class SimplePositionalRandomFactory& operator=(class SimplePositionalRandomFactory const &) = delete;
+    SimplePositionalRandomFactory(class SimplePositionalRandomFactory const &) = delete;
     SimplePositionalRandomFactory() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SimplePositionalRandomFactory();
-    /*1*/ virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const&) const;
-    /*2*/ virtual std::unique_ptr<class IRandom> forString(std::string const&) const;
+    /*1*/ virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const &) const;
+    /*2*/ virtual std::unique_ptr<class IRandom> forString(std::string const &) const;
     MCAPI SimplePositionalRandomFactory(__int64);
-    MCAPI class SimpleRandom forBlockPosImpl(class BlockPos const&) const;
+    MCAPI class SimpleRandom forBlockPosImpl(class BlockPos const &) const;
 
 protected:
 

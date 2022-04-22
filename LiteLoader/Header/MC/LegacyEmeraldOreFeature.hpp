@@ -18,15 +18,15 @@ class LegacyEmeraldOreFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYEMERALDOREFEATURE
 public:
-    class LegacyEmeraldOreFeature& operator=(class LegacyEmeraldOreFeature const&) = delete;
-    LegacyEmeraldOreFeature(class LegacyEmeraldOreFeature const&) = delete;
+    class LegacyEmeraldOreFeature& operator=(class LegacyEmeraldOreFeature const &) = delete;
+    LegacyEmeraldOreFeature(class LegacyEmeraldOreFeature const &) = delete;
     LegacyEmeraldOreFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LegacyEmeraldOreFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 protected:
 

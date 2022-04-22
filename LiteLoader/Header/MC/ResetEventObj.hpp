@@ -17,13 +17,13 @@ class ResetEventObj {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESETEVENTOBJ
 public:
-    class ResetEventObj& operator=(class ResetEventObj const&) = delete;
-    ResetEventObj(class ResetEventObj const&) = delete;
+    class ResetEventObj& operator=(class ResetEventObj const &) = delete;
+    ResetEventObj(class ResetEventObj const &) = delete;
     ResetEventObj() = delete;
 #endif
 
 public:
-    MCAPI bool wait_until(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> > >);
+    MCAPI bool wait_until(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>);
 
 protected:
 

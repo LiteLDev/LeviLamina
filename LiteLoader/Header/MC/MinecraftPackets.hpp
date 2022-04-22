@@ -22,8 +22,8 @@ static std::shared_ptr<class Packet> createPacket(int type)
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTPACKETS
 public:
-    class MinecraftPackets& operator=(class MinecraftPackets const&) = delete;
-    MinecraftPackets(class MinecraftPackets const&) = delete;
+    class MinecraftPackets& operator=(class MinecraftPackets const &) = delete;
+    MinecraftPackets(class MinecraftPackets const &) = delete;
     MinecraftPackets() = delete;
 #endif
 

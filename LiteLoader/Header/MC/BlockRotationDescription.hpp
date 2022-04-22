@@ -18,19 +18,19 @@ class BlockRotationDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKROTATIONDESCRIPTION
 public:
-    class BlockRotationDescription& operator=(class BlockRotationDescription const&) = delete;
-    BlockRotationDescription(class BlockRotationDescription const&) = delete;
+    class BlockRotationDescription& operator=(class BlockRotationDescription const &) = delete;
+    BlockRotationDescription(class BlockRotationDescription const &) = delete;
     BlockRotationDescription() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BlockRotationDescription();
-    /*1*/ virtual std::string const& getName() const;
-    /*2*/ virtual void initializeComponent(class EntityContext&) const;
-    /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription> >&, class BlockComponentFactory const&) const;
+    /*1*/ virtual std::string const & getName() const;
+    /*2*/ virtual void initializeComponent(class EntityContext &) const;
+    /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
     /*
     inline bool isNetworkComponent() const{
         bool (BlockRotationDescription::*rv)() const;

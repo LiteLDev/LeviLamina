@@ -15,8 +15,8 @@ class CDScopedEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CDSCOPEDEVENT
 public:
-    class CDScopedEvent& operator=(class CDScopedEvent const&) = delete;
-    CDScopedEvent(class CDScopedEvent const&) = delete;
+    class CDScopedEvent& operator=(class CDScopedEvent const &) = delete;
+    CDScopedEvent(class CDScopedEvent const &) = delete;
     CDScopedEvent() = delete;
 #endif
 

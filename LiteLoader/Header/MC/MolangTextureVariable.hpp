@@ -15,8 +15,8 @@ struct MolangTextureVariable {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGTEXTUREVARIABLE
 public:
-    struct MolangTextureVariable& operator=(struct MolangTextureVariable const&) = delete;
-    MolangTextureVariable(struct MolangTextureVariable const&) = delete;
+    struct MolangTextureVariable& operator=(struct MolangTextureVariable const &) = delete;
+    MolangTextureVariable(struct MolangTextureVariable const &) = delete;
     MolangTextureVariable() = delete;
 #endif
 

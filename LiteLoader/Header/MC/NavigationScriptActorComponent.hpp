@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "ActorDefinitionDescriptor.hpp"
 #include "ScriptActorComponent.hpp"
 
 #define BEFORE_EXTRA
@@ -18,8 +19,8 @@ class NavigationScriptActorComponent : public ScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONSCRIPTACTORCOMPONENT
 public:
-    class NavigationScriptActorComponent& operator=(class NavigationScriptActorComponent const&) = delete;
-    NavigationScriptActorComponent(class NavigationScriptActorComponent const&) = delete;
+    class NavigationScriptActorComponent& operator=(class NavigationScriptActorComponent const &) = delete;
+    NavigationScriptActorComponent(class NavigationScriptActorComponent const &) = delete;
     NavigationScriptActorComponent() = delete;
 #endif
 
@@ -44,6 +45,7 @@ public:
     /*20*/ virtual class Scripting::Result<bool> getCanBreach() const;
     /*21*/ virtual class Scripting::Result<bool> getCanJump() const;
     /*22*/ virtual class Scripting::Result<bool> getCanPathFromAir() const;
+    MCAPI NavigationScriptActorComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &, struct Description *ActorDefinitionDescriptor::*);
 
 protected:
 

@@ -18,16 +18,16 @@ class CatchFireSubcomponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CATCHFIRESUBCOMPONENT
 public:
-    class CatchFireSubcomponent& operator=(class CatchFireSubcomponent const&) = delete;
-    CatchFireSubcomponent(class CatchFireSubcomponent const&) = delete;
+    class CatchFireSubcomponent& operator=(class CatchFireSubcomponent const &) = delete;
+    CatchFireSubcomponent(class CatchFireSubcomponent const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~CatchFireSubcomponent();
-    /*1*/ virtual void readfromJSON(class Json::Value&, class SemVersion const&);
-    /*2*/ virtual void writetoJSON(class Json::Value&) const;
-    /*3*/ virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
-    /*4*/ virtual char const* getName();
+    /*1*/ virtual void readfromJSON(class Json::Value &, class SemVersion const &);
+    /*2*/ virtual void writetoJSON(class Json::Value &) const;
+    /*3*/ virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
+    /*4*/ virtual char const * getName();
     MCAPI CatchFireSubcomponent();
 
 protected:

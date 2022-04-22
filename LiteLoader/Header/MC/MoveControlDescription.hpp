@@ -17,8 +17,8 @@ struct MoveControlDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVECONTROLDESCRIPTION
 public:
-    struct MoveControlDescription& operator=(struct MoveControlDescription const&) = delete;
-    MoveControlDescription(struct MoveControlDescription const&) = delete;
+    struct MoveControlDescription& operator=(struct MoveControlDescription const &) = delete;
+    MoveControlDescription(struct MoveControlDescription const &) = delete;
     MoveControlDescription() = delete;
 #endif
 

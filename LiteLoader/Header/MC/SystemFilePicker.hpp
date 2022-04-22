@@ -18,19 +18,19 @@ class SystemFilePicker {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SYSTEMFILEPICKER
 public:
-    class SystemFilePicker& operator=(class SystemFilePicker const&) = delete;
-    SystemFilePicker(class SystemFilePicker const&) = delete;
+    class SystemFilePicker& operator=(class SystemFilePicker const &) = delete;
+    SystemFilePicker(class SystemFilePicker const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~SystemFilePicker();
-    /*1*/ virtual void initFilePick(class Core::Path const&, class std::function<void (bool, struct FileInfo)>);
-    /*2*/ virtual unsigned __int64 readBytes(struct FileInfo const&, unsigned __int64, unsigned __int64, std::vector<unsigned char>&);
-    /*3*/ virtual bool writeBytes(struct FileInfo const&, unsigned __int64, unsigned __int64, std::vector<unsigned char> const&);
+    /*1*/ virtual void initFilePick(class Core::Path const &, class std::function<void (bool, struct FileInfo)>);
+    /*2*/ virtual unsigned __int64 readBytes(struct FileInfo const &, unsigned __int64, unsigned __int64, std::vector<unsigned char> &);
+    /*3*/ virtual bool writeBytes(struct FileInfo const &, unsigned __int64, unsigned __int64, std::vector<unsigned char> const &);
     MCAPI SystemFilePicker();
 
 protected:
-    MCAPI struct FileInfo _fillFileInfo(class Core::Path const&);
+    MCAPI struct FileInfo _fillFileInfo(class Core::Path const &);
 
 private:
 

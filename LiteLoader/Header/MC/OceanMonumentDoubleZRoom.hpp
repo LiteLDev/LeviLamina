@@ -18,19 +18,19 @@ class OceanMonumentDoubleZRoom : public OceanMonumentPiece {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCEANMONUMENTDOUBLEZROOM
 public:
-    class OceanMonumentDoubleZRoom& operator=(class OceanMonumentDoubleZRoom const&) = delete;
-    OceanMonumentDoubleZRoom(class OceanMonumentDoubleZRoom const&) = delete;
+    class OceanMonumentDoubleZRoom& operator=(class OceanMonumentDoubleZRoom const &) = delete;
+    OceanMonumentDoubleZRoom(class OceanMonumentDoubleZRoom const &) = delete;
     OceanMonumentDoubleZRoom() = delete;
 #endif
 
 public:
     /*0*/ virtual ~OceanMonumentDoubleZRoom();
-    /*2*/ virtual class PoolElementStructurePiece* asPoolElement();
+    /*2*/ virtual class PoolElementStructurePiece * asPoolElement();
     /*3*/ virtual enum StructurePieceType getType() const;
-    /*4*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
-    /*5*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    /*6*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
-    /*10*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
+    /*4*/ virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
+    /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
+    /*6*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
+    /*10*/ virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);
 
 protected:
 

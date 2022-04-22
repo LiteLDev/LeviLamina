@@ -18,14 +18,14 @@ struct IsStackableDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISSTACKABLEDEFINITION
 public:
-    struct IsStackableDefinition& operator=(struct IsStackableDefinition const&) = delete;
-    IsStackableDefinition(struct IsStackableDefinition const&) = delete;
+    struct IsStackableDefinition& operator=(struct IsStackableDefinition const &) = delete;
+    IsStackableDefinition(struct IsStackableDefinition const &) = delete;
     IsStackableDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&);
-    MCAPI void uninitialize(class EntityContext&);
+    MCAPI void initialize(class EntityContext &);
+    MCAPI void uninitialize(class EntityContext &);
 
 protected:
 

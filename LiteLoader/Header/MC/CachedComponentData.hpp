@@ -17,13 +17,13 @@ class CachedComponentData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CACHEDCOMPONENTDATA
 public:
-    class CachedComponentData& operator=(class CachedComponentData const&) = delete;
-    CachedComponentData(class CachedComponentData const&) = delete;
+    class CachedComponentData& operator=(class CachedComponentData const &) = delete;
+    CachedComponentData(class CachedComponentData const &) = delete;
     CachedComponentData() = delete;
 #endif
 
 public:
-    MCAPI void cacheComponentData(class Block const&);
+    MCAPI void cacheComponentData(class Block const &);
 
 protected:
 

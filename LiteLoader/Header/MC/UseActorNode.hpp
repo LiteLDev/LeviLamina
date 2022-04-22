@@ -17,13 +17,13 @@ class UseActorNode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_USEACTORNODE
 public:
-    class UseActorNode& operator=(class UseActorNode const&) = delete;
-    UseActorNode(class UseActorNode const&) = delete;
+    class UseActorNode& operator=(class UseActorNode const &) = delete;
+    UseActorNode(class UseActorNode const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~UseActorNode();
-    /*1*/ virtual enum BehaviorStatus tick(class Actor&);
+    /*1*/ virtual enum BehaviorStatus tick(class Actor &);
     MCAPI UseActorNode();
 
 protected:

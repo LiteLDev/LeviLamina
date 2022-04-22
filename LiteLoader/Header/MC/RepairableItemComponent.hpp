@@ -17,8 +17,8 @@ class RepairableItemComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPAIRABLEITEMCOMPONENT
 public:
-    class RepairableItemComponent& operator=(class RepairableItemComponent const&) = delete;
-    RepairableItemComponent(class RepairableItemComponent const&) = delete;
+    class RepairableItemComponent& operator=(class RepairableItemComponent const &) = delete;
+    RepairableItemComponent(class RepairableItemComponent const &) = delete;
     RepairableItemComponent() = delete;
 #endif
 
@@ -29,7 +29,7 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
     /*
     inline bool isNetworkComponent() const{
         bool (RepairableItemComponent::*rv)() const;
@@ -37,16 +37,16 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI RepairableItemComponent(class ComponentItem*);
-    MCAPI int handleItemRepair(class ItemStackBase&, class ItemStackBase&);
-    MCAPI bool isValidRepairItem(class ItemStackBase const&) const;
+    MCAPI RepairableItemComponent(class ComponentItem *);
+    MCAPI int handleItemRepair(class ItemStackBase &, class ItemStackBase &);
+    MCAPI bool isValidRepairItem(class ItemStackBase const &) const;
     MCAPI static void bindType();
-    MCAPI static class HashedString const& getIdentifier();
+    MCAPI static class HashedString const & getIdentifier();
 
 protected:
 
 private:
-    MCAPI struct RepairItemEntry const* _getRepairItemEntry(class ItemStackBase const&) const;
-    MCAPI int _repairItem(class ItemStackBase&, class ItemStackBase&, class ExpressionNode);
+    MCAPI struct RepairItemEntry const * _getRepairItemEntry(class ItemStackBase const &) const;
+    MCAPI int _repairItem(class ItemStackBase &, class ItemStackBase &, class ExpressionNode);
 
 };

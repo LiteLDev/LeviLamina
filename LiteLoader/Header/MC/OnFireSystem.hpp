@@ -17,20 +17,20 @@ class OnFireSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONFIRESYSTEM
 public:
-    class OnFireSystem& operator=(class OnFireSystem const&) = delete;
-    OnFireSystem(class OnFireSystem const&) = delete;
+    class OnFireSystem& operator=(class OnFireSystem const &) = delete;
+    OnFireSystem(class OnFireSystem const &) = delete;
     OnFireSystem() = delete;
 #endif
 
 public:
-    MCAPI static void extinguishFire(class Actor&);
-    MCAPI static void onFireChanged(class Actor&);
-    MCAPI static void setOnFire(class Actor&, int);
-    MCAPI static void setOnFireNoEffects(class Actor&, int);
-    MCAPI static void stopFire(class Actor&);
+    MCAPI static void extinguishFire(class Actor &);
+    MCAPI static void onFireChanged(class Actor &);
+    MCAPI static void setOnFire(class Actor &, int);
+    MCAPI static void setOnFireNoEffects(class Actor &, int);
+    MCAPI static void stopFire(class Actor &);
 
 protected:
-    MCAPI static bool _extinguishFireIfInWater(class Actor&);
+    MCAPI static bool _extinguishFireIfInWater(class Actor &);
 
 private:
 

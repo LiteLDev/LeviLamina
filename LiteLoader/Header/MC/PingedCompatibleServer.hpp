@@ -17,14 +17,14 @@ struct PingedCompatibleServer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PINGEDCOMPATIBLESERVER
 public:
-    struct PingedCompatibleServer& operator=(struct PingedCompatibleServer const&) = delete;
+    struct PingedCompatibleServer& operator=(struct PingedCompatibleServer const &) = delete;
     PingedCompatibleServer() = delete;
 #endif
 
 public:
-    MCAPI PingedCompatibleServer(struct PingedCompatibleServer const&);
-    MCAPI PingedCompatibleServer(struct PingedCompatibleServer&&);
-    MCAPI struct PingedCompatibleServer& operator=(struct PingedCompatibleServer&&);
+    MCAPI PingedCompatibleServer(struct PingedCompatibleServer const &);
+    MCAPI PingedCompatibleServer(struct PingedCompatibleServer &&);
+    MCAPI struct PingedCompatibleServer & operator=(struct PingedCompatibleServer &&);
     MCAPI ~PingedCompatibleServer();
 
 protected:

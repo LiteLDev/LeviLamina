@@ -18,20 +18,21 @@ class ProjectileFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROJECTILEFACTORY
 public:
-    class ProjectileFactory& operator=(class ProjectileFactory const&) = delete;
-    ProjectileFactory(class ProjectileFactory const&) = delete;
+    class ProjectileFactory& operator=(class ProjectileFactory const &) = delete;
+    ProjectileFactory(class ProjectileFactory const &) = delete;
     ProjectileFactory() = delete;
 #endif
 
 public:
-    MCAPI ProjectileFactory(class Level&);
-    MCAPI bool shootProjectileFromDefinition(struct ActorDefinitionIdentifier const&, class Mob*, class Vec3);
-    MCAPI static std::unique_ptr<class OnHitSubcomponent> createSubcomponent(class Json::Value&, class SemVersion const&, std::string const&);
+    MCAPI ProjectileFactory(class Level &);
+    MCAPI bool shootProjectileFromDefinition(struct ActorDefinitionIdentifier const &, class Mob *, class Vec3);
+    MCAPI static std::unique_ptr<class OnHitSubcomponent> createSubcomponent(class Json::Value &, class SemVersion const &, std::string const &);
     MCAPI static void initFactory();
     MCAPI static void shutdown();
 
 protected:
 
 private:
+    MCAPI static class std::unordered_map<std::string, class std::function<std::unique_ptr<class OnHitSubcomponent> (void)>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, class std::function<std::unique_ptr<class OnHitSubcomponent> (void)>>>> mSubcomponentMap;
 
 };

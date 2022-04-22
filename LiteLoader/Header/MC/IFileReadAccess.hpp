@@ -17,8 +17,8 @@ class IFileReadAccess {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IFILEREADACCESS
 public:
-    class IFileReadAccess& operator=(class IFileReadAccess const&) = delete;
-    IFileReadAccess(class IFileReadAccess const&) = delete;
+    class IFileReadAccess& operator=(class IFileReadAccess const &) = delete;
+    IFileReadAccess(class IFileReadAccess const &) = delete;
     IFileReadAccess() = delete;
 #endif
 

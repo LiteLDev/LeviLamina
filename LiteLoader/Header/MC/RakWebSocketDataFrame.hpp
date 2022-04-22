@@ -18,13 +18,13 @@ class RakWebSocketDataFrame {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKWEBSOCKETDATAFRAME
 public:
-    class RakWebSocketDataFrame& operator=(class RakWebSocketDataFrame const&) = delete;
-    RakWebSocketDataFrame(class RakWebSocketDataFrame const&) = delete;
+    class RakWebSocketDataFrame& operator=(class RakWebSocketDataFrame const &) = delete;
+    RakWebSocketDataFrame(class RakWebSocketDataFrame const &) = delete;
     RakWebSocketDataFrame() = delete;
 #endif
 
 public:
-    MCAPI static void writeFrameToStream(class RakNet::BitStream&, unsigned char const*, unsigned int, enum OpCode, bool, unsigned int);
+    MCAPI static void writeFrameToStream(class RakNet::BitStream &, unsigned char const *, unsigned int, enum OpCode, bool, unsigned int);
 
 protected:
 

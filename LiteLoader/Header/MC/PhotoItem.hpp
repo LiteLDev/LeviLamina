@@ -17,8 +17,8 @@ class PhotoItem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PHOTOITEM
 public:
-    class PhotoItem& operator=(class PhotoItem const&) = delete;
-    PhotoItem(class PhotoItem const&) = delete;
+    class PhotoItem& operator=(class PhotoItem const &) = delete;
+    PhotoItem(class PhotoItem const &) = delete;
     PhotoItem() = delete;
 #endif
 

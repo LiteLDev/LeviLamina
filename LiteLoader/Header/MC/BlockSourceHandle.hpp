@@ -18,15 +18,15 @@ class BlockSourceHandle : public BlockSourceListener {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSOURCEHANDLE
 public:
-    class BlockSourceHandle& operator=(class BlockSourceHandle const&) = delete;
-    BlockSourceHandle(class BlockSourceHandle const&) = delete;
+    class BlockSourceHandle& operator=(class BlockSourceHandle const &) = delete;
+    BlockSourceHandle(class BlockSourceHandle const &) = delete;
     BlockSourceHandle() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BlockSourceHandle();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void onSourceDestroyed(class BlockSource&);
+    /*2*/ virtual void onSourceDestroyed(class BlockSource &);
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*6*/ virtual void __unk_vfn_6();

@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class TakePictureCommand {
+class TakePictureCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,15 +18,15 @@ class TakePictureCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TAKEPICTURECOMMAND
 public:
-    class TakePictureCommand& operator=(class TakePictureCommand const&) = delete;
-    TakePictureCommand(class TakePictureCommand const&) = delete;
+    class TakePictureCommand& operator=(class TakePictureCommand const &) = delete;
+    TakePictureCommand(class TakePictureCommand const &) = delete;
     TakePictureCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~TakePictureCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 

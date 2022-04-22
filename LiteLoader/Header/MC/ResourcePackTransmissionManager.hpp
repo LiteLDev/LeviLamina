@@ -17,15 +17,15 @@ class ResourcePackTransmissionManager {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKTRANSMISSIONMANAGER
 public:
-    class ResourcePackTransmissionManager& operator=(class ResourcePackTransmissionManager const&) = delete;
-    ResourcePackTransmissionManager(class ResourcePackTransmissionManager const&) = delete;
+    class ResourcePackTransmissionManager& operator=(class ResourcePackTransmissionManager const &) = delete;
+    ResourcePackTransmissionManager(class ResourcePackTransmissionManager const &) = delete;
     ResourcePackTransmissionManager() = delete;
 #endif
 
 public:
-    MCAPI ResourcePackTransmissionManager(class Scheduler&);
-    MCAPI void cleanupResourcePackManager(class NetworkIdentifier const&);
-    MCAPI class ResourcePackFileUploadManager& getResourcePackUploadManager(class PacketSender&, class NetworkIdentifier const&, std::string const&);
+    MCAPI ResourcePackTransmissionManager(class Scheduler &);
+    MCAPI void cleanupResourcePackManager(class NetworkIdentifier const &);
+    MCAPI class ResourcePackFileUploadManager & getResourcePackUploadManager(class PacketSender &, class NetworkIdentifier const &, std::string const &);
     MCAPI void update();
     MCAPI ~ResourcePackTransmissionManager();
 

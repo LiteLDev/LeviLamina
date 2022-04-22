@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "ContainerScreenValidatorBase.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class CompoundCreatorContainerScreenValidator {
+class CompoundCreatorContainerScreenValidator : public ContainerScreenValidatorBase {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,8 +18,8 @@ class CompoundCreatorContainerScreenValidator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDCREATORCONTAINERSCREENVALIDATOR
 public:
-    class CompoundCreatorContainerScreenValidator& operator=(class CompoundCreatorContainerScreenValidator const&) = delete;
-    CompoundCreatorContainerScreenValidator(class CompoundCreatorContainerScreenValidator const&) = delete;
+    class CompoundCreatorContainerScreenValidator& operator=(class CompoundCreatorContainerScreenValidator const &) = delete;
+    CompoundCreatorContainerScreenValidator(class CompoundCreatorContainerScreenValidator const &) = delete;
 #endif
 
 public:

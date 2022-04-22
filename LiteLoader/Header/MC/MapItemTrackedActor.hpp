@@ -23,14 +23,14 @@ struct UniqueId {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAPITEMTRACKEDACTOR
 public:
-    class MapItemTrackedActor& operator=(class MapItemTrackedActor const&) = delete;
-    MapItemTrackedActor(class MapItemTrackedActor const&) = delete;
+    class MapItemTrackedActor& operator=(class MapItemTrackedActor const &) = delete;
+    MapItemTrackedActor(class MapItemTrackedActor const &) = delete;
     MapItemTrackedActor() = delete;
 #endif
 
 public:
-    MCAPI float getDecorationRotation(class BlockSource&);
-    MCAPI std::unique_ptr<class Packet> nextUpdatePacket(class MapItemSavedData const&);
+    MCAPI float getDecorationRotation(class BlockSource &);
+    MCAPI std::unique_ptr<class Packet> nextUpdatePacket(class MapItemSavedData const &);
 
 protected:
 

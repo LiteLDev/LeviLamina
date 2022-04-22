@@ -17,8 +17,8 @@ struct PlayerMovementSettings {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERMOVEMENTSETTINGS
 public:
-    struct PlayerMovementSettings& operator=(struct PlayerMovementSettings const&) = delete;
-    PlayerMovementSettings(struct PlayerMovementSettings const&) = delete;
+    struct PlayerMovementSettings& operator=(struct PlayerMovementSettings const &) = delete;
+    PlayerMovementSettings(struct PlayerMovementSettings const &) = delete;
     PlayerMovementSettings() = delete;
 #endif
 

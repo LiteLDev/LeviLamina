@@ -15,8 +15,8 @@ struct PlayerStorageIds {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSTORAGEIDS
 public:
-    struct PlayerStorageIds& operator=(struct PlayerStorageIds const&) = delete;
-    PlayerStorageIds(struct PlayerStorageIds const&) = delete;
+    struct PlayerStorageIds& operator=(struct PlayerStorageIds const &) = delete;
+    PlayerStorageIds(struct PlayerStorageIds const &) = delete;
     PlayerStorageIds() = delete;
 #endif
 

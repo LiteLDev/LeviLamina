@@ -19,26 +19,27 @@ class Option {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OPTION
 public:
-    class Option& operator=(class Option const&) = delete;
-    Option(class Option const&) = delete;
+    class Option& operator=(class Option const &) = delete;
+    Option(class Option const &) = delete;
     Option() = delete;
 #endif
 
 public:
     /*0*/ virtual ~Option();
-    /*1*/ virtual void save(std::vector<struct std::pair<std::string, std::string >>&) = 0;
-    /*2*/ virtual void load(std::string const&) = 0;
-    /*3*/ virtual void load(class std::map<std::string, std::string, struct std::less<std::string >, class std::allocator<struct std::pair<std::string const, std::string > > >&);
-    /*4*/ virtual void load(class Json::Value const&);
-    MCAPI Option(enum OptionID, enum OptionOwnerType, enum OptionResetFlags, std::string const&, std::string const&, enum OptionType);
+    /*1*/ virtual void save(std::vector<struct std::pair<std::string, std::string>> &) = 0;
+    /*2*/ virtual void load(std::string const &) = 0;
+    /*3*/ virtual void load(class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> &);
+    /*4*/ virtual void load(class Json::Value const &);
+    MCAPI Option(enum OptionID, enum OptionOwnerType, enum OptionResetFlags, std::string const &, std::string const &, enum OptionType);
     MCAPI bool getBool() const;
-    MCAPI class Bedrock::PubSub::Subscription registerLock(class std::function<void (bool& )>);
-    MCAPI class Bedrock::PubSub::Subscription registerObserver(class std::function<void (class Option const& )>);
-    MCAPI static bool read(std::string const&, bool&);
+    MCAPI void notifyOptionValueChanged(bool);
+    MCAPI class Bedrock::PubSub::Subscription registerLock(class std::function<void (bool &)>);
+    MCAPI class Bedrock::PubSub::Subscription registerObserver(class std::function<void (class Option const &)>);
+    MCAPI static bool read(std::string const &, bool &);
 
 protected:
 
 private:
-    MCAPI void _updatePropertyVector(std::vector<struct std::pair<std::string, std::string >>&, std::string const&);
+    MCAPI void _updatePropertyVector(std::vector<struct std::pair<std::string, std::string>> &, std::string const &);
 
 };

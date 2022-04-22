@@ -18,14 +18,14 @@ class FallenTreeTrunk {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FALLENTREETRUNK
 public:
-    class FallenTreeTrunk& operator=(class FallenTreeTrunk const&) = delete;
-    FallenTreeTrunk(class FallenTreeTrunk const&) = delete;
+    class FallenTreeTrunk& operator=(class FallenTreeTrunk const &) = delete;
+    FallenTreeTrunk(class FallenTreeTrunk const &) = delete;
     FallenTreeTrunk() = delete;
 #endif
 
 public:
     /*0*/ virtual ~FallenTreeTrunk();
-    /*1*/ virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, class ITreeCanopy const*) const;
+    /*1*/ virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &, struct TreeHelper::TreeParams const &, class ITreeCanopy const *) const;
 
 protected:
 

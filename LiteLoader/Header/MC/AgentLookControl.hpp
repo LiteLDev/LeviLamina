@@ -17,15 +17,15 @@ class AgentLookControl {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTLOOKCONTROL
 public:
-    class AgentLookControl& operator=(class AgentLookControl const&) = delete;
-    AgentLookControl(class AgentLookControl const&) = delete;
+    class AgentLookControl& operator=(class AgentLookControl const &) = delete;
+    AgentLookControl(class AgentLookControl const &) = delete;
     AgentLookControl() = delete;
 #endif
 
 public:
     /*0*/ virtual ~AgentLookControl();
-    /*1*/ virtual void initializeInternal(class Mob&);
-    /*2*/ virtual void tick(class Mob&);
+    /*1*/ virtual void initializeInternal(class Mob &);
+    /*2*/ virtual void tick(class Mob &);
     MCAPI static float sBaseYMax;
 
 protected:

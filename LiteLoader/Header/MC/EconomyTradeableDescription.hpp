@@ -18,16 +18,16 @@ class EconomyTradeableDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ECONOMYTRADEABLEDESCRIPTION
 public:
-    class EconomyTradeableDescription& operator=(class EconomyTradeableDescription const&) = delete;
-    EconomyTradeableDescription(class EconomyTradeableDescription const&) = delete;
+    class EconomyTradeableDescription& operator=(class EconomyTradeableDescription const &) = delete;
+    EconomyTradeableDescription(class EconomyTradeableDescription const &) = delete;
     EconomyTradeableDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~EconomyTradeableDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~EconomyTradeableDescription(){
          (EconomyTradeableDescription::*rv)();

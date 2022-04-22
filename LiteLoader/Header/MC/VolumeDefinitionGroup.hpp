@@ -3,7 +3,6 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Bedrock.hpp"
-#include "Core.hpp"
 
 #define BEFORE_EXTRA
 
@@ -17,24 +16,22 @@ class VolumeDefinitionGroup {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VOLUMEDEFINITIONGROUP
 public:
-    class VolumeDefinitionGroup& operator=(class VolumeDefinitionGroup const&) = delete;
-    VolumeDefinitionGroup(class VolumeDefinitionGroup const&) = delete;
+    class VolumeDefinitionGroup& operator=(class VolumeDefinitionGroup const &) = delete;
+    VolumeDefinitionGroup(class VolumeDefinitionGroup const &) = delete;
     VolumeDefinitionGroup() = delete;
 #endif
 
 public:
-    MCAPI VolumeDefinitionGroup(class gsl::not_null<class Bedrock::NonOwnerPointer<class VolumeComponentFactory const> >);
-    MCAPI class std::unordered_map<class HashedString, std::unique_ptr<struct VolumeDefinition>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, std::unique_ptr<struct VolumeDefinition> > > > const& getDefinitions() const;
-    MCAPI void loadDefinitions(class Core::PathBuffer<std::string > const&, bool);
-    MCAPI struct VolumeDefinition const* tryGetVolumeDefinition(std::string const&) const;
+    MCAPI VolumeDefinitionGroup(class gsl::not_null<class Bedrock::NonOwnerPointer<class VolumeComponentFactory const>>);
+    MCAPI void loadDefinitions(class ResourcePackManager const &, bool);
+    MCAPI struct VolumeDefinition const * tryGetVolumeDefinition(std::string const &) const;
     MCAPI ~VolumeDefinitionGroup();
     MCAPI static void bindVolumeDefinitions();
 
 protected:
 
 private:
-    MCAPI bool _parseAndRegisterDefinition(std::string const&, class SemVersion const&, class Core::PathBuffer<std::string > const&);
-    MCAPI void _readVolumesFromJson(std::vector<class Core::PathBuffer<std::string >> const&, bool);
-    MCAPI bool _registerDefinition(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator>&, class SemVersion const&, class Core::PathBuffer<std::string > const&);
+    MCAPI bool _parseAndRegisterDefinition(std::string const &, class SemVersion const &, std::string const &);
+    MCAPI bool _registerDefinition(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator> &, class SemVersion const &, std::string const &);
 
 };

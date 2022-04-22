@@ -17,18 +17,18 @@ class InteractActionNode {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERACTACTIONNODE
 public:
-    class InteractActionNode& operator=(class InteractActionNode const&) = delete;
-    InteractActionNode(class InteractActionNode const&) = delete;
+    class InteractActionNode& operator=(class InteractActionNode const &) = delete;
+    InteractActionNode(class InteractActionNode const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~InteractActionNode();
-    /*1*/ virtual enum BehaviorStatus tick(class Actor&);
+    /*1*/ virtual enum BehaviorStatus tick(class Actor &);
     /*
-    inline void initializeFromDefinition(class Actor& a0){
-        void (InteractActionNode::*rv)(class Actor&);
+    inline void initializeFromDefinition(class Actor & a0){
+        void (InteractActionNode::*rv)(class Actor &);
         *((void**)&rv) = dlsym("?initializeFromDefinition@InteractActionNode@@EEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
+        return (this->*rv)(std::forward<class Actor &>(a0));
     }
     */
     MCAPI InteractActionNode();

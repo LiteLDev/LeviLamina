@@ -17,15 +17,15 @@ class BlockBreakSensorSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKBREAKSENSORSYSTEM
 public:
-    class BlockBreakSensorSystem& operator=(class BlockBreakSensorSystem const&) = delete;
-    BlockBreakSensorSystem(class BlockBreakSensorSystem const&) = delete;
+    class BlockBreakSensorSystem& operator=(class BlockBreakSensorSystem const &) = delete;
+    BlockBreakSensorSystem(class BlockBreakSensorSystem const &) = delete;
     BlockBreakSensorSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BlockBreakSensorSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

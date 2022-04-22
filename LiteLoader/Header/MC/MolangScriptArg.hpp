@@ -21,13 +21,13 @@ public:
 #endif
 
 public:
-    MCAPI MolangScriptArg(struct MolangScriptArg const&);
+    MCAPI MolangScriptArg(struct MolangScriptArg const &);
     MCAPI MolangScriptArg(int);
     MCAPI MolangScriptArg(float);
-    MCAPI MolangScriptArg(struct MolangScriptArg&&);
-    MCAPI struct MolangMemberArray* getAsNonConstMolangMemberArray();
-    MCAPI struct MolangScriptArg& operator=(struct MolangScriptArg&&);
-    MCAPI struct MolangScriptArg& operator=(struct MolangScriptArg const&);
+    MCAPI MolangScriptArg(struct MolangScriptArg &&);
+    MCAPI struct MolangMemberArray * getAsNonConstMolangMemberArray();
+    MCAPI struct MolangScriptArg & operator=(struct MolangScriptArg &&);
+    MCAPI struct MolangScriptArg & operator=(struct MolangScriptArg const &);
     MCAPI ~MolangScriptArg();
 
 protected:

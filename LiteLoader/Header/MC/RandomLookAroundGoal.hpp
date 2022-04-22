@@ -17,8 +17,8 @@ class RandomLookAroundGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMLOOKAROUNDGOAL
 public:
-    class RandomLookAroundGoal& operator=(class RandomLookAroundGoal const&) = delete;
-    RandomLookAroundGoal(class RandomLookAroundGoal const&) = delete;
+    class RandomLookAroundGoal& operator=(class RandomLookAroundGoal const &) = delete;
+    RandomLookAroundGoal(class RandomLookAroundGoal const &) = delete;
     RandomLookAroundGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI RandomLookAroundGoal(class Mob&, int, int, float);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI RandomLookAroundGoal(class Mob &, int, int, float);
 
 protected:
 

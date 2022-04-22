@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Packet.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,32 +18,22 @@ class BiomeDefinitionListPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMEDEFINITIONLISTPACKET
 public:
-    class BiomeDefinitionListPacket& operator=(class BiomeDefinitionListPacket const&) = delete;
-    BiomeDefinitionListPacket(class BiomeDefinitionListPacket const&) = delete;
+    class BiomeDefinitionListPacket& operator=(class BiomeDefinitionListPacket const &) = delete;
+    BiomeDefinitionListPacket(class BiomeDefinitionListPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~BiomeDefinitionListPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~BiomeDefinitionListPacket(){
          (BiomeDefinitionListPacket::*rv)();
         *((void**)&rv) = dlsym("??1BiomeDefinitionListPacket@@UEAA@XZ");
         return (this->*rv)();
-    }
-    inline enum StreamReadResult _read(class ReadOnlyBinaryStream& a0){
-        enum StreamReadResult (BiomeDefinitionListPacket::*rv)(class ReadOnlyBinaryStream&);
-        *((void**)&rv) = dlsym("?_read@BiomeDefinitionListPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class ReadOnlyBinaryStream&>(a0));
-    }
-    inline void write(class BinaryStream& a0) const{
-        void (BiomeDefinitionListPacket::*rv)(class BinaryStream&) const;
-        *((void**)&rv) = dlsym("?write@BiomeDefinitionListPacket@@UEBAXAEAVBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class BinaryStream&>(a0));
     }
     */
     MCAPI BiomeDefinitionListPacket();

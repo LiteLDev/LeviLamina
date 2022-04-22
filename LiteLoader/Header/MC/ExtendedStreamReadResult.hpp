@@ -15,8 +15,8 @@ struct ExtendedStreamReadResult {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXTENDEDSTREAMREADRESULT
 public:
-    struct ExtendedStreamReadResult& operator=(struct ExtendedStreamReadResult const&) = delete;
-    ExtendedStreamReadResult(struct ExtendedStreamReadResult const&) = delete;
+    struct ExtendedStreamReadResult& operator=(struct ExtendedStreamReadResult const &) = delete;
+    ExtendedStreamReadResult(struct ExtendedStreamReadResult const &) = delete;
     ExtendedStreamReadResult() = delete;
 #endif
 

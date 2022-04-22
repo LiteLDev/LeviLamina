@@ -18,15 +18,15 @@ class DragonChargePlayerDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONCHARGEPLAYERDEFINITION
 public:
-    class DragonChargePlayerDefinition& operator=(class DragonChargePlayerDefinition const&) = delete;
-    DragonChargePlayerDefinition(class DragonChargePlayerDefinition const&) = delete;
+    class DragonChargePlayerDefinition& operator=(class DragonChargePlayerDefinition const &) = delete;
+    DragonChargePlayerDefinition(class DragonChargePlayerDefinition const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~DragonChargePlayerDefinition();
     MCAPI DragonChargePlayerDefinition();
-    MCAPI void initialize(class EntityContext&, class DragonChargePlayerGoal&);
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonChargePlayerDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class DragonChargePlayerGoal &);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonChargePlayerDefinition>> &);
 
 protected:
 

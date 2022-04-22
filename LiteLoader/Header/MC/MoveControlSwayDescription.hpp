@@ -18,16 +18,16 @@ class MoveControlSwayDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVECONTROLSWAYDESCRIPTION
 public:
-    class MoveControlSwayDescription& operator=(class MoveControlSwayDescription const&) = delete;
-    MoveControlSwayDescription(class MoveControlSwayDescription const&) = delete;
+    class MoveControlSwayDescription& operator=(class MoveControlSwayDescription const &) = delete;
+    MoveControlSwayDescription(class MoveControlSwayDescription const &) = delete;
     MoveControlSwayDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~MoveControlSwayDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~MoveControlSwayDescription(){
          (MoveControlSwayDescription::*rv)();

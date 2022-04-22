@@ -17,8 +17,8 @@ class VariantParameterList {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VARIANTPARAMETERLIST
 public:
-    class VariantParameterList& operator=(class VariantParameterList const&) = delete;
-    VariantParameterList(class VariantParameterList const&) = delete;
+    class VariantParameterList& operator=(class VariantParameterList const &) = delete;
+    VariantParameterList(class VariantParameterList const &) = delete;
     VariantParameterList() = delete;
 #endif
 

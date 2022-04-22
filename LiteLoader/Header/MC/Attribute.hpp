@@ -17,18 +17,18 @@ class Attribute {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTE
 public:
-    class Attribute& operator=(class Attribute const&) = delete;
-    Attribute(class Attribute const&) = delete;
+    class Attribute& operator=(class Attribute const &) = delete;
+    Attribute(class Attribute const &) = delete;
     Attribute() = delete;
 #endif
 
 public:
-    MCAPI Attribute(class HashedString const&, enum RedefinitionMode, bool);
+    MCAPI Attribute(class HashedString const &, enum RedefinitionMode, bool);
     MCAPI unsigned int const getIDValue() const;
-    MCAPI class HashedString const& getName() const;
+    MCAPI class HashedString const & getName() const;
     MCAPI enum RedefinitionMode getRedefinitionMode() const;
     MCAPI bool isClientSyncable() const;
-    MCAPI static class Attribute& getByName(class HashedString const&);
+    MCAPI static class Attribute & getByName(class HashedString const &);
 
 protected:
 

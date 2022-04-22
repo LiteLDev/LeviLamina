@@ -17,14 +17,14 @@ class SpawnFinder {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNFINDER
 public:
-    class SpawnFinder& operator=(class SpawnFinder const&) = delete;
-    SpawnFinder(class SpawnFinder const&) = delete;
+    class SpawnFinder& operator=(class SpawnFinder const &) = delete;
+    SpawnFinder(class SpawnFinder const &) = delete;
     SpawnFinder() = delete;
 #endif
 
 public:
-    MCAPI static class std::optional<class BlockPos> findStandupPosition(class BlockPos const&, class BlockSource const&);
-    MCAPI static bool isStandupPosition(class BlockPos const&, class BlockSource const&);
+    MCAPI static class std::optional<class BlockPos> findStandupPosition(class BlockPos const &, class BlockSource const &);
+    MCAPI static bool isStandupPosition(class BlockPos const &, class BlockSource const &);
 
 protected:
 

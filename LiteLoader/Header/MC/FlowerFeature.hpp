@@ -18,15 +18,15 @@ class FlowerFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOWERFEATURE
 public:
-    class FlowerFeature& operator=(class FlowerFeature const&) = delete;
-    FlowerFeature(class FlowerFeature const&) = delete;
+    class FlowerFeature& operator=(class FlowerFeature const &) = delete;
+    FlowerFeature(class FlowerFeature const &) = delete;
     FlowerFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~FlowerFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /*
     inline  ~FlowerFeature(){
          (FlowerFeature::*rv)();
@@ -34,11 +34,11 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI FlowerFeature(class Block const&);
+    MCAPI FlowerFeature(class Block const &);
 
 protected:
 
 private:
-    MCAPI bool _placeMushroom(class BlockSource&, class BlockPos const&, class Block const&, class Random&) const;
+    MCAPI bool _placeMushroom(class BlockSource &, class BlockPos const &, class Block const &, class Random &) const;
 
 };

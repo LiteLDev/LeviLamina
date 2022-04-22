@@ -17,13 +17,13 @@ struct ChunkPerformanceData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKPERFORMANCEDATA
 public:
-    struct ChunkPerformanceData& operator=(struct ChunkPerformanceData const&) = delete;
-    ChunkPerformanceData(struct ChunkPerformanceData const&) = delete;
+    struct ChunkPerformanceData& operator=(struct ChunkPerformanceData const &) = delete;
+    ChunkPerformanceData(struct ChunkPerformanceData const &) = delete;
 #endif
 
 public:
     MCAPI ChunkPerformanceData();
-    MCAPI void recordLoadedChunk(class LevelChunk const&);
+    MCAPI void recordLoadedChunk(class LevelChunk const &);
     MCAPI void resetAll();
 
 protected:

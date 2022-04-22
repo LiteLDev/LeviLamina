@@ -18,15 +18,15 @@ class GiveableDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GIVEABLEDEFINITION
 public:
-    class GiveableDefinition& operator=(class GiveableDefinition const&) = delete;
-    GiveableDefinition(class GiveableDefinition const&) = delete;
+    class GiveableDefinition& operator=(class GiveableDefinition const &) = delete;
+    GiveableDefinition(class GiveableDefinition const &) = delete;
     GiveableDefinition() = delete;
 #endif
 
 public:
-    MCAPI void addGiveableTrigger(struct GiveableTrigger const&);
-    MCAPI void initialize(class EntityContext&, class GiveableComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GiveableDefinition> >&);
+    MCAPI void addGiveableTrigger(struct GiveableTrigger const &);
+    MCAPI void initialize(class EntityContext &, class GiveableComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GiveableDefinition>> &);
 
 protected:
 

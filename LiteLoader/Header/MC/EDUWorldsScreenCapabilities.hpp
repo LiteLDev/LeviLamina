@@ -17,8 +17,8 @@ struct EDUWorldsScreenCapabilities {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUWORLDSSCREENCAPABILITIES
 public:
-    struct EDUWorldsScreenCapabilities& operator=(struct EDUWorldsScreenCapabilities const&) = delete;
-    EDUWorldsScreenCapabilities(struct EDUWorldsScreenCapabilities const&) = delete;
+    struct EDUWorldsScreenCapabilities& operator=(struct EDUWorldsScreenCapabilities const &) = delete;
+    EDUWorldsScreenCapabilities(struct EDUWorldsScreenCapabilities const &) = delete;
     EDUWorldsScreenCapabilities() = delete;
 #endif
 

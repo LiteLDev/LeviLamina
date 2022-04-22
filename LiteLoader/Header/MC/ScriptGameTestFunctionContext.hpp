@@ -17,14 +17,14 @@ class ScriptGameTestFunctionContext {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTGAMETESTFUNCTIONCONTEXT
 public:
-    class ScriptGameTestFunctionContext& operator=(class ScriptGameTestFunctionContext const&) = delete;
-    ScriptGameTestFunctionContext(class ScriptGameTestFunctionContext const&) = delete;
+    class ScriptGameTestFunctionContext& operator=(class ScriptGameTestFunctionContext const &) = delete;
+    ScriptGameTestFunctionContext(class ScriptGameTestFunctionContext const &) = delete;
     ScriptGameTestFunctionContext() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScriptGameTestFunctionContext();
-    MCAPI ScriptGameTestFunctionContext(class Scripting::WeakLifetimeScope, class gametest::BaseGameTestHelper&);
+    MCAPI ScriptGameTestFunctionContext(class Scripting::WeakLifetimeScope, class gametest::BaseGameTestHelper &);
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestHelper> getScriptGameTestHelper();
 
 protected:

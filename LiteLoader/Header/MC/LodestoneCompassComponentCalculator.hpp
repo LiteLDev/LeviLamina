@@ -17,8 +17,8 @@ class LodestoneCompassComponentCalculator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LODESTONECOMPASSCOMPONENTCALCULATOR
 public:
-    class LodestoneCompassComponentCalculator& operator=(class LodestoneCompassComponentCalculator const&) = delete;
-    LodestoneCompassComponentCalculator(class LodestoneCompassComponentCalculator const&) = delete;
+    class LodestoneCompassComponentCalculator& operator=(class LodestoneCompassComponentCalculator const &) = delete;
+    LodestoneCompassComponentCalculator(class LodestoneCompassComponentCalculator const &) = delete;
     LodestoneCompassComponentCalculator() = delete;
 #endif
 

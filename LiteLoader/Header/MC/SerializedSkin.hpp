@@ -16,18 +16,18 @@ class SerializedSkin {
 #undef AFTER_EXTRA
 
 public:
-    MCAPI SerializedSkin(class SerializedSkin&&);
+    MCAPI SerializedSkin(class SerializedSkin &&);
     MCAPI SerializedSkin();
-    MCAPI SerializedSkin(class SerializedSkin const&);
-    MCAPI SerializedSkin(class ConnectionRequest const&);
-    MCAPI SerializedSkin(class SubClientConnectionRequest const&);
-    MCAPI std::string const& getName() const;
+    MCAPI SerializedSkin(class SerializedSkin const &);
+    MCAPI SerializedSkin(class ConnectionRequest const &);
+    MCAPI SerializedSkin(class SubClientConnectionRequest const &);
+    MCAPI std::string const & getName() const;
     MCAPI bool isTrustedSkin() const;
-    MCAPI class SerializedSkin& operator=(class SerializedSkin const&);
-    MCAPI bool read(class ReadOnlyBinaryStream&);
+    MCAPI class SerializedSkin & operator=(class SerializedSkin const &);
+    MCAPI bool read(class ReadOnlyBinaryStream &);
     MCAPI void setIsTrustedSkin(bool);
     MCAPI void updateGeometryName();
-    MCAPI void write(class BinaryStream&) const;
+    MCAPI void write(class BinaryStream &) const;
     MCAPI ~SerializedSkin();
 
 protected:

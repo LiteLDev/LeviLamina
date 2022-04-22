@@ -17,8 +17,8 @@ class ITreeFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITREEFEATURE
 public:
-    class ITreeFeature& operator=(class ITreeFeature const&) = delete;
-    ITreeFeature(class ITreeFeature const&) = delete;
+    class ITreeFeature& operator=(class ITreeFeature const &) = delete;
+    ITreeFeature(class ITreeFeature const &) = delete;
     ITreeFeature() = delete;
 #endif
 
@@ -32,7 +32,7 @@ public:
     */
 
 protected:
-    MCAPI class std::optional<class BlockPos> _place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    MCAPI class std::optional<class BlockPos> _place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 
 private:
 

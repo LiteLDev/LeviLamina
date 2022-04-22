@@ -15,8 +15,8 @@ class PlayerSayCommandEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSAYCOMMANDEVENT
 public:
-    class PlayerSayCommandEvent& operator=(class PlayerSayCommandEvent const&) = delete;
-    PlayerSayCommandEvent(class PlayerSayCommandEvent const&) = delete;
+    class PlayerSayCommandEvent& operator=(class PlayerSayCommandEvent const &) = delete;
+    PlayerSayCommandEvent(class PlayerSayCommandEvent const &) = delete;
     PlayerSayCommandEvent() = delete;
 #endif
 

@@ -1,5 +1,5 @@
 ﻿#pragma once
-#pragma warning(disable:26812)
+#pragma warning(disable : 26812)
 #include <string>
 #include <unordered_map>
 
@@ -21,7 +21,9 @@ struct Version
 {
     enum Status
     {
-        Dev, Beta, Release
+        Dev,
+        Beta,
+        Release
     };
 
     int major;
@@ -40,7 +42,7 @@ struct Version
 
 struct Plugin
 {
-    //std::string id;
+    // std::string id;
     std::string name;
     std::string introduction;
     Version version;
@@ -50,17 +52,21 @@ struct Plugin
     HMODULE handler;
 
     enum class PluginType
-    { DllPlugin, ScriptPlugin };
+    {
+        DllPlugin,
+        ScriptPlugin
+    };
 
     PluginType type;
 
     // Call a Function by Symbol String
-    template<typename ReturnType = void, typename... Args>
-    inline ReturnType callFunction(const char* functionName, Args... args) {
+    template <typename ReturnType = void, typename... Args>
+    inline ReturnType callFunction(const char* functionName, Args... args)
+    {
         void* address = GetProcAddress(handler, functionName);
         if (!address)
             return ReturnType();
-        return reinterpret_cast<ReturnType(*)(Args...)>(address)(std::forward<Args>(args)...);
+        return reinterpret_cast<ReturnType (*)(Args...)>(address)(std::forward<Args>(args)...);
     }
 };
 
@@ -78,71 +84,123 @@ inline bool operator>=(LL::Version a, LL::Version b)
     return b < a || b == a;
 }
 
-//helper
+// helper
 LIAPI bool RegisterPlugin(HMODULE hPlugin, std::string name, std::string introduction, LL::Version version,
                           std::map<std::string, std::string> others);
 
 // Loader APIs
 namespace LL
 {
-    // @return 加载器版本
-    LIAPI std::string getLoaderVersionString();
-    // @return 加载器版本数字
-    LIAPI Version getLoaderVersion();
-    // @return 是否为调试模式
-    LIAPI bool isDebugMode();
 
-    LIAPI std::string getDataPath(const std::string& pluginName);
+/**
+ * @brief Get the loader version as a string
+ *
+ * @return std::string  The loader version
+ */
+LIAPI std::string getLoaderVersionString();
+/**
+ * @brief Get the loader version as a Version object
+ * 
+ * @return LL::Version  The loader version
+ */
+LIAPI Version getLoaderVersion();
+/**
+ * @brief Get whether LiteLoader is in debug mode
+ * 
+ * @return bool  True if it is in debug mode
+ */
+LIAPI bool isDebugMode();
 
-    // @param name 插件名
-    // @param introduction 插件介绍
-    // @param version 插件版本
-    // @param git *git仓库(链接)
-    // @param license *插件许可证
-    // @param website *网站
-    // @return 是否成功(失败则为插件名重复)
-    // @note 此函数的实现必须放在头文件中
-    inline bool registerPlugin(std::string name, std::string introduction, LL::Version version,
-                               std::string git = "", std::string license = "", std::string website = "")
-    {
-        std::map<std::string, std::string> others;
-        if (!git.empty()) others.emplace("Git", git);
-        if (!license.empty()) others.emplace("License", license);
-        if (!website.empty()) others.emplace("Website", website);
-        return ::RegisterPlugin(GetCurrentModule(), name, introduction, version, others);
-    }
-    // @param name 插件名
-    // @param introduction 插件介绍
-    // @param version 插件版本
-    // @param others 其他要附加的信息, k-v
-    // @return 是否成功(失败则为插件名重复)
-    // @example registerPlugin("Test", "Only a test", Version(0, 0, 1, Version::Dev), {{"Note","This is Note"}});
-    // @note 此函数的实现必须放在头文件中
-    inline bool registerPlugin(std::string name, std::string introduction, LL::Version version,
-                               std::map<std::string, std::string> others)
-    {
-        return ::RegisterPlugin(GetCurrentModule(), name, introduction, version, others);
-    }
+/**
+ * @brief Get the data path of the plugin
+ * 
+ * @param  pluginName   The name of the plugin
+ * @return std::string  The data path of the plugin
+ */
+LIAPI std::string getDataPath(const std::string& pluginName);
 
-    // @param name 插件名
-    // @return 若未找到则返回0
-    LIAPI LL::Plugin* getPlugin(std::string name);
+/**
+ * @brief Register a plugin
+ * 
+ * @param name          The name of the plugin
+ * @param introduction  The introduction of the plugin
+ * @param version       The version of the plugin(LL::Version)
+ * @param git           The git information of the plugin
+ * @param license       The license of the plugin
+ * @param website       The website
+ * @return bool         True if the plugin is registered successfully
+ * @note   The implementation of this function must be in header file(because of `GetCurrentModule`)
+ */
+inline bool registerPlugin(std::string name, std::string introduction, LL::Version version,
+                           std::string git = "", std::string license = "", std::string website = "")
+{
+    std::map<std::string, std::string> others;
+    if (!git.empty()) others.emplace("Git", git);
+    if (!license.empty()) others.emplace("License", license);
+    if (!website.empty()) others.emplace("Website", website);
+    return ::RegisterPlugin(GetCurrentModule(), name, introduction, version, others);
+}
 
-    LIAPI LL::Plugin* getPlugin(HMODULE handler);
+/**
+ * @brief Register a plugin
+ * 
+ * @param name          The name of the plugin
+ * @param introduction  The introduction of the plugin
+ * @param version       The version of the plugin(LL::Version)
+ * @param others        The other information of the plugin(key-value)
+ * @return bool         True if the plugin is registered successfully
+ * @note   The implementation of this function must be in header file(because of `GetCurrentModule`)
+ * 
+ * @par Example
+ * @code
+ * LL::registerPlugin("Test", "A test plugin", Version(0, 0, 1, Version::Dev), {{"Note","This is Note"}});
+ * @endcode
+ */
+inline bool registerPlugin(std::string name, std::string introduction, LL::Version version,
+                           std::map<std::string, std::string> others)
+{
+    return ::RegisterPlugin(GetCurrentModule(), name, introduction, version, others);
+}
 
-    // @param name 插件名
-    // @return 是否存在插件
-    LIAPI bool hasPlugin(std::string name);
+/**
+ * @brief Get a loaded plugin by name
+ * 
+ * @param name          The name of the plugin
+ * @return LL::Plugin*  The plugin(nullptr if not found)
+ */
+LIAPI LL::Plugin* getPlugin(std::string name);
+/**
+ * @brief Get a loaded plugin by HMODULE handler
+ * 
+ * @param name          The name of the plugin
+ * @return LL::Plugin*  The plugin(nullptr if not found)
+ */
+LIAPI LL::Plugin* getPlugin(HMODULE handler);
 
-    LIAPI std::unordered_map<std::string, LL::Plugin*> getAllPlugins();
+/**
+ * @brief Get whether the plugin is loaded
+ * 
+ * @param name   The name of the plugin
+ * @return bool  True if the plugin is loaded
+ */
+LIAPI bool hasPlugin(std::string name);
 
-    // Server Status
-    enum class ServerStatus
-    {
-        Starting, Running, Stopping
-    };
-    LIAPI ServerStatus getServerStatus();
-    LIAPI bool isServerStarting();
-    LIAPI bool isServerStopping();
+/**
+ * @brief Get the All the loaded plugins
+ * 
+ * @return std::unordered_map<std::string, LL::Plugin*>  The loaded plugins(name-plugin)
+ */
+LIAPI std::unordered_map<std::string, LL::Plugin*> getAllPlugins();
+
+/// Server Status
+enum class ServerStatus
+{
+    Starting,
+    Running,
+    Stopping
+};
+LIAPI ServerStatus getServerStatus();
+LIAPI bool isServerStarting();
+LIAPI bool isServerStopping();
 
 }; // namespace LL

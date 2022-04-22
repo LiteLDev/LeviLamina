@@ -17,16 +17,16 @@ class ActorClassTree {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORCLASSTREE
 public:
-    class ActorClassTree& operator=(class ActorClassTree const&) = delete;
-    ActorClassTree(class ActorClassTree const&) = delete;
+    class ActorClassTree& operator=(class ActorClassTree const &) = delete;
+    ActorClassTree(class ActorClassTree const &) = delete;
     ActorClassTree() = delete;
 #endif
 
 public:
     MCAPI static enum ActorType getEntityTypeIdLegacy(enum ActorType);
-    MCAPI static bool hasCategory(enum ActorCategory const&, enum ActorCategory);
-    MCAPI static bool isHangingEntity(class Actor const&);
-    MCAPI static bool isInstanceOf(class Actor const&, enum ActorType);
+    MCAPI static bool hasCategory(enum ActorCategory const &, enum ActorCategory);
+    MCAPI static bool isHangingEntity(class Actor const &);
+    MCAPI static bool isInstanceOf(class Actor const &, enum ActorType);
     MCAPI static bool isMob(enum ActorType);
     MCAPI static bool isMobLegacy(enum ActorType);
     MCAPI static bool isOfType(enum ActorType, enum ActorType);

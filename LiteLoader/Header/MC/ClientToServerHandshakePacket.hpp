@@ -18,16 +18,16 @@ class ClientToServerHandshakePacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTTOSERVERHANDSHAKEPACKET
 public:
-    class ClientToServerHandshakePacket& operator=(class ClientToServerHandshakePacket const&) = delete;
-    ClientToServerHandshakePacket(class ClientToServerHandshakePacket const&) = delete;
+    class ClientToServerHandshakePacket& operator=(class ClientToServerHandshakePacket const &) = delete;
+    ClientToServerHandshakePacket(class ClientToServerHandshakePacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ClientToServerHandshakePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     MCAPI ClientToServerHandshakePacket();
 
 protected:

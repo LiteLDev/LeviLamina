@@ -17,17 +17,17 @@ class CombatRegenerationComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMBATREGENERATIONCOMPONENT
 public:
-    class CombatRegenerationComponent& operator=(class CombatRegenerationComponent const&) = delete;
-    CombatRegenerationComponent(class CombatRegenerationComponent const&) = delete;
+    class CombatRegenerationComponent& operator=(class CombatRegenerationComponent const &) = delete;
+    CombatRegenerationComponent(class CombatRegenerationComponent const &) = delete;
     CombatRegenerationComponent() = delete;
 #endif
 
 public:
-    MCAPI void tick(class Actor&);
+    MCAPI void tick(class Actor &);
 
 protected:
 
 private:
-    MCAPI void _applyCombatBuffsToMob(class Actor&, class Actor&);
+    MCAPI void _applyCombatBuffsToMob(class Actor &, class Actor &);
 
 };

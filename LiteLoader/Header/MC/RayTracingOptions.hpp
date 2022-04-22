@@ -17,8 +17,8 @@ class RayTracingOptions {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAYTRACINGOPTIONS
 public:
-    class RayTracingOptions& operator=(class RayTracingOptions const&) = delete;
-    RayTracingOptions(class RayTracingOptions const&) = delete;
+    class RayTracingOptions& operator=(class RayTracingOptions const &) = delete;
+    RayTracingOptions(class RayTracingOptions const &) = delete;
     RayTracingOptions() = delete;
 #endif
 

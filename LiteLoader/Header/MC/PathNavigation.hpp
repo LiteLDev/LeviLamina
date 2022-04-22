@@ -17,25 +17,25 @@ class PathNavigation {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PATHNAVIGATION
 public:
-    class PathNavigation& operator=(class PathNavigation const&) = delete;
-    PathNavigation(class PathNavigation const&) = delete;
+    class PathNavigation& operator=(class PathNavigation const &) = delete;
+    PathNavigation(class PathNavigation const &) = delete;
     PathNavigation() = delete;
 #endif
 
 public:
     /*0*/ virtual ~PathNavigation();
-    /*1*/ virtual void initializeInternal(class Mob&, struct NavigationDescription*);
-    /*2*/ virtual void tick(class NavigationComponent&, class Mob&);
-    /*3*/ virtual class Vec3 getTempMobPos(class Mob const&) const;
-    /*4*/ virtual std::unique_ptr<class Path> createPath(class NavigationComponent&, class Mob&, class Vec3 const&);
-    /*5*/ virtual std::unique_ptr<class Path> createPath(class NavigationComponent&, class Mob&, class Actor&);
-    /*6*/ virtual bool moveTo(class NavigationComponent&, class Mob&, class Vec3 const&, float);
-    /*7*/ virtual bool moveTo(class NavigationComponent&, class Mob&, class Actor&, float);
-    /*8*/ virtual bool moveTo(class NavigationComponent&, class Mob&, std::unique_ptr<class Path>, float);
-    /*9*/ virtual void stop(class NavigationComponent&, class Mob&);
-    /*10*/ virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
-    /*11*/ virtual bool canUpdatePath(class Mob const&) const;
-    /*12*/ virtual void updatePath(class NavigationComponent&, class Mob&);
+    /*1*/ virtual void initializeInternal(class Mob &, struct NavigationDescription *);
+    /*2*/ virtual void tick(class NavigationComponent &, class Mob &);
+    /*3*/ virtual class Vec3 getTempMobPos(class Mob const &) const;
+    /*4*/ virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Vec3 const &);
+    /*5*/ virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Actor &);
+    /*6*/ virtual bool moveTo(class NavigationComponent &, class Mob &, class Vec3 const &, float);
+    /*7*/ virtual bool moveTo(class NavigationComponent &, class Mob &, class Actor &, float);
+    /*8*/ virtual bool moveTo(class NavigationComponent &, class Mob &, std::unique_ptr<class Path>, float);
+    /*9*/ virtual void stop(class NavigationComponent &, class Mob &);
+    /*10*/ virtual bool travel(class NavigationComponent &, class Mob &, float &, float &, float &);
+    /*11*/ virtual bool canUpdatePath(class Mob const &) const;
+    /*12*/ virtual void updatePath(class NavigationComponent &, class Mob &);
     /*
     inline  ~PathNavigation(){
          (PathNavigation::*rv)();
@@ -45,9 +45,9 @@ public:
     */
 
 protected:
-    MCAPI float _getHighestBlockHeight(class BlockSource&, class Mob&, class Vec3 const&, class Vec2 const&) const;
-    MCAPI bool _isPositionOnlyInAir(class BlockSource const&, class Vec3 const&, class Vec2 const&) const;
-    MCAPI enum NodeType isFree(class NavigationComponent&, class Mob&, class BlockPos const&, class BlockPos const&, class BlockPos const&, enum CanJumpIntoNode);
+    MCAPI float _getHighestBlockHeight(class BlockSource &, class Mob &, class Vec3 const &, class Vec2 const &) const;
+    MCAPI bool _isPositionOnlyInAir(class BlockSource const &, class Vec3 const &, class Vec2 const &) const;
+    MCAPI enum NodeType isFree(class NavigationComponent &, class Mob &, class BlockPos const &, class BlockPos const &, class BlockPos const &, enum CanJumpIntoNode);
 
 private:
 

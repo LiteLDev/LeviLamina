@@ -17,14 +17,21 @@ class TickingAreaList {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKINGAREALIST
 public:
-    class TickingAreaList& operator=(class TickingAreaList const&) = delete;
-    TickingAreaList(class TickingAreaList const&) = delete;
+    class TickingAreaList& operator=(class TickingAreaList const &) = delete;
+    TickingAreaList(class TickingAreaList const &) = delete;
     TickingAreaList() = delete;
 #endif
 
 public:
     /*0*/ virtual ~TickingAreaList();
-    /*1*/ virtual bool removeDistantEntityAreasAndCheckForRemoved(std::vector<class Vec3> const&, class std::function<void (class ITickingArea const& )>, class LevelStorage&);
+    /*1*/ virtual bool removeDistantEntityAreasAndCheckForRemoved(std::vector<class Vec3> const &, class std::function<void (class ITickingArea const &)>, class LevelStorage &);
+    /*
+    inline  ~TickingAreaList(){
+         (TickingAreaList::*rv)();
+        *((void**)&rv) = dlsym("??1TickingAreaList@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

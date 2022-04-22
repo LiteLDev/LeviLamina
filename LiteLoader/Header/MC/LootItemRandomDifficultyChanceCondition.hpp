@@ -17,14 +17,14 @@ class LootItemRandomDifficultyChanceCondition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMRANDOMDIFFICULTYCHANCECONDITION
 public:
-    class LootItemRandomDifficultyChanceCondition& operator=(class LootItemRandomDifficultyChanceCondition const&) = delete;
-    LootItemRandomDifficultyChanceCondition(class LootItemRandomDifficultyChanceCondition const&) = delete;
+    class LootItemRandomDifficultyChanceCondition& operator=(class LootItemRandomDifficultyChanceCondition const &) = delete;
+    LootItemRandomDifficultyChanceCondition(class LootItemRandomDifficultyChanceCondition const &) = delete;
     LootItemRandomDifficultyChanceCondition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LootItemRandomDifficultyChanceCondition();
-    /*1*/ virtual bool applies(class Random&, class LootTableContext&);
+    /*1*/ virtual bool applies(class Random &, class LootTableContext &);
 
 protected:
 

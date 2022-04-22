@@ -19,20 +19,20 @@ class SetBookContentsFunction : public LootItemFunction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETBOOKCONTENTSFUNCTION
 public:
-    class SetBookContentsFunction& operator=(class SetBookContentsFunction const&) = delete;
-    SetBookContentsFunction(class SetBookContentsFunction const&) = delete;
+    class SetBookContentsFunction& operator=(class SetBookContentsFunction const &) = delete;
+    SetBookContentsFunction(class SetBookContentsFunction const &) = delete;
     SetBookContentsFunction() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SetBookContentsFunction();
-    /*1*/ virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
-    /*3*/ virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
-    MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>>&);
+    /*1*/ virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
+    /*3*/ virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
+    MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 protected:
 
 private:
-    MCAPI void _fillUserData(class CompoundTag&);
+    MCAPI void _fillUserData(class CompoundTag &);
 
 };

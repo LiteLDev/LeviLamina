@@ -17,16 +17,16 @@ class WorldChangeTransaction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDCHANGETRANSACTION
 public:
-    class WorldChangeTransaction& operator=(class WorldChangeTransaction const&) = delete;
-    WorldChangeTransaction(class WorldChangeTransaction const&) = delete;
+    class WorldChangeTransaction& operator=(class WorldChangeTransaction const &) = delete;
+    WorldChangeTransaction(class WorldChangeTransaction const &) = delete;
     WorldChangeTransaction() = delete;
 #endif
 
 public:
-    MCAPI WorldChangeTransaction(class IBlockWorldGenAPI&);
+    MCAPI WorldChangeTransaction(class IBlockWorldGenAPI &);
     MCAPI bool apply() const;
-    MCAPI class Block const& getBlock(class BlockPos const&) const;
-    MCAPI void setBlock(class BlockPos const&, class Block const&, int);
+    MCAPI class Block const & getBlock(class BlockPos const &) const;
+    MCAPI void setBlock(class BlockPos const &, class Block const &, int);
     MCAPI ~WorldChangeTransaction();
 
 protected:

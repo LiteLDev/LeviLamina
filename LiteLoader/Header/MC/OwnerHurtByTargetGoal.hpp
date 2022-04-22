@@ -18,8 +18,8 @@ class OwnerHurtByTargetGoal : public TargetGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OWNERHURTBYTARGETGOAL
 public:
-    class OwnerHurtByTargetGoal& operator=(class OwnerHurtByTargetGoal const&) = delete;
-    OwnerHurtByTargetGoal(class OwnerHurtByTargetGoal const&) = delete;
+    class OwnerHurtByTargetGoal& operator=(class OwnerHurtByTargetGoal const &) = delete;
+    OwnerHurtByTargetGoal(class OwnerHurtByTargetGoal const &) = delete;
     OwnerHurtByTargetGoal() = delete;
 #endif
 
@@ -27,7 +27,7 @@ public:
     /*0*/ virtual ~OwnerHurtByTargetGoal();
     /*1*/ virtual bool canUse();
     /*4*/ virtual void start();
-    MCAPI OwnerHurtByTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&);
+    MCAPI OwnerHurtByTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &);
 
 protected:
 

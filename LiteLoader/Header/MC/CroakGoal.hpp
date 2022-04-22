@@ -15,8 +15,8 @@ class CroakGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CROAKGOAL
 public:
-    class CroakGoal& operator=(class CroakGoal const&) = delete;
-    CroakGoal(class CroakGoal const&) = delete;
+    class CroakGoal& operator=(class CroakGoal const &) = delete;
+    CroakGoal(class CroakGoal const &) = delete;
     CroakGoal() = delete;
 #endif
 
@@ -28,8 +28,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI CroakGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI CroakGoal(class Mob &);
 
 protected:
 

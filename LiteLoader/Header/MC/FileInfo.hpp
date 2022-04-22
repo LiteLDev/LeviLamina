@@ -16,8 +16,8 @@ struct FileInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILEINFO
 public:
-    struct FileInfo& operator=(struct FileInfo const&) = delete;
-    FileInfo(struct FileInfo const&) = delete;
+    struct FileInfo& operator=(struct FileInfo const &) = delete;
+    FileInfo(struct FileInfo const &) = delete;
     FileInfo() = delete;
 #endif
 

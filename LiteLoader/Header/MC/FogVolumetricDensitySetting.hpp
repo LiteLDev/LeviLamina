@@ -17,8 +17,8 @@ struct FogVolumetricDensitySetting {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOGVOLUMETRICDENSITYSETTING
 public:
-    struct FogVolumetricDensitySetting& operator=(struct FogVolumetricDensitySetting const&) = delete;
-    FogVolumetricDensitySetting(struct FogVolumetricDensitySetting const&) = delete;
+    struct FogVolumetricDensitySetting& operator=(struct FogVolumetricDensitySetting const &) = delete;
+    FogVolumetricDensitySetting(struct FogVolumetricDensitySetting const &) = delete;
     FogVolumetricDensitySetting() = delete;
 #endif
 

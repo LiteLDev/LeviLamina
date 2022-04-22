@@ -17,8 +17,8 @@ struct VolumeDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VOLUMEDEFINITION
 public:
-    struct VolumeDefinition& operator=(struct VolumeDefinition const&) = delete;
-    VolumeDefinition(struct VolumeDefinition const&) = delete;
+    struct VolumeDefinition& operator=(struct VolumeDefinition const &) = delete;
+    VolumeDefinition(struct VolumeDefinition const &) = delete;
 #endif
 
 public:

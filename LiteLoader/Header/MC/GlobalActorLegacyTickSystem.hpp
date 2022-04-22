@@ -17,15 +17,15 @@ class GlobalActorLegacyTickSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLOBALACTORLEGACYTICKSYSTEM
 public:
-    class GlobalActorLegacyTickSystem& operator=(class GlobalActorLegacyTickSystem const&) = delete;
-    GlobalActorLegacyTickSystem(class GlobalActorLegacyTickSystem const&) = delete;
+    class GlobalActorLegacyTickSystem& operator=(class GlobalActorLegacyTickSystem const &) = delete;
+    GlobalActorLegacyTickSystem(class GlobalActorLegacyTickSystem const &) = delete;
     GlobalActorLegacyTickSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~GlobalActorLegacyTickSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

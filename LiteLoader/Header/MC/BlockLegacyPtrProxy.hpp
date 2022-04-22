@@ -15,12 +15,13 @@ struct BlockLegacyPtrProxy {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLEGACYPTRPROXY
 public:
-    struct BlockLegacyPtrProxy& operator=(struct BlockLegacyPtrProxy const&) = delete;
-    BlockLegacyPtrProxy(struct BlockLegacyPtrProxy const&) = delete;
+    struct BlockLegacyPtrProxy& operator=(struct BlockLegacyPtrProxy const &) = delete;
+    BlockLegacyPtrProxy(struct BlockLegacyPtrProxy const &) = delete;
     BlockLegacyPtrProxy() = delete;
 #endif
 
 public:
+    MCAPI void setter(std::string const &);
 
 protected:
 

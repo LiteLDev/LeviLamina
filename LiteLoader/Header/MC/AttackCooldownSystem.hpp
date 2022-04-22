@@ -17,15 +17,15 @@ class AttackCooldownSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTACKCOOLDOWNSYSTEM
 public:
-    class AttackCooldownSystem& operator=(class AttackCooldownSystem const&) = delete;
-    AttackCooldownSystem(class AttackCooldownSystem const&) = delete;
+    class AttackCooldownSystem& operator=(class AttackCooldownSystem const &) = delete;
+    AttackCooldownSystem(class AttackCooldownSystem const &) = delete;
     AttackCooldownSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~AttackCooldownSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

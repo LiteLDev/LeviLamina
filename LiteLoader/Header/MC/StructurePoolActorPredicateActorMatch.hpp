@@ -17,14 +17,14 @@ class StructurePoolActorPredicateActorMatch {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREPOOLACTORPREDICATEACTORMATCH
 public:
-    class StructurePoolActorPredicateActorMatch& operator=(class StructurePoolActorPredicateActorMatch const&) = delete;
-    StructurePoolActorPredicateActorMatch(class StructurePoolActorPredicateActorMatch const&) = delete;
+    class StructurePoolActorPredicateActorMatch& operator=(class StructurePoolActorPredicateActorMatch const &) = delete;
+    StructurePoolActorPredicateActorMatch(class StructurePoolActorPredicateActorMatch const &) = delete;
     StructurePoolActorPredicateActorMatch() = delete;
 #endif
 
 public:
     /*0*/ virtual ~StructurePoolActorPredicateActorMatch();
-    /*1*/ virtual bool test(std::string const&) const;
+    /*1*/ virtual bool test(std::string const &) const;
     MCAPI StructurePoolActorPredicateActorMatch(std::string);
 
 protected:

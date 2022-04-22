@@ -18,13 +18,13 @@ class AmphibiousMoveControl : public GenericMoveControl {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AMPHIBIOUSMOVECONTROL
 public:
-    class AmphibiousMoveControl& operator=(class AmphibiousMoveControl const&) = delete;
-    AmphibiousMoveControl(class AmphibiousMoveControl const&) = delete;
+    class AmphibiousMoveControl& operator=(class AmphibiousMoveControl const &) = delete;
+    AmphibiousMoveControl(class AmphibiousMoveControl const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~AmphibiousMoveControl();
-    /*2*/ virtual void tick(class MoveControlComponent&, class Mob&);
+    /*2*/ virtual void tick(class MoveControlComponent &, class Mob &);
     MCAPI AmphibiousMoveControl();
 
 protected:

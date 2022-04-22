@@ -18,8 +18,8 @@ class MoveToVillageGoal : public BaseMoveToGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOVILLAGEGOAL
 public:
-    class MoveToVillageGoal& operator=(class MoveToVillageGoal const&) = delete;
-    MoveToVillageGoal(class MoveToVillageGoal const&) = delete;
+    class MoveToVillageGoal& operator=(class MoveToVillageGoal const &) = delete;
+    MoveToVillageGoal(class MoveToVillageGoal const &) = delete;
     MoveToVillageGoal() = delete;
 #endif
 
@@ -30,13 +30,13 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*11*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
+    /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /*14*/ virtual void _moveToBlock();
     /*17*/ virtual class BlockPos _selectRandomPosInVillage();
-    MCAPI MoveToVillageGoal(class Mob&, float, float, float, int);
+    MCAPI MoveToVillageGoal(class Mob &, float, float, float, int);
 
 protected:
     MCAPI class std::shared_ptr<class Village> _tryGetCurrentVillage();

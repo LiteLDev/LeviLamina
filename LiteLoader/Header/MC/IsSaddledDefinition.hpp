@@ -18,14 +18,14 @@ struct IsSaddledDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISSADDLEDDEFINITION
 public:
-    struct IsSaddledDefinition& operator=(struct IsSaddledDefinition const&) = delete;
-    IsSaddledDefinition(struct IsSaddledDefinition const&) = delete;
+    struct IsSaddledDefinition& operator=(struct IsSaddledDefinition const &) = delete;
+    IsSaddledDefinition(struct IsSaddledDefinition const &) = delete;
     IsSaddledDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&);
-    MCAPI void uninitialize(class EntityContext&);
+    MCAPI void initialize(class EntityContext &);
+    MCAPI void uninitialize(class EntityContext &);
 
 protected:
 

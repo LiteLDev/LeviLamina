@@ -17,15 +17,15 @@ class EntitySensorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYSENSORCOMPONENT
 public:
-    class EntitySensorComponent& operator=(class EntitySensorComponent const&) = delete;
-    EntitySensorComponent(class EntitySensorComponent const&) = delete;
+    class EntitySensorComponent& operator=(class EntitySensorComponent const &) = delete;
+    EntitySensorComponent(class EntitySensorComponent const &) = delete;
 #endif
 
 public:
-    MCAPI EntitySensorComponent(class EntitySensorComponent&&);
+    MCAPI EntitySensorComponent(class EntitySensorComponent &&);
     MCAPI EntitySensorComponent();
-    MCAPI void evaluateActor(class Actor&);
-    MCAPI class EntitySensorComponent& operator=(class EntitySensorComponent&&);
+    MCAPI void evaluateActor(class Actor &);
+    MCAPI class EntitySensorComponent & operator=(class EntitySensorComponent &&);
     MCAPI ~EntitySensorComponent();
 
 protected:

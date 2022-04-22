@@ -15,8 +15,8 @@ struct ItemNotificationEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMNOTIFICATIONEVENT
 public:
-    struct ItemNotificationEvent& operator=(struct ItemNotificationEvent const&) = delete;
-    ItemNotificationEvent(struct ItemNotificationEvent const&) = delete;
+    struct ItemNotificationEvent& operator=(struct ItemNotificationEvent const &) = delete;
+    ItemNotificationEvent(struct ItemNotificationEvent const &) = delete;
     ItemNotificationEvent() = delete;
 #endif
 

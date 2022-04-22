@@ -18,8 +18,8 @@ class RaidGardenGoal : public BaseMoveToBlockGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAIDGARDENGOAL
 public:
-    class RaidGardenGoal& operator=(class RaidGardenGoal const&) = delete;
-    RaidGardenGoal(class RaidGardenGoal const&) = delete;
+    class RaidGardenGoal& operator=(class RaidGardenGoal const &) = delete;
+    RaidGardenGoal(class RaidGardenGoal const &) = delete;
     RaidGardenGoal() = delete;
 #endif
 
@@ -30,11 +30,11 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*11*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
-    MCAPI RaidGardenGoal(class Mob&, float, int, int, int, float, int, int, int, int, std::vector<class BlockDescriptor> const&);
+    /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
+    MCAPI RaidGardenGoal(class Mob &, float, int, int, int, float, int, int, int, int, std::vector<class BlockDescriptor> const &);
 
 protected:
 

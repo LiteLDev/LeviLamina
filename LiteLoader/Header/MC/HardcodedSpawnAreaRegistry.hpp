@@ -17,14 +17,14 @@ class HardcodedSpawnAreaRegistry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HARDCODEDSPAWNAREAREGISTRY
 public:
-    class HardcodedSpawnAreaRegistry& operator=(class HardcodedSpawnAreaRegistry const&) = delete;
-    HardcodedSpawnAreaRegistry(class HardcodedSpawnAreaRegistry const&) = delete;
+    class HardcodedSpawnAreaRegistry& operator=(class HardcodedSpawnAreaRegistry const &) = delete;
+    HardcodedSpawnAreaRegistry(class HardcodedSpawnAreaRegistry const &) = delete;
 #endif
 
 public:
     MCAPI HardcodedSpawnAreaRegistry();
-    MCAPI std::vector<class MobSpawnerData> const& getMobSpawnsForType(enum HardcodedSpawnAreaType) const;
-    MCAPI void initMobSpawnsForType(enum HardcodedSpawnAreaType, std::vector<class MobSpawnerData>&&);
+    MCAPI std::vector<class MobSpawnerData> const & getMobSpawnsForType(enum HardcodedSpawnAreaType) const;
+    MCAPI void initMobSpawnsForType(enum HardcodedSpawnAreaType, std::vector<class MobSpawnerData> &&);
 
 protected:
 

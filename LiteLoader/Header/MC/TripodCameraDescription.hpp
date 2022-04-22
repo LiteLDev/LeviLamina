@@ -18,15 +18,15 @@ class TripodCameraDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRIPODCAMERADESCRIPTION
 public:
-    class TripodCameraDescription& operator=(class TripodCameraDescription const&) = delete;
-    TripodCameraDescription(class TripodCameraDescription const&) = delete;
+    class TripodCameraDescription& operator=(class TripodCameraDescription const &) = delete;
+    TripodCameraDescription(class TripodCameraDescription const &) = delete;
     TripodCameraDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~TripodCameraDescription();
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~TripodCameraDescription(){
          (TripodCameraDescription::*rv)();

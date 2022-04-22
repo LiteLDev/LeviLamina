@@ -15,12 +15,12 @@ struct BlockMaterialInstanceProxy {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKMATERIALINSTANCEPROXY
 public:
-    struct BlockMaterialInstanceProxy& operator=(struct BlockMaterialInstanceProxy const&) = delete;
+    struct BlockMaterialInstanceProxy& operator=(struct BlockMaterialInstanceProxy const &) = delete;
     BlockMaterialInstanceProxy() = delete;
 #endif
 
 public:
-    MCAPI BlockMaterialInstanceProxy(struct BlockMaterialInstanceProxy const&);
+    MCAPI BlockMaterialInstanceProxy(struct BlockMaterialInstanceProxy const &);
     MCAPI ~BlockMaterialInstanceProxy();
 
 protected:

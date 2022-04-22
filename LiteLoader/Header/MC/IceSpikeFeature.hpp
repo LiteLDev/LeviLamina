@@ -18,15 +18,15 @@ class IceSpikeFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICESPIKEFEATURE
 public:
-    class IceSpikeFeature& operator=(class IceSpikeFeature const&) = delete;
-    IceSpikeFeature(class IceSpikeFeature const&) = delete;
+    class IceSpikeFeature& operator=(class IceSpikeFeature const &) = delete;
+    IceSpikeFeature(class IceSpikeFeature const &) = delete;
     IceSpikeFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~IceSpikeFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 protected:
 

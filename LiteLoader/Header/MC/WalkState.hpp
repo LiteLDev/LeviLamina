@@ -18,8 +18,8 @@ class WalkState : public PetSleepWithOwnerState {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WALKSTATE
 public:
-    class WalkState& operator=(class WalkState const&) = delete;
-    WalkState(class WalkState const&) = delete;
+    class WalkState& operator=(class WalkState const &) = delete;
+    WalkState(class WalkState const &) = delete;
     WalkState() = delete;
 #endif
 

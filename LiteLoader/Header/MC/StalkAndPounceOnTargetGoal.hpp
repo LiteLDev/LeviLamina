@@ -17,8 +17,8 @@ class StalkAndPounceOnTargetGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STALKANDPOUNCEONTARGETGOAL
 public:
-    class StalkAndPounceOnTargetGoal& operator=(class StalkAndPounceOnTargetGoal const&) = delete;
-    StalkAndPounceOnTargetGoal(class StalkAndPounceOnTargetGoal const&) = delete;
+    class StalkAndPounceOnTargetGoal& operator=(class StalkAndPounceOnTargetGoal const &) = delete;
+    StalkAndPounceOnTargetGoal(class StalkAndPounceOnTargetGoal const &) = delete;
     StalkAndPounceOnTargetGoal() = delete;
 #endif
 
@@ -30,12 +30,12 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
 
 protected:
 
 private:
     MCAPI bool _isStuckBlock(class BlockPos) const;
-    MCAPI void _preparePounce(class Vec3 const&, class Vec3 const&);
+    MCAPI void _preparePounce(class Vec3 const &, class Vec3 const &);
 
 };

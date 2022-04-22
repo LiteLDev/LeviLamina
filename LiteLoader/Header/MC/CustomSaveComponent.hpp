@@ -17,13 +17,13 @@ class CustomSaveComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CUSTOMSAVECOMPONENT
 public:
-    class CustomSaveComponent& operator=(class CustomSaveComponent const&) = delete;
-    CustomSaveComponent(class CustomSaveComponent const&) = delete;
+    class CustomSaveComponent& operator=(class CustomSaveComponent const &) = delete;
+    CustomSaveComponent(class CustomSaveComponent const &) = delete;
     CustomSaveComponent() = delete;
 #endif
 
 public:
-    MCAPI bool save(class LevelStorage&, class Actor&);
+    MCAPI bool save(class LevelStorage &, class Actor &);
 
 protected:
 

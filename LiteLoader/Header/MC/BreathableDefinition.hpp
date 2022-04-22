@@ -18,16 +18,16 @@ class BreathableDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREATHABLEDEFINITION
 public:
-    class BreathableDefinition& operator=(class BreathableDefinition const&) = delete;
-    BreathableDefinition(class BreathableDefinition const&) = delete;
+    class BreathableDefinition& operator=(class BreathableDefinition const &) = delete;
+    BreathableDefinition(class BreathableDefinition const &) = delete;
 #endif
 
 public:
     MCAPI BreathableDefinition();
-    MCAPI void addBreathableBlockDescriptor(class BlockDescriptor const&);
-    MCAPI void addNonBreathableBlockDescriptor(class BlockDescriptor const&);
-    MCAPI void initialize(class EntityContext&, class BreathableComponent&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BreathableDefinition> >&);
+    MCAPI void addBreathableBlockDescriptor(class BlockDescriptor const &);
+    MCAPI void addNonBreathableBlockDescriptor(class BlockDescriptor const &);
+    MCAPI void initialize(class EntityContext &, class BreathableComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BreathableDefinition>> &);
 
 protected:
 

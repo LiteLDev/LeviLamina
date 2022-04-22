@@ -17,8 +17,8 @@ class EntityPlacerItemComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYPLACERITEMCOMPONENT
 public:
-    class EntityPlacerItemComponent& operator=(class EntityPlacerItemComponent const&) = delete;
-    EntityPlacerItemComponent(class EntityPlacerItemComponent const&) = delete;
+    class EntityPlacerItemComponent& operator=(class EntityPlacerItemComponent const &) = delete;
+    EntityPlacerItemComponent(class EntityPlacerItemComponent const &) = delete;
     EntityPlacerItemComponent() = delete;
 #endif
 
@@ -26,10 +26,10 @@ public:
     /*0*/ virtual ~EntityPlacerItemComponent();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&) const;
+    /*3*/ virtual bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
     /*
     inline bool isNetworkComponent() const{
         bool (EntityPlacerItemComponent::*rv)() const;
@@ -37,14 +37,14 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
+    MCAPI bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     MCAPI static void bindType();
-    MCAPI static class HashedString const& getIdentifier();
+    MCAPI static class HashedString const & getIdentifier();
 
 protected:
 
 private:
-    MCAPI void _positionAndRotateActor(class Actor&, class Vec3, unsigned char, class Vec3 const&, class BlockLegacy const*) const;
-    MCAPI void _setActorCustomName(class Actor&, class ItemStack const&) const;
+    MCAPI void _positionAndRotateActor(class Actor &, class Vec3, unsigned char, class Vec3 const &, class BlockLegacy const *) const;
+    MCAPI void _setActorCustomName(class Actor &, class ItemStack const &) const;
 
 };

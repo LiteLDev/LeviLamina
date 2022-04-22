@@ -17,8 +17,8 @@ class MoveInputHandler {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEINPUTHANDLER
 public:
-    class MoveInputHandler& operator=(class MoveInputHandler const&) = delete;
-    MoveInputHandler(class MoveInputHandler const&) = delete;
+    class MoveInputHandler& operator=(class MoveInputHandler const &) = delete;
+    MoveInputHandler(class MoveInputHandler const &) = delete;
     MoveInputHandler() = delete;
 #endif
 
@@ -29,8 +29,8 @@ public:
         *((void**)&rv) = dlsym("?createSnapshot@MoveInputHandler@@UEAA?AV?$unique_ptr@UIReplayableActorInput@@U?$default_delete@UIReplayableActorInput@@@std@@@std@@XZ");
         return (this->*rv)();
     }
-    inline class Vec3 const& getGazeDirection() const{
-        class Vec3 const& (MoveInputHandler::*rv)() const;
+    inline class Vec3 const & getGazeDirection() const{
+        class Vec3 const & (MoveInputHandler::*rv)() const;
         *((void**)&rv) = dlsym("?getGazeDirection@MoveInputHandler@@UEBAAEBVVec3@@XZ");
         return (this->*rv)();
     }
@@ -39,10 +39,15 @@ public:
         *((void**)&rv) = dlsym("?clearInputState@MoveInputHandler@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void fillInputPacket(class PlayerAuthInputPacket& a0){
-        void (MoveInputHandler::*rv)(class PlayerAuthInputPacket&);
+    inline struct MoveInputComponent extractInputComponent() const{
+        struct MoveInputComponent (MoveInputHandler::*rv)() const;
+        *((void**)&rv) = dlsym("?extractInputComponent@MoveInputHandler@@UEBA?AUMoveInputComponent@@XZ");
+        return (this->*rv)();
+    }
+    inline void fillInputPacket(class PlayerAuthInputPacket & a0){
+        void (MoveInputHandler::*rv)(class PlayerAuthInputPacket &);
         *((void**)&rv) = dlsym("?fillInputPacket@MoveInputHandler@@UEAAXAEAVPlayerAuthInputPacket@@@Z");
-        return (this->*rv)(std::forward<class PlayerAuthInputPacket&>(a0));
+        return (this->*rv)(std::forward<class PlayerAuthInputPacket &>(a0));
     }
     inline bool isChangeHeight() const{
         bool (MoveInputHandler::*rv)() const;
@@ -54,10 +59,10 @@ public:
         *((void**)&rv) = dlsym("?isPlayerMoving@MoveInputHandler@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline void tick(struct IPlayerMovementProxy& a0){
-        void (MoveInputHandler::*rv)(struct IPlayerMovementProxy&);
+    inline void tick(struct IPlayerMovementProxy & a0){
+        void (MoveInputHandler::*rv)(struct IPlayerMovementProxy &);
         *((void**)&rv) = dlsym("?tick@MoveInputHandler@@UEAAXAEAUIPlayerMovementProxy@@@Z");
-        return (this->*rv)(std::forward<struct IPlayerMovementProxy&>(a0));
+        return (this->*rv)(std::forward<struct IPlayerMovementProxy &>(a0));
     }
     */
 

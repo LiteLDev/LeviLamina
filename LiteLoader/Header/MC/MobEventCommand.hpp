@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class MobEventCommand {
+class MobEventCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -23,15 +24,15 @@ struct InitProxy {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEVENTCOMMAND
 public:
-    class MobEventCommand& operator=(class MobEventCommand const&) = delete;
-    MobEventCommand(class MobEventCommand const&) = delete;
+    class MobEventCommand& operator=(class MobEventCommand const &) = delete;
+    MobEventCommand(class MobEventCommand const &) = delete;
     MobEventCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~MobEventCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&, struct MobEventCommand::InitProxy&&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &, struct MobEventCommand::InitProxy &&);
 
 protected:
 

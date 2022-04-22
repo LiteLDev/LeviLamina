@@ -23,19 +23,19 @@ struct Gene {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GENETICSCOMPONENT
 public:
-    class GeneticsComponent& operator=(class GeneticsComponent const&) = delete;
-    GeneticsComponent(class GeneticsComponent const&) = delete;
+    class GeneticsComponent& operator=(class GeneticsComponent const &) = delete;
+    GeneticsComponent(class GeneticsComponent const &) = delete;
     GeneticsComponent() = delete;
 #endif
 
 public:
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
-    MCAPI void buildDebugInfo(std::string&) const;
-    MCAPI struct GeneticsComponent::Gene* findGene(std::string const&);
-    MCAPI void fireGeneEvents(class Actor&) const;
-    MCAPI void initializeGenesFromParents(class Actor&, class Actor&, class Actor&);
-    MCAPI class GeneticsComponent& operator=(class GeneticsComponent&&);
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
+    MCAPI void buildDebugInfo(std::string &) const;
+    MCAPI struct GeneticsComponent::Gene * findGene(std::string const &);
+    MCAPI void fireGeneEvents(class Actor &) const;
+    MCAPI void initializeGenesFromParents(class Actor &, class Actor &, class Actor &);
+    MCAPI class GeneticsComponent & operator=(class GeneticsComponent &&);
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI static int const INVALID_ALLELE_VALUE;
 
 protected:

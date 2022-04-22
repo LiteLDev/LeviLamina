@@ -17,14 +17,14 @@ class NetworkPacketEventCoordinator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKPACKETEVENTCOORDINATOR
 public:
-    class NetworkPacketEventCoordinator& operator=(class NetworkPacketEventCoordinator const&) = delete;
-    NetworkPacketEventCoordinator(class NetworkPacketEventCoordinator const&) = delete;
+    class NetworkPacketEventCoordinator& operator=(class NetworkPacketEventCoordinator const &) = delete;
+    NetworkPacketEventCoordinator(class NetworkPacketEventCoordinator const &) = delete;
     NetworkPacketEventCoordinator() = delete;
 #endif
 
 public:
     /*0*/ virtual ~NetworkPacketEventCoordinator();
-    MCAPI void sendPacketReceivedFrom(class PacketHeader const&, class Packet const&);
+    MCAPI void sendPacketReceivedFrom(class PacketHeader const &, class Packet const &);
 
 protected:
 

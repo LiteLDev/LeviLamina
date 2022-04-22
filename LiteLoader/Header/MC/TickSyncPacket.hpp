@@ -18,8 +18,8 @@ class TickSyncPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKSYNCPACKET
 public:
-    class TickSyncPacket& operator=(class TickSyncPacket const&) = delete;
-    TickSyncPacket(class TickSyncPacket const&) = delete;
+    class TickSyncPacket& operator=(class TickSyncPacket const &) = delete;
+    TickSyncPacket(class TickSyncPacket const &) = delete;
     TickSyncPacket() = delete;
 #endif
 
@@ -27,8 +27,8 @@ public:
     /*0*/ virtual ~TickSyncPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~TickSyncPacket(){
          (TickSyncPacket::*rv)();

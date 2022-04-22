@@ -18,8 +18,8 @@ class BarrelContainerValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BARRELCONTAINERVALIDATION
 public:
-    class BarrelContainerValidation& operator=(class BarrelContainerValidation const&) = delete;
-    BarrelContainerValidation(class BarrelContainerValidation const&) = delete;
+    class BarrelContainerValidation& operator=(class BarrelContainerValidation const &) = delete;
+    BarrelContainerValidation(class BarrelContainerValidation const &) = delete;
     BarrelContainerValidation() = delete;
 #endif
 
@@ -28,7 +28,7 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
-    /*9*/ virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
+    /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 
 protected:
 

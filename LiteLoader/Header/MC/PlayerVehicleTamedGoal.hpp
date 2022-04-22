@@ -17,8 +17,8 @@ class PlayerVehicleTamedGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERVEHICLETAMEDGOAL
 public:
-    class PlayerVehicleTamedGoal& operator=(class PlayerVehicleTamedGoal const&) = delete;
-    PlayerVehicleTamedGoal(class PlayerVehicleTamedGoal const&) = delete;
+    class PlayerVehicleTamedGoal& operator=(class PlayerVehicleTamedGoal const &) = delete;
+    PlayerVehicleTamedGoal(class PlayerVehicleTamedGoal const &) = delete;
     PlayerVehicleTamedGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline void tick(){
         void (PlayerVehicleTamedGoal::*rv)();
@@ -53,7 +53,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI PlayerVehicleTamedGoal(class Mob&);
+    MCAPI PlayerVehicleTamedGoal(class Mob &);
 
 protected:
 

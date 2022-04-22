@@ -18,13 +18,13 @@ class FlyMoveControl : public MoveControl {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLYMOVECONTROL
 public:
-    class FlyMoveControl& operator=(class FlyMoveControl const&) = delete;
-    FlyMoveControl(class FlyMoveControl const&) = delete;
+    class FlyMoveControl& operator=(class FlyMoveControl const &) = delete;
+    FlyMoveControl(class FlyMoveControl const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~FlyMoveControl();
-    /*2*/ virtual void tick(class MoveControlComponent&, class Mob&);
+    /*2*/ virtual void tick(class MoveControlComponent &, class Mob &);
     MCAPI FlyMoveControl();
 
 protected:

@@ -18,13 +18,13 @@ class MoveControlSkipDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVECONTROLSKIPDESCRIPTION
 public:
-    class MoveControlSkipDescription& operator=(class MoveControlSkipDescription const&) = delete;
-    MoveControlSkipDescription(class MoveControlSkipDescription const&) = delete;
+    class MoveControlSkipDescription& operator=(class MoveControlSkipDescription const &) = delete;
+    MoveControlSkipDescription(class MoveControlSkipDescription const &) = delete;
     MoveControlSkipDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~MoveControlSkipDescription();
     /*
     inline  ~MoveControlSkipDescription(){

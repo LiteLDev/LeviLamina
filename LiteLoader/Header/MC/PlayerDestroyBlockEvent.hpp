@@ -15,8 +15,8 @@ class PlayerDestroyBlockEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERDESTROYBLOCKEVENT
 public:
-    class PlayerDestroyBlockEvent& operator=(class PlayerDestroyBlockEvent const&) = delete;
-    PlayerDestroyBlockEvent(class PlayerDestroyBlockEvent const&) = delete;
+    class PlayerDestroyBlockEvent& operator=(class PlayerDestroyBlockEvent const &) = delete;
+    PlayerDestroyBlockEvent(class PlayerDestroyBlockEvent const &) = delete;
     PlayerDestroyBlockEvent() = delete;
 #endif
 

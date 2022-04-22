@@ -17,16 +17,16 @@ class CommandOutputMessage {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDOUTPUTMESSAGE
 public:
-    class CommandOutputMessage& operator=(class CommandOutputMessage const&) = delete;
+    class CommandOutputMessage& operator=(class CommandOutputMessage const &) = delete;
     CommandOutputMessage() = delete;
 #endif
 
 public:
-    MCAPI CommandOutputMessage(class CommandOutputMessage&&);
-    MCAPI CommandOutputMessage(class CommandOutputMessage const&);
-    MCAPI CommandOutputMessage(enum CommandOutputMessageType, std::string const&, std::vector<std::string>&&);
-    MCAPI std::string const& getMessageId() const;
-    MCAPI std::vector<std::string> const& getParams() const;
+    MCAPI CommandOutputMessage(class CommandOutputMessage &&);
+    MCAPI CommandOutputMessage(class CommandOutputMessage const &);
+    MCAPI CommandOutputMessage(enum CommandOutputMessageType, std::string const &, std::vector<std::string> &&);
+    MCAPI std::string const & getMessageId() const;
+    MCAPI std::vector<std::string> const & getParams() const;
     MCAPI enum CommandOutputMessageType getType() const;
     MCAPI ~CommandOutputMessage();
 

@@ -18,43 +18,43 @@ class BedBlockActor : public BlockActor {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDBLOCKACTOR
 public:
-    class BedBlockActor& operator=(class BedBlockActor const&) = delete;
-    BedBlockActor(class BedBlockActor const&) = delete;
+    class BedBlockActor& operator=(class BedBlockActor const &) = delete;
+    BedBlockActor(class BedBlockActor const &) = delete;
     BedBlockActor() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BedBlockActor();
-    /*1*/ virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
-    /*2*/ virtual bool save(class CompoundTag&) const;
-    /*3*/ virtual bool saveItemInstanceData(class CompoundTag&);
-    /*4*/ virtual void saveBlockData(class CompoundTag&, class BlockSource&) const;
-    /*5*/ virtual void loadBlockData(class CompoundTag const&, class BlockSource&, class DataLoadHelper&);
-    /*6*/ virtual void onCustomTagLoadDone(class BlockSource&);
-    /*7*/ virtual void tick(class BlockSource&);
-    /*8*/ virtual void onChanged(class BlockSource&);
-    /*11*/ virtual void onPlace(class BlockSource&);
+    /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+    /*2*/ virtual bool save(class CompoundTag &) const;
+    /*3*/ virtual bool saveItemInstanceData(class CompoundTag &);
+    /*4*/ virtual void saveBlockData(class CompoundTag &, class BlockSource &) const;
+    /*5*/ virtual void loadBlockData(class CompoundTag const &, class BlockSource &, class DataLoadHelper &);
+    /*6*/ virtual void onCustomTagLoadDone(class BlockSource &);
+    /*7*/ virtual void tick(class BlockSource &);
+    /*8*/ virtual void onChanged(class BlockSource &);
+    /*11*/ virtual void onPlace(class BlockSource &);
     /*12*/ virtual void __unk_vfn_12();
-    /*13*/ virtual void onRemoved(class BlockSource&);
+    /*13*/ virtual void onRemoved(class BlockSource &);
     /*14*/ virtual void triggerEvent(int, int);
     /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual void __unk_vfn_17();
-    /*19*/ virtual class BlockActor* getCrackEntity(class BlockSource&, class BlockPos const&);
+    /*19*/ virtual class BlockActor * getCrackEntity(class BlockSource &, class BlockPos const &);
     /*23*/ virtual std::string getName() const;
-    /*27*/ virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
+    /*27*/ virtual class PistonBlockActor * getOwningPiston(class BlockSource &);
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
-    /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
-    /*35*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
-    /*36*/ virtual bool _playerCanUpdate(class Player const&) const;
-    MCAPI BedBlockActor(class BlockPos const&);
+    /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
+    /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
+    /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
+    MCAPI BedBlockActor(class BlockPos const &);
     MCAPI bool claimPetSleepOnBed(struct ActorUniqueID);
     MCAPI void startSleepingOn();
-    MCAPI void stopSleepingOn(class BlockSource&, bool);
+    MCAPI void stopSleepingOn(class BlockSource &, bool);
 
 protected:
 

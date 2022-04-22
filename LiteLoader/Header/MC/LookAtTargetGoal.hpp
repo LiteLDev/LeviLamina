@@ -18,8 +18,8 @@ class LookAtTargetGoal : public LookAtActorGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATTARGETGOAL
 public:
-    class LookAtTargetGoal& operator=(class LookAtTargetGoal const&) = delete;
-    LookAtTargetGoal(class LookAtTargetGoal const&) = delete;
+    class LookAtTargetGoal& operator=(class LookAtTargetGoal const &) = delete;
+    LookAtTargetGoal(class LookAtTargetGoal const &) = delete;
     LookAtTargetGoal() = delete;
 #endif
 

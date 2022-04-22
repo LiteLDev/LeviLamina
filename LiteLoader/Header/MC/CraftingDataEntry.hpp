@@ -17,15 +17,15 @@ class CraftingDataEntry {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTINGDATAENTRY
 public:
-    class CraftingDataEntry& operator=(class CraftingDataEntry const&) = delete;
-    CraftingDataEntry(class CraftingDataEntry const&) = delete;
+    class CraftingDataEntry& operator=(class CraftingDataEntry const &) = delete;
+    CraftingDataEntry(class CraftingDataEntry const &) = delete;
     CraftingDataEntry() = delete;
 #endif
 
 public:
-    MCAPI void fillFromMultiRecipe(class MultiRecipe const&);
-    MCAPI void fillFromRecipe(class Recipe const&);
-    MCAPI void write(class BinaryStream&) const;
+    MCAPI void fillFromMultiRecipe(class MultiRecipe const &);
+    MCAPI void fillFromRecipe(class Recipe const &);
+    MCAPI void write(class BinaryStream &) const;
     MCAPI ~CraftingDataEntry();
 
 protected:

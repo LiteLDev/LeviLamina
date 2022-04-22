@@ -18,8 +18,8 @@ class ScriptMovementAmphibiousComponent : public ScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMOVEMENTAMPHIBIOUSCOMPONENT
 public:
-    class ScriptMovementAmphibiousComponent& operator=(class ScriptMovementAmphibiousComponent const&) = delete;
-    ScriptMovementAmphibiousComponent(class ScriptMovementAmphibiousComponent const&) = delete;
+    class ScriptMovementAmphibiousComponent& operator=(class ScriptMovementAmphibiousComponent const &) = delete;
+    ScriptMovementAmphibiousComponent(class ScriptMovementAmphibiousComponent const &) = delete;
     ScriptMovementAmphibiousComponent() = delete;
 #endif
 

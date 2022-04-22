@@ -15,14 +15,13 @@ class ScriptActorIterator {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTACTORITERATOR
 public:
-    class ScriptActorIterator& operator=(class ScriptActorIterator const&) = delete;
+    class ScriptActorIterator& operator=(class ScriptActorIterator const &) = delete;
     ScriptActorIterator() = delete;
 #endif
 
 public:
-    MCAPI ScriptActorIterator(std::vector<class Scripting::StrongTypedObjectHandle<class ScriptActor>>&&);
-    MCAPI ScriptActorIterator(class ScriptActorIterator const&);
-    MCAPI class ScriptActorIterator& operator=(class ScriptActorIterator&&);
+    MCAPI ScriptActorIterator(class ScriptActorIterator const &);
+    MCAPI class ScriptActorIterator & operator=(class ScriptActorIterator &&);
     MCAPI ~ScriptActorIterator();
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptActorIterator> bind(struct Scripting::Version);
 

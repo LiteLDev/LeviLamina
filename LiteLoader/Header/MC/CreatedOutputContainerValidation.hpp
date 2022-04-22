@@ -18,8 +18,8 @@ class CreatedOutputContainerValidation : public ContainerValidationBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CREATEDOUTPUTCONTAINERVALIDATION
 public:
-    class CreatedOutputContainerValidation& operator=(class CreatedOutputContainerValidation const&) = delete;
-    CreatedOutputContainerValidation(class CreatedOutputContainerValidation const&) = delete;
+    class CreatedOutputContainerValidation& operator=(class CreatedOutputContainerValidation const &) = delete;
+    CreatedOutputContainerValidation(class CreatedOutputContainerValidation const &) = delete;
     CreatedOutputContainerValidation() = delete;
 #endif
 
@@ -29,22 +29,22 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
-    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /*
-    inline bool isItemAllowedToAdd(class ItemStack const& a0) const{
-        bool (CreatedOutputContainerValidation::*rv)(class ItemStack const&) const;
+    inline bool isItemAllowedToAdd(class ItemStack const & a0) const{
+        bool (CreatedOutputContainerValidation::*rv)(class ItemStack const &) const;
         *((void**)&rv) = dlsym("?isItemAllowedToAdd@CreatedOutputContainerValidation@@UEBA_NAEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<class ItemStack const&>(a0));
+        return (this->*rv)(std::forward<class ItemStack const &>(a0));
     }
-    inline bool isItemAllowedInSlot(class ContainerScreenContext const& a0, int a1, class ItemStackBase const& a2, int a3) const{
-        bool (CreatedOutputContainerValidation::*rv)(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    inline bool isItemAllowedInSlot(class ContainerScreenContext const & a0, int a1, class ItemStackBase const & a2, int a3) const{
+        bool (CreatedOutputContainerValidation::*rv)(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
         *((void**)&rv) = dlsym("?isItemAllowedInSlot@CreatedOutputContainerValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0), std::forward<int>(a1), std::forward<class ItemStackBase const&>(a2), std::forward<int>(a3));
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0), std::forward<int>(a1), std::forward<class ItemStackBase const &>(a2), std::forward<int>(a3));
     }
-    inline bool canItemMoveToContainer(class ItemStackBase const& a0) const{
-        bool (CreatedOutputContainerValidation::*rv)(class ItemStackBase const&) const;
+    inline bool canItemMoveToContainer(class ItemStackBase const & a0) const{
+        bool (CreatedOutputContainerValidation::*rv)(class ItemStackBase const &) const;
         *((void**)&rv) = dlsym("?canItemMoveToContainer@CreatedOutputContainerValidation@@UEBA_NAEBVItemStackBase@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const&>(a0));
+        return (this->*rv)(std::forward<class ItemStackBase const &>(a0));
     }
     */
 

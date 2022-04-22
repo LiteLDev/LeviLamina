@@ -17,8 +17,8 @@ class SurfaceLevelCache {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SURFACELEVELCACHE
 public:
-    class SurfaceLevelCache& operator=(class SurfaceLevelCache const&) = delete;
-    SurfaceLevelCache(class SurfaceLevelCache const&) = delete;
+    class SurfaceLevelCache& operator=(class SurfaceLevelCache const &) = delete;
+    SurfaceLevelCache(class SurfaceLevelCache const &) = delete;
     SurfaceLevelCache() = delete;
 #endif
 
@@ -32,7 +32,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI SurfaceLevelCache(class DividedPos2d<4>, class IPreliminarySurfaceProvider const&, unsigned __int64);
+    MCAPI SurfaceLevelCache(class DividedPos2d<4>, class IPreliminarySurfaceProvider const &, unsigned __int64);
 
 protected:
 

@@ -71,9 +71,18 @@ public:
     ThreadLocalObject(ThreadLocalObject const&) = delete;
     ThreadLocalObject(ThreadLocalObject const&&) = delete;
 };
-
+template <typename T>
+class LockGuard
+{
+    MCAPI LockGuard(T);
+    MCAPI ~LockGuard();
+};
 } // namespace Threading
-class SessionInfo {
+
+class ScopeExit;
+
+class SessionInfo
+{
 public:
     SessionInfo() = delete;
     SessionInfo(SessionInfo const&) = delete;
@@ -81,6 +90,9 @@ public:
 };
 
 #undef AFTER_EXTRA
+    MCAPI std::string getExceptionMessage(class std::exception_ptr);
+    MCAPI int strtoint32(char const *, char **, int);
+    MCAPI unsigned int strtouint32(char const *, char **, int);
     MCAPI void throw_system_error(enum std::errc);
 
 };

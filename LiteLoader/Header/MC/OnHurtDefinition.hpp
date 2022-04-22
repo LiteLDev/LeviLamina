@@ -18,8 +18,8 @@ struct OnHurtDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONHURTDEFINITION
 public:
-    struct OnHurtDefinition& operator=(struct OnHurtDefinition const&) = delete;
-    OnHurtDefinition(struct OnHurtDefinition const&) = delete;
+    struct OnHurtDefinition& operator=(struct OnHurtDefinition const &) = delete;
+    OnHurtDefinition(struct OnHurtDefinition const &) = delete;
     OnHurtDefinition() = delete;
 #endif
 

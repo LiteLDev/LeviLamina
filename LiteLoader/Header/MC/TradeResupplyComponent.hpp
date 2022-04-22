@@ -17,16 +17,16 @@ class TradeResupplyComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADERESUPPLYCOMPONENT
 public:
-    class TradeResupplyComponent& operator=(class TradeResupplyComponent const&) = delete;
-    TradeResupplyComponent(class TradeResupplyComponent const&) = delete;
+    class TradeResupplyComponent& operator=(class TradeResupplyComponent const &) = delete;
+    TradeResupplyComponent(class TradeResupplyComponent const &) = delete;
 #endif
 
 public:
     MCAPI TradeResupplyComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag&);
-    MCAPI void initFromDefinition(class Actor&);
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
-    MCAPI void reloadComponent(class Actor&);
+    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void initFromDefinition(class Actor &);
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
+    MCAPI void reloadComponent(class Actor &);
 
 protected:
 

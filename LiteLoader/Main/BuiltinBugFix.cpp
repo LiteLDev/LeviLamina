@@ -15,6 +15,8 @@
 
 #include <MC/SharedConstants.hpp>
 #include <MC/PropertiesSettings.hpp>
+#include <MC/ServerPlayer.hpp>
+#include <LiteLoader/Header/ScheduleAPI.h>
 
 using namespace LL;
 
@@ -207,9 +209,9 @@ TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NV?
     if (pl->isPlayer())
     {
         logger.warn << "Player(" << pl->getRealName() << ") sent invalid MoveView Packet!" << Logger::endl;
-        auto& pos = pl->getPosOld();
+        auto& pos = pl->getPosPrev();
         if (validPosition(pos))
-            pl->setPos(pl->getPosOld());
+            pl->setPos(pl->getPosition());
         else
             pl->setPos(Global<Level>->getDefaultSpawn().bottomCenter());
     }
@@ -225,6 +227,18 @@ TInstanceHook(void, "?move@Player@@UEAAXAEBVVec3@@@Z", Player, Vec3 pos)
     return;
 }
 
+
+TInstanceHook(void, "?die@ServerPlayer@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer , ActorDamageSource* ds)
+{
+    original(this, ds);
+    auto name = getRealName();
+    Schedule::delay([name]() {
+        auto pl = Global<Level>->getPlayer(name);
+        if (pl)
+            pl->kill();
+    },1);
+}
+
 //fix Wine Stop
 extern bool isWine();
 TClasslessInstanceHook(void, "?leaveGameSync@ServerInstance@@QEAAXXZ")
@@ -237,3 +251,4 @@ TClasslessInstanceHook(void, "?leaveGameSync@ServerInstance@@QEAAXXZ")
         TerminateProcess(proc, 0);
     }
 }
+

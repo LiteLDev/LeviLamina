@@ -18,16 +18,14 @@ class NetherFortressStart : public StructureStart {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERFORTRESSSTART
 public:
-    class NetherFortressStart& operator=(class NetherFortressStart const&) = delete;
-    NetherFortressStart(class NetherFortressStart const&) = delete;
+    class NetherFortressStart& operator=(class NetherFortressStart const &) = delete;
+    NetherFortressStart(class NetherFortressStart const &) = delete;
     NetherFortressStart() = delete;
 #endif
 
 public:
     /*0*/ virtual ~NetherFortressStart();
-    /*2*/ virtual bool isValid() const;
-    /*3*/ virtual enum StructureFeatureType getType() const;
-    MCAPI NetherFortressStart(class Random&, short, int, int);
+    MCAPI NetherFortressStart(class Random &, short, int, int);
 
 protected:
 

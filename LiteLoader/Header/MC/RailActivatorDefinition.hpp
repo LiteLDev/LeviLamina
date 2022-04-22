@@ -18,13 +18,13 @@ class RailActivatorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAILACTIVATORDEFINITION
 public:
-    class RailActivatorDefinition& operator=(class RailActivatorDefinition const&) = delete;
-    RailActivatorDefinition(class RailActivatorDefinition const&) = delete;
+    class RailActivatorDefinition& operator=(class RailActivatorDefinition const &) = delete;
+    RailActivatorDefinition(class RailActivatorDefinition const &) = delete;
     RailActivatorDefinition() = delete;
 #endif
 
 public:
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RailActivatorDefinition> >&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RailActivatorDefinition>> &);
 
 protected:
 

@@ -17,8 +17,8 @@ class TradeInterestGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADEINTERESTGOAL
 public:
-    class TradeInterestGoal& operator=(class TradeInterestGoal const&) = delete;
-    TradeInterestGoal(class TradeInterestGoal const&) = delete;
+    class TradeInterestGoal& operator=(class TradeInterestGoal const &) = delete;
+    TradeInterestGoal(class TradeInterestGoal const &) = delete;
     TradeInterestGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
 
 protected:
 

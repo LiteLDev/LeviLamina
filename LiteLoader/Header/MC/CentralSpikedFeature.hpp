@@ -18,16 +18,16 @@ class CentralSpikedFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CENTRALSPIKEDFEATURE
 public:
-    class CentralSpikedFeature& operator=(class CentralSpikedFeature const&) = delete;
-    CentralSpikedFeature(class CentralSpikedFeature const&) = delete;
+    class CentralSpikedFeature& operator=(class CentralSpikedFeature const &) = delete;
+    CentralSpikedFeature(class CentralSpikedFeature const &) = delete;
     CentralSpikedFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~CentralSpikedFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-    MCAPI CentralSpikedFeature(class Block const&);
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+    MCAPI CentralSpikedFeature(class Block const &);
 
 protected:
 

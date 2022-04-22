@@ -17,19 +17,19 @@ class FreezingComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FREEZINGCOMPONENT
 public:
-    class FreezingComponent& operator=(class FreezingComponent const&) = delete;
-    FreezingComponent(class FreezingComponent const&) = delete;
+    class FreezingComponent& operator=(class FreezingComponent const &) = delete;
+    FreezingComponent(class FreezingComponent const &) = delete;
     FreezingComponent() = delete;
 #endif
 
 public:
-    MCAPI void addAdditionalSaveData(class CompoundTag&);
+    MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI void decreaseFreezingEffect();
     MCAPI float getFreezingEffectStrength() const;
     MCAPI void increaseFreezingEffect();
     MCAPI bool isFullyFrozen() const;
     MCAPI bool isFullyUnfrozen() const;
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void resetFreezingEffect();
 
 protected:

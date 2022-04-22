@@ -17,14 +17,14 @@ class StringByteOutput {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRINGBYTEOUTPUT
 public:
-    class StringByteOutput& operator=(class StringByteOutput const&) = delete;
-    StringByteOutput(class StringByteOutput const&) = delete;
+    class StringByteOutput& operator=(class StringByteOutput const &) = delete;
+    StringByteOutput(class StringByteOutput const &) = delete;
     StringByteOutput() = delete;
 #endif
 
 public:
     /*0*/ virtual ~StringByteOutput();
-    /*9*/ virtual void writeBytes(void const*, unsigned __int64);
+    /*9*/ virtual void writeBytes(void const *, unsigned __int64);
     /*
     inline  ~StringByteOutput(){
          (StringByteOutput::*rv)();

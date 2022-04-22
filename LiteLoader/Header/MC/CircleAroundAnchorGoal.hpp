@@ -17,8 +17,8 @@ class CircleAroundAnchorGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CIRCLEAROUNDANCHORGOAL
 public:
-    class CircleAroundAnchorGoal& operator=(class CircleAroundAnchorGoal const&) = delete;
-    CircleAroundAnchorGoal(class CircleAroundAnchorGoal const&) = delete;
+    class CircleAroundAnchorGoal& operator=(class CircleAroundAnchorGoal const &) = delete;
+    CircleAroundAnchorGoal(class CircleAroundAnchorGoal const &) = delete;
     CircleAroundAnchorGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI CircleAroundAnchorGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI CircleAroundAnchorGoal(class Mob &);
 
 protected:
 

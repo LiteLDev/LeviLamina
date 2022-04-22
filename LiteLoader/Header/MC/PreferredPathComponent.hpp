@@ -17,14 +17,14 @@ class PreferredPathComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PREFERREDPATHCOMPONENT
 public:
-    class PreferredPathComponent& operator=(class PreferredPathComponent const&) = delete;
-    PreferredPathComponent(class PreferredPathComponent const&) = delete;
+    class PreferredPathComponent& operator=(class PreferredPathComponent const &) = delete;
+    PreferredPathComponent(class PreferredPathComponent const &) = delete;
     PreferredPathComponent() = delete;
 #endif
 
 public:
-    MCAPI struct PreferredPathDescription const& getPreferredPath(class Actor&);
-    MCAPI void initFromDefinition(class Actor&);
+    MCAPI struct PreferredPathDescription const & getPreferredPath(class Actor &);
+    MCAPI void initFromDefinition(class Actor &);
 
 protected:
 

@@ -18,8 +18,8 @@ class LootItemFunctions {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMFUNCTIONS
 public:
-    class LootItemFunctions& operator=(class LootItemFunctions const&) = delete;
-    LootItemFunctions(class LootItemFunctions const&) = delete;
+    class LootItemFunctions& operator=(class LootItemFunctions const &) = delete;
+    LootItemFunctions(class LootItemFunctions const &) = delete;
     LootItemFunctions() = delete;
 #endif
 

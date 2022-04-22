@@ -17,13 +17,13 @@ class ScriptEffects {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTEFFECTS
 public:
-    class ScriptEffects& operator=(class ScriptEffects const&) = delete;
-    ScriptEffects(class ScriptEffects const&) = delete;
+    class ScriptEffects& operator=(class ScriptEffects const &) = delete;
+    ScriptEffects(class ScriptEffects const &) = delete;
 #endif
 
 public:
     MCAPI ScriptEffects();
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptEffectType> get(class Scripting::WeakLifetimeScope&, std::string const&);
+    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptEffectType> get(class Scripting::WeakLifetimeScope &, std::string const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptEffects> bind(struct Scripting::Version);
 
 protected:

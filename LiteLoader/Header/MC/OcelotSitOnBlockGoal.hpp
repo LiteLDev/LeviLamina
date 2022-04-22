@@ -18,8 +18,8 @@ class OcelotSitOnBlockGoal : public BaseMoveToBlockGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCELOTSITONBLOCKGOAL
 public:
-    class OcelotSitOnBlockGoal& operator=(class OcelotSitOnBlockGoal const&) = delete;
-    OcelotSitOnBlockGoal(class OcelotSitOnBlockGoal const&) = delete;
+    class OcelotSitOnBlockGoal& operator=(class OcelotSitOnBlockGoal const &) = delete;
+    OcelotSitOnBlockGoal(class OcelotSitOnBlockGoal const &) = delete;
     OcelotSitOnBlockGoal() = delete;
 #endif
 
@@ -30,12 +30,12 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*11*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
-    /*13*/ virtual bool _canReach(class BlockPos const&);
-    MCAPI OcelotSitOnBlockGoal(class Mob&, float);
+    /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
+    /*13*/ virtual bool _canReach(class BlockPos const &);
+    MCAPI OcelotSitOnBlockGoal(class Mob &, float);
 
 protected:
 

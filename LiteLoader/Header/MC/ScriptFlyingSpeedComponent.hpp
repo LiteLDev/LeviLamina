@@ -18,15 +18,13 @@ class ScriptFlyingSpeedComponent : public ScriptActorComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTFLYINGSPEEDCOMPONENT
 public:
-    class ScriptFlyingSpeedComponent& operator=(class ScriptFlyingSpeedComponent const&) = delete;
-    ScriptFlyingSpeedComponent(class ScriptFlyingSpeedComponent const&) = delete;
+    class ScriptFlyingSpeedComponent& operator=(class ScriptFlyingSpeedComponent const &) = delete;
+    ScriptFlyingSpeedComponent(class ScriptFlyingSpeedComponent const &) = delete;
     ScriptFlyingSpeedComponent() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScriptFlyingSpeedComponent();
-    /*4*/ virtual class Scripting::Result<float> getValue() const;
-    /*5*/ virtual class Scripting::Result<void> setValue(float const&) const;
     /*
     inline  ~ScriptFlyingSpeedComponent(){
          (ScriptFlyingSpeedComponent::*rv)();
@@ -34,7 +32,6 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptFlyingSpeedComponent> bind(struct Scripting::Version);
 
 protected:
 

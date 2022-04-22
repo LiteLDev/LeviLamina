@@ -17,23 +17,23 @@ class FileAccessTransforms {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILEACCESSTRANSFORMS
 public:
-    class FileAccessTransforms& operator=(class FileAccessTransforms const&) = delete;
-    FileAccessTransforms(class FileAccessTransforms const&) = delete;
+    class FileAccessTransforms& operator=(class FileAccessTransforms const &) = delete;
+    FileAccessTransforms(class FileAccessTransforms const &) = delete;
     FileAccessTransforms() = delete;
 #endif
 
 public:
     /*0*/ virtual ~FileAccessTransforms();
     /*
-    inline bool writeTransform(std::vector<unsigned char>& a0) const{
-        bool (FileAccessTransforms::*rv)(std::vector<unsigned char>&) const;
+    inline bool writeTransform(std::vector<unsigned char> & a0) const{
+        bool (FileAccessTransforms::*rv)(std::vector<unsigned char> &) const;
         *((void**)&rv) = dlsym("?writeTransform@FileAccessTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z");
-        return (this->*rv)(std::forward<std::vector<unsigned char>&>(a0));
+        return (this->*rv)(std::forward<std::vector<unsigned char> &>(a0));
     }
-    inline bool readTransform(std::vector<unsigned char>& a0) const{
-        bool (FileAccessTransforms::*rv)(std::vector<unsigned char>&) const;
+    inline bool readTransform(std::vector<unsigned char> & a0) const{
+        bool (FileAccessTransforms::*rv)(std::vector<unsigned char> &) const;
         *((void**)&rv) = dlsym("?readTransform@FileAccessTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z");
-        return (this->*rv)(std::forward<std::vector<unsigned char>&>(a0));
+        return (this->*rv)(std::forward<std::vector<unsigned char> &>(a0));
     }
     */
 

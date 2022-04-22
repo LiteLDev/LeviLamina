@@ -17,8 +17,8 @@ class ColorChannel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COLORCHANNEL
 public:
-    class ColorChannel& operator=(class ColorChannel const&) = delete;
-    ColorChannel(class ColorChannel const&) = delete;
+    class ColorChannel& operator=(class ColorChannel const &) = delete;
+    ColorChannel(class ColorChannel const &) = delete;
     ColorChannel() = delete;
 #endif
 

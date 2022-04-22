@@ -17,8 +17,8 @@ class CommandWildcardInt {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDWILDCARDINT
 public:
-    class CommandWildcardInt& operator=(class CommandWildcardInt const&) = delete;
-    CommandWildcardInt(class CommandWildcardInt const&) = delete;
+    class CommandWildcardInt& operator=(class CommandWildcardInt const &) = delete;
+    CommandWildcardInt(class CommandWildcardInt const &) = delete;
 #endif
 
 public:

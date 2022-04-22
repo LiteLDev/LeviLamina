@@ -18,14 +18,14 @@ struct ClimateParameters {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIMATEPARAMETERS
 public:
-    struct ClimateParameters& operator=(struct ClimateParameters const&) = delete;
-    ClimateParameters(struct ClimateParameters const&) = delete;
+    struct ClimateParameters& operator=(struct ClimateParameters const &) = delete;
+    ClimateParameters(struct ClimateParameters const &) = delete;
     ClimateParameters() = delete;
 #endif
 
 public:
     MCAPI ClimateParameters(struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, float);
-    MCAPI __int64 fitness(struct TargetPoint const&) const;
+    MCAPI __int64 fitness(struct TargetPoint const &) const;
 
 protected:
 

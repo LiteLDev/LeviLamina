@@ -18,14 +18,14 @@ class ScriptPluginManager {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLUGINMANAGER
 public:
-    class ScriptPluginManager& operator=(class ScriptPluginManager const&) = delete;
-    ScriptPluginManager(class ScriptPluginManager const&) = delete;
+    class ScriptPluginManager& operator=(class ScriptPluginManager const &) = delete;
+    ScriptPluginManager(class ScriptPluginManager const &) = delete;
     ScriptPluginManager() = delete;
 #endif
 
 public:
-    MCAPI ScriptPluginManager(class Scripting::ScriptEngine&, class Scripting::IPrinter*);
-    MCAPI class ScriptPluginManagerResult discoverPlugins(enum ResourceInformation::ResourceType, struct PluginDefStack const&);
+    MCAPI ScriptPluginManager(class Scripting::ScriptEngine &, class Scripting::IPrinter *);
+    MCAPI class ScriptPluginManagerResult discoverPlugins(enum ResourceInformation::ResourceType, class IScriptPluginSourceEnumerator const &);
     MCAPI void releasePlugins();
     MCAPI class ScriptPluginManagerResult runAll();
     MCAPI ~ScriptPluginManager();
@@ -33,6 +33,7 @@ public:
 protected:
 
 private:
-    MCAPI void _reportContextResults(struct Scripting::ScriptContextResult const&, class ScriptPluginResult&);
+    MCAPI std::vector<struct Scripting::ModuleDescriptor> _generateModuleDependencies(std::vector<struct PackIdVersion> const &, std::vector<struct PackIdVersion> const &) const;
+    MCAPI void _reportContextResults(struct Scripting::ScriptContextResult const &, class ScriptPluginResult &);
 
 };

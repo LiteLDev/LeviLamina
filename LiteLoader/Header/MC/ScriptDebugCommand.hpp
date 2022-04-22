@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class ScriptDebugCommand {
+class ScriptDebugCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,21 +18,18 @@ class ScriptDebugCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTDEBUGCOMMAND
 public:
-    class ScriptDebugCommand& operator=(class ScriptDebugCommand const&) = delete;
-    ScriptDebugCommand(class ScriptDebugCommand const&) = delete;
-    ScriptDebugCommand() = delete;
+    class ScriptDebugCommand& operator=(class ScriptDebugCommand const &) = delete;
+    ScriptDebugCommand(class ScriptDebugCommand const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScriptDebugCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&, class IScriptDebugger*, class std::optional<struct ScriptSettings> const&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const = 0;
+    MCAPI ScriptDebugCommand();
 
 protected:
+    MCAPI void _handleDebuggerAttach(class IScriptDebugger *, std::string const &, enum ScriptDebugCommand::DebuggerAction, std::string const &, unsigned short, class CommandOutput &) const;
 
 private:
-    MCAPI void _handleDebugger(class CommandOutput&) const;
-    MCAPI static class std::optional<unsigned short> sForcedPort;
-    MCAPI static class IScriptDebugger* sScriptDebugger;
 
 };

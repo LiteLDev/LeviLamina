@@ -18,16 +18,14 @@ class ScatteredFeatureStart : public StructureStart {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCATTEREDFEATURESTART
 public:
-    class ScatteredFeatureStart& operator=(class ScatteredFeatureStart const&) = delete;
-    ScatteredFeatureStart(class ScatteredFeatureStart const&) = delete;
+    class ScatteredFeatureStart& operator=(class ScatteredFeatureStart const &) = delete;
+    ScatteredFeatureStart(class ScatteredFeatureStart const &) = delete;
     ScatteredFeatureStart() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScatteredFeatureStart();
-    /*2*/ virtual bool isValid() const;
-    /*3*/ virtual enum StructureFeatureType getType() const;
-    MCAPI ScatteredFeatureStart(class BiomeSource const&, short, int, int, class IPreliminarySurfaceProvider const&, class BaseGameVersion const&);
+    MCAPI ScatteredFeatureStart(class BiomeSource const &, short, int, int, class IPreliminarySurfaceProvider const &);
 
 protected:
 

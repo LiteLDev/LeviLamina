@@ -19,6 +19,6 @@ struct ISharedController {
 };
 
 #undef AFTER_EXTRA
-    MCAPI std::unique_ptr<struct PlayerCapabilities::ISharedController> createController(class Level const&);
+    MCAPI std::unique_ptr<struct PlayerCapabilities::ISharedController> createController(class Level const &);
 
 };

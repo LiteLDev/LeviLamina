@@ -14,6 +14,6 @@ namespace ScriptHandleTrackerUtils {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void removeAllTrackedHandles(class Scripting::WeakLifetimeScope const&);
+    MCAPI void removeAllTrackedHandles(class Scripting::WeakLifetimeScope const &);
 
 };

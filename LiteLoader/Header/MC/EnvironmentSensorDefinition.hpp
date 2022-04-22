@@ -18,14 +18,14 @@ class EnvironmentSensorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENVIRONMENTSENSORDEFINITION
 public:
-    class EnvironmentSensorDefinition& operator=(class EnvironmentSensorDefinition const&) = delete;
-    EnvironmentSensorDefinition(class EnvironmentSensorDefinition const&) = delete;
+    class EnvironmentSensorDefinition& operator=(class EnvironmentSensorDefinition const &) = delete;
+    EnvironmentSensorDefinition(class EnvironmentSensorDefinition const &) = delete;
     EnvironmentSensorDefinition() = delete;
 #endif
 
 public:
-    MCAPI void addEnvironmentTrigger(class DefinitionTrigger const&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EnvironmentSensorDefinition> >&);
+    MCAPI void addEnvironmentTrigger(class DefinitionTrigger const &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EnvironmentSensorDefinition>> &);
 
 protected:
 

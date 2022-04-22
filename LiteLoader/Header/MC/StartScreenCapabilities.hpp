@@ -17,8 +17,8 @@ struct StartScreenCapabilities {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STARTSCREENCAPABILITIES
 public:
-    struct StartScreenCapabilities& operator=(struct StartScreenCapabilities const&) = delete;
-    StartScreenCapabilities(struct StartScreenCapabilities const&) = delete;
+    struct StartScreenCapabilities& operator=(struct StartScreenCapabilities const &) = delete;
+    StartScreenCapabilities(struct StartScreenCapabilities const &) = delete;
     StartScreenCapabilities() = delete;
 #endif
 

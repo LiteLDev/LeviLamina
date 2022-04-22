@@ -18,15 +18,15 @@ public:
 #undef AFTER_EXTRA
 
 public:
-    MCAPI ScoreboardId(struct ScoreboardId const&);
+    MCAPI ScoreboardId(struct ScoreboardId const &);
     MCAPI ScoreboardId();
     MCAPI ScoreboardId(__int64);
     MCAPI unsigned __int64 getHash() const;
-    MCAPI class IdentityDefinition const& getIdentityDef() const;
+    MCAPI class IdentityDefinition const & getIdentityDef() const;
     MCAPI bool isValid() const;
-    MCAPI bool operator!=(struct ScoreboardId const&) const;
-    MCAPI struct ScoreboardId& operator=(struct ScoreboardId const&);
-    MCAPI bool operator==(struct ScoreboardId const&) const;
+    MCAPI bool operator!=(struct ScoreboardId const &) const;
+    MCAPI struct ScoreboardId & operator=(struct ScoreboardId const &);
+    MCAPI bool operator==(struct ScoreboardId const &) const;
 
 protected:
 

@@ -17,8 +17,8 @@ class FollowOwnerGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOLLOWOWNERGOAL
 public:
-    class FollowOwnerGoal& operator=(class FollowOwnerGoal const&) = delete;
-    FollowOwnerGoal(class FollowOwnerGoal const&) = delete;
+    class FollowOwnerGoal& operator=(class FollowOwnerGoal const &) = delete;
+    FollowOwnerGoal(class FollowOwnerGoal const &) = delete;
     FollowOwnerGoal() = delete;
 #endif
 
@@ -30,10 +30,10 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
-    /*9*/ virtual void onPlayerDimensionChanged(class Player*, class AutomaticID<class Dimension, int>);
-    MCAPI FollowOwnerGoal(class Mob&, float, float, float);
+    /*9*/ virtual void onPlayerDimensionChanged(class Player *, class AutomaticID<class Dimension, int>);
+    MCAPI FollowOwnerGoal(class Mob &, float, float, float, bool, bool, float);
 
 protected:
 

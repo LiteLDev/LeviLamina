@@ -18,8 +18,8 @@ class RotateState : public PetSleepWithOwnerState {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ROTATESTATE
 public:
-    class RotateState& operator=(class RotateState const&) = delete;
-    RotateState(class RotateState const&) = delete;
+    class RotateState& operator=(class RotateState const &) = delete;
+    RotateState(class RotateState const &) = delete;
     RotateState() = delete;
 #endif
 

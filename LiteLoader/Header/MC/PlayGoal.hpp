@@ -17,8 +17,8 @@ class PlayGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYGOAL
 public:
-    class PlayGoal& operator=(class PlayGoal const&) = delete;
-    PlayGoal(class PlayGoal const&) = delete;
+    class PlayGoal& operator=(class PlayGoal const &) = delete;
+    PlayGoal(class PlayGoal const &) = delete;
     PlayGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI PlayGoal(class Villager&, float);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI PlayGoal(class Villager &, float);
 
 protected:
 

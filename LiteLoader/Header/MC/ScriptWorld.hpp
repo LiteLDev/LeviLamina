@@ -17,15 +17,20 @@ class ScriptWorld {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTWORLD
 public:
-    class ScriptWorld& operator=(class ScriptWorld const&) = delete;
-    ScriptWorld(class ScriptWorld const&) = delete;
+    class ScriptWorld& operator=(class ScriptWorld const &) = delete;
+    ScriptWorld(class ScriptWorld const &) = delete;
     ScriptWorld() = delete;
 #endif
 
 public:
-    MCAPI void broadcastClientMessage(std::string const&, std::string const&);
-    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptDimension> > getDimension(std::string const&);
-    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptActorIterator> > getPlayers(class std::optional<struct ScriptActorQueryOptions>) const;
+    MCAPI void _playOrQueueMusic(std::string const &, class std::optional<struct ScriptMusicOptions>, enum LevelEvent);
+    MCAPI void broadcastClientMessage(std::string const &, std::string const &);
+    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptDimension>> getDimension(std::string const &);
+    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptPlayerIterator>> getPlayers(class std::optional<struct ScriptActorQueryOptions>) const;
+    MCAPI void playMusic(std::string const &, class std::optional<struct ScriptMusicOptions>);
+    MCAPI void playSound(std::string const &, class std::optional<struct ScriptSoundOptions>);
+    MCAPI void queueMusic(std::string const &, class std::optional<struct ScriptMusicOptions>);
+    MCAPI void stopMusic();
     MCAPI ~ScriptWorld();
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptWorld> bind(struct Scripting::Version);
 

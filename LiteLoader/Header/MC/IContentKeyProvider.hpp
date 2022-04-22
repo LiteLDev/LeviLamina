@@ -17,8 +17,8 @@ class IContentKeyProvider {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICONTENTKEYPROVIDER
 public:
-    class IContentKeyProvider& operator=(class IContentKeyProvider const&) = delete;
-    IContentKeyProvider(class IContentKeyProvider const&) = delete;
+    class IContentKeyProvider& operator=(class IContentKeyProvider const &) = delete;
+    IContentKeyProvider(class IContentKeyProvider const &) = delete;
     IContentKeyProvider() = delete;
 #endif
 
@@ -30,10 +30,10 @@ public:
         *((void**)&rv) = dlsym("?requireEncryptedReads@IContentKeyProvider@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline std::string getAlternateContentKey(class ContentIdentity const& a0) const{
-        std::string (IContentKeyProvider::*rv)(class ContentIdentity const&) const;
+    inline std::string getAlternateContentKey(class ContentIdentity const & a0) const{
+        std::string (IContentKeyProvider::*rv)(class ContentIdentity const &) const;
         *((void**)&rv) = dlsym("?getAlternateContentKey@IContentKeyProvider@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVContentIdentity@@@Z");
-        return (this->*rv)(std::forward<class ContentIdentity const&>(a0));
+        return (this->*rv)(std::forward<class ContentIdentity const &>(a0));
     }
     */
 

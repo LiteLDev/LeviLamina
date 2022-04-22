@@ -17,7 +17,7 @@ class CreativeGroupInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CREATIVEGROUPINFO
 public:
-    class CreativeGroupInfo& operator=(class CreativeGroupInfo const&) = delete;
+    class CreativeGroupInfo& operator=(class CreativeGroupInfo const &) = delete;
     CreativeGroupInfo() = delete;
 #endif
 
@@ -30,9 +30,9 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI CreativeGroupInfo(class CreativeGroupInfo const&);
-    MCAPI CreativeGroupInfo(class CreativeItemRegistry*, enum CreativeItemCategory, class HashedString const&, unsigned int, class ItemInstance const&);
-    MCAPI void addCreativeItem(class CreativeItemEntry*);
+    MCAPI CreativeGroupInfo(class CreativeGroupInfo const &);
+    MCAPI CreativeGroupInfo(class CreativeItemRegistry *, enum CreativeItemCategory, class HashedString const &, unsigned int, class ItemInstance const &);
+    MCAPI void addCreativeItem(class CreativeItemEntry *);
     MCAPI class ItemInstance const getIcon() const;
     MCAPI unsigned int getIndex() const;
     MCAPI std::string const getName() const;

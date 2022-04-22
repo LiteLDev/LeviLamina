@@ -18,8 +18,8 @@ class HarvestFarmBlockGoal : public BaseMoveToBlockGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HARVESTFARMBLOCKGOAL
 public:
-    class HarvestFarmBlockGoal& operator=(class HarvestFarmBlockGoal const&) = delete;
-    HarvestFarmBlockGoal(class HarvestFarmBlockGoal const&) = delete;
+    class HarvestFarmBlockGoal& operator=(class HarvestFarmBlockGoal const &) = delete;
+    HarvestFarmBlockGoal(class HarvestFarmBlockGoal const &) = delete;
     HarvestFarmBlockGoal() = delete;
 #endif
 
@@ -31,14 +31,14 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*11*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
-    MCAPI HarvestFarmBlockGoal(class Mob&);
+    /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
+    MCAPI HarvestFarmBlockGoal(class Mob &);
 
 protected:
-    MCAPI bool trySowCrop(class BlockSource&, class BlockPos const&);
+    MCAPI bool trySowCrop(class BlockSource &, class BlockPos const &);
 
 private:
 

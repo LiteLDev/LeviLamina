@@ -17,28 +17,28 @@ class LegacyStructureSettings {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYSTRUCTURESETTINGS
 public:
-    class LegacyStructureSettings& operator=(class LegacyStructureSettings const&) = delete;
+    class LegacyStructureSettings& operator=(class LegacyStructureSettings const &) = delete;
 #endif
 
 public:
-    MCAPI LegacyStructureSettings(class LegacyStructureSettings const&);
-    MCAPI LegacyStructureSettings(enum Mirror, enum Rotation, class Block const*, class BoundingBox const&);
+    MCAPI LegacyStructureSettings(class LegacyStructureSettings const &);
+    MCAPI LegacyStructureSettings(enum Mirror, enum Rotation, class Block const *, class BoundingBox const &);
     MCAPI LegacyStructureSettings();
     MCAPI void addSwapAuxValue(int, int);
-    MCAPI class BoundingBox const& getBoundingBox();
-    MCAPI enum Mirror const& getMirror() const;
-    MCAPI class BlockPos const& getRefPos() const;
-    MCAPI enum Rotation const& getRotation() const;
-    MCAPI class Block const& getSwappedBlock(class BlockPalette const&, class Block const&) const;
+    MCAPI class BoundingBox const & getBoundingBox();
+    MCAPI enum Mirror const & getMirror() const;
+    MCAPI class BlockPos const & getRefPos() const;
+    MCAPI enum Rotation const & getRotation() const;
+    MCAPI class Block const & getSwappedBlock(class BlockPalette const &, class Block const &) const;
     MCAPI void placeWaterBelowSeaLevel(bool);
-    MCAPI void setBlockRules(std::vector<std::unique_ptr<class StructurePoolBlockRule>> const*);
-    MCAPI void setBlockTagRules(std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const*);
-    MCAPI void setBoundingBox(class BoundingBox const&);
-    MCAPI void setIgnoreBlock(class Block const*);
+    MCAPI void setBlockRules(std::vector<std::unique_ptr<class StructurePoolBlockRule>> const *);
+    MCAPI void setBlockTagRules(std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const *);
+    MCAPI void setBoundingBox(class BoundingBox const &);
+    MCAPI void setIgnoreBlock(class Block const *);
     MCAPI void setIntegrity(float);
     MCAPI void setMirror(enum Mirror);
     MCAPI void setProjection(enum Projection);
-    MCAPI void setRefPos(class BlockPos const&);
+    MCAPI void setRefPos(class BlockPos const &);
     MCAPI void setRotation(enum Rotation);
     MCAPI void setSeed(unsigned int);
     MCAPI void updateBoundingBoxFromChunkPos();

@@ -17,15 +17,15 @@ struct BlockMaterialInstancesComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKMATERIALINSTANCESCOMPONENT
 public:
-    struct BlockMaterialInstancesComponent& operator=(struct BlockMaterialInstancesComponent const&) = delete;
-    BlockMaterialInstancesComponent(struct BlockMaterialInstancesComponent const&) = delete;
+    struct BlockMaterialInstancesComponent& operator=(struct BlockMaterialInstancesComponent const &) = delete;
+    BlockMaterialInstancesComponent(struct BlockMaterialInstancesComponent const &) = delete;
     BlockMaterialInstancesComponent() = delete;
 #endif
 
 public:
-    MCAPI BlockMaterialInstancesComponent(struct BlockMaterialInstancesComponent&&);
+    MCAPI BlockMaterialInstancesComponent(struct BlockMaterialInstancesComponent &&);
     MCAPI enum BlockRenderLayer getRenderLayer() const;
-    MCAPI struct BlockMaterialInstancesComponent& operator=(struct BlockMaterialInstancesComponent&&);
+    MCAPI struct BlockMaterialInstancesComponent & operator=(struct BlockMaterialInstancesComponent &&);
     MCAPI ~BlockMaterialInstancesComponent();
 
 protected:

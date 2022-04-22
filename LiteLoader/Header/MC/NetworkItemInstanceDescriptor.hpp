@@ -17,17 +17,17 @@ class NetworkItemInstanceDescriptor {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKITEMINSTANCEDESCRIPTOR
 public:
-    class NetworkItemInstanceDescriptor& operator=(class NetworkItemInstanceDescriptor const&) = delete;
-    NetworkItemInstanceDescriptor(class NetworkItemInstanceDescriptor const&) = delete;
+    class NetworkItemInstanceDescriptor& operator=(class NetworkItemInstanceDescriptor const &) = delete;
+    NetworkItemInstanceDescriptor(class NetworkItemInstanceDescriptor const &) = delete;
     NetworkItemInstanceDescriptor() = delete;
 #endif
 
 public:
-    MCAPI NetworkItemInstanceDescriptor(class ItemInstance const&);
-    MCAPI NetworkItemInstanceDescriptor(class ItemStackDescriptor const&);
-    MCAPI class ItemInstance getItemInstance(class BlockPalette const&) const;
-    MCAPI void read(class ReadOnlyBinaryStream&);
-    MCAPI void write(class BinaryStream&) const;
+    MCAPI NetworkItemInstanceDescriptor(class ItemInstance const &);
+    MCAPI NetworkItemInstanceDescriptor(class ItemStackDescriptor const &);
+    MCAPI class ItemInstance getItemInstance(class BlockPalette const &) const;
+    MCAPI void read(class ReadOnlyBinaryStream &);
+    MCAPI void write(class BinaryStream &) const;
     MCAPI ~NetworkItemInstanceDescriptor();
 
 protected:

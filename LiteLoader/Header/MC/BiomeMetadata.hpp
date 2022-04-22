@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct BiomeMetadata {
+class BiomeMetadata {
 
 #define AFTER_EXTRA
 
@@ -15,8 +15,8 @@ struct BiomeMetadata {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMEMETADATA
 public:
-    struct BiomeMetadata& operator=(struct BiomeMetadata const&) = delete;
-    BiomeMetadata(struct BiomeMetadata const&) = delete;
+    class BiomeMetadata& operator=(class BiomeMetadata const &) = delete;
+    BiomeMetadata(class BiomeMetadata const &) = delete;
     BiomeMetadata() = delete;
 #endif
 

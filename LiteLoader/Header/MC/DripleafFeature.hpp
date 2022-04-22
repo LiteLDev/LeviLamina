@@ -18,19 +18,19 @@ class DripleafFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRIPLEAFFEATURE
 public:
-    class DripleafFeature& operator=(class DripleafFeature const&) = delete;
-    DripleafFeature(class DripleafFeature const&) = delete;
+    class DripleafFeature& operator=(class DripleafFeature const &) = delete;
+    DripleafFeature(class DripleafFeature const &) = delete;
     DripleafFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~DripleafFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 protected:
 
 private:
-    MCAPI static bool _placeBigDripleaf(class BlockSource&, class BlockPos const&, class Random&);
+    MCAPI static bool _placeBigDripleaf(class BlockSource &, class BlockPos const &, class Random &);
 
 };

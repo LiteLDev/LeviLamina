@@ -19,14 +19,14 @@ class MoveDefinition : public BehaviorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEDEFINITION
 public:
-    class MoveDefinition& operator=(class MoveDefinition const&) = delete;
-    MoveDefinition(class MoveDefinition const&) = delete;
+    class MoveDefinition& operator=(class MoveDefinition const &) = delete;
+    MoveDefinition(class MoveDefinition const &) = delete;
     MoveDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~MoveDefinition();
-    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
     /*
     inline  ~MoveDefinition(){
          (MoveDefinition::*rv)();

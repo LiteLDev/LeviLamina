@@ -17,23 +17,23 @@ class TickWorldComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKWORLDCOMPONENT
 public:
-    class TickWorldComponent& operator=(class TickWorldComponent const&) = delete;
-    TickWorldComponent(class TickWorldComponent const&) = delete;
+    class TickWorldComponent& operator=(class TickWorldComponent const &) = delete;
+    TickWorldComponent(class TickWorldComponent const &) = delete;
 #endif
 
 public:
-    MCAPI TickWorldComponent(class TickWorldComponent&&);
+    MCAPI TickWorldComponent(class TickWorldComponent &&);
     MCAPI TickWorldComponent();
     MCAPI unsigned int getChunkRadius() const;
     MCAPI float getMaxDistToPlayers() const;
     MCAPI class std::shared_ptr<class ITickingArea> getTickingArea();
     MCAPI bool hasTickingArea() const;
-    MCAPI void initFromDefinition(class Actor&);
+    MCAPI void initFromDefinition(class Actor &);
     MCAPI bool isAlwaysActive() const;
-    MCAPI class TickWorldComponent& operator=(class TickWorldComponent&&);
+    MCAPI class TickWorldComponent & operator=(class TickWorldComponent &&);
     MCAPI void removeArea();
-    MCAPI void setTickingArea(class Actor&, class std::shared_ptr<class ITickingArea>);
-    MCAPI void updateArea(class Actor&);
+    MCAPI void setTickingArea(class Actor &, class std::shared_ptr<class ITickingArea>);
+    MCAPI void updateArea(class Actor &);
     MCAPI ~TickWorldComponent();
 
 protected:

@@ -17,13 +17,13 @@ struct ScriptActorAddEffectEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTACTORADDEFFECTEVENT
 public:
-    struct ScriptActorAddEffectEvent& operator=(struct ScriptActorAddEffectEvent const&) = delete;
-    ScriptActorAddEffectEvent(struct ScriptActorAddEffectEvent const&) = delete;
+    struct ScriptActorAddEffectEvent& operator=(struct ScriptActorAddEffectEvent const &) = delete;
+    ScriptActorAddEffectEvent(struct ScriptActorAddEffectEvent const &) = delete;
     ScriptActorAddEffectEvent() = delete;
 #endif
 
 public:
-    MCAPI ScriptActorAddEffectEvent(struct ActorAddEffectEvent const&, class Scripting::WeakTypedObjectHandle<class ScriptMobEffectInstance>, class Scripting::WeakLifetimeScope const&);
+    MCAPI ScriptActorAddEffectEvent(struct ActorAddEffectEvent const &, class Scripting::WeakTypedObjectHandle<class ScriptMobEffectInstance>, class Scripting::WeakLifetimeScope const &);
 
 protected:
 

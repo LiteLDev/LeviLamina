@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Json.hpp"
 #include "JsonUtil.hpp"
 
 #define BEFORE_EXTRA
@@ -19,17 +18,14 @@ class EquippableDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EQUIPPABLEDEFINITION
 public:
-    class EquippableDefinition& operator=(class EquippableDefinition const&) = delete;
-    EquippableDefinition(class EquippableDefinition const&) = delete;
+    class EquippableDefinition& operator=(class EquippableDefinition const &) = delete;
+    EquippableDefinition(class EquippableDefinition const &) = delete;
     EquippableDefinition() = delete;
 #endif
 
 public:
-    MCAPI void deserializeData(class Json::Value&, class SemVersion const&);
-    MCAPI void initialize(class EntityContext&, class EquippableComponent&);
-    MCAPI void serializeData(class Json::Value&) const;
-    MCAPI ~EquippableDefinition();
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EquippableDefinition> >&);
+    MCAPI void initialize(class EntityContext &, class EquippableComponent &);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EquippableDefinition>> &);
 
 protected:
 

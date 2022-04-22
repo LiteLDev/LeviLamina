@@ -18,8 +18,8 @@ class TextObjectText {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTOBJECTTEXT
 public:
-    class TextObjectText& operator=(class TextObjectText const&) = delete;
-    TextObjectText(class TextObjectText const&) = delete;
+    class TextObjectText& operator=(class TextObjectText const &) = delete;
+    TextObjectText(class TextObjectText const &) = delete;
     TextObjectText() = delete;
 #endif
 
@@ -33,14 +33,14 @@ public:
         *((void**)&rv) = dlsym("?asString@TextObjectText@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
         return (this->*rv)();
     }
-    inline class Json::Value resolve(struct ResolveData const& a0) const{
-        class Json::Value (TextObjectText::*rv)(struct ResolveData const&) const;
+    inline class Json::Value resolve(struct ResolveData const & a0) const{
+        class Json::Value (TextObjectText::*rv)(struct ResolveData const &) const;
         *((void**)&rv) = dlsym("?resolve@TextObjectText@@UEBA?AVValue@Json@@AEBUResolveData@@@Z");
-        return (this->*rv)(std::forward<struct ResolveData const&>(a0));
+        return (this->*rv)(std::forward<struct ResolveData const &>(a0));
     }
     */
     MCAPI TextObjectText(std::string);
-    MCAPI static class Json::Value asJsonValue(std::string const&);
+    MCAPI static class Json::Value asJsonValue(std::string const &);
 
 protected:
 

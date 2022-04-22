@@ -17,26 +17,29 @@ class MolangVariableMap {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGVARIABLEMAP
 public:
-    class MolangVariableMap& operator=(class MolangVariableMap const&) = delete;
-    MolangVariableMap(class MolangVariableMap const&) = delete;
     MolangVariableMap() = delete;
 #endif
 
 public:
-    MCAPI class MolangVariableMap& clear();
-    MCAPI struct MolangScriptArg const& getMolangVariable(unsigned __int64, char const*) const;
-    MCAPI void setMolangStructMember(class HashedString const&, class HashedString const&, struct MolangScriptArg const&);
-    MCAPI void setMolangVariable(class HashedString const&, struct MolangScriptArg const&);
-    MCAPI void setMolangVariable(enum MolangVariableIndex, struct MolangScriptArg const&);
-    MCAPI void setMolangVariable(unsigned __int64, char const*, struct MolangScriptArg const&);
-    MCAPI void setMolangVariableSettings(struct MolangVariableSettings const&);
+    MCAPI MolangVariableMap(class MolangVariableMap &&);
+    MCAPI MolangVariableMap(class MolangVariableMap const &);
+    MCAPI class MolangVariableMap & clear();
+    MCAPI struct MolangScriptArg const & getMolangVariable(unsigned __int64, char const *) const;
+    MCAPI std::vector<std::unique_ptr<class MolangVariable>> const & getVariables() const;
+    MCAPI class MolangVariableMap & operator=(class MolangVariableMap &&);
+    MCAPI class MolangVariableMap & operator=(class MolangVariableMap const &);
+    MCAPI void setMolangStructMember(class HashedString const &, class HashedString const &, struct MolangScriptArg const &);
+    MCAPI void setMolangVariable(class HashedString const &, struct MolangScriptArg const &);
+    MCAPI void setMolangVariable(enum MolangVariableIndex, struct MolangScriptArg const &);
+    MCAPI void setMolangVariable(unsigned __int64, char const *, struct MolangScriptArg const &);
+    MCAPI void setMolangVariableSettings(struct MolangVariableSettings const &);
     MCAPI ~MolangVariableMap();
 
 protected:
 
 private:
-    MCAPI class MolangVariable const* _getMolangVariable(enum MolangVariableIndex) const;
-    MCAPI class MolangVariable* _getOrAddMolangVariable(unsigned __int64 const&, char const*, bool);
-    MCAPI class MolangVariable* _getOrAddMolangVariable(enum MolangVariableIndex);
+    MCAPI class MolangVariable const * _getMolangVariable(enum MolangVariableIndex) const;
+    MCAPI class MolangVariable * _getOrAddMolangVariable(unsigned __int64 const &, char const *, bool);
+    MCAPI class MolangVariable * _getOrAddMolangVariable(enum MolangVariableIndex);
 
 };

@@ -15,8 +15,8 @@ class PieceWeight {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PIECEWEIGHT
 public:
-    class PieceWeight& operator=(class PieceWeight const&) = delete;
-    PieceWeight(class PieceWeight const&) = delete;
+    class PieceWeight& operator=(class PieceWeight const &) = delete;
+    PieceWeight(class PieceWeight const &) = delete;
     PieceWeight() = delete;
 #endif
 

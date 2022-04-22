@@ -17,8 +17,8 @@ class EduAppConfigs {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUAPPCONFIGS
 public:
-    class EduAppConfigs& operator=(class EduAppConfigs const&) = delete;
-    EduAppConfigs(class EduAppConfigs const&) = delete;
+    class EduAppConfigs& operator=(class EduAppConfigs const &) = delete;
+    EduAppConfigs(class EduAppConfigs const &) = delete;
     EduAppConfigs() = delete;
 #endif
 

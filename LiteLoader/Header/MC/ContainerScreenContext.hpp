@@ -17,18 +17,18 @@ class ContainerScreenContext {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERSCREENCONTEXT
 public:
-    class ContainerScreenContext& operator=(class ContainerScreenContext const&) = delete;
-    ContainerScreenContext(class ContainerScreenContext const&) = delete;
+    class ContainerScreenContext& operator=(class ContainerScreenContext const &) = delete;
+    ContainerScreenContext(class ContainerScreenContext const &) = delete;
 #endif
 
 public:
-    MCAPI ContainerScreenContext(class Player&, enum ContainerType, struct ActorUniqueID const&);
-    MCAPI ContainerScreenContext(class Player&, enum ContainerType, class BlockPos const&);
+    MCAPI ContainerScreenContext(class Player &, enum ContainerType, struct ActorUniqueID const &);
+    MCAPI ContainerScreenContext(class Player &, enum ContainerType, class BlockPos const &);
     MCAPI ContainerScreenContext();
-    MCAPI class Player& getPlayer() const;
+    MCAPI class Player & getPlayer() const;
     MCAPI enum ContainerType getScreenContainerType() const;
-    MCAPI class Actor* tryGetActor() const;
-    MCAPI class BlockActor* tryGetBlockActor() const;
+    MCAPI class Actor * tryGetActor() const;
+    MCAPI class BlockActor * tryGetBlockActor() const;
 
 protected:
 

@@ -17,12 +17,13 @@ class ScriptColor {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTCOLOR
 public:
-    class ScriptColor& operator=(class ScriptColor const&) = delete;
-    ScriptColor(class ScriptColor const&) = delete;
+    class ScriptColor& operator=(class ScriptColor const &) = delete;
+    ScriptColor(class ScriptColor const &) = delete;
     ScriptColor() = delete;
 #endif
 
 public:
+    MCAPI class mce::Color const & getColor() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptColor> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptColor> fromRBGA(class Scripting::WeakLifetimeScope, float, float, float, float);
 

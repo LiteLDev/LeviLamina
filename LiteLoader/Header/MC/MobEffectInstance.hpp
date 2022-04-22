@@ -24,16 +24,16 @@ public:
 #endif
 
 public:
-    MCAPI MobEffectInstance(class MobEffectInstance const&);
+    MCAPI MobEffectInstance(class MobEffectInstance const &);
     MCAPI MobEffectInstance(unsigned int);
     MCAPI MobEffectInstance(unsigned int, int);
     MCAPI MobEffectInstance(unsigned int, int, int);
     MCAPI MobEffectInstance(unsigned int, int, int, int, int, int, bool, bool, bool);
     MCAPI MobEffectInstance(unsigned int, int, int, bool, bool, bool);
-    MCAPI void applyEffects(class Actor*);
+    MCAPI void applyEffects(class Actor *);
     MCAPI bool displaysOnScreenTextureAnimation() const;
     MCAPI int getAmplifier() const;
-    MCAPI class HashedString const& getComponentName() const;
+    MCAPI class HashedString const & getComponentName() const;
     MCAPI int getDifficulityDuration(enum Difficulty) const;
     MCAPI std::string getDisplayName() const;
     MCAPI int getDuration() const;
@@ -43,23 +43,23 @@ public:
     MCAPI class MobEffectInstance getSplashEffect() const;
     MCAPI bool isAmbient() const;
     MCAPI bool isEffectVisible() const;
-    MCAPI bool operator!=(class MobEffectInstance const&) const;
-    MCAPI class MobEffectInstance& operator=(class MobEffectInstance const&);
-    MCAPI class MobEffectInstance& operator=(class MobEffectInstance&&);
-    MCAPI bool operator==(class MobEffectInstance const&) const;
-    MCAPI void removeEffects(class Actor*) const;
+    MCAPI bool operator!=(class MobEffectInstance const &) const;
+    MCAPI class MobEffectInstance & operator=(class MobEffectInstance const &);
+    MCAPI class MobEffectInstance & operator=(class MobEffectInstance &&);
+    MCAPI bool operator==(class MobEffectInstance const &) const;
+    MCAPI void removeEffects(class Actor *) const;
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     MCAPI void setDifficulityDuration(enum Difficulty, int);
     MCAPI void setDuration(int);
-    MCAPI bool tick(class Actor*);
+    MCAPI bool tick(class Actor *);
     MCAPI void tryInitializeMobEffectData();
-    MCAPI void update(class MobEffectInstance const&);
+    MCAPI void update(class MobEffectInstance const &);
     MCAPI ~MobEffectInstance();
     MCAPI static int const MAX_AMPLIFIER_COUNT;
     MCAPI static class MobEffectInstance const NO_EFFECT;
-    MCAPI static bool areAllEffectsAmbient(std::vector<class MobEffectInstance> const&);
-    MCAPI static class mce::Color getColorValue(std::vector<class MobEffectInstance> const&);
-    MCAPI static class MobEffectInstance load(class CompoundTag const&);
+    MCAPI static bool areAllEffectsAmbient(std::vector<class MobEffectInstance> const &);
+    MCAPI static class mce::Color getColorValue(std::vector<class MobEffectInstance> const &);
+    MCAPI static class MobEffectInstance load(class CompoundTag const &);
 
 protected:
 

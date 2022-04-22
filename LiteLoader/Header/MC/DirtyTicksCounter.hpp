@@ -17,15 +17,15 @@ struct DirtyTicksCounter {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIRTYTICKSCOUNTER
 public:
-    struct DirtyTicksCounter& operator=(struct DirtyTicksCounter const&) = delete;
-    DirtyTicksCounter(struct DirtyTicksCounter const&) = delete;
+    struct DirtyTicksCounter& operator=(struct DirtyTicksCounter const &) = delete;
+    DirtyTicksCounter(struct DirtyTicksCounter const &) = delete;
 #endif
 
 public:
     MCAPI DirtyTicksCounter();
     MCAPI int getTicksSinceLastChange() const;
     MCAPI int getTotalDirtyTicks() const;
-    MCAPI struct DirtyTicksCounter& operator++();
+    MCAPI struct DirtyTicksCounter & operator++();
     MCAPI void reset();
     MCAPI void touch();
 

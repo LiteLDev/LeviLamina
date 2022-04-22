@@ -17,15 +17,15 @@ class EntitySensorSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYSENSORSYSTEM
 public:
-    class EntitySensorSystem& operator=(class EntitySensorSystem const&) = delete;
-    EntitySensorSystem(class EntitySensorSystem const&) = delete;
+    class EntitySensorSystem& operator=(class EntitySensorSystem const &) = delete;
+    EntitySensorSystem(class EntitySensorSystem const &) = delete;
     EntitySensorSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~EntitySensorSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

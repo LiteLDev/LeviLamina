@@ -17,8 +17,8 @@ class MoveTowardsRestrictionDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOWARDSRESTRICTIONDEFINITION
 public:
-    class MoveTowardsRestrictionDefinition& operator=(class MoveTowardsRestrictionDefinition const&) = delete;
-    MoveTowardsRestrictionDefinition(class MoveTowardsRestrictionDefinition const&) = delete;
+    class MoveTowardsRestrictionDefinition& operator=(class MoveTowardsRestrictionDefinition const &) = delete;
+    MoveTowardsRestrictionDefinition(class MoveTowardsRestrictionDefinition const &) = delete;
 #endif
 
 public:
@@ -31,7 +31,7 @@ public:
     }
     */
     MCAPI MoveTowardsRestrictionDefinition();
-    MCAPI void initialize(class EntityContext&, class MoveTowardsRestrictionGoal&);
+    MCAPI void initialize(class EntityContext &, class MoveTowardsRestrictionGoal &);
 
 protected:
 

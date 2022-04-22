@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class CloneCommand {
+class CloneCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,19 +18,19 @@ class CloneCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLONECOMMAND
 public:
-    class CloneCommand& operator=(class CloneCommand const&) = delete;
-    CloneCommand(class CloneCommand const&) = delete;
+    class CloneCommand& operator=(class CloneCommand const &) = delete;
+    CloneCommand(class CloneCommand const &) = delete;
     CloneCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~CloneCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 
 private:
-    MCAPI static void convertClonedTag(class CompoundTag&, class BlockActor const&, class BlockPos const&);
+    MCAPI static void convertClonedTag(class CompoundTag &, class BlockActor const &, class BlockPos const &);
 
 };

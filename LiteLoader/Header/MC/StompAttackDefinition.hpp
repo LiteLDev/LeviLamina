@@ -18,14 +18,14 @@ class StompAttackDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STOMPATTACKDEFINITION
 public:
-    class StompAttackDefinition& operator=(class StompAttackDefinition const&) = delete;
-    StompAttackDefinition(class StompAttackDefinition const&) = delete;
+    class StompAttackDefinition& operator=(class StompAttackDefinition const &) = delete;
+    StompAttackDefinition(class StompAttackDefinition const &) = delete;
     StompAttackDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~StompAttackDefinition();
-    MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class StompAttackDefinition> >&);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class StompAttackDefinition>> &);
 
 protected:
 

@@ -15,7 +15,7 @@ namespace CryptoUtils {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI std::string getDirectroyChecksum(class Core::Path const&);
-    MCAPI std::string getFileChecksum(class Core::Path const&);
+    MCAPI std::string getDirectroyChecksum(class Core::Path const &);
+    MCAPI std::string getFileChecksum(class Core::Path const &);
 
 };

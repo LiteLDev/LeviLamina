@@ -17,16 +17,16 @@ class ExtendedCertificate {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXTENDEDCERTIFICATE
 public:
-    class ExtendedCertificate& operator=(class ExtendedCertificate const&) = delete;
-    ExtendedCertificate(class ExtendedCertificate const&) = delete;
+    class ExtendedCertificate& operator=(class ExtendedCertificate const &) = delete;
+    ExtendedCertificate(class ExtendedCertificate const &) = delete;
     ExtendedCertificate() = delete;
 #endif
 
 public:
-    MCAPI static class mce::UUID getIdentity(class Certificate const&);
-    MCAPI static std::string getIdentityName(class Certificate const&);
-    MCAPI static std::string getXuid(class Certificate const&);
-    MCAPI static std::string getXuid(class Certificate const*);
+    MCAPI static class mce::UUID getIdentity(class Certificate const &);
+    MCAPI static std::string getIdentityName(class Certificate const &);
+    MCAPI static std::string getXuid(class Certificate const &);
+    MCAPI static std::string getXuid(class Certificate const *);
 
 protected:
 

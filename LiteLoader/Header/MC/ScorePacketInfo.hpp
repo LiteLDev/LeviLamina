@@ -33,8 +33,8 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOREPACKETINFO
 public:
-    struct ScorePacketInfo& operator=(struct ScorePacketInfo const&) = delete;
-    ScorePacketInfo(struct ScorePacketInfo const&) = delete;
+    struct ScorePacketInfo& operator=(struct ScorePacketInfo const &) = delete;
+    ScorePacketInfo(struct ScorePacketInfo const &) = delete;
     ScorePacketInfo() = delete;
 #endif
 

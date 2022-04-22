@@ -15,8 +15,8 @@ class BlockPatternPostEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPATTERNPOSTEVENT
 public:
-    class BlockPatternPostEvent& operator=(class BlockPatternPostEvent const&) = delete;
-    BlockPatternPostEvent(class BlockPatternPostEvent const&) = delete;
+    class BlockPatternPostEvent& operator=(class BlockPatternPostEvent const &) = delete;
+    BlockPatternPostEvent(class BlockPatternPostEvent const &) = delete;
     BlockPatternPostEvent() = delete;
 #endif
 

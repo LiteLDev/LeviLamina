@@ -19,8 +19,8 @@ class UseActorDefinition : public BehaviorDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_USEACTORDEFINITION
 public:
-    class UseActorDefinition& operator=(class UseActorDefinition const&) = delete;
-    UseActorDefinition(class UseActorDefinition const&) = delete;
+    class UseActorDefinition& operator=(class UseActorDefinition const &) = delete;
+    UseActorDefinition(class UseActorDefinition const &) = delete;
     UseActorDefinition() = delete;
 #endif
 

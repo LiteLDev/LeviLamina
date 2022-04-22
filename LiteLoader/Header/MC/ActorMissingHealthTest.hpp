@@ -17,14 +17,14 @@ class ActorMissingHealthTest : public FilterTest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORMISSINGHEALTHTEST
 public:
-    class ActorMissingHealthTest& operator=(class ActorMissingHealthTest const&) = delete;
-    ActorMissingHealthTest(class ActorMissingHealthTest const&) = delete;
+    class ActorMissingHealthTest& operator=(class ActorMissingHealthTest const &) = delete;
+    ActorMissingHealthTest(class ActorMissingHealthTest const &) = delete;
     ActorMissingHealthTest() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ActorMissingHealthTest();
-    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
 
 protected:

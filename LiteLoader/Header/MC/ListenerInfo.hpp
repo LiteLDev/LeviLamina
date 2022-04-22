@@ -17,8 +17,8 @@ class ListenerInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LISTENERINFO
 public:
-    class ListenerInfo& operator=(class ListenerInfo const&) = delete;
-    ListenerInfo(class ListenerInfo const&) = delete;
+    class ListenerInfo& operator=(class ListenerInfo const &) = delete;
+    ListenerInfo(class ListenerInfo const &) = delete;
     ListenerInfo() = delete;
 #endif
 

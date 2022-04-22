@@ -14,7 +14,7 @@ namespace BiomeSourceUtil {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI class std::optional<class BlockPos> locateBiome(class std::function<bool (class Biome const& )> const&, class BiomeSource const&, class BlockPos const&, class BlockPos const&, unsigned int);
-    MCAPI class std::optional<class BlockPos> locateBiome(class std::function<bool (class Biome const& )> const&, class BiomeSource const&, class BlockPos const&, class BoundingBox, unsigned int);
+    MCAPI class std::optional<class BlockPos> locateBiome(class std::function<bool (class Biome const &)> const &, class BiomeSource const &, class BlockPos const &, class BlockPos const &, unsigned int);
+    MCAPI class std::optional<class BlockPos> locateBiome(class std::function<bool (class Biome const &)> const &, class BiomeSource const &, class BlockPos const &, class BoundingBox, unsigned int);
 
 };

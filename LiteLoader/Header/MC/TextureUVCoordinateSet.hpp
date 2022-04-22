@@ -16,9 +16,9 @@ struct TextureUVCoordinateSet {
 #undef AFTER_EXTRA
 
 public:
-    MCAPI TextureUVCoordinateSet(struct TextureUVCoordinateSet const&);
+    MCAPI TextureUVCoordinateSet(struct TextureUVCoordinateSet const &);
     MCAPI TextureUVCoordinateSet();
-    MCAPI struct TextureUVCoordinateSet& operator=(struct TextureUVCoordinateSet const&);
+    MCAPI struct TextureUVCoordinateSet & operator=(struct TextureUVCoordinateSet const &);
     MCAPI ~TextureUVCoordinateSet();
 
 protected:

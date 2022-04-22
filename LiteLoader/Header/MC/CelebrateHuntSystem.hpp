@@ -17,15 +17,15 @@ class CelebrateHuntSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CELEBRATEHUNTSYSTEM
 public:
-    class CelebrateHuntSystem& operator=(class CelebrateHuntSystem const&) = delete;
-    CelebrateHuntSystem(class CelebrateHuntSystem const&) = delete;
+    class CelebrateHuntSystem& operator=(class CelebrateHuntSystem const &) = delete;
+    CelebrateHuntSystem(class CelebrateHuntSystem const &) = delete;
     CelebrateHuntSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~CelebrateHuntSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

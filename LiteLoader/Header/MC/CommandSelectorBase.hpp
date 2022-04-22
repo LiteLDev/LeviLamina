@@ -42,14 +42,14 @@ char unk192;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDSELECTORBASE
 public:
-    class CommandSelectorBase& operator=(class CommandSelectorBase const&) = delete;
-    CommandSelectorBase(class CommandSelectorBase const&) = delete;
+    class CommandSelectorBase& operator=(class CommandSelectorBase const &) = delete;
+    CommandSelectorBase(class CommandSelectorBase const &) = delete;
     CommandSelectorBase() = delete;
 #endif
 
 public:
-    MCAPI void addFilter(class std::function<bool (class CommandOrigin const& , class Actor const& )>);
-    MCAPI bool compile(class CommandOrigin const&, std::string&);
+    MCAPI void addFilter(class std::function<bool (class CommandOrigin const &, class Actor const &)>);
+    MCAPI bool compile(class CommandOrigin const &, std::string &);
     MCAPI std::string getName() const;
     MCAPI bool hasName() const;
     MCAPI bool isExplicitIdSelector() const;
@@ -60,16 +60,15 @@ public:
 
 protected:
     MCAPI CommandSelectorBase(bool);
-    MCAPI class std::shared_ptr<std::vector<class Actor* > > newResults(class CommandOrigin const&) const;
+    MCAPI class std::shared_ptr<std::vector<class Actor *>> newResults(class CommandOrigin const &) const;
 
 private:
-    MCAPI bool compareName(std::string const&) const;
-    MCAPI bool filter(class CommandOrigin const&, class Actor&) const;
-    MCAPI bool isExpansionAllowed(class CommandOrigin const&) const;
-    MCAPI bool isInDimension(class CommandOrigin const&, class Actor&) const;
-    MCAPI bool matchFamily(class Actor const&) const;
-    MCAPI bool matchName(class Actor const&) const;
-    MCAPI bool matchTag(class Actor const&) const;
-    MCAPI bool matchType(class Actor const&) const;
+    MCAPI bool compareName(std::string const &) const;
+    MCAPI bool filter(class CommandOrigin const &, class Actor &) const;
+    MCAPI bool isExpansionAllowed(class CommandOrigin const &) const;
+    MCAPI bool matchFamily(class Actor const &) const;
+    MCAPI bool matchName(class Actor const &) const;
+    MCAPI bool matchTag(class Actor const &) const;
+    MCAPI bool matchType(class Actor const &) const;
 
 };

@@ -18,18 +18,18 @@ class GenericPathNavigation : public PathNavigation {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GENERICPATHNAVIGATION
 public:
-    class GenericPathNavigation& operator=(class GenericPathNavigation const&) = delete;
-    GenericPathNavigation(class GenericPathNavigation const&) = delete;
+    class GenericPathNavigation& operator=(class GenericPathNavigation const &) = delete;
+    GenericPathNavigation(class GenericPathNavigation const &) = delete;
     GenericPathNavigation() = delete;
 #endif
 
 public:
     /*0*/ virtual ~GenericPathNavigation();
-    /*1*/ virtual void initializeInternal(class Mob&, struct NavigationDescription*);
-    /*2*/ virtual void tick(class NavigationComponent&, class Mob&);
-    /*3*/ virtual class Vec3 getTempMobPos(class Mob const&) const;
-    /*9*/ virtual void stop(class NavigationComponent&, class Mob&);
-    /*12*/ virtual void updatePath(class NavigationComponent&, class Mob&);
+    /*1*/ virtual void initializeInternal(class Mob &, struct NavigationDescription *);
+    /*2*/ virtual void tick(class NavigationComponent &, class Mob &);
+    /*3*/ virtual class Vec3 getTempMobPos(class Mob const &) const;
+    /*9*/ virtual void stop(class NavigationComponent &, class Mob &);
+    /*12*/ virtual void updatePath(class NavigationComponent &, class Mob &);
 
 protected:
 

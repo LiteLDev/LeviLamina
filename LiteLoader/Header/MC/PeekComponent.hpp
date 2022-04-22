@@ -17,13 +17,13 @@ class PeekComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PEEKCOMPONENT
 public:
-    class PeekComponent& operator=(class PeekComponent const&) = delete;
-    PeekComponent(class PeekComponent const&) = delete;
+    class PeekComponent& operator=(class PeekComponent const &) = delete;
+    PeekComponent(class PeekComponent const &) = delete;
     PeekComponent() = delete;
 #endif
 
 public:
-    MCAPI int& getDuration();
+    MCAPI int & getDuration();
     MCAPI bool getHadTarget() const;
     MCAPI void setHadTarget(bool);
 

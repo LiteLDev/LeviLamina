@@ -18,25 +18,25 @@ class SimpleContainer : public Container {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLECONTAINER
 public:
-    class SimpleContainer& operator=(class SimpleContainer const&) = delete;
-    SimpleContainer(class SimpleContainer const&) = delete;
+    class SimpleContainer& operator=(class SimpleContainer const &) = delete;
+    SimpleContainer(class SimpleContainer const &) = delete;
     SimpleContainer() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SimpleContainer();
     /*1*/ virtual void init();
-    /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const& )>);
-    /*5*/ virtual class ItemStack const& getItem(int) const;
-    /*9*/ virtual void setItem(int, class ItemStack const&);
+    /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
+    /*5*/ virtual class ItemStack const & getItem(int) const;
+    /*9*/ virtual void setItem(int, class ItemStack const &);
     /*14*/ virtual int getContainerSize() const;
     /*15*/ virtual int getMaxStackSize() const;
-    /*16*/ virtual void startOpen(class Player&);
-    /*17*/ virtual void stopOpen(class Player&);
+    /*16*/ virtual void startOpen(class Player &);
+    /*17*/ virtual void stopOpen(class Player &);
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
     /*31*/ virtual void __unk_vfn_31();
-    MCAPI SimpleContainer(std::string const&, bool, int, enum ContainerType);
+    MCAPI SimpleContainer(std::string const &, bool, int, enum ContainerType);
 
 protected:
 

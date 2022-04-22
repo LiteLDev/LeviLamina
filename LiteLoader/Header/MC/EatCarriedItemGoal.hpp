@@ -17,8 +17,8 @@ class EatCarriedItemGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EATCARRIEDITEMGOAL
 public:
-    class EatCarriedItemGoal& operator=(class EatCarriedItemGoal const&) = delete;
-    EatCarriedItemGoal(class EatCarriedItemGoal const&) = delete;
+    class EatCarriedItemGoal& operator=(class EatCarriedItemGoal const &) = delete;
+    EatCarriedItemGoal(class EatCarriedItemGoal const &) = delete;
     EatCarriedItemGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI EatCarriedItemGoal(class Mob&, int);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI EatCarriedItemGoal(class Mob &, int);
 
 protected:
 

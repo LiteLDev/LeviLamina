@@ -19,17 +19,17 @@ enum MingleState;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINGLECOMPONENT
 public:
-    class MingleComponent& operator=(class MingleComponent const&) = delete;
-    MingleComponent(class MingleComponent const&) = delete;
+    class MingleComponent& operator=(class MingleComponent const &) = delete;
+    MingleComponent(class MingleComponent const &) = delete;
 #endif
 
 public:
     MCAPI MingleComponent();
-    MCAPI class MingleComponent& clearPreviousPartnerId();
-    MCAPI class Actor* fetchCurrentPartner(class Actor const&) const;
+    MCAPI class MingleComponent & clearPreviousPartnerId();
+    MCAPI class Actor * fetchCurrentPartner(class Actor const &) const;
     MCAPI void resetState();
-    MCAPI class MingleComponent& setMingleState(enum MingleComponent::MingleState);
-    MCAPI class MingleComponent& setPartnerId(struct ActorUniqueID);
+    MCAPI class MingleComponent & setMingleState(enum MingleComponent::MingleState);
+    MCAPI class MingleComponent & setPartnerId(struct ActorUniqueID);
 
 protected:
 

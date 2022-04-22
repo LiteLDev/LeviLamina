@@ -21,8 +21,8 @@ enum ConnectionFailureReason;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICONNECTIONEVENTING
 public:
-    class IConnectionEventing& operator=(class IConnectionEventing const&) = delete;
-    IConnectionEventing(class IConnectionEventing const&) = delete;
+    class IConnectionEventing& operator=(class IConnectionEventing const &) = delete;
+    IConnectionEventing(class IConnectionEventing const &) = delete;
     IConnectionEventing() = delete;
 #endif
 

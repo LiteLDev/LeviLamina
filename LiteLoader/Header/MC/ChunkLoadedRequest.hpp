@@ -18,25 +18,25 @@ class ChunkLoadedRequest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKLOADEDREQUEST
 public:
-    class ChunkLoadedRequest& operator=(class ChunkLoadedRequest const&) = delete;
-    ChunkLoadedRequest(class ChunkLoadedRequest const&) = delete;
+    class ChunkLoadedRequest& operator=(class ChunkLoadedRequest const &) = delete;
+    ChunkLoadedRequest(class ChunkLoadedRequest const &) = delete;
     ChunkLoadedRequest() = delete;
 #endif
 
 public:
-    MCAPI ChunkLoadedRequest(class ChunkLoadedRequest&&);
-    MCAPI ChunkLoadedRequest(struct Bounds const&, std::unique_ptr<class IRequestAction>, bool);
-    MCAPI ChunkLoadedRequest(std::string const&, std::unique_ptr<class IRequestAction>);
-    MCAPI enum ChunksLoadedStatus areAllChunksLoaded(class Dimension&, struct Tick) const;
-    MCAPI enum ChunksLoadedStatus areAllChunksLoadedOnChunkLoaded(class ChunkSource&, class LevelChunk&, struct Tick) const;
+    MCAPI ChunkLoadedRequest(class ChunkLoadedRequest &&);
+    MCAPI ChunkLoadedRequest(struct Bounds const &, std::unique_ptr<class IRequestAction>, bool, bool);
+    MCAPI ChunkLoadedRequest(std::string const &, std::unique_ptr<class IRequestAction>, bool);
+    MCAPI enum ChunksLoadedStatus areAllChunksLoaded(class Dimension &, struct Tick) const;
+    MCAPI bool areaContainsChunk(class LevelChunk const &) const;
     MCAPI class CompoundTag serialize(enum ChunkRequestListType);
     MCAPI ~ChunkLoadedRequest();
-    MCAPI static bool isValidTag(class CompoundTag const&);
-    MCAPI static struct DeserializedChunkLoadedRequest load(std::string const&, class CompoundTag const&, class ICommandOriginLoader&, std::string const&);
+    MCAPI static bool isValidTag(class CompoundTag const &);
+    MCAPI static struct DeserializedChunkLoadedRequest load(std::string const &, class CompoundTag const &, class ICommandOriginLoader &, std::string const &);
 
 protected:
 
 private:
-    MCAPI class ITickingAreaView const* _getTickingArea(class Dimension const&) const;
+    MCAPI class ITickingAreaView const * _getTickingArea(class Dimension const &) const;
 
 };

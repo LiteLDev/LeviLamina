@@ -17,19 +17,19 @@ class LabTableReaction {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LABTABLEREACTION
 public:
-    class LabTableReaction& operator=(class LabTableReaction const&) = delete;
-    LabTableReaction(class LabTableReaction const&) = delete;
+    class LabTableReaction& operator=(class LabTableReaction const &) = delete;
+    LabTableReaction(class LabTableReaction const &) = delete;
     LabTableReaction() = delete;
 #endif
 
 public:
     /*0*/ virtual ~LabTableReaction();
     MCAPI void addComponent(std::unique_ptr<class LabTableReactionComponent>);
-    MCAPI void addResultItem(class ItemStack const&);
+    MCAPI void addResultItem(class ItemStack const &);
     MCAPI int getReactionId();
     MCAPI enum LabTableReactionType getType();
-    MCAPI bool tick(class BlockSource&);
-    MCAPI static std::unique_ptr<class LabTableReaction> createReaction(enum LabTableReactionType, class BlockPos const&, bool);
+    MCAPI bool tick(class BlockSource &);
+    MCAPI static std::unique_ptr<class LabTableReaction> createReaction(enum LabTableReactionType, class BlockPos const &, bool);
 
 protected:
 

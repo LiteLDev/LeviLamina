@@ -17,8 +17,8 @@ class FindUnderwaterTreasureGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FINDUNDERWATERTREASUREGOAL
 public:
-    class FindUnderwaterTreasureGoal& operator=(class FindUnderwaterTreasureGoal const&) = delete;
-    FindUnderwaterTreasureGoal(class FindUnderwaterTreasureGoal const&) = delete;
+    class FindUnderwaterTreasureGoal& operator=(class FindUnderwaterTreasureGoal const &) = delete;
+    FindUnderwaterTreasureGoal(class FindUnderwaterTreasureGoal const &) = delete;
     FindUnderwaterTreasureGoal() = delete;
 #endif
 
@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline bool canBeInterrupted(){
         bool (FindUnderwaterTreasureGoal::*rv)();
@@ -38,7 +38,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI FindUnderwaterTreasureGoal(class Mob&, float, int, int);
+    MCAPI FindUnderwaterTreasureGoal(class Mob &, float, int, int);
 
 protected:
 

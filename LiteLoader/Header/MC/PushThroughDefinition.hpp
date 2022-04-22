@@ -18,13 +18,13 @@ struct PushThroughDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PUSHTHROUGHDEFINITION
 public:
-    struct PushThroughDefinition& operator=(struct PushThroughDefinition const&) = delete;
-    PushThroughDefinition(struct PushThroughDefinition const&) = delete;
+    struct PushThroughDefinition& operator=(struct PushThroughDefinition const &) = delete;
+    PushThroughDefinition(struct PushThroughDefinition const &) = delete;
     PushThroughDefinition() = delete;
 #endif
 
 public:
-    MCAPI void initialize(class EntityContext&);
+    MCAPI void initialize(class EntityContext &);
 
 protected:
 

@@ -16,24 +16,24 @@ class InventoryTransactionPacket : public Packet {
 // Add Member There
 public:
     TypedClientNetId<struct ItemStackRequestIdTag, int, 0> requestId;            //48
-    std::vector<std::pair<ContainerEnumName, std::vector<unsigned char>>> slots; //56
-    std::unique_ptr<ComplexInventoryTransaction> transaction;                    //80
-    bool isClientSide;                                                           //88
+    std::vector<std::pair<ContainerEnumName, std::vector<unsigned char>>> slots; //64
+    std::unique_ptr<ComplexInventoryTransaction> transaction;                    //88
+    bool isClientSide;                                                           //96
 
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYTRANSACTIONPACKET
 public:
-    class InventoryTransactionPacket& operator=(class InventoryTransactionPacket const&) = delete;
-    InventoryTransactionPacket(class InventoryTransactionPacket const&) = delete;
+    class InventoryTransactionPacket& operator=(class InventoryTransactionPacket const &) = delete;
+    InventoryTransactionPacket(class InventoryTransactionPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~InventoryTransactionPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~InventoryTransactionPacket(){
          (InventoryTransactionPacket::*rv)();
@@ -43,7 +43,7 @@ public:
     */
     MCAPI InventoryTransactionPacket(std::unique_ptr<class ComplexInventoryTransaction>, bool);
     MCAPI InventoryTransactionPacket();
-    MCAPI void postLoadItems(class BlockPalette&, bool) const;
+    MCAPI void postLoadItems(class BlockPalette &, bool) const;
 
 protected:
 

@@ -17,13 +17,13 @@ class JigsawStructureBlockInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JIGSAWSTRUCTUREBLOCKINFO
 public:
-    class JigsawStructureBlockInfo& operator=(class JigsawStructureBlockInfo const&) = delete;
-    JigsawStructureBlockInfo(class JigsawStructureBlockInfo const&) = delete;
+    class JigsawStructureBlockInfo& operator=(class JigsawStructureBlockInfo const &) = delete;
+    JigsawStructureBlockInfo(class JigsawStructureBlockInfo const &) = delete;
     JigsawStructureBlockInfo() = delete;
 #endif
 
 public:
-    MCAPI class CompoundTag* getNonEmptyTag();
+    MCAPI class CompoundTag * getNonEmptyTag();
 
 protected:
 

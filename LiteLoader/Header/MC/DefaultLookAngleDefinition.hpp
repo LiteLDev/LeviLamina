@@ -18,8 +18,8 @@ struct DefaultLookAngleDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFAULTLOOKANGLEDEFINITION
 public:
-    struct DefaultLookAngleDefinition& operator=(struct DefaultLookAngleDefinition const&) = delete;
-    DefaultLookAngleDefinition(struct DefaultLookAngleDefinition const&) = delete;
+    struct DefaultLookAngleDefinition& operator=(struct DefaultLookAngleDefinition const &) = delete;
+    DefaultLookAngleDefinition(struct DefaultLookAngleDefinition const &) = delete;
     DefaultLookAngleDefinition() = delete;
 #endif
 

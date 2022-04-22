@@ -17,8 +17,8 @@ class Amplifier {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AMPLIFIER
 public:
-    class Amplifier& operator=(class Amplifier const&) = delete;
-    Amplifier(class Amplifier const&) = delete;
+    class Amplifier& operator=(class Amplifier const &) = delete;
+    Amplifier(class Amplifier const &) = delete;
     Amplifier() = delete;
 #endif
 

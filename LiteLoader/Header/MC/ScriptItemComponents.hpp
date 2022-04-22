@@ -17,14 +17,14 @@ class ScriptItemComponents {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTITEMCOMPONENTS
 public:
-    class ScriptItemComponents& operator=(class ScriptItemComponents const&) = delete;
-    ScriptItemComponents(class ScriptItemComponents const&) = delete;
+    class ScriptItemComponents& operator=(class ScriptItemComponents const &) = delete;
+    ScriptItemComponents(class ScriptItemComponents const &) = delete;
     ScriptItemComponents() = delete;
 #endif
 
 public:
-    MCAPI static void bind(class Scripting::ModuleBindingBuilder&, struct Scripting::Version);
-    MCAPI static class std::unordered_map<std::string, std::unique_ptr<class IScriptItemComponentFactory>, struct std::hash<std::string >, struct std::equal_to<std::string >, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class IScriptItemComponentFactory> > > > const& getSupportedItemComponents();
+    MCAPI static void bind(class Scripting::ModuleBindingBuilder &, struct Scripting::Version);
+    MCAPI static class std::unordered_map<std::string, std::unique_ptr<class IScriptItemComponentFactory>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class IScriptItemComponentFactory>>>> const & getSupportedItemComponents();
 
 protected:
 

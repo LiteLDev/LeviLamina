@@ -17,13 +17,13 @@ class AgentServerCommands {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTSERVERCOMMANDS
 public:
-    class AgentServerCommands& operator=(class AgentServerCommands const&) = delete;
-    AgentServerCommands(class AgentServerCommands const&) = delete;
+    class AgentServerCommands& operator=(class AgentServerCommands const &) = delete;
+    AgentServerCommands(class AgentServerCommands const &) = delete;
     AgentServerCommands() = delete;
 #endif
 
 public:
-    MCAPI static void setupStandardServer(class Minecraft&, std::string const&);
+    MCAPI static void setupStandardServer(class Minecraft &, std::string const &);
 
 protected:
 

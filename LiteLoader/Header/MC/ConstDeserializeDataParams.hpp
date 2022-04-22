@@ -15,8 +15,8 @@ struct ConstDeserializeDataParams {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONSTDESERIALIZEDATAPARAMS
 public:
-    struct ConstDeserializeDataParams& operator=(struct ConstDeserializeDataParams const&) = delete;
-    ConstDeserializeDataParams(struct ConstDeserializeDataParams const&) = delete;
+    struct ConstDeserializeDataParams& operator=(struct ConstDeserializeDataParams const &) = delete;
+    ConstDeserializeDataParams(struct ConstDeserializeDataParams const &) = delete;
     ConstDeserializeDataParams() = delete;
 #endif
 

@@ -18,8 +18,8 @@ class DoorInteractGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DOORINTERACTGOAL
 public:
-    class DoorInteractGoal& operator=(class DoorInteractGoal const&) = delete;
-    DoorInteractGoal(class DoorInteractGoal const&) = delete;
+    class DoorInteractGoal& operator=(class DoorInteractGoal const &) = delete;
+    DoorInteractGoal(class DoorInteractGoal const &) = delete;
     DoorInteractGoal() = delete;
 #endif
 
@@ -31,7 +31,7 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
     inline  ~DoorInteractGoal(){
          (DoorInteractGoal::*rv)();
@@ -39,11 +39,11 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI DoorInteractGoal(class Mob&);
+    MCAPI DoorInteractGoal(class Mob &);
 
 protected:
 
 private:
-    MCAPI static class DoorBlock const* _findBlockingDoorAtPos(class BlockPos const&, class Mob const&, class Path*, enum Direction::Type&, enum Direction::Type&);
+    MCAPI static class DoorBlock const * _findBlockingDoorAtPos(class BlockPos const &, class Mob const &, class Path *, enum Direction::Type &, enum Direction::Type &);
 
 };

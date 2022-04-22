@@ -23,14 +23,14 @@ struct Snapshot {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORHISTORY
 public:
-    class ActorHistory& operator=(class ActorHistory const&) = delete;
-    ActorHistory(class ActorHistory const&) = delete;
+    class ActorHistory& operator=(class ActorHistory const &) = delete;
+    ActorHistory(class ActorHistory const &) = delete;
     ActorHistory() = delete;
 #endif
 
 public:
-    MCAPI bool addFrame(struct IActorMovementProxy&, unsigned __int64);
-    MCAPI struct ActorHistory::Snapshot createSnapshot(struct IActorMovementProxy&) const;
+    MCAPI bool addFrame(struct IActorMovementProxy &, unsigned __int64);
+    MCAPI struct ActorHistory::Snapshot createSnapshot(struct IActorMovementProxy &) const;
     MCAPI ~ActorHistory();
 
 protected:

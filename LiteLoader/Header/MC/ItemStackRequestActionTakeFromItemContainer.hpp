@@ -16,8 +16,8 @@ class ItemStackRequestActionTakeFromItemContainer : public ItemStackRequestActio
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONTAKEFROMITEMCONTAINER
 public:
-    class ItemStackRequestActionTakeFromItemContainer& operator=(class ItemStackRequestActionTakeFromItemContainer const&) = delete;
-    ItemStackRequestActionTakeFromItemContainer(class ItemStackRequestActionTakeFromItemContainer const&) = delete;
+    class ItemStackRequestActionTakeFromItemContainer& operator=(class ItemStackRequestActionTakeFromItemContainer const &) = delete;
+    ItemStackRequestActionTakeFromItemContainer(class ItemStackRequestActionTakeFromItemContainer const &) = delete;
     ItemStackRequestActionTakeFromItemContainer() = delete;
 #endif
 

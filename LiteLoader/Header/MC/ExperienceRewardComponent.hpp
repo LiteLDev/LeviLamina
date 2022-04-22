@@ -17,18 +17,23 @@ class ExperienceRewardComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPERIENCEREWARDCOMPONENT
 public:
-    class ExperienceRewardComponent& operator=(class ExperienceRewardComponent const&) = delete;
-    ExperienceRewardComponent(class ExperienceRewardComponent const&) = delete;
+    class ExperienceRewardComponent& operator=(class ExperienceRewardComponent const &) = delete;
+    ExperienceRewardComponent(class ExperienceRewardComponent const &) = delete;
     ExperienceRewardComponent() = delete;
 #endif
 
 public:
-    MCAPI int getOnBredExperience(class Actor&) const;
-    MCAPI int getOnDeathExperience(class Actor&) const;
-    MCAPI class ExperienceRewardComponent& operator=(class ExperienceRewardComponent&&);
+    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI bool getIsExperienceDropEnabled() const;
+    MCAPI int getOnBredExperience(class Actor &) const;
+    MCAPI int getOnDeathExperience(class Actor &) const;
+    MCAPI class ExperienceRewardComponent & operator=(class ExperienceRewardComponent &&);
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
+    MCAPI void setIsExperienceDropEnabled(bool);
 
 protected:
 
 private:
+    MCAPI static std::string const mIsExperienceDropEnabledTag;
 
 };

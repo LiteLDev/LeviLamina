@@ -17,8 +17,8 @@ class TeleportComponent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TELEPORTCOMPONENT
 public:
-    class TeleportComponent& operator=(class TeleportComponent const&) = delete;
-    TeleportComponent(class TeleportComponent const&) = delete;
+    class TeleportComponent& operator=(class TeleportComponent const &) = delete;
+    TeleportComponent(class TeleportComponent const &) = delete;
 #endif
 
 public:
@@ -31,12 +31,11 @@ public:
     MCAPI float getTargetDistance();
     MCAPI float getTargetTeleportChance();
     MCAPI int getTeleportTime();
-    MCAPI void initFromDefinition(class Actor&);
-    MCAPI void initFromDefinition(struct TeleportDescription const&);
-    MCAPI bool randomTeleport(class Actor&);
+    MCAPI void initFromDefinition(class Actor &);
+    MCAPI bool randomTeleport(class Actor &);
     MCAPI void setTeleportTime(int);
-    MCAPI bool teleport(class Actor&, class Vec3 const&);
-    MCAPI bool teleportTowards(class Actor&, class Actor const&);
+    MCAPI bool teleport(class Actor &, class Vec3 const &);
+    MCAPI bool teleportTowards(class Actor &, class Actor const &);
 
 protected:
 

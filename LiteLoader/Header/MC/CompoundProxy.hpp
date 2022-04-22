@@ -15,8 +15,8 @@ struct CompoundProxy {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDPROXY
 public:
-    struct CompoundProxy& operator=(struct CompoundProxy const&) = delete;
-    CompoundProxy(struct CompoundProxy const&) = delete;
+    struct CompoundProxy& operator=(struct CompoundProxy const &) = delete;
+    CompoundProxy(struct CompoundProxy const &) = delete;
     CompoundProxy() = delete;
 #endif
 

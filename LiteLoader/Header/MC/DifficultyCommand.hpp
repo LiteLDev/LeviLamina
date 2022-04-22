@@ -18,15 +18,15 @@ class DifficultyCommand : public Command {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIFFICULTYCOMMAND
 public:
-    class DifficultyCommand& operator=(class DifficultyCommand const&) = delete;
-    DifficultyCommand(class DifficultyCommand const&) = delete;
+    class DifficultyCommand& operator=(class DifficultyCommand const &) = delete;
+    DifficultyCommand(class DifficultyCommand const &) = delete;
     DifficultyCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~DifficultyCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 

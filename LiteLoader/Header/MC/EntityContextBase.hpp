@@ -17,20 +17,20 @@ class EntityContextBase {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYCONTEXTBASE
 public:
-    class EntityContextBase& operator=(class EntityContextBase const&) = delete;
-    EntityContextBase(class EntityContextBase const&) = delete;
+    class EntityContextBase& operator=(class EntityContextBase const &) = delete;
+    EntityContextBase(class EntityContextBase const &) = delete;
     EntityContextBase() = delete;
 #endif
 
 public:
-    MCAPI EntityContextBase(class EntityRegistryBase&, class EntityId);
+    MCAPI EntityContextBase(class EntityRegistryBase &, class EntityId);
     MCAPI bool isValid() const;
-    MCAPI bool operator==(class EntityContextBase const&) const;
+    MCAPI bool operator==(class EntityContextBase const &) const;
 
 protected:
     MCAPI void _assertValid() const;
-    MCAPI class entt::basic_registry<class EntityId>& _enttRegistry();
-    MCAPI class entt::basic_registry<class EntityId> const& _enttRegistry() const;
+    MCAPI class entt::basic_registry<class EntityId> const & _enttRegistry() const;
+    MCAPI class entt::basic_registry<class EntityId> & _enttRegistry();
     MCAPI class EntityId _getEntityId() const;
     MCAPI unsigned int _getRegistryId() const;
 

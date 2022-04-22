@@ -18,15 +18,15 @@ class ManagedWanderingTraderDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MANAGEDWANDERINGTRADERDESCRIPTION
 public:
-    class ManagedWanderingTraderDescription& operator=(class ManagedWanderingTraderDescription const&) = delete;
-    ManagedWanderingTraderDescription(class ManagedWanderingTraderDescription const&) = delete;
+    class ManagedWanderingTraderDescription& operator=(class ManagedWanderingTraderDescription const &) = delete;
+    ManagedWanderingTraderDescription(class ManagedWanderingTraderDescription const &) = delete;
     ManagedWanderingTraderDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual char const* getJsonName() const;
+    /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~ManagedWanderingTraderDescription();
-    /*3*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value &) const;
     /*
     inline  ~ManagedWanderingTraderDescription(){
          (ManagedWanderingTraderDescription::*rv)();

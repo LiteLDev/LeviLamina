@@ -8,7 +8,7 @@
 
 #undef BEFORE_EXTRA
 
-class PlayerMovementRateSystem {
+struct PlayerMovementRateSystem {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,15 +17,12 @@ class PlayerMovementRateSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERMOVEMENTRATESYSTEM
 public:
-    class PlayerMovementRateSystem& operator=(class PlayerMovementRateSystem const&) = delete;
-    PlayerMovementRateSystem(class PlayerMovementRateSystem const&) = delete;
+    struct PlayerMovementRateSystem& operator=(struct PlayerMovementRateSystem const &) = delete;
+    PlayerMovementRateSystem(struct PlayerMovementRateSystem const &) = delete;
     PlayerMovementRateSystem() = delete;
 #endif
 
 public:
-    /*0*/ virtual ~PlayerMovementRateSystem();
-    /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
 
 protected:
 

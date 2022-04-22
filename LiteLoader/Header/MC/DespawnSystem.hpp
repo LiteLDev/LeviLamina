@@ -17,15 +17,15 @@ class DespawnSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DESPAWNSYSTEM
 public:
-    class DespawnSystem& operator=(class DespawnSystem const&) = delete;
-    DespawnSystem(class DespawnSystem const&) = delete;
+    class DespawnSystem& operator=(class DespawnSystem const &) = delete;
+    DespawnSystem(class DespawnSystem const &) = delete;
     DespawnSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~DespawnSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

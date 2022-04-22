@@ -18,8 +18,8 @@ class NBBridgeEndFiller : public NetherFortressPiece {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NBBRIDGEENDFILLER
 public:
-    class NBBridgeEndFiller& operator=(class NBBridgeEndFiller const&) = delete;
-    NBBridgeEndFiller(class NBBridgeEndFiller const&) = delete;
+    class NBBridgeEndFiller& operator=(class NBBridgeEndFiller const &) = delete;
+    NBBridgeEndFiller(class NBBridgeEndFiller const &) = delete;
     NBBridgeEndFiller() = delete;
 #endif
 
@@ -28,10 +28,10 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual enum StructurePieceType getType() const;
     /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /*6*/ virtual void __unk_vfn_6();
     /*10*/ virtual void __unk_vfn_10();
-    MCAPI static std::unique_ptr<class NetherFortressPiece> createPiece(std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, int, int, int);
+    MCAPI static std::unique_ptr<class NetherFortressPiece> createPiece(std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
 
 protected:
 

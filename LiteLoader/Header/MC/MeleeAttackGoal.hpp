@@ -17,8 +17,8 @@ class MeleeAttackGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MELEEATTACKGOAL
 public:
-    class MeleeAttackGoal& operator=(class MeleeAttackGoal const&) = delete;
-    MeleeAttackGoal(class MeleeAttackGoal const&) = delete;
+    class MeleeAttackGoal& operator=(class MeleeAttackGoal const &) = delete;
+    MeleeAttackGoal(class MeleeAttackGoal const &) = delete;
     MeleeAttackGoal() = delete;
 #endif
 
@@ -30,11 +30,11 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*10*/ virtual void _attemptMoveToTarget(class Actor&);
-    /*11*/ virtual void _attemptAttackTarget(class Actor&, float, float, float, float);
+    /*10*/ virtual void _attemptMoveToTarget(class Actor &);
+    /*11*/ virtual void _attemptAttackTarget(class Actor &, float, float, float, float);
     /*
     inline  ~MeleeAttackGoal(){
          (MeleeAttackGoal::*rv)();
@@ -42,12 +42,12 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI MeleeAttackGoal(class Mob&);
+    MCAPI MeleeAttackGoal(class Mob &);
 
 protected:
-    MCAPI void _attemptMoveToTargetPosition(class Actor&, float);
-    MCAPI float _getAttackReachSqr(class Actor const&) const;
-    MCAPI bool _inSunlight(class Actor const&) const;
+    MCAPI void _attemptMoveToTargetPosition(class Actor &, float);
+    MCAPI float _getAttackReachSqr(class Actor const &) const;
+    MCAPI bool _inSunlight(class Actor const &) const;
     MCAPI static class BaseGameVersion const min3DAttackVersion;
 
 private:

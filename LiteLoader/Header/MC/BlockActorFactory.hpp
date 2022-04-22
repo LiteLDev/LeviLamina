@@ -17,17 +17,18 @@ class BlockActorFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKACTORFACTORY
 public:
-    class BlockActorFactory& operator=(class BlockActorFactory const&) = delete;
-    BlockActorFactory(class BlockActorFactory const&) = delete;
+    class BlockActorFactory& operator=(class BlockActorFactory const &) = delete;
+    BlockActorFactory(class BlockActorFactory const &) = delete;
     BlockActorFactory() = delete;
 #endif
 
 public:
-    MCAPI static class std::shared_ptr<class BlockActor> createBlockEntity(enum BlockActorType, class BlockPos const&, class BlockLegacy const&);
+    MCAPI static class std::shared_ptr<class BlockActor> createBlockEntity(enum BlockActorType, class BlockPos const &, class BlockLegacy const &);
     MCAPI static void flushCustomBlockEntityCreationCallbacks();
 
 protected:
 
 private:
+    MCAPI static std::vector<struct std::pair<enum BlockActorType, class std::function<class std::shared_ptr<class BlockActor> (class BlockPos const &)>>> mCustomBlockEntityCreation;
 
 };

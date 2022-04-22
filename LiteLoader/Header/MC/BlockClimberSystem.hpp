@@ -17,15 +17,15 @@ class BlockClimberSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCLIMBERSYSTEM
 public:
-    class BlockClimberSystem& operator=(class BlockClimberSystem const&) = delete;
-    BlockClimberSystem(class BlockClimberSystem const&) = delete;
+    class BlockClimberSystem& operator=(class BlockClimberSystem const &) = delete;
+    BlockClimberSystem(class BlockClimberSystem const &) = delete;
     BlockClimberSystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BlockClimberSystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 

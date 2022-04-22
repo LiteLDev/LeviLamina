@@ -18,18 +18,18 @@ class HorseContainerManagerModel : public LevelContainerManagerModel {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HORSECONTAINERMANAGERMODEL
 public:
-    class HorseContainerManagerModel& operator=(class HorseContainerManagerModel const&) = delete;
-    HorseContainerManagerModel(class HorseContainerManagerModel const&) = delete;
+    class HorseContainerManagerModel& operator=(class HorseContainerManagerModel const &) = delete;
+    HorseContainerManagerModel(class HorseContainerManagerModel const &) = delete;
     HorseContainerManagerModel() = delete;
 #endif
 
 public:
     /*0*/ virtual ~HorseContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
-    /*7*/ virtual void setSlot(int, class ItemStack const&, bool);
-    /*8*/ virtual class ItemStack const& getSlot(int) const;
+    /*7*/ virtual void setSlot(int, class ItemStack const &, bool);
+    /*8*/ virtual class ItemStack const & getSlot(int) const;
     /*16*/ virtual class ContainerScreenContext _postInit();
-    MCAPI HorseContainerManagerModel(enum ContainerID, class Player&, struct ActorUniqueID const&);
+    MCAPI HorseContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
 
 protected:
 

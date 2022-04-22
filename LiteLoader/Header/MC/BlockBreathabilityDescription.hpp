@@ -17,8 +17,8 @@ struct BlockBreathabilityDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKBREATHABILITYDESCRIPTION
 public:
-    struct BlockBreathabilityDescription& operator=(struct BlockBreathabilityDescription const&) = delete;
-    BlockBreathabilityDescription(struct BlockBreathabilityDescription const&) = delete;
+    struct BlockBreathabilityDescription& operator=(struct BlockBreathabilityDescription const &) = delete;
+    BlockBreathabilityDescription(struct BlockBreathabilityDescription const &) = delete;
     BlockBreathabilityDescription() = delete;
 #endif
 

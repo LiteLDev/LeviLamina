@@ -17,14 +17,14 @@ class ItemEventResponseFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMEVENTRESPONSEFACTORY
 public:
-    class ItemEventResponseFactory& operator=(class ItemEventResponseFactory const&) = delete;
-    ItemEventResponseFactory(class ItemEventResponseFactory const&) = delete;
+    class ItemEventResponseFactory& operator=(class ItemEventResponseFactory const &) = delete;
+    ItemEventResponseFactory(class ItemEventResponseFactory const &) = delete;
     ItemEventResponseFactory() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ItemEventResponseFactory();
-    /*1*/ virtual void initializeFactory(class Experiments const&);
+    /*1*/ virtual void initializeFactory(class Experiments const &);
     /*
     inline  ~ItemEventResponseFactory(){
          (ItemEventResponseFactory::*rv)();

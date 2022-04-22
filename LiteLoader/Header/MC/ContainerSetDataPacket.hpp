@@ -18,16 +18,16 @@ class ContainerSetDataPacket : public Packet {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERSETDATAPACKET
 public:
-    class ContainerSetDataPacket& operator=(class ContainerSetDataPacket const&) = delete;
-    ContainerSetDataPacket(class ContainerSetDataPacket const&) = delete;
+    class ContainerSetDataPacket& operator=(class ContainerSetDataPacket const &) = delete;
+    ContainerSetDataPacket(class ContainerSetDataPacket const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~ContainerSetDataPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*3*/ virtual void write(class BinaryStream &) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~ContainerSetDataPacket(){
          (ContainerSetDataPacket::*rv)();

@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,14 +18,15 @@ class GameSession {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMESESSION
 public:
-    class GameSession& operator=(class GameSession const&) = delete;
-    GameSession(class GameSession const&) = delete;
+    class GameSession& operator=(class GameSession const &) = delete;
+    GameSession(class GameSession const &) = delete;
     GameSession() = delete;
 #endif
 
 public:
-    MCAPI GameSession(class NetworkHandler&, std::unique_ptr<class ServerNetworkHandler>, class LoopbackPacketSender&, std::unique_ptr<class NetEventCallback>, struct std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits> >, unsigned char);
-    MCAPI void setLevel(struct std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits> >);
+    MCAPI GameSession(class NetworkHandler &, std::unique_ptr<class ServerNetworkHandler>, class LoopbackPacketSender &, std::unique_ptr<class NetEventCallback>, struct std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits>>, unsigned char);
+    MCAPI class Bedrock::NonOwnerPointer<class ServerNetworkHandler> getServerNetworkHandler();
+    MCAPI void setLevel(struct std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits>>);
 
 protected:
 

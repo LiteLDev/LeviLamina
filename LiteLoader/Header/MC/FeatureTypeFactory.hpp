@@ -18,13 +18,13 @@ class FeatureTypeFactory {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEATURETYPEFACTORY
 public:
-    class FeatureTypeFactory& operator=(class FeatureTypeFactory const&) = delete;
-    FeatureTypeFactory(class FeatureTypeFactory const&) = delete;
+    class FeatureTypeFactory& operator=(class FeatureTypeFactory const &) = delete;
+    FeatureTypeFactory(class FeatureTypeFactory const &) = delete;
 #endif
 
 public:
     MCAPI FeatureTypeFactory();
-    MCAPI void processFeature(class IWorldRegistriesProvider&, class ResourcePackManager const&, std::string const&, class Json::Value&, class SemVersion const&) const;
+    MCAPI void processFeature(class IWorldRegistriesProvider &, class ResourcePackManager const &, std::string const &, class Json::Value &, class SemVersion const &) const;
 
 protected:
 

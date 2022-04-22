@@ -17,8 +17,8 @@ class IFilePicker {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IFILEPICKER
 public:
-    class IFilePicker& operator=(class IFilePicker const&) = delete;
-    IFilePicker(class IFilePicker const&) = delete;
+    class IFilePicker& operator=(class IFilePicker const &) = delete;
+    IFilePicker(class IFilePicker const &) = delete;
     IFilePicker() = delete;
 #endif
 

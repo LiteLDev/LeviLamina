@@ -15,13 +15,13 @@ class BiomeArea {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMEAREA
 public:
-    class BiomeArea& operator=(class BiomeArea const&) = delete;
-    BiomeArea(class BiomeArea const&) = delete;
+    class BiomeArea& operator=(class BiomeArea const &) = delete;
+    BiomeArea(class BiomeArea const &) = delete;
     BiomeArea() = delete;
 #endif
 
 public:
-    MCAPI BiomeArea(class BoundingBox const&, unsigned int);
+    MCAPI BiomeArea(class BoundingBox const &, unsigned int);
     MCAPI ~BiomeArea();
 
 protected:

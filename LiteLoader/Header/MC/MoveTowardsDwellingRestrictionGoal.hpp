@@ -17,8 +17,8 @@ class MoveTowardsDwellingRestrictionGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOWARDSDWELLINGRESTRICTIONGOAL
 public:
-    class MoveTowardsDwellingRestrictionGoal& operator=(class MoveTowardsDwellingRestrictionGoal const&) = delete;
-    MoveTowardsDwellingRestrictionGoal(class MoveTowardsDwellingRestrictionGoal const&) = delete;
+    class MoveTowardsDwellingRestrictionGoal& operator=(class MoveTowardsDwellingRestrictionGoal const &) = delete;
+    MoveTowardsDwellingRestrictionGoal(class MoveTowardsDwellingRestrictionGoal const &) = delete;
     MoveTowardsDwellingRestrictionGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI MoveTowardsDwellingRestrictionGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI MoveTowardsDwellingRestrictionGoal(class Mob &);
 
 protected:
 

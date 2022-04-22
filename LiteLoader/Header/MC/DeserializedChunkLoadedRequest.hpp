@@ -15,8 +15,8 @@ struct DeserializedChunkLoadedRequest {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DESERIALIZEDCHUNKLOADEDREQUEST
 public:
-    struct DeserializedChunkLoadedRequest& operator=(struct DeserializedChunkLoadedRequest const&) = delete;
-    DeserializedChunkLoadedRequest(struct DeserializedChunkLoadedRequest const&) = delete;
+    struct DeserializedChunkLoadedRequest& operator=(struct DeserializedChunkLoadedRequest const &) = delete;
+    DeserializedChunkLoadedRequest(struct DeserializedChunkLoadedRequest const &) = delete;
     DeserializedChunkLoadedRequest() = delete;
 #endif
 

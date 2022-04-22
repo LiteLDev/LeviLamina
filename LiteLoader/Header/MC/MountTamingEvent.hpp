@@ -15,8 +15,8 @@ class MountTamingEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOUNTTAMINGEVENT
 public:
-    class MountTamingEvent& operator=(class MountTamingEvent const&) = delete;
-    MountTamingEvent(class MountTamingEvent const&) = delete;
+    class MountTamingEvent& operator=(class MountTamingEvent const &) = delete;
+    MountTamingEvent(class MountTamingEvent const &) = delete;
     MountTamingEvent() = delete;
 #endif
 

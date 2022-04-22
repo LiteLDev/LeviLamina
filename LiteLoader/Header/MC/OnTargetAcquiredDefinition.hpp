@@ -18,8 +18,8 @@ struct OnTargetAcquiredDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONTARGETACQUIREDDEFINITION
 public:
-    struct OnTargetAcquiredDefinition& operator=(struct OnTargetAcquiredDefinition const&) = delete;
-    OnTargetAcquiredDefinition(struct OnTargetAcquiredDefinition const&) = delete;
+    struct OnTargetAcquiredDefinition& operator=(struct OnTargetAcquiredDefinition const &) = delete;
+    OnTargetAcquiredDefinition(struct OnTargetAcquiredDefinition const &) = delete;
     OnTargetAcquiredDefinition() = delete;
 #endif
 

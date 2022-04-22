@@ -18,8 +18,8 @@ class StrollTowardsVillageGoal : public MoveToVillageGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STROLLTOWARDSVILLAGEGOAL
 public:
-    class StrollTowardsVillageGoal& operator=(class StrollTowardsVillageGoal const&) = delete;
-    StrollTowardsVillageGoal(class StrollTowardsVillageGoal const&) = delete;
+    class StrollTowardsVillageGoal& operator=(class StrollTowardsVillageGoal const &) = delete;
+    StrollTowardsVillageGoal(class StrollTowardsVillageGoal const &) = delete;
     StrollTowardsVillageGoal() = delete;
 #endif
 
@@ -27,7 +27,7 @@ public:
     /*0*/ virtual ~StrollTowardsVillageGoal();
     /*1*/ virtual bool canUse();
     /*3*/ virtual void __unk_vfn_3();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*17*/ virtual class BlockPos _selectRandomPosInVillage();

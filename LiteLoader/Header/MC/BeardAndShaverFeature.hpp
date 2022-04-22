@@ -17,13 +17,13 @@ class BeardAndShaverFeature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEARDANDSHAVERFEATURE
 public:
-    class BeardAndShaverFeature& operator=(class BeardAndShaverFeature const&) = delete;
-    BeardAndShaverFeature(class BeardAndShaverFeature const&) = delete;
+    class BeardAndShaverFeature& operator=(class BeardAndShaverFeature const &) = delete;
+    BeardAndShaverFeature(class BeardAndShaverFeature const &) = delete;
 #endif
 
 public:
     /*0*/ virtual ~BeardAndShaverFeature();
-    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     MCAPI BeardAndShaverFeature();
 
 protected:

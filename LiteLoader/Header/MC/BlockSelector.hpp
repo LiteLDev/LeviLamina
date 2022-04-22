@@ -17,8 +17,8 @@ class BlockSelector {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSELECTOR
 public:
-    class BlockSelector& operator=(class BlockSelector const&) = delete;
-    BlockSelector(class BlockSelector const&) = delete;
+    class BlockSelector& operator=(class BlockSelector const &) = delete;
+    BlockSelector(class BlockSelector const &) = delete;
     BlockSelector() = delete;
 #endif
 

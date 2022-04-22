@@ -18,13 +18,13 @@ class DedicatedServerCommands {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEDICATEDSERVERCOMMANDS
 public:
-    class DedicatedServerCommands& operator=(class DedicatedServerCommands const&) = delete;
-    DedicatedServerCommands(class DedicatedServerCommands const&) = delete;
+    class DedicatedServerCommands& operator=(class DedicatedServerCommands const &) = delete;
+    DedicatedServerCommands(class DedicatedServerCommands const &) = delete;
     DedicatedServerCommands() = delete;
 #endif
 
 public:
-    MCAPI static void setupStandaloneServer(class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft> > const&, class IMinecraftApp&, class Level&, class LevelStorage&, class DedicatedServer&, class AllowListFile&);
+    MCAPI static void setupStandaloneServer(class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const &, class IMinecraftApp &, class Level &, class LevelStorage &, class DedicatedServer &, class AllowListFile &);
 
 protected:
 

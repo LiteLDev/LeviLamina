@@ -15,13 +15,13 @@ struct ItemStackResponseSlotInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKRESPONSESLOTINFO
 public:
-    struct ItemStackResponseSlotInfo& operator=(struct ItemStackResponseSlotInfo const&) = delete;
-    ItemStackResponseSlotInfo(struct ItemStackResponseSlotInfo const&) = delete;
+    struct ItemStackResponseSlotInfo& operator=(struct ItemStackResponseSlotInfo const &) = delete;
+    ItemStackResponseSlotInfo(struct ItemStackResponseSlotInfo const &) = delete;
     ItemStackResponseSlotInfo() = delete;
 #endif
 
 public:
-    MCAPI ItemStackResponseSlotInfo(struct ItemStackResponseSlotInfo&&);
+    MCAPI ItemStackResponseSlotInfo(struct ItemStackResponseSlotInfo &&);
     MCAPI ~ItemStackResponseSlotInfo();
 
 protected:

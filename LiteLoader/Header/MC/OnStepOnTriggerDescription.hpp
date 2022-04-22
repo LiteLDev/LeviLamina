@@ -18,14 +18,14 @@ class OnStepOnTriggerDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONSTEPONTRIGGERDESCRIPTION
 public:
-    class OnStepOnTriggerDescription& operator=(class OnStepOnTriggerDescription const&) = delete;
-    OnStepOnTriggerDescription(class OnStepOnTriggerDescription const&) = delete;
+    class OnStepOnTriggerDescription& operator=(class OnStepOnTriggerDescription const &) = delete;
+    OnStepOnTriggerDescription(class OnStepOnTriggerDescription const &) = delete;
     OnStepOnTriggerDescription() = delete;
 #endif
 
 public:
     /*0*/ virtual ~OnStepOnTriggerDescription();
-    /*1*/ virtual std::string const& getName() const;
+    /*1*/ virtual std::string const & getName() const;
     MCAPI static std::string const NameID;
 
 protected:

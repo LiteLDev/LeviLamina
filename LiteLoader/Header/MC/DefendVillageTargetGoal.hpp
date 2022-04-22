@@ -18,8 +18,8 @@ class DefendVillageTargetGoal : public TargetGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFENDVILLAGETARGETGOAL
 public:
-    class DefendVillageTargetGoal& operator=(class DefendVillageTargetGoal const&) = delete;
-    DefendVillageTargetGoal(class DefendVillageTargetGoal const&) = delete;
+    class DefendVillageTargetGoal& operator=(class DefendVillageTargetGoal const &) = delete;
+    DefendVillageTargetGoal(class DefendVillageTargetGoal const &) = delete;
     DefendVillageTargetGoal() = delete;
 #endif
 
@@ -28,8 +28,8 @@ public:
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
     /*4*/ virtual void start();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI DefendVillageTargetGoal(class Mob&);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI DefendVillageTargetGoal(class Mob &);
 
 protected:
 

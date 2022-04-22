@@ -473,7 +473,7 @@ Local<Value> EntityClass::hurt(const Arguments& args)
         if (!entity)
             return Local<Value>();
 
-        int damage = args[0].toInt();
+        float damage = args[0].asNumber().toFloat();
         return Boolean::newBoolean(entity->hurtEntity(damage));
     }
     CATCH("Fail in hurt!");

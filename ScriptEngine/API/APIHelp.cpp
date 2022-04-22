@@ -18,6 +18,7 @@
 #include <API/NbtAPI.h>
 #include <API/GuiAPI.h>
 #include <API/DataAPI.h>
+#include <API/DatabaseAPI.h>
 #include <API/PlayerAPI.h>
 #include <Global.hpp>
 #include <Engine/EngineOwnData.h>
@@ -28,7 +29,7 @@ using namespace std;
 template <typename T>
 void PrintValue(T &out, Local<Value> v)
 {
-    switch(v.getKind())
+    switch (v.getKind())
     {
         case ValueKind::kString:
             out << v.asString().toString();
@@ -47,17 +48,17 @@ void PrintValue(T &out, Local<Value> v)
             break;
         case ValueKind::kArray:
         {
-            Local<Array> arr=v.asArray();
+            Local<Array> arr = v.asArray();
             if(arr.size() == 0)
                 out << "[]";
             else
             {
                 out << '[';
-                PrintValue(out,arr.get(0));
-                for(int i=1;i<arr.size();++i)
+                PrintValue(out, arr.get(0));
+                for(int i = 1; i<arr.size(); ++i)
                 {
                     out << ',';
-                    PrintValue(out,arr.get(i));
+                    PrintValue(out, arr.get(i));
                 }
                 out << ']';
             }
@@ -65,8 +66,8 @@ void PrintValue(T &out, Local<Value> v)
         }
         case ValueKind::kObject:
         {
-            //自定义类型也会被识别为Object，优先处理
-            //IntPos
+            // 自定义类型也会被识别为Object，优先处理
+            // IntPos
             IntPos* intpos = IntPos::extractPos(v);
             if (intpos != nullptr)
             {
@@ -74,7 +75,7 @@ void PrintValue(T &out, Local<Value> v)
                 break;
             }
 
-            //FloatPos
+            // FloatPos
             FloatPos* floatpos = FloatPos::extractPos(v);
             if (floatpos != nullptr)
             {
@@ -82,13 +83,13 @@ void PrintValue(T &out, Local<Value> v)
                 break;
             }
 
-            //其他自定义类型
+            // 其他自定义类型
             if (IsInstanceOf<BlockClass>(v))
             {
                 out << "<Block>";
                 break;
             }
-            if (IsInstanceOf<DbClass>(v))
+            if (IsInstanceOf<KVDBClass>(v))
             {
                 out << "<Database>";
                 break;
@@ -152,11 +153,11 @@ void PrintValue(T &out, Local<Value> v)
             {
                 out << '{';
                 out << keys[0]+":";
-                PrintValue(out,obj.get(keys[0]));
-                for(int i=1;i<keys.size();++i)
+                PrintValue(out, obj.get(keys[0]));
+                for(int i = 1; i < keys.size(); ++i)
                 {
-                    out << ","+keys[i]+":";
-                    PrintValue(out,obj.get(keys[i]));
+                    out << "," + keys[i] + ":";
+                    PrintValue(out, obj.get(keys[i]));
                 }
                 out << '}';
             }

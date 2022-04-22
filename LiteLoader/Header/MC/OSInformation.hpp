@@ -15,8 +15,8 @@ struct OSInformation {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OSINFORMATION
 public:
-    struct OSInformation& operator=(struct OSInformation const&) = delete;
-    OSInformation(struct OSInformation const&) = delete;
+    struct OSInformation& operator=(struct OSInformation const &) = delete;
+    OSInformation(struct OSInformation const &) = delete;
     OSInformation() = delete;
 #endif
 

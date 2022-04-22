@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class ChangeSettingCommand {
+class ChangeSettingCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,15 +18,15 @@ class ChangeSettingCommand {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHANGESETTINGCOMMAND
 public:
-    class ChangeSettingCommand& operator=(class ChangeSettingCommand const&) = delete;
-    ChangeSettingCommand(class ChangeSettingCommand const&) = delete;
+    class ChangeSettingCommand& operator=(class ChangeSettingCommand const &) = delete;
+    ChangeSettingCommand(class ChangeSettingCommand const &) = delete;
     ChangeSettingCommand() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ChangeSettingCommand();
-    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 

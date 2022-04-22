@@ -24,13 +24,13 @@ class CommandMessage {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDMESSAGE
 public:
-    class CommandMessage& operator=(class CommandMessage const&) = delete;
-    CommandMessage(class CommandMessage const&) = delete;
+    class CommandMessage& operator=(class CommandMessage const &) = delete;
+    CommandMessage(class CommandMessage const &) = delete;
 #endif
 
 public:
     MCAPI CommandMessage();
-    MCAPI std::string getMessage(class CommandOrigin const&) const;
+    MCAPI std::string getMessage(class CommandOrigin const &) const;
     MCAPI ~CommandMessage();
 
 protected:

@@ -15,8 +15,8 @@ class IJsonDefinitionSerializer {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IJSONDEFINITIONSERIALIZER
 public:
-    class IJsonDefinitionSerializer& operator=(class IJsonDefinitionSerializer const&) = delete;
-    IJsonDefinitionSerializer(class IJsonDefinitionSerializer const&) = delete;
+    class IJsonDefinitionSerializer& operator=(class IJsonDefinitionSerializer const &) = delete;
+    IJsonDefinitionSerializer(class IJsonDefinitionSerializer const &) = delete;
     IJsonDefinitionSerializer() = delete;
 #endif
 

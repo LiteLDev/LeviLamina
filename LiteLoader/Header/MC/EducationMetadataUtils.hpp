@@ -15,7 +15,7 @@ namespace EducationMetadataUtils {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI struct EducationMetadata parse(std::string const&, std::vector<std::string>&, class PackReport&);
-    MCAPI void parseEducationMetadataContent(class Json::Value const&, std::vector<std::string>&, struct EducationMetadata&, class PackReport&);
+    MCAPI struct EducationMetadata parse(std::string const &, std::vector<std::string> &, class PackReport &);
+    MCAPI void parseEducationMetadataContent(class Json::Value const &, std::vector<std::string> &, struct EducationMetadata &, class PackReport &);
 
 };

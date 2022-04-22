@@ -17,19 +17,19 @@ class AngrySystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANGRYSYSTEM
 public:
-    class AngrySystem& operator=(class AngrySystem const&) = delete;
-    AngrySystem(class AngrySystem const&) = delete;
+    class AngrySystem& operator=(class AngrySystem const &) = delete;
+    AngrySystem(class AngrySystem const &) = delete;
     AngrySystem() = delete;
 #endif
 
 public:
     /*0*/ virtual ~AngrySystem();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    /*2*/ virtual void tick(class EntityRegistry &);
 
 protected:
 
 private:
-    MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class AngryComponent>&);
+    MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class AngryComponent> &);
 
 };

@@ -17,8 +17,8 @@ class IPacketHandlerDispatcher {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IPACKETHANDLERDISPATCHER
 public:
-    class IPacketHandlerDispatcher& operator=(class IPacketHandlerDispatcher const&) = delete;
-    IPacketHandlerDispatcher(class IPacketHandlerDispatcher const&) = delete;
+    class IPacketHandlerDispatcher& operator=(class IPacketHandlerDispatcher const &) = delete;
+    IPacketHandlerDispatcher(class IPacketHandlerDispatcher const &) = delete;
     IPacketHandlerDispatcher() = delete;
 #endif
 

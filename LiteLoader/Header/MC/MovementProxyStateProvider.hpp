@@ -14,6 +14,6 @@ namespace MovementProxyStateProvider {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI std::unique_ptr<struct IMovementProxyStateProvider> create(class WeakRefT<struct EntityRefTraits>, class entt::dispatcher&);
+    MCAPI std::unique_ptr<struct IMovementProxyStateProvider> create(class WeakRefT<struct EntityRefTraits>, class entt::dispatcher &);
 
 };

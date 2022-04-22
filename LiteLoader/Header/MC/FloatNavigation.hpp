@@ -18,14 +18,14 @@ class FloatNavigation : public PathNavigation {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOATNAVIGATION
 public:
-    class FloatNavigation& operator=(class FloatNavigation const&) = delete;
-    FloatNavigation(class FloatNavigation const&) = delete;
+    class FloatNavigation& operator=(class FloatNavigation const &) = delete;
+    FloatNavigation(class FloatNavigation const &) = delete;
     FloatNavigation() = delete;
 #endif
 
 public:
     /*0*/ virtual ~FloatNavigation();
-    /*10*/ virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
+    /*10*/ virtual bool travel(class NavigationComponent &, class Mob &, float &, float &, float &);
 
 protected:
 

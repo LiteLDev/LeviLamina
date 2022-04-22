@@ -18,13 +18,13 @@ class InstantDespawnDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSTANTDESPAWNDEFINITION
 public:
-    class InstantDespawnDefinition& operator=(class InstantDespawnDefinition const&) = delete;
-    InstantDespawnDefinition(class InstantDespawnDefinition const&) = delete;
+    class InstantDespawnDefinition& operator=(class InstantDespawnDefinition const &) = delete;
+    InstantDespawnDefinition(class InstantDespawnDefinition const &) = delete;
     InstantDespawnDefinition() = delete;
 #endif
 
 public:
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InstantDespawnDefinition> >&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InstantDespawnDefinition>> &);
 
 protected:
 

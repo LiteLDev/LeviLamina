@@ -16,7 +16,7 @@ namespace ItemColorUtil {
 #undef AFTER_EXTRA
     MCAPI enum ItemColor fromBlockColor(enum BlockColor);
     MCAPI enum ItemColor fromInt(int);
-    MCAPI std::string const& getName(enum ItemColor);
+    MCAPI std::string const & getName(enum ItemColor);
     MCAPI int getRGBColor(enum ItemColor);
 
 };

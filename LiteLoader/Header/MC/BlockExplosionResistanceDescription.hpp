@@ -15,8 +15,8 @@ struct BlockExplosionResistanceDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKEXPLOSIONRESISTANCEDESCRIPTION
 public:
-    struct BlockExplosionResistanceDescription& operator=(struct BlockExplosionResistanceDescription const&) = delete;
-    BlockExplosionResistanceDescription(struct BlockExplosionResistanceDescription const&) = delete;
+    struct BlockExplosionResistanceDescription& operator=(struct BlockExplosionResistanceDescription const &) = delete;
+    BlockExplosionResistanceDescription(struct BlockExplosionResistanceDescription const &) = delete;
     BlockExplosionResistanceDescription() = delete;
 #endif
 

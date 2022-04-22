@@ -18,22 +18,25 @@ class ItemEnchants {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMENCHANTS
 public:
-    class ItemEnchants& operator=(class ItemEnchants const&) = delete;
-    ItemEnchants(class ItemEnchants const&) = delete;
+    class ItemEnchants& operator=(class ItemEnchants const &) = delete;
+    ItemEnchants(class ItemEnchants const &) = delete;
     ItemEnchants() = delete;
 #endif
 
 public:
     MCAPI ItemEnchants(int);
-    MCAPI ItemEnchants(int, class ListTag const&);
+    MCAPI ItemEnchants(int, class ListTag const &);
     MCAPI bool addEnchant(class EnchantmentInstance, bool);
     MCAPI struct EnchantResult canEnchant(class EnchantmentInstance, bool);
     MCAPI std::vector<class EnchantmentInstance> getAllEnchants() const;
     MCAPI std::vector<std::string> getEnchantNames() const;
-    MCAPI std::vector<class EnchantmentInstance> const& getEnchants(int) const;
+    MCAPI class EnchantmentInstance getEnchantment(enum Enchant::Type);
+    MCAPI std::vector<class EnchantmentInstance> const & getEnchants(int) const;
+    MCAPI int getSlot() const;
     MCAPI int getTotalValue(bool) const;
     MCAPI int hasEnchant(enum Enchant::Type) const;
     MCAPI bool isEmpty() const;
+    MCAPI void removeEnchantment(enum Enchant::Type);
     MCAPI ~ItemEnchants();
 
 protected:

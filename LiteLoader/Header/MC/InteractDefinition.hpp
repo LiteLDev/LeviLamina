@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Json.hpp"
 #include "JsonUtil.hpp"
 
 #define BEFORE_EXTRA
@@ -19,23 +18,18 @@ class InteractDefinition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERACTDEFINITION
 public:
-    class InteractDefinition& operator=(class InteractDefinition const&) = delete;
-    InteractDefinition(class InteractDefinition const&) = delete;
+    class InteractDefinition& operator=(class InteractDefinition const &) = delete;
+    InteractDefinition(class InteractDefinition const &) = delete;
     InteractDefinition() = delete;
 #endif
 
 public:
-    MCAPI void addInteraction(struct Interaction const&);
-    MCAPI void deserializeData(class Json::Value&, class SemVersion const&);
-    MCAPI void initialize(class EntityContext&, class InteractComponent&) const;
-    MCAPI void serializeData(class Json::Value&) const;
-    MCAPI ~InteractDefinition();
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InteractDefinition> >&);
+    MCAPI void addInteraction(struct Interaction const &);
+    MCAPI void initialize(class EntityContext &, class InteractComponent &) const;
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InteractDefinition>> &);
 
 protected:
 
 private:
-    MCAPI void deserializeInteraction(class Json::Value&, class SemVersion const&);
-    MCAPI void serializeInteraction(struct Interaction const&, class Json::Value&) const;
 
 };

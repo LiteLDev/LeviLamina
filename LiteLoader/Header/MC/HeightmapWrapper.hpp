@@ -15,15 +15,15 @@ class HeightmapWrapper {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HEIGHTMAPWRAPPER
 public:
-    class HeightmapWrapper& operator=(class HeightmapWrapper const&) = delete;
-    HeightmapWrapper(class HeightmapWrapper const&) = delete;
+    class HeightmapWrapper& operator=(class HeightmapWrapper const &) = delete;
+    HeightmapWrapper(class HeightmapWrapper const &) = delete;
     HeightmapWrapper() = delete;
 #endif
 
 public:
     MCAPI bool empty() const;
-    MCAPI short getHeightAt(class Pos const&) const;
-    MCAPI static class HeightmapWrapper create(std::vector<short> const*, short);
+    MCAPI short getHeightAt(class Pos const &) const;
+    MCAPI static class HeightmapWrapper create(std::vector<short> const *, short);
 
 protected:
 

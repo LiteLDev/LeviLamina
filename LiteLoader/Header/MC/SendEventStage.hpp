@@ -15,8 +15,8 @@ class SendEventStage {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SENDEVENTSTAGE
 public:
-    class SendEventStage& operator=(class SendEventStage const&) = delete;
-    SendEventStage(class SendEventStage const&) = delete;
+    class SendEventStage& operator=(class SendEventStage const &) = delete;
+    SendEventStage(class SendEventStage const &) = delete;
     SendEventStage() = delete;
 #endif
 

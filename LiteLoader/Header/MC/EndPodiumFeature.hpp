@@ -18,15 +18,15 @@ class EndPodiumFeature : public Feature {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDPODIUMFEATURE
 public:
-    class EndPodiumFeature& operator=(class EndPodiumFeature const&) = delete;
-    EndPodiumFeature(class EndPodiumFeature const&) = delete;
+    class EndPodiumFeature& operator=(class EndPodiumFeature const &) = delete;
+    EndPodiumFeature(class EndPodiumFeature const &) = delete;
     EndPodiumFeature() = delete;
 #endif
 
 public:
     /*0*/ virtual ~EndPodiumFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /*
     inline  ~EndPodiumFeature(){
          (EndPodiumFeature::*rv)();

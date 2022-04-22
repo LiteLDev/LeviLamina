@@ -18,8 +18,8 @@ class CrossbowEnchant {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CROSSBOWENCHANT
 public:
-    class CrossbowEnchant& operator=(class CrossbowEnchant const&) = delete;
-    CrossbowEnchant(class CrossbowEnchant const&) = delete;
+    class CrossbowEnchant& operator=(class CrossbowEnchant const &) = delete;
+    CrossbowEnchant(class CrossbowEnchant const &) = delete;
     CrossbowEnchant() = delete;
 #endif
 

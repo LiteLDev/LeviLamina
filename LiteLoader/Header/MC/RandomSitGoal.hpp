@@ -17,8 +17,8 @@ class RandomSitGoal {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMSITGOAL
 public:
-    class RandomSitGoal& operator=(class RandomSitGoal const&) = delete;
-    RandomSitGoal(class RandomSitGoal const&) = delete;
+    class RandomSitGoal& operator=(class RandomSitGoal const &) = delete;
+    RandomSitGoal(class RandomSitGoal const &) = delete;
     RandomSitGoal() = delete;
 #endif
 
@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void appendDebugInfo(std::string&) const;
-    MCAPI RandomSitGoal(class Mob&, float, float, float, float);
+    /*7*/ virtual void appendDebugInfo(std::string &) const;
+    MCAPI RandomSitGoal(class Mob &, float, float, float, float);
 
 protected:
 
