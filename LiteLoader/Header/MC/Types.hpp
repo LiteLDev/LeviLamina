@@ -1009,6 +1009,10 @@ enum class MinecraftPacketIds : int
     PlayerStartItemCooldown           = 0xB0,
     ScriptMessage                     = 0xB1,
     CodeBuilderSource                 = 0xB2,
+    TickingAreasLoadStatus            = 0xB3,
+    DimensionData                     = 0xB4,
+    AgentActionEvent                  = 0xB5,
+    ChangeMobProperty 		          = 0xB6
 };
 
 enum ItemStackNetResult :unsigned char {
