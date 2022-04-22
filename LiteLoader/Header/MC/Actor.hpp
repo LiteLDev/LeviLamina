@@ -62,11 +62,11 @@ public:
 
     inline Vec3& getPos()
     {
-        getPosition();
+        return getPosition();
     }
     inline Vec3& getPosOld()
     {
-        getPosPrev();
+        return getPosPrev();
     }
 	
 #undef AFTER_EXTRA
