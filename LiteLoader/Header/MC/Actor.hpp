@@ -60,7 +60,15 @@ public:
     LIAPI bool refreshActorData();
     LIAPI bool addEffect(MobEffect::EffectType type, int tick, int level, bool ambient = false, bool showParticles = true, bool showAnimation = false);
 
-
+    inline Vec3& getPos()
+    {
+        getPosition();
+    }
+    inline Vec3& getPosOld()
+    {
+        getPosPrev();
+    }
+	
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOR
