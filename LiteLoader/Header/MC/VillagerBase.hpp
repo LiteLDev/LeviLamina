@@ -14,6 +14,7 @@ class VillagerBase : public Mob {
 
 #define AFTER_EXTRA
 // Add Member There
+    enum BiomeType;
 
 #undef AFTER_EXTRA
 
