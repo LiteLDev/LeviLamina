@@ -19,7 +19,7 @@ The most important idea of ​​LLSE is to modularize important functions to fa
 
 The architecture of `LiteLoader ScriptEngine` can be seen at a glance from this figure:
 
-![LLSE Architecture Diagram](Structure.png)
+![LLSE Architecture Diagram](/en_US/Structure.png)
 
 - `LiteLoader` and `ScriptX` provide important basic interfaces.
 - Kernel kernel abstraction layer is responsible for all calls to `LiteLoader` API, Hook function calls and calls to other underlying library functions, and abstracts their respective types into standard variable types and STL containers, and encapsulates their respective interfaces to avoid Strong dependencies on underlying projects spread to upper layers.

@@ -7,7 +7,7 @@ In LLSE, use "player objects" to manipulate and obtain information about a playe
 #### Get From Event or API
 
 By registering the **event listener** function, get the player object related to the related event given by BDS.
-For details, see [Event listener documentation - EventAPI](Development/EventAPI/Listen.md)
+For details, see [Event listener documentation - EventAPI](/en_US/Development/EventAPI/Listen.md)
 
 #### Acquired From Existing Players
 
@@ -65,7 +65,7 @@ These object properties are read-only and cannot be modified. in:
 - The value of the **Player Game Mode** attribute is: `0` for survival mode, `1` for creative mode, `2` for adventure mode, `3` for spectator mode
 - **Player's real name** attribute stored strings can be considered reliable, they will not be changed by name changes
 - **Player device IP address** attribute stores the player's device IP and port number, the format is similar to `12.34.567.89:1111`
-- For a detailed explanation of the **player's current orientation** attribute, see [Basic Game Interface Documentation](Development/GameAPI/Basic.md)
+- For a detailed explanation of the **player's current orientation** attribute, see [Basic Game Interface Documentation](/en_US/Development/GameAPI/Basic.md)
 - The comparison table of **operation authority level** attributes is as follows:
 
 | Permission Level | Corresponding Authority    |
@@ -319,7 +319,7 @@ pl.rename("newname");
 - Return value type: `Device`
 
 The device information object stores certain information about the player's device, such as device IP address, device type, network latency, etc.  
-For additional information about device information objects, please refer to [Device Information Objects API](Development/GameAPI/Device.md)
+For additional information about device information objects, please refer to [Device Information Objects API](/en_US/Development/GameAPI/Device.md)
 
 <br>
 
@@ -352,7 +352,7 @@ The item object obtained here is a reference. That is to say, modifying the item
 - Return value: The container object corresponding to the player's inventory
 - Return value type: `Container`
 
-For more usage of container objects, please refer to [Container Object API Documentation](Development/GameAPI/Container.md)
+For more usage of container objects, please refer to [Container Object API Documentation](/en_US/Development/GameAPI/Container.md)
 
 <br>
 
@@ -363,7 +363,7 @@ For more usage of container objects, please refer to [Container Object API Docum
 - Return value: The container object corresponding to the player's armor bar
 - Return value type: `Container`
 
-For more usage of container objects, please refer to [Container Object API Documentation](Development/GameAPI/Container.md)
+For more usage of container objects, please refer to [Container Object API Documentation](/en_US/Development/GameAPI/Container.md)
 
 <br>
 
@@ -374,7 +374,7 @@ For more usage of container objects, please refer to [Container Object API Docum
 - Return value: The container object corresponding to the player's ender chest.
 - Return value type: `Container`
 
-For more usage of container objects, please refer to [Container Object API Documentation](Development/GameAPI/Container.md)
+For more usage of container objects, please refer to [Container Object API Documentation](/en_US/Development/GameAPI/Container.md)
 <br>
 
 #### Get the Player’s Respawn Coordinates  
@@ -726,7 +726,7 @@ pl.removeBossBar();
 - Return value: Whether the write was successful or not.
 - Return value type: `Boolean`
 
-For more usage of NBT objects, please refer to [NBT Interface Documentation](Development/NbtAPI/NBT.md)
+For more usage of NBT objects, please refer to [NBT Interface Documentation](/en_US/Development/NbtAPI/NBT.md)
 
 <br>
 
