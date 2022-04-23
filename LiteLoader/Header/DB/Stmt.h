@@ -184,15 +184,15 @@ public:
      */
     virtual ResultSet fetchAll() = 0;
     /**
-     * @brief Reset the statement(keep the currently bound value to re-excute).
+     * @brief Re-execute the statement(keep the currently bound value to re-excute).
      *
      * @return Stmt&  *this
      * @note   If you want to clear the bound value, use clear() instead.
      *
      * @par Impletementation
-     * @see SQLiteStmt::reset
+     * @see SQLiteStmt::reexec
      */
-    virtual Stmt& reset() = 0;
+    virtual Stmt& reexec() = 0;
     /**
      * @brief Clear all the bound values.
      *

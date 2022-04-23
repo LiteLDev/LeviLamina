@@ -248,14 +248,15 @@ ResultSet SQLiteStmt::fetchAll()
     return result;
 }
 
-Stmt& SQLiteStmt::reset()
+Stmt& SQLiteStmt::reexec()
 {
     auto res = sqlite3_reset(stmt);
     if (res != SQLITE_OK)
     {
-        throw std::runtime_error("SQLiteStmt::reset: Failed to reset");
+        throw std::runtime_error("SQLiteStmt::reexec: Failed to reexec");
     }
-    IF_ENDBG dbLogger.debug("SQLiteStmt::reset: Reset successfully");
+    IF_ENDBG dbLogger.debug("SQLiteStmt::reexec: Reset successfully");
+    step(); // Execute
     return *this;
 }
 

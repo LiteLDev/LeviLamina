@@ -40,10 +40,10 @@ public:
     Stmt& fetchAll(std::function<bool(const Row&)> cb);
     ResultSet fetchAll();
     /**
-     * @see Stmt::reset for details
-     * @see https://www.sqlite.org/c3ref/reset.html
+     * @see Stmt::reexec for details
+     * @see https://www.sqlite.org/c3ref/reexec.html
      */
-    Stmt& reset();
+    Stmt& reexec();
     Stmt& clear();
     void close();
     void destroy();

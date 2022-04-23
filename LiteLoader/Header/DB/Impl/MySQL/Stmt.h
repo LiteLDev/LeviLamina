@@ -36,7 +36,7 @@ public:
     Row fetch();
     Stmt& fetchAll(std::function<bool(const Row&)> cb);
     ResultSet fetchAll();
-    Stmt& reset();
+    Stmt& reexec();
     Stmt& clear();
     void close();
     void destroy();

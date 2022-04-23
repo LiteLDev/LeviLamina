@@ -34,7 +34,7 @@ ClassDefine<DBStmtClass> DBStmtClassBuilder =
         .instanceFunction("step", &DBStmtClass::step)
         .instanceFunction("fetch", &DBStmtClass::fetch)
         .instanceFunction("fetchAll", &DBStmtClass::fetchAll)
-        .instanceFunction("reset", &DBStmtClass::reset)
+        .instanceFunction("reexec", &DBStmtClass::reexec)
         .instanceFunction("clear", &DBStmtClass::clear)
         .build();
 
@@ -570,16 +570,16 @@ Local<Value> DBStmtClass::fetchAll(const Arguments& args)
     CATCH("Fail in fetchAll!")
 }
 
-Local<Value> DBStmtClass::reset(const Arguments& args)
+Local<Value> DBStmtClass::reexec(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 0);
 
     try
     {
-        stmt.reset();
+        stmt.reexec();
         return Boolean::newBoolean(true);
     }
-    CATCH_WITHOUT_RETURN("Fail in reset!");
+    CATCH_WITHOUT_RETURN("Fail in reexec!");
     return Boolean::newBoolean(false);
 }
 
