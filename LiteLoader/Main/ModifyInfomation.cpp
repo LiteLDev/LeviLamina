@@ -67,15 +67,12 @@ THook(void, "?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@
 {
     va_list va;
     auto text = (char*)a8;
-    if (string(text).find("setting up server logging...") != string(text).npos)
+    if (string(text).find("setting up server logging...") != string(text).npos 
+        || string(text).find("Server started") != string(text).npos)
     {
         return;
     }
-    //std::cout << a7 << std::endl;
     va_start(va, a8);
-    if (a7 == 600) {    
-        return;
-    }
     return BedrockLog::log_va(a1, a2, a3, a4, a5, a6, a7, a8, va);
 }
 
