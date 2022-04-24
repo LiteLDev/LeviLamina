@@ -354,7 +354,7 @@ public:
     template <typename T>
     inline Stmt& operator,(IntoType<T>& i)
     {
-        if (step()) i.value = row_to<T>(next());
+        if (!done()) i.value = row_to<T>(next());
         return *this;
     }
     /**
@@ -393,7 +393,7 @@ public:
     template <>
     inline Stmt& operator,(IntoType<Row>& i)
     {
-        if (step()) i.value = fetch();
+        if (!done()) i.value = fetch();
         return *this;
     }
 };

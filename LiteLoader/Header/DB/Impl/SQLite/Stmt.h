@@ -13,7 +13,7 @@ class SQLiteStmt : public Stmt
 
     SQLiteSession* session = nullptr;
     sqlite3_stmt* stmt = nullptr;
-    RowHeader resultHeader;
+    std::shared_ptr<RowHeader> resultHeader;
     int boundParamsCount = 0;
     int totalParamsCount = 0;
     int steps = 0;
