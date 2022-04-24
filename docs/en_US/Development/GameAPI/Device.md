@@ -7,7 +7,7 @@ In LLSE, the "device information object" is used to manipulate and obtain inform
 #### Acquired by the Player
 
 Get the **device information object** corresponding to a player through the `.getDevice` member function of the player object
-See [Player Object API](Development/GameAPI/Player.md)      
+See [Player Object API](/en_US/Development/GameAPI/Player.md)      
 
 > Note: Do not save a device information object **long-term.**
 > When the player corresponding to the device exits the game, the corresponding object will become invalid. Therefore, if there is a need to operate an object for a long time, please obtain the real-time device information object through the above methods.

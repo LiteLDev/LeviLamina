@@ -7,7 +7,7 @@ In LLSE, use "block objects" to manipulate and obtain information about a certai
 #### Get From Event or API 
 
 By registering the **event listener** function, or calling some **returning a block object** function, you can get the block object related to the related event given by the BDS
-For details, see [Event listener documentation - EventAPI](Development/EventAPI/Listen.md)  
+For details, see [Event listener documentation - EventAPI](/en_US/Development/EventAPI/Listen.md)  
 
 #### Obtained by Block Coordinates
 
@@ -67,7 +67,7 @@ Each block object contains some member functions (member methods) that can be ex
 - Return value: Whether the write was successful or not.
 - Return value type: `Boolean`
 
-For more usage of NBT objects, please refer to [NBT Interface Documentation](Development/NbtAPI/NBT.md)
+For more usage of NBT objects, please refer to [NBT Interface Documentation](/en_US/Development/NbtAPI/NBT.md)
 Note: Use this api with caution, consider using mc.setBlock() instead.
 
 <br>
@@ -102,7 +102,7 @@ Such as boxes, buckets and other containers; they each have a container object o
 - Return value: The container object owned by this block
 - Return value type: `Container`
 
-For more usage of container objects, please refer to [Container Object API Documentation](Development/GameAPI/Container.md)
+For more usage of container objects, please refer to [Container Object API Documentation](/en_US/Development/GameAPI/Container.md)
 
 <br>
 
@@ -131,7 +131,7 @@ For more usage of container objects, please refer to [Container Object API Docum
 - Return value: Whether the deletion was successful
 - Return value type: `Boolean`
 
-For more usage of block entity object, please refer to [Block entity object API documentation](Development/GameAPI/BlockEntity.md)
+For more usage of block entity object, please refer to [Block entity object API documentation](/en_US/Development/GameAPI/BlockEntity.md)
 
 <br>
 

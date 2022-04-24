@@ -7,7 +7,7 @@ pass `NbtCompound` Only the interface of the object can perform some operations 
 
 #### Parse From an Existing NBT Object 
 
-See [NbtList - List Type](Development/NbtAPI/NBTList.md) and [NbtCompound - Tag Type](Development/NbtAPI/NBTCompound.md) documentation.
+See [NbtList - List Type](/en_US/Development/NbtAPI/NBTList.md) and [NbtCompound - Tag Type](/en_US/Development/NbtAPI/NBTCompound.md) documentation.
 
 <br>
 

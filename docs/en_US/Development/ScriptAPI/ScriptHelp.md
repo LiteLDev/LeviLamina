@@ -59,7 +59,7 @@ This is an upgraded version of the above function; it supports color output.
 
 #### Show results: 
 
-![ColorLogExample](ScriptHelp.assets/colorLog.png)
+![ColorLogExample](/en_US/ScriptHelp.assets/colorLog.png)
 
 <br>
 
