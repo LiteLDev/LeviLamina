@@ -444,7 +444,8 @@ Note: Player.setSprinting (false) can be executed in the next game tick to achie
     The armor column number, range from 0 to 3.
   - item : `Item`  
     The item in the armor slot.
-- Intercept event: cannot be intercepted.
+- Intercept event: function returns `false`
+- Warning: After interception, you will take off your original equipment when you enter the game.
 
 <br>
 

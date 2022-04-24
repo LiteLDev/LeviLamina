@@ -1012,11 +1012,13 @@ TInstanceHook(void, "?setSprinting@Mob@@UEAAX_N@Z",
     IF_LISTENED_END(PlayerSprintEvent)
     return original(this, sprinting);
 }
-
+#include <MC/PlayerInventory.hpp>
+#include <MC/SimpleContainer.hpp>
 /////////////////// PlayerSetArmor ///////////////////
 TInstanceHook(void, "?setArmor@Player@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z",
       Player, unsigned slot, ItemStack* it)
 {
+    original(this, slot, it);
     IF_LISTENED(PlayerSetArmorEvent)
     {
         if (this->isPlayer())
@@ -1025,11 +1027,21 @@ TInstanceHook(void, "?setArmor@Player@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z",
             ev.mPlayer = this;
             ev.mSlot = slot;
             ev.mArmorItem = it;
-            ev.call();
+            if (!ev.call()) {
+                auto& uid = getUniqueID();
+                auto snbt = it->getNbt()->toSNBT();
+                auto& plinv = getSupplies();
+                plinv.add(*it, 1);
+                getArmorContainer().setItem(slot, ItemStack::EMPTY_ITEM);
+                Schedule::delay([uid] {
+                    auto sp = Level::getPlayer(uid);
+                    if (sp)
+                        sp->refreshInventory();
+                },1);
+            }
         }
     }
     IF_LISTENED_END(PlayerSetArmorEvent)
-    return original(this, slot, it);
 }
 
 /////////////////// PlayerUseRespawnAnchor ///////////////////
