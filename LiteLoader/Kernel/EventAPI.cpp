@@ -1592,23 +1592,6 @@ TInstanceHook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer
     return out;
 }
 
-THook(bool, "?startDestroyBlock@GameMode@@UEAA_NAEBVBlockPos@@EAEA_N@Z", Actor** ac, BlockPos* bpos, unsigned __int8 a3, bool* a4)
-{
-    IF_LISTENED(PlayerDestroyBlockEvent)
-    {
-        if (ac[1]->isPlayer())
-        {
-            PlayerDestroyBlockEvent ev{};
-            ev.mPlayer = (ServerPlayer*)ac[1];
-            ev.mBlockInstance = Level::getBlockInstance(bpos, ac[1]->getDimensionId());
-            if (!ev.call())
-                return false;
-        }
-    }
-    IF_LISTENED_END(PlayerDestroyBlockEvent)
-    return original(ac, bpos, a3, a4);
-}
-
 #include <MC/SurvivalMode.hpp>
 /////////////////// PlayerDestroy ///////////////////
 TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z",
@@ -1620,16 +1603,19 @@ TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z",
         {
             PlayerDestroyBlockEvent ev{};
             ev.mPlayer = getPlayer();
-            ev.mBlockInstance = Level::getBlockInstance(a3, getPlayer()->getDimensionId());
+            auto bl = Level::getBlockInstance(a3, getPlayer()->getDimensionId());
+            ev.mBlockInstance = bl;
             if (!ev.call())
+            {
                 return false;
+            }
         }
     }
     IF_LISTENED_END(PlayerDestroyBlockEvent)
-    return original(this, a3,a4);
+    return original(this, a3, a4);
 }
 
-TInstanceHook(bool, "?_creativeDestroyBlock@GameMode@@AEAA_NAEBVBlockPos@@E@Z",
+TInstanceHook(bool, "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z",
               GameMode, BlockPos a3, unsigned __int8 a4)
 {
     IF_LISTENED(PlayerDestroyBlockEvent)
@@ -1638,9 +1624,12 @@ TInstanceHook(bool, "?_creativeDestroyBlock@GameMode@@AEAA_NAEBVBlockPos@@E@Z",
         {
             PlayerDestroyBlockEvent ev{};
             ev.mPlayer = getPlayer();
-            ev.mBlockInstance = Level::getBlockInstance(a3, getPlayer()->getDimensionId());
+            auto bl = Level::getBlockInstance(a3, getPlayer()->getDimensionId());
+            ev.mBlockInstance = bl;
             if (!ev.call())
+            {
                 return false;
+            }
         }
     }
     IF_LISTENED_END(PlayerDestroyBlockEvent)
