@@ -286,6 +286,7 @@ DECLARE_EVENT_DATA(ServerStoppedEvent);
 DECLARE_EVENT_DATA(RegCmdEvent);
 DECLARE_EVENT_DATA(PlayerBedEnterEvent);
 DECLARE_EVENT_DATA(ScriptPluginManagerEvent);
+DECLARE_EVENT_DATA(MobSpawnEvent);
 
 
 #ifdef ENABLE_SEH_PROTECTION
@@ -2240,4 +2241,22 @@ TInstanceHook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBloc
     }
     IF_LISTENED_END(PlayerBedEnterEvent)
     return original(this, blk);
+}
+
+
+#include <MC/Spawner.hpp>
+TInstanceHook(Mob*,"?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@_N44@Z",
+              Spawner, BlockSource* a2, ActorDefinitionIdentifier* a3, Actor* a4, Vec3& a5, bool a6, bool a7, bool a8)
+{
+    IF_LISTENED(MobSpawnEvent)
+    {
+        MobSpawnEvent ev{};
+        ev.mTypeName = a3->getCanonicalName();
+        ev.mPos = a5;
+        ev.mDimensionId = a2->getDimensionId();
+        if (!ev.call())
+            return nullptr;
+    }
+    IF_LISTENED_END(MobSpawnEvent)
+    return original(this,a2,a3,a4,a5,a6,a7,a8);
 }

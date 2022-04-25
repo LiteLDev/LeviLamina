@@ -57,6 +57,20 @@ Note that when the player dies, in addition to triggering `onPlayerDie` event, t
 
 <br>
 
+#### `"onMobSpawn"` - Mob Spawn Event
+
+- Listener function prototype 
+  `function(typeName,pos)`
+- Parameters: 
+  - typeName : `string`  
+    Entity Name
+  - pos : `FloatPos`  
+   The coordinates of the spawn.
+  
+- Intercept events: function returns `false`
+
+<br>
+
 #### `"onProjectileHitEntity"` - Entity Hit by Projectile Event
 
 - Listener function prototype 
