@@ -368,13 +368,6 @@ Stmt& SQLiteStmt::create(SQLiteSession& sess, const std::string& sql)
     result->onHeap = true;
     result->session = &sess;
     result->setDebugOutput(sess.debugOutput);
-    // If the sql has no parameters, we can execute it immediately
-    // if (result->getParamsCount() == 0)
-    //{
-    //    result->step();
-    //    result->affectedRowCount = sess.getAffectedRows();
-    //    result->insertRowId = sess.getLastInsertId();
-    //}
     if (sess.debugOutput) dbLogger.debug("SQLiteStmt::create: Prepared > " + sql);
     return *result;
 }
