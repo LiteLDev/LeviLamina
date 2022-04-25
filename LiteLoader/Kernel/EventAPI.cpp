@@ -1592,7 +1592,6 @@ TInstanceHook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer
     return out;
 }
 
-bool isStartDestroy = false;
 THook(bool, "?startDestroyBlock@GameMode@@UEAA_NAEBVBlockPos@@EAEA_N@Z", Actor** ac, BlockPos* bpos, unsigned __int8 a3, bool* a4)
 {
     IF_LISTENED(PlayerDestroyBlockEvent)
@@ -1604,35 +1603,50 @@ THook(bool, "?startDestroyBlock@GameMode@@UEAA_NAEBVBlockPos@@EAEA_N@Z", Actor**
             ev.mBlockInstance = Level::getBlockInstance(bpos, ac[1]->getDimensionId());
             if (!ev.call())
                 return false;
-            isStartDestroy = true;
-            auto out = original(ac, bpos, a3, a4);
-            isStartDestroy = false;
-            return out;
         }
     }
     IF_LISTENED_END(PlayerDestroyBlockEvent)
     return original(ac, bpos, a3, a4);
 }
 
+#include <MC/SurvivalMode.hpp>
 /////////////////// PlayerDestroy ///////////////////
-TInstanceHook(bool, "?checkBlockDestroyPermissions@BlockSource@@QEAA_NAEAVActor@@AEBVBlockPos@@AEBVItemStackBase@@_N@Z",
-      BlockSource , Actor* ac, BlockPos* bpos, ItemStackBase* a4, bool a5)
+TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z",
+              SurvivalMode, BlockPos a3, unsigned __int8 a4)
 {
-    if (isStartDestroy) return original(this, ac, bpos, a4, a5);
     IF_LISTENED(PlayerDestroyBlockEvent)
     {
-        if (ac->isPlayer())
+        if (getPlayer()->isPlayer())
         {
             PlayerDestroyBlockEvent ev{};
-            ev.mPlayer = (ServerPlayer*)ac;
-            ev.mBlockInstance = Level::getBlockInstance(bpos, this->getDimensionId());
+            ev.mPlayer = getPlayer();
+            ev.mBlockInstance = Level::getBlockInstance(a3, getPlayer()->getDimensionId());
             if (!ev.call())
                 return false;
         }
     }
     IF_LISTENED_END(PlayerDestroyBlockEvent)
-    return original(this, ac, bpos, a4, a5);
+    return original(this, a3,a4);
 }
+
+TInstanceHook(bool, "?_creativeDestroyBlock@GameMode@@AEAA_NAEBVBlockPos@@E@Z",
+              GameMode, BlockPos a3, unsigned __int8 a4)
+{
+    IF_LISTENED(PlayerDestroyBlockEvent)
+    {
+        if (getPlayer()->isPlayer())
+        {
+            PlayerDestroyBlockEvent ev{};
+            ev.mPlayer = getPlayer();
+            ev.mBlockInstance = Level::getBlockInstance(a3, getPlayer()->getDimensionId());
+            if (!ev.call())
+                return false;
+        }
+    }
+    IF_LISTENED_END(PlayerDestroyBlockEvent)
+    return original(this, a3, a4);
+}
+
 
 /////////////////// PlayerUseItemOn ///////////////////
 TInstanceHook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z",
