@@ -172,7 +172,7 @@ bool SQLiteStmt::done()
 Row SQLiteStmt::fetch()
 {
     if (done()) return Row();
-    if (resultHeader->empty())
+    if (resultHeader && resultHeader->empty())
     {
         fetchResultHeader();
     }
@@ -241,12 +241,14 @@ Stmt& SQLiteStmt::fetchAll(std::function<bool(const Row&)> cb)
 
 ResultSet SQLiteStmt::fetchAll()
 {
-    if (resultHeader->empty())
+    if (resultHeader && resultHeader->empty())
     {
         fetchResultHeader();
     }
     ResultSet result(resultHeader);
-    while (step()) result.push_back(fetch());
+    do
+        result.push_back(fetch());
+    while (step());
     IF_ENDBG dbLogger.debug("SQLiteStmt::fetchAll: Fetched {} rows", result.size());
     return result;
 }
@@ -259,6 +261,13 @@ Stmt& SQLiteStmt::reexec()
         throw std::runtime_error("SQLiteStmt::reexec: Failed to reset");
     }
     IF_ENDBG dbLogger.debug("SQLiteStmt::reexec: Reset successfully");
+    boundIndexes = {};
+    resultHeader = nullptr;
+    steps = 0;
+    stepped = false;
+    executed = false;
+    affectedRowCount = -1;
+    insertRowId = -1;
     step(); // Execute
     return *this;
 }
@@ -271,6 +280,14 @@ Stmt& SQLiteStmt::clear()
         throw std::runtime_error("SQLiteStmt::clear: Failed to clear bindings");
     }
     IF_ENDBG dbLogger.debug("SQLiteStmt::clear: Cleared bindings successfully");
+    boundParamsCount = 0;
+    boundIndexes = {};
+    resultHeader = nullptr;
+    steps = 0;
+    stepped = false;
+    executed = false;
+    affectedRowCount = -1;
+	insertRowId = -1;
     return *this;
 }
 
