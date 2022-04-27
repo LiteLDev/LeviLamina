@@ -84,7 +84,7 @@ mc.listen("onServerStarted", () => {
 
 - 💻 Support for developing plugins in many different languages, Keeping the API uniform
 
-| Supported languages | `C++`，`JavaScript`，`Lua`，`Golang`，`.Net`|
+| Supported languages | `C++`，`JavaScript`，`Lua`，`Golang`，`.NET`|
 | -------------------------- | ------------------------------------ |
 | **Upcoming supported  languages** | `Python`，`Ruby`，`TypeScript` |
 

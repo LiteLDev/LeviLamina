@@ -1,0 +1,640 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{d56a5937-a339-401d-b2b2-db6bdcbf7e52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools">
+      <UniqueIdentifier>{4dfac303-ac2b-4f2b-b888-54eedd9c814d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{67f2d38c-d9b0-4b98-8f1a-853226153f1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel">
+      <UniqueIdentifier>{65571c3f-bf4f-4fa5-b0ab-37a9997ee7ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{3191568a-bf58-4327-bece-818d76eaf4b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\MC">
+      <UniqueIdentifier>{96a8372f-6ea5-4030-8669-d45d563dc2dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel\MC">
+      <UniqueIdentifier>{9972f8f6-a205-4607-bb5b-143b2c416a9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Command">
+      <UniqueIdentifier>{7178bc3b-ed69-43a9-bed0-582fefbf6d43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel\Command">
+      <UniqueIdentifier>{f7693ae4-51c7-48d3-86b6-a1718d3f092d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\NBT">
+      <UniqueIdentifier>{57bd4154-7cd2-4834-9465-836364ca2dd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel\NBT">
+      <UniqueIdentifier>{1fb09e7f-3ac6-49f0-a8dd-65258485b971}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Core">
+      <UniqueIdentifier>{3f7180f3-624f-41a0-bade-651876f560de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel\Core">
+      <UniqueIdentifier>{ecf9aa2f-fb2a-4b87-89f6-61849867a8d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Impl">
+      <UniqueIdentifier>{402e3f38-4fbc-4822-b3bd-530cf7dd5493}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel\Impl">
+      <UniqueIdentifier>{88a6a29d-b91e-4609-a5a5-b03aa1867c09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extra">
+      <UniqueIdentifier>{0bbb6bec-5e78-4513-901b-365a767568a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Scoreboard">
+      <UniqueIdentifier>{94d8324f-e456-458a-a527-7017b6101bd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Core\STLHelper">
+      <UniqueIdentifier>{c70e38df-fb90-4464-a5ab-e356cc7c827f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel\Scoreboard">
+      <UniqueIdentifier>{9e803160-8fc8-4610-b8c5-0c124b593efa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Kernel\MC\AABB.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\ActorDamageSource.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\ActorDefinitionIdentifier.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\ArmorStand.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\Attribute.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\Block.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\BlockActor.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\BlockInstance.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\BlockPalette.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\BlockPos.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\BlockSource.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\Certificate.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\ChunkBlockPos.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\Container.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\Dimension.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\HashedString.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\IdentityDefinition.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\ItemInstance.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\ItemStack.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\Level.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\MapItemSavedData.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\MCRESULT.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\MobEffect.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\MobEffectInstance.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\Monster.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\NetworkIdentifier.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\Objective.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\Packet.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\ScoreboardId.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\ScorePacketInfo.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\ServerPlayer.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\Types.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\Vec2.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\Vec3.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\WitherBoss.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\AllowListAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\DynamicCommand.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Event.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\FormUI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Hook.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\LLAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Logger.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\PlayerInfo.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Schedule.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Server.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\AssemblyInfo.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\PluginAttribute.h">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\dllmain.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\Plugininterface.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\Loader.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\PluginManager.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\ItemStackBase.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Command\Command.cpp">
+      <Filter>Kernel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Command\CommandArea.cpp">
+      <Filter>Kernel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Command\CommandOrigin.cpp">
+      <Filter>Kernel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Command\CommandOriginData.cpp">
+      <Filter>Kernel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Command\CommandOutput.cpp">
+      <Filter>Kernel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Command\CommandOutputMessage.cpp">
+      <Filter>Kernel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Command\CommandOutputParameter.cpp">
+      <Filter>Kernel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Command\CommandPosition.cpp">
+      <Filter>Kernel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Command\CommandPropertyBag.cpp">
+      <Filter>Kernel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Command\CommandVersion.cpp">
+      <Filter>Kernel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\ListTag.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\Tag.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\TagMemoryChunk.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\ShortTag.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\StringTag.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\IntTag.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\Int64Tag.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\IntArrayTag.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\FloatTag.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\EndTag.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\DoubleTag.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\ByteTag.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\CompoundTag.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\CompoundTagVariant.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\ByteArrayTag.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\DotNETEngine.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\RemoteCall.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\Actor.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\Mob.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\Player.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Impl\FormPacketHelper.cpp">
+      <Filter>Kernel\Impl</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Scoreboard\Scoreboard.cpp">
+      <Filter>Kernel\Scoreboard</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Header\MC\AABB.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\ActorDamageSource.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\ActorDefinitionIdentifier.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\ArmStand.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Attribute.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Block.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\BlockActor.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\BlockInstance.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\BlockPalette.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\BlockPos.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\BlockSource.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Certificate.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\ChunkBlockPos.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Container.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Dimension.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\HashedString.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\IdentityDefinition.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\ItemInstance.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\ItemStack.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Level.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\MapItemSavedData.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\MCRESULT.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\MobEffect.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\MobEffectInstance.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Monster.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\NetworkIdentifier.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Objective.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Packet.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\ScoreboardId.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\ScorePacketInfo.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\ServerPlayer.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Tick.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Types.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\UserEntityIdentifierComponent.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Vec2.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Vec3.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\WitherBoss.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\AllowListAPI.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\DynamicCommand.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Event.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\FormUI.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Hook.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\LLAPI.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Logger.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\PlayerInfo.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Schedule.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Server.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\Global.hpp">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\Loader.hpp">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\PluginManager.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\.NETGlobal.hpp">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\ItemStackBase.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Command\Command.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Command\CommandArea.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Command\CommandFlag.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Command\CommandOrigin.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Command\CommandOriginData.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Command\CommandOriginIdentity.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Command\CommandOutput.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Command\CommandOutputMessage.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Command\CommandOutputParameter.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Command\CommandParameterData.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Command\CommandPosition.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Command\CommandPositionFloat.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Command\CommandPropertyBag.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Command\CommandRegistry.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Command\CommandSelector.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Command\CommandVersion.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\ListTag.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Tag.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\TagMemoryChunk.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\IntTag.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\IntArrayTag.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Int64Tag.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\ByteTag.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\ByteArrayTag.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\CompoundTag.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\CompoundTagVariant.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\EndTag.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\FloatTag.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\DoubleTag.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\ShortTag.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\StringTag.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\Config.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Core\Exceptions.h">
+      <Filter>Header\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Core\SecondaryRankPtr.h">
+      <Filter>Header\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\RemoteCall.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\NativeCallbackConverter.hpp">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\clix.hpp">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\PropertryHelper.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Actor.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Mob.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Player.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Impl\FormPacketHelper.h">
+      <Filter>Header\Impl</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\ClassTemplate.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource\resource.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Extra\mutex.h">
+      <Filter>Extra</Filter>
+    </ClInclude>
+    <ClInclude Include="Extra\PluginManager.h">
+      <Filter>Extra</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Scoreboard\Scoreboard.hpp">
+      <Filter>Header\Scoreboard</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Core\STLHelper\string.hpp">
+      <Filter>Header\Core\STLHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Core\STLHelper\optional.hpp">
+      <Filter>Header\Core\STLHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\ClassTemplateHelper.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Core\Pair.hpp">
+      <Filter>Header\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Core\STLHelper\vector.hpp">
+      <Filter>Header\Core\STLHelper</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint">
+      <Filter>Resource</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource\LiteLoader.NET.rc">
+      <Filter>Resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
