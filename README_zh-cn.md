@@ -76,7 +76,7 @@ mc.listen("onServerStarted", () => {
 
 - 💻 支持多种不同的语言开发插件，保持接口统一
 
-| 目前已支持的插件开发语言   | `C++`，`Golang`，`JavaScript`，`Lua` ，`.Net`|
+| 目前已支持的插件开发语言   | `C++`，`Golang`，`JavaScript`，`Lua` ，`.NET`|
 | -------------------------- | ------------------------------------ |
 | **即将支持的插件开发语言** | `Python`，`Ruby`，`TypeScript` |
 

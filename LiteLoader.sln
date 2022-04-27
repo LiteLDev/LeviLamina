@@ -26,6 +26,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PreLoader", "PreLoader\PreL
 		{17BA7B67-A5C7-4FC3-9D6C-2917C9200255} = {17BA7B67-A5C7-4FC3-9D6C-2917C9200255}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DotNETEngine", "DotNETEngine\DotNETEngine.vcxproj", "{ABEB5558-C92F-473E-8BDF-90F58BD3811C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Js|x64 = Js|x64
@@ -63,6 +65,12 @@ Global
 		{0136A4C1-10AF-480B-B845-006821CE5054}.Lua|x64.Build.0 = Release|x64
 		{0136A4C1-10AF-480B-B845-006821CE5054}.Release|x64.ActiveCfg = Release|x64
 		{0136A4C1-10AF-480B-B845-006821CE5054}.Release|x64.Build.0 = Release|x64
+		{ABEB5558-C92F-473E-8BDF-90F58BD3811C}.Js|x64.ActiveCfg = Release|x64
+		{ABEB5558-C92F-473E-8BDF-90F58BD3811C}.Js|x64.Build.0 = Release|x64
+		{ABEB5558-C92F-473E-8BDF-90F58BD3811C}.Lua|x64.ActiveCfg = Release|x64
+		{ABEB5558-C92F-473E-8BDF-90F58BD3811C}.Lua|x64.Build.0 = Release|x64
+		{ABEB5558-C92F-473E-8BDF-90F58BD3811C}.Release|x64.ActiveCfg = Release|x64
+		{ABEB5558-C92F-473E-8BDF-90F58BD3811C}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

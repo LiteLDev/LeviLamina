@@ -76,6 +76,23 @@ void LoadScriptEngine()
     }
 }
 
+void LoadDotNETEngine()
+{
+    auto lib = LoadLibrary(str2wstr("plugins/LiteLoader/LiteLoader.NET.dll").c_str());
+    if (lib) {
+        logger.info("* DotNETEngine loaded");
+        //Fake Register
+        RegisterPlugin(lib, "DotNETEngine", "DotNETEngine", LITELOADER_VERSION,
+        {
+            {"GitHub","github.com/LiteLDev/LiteLoaderBDS"}
+        });
+    }
+    else {
+        logger.error("* Fail to load DotNETEngine!");
+        logger.error("* Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
+    }
+}
+
 void LL::LoadMain() {
     logger.info("Loading plugins...");
 
@@ -142,6 +159,9 @@ void LL::LoadMain() {
     if (LL::globalConfig.enableScriptEngine)
         if(LL::globalConfig.alwaysLaunchScriptEngine || hasScriptPlugin)
             LoadScriptEngine();
+
+    // Load DotNETEngine
+    LoadDotNETEngine();
 
     //  Call onPostInit
     auto plugins = PluginManager::getAllPlugins(false);
