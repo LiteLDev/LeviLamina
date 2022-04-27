@@ -30,6 +30,7 @@ public:
     // The return value should be freed by the developer if it is no longer used
     LIAPI static ItemStack* create(std::unique_ptr<CompoundTag> tag);
     // The return value should be freed by the developer if it is no longer used
+    LIAPI static ItemStack* create(short itemId, int aux);
     LIAPI ItemStack* clone_s() const;
     LIAPI static ItemStack fromItemInstance(ItemInstance const& ins);
 
