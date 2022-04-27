@@ -33,11 +33,11 @@ ItemStack *ItemStack::create(std::unique_ptr<CompoundTag> tag) {
 }
 
 #include <MC/ItemRegistry.hpp>
-ItemStack* ItemStack::create(short itemId, int aux)
+ItemStack* ItemStack::create(short itemId, int aux,int count)
 {
     auto item = ItemRegistry::getItem(itemId);
     if (item)
-        return new ItemStack(*item, 1, aux);
+        return new ItemStack(*item, count, aux);
     return nullptr;
 }
 
