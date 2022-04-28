@@ -15,7 +15,6 @@ PSYMBOL_INFO GetSymbolInfo(HANDLE hProcess, void* address)
     PSYMBOL_INFO pSymbol = (SYMBOL_INFO*) new char[sizeof(SYMBOL_INFO) + MAX_SYM_NAME * sizeof(TCHAR)];
     pSymbol->SizeOfStruct = sizeof(SYMBOL_INFO);
     pSymbol->MaxNameLen = MAX_SYM_NAME;
-
     DWORD64 displacement = 0;
     if (SymFromAddr(hProcess, (DWORD64)address, &displacement, pSymbol))
         return pSymbol;

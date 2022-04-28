@@ -12,3 +12,6 @@ inline bool PrintCurrentStackTraceback(Logger* logger)
 {
     return PrintCurrentStackTraceback(nullptr, logger);
 }
+
+LIAPI HMODULE GetCallerModule(unsigned long FramesToSkip = 0);
+LIAPI std::string GetCallerModuleFileName(unsigned long FramesToSkip = 0);

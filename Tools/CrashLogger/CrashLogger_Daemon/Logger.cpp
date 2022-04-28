@@ -94,9 +94,10 @@ void TrackBack(PEXCEPTION_POINTERS e)
 
 		//Function
 		PSYMBOL_INFO info;
-		if (info = GetSymbolInfo(hProcess, (void*)stackFrame.AddrPC.Offset))
+        std::wstring moduleName = MapModuleFromAddr(hProcess, (void*)address);
+        if (info = GetSymbolInfo(hProcess, (void*)address))
 		{
-			log("[TrackBack] Function %ls at 0x%llX  [%ls]\n", info->Name, info->Address, MapModuleFromAddr(hProcess, (void*)address).c_str());
+            log("[TrackBack] Function %ls at 0x%llX  [%ls]\n", info->Name, info->Address, moduleName.c_str());
 
 			//Line
 			DWORD displacement = 0;
@@ -105,9 +106,10 @@ void TrackBack(PEXCEPTION_POINTERS e)
 
 			if (SymGetLineFromAddrW64(hProcess, address, &displacement, &line))
 				log("-- At File %ls : Line %d \n", line.FileName, line.LineNumber);
+            delete info;
 		}
 		else
-			log("[TrackBack] Function ???????? at 0x????????\n");
+            log("[TrackBack] Function ???????? at 0x%llX  [%ls]\n", address, moduleName.c_str());
 	}
 }
 
