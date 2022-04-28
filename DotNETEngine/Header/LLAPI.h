@@ -12,7 +12,7 @@ public
 ref struct Version
 {
 public:
-    enum class Status
+    enum class StatusEnum
     {
         Dev,
         Beta,
@@ -25,7 +25,7 @@ public:
     Version(int major);
     Version(int major, int minor);
     Version(int major, int minor, int revision);
-    Version(int major, int minor, int revision, Status status);
+    Version(int major, int minor, int revision, StatusEnum status);
     !Version();
     ~Version();
 
@@ -35,10 +35,10 @@ public:
     static bool operator>(Version ^ a, Version ^ b);
     static bool operator>=(Version ^ a, Version ^ b);
 
-    Property(int, major);
-    Property(int, minor);
-    Property(int, revision);
-    Property_Enum(Status, ::LL::Version::Status, status);
+    Property(int, major, Major);
+    Property(int, minor, Minor);
+    Property(int, revision, Revision);
+    Property_Enum(StatusEnum, ::LL::Version::Status, status, Status);
 
     operator ::LL::Version();
 
@@ -56,7 +56,7 @@ public
 ref struct Plugin
 {
 public:
-    enum class PluginType
+    enum class PluginTypeEnum
     {
         DllPlugin,
         ScriptPlugin
@@ -70,9 +70,9 @@ public:
     Plugin(::LL::Plugin* p);
     ~Plugin();
 
-    Property_String(name);
-    Property_String(introduction);
-    Property_String(filePath);
+    Property_String(name, Name);
+    Property_String(introduction, Introduction);
+    Property_String(filePath, FilePath);
     property System::IntPtr handler
     {
         System::IntPtr get()
@@ -91,7 +91,7 @@ public:
                     ret->Add(marshalString<Encoding::E_UTF8>(kv.first), marshalString<Encoding::E_UTF8>(kv.second));
                 return ret;
             }
-        } Property_Enum(PluginType, ::LL::Plugin::PluginType, type);
+        } Property_Enum(PluginTypeEnum, ::LL::Plugin::PluginType, type, Type);
 
     // Get a Function by Symbol String
     generic<typename TDelegate>

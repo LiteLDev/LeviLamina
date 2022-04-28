@@ -264,9 +264,9 @@ Class PlayerPreJoinEvent
     EventAPIs(PlayerPreJoinEvent, ::Event::PlayerPreJoinEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property_String(mIP);
-    Property_String(mXUID);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_String(mIP, IP);
+    Property_String(mXUID, XUID);
 };
 
 Class PlayerJoinEvent
@@ -275,7 +275,7 @@ Class PlayerJoinEvent
     EventAPIs(PlayerJoinEvent, ::Event::PlayerJoinEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
+    Property_Ptr(MC, Player, mPlayer, Player);
 };
 
 Class PlayerLeftEvent
@@ -284,8 +284,8 @@ Class PlayerLeftEvent
     EventAPIs(PlayerLeftEvent, ::Event::PlayerLeftEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property_String(mXUID);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_String(mXUID, XUID);
 };
 
 Class PlayerRespawnEvent
@@ -294,7 +294,7 @@ Class PlayerRespawnEvent
     EventAPIs(PlayerRespawnEvent, ::Event::PlayerRespawnEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
+    Property_Ptr(MC, Player, mPlayer, Player);
 };
 
 Class PlayerUseItemEvent
@@ -303,8 +303,8 @@ Class PlayerUseItemEvent
     EventAPIs(PlayerUseItemEvent, ::Event::PlayerUseItemEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property_Ptr(MC, ItemStack, mItemStack);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_Ptr(MC, ItemStack, mItemStack, ItemStack);
 };
 
 Class PlayerUseItemOnEvent
@@ -313,10 +313,10 @@ Class PlayerUseItemOnEvent
     EventAPIs(PlayerUseItemOnEvent, ::Event::PlayerUseItemOnEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property_Ptr(MC, ItemStack, mItemStack);
-    Property_Instance(MC, BlockInstance, mBlockInstance);
-    Property(char, mFace);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_Ptr(MC, ItemStack, mItemStack, ItemStack);
+    Property_Instance(MC, BlockInstance, mBlockInstance, BlockInstance);
+    Property(char, mFace, Face);
 };
 
 Class PlayerChatEvent
@@ -325,8 +325,8 @@ Class PlayerChatEvent
     EventAPIs(PlayerChatEvent, ::Event::PlayerChatEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property_String(mMessage);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_String(mMessage, Message);
 };
 
 Class PlayerChangeDimEvent
@@ -335,8 +335,8 @@ Class PlayerChangeDimEvent
     EventAPIs(PlayerChangeDimEvent, ::Event::PlayerChangeDimEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property(int, mToDimensionId);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property(int, mToDimensionId, ToDimension);
 };
 
 Class PlayerJumpEvent
@@ -345,7 +345,7 @@ Class PlayerJumpEvent
     EventAPIs(PlayerJumpEvent, ::Event::PlayerJumpEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
+    Property_Ptr(MC, Player, mPlayer, Player);
 };
 
 Class EntityTransformEvent
@@ -354,8 +354,8 @@ Class EntityTransformEvent
     EventAPIs(EntityTransformEvent, ::Event::EntityTransformEvent);
 
 public:
-    Property_Ptr(MC, ActorUniqueID, mBeforeEntityUniqueId);
-    Property_Ptr(MC, Actor, mAfterEntity);
+    Property_Ptr(MC, ActorUniqueID, mBeforeEntityUniqueId, BeforeEntityUniqueId);
+    Property_Ptr(MC, Actor, mAfterEntity, AfterEntity);
 };
 
 Class PlayerSneakEvent
@@ -364,8 +364,8 @@ Class PlayerSneakEvent
     EventAPIs(PlayerSneakEvent, ::Event::PlayerSneakEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property(bool, mIsSneaking);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property(bool, mIsSneaking, IsSneaking);
 };
 
 Class PlayerAttackEvent
@@ -374,9 +374,9 @@ Class PlayerAttackEvent
     EventAPIs(PlayerAttackEvent, ::Event::PlayerAttackEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property_Ptr(MC, Actor, mTarget);
-    Property(int, mAttackDamage);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_Ptr(MC, Actor, mTarget, Target);
+    Property(int, mAttackDamage, AttackDamage);
 };
 
 Class PlayerAttackBlockEvent
@@ -385,9 +385,9 @@ Class PlayerAttackBlockEvent
     EventAPIs(PlayerAttackBlockEvent, ::Event::PlayerAttackBlockEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property_Ptr(MC, ItemStack, mItemStack);
-    Property_Instance(MC, BlockInstance, mBlockInstance);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_Ptr(MC, ItemStack, mItemStack, ItemStack);
+    Property_Instance(MC, BlockInstance, mBlockInstance, BlockInstance);
 };
 
 Class PlayerDieEvent
@@ -396,8 +396,8 @@ Class PlayerDieEvent
     EventAPIs(PlayerDieEvent, ::Event::PlayerDieEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property_Ptr(MC, ActorDamageSource, mDamageSource);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_Ptr(MC, ActorDamageSource, mDamageSource, DamageSource);
 };
 
 Class PlayerPickupItemEvent
@@ -406,9 +406,9 @@ Class PlayerPickupItemEvent
     EventAPIs(PlayerPickupItemEvent, ::Event::PlayerPickupItemEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property_Ptr(MC, Actor, mItemEntity);
-    Property_Ptr(MC, ItemStack, mItemStack);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_Ptr(MC, Actor, mItemEntity, ItemEntity);
+    Property_Ptr(MC, ItemStack, mItemStack, ItemStack);
 };
 
 Class PlayerDropItemEvent
@@ -417,8 +417,8 @@ Class PlayerDropItemEvent
     EventAPIs(PlayerDropItemEvent, ::Event::PlayerDropItemEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property_Ptr(MC, ItemStack, mItemStack);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_Ptr(MC, ItemStack, mItemStack, ItemStack);
 };
 
 Class PlayerEatEvent
@@ -427,8 +427,8 @@ Class PlayerEatEvent
     EventAPIs(PlayerEatEvent, ::Event::PlayerEatEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property_Ptr(MC, ItemStack, mFoodItem);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_Ptr(MC, ItemStack, mFoodItem, FoodItem);
 };
 
 Class PlayerConsumeTotemEvent
@@ -437,7 +437,7 @@ Class PlayerConsumeTotemEvent
     EventAPIs(PlayerConsumeTotemEvent, ::Event::PlayerConsumeTotemEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
+    Property_Ptr(MC, Player, mPlayer, Player);
 };
 
 Class PlayerCmdEvent
@@ -446,9 +446,9 @@ Class PlayerCmdEvent
     EventAPIs(PlayerCmdEvent, ::Event::PlayerCmdEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property_String(mCommand);
-    Property_Ptr(MC, MCRESULT, mResult);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_String(mCommand, Command);
+    Property_Ptr(MC, MCRESULT, mResult, Result);
 };
 
 Class PlayerEffectChangedEvent
@@ -457,15 +457,15 @@ Class PlayerEffectChangedEvent
     EventAPIs(PlayerEffectChangedEvent, ::Event::PlayerEffectChangedEvent);
 
 public:
-    enum class EventType
+    enum class EventTypeEnum
     {
         Add,
         Remove,
         Update
     };
-    Property_Ptr(MC, Player, mPlayer);
-    Property_Enum(EventType, ::Event::PlayerEffectChangedEvent::EventType, mEventType);
-    Property_Ptr(MC, MobEffectInstance, mEffect);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_Enum(EventTypeEnum, ::Event::PlayerEffectChangedEvent::EventType, mEventType, EventType);
+    Property_Ptr(MC, MobEffectInstance, mEffect, Effect);
 };
 
 Class PlayerStartDestroyBlockEvent
@@ -474,8 +474,8 @@ Class PlayerStartDestroyBlockEvent
     EventAPIs(PlayerStartDestroyBlockEvent, ::Event::PlayerStartDestroyBlockEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property_Instance(MC, BlockInstance, mBlockInstance);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_Instance(MC, BlockInstance, mBlockInstance, BlockInstance);
 };
 
 Class PlayerDestroyBlockEvent
@@ -484,8 +484,8 @@ Class PlayerDestroyBlockEvent
     EventAPIs(PlayerDestroyBlockEvent, ::Event::PlayerDestroyBlockEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property_Instance(MC, BlockInstance, mBlockInstance);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_Instance(MC, BlockInstance, mBlockInstance, BlockInstance);
 };
 
 Class PlayerPlaceBlockEvent
@@ -494,8 +494,8 @@ Class PlayerPlaceBlockEvent
     EventAPIs(PlayerPlaceBlockEvent, ::Event::PlayerPlaceBlockEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property_Instance(MC, BlockInstance, mBlockInstance);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_Instance(MC, BlockInstance, mBlockInstance, BlockInstance);
 };
 
 Class PlayerOpenContainerEvent
@@ -504,9 +504,9 @@ Class PlayerOpenContainerEvent
     EventAPIs(PlayerOpenContainerEvent, ::Event::PlayerOpenContainerEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property_Instance(MC, BlockInstance, mBlockInstance);
-    Property_Ptr(MC, Container, mContainer);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_Instance(MC, BlockInstance, mBlockInstance, BlockInstance);
+    Property_Ptr(MC, Container, mContainer, Container);
 };
 
 Class PlayerCloseContainerEvent
@@ -515,9 +515,9 @@ Class PlayerCloseContainerEvent
     EventAPIs(PlayerCloseContainerEvent, ::Event::PlayerCloseContainerEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property_Instance(MC, BlockInstance, mBlockInstance);
-    Property_Ptr(MC, Container, mContainer);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_Instance(MC, BlockInstance, mBlockInstance, BlockInstance);
+    Property_Ptr(MC, Container, mContainer, Container);
 };
 
 Class PlayerInventoryChangeEvent
@@ -526,10 +526,10 @@ Class PlayerInventoryChangeEvent
     EventAPIs(PlayerInventoryChangeEvent, ::Event::PlayerInventoryChangeEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property(int, mSlot);
-    Property_Ptr(MC, ItemStack, mPreviousItemStack);
-    Property_Ptr(MC, ItemStack, mNewItemStack);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property(int, mSlot, Slot);
+    Property_Ptr(MC, ItemStack, mPreviousItemStack, PreviousItemStack);
+    Property_Ptr(MC, ItemStack, mNewItemStack, NewItemStack);
 };
 
 Class PlayerMoveEvent
@@ -538,8 +538,8 @@ Class PlayerMoveEvent
     EventAPIs(PlayerMoveEvent, ::Event::PlayerMoveEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property_Instance(MC, Vec3, mPos);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_Instance(MC, Vec3, mPos, Pos);
 };
 
 Class PlayerSprintEvent
@@ -548,8 +548,8 @@ Class PlayerSprintEvent
     EventAPIs(PlayerSprintEvent, ::Event::PlayerSprintEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property(bool, mIsSprinting);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property(bool, mIsSprinting, IsSprinting);
 };
 
 Class PlayerSetArmorEvent
@@ -558,9 +558,9 @@ Class PlayerSetArmorEvent
     EventAPIs(PlayerSetArmorEvent, ::Event::PlayerSetArmorEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property(int, mSlot);
-    Property_Ptr(MC, ItemStack, mArmorItem);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property(int, mSlot, Slot);
+    Property_Ptr(MC, ItemStack, mArmorItem, ArmorItem);
 };
 
 Class PlayerUseRespawnAnchorEvent
@@ -569,8 +569,8 @@ Class PlayerUseRespawnAnchorEvent
     EventAPIs(PlayerUseRespawnAnchorEvent, ::Event::PlayerUseRespawnAnchorEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property_Instance(MC, BlockInstance, mBlockInstance);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_Instance(MC, BlockInstance, mBlockInstance, BlockInstance);
 };
 
 Class PlayerOpenContainerScreenEvent
@@ -579,7 +579,7 @@ Class PlayerOpenContainerScreenEvent
     EventAPIs(PlayerOpenContainerScreenEvent, ::Event::PlayerOpenContainerScreenEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
+    Property_Ptr(MC, Player, mPlayer, Player);
 };
 
 Class PlayerUseFrameBlockEvent
@@ -588,14 +588,14 @@ Class PlayerUseFrameBlockEvent
     EventAPIs(PlayerUseFrameBlockEvent, ::Event::PlayerUseFrameBlockEvent);
 
 public:
-    enum class Type
+    enum class TypeEnum
     {
         Use,
         Attack
     };
-    Property_Enum(Type, ::Event::PlayerUseFrameBlockEvent::Type, mType);
-    Property_Ptr(MC, Player, mPlayer);
-    Property_Instance(MC, BlockInstance, mBlockInstance);
+    Property_Enum(TypeEnum, ::Event::PlayerUseFrameBlockEvent::Type, mType, Type);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_Instance(MC, BlockInstance, mBlockInstance, BlockInstance);
 };
 
 Class PlayerScoreChangedEvent
@@ -604,10 +604,10 @@ Class PlayerScoreChangedEvent
     EventAPIs(PlayerScoreChangedEvent, ::Event::PlayerScoreChangedEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property(int, mScore);
-    Property_Ptr(MC, Objective, mObjective);
-    Property_Ptr(MC, ScoreboardId, mScoreboardId);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property(int, mScore, Score);
+    Property_Ptr(MC, Objective, mObjective, Objective);
+    Property_Ptr(MC, ScoreboardId, mScoreboardId, ScoreboardId);
 };
 
 Class PlayerExperienceAddEvent
@@ -616,8 +616,8 @@ Class PlayerExperienceAddEvent
     EventAPIs(PlayerExperienceAddEvent, ::Event::PlayerExperienceAddEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property(int, mExp);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property(int, mExp, Exp);
 };
 
 
@@ -629,8 +629,8 @@ Class BlockInteractedEvent
     EventAPIs(BlockInteractedEvent, ::Event::BlockInteractedEvent);
 
 public:
-    Property_Instance(MC, BlockInstance, mBlockInstance);
-    Property_Ptr(MC, Player, mPlayer);
+    Property_Instance(MC, BlockInstance, mBlockInstance, BlockInstance);
+    Property_Ptr(MC, Player, mPlayer, Player);
 };
 
 Class BlockChangedEvent
@@ -639,8 +639,8 @@ Class BlockChangedEvent
     EventAPIs(BlockChangedEvent, ::Event::BlockChangedEvent);
 
 public:
-    Property_Instance(MC, BlockInstance, mPreviousBlockInstance);
-    Property_Instance(MC, BlockInstance, mNewBlockInstance);
+    Property_Instance(MC, BlockInstance, mPreviousBlockInstance, PreviousBlockInstance);
+    Property_Instance(MC, BlockInstance, mNewBlockInstance, NewBlockInstance);
 };
 
 Class BlockExplodedEvent
@@ -649,8 +649,8 @@ Class BlockExplodedEvent
     EventAPIs(BlockExplodedEvent, ::Event::BlockExplodedEvent);
 
 public:
-    Property_Instance(MC, BlockInstance, mBlockInstance);
-    Property_Ptr(MC, Actor, mExplodeSource);
+    Property_Instance(MC, BlockInstance, mBlockInstance, BlockInstance);
+    Property_Ptr(MC, Actor, mExplodeSource, ExplodeSource);
 };
 
 Class FireSpreadEvent
@@ -659,8 +659,8 @@ Class FireSpreadEvent
     EventAPIs(FireSpreadEvent, ::Event::FireSpreadEvent);
 
 public:
-    Property_Instance(MC, BlockPos, mTarget);
-    Property(int, mDimensionId);
+    Property_Instance(MC, BlockPos, mTarget, Target);
+    Property(int, mDimensionId, DimensionId);
 };
 
 Class ContainerChangeEvent
@@ -669,13 +669,13 @@ Class ContainerChangeEvent
     EventAPIs(ContainerChangeEvent, ::Event::ContainerChangeEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property_Ptr(MC, Actor, mActor);
-    Property_Instance(MC, BlockInstance, mBlockInstance);
-    Property_Ptr(MC, Container, mContainer);
-    Property(int, mSlot);
-    Property_Ptr(MC, ItemStack, mPreviousItemStack);
-    Property_Ptr(MC, ItemStack, mNewItemStack);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_Ptr(MC, Actor, mActor, Actor);
+    Property_Instance(MC, BlockInstance, mBlockInstance, BlockInstance);
+    Property_Ptr(MC, Container, mContainer, Cotainer);
+    Property(int, mSlot, Slot);
+    Property_Ptr(MC, ItemStack, mPreviousItemStack, PreviousItemStack);
+    Property_Ptr(MC, ItemStack, mNewItemStack, NewItemStack);
 };
 
 Class ProjectileHitBlockEvent
@@ -684,8 +684,8 @@ Class ProjectileHitBlockEvent
     EventAPIs(ProjectileHitBlockEvent, ::Event::ProjectileHitBlockEvent);
 
 public:
-    Property_Instance(MC, BlockInstance, mBlockInstance);
-    Property_Ptr(MC, Actor, mSource);
+    Property_Instance(MC, BlockInstance, mBlockInstance, BlockInstance);
+    Property_Ptr(MC, Actor, mSource, Source);
 };
 
 Class RedStoneUpdateEvent
@@ -694,9 +694,9 @@ Class RedStoneUpdateEvent
     EventAPIs(RedStoneUpdateEvent, ::Event::RedStoneUpdateEvent);
 
 public:
-    Property_Instance(MC, BlockInstance, mBlockInstance);
-    Property(int, mRedStonePower);
-    Property(int, mIsActivated);
+    Property_Instance(MC, BlockInstance, mBlockInstance, BlockInstance);
+    Property(int, mRedStonePower, RedStonePower);
+    Property(int, mIsActivated, IsActivated);
 };
 
 Class HopperSearchItemEvent
@@ -705,10 +705,10 @@ Class HopperSearchItemEvent
     EventAPIs(HopperSearchItemEvent, ::Event::HopperSearchItemEvent);
 
 public:
-    Property(int, isMinecart);
-    Property_Instance(MC, BlockInstance, mHopperBlock);
-    Property_Instance(MC, Vec3, mMinecartPos);
-    Property(int, mDimensionId);
+    Property(int, isMinecart, isMinecart);
+    Property_Instance(MC, BlockInstance, mHopperBlock, HopperBlock);
+    Property_Instance(MC, Vec3, mMinecartPos, MinecartPos);
+    Property(int, mDimensionId, DimensionId);
 };
 
 Class HopperPushOutEvent
@@ -717,8 +717,8 @@ Class HopperPushOutEvent
     EventAPIs(HopperPushOutEvent, ::Event::HopperPushOutEvent);
 
 public:
-    Property_Instance(MC, Vec3, mPos);
-    Property(int, mDimensionId);
+    Property_Instance(MC, Vec3, mPos, Pos);
+    Property(int, mDimensionId, DimensionId);
 };
 
 Class PistonTryPushEvent
@@ -727,8 +727,8 @@ Class PistonTryPushEvent
     EventAPIs(PistonTryPushEvent, ::Event::PistonTryPushEvent);
 
 public:
-    Property_Instance(MC, BlockInstance, mPistonBlockInstance);
-    Property_Instance(MC, BlockInstance, mTargetBlockInstance);
+    Property_Instance(MC, BlockInstance, mPistonBlockInstance, PistonBlockInstance);
+    Property_Instance(MC, BlockInstance, mTargetBlockInstance, TargetBlockInstance);
 };
 
 Class PistonPushEvent
@@ -737,8 +737,8 @@ Class PistonPushEvent
     EventAPIs(PistonPushEvent, ::Event::PistonPushEvent);
 
 public:
-    Property_Instance(MC, BlockInstance, mPistonBlockInstance);
-    Property_Instance(MC, BlockInstance, mTargetBlockInstance);
+    Property_Instance(MC, BlockInstance, mPistonBlockInstance, PistonBlockInstance);
+    Property_Instance(MC, BlockInstance, mTargetBlockInstance, TargetBlockInstance);
 };
 
 Class FarmLandDecayEvent
@@ -747,8 +747,8 @@ Class FarmLandDecayEvent
     EventAPIs(FarmLandDecayEvent, ::Event::FarmLandDecayEvent);
 
 public:
-    Property_Instance(MC, BlockInstance, mBlockInstance);
-    Property_Ptr(MC, Actor, mActor);
+    Property_Instance(MC, BlockInstance, mBlockInstance, BlockInstance);
+    Property_Ptr(MC, Actor, mActor, Actor);
 };
 
 Class LiquidSpreadEvent
@@ -757,9 +757,9 @@ Class LiquidSpreadEvent
     EventAPIs(LiquidSpreadEvent, ::Event::LiquidSpreadEvent);
 
 public:
-    Property_Instance(MC, BlockInstance, mBlockInstance);
-    Property_Instance(MC, BlockPos, mTarget);
-    Property(int, mDimensionId);
+    Property_Instance(MC, BlockInstance, mBlockInstance, BlockInstance);
+    Property_Instance(MC, BlockPos, mTarget, Target);
+    Property(int, mDimensionId, DimensionId);
 };
 
 Class CmdBlockExecuteEvent
@@ -768,10 +768,10 @@ Class CmdBlockExecuteEvent
     EventAPIs(CmdBlockExecuteEvent, ::Event::CmdBlockExecuteEvent);
 
 public:
-    Property_String(mCommand);
-    Property(bool, mIsMinecart);
-    Property_Instance(MC, BlockInstance, mBlockInstance);
-    Property_Ptr(MC, Actor, mMinecart);
+    Property_String(mCommand, Command);
+    Property(bool, mIsMinecart, IsMinecart);
+    Property_Instance(MC, BlockInstance, mBlockInstance, BlockInstance);
+    Property_Ptr(MC, Actor, mMinecart, Minecart);
 };
 
 Class BlockExplodeEvent
@@ -780,11 +780,11 @@ Class BlockExplodeEvent
     EventAPIs(BlockExplodeEvent, ::Event::BlockExplodeEvent);
 
 public:
-    Property_Instance(MC, BlockInstance, mBlockInstance);
-    Property(float, mRadius);
-    Property(float, mMaxResistance);
-    Property(bool, mBreaking);
-    Property(bool, mFire);
+    Property_Instance(MC, BlockInstance, mBlockInstance, BlockInstance);
+    Property(float, mRadius, Radius);
+    Property(float, mMaxResistance, MaxResistance);
+    Property(bool, mBreaking, Breaking);
+    Property(bool, mFire, Fire);
 };
 
 ///////////////////////////// Entity Events /////////////////////////////
@@ -795,13 +795,13 @@ Class EntityExplodeEvent
     EventAPIs(EntityExplodeEvent, ::Event::EntityExplodeEvent);
 
 public:
-    Property_Ptr(MC, Actor, mActor);
-    Property_Instance(MC, Vec3, mPos);
-    Property_Ptr(MC, BlockSource, mDimension);
-    Property(float, mRadius);
-    Property(float, mMaxResistance);
-    Property(bool, mBreaking);
-    Property(bool, mFire);
+    Property_Ptr(MC, Actor, mActor, Actor);
+    Property_Instance(MC, Vec3, mPos, Pos);
+    Property_Ptr(MC, BlockSource, mDimension, Dimension);
+    Property(float, mRadius, Radius);
+    Property(float, mMaxResistance, MaxResistance);
+    Property(bool, mBreaking, Breaking);
+    Property(bool, mFire, Fire);
 };
 
 Class MobHurtEvent
@@ -810,9 +810,9 @@ Class MobHurtEvent
     EventAPIs(MobHurtEvent, ::Event::MobHurtEvent);
 
 public:
-    Property_Ptr(MC, Mob, mMob);
-    Property_Ptr(MC, ActorDamageSource, mDamageSource);
-    Property(float, mDamage);
+    Property_Ptr(MC, Mob, mMob, Mob);
+    Property_Ptr(MC, ActorDamageSource, mDamageSource, DamageSource);
+    Property(float, mDamage, Damage);
 };
 
 Class MobDieEvent
@@ -821,8 +821,8 @@ Class MobDieEvent
     EventAPIs(MobDieEvent, ::Event::MobDieEvent);
 
 public:
-    Property_Ptr(MC, Mob, mMob);
-    Property_Ptr(MC, ActorDamageSource, mDamageSource);
+    Property_Ptr(MC, Mob, mMob, Mob);
+    Property_Ptr(MC, ActorDamageSource, mDamageSource, DamageSource);
 };
 
 Class ProjectileHitEntityEvent
@@ -831,8 +831,8 @@ Class ProjectileHitEntityEvent
     EventAPIs(ProjectileHitEntityEvent, ::Event::ProjectileHitEntityEvent);
 
 public:
-    Property_Ptr(MC, Actor, mTarget);
-    Property_Ptr(MC, Actor, mSource);
+    Property_Ptr(MC, Actor, mTarget, Target);
+    Property_Ptr(MC, Actor, mSource, Source);
 };
 
 Class WitherBossDestroyEvent
@@ -841,8 +841,8 @@ Class WitherBossDestroyEvent
     EventAPIs(WitherBossDestroyEvent, ::Event::WitherBossDestroyEvent);
 
 public:
-    Property_Ptr(MC, WitherBoss, mWitherBoss);
-    Property_Instance(MC, AABB, mDestroyRange);
+    Property_Ptr(MC, WitherBoss, mWitherBoss, WitherBoss);
+    Property_Instance(MC, AABB, mDestroyRange, DestroyRange);
 };
 
 Class EntityRideEvent
@@ -851,8 +851,8 @@ Class EntityRideEvent
     EventAPIs(EntityRideEvent, ::Event::EntityRideEvent);
 
 public:
-    Property_Ptr(MC, Actor, mRider);
-    Property_Ptr(MC, Actor, mVehicle);
+    Property_Ptr(MC, Actor, mRider, Rider);
+    Property_Ptr(MC, Actor, mVehicle, Vehicle);
 };
 
 Class EntityStepOnPressurePlateEvent
@@ -861,8 +861,8 @@ Class EntityStepOnPressurePlateEvent
     EventAPIs(EntityStepOnPressurePlateEvent, ::Event::EntityStepOnPressurePlateEvent);
 
 public:
-    Property_Ptr(MC, Actor, mActor);
-    Property_Instance(MC, BlockInstance, mBlockInstance);
+    Property_Ptr(MC, Actor, mActor, Actor);
+    Property_Instance(MC, BlockInstance, mBlockInstance, BlockInstance);
 };
 
 Class NpcCmdEvent
@@ -871,9 +871,9 @@ Class NpcCmdEvent
     EventAPIs(NpcCmdEvent, ::Event::NpcCmdEvent);
 
 public:
-    Property_Ptr(MC, Actor, mNpc);
-    Property_String(mCommand);
-    Property_Ptr(MC, Player, mPlayer);
+    Property_Ptr(MC, Actor, mNpc, Npc);
+    Property_String(mCommand, Command);
+    Property_Ptr(MC, Player, mPlayer, Player);
 };
 
 Class ProjectileSpawnEvent
@@ -882,9 +882,9 @@ Class ProjectileSpawnEvent
     EventAPIs(ProjectileSpawnEvent, ::Event::ProjectileSpawnEvent);
 
 public:
-    Property_Ptr(MC, Actor, mShooter);
-    Property_Ptr(MC, ActorDefinitionIdentifier, mIdentifier);
-    Property_String(mType);
+    Property_Ptr(MC, Actor, mShooter, Shooter);
+    Property_Ptr(MC, ActorDefinitionIdentifier, mIdentifier, Identifier);
+    Property_String(mType, Type);
 };
 
 Class ProjectileCreatedEvent
@@ -893,8 +893,8 @@ Class ProjectileCreatedEvent
     EventAPIs(ProjectileCreatedEvent, ::Event::ProjectileCreatedEvent);
 
 public:
-    Property_Ptr(MC, Actor, mShooter);
-    Property_Ptr(MC, Actor, mProjectile);
+    Property_Ptr(MC, Actor, mShooter, Shooter);
+    Property_Ptr(MC, Actor, mProjectile, Projectile);
 };
 
 Class ArmorStandChangeEvent
@@ -903,9 +903,9 @@ Class ArmorStandChangeEvent
     EventAPIs(ArmorStandChangeEvent, ::Event::ArmorStandChangeEvent);
 
 public:
-    Property_Ptr(MC, ArmorStand, mArmorStand);
-    Property_Ptr(MC, Player, mPlayer);
-    Property(int, mSlot);
+    Property_Ptr(MC, ArmorStand, mArmorStand, ArmorStand);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property(int, mSlot, Slot);
 };
 
 Class ItemUseOnActorEvent
@@ -914,8 +914,8 @@ Class ItemUseOnActorEvent
     EventAPIs(ItemUseOnActorEvent, ::Event::ItemUseOnActorEvent);
 
 public:
-    Property_Instance(MC, ActorRuntimeID, mTarget);
-    Property(int, mInteractiveMode);
+    Property_Instance(MC, ActorRuntimeID, mTarget, Target);
+    Property(int, mInteractiveMode, InteractiveMode);
 };
 
 ///////////////////////////// Other Events /////////////////////////////
@@ -938,7 +938,7 @@ Class ConsoleCmdEvent
     EventAPIs(ConsoleCmdEvent, ::Event::ConsoleCmdEvent);
 
 public:
-    Property_String(mCommand);
+    Property_String(mCommand, Command);
 };
 
 Class RegCmdEvent
@@ -947,7 +947,7 @@ Class RegCmdEvent
     EventAPIs(RegCmdEvent, ::Event::RegCmdEvent);
 
 public:
-    Property_Ptr(MC, CommandRegistry, mCommandRegistry);
+    Property_Ptr(MC, CommandRegistry, mCommandRegistry, CommandRegistry);
 };
 
 Class ConsoleOutputEvent
@@ -956,7 +956,7 @@ Class ConsoleOutputEvent
     EventAPIs(ConsoleOutputEvent, ::Event::ConsoleOutputEvent);
 
 public:
-    Property_String(mOutput);
+    Property_String(mOutput, Output);
 };
 
 Class PlayerBedEnterEvent
@@ -965,8 +965,8 @@ Class PlayerBedEnterEvent
     EventAPIs(PlayerBedEnterEvent, ::Event::PlayerBedEnterEvent);
 
 public:
-    Property_Ptr(MC, Player, mPlayer);
-    Property_Ptr(MC, BlockInstance, mBlockInstance);
+    Property_Ptr(MC, Player, mPlayer, Player);
+    Property_Ptr(MC, BlockInstance, mBlockInstance, BlockInstance);
 };
 
 Class ScriptPluginManagerEvent
@@ -975,17 +975,17 @@ Class ScriptPluginManagerEvent
     EventAPIs(ScriptPluginManagerEvent, ::Event::ScriptPluginManagerEvent);
 
 public:
-    enum class Operation
+    enum class OperationEnum
     {
         Load,
         Unload,
         Reload
     };
-    Property_Enum(Operation, ::Event::ScriptPluginManagerEvent::Operation, operation);
-    Property_String(target);
-    Property_String(otherInfo);
-    Property_String(pluginExtention);
-    Property(bool, success);
+    Property_Enum(OperationEnum, ::Event::ScriptPluginManagerEvent::Operation, operation, Operation);
+    Property_String(target, Target);
+    Property_String(otherInfo, OtherInfo);
+    Property_String(pluginExtention, PluginExtention);
+    Property(bool, success, Success);
 };
 
 } // namespace LLNET::Event

@@ -13,13 +13,13 @@ namespace LLNET::Core
 		property int Major;
 		property int Minor;
 		property int Revision;
-		property LLNET::LL::Version::Status Status;
+		property LLNET::LL::Version::StatusEnum Status;
 		LLNETLibraryAttribute()
 		{
 			Major = 0;
 			Minor = 0;
 			Revision = 0;
-			Status = LLNET::LL::Version::Status::Release;
+			Status = LLNET::LL::Version::StatusEnum::Release;
 		}
 	};
 } // namespace LLNET

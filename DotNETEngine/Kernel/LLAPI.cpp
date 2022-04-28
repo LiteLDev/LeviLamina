@@ -26,7 +26,7 @@ LLNET::LL::Version::Version(int major, int minor, int revision)
 	_this = new ::LL::Version(major, minor, revision);
 }
 
-LLNET::LL::Version::Version(int major, int minor, int revision, Status status)
+LLNET::LL::Version::Version(int major, int minor, int revision, StatusEnum status)
 {
 	_this = new ::LL::Version(major, minor, revision, ::LL::Version::Status(status));
 }
@@ -193,7 +193,7 @@ inline bool LLNET::LL::LLAPI::hasPlugin(System::String^ name)
 
 bool LLNET::LL::Plugin::IsManagedPlugin()
 {
-	return PluginManager::ManagedPluginData->ContainsKey(this->name);
+	return PluginManager::ManagedPluginData->ContainsKey(this->Name);
 }
 
 LLNET::LL::Plugin::Plugin(::LL::Plugin& p)
