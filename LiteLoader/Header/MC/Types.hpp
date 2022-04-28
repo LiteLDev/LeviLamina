@@ -75,8 +75,10 @@ public:
     {
         return {(bpos1.x + bpos2.x) / 2, (bpos1.y + bpos2.y) / 2, (bpos1.z + bpos2.z) / 2};
     }
-
+//ignored with /clr
+#ifndef _M_CEE
     LIAPI AABB toAABB() const;
+#endif // !_M_CEE
 };
 
 template <typename A, typename T>
