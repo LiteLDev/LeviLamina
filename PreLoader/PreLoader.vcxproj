@@ -66,6 +66,7 @@ copy /Y "$(TargetPath)" "$(LocalDebuggerWorkingDirectory)\"
   <ItemGroup>
     <ClInclude Include="Logger.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\LiteLoader\Lib\third-party\rawpdb\PDB.cpp">
@@ -122,6 +123,7 @@ copy /Y "$(TargetPath)" "$(LocalDebuggerWorkingDirectory)\"
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="SymDB.cpp" />
     <ClCompile Include="PreLoader.cpp" />
+    <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\LiteLoader\Lib\third-party\detours\detours.lib" />
