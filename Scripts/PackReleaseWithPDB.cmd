@@ -6,8 +6,6 @@ del /F /Q RELEASE\LLPreLoader.dll 2>nul
 del /F /Q RELEASE\LiteLoader.dll 2>nul
 rmdir /s /q RELEASE\plugins\LiteLoader\pdb 2>nul
 del /F /Q RELEASE\plugins\LiteLoader\LiteLoader.*.dll 2>nul
-del /F /Q RELEASE\plugins\LiteLoader\LiteLoader.NET.runtimeconfig.json 2>nul
-del /F /Q RELEASE\plugins\lib\Ijwhost.dll 2>nul
 del /F /Q RELEASE\plugins\LiteLoader\LLAutoUpdate.dll 2>nul
 del /F /Q RELEASE\LLPeEditor.exe 2>nul
 del /F /Q RELEASE\*.zip 2>nul
@@ -20,8 +18,6 @@ echo.
 copy /Y x64\Release\LLPreLoader.dll RELEASE\LLPreLoader.dll
 copy /Y x64\Release\LiteLoader.dll RELEASE\LiteLoader.dll
 copy /Y x64\Release\LiteLoader.*.dll RELEASE\plugins\LiteLoader\
-copy /Y x64\Release\LiteLoader.NET.runtimeconfig.json RELEASE\plugins\LiteLoader\LiteLoader.NET.runtimeconfig.json
-copy /Y x64\Release\Ijwhost.dll RELEASE\plugins\lib\Ijwhost.dll
 mkdir RELEASE\plugins\LiteLoader\pdb
 copy /Y x64\Release\*.pdb RELEASE\plugins\LiteLoader\pdb\
 copy /Y x64\Release\LLAutoUpdate.dll RELEASE\plugins\LiteLoader\LLAutoUpdate.dll
