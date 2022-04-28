@@ -147,14 +147,14 @@ public:
         *((void**)&rv) = dlsym("?isCraftingBlock@FurnaceBlock@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isContainerBlock() const{
-        bool (FurnaceBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isContainerBlock@FurnaceBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isInteractiveBlock() const{
         bool (FurnaceBlock::*rv)() const;
         *((void**)&rv) = dlsym("?isInteractiveBlock@FurnaceBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isContainerBlock() const{
+        bool (FurnaceBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isContainerBlock@FurnaceBlock@@UEBA_NXZ");
         return (this->*rv)();
     }
     */

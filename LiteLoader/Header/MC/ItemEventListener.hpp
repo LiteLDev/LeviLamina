@@ -58,15 +58,20 @@ public:
         *((void**)&rv) = dlsym("?onPreviewItemPopulatedInContainer@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<class ItemStackBase const &>(a0), std::forward<std::string const &>(a1));
     }
+    inline enum EventResult onItemTransferredFromContainer(class ItemStackBase const & a0, std::string const & a1){
+        enum EventResult (ItemEventListener::*rv)(class ItemStackBase const &, std::string const &);
+        *((void**)&rv) = dlsym("?onItemTransferredFromContainer@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<class ItemStackBase const &>(a0), std::forward<std::string const &>(a1));
+    }
     inline enum EventResult onItemTransferredToContainer(class ItemStackBase const & a0, std::string const & a1){
         enum EventResult (ItemEventListener::*rv)(class ItemStackBase const &, std::string const &);
         *((void**)&rv) = dlsym("?onItemTransferredToContainer@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<class ItemStackBase const &>(a0), std::forward<std::string const &>(a1));
     }
-    inline enum EventResult onItemTransferredFromContainer(class ItemStackBase const & a0, std::string const & a1){
-        enum EventResult (ItemEventListener::*rv)(class ItemStackBase const &, std::string const &);
-        *((void**)&rv) = dlsym("?onItemTransferredFromContainer@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const &>(a0), std::forward<std::string const &>(a1));
+    inline enum EventResult onItemSelectedSlot(int a0){
+        enum EventResult (ItemEventListener::*rv)(int);
+        *((void**)&rv) = dlsym("?onItemSelectedSlot@ItemEventListener@@UEAA?AW4EventResult@@H@Z");
+        return (this->*rv)(std::forward<int>(a0));
     }
     inline enum EventResult onItemModifiedActor(class ItemStackBase const & a0, class Actor const & a1){
         enum EventResult (ItemEventListener::*rv)(class ItemStackBase const &, class Actor const &);
@@ -78,25 +83,20 @@ public:
         *((void**)&rv) = dlsym("?onItemSpawnedActor@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBVActor@@@Z");
         return (this->*rv)(std::forward<class ItemStackBase const &>(a0), std::forward<class Actor const &>(a1));
     }
-    inline enum EventResult onItemSelectedSlot(int a0){
-        enum EventResult (ItemEventListener::*rv)(int);
-        *((void**)&rv) = dlsym("?onItemSelectedSlot@ItemEventListener@@UEAA?AW4EventResult@@H@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline enum EventResult onInventoryItemClosed(){
-        enum EventResult (ItemEventListener::*rv)();
-        *((void**)&rv) = dlsym("?onInventoryItemClosed@ItemEventListener@@UEAA?AW4EventResult@@XZ");
-        return (this->*rv)();
+    inline enum EventResult onInventoryItemOpened(bool a0){
+        enum EventResult (ItemEventListener::*rv)(bool);
+        *((void**)&rv) = dlsym("?onInventoryItemOpened@ItemEventListener@@UEAA?AW4EventResult@@_N@Z");
+        return (this->*rv)(std::forward<bool>(a0));
     }
     inline enum EventResult onItemSmelted(class Player & a0, class ItemDescriptor const & a1, class ItemDescriptor const & a2){
         enum EventResult (ItemEventListener::*rv)(class Player &, class ItemDescriptor const &, class ItemDescriptor const &);
         *((void**)&rv) = dlsym("?onItemSmelted@ItemEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemDescriptor@@1@Z");
         return (this->*rv)(std::forward<class Player &>(a0), std::forward<class ItemDescriptor const &>(a1), std::forward<class ItemDescriptor const &>(a2));
     }
-    inline enum EventResult onInventoryItemOpened(bool a0){
-        enum EventResult (ItemEventListener::*rv)(bool);
-        *((void**)&rv) = dlsym("?onInventoryItemOpened@ItemEventListener@@UEAA?AW4EventResult@@_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
+    inline enum EventResult onInventoryItemClosed(){
+        enum EventResult (ItemEventListener::*rv)();
+        *((void**)&rv) = dlsym("?onInventoryItemClosed@ItemEventListener@@UEAA?AW4EventResult@@XZ");
+        return (this->*rv)();
     }
     inline enum EventResult onRecipeSelected(class ItemStackBase const & a0){
         enum EventResult (ItemEventListener::*rv)(class ItemStackBase const &);

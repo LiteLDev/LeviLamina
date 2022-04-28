@@ -54,14 +54,14 @@ public:
         *((void**)&rv) = dlsym("?getSpawnYPosition@Dimension@@UEBAHXZ");
         return (this->*rv)();
     }
-    inline bool hasGround() const{
-        bool (Dimension::*rv)() const;
-        *((void**)&rv) = dlsym("?hasGround@Dimension@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool mayRespawnViaBed() const{
         bool (Dimension::*rv)() const;
         *((void**)&rv) = dlsym("?mayRespawnViaBed@Dimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasGround() const{
+        bool (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?hasGround@Dimension@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isNaturalDimension() const{

@@ -35,15 +35,15 @@ public:
         *((void**)&rv) = dlsym("?getPackOrigin@WorldHistoryPackSource@@UEBA?AW4PackOrigin@@XZ");
         return (this->*rv)();
     }
-    inline void forEachPack(class std::function<void (class Pack &)> a0){
-        void (WorldHistoryPackSource::*rv)(class std::function<void (class Pack &)>);
-        *((void**)&rv) = dlsym("?forEachPack@WorldHistoryPackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<void (class Pack &)>>(a0));
-    }
     inline void forEachPackConst(class std::function<void (class Pack const &)> a0) const{
         void (WorldHistoryPackSource::*rv)(class std::function<void (class Pack const &)>) const;
         *((void**)&rv) = dlsym("?forEachPackConst@WorldHistoryPackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z");
         return (this->*rv)(std::forward<class std::function<void (class Pack const &)>>(a0));
+    }
+    inline void forEachPack(class std::function<void (class Pack &)> a0){
+        void (WorldHistoryPackSource::*rv)(class std::function<void (class Pack &)>);
+        *((void**)&rv) = dlsym("?forEachPack@WorldHistoryPackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z");
+        return (this->*rv)(std::forward<class std::function<void (class Pack &)>>(a0));
     }
     inline enum PackType getPackType() const{
         enum PackType (WorldHistoryPackSource::*rv)() const;

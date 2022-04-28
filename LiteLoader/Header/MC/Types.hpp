@@ -482,8 +482,13 @@ template <typename T1>
 class WildcardCommandSelector;
 
 //enum
-enum class ContainerType : char
+class CodeBuilder
 {
+public:
+    enum ProtocolVersion;
+};
+
+enum class ContainerType : char {
     INVENTORY              = -1,
     NONE                   = -9,
     CONTAINER              = 0,

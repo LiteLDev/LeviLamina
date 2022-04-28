@@ -2305,14 +2305,14 @@ public:
         *((void**)&rv) = dlsym("?getPositionTrackerDBServer@Level@@UEBAPEAVPositionTrackingDBServer@PositionTrackingDB@@XZ");
         return (this->*rv)();
     }
-    inline class SubChunkRequestManager * getSubChunkRequestManager(){
-        class SubChunkRequestManager * (Level::*rv)();
-        *((void**)&rv) = dlsym("?getSubChunkRequestManager@Level@@UEAAPEAVSubChunkRequestManager@@XZ");
-        return (this->*rv)();
-    }
     inline class ResourcePackManager * getClientResourcePackManager() const{
         class ResourcePackManager * (Level::*rv)() const;
         *((void**)&rv) = dlsym("?getClientResourcePackManager@Level@@UEBAPEAVResourcePackManager@@XZ");
+        return (this->*rv)();
+    }
+    inline class SubChunkRequestManager * getSubChunkRequestManager(){
+        class SubChunkRequestManager * (Level::*rv)();
+        *((void**)&rv) = dlsym("?getSubChunkRequestManager@Level@@UEAAPEAVSubChunkRequestManager@@XZ");
         return (this->*rv)();
     }
     inline class ResourcePackManager * getServerResourcePackManager() const{
@@ -2335,30 +2335,20 @@ public:
         *((void**)&rv) = dlsym("?updateSleepingPlayerList@Level@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void _localPlayerChangedDimension(){
-        void (Level::*rv)();
-        *((void**)&rv) = dlsym("?_localPlayerChangedDimension@Level@@MEAAXXZ");
-        return (this->*rv)();
-    }
     inline void directTickEntities(class BlockSource & a0){
         void (Level::*rv)(class BlockSource &);
         *((void**)&rv) = dlsym("?directTickEntities@Level@@UEAAXAEAVBlockSource@@@Z");
         return (this->*rv)(std::forward<class BlockSource &>(a0));
     }
+    inline void _localPlayerChangedDimension(){
+        void (Level::*rv)();
+        *((void**)&rv) = dlsym("?_localPlayerChangedDimension@Level@@MEAAXXZ");
+        return (this->*rv)();
+    }
     inline void incrementTagCache(std::string const & a0, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> & a1){
         void (Level::*rv)(std::string const &, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> &);
         *((void**)&rv) = dlsym("?incrementTagCache@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$TagRegistry@U?$IDType@ULevelTagIDType@@@@U?$IDType@ULevelTagSetIDType@@@@@@@Z");
         return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> &>(a1));
-    }
-    inline void runCommand(class Command & a0, class CommandOrigin & a1, enum CommandOriginSystem a2){
-        void (Level::*rv)(class Command &, class CommandOrigin &, enum CommandOriginSystem);
-        *((void**)&rv) = dlsym("?runCommand@Level@@UEAAXAEAVCommand@@AEAVCommandOrigin@@W4CommandOriginSystem@@@Z");
-        return (this->*rv)(std::forward<class Command &>(a0), std::forward<class CommandOrigin &>(a1), std::forward<enum CommandOriginSystem>(a2));
-    }
-    inline void notifySubChunkRequestManager(class SubChunkPacket const & a0){
-        void (Level::*rv)(class SubChunkPacket const &);
-        *((void**)&rv) = dlsym("?notifySubChunkRequestManager@Level@@UEAAXAEBVSubChunkPacket@@@Z");
-        return (this->*rv)(std::forward<class SubChunkPacket const &>(a0));
     }
     inline void loadFunctionManager(){
         void (Level::*rv)();
@@ -2375,15 +2365,25 @@ public:
         *((void**)&rv) = dlsym("?decrementTagCache@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$TagRegistry@U?$IDType@ULevelTagIDType@@@@U?$IDType@ULevelTagSetIDType@@@@@@@Z");
         return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> &>(a1));
     }
-    inline void saveAdditionalData(){
-        void (Level::*rv)();
-        *((void**)&rv) = dlsym("?saveAdditionalData@Level@@UEAAXXZ");
-        return (this->*rv)();
+    inline void runCommand(class Command & a0, class CommandOrigin & a1, enum CommandOriginSystem a2){
+        void (Level::*rv)(class Command &, class CommandOrigin &, enum CommandOriginSystem);
+        *((void**)&rv) = dlsym("?runCommand@Level@@UEAAXAEAVCommand@@AEAVCommandOrigin@@W4CommandOriginSystem@@@Z");
+        return (this->*rv)(std::forward<class Command &>(a0), std::forward<class CommandOrigin &>(a1), std::forward<enum CommandOriginSystem>(a2));
+    }
+    inline void notifySubChunkRequestManager(class SubChunkPacket const & a0){
+        void (Level::*rv)(class SubChunkPacket const &);
+        *((void**)&rv) = dlsym("?notifySubChunkRequestManager@Level@@UEAAXAEBVSubChunkPacket@@@Z");
+        return (this->*rv)(std::forward<class SubChunkPacket const &>(a0));
     }
     inline void runCommand(class HashedString const & a0, class CommandOrigin & a1, enum CommandOriginSystem a2, enum CurrentCmdVersion a3){
         void (Level::*rv)(class HashedString const &, class CommandOrigin &, enum CommandOriginSystem, enum CurrentCmdVersion);
         *((void**)&rv) = dlsym("?runCommand@Level@@UEAAXAEBVHashedString@@AEAVCommandOrigin@@W4CommandOriginSystem@@W4CurrentCmdVersion@@@Z");
         return (this->*rv)(std::forward<class HashedString const &>(a0), std::forward<class CommandOrigin &>(a1), std::forward<enum CommandOriginSystem>(a2), std::forward<enum CurrentCmdVersion>(a3));
+    }
+    inline void saveAdditionalData(){
+        void (Level::*rv)();
+        *((void**)&rv) = dlsym("?saveAdditionalData@Level@@UEAAXXZ");
+        return (this->*rv)();
     }
     inline void initializeLevelChunkMetaData(class LevelChunk & a0){
         void (Level::*rv)(class LevelChunk &);
@@ -2875,10 +2875,10 @@ public:
         *((void**)&rv) = dlsym("?forceFlushRemovedPlayers@Level@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void forceRemoveEntity(class Actor & a0){
-        void (Level::*rv)(class Actor &);
-        *((void**)&rv) = dlsym("?forceRemoveEntity@Level@@UEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor &>(a0));
+    inline void forceRemoveEntity(class Actor & a0, bool a1){
+        void (Level::*rv)(class Actor &, bool);
+        *((void**)&rv) = dlsym("?forceRemoveEntity@Level@@UEAAXAEAVActor@@_N@Z");
+        return (this->*rv)(std::forward<class Actor &>(a0), std::forward<bool>(a1));
     }
     inline std::vector<class WeakEntityRef> & getActiveAutonomousActors(){
         std::vector<class WeakEntityRef> & (Level::*rv)();
@@ -2940,14 +2940,14 @@ public:
         *((void**)&rv) = dlsym("?getBehaviorTreeGroup@Level@@UEBAAEAVBehaviorTreeGroup@@XZ");
         return (this->*rv)();
     }
-    inline class BiomeComponentFactory const & getBiomeComponentFactory() const{
-        class BiomeComponentFactory const & (Level::*rv)() const;
-        *((void**)&rv) = dlsym("?getBiomeComponentFactory@Level@@UEBAAEBVBiomeComponentFactory@@XZ");
-        return (this->*rv)();
-    }
     inline class BiomeComponentFactory & getBiomeComponentFactory(){
         class BiomeComponentFactory & (Level::*rv)();
         *((void**)&rv) = dlsym("?getBiomeComponentFactory@Level@@UEAAAEAVBiomeComponentFactory@@XZ");
+        return (this->*rv)();
+    }
+    inline class BiomeComponentFactory const & getBiomeComponentFactory() const{
+        class BiomeComponentFactory const & (Level::*rv)() const;
+        *((void**)&rv) = dlsym("?getBiomeComponentFactory@Level@@UEBAAEBVBiomeComponentFactory@@XZ");
         return (this->*rv)();
     }
     inline class BiomeRegistry const & getBiomeRegistry() const{
@@ -3200,14 +3200,14 @@ public:
         *((void**)&rv) = dlsym("?getLevelStorage@Level@@UEAAAEAVLevelStorage@@XZ");
         return (this->*rv)();
     }
-    inline class Factory<class BaseLightTextureImageBuilder, class Level &, class Scheduler &> const & getLightTextureImageBuilderFactory() const{
-        class Factory<class BaseLightTextureImageBuilder, class Level &, class Scheduler &> const & (Level::*rv)() const;
-        *((void**)&rv) = dlsym("?getLightTextureImageBuilderFactory@Level@@UEBAAEBV?$Factory@VBaseLightTextureImageBuilder@@AEAVLevel@@AEAVScheduler@@@@XZ");
-        return (this->*rv)();
-    }
     inline class Factory<class BaseLightTextureImageBuilder, class Level &, class Scheduler &> & getLightTextureImageBuilderFactory(){
         class Factory<class BaseLightTextureImageBuilder, class Level &, class Scheduler &> & (Level::*rv)();
         *((void**)&rv) = dlsym("?getLightTextureImageBuilderFactory@Level@@UEAAAEAV?$Factory@VBaseLightTextureImageBuilder@@AEAVLevel@@AEAVScheduler@@@@XZ");
+        return (this->*rv)();
+    }
+    inline class Factory<class BaseLightTextureImageBuilder, class Level &, class Scheduler &> const & getLightTextureImageBuilderFactory() const{
+        class Factory<class BaseLightTextureImageBuilder, class Level &, class Scheduler &> const & (Level::*rv)() const;
+        *((void**)&rv) = dlsym("?getLightTextureImageBuilderFactory@Level@@UEBAAEBV?$Factory@VBaseLightTextureImageBuilder@@AEAVLevel@@AEAVScheduler@@@@XZ");
         return (this->*rv)();
     }
     inline class HitResult & getLiquidHitResult(){
@@ -3520,14 +3520,14 @@ public:
         *((void**)&rv) = dlsym("?getStructureManager@Level@@UEAA?AV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@XZ");
         return (this->*rv)();
     }
-    inline class SurfaceBuilderRegistry & getSurfaceBuilderRegistry(){
-        class SurfaceBuilderRegistry & (Level::*rv)();
-        *((void**)&rv) = dlsym("?getSurfaceBuilderRegistry@Level@@UEAAAEAVSurfaceBuilderRegistry@@XZ");
-        return (this->*rv)();
-    }
     inline class SurfaceBuilderRegistry const & getSurfaceBuilderRegistry() const{
         class SurfaceBuilderRegistry const & (Level::*rv)() const;
         *((void**)&rv) = dlsym("?getSurfaceBuilderRegistry@Level@@UEBAAEBVSurfaceBuilderRegistry@@XZ");
+        return (this->*rv)();
+    }
+    inline class SurfaceBuilderRegistry & getSurfaceBuilderRegistry(){
+        class SurfaceBuilderRegistry & (Level::*rv)();
+        *((void**)&rv) = dlsym("?getSurfaceBuilderRegistry@Level@@UEAAAEAVSurfaceBuilderRegistry@@XZ");
         return (this->*rv)();
     }
     inline bool getTearingDown() const{
@@ -3790,10 +3790,10 @@ public:
         *((void**)&rv) = dlsym("?registerTemporaryPointer@Level@@UEAAXAEAV_TickPtr@@@Z");
         return (this->*rv)(std::forward<class _TickPtr &>(a0));
     }
-    inline class OwnerPtrT<struct EntityRefTraits> removeActorAndTakeEntity(class WeakEntityRef a0){
-        class OwnerPtrT<struct EntityRefTraits> (Level::*rv)(class WeakEntityRef);
-        *((void**)&rv) = dlsym("?removeActorAndTakeEntity@Level@@UEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@VWeakEntityRef@@@Z");
-        return (this->*rv)(std::forward<class WeakEntityRef>(a0));
+    inline class OwnerPtrT<struct EntityRefTraits> removeActorAndTakeEntity(class WeakEntityRef a0, bool a1){
+        class OwnerPtrT<struct EntityRefTraits> (Level::*rv)(class WeakEntityRef, bool);
+        *((void**)&rv) = dlsym("?removeActorAndTakeEntity@Level@@UEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@VWeakEntityRef@@_N@Z");
+        return (this->*rv)(std::forward<class WeakEntityRef>(a0), std::forward<bool>(a1));
     }
     inline void removeAllNonPlayerEntities(struct ActorUniqueID a0){
         void (Level::*rv)(struct ActorUniqueID);

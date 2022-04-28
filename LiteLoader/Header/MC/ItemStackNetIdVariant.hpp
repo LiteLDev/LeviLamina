@@ -16,9 +16,7 @@ enum ItemStackNetIdType : unsigned char
 };
 #undef BEFORE_EXTRA
 
-
-struct ItemStackNetIdVariant
-{
+struct ItemStackNetIdVariant {
 
 #define AFTER_EXTRA
 // Add Member There

@@ -112,14 +112,14 @@ public:
         *((void**)&rv) = dlsym("?isTargetable@Agent@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool getAlwaysShowNameTag() const{
-        bool (Agent::*rv)() const;
-        *((void**)&rv) = dlsym("?getAlwaysShowNameTag@Agent@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool interactPreventDefault(){
         bool (Agent::*rv)();
         *((void**)&rv) = dlsym("?interactPreventDefault@Agent@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool getAlwaysShowNameTag() const{
+        bool (Agent::*rv)() const;
+        *((void**)&rv) = dlsym("?getAlwaysShowNameTag@Agent@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool breaksFallingBlocks() const{

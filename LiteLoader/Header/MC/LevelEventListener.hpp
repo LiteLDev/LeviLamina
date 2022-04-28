@@ -39,15 +39,15 @@ public:
         *((void**)&rv) = dlsym("?onLevelTick@LevelEventListener@@UEAA?AW4EventResult@@XZ");
         return (this->*rv)();
     }
-    inline enum EventResult onLevelBiomesRegistered(class BiomeRegistry & a0){
-        enum EventResult (LevelEventListener::*rv)(class BiomeRegistry &);
-        *((void**)&rv) = dlsym("?onLevelBiomesRegistered@LevelEventListener@@UEAA?AW4EventResult@@AEAVBiomeRegistry@@@Z");
-        return (this->*rv)(std::forward<class BiomeRegistry &>(a0));
-    }
     inline enum EventResult onLevelRemovedActor(class Level & a0, class Actor & a1){
         enum EventResult (LevelEventListener::*rv)(class Level &, class Actor &);
         *((void**)&rv) = dlsym("?onLevelRemovedActor@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVActor@@@Z");
         return (this->*rv)(std::forward<class Level &>(a0), std::forward<class Actor &>(a1));
+    }
+    inline enum EventResult onLevelBiomesRegistered(class BiomeRegistry & a0){
+        enum EventResult (LevelEventListener::*rv)(class BiomeRegistry &);
+        *((void**)&rv) = dlsym("?onLevelBiomesRegistered@LevelEventListener@@UEAA?AW4EventResult@@AEAVBiomeRegistry@@@Z");
+        return (this->*rv)(std::forward<class BiomeRegistry &>(a0));
     }
     inline enum EventResult onLevelWeatherChange(std::string const & a0, bool a1, bool a2){
         enum EventResult (LevelEventListener::*rv)(std::string const &, bool, bool);

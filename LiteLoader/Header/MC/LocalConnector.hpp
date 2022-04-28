@@ -31,19 +31,14 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual class Social::GameConnectionInfo const & getConnectedGameInfo() const;
     /*
-    inline bool isIPv6Supported() const{
-        bool (LocalConnector::*rv)() const;
-        *((void**)&rv) = dlsym("?isIPv6Supported@LocalConnector@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isIPv4Supported() const{
         bool (LocalConnector::*rv)() const;
         *((void**)&rv) = dlsym("?isIPv4Supported@LocalConnector@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline unsigned short getIPv4Port() const{
-        unsigned short (LocalConnector::*rv)() const;
-        *((void**)&rv) = dlsym("?getIPv4Port@LocalConnector@@UEBAGXZ");
+    inline bool isIPv6Supported() const{
+        bool (LocalConnector::*rv)() const;
+        *((void**)&rv) = dlsym("?isIPv6Supported@LocalConnector@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline unsigned short getIPv6Port() const{
@@ -51,20 +46,25 @@ public:
         *((void**)&rv) = dlsym("?getIPv6Port@LocalConnector@@UEBAGXZ");
         return (this->*rv)();
     }
+    inline unsigned short getIPv4Port() const{
+        unsigned short (LocalConnector::*rv)() const;
+        *((void**)&rv) = dlsym("?getIPv4Port@LocalConnector@@UEBAGXZ");
+        return (this->*rv)();
+    }
     inline unsigned short getPort() const{
         unsigned short (LocalConnector::*rv)() const;
         *((void**)&rv) = dlsym("?getPort@LocalConnector@@UEBAGXZ");
         return (this->*rv)();
     }
-    inline void removeConnectionStateListener(class Connector::ConnectionStateListener * a0){
-        void (LocalConnector::*rv)(class Connector::ConnectionStateListener *);
-        *((void**)&rv) = dlsym("?removeConnectionStateListener@LocalConnector@@UEAAXPEAVConnectionStateListener@Connector@@@Z");
-        return (this->*rv)(std::forward<class Connector::ConnectionStateListener *>(a0));
-    }
     inline void startNatPunchingClient(std::string const & a0, unsigned short a1){
         void (LocalConnector::*rv)(std::string const &, unsigned short);
         *((void**)&rv) = dlsym("?startNatPunchingClient@LocalConnector@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z");
         return (this->*rv)(std::forward<std::string const &>(a0), std::forward<unsigned short>(a1));
+    }
+    inline void removeConnectionStateListener(class Connector::ConnectionStateListener * a0){
+        void (LocalConnector::*rv)(class Connector::ConnectionStateListener *);
+        *((void**)&rv) = dlsym("?removeConnectionStateListener@LocalConnector@@UEAAXPEAVConnectionStateListener@Connector@@@Z");
+        return (this->*rv)(std::forward<class Connector::ConnectionStateListener *>(a0));
     }
     inline void addConnectionStateListener(class Connector::ConnectionStateListener * a0){
         void (LocalConnector::*rv)(class Connector::ConnectionStateListener *);

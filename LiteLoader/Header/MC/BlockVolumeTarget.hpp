@@ -48,15 +48,15 @@ public:
     /*22*/ virtual short getLocalWaterLevel(class BlockPos const &) const;
     /*23*/ virtual class LevelData const & getLevelData() const;
     /*
-    inline bool placeStructure(class BlockPos const & a0, class StructureTemplate & a1, class StructureSettings & a2){
-        bool (BlockVolumeTarget::*rv)(class BlockPos const &, class StructureTemplate &, class StructureSettings &);
-        *((void**)&rv) = dlsym("?placeStructure@BlockVolumeTarget@@UEAA_NAEBVBlockPos@@AEAVStructureTemplate@@AEAVStructureSettings@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const &>(a0), std::forward<class StructureTemplate &>(a1), std::forward<class StructureSettings &>(a2));
-    }
     inline bool shimPlaceForOldFeatures(class Feature const & a0, class BlockPos const & a1, class Random & a2) const{
         bool (BlockVolumeTarget::*rv)(class Feature const &, class BlockPos const &, class Random &) const;
         *((void**)&rv) = dlsym("?shimPlaceForOldFeatures@BlockVolumeTarget@@UEBA_NAEBVFeature@@AEBVBlockPos@@AEAVRandom@@@Z");
         return (this->*rv)(std::forward<class Feature const &>(a0), std::forward<class BlockPos const &>(a1), std::forward<class Random &>(a2));
+    }
+    inline bool placeStructure(class BlockPos const & a0, class StructureTemplate & a1, class StructureSettings & a2){
+        bool (BlockVolumeTarget::*rv)(class BlockPos const &, class StructureTemplate &, class StructureSettings &);
+        *((void**)&rv) = dlsym("?placeStructure@BlockVolumeTarget@@UEAA_NAEBVBlockPos@@AEAVStructureTemplate@@AEAVStructureSettings@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0), std::forward<class StructureTemplate &>(a1), std::forward<class StructureSettings &>(a2));
     }
     inline short getMinHeight() const{
         short (BlockVolumeTarget::*rv)() const;
@@ -68,14 +68,14 @@ public:
         *((void**)&rv) = dlsym("?apply@BlockVolumeTarget@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool mayPlace(class BlockPos const & a0, class Block const & a1) const{
-        bool (BlockVolumeTarget::*rv)(class BlockPos const &, class Block const &) const;
-        *((void**)&rv) = dlsym("?mayPlace@BlockVolumeTarget@@UEBA_NAEBVBlockPos@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const &>(a0), std::forward<class Block const &>(a1));
-    }
     inline bool canSurvive(class BlockPos const & a0, class Block const & a1) const{
         bool (BlockVolumeTarget::*rv)(class BlockPos const &, class Block const &) const;
         *((void**)&rv) = dlsym("?canSurvive@BlockVolumeTarget@@UEBA_NAEBVBlockPos@@AEBVBlock@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0), std::forward<class Block const &>(a1));
+    }
+    inline bool mayPlace(class BlockPos const & a0, class Block const & a1) const{
+        bool (BlockVolumeTarget::*rv)(class BlockPos const &, class Block const &) const;
+        *((void**)&rv) = dlsym("?mayPlace@BlockVolumeTarget@@UEBA_NAEBVBlockPos@@AEBVBlock@@@Z");
         return (this->*rv)(std::forward<class BlockPos const &>(a0), std::forward<class Block const &>(a1));
     }
     inline void disableBlockSimple(){

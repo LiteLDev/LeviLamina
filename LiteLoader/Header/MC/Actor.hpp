@@ -378,11 +378,6 @@ public:
         *((void**)&rv) = dlsym("?breaksFallingBlocks@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isLocalPlayer() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isLocalPlayer@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isLeashableType(){
         bool (Actor::*rv)();
         *((void**)&rv) = dlsym("?isLeashableType@Actor@@UEAA_NXZ");
@@ -392,6 +387,11 @@ public:
         bool (Actor::*rv)(unsigned char) const;
         *((void**)&rv) = dlsym("?hasOutputSignal@Actor@@UEBA_NE@Z");
         return (this->*rv)(std::forward<unsigned char>(a0));
+    }
+    inline bool isLocalPlayer() const{
+        bool (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?isLocalPlayer@Actor@@UEBA_NXZ");
+        return (this->*rv)();
     }
     inline bool _makeFlySound() const{
         bool (Actor::*rv)() const;
@@ -403,14 +403,14 @@ public:
         *((void**)&rv) = dlsym("?isPlayer@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool interactPreventDefault(){
-        bool (Actor::*rv)();
-        *((void**)&rv) = dlsym("?interactPreventDefault@Actor@@UEAA_NXZ");
-        return (this->*rv)();
-    }
     inline bool getAlwaysShowNameTag() const{
         bool (Actor::*rv)() const;
         *((void**)&rv) = dlsym("?getAlwaysShowNameTag@Actor@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool interactPreventDefault(){
+        bool (Actor::*rv)();
+        *((void**)&rv) = dlsym("?interactPreventDefault@Actor@@UEAA_NXZ");
         return (this->*rv)();
     }
     inline int getOutputSignal() const{
@@ -563,8 +563,8 @@ public:
     MCAPI enum EquipmentSlot getEquipmentSlotForItem(class ItemStack const &) const;
     MCAPI bool getFirstAvailableSeatPos(class Actor &, class Vec3 &) const;
     MCAPI class Actor * getFirstPassenger() const;
-    MCAPI class SimpleContainer & getHandContainer();
     MCAPI class SimpleContainer const & getHandContainer() const;
+    MCAPI class SimpleContainer & getHandContainer();
     MCAPI int getHealth() const;
     MCAPI int getHurtDir() const;
     MCAPI int getHurtTime() const;

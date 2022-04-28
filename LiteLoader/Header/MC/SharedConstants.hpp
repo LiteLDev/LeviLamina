@@ -14,7 +14,7 @@ namespace SharedConstants {
 // Add Member There
 
 #undef AFTER_EXTRA
-    //MCAPI extern enum CodeBuilder::ProtocolVersion const CodeBuilderProtocolVersion;
+    MCAPI extern enum CodeBuilder::ProtocolVersion const CodeBuilderProtocolVersion;
     MCAPI extern enum BlendVersion const CurrentBlendVersion;
     MCAPI extern class SemVersion const CurrentGameSemVersion;
     MCAPI extern enum LevelChunkFormat const CurrentLevelChunkFormat;
