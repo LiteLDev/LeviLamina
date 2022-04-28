@@ -137,14 +137,14 @@ public:
     /*198*/ virtual void __unk_vfn_198();
     /*199*/ virtual void __unk_vfn_199();
     /*
-    inline bool isInteractiveBlock() const{
-        bool (CartographyTableBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isInteractiveBlock@CartographyTableBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isCraftingBlock() const{
         bool (CartographyTableBlock::*rv)() const;
         *((void**)&rv) = dlsym("?isCraftingBlock@CartographyTableBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInteractiveBlock() const{
+        bool (CartographyTableBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@CartographyTableBlock@@UEBA_NXZ");
         return (this->*rv)();
     }
     */

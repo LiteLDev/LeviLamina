@@ -20,8 +20,8 @@ public:
 #endif
 
 public:
-    MCAPI ItemUseOnEvent(struct ItemUseOnEvent &&);
     MCAPI ItemUseOnEvent(struct ItemUseOnEvent const &);
+    MCAPI ItemUseOnEvent(struct ItemUseOnEvent &&);
     MCAPI ~ItemUseOnEvent();
 
 protected:

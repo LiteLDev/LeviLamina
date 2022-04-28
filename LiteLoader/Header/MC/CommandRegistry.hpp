@@ -652,6 +652,7 @@ public:
     MCAPI int addEnumValues(std::string const &, std::vector<std::string> const &);
     MCAPI int addSoftEnum(std::string const &, std::vector<std::string>);
     MCAPI void addSoftEnumValues(std::string const &, std::vector<std::string>);
+    MCAPI void addSpectatorModeEnumValue();
     MCAPI bool buildSelector(struct ActorSelectorArgs const &, class CommandSelectorBase *, std::string &) const;
     MCAPI std::vector<std::string> getAliases(std::string const &) const;
     MCAPI std::vector<std::string> getAlphabeticalLookup(class CommandOrigin const &) const;

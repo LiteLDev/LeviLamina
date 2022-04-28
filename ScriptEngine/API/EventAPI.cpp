@@ -65,7 +65,7 @@ enum class EVENT_TYPES : int
     onMoneyAdd, onMoneyReduce, onMoneyTrans, onMoneySet,
     beforeMoneyAdd, beforeMoneyReduce, beforeMoneyTrans, beforeMoneySet,
     /* Outdated Events */
-    onAttack, onExplode, onBedExplode,
+    onAttack,onExplode,onBedExplode,onMobSpawn,
     /* Internal */
     onFormSelected, EVENT_COUNT
 };
@@ -148,8 +148,8 @@ static const std::unordered_map<string, EVENT_TYPES> EventsMap{
     {"onConsumeTotem",EVENT_TYPES::onConsumeTotem},
     {"onEffectAdded",EVENT_TYPES::onEffectAdded},
     {"onEffectRemoved",EVENT_TYPES::onEffectRemoved},
-    {"onEffectUpdated",EVENT_TYPES::onEffectUpdated}
-};
+    {"onEffectUpdated",EVENT_TYPES::onEffectUpdated},
+    {"onMobSpawn", EVENT_TYPES::onMobSpawn}};
 struct ListenerListType
 {
     ScriptEngine *engine;
@@ -1103,7 +1103,15 @@ void EnableEventListener(int eventId)
             IF_LISTENED_END(EVENT_TYPES::onConsoleOutput);
         });
         break;
-
+    case EVENT_TYPES::onMobSpawn:
+        Event::MobSpawnEvent::subscribe([](const MobSpawnEvent& ev) {
+            IF_LISTENED(EVENT_TYPES::onMobSpawn)
+            {
+                CallEvent(EVENT_TYPES::onMobSpawn, String::newString(ev.mTypeName), FloatPos::newPos(ev.mPos, ev.mDimensionId));
+            }
+            IF_LISTENED_END(EVENT_TYPES::onMobSpawn);
+        });
+        break;
     default:
         break;
     }

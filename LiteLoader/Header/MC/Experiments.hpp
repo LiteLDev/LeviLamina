@@ -26,6 +26,7 @@ public:
     MCAPI bool DataDrivenItems() const;
     MCAPI Experiments();
     MCAPI bool Gametest() const;
+    MCAPI bool SpectatorMode() const;
     MCAPI bool UpcomingCreatorFeatures() const;
     MCAPI bool VanillaExperiments() const;
     MCAPI bool WildUpdate() const;

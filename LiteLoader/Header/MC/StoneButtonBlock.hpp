@@ -27,6 +27,7 @@ public:
     /*0*/ virtual ~StoneButtonBlock();
     /*4*/ virtual bool hasTag(class BlockSource &, class BlockPos const &, class Block const &, std::string const &) const;
     /*8*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
+    /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /*15*/ virtual void onProjectileHit(class BlockSource &, class BlockPos const &, class Actor const &) const;
     /*16*/ virtual void onLightningHit(class BlockSource &, class BlockPos const &) const;
     /*17*/ virtual bool liquidCanFlowIntoFromDirection(unsigned char, class std::function<class Block const & (class BlockPos const &)> const &, class BlockPos const &) const;

@@ -145,14 +145,14 @@ public:
         *((void**)&rv) = dlsym("?canBeSilkTouched@ChemistryTableBlock@@MEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isInteractiveBlock() const{
-        bool (ChemistryTableBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isInteractiveBlock@ChemistryTableBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isCraftingBlock() const{
         bool (ChemistryTableBlock::*rv)() const;
         *((void**)&rv) = dlsym("?isCraftingBlock@ChemistryTableBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInteractiveBlock() const{
+        bool (ChemistryTableBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@ChemistryTableBlock@@UEBA_NXZ");
         return (this->*rv)();
     }
     */

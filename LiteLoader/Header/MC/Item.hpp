@@ -160,11 +160,6 @@ public:
     /*126*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /*
-    inline bool isComponentBased() const{
-        bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?isComponentBased@Item@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isMultiColorTinted(class ItemStack const & a0) const{
         bool (Item::*rv)(class ItemStack const &) const;
         *((void**)&rv) = dlsym("?isMultiColorTinted@Item@@UEBA_NAEBVItemStack@@@Z");
@@ -180,6 +175,11 @@ public:
         *((void**)&rv) = dlsym("?isActorPlacerItem@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
+    inline bool isComponentBased() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isComponentBased@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline bool hasCustomColor(class ItemStackBase const & a0) const{
         bool (Item::*rv)(class ItemStackBase const &) const;
         *((void**)&rv) = dlsym("?hasCustomColor@Item@@UEBA_NAEBVItemStackBase@@@Z");
@@ -190,24 +190,24 @@ public:
         *((void**)&rv) = dlsym("?uniqueAuxValues@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isComplex() const{
-        bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?isComplex@Item@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool showsDurabilityInCreative() const{
         bool (Item::*rv)() const;
         *((void**)&rv) = dlsym("?showsDurabilityInCreative@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isMusicDisk() const{
+    inline bool isComplex() const{
         bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?isMusicDisk@Item@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?isComplex@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isCandle() const{
         bool (Item::*rv)() const;
         *((void**)&rv) = dlsym("?isCandle@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isMusicDisk() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isMusicDisk@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isPattern() const{

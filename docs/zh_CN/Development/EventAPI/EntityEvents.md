@@ -57,6 +57,20 @@
 
 <br>
 
+#### `"onMobSpawn"` - 发生于实体生成
+
+- 监听函数原型
+  `function(typeName,pos)`
+- 参数：
+  - typeName : `string`  
+    生成实体名称
+  - pos : `FloatPos`  
+    生成的坐标
+  
+- 拦截事件：函数返回`false`
+
+<br>
+
 #### `"onProjectileHitEntity"` - 实体被弹射物击中
 
 - 监听函数原型

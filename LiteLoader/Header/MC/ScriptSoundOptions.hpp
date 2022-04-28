@@ -20,8 +20,8 @@ public:
 #endif
 
 public:
-    MCAPI struct ScriptSoundOptions & operator=(struct ScriptSoundOptions const &);
     MCAPI struct ScriptSoundOptions & operator=(struct ScriptSoundOptions &&);
+    MCAPI struct ScriptSoundOptions & operator=(struct ScriptSoundOptions const &);
 
 protected:
 

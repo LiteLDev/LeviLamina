@@ -143,14 +143,14 @@ public:
     /*198*/ virtual void __unk_vfn_198();
     /*199*/ virtual void __unk_vfn_199();
     /*
-    inline bool waterSpreadCausesSpawn() const{
-        bool (CampfireBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@CampfireBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool canSpawnOn() const{
         bool (CampfireBlock::*rv)() const;
         *((void**)&rv) = dlsym("?canSpawnOn@CampfireBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool waterSpreadCausesSpawn() const{
+        bool (CampfireBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@CampfireBlock@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool canBeSilkTouched() const{

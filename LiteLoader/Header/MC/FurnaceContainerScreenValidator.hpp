@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~FurnaceContainerScreenValidator();
-    /*1*/ virtual class std::shared_ptr<class ContainerValidationCommitObject> postCommitItemRemoved(int, class ItemStack const &);
+    /*1*/ virtual class std::shared_ptr<class ContainerValidationCommitObject> postCommitItemRemoved(enum ContainerEnumName, int, class ItemStack const &);
     /*
     inline  ~FurnaceContainerScreenValidator(){
          (FurnaceContainerScreenValidator::*rv)();

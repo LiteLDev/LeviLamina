@@ -84,9 +84,9 @@ mc.listen("onServerStarted", () => {
 
 - 💻 Support for developing plugins in many different languages, Keeping the API uniform
 
-| Supported languages | `C++`，`Golang`，`JavaScript`，`Lua` |
+| Supported languages | `C++`，`JavaScript`，`Lua`，`Golang`，`.Net`|
 | -------------------------- | ------------------------------------ |
-| **Upcoming supported  languages** | `Python`，`Ruby`，`C#`，`TypeScript` |
+| **Upcoming supported  languages** | `Python`，`Ruby`，`TypeScript` |
 
 - 📕 Smooth development experience with great compatibility
   - Auto-generated C++ headers, access to all `BDS` classes and functions, full toolchain support and evolving features
