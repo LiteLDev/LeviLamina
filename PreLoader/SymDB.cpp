@@ -20,6 +20,7 @@
 #include "Logger.h"
 #include "../LiteLoader/Header/third-party/FMT/printf.h"
 #include <iomanip>
+#include "Utils.h"
 
 using std::list;
 using std::string, std::string_view;
@@ -275,6 +276,7 @@ extern "C" _declspec(dllexport) void* dlsym_real(const char* x) {
             return (void *)(imageBaseAddr + iter->second);
         } else {
             Error("Could not find function in memory: {}", x);
+            Error("Plugin: {}", GetCallerModuleFileName());
         }
         dlsymLock.unlock();
     }
