@@ -139,7 +139,7 @@ unordered_multimap<int, string*>* rvaMap;
 
 void InitFastDlsym(const PDB::RawFile& rawPdbFile, const PDB::DBIStream& dbiStream)
 {
-    Info("[SymBol] Loading symbols from pdb...");
+    Info("[Symbol] Loading symbols from pdb...");
     funcMap = new unordered_map<string, int, aphash>;
     const PDB::ImageSectionStream imageSectionStream = dbiStream.CreateImageSectionStream(rawPdbFile);
     const PDB::CoalescedMSFStream symbolRecordStream = dbiStream.CreateSymbolRecordStream(rawPdbFile);
@@ -193,13 +193,13 @@ void InitFastDlsym(const PDB::RawFile& rawPdbFile, const PDB::DBIStream& dbiStre
             symdbFn = (void*)(imageBaseAddr + iter->second);
         }
         dlsymLock.unlock();
-        Info("[SymBol] Fast Dlsym Loaded <{}>", funcMap->size());
+        Info("[Symbol] Fast Dlsym Loaded <{}>", funcMap->size());
         fflush(stdout);
     }
 }
 void InitReverseLookup()
 {
-    Info("[SymBol] Loading Reverse Lookup Table");
+    Info("[Symbol] Loading Reverse Lookup Table");
     rvaMap = new unordered_multimap<int, string*>(funcMap->size());
     dlsymLock.lock();
 	for (auto& pair : *funcMap)
