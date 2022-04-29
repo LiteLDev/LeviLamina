@@ -12,3 +12,5 @@ void CleanSymbolInfo(PSYMBOL_INFO pSymbol);
 
 bool CreateModuleMap(HANDLE hProcess);
 wstring MapModuleFromAddr(HANDLE hProcess, void* address);
+
+wstring GetModuleVersionStr(HANDLE hProcess, HMODULE hModule);
