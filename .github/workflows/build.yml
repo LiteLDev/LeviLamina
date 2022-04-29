@@ -35,10 +35,11 @@ jobs:
         
       - name: Change LITELOADER_VERSION_STATUS_BETA
         working-directory: ${{env.GITHUB_WORKSPACE}}
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        if: false == startsWith(github.ref, 'refs/tags/')
         run: |
           sed -r -i 's/LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/LITELOADER_VERSION_STATUS   LITELOADER_VERSION_BETA/g' LiteLoader/Main/Version.h
           sed -r -i 's/LITELOADER_VERSION_ACTIONS\s+.*/LITELOADER_VERSION_ACTIONS  ${{ github.run_number }}\r/g' LiteLoader/Main/Version.h
+          cat LiteLoader/Main/Version.h
         shell: bash
 
       - name: Change LITELOADER_VERSION_STATUS_RELEASE
