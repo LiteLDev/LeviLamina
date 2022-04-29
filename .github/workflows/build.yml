@@ -37,8 +37,8 @@ jobs:
         working-directory: ${{env.GITHUB_WORKSPACE}}
         if: false == startsWith(github.ref, 'refs/tags/')
         run: |
-          sed -r -i 's/LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/LITELOADER_VERSION_STATUS   LITELOADER_VERSION_BETA/g' LiteLoader/Main/Version.h
-          sed -r -i 's/LITELOADER_VERSION_ACTIONS\s+.*/LITELOADER_VERSION_ACTIONS  ${{ github.run_number }}\r/g' LiteLoader/Main/Version.h
+          sed -r -i 's/LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/LITELOADER_VERSION_STATUS   LITELOADER_VERSION_BETA/' LiteLoader/Main/Version.h
+          sed -r -i 's/LITELOADER_VERSION_ACTIONS\s+.*/LITELOADER_VERSION_ACTIONS  ${{ github.run_number }}\r/' LiteLoader/Main/Version.h
           cat LiteLoader/Main/Version.h
         shell: bash
 
@@ -46,8 +46,8 @@ jobs:
         working-directory: ${{env.GITHUB_WORKSPACE}}
         if: startsWith(github.ref, 'refs/tags/')
         run: |
-          sed -r -i 's/LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/LITELOADER_VERSION_STATUS   LITELOADER_VERSION_RELEASE/g' LiteLoader/Main/Version.h
-          sed -r -i 's/LITELOADER_VERSION_ACTIONS\s+.*/LITELOADER_VERSION_ACTIONS  ${{ github.run_number }}\r/g' LiteLoader/Main/Version.h
+          sed -r -i 's/LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/LITELOADER_VERSION_STATUS   LITELOADER_VERSION_RELEASE/' LiteLoader/Main/Version.h
+          sed -r -i 's/LITELOADER_VERSION_ACTIONS\s+.*/LITELOADER_VERSION_ACTIONS  ${{ github.run_number }}\r/' LiteLoader/Main/Version.h
         shell: bash
 
       - name: Build
