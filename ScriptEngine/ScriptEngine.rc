@@ -73,7 +73,7 @@ VS_VERSION_INFO VERSIONINFO
 BEGIN
     BLOCK "StringFileInfo"
     BEGIN
-        BLOCK "080004b0"
+        BLOCK "080404b0"
         BEGIN
             VALUE "CompanyName", "LiteLoaderDev"
             VALUE "FileDescription", LLSE_FILE_DESCRIPTION
@@ -87,7 +87,7 @@ BEGIN
     END
     BLOCK "VarFileInfo"
     BEGIN
-        VALUE "Translation", 0x800, 1200
+        VALUE "Translation", 0x804, 1200
     END
 END
 

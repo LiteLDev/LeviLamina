@@ -34,7 +34,6 @@ END
 2 TEXTINCLUDE 
 BEGIN
     "#include ""winres.h""\r\n"
-    "#include ""../Main/Version.h""\r\n"
     "\0"
 END
 
@@ -63,7 +62,7 @@ VS_VERSION_INFO VERSIONINFO
 BEGIN
     BLOCK "StringFileInfo"
     BEGIN
-        BLOCK "080004b0"
+        BLOCK "080404b0"
         BEGIN
             VALUE "CompanyName", "LiteLoaderDev"
             VALUE "FileDescription", "A Light-Weight Plugin Loader for Bedrock Dedicated Server"
@@ -77,7 +76,7 @@ BEGIN
     END
     BLOCK "VarFileInfo"
     BEGIN
-        VALUE "Translation", 0x800, 1200
+        VALUE "Translation", 0x804, 1200
     END
 END
 
