@@ -247,6 +247,7 @@ TInstanceHook(__int64, "?changeDimension@Actor@@UEAAXV?$AutomaticID@VDimension@@
 {
     if (!LL::globalConfig.enableFixMcBug) return original(this, a1, a2);
     if ((int)this->getEntityTypeId() == 0x4D) return 0;
+    return original(this, a1, a2);
 }
 
 //fix Wine Stop
