@@ -54,7 +54,8 @@ struct LLConfig
     bool enableUnoccupyPort19132 = true;
     bool enableCheckRunningBDS = true;
     bool enableWelcomeText = true;
-
+    bool enableFixMcBug = true;
+	
     bool enableOutputFilter = false;
     bool onlyFilterConsoleOutput = true;
     std::vector<std::string> outputFilterRegex;
