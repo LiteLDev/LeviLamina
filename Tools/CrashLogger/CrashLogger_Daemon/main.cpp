@@ -7,6 +7,7 @@
 using namespace std;
 
 extern void DebuggerMain(HANDLE hPro);
+extern wstring bdsVersion;
 
 int main(int argc,char **argv)
 {
@@ -23,6 +24,14 @@ int main(int argc,char **argv)
 	{
 		printf("[CrashLogger][ERROR] Fail to Open the process to be daemoned! Error Code: %d\n", GetLastError());
 		return -1;
+	}
+
+	if (3 <= argc) {
+        wchar_t buf[20] = {0};
+        wsprintf(buf, L"%S", argv[2]);
+        bdsVersion = buf;
+        if (bdsVersion[0] == L'v')
+            bdsVersion = bdsVersion.substr(1);
 	}
 
     //printf("[CrashLogger] CrashLogger Daemon Process attached.\n");

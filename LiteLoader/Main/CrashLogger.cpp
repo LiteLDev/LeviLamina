@@ -4,6 +4,8 @@
 #include <Utils/StringHelper.h>
 #include <Utils/WinHelper.h>
 #include <filesystem>
+#include <MC/Common.hpp>
+#include <MC/SharedConstants.hpp>
 using namespace std;
 using namespace LL;
 
@@ -42,10 +44,10 @@ bool LL::StartCrashLoggerProcess()
     sa.lpSecurityDescriptor = nullptr;
     sa.nLength = sizeof(SECURITY_ATTRIBUTES);
 
-    wchar_t daemonPath[MAX_PATH];
-
-    wsprintf(daemonPath, L"%ls %u", str2wstr(globalConfig.crashLoggerPath).c_str(), GetCurrentProcessId());
-    if (!CreateProcess(nullptr, daemonPath, &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi))
+    wchar_t daemonCmd[MAX_PATH];
+    std::string serverVersion = fmt::format("{}.{:0>2}", Common::getGameVersionStringNet(), SharedConstants::RevisionVersion);
+    wsprintf(daemonCmd, L"%ls %u \"%ls\"", str2wstr(globalConfig.crashLoggerPath).c_str(), GetCurrentProcessId(), str2wstr(serverVersion).c_str());
+    if (!CreateProcess(nullptr, daemonCmd, &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi))
     {
         crashLogger.error("Could not Create CrashLogger Daemon Process!");
         crashLogger.error << GetLastErrorMessage() << Logger::endl;

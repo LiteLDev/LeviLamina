@@ -15,6 +15,7 @@ DWORD dProcessId;
 DWORD dThreadId;
 FILE* fLog;
 HANDLE hDumpFile;
+extern wstring bdsVersion;
 
 #define log(format,...)                         \
     printf(format, __VA_ARGS__);                \
@@ -97,6 +98,8 @@ void TraceBack(PEXCEPTION_POINTERS e)
         HMODULE hModule = (HMODULE)SymGetModuleBase64(hProcess, (DWORD64)address);
         std::wstring moduleName = MapModuleFromAddr(hProcess, (void*)address);
         std::wstring moduleVersion = GetModuleVersionStr(hProcess, hModule);
+        if (moduleVersion.empty() && (moduleName == L"bedrock_server_mod.exe" || moduleName == L"bedrock_server.exe"))
+            moduleVersion = bdsVersion;
         if (!moduleVersion.empty())
             moduleName += L"<" + moduleVersion + L">";
         if (info = GetSymbolInfo(hProcess, (void*)address))

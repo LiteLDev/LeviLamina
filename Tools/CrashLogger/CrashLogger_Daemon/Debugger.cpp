@@ -13,6 +13,7 @@ bool waitEvent = true;
 DEBUG_EVENT debugEvent;
 
 set<wstring> loadedSymbolDir;
+wstring bdsVersion;
 
 void FindSymbols(wstring &collection, const string &nowPath, bool recursion = false)
 {
