@@ -1,4 +1,4 @@
-#include <Utils/DbgHelper.h>
+﻿#include <Utils/DbgHelper.h>
 #include <windows.h>
 #include <dbghelp/dbghelp.h>
 #include <Utils/WinHelper.h>
@@ -8,6 +8,7 @@
 #include <string>
 #include <map>
 #include <LoggerAPI.h>
+#include <Psapi.h>
 using namespace std;
 extern Logger logger;
 
@@ -95,7 +96,6 @@ BOOL CALLBACK EnumerateModuleCallBack(PCTSTR ModuleName, DWORD64 ModuleBase, ULO
     std::map<DWORD, std::wstring>* pModuleMap = (std::map<DWORD, std::wstring>*)UserContext;
     LPCWSTR name = wcsrchr(ModuleName, TEXT('\\')) + 1;
     (*pModuleMap)[(DWORD)ModuleBase] = name;
-
     return TRUE;
 }
 
@@ -120,7 +120,6 @@ wstring MapModuleFromAddr(HANDLE hProcess, void* address)
 
 bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l)
 {
-    GetCallerModuleFileName();
     Logger& debugLogger = l ? *l : logger;
     if (!LL::globalConfig.enableErrorStackTraceback)
     {
@@ -215,6 +214,8 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l)
     return res;
 }
 
+/////////////////////////////////// Debug Helper ///////////////////////////////////
+
 HMODULE GetCallerModule(unsigned long FramesToSkip)
 {
     static const int maxFrameCount = 1;
@@ -237,4 +238,78 @@ HMODULE GetCallerModule(unsigned long FramesToSkip)
 std::string GetCallerModuleFileName(unsigned long FramesToSkip)
 {
     return GetModuleName(GetCallerModule(FramesToSkip));
+}
+
+bool GetFileVersion(const wchar_t* filePath, unsigned short* ver1, unsigned short* ver2, unsigned short* ver3, unsigned short* ver4, unsigned int* flag = nullptr)
+{
+
+    DWORD dwHandle = 0;
+    DWORD dwLen = GetFileVersionInfoSizeW(filePath, &dwHandle);
+    if (0 >= dwLen)
+    {
+        return "";
+    }
+    wchar_t* pBlock = new wchar_t[dwLen];
+    if (NULL == pBlock)
+    {
+        return "";
+    }
+    if (!GetFileVersionInfoW(filePath, dwHandle, dwLen, pBlock))
+    {
+        delete[] pBlock;
+        return "";
+    }
+
+    VS_FIXEDFILEINFO* lpBuffer;
+    unsigned int uLen = 0;
+    if (!VerQueryValueW(pBlock, L"\\", (void**)&lpBuffer, &uLen))
+    {
+        delete[] pBlock;
+        return "";
+    }
+
+    if (ver1) *ver1 = (lpBuffer->dwFileVersionMS >> 16) & 0x0000FFFF;
+    if (ver2) *ver2 = lpBuffer->dwFileVersionMS & 0x0000FFFF;
+    if (ver3) *ver3 = (lpBuffer->dwFileVersionLS >> 16) & 0x0000FFFF;
+    if (ver4) *ver4 = lpBuffer->dwFileVersionLS & 0x0000FFFF;
+    if (flag) *flag = lpBuffer->dwFileFlags;
+
+    delete[] pBlock;
+    return true;
+}
+
+inline std::string VersionToString(unsigned short major_ver, unsigned short minor_ver, unsigned short revision_ver, unsigned short build_ver, unsigned int flag = 0)
+{
+    std::string flagStr = "";
+    if (flag & VS_FF_DEBUG) flagStr += " DEBUG";
+    if (flag & VS_FF_PRERELEASE) flagStr += " PRERELEASE";
+    if (flag & VS_FF_PATCHED) flagStr += " PATCHED";
+    if (flag & VS_FF_PRIVATEBUILD) flagStr += " PRIVATEBUILD";
+    if (flag & VS_FF_INFOINFERRED) flagStr += " INFOINFERRED";
+    if (flag & VS_FF_SPECIALBUILD) flagStr += " SPECIALBUILD";
+    return fmt::format("{}.{}.{}.{}{}", major_ver, minor_ver, revision_ver, build_ver, flagStr);
+}
+
+std::string GetModuleVersionStr(HMODULE hModule)
+{
+    unsigned short major_ver, minor_ver, revision_ver, build_ver;
+    unsigned int flag;
+    wchar_t filePath[MAX_PATH] = {0};
+    GetModuleFileNameEx(GetCurrentProcess(), hModule, filePath, MAX_PATH);
+    if (GetFileVersion(filePath, &major_ver, &minor_ver, &revision_ver, &build_ver, &flag)) {
+        return VersionToString(major_ver, minor_ver, revision_ver, build_ver, flag);
+    }
+    return "";
+}
+
+std::string GetFileVersionStr(std::string const& filePath)
+{
+    unsigned short major_ver, minor_ver, revision_ver, build_ver;
+    unsigned int flag;
+    std::wstring wFilePath = str2wstr(filePath);
+    if (GetFileVersion(wFilePath.c_str(), &major_ver, &minor_ver, &revision_ver, &build_ver, &flag))
+    {
+        return VersionToString(major_ver, minor_ver, revision_ver, build_ver, flag);
+    }
+    return "";
 }

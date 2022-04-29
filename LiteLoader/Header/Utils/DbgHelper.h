@@ -15,3 +15,5 @@ inline bool PrintCurrentStackTraceback(Logger* logger)
 
 LIAPI HMODULE GetCallerModule(unsigned long FramesToSkip = 0);
 LIAPI std::string GetCallerModuleFileName(unsigned long FramesToSkip = 0);
+LIAPI std::string GetModuleVersionStr(HMODULE hModule);
+LIAPI std::string GetFileVersionStr(std::string const& filePath);
