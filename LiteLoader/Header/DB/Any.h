@@ -321,12 +321,17 @@ public:
      * @return T             The value
      * @throws std::bad_cast If the value cannot be converted to T or the value is not a number
      * @note   You can use Any::is_number() to check if the value is a number before calling this function.
+     * @see    is_number()
      */
     template <typename T>
     inline T get_number() const
     {
         switch (type)
         {
+#if !defined(DBANY_NO_NULL_CONVERSION)
+            case Type::Null:
+                return 0;
+#endif
             case Type::Boolean:
                 return static_cast<T>(value.boolean);
             case Type::Integer:
@@ -347,9 +352,9 @@ public:
     /**
      * @brief Get the value as T.
      * 
-     * @tparam T             The type of the value
-     * @return T             The value
-     * @throws std::bad_cast If the value cannot be converted to T
+     * @tparam T  The type of the value
+     * @return T  The value
+     * @throws std::bad_cast  If the value cannot be converted to T
      * @par Custom Type Conversion
      * Define a custom type conversion function for the type T
      * @code
@@ -365,6 +370,8 @@ public:
      *     return result;
      * }
      * @endcode
+     * @note  You can use `#define DBANY_NO_NULL_CONVERSION` to disable null conversion.
+     *        (throw an exception when trying converting from a null type value)
      * @see any_to
      */
     template <typename T>
@@ -375,15 +382,19 @@ public:
     /**
      * @brief Get the value as string
      * 
-     * @tparam T             = bool
-     * @return bool          The value
-     * @throws std::bad_cast If the value cannot be converted to string
+     * @tparam T     = bool
+     * @return bool  The value
+     * @throws std::bad_cast  If the value cannot be converted to string
      */
     template <>
     inline bool get() const
     {
         switch (type)
         {
+#if !defined(DBANY_NO_NULL_CONVERSION)
+            case Type::Null:
+                return false;
+#endif
             case Type::Boolean:
                 return value.boolean;
             case Type::Integer:
@@ -402,9 +413,9 @@ public:
     /**
      * @brief Get the value as char
      * 
-     * @tparam T             = char
-     * @return char          The value
-     * @throws std::bad_cast If the value cannot be converted to char
+     * @tparam T     = char
+     * @return char  The value
+     * @throws std::bad_cast  If the value cannot be converted to char
      */
     template <>
     inline char get() const
@@ -414,9 +425,9 @@ public:
     /**
      * @brief Get the value as unsigned char
      * 
-     * @tparam T             = unsigned char
-     * @return unsigned char The value
-     * @throws std::bad_cast If the value cannot be converted to unsigned char
+     * @tparam T              = unsigned char
+     * @return unsigned char  The value
+     * @throws std::bad_cast  If the value cannot be converted to unsigned char
      */
     template <>
     inline unsigned char get() const
@@ -426,9 +437,9 @@ public:
     /**
      * @brief Get the value as short
      * 
-     * @tparam T             = short
-     * @return short         The value
-     * @throws std::bad_cast If the value cannot be converted to short
+     * @tparam T      = short
+     * @return short  The value
+     * @throws std::bad_cast  If the value cannot be converted to short
      */
     template <>
     inline short get() const
@@ -438,9 +449,9 @@ public:
     /**
      * @brief Get the value as unsigned short
      * 
-     * @tparam T             = unsigned short
-     * @return unsigned short The value
-     * @throws std::bad_cast If the value cannot be converted to unsigned short
+     * @tparam T               = unsigned short
+     * @return unsigned short  The value
+     * @throws std::bad_cast   If the value cannot be converted to unsigned short
      */
     template <>
     inline unsigned short get() const
@@ -450,9 +461,9 @@ public:
     /**
      * @brief Get the value as int
      * 
-     * @tparam T             = int
-     * @return int           The value
-     * @throws std::bad_cast If the value cannot be converted to int
+     * @tparam T    = int
+     * @return int  The value
+     * @throws std::bad_cast  If the value cannot be converted to int
      */
     template <>
     inline int get() const
@@ -462,9 +473,9 @@ public:
     /**
      * @brief Get the value as unsigned int
      * 
-     * @tparam T             = unsigned int
-     * @return unsigned int  The value
-     * @throws std::bad_cast If the value cannot be converted to unsigned int
+     * @tparam T              = unsigned int
+     * @return unsigned int   The value
+     * @throws std::bad_cast  If the value cannot be converted to unsigned int
      */
     template <>
     inline unsigned int get() const
@@ -474,9 +485,9 @@ public:
     /**
      * @brief Get the value as long
      * 
-     * @tparam T             = long
-     * @return long          The value
-     * @throws std::bad_cast If the value cannot be converted to long
+     * @tparam T     = long
+     * @return long  The value
+     * @throws std::bad_cast  If the value cannot be converted to long
      */
     template <>
     inline long get() const
@@ -486,9 +497,9 @@ public:
     /**
      * @brief Get the value as unsigned long
      * 
-     * @tparam T             = unsigned long
-     * @return unsigned long The value
-     * @throws std::bad_cast If the value cannot be converted to unsigned long
+     * @tparam T              = unsigned long
+     * @return unsigned long  The value
+     * @throws std::bad_cast  If the value cannot be converted to unsigned long
      */
     template <>
     inline unsigned long get() const
@@ -498,9 +509,9 @@ public:
     /**
      * @brief Get the value as long long
      * 
-     * @tparam T             = long long
-     * @return long long     The value
-     * @throws std::bad_cast If the value cannot be converted to long long
+     * @tparam T              = long long
+     * @return long long      The value
+     * @throws std::bad_cast  If the value cannot be converted to long long
      */
     template <>
     inline long long get() const
@@ -510,9 +521,9 @@ public:
     /**
      * @brief Get the value as unsigned long long
      * 
-     * @tparam T             = unsigned long long
-     * @return unsigned long long The value
-     * @throws std::bad_cast If the value cannot be converted to unsigned long long
+     * @tparam T                   = unsigned long long
+     * @return unsigned long long  The value
+     * @throws std::bad_cast       If the value cannot be converted to unsigned long long
      */
     template <>
     inline unsigned long long get() const
@@ -522,9 +533,9 @@ public:
     /**
      * @brief Get the value as double.
      * 
-     * @tparam T             = double
-     * @return double        The value
-     * @throws std::bad_cast If the value cannot be converted to double
+     * @tparam T       = double
+     * @return double  The value
+     * @throws std::bad_cast  If the value cannot be converted to double
      */
     template <>
     inline double get() const
@@ -534,9 +545,9 @@ public:
     /**
      * @brief Get the value as float.
      * 
-     * @tparam T             = float
-     * @return float         The value
-     * @throws std::bad_cast If the value cannot be converted to float
+     * @tparam T      = float
+     * @return float  The value
+     * @throws std::bad_cast  If the value cannot be converted to float
      */
     template <>
     inline float get() const
@@ -546,15 +557,19 @@ public:
     /**
      * @brief Get the value as string.
      * 
-     * @tparam T             = std::string
-     * @return std::string   The value
-     * @throws std::bad_cast If the value cannot be converted to string
+     * @tparam T              = std::string
+     * @return std::string    The value
+     * @throws std::bad_cast  If the value cannot be converted to string
      */
     template <>
     std::string get() const
     {
         switch (type)
         {
+#if !defined(DBANY_NO_NULL_CONVERSION)
+            case Type::Null:
+                return "";
+#endif
             case Type::Boolean:
                 return value.boolean ? "true" : "false";
             case Type::Integer:
@@ -590,9 +605,9 @@ public:
     /**
      * @brief Get the value as Date
      * 
-     * @tparam T             = DB::Date
-     * @return DB::Date      The value
-     * @throws std::bad_cast If the value cannot be converted to DB::Date
+     * @tparam T         = DB::Date
+     * @return DB::Date  The value
+     * @throws std::bad_cast  If the value cannot be converted to DB::Date
      */
     template <>
     Date get() const
@@ -616,9 +631,9 @@ public:
     /**
      * @brief Get the value as Time
      * 
-     * @tparam T             = DB::Time
-     * @return DB::Time      The value
-     * @throws std::bad_cast If the value cannot be converted to DB::Time
+     * @tparam T         = DB::Time
+     * @return DB::Time  The value
+     * @throws std::bad_cast  If the value cannot be converted to DB::Time
      */
     template <>
     Time get() const
@@ -642,9 +657,9 @@ public:
     /**
      * @brief Get the value as DateTime
      * 
-     * @tparam T             = DB::DateTime
-     * @return DB::DateTime  The value
-     * @throws std::bad_cast If the value cannot be converted to DB::DateTime
+     * @tparam T              = DB::DateTime
+     * @return DB::DateTime   The value
+     * @throws std::bad_cast  If the value cannot be converted to DB::DateTime
      */
     template <>
     DateTime get() const
@@ -667,9 +682,9 @@ public:
     /**
      * @brief Get the value as ByteArray
      * 
-     * @tparam T             = DB::ByteArray
-     * @return DB::ByteArray The value
-     * @throws std::bad_cast If the value cannot be converted to DB::ByteArray
+     * @tparam T              = DB::ByteArray
+     * @return DB::ByteArray  The value
+     * @throws std::bad_cast  If the value cannot be converted to DB::ByteArray
      */
     template <>
     ByteArray get() const
@@ -693,16 +708,16 @@ public:
     /**
      * @brief Convert Any::Type to string.
      * 
-     * @param type         The Any::Type value
-     * @return std::string The string value
+     * @param  type         The Any::Type value
+     * @return std::string  The string value
      */
     LIAPI static std::string type2str(Any::Type type);
 
     /**
      * @brief Convert string to Any.
      * 
-     * @param str  The string
-     * @return Any The converted value
+     * @param  str  The string
+     * @return Any  The converted value
      */
     LIAPI static Any str2any(const std::string& str);
 
