@@ -247,17 +247,17 @@ bool GetFileVersion(const wchar_t* filePath, unsigned short* ver1, unsigned shor
     DWORD dwLen = GetFileVersionInfoSizeW(filePath, &dwHandle);
     if (0 >= dwLen)
     {
-        return "";
+        return false;
     }
     wchar_t* pBlock = new wchar_t[dwLen];
     if (NULL == pBlock)
     {
-        return "";
+        return false;
     }
     if (!GetFileVersionInfoW(filePath, dwHandle, dwLen, pBlock))
     {
         delete[] pBlock;
-        return "";
+        return false;
     }
 
     VS_FIXEDFILEINFO* lpBuffer;
@@ -265,7 +265,7 @@ bool GetFileVersion(const wchar_t* filePath, unsigned short* ver1, unsigned shor
     if (!VerQueryValueW(pBlock, L"\\", (void**)&lpBuffer, &uLen))
     {
         delete[] pBlock;
-        return "";
+        return false;
     }
 
     if (ver1) *ver1 = (lpBuffer->dwFileVersionMS >> 16) & 0x0000FFFF;
@@ -290,26 +290,26 @@ inline std::string VersionToString(unsigned short major_ver, unsigned short mino
     return fmt::format("{}.{}.{}.{}{}", major_ver, minor_ver, revision_ver, build_ver, flagStr);
 }
 
-std::string GetModuleVersionStr(HMODULE hModule)
+std::string GetModuleVersionString(HMODULE hModule, bool includeFlag)
 {
     unsigned short major_ver, minor_ver, revision_ver, build_ver;
     unsigned int flag;
     wchar_t filePath[MAX_PATH] = {0};
     GetModuleFileNameEx(GetCurrentProcess(), hModule, filePath, MAX_PATH);
     if (GetFileVersion(filePath, &major_ver, &minor_ver, &revision_ver, &build_ver, &flag)) {
-        return VersionToString(major_ver, minor_ver, revision_ver, build_ver, flag);
+        return VersionToString(major_ver, minor_ver, revision_ver, build_ver, includeFlag ? flag : 0);
     }
     return "";
 }
 
-std::string GetFileVersionStr(std::string const& filePath)
+std::string GetFileVersionString(std::string const& filePath, bool includeFlag)
 {
     unsigned short major_ver, minor_ver, revision_ver, build_ver;
     unsigned int flag;
     std::wstring wFilePath = str2wstr(filePath);
     if (GetFileVersion(wFilePath.c_str(), &major_ver, &minor_ver, &revision_ver, &build_ver, &flag))
     {
-        return VersionToString(major_ver, minor_ver, revision_ver, build_ver, flag);
+        return VersionToString(major_ver, minor_ver, revision_ver, build_ver, includeFlag ? flag : 0);
     }
     return "";
 }
