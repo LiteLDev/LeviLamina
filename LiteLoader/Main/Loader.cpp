@@ -14,6 +14,7 @@
 #include "Config.h"
 #include "Version.h"
 #include <ScriptEngine/Configs.h>
+#include <Utils/DbgHelper.h>
 
 using namespace std;
 
@@ -58,9 +59,17 @@ void CleanOldScriptEngine()
 
 void LoadScriptEngine()
 {
+    std::string llVersion = GetModuleVersionString(GetCurrentModule(), true);
     for (string backend : LLSE_VALID_BACKENDS)
     {
-        auto lib = LoadLibrary(str2wstr("plugins/LiteLoader/LiteLoader." + backend + ".dll").c_str());     //eg. LiteLoader.Js.dll
+        std::string path = "plugins/LiteLoader/LiteLoader." + backend + ".dll";
+        std::string version = GetFileVersionString(path, true);
+        if (version != llVersion)
+        {
+            logger.warn("The file version <{}> of Script Engine for {} does not match the LiteLoader version <{}>",
+                         version, backend, llVersion);
+        }
+        auto lib = LoadLibrary(str2wstr(path).c_str()); // eg. LiteLoader.Js.dll
         if (lib) {
             logger.info("* ScriptEngine for " + backend + " loaded");
             //Fake Register
@@ -70,7 +79,7 @@ void LoadScriptEngine()
             });
         }
         else {
-            logger.error("* Fail to load ScriptEngine for " + backend + "!");
+            logger.error("* Fail to load ScriptEngine for {}!", backend);
             logger.error("* Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
         }
     }
