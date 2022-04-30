@@ -434,13 +434,13 @@ class buffer_span_mut;
 template <typename T>
 class optional_ref
 {
-    T** value;
+    T* value;
 
 public:
     inline T* get() const
     {
-        if (value && *value)
-            return *value;
+        if (*this)
+            return value;
         return nullptr;
     }
     //inline T* set(T const& val)
@@ -449,11 +449,15 @@ public:
     //}
     inline T& operator*() const
     {
-        return **value;
+        return *value;
     }
     inline T* operator->() const
     {
-        return *value;
+        return value;
+    }
+    inline operator bool() const
+    {
+        return value != nullptr;
     }
 };
 
