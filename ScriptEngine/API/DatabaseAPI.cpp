@@ -299,7 +299,6 @@ DBSessionClass::DBSessionClass(const ConnParams& params)
 
 DBSessionClass::~DBSessionClass()
 {
-    session.destroy();
 }
 
 DBSessionClass* DBSessionClass::constructor(const Arguments& args)
@@ -358,7 +357,7 @@ Local<Value> DBSessionClass::query(const Arguments& args)
 
     try
     {
-        auto res = session.query(args[0].asString().toString());
+        auto res = session->query(args[0].asString().toString());
         return RowSetToLocalValue(res);
     }
     CATCH("Fail in query!")
@@ -371,7 +370,7 @@ Local<Value> DBSessionClass::exec(const Arguments& args)
 
     try
     {
-        return Boolean::newBoolean(session.execute(args[0].asString().toString()));
+        return Boolean::newBoolean(session->execute(args[0].asString().toString()));
     }
     CATCH("Fail in exec!")
 }
@@ -383,7 +382,7 @@ Local<Value> DBSessionClass::prepare(const Arguments& args)
 
     try
     {
-        auto stmt = new DBStmtClass(session.prepare(args[0].asString().toString()));
+        auto stmt = new DBStmtClass(session->prepare(args[0].asString().toString()));
         return stmt->getScriptObject();
     }
     CATCH("Fail in exec!")
@@ -395,7 +394,7 @@ Local<Value> DBSessionClass::close(const Arguments& args)
 
     try
     {
-        session.close();
+        session->close();
         return Boolean::newBoolean(true);
     }
     CATCH_WITHOUT_RETURN("Fail in close!");
@@ -407,7 +406,7 @@ Local<Value> DBSessionClass::isOpen(const Arguments& args)
 
     try
     {
-        return Boolean::newBoolean(session.isOpen());
+        return Boolean::newBoolean(session->isOpen());
     }
     CATCH("Fail in isOpen!")
 }
@@ -415,41 +414,27 @@ Local<Value> DBSessionClass::isOpen(const Arguments& args)
 //////////////////// Classes DBStmt ////////////////////
 
 // 生成函数
-DBStmtClass::DBStmtClass(const Local<Object>& scriptObj, Stmt& stmt)
+DBStmtClass::DBStmtClass(const Local<Object>& scriptObj, const DB::SharedPointer<DB::Stmt>& stmt)
     : ScriptClass(scriptObj)
     , stmt(stmt)
-    , session(stmt.getSession())
 {
 }
 
-DBStmtClass::DBStmtClass(Stmt& stmt)
+DBStmtClass::DBStmtClass(const DB::SharedPointer<DB::Stmt>& stmt)
     : ScriptClass(script::ScriptClass::ConstructFromCpp<DBStmtClass>{})
     , stmt(stmt)
-    , session(stmt.getSession())
 {
 }
 
 DBStmtClass::~DBStmtClass()
 {
-    if (session)
-    {
-        auto it = std::find(session->stmts.begin(), session->stmts.end(), &stmt);
-        if (it != session->stmts.end())
-        {
-            stmt.close();
-            session->stmts.erase(it);
-        }
-        else
-            return;
-    }
-    stmt.destroy();
 }
 
 Local<Value> DBStmtClass::getAffectedRows()
 {
     try
     {
-        auto res = stmt.getAffectedRows();
+        auto res = stmt->getAffectedRows();
         if (res > LLONG_MAX)
             return Number::newNumber((double)res);
         return Number::newNumber((int64_t)res);
@@ -461,7 +446,7 @@ Local<Value> DBStmtClass::getInsertId()
 {
     try
     {
-        auto res = stmt.getInsertId();
+        auto res = stmt->getInsertId();
         if (res > LLONG_MAX)
             return Number::newNumber((double)res);
         return Number::newNumber((int64_t)res);
@@ -483,18 +468,18 @@ Local<Value> DBStmtClass::bind(const Arguments& args)
                     {
                         auto arr = args[0].asArray();
                         for (size_t i = 0; i < arr.size(); ++i)
-                            stmt.bind(LocalValueToAny(arr.get(i)));
+                            stmt->bind(LocalValueToAny(arr.get(i)));
                         break;
                     }
                     case ValueKind::kObject:
                     {
                         auto obj = args[0].asObject();
                         for (auto& key : obj.getKeys())
-                            stmt.bind(LocalValueToAny(obj.get(key)), key.toString());
+                            stmt->bind(LocalValueToAny(obj.get(key)), key.toString());
                         break;
                     }
                     default:
-                        stmt.bind(LocalValueToAny(args[0]));
+                        stmt->bind(LocalValueToAny(args[0]));
                 }
                 break;
             }
@@ -502,11 +487,11 @@ Local<Value> DBStmtClass::bind(const Arguments& args)
             {
                 if (args[1].isNumber())
                 {
-                    stmt.bind(LocalValueToAny(args[0]), (int)args[1].asNumber().toInt64());
+                    stmt->bind(LocalValueToAny(args[0]), (int)args[1].asNumber().toInt64());
                 }
                 else if (args[1].isString())
                 {
-                    stmt.bind(LocalValueToAny(args[0]), args[1].asString().toString());
+                    stmt->bind(LocalValueToAny(args[0]), args[1].asString().toString());
                 }
                 else
                 {
@@ -526,7 +511,7 @@ Local<Value> DBStmtClass::step(const Arguments& args)
 
     try
     {
-        return Boolean::newBoolean(stmt.step());
+        return Boolean::newBoolean(stmt->step());
     }
     CATCH_WITHOUT_RETURN("Fail in step!");
     return Boolean::newBoolean(false);
@@ -538,7 +523,7 @@ Local<Value> DBStmtClass::fetch(const Arguments& args)
 
     try
     {
-        return RowToLocalValue(stmt.fetch());
+        return RowToLocalValue(stmt->fetch());
     }
     CATCH("Fail in fetch!")
 }
@@ -550,12 +535,12 @@ Local<Value> DBStmtClass::fetchAll(const Arguments& args)
         switch (args.size())
         {
             case 0:
-                return RowSetToLocalValue(stmt.fetchAll());
+                return RowSetToLocalValue(stmt->fetchAll());
             case 1:
             {
                 CHECK_ARG_TYPE(args[0], ValueKind::kFunction);
                 auto func = args[0].asFunction();
-                stmt.fetchAll([&](const Row& row) {
+                stmt->fetchAll([&](const Row& row) {
                     auto res = func.call({}, RowToLocalValue(row));
                     if (res.isBoolean())
                     {
@@ -576,7 +561,7 @@ Local<Value> DBStmtClass::reexec(const Arguments& args)
 
     try
     {
-        stmt.reexec();
+        stmt->reexec();
         return Boolean::newBoolean(true);
     }
     CATCH_WITHOUT_RETURN("Fail in reexec!");
@@ -589,7 +574,7 @@ Local<Value> DBStmtClass::clear(const Arguments& args)
 
     try
     {
-        stmt.clear();
+        stmt->clear();
         return Boolean::newBoolean(true);
     }
     CATCH_WITHOUT_RETURN("Fail in clear!");

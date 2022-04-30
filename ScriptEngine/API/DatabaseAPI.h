@@ -39,7 +39,7 @@ extern ClassDefine<KVDBClass> KVDBClassBuilder;
 class DBSessionClass : public ScriptClass
 {
 private:
-    DB::Session& session;
+    DB::SharedPointer<DB::Session> session;
 
 public:
     explicit DBSessionClass(const Local<Object>& scriptObj, const DB::ConnParams& params);
@@ -58,12 +58,11 @@ extern ClassDefine<DBSessionClass> DBSessionClassBuilder;
 class DBStmtClass : public ScriptClass
 {
 private:
-    DB::Session* session = nullptr;
-    DB::Stmt& stmt;
+    DB::SharedPointer<DB::Stmt> stmt;
 
 public:
-    explicit DBStmtClass(const Local<Object>& scriptObj, DB::Stmt& stmt);
-    explicit DBStmtClass(DB::Stmt& stmt);
+    explicit DBStmtClass(const Local<Object>& scriptObj, const DB::SharedPointer<DB::Stmt>& stmt);
+    explicit DBStmtClass(const DB::SharedPointer<DB::Stmt>& stmt);
     ~DBStmtClass();
 
     Local<Value> getAffectedRows();
