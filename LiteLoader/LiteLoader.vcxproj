@@ -88,9 +88,7 @@ LibraryBuilder.exe
 :end</Command>
     </PreBuildEvent>
     <ResourceCompile />
-    <ResourceCompile>
-      <AdditionalOptions>/v %(AdditionalOptions)</AdditionalOptions>
-    </ResourceCompile>
+    <ResourceCompile />
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Kernel\Command\DynamicCommandAPI.cpp" />
