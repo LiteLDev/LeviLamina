@@ -25,17 +25,6 @@ std::string LL::getLoaderVersionString() {
     return getLoaderVersion().toString();
 }
 
-typedef struct _VS_VERSIONINFO {
-    WORD  wLength;
-    WORD  wValueLength;
-    WORD  wType;
-    WCHAR* szKey;
-    WORD*  Padding1;
-    VS_FIXEDFILEINFO Value;
-    WORD*  Padding2;
-    WORD*  Children;
-}VS_VERSIONINFO;
-
 LL::Version LL::getLoaderVersion()
 {
     return Version(LITELOADER_VERSION_MAJOR, LITELOADER_VERSION_MINOR, LITELOADER_VERSION_REVISION, (LL::Version::Status)LITELOADER_VERSION_STATUS);
