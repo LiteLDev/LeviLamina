@@ -12,7 +12,6 @@
 #include "Utils/WinHelper.h"
 #include "Utils/PluginOwnData.h"
 #include "LoggerAPI.h"
-#include <LiteLoader/Main/Version.h>
 
 // LL types
 namespace LL
@@ -22,9 +21,9 @@ struct Version
 {
     enum Status
     {
-        Dev = LITELOADER_VERSION_DEV,
-        Beta = LITELOADER_VERSION_BETA,
-        Release = LITELOADER_VERSION_RELEASE
+        Dev,
+        Beta,
+        Release
     };
 
     int major;
