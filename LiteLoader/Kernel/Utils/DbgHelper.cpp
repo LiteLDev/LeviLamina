@@ -240,7 +240,7 @@ std::string GetCallerModuleFileName(unsigned long FramesToSkip)
     return GetModuleName(GetCallerModule(FramesToSkip));
 }
 
-bool GetFileVersion(const wchar_t* filePath, unsigned short* ver1, unsigned short* ver2, unsigned short* ver3, unsigned short* ver4, unsigned int* flag = nullptr)
+bool GetFileVersion(const wchar_t* filePath, unsigned short* ver1, unsigned short* ver2, unsigned short* ver3, unsigned short* ver4, unsigned int* flag)
 {
 
     DWORD dwHandle = 0;
@@ -290,7 +290,7 @@ inline std::string VersionToString(unsigned short major_ver, unsigned short mino
     return fmt::format("{}.{}.{}.{}{}", major_ver, minor_ver, revision_ver, build_ver, flagStr);
 }
 
-std::string GetModuleVersionString(HMODULE hModule, bool includeFlag)
+std::string GetFileVersionString(HMODULE hModule, bool includeFlag)
 {
     unsigned short major_ver, minor_ver, revision_ver, build_ver;
     unsigned int flag;

@@ -59,7 +59,7 @@ void CleanOldScriptEngine()
 
 void LoadScriptEngine()
 {
-    std::string llVersion = GetModuleVersionString(GetCurrentModule(), true);
+    std::string llVersion = GetFileVersionString(GetCurrentModule(), true);
     for (string backend : LLSE_VALID_BACKENDS)
     {
         std::string path = "plugins/LiteLoader/LiteLoader." + backend + ".dll";
@@ -142,7 +142,13 @@ void LL::LoadMain() {
         }
         else
         {
-            logger.error("Fail to load plugin <{}>", pluginFileName);
+            std::string fileVersion = GetFileVersionString(path.u8string(), true);
+            std::string info = pluginFileName;
+            if (!fileVersion.empty())
+            {
+                info += "<" + fileVersion + ">";
+            }
+            logger.error("Fail to load plugin [{}]", info);
             logger.error("Error: Code[{}] {}", GetLastError(), GetLastErrorMessage());
         }
     }
@@ -160,13 +166,24 @@ void LL::LoadMain() {
             try {
                 ((void (*)()) fn)();
             } catch (std::exception &e) {
-                logger.error("Plugin <{}> throws an std::exception in onPostInit", name);
+                std::string fileVersion = GetFileVersionString(plugin->handler, true);
+                std::string info = name;
+                if (!fileVersion.empty()) {
+                    info += "<" + fileVersion + ">";
+                }
+                logger.error("Plugin [{}] throws an std::exception in onPostInit", info);
                 logger.error("Exception: ", TextEncoding::toUTF8(e.what()));
                 logger.error("Fail to init this plugin!");
             }
             catch (...)
             {
-                logger.error("Plugin <{}> throws an exception in onPostInit", name);
+                std::string fileVersion = GetFileVersionString(plugin->handler, true);
+                std::string info = name;
+                if (!fileVersion.empty())
+                {
+                    info += "<" + fileVersion + ">";
+                }
+                logger.error("Plugin [{}] throws an exception in onPostInit", info);
                 logger.error("Fail to init this plugin!");
             }
         }
