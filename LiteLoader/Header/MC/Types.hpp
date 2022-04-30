@@ -779,16 +779,17 @@ enum class ItemStackRequestActionType: char
 
 enum class ActorDamageCause : int
 {
-    Override = 0x0,
-    Contact = 0x1,
-    EntityAttack = 0x2,
-    Projectile = 0x3,
-    Suffocation = 0x4,
-    Fall = 0x5,
-    Fire = 0x6,
-    FireTick = 0x7,
-    Lava = 0x8,
-    Drowning = 0x9,
+    None = -0x01,
+    Override = 0x00,
+    Contact = 0x01,
+    EntityAttack = 0x02,
+    Projectile = 0x03,
+    Suffocation = 0x04,
+    Fall = 0x05,
+    Fire = 0x06,
+    FireTick = 0x07,
+    Lava = 0x08,
+    Drowning = 0x09,
     BlockExplosion = 0x0A,
     EntityExplosion = 0x0B,
     Void = 0x0C,
@@ -806,11 +807,10 @@ enum class ActorDamageCause : int
     Lightning = 0x18,
     Charging = 0x19,
     Temperature = 0x1A,
-    Freeze = 0x1B,
+    Freezing = 0x1B,
     Stalactite = 0x1C,
     Stalagmite = 0x1D,
     All = 0x1F,
-    None = -0x01,
 };
 
 enum class ObjectiveSortOrder : char
