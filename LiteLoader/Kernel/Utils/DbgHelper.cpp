@@ -141,7 +141,7 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l)
         CreateModuleMap(hProcess);
 
         PCONTEXT pContext;
-        CONTEXT context;
+        CONTEXT context{};
         if (e)
             pContext = e->ContextRecord;
         else
@@ -193,7 +193,7 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l)
 
                 // Line
                 DWORD displacement = 0;
-                IMAGEHLP_LINEW64 line;
+                IMAGEHLP_LINEW64 line{};
                 line.SizeOfStruct = sizeof(IMAGEHLP_LINEW64);
 
                 if (SymGetLineFromAddrW64(hProcess, address, &displacement, &line))
@@ -260,7 +260,7 @@ bool GetFileVersion(const wchar_t* filePath, unsigned short* ver1, unsigned shor
         return false;
     }
 
-    VS_FIXEDFILEINFO* lpBuffer;
+    VS_FIXEDFILEINFO* lpBuffer = nullptr;
     unsigned int uLen = 0;
     if (!VerQueryValueW(pBlock, L"\\", (void**)&lpBuffer, &uLen))
     {

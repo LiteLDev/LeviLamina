@@ -7,6 +7,9 @@
 #include "McAPI.h"
 #include <cmath>
 
+///////////////////// Enum //////////////////////
+ClassDefine<void> DamageCauseEnumBuilder = EnumDefineBuilder<ActorDamageCause>::build("DamageCause");
+
 //////////////////// Class Definition ////////////////////
 
 ClassDefine<IntPos> IntPosBuilder =

@@ -29,9 +29,43 @@
     伤害来源的实体对象（可能为`Null`）
   - damage : `Float`  
     受到的伤害数值
-  - cause : `Integer`   
+  - cause : `DamageCause`   
     受伤原因
 - 拦截事件：函数返回`false`
+
+DamageCause 为伤害原因枚举，枚举值如下，有问号的待验证，？？？待补充
+|伤害原因|枚举值|解释|
+|--|--|--|
+| Override | 0x0 | ？？？ |
+| Contact | 0x1 | ？？？ |
+| EntityAttack | 0x2 | 实体攻击 |
+| Projectile | 0x3 | 弹射物 |
+| Suffocation | 0x4 | 窒息 |
+| Fall | 0x5 | 摔落伤害 |
+| Fire | 0x6 | 火焰伤害 |
+| FireTick | 0x7 | 着火伤害 |
+| Lava | 0x8 | 岩浆？ |
+| Drowning | 0x9 | 溺水 |
+| BlockExplosion | 0x0A | 方块爆炸 |
+| EntityExplosion | 0x0B | 实体爆炸 |
+| Void | 0x0C | 虚空 |
+| Suicide | 0x0D | 自杀？ |
+| Magic | 0x0E | 魔法（一般是药水） |
+| Wither | 0x0F | 凋零效果？ |
+| Starve | 0x10 | 饥饿 |
+| Anvil | 0x11 | 铁砧？ |
+| Thorns | 0x12 | 荆棘 |
+| FallingBlock | 0x13 | 掉落的方块？ |
+| Piston | 0x14 | 活塞？ |
+| FlyIntoWall | 0x15 | 动态能量（撞墙） |
+| Magma | 0x16 | 岩浆？ |
+| Fireworks | 0x17 | 烟花火箭？ |
+| Lightning | 0x18 | 闪电 |
+| Charging | 0x19 | 充能苦力怕？ |
+| Temperature | 0x1A | 温度（雪人？） |
+| All | 0x1F | ？？？ |
+| None | -0x01 | 无 |
+
 
 <br>
 

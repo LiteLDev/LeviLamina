@@ -101,7 +101,7 @@ void LL::LoadMain() {
         if (!file.is_regular_file())
             continue;
 
-        auto path = file.path();
+        auto& path = file.path();
         auto fileName = path.u8string();
         if (fileName.find("LiteLoader.dll") != string::npos
             || fileName.find("LiteXLoader") != string::npos)      //Skip Wrong file path
