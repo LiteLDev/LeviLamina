@@ -1,5 +1,6 @@
 #include <third-party/mysql/mysql.h>
 #include <DB/Impl/MySQL/Session.h>
+#include <DB/Impl/MySQL/Stmt.h>
 #include <LoggerAPI.h>
 #define OK 0
 
@@ -81,21 +82,117 @@ bool MySQLSession::execute(const std::string& query)
     return res == OK;
 }
 
-bool MySQLSession::change(const std::string& user, const std::string& password, const std::string& db)
+bool MySQLSession::relogin(const std::string& user, const std::string& password, const std::string& db)
 {
     IF_ENDBG dbLogger.debug("MySQLSession::change: Changing user to {} and database to {}", user, db);
     auto res = mysql_change_user(conn, user.c_str(), password.c_str(), (db.empty() ? nullptr : db.c_str()));
     return res == OK;
 }
 
-void MySQLSession::query(const std::string& query, std::function<bool(const Row&)> callback)
+Session& MySQLSession::query(const std::string& query, std::function<bool(const Row&)> callback)
 {
-
+    IF_ENDBG dbLogger.debug("MySQLSession::query: Querying > " + query);
+    auto res = mysql_query(conn, query.c_str());
+    if (res != OK)
+    {
+        throw std::runtime_error("MySQLSession::query: Failed to query database: " + std::string(mysql_error(conn)));
+    }
+    auto result = mysql_use_result(conn);
+    if (!result)
+    {
+        throw std::runtime_error("MySQLSession::query: Failed to query database: " + std::string(mysql_error(conn)));
+    }
+    auto numFields = mysql_num_fields(result);
+    auto numRows = mysql_num_rows(result);
+    auto fields = mysql_fetch_field(result);
+    IF_ENDBG dbLogger.debug("MySQLSession::query: Query returned {} rows and {} fields", numRows, numFields);
+    // Fetch column names
+    RowHeader header;
+    for (auto i = 0; i < numFields; i++)
+        header.add(std::string(fields[i].name, fields[i].name_length));
+    // Fetch rows
+    while (auto row = mysql_fetch_row(result))
+    {
+        Row r(header);
+        for (auto i = 0; i < numFields; i++)
+        {
+            auto type = fields[i].type;
+            switch (type)
+            {
+                case MYSQL_TYPE_TINY:
+                case MYSQL_TYPE_SHORT:
+                case MYSQL_TYPE_LONG:
+                case MYSQL_TYPE_LONGLONG:
+                case MYSQL_TYPE_INT24:
+                case MYSQL_TYPE_YEAR:
+                    if (fields[i].flags & UNSIGNED_FLAG)
+                        r.push_back(std::stoull(row[i]));
+                    else
+                        r.push_back(std::stoll(row[i]));
+                    break;
+                case MYSQL_TYPE_FLOAT:
+                    r.push_back(std::stof(row[i]));
+                    break;
+                case MYSQL_TYPE_DOUBLE:
+                    r.push_back(std::stod(row[i]));
+                    break;
+                case MYSQL_TYPE_BIT:
+                    {
+                        uint64_t val = 0;
+                        auto len = fields[i].length;
+                        for (auto j = 0; j < len; j++)
+                        {
+                            if (row[i][j] == '1')
+                                val |= (1ULL << j);
+                        }
+                        r.push_back(val);
+                        break;
+                    }
+                case MYSQL_TYPE_STRING:
+                case MYSQL_TYPE_VAR_STRING:
+                case MYSQL_TYPE_ENUM:
+                case MYSQL_TYPE_SET:
+                case MYSQL_TYPE_VARCHAR:
+                case MYSQL_TYPE_JSON:
+                    r.push_back(std::string(row[i]));
+                    break;
+                case MYSQL_TYPE_DECIMAL:
+                case MYSQL_TYPE_NEWDECIMAL:
+                    {
+                        // TODO: Decimal
+                        break;
+                    }
+                case MYSQL_TYPE_TINY_BLOB:
+                case MYSQL_TYPE_MEDIUM_BLOB:
+                case MYSQL_TYPE_LONG_BLOB:
+                case MYSQL_TYPE_BLOB:
+                    {
+                        ByteArray bytes;
+                        auto len = fields[i].length;
+                        for (auto j = 0; j < len; j++)
+                        {
+                            bytes.push_back(row[i][j]);
+                        }
+                        break;
+                    }
+                case MYSQL_TYPE_GEOMETRY:
+                default:
+                    break;
+            }
+            r.push_back(row[i]);
+        }
+        if (!callback(r))
+        {
+            break;
+        }
+    }
 }
 
-Stmt& MySQLSession::prepare(const std::string& query)
+SharedPointer<Stmt> MySQLSession::prepare(const std::string& query)
 {
-    
+    auto& stmt = MySQLStmt::create(Session::getSession(this), query);
+    stmtPool.push_back(stmt);
+    return stmt;
 }
 
 std::string MySQLSession::getLastError() const
@@ -133,7 +230,7 @@ DBType MySQLSession::getType()
     return DBType::MySQL;
 }
 
-Stmt& MySQLSession::operator<<(const std::string& query)
+SharedPointer<Stmt> MySQLSession::operator<<(const std::string& query)
 {
     return prepare(query);
 }

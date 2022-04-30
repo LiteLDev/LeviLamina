@@ -6,6 +6,8 @@ struct MYSQL;
 namespace DB
 {
 
+class MySQLStmt;
+
 class MySQLSession : public Session
 {
 
@@ -19,9 +21,9 @@ public:
     ~MySQLSession();
     void open(const ConnParams& params);
     bool execute(const std::string& query);
-    bool change(const std::string& user, const std::string& password, const std::string& db = "");
-    void query(const std::string& query, std::function<bool(const Row&)> callback);
-    Stmt& prepare(const std::string& query);
+    bool relogin(const std::string& user, const std::string& password, const std::string& db = "");
+    Session& query(const std::string& query, std::function<bool(const Row&)> callback);
+    SharedPointer<Stmt> prepare(const std::string& query);
     std::string getLastError() const;
     uint64_t getAffectedRows() const;
     uint64_t getLastInsertId() const;
@@ -29,7 +31,7 @@ public:
     bool isOpen();
     DBType getType();
 
-    Stmt& operator<<(const std::string& query);
+    SharedPointer<Stmt> operator<<(const std::string& query);
 
     friend class MySQLStmt;
 

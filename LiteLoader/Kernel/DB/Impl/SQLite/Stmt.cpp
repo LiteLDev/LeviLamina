@@ -125,7 +125,7 @@ bool SQLiteStmt::step()
     int res = sqlite3_step(stmt);
     if (res == SQLITE_ROW || res == SQLITE_DONE)
     {
-        if (session.expired() && !executed)
+        if (!session.expired() && !executed)
         {
             auto s = session.lock();
             affectedRowCount = s->getAffectedRows();

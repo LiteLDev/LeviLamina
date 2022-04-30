@@ -26,14 +26,6 @@ void SQLiteSession::open(const ConnParams& params)
 {
     // see https://www.sqlite.org/c3ref/open.html
     auto p = params; // Copy to avoid modifying the origin.
-    if (!p.getRaw().empty())
-    {
-        auto res = sqlite3_open_v2(p.getRaw().c_str(), &conn, SQLITE_OPEN_URI, nullptr);
-        if (res != SQLITE_OK)
-        {
-            throw std::runtime_error("SQLiteSession::SQLiteSession: Failed to open database: " + std::string(sqlite3_errmsg(conn)));
-        }
-    }
     auto path = p.getPath();
     if (path.empty())
     {

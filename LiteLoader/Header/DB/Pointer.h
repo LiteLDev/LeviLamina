@@ -21,6 +21,20 @@ public:
     SharedPointer(T* ptr = nullptr) : std::shared_ptr<T>(ptr) {}
     SharedPointer(const SharedPointer<T>& other) : std::shared_ptr<T>(other) {}
     SharedPointer(SharedPointer<T>&& other) : std::shared_ptr<T>(other) {}
+    ~SharedPointer()
+    {
+        std::shared_ptr<T>::~shared_ptr<T>();
+    }
+    inline SharedPointer<T>& operator=(const SharedPointer<T>& other)
+    {
+        std::shared_ptr<T>::operator=(other);
+        return *this;
+    }
+    inline SharedPointer<T>& operator=(SharedPointer<T>&& other)
+    {
+        std::shared_ptr<T>::operator=(other);
+        return *this;
+    }
 
     template <typename U>
     inline T& operator<<(const U& v)

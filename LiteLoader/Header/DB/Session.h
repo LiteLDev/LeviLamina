@@ -207,11 +207,10 @@ public:
         for (auto& s : sessionPool)
         {
             auto ptr = s.lock();
-            if (!ptr) throw std::runtime_error("Session::getSession: The Session pointer is expired");
             if (ptr.get() == session)
                 return ptr;
         }
-        throw std::runtime_error("Session::getSession: Session is not found");
+        throw std::runtime_error("Session::getSession: Session is not found or expired");
     }
 
 };
