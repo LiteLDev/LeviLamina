@@ -92,10 +92,6 @@ SharedPointer<Session> Session::create(DBType type, const std::string& path)
 {
     return _Create(type, {{"path", path}});
 }
-SharedPointer<Session> Session::create(const std::string& str)
-{
-    return create(ConnParams(str));
-}
 
 SharedPointer<Session> Session::_Create(DBType type, const ConnParams& params)
 {

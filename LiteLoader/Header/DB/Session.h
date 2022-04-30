@@ -178,13 +178,6 @@ public:
      * @return SharedPointer<Session>  The session
      */
     LIAPI static SharedPointer<Session> create(DBType type, const std::string& path);
-    /**
-     * @brief Create and open a new session.
-     * 
-     * @param  str  Connection string
-     * @return SharedPointer<Session>  The session
-     */
-    LIAPI static SharedPointer<Session> create(const std::string& str);
 
 private:
 
