@@ -16,6 +16,8 @@ class BlockLegacy {
 #define AFTER_EXTRA
 // Add new members to class
 public:
+    struct NameInfo;
+
     LIAPI Block* toBlock(unsigned short tileData);
     LIAPI string getTypeName();
     LIAPI bool applyBoneMeal(BlockSource*, BlockPos*);
