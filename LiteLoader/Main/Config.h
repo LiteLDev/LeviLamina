@@ -6,7 +6,7 @@
 
 /////////////////////// CrashLogger ///////////////////////
 // When comes with these plugins, disable builtin CrashLogger since they will cause crash
-constexpr const char* NoCrashLogger[] = {"BDSNetRunner", "AntiCheats"};
+constexpr const char* NoCrashLogger[] = {"AntiCheats"};
 #define CL_PRELOG_MODULE L"plugins/LiteLoader/CrashLogger.dll"
 
 
