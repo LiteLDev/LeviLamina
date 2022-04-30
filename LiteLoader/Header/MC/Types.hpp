@@ -76,7 +76,10 @@ public:
         return {(bpos1.x + bpos2.x) / 2, (bpos1.y + bpos2.y) / 2, (bpos1.z + bpos2.z) / 2};
     }
 
+    // ignored with /clr
+#ifndef _M_CEE
     LIAPI AABB toAABB() const;
+#endif // !_M_CEE
 };
 
 template <typename A, typename T>
@@ -803,6 +806,9 @@ enum class ActorDamageCause : int
     Lightning = 0x18,
     Charging = 0x19,
     Temperature = 0x1A,
+    Freeze = 0x1B,
+    Stalactite = 0x1C,
+    Stalagmite = 0x1D,
     All = 0x1F,
     None = -0x01,
 };
