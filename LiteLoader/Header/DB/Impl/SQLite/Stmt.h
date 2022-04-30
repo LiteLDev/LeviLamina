@@ -11,15 +11,13 @@ class SQLiteSession;
 class SQLiteStmt : public Stmt
 {
 
-    SQLiteSession* session = nullptr;
-    sqlite3_stmt* stmt = nullptr;
     std::shared_ptr<RowHeader> resultHeader;
+    sqlite3_stmt* stmt = nullptr;
     int boundParamsCount = 0;
     int totalParamsCount = 0;
     int steps = 0;
     uint64_t affectedRowCount = -1;
     uint64_t insertRowId = -1;
-    bool onHeap = false;
     bool stepped = false;
     bool executed = false;
     std::vector<int> boundIndexes;
@@ -46,18 +44,17 @@ public:
     Stmt& reexec();
     Stmt& clear();
     void close();
-    void destroy();
     uint64_t getAffectedRows() const;
     uint64_t getInsertId() const;
     int getUnboundParams() const;
     int getBoundParams() const;
     int getParamsCount() const;
-    Session* getSession() const;
+    std::weak_ptr<Session> getSession() const;
     DBType getType() const;
 
     Stmt& operator,(const BindType& b);
 
-    LIAPI static Stmt& create(SQLiteSession& sess, const std::string& sql);
+    LIAPI static SharedPointer<Stmt> create(const std::weak_ptr<Session>& sess, const std::string& sql);
 };
 
 } // namespace DB

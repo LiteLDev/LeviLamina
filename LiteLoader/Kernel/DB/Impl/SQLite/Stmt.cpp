@@ -41,10 +41,7 @@ void SQLiteStmt::fetchResultHeader()
 
 SQLiteStmt::~SQLiteStmt()
 {
-    if (!onHeap)
-    {
-        close();
-    }
+    close();
 }
 
 Stmt& SQLiteStmt::bind(const Any& value, int index)
@@ -102,9 +99,9 @@ Stmt& SQLiteStmt::bind(const Any& value, int index)
     {
         std::string e = fmt::format("SQLiteStmt::bind: Failed to bind {} to parameter at index {}",
                                     Any::type2str(type), index);
-        if (session)
+        if (auto s = session.lock())
         {
-            e += ": " + session->getLastError();
+            e += ": " + s->getLastError();
         }
         throw std::runtime_error(e);
     }
@@ -128,10 +125,11 @@ bool SQLiteStmt::step()
     int res = sqlite3_step(stmt);
     if (res == SQLITE_ROW || res == SQLITE_DONE)
     {
-        if (session && !executed)
+        if (session.expired() && !executed)
         {
-            affectedRowCount = session->getAffectedRows();
-            insertRowId = session->getLastInsertId();
+            auto s = session.lock();
+            affectedRowCount = s->getAffectedRows();
+            insertRowId = s->getLastInsertId();
             executed = true;
         }
         ++steps;
@@ -262,7 +260,7 @@ Stmt& SQLiteStmt::reexec()
     }
     IF_ENDBG dbLogger.debug("SQLiteStmt::reexec: Reset successfully");
     boundIndexes = {};
-    resultHeader = nullptr;
+    resultHeader.reset();
     steps = 0;
     stepped = false;
     executed = false;
@@ -282,39 +280,31 @@ Stmt& SQLiteStmt::clear()
     IF_ENDBG dbLogger.debug("SQLiteStmt::clear: Cleared bindings successfully");
     boundParamsCount = 0;
     boundIndexes = {};
-    resultHeader = nullptr;
+    resultHeader.reset();
     steps = 0;
     stepped = false;
     executed = false;
     affectedRowCount = -1;
-	insertRowId = -1;
+    insertRowId = -1;
     return *this;
 }
 
 void SQLiteStmt::close()
 {
-    sqlite3_finalize(stmt);
-    stmt = nullptr;
-}
-
-void SQLiteStmt::destroy()
-{
     if (stmt)
     {
-        close();
+        sqlite3_finalize(stmt);
+        stmt = nullptr;
     }
-    if (onHeap)
-    {
-        if (session)
-        {
-            auto it = std::find(session->stmts.begin(), session->stmts.end(), this);
-            if (it != session->stmts.end())
-            {
-                session->stmts.erase(it);
-            }
-        }
-        DB::destroy(this);
-    }
+    totalParamsCount = 0;
+    boundParamsCount = 0;
+    boundIndexes = {};
+    resultHeader.reset();
+    steps = 0;
+    stepped = false;
+    executed = false;
+    affectedRowCount = -1;
+    insertRowId = -1;
 }
 
 uint64_t SQLiteStmt::getAffectedRows() const
@@ -342,7 +332,7 @@ int SQLiteStmt::getParamsCount() const
     return totalParamsCount;
 }
 
-Session* SQLiteStmt::getSession() const
+std::weak_ptr<Session> SQLiteStmt::getSession() const
 {
     return session;
 }
@@ -373,20 +363,25 @@ Stmt &SQLiteStmt::operator,(const BindType&b)
     return *this;
 }
 
-Stmt& SQLiteStmt::create(SQLiteSession& sess, const std::string& sql)
+SharedPointer<Stmt> SQLiteStmt::create(const std::weak_ptr<Session>& session, const std::string& sql)
 {
+    auto s = session.lock();
+    if (!s || s->getType() != DBType::SQLite)
+    {
+        throw std::invalid_argument("SQLiteStmt::create: Session is invalid");
+    }
     sqlite3_stmt* stmt = nullptr;
-    int res = sqlite3_prepare_v2(sess.conn, sql.c_str(), -1, &stmt, nullptr);
+    auto raw = (SQLiteSession*)s.get();
+    int res = sqlite3_prepare_v2(raw->conn, sql.c_str(), -1, &stmt, nullptr);
     if (res != SQLITE_OK)
     {
-        throw std::runtime_error("SQLiteStmt::create: Failed to prepare statement: " + sess.getLastError());
+        throw std::runtime_error("SQLiteStmt::create: " + s->getLastError());
     }
-    SQLiteStmt* result = new SQLiteStmt(stmt);
-    result->onHeap = true;
-    result->session = &sess;
-    result->setDebugOutput(sess.debugOutput);
-    if (sess.debugOutput) dbLogger.debug("SQLiteStmt::create: Prepared > " + sql);
-    return *result;
+    auto result = new SQLiteStmt(stmt);
+    result->session = session;
+    result->setDebugOutput(raw->debugOutput);
+    if (raw->debugOutput) dbLogger.debug("SQLiteStmt::create: Prepared > " + sql);
+    return SharedPointer<Stmt>(result);
 }
 
 } // namespace DB

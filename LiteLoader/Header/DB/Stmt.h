@@ -1,5 +1,6 @@
 #pragma once
 #include "RowSet.h"
+#include "Pointer.h"
 
 #define IF_ENDBG if (debugOutput)
 
@@ -65,6 +66,7 @@ class Stmt
 
 protected:
     bool debugOutput = false;
+    std::weak_ptr<Session> session; ///< Parent session
 
 public:
     virtual ~Stmt();
@@ -211,12 +213,6 @@ public:
      */
     virtual void close() = 0;
     /**
-     * @brief Destory the statement object and release the memory.
-     * 
-     * @warning  DO NOT ACCESS THIS OBJECT AFTER CALLING THIS METHOD!!!
-     */
-    virtual void destroy() = 0;
-    /**
      * @brief Get the number of rows affected by the statement.
      *
      * @return int  The number of rows affected
@@ -267,9 +263,9 @@ public:
     /**
      * @brief Get the session.
      *
-     * @return Session*  The session ptr
+     * @return std::weak_ptr<Session>  The session ptr
      */
-    virtual Session* getSession() const = 0;
+    virtual std::weak_ptr<Session> getSession() const = 0;
     /**
      * @brief Get the session type
      *
@@ -397,18 +393,6 @@ public:
         return *this;
     }
 };
-
-template <typename T>
-inline void destroy(T* ptr)
-{
-    delete ptr;
-}
-template <typename T>
-inline void destroy(T** ptr)
-{
-    delete *ptr;
-    *ptr = nullptr;
-}
 
 inline BindType use(const Any& value, int idx = -1)
 {

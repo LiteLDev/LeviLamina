@@ -11,13 +11,14 @@ class SQLiteSession : public Session
     sqlite3* conn = nullptr;
 
 public:
+
     SQLiteSession();
     SQLiteSession(const ConnParams& params);
     ~SQLiteSession();
     void open(const ConnParams& params);
     bool execute(const std::string& query);
-    void query(const std::string& query, std::function<bool(const Row&)> callback);
-    Stmt& prepare(const std::string& query);
+    Session& query(const std::string& query, std::function<bool(const Row&)> callback);
+    SharedPointer<Stmt> prepare(const std::string& query);
     std::string getLastError() const;
     uint64_t getAffectedRows() const;
     uint64_t getLastInsertId() const;
@@ -25,7 +26,7 @@ public:
     bool isOpen();
     DBType getType();
 
-    Stmt& operator<<(const std::string& query);
+    SharedPointer<Stmt> operator<<(const std::string& query);
 
     friend class SQLiteStmt;
 };

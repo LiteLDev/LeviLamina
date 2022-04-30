@@ -2,6 +2,7 @@
 #include "RowSet.h"
 #include "Stmt.h"
 #include "ConnParams.h"
+#include "Pointer.h"
 
 class Logger;
 
@@ -12,11 +13,12 @@ extern Logger dbLogger;
 
 class Session
 {
+
 protected:
     bool debugOutput = false;
 
 public:
-    std::vector<Stmt*> stmts; ///< List of statements opened by prepare method.
+    std::vector<std::weak_ptr<Stmt>> stmtPool; ///< List of statements opened by prepare method.
 
     /// Destructor
     virtual ~Session() = default;
@@ -50,30 +52,31 @@ public:
      *
      * @param  query     Query to execute
      * @param  callback  Callback to process results
-     *
+     * @return *this
+     * 
      * @par Implementation
      * @see SQLiteSession::query
      */
-    virtual void query(const std::string& query, std::function<bool(const Row&)> callback) = 0;
+    virtual Session& query(const std::string& query, std::function<bool(const Row&)> callback) = 0;
     /**
      * @brief Execute a query.
      *
-     * @param  query Query to execute
+     * @param  query     The query to execute
      * @return ResultSet Result set
      */
     virtual ResultSet query(const std::string& query);
     /**
      * @brief Execute a query without results.
      *
-     * @param  query Query to execute
-     * @return bool Success or not
+     * @param  query  The query to execute
+     * @return bool   Success or not
      */
     virtual bool execute(const std::string& query) = 0;
     /**
      * @brief Prepare a query.
      *
-     * @param  query Query to execute
-     * @return Stmt& Statement
+     * @param  query                The query to execute
+     * @return SharedPointer<Stmt>  The statement
      * @par Example
      * @code
      * auto& stmt = session.prepare("SELECT * FROM table WHERE id = ?");
@@ -82,17 +85,17 @@ public:
      * stmt.close();
      * @endcode
      */
-    virtual Stmt& prepare(const std::string& query) = 0;
+    virtual SharedPointer<Stmt> prepare(const std::string& query) = 0;
     /**
      * @brief Get the last error message
      *
-     * @return std::string Error message
+     * @return std::string  Error message
      */
     virtual std::string getLastError() const;
     /**
      * @brief Get the number of affected rows by the last query.
      *
-     * @return uint64_t Number of affected rows
+     * @return uint64_t  The number of affected rows
      */
     virtual uint64_t getAffectedRows() const = 0;
     /**
@@ -114,21 +117,15 @@ public:
     /**
      * @brief Get the type of session
      *
-     * @return DBType The database type
+     * @return DBType  The database type
      */
     virtual DBType getType() = 0;
-    /**
-     * @brief Destroy the session.
-     *
-     * @warning DO NOT ACCESS THIS OBJECT AFTER CALLING THIS METHOD!!!
-     */
-    virtual void destroy();
 
     /**
      * @brief Operator<< to execute a query.
      *
-     * @param query The query to execute
-     * @return Stmt& The prepared statement
+     * @param  query  The query to execute
+     * @return SharedPointer<Stmt>  The prepared statement
      * @par Example
      * @code
      * ResultSet res;
@@ -136,56 +133,94 @@ public:
      * @endcode
      * @note It is not recommended to store the DB::Stmt reference returned by this method,
      *       it will be closed on the next execution.
-     * @code
-     * // Wrong code
-     * auto& stmt1 = session << "INSERT INTO table VALUES(11, 45, 14)";
-     * session << "SELECT * FROM table";  // stmt1 will be closed after this
-     * stmt1.getResults();                // seh_exception: Access to illegal addresses 0x0
      */
-    virtual Stmt& operator<<(const std::string& query);
+    virtual SharedPointer<Stmt> operator<<(const std::string& query);
 
-    /**
-     * @brief Create and open a new session.
-     *
-     * @param params    Connection parameters
-     * @return Session& The session
-     */
-    LIAPI static Session& create(const ConnParams& params);
     /**
      * @brief Create a new session.
      *
-     * @param type      Database type
-     * @return Session& The session
+     * @param  type  Database type
+     * @return SharedPointer<Session>  The session
      */
-    LIAPI static Session& create(DBType type);
+    LIAPI static SharedPointer<Session> create(DBType type);
     /**
      * @brief Create and open a new session.
      *
-     * @param type      Database type
-     * @param params    Connection parameters
-     * @return Session& The session
+     * @param  params  Connection parameters
+     * @return SharedPointer<Session>  The session
      */
-    LIAPI static Session& create(DBType type, const ConnParams& params);
+    LIAPI static SharedPointer<Session> create(const ConnParams& params);
     /**
      * @brief Create and open a new session.
      *
-     * @param type      Database type
-     * @param host      Hostname
-     * @param port      Port
-     * @param user      Username
-     * @param password  Password
-     * @param database  Database name
-     * @return Session& The session
+     * @param  type    Database type
+     * @param  params  Connection parameters
+     * @return SharedPointer<Session>  The session
      */
-    LIAPI static Session& create(DBType type, const std::string& host, uint16_t port, const std::string& user, const std::string& password, const std::string& database);
+    LIAPI static SharedPointer<Session> create(DBType type, const ConnParams& params);
     /**
      * @brief Create and open a new session.
      *
-     * @param type      Database type
-     * @param path      Path to the database file
-     * @return Session& The session
+     * @param  type      Database type
+     * @param  host      Hostname
+     * @param  port      Port
+     * @param  user      Username
+     * @param  password  Password
+     * @param  database  Database name
+     * @return SharedPointer<Session>  The session
      */
-    LIAPI static Session& create(DBType type, const std::string& path);
+    LIAPI static SharedPointer<Session> create(DBType type, const std::string& host, uint16_t port, const std::string& user, const std::string& password, const std::string& database);
+    /**
+     * @brief Create and open a new session.
+     *
+     * @param  type  Database type
+     * @param  path  Path to the database file
+     * @return SharedPointer<Session>  The session
+     */
+    LIAPI static SharedPointer<Session> create(DBType type, const std::string& path);
+    /**
+     * @brief Create and open a new session.
+     * 
+     * @param  str  Connection string
+     * @return SharedPointer<Session>  The session
+     */
+    LIAPI static SharedPointer<Session> create(const std::string& str);
+
+private:
+
+    /**
+     * @brief Create a new session(internal).
+     * 
+     * @param  type    Database type
+     * @param  params  Connection parameters
+     * @return SharedPointer<Session>  The session
+     */
+    static SharedPointer<Session> _Create(DBType type, const ConnParams& params = {});
+
+private:
+
+    static std::vector<std::weak_ptr<Session>> sessionPool; ///< List of sessions(weak pointers)
+
+public:
+
+    /**
+     * @brief Get the Session ptr by the (this) pointer.
+     * 
+     * @param  session  The (this) pointer
+     * @return std::shared_ptr<Session>  The Session ptr
+     */
+    static std::shared_ptr<Session> getSession(Session* session)
+    {
+        for (auto& s : sessionPool)
+        {
+            auto ptr = s.lock();
+            if (!ptr) throw std::runtime_error("Session::getSession: The Session pointer is expired");
+            if (ptr.get() == session)
+                return ptr;
+        }
+        throw std::runtime_error("Session::getSession: Session is not found");
+    }
+
 };
 
 } // namespace DB

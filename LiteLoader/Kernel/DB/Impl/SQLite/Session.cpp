@@ -96,17 +96,18 @@ bool SQLiteSession::execute(const std::string& query)
     return res == SQLITE_OK;
 }
 
-void SQLiteSession::query(const std::string& query, std::function<bool(const Row&)> callback)
+Session& SQLiteSession::query(const std::string& query, std::function<bool(const Row&)> callback)
 {
     IF_ENDBG dbLogger.debug("SQLiteSession::query: Querying > " + query);
     auto& stmt = prepare(query);
-    stmt.fetchAll(callback);
+    stmt->fetchAll(callback);
+    return *this;
 }
 
-Stmt& SQLiteSession::prepare(const std::string& query)
+SharedPointer<Stmt> SQLiteSession::prepare(const std::string& query)
 {
-    auto& stmt = SQLiteStmt::create(*this, query);
-    stmts.push_back(&stmt);
+    auto& stmt = SQLiteStmt::create(Session::getSession(this), query);
+    stmtPool.push_back(stmt);
     return stmt;
 }
 
@@ -127,9 +128,10 @@ uint64_t SQLiteSession::getLastInsertId() const
 
 void SQLiteSession::close()
 {
-    while (!stmts.empty())
+    while (!stmtPool.empty())
     {
-        stmts[0]->destroy();
+        if (auto& ptr = stmtPool.front().lock())
+            ptr->close();
     }
     if (conn)
     {
@@ -153,7 +155,7 @@ DBType SQLiteSession::getType()
     return DBType::SQLite;
 }
 
-Stmt& SQLiteSession::operator<<(const std::string& query)
+SharedPointer<Stmt> SQLiteSession::operator<<(const std::string& query)
 {
     return prepare(query);
 }
