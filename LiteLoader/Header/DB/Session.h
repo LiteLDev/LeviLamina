@@ -15,7 +15,11 @@ class Session
 {
 
 protected:
+#if defined(LLDB_DEBUG_MODE)
+    bool debugOutput = true;
+#else
     bool debugOutput = false;
+#endif
 
 public:
     std::vector<std::weak_ptr<Stmt>> stmtPool; ///< List of statements opened by prepare method.
@@ -206,6 +210,7 @@ public:
     {
         for (auto& s : sessionPool)
         {
+            if (s.expired()) continue;
             auto ptr = s.lock();
             if (ptr.get() == session)
                 return ptr;

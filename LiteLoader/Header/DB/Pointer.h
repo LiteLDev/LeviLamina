@@ -1,5 +1,6 @@
 #pragma once
 #include "../Global.h"
+#include "../LoggerAPI.h"
 #include <memory>
 
 namespace DB
@@ -23,14 +24,16 @@ public:
     SharedPointer(SharedPointer<T>&& other) : std::shared_ptr<T>(other) {}
     ~SharedPointer()
     {
-        std::shared_ptr<T>::~shared_ptr<T>();
+        //Logger("DBG").debug("~SharedPointer<{}>({})", 
+        //    typeid(decltype(*this)).name(),
+        //    std::shared_ptr<T>::use_count());
     }
     inline SharedPointer<T>& operator=(const SharedPointer<T>& other)
     {
         std::shared_ptr<T>::operator=(other);
         return *this;
     }
-    inline SharedPointer<T>& operator=(SharedPointer<T>&& other)
+    inline SharedPointer<T>& operator=(SharedPointer<T>&& other) noexcept
     {
         std::shared_ptr<T>::operator=(other);
         return *this;
@@ -39,22 +42,29 @@ public:
     template <typename U>
     inline T& operator<<(const U& v)
     {
-        *std::shared_ptr<T>::get() << v;
-        return *std::shared_ptr<T>::get();
+        auto ptr = std::shared_ptr<T>::get();
+        if (!ptr) throw std::runtime_error("The pointer is nullptr");
+        //Logger("DBG").debug("operator<< {}", (void*)ptr);
+        (*ptr) << v;
+        return *ptr;
     }
 
     template <typename U>
     inline T& operator>>(U& v)
     {
-        *std::shared_ptr<T>::get() >> v;
-        return *std::shared_ptr<T>::get();
+        auto ptr = std::shared_ptr<T>::get();
+        if (!ptr) throw std::runtime_error("The pointer is nullptr");
+        (*ptr) >> v;
+        return *ptr;
     }
 
     template <typename U>
     inline T& operator,(const U& v)
     {
-        std::shared_ptr<T>::get()->operator,(v);
-        return *std::shared_ptr<T>::get();
+        auto ptr = std::shared_ptr<T>::get();
+        if (!ptr) throw std::runtime_error("The pointer is nullptr");
+        ptr->operator,(v);
+        return *ptr;
     }
 
 };

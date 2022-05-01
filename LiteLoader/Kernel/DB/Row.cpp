@@ -210,6 +210,7 @@ Any& Row::at(size_t idx)
 
 void Row::forEach_ref(std::function<bool(const std::string&, Any&)> cb)
 {
+    if (!this->header) return;
     for (auto& col : *this->header)
     {
         if (!cb(col, this->at(col))) break;
@@ -218,6 +219,7 @@ void Row::forEach_ref(std::function<bool(const std::string&, Any&)> cb)
 
 void Row::forEach(std::function<bool(const std::string&, const Any&)> cb) const
 {
+    if (!this->header) return;
     int i = 0;
     for (auto& col : *this->header)
     {

@@ -1,6 +1,7 @@
 #pragma once
 #include "RowSet.h"
 #include "Pointer.h"
+//#define LLDB_DEBUG_MODE
 
 #define IF_ENDBG if (debugOutput)
 
@@ -65,7 +66,11 @@ class Stmt
 {
 
 protected:
+#if defined(LLDB_DEBUG_MODE)
+    bool debugOutput = true;
+#else
     bool debugOutput = false;
+#endif
     std::weak_ptr<Session> session; ///< Parent session
 
 public:

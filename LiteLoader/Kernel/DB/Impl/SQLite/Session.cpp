@@ -8,18 +8,18 @@ namespace DB
 
 SQLiteSession::SQLiteSession()
 {
+    IF_ENDBG dbLogger.debug("SQLiteSession: Constructed! this: {}", (void*)this);
 }
 SQLiteSession::SQLiteSession(const ConnParams& params)
 {
+    IF_ENDBG dbLogger.debug("SQLiteSession: Constructed! this: {}", (void*)this);
     open(params);
 }
 
 SQLiteSession::~SQLiteSession()
 {
-    if (isOpen())
-    {
-        close();
-    }
+    IF_ENDBG dbLogger.debug("SQLiteSession::~SQLiteSession: Destructor: this: {}", (void*)this);
+    close();
 }
 
 void SQLiteSession::open(const ConnParams& params)
@@ -122,8 +122,14 @@ void SQLiteSession::close()
 {
     while (!stmtPool.empty())
     {
-        if (auto& ptr = stmtPool.front().lock())
+        // Close all the active statements or it will error when closing
+        auto& wptr = stmtPool.back();
+        auto ptr = wptr.lock();
+        if (!wptr.expired() && ptr)
+        {
             ptr->close();
+        }
+        stmtPool.pop_back();
     }
     if (conn)
     {
@@ -139,7 +145,7 @@ void SQLiteSession::close()
 
 bool SQLiteSession::isOpen()
 {
-    return conn == nullptr;
+    return conn != nullptr;
 }
 
 DBType SQLiteSession::getType()

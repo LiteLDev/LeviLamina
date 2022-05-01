@@ -9,6 +9,7 @@ namespace DB
 SQLiteStmt::SQLiteStmt(sqlite3_stmt* stmt)
     : stmt(stmt)
 {
+    IF_ENDBG dbLogger.debug("SQLiteStmt::SQLiteStmt: Constructed! this: {}", (void*)this);
     totalParamsCount = sqlite3_bind_parameter_count(stmt);
     if (!totalParamsCount) step(); // Execute without params
 }
@@ -29,7 +30,7 @@ int SQLiteStmt::getNextParamIndex()
 
 void SQLiteStmt::fetchResultHeader()
 {
-    resultHeader.reset(new RowHeader);
+    if (!resultHeader) resultHeader.reset(new RowHeader);
     int colCnt = sqlite3_column_count(stmt);
     for (int i = 0; i < colCnt; i++)
     {
@@ -41,6 +42,7 @@ void SQLiteStmt::fetchResultHeader()
 
 SQLiteStmt::~SQLiteStmt()
 {
+    IF_ENDBG dbLogger.debug("SQLiteStmt::~SQLiteStmt: Destructor: this: {}", (void*)this);
     close();
 }
 
@@ -113,7 +115,31 @@ Stmt& SQLiteStmt::bind(const Any& value, int index)
 }
 Stmt& SQLiteStmt::bind(const Any& value, const std::string& name)
 {
-    return bind(value, sqlite3_bind_parameter_index(stmt, name.c_str()) - 1);
+    if (name.empty())
+    {
+        throw std::runtime_error("SQLiteStmt::bind: The name is empty");
+    }
+    std::vector<char> start{'?', ':', '@', '$'};
+    int index = 0;
+    for (auto& s : start)
+    {
+        auto i = sqlite3_bind_parameter_index(stmt, (s + name).c_str());
+        if (i != 0)
+        {
+            if (index != 0)
+            {
+                throw std::runtime_error("SQLiteStmt::bind: Multiple parameters match the name `" + name + "`");
+            }
+            index = i;
+        }
+    }
+    if (index == 0)
+    {
+        // Tips: The first parameter of SQLiteStmt::bind is the value to bind, the second is the key!
+        throw std::invalid_argument("SQLiteStmt::bind: There isn't any statement parameter named `" + name + "`!");
+    }
+    IF_ENDBG dbLogger.debug("SQLiteStmt::bind: Parameter `{}` is at index {}", name, index);
+    return bind(value, index - 1);
 }
 Stmt& SQLiteStmt::bind(const Any& value)
 {
@@ -136,7 +162,7 @@ bool SQLiteStmt::step()
     }
     if (res == SQLITE_ROW)
     {
-        if (resultHeader->empty())
+        if (!resultHeader || resultHeader->empty())
         {
             fetchResultHeader();
         }
@@ -170,7 +196,7 @@ bool SQLiteStmt::done()
 Row SQLiteStmt::fetch()
 {
     if (done()) return Row();
-    if (resultHeader && resultHeader->empty())
+    if (!resultHeader || resultHeader->empty())
     {
         fetchResultHeader();
     }
@@ -239,7 +265,7 @@ Stmt& SQLiteStmt::fetchAll(std::function<bool(const Row&)> cb)
 
 ResultSet SQLiteStmt::fetchAll()
 {
-    if (resultHeader && resultHeader->empty())
+    if (!resultHeader || resultHeader->empty())
     {
         fetchResultHeader();
     }
@@ -259,7 +285,6 @@ Stmt& SQLiteStmt::reexec()
         throw std::runtime_error("SQLiteStmt::reexec: Failed to reset");
     }
     IF_ENDBG dbLogger.debug("SQLiteStmt::reexec: Reset successfully");
-    boundIndexes = {};
     resultHeader.reset();
     steps = 0;
     stepped = false;
@@ -272,7 +297,13 @@ Stmt& SQLiteStmt::reexec()
 
 Stmt& SQLiteStmt::clear()
 {
-    auto res = sqlite3_clear_bindings(stmt);
+    auto res = sqlite3_reset(stmt);
+    if (res != SQLITE_OK)
+    {
+        throw std::runtime_error("SQLiteStmt::clear: Failed to reset");
+    }
+    IF_ENDBG dbLogger.debug("SQLiteStmt::clear: Reset successfully");
+    res = sqlite3_clear_bindings(stmt);
     if (res != SQLITE_OK)
     {
         throw std::runtime_error("SQLiteStmt::clear: Failed to clear bindings");
@@ -286,6 +317,8 @@ Stmt& SQLiteStmt::clear()
     executed = false;
     affectedRowCount = -1;
     insertRowId = -1;
+    // close();
+    //*this = *(SQLiteStmt*)create(session, query).get();
     return *this;
 }
 

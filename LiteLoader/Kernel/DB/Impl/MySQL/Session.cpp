@@ -186,6 +186,7 @@ Session& MySQLSession::query(const std::string& query, std::function<bool(const 
             break;
         }
     }
+    return *this;
 }
 
 SharedPointer<Stmt> MySQLSession::prepare(const std::string& query)
