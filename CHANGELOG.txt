@@ -1,13 +1,12 @@
 ## [LiteLoader Release Note]
-This is a bug fix update.Please update as soon as possible
+This version mainly fixes two serious BDS bugs.
 
 ## [New features]
-- Update 1.18.31
-- Add MobSpawnEvent,#379
+- Better CrashLogger(More detailed and intuitive)
 
 ## [Bug Fixes]
-- Fix SimulatedPlayer getRealName
-- Fix PlayerSetArmorEvent, #368
-- Fix PlayerDestroyEvnet Bug, #217
-- Fix data.toJson float error,#384
+- Fix FishingHook ChangeDIM crash(MC BUG)
+- Fix the lag caused by the overflow of MaxPlayer(BDS BUG)
 
+## [Change]
+- Remove preload of BDSNetRunner because it has been archived
