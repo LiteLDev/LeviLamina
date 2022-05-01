@@ -72,6 +72,7 @@ protected:
     bool debugOutput = false;
 #endif
     std::weak_ptr<Session> session; ///< Parent session
+    std::weak_ptr<Stmt> self;
 
 public:
     virtual ~Stmt();
@@ -270,7 +271,13 @@ public:
      *
      * @return std::weak_ptr<Session>  The session ptr
      */
-    virtual std::weak_ptr<Session> getSession() const = 0;
+    virtual std::weak_ptr<Session> getSession() const;
+    /**
+     * @brief Get the shared pointer point to this
+     * 
+     * @return SharedPointer<Stmt>  The ptr
+     */
+    virtual SharedPointer<Stmt> getSharedPointer();
     /**
      * @brief Get the session type
      *
@@ -290,7 +297,7 @@ public:
      * @par Impletementation
      * @see SQLiteStmt::operator,
      */
-    virtual Stmt& operator,(const BindType& b) = 0;
+    virtual SharedPointer<Stmt> operator,(const BindType& b);
     /**
      * @brief Operator, to bind a sequence container.
      *
@@ -298,13 +305,13 @@ public:
      * @return Stmt&  *this
      */
     template <typename T>
-    inline Stmt& operator,(const BindSequenceType<T>& b)
+    inline SharedPointer<Stmt> operator,(const BindSequenceType<T>& b)
     {
         for (auto& v : b.values)
         {
             bind(v);
         }
-        return *this;
+        return getSharedPointer();
     }
     /**
      * @brief Operator, to bind a row.
@@ -313,7 +320,7 @@ public:
      * @return Stmt&  *this
      */
     template <>
-    inline Stmt& operator,(const BindSequenceType<Row>& b)
+    inline SharedPointer<Stmt> operator,(const BindSequenceType<Row>& b)
     {
         if (b.values.header && b.values.header->size())
         {
@@ -329,7 +336,7 @@ public:
                 bind(v);
             }
         }
-        return *this;
+        return getSharedPointer();
     }
     /**
      * @brief Operator, to bind a map container.
@@ -338,13 +345,13 @@ public:
      * @return Stmt&  *this
      */
     template <typename T>
-    inline Stmt& operator,(const BindMapType<T>& b)
+    inline SharedPointer<Stmt> operator,(const BindMapType<T>& b)
     {
         for (auto& v : b.values)
         {
             bind(v.second, v.first);
         }
-        return *this;
+        return getSharedPointer();
     }
     /**
      * @brief Operator, to store a row of results.
@@ -353,10 +360,10 @@ public:
      * @return Stmt&  *this
      */
     template <typename T>
-    inline Stmt& operator,(IntoType<T>& i)
+    inline SharedPointer<Stmt> operator,(IntoType<T>& i)
     {
         if (!done()) i.value = row_to<T>(next());
-        return *this;
+        return getSharedPointer();
     }
     /**
      * @brief Operator, to store a set of results.
@@ -365,13 +372,13 @@ public:
      * @return Stmt&  *this
      */
     template <typename T>
-    inline Stmt& operator,(IntoType<std::vector<T>>& i)
+    inline SharedPointer<Stmt> operator,(IntoType<std::vector<T>>& i)
     {
         fetch([&](const Row& row) {
             i.value.push_back(row_to<T>(row));
             return true;
         });
-        return *this;
+        return getSharedPointer();
     }
     /**
      * @brief Operator, to store a set of results.
@@ -380,10 +387,10 @@ public:
      * @return Stmt&  *this
      */
     template <>
-    inline Stmt& operator,(IntoType<ResultSet>& i)
+    inline SharedPointer<Stmt> operator,(IntoType<ResultSet>& i)
     {
         i.value = fetchAll();
-        return *this;
+        return getSharedPointer();
     }
     /**
      * @brief Operator, to store a row of results.
@@ -392,10 +399,10 @@ public:
      * @return Stmt&  *this
      */
     template <>
-    inline Stmt& operator,(IntoType<Row>& i)
+    inline SharedPointer<Stmt> operator,(IntoType<Row>& i)
     {
         if (!done()) i.value = fetch();
-        return *this;
+        return getSharedPointer();
     }
 };
 

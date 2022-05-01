@@ -49,10 +49,7 @@ public:
     int getUnboundParams() const;
     int getBoundParams() const;
     int getParamsCount() const;
-    std::weak_ptr<Session> getSession() const;
     DBType getType() const;
-
-    Stmt& operator,(const BindType& b);
 
     LIAPI static SharedPointer<Stmt> create(const std::weak_ptr<Session>& sess, const std::string& sql);
 };

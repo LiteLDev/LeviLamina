@@ -365,35 +365,9 @@ int SQLiteStmt::getParamsCount() const
     return totalParamsCount;
 }
 
-std::weak_ptr<Session> SQLiteStmt::getSession() const
-{
-    return session;
-}
-
 DBType SQLiteStmt::getType() const
 {
     return DBType::SQLite;
-}
-
-Stmt &SQLiteStmt::operator,(const BindType&b)
-{
-    if (b.name.empty() && b.idx == -1)
-    {
-        bind(b.value);
-    }
-    else if (!b.name.empty())
-    {
-        bind(b.value, b.name);
-    }
-    else if (b.idx != -1)
-    {
-        bind(b.value, b.idx);
-    }
-    else
-    {
-        throw std::invalid_argument("SQLiteStmt::operator,: Parameter `b`(const BindType&) is invalid");
-    }
-    return *this;
 }
 
 SharedPointer<Stmt> SQLiteStmt::create(const std::weak_ptr<Session>& session, const std::string& sql)

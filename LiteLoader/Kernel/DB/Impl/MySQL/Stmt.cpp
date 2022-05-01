@@ -581,35 +581,9 @@ int MySQLStmt::getParamsCount() const
     return totalParamsCount;
 }
 
-std::weak_ptr<Session> MySQLStmt::getSession() const
-{
-    return session;
-}
-
 DBType MySQLStmt::getType() const
 {
     return DBType::MySQL;
-}
-
-Stmt& MySQLStmt::operator,(const BindType& b)
-{
-    if (b.name.empty() && b.idx == -1)
-    {
-        bind(b.value);
-    }
-    else if (!b.name.empty())
-    {
-        bind(b.value, b.name);
-    }
-    else if (b.idx != -1)
-    {
-        bind(b.value, b.idx);
-    }
-    else
-    {
-        throw std::invalid_argument("MySQLStmt::operator,: Parameter `b`(const BindType&) is invalid");
-    }
-    return *this;
 }
 
 SharedPointer<Stmt> MySQLStmt::create(const std::weak_ptr<Session>& session, const std::string& query)

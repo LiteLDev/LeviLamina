@@ -6,6 +6,8 @@
 namespace DB
 {
 
+class Stmt;
+
 /**
  * @brief A smart pointer class extended from std::shared_ptr
  * 
@@ -20,6 +22,8 @@ class SharedPointer : public std::shared_ptr<T>
 public:
 
     SharedPointer(T* ptr = nullptr) : std::shared_ptr<T>(ptr) {}
+    SharedPointer(const std::shared_ptr<T>& ptr) : std::shared_ptr<T>(ptr) {}
+    SharedPointer(std::shared_ptr<T>&& ptr) : std::shared_ptr<T>(ptr) {}
     SharedPointer(const SharedPointer<T>& other) : std::shared_ptr<T>(other) {}
     SharedPointer(SharedPointer<T>&& other) : std::shared_ptr<T>(other) {}
     ~SharedPointer()
@@ -40,31 +44,28 @@ public:
     }
 
     template <typename U>
-    inline T& operator<<(const U& v)
+    inline SharedPointer<Stmt> operator<<(const U& v)
     {
         auto ptr = std::shared_ptr<T>::get();
         if (!ptr) throw std::runtime_error("The pointer is nullptr");
         //Logger("DBG").debug("operator<< {}", (void*)ptr);
-        (*ptr) << v;
-        return *ptr;
+        return (*ptr) << v;
     }
 
     template <typename U>
-    inline T& operator>>(U& v)
+    inline SharedPointer<Stmt> operator>>(U& v)
     {
         auto ptr = std::shared_ptr<T>::get();
         if (!ptr) throw std::runtime_error("The pointer is nullptr");
-        (*ptr) >> v;
-        return *ptr;
+        return (*ptr) >> v;
     }
 
     template <typename U>
-    inline T& operator,(const U& v)
+    inline SharedPointer<Stmt> operator,(const U& v)
     {
         auto ptr = std::shared_ptr<T>::get();
         if (!ptr) throw std::runtime_error("The pointer is nullptr");
-        ptr->operator,(v);
-        return *ptr;
+        return ptr->operator,(v);
     }
 
 };
