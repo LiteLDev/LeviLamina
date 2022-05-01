@@ -263,3 +263,13 @@ TClasslessInstanceHook(void, "?leaveGameSync@ServerInstance@@QEAAXXZ")
     }
 }
 
+TClasslessInstanceHook(enum StartupResult, "?Startup@RakPeer@RakNet@@UEAA?AW4StartupResult@2@IPEAUSocketDescriptor@2@IH@Z",
+                       unsigned int maxConnections, class SocketDescriptor* socketDescriptors, unsigned socketDescriptorCount, int threadPriority)
+{
+    if (maxConnections > 0xFFFF)
+    {
+        maxConnections = 0xFFFF;
+    }
+    return original(this, maxConnections, socketDescriptors, socketDescriptorCount, threadPriority);
+}
+
