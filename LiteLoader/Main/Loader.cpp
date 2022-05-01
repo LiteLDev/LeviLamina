@@ -14,6 +14,7 @@
 #include "Config.h"
 #include "Version.h"
 #include <ScriptEngine/Configs.h>
+#include <Utils/DbgHelper.h>
 
 using namespace std;
 
@@ -58,9 +59,17 @@ void CleanOldScriptEngine()
 
 void LoadScriptEngine()
 {
+    std::string llVersion = GetFileVersionString(GetCurrentModule(), true);
     for (string backend : LLSE_VALID_BACKENDS)
     {
-        auto lib = LoadLibrary(str2wstr("plugins/LiteLoader/LiteLoader." + backend + ".dll").c_str());     //eg. LiteLoader.Js.dll
+        std::string path = "plugins/LiteLoader/LiteLoader." + backend + ".dll";
+        std::string version = GetFileVersionString(path, true);
+        if (version != llVersion)
+        {
+            logger.warn("The file version <{}> of Script Engine for {} does not match the LiteLoader version <{}>",
+                         version, backend, llVersion);
+        }
+        auto lib = LoadLibrary(str2wstr(path).c_str()); // eg. LiteLoader.Js.dll
         if (lib) {
             logger.info("* ScriptEngine for " + backend + " loaded");
             //Fake Register
@@ -70,7 +79,7 @@ void LoadScriptEngine()
             });
         }
         else {
-            logger.error("* Fail to load ScriptEngine for " + backend + "!");
+            logger.error("* Fail to load ScriptEngine for {}!", backend);
             logger.error("* Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
         }
     }
@@ -92,7 +101,7 @@ void LL::LoadMain() {
         if (!file.is_regular_file())
             continue;
 
-        auto path = file.path();
+        auto& path = file.path();
         auto fileName = path.u8string();
         if (fileName.find("LiteLoader.dll") != string::npos
             || fileName.find("LiteXLoader") != string::npos)      //Skip Wrong file path
@@ -133,7 +142,13 @@ void LL::LoadMain() {
         }
         else
         {
-            logger.error("Fail to load plugin <{}>", pluginFileName);
+            std::string fileVersion = GetFileVersionString(path.u8string(), true);
+            std::string info = pluginFileName;
+            if (!fileVersion.empty())
+            {
+                info += "<" + fileVersion + ">";
+            }
+            logger.error("Fail to load plugin [{}]", info);
             logger.error("Error: Code[{}] {}", GetLastError(), GetLastErrorMessage());
         }
     }
@@ -151,13 +166,24 @@ void LL::LoadMain() {
             try {
                 ((void (*)()) fn)();
             } catch (std::exception &e) {
-                logger.error("Plugin <{}> throws an std::exception in onPostInit", name);
+                std::string fileVersion = GetFileVersionString(plugin->handler, true);
+                std::string info = name;
+                if (!fileVersion.empty()) {
+                    info += "<" + fileVersion + ">";
+                }
+                logger.error("Plugin [{}] throws an std::exception in onPostInit", info);
                 logger.error("Exception: ", TextEncoding::toUTF8(e.what()));
                 logger.error("Fail to init this plugin!");
             }
             catch (...)
             {
-                logger.error("Plugin <{}> throws an exception in onPostInit", name);
+                std::string fileVersion = GetFileVersionString(plugin->handler, true);
+                std::string info = name;
+                if (!fileVersion.empty())
+                {
+                    info += "<" + fileVersion + ">";
+                }
+                logger.error("Plugin [{}] throws an exception in onPostInit", info);
                 logger.error("Fail to init this plugin!");
             }
         }

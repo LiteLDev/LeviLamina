@@ -1030,7 +1030,6 @@ TInstanceHook(void, "?setArmor@Player@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z",
             ev.mArmorItem = it;
             if (!ev.call()) {
                 auto& uid = getUniqueID();
-                auto snbt = it->getNbt()->toSNBT();
                 auto& plinv = getSupplies();
                 plinv.add(*it, 1);
                 getArmorContainer().setItem(slot, ItemStack::EMPTY_ITEM);

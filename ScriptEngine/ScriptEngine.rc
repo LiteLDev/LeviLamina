@@ -8,7 +8,8 @@
 // Generated from the TEXTINCLUDE 2 resource.
 //
 #include "winres.h"
-#include "../Main/Version.h"
+#include "../LiteLoader/Main/Version.h"
+#include "Configs.h"
 
 /////////////////////////////////////////////////////////////////////////////
 #undef APSTUDIO_READONLY_SYMBOLS
@@ -34,6 +35,8 @@ END
 2 TEXTINCLUDE 
 BEGIN
     "#include ""winres.h""\r\n"
+    "#include ""../LiteLoader/Main/Version.h""\r\n"
+    "#include ""Configs.h""\r\n"
     "\0"
 END
 
@@ -45,11 +48,19 @@ END
 
 #endif    // APSTUDIO_INVOKED
 
+#if defined(SCRIPTX_LANG_JAVASCRIPT)
+#define LLSE_OUTPUT_FILE_NAME "LiteLoader.Js.dll"
+#define LLSE_FILE_DESCRIPTION "A JavaScript Script Plugin Engine for LiteLoader"
+#elif defined(SCRIPTX_LANG_LUA)
+#define LLSE_OUTPUT_FILE_NAME "LiteLoader.Lua.dll"
+#define LLSE_FILE_DESCRIPTION "A Lua Script Plugin Engine for LiteLoader"
+#endif
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // Version
 //
+
 
 VS_VERSION_INFO VERSIONINFO
  FILEVERSION LITELOADER_VERSION_MAJOR,LITELOADER_VERSION_MINOR,LITELOADER_VERSION_REVISION,LITELOADER_VERSION_ACTIONS
@@ -65,12 +76,12 @@ BEGIN
         BLOCK "080404b0"
         BEGIN
             VALUE "CompanyName", "LiteLoaderDev"
-            VALUE "FileDescription", "A Light-Weight Plugin Loader for Bedrock Dedicated Server"
+            VALUE "FileDescription", LLSE_FILE_DESCRIPTION
             VALUE "FileVersion", LITELOADER_FILE_VERSION_STRING
-            VALUE "InternalName", "LiteLoader.dll"
+            VALUE "InternalName", LLSE_OUTPUT_FILE_NAME
             VALUE "LegalCopyright", "LiteLoader Developer"
-            VALUE "OriginalFilename", "LiteLoader.dll"
-            VALUE "ProductName", "LiteLoader For BDS"
+            VALUE "OriginalFilename", LLSE_OUTPUT_FILE_NAME
+            VALUE "ProductName", "LiteLoader Script Engine For BDS"
             VALUE "ProductVersion", LITELOADER_FILE_VERSION_STRING
         END
     END

@@ -1,15 +1,12 @@
 [HEADING=1][LiteLoader Release Note][/HEADING]
-这是一个修复BUG的版本，并且更新了1.18.31头文件
+这是一个修复MC与BDS本体漏洞的版本
 
 [HEADING=1][新内容][/HEADING]
 [LIST]
-[*]适配1.18.31
-[*]新添MobSpawnEven事件[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/379']#379[/URL]
+[*]全新的CrashLogger系统（更加直观的输出）
 [/LIST]
 [HEADING=1][BUG修复][/HEADING]
 [LIST]
-[*]修复SimulatedPlayer::getRealName()的错误
-[*]修复PlayerSetArmorEvent, [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/368']#368[/URL]
-[*]修复PlayerDestroyEvnet的某些情况下多次触发的Bug, [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/217']#217[/URL]
-[*] Fix data.toJson精度错误的bug, [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/384']#384[/URL]
+[*]修复钓鱼竿潜在的崩溃BUG
+[*]修复最大人数溢出导致的服务器假死
 [/LIST]

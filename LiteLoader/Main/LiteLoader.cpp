@@ -66,22 +66,20 @@ void CheckRunningBDS()
     }
     CloseHandle(hProcessSnap);
     // Get current process path
-    auto buf = new WCHAR[8192];
-    auto sz = GetModuleFileName(NULL, buf, 8192);
+    WCHAR buf[8196] = {0};
+    auto sz = GetModuleFileName(NULL, buf, 8196);
     std::wstring current{buf, sz}; // Copy
-    delete[] buf;
-    buf = 0;
     // Check the BDS process paths
     for (auto& pid : pids) {
-        auto buf = new WCHAR[8196];
+        WCHAR buf[8196] = {0};
         // Open process handle
         auto handle = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ | PROCESS_TERMINATE, false, pid);
         if (handle)
         {
-            DWORD sz = 0;
-            buf = new WCHAR[8192];
+            DWORD sz = NULL;
+            WCHAR buf[8196] = {0};
             // Get the full path of the process
-            if (sz = GetModuleFileNameEx(handle, NULL, buf, 8192))
+            if (sz = GetModuleFileNameEx(handle, NULL, buf, 8196))
             {
                 std::wstring path{buf, sz};
                 if (current == path)
@@ -100,7 +98,6 @@ void CheckRunningBDS()
                 }
             }
             CloseHandle(handle);
-            delete[] buf;
         }
     }
 }
@@ -166,6 +163,19 @@ void CheckBetaVersion()
         logger.warn("PLEASE DO NOT USE IN PRODUCTION ENVIRONMENT!");
     }
 }
+
+void CheckProtocolVersion()
+{
+    auto currentProtocol = LL::getServerProtocolVersion();
+    if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol)
+    {
+        logger.warn("Protocol version not match, target version: {}, current version: {}.",
+                    TARGET_BDS_PROTOCOL_VERSION, currentProtocol);
+        logger.warn("This will most likely crash the server, please use the LiteLoader that matches the BDS version!");
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+    }
+}
+
 // extern
 extern void EndScheduleSystem();
 extern void FixBugEvent();
@@ -184,6 +194,9 @@ void LLMain()
     // Create Plugin Directory
     std::error_code ec;
     std::filesystem::create_directories("plugins", ec);
+
+    // Check Protocol Version
+    CheckProtocolVersion();
 
     // Fix problems
     FixUpCWD();

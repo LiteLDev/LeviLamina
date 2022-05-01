@@ -4,6 +4,9 @@
 #include <string>
 class BlockSource;
 
+///////////////////// Enum //////////////////////
+extern ClassDefine<void> DamageCauseEnumBuilder;
+
 //////////////////// Classes ////////////////////
 class IntPos : public IntVec4, public ScriptClass
 {

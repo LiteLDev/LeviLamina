@@ -26,7 +26,10 @@ TClasslessInstanceHook(bool, "?isExpansionAllowed@CommandSelectorBase@@AEBA_NAEB
                        CommandOrigin* a2)
 {
     if (LL::globalConfig.enableUnlockCmd)
+    {
+        original(this, a2);
         return true;
+    }
     return original(this, a2);
 }
 

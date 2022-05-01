@@ -46,6 +46,7 @@ namespace LL {
                     {"UnoccupyPort19132", {{"enabled", conf.enableUnoccupyPort19132}}},
                     {"CheckRunningBDS", {{"enabled", conf.enableCheckRunningBDS}}},
                     {"WelcomeText", {{"enabled", conf.enableWelcomeText}}},
+                    {"FixMcBug", {{"enabled", conf.enableFixMcBug}}},
                     {"OutputFilter", {
                         {"enabled", conf.enableOutputFilter},
                         {"onlyFilterConsoleOutput", conf.onlyFilterConsoleOutput},
@@ -132,6 +133,11 @@ namespace LL {
             if (modules.count("WelcomeText"))
             {
                 const nlohmann::json& setting = modules.at("WelcomeText");
+                conf.enableWelcomeText = setting.value("enabled", true);
+            }
+            if (modules.count("FixMcBug"))
+            {
+                const nlohmann::json& setting = modules.at("FixMcBug");
                 conf.enableWelcomeText = setting.value("enabled", true);
             }
             if (modules.find("ErrorStackTraceback") != modules.end()) {

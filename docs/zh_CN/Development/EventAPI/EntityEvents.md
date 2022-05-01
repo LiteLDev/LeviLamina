@@ -29,9 +29,46 @@
     伤害来源的实体对象（可能为`Null`）
   - damage : `Float`  
     受到的伤害数值
-  - cause : `Integer`   
+  - cause : `DamageCause`   
     受伤原因
 - 拦截事件：函数返回`false`
+
+DamageCause 为伤害原因枚举，枚举值如下，有问号的待验证，？？？待补充
+|伤害原因|枚举值|解释|
+|--|--|--|
+| None | -0x01 | 其他 |
+| Override | 0x00 | 非正常方式（如脚本直接设置血量为0），这种方式的伤害不会被盔甲与buff吸收 |
+| Contact | 0x01 | 接触伤害（如仙人掌） |
+| EntityAttack | 0x02 | 实体攻击 |
+| Projectile | 0x03 | 抛射物攻击 |
+| Suffocation | 0x04 | 窒息（密封空间） |
+| Fall | 0x05 | 掉落 |
+| Fire | 0x06 | 着火 |
+| FireTick | 0x07 | 着火 |
+| Lava | 0x08 | 熔岩 |
+| Drowning | 0x09 | 溺水 |
+| BlockExplosion | 0x0A | 方块爆炸 |
+| EntityExplosion | 0x0B | 实体爆炸 |
+| Void | 0x0C | 虚空 |
+| Suicide | 0x0D | 自杀 |
+| Magic | 0x0E | 尖牙对生物造成的伤害、守卫者对生物造成的魔法伤害和药水伤害等 |
+| Wither | 0x0F | 凋零效果 |
+| Starve | 0x10 | 饥饿 |
+| Anvil | 0x11 | 下落的铁砧 |
+| Thorns | 0x12 | 荆棘 |
+| FallingBlock | 0x13 | 下落的方块 |
+| Piston | 0x14 | 活塞 |
+| FlyIntoWall | 0x15 | 动态能量（滑翔撞墙） |
+| Magma | 0x16 | 岩浆块 |
+| Fireworks | 0x17 | 烟花 |
+| Lightning | 0x18 | 闪电 |
+| Charging | 0x19 | ？？？ |
+| Temperature | 0x1A | 温度 （雪人？） |
+| Freezing | 0x1B | 冰冻 |
+| Stalactite | 0x1C | 被钟乳石砸到 |
+| Stalagmite | 0x1D | 掉落到石笋上 |
+| All | 0x1F | 所有 |
+
 
 <br>
 

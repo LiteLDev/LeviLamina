@@ -6,7 +6,7 @@
 
 /////////////////////// CrashLogger ///////////////////////
 // When comes with these plugins, disable builtin CrashLogger since they will cause crash
-constexpr const char* NoCrashLogger[] = {"BDSNetRunner", "AntiCheats"};
+constexpr const char* NoCrashLogger[] = {"AntiCheats"};
 #define CL_PRELOG_MODULE L"plugins/LiteLoader/CrashLogger.dll"
 
 
@@ -54,7 +54,8 @@ struct LLConfig
     bool enableUnoccupyPort19132 = true;
     bool enableCheckRunningBDS = true;
     bool enableWelcomeText = true;
-
+    bool enableFixMcBug = true;
+	
     bool enableOutputFilter = false;
     bool onlyFilterConsoleOutput = true;
     std::vector<std::string> outputFilterRegex;
