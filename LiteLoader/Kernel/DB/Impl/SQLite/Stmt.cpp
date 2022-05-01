@@ -388,7 +388,9 @@ SharedPointer<Stmt> SQLiteStmt::create(const std::weak_ptr<Session>& session, co
     result->session = session;
     result->setDebugOutput(raw->debugOutput);
     if (raw->debugOutput) dbLogger.debug("SQLiteStmt::create: Prepared > " + sql);
-    return SharedPointer<Stmt>(result);
+    auto shared = SharedPointer<Stmt>(result);
+    result->self = shared;
+    return shared;
 }
 
 } // namespace DB

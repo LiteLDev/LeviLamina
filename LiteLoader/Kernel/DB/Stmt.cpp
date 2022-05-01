@@ -17,12 +17,14 @@ std::weak_ptr<Session> Stmt::getSession() const
     return session;
 }
 
-SharedPointer<Stmt> Stmt::getSharedPointer()
+SharedPointer<Stmt> Stmt::getSharedPointer() const
 {
     if (!self.expired())
     {
         return self.lock();
     }
+    return nullptr;
+    /* Get the stmt ptr
     if (!session.expired())
     {
         auto ptr = session.lock();
@@ -43,6 +45,7 @@ SharedPointer<Stmt> Stmt::getSharedPointer()
         }
     }
     throw std::runtime_error("Stmt::getSharedPointer: The pointer is not found or expired");
+    */
 }
 
 SharedPointer<Stmt> Stmt::operator,(const BindType& b)

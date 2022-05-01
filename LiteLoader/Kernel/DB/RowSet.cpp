@@ -54,7 +54,7 @@ void RowSet::push_back(const Row& row)
     add(row);
 }
 
-std::string RowSet::toTableString(const std::string& nullPattern)
+std::string RowSet::toTableString(const std::string& nullPattern) const
 {
     std::string result, dividingLine;
     // Get the field widths
@@ -67,7 +67,7 @@ std::string RowSet::toTableString(const std::string& nullPattern)
     {
         for (size_t i = 0; i < row.size(); ++i)
         {
-            auto& val = row[i];
+            auto val = row.data()[i];
             if (val.is_null())
             {
                 colWidths[i] = std::max(sizeof(nullPattern) - 1, colWidths[i]);
@@ -93,7 +93,7 @@ std::string RowSet::toTableString(const std::string& nullPattern)
     {
         for (size_t i = 0; i < row.size(); ++i)
         {
-            auto& val = row[i];
+            auto val = row.data()[i];
             if (val.is_null())
             {
                 result += fmt::format("| {:<{}} ", nullPattern, colWidths[i]);

@@ -609,7 +609,9 @@ SharedPointer<Stmt> MySQLStmt::create(const std::weak_ptr<Session>& session, con
     result->query = query;
     result->setDebugOutput(raw->debugOutput);
     if (raw->debugOutput) dbLogger.debug("MySQLStmt::create: Prepared > " + query);
-    return SharedPointer<Stmt>(result);
+    auto shared = SharedPointer<Stmt>(result);
+    result->self = shared;
+    return shared;
 }
 
 } // namespace DB

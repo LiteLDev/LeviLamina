@@ -277,7 +277,7 @@ public:
      * 
      * @return SharedPointer<Stmt>  The ptr
      */
-    virtual SharedPointer<Stmt> getSharedPointer();
+    virtual SharedPointer<Stmt> getSharedPointer() const;
     /**
      * @brief Get the session type
      *
@@ -494,7 +494,7 @@ inline BindMapType<std::map<std::string, Any>> use(const std::initializer_list<s
 }
 
 template <typename T>
-inline IntoType<T>&& into(T& out)
+inline IntoType<T> into(T& out)
 {
     return IntoType<T>{out};
 }

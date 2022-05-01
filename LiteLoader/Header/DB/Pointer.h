@@ -61,7 +61,7 @@ public:
     }
 
     template <typename U>
-    inline SharedPointer<Stmt> operator,(const U& v)
+    inline SharedPointer<Stmt> operator,(U v)
     {
         auto ptr = std::shared_ptr<T>::get();
         if (!ptr) throw std::runtime_error("The pointer is nullptr");

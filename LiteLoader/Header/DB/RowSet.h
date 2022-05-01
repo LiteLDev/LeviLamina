@@ -64,7 +64,7 @@ public:
      * |=====|========|
      * @endcode
      */
-    LIAPI std::string toTableString(const std::string& nullPattern = "<NULL>");
+    LIAPI std::string toTableString(const std::string& nullPattern = "<NULL>") const;
 };
 
 using ResultSet = RowSet;
