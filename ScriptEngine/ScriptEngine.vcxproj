@@ -55,6 +55,7 @@
     <ClCompile Include="EconomySystem.cpp" />
     <ClCompile Include="PluginManager.cpp" />
     <ClCompile Include="SafeGuardRecord.cpp" />
+    <ClCompile Include="API\SimulatedPlayerAPI.cpp" />
     <ClCompile Include="Tools\IniHelper.cpp" />
     <ClCompile Include="Tools\Utils.cpp" />
     <ClCompile Include="ScriptEngine.cpp" />

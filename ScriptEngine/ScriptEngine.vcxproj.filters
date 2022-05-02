@@ -167,6 +167,9 @@
     <ClCompile Include="API\DatabaseAPI.cpp">
       <Filter>API</Filter>
     </ClCompile>
+    <ClCompile Include="API\SimulatedPlayerAPI.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API\BaseAPI.h">
