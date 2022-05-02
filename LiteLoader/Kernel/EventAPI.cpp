@@ -2129,6 +2129,13 @@ TClasslessInstanceHook(void, "??1DedicatedServer@@UEAA@XZ")
     IF_LISTENED_END(ServerStoppedEvent)
     original(this);
 }
+TClasslessInstanceHook(void, "?execute@StopCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z",
+    class CommandOrigin const& origin, class CommandOutput& output)
+{
+    LL::globalConfig.serverStatus = LL::LLServerStatus::Stopping;
+    original(this, origin, output);
+}
+
 
 ////////////// RegCmd //////////////
 TInstanceHook(void, "?setup@ChangeSettingCommand@@SAXAEAVCommandRegistry@@@Z",
