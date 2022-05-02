@@ -285,7 +285,7 @@ bool AddonsManager::install(std::string packPath)
     {
         if (!filesystem::exists(str2wstr(packPath)))
         {
-            addonLogger.error("Addon file not found!");
+            addonLogger.error("Addon file \"{}\" not found!", packPath);
             return false;
         }
         if (VALID_ADDON_FILE_EXTENSION.find(filesystem::path(str2wstr(packPath)).extension().u8string()) == VALID_ADDON_FILE_EXTENSION.end())
@@ -742,12 +742,13 @@ void AutoInstallAddons()
         return;
 
     addonLogger.warn("{} new addon(s) found to install. Working...", toInstallList.size());
-
     int cnt = 0;
     for (auto& path : toInstallList)
+    {
+        addonLogger.debug("Installing \"{}\"...", path);
         if (!AddonsManager::install(path))
         {
-            //filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
+            // filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
             break;
         }
         else
@@ -755,6 +756,7 @@ void AutoInstallAddons()
             ++cnt;
             addonLogger.warn("Addon {} has beed installed.", path);
         }
+    }
 
     if (cnt == 0)
     {
@@ -770,6 +772,8 @@ void AutoInstallAddons()
 
 void InitAddonsHelper()
 {
+    if (LL::isDebugMode())
+        addonLogger.consoleLevel = addonLogger.debug.level;
     AutoInstallAddons();
     BuildAddonsList();
     
