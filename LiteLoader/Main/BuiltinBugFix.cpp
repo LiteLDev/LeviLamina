@@ -273,3 +273,12 @@ TClasslessInstanceHook(enum StartupResult, "?Startup@RakPeer@RakNet@@UEAA?AW4Sta
     return original(this, maxConnections, socketDescriptors, socketDescriptorCount, threadPriority);
 }
 
+// Fix command crash when server is stopping
+TClasslessInstanceHook(void, "?fireEventPlayerMessage@MinecraftEventing@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z",
+                       std::string const& a1, std::string const& a2, std::string const& a3, std::string const& a4)
+{
+    if (LL::isServerStopping())
+        return;
+    original(this, a1, a2, a3, a4);
+}
+
