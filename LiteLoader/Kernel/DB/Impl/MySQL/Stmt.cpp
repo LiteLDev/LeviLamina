@@ -378,6 +378,7 @@ Stmt& MySQLStmt::bind(const Any& value, int index)
             auto sz = value.value.string->length() + 1;
             param.buffer.reset(new char[sz]);
             strcpy(param.buffer.get(), value.value.string->c_str());
+            param.length = sz;
             params[index].buffer = param.buffer.get();
             params[index].buffer_length = sz;
             params[index].is_null = 0;
@@ -406,6 +407,7 @@ Stmt& MySQLStmt::bind(const Any& value, int index)
             auto sz = blob.size();
             param.buffer.reset(new char[sz]);
             memcpy(param.buffer.get(), blob.data(), sz);
+            param.length = sz;
             params[index].buffer = param.buffer.get();
             params[index].buffer_length = sz;
             params[index].is_null = 0;
@@ -547,12 +549,13 @@ void MySQLStmt::close()
     }
     if (stmt)
     {
-        mysql_stmt_close(stmt);
-        stmt = nullptr;
+        // CRASH!?
+        //mysql_stmt_close(stmt);
+        //stmt = nullptr;
     }
-    //if (params) params.reset();
-    //if (result) result.reset();
-    //if (resultHeader) resultHeader.reset();
+    if (params) params.reset();
+    if (result) result.reset();
+    if (resultHeader) resultHeader.reset();
     totalParamsCount = 0;
     boundParamsCount = 0;
     paramValues  = {};
