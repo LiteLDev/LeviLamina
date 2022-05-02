@@ -57,14 +57,13 @@ MYSQL_TIME any_to(const DB::Any& v)
 namespace DB
 {
 
-std::unordered_map<std::string, int> ParseStmtParams(const std::string& query)
+std::unordered_map<std::string, int> ParseStmtParams(std::string& query)
 {
     StringReader reader(query);
     std::unordered_map<std::string, int> result;
     bool inString = false;
     int delta = 0;
     int cur = 0;
-    auto q = query;
     while (reader.isValid())
     {
         char c = reader.read();
@@ -74,7 +73,7 @@ std::unordered_map<std::string, int> ParseStmtParams(const std::string& query)
         }
         else if (!inString && (c == '?' || c == '$' || c == ':'))
         {
-            q[reader.getPos() - 1 - delta] = '?';  // Replace $ or : with ?
+            query[reader.getPos() - 1 - delta] = '?';  // Replace $ or : with ?
             auto name = reader.readVariableName(); // Read parameter name
             if (name.empty())                      // No parameter name
             {
@@ -87,7 +86,7 @@ std::unordered_map<std::string, int> ParseStmtParams(const std::string& query)
             }
             result[name] = cur++;
             // Remove the name so that mysql can parse it
-            q = q.substr(0, reader.getPos() - name.length() - delta) + q.substr(reader.getPos() - delta);
+            query = query.substr(0, reader.getPos() - name.length() - delta) + query.substr(reader.getPos() - delta);
             delta += name.size();
         }
     }
@@ -266,10 +265,11 @@ void MySQLStmt::bindResult()
         return;
     }
     auto len = mysql_num_fields(metadata);
+    IF_ENDBG dbLogger.debug("MySQLStmt::bindResult: mysql_num_fields: {}", len);
     auto fields = mysql_fetch_fields(metadata);
     result.reset(new MYSQL_BIND[len]); // Allocate result bindings
     resultHeader.reset(new RowHeader); // Allocate result header
-    for (auto i = 0U; i <= len; i++)
+    for (auto i = 0U; i < len; i++)
     {
         resultValues.push_back({});      // Allocate result values
         auto& rec = resultValues.back(); // Get the binder
@@ -305,7 +305,9 @@ void MySQLStmt::execute()
     {
         throw std::runtime_error("MySQLStmt::execute: Failed to execute stmt: " + std::string(mysql_stmt_error(stmt)));
     }
-    step();
+    bindResult();
+    if (metadata)
+        step();
     paramValues = {};
     paramIndexes = {};
 }
@@ -380,6 +382,7 @@ Stmt& MySQLStmt::bind(const Any& value, int index)
             params[index].buffer_length = sz;
             params[index].is_null = 0;
             params[index].length = (unsigned long*)&param.length;
+            IF_ENDBG dbLogger.debug("MySQLStmt::bind: Bound string param at {}: {}", index, param.buffer.get());
             break;
         }
         case Any::Type::Date:
@@ -416,7 +419,11 @@ Stmt& MySQLStmt::bind(const Any& value, int index)
     boundParamsCount++;
     if (getUnboundParams() == 0)
     {
-        mysql_stmt_bind_param(stmt, params.get());
+        auto res = mysql_stmt_bind_param(stmt, params.get());
+        if (res)
+        {
+            throw std::runtime_error("MySQLStmt::bind: " + std::string(mysql_stmt_error(stmt)));
+        }
         execute();
     }
     return *this;
@@ -533,19 +540,19 @@ Stmt& MySQLStmt::clear()
 
 void MySQLStmt::close()
 {
-    if (stmt)
-    {
-        mysql_stmt_close(stmt);
-        stmt = nullptr;
-    }
     if (metadata)
     {
         mysql_free_result(metadata);
         metadata = nullptr;
     }
-    if (params) params.reset();
-    if (result) result.reset();
-    if (resultHeader) resultHeader.reset();
+    if (stmt)
+    {
+        mysql_stmt_close(stmt);
+        stmt = nullptr;
+    }
+    //if (params) params.reset();
+    //if (result) result.reset();
+    //if (resultHeader) resultHeader.reset();
     totalParamsCount = 0;
     boundParamsCount = 0;
     paramValues  = {};
@@ -586,7 +593,7 @@ DBType MySQLStmt::getType() const
     return DBType::MySQL;
 }
 
-SharedPointer<Stmt> MySQLStmt::create(const std::weak_ptr<Session>& session, const std::string& query)
+SharedPointer<Stmt> MySQLStmt::create(const std::weak_ptr<Session>& session, const std::string& sql)
 {
     auto& s = session.lock();
     if (!s || s->getType() != DBType::MySQL)
@@ -599,6 +606,17 @@ SharedPointer<Stmt> MySQLStmt::create(const std::weak_ptr<Session>& session, con
     {
         throw std::runtime_error("MySQLStmt::create: " + s->getLastError());
     }
+    auto query = sql;
+    auto params = ParseStmtParams(query);
+    if (raw->debugOutput && !params.empty())
+    {
+        dbLogger.debug("MySQLStmt::create: Parsed named parameters in query: ");
+        dbLogger.debug("MySQLStmt::create: - SQL without named parameters: {}", query);
+        for (auto& [k, v] : params)
+        {
+            dbLogger.debug("MySQLStmt::create: - {}: {}", k, v);
+        }
+    }
     auto res = mysql_stmt_prepare(stmt, query.c_str(), query.size());
     if (res)
     {
@@ -607,6 +625,7 @@ SharedPointer<Stmt> MySQLStmt::create(const std::weak_ptr<Session>& session, con
     auto result = new MySQLStmt(stmt);
     result->session = session;
     result->query = query;
+    result->paramIndexes = params;
     result->setDebugOutput(raw->debugOutput);
     if (raw->debugOutput) dbLogger.debug("MySQLStmt::create: Prepared > " + query);
     auto shared = SharedPointer<Stmt>(result);

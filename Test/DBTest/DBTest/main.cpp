@@ -45,14 +45,14 @@ void log_result_set(const ResultSet& set)
     }
 }
 
+
 void run_tests(SharedPointer<Session> sess)
 {
 #if defined(CATCH_EXCEPTION)
     try
 #endif
     {
-        sess->setDebugOutput(true);
-        sess->open({{"path", "plugins/DBTest/dbs/a.db"}});
+        sess << "DROP TABLE IF EXISTS test";
         // sess->execute("CREATE TABLE IF NOT EXISTS test (a CHAR(100) NOT NULL, b INTEGER NOT NULL);");
         sess << "CREATE TABLE IF NOT EXISTS test (a CHAR(100) NOT NULL, b INTEGER NOT NULL);";
         sess->execute("INSERT INTO test VALUES('awa', 114514)");
@@ -101,21 +101,49 @@ void test_sqlite()
         fs::remove_all("plugins/DBTest/dbs");
     }
     fs::create_directories("plugins/DBTest/dbs");
+
     // If there is no changes, the database will be a empty file
     Session::create("file:///plugins/DBTest/dbs/test_create_by_url.db");
+
     Session::create(DBType::SQLite)->open("file:///plugins/DBTest/dbs/test_create_by_url2.db");
+    
     auto s1 = Session::create(DBType::SQLite);
     s1->open("file:///plugins/DBTest/dbs/test_create_by_url3.db");
     s1->execute("CREATE TABLE IF NOT EXISTS test (a INTEGER)");
     s1->close();
+    
     auto sess = Session::create(DBType::SQLite);
+    sess->setDebugOutput(true);
+    sess->open({{"path", "plugins/DBTest/dbs/a.db"}});
     run_tests(sess);
 }
+
+void test_mysql()
+{
+    // Vars
+    constexpr const char*    host = "127.0.0.1";
+    constexpr const uint16_t port = 3306;
+    constexpr const char*    user = "root";
+    constexpr const char*  passwd = "root";
+    constexpr const char*  dbname = "lldbtest";
+    const std::string url = fmt::format("mysql://{}:{}@{}:{}/", 
+                            user, passwd, host, port);
+    
+    auto s1 = Session::create(url); // Test url
+    s1->execute("CREATE DATABASE IF NOT EXISTS " + std::string(dbname));
+    s1->close();
+
+    auto sess = Session::create(DBType::MySQL, host, port, user, passwd, dbname);
+    sess->setDebugOutput(true);
+    run_tests(sess);
+}
+
 
 void test_main()
 {
     logger.info("DBTest loaded!");
     test_sqlite();
+    test_mysql();
 }
 
 BOOL WINAPI DllMain(HMODULE, DWORD ul_reason_for_call, LPVOID)
@@ -123,9 +151,20 @@ BOOL WINAPI DllMain(HMODULE, DWORD ul_reason_for_call, LPVOID)
     switch (ul_reason_for_call)
     {
         case DLL_PROCESS_ATTACH:
-            LL::registerPlugin("DBTest", "LLDB module tests", LL::Version(0, 0, 1));
-            test_main();
-            break;
+#if defined(CATCH_EXCEPTION)
+            try
+#endif
+            {
+                LL::registerPlugin("DBTest", "LLDB module tests", LL::Version(0, 0, 1));
+                test_main();
+                break;
+            }
+#if defined(CATCH_EXCEPTION)
+            catch (std::exception e)
+            {
+                logger.error(e.what());
+            }
+#endif
         case DLL_THREAD_ATTACH:
         case DLL_THREAD_DETACH:
         case DLL_PROCESS_DETACH:

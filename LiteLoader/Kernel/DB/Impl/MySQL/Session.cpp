@@ -9,20 +9,20 @@ namespace DB
 
 MySQLSession::MySQLSession()
 {
+    IF_ENDBG dbLogger.info("MySQLSession::MySQLSession: Constructed! this: {}", (void*)this);
     conn = mysql_init(nullptr);
 }
 MySQLSession::MySQLSession(const ConnParams& params)
 {
+    IF_ENDBG dbLogger.info("MySQLSession::MySQLSession: Constructed! this: {}", (void*)this);
     conn = mysql_init(nullptr);
     open(params);
 }
 
 MySQLSession::~MySQLSession()
 {
-    if (isOpen())
-    {
-        close();
-    }
+    IF_ENDBG dbLogger.info("MySQLSession::MySQLSession: Destructor: this: {}", (void*)this);
+    close();
 }
 
 void MySQLSession::setSSL(const ConnParams& params)
@@ -179,7 +179,6 @@ Session& MySQLSession::query(const std::string& query, std::function<bool(const 
                 default:
                     break;
             }
-            r.push_back(row[i]);
         }
         if (!callback(r))
         {
