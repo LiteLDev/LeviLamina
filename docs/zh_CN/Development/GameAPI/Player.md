@@ -958,10 +958,12 @@ pl.removeBossBar();
   - speed : `Number`  
     （可选参数）移动速度，默认为1  
 
-- 返回值：是否成功模拟操作以及导航路径，结构：{result:`Boolean`,path:`IntPos[]`}
+- 返回值：是否能到达指定位置以及导航路径，结构：{isFullPath:`Boolean`,path:`Number[3][]`}
 - 返回值类型：`Object`
 
 参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#navigatetoblock)
+返回值示例：{isFullPath:false,path:[[-8,0,-3],[-7,0,-2],[-6,0,-2],[-5,0,-2],[-4,0,-1],[-3,0,-1],[-2,0,-1],[-1,0,0]]}，
+此数据的目标坐标为(0,2,0)，路径终点为(-1,0,0)，所以isFullPath为false，但由于路径不为空，所以模拟玩家将会移动至(-1,0,0)坐标
 
 
 #### 模拟导航移动（多目标）

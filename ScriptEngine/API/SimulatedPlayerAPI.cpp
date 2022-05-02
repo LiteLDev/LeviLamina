@@ -345,16 +345,13 @@ Local<Value> PlayerClass::simulateSetBodyRotation(const Arguments& args)
 inline Local<Value> NavigateResultToObject(ScriptNavigationResult const& res)
 {
     auto obj = Object::newObject();
-    obj.set(String::newString("result"), Boolean::newBoolean(res.mResult));
-    if (res.mResult) 
+    obj.set(String::newString("isFullPath"), Boolean::newBoolean(res.mIsFullPath));
+    auto path = Array::newArray();
+    for (auto& pos : res.mPath)
     {
-        auto arr = Array::newArray();
-        for (auto& pos : res.mPath)
-        {
-            arr.add(IntPos::newPos(pos));
-        }
-        obj.set(String::newString("path"), arr);
+        path.add(Array::newArray({Number::newNumber(pos.x), Number::newNumber(pos.y), Number::newNumber(pos.z)}));
     }
+    obj.set(String::newString("path"), path);
     return obj;
 }
 // struct ScriptNavigationResult simulateNavigateToEntity(class Actor&, float);
