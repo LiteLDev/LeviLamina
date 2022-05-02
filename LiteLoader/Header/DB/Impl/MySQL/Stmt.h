@@ -40,7 +40,7 @@ class MySQLStmt : public Stmt
     int steps = 0;
     bool fetched = false;
 
-    MySQLStmt(MYSQL_STMT* stmt);
+    MySQLStmt(MYSQL_STMT* stmt, const std::weak_ptr<Session>& parent);
     int getNextParamIndex();
     void bindResult();
     void execute();

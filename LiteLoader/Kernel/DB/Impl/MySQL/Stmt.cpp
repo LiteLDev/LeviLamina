@@ -57,6 +57,11 @@ MYSQL_TIME any_to(const DB::Any& v)
 namespace DB
 {
 
+inline MySQLSession* Wptr2MySQLSession(const std::weak_ptr<Session>& sess)
+{
+    return (MySQLSession*)sess.lock().get();
+}
+
 std::unordered_map<std::string, int> ParseStmtParams(std::string& query)
 {
     StringReader reader(query);
@@ -152,6 +157,9 @@ std::pair<std::shared_ptr<char[]>, std::size_t> AllocateBuffer(const MYSQL_FIELD
     if (len)
     {
         auto buffer = std::shared_ptr<char[]>(new char[len]);
+#if defined(LLDB_DEBUG_MODE)
+        dbLogger.debug("AllocateBuffer: Allocated! Buffer size: {}", len);
+#endif
         return std::make_pair(buffer, len);
     }
     return std::make_pair(std::shared_ptr<char[]>(), len);
@@ -210,11 +218,17 @@ Any ReceiverToAny(const Receiver& rec)
         case MYSQL_TYPE_ENUM:
         //case MYSQL_TYPE_GEOMETRY:
         case MYSQL_TYPE_JSON:
-            return Any(rec.buffer.get(), rec.length);
+#if defined(LLDB_DEBUG_MODE)
+            dbLogger.debug("ReceiverToAny: string: length: {}, buffer {}", rec.length, rec.buffer.get());
+#endif
+            return Any(std::string(rec.buffer.get()));
         case MYSQL_TYPE_BLOB:
         case MYSQL_TYPE_TINY_BLOB:
         case MYSQL_TYPE_MEDIUM_BLOB:
         case MYSQL_TYPE_LONG_BLOB:
+#if defined(LLDB_DEBUG_MODE)
+            dbLogger.debug("ReceiverToAny: blob: length: {}, buffer {}", rec.length, rec.buffer.get());
+#endif
             return Any(ByteArray(rec.buffer.get(), rec.buffer.get() + rec.length));
         case MYSQL_TYPE_DECIMAL:
         case MYSQL_TYPE_NEWDECIMAL:
@@ -226,9 +240,10 @@ Any ReceiverToAny(const Receiver& rec)
     }
 }
 
-MySQLStmt::MySQLStmt(MYSQL_STMT* stmt)
+MySQLStmt::MySQLStmt(MYSQL_STMT* stmt, const std::weak_ptr<Session>& parent)
     : stmt(stmt)
 {
+    this->session = parent;
     totalParamsCount = mysql_stmt_param_count(stmt);
     if (totalParamsCount)
         params.reset(new MYSQL_BIND[totalParamsCount]);
@@ -264,6 +279,9 @@ void MySQLStmt::bindResult()
         IF_ENDBG dbLogger.debug("MySQLStmt::bindResult: No result metadata");
         return;
     }
+    bool attr_max_length = true;
+    mysql_stmt_attr_set(stmt, STMT_ATTR_UPDATE_MAX_LENGTH, (const void*)&attr_max_length);
+    mysql_stmt_store_result(stmt);
     auto len = mysql_num_fields(metadata);
     IF_ENDBG dbLogger.debug("MySQLStmt::bindResult: mysql_num_fields: {}", len);
     auto fields = mysql_fetch_fields(metadata);
@@ -303,13 +321,15 @@ void MySQLStmt::execute()
     auto res = mysql_stmt_execute(stmt);
     if (res)
     {
+        if (!session.expired())
+            mysql_rollback(Wptr2MySQLSession(session)->conn);
         throw std::runtime_error("MySQLStmt::execute: Failed to execute stmt: " + std::string(mysql_stmt_error(stmt)));
     }
+    mysql_commit(Wptr2MySQLSession(session)->conn);
     bindResult();
     if (metadata)
         step();
     paramValues = {};
-    paramIndexes = {};
 }
 
 MySQLStmt::~MySQLStmt()
@@ -459,7 +479,7 @@ bool MySQLStmt::step()
     }
     else if (res != 0)
     {
-        throw std::runtime_error("MySQLStmt::step: " + std::string(mysql_stmt_error(stmt)));
+        throw std::runtime_error(fmt::format("MySQLStmt::step: {} (Res {})", mysql_stmt_error(stmt), res));
     }
     ++steps;
     return true;
@@ -625,9 +645,8 @@ SharedPointer<Stmt> MySQLStmt::create(const std::weak_ptr<Session>& session, con
     {
         throw std::runtime_error("MySQLStmt::create: " + std::string(mysql_stmt_error(stmt)));
     }
-    auto result = new MySQLStmt(stmt);
-    result->session = session;
-    result->query = query;
+    auto result = new MySQLStmt(stmt, session);
+    result->query = sql;
     result->paramIndexes = params;
     result->setDebugOutput(raw->debugOutput);
     if (raw->debugOutput) dbLogger.debug("MySQLStmt::create: Prepared > " + query);

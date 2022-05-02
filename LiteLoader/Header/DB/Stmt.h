@@ -1,7 +1,7 @@
 #pragma once
 #include "RowSet.h"
 #include "Pointer.h"
-//#define LLDB_DEBUG_MODE
+#define LLDB_DEBUG_MODE
 
 #define IF_ENDBG if (debugOutput)
 
