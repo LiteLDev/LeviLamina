@@ -59,6 +59,7 @@ void run_tests(SharedPointer<Session> sess)
         sess << "INSERT INTO test VALUES(?, ?)", use("qwq"), use(1919810);
         sess << "INSERT INTO test VALUES(?, ?)", use(Row{"liteloader", 233333});
         sess << "INSERT INTO test VALUES(?, ?)", use("liteloader"), use(100);
+        sess << "INSERT INTO test VALUES('$a\"', $b)", use(2147483647, "b");
         auto stmt = sess->prepare("INSERT INTO test VALUES(?, ?)");
         stmt->bind("liteloader")
             .bind(2147483647)

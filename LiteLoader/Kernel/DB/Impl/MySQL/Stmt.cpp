@@ -3,6 +3,7 @@
 #include <DB/Impl/MySQL/Session.h>
 #include <Utils/StringReader.h>
 #include <LoggerAPI.h>
+#define Wptr2MySQLSession(x) ((MySQLSession*)x.lock().get())
 #pragma warning(disable : 26812)
 
 template <>
@@ -57,24 +58,39 @@ MYSQL_TIME any_to(const DB::Any& v)
 namespace DB
 {
 
-inline MySQLSession* Wptr2MySQLSession(const std::weak_ptr<Session>& sess)
-{
-    return (MySQLSession*)sess.lock().get();
-}
-
+/**
+ * @brief Parse the query with named parameters
+ * 
+ * @param query  Query with named parameters
+ * @return std::unordered_map<std::string, int>  Indexes of parameters
+ */
 std::unordered_map<std::string, int> ParseStmtParams(std::string& query)
 {
     StringReader reader(query);
     std::unordered_map<std::string, int> result;
+    bool inSingleQuote = false;
+    bool inDoubleQuote = false;
     bool inString = false;
     int delta = 0;
     int cur = 0;
     while (reader.isValid())
     {
         char c = reader.read();
-        if (c == '\'' || c == '"')
+        if (c == '\'')
         {
-            inString = !inString;
+            if (!inDoubleQuote)
+            {
+                inSingleQuote = true;
+                inString = true;
+            }
+        }
+        else if (c == '"')
+        {
+            if (!inSingleQuote)
+            {
+                inDoubleQuote = true;
+                inString = true;
+            }
         }
         else if (!inString && (c == '?' || c == '$' || c == ':'))
         {
@@ -92,12 +108,18 @@ std::unordered_map<std::string, int> ParseStmtParams(std::string& query)
             result[name] = cur++;
             // Remove the name so that mysql can parse it
             query = query.substr(0, reader.getPos() - name.length() - delta) + query.substr(reader.getPos() - delta);
-            delta += name.size();
+            delta += name.size(); // Update delta
         }
     }
     return result;
 }
 
+/**
+ * @brief Allocate the memory for the buffer in field receiver
+ * 
+ * @param  field  Field to allocate memory for
+ * @return std::pair<std::shared_ptr<char[]>, std::size_t>  Allocated memory and its size
+ */
 std::pair<std::shared_ptr<char[]>, std::size_t> AllocateBuffer(const MYSQL_FIELD& field)
 {
     std::size_t len = 0;
@@ -165,11 +187,23 @@ std::pair<std::shared_ptr<char[]>, std::size_t> AllocateBuffer(const MYSQL_FIELD
     return std::make_pair(std::shared_ptr<char[]>(), len);
 }
 
+/**
+ * @brief Judge if the field is unsigned type
+ * 
+ * @param  field  Field to judge
+ * @return bool   True if the field is unsigned
+ */
 bool IsUnsigned(const MYSQL_FIELD& field)
 {
     return field.flags & UNSIGNED_FLAG;
 }
 
+/**
+ * @brief Convert Receiver to Any
+ * 
+ * @param  receiver  Receiver to convert
+ * @return Any       Converted value
+ */
 Any ReceiverToAny(const Receiver& rec)
 {
     if (rec.isNull || rec.error)
@@ -256,6 +290,7 @@ MySQLStmt::MySQLStmt(MYSQL_STMT* stmt, const std::weak_ptr<Session>& parent)
 int MySQLStmt::getNextParamIndex()
 {
     int result = -1;
+    // Find the first unbound parameter
     for (int i = 0; i < boundIndexes.size() && i < totalParamsCount; i++)
     {
         if (boundIndexes[i] == result + 1)
@@ -269,7 +304,7 @@ int MySQLStmt::getNextParamIndex()
 
 void MySQLStmt::bindResult()
 {
-    metadata = mysql_stmt_result_metadata(stmt);
+    metadata = mysql_stmt_result_metadata(stmt); // Get the result metadata
     if (mysql_stmt_errno(stmt) && !metadata)
     {
         throw std::runtime_error("MySQLStmt::bindResult: Failed to get result metadata" + std::string(mysql_stmt_error(stmt)));
@@ -279,8 +314,11 @@ void MySQLStmt::bindResult()
         IF_ENDBG dbLogger.debug("MySQLStmt::bindResult: No result metadata");
         return;
     }
+    // Set the attribute UPDATE_MAX_LENGTH to true
+    //  so that we can get the max length of the field to allocate the buffer
     bool attr_max_length = true;
     mysql_stmt_attr_set(stmt, STMT_ATTR_UPDATE_MAX_LENGTH, (const void*)&attr_max_length);
+    // Store all the results to client or we can't get the max length of the field later
     mysql_stmt_store_result(stmt);
     auto len = mysql_num_fields(metadata);
     IF_ENDBG dbLogger.debug("MySQLStmt::bindResult: mysql_num_fields: {}", len);
@@ -296,17 +334,17 @@ void MySQLStmt::bindResult()
         auto&& [buffer, len] = AllocateBuffer(field); // Allocate buffer
 
         // Set the binder
-        data.buffer_type = field.type;
-        data.buffer = buffer.get();
-        data.buffer_length = (unsigned long)len;
-        data.is_null = &rec.isNull;
+        data.buffer_type = field.type;             // Set the type
+        data.buffer = buffer.get();                // Set the buffer address
+        data.buffer_length = (unsigned long)len;   // Set the buffer length
+        data.is_null = &rec.isNull;                // Set the isNull receiver
         data.is_unsigned = field.flags & UNSIGNED_FLAG;
-        data.error = &rec.error;
-        data.length = (unsigned long*)&rec.length;
+        data.error = &rec.error;                   // Set the error receiver
+        data.length = (unsigned long*)&rec.length; // Set the length receiver
 
-        rec.field = field;
+        rec.field = field;   // Save the field
         rec.buffer = buffer; // Extend lifetime
-        resultHeader->add(field.name);
+        resultHeader->add(field.name); // Add the field name to the header
         IF_ENDBG dbLogger.debug("MySQLStmt::bindResult: Bind result {} (type {}) at index {}", field.name, (int)field.type, i);
     }
     auto res = mysql_stmt_bind_result(stmt, result.get());
@@ -316,19 +354,20 @@ void MySQLStmt::bindResult()
     }
 }
 
+// TODO: optional auto-execute
 void MySQLStmt::execute()
 {
-    auto res = mysql_stmt_execute(stmt);
+    auto res = mysql_stmt_execute(stmt); // Execute
     if (res)
     {
         if (!session.expired())
-            mysql_rollback(Wptr2MySQLSession(session)->conn);
+            mysql_rollback(Wptr2MySQLSession(session)->conn); // Rollback
         throw std::runtime_error("MySQLStmt::execute: Failed to execute stmt: " + std::string(mysql_stmt_error(stmt)));
     }
-    mysql_commit(Wptr2MySQLSession(session)->conn);
+    mysql_commit(Wptr2MySQLSession(session)->conn); // Commit
     bindResult();
-    if (metadata)
-        step();
+    if (metadata) // If the statement has result
+        step();   // Step to the first result
     paramValues = {};
 }
 
@@ -398,7 +437,7 @@ Stmt& MySQLStmt::bind(const Any& value, int index)
             auto sz = value.value.string->length() + 1;
             param.buffer.reset(new char[sz]);
             strcpy(param.buffer.get(), value.value.string->c_str());
-            param.length = sz;
+            param.length = sz; // Must set the length to the buffer size, otherwise it will be truncated
             params[index].buffer = param.buffer.get();
             params[index].buffer_length = sz;
             params[index].is_null = 0;
@@ -427,7 +466,7 @@ Stmt& MySQLStmt::bind(const Any& value, int index)
             auto sz = blob.size();
             param.buffer.reset(new char[sz]);
             memcpy(param.buffer.get(), blob.data(), sz);
-            param.length = sz;
+            param.length = sz; // Must set the length to the buffer size, otherwise it will be truncated
             params[index].buffer = param.buffer.get();
             params[index].buffer_length = sz;
             params[index].is_null = 0;
@@ -446,7 +485,7 @@ Stmt& MySQLStmt::bind(const Any& value, int index)
         {
             throw std::runtime_error("MySQLStmt::bind: " + std::string(mysql_stmt_error(stmt)));
         }
-        execute();
+        execute(); // TODO: optional auto-execute
     }
     return *this;
 }
@@ -477,9 +516,13 @@ bool MySQLStmt::step()
         fetched = true;
         return false;
     }
-    else if (res != 0)
+    else if (res == MYSQL_DATA_TRUNCATED)
     {
-        throw std::runtime_error(fmt::format("MySQLStmt::step: {} (Res {})", mysql_stmt_error(stmt), res));
+        throw std::runtime_error("MySQLStmt::step: Data truncated!");
+    }
+    else if (res)
+    {
+        throw std::runtime_error(fmt::format("MySQLStmt::step: {}", mysql_stmt_error(stmt)));
     }
     ++steps;
     return true;
@@ -570,6 +613,8 @@ void MySQLStmt::close()
     if (stmt)
     {
         // CRASH!?
+        // I(Jasonzyt) had no idea how to fix it, so I just disabled it
+        //  idk if it will cause any problem like memory leak but it's better than crash lol
         //mysql_stmt_close(stmt);
         //stmt = nullptr;
     }
