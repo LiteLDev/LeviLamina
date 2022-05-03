@@ -20,9 +20,10 @@ protected:
 #else
     bool debugOutput = false;
 #endif
+    std::weak_ptr<Session> self;
+    std::vector<std::weak_ptr<Stmt>> stmtPool; ///< List of statements opened by prepare method.
 
 public:
-    std::vector<std::weak_ptr<Stmt>> stmtPool; ///< List of statements opened by prepare method.
 
     /// Destructor
     virtual ~Session() = default;
@@ -124,6 +125,12 @@ public:
      * @return DBType  The database type
      */
     virtual DBType getType() = 0;
+    /**
+     * @brief Get or set the self pointer
+     * 
+     * @return std::weak_ptr<Session>  self
+     */
+    virtual std::weak_ptr<Session> getOrSetSelf();
 
     /**
      * @brief Operator<< to execute a query.

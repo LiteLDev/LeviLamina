@@ -47,6 +47,16 @@ std::string Session::getLastError() const
     throw std::runtime_error("Session::getLastError: Not implemented");
 }
 
+std::weak_ptr<Session> Session::getOrSetSelf()
+{
+    if (self.expired())
+    {
+        IF_ENDBG dbLogger.debug("Session::getOrSetSelf: `self` expired, trying fetching");
+        return self = getSession(this);
+    }
+    return self;
+}
+
 SharedPointer<Stmt> Session::operator<<(const std::string& query)
 {
     return prepare(query);
@@ -110,6 +120,7 @@ SharedPointer<Session> Session::_Create(DBType type, const ConnParams& params)
     if (session)
     {
         auto result = SharedPointer<Session>(session);
+        result->self = result;
         sessionPool.push_back(result);
         return result;
     }

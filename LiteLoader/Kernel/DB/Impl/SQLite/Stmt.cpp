@@ -6,12 +6,13 @@
 namespace DB
 {
 
-SQLiteStmt::SQLiteStmt(sqlite3_stmt* stmt)
-    : stmt(stmt)
+SQLiteStmt::SQLiteStmt(sqlite3_stmt* stmt, const std::weak_ptr<Session> parent, bool autoExecute)
+    : Stmt(parent, autoExecute)
+    , stmt(stmt)
 {
     IF_ENDBG dbLogger.debug("SQLiteStmt::SQLiteStmt: Constructed! this: {}", (void*)this);
     totalParamsCount = sqlite3_bind_parameter_count(stmt);
-    if (!totalParamsCount) step(); // Execute without params
+    if (!totalParamsCount && autoExecute) execute(); // Execute without params
 }
 
 int SQLiteStmt::getNextParamIndex()
@@ -101,7 +102,7 @@ Stmt& SQLiteStmt::bind(const Any& value, int index)
     {
         std::string e = fmt::format("SQLiteStmt::bind: Failed to bind {} to parameter at index {}",
                                     Any::type2str(type), index);
-        if (auto s = session.lock())
+        if (auto s = parent.lock())
         {
             e += ": " + s->getLastError();
         }
@@ -109,8 +110,8 @@ Stmt& SQLiteStmt::bind(const Any& value, int index)
     }
     boundParamsCount++;
     boundIndexes.push_back(index - 1);
-    if (!getUnboundParams())
-        step(); // Execute the statement if all the parameters are bound
+    if (!getUnboundParams() && autoExecute)
+        execute(); // Execute the statement if all the parameters are bound
     return *this;
 }
 Stmt& SQLiteStmt::bind(const Any& value, const std::string& name)
@@ -146,14 +147,20 @@ Stmt& SQLiteStmt::bind(const Any& value)
     return bind(value, getNextParamIndex());
 }
 
+Stmt& SQLiteStmt::execute()
+{
+    step();
+    return *this;
+}
+
 bool SQLiteStmt::step()
 {
     int res = sqlite3_step(stmt);
     if (res == SQLITE_ROW || res == SQLITE_DONE)
     {
-        if (!session.expired() && !executed)
+        if (!parent.expired() && !executed)
         {
-            auto s = session.lock();
+            auto s = parent.lock();
             affectedRowCount = s->getAffectedRows();
             insertRowId = s->getLastInsertId();
             executed = true;
@@ -370,7 +377,7 @@ DBType SQLiteStmt::getType() const
     return DBType::SQLite;
 }
 
-SharedPointer<Stmt> SQLiteStmt::create(const std::weak_ptr<Session>& session, const std::string& sql)
+SharedPointer<Stmt> SQLiteStmt::create(const std::weak_ptr<Session>& session, const std::string& sql, bool autoExecute)
 {
     auto s = session.lock();
     if (!s || s->getType() != DBType::SQLite)
@@ -384,8 +391,8 @@ SharedPointer<Stmt> SQLiteStmt::create(const std::weak_ptr<Session>& session, co
     {
         throw std::runtime_error("SQLiteStmt::create: " + s->getLastError());
     }
-    auto result = new SQLiteStmt(stmt);
-    result->session = session;
+    auto result = new SQLiteStmt(stmt, session, autoExecute);
+    result->parent = session;
     result->setDebugOutput(raw->debugOutput);
     if (raw->debugOutput) dbLogger.debug("SQLiteStmt::create: Prepared > " + sql);
     auto shared = SharedPointer<Stmt>(result);

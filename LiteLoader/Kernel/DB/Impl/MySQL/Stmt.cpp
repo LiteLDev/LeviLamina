@@ -245,7 +245,7 @@ Any ReceiverToAny(const Receiver& rec)
         case MYSQL_TYPE_TIMESTAMP:
             return Any();
             break; // TODO: return Any(rec.buffer.get());
-		case MYSQL_TYPE_STRING:
+        case MYSQL_TYPE_STRING:
         case MYSQL_TYPE_VAR_STRING:
         case MYSQL_TYPE_VARCHAR:
         case MYSQL_TYPE_SET:
@@ -274,16 +274,17 @@ Any ReceiverToAny(const Receiver& rec)
     }
 }
 
-MySQLStmt::MySQLStmt(MYSQL_STMT* stmt, const std::weak_ptr<Session>& parent)
-    : stmt(stmt)
+MySQLStmt::MySQLStmt(MYSQL_STMT* stmt, const std::weak_ptr<Session>& parent, bool autoExecute)
+    : Stmt(parent, autoExecute)
+    , stmt(stmt)
 {
-    this->session = parent;
+    this->parent = parent;
     totalParamsCount = mysql_stmt_param_count(stmt);
     if (totalParamsCount)
         params.reset(new MYSQL_BIND[totalParamsCount]);
     else
     {
-        execute(); // Execute without params
+        if (autoExecute) execute(); // Execute without params
     }
 }
 
@@ -352,23 +353,6 @@ void MySQLStmt::bindResult()
     {
         throw std::runtime_error("MySQLStmt::bindResult: Failed to bind result: " + std::string(mysql_stmt_error(stmt)));
     }
-}
-
-// TODO: optional auto-execute
-void MySQLStmt::execute()
-{
-    auto res = mysql_stmt_execute(stmt); // Execute
-    if (res)
-    {
-        if (!session.expired())
-            mysql_rollback(Wptr2MySQLSession(session)->conn); // Rollback
-        throw std::runtime_error("MySQLStmt::execute: Failed to execute stmt: " + std::string(mysql_stmt_error(stmt)));
-    }
-    mysql_commit(Wptr2MySQLSession(session)->conn); // Commit
-    bindResult();
-    if (metadata) // If the statement has result
-        step();   // Step to the first result
-    paramValues = {};
 }
 
 MySQLStmt::~MySQLStmt()
@@ -485,7 +469,7 @@ Stmt& MySQLStmt::bind(const Any& value, int index)
         {
             throw std::runtime_error("MySQLStmt::bind: " + std::string(mysql_stmt_error(stmt)));
         }
-        execute(); // TODO: optional auto-execute
+        if (autoExecute) execute();
     }
     return *this;
 }
@@ -502,6 +486,23 @@ Stmt& MySQLStmt::bind(const Any& value, const std::string& name)
 Stmt& MySQLStmt::bind(const Any& value)
 {
     return bind(value, getNextParamIndex());
+}
+
+Stmt& MySQLStmt::execute()
+{
+    auto res = mysql_stmt_execute(stmt); // Execute
+    if (res)
+    {
+        if (!parent.expired())
+            mysql_rollback(Wptr2MySQLSession(parent)->conn); // Rollback
+        throw std::runtime_error("MySQLStmt::execute: Failed to execute stmt: " + std::string(mysql_stmt_error(stmt)));
+    }
+    mysql_commit(Wptr2MySQLSession(parent)->conn); // Commit
+    bindResult();
+    if (metadata) // If the statement has result
+        step();   // Step to the first result
+    paramValues = {};
+    return *this;
 }
 
 bool MySQLStmt::step()
@@ -599,7 +600,7 @@ Stmt& MySQLStmt::clear()
         throw std::runtime_error("MySQLStmt::clear: No query");
     }
     close();
-    *this = *(MySQLStmt*)create(session, query).get();
+    *this = *(MySQLStmt*)create(parent, query).get();
     return *this;
 }
 
@@ -661,7 +662,7 @@ DBType MySQLStmt::getType() const
     return DBType::MySQL;
 }
 
-SharedPointer<Stmt> MySQLStmt::create(const std::weak_ptr<Session>& session, const std::string& sql)
+SharedPointer<Stmt> MySQLStmt::create(const std::weak_ptr<Session>& session, const std::string& sql, bool autoExecute)
 {
     auto& s = session.lock();
     if (!s || s->getType() != DBType::MySQL)
@@ -690,7 +691,7 @@ SharedPointer<Stmt> MySQLStmt::create(const std::weak_ptr<Session>& session, con
     {
         throw std::runtime_error("MySQLStmt::create: " + std::string(mysql_stmt_error(stmt)));
     }
-    auto result = new MySQLStmt(stmt, session);
+    auto result = new MySQLStmt(stmt, session, autoExecute);
     result->query = sql;
     result->paramIndexes = params;
     result->setDebugOutput(raw->debugOutput);

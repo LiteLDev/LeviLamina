@@ -71,17 +71,22 @@ protected:
 #else
     bool debugOutput = false;
 #endif
-    std::weak_ptr<Session> session; ///< Parent session
+    bool autoExecute = false;      ///< Whether to automatically execute the statement on bind
+    std::weak_ptr<Session> parent; ///< Parent session
     std::weak_ptr<Stmt> self;
 
 public:
+    Stmt(const std::weak_ptr<Session>& parent, bool autoExecute = false);
+
     virtual ~Stmt();
+
     /**
      * @brief Turn on/off debug output.
      *
      * @param enable  Enable or not
      */
     LIAPI void setDebugOutput(bool enable);
+
     /**
      * @brief Bind a value to a statement parameter.
      *
@@ -93,6 +98,7 @@ public:
      * @see SQLiteStmt::bind
      */
     virtual Stmt& bind(const Any& value, int index) = 0;
+
     /**
      * @brief Bind a value to a statement parameter.
      *
@@ -104,6 +110,7 @@ public:
      * @see SQLiteStmt::bind
      */
     virtual Stmt& bind(const Any& value, const std::string& name) = 0;
+
     /**
      * @brief Bind a value to the next statement parameter.
      *
@@ -114,6 +121,15 @@ public:
      * @see SQLiteStmt::bind
      */
     virtual Stmt& bind(const Any& value) = 0;
+
+    /**
+     * @brief Execute the statement(after binding all the parameters)
+     * 
+     * @return Stmt&  *this
+     * @note   If `this->autoExecute` is true, there is no need to call this method
+     */
+    virtual Stmt& execute() = 0;
+
     /**
      * @brief Step to the next row(not fetch).
      *
@@ -123,6 +139,7 @@ public:
      * @see SQLiteStmt::step
      */
     virtual bool step() = 0;
+
     /**
      * @brief Step to the next row(=step).
      *
@@ -132,6 +149,7 @@ public:
      * @see SQLiteStmt::next
      */
     virtual bool next() = 0;
+
     /**
      * @brief Get weather all the rows have been fetched.
      *
@@ -141,26 +159,36 @@ public:
      * @see SQLiteStmt::done
      */
     virtual bool done() = 0;
+
     /**
-     * @brief Fetch the next row.
+     * @brief Fetch the current row.
      *
-     * @return Row  The next row
+     * @return Row  The current row
      * @throws std::runtime_error  If there is no row to fetch
      *
      * @par Example
      * @code
-     * auto& stmt = sess.prepare("SELECT * FROM table");
-     * while (stmt.step()) {
-     *     auto row = stmt.fetch();
+     * auto stmt = sess->prepare("SELECT * FROM table");
+     * while (stmt->step()) {
+     *     auto row = stmt->fetch();
      *     // Do something with the row
      * }
-     * stmt.close();
+     * stmt->close();
      * @endcode
      *
      * @par Impletementation
      * @see SQLiteStmt::fetch
      */
     virtual Row fetch() = 0;
+
+    /**
+     * @brief Fetch the current row.
+     * 
+     * @param[out] row    The current row
+     * @return     Stmt&  *this
+     */
+    virtual Stmt& fetch(Row& row);
+
     /**
      * @brief Fetch all the result rows.
      *
@@ -170,18 +198,19 @@ public:
      *
      * @par Example
      * @code
-     * auto& stmt = sess.prepare("SELECT * FROM table");
-     * stmt.fetchAll([](const Row& row) {
-     *     // Do something with the row
-     *     return true;
-     * });
-     * stmt.close();
+     * sess->prepare("SELECT * FROM table")
+     *     ->fetchAll([](const Row& row) {
+     *         // Do something with the row
+     *         return true;
+     *       })
+     *     ->close();
      * @endcode
      *
      * @par Impletementation
      * @see SQLiteStmt::fetchAll
      */
-    virtual Stmt& fetchAll(std::function<bool(const Row&)> cb) = 0;
+    virtual Stmt& fetchAll(std::function<bool(const Row&)> cb);
+
     /**
      * @brief Fetch all the result rows.
      *
@@ -191,6 +220,15 @@ public:
      * @see SQLiteStmt::fetchAll
      */
     virtual ResultSet fetchAll() = 0;
+
+    /**
+     * @brief Fetch all the result rows.
+     *
+     * @param[out] rows   The result set
+     * @return     Stmt&  *this
+     */
+    virtual Stmt& fetchAll(ResultSet& rows);
+
     /**
      * @brief Re-execute the statement(keep the currently bound value to re-excute).
      *
@@ -201,6 +239,7 @@ public:
      * @see SQLiteStmt::reexec
      */
     virtual Stmt& reexec() = 0;
+
     /**
      * @brief Clear all the bound values.
      *
@@ -210,6 +249,7 @@ public:
      * @see SQLiteStmt::clear
      */
     virtual Stmt& clear() = 0;
+
     /**
      * @brief Close the statement.
      *
@@ -218,6 +258,7 @@ public:
      * @see SQLiteStmt::close
      */
     virtual void close() = 0;
+
     /**
      * @brief Get the number of rows affected by the statement.
      *
@@ -228,6 +269,7 @@ public:
      * @see SQLiteStmt::getAffectedRows
      */
     virtual uint64_t getAffectedRows() const = 0;
+
     /**
      * @brief Get the insert id of the statement
      *
@@ -239,6 +281,7 @@ public:
      * @see SQLiteStmt::getInsertId
      */
     virtual uint64_t getInsertId() const = 0;
+
     /**
      * @brief Get the number of the unbound parameters.
      *
@@ -248,6 +291,7 @@ public:
      * @see SQLiteStmt::getUnboundParams
      */
     virtual int getUnboundParams() const = 0;
+
     /**
      * @brief Get the number of the bound parameters.
      *
@@ -257,6 +301,7 @@ public:
      * @see SQLiteStmt::getBoundParams
      */
     virtual int getBoundParams() const = 0;
+
     /**
      * @brief Get the number of parameters.
      *
@@ -266,18 +311,21 @@ public:
      * @see SQLiteStmt::getParamsCount
      */
     virtual int getParamsCount() const = 0;
+
     /**
      * @brief Get the session.
      *
      * @return std::weak_ptr<Session>  The session ptr
      */
-    virtual std::weak_ptr<Session> getSession() const;
+    virtual std::weak_ptr<Session> getParent() const;
+
     /**
      * @brief Get the shared pointer point to this
      * 
      * @return SharedPointer<Stmt>  The ptr
      */
     virtual SharedPointer<Stmt> getSharedPointer() const;
+
     /**
      * @brief Get the session type
      *
@@ -287,6 +335,15 @@ public:
      * @see SQLiteStmt::getType
      */
     virtual DBType getType() const = 0;
+
+
+    /**
+     * @brief Fetch the current row(internal).
+     * 
+     * @return Row  The current row
+     */
+    //virtual Row _Fetch() = 0;
+
 
     /**
      * @brief Operator, to bind single values.
@@ -403,6 +460,16 @@ public:
     {
         if (!done()) i.value = fetch();
         return getSharedPointer();
+    }
+
+    /**
+     * @brief Operator-> to implement better API.
+     * 
+     * @return 
+     */
+    inline Stmt* operator->()
+    {
+        return this;
     }
 };
 

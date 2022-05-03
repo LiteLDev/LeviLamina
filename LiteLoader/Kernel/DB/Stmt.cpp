@@ -3,6 +3,13 @@
 namespace DB
 {
 
+Stmt::Stmt(const std::weak_ptr<Session>& parent, bool autoExecute)
+    : parent(parent)
+    , autoExecute(autoExecute)
+{
+}
+
+
 Stmt::~Stmt()
 {
 }
@@ -12,9 +19,37 @@ void Stmt::setDebugOutput(bool enable)
     debugOutput = enable;
 }
 
-std::weak_ptr<Session> Stmt::getSession() const
+Stmt& Stmt::fetch(Row& row)
 {
-    return session;
+    row = fetch();
+    return *this;
+}
+
+Stmt& Stmt::fetchAll(std::function<bool(const Row&)> cb)
+{
+    if (!done())
+    {
+        do
+        {
+            if (!cb(fetch()))
+            {
+                IF_ENDBG dbLogger.debug("Stmt::fetchAll: Stopped fetching");
+                break;
+            }
+        } while (step());
+    }
+    return *this;
+}
+
+Stmt& Stmt::fetchAll(ResultSet& result)
+{
+    result = fetchAll();
+    return *this;
+}
+
+std::weak_ptr<Session> Stmt::getParent() const
+{
+    return parent;
 }
 
 SharedPointer<Stmt> Stmt::getSharedPointer() const

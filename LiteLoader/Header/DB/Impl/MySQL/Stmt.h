@@ -40,16 +40,16 @@ class MySQLStmt : public Stmt
     int steps = 0;
     bool fetched = false;
 
-    MySQLStmt(MYSQL_STMT* stmt, const std::weak_ptr<Session>& parent);
+    MySQLStmt(MYSQL_STMT* stmt, const std::weak_ptr<Session>& parent, bool autoExecute = false);
     int getNextParamIndex();
     void bindResult();
-    void execute();
 
 public:
     ~MySQLStmt();
     Stmt& bind(const Any& value, int index);
     Stmt& bind(const Any& value, const std::string& name);
     Stmt& bind(const Any& value);
+    Stmt& execute();
     bool step();
     bool next();
     bool done();
@@ -66,7 +66,7 @@ public:
     int getParamsCount() const;
     DBType getType() const;
 
-    LIAPI static SharedPointer<Stmt> create(const std::weak_ptr<Session>& sess, const std::string& sql);
+    LIAPI static SharedPointer<Stmt> create(const std::weak_ptr<Session>& sess, const std::string& sql, bool autoExecute = false);
 };
 
 } // namespace DB

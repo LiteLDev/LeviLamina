@@ -190,7 +190,7 @@ Session& MySQLSession::query(const std::string& query, std::function<bool(const 
 
 SharedPointer<Stmt> MySQLSession::prepare(const std::string& query)
 {
-    auto& stmt = MySQLStmt::create(Session::getSession(this), query);
+    auto& stmt = MySQLStmt::create(getOrSetSelf(), query);
     stmtPool.push_back(stmt);
     return stmt;
 }

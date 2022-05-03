@@ -98,7 +98,7 @@ Session& SQLiteSession::query(const std::string& query, std::function<bool(const
 
 SharedPointer<Stmt> SQLiteSession::prepare(const std::string& query)
 {
-    auto& stmt = SQLiteStmt::create(Session::getSession(this), query);
+    auto& stmt = SQLiteStmt::create(getOrSetSelf(), query);
     stmtPool.push_back(stmt);
     return stmt;
 }

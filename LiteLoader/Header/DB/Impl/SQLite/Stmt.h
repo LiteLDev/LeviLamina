@@ -22,7 +22,7 @@ class SQLiteStmt : public Stmt
     bool executed = false;
     std::vector<int> boundIndexes;
 
-    SQLiteStmt(sqlite3_stmt* stmt);
+    SQLiteStmt(sqlite3_stmt* stmt, const std::weak_ptr<Session> parent, bool autoExecute);
     int getNextParamIndex();
     void fetchResultHeader();
 
@@ -31,6 +31,7 @@ public:
     Stmt& bind(const Any& value, int index);
     Stmt& bind(const Any& value, const std::string& name);
     Stmt& bind(const Any& value);
+    Stmt& execute();
     bool step();
     bool next();
     bool done();
@@ -51,7 +52,7 @@ public:
     int getParamsCount() const;
     DBType getType() const;
 
-    LIAPI static SharedPointer<Stmt> create(const std::weak_ptr<Session>& sess, const std::string& sql);
+    LIAPI static SharedPointer<Stmt> create(const std::weak_ptr<Session>& sess, const std::string& sql, bool autoExecute = false);
 };
 
 } // namespace DB
