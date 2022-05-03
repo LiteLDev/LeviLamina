@@ -46,11 +46,16 @@ struct NbtType
         return std::move(uptr);
     }
     template <typename RTN>
-    inline RTN get();
+    inline RTN get() = delete;
     template <>
     inline CompoundTag const* get()
     {
         return ptr;
+    };
+    template <>
+    inline CompoundTag* get()
+    {
+        return const_cast<CompoundTag*>(ptr);
     };
     template <>
     inline std::unique_ptr<CompoundTag> get()
@@ -79,11 +84,16 @@ struct ItemType
         return std::move(uptr);
     }
     template <typename RTN>
-    inline RTN get();
+    inline RTN get() = delete;
     template <>
     inline ItemStack const* get()
     {
         return ptr;
+    };
+    template <>
+    inline ItemStack* get()
+    {
+        return const_cast<ItemStack*>(ptr);
     };
     template <>
     inline std::unique_ptr<ItemStack> get()
@@ -260,7 +270,7 @@ template <typename RTN>
 RTN extractValue(Value&& value)
 {
     using Type = std::remove_const_t<std::remove_reference_t<RTN>>;
-    static_assert(is_one_of_v<Type, ElementType> || std::is_assignable_v<NumberType, RTN> || std::is_assignable_v<NbtType, RTN> || std::is_assignable_v<BlockType, RTN> || std::is_assignable_v<ItemType, RTN>);
+    static_assert(is_one_of_v<Type, ElementType> || std::is_assignable_v<NumberType, RTN> || std::is_assignable_v<NbtType, RTN> || std::is_assignable_v<BlockType, RTN> || std::is_assignable_v<ItemType, RTN> || std::is_base_of_v<Player, std::remove_pointer_t<RTN>> || std::is_base_of_v<Actor, std::remove_pointer_t<RTN>>);
     if constexpr (is_one_of_v<Type, ElementType>)
         return std::get<Type>(value);
     else if constexpr (std::is_assignable_v<NumberType, RTN>)
@@ -271,6 +281,10 @@ RTN extractValue(Value&& value)
         return std::get<ItemType>(value).get<Type>();
     else if constexpr (std::is_assignable_v<BlockType, RTN>)
         return std::get<BlockType>(value).get<Type>();
+    else if constexpr (std::is_base_of_v<Player, std::remove_pointer_t<RTN>>)
+        return static_cast<RTN>(std::get<Player*>(value));
+    else if constexpr (std::is_base_of_v<Actor, std::remove_pointer_t<RTN>>)
+        return static_cast<RTN>(std::get<Actor*>(value));
     else
         throw std::exception(fmt::format(__FUNCTION__ " - Unsupported Type: {}", typeid(RTN).name()).c_str());
 }
@@ -320,7 +334,7 @@ template <typename T>
 ValueType packValue(T val)
 {
     using RawType = std::remove_reference_t<std::remove_const_t<T>>;
-    static_assert(is_one_of_v<RawType, ElementType> || std::is_assignable_v<NumberType, T> || std::is_assignable_v<NbtType, T> || std::is_assignable_v<BlockType, T> || std::is_assignable_v<ItemType, T>);
+    static_assert(is_one_of_v<RawType, ElementType> || std::is_assignable_v<NumberType, T> || std::is_assignable_v<NbtType, T> || std::is_assignable_v<BlockType, T> || std::is_assignable_v<ItemType, T> || std::is_base_of_v<Player, std::remove_pointer_t<T>> || std::is_base_of_v<Actor, std::remove_pointer_t<T>>);
     if constexpr (is_one_of_v<RawType, ElementType>)
         return ValueType(std::forward<T>(val));
     else if constexpr (std::is_assignable_v<NumberType, T>)
@@ -331,6 +345,10 @@ ValueType packValue(T val)
         return ValueType(ItemType(std::forward<T>(val)));
     else if constexpr (std::is_assignable_v<BlockType, T>)
         return ValueType(BlockType(std::forward<T>(val)));
+    else if constexpr (std::is_base_of_v<Player, std::remove_pointer_t<T>>)
+        return ValueType(static_cast<Player*>(std::forward<T>(val)));
+    else if constexpr (std::is_base_of_v<Actor, std::remove_pointer_t<T>>)
+        return ValueType(static_cast<Actor*>(std::forward<T>(val)));
     throw std::exception(fmt::format(__FUNCTION__ " - Unsupported Type: {}", typeid(T).name()).c_str());
     return ValueType();
 }
@@ -437,22 +455,6 @@ LIAPI extern CallbackFn const EMPTY_FUNC;
 LIAPI bool exportFunc(std::string const& nameSpace, std::string const& funcName, CallbackFn&& callback, HMODULE handler = GetCurrentModule());
 LIAPI CallbackFn const& importFunc(std::string const& nameSpace, std::string const& funcName);
 
-template <typename RTN, typename... Args>
-inline bool _importAs(std::string const& nameSpace, std::string const& funcName, std::function<RTN(Args...)>& func)
-{
-    func = [nameSpace, funcName](Args... args) -> RTN {
-        auto& rawFunc = importFunc(nameSpace, funcName);
-        if (!rawFunc)
-        {
-            logger.error("Fail to import! Function [{}::{}] has not been exported", nameSpace, funcName);
-            return RTN();
-        }
-        std::vector<ValueType> params = {pack(std::forward<Args>(args))...};
-        ValueType&& res = rawFunc(std::move(params));
-        return extract<RTN>(std::move(res));
-    };
-    return true;
-}
 
 inline ValueType _expandArg(std::vector<ValueType>& args, int& index)
 {
@@ -476,6 +478,23 @@ LIAPI bool hasFunc(std::string const& nameSpace, std::string const& funcName);
 LIAPI bool removeFunc(std::string const& nameSpace, std::string const& funcName);
 LIAPI int removeNameSpace(std::string const& nameSpace);
 LIAPI int removeFuncs(std::vector<std::pair<std::string, std::string>> funcs);
+
+template <typename RTN, typename... Args>
+inline bool _importAs(std::string const& nameSpace, std::string const& funcName, std::function<RTN(Args...)>& func)
+{
+    func = [nameSpace, funcName](Args... args) -> RTN {
+        auto& rawFunc = importFunc(nameSpace, funcName);
+        if (!rawFunc)
+        {
+            logger.error("Fail to import! Function [{}::{}] has not been exported", nameSpace, funcName);
+            return RTN();
+        }
+        std::vector<ValueType> params = {pack(std::forward<Args>(args))...};
+        ValueType&& res = rawFunc(std::move(params));
+        return extract<RTN>(std::move(res));
+    };
+    return true;
+}
 
 template <typename CB, typename Func = std::conditional_t<std::is_function_v<CB>, std::function<CB>, CB>>
 inline Func importAs(std::string const& nameSpace, std::string const& funcName)
