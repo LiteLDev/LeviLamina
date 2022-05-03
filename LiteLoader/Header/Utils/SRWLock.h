@@ -4,8 +4,8 @@
 
 class SRWLock
 {
-    bool inited;
-    SRWLOCK srwlock;
+    bool inited = false;
+    SRWLOCK srwlock{};
 
 public:
     LIAPI SRWLock();

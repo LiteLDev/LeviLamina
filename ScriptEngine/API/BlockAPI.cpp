@@ -44,33 +44,33 @@ ClassDefine<BlockClass> BlockClassBuilder =
 
 //////////////////// Classes ////////////////////
 
-BlockClass::BlockClass(Block *p)
-    :ScriptClass(ScriptClass::ConstructFromCpp<BlockClass>{}),block(p)
+BlockClass::BlockClass(Block const* p)
+    :ScriptClass(ScriptClass::ConstructFromCpp<BlockClass>{}),block(const_cast<Block*>(p))
 {
     preloadData({ 0,0,0 }, -1);
 }
 
-BlockClass::BlockClass(Block *p, BlockPos bp, int dim)
-    :ScriptClass(ScriptClass::ConstructFromCpp<BlockClass>{}),block(p)
+BlockClass::BlockClass(Block const* p, BlockPos bp, int dim)
+    :ScriptClass(ScriptClass::ConstructFromCpp<BlockClass>{}),block(const_cast<Block*>(p))
 {
     preloadData(bp, dim);
 }
 
 //生成函数
-Local<Object> BlockClass::newBlock(Block *p, BlockPos *pos, int dim)
+Local<Object> BlockClass::newBlock(Block const* p, BlockPos const* pos, int dim)
 {
     auto newp = new BlockClass(p,*pos,dim);
     return newp->getScriptObject();
 }
-Local<Object> BlockClass::newBlock(BlockPos* pos, int dim)
+Local<Object> BlockClass::newBlock(BlockPos const* pos, int dim)
 {
-    return BlockClass::newBlock(Level::getBlock(pos,dim), pos, dim);
+    return BlockClass::newBlock(Level::getBlock(const_cast<BlockPos*>(pos), dim), pos, dim);
 }
 Local<Object> BlockClass::newBlock(const BlockPos& pos, int dim)
 {
     return newBlock((BlockPos*) & pos, dim);
 }
-Local<Object> BlockClass::newBlock(Block *p, BlockPos *pos, BlockSource *bs)
+Local<Object> BlockClass::newBlock(Block const* p, BlockPos const* pos, BlockSource const* bs)
 {
     auto newp = new BlockClass(p,*pos,bs->getDimensionId());
     return newp->getScriptObject();

@@ -141,6 +141,27 @@ LLSE提供了接口 import 来导入其他插件已经导出的函数。
 
 <br>
 
+#### 远程调用参数类型对照
+
+| C++ | ScriptEngine | .Net |
+| -- | -- | -- | 
+| nullptr_t | Null | - | 
+| bool | Boolean | - | 
+| __int64 | Number | - | 
+| double | Number | - | 
+| string | String | - | 
+| vector | Array | - | 
+| Actor* | Entity | - | 
+| Player* | Player | - | 
+| ItemStack* | Item | - | 
+| Block* | Block | - | 
+| BlockActor* | BlockActor | - | 
+| Container* | Container | - | 
+| Vec3 | FloatPos | - | 
+| BlockPos | IntPos | - | 
+| CompoundTag* | NBTCompound | - | 
+| std::unique_ptr<CompoundTag> | NBTCompound | - |
+
 #### 远程调用函数举例说明
 
 比如，有一个插件导出了某个函数，函数的导出名称为 AAA_Welcome  

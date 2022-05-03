@@ -33,5 +33,5 @@ bool BlockActor::setNbt(CompoundTag* nbt) {
 
 bool BlockActor::setNbt(CompoundTag* nbt, BlockSource* bs) {
     auto res = setNbt(nbt);
-    return res && refreshData(bs);
+    return res && (!bs || refreshData(bs));
 }
