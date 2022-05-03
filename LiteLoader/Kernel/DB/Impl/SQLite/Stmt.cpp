@@ -284,7 +284,7 @@ ResultSet SQLiteStmt::fetchAll()
     return result;
 }
 
-Stmt& SQLiteStmt::reexec()
+Stmt& SQLiteStmt::reset()
 {
     auto res = sqlite3_reset(stmt);
     if (res != SQLITE_OK)
@@ -298,6 +298,12 @@ Stmt& SQLiteStmt::reexec()
     executed = false;
     affectedRowCount = -1;
     insertRowId = -1;
+    return *this;
+}
+
+Stmt& SQLiteStmt::reexec()
+{
+    reset();
     step(); // Execute
     return *this;
 }

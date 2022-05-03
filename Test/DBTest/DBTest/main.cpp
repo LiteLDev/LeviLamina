@@ -63,17 +63,19 @@ void run_tests(SharedPointer<Session> sess)
         auto stmt = sess->prepare("INSERT INTO test VALUES(?, ?)");
         stmt->bind("liteloader")
             ->bind(2147483647)
+            ->reset()
+            ->execute()
             ->reexec()
             ->reexec();
         sess->query("SELECT * FROM test;");
         stmt = sess->prepare("SELECT * FROM test WHERE a = $A");
         // The first parameter is value, the second is key!
-        stmt->bind("liteloader", "A");
+        stmt->bind("liteloader", "A")->execute();
         do {
             log_row(stmt->fetch());
         } while (stmt->next());
         stmt->clear();
-        stmt->bind("qwq", "A");
+        stmt->bind("qwq", "A")->execute();
         do {
             log_row(stmt->fetch());
         } while (stmt->next());
@@ -87,6 +89,7 @@ void run_tests(SharedPointer<Session> sess)
         log_result_set(set);
         sess->prepare("SELECT * FROM test WHERE a = $A")
             ->bind("liteloader", "A")
+            ->execute()
             ->fetchAll([](const Row& row) {
                 log_row(row);
                 return true;

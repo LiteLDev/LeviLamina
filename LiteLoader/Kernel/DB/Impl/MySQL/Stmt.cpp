@@ -583,12 +583,23 @@ ResultSet MySQLStmt::fetchAll()
     return result;
 }
 
-Stmt& MySQLStmt::reexec()
+Stmt& MySQLStmt::reset()
 {
     if (mysql_stmt_reset(stmt))
     {
         throw std::runtime_error("MySQLStmt::reexec: " + std::string(mysql_stmt_error(stmt)));
     }
+    result.reset();
+    resultHeader.reset();
+    resultValues = {};
+    steps = 0;
+    fetched = false;
+    return *this;
+}
+
+Stmt& MySQLStmt::reexec()
+{
+    reset();
     execute();
     return *this;
 }
@@ -619,9 +630,9 @@ void MySQLStmt::close()
         //mysql_stmt_close(stmt);
         //stmt = nullptr;
     }
-    if (params) params.reset();
-    if (result) result.reset();
-    if (resultHeader) resultHeader.reset();
+    params.reset();
+    result.reset();
+    resultHeader.reset();
     totalParamsCount = 0;
     boundParamsCount = 0;
     paramValues  = {};

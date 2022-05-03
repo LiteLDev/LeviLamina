@@ -84,8 +84,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y ..\..\..\x64\Release\LiteLoader.dll $(LocalDebuggerWorkingDirectory)LiteLoader.dll
-copy /Y $(SolutionDir)x64\Release\DBTest.dll $(LocalDebuggerWorkingDirectory)plugins\DBTest.dll</Command>
+      <Command>copy /Y ..\..\..\x64\Release\LiteLoader.dll $(LocalDebuggerWorkingDirectory)\LiteLoader.dll
+copy /Y $(SolutionDir)x64\Release\DBTest.dll $(LocalDebuggerWorkingDirectory)\plugins\DBTest.dll</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

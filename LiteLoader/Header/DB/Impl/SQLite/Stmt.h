@@ -38,6 +38,7 @@ public:
     Row fetch();
     Stmt& fetchAll(std::function<bool(const Row&)> cb);
     ResultSet fetchAll();
+    Stmt& reset();
     /**
      * @see Stmt::reexec for details
      * @see https://www.sqlite.org/c3ref/reexec.html

@@ -230,11 +230,25 @@ public:
     virtual Stmt& fetchAll(ResultSet& rows);
 
     /**
+     * @brief Reset the statement from executing state to perpared state
+     * 
+     * @return Stmt& *this
+     * 
+     * @par Note
+     * Different between `reset()`, `reexec` and `clear()`:
+     * - `reset()` : Reset the statement to the prepared state
+     * - `reexec()`: Reset the statement to the prepared state and execute it
+     * - `clear()` : Reset the statement to the prepared state and clear the parameters, but not execute it
+     */
+    virtual Stmt& reset() = 0;
+
+    /**
      * @brief Re-execute the statement(keep the currently bound value to re-excute).
      *
      * @return Stmt&  *this
      * @note   If you want to clear the bound value, use clear() instead.
-     *
+     * @see    Stmt::reset
+     * 
      * @par Impletementation
      * @see SQLiteStmt::reexec
      */
@@ -244,6 +258,7 @@ public:
      * @brief Clear all the bound values.
      *
      * @return Stmt&  *this
+     * @see    Stmt::reset
      *
      * @par Impletementation
      * @see SQLiteStmt::clear
