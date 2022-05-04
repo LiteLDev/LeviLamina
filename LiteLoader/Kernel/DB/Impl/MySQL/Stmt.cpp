@@ -83,6 +83,11 @@ std::unordered_map<std::string, int> ParseStmtParams(std::string& query)
                 inSingleQuote = true;
                 inString = true;
             }
+            else if (inSingleQuote)
+            {
+                inSingleQuote = false;
+                inString = false;
+            }
         }
         else if (c == '"')
         {
@@ -90,6 +95,11 @@ std::unordered_map<std::string, int> ParseStmtParams(std::string& query)
             {
                 inDoubleQuote = true;
                 inString = true;
+            }
+            else if (inDoubleQuote)
+            {
+                inDoubleQuote = false;
+                inString = false;
             }
         }
         else if (!inString && (c == '?' || c == '$' || c == ':'))
@@ -587,7 +597,7 @@ Stmt& MySQLStmt::reset()
 {
     if (mysql_stmt_reset(stmt))
     {
-        throw std::runtime_error("MySQLStmt::reexec: " + std::string(mysql_stmt_error(stmt)));
+        throw std::runtime_error("MySQLStmt::reset: " + std::string(mysql_stmt_error(stmt)));
     }
     result.reset();
     resultHeader.reset();

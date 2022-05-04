@@ -81,6 +81,7 @@ public:
      * @brief Prepare a query.
      *
      * @param  query                The query to execute
+     * @param  autoExecute          Whether to execute the statement automatically after binding all parameters
      * @return SharedPointer<Stmt>  The statement
      * @par Example
      * @code
@@ -90,7 +91,7 @@ public:
      * stmt.close();
      * @endcode
      */
-    virtual SharedPointer<Stmt> prepare(const std::string& query) = 0;
+    virtual SharedPointer<Stmt> prepare(const std::string& query, bool autoExecute = false) = 0;
     /**
      * @brief Get the last error message
      *

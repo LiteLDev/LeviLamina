@@ -18,7 +18,7 @@ public:
     void open(const ConnParams& params);
     bool execute(const std::string& query);
     Session& query(const std::string& query, std::function<bool(const Row&)> callback);
-    SharedPointer<Stmt> prepare(const std::string& query);
+    SharedPointer<Stmt> prepare(const std::string& query, bool autoExecute = false);
     std::string getLastError() const;
     uint64_t getAffectedRows() const;
     uint64_t getLastInsertId() const;

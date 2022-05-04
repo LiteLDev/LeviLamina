@@ -96,9 +96,9 @@ Session& SQLiteSession::query(const std::string& query, std::function<bool(const
     return *this;
 }
 
-SharedPointer<Stmt> SQLiteSession::prepare(const std::string& query)
+SharedPointer<Stmt> SQLiteSession::prepare(const std::string& query, bool autoExecute)
 {
-    auto& stmt = SQLiteStmt::create(getOrSetSelf(), query, true);
+    auto& stmt = SQLiteStmt::create(getOrSetSelf(), query, autoExecute);
     stmtPool.push_back(stmt);
     return stmt;
 }
@@ -155,7 +155,7 @@ DBType SQLiteSession::getType()
 
 SharedPointer<Stmt> SQLiteSession::operator<<(const std::string& query)
 {
-    return prepare(query);
+    return prepare(query, true);
 }
 
 } // namespace DB

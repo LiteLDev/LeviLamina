@@ -59,16 +59,21 @@ void run_tests(SharedPointer<Session> sess)
         sess << "INSERT INTO test VALUES(?, ?)", use("qwq"), use(1919810);
         sess << "INSERT INTO test VALUES(?, ?)", use(Row{"liteloader", 233333});
         sess << "INSERT INTO test VALUES(?, ?)", use("liteloader"), use(100);
-        sess << "INSERT INTO test VALUES('$a\"', $b)", use(2147483647, "b");
-        auto stmt = sess->prepare("INSERT INTO test VALUES(?, ?)");
-        stmt->bind("liteloader")
+        sess << "INSERT INTO test VALUES('听我说谢谢你', 128)";
+        //sess << "INSERT INTO test VALUES('$a\"', $b)", use(2147483647, "b");
+        sess->prepare("INSERT INTO test VALUES(?, ?)")
+            ->bind("liteloader")
             ->bind(2147483647)
+            ->execute()
+            ->reset()
+            ->execute()
             ->reset()
             ->execute()
             ->reexec()
             ->reexec();
-        sess->query("SELECT * FROM test;");
-        stmt = sess->prepare("SELECT * FROM test WHERE a = $A");
+        sess->query("SELECT * FROM test");
+        sess->query("SELECT * FROM test LIMIT 1");
+        auto stmt = sess->prepare("SELECT * FROM test WHERE a = $A");
         // The first parameter is value, the second is key!
         stmt->bind("liteloader", "A")->execute();
         do {
@@ -94,6 +99,8 @@ void run_tests(SharedPointer<Session> sess)
                 log_row(row);
                 return true;
             });
+        logger.info("FINALLY:");
+        sess->query("SELECT * FROM test");
         sess->close();
     }
 #if defined(CATCH_EXCEPTION)

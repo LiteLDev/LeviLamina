@@ -62,9 +62,11 @@ void MySQLSession::open(const ConnParams& params)
         flags |= CLIENT_SSL;
         setSSL(p);
     }
+    //auto defaultCharset = mysql_character_set_name(conn);
     auto charset = p.get<std::string>({"charset", "char_set", "characterset", "character_set", "charsetname",
                                       "char_set_name", "charactersetname", "character_set_name"}, "true",
-                                      mysql_character_set_name(conn));
+                                      "utf8");
+    //IF_ENDBG dbLogger.debug("MySQLSession::open: MySQL default charset name: {}", defaultCharset);
     mysql_options(conn, MYSQL_SET_CHARSET_NAME, charset.c_str());
     auto res = mysql_real_connect(conn, p.getHost().c_str(), p.getUsername().c_str(), p.getPassword().c_str(), 
                                   (db.empty() ? nullptr : db.c_str()), port, nullptr, 0);
@@ -188,9 +190,9 @@ Session& MySQLSession::query(const std::string& query, std::function<bool(const 
     return *this;
 }
 
-SharedPointer<Stmt> MySQLSession::prepare(const std::string& query)
+SharedPointer<Stmt> MySQLSession::prepare(const std::string& query, bool autoExecute)
 {
-    auto& stmt = MySQLStmt::create(getOrSetSelf(), query, true);
+    auto& stmt = MySQLStmt::create(getOrSetSelf(), query, autoExecute);
     stmtPool.push_back(stmt);
     return stmt;
 }
@@ -232,7 +234,7 @@ DBType MySQLSession::getType()
 
 SharedPointer<Stmt> MySQLSession::operator<<(const std::string& query)
 {
-    return prepare(query);
+    return prepare(query, true);
 }
 
 } // namespace DB
