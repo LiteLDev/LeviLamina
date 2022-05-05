@@ -5,6 +5,8 @@
 #include <Utils/DbgHelper.h>
 #include <thread>
 #include <I18nAPI.h>
+#include <./Header/Utils/StringHelper.h>
+#include <./Header/Utils/Json.h>
 
 using namespace std;
 
@@ -22,7 +24,31 @@ void SplitHttpUrl(const std::string &url, string &host, string &path) {
     }
 }
 
-bool HttpGet(const string &url, const function<void(int, string)> &callback, int timeout) {
+httplib::Headers HandleHeaders(string headers)
+{
+    httplib::Headers maps;
+    Json::Reader reader;
+    Json::Value h;
+
+    if (headers.length() > 0)
+    {
+        if (reader.parse(headers, h))
+        {
+            for (Json::ValueIterator it = h.begin(); it != h.end(); ++it) {
+                maps.insert(pair<string, string>(it.key().asString(""), h[ it.key().asString("")].asString("")));
+            }
+        }    
+    }
+    return maps;
+}
+
+bool HttpGet(const string& url, const function<void(int, string)>& callback, int timeout)
+{
+    return HttpGet(url, {}, callback, timeout);
+}
+
+bool HttpGet(const string& url, const string& headers, const function<void(int, string)>& callback, int timeout)
+{
     string host, path;
     SplitHttpUrl(url, host, path);
 
@@ -34,10 +60,10 @@ bool HttpGet(const string &url, const function<void(int, string)> &callback, int
     if (timeout > 0)
         cli->set_connection_timeout(timeout, 0);
 
-    std::thread([cli, callback, path{std::move(path)}]() {
+    std::thread([cli, headers, callback, path{std::move(path)}]() {
         _set_se_translator(seh_exception::TranslateSEHtoCE);
         try {
-            auto response = cli->Get(path.c_str());
+            auto response = cli->Get(path.c_str(), HandleHeaders(headers));
             delete cli;
 
             if (!response)
@@ -66,29 +92,39 @@ bool HttpGet(const string &url, const function<void(int, string)> &callback, int
     return true;
 }
 
-bool HttpPost(const string &url, const string &data, const string &type, const std::function<void(int, string)> &callback,
-         int timeout) {
+bool HttpPost(const string& url, const string& data, const string& type, const std::function<void(int, string)>& callback,
+              int timeout)
+{
+    return HttpPost(url, {}, data, type, callback);
+}
+
+bool HttpPost(const string& url, const string& headers, const string& data, const string& type, const std::function<void(int, string)>& callback,
+              int timeout)
+{
     string host, path;
     SplitHttpUrl(url, host, path);
-    auto *cli = new httplib::Client(host.c_str());
-    if (!cli->is_valid()) {
+    auto* cli = new httplib::Client(host.c_str());
+    if (!cli->is_valid())
+    {
         delete cli;
         return false;
     }
     if (timeout > 0)
         cli->set_connection_timeout(timeout, 0);
-
-    std::thread([cli, data, type, callback, path{std::move(path)}]() {
+        
+    std::thread([cli, headers, data, type, callback, path{std::move(path)}]() {
         _set_se_translator(seh_exception::TranslateSEHtoCE);
-        try {
-            auto response = cli->Post(path.c_str(), data, type.c_str());
+        try
+        {
+            auto response = cli->Post(path.c_str(), HandleHeaders(headers), data, type.c_str());
             delete cli;
             if (!response)
                 callback(-1, "");
             else
                 callback(response->status, response->body);
         }
-        catch (const seh_exception &e) {
+        catch (const seh_exception& e)
+        {
             logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
             logger.error("In HttpPost callback");
             PrintCurrentStackTraceback();
@@ -99,7 +135,8 @@ bool HttpPost(const string &url, const string &data, const string &type, const s
             logger.error("In HttpGet callback");
             PrintCurrentStackTraceback();
         }
-        catch (...) {
+        catch (...)
+        {
             logger.error("HttpPost Callback Failed!");
             logger.error("Uncaught Exception Detected!");
             PrintCurrentStackTraceback();

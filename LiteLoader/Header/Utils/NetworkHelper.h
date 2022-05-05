@@ -8,10 +8,11 @@ LIAPI void SplitHttpUrl(const std::string& url, std::string& host, std::string& 
 
 // Http Post (async)
 // [param] void callback(status, data)
+LIAPI bool HttpPost(const string& url, const string& headers, const string& data, const string& type, const std::function<void(int, string)>& callback, int timeout = -1);
 LIAPI bool HttpPost(const string& url, const string& data, const string& type, const std::function<void(int, string)>& callback, int timeout = -1);
-
 // Http Get (async)
 // [param] void callback(status, data)
+LIAPI bool HttpGet(const std::string& url, const string& headers, const std::function<void(int, std::string)>& callback, int timeout = -1);
 LIAPI bool HttpGet(const std::string& url, const std::function<void(int, std::string)>& callback, int timeout = -1);
 
 // Http Get (sync)
