@@ -103,7 +103,7 @@ Session& MySQLSession::query(const std::string& query, std::function<bool(const 
     if (!result)
     {
         //throw std::runtime_error("MySQLSession::query: Failed to store result: " + std::string(mysql_error(conn)));
-        return; // No result set
+        return *this; // No result set
     }
     auto numFields = mysql_num_fields(result);
     auto numRows = mysql_num_rows(result);
