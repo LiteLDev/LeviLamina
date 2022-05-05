@@ -99,10 +99,11 @@ Session& MySQLSession::query(const std::string& query, std::function<bool(const 
     {
         throw std::runtime_error("MySQLSession::query: Failed to query database: " + std::string(mysql_error(conn)));
     }
-    auto result = mysql_use_result(conn);
+    auto result = mysql_store_result(conn);
     if (!result)
     {
-        throw std::runtime_error("MySQLSession::query: Failed to query database: " + std::string(mysql_error(conn)));
+        //throw std::runtime_error("MySQLSession::query: Failed to store result: " + std::string(mysql_error(conn)));
+        return; // No result set
     }
     auto numFields = mysql_num_fields(result);
     auto numRows = mysql_num_rows(result);

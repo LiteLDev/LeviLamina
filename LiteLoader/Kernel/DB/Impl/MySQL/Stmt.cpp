@@ -587,7 +587,8 @@ ResultSet MySQLStmt::fetchAll()
 {
     ResultSet result;
     fetchAll([&result](const Row& row) {
-        result.push_back(row); return true;
+        result.push_back(row);
+        return true;
     });
     dbLogger.debug("MySQLStmt::fetchAll: Fetched {} rows", result.size());
     return result;
