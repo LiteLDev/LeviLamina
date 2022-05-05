@@ -69,9 +69,11 @@ public:
     Local<Value> getInsertId();
 
     Local<Value> bind(const Arguments& args);
+    Local<Value> execute(const Arguments& args);
     Local<Value> step(const Arguments& args);
     Local<Value> fetch(const Arguments& args);
     Local<Value> fetchAll(const Arguments& args);
+    Local<Value> reset(const Arguments& args);
     Local<Value> reexec(const Arguments& args);
     Local<Value> clear(const Arguments& args);
 };

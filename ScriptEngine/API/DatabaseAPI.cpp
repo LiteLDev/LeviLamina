@@ -31,6 +31,7 @@ ClassDefine<DBStmtClass> DBStmtClassBuilder =
         .instanceProperty("insertId", &DBStmtClass::getInsertId)
 
         .instanceFunction("bind", &DBStmtClass::bind)
+        .instanceFunction("execute", &DBStmtClass::execute)
         .instanceFunction("step", &DBStmtClass::step)
         .instanceFunction("fetch", &DBStmtClass::fetch)
         .instanceFunction("fetchAll", &DBStmtClass::fetchAll)
@@ -499,10 +500,21 @@ Local<Value> DBStmtClass::bind(const Arguments& args)
                 }
             }
         }
-        return Boolean::newBoolean(true);
+        return this->getScriptObject();
     }
-    CATCH_WITHOUT_RETURN("Fail in bind!");
-    return Boolean::newBoolean(false);
+    CATCH("Fail in bind!");
+}
+
+Local<Value> DBStmtClass::execute(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 0);
+
+    try
+    {
+        stmt->execute();
+        return this->getScriptObject();
+    }
+    CATCH("Fail in reset!");
 }
 
 Local<Value> DBStmtClass::step(const Arguments& args)
@@ -550,9 +562,21 @@ Local<Value> DBStmtClass::fetchAll(const Arguments& args)
                 });
             }
         }
-        return Local<Value>();
+        return this->getScriptObject();
     }
     CATCH("Fail in fetchAll!")
+}
+
+Local<Value> DBStmtClass::reset(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 0);
+
+    try
+    {
+        stmt->reset();
+        return this->getScriptObject();
+    }
+    CATCH("Fail in reset!");
 }
 
 Local<Value> DBStmtClass::reexec(const Arguments& args)
@@ -562,10 +586,9 @@ Local<Value> DBStmtClass::reexec(const Arguments& args)
     try
     {
         stmt->reexec();
-        return Boolean::newBoolean(true);
+        return this->getScriptObject();
     }
-    CATCH_WITHOUT_RETURN("Fail in reexec!");
-    return Boolean::newBoolean(false);
+    CATCH("Fail in reexec!");
 }
 
 Local<Value> DBStmtClass::clear(const Arguments& args)
@@ -575,8 +598,7 @@ Local<Value> DBStmtClass::clear(const Arguments& args)
     try
     {
         stmt->clear();
-        return Boolean::newBoolean(true);
+        return this->getScriptObject();
     }
-    CATCH_WITHOUT_RETURN("Fail in clear!");
-    return Boolean::newBoolean(false);
+    CATCH("Fail in clear!");
 }
