@@ -1594,26 +1594,27 @@ TInstanceHook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer
 
 #include <MC/SurvivalMode.hpp>
 /////////////////// PlayerDestroy ///////////////////
-TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z",
-              SurvivalMode, BlockPos a3, unsigned __int8 a4)
-{
-    IF_LISTENED(PlayerDestroyBlockEvent)
-    {
-        if (getPlayer()->isPlayer())
-        {
-            PlayerDestroyBlockEvent ev{};
-            ev.mPlayer = getPlayer();
-            auto bl = Level::getBlockInstance(a3, getPlayer()->getDimensionId());
-            ev.mBlockInstance = bl;
-            if (!ev.call())
-            {
-                return false;
-            }
-        }
-    }
-    IF_LISTENED_END(PlayerDestroyBlockEvent)
-    return original(this, a3, a4);
-}
+
+//TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z",
+//              SurvivalMode, BlockPos a3, unsigned __int8 a4)
+//{
+//    IF_LISTENED(PlayerDestroyBlockEvent)
+//    {
+//        if (getPlayer()->isPlayer())
+//        {
+//            PlayerDestroyBlockEvent ev{};
+//            ev.mPlayer = getPlayer();
+//            auto bl = Level::getBlockInstance(a3, getPlayer()->getDimensionId());
+//            ev.mBlockInstance = bl;
+//            if (!ev.call())
+//            {
+//                return false;
+//            }
+//        }
+//    }
+//    IF_LISTENED_END(PlayerDestroyBlockEvent)
+//    return original(this, a3, a4);
+//}
 
 TInstanceHook(bool, "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z",
               GameMode, BlockPos a3, unsigned __int8 a4)
