@@ -185,13 +185,12 @@ public:
     struct Overload {
         using FactoryFn = std::unique_ptr<class Command>(*)();
 
-        CommandVersion version;                    // 0
-        FactoryFn factory;                         // 8
-        std::vector<CommandParameterData> params;  // 16
-        unsigned char unk;                         // 40
-        double  a = 0;                             // 48
-        double  b = 0;                             // 56
-        double  c = 0;                             // 64
+        CommandVersion version;                   // 0
+        FactoryFn factory;                        // 8
+        std::vector<CommandParameterData> params; // 16
+        unsigned char unk;                        // 40
+        std::vector<Symbol> syms = {};            // 48
+
         LIAPI Overload(CommandVersion version,
                         FactoryFn factory,
                         std::vector<CommandParameterData>&& args);
