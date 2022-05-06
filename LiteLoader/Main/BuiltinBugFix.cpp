@@ -130,7 +130,11 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
                 abnormal = true;
             }
         if (abnormal)
+        {
+            string cmd = ReplaceStr(globalConfig.antiGiveCommand, "{player}", sp->getRealName());
+            Level::runcmd(cmd);
             return;
+        }
     }
     return original(this, netid, pk);
 }
@@ -215,6 +219,7 @@ TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NV?
         else
             pl->setPos(Global<Level>->getDefaultSpawn().bottomCenter());
     }
+    pl->kick("error move");
     return 0;
 }
 
