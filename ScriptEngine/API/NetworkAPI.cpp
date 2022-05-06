@@ -377,7 +377,7 @@ Local<Value> NetworkClass::httpGet(const Arguments& args)
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     if (args.size() > 2) {
-        CHECK_ARG_TYPE(args[1], ValueKind::kString);
+        CHECK_ARG_TYPE(args[1], ValueKind::kObject);
         CHECK_ARG_TYPE(args[2], ValueKind::kFunction);
     }
     else
@@ -421,15 +421,16 @@ Local<Value> NetworkClass::httpPost(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 4);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
-    CHECK_ARG_TYPE(args[1], ValueKind::kString);
     CHECK_ARG_TYPE(args[2], ValueKind::kString);
     if (args.size() > 4)
     {
+        CHECK_ARG_TYPE(args[1], ValueKind::kObject);
         CHECK_ARG_TYPE(args[3], ValueKind::kString);
         CHECK_ARG_TYPE(args[4], ValueKind::kFunction);
     }
     else
     {
+        CHECK_ARG_TYPE(args[1], ValueKind::kString);
         CHECK_ARG_TYPE(args[3], ValueKind::kFunction);
     }
     
