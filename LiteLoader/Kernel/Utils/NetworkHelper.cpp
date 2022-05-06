@@ -22,29 +22,12 @@ void SplitHttpUrl(const std::string &url, string &host, string &path) {
     }
 }
 
-httplib::Headers HandleHeaders(string headers)
-{
-    httplib::Headers maps;
-    nlohmann::json j;
-   
-    if (headers.length() > 0)
-    {
-        auto h = j.parse(headers);
-        {
-            for (nlohmann::json::iterator it = h.begin(); it != h.end(); ++it) {
-                maps.insert({it.key(), it.value()});
-            }
-        }    
-    }
-    return maps;
-}
-
 bool HttpGet(const string& url, const function<void(int, string)>& callback, int timeout)
 {
     return HttpGet(url, {}, callback, timeout);
 }
 
-bool HttpGet(const string& url, const string& headers, const function<void(int, string)>& callback, int timeout)
+bool HttpGet(const string& url, const const httplib::Headers& headers, const function<void(int, string)>& callback, int timeout)
 {
     string host, path;
     SplitHttpUrl(url, host, path);
@@ -60,7 +43,7 @@ bool HttpGet(const string& url, const string& headers, const function<void(int, 
     std::thread([cli, headers, callback, path{std::move(path)}]() {
         _set_se_translator(seh_exception::TranslateSEHtoCE);
         try {
-            auto response = cli->Get(path.c_str(), HandleHeaders(headers));
+            auto response = cli->Get(path.c_str(), headers);
             delete cli;
 
             if (!response)
@@ -95,7 +78,7 @@ bool HttpPost(const string& url, const string& data, const string& type, const s
     return HttpPost(url, {}, data, type, callback);
 }
 
-bool HttpPost(const string& url, const string& headers, const string& data, const string& type, const std::function<void(int, string)>& callback,
+bool HttpPost(const string& url, const httplib::Headers& headers, const string& data, const string& type, const std::function<void(int, string)>& callback,
               int timeout)
 {
     string host, path;
@@ -113,7 +96,7 @@ bool HttpPost(const string& url, const string& headers, const string& data, cons
         _set_se_translator(seh_exception::TranslateSEHtoCE);
         try
         {
-            auto response = cli->Post(path.c_str(), HandleHeaders(headers), data, type.c_str());
+            auto response = cli->Post(path.c_str(), headers, data, type.c_str());
             delete cli;
             if (!response)
                 callback(-1, "");

@@ -410,7 +410,17 @@ Local<Value> NetworkClass::httpGet(const Arguments& args)
         };
         if (args.size() > 2)
         {
-            return Boolean::newBoolean(HttpGet(target, args[1].toStr(), lambda));
+            httplib::Headers maps;
+            auto obj = args[1].asObject();
+            auto keys = obj.getKeyNames();
+            if (keys.size() > 0)
+            {
+                for (size_t i = 0; i < keys.size(); i++)
+                {
+                    maps.insert({keys[i], obj.get(keys[i]).toStr()});
+                }
+            }
+            return Boolean::newBoolean(HttpGet(target, maps, lambda));
         }
         return Boolean::newBoolean(HttpGet(target, lambda));
     }
@@ -460,7 +470,19 @@ Local<Value> NetworkClass::httpPost(const Arguments& args)
         };
         if (args.size() > 4)
         {
-            return Boolean::newBoolean(HttpPost(target, args[1].toStr(), args[2].toStr(), args[3].toStr(), lambda));
+            httplib::Headers maps;
+            auto obj = args[1].asObject();
+            auto keys = obj.getKeyNames();
+            if (keys.size() > 0)
+            {
+                for (size_t i = 0; i < keys.size(); i++)
+                {
+                    maps.insert({keys[i], obj.get(keys[i]).toStr()});
+                    cout << keys[i] << ":" << obj.get(keys[i]).toStr() << endl;
+                }
+            }
+            
+            return Boolean::newBoolean(HttpPost(target, maps ,args[2].toStr(), args[3].toStr(), lambda));
         }
         return Boolean::newBoolean(HttpPost(target, args[1].toStr(), args[2].toStr(), lambda));
     }
