@@ -5,8 +5,6 @@
 #include <Utils/DbgHelper.h>
 #include <thread>
 #include <I18nAPI.h>
-#include <./Header/Utils/StringHelper.h>
-#include <./Header/Utils/Json.h>
 
 using namespace std;
 
@@ -27,15 +25,14 @@ void SplitHttpUrl(const std::string &url, string &host, string &path) {
 httplib::Headers HandleHeaders(string headers)
 {
     httplib::Headers maps;
-    Json::Reader reader;
     nlohmann::json j;
-
+   
     if (headers.length() > 0)
     {
-        h = nlohmann::json::parse(headers)
+        auto h = j.parse(headers);
         {
-            for (Json::ValueIterator it = h.begin(); it != h.end(); ++it) {
-                maps.insert(pair<string, string>(it.key().asString(""), h[ it.key().asString("")].asString("")));
+            for (nlohmann::json::iterator it = h.begin(); it != h.end(); ++it) {
+                maps.insert({it.key(), it.value()});
             }
         }    
     }
