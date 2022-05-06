@@ -75,6 +75,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI Random(unsigned int, bool);
     MCAPI Random();
     MCAPI float nextFloat(float, float);
     MCAPI float nextGaussianFloat();

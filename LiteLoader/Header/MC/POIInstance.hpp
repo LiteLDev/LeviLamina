@@ -24,12 +24,25 @@ public:
 
 public:
     MCAPI POIInstance(class BlockPos const &, bool, std::string, enum POIType, float, unsigned __int64, unsigned __int64, std::string, std::string, std::string);
+    MCAPI void decreaseOwnerCount(unsigned __int64);
+    MCAPI class HashedString const & getEndEvent() const;
+    MCAPI class HashedString const & getInitEvent() const;
+    MCAPI class HashedString const & getName() const;
+    MCAPI unsigned __int64 getOwnerCapacity() const;
+    MCAPI unsigned __int64 getOwnerCount() const;
     MCAPI class BlockPos const & getPosition() const;
     MCAPI float getRadius() const;
     MCAPI class AABB getSecondBlockFullAABB(class BlockSource &);
     MCAPI class HashedString const & getSoundEvent() const;
+    MCAPI enum POIType getType() const;
+    MCAPI std::string getTypeName() const;
+    MCAPI unsigned __int64 getWeight() const;
+    MCAPI void increaseOwnerCount(unsigned __int64);
     MCAPI void incrementArrivalFailureCount();
+    MCAPI bool isFull() const;
+    MCAPI bool isPathable() const;
     MCAPI void resetArrivalFailureCount();
+    MCAPI void setVillage(class Village *);
     MCAPI void trySpawnParticles(class BlockSource &, class Random &, int) const;
     MCAPI bool useBoundingBox() const;
 

@@ -32,9 +32,10 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptInventoryComponentContainer(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &);
     MCAPI ScriptInventoryComponentContainer(class ScriptInventoryComponentContainer const &);
+    MCAPI ScriptInventoryComponentContainer(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &);
     MCAPI class ScriptInventoryComponentContainer & operator=(class ScriptInventoryComponentContainer const &);
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptInventoryComponentContainer> bind(struct Scripting::Version);
 
 protected:
 

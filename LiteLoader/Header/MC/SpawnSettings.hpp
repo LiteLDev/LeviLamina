@@ -17,10 +17,10 @@ struct SpawnSettings {
 public:
     struct SpawnSettings& operator=(struct SpawnSettings const &) = delete;
     SpawnSettings(struct SpawnSettings const &) = delete;
+    SpawnSettings() = delete;
 #endif
 
 public:
-    MCAPI SpawnSettings();
     MCAPI ~SpawnSettings();
 
 protected:

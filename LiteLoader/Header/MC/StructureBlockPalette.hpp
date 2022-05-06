@@ -25,13 +25,16 @@ struct BlockPositionData {
 public:
     class StructureBlockPalette& operator=(class StructureBlockPalette const &) = delete;
     StructureBlockPalette(class StructureBlockPalette const &) = delete;
+    StructureBlockPalette() = delete;
 #endif
 
 public:
-    MCAPI StructureBlockPalette(class StructureBlockPalette &&);
-    MCAPI StructureBlockPalette();
+    MCAPI void addBlockPositionData(unsigned __int64, struct StructureBlockPalette::BlockPositionData);
     MCAPI unsigned __int64 addMapping(std::unique_ptr<class CompoundTag>);
+    MCAPI class std::unordered_map<unsigned __int64, struct StructureBlockPalette::BlockPositionData, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, struct StructureBlockPalette::BlockPositionData>>> const & getAllBlockPositionData() const;
+    MCAPI class Block const & getBlock(class BlockPalette const &, unsigned __int64) const;
     MCAPI struct StructureBlockPalette::BlockPositionData const * getBlockPositionData(unsigned __int64) const;
+    MCAPI bool load(class CompoundTag const &, int);
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     MCAPI ~StructureBlockPalette();
 
@@ -42,5 +45,6 @@ protected:
     MCAPI void _saveBlockPositionDataList(class CompoundTag &) const;
 
 private:
+    MCAPI void _contentErrorMissingField(std::string const &) const;
 
 };

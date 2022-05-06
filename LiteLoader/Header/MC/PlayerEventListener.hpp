@@ -25,45 +25,40 @@ public:
 public:
     /*0*/ virtual ~PlayerEventListener();
     /*
-    inline enum EventResult onPlayerAction(class Player & a0, enum PlayerActionType a1, class BlockPos const & a2, int a3){
-        enum EventResult (PlayerEventListener::*rv)(class Player &, enum PlayerActionType, class BlockPos const &, int);
-        *((void**)&rv) = dlsym("?onPlayerAction@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@W4PlayerActionType@@AEBVBlockPos@@H@Z");
-        return (this->*rv)(std::forward<class Player &>(a0), std::forward<enum PlayerActionType>(a1), std::forward<class BlockPos const &>(a2), std::forward<int>(a3));
+    inline enum EventResult onCameraSetPlayerRot(class Player & a0, class Vec2 const & a1){
+        enum EventResult (PlayerEventListener::*rv)(class Player &, class Vec2 const &);
+        *((void**)&rv) = dlsym("?onCameraSetPlayerRot@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec2@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class Vec2 const &>(a1));
     }
     inline enum EventResult onLocalPlayerDeath(class IClientInstance & a0, class LocalPlayer & a1){
         enum EventResult (PlayerEventListener::*rv)(class IClientInstance &, class LocalPlayer &);
         *((void**)&rv) = dlsym("?onLocalPlayerDeath@PlayerEventListener@@UEAA?AW4EventResult@@AEAVIClientInstance@@AEAVLocalPlayer@@@Z");
         return (this->*rv)(std::forward<class IClientInstance &>(a0), std::forward<class LocalPlayer &>(a1));
     }
-    inline enum EventResult onCameraSetPlayerRot(class Player & a0, class Vec2 const & a1){
-        enum EventResult (PlayerEventListener::*rv)(class Player &, class Vec2 const &);
-        *((void**)&rv) = dlsym("?onCameraSetPlayerRot@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec2@@@Z");
-        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class Vec2 const &>(a1));
+    inline enum EventResult onPlayerAction(class Player & a0, enum PlayerActionType a1, class BlockPos const & a2, int a3){
+        enum EventResult (PlayerEventListener::*rv)(class Player &, enum PlayerActionType, class BlockPos const &, int);
+        *((void**)&rv) = dlsym("?onPlayerAction@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@W4PlayerActionType@@AEBVBlockPos@@H@Z");
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<enum PlayerActionType>(a1), std::forward<class BlockPos const &>(a2), std::forward<int>(a3));
     }
     inline enum EventResult onPlayerAuthInputReceived(class Player & a0){
         enum EventResult (PlayerEventListener::*rv)(class Player &);
         *((void**)&rv) = dlsym("?onPlayerAuthInputReceived@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z");
         return (this->*rv)(std::forward<class Player &>(a0));
     }
-    inline enum EventResult onPlayerCraftedItem(class Player & a0, class ItemInstance const & a1, bool a2, bool a3, bool a4, int a5, int a6, int a7, bool a8, bool a9, std::vector<short> const & a10){
-        enum EventResult (PlayerEventListener::*rv)(class Player &, class ItemInstance const &, bool, bool, bool, int, int, int, bool, bool, std::vector<short> const &);
-        *((void**)&rv) = dlsym("?onPlayerCraftedItem@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemInstance@@_N22HHH22AEBV?$vector@FV?$allocator@F@std@@@std@@@Z");
-        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class ItemInstance const &>(a1), std::forward<bool>(a2), std::forward<bool>(a3), std::forward<bool>(a4), std::forward<int>(a5), std::forward<int>(a6), std::forward<int>(a7), std::forward<bool>(a8), std::forward<bool>(a9), std::forward<std::vector<short> const &>(a10));
+    inline enum EventResult onPlayerAIStepEnd(class Player & a0){
+        enum EventResult (PlayerEventListener::*rv)(class Player &);
+        *((void**)&rv) = dlsym("?onPlayerAIStepEnd@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0));
     }
     inline enum EventResult onPlayerItemEquipped(class Player & a0, class ItemInstance const & a1, int a2){
         enum EventResult (PlayerEventListener::*rv)(class Player &, class ItemInstance const &, int);
         *((void**)&rv) = dlsym("?onPlayerItemEquipped@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemInstance@@H@Z");
         return (this->*rv)(std::forward<class Player &>(a0), std::forward<class ItemInstance const &>(a1), std::forward<int>(a2));
     }
-    inline enum EventResult onPlayerAIStepEnd(class Player & a0){
-        enum EventResult (PlayerEventListener::*rv)(class Player &);
-        *((void**)&rv) = dlsym("?onPlayerAIStepEnd@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player &>(a0));
-    }
-    inline enum EventResult onPlayerTargetBlockHit(class Player & a0, int a1){
-        enum EventResult (PlayerEventListener::*rv)(class Player &, int);
-        *((void**)&rv) = dlsym("?onPlayerTargetBlockHit@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@H@Z");
-        return (this->*rv)(std::forward<class Player &>(a0), std::forward<int>(a1));
+    inline enum EventResult onPlayerCraftedItem(class Player & a0, class ItemInstance const & a1, bool a2, bool a3, bool a4, int a5, int a6, int a7, bool a8, bool a9, std::vector<short> const & a10){
+        enum EventResult (PlayerEventListener::*rv)(class Player &, class ItemInstance const &, bool, bool, bool, int, int, int, bool, bool, std::vector<short> const &);
+        *((void**)&rv) = dlsym("?onPlayerCraftedItem@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemInstance@@_N22HHH22AEBV?$vector@FV?$allocator@F@std@@@std@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class ItemInstance const &>(a1), std::forward<bool>(a2), std::forward<bool>(a3), std::forward<bool>(a4), std::forward<int>(a5), std::forward<int>(a6), std::forward<int>(a7), std::forward<bool>(a8), std::forward<bool>(a9), std::forward<std::vector<short> const &>(a10));
     }
     inline enum EventResult onPlayerStartRiding(class Player & a0, class Actor & a1){
         enum EventResult (PlayerEventListener::*rv)(class Player &, class Actor &);
@@ -75,30 +70,55 @@ public:
         *((void**)&rv) = dlsym("?onPlayerOnGround@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z");
         return (this->*rv)(std::forward<class Player &>(a0));
     }
+    inline enum EventResult onPlayerTargetBlockHit(class Player & a0, int a1){
+        enum EventResult (PlayerEventListener::*rv)(class Player &, int);
+        *((void**)&rv) = dlsym("?onPlayerTargetBlockHit@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@H@Z");
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<int>(a1));
+    }
     inline enum EventResult onPlayerPiglinBarter(class Player & a0, std::string const & a1, bool a2){
         enum EventResult (PlayerEventListener::*rv)(class Player &, std::string const &, bool);
         *((void**)&rv) = dlsym("?onPlayerPiglinBarter@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z");
         return (this->*rv)(std::forward<class Player &>(a0), std::forward<std::string const &>(a1), std::forward<bool>(a2));
-    }
-    inline enum EventResult onPlayerTeleported(class Player & a0){
-        enum EventResult (PlayerEventListener::*rv)(class Player &);
-        *((void**)&rv) = dlsym("?onPlayerTeleported@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player &>(a0));
     }
     inline enum EventResult onPlayerInput(struct IPlayerMovementProxy & a0, class MoveInputHandler & a1){
         enum EventResult (PlayerEventListener::*rv)(struct IPlayerMovementProxy &, class MoveInputHandler &);
         *((void**)&rv) = dlsym("?onPlayerInput@PlayerEventListener@@UEAA?AW4EventResult@@AEAUIPlayerMovementProxy@@AEAVMoveInputHandler@@@Z");
         return (this->*rv)(std::forward<struct IPlayerMovementProxy &>(a0), std::forward<class MoveInputHandler &>(a1));
     }
-    inline enum EventResult onPlayerSaved(class Player & a0){
+    inline enum EventResult onPlayerTeleported(class Player & a0){
         enum EventResult (PlayerEventListener::*rv)(class Player &);
-        *((void**)&rv) = dlsym("?onPlayerSaved@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z");
+        *((void**)&rv) = dlsym("?onPlayerTeleported@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z");
         return (this->*rv)(std::forward<class Player &>(a0));
     }
     inline enum EventResult onPlayerNamedItem(class Player & a0, class ItemDescriptor const & a1){
         enum EventResult (PlayerEventListener::*rv)(class Player &, class ItemDescriptor const &);
         *((void**)&rv) = dlsym("?onPlayerNamedItem@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemDescriptor@@@Z");
         return (this->*rv)(std::forward<class Player &>(a0), std::forward<class ItemDescriptor const &>(a1));
+    }
+    inline enum EventResult onPlayerSaved(class Player & a0){
+        enum EventResult (PlayerEventListener::*rv)(class Player &);
+        *((void**)&rv) = dlsym("?onPlayerSaved@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0));
+    }
+    inline enum EventResult onPlayerMovementCorrected(class Player & a0, class Vec3 const & a1, float a2, float a3){
+        enum EventResult (PlayerEventListener::*rv)(class Player &, class Vec3 const &, float, float);
+        *((void**)&rv) = dlsym("?onPlayerMovementCorrected@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z");
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class Vec3 const &>(a1), std::forward<float>(a2), std::forward<float>(a3));
+    }
+    inline enum EventResult onPlayerMove(class Player & a0){
+        enum EventResult (PlayerEventListener::*rv)(class Player &);
+        *((void**)&rv) = dlsym("?onPlayerMove@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0));
+    }
+    inline enum EventResult onPlayerAuthInputApplied(class Player & a0){
+        enum EventResult (PlayerEventListener::*rv)(class Player &);
+        *((void**)&rv) = dlsym("?onPlayerAuthInputApplied@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0));
+    }
+    inline enum EventResult onPlayerDestroyedBlock(class Player & a0, class BlockLegacy const & a1){
+        enum EventResult (PlayerEventListener::*rv)(class Player &, class BlockLegacy const &);
+        *((void**)&rv) = dlsym("?onPlayerDestroyedBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockLegacy@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class BlockLegacy const &>(a1));
     }
     inline enum EventResult onLocalPlayerRespawn(class IClientInstance & a0, class LocalPlayer & a1){
         enum EventResult (PlayerEventListener::*rv)(class IClientInstance &, class LocalPlayer &);
@@ -125,25 +145,10 @@ public:
         *((void**)&rv) = dlsym("?onPlayerItemUseInteraction@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemInstance@@@Z");
         return (this->*rv)(std::forward<class Player &>(a0), std::forward<class ItemInstance const &>(a1));
     }
-    inline enum EventResult onPlayerMovementCorrected(class Player & a0, class Vec3 const & a1, float a2, float a3){
-        enum EventResult (PlayerEventListener::*rv)(class Player &, class Vec3 const &, float, float);
-        *((void**)&rv) = dlsym("?onPlayerMovementCorrected@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z");
-        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class Vec3 const &>(a1), std::forward<float>(a2), std::forward<float>(a3));
-    }
-    inline enum EventResult onPlayerMove(class Player & a0){
-        enum EventResult (PlayerEventListener::*rv)(class Player &);
-        *((void**)&rv) = dlsym("?onPlayerMove@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player &>(a0));
-    }
-    inline enum EventResult onPlayerDestroyedBlock(class Player & a0, class BlockLegacy const & a1){
-        enum EventResult (PlayerEventListener::*rv)(class Player &, class BlockLegacy const &);
-        *((void**)&rv) = dlsym("?onPlayerDestroyedBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockLegacy@@@Z");
-        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class BlockLegacy const &>(a1));
-    }
-    inline enum EventResult onPlayerAuthInputApplied(class Player & a0){
-        enum EventResult (PlayerEventListener::*rv)(class Player &);
-        *((void**)&rv) = dlsym("?onPlayerAuthInputApplied@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player &>(a0));
+    inline enum EventResult onPlayerAttackedActor(class Player & a0, class Actor & a1){
+        enum EventResult (PlayerEventListener::*rv)(class Player &, class Actor &);
+        *((void**)&rv) = dlsym("?onPlayerAttackedActor@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEAVActor@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class Actor &>(a1));
     }
     inline enum EventResult onPlayerEquippedArmor(class Player & a0, class ItemDescriptor const & a1){
         enum EventResult (PlayerEventListener::*rv)(class Player &, class ItemDescriptor const &);
@@ -155,16 +160,6 @@ public:
         *((void**)&rv) = dlsym("?onPlayerCaravanChanged@PlayerEventListener@@UEAA?AW4EventResult@@AEBVActor@@H@Z");
         return (this->*rv)(std::forward<class Actor const &>(a0), std::forward<int>(a1));
     }
-    inline enum EventResult onPlayerAttackedActor(class Player & a0, class Actor & a1){
-        enum EventResult (PlayerEventListener::*rv)(class Player &, class Actor &);
-        *((void**)&rv) = dlsym("?onPlayerAttackedActor@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class Actor &>(a1));
-    }
-    inline enum EventResult onPlayerCreated(class LocalPlayer & a0, std::string const & a1, std::string const & a2, bool a3){
-        enum EventResult (PlayerEventListener::*rv)(class LocalPlayer &, std::string const &, std::string const &, bool);
-        *((void**)&rv) = dlsym("?onPlayerCreated@PlayerEventListener@@UEAA?AW4EventResult@@AEAVLocalPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1_N@Z");
-        return (this->*rv)(std::forward<class LocalPlayer &>(a0), std::forward<std::string const &>(a1), std::forward<std::string const &>(a2), std::forward<bool>(a3));
-    }
     inline enum EventResult onStartDestroyBlock(class Player & a0, class BlockPos const & a1, unsigned char & a2){
         enum EventResult (PlayerEventListener::*rv)(class Player &, class BlockPos const &, unsigned char &);
         *((void**)&rv) = dlsym("?onStartDestroyBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@AEAE@Z");
@@ -175,10 +170,10 @@ public:
         *((void**)&rv) = dlsym("?onPlayerSlide@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z");
         return (this->*rv)(std::forward<class Player &>(a0));
     }
-    inline enum EventResult onPlayerEnchantedItem(class Player & a0, class ItemStack const & a1, class ItemEnchants const & a2){
-        enum EventResult (PlayerEventListener::*rv)(class Player &, class ItemStack const &, class ItemEnchants const &);
-        *((void**)&rv) = dlsym("?onPlayerEnchantedItem@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemStack@@AEBVItemEnchants@@@Z");
-        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class ItemStack const &>(a1), std::forward<class ItemEnchants const &>(a2));
+    inline enum EventResult onPlayerCreated(class LocalPlayer & a0, std::string const & a1, std::string const & a2, bool a3){
+        enum EventResult (PlayerEventListener::*rv)(class LocalPlayer &, std::string const &, std::string const &, bool);
+        *((void**)&rv) = dlsym("?onPlayerCreated@PlayerEventListener@@UEAA?AW4EventResult@@AEAVLocalPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1_N@Z");
+        return (this->*rv)(std::forward<class LocalPlayer &>(a0), std::forward<std::string const &>(a1), std::forward<std::string const &>(a2), std::forward<bool>(a3));
     }
     inline enum EventResult onPlayerTick(class Player & a0){
         enum EventResult (PlayerEventListener::*rv)(class Player &);
@@ -195,20 +190,10 @@ public:
         *((void**)&rv) = dlsym("?onPlayerAwardAchievement@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@W4AchievementIds@MinecraftEventing@@@Z");
         return (this->*rv)(std::forward<class Player &>(a0), std::forward<enum MinecraftEventing::AchievementIds>(a1));
     }
-    inline enum EventResult onPlayerDestroyedBlock(class Player & a0, int a1, int a2, int a3){
-        enum EventResult (PlayerEventListener::*rv)(class Player &, int, int, int);
-        *((void**)&rv) = dlsym("?onPlayerDestroyedBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@HHH@Z");
-        return (this->*rv)(std::forward<class Player &>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<int>(a3));
-    }
-    inline enum EventResult onPlayerAIStepBegin(class Player & a0){
-        enum EventResult (PlayerEventListener::*rv)(class Player &);
-        *((void**)&rv) = dlsym("?onPlayerAIStepBegin@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player &>(a0));
-    }
-    inline enum EventResult onPlayerWaxOnWaxOff(class Player & a0, int a1){
-        enum EventResult (PlayerEventListener::*rv)(class Player &, int);
-        *((void**)&rv) = dlsym("?onPlayerWaxOnWaxOff@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@H@Z");
-        return (this->*rv)(std::forward<class Player &>(a0), std::forward<int>(a1));
+    inline enum EventResult onPlayerEnchantedItem(class Player & a0, class ItemStack const & a1, class ItemEnchants const & a2){
+        enum EventResult (PlayerEventListener::*rv)(class Player &, class ItemStack const &, class ItemEnchants const &);
+        *((void**)&rv) = dlsym("?onPlayerEnchantedItem@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemStack@@AEBVItemEnchants@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class ItemStack const &>(a1), std::forward<class ItemEnchants const &>(a2));
     }
     inline enum EventResult onPlayerMovementAnomaly(class Player & a0, class Vec3 const & a1, float a2, float a3){
         enum EventResult (PlayerEventListener::*rv)(class Player &, class Vec3 const &, float, float);
@@ -229,6 +214,21 @@ public:
         enum EventResult (PlayerEventListener::*rv)(class Player &, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
         *((void**)&rv) = dlsym("?onPlayerPortalUsed@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z");
         return (this->*rv)(std::forward<class Player &>(a0), std::forward<class AutomaticID<class Dimension, int>>(a1), std::forward<class AutomaticID<class Dimension, int>>(a2));
+    }
+    inline enum EventResult onPlayerWaxOnWaxOff(class Player & a0, int a1){
+        enum EventResult (PlayerEventListener::*rv)(class Player &, int);
+        *((void**)&rv) = dlsym("?onPlayerWaxOnWaxOff@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@H@Z");
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<int>(a1));
+    }
+    inline enum EventResult onPlayerAIStepBegin(class Player & a0){
+        enum EventResult (PlayerEventListener::*rv)(class Player &);
+        *((void**)&rv) = dlsym("?onPlayerAIStepBegin@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0));
+    }
+    inline enum EventResult onPlayerDestroyedBlock(class Player & a0, int a1, int a2, int a3){
+        enum EventResult (PlayerEventListener::*rv)(class Player &, int, int, int);
+        *((void**)&rv) = dlsym("?onPlayerDestroyedBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@HHH@Z");
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<int>(a3));
     }
     */
 

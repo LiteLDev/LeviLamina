@@ -21,6 +21,7 @@ public:
 #endif
 
 public:
+    MCAPI Interaction(struct Interaction &&);
     MCAPI Interaction(struct Interaction const &);
     MCAPI Interaction();
     MCAPI void addActorDefinitionIdentifierByName(std::string const &);

@@ -53,6 +53,11 @@ public:
         *((void**)&rv) = dlsym("?getType@StructureDataLoadHelper@@UEBA?AW4DataLoadHelperType@@XZ");
         return (this->*rv)();
     }
+    inline  ~StructureDataLoadHelper(){
+         (StructureDataLoadHelper::*rv)();
+        *((void**)&rv) = dlsym("??1StructureDataLoadHelper@@UEAA@XZ");
+        return (this->*rv)();
+    }
     inline float loadRotationDegreesX(float a0){
         float (StructureDataLoadHelper::*rv)(float);
         *((void**)&rv) = dlsym("?loadRotationDegreesX@StructureDataLoadHelper@@UEAAMM@Z");
@@ -62,11 +67,6 @@ public:
         float (StructureDataLoadHelper::*rv)(float);
         *((void**)&rv) = dlsym("?loadRotationRadiansX@StructureDataLoadHelper@@UEAAMM@Z");
         return (this->*rv)(std::forward<float>(a0));
-    }
-    inline  ~StructureDataLoadHelper(){
-         (StructureDataLoadHelper::*rv)();
-        *((void**)&rv) = dlsym("??1StructureDataLoadHelper@@UEAA@XZ");
-        return (this->*rv)();
     }
     */
     MCAPI StructureDataLoadHelper(class BlockPos const &, class BlockPos const &, class Vec3 const &, struct ActorUniqueID, enum Rotation, enum Mirror, class Level &);

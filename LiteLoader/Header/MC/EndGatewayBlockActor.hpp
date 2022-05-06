@@ -51,12 +51,16 @@ public:
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
     MCAPI EndGatewayBlockActor(class BlockPos const &);
+    MCAPI bool canTeleport(class GetCollisionShapeInterface const *, class BlockSource const &) const;
+    MCAPI class BlockPos getExitPosition() const;
+    MCAPI int getParticleAmount(class BlockSource &, class BlockPos const &) const;
     MCAPI void setExitPosition(class BlockPos const &);
     MCAPI void teleportEntity(class Actor &);
     MCAPI static int const COOLDOWN_TIME;
     MCAPI static int const EVENT_COOLDOWN;
     MCAPI static int const SPAWN_TIME;
     MCAPI static class BlockPos findExitPortal(class WorldGenerator &, class BlockPos const &);
+    MCAPI static class BlockPos findTallestBlock(class BlockSource &, class BlockPos const &, int, bool);
     MCAPI static class BlockPos findValidSpawnAround(class BlockSource &, class BlockPos const &, bool, int);
 
 protected:

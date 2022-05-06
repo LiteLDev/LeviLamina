@@ -33,6 +33,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
 
 protected:
     MCAPI void calculateBoundingBox();

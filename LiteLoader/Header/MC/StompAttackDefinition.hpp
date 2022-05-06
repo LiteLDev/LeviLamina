@@ -20,11 +20,12 @@ class StompAttackDefinition {
 public:
     class StompAttackDefinition& operator=(class StompAttackDefinition const &) = delete;
     StompAttackDefinition(class StompAttackDefinition const &) = delete;
-    StompAttackDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~StompAttackDefinition();
+    MCAPI StompAttackDefinition();
+    MCAPI void initialize(class EntityContext &, class StompAttackGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class StompAttackDefinition>> &);
 
 protected:

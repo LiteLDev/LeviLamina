@@ -26,6 +26,7 @@ public:
 public:
     /*0*/ virtual ~GlobalPauseCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI static void setup(class CommandRegistry &);
 
 protected:
 

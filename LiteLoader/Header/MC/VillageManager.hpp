@@ -26,13 +26,16 @@ public:
 
 public:
     MCAPI VillageManager(class Dimension &);
+    MCAPI void applyHeroOfTheVillageEffect(class Actor &);
     MCAPI class std::weak_ptr<class Village> fetchClosestVillage(class BlockPos const &, int, unsigned int) const;
     MCAPI class std::weak_ptr<class Village> fetchClosestVillageMostSuitableForDweller(class BlockPos const &, int, unsigned int) const;
     MCAPI class std::weak_ptr<class Village> getClosestVillageWithRaid(class BlockPos const &);
     MCAPI class std::weak_ptr<class POIInstance> getPOI(class BlockPos const &) const;
     MCAPI class HashedString getPOIInitEventFromName(class HashedString const &) const;
     MCAPI class std::weak_ptr<class Village> getVillageByID(class mce::UUID const &) const;
+    MCAPI bool hasPOI(class BlockPos const &, enum POIType) const;
     MCAPI void insertPOI(class std::shared_ptr<class POIInstance> &&);
+    MCAPI bool isRegisteredPOI(class Block const &) const;
     MCAPI bool isValidPOIType(class BlockPos const &, class Block const &) const;
     MCAPI bool isWanderingTraderManagedByScheduler(class Actor const &);
     MCAPI void loadAllVillages();
@@ -56,7 +59,6 @@ private:
     MCAPI void _loadPOIBlueprints();
     MCAPI void _processNextUnclusteredPOIQuery();
     MCAPI void _removeEligibleVillages();
-    MCAPI void _removeVillage(class Village &);
     MCAPI void _tryAssignPOIOrCreateVillage(class std::shared_ptr<class POIInstance> &&);
     MCAPI void _unclusterDerelictPOIs(std::vector<class std::weak_ptr<class POIInstance>> &);
     MCAPI static unsigned __int64 const MAX_POI_QUERIES;

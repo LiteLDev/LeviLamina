@@ -28,8 +28,11 @@ public:
     MCAPI bool const getBool(int) const;
     MCAPI unsigned __int64 getID() const;
     MCAPI int const getInt(int) const;
+    MCAPI std::string const & getName() const;
+    MCAPI class ItemState const & getState() const;
     MCAPI std::string const & getString(int) const;
     MCAPI enum Tag::Type const getType() const;
+    MCAPI int indexOf(unsigned __int64 const &) const;
 
 protected:
 

@@ -29,19 +29,29 @@ public:
         *((void**)&rv) = dlsym("?stopOpen@DispenserBlockActor@@UEAAXAEAVPlayer@@@Z");
         return (this->*rv)(std::forward<class Player &>(a0));
     }
-    inline int getContainerSize() const{
-        int (DispenserBlockActor::*rv)() const;
-        *((void**)&rv) = dlsym("?getContainerSize@DispenserBlockActor@@UEBAHXZ");
-        return (this->*rv)();
-    }
     inline int getMaxStackSize() const{
         int (DispenserBlockActor::*rv)() const;
         *((void**)&rv) = dlsym("?getMaxStackSize@DispenserBlockActor@@UEBAHXZ");
         return (this->*rv)();
     }
-    inline  ~DispenserBlockActor(){
-         (DispenserBlockActor::*rv)();
-        *((void**)&rv) = dlsym("??1DispenserBlockActor@@UEAA@XZ");
+    inline int getContainerSize() const{
+        int (DispenserBlockActor::*rv)() const;
+        *((void**)&rv) = dlsym("?getContainerSize@DispenserBlockActor@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline class Container const * getContainer() const{
+        class Container const * (DispenserBlockActor::*rv)() const;
+        *((void**)&rv) = dlsym("?getContainer@DispenserBlockActor@@UEBAPEBVContainer@@XZ");
+        return (this->*rv)();
+    }
+    inline class Container * getContainer(){
+        class Container * (DispenserBlockActor::*rv)();
+        *((void**)&rv) = dlsym("?getContainer@DispenserBlockActor@@UEAAPEAVContainer@@XZ");
+        return (this->*rv)();
+    }
+    inline void onMove(){
+        void (DispenserBlockActor::*rv)();
+        *((void**)&rv) = dlsym("?onMove@DispenserBlockActor@@UEAAXXZ");
         return (this->*rv)();
     }
     inline std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource & a0){
@@ -53,16 +63,6 @@ public:
         void (DispenserBlockActor::*rv)(class CompoundTag const &, class BlockSource &);
         *((void**)&rv) = dlsym("?_onUpdatePacket@DispenserBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z");
         return (this->*rv)(std::forward<class CompoundTag const &>(a0), std::forward<class BlockSource &>(a1));
-    }
-    inline class Container const * getContainer() const{
-        class Container const * (DispenserBlockActor::*rv)() const;
-        *((void**)&rv) = dlsym("?getContainer@DispenserBlockActor@@UEBAPEBVContainer@@XZ");
-        return (this->*rv)();
-    }
-    inline class Container * getContainer(){
-        class Container * (DispenserBlockActor::*rv)();
-        *((void**)&rv) = dlsym("?getContainer@DispenserBlockActor@@UEAAPEAVContainer@@XZ");
-        return (this->*rv)();
     }
     inline class ItemStack const & getItem(int a0) const{
         class ItemStack const & (DispenserBlockActor::*rv)(int) const;
@@ -84,11 +84,6 @@ public:
         *((void**)&rv) = dlsym("?load@DispenserBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
         return (this->*rv)(std::forward<class Level &>(a0), std::forward<class CompoundTag const &>(a1), std::forward<class DataLoadHelper &>(a2));
     }
-    inline void onMove(){
-        void (DispenserBlockActor::*rv)();
-        *((void**)&rv) = dlsym("?onMove@DispenserBlockActor@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline bool save(class CompoundTag & a0) const{
         bool (DispenserBlockActor::*rv)(class CompoundTag &) const;
         *((void**)&rv) = dlsym("?save@DispenserBlockActor@@UEBA_NAEAVCompoundTag@@@Z");
@@ -109,7 +104,13 @@ public:
         *((void**)&rv) = dlsym("?startOpen@DispenserBlockActor@@UEAAXAEAVPlayer@@@Z");
         return (this->*rv)(std::forward<class Player &>(a0));
     }
+    inline  ~DispenserBlockActor(){
+         (DispenserBlockActor::*rv)();
+        *((void**)&rv) = dlsym("??1DispenserBlockActor@@UEAA@XZ");
+        return (this->*rv)();
+    }
     */
+    MCAPI DispenserBlockActor(class BlockPos);
     MCAPI DispenserBlockActor(class BlockPos, enum BlockActorType);
 
 protected:

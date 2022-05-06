@@ -36,6 +36,8 @@ public:
     MCAPI class std::function<enum InventoryTransactionError (class Player &, class InventoryAction const &, bool)> getVerifyFunction(class InventorySource const &) const;
     MCAPI void postLoadItems(class BlockPalette &, bool);
     MCAPI void serialize(class BinaryStream &, bool) const;
+    MCAPI bool verifyBalance() const;
+    MCAPI enum InventoryTransactionError verifyFull(class Player &, bool) const;
     MCAPI ~InventoryTransaction();
     MCAPI static class InventoryTransaction deserialize(class ReadOnlyBinaryStream &);
     MCAPI static std::string const getInventoryTransactionErrorName(enum InventoryTransactionError);

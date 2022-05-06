@@ -24,7 +24,9 @@ public:
 #endif
 
 public:
+    MCAPI RakWebSocketDataFrameParser(bool);
     MCAPI class std::shared_ptr<class RakWebSocketDataFrame> readFrame(class RakNet::BitStream &);
+    MCAPI void setOnFailHandler(class std::function<void (std::string const &, enum CloseStatusCode)>);
     MCAPI ~RakWebSocketDataFrameParser();
 
 protected:

@@ -26,6 +26,7 @@ public:
 
 protected:
     MCAPI WeakStorageFeature(class WeakStorageFeature &&);
+    MCAPI WeakStorageFeature(class OwnerStorageFeature const &);
     MCAPI WeakStorageFeature(enum WeakStorageFeature::EmptyInit);
     MCAPI bool _isSet() const;
     MCAPI class WeakStorageFeature & operator=(class WeakStorageFeature &&);

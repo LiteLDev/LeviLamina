@@ -19,7 +19,6 @@ class ScriptBlockPotionContainerComponent : public BaseScriptBlockLiquidContaine
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKPOTIONCONTAINERCOMPONENT
 public:
     class ScriptBlockPotionContainerComponent& operator=(class ScriptBlockPotionContainerComponent const &) = delete;
-    ScriptBlockPotionContainerComponent(class ScriptBlockPotionContainerComponent const &) = delete;
     ScriptBlockPotionContainerComponent() = delete;
 #endif
 
@@ -32,6 +31,8 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI ScriptBlockPotionContainerComponent(class ScriptBlockPotionContainerComponent const &);
+    MCAPI ScriptBlockPotionContainerComponent(class ScriptBlockPotionContainerComponent &&);
     MCAPI class ScriptBlockPotionContainerComponent & operator=(class ScriptBlockPotionContainerComponent &&);
     MCAPI class Scripting::Result<void> setPotionType(class ScriptItemStack const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockPotionContainerComponent> bind(struct Scripting::Version);

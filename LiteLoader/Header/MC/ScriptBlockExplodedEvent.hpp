@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    MCAPI ScriptBlockExplodedEvent(class BlockPos const &, class Actor *, class Scripting::WeakLifetimeScope const &);
     MCAPI ~ScriptBlockExplodedEvent();
 
 protected:

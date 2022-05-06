@@ -26,6 +26,7 @@ public:
     MCAPI CompassSpriteCalculator(float, float);
     MCAPI int getFrame() const;
     MCAPI int update(class Actor &, bool);
+    MCAPI int updateFromPosition(class BlockSource const *, class BlockPos const &, float, float, float, bool, bool, bool, bool);
     MCAPI int updateFromPosition(class BlockSource const *, float, float, float, bool, bool);
 
 protected:

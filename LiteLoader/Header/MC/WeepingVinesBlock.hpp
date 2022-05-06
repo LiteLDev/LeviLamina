@@ -145,7 +145,7 @@ public:
 protected:
 
 private:
-    MCAPI bool _shouldGrow(class BlockSource &, class BlockPos const &, unsigned __int64) const;
+    MCAPI int _getAge(class Block const &) const;
     MCAPI void _tryGrow(class BlockSource &, class BlockPos const &, int) const;
 
 };

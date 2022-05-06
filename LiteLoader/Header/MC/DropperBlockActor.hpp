@@ -41,6 +41,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI DropperBlockActor(class BlockPos);
     MCAPI bool pushOutItems(class BlockSource &);
 
 protected:

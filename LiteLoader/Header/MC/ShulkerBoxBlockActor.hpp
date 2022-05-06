@@ -100,6 +100,7 @@ protected:
 private:
     MCAPI void _calculateBB();
     MCAPI class Vec3 _calculateMovementWithCollisions(class BlockSource &, class Actor *) const;
+    MCAPI void _moveCollidedEntities(class BlockSource &) const;
     MCAPI static int const ITEMS_SIZE;
 
 };

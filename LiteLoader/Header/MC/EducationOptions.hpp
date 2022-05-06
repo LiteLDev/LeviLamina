@@ -41,6 +41,7 @@ public:
     MCAPI static bool isBaseCodeBuilderEnabled();
     MCAPI static bool isChemistryEnabled();
     MCAPI static bool isCodeBuilderEnabled();
+    MCAPI static bool isEducationEnabled();
 
 protected:
 

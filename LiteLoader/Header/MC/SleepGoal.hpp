@@ -42,5 +42,6 @@ protected:
 private:
     MCAPI void _wakeUp();
     MCAPI void lockPosToBedPos();
+    MCAPI void setSleepVariables();
 
 };

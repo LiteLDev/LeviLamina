@@ -24,19 +24,14 @@ public:
 
 public:
     /*
-    inline int getContainerSize() const{
-        int (FurnaceBlockActor::*rv)() const;
-        *((void**)&rv) = dlsym("?getContainerSize@FurnaceBlockActor@@UEBAHXZ");
-        return (this->*rv)();
-    }
     inline int getMaxStackSize() const{
         int (FurnaceBlockActor::*rv)() const;
         *((void**)&rv) = dlsym("?getMaxStackSize@FurnaceBlockActor@@UEBAHXZ");
         return (this->*rv)();
     }
-    inline  ~FurnaceBlockActor(){
-         (FurnaceBlockActor::*rv)();
-        *((void**)&rv) = dlsym("??1FurnaceBlockActor@@UEAA@XZ");
+    inline int getContainerSize() const{
+        int (FurnaceBlockActor::*rv)() const;
+        *((void**)&rv) = dlsym("?getContainerSize@FurnaceBlockActor@@UEBAHXZ");
         return (this->*rv)();
     }
     inline class Container const * getContainer() const{
@@ -49,14 +44,9 @@ public:
         *((void**)&rv) = dlsym("?getContainer@FurnaceBlockActor@@UEAAPEAVContainer@@XZ");
         return (this->*rv)();
     }
-    inline class ItemStack const & getItem(int a0) const{
-        class ItemStack const & (FurnaceBlockActor::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getItem@FurnaceBlockActor@@UEBAAEBVItemStack@@H@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void onMove(){
-        void (FurnaceBlockActor::*rv)();
-        *((void**)&rv) = dlsym("?onMove@FurnaceBlockActor@@UEAAXXZ");
+    inline  ~FurnaceBlockActor(){
+         (FurnaceBlockActor::*rv)();
+        *((void**)&rv) = dlsym("??1FurnaceBlockActor@@UEAA@XZ");
         return (this->*rv)();
     }
     inline std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource & a0){
@@ -84,6 +74,11 @@ public:
         *((void**)&rv) = dlsym("?fixupOnLoad@FurnaceBlockActor@@UEAAXAEAVLevelChunk@@@Z");
         return (this->*rv)(std::forward<class LevelChunk &>(a0));
     }
+    inline class ItemStack const & getItem(int a0) const{
+        class ItemStack const & (FurnaceBlockActor::*rv)(int) const;
+        *((void**)&rv) = dlsym("?getItem@FurnaceBlockActor@@UEBAAEBVItemStack@@H@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
     inline std::string getName() const{
         std::string (FurnaceBlockActor::*rv)() const;
         *((void**)&rv) = dlsym("?getName@FurnaceBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
@@ -98,6 +93,11 @@ public:
         void (FurnaceBlockActor::*rv)(class BlockSource &);
         *((void**)&rv) = dlsym("?onCustomTagLoadDone@FurnaceBlockActor@@UEAAXAEAVBlockSource@@@Z");
         return (this->*rv)(std::forward<class BlockSource &>(a0));
+    }
+    inline void onMove(){
+        void (FurnaceBlockActor::*rv)();
+        *((void**)&rv) = dlsym("?onMove@FurnaceBlockActor@@UEAAXXZ");
+        return (this->*rv)();
     }
     inline void onNeighborChanged(class BlockSource & a0, class BlockPos const & a1){
         void (FurnaceBlockActor::*rv)(class BlockSource &, class BlockPos const &);

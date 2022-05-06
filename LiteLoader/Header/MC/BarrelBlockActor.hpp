@@ -55,6 +55,7 @@ public:
         return (this->*rv)(std::forward<class Player &>(a0));
     }
     */
+    MCAPI BarrelBlockActor(class BlockPos const &);
 
 protected:
 

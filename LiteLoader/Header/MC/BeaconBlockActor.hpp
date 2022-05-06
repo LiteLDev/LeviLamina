@@ -69,16 +69,6 @@ public:
         *((void**)&rv) = dlsym("?getMaxStackSize@BeaconBlockActor@@UEBAHXZ");
         return (this->*rv)();
     }
-    inline std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource & a0){
-        std::unique_ptr<class BlockActorDataPacket> (BeaconBlockActor::*rv)(class BlockSource &);
-        *((void**)&rv) = dlsym("?_getUpdatePacket@BeaconBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0));
-    }
-    inline void _onUpdatePacket(class CompoundTag const & a0, class BlockSource & a1){
-        void (BeaconBlockActor::*rv)(class CompoundTag const &, class BlockSource &);
-        *((void**)&rv) = dlsym("?_onUpdatePacket@BeaconBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const &>(a0), std::forward<class BlockSource &>(a1));
-    }
     inline class Container const * getContainer() const{
         class Container const * (BeaconBlockActor::*rv)() const;
         *((void**)&rv) = dlsym("?getContainer@BeaconBlockActor@@UEBAPEBVContainer@@XZ");
@@ -88,6 +78,16 @@ public:
         class Container * (BeaconBlockActor::*rv)();
         *((void**)&rv) = dlsym("?getContainer@BeaconBlockActor@@UEAAPEAVContainer@@XZ");
         return (this->*rv)();
+    }
+    inline std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource & a0){
+        std::unique_ptr<class BlockActorDataPacket> (BeaconBlockActor::*rv)(class BlockSource &);
+        *((void**)&rv) = dlsym("?_getUpdatePacket@BeaconBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0));
+    }
+    inline void _onUpdatePacket(class CompoundTag const & a0, class BlockSource & a1){
+        void (BeaconBlockActor::*rv)(class CompoundTag const &, class BlockSource &);
+        *((void**)&rv) = dlsym("?_onUpdatePacket@BeaconBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z");
+        return (this->*rv)(std::forward<class CompoundTag const &>(a0), std::forward<class BlockSource &>(a1));
     }
     inline std::string getName() const{
         std::string (BeaconBlockActor::*rv)() const;

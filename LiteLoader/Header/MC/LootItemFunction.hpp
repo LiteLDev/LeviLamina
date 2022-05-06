@@ -36,6 +36,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI std::vector<std::unique_ptr<class LootItemCondition>> const & getConditions() const;
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value);
 
 protected:

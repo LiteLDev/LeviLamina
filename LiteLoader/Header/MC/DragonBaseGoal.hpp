@@ -31,6 +31,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI DragonBaseGoal(class Mob &);
 
 protected:
 

@@ -15,11 +15,6 @@ class AttributeModifier {
 
 #undef AFTER_EXTRA
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTEMODIFIER
-public:
-    AttributeModifier(class AttributeModifier const &) = delete;
-#endif
-
 public:
     /*0*/ virtual ~AttributeModifier();
     /*
@@ -34,6 +29,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI AttributeModifier(class AttributeModifier const &);
     MCAPI AttributeModifier(class mce::UUID, std::string const &, float, int, int, bool);
     MCAPI AttributeModifier(class mce::UUID, std::string const &, float, enum AttributeModifierOperation, enum AttributeOperands, bool);
     MCAPI AttributeModifier();
@@ -42,6 +38,7 @@ public:
     MCAPI std::string const & getName() const;
     MCAPI int getOperand() const;
     MCAPI int getOperation() const;
+    MCAPI bool isSerializable() const;
     MCAPI class AttributeModifier & operator=(class AttributeModifier const &);
     MCAPI bool operator==(class AttributeModifier const &) const;
 

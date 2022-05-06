@@ -42,7 +42,6 @@ public:
     MCAPI ActorFilterGroup(class ActorFilterGroup const &);
     MCAPI bool evaluateActor(class Actor const &, class VariantParameterList const &) const;
     MCAPI class ActorFilterGroup & operator=(class ActorFilterGroup const &);
-    MCAPI class ActorFilterGroup & operator=(class ActorFilterGroup &&);
     MCAPI static void initialize();
 
 protected:

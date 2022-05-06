@@ -20,13 +20,14 @@ class CommandPropertyBag {
 public:
     class CommandPropertyBag& operator=(class CommandPropertyBag const &) = delete;
     CommandPropertyBag(class CommandPropertyBag const &) = delete;
-    CommandPropertyBag() = delete;
 #endif
 
 public:
     /*0*/ virtual ~CommandPropertyBag();
     MCAPI CommandPropertyBag(class Json::Value const &);
+    MCAPI CommandPropertyBag();
     MCAPI void addToResultList(std::string const &, std::string const &);
+    MCAPI std::unique_ptr<class CommandPropertyBag> clone() const;
     MCAPI void set(std::string const &, class BlockPos const &);
     MCAPI void set(std::string const &, class Vec3);
 

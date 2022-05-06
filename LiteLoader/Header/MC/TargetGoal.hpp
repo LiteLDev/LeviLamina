@@ -46,6 +46,7 @@ public:
 
 protected:
     MCAPI bool _canAttack(class Actor *, bool, struct MobDescriptor const **);
+    MCAPI bool _canReach(class Actor &);
     MCAPI bool _canReachAfterDelay(class Actor &);
     MCAPI bool _withinRange(class Actor const &);
 

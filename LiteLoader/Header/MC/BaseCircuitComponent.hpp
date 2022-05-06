@@ -69,9 +69,13 @@ public:
     }
     */
     MCAPI BaseCircuitComponent();
+    MCAPI bool hasDirectPower();
+    MCAPI bool isRemoved() const;
+    MCAPI void setRemoved();
 
 protected:
     MCAPI bool trackPowerSource(class CircuitTrackingInfo const &, int, bool, int);
+    MCAPI bool trackPowerSourceDuplicates(class CircuitTrackingInfo const &, int, bool);
 
 private:
 

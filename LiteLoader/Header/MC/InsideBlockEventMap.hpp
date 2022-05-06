@@ -22,13 +22,17 @@ public:
 #endif
 
 public:
-    MCAPI InsideBlockEventMap(class InsideBlockEventMap const &);
     MCAPI InsideBlockEventMap(class Block const &, bool, bool, bool, class DefinitionTrigger const &, class DefinitionTrigger const &);
+    MCAPI InsideBlockEventMap(class InsideBlockEventMap const &);
+    MCAPI class gsl::not_null<class Block const *> getBlock() const;
     MCAPI class DefinitionTrigger const & getEnteredEvent() const;
     MCAPI class DefinitionTrigger const & getExitedEvent() const;
     MCAPI bool isActorCurrentlyInside() const;
+    MCAPI bool isIgnoringStates() const;
     MCAPI bool isWatchingIfActorEnters() const;
     MCAPI bool isWatchingIfActorExits() const;
+    MCAPI void setCurrentlyInside(bool);
+    MCAPI void setWasInside(bool);
     MCAPI bool wasActorInsideLastTick() const;
     MCAPI ~InsideBlockEventMap();
 

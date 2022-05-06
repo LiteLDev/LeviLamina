@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -25,7 +24,6 @@ public:
 
 public:
     MCAPI class PackSettings * getPackSettings(class PackManifest const &);
-    MCAPI class PackSettings * loadPackSettings(struct PackIdVersion const &, class Json::Value const &);
 
 protected:
 

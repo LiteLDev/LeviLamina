@@ -24,7 +24,13 @@ public:
     MCAPI MolangVariableMap(class MolangVariableMap &&);
     MCAPI MolangVariableMap(class MolangVariableMap const &);
     MCAPI class MolangVariableMap & clear();
+    MCAPI struct MolangScriptArg const * getConstScriptArgReference(enum MolangVariableIndex const &) const;
+    MCAPI struct MolangScriptArg const & getMolangVariable(enum MolangVariableIndex const &, bool &) const;
+    MCAPI struct MolangScriptArg const & getMolangVariable(unsigned __int64 const &, bool &) const;
     MCAPI struct MolangScriptArg const & getMolangVariable(unsigned __int64, char const *) const;
+    MCAPI struct MolangScriptArg * getNonConstScriptArgReference(enum MolangVariableIndex const &);
+    MCAPI struct MolangScriptArg * getOrAddNonConstScriptArgReference(enum MolangVariableIndex const &);
+    MCAPI struct MolangScriptArg const & getPublicMolangVariable(enum MolangVariableIndex const &, bool &) const;
     MCAPI std::vector<std::unique_ptr<class MolangVariable>> const & getVariables() const;
     MCAPI class MolangVariableMap & operator=(class MolangVariableMap &&);
     MCAPI class MolangVariableMap & operator=(class MolangVariableMap const &);

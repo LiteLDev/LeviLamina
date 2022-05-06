@@ -15,10 +15,14 @@ struct TextureUVCoordinateSet {
 
 #undef AFTER_EXTRA
 
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTUREUVCOORDINATESET
+public:
+    struct TextureUVCoordinateSet& operator=(struct TextureUVCoordinateSet const &) = delete;
+#endif
+
 public:
     MCAPI TextureUVCoordinateSet(struct TextureUVCoordinateSet const &);
     MCAPI TextureUVCoordinateSet();
-    MCAPI struct TextureUVCoordinateSet & operator=(struct TextureUVCoordinateSet const &);
     MCAPI ~TextureUVCoordinateSet();
 
 protected:

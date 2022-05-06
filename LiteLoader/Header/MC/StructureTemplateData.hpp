@@ -19,7 +19,6 @@ class StructureTemplateData {
 public:
     class StructureTemplateData& operator=(class StructureTemplateData const &) = delete;
     StructureTemplateData(class StructureTemplateData const &) = delete;
-    StructureTemplateData() = delete;
 #endif
 
 public:
@@ -31,9 +30,22 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI StructureTemplateData();
+    MCAPI void addEntityData(std::unique_ptr<class CompoundTag>);
+    MCAPI void addPalette(std::string const &, class StructureBlockPalette);
+    MCAPI void clear();
+    MCAPI std::vector<int> const & getBlockIndices() const;
+    MCAPI std::vector<std::unique_ptr<class CompoundTag>> const & getEntityData() const;
+    MCAPI std::vector<int> const & getExtraBlockIndices() const;
     MCAPI class StructureBlockPalette const * getPalette(std::string const &) const;
+    MCAPI class BlockPos const & getSize() const;
+    MCAPI class BlockPos const & getStructureWorldOrigin() const;
     MCAPI bool load(class CompoundTag const &);
     MCAPI std::unique_ptr<class CompoundTag> save() const;
+    MCAPI void setBlockIndices(std::vector<int>);
+    MCAPI void setExtraBlockIndices(std::vector<int>);
+    MCAPI void setSize(class BlockPos const &);
+    MCAPI void setStructureWorldOrigin(class BlockPos const &);
     MCAPI static std::string const DEFAULT_PALETTE_NAME;
 
 protected:

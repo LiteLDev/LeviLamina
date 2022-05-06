@@ -24,6 +24,7 @@ public:
 #endif
 
 public:
+    MCAPI bool areKnownFilesValid(class PackAccessStrategy const &);
     MCAPI ~ResourceSignature();
     MCAPI static class Core::PathBuffer<std::string> const SIGNATURE_FILENAME;
 

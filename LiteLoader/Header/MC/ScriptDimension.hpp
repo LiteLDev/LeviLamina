@@ -35,6 +35,7 @@ public:
     MCAPI class Scripting::Result<void> createExplosion(class Vec3 const &, float, struct Scripting::TypedObjectHandle<struct ScriptExplosionOptions>) const;
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptBlock> getBlock(class Scripting::WeakLifetimeScope, class BlockPos const &);
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptBlock>> getBlockFromRay(class Scripting::WeakLifetimeScope, class Vec3 const &, class ScriptVector const &, class std::optional<struct ScriptBlockRaycastOptions> const &) const;
+    MCAPI class Dimension & getDimension() const;
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptActorIterator>> getEntities(class std::optional<struct ScriptActorQueryOptions>) const;
     MCAPI std::vector<class Scripting::StrongTypedObjectHandle<class ScriptActor>> getEntitiesAtBlockLocation(class BlockPos const &) const;
     MCAPI class Scripting::Result<std::vector<class Scripting::StrongTypedObjectHandle<class ScriptActor>>> getEntitiesFromRay(class Scripting::WeakLifetimeScope, class Vec3 const &, class ScriptVector const &, class std::optional<struct ScriptEntityRaycastOptions> const &) const;

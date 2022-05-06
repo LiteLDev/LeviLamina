@@ -3,14 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Actor.hpp"
-#include "Monster.hpp"
+#include "HumanoidMonster.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class EvocationIllager : public Monster {
+class EvocationIllager : public HumanoidMonster {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -74,8 +74,6 @@ public:
     /*249*/ virtual void __unk_vfn_249();
     /*251*/ virtual void die(class ActorDamageSource const &);
     /*261*/ virtual void __unk_vfn_261();
-    /*265*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
     /*269*/ virtual void __unk_vfn_269();
     /*278*/ virtual void __unk_vfn_278();
     /*280*/ virtual void spawnAnim();

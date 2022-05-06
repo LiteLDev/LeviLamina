@@ -38,6 +38,8 @@ public:
     MCAPI AdventureSettingsPacket(struct AdventureSettings const &, class Abilities const &, struct ActorUniqueID, bool);
     MCAPI AdventureSettingsPacket();
     MCAPI void fillIn(struct AdventureSettings &, class Abilities &) const;
+    MCAPI bool isSet(enum AdventureSettingsPacket::Flags) const;
+    MCAPI bool isSetPermissions(unsigned int const &, enum AdventureSettingsPacket::PermissionsFlags) const;
 
 protected:
 

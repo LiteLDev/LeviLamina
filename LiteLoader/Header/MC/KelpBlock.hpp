@@ -158,6 +158,7 @@ public:
 protected:
 
 private:
+    MCAPI int _getAge(class Block const &) const;
     MCAPI void _tryGrow(class BlockSource &, class BlockPos const &, int) const;
 
 };

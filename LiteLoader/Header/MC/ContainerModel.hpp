@@ -62,15 +62,15 @@ public:
         *((void**)&rv) = dlsym("?isItemInstanceBased@ContainerModel@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline enum ContainerExpandStatus getItemExpandStatus(int a0) const{
-        enum ContainerExpandStatus (ContainerModel::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getItemExpandStatus@ContainerModel@@UEBA?AW4ContainerExpandStatus@@H@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
     inline class Container * _getContainer() const{
         class Container * (ContainerModel::*rv)() const;
         *((void**)&rv) = dlsym("?_getContainer@ContainerModel@@MEBAPEAVContainer@@XZ");
         return (this->*rv)();
+    }
+    inline enum ContainerExpandStatus getItemExpandStatus(int a0) const{
+        enum ContainerExpandStatus (ContainerModel::*rv)(int) const;
+        *((void**)&rv) = dlsym("?getItemExpandStatus@ContainerModel@@UEBA?AW4ContainerExpandStatus@@H@Z");
+        return (this->*rv)(std::forward<int>(a0));
     }
     inline void switchItemExpando(int a0){
         void (ContainerModel::*rv)(int);
@@ -89,13 +89,24 @@ public:
     }
     */
     MCAPI ContainerModel(enum ContainerEnumName, int, enum ContainerCategory, bool);
+    MCAPI bool _useLegacyTransactions() const;
+    MCAPI enum ContainerEnumName getContainerEnumName() const;
+    MCAPI int getContainerSlot(int) const;
+    MCAPI std::string const & getContainerStringName() const;
+    MCAPI int getModelSlot(int) const;
+    MCAPI void initContainerRuntimeId();
     MCAPI bool isContainerSlotInRange(int) const;
+    MCAPI bool isIntermediaryCategory() const;
     MCAPI void networkUpdateItem(int, class ItemStack const &, class ItemStack const &);
     MCAPI void registerOnContainerChangedCallback(class std::function<void (int, class ItemStack const &, class ItemStack const &)>);
     MCAPI void registerPlayerNotificationCallback(class std::function<void (int, class ItemStack const &, class ItemStack const &)>);
+    MCAPI void serverInitItemStackIds();
+    MCAPI void setClientUIContainer(class SparseContainerClient *);
+    MCAPI void setItemSource(int, struct SlotData const &);
 
 protected:
     MCAPI void _init();
+    MCAPI void _notifyPlayer(int, class ItemStack const &, class ItemStack const &);
 
 private:
     MCAPI void _onClientUIItemNetworkChanged(int, class ItemStack const &, class ItemStack const &);

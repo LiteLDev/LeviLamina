@@ -30,6 +30,7 @@ public:
 #endif
 
 public:
+    MCAPI Spawner(class Level &);
     MCAPI void postProcessSpawnMobs(class BlockSource &, int, int, class Random &);
     MCAPI class ItemActor * spawnItem(class BlockSource &, class ItemStack const &, class Actor *, class Vec3 const &, int);
     MCAPI class Mob * spawnMob(class BlockSource &, struct ActorDefinitionIdentifier const &, class Actor *, class Vec3 const &, bool, bool, bool);

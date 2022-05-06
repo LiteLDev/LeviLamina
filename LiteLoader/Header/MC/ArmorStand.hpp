@@ -102,7 +102,7 @@ public:
     /*338*/ virtual void onBorn(class Actor &, class Actor &);
     /*343*/ virtual float _getWalkTargetValue(class BlockPos const &);
     /*345*/ virtual void __unk_vfn_345();
-    /*355*/ virtual void _serverAiMobStep();
+    /*355*/ virtual void __unk_vfn_355();
     /*359*/ virtual void __unk_vfn_359();
     /*
     inline bool interactPreventDefault(){
@@ -113,6 +113,7 @@ public:
     */
     MCAPI ArmorStand(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI int getNumSlotsFilled() const;
+    MCAPI void setPoseIndex(int);
 
 protected:
 

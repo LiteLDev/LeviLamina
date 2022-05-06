@@ -669,6 +669,7 @@ public:
     MCAPI void setCommandRegistrationOverride(class std::function<void (struct CommandFlag &, std::string const &)>);
     MCAPI void setNetworkUpdateCallback(class std::function<void (class Packet const &)>);
     MCAPI void setScoreCallback(class std::function<int (bool &, std::string const &, class Actor const &)>);
+    MCAPI void setSoftEnumValues(std::string const &, std::vector<std::string>);
     MCAPI ~CommandRegistry();
     MCAPI static char const * COMMAND_NAME_ENUM_NAME;
     MCAPI static char const * FUNCTION_NAME_SOFTENUM_NAME;

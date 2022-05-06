@@ -44,13 +44,18 @@ public:
     MCAPI void _initScreen(class ItemStackNetManagerScreen &);
     MCAPI struct ItemStackRequestHandlerSlotInfo _validateRequestSlot(struct ItemStackRequestSlotInfo const &, bool, bool);
     MCAPI void addFilteredStrings(class TypedClientNetId<struct ItemStackRequestIdTag, int, 0>, std::vector<std::string>);
+    MCAPI void beginRequest(class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> const &, class ItemStackNetManagerScreen &);
     MCAPI class std::tuple<enum ItemStackNetResult, std::vector<struct ItemStackResponseContainerInfo>> endRequest(enum ItemStackNetResult);
+    MCAPI void endRequestBatch();
     MCAPI std::vector<std::string> const & getFilteredStrings(class TypedClientNetId<struct ItemStackRequestIdTag, int, 0>) const;
     MCAPI class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> const & getRequestId() const;
     MCAPI class ContainerScreenContext const & getScreenContext() const;
     MCAPI enum ItemStackNetResult handleRequestAction(class ItemStackRequestAction const &);
+    MCAPI bool hasFilteredStrings(class TypedClientNetId<struct ItemStackRequestIdTag, int, 0>) const;
     MCAPI bool isValidationCraftingImplemented();
+    MCAPI void normalTick();
     MCAPI std::vector<class ItemInstance> tryCraft(std::unique_ptr<struct ContainerValidationCraftInputs>);
+    MCAPI ~ItemStackRequestActionHandler();
 
 protected:
 

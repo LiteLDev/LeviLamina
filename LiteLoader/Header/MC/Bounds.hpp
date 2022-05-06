@@ -24,7 +24,6 @@ public:
 
 public:
     MCAPI Bounds(class BlockPos const &, class BlockPos const &, int, enum Bounds::Option);
-    MCAPI Bounds(class ChunkPos const &, class ChunkPos const &);
     MCAPI bool contains(struct Bounds const &) const;
 
 protected:

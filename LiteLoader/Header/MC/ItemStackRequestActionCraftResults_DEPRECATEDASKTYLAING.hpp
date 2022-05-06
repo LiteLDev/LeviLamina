@@ -40,6 +40,8 @@ public:
     }
     */
     MCAPI ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
+    MCAPI unsigned char getNumCrafts() const;
+    MCAPI std::vector<class ItemInstance> const & getResults() const;
 
 protected:
 

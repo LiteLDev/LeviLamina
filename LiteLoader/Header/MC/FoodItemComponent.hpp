@@ -69,6 +69,7 @@ public:
         return (this->*rv)(std::forward<class ItemStack &>(a0), std::forward<class Player &>(a1), std::forward<class Level &>(a2));
     }
     */
+    MCAPI FoodItemComponent(class ComponentItem *);
     MCAPI class ItemDescriptor getUsingConvertsToItemDescriptor() const;
     MCAPI class FoodItemComponent & operator=(class FoodItemComponent const &);
     MCAPI static void bindType();

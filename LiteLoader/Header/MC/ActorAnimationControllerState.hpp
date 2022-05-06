@@ -23,6 +23,14 @@ public:
 #endif
 
 public:
+    MCAPI void addAnimation(class HashedString const &);
+    MCAPI void addAnimation(class HashedString const &, class ExpressionNode const &);
+    MCAPI void addBlendTransitionKeyFrame(float, float);
+    MCAPI class ActorAnimationEvent & addEntryActorEvent(float, std::string const &, enum CurrentCmdVersion, enum MolangVersion);
+    MCAPI class ActorAnimationEvent & addExitActorEvent(float, std::string const &, enum CurrentCmdVersion, enum MolangVersion);
+    MCAPI class ActorParticleEffect & addParticleEffect();
+    MCAPI class ActorSoundEffect & addSoundEffect();
+    MCAPI void addTransition(std::string const &, std::string const &, enum MolangVersion, bool);
     MCAPI class StateAnimationVariable & addVariable(std::string const &);
     MCAPI void setBlendTransitionTime(float);
 

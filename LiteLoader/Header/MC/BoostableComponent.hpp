@@ -36,6 +36,7 @@ public:
 protected:
 
 private:
+    MCAPI bool _canUseItem(class Actor &, class ItemStack &);
     MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_BOOSTING;
     MCAPI static class mce::UUID const SPEED_MODIFIER_BOOSTING_UUID;
 

@@ -25,11 +25,13 @@ public:
 public:
     MCAPI void appendFormattedHovertext(class ItemStackBase const &, std::string &, bool) const;
     MCAPI void clearColor(class ItemStackBase &) const;
+    MCAPI class mce::Color getColor(class CompoundTag const *, class ItemDescriptor const &) const;
     MCAPI bool hasCustomColor(class ItemStackBase const &) const;
     MCAPI void setColor(class ItemStackBase &, class mce::Color const &) const;
     MCAPI static class mce::Color DEFAULT_HORSE_LEATHER_COLOR;
     MCAPI static class mce::Color DEFAULT_LEATHER_COLOR;
     MCAPI static void ResetDefaultLeatherColor();
+    MCAPI static class HashedString const & getIdentifier();
 
 protected:
 

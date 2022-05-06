@@ -119,6 +119,7 @@ public:
     */
     MCAPI Slime(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI float getOldSquishValue() const;
+    MCAPI int getSlimeSize() const;
     MCAPI float getSquishValue() const;
 
 protected:

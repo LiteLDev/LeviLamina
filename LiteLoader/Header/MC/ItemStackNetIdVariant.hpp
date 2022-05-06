@@ -29,9 +29,9 @@ struct ItemStackNetIdVariant {
 #undef AFTER_EXTRA
 
 public:
+    MCAPI ItemStackNetIdVariant();
     MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant &&);
     MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant const &);
-    MCAPI ItemStackNetIdVariant();
     MCAPI void deserialize(class ReadOnlyBinaryStream &);
     MCAPI bool hasServerNetId() const;
     MCAPI bool isValid() const;
@@ -42,6 +42,8 @@ public:
     MCAPI bool operator==(struct ItemStackNetIdVariant const &) const;
     MCAPI void serialize(class BinaryStream &) const;
     MCAPI std::string toString() const;
+    MCAPI class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const * tryGetLegacyRequestId() const;
+    MCAPI class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> const * tryGetRequestId() const;
     MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const * tryGetServerNetId() const;
     MCAPI ~ItemStackNetIdVariant();
 

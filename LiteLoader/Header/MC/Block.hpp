@@ -34,6 +34,7 @@ public:
 public:
     /*0*/ virtual ~Block();
     /*1*/ virtual enum BlockRenderLayer getRenderLayer() const;
+    MCAPI Block(unsigned short, class gsl::not_null<class BlockLegacy *>);
     MCAPI Block(unsigned short, class gsl::not_null<class BlockLegacy *>, class CompoundTag, unsigned int const &);
     MCAPI void addAABBs(class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     MCAPI bool addCollisionShapes(class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;

@@ -42,6 +42,7 @@ public:
     MCAPI DoorInteractGoal(class Mob &);
 
 protected:
+    MCAPI bool _doorBlocksPath() const;
 
 private:
     MCAPI static class DoorBlock const * _findBlockingDoorAtPos(class BlockPos const &, class Mob const &, class Path *, enum Direction::Type &, enum Direction::Type &);

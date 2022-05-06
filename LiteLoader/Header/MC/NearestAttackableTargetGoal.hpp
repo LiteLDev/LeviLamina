@@ -41,6 +41,7 @@ public:
 
 protected:
     MCAPI bool _canStartSearching();
+    MCAPI std::vector<struct DistanceSortedActor> _getNearbyActors();
     MCAPI bool _isTargetVisible(class Mob const &, float, float) const;
 
 private:

@@ -21,17 +21,19 @@ enum Type;
 public:
     class MapDecoration& operator=(class MapDecoration const &) = delete;
     MapDecoration(class MapDecoration const &) = delete;
-    MapDecoration() = delete;
 #endif
 
 public:
     MCAPI MapDecoration(enum MapDecoration::Type, signed char, signed char, signed char, std::string const &, class mce::Color const &);
+    MCAPI MapDecoration();
     MCAPI class mce::Color const & getColor() const;
     MCAPI enum MapDecoration::Type getImg() const;
     MCAPI std::string const & getLabel() const;
     MCAPI signed char getRot() const;
     MCAPI signed char getX() const;
     MCAPI signed char getY() const;
+    MCAPI void load(class CompoundTag const &);
+    MCAPI void save(class CompoundTag &);
     MCAPI ~MapDecoration();
 
 protected:

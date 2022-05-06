@@ -34,6 +34,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI PackLoadError(enum PackParseErrorType, std::vector<std::string> const &);
 
 protected:
 

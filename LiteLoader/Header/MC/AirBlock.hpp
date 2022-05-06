@@ -148,14 +148,14 @@ public:
     /*198*/ virtual void __unk_vfn_198();
     /*199*/ virtual void __unk_vfn_199();
     /*
-    inline bool canBeSilkTouched() const{
-        bool (AirBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeSilkTouched@AirBlock@@MEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool canHaveExtraData() const{
         bool (AirBlock::*rv)() const;
         *((void**)&rv) = dlsym("?canHaveExtraData@AirBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canBeSilkTouched() const{
+        bool (AirBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@AirBlock@@MEBA_NXZ");
         return (this->*rv)();
     }
     */

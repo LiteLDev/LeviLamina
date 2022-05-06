@@ -12,6 +12,7 @@ namespace persona {
 
 #define AFTER_EXTRA
 // Add Member There
+enum AnimatedTextureType;
 enum PieceType;
 
 #undef AFTER_EXTRA

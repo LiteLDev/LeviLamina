@@ -160,6 +160,11 @@ public:
     /*126*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /*
+    inline bool isComponentBased() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isComponentBased@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline bool isMultiColorTinted(class ItemStack const & a0) const{
         bool (Item::*rv)(class ItemStack const &) const;
         *((void**)&rv) = dlsym("?isMultiColorTinted@Item@@UEBA_NAEBVItemStack@@@Z");
@@ -173,11 +178,6 @@ public:
     inline bool isActorPlacerItem() const{
         bool (Item::*rv)() const;
         *((void**)&rv) = dlsym("?isActorPlacerItem@Item@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isComponentBased() const{
-        bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?isComponentBased@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool hasCustomColor(class ItemStackBase const & a0) const{
@@ -200,14 +200,14 @@ public:
         *((void**)&rv) = dlsym("?isComplex@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isCandle() const{
-        bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?isCandle@Item@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isMusicDisk() const{
         bool (Item::*rv)() const;
         *((void**)&rv) = dlsym("?isMusicDisk@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isCandle() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isCandle@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isPattern() const{
@@ -230,6 +230,16 @@ public:
         *((void**)&rv) = dlsym("?playSoundIncrementally@Item@@UEBAXAEBVItemInstance@@AEAVMob@@@Z");
         return (this->*rv)(std::forward<class ItemInstance const &>(a0), std::forward<class Mob &>(a1));
     }
+    inline int getMaxUseDuration(class ItemInstance const * a0) const{
+        int (Item::*rv)(class ItemInstance const *) const;
+        *((void**)&rv) = dlsym("?getMaxUseDuration@Item@@UEBAHPEBVItemInstance@@@Z");
+        return (this->*rv)(std::forward<class ItemInstance const *>(a0));
+    }
+    inline  ~Item(){
+         (Item::*rv)();
+        *((void**)&rv) = dlsym("??1Item@@UEAA@XZ");
+        return (this->*rv)();
+    }
     inline class mce::Color getBaseColor(class ItemStack const & a0) const{
         class mce::Color (Item::*rv)(class ItemStack const &) const;
         *((void**)&rv) = dlsym("?getBaseColor@Item@@UEBA?AVColor@mce@@AEBVItemStack@@@Z");
@@ -239,16 +249,6 @@ public:
         class mce::Color (Item::*rv)(class ItemStack const &) const;
         *((void**)&rv) = dlsym("?getSecondaryColor@Item@@UEBA?AVColor@mce@@AEBVItemStack@@@Z");
         return (this->*rv)(std::forward<class ItemStack const &>(a0));
-    }
-    inline  ~Item(){
-         (Item::*rv)();
-        *((void**)&rv) = dlsym("??1Item@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline int getMaxUseDuration(class ItemInstance const * a0) const{
-        int (Item::*rv)(class ItemInstance const *) const;
-        *((void**)&rv) = dlsym("?getMaxUseDuration@Item@@UEBAHPEBVItemInstance@@@Z");
-        return (this->*rv)(std::forward<class ItemInstance const *>(a0));
     }
     */
     MCAPI Item(std::string const &, short);

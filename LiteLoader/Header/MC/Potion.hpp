@@ -21,11 +21,11 @@ enum PotionVariant;
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POTION
 public:
     class Potion& operator=(class Potion const &) = delete;
-    Potion(class Potion const &) = delete;
     Potion() = delete;
 #endif
 
 public:
+    MCAPI Potion(class Potion const &);
     MCAPI void appendFormattedPotionText(std::string &, enum Potion::PotionType, enum Potion::PotionVariant, class Player const &, float) const;
     MCAPI std::string effectDurationToString(enum Potion::PotionType, float, class MobEffectInstance const &) const;
     MCAPI std::string effectPotencyToString(class MobEffectInstance const &) const;

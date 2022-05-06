@@ -50,6 +50,7 @@ public:
     /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
     /*37*/ virtual int getOutputSignal();
     /*38*/ virtual void setOutputSignal(int);
+    MCAPI ComparatorBlockActor(class BlockPos const &);
 
 protected:
 

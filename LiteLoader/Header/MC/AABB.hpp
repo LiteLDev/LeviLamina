@@ -39,6 +39,7 @@ public:
     MCAPI class AABB cloneAndGrow(class Vec3 const &) const;
     MCAPI class AABB cloneAndShrink(class Vec3 const &) const;
     MCAPI class AABB cloneAndTransformByMatrix(class Matrix const &) const;
+    MCAPI bool contains(class AABB const &) const;
     MCAPI bool contains(class Vec3 const &) const;
     MCAPI float distanceTo(class AABB const &) const;
     MCAPI float distanceTo(class Vec3 const &) const;

@@ -23,8 +23,8 @@ public:
     MCAPI void clear();
     MCAPI void combine(class DefinitionInstanceGroup const &);
     MCAPI bool contains(class DefinitionInstanceGroup const &) const;
-    MCAPI class DefinitionInstanceGroup & operator=(class DefinitionInstanceGroup &&);
     MCAPI class DefinitionInstanceGroup & operator=(class DefinitionInstanceGroup const &);
+    MCAPI class DefinitionInstanceGroup & operator=(class DefinitionInstanceGroup &&);
     MCAPI bool overlaps(class DefinitionInstanceGroup const &) const;
     MCAPI void remove(class std::shared_ptr<class IDefinitionInstance> const &);
     MCAPI void subtract(class DefinitionInstanceGroup const &);

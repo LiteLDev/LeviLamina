@@ -44,6 +44,11 @@ public:
     }
     */
     MCAPI CraftHandlerBase(class ItemStackRequestActionCraftHandler &);
+    MCAPI bool _isNonImplementedTrustClientResults() const;
+    MCAPI enum ItemStackNetResult endRequest(enum ItemStackNetResult);
+    MCAPI enum ItemStackNetResult handleCraftAction(class ItemStackRequestActionCraftBase const &, enum ItemStackNetResult);
+    MCAPI bool isCraftRequest();
+    MCAPI void postRequest(bool);
 
 protected:
     MCAPI class std::tuple<enum ItemStackNetResult, class Recipe const *> _getRecipeFromNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);

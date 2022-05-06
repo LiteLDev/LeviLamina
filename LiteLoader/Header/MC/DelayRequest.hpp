@@ -22,6 +22,10 @@ public:
 
 public:
     MCAPI DelayRequest(std::unique_ptr<class IRequestAction>, unsigned __int64);
+    MCAPI void executeAction(class ServerLevel &, class Dimension &);
+    MCAPI class gsl::not_null<class IRequestAction *> getAction() const;
+    MCAPI unsigned __int64 getTickToExecuteOn() const;
+    MCAPI bool operator>(class DelayRequest const &) const;
     MCAPI ~DelayRequest();
 
 protected:

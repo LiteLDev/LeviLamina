@@ -37,12 +37,12 @@ private:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYACTION
 public:
+    class InventoryAction& operator=(class InventoryAction const &) = delete;
     InventoryAction() = delete;
 #endif
 
 public:
     MCAPI InventoryAction(class InventoryAction const &);
-    MCAPI class InventoryAction & operator=(class InventoryAction const &);
     MCAPI void postLoadItems(class BlockPalette &, bool);
     MCAPI ~InventoryAction();
 

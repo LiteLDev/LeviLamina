@@ -29,6 +29,7 @@ public:
     MCAPI bool hasChanged();
     MCAPI void initPermutations(std::vector<class std::shared_ptr<class ActorPermutation>> &);
     MCAPI void reload(class RenderParams &);
+    MCAPI ~ActorPermutationEventHandler();
 
 protected:
 

@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -32,6 +33,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI void parse(class Json::Value const &);
 
 protected:
 

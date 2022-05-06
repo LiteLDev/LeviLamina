@@ -37,10 +37,12 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI RecordItemComponent(class ComponentItem *);
     MCAPI std::string getAlias() const;
     MCAPI int getComparatorSignal() const;
     MCAPI float getDuration() const;
     MCAPI enum LevelSoundEvent getSound() const;
+    MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
 protected:

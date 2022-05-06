@@ -29,8 +29,11 @@ public:
 #endif
 
 public:
+    MCAPI MapItemTrackedActor(struct MapItemTrackedActor::UniqueId const &, class BlockSource &);
     MCAPI float getDecorationRotation(class BlockSource &);
+    MCAPI class Actor * getEntity(class BlockSource &);
     MCAPI std::unique_ptr<class Packet> nextUpdatePacket(class MapItemSavedData const &);
+    MCAPI void setPixelDirty(unsigned int, unsigned int);
 
 protected:
 

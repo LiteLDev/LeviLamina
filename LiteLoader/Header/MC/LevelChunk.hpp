@@ -52,6 +52,7 @@ public:
     MCAPI void changeState(enum ChunkState, enum ChunkState);
     MCAPI bool checkSeasonsPostProcessDirty();
     MCAPI bool chunkHasConvertedDataTag() const;
+    MCAPI void clearDeletedEntities();
     MCAPI void clearDirtyTickCounters();
     MCAPI void deserializeBiomes(class IDataInput &);
     MCAPI void deserializeBlockEntities(class IDataInput &);
@@ -138,6 +139,7 @@ public:
     MCAPI bool needsWallFix() const;
     MCAPI bool nonActorDataNeedsSaving(int, int) const;
     MCAPI void onBlockEntityChanged();
+    MCAPI void onDiscarded();
     MCAPI class LevelChunk & operator=(class LevelChunk &&);
     MCAPI void placeCallbacks(class ChunkBlockPos const &, class Block const &, class Block const &, class BlockSource *, class std::shared_ptr<class BlockActor>);
     MCAPI void populateHeightMapDataForSubChunkPacket(short, struct SubChunkPacket::SubChunkPacketData &) const;
@@ -208,7 +210,6 @@ protected:
     MCAPI void _generateOriginalLightingSubChunk(class BlockSource &, unsigned __int64, bool);
     MCAPI void _lightingCallbacks(class ChunkBlockPos const &, class Block const &, class Block const &, class BlockSource *);
     MCAPI void _placeBlockEntity(class std::shared_ptr<class BlockActor>);
-    MCAPI void _reassignSubChunks(class buffer_span_mut<struct SubChunk>);
     MCAPI bool _recalcHeight(class ChunkBlockPos const &, class BlockSource *);
     MCAPI void _removeCallbacks(class ChunkBlockPos const &, class Block const &, class Block const &, class BlockSource *);
     MCAPI void _setAllBiomesFrom2D(class std::array<struct BiomeChunkData, 256> &);

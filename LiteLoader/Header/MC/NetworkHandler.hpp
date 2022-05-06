@@ -122,6 +122,7 @@ public:
     MCAPI NetworkHandler(class Scheduler &, std::vector<std::string> const &, struct NetworkHandlerToggles, class Bedrock::NonOwnerPointer<class NetworkDebugManager> const &);
     MCAPI void disconnect();
     MCAPI void enableAsyncFlush(class NetworkIdentifier const &);
+    MCAPI void flush(class NetworkIdentifier const &, class std::function<void (void)> &&);
     MCAPI std::vector<std::unique_ptr<class NetworkHandler::Connection>> const & getConnections() const;
     MCAPI class Connector & getConnector();
     MCAPI class std::weak_ptr<class EncryptedNetworkPeer> getEncryptedPeerForUser(class NetworkIdentifier const &);
@@ -140,6 +141,7 @@ public:
     MCAPI void registerServerInstance(class NetEventCallback &);
     MCAPI void runEvents(bool);
     MCAPI void send(class NetworkIdentifier const &, class Packet const &, unsigned char);
+    MCAPI void sendToMultiple(std::vector<struct NetworkIdentifierWithSubId> const &, class Packet const &);
     MCAPI void setCloseConnection(class NetworkIdentifier const &);
     MCAPI void unregisterClientOrServerInstance(unsigned char const &);
     MCAPI void update(std::vector<class WeakEntityRef> const *);

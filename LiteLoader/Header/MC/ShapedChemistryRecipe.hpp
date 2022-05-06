@@ -31,7 +31,6 @@ public:
     /*6*/ virtual bool matches(class CraftingContainer &, class Level &) const;
     /*8*/ virtual class mce::UUID const & getId() const;
     /*10*/ virtual bool isMultiRecipe() const;
-    MCAPI ShapedChemistryRecipe(class gsl::basic_string_span<char const, -1>, int, int, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int, class mce::UUID const *);
     MCAPI static class mce::UUID const ID;
 
 protected:

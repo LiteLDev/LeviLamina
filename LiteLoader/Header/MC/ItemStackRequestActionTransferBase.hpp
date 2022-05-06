@@ -23,18 +23,21 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~ItemStackRequestActionTransferBase();
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void _write(class BinaryStream &) const;
+    /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
     /*
-    inline bool _read(class ReadOnlyBinaryStream & a0){
-        bool (ItemStackRequestActionTransferBase::*rv)(class ReadOnlyBinaryStream &);
-        *((void**)&rv) = dlsym("?_read@ItemStackRequestActionTransferBase@@MEAA_NAEAVReadOnlyBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class ReadOnlyBinaryStream &>(a0));
-    }
-    inline void _write(class BinaryStream & a0) const{
-        void (ItemStackRequestActionTransferBase::*rv)(class BinaryStream &) const;
-        *((void**)&rv) = dlsym("?_write@ItemStackRequestActionTransferBase@@MEBAXAEAVBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class BinaryStream &>(a0));
+    inline  ~ItemStackRequestActionTransferBase(){
+         (ItemStackRequestActionTransferBase::*rv)();
+        *((void**)&rv) = dlsym("??1ItemStackRequestActionTransferBase@@UEAA@XZ");
+        return (this->*rv)();
     }
     */
+    MCAPI unsigned char getAmount() const;
+    MCAPI struct ItemStackRequestSlotInfo const & getDst() const;
     MCAPI struct ItemStackRequestSlotInfo const & getSrc() const;
 
 protected:

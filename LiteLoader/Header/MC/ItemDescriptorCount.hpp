@@ -28,6 +28,7 @@ public:
     MCAPI ItemDescriptorCount(class Block const &, unsigned short);
     MCAPI ItemDescriptorCount(class BlockLegacy const &, unsigned short);
     MCAPI ItemDescriptorCount(class Item const &, int, unsigned short);
+    MCAPI ItemDescriptorCount(class ItemDescriptor const &, unsigned short);
     MCAPI ItemDescriptorCount(class gsl::basic_string_span<char const, -1>, int, unsigned short);
     MCAPI ItemDescriptorCount();
     MCAPI short getStackSize() const;

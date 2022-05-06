@@ -25,6 +25,7 @@ public:
     MCAPI BackgroundTaskQueue();
     MCAPI void flush();
     MCAPI unsigned __int64 getApproximateTaskCount() const;
+    MCAPI int getNextItemPriority();
     MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>, bool);
     MCAPI void resortPriorityQueue();
     MCAPI class std::shared_ptr<class BackgroundTaskBase> tryPop(int);

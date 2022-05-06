@@ -105,6 +105,7 @@ public:
     /*124*/ virtual std::string getAuxValuesDescription() const;
     /*126*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /*128*/ virtual enum Potion::PotionType getPotionType() const;
+    MCAPI SplashPotionItem(std::string const &, int);
 
 protected:
 

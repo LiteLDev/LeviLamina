@@ -31,8 +31,10 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI WorldTemplatePackManifest(class PackManifest &&);
     MCAPI WorldTemplatePackManifest();
     MCAPI enum GameType getGameType() const;
+    MCAPI void setGameType(enum GameType);
 
 protected:
 

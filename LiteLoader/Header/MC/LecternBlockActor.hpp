@@ -54,11 +54,6 @@ public:
         *((void**)&rv) = dlsym("?getItem@LecternBlockActor@@UEBAAEBVItemStack@@H@Z");
         return (this->*rv)(std::forward<int>(a0));
     }
-    inline void _onUpdatePacket(class CompoundTag const & a0, class BlockSource & a1){
-        void (LecternBlockActor::*rv)(class CompoundTag const &, class BlockSource &);
-        *((void**)&rv) = dlsym("?_onUpdatePacket@LecternBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const &>(a0), std::forward<class BlockSource &>(a1));
-    }
     inline class Container * getContainer(){
         class Container * (LecternBlockActor::*rv)();
         *((void**)&rv) = dlsym("?getContainer@LecternBlockActor@@UEAAPEAVContainer@@XZ");
@@ -68,6 +63,11 @@ public:
         class Container const * (LecternBlockActor::*rv)() const;
         *((void**)&rv) = dlsym("?getContainer@LecternBlockActor@@UEBAPEBVContainer@@XZ");
         return (this->*rv)();
+    }
+    inline void _onUpdatePacket(class CompoundTag const & a0, class BlockSource & a1){
+        void (LecternBlockActor::*rv)(class CompoundTag const &, class BlockSource &);
+        *((void**)&rv) = dlsym("?_onUpdatePacket@LecternBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z");
+        return (this->*rv)(std::forward<class CompoundTag const &>(a0), std::forward<class BlockSource &>(a1));
     }
     inline void load(class Level & a0, class CompoundTag const & a1, class DataLoadHelper & a2){
         void (LecternBlockActor::*rv)(class Level &, class CompoundTag const &, class DataLoadHelper &);

@@ -38,6 +38,8 @@ public:
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void Schedule(void ( *)(void *), void *);
+    MCAPI CompactionListenerEnv(class leveldb::Env *);
+    MCAPI void setCompactionCallback(class std::function<void (enum CompactionStatus)>);
 
 protected:
 

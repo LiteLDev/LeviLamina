@@ -44,11 +44,6 @@ public:
         *((void**)&rv) = dlsym("?getMaxStackSize@HopperBlockActor@@UEBAHXZ");
         return (this->*rv)();
     }
-    inline std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource & a0){
-        std::unique_ptr<class BlockActorDataPacket> (HopperBlockActor::*rv)(class BlockSource &);
-        *((void**)&rv) = dlsym("?_getUpdatePacket@HopperBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0));
-    }
     inline class Container * getContainer(){
         class Container * (HopperBlockActor::*rv)();
         *((void**)&rv) = dlsym("?getContainer@HopperBlockActor@@UEAAPEAVContainer@@XZ");
@@ -63,6 +58,16 @@ public:
         void (HopperBlockActor::*rv)();
         *((void**)&rv) = dlsym("?onMove@HopperBlockActor@@UEAAXXZ");
         return (this->*rv)();
+    }
+    inline void setContainerChanged(int a0){
+        void (HopperBlockActor::*rv)(int);
+        *((void**)&rv) = dlsym("?setContainerChanged@HopperBlockActor@@UEAAXH@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    inline std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource & a0){
+        std::unique_ptr<class BlockActorDataPacket> (HopperBlockActor::*rv)(class BlockSource &);
+        *((void**)&rv) = dlsym("?_getUpdatePacket@HopperBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0));
     }
     inline void _onUpdatePacket(class CompoundTag const & a0, class BlockSource & a1){
         void (HopperBlockActor::*rv)(class CompoundTag const &, class BlockSource &);
@@ -98,11 +103,6 @@ public:
         void (HopperBlockActor::*rv)(int, int, class std::function<void (int, class ItemStack const &)>);
         *((void**)&rv) = dlsym("?serverInitItemStackIds@HopperBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z");
         return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<class std::function<void (int, class ItemStack const &)>>(a2));
-    }
-    inline void setContainerChanged(int a0){
-        void (HopperBlockActor::*rv)(int);
-        *((void**)&rv) = dlsym("?setContainerChanged@HopperBlockActor@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
     }
     inline void setItem(int a0, class ItemStack const & a1){
         void (HopperBlockActor::*rv)(int, class ItemStack const &);

@@ -37,11 +37,17 @@ public:
     MCAPI void addTickToLevelChunk(class LevelChunk &, class BlockPos const &, class Block const &, int, int);
     MCAPI void eliminateAllTicksZeroAndAbove();
     MCAPI void eliminateDuplicatesOf(class BlockLegacy const &);
+    MCAPI bool getNextUpdateForPos(class BlockPos const &, struct Tick &) const;
     MCAPI class std::unordered_multimap<class BlockPos, struct TickDelayBlock, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, struct TickDelayBlock>>> getTickDelaysInArea(class BoundingBox const &) const;
+    MCAPI bool hasTickInCurrentTick(class BlockPos const &) const;
     MCAPI bool hasTickInPendingTicks(class BlockPos const &) const;
+    MCAPI bool isBlockInPendingTick(class BlockPos const &, class Block const &) const;
+    MCAPI bool isBlockInPendingTick(class BlockPos const &, class BlockLegacy const &) const;
     MCAPI bool isEmpty() const;
+    MCAPI bool isInstaticking() const;
     MCAPI void load(class CompoundTag const &, class BlockPalette const &);
     MCAPI void remove(class std::function<bool (class TickNextTickData const &)> &&);
+    MCAPI void remove(class BlockPos const &, class Block const &);
     MCAPI void save(class CompoundTag &) const;
     MCAPI void setOwningChunk(class LevelChunk *);
     MCAPI void tickAllPendingTicks(class BlockSource &, unsigned __int64);

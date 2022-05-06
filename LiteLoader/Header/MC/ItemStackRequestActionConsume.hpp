@@ -20,7 +20,6 @@ class ItemStackRequestActionConsume : public ItemStackRequestActionTransferBase 
 public:
     class ItemStackRequestActionConsume& operator=(class ItemStackRequestActionConsume const &) = delete;
     ItemStackRequestActionConsume(class ItemStackRequestActionConsume const &) = delete;
-    ItemStackRequestActionConsume() = delete;
 #endif
 
 public:
@@ -28,6 +27,7 @@ public:
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
+    MCAPI ItemStackRequestActionConsume();
 
 protected:
 

@@ -3,14 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Actor.hpp"
-#include "Monster.hpp"
+#include "HumanoidMonster.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class Witch : public Monster {
+class Witch : public HumanoidMonster {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -75,8 +75,6 @@ public:
     /*249*/ virtual void __unk_vfn_249();
     /*259*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /*261*/ virtual void __unk_vfn_261();
-    /*265*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
     /*269*/ virtual void __unk_vfn_269();
     /*277*/ virtual void _onSizeUpdated();
     /*278*/ virtual void __unk_vfn_278();

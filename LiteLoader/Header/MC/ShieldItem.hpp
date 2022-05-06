@@ -107,6 +107,7 @@ public:
     /*121*/ virtual void __unk_vfn_121();
     /*124*/ virtual std::string getAuxValuesDescription() const;
     /*126*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
+    MCAPI ShieldItem(std::string const &, int);
     MCAPI void playBlockSound(class Player *) const;
     MCAPI void playBreakSound(class Player *) const;
     MCAPI static int const EFFECTIVE_BLOCK_DELAY;

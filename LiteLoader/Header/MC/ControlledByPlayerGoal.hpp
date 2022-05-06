@@ -36,6 +36,5 @@ public:
 protected:
 
 private:
-    MCAPI bool _canBeControlledByPassenger();
 
 };

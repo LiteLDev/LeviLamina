@@ -101,6 +101,7 @@ public:
     /*121*/ virtual void __unk_vfn_121();
     /*124*/ virtual std::string getAuxValuesDescription() const;
     /*126*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
+    MCAPI WritableBookItem(std::string const &, int);
     MCAPI static void addPageAt(class ItemStack &, int, struct PageContent const &);
     MCAPI static struct PageContent deletePage(class ItemStack &, int);
     MCAPI static void replacePage(class ItemStack &, int, struct PageContent const &);

@@ -164,10 +164,12 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI AbstractCandleBlock(std::string const &, int, class Material const &);
 
 protected:
     MCAPI void _addExtinguishEffects(class Block const &, class BlockSource &, class BlockPos const &) const;
     MCAPI void _checkForWaterlogging(class BlockSource &, class BlockPos const &) const;
+    MCAPI static bool _canBeLit(class Block const &, class BlockSource &, class BlockPos const &);
 
 private:
 

@@ -21,6 +21,12 @@ public:
 #endif
 
 public:
+    MCAPI void beginRope();
+    MCAPI void endRope();
+    MCAPI void freezeInterpolation();
+    MCAPI void pushBack(class Vec3 const &);
+    MCAPI void reserve(unsigned __int64);
+    MCAPI unsigned __int64 size() const;
     MCAPI ~RopePoints();
 
 protected:

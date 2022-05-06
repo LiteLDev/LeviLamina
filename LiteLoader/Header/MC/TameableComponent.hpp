@@ -31,6 +31,5 @@ protected:
 private:
     MCAPI bool _attemptToTame(class Actor &, class Player &);
     MCAPI bool _canTame(class Actor &, class Player &);
-    MCAPI static void _becomeTame(class Actor &);
 
 };

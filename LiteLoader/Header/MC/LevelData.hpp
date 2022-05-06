@@ -28,6 +28,7 @@ public:
 public:
     MCAPI LevelData(class LevelSettings const &, std::string const &, enum GeneratorType, class BlockPos const &, bool, enum EducationEditionOffer, float, float);
     MCAPI LevelData(bool);
+    MCAPI struct LevelDataValue const * _getValue(class HashedString const &) const;
     MCAPI bool achievementsWillBeDisabledOnLoad() const;
     MCAPI std::unique_ptr<class CompoundTag> createTag() const;
     MCAPI void disableAchievements();
@@ -42,7 +43,6 @@ public:
     MCAPI class Abilities const & getDefaultAbilities() const;
     MCAPI class CompoundTag const & getEduSharedUriResource() const;
     MCAPI enum EducationEditionOffer getEducationEditionOffer() const;
-    MCAPI std::string const & getEducationOid() const;
     MCAPI std::string const & getEducationProductId() const;
     MCAPI class Experiments & getExperiments();
     MCAPI class Experiments const & getExperiments() const;
@@ -55,6 +55,7 @@ public:
     MCAPI enum GeneratorType getGenerator() const;
     MCAPI bool getLANBroadcast() const;
     MCAPI bool getLANBroadcastIntent() const;
+    MCAPI __int64 getLastPlayed() const;
     MCAPI std::string const & getLevelName() const;
     MCAPI float getLightningLevel() const;
     MCAPI int getLightningTime() const;

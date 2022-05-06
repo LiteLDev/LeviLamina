@@ -54,6 +54,7 @@ public:
     /*33*/ virtual void __unk_vfn_33();
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
+    MCAPI BeehiveBlockActor(class BlockPos const &);
     MCAPI void disableBeeSpawn();
     MCAPI void evictAll(class BlockSource &, bool);
     MCAPI void saveUserData(class CompoundTag &) const;

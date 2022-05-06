@@ -25,8 +25,10 @@ public:
 public:
     /*0*/ virtual ~ItemStackRequestActionCraftHandler();
     MCAPI ItemStackRequestActionCraftHandler(class ItemStackRequestActionHandler &, class Player &);
+    MCAPI class std::shared_ptr<class SimpleSparseContainer> _getOrInitSparseContainer(enum ContainerEnumName);
     MCAPI enum ItemStackNetResult _initCraftResults(std::vector<class ItemInstance> const &, unsigned char);
     MCAPI class ItemInstance * _initSingleCraftResult(class ItemInstance const &);
+    MCAPI struct ItemStackRequestHandlerSlotInfo _validateRequestSlot(struct ItemStackRequestSlotInfo const &);
     MCAPI enum ItemStackNetResult endRequest(enum ItemStackNetResult);
     MCAPI void endRequestBatch();
     MCAPI class ItemStackRequestActionHandler const & getActionHandler() const;

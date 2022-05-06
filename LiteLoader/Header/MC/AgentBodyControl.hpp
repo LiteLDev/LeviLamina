@@ -19,12 +19,12 @@ class AgentBodyControl {
 public:
     class AgentBodyControl& operator=(class AgentBodyControl const &) = delete;
     AgentBodyControl(class AgentBodyControl const &) = delete;
-    AgentBodyControl() = delete;
 #endif
 
 public:
     /*0*/ virtual ~AgentBodyControl();
     /*1*/ virtual void clientTick(class Mob &);
+    MCAPI AgentBodyControl();
 
 protected:
 

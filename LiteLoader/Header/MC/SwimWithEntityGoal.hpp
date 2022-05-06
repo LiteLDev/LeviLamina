@@ -43,6 +43,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI SwimWithEntityGoal(class Mob &);
 
 protected:
 

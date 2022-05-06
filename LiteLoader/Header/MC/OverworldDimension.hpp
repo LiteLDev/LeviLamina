@@ -29,6 +29,16 @@ public:
         *((void**)&rv) = dlsym("?_upgradeOldLimboEntity@OverworldDimension@@EEAAXAEAVCompoundTag@@W4LimboEntitiesVersion@@@Z");
         return (this->*rv)(std::forward<class CompoundTag &>(a0), std::forward<enum LimboEntitiesVersion>(a1));
     }
+    inline void fixWallChunk(class ChunkSource & a0, class LevelChunk & a1){
+        void (OverworldDimension::*rv)(class ChunkSource &, class LevelChunk &);
+        *((void**)&rv) = dlsym("?fixWallChunk@OverworldDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z");
+        return (this->*rv)(std::forward<class ChunkSource &>(a0), std::forward<class LevelChunk &>(a1));
+    }
+    inline bool levelChunkNeedsUpgrade(class LevelChunk const & a0) const{
+        bool (OverworldDimension::*rv)(class LevelChunk const &) const;
+        *((void**)&rv) = dlsym("?levelChunkNeedsUpgrade@OverworldDimension@@UEBA_NAEBVLevelChunk@@@Z");
+        return (this->*rv)(std::forward<class LevelChunk const &>(a0));
+    }
     inline std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource> a0, enum StorageVersion a1){
         std::unique_ptr<class ChunkSource> (OverworldDimension::*rv)(std::unique_ptr<class ChunkSource>, enum StorageVersion);
         *((void**)&rv) = dlsym("?_wrapStorageForVersionCompatibility@OverworldDimension@@EEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z");
@@ -39,11 +49,6 @@ public:
         *((void**)&rv) = dlsym("?createGenerator@OverworldDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@XZ");
         return (this->*rv)();
     }
-    inline void fixWallChunk(class ChunkSource & a0, class LevelChunk & a1){
-        void (OverworldDimension::*rv)(class ChunkSource &, class LevelChunk &);
-        *((void**)&rv) = dlsym("?fixWallChunk@OverworldDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z");
-        return (this->*rv)(std::forward<class ChunkSource &>(a0), std::forward<class LevelChunk &>(a1));
-    }
     inline class mce::Color getBrightnessDependentFogColor(class mce::Color const & a0, float a1) const{
         class mce::Color (OverworldDimension::*rv)(class mce::Color const &, float) const;
         *((void**)&rv) = dlsym("?getBrightnessDependentFogColor@OverworldDimension@@UEBA?AVColor@mce@@AEBV23@M@Z");
@@ -53,11 +58,6 @@ public:
         short (OverworldDimension::*rv)() const;
         *((void**)&rv) = dlsym("?getCloudHeight@OverworldDimension@@UEBAFXZ");
         return (this->*rv)();
-    }
-    inline bool levelChunkNeedsUpgrade(class LevelChunk const & a0) const{
-        bool (OverworldDimension::*rv)(class LevelChunk const &) const;
-        *((void**)&rv) = dlsym("?levelChunkNeedsUpgrade@OverworldDimension@@UEBA_NAEBVLevelChunk@@@Z");
-        return (this->*rv)(std::forward<class LevelChunk const &>(a0));
     }
     inline class Vec3 translatePosAcrossDimension(class Vec3 const & a0, class AutomaticID<class Dimension, int> a1) const{
         class Vec3 (OverworldDimension::*rv)(class Vec3 const &, class AutomaticID<class Dimension, int>) const;

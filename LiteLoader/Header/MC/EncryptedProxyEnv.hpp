@@ -35,6 +35,7 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual class leveldb::Status RenameFile(std::string const &, std::string const &);
+    MCAPI EncryptedProxyEnv(class leveldb::Env *, class ContentIdentity const &, std::string const &, enum EncryptedProxyReadMode);
 
 protected:
 

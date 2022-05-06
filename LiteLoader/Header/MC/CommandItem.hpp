@@ -25,11 +25,13 @@ public:
 #endif
 
 public:
+    MCAPI CommandItem(unsigned __int64);
     MCAPI CommandItem(int, short, bool);
     MCAPI CommandItem();
     MCAPI class std::optional<class ItemInstance> createInstance(int, int, class CommandOutput *, bool) const;
     MCAPI int getId() const;
     MCAPI operator bool() const;
+    MCAPI operator unsigned __int64() const;
 
 protected:
 

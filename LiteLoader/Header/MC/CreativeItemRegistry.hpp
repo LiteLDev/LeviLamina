@@ -34,6 +34,7 @@ public:
     MCAPI class CreativeItemEntry * findCreativeItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const &);
     MCAPI class CreativeItemEntry * findCreativeItemEntry(class ItemInstance const &);
     MCAPI class CreativeItemGroupCategory * getCreativeCategory(enum CreativeItemCategory);
+    MCAPI class CreativeGroupInfo * getCreativeGroup(unsigned int);
     MCAPI std::vector<class CreativeItemEntry> const & getCreativeItemEntries();
     MCAPI class CreativeItemEntry * getItemEntry(unsigned int);
     MCAPI class CreativeItemGroupCategory * newCreativeCategory(std::string const &, enum CreativeItemCategory);
@@ -45,6 +46,7 @@ public:
     MCAPI static class CreativeItemRegistry * current();
     MCAPI static void forEachCreativeItemInstance(class std::function<bool (class ItemInstance &)>);
     MCAPI static class std::mutex mCreativeListMutex;
+    MCAPI static void reset();
     MCAPI static void setCurrentRegistry(std::unique_ptr<class CreativeItemRegistry> &&);
 
 protected:

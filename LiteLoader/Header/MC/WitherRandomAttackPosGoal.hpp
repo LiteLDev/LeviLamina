@@ -32,6 +32,7 @@ public:
     /*5*/ virtual void stop();
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
+    MCAPI WitherRandomAttackPosGoal(class Mob &, float, int, int);
 
 protected:
 

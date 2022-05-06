@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+    MCAPI void cleanup();
+    MCAPI void update();
 
 protected:
 

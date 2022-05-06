@@ -22,8 +22,8 @@ public:
 #endif
 
 public:
-    MCAPI PingedCompatibleServer(struct PingedCompatibleServer const &);
     MCAPI PingedCompatibleServer(struct PingedCompatibleServer &&);
+    MCAPI PingedCompatibleServer(struct PingedCompatibleServer const &);
     MCAPI struct PingedCompatibleServer & operator=(struct PingedCompatibleServer &&);
     MCAPI ~PingedCompatibleServer();
 

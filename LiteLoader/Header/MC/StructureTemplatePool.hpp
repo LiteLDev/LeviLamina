@@ -25,6 +25,7 @@ public:
 public:
     MCAPI StructureTemplatePool(std::string, std::string, std::vector<struct std::pair<class StructurePoolElement const *, int>> &);
     MCAPI std::string const & getFallback() const;
+    MCAPI std::string const & getName() const;
     MCAPI class StructurePoolElement const * getRandomTemplate(class Random &) const;
     MCAPI std::vector<unsigned __int64> getShuffledTemplateIndexes(class Random &) const;
     MCAPI class StructurePoolElement const * getTemplate(unsigned __int64) const;

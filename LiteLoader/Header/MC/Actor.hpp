@@ -368,16 +368,6 @@ public:
         *((void**)&rv) = dlsym("?isCreativeModeAllowed@Actor@@UEAA_NXZ");
         return (this->*rv)();
     }
-    inline bool isShootable(){
-        bool (Actor::*rv)();
-        *((void**)&rv) = dlsym("?isShootable@Actor@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool breaksFallingBlocks() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?breaksFallingBlocks@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isLeashableType(){
         bool (Actor::*rv)();
         *((void**)&rv) = dlsym("?isLeashableType@Actor@@UEAA_NXZ");
@@ -391,6 +381,16 @@ public:
     inline bool isLocalPlayer() const{
         bool (Actor::*rv)() const;
         *((void**)&rv) = dlsym("?isLocalPlayer@Actor@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isShootable(){
+        bool (Actor::*rv)();
+        *((void**)&rv) = dlsym("?isShootable@Actor@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool breaksFallingBlocks() const{
+        bool (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?breaksFallingBlocks@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool _makeFlySound() const{
@@ -433,14 +433,14 @@ public:
         *((void**)&rv) = dlsym("?isFishable@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isTargetable() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isTargetable@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool canMakeStepSound() const{
         bool (Actor::*rv)() const;
         *((void**)&rv) = dlsym("?canMakeStepSound@Actor@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isTargetable() const{
+        bool (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?isTargetable@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline void _onSizeUpdated(){
@@ -563,8 +563,8 @@ public:
     MCAPI enum EquipmentSlot getEquipmentSlotForItem(class ItemStack const &) const;
     MCAPI bool getFirstAvailableSeatPos(class Actor &, class Vec3 &) const;
     MCAPI class Actor * getFirstPassenger() const;
-    MCAPI class SimpleContainer const & getHandContainer() const;
     MCAPI class SimpleContainer & getHandContainer();
+    MCAPI class SimpleContainer const & getHandContainer() const;
     MCAPI int getHealth() const;
     MCAPI int getHurtDir() const;
     MCAPI int getHurtTime() const;
@@ -747,6 +747,7 @@ public:
     MCAPI void reload();
     MCAPI void removeAllEffects();
     MCAPI void removeAllPassengers(bool, bool);
+    MCAPI void removeDefinitionGroup(std::string const &);
     MCAPI void removeEffect(int);
     MCAPI void removeEffectParticles();
     MCAPI void removePersistingTrade();
@@ -910,7 +911,6 @@ private:
     MCAPI void _sendLinkPacket(struct ActorLink const &) const;
     MCAPI void _serializeComponents(class CompoundTag &);
     MCAPI void _setupServerAnimationComponent();
-    MCAPI void _spawnPukeParticles();
     MCAPI void _spawnTreasureHuntingParticles();
     MCAPI bool _tryPlaceAt(class Vec3 const &, class AABB const &);
     MCAPI void _tryPlantWitherRose();

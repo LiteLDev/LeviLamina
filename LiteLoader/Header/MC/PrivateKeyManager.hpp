@@ -35,6 +35,7 @@ public:
     */
     MCAPI PrivateKeyManager(enum Crypto::Asymmetric::System);
     MCAPI std::string computeSecret(class KeyManager const &) const;
+    MCAPI std::string sign(std::string const &, enum Crypto::Hash::HashType) const;
 
 protected:
 

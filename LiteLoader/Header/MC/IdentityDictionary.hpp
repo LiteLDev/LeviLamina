@@ -25,6 +25,14 @@ public:
     MCAPI IdentityDictionary();
     MCAPI bool clearIdentity(struct ScoreboardId const &);
     MCAPI struct ScoreboardId const & convertFakeToReal(struct ScoreboardId const &, struct PlayerScoreboardId const &);
+    MCAPI std::vector<struct ScoreboardId> getAllScoreboardIds() const;
+    MCAPI struct ScoreboardId const & getScoreboardId(struct ActorUniqueID const &) const;
+    MCAPI struct ScoreboardId const & getScoreboardId(struct PlayerScoreboardId const &) const;
+    MCAPI struct ScoreboardId const & getScoreboardId(std::string const &) const;
+    MCAPI struct ScoreboardId const & registerIdentity(struct ScoreboardId const &, struct ActorUniqueID const &);
+    MCAPI struct ScoreboardId const & registerIdentity(struct ScoreboardId const &, struct PlayerScoreboardId const &);
+    MCAPI struct ScoreboardId const & registerIdentity(struct ScoreboardId const &, std::string const &);
+    MCAPI bool shouldConvertFakePlayer(struct PlayerScoreboardId const &, std::string const &);
     MCAPI ~IdentityDictionary();
 
 protected:

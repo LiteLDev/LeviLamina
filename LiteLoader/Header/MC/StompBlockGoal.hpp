@@ -42,6 +42,7 @@ public:
     /*19*/ virtual void _createDestroyParticles(class Level &, class BlockSource &, class BlockPos);
     /*20*/ virtual void _playBreakProgressSound(class Level &, class BlockSource &, class BlockPos);
     /*21*/ virtual void _playDestroySound(class Level &, class BlockSource &, class BlockPos);
+    MCAPI StompBlockGoal(class Block const *, class Mob &, float, int, int, float, int);
 
 protected:
 

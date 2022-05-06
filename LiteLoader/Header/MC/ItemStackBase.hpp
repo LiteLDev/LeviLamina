@@ -90,6 +90,7 @@ public:
     MCAPI bool getWasPickedUp() const;
     MCAPI bool hasChargedItem() const;
     MCAPI bool hasCompoundTextUserData() const;
+    MCAPI bool hasContainerData() const;
     MCAPI bool hasCustomHoverName() const;
     MCAPI bool hasSameAuxValue(class ItemStackBase const &) const;
     MCAPI bool hasSameUserData(class ItemStackBase const &) const;
@@ -165,12 +166,12 @@ public:
     MCAPI static std::string const TAG_ENCHANTS;
     MCAPI static std::string const TAG_LORE;
     MCAPI static std::string const TAG_REPAIR_COST;
-    MCAPI static bool isValidComponent(std::string const &);
 
 protected:
     MCAPI ItemStackBase(class ItemStackBase const &);
     MCAPI ItemStackBase(class Block const &, int, class CompoundTag const *);
     MCAPI ItemStackBase(class BlockLegacy const &, int);
+    MCAPI ItemStackBase(class BlockLegacy const &, int, short);
     MCAPI ItemStackBase(class Item const &);
     MCAPI ItemStackBase(class Item const &, int);
     MCAPI ItemStackBase(class Item const &, int, int);

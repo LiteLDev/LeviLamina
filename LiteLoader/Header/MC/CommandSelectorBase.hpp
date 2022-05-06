@@ -48,12 +48,31 @@ public:
 #endif
 
 public:
+    MCAPI void addFamilyFilter(struct InvertableFilter<std::string> const &);
     MCAPI void addFilter(class std::function<bool (class CommandOrigin const &, class Actor const &)>);
+    MCAPI void addGameModeFilter(struct InvertableFilter<enum GameType> const &);
+    MCAPI void addHasItemFilter(std::string const &, int, class CommandIntegerRange const &, enum EquipmentSlot, class CommandIntegerRange const &);
+    MCAPI void addLevelFilter(struct std::pair<int, int> const &);
+    MCAPI void addNameFilter(struct InvertableFilter<std::string> const &);
+    MCAPI void addScoreFilter(std::string const &, class CommandIntegerRange const &, class std::function<int (bool &, std::string const &, class Actor const &)>);
+    MCAPI void addTagFilter(struct InvertableFilter<std::string> const &);
+    MCAPI void addTypeFilter(struct InvertableFilter<std::string> const &);
+    MCAPI void addXRotationFilter(struct std::pair<float, float> const &);
+    MCAPI void addYRotationFilter(struct std::pair<float, float> const &);
     MCAPI bool compile(class CommandOrigin const &, std::string &);
     MCAPI std::string getName() const;
+    MCAPI enum CommandSelectionOrder getOrder() const;
     MCAPI bool hasName() const;
     MCAPI bool isExplicitIdSelector() const;
+    MCAPI void setBox(class BlockPos);
+    MCAPI void setExcludeAgents(bool);
+    MCAPI void setExplicitIdSelector(std::string const &);
     MCAPI void setIncludeDeadPlayers(bool);
+    MCAPI void setOrder(enum CommandSelectionOrder);
+    MCAPI void setPosition(class CommandPosition const &);
+    MCAPI void setRadiusMax(float);
+    MCAPI void setRadiusMin(float);
+    MCAPI void setResultCount(unsigned __int64, bool);
     MCAPI void setType(enum CommandSelectionType);
     MCAPI void setVersion(int);
     MCAPI ~CommandSelectorBase();

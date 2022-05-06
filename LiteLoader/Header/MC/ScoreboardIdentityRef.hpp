@@ -20,15 +20,18 @@ class ScoreboardIdentityRef {
 public:
     class ScoreboardIdentityRef& operator=(class ScoreboardIdentityRef const &) = delete;
     ScoreboardIdentityRef(class ScoreboardIdentityRef const &) = delete;
-    ScoreboardIdentityRef() = delete;
 #endif
 
 public:
+    MCAPI ScoreboardIdentityRef(struct ScoreboardId const &);
+    MCAPI ScoreboardIdentityRef();
     MCAPI struct ActorUniqueID const & getEntityId() const;
+    MCAPI std::string const & getFakePlayerName() const;
     MCAPI enum IdentityDefinition::Type getIdentityType() const;
     MCAPI std::string const & getName(class std::function<std::string const & (struct ActorUniqueID)> const &) const;
     MCAPI struct PlayerScoreboardId const & getPlayerId() const;
-    MCAPI bool hasScoreInObjective(class Objective const &) const;
+    MCAPI struct ScoreboardId const & getScoreboardId() const;
+    MCAPI bool isPlayerType() const;
     MCAPI bool modifyScoreInObjective(int &, class Objective &, int, enum PlayerScoreSetFunction);
     MCAPI bool removeFromObjective(class Scoreboard &, class Objective &);
     MCAPI static class ScoreboardIdentityRef const Undefined;

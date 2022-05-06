@@ -27,8 +27,11 @@ public:
     MCAPI float distanceTo(class PathfinderNode *) const;
     MCAPI float distanceToSqr(class PathfinderNode *) const;
     MCAPI bool equals(class PathfinderNode *);
+    MCAPI float getCostMalus() const;
     MCAPI enum NodeType getType() const;
     MCAPI bool inOpenSet();
+    MCAPI void setCostMalus(float);
+    MCAPI void setMoveMalus(float);
 
 protected:
 

@@ -19,7 +19,6 @@ class ScriptBlockLavaContainerComponent : public BaseScriptBlockLiquidContainerC
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKLAVACONTAINERCOMPONENT
 public:
     class ScriptBlockLavaContainerComponent& operator=(class ScriptBlockLavaContainerComponent const &) = delete;
-    ScriptBlockLavaContainerComponent(class ScriptBlockLavaContainerComponent const &) = delete;
     ScriptBlockLavaContainerComponent() = delete;
 #endif
 
@@ -32,6 +31,8 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI ScriptBlockLavaContainerComponent(class ScriptBlockLavaContainerComponent const &);
+    MCAPI ScriptBlockLavaContainerComponent(class ScriptBlockLavaContainerComponent &&);
     MCAPI class ScriptBlockLavaContainerComponent & operator=(class ScriptBlockLavaContainerComponent &&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockLavaContainerComponent> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockLavaContainerComponent> tryCreate(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);

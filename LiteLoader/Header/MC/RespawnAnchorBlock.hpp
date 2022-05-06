@@ -155,6 +155,7 @@ public:
     */
     MCAPI RespawnAnchorBlock(std::string const &, int);
     MCAPI static bool addItem(class Container &, int, class ItemStack &, class BlockSource &, class Block const &, class BlockPos const &);
+    MCAPI static int getChargeLevel(class Block const &);
 
 protected:
 

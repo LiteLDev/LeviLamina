@@ -29,14 +29,14 @@ public:
         *((void**)&rv) = dlsym("?startOpen@ChemistryTableBlockActor@@UEAAXAEAVPlayer@@@Z");
         return (this->*rv)(std::forward<class Player &>(a0));
     }
-    inline int getContainerSize() const{
-        int (ChemistryTableBlockActor::*rv)() const;
-        *((void**)&rv) = dlsym("?getContainerSize@ChemistryTableBlockActor@@UEBAHXZ");
-        return (this->*rv)();
-    }
     inline int getMaxStackSize() const{
         int (ChemistryTableBlockActor::*rv)() const;
         *((void**)&rv) = dlsym("?getMaxStackSize@ChemistryTableBlockActor@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline int getContainerSize() const{
+        int (ChemistryTableBlockActor::*rv)() const;
+        *((void**)&rv) = dlsym("?getContainerSize@ChemistryTableBlockActor@@UEBAHXZ");
         return (this->*rv)();
     }
     inline class Container * getContainer(){
@@ -90,6 +90,7 @@ public:
         return (this->*rv)(std::forward<class BlockSource &>(a0));
     }
     */
+    MCAPI ChemistryTableBlockActor(class BlockPos const &);
     MCAPI bool isSameType(enum ChemistryTableType) const;
     MCAPI void playerOpenLabTable(class Player &);
     MCAPI void reset(class BlockSource &);

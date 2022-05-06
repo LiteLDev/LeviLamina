@@ -83,6 +83,7 @@ public:
 #endif
 
 public:
+    MCAPI CompoundTagVariant(class Tag &&);
     MCAPI class Tag & emplace(class Tag &&);
     MCAPI class Tag * get();
     MCAPI class Tag const * get() const;

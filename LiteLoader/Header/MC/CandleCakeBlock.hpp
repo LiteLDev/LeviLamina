@@ -148,14 +148,14 @@ public:
         *((void**)&rv) = dlsym("?canBeSilkTouched@CandleCakeBlock@@EEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isCandleCakeBlock() const{
-        bool (CandleCakeBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isCandleCakeBlock@CandleCakeBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool hasComparatorSignal() const{
         bool (CandleCakeBlock::*rv)() const;
         *((void**)&rv) = dlsym("?hasComparatorSignal@CandleCakeBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isCandleCakeBlock() const{
+        bool (CandleCakeBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isCandleCakeBlock@CandleCakeBlock@@UEBA_NXZ");
         return (this->*rv)();
     }
     */

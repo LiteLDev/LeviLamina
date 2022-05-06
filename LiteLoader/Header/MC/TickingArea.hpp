@@ -55,14 +55,14 @@ public:
         *((void**)&rv) = dlsym("?getId@TickingArea@@UEBAAEBVUUID@mce@@XZ");
         return (this->*rv)();
     }
-    inline std::string const & getName() const{
-        std::string const & (TickingArea::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@TickingArea@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
     inline struct ActorUniqueID const & getEntityId() const{
         struct ActorUniqueID const & (TickingArea::*rv)() const;
         *((void**)&rv) = dlsym("?getEntityId@TickingArea@@UEBAAEBUActorUniqueID@@XZ");
+        return (this->*rv)();
+    }
+    inline std::string const & getName() const{
+        std::string const & (TickingArea::*rv)() const;
+        *((void**)&rv) = dlsym("?getName@TickingArea@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
         return (this->*rv)();
     }
     inline enum TickingAreaLoadMode getLoadMode() const{

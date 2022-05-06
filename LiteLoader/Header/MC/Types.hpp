@@ -107,7 +107,11 @@ public:
 #include "ActorUniqueID.hpp"
 
 //static_assert(!std::is_pod_v<ActorUniqueID>);
-
+class NetherNet
+{
+public:
+    struct NetworkID;
+};
 
 class ActorRuntimeID
 {

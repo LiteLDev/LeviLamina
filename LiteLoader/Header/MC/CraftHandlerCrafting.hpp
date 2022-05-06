@@ -30,6 +30,7 @@ public:
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual class Recipes const * _getLevelRecipes() const;
+    MCAPI CraftHandlerCrafting(bool, class Player &, class ItemStackRequestActionCraftHandler &);
 
 protected:
 

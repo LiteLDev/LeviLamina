@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "SubChunkBrightnessStorage.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -37,8 +38,13 @@ public:
     MCAPI void _setPropagatedBlockLightValue(struct SubChunkLightIndex, unsigned char);
     MCAPI void _setPropagatedSkyLightValue(struct SubChunkLightIndex, unsigned char);
     MCAPI void _setSkyLight(struct SubChunkLightIndex, struct Brightness, struct Brightness, struct Brightness, struct Brightness);
+    MCAPI void getBlock(class Pos const &, class Block const *&, class Block const *&);
+    MCAPI class Pos getCentralSubchunkOrigin();
+    MCAPI struct SubChunkBrightnessStorage::LightPair getLightPair(class Pos const &) const;
+    MCAPI void getTouchedSubChunks(std::vector<class Pos> &);
     MCAPI void setBlockLight(class Pos const &, struct Brightness, struct Brightness, struct Brightness, struct Brightness);
     MCAPI void setSkyLight(class Pos const &, struct Brightness, struct Brightness, struct Brightness, struct Brightness);
+    MCAPI void update(class BlockPos const &, unsigned __int64);
     MCAPI ~SubChunkRelighter();
     MCAPI static class std::bitset<196608> computeAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits();
     MCAPI static class std::bitset<196608> computeOuterEdgeOfComputationBits();
@@ -49,6 +55,7 @@ protected:
 
 private:
     MCAPI struct SubChunk * _dirtySubChunk(struct SubChunkLightIndex, unsigned int &);
+    MCAPI struct SubChunk * _getBlock(struct SubChunkLightIndex, class Block const *&, class Block const *&) const;
     MCAPI unsigned char _getLight(struct SubChunkLightIndex);
     MCAPI struct SubChunkBrightnessStorage::LightPair _getLightPair(struct SubChunkLightIndex) const;
     MCAPI static class std::bitset<196608> mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits;

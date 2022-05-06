@@ -29,14 +29,14 @@ public:
         *((void**)&rv) = dlsym("?isValidSpawn@TheEndDimension@@UEBA_NHH@Z");
         return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
     }
-    inline bool isDay() const{
-        bool (TheEndDimension::*rv)() const;
-        *((void**)&rv) = dlsym("?isDay@TheEndDimension@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool hasGround() const{
         bool (TheEndDimension::*rv)() const;
         *((void**)&rv) = dlsym("?hasGround@TheEndDimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isDay() const{
+        bool (TheEndDimension::*rv)() const;
+        *((void**)&rv) = dlsym("?isDay@TheEndDimension@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isFoggyAt(int a0, int a1) const{
@@ -53,6 +53,16 @@ public:
         bool (TheEndDimension::*rv)() const;
         *((void**)&rv) = dlsym("?mayRespawnViaBed@TheEndDimension@@UEBA_NXZ");
         return (this->*rv)();
+    }
+    inline float getTimeOfDay(int a0, float a1) const{
+        float (TheEndDimension::*rv)(int, float) const;
+        *((void**)&rv) = dlsym("?getTimeOfDay@TheEndDimension@@UEBAMHM@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<float>(a1));
+    }
+    inline float getSunIntensity(float a0, class Vec3 const & a1, float a2) const{
+        float (TheEndDimension::*rv)(float, class Vec3 const &, float) const;
+        *((void**)&rv) = dlsym("?getSunIntensity@TheEndDimension@@UEBAMMAEBVVec3@@M@Z");
+        return (this->*rv)(std::forward<float>(a0), std::forward<class Vec3 const &>(a1), std::forward<float>(a2));
     }
     inline void _upgradeOldLimboEntity(class CompoundTag & a0, enum LimboEntitiesVersion a1){
         void (TheEndDimension::*rv)(class CompoundTag &, enum LimboEntitiesVersion);
@@ -88,16 +98,6 @@ public:
         int (TheEndDimension::*rv)() const;
         *((void**)&rv) = dlsym("?getDefaultBiome@TheEndDimension@@UEBAHXZ");
         return (this->*rv)();
-    }
-    inline float getTimeOfDay(int a0, float a1) const{
-        float (TheEndDimension::*rv)(int, float) const;
-        *((void**)&rv) = dlsym("?getTimeOfDay@TheEndDimension@@UEBAMHM@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<float>(a1));
-    }
-    inline float getSunIntensity(float a0, class Vec3 const & a1, float a2) const{
-        float (TheEndDimension::*rv)(float, class Vec3 const &, float) const;
-        *((void**)&rv) = dlsym("?getSunIntensity@TheEndDimension@@UEBAMMAEBVVec3@@M@Z");
-        return (this->*rv)(std::forward<float>(a0), std::forward<class Vec3 const &>(a1), std::forward<float>(a2));
     }
     inline class BlockPos getSpawnPos() const{
         class BlockPos (TheEndDimension::*rv)() const;
@@ -145,6 +145,7 @@ public:
         return (this->*rv)(std::forward<class ChunkSource &>(a0), std::forward<class LevelChunk &>(a1), std::forward<class LevelChunk &>(a2));
     }
     */
+    MCAPI TheEndDimension(class Level &, class Scheduler &);
     MCAPI static float const AMBIENT_MULTIPLIER;
 
 protected:

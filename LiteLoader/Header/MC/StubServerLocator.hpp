@@ -55,6 +55,11 @@ public:
         *((void**)&rv) = dlsym("?setGetHostGUIDFn@StubServerLocator@@UEAAXAEBV?$function@$$A6A?AURakNetGUID@RakNet@@XZ@std@@@Z");
         return (this->*rv)(std::forward<class std::function<struct RakNet::RakNetGUID (void)> const &>(a0));
     }
+    inline  ~StubServerLocator(){
+         (StubServerLocator::*rv)();
+        *((void**)&rv) = dlsym("??1StubServerLocator@@UEAA@XZ");
+        return (this->*rv)();
+    }
     inline void addCustomServer(class AsynchronousIPResolver const & a0, int a1){
         void (StubServerLocator::*rv)(class AsynchronousIPResolver const &, int);
         *((void**)&rv) = dlsym("?addCustomServer@StubServerLocator@@UEAAXAEBVAsynchronousIPResolver@@H@Z");

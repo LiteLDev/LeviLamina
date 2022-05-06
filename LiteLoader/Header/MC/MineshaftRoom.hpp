@@ -32,6 +32,7 @@ public:
     /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /*6*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
     /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
+    MCAPI MineshaftRoom(struct MineshaftData &, int, class Random &, int, int);
 
 protected:
 

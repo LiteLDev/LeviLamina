@@ -32,6 +32,7 @@ public:
     /*6*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
     /*10*/ virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);
     /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
+    MCAPI DesertPyramidPiece(short, int, int);
 
 protected:
 

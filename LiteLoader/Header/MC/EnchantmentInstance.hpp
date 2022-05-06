@@ -27,7 +27,9 @@ public:
     MCAPI EnchantmentInstance();
     MCAPI int getEnchantLevel() const;
     MCAPI enum Enchant::Type getEnchantType() const;
+    MCAPI bool operator==(class EnchantmentInstance const &) const;
     MCAPI void setEnchantLevel(int);
+    MCAPI void setEnchantType(enum Enchant::Type);
 
 protected:
 

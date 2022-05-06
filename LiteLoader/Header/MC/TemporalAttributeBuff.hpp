@@ -46,6 +46,7 @@ public:
     MCAPI int getDuration() const;
     MCAPI int getLifeTimer() const;
     MCAPI void serializationSetLifeTime(int);
+    MCAPI void tick();
 
 protected:
 

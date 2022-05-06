@@ -29,6 +29,7 @@ public:
     /*4*/ virtual void _write(class BinaryStream &) const;
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
     MCAPI ItemStackRequestActionCraftRecipeAuto();
+    MCAPI unsigned char getNumCrafts() const;
 
 protected:
 

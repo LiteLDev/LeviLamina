@@ -24,6 +24,7 @@ public:
 #endif
 
 public:
+    MCAPI LootTable(std::string);
     MCAPI void deserialize(class Json::Value const &);
     MCAPI void fill(class Container &, class Random &, class LootTableContext &);
     MCAPI std::vector<class ItemStack> getRandomItems(class Random &, class LootTableContext &) const;

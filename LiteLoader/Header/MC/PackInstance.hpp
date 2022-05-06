@@ -29,7 +29,6 @@ public:
     MCAPI PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, std::string const &, bool, class PackSettings *);
     MCAPI PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, int, bool, class PackSettings *);
     MCAPI void forEachIn(class Core::Path const &, class std::function<void (class Core::Path const &)>, bool) const;
-    MCAPI std::string const & getFolderName() const;
     MCAPI double getLoadTime() const;
     MCAPI class PackManifest & getManifest();
     MCAPI class PackManifest const & getManifest() const;
@@ -45,8 +44,10 @@ public:
     MCAPI class SemVersion const & getVersion() const;
     MCAPI bool hasResource(class Core::Path const &) const;
     MCAPI bool isBaseGamePack() const;
+    MCAPI bool isSlicePack() const;
     MCAPI bool isZipped() const;
     MCAPI bool operator==(class PackInstance const &) const;
+    MCAPI void setLocale(std::string const &);
     MCAPI ~PackInstance();
 
 protected:

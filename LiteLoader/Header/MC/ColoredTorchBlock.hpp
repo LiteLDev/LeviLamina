@@ -141,5 +141,6 @@ public:
 protected:
 
 private:
+    MCAPI enum ColoredTorchColor _getColor(class Block const &) const;
 
 };

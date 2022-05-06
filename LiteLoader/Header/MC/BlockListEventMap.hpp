@@ -16,11 +16,11 @@ class BlockListEventMap {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLISTEVENTMAP
 public:
     class BlockListEventMap& operator=(class BlockListEventMap const &) = delete;
-    BlockListEventMap(class BlockListEventMap const &) = delete;
     BlockListEventMap() = delete;
 #endif
 
 public:
+    MCAPI BlockListEventMap(class BlockListEventMap const &);
     MCAPI ~BlockListEventMap();
 
 protected:

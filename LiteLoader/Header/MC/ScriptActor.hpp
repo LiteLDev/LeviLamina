@@ -70,6 +70,7 @@ public:
     MCAPI static void destroyHandle(struct ActorUniqueID const &, class Scripting::WeakLifetimeScope const &);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptActor> getHandle(class Actor const *, class Scripting::WeakLifetimeScope const &);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptActor> getHandle(class StackRefResultT<struct EntityRefTraits>, class Scripting::WeakLifetimeScope const &);
+    MCAPI static class Actor * tryGetActor(struct Scripting::TypedObjectHandle<class ScriptActor> &, class Scripting::WeakLifetimeScope const &);
 
 protected:
     MCAPI class Scripting::Result<struct Scripting::JSON> _runCommand(std::string const &, std::string const &, std::unique_ptr<class CommandOrigin>);

@@ -151,12 +151,17 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI Enchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
     MCAPI Enchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int, bool);
+    MCAPI bool canEnchant(int, bool) const;
+    MCAPI std::string getDescription() const;
     MCAPI std::string getDescriptionId() const;
     MCAPI enum Enchant::Type getEnchantType() const;
+    MCAPI enum Enchant::Frequency getFrequency() const;
     MCAPI class HashedString const & getStringId() const;
     MCAPI bool isAvailable() const;
     MCAPI bool isDisabled() const;
+    MCAPI bool isLootable() const;
     MCAPI static enum Enchant::Slot enchantSlotFromString(class gsl::basic_string_span<char const, -1>);
     MCAPI static class Enchant const * getEnchant(enum Enchant::Type const &);
     MCAPI static void initEnchants();

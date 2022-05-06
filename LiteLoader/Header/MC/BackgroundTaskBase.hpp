@@ -38,6 +38,7 @@ public:
     MCAPI enum TaskGroupState getGroupState() const;
     MCAPI class std::shared_ptr<class BackgroundTaskBase> getNext();
     MCAPI class BackgroundTaskBase * getPrev();
+    MCAPI int getPriority() const;
     MCAPI class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> getStartAfterTime() const;
     MCAPI bool hasAffinity() const;
     MCAPI bool isAsync() const;

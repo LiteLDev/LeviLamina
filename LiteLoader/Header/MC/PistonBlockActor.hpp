@@ -59,6 +59,7 @@ public:
     MCAPI bool isMoving() const;
     MCAPI bool isRetracted() const;
     MCAPI bool isRetracting() const;
+    MCAPI void moveEntityLastProgress(class Actor &, class Vec3);
     MCAPI void setShouldVerifyArmType(bool);
 
 protected:

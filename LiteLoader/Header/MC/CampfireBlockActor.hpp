@@ -56,6 +56,7 @@ public:
         return (this->*rv)(std::forward<class BlockSource &>(a0));
     }
     */
+    MCAPI CampfireBlockActor(class BlockPos const &);
     MCAPI void dropAllItems(class BlockSource &);
     MCAPI class ItemInstance const & getCookingItem(int);
     MCAPI bool setItem(class BlockSource &, class ItemInstance const &);

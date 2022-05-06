@@ -156,6 +156,7 @@ public:
     MCAPI Coral(std::string const &, int);
 
 protected:
+    MCAPI void checkAlive(class BlockSource &, class BlockPos const &) const;
 
 private:
 

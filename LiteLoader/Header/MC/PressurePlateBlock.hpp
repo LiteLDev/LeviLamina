@@ -114,6 +114,7 @@ public:
     /*151*/ virtual enum Flip getFaceFlip(unsigned char, class Block const &) const;
     /*152*/ virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*165*/ virtual void __unk_vfn_165();
+    /*166*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /*169*/ virtual class Block const * tryLegacyUpgrade(unsigned short) const;
     /*170*/ virtual bool dealsContactDamage(class Actor const &, class Block const &, bool) const;
     /*171*/ virtual class Block const * tryGetInfested(class Block const &) const;

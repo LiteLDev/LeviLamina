@@ -23,7 +23,10 @@ public:
 #endif
 
 public:
+    MCAPI int getHeight() const;
     MCAPI std::string const getName() const;
+    MCAPI int getWidth() const;
+    MCAPI bool isPublic() const;
     MCAPI static std::vector<class Motive const *> getAllMotivesAsList();
     MCAPI static class Motive const & getMotiveByName(std::string const &);
     MCAPI static class Motive const mAlban;

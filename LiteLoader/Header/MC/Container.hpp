@@ -92,6 +92,7 @@ public:
     */
     MCAPI Container(class Container const &);
     MCAPI Container(enum ContainerType);
+    MCAPI Container(enum ContainerType, std::string const &, bool);
     MCAPI enum ContainerType getContainerType() const;
     MCAPI enum ContainerType getGameplayContainerType() const;
     MCAPI int getItemCount(class std::function<bool (class ItemStack const &)>);
@@ -105,6 +106,7 @@ public:
     MCAPI static std::string const & getContainerTypeName(enum ContainerType);
 
 protected:
+    MCAPI void _initRuntimeId(class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
     MCAPI void _serverInitId(int, class ItemStack &, class std::function<void (int, class ItemStack const &)>);
     MCAPI static class BidirectionalUnorderedMap<enum ContainerType, std::string> const containerTypeMap;
 

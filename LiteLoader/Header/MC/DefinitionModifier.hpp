@@ -15,13 +15,13 @@ struct DefinitionModifier {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFINITIONMODIFIER
 public:
+    struct DefinitionModifier& operator=(struct DefinitionModifier const &) = delete;
     DefinitionModifier() = delete;
 #endif
 
 public:
     MCAPI DefinitionModifier(struct DefinitionModifier const &);
     MCAPI struct DefinitionModifier & operator=(struct DefinitionModifier &&);
-    MCAPI struct DefinitionModifier & operator=(struct DefinitionModifier const &);
     MCAPI ~DefinitionModifier();
 
 protected:

@@ -35,6 +35,7 @@ public:
     /*11*/ virtual class Container * _tryGetContainer() const = 0;
     /*12*/ virtual void _balanceTransaction(class ItemStack const &) const;
     MCAPI ScriptContainer(class Scripting::WeakLifetimeScope const &);
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptContainer> bind(struct Scripting::Version);
 
 protected:
     MCAPI static class std::optional<struct Scripting::Error> _isSlotInvalid(class Container &, int);

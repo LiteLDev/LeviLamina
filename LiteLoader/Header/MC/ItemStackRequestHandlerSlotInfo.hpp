@@ -19,10 +19,10 @@ struct ItemStackRequestHandlerSlotInfo {
 public:
     struct ItemStackRequestHandlerSlotInfo& operator=(struct ItemStackRequestHandlerSlotInfo const &) = delete;
     ItemStackRequestHandlerSlotInfo(struct ItemStackRequestHandlerSlotInfo const &) = delete;
-    ItemStackRequestHandlerSlotInfo() = delete;
 #endif
 
 public:
+    MCAPI ItemStackRequestHandlerSlotInfo();
     MCAPI operator bool() const;
     MCAPI ~ItemStackRequestHandlerSlotInfo();
 

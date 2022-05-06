@@ -18,10 +18,10 @@ class BuoyancyComponent {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUOYANCYCOMPONENT
 public:
     class BuoyancyComponent& operator=(class BuoyancyComponent const &) = delete;
-    BuoyancyComponent(class BuoyancyComponent const &) = delete;
 #endif
 
 public:
+    MCAPI BuoyancyComponent(class BuoyancyComponent const &);
     MCAPI BuoyancyComponent();
     MCAPI bool canFloat(class Actor const &) const;
     MCAPI float getBaseBuoyancy() const;

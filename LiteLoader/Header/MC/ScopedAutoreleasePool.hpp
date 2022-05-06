@@ -24,6 +24,8 @@ public:
 public:
     MCAPI ScopedAutoreleasePool();
     MCAPI void drain();
+    MCAPI void drainNow();
+    MCAPI void reset();
     MCAPI ~ScopedAutoreleasePool();
 
 protected:

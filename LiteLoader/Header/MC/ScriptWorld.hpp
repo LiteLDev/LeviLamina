@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    MCAPI ScriptWorld(class Scripting::WeakLifetimeScope const &, class ServerLevel *);
     MCAPI void _playOrQueueMusic(std::string const &, class std::optional<struct ScriptMusicOptions>, enum LevelEvent);
     MCAPI void broadcastClientMessage(std::string const &, std::string const &);
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptDimension>> getDimension(std::string const &);

@@ -19,7 +19,6 @@ class AppPlatformWindows {
 public:
     class AppPlatformWindows& operator=(class AppPlatformWindows const &) = delete;
     AppPlatformWindows(class AppPlatformWindows const &) = delete;
-    AppPlatformWindows() = delete;
 #endif
 
 public:
@@ -115,6 +114,7 @@ public:
         return (this->*rv)(std::forward<std::vector<std::string> const &>(a0));
     }
     */
+    MCAPI AppPlatformWindows();
     MCAPI static std::string const EXPERIMENTS_ACTIVE_KEY;
 
 protected:

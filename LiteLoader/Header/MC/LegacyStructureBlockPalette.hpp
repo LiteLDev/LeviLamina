@@ -23,6 +23,8 @@ public:
 
 public:
     MCAPI LegacyStructureBlockPalette();
+    MCAPI void addMapping(int, class Block const &);
+    MCAPI void clearMap();
     MCAPI class Block const & getBlock(int);
     MCAPI ~LegacyStructureBlockPalette();
 
