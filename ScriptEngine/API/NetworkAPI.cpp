@@ -478,7 +478,6 @@ Local<Value> NetworkClass::httpPost(const Arguments& args)
                 for (size_t i = 0; i < keys.size(); i++)
                 {
                     maps.insert({keys[i], obj.get(keys[i]).toStr()});
-                    cout << keys[i] << ":" << obj.get(keys[i]).toStr() << endl;
                 }
             }
             
