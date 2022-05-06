@@ -32,7 +32,7 @@ httplib::Headers HandleHeaders(string headers)
 
     if (headers.length() > 0)
     {
-        if (reader.parse(headers, h))
+        h = nlohmann::json::parse(headers)
         {
             for (Json::ValueIterator it = h.begin(); it != h.end(); ++it) {
                 maps.insert(pair<string, string>(it.key().asString(""), h[ it.key().asString("")].asString("")));
