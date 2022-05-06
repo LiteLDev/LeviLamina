@@ -376,34 +376,43 @@ Local<Value> NetworkClass::httpGet(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
-    CHECK_ARG_TYPE(args[1], ValueKind::kFunction);
+    if (args.size() > 2) {
+        CHECK_ARG_TYPE(args[1], ValueKind::kString);
+        CHECK_ARG_TYPE(args[2], ValueKind::kFunction);
+    }
+    else
+    {
+        CHECK_ARG_TYPE(args[1], ValueKind::kFunction);
+    }
 
     try
     {
         string target = args[0].toStr();
         RecordOperation(ENGINE_OWN_DATA()->pluginName, "HttpGet", target);
+        script::Global<Function> callbackFunc{args[args.size()-1].asFunction()};
 
-        script::Global<Function> callbackFunc{ args[1].asFunction() };
+        auto lambda = [callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}](int status, string body) {
+            if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
+                return;
 
-        return Boolean::newBoolean(HttpGet(
-            target,
-            [callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}](int status, string body) {
-                if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
-                    return;
-
-                EngineScope scope(engine);
-                try
-                {
-                    NewTimeout(callback.get(), {Number::newNumber(status), String::newString(body)}, 1);
-                    //callback.get().call({}, {Number::newNumber(status), String::newString(body)});
-                }
-                catch (const Exception& e)
-                {
-                    logger.error("HttpGet Callback Failed!");
-                    logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                    PrintException(e);
-                }
-            }));
+            EngineScope scope(engine);
+            try
+            {
+                NewTimeout(callback.get(), {Number::newNumber(status), String::newString(body)}, 1);
+                // callback.get().call({}, {Number::newNumber(status), String::newString(body)});
+            }
+            catch (const Exception& e)
+            {
+                logger.error("HttpGet Callback Failed!");
+                logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+                PrintException(e);
+            }
+        };
+        if (args.size() > 2)
+        {
+            return Boolean::newBoolean(HttpGet(target, args[1].toStr(), lambda));
+        }
+        return Boolean::newBoolean(HttpGet(target, lambda));
     }
     CATCH("Fail in HttpGet");
 }
@@ -414,34 +423,45 @@ Local<Value> NetworkClass::httpPost(const Arguments& args)
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     CHECK_ARG_TYPE(args[1], ValueKind::kString);
     CHECK_ARG_TYPE(args[2], ValueKind::kString);
-    CHECK_ARG_TYPE(args[3], ValueKind::kFunction);
-
+    if (args.size() > 4)
+    {
+        CHECK_ARG_TYPE(args[3], ValueKind::kString);
+        CHECK_ARG_TYPE(args[4], ValueKind::kFunction);
+    }
+    else
+    {
+        CHECK_ARG_TYPE(args[3], ValueKind::kFunction);
+    }
+    
+    
     try
     {
         string target = args[0].toStr();
         RecordOperation(ENGINE_OWN_DATA()->pluginName, "HttpPost", target);
+        script::Global<Function> callbackFunc{args[args.size() - 1].asFunction()};
 
-        script::Global<Function> callbackFunc{ args[3].asFunction() };
+        auto lambda = [callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}](int status, string body) {
+            if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
+                return;
 
-        return Boolean::newBoolean(HttpPost(
-            target, args[1].toStr(), args[2].toStr(),
-            [callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}](int status, string body) {
-                if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
-                    return;
-
-                EngineScope scope(engine);
-                try
-                {
-                     NewTimeout(callback.get(), {Number::newNumber(status), String::newString(body)}, 1);
-                    //callback.get().call({}, {Number::newNumber(status), String::newString(body)});
-                }
-                catch (const Exception& e)
-                {
-                    logger.error("HttpPost Callback Failed!");
-                    logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                    PrintException(e);
-                }
-            }));
+            EngineScope scope(engine);
+            try
+            {
+                NewTimeout(callback.get(), {Number::newNumber(status), String::newString(body)}, 1);
+                // callback.get().call({}, {Number::newNumber(status), String::newString(body)});
+            }
+            catch (const Exception& e)
+            {
+                logger.error("HttpPost Callback Failed!");
+                logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+                PrintException(e);
+            }
+        };
+        if (args.size() > 4)
+        {
+            return Boolean::newBoolean(HttpPost(target, args[1].toStr(), args[2].toStr(), args[3].toStr(), lambda));
+        }
+        return Boolean::newBoolean(HttpPost(target, args[1].toStr(), args[2].toStr(), lambda));
     }
     CATCH("Fail in HttpPost");
 }
