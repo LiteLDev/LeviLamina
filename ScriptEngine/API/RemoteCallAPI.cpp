@@ -240,6 +240,7 @@ Local<Value> MakeRemoteCall_Debug(const string& nameSpace, const string& funcNam
     if (!func)
     {
         logger.error("Fail to import! Function [{}::{}] has not been exported!", nameSpace, funcName);
+        logger.error("In plugin <{}>", ENGINE_OWN_DATA()->pluginName);
         return Local<Value>();
     }
 
