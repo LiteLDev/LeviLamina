@@ -478,6 +478,7 @@ LIAPI bool hasFunc(std::string const& nameSpace, std::string const& funcName);
 LIAPI bool removeFunc(std::string const& nameSpace, std::string const& funcName);
 LIAPI int removeNameSpace(std::string const& nameSpace);
 LIAPI int removeFuncs(std::vector<std::pair<std::string, std::string>> funcs);
+LIAPI void _onCallError(std::string const& msg, HMODULE handler = GetCurrentModule());
 
 template <typename RTN, typename... Args>
 inline bool _importAs(std::string const& nameSpace, std::string const& funcName, std::function<RTN(Args...)>& func)
@@ -486,7 +487,7 @@ inline bool _importAs(std::string const& nameSpace, std::string const& funcName,
         auto& rawFunc = importFunc(nameSpace, funcName);
         if (!rawFunc)
         {
-            logger.error("Fail to import! Function [{}::{}] has not been exported", nameSpace, funcName);
+            _onCallError(fmt::format("Fail to import! Function [{}::{}] has not been exported", nameSpace, funcName));
             return RTN();
         }
         std::vector<ValueType> params = {pack(std::forward<Args>(args))...};
