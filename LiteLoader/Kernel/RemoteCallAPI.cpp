@@ -46,7 +46,7 @@ bool removeFunc(std::string const& nameSpace, std::string const& funcName)
     return removeFunc(nameSpace + "::" + funcName);
 }
 
-void _onCallError(std::string const& msg, HMODULE handler = GetCurrentModule())
+void _onCallError(std::string const& msg, HMODULE handler)
 {
     logger.error(msg);
     auto plugin = LL::getPlugin(handler);
