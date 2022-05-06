@@ -28,7 +28,7 @@ httplib::Headers HandleHeaders(string headers)
 {
     httplib::Headers maps;
     Json::Reader reader;
-    Json::Value h;
+    nlohmann::json j;
 
     if (headers.length() > 0)
     {
