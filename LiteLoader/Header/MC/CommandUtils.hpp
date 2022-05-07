@@ -27,13 +27,16 @@ namespace CommandUtils {
     MCAPI bool createMapData(class Actor &, class ItemInstance &, class CommandOutput &);
     MCAPI void displayLocalizableMessage(bool, class Player &, std::string const &, std::vector<std::string> const &);
     MCAPI std::string getActorName(class Actor const &);
+    MCAPI class BlockPos getFeetBlockPos(class Actor const *);
     MCAPI class Vec3 getFeetPos(class Actor const *);
     MCAPI std::vector<enum ActorType> getInvalidCommandEntities();
     MCAPI std::vector<enum ActorType> getInvalidCommandEntities(bool, bool);
+    MCAPI class Player const * getOriginPlayer(class CommandOrigin const &);
     MCAPI std::string getTelemetryErrorList(class CommandOutput const &);
     MCAPI bool isActiveTickingChunk(struct Tick, struct Tick);
     MCAPI bool isFunctionValid(class CommandOutput &, class FunctionEntry &, std::string const &);
     MCAPI bool isPlayerSpawnedMob(class Actor const &, class Actor const &);
+    MCAPI bool isValidCommandEntity(std::vector<enum ActorType> const &, enum ActorType);
     MCAPI void nameEntity(class Actor &, bool, std::string const &);
     MCAPI void setInitEvent(struct ActorDefinitionIdentifier &, std::string const &);
     MCAPI class Actor * spawnEntityAt(class BlockSource &, class Vec3 const &, struct ActorDefinitionIdentifier const &, struct ActorUniqueID &, class Actor *);

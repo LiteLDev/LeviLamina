@@ -54,16 +54,6 @@ public:
         *((void**)&rv) = dlsym("?getContainerId@BaseContainerMenu@@UEBA?AW4ContainerID@@XZ");
         return (this->*rv)();
     }
-    inline  ~BaseContainerMenu(){
-         (BaseContainerMenu::*rv)();
-        *((void**)&rv) = dlsym("??1BaseContainerMenu@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline void broadcastChanges(){
-        void (BaseContainerMenu::*rv)();
-        *((void**)&rv) = dlsym("?broadcastChanges@BaseContainerMenu@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void setContainerId(enum ContainerID a0){
         void (BaseContainerMenu::*rv)(enum ContainerID);
         *((void**)&rv) = dlsym("?setContainerId@BaseContainerMenu@@UEAAXW4ContainerID@@@Z");
@@ -74,7 +64,18 @@ public:
         *((void**)&rv) = dlsym("?setContainerType@BaseContainerMenu@@UEAAXW4ContainerType@@@Z");
         return (this->*rv)(std::forward<enum ContainerType>(a0));
     }
+    inline  ~BaseContainerMenu(){
+         (BaseContainerMenu::*rv)();
+        *((void**)&rv) = dlsym("??1BaseContainerMenu@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline void broadcastChanges(){
+        void (BaseContainerMenu::*rv)();
+        *((void**)&rv) = dlsym("?broadcastChanges@BaseContainerMenu@@UEAAXXZ");
+        return (this->*rv)();
+    }
     */
+    MCAPI BaseContainerMenu(class Player &, enum ContainerType);
 
 protected:
     MCAPI void _saveLastSlots(class Container *);

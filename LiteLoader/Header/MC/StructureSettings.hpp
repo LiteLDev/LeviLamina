@@ -40,21 +40,27 @@ inline StructureSettings(BlockPos const& size, bool ignoreEntities, bool ignoreB
 
 #undef AFTER_EXTRA
 
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURESETTINGS
+public:
+    StructureSettings(class StructureSettings const &) = delete;
+#endif
+
 public:
     MCAPI StructureSettings(class StructureSettings &&);
-    MCAPI StructureSettings(class StructureSettings const &);
     MCAPI StructureSettings();
     MCAPI enum AnimationMode getAnimationMode() const;
     MCAPI float getAnimationSeconds() const;
     MCAPI unsigned int getAnimationTicks() const;
     MCAPI bool getIgnoreBlocks() const;
     MCAPI bool getIgnoreEntities() const;
+    MCAPI bool getIgnoreJigsawBlocks() const;
     MCAPI unsigned int getIntegritySeed() const;
     MCAPI float getIntegrityValue() const;
     MCAPI struct ActorUniqueID getLastTouchedByPlayerID() const;
     MCAPI enum Mirror getMirror() const;
     MCAPI std::string const & getPaletteName() const;
     MCAPI class Vec3 const & getPivot() const;
+    MCAPI bool getReloadActorEquipment() const;
     MCAPI enum Rotation getRotation() const;
     MCAPI class BlockPos const & getStructureOffset() const;
     MCAPI class BlockPos const & getStructureSize() const;
@@ -64,6 +70,7 @@ public:
     MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool);
     MCAPI void setAnimationMode(enum AnimationMode);
     MCAPI void setAnimationSeconds(float);
+    MCAPI void setAnimationTicks(unsigned int);
     MCAPI void setIgnoreBlocks(bool);
     MCAPI void setIgnoreEntities(bool);
     MCAPI void setIgnoreJigsawBlocks(bool);

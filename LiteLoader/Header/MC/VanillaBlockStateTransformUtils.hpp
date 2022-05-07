@@ -28,7 +28,6 @@ public:
     MCAPI static class Block const * transformBlock(class Block const &, enum Facing::Name);
     MCAPI static class Block const * transformBlock(class Block const &, enum Rotation, enum Mirror);
     MCAPI static class Block const * transformStandingRotation(class Block const &, enum Rotation, enum Mirror);
-    MCAPI static class Block const * transformTorchFacingDirection(class Block const &, enum Rotation, enum Mirror);
 
 protected:
 

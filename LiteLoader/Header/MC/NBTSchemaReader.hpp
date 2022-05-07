@@ -120,14 +120,14 @@ public:
         *((void**)&rv) = dlsym("?isInt8@NBTSchemaReader@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isUInt16() const{
-        bool (NBTSchemaReader::*rv)() const;
-        *((void**)&rv) = dlsym("?isUInt16@NBTSchemaReader@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isInt16() const{
         bool (NBTSchemaReader::*rv)() const;
         *((void**)&rv) = dlsym("?isInt16@NBTSchemaReader@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isUInt16() const{
+        bool (NBTSchemaReader::*rv)() const;
+        *((void**)&rv) = dlsym("?isUInt16@NBTSchemaReader@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isUInt32() const{

@@ -26,13 +26,14 @@ public:
 public:
     class ScatterParams& operator=(class ScatterParams const &) = delete;
     ScatterParams(class ScatterParams const &) = delete;
+    ScatterParams() = delete;
 #endif
 
 public:
-    MCAPI ScatterParams();
     MCAPI class ScatterParams::ScatteredPositions scatter(class RenderParams &, class BlockPos const &, class Random &) const;
     MCAPI ~ScatterParams();
     MCAPI static void initMolangParams(class RenderParams &, class BlockPos const &, class Random &);
+    MCAPI static void initScatterParamIndices();
 
 protected:
 

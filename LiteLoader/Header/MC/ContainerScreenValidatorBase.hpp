@@ -19,6 +19,7 @@ class ContainerScreenValidatorBase {
 public:
     class ContainerScreenValidatorBase& operator=(class ContainerScreenValidatorBase const &) = delete;
     ContainerScreenValidatorBase(class ContainerScreenValidatorBase const &) = delete;
+    ContainerScreenValidatorBase() = delete;
 #endif
 
 public:
@@ -33,7 +34,6 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ContainerScreenValidatorBase();
     MCAPI bool isValidContainerForScreen(enum ContainerEnumName) const;
 
 protected:

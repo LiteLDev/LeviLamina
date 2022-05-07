@@ -48,6 +48,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI SoulSpeedEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
     MCAPI static class mce::UUID const SOUL_SPEED_BOOST_UUID;
     MCAPI static int getLevel(class Actor const &);
     MCAPI static float getSpeedBoost(int);

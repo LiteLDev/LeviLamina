@@ -21,6 +21,7 @@ public:
 #endif
 
 public:
+    MCAPI bool matchesContainerAndSlot(struct ItemStackRequestSlotInfo const &) const;
     MCAPI ~ItemStackRequestSlotInfo();
 
 protected:

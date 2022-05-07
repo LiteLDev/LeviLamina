@@ -46,6 +46,7 @@ public:
         return (this->*rv)(std::forward<std::string &>(a0));
     }
     */
+    MCAPI TargetWhenPushedGoal(class Mob &, std::vector<struct MobDescriptor>, float);
 
 protected:
 

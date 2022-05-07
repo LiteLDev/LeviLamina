@@ -37,7 +37,9 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI OnUseOnItemComponent(class ComponentItem *);
     MCAPI static void bindType();
+    MCAPI static class HashedString const & getIdentifier();
 
 protected:
 

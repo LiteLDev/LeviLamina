@@ -43,6 +43,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI CurseVanishingEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int, bool);
 
 protected:
 

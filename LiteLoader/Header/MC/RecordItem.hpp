@@ -109,6 +109,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI RecordItem(std::string const &, int, enum LevelSoundEvent);
     MCAPI float getDuration() const;
     MCAPI enum LevelSoundEvent getSound() const;
 

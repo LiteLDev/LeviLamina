@@ -29,14 +29,14 @@ public:
         *((void**)&rv) = dlsym("?onClipboardCopy@AppPlatformListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<std::string const &>(a0));
     }
-    inline void onResizeEnd(){
-        void (AppPlatformListener::*rv)();
-        *((void**)&rv) = dlsym("?onResizeEnd@AppPlatformListener@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void onAppPreSuspended(){
         void (AppPlatformListener::*rv)();
         *((void**)&rv) = dlsym("?onAppPreSuspended@AppPlatformListener@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void onResizeEnd(){
+        void (AppPlatformListener::*rv)();
+        *((void**)&rv) = dlsym("?onResizeEnd@AppPlatformListener@@UEAAXXZ");
         return (this->*rv)();
     }
     inline void onResizeBegin(){
@@ -44,14 +44,14 @@ public:
         *((void**)&rv) = dlsym("?onResizeBegin@AppPlatformListener@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void onAppFocusGained(){
-        void (AppPlatformListener::*rv)();
-        *((void**)&rv) = dlsym("?onAppFocusGained@AppPlatformListener@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void onAppPaused(){
         void (AppPlatformListener::*rv)();
         *((void**)&rv) = dlsym("?onAppPaused@AppPlatformListener@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void onAppFocusGained(){
+        void (AppPlatformListener::*rv)();
+        *((void**)&rv) = dlsym("?onAppFocusGained@AppPlatformListener@@UEAAXXZ");
         return (this->*rv)();
     }
     inline void onAppUnpaused(){
@@ -69,34 +69,34 @@ public:
         *((void**)&rv) = dlsym("?onAppFocusLost@AppPlatformListener@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void onAppSuspended(){
-        void (AppPlatformListener::*rv)();
-        *((void**)&rv) = dlsym("?onAppSuspended@AppPlatformListener@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void onPerformanceModeChanged(bool a0){
         void (AppPlatformListener::*rv)(bool);
         *((void**)&rv) = dlsym("?onPerformanceModeChanged@AppPlatformListener@@UEAAX_N@Z");
         return (this->*rv)(std::forward<bool>(a0));
+    }
+    inline void onAppSuspended(){
+        void (AppPlatformListener::*rv)();
+        *((void**)&rv) = dlsym("?onAppSuspended@AppPlatformListener@@UEAAXXZ");
+        return (this->*rv)();
     }
     inline void onPushNotificationReceived(class PushNotificationMessage const & a0){
         void (AppPlatformListener::*rv)(class PushNotificationMessage const &);
         *((void**)&rv) = dlsym("?onPushNotificationReceived@AppPlatformListener@@UEAAXAEBVPushNotificationMessage@@@Z");
         return (this->*rv)(std::forward<class PushNotificationMessage const &>(a0));
     }
-    inline void onLowMemory(){
-        void (AppPlatformListener::*rv)();
-        *((void**)&rv) = dlsym("?onLowMemory@AppPlatformListener@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void onDeviceLost(){
         void (AppPlatformListener::*rv)();
         *((void**)&rv) = dlsym("?onDeviceLost@AppPlatformListener@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void onAppTerminated(){
+    inline void onLowMemory(){
         void (AppPlatformListener::*rv)();
-        *((void**)&rv) = dlsym("?onAppTerminated@AppPlatformListener@@UEAAXXZ");
+        *((void**)&rv) = dlsym("?onLowMemory@AppPlatformListener@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void onAppResumed(){
+        void (AppPlatformListener::*rv)();
+        *((void**)&rv) = dlsym("?onAppResumed@AppPlatformListener@@UEAAXXZ");
         return (this->*rv)();
     }
     inline void onClipboardPaste(std::string const & a0){
@@ -104,9 +104,9 @@ public:
         *((void**)&rv) = dlsym("?onClipboardPaste@AppPlatformListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<std::string const &>(a0));
     }
-    inline void onAppResumed(){
+    inline void onAppTerminated(){
         void (AppPlatformListener::*rv)();
-        *((void**)&rv) = dlsym("?onAppResumed@AppPlatformListener@@UEAAXXZ");
+        *((void**)&rv) = dlsym("?onAppTerminated@AppPlatformListener@@UEAAXXZ");
         return (this->*rv)();
     }
     inline  ~AppPlatformListener(){
@@ -116,7 +116,6 @@ public:
     }
     */
     MCAPI AppPlatformListener();
-    MCAPI void initListener(float);
     MCAPI void terminate();
 
 protected:

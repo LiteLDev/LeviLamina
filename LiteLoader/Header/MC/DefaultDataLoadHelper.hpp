@@ -55,15 +55,15 @@ public:
         *((void**)&rv) = dlsym("?loadPosition@DefaultDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z");
         return (this->*rv)(std::forward<class Vec3 const &>(a0));
     }
-    inline class BlockPos loadBlockPositionOffset(class BlockPos const & a0){
-        class BlockPos (DefaultDataLoadHelper::*rv)(class BlockPos const &);
-        *((void**)&rv) = dlsym("?loadBlockPositionOffset@DefaultDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z");
-        return (this->*rv)(std::forward<class BlockPos const &>(a0));
-    }
     inline class Vec3 loadDirection(class Vec3 const & a0){
         class Vec3 (DefaultDataLoadHelper::*rv)(class Vec3 const &);
         *((void**)&rv) = dlsym("?loadDirection@DefaultDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z");
         return (this->*rv)(std::forward<class Vec3 const &>(a0));
+    }
+    inline class BlockPos loadBlockPositionOffset(class BlockPos const & a0){
+        class BlockPos (DefaultDataLoadHelper::*rv)(class BlockPos const &);
+        *((void**)&rv) = dlsym("?loadBlockPositionOffset@DefaultDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0));
     }
     inline enum Mirror loadMirror(enum Mirror a0){
         enum Mirror (DefaultDataLoadHelper::*rv)(enum Mirror);

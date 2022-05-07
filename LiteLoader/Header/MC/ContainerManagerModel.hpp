@@ -48,6 +48,7 @@ public:
     }
     */
     MCAPI ContainerManagerModel(enum ContainerID, class Player &);
+    MCAPI class Player & getPlayer() const;
     MCAPI void postInit();
 
 protected:
@@ -56,7 +57,6 @@ protected:
     MCAPI class ContainerScreenContext _containerScreenContext(struct ActorUniqueID);
     MCAPI class std::shared_ptr<class ContainerModel> _getContainer(enum ContainerEnumName) const;
     MCAPI bool _isPlayerInRangeOfPosition(class BlockPos const &, float) const;
-    MCAPI void _serverInitItemStackIds(class ContainerModel *);
     MCAPI static void _appendCopies(std::vector<class ItemStack> &, std::vector<class ItemStack> const &);
 
 private:

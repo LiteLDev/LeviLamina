@@ -35,6 +35,7 @@ public:
 
 protected:
     MCAPI bool _computeNewTarget();
+    MCAPI bool _mobMeetsPreconditions() const;
     MCAPI void _moveToTarget();
 
 private:

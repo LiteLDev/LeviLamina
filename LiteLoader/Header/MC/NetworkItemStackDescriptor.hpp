@@ -40,5 +40,6 @@ public:
 protected:
 
 private:
+    MCAPI class ItemStack getItemStack(class BlockPalette const &) const;
 
 };

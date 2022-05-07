@@ -34,6 +34,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI AllowListEntry(class Json::Value &);
     MCAPI AllowListEntry(std::string);
 
 protected:

@@ -28,6 +28,7 @@ public:
     /*2*/ virtual class leveldb::Status Close();
     /*3*/ virtual class leveldb::Status Flush();
     /*4*/ virtual class leveldb::Status Sync();
+    MCAPI SnapshotWritableFile(class leveldb::WritableFile *&&, class std::shared_mutex &);
 
 protected:
 

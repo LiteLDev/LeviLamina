@@ -23,20 +23,29 @@ public:
 #endif
 
 public:
-    MCAPI ScriptWorldEvents(class ScriptWorldEvents &&);
     MCAPI ScriptWorldEvents(class Scripting::WeakLifetimeScope const &, class gsl::not_null<class Level *>);
+    MCAPI ScriptWorldEvents(class ScriptWorldEvents &&);
     MCAPI class Level & getLevel() const;
+    MCAPI void onActivateLever(struct ScriptLeverActionEvent &);
+    MCAPI void onActivatePiston(struct ScriptPistonActionEvent &);
     MCAPI void onActorAddEffect(struct ScriptActorAddEffectEvent &);
     MCAPI void onActorCreated(struct ScriptActorEvent &);
     MCAPI void onActorHit(struct ScriptActorHitEvent &);
     MCAPI void onActorHurt(struct ScriptActorHurtEvent &);
     MCAPI void onActorRemoved(struct ActorUniqueID);
+    MCAPI void onBeforeActivatePiston(struct ScriptBeforePistonActionEvent &);
     MCAPI void onBeforeChat(struct ScriptBeforeChatEvent &);
+    MCAPI void onBeforeDataDrivenActorEventSend(struct ScriptBeforeDataDrivenActorTriggerEvent &);
+    MCAPI void onBeforeExplosion(struct ScriptBeforeExplosionStartedEvent &);
     MCAPI void onBeforeItemDefinitionEventTriggered(struct ScriptBeforeItemDefinitionEvent &);
     MCAPI void onBeforeItemUse(struct ScriptBeforeItemUseEvent &);
     MCAPI void onBeforeItemUseOn(struct ScriptBeforeItemUseOnEvent &);
+    MCAPI void onBlockBreak(struct ScriptBlockBreakEvent &);
+    MCAPI void onBlockPlace(struct ScriptBlockPlaceEvent &);
     MCAPI void onChat(struct ScriptChatEvent &);
     MCAPI void onDataDrivenActorEventSend(struct ScriptDataDrivenActorTriggerEvent &);
+    MCAPI void onExplodeBlock(struct ScriptBlockExplodedEvent &);
+    MCAPI void onExplosion(struct ScriptExplosionStartedEvent &);
     MCAPI void onItemDefinitionEventTriggered(struct ScriptItemDefinitionEvent &);
     MCAPI void onItemUse(struct ScriptItemUseEvent &);
     MCAPI void onItemUseOn(struct ScriptItemUseOnEvent &);

@@ -27,7 +27,7 @@ public:
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual void start();
+    /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
@@ -37,7 +37,13 @@ public:
         *((void**)&rv) = dlsym("?stop@TradeWithPlayerGoal@@UEAAXXZ");
         return (this->*rv)();
     }
+    inline void start(){
+        void (TradeWithPlayerGoal::*rv)();
+        *((void**)&rv) = dlsym("?start@TradeWithPlayerGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
     */
+    MCAPI TradeWithPlayerGoal(class Mob &);
 
 protected:
 

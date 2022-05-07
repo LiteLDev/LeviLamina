@@ -23,6 +23,10 @@ public:
 #endif
 
 public:
+    MCAPI void addAbortDestroyBlock(class BlockPos const &, int);
+    MCAPI void addContinueDestroyBlock(class BlockPos const &, int);
+    MCAPI void addStartDestroyBlock(class BlockPos const &, int);
+    MCAPI void addStopDestroyBlock();
     MCAPI struct PlayerBlockActionData const * findFirstOfType(enum PlayerActionType) const;
     MCAPI class gsl::span<struct PlayerBlockActionData const, -1> get() const;
     MCAPI ~PlayerBlockActions();

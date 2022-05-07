@@ -73,7 +73,7 @@ std::string Actor::getTypeName() const
 #include <MC/ActorDamageSource.hpp>
 bool Actor::hurtEntity(float damage) {
     char source[16];
-    (*(ActorDamageSource*)source).ActorDamageSource::ActorDamageSource(ActorDamageCause::None);
+    (*(ActorDamageSource*)source).ActorDamageSource::ActorDamageSource(ActorDamageCause::Override);
 
     auto res = ((Mob*)this)->_hurt((*(ActorDamageSource*)source), damage, true, false);
     (*(ActorDamageSource*)source).~ActorDamageSource();

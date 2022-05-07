@@ -34,6 +34,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI class BehaviorTreeDefinitionPtr getTreeDefinition() const;
 
 protected:
 

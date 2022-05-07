@@ -18,11 +18,12 @@ struct ContainerValidationResult {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERVALIDATIONRESULT
 public:
     struct ContainerValidationResult& operator=(struct ContainerValidationResult const &) = delete;
+    ContainerValidationResult(struct ContainerValidationResult const &) = delete;
     ContainerValidationResult() = delete;
 #endif
 
 public:
-    MCAPI ContainerValidationResult(struct ContainerValidationResult const &);
+    MCAPI ContainerValidationResult(std::vector<struct ContainerValidationOperation> &&, enum ContainerValidationOutcome, enum ContainerScreenRequestActionType);
     MCAPI ContainerValidationResult(enum ContainerValidationOutcome);
     MCAPI bool isSuccess() const;
     MCAPI struct ContainerValidationOperation const * tryGetOperation(enum ContainerValidationOperationType) const;

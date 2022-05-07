@@ -25,10 +25,10 @@ struct Gene {
 public:
     class GeneticsComponent& operator=(class GeneticsComponent const &) = delete;
     GeneticsComponent(class GeneticsComponent const &) = delete;
-    GeneticsComponent() = delete;
 #endif
 
 public:
+    MCAPI GeneticsComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI void buildDebugInfo(std::string &) const;
     MCAPI struct GeneticsComponent::Gene * findGene(std::string const &);

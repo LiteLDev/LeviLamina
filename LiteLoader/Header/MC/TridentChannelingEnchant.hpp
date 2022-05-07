@@ -32,17 +32,18 @@ public:
         *((void**)&rv) = dlsym("?getMaxLevel@TridentChannelingEnchant@@UEBAHXZ");
         return (this->*rv)();
     }
-    inline int getMaxCost(int a0) const{
-        int (TridentChannelingEnchant::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getMaxCost@TridentChannelingEnchant@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
     inline int getMinCost(int a0) const{
         int (TridentChannelingEnchant::*rv)(int) const;
         *((void**)&rv) = dlsym("?getMinCost@TridentChannelingEnchant@@UEBAHH@Z");
         return (this->*rv)(std::forward<int>(a0));
     }
+    inline int getMaxCost(int a0) const{
+        int (TridentChannelingEnchant::*rv)(int) const;
+        *((void**)&rv) = dlsym("?getMaxCost@TridentChannelingEnchant@@UEBAHH@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
     */
+    MCAPI TridentChannelingEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 
 protected:
 

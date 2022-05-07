@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    MCAPI static void clearAllTests(class BlockSource &, class gametest::GameTestTicker &, std::vector<class BoundingBox> const &);
     MCAPI static void clearMarkers(class Level &);
     MCAPI static std::vector<class gametest::GameTestBatch> groupTestsIntoBatches(class gametest::GameTestRegistry &, std::vector<class std::shared_ptr<class gametest::BaseGameTestFunction>> const &, int);
     MCAPI static void runTest(class std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker &);

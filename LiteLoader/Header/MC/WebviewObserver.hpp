@@ -60,14 +60,14 @@ public:
         *((void**)&rv) = dlsym("?onDownloadComplete@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z");
         return (this->*rv)(std::forward<struct WebviewDownloadInfo const &>(a0));
     }
-    inline void onLoadingEnd(){
-        void (WebviewObserver::*rv)();
-        *((void**)&rv) = dlsym("?onLoadingEnd@WebviewObserver@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void onLoadingBegin(){
         void (WebviewObserver::*rv)();
         *((void**)&rv) = dlsym("?onLoadingBegin@WebviewObserver@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void onLoadingEnd(){
+        void (WebviewObserver::*rv)();
+        *((void**)&rv) = dlsym("?onLoadingEnd@WebviewObserver@@UEAAXXZ");
         return (this->*rv)();
     }
     inline  ~WebviewObserver(){

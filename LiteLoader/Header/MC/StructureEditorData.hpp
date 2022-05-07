@@ -18,11 +18,10 @@ class StructureEditorData {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREEDITORDATA
 public:
     class StructureEditorData& operator=(class StructureEditorData const &) = delete;
+    StructureEditorData(class StructureEditorData const &) = delete;
 #endif
 
 public:
-    MCAPI StructureEditorData(class StructureEditorData &&);
-    MCAPI StructureEditorData(class StructureEditorData const &);
     MCAPI StructureEditorData();
     MCAPI std::string getAnimationModeAsString() const;
     MCAPI float getAnimationSeconds() const;
@@ -71,6 +70,7 @@ public:
 protected:
 
 private:
+    MCAPI void _setPivotFromStructureSize();
     MCAPI static enum StructureBlockType const DEFAULT_STRUCTURE_TYPE;
 
 };

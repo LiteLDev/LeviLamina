@@ -17,11 +17,10 @@ class BackwardsCompatTextureInfo {
 public:
     class BackwardsCompatTextureInfo& operator=(class BackwardsCompatTextureInfo const &) = delete;
     BackwardsCompatTextureInfo(class BackwardsCompatTextureInfo const &) = delete;
-    BackwardsCompatTextureInfo() = delete;
 #endif
 
 public:
-    MCAPI ~BackwardsCompatTextureInfo();
+    MCAPI BackwardsCompatTextureInfo();
 
 protected:
 

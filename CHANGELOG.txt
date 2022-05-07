@@ -1,12 +1,15 @@
 ## [LiteLoader Release Note]
-This version mainly fixes two serious BDS bugs.
+This version major adaptation is 1.18.32, fix Bugs and add new feature ,not applicable to previous versions.
 
 ## [New features]
-- Better CrashLogger(More detailed and intuitive)
+- Update 1.18.32
+- Add AntiGiveCommand, #358 #372
+- Add LLSE SimulatedPlayer APIs
 
 ## [Bug Fixes]
-- Fix FishingHook ChangeDIM crash(MC BUG)
-- Fix the lag caused by the overflow of MaxPlayer(BDS BUG)
+- Fix Player::clearItem Bug, #395
+- Fix dynamic command registration crash
+- Fix command crash when server is stopping
 
 ## [Change]
-- Remove preload of BDSNetRunner because it has been archived
+- Update remote call APIs

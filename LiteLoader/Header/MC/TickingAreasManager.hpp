@@ -50,7 +50,6 @@ protected:
 private:
     MCAPI enum AddTickingAreaStatus _addArea(class AutomaticID<class Dimension, int>, std::string const &, struct Bounds const &, bool, enum TickingAreasManager::AreaLimitCheck, bool, enum TickingAreaLoadMode, class LevelStorage &);
     MCAPI void _deletePendingArea(class LevelStorage &, struct PendingArea const &);
-    MCAPI std::string _findUsableDefaultName(class TickingAreaList const &, std::vector<struct PendingArea> const &) const;
     MCAPI std::vector<struct TickingAreaDescription> _getPendingAreaDescriptionsFiltered(class AutomaticID<class Dimension, int>, class std::function<bool (struct PendingArea const &)>) const;
     MCAPI bool _hasPendingTickingAreaNamed(std::string const &, std::vector<struct PendingArea> const &) const;
     MCAPI void _processAdds(class Level &);

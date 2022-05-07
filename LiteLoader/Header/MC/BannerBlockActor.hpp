@@ -49,6 +49,7 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
+    MCAPI BannerBlockActor(class BlockPos const &);
     MCAPI unsigned char getBaseColorInt() const;
     MCAPI void setItemValues(class ItemStackBase const &);
     MCAPI static int const MAX_PATTERNS;

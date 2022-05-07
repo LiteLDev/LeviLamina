@@ -43,7 +43,6 @@ private:
     MCAPI void _prepareAABBBuckets();
     MCAPI float _propagateDistanceConstraint(class Vec3 const &, class Vec3 &, float);
     MCAPI void _pruneDenyList();
-    MCAPI void _pushRange(unsigned __int64, unsigned __int64);
     MCAPI void _resizeRope();
     MCAPI float _solveCollisions(bool);
     MCAPI float _solveDistanceConstraint(class Vec3 &, class Vec3 &, float);
@@ -51,6 +50,5 @@ private:
     MCAPI float _solveDistanceConstraints3();
     MCAPI void _tick();
     MCAPI void _tickWaves();
-    MCAPI void _updateRenderPoints();
 
 };

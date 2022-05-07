@@ -34,6 +34,7 @@ public:
     */
     MCAPI ScriptItemComponent(class Scripting::WeakTypedObjectHandle<class ScriptItemStack>, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI std::string const & getId() const;
+    MCAPI bool valid() const;
 
 protected:
 

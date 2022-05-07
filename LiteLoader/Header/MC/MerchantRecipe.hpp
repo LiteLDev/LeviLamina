@@ -42,9 +42,10 @@ public:
 #endif
 
 public:
-    MCAPI MerchantRecipe(class MerchantRecipe const &);
     MCAPI MerchantRecipe(class ItemInstance const &, class ItemInstance const &, class ItemInstance const &);
     MCAPI MerchantRecipe(class ItemInstance const &, class ItemInstance const &);
+    MCAPI MerchantRecipe(class CompoundTag const *);
+    MCAPI MerchantRecipe(class MerchantRecipe const &);
     MCAPI void calculateDemandPrices(int, int, int, bool);
     MCAPI std::unique_ptr<class CompoundTag> createTag(bool) const;
     MCAPI int getBaseCountA() const;
@@ -53,6 +54,7 @@ public:
     MCAPI class ItemInstance const & getBuyBItem() const;
     MCAPI int getDemand() const;
     MCAPI int getMaxUses() const;
+    MCAPI class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const & getNetId() const;
     MCAPI class ItemInstance const & getSellItem() const;
     MCAPI int getTier() const;
     MCAPI unsigned int getTraderExp() const;
@@ -63,10 +65,12 @@ public:
     MCAPI void init(class ItemInstance const &, class ItemInstance const &, class ItemInstance const &);
     MCAPI bool isOutOfUses() const;
     MCAPI bool isSame(class MerchantRecipe const &) const;
+    MCAPI bool isSameButBetter(class MerchantRecipe &) const;
     MCAPI void legacyCalculateDemandPrices(int, int);
     MCAPI void load(class CompoundTag const *);
     MCAPI void setDemand(int);
     MCAPI void setMaxUses(int);
+    MCAPI void setNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);
     MCAPI void setPriceMultiplierA(float);
     MCAPI void setPriceMultiplierB(float);
     MCAPI void setRewardExp(bool);

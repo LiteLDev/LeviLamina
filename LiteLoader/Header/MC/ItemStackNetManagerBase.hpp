@@ -29,7 +29,7 @@ public:
     /*3*/ virtual bool retainSetItemStackNetIdVariant() const;
     /*4*/ virtual bool allowInventoryTransactionManager() const = 0;
     /*5*/ virtual class gsl::final_action<class std::function<void (void)>> _tryBeginClientLegacyTransactionRequest();
-    /*6*/ virtual void __unk_vfn_6();
+    /*6*/ virtual void onContainerScreenOpen(class ContainerScreenContext const &);
     /*7*/ virtual void onContainerScreenClose();
     /*8*/ virtual class SparseContainer * initOpenContainer(class BlockSource &, enum ContainerEnumName, class ContainerWeakRef const &);
     /*9*/ virtual void __unk_vfn_9();
@@ -50,19 +50,17 @@ public:
         *((void**)&rv) = dlsym("??1ItemStackNetManagerBase@@UEAA@XZ");
         return (this->*rv)();
     }
-    inline void onContainerScreenOpen(class ContainerScreenContext const & a0){
-        void (ItemStackNetManagerBase::*rv)(class ContainerScreenContext const &);
-        *((void**)&rv) = dlsym("?onContainerScreenOpen@ItemStackNetManagerBase@@UEAAXAEBVContainerScreenContext@@@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
-    }
     */
     MCAPI ItemStackNetManagerBase(class Player &, bool, bool);
+    MCAPI class ItemStackNetManagerScreenStack & _getScreenStack();
+    MCAPI class ContainerScreenContext const & getScreenContext() const;
     MCAPI bool isClientSide() const;
     MCAPI bool isScreenOpen() const;
     MCAPI static class gsl::final_action<class std::function<void (void)>> _tryBeginClientLegacyTransactionRequest(class Player *);
     MCAPI static bool setPlayerContainer(class Player &, enum ContainerType, int, class ItemStack const &, class ItemStack &, class std::function<void (class ItemStack const &)> const &);
 
 protected:
+    MCAPI bool _isRequestActionAllowed(class ItemStackRequestAction const &);
 
 private:
 

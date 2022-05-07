@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-class WorldTemplateManagerProxyCallbacks {
+struct WorldTemplateManagerProxyCallbacks {
 
 #define AFTER_EXTRA
 
@@ -15,8 +15,8 @@ class WorldTemplateManagerProxyCallbacks {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDTEMPLATEMANAGERPROXYCALLBACKS
 public:
-    class WorldTemplateManagerProxyCallbacks& operator=(class WorldTemplateManagerProxyCallbacks const &) = delete;
-    WorldTemplateManagerProxyCallbacks(class WorldTemplateManagerProxyCallbacks const &) = delete;
+    struct WorldTemplateManagerProxyCallbacks& operator=(struct WorldTemplateManagerProxyCallbacks const &) = delete;
+    WorldTemplateManagerProxyCallbacks(struct WorldTemplateManagerProxyCallbacks const &) = delete;
     WorldTemplateManagerProxyCallbacks() = delete;
 #endif
 

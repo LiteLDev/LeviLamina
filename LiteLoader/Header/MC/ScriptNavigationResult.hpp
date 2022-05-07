@@ -13,7 +13,7 @@ struct ScriptNavigationResult {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    bool mResult;
+    bool mIsFullPath;
     std::vector<BlockPos> mPath;
 
 #undef AFTER_EXTRA

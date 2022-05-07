@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Core.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -44,6 +45,7 @@ public:
     /*18*/ virtual void __unk_vfn_18();
     /*19*/ virtual void __unk_vfn_19();
     /*20*/ virtual void flushToPermanentStorage();
+    MCAPI InMemoryEnv(class leveldb::Env *, class Core::Path const &);
 
 protected:
 

@@ -17,11 +17,12 @@ struct ContainerValidationSlotData {
 public:
     struct ContainerValidationSlotData& operator=(struct ContainerValidationSlotData const &) = delete;
     ContainerValidationSlotData(struct ContainerValidationSlotData const &) = delete;
-    ContainerValidationSlotData() = delete;
 #endif
 
 public:
     MCAPI ContainerValidationSlotData(enum ContainerEnumName, int);
+    MCAPI ContainerValidationSlotData();
+    MCAPI bool matches(struct ContainerValidationSlotData const &) const;
 
 protected:
 

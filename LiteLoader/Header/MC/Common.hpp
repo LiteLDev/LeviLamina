@@ -14,6 +14,7 @@ namespace Common {
 // Add Member There
 
 #undef AFTER_EXTRA
+    MCAPI std::string getGameDevVersionString();
     MCAPI std::string getGameSemVerString();
     MCAPI std::string getGameVersionString();
     MCAPI std::string getGameVersionStringNet();

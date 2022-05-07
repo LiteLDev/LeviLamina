@@ -27,6 +27,7 @@ public:
     MCAPI class WeakRefT<struct EntityRefTraits> getWeakRef() const;
 
 protected:
+    MCAPI class EntityRegistry & _registry() const;
 
 private:
 

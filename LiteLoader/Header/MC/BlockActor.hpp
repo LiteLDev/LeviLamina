@@ -125,6 +125,7 @@ public:
     MCAPI bool isType(enum BlockActorType) const;
     MCAPI void moveTo(class BlockPos const &);
     MCAPI bool onUpdatePacket(class CompoundTag const &, class BlockSource &, class Player const *);
+    MCAPI void setBB(class AABB);
     MCAPI void setChanged();
     MCAPI void setCustomNameSaved(bool);
     MCAPI void setIgnoreLighting(bool);

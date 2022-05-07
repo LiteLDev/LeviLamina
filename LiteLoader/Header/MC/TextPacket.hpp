@@ -50,5 +50,6 @@ public:
 protected:
 
 private:
+    MCAPI TextPacket(enum TextPacketType, std::string const &, std::string const &, std::vector<std::string> const &, bool, std::string const &, std::string const &);
 
 };

@@ -32,17 +32,12 @@ public:
     /*6*/ virtual bool allowPicking(float, float);
     /*7*/ virtual void setJumping(bool);
     /*8*/ virtual void setAutoJumpingInWater(bool);
-    /*9*/ virtual void __unk_vfn_9();
+    /*9*/ virtual bool isChangeHeight() const;
     /*10*/ virtual void setSneakDown(bool);
     /*11*/ virtual bool isPlayerMoving() const;
     /*12*/ virtual class Vec3 const & getGazeDirection() const;
     /*13*/ virtual struct MoveInputComponent extractInputComponent() const;
     /*
-    inline bool isChangeHeight() const{
-        bool (MoveInput::*rv)() const;
-        *((void**)&rv) = dlsym("?isChangeHeight@MoveInput@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline void clearMovementState(){
         void (MoveInput::*rv)();
         *((void**)&rv) = dlsym("?clearMovementState@MoveInput@@UEAAXXZ");

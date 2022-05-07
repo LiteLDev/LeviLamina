@@ -30,6 +30,5 @@ public:
 protected:
 
 private:
-    MCAPI void _placeLeaf(class IBlockWorldGenAPI &, class BlockPos const &, class gsl::not_null<class Block const *>, struct TreeHelper::TreeParams const &) const;
 
 };

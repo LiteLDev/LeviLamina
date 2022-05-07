@@ -38,7 +38,10 @@ namespace LL {
                         {"autoInstallPath", conf.addonsInstallPath}
                     }},
                     {"FixListenPort", {{"enabled", conf.enableFixListenPort}}},
-                    {"AntiGive", {{"enabled", conf.enableAntiGive}}},
+                    {"AntiGive", {
+                        {"enabled", conf.enableAntiGive},
+                        {"command", conf.antiGiveCommand}
+                    }},
                     {"ErrorStackTraceback", {
                         {"enabled", conf.enableErrorStackTraceback},
                         {"cacheSymbol", conf.cacheErrorStackTracebackSymbol}
@@ -119,6 +122,7 @@ namespace LL {
             {
                 const nlohmann::json& setting = modules.at("AntiGive");
                 conf.enableAntiGive = setting.value("enabled", true);
+                conf.antiGiveCommand = setting.value("command", "kick {player}");
             }
             if (modules.count("UnoccupyPort19132"))
             {

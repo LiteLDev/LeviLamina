@@ -23,8 +23,10 @@ public:
 public:
     MCAPI PositionTrackingId(class PositionTrackingId &&);
     MCAPI PositionTrackingId(class PositionTrackingId const &);
+    MCAPI PositionTrackingId(std::string const &);
     MCAPI void fromTag(class Tag const *);
     MCAPI std::unique_ptr<class Tag> getTag() const;
+    MCAPI void init();
     MCAPI class PositionTrackingId & operator=(class PositionTrackingId &&);
     MCAPI class PositionTrackingId & operator=(class PositionTrackingId const &);
     MCAPI std::string const toString() const;

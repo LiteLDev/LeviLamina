@@ -29,6 +29,7 @@ public:
     MCAPI static enum MolangVariableIndex getVariableIndex(unsigned __int64);
     MCAPI static enum MolangVariableIndex getVariableIndex(unsigned __int64, char const *, bool);
     MCAPI static class HashedString const & getVariableName(enum MolangVariableIndex);
+    MCAPI static void initVariableMaps();
     MCAPI static bool isValidName(char const *);
     MCAPI static void processWaterMark();
 

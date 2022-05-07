@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Social.hpp"
 #include "RakNet.hpp"
 
 #define BEFORE_EXTRA
@@ -25,7 +26,16 @@ public:
 #endif
 
 public:
+    MCAPI RakPeerHelper(class RakPeerHelper::IPSupportInterface &);
+    MCAPI int getConnectionIndex(class Social::GameConnectionInfo const &) const;
+    MCAPI unsigned short getIPv4BoundPort() const;
+    MCAPI int getIPv4ConnectionIndex() const;
+    MCAPI unsigned short getIPv6BoundPort() const;
+    MCAPI int getIPv6ConnectionIndex() const;
+    MCAPI bool isIPv4Supported() const;
+    MCAPI bool isIPv6Supported() const;
     MCAPI enum RakNet::StartupResult peerStartup(class RakNet::RakPeerInterface *, struct ConnectionDefinition const &);
+    MCAPI void reset();
 
 protected:
 

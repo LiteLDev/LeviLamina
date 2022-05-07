@@ -29,6 +29,7 @@ public:
     MCAPI bool getBool() const;
     MCAPI float getFloat() const;
     MCAPI enum Ability::Type getType() const;
+    MCAPI bool hasOption(enum Ability::Options) const;
     MCAPI void setBool(bool);
 
 protected:

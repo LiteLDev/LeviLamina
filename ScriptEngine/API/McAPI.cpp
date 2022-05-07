@@ -3,8 +3,8 @@
 ClassDefine<void> McClassBuilder =
 	defineClass("mc")
 		.function("getBDSVersion", &McClass::getBDSVersion)
-        	.function("getServerProtocolVersion", &McClass::getServerProtocolVersion)
-        	.function("runcmd", &McClass::runcmd)
+        .function("getServerProtocolVersion", &McClass::getServerProtocolVersion)
+        .function("runcmd", &McClass::runcmd)
 		.function("runcmdEx", &McClass::runcmdEx)
 		.function("regPlayerCmd", &McClass::regPlayerCmd)
 		.function("newCommand", &McClass::newCommand)
@@ -16,6 +16,7 @@ ClassDefine<void> McClassBuilder =
 		.function("newItem", &McClass::newItem)
 		.function("spawnMob", &McClass::spawnMob)
 		.function("spawnItem", &McClass::spawnItem)
+        .function("spawnSimulatedPlayer", &McClass::spawnSimulatedPlayer)
 		.function("explode", &McClass::explode)
 		.function("getBlock", &McClass::getBlock)
 		.function("setBlock", &McClass::setBlock)

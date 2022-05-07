@@ -19,11 +19,16 @@ struct AABBBucket {
 public:
     struct AABBBucket& operator=(struct AABBBucket const &) = delete;
     AABBBucket(struct AABBBucket const &) = delete;
-    AABBBucket() = delete;
 #endif
 
 public:
+    MCAPI AABBBucket();
+    MCAPI void clearDirty();
+    MCAPI void clearNeedsFinalize();
+    MCAPI bool isDirty();
+    MCAPI void markDirty();
     MCAPI void mergeAABBs();
+    MCAPI bool needsFinalize() const;
 
 protected:
 

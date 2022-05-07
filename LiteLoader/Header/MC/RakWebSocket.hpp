@@ -42,14 +42,22 @@ public:
     }
     */
     MCAPI RakWebSocket(std::unique_ptr<class TcpProxy>, bool);
+    MCAPI void close(bool, bool);
+    MCAPI std::string getUri() const;
+    MCAPI bool isDisconnected() const;
+    MCAPI bool send(std::string const &);
+    MCAPI bool sendBinary(unsigned char const *, unsigned __int64);
 
 protected:
     MCAPI void _close(enum CloseStatusCode);
     MCAPI void _createWebSocketKey();
     MCAPI void _fail(std::string const &, enum CloseStatusCode);
     MCAPI std::string _generateBase64SHA1Key(std::string const &);
+    MCAPI void _processClosingFrames(class RakNet::BitStream &);
     MCAPI void _processClosingHandshake(bool);
     MCAPI void _processDataFrames(class RakNet::BitStream &);
+    MCAPI void _processOpenHandshakePackets(class RakNet::BitStream &);
+    MCAPI bool _processPacket(class std::function<void (class RakNet::BitStream &)> const &, bool);
     MCAPI void _reset();
     MCAPI bool _sendControlFrame(unsigned char const *, unsigned __int64, enum OpCode);
     MCAPI bool _sendDataFrame(unsigned char const *, unsigned int, enum OpCode, bool);

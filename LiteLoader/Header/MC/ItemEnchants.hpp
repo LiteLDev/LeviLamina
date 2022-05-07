@@ -27,6 +27,7 @@ public:
     MCAPI ItemEnchants(int);
     MCAPI ItemEnchants(int, class ListTag const &);
     MCAPI bool addEnchant(class EnchantmentInstance, bool);
+    MCAPI int addEnchants(class ItemEnchants const &, bool);
     MCAPI struct EnchantResult canEnchant(class EnchantmentInstance, bool);
     MCAPI std::vector<class EnchantmentInstance> getAllEnchants() const;
     MCAPI std::vector<std::string> getEnchantNames() const;

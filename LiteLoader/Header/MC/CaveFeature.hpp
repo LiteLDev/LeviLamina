@@ -57,6 +57,7 @@ protected:
     MCAPI bool carveBlock(class IBlockWorldGenAPI &, struct CaveFeatureUtils::CarverConfiguration const &, class BlockPos, bool *, bool, class Vec3 const &, int, class BlockPos) const;
     MCAPI bool carveEllipsoid(class IBlockWorldGenAPI &, struct CaveFeatureUtils::CarverConfiguration const &, class Random &, class ChunkPos const &, class Vec3 const &, float, float, struct CaveFeatureUtils::CarvingParameters const &) const;
     MCAPI bool detectWater(class IBlockWorldGenAPI &, class BoundingBox const &) const;
+    MCAPI static bool shouldSkipCarving(float, float, float, float, float);
 
 private:
 

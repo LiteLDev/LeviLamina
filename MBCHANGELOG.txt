@@ -1,12 +1,19 @@
 [HEADING=1][LiteLoader Release Note][/HEADING]
-这是一个修复MC与BDS本体漏洞的版本
+本版本可能不与1.18.32之前版本兼容，指令注册部分小改动！不建议之前版本使用！
 
 [HEADING=1][新内容][/HEADING]
 [LIST]
-[*]全新的CrashLogger系统（更加直观的输出）
+[*]适配1.18.32
+[*]添加 SimulatedPlayerAPI 
+[*]添加 AntiGive执行指令 [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/358']#358[/URL]  [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/372']#372[/URL]
 [/LIST]
 [HEADING=1][BUG修复][/HEADING]
 [LIST]
-[*]修复钓鱼竿潜在的崩溃BUG
-[*]修复最大人数溢出导致的服务器假死
+[*]修复Player::clearItem返回错误的BUG,  [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/395']#395[/URL]
+[*]修复动态指令注册崩溃的问题
+[*]修复当服务器关闭时指令造成的崩溃
+[/LIST]
+[HEADING=1][改变][/HEADING]
+[LIST]
+[*]更新远程调用api
 [/LIST]

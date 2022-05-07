@@ -32,14 +32,14 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
-    inline void stop(){
-        void (FollowMobGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@FollowMobGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void start(){
         void (FollowMobGoal::*rv)();
         *((void**)&rv) = dlsym("?start@FollowMobGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void stop(){
+        void (FollowMobGoal::*rv)();
+        *((void**)&rv) = dlsym("?stop@FollowMobGoal@@UEAAXXZ");
         return (this->*rv)();
     }
     */

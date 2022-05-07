@@ -25,11 +25,12 @@ struct LockedChunk {
 public:
     class PostprocessingManager& operator=(class PostprocessingManager const &) = delete;
     PostprocessingManager(class PostprocessingManager const &) = delete;
-    PostprocessingManager() = delete;
 #endif
 
 public:
+    MCAPI PostprocessingManager();
     MCAPI class std::optional<std::vector<struct PostprocessingManager::LockedChunk>> tryLock(class ChunkPos const &, class ChunkSource &);
+    MCAPI ~PostprocessingManager();
 
 protected:
 

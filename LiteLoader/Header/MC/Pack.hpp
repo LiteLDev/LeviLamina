@@ -26,9 +26,18 @@ public:
 public:
     /*0*/ virtual ~Pack();
     MCAPI Pack(std::unique_ptr<class PackManifest>, std::unique_ptr<class PackAccessStrategy>, std::unique_ptr<class SubpackInfoCollection>, std::unique_ptr<class PackMetadata>);
+    MCAPI class PackAccessStrategy * getAccessStrategy();
     MCAPI class PackManifest const & getManifest() const;
+    MCAPI class PackManifest & getManifest();
+    MCAPI class PackManifest * getManifestPtr();
+    MCAPI class SubpackInfoCollection * getSubpackInfoStack();
     MCAPI void move(class Pack &&);
     MCAPI void notifyDeleted();
+    MCAPI void notifyUpdated();
+    MCAPI void registerPackDeletedCallback(void *, class std::function<void (class Pack &)>);
+    MCAPI void registerPackUpdatedCallback(void *, class std::function<void (class Pack &)>);
+    MCAPI void unregisterPackDeletedCallback(void *);
+    MCAPI void unregisterPackUpdatedCallback(void *);
     MCAPI static std::unique_ptr<class Pack> createPack(class ResourceLocation const &, enum PackType, enum PackOrigin, class IPackManifestFactory &, class IContentKeyProvider const &, class PackSourceReport *);
     MCAPI static std::unique_ptr<class PackMetadata> createPackMetadata(enum PackType, class PackManifest &, class PackAccessStrategy const &, class PackReport &);
 

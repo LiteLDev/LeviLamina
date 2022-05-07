@@ -108,6 +108,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI SuspiciousStewItem(std::string const &, short);
     MCAPI static void applyStewEffect(class ItemStack const &, class Actor &);
 
 protected:

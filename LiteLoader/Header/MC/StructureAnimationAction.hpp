@@ -35,6 +35,7 @@ public:
     */
     MCAPI StructureAnimationAction(class StructureSettings const &, class AutomaticID<class Dimension, int>, class BlockPos const &, std::string const &);
     MCAPI StructureAnimationAction(std::unique_ptr<class StructureAnimationData>, class AutomaticID<class Dimension, int>);
+    MCAPI static bool isValidTag(class CompoundTag const &);
     MCAPI static std::unique_ptr<class StructureAnimationAction> load(class CompoundTag const &, std::string const &);
 
 protected:

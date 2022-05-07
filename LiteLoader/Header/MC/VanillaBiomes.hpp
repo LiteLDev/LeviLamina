@@ -112,5 +112,6 @@ public:
 protected:
 
 private:
+    MCAPI static void addBiomeDimensionAttributeComponentHelper(class BiomeRegistry &, std::string const &, class AutomaticID<class Dimension, int>);
 
 };

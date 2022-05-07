@@ -37,6 +37,7 @@ public:
     /*19*/ virtual void __unk_vfn_19();
     /*20*/ virtual class Container * _getContainer() const;
     /*21*/ virtual int _getContainerOffset() const;
+    MCAPI HudContainerModel(enum ContainerEnumName, class Player &);
 
 protected:
 

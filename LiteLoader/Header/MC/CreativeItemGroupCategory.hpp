@@ -19,7 +19,6 @@ class CreativeItemGroupCategory {
 public:
     class CreativeItemGroupCategory& operator=(class CreativeItemGroupCategory const &) = delete;
     CreativeItemGroupCategory(class CreativeItemGroupCategory const &) = delete;
-    CreativeItemGroupCategory() = delete;
 #endif
 
 public:
@@ -31,6 +30,8 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI CreativeItemGroupCategory(class CreativeItemRegistry *, std::string const &, enum CreativeItemCategory);
+    MCAPI CreativeItemGroupCategory();
     MCAPI class CreativeGroupInfo * addAnonymousGroup();
     MCAPI class CreativeGroupInfo * addChildGroup(class HashedString const &, class ItemInstance const &);
     MCAPI class CreativeGroupInfo * getChildGroup(class HashedString const &);

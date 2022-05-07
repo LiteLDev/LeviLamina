@@ -29,15 +29,15 @@ public:
         *((void**)&rv) = dlsym("?forceCheckAllNeighChunkSavedStat@Dimension@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool hasBedrockFog(){
-        bool (Dimension::*rv)();
-        *((void**)&rv) = dlsym("?hasBedrockFog@Dimension@@UEAA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isFoggyAt(int a0, int a1) const{
         bool (Dimension::*rv)(int, int) const;
         *((void**)&rv) = dlsym("?isFoggyAt@Dimension@@UEBA_NHH@Z");
         return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
+    inline bool hasBedrockFog(){
+        bool (Dimension::*rv)();
+        *((void**)&rv) = dlsym("?hasBedrockFog@Dimension@@UEAA_NXZ");
+        return (this->*rv)();
     }
     inline bool isValidSpawn(int a0, int a1) const{
         bool (Dimension::*rv)(int, int) const;
@@ -54,14 +54,14 @@ public:
         *((void**)&rv) = dlsym("?getSpawnYPosition@Dimension@@UEBAHXZ");
         return (this->*rv)();
     }
-    inline bool mayRespawnViaBed() const{
-        bool (Dimension::*rv)() const;
-        *((void**)&rv) = dlsym("?mayRespawnViaBed@Dimension@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool hasGround() const{
         bool (Dimension::*rv)() const;
         *((void**)&rv) = dlsym("?hasGround@Dimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool mayRespawnViaBed() const{
+        bool (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?mayRespawnViaBed@Dimension@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isNaturalDimension() const{
@@ -232,6 +232,7 @@ public:
     MCAPI float getMoonBrightness() const;
     MCAPI int getMoonPhase() const;
     MCAPI float getPopCap(int, bool) const;
+    MCAPI class Seasons & getSeasons();
     MCAPI struct Brightness getSkyDarken() const;
     MCAPI float getSunAngle(float) const;
     MCAPI class TickingAreaList & getTickingAreas();
@@ -245,6 +246,7 @@ public:
     MCAPI bool isChunkKnown(class ChunkPos const &) const;
     MCAPI bool isLeaveGameDone();
     MCAPI bool isRedstoneTick();
+    MCAPI bool isSubChunkHeightWithinRange(short const &) const;
     MCAPI bool isUltraWarm() const;
     MCAPI void onStaticTickingAreaAdded(std::string const &);
     MCAPI void registerEntity(struct ActorUniqueID const &, class WeakRefT<struct EntityRefTraits>);
@@ -265,6 +267,7 @@ public:
     MCAPI void tryLoadLimboEntities(class ChunkPos const &);
     MCAPI void unregisterDisplayEntity(class WeakRefT<struct EntityRefTraits>);
     MCAPI void unregisterEntity(struct ActorUniqueID const &);
+    MCAPI void updateBlockLight(class BlockPos const &, struct Brightness, struct Brightness, struct Brightness, struct Brightness, bool);
     MCAPI static enum LimboEntitiesVersion const CurrentLimboEntitiesVersion;
     MCAPI static unsigned int const LOW_CPU_PACKET_BLOCK_LIMIT;
     MCAPI static float const *const MOON_BRIGHTNESS_PER_PHASE;

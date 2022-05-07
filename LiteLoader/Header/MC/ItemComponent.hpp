@@ -62,6 +62,7 @@ public:
     }
     */
     MCAPI ItemComponent(class ComponentItem *);
+    MCAPI static void bindItemComponentType();
 
 protected:
 

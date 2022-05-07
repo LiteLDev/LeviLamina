@@ -24,15 +24,15 @@ public:
 
 public:
     /*
-    inline enum EventResult onEvent(struct ActorHurtEvent const & a0){
-        enum EventResult (VanillaServerGameplayEventListener::*rv)(struct ActorHurtEvent const &);
-        *((void**)&rv) = dlsym("?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUActorHurtEvent@@@Z");
-        return (this->*rv)(std::forward<struct ActorHurtEvent const &>(a0));
-    }
     inline enum EventResult onEvent(struct PlayerDamageEvent const & a0){
         enum EventResult (VanillaServerGameplayEventListener::*rv)(struct PlayerDamageEvent const &);
         *((void**)&rv) = dlsym("?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerDamageEvent@@@Z");
         return (this->*rv)(std::forward<struct PlayerDamageEvent const &>(a0));
+    }
+    inline enum EventResult onEvent(struct ActorHurtEvent const & a0){
+        enum EventResult (VanillaServerGameplayEventListener::*rv)(struct ActorHurtEvent const &);
+        *((void**)&rv) = dlsym("?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUActorHurtEvent@@@Z");
+        return (this->*rv)(std::forward<struct ActorHurtEvent const &>(a0));
     }
     inline enum EventResult onBlockInteractedWith(class Player & a0, class BlockPos const & a1){
         enum EventResult (VanillaServerGameplayEventListener::*rv)(class Player &, class BlockPos const &);

@@ -24,6 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~CreativeItemEntry();
+    MCAPI CreativeItemEntry(class CreativeItemEntry &&);
+    MCAPI CreativeItemEntry(class CreativeItemRegistry *, class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const &, class ItemInstance const &, unsigned int);
     MCAPI class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const & getCreativeNetId() const;
     MCAPI class CreativeGroupInfo * getGroup() const;
     MCAPI unsigned int getIndex() const;

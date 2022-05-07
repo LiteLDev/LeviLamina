@@ -154,9 +154,11 @@ public:
     MCAPI bool _validateServerSchemaAndInitItem(class Json::Value &, class SemVersion const &);
     MCAPI bool checkComponentDataForContentErrors() const;
     MCAPI bool executeTrigger(class ItemStackBase &, class DefinitionTrigger const &, class RenderParams &) const;
+    MCAPI std::vector<std::string> const & getAliases() const;
     MCAPI class ArmorItemComponent * getArmor() const;
     MCAPI class DurabilityItemComponent * getDamageable() const;
     MCAPI class DyeableComponent * getDyeable() const;
+    MCAPI bool getIsAttachable() const;
     MCAPI class KnockbackResistanceItemComponent * getKnockbackResistance() const;
     MCAPI class ProjectileItemComponent * getProjectile() const;
     MCAPI class RecordItemComponent * getRecordComponent() const;
@@ -165,6 +167,7 @@ public:
     MCAPI class WearableItemComponent * getWearable() const;
     MCAPI bool isStorage() const;
     MCAPI bool parseJsonEvents(class Json::Value const &, class SemVersion const &);
+    MCAPI void setDescriptionId(std::string const &);
     MCAPI static void registerItemComponentTypes();
 
 protected:

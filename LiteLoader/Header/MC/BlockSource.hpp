@@ -67,6 +67,11 @@ public:
         *((void**)&rv) = dlsym("?getILevel@BlockSource@@UEBAAEAVILevel@@XZ");
         return (this->*rv)();
     }
+    inline class ChunkSource & getChunkSource(){
+        class ChunkSource & (BlockSource::*rv)();
+        *((void**)&rv) = dlsym("?getChunkSource@BlockSource@@UEAAAEAVChunkSource@@XZ");
+        return (this->*rv)();
+    }
     inline class Dimension & getDimension(){
         class Dimension & (BlockSource::*rv)();
         *((void**)&rv) = dlsym("?getDimension@BlockSource@@UEAAAEAVDimension@@XZ");
@@ -75,11 +80,6 @@ public:
     inline class Dimension & getDimension() const{
         class Dimension & (BlockSource::*rv)() const;
         *((void**)&rv) = dlsym("?getDimension@BlockSource@@UEBAAEAVDimension@@XZ");
-        return (this->*rv)();
-    }
-    inline class ChunkSource & getChunkSource(){
-        class ChunkSource & (BlockSource::*rv)();
-        *((void**)&rv) = dlsym("?getChunkSource@BlockSource@@UEAAAEAVChunkSource@@XZ");
         return (this->*rv)();
     }
     inline  ~BlockSource(){
@@ -139,6 +139,7 @@ public:
     MCAPI void fireBlockEntityChanged(class BlockActor &);
     MCAPI void fireBrightnessChanged(class BlockPos const &);
     MCAPI void fireEntityChanged(class Actor &);
+    MCAPI class AABB generateUnloadedChunkAABB(class ChunkPos const &);
     MCAPI short getAboveTopSolidBlock(class BlockPos const &, bool, bool);
     MCAPI short getAboveTopSolidBlock(int, int, bool, bool);
     MCAPI short getAllocatedHeightAt(class BlockPos const &);

@@ -38,6 +38,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI VexRandomMoveGoal(class Mob &);
 
 protected:
 

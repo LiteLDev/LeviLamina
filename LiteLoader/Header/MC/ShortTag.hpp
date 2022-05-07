@@ -29,7 +29,6 @@ public:
 public:
     class ShortTag& operator=(class ShortTag const &) = delete;
     ShortTag(class ShortTag const &) = delete;
-    ShortTag() = delete;
 #endif
 
 public:
@@ -43,6 +42,7 @@ public:
     /*9*/ virtual std::unique_ptr<class Tag> copy() const;
     /*10*/ virtual unsigned __int64 hash() const;
     MCAPI ShortTag(short);
+    MCAPI ShortTag();
 
 protected:
 

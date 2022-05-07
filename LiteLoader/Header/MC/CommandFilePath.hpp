@@ -21,6 +21,8 @@ public:
 
 public:
     MCAPI CommandFilePath();
+    MCAPI int findInvalidCharacter() const;
+    MCAPI std::string const & getText() const;
     MCAPI ~CommandFilePath();
 
 protected:

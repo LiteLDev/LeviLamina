@@ -24,6 +24,8 @@ public:
 public:
     MCAPI PlayerScoreboardId(__int64);
     MCAPI PlayerScoreboardId();
+    MCAPI unsigned __int64 getHash() const;
+    MCAPI bool operator==(struct PlayerScoreboardId const &) const;
 
 protected:
 

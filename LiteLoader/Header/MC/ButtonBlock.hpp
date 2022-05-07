@@ -149,14 +149,14 @@ public:
         *((void**)&rv) = dlsym("?canSpawnOn@ButtonBlock@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isButtonBlock() const{
-        bool (ButtonBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isButtonBlock@ButtonBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isInteractiveBlock() const{
         bool (ButtonBlock::*rv)() const;
         *((void**)&rv) = dlsym("?isInteractiveBlock@ButtonBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isButtonBlock() const{
+        bool (ButtonBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isButtonBlock@ButtonBlock@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isSignalSource() const{

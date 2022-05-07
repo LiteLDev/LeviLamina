@@ -34,6 +34,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI static std::unique_ptr<class IdleState> create(class PetSleepWithOwnerGoal &);
 
 protected:
 

@@ -39,6 +39,7 @@ public:
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void __unk_vfn_14();
     /*15*/ virtual class BlockSource & getBlockSource() const;
+    MCAPI MinecraftGameTestInstance(class gametest::BaseGameTestFunction const &, std::unique_ptr<class gametest::IGameTestHelperProvider>, class Dimension &);
 
 protected:
 

@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "MoveInput.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class MoveInputHandler {
+class MoveInputHandler : public MoveInput {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -19,54 +20,33 @@ class MoveInputHandler {
 public:
     class MoveInputHandler& operator=(class MoveInputHandler const &) = delete;
     MoveInputHandler(class MoveInputHandler const &) = delete;
-    MoveInputHandler() = delete;
 #endif
 
 public:
+    /*0*/ virtual ~MoveInputHandler();
+    /*1*/ virtual void tick(struct IPlayerMovementProxy &);
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void clearInputState();
+    /*5*/ virtual void __unk_vfn_5();
+    /*9*/ virtual bool isChangeHeight() const;
+    /*11*/ virtual bool isPlayerMoving() const;
+    /*12*/ virtual class Vec3 const & getGazeDirection() const;
+    /*13*/ virtual struct MoveInputComponent extractInputComponent() const;
+    /*14*/ virtual void fillInputPacket(class PlayerAuthInputPacket &);
+    /*15*/ virtual void __unk_vfn_15() = 0;
+    /*16*/ virtual std::unique_ptr<struct IReplayableActorInput> createSnapshot();
     /*
-    inline std::unique_ptr<struct IReplayableActorInput> createSnapshot(){
-        std::unique_ptr<struct IReplayableActorInput> (MoveInputHandler::*rv)();
-        *((void**)&rv) = dlsym("?createSnapshot@MoveInputHandler@@UEAA?AV?$unique_ptr@UIReplayableActorInput@@U?$default_delete@UIReplayableActorInput@@@std@@@std@@XZ");
+    inline  ~MoveInputHandler(){
+         (MoveInputHandler::*rv)();
+        *((void**)&rv) = dlsym("??1MoveInputHandler@@UEAA@XZ");
         return (this->*rv)();
-    }
-    inline class Vec3 const & getGazeDirection() const{
-        class Vec3 const & (MoveInputHandler::*rv)() const;
-        *((void**)&rv) = dlsym("?getGazeDirection@MoveInputHandler@@UEBAAEBVVec3@@XZ");
-        return (this->*rv)();
-    }
-    inline void clearInputState(){
-        void (MoveInputHandler::*rv)();
-        *((void**)&rv) = dlsym("?clearInputState@MoveInputHandler@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline struct MoveInputComponent extractInputComponent() const{
-        struct MoveInputComponent (MoveInputHandler::*rv)() const;
-        *((void**)&rv) = dlsym("?extractInputComponent@MoveInputHandler@@UEBA?AUMoveInputComponent@@XZ");
-        return (this->*rv)();
-    }
-    inline void fillInputPacket(class PlayerAuthInputPacket & a0){
-        void (MoveInputHandler::*rv)(class PlayerAuthInputPacket &);
-        *((void**)&rv) = dlsym("?fillInputPacket@MoveInputHandler@@UEAAXAEAVPlayerAuthInputPacket@@@Z");
-        return (this->*rv)(std::forward<class PlayerAuthInputPacket &>(a0));
-    }
-    inline bool isChangeHeight() const{
-        bool (MoveInputHandler::*rv)() const;
-        *((void**)&rv) = dlsym("?isChangeHeight@MoveInputHandler@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isPlayerMoving() const{
-        bool (MoveInputHandler::*rv)() const;
-        *((void**)&rv) = dlsym("?isPlayerMoving@MoveInputHandler@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void tick(struct IPlayerMovementProxy & a0){
-        void (MoveInputHandler::*rv)(struct IPlayerMovementProxy &);
-        *((void**)&rv) = dlsym("?tick@MoveInputHandler@@UEAAXAEAUIPlayerMovementProxy@@@Z");
-        return (this->*rv)(std::forward<struct IPlayerMovementProxy &>(a0));
     }
     */
+    MCAPI bool wantsMoveForward() const;
 
 protected:
+    MCAPI MoveInputHandler();
 
 private:
 

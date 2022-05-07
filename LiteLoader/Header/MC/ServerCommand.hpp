@@ -28,6 +28,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI static void setup(class Minecraft &);
 
 protected:
     MCAPI static class Minecraft * mGame;

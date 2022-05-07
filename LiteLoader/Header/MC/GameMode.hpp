@@ -43,6 +43,13 @@ public:
     /*16*/ virtual void setTrialMode(bool);
     /*17*/ virtual bool isInTrialMode();
     /*18*/ virtual void registerUpsellScreenCallback(class std::function<void (bool)>);
+    /*
+    inline  ~GameMode(){
+         (GameMode::*rv)();
+        *((void**)&rv) = dlsym("??1GameMode@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI GameMode(class Player &, std::unique_ptr<struct IGameModeTimer>, std::unique_ptr<struct IGameModeMessenger>);
     MCAPI bool _startDestroyBlock(class BlockPos const &, class Vec3 const &, unsigned char, bool &);
     MCAPI bool _tickContinueDestroyBlock(class BlockPos const &, class Vec3 const &, unsigned char, bool &, class std::function<void (void)> const &);

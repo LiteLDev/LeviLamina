@@ -53,6 +53,7 @@ public:
         return (this->*rv)(std::forward<struct FileInfo const &>(a0));
     }
     */
+    MCAPI ServerFileChunkUploader(class PacketSender &, class NetworkIdentifier const &);
 
 protected:
 

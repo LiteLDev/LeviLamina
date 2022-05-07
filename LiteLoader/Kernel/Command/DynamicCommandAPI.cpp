@@ -12,6 +12,7 @@
 #include <MC/ActorDefinitionIdentifier.hpp>
 #include <MC/Level.hpp>
 #include <MC/Block.hpp>
+#include <Utils/SRWLock.h>
 #include <ScheduleAPI.h>
 #include <MC/Minecraft.hpp>
 #include <MC/LoopbackPacketSender.hpp>
@@ -62,7 +63,7 @@ namespace
 bool serverCommandsRegistered = false;
 std::unordered_map<std::string, std::unique_ptr<DynamicCommandInstance>> dynamicCommandInstances;
 std::vector<std::unique_ptr<DynamicCommandInstance>> delaySetupCommandInstances;
-CsLock delaySetupLock;
+SRWLock delaySetupLock;
 
 
 using Result = DynamicCommand::Result;
@@ -584,7 +585,7 @@ DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicComm
 bool DynamicCommand::onServerCommandsRegister(CommandRegistry& registry)
 {
     serverCommandsRegistered = true;
-    delaySetupLock.lock();
+    SRWLockHolder locker(delaySetupLock);
     for (auto& command : delaySetupCommandInstances)
     {
         std::string name = command->getCommandName();
@@ -600,7 +601,6 @@ bool DynamicCommand::onServerCommandsRegister(CommandRegistry& registry)
         CatchDynamicCommandError("DynamicCommand::_setup - " + name, handler);
     };
     delaySetupCommandInstances.clear();
-    delaySetupLock.unlock();
     return true;
 }
 
@@ -1435,3 +1435,14 @@ TClasslessInstanceHook2("startServerThread_RegisterDebugCommand", void, "?startS
 }
 
 #endif // DEBUG
+
+TClasslessInstanceHook(void, "?compile@BaseCommandBlock@@AEAAXAEBVCommandOrigin@@AEAVLevel@@@Z",
+              class CommandOrigin const& origin, class Level& level)
+{
+    if (LL::globalConfig.tickThreadId != std::this_thread::get_id())
+    {
+        SRWLockSharedHolder locker(delaySetupLock);
+        return original(this, origin, level);
+    }
+    return original(this, origin, level);
+}

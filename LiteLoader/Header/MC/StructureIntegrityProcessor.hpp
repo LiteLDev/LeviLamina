@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    MCAPI StructureIntegrityProcessor(float, unsigned int);
     MCAPI std::vector<bool> generateFlagsForIndices(int, int) const;
 
 protected:

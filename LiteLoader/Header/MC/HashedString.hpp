@@ -50,6 +50,7 @@ public:
     MCAPI class HashedString & operator=(class HashedString const &);
     MCAPI bool operator==(class HashedString const &) const;
     MCAPI ~HashedString();
+    MCAPI static void bindType();
     MCAPI static unsigned __int64 computeHash(std::string const &);
     MCAPI static unsigned __int64 computeHash(char const *);
     MCAPI static class HashedString defaultErrorValue;

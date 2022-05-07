@@ -37,6 +37,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI SHStartPiece(int, class Random &, int, int);
 
 protected:
 

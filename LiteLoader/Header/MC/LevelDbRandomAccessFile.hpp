@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Core.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -25,6 +26,7 @@ public:
 public:
     /*0*/ virtual ~LevelDbRandomAccessFile();
     /*1*/ virtual class leveldb::Status Read(unsigned __int64, unsigned __int64, class leveldb::Slice *, char *) const;
+    MCAPI LevelDbRandomAccessFile(class Core::File &&);
 
 protected:
 

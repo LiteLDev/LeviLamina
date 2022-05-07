@@ -37,6 +37,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI KnockbackResistanceItemComponent(class ComponentItem *);
     MCAPI float getProtectionValue() const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();

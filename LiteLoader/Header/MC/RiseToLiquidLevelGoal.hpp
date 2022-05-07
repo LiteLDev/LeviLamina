@@ -36,5 +36,6 @@ public:
 protected:
 
 private:
+    MCAPI float findLiquidLevel();
 
 };

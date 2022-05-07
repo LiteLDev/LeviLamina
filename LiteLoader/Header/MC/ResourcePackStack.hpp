@@ -35,7 +35,9 @@ public:
     }
     */
     MCAPI void add(class PackInstance, class IResourcePackRepository const &, bool);
+    MCAPI void generateAssetSet();
     MCAPI void getSplitStacks(class ResourcePackStack &, class ResourcePackStack &) const;
+    MCAPI bool hasCapabilityInStack(class gsl::basic_string_span<char const, -1>) const;
     MCAPI bool hasPlatformLockedContent() const;
     MCAPI void removeDuplicates();
     MCAPI void removeIf(class std::function<bool (class PackInstance const &)> const &);

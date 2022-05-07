@@ -27,6 +27,7 @@ public:
     MCAPI bool areBitsSet(enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp) const;
     MCAPI bool areBitsSet(enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp) const;
     MCAPI bool areBitsSet(enum ExpressionOp, enum ExpressionOp, enum ExpressionOp, enum ExpressionOp) const;
+    MCAPI bool areBitsSet(enum ExpressionOp, enum ExpressionOp, enum ExpressionOp) const;
     MCAPI bool areBitsSet(enum ExpressionOp, enum ExpressionOp) const;
 
 protected:

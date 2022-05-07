@@ -19,7 +19,6 @@ class ScriptBlockWaterContainerComponent : public BaseScriptBlockLiquidContainer
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKWATERCONTAINERCOMPONENT
 public:
     class ScriptBlockWaterContainerComponent& operator=(class ScriptBlockWaterContainerComponent const &) = delete;
-    ScriptBlockWaterContainerComponent(class ScriptBlockWaterContainerComponent const &) = delete;
     ScriptBlockWaterContainerComponent() = delete;
 #endif
 
@@ -32,6 +31,8 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI ScriptBlockWaterContainerComponent(class ScriptBlockWaterContainerComponent const &);
+    MCAPI ScriptBlockWaterContainerComponent(class ScriptBlockWaterContainerComponent &&);
     MCAPI class Scripting::Result<void> addDye(class ScriptItemType const &);
     MCAPI class Scripting::Result<class ScriptColor> getCustomColor();
     MCAPI class ScriptBlockWaterContainerComponent & operator=(class ScriptBlockWaterContainerComponent &&);

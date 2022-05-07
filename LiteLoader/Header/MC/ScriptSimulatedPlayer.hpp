@@ -36,6 +36,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI ScriptSimulatedPlayer(class Player const &, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<bool> attack() const;
     MCAPI class Scripting::Result<bool> attackEntity(class ScriptActor const &) const;
     MCAPI class Scripting::Result<bool> breakBlock(class BlockPos const &, int) const;

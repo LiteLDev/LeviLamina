@@ -21,6 +21,7 @@ public:
 #endif
 
 public:
+    MCAPI ScriptLeverActionEvent(struct LeverActionEvent const &, class BlockPos const &, class Scripting::WeakLifetimeScope const &);
     MCAPI ~ScriptLeverActionEvent();
 
 protected:

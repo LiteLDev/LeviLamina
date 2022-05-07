@@ -32,6 +32,7 @@ public:
     MCAPI bool isFlying() const;
     MCAPI bool loadSaveData(class CompoundTag const &);
     MCAPI class Abilities & operator=(class Abilities const &);
+    MCAPI void setAbility(enum AbilitiesIndex, float);
     MCAPI void setAbility(enum AbilitiesIndex, bool);
     MCAPI void setAbilityDiff(enum AbilitiesIndex, bool, bool &);
     MCAPI void setCommandPermissions(enum CommandPermissionLevel);

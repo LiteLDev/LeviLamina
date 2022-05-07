@@ -3,13 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Json.hpp"
+#include "BehaviorDefinition.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class CompositeDefinition {
+class CompositeDefinition : public BehaviorDefinition {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,10 +21,11 @@ class CompositeDefinition {
 public:
     class CompositeDefinition& operator=(class CompositeDefinition const &) = delete;
     CompositeDefinition(class CompositeDefinition const &) = delete;
-    CompositeDefinition() = delete;
 #endif
 
 public:
+    /*0*/ virtual ~CompositeDefinition();
+    MCAPI CompositeDefinition();
     MCAPI class BehaviorDefinition const * get(unsigned __int64) const;
     MCAPI unsigned __int64 getCount() const;
 

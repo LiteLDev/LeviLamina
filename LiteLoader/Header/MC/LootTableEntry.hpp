@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -25,6 +26,7 @@ public:
 public:
     /*0*/ virtual bool _createItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
     /*1*/ virtual ~LootTableEntry();
+    MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value);
 
 protected:
 

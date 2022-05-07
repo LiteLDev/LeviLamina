@@ -29,16 +29,9 @@ public:
     /*2*/ virtual class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> getRequestId() const;
     /*3*/ virtual bool retainSetItemStackNetIdVariant() const;
     /*4*/ virtual bool allowInventoryTransactionManager() const;
-    /*6*/ virtual void __unk_vfn_6();
+    /*6*/ virtual void onContainerScreenOpen(class ContainerScreenContext const &);
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void _initScreen(class ItemStackNetManagerScreen &);
-    /*
-    inline void onContainerScreenOpen(class ContainerScreenContext const & a0){
-        void (ItemStackNetManagerServer::*rv)(class ContainerScreenContext const &);
-        *((void**)&rv) = dlsym("?onContainerScreenOpen@ItemStackNetManagerServer@@UEAAXAEBVContainerScreenContext@@@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
-    }
-    */
     MCAPI ItemStackNetManagerServer(class ServerPlayer &, bool);
     MCAPI void _handleLegacyTransactionRequest(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &, std::vector<struct std::pair<enum ContainerEnumName, class std::vector<unsigned char, class std::allocator<unsigned char>>>> const &);
     MCAPI class gsl::final_action<class std::function<void (void)>> _retainSetItemStackNetIdVariantScope();
@@ -56,7 +49,6 @@ private:
     MCAPI void _handleRequestData(std::vector<struct ItemStackResponseInfo> &, class ItemStackRequestData const *);
     MCAPI void _processQueue();
     MCAPI void _queueRequest(std::unique_ptr<class ItemStackRequestData>);
-    MCAPI void _queueRequests(class ItemStackRequestBatch const &);
     MCAPI bool _tryFilterText(class ItemStackRequestData const *);
 
 };

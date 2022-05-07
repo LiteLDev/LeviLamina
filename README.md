@@ -6,7 +6,8 @@
 [
 ![Latest Tag](https://img.shields.io/github/v/tag/LiteLDev/LiteLoader?label=LATEST%20TAG&style=for-the-badge)
 ![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoader/latest/total?style=for-the-badge)
-](https://github.com/LiteLDev/LiteLoader/releases/latest)
+](https://github.com/LiteLDev/LiteLoader/releases/latest)  
+QQ Group: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ Group 2: [850517473](https://jq.qq.com/?_wv=1027&k=zeUbrETH)
 
 ##### English | [简体中文](README_zh-cn.md)
 
@@ -331,15 +332,3 @@ If you want to reproduce and distribute this framework, you have to get our auth
 **Thanks to [JetBrains](https://www.jetbrains.com/) for allocating free open-source licences for IDEs such
 as [CLion](https://www.jetbrains.com/clion/)**.  
 [<img src="https://upload.cc/i1/2021/12/29/XNohu5.png" width="200"/>](https://www.jetbrains.com/)
-
-## 📞 Contact us
-
-QQ Group: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh)  
-QQ Group 2: [850517473](https://jq.qq.com/?_wv=1027&k=zeUbrETH)  
-Discord Server: [LiteLoaderBDS](https://discord.gg/4tBQHc9u7p)  
-Telegram Channel: [@LiteLoader](https://t.me/LiteLoader)
-
-## 💕Sponsorship💕
-
-[Afdian](https://afdian.net/@liteldev) [Afdian(LLSE)](https://afdian.net/@LiteXLoader?tab=home)  
-[Patreon(LLSE)](https://www.patreon.com/litexloader)

@@ -136,5 +136,6 @@ public:
 protected:
 
 private:
+    MCAPI void _setDynamic(class BlockSource &, class BlockPos const &) const;
 
 };

@@ -19,7 +19,6 @@ class CompositePackSource {
 public:
     class CompositePackSource& operator=(class CompositePackSource const &) = delete;
     CompositePackSource(class CompositePackSource const &) = delete;
-    CompositePackSource() = delete;
 #endif
 
 public:
@@ -30,6 +29,9 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory &, class IContentKeyProvider const &);
     MCAPI CompositePackSource(std::vector<class PackSource *> &&);
+    MCAPI CompositePackSource();
+    MCAPI void addPackSource(class PackSource *);
+    MCAPI void clear();
 
 protected:
 

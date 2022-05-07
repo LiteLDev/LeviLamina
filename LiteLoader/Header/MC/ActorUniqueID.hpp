@@ -44,7 +44,6 @@ public:
 #endif
 
 public:
-    MCAPI unsigned __int64 getHash() const;
 
 protected:
 

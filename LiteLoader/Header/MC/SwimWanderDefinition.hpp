@@ -20,11 +20,12 @@ class SwimWanderDefinition {
 public:
     class SwimWanderDefinition& operator=(class SwimWanderDefinition const &) = delete;
     SwimWanderDefinition(class SwimWanderDefinition const &) = delete;
-    SwimWanderDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SwimWanderDefinition();
+    MCAPI SwimWanderDefinition();
+    MCAPI void initialize(class EntityContext &, class SwimWanderGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwimWanderDefinition>> &);
 
 protected:

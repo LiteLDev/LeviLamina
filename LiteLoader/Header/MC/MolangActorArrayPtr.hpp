@@ -21,7 +21,6 @@ public:
 #endif
 
 public:
-    MCAPI MolangActorArrayPtr(std::vector<class Actor *>);
     MCAPI ~MolangActorArrayPtr();
 
 protected:

@@ -36,6 +36,7 @@ public:
     }
     */
     MCAPI EntitySystems(std::string);
+    MCAPI EntitySystems(std::unique_ptr<struct IEntitySystemsCollection>, std::string);
     MCAPI class PlayerInteractionSystem & getPlayerInteractionSystem();
     MCAPI void registerEvents(class EntityRegistry &);
     MCAPI void registerMovementTickingSystem(struct TickingSystemWithInfo &&);

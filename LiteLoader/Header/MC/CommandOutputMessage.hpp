@@ -28,6 +28,7 @@ public:
     MCAPI std::string const & getMessageId() const;
     MCAPI std::vector<std::string> const & getParams() const;
     MCAPI enum CommandOutputMessageType getType() const;
+    MCAPI std::string getUserMessage() const;
     MCAPI ~CommandOutputMessage();
 
 protected:

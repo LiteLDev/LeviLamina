@@ -24,8 +24,11 @@ public:
 
 public:
     MCAPI CommandAreaFactory(class Dimension &);
+    MCAPI std::unique_ptr<class CommandArea> findArea(class BlockPos const &, class BlockPos const &, int, bool) const;
     MCAPI std::unique_ptr<class CommandArea> findArea(class BlockPos const &, class BlockPos const &, bool, bool) const;
+    MCAPI std::unique_ptr<class CommandArea> findArea(class BlockPos const &, int, bool) const;
     MCAPI std::unique_ptr<class CommandArea> findAreaWithBuffer(class BlockPos const &, class BlockPos const &, int, bool) const;
+    MCAPI std::unique_ptr<class CommandArea> findAreaWithBuffer(class BlockPos const &, int, bool) const;
     MCAPI static bool shouldAllowNonTickingPlayerAndTickingAreaChunks(int);
 
 protected:

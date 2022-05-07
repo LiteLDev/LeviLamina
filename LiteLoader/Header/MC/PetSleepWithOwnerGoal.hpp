@@ -39,6 +39,9 @@ public:
     }
     */
     MCAPI PetSleepWithOwnerGoal(class Mob &, float, int, int, float);
+    MCAPI class Vec3 getBedTargetPos() const;
+    MCAPI struct PetSleepWithOwnerGoalData getData() const;
+    MCAPI class Mob & getMob() const;
     MCAPI void setState(std::unique_ptr<class PetSleepWithOwnerState>);
 
 protected:

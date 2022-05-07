@@ -6,7 +6,8 @@
 [
 ![Latest Tag](https://img.shields.io/github/v/tag/LiteLDev/LiteLoader?label=LATEST%20TAG&style=for-the-badge)
 ![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoader/latest/total?style=for-the-badge)
-](https://github.com/LiteLDev/LiteLoader/releases/latest)
+](https://github.com/LiteLDev/LiteLoader/releases/latest)  
+QQ群: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ2群: [850517473](https://jq.qq.com/?_wv=1027&k=zeUbrETH)
 
 ##### [English](README.md) | 简体中文
 
@@ -333,16 +334,3 @@ PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](
 [<img src="https://upload.cc/i1/2021/12/29/XNohu5.png" width="200"/>](https://www.jetbrains.com/)
 
 <br>
-
-## 📞 联系我们
-
-QQ 1群: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh)  
-QQ 2群: [850517473](https://jq.qq.com/?_wv=1027&k=zeUbrETH)  
-Discord服务器: [LiteLoaderBDS](https://discord.gg/4tBQHc9u7p)  
-Telegram频道: [@LiteLoader](https://t.me/LiteLoader)  
-欢迎反馈崩溃和版本适配问题，以及参与相关技术讨论与交流
-
-## 💕赞助作者💕
-
-[爱发电](https://afdian.net/@liteldev) [爱发电(LLSE)](https://afdian.net/@LiteXLoader?tab=home)  
-[Patreon(LLSE)](https://www.patreon.com/litexloader)

@@ -25,6 +25,7 @@ public:
 public:
     /*0*/ virtual ~CommandFunctionEntry();
     /*1*/ virtual void execute(class FunctionManager &, class CommandOrigin const &, enum FunctionQueueOrder);
+    MCAPI CommandFunctionEntry(std::unique_ptr<class Command>);
 
 protected:
 

@@ -30,6 +30,7 @@ public:
     MCAPI void appendTranslations(std::string const &, std::vector<std::string> const &, std::vector<std::string> const &, std::string const &);
     MCAPI bool get(std::string const &, std::string &, std::vector<std::string> const &) const;
     MCAPI std::string getFullLanguageCode() const;
+    MCAPI bool getStringIdExists(std::string const &) const;
     MCAPI void loadFromPack(std::string const &, class PackAccessStrategy const &, std::vector<std::string> const &);
     MCAPI void loadFromResourcePackManager(class ResourcePackManager &, std::vector<std::string> const &);
     MCAPI ~Localization();

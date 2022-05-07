@@ -17,8 +17,8 @@ class DefinitionEvent {
 
 public:
     MCAPI DefinitionEvent(class DefinitionEvent const &);
-    MCAPI DefinitionEvent(class DefinitionEvent &&);
     MCAPI DefinitionEvent();
+    MCAPI DefinitionEvent(class DefinitionEvent &&);
     MCAPI void evaluateEvent(class RenderParams &, std::vector<struct DefinitionModifier> &) const;
     MCAPI void evaluateGroups(class Actor &, std::vector<struct DefinitionModifier> &, class VariantParameterList const &);
     MCAPI class DefinitionEvent & operator=(class DefinitionEvent const &);

@@ -1594,26 +1594,27 @@ TInstanceHook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer
 
 #include <MC/SurvivalMode.hpp>
 /////////////////// PlayerDestroy ///////////////////
-TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z",
-              SurvivalMode, BlockPos a3, unsigned __int8 a4)
-{
-    IF_LISTENED(PlayerDestroyBlockEvent)
-    {
-        if (getPlayer()->isPlayer())
-        {
-            PlayerDestroyBlockEvent ev{};
-            ev.mPlayer = getPlayer();
-            auto bl = Level::getBlockInstance(a3, getPlayer()->getDimensionId());
-            ev.mBlockInstance = bl;
-            if (!ev.call())
-            {
-                return false;
-            }
-        }
-    }
-    IF_LISTENED_END(PlayerDestroyBlockEvent)
-    return original(this, a3, a4);
-}
+
+//TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z",
+//              SurvivalMode, BlockPos a3, unsigned __int8 a4)
+//{
+//    IF_LISTENED(PlayerDestroyBlockEvent)
+//    {
+//        if (getPlayer()->isPlayer())
+//        {
+//            PlayerDestroyBlockEvent ev{};
+//            ev.mPlayer = getPlayer();
+//            auto bl = Level::getBlockInstance(a3, getPlayer()->getDimensionId());
+//            ev.mBlockInstance = bl;
+//            if (!ev.call())
+//            {
+//                return false;
+//            }
+//        }
+//    }
+//    IF_LISTENED_END(PlayerDestroyBlockEvent)
+//    return original(this, a3, a4);
+//}
 
 TInstanceHook(bool, "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z",
               GameMode, BlockPos a3, unsigned __int8 a4)
@@ -2100,6 +2101,7 @@ TClasslessInstanceHook(void, "?onScoreChanged@ServerScoreboard@@UEAAXAEBUScorebo
 TClasslessInstanceHook(void, "?sendServerThreadStarted@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z",
     class ServerInstance& ins)
 {
+    _set_se_translator(seh_exception::TranslateSEHtoCE);
     LL::globalConfig.tickThreadId = std::this_thread::get_id();
     Global<Level> = Global<Minecraft>->getLevel();
     Global<ServerLevel> = (ServerLevel*)Global<Minecraft>->getLevel();
@@ -2129,6 +2131,13 @@ TClasslessInstanceHook(void, "??1DedicatedServer@@UEAA@XZ")
     IF_LISTENED_END(ServerStoppedEvent)
     original(this);
 }
+TClasslessInstanceHook(void, "?execute@StopCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z",
+    class CommandOrigin const& origin, class CommandOutput& output)
+{
+    LL::globalConfig.serverStatus = LL::LLServerStatus::Stopping;
+    original(this, origin, output);
+}
+
 
 ////////////// RegCmd //////////////
 TInstanceHook(void, "?setup@ChangeSettingCommand@@SAXAEAVCommandRegistry@@@Z",

@@ -104,7 +104,7 @@ public:
     /*344*/ virtual bool canExistWhenDisallowMob() const;
     /*345*/ virtual void __unk_vfn_345();
     /*350*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
-    /*355*/ virtual void _serverAiMobStep();
+    /*355*/ virtual void __unk_vfn_355();
     /*359*/ virtual void __unk_vfn_359();
     /*
     inline bool isTargetable() const{
@@ -112,14 +112,14 @@ public:
         *((void**)&rv) = dlsym("?isTargetable@Agent@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool interactPreventDefault(){
-        bool (Agent::*rv)();
-        *((void**)&rv) = dlsym("?interactPreventDefault@Agent@@UEAA_NXZ");
-        return (this->*rv)();
-    }
     inline bool getAlwaysShowNameTag() const{
         bool (Agent::*rv)() const;
         *((void**)&rv) = dlsym("?getAlwaysShowNameTag@Agent@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool interactPreventDefault(){
+        bool (Agent::*rv)();
+        *((void**)&rv) = dlsym("?interactPreventDefault@Agent@@UEAA_NXZ");
         return (this->*rv)();
     }
     inline bool breaksFallingBlocks() const{
@@ -145,5 +145,6 @@ public:
 protected:
 
 private:
+    MCAPI class ContainerComponent * _getContainerComponent();
 
 };

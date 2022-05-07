@@ -50,16 +50,6 @@ public:
         *((void**)&rv) = dlsym("?getMaxStackSize@CauldronBlockActor@@UEBAHXZ");
         return (this->*rv)();
     }
-    inline std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource & a0){
-        std::unique_ptr<class BlockActorDataPacket> (CauldronBlockActor::*rv)(class BlockSource &);
-        *((void**)&rv) = dlsym("?_getUpdatePacket@CauldronBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0));
-    }
-    inline void _onUpdatePacket(class CompoundTag const & a0, class BlockSource & a1){
-        void (CauldronBlockActor::*rv)(class CompoundTag const &, class BlockSource &);
-        *((void**)&rv) = dlsym("?_onUpdatePacket@CauldronBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const &>(a0), std::forward<class BlockSource &>(a1));
-    }
     inline class Container const * getContainer() const{
         class Container const * (CauldronBlockActor::*rv)() const;
         *((void**)&rv) = dlsym("?getContainer@CauldronBlockActor@@UEBAPEBVContainer@@XZ");
@@ -74,6 +64,16 @@ public:
         class ItemStack const & (CauldronBlockActor::*rv)(int) const;
         *((void**)&rv) = dlsym("?getItem@CauldronBlockActor@@UEBAAEBVItemStack@@H@Z");
         return (this->*rv)(std::forward<int>(a0));
+    }
+    inline void _onUpdatePacket(class CompoundTag const & a0, class BlockSource & a1){
+        void (CauldronBlockActor::*rv)(class CompoundTag const &, class BlockSource &);
+        *((void**)&rv) = dlsym("?_onUpdatePacket@CauldronBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z");
+        return (this->*rv)(std::forward<class CompoundTag const &>(a0), std::forward<class BlockSource &>(a1));
+    }
+    inline std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource & a0){
+        std::unique_ptr<class BlockActorDataPacket> (CauldronBlockActor::*rv)(class BlockSource &);
+        *((void**)&rv) = dlsym("?_getUpdatePacket@CauldronBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0));
     }
     inline std::string getName() const{
         std::string (CauldronBlockActor::*rv)() const;
@@ -106,6 +106,7 @@ public:
         return (this->*rv)(std::forward<class BlockSource &>(a0));
     }
     */
+    MCAPI CauldronBlockActor(class BlockPos const &);
     MCAPI class mce::Color getColor() const;
     MCAPI class mce::Color getCustomColor() const;
     MCAPI class mce::Color getMixDyeColor();

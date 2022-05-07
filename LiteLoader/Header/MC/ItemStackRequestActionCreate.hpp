@@ -19,7 +19,6 @@ class ItemStackRequestActionCreate {
 public:
     class ItemStackRequestActionCreate& operator=(class ItemStackRequestActionCreate const &) = delete;
     ItemStackRequestActionCreate(class ItemStackRequestActionCreate const &) = delete;
-    ItemStackRequestActionCreate() = delete;
 #endif
 
 public:
@@ -29,6 +28,7 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void _write(class BinaryStream &) const;
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
+    MCAPI ItemStackRequestActionCreate();
     MCAPI unsigned char getResultsIndex() const;
 
 protected:

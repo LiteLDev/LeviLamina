@@ -34,6 +34,7 @@ public:
     */
     MCAPI ScriptBlockPermutation(class ScriptBlockPermutation &&);
     MCAPI ScriptBlockPermutation(class Block const &, class Scripting::WeakLifetimeScope const &);
+    MCAPI ScriptBlockPermutation(class BlockLegacy const &, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation> clone() const;
     MCAPI std::vector<class Scripting::StrongTypedObjectHandle<class IScriptBlockProperty>> getAllProperties();
     MCAPI class Block const & getBlock() const;

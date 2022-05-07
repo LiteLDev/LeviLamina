@@ -22,6 +22,7 @@ public:
 
 public:
     MCAPI StructurePoolActorRule(std::unique_ptr<class IStructurePoolActorPredicate> &&, std::string);
+    MCAPI bool processRule(std::string const &, std::string &) const;
 
 protected:
 

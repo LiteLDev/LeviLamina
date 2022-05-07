@@ -22,6 +22,7 @@ public:
 
 public:
     MCAPI ReplayStateConfig(enum ReplayStateMode);
+    MCAPI bool usesUnsupportedThresholds() const;
 
 protected:
 

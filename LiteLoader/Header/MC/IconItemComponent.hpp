@@ -37,6 +37,8 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI IconItemComponent(class ComponentItem *);
+    MCAPI void setOwnerIcon();
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 

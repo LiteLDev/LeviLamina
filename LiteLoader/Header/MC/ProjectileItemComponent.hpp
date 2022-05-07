@@ -37,6 +37,8 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI ProjectileItemComponent(class ComponentItem *);
+    MCAPI bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     MCAPI class Vec3 getShootDir(class Player const &, float) const;
     MCAPI class Actor * shootProjectile(class BlockSource &, class Vec3 const &, class Vec3 const &, float, class Player *) const;
     MCAPI static void bindType();

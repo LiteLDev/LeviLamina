@@ -29,7 +29,12 @@ public:
     MCAPI ChunkLoadedRequest(std::string const &, std::unique_ptr<class IRequestAction>, bool);
     MCAPI enum ChunksLoadedStatus areAllChunksLoaded(class Dimension &, struct Tick) const;
     MCAPI bool areaContainsChunk(class LevelChunk const &) const;
+    MCAPI void executeAction(class ServerLevel &, class Dimension &);
+    MCAPI std::string const & getSerializationId() const;
+    MCAPI bool isValid() const;
     MCAPI class CompoundTag serialize(enum ChunkRequestListType);
+    MCAPI void setSerializationId(std::string const &);
+    MCAPI bool tickingAreaMatches(std::string const &) const;
     MCAPI ~ChunkLoadedRequest();
     MCAPI static bool isValidTag(class CompoundTag const &);
     MCAPI static struct DeserializedChunkLoadedRequest load(std::string const &, class CompoundTag const &, class ICommandOriginLoader &, std::string const &);

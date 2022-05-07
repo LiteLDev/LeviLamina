@@ -21,6 +21,7 @@ public:
 
 public:
     MCAPI LevelChunkBuilderData();
+    MCAPI ~LevelChunkBuilderData();
 
 protected:
 

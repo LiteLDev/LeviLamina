@@ -45,8 +45,10 @@ public:
     MCAPI unsigned __int64 getApproximateTaskCount() const;
     MCAPI class std::thread::id getThreadId() const;
     MCAPI bool isIdle() const;
+    MCAPI bool processTaskSync();
     MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>);
     MCAPI void requestStop(bool);
+    MCAPI void resetWorkerThreadID();
     MCAPI void resortPriorityQueue();
     MCAPI void start();
     MCAPI void wake();

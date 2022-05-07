@@ -35,6 +35,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI EncryptedNetworkPeer(class std::shared_ptr<class NetworkPeer>);
     MCAPI void enableEncryption(std::string const &);
 
 protected:

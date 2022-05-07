@@ -76,7 +76,6 @@ public:
     /*269*/ virtual void __unk_vfn_269();
     /*278*/ virtual void __unk_vfn_278();
     /*280*/ virtual void spawnAnim();
-    /*294*/ virtual void aiStep();
     /*302*/ virtual int getItemUseDuration() const;
     /*303*/ virtual float getItemUseStartupProgress() const;
     /*304*/ virtual float getItemUseIntervalProgress() const;

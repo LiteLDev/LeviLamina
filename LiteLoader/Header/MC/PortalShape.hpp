@@ -29,6 +29,7 @@ public:
     MCAPI class PortalRecord createRecord() const;
     MCAPI void evaluate(class BlockPos const &, class BlockSource const &);
     MCAPI int getNumberOfPortalBlocks() const;
+    MCAPI class AABB getPortalBlockAABB() const;
     MCAPI bool isFilled() const;
     MCAPI bool isValid() const;
     MCAPI void removePortalBlocks(class WorldChangeTransaction &, class BlockPos const &) const;

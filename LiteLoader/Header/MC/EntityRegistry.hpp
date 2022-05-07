@@ -21,11 +21,14 @@ public:
 #endif
 
 public:
+    MCAPI class WeakRefT<struct EntityRegistryRefTraits> getWeakRef();
     MCAPI ~EntityRegistry();
 
 protected:
     MCAPI EntityRegistry(std::string);
 
 private:
+    MCAPI class EntityContext _createEntity();
+    MCAPI void _destroyEntity(class EntityContext);
 
 };

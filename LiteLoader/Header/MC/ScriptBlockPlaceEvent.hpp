@@ -21,6 +21,7 @@ public:
 #endif
 
 public:
+    MCAPI ScriptBlockPlaceEvent(class Player &, class BlockPos const &, class Scripting::WeakLifetimeScope const &);
     MCAPI ~ScriptBlockPlaceEvent();
 
 protected:

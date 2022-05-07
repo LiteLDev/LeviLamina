@@ -23,9 +23,12 @@ public:
 #endif
 
 public:
+    MCAPI WanderingTraderScheduler(class Level &);
+    MCAPI bool isWanderingTraderCurrentlyManaged(class Actor const &);
     MCAPI void readSaveData();
     MCAPI void tick();
     MCAPI void writeSaveData() const;
+    MCAPI ~WanderingTraderScheduler();
 
 protected:
 

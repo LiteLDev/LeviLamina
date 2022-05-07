@@ -50,6 +50,7 @@ public:
     /*27*/ virtual class BiomeChunkBlendingAttenuator getBiomeHeightAttenuatorForLevelChunk(class ChunkPos const &);
     /*28*/ virtual class std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();
     MCAPI DBChunkStorage(std::unique_ptr<class ChunkSource>, class DBStorage &, class Scheduler &, class Experiments const &);
+    MCAPI void freeCaches();
     MCAPI static enum ConsoleChunkBlender::BlenderMode _getBlenderMode(class LevelChunk const &, class Experiments const &, bool);
 
 protected:
@@ -59,7 +60,6 @@ private:
     MCAPI std::vector<std::string> _deserializeChunkActorStorageKeys(class IDataInput &);
     MCAPI void _deserializeIndependentActorStorage(class LevelChunk &, std::string &);
     MCAPI class LevelChunk::Neighbors _getChunkNeighbors(class ChunkPos, class AutomaticID<class Dimension, int>);
-    MCAPI std::string _getEntityDigestKey(class gsl::basic_string_span<char const, -1>) const;
     MCAPI bool _hasChunk(class DBChunkStorageKey const &);
     MCAPI bool _hasChunkUncached(class DBChunkStorageKey const &);
     MCAPI enum DBChunkStorage::BlendFormatState _levelChunkCanBeUsedForBlendingOld(class DBChunkStorageKey const &);

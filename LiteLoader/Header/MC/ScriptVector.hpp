@@ -23,6 +23,7 @@ public:
 public:
     MCAPI ScriptVector(class Vec3 const &);
     MCAPI class ScriptVector normalized() const;
+    MCAPI bool operator==(class ScriptVector const &) const;
     MCAPI static class ScriptVector add(class ScriptVector const &, class ScriptVector const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptVector> bind(struct Scripting::Version);
     MCAPI static class ScriptVector cross(class ScriptVector const &, class ScriptVector const &);

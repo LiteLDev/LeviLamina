@@ -23,6 +23,11 @@ public:
 
 public:
     MCAPI OreVeinifierNoises(class OreVeinifierNoises const &);
+    MCAPI class XoroshiroPositionalRandomFactory const & getPositionalRandomFactory() const;
+    MCAPI float sampleGapNoise(float, float, float) const;
+    MCAPI float sampleVeinNoiseA(float, float, float) const;
+    MCAPI float sampleVeinNoiseB(float, float, float) const;
+    MCAPI float sampleVeininessNoise(float, float, float) const;
     MCAPI ~OreVeinifierNoises();
     MCAPI static class OreVeinifierNoises make(class XoroshiroPositionalRandomFactory const &);
 

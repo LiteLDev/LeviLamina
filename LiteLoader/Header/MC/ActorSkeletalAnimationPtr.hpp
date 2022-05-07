@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -22,6 +23,7 @@ public:
 #endif
 
 public:
+    MCAPI ActorSkeletalAnimationPtr(class gsl::not_null<class Bedrock::NonOwnerPointer<class ActorAnimationGroup>> const &, class HashedString const &);
     MCAPI class HashedString const & getName() const;
     MCAPI bool isNull() const;
     MCAPI class ActorSkeletalAnimation const * operator->() const;

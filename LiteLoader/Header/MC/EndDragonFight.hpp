@@ -38,6 +38,7 @@ public:
     MCAPI void spawnNewGatewayChunks(class BlockPos const &, bool, bool);
     MCAPI void tick();
     MCAPI void tryRespawn();
+    MCAPI void verifyExitPositions(class EndGatewayBlockActor &);
     MCAPI ~EndDragonFight();
 
 protected:

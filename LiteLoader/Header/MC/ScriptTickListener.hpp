@@ -28,6 +28,7 @@ public:
     /*4*/ virtual enum EventResult onLevelRemovedPlayer(class Level &, class Player &);
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual enum EventResult onLevelTick();
+    MCAPI ScriptTickListener(class Scripting::ScriptEngine &, class ScriptFormPromiseTracker &);
 
 protected:
 

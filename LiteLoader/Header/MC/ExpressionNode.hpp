@@ -46,6 +46,7 @@ public:
     MCAPI static void bindType();
     MCAPI static void buildExpressionOpTable();
     MCAPI static float fast_atof_positiveOnly(char const *&);
+    MCAPI static class Experiments & getExperiments();
     MCAPI static char const * getOpFriendlyName(enum ExpressionOp);
     MCAPI static class std::recursive_mutex & getQueryFunctionMutex();
     MCAPI static std::vector<struct std::pair<std::string, enum ExpressionOp>> mAliasOpTokens;
@@ -68,7 +69,6 @@ private:
     MCAPI bool _tokenize(char const *, struct ExpressionOpBitField &, class gsl::span<class HashedString const, -1> const &, enum MolangVersion);
     MCAPI bool _validate(enum MolangVersion, bool, int) const;
     MCAPI bool _validateChildrenAreNumerical(enum MolangVersion) const;
-    MCAPI struct MolangScriptArg const & executeMolangProgram(class RenderParams &, struct MolangEvalParams &) const;
     MCAPI bool findClosingOp(unsigned __int64 &, enum ExpressionOp) const;
     MCAPI bool optimizeFunctionCallParams();
     MCAPI bool processArrays();

@@ -24,13 +24,13 @@ public:
 public:
     MCAPI CircuitSceneGraph();
     MCAPI void add(class BlockPos const &, std::unique_ptr<class BaseCircuitComponent>);
-    MCAPI class BaseCircuitComponent * addIfPoweredBlockAt(class BlockSource &, class BlockPos const &);
     MCAPI class BaseCircuitComponent * getBaseComponent(class BlockPos const &);
     MCAPI class BaseCircuitComponent * getComponent(class BlockPos const &, enum CircuitComponentType);
     MCAPI class BaseCircuitComponent * getFromPendingAdd(class BlockPos const &);
     MCAPI class BaseCircuitComponent * getFromPendingAdd(class BlockPos const &, enum CircuitComponentType);
     MCAPI void invalidatePos(class BlockPos const &);
     MCAPI void preSetupPoweredBlocks(class ChunkPos const &);
+    MCAPI void remove(class BlockPos const &, class BaseCircuitComponent *);
     MCAPI void update(class BlockSource *);
     MCAPI ~CircuitSceneGraph();
 

@@ -30,6 +30,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI BlastFurnaceBlockActor(class BlockPos const &);
 
 protected:
 

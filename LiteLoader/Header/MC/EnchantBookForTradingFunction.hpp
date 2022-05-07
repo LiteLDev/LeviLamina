@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -46,6 +47,7 @@ public:
         return (this->*rv)(std::forward<class ItemInstance &>(a0), std::forward<class Random &>(a1), std::forward<class LootTableContext &>(a2));
     }
     */
+    MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 protected:
 

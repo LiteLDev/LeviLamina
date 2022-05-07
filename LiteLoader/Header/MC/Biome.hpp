@@ -26,6 +26,7 @@ public:
 
 public:
     /*0*/ virtual ~Biome();
+    MCAPI Biome(int);
     MCAPI class Biome & addTag(class HashedString, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> &);
     MCAPI bool canHaveSnowfall(class BlockSource const &, class BlockPos const &) const;
     MCAPI enum VanillaBiomeTypes getBiomeType() const;
@@ -47,14 +48,18 @@ public:
     MCAPI bool hasTag(struct IDType<struct BiomeTagIDType> const &, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const &) const;
     MCAPI bool hasTag(class WellKnownTagID const &) const;
     MCAPI bool hasTag(unsigned __int64, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const &) const;
+    MCAPI void initEntity(class EntityRegistry &);
     MCAPI bool isHumid() const;
     MCAPI bool isSnowCovered() const;
     MCAPI class Biome & setColor(int);
     MCAPI class Biome & setColor(int, bool);
+    MCAPI class Biome & setDepthAndScale(struct BiomeHeight const &);
     MCAPI class Biome & setMapWaterColor(int);
+    MCAPI class Biome & setName(std::string const &);
     MCAPI class Biome & setNoRain();
     MCAPI class Biome & setOceanRuinConfig(struct OceanRuinConfiguration const &);
     MCAPI class Biome & setOddColor(int);
+    MCAPI class Biome & setSnowAccumulation(float, float);
     MCAPI void writePacketData(class CompoundTag &, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> &);
     MCAPI static class gsl::basic_string_span<char const, -1> const BACKCOMPAT_FOG_NAME;
     MCAPI static class mce::Color const DEFAULT_FOG_COLOR;

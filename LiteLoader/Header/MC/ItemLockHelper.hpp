@@ -24,6 +24,8 @@ public:
 #endif
 
 public:
+    MCAPI static bool addItemLockMode(class ItemStackBase &, class Json::Value const &);
+    MCAPI static bool addKeepOnDeath(class ItemStackBase &, class Json::Value const &);
     MCAPI static bool canMoveItemSlots(class Actor const &, class ItemStackBase const &);
     MCAPI static enum ItemLockMode getItemLockMode(class ItemStackBase const &);
     MCAPI static bool isItemLocked(class ItemStackBase const &);
