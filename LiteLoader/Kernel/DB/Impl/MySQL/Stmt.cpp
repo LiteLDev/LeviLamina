@@ -273,6 +273,7 @@ Any ReceiverToAny(const Receiver& rec)
 #if defined(LLDB_DEBUG_MODE)
             dbLogger.debug("ReceiverToAny: blob: length: {}, buffer {}", rec.length, rec.buffer.get());
 #endif
+            // Unknown bug: rec.length is 0
             return Any(ByteArray(rec.buffer.get(), rec.buffer.get() + rec.length));
         case MYSQL_TYPE_DECIMAL:
         case MYSQL_TYPE_NEWDECIMAL:

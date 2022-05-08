@@ -694,6 +694,8 @@ public:
             case Type::Blob:
                 return *value.blob;
             case Type::String:
+                return ByteArray((unsigned char*)value.string->data(),
+                                 (unsigned char*)value.string->data() + value.string->size());
             case Type::Integer:
             case Type::UInteger:
             case Type::Floating:

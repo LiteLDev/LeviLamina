@@ -162,6 +162,7 @@ Session& MySQLSession::query(const std::string& query, std::function<bool(const 
                 case MYSQL_TYPE_DECIMAL:
                 case MYSQL_TYPE_NEWDECIMAL:
                     {
+                        r.push_back(Any());
                         // TODO: Decimal
                         break;
                     }
@@ -176,10 +177,12 @@ Session& MySQLSession::query(const std::string& query, std::function<bool(const 
                         {
                             bytes.push_back(row[i][j]);
                         }
+                        r.push_back(bytes);
                         break;
                     }
                 case MYSQL_TYPE_GEOMETRY:
                 default:
+                    r.push_back(Any());
                     break;
             }
         }

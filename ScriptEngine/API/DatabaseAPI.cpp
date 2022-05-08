@@ -35,6 +35,7 @@ ClassDefine<DBStmtClass> DBStmtClassBuilder =
         .instanceFunction("step", &DBStmtClass::step)
         .instanceFunction("fetch", &DBStmtClass::fetch)
         .instanceFunction("fetchAll", &DBStmtClass::fetchAll)
+        .instanceFunction("reset", &DBStmtClass::reset)
         .instanceFunction("reexec", &DBStmtClass::reexec)
         .instanceFunction("clear", &DBStmtClass::clear)
         .build();
@@ -127,7 +128,7 @@ Local<Value> any_to(const Any& val)
             return obj;
         }
         case Any::Type::Blob:
-            return ByteBuffer::newByteBuffer((void*)val.value.blob->begin()._Ptr, val.value.blob->size());
+            return String::newString(val.get<std::string>());
         default:
             break;
     }
@@ -136,6 +137,10 @@ Local<Value> any_to(const Any& val)
 
 Local<Value> RowSetToLocalValue(const RowSet& rows)
 {
+    if (rows.empty() || !rows.header)
+    {
+        return Local<Value>();
+    }
     Local<Array> arr = Array::newArray();
     Local<Array> header = Array::newArray();
     for (auto& col : *rows.header)
@@ -289,13 +294,13 @@ DBSessionClass::DBSessionClass(const Local<Object>& scriptObj, const ConnParams&
     : ScriptClass(scriptObj)
     , session(Session::create(params))
 {
-    // session.setDebugOutput(true);
+    session->setDebugOutput(true);
 }
 DBSessionClass::DBSessionClass(const ConnParams& params)
     : ScriptClass(script::ScriptClass::ConstructFromCpp<DBSessionClass>{})
     , session(Session::create(params))
 {
-    // session.setDebugOutput(true);
+    session->setDebugOutput(true);
 }
 
 DBSessionClass::~DBSessionClass()
@@ -371,7 +376,8 @@ Local<Value> DBSessionClass::exec(const Arguments& args)
 
     try
     {
-        return Boolean::newBoolean(session->execute(args[0].asString().toString()));
+        session->execute(args[0].asString().toString());
+        return this->getScriptObject();
     }
     CATCH("Fail in exec!")
 }

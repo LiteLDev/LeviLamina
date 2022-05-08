@@ -91,7 +91,7 @@ bool SQLiteSession::execute(const std::string& query)
 Session& SQLiteSession::query(const std::string& query, std::function<bool(const Row&)> callback)
 {
     IF_ENDBG dbLogger.debug("SQLiteSession::query: Querying > " + query);
-    auto& stmt = prepare(query);
+    auto stmt = prepare(query);
     stmt->fetchAll(callback);
     return *this;
 }
