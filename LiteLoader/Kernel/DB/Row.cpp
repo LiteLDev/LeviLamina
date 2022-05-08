@@ -8,6 +8,10 @@ RowHeader::RowHeader(const std::initializer_list<std::string>& list)
 {
 }
 
+RowHeader::~RowHeader()
+{
+}
+
 size_t RowHeader::add(const std::string& name)
 {
     push_back(name);
@@ -77,7 +81,7 @@ bool RowHeader::check(const Row& row) const
 
     if (row.size() == size())
     {
-        if (row.header)
+        if (row.header && !row.header->empty())
         {
             if (row.header->size() == size())
                 return true;

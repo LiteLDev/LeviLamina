@@ -107,7 +107,7 @@ Session& MySQLSession::query(const std::string& query, std::function<bool(const 
     }
     auto numFields = mysql_num_fields(result);
     auto numRows = mysql_num_rows(result);
-    auto fields = mysql_fetch_field(result);
+    auto fields = mysql_fetch_fields(result);
     IF_ENDBG dbLogger.debug("MySQLSession::query: Query returned {} rows and {} fields", numRows, numFields);
     // Fetch column names
     RowHeader header;
@@ -170,16 +170,8 @@ Session& MySQLSession::query(const std::string& query, std::function<bool(const 
                 case MYSQL_TYPE_MEDIUM_BLOB:
                 case MYSQL_TYPE_LONG_BLOB:
                 case MYSQL_TYPE_BLOB:
-                    {
-                        ByteArray bytes;
-                        auto len = fields[i].length;
-                        for (auto j = 0; j < len; j++)
-                        {
-                            bytes.push_back(row[i][j]);
-                        }
-                        r.push_back(bytes);
-                        break;
-                    }
+                    r.push_back(ByteArray(row[i], row[i] + strlen(row[i])));
+                    break;
                 case MYSQL_TYPE_GEOMETRY:
                 default:
                     r.push_back(Any());

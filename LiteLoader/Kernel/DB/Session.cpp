@@ -33,10 +33,17 @@ ResultSet Session::query(const std::string& query)
     });
     IF_ENDBG
     {
-        dbLogger.debug("Session::query: Results >");
-        for (auto& str : SplitStrWithPattern(result.toTableString(), "\n"))
+        if (result.valid())
         {
-            dbLogger.debug(str);
+            dbLogger.debug("Session::query: Results >");
+            for (auto& str : SplitStrWithPattern(result.toTableString(), "\n"))
+            {
+                dbLogger.debug(str);
+            }
+        }
+        else 
+        {
+            dbLogger.debug("Session::query: Query returned no result");
         }
     }
     return result;

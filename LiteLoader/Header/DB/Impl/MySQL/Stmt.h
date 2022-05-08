@@ -16,7 +16,7 @@ struct Receiver
 {
     MYSQL_FIELD field;
     std::shared_ptr<char[]> buffer;
-    uint32_t length = 0;
+    unsigned long length = 0;
     bool isNull = false;
     bool isUnsigned = false;
     bool error = false;

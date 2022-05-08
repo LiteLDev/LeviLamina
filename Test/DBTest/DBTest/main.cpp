@@ -11,7 +11,7 @@ using namespace DB;
 namespace fs = std::filesystem;
 
 #undef ERROR
-#define CATCH_EXCEPTION
+//#define CATCH_EXCEPTION
 
 Logger logger("DBTest");
 

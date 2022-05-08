@@ -34,6 +34,8 @@ public:
     RowHeader(RowHeader&& other) noexcept = default;
     /// Copy constructor
     RowHeader(const RowHeader& other) = default;
+    /// Destructor
+    ~RowHeader();
     /**
      * @brief Add a column to the header.
      *

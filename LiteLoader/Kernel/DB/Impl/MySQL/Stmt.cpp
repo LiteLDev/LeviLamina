@@ -352,7 +352,7 @@ void MySQLStmt::bindResult()
         data.is_null = &rec.isNull;                // Set the isNull receiver
         data.is_unsigned = field.flags & UNSIGNED_FLAG;
         data.error = &rec.error;                   // Set the error receiver
-        data.length = (unsigned long*)&rec.length; // Set the length receiver
+        data.length = &rec.length; // Set the length receiver
 
         rec.field = field;   // Save the field
         rec.buffer = buffer; // Extend lifetime
@@ -558,6 +558,7 @@ Row MySQLStmt::fetch()
     }
     IF_ENDBG dbLogger.debug("MySQLStmt::fetch: Fetching row...");
     Row row(resultHeader);
+    IF_ENDBG dbLogger.debug("MySQLStmt::fetch: RowHeader size {}", row.header->size());
     for (auto& col : resultValues)
     {
         auto v = ReceiverToAny(col);
@@ -586,7 +587,7 @@ Stmt& MySQLStmt::fetchAll(std::function<bool(const Row&)> cb)
 
 ResultSet MySQLStmt::fetchAll()
 {
-    ResultSet result;
+    ResultSet result(resultHeader);
     fetchAll([&result](const Row& row) {
         result.push_back(row);
         return true;

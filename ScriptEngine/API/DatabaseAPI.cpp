@@ -361,12 +361,12 @@ Local<Value> DBSessionClass::query(const Arguments& args)
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
-    try
+    //try
     {
         auto res = session->query(args[0].asString().toString());
         return RowSetToLocalValue(res);
     }
-    CATCH("Fail in query!")
+    //CATCH("Fail in query!")
 }
 
 Local<Value> DBSessionClass::exec(const Arguments& args)
