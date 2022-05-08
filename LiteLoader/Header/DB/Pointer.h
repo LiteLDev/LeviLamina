@@ -1,6 +1,4 @@
 #pragma once
-#include "../Global.h"
-#include "../LoggerAPI.h"
 #include <memory>
 
 namespace DB
@@ -28,9 +26,6 @@ public:
     SharedPointer(SharedPointer<T>&& other) : std::shared_ptr<T>(other) {}
     ~SharedPointer()
     {
-        //Logger("DBG").debug("~SharedPointer<{}>({})", 
-        //    typeid(decltype(*this)).name(),
-        //    std::shared_ptr<T>::use_count());
     }
     inline SharedPointer<T>& operator=(const SharedPointer<T>& other)
     {

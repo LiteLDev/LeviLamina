@@ -77,6 +77,7 @@
       <AdditionalIncludeDirectories>../../../LiteLoader/Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <ShowIncludes>true</ShowIncludes>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -93,6 +94,7 @@ copy /Y $(SolutionDir)x64\Release\DBTest.dll $(LocalDebuggerWorkingDirectory)\pl
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Library Include="..\..\..\LiteLoader\Lib\third-party\mysql\mysqlclient.lib" />
     <Library Include="..\..\..\x64\Release\LiteLoader.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

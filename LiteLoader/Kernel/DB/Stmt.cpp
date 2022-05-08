@@ -1,4 +1,5 @@
 #include <DB/Session.h>
+#include <LoggerAPI.h>
 
 namespace DB
 {

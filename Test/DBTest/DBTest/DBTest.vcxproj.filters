@@ -26,5 +26,8 @@
     <Library Include="..\..\..\x64\Release\LiteLoader.lib">
       <Filter>Lib</Filter>
     </Library>
+    <Library Include="..\..\..\LiteLoader\Lib\third-party\mysql\mysqlclient.lib">
+      <Filter>Lib</Filter>
+    </Library>
   </ItemGroup>
 </Project>

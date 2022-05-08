@@ -343,19 +343,19 @@ void MySQLStmt::bindResult()
         auto& rec = resultValues.back(); // Get the binder
         auto& field = fields[i];
         auto& data = result[i];
-        auto&& [buffer, len] = AllocateBuffer(field); // Allocate buffer
 
-        // Set the binder
-        data.buffer_type = field.type;             // Set the type
-        data.buffer = buffer.get();                // Set the buffer address
-        data.buffer_length = (unsigned long)len;   // Set the buffer length
-        data.is_null = &rec.isNull;                // Set the isNull receiver
+        data.buffer_type = field.type; // Set the type
+        data.is_null = &rec.isNull;    // Set the isNull receiver
         data.is_unsigned = field.flags & UNSIGNED_FLAG;
-        data.error = &rec.error;                   // Set the error receiver
+        data.error = &rec.error;   // Set the error receiver
         data.length = &rec.length; // Set the length receiver
 
+        auto&& [buffer, len] = AllocateBuffer(field); // Allocate buffer
+        rec.buffer = buffer;                          // Extend lifetime
+        data.buffer_length = (unsigned long)len;      // Set the buffer length
+        data.buffer = rec.buffer.get();               // Set the buffer address
+
         rec.field = field;   // Save the field
-        rec.buffer = buffer; // Extend lifetime
         resultHeader->add(field.name); // Add the field name to the header
         IF_ENDBG dbLogger.debug("MySQLStmt::bindResult: Bind result {} (type {}) at index {}", field.name, (int)field.type, i);
     }
@@ -518,10 +518,6 @@ Stmt& MySQLStmt::execute()
 
 bool MySQLStmt::step()
 {
-    if (!result)
-    {
-        bindResult();
-    }
     auto res = mysql_stmt_fetch(stmt);
     if (res == MYSQL_NO_DATA)
     {
@@ -561,6 +557,7 @@ Row MySQLStmt::fetch()
     IF_ENDBG dbLogger.debug("MySQLStmt::fetch: RowHeader size {}", row.header->size());
     for (auto& col : resultValues)
     {
+        IF_ENDBG dbLogger.debug("MySQLStmt::fetch: length {}", col.length);
         auto v = ReceiverToAny(col);
         row.push_back(v);
         IF_ENDBG dbLogger.debug(

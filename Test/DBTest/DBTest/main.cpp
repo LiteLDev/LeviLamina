@@ -1,10 +1,10 @@
-#include <Windows.h>
+#define LLDB_DEBUG_MODE
+#define _AMD64_
+#include <DB/Session.h>
+#include <LoggerAPI.h>
 #include <iostream>
 #include <filesystem>
-#define LLDB_DEBUG_MODE
-#include <DB/Session.h>
-#include <LLAPI.h>
-#include <LoggerAPI.h>
+#include <third-party/mysql/mysql.h>
 
 using namespace std;
 using namespace DB;
@@ -43,6 +43,75 @@ void log_result_set(const ResultSet& set)
     {
         logger.info(line);
     }
+}
+
+std::pair<std::shared_ptr<char[]>, std::size_t> alloc_buf(const MYSQL_FIELD& field)
+{
+    std::size_t len = 0;
+    switch (field.type)
+    {
+        case MYSQL_TYPE_NULL:
+            return {nullptr, 0};
+        case MYSQL_TYPE_TINY:
+            len = sizeof(char);
+            break;
+        case MYSQL_TYPE_SHORT:
+            len = sizeof(short);
+            break;
+        case MYSQL_TYPE_INT24:
+        case MYSQL_TYPE_LONG:
+            len = sizeof(int);
+            break;
+        case MYSQL_TYPE_BIT:
+        case MYSQL_TYPE_LONGLONG:
+            len = sizeof(long long);
+            break;
+        case MYSQL_TYPE_FLOAT:
+            len = sizeof(float);
+            break;
+        case MYSQL_TYPE_DOUBLE:
+            len = sizeof(double);
+            break;
+        case MYSQL_TYPE_YEAR:
+            len = sizeof(short);
+            break;
+        case MYSQL_TYPE_TIME:
+        case MYSQL_TYPE_DATE:
+        case MYSQL_TYPE_DATETIME:
+        case MYSQL_TYPE_TIMESTAMP:
+            len = sizeof(MYSQL_TIME);
+            break;
+        case MYSQL_TYPE_STRING:
+        case MYSQL_TYPE_VAR_STRING:
+        case MYSQL_TYPE_VARCHAR:
+        case MYSQL_TYPE_BLOB:
+        case MYSQL_TYPE_TINY_BLOB:
+        case MYSQL_TYPE_MEDIUM_BLOB:
+        case MYSQL_TYPE_LONG_BLOB:
+        case MYSQL_TYPE_SET:
+        case MYSQL_TYPE_ENUM:
+        case MYSQL_TYPE_GEOMETRY:
+        case MYSQL_TYPE_JSON:
+            len = field.max_length + 1;
+            break;
+        case MYSQL_TYPE_DECIMAL:
+        case MYSQL_TYPE_NEWDECIMAL:
+            len = 64;
+            break;
+        default:
+            len = 0;
+            logger.error("alloc_buf: unknown type: {}", (int)field.type);
+            break;
+    }
+    if (len)
+    {
+        auto buffer = std::shared_ptr<char[]>(new char[len]);
+#if defined(LLDB_DEBUG_MODE)
+        logger.debug("alloc_buf: Allocated! Buffer size: {}", len);
+#endif
+        return std::make_pair(buffer, len);
+    }
+    return std::make_pair(std::shared_ptr<char[]>(), len);
 }
 
 
@@ -135,14 +204,15 @@ void test_sqlite()
     run_tests(sess);
 }
 
+
+// Vars
+constexpr const char* host = "127.0.0.1";
+constexpr const uint16_t port = 3306;
+constexpr const char* user = "root";
+constexpr const char* passwd = "root";
+constexpr const char* dbname = "lldbtest";
 void test_mysql()
 {
-    // Vars
-    constexpr const char*    host = "127.0.0.1";
-    constexpr const uint16_t port = 3306;
-    constexpr const char*    user = "root";
-    constexpr const char*  passwd = "root";
-    constexpr const char*  dbname = "lldbtest";
     const std::string url = fmt::format("mysql://{}:{}@{}:{}/", 
                             user, passwd, host, port);
     
@@ -155,12 +225,92 @@ void test_mysql()
     run_tests(sess);
 }
 
+#define CHKRES_STMT(x) \
+    if (res) \
+    { \
+        logger.error("MySQL CAPI Test: {}: {}", x, mysql_stmt_error(stmt)); \
+        return; \
+    }
+void test_mysql_capi()
+{
+    struct Receiver
+    {
+        std::shared_ptr<char[]> buffer;
+        unsigned long length = 0;
+        bool is_null = false;
+        bool is_unsigned = false;
+        bool error = false;
+    } recs[2];
+    MYSQL* conn = nullptr;
+    MYSQL_STMT* stmt = nullptr;
+    conn = mysql_init(NULL);
+    if (!mysql_real_connect(conn, host, user, passwd, dbname, port, NULL, NULL))
+    {
+        logger.error("MySQL CAPI Test: Error when connecting: {}", mysql_error(conn));
+        return;
+    }
+    stmt = mysql_stmt_init(conn);
+    constexpr const char* q1 = "SELECT * FROM test";
+    int res = mysql_stmt_prepare(stmt, q1, strlen(q1));
+    CHKRES_STMT("Error when preparing Query 1");
+    res = mysql_stmt_execute(stmt);
+    if (res)
+    {
+        logger.error("MySQL CAPI Test: Error when executing Query 1: {}", mysql_stmt_error(stmt));
+        mysql_rollback(conn);
+        return;
+    }
+    MYSQL_RES* metadata = mysql_stmt_result_metadata(stmt);
+    if (mysql_stmt_errno(stmt) && !metadata)
+    {
+        logger.error("MySQL CAPI Test: Failed to get result metadata: {}", mysql_stmt_error(stmt));
+        return;
+    }
+    if (!metadata)
+    {
+        logger.error("MySQL CAPI Test: No result metadata");
+        return;
+    }
+    bool attr_max_length = true;
+    mysql_stmt_attr_set(stmt, STMT_ATTR_UPDATE_MAX_LENGTH, (const void*)&attr_max_length);
+    res = mysql_stmt_store_result(stmt);
+    CHKRES_STMT("Error when storing result");
+    auto num = mysql_num_fields(metadata);
+    logger.info("MySQL CAPI Test: mysql_num_fields: {}", num);
+    auto fields = mysql_fetch_fields(metadata);
+    MYSQL_BIND bind[2];
+    for (auto i = 0U; i < num; i++)
+    {
+        logger.info("MySQL CAPI Test: Field name at {} is {}", i, fields[i].name);
+        bind[i].length = &recs[i].length;
+        bind[i].is_null = &recs[i].is_null;
+        bind[i].is_unsigned = fields[i].flags & UNSIGNED_FLAG;
+        bind[i].error = &recs[i].error;
+        bind[i].buffer_type = fields[i].type;
+
+        auto&& [buffer, length] = alloc_buf(fields[i]);
+        recs[i].buffer = buffer;
+        bind[i].buffer_length = length;
+        bind[i].buffer = recs[i].buffer.get();
+    }
+    res = mysql_stmt_bind_result(stmt, bind);
+    CHKRES_STMT("Error when binding result");
+    while (true)
+    {
+        res = mysql_stmt_fetch(stmt);
+        if (res == MYSQL_NO_DATA) break;
+        CHKRES_STMT("Error when fetching");
+        //std::string a(recs[0].buffer.get());
+        logger.debug("Fetched length: {} {}", recs[0].length, recs[1].length);
+    }
+}
 
 void test_main()
 {
     logger.info("DBTest loaded!");
     test_sqlite();
     test_mysql();
+    test_mysql_capi();
 }
 
 BOOL WINAPI DllMain(HMODULE, DWORD ul_reason_for_call, LPVOID)
@@ -172,7 +322,6 @@ BOOL WINAPI DllMain(HMODULE, DWORD ul_reason_for_call, LPVOID)
             try
 #endif
             {
-                LL::registerPlugin("DBTest", "LLDB module tests", LL::Version(0, 0, 1));
                 test_main();
                 break;
             }
