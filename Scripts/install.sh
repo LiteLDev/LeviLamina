@@ -24,6 +24,6 @@ wget https://github.bibk.top/LiteLDev/LiteLoaderBDS/releases/download/${LLVER}/L
 unzip LiteLoader-${LLVER}.zip -d bedrock_server
 rm LiteLoader-${LLVER}.zip
 cd bedrock_server
-wine SymDB2.exe
+wine LLPeEditor.exe
 
 echo Done!
