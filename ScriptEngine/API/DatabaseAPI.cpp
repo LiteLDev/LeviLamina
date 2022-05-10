@@ -442,6 +442,8 @@ Local<Value> DBStmtClass::getAffectedRows()
     try
     {
         auto res = stmt->getAffectedRows();
+        if (res == (uint64_t)-1)
+            return Number::newNumber(-1);
         if (res > LLONG_MAX)
             return Number::newNumber((double)res);
         return Number::newNumber((int64_t)res);
