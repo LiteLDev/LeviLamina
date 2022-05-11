@@ -1,6 +1,33 @@
 #include "DatabaseAPI.h"
 using namespace DB;
 
+#define CATCH_AND_THROW(LOG) \
+    catch(const Exception& e) \
+    { \
+        logger.error(LOG##"\n"); PrintException(e); \
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
+        return Local<Value>(); \
+    } \
+    catch(const std::exception &e) \
+    { \
+        throw Exception(e.what()); \
+    } \
+    catch(const seh_exception &e) \
+    { \
+        logger.error("SEH Uncaught Exception Detected!"); \
+        logger.error(TextEncoding::toUTF8(e.what())); \
+        logger.error(std::string("In API: ") + __FUNCTION__); \
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
+        return Local<Value>(); \
+    } \
+    catch(...) \
+    { \
+        logger.error("Uncaught Exception Detected!"); \
+        logger.error(std::string("In API: ") + __FUNCTION__); \
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
+        return Local<Value>(); \
+    }
+
 //////////////////// Class Definition ////////////////////
 
 ClassDefine<KVDBClass> KVDBClassBuilder =
@@ -223,7 +250,7 @@ Local<Value> KVDBClass::get(const Arguments& args)
 
         return JsonToValue(res);
     }
-    CATCH("Fail in DbGet!")
+    CATCH_AND_THROW("Fail in DbGet!");
 }
 
 Local<Value> KVDBClass::set(const Arguments& args)
@@ -239,7 +266,7 @@ Local<Value> KVDBClass::set(const Arguments& args)
         kvdb->put(args[0].asString().toString(), ValueToJson(args[1]));
         return Boolean::newBoolean(true);
     }
-    CATCH("Fail in DbSet!")
+    CATCH_AND_THROW("Fail in DbSet!");
 }
 
 Local<Value> KVDBClass::del(const Arguments& args)
@@ -254,7 +281,7 @@ Local<Value> KVDBClass::del(const Arguments& args)
 
         return Boolean::newBoolean(kvdb->del(args[0].asString().toString()));
     }
-    CATCH("Fail in DbDel!")
+    CATCH_AND_THROW("Fail in DbDel!");
 }
 
 Local<Value> KVDBClass::close(const Arguments& args)
@@ -266,7 +293,7 @@ Local<Value> KVDBClass::close(const Arguments& args)
         kvdb.reset();
         return Boolean::newBoolean(true);
     }
-    CATCH("Fail in DbClose!")
+    CATCH_AND_THROW("Fail in DbClose!");
 }
 
 Local<Value> KVDBClass::listKey(const Arguments& args)
@@ -284,7 +311,7 @@ Local<Value> KVDBClass::listKey(const Arguments& args)
         }
         return arr;
     }
-    CATCH("Fail in DbListKey!")
+    CATCH_AND_THROW("Fail in DbListKey!");
 }
 
 //////////////////// Classes DBSession ////////////////////
@@ -361,12 +388,12 @@ Local<Value> DBSessionClass::query(const Arguments& args)
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
-    //try
+    try
     {
         auto res = session->query(args[0].asString().toString());
         return RowSetToLocalValue(res);
     }
-    //CATCH("Fail in query!")
+    CATCH_AND_THROW("Fail in query!");
 }
 
 Local<Value> DBSessionClass::exec(const Arguments& args)
@@ -379,7 +406,7 @@ Local<Value> DBSessionClass::exec(const Arguments& args)
         session->execute(args[0].asString().toString());
         return this->getScriptObject();
     }
-    CATCH("Fail in exec!")
+    CATCH_AND_THROW("Fail in exec!");
 }
 
 Local<Value> DBSessionClass::prepare(const Arguments& args)
@@ -392,7 +419,7 @@ Local<Value> DBSessionClass::prepare(const Arguments& args)
         auto stmt = new DBStmtClass(session->prepare(args[0].asString().toString()));
         return stmt->getScriptObject();
     }
-    CATCH("Fail in exec!")
+    CATCH_AND_THROW("Fail in exec!");
 }
 
 Local<Value> DBSessionClass::close(const Arguments& args)
@@ -415,7 +442,7 @@ Local<Value> DBSessionClass::isOpen(const Arguments& args)
     {
         return Boolean::newBoolean(session->isOpen());
     }
-    CATCH("Fail in isOpen!")
+    CATCH_AND_THROW("Fail in isOpen!");
 }
 
 //////////////////// Classes DBStmt ////////////////////
@@ -448,7 +475,7 @@ Local<Value> DBStmtClass::getAffectedRows()
             return Number::newNumber((double)res);
         return Number::newNumber((int64_t)res);
     }
-    CATCH("Fail in getAffectedRows!")
+    CATCH_AND_THROW("Fail in getAffectedRows!");
 }
 
 Local<Value> DBStmtClass::getInsertId()
@@ -460,7 +487,7 @@ Local<Value> DBStmtClass::getInsertId()
             return Number::newNumber((double)res);
         return Number::newNumber((int64_t)res);
     }
-    CATCH("Fail in getInsertId!")
+    CATCH_AND_THROW("Fail in getInsertId!");
 }
 
 Local<Value> DBStmtClass::bind(const Arguments& args)
@@ -510,7 +537,7 @@ Local<Value> DBStmtClass::bind(const Arguments& args)
         }
         return this->getScriptObject();
     }
-    CATCH("Fail in bind!");
+    CATCH_AND_THROW("Fail in bind!");
 }
 
 Local<Value> DBStmtClass::execute(const Arguments& args)
@@ -522,7 +549,7 @@ Local<Value> DBStmtClass::execute(const Arguments& args)
         stmt->execute();
         return this->getScriptObject();
     }
-    CATCH("Fail in reset!");
+    CATCH_AND_THROW("Fail in reset!");
 }
 
 Local<Value> DBStmtClass::step(const Arguments& args)
@@ -545,7 +572,7 @@ Local<Value> DBStmtClass::fetch(const Arguments& args)
     {
         return RowToLocalValue(stmt->fetch());
     }
-    CATCH("Fail in fetch!")
+    CATCH_AND_THROW("Fail in fetch!");
 }
 
 Local<Value> DBStmtClass::fetchAll(const Arguments& args)
@@ -572,7 +599,7 @@ Local<Value> DBStmtClass::fetchAll(const Arguments& args)
         }
         return this->getScriptObject();
     }
-    CATCH("Fail in fetchAll!")
+    CATCH_AND_THROW("Fail in fetchAll!");
 }
 
 Local<Value> DBStmtClass::reset(const Arguments& args)
@@ -584,7 +611,7 @@ Local<Value> DBStmtClass::reset(const Arguments& args)
         stmt->reset();
         return this->getScriptObject();
     }
-    CATCH("Fail in reset!");
+    CATCH_AND_THROW("Fail in reset!");
 }
 
 Local<Value> DBStmtClass::reexec(const Arguments& args)
@@ -596,7 +623,7 @@ Local<Value> DBStmtClass::reexec(const Arguments& args)
         stmt->reexec();
         return this->getScriptObject();
     }
-    CATCH("Fail in reexec!");
+    CATCH_AND_THROW("Fail in reexec!");
 }
 
 Local<Value> DBStmtClass::clear(const Arguments& args)
@@ -608,5 +635,5 @@ Local<Value> DBStmtClass::clear(const Arguments& args)
         stmt->clear();
         return this->getScriptObject();
     }
-    CATCH("Fail in clear!");
+    CATCH_AND_THROW("Fail in clear!");
 }
