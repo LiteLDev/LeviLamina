@@ -18,8 +18,8 @@ class Facing {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum Rotation;
-enum Name;
+enum Rotation : unsigned int;
+enum Name : unsigned char;
 
 #undef AFTER_EXTRA
 
