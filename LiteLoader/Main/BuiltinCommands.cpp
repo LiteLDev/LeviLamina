@@ -20,6 +20,13 @@ using namespace LL;
 
 static_assert(sizeof(CommandSelector<Player>) == 200);
 
+#include <MC/Facing.hpp>
+void m()
+{
+    auto a1 = Facing::DIRECTIONS;
+    auto a2 = Facing::STEP_X;
+}
+
 class TeleportDimensionCommand : public Command
 {
 

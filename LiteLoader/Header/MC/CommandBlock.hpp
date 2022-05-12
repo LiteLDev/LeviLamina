@@ -159,6 +159,6 @@ private:
     MCAPI void _executeChain(class BlockSource &, class BlockPos const &) const;
     MCAPI bool _executeChainBlock(class BlockSource &, class BlockPos const &, class CommandBlockActor &, bool) const;
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &, bool) const;
-    MCAPI static int * mCBModeMap;
+    MCAPI static int  mCBModeMap[];
 
 };

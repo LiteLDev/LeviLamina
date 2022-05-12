@@ -159,7 +159,7 @@ protected:
     MCAPI bool canBePlacedOn(class BlockSource &, class BlockPos const &, unsigned char) const;
 
 private:
-    MCAPI static enum TorchFacing const *const DATA_FROM_FACING;
-    MCAPI static unsigned short const *const FACING_FROM_DATA;
+    MCAPI static enum TorchFacing const const DATA_FROM_FACING[];
+    MCAPI static unsigned short const const FACING_FROM_DATA[];
 
 };

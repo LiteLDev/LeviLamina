@@ -137,6 +137,6 @@ private:
     MCAPI static struct ArmorStand::Pose const POSE_SOLEMN;
     MCAPI static struct ArmorStand::Pose const POSE_ZERO_ROTATION;
     MCAPI static struct ArmorStand::Pose const POSE_ZOMBIE;
-    MCAPI static struct ArmorStand::Pose const ** STAND_POSES;
+    MCAPI static struct ArmorStand::Pose const * STAND_POSES[];
 
 };

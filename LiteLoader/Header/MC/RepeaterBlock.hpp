@@ -154,11 +154,11 @@ public:
     */
     MCAPI RepeaterBlock(std::string const &, int, bool);
     MCAPI void updateDelay(class BlockSource &, class BlockPos const &, bool) const;
-    MCAPI static float const *const DELAY_RENDER_OFFSETS;
+    MCAPI static float const const DELAY_RENDER_OFFSETS[];
 
 protected:
 
 private:
-    MCAPI static int const *const DELAYS;
+    MCAPI static int const const DELAYS[];
 
 };

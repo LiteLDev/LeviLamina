@@ -35,7 +35,7 @@ public:
 #endif
 
 public:
-    MCAPI static char const *const NeutralLangCode;
+    MCAPI static char const const NeutralLangCode[];
     MCAPI static void addI18nObserver(class I18nObserver &);
     MCAPI static void appendLanguageStringsFromPack(class PackManifest const &, class std::multimap<std::string, struct std::pair<std::string, std::string>, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, struct std::pair<std::string, std::string>>>> const &);
     MCAPI static void chooseLanguage(std::string const &);

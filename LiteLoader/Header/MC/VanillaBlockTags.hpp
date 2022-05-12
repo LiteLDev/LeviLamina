@@ -23,13 +23,13 @@ public:
 #endif
 
 public:
-    MCAPI static char const *const Acacia;
-    MCAPI static char const *const Birch;
-    MCAPI static char const *const DarkOak;
-    MCAPI static char const *const Jungle;
-    MCAPI static char const *const Log;
-    MCAPI static char const *const Oak;
-    MCAPI static char const *const Spruce;
+    MCAPI static char const const Acacia[];
+    MCAPI static char const const Birch[];
+    MCAPI static char const const DarkOak[];
+    MCAPI static char const const Jungle[];
+    MCAPI static char const const Log[];
+    MCAPI static char const const Oak[];
+    MCAPI static char const const Spruce[];
 
 protected:
 

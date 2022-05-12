@@ -150,7 +150,7 @@ public:
 protected:
 
 private:
-    MCAPI static int const *const mRotatedX;
-    MCAPI static int const *const mRotatedZ;
+    MCAPI static int const const mRotatedX[];
+    MCAPI static int const const mRotatedZ[];
 
 };
