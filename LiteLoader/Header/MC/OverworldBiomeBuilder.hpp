@@ -38,10 +38,10 @@ private:
     MCAPI void _addSurfaceBiome(std::vector<struct BiomeNoiseTarget> &, struct ClimateUtils::Parameter const &, struct ClimateUtils::Parameter const &, struct ClimateUtils::Parameter const &, struct ClimateUtils::Parameter const &, struct ClimateUtils::Parameter const &, float, class Biome *) const;
     MCAPI void _addUndergroundBiome(std::vector<struct BiomeNoiseTarget> &, struct ClimateUtils::Parameter const &, struct ClimateUtils::Parameter const &, struct ClimateUtils::Parameter const &, struct ClimateUtils::Parameter const &, struct ClimateUtils::Parameter const &, float, class Biome *) const;
     MCAPI void _addValleys(std::vector<struct BiomeNoiseTarget> &, struct ClimateUtils::Parameter const &) const;
-    MCAPI static struct ClimateUtils::Parameter const const EROSIONS[];
+    MCAPI static struct ClimateUtils::Parameter const EROSIONS[];
     MCAPI static struct ClimateUtils::Parameter const FULL_RANGE;
-    MCAPI static struct ClimateUtils::Parameter const const HUMIDITIES[];
-    MCAPI static struct ClimateUtils::Parameter const const TEMPERATURES[];
+    MCAPI static struct ClimateUtils::Parameter const HUMIDITIES[];
+    MCAPI static struct ClimateUtils::Parameter const TEMPERATURES[];
     MCAPI static struct ClimateUtils::Parameter const coastContinentalness;
     MCAPI static struct ClimateUtils::Parameter const deepOceanContinentalness;
     MCAPI static struct ClimateUtils::Parameter const dripstoneCavesContinentalness;

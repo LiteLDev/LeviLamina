@@ -31,7 +31,7 @@ public:
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class PerfTimer, class std::allocator<class PerfTimer>> test;
 
 protected:
-    MCAPI static int const const MultiplyDeBruijnBitPosition[];
+    MCAPI static int const MultiplyDeBruijnBitPosition[];
     MCAPI static class Core::PathBuffer<std::string> mPath;
 
 private:

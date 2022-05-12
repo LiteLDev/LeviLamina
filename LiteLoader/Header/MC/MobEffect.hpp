@@ -126,7 +126,7 @@ public:
     MCAPI static class MobEffect * getByName(std::string const &);
     MCAPI static std::string getNameById(int);
     MCAPI static void initEffects(class ResourcePackManager *, class Experiments const &);
-    MCAPI static std::unique_ptr<class MobEffect>  mMobEffects[];
+    MCAPI static std::unique_ptr<class MobEffect> mMobEffects[];
     MCAPI static void shutdownEffects();
 
 protected:

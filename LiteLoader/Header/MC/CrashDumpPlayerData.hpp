@@ -23,7 +23,7 @@ public:
 #endif
 
 public:
-    MCAPI static struct CrashDumpFormatEntryImpl const const kFormat[];
+    MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
 
 protected:
 

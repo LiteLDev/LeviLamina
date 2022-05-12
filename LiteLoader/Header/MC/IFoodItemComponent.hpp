@@ -21,11 +21,11 @@ public:
 #endif
 
 public:
-    MCAPI static char const const CAN_ALWAYS_EAT[];
-    MCAPI static char const const NUTRITION[];
-    MCAPI static char const const ON_CONSUME[];
-    MCAPI static char const const SATURATION_MODIFIER[];
-    MCAPI static char const const USING_CONVERTS_TO[];
+    MCAPI static char const CAN_ALWAYS_EAT[];
+    MCAPI static char const NUTRITION[];
+    MCAPI static char const ON_CONSUME[];
+    MCAPI static char const SATURATION_MODIFIER[];
+    MCAPI static char const USING_CONVERTS_TO[];
 
 protected:
 

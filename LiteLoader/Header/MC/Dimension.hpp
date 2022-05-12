@@ -270,7 +270,7 @@ public:
     MCAPI void updateBlockLight(class BlockPos const &, struct Brightness, struct Brightness, struct Brightness, struct Brightness, bool);
     MCAPI static enum LimboEntitiesVersion const CurrentLimboEntitiesVersion;
     MCAPI static unsigned int const LOW_CPU_PACKET_BLOCK_LIMIT;
-    MCAPI static float const const MOON_BRIGHTNESS_PER_PHASE[];
+    MCAPI static float const MOON_BRIGHTNESS_PER_PHASE[];
     MCAPI static class std::chrono::duration<__int64, struct std::ratio<1, 1>> const STRUCTURE_PRUNE_INTERVAL;
 
 protected:
