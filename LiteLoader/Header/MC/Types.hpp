@@ -242,12 +242,6 @@ struct PositionTrackingDB
     class TrackingRecord;
 };
 
-
-struct SubChunkBrightnessStorage
-{
-    struct LightPair;
-};
-
 struct BlockGeometry
 {
     struct Model;

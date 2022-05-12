@@ -10,6 +10,8 @@
 class SubChunkBrightnessStorage {
 
 #define AFTER_EXTRA
+public:
+    struct LightPair;
 
 #undef AFTER_EXTRA
 
