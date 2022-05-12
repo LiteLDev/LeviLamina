@@ -15,12 +15,12 @@ sudo apt install winehq-stable -y
 wget https://minecraft.azureedge.net/bin-win/bedrock-server-${BDSVER}.zip
 unzip bedrock-server-${BDSVER}.zip -d bedrock_server
 cd bedrock_server
-wget https://github.bibk.top/LiteLDev/liteloaderbds-docker/raw/main/vcruntime140_1.dll # Github Image for China Mainland
+wget https://github.com/LiteLDev/liteloaderbds-docker/raw/main/vcruntime140_1.dll
 cd ..
 rm bedrock-server-${BDSVER}.zip
 
 # Install LiteLoaderBDS
-wget https://github.bibk.top/LiteLDev/LiteLoaderBDS/releases/download/${LLVER}/LiteLoader-${LLVER}.zip
+wget https://github.com/LiteLDev/LiteLoaderBDS/releases/download/${LLVER}/LiteLoader-${LLVER}.zip
 unzip LiteLoader-${LLVER}.zip -d bedrock_server
 rm LiteLoader-${LLVER}.zip
 cd bedrock_server
