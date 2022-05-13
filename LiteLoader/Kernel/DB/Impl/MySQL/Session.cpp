@@ -75,6 +75,9 @@ void MySQLSession::open(const ConnParams& params)
         throw std::runtime_error("MySQLSession::MySQLSession: Failed to open database: " + std::string(mysql_error(conn)));
     }
     IF_ENDBG dbLogger.debug("MySQLSession::open: Opened database: " + std::string(p.getHost()) + ":" + std::to_string(port) + "/" + db);
+#if defined(LLDB_DEBUG_MODE)
+    mysql_dump_debug_info(conn);
+#endif
 }
 
 bool MySQLSession::execute(const std::string& query)

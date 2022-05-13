@@ -332,12 +332,12 @@ void MySQLStmt::bindResult()
     mysql_stmt_attr_set(stmt, STMT_ATTR_UPDATE_MAX_LENGTH, (const void*)&attr_max_length);
     // Store all the results to client or we can't get the max length of the field later
     mysql_stmt_store_result(stmt);
-    auto len = mysql_num_fields(metadata);
-    IF_ENDBG dbLogger.debug("MySQLStmt::bindResult: mysql_num_fields: {}", len);
+    auto cnt = mysql_num_fields(metadata);
+    IF_ENDBG dbLogger.debug("MySQLStmt::bindResult: mysql_num_fields: {}", cnt);
     auto fields = mysql_fetch_fields(metadata);
-    result.reset(new MYSQL_BIND[len]); // Allocate result bindings
+    result.reset(new MYSQL_BIND[cnt]); // Allocate result bindings
     resultHeader.reset(new RowHeader); // Allocate result header
-    for (auto i = 0U; i < len; i++)
+    for (auto i = 0U; i < cnt; i++)
     {
         resultValues.push_back({});      // Allocate result values
         auto& rec = resultValues.back(); // Get the binder
@@ -555,14 +555,19 @@ Row MySQLStmt::fetch()
     IF_ENDBG dbLogger.debug("MySQLStmt::fetch: Fetching row...");
     Row row(resultHeader);
     IF_ENDBG dbLogger.debug("MySQLStmt::fetch: RowHeader size {}", row.header->size());
+    int i = 0;
     for (auto& col : resultValues)
     {
-        IF_ENDBG dbLogger.debug("MySQLStmt::fetch: length {}", col.length);
+        // Because of the inexplicable problems of MySQL C API,
+        //  we must set the length of the field manually.
+        auto length = *(stmt->bind + i)->length;
+        col.length = length;
         auto v = ReceiverToAny(col);
         row.push_back(v);
         IF_ENDBG dbLogger.debug(
             "MySQLStmt::fetch: Fetched column `{}`, type {}, value {}",
             col.field.name, Any::type2str(v.type), v.get<std::string>());
+        i++;
     }
     return row;
 }

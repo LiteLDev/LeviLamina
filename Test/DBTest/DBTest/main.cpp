@@ -303,6 +303,9 @@ void test_mysql_capi()
         //std::string a(recs[0].buffer.get());
         logger.debug("Fetched length: {} {}", recs[0].length, recs[1].length);
     }
+    auto sess = Session::create(DBType::MySQL, host, port, user, passwd, dbname);
+    ResultSet set;
+    sess << q1, into(set);
 }
 
 void test_main()
