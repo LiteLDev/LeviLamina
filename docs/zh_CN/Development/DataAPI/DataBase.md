@@ -114,6 +114,8 @@ SQL数据库适用于使用SQL语句处理大量的关系型数据。接口底�
 
 注：以下API若未注明均可能会抛出异常，建议使用各语言的异常处理语句嵌套。Js可使用`try ... catch`语句，Lua可使用`pcall`。一般情况下未抛出错误即代表调用成功。
 
+> 如果您是JavaScript插件开发者，您还可以尝试使用[Yoyo](https://gitee.com/Y_oyo)封装的LLDB链式操作库(主要面向不了解SQL语法的新手开发者)。详情 [点击这里](https://gitee.com/Y_oyo/yoyo-mcbe-lite-xloader-item/blob/master/sql/yoyoSqlite.js%202.0.0.md)
+
 <br>
 
 ### 打开一个SQL数据库会话
@@ -370,6 +372,8 @@ stmt.bind(114514, 7);  // 将会绑定到h
 
 - 返回值：查询的结果(结果集)，详见[执行SQL并获取结果集](#执行sql并获取结果集)
 - 返回值类型：`Array<Array>`
+
+<br>
 
 `stmt.fetchAll(callback)`
 
