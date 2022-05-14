@@ -168,7 +168,10 @@ ConnParams::ConnParams(const std::string& str)
 {
     raw = str;
     auto url = ParseURL(str);
-    
+#if defined(LLDB_DEBUG_MODE)
+    PrintURL(url);
+#endif
+
     if (!url.scheme.empty()) insert({"scheme", url.scheme});
     if (!url.host.empty()) insert({"host", url.host});
     if (url.port) insert({"port", url.port});
@@ -189,7 +192,6 @@ ConnParams::ConnParams(const std::string& str)
 ConnParams::ConnParams(const char* str)
     : std::unordered_map<std::string, Any>()
 {
-    raw = str;
     *this = ConnParams(std::string(str));
 }
 

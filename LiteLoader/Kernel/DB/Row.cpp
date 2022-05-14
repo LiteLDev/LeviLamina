@@ -8,6 +8,10 @@ RowHeader::RowHeader(const std::initializer_list<std::string>& list)
 {
 }
 
+RowHeader::~RowHeader()
+{
+}
+
 size_t RowHeader::add(const std::string& name)
 {
     push_back(name);
@@ -77,7 +81,7 @@ bool RowHeader::check(const Row& row) const
 
     if (row.size() == size())
     {
-        if (row.header)
+        if (row.header && !row.header->empty())
         {
             if (row.header->size() == size())
                 return true;
@@ -210,6 +214,7 @@ Any& Row::at(size_t idx)
 
 void Row::forEach_ref(std::function<bool(const std::string&, Any&)> cb)
 {
+    if (!this->header) return;
     for (auto& col : *this->header)
     {
         if (!cb(col, this->at(col))) break;
@@ -218,6 +223,7 @@ void Row::forEach_ref(std::function<bool(const std::string&, Any&)> cb)
 
 void Row::forEach(std::function<bool(const std::string&, const Any&)> cb) const
 {
+    if (!this->header) return;
     int i = 0;
     for (auto& col : *this->header)
     {

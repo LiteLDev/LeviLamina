@@ -94,6 +94,12 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\Command\DynamicCommandAPI.cpp" />
     <ClCompile Include="Kernel\DB\Any.cpp" />
     <ClCompile Include="Kernel\DB\ConnParams.cpp" />
+    <ClCompile Include="Kernel\DB\Impl\MySQL\Session.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)MySQL\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="Kernel\DB\Impl\MySQL\Stmt.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)MySQL\</ObjectFileName>
+    </ClCompile>
     <ClCompile Include="Kernel\DB\Impl\SQLite\Session.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)SQLite\</ObjectFileName>
     </ClCompile>
@@ -117,6 +123,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\SimulatedPlayerAPI.cpp" />
     <ClCompile Include="Kernel\Utils\SRWLock.cpp" />
     <ClCompile Include="Kernel\Utils\STLHelper.cpp" />
+    <ClCompile Include="Kernel\Utils\StringReader.cpp" />
     <ClCompile Include="Main\AddonsHelper.cpp" />
     <ClCompile Include="Main\AutoUpgrade.cpp" />
     <ClCompile Include="Main\BuiltinUnlockCmd.cpp" />
@@ -127,8 +134,11 @@ LibraryBuilder.exe
     <ClInclude Include="Header\AllowListAPI.h" />
     <ClInclude Include="Header\DB\Any.h" />
     <ClInclude Include="Header\DB\ConnParams.h" />
+    <ClInclude Include="Header\DB\Impl\MySQL\Session.h" />
+    <ClInclude Include="Header\DB\Impl\MySQL\Stmt.h" />
     <ClInclude Include="Header\DB\Impl\SQLite\Session.h" />
     <ClInclude Include="Header\DB\Impl\SQLite\Stmt.h" />
+    <ClInclude Include="Header\DB\Pointer.h" />
     <ClInclude Include="Header\DB\RowSet.h" />
     <ClInclude Include="Header\DB\Row.h" />
     <ClInclude Include="Header\DB\Session.h" />
@@ -291,6 +301,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\Utils\DbgHelper.h" />
     <ClInclude Include="Header\Utils\SRWLock.h" />
     <ClInclude Include="Header\Utils\STLHelper.h" />
+    <ClInclude Include="Header\Utils\StringReader.h" />
     <ClInclude Include="Main\AddonsHelper.h" />
     <ClInclude Include="Main\AutoUpgrade.h" />
     <ClInclude Include="Main\Config.h" />
@@ -339,6 +350,7 @@ LibraryBuilder.exe
     <Library Include="Lib\third-party\dyncall\dyncallback_s.lib" />
     <Library Include="Lib\third-party\dyncall\dyncall_s.lib" />
     <Library Include="Lib\third-party\dyncall\dynload_s.lib" />
+    <Library Include="Lib\third-party\mysql\mysqlclient.lib" />
     <Library Include="Lib\third-party\openssl\libcrypto.lib" />
     <Library Include="Lib\third-party\openssl\libssl.lib" />
     <Library Include="Lib\third-party\SQLiteCpp\sqlite3.lib" />

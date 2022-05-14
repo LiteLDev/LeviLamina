@@ -7,6 +7,10 @@ RowSet::RowSet(const std::shared_ptr<RowHeader>& header)
     : std::vector<Row>()
     , header(header)
 {
+    if (!header)
+    {
+        this->header = std::make_shared<RowHeader>();
+    }
 }
 
 RowSet::RowSet(const RowHeader& header)
@@ -39,14 +43,32 @@ RowSet& RowSet::operator=(const RowSet& set)
 
 void RowSet::add(const Row& row)
 {
-    if (header)
+    if (header && !header->empty())
     {
         if (!header->check(row))
             throw std::runtime_error("RowSet::add: Row doesn't match header");
     }
-    else if (row.header)
+    else if (row.header && !header->empty())
+    {
         header = row.header;
+    }
     Base::push_back(row);
+    if (!row.header || row.header->empty())
+    {
+        Base::back().header = header;
+    }
+}
+
+bool RowSet::valid()
+{
+    if (!header) return false;
+    size_t rowSize = header->size();
+    if (!rowSize) return false;
+    for (auto& row : *this)
+    {
+        if (row.size() != rowSize) return false;
+    }
+    return true;
 }
 
 void RowSet::push_back(const Row& row)
@@ -54,8 +76,9 @@ void RowSet::push_back(const Row& row)
     add(row);
 }
 
-std::string RowSet::toTableString(const std::string& nullPattern)
+std::string RowSet::toTableString(const std::string& nullPattern) const
 {
+    if (!header || !header->size()) return "";
     std::string result, dividingLine;
     // Get the field widths
     std::vector<size_t> colWidths;
@@ -67,7 +90,7 @@ std::string RowSet::toTableString(const std::string& nullPattern)
     {
         for (size_t i = 0; i < row.size(); ++i)
         {
-            auto& val = row[i];
+            auto val = row.data()[i];
             if (val.is_null())
             {
                 colWidths[i] = std::max(sizeof(nullPattern) - 1, colWidths[i]);
@@ -93,7 +116,7 @@ std::string RowSet::toTableString(const std::string& nullPattern)
     {
         for (size_t i = 0; i < row.size(); ++i)
         {
-            auto& val = row[i];
+            auto val = row.data()[i];
             if (val.is_null())
             {
                 result += fmt::format("| {:<{}} ", nullPattern, colWidths[i]);

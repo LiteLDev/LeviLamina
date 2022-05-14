@@ -8,32 +8,24 @@ namespace DB
 
 SQLiteSession::SQLiteSession()
 {
+    IF_ENDBG dbLogger.debug("SQLiteSession: Constructed! this: {}", (void*)this);
 }
 SQLiteSession::SQLiteSession(const ConnParams& params)
 {
+    IF_ENDBG dbLogger.debug("SQLiteSession: Constructed! this: {}", (void*)this);
     open(params);
 }
 
 SQLiteSession::~SQLiteSession()
 {
-    if (isOpen())
-    {
-        close();
-    }
+    IF_ENDBG dbLogger.debug("SQLiteSession::~SQLiteSession: Destructor: this: {}", (void*)this);
+    close();
 }
 
 void SQLiteSession::open(const ConnParams& params)
 {
     // see https://www.sqlite.org/c3ref/open.html
     auto p = params; // Copy to avoid modifying the origin.
-    if (!p.getRaw().empty())
-    {
-        auto res = sqlite3_open_v2(p.getRaw().c_str(), &conn, SQLITE_OPEN_URI, nullptr);
-        if (res != SQLITE_OK)
-        {
-            throw std::runtime_error("SQLiteSession::SQLiteSession: Failed to open database: " + std::string(sqlite3_errmsg(conn)));
-        }
-    }
     auto path = p.getPath();
     if (path.empty())
     {
@@ -96,17 +88,18 @@ bool SQLiteSession::execute(const std::string& query)
     return res == SQLITE_OK;
 }
 
-void SQLiteSession::query(const std::string& query, std::function<bool(const Row&)> callback)
+Session& SQLiteSession::query(const std::string& query, std::function<bool(const Row&)> callback)
 {
     IF_ENDBG dbLogger.debug("SQLiteSession::query: Querying > " + query);
-    auto& stmt = prepare(query);
-    stmt.fetchAll(callback);
+    auto stmt = prepare(query);
+    stmt->fetchAll(callback);
+    return *this;
 }
 
-Stmt& SQLiteSession::prepare(const std::string& query)
+SharedPointer<Stmt> SQLiteSession::prepare(const std::string& query, bool autoExecute)
 {
-    auto& stmt = SQLiteStmt::create(*this, query);
-    stmts.push_back(&stmt);
+    auto& stmt = SQLiteStmt::create(getOrSetSelf(), query, autoExecute);
+    stmtPool.push_back(stmt);
     return stmt;
 }
 
@@ -127,9 +120,16 @@ uint64_t SQLiteSession::getLastInsertId() const
 
 void SQLiteSession::close()
 {
-    while (!stmts.empty())
+    while (!stmtPool.empty())
     {
-        stmts[0]->destroy();
+        // Close all the active statements or it will error when closing
+        auto& wptr = stmtPool.back();
+        auto ptr = wptr.lock();
+        if (!wptr.expired() && ptr)
+        {
+            ptr->close();
+        }
+        stmtPool.pop_back();
     }
     if (conn)
     {
@@ -145,7 +145,7 @@ void SQLiteSession::close()
 
 bool SQLiteSession::isOpen()
 {
-    return conn == nullptr;
+    return conn != nullptr;
 }
 
 DBType SQLiteSession::getType()
@@ -153,9 +153,9 @@ DBType SQLiteSession::getType()
     return DBType::SQLite;
 }
 
-Stmt& SQLiteSession::operator<<(const std::string& query)
+SharedPointer<Stmt> SQLiteSession::operator<<(const std::string& query)
 {
-    return prepare(query);
+    return prepare(query, true);
 }
 
 } // namespace DB

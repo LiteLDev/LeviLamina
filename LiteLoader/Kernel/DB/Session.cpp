@@ -1,6 +1,7 @@
 #include <DB/Session.h>
 #include <LoggerAPI.h>
 #include <DB/Impl/SQLite/Session.h>
+#include <DB/Impl/MySQL/Session.h>
 
 namespace DB
 {
@@ -32,10 +33,17 @@ ResultSet Session::query(const std::string& query)
     });
     IF_ENDBG
     {
-        dbLogger.debug("Session::query: Results >");
-        for (auto& str : SplitStrWithPattern(result.toTableString(), "\n"))
+        if (result.valid())
         {
-            dbLogger.debug(str);
+            dbLogger.debug("Session::query: Results >");
+            for (auto& str : SplitStrWithPattern(result.toTableString(), "\n"))
+            {
+                dbLogger.debug(str);
+            }
+        }
+        else 
+        {
+            dbLogger.debug("Session::query: Query returned no result");
         }
     }
     return result;
@@ -46,79 +54,86 @@ std::string Session::getLastError() const
     throw std::runtime_error("Session::getLastError: Not implemented");
 }
 
-void Session::destroy()
+std::weak_ptr<Session> Session::getOrSetSelf()
 {
-    if (isOpen())
+    if (self.expired())
     {
-        close();
+        IF_ENDBG dbLogger.debug("Session::getOrSetSelf: `self` expired, trying fetching");
+        return self = getSession(this);
     }
-    DB::destroy(this);
+    return self;
 }
 
-Stmt& Session::operator<<(const std::string& query)
+SharedPointer<Stmt> Session::operator<<(const std::string& query)
 {
     return prepare(query);
 }
 
-Session& Session::create(const ConnParams& params)
+
+SharedPointer<Session> Session::create(DBType type)
 {
+    return _Create(type);
+}
+SharedPointer<Session> Session::create(const ConnParams& params)
+{
+    static std::unordered_map<std::string, DBType> names{
+        {"sqlite",  DBType::SQLite},
+        {"sqlite3", DBType::SQLite},
+        {"file",    DBType::SQLite},
+        {"mysql",   DBType::MySQL},
+        {"mysqlc",  DBType::MySQL}
+    };
     ConnParams copy = params;
-    auto type = copy.getScheme();
-    std::transform(type.begin(), type.end(), type.begin(), ::tolower);
-    if (type == "sqlite" || type == "sqlite3" || type == "file")
+    auto scheme = copy.getScheme();
+    std::transform(scheme.begin(), scheme.end(), scheme.begin(), ::tolower);
+    if (names.count(scheme))
     {
-        return *new SQLiteSession(params);
+        return _Create(names[scheme], params);
     }
     else
     {
         throw std::runtime_error("Session::create: Unknown/Unsupported database type");
     }
 }
-Session& Session::create(DBType type)
+SharedPointer<Session> Session::create(DBType type, const ConnParams& params)
 {
+    return _Create(type, params);
+}
+SharedPointer<Session> Session::create(DBType type, const std::string& host, uint16_t port, const std::string& user, const std::string& password, const std::string& database)
+{
+    return _Create(type, 
+        {{"host", host}, {"port", port}, {"user", user}, {"password", password}, {"database", database}});
+    
+}
+SharedPointer<Session> Session::create(DBType type, const std::string& path)
+{
+    return _Create(type, {{"path", path}});
+}
+
+SharedPointer<Session> Session::_Create(DBType type, const ConnParams& params)
+{
+    Session* session = nullptr;
     switch (type)
     {
         case DBType::SQLite:
-            return *new SQLiteSession();
+            session = params.empty() ? new SQLiteSession() : new SQLiteSession(params);
+            break;
+        case DBType::MySQL:
+            session = params.empty() ? new MySQLSession() : new MySQLSession(params);
+            break;
         default:
-            throw std::runtime_error("Session::create: Unknown/Unsupported database type");
+            throw std::runtime_error("Session::_Create: Unknown/Unsupported database type");
     }
-}
-Session& Session::create(DBType type, const ConnParams& params)
-{
-    switch (type)
+    if (session)
     {
-        case DBType::SQLite:
-            return *new SQLiteSession(params);
-        default:
-            throw std::runtime_error("Session::create: Unknown/Unsupported database type");
+        auto result = SharedPointer<Session>(session);
+        result->self = result;
+        sessionPool.push_back(result);
+        return result;
     }
+    return SharedPointer<Session>();
 }
-Session& Session::create(DBType type, const std::string& host, uint16_t port, const std::string& user, const std::string& password, const std::string& database)
-{
-    ConnParams params(
-        {{"host", host},
-         {"port", port},
-         {"user", user},
-         {"password", password},
-         {"database", database}});
-    switch (type)
-    {
-        case DBType::SQLite:
-            return *new SQLiteSession(params);
-        default:
-            throw std::runtime_error("Session::create: Unknown/Unsupported database type");
-    }
-}
-Session& Session::create(DBType type, const std::string& path)
-{
-    switch (type)
-    {
-        case DBType::SQLite:
-            return *new SQLiteSession(path);
-        default:
-            throw std::runtime_error("Session::create: Unknown/Unsupported database type");
-    }
-}
+
+std::vector<std::weak_ptr<Session>> Session::sessionPool = std::vector<std::weak_ptr<Session>>();
 
 } // namespace DB
