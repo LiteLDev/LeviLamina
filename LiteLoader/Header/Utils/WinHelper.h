@@ -23,4 +23,5 @@ HMODULE inline GetCurrentModule()
 }
 
 //Get the module path from a module handler
-std::string GetModulePath(HMODULE handler);
+LIAPI std::string GetModulePath(HMODULE handler);
+LIAPI std::string GetModuleName(HMODULE handler);

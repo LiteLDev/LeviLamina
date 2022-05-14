@@ -34,6 +34,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI RakWebSocketClient(std::unique_ptr<class TcpProxy>);
 
 protected:
 

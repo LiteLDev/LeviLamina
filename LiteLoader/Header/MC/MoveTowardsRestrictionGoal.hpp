@@ -25,11 +25,6 @@ public:
 public:
     /*0*/ virtual ~MoveTowardsRestrictionGoal();
     /*
-    inline  ~MoveTowardsRestrictionGoal(){
-         (MoveTowardsRestrictionGoal::*rv)();
-        *((void**)&rv) = dlsym("??1MoveTowardsRestrictionGoal@@UEAA@XZ");
-        return (this->*rv)();
-    }
     inline bool canContinueToUse(){
         bool (MoveTowardsRestrictionGoal::*rv)();
         *((void**)&rv) = dlsym("?canContinueToUse@MoveTowardsRestrictionGoal@@UEAA_NXZ");
@@ -38,6 +33,11 @@ public:
     inline void start(){
         void (MoveTowardsRestrictionGoal::*rv)();
         *((void**)&rv) = dlsym("?start@MoveTowardsRestrictionGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline  ~MoveTowardsRestrictionGoal(){
+         (MoveTowardsRestrictionGoal::*rv)();
+        *((void**)&rv) = dlsym("??1MoveTowardsRestrictionGoal@@UEAA@XZ");
         return (this->*rv)();
     }
     */

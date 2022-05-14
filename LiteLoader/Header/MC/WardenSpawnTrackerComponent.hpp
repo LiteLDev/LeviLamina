@@ -19,16 +19,17 @@ class WardenSpawnTrackerComponent {
 public:
     class WardenSpawnTrackerComponent& operator=(class WardenSpawnTrackerComponent const &) = delete;
     WardenSpawnTrackerComponent(class WardenSpawnTrackerComponent const &) = delete;
-    WardenSpawnTrackerComponent() = delete;
 #endif
 
 public:
+    MCAPI WardenSpawnTrackerComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI bool canIncreaseThreatLevel() const;
     MCAPI bool canSummonWarden() const;
     MCAPI void copyDataFrom(class WardenSpawnTrackerComponent const &);
     MCAPI class std::optional<enum LevelSoundEvent> getSoundEventForCurrentThreatLevel() const;
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
+    MCAPI void tick();
     MCAPI void tryIncreaseThreatLevel();
 
 protected:

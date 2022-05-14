@@ -17,14 +17,16 @@ struct ScriptExplosionStartedEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTEXPLOSIONSTARTEDEVENT
 public:
-    ScriptExplosionStartedEvent(struct ScriptExplosionStartedEvent const &) = delete;
     ScriptExplosionStartedEvent() = delete;
 #endif
 
 public:
+    MCAPI ScriptExplosionStartedEvent(struct ScriptExplosionStartedEvent const &);
     MCAPI ScriptExplosionStartedEvent(struct ExplosionStartedEvent const &, class Scripting::WeakLifetimeScope const &);
+    MCAPI void copyTo(struct ExplosionStartedEvent &) const;
     MCAPI struct ScriptExplosionStartedEvent & operator=(struct ScriptExplosionStartedEvent &&);
     MCAPI struct ScriptExplosionStartedEvent & operator=(struct ScriptExplosionStartedEvent const &);
+    MCAPI ~ScriptExplosionStartedEvent();
 
 protected:
 

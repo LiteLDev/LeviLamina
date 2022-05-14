@@ -20,11 +20,12 @@ class SwoopAttackDefinition {
 public:
     class SwoopAttackDefinition& operator=(class SwoopAttackDefinition const &) = delete;
     SwoopAttackDefinition(class SwoopAttackDefinition const &) = delete;
-    SwoopAttackDefinition() = delete;
 #endif
 
 public:
     /*0*/ virtual ~SwoopAttackDefinition();
+    MCAPI SwoopAttackDefinition();
+    MCAPI void initialize(class EntityContext &, class SwoopAttackGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwoopAttackDefinition>> &);
 
 protected:

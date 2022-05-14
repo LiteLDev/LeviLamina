@@ -6,7 +6,7 @@
 
 /////////////////////// CrashLogger ///////////////////////
 // When comes with these plugins, disable builtin CrashLogger since they will cause crash
-constexpr const char* NoCrashLogger[] = {"BDSNetRunner", "AntiCheats"};
+constexpr const char* NoCrashLogger[] = {"AntiCheats"};
 #define CL_PRELOG_MODULE L"plugins/LiteLoader/CrashLogger.dll"
 
 
@@ -44,6 +44,7 @@ struct LLConfig
     bool enableAutoUpdate = true;
     bool enableCrashLogger = true;
     std::string crashLoggerPath = "plugins\\LiteLoader\\CrashLogger_Daemon.exe";
+    std::string antiGiveCommand = "kick {player}";
     bool enableSimpleServerLogger = true;
     bool enableFixDisconnectBug = true;
     bool enableFixListenPort = false;
@@ -54,11 +55,10 @@ struct LLConfig
     bool enableUnoccupyPort19132 = true;
     bool enableCheckRunningBDS = true;
     bool enableWelcomeText = true;
-
+    bool enableFixMcBug = true;
     bool enableOutputFilter = false;
     bool onlyFilterConsoleOutput = true;
     std::vector<std::string> outputFilterRegex;
-
     // Runtime Config
     LLServerStatus serverStatus = LLServerStatus::Starting;
     std::thread::id tickThreadId;

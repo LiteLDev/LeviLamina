@@ -36,6 +36,13 @@ public:
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
     /*31*/ virtual void __unk_vfn_31();
+    /*
+    inline  ~SimpleContainer(){
+         (SimpleContainer::*rv)();
+        *((void**)&rv) = dlsym("??1SimpleContainer@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SimpleContainer(std::string const &, bool, int, enum ContainerType);
 
 protected:

@@ -23,8 +23,10 @@ public:
 #endif
 
 public:
+    MCAPI void clear();
     MCAPI class StructurePoolElement const * lookupByName(std::string) const;
     MCAPI void registerStructureElement(std::string, std::unique_ptr<class StructurePoolElement> &&);
+    MCAPI ~JigsawStructureElementRegistry();
 
 protected:
 

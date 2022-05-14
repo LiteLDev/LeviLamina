@@ -24,13 +24,25 @@ public:
 
 public:
     /*0*/ virtual ~CircleAroundAnchorGoal();
-    /*1*/ virtual bool canUse();
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
-    /*5*/ virtual void stop();
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+    /*
+    inline bool canUse(){
+        bool (CircleAroundAnchorGoal::*rv)();
+        *((void**)&rv) = dlsym("?canUse@CircleAroundAnchorGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline void stop(){
+        void (CircleAroundAnchorGoal::*rv)();
+        *((void**)&rv) = dlsym("?stop@CircleAroundAnchorGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI CircleAroundAnchorGoal(class Mob &);
 
 protected:

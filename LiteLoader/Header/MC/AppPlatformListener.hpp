@@ -29,14 +29,14 @@ public:
         *((void**)&rv) = dlsym("?onClipboardCopy@AppPlatformListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<std::string const &>(a0));
     }
-    inline void onResizeEnd(){
-        void (AppPlatformListener::*rv)();
-        *((void**)&rv) = dlsym("?onResizeEnd@AppPlatformListener@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void onAppPreSuspended(){
         void (AppPlatformListener::*rv)();
         *((void**)&rv) = dlsym("?onAppPreSuspended@AppPlatformListener@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void onResizeEnd(){
+        void (AppPlatformListener::*rv)();
+        *((void**)&rv) = dlsym("?onResizeEnd@AppPlatformListener@@UEAAXXZ");
         return (this->*rv)();
     }
     inline void onResizeBegin(){
@@ -99,15 +99,15 @@ public:
         *((void**)&rv) = dlsym("?onAppResumed@AppPlatformListener@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void onAppTerminated(){
-        void (AppPlatformListener::*rv)();
-        *((void**)&rv) = dlsym("?onAppTerminated@AppPlatformListener@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void onClipboardPaste(std::string const & a0){
         void (AppPlatformListener::*rv)(std::string const &);
         *((void**)&rv) = dlsym("?onClipboardPaste@AppPlatformListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline void onAppTerminated(){
+        void (AppPlatformListener::*rv)();
+        *((void**)&rv) = dlsym("?onAppTerminated@AppPlatformListener@@UEAAXXZ");
+        return (this->*rv)();
     }
     inline  ~AppPlatformListener(){
          (AppPlatformListener::*rv)();
@@ -116,7 +116,6 @@ public:
     }
     */
     MCAPI AppPlatformListener();
-    MCAPI void initListener(float);
     MCAPI void terminate();
 
 protected:

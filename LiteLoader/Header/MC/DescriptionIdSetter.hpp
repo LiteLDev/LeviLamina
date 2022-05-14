@@ -24,6 +24,7 @@ public:
 
 public:
     MCAPI std::string getDescriptionId() const;
+    MCAPI void setDescriptionId(std::string const &);
 
 protected:
 

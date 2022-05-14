@@ -30,8 +30,10 @@ public:
     MCAPI std::string getCapeId() const;
     MCAPI unsigned short getCapeImageHeight() const;
     MCAPI unsigned short getCapeImageWidth() const;
+    MCAPI class Certificate const * getCertificate() const;
     MCAPI unsigned __int64 getClientRandomId() const;
     MCAPI std::string getDeviceId() const;
+    MCAPI enum BuildPlatform getDeviceOS() const;
     MCAPI std::vector<class SerializedPersonaPieceHandle> getPersonaPieces() const;
     MCAPI class std::unordered_map<enum persona::PieceType, class TintMapColor, struct std::hash<enum persona::PieceType>, struct std::equal_to<enum persona::PieceType>, class std::allocator<struct std::pair<enum persona::PieceType const, class TintMapColor>>> getPieceTintColors() const;
     MCAPI std::string getPlatformId() const;
@@ -53,6 +55,7 @@ public:
     MCAPI bool isPersonaSkin() const;
     MCAPI bool isPremiumSkin() const;
     MCAPI bool isPrimaryUser() const;
+    MCAPI bool isThirdPartyNameOnly() const;
     MCAPI std::string toString();
     MCAPI bool verify(std::vector<std::string> const &, __int64);
     MCAPI bool verifySelfSigned();

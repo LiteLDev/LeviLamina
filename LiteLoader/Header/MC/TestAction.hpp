@@ -20,13 +20,13 @@ class TestAction : public IRequestAction {
 public:
     class TestAction& operator=(class TestAction const &) = delete;
     TestAction(class TestAction const &) = delete;
-    TestAction() = delete;
 #endif
 
 public:
     /*0*/ virtual ~TestAction();
     /*1*/ virtual void execute(class ServerLevel &, class Dimension &);
     /*3*/ virtual bool operator==(class IRequestAction &) const;
+    MCAPI TestAction();
 
 protected:
 

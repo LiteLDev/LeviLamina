@@ -141,6 +141,25 @@ LLSE提供了接口 import 来导入其他插件已经导出的函数。
 
 <br>
 
+#### 远程调用参数类型对照，其中Type可以为其他受支持的类型
+
+| 内部类型 | C++ | ScriptEngine | .Net |
+| -- | -- | -- | -- | 
+| `std::nullptr_t` | `std::nullptr_t` | `Null` | - | 
+| `bool` | `bool` | `Boolean` | - | 
+| `RemoteCall::NumberType` | `__int64`, `double`... | `Number` | - | 
+| `std::string` | `std::string` | `String` | - | 
+| `std::vector<Type>` | `std::vector<Type>` | `Array` | - | 
+| `std::unordered_map<std::string,Type>` | `std::unordered_map<std::string,Type>` | `Array` | - | 
+| `Actor*` | `Actor*` | `Entity` | - | 
+| `Player*` | `Player*` | `Player` | - | 
+| `RemoteCall::ItemType` | `ItemStack*`, `std::unique_ptr<ItemStack>` | `Item` | - | 
+| `RemoteCall::BlockType` | `Block*`, `BlockInstance` | `Block` | - | 
+| `BlockActor*` | `BlockActor*` | `BlockActor` | - | 
+| `Container*` | `Container*` | `Container` | - | 
+| `Vec3` | `Vec3` | `FloatPos` | - | 
+| `BlockPos` | `BlockPos` | `IntPos` | - | 
+| `RemoteCall::NbtType` | `CompoundTag*`,`std::unique_ptr<CompoundTag>` | `NBTCompound` | - | 
 #### 远程调用函数举例说明
 
 比如，有一个插件导出了某个函数，函数的导出名称为 AAA_Welcome  

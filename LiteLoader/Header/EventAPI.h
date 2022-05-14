@@ -663,4 +663,13 @@ public:
     bool success = false;
 };
 
+class MobSpawnEvent : public EventTemplate<MobSpawnEvent>
+{
+public:
+    string mTypeName;
+    Vec3 mPos;
+    int mDimensionId;
+	
+};
+
 }; // namespace Event

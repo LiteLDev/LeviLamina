@@ -42,6 +42,7 @@ public:
     }
     */
     MCAPI ShapelessRecipe(class gsl::basic_string_span<char const, -1>, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int, class mce::UUID const *);
+    MCAPI void generateUUID();
 
 protected:
 

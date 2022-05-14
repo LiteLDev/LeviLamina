@@ -93,20 +93,20 @@ public:
         *((void**)&rv) = dlsym("?getContext@BlockVolumeTarget@@UEAAAEBUWorldGenContext@@XZ");
         return (this->*rv)();
     }
-    inline bool setBlockSimple(class BlockPos const & a0, class Block const & a1){
-        bool (BlockVolumeTarget::*rv)(class BlockPos const &, class Block const &);
-        *((void**)&rv) = dlsym("?setBlockSimple@BlockVolumeTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const &>(a0), std::forward<class Block const &>(a1));
+    inline class Block const & getBlockNoBoundsCheck(class BlockPos const & a0) const{
+        class Block const & (BlockVolumeTarget::*rv)(class BlockPos const &) const;
+        *((void**)&rv) = dlsym("?getBlockNoBoundsCheck@BlockVolumeTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0));
     }
     inline class Block const & getBlock(class BlockPos const & a0) const{
         class Block const & (BlockVolumeTarget::*rv)(class BlockPos const &) const;
         *((void**)&rv) = dlsym("?getBlock@BlockVolumeTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class BlockPos const &>(a0));
     }
-    inline class Block const & getBlockNoBoundsCheck(class BlockPos const & a0) const{
-        class Block const & (BlockVolumeTarget::*rv)(class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?getBlockNoBoundsCheck@BlockVolumeTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const &>(a0));
+    inline bool setBlockSimple(class BlockPos const & a0, class Block const & a1){
+        bool (BlockVolumeTarget::*rv)(class BlockPos const &, class Block const &);
+        *((void**)&rv) = dlsym("?setBlockSimple@BlockVolumeTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0), std::forward<class Block const &>(a1));
     }
     */
     MCAPI BlockVolumeTarget(class BlockVolume &, class Level &, class BiomeSource const &, class AutomaticID<class Dimension, int>, struct WorldGenContext const &);

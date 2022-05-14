@@ -46,11 +46,18 @@ public:
         return (this->*rv)(std::forward<class std::function<void (class Container &, int, class ItemStack const &, class ItemStack const &)>>(a0), std::forward<class std::function<void (void)>>(a1));
     }
     */
+    MCAPI PlayerInventory(std::unique_ptr<class Inventory>);
+    MCAPI class std::weak_ptr<class HudContainerManagerModel> _getHudContainerManagerModel();
     MCAPI bool add(class ItemStack &, bool);
     MCAPI void addListener(class ContainerContentChangeListener *);
     MCAPI bool canAdd(class ItemStack const &) const;
+    MCAPI int clearInventory(int);
     MCAPI void clearSlot(int, enum ContainerID);
     MCAPI void clearVanishEnchantedItemsOnDeath();
+    MCAPI void dropAllOnDeath(bool);
+    MCAPI std::vector<enum ContainerID> const & getAllContainerIds();
+    MCAPI std::vector<class ItemStack> const & getComplexItems(enum ContainerID) const;
+    MCAPI class Container & getContainer();
     MCAPI int getContainerSize(enum ContainerID) const;
     MCAPI int getFirstEmptySlot() const;
     MCAPI int getHotbarSize() const;
@@ -60,16 +67,23 @@ public:
     MCAPI class ItemStack const & getSelectedItem();
     MCAPI struct PlayerInventory::SlotData getSelectedSlot() const;
     MCAPI int getSlotWithItem(class ItemStack const &, bool, bool) const;
+    MCAPI bool hasResource(int);
+    MCAPI void init(class std::weak_ptr<class HudContainerManagerModel>);
+    MCAPI void load(class ListTag const &, class SemVersion const &, class Level &);
     MCAPI void removeItem(int, int, enum ContainerID);
     MCAPI void removeListener(class ContainerContentChangeListener *);
+    MCAPI int removeResource(class ItemStack const &, bool, bool, int);
     MCAPI bool removeResource(int);
+    MCAPI std::unique_ptr<class ListTag> save();
     MCAPI bool selectSlot(int, enum ContainerID);
+    MCAPI void serverInitItemStackId(int);
     MCAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     MCAPI void setContainerChanged(int);
     MCAPI void setItem(int, class ItemStack const &, enum ContainerID, bool);
     MCAPI void setSelectedItem(class ItemStack const &);
     MCAPI void setupDefaultInventory();
     MCAPI void swapSlots(int, int);
+    MCAPI void tick();
 
 protected:
 

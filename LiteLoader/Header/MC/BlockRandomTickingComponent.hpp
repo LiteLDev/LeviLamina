@@ -21,6 +21,7 @@ public:
 #endif
 
 public:
+    MCAPI BlockRandomTickingComponent(struct BlockRandomTickingComponent &&);
     MCAPI ~BlockRandomTickingComponent();
 
 protected:

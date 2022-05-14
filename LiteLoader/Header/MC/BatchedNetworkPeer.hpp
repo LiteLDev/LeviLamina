@@ -38,6 +38,7 @@ public:
     }
     */
     MCAPI BatchedNetworkPeer(class std::shared_ptr<class NetworkPeer>, class Scheduler &);
+    MCAPI void setAsyncEnabled(bool);
 
 protected:
 

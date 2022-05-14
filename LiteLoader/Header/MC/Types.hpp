@@ -76,7 +76,10 @@ public:
         return {(bpos1.x + bpos2.x) / 2, (bpos1.y + bpos2.y) / 2, (bpos1.z + bpos2.z) / 2};
     }
 
+    // ignored with /clr
+#ifndef _M_CEE
     LIAPI AABB toAABB() const;
+#endif // !_M_CEE
 };
 
 template <typename A, typename T>
@@ -104,7 +107,11 @@ public:
 #include "ActorUniqueID.hpp"
 
 //static_assert(!std::is_pod_v<ActorUniqueID>);
-
+class NetherNet
+{
+public:
+    struct NetworkID;
+};
 
 class ActorRuntimeID
 {
@@ -233,12 +240,6 @@ struct OperationNodeDetails
 struct PositionTrackingDB
 {
     class TrackingRecord;
-};
-
-
-struct SubChunkBrightnessStorage
-{
-    struct LightPair;
 };
 
 struct BlockGeometry
@@ -434,13 +435,13 @@ class buffer_span_mut;
 template <typename T>
 class optional_ref
 {
-    T** value;
+    T* value;
 
 public:
     inline T* get() const
     {
-        if (value && *value)
-            return *value;
+        if (*this)
+            return value;
         return nullptr;
     }
     //inline T* set(T const& val)
@@ -449,11 +450,15 @@ public:
     //}
     inline T& operator*() const
     {
-        return **value;
+        return *value;
     }
     inline T* operator->() const
     {
-        return *value;
+        return value;
+    }
+    inline operator bool() const
+    {
+        return value != nullptr;
     }
 };
 
@@ -482,8 +487,13 @@ template <typename T1>
 class WildcardCommandSelector;
 
 //enum
-enum class ContainerType : char
+class CodeBuilder
 {
+public:
+    enum ProtocolVersion;
+};
+
+enum class ContainerType : char {
     INVENTORY              = -1,
     NONE                   = -9,
     CONTAINER              = 0,
@@ -767,16 +777,17 @@ enum class ItemStackRequestActionType: char
 
 enum class ActorDamageCause : int
 {
-    Override = 0x0,
-    Contact = 0x1,
-    EntityAttack = 0x2,
-    Projectile = 0x3,
-    Suffocation = 0x4,
-    Fall = 0x5,
-    Fire = 0x6,
-    FireTick = 0x7,
-    Lava = 0x8,
-    Drowning = 0x9,
+    None = -0x01,
+    Override = 0x00,
+    Contact = 0x01,
+    EntityAttack = 0x02,
+    Projectile = 0x03,
+    Suffocation = 0x04,
+    Fall = 0x05,
+    Fire = 0x06,
+    FireTick = 0x07,
+    Lava = 0x08,
+    Drowning = 0x09,
     BlockExplosion = 0x0A,
     EntityExplosion = 0x0B,
     Void = 0x0C,
@@ -794,8 +805,10 @@ enum class ActorDamageCause : int
     Lightning = 0x18,
     Charging = 0x19,
     Temperature = 0x1A,
+    Freezing = 0x1B,
+    Stalactite = 0x1C,
+    Stalagmite = 0x1D,
     All = 0x1F,
-    None = -0x01,
 };
 
 enum class ObjectiveSortOrder : char

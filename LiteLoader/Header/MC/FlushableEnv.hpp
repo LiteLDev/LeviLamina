@@ -31,6 +31,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI FlushableEnv(class leveldb::Env *);
 
 protected:
 

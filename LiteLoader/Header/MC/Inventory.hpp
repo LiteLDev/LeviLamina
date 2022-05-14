@@ -38,7 +38,9 @@ public:
     /*38*/ virtual int getEmptySlotsCount() const;
     /*39*/ virtual int getFirstEmptySlot() const;
     /*40*/ virtual void setContainerSize(int);
+    MCAPI Inventory(class Player *);
     MCAPI void dropSlot(int, bool, bool, bool);
+    MCAPI std::vector<class ItemStack> getComplexItems();
     MCAPI void setupDefault();
     MCAPI void tick(int);
 

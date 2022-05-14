@@ -31,7 +31,6 @@ public:
         return (this->*rv)(std::forward<std::string const &>(a0));
     }
     */
-    MCAPI void println(std::string const &);
 
 protected:
 

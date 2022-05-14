@@ -350,14 +350,14 @@ public:
         *((void**)&rv) = dlsym("?getCurrentStructureFeature@Player@@UEBA?AW4StructureFeatureType@@XZ");
         return (this->*rv)();
     }
-    inline bool isInTrialMode(){
-        bool (Player::*rv)();
-        *((void**)&rv) = dlsym("?isInTrialMode@Player@@UEAA_NXZ");
-        return (this->*rv)();
-    }
     inline bool useNewAi() const{
         bool (Player::*rv)() const;
         *((void**)&rv) = dlsym("?useNewAi@Player@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInTrialMode(){
+        bool (Player::*rv)();
+        *((void**)&rv) = dlsym("?isInTrialMode@Player@@UEAA_NXZ");
         return (this->*rv)();
     }
     inline bool isSimulated() const{
@@ -435,14 +435,14 @@ public:
         *((void**)&rv) = dlsym("?_serverInitItemStackIds@Player@@MEAAXXZ");
         return (this->*rv)();
     }
-    inline void openPortfolio(){
-        void (Player::*rv)();
-        *((void**)&rv) = dlsym("?openPortfolio@Player@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void resetRot(){
         void (Player::*rv)();
         *((void**)&rv) = dlsym("?resetRot@Player@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void openPortfolio(){
+        void (Player::*rv)();
+        *((void**)&rv) = dlsym("?openPortfolio@Player@@UEAAXXZ");
         return (this->*rv)();
     }
     inline void stopLoading(){

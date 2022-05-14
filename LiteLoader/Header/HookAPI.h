@@ -71,10 +71,12 @@ public:
         auto found = dlsym_real(sym);
         if (found == nullptr) {
             printf("FailedToHook: %p\n", sym);
-        }
-        auto ret = HookFunction(found, org, hook);
-        if (ret != 0) {
-            printf("FailedToHook: %s\n", sym);
+        } else {
+            auto ret = HookFunction(found, org, hook);
+            if (ret != 0)
+            {
+                printf("FailedToHook: %s\n", sym);
+            }
         }
     }
     template <typename T>
@@ -87,13 +89,13 @@ public:
         THookRegister(sym, hookUnion.b, org);
     }
     template <typename T>
-    THookRegister(void* sym, T hook, void** org) {
+    THookRegister(void* address, T hook, void** org) {
         union {
             T a;
             void* b;
         } hookUnion;
         hookUnion.a = hook;
-        THookRegister(sym, hookUnion.b, org);
+        THookRegister(address, hookUnion.b, org);
     }
 };
 #define VA_EXPAND(...) __VA_ARGS__

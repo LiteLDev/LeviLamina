@@ -25,15 +25,15 @@ public:
 public:
     /*0*/ virtual ~BlockEventListener();
     /*
-    inline enum EventResult onBlockInteractedWith(class Player & a0, class BlockPos const & a1){
-        enum EventResult (BlockEventListener::*rv)(class Player &, class BlockPos const &);
-        *((void**)&rv) = dlsym("?onBlockInteractedWith@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class BlockPos const &>(a1));
-    }
     inline enum EventResult onBlockDestructionStopped(class Player & a0, class BlockPos const & a1, int a2){
         enum EventResult (BlockEventListener::*rv)(class Player &, class BlockPos const &, int);
         *((void**)&rv) = dlsym("?onBlockDestructionStopped@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@H@Z");
         return (this->*rv)(std::forward<class Player &>(a0), std::forward<class BlockPos const &>(a1), std::forward<int>(a2));
+    }
+    inline enum EventResult onBlockInteractedWith(class Player & a0, class BlockPos const & a1){
+        enum EventResult (BlockEventListener::*rv)(class Player &, class BlockPos const &);
+        *((void**)&rv) = dlsym("?onBlockInteractedWith@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class BlockPos const &>(a1));
     }
     inline enum EventResult onBlockDestructionStarted(class Player & a0, class BlockPos const & a1){
         enum EventResult (BlockEventListener::*rv)(class Player &, class BlockPos const &);

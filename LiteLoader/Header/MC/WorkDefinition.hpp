@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "JsonUtil.hpp"
 
 #define BEFORE_EXTRA
 
@@ -30,6 +31,7 @@ public:
     */
     MCAPI WorkDefinition();
     MCAPI void initialize(class EntityContext &, class WorkGoal &);
+    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class WorkDefinition>> &);
 
 protected:
 

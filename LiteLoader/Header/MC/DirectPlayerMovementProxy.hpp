@@ -104,14 +104,14 @@ public:
         *((void**)&rv) = dlsym("?setEmotePlayedEndedEarly@DirectPlayerMovementProxy@@UEAAX_N@Z");
         return (this->*rv)(std::forward<bool>(a0));
     }
-    inline void fireEventPersonaEmotePlayed(){
-        void (DirectPlayerMovementProxy::*rv)();
-        *((void**)&rv) = dlsym("?fireEventPersonaEmotePlayed@DirectPlayerMovementProxy@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void sendClientAuthInput(){
         void (DirectPlayerMovementProxy::*rv)();
         *((void**)&rv) = dlsym("?sendClientAuthInput@DirectPlayerMovementProxy@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void fireEventPersonaEmotePlayed(){
+        void (DirectPlayerMovementProxy::*rv)();
+        *((void**)&rv) = dlsym("?fireEventPersonaEmotePlayed@DirectPlayerMovementProxy@@UEAAXXZ");
         return (this->*rv)();
     }
     inline struct IPlayerMovementProxy const * tryAsPlayer() const{

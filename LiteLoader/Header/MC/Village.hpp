@@ -34,7 +34,9 @@ public:
     MCAPI void addAggressor(class Mob const &);
     MCAPI bool addPOI(class std::weak_ptr<class POIInstance>);
     MCAPI void addVillager(struct ActorUniqueID const &);
+    MCAPI bool canRemove() const;
     MCAPI bool checkNeedMoreVillagers() const;
+    MCAPI void clearOwnedPOIs();
     MCAPI void debugDraw();
     MCAPI class std::weak_ptr<class POIInstance> fetchOwnedPOI(struct ActorUniqueID const &, enum POIType);
     MCAPI void fireSoundTheAlarm();
@@ -49,6 +51,7 @@ public:
     MCAPI class AABB const & getRaidBounds() const;
     MCAPI class Raid * getRaidMutable();
     MCAPI int getStanding(struct ActorUniqueID const &);
+    MCAPI class std::array<std::vector<class std::weak_ptr<class POIInstance>>, 3> const & getUnclaimedPOIs() const;
     MCAPI class mce::UUID getUniqueID() const;
     MCAPI bool hasInvalidRole(struct ActorUniqueID const &, enum DwellerRole const &);
     MCAPI bool hasRaid() const;
@@ -61,6 +64,7 @@ public:
     MCAPI void resetDwellerTimer(enum DwellerRole, struct ActorUniqueID const &);
     MCAPI void resetNoBreedTimer();
     MCAPI void rewardAllPlayers(int);
+    MCAPI void saveEntireVillage();
     MCAPI void setSavedDwellerPosition(enum DwellerRole, struct ActorUniqueID const &, class BlockPos);
     MCAPI void tick(struct Tick, class BlockSource &);
     MCAPI void triggerRaid();
@@ -68,12 +72,14 @@ public:
     MCAPI void unlinkMismatchedJobsites(class Actor const &);
     MCAPI bool villagerLivesHere(struct ActorUniqueID const &) const;
     MCAPI bool withinVillageBounds(class Vec3 const &, float) const;
+    MCAPI ~Village();
     MCAPI static bool DEBUG_DRAWING;
     MCAPI static float const DWELLER_REMOVAL_TOLERANCE;
     MCAPI static int const MAX_VILLAGE_STANDING;
     MCAPI static int const MIN_VILLAGE_STANDING;
     MCAPI static std::string const STORAGE_KEY_PREFIX;
     MCAPI static int const VILLAGE_START_XZ_BOUNDS;
+    MCAPI static bool isVillagePOI(class BlockSource const &, class BlockPos const &);
     MCAPI static bool isVillagePOI(class VillageManager const &, class Block const &);
 
 protected:

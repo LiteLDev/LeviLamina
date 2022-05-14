@@ -37,6 +37,9 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI DiggerItemComponent(class ComponentItem *);
+    MCAPI bool canDestroySpecial(class Block const &) const;
+    MCAPI float getDestroySpeed(class ItemStackBase const &, class Block const &);
     MCAPI bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *);
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();

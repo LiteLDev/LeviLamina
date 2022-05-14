@@ -37,6 +37,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI EntityPlacerItemComponent(class ComponentItem *);
     MCAPI bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();

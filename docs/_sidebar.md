@@ -1,5 +1,1 @@
 - [Home](/)
-- [Installation and Usage](Usage/)
-- [Common problems](QA/)
-- [Development of script plugin](Development/)
-- [Maintenance document](Maintenance/)

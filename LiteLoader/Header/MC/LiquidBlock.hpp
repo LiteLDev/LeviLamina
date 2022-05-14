@@ -158,6 +158,7 @@ public:
 
 protected:
     MCAPI void emitFizzParticle(class BlockSource &, class BlockPos const &) const;
+    MCAPI int getDepth(class BlockSource &, class BlockPos const &) const;
     MCAPI int getRenderedDepth(class BlockSource &, class BlockPos const &) const;
     MCAPI void solidify(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     MCAPI void trySpreadFire(class BlockSource &, class BlockPos const &, class Random &) const;

@@ -20,7 +20,6 @@ class ItemStackRequestActionSwap : public ItemStackRequestActionTransferBase {
 public:
     class ItemStackRequestActionSwap& operator=(class ItemStackRequestActionSwap const &) = delete;
     ItemStackRequestActionSwap(class ItemStackRequestActionSwap const &) = delete;
-    ItemStackRequestActionSwap() = delete;
 #endif
 
 public:
@@ -28,6 +27,7 @@ public:
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
+    MCAPI ItemStackRequestActionSwap();
 
 protected:
 

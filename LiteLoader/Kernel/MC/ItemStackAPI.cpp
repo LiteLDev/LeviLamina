@@ -32,6 +32,15 @@ ItemStack *ItemStack::create(std::unique_ptr<CompoundTag> tag) {
     return item;
 }
 
+#include <MC/ItemRegistry.hpp>
+ItemStack* ItemStack::create(short itemId, int aux,int count)
+{
+    auto item = ItemRegistry::getItem(itemId);
+    if (item)
+        return new ItemStack(*item, count, aux);
+    return nullptr;
+}
+
 ItemStack *ItemStack::create(std::string type, int count) {
     auto nbt = CompoundTag::create();
     nbt->putByte("WasPickedUp", 0);

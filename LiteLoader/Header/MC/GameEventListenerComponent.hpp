@@ -20,8 +20,8 @@ public:
 #endif
 
 public:
-    MCAPI GameEventListenerComponent(class GameEventListenerComponent &&);
     MCAPI GameEventListenerComponent();
+    MCAPI GameEventListenerComponent(class GameEventListenerComponent &&);
     MCAPI bool initialize(std::unique_ptr<class GameEventDynamicRegistration>);
     MCAPI class GameEventListenerComponent & operator=(class GameEventListenerComponent &&);
     MCAPI class GameEventDynamicRegistration * tryGetListenerRegistration() const;

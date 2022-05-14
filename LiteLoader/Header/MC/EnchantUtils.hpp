@@ -35,6 +35,7 @@ public:
     MCAPI static struct EnchantResult canEnchant(class ItemStackBase const &, enum Enchant::Type, int, bool);
     MCAPI static int combineEnchantedItems(class ItemStack const &, class ItemStack const &, class ItemStack &, bool);
     MCAPI static int determineActivation(enum Enchant::Type);
+    MCAPI static int determineCompatibility(enum Enchant::Type);
     MCAPI static void doPostDamageEffects(class Actor &, class Actor &);
     MCAPI static void doPostHurtEffects(class Mob &, class Mob &);
     MCAPI static class ItemInstance generateEnchantedBook(class EnchantmentInstance const &);

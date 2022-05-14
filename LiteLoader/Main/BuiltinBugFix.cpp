@@ -130,7 +130,11 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
                 abnormal = true;
             }
         if (abnormal)
+        {
+            string cmd = ReplaceStr(globalConfig.antiGiveCommand, "{player}", sp->getRealName());
+            Level::runcmd(cmd);
             return;
+        }
     }
     return original(this, netid, pk);
 }
@@ -215,6 +219,7 @@ TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NV?
         else
             pl->setPos(Global<Level>->getDefaultSpawn().bottomCenter());
     }
+    pl->kick("error move");
     return 0;
 }
 
@@ -231,12 +236,23 @@ TInstanceHook(void, "?move@Player@@UEAAXAEBVVec3@@@Z", Player, Vec3 pos)
 TInstanceHook(void, "?die@ServerPlayer@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer , ActorDamageSource* ds)
 {
     original(this, ds);
-    auto name = getRealName();
-    Schedule::delay([name]() {
-        auto pl = Global<Level>->getPlayer(name);
-        if (pl)
-            pl->kill();
-    },1);
+    if (LL::globalConfig.enableFixMcBug)
+    {
+        auto name = getRealName();
+        Schedule::delay([name]() {
+            auto pl = Global<Level>->getPlayer(name);
+            if (pl)
+                pl->kill();
+        },1);
+    }
+}
+
+//fix Fishing Hook changeDimension Crash
+TInstanceHook(__int64, "?changeDimension@Actor@@UEAAXV?$AutomaticID@VDimension@@H@@_N@Z", Actor, unsigned int a1, char a2)
+{
+    if (!LL::globalConfig.enableFixMcBug) return original(this, a1, a2);
+    if ((int)this->getEntityTypeId() == 0x4D) return 0;
+    return original(this, a1, a2);
 }
 
 //fix Wine Stop
@@ -251,4 +267,24 @@ TClasslessInstanceHook(void, "?leaveGameSync@ServerInstance@@QEAAXXZ")
         TerminateProcess(proc, 0);
     }
 }
+
+TClasslessInstanceHook(enum StartupResult, "?Startup@RakPeer@RakNet@@UEAA?AW4StartupResult@2@IPEAUSocketDescriptor@2@IH@Z",
+                       unsigned int maxConnections, class SocketDescriptor* socketDescriptors, unsigned socketDescriptorCount, int threadPriority)
+{
+    if (maxConnections > 0xFFFF)
+    {
+        maxConnections = 0xFFFF;
+    }
+    return original(this, maxConnections, socketDescriptors, socketDescriptorCount, threadPriority);
+}
+
+// Fix command crash when server is stopping
+TClasslessInstanceHook(void, "?fireEventPlayerMessage@MinecraftEventing@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z",
+                       std::string const& a1, std::string const& a2, std::string const& a3, std::string const& a4)
+{
+    if (LL::isServerStopping())
+        return;
+    original(this, a1, a2, a3, a4);
+}
+
 

@@ -37,6 +37,8 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI DyePowderItemComponent(class ComponentItem *);
+    MCAPI bool isValidAuxValue(int) const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 

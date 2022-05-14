@@ -72,15 +72,15 @@ public:
         *((void**)&rv) = dlsym("?stop@NullSoundPlayer@@UEAAX_K@Z");
         return (this->*rv)(std::forward<unsigned __int64>(a0));
     }
-    inline void setMusicVolumeMultiplier(float a0){
-        void (NullSoundPlayer::*rv)(float);
-        *((void**)&rv) = dlsym("?setMusicVolumeMultiplier@NullSoundPlayer@@UEAAXM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
     inline void stopMusic(){
         void (NullSoundPlayer::*rv)();
         *((void**)&rv) = dlsym("?stopMusic@NullSoundPlayer@@UEAAXXZ");
         return (this->*rv)();
+    }
+    inline void setMusicVolumeMultiplier(float a0){
+        void (NullSoundPlayer::*rv)(float);
+        *((void**)&rv) = dlsym("?setMusicVolumeMultiplier@NullSoundPlayer@@UEAAXM@Z");
+        return (this->*rv)(std::forward<float>(a0));
     }
     inline void fadeToStopMusic(float a0){
         void (NullSoundPlayer::*rv)(float);
@@ -127,6 +127,16 @@ public:
         *((void**)&rv) = dlsym("?getCurrentlyPlayingMusicName@NullSoundPlayer@@UEAA?BV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
         return (this->*rv)();
     }
+    inline class std::optional<struct LoopingSoundAttributes> tryGetLoopingSoundAttributes(unsigned __int64 a0) const{
+        class std::optional<struct LoopingSoundAttributes> (NullSoundPlayer::*rv)(unsigned __int64) const;
+        *((void**)&rv) = dlsym("?tryGetLoopingSoundAttributes@NullSoundPlayer@@UEBA?AV?$optional@ULoopingSoundAttributes@@@std@@_K@Z");
+        return (this->*rv)(std::forward<unsigned __int64>(a0));
+    }
+    inline class std::optional<struct PlayingSoundAttributes> tryGetPlayingSoundAttributes(unsigned __int64 a0) const{
+        class std::optional<struct PlayingSoundAttributes> (NullSoundPlayer::*rv)(unsigned __int64) const;
+        *((void**)&rv) = dlsym("?tryGetPlayingSoundAttributes@NullSoundPlayer@@UEBA?AV?$optional@UPlayingSoundAttributes@@@std@@_K@Z");
+        return (this->*rv)(std::forward<unsigned __int64>(a0));
+    }
     inline unsigned __int64 play(std::string const & a0, class Vec3 const & a1, float a2, float a3){
         unsigned __int64 (NullSoundPlayer::*rv)(std::string const &, class Vec3 const &, float, float);
         *((void**)&rv) = dlsym("?play@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z");
@@ -141,16 +151,6 @@ public:
         unsigned __int64 (NullSoundPlayer::*rv)(std::string const &, class std::function<void (struct SoundInstanceProperties &)> &&);
         *((void**)&rv) = dlsym("?playAttached@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$function@$$A6AXAEAUSoundInstanceProperties@@@Z@3@@Z");
         return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class std::function<void (struct SoundInstanceProperties &)> &&>(a1));
-    }
-    inline class std::optional<struct LoopingSoundAttributes> tryGetLoopingSoundAttributes(unsigned __int64 a0) const{
-        class std::optional<struct LoopingSoundAttributes> (NullSoundPlayer::*rv)(unsigned __int64) const;
-        *((void**)&rv) = dlsym("?tryGetLoopingSoundAttributes@NullSoundPlayer@@UEBA?AV?$optional@ULoopingSoundAttributes@@@std@@_K@Z");
-        return (this->*rv)(std::forward<unsigned __int64>(a0));
-    }
-    inline class std::optional<struct PlayingSoundAttributes> tryGetPlayingSoundAttributes(unsigned __int64 a0) const{
-        class std::optional<struct PlayingSoundAttributes> (NullSoundPlayer::*rv)(unsigned __int64) const;
-        *((void**)&rv) = dlsym("?tryGetPlayingSoundAttributes@NullSoundPlayer@@UEBA?AV?$optional@UPlayingSoundAttributes@@@std@@_K@Z");
-        return (this->*rv)(std::forward<unsigned __int64>(a0));
     }
     */
 

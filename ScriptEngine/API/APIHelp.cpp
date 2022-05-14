@@ -370,7 +370,7 @@ void ValueToJson_Arr_Helper(fifo_json &res, const Local<Array> &v)
             res.push_back(v.get(i).asString().toString());
             break;
         case ValueKind::kNumber:
-            if (CheckIsFloat(v))
+            if (CheckIsFloat(v.get(i)))
                 res.push_back(v.get(i).asNumber().toDouble());
             else
                 res.push_back(v.get(i).asNumber().toInt64());
@@ -425,7 +425,7 @@ void ValueToJson_Obj_Helper(fifo_json& res, const Local<Object>& v)
             res.push_back({ key,v.get(key).asString().toString() });
             break;
         case ValueKind::kNumber:
-            if (CheckIsFloat(v))
+            if (CheckIsFloat(v.get(key)))
                 res.push_back({ key,v.get(key).asNumber().toDouble() });
             else
                 res.push_back({ key,v.get(key).asNumber().toInt64() });
@@ -479,9 +479,13 @@ std::string ValueToJson(Local<Value> v,int formatIndent)
         break;
     case ValueKind::kNumber:
         if (CheckIsFloat(v))
+        {
             result = std::to_string(v.asNumber().toDouble());
+        }
         else
+        {
             result = std::to_string(v.asNumber().toInt64());
+        }
         break;
     case ValueKind::kBoolean:
         result = std::to_string(v.asBoolean().value());

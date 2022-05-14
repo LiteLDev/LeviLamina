@@ -29,6 +29,7 @@ public:
     MCAPI enum JigsawJointType const & getJointType() const;
     MCAPI std::string const & getName() const;
     MCAPI std::string const & getTarget() const;
+    MCAPI std::string const & getTargetPool() const;
     MCAPI void load(class CompoundTag const &, class DataLoadHelper &);
     MCAPI void save(class CompoundTag &) const;
     MCAPI void setFinalBlock(std::string const &);

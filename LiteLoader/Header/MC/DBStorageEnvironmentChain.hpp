@@ -26,7 +26,12 @@ public:
 
 public:
     MCAPI DBStorageEnvironmentChain(struct DBStorageConfig const &, class Core::Path const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>);
+    MCAPI class CompactionListenerEnv * getCompactionListenerEnv() const;
+    MCAPI class FlushableEnv * getFlushableEnv() const;
+    MCAPI class leveldb::Env * getRootEnv() const;
+    MCAPI class SnapshotEnv * getSnapshotEnv() const;
     MCAPI class Core::Result isChainValid(bool) const;
+    MCAPI void onFlush();
     MCAPI ~DBStorageEnvironmentChain();
     MCAPI static bool isContentKeyValid(class leveldb::Env *, class Core::Path const &, class ContentIdentity const &, std::string const &, class std::shared_ptr<class Core::FileStorageArea>);
 

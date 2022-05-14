@@ -24,11 +24,21 @@ public:
 public:
     MCAPI PackReport(class PackReport const &);
     MCAPI PackReport();
+    MCAPI std::vector<class std::shared_ptr<class PackError>> const & getErrors() const;
+    MCAPI struct PackIdVersion const & getIdentity() const;
+    MCAPI class ResourceLocation const & getLocation() const;
     MCAPI std::string const & getOriginalName() const;
     MCAPI std::string const & getOriginalVersion() const;
-    MCAPI class PackReport & operator=(class PackReport &&);
+    MCAPI enum PackType getPackType() const;
+    MCAPI bool hasErrors(enum PackErrorType);
+    MCAPI bool hasErrors() const;
     MCAPI void serialize(class Json::Value &);
+    MCAPI void setAttemptedUpgrade();
+    MCAPI void setIdentity(struct PackIdVersion const &);
     MCAPI void setLocation(class ResourceLocation const &);
+    MCAPI void setOriginalIdentity(std::string const &, std::string const &);
+    MCAPI void setPackType(enum PackType);
+    MCAPI void setUpgradeSuccess();
     MCAPI bool wasUpgraded() const;
     MCAPI ~PackReport();
 

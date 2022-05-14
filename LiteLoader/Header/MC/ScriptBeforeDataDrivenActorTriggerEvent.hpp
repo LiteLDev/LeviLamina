@@ -21,6 +21,7 @@ public:
 #endif
 
 public:
+    MCAPI ScriptBeforeDataDrivenActorTriggerEvent(class Actor &, std::string const &, std::vector<struct DefinitionModifier> &, class Scripting::WeakLifetimeScope const &);
     MCAPI ~ScriptBeforeDataDrivenActorTriggerEvent();
 
 protected:

@@ -136,16 +136,6 @@ public:
     /*205*/ virtual class ItemInstance const getBaseCrop() const;
     /*207*/ virtual int getCropNum(class Randomize &, int, int) const;
     /*
-    inline enum BlockRenderLayer getRenderLayer(class Block const & a0, class BlockSource & a1, class BlockPos const & a2) const{
-        enum BlockRenderLayer (CarrotBlock::*rv)(class Block const &, class BlockSource &, class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?getRenderLayer@CarrotBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class Block const &>(a0), std::forward<class BlockSource &>(a1), std::forward<class BlockPos const &>(a2));
-    }
-    inline enum BlockRenderLayer getRenderLayer() const{
-        enum BlockRenderLayer (CarrotBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?getRenderLayer@CarrotBlock@@UEBA?AW4BlockRenderLayer@@XZ");
-        return (this->*rv)();
-    }
     inline class ItemInstance const getBaseCrop() const{
         class ItemInstance const (CarrotBlock::*rv)() const;
         *((void**)&rv) = dlsym("?getBaseCrop@CarrotBlock@@UEBA?BVItemInstance@@XZ");
@@ -154,6 +144,16 @@ public:
     inline class ItemInstance const getBaseSeed() const{
         class ItemInstance const (CarrotBlock::*rv)() const;
         *((void**)&rv) = dlsym("?getBaseSeed@CarrotBlock@@UEBA?BVItemInstance@@XZ");
+        return (this->*rv)();
+    }
+    inline enum BlockRenderLayer getRenderLayer(class Block const & a0, class BlockSource & a1, class BlockPos const & a2) const{
+        enum BlockRenderLayer (CarrotBlock::*rv)(class Block const &, class BlockSource &, class BlockPos const &) const;
+        *((void**)&rv) = dlsym("?getRenderLayer@CarrotBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class Block const &>(a0), std::forward<class BlockSource &>(a1), std::forward<class BlockPos const &>(a2));
+    }
+    inline enum BlockRenderLayer getRenderLayer() const{
+        enum BlockRenderLayer (CarrotBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?getRenderLayer@CarrotBlock@@UEBA?AW4BlockRenderLayer@@XZ");
         return (this->*rv)();
     }
     */

@@ -150,5 +150,6 @@ public:
 protected:
 
 private:
+    MCAPI bool _canGrowInDirection(class Block const &, unsigned char) const;
 
 };

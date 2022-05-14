@@ -30,6 +30,16 @@ public:
 
 public:
     /*
+    inline std::unique_ptr<class Aquifer> tryMakeAquifer(class ChunkPos const & a0, class SurfaceLevelCache const & a1, short a2, short a3, short a4) const{
+        std::unique_ptr<class Aquifer> (OverworldGenerator::*rv)(class ChunkPos const &, class SurfaceLevelCache const &, short, short, short) const;
+        *((void**)&rv) = dlsym("?tryMakeAquifer@OverworldGenerator@@MEBA?AV?$unique_ptr@VAquifer@@U?$default_delete@VAquifer@@@std@@@std@@AEBVChunkPos@@AEBVSurfaceLevelCache@@FFF@Z");
+        return (this->*rv)(std::forward<class ChunkPos const &>(a0), std::forward<class SurfaceLevelCache const &>(a1), std::forward<short>(a2), std::forward<short>(a3), std::forward<short>(a4));
+    }
+    inline void decorateWorldGenLoadChunk(class Biome & a0, class LevelChunk & a1, class BlockVolumeTarget & a2, class Random & a3, class ChunkPos const & a4) const{
+        void (OverworldGenerator::*rv)(class Biome &, class LevelChunk &, class BlockVolumeTarget &, class Random &, class ChunkPos const &) const;
+        *((void**)&rv) = dlsym("?decorateWorldGenLoadChunk@OverworldGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z");
+        return (this->*rv)(std::forward<class Biome &>(a0), std::forward<class LevelChunk &>(a1), std::forward<class BlockVolumeTarget &>(a2), std::forward<class Random &>(a3), std::forward<class ChunkPos const &>(a4));
+    }
     inline  ~OverworldGenerator(){
          (OverworldGenerator::*rv)();
         *((void**)&rv) = dlsym("??1OverworldGenerator@@UEAA@XZ");
@@ -44,16 +54,6 @@ public:
         class WorldGenCache (OverworldGenerator::*rv)(class ChunkPos) const;
         *((void**)&rv) = dlsym("?createWorldGenCache@OverworldGenerator@@MEBA?AVWorldGenCache@@VChunkPos@@@Z");
         return (this->*rv)(std::forward<class ChunkPos>(a0));
-    }
-    inline void decorateWorldGenLoadChunk(class Biome & a0, class LevelChunk & a1, class BlockVolumeTarget & a2, class Random & a3, class ChunkPos const & a4) const{
-        void (OverworldGenerator::*rv)(class Biome &, class LevelChunk &, class BlockVolumeTarget &, class Random &, class ChunkPos const &) const;
-        *((void**)&rv) = dlsym("?decorateWorldGenLoadChunk@OverworldGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z");
-        return (this->*rv)(std::forward<class Biome &>(a0), std::forward<class LevelChunk &>(a1), std::forward<class BlockVolumeTarget &>(a2), std::forward<class Random &>(a3), std::forward<class ChunkPos const &>(a4));
-    }
-    inline std::unique_ptr<class Aquifer> tryMakeAquifer(class ChunkPos const & a0, class SurfaceLevelCache const & a1, short a2, short a3, short a4) const{
-        std::unique_ptr<class Aquifer> (OverworldGenerator::*rv)(class ChunkPos const &, class SurfaceLevelCache const &, short, short, short) const;
-        *((void**)&rv) = dlsym("?tryMakeAquifer@OverworldGenerator@@MEBA?AV?$unique_ptr@VAquifer@@U?$default_delete@VAquifer@@@std@@@std@@AEBVChunkPos@@AEBVSurfaceLevelCache@@FFF@Z");
-        return (this->*rv)(std::forward<class ChunkPos const &>(a0), std::forward<class SurfaceLevelCache const &>(a1), std::forward<short>(a2), std::forward<short>(a3), std::forward<short>(a4));
     }
     inline class BiomeArea getBiomeArea(class BoundingBox const & a0, unsigned int a1) const{
         class BiomeArea (OverworldGenerator::*rv)(class BoundingBox const &, unsigned int) const;

@@ -36,6 +36,7 @@ public:
         return (this->*rv)(std::forward<class gametest::BaseGameTestInstance &>(a0));
     }
     */
+    MCAPI TestSummaryDisplayer(class Level &, class gametest::MultipleTestTracker &);
 
 protected:
 

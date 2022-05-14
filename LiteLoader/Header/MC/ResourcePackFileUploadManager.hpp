@@ -35,6 +35,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI ResourcePackFileUploadManager(class TaskGroup &, class std::shared_ptr<class IFileChunkUploader>);
     MCAPI void uploadResourcePack(std::string const &, class ResourceLocation const &, bool, bool, enum PackType);
 
 protected:

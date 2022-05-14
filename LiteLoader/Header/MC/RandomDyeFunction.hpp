@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
 #include "LootItemFunction.hpp"
 
 #define BEFORE_EXTRA
@@ -27,6 +28,7 @@ public:
     /*0*/ virtual ~RandomDyeFunction();
     /*1*/ virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /*3*/ virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
+    MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 protected:
 

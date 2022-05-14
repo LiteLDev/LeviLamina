@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    MCAPI GameTestClearTask(class Dimension &, class BoundingBox const &);
     MCAPI bool isDone() const;
     MCAPI void tick();
 

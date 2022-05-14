@@ -27,13 +27,15 @@ public:
 #endif
 
 public:
+    MCAPI NetworkIdentifier(struct NetherNet::NetworkID const &);
     MCAPI NetworkIdentifier(struct RakNet::RakNetGUID const &);
     MCAPI NetworkIdentifier(struct sockaddr_in6 const &);
     MCAPI NetworkIdentifier(struct sockaddr_in const &);
+    MCAPI NetworkIdentifier(unsigned __int64);
     MCAPI std::string getAddress() const;
     MCAPI unsigned __int64 getHash() const;
+    MCAPI std::string getNetherNetIDAsString() const;
     MCAPI bool isUnassigned() const;
-    MCAPI bool operator==(class NetworkIdentifier const &) const;
     MCAPI std::string toString() const;
 
 protected:

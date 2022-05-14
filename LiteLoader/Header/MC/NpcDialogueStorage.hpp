@@ -24,6 +24,7 @@ public:
 
 public:
     MCAPI struct NpcDialogueScene const * getScene(std::string const &) const;
+    MCAPI struct NpcDialogueScene * getScene(std::string const &);
     MCAPI void init(class ResourcePackManager &);
     MCAPI bool parseFile(std::string const &, std::string const &, enum CurrentCmdVersion);
 

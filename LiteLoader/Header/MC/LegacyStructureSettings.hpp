@@ -18,18 +18,22 @@ class LegacyStructureSettings {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYSTRUCTURESETTINGS
 public:
     class LegacyStructureSettings& operator=(class LegacyStructureSettings const &) = delete;
+    LegacyStructureSettings(class LegacyStructureSettings const &) = delete;
 #endif
 
 public:
-    MCAPI LegacyStructureSettings(class LegacyStructureSettings const &);
     MCAPI LegacyStructureSettings(enum Mirror, enum Rotation, class Block const *, class BoundingBox const &);
     MCAPI LegacyStructureSettings();
     MCAPI void addSwapAuxValue(int, int);
     MCAPI class BoundingBox const & getBoundingBox();
+    MCAPI class Block const * getIgnoreBlock() const;
     MCAPI enum Mirror const & getMirror() const;
     MCAPI class BlockPos const & getRefPos() const;
     MCAPI enum Rotation const & getRotation() const;
     MCAPI class Block const & getSwappedBlock(class BlockPalette const &, class Block const &) const;
+    MCAPI bool isIgnoreJigsawBlocks() const;
+    MCAPI bool isIgnoreStructureBlocks() const;
+    MCAPI bool isPlacingWaterBelowSeaLevel() const;
     MCAPI void placeWaterBelowSeaLevel(bool);
     MCAPI void setBlockRules(std::vector<std::unique_ptr<class StructurePoolBlockRule>> const *);
     MCAPI void setBlockTagRules(std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const *);

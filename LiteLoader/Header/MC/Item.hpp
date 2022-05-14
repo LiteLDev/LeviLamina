@@ -190,14 +190,14 @@ public:
         *((void**)&rv) = dlsym("?uniqueAuxValues@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isComplex() const{
-        bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?isComplex@Item@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool showsDurabilityInCreative() const{
         bool (Item::*rv)() const;
         *((void**)&rv) = dlsym("?showsDurabilityInCreative@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isComplex() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isComplex@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isMusicDisk() const{
@@ -230,6 +230,16 @@ public:
         *((void**)&rv) = dlsym("?playSoundIncrementally@Item@@UEBAXAEBVItemInstance@@AEAVMob@@@Z");
         return (this->*rv)(std::forward<class ItemInstance const &>(a0), std::forward<class Mob &>(a1));
     }
+    inline int getMaxUseDuration(class ItemInstance const * a0) const{
+        int (Item::*rv)(class ItemInstance const *) const;
+        *((void**)&rv) = dlsym("?getMaxUseDuration@Item@@UEBAHPEBVItemInstance@@@Z");
+        return (this->*rv)(std::forward<class ItemInstance const *>(a0));
+    }
+    inline  ~Item(){
+         (Item::*rv)();
+        *((void**)&rv) = dlsym("??1Item@@UEAA@XZ");
+        return (this->*rv)();
+    }
     inline class mce::Color getBaseColor(class ItemStack const & a0) const{
         class mce::Color (Item::*rv)(class ItemStack const &) const;
         *((void**)&rv) = dlsym("?getBaseColor@Item@@UEBA?AVColor@mce@@AEBVItemStack@@@Z");
@@ -239,16 +249,6 @@ public:
         class mce::Color (Item::*rv)(class ItemStack const &) const;
         *((void**)&rv) = dlsym("?getSecondaryColor@Item@@UEBA?AVColor@mce@@AEBVItemStack@@@Z");
         return (this->*rv)(std::forward<class ItemStack const &>(a0));
-    }
-    inline  ~Item(){
-         (Item::*rv)();
-        *((void**)&rv) = dlsym("??1Item@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline int getMaxUseDuration(class ItemInstance const * a0) const{
-        int (Item::*rv)(class ItemInstance const *) const;
-        *((void**)&rv) = dlsym("?getMaxUseDuration@Item@@UEBAHPEBVItemInstance@@@Z");
-        return (this->*rv)(std::forward<class ItemInstance const *>(a0));
     }
     */
     MCAPI Item(std::string const &, short);

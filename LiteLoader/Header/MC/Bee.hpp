@@ -87,7 +87,7 @@ public:
     /*321*/ virtual void sendArmorDamage(class std::bitset<4> const &);
     /*338*/ virtual void onBorn(class Actor &, class Actor &);
     /*345*/ virtual void __unk_vfn_345();
-    /*355*/ virtual void _serverAiMobStep();
+    /*355*/ virtual void __unk_vfn_355();
     /*359*/ virtual void __unk_vfn_359();
     MCAPI Bee(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

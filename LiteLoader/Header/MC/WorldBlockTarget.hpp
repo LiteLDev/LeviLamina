@@ -75,6 +75,11 @@ public:
         *((void**)&rv) = dlsym("?getBlockNoBoundsCheck@WorldBlockTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class BlockPos const &>(a0));
     }
+    inline class Block const & getBlock(class BlockPos const & a0) const{
+        class Block const & (WorldBlockTarget::*rv)(class BlockPos const &) const;
+        *((void**)&rv) = dlsym("?getBlock@WorldBlockTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0));
+    }
     inline class Block const & getExtraBlock(class BlockPos const & a0) const{
         class Block const & (WorldBlockTarget::*rv)(class BlockPos const &) const;
         *((void**)&rv) = dlsym("?getExtraBlock@WorldBlockTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z");
@@ -84,11 +89,6 @@ public:
         short (WorldBlockTarget::*rv)() const;
         *((void**)&rv) = dlsym("?getMinHeight@WorldBlockTarget@@UEBAFXZ");
         return (this->*rv)();
-    }
-    inline class Block const & getBlock(class BlockPos const & a0) const{
-        class Block const & (WorldBlockTarget::*rv)(class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?getBlock@WorldBlockTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const &>(a0));
     }
     */
     MCAPI WorldBlockTarget(class BlockSource &, struct WorldGenContext const &);

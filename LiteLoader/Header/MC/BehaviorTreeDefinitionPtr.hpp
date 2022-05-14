@@ -15,21 +15,17 @@ class BehaviorTreeDefinitionPtr {
 
 #undef AFTER_EXTRA
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEHAVIORTREEDEFINITIONPTR
-public:
-    class BehaviorTreeDefinitionPtr& operator=(class BehaviorTreeDefinitionPtr const &) = delete;
-    BehaviorTreeDefinitionPtr(class BehaviorTreeDefinitionPtr const &) = delete;
-#endif
-
 public:
     MCAPI BehaviorTreeDefinitionPtr();
     MCAPI BehaviorTreeDefinitionPtr(class BehaviorTreeDefinitionPtr &&);
+    MCAPI BehaviorTreeDefinitionPtr(class BehaviorTreeGroup &, class BehaviorTreeDefinition &);
+    MCAPI BehaviorTreeDefinitionPtr(class BehaviorTreeDefinitionPtr const &);
     MCAPI class BehaviorTreeDefinitionPtr & operator=(class BehaviorTreeDefinitionPtr &&);
+    MCAPI class BehaviorTreeDefinitionPtr & operator=(class BehaviorTreeDefinitionPtr const &);
     MCAPI ~BehaviorTreeDefinitionPtr();
     MCAPI static class BehaviorTreeDefinitionPtr const NONE;
 
 protected:
-    MCAPI void _deref();
 
 private:
 

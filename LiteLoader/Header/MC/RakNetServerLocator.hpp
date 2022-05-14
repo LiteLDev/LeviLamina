@@ -73,6 +73,8 @@ private:
     MCAPI bool _handleUnconnectedPong(std::string const &, struct RakNet::Packet const *, bool, unsigned __int64);
     MCAPI void _initializeBroadcastAddresses();
     MCAPI bool _onPongReceive(float &, struct RakNet::RakNetGUID const &, unsigned int const &, int);
+    MCAPI bool _pingServerV4(std::string const &, int);
+    MCAPI bool _pingServerV6(std::string const &, int);
     MCAPI void _punchHoles();
     MCAPI void _startAnnouncingServer(struct RakNetServerLocator::AnnounceServerData const &);
     MCAPI void _startServerDiscovery(struct PortPair const &);

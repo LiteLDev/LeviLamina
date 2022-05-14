@@ -21,7 +21,6 @@ enum PreValidationStatus;
 public:
     class ItemStackRequestActionMineBlock& operator=(class ItemStackRequestActionMineBlock const &) = delete;
     ItemStackRequestActionMineBlock(class ItemStackRequestActionMineBlock const &) = delete;
-    ItemStackRequestActionMineBlock() = delete;
 #endif
 
 public:
@@ -31,6 +30,7 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void _write(class BinaryStream &) const;
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
+    MCAPI ItemStackRequestActionMineBlock();
     MCAPI enum ItemStackRequestActionMineBlock::PreValidationStatus getPreValidationStatus() const;
     MCAPI int getPredictedDurability() const;
     MCAPI struct ItemStackRequestSlotInfo getSrc() const;

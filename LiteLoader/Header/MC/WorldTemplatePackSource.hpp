@@ -29,6 +29,8 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory &, class IContentKeyProvider const &);
+    MCAPI WorldTemplatePackSource(class WorldTemplateManager const &, class mce::UUID const &, enum PackType, enum PackOrigin);
+    MCAPI class mce::UUID const & getWorldTemplateId() const;
 
 protected:
 

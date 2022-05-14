@@ -58,7 +58,7 @@ Certificate* Player::getCertificate()
 std::string Player::getRealName() 
 {
     if (isSimulatedPlayer())
-        return dAccess<std::string>(this, 2240);
+        return dAccess<std::string>(this, 2232);
     return ExtendedCertificate::getIdentityName(*getCertificate());
 }
 
@@ -71,16 +71,25 @@ int Player::getAvgPing()
 
 int Player::getLastPing() 
 {
+    if (isSimulatedPlayer())
+        return -1;
     return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().ping;
 }
 
 string Player::getIP()
 {
+    if (isSimulatedPlayer())
+        return "127.0.0.1";
     return getNetworkIdentifier()->getIP();
 }
 
-string Player::getLanguageCode() 
+#include <MC/Localization.hpp>
+string Player::getLanguageCode()
 {
+    if (isSimulatedPlayer())
+    {
+        return I18n::getCurrentLanguage()->getFullLanguageCode();
+    }
     auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).rawToken.get()->dataInfo.value_.map_;
     for (auto & iter : *map) 
     {
@@ -181,16 +190,18 @@ int Player::clearItem(string typeName)
     ItemStack* item = getHandSlot();
     if (item->getTypeName() == typeName) 
     {
+        auto out = item->getCount();
         item->setNull();
-        ++res;
+        res += out;
     }
 
     //OffHand
     item = (ItemStack*)&getOffhandSlot();
     if (item->getTypeName() == typeName) 
     {
+        auto out = item->getCount();
         item->setNull();
-        ++res;
+        res += out;
     }
 
     //Inventory

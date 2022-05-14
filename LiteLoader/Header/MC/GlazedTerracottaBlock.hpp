@@ -2,14 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "BlockLegacy.hpp"
+#include "FaceDirectionalBlock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class GlazedTerracottaBlock : public BlockLegacy {
+class GlazedTerracottaBlock : public FaceDirectionalBlock {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -113,9 +113,6 @@ public:
     /*138*/ virtual int getColorAtPos(class BlockSource &, class BlockPos const &) const;
     /*140*/ virtual bool isSeasonTinted(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*148*/ virtual void __unk_vfn_148();
-    /*149*/ virtual class Block const & getRenderBlock() const;
-    /*150*/ virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
-    /*151*/ virtual enum Flip getFaceFlip(unsigned char, class Block const &) const;
     /*152*/ virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*165*/ virtual void __unk_vfn_165();
     /*169*/ virtual class Block const * tryLegacyUpgrade(unsigned short) const;

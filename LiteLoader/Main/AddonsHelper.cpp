@@ -71,8 +71,7 @@ std::optional<Addon> parseAddonFromPath(std::filesystem::path addonPath)
         }
         auto manifestFile = ReadAllFile(manifestPath.u8string());
         if (!manifestFile || manifestFile->empty())
-            throw "manifest.json not found!";
-
+            throw std::exception("manifest.json not found!");
         std::string content = FixMojangJson(*manifestFile);
         
         auto manifest = nlohmann::json::parse(content, nullptr, true, true);
@@ -93,7 +92,7 @@ std::optional<Addon> parseAddonFromPath(std::filesystem::path addonPath)
         else if (type == "data")
             addon.type = Addon::Type::BehaviorPack;
         else
-            throw "Unknown type of addon pack!";
+            throw std::exception("Unknown type of addon pack!");
 
         return addon;
     }
@@ -195,7 +194,7 @@ bool AddAddonToList(Addon& addon)
         }
         bool res = WriteAllFile(addonListFile, addonList.dump(4));
         if (!res)
-            throw "Fail to write data back to addon list file!";
+            throw std::exception("Fail to write data back to addon list file!");
         addonLogger.info("Success to add addon <{}> to config file.", addon.getPrintName());
         return true;
     }
@@ -207,7 +206,6 @@ bool AddAddonToList(Addon& addon)
         return false;
     }
 }
-
 bool InstallAddonToLevel(std::string addonDir, std::string addonName)
 {
     auto addon = parseAddonFromPath(str2wstr(addonDir));
@@ -287,7 +285,7 @@ bool AddonsManager::install(std::string packPath)
     {
         if (!filesystem::exists(str2wstr(packPath)))
         {
-            addonLogger.error("Addon file not found!");
+            addonLogger.error("Addon file \"{}\" not found!", packPath);
             return false;
         }
         if (VALID_ADDON_FILE_EXTENSION.find(filesystem::path(str2wstr(packPath)).extension().u8string()) == VALID_ADDON_FILE_EXTENSION.end())
@@ -338,7 +336,7 @@ bool AddonsManager::install(std::string packPath)
             if (addonName.empty() || addonName == "Temp")
                 addonName = filesystem::path(str2wstr(packPath)).stem().u8string();
             if (!InstallAddonToLevel(dir, addonName))
-                throw "Error in Install Addon " + addonName + " To Level ";
+                throw std::exception("Error in Install Addon To Level ");
         }
 
         filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
@@ -744,12 +742,13 @@ void AutoInstallAddons()
         return;
 
     addonLogger.warn("{} new addon(s) found to install. Working...", toInstallList.size());
-
     int cnt = 0;
     for (auto& path : toInstallList)
+    {
+        addonLogger.debug("Installing \"{}\"...", path);
         if (!AddonsManager::install(path))
         {
-            //filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
+            // filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
             break;
         }
         else
@@ -757,6 +756,7 @@ void AutoInstallAddons()
             ++cnt;
             addonLogger.warn("Addon {} has beed installed.", path);
         }
+    }
 
     if (cnt == 0)
     {
@@ -772,6 +772,8 @@ void AutoInstallAddons()
 
 void InitAddonsHelper()
 {
+    if (LL::isDebugMode())
+        addonLogger.consoleLevel = addonLogger.debug.level;
     AutoInstallAddons();
     BuildAddonsList();
     

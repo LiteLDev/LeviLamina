@@ -17,9 +17,10 @@ class SimulatedPlayer : public ServerPlayer {
 #define AFTER_EXTRA
 // Add Member There
 public:
-
     LIAPI bool simulateDestory();
     LIAPI bool simulateUseItem();
+    LIAPI static class SimulatedPlayer* create(std::string const& name, class BlockPos const& position, class AutomaticID<class Dimension, int> dimensionId = 0);
+    LIAPI static class SimulatedPlayer* create(std::string const& name, class AutomaticID<class Dimension, int> dimensionId = 0);
 
 #undef AFTER_EXTRA
 

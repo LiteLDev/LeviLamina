@@ -18,10 +18,10 @@ StructureTemplate::StructureTemplate(class StructureTemplate const& copy)
     load(*copy.save());
 }
 
-bool StructureTemplate::load(CompoundTag const& tag)
-{
-    return getData()->load(tag);
-}
+//bool StructureTemplate::load(CompoundTag const& tag)
+//{
+//    return getData()->load(tag);
+//}
 
 std::unique_ptr<CompoundTag> StructureTemplate::toTag() {
     return save();

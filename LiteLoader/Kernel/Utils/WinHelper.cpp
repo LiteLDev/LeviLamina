@@ -156,5 +156,13 @@ std::pair<int,string> NewProcessSync(const std::string& process, int timeLimit, 
 string GetModulePath(HMODULE handler) {
     wchar_t buf[MAX_PATH] = { 0 };
     GetModuleFileNameEx(GetCurrentProcess(), handler, buf, MAX_PATH);
-    return wstr2str(wstring(buf));
+    return wstr2str(std::wstring(buf));
 }
+
+string GetModuleName(HMODULE handler)
+{
+    wchar_t buf[MAX_PATH] = { 0 };
+    GetModuleFileNameEx(GetCurrentProcess(), handler, buf, MAX_PATH);
+    return std::filesystem::path(buf).filename().u8string();
+}
+

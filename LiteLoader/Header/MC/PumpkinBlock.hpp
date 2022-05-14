@@ -153,7 +153,6 @@ public:
 protected:
 
 private:
-    MCAPI bool _canDispense(class BlockSource &, class Vec3 const &, unsigned char) const;
     MCAPI bool _canSpawnGolem(class BlockSource &, class BlockPos const &) const;
 
 };

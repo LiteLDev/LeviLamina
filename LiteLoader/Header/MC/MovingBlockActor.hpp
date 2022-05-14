@@ -50,8 +50,17 @@ public:
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
     MCAPI MovingBlockActor(class BlockPos const &);
+    MCAPI class std::shared_ptr<class BlockActor> aquireBlockEntity();
+    MCAPI class AABB const & getCollisionShape() const;
     MCAPI class Vec3 getDrawPos(class IConstBlockSource const &, float) const;
+    MCAPI class Block const & getExtraBlock();
+    MCAPI class Block const & getMovingBlock() const;
     MCAPI void moveCollidedEntities(class PistonBlockActor &, class BlockSource &);
+    MCAPI void registerPiston(class BlockSource const &, class BlockPos const &);
+    MCAPI void setBlock(class Block const &);
+    MCAPI void setBlockEntity(class std::shared_ptr<class BlockActor>);
+    MCAPI void setCollisionShape(class AABB const &);
+    MCAPI void setExtraBlock(class Block const &);
 
 protected:
 

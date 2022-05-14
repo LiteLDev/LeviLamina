@@ -24,6 +24,7 @@ public:
 
 public:
     MCAPI EndPortalShape(class BlockSource &, class BlockPos);
+    MCAPI class BlockPos getOrigin() const;
     MCAPI bool isValid(class BlockSource &);
     MCAPI ~EndPortalShape();
 

@@ -31,7 +31,6 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI static void forEachState(class std::function<bool (class ItemState const &)>);
 
 protected:
 

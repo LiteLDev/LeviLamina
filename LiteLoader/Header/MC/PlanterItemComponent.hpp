@@ -37,6 +37,8 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI PlanterItemComponent(class ComponentItem *);
+    MCAPI bool calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 

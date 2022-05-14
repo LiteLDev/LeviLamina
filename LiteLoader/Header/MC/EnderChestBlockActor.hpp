@@ -50,6 +50,7 @@ public:
         return (this->*rv)(std::forward<class BlockSource &>(a0));
     }
     */
+    MCAPI EnderChestBlockActor(enum BlockActorType, std::string const &, enum BlockActorRendererId, class BlockPos const &);
 
 protected:
 

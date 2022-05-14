@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+    MCAPI std::vector<std::unique_ptr<class ItemStackRequestData>> const & getRequests() const;
+    MCAPI std::vector<std::unique_ptr<class ItemStackRequestData>> takeRequests() const;
     MCAPI void write(class BinaryStream &) const;
     MCAPI ~ItemStackRequestBatch();
     MCAPI static std::unique_ptr<class ItemStackRequestBatch> read(class ReadOnlyBinaryStream &);

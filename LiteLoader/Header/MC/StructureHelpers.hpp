@@ -27,7 +27,12 @@ public:
     MCAPI static bool createDispenser(class StructurePiece &, class BlockSource &, class BoundingBox const &, class Random &, int, int, int, int, std::string const &);
     MCAPI static bool createMinecartChest(class StructurePiece &, class BlockSource &, class BoundingBox const &, class Random &, int, int, int, int, std::string const &);
     MCAPI static void fillColumnDown(class StructurePiece &, class BlockSource &, class Block const &, int, int, int, class BoundingBox const &);
+    MCAPI static int getDirectionRotation(int, unsigned short);
+    MCAPI static int getDoorRotation(int, unsigned short);
+    MCAPI static int getFacingDirectionRotation(int, unsigned short);
+    MCAPI static int getRailRotation(int, unsigned short);
     MCAPI static int getTorchRotation(int, unsigned short);
+    MCAPI static int getWeirdoDirectionRotation(int, unsigned short);
 
 protected:
 

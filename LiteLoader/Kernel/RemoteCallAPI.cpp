@@ -7,13 +7,11 @@ extern Logger logger;
 
 namespace RemoteCall
 {
+CallbackFn const EMPTY_FUNC{};
 std::unordered_map<std::string, RemoteCall::ExportedFuncData> exportedFuncs;
 
 bool exportFunc(std::string const& nameSpace, std::string const& funcName, CallbackFn&& callback, HMODULE handler)
 {
-    if (!LL::isDebugMode()) {
-        logger.warn("please use LL RemoteCall in debug mode");
-    }
     if (nameSpace.find("::") != nameSpace.npos)
     {
         logger.error("Namespace can't includes \"::\"");
@@ -25,17 +23,14 @@ bool exportFunc(std::string const& nameSpace, std::string const& funcName, Callb
     return true;
 }
 
-CallbackFn* importFunc(std::string const& nameSpace, std::string const& funcName)
+CallbackFn const& importFunc(std::string const& nameSpace, std::string const& funcName)
 {
-    if (!LL::isDebugMode())
-    {
-        logger.warn("please use LL RemoteCall in debug mode");
-    }
     auto iter = exportedFuncs.find(nameSpace + "::" + funcName);
     if (iter == exportedFuncs.end())
-        return nullptr;
-    return &iter->second.callback;
+        return EMPTY_FUNC;
+    return iter->second.callback;
 }
+
 bool hasFunc(std::string const& nameSpace, std::string const& funcName)
 {
     return exportedFuncs.find(nameSpace + "::" + funcName) != exportedFuncs.end();
@@ -51,10 +46,19 @@ bool removeFunc(std::string const& nameSpace, std::string const& funcName)
     return removeFunc(nameSpace + "::" + funcName);
 }
 
+void _onCallError(std::string const& msg, HMODULE handler)
+{
+    logger.error(msg);
+    auto plugin = LL::getPlugin(handler);
+    if (plugin)
+        logger.error("In plugin <{}>", plugin->name);
+}
+
 int removeNameSpace(std::string const& nameSpace)
 {
     int count = 0;
-    for (auto& iter = exportedFuncs.begin(); iter != exportedFuncs.end();) {
+    for (auto& iter = exportedFuncs.begin(); iter != exportedFuncs.end();)
+    {
         if (SplitStrWithPattern(iter->first, "::")[0] == nameSpace)
         {
             iter = exportedFuncs.erase(iter);
@@ -69,7 +73,8 @@ int removeNameSpace(std::string const& nameSpace)
 int removeFuncs(std::vector<std::pair<std::string, std::string>> funcs)
 {
     int count = 0;
-    for (auto [ns, name] : funcs) {
+    for (auto& [ns, name] : funcs)
+    {
         if (removeFunc(ns + "::" + name))
             count++;
     }
@@ -79,23 +84,43 @@ int removeFuncs(std::vector<std::pair<std::string, std::string>> funcs)
 } // namespace RemoteCall
 
 
-
 #ifdef DEBUG
 #include <ScheduleAPI.h>
-int TestExport(std::string const& a0, int a1, int a2)
+#include <MC/Player.hpp>
+int TestExport(std::string a0, int a1, int a2)
 {
     return static_cast<int>(a0.size()) + a1;
 }
+std::unique_ptr<CompoundTag> TestSimulatedPlayerLL(Player* player)
+{
+    return player->getNbt();
+}
+
+void exportTestSimulatedPlayerLL()
+{
+    RemoteCall::exportAs("TestRemoteCall", "TestSimulatedPlayerLL", TestSimulatedPlayerLL);
+}
+#include <EventAPI.h>
 auto TestRemoteCall = ([]() -> bool {
     std::thread([]() {
         Sleep(5000);
         Schedule::nextTick([]() {
-            RemoteCall::exportAs("TestNameSpace", "StrSize", [](std::string const& arg) -> size_t { return arg.size(); });
+            RemoteCall::exportAs("TestNameSpace", "StrSize", [](std::string arg) -> size_t {
+                return arg.size();
+            });
 
+            exportTestSimulatedPlayerLL();
             RemoteCall::exportAs("Test", "test2", TestExport);
             auto func = RemoteCall::importAs<decltype(TestExport)>("Test", "test2");
             auto func2 = RemoteCall::importAs<std::function<decltype(TestExport)>>("Test", "test2");
             auto size = func("TestParam", 5, 10);
+            static auto TestSimulatedPlayerJs = RemoteCall::importAs<bool(Player*)>("TestRemoteCall", "TestSimulatedPlayerJs");
+            Event::PlayerJoinEvent::subscribe_ref([](Event::PlayerJoinEvent& ev) {
+                logger.warn("TestSimulatedPlayer");
+                auto res = TestSimulatedPlayerJs(ev.mPlayer);
+                logger.warn("Result: {}", res);
+                return true;
+            });
         });
     }).detach();
     return true;

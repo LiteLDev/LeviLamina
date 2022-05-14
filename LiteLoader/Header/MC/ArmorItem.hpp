@@ -128,7 +128,7 @@ public:
     MCAPI static bool dispenseArmor(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char, enum ArmorSlot);
     MCAPI static enum ArmorSlot getSlotForItem(class ItemStackBase const &);
     MCAPI static bool isDamageable(class ItemDescriptor const &);
-    MCAPI static int const *const mHealthPerSlot;
+    MCAPI static int const mHealthPerSlot[];
 
 protected:
 

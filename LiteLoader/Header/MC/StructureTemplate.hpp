@@ -24,7 +24,7 @@ public:
     StructureTemplate() = delete;
     LIAPI static StructureTemplate fromTag(std::string name, CompoundTag const& tag);
     LIAPI static StructureTemplate fromWorld(std::string name, int dimid, BlockPos p1, BlockPos p2, bool ignoreEntities = true, bool ignoreBlocks = false);
-    LIAPI bool load(CompoundTag const& tag);
+    //LIAPI bool load(CompoundTag const& tag);
     LIAPI std::unique_ptr<CompoundTag> toTag();
     LIAPI bool toWorld(int dimid, BlockPos const& p1, Mirror mirror = Mirror::None_15, Rotation rotation = Rotation::None_14);
     LIAPI StructureTemplateData* getData();
@@ -45,8 +45,10 @@ public:
     MCAPI std::vector<class JigsawStructureBlockInfo> getJigsawMarkers() const;
     MCAPI std::string const & getName() const;
     MCAPI class BlockPos const & getSize() const;
+    MCAPI unsigned char getStructureVersion() const;
     MCAPI class BoundingBox getTransformedBounds(class BlockPos, class StructureSettings const &) const;
     MCAPI bool isLoaded() const;
+    MCAPI bool load(class CompoundTag const &);
     MCAPI void placeInWorld(class BlockSource &, class BlockPalette const &, class BlockPos const &, class StructureSettings const &, class StructureTelemetryServerData *, bool) const;
     MCAPI void placeNextSegmentInWorld(class StructureAnimationData &, class BlockPalette const &) const;
     MCAPI std::unique_ptr<class CompoundTag> save() const;
@@ -57,7 +59,6 @@ protected:
 
 private:
     MCAPI void _fillBlockInfo(class BlockSource &, class BlockPos const &, class BlockPos const &, class BlockPos const &);
-    MCAPI void _fillEntityList(class BlockSource &, class BlockPos const &, class BlockPos const &);
     MCAPI void _placeEntitiesInWorld(class BlockSource &, class DataLoadHelper &, bool) const;
     MCAPI void _placeNextBlockSegmentInWorld(class BlockSource &, unsigned __int64, unsigned __int64, class StructureSettings const &, class DataLoadHelper &, class StructureBlockPalette const &, class BlockPalette const &, class BlockPos, class BlockPos const &, class Vec3 const &, enum Rotation, enum Mirror, float, unsigned int, class StructureTelemetryServerData *, bool, bool) const;
 

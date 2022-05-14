@@ -317,7 +317,6 @@ bool LL::PluginManager::reloadPlugin(string pluginName, bool outputResult)
             ev.target = pluginName;
             ev.pluginExtention = filesystem::path(str2wstr(plugin->filePath)).extension().u8string();
             ev.call();
-
             return ev.success;
         }
 

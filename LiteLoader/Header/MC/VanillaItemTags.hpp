@@ -23,37 +23,37 @@ public:
 #endif
 
 public:
-    MCAPI static char const *const Armor;
-    MCAPI static char const *const Arrows;
-    MCAPI static char const *const Banners;
-    MCAPI static char const *const Boat;
-    MCAPI static char const *const ChainmailTier;
-    MCAPI static char const *const Cooked;
-    MCAPI static char const *const DiamondTier;
-    MCAPI static char const *const Digger;
-    MCAPI static char const *const Door;
-    MCAPI static char const *const Fishes;
-    MCAPI static char const *const Food;
-    MCAPI static char const *const GoldenTier;
-    MCAPI static char const *const HangingActor;
-    MCAPI static char const *const Hatchet;
-    MCAPI static char const *const Hoe;
-    MCAPI static char const *const HorseArmor;
-    MCAPI static char const *const IronTier;
-    MCAPI static char const *const LeatherTier;
-    MCAPI static char const *const LecternBooks;
-    MCAPI static char const *const Meat;
-    MCAPI static char const *const Minecart;
-    MCAPI static char const *const MusicDiscs;
-    MCAPI static char const *const NetheriteTier;
-    MCAPI static char const *const Pickaxe;
-    MCAPI static char const *const Shovel;
-    MCAPI static char const *const Sign;
-    MCAPI static char const *const SpawnEgg;
-    MCAPI static char const *const StoneTier;
-    MCAPI static char const *const Sword;
-    MCAPI static char const *const Tool;
-    MCAPI static char const *const WoodenTier;
+    MCAPI static char const Armor[];
+    MCAPI static char const Arrows[];
+    MCAPI static char const Banners[];
+    MCAPI static char const Boat[];
+    MCAPI static char const ChainmailTier[];
+    MCAPI static char const Cooked[];
+    MCAPI static char const DiamondTier[];
+    MCAPI static char const Digger[];
+    MCAPI static char const Door[];
+    MCAPI static char const Fishes[];
+    MCAPI static char const Food[];
+    MCAPI static char const GoldenTier[];
+    MCAPI static char const HangingActor[];
+    MCAPI static char const Hatchet[];
+    MCAPI static char const Hoe[];
+    MCAPI static char const HorseArmor[];
+    MCAPI static char const IronTier[];
+    MCAPI static char const LeatherTier[];
+    MCAPI static char const LecternBooks[];
+    MCAPI static char const Meat[];
+    MCAPI static char const Minecart[];
+    MCAPI static char const MusicDiscs[];
+    MCAPI static char const NetheriteTier[];
+    MCAPI static char const Pickaxe[];
+    MCAPI static char const Shovel[];
+    MCAPI static char const Sign[];
+    MCAPI static char const SpawnEgg[];
+    MCAPI static char const StoneTier[];
+    MCAPI static char const Sword[];
+    MCAPI static char const Tool[];
+    MCAPI static char const WoodenTier[];
 
 protected:
 

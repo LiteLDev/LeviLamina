@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    MCAPI ScriptItemType(class Item const &);
     MCAPI class Item const & getItem() const;
     MCAPI std::string getName() const;
 

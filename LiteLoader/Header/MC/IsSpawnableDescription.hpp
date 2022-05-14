@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -25,6 +26,7 @@ public:
 public:
     /*0*/ virtual ~IsSpawnableDescription();
     /*1*/ virtual char const * getJsonName() const;
+    MCAPI void parse(class Json::Value const &);
 
 protected:
 

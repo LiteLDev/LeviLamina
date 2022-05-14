@@ -16,7 +16,18 @@ public:
 NpcComponent mComponent;
     Actor mActor;
     string mString;
-
+    inline struct NpcActionsContainer& getActionsContainer()
+    {
+        struct NpcActionsContainer& (NpcSceneDialogueData::*rv)();
+        *((void**)&rv) = dlsym("?getActionsContainer@NpcSceneDialogueData@@UEAAAEAUNpcActionsContainer@@XZ");
+        return (this->*rv)();
+    }
+    inline struct NpcActionsContainer const& getActionsContainer() const
+    {
+        struct NpcActionsContainer const& (NpcSceneDialogueData::*rv)() const;
+        *((void**)&rv) = dlsym("?getActionsContainer@NpcSceneDialogueData@@UEBAAEBUNpcActionsContainer@@XZ");
+        return (this->*rv)();
+    }
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCSCENEDIALOGUEDATA
@@ -32,18 +43,10 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual std::string const & getNameText() const;
     /*4*/ virtual std::string const & getNameRawText() const;
-    /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual struct NpcActionsContainer & getActionsContainer();
-    /*7*/ virtual struct NpcActionsContainer const & getActionsContainer() const;
     /*
     inline  ~NpcSceneDialogueData(){
          (NpcSceneDialogueData::*rv)();
         *((void**)&rv) = dlsym("??1NpcSceneDialogueData@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline std::string const & getSceneName() const{
-        std::string const & (NpcSceneDialogueData::*rv)() const;
-        *((void**)&rv) = dlsym("?getSceneName@NpcSceneDialogueData@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
         return (this->*rv)();
     }
     inline class Actor const & getActor() const{
@@ -56,9 +59,24 @@ public:
         *((void**)&rv) = dlsym("?getActor@NpcSceneDialogueData@@UEAAAEAVActor@@XZ");
         return (this->*rv)();
     }
+    inline std::string const & getSceneName() const{
+        std::string const & (NpcSceneDialogueData::*rv)() const;
+        *((void**)&rv) = dlsym("?getSceneName@NpcSceneDialogueData@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
     inline struct ActorUniqueID const & getActorUniqueID(){
         struct ActorUniqueID const & (NpcSceneDialogueData::*rv)();
         *((void**)&rv) = dlsym("?getActorUniqueID@NpcSceneDialogueData@@UEAAAEBUActorUniqueID@@XZ");
+        return (this->*rv)();
+    }
+    inline struct NpcActionsContainer & getActionsContainer(){
+        struct NpcActionsContainer & (NpcSceneDialogueData::*rv)();
+        *((void**)&rv) = dlsym("?getActionsContainer@NpcSceneDialogueData@@UEAAAEAUNpcActionsContainer@@XZ");
+        return (this->*rv)();
+    }
+    inline struct NpcActionsContainer const & getActionsContainer() const{
+        struct NpcActionsContainer const & (NpcSceneDialogueData::*rv)() const;
+        *((void**)&rv) = dlsym("?getActionsContainer@NpcSceneDialogueData@@UEBAAEBUNpcActionsContainer@@XZ");
         return (this->*rv)();
     }
     */

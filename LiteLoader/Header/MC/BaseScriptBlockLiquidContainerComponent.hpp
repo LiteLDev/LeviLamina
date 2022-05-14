@@ -19,14 +19,13 @@ class BaseScriptBlockLiquidContainerComponent : public ScriptObject {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASESCRIPTBLOCKLIQUIDCONTAINERCOMPONENT
 public:
     class BaseScriptBlockLiquidContainerComponent& operator=(class BaseScriptBlockLiquidContainerComponent const &) = delete;
+    BaseScriptBlockLiquidContainerComponent(class BaseScriptBlockLiquidContainerComponent const &) = delete;
     BaseScriptBlockLiquidContainerComponent() = delete;
 #endif
 
 public:
     /*0*/ virtual ~BaseScriptBlockLiquidContainerComponent();
     /*4*/ virtual class Scripting::Result<void> setFillLevel(int);
-    MCAPI BaseScriptBlockLiquidContainerComponent(class BaseScriptBlockLiquidContainerComponent const &);
-    MCAPI BaseScriptBlockLiquidContainerComponent(class BaseScriptBlockLiquidContainerComponent &&);
     MCAPI BaseScriptBlockLiquidContainerComponent(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &, enum CauldronLiquidType);
     MCAPI class Scripting::Result<int> getFillLevel();
 

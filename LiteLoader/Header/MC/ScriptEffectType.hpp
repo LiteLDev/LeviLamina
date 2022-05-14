@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    MCAPI ScriptEffectType(class MobEffect const &);
     MCAPI class MobEffect const & getEffect() const;
     MCAPI std::string getName() const;
 

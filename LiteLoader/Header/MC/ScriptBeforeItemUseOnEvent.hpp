@@ -21,6 +21,7 @@ public:
 #endif
 
 public:
+    MCAPI ScriptBeforeItemUseOnEvent(class Scripting::StrongTypedObjectHandle<class ScriptItemStack>, struct ItemUseOnEvent &, class Scripting::WeakLifetimeScope const &);
 
 protected:
 

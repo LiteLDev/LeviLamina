@@ -46,6 +46,9 @@ public:
     }
     */
     MCAPI PoolElementStructurePiece(class StructurePoolElement const &, class BlockPos, enum Rotation, int, struct JigsawJunction &, class BoundingBox const &, class BlockPos);
+    MCAPI class StructurePoolElement const & getElement() const;
+    MCAPI class BlockPos const & getPosition() const;
+    MCAPI void setReferencePosition(class BlockPos const &);
 
 protected:
 

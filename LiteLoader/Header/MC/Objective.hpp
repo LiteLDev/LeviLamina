@@ -32,12 +32,17 @@ public:
     MCAPI struct ScoreInfo getPlayerScore(struct ScoreboardId const &) const;
     MCAPI bool getPlayerScoreRef(struct ScoreboardId const &, struct ScoreInfoRef &);
     MCAPI std::vector<struct ScoreboardId> getPlayers() const;
+    MCAPI class std::unordered_map<struct ScoreboardId, int, struct std::hash<struct ScoreboardId>, struct std::equal_to<struct ScoreboardId>, class std::allocator<struct std::pair<struct ScoreboardId const, int>>> const & getScores() const;
     MCAPI bool hasScore(struct ScoreboardId const &) const;
+    MCAPI bool hasScores() const;
+    MCAPI void setDisplayName(std::string const &);
     MCAPI static std::unique_ptr<class Objective> deserialize(class CompoundTag const &, class Scoreboard &);
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class Objective const &);
 
 protected:
 
 private:
+    MCAPI bool _modifyPlayerScore(int &, struct ScoreboardId const &, int, enum PlayerScoreSetFunction);
+    MCAPI void _resetPlayer(struct ScoreboardId const &);
 
 };

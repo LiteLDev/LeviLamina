@@ -97,7 +97,9 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI LocalConnector(class LocalConnector::ConnectionCallbacks &, class NetworkIdentifier const &);
     MCAPI void disconnect();
+    MCAPI void host(class NetworkIdentifier const &);
     MCAPI void runEvents();
 
 protected:

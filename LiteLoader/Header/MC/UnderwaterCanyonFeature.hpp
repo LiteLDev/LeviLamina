@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "CanyonFeatureUtils.hpp"
 #include "CanyonFeature.hpp"
 
 #define BEFORE_EXTRA

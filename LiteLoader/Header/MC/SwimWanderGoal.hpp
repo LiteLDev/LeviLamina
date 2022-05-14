@@ -38,6 +38,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI SwimWanderGoal(class Mob &);
 
 protected:
     MCAPI bool _setWantedPosition();

@@ -21,11 +21,11 @@ enum PotionVariant;
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POTION
 public:
     class Potion& operator=(class Potion const &) = delete;
-    Potion(class Potion const &) = delete;
     Potion() = delete;
 #endif
 
 public:
+    MCAPI Potion(class Potion const &);
     MCAPI void appendFormattedPotionText(std::string &, enum Potion::PotionType, enum Potion::PotionVariant, class Player const &, float) const;
     MCAPI std::string effectDurationToString(enum Potion::PotionType, float, class MobEffectInstance const &) const;
     MCAPI std::string effectPotencyToString(class MobEffectInstance const &) const;
@@ -99,7 +99,7 @@ private:
     MCAPI std::string _getDescriptionIdSingleString(enum Potion::PotionType) const;
     MCAPI static void addPotion(class std::shared_ptr<class Potion const>);
     MCAPI static int mLastId;
-    MCAPI static class std::shared_ptr<class Potion const> * mPotionsById;
+    MCAPI static class std::shared_ptr<class Potion const> mPotionsById[];
     MCAPI static class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> mPotionsByName;
 
 };

@@ -30,5 +30,7 @@ public:
 protected:
 
 private:
+    MCAPI void _addRef(class BehaviorTreeDefinitionPtr &);
+    MCAPI void _removeRef(class BehaviorTreeDefinitionPtr &);
 
 };

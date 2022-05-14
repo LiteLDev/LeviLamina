@@ -2360,20 +2360,20 @@ public:
         *((void**)&rv) = dlsym("?notifySubChunkRequestManager@Level@@UEAAXAEBVSubChunkPacket@@@Z");
         return (this->*rv)(std::forward<class SubChunkPacket const &>(a0));
     }
-    inline void loadFunctionManager(){
-        void (Level::*rv)();
-        *((void**)&rv) = dlsym("?loadFunctionManager@Level@@UEAAXXZ");
-        return (this->*rv)();
+    inline void decrementTagCache(std::string const & a0, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> & a1){
+        void (Level::*rv)(std::string const &, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> &);
+        *((void**)&rv) = dlsym("?decrementTagCache@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$TagRegistry@U?$IDType@ULevelTagIDType@@@@U?$IDType@ULevelTagSetIDType@@@@@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> &>(a1));
     }
     inline void onSubChunkLoaded(class ChunkSource & a0, class LevelChunk & a1, short a2){
         void (Level::*rv)(class ChunkSource &, class LevelChunk &, short);
         *((void**)&rv) = dlsym("?onSubChunkLoaded@Level@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@F@Z");
         return (this->*rv)(std::forward<class ChunkSource &>(a0), std::forward<class LevelChunk &>(a1), std::forward<short>(a2));
     }
-    inline void decrementTagCache(std::string const & a0, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> & a1){
-        void (Level::*rv)(std::string const &, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> &);
-        *((void**)&rv) = dlsym("?decrementTagCache@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$TagRegistry@U?$IDType@ULevelTagIDType@@@@U?$IDType@ULevelTagSetIDType@@@@@@@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> &>(a1));
+    inline void loadFunctionManager(){
+        void (Level::*rv)();
+        *((void**)&rv) = dlsym("?loadFunctionManager@Level@@UEAAXXZ");
+        return (this->*rv)();
     }
     inline void saveAdditionalData(){
         void (Level::*rv)();
@@ -2410,16 +2410,6 @@ public:
         *((void**)&rv) = dlsym("?getLevelChunkMetaDataDictionary@Level@@UEBA?AV?$shared_ptr@VLevelChunkMetaDataDictionary@@@std@@XZ");
         return (this->*rv)();
     }
-    inline std::vector<class WeakEntityRef> const & getActiveUsers() const{
-        std::vector<class WeakEntityRef> const & (Level::*rv)() const;
-        *((void**)&rv) = dlsym("?getActiveUsers@Level@@UEBAAEBV?$vector@VWeakEntityRef@@V?$allocator@VWeakEntityRef@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> & getTagRegistry(){
-        class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> & (Level::*rv)();
-        *((void**)&rv) = dlsym("?getTagRegistry@Level@@UEAAAEAV?$TagRegistry@U?$IDType@ULevelTagIDType@@@@U?$IDType@ULevelTagSetIDType@@@@@@XZ");
-        return (this->*rv)();
-    }
     inline std::vector<class OwnerPtrT<struct EntityRefTraits>> const & getUsers() const{
         std::vector<class OwnerPtrT<struct EntityRefTraits>> const & (Level::*rv)() const;
         *((void**)&rv) = dlsym("?getUsers@Level@@UEBAAEBV?$vector@V?$OwnerPtrT@UEntityRefTraits@@@@V?$allocator@V?$OwnerPtrT@UEntityRefTraits@@@@@std@@@std@@XZ");
@@ -2428,6 +2418,16 @@ public:
     inline std::vector<class OwnerPtrT<struct EntityRefTraits>> & getUsers(){
         std::vector<class OwnerPtrT<struct EntityRefTraits>> & (Level::*rv)();
         *((void**)&rv) = dlsym("?getUsers@Level@@UEAAAEAV?$vector@V?$OwnerPtrT@UEntityRefTraits@@@@V?$allocator@V?$OwnerPtrT@UEntityRefTraits@@@@@std@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline std::vector<class WeakEntityRef> const & getActiveUsers() const{
+        std::vector<class WeakEntityRef> const & (Level::*rv)() const;
+        *((void**)&rv) = dlsym("?getActiveUsers@Level@@UEBAAEBV?$vector@VWeakEntityRef@@V?$allocator@VWeakEntityRef@@@std@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> & getTagRegistry(){
+        class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> & (Level::*rv)();
+        *((void**)&rv) = dlsym("?getTagRegistry@Level@@UEAAAEAV?$TagRegistry@U?$IDType@ULevelTagIDType@@@@U?$IDType@ULevelTagSetIDType@@@@@@XZ");
         return (this->*rv)();
     }
     inline class ActorInfoRegistry * getActorInfoRegistry(){
@@ -2510,14 +2510,14 @@ public:
         *((void**)&rv) = dlsym("?getIOTasksGroup@Level@@UEAAAEAVTaskGroup@@XZ");
         return (this->*rv)();
     }
-    inline class JigsawStructureRegistry const & getJigsawStructureRegistry() const{
-        class JigsawStructureRegistry const & (Level::*rv)() const;
-        *((void**)&rv) = dlsym("?getJigsawStructureRegistry@Level@@WCA@EBAAEBVJigsawStructureRegistry@@XZ");
-        return (this->*rv)();
-    }
     inline class JigsawStructureRegistry & getJigsawStructureRegistry(){
         class JigsawStructureRegistry & (Level::*rv)();
         *((void**)&rv) = dlsym("?getJigsawStructureRegistry@Level@@WCA@EAAAEAVJigsawStructureRegistry@@XZ");
+        return (this->*rv)();
+    }
+    inline class JigsawStructureRegistry const & getJigsawStructureRegistry() const{
+        class JigsawStructureRegistry const & (Level::*rv)() const;
+        *((void**)&rv) = dlsym("?getJigsawStructureRegistry@Level@@WCA@EBAAEBVJigsawStructureRegistry@@XZ");
         return (this->*rv)();
     }
     inline class WeakRefT<struct EntityRefTraits> getLevelEntity(){
@@ -2875,10 +2875,10 @@ public:
         *((void**)&rv) = dlsym("?forceFlushRemovedPlayers@Level@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void forceRemoveEntity(class Actor & a0){
-        void (Level::*rv)(class Actor &);
-        *((void**)&rv) = dlsym("?forceRemoveEntity@Level@@UEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor &>(a0));
+    inline void forceRemoveEntity(class Actor & a0, bool a1){
+        void (Level::*rv)(class Actor &, bool);
+        *((void**)&rv) = dlsym("?forceRemoveEntity@Level@@UEAAXAEAVActor@@_N@Z");
+        return (this->*rv)(std::forward<class Actor &>(a0), std::forward<bool>(a1));
     }
     inline std::vector<class WeakEntityRef> & getActiveAutonomousActors(){
         std::vector<class WeakEntityRef> & (Level::*rv)();
@@ -3095,14 +3095,14 @@ public:
         *((void**)&rv) = dlsym("?getEventing@Level@@UEAAAEAVIMinecraftEventing@@XZ");
         return (this->*rv)();
     }
-    inline class FeatureRegistry & getFeatureRegistry(){
-        class FeatureRegistry & (Level::*rv)();
-        *((void**)&rv) = dlsym("?getFeatureRegistry@Level@@UEAAAEAVFeatureRegistry@@XZ");
-        return (this->*rv)();
-    }
     inline class FeatureRegistry const & getFeatureRegistry() const{
         class FeatureRegistry const & (Level::*rv)() const;
         *((void**)&rv) = dlsym("?getFeatureRegistry@Level@@UEBAAEBVFeatureRegistry@@XZ");
+        return (this->*rv)();
+    }
+    inline class FeatureRegistry & getFeatureRegistry(){
+        class FeatureRegistry & (Level::*rv)();
+        *((void**)&rv) = dlsym("?getFeatureRegistry@Level@@UEAAAEAVFeatureRegistry@@XZ");
         return (this->*rv)();
     }
     inline class FeatureTypeFactory & getFeatureTypeFactory(){
@@ -3790,10 +3790,10 @@ public:
         *((void**)&rv) = dlsym("?registerTemporaryPointer@Level@@UEAAXAEAV_TickPtr@@@Z");
         return (this->*rv)(std::forward<class _TickPtr &>(a0));
     }
-    inline class OwnerPtrT<struct EntityRefTraits> removeActorAndTakeEntity(class WeakEntityRef a0){
-        class OwnerPtrT<struct EntityRefTraits> (Level::*rv)(class WeakEntityRef);
-        *((void**)&rv) = dlsym("?removeActorAndTakeEntity@Level@@UEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@VWeakEntityRef@@@Z");
-        return (this->*rv)(std::forward<class WeakEntityRef>(a0));
+    inline class OwnerPtrT<struct EntityRefTraits> removeActorAndTakeEntity(class WeakEntityRef a0, bool a1){
+        class OwnerPtrT<struct EntityRefTraits> (Level::*rv)(class WeakEntityRef, bool);
+        *((void**)&rv) = dlsym("?removeActorAndTakeEntity@Level@@UEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@VWeakEntityRef@@_N@Z");
+        return (this->*rv)(std::forward<class WeakEntityRef>(a0), std::forward<bool>(a1));
     }
     inline void removeAllNonPlayerEntities(struct ActorUniqueID a0){
         void (Level::*rv)(struct ActorUniqueID);

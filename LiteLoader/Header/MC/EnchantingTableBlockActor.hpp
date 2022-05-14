@@ -50,6 +50,7 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
+    MCAPI EnchantingTableBlockActor(class BlockPos const &);
 
 protected:
 

@@ -17,10 +17,11 @@ class ItemPack {
 public:
     class ItemPack& operator=(class ItemPack const &) = delete;
     ItemPack(class ItemPack const &) = delete;
-    ItemPack() = delete;
 #endif
 
 public:
+    MCAPI ItemPack();
+    MCAPI void add(class RecipeIngredient const &, int);
     MCAPI ~ItemPack();
 
 protected:

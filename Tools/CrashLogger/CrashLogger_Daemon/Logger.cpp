@@ -15,6 +15,7 @@ DWORD dProcessId;
 DWORD dThreadId;
 FILE* fLog;
 HANDLE hDumpFile;
+extern wstring bdsVersion;
 
 #define log(format,...)                         \
     printf(format, __VA_ARGS__);                \
@@ -36,10 +37,10 @@ string GetDateTime()
 
 bool CreateLogFiles()
 {
-	filesystem::create_directories(filesystem::path(DUMP_OUTPUT_PATH).remove_filename());
+	filesystem::create_directories(filesystem::path(DUMP_OUTPUT_PATH_PREFIX).remove_filename());
 	string dateTimeStr = GetDateTime();
 
-	string dumpPath = DUMP_OUTPUT_PATH + dateTimeStr + ".dmp";
+	string dumpPath = DUMP_OUTPUT_PATH_PREFIX + dateTimeStr + ".dmp";
 	hDumpFile = CreateFileA(dumpPath.c_str(), GENERIC_WRITE, 0, NULL,
 		CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
 	if (hDumpFile == INVALID_HANDLE_VALUE || hDumpFile == NULL)
@@ -47,8 +48,8 @@ bool CreateLogFiles()
 		log("[CrashLogger][ERROR] Fail to open CoreDump file! Error Code:%d\n", GetLastError());
 	}
 
-	string trackPath = TRACKBACK_OUTPUT_PATH + dateTimeStr + ".log";
-	fLog = fopen(trackPath.c_str(), "w");
+	string tracePath = STACKTRACE_OUTPUT_PATH_PREFIX + dateTimeStr + ".log";
+	fLog = fopen(tracePath.c_str(), "w");
 	if (fLog == NULL)
 	{
 		log("[CrashLogger][ERROR] Fail to open Log file! %s\n", strerror(errno));
@@ -77,7 +78,7 @@ void CoreDump(PEXCEPTION_POINTERS e)
 	}
 }
 
-void TrackBack(PEXCEPTION_POINTERS e)
+void TraceBack(PEXCEPTION_POINTERS e)
 {
 	STACKFRAME64 stackFrame = { 0 };
 	stackFrame.AddrPC.Mode = AddrModeFlat;
@@ -94,20 +95,28 @@ void TrackBack(PEXCEPTION_POINTERS e)
 
 		//Function
 		PSYMBOL_INFO info;
-		if (info = GetSymbolInfo(hProcess, (void*)stackFrame.AddrPC.Offset))
+        HMODULE hModule = (HMODULE)SymGetModuleBase64(hProcess, (DWORD64)address);
+        std::wstring moduleName = MapModuleFromAddr(hProcess, (void*)address);
+        std::wstring moduleVersion = GetModuleVersionStr(hProcess, hModule);
+        if (moduleVersion.empty() && (moduleName == L"bedrock_server_mod.exe" || moduleName == L"bedrock_server.exe"))
+            moduleVersion = bdsVersion;
+        if (!moduleVersion.empty())
+            moduleName += L"<" + moduleVersion + L">";
+        if (info = GetSymbolInfo(hProcess, (void*)address))
 		{
-			log("[TrackBack] Function %ls at 0x%llX  [%ls]\n", info->Name, info->Address, MapModuleFromAddr(hProcess, (void*)address).c_str());
+            log("[StackTrace] Function %ls at 0x%llX  [%ls]\n", info->Name, info->Address, moduleName.c_str());
 
 			//Line
 			DWORD displacement = 0;
-			IMAGEHLP_LINE64 line;
+            IMAGEHLP_LINE64 line{};
 			line.SizeOfStruct = sizeof(IMAGEHLP_LINE64);
 
 			if (SymGetLineFromAddrW64(hProcess, address, &displacement, &line))
 				log("-- At File %ls : Line %d \n", line.FileName, line.LineNumber);
+            delete info;
 		}
 		else
-			log("[TrackBack] Function ???????? at 0x????????\n");
+            log("[StackTrace] Function ???????? at 0x%llX  [%ls]\n", address, moduleName.c_str());
 	}
 }
 
@@ -132,7 +141,7 @@ void LogCrash(PEXCEPTION_POINTERS e, HANDLE hPro, HANDLE hThr, DWORD dProId, DWO
 	CloseHandle(hDumpFile);
 
 	log("\n");
-	TrackBack(e);
+	TraceBack(e);
 	if (fLog != NULL && fLog != INVALID_HANDLE_VALUE)
 		fclose(fLog);
 

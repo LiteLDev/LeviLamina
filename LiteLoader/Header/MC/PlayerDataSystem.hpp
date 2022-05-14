@@ -20,6 +20,7 @@ namespace PlayerDataSystem {
     MCAPI std::string getServerId(class LevelStorage &, struct PlayerStorageIds const &);
     MCAPI std::unique_ptr<class CompoundTag> legacyLoadClientPlayer(std::string const &, class Core::Path const &);
     MCAPI std::unique_ptr<class CompoundTag> legacyLoadPlayer(class LevelStorage &, std::string const &);
+    MCAPI std::unique_ptr<class CompoundTag> loadLocalPlayerData(class LevelStorage &);
     MCAPI std::unique_ptr<class CompoundTag> loadPlayerData(class LevelStorage &, struct PlayerStorageIds const &, bool);
     MCAPI std::unique_ptr<class CompoundTag> loadPlayerDataFromTag(class LevelStorage &, class gsl::basic_string_span<char const, -1>);
     MCAPI std::string playerKey(class gsl::basic_string_span<char const, -1>);

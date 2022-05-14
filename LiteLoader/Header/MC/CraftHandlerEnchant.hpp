@@ -28,6 +28,7 @@ public:
     /*3*/ virtual void endRequestBatch();
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /*5*/ virtual void _postCraftRequest(bool);
+    MCAPI CraftHandlerEnchant(class Player &, class ItemStackRequestActionCraftHandler &);
 
 protected:
 

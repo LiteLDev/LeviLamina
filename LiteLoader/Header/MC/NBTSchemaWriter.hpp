@@ -54,6 +54,11 @@ public:
         *((void**)&rv) = dlsym("?write@NBTSchemaWriter@@UEAA_N_J@Z");
         return (this->*rv)(std::forward<__int64>(a0));
     }
+    inline  ~NBTSchemaWriter(){
+         (NBTSchemaWriter::*rv)();
+        *((void**)&rv) = dlsym("??1NBTSchemaWriter@@UEAA@XZ");
+        return (this->*rv)();
+    }
     inline bool write(signed char a0){
         bool (NBTSchemaWriter::*rv)(signed char);
         *((void**)&rv) = dlsym("?write@NBTSchemaWriter@@UEAA_NC@Z");
@@ -89,14 +94,8 @@ public:
         *((void**)&rv) = dlsym("?write@NBTSchemaWriter@@UEAA_NI@Z");
         return (this->*rv)(std::forward<unsigned int>(a0));
     }
-    inline  ~NBTSchemaWriter(){
-         (NBTSchemaWriter::*rv)();
-        *((void**)&rv) = dlsym("??1NBTSchemaWriter@@UEAA@XZ");
-        return (this->*rv)();
-    }
     */
     MCAPI NBTSchemaWriter();
-    MCAPI class CompoundTag getSavedCompoundTag();
 
 protected:
 

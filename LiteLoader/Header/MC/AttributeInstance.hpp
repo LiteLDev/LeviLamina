@@ -44,7 +44,6 @@ public:
     MCAPI float getMaxValue() const;
     MCAPI float getMinValue() const;
     MCAPI class AttributeModifier getModifier(class mce::UUID const &) const;
-    MCAPI std::vector<class AttributeModifier> getModifiers(int) const;
     MCAPI std::vector<class AttributeModifier> getModifiers() const;
     MCAPI bool hasModifier(class mce::UUID const &) const;
     MCAPI bool hasModifier(class std::shared_ptr<class AttributeModifier>) const;

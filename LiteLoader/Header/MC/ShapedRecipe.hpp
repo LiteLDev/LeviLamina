@@ -42,11 +42,11 @@ public:
     }
     */
     MCAPI ShapedRecipe(class gsl::basic_string_span<char const, -1>, int, int, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int, class mce::UUID const *);
+    MCAPI void generateUUID();
 
 protected:
 
 private:
-    MCAPI void init(class gsl::basic_string_span<char const, -1>, int, int, int, class mce::UUID const *);
     MCAPI bool matches(class CraftingContainer &, int, int, bool) const;
 
 };

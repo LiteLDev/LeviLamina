@@ -19,7 +19,6 @@ class ChunkBuildOrderPolicy {
 public:
     class ChunkBuildOrderPolicy& operator=(class ChunkBuildOrderPolicy const &) = delete;
     ChunkBuildOrderPolicy(class ChunkBuildOrderPolicy const &) = delete;
-    ChunkBuildOrderPolicy() = delete;
 #endif
 
 public:
@@ -30,6 +29,7 @@ public:
     /*4*/ virtual void setPlayerInfluence(unsigned int, class ChunkPos const &, class Vec3 const &);
     /*5*/ virtual void setTickingAreaInfluence(unsigned int, class ChunkPos const &, int, int, bool, bool);
     /*6*/ virtual void updateInfluences();
+    MCAPI ChunkBuildOrderPolicy();
 
 protected:
 

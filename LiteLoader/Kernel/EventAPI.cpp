@@ -286,6 +286,7 @@ DECLARE_EVENT_DATA(ServerStoppedEvent);
 DECLARE_EVENT_DATA(RegCmdEvent);
 DECLARE_EVENT_DATA(PlayerBedEnterEvent);
 DECLARE_EVENT_DATA(ScriptPluginManagerEvent);
+DECLARE_EVENT_DATA(MobSpawnEvent);
 
 
 #ifdef ENABLE_SEH_PROTECTION
@@ -1012,11 +1013,13 @@ TInstanceHook(void, "?setSprinting@Mob@@UEAAX_N@Z",
     IF_LISTENED_END(PlayerSprintEvent)
     return original(this, sprinting);
 }
-
+#include <MC/PlayerInventory.hpp>
+#include <MC/SimpleContainer.hpp>
 /////////////////// PlayerSetArmor ///////////////////
 TInstanceHook(void, "?setArmor@Player@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z",
       Player, unsigned slot, ItemStack* it)
 {
+    original(this, slot, it);
     IF_LISTENED(PlayerSetArmorEvent)
     {
         if (this->isPlayer())
@@ -1025,11 +1028,20 @@ TInstanceHook(void, "?setArmor@Player@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z",
             ev.mPlayer = this;
             ev.mSlot = slot;
             ev.mArmorItem = it;
-            ev.call();
+            if (!ev.call()) {
+                auto& uid = getUniqueID();
+                auto& plinv = getSupplies();
+                plinv.add(*it, 1);
+                getArmorContainer().setItem(slot, ItemStack::EMPTY_ITEM);
+                Schedule::delay([uid] {
+                    auto sp = Level::getPlayer(uid);
+                    if (sp)
+                        sp->refreshInventory();
+                },1);
+            }
         }
     }
     IF_LISTENED_END(PlayerSetArmorEvent)
-    return original(this, slot, it);
 }
 
 /////////////////// PlayerUseRespawnAnchor ///////////////////
@@ -1580,47 +1592,51 @@ TInstanceHook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer
     return out;
 }
 
-bool isStartDestroy = false;
-THook(bool, "?startDestroyBlock@GameMode@@UEAA_NAEBVBlockPos@@EAEA_N@Z", Actor** ac, BlockPos* bpos, unsigned __int8 a3, bool* a4)
+#include <MC/SurvivalMode.hpp>
+/////////////////// PlayerDestroy ///////////////////
+
+//TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z",
+//              SurvivalMode, BlockPos a3, unsigned __int8 a4)
+//{
+//    IF_LISTENED(PlayerDestroyBlockEvent)
+//    {
+//        if (getPlayer()->isPlayer())
+//        {
+//            PlayerDestroyBlockEvent ev{};
+//            ev.mPlayer = getPlayer();
+//            auto bl = Level::getBlockInstance(a3, getPlayer()->getDimensionId());
+//            ev.mBlockInstance = bl;
+//            if (!ev.call())
+//            {
+//                return false;
+//            }
+//        }
+//    }
+//    IF_LISTENED_END(PlayerDestroyBlockEvent)
+//    return original(this, a3, a4);
+//}
+
+TInstanceHook(bool, "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z",
+              GameMode, BlockPos a3, unsigned __int8 a4)
 {
     IF_LISTENED(PlayerDestroyBlockEvent)
     {
-        if (ac[1]->isPlayer())
+        if (getPlayer()->isPlayer())
         {
             PlayerDestroyBlockEvent ev{};
-            ev.mPlayer = (ServerPlayer*)ac[1];
-            ev.mBlockInstance = Level::getBlockInstance(bpos, ac[1]->getDimensionId());
+            ev.mPlayer = getPlayer();
+            auto bl = Level::getBlockInstance(a3, getPlayer()->getDimensionId());
+            ev.mBlockInstance = bl;
             if (!ev.call())
+            {
                 return false;
-            isStartDestroy = true;
-            auto out = original(ac, bpos, a3, a4);
-            isStartDestroy = false;
-            return out;
+            }
         }
     }
     IF_LISTENED_END(PlayerDestroyBlockEvent)
-    return original(ac, bpos, a3, a4);
+    return original(this, a3, a4);
 }
 
-/////////////////// PlayerDestroy ///////////////////
-TInstanceHook(bool, "?checkBlockDestroyPermissions@BlockSource@@QEAA_NAEAVActor@@AEBVBlockPos@@AEBVItemStackBase@@_N@Z",
-      BlockSource , Actor* ac, BlockPos* bpos, ItemStackBase* a4, bool a5)
-{
-    if (isStartDestroy) return original(this, ac, bpos, a4, a5);
-    IF_LISTENED(PlayerDestroyBlockEvent)
-    {
-        if (ac->isPlayer())
-        {
-            PlayerDestroyBlockEvent ev{};
-            ev.mPlayer = (ServerPlayer*)ac;
-            ev.mBlockInstance = Level::getBlockInstance(bpos, this->getDimensionId());
-            if (!ev.call())
-                return false;
-        }
-    }
-    IF_LISTENED_END(PlayerDestroyBlockEvent)
-    return original(this, ac, bpos, a4, a5);
-}
 
 /////////////////// PlayerUseItemOn ///////////////////
 TInstanceHook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z",
@@ -2085,6 +2101,7 @@ TClasslessInstanceHook(void, "?onScoreChanged@ServerScoreboard@@UEAAXAEBUScorebo
 TClasslessInstanceHook(void, "?sendServerThreadStarted@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z",
     class ServerInstance& ins)
 {
+    _set_se_translator(seh_exception::TranslateSEHtoCE);
     LL::globalConfig.tickThreadId = std::this_thread::get_id();
     Global<Level> = Global<Minecraft>->getLevel();
     Global<ServerLevel> = (ServerLevel*)Global<Minecraft>->getLevel();
@@ -2114,6 +2131,13 @@ TClasslessInstanceHook(void, "??1DedicatedServer@@UEAA@XZ")
     IF_LISTENED_END(ServerStoppedEvent)
     original(this);
 }
+TClasslessInstanceHook(void, "?execute@StopCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z",
+    class CommandOrigin const& origin, class CommandOutput& output)
+{
+    LL::globalConfig.serverStatus = LL::LLServerStatus::Stopping;
+    original(this, origin, output);
+}
+
 
 ////////////// RegCmd //////////////
 TInstanceHook(void, "?setup@ChangeSettingCommand@@SAXAEAVCommandRegistry@@@Z",
@@ -2225,4 +2249,22 @@ TInstanceHook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBloc
     }
     IF_LISTENED_END(PlayerBedEnterEvent)
     return original(this, blk);
+}
+
+
+#include <MC/Spawner.hpp>
+TInstanceHook(Mob*,"?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@_N44@Z",
+              Spawner, BlockSource* a2, ActorDefinitionIdentifier* a3, Actor* a4, Vec3& a5, bool a6, bool a7, bool a8)
+{
+    IF_LISTENED(MobSpawnEvent)
+    {
+        MobSpawnEvent ev{};
+        ev.mTypeName = a3->getCanonicalName();
+        ev.mPos = a5;
+        ev.mDimensionId = a2->getDimensionId();
+        if (!ev.call())
+            return nullptr;
+    }
+    IF_LISTENED_END(MobSpawnEvent)
+    return original(this,a2,a3,a4,a5,a6,a7,a8);
 }

@@ -35,7 +35,7 @@ public:
 #endif
 
 public:
-    MCAPI static char const *const NeutralLangCode;
+    MCAPI static char const NeutralLangCode[];
     MCAPI static void addI18nObserver(class I18nObserver &);
     MCAPI static void appendLanguageStringsFromPack(class PackManifest const &, class std::multimap<std::string, struct std::pair<std::string, std::string>, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, struct std::pair<std::string, std::string>>>> const &);
     MCAPI static void chooseLanguage(std::string const &);
@@ -46,7 +46,6 @@ public:
     MCAPI static std::string get(std::string const &, class Localization const *);
     MCAPI static class optional_ref<class Localization const> getCurrentLanguage();
     MCAPI static std::vector<std::string> getLanguageCodesFromPack(class PackAccessStrategy const &);
-    MCAPI static std::string const & getLocaleCodeFor(std::string const &);
     MCAPI static std::string getPackKeywordValue(class PackManifest const &, std::string const &);
     MCAPI static std::string getPackKeywordValueForTelemetry(class PackManifest const &, std::string const &);
     MCAPI static bool isPackKeyword(std::string const &);
@@ -61,6 +60,7 @@ private:
     MCAPI static class Localization * _findLocaleFor(std::string const &);
     MCAPI static std::string _generatePackKeyPrefix(class PackManifest const &);
     MCAPI static class Localization * _getAdditionalTranslationsBackupLocale(std::string const &, bool);
+    MCAPI static std::string & _getLocaleCodeFor(std::string const &);
     MCAPI static class Localization & _getPackKeywordLocale(std::string const &);
     MCAPI static std::vector<std::unique_ptr<class Localization>> mAdditionalTranslationsBackup;
     MCAPI static class std::mutex mAdditionalTranslationsBackupMutex;

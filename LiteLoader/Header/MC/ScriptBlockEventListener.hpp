@@ -37,6 +37,7 @@ public:
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual enum EventResult onEvent(struct PistonActionEvent const &);
     /*14*/ virtual enum EventResult onEvent(struct LeverActionEvent const &);
+    MCAPI ScriptBlockEventListener(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 
 protected:
 

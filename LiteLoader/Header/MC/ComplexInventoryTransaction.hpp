@@ -36,7 +36,7 @@ public:
     /*0*/ virtual ~ComplexInventoryTransaction();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual void postLoadItems(class BlockPalette &, bool);
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual enum InventoryTransactionError handle(class Player &, bool) const;
     /*
     inline void write(class BinaryStream & a0) const{
@@ -54,6 +54,11 @@ public:
         *((void**)&rv) = dlsym("??1ComplexInventoryTransaction@@UEAA@XZ");
         return (this->*rv)();
     }
+    inline void postLoadItems(class BlockPalette & a0, bool a1){
+        void (ComplexInventoryTransaction::*rv)(class BlockPalette &, bool);
+        *((void**)&rv) = dlsym("?postLoadItems@ComplexInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z");
+        return (this->*rv)(std::forward<class BlockPalette &>(a0), std::forward<bool>(a1));
+    }
     inline void onTransactionError(class Player & a0, enum InventoryTransactionError a1) const{
         void (ComplexInventoryTransaction::*rv)(class Player &, enum InventoryTransactionError) const;
         *((void**)&rv) = dlsym("?onTransactionError@ComplexInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z");
@@ -61,6 +66,7 @@ public:
     }
     */
     MCAPI ComplexInventoryTransaction(enum ComplexInventoryTransaction::Type);
+    MCAPI ComplexInventoryTransaction(enum ComplexInventoryTransaction::Type, class InventoryTransaction const &);
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum ComplexInventoryTransaction::Type);
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum ComplexInventoryTransaction::Type, class InventoryTransaction const &);
     MCAPI static std::string const getTransactionTypeName(enum ComplexInventoryTransaction::Type);

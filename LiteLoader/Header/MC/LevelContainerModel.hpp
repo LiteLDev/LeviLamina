@@ -45,6 +45,7 @@ public:
     /*22*/ virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
     MCAPI LevelContainerModel(enum ContainerEnumName, int, class Player &, struct ActorUniqueID, enum ContainerCategory);
     MCAPI LevelContainerModel(enum ContainerEnumName, int, class Player &, enum BlockActorType, class BlockPos const &, enum ContainerCategory);
+    MCAPI static class Container * getContainerHelper(class Player &, struct ActorUniqueID const &);
     MCAPI static class Container * getContainerHelper(class Player &, enum BlockActorType, class BlockPos const &);
 
 protected:

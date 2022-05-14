@@ -24,6 +24,7 @@ public:
 
 public:
     MCAPI bool isAnyToggleEnabled() const;
+    MCAPI bool wereAnyExperimentsEverToggled() const;
     MCAPI ~ExperimentStorage();
 
 protected:

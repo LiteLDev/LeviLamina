@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+    MCAPI ImprovedNoise(class IRandom &, struct YBlendingBugSettings);
+    MCAPI float _getValue(class Vec3 const &) const;
     MCAPI void _readArea(float *, class Vec3 const &, int, int, int, class Vec3 const &, float) const;
 
 protected:

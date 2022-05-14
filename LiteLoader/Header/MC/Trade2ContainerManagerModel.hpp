@@ -33,6 +33,7 @@ public:
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
     MCAPI Trade2ContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
+    MCAPI class Actor * getEntity() const;
 
 protected:
 

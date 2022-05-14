@@ -38,6 +38,7 @@ public:
     MCAPI std::vector<class CommandOutputMessage> const & getMessages() const;
     MCAPI int getSuccessCount() const;
     MCAPI enum CommandOutputType getType() const;
+    MCAPI bool hasPlayerText() const;
     MCAPI void load(enum CommandOutputType, int, std::vector<class CommandOutputMessage> &&, std::unique_ptr<class CommandPropertyBag> &&);
     MCAPI void setHasPlayerText();
     MCAPI void success(std::string const &, std::vector<class CommandOutputParameter> const &);

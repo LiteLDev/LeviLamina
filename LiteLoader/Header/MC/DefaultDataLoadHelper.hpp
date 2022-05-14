@@ -90,14 +90,14 @@ public:
         *((void**)&rv) = dlsym("?loadRotationRadiansX@DefaultDataLoadHelper@@UEAAMM@Z");
         return (this->*rv)(std::forward<float>(a0));
     }
-    inline float loadRotationDegreesX(float a0){
-        float (DefaultDataLoadHelper::*rv)(float);
-        *((void**)&rv) = dlsym("?loadRotationDegreesX@DefaultDataLoadHelper@@UEAAMM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
     inline float loadRotationRadiansY(float a0){
         float (DefaultDataLoadHelper::*rv)(float);
         *((void**)&rv) = dlsym("?loadRotationRadiansY@DefaultDataLoadHelper@@UEAAMM@Z");
+        return (this->*rv)(std::forward<float>(a0));
+    }
+    inline float loadRotationDegreesX(float a0){
+        float (DefaultDataLoadHelper::*rv)(float);
+        *((void**)&rv) = dlsym("?loadRotationDegreesX@DefaultDataLoadHelper@@UEAAMM@Z");
         return (this->*rv)(std::forward<float>(a0));
     }
     inline float loadRotationDegreesY(float a0){

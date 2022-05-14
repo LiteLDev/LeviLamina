@@ -20,8 +20,8 @@ public:
 #endif
 
 public:
-    MCAPI ScriptPlayerIterator(class ScriptPlayerIterator const &);
     MCAPI ScriptPlayerIterator(std::vector<class Scripting::StrongTypedObjectHandle<class ScriptPlayer>> &&);
+    MCAPI ScriptPlayerIterator(class ScriptPlayerIterator const &);
     MCAPI class ScriptPlayerIterator & operator=(class ScriptPlayerIterator &&);
     MCAPI ~ScriptPlayerIterator();
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptPlayerIterator> bind(struct Scripting::Version);

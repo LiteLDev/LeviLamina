@@ -97,6 +97,7 @@ public:
     /*121*/ virtual void __unk_vfn_121();
     /*124*/ virtual std::string getAuxValuesDescription() const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    MCAPI SeaPickleBlockItem(std::string const &, int);
 
 protected:
 

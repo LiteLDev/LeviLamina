@@ -78,8 +78,11 @@ public:
     MCAPI MobEffect(int, std::string const &, std::string const &, bool, int, int, std::string const &, bool, struct MobEffect::FactorCalculationData const &);
     MCAPI void addAttributeBuff(class Attribute const &, class std::shared_ptr<class AttributeBuff>);
     MCAPI void addAttributeModifier(class Attribute const &, class std::shared_ptr<class AttributeModifier>);
+    MCAPI class mce::Color const & getColor() const;
+    MCAPI class HashedString const & getComponentName() const;
     MCAPI std::string const & getDescriptionId() const;
     MCAPI float getDurationModifier() const;
+    MCAPI struct MobEffect::FactorCalculationData const & getFactorCalculationData() const;
     MCAPI unsigned int getId() const;
     MCAPI std::string const & getResourceName() const;
     MCAPI bool isHarmful() const;
@@ -123,7 +126,7 @@ public:
     MCAPI static class MobEffect * getByName(std::string const &);
     MCAPI static std::string getNameById(int);
     MCAPI static void initEffects(class ResourcePackManager *, class Experiments const &);
-    MCAPI static std::unique_ptr<class MobEffect> * mMobEffects;
+    MCAPI static std::unique_ptr<class MobEffect> mMobEffects[];
     MCAPI static void shutdownEffects();
 
 protected:

@@ -32,6 +32,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI void initSchema();
 
 protected:
 

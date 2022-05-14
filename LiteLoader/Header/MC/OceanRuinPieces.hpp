@@ -24,6 +24,7 @@ public:
 #endif
 
 public:
+    MCAPI static void addPieces(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class BlockPos const &, enum Rotation const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, struct OceanRuinConfiguration const &);
 
 protected:
 
@@ -37,14 +38,14 @@ private:
     MCAPI static void _addClusterRuins(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class Random &, enum Rotation const &, class BlockPos const &, struct OceanRuinConfiguration const &, std::vector<std::unique_ptr<class StructurePiece>> &);
     MCAPI static void _addPiece(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class BlockPos const &, enum Rotation const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, struct OceanRuinConfiguration const &, bool, float);
     MCAPI static std::vector<class BlockPos> _allPositions(class Random &, int, int, int);
-    MCAPI static class gsl::basic_string_span<char const, -1> * bigRuinsBrick;
-    MCAPI static class gsl::basic_string_span<char const, -1> * bigRuinsCracked;
-    MCAPI static class gsl::basic_string_span<char const, -1> * bigRuinsMossy;
-    MCAPI static class gsl::basic_string_span<char const, -1> * bigWarmRuins;
+    MCAPI static class gsl::basic_string_span<char const, -1> bigRuinsBrick[];
+    MCAPI static class gsl::basic_string_span<char const, -1> bigRuinsCracked[];
+    MCAPI static class gsl::basic_string_span<char const, -1> bigRuinsMossy[];
+    MCAPI static class gsl::basic_string_span<char const, -1> bigWarmRuins[];
     MCAPI static class LegacyStructureSettings mSettings;
-    MCAPI static class gsl::basic_string_span<char const, -1> * ruinsBrick;
-    MCAPI static class gsl::basic_string_span<char const, -1> * ruinsCracked;
-    MCAPI static class gsl::basic_string_span<char const, -1> * ruinsMossy;
-    MCAPI static class gsl::basic_string_span<char const, -1> * warmRuins;
+    MCAPI static class gsl::basic_string_span<char const, -1> ruinsBrick[];
+    MCAPI static class gsl::basic_string_span<char const, -1> ruinsCracked[];
+    MCAPI static class gsl::basic_string_span<char const, -1> ruinsMossy[];
+    MCAPI static class gsl::basic_string_span<char const, -1> warmRuins[];
 
 };

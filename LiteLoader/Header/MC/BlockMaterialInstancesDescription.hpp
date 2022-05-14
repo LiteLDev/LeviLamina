@@ -23,6 +23,7 @@ public:
 
 public:
     MCAPI BlockMaterialInstancesDescription();
+    MCAPI struct BlockMaterialInstancesDescription & operator=(struct BlockMaterialInstancesDescription &&);
 
 protected:
 

@@ -37,6 +37,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI CooldownItemComponent(class ComponentItem *);
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 

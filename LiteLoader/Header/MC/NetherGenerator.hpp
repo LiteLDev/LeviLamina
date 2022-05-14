@@ -25,6 +25,11 @@ public:
 
 public:
     /*
+    inline struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const{
+        struct WorldGenerator::BlockVolumeDimensions (NetherGenerator::*rv)() const;
+        *((void**)&rv) = dlsym("?getBlockVolumeDimensions@NetherGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ");
+        return (this->*rv)();
+    }
     inline void decorateWorldGenLoadChunk(class Biome & a0, class LevelChunk & a1, class BlockVolumeTarget & a2, class Random & a3, class ChunkPos const & a4) const{
         void (NetherGenerator::*rv)(class Biome &, class LevelChunk &, class BlockVolumeTarget &, class Random &, class ChunkPos const &) const;
         *((void**)&rv) = dlsym("?decorateWorldGenLoadChunk@NetherGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z");
@@ -48,11 +53,6 @@ public:
     inline class BiomeSource const & getBiomeSource() const{
         class BiomeSource const & (NetherGenerator::*rv)() const;
         *((void**)&rv) = dlsym("?getBiomeSource@NetherGenerator@@UEBAAEBVBiomeSource@@XZ");
-        return (this->*rv)();
-    }
-    inline struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const{
-        struct WorldGenerator::BlockVolumeDimensions (NetherGenerator::*rv)() const;
-        *((void**)&rv) = dlsym("?getBlockVolumeDimensions@NetherGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ");
         return (this->*rv)();
     }
     inline void loadChunk(class LevelChunk & a0, bool a1){

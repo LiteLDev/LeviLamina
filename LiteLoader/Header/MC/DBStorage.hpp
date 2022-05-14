@@ -83,6 +83,7 @@ public:
     }
     */
     MCAPI DBStorage(struct DBStorageConfig, class gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>);
+    MCAPI void _notifyChunkStorageDestroyed(class DBChunkStorage &);
     MCAPI bool tryRepair(class Core::Path const &) const;
 
 protected:

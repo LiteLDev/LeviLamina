@@ -17,10 +17,10 @@ class ResourceMetadata {
 public:
     class ResourceMetadata& operator=(class ResourceMetadata const &) = delete;
     ResourceMetadata(class ResourceMetadata const &) = delete;
+    ResourceMetadata() = delete;
 #endif
 
 public:
-    MCAPI ResourceMetadata();
     MCAPI ~ResourceMetadata();
 
 protected:

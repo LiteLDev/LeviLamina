@@ -164,6 +164,7 @@ public:
     */
     MCAPI DoorBlock(std::string const &, int, class Material const &, enum DoorBlock::DoorType);
     MCAPI enum Direction::Type getBlockedDirection(class IConstBlockSource const &, class BlockPos const &) const;
+    MCAPI int getDir(class IConstBlockSource const &, class BlockPos const &) const;
     MCAPI void getDoorBlocks(class IConstBlockSource const &, class BlockPos const &, class Block const *&, class Block const *&) const;
     MCAPI float getDoorThickness() const;
     MCAPI bool isToggled(class IConstBlockSource const &, class BlockPos const &) const;

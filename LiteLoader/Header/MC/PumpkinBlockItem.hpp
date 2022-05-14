@@ -96,6 +96,7 @@ public:
     /*120*/ virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
     /*121*/ virtual void __unk_vfn_121();
     /*124*/ virtual std::string getAuxValuesDescription() const;
+    MCAPI PumpkinBlockItem(std::string const &, int);
 
 protected:
 

@@ -67,7 +67,6 @@ protected:
 private:
     MCAPI void _calculateMinEngineVersionFromFullStack();
     MCAPI void _composeFullStack();
-    MCAPI class PackInstance * _getPackForResource(class Core::Path const &) const;
     MCAPI void _getResourcesOfGroup(class PackInstance const &, std::string const &, std::vector<class Core::PathBuffer<std::string>> &) const;
     MCAPI void _updateLanguageSubpacks();
 

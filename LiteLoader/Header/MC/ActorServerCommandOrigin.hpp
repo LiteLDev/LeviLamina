@@ -38,6 +38,7 @@ public:
     /*27*/ virtual void updateValues();
     /*29*/ virtual class CompoundTag serialize() const;
     MCAPI ActorServerCommandOrigin(class Actor &);
+    MCAPI struct ActorUniqueID getTargetOther() const;
     MCAPI void setTargetOther(struct ActorUniqueID);
     MCAPI static std::unique_ptr<class ActorServerCommandOrigin> load(class CompoundTag const &, class Level &);
 

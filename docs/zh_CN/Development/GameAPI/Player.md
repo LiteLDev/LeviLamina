@@ -821,3 +821,230 @@ pl.removeBossBar();
 - 返回值类型：`Boolean`
 
 <br>
+
+#### 判断是否为模拟玩家
+
+`pl.isSimulatedPlayer()`
+
+- 返回值：是否为模拟玩家
+- 返回值类型：`Boolean`
+
+<br>
+
+### 模拟玩家（由于与玩家API重合过多，未生成新的模拟玩家类）
+每一个模拟玩家对象都包含一些可以执行的成员函数（成员方法）。对于某个特定的模拟玩家对象`sp`，可以通过以下这些函数对这个模拟玩家进行一些操作
+
+
+#### 模拟攻击
+
+`sp.simulateAttack([target])`
+
+- 参数：
+
+  - target : `Entity`  
+    （可选参数）攻击目标，默认为视线方向上的实体  
+
+- 返回值：是否成功模拟操作
+- 返回值类型：`Boolean`
+
+参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#attack)
+
+
+#### 模拟破坏
+
+`sp.simulateDestory([pos,face])`
+`sp.simulateDestory([block,face])`
+- 参数：
+
+  - pos :`IntPos`  
+    （可选参数）要破坏的方块的坐标，默认为视线方向上的方块  
+  - block :`Block`  
+    （可选参数）要破坏的方块，默认为视线方向上的方块  
+  - face :`Integer`  
+    （可选参数）从哪面破坏，
+
+- 返回值：是否成功模拟操作
+- 返回值类型：`Boolean`
+
+参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#breakblock)
+
+
+#### 模拟断开连接
+
+`sp.simulateDisconnect()`
+
+- 返回值：是否成功模拟操作
+- 返回值类型：`Boolean`
+
+#### 模拟交互
+`sp.simulateInteract([target])`
+`sp.simulateInteract([pos,face])`
+`sp.simulateInteract([block,face])`
+
+- 参数：
+
+  - target : `Entity`  
+    （可选参数）模拟交互目标，默认为视线方向上的方块或实体  
+  - pos :`IntPos`  
+    （可选参数）模拟交互目标，默认为视线方向上的方块或实体  
+  - block :`Block`  
+    （可选参数）模拟交互目标，默认为视线方向上的方块或实体  
+  - face :`Number`  
+    （可选参数）模拟交互目标方块的面  
+
+- 返回值：是否成功模拟操作
+- 返回值类型：`Boolean`
+
+参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#interact)
+
+
+#### 模拟跳跃
+
+`sp.simulateJump()`
+
+- 返回值：是否成功模拟操作
+- 返回值类型：`Boolean`
+
+参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#jump)
+
+
+#### 模拟看向某方块或实体
+
+`sp.simulateLookAt(pos)`
+`sp.simulateLookAt(entity)`
+`sp.simulateLookAt(block)`
+
+- 参数：
+
+  - target : `Entity`  
+    要看向的实体  
+  - pos :`IntPos` / `FloatPos`  
+    要看向的坐标  
+  - block :`Block`  
+    要看向的方块  
+
+- 返回值：是否成功模拟操作
+- 返回值类型：`Boolean`
+
+参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#lookatblock)
+
+
+#### 模拟设置身体角度
+
+`sp.simulateSetBodyRotation(rot)`
+
+- 参数：
+
+  - rot : `Number`  
+    要设置的角度  
+
+- 返回值：是否成功模拟操作
+- 返回值类型：`Boolean`
+
+参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#lookatblock)
+
+
+#### 模拟导航移动
+
+`sp.simulateNavigateTo(entity[,speed)`
+`sp.simulateNavigateTo(pos[,speed])`
+
+- 参数：
+
+  - entity : `Entity`  
+    导航目标  
+  - pos : `IntPos` / `FloatPos`  
+    导航目标  
+  - speed : `Number`  
+    （可选参数）移动速度，默认为1  
+
+- 返回值：是否能到达指定位置以及导航路径，结构：{isFullPath:`Boolean`,path:`Number[3][]`}
+- 返回值类型：`Object`
+
+参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#navigatetoblock)
+返回值示例：{isFullPath:false,path:[[-8,0,-3],[-7,0,-2],[-6,0,-2],[-5,0,-2],[-4,0,-1],[-3,0,-1],[-2,0,-1],[-1,0,0]]}，
+此数据的目标坐标为(0,2,0)，路径终点为(-1,0,0)，所以isFullPath为false，但由于路径不为空，所以模拟玩家将会移动至(-1,0,0)坐标
+
+
+#### 模拟导航移动（多目标）
+
+`sp.simulateNavigateTo(posArray[,speed])`
+
+- 参数：
+
+  - posArray : `IntPos[]` / `FloatPos[]`  
+    导航目标  
+  - speed : `Number`  
+    （可选参数）移动速度，默认为1  
+
+- 返回值：是否成功模拟操作
+- 返回值类型：`Boolean`
+
+参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#navigatetolocations)
+
+
+#### 模拟使用物品
+
+`sp.simulateUseItem([slot,pos,face,relative])`
+`sp.simulateUseItem([item,pos,face,relative])`
+
+- 参数：
+
+  - item : `Item`  
+    （可选参数）要使用的物品，默认为选中物品  
+  - slot : `Number`  
+    （可选参数）要使用的物品所在的槽，默认为选中物品  
+  - pos : `IntPos`  
+    （可选参数）目标坐标，默认为朝向方块坐标  
+  - face : `Number`  
+    （可选参数）目标方块的面，默认为0  
+  - relative : `FloatPos`  
+    （可选参数）相对方块偏移坐标，默认为{0.5,0.5,0.5}  
+
+- 返回值：是否成功模拟操作
+- 返回值类型：`Boolean`
+
+参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#useitem)
+
+
+#### 模拟停止破坏方块
+
+`sp.simulateStopDestroyingBlock()`
+
+- 返回值：是否成功模拟操作
+- 返回值类型：`Boolean`
+
+参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#stopbreakingblock)
+
+
+#### 模拟停止交互
+
+`sp.simulateStopInteracting()`
+
+- 返回值：是否成功模拟操作
+- 返回值类型：`Boolean`
+
+参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#stopinteracting)
+
+
+#### 模拟停止移动
+
+`sp.simulateStopMoving()`
+
+- 返回值：是否成功模拟操作
+- 返回值类型：`Boolean`
+
+参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#stopmoving)
+
+
+#### 模拟停止使用物品
+
+`sp.simulateStopUsingItem()`
+
+- 返回值：是否成功模拟操作
+- 返回值类型：`Boolean`
+
+参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#stopusingitem)
+
+`sp.simulateLocalMove()`
+

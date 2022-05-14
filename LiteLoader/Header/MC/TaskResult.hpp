@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -23,9 +24,12 @@ public:
 
 public:
     MCAPI TaskResult();
+    MCAPI class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> getRunAtTime() const;
+    MCAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> getWaitingOperation() const;
     MCAPI bool hasDelay() const;
     MCAPI bool isDone() const;
     MCAPI bool isWaiting() const;
+    MCAPI bool isWaitingOperationLinked() const;
     MCAPI ~TaskResult();
     MCAPI static class TaskResult const Done;
     MCAPI static class TaskResult const Requeue;

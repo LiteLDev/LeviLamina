@@ -23,7 +23,11 @@ public:
 #endif
 
 public:
+    MCAPI CommandLexer(std::string const &);
+    MCAPI struct CommandLexer::Token const & next() const;
     MCAPI void step();
+    MCAPI static bool isDigit(char);
+    MCAPI static bool isFilePathCharacter(char);
 
 protected:
 

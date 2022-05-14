@@ -20,6 +20,7 @@
 #include <MC/ScoreboardId.hpp>
 #include <MC/ListTag.hpp>
 #include <MC/CompoundTag.hpp>
+#include <MC/SimulatedPlayer.hpp>
 #include <PlayerInfoAPI.h>
 #include <SafeGuardRecord.h>
 #include <string>
@@ -120,7 +121,24 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("getAllTags", &PlayerClass::getAllTags)
         .instanceFunction("getAbilities", &PlayerClass::getAbilities)
         .instanceFunction("getAttributes", &PlayerClass::getAttributes)
-
+        
+        //SimulatedPlayer API
+        .instanceFunction("isSimulatedPlayer", &PlayerClass::isSimulatedPlayer)
+        .instanceFunction("simulateAttack", &PlayerClass::simulateAttack)
+        .instanceFunction("simulateDestory", &PlayerClass::simulateDestory)
+        .instanceFunction("simulateDisconnect", &PlayerClass::simulateDisconnect)
+        .instanceFunction("simulateInteract", &PlayerClass::simulateInteract)
+        .instanceFunction("simulateJump", &PlayerClass::simulateJump)
+        .instanceFunction("simulateLocalMove", &PlayerClass::simulateLocalMove)
+        .instanceFunction("simulateLookAt", &PlayerClass::simulateLookAt)
+        .instanceFunction("simulateSetBodyRotation", &PlayerClass::simulateSetBodyRotation)
+        .instanceFunction("simulateNavigateTo", &PlayerClass::simulateNavigateTo)
+        .instanceFunction("simulateUseItem", &PlayerClass::simulateUseItem)
+        .instanceFunction("simulateStopDestroyingBlock", &PlayerClass::simulateStopDestroyingBlock)
+        .instanceFunction("simulateStopInteracting", &PlayerClass::simulateStopInteracting)
+        .instanceFunction("simulateStopMoving", &PlayerClass::simulateStopMoving)
+        .instanceFunction("simulateStopUsingItem", &PlayerClass::simulateStopUsingItem)
+        
         //For Compatibility
         .instanceProperty("ip", &PlayerClass::getIP)
         .instanceFunction("setTag", &PlayerClass::setNbt)
@@ -230,7 +248,7 @@ void PlayerClass::set(Player* player)
 {
     __try
     {
-        id = ((Actor*)player)->getUniqueID();
+        id = player->getUniqueID();
     }
     __except (EXCEPTION_EXECUTE_HANDLER)
     {
@@ -1689,6 +1707,15 @@ Local<Value> PlayerClass::getAttributes(const Arguments& args)
         }
     }
     CATCH("Fail in getAttributes!");
+}
+
+Local<Value> PlayerClass::isSimulatedPlayer(const Arguments& args)
+{
+    try
+    {
+        return Boolean::newBoolean(get()->isSimulatedPlayer());
+    }
+    CATCH("Fail in isSimulatedPlayer!");
 }
 
 

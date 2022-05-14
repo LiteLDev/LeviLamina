@@ -52,6 +52,7 @@ public:
     */
     MCAPI ItemStackRequestAction(enum ItemStackRequestActionType);
     MCAPI enum ItemStackRequestActionType getActionType() const;
+    MCAPI void write(class BinaryStream &) const;
     MCAPI static std::string const getActionTypeName(enum ItemStackRequestActionType);
     MCAPI static std::unique_ptr<class ItemStackRequestAction> read(class ReadOnlyBinaryStream &);
 

@@ -125,7 +125,6 @@ public:
 protected:
 
 private:
-    MCAPI bool _addResourcePackIfNotAlreadyAdded(class Pack &);
     MCAPI void _detectKnownPacksChange(struct ResourcePackRepository::KnownPackContainer &, struct ResourcePackRepository::KnownPackContainer const &, enum KnownPackType);
     MCAPI void _findVanillaPacks();
     MCAPI void _initialize();
@@ -135,7 +134,6 @@ private:
     MCAPI void _loadLastKnownUserPacks(struct ResourcePackRepository::KnownPackContainer &, enum KnownPackType);
     MCAPI void _loadPacks(bool);
     MCAPI bool _packExists(class mce::UUID const &, class SemVersion const &, enum PackOrigin) const;
-    MCAPI void _reloadDynamicPackagePacks();
     MCAPI void _reloadUserPacks();
     MCAPI bool _removePack(class ResourceLocation const &, bool);
     MCAPI void _saveKnownUserPacks(struct ResourcePackRepository::KnownPackContainer &, enum KnownPackType);

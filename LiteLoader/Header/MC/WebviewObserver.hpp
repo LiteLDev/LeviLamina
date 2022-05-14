@@ -35,15 +35,15 @@ public:
         *((void**)&rv) = dlsym("?onError@WebviewObserver@@UEAAXAEBUWebviewError@@@Z");
         return (this->*rv)(std::forward<struct WebviewError const &>(a0));
     }
-    inline void onMessageRecieved(std::string const & a0){
-        void (WebviewObserver::*rv)(std::string const &);
-        *((void**)&rv) = dlsym("?onMessageRecieved@WebviewObserver@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0));
-    }
     inline void onWebviewChanged(){
         void (WebviewObserver::*rv)();
         *((void**)&rv) = dlsym("?onWebviewChanged@WebviewObserver@@UEAAXXZ");
         return (this->*rv)();
+    }
+    inline void onMessageRecieved(std::string const & a0){
+        void (WebviewObserver::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?onMessageRecieved@WebviewObserver@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
     }
     inline void onDownloadCanceled(struct WebviewDownloadInfo const & a0){
         void (WebviewObserver::*rv)(struct WebviewDownloadInfo const &);

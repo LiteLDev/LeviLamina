@@ -20,6 +20,7 @@ class NetworkStackLatencyPacket : public Packet {
 public:
     class NetworkStackLatencyPacket& operator=(class NetworkStackLatencyPacket const &) = delete;
     NetworkStackLatencyPacket(class NetworkStackLatencyPacket const &) = delete;
+    NetworkStackLatencyPacket() = delete;
 #endif
 
 public:
@@ -28,7 +29,6 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    MCAPI NetworkStackLatencyPacket();
 
 protected:
 

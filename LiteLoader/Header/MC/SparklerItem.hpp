@@ -112,7 +112,8 @@ public:
     /*121*/ virtual void __unk_vfn_121();
     /*124*/ virtual std::string getAuxValuesDescription() const;
     /*126*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
-    MCAPI static struct SparklerItem::ColorInfo const *const COLORS;
+    MCAPI SparklerItem(std::string const &, int);
+    MCAPI static struct SparklerItem::ColorInfo const COLORS[];
     MCAPI static int const MAX_ACTIVE_TICKS;
 
 protected:

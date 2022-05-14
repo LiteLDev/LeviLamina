@@ -21,6 +21,10 @@ public:
 #endif
 
 public:
+    MCAPI ContainerValidationSlotInfo(struct ContainerValidationSlotData const &, class std::shared_ptr<class SimpleSparseContainer>, class std::shared_ptr<class ContainerValidationBase const>);
+    MCAPI class ItemStack const & getItem() const;
+    MCAPI operator bool() const;
+    MCAPI void setItem(class ItemStack const &);
     MCAPI ~ContainerValidationSlotInfo();
 
 protected:

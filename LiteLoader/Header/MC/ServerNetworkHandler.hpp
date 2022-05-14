@@ -14,7 +14,14 @@ class ServerNetworkHandler {
 
 #define AFTER_EXTRA
 // Add Member There
+
+
 public:
+    inline void onClientAuthenticated(class NetworkIdentifier const& a0, class Certificate const& a1)
+    {
+       return _onClientAuthenticated(a0, a1);
+    }
+	
 inline class ServerPlayer* getServerPlayer(class NetworkIdentifier const& a0, char a1=0) {
         return _getServerPlayer(a0, a1);
     }

@@ -18,8 +18,8 @@ class Facing {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum Rotation;
-enum Name;
+enum Rotation : unsigned int;
+enum Name : unsigned char;
 
 #undef AFTER_EXTRA
 
@@ -34,16 +34,16 @@ public:
     MCAPI static class std::array<std::vector<unsigned char>, 6> const ALL_EXCEPT;
     MCAPI static class std::array<std::vector<unsigned char>, 6> const ALL_EXCEPT_AXIS_Y;
     MCAPI static std::vector<unsigned char> const ALL_FACES;
-    MCAPI static enum Facing::Name const *const BY2DDATA;
-    MCAPI static class BlockPos const *const DIRECTION;
-    MCAPI static enum Facing::Name const *const DIRECTIONS;
-    MCAPI static unsigned char const *const FACINGMASK;
-    MCAPI static unsigned char const *const FACINGMASK_INV;
-    MCAPI static class Vec3 const *const NORMAL;
-    MCAPI static unsigned char const *const OPPOSITE_FACING;
-    MCAPI static int const *const STEP_X;
-    MCAPI static int const *const STEP_Y;
-    MCAPI static int const *const STEP_Z;
+    MCAPI static enum Facing::Name const BY2DDATA[];
+    MCAPI static enum Facing::Name const DIRECTIONS[];
+    MCAPI static class BlockPos const DIRECTION[];
+    MCAPI static unsigned char const FACINGMASK[];
+    MCAPI static unsigned char const FACINGMASK_INV[];
+    MCAPI static class Vec3 const NORMAL[];
+    MCAPI static unsigned char const OPPOSITE_FACING[];
+    MCAPI static int const STEP_X[];
+    MCAPI static int const STEP_Y[];
+    MCAPI static int const STEP_Z[];
     MCAPI static unsigned char convertDirectionToFacingDirection(enum Direction::Type);
     MCAPI static unsigned char convertWeirdoDirectionToFacingDirection(enum WeirdoDirection);
     MCAPI static unsigned char convertYRotationToFacingDirection(float);

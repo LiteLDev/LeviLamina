@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    MCAPI BlockQueuedTickingComponent(struct BlockQueuedTickingComponent &&);
     MCAPI struct BlockQueuedTickingComponent & operator=(struct BlockQueuedTickingComponent &&);
     MCAPI ~BlockQueuedTickingComponent();
 

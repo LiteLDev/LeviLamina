@@ -33,6 +33,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI struct AliasInfoDescription const * getAliasInfo(std::string const &) const;
     MCAPI void parse(class Json::Value &, bool);
 
 protected:

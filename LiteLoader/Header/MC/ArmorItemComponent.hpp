@@ -37,7 +37,9 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI ArmorItemComponent(class ComponentItem *);
     MCAPI enum ArmorTextureType getArmorTextureType() const;
+    MCAPI int getArmorValue() const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 

@@ -27,8 +27,10 @@ public:
     /*0*/ virtual ~FunctionManager();
     MCAPI FunctionManager(std::unique_ptr<class ICommandDispatcher>, std::unique_ptr<class CommandOrigin>, class GameRule const *);
     MCAPI int execute(class FunctionEntry &, class CommandOrigin const &, enum FunctionQueueOrder);
+    MCAPI class ICommandDispatcher & getCommandDispatcher();
     MCAPI class FunctionEntry * getFunction(std::string const &);
     MCAPI void load(class ResourcePackManager &, class CommandRegistry &);
+    MCAPI void queueCommands(std::vector<std::unique_ptr<class IFunctionEntry>> const &, class CommandOrigin const &, enum FunctionQueueOrder);
     MCAPI void tick();
     MCAPI static enum FunctionQueueOrder getQueueOrderForCommandVersion(enum CurrentCmdVersion);
 

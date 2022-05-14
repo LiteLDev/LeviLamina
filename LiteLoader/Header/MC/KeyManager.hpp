@@ -35,6 +35,7 @@ public:
     */
     MCAPI KeyManager(std::string const &, enum Crypto::Asymmetric::System);
     MCAPI std::string getPublicKey() const;
+    MCAPI bool verify(std::string const &, std::string const &, enum Crypto::Hash::HashType) const;
 
 protected:
 

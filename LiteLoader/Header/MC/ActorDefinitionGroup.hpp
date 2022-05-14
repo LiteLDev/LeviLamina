@@ -34,6 +34,7 @@ public:
     /*0*/ virtual ~ActorDefinitionGroup();
     MCAPI ActorDefinitionGroup(class Level &, class ResourcePackManager &, class IMinecraftEventing &, class Experiments const &);
     MCAPI std::vector<std::string> buildActorEventList() const;
+    MCAPI class ActorComponentFactory * getComponentFactory();
     MCAPI void setComponentFactory(class ActorComponentFactory *);
     MCAPI class ActorDefinitionPtr tryGetDefinition(std::string const &);
     MCAPI class ActorDefinitionPtr tryGetDefinitionGroup(std::string const &, std::string const &);

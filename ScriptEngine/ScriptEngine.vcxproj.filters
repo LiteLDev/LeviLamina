@@ -18,6 +18,9 @@
     <Filter Include="Tools">
       <UniqueIdentifier>{c322c5ad-e260-4fba-b9d5-f73c3fcbe583}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{01a1c5e2-9b11-4e4b-aece-b6f0aaef4b25}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="API\APIHelp.cpp">
@@ -162,6 +165,9 @@
       <Filter>API</Filter>
     </ClCompile>
     <ClCompile Include="API\DatabaseAPI.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\SimulatedPlayerAPI.cpp">
       <Filter>API</Filter>
     </ClCompile>
   </ItemGroup>
@@ -310,6 +316,9 @@
     <ClInclude Include="API\DatabaseAPI.h">
       <Filter>API</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="third-party\cpp-base64\lib\cpp-base64.lib">
@@ -357,5 +366,10 @@
     <Library Include="third-party\V8\lib\zlib.lib">
       <Filter>Lib</Filter>
     </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ScriptEngine.rc">
+      <Filter>Resource</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

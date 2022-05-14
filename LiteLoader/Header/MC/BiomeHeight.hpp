@@ -8,7 +8,7 @@
 
 #undef BEFORE_EXTRA
 
-class BiomeHeight {
+struct BiomeHeight {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,13 +17,12 @@ class BiomeHeight {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMEHEIGHT
 public:
-    class BiomeHeight& operator=(class BiomeHeight const &) = delete;
-    BiomeHeight(class BiomeHeight const &) = delete;
+    struct BiomeHeight& operator=(struct BiomeHeight const &) = delete;
+    BiomeHeight(struct BiomeHeight const &) = delete;
     BiomeHeight() = delete;
 #endif
 
 public:
-    MCAPI static float const MIN_DEPTH;
 
 protected:
 
