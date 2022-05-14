@@ -144,10 +144,18 @@ void PrintValue(T &out, Local<Value> v)
                 out << "<NbtClass>";
                 break;
             }
+            if (IsInstanceOf<DBSessionClass>(v))
+            {
+                out << "<DBSession>";
+            }
+            if (IsInstanceOf<DBStmtClass>(v))
+            {
+                out << "<DBStmt>";
+            }
 
             Local<Object> obj = v.asObject();
             std::vector<std::string> keys = obj.getKeyNames();
-            if(keys.empty())
+            if (keys.empty())
                 out << "{}";
             else
             {
