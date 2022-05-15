@@ -162,7 +162,8 @@ public:
     /**
      * @brief Fetch the current row.
      *
-     * @return Row  The current row
+     * @tparam T  The type of the value to return
+     * @return T  The current row(converted)
      * @throws std::runtime_error  If there is no row to fetch
      *
      * @par Example
@@ -174,11 +175,12 @@ public:
      * }
      * stmt->close();
      * @endcode
-     *
-     * @par Impletementation
-     * @see SQLiteStmt::fetch
      */
-    virtual Row fetch() = 0;
+    template <typename T = Row>
+    inline T fetch()
+    {
+        return row_to<T>(_Fetch());
+    }
 
     /**
      * @brief Fetch the current row.
@@ -186,10 +188,15 @@ public:
      * @param[out] row    The current row
      * @return     Stmt&  *this
      */
-    virtual Stmt& fetch(Row& row);
+    template <typename T = Row>
+    inline Stmt& fetch(T& row)
+    {
+        row = row_to<T>(_Fetch());
+        return *this;
+    }
 
     /**
-     * @brief Fetch all the result rows.
+     * @brief Fetch each of the result rows.
      *
      * @param  cb     Callback function to handle the result rows
      * @return Stmt&  *this
@@ -198,35 +205,81 @@ public:
      * @par Example
      * @code
      * sess->prepare("SELECT * FROM table")
-     *     ->fetchAll([](const Row& row) {
+     *     ->fetchEach([](const Row& row) {
      *         // Do something with the row
      *         return true;
      *       })
      *     ->close();
      * @endcode
-     *
-     * @par Impletementation
-     * @see SQLiteStmt::fetchAll
      */
-    virtual Stmt& fetchAll(std::function<bool(const Row&)> cb);
+    inline Stmt& fetchEach(std::function<bool(const Row&)> cb)
+    {
+        do {
+            if (!cb(_Fetch())) break;
+        } while (step());
+        return *this;
+    }
+
+    /**
+     * @brief Fetch each of the result rows(For compatibility).
+     * 
+     * @param  cb     Callback function to handle the result rows
+     * @return Stmt&  *this
+     * @note   Return false in callback to stop fetching
+     * @see Stmt::fetchEach
+     */
+    inline Stmt& fetchAll(std::function<bool(const Row&)> cb) 
+    {
+        return fetchEach(cb);
+    }
+    //virtual Stmt& fetchAll(std::function<bool(const Row&)> cb);
 
     /**
      * @brief Fetch all the result rows.
      *
-     * @return ResultSet  The result rows
-     *
-     * @par Impletementation
-     * @see SQLiteStmt::fetchAll
+     * @tparam T  The value type of vector
+     * @return std::vector<T>  The result rows
      */
-    virtual ResultSet fetchAll() = 0;
+    template <typename T>
+    inline std::vector<T> fetchAll()
+    {
+        std::vector<T> result;
+        return fetchAll(result);
+    }
+    //virtual ResultSet fetchAll() = 0;
 
     /**
      * @brief Fetch all the result rows.
      *
+     * @tparam T   The value type of vector
      * @param[out] rows   The result set
      * @return     Stmt&  *this
      */
-    virtual Stmt& fetchAll(ResultSet& rows);
+    template <typename T>
+    inline Stmt& fetchAll(std::vector<T>& rows)
+    {
+        return fetchEach([&](const T& row) {
+            rows.push_back(row);
+            return true;
+        });
+        return *this;
+    }
+    //virtual Stmt& fetchAll(ResultSet& rows);
+
+    inline ResultSet fetchAll()
+    {
+        ResultSet set;
+        fetchAll(set);
+        return set;
+    }
+
+    inline Stmt& fetchAll(ResultSet& rows)
+    {
+        return fetchEach([&rows](const Row& row) {
+            rows.push_back(row);
+            return true;
+        });
+    }
 
     /**
      * @brief Reset the statement from executing state to perpared state
@@ -356,24 +409,75 @@ public:
      * 
      * @return Row  The current row
      */
-    //virtual Row _Fetch() = 0;
+    virtual Row _Fetch() = 0;
 
+
+    /**
+     * @brief Operator<< to bind values.
+     *
+     * @param  v  The value
+     * @return SharedPointer<Stmt>  this
+     */
+    inline SharedPointer<Stmt> operator<<(const Any& v)
+    {
+        bind(v);
+        return getSharedPointer();
+    }
+    /**
+     * @brief Operator<< to bind a set of values.
+     * 
+     * @tparam T  The type of set(must have `begin` and `end` method)
+     * @param  v  The value set
+     * @return SharedPointer<Stmt>  this
+     */
+    template <typename T>
+    inline SharedPointer<Stmt> operator<<(const T& v)
+    {
+        for (auto& e : v)
+        {
+            bind(e);
+        }
+        return getSharedPointer();
+    }
+
+    /**
+     * @brief Operator>> to store the result.
+     * 
+     * @tparam T  The value type
+     * @param  v  Where to store
+     * @return SharedPointer<Stmt>  this
+     */
+    template <typename T>
+    inline SharedPointer<Stmt> operator>>(T& v)
+    {
+        fetch(v);
+        return getSharedPointer();
+    }
+    template <>
+    inline SharedPointer<Stmt> operator>>(ResultSet& v)
+    {
+        fetchAll(v);
+        return getSharedPointer();     
+    }
+    template <typename T>
+    inline SharedPointer<Stmt> operator>>(std::vector<T>& v)
+    {
+        fetchAll(v);
+        return getSharedPointer();
+    }
 
     /**
      * @brief Operator, to bind single values.
      *
      * @param  b      The return value of DB::use
-     * @return Stmt&  *this
-     *
-     * @par Impletementation
-     * @see SQLiteStmt::operator,
+     * @return SharedPointer<Stmt>  this
      */
     virtual SharedPointer<Stmt> operator,(const BindType& b);
     /**
      * @brief Operator, to bind a sequence container.
      *
      * @param  b      The return value of DB::use
-     * @return Stmt&  *this
+     * @return SharedPointer<Stmt>  this
      */
     template <typename T>
     inline SharedPointer<Stmt> operator,(const BindSequenceType<T>& b)
@@ -388,7 +492,7 @@ public:
      * @brief Operator, to bind a row.
      *
      * @param  b      The return value of DB::use
-     * @return Stmt&  *this
+     * @return SharedPointer<Stmt>  this
      */
     template <>
     inline SharedPointer<Stmt> operator,(const BindSequenceType<Row>& b)
@@ -413,7 +517,7 @@ public:
      * @brief Operator, to bind a map container.
      *
      * @param  b      The return value of DB::bind
-     * @return Stmt&  *this
+     * @return SharedPointer<Stmt>  this
      */
     template <typename T>
     inline SharedPointer<Stmt> operator,(const BindMapType<T>& b)
@@ -428,58 +532,55 @@ public:
      * @brief Operator, to store a row of results.
      *
      * @param  i      The return value of DB::into
-     * @return Stmt&  *this
+     * @return SharedPointer<Stmt>  this
      */
     template <typename T>
     inline SharedPointer<Stmt> operator,(IntoType<T>& i)
     {
-        if (!done()) i.value = row_to<T>(next());
+        if (!done()) fetch<T>(i.value);
         return getSharedPointer();
     }
     /**
      * @brief Operator, to store a set of results.
      *
      * @param  i      The return value of DB::into
-     * @return Stmt&  *this
+     * @return SharedPointer<Stmt>  this
      */
     template <typename T>
     inline SharedPointer<Stmt> operator,(IntoType<std::vector<T>>& i)
     {
-        fetch([&](const Row& row) {
-            i.value.push_back(row_to<T>(row));
-            return true;
-        });
+        fetchAll<std::vector<T>>(i.value);
         return getSharedPointer();
     }
     /**
      * @brief Operator, to store a set of results.
      *
      * @param  i      The return value of DB::into
-     * @return Stmt&  *this
+     * @return SharedPointer<Stmt>  this
      */
     template <>
     inline SharedPointer<Stmt> operator,(IntoType<ResultSet>& i)
     {
-        i.value = fetchAll();
+        fetchAll(i.value);
         return getSharedPointer();
     }
     /**
      * @brief Operator, to store a row of results.
      *
      * @param  i      The return value of DB::into
-     * @return Stmt&  *this
+     * @return SharedPointer<Stmt>  this
      */
     template <>
     inline SharedPointer<Stmt> operator,(IntoType<Row>& i)
     {
-        if (!done()) i.value = fetch();
+        fetch(i.value);
         return getSharedPointer();
     }
 
     /**
      * @brief Operator-> to implement better API.
      * 
-     * @return 
+     * @return Stmt*  this
      */
     inline Stmt* operator->()
     {

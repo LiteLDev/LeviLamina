@@ -20,34 +20,6 @@ void Stmt::setDebugOutput(bool enable)
     debugOutput = enable;
 }
 
-Stmt& Stmt::fetch(Row& row)
-{
-    row = fetch();
-    return *this;
-}
-
-Stmt& Stmt::fetchAll(std::function<bool(const Row&)> cb)
-{
-    if (!done())
-    {
-        do
-        {
-            if (!cb(fetch()))
-            {
-                IF_ENDBG dbLogger.debug("Stmt::fetchAll: Stopped fetching");
-                break;
-            }
-        } while (step());
-    }
-    return *this;
-}
-
-Stmt& Stmt::fetchAll(ResultSet& result)
-{
-    result = fetchAll();
-    return *this;
-}
-
 std::weak_ptr<Session> Stmt::getParent() const
 {
     return parent;

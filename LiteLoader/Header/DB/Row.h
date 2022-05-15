@@ -213,7 +213,15 @@ public:
      * @return Any&    The value of the column
      * @note   It will create a new Any object if the column doesn't exist
      */
-    LIAPI Any& operator[](const std::string& column);
+    LIAPI Any& operator[](const std::string& name);
+    /**
+     * @brief Get the value of a column
+     *
+     * @param  column  The name of the column
+     * @return Any&    The value of the column
+     * @note   It will create a new Any object if the column doesn't exist
+     */
+    LIAPI Any& operator[](const char* name);
     /**
      * @brief Get the value of a column
      *
@@ -267,4 +275,10 @@ template <typename T>
 inline T row_to(const DB::Row& row)
 {
     throw std::bad_cast();
+}
+
+template <>
+inline DB::Row row_to(const DB::Row& row)
+{
+    return row;
 }

@@ -35,9 +35,7 @@ public:
     bool step();
     bool next();
     bool done();
-    Row fetch();
-    Stmt& fetchAll(std::function<bool(const Row&)> cb);
-    ResultSet fetchAll();
+    Row _Fetch();
     Stmt& reset();
     /**
      * @see Stmt::reexec for details

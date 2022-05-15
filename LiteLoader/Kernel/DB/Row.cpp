@@ -195,6 +195,14 @@ Any& Row::operator[](const std::string& name)
     resize((size_t)idx + 1, Any());
     return std::vector<Any>::at(idx);
 }
+Any& Row::operator[](const char* name)
+{
+    auto idx = (*header)[name];
+    if (idx < (int)size())
+        return std::vector<Any>::at(idx);
+    resize((size_t)idx + 1, Any());
+    return std::vector<Any>::at(idx);
+}
 Any& Row::operator[](size_t idx)
 {
     if (idx < size())

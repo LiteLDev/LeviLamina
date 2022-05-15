@@ -546,15 +546,15 @@ bool MySQLStmt::done()
     return fetched;
 }
 
-Row MySQLStmt::fetch()
+Row MySQLStmt::_Fetch()
 {
     if (fetched)
     {
-        throw std::runtime_error("MySQLStmt::fetch: No more rows");
+        throw std::runtime_error("MySQLStmt::_Fetch: No more rows");
     }
-    IF_ENDBG dbLogger.debug("MySQLStmt::fetch: Fetching row...");
+    IF_ENDBG dbLogger.debug("MySQLStmt::_Fetch: Fetching row...");
     Row row(resultHeader);
-    IF_ENDBG dbLogger.debug("MySQLStmt::fetch: RowHeader size {}", row.header->size());
+    IF_ENDBG dbLogger.debug("MySQLStmt::_Fetch: RowHeader size {}", row.header->size());
     int i = 0;
     for (auto& col : resultValues)
     {
@@ -565,37 +565,11 @@ Row MySQLStmt::fetch()
         auto v = ReceiverToAny(col);
         row.push_back(v);
         IF_ENDBG dbLogger.debug(
-            "MySQLStmt::fetch: Fetched column `{}`, type {}, value {}",
+            "MySQLStmt::_Fetch: Fetched column `{}`, type {}, value {}",
             col.field.name, Any::type2str(v.type), v.get<std::string>());
         i++;
     }
     return row;
-}
-
-Stmt& MySQLStmt::fetchAll(std::function<bool(const Row&)> cb)
-{
-    if (!done())
-    {
-        do
-        {
-            if (!cb(fetch()))
-            {
-                break;
-            }
-        } while (step());
-    }
-    return *this;
-}
-
-ResultSet MySQLStmt::fetchAll()
-{
-    ResultSet result(resultHeader);
-    fetchAll([&result](const Row& row) {
-        result.push_back(row);
-        return true;
-    });
-    dbLogger.debug("MySQLStmt::fetchAll: Fetched {} rows", result.size());
-    return result;
 }
 
 Stmt& MySQLStmt::reset()

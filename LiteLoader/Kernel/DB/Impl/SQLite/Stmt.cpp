@@ -200,7 +200,7 @@ bool SQLiteStmt::done()
     return !step();
 }
 
-Row SQLiteStmt::fetch()
+Row SQLiteStmt::_Fetch()
 {
     if (done()) return Row();
     if (!resultHeader || resultHeader->empty())
@@ -221,7 +221,7 @@ Row SQLiteStmt::fetch()
             case SQLITE_TEXT:
             {
                 std::string text(reinterpret_cast<const char*>(sqlite3_column_text(stmt, i)));
-                IF_ENDBG dbLogger.debug("SQLiteStmt::fetch: Fetched TEXT type column: {} {}", i, text);
+                IF_ENDBG dbLogger.debug("SQLiteStmt::_Fetch: Fetched TEXT type column: {} {}", i, text);
                 row.push_back(text);
                 break;
             }
@@ -233,7 +233,7 @@ Row SQLiteStmt::fetch()
                         sqlite3_column_bytes(stmt, i));
                 IF_ENDBG
                 {
-                    std::string out = "SQLiteStmt::fetch: Fetched BLOB type column: " + std::to_string(i) + " ";
+                    std::string out = "SQLiteStmt::_Fetch: Fetched BLOB type column: " + std::to_string(i) + " ";
                     for (auto& byte : arr)
                     {
                         out += IntToHexStr(byte, true, true, false) + ' ';
@@ -252,36 +252,6 @@ Row SQLiteStmt::fetch()
         }
     }
     return row;
-}
-
-Stmt& SQLiteStmt::fetchAll(std::function<bool(const Row&)> cb)
-{
-    if (!done())
-    {
-        do
-        {
-            if (!cb(fetch()))
-            {
-                IF_ENDBG dbLogger.debug("SQLiteStmt::fetchAll: Stopped fetching");
-                break;
-            }
-        } while (step());
-    }
-    return *this;
-}
-
-ResultSet SQLiteStmt::fetchAll()
-{
-    if (!resultHeader || resultHeader->empty())
-    {
-        fetchResultHeader();
-    }
-    ResultSet result(resultHeader);
-    do
-        result.push_back(fetch());
-    while (step());
-    IF_ENDBG dbLogger.debug("SQLiteStmt::fetchAll: Fetched {} rows", result.size());
-    return result;
 }
 
 Stmt& SQLiteStmt::reset()
