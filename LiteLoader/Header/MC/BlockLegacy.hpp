@@ -241,24 +241,9 @@ public:
         *((void**)&rv) = dlsym("?isMultifaceBlock@BlockLegacy@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool hasVariableLighting() const{
+    inline bool isHurtableBlock() const{
         bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?hasVariableLighting@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isLeverBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isLeverBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isFenceGateBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isFenceGateBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool pushesUpFallingBlocks() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?pushesUpFallingBlocks@BlockLegacy@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?isHurtableBlock@BlockLegacy@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool spawnBurnResources(class BlockSource & a0, float a1, float a2, float a3) const{
@@ -266,34 +251,34 @@ public:
         *((void**)&rv) = dlsym("?spawnBurnResources@BlockLegacy@@UEBA_NAEAVBlockSource@@MMM@Z");
         return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<float>(a1), std::forward<float>(a2), std::forward<float>(a3));
     }
-    inline bool isHurtableBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isHurtableBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool use(class Player & a0, class BlockPos const & a1, unsigned char a2) const{
         bool (BlockLegacy::*rv)(class Player &, class BlockPos const &, unsigned char) const;
         *((void**)&rv) = dlsym("?use@BlockLegacy@@MEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z");
         return (this->*rv)(std::forward<class Player &>(a0), std::forward<class BlockPos const &>(a1), std::forward<unsigned char>(a2));
     }
+    inline bool isLeverBlock() const{
+        bool (BlockLegacy::*rv)() const;
+        *((void**)&rv) = dlsym("?isLeverBlock@BlockLegacy@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasVariableLighting() const{
+        bool (BlockLegacy::*rv)() const;
+        *((void**)&rv) = dlsym("?hasVariableLighting@BlockLegacy@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool pushesUpFallingBlocks() const{
+        bool (BlockLegacy::*rv)() const;
+        *((void**)&rv) = dlsym("?pushesUpFallingBlocks@BlockLegacy@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isFenceGateBlock() const{
+        bool (BlockLegacy::*rv)() const;
+        *((void**)&rv) = dlsym("?isFenceGateBlock@BlockLegacy@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline bool isContainerBlock() const{
         bool (BlockLegacy::*rv)() const;
         *((void**)&rv) = dlsym("?isContainerBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isSlabBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isSlabBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isWallBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isWallBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canHaveExtraData() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?canHaveExtraData@BlockLegacy@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isCraftingBlock() const{
@@ -311,9 +296,29 @@ public:
         *((void**)&rv) = dlsym("?isThinFenceBlock@BlockLegacy@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isDoorBlock() const{
+    inline bool isWallBlock() const{
         bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isDoorBlock@BlockLegacy@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?isWallBlock@BlockLegacy@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isSlabBlock() const{
+        bool (BlockLegacy::*rv)() const;
+        *((void**)&rv) = dlsym("?isSlabBlock@BlockLegacy@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canHaveExtraData() const{
+        bool (BlockLegacy::*rv)() const;
+        *((void**)&rv) = dlsym("?canHaveExtraData@BlockLegacy@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool detachesOnPistonMove(class BlockSource & a0, class BlockPos const & a1) const{
+        bool (BlockLegacy::*rv)(class BlockSource &, class BlockPos const &) const;
+        *((void**)&rv) = dlsym("?detachesOnPistonMove@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1));
+    }
+    inline bool causesFreezeEffect() const{
+        bool (BlockLegacy::*rv)() const;
+        *((void**)&rv) = dlsym("?causesFreezeEffect@BlockLegacy@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool hasComparatorSignal() const{
@@ -321,15 +326,10 @@ public:
         *((void**)&rv) = dlsym("?hasComparatorSignal@BlockLegacy@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool causesFreezeEffect() const{
+    inline bool isDoorBlock() const{
         bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?causesFreezeEffect@BlockLegacy@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?isDoorBlock@BlockLegacy@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline bool detachesOnPistonMove(class BlockSource & a0, class BlockPos const & a1) const{
-        bool (BlockLegacy::*rv)(class BlockSource &, class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?detachesOnPistonMove@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1));
     }
     inline bool isSignalSource() const{
         bool (BlockLegacy::*rv)() const;
@@ -341,9 +341,9 @@ public:
         *((void**)&rv) = dlsym("?isCandleCakeBlock@BlockLegacy@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool canBeDestroyedByWaterSpread() const{
+    inline bool isFenceBlock() const{
         bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeDestroyedByWaterSpread@BlockLegacy@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?isFenceBlock@BlockLegacy@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isBounceBlock() const{
@@ -356,14 +356,14 @@ public:
         *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@BlockLegacy@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isFenceBlock() const{
+    inline bool canBeDestroyedByWaterSpread() const{
         bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isFenceBlock@BlockLegacy@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?canBeDestroyedByWaterSpread@BlockLegacy@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isStemBlock() const{
+    inline bool isStairBlock() const{
         bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isStemBlock@BlockLegacy@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?isStairBlock@BlockLegacy@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isVibrationBlocking() const{
@@ -371,9 +371,14 @@ public:
         *((void**)&rv) = dlsym("?isVibrationBlocking@BlockLegacy@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isStairBlock() const{
+    inline bool isStemBlock() const{
         bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isStairBlock@BlockLegacy@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?isStemBlock@BlockLegacy@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isCropBlock() const{
+        bool (BlockLegacy::*rv)() const;
+        *((void**)&rv) = dlsym("?isCropBlock@BlockLegacy@@MEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isButtonBlock() const{
@@ -384,11 +389,6 @@ public:
     inline bool isRailBlock() const{
         bool (BlockLegacy::*rv)() const;
         *((void**)&rv) = dlsym("?isRailBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isCropBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isCropBlock@BlockLegacy@@MEBA_NXZ");
         return (this->*rv)();
     }
     inline int getExtraRenderLayers() const{
@@ -426,30 +426,30 @@ public:
         *((void**)&rv) = dlsym("?onPlace@BlockLegacy@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1));
     }
-    inline void onPlayerPlacing(class BlockSource & a0, class BlockPos const & a1, class Actor & a2, unsigned char a3) const{
-        void (BlockLegacy::*rv)(class BlockSource &, class BlockPos const &, class Actor &, unsigned char) const;
-        *((void**)&rv) = dlsym("?onPlayerPlacing@BlockLegacy@@MEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@E@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1), std::forward<class Actor &>(a2), std::forward<unsigned char>(a3));
-    }
     inline void onStepOn(class Actor & a0, class BlockPos const & a1) const{
         void (BlockLegacy::*rv)(class Actor &, class BlockPos const &) const;
         *((void**)&rv) = dlsym("?onStepOn@BlockLegacy@@MEBAXAEAVActor@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class Actor &>(a0), std::forward<class BlockPos const &>(a1));
+    }
+    inline void onPlayerPlacing(class BlockSource & a0, class BlockPos const & a1, class Actor & a2, unsigned char a3) const{
+        void (BlockLegacy::*rv)(class BlockSource &, class BlockPos const &, class Actor &, unsigned char) const;
+        *((void**)&rv) = dlsym("?onPlayerPlacing@BlockLegacy@@MEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@E@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1), std::forward<class Actor &>(a2), std::forward<unsigned char>(a3));
     }
     inline void tick(class BlockSource & a0, class BlockPos const & a1, class Random & a2) const{
         void (BlockLegacy::*rv)(class BlockSource &, class BlockPos const &, class Random &) const;
         *((void**)&rv) = dlsym("?tick@BlockLegacy@@MEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z");
         return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1), std::forward<class Random &>(a2));
     }
-    inline void onStepOff(class Actor & a0, class BlockPos const & a1) const{
-        void (BlockLegacy::*rv)(class Actor &, class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?onStepOff@BlockLegacy@@MEBAXAEAVActor@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class Actor &>(a0), std::forward<class BlockPos const &>(a1));
-    }
     inline void onStandOn(class EntityContext & a0, class BlockPos const & a1) const{
         void (BlockLegacy::*rv)(class EntityContext &, class BlockPos const &) const;
         *((void**)&rv) = dlsym("?onStandOn@BlockLegacy@@MEBAXAEAVEntityContext@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class EntityContext &>(a0), std::forward<class BlockPos const &>(a1));
+    }
+    inline void onStepOff(class Actor & a0, class BlockPos const & a1) const{
+        void (BlockLegacy::*rv)(class Actor &, class BlockPos const &) const;
+        *((void**)&rv) = dlsym("?onStepOff@BlockLegacy@@MEBAXAEAVActor@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class Actor &>(a0), std::forward<class BlockPos const &>(a1));
     }
     inline  ~BlockLegacy(){
          (BlockLegacy::*rv)();
