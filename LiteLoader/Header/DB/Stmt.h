@@ -258,8 +258,8 @@ public:
     template <typename T>
     inline Stmt& fetchAll(std::vector<T>& rows)
     {
-        return fetchEach([&](const T& row) {
-            rows.push_back(row);
+        return fetchEach([&](const Row& row) {
+            rows.push_back(row_to<T>(row));
             return true;
         });
         return *this;
@@ -421,22 +421,6 @@ public:
     inline SharedPointer<Stmt> operator<<(const Any& v)
     {
         bind(v);
-        return getSharedPointer();
-    }
-    /**
-     * @brief Operator<< to bind a set of values.
-     * 
-     * @tparam T  The type of set(must have `begin` and `end` method)
-     * @param  v  The value set
-     * @return SharedPointer<Stmt>  this
-     */
-    template <typename T>
-    inline SharedPointer<Stmt> operator<<(const T& v)
-    {
-        for (auto& e : v)
-        {
-            bind(e);
-        }
         return getSharedPointer();
     }
 

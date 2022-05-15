@@ -219,17 +219,9 @@ public:
      *
      * @param  column  The name of the column
      * @return Any&    The value of the column
-     * @note   It will create a new Any object if the column doesn't exist
+     * @see    Row::at
      */
-    LIAPI Any& operator[](const char* name);
-    /**
-     * @brief Get the value of a column
-     *
-     * @param  index  The index of the column
-     * @return Any&   The value of the column
-     * @note   It will create a new Any object if the column doesn't exist
-     */
-    LIAPI Any& operator[](size_t index);
+    LIAPI const Any& operator[](const std::string& name) const;
     /**
      * @brief Get the value of a column
      *
@@ -238,14 +230,7 @@ public:
      * @throw  std::out_of_range If the column does not exist
      */
     LIAPI Any& at(const std::string& column);
-    /**
-     * @brief Get the value of a column
-     *
-     * @param  index  The index of the column
-     * @return Any&   The value of the column
-     * @throw  std::out_of_range If the column does not exist
-     */
-    LIAPI Any& at(size_t index);
+    LIAPI const Any& at(const std::string& column) const;
     /**
      * @brief Traverse the row(references)
      *

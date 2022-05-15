@@ -195,29 +195,18 @@ Any& Row::operator[](const std::string& name)
     resize((size_t)idx + 1, Any());
     return std::vector<Any>::at(idx);
 }
-Any& Row::operator[](const char* name)
+const Any& Row::operator[](const std::string& name) const
 {
-    auto idx = (*header)[name];
-    if (idx < (int)size())
-        return std::vector<Any>::at(idx);
-    resize((size_t)idx + 1, Any());
-    return std::vector<Any>::at(idx);
-}
-Any& Row::operator[](size_t idx)
-{
-    if (idx < size())
-        return std::vector<Any>::at(idx);
-    resize((size_t)idx + 1, Any());
-    return std::vector<Any>::at(idx);
+    return std::vector<Any>::at(header->at(name));
 }
 
 Any& Row::at(const std::string& name)
 {
     return std::vector<Any>::at(header->at(name));
 }
-Any& Row::at(size_t idx)
+const Any& Row::at(const std::string& name) const
 {
-    return std::vector<Any>::at(idx);
+    return std::vector<Any>::at(header->at(name));
 }
 
 void Row::forEach_ref(std::function<bool(const std::string&, Any&)> cb)

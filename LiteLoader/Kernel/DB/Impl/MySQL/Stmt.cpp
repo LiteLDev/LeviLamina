@@ -548,6 +548,7 @@ bool MySQLStmt::done()
 
 Row MySQLStmt::_Fetch()
 {
+    // TODO: execute check
     if (fetched)
     {
         throw std::runtime_error("MySQLStmt::_Fetch: No more rows");

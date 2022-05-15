@@ -115,6 +115,21 @@ std::pair<std::shared_ptr<char[]>, std::size_t> alloc_buf(const MYSQL_FIELD& fie
 }
 
 
+struct MyStruct
+{
+    std::string a;
+    int b;
+};
+template <>
+MyStruct row_to(const Row& row)
+{
+    MyStruct result;
+    result.a = row["a"].get<std::string>();
+    result.b = row["b"].get<int>();
+    return result;
+}
+
+
 void run_tests(SharedPointer<Session> sess)
 {
 #if defined(CATCH_EXCEPTION)
@@ -168,6 +183,19 @@ void run_tests(SharedPointer<Session> sess)
                 log_row(row);
                 return true;
             });
+        std::vector<MyStruct> res1;
+        sess->prepare("SELECT * FROM test")
+            ->execute()
+            ->fetchAll(res1);
+        for (auto& s : res1)
+        {
+            logger.info("- a: {}, b: {}", s.a, s.b);
+        }
+        Row res2;
+        sess << "SELECT * FROM test WHERE a = ?"
+             << "听我说谢谢你"
+             >> res2;
+
         logger.info("FINALLY:");
         sess->query("SELECT * FROM test");
         sess->close();
@@ -313,7 +341,7 @@ void test_main()
     logger.info("DBTest loaded!");
     test_sqlite();
     test_mysql();
-    test_mysql_capi();
+    //test_mysql_capi();
 }
 
 BOOL WINAPI DllMain(HMODULE, DWORD ul_reason_for_call, LPVOID)
