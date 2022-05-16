@@ -50,7 +50,7 @@ SQLiteStmt::~SQLiteStmt()
 Stmt& SQLiteStmt::bind(const Any& value, int index)
 {
     ++index; // Index starts at 1, but we need to start at 0
-    if (index < 0 || index > totalParamsCount)
+    if (index <= 0 || index > totalParamsCount)
     {
         throw std::invalid_argument("SQLiteStmt::bind: Invalid argument `index`");
     }
@@ -241,7 +241,6 @@ Row SQLiteStmt::_Fetch()
                     dbLogger.debug(out);
                 }
                 row.push_back(arr);
-
                 break;
             }
             case SQLITE_NULL:
