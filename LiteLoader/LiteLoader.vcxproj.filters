@@ -378,6 +378,9 @@
     <ClCompile Include="Kernel\Utils\StringReader.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\Utils\ShellLinkFile.cpp">
+      <Filter>Kernel\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -777,6 +780,9 @@
       <Filter>Header\DB</Filter>
     </ClInclude>
     <ClInclude Include="Header\Utils\StringReader.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Utils\ShellLinkFile.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
   </ItemGroup>

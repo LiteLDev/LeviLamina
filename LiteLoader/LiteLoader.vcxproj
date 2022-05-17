@@ -121,6 +121,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\Scoreboard\ObjectiveAPI.cpp" />
     <ClCompile Include="Kernel\Utils\DbgHelper.cpp" />
     <ClCompile Include="Kernel\SimulatedPlayerAPI.cpp" />
+    <ClCompile Include="Kernel\Utils\ShellLinkFile.cpp" />
     <ClCompile Include="Kernel\Utils\SRWLock.cpp" />
     <ClCompile Include="Kernel\Utils\STLHelper.cpp" />
     <ClCompile Include="Kernel\Utils\StringReader.cpp" />
@@ -299,6 +300,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\RemoteCallAPI.h" />
     <ClInclude Include="Header\TranslationAPI.h" />
     <ClInclude Include="Header\Utils\DbgHelper.h" />
+    <ClInclude Include="Header\Utils\ShellLinkFile.h" />
     <ClInclude Include="Header\Utils\SRWLock.h" />
     <ClInclude Include="Header\Utils\STLHelper.h" />
     <ClInclude Include="Header\Utils\StringReader.h" />

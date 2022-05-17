@@ -22,7 +22,7 @@ string GetLastErrorMessage() {
     return res;
 }
 
-//Tool
+// Tool
 wchar_t *str2cwstr(const string &str) {
     auto len = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, nullptr, 0);
     auto *buffer = new wchar_t[len + 1];
@@ -101,7 +101,7 @@ bool NewProcess(const std::string &process, std::function<void(int, std::string)
     return true;
 }
 
-std::pair<int,string> NewProcessSync(const std::string& process, int timeLimit, bool noReadOutput)
+std::pair<int, string> NewProcessSync(const std::string& process, int timeLimit, bool noReadOutput)
 {
     SECURITY_ATTRIBUTES sa;
     HANDLE hRead, hWrite;
@@ -165,4 +165,3 @@ string GetModuleName(HMODULE handler)
     GetModuleFileNameEx(GetCurrentProcess(), handler, buf, MAX_PATH);
     return std::filesystem::path(buf).filename().u8string();
 }
-
