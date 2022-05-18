@@ -28,6 +28,7 @@ ClassDefine<void> LlClassBuilder =
         .function("registerPlugin", &LlClass::registerPlugin)
 
         //For Compatibility
+        // For Compatibility
         .function("checkVersion", &LlClass::requireVersion)
         .build();
 
@@ -46,6 +47,7 @@ Local<Value> LlClass::registerPlugin(const Arguments& args)
     try {
         string name = args[0].toStr();
         string introduction = args.size() >= 2 ? args[1].toStr() : "";
+        string desc = args.size() >= 2 ? args[1].toStr() : "";
 
         LL::Version ver = LL::Version(1, 0, 0);
         if (args.size() >= 3)
@@ -116,8 +118,10 @@ Local<Value> LlClass::registerPlugin(const Arguments& args)
         ENGINE_OWN_DATA()->pluginName = ENGINE_OWN_DATA()->logger.title = name;
         return Boolean::newBoolean(PluginManager::registerPlugin(ENGINE_OWN_DATA()->pluginFilePath,
             name, introduction, ver, other));
+            name, desc, ver, other));
     }
     CATCH("Fail in LLSERegisterPlugin!")
+    CATCH("Fail in LLSERegisterPlugin!");
 }
 
 Local<Value> LlClass::version(const Arguments& args)
