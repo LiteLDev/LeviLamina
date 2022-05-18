@@ -26,8 +26,8 @@ ClassDefine<void> LlClassBuilder =
         .function("require", &LlClass::require)
         .function("eval", &LlClass::eval)
         .function("registerPlugin", &LlClass::registerPlugin)
+        .function("getPluginInfo", &LlClass::getPluginInfo)
 
-        //For Compatibility
         // For Compatibility
         .function("checkVersion", &LlClass::requireVersion)
         .build();
@@ -46,7 +46,6 @@ Local<Value> LlClass::registerPlugin(const Arguments& args)
 
     try {
         string name = args[0].toStr();
-        string introduction = args.size() >= 2 ? args[1].toStr() : "";
         string desc = args.size() >= 2 ? args[1].toStr() : "";
 
         LL::Version ver = LL::Version(1, 0, 0);
@@ -117,11 +116,43 @@ Local<Value> LlClass::registerPlugin(const Arguments& args)
 
         ENGINE_OWN_DATA()->pluginName = ENGINE_OWN_DATA()->logger.title = name;
         return Boolean::newBoolean(PluginManager::registerPlugin(ENGINE_OWN_DATA()->pluginFilePath,
-            name, introduction, ver, other));
             name, desc, ver, other));
     }
-    CATCH("Fail in LLSERegisterPlugin!")
     CATCH("Fail in LLSERegisterPlugin!");
+}
+
+Local<Value> LlClass::getPluginInfo(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+
+    try
+    {
+        std::string name = args[0].toStr();
+        auto plugin = LL::getPlugin(name);
+        if (plugin)
+        {
+            auto result = Object::newObject();
+            result.set("name", plugin->name);
+            result.set("desc", plugin->desc);
+            auto ver = Array::newArray();
+            ver.add(Number::newNumber(plugin->version.major));
+            ver.add(Number::newNumber(plugin->version.minor));
+            ver.add(Number::newNumber(plugin->version.revision));
+            result.set("version", ver);
+            result.set("versionStr", plugin->version.toString(true));
+            result.set("filePath", plugin->filePath);
+            auto others = Object::newObject();
+            for (auto& [k, v] : plugin->others)
+            {
+                others.set(k, v);
+            }
+            result.set("others", others);
+            return result;
+        }
+        return Local<Value>();
+    }
+    CATCH("Fail in getPluginInfo");
 }
 
 Local<Value> LlClass::version(const Arguments& args)
