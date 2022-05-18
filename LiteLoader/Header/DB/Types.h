@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#define LLDB_DEBUG_MODE
+//#define LLDB_DEBUG_MODE
 
 namespace DB
 {
