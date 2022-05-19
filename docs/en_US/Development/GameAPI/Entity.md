@@ -15,7 +15,7 @@ This function returns an array of entity objects, each of which corresponds to a
 
 `mc.getAllEntities()`
 
-- Return value: List of online player objects
+- Return value: List of entity objects
 - Return value type:  `Array<Entity,Entity,...>`
 
 #### Spawn New Creature and Get Its Entity Object

@@ -15,7 +15,7 @@
 
 `mc.getAllEntities()`
 
-- 返回值：在线的玩家对象列表
+- 返回值：实体对象列表
 - 返回值类型：`Array<Entity,Entity,...>`
 
 #### 生成新生物并获取
