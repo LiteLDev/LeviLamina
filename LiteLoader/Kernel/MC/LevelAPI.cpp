@@ -367,6 +367,14 @@ Actor* Level::spawnMob(Vec3 pos, int dimId, std::string name) {
     return sp->spawnMob(pos, dimId, std::move(name));
 }
 
+Actor* Level::cloneMob(Vec3 pos, int dimId, Actor* ac)
+{
+    Spawner* sp = &Global<Level>->getSpawner();
+    Mob* mob = sp->spawnMob(pos, dimId, std::move(ac->getTypeName()));
+    mob->setNbt(ac->getNbt().get());
+    return mob;
+}
+
 Actor* Level::spawnItem(Vec3 pos, int dimId, ItemStack* item) {
     Spawner* sp = &Global<Level>->getSpawner();
     return sp->spawnItem(pos, dimId, item);
