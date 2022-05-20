@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SymDBHelper.c">
+    <ClCompile Include="SymDBHelper.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
