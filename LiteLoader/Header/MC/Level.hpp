@@ -205,6 +205,19 @@ public:
         *((void**)&rv) = dlsym("?getPacketSender@Level@@UEBAPEAVPacketSender@@XZ");
         return (this->*rv)();
     }
+    inline class LevelData& getLevelData()
+    {
+        class LevelData& (Level::*rv)();
+        *((void**)&rv) = dlsym("?getLevelData@Level@@UEAAAEAVLevelData@@XZ");
+        return (this->*rv)();
+    }
+
+    inline class LevelData const& getLevelData() const
+    {
+        class LevelData const& (Level::*rv)() const;
+        *((void**)&rv) = dlsym("?getLevelData@Level@@UEBAAEBVLevelData@@XZ");
+        return (this->*rv)();
+    }
     /*
 * Wrappers for Muti-Vftable Class
 inline void _checkUserStorage() {

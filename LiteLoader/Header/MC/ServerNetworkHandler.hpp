@@ -22,8 +22,13 @@ public:
        return _onClientAuthenticated(a0, a1);
     }
 	
-inline class ServerPlayer* getServerPlayer(class NetworkIdentifier const& a0, char a1=0) {
+    inline class ServerPlayer* getServerPlayer(class NetworkIdentifier const& a0, char a1=0) {
         return _getServerPlayer(a0, a1);
+    }
+	
+    inline int getActiveAndInProgressPlayerCount(class mce::UUID a1)
+    {
+        return _getActiveAndInProgressPlayerCount(a1);
     }
 
 inline void handle(class NetworkIdentifier const& a0, class CommandRequestPacket const& a1) {
