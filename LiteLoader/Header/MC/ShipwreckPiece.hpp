@@ -36,7 +36,7 @@ public:
 protected:
 
 private:
-    MCAPI static std::string const *const STRUCTURE_SHIPWRECK_TYPES;
+    MCAPI static std::string const STRUCTURE_SHIPWRECK_TYPES[];
     MCAPI static class BlockPos _calculateTargetPos(class BlockSource &, class BlockPos, enum Rotation, class BlockPos);
     MCAPI static class BlockPos _calculateTargetPosLegacy(class BlockSource &, class BlockPos, enum Rotation, class BlockPos);
 

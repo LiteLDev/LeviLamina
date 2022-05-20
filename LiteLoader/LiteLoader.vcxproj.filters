@@ -76,6 +76,12 @@
     <Filter Include="Kernel\DB\Impl\SQLite">
       <UniqueIdentifier>{5661b9a4-01e6-445e-8565-b34f504cd4e2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header\DB\Impl\MySQL">
+      <UniqueIdentifier>{0d856a82-dfc2-456d-9c8c-220ee36bca2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel\DB\Impl\MySQL">
+      <UniqueIdentifier>{2ddb5319-2d2b-4a85-8d4e-1beb3d3d7023}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kernel\Utils\CsLock.cpp">
@@ -362,6 +368,18 @@
     </ClCompile>
     <ClCompile Include="Kernel\DB\Stmt.cpp">
       <Filter>Kernel\DB</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\DB\Impl\MySQL\Session.cpp">
+      <Filter>Kernel\DB\Impl\MySQL</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\DB\Impl\MySQL\Stmt.cpp">
+      <Filter>Kernel\DB\Impl\MySQL</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Utils\StringReader.cpp">
+      <Filter>Kernel\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Utils\ShellLinkFile.cpp">
+      <Filter>Kernel\Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -752,6 +770,21 @@
     <ClInclude Include="Header\DB\Stmt.h">
       <Filter>Header\DB</Filter>
     </ClInclude>
+    <ClInclude Include="Header\DB\Impl\MySQL\Session.h">
+      <Filter>Header\DB\Impl\MySQL</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\DB\Impl\MySQL\Stmt.h">
+      <Filter>Header\DB\Impl\MySQL</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\DB\Pointer.h">
+      <Filter>Header\DB</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Utils\StringReader.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Utils\ShellLinkFile.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Lib\third-party\openssl\libcrypto.lib">
@@ -791,6 +824,9 @@
       <Filter>Lib</Filter>
     </Library>
     <Library Include="Lib\third-party\cpp-base64\cpp-base64.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\third-party\mysql\mysqlclient.lib">
       <Filter>Lib</Filter>
     </Library>
   </ItemGroup>

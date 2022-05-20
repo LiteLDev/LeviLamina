@@ -34,6 +34,8 @@ public:
     RowHeader(RowHeader&& other) noexcept = default;
     /// Copy constructor
     RowHeader(const RowHeader& other) = default;
+    /// Destructor
+    ~RowHeader();
     /**
      * @brief Add a column to the header.
      *
@@ -211,15 +213,15 @@ public:
      * @return Any&    The value of the column
      * @note   It will create a new Any object if the column doesn't exist
      */
-    LIAPI Any& operator[](const std::string& column);
+    LIAPI Any& operator[](const std::string& name);
     /**
      * @brief Get the value of a column
      *
-     * @param  index  The index of the column
-     * @return Any&   The value of the column
-     * @note   It will create a new Any object if the column doesn't exist
+     * @param  column  The name of the column
+     * @return Any&    The value of the column
+     * @see    Row::at
      */
-    LIAPI Any& operator[](size_t index);
+    LIAPI const Any& operator[](const std::string& name) const;
     /**
      * @brief Get the value of a column
      *
@@ -228,14 +230,7 @@ public:
      * @throw  std::out_of_range If the column does not exist
      */
     LIAPI Any& at(const std::string& column);
-    /**
-     * @brief Get the value of a column
-     *
-     * @param  index  The index of the column
-     * @return Any&   The value of the column
-     * @throw  std::out_of_range If the column does not exist
-     */
-    LIAPI Any& at(size_t index);
+    LIAPI const Any& at(const std::string& column) const;
     /**
      * @brief Traverse the row(references)
      *
@@ -265,4 +260,10 @@ template <typename T>
 inline T row_to(const DB::Row& row)
 {
     throw std::bad_cast();
+}
+
+template <>
+inline DB::Row row_to(const DB::Row& row)
+{
+    return row;
 }

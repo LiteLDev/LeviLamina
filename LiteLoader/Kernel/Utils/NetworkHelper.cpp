@@ -27,7 +27,7 @@ bool HttpGet(const string& url, const function<void(int, string)>& callback, int
     return HttpGet(url, {}, callback, timeout);
 }
 
-bool HttpGet(const string& url, const const httplib::Headers& headers, const function<void(int, string)>& callback, int timeout)
+bool HttpGet(const string& url, const httplib::Headers& headers, const function<void(int, string)>& callback, int timeout)
 {
     string host, path;
     SplitHttpUrl(url, host, path);

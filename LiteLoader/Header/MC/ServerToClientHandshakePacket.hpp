@@ -13,7 +13,7 @@ class ServerToClientHandshakePacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
-
+    char filler[32];
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERTOCLIENTHANDSHAKEPACKET

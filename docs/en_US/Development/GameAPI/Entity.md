@@ -15,7 +15,7 @@ This function returns an array of entity objects, each of which corresponds to a
 
 `mc.getAllEntities()`
 
-- Return value: List of online player objects
+- Return value: List of entity objects
 - Return value type:  `Array<Entity,Entity,...>`
 
 #### Spawn New Creature and Get Its Entity Object
@@ -36,8 +36,29 @@ Through this function, generate a new creature at the specified location and get
 
 > Note: Do not save an entity object **long-term**.
 > When the entity corresponding to the entity object is destroyed, the corresponding entity object will become invalid. Therefore, if there is a need to operate an entity for a long time, please obtain the real-time entity object through the above methods.
+
 <br>
 
+#### Clone A Creature and Get Its Entity Object
+
+Through this function, generate a new creature at the specified location and get its corresponding entity object.
+
+`mc.cloneMob(entity,pos)`  
+`mc.cloneMob(entity,x,y,z,dimid)`
+
+- Parameters: 
+  - entity : `Entity`  
+    Need clone entity object
+  - pos : `IntPos `/ `FloatPos`  
+    A coordinate object of where the mob is spawned (or use x, y, z, dimid to determine where to spawn).
+- Return value: The clone entity object.
+- Return value type:  `Entity`
+  - If the return value is `Null` it means that the generation failed 
+
+> Note: Do not save an entity object **long-term**.
+> When the entity corresponding to the entity object is destroyed, the corresponding entity object will become invalid. Therefore, if there is a need to operate an entity for a long time, please obtain the real-time entity object through the above methods.
+
+<br>
 
 ### Entity Object - Properties
 

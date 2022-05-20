@@ -158,7 +158,7 @@ public:
     }
     */
     MCAPI CoralFan(std::string const &, int);
-    MCAPI static std::string const *const CORAL_FAN_NAMES;
+    MCAPI static std::string const CORAL_FAN_NAMES[];
     MCAPI static int const CORAL_FAN_NAMES_COUNT;
 
 protected:

@@ -20,6 +20,6 @@ public:
 	static std::unordered_map<std::string, LL::Plugin*> getAllScriptPlugins();
 	static std::unordered_map<std::string, LL::Plugin*> getAllPlugins();
 
-	static bool registerPlugin(std::string filePath, std::string name, std::string introduction,
+	static bool registerPlugin(std::string filePath, std::string name, std::string desc,
 		LL::Version version, std::map<std::string, std::string> others);
 };

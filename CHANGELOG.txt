@@ -1,15 +1,18 @@
 ## [LiteLoader Release Note]
-This version major adaptation is 1.18.32, fix Bugs and add new feature ,not applicable to previous versions.
+This version Fix Bugs and add new feature ,not applicable to previous versions.
 
 ## [New features]
-- Update 1.18.32
-- Add AntiGiveCommand, #358 #372
-- Add LLSE SimulatedPlayer APIs
+- Add MySQL support for LLDB
+- Add Level::cloneMob, #405
+- Update headers for 1.18.33.02
+- LLSE gets the name of the plugin itself, #404
+- Add RemoteCall API , [Documentation](https://docs.litebds.com/#/en_US/Development/ScriptAPI/Ll?id=remote-function-call)
 
 ## [Bug Fixes]
-- Fix Player::clearItem Bug, #395
-- Fix dynamic command registration crash
-- Fix command crash when server is stopping
+- Fix a error of block nbt in onPlaceBlock, #406
+- Fix WelcomeText Bug, #401
 
 ## [Change]
-- Update remote call APIs
+- LLPeEdior toolchain won't remove original bds
+- PreLoader can run as LiteLoaderCore now
+- Shell Link files (.lnk) can be loaded now

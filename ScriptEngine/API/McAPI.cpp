@@ -15,6 +15,7 @@ ClassDefine<void> McClassBuilder =
 		.function("getAllEntities", McClass::getAllEntities)
 		.function("newItem", &McClass::newItem)
 		.function("spawnMob", &McClass::spawnMob)
+        .function("cloneMob", &McClass::cloneMob)
 		.function("spawnItem", &McClass::spawnItem)
         .function("spawnSimulatedPlayer", &McClass::spawnSimulatedPlayer)
 		.function("explode", &McClass::explode)

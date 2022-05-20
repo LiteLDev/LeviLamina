@@ -151,6 +151,6 @@ public:
 protected:
 
 private:
-    MCAPI static class BlockPos const *const ARM_DIRECTION_OFFSETS;
+    MCAPI static class BlockPos const ARM_DIRECTION_OFFSETS[];
 
 };

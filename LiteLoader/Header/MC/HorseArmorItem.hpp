@@ -106,7 +106,7 @@ public:
     /*126*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     MCAPI HorseArmorItem(std::string const &, int, int, enum HorseArmorItem::Tier);
     MCAPI enum HorseArmorItem::Tier getTier() const;
-    MCAPI static int const *const mHealthPerTier;
+    MCAPI static int const mHealthPerTier[];
 
 protected:
 

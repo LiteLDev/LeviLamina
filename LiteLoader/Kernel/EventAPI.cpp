@@ -638,27 +638,38 @@ TClasslessInstanceHook(void, "?sendBlockDestructionStarted@BlockEventCoordinator
     IF_LISTENED_END(PlayerStartDestroyBlockEvent)
     return original(this, pl, bp);
 }
-
+#include <MC/BedrockBlocks.hpp>
+#include <mc/BlockLegacy.hpp>
 /////////////////// PlayerPlaceBlock ///////////////////
-TInstanceHook(bool, "?mayPlace@BlockSource@@QEAA_NAEBVBlock@@AEBVBlockPos@@EPEAVActor@@_N@Z",
-      BlockSource , Block* a2, BlockPos* a3, unsigned __int8 a4, Actor* ac, bool a6)
+TInstanceHook(bool, "?_useOn@BlockItem@@MEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z",
+              Item, ItemStack* a2, Actor* ac, BlockPos* a4, unsigned __int8 a5, struct Vec3* a6)
 {
-    auto rtn = original(this, a2, a3, a4, ac, a6);
-    if (!rtn)
-        return rtn;
     IF_LISTENED(PlayerPlaceBlockEvent)
     {
-        if (Player::isValid((Player*)ac))
-        {
-            PlayerPlaceBlockEvent ev{};
-            ev.mPlayer = (Player*)ac;
-            ev.mBlockInstance = BlockInstance::createBlockInstance(a2, *a3, (int)this->getDimensionId());
-            if (!ev.call())
-                return false;
+        Block* RenderBlock;
+        auto RegionConst = ac->getBlockSource();
+        if (!a2->getCount()) {
+            return 0;
+        }
+        auto& bls = this->getLegacyBlock();
+        if (bls && bls.get() != 0i64)
+            RenderBlock = const_cast<Block*>(&bls.get()->getRenderBlock());
+        else
+            RenderBlock = const_cast<Block*>(BedrockBlocks::mAir);
+        if (RegionConst->mayPlace(*RenderBlock, *a4, a5, (struct Actor*)ac, 0)) {
+            if (Player::isValid((Player*)ac))
+            {
+                PlayerPlaceBlockEvent ev{};
+                ev.mPlayer = (Player*)ac;
+                ev.mBlockInstance = BlockInstance::createBlockInstance(Block::create(RenderBlock->getTypeName(), a2->getAux()), *a4, (int)RegionConst->getDimensionId());
+                if (!ev.call())
+                    return false;
+            }
         }
     }
     IF_LISTENED_END(PlayerPlaceBlockEvent)
-    return rtn;
+
+    return original(this, a2, ac, a4, a5,a6);
 }
 
 TClasslessInstanceHook(bool, "?_useOn@BambooBlockItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z",

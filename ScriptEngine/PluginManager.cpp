@@ -271,18 +271,18 @@ std::unordered_map<std::string, LL::Plugin*> PluginManager::getAllScriptPlugins(
     return res;
 }
 
-//获取所有的插件
+// 获取所有的插件
 std::unordered_map<std::string, LL::Plugin*> PluginManager::getAllPlugins()
 {
     return LL::PluginManager::getAllPlugins();
 }
 
-bool PluginManager::registerPlugin(std::string filePath, std::string name, std::string introduction,
+bool PluginManager::registerPlugin(std::string filePath, std::string name, std::string desc,
     LL::Version version, std::map<std::string, std::string> others)
 {
     others["PluginType"] = "Script Plugin";
     others["PluginFilePath"] = filePath;
-    return LL::PluginManager::registerPlugin(NULL, name, introduction, version, others);
+    return LL::PluginManager::registerPlugin(NULL, name, desc, version, others);
 }
 
 bool PluginManager::unRegisterPlugin(std::string name)

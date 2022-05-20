@@ -31,6 +31,6 @@ public:
 protected:
 
 private:
-    MCAPI static std::string const *const STRUCTURE_LOCATION_FOSSIL;
+    MCAPI static std::string const STRUCTURE_LOCATION_FOSSIL[];
 
 };

@@ -6,14 +6,16 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+#include "ConnectionRequest.hpp"
 #undef BEFORE_EXTRA
 
 class LoginPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+int32_t mClientNetworkVersion;
+std::unique_ptr<ConnectionRequest> mConnectionRequest;
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOGINPACKET

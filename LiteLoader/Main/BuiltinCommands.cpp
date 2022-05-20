@@ -185,20 +185,16 @@ void LLListPluginsCommand(CommandOutput& output)
 
     for (auto& [name, plugin] : plugins)
     {
-        // Plugin Lists[1]
-        // - LiteLoader [v1.0.0] (LiteLoader.dll)
-        //   xxxxx  (Plugin Introduction)
-
         string pluginName = name;
         if (pluginName.find("§") == string::npos)
             pluginName = "§b" + pluginName;
-        string introduction = plugin->introduction;
-        if (introduction.find("§") == string::npos)
-            introduction = "§7" + introduction;
+        string desc = plugin->desc;
+        if (desc.find("§") == string::npos)
+            desc = "§7" + desc;
 
         auto fileName = std::filesystem::path(str2wstr(plugin->filePath)).filename().u8string();
         oss << fmt::format("- {} §a[v{}] §8({})\n  {}\n",
-            pluginName, plugin->version.toString(), fileName, introduction);
+            pluginName, plugin->version.toString(), fileName, desc);
     }
     oss << "\n* Send command \"ll list <Plugin Name>\" for more information";
     output.success(oss.str());
@@ -209,20 +205,26 @@ void LLPluginInfoCommand(CommandOutput& output, const string& pluginName)
     auto plugin = LL::getPlugin(pluginName);
     if (plugin)
     {
+        std::map<std::string, std::string> outs;
         std::ostringstream oss;
         auto fn = std::filesystem::path(str2wstr(plugin->filePath)).filename().u8string();
         string pluginType = plugin->type == Plugin::PluginType::ScriptPlugin ? "Script Plugin" : "DLL Plugin";
 
         oss << "Plugin <" << pluginName << ">\n\n";
-        oss << "- Name:  " << plugin->name << " (" << fn << ")\n";
-        oss << "- Introduction:  " << plugin->introduction << "\n";
-        oss << "- Version:  v" << plugin->version.toString(true) << "\n";
-        oss << "- Type:  " << pluginType << "\n";
-        oss << "- File Path:  " << plugin->filePath << "\n";
-        for (auto& [k, v] : plugin->otherInformation)
+
+        outs.emplace("Name", fmt::format("{} ({})", plugin->name, fn));
+        outs.emplace("Description", plugin->desc);
+        outs.emplace("Version", "v" + plugin->version.toString(true));
+        outs.emplace("Type", pluginType);
+        outs.emplace("File Path", plugin->filePath);
+        outs.merge(plugin->others);
+        size_t width = 10;
+        for (auto& [k, _] : outs)
+            width = std::max(width, k.length());
+        for (auto& [k, v] : outs)
         {
             if (k != "PluginType" && k != "PluginFilePath")
-                oss << "- " << k << ":  " << v << std::endl;
+                oss << "- §l" << std::setw(width) << std::left << k << "§r: " << v << std::endl;
         }
         auto text = oss.str();
         text.pop_back();

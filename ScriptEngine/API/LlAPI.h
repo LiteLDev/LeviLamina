@@ -18,5 +18,6 @@ public:
     static Local<Value> importFunc_Debug(const Arguments& args);
     static Local<Value> require(const Arguments& args);
     static Local<Value> eval(const Arguments& args);
+    static Local<Value> getPluginInfo(const Arguments& args);
 };
 extern ClassDefine<void> LlClassBuilder;

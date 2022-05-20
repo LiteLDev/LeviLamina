@@ -43,6 +43,12 @@ public:
      */
     LIAPI void add(const Row& row);
     /**
+     * @brief Get if the set is valid
+     * 
+     * @return bool  True if valid
+     */
+    LIAPI bool valid();
+    /**
      * @brief Add a row to the set.
      *
      * @param row  The row to add
@@ -64,7 +70,7 @@ public:
      * |=====|========|
      * @endcode
      */
-    LIAPI std::string toTableString(const std::string& nullPattern = "<NULL>");
+    LIAPI std::string toTableString(const std::string& nullPattern = "<NULL>") const;
 };
 
 using ResultSet = RowSet;

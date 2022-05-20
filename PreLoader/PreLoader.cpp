@@ -1,7 +1,8 @@
 ﻿#include "pch.h"
 #include "Logger.h"
 #include <string>
-
+#include <set>
+#include <filesystem>
 #include <Windows.h>
 
 using std::string;
@@ -9,6 +10,8 @@ using std::wstring;
 using namespace std::filesystem;
 
 #define MAX_PATH_LENGTH 8192
+
+std::set<std::string> preloadList;
 
 void fixUpLibDir() {
 	WCHAR* buffer = new (std::nothrow) WCHAR[MAX_PATH_LENGTH];
@@ -22,6 +25,23 @@ void fixUpLibDir() {
 
 	SetEnvironmentVariableW(TEXT("PATH"), (CWD + L"\\plugins\\lib;" + PATH).c_str());
 	delete[] buffer;
+}
+
+std::wstring str2wstr(const std::string& str, UINT codePage)
+{
+    auto len = MultiByteToWideChar(codePage, 0, str.c_str(), -1, nullptr, 0);
+    auto* buffer = new wchar_t[len + 1];
+    MultiByteToWideChar(codePage, 0, str.c_str(), -1, buffer, len + 1);
+    buffer[len] = L'\0';
+
+    wstring result = wstring(buffer);
+    delete[] buffer;
+    return result;
+}
+
+wstring str2wstr(const string& str)
+{
+    return str2wstr(str, CP_UTF8);
 }
 
 string wstr2str(wstring wstr) {
@@ -54,6 +74,42 @@ bool loadLib(LPCTSTR libName, bool showFailInfo = true) {
 		}
 		return false;
 	}
+}
+
+void loadPlugins()
+{
+    directory_iterator ent("plugins");
+    for (auto& file : ent)
+    {
+        if (!file.is_regular_file())
+            continue;
+
+        auto& path = file.path();
+        auto fileName = path.u8string();
+        if (fileName.find("LiteLoader.dll") != string::npos || fileName.find("LiteXLoader") != string::npos) // Skip Wrong file path
+            continue;
+
+        string ext = path.extension().u8string();
+        if (ext != ".dll")
+        {
+            continue;
+        }
+
+        if (preloadList.count(fileName))
+            continue;
+
+        string pluginFileName = path.filename().u8string();
+        auto lib = LoadLibrary(str2wstr(fileName).c_str());
+        if (lib)
+        {
+            Info("Plugin <{}> Injected", pluginFileName);
+        }
+        else
+        {
+            Error("Fail to load plugin [{}]", pluginFileName);
+            Error("Error: Code[{}]", GetLastError());
+        }
+    }
 }
 
 bool loadLiteLoader() {
@@ -103,6 +159,7 @@ void loadDlls() {
 					dllName.find(L"LXLAutoUpdate.dll") != std::wstring::npos)
 					continue;
 				loadLib(dllName.c_str());
+                preloadList.insert(wstr2str(dllName));
 			}
 			dllList.close();
 		}
@@ -111,7 +168,7 @@ void loadDlls() {
 		dllList.close();
 	}
 	if (!loadLiteLoader()) {
-		Sleep(3000);
-		exit(GetLastError());
+        Info("[LiteLoader] PreLoader is running as LiteLoaderCore...");
+        loadPlugins();
 	}
 }

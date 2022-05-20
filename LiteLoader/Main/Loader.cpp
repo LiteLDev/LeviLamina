@@ -9,18 +9,19 @@
 #include <Main/LiteLoader.h>
 #include <Utils/StringHelper.h>
 #include <Utils/WinHelper.h>
+#include <Utils/DbgHelper.h>
+#include <Utils/ShellLinkFile.h>
 #include <LLAPI.h>
 #include <I18nAPI.h>
 #include "Config.h"
 #include "Version.h"
 #include <ScriptEngine/Configs.h>
-#include <Utils/DbgHelper.h>
 
 using namespace std;
 
 vector<std::wstring> GetPreloadList()
 {
-    //若在preload.conf中，则不加载
+    // 若在preload.conf中，则不加载
     vector<std::wstring> preloadList{};
 
     if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\preload.conf"))))
@@ -72,7 +73,7 @@ void LoadScriptEngine()
         auto lib = LoadLibrary(str2wstr(path).c_str()); // eg. LiteLoader.Js.dll
         if (lib) {
             logger.info("* ScriptEngine for " + backend + " loaded");
-            //Fake Register
+            // Fake Register
             RegisterPlugin(lib, "ScriptEngine-" + backend, "ScriptEngine-" + backend, LITELOADER_VERSION,
             {
                 {"GitHub","github.com/LiteLDev/LiteLoaderBDS"}
@@ -97,27 +98,53 @@ void LL::LoadMain() {
     vector<std::wstring> preloadList = GetPreloadList();
 
     filesystem::directory_iterator ent("plugins");
-    for (auto &file: ent) {
-        if (!file.is_regular_file())
+    for (auto& file : ent) {
+
+        filesystem::path path;
+        bool isShellLink = false;
+
+        if (file.is_regular_file())
+        {
+            path = file.path();
+        }
+        else
             continue;
 
-        auto& path = file.path();
-        auto fileName = path.u8string();
-        if (fileName.find("LiteLoader.dll") != string::npos
-            || fileName.find("LiteXLoader") != string::npos)      //Skip Wrong file path
+        auto strPath = path.u8string();
+        if (strPath.find("LiteLoader.dll") != string::npos
+            || strPath.find("LiteXLoader") != string::npos)      // Skip Wrong file path
             continue;
 
         string ext = path.extension().u8string();
         if (ext != ".dll")
         {
-            if (scriptExts.find(ext) != scriptExts.end())
-                hasScriptPlugin = true;
-            continue;
+            if (ext == ".lnk") // Shell link file
+            {
+                ShellLinkFile lnk(path.wstring());
+                filesystem::path target = lnk.getPathW();
+                if (!filesystem::is_regular_file(target))
+                    continue;
+                if (target.extension() != ".dll")
+                {
+                    if (scriptExts.find(ext) != scriptExts.end())
+                        hasScriptPlugin = true;
+                    continue;
+                }
+                logger.debug(target.u8string());
+                path = target;
+                isShellLink = true;
+            }
+            else
+            {
+                if (scriptExts.find(ext) != scriptExts.end())
+                    hasScriptPlugin = true;
+                continue;
+            }
         }
 
         bool loaded = false;
-        for (auto &p: preloadList)
-            if (p.find(str2wstr(fileName)) != std::wstring::npos) {
+        for (auto& p : preloadList)
+            if (p.find(str2wstr(strPath)) != std::wstring::npos) {
                 loaded = true;
                 break;
             }
@@ -125,11 +152,15 @@ void LL::LoadMain() {
             continue;
 
         string pluginFileName = path.filename().u8string();
-        auto lib = LoadLibrary(str2wstr(fileName).c_str());
+        auto lib = LoadLibrary(path.wstring().c_str());
         if (lib) {
             pluginCount++;
 
-            logger.info("Plugin <{}> loaded", pluginFileName);
+            if (isShellLink)
+                logger.info("ShellLink Plugin <{} => {}> loaded",
+                            file.path().filename().u8string(), path.u8string());
+            else 
+                logger.info("Plugin <{}> loaded", pluginFileName);
 
             if (PluginManager::getPlugin(lib) == nullptr) {
                 if (!RegisterPlugin(lib, pluginFileName, pluginFileName, LL::Version(1, 0, 0), {}))
@@ -146,9 +177,9 @@ void LL::LoadMain() {
             std::string info = pluginFileName;
             if (!fileVersion.empty())
             {
-                info += "<" + fileVersion + ">";
+                info += " [" + fileVersion + "]";
             }
-            logger.error("Fail to load plugin [{}]", info);
+            logger.error("Fail to load plugin <{}>", info);
             logger.error("Error: Code[{}] {}", GetLastError(), GetLastErrorMessage());
         }
     }

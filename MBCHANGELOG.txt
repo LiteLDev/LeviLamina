@@ -1,19 +1,22 @@
 [HEADING=1][LiteLoader Release Note][/HEADING]
-本版本可能不与1.18.32之前版本兼容，指令注册部分小改动！不建议之前版本使用！
+本版本修复了一些bug，以及添加了一些新功能
 
 [HEADING=1][新内容][/HEADING]
 [LIST]
-[*]适配1.18.32
-[*]添加 SimulatedPlayerAPI 
-[*]添加 AntiGive执行指令 [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/358']#358[/URL]  [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/372']#372[/URL]
+[*]添加Level::cloneMob API [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/405']#405[/URL]
+[*]添加MySql支持
+[*]更新头文件至1.18.33
+[*]LLSE获取插件自身名字, [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/404']#404[/URL]
+[*]新增远程函数调用API，URL='https://docs.litebds.com/#/zh_CN/Development/ScriptAPI/Ll?id=%f0%9f%92%a1-%e6%8f%92%e4%bb%b6%e5%8a%a0%e8%bd%bd%e7%9b%b8%e5%85%b3-api']文档[/URL]
 [/LIST]
 [HEADING=1][BUG修复][/HEADING]
 [LIST]
-[*]修复Player::clearItem返回错误的BUG,  [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/395']#395[/URL]
-[*]修复动态指令注册崩溃的问题
-[*]修复当服务器关闭时指令造成的崩溃
+[*]修复onPlaceBlock block参数nbt错误的问题  [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/406']#406[/URL]
+[*]修复配置文件中WelcomeText 自动还原的问题 [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/401']#401[/URL]
 [/LIST]
 [HEADING=1][改变][/HEADING]
 [LIST]
-[*]更新远程调用api
+[*]LLPeEdior 现在不会默认移除bedrock_server.exe了
+[*]PreLoader现在可以作为LiteLoaderCore运行
+[*]现在可以加载快捷方式文件了（.lnk）
 [/LIST]

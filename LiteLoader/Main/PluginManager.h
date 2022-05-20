@@ -16,7 +16,7 @@ namespace LL
         static bool callEventAtHotUnload(std::string pluginName);
 
     public:
-        static LIAPI bool registerPlugin(HMODULE handler, std::string name, std::string introduction,
+        static LIAPI bool registerPlugin(HMODULE handler, std::string name, std::string desc,
             LL::Version version, std::map<std::string, std::string> others);
 
         static LIAPI LL::Plugin* getPlugin(HMODULE handler);
@@ -33,6 +33,6 @@ namespace LL
     };
 }
 
-LIAPI bool RegisterPlugin(HMODULE handler, std::string name, std::string introduction, LL::Version version,
+LIAPI bool RegisterPlugin(HMODULE handler, std::string name, std::string desc, LL::Version version,
     std::map<std::string, std::string> others);
 

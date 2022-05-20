@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+//#define LLDB_DEBUG_MODE
 
 namespace DB
 {
@@ -30,6 +31,12 @@ struct DateTime
 {
     Date date;
     Time time;
+};
+
+struct Decimal
+{
+    int64_t value;
+    int scale;
 };
 
 using ByteArray = std::vector<unsigned char>;

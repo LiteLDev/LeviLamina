@@ -26,6 +26,7 @@ public:
     static Local<Value> spawnItem(const Arguments& args);
     static Local<Value> spawnSimulatedPlayer(const Arguments& args);
     static Local<Value> explode(const Arguments& args);
+    static Local<Value> cloneMob(const Arguments& args);
 
     static Local<Value> getBlock(const Arguments& args);
     static Local<Value> setBlock(const Arguments& args);

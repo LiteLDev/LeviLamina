@@ -286,3 +286,5 @@ TClasslessInstanceHook(void, "?fireEventPlayerMessage@MinecraftEventing@@AEAAXAE
         return;
     original(this, a1, a2, a3, a4);
 }
+
+

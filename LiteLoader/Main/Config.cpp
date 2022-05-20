@@ -142,7 +142,7 @@ namespace LL {
             if (modules.count("FixMcBug"))
             {
                 const nlohmann::json& setting = modules.at("FixMcBug");
-                conf.enableWelcomeText = setting.value("enabled", true);
+                conf.enableFixMcBug = setting.value("enabled", true);
             }
             if (modules.find("ErrorStackTraceback") != modules.end()) {
                 const nlohmann::json& setting = modules.at("ErrorStackTraceback");
