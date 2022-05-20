@@ -18,9 +18,6 @@
  *
  */
 
-// hash map that provide thread safe and fast hash map
-#include "../../LiteLoader/Header/third-party/parallel_hashmap/phmap.h"
-
 #ifndef BDSAPI_FAKEDLL_NAME
 #define BDSAPI_FAKEDLL_NAME "bedrock_server.dll"
 #endif // !BDSAPI_FAKEDLL_NAME
@@ -39,9 +36,6 @@
 
 // LiteLoader Api to Fetch Function Address
 EXTERN_C_SymDBHelper void* dlsym_real(char const* name);
-
-// map[Ordinal] = rva
-phmap::flat_hash_map<unsigned long, __int64> ordinalMap;
 
 static size_t __strlen(const char* sz)
 {
@@ -169,20 +163,117 @@ static int WINAPI FLoadedAtPreferredAddress(PIMAGE_NT_HEADERS pinh, HMODULE hmod
 #define InterlockedExchangePointer(Target, Value) (PVOID)(LONG_PTR) InterlockedExchange((PLONG)(Target), (LONG)(LONG_PTR)(Value))
 /*typedef unsigned long *PULONG_PTR;*/
 #endif
-EXTERN_C_SymDBHelper FARPROC WINAPI
-    __delayLoadHelper2(PCImgDelayDescr pidd, FARPROC* ppfnIATEntry);
+
+namespace Magic
+{
+// we store it beceause this pointer should be const after the dll is compiled
+// this can avoid a meanless and slow str comp
+static __int64 pImgDelayDescr_BDS = 0;
+static __int64* pDlsymLinkCache = nullptr;
+
+static __int64 findRva(PCImgDelayDescr pidd, FARPROC* ppfnIATEntry,unsigned int iIAT)
+{
+
+    InternalImgDelayDescr idd = {
+        pidd->grAttrs,
+        (LPCSTR)PtrFromRVA(pidd->rvaDLLName),
+        (HMODULE*)PtrFromRVA(pidd->rvaHmod),
+        (PImgThunkData)PtrFromRVA(pidd->rvaIAT),
+        (PCImgThunkData)PtrFromRVA(pidd->rvaINT),
+        (PCImgThunkData)PtrFromRVA(pidd->rvaBoundIAT),
+        (PCImgThunkData)PtrFromRVA(pidd->rvaUnloadIAT),
+        pidd->dwTimeStamp};
+
+    unsigned int iINT;
+    PCImgThunkData pitd;
+
+    if (!(idd.grAttrs & dlattrRva))
+    {
+        return 0;
+    }
+
+    iINT = iIAT;
+    pitd = &(idd.pINT[iINT]);
+
+    if (!IMAGE_SNAP_BY_ORDINAL(pitd->u1.Ordinal)) return (__int64)dlsym_real(
+        (LPCSTR)(((PIMAGE_IMPORT_BY_NAME)PtrFromRVA(
+                      (RVA)((UINT_PTR)(pitd->u1.AddressOfData))))
+                     ->Name));
+    return 0;
+}
+static void initDlsymLinkCache(LPCSTR szDll)
+{
+    PIMAGE_NT_HEADERS pinh = PinhFromImageBase((HMODULE)(&__ImageBase));
+    if (pinh->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_DELAY_IMPORT].Size)
+    {
+        PCImgDelayDescr pidd;
+        // find target dll as PCImgDelayDescr
+        pidd = (PCImgDelayDescr)PtrFromRVA(pinh->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_DELAY_IMPORT].VirtualAddress);
+        while (pidd->rvaDLLName)
+        {
+            LPCSTR szDllCur = (LPCSTR)PtrFromRVA(pidd->rvaDLLName);
+            size_t cchDllCur = __strlen(szDllCur);
+            if (cchDllCur == __strlen(szDll) && __memcmp(szDll, szDllCur, cchDllCur) == 0)
+                break;
+            pidd++;
+        }
+        if (pidd->rvaDLLName)
+        {
+            FARPROC* ppfnIATEntry = (FARPROC*)PtrFromRVA(pidd->rvaIAT);
+            size_t iIAT = 0;
+            size_t cpfnIATEntries = CountOfImports((PCImgThunkData)(ppfnIATEntry));
+            auto tmp = new __int64[cpfnIATEntries];
+            FARPROC* ppfnIATEntryMax = ppfnIATEntry + cpfnIATEntries;
+            for (; ppfnIATEntry < ppfnIATEntryMax;)
+            {
+                tmp[iIAT] = findRva(pidd, ppfnIATEntry, iIAT);
+                iIAT++;
+                ppfnIATEntry++;
+            }
+            pDlsymLinkCache = tmp;
+            if (!Magic::pImgDelayDescr_BDS)
+                Magic::pImgDelayDescr_BDS = (__int64)pidd;
+        }
+        else
+        {
+            RaiseException(VcppException(ERROR_SEVERITY_ERROR, ERROR_MOD_NOT_FOUND), 0, 1, (PULONG_PTR)(szDll));
+        }
+    }
+    return;
+}
+struct DynamicInitializer
+{
+    DynamicInitializer()
+    {
+        initDlsymLinkCache(BDSAPI_FAKEDLL_NAME);
+    }
+};
+static DynamicInitializer dynamicInitializer;
+} // namespace Magic
+
 #include <stdio.h>
 EXTERN_C_SymDBHelper FARPROC WINAPI
     __delayLoadHelper2(PCImgDelayDescr pidd, FARPROC* ppfnIATEntry)
 {
 
     InternalImgDelayDescr idd = {
-        pidd->grAttrs, (LPCSTR)PtrFromRVA(pidd->rvaDLLName), (HMODULE*)PtrFromRVA(pidd->rvaHmod),
-        (PImgThunkData)PtrFromRVA(pidd->rvaIAT), (PCImgThunkData)PtrFromRVA(pidd->rvaINT),
-        (PCImgThunkData)PtrFromRVA(pidd->rvaBoundIAT), (PCImgThunkData)PtrFromRVA(pidd->rvaUnloadIAT),
+        pidd->grAttrs,
+        (LPCSTR)        PtrFromRVA(pidd->rvaDLLName),
+        (HMODULE*)      PtrFromRVA(pidd->rvaHmod),
+        (PImgThunkData) PtrFromRVA(pidd->rvaIAT),
+        (PCImgThunkData)PtrFromRVA(pidd->rvaINT),
+        (PCImgThunkData)PtrFromRVA(pidd->rvaBoundIAT),
+        (PCImgThunkData)PtrFromRVA(pidd->rvaUnloadIAT),
         pidd->dwTimeStamp};
     DelayLoadInfo dli = {
-        sizeof(DelayLoadInfo), pidd, ppfnIATEntry, idd.szName, {0, {NULL}}, 0, 0, 0};
+        sizeof(DelayLoadInfo), 
+        pidd, 
+        ppfnIATEntry, 
+        idd.szName, 
+        {0, {NULL}}, 
+        0, 
+        0, 
+        0};
     HMODULE hmod;
     unsigned iIAT, iINT;
     PCImgThunkData pitd;
@@ -195,38 +286,47 @@ EXTERN_C_SymDBHelper FARPROC WINAPI
         return 0;
     }
     hmod = *idd.phmod;
+
+	// Calculate the index for the IAT entry in the import address table
+    // N.B. The INT entries are ordered the same as the IAT entries so
+    // the calculation can be done on the IAT side.
     iIAT = IndexFromPImgThunkData((PCImgThunkData)(ppfnIATEntry), idd.pIAT);
     iINT = iIAT;
     pitd = &(idd.pINT[iINT]);
 
     dli.dlp.fImportByName = !IMAGE_SNAP_BY_ORDINAL(pitd->u1.Ordinal);
     if (dli.dlp.fImportByName)
+    {
         dli.dlp.szProcName =
             (LPCSTR)(((PIMAGE_IMPORT_BY_NAME)PtrFromRVA(
                           (RVA)((UINT_PTR)(pitd->u1.AddressOfData))))
                          ->Name);
+        //"bedrock_server.dll"
+        // printf_s("DelayLoad Called for [iiat=%d] %s %d\n", iIAT, dli.dlp.szProcName, dli.dlp.dwOrdinal);
+        if (Magic::pImgDelayDescr_BDS == (__int64)pidd ||
+            strcmp(dli.szDll, BDSAPI_FAKEDLL_NAME) == 0)
+        {
+            if (!Magic::pDlsymLinkCache)
+            {
+
+                pfnRet = (FARPROC)dlsym_real(dli.dlp.szProcName);
+                return pfnRet;
+            }
+            __int64* pCache = Magic::pDlsymLinkCache + iIAT;
+            return (FARPROC)*pCache;
+        }
+    }
     else
         dli.dlp.dwOrdinal = (DWORD)(IMAGE_ORDINAL(pitd->u1.Ordinal));
+	
+	
+	
     pfnRet = NULL;
     if (__pfnDliNotifyHook2)
     {
         pfnRet = ((*__pfnDliNotifyHook2)(dliStartProcessing, &dli));
         if (pfnRet != NULL)
             goto HookBypass;
-    }
-    //"bedrock_server.dll"
-    if (strcmp(dli.szDll, BDSAPI_FAKEDLL_NAME) == 0)
-    {
-        auto i = ordinalMap.find(dli.dlp.dwOrdinal);
-        if (i != ordinalMap.end())
-        {
-            // printf_s("[cached]DelayLoad Called for %s %d\n", dli.dlp.szProcName, dli.dlp.dwOrdinal);
-            return (FARPROC)i->second;
-        }
-        // printf_s("DelayLoad Called for %s %d\n", dli.dlp.szProcName, dli.dlp.dwOrdinal);
-        pfnRet = (FARPROC)dlsym_real(dli.dlp.szProcName);
-        ordinalMap.insert({dli.dlp.dwOrdinal, (__int64)pfnRet});
-        return pfnRet;
     }
 
     if (hmod == 0)
