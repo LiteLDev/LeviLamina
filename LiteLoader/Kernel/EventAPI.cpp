@@ -642,7 +642,7 @@ TClasslessInstanceHook(void, "?sendBlockDestructionStarted@BlockEventCoordinator
 #include <mc/BlockLegacy.hpp>
 /////////////////// PlayerPlaceBlock ///////////////////
 TInstanceHook(bool, "?_useOn@BlockItem@@MEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z",
-              Item, ItemStack* a2, Actor* ac, BlockPos* a4, unsigned __int8 a5, struct Vec3* a6)
+              Item, ItemStack* a2, Actor* ac, BlockPos* a4, unsigned __int8 a5, class Vec3* a6)
 {
     IF_LISTENED(PlayerPlaceBlockEvent)
     {
@@ -656,7 +656,7 @@ TInstanceHook(bool, "?_useOn@BlockItem@@MEBA_NAEAVItemStack@@AEAVActor@@VBlockPo
             RenderBlock = const_cast<Block*>(&bls.get()->getRenderBlock());
         else
             RenderBlock = const_cast<Block*>(BedrockBlocks::mAir);
-        if (RegionConst->mayPlace(*RenderBlock, *a4, a5, (struct Actor*)ac, 0)) {
+        if (RegionConst->mayPlace(*RenderBlock, *a4, a5, (class Actor*)ac, 0)) {
             if (Player::isValid((Player*)ac))
             {
                 PlayerPlaceBlockEvent ev{};
