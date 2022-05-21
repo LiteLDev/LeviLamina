@@ -5,6 +5,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include <shared_mutex>
 
 #undef BEFORE_EXTRA
 
@@ -12,6 +13,7 @@ class BlockTypeRegistry {
 
 #define AFTER_EXTRA
 // Add Member There
+    class InhibitModificationsLock;
 
 #undef AFTER_EXTRA
 
