@@ -166,12 +166,9 @@ static int WINAPI FLoadedAtPreferredAddress(PIMAGE_NT_HEADERS pinh, HMODULE hmod
 
 namespace Magic
 {
-// we store it beceause this pointer should be const after the dll is compiled
-// this can avoid a meanless and slow str comp
 static __int64 pImgDelayDescr_BDS = 0;
-static __int64* pDlsymLinkCache = nullptr;
 
-static __int64 findRva(PCImgDelayDescr pidd, FARPROC* ppfnIATEntry,unsigned int iIAT)
+static __int64 findRva(PCImgDelayDescr pidd, FARPROC* ppfnIATEntry, unsigned int iIAT)
 {
 
     InternalImgDelayDescr idd = {
@@ -222,17 +219,14 @@ static void initDlsymLinkCache(LPCSTR szDll)
             FARPROC* ppfnIATEntry = (FARPROC*)PtrFromRVA(pidd->rvaIAT);
             size_t iIAT = 0;
             size_t cpfnIATEntries = CountOfImports((PCImgThunkData)(ppfnIATEntry));
-            auto tmp = new __int64[cpfnIATEntries];
             FARPROC* ppfnIATEntryMax = ppfnIATEntry + cpfnIATEntries;
             for (; ppfnIATEntry < ppfnIATEntryMax;)
             {
-                tmp[iIAT] = findRva(pidd, ppfnIATEntry, iIAT);
-                iIAT++;
+                // iat binding
+                *ppfnIATEntry = (FARPROC)findRva(pidd, ppfnIATEntry, iIAT);
                 ppfnIATEntry++;
+                iIAT++;
             }
-            pDlsymLinkCache = tmp;
-            if (!Magic::pImgDelayDescr_BDS)
-                Magic::pImgDelayDescr_BDS = (__int64)pidd;
         }
         else
         {
@@ -258,21 +252,21 @@ EXTERN_C_SymDBHelper FARPROC WINAPI
 
     InternalImgDelayDescr idd = {
         pidd->grAttrs,
-        (LPCSTR)        PtrFromRVA(pidd->rvaDLLName),
-        (HMODULE*)      PtrFromRVA(pidd->rvaHmod),
-        (PImgThunkData) PtrFromRVA(pidd->rvaIAT),
+        (LPCSTR)PtrFromRVA(pidd->rvaDLLName),
+        (HMODULE*)PtrFromRVA(pidd->rvaHmod),
+        (PImgThunkData)PtrFromRVA(pidd->rvaIAT),
         (PCImgThunkData)PtrFromRVA(pidd->rvaINT),
         (PCImgThunkData)PtrFromRVA(pidd->rvaBoundIAT),
         (PCImgThunkData)PtrFromRVA(pidd->rvaUnloadIAT),
         pidd->dwTimeStamp};
     DelayLoadInfo dli = {
-        sizeof(DelayLoadInfo), 
-        pidd, 
-        ppfnIATEntry, 
-        idd.szName, 
-        {0, {NULL}}, 
-        0, 
-        0, 
+        sizeof(DelayLoadInfo),
+        pidd,
+        ppfnIATEntry,
+        idd.szName,
+        {0, {NULL}},
+        0,
+        0,
         0};
     HMODULE hmod;
     unsigned iIAT, iINT;
@@ -287,7 +281,7 @@ EXTERN_C_SymDBHelper FARPROC WINAPI
     }
     hmod = *idd.phmod;
 
-	// Calculate the index for the IAT entry in the import address table
+    // Calculate the index for the IAT entry in the import address table
     // N.B. The INT entries are ordered the same as the IAT entries so
     // the calculation can be done on the IAT side.
     iIAT = IndexFromPImgThunkData((PCImgThunkData)(ppfnIATEntry), idd.pIAT);
@@ -310,17 +304,11 @@ EXTERN_C_SymDBHelper FARPROC WINAPI
             goto HookBypass;
     }
     //"bedrock_server.dll"
-    //printf_s("DelayLoad Called for [iiat=%d] %s %d\n", iIAT, dli.dlp.szProcName, dli.dlp.dwOrdinal);
+    // printf_s("DelayLoad Called for [iiat=%d] %s %d\n", iIAT, dli.dlp.szProcName, dli.dlp.dwOrdinal);
     if (Magic::pImgDelayDescr_BDS == (__int64)pidd ||
         strcmp(dli.szDll, BDSAPI_FAKEDLL_NAME) == 0)
     {
-        if (!Magic::pDlsymLinkCache) {
-            
-            pfnRet = (FARPROC)dlsym_real(dli.dlp.szProcName);
-            goto SetEntryHookBypass;
-        }
-        __int64* pCache = Magic::pDlsymLinkCache + iIAT;
-        pfnRet = (FARPROC)(*pCache);
+        pfnRet = (FARPROC)dlsym_real(dli.dlp.szProcName);
         goto SetEntryHookBypass;
     }
 
