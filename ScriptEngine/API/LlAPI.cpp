@@ -23,6 +23,7 @@ ClassDefine<void> LlClassBuilder =
         .function("listPlugins", &LlClass::listPlugins)
         .function("import", &LlClass::importFunc)
         .function("export", &LlClass::exportFunc)
+        .function("hasExported", &LlClass::hasFuncExported)
         .function("require", &LlClass::require)
         .function("eval", &LlClass::eval)
         .function("registerPlugin", &LlClass::registerPlugin)
