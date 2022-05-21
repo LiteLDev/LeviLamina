@@ -168,7 +168,7 @@ namespace Magic
 {
 static __int64 pImgDelayDescr_BDS = 0;
 
-static __int64 findRva(PCImgDelayDescr pidd, FARPROC* ppfnIATEntry, unsigned int iIAT)
+static __int64 findRva(PCImgDelayDescr pidd, unsigned int iIAT)
 {
 
     InternalImgDelayDescr idd = {
@@ -223,7 +223,7 @@ static void initDlsymLinkCache(LPCSTR szDll)
             for (; ppfnIATEntry < ppfnIATEntryMax;)
             {
                 // iat binding
-                *ppfnIATEntry = (FARPROC)findRva(pidd, ppfnIATEntry, iIAT);
+                *ppfnIATEntry = (FARPROC)findRva(pidd, iIAT);
                 ppfnIATEntry++;
                 iIAT++;
             }
