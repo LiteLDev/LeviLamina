@@ -1,22 +1,20 @@
 [HEADING=1][LiteLoader Release Note][/HEADING]
-本版本修复了一些bug，以及添加了一些新功能
+本版本是一个重要更新！请开发者及时更新SDK！
+
+[HEADING=1][主要][/HEADING]
+[LIST]
+[*]性能提升
+[/LIST]
+[IMG]https://s1.ax1x.com/2022/05/21/OjVmVI.png[/IMG]
 
 [HEADING=1][新内容][/HEADING]
 [LIST]
-[*]添加Level::cloneMob API [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/405']#405[/URL]
-[*]添加MySql支持
-[*]更新头文件至1.18.33
-[*]LLSE获取插件自身名字, [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/404']#404[/URL]
-[*]新增远程函数调用API，URL='https://docs.litebds.com/#/zh_CN/Development/ScriptAPI/Ll?id=%f0%9f%92%a1-%e6%8f%92%e4%bb%b6%e5%8a%a0%e8%bd%bd%e7%9b%b8%e5%85%b3-api']文档[/URL]
+[*]新添LLSE ll.hasExported API
 [/LIST]
+
 [HEADING=1][BUG修复][/HEADING]
 [LIST]
-[*]修复onPlaceBlock block参数nbt错误的问题  [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/406']#406[/URL]
-[*]修复配置文件中WelcomeText 自动还原的问题 [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/401']#401[/URL]
+[*]修复BlockActor::refreshData
 [/LIST]
-[HEADING=1][改变][/HEADING]
-[LIST]
-[*]LLPeEdior 现在不会默认移除bedrock_server.exe了
-[*]PreLoader现在可以作为LiteLoaderCore运行
-[*]现在可以加载快捷方式文件了（.lnk）
-[/LIST]
+
+

@@ -109,7 +109,7 @@ void RemoteSyncCallReturn(ModuleMessage& msg)
 
 
 //////////////////// Remote Call ////////////////////
-
+#if false
 Local<Value> MakeRemoteCall(const string& funcName, const Arguments& args)
 {
     auto data = globalShareData->exportedFuncs.find(funcName);
@@ -212,3 +212,4 @@ Local<Value> LlClass::importFunc(const Arguments &args)
     CATCH("Fail in LLSEImport!")
 #endif
 }
+#endif
