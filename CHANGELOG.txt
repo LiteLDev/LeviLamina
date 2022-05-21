@@ -6,6 +6,9 @@ This version is an important update.Please update the SDK in time for developers
 
 <img src="https://s1.ax1x.com/2022/05/21/OjVmVI.png">
 
+## [New features]
+- Add LLSE ll.hasExported API
 
 ## [Bug Fixes]
 - Fix BlockActor::refreshData
+
