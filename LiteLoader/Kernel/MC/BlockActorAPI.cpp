@@ -18,8 +18,15 @@ bool BlockActor::refreshData() {
 
 bool BlockActor::refreshData(BlockSource* bs) {
     refreshData();
+    if (!bs)
+        return false;
     auto pkt = getServerUpdatePacket(*bs);
-    const_cast<Dimension&>(bs->getDimensionConst()).sendPacketForPosition(getPosition(), *pkt, nullptr);
+    if (!pkt)
+        return false;
+    auto dimension = const_cast<Dimension*>(&bs->getDimensionConst());
+    if (!dimension)
+        return false;
+    dimension->sendPacketForPosition(getPosition(), *pkt, nullptr);
     return true;
 }
 

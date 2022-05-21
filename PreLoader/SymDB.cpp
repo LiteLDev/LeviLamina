@@ -17,6 +17,9 @@
 #include "../LiteLoader/Lib/third-party/rawpdb/PDB_InfoStream.h"
 #include "../LiteLoader/Lib/third-party/rawpdb/PDB_DBIStream.h"
 #include "../LiteLoader/Lib/third-party/rawpdb/Foundation/PDB_DisableWarningsPop.h"
+
+#include "../LiteLoader/Header/third-party/parallel_hashmap/phmap.h"
+
 #include "Logger.h"
 #include "../LiteLoader/Header/third-party/FMT/printf.h"
 #include <iomanip>
@@ -134,13 +137,13 @@ bool fastDlsymStat = 0;
 static uintptr_t imageBaseAddr;
 
 std::mutex dlsymLock;
-unordered_map<string, int, aphash>* funcMap;
+phmap::flat_hash_map<string, int, aphash>* funcMap;
 unordered_multimap<int, string*>* rvaMap;
 
 void InitFastDlsym(const PDB::RawFile& rawPdbFile, const PDB::DBIStream& dbiStream)
 {
     Info("[Symbol] Loading symbols from pdb...");
-    funcMap = new unordered_map<string, int, aphash>;
+    funcMap = new phmap::flat_hash_map<string, int, aphash>;
     const PDB::ImageSectionStream imageSectionStream = dbiStream.CreateImageSectionStream(rawPdbFile);
     const PDB::CoalescedMSFStream symbolRecordStream = dbiStream.CreateSymbolRecordStream(rawPdbFile);
     const PDB::PublicSymbolStream publicSymbolStream = dbiStream.CreatePublicSymbolStream(rawPdbFile);

@@ -21,6 +21,7 @@
 
 using namespace std;
 
+#define DEFAULT_REMOTE_CALL_NAME_SPACE "LLSEGlobal"
 
 //////////////////// Remote Call ////////////////////
 
@@ -234,7 +235,7 @@ Local<Value> extract(RemoteCall::ValueType&& val)
     }
 }
 
-Local<Value> MakeRemoteCall_Debug(const string& nameSpace, const string& funcName, const Arguments& args)
+Local<Value> MakeRemoteCall(const string& nameSpace, const string& funcName, const Arguments& args)
 {
     auto& func = RemoteCall::importFunc(nameSpace, funcName);
     if (!func)
@@ -252,7 +253,7 @@ Local<Value> MakeRemoteCall_Debug(const string& nameSpace, const string& funcNam
     return extract(func(std::move(params)));
 }
 
-bool LLSEExportFunc_Debug(ScriptEngine* engine, const Local<Function>& func, const string& nameSpace, const string& funcName)
+bool LLSEExportFunc(ScriptEngine* engine, const Local<Function>& func, const string& nameSpace, const string& funcName)
 {
     // Putting script::Global value into lambda capture list may cause crash
     // script::Global<Function> callback = script::Global<Function>(func);
@@ -288,7 +289,7 @@ bool LLSEExportFunc_Debug(ScriptEngine* engine, const Local<Function>& func, con
     return false;
 }
 
-bool LLSERemoveAllExportedFuncs_Debug(ScriptEngine* engine)
+bool LLSERemoveAllExportedFuncs(ScriptEngine* engine)
 {
     // enter scope to prevent crash in script::Global::~Global()
     EngineScope enter(engine);
@@ -305,7 +306,7 @@ bool LLSERemoveAllExportedFuncs_Debug(ScriptEngine* engine)
 
 //////////////////// APIs ////////////////////
 
-Local<Value> LlClass::exportFunc_Debug(const Arguments& args)
+Local<Value> LlClass::exportFunc(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kFunction);
@@ -323,15 +324,15 @@ Local<Value> LlClass::exportFunc_Debug(const Arguments& args)
         }
         else
         {
-            nameSpace = "LLSEGlobal";
+            nameSpace = DEFAULT_REMOTE_CALL_NAME_SPACE;
             funcName = args[1].toStr();
         }
-        return Boolean::newBoolean(LLSEExportFunc_Debug(EngineScope::currentEngine(), args[0].asFunction(), nameSpace, funcName));
+        return Boolean::newBoolean(LLSEExportFunc(EngineScope::currentEngine(), args[0].asFunction(), nameSpace, funcName));
     }
     CATCH("Fail in LLSEExport!");
 }
 
-Local<Value> LlClass::importFunc_Debug(const Arguments& args)
+Local<Value> LlClass::importFunc(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
@@ -348,14 +349,41 @@ Local<Value> LlClass::importFunc_Debug(const Arguments& args)
         }
         else
         {
-            nameSpace = "LLSEGlobal";
+            nameSpace = DEFAULT_REMOTE_CALL_NAME_SPACE;
             funcName = args[0].toStr();
         }
 
         //远程调用
         return Function::newFunction([nameSpace{nameSpace}, funcName{funcName}](const Arguments& args) -> Local<Value> {
-            return MakeRemoteCall_Debug(nameSpace, funcName, args);
+            return MakeRemoteCall(nameSpace, funcName, args);
         });
     }
     CATCH("Fail in LLSEImport!")
+}
+
+Local<Value> LlClass::hasFuncExported(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+
+    try
+    {
+        std::string nameSpace;
+        std::string funcName;
+        if (args.size() > 1)
+        {
+            CHECK_ARG_TYPE(args[1], ValueKind::kString);
+            nameSpace = args[0].toStr();
+            funcName = args[1].toStr();
+        }
+        else
+        {
+            nameSpace = DEFAULT_REMOTE_CALL_NAME_SPACE;
+            funcName = args[0].toStr();
+        }
+
+        //远程调用
+        return Boolean::newBoolean(RemoteCall::hasFunc(nameSpace, funcName));
+    }
+    CATCH("Fail in LLSEHasExported!")
 }
