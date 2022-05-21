@@ -173,6 +173,7 @@ void LL::LoadMain() {
         }
         else
         {
+            DWORD lastError = GetLastError();
             std::string fileVersion = GetFileVersionString(path.u8string(), true);
             std::string info = pluginFileName;
             if (!fileVersion.empty())
@@ -180,7 +181,7 @@ void LL::LoadMain() {
                 info += " [" + fileVersion + "]";
             }
             logger.error("Fail to load plugin <{}>", info);
-            logger.error("Error: Code[{}] {}", GetLastError(), GetLastErrorMessage());
+            logger.error("Error: Code[{}] {}", lastError, GetLastErrorMessage(lastError));
         }
     }
 

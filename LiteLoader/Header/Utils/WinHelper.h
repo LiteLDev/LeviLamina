@@ -5,6 +5,7 @@
 
 // GetLastError() -> string
 LIAPI std::string GetLastErrorMessage();
+LIAPI std::string GetLastErrorMessage(DWORD error_message_id);
 
 // Create a new process and get its output when exited
 LIAPI bool NewProcess(const std::string& process, std::function<void(int, std::string)> callback = nullptr, int timeLimit = -1);
