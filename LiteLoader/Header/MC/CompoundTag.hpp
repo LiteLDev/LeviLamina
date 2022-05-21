@@ -74,11 +74,13 @@ public:
     LIAPI string toPrettySNBT(bool forPlayer = false) const;
     LIAPI string toPrettySNBT(struct PrettySnbtFormat const& format) const;
     LIAPI std::string toBinaryNBT(bool isLittleEndian = true);
+    LIAPI static std::string nbtListToBinary(std::vector<std::unique_ptr<CompoundTag>> tags, bool isLittleEndian = true);
     LIAPI static std::unique_ptr<CompoundTag> fromSNBT(const std::string& snbt);
     LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(void* data, size_t len, bool isLittleEndian = true);
-    LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(void* data, size_t len, size_t& endOffset, bool isLittleEndian = true);
-    LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(std::string const& data, size_t& endOffset, bool isLittleEndian = true);
+    LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEndian = true);
+    LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(std::string const& data, size_t& offset, bool isLittleEndian = true);
     LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(std::string const& data, bool isLittleEndian = true);
+    LIAPI static std::vector<std::unique_ptr<CompoundTag>> nbtListFromBinary(std::string const& data, bool isLittleEndian = true);
     // No Test
     LIAPI std::string toNetworkNBT() const;
     LIAPI static std::unique_ptr<CompoundTag> fromNetworkNBT(std::string const& data);
