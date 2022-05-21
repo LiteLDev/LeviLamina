@@ -296,37 +296,32 @@ EXTERN_C_SymDBHelper FARPROC WINAPI
 
     dli.dlp.fImportByName = !IMAGE_SNAP_BY_ORDINAL(pitd->u1.Ordinal);
     if (dli.dlp.fImportByName)
-    {
         dli.dlp.szProcName =
             (LPCSTR)(((PIMAGE_IMPORT_BY_NAME)PtrFromRVA(
                           (RVA)((UINT_PTR)(pitd->u1.AddressOfData))))
                          ->Name);
-        //"bedrock_server.dll"
-        // printf_s("DelayLoad Called for [iiat=%d] %s %d\n", iIAT, dli.dlp.szProcName, dli.dlp.dwOrdinal);
-        if (Magic::pImgDelayDescr_BDS == (__int64)pidd ||
-            strcmp(dli.szDll, BDSAPI_FAKEDLL_NAME) == 0)
-        {
-            if (!Magic::pDlsymLinkCache)
-            {
-
-                pfnRet = (FARPROC)dlsym_real(dli.dlp.szProcName);
-                return pfnRet;
-            }
-            __int64* pCache = Magic::pDlsymLinkCache + iIAT;
-            return (FARPROC)*pCache;
-        }
-    }
     else
         dli.dlp.dwOrdinal = (DWORD)(IMAGE_ORDINAL(pitd->u1.Ordinal));
-	
-	
-	
     pfnRet = NULL;
     if (__pfnDliNotifyHook2)
     {
         pfnRet = ((*__pfnDliNotifyHook2)(dliStartProcessing, &dli));
         if (pfnRet != NULL)
             goto HookBypass;
+    }
+    //"bedrock_server.dll"
+    //printf_s("DelayLoad Called for [iiat=%d] %s %d\n", iIAT, dli.dlp.szProcName, dli.dlp.dwOrdinal);
+    if (Magic::pImgDelayDescr_BDS == (__int64)pidd ||
+        strcmp(dli.szDll, BDSAPI_FAKEDLL_NAME) == 0)
+    {
+        if (!Magic::pDlsymLinkCache) {
+            
+            pfnRet = (FARPROC)dlsym_real(dli.dlp.szProcName);
+            goto SetEntryHookBypass;
+        }
+        __int64* pCache = Magic::pDlsymLinkCache + iIAT;
+        pfnRet = (FARPROC)(*pCache);
+        goto SetEntryHookBypass;
     }
 
     if (hmod == 0)
