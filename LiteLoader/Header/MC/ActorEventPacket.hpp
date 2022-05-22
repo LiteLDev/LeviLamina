@@ -13,7 +13,10 @@ class ActorEventPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    unsigned long long entityId;
+    unsigned char actorEvent;
+    int eventData;
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOREVENTPACKET
