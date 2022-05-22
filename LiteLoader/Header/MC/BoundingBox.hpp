@@ -5,6 +5,8 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "AABB.hpp"
+#include "BlockPos.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -12,7 +14,18 @@ class BoundingBox {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    BlockPos bpos1;
+    BlockPos bpos2;
 
+
+    inline BlockPos getCenter() const
+    {
+        return {(bpos1.x + bpos2.x) / 2, (bpos1.y + bpos2.y) / 2, (bpos1.z + bpos2.z) / 2};
+    }
+
+    LIAPI AABB toAABB() const;
+    
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOUNDINGBOX
