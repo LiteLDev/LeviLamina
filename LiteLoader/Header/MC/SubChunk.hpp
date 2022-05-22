@@ -14,7 +14,7 @@ struct SubChunk {
 
 #define AFTER_EXTRA
 // Add Member There
-
+    enum SubChunkState;
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNK
