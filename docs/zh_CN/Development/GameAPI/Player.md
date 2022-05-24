@@ -59,6 +59,7 @@
 | pl.speed     | 玩家当前速度                | `Float`          |
 | pl.direction | 玩家当前朝向                | `DirectionAngle` |
 | pl.uniqueId  | 玩家（实体的）唯一标识符    | `String`         |
+| pl.langCode  | 玩家设置的语言的标识符(形如zh_CN) | `String`    |
 
 这些对象属性都是只读的，无法被修改。其中：
 

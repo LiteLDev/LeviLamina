@@ -53,6 +53,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceProperty("speed",&PlayerClass::getSpeed)
         .instanceProperty("direction", &PlayerClass::getDirection)
         .instanceProperty("uniqueId", &PlayerClass::getUniqueID)
+        .instanceProperty("langCode", &PlayerClass::getLangCode)
 
         .instanceFunction("isOP", &PlayerClass::isOP)
         .instanceFunction("setPermLevel", &PlayerClass::setPermLevel)
@@ -499,6 +500,15 @@ Local<Value> PlayerClass::getUniqueID()
             return String::newString(std::to_string(player->getUniqueID().id));
     }
     CATCH("Fail in getUniqueID!")
+}
+
+Local<Value> PlayerClass::getLangCode()
+{
+    try {
+        auto result = get()->getLanguageCode();
+        return String::newString(result);
+    }
+    CATCH("Fail in getLangCode!");
 }
 
 Local<Value> PlayerClass::teleport(const Arguments& args)

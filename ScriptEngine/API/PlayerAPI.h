@@ -39,6 +39,7 @@ public:
     Local<Value> getSpeed();
     Local<Value> getDirection();
     Local<Value> getUniqueID();
+    Local<Value> getLangCode();
 
     Local<Value> isOP(const Arguments& args);
     Local<Value> setPermLevel(const Arguments& args);
