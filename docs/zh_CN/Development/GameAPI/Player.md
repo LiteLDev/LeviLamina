@@ -832,7 +832,23 @@ pl.removeBossBar();
 
 <br>
 
-### 模拟玩家（由于与玩家API重合过多，未生成新的模拟玩家类）
+## 模拟玩家（由于与玩家API重合过多，未生成新的模拟玩家类）
+
+### 创建一个模拟玩家
+
+`mc.spawnSimulatedPlayer(name,pos)`  
+`mc.spawnSimulatedPlayer(name,x,y,z,dimid)`
+
+- 参数：
+  - name : `String`  
+    模拟玩家名称
+  - pos : `IntPos `/ `FloatPos`  
+    生成生物的位置的坐标对象（或者使用x, y, z, dimid来确定生成位置）
+- 返回值：生成的（模拟）玩家对象
+- 返回值类型：`Player`
+  - 如返回值为 `Null` 则表示生成失败
+
+### 模拟玩家 - 函数
 每一个模拟玩家对象都包含一些可以执行的成员函数（成员方法）。对于某个特定的模拟玩家对象`sp`，可以通过以下这些函数对这个模拟玩家进行一些操作
 
 
