@@ -81,10 +81,12 @@ public:
     LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(std::string const& data, size_t& offset, bool isLittleEndian = true);
     LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(std::string const& data, bool isLittleEndian = true);
     LIAPI static std::vector<std::unique_ptr<CompoundTag>> nbtListFromBinary(std::string const& data, bool isLittleEndian = true);
-    // No Test
+
     LIAPI std::string toNetworkNBT() const;
     LIAPI static std::unique_ptr<CompoundTag> fromNetworkNBT(std::string const& data);
-    
+    LIAPI static std::string nbtListToNetwork(std::vector<std::unique_ptr<CompoundTag>> tags);
+    LIAPI static std::vector<std::unique_ptr<CompoundTag>> nbtListFromNetwork(std::string const& data);
+
 
     // Deprecated?
     LIAPI std::string toSNBT();

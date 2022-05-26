@@ -375,29 +375,51 @@ std::vector<std::unique_ptr<CompoundTag>> CompoundTag::nbtListFromBinary(std::st
         if (tmp)
             rtn.push_back(std::move(tmp));
     }
-    return std::move(rtn);
+    return rtn;
 }
 
 #pragma endregion
 
 #pragma region To Network NBT
-#include <MC/BinaryStream.hpp>
+
 //////////////////// To Network ////////////////////
+#include <MC/BinaryStream.hpp>
 std::string CompoundTag::toNetworkNBT() const
 {
     BinaryStream bs;
     bs.writeCompoundTag(*this);
     return bs.getAndReleaseData();
 }
+
+std::string CompoundTag::nbtListToNetwork(std::vector<std::unique_ptr<CompoundTag>> tags)
+{
+    BinaryStream bs;
+    for (auto& tag : tags)
+        bs.writeCompoundTag(*tag);
+    return bs.getAndReleaseData();
+}
+
 #pragma endregion
 
 #pragma region From Network NBT
+
 //////////////////// From Network ////////////////////
 std::unique_ptr<CompoundTag> CompoundTag::fromNetworkNBT(std::string const& data)
 {
     ReadOnlyBinaryStream bs(data, false);
     return bs.getCompoundTag();
 }
+std::vector<std::unique_ptr<CompoundTag>> CompoundTag::nbtListFromNetwork(std::string const& data)
+{
+    std::vector<std::unique_ptr<CompoundTag>> rtn;
+    ReadOnlyBinaryStream bs(data, false);
+    while (bs.getUnreadLength())
+    {
+        rtn.emplace_back(bs.getCompoundTag());
+    }
+    return rtn;
+}
+
 #pragma endregion
 
 #pragma region To SNBT

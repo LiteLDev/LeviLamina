@@ -29,7 +29,7 @@ std::unique_ptr<class CompoundTag> ReadOnlyBinaryStream::getCompoundTag()
 {
     auto tag = CompoundTag::create();
     class CompoundTag& (*rv)(class CompoundTag&, class ReadOnlyBinaryStream&);
-    *((void**)&rv) = dlsym("?write@?$serialize@VCompoundTag@@@@SAXAEBVCompoundTag@@AEAVBinaryStream@@@Z");
+    *((void**)&rv) = dlsym("?read@?$serialize@VCompoundTag@@@@SA?AVCompoundTag@@AEAVReadOnlyBinaryStream@@@Z");
     (*rv)(*tag, *this);
     return std::move(tag);
 }
