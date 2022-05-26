@@ -22,6 +22,7 @@
 #include <optional>
 #include <queue>
 #include <set>
+#include <map>
 #include <stack>
 #include <string>
 #include <cuchar>
@@ -30,6 +31,12 @@
 #include <utility>
 #include <variant>
 #include <vector>
+#include <numeric>
+#include <cmath>
+#include <random>
+#include <algorithm>
+#include <iomanip>
+#include <xhash>
 
 #include <minwindef.h>
 

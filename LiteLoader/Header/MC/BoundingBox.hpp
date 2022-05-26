@@ -28,11 +28,20 @@ public:
     
 #undef AFTER_EXTRA
 
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOUNDINGBOX
+#define DISABLE_CONSTRUCTOR_PREVENTION_BOUNDINGBOX
+#endif
+
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOUNDINGBOX
 public:
     class BoundingBox& operator=(class BoundingBox const &) = delete;
     BoundingBox(class BoundingBox const &) = delete;
     BoundingBox() = delete;
+#else
+   public:
+    BoundingBox(class BoundingBox const& k) : bpos1(k.bpos1), bpos2(k.bpos2){};
+    BoundingBox() : bpos1(BlockPos::MIN), bpos2(BlockPos::MIN){};
 #endif
 
 public:

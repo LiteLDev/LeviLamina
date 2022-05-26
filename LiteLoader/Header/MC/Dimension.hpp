@@ -8,6 +8,12 @@
 
 #undef BEFORE_EXTRA
 
+class DimensionHeightRange {
+   public:
+    short min;
+    short max;
+};
+
 class Dimension {
 
 #define AFTER_EXTRA
