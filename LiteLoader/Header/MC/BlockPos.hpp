@@ -69,10 +69,31 @@ public:
         return {x + dx, y + dy, z + dz};
     }
 
+    inline BlockPos operator*(int b) const
+    {
+        return {x * b, y * b, z * b};
+    }
+
+    inline bool containedWithin(BlockPos const& a, BlockPos const& b) const
+    {
+        return x >= a.x && y >= a.y && z >= a.z && x <= b.x && y <= b.y &&
+               z <= b.z;
+    }
+
+    inline double length() const
+    {
+        return sqrt(x * x + y * y + z * z);
+    }
+
+    inline double distanceTo(BlockPos const& a) const
+    {
+        return (*this - a).length();
+    }
+
     LIAPI Vec3 toVec3() const;
     LIAPI Vec3 bottomCenter() const;
     LIAPI Vec3 center() const;
-
+    LIAPI bool containedWithin(class BoundingBox const&) const;
 };
 
 namespace std {
