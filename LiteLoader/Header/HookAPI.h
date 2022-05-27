@@ -37,7 +37,38 @@ inline const T& dAccess(void const* ptr, uintptr_t off) {
     return *(T*)(((uintptr_t)ptr) + off);
 }
 
-//#define GetServerSymbol(x) dlsym_real(x)
+#if _HAS_CXX20
+template <size_t N>
+struct FixedString
+{
+    char buf[N + 1]{};
+    constexpr FixedString(char const* s)
+    {
+        for (unsigned i = 0; i != N; ++i) buf[i] = s[i];
+    }
+    constexpr operator char const*() const
+    {
+        return buf;
+    }
+};
+template <size_t N>
+FixedString(char const (&)[N]) -> FixedString<N - 1>;
+
+template <FixedString Fn>
+__declspec(selectany) void* __dlsym_ptr_cache = dlsym_real(Fn);
+
+#define VA_EXPAND(...) __VA_ARGS__
+template <FixedString Fn, typename ret, typename... p>
+static inline auto __imp_Call()
+{
+    return ((ret(*)(p...))(__dlsym_ptr_cache<Fn>));
+}
+
+#define SymCall(fn, ret, ...) (__imp_Call<fn, ret, __VA_ARGS__>())
+#define SYM(fn) (__dlsym_ptr_cache<fn>)
+#define dlsym(xx) SYM(xx)
+
+#else
 template <CHash, CHash>
 __declspec(selectany) void* __ptr_cache;
 template <CHash hash, CHash hash2>
@@ -49,16 +80,18 @@ inline static void* dlsym_cache(const char* fn)
     }
     return __ptr_cache<hash, hash2>;
 }
+
 #define VA_EXPAND(...) __VA_ARGS__
 template <CHash hash, CHash hash2, typename ret, typename... p>
 static inline auto __imp_Call(const char* fn)
 {
     return ((ret(*)(p...))(dlsym_cache<hash, hash2>(fn)));
 }
+
 #define SymCall(fn, ret, ...) (__imp_Call<do_hash(fn), do_hash2(fn), ret, __VA_ARGS__>(fn))
 #define SYM(fn) (dlsym_cache<do_hash(fn), do_hash2(fn)>(fn))
 #define dlsym(xx) SYM(xx)
-
+#endif
 class THookRegister {
 public:
     THookRegister(void* address, void* hook, void** org) {
