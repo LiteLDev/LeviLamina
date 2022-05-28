@@ -49,14 +49,14 @@ Local<Value> McClass::spawnSimulatedPlayer(const Arguments& args)
         }
         auto dimid = 0;
         BlockPos bpos;
-        if (IsInstanceOf<IntPos>(args[0])) {
-            auto pos = IntPos::extractPos(args[0]);
+        if (IsInstanceOf<IntPos>(args[1])) {
+            auto pos = IntPos::extractPos(args[1]);
             bpos = pos->getBlockPos();
             dimid = pos->getDimensionId();
         }
-        else if (IsInstanceOf<FloatPos>(args[0]))
+        else if (IsInstanceOf<FloatPos>(args[1]))
         {
-            auto pos = FloatPos::extractPos(args[0]);
+            auto pos = FloatPos::extractPos(args[1]);
             bpos = pos->getVec3();
             dimid = pos->getDimensionId();
         }
