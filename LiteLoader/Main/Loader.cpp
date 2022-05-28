@@ -109,13 +109,12 @@ void LL::LoadMain() {
         }
         else
             continue;
-
-        auto strPath = path.u8string();
+        auto strPath = UTF82String(path.u8string());
         if (strPath.find("LiteLoader.dll") != string::npos
             || strPath.find("LiteXLoader") != string::npos)      // Skip Wrong file path
             continue;
 
-        string ext = path.extension().u8string();
+        string ext = UTF82String(path.extension().u8string());
         if (ext != ".dll")
         {
             if (ext == ".lnk") // Shell link file
@@ -130,7 +129,7 @@ void LL::LoadMain() {
                         hasScriptPlugin = true;
                     continue;
                 }
-                logger.debug(target.u8string());
+                logger.debug(UTF82String(target.u8string()));
                 path = target;
                 isShellLink = true;
             }
@@ -151,21 +150,21 @@ void LL::LoadMain() {
         if (loaded)
             continue;
 
-        string pluginFileName = path.filename().u8string();
+        string pluginFileName = UTF82String(path.filename().u8string());
         auto lib = LoadLibrary(path.wstring().c_str());
         if (lib) {
             pluginCount++;
 
             if (isShellLink)
                 logger.info("ShellLink Plugin <{} => {}> loaded",
-                            file.path().filename().u8string(), path.u8string());
+                            UTF82String(file.path().filename().u8string()), UTF82String(path.u8string()));
             else 
                 logger.info("Plugin <{}> loaded", pluginFileName);
 
             if (PluginManager::getPlugin(lib) == nullptr) {
                 if (!RegisterPlugin(lib, pluginFileName, pluginFileName, LL::Version(1, 0, 0), {}))
                 {
-                    logger.error("Failed to register plugin {}!", path.u8string());
+                    logger.error("Failed to register plugin {}!", UTF82String(path.u8string()));
                     if (getPlugin(pluginFileName))
                         logger.error("A plugin named {} has been registered", pluginFileName);
                 }
@@ -174,7 +173,7 @@ void LL::LoadMain() {
         else
         {
             DWORD lastError = GetLastError();
-            std::string fileVersion = GetFileVersionString(path.u8string(), true);
+            std::string fileVersion = GetFileVersionString(UTF82String(path.u8string()), true);
             std::string info = pluginFileName;
             if (!fileVersion.empty())
             {

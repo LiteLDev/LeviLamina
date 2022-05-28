@@ -1,4 +1,4 @@
-#include <MC/Minecraft.hpp>
+﻿#include <MC/Minecraft.hpp>
 
 #include <MC/Actor.hpp>
 #include <MC/Mob.hpp>
@@ -123,37 +123,37 @@ string Player::getDeviceTypeName()
     switch ((int)getPlatform()) 
     {
         case -1:
-            return u8"Unknown";
+            return "Unknown";
         case 1:
-            return u8"Android";
+            return "Android";
         case 2:
-            return u8"iOS";
+            return "iOS";
         case 3:
-            return u8"OSX";
+            return "OSX";
         case 4:
-            return u8"Amazon";
+            return "Amazon";
         case 5:
-            return u8"GearVR";
+            return "GearVR";
         case 6:
-            return u8"Hololens";
+            return "Hololens";
         case 7:
-            return u8"Win10";
+            return "Win10";
         case 8:
-            return u8"WIN32";
+            return "WIN32";
         case 9:
-            return u8"Dedicated";
+            return "Dedicated";
         case 10:
-            return u8"TVOS";
+            return "TVOS";
         case 11:
-            return u8"PlayStation";
+            return "PlayStation";
         case 12:
-            return u8"Nintendo";
+            return "Nintendo";
         case 13:
-            return u8"Xbox";
+            return "Xbox";
         case 14:
-            return u8"WindowsPhone";
+            return "WindowsPhone";
         default:
-            return u8"Unknown";
+            return "Unknown";
     }
 }
 

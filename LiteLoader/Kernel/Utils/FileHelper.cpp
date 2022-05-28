@@ -75,7 +75,7 @@ vector<string> GetFileNameList(const std::string& dir)
     std::filesystem::directory_iterator deps(d);
     for (auto& i : deps)
     {
-        list.push_back(i.path().filename().u8string());
+        list.push_back(UTF82String(i.path().filename().u8string()));
     }
     return list;
 }

@@ -176,5 +176,5 @@ string GetModuleName(HMODULE handler)
 {
     wchar_t buf[MAX_PATH] = { 0 };
     GetModuleFileNameEx(GetCurrentProcess(), handler, buf, MAX_PATH);
-    return std::filesystem::path(buf).filename().u8string();
+    return UTF82String(std::filesystem::path(buf).filename().u8string());
 }

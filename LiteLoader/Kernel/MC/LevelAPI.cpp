@@ -71,17 +71,15 @@ bool Level::destroyBlock(class BlockSource& a0, class BlockPos const& a1, bool a
     *((void**)&rv) = dlsym("?destroyBlock@Level@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@_N@Z");
     return (Global<Level>->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1), std::forward<bool>(a2));
 }
-void Level::spawnParticleEffect(std::string const& a0, class Actor const& a1, class Vec3 const& a2) {
-    void (Level::*rv)(std::string const&, class Actor const&, class Vec3 const&);
-    *((void**)&rv) = dlsym("?spawnParticleEffect@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVActor@@AEBVVec3@@@Z");
-    return (Global<Level>->*rv)(std::forward<std::string const&>(a0), std::forward<class Actor const&>(a1), std::forward<class Vec3 const&>(a2));
-}
 
-void Level::spawnParticleEffect(std::string const& a0, class Vec3 const& a1, class Dimension* a2) {
+void Level::spawnParticleEffect(std::string const& a0, class Vec3 const& a1, class Dimension* a2)
+{
     void (Level::*rv)(std::string const&, class Vec3 const&, class Dimension*);
     *((void**)&rv) = dlsym("?spawnParticleEffect@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@PEAVDimension@@@Z");
     return (Global<Level>->*rv)(std::forward<std::string const&>(a0), std::forward<class Vec3 const&>(a1), std::forward<class Dimension*>(a2));
 }
+
+
 
 BlockSource* Level::getBlockSource(int dimID) {
     //auto dim = Global<Level>->createDimension(dimID);

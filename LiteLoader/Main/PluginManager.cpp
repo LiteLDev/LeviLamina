@@ -48,7 +48,7 @@ bool LL::PluginManager::registerPlugin(HMODULE handler, std::string name, std::s
 
     try
     {
-        plugin.filePath = filesystem::path(str2wstr(others.at("PluginFilePath"))).lexically_normal().u8string();
+        plugin.filePath = UTF82String(filesystem::path(str2wstr(others.at("PluginFilePath"))).lexically_normal().u8string());
         others.erase("PluginFilePath");
     }
     catch (...)
@@ -78,7 +78,7 @@ bool LL::PluginManager::unRegisterPlugin(std::string name)
 // Helper
 LL::Plugin* GetPlugin_Raw(std::string name, bool includeScriptPlugin) {
     for (auto& it : plugins) {
-        if (it.second.name == name || filesystem::path(str2wstr(it.second.filePath)).filename().u8string() == name)
+        if (it.second.name == name || UTF82String(filesystem::path(str2wstr(it.second.filePath)).filename().u8string()) == name)
         {
             if (!includeScriptPlugin && it.second.type == LL::Plugin::PluginType::ScriptPlugin)
                 continue;
@@ -94,7 +94,7 @@ LL::Plugin* LL::PluginManager::getPlugin(std::string name, bool includeScriptPlu
         return res;
     try
     {
-        name = filesystem::path(str2wstr(name)).filename().replace_extension("").u8string();
+        name = UTF82String(filesystem::path(str2wstr(name)).filename().replace_extension("").u8string());
         return GetPlugin_Raw(name, includeScriptPlugin);
     }
     catch(...)
@@ -136,9 +136,9 @@ bool LL::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
     try
     {
         filesystem::path path(filesystem::path(str2wstr(pluginFilePath)).lexically_normal());
-        pluginFilePath = path.u8string();
+        pluginFilePath = UTF82String( path.u8string());
 
-        string ext = path.extension().u8string();
+        string ext = UTF82String(path.extension().u8string());
         if (ext != ".dll")
         {
             if (LLSE_VALID_PLUGIN_EXTENSIONS.find(ext) != LLSE_VALID_PLUGIN_EXTENSIONS.end())   //LLSE Script Plugin
@@ -164,7 +164,7 @@ bool LL::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
             return false;
         }
 
-        string pluginFileName = path.filename().u8string();
+        string pluginFileName = UTF82String(path.filename().u8string());
         auto lib = LoadLibrary(str2wstr(pluginFilePath).c_str());
         if (lib)
         {
@@ -263,7 +263,7 @@ bool LL::PluginManager::unloadPlugin(string pluginName, bool outputResult)
             Event::ScriptPluginManagerEvent ev;
             ev.operation = Event::ScriptPluginManagerEvent::Operation::Unload;
             ev.target = pluginName;
-            ev.pluginExtention = filesystem::path(str2wstr(plugin->filePath)).extension().u8string();
+            ev.pluginExtention = UTF82String(filesystem::path(str2wstr(plugin->filePath)).extension().u8string());
             ev.call();
 
             return ev.success;
@@ -315,7 +315,7 @@ bool LL::PluginManager::reloadPlugin(string pluginName, bool outputResult)
             Event::ScriptPluginManagerEvent ev;
             ev.operation = Event::ScriptPluginManagerEvent::Operation::Reload;
             ev.target = pluginName;
-            ev.pluginExtention = filesystem::path(str2wstr(plugin->filePath)).extension().u8string();
+            ev.pluginExtention = UTF82String(filesystem::path(str2wstr(plugin->filePath)).extension().u8string());
             ev.call();
             return ev.success;
         }
@@ -362,7 +362,7 @@ int LL::PluginManager::reloadAllPlugins(bool outputResult)
                 Event::ScriptPluginManagerEvent ev;
                 ev.operation = Event::ScriptPluginManagerEvent::Operation::Reload;
                 ev.target = plugin->name;
-                ev.pluginExtention = filesystem::path(str2wstr(plugin->filePath)).extension().u8string();
+                ev.pluginExtention = UTF82String(filesystem::path(str2wstr(plugin->filePath)).extension().u8string());
                 ev.call();
 
                 if (ev.success)
