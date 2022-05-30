@@ -53,6 +53,11 @@ public:
                     todo({x, y, z});
                 }
         }
+    
+    static BoundingBox mergeBoundingBox(BoundingBox const& a, BoundingBox const& b) {
+        return BoundingBox(min(a.bpos1, b.bpos1), max(a.bpos2, b.bpos2));
+    }
+    
     MCAPI BoundingBox(class BlockPos const &, class BlockPos const &, enum Rotation);
     MCAPI bool isValid() const;
     MCAPI static class BoundingBox orientBox(int, int, int, int, int, int, int, int, int, int);
