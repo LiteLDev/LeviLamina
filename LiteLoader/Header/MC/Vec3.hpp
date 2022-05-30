@@ -90,20 +90,92 @@ public:
         return {x / l, y / l, z / l};
     }
 
-    inline Vec3 operator*(float num) const {
-        return {x * num, y * num, z * num};
+    constexpr bool operator==(const Vec3& b) const {
+        return x == b.x && y == b.y && z == b.z;
     }
 
-    inline Vec3 operator+(const Vec3 &b) const {
-        return {this->x + b.x, this->y + b.y, this->z + b.z};
+    constexpr bool operator!=(const Vec3& b) const {
+        return x != b.x || y != b.y || z != b.z;
     }
 
-    inline Vec3 operator-(const Vec3 &b) const {
-        return {this->x - b.x, this->y - b.y, this->z - b.z};
+    inline Vec3 operator*(float b) const { return {x * b, y * b, z * b}; }
+
+    inline Vec3 operator/(float b) const { return {x / b, y / b, z / b}; }
+
+    inline Vec3 operator+(float b) const { return {x + b, y + b, z + b}; }
+
+    inline Vec3 operator-(float b) const { return {x - b, y - b, z - b}; }
+
+    constexpr Vec3& operator+=(float b) {
+        x += b;
+        y += b;
+        z += b;
+        return *this;
     }
 
-    constexpr bool operator==(const Vec3 &b) const {
-        return this->x == b.x && this->y == b.y && this->z == b.z;
+    constexpr Vec3& operator-=(float b) {
+        x -= b;
+        y -= b;
+        z -= b;
+        return *this;
+    }
+
+    constexpr Vec3& operator*=(float b) {
+        x *= b;
+        y *= b;
+        z *= b;
+        return *this;
+    }
+
+    constexpr Vec3& operator/=(float b) {
+        x /= b;
+        y /= b;
+        z /= b;
+        return *this;
+    }
+
+    constexpr Vec3& operator+=(Vec3 const& b) {
+        x += b.x;
+        y += b.y;
+        z += b.z;
+        return *this;
+    }
+
+    constexpr Vec3& operator-=(Vec3 const& b) {
+        x -= b.x;
+        y -= b.y;
+        z -= b.z;
+        return *this;
+    }
+
+    constexpr Vec3& operator*=(Vec3 const& b) {
+        x *= b.x;
+        y *= b.y;
+        z *= b.z;
+        return *this;
+    }
+
+    constexpr Vec3& operator/=(Vec3 const& b) {
+        x /= b.x;
+        y /= b.y;
+        z /= b.z;
+        return *this;
+    }
+
+    inline Vec3 operator+(Vec3 const& b) const {
+        return {x + b.x, y + b.y, z + b.z};
+    }
+
+    inline Vec3 operator*(Vec3 const& b) const {
+        return {x * b.x, y * b.y, z * b.z};
+    }
+
+    inline Vec3 operator/(Vec3 const& b) const {
+        return {x / b.x, y / b.y, z / b.z};
+    }
+
+    inline Vec3 operator-(Vec3 const& b) const {
+        return {x - b.x, y - b.y, z - b.z};
     }
 
     inline float dot(const Vec3& b) const {
