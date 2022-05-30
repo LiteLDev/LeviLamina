@@ -28,65 +28,132 @@ public:
     MCAPI static class BlockPos const ZERO;
     MCAPI static void bindType();
 
-
-    constexpr bool operator==(BlockPos const& b) const
-    {
-        return x == b.x && y == b.y && z == b.z;
+    std::vector<BlockPos> getNeighbors() const {
+        std::vector<BlockPos> res;
+        res.push_back({x, y - 1, z});
+        res.push_back({x, y + 1, z});
+        res.push_back({x, y, z - 1});
+        res.push_back({x, y, z + 1});
+        res.push_back({x - 1, y, z});
+        res.push_back({x + 1, y, z});
+        return res;
     }
 
-    constexpr bool operator!=(BlockPos const& b) const
-    {
-        return x != b.x || y != b.y || z != b.z;
-    }
-
-    inline BlockPos operator+(BlockPos const& b) const
-    {
-        return {x + b.x, y + b.y, z + b.z};
-    }
-
-    inline BlockPos operator-(BlockPos const& b) const
-    {
-        return {x - b.x, y - b.y, z - b.z};
-    }
-
-    inline std::string toString() const
-    {
+    inline std::string toString() const {
         return std::to_string(x) + "," + std::to_string(y) + "," + std::to_string(z);
     }
 
-    inline BlockPos add(int dx) const
-    {
+    inline BlockPos add(int dx) const {
         return {x + dx, y, z};
     }
 
-    inline BlockPos add(int dx, int dy) const
-    {
+    inline BlockPos add(int dx, int dy) const {
         return {x + dx, y + dy, z};
     }
 
-    inline BlockPos add(int dx, int dy, int dz) const
-    {
+    inline BlockPos add(int dx, int dy, int dz) const {
         return {x + dx, y + dy, z + dz};
     }
 
-    inline BlockPos operator*(int b) const
-    {
-        return {x * b, y * b, z * b};
+
+    constexpr bool operator==(BlockPos const& b) const {
+        return x == b.x && y == b.y && z == b.z;
     }
 
-    inline bool containedWithin(BlockPos const& a, BlockPos const& b) const
-    {
+    constexpr bool operator!=(BlockPos const& b) const {
+        return x != b.x || y != b.y || z != b.z;
+    }
+
+    constexpr BlockPos& operator+=(BlockPos const& b) {
+        x += b.x;
+        y += b.y;
+        z += b.z;
+        return *this;
+    }
+
+    constexpr BlockPos& operator-=(BlockPos const& b) {
+        x -= b.x;
+        y -= b.y;
+        z -= b.z;
+        return *this;
+    }
+
+    constexpr BlockPos& operator*=(BlockPos const& b) {
+        x *= b.x;
+        y *= b.y;
+        z *= b.z;
+        return *this;
+    }
+
+    constexpr BlockPos& operator/=(BlockPos const& b) {
+        x /= b.x;
+        y /= b.y;
+        z /= b.z;
+        return *this;
+    }
+
+    inline BlockPos operator+(BlockPos const& b) const {
+        return {x + b.x, y + b.y, z + b.z};
+    }
+
+    inline BlockPos operator*(BlockPos const& b) const {
+        return {x * b.x, y * b.y, z * b.z};
+    }
+
+    inline BlockPos operator/(BlockPos const& b) const {
+        return {x / b.x, y / b.y, z / b.z};
+    }
+
+    inline BlockPos operator-(BlockPos const& b) const {
+        return {x - b.x, y - b.y, z - b.z};
+    }
+
+    inline BlockPos operator*(int b) const { return {x * b, y * b, z * b}; }
+
+    inline BlockPos operator/(int b) const { return {x / b, y / b, z / b}; }
+
+    inline BlockPos operator+(int b) const { return {x + b, y + b, z + b}; }
+
+    inline BlockPos operator-(int b) const { return {x - b, y - b, z - b}; }
+
+    constexpr BlockPos& operator+=(int b) {
+        x += b;
+        y += b;
+        z += b;
+        return *this;
+    }
+
+    constexpr BlockPos& operator-=(int b) {
+        x -= b;
+        y -= b;
+        z -= b;
+        return *this;
+    }
+
+    constexpr BlockPos& operator*=(int b) {
+        x *= b;
+        y *= b;
+        z *= b;
+        return *this;
+    }
+
+    constexpr BlockPos& operator/=(int b) {
+        x /= b;
+        y /= b;
+        z /= b;
+        return *this;
+    }
+
+    inline bool containedWithin(BlockPos const& a, BlockPos const& b) const {
         return x >= a.x && y >= a.y && z >= a.z && x <= b.x && y <= b.y &&
                z <= b.z;
     }
 
-    inline double length() const
-    {
+    inline double length() const {
         return sqrt(x * x + y * y + z * z);
     }
 
-    inline double distanceTo(BlockPos const& a) const
-    {
+    inline double distanceTo(BlockPos const& a) const {
         return (*this - a).length();
     }
 
@@ -95,6 +162,14 @@ public:
     LIAPI Vec3 center() const;
     LIAPI bool containedWithin(class BoundingBox const&) const;
 };
+
+inline BlockPos max(const BlockPos& a, const BlockPos& b) {
+    return {std::max(a.x, b.x), std::max(a.y, b.y), std::max(a.z, b.z)};
+}
+
+inline BlockPos min(const BlockPos& a, const BlockPos& b) {
+    return {std::min(a.x, b.x), std::min(a.y, b.y), std::min(a.z, b.z)};
+}
 
 namespace std {
 

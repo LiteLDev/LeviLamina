@@ -41,10 +41,18 @@ public:
 #else
    public:
     BoundingBox(class BoundingBox const& k) : bpos1(k.bpos1), bpos2(k.bpos2){};
+    BoundingBox(BlockPos const& p1, BlockPos const& p2) : bpos1(p1), bpos2(p2){};
     BoundingBox() : bpos1(BlockPos::MIN), bpos2(BlockPos::MIN){};
 #endif
 
 public:
+    void forEachBlockInBox(const std::function<void(const BlockPos&)>& todo) {
+        for (int y = bpos1.y; y <= bpos2.y; y++)
+            for (int x = bpos1.x; x <= bpos2.x; x++)
+                for (int z = bpos1.z; z <= bpos2.z; z++) {
+                    todo({x, y, z});
+                }
+        }
     MCAPI BoundingBox(class BlockPos const &, class BlockPos const &, enum Rotation);
     MCAPI bool isValid() const;
     MCAPI static class BoundingBox orientBox(int, int, int, int, int, int, int, int, int, int);
