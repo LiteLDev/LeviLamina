@@ -429,9 +429,9 @@ Stmt& MySQLStmt::bind(const Any& value, int index)
         case Any::Type::String:
         {
             params[index].buffer_type = MYSQL_TYPE_STRING;
-            auto sz = value.value.string->length() + 1;
+            auto sz = value.value.string->length(); // Don't +1 here!!!
             param.buffer.reset(new char[sz]);
-            strcpy(param.buffer.get(), value.value.string->c_str());
+            strcpy(param.buffer.get(), value.value.string->data()); // No '\0'
             param.length = sz; // Must set the length to the buffer size, otherwise it will be truncated
             params[index].buffer = param.buffer.get();
             params[index].buffer_length = sz;
