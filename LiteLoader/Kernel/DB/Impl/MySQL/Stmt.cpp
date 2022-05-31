@@ -431,7 +431,7 @@ Stmt& MySQLStmt::bind(const Any& value, int index)
             params[index].buffer_type = MYSQL_TYPE_STRING;
             auto sz = value.value.string->length(); // Don't +1 here!!!
             param.buffer.reset(new char[sz]);
-            strcpy(param.buffer.get(), value.value.string->data()); // No '\0'
+            memcpy(param.buffer.get(), value.value.string->data(), sz); // No '\0'
             param.length = sz; // Must set the length to the buffer size, otherwise it will be truncated
             params[index].buffer = param.buffer.get();
             params[index].buffer_length = sz;
