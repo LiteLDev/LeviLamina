@@ -23,14 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~ServerMetrics();
-    /*
-    inline  ~ServerMetrics(){
-         (ServerMetrics::*rv)();
-        *((void**)&rv) = dlsym("??1ServerMetrics@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

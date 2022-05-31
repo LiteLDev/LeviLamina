@@ -24,6 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~SmokerContainerScreenValidator();
+    /*2*/ virtual bool isCraftingImplemented();
     MCAPI SmokerContainerScreenValidator();
 
 protected:

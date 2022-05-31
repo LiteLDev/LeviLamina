@@ -25,6 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~OceanRuinStart();
+    /*2*/ virtual bool isValid() const;
     MCAPI void createRuin(class Dimension &, class Random &, int, int);
 
 protected:

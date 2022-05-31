@@ -24,20 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~StringByteInput();
-    /*9*/ virtual void __unk_vfn_9();
+    /*9*/ virtual bool readBytes(void *, unsigned __int64);
     /*10*/ virtual unsigned __int64 numBytesLeft() const;
-    /*
-    inline  ~StringByteInput(){
-         (StringByteInput::*rv)();
-        *((void**)&rv) = dlsym("??1StringByteInput@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline bool readBytes(void * a0, unsigned __int64 a1){
-        bool (StringByteInput::*rv)(void *, unsigned __int64);
-        *((void**)&rv) = dlsym("?readBytes@StringByteInput@@UEAA_NPEAX_K@Z");
-        return (this->*rv)(std::forward<void *>(a0), std::forward<unsigned __int64>(a1));
-    }
-    */
 
 protected:
 

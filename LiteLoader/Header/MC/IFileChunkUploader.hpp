@@ -48,11 +48,6 @@ public:
         *((void**)&rv) = dlsym("?update@IFileChunkUploader@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline  ~IFileChunkUploader(){
-         (IFileChunkUploader::*rv)();
-        *((void**)&rv) = dlsym("??1IFileChunkUploader@@UEAA@XZ");
-        return (this->*rv)();
-    }
     */
     MCAPI IFileChunkUploader();
 

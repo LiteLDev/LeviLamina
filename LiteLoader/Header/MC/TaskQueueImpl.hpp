@@ -20,6 +20,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual unsigned int AddRef();
     /*3*/ virtual struct XTaskQueueObject * GetHandle();
     /*4*/ virtual long GetPortContext(enum XTaskQueuePort, struct ITaskQueuePortContext **);
     /*5*/ virtual long RegisterWaitHandle(enum XTaskQueuePort, void *, void *, void ( *)(void *, bool), struct XTaskQueueRegistrationToken *);

@@ -30,16 +30,9 @@ public:
     /*2*/ virtual int fclose(void *);
     /*3*/ virtual int fseek(void *, __int64, int);
     /*4*/ virtual __int64 ftell(void *);
-    /*5*/ virtual void __unk_vfn_5();
+    /*5*/ virtual class IFileReadAccess const * getReadInterface() const;
     /*6*/ virtual class IFileWriteAccess * getWriteInterface();
     /*7*/ virtual void unload();
-    /*
-    inline class IFileReadAccess const * getReadInterface() const{
-        class IFileReadAccess const * (MemoryMappedFileAccess::*rv)() const;
-        *((void**)&rv) = dlsym("?getReadInterface@MemoryMappedFileAccess@@UEBAPEBVIFileReadAccess@@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI MemoryMappedFileAccess(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const &, std::unique_ptr<class FileAccessTransforms>);
     MCAPI static class FileAccessTransforms const EMPTY_TRANSFORMS;
 

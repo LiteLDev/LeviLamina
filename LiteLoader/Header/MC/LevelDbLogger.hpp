@@ -24,13 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~LevelDbLogger();
-    /*
-    inline void Logv(char const * a0, char * a1){
-        void (LevelDbLogger::*rv)(char const *, char *);
-        *((void**)&rv) = dlsym("?Logv@LevelDbLogger@@EEAAXPEBDPEAD@Z");
-        return (this->*rv)(std::forward<char const *>(a0), std::forward<char *>(a1));
-    }
-    */
+    /*1*/ virtual void Logv(char const *, char *);
 
 protected:
 

@@ -25,13 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~BaseScriptBlockComponent();
-    /*
-    inline  ~BaseScriptBlockComponent(){
-         (BaseScriptBlockComponent::*rv)();
-        *((void**)&rv) = dlsym("??1BaseScriptBlockComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

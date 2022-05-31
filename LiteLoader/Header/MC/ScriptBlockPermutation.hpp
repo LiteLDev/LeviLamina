@@ -25,13 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlockPermutation();
-    /*
-    inline  ~ScriptBlockPermutation(){
-         (ScriptBlockPermutation::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptBlockPermutation@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI ScriptBlockPermutation(class ScriptBlockPermutation &&);
     MCAPI ScriptBlockPermutation(class Block const &, class Scripting::WeakLifetimeScope const &);
     MCAPI ScriptBlockPermutation(class BlockLegacy const &, class Scripting::WeakLifetimeScope const &);

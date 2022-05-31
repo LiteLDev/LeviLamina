@@ -23,7 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~WebviewObserver();
     /*
     inline void onDownloadBegin(struct WebviewDownloadInfo const & a0){
         void (WebviewObserver::*rv)(struct WebviewDownloadInfo const &);
@@ -68,11 +67,6 @@ public:
     inline void onLoadingEnd(){
         void (WebviewObserver::*rv)();
         *((void**)&rv) = dlsym("?onLoadingEnd@WebviewObserver@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline  ~WebviewObserver(){
-         (WebviewObserver::*rv)();
-        *((void**)&rv) = dlsym("??1WebviewObserver@@UEAA@XZ");
         return (this->*rv)();
     }
     */

@@ -23,7 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~LabTableReaction();
     MCAPI void addComponent(std::unique_ptr<class LabTableReactionComponent>);
     MCAPI void addResultItem(class ItemStack const &);
     MCAPI int getReactionId();

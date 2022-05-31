@@ -23,7 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~MobEvents();
     MCAPI MobEvents(class LevelStorage &);
     MCAPI bool areEventsEnabled() const;
     MCAPI void deserialize(class CompoundTag const &);

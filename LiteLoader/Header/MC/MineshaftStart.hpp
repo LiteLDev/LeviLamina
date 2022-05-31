@@ -25,6 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~MineshaftStart();
+    /*2*/ virtual bool isValid() const;
     MCAPI MineshaftStart(class Dimension const &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
 
 protected:

@@ -39,18 +39,7 @@ public:
     /*12*/ virtual void tick();
     /*13*/ virtual void setPacketSender(class PacketSender *);
     /*14*/ virtual void writeToLevelStorage();
-    /*
-    inline bool isClientSide() const{
-        bool (ServerScoreboard::*rv)() const;
-        *((void**)&rv) = dlsym("?isClientSide@ServerScoreboard@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline  ~ServerScoreboard(){
-         (ServerScoreboard::*rv)();
-        *((void**)&rv) = dlsym("??1ServerScoreboard@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*15*/ virtual bool isClientSide() const;
     MCAPI ServerScoreboard(class CommandSoftEnumRegistry, class LevelStorage *);
     MCAPI void deserialize(std::unique_ptr<class CompoundTag>);
     MCAPI std::unique_ptr<class CompoundTag> serialize() const;

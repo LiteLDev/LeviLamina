@@ -27,14 +27,8 @@ public:
 public:
     /*0*/ virtual ~ActorInCloudsTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
+    /*3*/ virtual void finalizeParsedValue(class IWorldRegistriesProvider &);
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-    /*
-    inline  ~ActorInCloudsTest(){
-         (ActorInCloudsTest::*rv)();
-        *((void**)&rv) = dlsym("??1ActorInCloudsTest@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

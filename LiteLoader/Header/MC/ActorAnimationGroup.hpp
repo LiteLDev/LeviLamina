@@ -23,7 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~ActorAnimationGroup();
     MCAPI ActorAnimationGroup();
     MCAPI class ActorSkeletalAnimationPtr getActorAnimation(class HashedString const &);
     MCAPI class std::shared_ptr<class ActorAnimationInfo> getActorAnimationInfo(class HashedString const &);

@@ -23,7 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~VolumeEntityManagerServer();
     MCAPI VolumeEntityManagerServer(class StackRefResultT<struct EntityRegistryRefTraits>);
     MCAPI struct std::pair<enum VolumeEntityManagerServer::CreateVolumeResult, class StackRefResultT<struct EntityRefTraits>> createVolume(class PacketSender &, std::string const &, class BlockPos const &, class BlockPos const &, class AutomaticID<class Dimension, int>, std::string const &);
     MCAPI std::vector<class WeakRefT<struct EntityRefTraits>> getAllVolumesOverlappingChunkPosition(class ChunkPos const &, class AutomaticID<class Dimension, int>) const;

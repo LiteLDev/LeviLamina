@@ -23,14 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~IMinecraftApp();
-    /*
-    inline  ~IMinecraftApp(){
-         (IMinecraftApp::*rv)();
-        *((void**)&rv) = dlsym("??1IMinecraftApp@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

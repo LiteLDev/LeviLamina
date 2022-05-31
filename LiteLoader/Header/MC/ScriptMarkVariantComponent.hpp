@@ -23,13 +23,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptMarkVariantComponent();
-    /*
-    inline  ~ScriptMarkVariantComponent(){
-         (ScriptMarkVariantComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptMarkVariantComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

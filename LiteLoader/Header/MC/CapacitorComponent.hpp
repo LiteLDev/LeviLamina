@@ -22,14 +22,15 @@ public:
 
 public:
     /*0*/ virtual ~CapacitorComponent();
-    /*7*/ virtual void __unk_vfn_7();
+    /*1*/ virtual int getStrength() const;
+    /*7*/ virtual bool canConsumerPower() const;
     /*11*/ virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /*13*/ virtual void checkLock(class CircuitSystem &, class BlockPos const &);
     /*15*/ virtual void cacheValues(class CircuitSystem &, class BlockPos const &);
     /*16*/ virtual void updateDependencies(class CircuitSceneGraph &, class BlockPos const &);
     /*17*/ virtual void __unk_vfn_17();
     /*18*/ virtual bool isHalfPulse() const;
-    /*20*/ virtual void __unk_vfn_20();
+    /*20*/ virtual bool hasChildrenSource() const;
     /*21*/ virtual bool isSecondaryPowered() const;
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*24*/ virtual unsigned char getPoweroutDirection() const;

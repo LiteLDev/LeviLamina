@@ -25,13 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlock();
-    /*
-    inline  ~ScriptBlock(){
-         (ScriptBlock::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptBlock@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI ScriptBlock(class ScriptBlock &&);
     MCAPI ScriptBlock(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<class Scripting::StrongObjectHandle> getComponent(std::string const &);

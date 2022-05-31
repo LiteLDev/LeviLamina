@@ -23,15 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void __unk_vfn_0() = 0;
-    /*1*/ virtual ~ContainerSizeChangeListener();
-    /*
-    inline  ~ContainerSizeChangeListener(){
-         (ContainerSizeChangeListener::*rv)();
-        *((void**)&rv) = dlsym("??1ContainerSizeChangeListener@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

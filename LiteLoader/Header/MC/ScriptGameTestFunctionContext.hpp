@@ -23,7 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~ScriptGameTestFunctionContext();
     MCAPI ScriptGameTestFunctionContext(class Scripting::WeakLifetimeScope, class gametest::BaseGameTestHelper &);
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestHelper> getScriptGameTestHelper();
 

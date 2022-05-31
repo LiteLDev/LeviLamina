@@ -22,7 +22,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~SpawnData();
     MCAPI SpawnData(class SpawnData const &);
     MCAPI SpawnData(class CompoundTag const &);
     MCAPI std::unique_ptr<class CompoundTag> save();

@@ -25,13 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptMountTamingComponent();
-    /*
-    inline  ~ScriptMountTamingComponent(){
-         (ScriptMountTamingComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptMountTamingComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI ScriptMountTamingComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class Scripting::Result<void> setTamed(bool) const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMountTamingComponent> bind(struct Scripting::Version);

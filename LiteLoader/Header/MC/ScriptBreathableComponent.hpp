@@ -25,13 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBreathableComponent();
-    /*
-    inline  ~ScriptBreathableComponent(){
-         (ScriptBreathableComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptBreathableComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI ScriptBreathableComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class Scripting::Result<std::vector<class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>>> getBreatheBlocks() const;
     MCAPI class Scripting::Result<bool> getBreathesAir() const;

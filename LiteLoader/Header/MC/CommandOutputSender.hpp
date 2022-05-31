@@ -25,13 +25,7 @@ public:
 public:
     /*0*/ virtual ~CommandOutputSender();
     /*1*/ virtual void send(class CommandOrigin const &, class CommandOutput const &);
-    /*
-    inline void registerOutputCallback(class std::function<void (class AutomationCmdOutput &)> const & a0){
-        void (CommandOutputSender::*rv)(class std::function<void (class AutomationCmdOutput &)> const &);
-        *((void**)&rv) = dlsym("?registerOutputCallback@CommandOutputSender@@UEAAXAEBV?$function@$$A6AXAEAVAutomationCmdOutput@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<void (class AutomationCmdOutput &)> const &>(a0));
-    }
-    */
+    /*2*/ virtual void registerOutputCallback(class std::function<void (class AutomationCmdOutput &)> const &);
     MCAPI CommandOutputSender();
     MCAPI void sendToAdmins(class CommandOrigin const &, class CommandOutput const &, enum CommandPermissionLevel);
     MCAPI static std::vector<std::string> translate(std::vector<std::string> const &);

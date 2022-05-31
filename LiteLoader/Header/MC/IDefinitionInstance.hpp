@@ -25,13 +25,6 @@ public:
 public:
     /*0*/ virtual ~IDefinitionInstance();
     /*1*/ virtual unsigned short getRuntimeTypeId() const;
-    /*
-    inline  ~IDefinitionInstance(){
-         (IDefinitionInstance::*rv)();
-        *((void**)&rv) = dlsym("??1IDefinitionInstance@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

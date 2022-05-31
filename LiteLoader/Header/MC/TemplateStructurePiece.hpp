@@ -33,13 +33,7 @@ public:
     /*6*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
     /*10*/ virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);
     /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
-    /*
-    inline  ~TemplateStructurePiece(){
-         (TemplateStructurePiece::*rv)();
-        *((void**)&rv) = dlsym("??1TemplateStructurePiece@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*13*/ virtual int generateHeightAtPosition(class BlockPos const &, class Dimension &, class BlockVolume &, class std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<std::vector<short>>>>> &) const = 0;
     MCAPI TemplateStructurePiece(int);
 
 protected:

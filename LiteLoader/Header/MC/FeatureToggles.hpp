@@ -23,14 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~FeatureToggles();
-    /*
-    inline  ~FeatureToggles(){
-         (FeatureToggles::*rv)();
-        *((void**)&rv) = dlsym("??1FeatureToggles@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI FeatureToggles(class AppPlatform &);
     MCAPI class Option * get(enum FeatureOptionID);
     MCAPI bool isEnabled(enum FeatureOptionID) const;

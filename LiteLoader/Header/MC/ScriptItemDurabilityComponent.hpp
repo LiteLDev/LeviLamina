@@ -23,13 +23,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptItemDurabilityComponent();
-    /*
-    inline  ~ScriptItemDurabilityComponent(){
-         (ScriptItemDurabilityComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptItemDurabilityComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI ScriptItemDurabilityComponent(class ScriptItemDurabilityComponent const &);
     MCAPI ScriptItemDurabilityComponent(class Scripting::WeakTypedObjectHandle<class ScriptItemStack>, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<int> getCurrentDamage();

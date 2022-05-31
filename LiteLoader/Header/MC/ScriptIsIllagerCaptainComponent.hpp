@@ -23,13 +23,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptIsIllagerCaptainComponent();
-    /*
-    inline  ~ScriptIsIllagerCaptainComponent(){
-         (ScriptIsIllagerCaptainComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptIsIllagerCaptainComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI static class HashedString const & getHashedName();
 
 protected:

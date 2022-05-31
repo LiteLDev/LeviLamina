@@ -23,7 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~ClientLevelEventCoordinator();
 
 protected:
 

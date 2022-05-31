@@ -23,7 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~StompAttackDefinition();
     MCAPI StompAttackDefinition();
     MCAPI void initialize(class EntityContext &, class StompAttackGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class StompAttackDefinition>> &);

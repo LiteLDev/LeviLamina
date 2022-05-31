@@ -23,18 +23,7 @@ public:
 
 public:
     /*0*/ virtual ~DragonBaseGoalDefinition();
-    /*
-    inline bool validateMobType(class Mob & a0){
-        bool (DragonBaseGoalDefinition::*rv)(class Mob &);
-        *((void**)&rv) = dlsym("?validateMobType@DragonBaseGoalDefinition@@UEAA_NAEAVMob@@@Z");
-        return (this->*rv)(std::forward<class Mob &>(a0));
-    }
-    inline  ~DragonBaseGoalDefinition(){
-         (DragonBaseGoalDefinition::*rv)();
-        *((void**)&rv) = dlsym("??1DragonBaseGoalDefinition@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual bool validateMobType(class Mob &);
     MCAPI DragonBaseGoalDefinition();
     MCAPI void initialize(class EntityContext &, class DragonBaseGoal &);
 

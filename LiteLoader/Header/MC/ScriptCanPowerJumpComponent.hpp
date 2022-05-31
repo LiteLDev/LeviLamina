@@ -23,13 +23,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptCanPowerJumpComponent();
-    /*
-    inline  ~ScriptCanPowerJumpComponent(){
-         (ScriptCanPowerJumpComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptCanPowerJumpComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI static class HashedString const & getHashedName();
 
 protected:

@@ -27,13 +27,6 @@ public:
     /*1*/ virtual ~TrailDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
-    /*
-    inline  ~TrailDescription(){
-         (TrailDescription::*rv)();
-        *((void**)&rv) = dlsym("??1TrailDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI TrailDescription();
 
 protected:

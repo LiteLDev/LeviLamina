@@ -23,7 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~ILevel();
     /*
     inline class MultiPlayerLevel * asMultiPlayerLevel(){
         class MultiPlayerLevel * (ILevel::*rv)();
@@ -38,11 +37,6 @@ public:
     inline class TradeTables * getTradeTables(){
         class TradeTables * (ILevel::*rv)();
         *((void**)&rv) = dlsym("?getTradeTables@ILevel@@UEAAPEAVTradeTables@@XZ");
-        return (this->*rv)();
-    }
-    inline  ~ILevel(){
-         (ILevel::*rv)();
-        *((void**)&rv) = dlsym("??1ILevel@@UEAA@XZ");
         return (this->*rv)();
     }
     */

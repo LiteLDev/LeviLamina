@@ -56,13 +56,6 @@ public:
 
 public:
     /*0*/ virtual ~BinaryStream();
-    /*
-    inline  ~BinaryStream(){
-         (BinaryStream::*rv)();
-        *((void**)&rv) = dlsym("??1BinaryStream@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI BinaryStream(std::string &, bool);
     MCAPI BinaryStream();
     MCAPI std::string getAndReleaseData();

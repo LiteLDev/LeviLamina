@@ -23,7 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~ResourcePackListener();
     /*
     inline void onBaseGamePackDownloadComplete(){
         void (ResourcePackListener::*rv)();
@@ -43,11 +42,6 @@ public:
     inline void onLanguageSubpacksChanged(){
         void (ResourcePackListener::*rv)();
         *((void**)&rv) = dlsym("?onLanguageSubpacksChanged@ResourcePackListener@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline  ~ResourcePackListener(){
-         (ResourcePackListener::*rv)();
-        *((void**)&rv) = dlsym("??1ResourcePackListener@@UEAA@XZ");
         return (this->*rv)();
     }
     */

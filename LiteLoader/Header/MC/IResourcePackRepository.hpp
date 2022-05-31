@@ -23,14 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~IResourcePackRepository();
-    /*
-    inline  ~IResourcePackRepository(){
-         (IResourcePackRepository::*rv)();
-        *((void**)&rv) = dlsym("??1IResourcePackRepository@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

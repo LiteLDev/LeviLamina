@@ -26,13 +26,6 @@ public:
 public:
     /*0*/ virtual ~KeyManager();
     /*1*/ virtual bool isValid() const;
-    /*
-    inline  ~KeyManager(){
-         (KeyManager::*rv)();
-        *((void**)&rv) = dlsym("??1KeyManager@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI KeyManager(std::string const &, enum Crypto::Asymmetric::System);
     MCAPI std::string getPublicKey() const;
     MCAPI bool verify(std::string const &, std::string const &, enum Crypto::Hash::HashType) const;

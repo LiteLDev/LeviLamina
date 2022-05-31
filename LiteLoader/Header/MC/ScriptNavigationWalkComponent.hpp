@@ -25,13 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptNavigationWalkComponent();
-    /*
-    inline  ~ScriptNavigationWalkComponent(){
-         (ScriptNavigationWalkComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptNavigationWalkComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptNavigationWalkComponent> bind(struct Scripting::Version);
 
 protected:

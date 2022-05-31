@@ -26,13 +26,6 @@ public:
 public:
     /*0*/ virtual ~ActorAliasDescription();
     /*1*/ virtual char const * getJsonName() const;
-    /*
-    inline  ~ActorAliasDescription(){
-         (ActorAliasDescription::*rv)();
-        *((void**)&rv) = dlsym("??1ActorAliasDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI struct AliasInfoDescription const * getAliasInfo(std::string const &) const;
     MCAPI void parse(class Json::Value &, bool);
 

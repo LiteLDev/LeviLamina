@@ -27,13 +27,6 @@ public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~NavigationSwimDescription();
     /*3*/ virtual void serializeData(class Json::Value &) const;
-    /*
-    inline  ~NavigationSwimDescription(){
-         (NavigationSwimDescription::*rv)();
-        *((void**)&rv) = dlsym("??1NavigationSwimDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

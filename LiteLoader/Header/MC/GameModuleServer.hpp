@@ -22,14 +22,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~GameModuleServer();
-    /*
-    inline  ~GameModuleServer(){
-         (GameModuleServer::*rv)();
-        *((void**)&rv) = dlsym("??1GameModuleServer@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI GameModuleServer();
 
 protected:

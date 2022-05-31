@@ -25,13 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptFlyingSpeedComponent();
-    /*
-    inline  ~ScriptFlyingSpeedComponent(){
-         (ScriptFlyingSpeedComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptFlyingSpeedComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

@@ -23,7 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~NetworkDebugManager();
     MCAPI static int const MAX_NUMBER_OF_SAMPLES;
     MCAPI static int const UPDATE_INTERVAL_MILLISECONDS;
 

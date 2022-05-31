@@ -23,7 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~I18nObserver();
 
 protected:
 

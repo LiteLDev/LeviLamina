@@ -25,13 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptMovementSwayComponent();
-    /*
-    inline  ~ScriptMovementSwayComponent(){
-         (ScriptMovementSwayComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptMovementSwayComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI class Scripting::Result<float> getSwayAmplitude() const;
     MCAPI class Scripting::Result<float> getSwayFrequency() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMovementSwayComponent> bind(struct Scripting::Version);

@@ -22,14 +22,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~CreativeGroupInfo();
-    /*
-    inline  ~CreativeGroupInfo(){
-         (CreativeGroupInfo::*rv)();
-        *((void**)&rv) = dlsym("??1CreativeGroupInfo@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI CreativeGroupInfo(class CreativeGroupInfo const &);
     MCAPI CreativeGroupInfo(class CreativeItemRegistry *, enum CreativeItemCategory, class HashedString const &, unsigned int, class ItemInstance const &);
     MCAPI void addCreativeItem(class CreativeItemEntry *);

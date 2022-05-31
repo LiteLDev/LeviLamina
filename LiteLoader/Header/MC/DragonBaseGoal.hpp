@@ -23,14 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~DragonBaseGoal();
-    /*
-    inline  ~DragonBaseGoal(){
-         (DragonBaseGoal::*rv)();
-        *((void**)&rv) = dlsym("??1DragonBaseGoal@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI DragonBaseGoal(class Mob &);
 
 protected:

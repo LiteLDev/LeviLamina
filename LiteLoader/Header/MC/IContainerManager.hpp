@@ -23,14 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~IContainerManager();
-    /*
-    inline  ~IContainerManager(){
-         (IContainerManager::*rv)();
-        *((void**)&rv) = dlsym("??1IContainerManager@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

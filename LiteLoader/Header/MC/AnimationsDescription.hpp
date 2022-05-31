@@ -27,13 +27,6 @@ public:
     /*1*/ virtual ~AnimationsDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
-    /*
-    inline  ~AnimationsDescription(){
-         (AnimationsDescription::*rv)();
-        *((void**)&rv) = dlsym("??1AnimationsDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI AnimationsDescription();
 
 protected:

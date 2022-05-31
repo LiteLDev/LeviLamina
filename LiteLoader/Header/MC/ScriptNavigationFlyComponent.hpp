@@ -25,13 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptNavigationFlyComponent();
-    /*
-    inline  ~ScriptNavigationFlyComponent(){
-         (ScriptNavigationFlyComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptNavigationFlyComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptNavigationFlyComponent> bind(struct Scripting::Version);
 
 protected:

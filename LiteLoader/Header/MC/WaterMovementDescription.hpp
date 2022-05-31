@@ -27,13 +27,6 @@ public:
     /*1*/ virtual ~WaterMovementDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
-    /*
-    inline  ~WaterMovementDescription(){
-         (WaterMovementDescription::*rv)();
-        *((void**)&rv) = dlsym("??1WaterMovementDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI WaterMovementDescription();
 
 protected:

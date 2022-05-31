@@ -23,14 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~SecureStorage();
-    /*
-    inline  ~SecureStorage(){
-         (SecureStorage::*rv)();
-        *((void**)&rv) = dlsym("??1SecureStorage@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

@@ -24,16 +24,9 @@ public:
 
 public:
     /*0*/ virtual ~ScriptDebuggerWatchdog();
-    /*1*/ virtual void __unk_vfn_1();
+    /*1*/ virtual bool requireClose() const;
     /*2*/ virtual void startListenTimeout();
     /*3*/ virtual bool listenTimeoutExpired() const;
-    /*
-    inline bool requireClose() const{
-        bool (ScriptDebuggerWatchdog::*rv)() const;
-        *((void**)&rv) = dlsym("?requireClose@ScriptDebuggerWatchdog@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI ScriptDebuggerWatchdog(class std::chrono::duration<int, struct std::ratio<60, 1>>);
     MCAPI void startLeaveGame();
 

@@ -28,13 +28,6 @@ public:
     /*1*/ virtual ~SlimeMoveControlDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
-    /*
-    inline  ~SlimeMoveControlDescription(){
-         (SlimeMoveControlDescription::*rv)();
-        *((void**)&rv) = dlsym("??1SlimeMoveControlDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

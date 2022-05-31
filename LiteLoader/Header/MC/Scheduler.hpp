@@ -23,7 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~Scheduler();
     MCAPI Scheduler(std::string, unsigned int);
     MCAPI void changeThread(class std::thread::id);
     MCAPI class WorkerPool & getCoroutinePool();

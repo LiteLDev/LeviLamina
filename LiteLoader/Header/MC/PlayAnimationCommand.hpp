@@ -26,13 +26,6 @@ public:
 public:
     /*0*/ virtual ~PlayAnimationCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-    /*
-    inline  ~PlayAnimationCommand(){
-         (PlayAnimationCommand::*rv)();
-        *((void**)&rv) = dlsym("??1PlayAnimationCommand@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI static void setup(class CommandRegistry &);
 
 protected:

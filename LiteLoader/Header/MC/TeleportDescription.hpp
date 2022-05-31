@@ -27,13 +27,6 @@ public:
     /*1*/ virtual ~TeleportDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
-    /*
-    inline  ~TeleportDescription(){
-         (TeleportDescription::*rv)();
-        *((void**)&rv) = dlsym("??1TeleportDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI TeleportDescription();
 
 protected:

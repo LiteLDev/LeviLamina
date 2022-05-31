@@ -23,7 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~BlockEventCoordinator();
     MCAPI class BlockGameplayHandler & getBlockGameplayHandler();
     MCAPI void registerBlockGameplayHandler(std::unique_ptr<class BlockGameplayHandler> &&);
     MCAPI void sendBlockDestroyedByPlayer(class Player &, class Block const &, class BlockPos const &);

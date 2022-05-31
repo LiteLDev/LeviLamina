@@ -40,13 +40,6 @@ public:
     /*14*/ virtual bool isServerAuthoritative() const;
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit() = 0;
-    /*
-    inline  ~ContainerManagerModel(){
-         (ContainerManagerModel::*rv)();
-        *((void**)&rv) = dlsym("??1ContainerManagerModel@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI ContainerManagerModel(enum ContainerID, class Player &);
     MCAPI class Player & getPlayer() const;
     MCAPI void postInit();

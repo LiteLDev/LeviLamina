@@ -23,7 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~SaveTransactionManager();
     MCAPI SaveTransactionManager(class WorkerPool &, class Scheduler &, class std::function<void (bool)>);
     MCAPI void onBeginCompaction();
     MCAPI void onEndCompaction();

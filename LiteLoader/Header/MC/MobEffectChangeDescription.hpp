@@ -28,13 +28,6 @@ public:
     /*1*/ virtual ~MobEffectChangeDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
-    /*
-    inline  ~MobEffectChangeDescription(){
-         (MobEffectChangeDescription::*rv)();
-        *((void**)&rv) = dlsym("??1MobEffectChangeDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

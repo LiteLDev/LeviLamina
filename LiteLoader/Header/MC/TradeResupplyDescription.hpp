@@ -27,13 +27,6 @@ public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~TradeResupplyDescription();
     /*3*/ virtual void serializeData(class Json::Value &) const;
-    /*
-    inline  ~TradeResupplyDescription(){
-         (TradeResupplyDescription::*rv)();
-        *((void**)&rv) = dlsym("??1TradeResupplyDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

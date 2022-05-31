@@ -27,18 +27,9 @@ public:
     /*0*/ virtual ~TridentRiptideEnchant();
     /*1*/ virtual bool isCompatibleWith(enum Enchant::Type) const;
     /*2*/ virtual int getMinCost(int) const;
-    /*
-    inline int getMaxLevel() const{
-        int (TridentRiptideEnchant::*rv)() const;
-        *((void**)&rv) = dlsym("?getMaxLevel@TridentRiptideEnchant@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline int getMaxCost(int a0) const{
-        int (TridentRiptideEnchant::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getMaxCost@TridentRiptideEnchant@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    */
+    /*3*/ virtual int getMaxCost(int) const;
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual int getMaxLevel() const;
     MCAPI TridentRiptideEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 
 protected:

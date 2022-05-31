@@ -29,20 +29,14 @@ public:
     /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /*5*/ virtual class ItemStack const & getItem(int) const;
     /*9*/ virtual void setItem(int, class ItemStack const &);
+    /*10*/ virtual void setItemWithForceBalance(int, class ItemStack const &, bool);
     /*14*/ virtual int getContainerSize() const;
     /*15*/ virtual int getMaxStackSize() const;
     /*16*/ virtual void startOpen(class Player &);
     /*17*/ virtual void stopOpen(class Player &);
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
-    /*31*/ virtual void __unk_vfn_31();
-    /*
-    inline  ~SimpleContainer(){
-         (SimpleContainer::*rv)();
-        *((void**)&rv) = dlsym("??1SimpleContainer@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*31*/ virtual void initializeContainerContents(class BlockSource &);
     MCAPI SimpleContainer(std::string const &, bool, int, enum ContainerType);
 
 protected:

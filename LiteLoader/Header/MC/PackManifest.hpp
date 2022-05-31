@@ -31,13 +31,6 @@ public:
 public:
     /*0*/ virtual ~PackManifest();
     /*1*/ virtual std::unique_ptr<class PackManifest> clone() const;
-    /*
-    inline  ~PackManifest(){
-         (PackManifest::*rv)();
-        *((void**)&rv) = dlsym("??1PackManifest@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI PackManifest(class PackManifest const &);
     MCAPI PackManifest(enum ManifestType);
     MCAPI void addLegacyModuleDependency(struct LegacyPackIdVersion const &);

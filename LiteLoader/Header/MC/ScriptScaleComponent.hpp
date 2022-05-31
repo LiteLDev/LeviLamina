@@ -23,13 +23,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptScaleComponent();
-    /*
-    inline  ~ScriptScaleComponent(){
-         (ScriptScaleComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptScaleComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

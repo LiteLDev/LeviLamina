@@ -25,15 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~IdleState();
-    /*1*/ virtual void __unk_vfn_1();
+    /*1*/ virtual void tick();
     /*2*/ virtual void start();
-    /*
-    inline void tick(){
-        void (IdleState::*rv)();
-        *((void**)&rv) = dlsym("?tick@IdleState@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI static std::unique_ptr<class IdleState> create(class PetSleepWithOwnerGoal &);
 
 protected:

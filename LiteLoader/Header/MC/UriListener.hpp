@@ -23,14 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~UriListener();
-    /*
-    inline  ~UriListener(){
-         (UriListener::*rv)();
-        *((void**)&rv) = dlsym("??1UriListener@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

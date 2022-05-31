@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "TransactionalWorldBlockTarget.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class CompactionListenerEnv {
+class CompactionListenerEnv : public TransactionalWorldBlockTarget {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -24,20 +25,21 @@ public:
 
 public:
     /*0*/ virtual ~CompactionListenerEnv();
-    /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void __unk_vfn_2();
+    /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
+    /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void __unk_vfn_7();
-    /*8*/ virtual void __unk_vfn_8();
-    /*9*/ virtual void __unk_vfn_9();
-    /*10*/ virtual void __unk_vfn_10();
+    /*8*/ virtual bool hasBiomeTag(unsigned __int64, class BlockPos const &) const;
+    /*9*/ virtual bool setBlock(class BlockPos const &, class Block const &, int);
+    /*10*/ virtual bool setBlockSimple(class BlockPos const &, class Block const &);
     /*11*/ virtual void __unk_vfn_11();
-    /*12*/ virtual void __unk_vfn_12();
-    /*13*/ virtual void __unk_vfn_13();
+    /*12*/ virtual bool placeStructure(class BlockPos const &, class StructureTemplate &, class StructureSettings &);
+    /*13*/ virtual bool mayPlace(class BlockPos const &, class Block const &) const;
     /*14*/ virtual void Schedule(void ( *)(void *), void *);
+    /*16*/ virtual short getMinHeight() const;
+    /*17*/ virtual bool shimPlaceForOldFeatures(class Feature const &, class BlockPos const &, class Random &) const;
     MCAPI CompactionListenerEnv(class leveldb::Env *);
     MCAPI void setCompactionCallback(class std::function<void (enum CompactionStatus)>);
 

@@ -25,13 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptColorComponent();
-    /*
-    inline  ~ScriptColorComponent(){
-         (ScriptColorComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptColorComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

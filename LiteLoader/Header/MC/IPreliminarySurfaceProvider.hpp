@@ -23,14 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~IPreliminarySurfaceProvider();
-    /*
-    inline  ~IPreliminarySurfaceProvider(){
-         (IPreliminarySurfaceProvider::*rv)();
-        *((void**)&rv) = dlsym("??1IPreliminarySurfaceProvider@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

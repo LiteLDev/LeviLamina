@@ -23,7 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~CommandPropertyBag();
     MCAPI CommandPropertyBag(class Json::Value const &);
     MCAPI CommandPropertyBag();
     MCAPI void addToResultList(std::string const &, std::string const &);

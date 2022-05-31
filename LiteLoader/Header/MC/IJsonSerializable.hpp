@@ -23,14 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~IJsonSerializable();
-    /*
-    inline  ~IJsonSerializable(){
-         (IJsonSerializable::*rv)();
-        *((void**)&rv) = dlsym("??1IJsonSerializable@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

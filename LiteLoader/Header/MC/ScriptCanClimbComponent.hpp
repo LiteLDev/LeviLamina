@@ -23,13 +23,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptCanClimbComponent();
-    /*
-    inline  ~ScriptCanClimbComponent(){
-         (ScriptCanClimbComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptCanClimbComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI static class HashedString const & getHashedName();
 
 protected:

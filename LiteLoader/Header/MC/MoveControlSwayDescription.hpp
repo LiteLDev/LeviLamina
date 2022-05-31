@@ -28,13 +28,6 @@ public:
     /*1*/ virtual ~MoveControlSwayDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
-    /*
-    inline  ~MoveControlSwayDescription(){
-         (MoveControlSwayDescription::*rv)();
-        *((void**)&rv) = dlsym("??1MoveControlSwayDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

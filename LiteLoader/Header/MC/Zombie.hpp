@@ -31,39 +31,43 @@ public:
     /*14*/ virtual ~Zombie();
     /*16*/ virtual void resetUserPos(bool);
     /*20*/ virtual bool isRuntimePredictedMovementEnabled() const;
-    /*40*/ virtual void __unk_vfn_40();
+    /*36*/ virtual class Vec3 getInterpolatedRidingOffset(float) const;
+    /*40*/ virtual bool breaksFallingBlocks() const;
     /*52*/ virtual float getRidingHeight();
-    /*61*/ virtual void __unk_vfn_61();
-    /*68*/ virtual void __unk_vfn_68();
+    /*61*/ virtual bool canExistInPeaceful() const;
+    /*68*/ virtual bool canMakeStepSound() const;
     /*78*/ virtual float getCameraOffset() const;
-    /*82*/ virtual void __unk_vfn_82();
+    /*82*/ virtual bool canSeeInvisible() const;
     /*85*/ virtual bool canInteractWithOtherEntitiesInGame() const;
-    /*88*/ virtual void __unk_vfn_88();
+    /*88*/ virtual bool interactPreventDefault();
     /*89*/ virtual void playerTouch(class Player &);
-    /*95*/ virtual void __unk_vfn_95();
-    /*98*/ virtual void __unk_vfn_98();
+    /*95*/ virtual bool isFishable() const;
+    /*98*/ virtual bool useNewAi() const;
     /*101*/ virtual bool isDamageBlocked(class ActorDamageSource const &) const;
-    /*105*/ virtual void __unk_vfn_105();
-    /*107*/ virtual void __unk_vfn_107();
-    /*108*/ virtual void __unk_vfn_108();
-    /*109*/ virtual void __unk_vfn_109();
+    /*105*/ virtual bool shouldBurn();
+    /*107*/ virtual bool isTargetable() const;
+    /*108*/ virtual bool canBeControlledByPassenger();
+    /*109*/ virtual bool isLeashableType();
     /*114*/ virtual bool isValidTarget(class Actor *) const;
     /*120*/ virtual void onTame();
     /*121*/ virtual void onFailedTame();
     /*130*/ virtual void vehicleLanded(class Vec3 const &, class Vec3 const &);
     /*139*/ virtual void onBounceStarted(class BlockPos const &, class Block const &);
+    /*142*/ virtual float getPickRadius();
     /*151*/ virtual void awardKillScore(class Actor &, int);
+    /*170*/ virtual class HashedString const & queryEntityRenderer() const;
     /*171*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*178*/ virtual int getPortalWaitTime() const;
     /*180*/ virtual bool canChangeDimensions() const;
-    /*181*/ virtual void __unk_vfn_181();
+    /*181*/ virtual void onHit(class HitResult const &);
     /*183*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*192*/ virtual bool canPickupItem(class ItemStack const &) const;
     /*193*/ virtual bool canBePulledIntoVehicle() const;
-    /*195*/ virtual void __unk_vfn_195();
+    /*195*/ virtual bool stopUponGroundCollision() const;
     /*198*/ virtual bool canSynchronizeNewEntity() const;
     /*220*/ virtual void __unk_vfn_220();
-    /*221*/ virtual void __unk_vfn_221();
+    /*221*/ virtual unsigned int getUserId() const;
+    /*227*/ virtual float getYHeadRotO() const;
     /*228*/ virtual bool isWorldBuilder() const;
     /*229*/ virtual bool isCreative() const;
     /*230*/ virtual bool isAdventure() const;
@@ -73,11 +77,13 @@ public:
     /*238*/ virtual void setAuxValue(int);
     /*244*/ virtual void stopSpinAttack();
     /*246*/ virtual void __unk_vfn_246();
-    /*249*/ virtual void __unk_vfn_249();
-    /*261*/ virtual void __unk_vfn_261();
-    /*269*/ virtual void __unk_vfn_269();
+    /*249*/ virtual float getDeletionDelayTimeSeconds() const;
+    /*261*/ virtual bool shouldAlwaysRender();
+    /*265*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
+    /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
+    /*269*/ virtual bool _makeFlySound() const;
     /*278*/ virtual void __unk_vfn_278();
-    /*280*/ virtual void spawnAnim();
+    /*280*/ virtual void __unk_vfn_280();
     /*299*/ virtual bool checkSpawnRules(bool);
     /*303*/ virtual float getItemUseStartupProgress() const;
     /*304*/ virtual float getItemUseIntervalProgress() const;
@@ -87,21 +93,10 @@ public:
     /*316*/ virtual int getArmorValue() const;
     /*321*/ virtual void sendArmorDamage(class std::bitset<4> const &);
     /*338*/ virtual void onBorn(class Actor &, class Actor &);
-    /*345*/ virtual void __unk_vfn_345();
+    /*342*/ virtual int getAttackTime();
+    /*345*/ virtual bool isSimulated() const;
     /*355*/ virtual void _serverAiMobStep();
     /*359*/ virtual void __unk_vfn_359();
-    /*
-    inline bool useNewAi() const{
-        bool (Zombie::*rv)() const;
-        *((void**)&rv) = dlsym("?useNewAi@Zombie@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline  ~Zombie(){
-         (Zombie::*rv)();
-        *((void**)&rv) = dlsym("??1Zombie@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI Zombie(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void setZombieType(enum Zombie::ZombieType);
 

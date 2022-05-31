@@ -25,27 +25,12 @@ public:
 
 public:
     /*0*/ virtual ~PreviewContainerValidation();
-    /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual void __unk_vfn_5();
-    /*
-    inline bool isValidSlotForContainer(class ContainerScreenContext const & a0, class Container const & a1, int a2) const{
-        bool (PreviewContainerValidation::*rv)(class ContainerScreenContext const &, class Container const &, int) const;
-        *((void**)&rv) = dlsym("?isValidSlotForContainer@PreviewContainerValidation@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0), std::forward<class Container const &>(a1), std::forward<int>(a2));
-    }
-    inline bool isItemAllowedToAdd(class ItemStack const & a0) const{
-        bool (PreviewContainerValidation::*rv)(class ItemStack const &) const;
-        *((void**)&rv) = dlsym("?isItemAllowedToAdd@PreviewContainerValidation@@UEBA_NAEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<class ItemStack const &>(a0));
-    }
-    inline bool isItemAllowedInSlot(class ContainerScreenContext const & a0, int a1, class ItemStackBase const & a2, int a3) const{
-        bool (PreviewContainerValidation::*rv)(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
-        *((void**)&rv) = dlsym("?isItemAllowedInSlot@PreviewContainerValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0), std::forward<int>(a1), std::forward<class ItemStackBase const &>(a2), std::forward<int>(a3));
-    }
-    */
+    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
+    /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const &) const;
+    /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
+    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
+    /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 
 protected:
 

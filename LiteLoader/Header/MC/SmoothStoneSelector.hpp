@@ -25,13 +25,6 @@ public:
 public:
     /*0*/ virtual ~SmoothStoneSelector();
     /*1*/ virtual class Block const & next(class Random &, int, int, int, bool) const;
-    /*
-    inline  ~SmoothStoneSelector(){
-         (SmoothStoneSelector::*rv)();
-        *((void**)&rv) = dlsym("??1SmoothStoneSelector@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

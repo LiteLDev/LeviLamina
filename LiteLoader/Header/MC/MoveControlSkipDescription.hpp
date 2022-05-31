@@ -26,13 +26,6 @@ public:
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~MoveControlSkipDescription();
-    /*
-    inline  ~MoveControlSkipDescription(){
-         (MoveControlSkipDescription::*rv)();
-        *((void**)&rv) = dlsym("??1MoveControlSkipDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

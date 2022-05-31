@@ -25,7 +25,7 @@ public:
 public:
     /*0*/ virtual ~RedstoneTorchCapacitor();
     /*1*/ virtual int getStrength() const;
-    /*7*/ virtual void __unk_vfn_7();
+    /*7*/ virtual bool canConsumerPower() const;
     /*10*/ virtual bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
     /*11*/ virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /*12*/ virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
@@ -35,16 +35,10 @@ public:
     /*16*/ virtual void updateDependencies(class CircuitSceneGraph &, class BlockPos const &);
     /*17*/ virtual void __unk_vfn_17();
     /*18*/ virtual bool isHalfPulse() const;
-    /*20*/ virtual void __unk_vfn_20();
+    /*20*/ virtual bool hasChildrenSource() const;
     /*21*/ virtual bool isSecondaryPowered() const;
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
-    /*
-    inline unsigned char getPoweroutDirection() const{
-        unsigned char (RedstoneTorchCapacitor::*rv)() const;
-        *((void**)&rv) = dlsym("?getPoweroutDirection@RedstoneTorchCapacitor@@UEBAEXZ");
-        return (this->*rv)();
-    }
-    */
+    /*24*/ virtual unsigned char getPoweroutDirection() const;
     MCAPI RedstoneTorchCapacitor();
     MCAPI void resetBurnOutCount();
     MCAPI void setOn(bool);

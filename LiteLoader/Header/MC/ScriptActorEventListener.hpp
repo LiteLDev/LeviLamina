@@ -51,10 +51,10 @@ public:
     /*26*/ virtual enum EventResult onEvent(struct ActorRemovedEvent const &);
     /*27*/ virtual enum EventResult onEvent(struct ActorRemoveEffectEvent const &);
     /*28*/ virtual void __unk_vfn_28();
-    /*29*/ virtual enum EventResult onEvent(struct ActorDefinitionEndedEvent const &);
-    /*30*/ virtual enum EventResult onEvent(struct ActorHurtEvent const &);
-    /*31*/ virtual void __unk_vfn_31();
-    /*32*/ virtual enum EventResult onEvent(struct ActorAttackEvent const &);
+    /*29*/ virtual enum EventResult onEvent(struct ActorAttackEvent const &);
+    /*30*/ virtual enum EventResult onEvent(struct ActorDefinitionEvent const &);
+    /*31*/ virtual enum EventResult onEvent(struct ActorDefinitionEndedEvent const &);
+    /*32*/ virtual enum EventResult onEvent(struct ActorHurtEvent const &);
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual enum EventResult onEvent(struct ActorAddEffectEvent const &);
     MCAPI ScriptActorEventListener(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
