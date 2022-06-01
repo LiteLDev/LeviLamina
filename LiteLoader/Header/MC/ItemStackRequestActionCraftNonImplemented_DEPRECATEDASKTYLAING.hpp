@@ -25,9 +25,16 @@ public:
     /*0*/ virtual ~ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual void _write(class BinaryStream &) const;
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
+    /*
+    inline void _write(class BinaryStream & a0) const{
+        void (ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING::*rv)(class BinaryStream &) const;
+        *((void**)&rv) = dlsym("?_write@ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING@@MEBAXAEAVBinaryStream@@@Z");
+        return (this->*rv)(std::forward<class BinaryStream &>(a0));
+    }
+    */
     MCAPI ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
 
 protected:

@@ -34,6 +34,13 @@ public:
     /*8*/ virtual class SparseContainer * initOpenContainer(class BlockSource &, enum ContainerEnumName, class ContainerWeakRef const &);
     /*9*/ virtual void _addLegacyTransactionRequestSetItemSlot(class ItemStackNetManagerScreen &, enum ContainerType, int);
     /*10*/ virtual void _initScreen(class ItemStackNetManagerScreen &);
+    /*
+    inline void _addLegacyTransactionRequestSetItemSlot(class ItemStackNetManagerScreen & a0, enum ContainerType a1, int a2){
+        void (ItemStackNetManagerBase::*rv)(class ItemStackNetManagerScreen &, enum ContainerType, int);
+        *((void**)&rv) = dlsym("?_addLegacyTransactionRequestSetItemSlot@ItemStackNetManagerBase@@MEAAXAEAVItemStackNetManagerScreen@@W4ContainerType@@H@Z");
+        return (this->*rv)(std::forward<class ItemStackNetManagerScreen &>(a0), std::forward<enum ContainerType>(a1), std::forward<int>(a2));
+    }
+    */
     MCAPI ItemStackNetManagerBase(class Player &, bool, bool);
     MCAPI class ItemStackNetManagerScreenStack & _getScreenStack();
     MCAPI class ContainerScreenContext const & getScreenContext() const;

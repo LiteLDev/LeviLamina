@@ -25,7 +25,7 @@ public:
 public:
     /*0*/ virtual ~BlockVolumeTarget();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual short getMinHeight() const;
+    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual class Block const * tryGetLiquidBlock(class BlockPos const &) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
@@ -59,6 +59,11 @@ public:
         bool (BlockVolumeTarget::*rv)(class BlockPos const &, class StructureTemplate &, class StructureSettings &);
         *((void**)&rv) = dlsym("?placeStructure@BlockVolumeTarget@@UEAA_NAEBVBlockPos@@AEAVStructureTemplate@@AEAVStructureSettings@@@Z");
         return (this->*rv)(std::forward<class BlockPos const &>(a0), std::forward<class StructureTemplate &>(a1), std::forward<class StructureSettings &>(a2));
+    }
+    inline short getMinHeight() const{
+        short (BlockVolumeTarget::*rv)() const;
+        *((void**)&rv) = dlsym("?getMinHeight@BlockVolumeTarget@@UEBAFXZ");
+        return (this->*rv)();
     }
     inline bool apply() const{
         bool (BlockVolumeTarget::*rv)() const;

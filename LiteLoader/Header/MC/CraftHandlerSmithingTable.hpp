@@ -24,9 +24,9 @@ public:
 public:
     /*0*/ virtual ~CraftHandlerSmithingTable();
     /*2*/ virtual enum ItemStackNetResult preHandleAction(enum ItemStackRequestActionType);
-    /*3*/ virtual void endRequestBatch();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
-    /*5*/ virtual void _postCraftRequest(bool);
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual class Recipes const * _getLevelRecipes() const;
     MCAPI CraftHandlerSmithingTable(class Player &, class ItemStackRequestActionCraftHandler &);
 

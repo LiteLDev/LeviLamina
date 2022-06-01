@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Json.hpp"
 #include "CommandOrigin.hpp"
 
 #define BEFORE_EXTRA
@@ -47,8 +46,8 @@ public:
     /*22*/ virtual struct CommandOriginIdentity getIdentity() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*25*/ virtual class mce::UUID const & getUUID() const;
-    /*26*/ virtual void handleCommandOutputCallback(class Json::Value &&) const;
-    /*27*/ virtual void updateValues();
+    /*26*/ virtual void __unk_vfn_26();
+    /*27*/ virtual void __unk_vfn_27();
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
     MCAPI PlayerCommandOrigin(class Player &);

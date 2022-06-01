@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~TickingArea();
-    /*1*/ virtual class mce::UUID const & getId() const;
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual std::string const & getName() const;
     /*3*/ virtual struct ActorUniqueID const & getEntityId() const;
     /*4*/ virtual bool isEntityOwned() const;
@@ -50,6 +50,11 @@ public:
     /*24*/ virtual void remove(class LevelStorage &);
     /*25*/ virtual void onComponentChanged(unsigned int, float, bool, class LevelStorage &);
     /*
+    inline class mce::UUID const & getId() const{
+        class mce::UUID const & (TickingArea::*rv)() const;
+        *((void**)&rv) = dlsym("?getId@TickingArea@@UEBAAEBVUUID@mce@@XZ");
+        return (this->*rv)();
+    }
     inline class BlockSource & getBlockSource(){
         class BlockSource & (TickingArea::*rv)();
         *((void**)&rv) = dlsym("?getBlockSource@TickingArea@@UEAAAEAVBlockSource@@XZ");
