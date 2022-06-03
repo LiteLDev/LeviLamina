@@ -577,8 +577,7 @@ Local<Value> DirCreate(const Arguments& args)
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
     try{
-        CreateDirs(args[0].toStr());
-        return Boolean::newBoolean(true);
+        return Boolean::newBoolean(CreateDirs(args[0].toStr()));
     }
     catch(const filesystem_error& e)
     {
@@ -594,8 +593,7 @@ Local<Value> PathDelete(const Arguments& args)
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
     try{
-        remove_all(args[0].asString().toString());
-        return Boolean::newBoolean(true);
+        return Boolean::newBoolean(remove_all(args[0].asString().toString()) > 0);
     }
     catch(const filesystem_error& e)
     {

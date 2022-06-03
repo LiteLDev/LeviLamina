@@ -352,18 +352,18 @@ TInstanceHook(bool, "?setLocalPlayerAsInitialized@ServerPlayer@@QEAAXXZ",
 
 
 /////////////////// PlayerLeft ///////////////////
-TClasslessInstanceHook(void, "?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServerPlayer@@_N@Z",
-      ServerPlayer* sp, bool a3)
+THook(void, "?disconnect@ServerPlayer@@QEAAXXZ",
+      ServerPlayer* sp)
 {
     IF_LISTENED(PlayerLeftEvent)
     {
         PlayerLeftEvent ev{};
         ev.mPlayer = sp;
-        ev.mXUID = sp->getXuid();
+        ev.mXUID = "";
         ev.call();
     }
     IF_LISTENED_END(PlayerLeftEvent)
-    return original(this, sp, a3);
+    return original(sp);
 }
 
 /////////////////// PlayerRespawn ///////////////////

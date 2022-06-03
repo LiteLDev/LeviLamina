@@ -161,7 +161,8 @@ bool InitPlayerDatabase() {
 			WITHOUT ROWID; ");
 
         Event::PlayerJoinEvent::subscribe([](const Event::PlayerJoinEvent &e) {
-            insert(e.mPlayer->getRealName(), e.mPlayer->getXuid(), e.mPlayer->getUuid());
+            if (!e.mPlayer->isSimulatedPlayer())
+                insert(e.mPlayer->getRealName(), e.mPlayer->getXuid(), e.mPlayer->getUuid());
             return true;
         });
     } catch (std::exception const &e) {
