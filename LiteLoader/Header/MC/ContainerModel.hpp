@@ -62,11 +62,6 @@ public:
         *((void**)&rv) = dlsym("?isItemInstanceBased@ContainerModel@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline enum ContainerExpandStatus getItemExpandStatus(int a0) const{
-        enum ContainerExpandStatus (ContainerModel::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getItemExpandStatus@ContainerModel@@UEBA?AW4ContainerExpandStatus@@H@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
     inline void switchItemExpando(int a0){
         void (ContainerModel::*rv)(int);
         *((void**)&rv) = dlsym("?switchItemExpando@ContainerModel@@UEAAXH@Z");

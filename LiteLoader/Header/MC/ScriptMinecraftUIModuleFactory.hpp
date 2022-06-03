@@ -25,8 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptMinecraftUIModuleFactory();
-    /*2*/ virtual class Json::Value asJsonValue() const;
-    /*3*/ virtual class Json::Value resolve(struct ResolveData const &) const;
     MCAPI ScriptMinecraftUIModuleFactory(class gsl::not_null<class Bedrock::NonOwnerPointer<class ScriptFormPromiseTracker>>);
     MCAPI static std::string getModuleUUIDAsString();
 

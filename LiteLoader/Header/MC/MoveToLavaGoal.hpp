@@ -28,7 +28,6 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*16*/ virtual unsigned __int64 _getRepathTime() const;
     MCAPI MoveToLavaGoal(class Mob &, float, int, int, int, float);
 
 protected:

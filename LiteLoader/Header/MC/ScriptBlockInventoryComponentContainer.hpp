@@ -26,7 +26,6 @@ public:
     /*0*/ virtual ~ScriptBlockInventoryComponentContainer();
     /*5*/ virtual class Scripting::Result<int> getEmptySlotsCount() const;
     /*11*/ virtual class Container * _tryGetContainer() const;
-    /*12*/ virtual void _balanceTransaction(class ItemStack const &) const;
     MCAPI ScriptBlockInventoryComponentContainer(class BlockActor &, class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
     MCAPI class ScriptBlockInventoryComponentContainer & operator=(class ScriptBlockInventoryComponentContainer const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockInventoryComponentContainer> bind(struct Scripting::Version);

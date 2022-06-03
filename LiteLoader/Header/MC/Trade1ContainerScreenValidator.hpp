@@ -22,8 +22,6 @@ public:
 
 public:
     /*0*/ virtual ~Trade1ContainerScreenValidator();
-    /*1*/ virtual class std::shared_ptr<class ContainerValidationCommitObject> postCommitItemRemoved(enum ContainerEnumName, int, class ItemStack const &);
-    /*2*/ virtual bool isCraftingImplemented();
     MCAPI Trade1ContainerScreenValidator();
 
 protected:

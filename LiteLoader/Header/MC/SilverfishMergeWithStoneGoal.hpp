@@ -27,7 +27,6 @@ public:
     /*0*/ virtual ~SilverfishMergeWithStoneGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual bool canBeInterrupted();
     /*4*/ virtual void start();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();

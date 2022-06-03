@@ -35,8 +35,13 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /*14*/ virtual void _moveToBlock();
-    /*16*/ virtual unsigned __int64 _getRepathTime() const;
-    /*17*/ virtual class BlockPos _selectRandomPosInVillage();
+    /*
+    inline class BlockPos _selectRandomPosInVillage(){
+        class BlockPos (MoveToVillageGoal::*rv)();
+        *((void**)&rv) = dlsym("?_selectRandomPosInVillage@MoveToVillageGoal@@MEAA?AVBlockPos@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI MoveToVillageGoal(class Mob &, float, float, float, int);
 
 protected:

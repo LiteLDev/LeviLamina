@@ -25,7 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScatteredFeatureStart();
-    /*2*/ virtual bool isValid() const;
     MCAPI ScatteredFeatureStart(class BiomeSource const &, short, int, int, class IPreliminarySurfaceProvider const &);
 
 protected:

@@ -79,11 +79,6 @@ public:
         *((void**)&rv) = dlsym("?canPullOutItem@Container@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z");
         return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<class ItemInstance const &>(a3));
     }
-    inline void initializeContainerContents(class BlockSource & a0){
-        void (Container::*rv)(class BlockSource &);
-        *((void**)&rv) = dlsym("?initializeContainerContents@Container@@UEAAXAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0));
-    }
     */
     MCAPI Container(class Container const &);
     MCAPI Container(enum ContainerType);

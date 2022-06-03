@@ -26,7 +26,6 @@ public:
 public:
     /*0*/ virtual ~FleeSunGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_3();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
