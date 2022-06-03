@@ -439,7 +439,7 @@ TClasslessInstanceHook(bool, "?requestPlayerChangeDimension@Level@@UEAAXAEAVPlay
     return original(this, sp, std::move(request));
 }
 
-
+int num = 0;
 /////////////////// PlayerJump ///////////////////
 TInstanceHook(void, "?jumpFromGround@Player@@UEAAXXZ", Player)
 {
@@ -450,6 +450,12 @@ TInstanceHook(void, "?jumpFromGround@Player@@UEAAXXZ", Player)
         ev.call();
     }
     IF_LISTENED_END(PlayerJumpEvent)
+    auto item = getHandSlot();
+    std::cout << item->getAuxValue() << std::endl;
+    //item->setAuxValue(2);
+    *((short*)item + 16) = 2;
+    std::cout << item->getAuxValue() << std::endl;
+    this->refreshInventory();
     return original(this);
 }
 

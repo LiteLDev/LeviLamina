@@ -77,6 +77,9 @@ public:
     LIAPI bool setNbt(CompoundTag* nbt);
     LIAPI bool refreshAttribute(class Attribute const& attribute);
     LIAPI bool refreshAttributes(std::vector<Attribute const*> const& attributes);
+    LIAPI void addBossEvent(int64_t uid, string name, float percent, BossEventColour colour, int overlay = 0);
+    LIAPI void removeBossEvent(int64_t uid);
+    LIAPI void updateBossEvent(int64_t uid, string name, float percent, BossEventColour colour, int overlay = 0);
 
     LIAPI int getScore(const string& key);
     LIAPI bool setScore(const string& key, int value);

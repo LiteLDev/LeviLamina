@@ -1148,6 +1148,32 @@ Local<Value> PlayerClass::removeSidebar(const Arguments& args)
 Local<Value> PlayerClass::setBossBar(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 2);
+    if (args[0].getKind() == ValueKind::kNumber)
+    {
+        CHECK_ARGS_COUNT(args, 4);
+        CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+        CHECK_ARG_TYPE(args[1], ValueKind::kString);
+        CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+        CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
+        try
+        {
+            Player* player = get();
+            if (!player)
+                return Local<Value>();
+
+            int64_t uid = args[0].asNumber().toInt64();
+            int percent = args[2].toInt();
+            if (percent < 0)
+                percent = 0;
+            else if (percent > 100)
+                percent = 100;
+            float value = (float)percent / 100;
+            BossEventColour colour = (BossEventColour)args[3].toInt();
+            player->updateBossEvent(uid, args[1].toStr(), value, colour);
+            return Boolean::newBoolean(true);
+        }
+        CATCH("Fail in addBossBar!")
+    }
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
     if (args.size() >= 3)
@@ -1166,7 +1192,7 @@ Local<Value> PlayerClass::setBossBar(const Arguments& args)
         BossEventColour colour = BossEventColour::Red;
         if (args.size() >= 3)
             colour = (BossEventColour)args[2].toInt();
-        player->sendBossEventPacket(BossEvent::Show, args[0].toStr(), value, colour); // Set
+        player->sendBossEventPacket(BossEvent::Show, args[0].toStr(), value, colour);
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in setBossBar!")
@@ -1174,15 +1200,34 @@ Local<Value> PlayerClass::setBossBar(const Arguments& args)
 
 Local<Value> PlayerClass::removeBossBar(const Arguments& args)
 {
-    try{
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
+    if (args.size() == 0)
+    {
+        try
+        {
+            Player* player = get();
+            if (!player)
+                return Local<Value>();
 
-        player->sendBossEventPacket(BossEvent::Hide, "", 0, BossEventColour::Red);     //Remove
-        return Boolean::newBoolean(true);
+            player->sendBossEventPacket(BossEvent::Hide, "", 0, BossEventColour::Red); // Remove
+            return Boolean::newBoolean(true);
+        }
+        CATCH("Fail in removeBossBar!")
     }
-    CATCH("Fail in removeBossBar!")
+    else
+    {
+        CHECK_ARGS_COUNT(args, 1);
+        CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+        try
+        {
+            Player* player = get();
+            if (!player)
+                return Local<Value>();
+            int64_t uid = args[0].asNumber().toInt64();
+            player->removeBossEvent(uid); // Remove
+            return Boolean::newBoolean(true);
+        }
+        CATCH("Fail in removeBossBar!")
+    }
 }
 
 Local<Value> PlayerClass::sendSimpleForm(const Arguments& args)

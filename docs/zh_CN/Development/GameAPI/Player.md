@@ -662,12 +662,13 @@ pl.removeSidebar();
 
 #### 设置玩家看到的自定义Boss血条  
 
-`pl.setBossBar(title,percent)`
+`pl.setBossBar(uid,title,percent,colour)`
 
 - 参数：
+  - uid : `Number`   
+    唯一标识符，不可冲突重复！一个uid对于一行bar
   - title : `String`  
     自定义血条标题  
-
   - percent : `Integer`  
     血条中的血量百分比，有效范围为0~100。0为空血条，100为满
   - colour : `Integer`  
@@ -678,14 +679,17 @@ pl.removeSidebar();
 ```clike
 [Js]
 //对于一个玩家对象pl
-pl.setBossBar("Hello ~ ",80,0);
+pl.setBossBar(1145141919,"Hello ~ ",80,0);
 [Lua]
 
 ```
 
-#### 移除玩家的自定义Boss血条  
+#### 移除玩家的自定义的指定Boss血条  
 
-`pl.removeBossBar()`
+`pl.removeBossBar(uid)`
+- 参数：
+  - uid : `Number`   
+    标识符，与setBossBar对应！
 
 - 返回值：是否成功移除
 - 返回值类型：`Boolean`
@@ -693,7 +697,7 @@ pl.setBossBar("Hello ~ ",80,0);
 ```clike
 [Js]
 //对于一个玩家对象pl
-pl.removeBossBar();
+pl.removeBossBar(1145141919);
 [Lua]
 
 ```

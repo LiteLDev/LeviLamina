@@ -442,3 +442,10 @@ std::string Level::getCurrentLevelPath()
 {
     return "./worlds/" + getCurrentLevelName();
 }
+
+int64_t BossID = 7492341231332ull;
+
+int64_t Level::createBossEvent()
+{
+    return ++BossID;
+}

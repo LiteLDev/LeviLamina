@@ -86,6 +86,7 @@ public:
 
     LIAPI static std::string getCurrentLevelName();
     LIAPI static std::string getCurrentLevelPath();
+    LIAPI static int64_t createBossEvent();
 
  public:
     static void dummy() { ; }

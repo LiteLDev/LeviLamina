@@ -276,6 +276,7 @@ bool Player::setNbt(CompoundTag* nbt)
 #include <MC/Attribute.hpp>
 #include <MC/AttributeInstance.hpp>
 #include <MC/HashedString.hpp>
+#include <LiteLoader/Header/SendPacketAPI.h>
 bool Player::refreshAttribute(class Attribute const& attribute)
 {
     return refreshAttributes({&attribute});
@@ -394,6 +395,38 @@ bool Player::reduceScore(const string& key, int value)
 bool Player::deleteScore(const string& key)
 {
     return Scoreboard::deleteScore(this, key);
+}
+
+void Player::addBossEvent(int64_t uid, string name, float percent, BossEventColour colour, int overlay)
+{
+    BinaryStream wp;
+    wp.writeVarInt64(uid);
+    wp.writeUnsignedVarInt((int)0);
+    wp.writeString(name);
+    wp.writeFloat(percent);
+    wp.writeUnsignedShort(1);
+    wp.writeUnsignedVarInt((int)colour);
+    wp.writeUnsignedVarInt(overlay);
+    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::BossEvent);
+    pkt->read(wp);
+    sendAddEntityPacket(uid, "player", Vec3(getPos().x, (float)-70, getPos().z), Vec2{0, 0}, 0);
+    sendNetworkPacket(*pkt);
+}
+
+void Player::removeBossEvent(int64_t uid)
+{
+    BinaryStream wp;
+    wp.writeVarInt64(uid);
+    wp.writeUnsignedVarInt((int)2);
+    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::BossEvent);
+    pkt->read(wp);
+    sendNetworkPacket(*pkt);
+}
+
+void Player::updateBossEvent(int64_t uid, string name, float percent, BossEventColour colour, int overlay)
+{
+    removeBossEvent(uid);
+    addBossEvent(uid, name, percent, colour, overlay);
 }
 
 
@@ -533,24 +566,25 @@ bool Player::sendAddItemEntityPacket(unsigned long long runtimeID, Item const& i
 
 bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType, Vec3 pos, Vec2 rotation, float headYaw, vector<std::unique_ptr<DataItem>> dataItems)
 {
-    BinaryStream wp;
-    wp.writeVarInt64(runtimeID);         //RuntimeId
-    wp.writeUnsignedVarInt64(runtimeID); //EntityId
-    wp.writeString(entityType);
-    wp.writeType(pos); //pos
-    wp.writeFloat(0);
-    wp.writeFloat(0);
-    wp.writeFloat(0);
-    wp.writeFloat(rotation.x); //rotation
-    wp.writeFloat(rotation.y);
-    wp.writeFloat(headYaw);
-    wp.writeUnsignedVarInt(0); //attr
-    wp.writeType(dataItems); //EntityMetadata & DataItem
-    wp.writeUnsignedVarInt(0); //entity link
+    BinaryStream bs;
+    bs.writeVarInt64(runtimeID);
+    bs.writeUnsignedVarInt64(runtimeID);
+    bs.writeString(entityType);
+    bs.writeType(pos);
+    bs.writeType(Vec3{0, 0, 0});
+    bs.writeType(Vec3{0, 0, 0});
 
-    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::AddEntity);
-    pkt->read(wp);
-    sendNetworkPacket(*pkt);
+    // Atrribute
+    bs.writeUnsignedVarInt(0);
+
+    // DataItem
+    bs.writeUnsignedVarInt(0);
+
+    // Links
+    bs.writeUnsignedVarInt(0);
+ 
+    NetworkPacket<13> pkt(bs.getAndReleaseData());
+    sendNetworkPacket(pkt);
     return true;
 }
 
@@ -597,20 +631,8 @@ bool Player::sendSetScorePacket(char type, const vector<ScorePacketInfo>& data)
 
 bool Player::sendBossEventPacket(BossEvent type, string name, float percent, BossEventColour colour, int overlay)
 {
-    /*
-    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::BossEvent);
-    dAccess<ActorUniqueID, 56>(pkt.get()) = getUniqueID();
-    dAccess<BossEvent, 72>(pkt.get()) = type;
-    dAccess<gsl::string_span<-1>, 80>(pkt.get()) = gsl::string_span<-1>(name);
-    dAccess<float, 112>(pkt.get()) = percent;
-    dAccess<ActorUniqueID, 64>(pkt.get()) = getUniqueID();
-    dAccess<int, 124>(pkt.get()) = 1;
-    dAccess<BossEventColour, 116>(pkt.get()) = colour;
-    dAccess<int, 120>(pkt.get()) = overlay;
-    sendNetworkPacket(*pkt);
-    */
     BinaryStream wp;
-    wp.writeVarInt64(getActorUniqueId().get());
+    wp.writeVarInt64(getUniqueID() + 1145141919);
     wp.writeUnsignedVarInt((int)type);
     switch (type)
     {
@@ -622,7 +644,7 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
         case BossEvent::UnregisterPlayer:
         case BossEvent::ResendRaidBossEventData:
         {
-            wp.writeVarInt64(getActorUniqueId().get());
+            wp.writeVarInt64(getUniqueID() + 1145141919);
             break;
         }
         case BossEvent::HealthPercentage:
@@ -648,6 +670,11 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
 
     auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::BossEvent);
     pkt->read(wp);
+    sendAddEntityPacket(getUniqueID() + 1145141919, "player", Vec3(getPos().x, (float)-70, getPos().z), Vec2{0, 0}, 0);
+    if (type != BossEvent::Hide)
+    {
+        sendBossEventPacket(BossEvent::Hide, "", 0, BossEventColour::White);
+    }
     sendNetworkPacket(*pkt);
     return true;
 }
