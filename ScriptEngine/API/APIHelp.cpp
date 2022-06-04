@@ -53,14 +53,24 @@ void PrintValue(T &out, Local<Value> v)
                 out << "[]";
             else
             {
-                out << '[';
-                PrintValue(out, arr.get(0));
-                for(int i = 1; i<arr.size(); ++i)
+                static std::vector<Local<Array>> arrStack = {};
+                if (std::find(arrStack.begin(), arrStack.end(), arr) == arrStack.end())
                 {
-                    out << ',';
-                    PrintValue(out, arr.get(i));
+                    arrStack.push_back(arr);
+                    out << '[';
+                    PrintValue(out, arr.get(0));
+                    for (int i = 1; i < arr.size(); ++i)
+                    {
+                        out << ',';
+                        PrintValue(out, arr.get(i));
+                    }
+                    out << ']';
+                    arrStack.pop_back();
                 }
-                out << ']';
+                else
+                {
+                    out << "<Recursive Array>";
+                }
             }
             break;
         }
@@ -159,15 +169,25 @@ void PrintValue(T &out, Local<Value> v)
                 out << "{}";
             else
             {
-                out << '{';
-                out << keys[0]+":";
-                PrintValue(out, obj.get(keys[0]));
-                for(int i = 1; i < keys.size(); ++i)
+                static std::vector<Local<Object>> objStack = {};
+                if (std::find(objStack.begin(), objStack.end(), obj) == objStack.end())
                 {
-                    out << "," + keys[i] + ":";
-                    PrintValue(out, obj.get(keys[i]));
+                    objStack.push_back(obj);
+                    out << '{';
+                    out << keys[0] + ":";
+                    PrintValue(out, obj.get(keys[0]));
+                    for (int i = 1; i < keys.size(); ++i)
+                    {
+                        out << "," + keys[i] + ":";
+                        PrintValue(out, obj.get(keys[i]));
+                    }
+                    out << '}';
+                    objStack.pop_back();
                 }
-                out << '}';
+                else
+                {
+                    out << "<Recursive Object>";
+                }
             }
             break;
         }
