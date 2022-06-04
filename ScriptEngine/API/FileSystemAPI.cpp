@@ -182,6 +182,7 @@ Local<Value> FileClass::readSync(const Arguments& args)
 
         Local<Value> res = isBinary ? ByteBuffer::newByteBuffer(buf, bytes).asValue() : String::newString(string_view(buf,bytes)).asValue();
         delete buf;
+        delete[] buf;
         return res;
     }
     CATCH("Fail in readSync!");
@@ -270,6 +271,7 @@ Local<Value> FileClass::read(const Arguments& args)
             {
                 Local<Value> res = isBinary ? ByteBuffer::newByteBuffer(buf, bytes).asValue() : String::newString(string_view(buf, bytes)).asValue();
                 delete buf;
+                delete[] buf;
                 // dangerous
                 NewTimeout(callback.get(), { res }, 1);
             }
