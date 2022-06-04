@@ -51,6 +51,8 @@ bool EngineManager::isValid(ScriptEngine* engine, bool onlyCheckLocal)
     for (auto i = globalShareData->globalEngineList.begin(); i != globalShareData->globalEngineList.end(); ++i)
         if (*i == engine)
         {
+            if (engine->isDestroying())
+                return false;
             if (onlyCheckLocal && getEngineType(engine) != LLSE_BACKEND_TYPE)
                 return false;
             else
