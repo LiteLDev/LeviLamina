@@ -100,7 +100,7 @@ FileClass* FileClass::constructor(const Arguments& args)
         CreateDirs(path);
 
         FileOpenMode fMode = (FileOpenMode)(args[1].toInt());
-        //Auto Create
+        // Auto Create
         if (fMode == FileOpenMode::ReadMode || fMode == FileOpenMode::WriteMode)
         {
             fstream tmp(path, ios_base::app);
@@ -109,12 +109,16 @@ FileClass* FileClass::constructor(const Arguments& args)
         }
 
         ios_base::openmode mode = ios_base::in;
-        if(fMode == FileOpenMode::WriteMode)
+        if (fMode == FileOpenMode::WriteMode)
         {
             mode |= ios_base::out;
+            //mode |= ios_base::ate;
+            mode |= ios_base::trunc;
         }
         else if (fMode == FileOpenMode::AppendMode)
+        {
             mode |= ios_base::app;
+        }
 
         bool isBinary = false;
         if (args.size() >= 3 && args[2].asBoolean().value())
@@ -181,7 +185,6 @@ Local<Value> FileClass::readSync(const Arguments& args)
         size_t bytes = file.gcount();
 
         Local<Value> res = isBinary ? ByteBuffer::newByteBuffer(buf, bytes).asValue() : String::newString(string_view(buf,bytes)).asValue();
-        delete buf;
         delete[] buf;
         return res;
     }
@@ -270,7 +273,6 @@ Local<Value> FileClass::read(const Arguments& args)
             try
             {
                 Local<Value> res = isBinary ? ByteBuffer::newByteBuffer(buf, bytes).asValue() : String::newString(string_view(buf, bytes)).asValue();
-                delete buf;
                 delete[] buf;
                 // dangerous
                 NewTimeout(callback.get(), { res }, 1);
