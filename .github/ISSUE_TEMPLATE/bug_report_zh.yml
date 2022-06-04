@@ -1,0 +1,94 @@
+name: "[简体中文] 报告漏洞/问题"
+description: "向我们报告漏洞/问题以让LiteLoader变得更好"
+labels: ["bug"]
+body:
+- type: markdown
+  attributes:
+    value: |
+      感谢您花时间填写这份Bug反馈!
+      > **注意事项**
+      > 1. 请勿反馈非加载器问题
+      > 2. 请勿在这里反馈具有严重影响的游戏漏洞, 相关问题请在聊天软件内私聊项目开发者并向及时向Mojang反馈
+
+- type: dropdown
+  id: module
+  attributes:
+    label: 异常模块
+    description: 出现问题的模块
+    options:
+      - Core(核心)
+      - ScriptEngine(脚本引擎)
+      - AddonsHelper
+      - SymDB2
+  validations:
+    required: true
+- type: dropdown
+  id: os
+  attributes:
+    label: 操作系统
+    multiple: false
+    options:
+      - Windows Server 2019
+      - Windows Server 2016
+      - Windows Server 2012
+      - 其他版本的 Windows Server
+      - Windows 10
+      - Windows 11
+      - Linux(Ubuntu/CentOS/...) with docker
+      - Linux(Ubuntu/CentOS/...) with wine
+      - 其他系统
+  validations:
+    required: true
+- type: input
+  id: llversion
+  attributes:
+    label: "LiteLoader版本"
+    placeholder: 输入您的LiteLoader版本
+    description: |
+      如果您正在使用一个从Actions下载的beta版LiteLoader，请输入对应的Actions运行ID(#开头)或commit hash
+      e.g. 2.1.0     Actions#1479     4f404a7
+  validations:
+    required: true
+- type: input
+  id: bdsversion
+  attributes:
+    label: BDS版本
+    placeholder: 输入您的BDS版本
+  validations:
+    required: true
+- type: textarea
+  id: what-happened
+  attributes:
+    label: 发生了什么?
+    description: |
+      发生了什么?请描述你的问题. 并告诉我们, 您希望我们做什么
+    placeholder: 清晰地描述你的问题
+  validations:
+    required: true
+- type: textarea
+  id: reproduce
+  attributes:
+    label: 复现此问题的步骤
+    description: 尽可能清晰且详细的描述如何复现
+    placeholder: |
+      1. Do something
+      2. ...
+      3. ...
+- type: textarea
+  id: logs
+  attributes:
+    label: 有关的日志/输出
+    description: 请粘贴有关此问题的日志到此处
+    render: shell
+- type: textarea
+  id: plugins
+  attributes:
+    label: 插件列表
+    description: 请复制命令`ll list`的输出
+    render: shell
+- type: markdown
+  attributes:
+    value: |
+      **如果你有图片或其他内容，请在下面评论(comment)。截图，日志和dmp文件对解决你的问题很重要、很有帮助**
+      ******
+      再次感谢您对LiteLoader的贡献!
