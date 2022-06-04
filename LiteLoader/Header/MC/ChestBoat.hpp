@@ -44,13 +44,7 @@ public:
     /*261*/ virtual void __unk_vfn_261();
     /*269*/ virtual void __unk_vfn_269();
     /*278*/ virtual void __unk_vfn_278();
-    /*
-    inline void destroy(class Actor * a0){
-        void (ChestBoat::*rv)(class Actor *);
-        *((void**)&rv) = dlsym("?destroy@ChestBoat@@UEAAXPEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor *>(a0));
-    }
-    */
+    /*279*/ virtual void destroy(class Actor *);
     MCAPI ChestBoat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

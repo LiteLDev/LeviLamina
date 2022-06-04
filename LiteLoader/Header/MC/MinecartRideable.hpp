@@ -46,16 +46,8 @@ public:
     /*261*/ virtual void __unk_vfn_261();
     /*269*/ virtual void __unk_vfn_269();
     /*278*/ virtual void __unk_vfn_278();
-    /*280*/ virtual void __unk_vfn_280();
-    /*281*/ virtual void __unk_vfn_281();
+    /*280*/ virtual enum MinecartType getType();
     /*282*/ virtual void __unk_vfn_282();
-    /*
-    inline enum MinecartType getType(){
-        enum MinecartType (MinecartRideable::*rv)();
-        *((void**)&rv) = dlsym("?getType@MinecartRideable@@UEAA?AW4MinecartType@@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI MinecartRideable(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

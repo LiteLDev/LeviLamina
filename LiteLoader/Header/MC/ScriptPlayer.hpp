@@ -25,17 +25,10 @@ public:
 
 public:
     /*0*/ virtual ~ScriptPlayer();
-    /*4*/ virtual void __unk_vfn_4();
+    /*4*/ virtual class Scripting::Result<std::string> getNameTag() const;
     /*5*/ virtual class Scripting::Result<void> setNameTag(std::string const &) const;
     /*6*/ virtual class Scripting::Result<bool> getSneaking() const;
     /*7*/ virtual class Scripting::Result<void> setSneaking(bool) const;
-    /*
-    inline class Scripting::Result<std::string> getNameTag() const{
-        class Scripting::Result<std::string> (ScriptPlayer::*rv)() const;
-        *((void**)&rv) = dlsym("?getNameTag@ScriptPlayer@@UEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Scripting@@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI ScriptPlayer(class Player const &, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<int> getItemCooldownLeft(std::string const &);
     MCAPI class Scripting::Result<std::string> getName() const;

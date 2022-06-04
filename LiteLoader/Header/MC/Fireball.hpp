@@ -54,6 +54,7 @@ public:
     /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
     /*269*/ virtual void __unk_vfn_269();
     /*278*/ virtual void __unk_vfn_278();
+    /*279*/ virtual float getInertia();
     /*280*/ virtual void __unk_vfn_280();
     /*281*/ virtual enum ParticleType getTrailParticle();
     /*
@@ -71,11 +72,6 @@ public:
         void (Fireball::*rv)(class HitResult const &);
         *((void**)&rv) = dlsym("?onHit@Fireball@@MEAAXAEBVHitResult@@@Z");
         return (this->*rv)(std::forward<class HitResult const &>(a0));
-    }
-    inline float getInertia(){
-        float (Fireball::*rv)();
-        *((void**)&rv) = dlsym("?getInertia@Fireball@@MEAAMXZ");
-        return (this->*rv)();
     }
     */
     MCAPI Fireball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

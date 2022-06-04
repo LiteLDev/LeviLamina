@@ -25,13 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~BaseScriptBlockLiquidContainerComponent();
-    /*
-    inline class Scripting::Result<void> setFillLevel(int a0){
-        class Scripting::Result<void> (BaseScriptBlockLiquidContainerComponent::*rv)(int);
-        *((void**)&rv) = dlsym("?setFillLevel@BaseScriptBlockLiquidContainerComponent@@UEAA?AV?$Result@X@Scripting@@H@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    */
+    /*4*/ virtual class Scripting::Result<void> setFillLevel(int);
     MCAPI BaseScriptBlockLiquidContainerComponent(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &, enum CauldronLiquidType);
     MCAPI class Scripting::Result<int> getFillLevel();
 

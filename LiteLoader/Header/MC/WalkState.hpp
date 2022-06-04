@@ -26,6 +26,8 @@ public:
 public:
     /*0*/ virtual ~WalkState();
     /*1*/ virtual void tick();
+    /*2*/ virtual void start();
+    /*3*/ virtual void stop();
 
 protected:
 

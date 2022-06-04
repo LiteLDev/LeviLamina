@@ -26,6 +26,7 @@ public:
 
 public:
     /*0*/ virtual ~NavigationScriptActorComponent();
+    /*4*/ virtual class Scripting::Result<bool> getIsAmphibious() const;
     /*5*/ virtual class Scripting::Result<bool> getAvoidSun() const;
     /*6*/ virtual class Scripting::Result<bool> getCanPassDoors() const;
     /*7*/ virtual class Scripting::Result<bool> getCanOpenDoors() const;
@@ -44,13 +45,6 @@ public:
     /*20*/ virtual class Scripting::Result<bool> getCanBreach() const;
     /*21*/ virtual class Scripting::Result<bool> getCanJump() const;
     /*22*/ virtual class Scripting::Result<bool> getCanPathFromAir() const;
-    /*
-    inline class Scripting::Result<bool> getIsAmphibious() const{
-        class Scripting::Result<bool> (NavigationScriptActorComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?getIsAmphibious@NavigationScriptActorComponent@@UEBA?AV?$Result@_N@Scripting@@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI NavigationScriptActorComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &, struct Description *ActorDefinitionDescriptor::*);
 
 protected:

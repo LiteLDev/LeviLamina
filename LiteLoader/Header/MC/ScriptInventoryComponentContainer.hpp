@@ -23,7 +23,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptInventoryComponentContainer();
-    /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual class Scripting::Result<int> getEmptySlotsCount() const;
     /*11*/ virtual class Container * _tryGetContainer() const;
     MCAPI ScriptInventoryComponentContainer(class ScriptInventoryComponentContainer const &);

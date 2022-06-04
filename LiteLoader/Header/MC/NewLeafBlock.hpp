@@ -64,13 +64,7 @@ public:
     /*183*/ virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline class ItemInstance getExtraResourceItem(class Block const & a0) const{
-        class ItemInstance (NewLeafBlock::*rv)(class Block const &) const;
-        *((void**)&rv) = dlsym("?getExtraResourceItem@NewLeafBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class Block const &>(a0));
-    }
-    */
+    /*203*/ virtual class ItemInstance getExtraResourceItem(class Block const &) const;
     MCAPI NewLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
 
 protected:

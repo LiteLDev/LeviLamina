@@ -26,13 +26,7 @@ public:
 
 public:
     /*0*/ virtual ~MovementScriptActorComponent();
-    /*
-    inline class Scripting::Result<float> getMaxTurn() const{
-        class Scripting::Result<float> (MovementScriptActorComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?getMaxTurn@MovementScriptActorComponent@@UEBA?AV?$Result@M@Scripting@@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*4*/ virtual class Scripting::Result<float> getMaxTurn() const;
     MCAPI MovementScriptActorComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &, struct Description *ActorDefinitionDescriptor::*);
 
 protected:

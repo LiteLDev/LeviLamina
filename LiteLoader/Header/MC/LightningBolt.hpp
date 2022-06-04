@@ -50,7 +50,6 @@ public:
     /*265*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
     /*269*/ virtual void __unk_vfn_269();
-    /*278*/ virtual void __unk_vfn_278();
     /*
     inline bool shouldAlwaysRender(){
         bool (LightningBolt::*rv)();

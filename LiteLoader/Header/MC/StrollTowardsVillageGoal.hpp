@@ -30,13 +30,7 @@ public:
     /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*
-    inline class BlockPos _selectRandomPosInVillage(){
-        class BlockPos (StrollTowardsVillageGoal::*rv)();
-        *((void**)&rv) = dlsym("?_selectRandomPosInVillage@StrollTowardsVillageGoal@@MEAA?AVBlockPos@@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*17*/ virtual class BlockPos _selectRandomPosInVillage();
     MCAPI StrollTowardsVillageGoal(class Mob &, float, float, float, int, float);
 
 protected:
