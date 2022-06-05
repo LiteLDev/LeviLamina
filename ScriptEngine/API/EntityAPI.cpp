@@ -298,7 +298,7 @@ Local<Value> EntityClass::teleport(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument in teleport!");
+                LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
         }
@@ -317,7 +317,7 @@ Local<Value> EntityClass::teleport(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong number of arguments in teleport!");
+            LOG_SCRIPT_ERROR_WITH_INFO("Wrong number of arguments!");
             return Local<Value>();
         }
         
@@ -608,7 +608,7 @@ Local<Value> McClass::cloneMob(const Arguments& args)
         Actor* ac = EntityClass::extract(args[0]);
         if (!ac)
         {
-            logger.error("Wrong type of argument in CloneMob!");
+            LOG_WRONG_ARG_TYPE();
             return Local<Value>(); // Null
         }
 		
@@ -643,7 +643,7 @@ Local<Value> McClass::cloneMob(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument in CloneMob!");
+                LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
         }
@@ -658,7 +658,7 @@ Local<Value> McClass::cloneMob(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong number of arguments in CloneMob!");
+            LOG_SCRIPT_ERROR_WITH_INFO("Wrong number of arguments!");
             return Local<Value>();
         }
 
@@ -709,7 +709,7 @@ Local<Value> McClass::spawnMob(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument in SpawnMob!");
+                LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
         }
@@ -724,7 +724,7 @@ Local<Value> McClass::spawnMob(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong number of arguments in SpawnMob!");
+            LOG_SCRIPT_ERROR_WITH_INFO("Wrong number of arguments!");
             return Local<Value>();
         }
 
@@ -776,7 +776,7 @@ Local<Value> McClass::explode(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument in Explode!");
+                LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
         }
@@ -792,7 +792,7 @@ Local<Value> McClass::explode(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong number of arguments in Explode!");
+            LOG_SCRIPT_ERROR_WITH_INFO("Wrong number of arguments!");
             return Local<Value>();
         }
 

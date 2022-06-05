@@ -302,7 +302,7 @@ Local<Value> WSClientClass::send(const Arguments& args)
             ws->SendBinary((char*)args[0].asByteBuffer().getRawBytes(), args[0].asByteBuffer().byteLength());
         else
         {
-            logger.error("Wrong type of argument in WSClientSend!");
+            LOG_WRONG_ARG_TYPE();
             return Local<Value>();
         }
         return Boolean::newBoolean(true);

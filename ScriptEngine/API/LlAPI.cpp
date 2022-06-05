@@ -98,8 +98,7 @@ Local<Value> LlClass::registerPlugin(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument!");
-                logger.error("In API: registerPlugin");
+                LOG_WRONG_ARG_TYPE();
                 return Boolean::newBoolean(false);
             }
         }

@@ -235,6 +235,7 @@ Local<Value> ConfJsonClass::reload(const Arguments& args)
     {
         logger.error("Fail to parse json content in file!");
         logger.error(TextEncoding::toUTF8(e.what()));
+        PrintScriptStackTrace();
         return Boolean::newBoolean(false);
     }
     CATCH("Fail in confJsonReload!");
@@ -428,7 +429,7 @@ Local<Value> ConfIniClass::init(const Arguments& args)
             break;
         }
         default:
-            logger.error("Ini file don't support this type of data!");
+            LOG_SCRIPT_ERROR_WITH_INFO("Ini file don't support this type of data!");
             return Local<Value>();
             break;
         }
@@ -465,7 +466,7 @@ Local<Value> ConfIniClass::set(const Arguments& args)
             iniConf->setBool(section, key, args[2].asBoolean().value());
             break;
         default:
-            logger.error("Ini file don't support this type of data!");
+            LOG_SCRIPT_ERROR_WITH_INFO("Ini file don't support this type of data!");
             return Local<Value>();
             break;
         }
@@ -618,12 +619,14 @@ Local<Value> MoneyClass::set(const Arguments& args)
     {
         logger.error("Bad argument in MoneySet!");
         logger.error(TextEncoding::toUTF8(e.what()));
+        PrintScriptStackTrace();
         return Boolean::newBoolean(false);
     }
     catch (const std::out_of_range& e)
     {
         logger.error("Bad argument in MoneySet!");
         logger.error(TextEncoding::toUTF8(e.what()));
+        PrintScriptStackTrace();
         return Boolean::newBoolean(false);
     }
     CATCH("Fail in MoneySet!");
@@ -642,12 +645,14 @@ Local<Value> MoneyClass::get(const Arguments& args)
     {
         logger.error("Bad argument in MoneyGet!");
         logger.error(TextEncoding::toUTF8(e.what()));
+        PrintScriptStackTrace();
         return Number::newNumber(0);
     }
     catch (const std::out_of_range& e)
     {
         logger.error("Bad argument in MoneyGet!");
         logger.error(TextEncoding::toUTF8(e.what()));
+        PrintScriptStackTrace();
         return Number::newNumber(0);
     }
     CATCH("Fail in MoneyGet!");
@@ -667,12 +672,14 @@ Local<Value> MoneyClass::add(const Arguments& args)
     {
         logger.error("Bad argument in MoneyAdd!");
         logger.error(TextEncoding::toUTF8(e.what()));
+        PrintScriptStackTrace();
         return Boolean::newBoolean(false);
     }
     catch (const std::out_of_range& e)
     {
         logger.error("Bad argument in MoneyAdd!");
         logger.error(TextEncoding::toUTF8(e.what()));
+        PrintScriptStackTrace();
         return Boolean::newBoolean(false);
     }
     CATCH("Fail in MoneyAdd!");
@@ -692,12 +699,14 @@ Local<Value> MoneyClass::reduce(const Arguments& args)
     {
         logger.error("Bad argument in MoneyReduce!");
         logger.error(TextEncoding::toUTF8(e.what()));
+        PrintScriptStackTrace();
         return Boolean::newBoolean(false);
     }
     catch (const std::out_of_range& e)
     {
         logger.error("Bad argument in MoneyReduce!");
         logger.error(TextEncoding::toUTF8(e.what()));
+        PrintScriptStackTrace();
         return Boolean::newBoolean(false);
     }
     CATCH("Fail in MoneyReduce!");
@@ -722,12 +731,14 @@ Local<Value> MoneyClass::trans(const Arguments& args)
     {
         logger.error("Bad argument in MoneyTrans!");
         logger.error(TextEncoding::toUTF8(e.what()));
+        PrintScriptStackTrace();
         return Boolean::newBoolean(false);
     }
     catch (const std::out_of_range& e)
     {
         logger.error("Bad argument in MoneyTrans!");
         logger.error(TextEncoding::toUTF8(e.what()));
+        PrintScriptStackTrace();
         return Boolean::newBoolean(false);
     }
     CATCH("Fail in MoneyTrans!");
@@ -783,12 +794,14 @@ Local<Value> MoneyClass::getHistory(const Arguments& args)
     {
         logger.error("Bad argument in MoneyGetHintory!");
         logger.error(TextEncoding::toUTF8(e.what()));
+        PrintScriptStackTrace();
         return Local<Value>();
     }
     catch (const std::out_of_range& e)
     {
         logger.error("Bad argument in MoneyGetHintory!");
         logger.error(TextEncoding::toUTF8(e.what()));
+        PrintScriptStackTrace();
         return Local<Value>();
     }
     CATCH("Fail in MoneyGetHintory!");
@@ -851,7 +864,7 @@ Local<Value> DataClass::toJson(const Arguments& args)
         }
         catch (...)
         {
-            logger.error("Failed to transform into Json.");
+            LOG_SCRIPT_ERROR_WITH_INFO("Failed to transform into Json.");
             return Local<Value>();
         }
     }
@@ -871,7 +884,7 @@ Local<Value> DataClass::parseJson(const Arguments& args)
         }
         catch (...)
         {
-            logger.error("Failed to parse from Json.");
+            LOG_SCRIPT_ERROR_WITH_INFO("Failed to parse from Json.");
             return Local<Value>();
         }
     }
@@ -893,7 +906,7 @@ Local<Value> DataClass::toMD5(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong type of argument in ToMD5");
+            LOG_WRONG_ARG_TYPE();
             return Local<Value>();
         }
         return String::newString(CalcMD5(data));
@@ -916,7 +929,7 @@ Local<Value> DataClass::toSHA1(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong type of argument in ToSHA1");
+            LOG_WRONG_ARG_TYPE();
             return Local<Value>();
         }
         return String::newString(CalcSHA1(data));
@@ -939,7 +952,7 @@ Local<Value> DataClass::toBase64(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong type of argument in ToBase64");
+            LOG_WRONG_ARG_TYPE();
             return Local<Value>();
         }
         return String::newString(base64_encode(data));

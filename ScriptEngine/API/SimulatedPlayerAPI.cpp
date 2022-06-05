@@ -254,7 +254,10 @@ Local<Value> PlayerClass::simulateInteract(const Arguments& args){
         }
 #endif // ENABLE_NUMBERS_AS_POS
         else
-            throw std::exception("Wrong type of argument!");
+        {
+            LOG_WRONG_ARG_TYPE();
+            return Local<Value>();
+        }
         // TODO
         return Boolean::newBoolean(sp->simulateInteract(bpos, face));
     }
@@ -386,11 +389,17 @@ Local<Value> PlayerClass::simulateNavigateTo(const Arguments& args)
                 {
                     auto posArr = args[index].asArray();
                     if (posArr.size() != 3 || !posArr.get(0).isNumber())
-                        throw std::exception("Wrong type of argument!");
+                    {
+                        LOG_WRONG_ARG_TYPE();
+                        return Local<Value>();
+                    }
                     path.emplace_back(posArr.get(0).asNumber().toFloat(), posArr.get(1).asNumber().toFloat(), posArr.get(2).asNumber().toFloat());
                 }
                 else
-                    throw std::exception("Wrong type of argument!");
+                {
+                    LOG_WRONG_ARG_TYPE();
+                    return Local<Value>();
+                }
             }
             sp->simulateNavigateToLocations(std::move(path), speed);
             return Boolean::newBoolean(true);
@@ -429,7 +438,10 @@ Local<Value> PlayerClass::simulateNavigateTo(const Arguments& args)
         }
 #endif // ENABLE_NUMBERS_AS_POS
         else
-            throw std::exception("Wrong type of argument!");
+        {
+            LOG_WRONG_ARG_TYPE();
+            return Local<Value>();
+        }
 
     }
     CATCH("Fail in " __FUNCTION__ "!")
@@ -460,7 +472,10 @@ Local<Value> PlayerClass::simulateUseItem(const Arguments& args)
         else if (IsInstanceOf<ItemClass>(args[0]))
             item = ItemClass::extract(args[0]);
         else
-            throw std::exception("Wrong type of argument!");
+        {
+            LOG_WRONG_ARG_TYPE();
+            return Local<Value>();
+        }
         if (args.size() == 1)
             if (item)
                 return Boolean::newBoolean(sp->simulateUseItem(*item));
@@ -475,7 +490,10 @@ Local<Value> PlayerClass::simulateUseItem(const Arguments& args)
         else if (IsInstanceOf<FloatPos>(args[1]))
             bpos = FloatPos::extractPos(args[1])->getVec3();
         else
-            throw std::exception("Wrong type of argument!");
+        {
+            LOG_WRONG_ARG_TYPE();
+            return Local<Value>();
+        }
         if (args.size() > 2)
         {
             CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
@@ -485,7 +503,10 @@ Local<Value> PlayerClass::simulateUseItem(const Arguments& args)
                 if (IsInstanceOf<FloatPos>(args[3]))
                     relativePos = FloatPos::extractPos(args[3])->getVec3();
                 else
-                    throw std::exception("Wrong type of argument!");
+                {
+                    LOG_WRONG_ARG_TYPE();
+                    return Local<Value>();
+                }
             }
         }
         if (item)
@@ -513,6 +534,7 @@ Local<Value> PlayerClass::simulateStopDestroyingBlock(const Arguments& args)
     }
     CATCH("Fail in " __FUNCTION__ "!")
 };
+
 Local<Value> PlayerClass::simulateStopInteracting(const Arguments& args)
 {
     try
@@ -525,6 +547,7 @@ Local<Value> PlayerClass::simulateStopInteracting(const Arguments& args)
     }
     CATCH("Fail in " __FUNCTION__ "!")
 };
+
 Local<Value> PlayerClass::simulateStopMoving(const Arguments& args)
 {
     try
@@ -537,6 +560,7 @@ Local<Value> PlayerClass::simulateStopMoving(const Arguments& args)
     }
     CATCH("Fail in " __FUNCTION__ "!")
 };
+
 Local<Value> PlayerClass::simulateStopUsingItem(const Arguments& args)
 {
     try

@@ -194,7 +194,7 @@ Local<Value> McClass::newCommand(const Arguments& args)
         auto instance = DynamicCommand::getInstance(name);
         if (instance)
         {
-            logger.warn("Dynamic command {} already exists, changes will not be applied except for setOverload!", name);
+            logger.info("Dynamic command {} already exists, changes will not be applied except for setOverload!", name);
             return CommandClass::newCommand(const_cast<std::add_pointer_t<std::remove_cv_t<std::remove_pointer_t<decltype(instance)>>>>(instance));
         }
 

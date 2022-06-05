@@ -83,7 +83,7 @@ Local<Value> ContainerClass::addItem(const Arguments& args)
 		ItemStack* item = ItemClass::extract(args[0]);
 		if (!item)
 		{
-			logger.error("Wrong type of argument in addItem!");
+            LOG_WRONG_ARG_TYPE();
 			return Local<Value>();
 		}
 		return Boolean::newBoolean(container->addItem_s(item));
@@ -98,8 +98,8 @@ Local<Value> ContainerClass::addItemToFirstEmptySlot(const Arguments& args)
 	try {
 		ItemStack* item = ItemClass::extract(args[0]);
 		if (!item)
-		{
-			logger.error("Wrong type of argument in addItemToFirstEmptySlot!");
+        {
+            LOG_WRONG_ARG_TYPE();
 			return Local<Value>();
 		}
 		return Boolean::newBoolean(container->addItemToFirstEmptySlot_s(item));
@@ -114,8 +114,8 @@ Local<Value> ContainerClass::hasRoomFor(const Arguments& args)
 	try {
 		ItemStack* item = ItemClass::extract(args[0]);
 		if (!item)
-		{
-			logger.error("Wrong type of argument in hasRoomFor!");
+        {
+            LOG_WRONG_ARG_TYPE();
 			return Local<Value>();
 		}
 		return Boolean::newBoolean(container->hasRoomForItem(*item));
@@ -145,7 +145,7 @@ Local<Value> ContainerClass::getItem(const Arguments& args)
 		ItemStack* item = (ItemStack*) & container->getItem(args[0].toInt());
 		if (!item)
 		{
-			logger.error("Fail to get slot from container!");
+			LOG_SCRIPT_ERROR_WITH_INFO("Fail to get slot from container!");
 			return Local<Value>();
 		}
 		return ItemClass::newItem(item);
@@ -162,7 +162,7 @@ Local<Value> ContainerClass::setItem(const Arguments& args)
 		ItemStack* item = ItemClass::extract(args[1]);
 		if (!item)
 		{
-			logger.error("Wrong type of argument in setItem!");
+            LOG_WRONG_ARG_TYPE();
 			return Local<Value>();
 		}
 

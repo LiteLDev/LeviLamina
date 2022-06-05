@@ -358,7 +358,7 @@ DBSessionClass* DBSessionClass::constructor(const Arguments& args)
                 }
                 else
                 {
-                    LOG_WRONG_ARGS;
+                    LOG_WRONG_ARG_TYPE();
                 }
                 break;
             }
@@ -375,7 +375,7 @@ DBSessionClass* DBSessionClass::constructor(const Arguments& args)
                 break;
             }
             default:
-                LOG_WRONG_ARGS;
+                LOG_WRONG_ARG_TYPE();
                 break;
         }
         return result;
@@ -533,7 +533,7 @@ Local<Value> DBStmtClass::bind(const Arguments& args)
                 }
                 else
                 {
-                    LOG_WRONG_ARGS;
+                    LOG_WRONG_ARG_TYPE();
                 }
             }
         }

@@ -1420,7 +1420,7 @@ Local<Value> PlayerClass::sendForm(const Arguments& args)
         }
         else
         {
-            logger.error("Unknown Type of Form Parameter!");
+            LOG_WRONG_ARG_TYPE();
             return Local<Value>();
         }
         return Boolean::newBoolean(res);
