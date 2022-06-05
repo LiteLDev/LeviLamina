@@ -18,7 +18,7 @@
 extern ::Logger logger;
 
 //基础库 & 依赖库
-std::vector<std::string> depends;
+std::unordered_map<std::string, std::string> depends;
 
 //调试引擎
 ScriptEngine *debugEngine;
@@ -36,10 +36,11 @@ void LoadDepends()
         {
             try
             {
-                auto content = ReadAllFile(i.path().u8string());
+                auto path = i.path().generic_u8string();
+                auto content = ReadAllFile(path);
                 if (!content)
                     throw("Fail to open plugin file!");
-                depends.emplace_back(*content);
+                depends.emplace(path, *content);
                 logger.info("Dependence " + i.path().filename().u8string() + " loaded.");
             }
             catch (std::exception e)
@@ -75,8 +76,9 @@ void LoadDebugEngine()
     //加载libs依赖库
     try
     {
-        for (auto& i : depends) {
-            debugEngine->eval(i);
+        for (auto& [path, content] : depends)
+        {
+            debugEngine->eval(content, path);
         }
     }
     catch (const Exception& e)
@@ -92,10 +94,11 @@ void LoadMain()
     logger.info("Loading plugins...");
     int count = 0;
     std::filesystem::directory_iterator files(LLSE_PLUGINS_LOAD_DIR);
-    for (auto& i : files) {
+    for (auto& i : files)
+    {
         if (i.is_regular_file() && i.path().extension() == LLSE_PLUGINS_EXTENSION)
         {
-            if (PluginManager::loadPlugin(i.path().u8string()))
+            if (PluginManager::loadPlugin(i.path().generic_u8string()))
                 ++count;
         }
     }

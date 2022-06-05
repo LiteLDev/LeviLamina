@@ -83,8 +83,8 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
     }
 
     //判重
-    string pluginName = std::filesystem::path(str2wstr(filePath)).filename().u8string();
-    if (PluginManager::getPlugin(pluginName))
+    string pluginFileName = std::filesystem::path(str2wstr(filePath)).filename().u8string();
+    if (PluginManager::getPlugin(pluginFileName))
     {
         //logger.error("This plugin has been loaded by LiteLoader. You cannot load it twice.");
         return false;
@@ -108,9 +108,9 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
         EngineScope enter(engine);
 
         //setData
-        ENGINE_OWN_DATA()->pluginName = pluginName;
+        ENGINE_OWN_DATA()->pluginName = pluginFileName;
         ENGINE_OWN_DATA()->pluginFilePath = filePath;
-        ENGINE_OWN_DATA()->logger.title = RemoveRealAllExtension(pluginName);
+        ENGINE_OWN_DATA()->logger.title = RemoveRealAllExtension(pluginFileName);
 
         //绑定API
         try {
@@ -125,8 +125,9 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
         //加载libs依赖库
         try
         {
-            for (auto& i : depends) {
-                engine->eval(i);
+            for (auto& [path, content] : depends)
+            {
+                engine->eval(content, path);
             }
         }
         catch (const Exception& e)
@@ -138,14 +139,14 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
         //加载脚本
         try
         {
-            engine->eval(*scripts);
+            engine->eval(*scripts, ENGINE_OWN_DATA()->pluginFilePath);
         }
         catch (const Exception& e)
         {
             logger.error("Fail in Loading Script Plugin!\n");
             throw;
         }
-        pluginName = ENGINE_OWN_DATA()->pluginName;
+        std::string const& pluginName = ENGINE_OWN_DATA()->pluginName;
         ExitEngineScope exit;
 
         //后处理
