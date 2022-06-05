@@ -547,7 +547,7 @@ Local<Value> PlayerClass::teleport(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument in teleport!");
+                logger.error("Wrong type of argument!");
                 logger.error("In API: " __FUNCTION__);
                 logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
                 return Local<Value>();
@@ -568,7 +568,7 @@ Local<Value> PlayerClass::teleport(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong type of argument in teleport!");
+            logger.error("Wrong type of argument!");
             logger.error("In API: " __FUNCTION__);
             logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
             return Local<Value>();
@@ -854,7 +854,7 @@ Local<Value> PlayerClass::setRespawnPosition(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument in setRespawnPosition!");
+                logger.error("Wrong type of argument!");
                 logger.error("In API: " __FUNCTION__);
                 logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
                 return Local<Value>();
@@ -871,7 +871,7 @@ Local<Value> PlayerClass::setRespawnPosition(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong number of arguments in setRespawnPosition!");
+            logger.error("Wrong number of arguments!");
             logger.error("In API: " __FUNCTION__);
             logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
             return Local<Value>();
@@ -1398,7 +1398,7 @@ Local<Value> PlayerClass::sendCustomForm(const Arguments& args)
     }
     catch (const fifo_json::exception& e)
     {
-        logger.error("Fail to parse Json string in sendCustomForm!");
+        logger.error("Fail to parse Json string!");
         logger.error("In API: " __FUNCTION__);
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
         logger.error(TextEncoding::toUTF8(e.what()));
