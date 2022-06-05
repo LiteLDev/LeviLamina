@@ -1421,6 +1421,7 @@ Local<Value> PlayerClass::sendForm(const Arguments& args)
         else
         {
             logger.error("Unknown Type of Form Parameter!");
+            logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
             return Local<Value>();
         }
         return Boolean::newBoolean(res);
