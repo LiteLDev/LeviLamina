@@ -111,6 +111,8 @@ auto TestRemoteCall = ([]() -> bool {
 
             exportTestSimulatedPlayerLL();
             RemoteCall::exportAs("Test", "test2", TestExport);
+            if (!RemoteCall::hasFunc("TestRemoteCall", "TestSimulatedPlayerJs"))
+                return;
             auto func = RemoteCall::importAs<decltype(TestExport)>("Test", "test2");
             auto func2 = RemoteCall::importAs<std::function<decltype(TestExport)>>("Test", "test2");
             auto size = func("TestParam", 5, 10);
