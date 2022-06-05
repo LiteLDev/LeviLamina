@@ -548,6 +548,8 @@ Local<Value> PlayerClass::teleport(const Arguments& args)
             else
             {
                 logger.error("Wrong type of argument in teleport!");
+                logger.error("In API: " __FUNCTION__);
+                logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
                 return Local<Value>();
             }
         }
@@ -567,6 +569,8 @@ Local<Value> PlayerClass::teleport(const Arguments& args)
         else
         {
             logger.error("Wrong type of argument in teleport!");
+            logger.error("In API: " __FUNCTION__);
+            logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
             return Local<Value>();
         }
 
@@ -851,6 +855,8 @@ Local<Value> PlayerClass::setRespawnPosition(const Arguments& args)
             else
             {
                 logger.error("Wrong type of argument in setRespawnPosition!");
+                logger.error("In API: " __FUNCTION__);
+                logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
                 return Local<Value>();
             }
         }
@@ -866,6 +872,8 @@ Local<Value> PlayerClass::setRespawnPosition(const Arguments& args)
         else
         {
             logger.error("Wrong number of arguments in setRespawnPosition!");
+            logger.error("In API: " __FUNCTION__);
+            logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
             return Local<Value>();
         }
         player->setRespawnPosition(pos.getBlockPos(), pos.dim);
@@ -1286,6 +1294,7 @@ Local<Value> PlayerClass::sendSimpleForm(const Arguments& args)
             catch (const Exception& e)
             {
                 logger.error("Fail in form callback!");
+                logger.error("In API: " __FUNCTION__);
                 logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
                 PrintException(e);
             }
@@ -1333,6 +1342,7 @@ Local<Value> PlayerClass::sendModalForm(const Arguments& args)
             catch (const Exception& e)
             {
                 logger.error("Fail in form callback!");
+                logger.error("In API: " __FUNCTION__);
                 logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
                 PrintException(e);
             }
@@ -1379,6 +1389,7 @@ Local<Value> PlayerClass::sendCustomForm(const Arguments& args)
             catch (const Exception& e)
             {
                 logger.error("Fail in form callback!");
+                logger.error("In API: " __FUNCTION__);
                 logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
                 PrintException(e);
             }
@@ -1388,6 +1399,8 @@ Local<Value> PlayerClass::sendCustomForm(const Arguments& args)
     catch (const fifo_json::exception& e)
     {
         logger.error("Fail to parse Json string in sendCustomForm!");
+        logger.error("In API: " __FUNCTION__);
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
         logger.error(TextEncoding::toUTF8(e.what()));
 
         return Local<Value>();
@@ -1421,6 +1434,7 @@ Local<Value> PlayerClass::sendForm(const Arguments& args)
         else
         {
             logger.error("Unknown Type of Form Parameter!");
+            logger.error("In API: " __FUNCTION__);
             logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
             return Local<Value>();
         }
