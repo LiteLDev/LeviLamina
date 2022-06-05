@@ -167,6 +167,12 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
             PrintException(e);
             ExitEngineScope exit;
 
+            LLSERemoveTimeTaskData(engine);
+            LLSERemoveAllEventListeners(engine);
+            LLSERemoveCmdRegister(engine);
+            LLSERemoveCmdCallback(engine);
+            LLSERemoveAllExportedFuncs(engine);
+
             engine->getData().reset();
             EngineManager::unRegisterEngine(engine);
         }
