@@ -280,7 +280,7 @@ Local<Value> McClass::getBlock(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument in GetBlock!");
+                logger.error("Wrong type of argument!");
                 logger.error("In API: " __FUNCTION__);
                 logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
                 return Local<Value>();
@@ -297,7 +297,7 @@ Local<Value> McClass::getBlock(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong number of arguments in GetBlock!");
+            logger.error("Wrong number of arguments!");
             logger.error("In API: " __FUNCTION__);
             logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
             return Local<Value>();
@@ -306,7 +306,7 @@ Local<Value> McClass::getBlock(const Arguments& args)
         auto block = Level::getBlock(pos.getBlockPos(),pos.dim);
         if (!block)
         {
-            logger.error("Wrong type of argument in SetBlock!");
+            logger.error("Wrong type of argument!");
             logger.error("In API: " __FUNCTION__);
             logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
             return Local<Value>();
@@ -363,7 +363,7 @@ Local<Value> McClass::setBlock(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument in SetBlock!");
+                logger.error("Wrong type of argument!");
                 logger.error("In API: " __FUNCTION__);
                 logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
                 return Local<Value>();
@@ -387,7 +387,7 @@ Local<Value> McClass::setBlock(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong number of arguments in SetBlock!");
+            logger.error("Wrong number of arguments!");
             logger.error("In API: " __FUNCTION__);
             logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
             return Local<Value>();
@@ -411,7 +411,7 @@ Local<Value> McClass::setBlock(const Arguments& args)
             Block* bl = BlockClass::extract(block);
             if (!bl)
             {
-                logger.error("Wrong type of argument in SetBlock!");
+                logger.error("Wrong type of argument!");
                 logger.error("In API: " __FUNCTION__);
                 logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
                 return Local<Value>();
@@ -465,7 +465,7 @@ Local<Value> McClass::spawnParticle(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument in SpawnParticle!");
+                logger.error("Wrong type of argument!");
                 logger.error("In API: " __FUNCTION__);
                 logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
                 return Local<Value>();
@@ -485,7 +485,7 @@ Local<Value> McClass::spawnParticle(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong number of arguments in SpawnParticle!");
+            logger.error("Wrong number of arguments!");
             logger.error("In API: " __FUNCTION__);
             logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
             return Local<Value>();
