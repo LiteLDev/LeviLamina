@@ -547,7 +547,7 @@ Local<Value> PlayerClass::teleport(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument in teleport!");
+                LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
         }
@@ -566,7 +566,7 @@ Local<Value> PlayerClass::teleport(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong type of argument in teleport!");
+            LOG_WRONG_ARG_TYPE();
             return Local<Value>();
         }
 
@@ -850,7 +850,7 @@ Local<Value> PlayerClass::setRespawnPosition(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument in setRespawnPosition!");
+                LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
         }
@@ -865,7 +865,7 @@ Local<Value> PlayerClass::setRespawnPosition(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong number of arguments in setRespawnPosition!");
+            LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
         }
         player->setRespawnPosition(pos.getBlockPos(), pos.dim);
@@ -1283,12 +1283,7 @@ Local<Value> PlayerClass::sendSimpleForm(const Arguments& args)
                 callback.get().call({}, PlayerClass::newPlayer(pl),
                     chosen >= 0 ? Number::newNumber(chosen) : Local<Value>());
             }
-            catch (const Exception& e)
-            {
-                logger.error("Fail in form callback!");
-                logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                PrintException(e);
-            }
+            CATCH_IN_CALLBACK("sendSimpleForm")
         });
 
         return Number::newNumber(1);
@@ -1330,12 +1325,7 @@ Local<Value> PlayerClass::sendModalForm(const Arguments& args)
                 callback.get().call({}, PlayerClass::newPlayer(pl),
                     chosen >= 0 ? Boolean::newBoolean(chosen) : Local<Value>());
             }
-            catch (const Exception& e)
-            {
-                logger.error("Fail in form callback!");
-                logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                PrintException(e);
-            }
+            CATCH_IN_CALLBACK("sendModalForm")
         });
 
         return Number::newNumber(2);
@@ -1376,12 +1366,7 @@ Local<Value> PlayerClass::sendCustomForm(const Arguments& args)
                 callback.get().call({}, PlayerClass::newPlayer(pl),
                     result != "null" ? JsonToValue(result) : Local<Value>());
             }
-            catch (const Exception& e)
-            {
-                logger.error("Fail in form callback!");
-                logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                PrintException(e);
-            }
+            CATCH_IN_CALLBACK("sendCustomForm")
         });
         return Number::newNumber(3);
     }
@@ -1389,7 +1374,7 @@ Local<Value> PlayerClass::sendCustomForm(const Arguments& args)
     {
         logger.error("Fail to parse Json string in sendCustomForm!");
         logger.error(TextEncoding::toUTF8(e.what()));
-
+        PrintScriptStackTrace();
         return Local<Value>();
     }
     CATCH("Fail in sendCustomForm!");

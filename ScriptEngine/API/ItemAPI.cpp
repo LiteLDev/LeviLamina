@@ -250,7 +250,7 @@ Local<Value> McClass::newItem(const Arguments& args)
             }
             else
             {
-                LOG_WRONG_ARGS_COUNT();
+                LOG_TOO_FEW_ARGS();
                 return Local<Value>();
             }
         }
@@ -325,7 +325,7 @@ Local<Value> McClass::spawnItem(const Arguments& args)
         }
         else
         {
-            LOG_SCRIPT_ERROR_WITH_INFO("Wrong number of arguments!");
+            LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
         }
 

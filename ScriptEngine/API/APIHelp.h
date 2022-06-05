@@ -59,22 +59,26 @@ bool inline IsInstanceOf(Local<Value> v)
 }
 
 // 输出脚本调用堆栈，API名称，以及插件名
-#define LOG_SCRIPT_ERROR_WITH_INFO(...) \
+#define LOG_ERROR_WITH_SCRIPT_INFO(...) \
     PrintScriptStackTrace(__VA_ARGS__); \
-    logger.error(std::string("In API: ") + __FUNCTION__); \
+    logger.error("In API: " __FUNCTION__); \
     logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName)
 
 // 参数类型错误输出
-#define LOG_WRONG_ARG_TYPE() LOG_SCRIPT_ERROR_WITH_INFO("Wrong type of argument!"); 
+#define LOG_WRONG_ARG_TYPE() LOG_ERROR_WITH_SCRIPT_INFO("Wrong type of argument!");
+
 // 参数数量错误输出
-#define LOG_WRONG_ARGS_COUNT() LOG_SCRIPT_ERROR_WITH_INFO("Too Few arguments!");
+#define LOG_TOO_FEW_ARGS() LOG_ERROR_WITH_SCRIPT_INFO("Too Few arguments!");
+
+// 参数数量错误输出
+#define LOG_WRONG_ARGS_COUNT() LOG_ERROR_WITH_SCRIPT_INFO("Wrong number of arguments!");
 
 
 // 至少COUNT个参数
 #define CHECK_ARGS_COUNT(ARGS,COUNT) \
     if(ARGS.size()<COUNT) \
     { \
-        LOG_WRONG_ARGS_COUNT(); \
+        LOG_TOO_FEW_ARGS(); \
         return Local<Value>(); \
     }
 
@@ -98,20 +102,20 @@ bool inline IsInstanceOf(Local<Value> v)
     { \
         logger.error("C++ Uncaught Exception Detected!"); \
         logger.error(TextEncoding::toUTF8(e.what())); \
-        LOG_SCRIPT_ERROR_WITH_INFO(); \
+        LOG_ERROR_WITH_SCRIPT_INFO(); \
         return Local<Value>(); \
     } \
     catch(const seh_exception &e) \
     { \
         logger.error("SEH Uncaught Exception Detected!"); \
         logger.error(TextEncoding::toUTF8(e.what())); \
-        LOG_SCRIPT_ERROR_WITH_INFO(); \
+        LOG_ERROR_WITH_SCRIPT_INFO(); \
         return Local<Value>(); \
     } \
     catch(...) \
     { \
         logger.error("Uncaught Exception Detected!"); \
-        LOG_SCRIPT_ERROR_WITH_INFO(); \
+        LOG_ERROR_WITH_SCRIPT_INFO(); \
         return Local<Value>(); \
     }
 
@@ -119,7 +123,7 @@ bool inline IsInstanceOf(Local<Value> v)
 #define CHECK_ARGS_COUNT_C(ARGS,COUNT) \
     if(ARGS.size()<COUNT) \
     { \
-        LOG_WRONG_ARGS_COUNT(); \
+        LOG_TOO_FEW_ARGS(); \
         return nullptr; \
     }
 
@@ -143,20 +147,20 @@ bool inline IsInstanceOf(Local<Value> v)
     { \
         logger.error("C++ Uncaught Exception Detected!"); \
         logger.error(TextEncoding::toUTF8(e.what())); \
-        LOG_SCRIPT_ERROR_WITH_INFO(); \
+        LOG_ERROR_WITH_SCRIPT_INFO(); \
         return nullptr; \
     } \
     catch(const seh_exception &e) \
     { \
         logger.error("SEH Uncaught Exception Detected!"); \
         logger.error(TextEncoding::toUTF8(e.what())); \
-        LOG_SCRIPT_ERROR_WITH_INFO(); \
+        LOG_ERROR_WITH_SCRIPT_INFO(); \
         return nullptr; \
     } \
     catch(...) \
     { \
         logger.error("Uncaught Exception Detected!"); \
-        LOG_SCRIPT_ERROR_WITH_INFO(); \
+        LOG_ERROR_WITH_SCRIPT_INFO(); \
         return nullptr; \
     }
 
@@ -172,20 +176,28 @@ bool inline IsInstanceOf(Local<Value> v)
     { \
         logger.error("C++ Uncaught Exception Detected!"); \
         logger.error(TextEncoding::toUTF8(e.what())); \
-        LOG_SCRIPT_ERROR_WITH_INFO(); \
+        LOG_ERROR_WITH_SCRIPT_INFO(); \
     } \
     catch(const seh_exception &e) \
     { \
         logger.error("SEH Uncaught Exception Detected!"); \
         logger.error(TextEncoding::toUTF8(e.what())); \
-        LOG_SCRIPT_ERROR_WITH_INFO(); \
+        LOG_ERROR_WITH_SCRIPT_INFO(); \
     } \
     catch(...) \
     { \
         logger.error("Uncaught Exception Detected!"); \
-        LOG_SCRIPT_ERROR_WITH_INFO(); \
+        LOG_ERROR_WITH_SCRIPT_INFO(); \
     }
 
+// 截获回调函数异常
+#define CATCH_IN_CALLBACK(callback) \
+catch (const Exception& e) \
+{ \
+    PrintException(e); \
+    logger.error(std::string("In callback for ") + callback); \
+    logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
+}
 
 // 判断是否为浮点数
 bool CheckIsFloat(const Local<Value>& num);

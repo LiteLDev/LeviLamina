@@ -145,7 +145,7 @@ Local<Value> ContainerClass::getItem(const Arguments& args)
 		ItemStack* item = (ItemStack*) & container->getItem(args[0].toInt());
 		if (!item)
 		{
-			LOG_SCRIPT_ERROR_WITH_INFO("Fail to get slot from container!");
+			LOG_ERROR_WITH_SCRIPT_INFO("Fail to get slot from container!");
 			return Local<Value>();
 		}
 		return ItemClass::newItem(item);

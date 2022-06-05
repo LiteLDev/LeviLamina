@@ -50,12 +50,7 @@ Local<Value> SystemClass::cmd(const Arguments& args)
                         {
                             NewTimeout(callback.get(), {Number::newNumber(exitCode), String::newString(output)}, 1);
                         }
-                        catch (const Exception& e)
-                        {
-                            logger.error("SystemCmd Callback Failed!");
-                            logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                            logger.error << e << ::Logger::endl;
-                        }
+                        CATCH_IN_CALLBACK("SystemCmd")
                     });
             }
         , args.size() >= 3 ? args[2].toInt() : -1));
@@ -91,17 +86,12 @@ Local<Value> SystemClass::newProcess(const Arguments& args)
                         {
                             NewTimeout(callback.get(), {Number::newNumber(exitCode), String::newString(output)}, 1);
                         }
-                        catch (const Exception& e)
-                        {
-                            logger.error("newProcess Callback Failed!");
-                            logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                            logger.error << e << ::Logger::endl;
-                        }
+                        CATCH_IN_CALLBACK("newProcess")
                     });
             }
         , args.size() >= 3 ? args[2].toInt() : -1));
     }
-    CATCH("Fail in SystemCmd");
+    CATCH("Fail in newProcess");
 }
 
 Local<Value> SystemClass::getTimeStr(const Arguments& args)

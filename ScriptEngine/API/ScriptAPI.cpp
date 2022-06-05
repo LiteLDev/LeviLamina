@@ -54,7 +54,9 @@ Local<Value> ColorLog(const Arguments& args)
             case H("pink")     : prefix = "\x1b[95m"; break;
             case H("yellow")   : prefix = "\x1b[93m"; break;
             case H("white")    : prefix = "\x1b[97m"; break;
-            default: logger.error("Invalid color!");break;
+            default: 
+                LOG_ERROR_WITH_SCRIPT_INFO("Invalid color!");
+                break;
         }
         //if (!LL::globalConfig.colorLog)
         //    prefix = "";

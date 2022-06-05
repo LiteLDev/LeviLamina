@@ -295,7 +295,7 @@ Local<Value> McClass::getBlock(const Arguments& args)
         }
         else
         {
-            LOG_SCRIPT_ERROR_WITH_INFO("Wrong number of arguments!");
+            LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
         }
 
@@ -379,7 +379,7 @@ Local<Value> McClass::setBlock(const Arguments& args)
         }
         else
         {
-            LOG_SCRIPT_ERROR_WITH_INFO("Wrong number of arguments!");
+            LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
         }
 
@@ -471,7 +471,7 @@ Local<Value> McClass::spawnParticle(const Arguments& args)
         }
         else
         {
-            LOG_SCRIPT_ERROR_WITH_INFO("Wrong number of arguments!");
+            LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
         }
 

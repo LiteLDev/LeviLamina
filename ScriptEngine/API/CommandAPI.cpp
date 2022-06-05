@@ -454,9 +454,7 @@ Local<Value> CommandClass::addOverload(const Arguments& args)
                 return Boolean::newBoolean(command->addOverload(std::move(params)));
             }
         }
-        logger.error("Wrong type of argument!");
-        logger.error("In API: " __FUNCTION__);
-        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+        LOG_WRONG_ARG_TYPE();
         return Local<Value>();
     }
     CATCH("Fail in addOverload!")

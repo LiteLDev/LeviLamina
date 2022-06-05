@@ -429,7 +429,7 @@ Local<Value> ConfIniClass::init(const Arguments& args)
             break;
         }
         default:
-            LOG_SCRIPT_ERROR_WITH_INFO("Ini file don't support this type of data!");
+            LOG_ERROR_WITH_SCRIPT_INFO("Ini file don't support this type of data!");
             return Local<Value>();
             break;
         }
@@ -466,7 +466,7 @@ Local<Value> ConfIniClass::set(const Arguments& args)
             iniConf->setBool(section, key, args[2].asBoolean().value());
             break;
         default:
-            LOG_SCRIPT_ERROR_WITH_INFO("Ini file don't support this type of data!");
+            LOG_ERROR_WITH_SCRIPT_INFO("Ini file don't support this type of data!");
             return Local<Value>();
             break;
         }
@@ -864,7 +864,7 @@ Local<Value> DataClass::toJson(const Arguments& args)
         }
         catch (...)
         {
-            LOG_SCRIPT_ERROR_WITH_INFO("Failed to transform into Json.");
+            LOG_ERROR_WITH_SCRIPT_INFO("Failed to transform into Json.");
             return Local<Value>();
         }
     }
@@ -884,7 +884,7 @@ Local<Value> DataClass::parseJson(const Arguments& args)
         }
         catch (...)
         {
-            LOG_SCRIPT_ERROR_WITH_INFO("Failed to parse from Json.");
+            LOG_ERROR_WITH_SCRIPT_INFO("Failed to parse from Json.");
             return Local<Value>();
         }
     }

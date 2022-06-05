@@ -195,7 +195,7 @@ void WSClientClass::addListener(const string& event, Local<Function> func)
         listeners[(int)WSClientEvents::onLostConnection].push_back({ EngineScope::currentEngine(), script::Global<Function>(func) });
     else
     {
-        logger.error("WSClient Event \"" + event + "\" No Found!\n");
+        LOG_ERROR_WITH_SCRIPT_INFO("WSClient Event \"" + event + "\" No Found!\n");
     }  
 }
 
@@ -245,7 +245,7 @@ Local<Value> WSClientClass::connectAsync(const Arguments& args)
 
         script::Global<Function> callbackFunc{args[1].asFunction()};
         thread(
-            [ws{this->ws}, target, callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}]() mutable {
+            [ws{this->ws}, target, callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}, pluginName{ENGINE_OWN_DATA()->pluginName}]() mutable {
 #ifdef DEBUG
                 SetThreadDescription(GetCurrentThread(), L"LLSE Connect WebSocket");
 #endif // DEBUG
@@ -274,11 +274,13 @@ Local<Value> WSClientClass::connectAsync(const Arguments& args)
                 {
                     logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
                     logger.error("In WSClientClass::connectAsync");
+                    logger.error("In Plugin: " + pluginName);
                 }
                 catch (...)
                 {
                     logger.error("WSClientClass::connectAsync Failed!");
                     logger.error("Uncaught Exception Detected!");
+                    logger.error("In Plugin: " + pluginName);
                 }
             })
             .detach();
@@ -401,12 +403,7 @@ Local<Value> NetworkClass::httpGet(const Arguments& args)
                 NewTimeout(callback.get(), {Number::newNumber(status), String::newString(body)}, 1);
                 // callback.get().call({}, {Number::newNumber(status), String::newString(body)});
             }
-            catch (const Exception& e)
-            {
-                logger.error("HttpGet Callback Failed!");
-                logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                PrintException(e);
-            }
+            CATCH_IN_CALLBACK("HttpGet")
         };
         if (args.size() > 2)
         {
@@ -461,12 +458,7 @@ Local<Value> NetworkClass::httpPost(const Arguments& args)
                 NewTimeout(callback.get(), {Number::newNumber(status), String::newString(body)}, 1);
                 // callback.get().call({}, {Number::newNumber(status), String::newString(body)});
             }
-            catch (const Exception& e)
-            {
-                logger.error("HttpPost Callback Failed!");
-                logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                PrintException(e);
-            }
+            CATCH_IN_CALLBACK("HttpPost")
         };
         if (args.size() > 4)
         {

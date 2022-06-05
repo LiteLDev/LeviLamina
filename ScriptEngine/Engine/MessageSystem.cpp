@@ -355,6 +355,7 @@ void MessageSystemLoopOnce()
                 logger.error("Error occurred in Engine Message Loop!");
                 logger.error("Uncaught Script Exception Detected!");
                 PrintException(e);
+                logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
             }
             catch (...)
             {

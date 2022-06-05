@@ -159,7 +159,7 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
     }
     catch (const Exception& e)
     {
-        logger.error("Fail to load " + filePath + "!\n");
+        logger.error("Fail to load " + filePath + "!");
         if (engine)
         {
             EngineScope enter(engine);
