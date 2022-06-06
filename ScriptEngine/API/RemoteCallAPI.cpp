@@ -45,9 +45,9 @@ RemoteCall::ValueType pack(Local<Object> value)
     if (IsInstanceOf<ContainerClass>(value))
         return ContainerClass::extract(value);
     if (IsInstanceOf<FloatPos>(value))
-        return FloatPos::extractPos(value);
+        return FloatPos::extractPos(value)->getVec3();
     if (IsInstanceOf<IntPos>(value))
-        return IntPos::extractPos(value);
+        return IntPos::extractPos(value)->getBlockPos();
     if (IsInstanceOf<NbtCompoundClass>(value))
         return NbtCompoundClass::extract(value);
     std::unordered_map<std::string, RemoteCall::ValueType> result;
