@@ -33,10 +33,6 @@ public:
     MCAPI class ActorAnimationController const * operator->() const;
     MCAPI class ActorAnimationController * operator->();
     MCAPI ~ActorAnimationControllerPtr();
-
-//private:
-
-private:
     MCAPI static class ActorAnimationControllerPtr const NONE;
 
 

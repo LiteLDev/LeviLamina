@@ -27,10 +27,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COLORCHANNEL
 public:
 #endif
-
-//private:
-
-private:
     MCAPI static class ColorChannel const INVALID;
 
 

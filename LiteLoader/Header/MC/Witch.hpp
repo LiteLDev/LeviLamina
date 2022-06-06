@@ -62,6 +62,10 @@ public:
 public:
 #endif
     MCAPI Witch(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
+//private:
+
+private:
     MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_DRINKING;
     MCAPI static class mce::UUID const SPEED_MODIFIER_DRINKING_UUID;
 

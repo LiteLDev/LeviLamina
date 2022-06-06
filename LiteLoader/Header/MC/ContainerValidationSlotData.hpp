@@ -27,6 +27,5 @@ public:
 protected:
 
 private:
-    MCAPI static struct ContainerValidationSlotData const AUTOPLACE;
 
 };

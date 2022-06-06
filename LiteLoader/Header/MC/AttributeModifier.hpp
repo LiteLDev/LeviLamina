@@ -34,6 +34,10 @@ public:
     MCAPI bool isSerializable() const;
     MCAPI class AttributeModifier & operator=(class AttributeModifier const &);
     MCAPI bool operator==(class AttributeModifier const &) const;
+
+//private:
+
+private:
     MCAPI static class mce::UUID const mInvalidUUID;
 
 

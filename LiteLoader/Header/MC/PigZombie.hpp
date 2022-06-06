@@ -62,6 +62,10 @@ public:
 public:
 #endif
     MCAPI PigZombie(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
+//private:
+
+private:
     MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACK_UUID;
 
 

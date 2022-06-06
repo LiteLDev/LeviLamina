@@ -32,10 +32,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTEVENTRESPONSE
 public:
 #endif
-
-//private:
-
-private:
     MCAPI static std::string const NameID;
 
 

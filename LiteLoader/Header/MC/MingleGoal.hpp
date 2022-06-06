@@ -40,9 +40,6 @@ public:
 public:
 #endif
     MCAPI MingleGoal(class Mob &, float, float, float, struct ActorDefinitionIdentifier, float);
-    MCAPI static int const FIND_PARTNER_INTERVAL_TICKS;
-    MCAPI static int const SPEAK_INTERVAL_TICKS_MAX;
-    MCAPI static int const SPEAK_INTERVAL_TICKS_MIN;
 
 //private:
     MCAPI void _findNewPartner(struct ActorUniqueID);
@@ -51,6 +48,9 @@ public:
     MCAPI bool _validatePartnerState(enum MingleComponent::MingleState, class MingleComponent &, bool);
 
 private:
+    MCAPI static int const FIND_PARTNER_INTERVAL_TICKS;
+    MCAPI static int const SPEAK_INTERVAL_TICKS_MAX;
+    MCAPI static int const SPEAK_INTERVAL_TICKS_MIN;
 
 
 };

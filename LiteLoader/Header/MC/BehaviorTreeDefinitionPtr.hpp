@@ -27,10 +27,6 @@ public:
     MCAPI class BehaviorTreeDefinitionPtr & operator=(class BehaviorTreeDefinitionPtr &&);
     MCAPI class BehaviorTreeDefinitionPtr & operator=(class BehaviorTreeDefinitionPtr const &);
     MCAPI ~BehaviorTreeDefinitionPtr();
-
-//private:
-
-private:
     MCAPI static class BehaviorTreeDefinitionPtr const NONE;
 
 

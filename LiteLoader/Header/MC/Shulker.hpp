@@ -78,6 +78,8 @@ public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Shulker(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+    MCAPI static class std::shared_ptr<class AttributeModifier> COVERED_ARMOR_MODIFIER;
+    MCAPI static class mce::UUID const COVERED_ARMOR_MODIFIER_UUID;
     MCAPI static void setShulkerAttachPos(class SynchedActorData &, class BlockPos const &);
 
 //protected:
@@ -95,8 +97,6 @@ public:
 protected:
 
 private:
-    MCAPI static class std::shared_ptr<class AttributeModifier> COVERED_ARMOR_MODIFIER;
-    MCAPI static class mce::UUID const COVERED_ARMOR_MODIFIER_UUID;
 
 
 };

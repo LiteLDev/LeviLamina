@@ -29,6 +29,10 @@ public:
 #endif
     MCAPI static enum LevelSoundEvent getId(std::string const &);
     MCAPI static std::string const & getName(enum LevelSoundEvent);
+
+//private:
+
+private:
     MCAPI static class BidirectionalUnorderedMap<std::string, enum LevelSoundEvent> const map;
 
 

@@ -29,6 +29,10 @@ public:
 public:
 #endif
     MCAPI BodyControl();
+
+//private:
+
+private:
     MCAPI static float const MAX_CLAMP_ANGLE;
 
 

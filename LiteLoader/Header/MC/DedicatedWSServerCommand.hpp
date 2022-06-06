@@ -30,8 +30,12 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEDICATEDWSSERVERCOMMAND
 public:
 #endif
-    MCAPI static class IMinecraftApp * mApp;
     MCAPI static void setup(class CommandRegistry &, class IMinecraftApp &);
+
+//private:
+
+private:
+    MCAPI static class IMinecraftApp * mApp;
 
 
 };

@@ -122,6 +122,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAG
 public:
 #endif
+    MCAPI static std::string const NullString;
     MCAPI static std::string getTagName(enum Tag::Type);
     MCAPI static std::unique_ptr<class Tag> newTag(enum Tag::Type);
     MCAPI static std::unique_ptr<class Tag> readNamedTag(class IDataInput &, std::string &);
@@ -130,12 +131,7 @@ public:
 //protected:
     MCAPI Tag();
 
-//private:
-
 protected:
-
-private:
-    MCAPI static std::string const NullString;
 
 
 };

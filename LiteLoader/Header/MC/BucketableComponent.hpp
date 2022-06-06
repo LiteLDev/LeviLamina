@@ -29,8 +29,12 @@ public:
     MCAPI BucketableComponent();
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     MCAPI void initFromDefinition(class Actor &);
-    MCAPI static class BaseGameVersion const WATER_BUCKET_USEABLE_VERSION;
     MCAPI static void implInteraction(class Actor &, class Player &);
+
+//private:
+
+private:
+    MCAPI static class BaseGameVersion const WATER_BUCKET_USEABLE_VERSION;
 
 
 };

@@ -46,8 +46,6 @@ public:
 public:
 #endif
     MCAPI RenderOffsetsItemComponent(class ComponentItem *);
-    MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Main_Hand_Defaults;
-    MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Off_Hand_Defaults;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
@@ -58,6 +56,8 @@ public:
     MCAPI static void _fromString(class RenderOffsetsItemComponent &, std::string const &);
 
 private:
+    MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Main_Hand_Defaults;
+    MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Off_Hand_Defaults;
 
 
 };

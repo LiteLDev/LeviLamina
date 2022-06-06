@@ -54,7 +54,6 @@ public:
 public:
 #endif
     MCAPI CrossbowItem(std::string const &, int);
-    MCAPI static int const DEFAULT_USE_DURATION;
 
 //private:
     MCAPI class Vec3 _getShootDir(class Player const &, float) const;
@@ -62,6 +61,7 @@ public:
     MCAPI void _shootFirework(class ItemInstance const &, class Player &) const;
 
 private:
+    MCAPI static int const DEFAULT_USE_DURATION;
 
 
 };

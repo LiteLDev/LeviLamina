@@ -58,6 +58,10 @@ public:
 #endif
     MCAPI PolarBear(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI float getStandingAnimationScale(float);
+
+//private:
+
+private:
     MCAPI static float const STAND_ANIMATION_TICKS;
 
 

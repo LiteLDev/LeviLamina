@@ -48,10 +48,6 @@ public:
 public:
 #endif
     MCAPI FireChargeItem(std::string const &, int);
-
-//private:
-
-private:
     MCAPI static int const LEVEL_SOUND_EVENT_VOLUME;
 
 

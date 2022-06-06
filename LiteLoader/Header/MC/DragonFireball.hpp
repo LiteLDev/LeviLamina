@@ -56,10 +56,6 @@ public:
     MCVAPI bool shouldBurn();
 #endif
     MCAPI DragonFireball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-//private:
-
-private:
     MCAPI static float SPLASH_RANGE;
 
 

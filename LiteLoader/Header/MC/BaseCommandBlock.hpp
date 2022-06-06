@@ -48,7 +48,6 @@ public:
     MCAPI void setTrackOutput(bool);
     MCAPI bool shouldExecuteOnFirstTick() const;
     MCAPI ~BaseCommandBlock();
-    MCAPI static std::string const DefaultCommandBlockName;
 
 //private:
     MCAPI bool _performCommand(class BlockSource &, class CommandOrigin const &, bool &);
@@ -56,6 +55,7 @@ public:
     MCAPI void compile(class CommandOrigin const &, class Level &);
 
 private:
+    MCAPI static std::string const DefaultCommandBlockName;
 
 
 };

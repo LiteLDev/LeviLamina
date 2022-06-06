@@ -31,6 +31,10 @@ public:
     MCAPI PacketViolationDetectedTelemetryData(struct ExtendedStreamReadResult const &, enum PacketViolationResponse, enum MinecraftPacketIds, class NetworkIdentifier const &);
     MCAPI void WriteEventData(class Social::Events::Event &) const;
     MCAPI ~PacketViolationDetectedTelemetryData();
+
+//private:
+
+private:
     MCAPI static std::string const mEventName;
 
 

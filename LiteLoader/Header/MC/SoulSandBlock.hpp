@@ -69,6 +69,10 @@ public:
 public:
 #endif
     MCAPI SoulSandBlock(std::string const &, int);
+
+//private:
+
+private:
     MCAPI static class BaseGameVersion const SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION;
 
 

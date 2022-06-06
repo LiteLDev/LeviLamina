@@ -31,10 +31,6 @@ public:
     MCAPI PropertyBag();
     MCAPI class Json::Value const & toJsonValue() const;
     MCAPI std::string toString() const;
-
-//private:
-
-private:
     MCAPI static class PropertyBag EMPTY;
 
 

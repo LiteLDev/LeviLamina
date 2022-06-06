@@ -26,6 +26,5 @@ public:
 protected:
 
 private:
-    MCAPI static struct std::pair<int, int> const DEFAULT_LEVEL;
 
 };

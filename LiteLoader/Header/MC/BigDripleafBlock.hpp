@@ -86,6 +86,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI BigDripleafBlock(std::string const &, int);
+    MCAPI static int const MAX_DRIPLEAF_GROWTH_HEIGHT;
     MCAPI static void placeWithRandomHeight(class BlockSource &, class Random &, class BlockPos, int);
 
 //private:
@@ -93,7 +94,6 @@ public:
     MCAPI void _setTiltAndScheduleTick(enum BigDripleafTilt, class BlockSource &, class BlockPos const &) const;
 
 private:
-    MCAPI static int const MAX_DRIPLEAF_GROWTH_HEIGHT;
 
 
 };

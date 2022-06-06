@@ -60,6 +60,10 @@ public:
 #endif
     MCAPI MinecartTNT(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void primeFuse(enum ActorDamageCause);
+
+//private:
+
+private:
     MCAPI static int const DEFAULT_FUSE_LENGTH;
 
 

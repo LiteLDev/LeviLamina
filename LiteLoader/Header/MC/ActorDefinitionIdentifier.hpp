@@ -51,9 +51,6 @@ protected:
 
 private:
     MCAPI void _initialize();
-    MCAPI static std::string const EVENT_BEGIN;
-    MCAPI static std::string const EVENT_END;
-    MCAPI static std::string const NAMESPACE_SEPARATOR;
     MCAPI static void _extractIdentifier(std::string const &, struct ActorDefinitionIdentifier &);
 
 };

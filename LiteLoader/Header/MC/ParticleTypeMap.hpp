@@ -29,6 +29,10 @@ public:
 #endif
     MCAPI static std::string const & getParticleName(enum ParticleType);
     MCAPI static enum ParticleType getParticleTypeId(std::string const &);
+
+//private:
+
+private:
     MCAPI static class BidirectionalUnorderedMap<enum ParticleType, std::string> const map;
 
 

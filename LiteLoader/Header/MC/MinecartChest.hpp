@@ -56,6 +56,10 @@ public:
 public:
 #endif
     MCAPI MinecartChest(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
+//private:
+
+private:
     MCAPI static int const ITEMS_SIZE;
 
 

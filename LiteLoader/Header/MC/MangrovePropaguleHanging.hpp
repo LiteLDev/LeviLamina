@@ -65,6 +65,10 @@ public:
 public:
 #endif
     MCAPI MangrovePropaguleHanging(std::string const &, int, class BlockLegacy const &);
+
+//private:
+
+private:
     MCAPI static int const MAX_GROWTH;
 
 

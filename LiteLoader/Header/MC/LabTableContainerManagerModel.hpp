@@ -37,10 +37,6 @@ public:
 public:
 #endif
     MCAPI LabTableContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-
-//private:
-
-private:
     MCAPI static int const INPUT_SLOTS;
 
 

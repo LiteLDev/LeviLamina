@@ -49,10 +49,6 @@ public:
 public:
 #endif
     MCAPI IceBombItem(std::string const &, int);
-
-//private:
-
-private:
     MCAPI static class HashedString const ICE_BOMB_COOLDOWN;
 
 

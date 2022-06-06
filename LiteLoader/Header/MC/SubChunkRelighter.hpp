@@ -53,12 +53,6 @@ public:
     MCAPI static class std::bitset<196608> computeAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits();
     MCAPI static class std::bitset<196608> computeOuterEdgeOfComputationBits();
     MCAPI static void initializeStatics();
-    MCAPI static class std::bitset<196608> mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits;
-    MCAPI static class std::bitset<196608> mOuterEdgeOfComputationBits;
-    MCAPI static class SpinLock sDarkSpinLock;
-    MCAPI static struct SubChunk sFullyDarkSubChunk;
-    MCAPI static struct SubChunk sFullyLitSubChunk;
-    MCAPI static class SpinLock sLitSpinLock;
     MCAPI static void shutdownStatics();
 
 //private:
@@ -68,6 +62,12 @@ public:
     MCAPI struct SubChunkBrightnessStorage::LightPair _getLightPair(struct SubChunkLightIndex) const;
 
 private:
+    MCAPI static class std::bitset<196608> mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits;
+    MCAPI static class std::bitset<196608> mOuterEdgeOfComputationBits;
+    MCAPI static class SpinLock sDarkSpinLock;
+    MCAPI static struct SubChunk sFullyDarkSubChunk;
+    MCAPI static struct SubChunk sFullyLitSubChunk;
+    MCAPI static class SpinLock sLitSpinLock;
 
 
 };

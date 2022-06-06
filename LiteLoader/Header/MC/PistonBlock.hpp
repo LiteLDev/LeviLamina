@@ -81,6 +81,10 @@ public:
     MCVAPI bool pushesUpFallingBlocks() const;
 #endif
     MCAPI PistonBlock(std::string const &, int, enum PistonBlock::Type);
+
+//private:
+
+private:
     MCAPI static class BlockPos const ARM_DIRECTION_OFFSETS[];
 
 

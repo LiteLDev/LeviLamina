@@ -70,10 +70,6 @@ public:
 public:
 #endif
     MCAPI StoneSlabBlock(std::string const &, int, bool, class WeakPtr<class BlockLegacy>);
-
-//private:
-
-private:
     MCAPI static class std::array<std::string, 8> const SLAB_NAMES;
 
 

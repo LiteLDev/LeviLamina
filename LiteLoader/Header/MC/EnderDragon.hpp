@@ -91,10 +91,6 @@ public:
     MCAPI void setNumCrystalsAlive(int);
     MCAPI void setTargetPos(class Vec3);
     MCAPI void setTurnSpeed(float);
-    MCAPI static int GROWL_INTERVAL_MAX;
-    MCAPI static int GROWL_INTERVAL_MIN;
-    MCAPI static int MAX_PATH_RADIUS;
-    MCAPI static float SITTING_ALLOWED_DAMAGE_PERCENTAGE;
 
 //protected:
     MCAPI bool _hurt(class AABB *, class ActorDamageSource const &, float);
@@ -109,6 +105,10 @@ public:
 protected:
 
 private:
+    MCAPI static int GROWL_INTERVAL_MAX;
+    MCAPI static int GROWL_INTERVAL_MIN;
+    MCAPI static int MAX_PATH_RADIUS;
+    MCAPI static float SITTING_ALLOWED_DAMAGE_PERCENTAGE;
 
 
 };

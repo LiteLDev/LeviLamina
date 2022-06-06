@@ -57,6 +57,7 @@ public:
     MCAPI FishingHook(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI class Actor * getOwner();
     MCAPI int retrieve();
+    MCAPI static float const BOBBER_SIZE;
 
 //protected:
     MCAPI void _fishPosEvent();
@@ -70,12 +71,7 @@ public:
     MCAPI void _updateGravity();
     MCAPI void _updateServer();
 
-//private:
-
 protected:
-
-private:
-    MCAPI static float const BOBBER_SIZE;
 
 
 };

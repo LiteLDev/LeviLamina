@@ -34,6 +34,10 @@ public:
     MCAPI class ExperienceRewardComponent & operator=(class ExperienceRewardComponent &&);
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void setIsExperienceDropEnabled(bool);
+
+//private:
+
+private:
     MCAPI static std::string const mIsExperienceDropEnabledTag;
 
 

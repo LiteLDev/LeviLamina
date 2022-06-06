@@ -39,13 +39,6 @@ public:
 public:
 #endif
     MCAPI SnackGoal(class Mob &, std::vector<class ItemDescriptor> const &, float, float, float);
-    MCAPI static int const CHEW_CHANCE;
-    MCAPI static int const EATING_TIME;
-    MCAPI static float const PATH_RANGE;
-    MCAPI static int const RANDOM_EATING_END;
-    MCAPI static int const RANDOM_EATING_START;
-    MCAPI static float const SEARCH_SIZE;
-    MCAPI static float const STOP_DIST_SQRD;
 
 //private:
     MCAPI bool _hasSnackableItems();
@@ -53,6 +46,13 @@ public:
     MCAPI void _updateHand(class ItemStack const &);
 
 private:
+    MCAPI static int const CHEW_CHANCE;
+    MCAPI static int const EATING_TIME;
+    MCAPI static float const PATH_RANGE;
+    MCAPI static int const RANDOM_EATING_END;
+    MCAPI static int const RANDOM_EATING_START;
+    MCAPI static float const SEARCH_SIZE;
+    MCAPI static float const STOP_DIST_SQRD;
 
 
 };

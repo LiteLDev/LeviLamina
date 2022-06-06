@@ -48,10 +48,6 @@ public:
 public:
 #endif
     MCAPI GlowStickItem(std::string const &, int);
-
-//private:
-
-private:
     MCAPI static enum ItemColor const COLORS[];
     MCAPI static int const MAX_ACTIVE_TICKS;
 

@@ -30,8 +30,12 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STOPCOMMAND
 public:
 #endif
-    MCAPI static class DedicatedServer * mServer;
     MCAPI static void setup(class CommandRegistry &, class DedicatedServer &);
+
+//private:
+
+private:
+    MCAPI static class DedicatedServer * mServer;
 
 
 };

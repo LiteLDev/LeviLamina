@@ -48,6 +48,10 @@ public:
 #endif
     MCAPI bool IsComplete() const;
     MCAPI LevelDbEnv();
+
+//private:
+
+private:
     MCAPI static class LevelDbEnv * sSingleton;
 
 

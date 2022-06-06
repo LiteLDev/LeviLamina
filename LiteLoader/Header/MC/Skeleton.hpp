@@ -66,6 +66,10 @@ public:
 #endif
     MCAPI Skeleton(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void setWitherParent(class WitherBoss *);
+
+//private:
+
+private:
     MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACK_UUID;
 
 

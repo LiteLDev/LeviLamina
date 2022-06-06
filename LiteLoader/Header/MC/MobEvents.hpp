@@ -39,10 +39,6 @@ public:
     MCAPI void setMarketplaceDefaults();
     MCAPI void tick();
     MCAPI void writeToLevelStorage();
-
-//private:
-
-private:
     MCAPI static std::string const EVENTS_ENABLED_STRING;
 
 

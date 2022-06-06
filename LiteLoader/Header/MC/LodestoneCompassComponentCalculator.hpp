@@ -27,6 +27,10 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LODESTONECOMPASSCOMPONENTCALCULATOR
 public:
 #endif
+
+//private:
+
+private:
     MCAPI static float COOLDOWN_TIME_SECONDS;
 
 

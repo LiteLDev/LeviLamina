@@ -28,6 +28,10 @@ public:
 public:
 #endif
     MCAPI static std::string const & getItemUseMethodName(enum ItemUseMethod);
+
+//private:
+
+private:
     MCAPI static class BidirectionalUnorderedMap<enum ItemUseMethod, std::string> const mMap;
 
 

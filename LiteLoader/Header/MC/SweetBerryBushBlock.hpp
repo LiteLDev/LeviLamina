@@ -87,6 +87,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI SweetBerryBushBlock(std::string const &, int);
+    MCAPI static class Vec3 const SLOWDOWN_MULTIPLIER;
 
 //private:
     MCAPI bool _growBush(class BlockSource &, class BlockPos const &) const;
@@ -94,7 +95,6 @@ public:
     MCAPI void _popBerries(class BlockSource &, class BlockPos const &, int const &, std::vector<class Item const *> *) const;
 
 private:
-    MCAPI static class Vec3 const SLOWDOWN_MULTIPLIER;
 
 
 };

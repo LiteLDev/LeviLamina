@@ -28,6 +28,5 @@ public:
 protected:
 
 private:
-    MCAPI static std::string const NAME;
 
 };

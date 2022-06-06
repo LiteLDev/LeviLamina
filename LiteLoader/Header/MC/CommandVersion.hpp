@@ -34,12 +34,8 @@ public:
     MCAPI CommandVersion(int, int);
     MCAPI bool covers(class CommandVersion const &) const;
     MCAPI bool isCompatible(int) const;
-    MCAPI static enum CurrentCmdVersion const getVersionMapping(class SemVersion const &);
-
-//private:
-
-private:
     MCAPI static int const CurrentVersion;
+    MCAPI static enum CurrentCmdVersion const getVersionMapping(class SemVersion const &);
 
 
 };

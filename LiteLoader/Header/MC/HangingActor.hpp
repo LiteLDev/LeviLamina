@@ -68,7 +68,6 @@ public:
 #endif
     MCAPI HangingActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI int getDirection() const;
-    MCAPI static float const HANGING_OFFSET;
 
 //protected:
     MCAPI void _calculateAABB();
@@ -82,6 +81,7 @@ public:
 protected:
 
 private:
+    MCAPI static float const HANGING_OFFSET;
 
 
 };

@@ -87,10 +87,6 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI CoralFan(std::string const &, int);
-
-//private:
-
-private:
     MCAPI static std::string const CORAL_FAN_NAMES[];
     MCAPI static int const CORAL_FAN_NAMES_COUNT;
 

@@ -51,10 +51,6 @@ public:
     MCAPI void setSeed(unsigned int);
     MCAPI void updateBoundingBoxFromChunkPos();
     MCAPI ~LegacyStructureSettings();
-
-//private:
-
-private:
     MCAPI static float const INTEGRITY_MAX;
     MCAPI static float const INTEGRITY_MIN;
     MCAPI static int const MAX_STRUCTURE_SIZE;

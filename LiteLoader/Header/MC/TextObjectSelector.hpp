@@ -33,10 +33,6 @@ public:
 public:
 #endif
     MCAPI TextObjectSelector(std::string);
-
-//private:
-
-private:
     MCAPI static std::string const RAW_TEXT_SELECTOR_KEY;
     MCAPI static std::string const RAW_TEXT_SELECTOR_STAR;
 

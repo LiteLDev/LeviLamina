@@ -31,10 +31,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAPELESSCHEMISTRYRECIPE
 public:
 #endif
-
-//private:
-
-private:
     MCAPI static class mce::UUID const ID;
 
 

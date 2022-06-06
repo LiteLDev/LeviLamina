@@ -36,10 +36,6 @@ public:
 #endif
     MCAPI SculkCatalystBlockActor(class BlockPos const &);
     MCAPI class SculkSpreader & getSculkSpreader();
-
-//private:
-
-private:
     MCAPI static enum BlockActorType const TypeId;
     MCAPI static std::string const TypeString;
 
