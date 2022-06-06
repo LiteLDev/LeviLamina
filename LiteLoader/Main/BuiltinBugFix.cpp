@@ -266,6 +266,12 @@ TInstanceHook(__int64, "?changeDimension@Actor@@UEAAXV?$AutomaticID@VDimension@@
     if ((int)this->getEntityTypeId() == 0x4D) return 0;
     return original(this, a1, a2);
 }
+TClasslessInstanceHook(__int64, "?teleportEntity@EndGatewayBlockActor@@QEAAXAEAVActor@@@Z", Actor* a1)
+{
+    if (!LL::globalConfig.enableFixMcBug) return original(this, a1);
+    if ((int)a1->getEntityTypeId() == 0x4D) return 0;
+    return original(this, a1);
+}
 
 //fix Wine Stop
 extern bool isWine();
