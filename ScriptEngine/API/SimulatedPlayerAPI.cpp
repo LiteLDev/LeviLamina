@@ -101,10 +101,13 @@ Local<Value> PlayerClass::simulateAttack(const Arguments& args)
             return Local<Value>();
         if (args.size()==0)
             return Boolean::newBoolean(sp->simulateAttack());
-        Actor* target = EntityClass::extract(args[1]);
+        Actor* target = EntityClass::extract(args[0]);
+        if (!target)
+            target = PlayerClass::extract(args[0]);
         if (target)
             return Boolean::newBoolean(sp->simulateAttack(target));
-        return Boolean::newBoolean(false);
+        LOG_WRONG_ARG_TYPE();
+        return Local<Value>();
     }
     CATCH("Fail in " __FUNCTION__ "!")
 };
@@ -161,7 +164,8 @@ Local<Value> PlayerClass::simulateDestory(const Arguments& args){
 #endif // ENABLE_NUMBERS_AS_POS
         else
         {
-            throw std::exception("Wrong type of argument");
+            LOG_WRONG_ARG_TYPE();
+            return Local<Value>();
         }
         if (args.size() > index)
         {
@@ -300,27 +304,50 @@ Local<Value> PlayerClass::simulateLookAt(const Arguments& args)
         if (IsInstanceOf<IntPos>(args[0]))
         {
             auto pos = IntPos::extractPos(args[0]);
-            if (dimid != pos->getDimensionId())
-                return Local<Value>();
-            target = pos->getBlockPos().center();
+            auto did = pos->getDimensionId();
+            if (dimid == did || did < 0 || did > 2)
+            {
+                sp->simulateLookAt(pos->getBlockPos());
+                return Boolean::newBoolean(true);
+            }
+            logger.debug("Can't simulate look at other dimension!");
+            return Boolean::newBoolean(false);
         }
         else if (IsInstanceOf<FloatPos>(args[0]))
         {
             auto pos = FloatPos::extractPos(args[0]);
-            if (dimid != pos->getDimensionId())
-                return Local<Value>();
-            target = pos->getVec3();
+            auto did = pos->getDimensionId();
+            if (dimid == did || did < 0 || did > 2)
+            {
+                sp->simulateLookAt(pos->getVec3());
+                return Boolean::newBoolean(true);
+            }
+            logger.debug("Can't simulate look at other dimension!");
+            return Boolean::newBoolean(false);
         }
         else if (IsInstanceOf<BlockClass>(args[0]))
         {
             auto block = EngineScope::currentEngine()->getNativeInstance<BlockClass>(args[0]);
             auto pos = IntPos::extractPos(block->getPos());
-            if (dimid != pos->getDimensionId())
-                return Local<Value>();
-            target = pos->getBlockPos().center();
+            auto did = pos->getDimensionId();
+            if (dimid == did || did < 0 || did > 2)
+            {
+                sp->simulateLookAt(pos->getBlockPos());
+                return Boolean::newBoolean(true);
+            }
+            logger.debug("Can't simulate look at other dimension!");
+            return Boolean::newBoolean(false);
         }
-        sp->simulateLookAt(target);
-        return Boolean::newBoolean(true);
+        else if (IsInstanceOf<EntityClass>(args[0]) || IsInstanceOf<PlayerClass>(args[0]))
+        {
+            auto actor = EntityClass::extract(args[0]);
+            if (!actor)
+                actor = PlayerClass::extract(args[0]);
+            sp->simulateLookAt(*actor);
+            return Boolean::newBoolean(false);
+        }
+        LOG_WRONG_ARG_TYPE();
+        return Local<Value>();
     }
     CATCH("Fail in " __FUNCTION__ "!")
 };
@@ -380,14 +407,15 @@ Local<Value> PlayerClass::simulateNavigateTo(const Arguments& args)
         {
             auto arr = args[0].asArray();
             std::vector<Vec3> path;
-            for (size_t index = 0; index < args.size(); ++index) {
-                if (IsInstanceOf<IntPos>(args[index]))
-                    path.emplace_back(IntPos::extractPos(args[index])->getBlockPos().center());
-                else if (IsInstanceOf<FloatPos>(args[index]))
-                    path.emplace_back(FloatPos::extractPos(args[index])->getVec3());
-                else if (args[index].isArray())
+            for (size_t index = 0; index < arr.size(); ++index)
+            {
+                if (IsInstanceOf<IntPos>(arr.get(index)))
+                    path.emplace_back(IntPos::extractPos(arr.get(index))->getBlockPos().center());
+                else if (IsInstanceOf<FloatPos>(arr.get(index)))
+                    path.emplace_back(FloatPos::extractPos(arr.get(index))->getVec3());
+                else if (arr.get(index).isArray())
                 {
-                    auto posArr = args[index].asArray();
+                    auto posArr = arr.get(index).asArray();
                     if (posArr.size() != 3 || !posArr.get(0).isNumber())
                     {
                         LOG_WRONG_ARG_TYPE();
