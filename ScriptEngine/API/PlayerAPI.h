@@ -107,6 +107,8 @@ public:
     Local<Value> getAllTags(const Arguments& args);
     Local<Value> getAbilities(const Arguments& args);
     Local<Value> getAttributes(const Arguments& args);
+    Local<Value> getEntityFromViewVector(const Arguments& args);
+    Local<Value> getBlockFromViewVector(const Arguments& args);
 
     Local<Value> isSimulatedPlayer(const Arguments& args);
 

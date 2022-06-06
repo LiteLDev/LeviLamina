@@ -2,6 +2,7 @@
 #include "BaseAPI.h"
 #include "BlockAPI.h"
 #include "DeviceAPI.h"
+#include "EntityAPI.h"
 #include "PlayerAPI.h"
 #include "McAPI.h"
 #include "ContainerAPI.h"
@@ -122,6 +123,8 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("getAllTags", &PlayerClass::getAllTags)
         .instanceFunction("getAbilities", &PlayerClass::getAbilities)
         .instanceFunction("getAttributes", &PlayerClass::getAttributes)
+        .instanceFunction("getEntityFromViewVector", &PlayerClass::getEntityFromViewVector)
+        .instanceFunction("getBlockFromViewVector", &PlayerClass::getBlockFromViewVector)
         
         //SimulatedPlayer API
         .instanceFunction("isSimulatedPlayer", &PlayerClass::isSimulatedPlayer)
@@ -1747,6 +1750,61 @@ Local<Value> PlayerClass::getAttributes(const Arguments& args)
         }
     }
     CATCH("Fail in getAttributes!");
+}
+
+Local<Value> PlayerClass::getEntityFromViewVector(const Arguments& args)
+{
+    
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        float maxDistance = 5.25f;
+        if (args.size() > 0) {
+            CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+            maxDistance = args[0].asNumber().toFloat();
+        }
+        auto entity = player->getActorFromViewVector(maxDistance);
+        if (entity)
+            return EntityClass::newEntity(entity);
+        return Local<Value>();
+    }
+    CATCH("Fail in getEntityFromViewVector!");
+}
+
+Local<Value> PlayerClass::getBlockFromViewVector(const Arguments& args)
+{
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        bool includeLiquid = false;
+        bool solidOnly = false;
+        float maxDistance = 5.25f;
+        bool ignoreBorderBlocks = true;
+        bool fullOnly = false;
+        if (args.size() > 0) {
+            CHECK_ARG_TYPE(args[0], ValueKind::kBoolean);
+            includeLiquid = args[0].asBoolean().value();
+        }
+        if (args.size() > 1) {
+            CHECK_ARG_TYPE(args[1], ValueKind::kBoolean);
+            solidOnly = args[1].asBoolean().value();
+        }
+        if (args.size() > 2) {
+            CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+            maxDistance = args[2].asNumber().toFloat();
+        }
+        if (args.size() > 3) {
+            CHECK_ARG_TYPE(args[3], ValueKind::kBoolean);
+            fullOnly = args[3].asBoolean().value();
+        }
+        auto blockInstance = player->getBlockFromViewVector(includeLiquid, solidOnly, maxDistance, ignoreBorderBlocks, fullOnly);
+        if (blockInstance.isNull())
+            return Local<Value>();
+        return BlockClass::newBlock(std::move(blockInstance));
+    }
+    CATCH("Fail in getBlockFromViewVector!");
 }
 
 Local<Value> PlayerClass::isSimulatedPlayer(const Arguments& args)

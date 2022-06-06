@@ -301,6 +301,37 @@
 
 <br>
 
+#### 获取视线方向实体
+
+`en.getEntityFromViewVector([maxDistance])`  
+
+- 参数：
+  - maxDistance : `Float`  
+    查找最大距离  
+- 返回值：视线方向实体，如果获取失败，返回 `Null`  
+- 返回值类型：`Entity`  
+
+<br>
+
+#### 获取视线方向方块
+
+`en.getBlockFromViewVector([includeLiquid,solidOnly,maxDistance,fullOnly])`  
+
+- 参数：
+  - includeLiquid : `Boolean`  
+    是否包含液态方块
+  - solidOnly : `Boolean`  
+    是否仅允许 `Solid` 类型的方块
+  - maxDistance : `Float`  
+    查找最大距离
+  - fullOnly : `Boolean`  
+    是否仅允许完整方块  
+- 返回值：视线方向方块，如果获取失败，返回 `Null`  
+- 返回值类型：`Block`  
+
+<br>
+
+
 ### 其他实体函数 API
 
 下面这些API提供了与游戏中指定位置实体互动的API

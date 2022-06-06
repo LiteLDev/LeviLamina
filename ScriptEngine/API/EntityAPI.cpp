@@ -54,6 +54,8 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("removeTag", &EntityClass::removeTag)
         .instanceFunction("hasTag", &EntityClass::hasTag)
         .instanceFunction("getAllTags", &EntityClass::getAllTags)
+        .instanceFunction("getEntityFromViewVector", &EntityClass::getEntityFromViewVector)
+        .instanceFunction("getBlockFromViewVector", &EntityClass::getBlockFromViewVector)
 
         //For Compatibility
         .instanceFunction("setTag", &EntityClass::setNbt)
@@ -585,6 +587,68 @@ Local<Value> EntityClass::getAllTags(const Arguments& args)
         return arr;
     }
     CATCH("Fail in getAllTags!");
+}
+
+Local<Value> EntityClass::getEntityFromViewVector(const Arguments& args)
+{
+
+    try
+    {
+        Actor* actor = get();
+        if (!actor)
+            return Local<Value>();
+        float maxDistance = 5.25f;
+        if (args.size() > 0)
+        {
+            CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+            maxDistance = args[0].asNumber().toFloat();
+        }
+        auto entity = actor->getActorFromViewVector(maxDistance);
+        if (entity)
+            return EntityClass::newEntity(entity);
+        return Local<Value>();
+    }
+    CATCH("Fail in getEntityFromViewVector!");
+}
+
+Local<Value> EntityClass::getBlockFromViewVector(const Arguments& args)
+{
+    try
+    {
+        Actor* actor = get();
+        if (!actor)
+            return Local<Value>();
+        bool includeLiquid = false;
+        bool solidOnly = false;
+        float maxDistance = 5.25f;
+        bool ignoreBorderBlocks = true;
+        bool fullOnly = false;
+        if (args.size() > 0)
+        {
+            CHECK_ARG_TYPE(args[0], ValueKind::kBoolean);
+            includeLiquid = args[0].asBoolean().value();
+        }
+        if (args.size() > 1)
+        {
+            CHECK_ARG_TYPE(args[1], ValueKind::kBoolean);
+            solidOnly = args[1].asBoolean().value();
+        }
+        if (args.size() > 2)
+        {
+            CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+            maxDistance = args[2].asNumber().toFloat();
+        }
+        if (args.size() > 3)
+        {
+            CHECK_ARG_TYPE(args[3], ValueKind::kBoolean);
+            fullOnly = args[3].asBoolean().value();
+        }
+        auto blockInstance = actor->getBlockFromViewVector(includeLiquid, solidOnly, maxDistance, ignoreBorderBlocks, fullOnly);
+        if (blockInstance.isNull())
+            return Local<Value>();
+        return BlockClass::newBlock(std::move(blockInstance));
+    }
+    CATCH("Fail in getBlockFromViewVector!");
 }
 
 Local<Value> McClass::getAllEntities(const Arguments& args) {

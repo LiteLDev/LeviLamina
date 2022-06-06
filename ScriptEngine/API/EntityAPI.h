@@ -58,5 +58,8 @@ public:
     Local<Value> removeTag(const Arguments& args);
     Local<Value> hasTag(const Arguments& args);
     Local<Value> getAllTags(const Arguments& args);
+    Local<Value> getEntityFromViewVector(const Arguments& args);
+    Local<Value> getBlockFromViewVector(const Arguments& args);
+        
 };
 extern ClassDefine<EntityClass> EntityClassBuilder;

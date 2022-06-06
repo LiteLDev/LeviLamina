@@ -827,6 +827,36 @@ pl.removeBossBar(1145141919);
 
 <br>
 
+#### 获取视线方向实体
+
+`pl.getEntityFromViewVector([maxDistance])`  
+
+- 参数：
+  - maxDistance : `Float`  
+    查找最大距离  
+- 返回值：视线方向实体，如果获取失败，返回 `Null`  
+- 返回值类型：`Entity?`
+
+<br>
+
+#### 获取视线方向方块
+
+`pl.getBlockFromViewVector([includeLiquid,solidOnly,maxDistance,fullOnly])`  
+
+- 参数：
+  - includeLiquid : `Boolean`  
+    是否包含液态方块
+  - solidOnly : `Boolean`  
+    是否仅允许 `Solid` 类型的方块
+  - maxDistance : `Float`  
+    查找最大距离
+  - fullOnly : `Boolean`  
+    是否仅允许完整方块  
+- 返回值：视线方向方块，如果获取失败，返回 `Null`  
+- 返回值类型：`Block?`
+
+<br>
+
 #### 判断是否为模拟玩家
 
 `pl.isSimulatedPlayer()`
