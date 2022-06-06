@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKDOORANNOTATIONCOMPONENT
+#endif
     MCAPI BreakDoorAnnotationComponent();
     MCAPI bool canMobBreakDoor(class Mob &, class Path const &) const;
     MCAPI void clearProgress(class Mob &);

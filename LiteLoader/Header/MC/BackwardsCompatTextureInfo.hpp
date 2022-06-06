@@ -20,6 +20,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKWARDSCOMPATTEXTUREINFO
+#endif
     MCAPI BackwardsCompatTextureInfo();
 
 protected:

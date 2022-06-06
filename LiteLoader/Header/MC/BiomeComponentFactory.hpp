@@ -24,6 +24,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMECOMPONENTFACTORY
+#endif
     MCAPI BiomeComponentFactory(enum BiomeComponentFactory::FactoryScope);
     MCAPI void processDataComponents(class Biome &, class IWorldRegistriesProvider &, class CompoundTag &) const;
     MCAPI void processDataComponents(class Biome &, class IWorldRegistriesProvider &, class Json::Value &, class SemVersion const &) const;

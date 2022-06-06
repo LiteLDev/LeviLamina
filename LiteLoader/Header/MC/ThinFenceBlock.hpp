@@ -68,13 +68,9 @@ public:
     /*180*/ virtual void __unk_vfn_180();
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool isThinFenceBlock() const{
-        bool (ThinFenceBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isThinFenceBlock@ThinFenceBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_THINFENCEBLOCK
+    MCVAPI bool isThinFenceBlock() const;
+#endif
     MCAPI ThinFenceBlock(std::string const &, int, class Material const &, bool, bool, bool);
 
 protected:

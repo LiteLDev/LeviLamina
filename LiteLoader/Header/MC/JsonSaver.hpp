@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JSONSAVER
+#endif
     MCAPI std::string toString();
 
 protected:

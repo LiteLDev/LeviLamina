@@ -20,6 +20,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANGERLEVELCOMPONENT
+#endif
     MCAPI AngerLevelComponent(class AngerLevelComponent &&);
     MCAPI AngerLevelComponent(class AngerLevelComponent const &);
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;

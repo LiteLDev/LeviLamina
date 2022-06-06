@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VEHICLECLIENTPOSITIONPASSENGERSYSTEM
+#endif
     MCAPI static class Vec3 getNewPassengerPosition(class SynchedActorData const &, class Vec3 const &, class Vec2 const &);
 
 protected:

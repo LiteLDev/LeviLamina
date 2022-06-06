@@ -25,6 +25,8 @@ public:
 public:
     /*0*/ virtual ~UnknownBlockTypeRegistry();
     /*1*/ virtual class Block const & getUnknownBlock(class CompoundTag const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UNKNOWNBLOCKTYPEREGISTRY
+#endif
 
 protected:
 

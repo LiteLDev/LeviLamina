@@ -25,6 +25,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERFTIMER
+#endif
     MCAPI PerfTimer(class std::thread::id);
     MCAPI ~PerfTimer();
     MCAPI static bool mEnabled;

@@ -20,6 +20,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSPREADER
+#endif
     MCAPI SculkSpreader();
     MCAPI SculkSpreader(bool, int, int, int, int);
     MCAPI void addCursors(class BlockPos const &, int);

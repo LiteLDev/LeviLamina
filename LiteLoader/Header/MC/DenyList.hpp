@@ -30,6 +30,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DENYLIST
+#endif
     MCAPI void addEntry(struct DenyList::Entry const &);
     MCAPI enum DenyList::Duration getDuration(struct DenyList::Entry const &) const;
     MCAPI std::string const & getMessage(struct DenyList::Entry const &) const;

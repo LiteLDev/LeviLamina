@@ -69,13 +69,9 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool waterSpreadCausesSpawn() const{
-        bool (ChorusFlowerBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@ChorusFlowerBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHORUSFLOWERBLOCK
+    MCVAPI bool waterSpreadCausesSpawn() const;
+#endif
     MCAPI ChorusFlowerBlock(std::string const &, int);
     MCAPI static int const BRANCH_DIRECTIONS;
     MCAPI static unsigned short const DEAD_AGE;

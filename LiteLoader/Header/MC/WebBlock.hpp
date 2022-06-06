@@ -62,13 +62,9 @@ public:
     /*183*/ virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool waterSpreadCausesSpawn() const{
-        bool (WebBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@WebBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBBLOCK
+    MCVAPI bool waterSpreadCausesSpawn() const;
+#endif
     MCAPI WebBlock(std::string const &, int);
 
 protected:

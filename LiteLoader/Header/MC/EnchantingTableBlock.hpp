@@ -60,18 +60,10 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool isInteractiveBlock() const{
-        bool (EnchantingTableBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isInteractiveBlock@EnchantingTableBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isCraftingBlock() const{
-        bool (EnchantingTableBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isCraftingBlock@EnchantingTableBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTINGTABLEBLOCK
+    MCVAPI bool isCraftingBlock() const;
+    MCVAPI bool isInteractiveBlock() const;
+#endif
     MCAPI EnchantingTableBlock(std::string const &, int);
 
 protected:

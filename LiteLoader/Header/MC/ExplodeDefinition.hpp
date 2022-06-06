@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPLODEDEFINITION
+#endif
     MCAPI ExplodeDefinition();
     MCAPI void initialize(class EntityContext &, class ExplodeComponent &) const;
     MCAPI void uninitialize(class EntityContext &) const;

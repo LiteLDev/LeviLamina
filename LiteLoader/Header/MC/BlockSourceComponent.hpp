@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSOURCECOMPONENT
+#endif
     MCAPI BlockSourceComponent(class Level &, class Dimension &, class ChunkSource &, bool);
     MCAPI class StackRefResultT<struct SharePtrRefTraits<class BlockSource>> tryGetBlockSource() const;
 

@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPLODECOMPONENT
+#endif
     MCAPI ExplodeComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI void explode(class Actor &, class Vec3 const &);

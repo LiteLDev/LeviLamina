@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OBJECTIVECRITERIA
+#endif
     MCAPI ObjectiveCriteria(std::string const &, bool, enum ObjectiveRenderType);
     MCAPI std::string const & getName() const;
     MCAPI bool isReadOnly() const;

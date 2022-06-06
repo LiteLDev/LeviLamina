@@ -23,13 +23,9 @@ public:
 #endif
 
 public:
-    /*
-    inline  ~TransportInterface(){
-         (TransportInterface::*rv)();
-        *((void**)&rv) = dlsym("??1TransportInterface@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRANSPORTINTERFACE
+    MCVAPI ~TransportInterface();
+#endif
 
 protected:
 

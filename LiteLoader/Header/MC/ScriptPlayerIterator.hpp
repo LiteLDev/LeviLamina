@@ -20,6 +20,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLAYERITERATOR
+#endif
     MCAPI ScriptPlayerIterator(std::vector<class Scripting::StrongTypedObjectHandle<class ScriptPlayer>> &&);
     MCAPI ScriptPlayerIterator(class ScriptPlayerIterator const &);
     MCAPI class ScriptPlayerIterator & operator=(class ScriptPlayerIterator &&);

@@ -23,6 +23,8 @@ public:
 
 public:
     /*0*/ virtual ~ScriptGroundOffsetComponent();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTGROUNDOFFSETCOMPONENT
+#endif
 
 protected:
 

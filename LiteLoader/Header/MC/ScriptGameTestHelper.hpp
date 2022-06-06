@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTGAMETESTHELPER
+#endif
     MCAPI ScriptGameTestHelper(class gametest::BaseGameTestHelper &, class Scripting::WeakLifetimeScope);
     MCAPI class Scripting::Result<void> assertBlockState(class BlockPos const &, class Scripting::Closure<bool (struct Scripting::TypedObjectHandle<class ScriptBlock>)>);
     MCAPI class Scripting::Result<void> assertBlockTypePresent(class ScriptBlockType const &, class BlockPos const &, bool);

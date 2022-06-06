@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMTYPE
+#endif
     MCAPI ScriptItemType(class Item const &);
     MCAPI class Item const & getItem() const;
     MCAPI std::string getName() const;

@@ -24,6 +24,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATEMETA
+#endif
     MCAPI BlockStateMeta(class ItemState const &, struct BlockStateDefinition const &);
     MCAPI bool const getBool(int) const;
     MCAPI unsigned __int64 getID() const;

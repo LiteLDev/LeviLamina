@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TESTCONFIG
+#endif
     MCAPI static void bindType();
 
 protected:

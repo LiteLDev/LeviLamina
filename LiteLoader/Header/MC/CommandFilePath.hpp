@@ -20,6 +20,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDFILEPATH
+#endif
     MCAPI CommandFilePath();
     MCAPI int findInvalidCharacter() const;
     MCAPI std::string const & getText() const;

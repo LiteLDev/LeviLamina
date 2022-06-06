@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ECONOMYTRADEABLECOMPONENT
+#endif
     MCAPI EconomyTradeableComponent(class Actor &);
     MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI class UpdateTradePacket createDataPacket(enum ContainerID);

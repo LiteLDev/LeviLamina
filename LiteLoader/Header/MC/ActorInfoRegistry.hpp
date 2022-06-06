@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINFOREGISTRY
+#endif
     MCAPI ActorInfoRegistry();
     MCAPI struct ActorInfo const & getActorInfo(unsigned int) const;
     MCAPI unsigned int getActorInfoId(std::string const &) const;

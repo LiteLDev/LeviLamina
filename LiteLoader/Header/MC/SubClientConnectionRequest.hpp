@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCLIENTCONNECTIONREQUEST
+#endif
     MCAPI SubClientConnectionRequest(class SubClientConnectionRequest const &);
     MCAPI std::vector<class AnimatedImageData> getAnimatedImageData() const;
     MCAPI std::string getArmSize() const;

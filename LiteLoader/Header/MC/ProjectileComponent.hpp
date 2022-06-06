@@ -18,6 +18,8 @@ enum EAxis;
 #undef AFTER_EXTRA
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROJECTILECOMPONENT
+#endif
     MCAPI ProjectileComponent(class ProjectileComponent const &);
     MCAPI ProjectileComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &);

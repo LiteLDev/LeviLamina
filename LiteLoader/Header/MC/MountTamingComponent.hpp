@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOUNTTAMINGCOMPONENT
+#endif
     MCAPI MountTamingComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI void becomeTame(class Actor &, bool);

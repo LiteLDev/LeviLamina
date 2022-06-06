@@ -71,13 +71,9 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool canBeSilkTouched() const{
-        bool (LanternBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeSilkTouched@LanternBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LANTERNBLOCK
+    MCVAPI bool canBeSilkTouched() const;
+#endif
     MCAPI LanternBlock(std::string const &, int);
 
 protected:

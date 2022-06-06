@@ -24,6 +24,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLOWLISTFILE
+#endif
     MCAPI class AllowList & getAllowList() const;
     MCAPI enum FileReadResult reload();
     MCAPI void syncToDisc();

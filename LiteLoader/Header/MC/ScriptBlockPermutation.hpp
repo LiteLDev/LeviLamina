@@ -25,6 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlockPermutation();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKPERMUTATION
+#endif
     MCAPI ScriptBlockPermutation(class ScriptBlockPermutation &&);
     MCAPI ScriptBlockPermutation(class Block const &, class Scripting::WeakLifetimeScope const &);
     MCAPI ScriptBlockPermutation(class BlockLegacy const &, class Scripting::WeakLifetimeScope const &);

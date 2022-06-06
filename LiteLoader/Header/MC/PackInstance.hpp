@@ -24,6 +24,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKINSTANCE
+#endif
     MCAPI PackInstance(class PackInstance &&);
     MCAPI PackInstance(class PackInstance const &);
     MCAPI PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, std::string const &, bool, class PackSettings *);

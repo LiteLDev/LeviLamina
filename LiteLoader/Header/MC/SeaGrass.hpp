@@ -76,18 +76,10 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool canBeSilkTouched() const{
-        bool (SeaGrass::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeSilkTouched@SeaGrass@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool waterSpreadCausesSpawn() const{
-        bool (SeaGrass::*rv)() const;
-        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@SeaGrass@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEAGRASS
+    MCVAPI bool canBeSilkTouched() const;
+    MCVAPI bool waterSpreadCausesSpawn() const;
+#endif
     MCAPI SeaGrass(std::string const &, int);
     MCAPI static bool trySpawnSeaGrass(class BlockSource &, class BlockPos const &);
 

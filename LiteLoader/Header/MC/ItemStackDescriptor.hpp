@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKDESCRIPTOR
+#endif
     MCAPI ItemStackDescriptor(class Item const &, int, unsigned short, class CompoundTag const *);
     MCAPI ItemStackDescriptor();
     MCAPI class ItemStackDescriptor & operator=(class ItemStackDescriptor &&);

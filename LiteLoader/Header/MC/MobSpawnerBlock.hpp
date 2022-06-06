@@ -64,13 +64,9 @@ public:
     /*180*/ virtual void __unk_vfn_180();
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool isInteractiveBlock() const{
-        bool (MobSpawnerBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isInteractiveBlock@MobSpawnerBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBSPAWNERBLOCK
+    MCVAPI bool isInteractiveBlock() const;
+#endif
     MCAPI MobSpawnerBlock(std::string const &, int);
 
 protected:

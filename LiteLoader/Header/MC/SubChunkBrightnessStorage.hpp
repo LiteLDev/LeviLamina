@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCHUNKBRIGHTNESSSTORAGE
+#endif
     MCAPI SubChunkBrightnessStorage();
     MCAPI void reset(bool);
 

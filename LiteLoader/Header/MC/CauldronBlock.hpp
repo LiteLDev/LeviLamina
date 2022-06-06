@@ -76,18 +76,10 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*193*/ virtual int getExtraRenderLayers() const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool isInteractiveBlock() const{
-        bool (CauldronBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isInteractiveBlock@CauldronBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool hasComparatorSignal() const{
-        bool (CauldronBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?hasComparatorSignal@CauldronBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAULDRONBLOCK
+    MCVAPI bool hasComparatorSignal() const;
+    MCVAPI bool isInteractiveBlock() const;
+#endif
     MCAPI CauldronBlock(std::string const &, int);
     MCAPI int getLiquidLevel(int) const;
     MCAPI void setLiquidLevel(class BlockSource &, class BlockPos const &, int, enum CauldronLiquidType) const;

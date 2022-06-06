@@ -75,13 +75,9 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool pushesUpFallingBlocks() const{
-        bool (PistonBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?pushesUpFallingBlocks@PistonBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PISTONBLOCK
+    MCVAPI bool pushesUpFallingBlocks() const;
+#endif
     MCAPI PistonBlock(std::string const &, int, enum PistonBlock::Type);
 
 protected:

@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESPAWNCOMPONENT
+#endif
     MCAPI void onDespawn(class Actor &);
     MCAPI void tick(class Actor &);
 

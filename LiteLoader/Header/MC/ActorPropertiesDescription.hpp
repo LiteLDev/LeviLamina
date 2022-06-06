@@ -26,6 +26,8 @@ public:
 public:
     /*0*/ virtual ~ActorPropertiesDescription();
     /*1*/ virtual char const * getJsonName() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPROPERTIESDESCRIPTION
+#endif
     MCAPI void parse(class Json::Value &);
 
 protected:

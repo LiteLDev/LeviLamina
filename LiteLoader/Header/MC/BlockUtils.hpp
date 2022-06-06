@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKUTILS
+#endif
     MCAPI static bool allowsNetherVegetation(class BlockLegacy const &);
     MCAPI static bool canGrowTreeWithBeehive(class Block const &);
     MCAPI static float getLiquidBlockHeight(class Block const &, class BlockPos const &);

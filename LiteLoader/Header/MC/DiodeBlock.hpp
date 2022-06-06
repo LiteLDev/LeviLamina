@@ -80,13 +80,9 @@ public:
     /*214*/ virtual int getTurnOnDelay(class Block const &) const = 0;
     /*215*/ virtual class Block const * getOnBlock(class Block const *) const = 0;
     /*216*/ virtual class Block const * getOffBlock(class Block const *) const = 0;
-    /*
-    inline bool canSpawnOn() const{
-        bool (DiodeBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?canSpawnOn@DiodeBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIODEBLOCK
+    MCVAPI bool canSpawnOn() const;
+#endif
     MCAPI DiodeBlock(std::string const &, int, bool);
     MCAPI static bool isDiode(class Block const &);
 

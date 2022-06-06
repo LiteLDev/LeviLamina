@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYGROUP
+#endif
     MCAPI PropertyGroup();
     MCAPI class CompoundTag getPropertyDescriptionsAsCompound(bool) const;
     MCAPI void initPropertiesOnComponent(class PropertyComponent &) const;

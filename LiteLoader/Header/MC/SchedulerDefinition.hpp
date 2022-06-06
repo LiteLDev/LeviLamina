@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCHEDULERDEFINITION
+#endif
     MCAPI SchedulerDefinition();
     MCAPI void initialize(class EntityContext &, class SchedulerComponent &);
     MCAPI void setMaxDelayTicks(float const &);

@@ -52,18 +52,10 @@ public:
     /*343*/ virtual float _getWalkTargetValue(class BlockPos const &);
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
-    /*
-    inline bool canExistInPeaceful() const{
-        bool (VindicationIllager::*rv)() const;
-        *((void**)&rv) = dlsym("?canExistInPeaceful@VindicationIllager@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool useNewAi() const{
-        bool (VindicationIllager::*rv)() const;
-        *((void**)&rv) = dlsym("?useNewAi@VindicationIllager@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VINDICATIONILLAGER
+    MCVAPI bool canExistInPeaceful() const;
+    MCVAPI bool useNewAi() const;
+#endif
     MCAPI VindicationIllager(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

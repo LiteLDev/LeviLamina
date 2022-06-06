@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAVILLAGEJIGSAWSTRUCTUREBLOCKTAGRULES
+#endif
     MCAPI static void initialize(class JigsawStructureRegistry &);
 
 protected:

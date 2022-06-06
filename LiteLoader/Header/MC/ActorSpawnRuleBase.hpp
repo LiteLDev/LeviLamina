@@ -24,6 +24,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSPAWNRULEBASE
+#endif
 
 protected:
     MCAPI void _applySpawnCondition(class std::function<void (std::string const &, int, class BiomeFilterGroup &, class MobSpawnRules &)>, class Json::Value &, class MobSpawnRules const &, std::string const &);

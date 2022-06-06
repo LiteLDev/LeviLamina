@@ -24,6 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~LoomContainerScreenValidator();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOMCONTAINERSCREENVALIDATOR
+#endif
     MCAPI LoomContainerScreenValidator();
 
 protected:

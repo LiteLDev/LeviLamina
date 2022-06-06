@@ -70,13 +70,9 @@ public:
     /*195*/ virtual struct Brightness getLightEmission(class Block const &) const;
     /*196*/ virtual struct Brightness getEmissiveBrightness(class Block const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool hasComparatorSignal() const{
-        bool (SculkSensorBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?hasComparatorSignal@SculkSensorBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSENSORBLOCK
+    MCVAPI bool hasComparatorSignal() const;
+#endif
     MCAPI SculkSensorBlock(std::string const &, int);
 
 protected:

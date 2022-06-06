@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETEMPLATEPOOL
+#endif
     MCAPI StructureTemplatePool(std::string, std::string, std::vector<struct std::pair<class StructurePoolElement const *, int>> &);
     MCAPI std::string const & getFallback() const;
     MCAPI std::string const & getName() const;

@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRUSTINGCOMPONENT
+#endif
     MCAPI TrustingComponent();
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
 

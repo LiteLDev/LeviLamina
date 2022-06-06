@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBFILELOCK
+#endif
 
 protected:
 

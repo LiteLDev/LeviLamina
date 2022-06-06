@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGEABLECOMPONENT
+#endif
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI int getAge() const;
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);

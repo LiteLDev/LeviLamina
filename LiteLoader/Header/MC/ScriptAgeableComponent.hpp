@@ -25,6 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~ScriptAgeableComponent();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTAGEABLECOMPONENT
+#endif
     MCAPI ScriptAgeableComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class Scripting::Result<std::vector<std::string>> getDropItems() const;
     MCAPI class Scripting::Result<float> getDuration() const;

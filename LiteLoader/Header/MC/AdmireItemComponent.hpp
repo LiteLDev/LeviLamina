@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADMIREITEMCOMPONENT
+#endif
     MCAPI AdmireItemComponent(class AdmireItemComponent &&);
     MCAPI class ItemStack const & getAdmireItem() const;
     MCAPI struct Tick const & getAdmireUntil() const;

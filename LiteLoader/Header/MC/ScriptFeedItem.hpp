@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFEEDITEM
+#endif
     MCAPI static class Scripting::ClassBindingBuilder<struct FeedItem> bind(struct Scripting::Version);
 
 protected:

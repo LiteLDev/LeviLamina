@@ -53,13 +53,9 @@ public:
     /*311*/ virtual void __unk_vfn_311();
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
-    /*
-    inline bool canExistInPeaceful() const{
-        bool (Piglin::*rv)() const;
-        *((void**)&rv) = dlsym("?canExistInPeaceful@Piglin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PIGLIN
+    MCVAPI bool canExistInPeaceful() const;
+#endif
     MCAPI Piglin(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

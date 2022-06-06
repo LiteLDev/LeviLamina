@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDRIDERCOMPONENT
+#endif
     MCAPI void reloadComponent(class Actor &);
     MCAPI ~AddRiderComponent();
 

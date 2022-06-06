@@ -19,6 +19,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_THIRDPARTYINFO
+#endif
     MCAPI ThirdPartyInfo();
     MCAPI ThirdPartyInfo(class ThirdPartyInfo const &);
     MCAPI ~ThirdPartyInfo();

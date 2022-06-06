@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLOCKSPRITECALCULATOR
+#endif
     MCAPI ClockSpriteCalculator();
     MCAPI int getFrame() const;
     MCAPI int update(class Actor &, bool);

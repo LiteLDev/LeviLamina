@@ -27,6 +27,8 @@ public:
     /*1*/ virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance &);
     /*2*/ virtual void onTestPassed(class gametest::BaseGameTestInstance &);
     /*3*/ virtual void onTestFailed(class gametest::BaseGameTestInstance &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTREPORTGAMELISTENER
+#endif
     MCAPI MinecraftReportGameListener(class MinecraftGameTestInstance &, class gametest::GameTestTicker &);
 
 protected:

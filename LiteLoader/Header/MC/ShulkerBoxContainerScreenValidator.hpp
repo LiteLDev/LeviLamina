@@ -24,6 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~ShulkerBoxContainerScreenValidator();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKERBOXCONTAINERSCREENVALIDATOR
+#endif
     MCAPI ShulkerBoxContainerScreenValidator();
 
 protected:

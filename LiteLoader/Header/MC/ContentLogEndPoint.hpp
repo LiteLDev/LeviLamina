@@ -22,18 +22,10 @@ public:
 #endif
 
 public:
-    /*
-    inline void log(char const * a0){
-        void (ContentLogEndPoint::*rv)(char const *);
-        *((void**)&rv) = dlsym("?log@ContentLogEndPoint@@UEAAXPEBD@Z");
-        return (this->*rv)(std::forward<char const *>(a0));
-    }
-    inline  ~ContentLogEndPoint(){
-         (ContentLogEndPoint::*rv)();
-        *((void**)&rv) = dlsym("??1ContentLogEndPoint@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTLOGENDPOINT
+    MCVAPI void log(char const *);
+    MCVAPI ~ContentLogEndPoint();
+#endif
     MCAPI ContentLogEndPoint();
 
 protected:

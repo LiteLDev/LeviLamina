@@ -25,6 +25,8 @@ public:
 public:
     /*0*/ virtual ~VanillaInPackagePacks();
     /*1*/ virtual std::vector<struct IInPackagePacks::MetaData> getPacks(enum PackType) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAINPACKAGEPACKS
+#endif
 
 protected:
 

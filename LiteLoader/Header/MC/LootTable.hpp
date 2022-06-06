@@ -24,6 +24,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTTABLE
+#endif
     MCAPI LootTable(std::string);
     MCAPI void deserialize(class Json::Value const &);
     MCAPI void fill(class Container &, class Random &, class LootTableContext &);

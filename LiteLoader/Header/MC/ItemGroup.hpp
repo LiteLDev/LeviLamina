@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMGROUP
+#endif
     MCAPI ItemGroup(class ItemInstance const &);
     MCAPI bool isEmpty() const;
     MCAPI class ItemGroup & operator=(class ItemGroup &&);

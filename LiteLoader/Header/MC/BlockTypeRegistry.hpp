@@ -25,6 +25,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKTYPEREGISTRY
+#endif
     MCAPI static unsigned __int64 computeBlockTypeRegistryChecksum(class BaseGameVersion const &);
     MCAPI static void forEachBlock(class std::function<bool (class BlockLegacy const &)>);
     MCAPI static class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();

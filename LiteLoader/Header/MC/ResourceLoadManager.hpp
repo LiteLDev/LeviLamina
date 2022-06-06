@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCELOADMANAGER
+#endif
     MCAPI void cancel(enum ResourceLoadType);
 
 protected:

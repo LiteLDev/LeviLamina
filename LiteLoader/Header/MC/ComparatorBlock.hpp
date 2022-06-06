@@ -74,18 +74,10 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool canSpawnOn() const{
-        bool (ComparatorBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?canSpawnOn@ComparatorBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isInteractiveBlock() const{
-        bool (ComparatorBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isInteractiveBlock@ComparatorBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPARATORBLOCK
+    MCVAPI bool canSpawnOn() const;
+    MCVAPI bool isInteractiveBlock() const;
+#endif
     MCAPI ComparatorBlock(std::string const &, int, bool);
 
 protected:

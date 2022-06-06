@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTDISPATCHERTOKEN
+#endif
     MCAPI class BlockEventDispatcherToken & operator=(class BlockEventDispatcherToken &&);
     MCAPI ~BlockEventDispatcherToken();
 

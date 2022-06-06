@@ -83,13 +83,9 @@ public:
     /*206*/ virtual void __unk_vfn_206();
     /*207*/ virtual void __unk_vfn_207();
     /*208*/ MCAPI std::string const & getDescriptionId() const;
-    /*
-    inline bool canBeSilkTouched() const{
-        bool (BambooBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeSilkTouched@BambooBlock@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BAMBOOBLOCK
+    MCVAPI bool canBeSilkTouched() const;
+#endif
     MCAPI BambooBlock(std::string const &, int);
     MCAPI static int getMaxHeight(class BlockPos const &);
 

@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRUSTINGDEFINITION
+#endif
     MCAPI TrustingDefinition();
     MCAPI void addTrustItemByName(std::string const &);
     MCAPI void initialize(class EntityContext &, class TrustingComponent &) const;

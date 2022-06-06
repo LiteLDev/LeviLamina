@@ -69,28 +69,12 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool hasComparatorSignal() const{
-        bool (BrewingStandBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?hasComparatorSignal@BrewingStandBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isCraftingBlock() const{
-        bool (BrewingStandBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isCraftingBlock@BrewingStandBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isContainerBlock() const{
-        bool (BrewingStandBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isContainerBlock@BrewingStandBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isInteractiveBlock() const{
-        bool (BrewingStandBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isInteractiveBlock@BrewingStandBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREWINGSTANDBLOCK
+    MCVAPI bool hasComparatorSignal() const;
+    MCVAPI bool isContainerBlock() const;
+    MCVAPI bool isCraftingBlock() const;
+    MCVAPI bool isInteractiveBlock() const;
+#endif
     MCAPI BrewingStandBlock(std::string const &, int);
 
 protected:

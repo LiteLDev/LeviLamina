@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TELEPORTCOMPONENT
+#endif
     MCAPI TeleportComponent();
     MCAPI float getDarkTeleportChance();
     MCAPI float getLightTeleportChance();

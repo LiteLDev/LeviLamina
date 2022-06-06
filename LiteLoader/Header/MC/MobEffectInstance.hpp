@@ -24,6 +24,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTINSTANCE
+#endif
     MCAPI MobEffectInstance(class MobEffectInstance const &);
     MCAPI MobEffectInstance(unsigned int);
     MCAPI MobEffectInstance(unsigned int, int);

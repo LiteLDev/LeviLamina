@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERRESPAWNTELEMETRYDATA
+#endif
     MCAPI PlayerRespawnTelemetryData();
     MCAPI void WriteEventData(class Social::Events::Event &) const;
     MCAPI void setChangedDimension(bool);

@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEARDDESCRIPTION
+#endif
     MCAPI BeardDescription(class BeardingDescriptionCache, struct BeardKernel const &);
     MCAPI float calculateContribution(class BlockPos const &) const;
 

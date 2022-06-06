@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPASSSPRITECALCULATOR
+#endif
     MCAPI CompassSpriteCalculator(float, float);
     MCAPI int getFrame() const;
     MCAPI int update(class Actor &, bool);

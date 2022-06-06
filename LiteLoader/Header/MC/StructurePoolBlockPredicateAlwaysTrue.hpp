@@ -22,18 +22,10 @@ public:
 #endif
 
 public:
-    /*
-    inline bool test(class BlockPos const & a0, class BlockPos const & a1, class Randomize & a2) const{
-        bool (StructurePoolBlockPredicateAlwaysTrue::*rv)(class BlockPos const &, class BlockPos const &, class Randomize &) const;
-        *((void**)&rv) = dlsym("?test@StructurePoolBlockPredicateAlwaysTrue@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const &>(a0), std::forward<class BlockPos const &>(a1), std::forward<class Randomize &>(a2));
-    }
-    inline bool test(class Block const & a0, class Randomize & a1) const{
-        bool (StructurePoolBlockPredicateAlwaysTrue::*rv)(class Block const &, class Randomize &) const;
-        *((void**)&rv) = dlsym("?test@StructurePoolBlockPredicateAlwaysTrue@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z");
-        return (this->*rv)(std::forward<class Block const &>(a0), std::forward<class Randomize &>(a1));
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLBLOCKPREDICATEALWAYSTRUE
+    MCVAPI bool test(class BlockPos const &, class BlockPos const &, class Randomize &) const;
+    MCVAPI bool test(class Block const &, class Randomize &) const;
+#endif
     MCAPI StructurePoolBlockPredicateAlwaysTrue();
 
 protected:

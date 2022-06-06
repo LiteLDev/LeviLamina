@@ -20,6 +20,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBSPAWNERDATA
+#endif
     MCAPI MobSpawnerData(class MobSpawnerData const &);
     MCAPI ~MobSpawnerData();
 

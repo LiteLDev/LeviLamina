@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCEREWARDCOMPONENT
+#endif
     MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI bool getIsExperienceDropEnabled() const;
     MCAPI int getOnBredExperience(class Actor &) const;

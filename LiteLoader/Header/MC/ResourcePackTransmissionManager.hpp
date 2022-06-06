@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKTRANSMISSIONMANAGER
+#endif
     MCAPI ResourcePackTransmissionManager(class Scheduler &);
     MCAPI void cleanupResourcePackManager(class NetworkIdentifier const &);
     MCAPI class ResourcePackFileUploadManager & getResourcePackUploadManager(class PacketSender &, class NetworkIdentifier const &, std::string const &);

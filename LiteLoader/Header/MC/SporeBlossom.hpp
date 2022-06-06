@@ -65,13 +65,9 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool canBeSilkTouched() const{
-        bool (SporeBlossom::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeSilkTouched@SporeBlossom@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPOREBLOSSOM
+    MCVAPI bool canBeSilkTouched() const;
+#endif
     MCAPI SporeBlossom(std::string const &, int);
 
 protected:

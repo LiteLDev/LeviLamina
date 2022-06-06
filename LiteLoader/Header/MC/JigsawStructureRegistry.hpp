@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWSTRUCTUREREGISTRY
+#endif
     MCAPI JigsawStructureRegistry();
     MCAPI class JigsawStructureActorRulesRegistry & getJigsawStructureActorRulesRegistry();
     MCAPI class JigsawStructureBlockRulesRegistry & getJigsawStructureBlockRulesRegistry();

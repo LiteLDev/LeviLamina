@@ -26,6 +26,8 @@ public:
     /*0*/ virtual ~DimensionBrightnessRamp();
     /*1*/ virtual void buildBrightnessRamp();
     /*2*/ virtual float getBaseAmbientValue() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONBRIGHTNESSRAMP
+#endif
     MCAPI float getBrightnessRampValue(int) const;
 
 protected:

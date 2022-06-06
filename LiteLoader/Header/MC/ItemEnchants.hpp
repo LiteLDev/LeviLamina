@@ -24,6 +24,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMENCHANTS
+#endif
     MCAPI ItemEnchants(int);
     MCAPI ItemEnchants(int, class ListTag const &);
     MCAPI bool addEnchant(class EnchantmentInstance, bool);

@@ -59,13 +59,9 @@ public:
     /*311*/ virtual void __unk_vfn_311();
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
-    /*
-    inline bool useNewAi() const{
-        bool (Skeleton::*rv)() const;
-        *((void**)&rv) = dlsym("?useNewAi@Skeleton@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKELETON
+    MCVAPI bool useNewAi() const;
+#endif
     MCAPI Skeleton(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void setWitherParent(class WitherBoss *);
 

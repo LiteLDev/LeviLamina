@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BINARYHEAP
+#endif
     MCAPI BinaryHeap();
     MCAPI void changeCost(class PathfinderNode *, float);
     MCAPI void clear();

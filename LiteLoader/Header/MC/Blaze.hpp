@@ -56,13 +56,9 @@ public:
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
     /*361*/ virtual bool isDarkEnoughToSpawn() const;
-    /*
-    inline bool useNewAi() const{
-        bool (Blaze::*rv)() const;
-        *((void**)&rv) = dlsym("?useNewAi@Blaze@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLAZE
+    MCVAPI bool useNewAi() const;
+#endif
     MCAPI Blaze(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORCLASSTREE
+#endif
     MCAPI static enum ActorType getEntityTypeIdLegacy(enum ActorType);
     MCAPI static bool hasCategory(enum ActorCategory const &, enum ActorCategory);
     MCAPI static bool isHangingEntity(class Actor const &);

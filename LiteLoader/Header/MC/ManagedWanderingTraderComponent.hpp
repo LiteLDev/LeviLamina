@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MANAGEDWANDERINGTRADERCOMPONENT
+#endif
     MCAPI void initFromDefinition(class Actor &);
     MCAPI void reloadComponent(class Actor &);
 

@@ -80,18 +80,10 @@ public:
     /*191*/ virtual enum BlockRenderLayer getRenderLayer() const;
     /*192*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool canBeSilkTouched() const{
-        bool (SweetBerryBushBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeSilkTouched@SweetBerryBushBlock@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isInteractiveBlock() const{
-        bool (SweetBerryBushBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isInteractiveBlock@SweetBerryBushBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWEETBERRYBUSHBLOCK
+    MCVAPI bool canBeSilkTouched() const;
+    MCVAPI bool isInteractiveBlock() const;
+#endif
     MCAPI SweetBerryBushBlock(std::string const &, int);
     MCAPI static class Vec3 const SLOWDOWN_MULTIPLIER;
 

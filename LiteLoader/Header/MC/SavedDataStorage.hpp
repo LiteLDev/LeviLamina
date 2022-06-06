@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAVEDDATASTORAGE
+#endif
     MCAPI SavedDataStorage(class LevelStorage *);
     MCAPI bool loadAndSet(class SavedData &, std::string const &);
     MCAPI void save();

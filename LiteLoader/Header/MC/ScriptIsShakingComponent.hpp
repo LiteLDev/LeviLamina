@@ -23,6 +23,8 @@ public:
 
 public:
     /*0*/ virtual ~ScriptIsShakingComponent();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTISSHAKINGCOMPONENT
+#endif
     MCAPI static class HashedString const & getHashedName();
 
 protected:

@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BALLOONCOMPONENT
+#endif
     MCAPI BalloonComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI void computeMaxHeight(class Actor &);

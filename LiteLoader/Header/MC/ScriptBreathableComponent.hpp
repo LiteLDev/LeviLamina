@@ -25,6 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBreathableComponent();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBREATHABLECOMPONENT
+#endif
     MCAPI ScriptBreathableComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class Scripting::Result<std::vector<class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>>> getBreatheBlocks() const;
     MCAPI class Scripting::Result<bool> getBreathesAir() const;

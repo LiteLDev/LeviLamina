@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDLEXER
+#endif
     MCAPI CommandLexer(std::string const &);
     MCAPI struct CommandLexer::Token const & next() const;
     MCAPI void step();

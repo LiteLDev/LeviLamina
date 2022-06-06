@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTVIBRATIONCOMPONENT
+#endif
     MCAPI class std::optional<unsigned __int64> getTicksSinceLastVibration(class ILevel const &) const;
     MCAPI void setLastVibrationTick(struct Tick);
 

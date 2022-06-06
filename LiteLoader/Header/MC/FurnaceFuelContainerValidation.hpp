@@ -32,13 +32,9 @@ public:
     /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     /*6*/ virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /*7*/ virtual bool canDestroy(class ContainerScreenContext const &) const;
-    /*
-    inline int getContainerOffset(class ContainerScreenContext const & a0) const{
-        int (FurnaceFuelContainerValidation::*rv)(class ContainerScreenContext const &) const;
-        *((void**)&rv) = dlsym("?getContainerOffset@FurnaceFuelContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACEFUELCONTAINERVALIDATION
+    MCVAPI int getContainerOffset(class ContainerScreenContext const &) const;
+#endif
 
 protected:
 

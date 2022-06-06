@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETEMPLATEDATA
+#endif
     MCAPI StructureTemplateData();
     MCAPI void addEntityData(std::unique_ptr<class CompoundTag>);
     MCAPI void addPalette(std::string const &, class StructureBlockPalette);

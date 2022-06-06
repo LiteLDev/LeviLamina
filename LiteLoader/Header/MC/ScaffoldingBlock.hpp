@@ -76,13 +76,9 @@ public:
     /*203*/ virtual class mce::Color getDustColor(class Block const &) const;
     /*204*/ virtual std::string getDustParticleName(class Block const &) const;
     /*205*/ virtual void __unk_vfn_205();
-    /*
-    inline bool waterSpreadCausesSpawn() const{
-        bool (ScaffoldingBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@ScaffoldingBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCAFFOLDINGBLOCK
+    MCVAPI bool waterSpreadCausesSpawn() const;
+#endif
     MCAPI ScaffoldingBlock(std::string const &, int);
     MCAPI static int const MAX_STABILITY;
 

@@ -25,6 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~ScriptMovementSwayComponent();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMOVEMENTSWAYCOMPONENT
+#endif
     MCAPI class Scripting::Result<float> getSwayAmplitude() const;
     MCAPI class Scripting::Result<float> getSwayFrequency() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMovementSwayComponent> bind(struct Scripting::Version);

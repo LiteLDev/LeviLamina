@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYREGISTRY
+#endif
     MCAPI class WeakRefT<struct EntityRegistryRefTraits> getWeakRef();
     MCAPI ~EntityRegistry();
 

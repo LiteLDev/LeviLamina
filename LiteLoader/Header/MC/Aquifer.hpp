@@ -29,6 +29,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AQUIFER
+#endif
     MCAPI Aquifer(class ChunkPos const &, class AquiferNoises const &, class SurfaceLevelCache const &, int, int, int);
     MCAPI void computeAt(class BlockPos const &);
     MCAPI float getLastBarrier() const;

@@ -25,6 +25,8 @@ public:
 public:
     /*0*/ virtual ~IdentifierDescription();
     /*1*/ virtual char const * getJsonName() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDENTIFIERDESCRIPTION
+#endif
 
 protected:
 

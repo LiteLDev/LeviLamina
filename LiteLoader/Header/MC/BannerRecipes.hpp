@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERRECIPES
+#endif
     MCAPI static void addRecipes(class Recipes &);
 
 protected:

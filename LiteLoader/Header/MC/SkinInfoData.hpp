@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKININFODATA
+#endif
     MCAPI static bool isValidSize(unsigned __int64);
 
 protected:

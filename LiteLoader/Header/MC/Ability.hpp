@@ -26,6 +26,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABILITY
+#endif
     MCAPI bool getBool() const;
     MCAPI float getFloat() const;
     MCAPI enum Ability::Type getType() const;

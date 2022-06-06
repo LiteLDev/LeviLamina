@@ -56,13 +56,9 @@ public:
     /*281*/ virtual class ItemStack _getPickupItem() const;
     /*282*/ virtual void applyParticleColor(class Particle *);
     /*283*/ virtual class mce::Color getEffectColor();
-    /*
-    inline bool canMakeStepSound() const{
-        bool (Arrow::*rv)() const;
-        *((void**)&rv) = dlsym("?canMakeStepSound@Arrow@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARROW
+    MCVAPI bool canMakeStepSound() const;
+#endif
     MCAPI Arrow(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void addMobEffect(class MobEffectInstance);
     MCAPI int getAuxValue() const;

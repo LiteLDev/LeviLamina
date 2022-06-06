@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENETICSDEFINITION
+#endif
     MCAPI GeneticsDefinition();
     MCAPI void addGeneDefinition(struct GeneDefinition const &);
     MCAPI void initialize(class EntityContext &, class GeneticsComponent &);

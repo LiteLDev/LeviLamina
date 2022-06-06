@@ -59,13 +59,9 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool isCraftingBlock() const{
-        bool (WorkbenchBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isCraftingBlock@WorkbenchBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKBENCHBLOCK
+    MCVAPI bool isCraftingBlock() const;
+#endif
     MCAPI WorkbenchBlock(std::string const &, int);
 
 protected:

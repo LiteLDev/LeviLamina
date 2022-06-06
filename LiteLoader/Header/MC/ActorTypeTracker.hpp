@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORTYPETRACKER
+#endif
     MCAPI ActorTypeTracker();
     MCAPI void markSeenType(class Actor const &);
     MCAPI bool shouldSendPropertyUpdate(class Actor const &);

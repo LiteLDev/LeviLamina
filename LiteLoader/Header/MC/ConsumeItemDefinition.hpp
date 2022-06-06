@@ -26,6 +26,8 @@ public:
 
 public:
     /*0*/ virtual ~ConsumeItemDefinition();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSUMEITEMDEFINITION
+#endif
 
 protected:
 

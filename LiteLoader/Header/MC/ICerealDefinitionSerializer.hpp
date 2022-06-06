@@ -21,13 +21,9 @@ public:
 #endif
 
 public:
-    /*
-    inline  ~ICerealDefinitionSerializer(){
-         (ICerealDefinitionSerializer::*rv)();
-        *((void**)&rv) = dlsym("??1ICerealDefinitionSerializer@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICEREALDEFINITIONSERIALIZER
+    MCVAPI ~ICerealDefinitionSerializer();
+#endif
 
 protected:
 

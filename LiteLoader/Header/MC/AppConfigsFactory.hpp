@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPCONFIGSFACTORY
+#endif
     MCAPI static std::unique_ptr<class AppConfigs> createAppConfigs();
 
 protected:

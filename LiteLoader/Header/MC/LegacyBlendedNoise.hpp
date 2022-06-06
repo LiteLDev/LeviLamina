@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYBLENDEDNOISE
+#endif
     MCAPI ~LegacyBlendedNoise();
     MCAPI static class LegacyBlendedNoise make(class IRandom &);
 

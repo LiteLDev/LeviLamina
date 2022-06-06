@@ -21,13 +21,9 @@ public:
 #endif
 
 public:
-    /*
-    inline  ~IPacketObserver(){
-         (IPacketObserver::*rv)();
-        *((void**)&rv) = dlsym("??1IPacketObserver@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IPACKETOBSERVER
+    MCVAPI ~IPacketObserver();
+#endif
 
 protected:
 

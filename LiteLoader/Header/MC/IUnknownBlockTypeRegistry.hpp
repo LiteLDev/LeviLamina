@@ -23,13 +23,9 @@ public:
 #endif
 
 public:
-    /*
-    inline  ~IUnknownBlockTypeRegistry(){
-         (IUnknownBlockTypeRegistry::*rv)();
-        *((void**)&rv) = dlsym("??1IUnknownBlockTypeRegistry@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IUNKNOWNBLOCKTYPEREGISTRY
+    MCVAPI ~IUnknownBlockTypeRegistry();
+#endif
 
 protected:
 

@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSET
+#endif
     MCAPI EntitySet(class EntitySet &&);
     MCAPI EntitySet(class EntitySet const &);
     MCAPI EntitySet();

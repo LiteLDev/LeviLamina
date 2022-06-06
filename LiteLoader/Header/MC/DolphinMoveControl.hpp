@@ -25,6 +25,8 @@ public:
 public:
     /*0*/ virtual ~DolphinMoveControl();
     /*2*/ virtual void tick(class MoveControlComponent &, class Mob &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOLPHINMOVECONTROL
+#endif
     MCAPI DolphinMoveControl();
 
 protected:

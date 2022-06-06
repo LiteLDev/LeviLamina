@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESCRIPTIONIDSETTER
+#endif
     MCAPI std::string getDescriptionId() const;
     MCAPI void setDescriptionId(std::string const &);
 

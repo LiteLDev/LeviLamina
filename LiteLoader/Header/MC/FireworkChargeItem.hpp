@@ -46,6 +46,8 @@ public:
     /*75*/ virtual void __unk_vfn_75();
     /*76*/ virtual void __unk_vfn_76();
     /*108*/ virtual bool isSameItem(class ItemStackBase const &, class ItemStackBase const &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREWORKCHARGEITEM
+#endif
     MCAPI FireworkChargeItem(std::string const &, int);
     MCAPI static std::string const TAG_EXPLOSION;
     MCAPI static std::string const TAG_E_COLORS;

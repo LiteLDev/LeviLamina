@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONCONTROLLERPTR
+#endif
     MCAPI ActorAnimationControllerPtr(class ActorAnimationControllerGroup &, class HashedString const &);
     MCAPI class HashedString const & getName() const;
     MCAPI bool isNull() const;

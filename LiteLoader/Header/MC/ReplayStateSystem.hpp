@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPLAYSTATESYSTEM
+#endif
     MCAPI static struct TickingSystemWithInfo createAddReplayStateComponentSystem();
     MCAPI static struct TickingSystemWithInfo createReplayStateSystem();
 

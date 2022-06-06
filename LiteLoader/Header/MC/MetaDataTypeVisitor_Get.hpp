@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_METADATATYPEVISITOR_GET
+#endif
     MCAPI ~MetaDataTypeVisitor_Get();
 
 protected:

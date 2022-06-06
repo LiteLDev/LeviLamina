@@ -50,13 +50,9 @@ public:
     /*278*/ virtual void __unk_vfn_278();
     /*280*/ virtual void __unk_vfn_280();
     /*281*/ virtual enum ParticleType getTrailParticle();
-    /*
-    inline bool shouldBurn(){
-        bool (DragonFireball::*rv)();
-        *((void**)&rv) = dlsym("?shouldBurn@DragonFireball@@MEAA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONFIREBALL
+    MCVAPI bool shouldBurn();
+#endif
     MCAPI DragonFireball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI static float SPLASH_RANGE;
 

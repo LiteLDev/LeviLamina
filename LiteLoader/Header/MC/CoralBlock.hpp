@@ -68,13 +68,9 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool canBeSilkTouched() const{
-        bool (CoralBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeSilkTouched@CoralBlock@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORALBLOCK
+    MCVAPI bool canBeSilkTouched() const;
+#endif
     MCAPI CoralBlock(std::string const &, int);
     MCAPI static int const DEAD_CORAL_BIT;
     MCAPI static int const DEAD_CORAL_OFFSET;

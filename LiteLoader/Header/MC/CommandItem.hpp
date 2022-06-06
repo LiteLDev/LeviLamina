@@ -25,6 +25,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDITEM
+#endif
     MCAPI CommandItem(unsigned __int64);
     MCAPI CommandItem(int, short, bool);
     MCAPI CommandItem();

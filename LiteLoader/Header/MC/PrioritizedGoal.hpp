@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRIORITIZEDGOAL
+#endif
     MCAPI int getPriority() const;
     MCAPI bool getToStart() const;
     MCAPI bool getUsed() const;

@@ -41,13 +41,9 @@ public:
     /*75*/ virtual void __unk_vfn_75();
     /*76*/ virtual void __unk_vfn_76();
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-    /*
-    inline bool isMusicDisk() const{
-        bool (RecordItem::*rv)() const;
-        *((void**)&rv) = dlsym("?isMusicDisk@RecordItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECORDITEM
+    MCVAPI bool isMusicDisk() const;
+#endif
     MCAPI RecordItem(std::string const &, int, enum LevelSoundEvent);
     MCAPI float getDuration() const;
     MCAPI enum LevelSoundEvent getSound() const;

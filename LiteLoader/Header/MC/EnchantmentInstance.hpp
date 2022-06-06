@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTMENTINSTANCE
+#endif
     MCAPI EnchantmentInstance(enum Enchant::Type, int);
     MCAPI EnchantmentInstance();
     MCAPI int getEnchantLevel() const;

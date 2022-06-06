@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPATTERNPREEVENT
+#endif
     MCAPI ~BlockPatternPreEvent();
 
 protected:

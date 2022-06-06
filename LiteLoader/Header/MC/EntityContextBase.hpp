@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCONTEXTBASE
+#endif
     MCAPI EntityContextBase(class EntityRegistryBase &, class EntityId);
     MCAPI bool isValid() const;
     MCAPI bool operator==(class EntityContextBase const &) const;

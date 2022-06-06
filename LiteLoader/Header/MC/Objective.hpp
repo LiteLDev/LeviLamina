@@ -25,6 +25,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OBJECTIVE
+#endif
     MCAPI Objective(std::string const &, class ObjectiveCriteria const &);
     MCAPI class ObjectiveCriteria const & getCriteria() const;
     MCAPI std::string const & getDisplayName() const;

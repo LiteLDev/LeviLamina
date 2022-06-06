@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PATHFINDERNODE
+#endif
     MCAPI PathfinderNode(class PathfinderNode const &);
     MCAPI PathfinderNode(class BlockPos const &, enum NodeType);
     MCAPI float distanceTo(class PathfinderNode *) const;

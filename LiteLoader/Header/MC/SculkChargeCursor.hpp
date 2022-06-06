@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKCHARGECURSOR
+#endif
     MCAPI SculkChargeCursor(class BlockPos const &, int);
     MCAPI SculkChargeCursor(class CompoundTag const &);
     MCAPI void addFrom(class SculkChargeCursor const &);

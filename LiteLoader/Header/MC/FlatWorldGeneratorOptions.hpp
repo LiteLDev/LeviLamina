@@ -24,6 +24,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLATWORLDGENERATOROPTIONS
+#endif
     MCAPI FlatWorldGeneratorOptions(class Json::Value const &, class BlockPalette const &, class LevelData const &);
     MCAPI ~FlatWorldGeneratorOptions();
     MCAPI static class Json::Value getLayers(class LevelData const &);

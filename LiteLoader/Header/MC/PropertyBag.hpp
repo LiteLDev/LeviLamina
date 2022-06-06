@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYBAG
+#endif
     MCAPI PropertyBag(class Json::Value const &);
     MCAPI PropertyBag();
     MCAPI class Json::Value const & toJsonValue() const;

@@ -60,13 +60,9 @@ public:
     /*180*/ virtual void __unk_vfn_180();
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool canBeSilkTouched() const{
-        bool (GildedBlackstone::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeSilkTouched@GildedBlackstone@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GILDEDBLACKSTONE
+    MCVAPI bool canBeSilkTouched() const;
+#endif
     MCAPI GildedBlackstone(std::string const &, int, class Material const &);
 
 protected:

@@ -54,6 +54,8 @@ public:
     /*280*/ virtual enum MinecartType getType();
     /*281*/ virtual class Block const * getDefaultDisplayBlock() const;
     /*282*/ virtual void __unk_vfn_282();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTTNT
+#endif
     MCAPI MinecartTNT(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void primeFuse(enum ActorDamageCause);
 

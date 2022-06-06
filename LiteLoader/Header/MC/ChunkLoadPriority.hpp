@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKLOADPRIORITY
+#endif
     MCAPI static int getPlayerChunkPriority(class ChunkPos const &, class ChunkPos const &, class Vec3 const &);
     MCAPI static int getTickingAreaChunkPriority(class ChunkPos const &, class ChunkPos const &, class Vec3 const &, bool);
 

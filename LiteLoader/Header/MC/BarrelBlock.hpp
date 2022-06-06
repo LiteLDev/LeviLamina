@@ -64,28 +64,12 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool isSignalSource() const{
-        bool (BarrelBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isSignalSource@BarrelBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isContainerBlock() const{
-        bool (BarrelBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isContainerBlock@BarrelBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool hasComparatorSignal() const{
-        bool (BarrelBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?hasComparatorSignal@BarrelBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isInteractiveBlock() const{
-        bool (BarrelBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isInteractiveBlock@BarrelBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARRELBLOCK
+    MCVAPI bool hasComparatorSignal() const;
+    MCVAPI bool isContainerBlock() const;
+    MCVAPI bool isInteractiveBlock() const;
+    MCVAPI bool isSignalSource() const;
+#endif
     MCAPI BarrelBlock(std::string const &, int, class Material const &);
     MCAPI static void setOpen(bool, class BlockSource &, class BlockPos const &);
 

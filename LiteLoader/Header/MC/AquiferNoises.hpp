@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AQUIFERNOISES
+#endif
     MCAPI AquiferNoises(class AquiferNoises const &);
     MCAPI ~AquiferNoises();
     MCAPI static class AquiferNoises make(class XoroshiroPositionalRandomFactory const &);

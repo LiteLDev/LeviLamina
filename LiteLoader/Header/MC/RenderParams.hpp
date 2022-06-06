@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RENDERPARAMS
+#endif
     MCAPI RenderParams(class RenderParams const &);
     MCAPI RenderParams(class RenderParams &&);
     MCAPI RenderParams();

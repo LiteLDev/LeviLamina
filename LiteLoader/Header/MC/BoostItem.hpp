@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOOSTITEM
+#endif
     MCAPI void setReplacementItemDescriptor(class ItemDescriptor const &);
     MCAPI ~BoostItem();
 

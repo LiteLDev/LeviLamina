@@ -61,13 +61,9 @@ public:
     /*180*/ virtual void __unk_vfn_180();
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool canBeSilkTouched() const{
-        bool (EnderChestBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeSilkTouched@EnderChestBlock@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERCHESTBLOCK
+    MCVAPI bool canBeSilkTouched() const;
+#endif
     MCAPI EnderChestBlock(std::string const &, int);
 
 protected:

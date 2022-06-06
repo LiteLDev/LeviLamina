@@ -23,6 +23,8 @@ public:
 
 public:
     /*0*/ virtual ~ScriptIsShearedComponent();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTISSHEAREDCOMPONENT
+#endif
     MCAPI static class HashedString const & getHashedName();
 
 protected:

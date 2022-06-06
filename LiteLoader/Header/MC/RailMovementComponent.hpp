@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAILMOVEMENTCOMPONENT
+#endif
     MCAPI RailMovementComponent();
     MCAPI bool canSnapOnRail(class Actor const &, class BlockPos &);
     MCAPI void comeOffTrack(class Actor &);

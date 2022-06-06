@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMEVENTCOORDINATOR
+#endif
     MCAPI ItemEventCoordinator();
     MCAPI class ItemGameplayHandler & getItemGameplayHandler();
     MCAPI void onItemModifiedActor(class ItemStackBase const &, class Actor const &);

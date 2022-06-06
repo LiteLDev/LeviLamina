@@ -43,6 +43,8 @@ public:
     /*99*/ virtual class HashedString const & getCooldownType() const;
     /*100*/ virtual int getCooldownTime() const;
     /*119*/ virtual bool canBeCharged() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COPPERHORNITEM
+#endif
     MCAPI CopperHornItem(std::string const &, int);
 
 protected:

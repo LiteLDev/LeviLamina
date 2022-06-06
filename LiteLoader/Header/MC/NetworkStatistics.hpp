@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKSTATISTICS
+#endif
     MCAPI std::string getVerboseInfo() const;
 
 protected:

@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OPENDOORANNOTATIONCOMPONENT
+#endif
     MCAPI OpenDoorAnnotationComponent(class OpenDoorAnnotationComponent &&);
     MCAPI OpenDoorAnnotationComponent();
     MCAPI void checkPath(class Mob &);

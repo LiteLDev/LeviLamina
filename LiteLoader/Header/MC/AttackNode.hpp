@@ -25,6 +25,8 @@ public:
     /*0*/ virtual ~AttackNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
     /*2*/ virtual void initializeFromDefinition(class Actor &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTACKNODE
+#endif
     MCAPI AttackNode();
 
 protected:

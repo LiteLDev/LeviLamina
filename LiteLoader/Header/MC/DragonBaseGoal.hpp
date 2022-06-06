@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONBASEGOAL
+#endif
     MCAPI DragonBaseGoal(class Mob &);
 
 protected:

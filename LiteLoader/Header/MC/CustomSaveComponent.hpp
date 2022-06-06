@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CUSTOMSAVECOMPONENT
+#endif
     MCAPI bool save(class LevelStorage &, class Actor &);
 
 protected:

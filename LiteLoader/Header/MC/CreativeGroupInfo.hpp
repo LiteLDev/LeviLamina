@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATIVEGROUPINFO
+#endif
     MCAPI CreativeGroupInfo(class CreativeGroupInfo const &);
     MCAPI CreativeGroupInfo(class CreativeItemRegistry *, enum CreativeItemCategory, class HashedString const &, unsigned int, class ItemInstance const &);
     MCAPI void addCreativeItem(class CreativeItemEntry *);

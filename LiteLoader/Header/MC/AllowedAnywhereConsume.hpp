@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLOWEDANYWHERECONSUME
+#endif
     MCAPI AllowedAnywhereConsume(enum ContainerEnumName, unsigned char, unsigned char);
 
 protected:

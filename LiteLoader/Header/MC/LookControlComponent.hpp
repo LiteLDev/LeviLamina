@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKCONTROLCOMPONENT
+#endif
     MCAPI LookControlComponent();
     MCAPI bool getHasWantedPosition() const;
     MCAPI bool getHasWantedRotation() const;

@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUNTIMELIGHTINGMANAGER
+#endif
     MCAPI RuntimeLightingManager(class Dimension &);
     MCAPI void flushRunTimeLighting();
     MCAPI void updateBlockLight(class BlockPos const &, struct Brightness, struct Brightness, struct Brightness, struct Brightness, bool);

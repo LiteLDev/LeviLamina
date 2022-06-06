@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAKSTORAGEFEATURE
+#endif
 
 protected:
     MCAPI WeakStorageFeature(class WeakStorageFeature &&);

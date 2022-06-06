@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAMAGEOVERTIMECOMPONENT
+#endif
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI int getDamageTime() const;
     MCAPI int getDamageTimeInterval() const;

@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREEDABLECOMPONENT
+#endif
     MCAPI BreedableComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI bool canMate(class Actor const &, class Actor const &) const;

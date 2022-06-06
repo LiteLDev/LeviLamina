@@ -26,6 +26,8 @@ public:
 public:
     /*0*/ virtual ~DefaultMobSpawner();
     /*4*/ virtual class BlockPos const & getPos();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFAULTMOBSPAWNER
+#endif
 
 protected:
 

@@ -26,6 +26,8 @@ public:
     /*1*/ virtual double stop();
     /*2*/ virtual double stopContinue();
     /*3*/ virtual void print(std::string const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STOPWATCH
+#endif
     MCAPI Stopwatch();
     MCAPI void reset();
     MCAPI void start();

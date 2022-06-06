@@ -47,18 +47,10 @@ public:
     /*89*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
     /*97*/ virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
     /*101*/ virtual void fixupCommon(class ItemStackBase &) const;
-    /*
-    inline bool uniqueAuxValues() const{
-        bool (ChemistryStickItem::*rv)() const;
-        *((void**)&rv) = dlsym("?uniqueAuxValues@ChemistryStickItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool showsDurabilityInCreative() const{
-        bool (ChemistryStickItem::*rv)() const;
-        *((void**)&rv) = dlsym("?showsDurabilityInCreative@ChemistryStickItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYSTICKITEM
+    MCVAPI bool showsDurabilityInCreative() const;
+    MCVAPI bool uniqueAuxValues() const;
+#endif
     MCAPI ChemistryStickItem(std::string const &, int);
     MCAPI static enum ItemColor getColorType(int);
     MCAPI static bool isActive(int);

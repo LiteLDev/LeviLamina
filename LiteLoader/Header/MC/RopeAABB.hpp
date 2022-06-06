@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROPEAABB
+#endif
     MCAPI bool getContactPoint(class Vec3 const &, float, struct AABBContactPoint &) const;
 
 protected:

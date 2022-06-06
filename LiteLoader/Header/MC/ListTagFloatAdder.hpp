@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LISTTAGFLOATADDER
+#endif
     MCAPI class ListTagFloatAdder & operator()(float);
     MCAPI ~ListTagFloatAdder();
 

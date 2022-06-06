@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTIONEVENT
+#endif
     MCAPI ActionEvent(int, enum ActionEvent::ActionState, bool, enum FocusImpact);
 
 protected:

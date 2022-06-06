@@ -24,6 +24,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADETABLES
+#endif
     MCAPI struct TradeTable * fetchTable(std::string const &);
     MCAPI void reload(class Level &);
     MCAPI ~TradeTables();

@@ -25,6 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~MineshaftStart();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINESHAFTSTART
+#endif
     MCAPI MineshaftStart(class Dimension const &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
 
 protected:

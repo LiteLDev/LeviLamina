@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRUSTCOMPONENT
+#endif
     MCAPI TrustComponent(class TrustComponent &&);
     MCAPI TrustComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &);

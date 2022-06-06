@@ -23,6 +23,8 @@ public:
 
 public:
     /*0*/ virtual ~ScriptSkinIdComponent();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSKINIDCOMPONENT
+#endif
 
 protected:
 

@@ -24,6 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~CompoundCreatorContainerScreenValidator();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDCREATORCONTAINERSCREENVALIDATOR
+#endif
     MCAPI CompoundCreatorContainerScreenValidator();
 
 protected:

@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAKSTORAGEENTITY
+#endif
     MCAPI bool operator==(class WeakStorageEntity const &) const;
 
 protected:

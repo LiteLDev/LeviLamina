@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENT
+#endif
     MCAPI GameEvent(enum GameEventConfig::GameEvents, unsigned char);
     MCAPI enum GameEventConfig::GameEvents const getEventType() const;
     MCAPI float getRadius() const;

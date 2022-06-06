@@ -31,6 +31,8 @@ public:
     /*11*/ virtual long Terminate(bool, void *, void ( *)(void *));
     /*12*/ virtual ~TaskQueueImpl();
     /*14*/ virtual void RundownObject();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKQUEUEIMPL
+#endif
     MCAPI long Initialize(struct XTaskQueuePortObject *, struct XTaskQueuePortObject *);
     MCAPI long Initialize(enum XTaskQueueDispatchMode, enum XTaskQueueDispatchMode, bool, bool);
     MCAPI TaskQueueImpl();

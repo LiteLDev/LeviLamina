@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORLIMITEDLIFETIMECOMPONENT
+#endif
     MCAPI ActorLimitedLifetimeComponent();
     MCAPI void addAdditionalSaveData(class Actor const &, class CompoundTag &) const;
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &);

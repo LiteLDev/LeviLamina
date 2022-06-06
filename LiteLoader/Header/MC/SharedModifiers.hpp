@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAREDMODIFIERS
+#endif
     MCAPI static class std::shared_ptr<class AttributeModifier> DAMAGE_BOOST;
     MCAPI static class std::shared_ptr<class AttributeModifier> HEALTH_BOOST;
     MCAPI static class std::shared_ptr<class AttributeModifier> MOVEMENT_SLOWDOWN;

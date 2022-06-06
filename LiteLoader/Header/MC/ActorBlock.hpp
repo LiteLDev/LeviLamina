@@ -63,13 +63,9 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
-    /*
-    inline bool canBeSilkTouched() const{
-        bool (ActorBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeSilkTouched@ActorBlock@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORBLOCK
+    MCVAPI bool canBeSilkTouched() const;
+#endif
 
 protected:
     MCAPI ActorBlock(std::string const &, int, class Material const &);

@@ -24,6 +24,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DECORATORDEFINITION
+#endif
     MCAPI class BehaviorDefinition const * get() const;
 
 protected:

@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSENSORCOMPONENT
+#endif
     MCAPI EntitySensorComponent(class EntitySensorComponent &&);
     MCAPI EntitySensorComponent();
     MCAPI void evaluateActor(class Actor &);

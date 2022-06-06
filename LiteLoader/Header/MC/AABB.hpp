@@ -27,6 +27,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AABB
+#endif
     MCAPI AABB(class Vec3 const &, class Vec3 const &);
     MCAPI AABB(class Vec3 const &, float);
     MCAPI AABB(float, float, float, float, float, float);

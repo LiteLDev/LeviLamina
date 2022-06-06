@@ -20,6 +20,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKLISTEVENTMAP
+#endif
     MCAPI BlockListEventMap(class BlockListEventMap const &);
     MCAPI ~BlockListEventMap();
 

@@ -76,28 +76,12 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*195*/ virtual struct Brightness getLightEmission(class Block const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool canSpawnOn() const{
-        bool (CampfireBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?canSpawnOn@CampfireBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool waterSpreadCausesSpawn() const{
-        bool (CampfireBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@CampfireBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canBeSilkTouched() const{
-        bool (CampfireBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeSilkTouched@CampfireBlock@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool hasVariableLighting() const{
-        bool (CampfireBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?hasVariableLighting@CampfireBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMPFIREBLOCK
+    MCVAPI bool canBeSilkTouched() const;
+    MCVAPI bool canSpawnOn() const;
+    MCVAPI bool hasVariableLighting() const;
+    MCVAPI bool waterSpreadCausesSpawn() const;
+#endif
     MCAPI CampfireBlock(std::string const &, int, bool);
     MCAPI static bool isLit(class Block const &);
     MCAPI static bool tryDouseFire(class BlockSource &, class BlockPos const &, bool);

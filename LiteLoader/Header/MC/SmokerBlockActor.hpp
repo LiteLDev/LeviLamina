@@ -23,13 +23,9 @@ public:
 #endif
 
 public:
-    /*
-    inline std::string getName() const{
-        std::string (SmokerBlockActor::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@SmokerBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMOKERBLOCKACTOR
+    MCVAPI std::string getName() const;
+#endif
     MCAPI SmokerBlockActor(class BlockPos const &);
 
 protected:

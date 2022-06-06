@@ -25,6 +25,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTION
+#endif
     MCAPI static enum Direction::Type const DIRECTION_CLOCKWISE[];
     MCAPI static enum Direction::Type const DIRECTION_COUNTER_CLOCKWISE[];
     MCAPI static unsigned char const DIRECTION_FACING[];

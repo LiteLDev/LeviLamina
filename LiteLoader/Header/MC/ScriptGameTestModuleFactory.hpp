@@ -26,6 +26,8 @@ public:
 
 public:
     /*0*/ virtual ~ScriptGameTestModuleFactory();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTGAMETESTMODULEFACTORY
+#endif
     MCAPI ScriptGameTestModuleFactory(class gametest::GameTestRegistry &);
     MCAPI static std::string getModuleUUIDAsString();
 

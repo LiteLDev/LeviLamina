@@ -29,6 +29,8 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLEESUNGOAL
+#endif
     MCAPI FleeSunGoal(class Mob &, float);
 
 protected:

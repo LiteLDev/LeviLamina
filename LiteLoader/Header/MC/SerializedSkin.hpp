@@ -17,6 +17,8 @@ class SerializedSkin {
 #undef AFTER_EXTRA
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERIALIZEDSKIN
+#endif
     MCAPI SerializedSkin(class SerializedSkin &&);
     MCAPI SerializedSkin();
     MCAPI SerializedSkin(class SerializedSkin const &);

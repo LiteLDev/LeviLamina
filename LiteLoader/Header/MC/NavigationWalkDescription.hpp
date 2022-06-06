@@ -26,6 +26,8 @@ public:
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~NavigationWalkDescription();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONWALKDESCRIPTION
+#endif
 
 protected:
 

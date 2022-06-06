@@ -30,6 +30,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDEFINITIONGROUP
+#endif
     MCAPI BlockDefinitionGroup();
     MCAPI void buildBlockSchema(class BlockComponentFactory const &);
     MCAPI void digestServerBlockProperties(std::vector<struct std::pair<std::string, class CompoundTag>> const &, class BlockComponentFactory const &);

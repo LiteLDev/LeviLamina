@@ -68,13 +68,9 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool isInteractiveBlock() const{
-        bool (GrindstoneBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isInteractiveBlock@GrindstoneBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GRINDSTONEBLOCK
+    MCVAPI bool isInteractiveBlock() const;
+#endif
     MCAPI GrindstoneBlock(std::string const &, int);
 
 protected:

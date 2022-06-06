@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKWORLDCOMPONENT
+#endif
     MCAPI TickWorldComponent(class TickWorldComponent &&);
     MCAPI TickWorldComponent();
     MCAPI unsigned int getChunkRadius() const;

@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPPER
+#endif
     MCAPI Hopper(int, bool);
     MCAPI int getCooldownTime() const;
     MCAPI bool isOnCooldown() const;

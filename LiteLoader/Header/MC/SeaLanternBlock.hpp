@@ -60,13 +60,9 @@ public:
     /*180*/ virtual void __unk_vfn_180();
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool canBeSilkTouched() const{
-        bool (SeaLanternBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeSilkTouched@SeaLanternBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEALANTERNBLOCK
+    MCVAPI bool canBeSilkTouched() const;
+#endif
     MCAPI SeaLanternBlock(std::string const &, int);
 
 protected:

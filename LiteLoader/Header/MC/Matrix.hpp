@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATRIX
+#endif
     MCAPI Matrix(struct glm::qua<float, 0> const &);
     MCAPI void transform3(struct glm::vec<3, float, 0> &, float &) const;
 

@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLADIMENSIONS
+#endif
     MCAPI static class AutomaticID<class Dimension, int> const Nether;
     MCAPI static class AutomaticID<class Dimension, int> const Overworld;
     MCAPI static class AutomaticID<class Dimension, int> const TheEnd;

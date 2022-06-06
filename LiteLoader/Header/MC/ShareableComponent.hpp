@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAREABLECOMPONENT
+#endif
     MCAPI int getCountToPickUp(class Actor const &, class ItemActor const &) const;
     MCAPI int getCountToPickUp(class Actor const &, class ItemStack const &) const;
     MCAPI int getSlotToSwap(class Actor &, class ItemActor const &) const;

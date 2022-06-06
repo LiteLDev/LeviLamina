@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLOTDROPCHANCE
+#endif
     MCAPI void setEquipmentSlot(std::string const &);
 
 protected:

@@ -25,6 +25,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONCONTROLLERGROUP
+#endif
     MCAPI ActorAnimationControllerGroup();
     MCAPI class ActorAnimationControllerPtr getActorAnimationController(class HashedString const &);
     MCAPI class std::shared_ptr<class ActorAnimationControllerInfo> getActorAnimationControllerInfo(class HashedString const &);

@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CALLBACKTOKENCANCELSTATE
+#endif
     MCAPI CallbackTokenCancelState();
     MCAPI bool wasCanceled() const;
 

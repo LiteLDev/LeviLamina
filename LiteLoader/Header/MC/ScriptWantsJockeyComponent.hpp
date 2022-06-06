@@ -23,6 +23,8 @@ public:
 
 public:
     /*0*/ virtual ~ScriptWantsJockeyComponent();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTWANTSJOCKEYCOMPONENT
+#endif
     MCAPI static class HashedString const & getHashedName();
 
 protected:

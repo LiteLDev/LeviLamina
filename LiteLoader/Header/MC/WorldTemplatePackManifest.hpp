@@ -24,6 +24,8 @@ public:
 public:
     /*0*/ virtual ~WorldTemplatePackManifest();
     /*1*/ virtual std::unique_ptr<class PackManifest> clone() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDTEMPLATEPACKMANIFEST
+#endif
     MCAPI WorldTemplatePackManifest(class PackManifest &&);
     MCAPI WorldTemplatePackManifest();
     MCAPI enum GameType getGameType() const;

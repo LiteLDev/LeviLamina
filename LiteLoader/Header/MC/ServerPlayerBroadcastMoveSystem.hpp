@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYERBROADCASTMOVESYSTEM
+#endif
     MCAPI static struct TickingSystemWithInfo create();
 
 protected:

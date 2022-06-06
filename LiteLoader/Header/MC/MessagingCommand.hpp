@@ -25,6 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~MessagingCommand();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MESSAGINGCOMMAND
+#endif
 
 protected:
     MCAPI MessagingCommand(bool, bool);

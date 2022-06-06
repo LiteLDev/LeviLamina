@@ -30,6 +30,8 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void onAppResumed();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMTHREADCHECKMANAGER
+#endif
     MCAPI static void invalidateThreadIndex();
 
 protected:

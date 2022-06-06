@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASECOMMANDBLOCK
+#endif
     MCAPI BaseCommandBlock();
     MCAPI std::string const & getCommand() const;
     MCAPI std::string getLastOutput() const;

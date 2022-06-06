@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOMECOMPONENT
+#endif
     MCAPI HomeComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI class AutomaticID<class Dimension, int> getHomeDimension() const;

@@ -25,6 +25,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPARSECONTAINERCLIENT
+#endif
     MCAPI void _networkUpdateItem(int, class ItemStack const &);
 
 protected:

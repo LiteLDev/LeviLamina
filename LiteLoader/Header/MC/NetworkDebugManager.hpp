@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKDEBUGMANAGER
+#endif
     MCAPI static int const MAX_NUMBER_OF_SAMPLES;
     MCAPI static int const UPDATE_INTERVAL_MILLISECONDS;
 

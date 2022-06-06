@@ -16,6 +16,8 @@ class BehaviorTreeDefinitionPtr {
 #undef AFTER_EXTRA
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORTREEDEFINITIONPTR
+#endif
     MCAPI BehaviorTreeDefinitionPtr();
     MCAPI BehaviorTreeDefinitionPtr(class BehaviorTreeDefinitionPtr &&);
     MCAPI BehaviorTreeDefinitionPtr(class BehaviorTreeGroup &, class BehaviorTreeDefinition &);

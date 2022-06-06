@@ -25,6 +25,8 @@ public:
     /*0*/ virtual ~MoveNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
     /*2*/ virtual void initializeFromDefinition(class Actor &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVENODE
+#endif
     MCAPI MoveNode();
 
 protected:

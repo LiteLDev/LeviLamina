@@ -59,18 +59,10 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool isInteractiveBlock() const{
-        bool (LoomBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isInteractiveBlock@LoomBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isCraftingBlock() const{
-        bool (LoomBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isCraftingBlock@LoomBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOMBLOCK
+    MCVAPI bool isCraftingBlock() const;
+    MCVAPI bool isInteractiveBlock() const;
+#endif
     MCAPI LoomBlock(std::string const &, int);
 
 protected:

@@ -25,6 +25,8 @@ public:
 public:
     /*0*/ virtual ~MobGameEventSystem();
     /*1*/ virtual void registerEvents(class entt::dispatcher &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBGAMEEVENTSYSTEM
+#endif
 
 protected:
 

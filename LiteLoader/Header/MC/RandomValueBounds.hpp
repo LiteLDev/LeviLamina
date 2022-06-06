@@ -24,6 +24,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMVALUEBOUNDS
+#endif
     MCAPI void deserialize(class Json::Value const &);
     MCAPI float getFloat(class Random &) const;
     MCAPI int getInt(class Random &) const;

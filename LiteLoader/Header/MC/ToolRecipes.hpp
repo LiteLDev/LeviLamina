@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TOOLRECIPES
+#endif
     MCAPI static void addRecipes(class Recipes &);
 
 protected:

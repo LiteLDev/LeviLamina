@@ -24,18 +24,10 @@ public:
 #endif
 
 public:
-    /*
-    inline void _onEnable(){
-        void (UPNPInterface::*rv)();
-        *((void**)&rv) = dlsym("?_onEnable@UPNPInterface@@EEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void _onDisable(){
-        void (UPNPInterface::*rv)();
-        *((void**)&rv) = dlsym("?_onDisable@UPNPInterface@@EEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPNPINTERFACE
+    MCVAPI void _onDisable();
+    MCVAPI void _onEnable();
+#endif
     MCAPI UPNPInterface(class Bedrock::NonOwnerPointer<class AppPlatform> const &);
     MCAPI void reset();
     MCAPI void tick();

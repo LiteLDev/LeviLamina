@@ -25,6 +25,8 @@ public:
 public:
     /*0*/ virtual ~NullLogger();
     /*1*/ virtual void Logv(char const *, char *);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NULLLOGGER
+#endif
     MCAPI static class NullLogger instance;
 
 protected:

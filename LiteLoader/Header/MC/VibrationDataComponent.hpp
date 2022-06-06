@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONDATACOMPONENT
+#endif
     MCAPI void clearLastVibrationPos();
     MCAPI class std::optional<class BlockPos> const & getLastVibrationPos() const;
     MCAPI class std::optional<unsigned __int64> getTicksSinceLastVibration(class ILevel const &) const;

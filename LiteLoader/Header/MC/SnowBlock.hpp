@@ -62,13 +62,9 @@ public:
     /*180*/ virtual void __unk_vfn_180();
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool waterSpreadCausesSpawn() const{
-        bool (SnowBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@SnowBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNOWBLOCK
+    MCVAPI bool waterSpreadCausesSpawn() const;
+#endif
     MCAPI SnowBlock(std::string const &, int);
 
 protected:

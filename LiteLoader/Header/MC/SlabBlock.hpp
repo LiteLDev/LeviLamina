@@ -71,18 +71,10 @@ public:
     /*180*/ virtual void __unk_vfn_180();
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool canBeSilkTouched() const{
-        bool (SlabBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeSilkTouched@SlabBlock@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isSlabBlock() const{
-        bool (SlabBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isSlabBlock@SlabBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLABBLOCK
+    MCVAPI bool canBeSilkTouched() const;
+    MCVAPI bool isSlabBlock() const;
+#endif
     MCAPI SlabBlock(std::string const &, int, bool, class Material const &, class WeakPtr<class BlockLegacy>);
 
 protected:

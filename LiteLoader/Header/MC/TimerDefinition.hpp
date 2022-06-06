@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TIMERDEFINITION
+#endif
     MCAPI TimerDefinition();
     MCAPI void addWeightedChoiceEntry(struct WeightChoiceEntry const &);
     MCAPI void initialize(class EntityContext &, class TimerComponent &) const;

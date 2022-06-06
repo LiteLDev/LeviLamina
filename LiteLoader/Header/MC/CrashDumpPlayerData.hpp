@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPPLAYERDATA
+#endif
     MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
 
 protected:

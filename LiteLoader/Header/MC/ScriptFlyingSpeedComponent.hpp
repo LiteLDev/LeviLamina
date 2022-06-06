@@ -25,6 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~ScriptFlyingSpeedComponent();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFLYINGSPEEDCOMPONENT
+#endif
 
 protected:
 

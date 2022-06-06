@@ -63,6 +63,8 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROOTEDDIRTBLOCK
+#endif
     MCAPI RootedDirtBlock(std::string const &, int);
 
 protected:

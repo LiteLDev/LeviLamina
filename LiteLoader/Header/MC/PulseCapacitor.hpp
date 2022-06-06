@@ -34,6 +34,8 @@ public:
     /*20*/ virtual void __unk_vfn_20();
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*24*/ virtual unsigned char getPoweroutDirection() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PULSECAPACITOR
+#endif
     MCAPI PulseCapacitor();
 
 protected:

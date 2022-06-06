@@ -53,13 +53,9 @@ public:
     /*311*/ virtual void __unk_vfn_311();
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
-    /*
-    inline bool useNewAi() const{
-        bool (Pig::*rv)() const;
-        *((void**)&rv) = dlsym("?useNewAi@Pig@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PIG
+    MCVAPI bool useNewAi() const;
+#endif
     MCAPI Pig(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

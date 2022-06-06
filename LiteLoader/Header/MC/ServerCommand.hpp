@@ -21,13 +21,9 @@ public:
 #endif
 
 public:
-    /*
-    inline  ~ServerCommand(){
-         (ServerCommand::*rv)();
-        *((void**)&rv) = dlsym("??1ServerCommand@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCOMMAND
+    MCVAPI ~ServerCommand();
+#endif
     MCAPI static void setup(class Minecraft &);
 
 protected:

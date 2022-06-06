@@ -23,6 +23,8 @@ public:
 
 public:
     /*0*/ virtual ~ScriptFloatsInLiquidComponent();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFLOATSINLIQUIDCOMPONENT
+#endif
     MCAPI static class HashedString const & getHashedName();
 
 protected:

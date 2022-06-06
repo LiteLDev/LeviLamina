@@ -57,13 +57,9 @@ public:
     /*316*/ virtual int getArmorValue() const;
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
-    /*
-    inline bool useNewAi() const{
-        bool (Zombie::*rv)() const;
-        *((void**)&rv) = dlsym("?useNewAi@Zombie@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ZOMBIE
+    MCVAPI bool useNewAi() const;
+#endif
     MCAPI Zombie(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void setZombieType(enum Zombie::ZombieType);
 

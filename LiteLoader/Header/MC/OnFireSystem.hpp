@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONFIRESYSTEM
+#endif
     MCAPI static void extinguishFire(class Actor &);
     MCAPI static void onFireChanged(class Actor &);
     MCAPI static void setOnFire(class Actor &, int);

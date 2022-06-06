@@ -56,18 +56,10 @@ public:
     /*316*/ virtual int getArmorValue() const;
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
-    /*
-    inline bool canExistInPeaceful() const{
-        bool (EvocationIllager::*rv)() const;
-        *((void**)&rv) = dlsym("?canExistInPeaceful@EvocationIllager@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool useNewAi() const{
-        bool (EvocationIllager::*rv)() const;
-        *((void**)&rv) = dlsym("?useNewAi@EvocationIllager@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVOCATIONILLAGER
+    MCVAPI bool canExistInPeaceful() const;
+    MCVAPI bool useNewAi() const;
+#endif
     MCAPI EvocationIllager(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

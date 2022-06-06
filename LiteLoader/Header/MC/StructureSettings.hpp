@@ -46,6 +46,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURESETTINGS
+#endif
     MCAPI StructureSettings(class StructureSettings &&);
     MCAPI StructureSettings();
     MCAPI enum AnimationMode getAnimationMode() const;

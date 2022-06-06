@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSETTINGS
+#endif
     MCAPI LevelSettings(class LevelSettings const &);
     MCAPI LevelSettings(class LevelSettings &&);
     MCAPI LevelSettings(class LevelData const &, class AutomaticID<class Dimension, int>);

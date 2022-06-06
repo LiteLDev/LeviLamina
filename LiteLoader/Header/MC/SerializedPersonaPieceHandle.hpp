@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERIALIZEDPERSONAPIECEHANDLE
+#endif
     MCAPI SerializedPersonaPieceHandle(std::string const &, enum persona::PieceType, class mce::UUID, bool, std::string const &);
 
 protected:

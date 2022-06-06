@@ -67,13 +67,9 @@ public:
     /*181*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool canBeSilkTouched() const{
-        bool (PumpkinBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeSilkTouched@PumpkinBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PUMPKINBLOCK
+    MCVAPI bool canBeSilkTouched() const;
+#endif
     MCAPI PumpkinBlock(std::string const &, int, bool, bool);
 
 protected:

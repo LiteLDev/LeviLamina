@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERADDLEVELEVENT
+#endif
     MCAPI ~PlayerAddLevelEvent();
 
 protected:

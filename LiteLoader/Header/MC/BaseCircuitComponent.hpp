@@ -46,18 +46,10 @@ public:
     /*21*/ virtual bool isSecondaryPowered() const;
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*23*/ virtual enum CircuitComponentType getCircuitComponentGroupType() const;
-    /*
-    inline bool allowIndirect() const{
-        bool (BaseCircuitComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?allowIndirect@BaseCircuitComponent@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool hasChildrenSource() const{
-        bool (BaseCircuitComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?hasChildrenSource@BaseCircuitComponent@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASECIRCUITCOMPONENT
+    MCVAPI bool allowIndirect() const;
+    MCVAPI bool hasChildrenSource() const;
+#endif
     MCAPI BaseCircuitComponent();
     MCAPI bool hasDirectPower();
     MCAPI bool isRemoved() const;

@@ -16,6 +16,8 @@ class DefinitionTrigger {
 #undef AFTER_EXTRA
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFINITIONTRIGGER
+#endif
     MCAPI DefinitionTrigger(class DefinitionTrigger &&);
     MCAPI DefinitionTrigger();
     MCAPI DefinitionTrigger(class DefinitionTrigger const &);

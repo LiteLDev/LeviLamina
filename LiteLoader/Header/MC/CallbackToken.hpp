@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CALLBACKTOKEN
+#endif
     MCAPI CallbackToken();
     MCAPI CallbackToken(class std::weak_ptr<class CallbackTokenCancelState>);
     MCAPI void cancelCallback();

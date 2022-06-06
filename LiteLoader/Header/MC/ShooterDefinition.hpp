@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTERDEFINITION
+#endif
     MCAPI ShooterDefinition();
     MCAPI void initialize(class EntityContext &, class ShooterComponent &) const;
     MCAPI void setActorDefByName(std::string const &);

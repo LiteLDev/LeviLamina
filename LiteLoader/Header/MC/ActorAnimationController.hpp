@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONCONTROLLER
+#endif
     MCAPI ActorAnimationController(class HashedString const &, class SemVersion const &, std::string const &);
     MCAPI class std::shared_ptr<class ActorAnimationControllerState> & addState(class HashedString const &);
     MCAPI unsigned __int64 findStateIndex(std::string const &, bool, unsigned __int64) const;

@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIMENTS
+#endif
     MCAPI bool DataDrivenBiomes() const;
     MCAPI bool DataDrivenItems() const;
     MCAPI Experiments();

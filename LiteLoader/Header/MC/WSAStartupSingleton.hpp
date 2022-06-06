@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WSASTARTUPSINGLETON
+#endif
     MCAPI static void AddRef();
     MCAPI static void Deref();
 

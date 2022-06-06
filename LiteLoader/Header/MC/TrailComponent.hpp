@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRAILCOMPONENT
+#endif
     MCAPI TrailComponent();
     MCAPI void initFromDefinition(class Actor &);
 

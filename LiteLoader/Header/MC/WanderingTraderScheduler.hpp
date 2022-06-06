@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WANDERINGTRADERSCHEDULER
+#endif
     MCAPI WanderingTraderScheduler(class Level &);
     MCAPI bool isWanderingTraderCurrentlyManaged(class Actor const &);
     MCAPI void readSaveData();

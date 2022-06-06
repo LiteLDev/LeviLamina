@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONACTORENTERVOLUMECOMPONENT
+#endif
     MCAPI ~OnActorEnterVolumeComponent();
 
 protected:

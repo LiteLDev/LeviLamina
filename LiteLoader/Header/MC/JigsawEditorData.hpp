@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWEDITORDATA
+#endif
     MCAPI JigsawEditorData(class JigsawEditorData &&);
     MCAPI JigsawEditorData(std::string const &, std::string const &, std::string const &, std::string const &, enum JigsawJointType);
     MCAPI JigsawEditorData();

@@ -50,6 +50,8 @@ public:
     /*280*/ virtual void __unk_vfn_280();
     /*281*/ virtual float getThrowUpAngleOffset();
     /*282*/ virtual float getGravity();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCEPOTION
+#endif
     MCAPI ExperiencePotion(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

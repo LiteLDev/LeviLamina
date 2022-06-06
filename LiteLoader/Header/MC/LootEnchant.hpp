@@ -32,6 +32,8 @@ public:
     /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTENCHANT
+#endif
     MCAPI LootEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
 
 protected:

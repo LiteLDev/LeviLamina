@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBMITCALLBACK
+#endif
     MCAPI long Register(void *, void ( *)(void *, struct XTaskQueueObject *, enum XTaskQueuePort), struct XTaskQueueRegistrationToken *);
     MCAPI void Unregister(struct XTaskQueueRegistrationToken);
 

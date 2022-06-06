@@ -27,6 +27,8 @@ public:
     /*1*/ virtual float getAmount(int, float) const;
     /*2*/ virtual bool shouldBuff(int, int) const;
     /*3*/ virtual int getTickInterval(int) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMPLIFIER
+#endif
 
 protected:
 

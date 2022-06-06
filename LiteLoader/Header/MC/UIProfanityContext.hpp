@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UIPROFANITYCONTEXT
+#endif
     MCAPI std::string filterProfanityFromString(enum ProfanityFilterContext, std::string const &, bool) const;
 
 protected:

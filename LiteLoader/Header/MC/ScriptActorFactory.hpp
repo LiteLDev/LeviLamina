@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTACTORFACTORY
+#endif
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptActor> createHandle(class Actor const *, class Scripting::WeakLifetimeScope const &);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptActor> getHandle(class Actor const *, class Scripting::WeakLifetimeScope const &);
 

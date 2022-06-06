@@ -74,13 +74,9 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool isInteractiveBlock() const{
-        bool (BellBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isInteractiveBlock@BellBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BELLBLOCK
+    MCVAPI bool isInteractiveBlock() const;
+#endif
     MCAPI BellBlock(std::string const &, int);
     MCAPI bool hasValidAttachment(class Block const &, class BlockSource &, class BlockPos const &) const;
 

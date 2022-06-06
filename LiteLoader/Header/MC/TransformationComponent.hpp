@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRANSFORMATIONCOMPONENT
+#endif
     MCAPI TransformationComponent();
     MCAPI int getDelayTicks() const;
     MCAPI void initFromDefinition(class Actor &);

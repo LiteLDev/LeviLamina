@@ -53,13 +53,9 @@ public:
     /*116*/ virtual class Item & setIcon(std::string const &, int);
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /*128*/ virtual enum Potion::PotionType getPotionType() const;
-    /*
-    inline bool uniqueAuxValues() const{
-        bool (PotionItem::*rv)() const;
-        *((void**)&rv) = dlsym("?uniqueAuxValues@PotionItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_POTIONITEM
+    MCVAPI bool uniqueAuxValues() const;
+#endif
     MCAPI PotionItem(std::string const &, int);
     MCAPI static void applyEffect(class ThrownPotion *, class ItemStack const &);
     MCAPI static bool isDestructivePotion(enum Potion::PotionVariant);

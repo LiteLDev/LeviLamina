@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOSSCOMPONENT
+#endif
     MCAPI BossComponent(class BossComponent &&);
     MCAPI BossComponent();
     MCAPI void addPlayerToParty(class mce::UUID, int);

@@ -66,18 +66,10 @@ public:
     /*345*/ virtual void __unk_vfn_345();
     /*357*/ virtual void tickDeath();
     /*359*/ virtual void __unk_vfn_359();
-    /*
-    inline bool isFishable() const{
-        bool (EnderDragon::*rv)() const;
-        *((void**)&rv) = dlsym("?isFishable@EnderDragon@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canExistInPeaceful() const{
-        bool (EnderDragon::*rv)() const;
-        *((void**)&rv) = dlsym("?canExistInPeaceful@EnderDragon@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERDRAGON
+    MCVAPI bool canExistInPeaceful() const;
+    MCVAPI bool isFishable() const;
+#endif
     MCAPI EnderDragon(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void dieNaturally();
     MCAPI int findClosestNode(class Vec3 const &);

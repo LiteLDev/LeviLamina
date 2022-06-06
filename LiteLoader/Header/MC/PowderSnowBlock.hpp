@@ -73,23 +73,11 @@ public:
     /*182*/ virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool canBeSilkTouched() const{
-        bool (PowderSnowBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeSilkTouched@PowderSnowBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool causesFreezeEffect() const{
-        bool (PowderSnowBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?causesFreezeEffect@PowderSnowBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canBeDestroyedByWaterSpread() const{
-        bool (PowderSnowBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeDestroyedByWaterSpread@PowderSnowBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_POWDERSNOWBLOCK
+    MCVAPI bool canBeDestroyedByWaterSpread() const;
+    MCVAPI bool canBeSilkTouched() const;
+    MCVAPI bool causesFreezeEffect() const;
+#endif
     MCAPI PowderSnowBlock(std::string const &, int, class Material const &);
     MCAPI static bool canWalkOnTop(struct IActorMovementProxy const &);
     MCAPI static bool canWalkOnTop(class GetCollisionShapeInterface const &);

@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTIESSETTINGS
+#endif
     MCAPI PropertiesSettings(std::string const &);
     MCAPI bool allowCheats() const;
     MCAPI bool canEmitTelemetryEvents() const;

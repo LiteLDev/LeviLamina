@@ -67,18 +67,10 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool isInteractiveBlock() const{
-        bool (EndPortalFrameBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isInteractiveBlock@EndPortalFrameBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool hasComparatorSignal() const{
-        bool (EndPortalFrameBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?hasComparatorSignal@EndPortalFrameBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDPORTALFRAMEBLOCK
+    MCVAPI bool hasComparatorSignal() const;
+    MCVAPI bool isInteractiveBlock() const;
+#endif
     MCAPI EndPortalFrameBlock(std::string const &, int);
 
 protected:

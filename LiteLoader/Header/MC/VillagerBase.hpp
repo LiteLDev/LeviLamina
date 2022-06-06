@@ -58,18 +58,10 @@ public:
     /*345*/ virtual void __unk_vfn_345();
     /*355*/ virtual void _serverAiMobStep();
     /*359*/ virtual void __unk_vfn_359();
-    /*
-    inline bool interactPreventDefault(){
-        bool (VillagerBase::*rv)();
-        *((void**)&rv) = dlsym("?interactPreventDefault@VillagerBase@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool useNewAi() const{
-        bool (VillagerBase::*rv)() const;
-        *((void**)&rv) = dlsym("?useNewAi@VillagerBase@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGERBASE
+    MCVAPI bool interactPreventDefault();
+    MCVAPI bool useNewAi() const;
+#endif
     MCAPI VillagerBase(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void consumeLoveFood();
     MCAPI int getBreedingStackIndex() const;

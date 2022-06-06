@@ -35,6 +35,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RELATIVEFLOAT
+#endif
     MCAPI RelativeFloat(float, bool);
     MCAPI RelativeFloat();
     MCAPI float getValue(float) const;

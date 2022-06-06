@@ -62,13 +62,9 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*193*/ virtual int getExtraRenderLayers() const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool isBounceBlock() const{
-        bool (SlimeBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isBounceBlock@SlimeBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIMEBLOCK
+    MCVAPI bool isBounceBlock() const;
+#endif
     MCAPI SlimeBlock(std::string const &, int, class Material const &);
 
 protected:

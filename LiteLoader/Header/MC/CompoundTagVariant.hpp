@@ -83,6 +83,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAGVARIANT
+#endif
     MCAPI CompoundTagVariant(class Tag &&);
     MCAPI class Tag & emplace(class Tag &&);
     MCAPI class Tag * get();

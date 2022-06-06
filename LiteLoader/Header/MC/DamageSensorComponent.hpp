@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAMAGESENSORCOMPONENT
+#endif
     MCAPI DamageSensorComponent();
     MCAPI enum ActorDamageCause getCause() const;
     MCAPI float getDamageModifier();

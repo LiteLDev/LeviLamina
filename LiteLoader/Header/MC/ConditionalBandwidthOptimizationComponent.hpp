@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONDITIONALBANDWIDTHOPTIMIZATIONCOMPONENT
+#endif
     MCAPI ConditionalBandwidthOptimizationComponent(class ConditionalBandwidthOptimizationComponent &&);
     MCAPI ConditionalBandwidthOptimizationComponent(class ConditionalBandwidthOptimizationComponent const &);
     MCAPI struct ConditionalBandwidthOptimization getCurrentOptimizationValues(class Actor &);

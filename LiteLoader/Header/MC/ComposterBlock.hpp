@@ -82,13 +82,9 @@ public:
     /*206*/ virtual void __unk_vfn_206();
     /*207*/ virtual void __unk_vfn_207();
     /*208*/ MCAPI std::string const & getDescriptionId() const;
-    /*
-    inline bool hasComparatorSignal() const{
-        bool (ComposterBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?hasComparatorSignal@ComposterBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOSTERBLOCK
+    MCVAPI bool hasComparatorSignal() const;
+#endif
     MCAPI ComposterBlock(std::string const &, int);
     MCAPI static bool addItem(class Container &, int, class ItemStack &, class BlockSource &, class Block const &, class BlockPos const &);
     MCAPI static int addItems(class ItemStack const &, int, class BlockSource &, class Block const &, class BlockPos const &);

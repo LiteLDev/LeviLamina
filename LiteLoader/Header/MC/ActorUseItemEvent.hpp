@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORUSEITEMEVENT
+#endif
     MCAPI ~ActorUseItemEvent();
 
 protected:

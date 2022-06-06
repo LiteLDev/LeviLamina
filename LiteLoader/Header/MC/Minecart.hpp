@@ -68,18 +68,10 @@ public:
     /*283*/ virtual int getDefaultDisplayOffset() const;
     /*284*/ virtual void applyNaturalSlowdown(class BlockSource &);
     /*285*/ virtual void _lazyInitDisplayBlock();
-    /*
-    inline bool canMakeStepSound() const{
-        bool (Minecart::*rv)() const;
-        *((void**)&rv) = dlsym("?canMakeStepSound@Minecart@@EEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int getDefaultDisplayData() const{
-        int (Minecart::*rv)() const;
-        *((void**)&rv) = dlsym("?getDefaultDisplayData@Minecart@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECART
+    MCVAPI bool canMakeStepSound() const;
+    MCVAPI int getDefaultDisplayData() const;
+#endif
     MCAPI Minecart(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void setCustomDisplay(bool);
     MCAPI void setDisplayBlock(class Block const &);

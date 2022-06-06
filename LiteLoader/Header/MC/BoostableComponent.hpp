@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOOSTABLECOMPONENT
+#endif
     MCAPI BoostableComponent();
     MCAPI int getBoostTime() const;
     MCAPI int getBoostTimeTotal() const;

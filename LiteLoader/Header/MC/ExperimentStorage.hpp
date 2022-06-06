@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIMENTSTORAGE
+#endif
     MCAPI bool isAnyToggleEnabled() const;
     MCAPI bool wereAnyExperimentsEverToggled() const;
     MCAPI ~ExperimentStorage();

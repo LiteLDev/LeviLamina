@@ -24,6 +24,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARSER
+#endif
     MCAPI static void parse(class Json::Value const &, class SemVersion const &, unsigned char &, unsigned char);
     MCAPI static void parse(class Json::Value const &, class SemVersion const &, int &, char const *, int);
     MCAPI static void parse(class Json::Value const &, class SemVersion const &, unsigned int &, char const *, unsigned int);

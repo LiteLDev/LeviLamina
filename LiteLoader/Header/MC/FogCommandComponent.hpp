@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOGCOMMANDCOMPONENT
+#endif
     MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI std::vector<std::string> getFogSettingsStack() const;
     MCAPI bool popFogSetting(std::string const &);

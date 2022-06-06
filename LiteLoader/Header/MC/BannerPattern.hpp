@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERPATTERN
+#endif
     MCAPI bool getIgnoreAux() const;
     MCAPI class ItemStack const & getIngredientItem() const;
     MCAPI std::string const & getName() const;

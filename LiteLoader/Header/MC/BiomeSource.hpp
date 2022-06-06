@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMESOURCE
+#endif
     MCAPI static class BlockPosIterator getAreaIterator(class BoundingBox const &, unsigned int);
 
 protected:

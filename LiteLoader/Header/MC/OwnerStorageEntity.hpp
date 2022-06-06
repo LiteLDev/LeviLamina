@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OWNERSTORAGEENTITY
+#endif
 
 protected:
     MCAPI OwnerStorageEntity(class OwnerStorageEntity &&);

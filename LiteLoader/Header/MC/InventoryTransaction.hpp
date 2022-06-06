@@ -27,6 +27,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYTRANSACTION
+#endif
     MCAPI InventoryTransaction(class InventoryTransaction const &);
     MCAPI void _logTransaction(bool) const;
     MCAPI void addAction(class InventoryAction const &);

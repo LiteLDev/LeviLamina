@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDOUTPUTMESSAGE
+#endif
     MCAPI CommandOutputMessage(class CommandOutputMessage &&);
     MCAPI CommandOutputMessage(class CommandOutputMessage const &);
     MCAPI CommandOutputMessage(enum CommandOutputMessageType, std::string const &, std::vector<std::string> &&);

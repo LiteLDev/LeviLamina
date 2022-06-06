@@ -24,6 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~ChestContainerScreenValidator();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTCONTAINERSCREENVALIDATOR
+#endif
     MCAPI ChestContainerScreenValidator();
 
 protected:

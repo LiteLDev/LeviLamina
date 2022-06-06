@@ -21,13 +21,9 @@ public:
 #endif
 
 public:
-    /*
-    inline  ~IEntityRegistryOwner(){
-         (IEntityRegistryOwner::*rv)();
-        *((void**)&rv) = dlsym("??1IEntityRegistryOwner@@MEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IENTITYREGISTRYOWNER
+    MCVAPI ~IEntityRegistryOwner();
+#endif
 
 protected:
 

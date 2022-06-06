@@ -83,13 +83,9 @@ public:
     /*368*/ virtual bool isTailMoving() const;
     /*369*/ virtual void makeMad();
     /*370*/ virtual bool tameToPlayer(class Player &, bool);
-    /*
-    inline bool useNewAi() const{
-        bool (Horse::*rv)() const;
-        *((void**)&rv) = dlsym("?useNewAi@Horse@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HORSE
+    MCVAPI bool useNewAi() const;
+#endif
     MCAPI Horse(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI static int const DONKEY_CHEST_COUNT;
     MCAPI static class Vec3 getInterpolatedRidingOffset(class Vec2 const &, float, float, float);

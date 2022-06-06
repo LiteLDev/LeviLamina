@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAMEABLEDEFINITION
+#endif
     MCAPI TameableDefinition();
     MCAPI void addTamingItemByName(std::string const &);
     MCAPI void initialize(class EntityContext &, class TameableComponent &) const;

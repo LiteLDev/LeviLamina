@@ -16,6 +16,8 @@ class IndexSet {
 #undef AFTER_EXTRA
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INDEXSET
+#endif
     MCAPI IndexSet();
     MCAPI IndexSet(class IndexSet &&);
     MCAPI IndexSet(class IndexSet const &);

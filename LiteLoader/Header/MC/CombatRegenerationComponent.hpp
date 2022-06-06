@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMBATREGENERATIONCOMPONENT
+#endif
     MCAPI void tick(class Actor &);
 
 protected:

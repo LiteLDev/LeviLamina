@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OREVEINIFIER
+#endif
     MCAPI OreVeinifier(class OreVeinifierNoises const &);
     MCAPI void fillNoiseAtPos(class Vec3 const &, int, float);
     MCAPI class Block const * getVeinBlockOrFallback(class Vec3, class Block const *) const;

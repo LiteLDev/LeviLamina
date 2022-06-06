@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMIZE
+#endif
     MCAPI Randomize(class Random &);
     MCAPI bool chance(int, int) const;
     MCAPI bool chanceAllButOneIn(int) const;

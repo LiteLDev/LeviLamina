@@ -24,6 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~HorseContainerScreenValidator();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HORSECONTAINERSCREENVALIDATOR
+#endif
     MCAPI HorseContainerScreenValidator();
 
 protected:

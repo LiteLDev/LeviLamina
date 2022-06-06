@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAMEABLEDEFINITION
+#endif
     MCAPI NameableDefinition();
     MCAPI void addNameAction(struct NameAction const &);
     MCAPI void initialize(class EntityContext &, class NameableComponent &) const;

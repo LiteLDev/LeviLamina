@@ -71,23 +71,11 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
-    /*
-    inline bool canBeSilkTouched() const{
-        bool (ChemistryTableBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeSilkTouched@ChemistryTableBlock@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isCraftingBlock() const{
-        bool (ChemistryTableBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isCraftingBlock@ChemistryTableBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isInteractiveBlock() const{
-        bool (ChemistryTableBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isInteractiveBlock@ChemistryTableBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYTABLEBLOCK
+    MCVAPI bool canBeSilkTouched() const;
+    MCVAPI bool isCraftingBlock() const;
+    MCVAPI bool isInteractiveBlock() const;
+#endif
     MCAPI ChemistryTableBlock(std::string const &, int);
     MCAPI static class ItemInstance getItemForType(enum ChemistryTableType, int);
     MCAPI static bool isUIValidForPlayer(class BlockPos const &, class Player &, float, enum ChemistryTableType);

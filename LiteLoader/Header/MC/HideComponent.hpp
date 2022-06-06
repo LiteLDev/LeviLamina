@@ -22,6 +22,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HIDECOMPONENT
+#endif
     MCAPI HideComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI void initFromDefinition(class Actor &);

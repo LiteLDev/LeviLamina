@@ -70,13 +70,9 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool waterSpreadCausesSpawn() const{
-        bool (VineBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@VineBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VINEBLOCK
+    MCVAPI bool waterSpreadCausesSpawn() const;
+#endif
     MCAPI VineBlock(std::string const &, int);
     MCAPI void growDown(class BlockSource &, class BlockPos const &, int) const;
     MCAPI void growSideways(class BlockSource &, class BlockPos const &, int) const;

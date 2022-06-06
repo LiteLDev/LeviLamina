@@ -23,6 +23,8 @@ public:
 
 public:
     /*0*/ virtual ~ScriptIsHiddenWhenInvisibleComponent();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTISHIDDENWHENINVISIBLECOMPONENT
+#endif
     MCAPI static class HashedString const & getHashedName();
 
 protected:

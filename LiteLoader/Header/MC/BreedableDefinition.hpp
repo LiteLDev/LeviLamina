@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREEDABLEDEFINITION
+#endif
     MCAPI BreedableDefinition();
     MCAPI void addBreedItem(class ItemDescriptor const &);
     MCAPI void addBreedableType(struct BreedableType const &);

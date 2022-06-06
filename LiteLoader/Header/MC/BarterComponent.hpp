@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARTERCOMPONENT
+#endif
     MCAPI void onBarterItemPickedUp(class Actor const &, struct ActorUniqueID, short);
     MCAPI void stopBarter();
 

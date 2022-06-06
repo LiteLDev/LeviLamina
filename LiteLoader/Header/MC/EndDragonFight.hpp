@@ -30,6 +30,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDDRAGONFIGHT
+#endif
     MCAPI EndDragonFight(class BlockSource &);
     MCAPI void loadData(class CompoundTag const &);
     MCAPI void onCrystalDestroyed(class EnderCrystal const &, class ActorDamageSource const &);

@@ -25,6 +25,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSOLECHUNKBLENDER
+#endif
     MCAPI ConsoleChunkBlender();
     MCAPI void blendChunk(class LevelChunk &, class LevelChunk &, enum ConsoleChunkBlender::BlenderMode);
     MCAPI void setInterpolants(float, float, float, float);

@@ -27,6 +27,8 @@ public:
     /*1*/ virtual enum EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const &);
     /*2*/ virtual enum EventResult onMessage(struct MessageEvent const &);
     /*3*/ virtual enum EventResult onEvent(struct ChatEvent const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSERVERNETWORKEVENTLISTENER
+#endif
     MCAPI ScriptServerNetworkEventListener(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 
 protected:

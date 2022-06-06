@@ -26,6 +26,8 @@ public:
 public:
     /*0*/ virtual ~RuntimeIdentifierDescription();
     /*1*/ virtual char const * getJsonName() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUNTIMEIDENTIFIERDESCRIPTION
+#endif
     MCAPI void parse(class Json::Value const &);
 
 protected:

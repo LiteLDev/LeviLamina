@@ -24,6 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~ScriptDebugCommand();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEBUGCOMMAND
+#endif
     MCAPI ScriptDebugCommand();
 
 protected:

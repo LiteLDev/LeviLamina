@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ASYNCTRACKER
+#endif
     MCAPI bool hasAsyncOperationTimedOut();
 
 protected:

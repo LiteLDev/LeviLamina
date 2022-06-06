@@ -23,13 +23,9 @@ public:
 #endif
 
 public:
-    /*
-    inline  ~ITreeFeature(){
-         (ITreeFeature::*rv)();
-        *((void**)&rv) = dlsym("??1ITreeFeature@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITREEFEATURE
+    MCVAPI ~ITreeFeature();
+#endif
 
 protected:
     MCAPI class std::optional<class BlockPos> _place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;

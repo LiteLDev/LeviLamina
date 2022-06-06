@@ -21,13 +21,9 @@ public:
 #endif
 
 public:
-    /*
-    inline  ~AddActorBasePacket(){
-         (AddActorBasePacket::*rv)();
-        *((void**)&rv) = dlsym("??1AddActorBasePacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDACTORBASEPACKET
+    MCVAPI ~AddActorBasePacket();
+#endif
 
 protected:
 

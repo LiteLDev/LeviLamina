@@ -78,23 +78,11 @@ public:
     /*195*/ virtual struct Brightness getLightEmission(class Block const &) const;
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
-    /*
-    inline bool canBeSilkTouched() const{
-        bool (SeaPickle::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeSilkTouched@SeaPickle@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool waterSpreadCausesSpawn() const{
-        bool (SeaPickle::*rv)() const;
-        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@SeaPickle@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool hasVariableLighting() const{
-        bool (SeaPickle::*rv)() const;
-        *((void**)&rv) = dlsym("?hasVariableLighting@SeaPickle@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEAPICKLE
+    MCVAPI bool canBeSilkTouched() const;
+    MCVAPI bool hasVariableLighting() const;
+    MCVAPI bool waterSpreadCausesSpawn() const;
+#endif
     MCAPI SeaPickle(std::string const &, int);
 
 protected:

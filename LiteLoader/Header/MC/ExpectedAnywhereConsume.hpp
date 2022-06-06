@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPECTEDANYWHERECONSUME
+#endif
     MCAPI ExpectedAnywhereConsume(class ItemStack const &, unsigned int);
 
 protected:

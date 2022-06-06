@@ -30,6 +30,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCHUNKPOS
+#endif
     MCAPI SubChunkPos(class BlockPos const &);
     MCAPI operator class BlockPos() const;
     MCAPI static class SubChunkPos const MAX;

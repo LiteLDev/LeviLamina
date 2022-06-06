@@ -71,13 +71,9 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*
-    inline bool canBeSilkTouched() const{
-        bool (LiquidBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeSilkTouched@LiquidBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIQUIDBLOCK
+    MCVAPI bool canBeSilkTouched() const;
+#endif
     MCAPI LiquidBlock(std::string const &, int, class Material const &);
     MCAPI int getTickDelay(class BlockSource &) const;
     MCAPI static float getHeightFromDepth(int);

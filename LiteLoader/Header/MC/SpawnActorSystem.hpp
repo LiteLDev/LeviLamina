@@ -26,6 +26,8 @@ public:
     /*0*/ virtual ~SpawnActorSystem();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void tick(class EntityRegistry &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNACTORSYSTEM
+#endif
 
 protected:
 

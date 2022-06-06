@@ -23,6 +23,8 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORLEGACYSAVECONVERTER
+#endif
     MCAPI static void convertSave(class Actor &, class CompoundTag const &);
 
 protected:

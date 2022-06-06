@@ -21,13 +21,9 @@ public:
 #endif
 
 public:
-    /*
-    inline  ~IContentTierManager(){
-         (IContentTierManager::*rv)();
-        *((void**)&rv) = dlsym("??1IContentTierManager@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTENTTIERMANAGER
+    MCVAPI ~IContentTierManager();
+#endif
 
 protected:
 
