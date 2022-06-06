@@ -128,7 +128,15 @@ inline void OutputError(std::string errorMsg, int errorCode, std::string errorWh
     logger.error("Error: Code [{}] {}", errorCode, errorWhat);
     logger.error("In Event ({})", eventName);
     if (!pluginName.empty())
-        logger.error("In Plugin <{}>", pluginName);
+    {
+        auto plugin = LL::getPlugin(pluginName);
+        if (plugin) {
+            logger.error("In Plugin <{} {}>", plugin->name, plugin->version.toString());
+        }
+        else {
+            logger.error("In Plugin <{}>", pluginName);
+        }
+    }
 }
 
 template<typename EVENT>
