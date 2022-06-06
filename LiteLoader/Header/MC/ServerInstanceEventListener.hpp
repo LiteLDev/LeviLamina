@@ -22,6 +22,7 @@ public:
     ServerInstanceEventListener() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCEEVENTLISTENER
 public:
@@ -34,7 +35,6 @@ public:
     MCVAPI enum EventResult onServerUpdateEnd(class ServerInstance &);
     MCVAPI enum EventResult onStartLeaveGame(class ServerInstance &);
 #endif
-
 
 
 };

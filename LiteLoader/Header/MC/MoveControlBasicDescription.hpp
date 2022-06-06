@@ -23,6 +23,7 @@ public:
     MoveControlBasicDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~MoveControlBasicDescription();
@@ -31,7 +32,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROLBASICDESCRIPTION
 public:
 #endif
-
 
 
 };

@@ -21,6 +21,7 @@ public:
     MoveToNode(class MoveToNode const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MoveToNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
@@ -29,7 +30,6 @@ public:
 public:
 #endif
     MCAPI MoveToNode();
-
 
 
 };

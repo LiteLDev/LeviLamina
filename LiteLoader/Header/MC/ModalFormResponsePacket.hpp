@@ -25,6 +25,7 @@ public:
     ModalFormResponsePacket(class ModalFormResponsePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ModalFormResponsePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI ModalFormResponsePacket();
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     PortalBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PortalBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -78,7 +79,6 @@ public:
     MCAPI PortalBlock(std::string const &, int);
     MCAPI void tryMatchPortalRecordToFrameBlocksContainingPos(class BlockSource &, class BlockPos const &) const;
     MCAPI static bool trySpawnPortal(class BlockSource &, class BlockPos const &);
-
 
 
 };

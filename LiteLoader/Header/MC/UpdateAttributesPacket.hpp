@@ -22,6 +22,7 @@ public:
     UpdateAttributesPacket(class UpdateAttributesPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~UpdateAttributesPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI UpdateAttributesPacket(class Actor const &, std::vector<class AttributeInstanceHandle> const &);
     MCAPI UpdateAttributesPacket();
-
 
 
 };

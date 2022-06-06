@@ -48,5 +48,6 @@ public:
 protected:
 
 private:
+    MCAPI static struct ActorUniqueID const INVALID_ID;
 
 };

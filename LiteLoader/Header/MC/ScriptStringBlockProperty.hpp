@@ -22,6 +22,7 @@ public:
     ScriptStringBlockProperty() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSTRINGBLOCKPROPERTY
 public:
@@ -32,7 +33,6 @@ public:
     MCAPI class ScriptStringBlockProperty & operator=(class ScriptStringBlockProperty &&);
     MCAPI class Scripting::Result<void> setState(std::string);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptStringBlockProperty> bind(struct Scripting::Version);
-
 
 
 };

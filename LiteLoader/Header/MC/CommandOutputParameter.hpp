@@ -21,6 +21,7 @@ public:
     CommandOutputParameter() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDOUTPUTPARAMETER
 public:
@@ -42,7 +43,6 @@ public:
     MCAPI CommandOutputParameter(enum CommandOutputParameter::NoCountType);
     MCAPI CommandOutputParameter(bool);
     MCAPI ~CommandOutputParameter();
-
 
 
 };

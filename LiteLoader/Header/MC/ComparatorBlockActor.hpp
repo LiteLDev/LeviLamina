@@ -23,6 +23,7 @@ public:
     ComparatorBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ComparatorBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -41,7 +42,6 @@ public:
 public:
 #endif
     MCAPI ComparatorBlockActor(class BlockPos const &);
-
 
 
 };

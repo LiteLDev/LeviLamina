@@ -24,6 +24,7 @@ public:
     ThrownPotion() = delete;
 #endif
 
+
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~ThrownPotion();
@@ -58,8 +59,11 @@ public:
     MCAPI ThrownPotion(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI short getPotionId() const;
     MCAPI void setLinger(bool);
-    MCAPI static float const SPLASH_RANGE;
 
+//private:
+
+private:
+    MCAPI static float const SPLASH_RANGE;
 
 
 };

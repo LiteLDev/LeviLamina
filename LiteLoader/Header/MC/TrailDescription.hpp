@@ -22,6 +22,7 @@ public:
     TrailDescription(class TrailDescription const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~TrailDescription();
@@ -31,7 +32,6 @@ public:
 public:
 #endif
     MCAPI TrailDescription();
-
 
 
 };

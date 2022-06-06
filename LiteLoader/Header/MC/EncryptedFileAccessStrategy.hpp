@@ -24,6 +24,7 @@ public:
     EncryptedFileAccessStrategy() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EncryptedFileAccessStrategy();
     /*4*/ virtual bool isWritable() const;
@@ -47,5 +48,10 @@ public:
 //private:
     MCAPI static bool _getContentIdentityFromEncryptedStream(std::string &, class ContentIdentity &);
     MCAPI static void _transformStream(std::string &, std::string const &, unsigned __int64);
+
+protected:
+
+private:
+
 
 };

@@ -22,6 +22,7 @@ public:
     ScriptActorEventListener() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptActorEventListener();
     /*1*/ virtual enum EventResult onEvent(struct ActorNotificationEvent const &);
@@ -62,7 +63,6 @@ public:
 public:
 #endif
     MCAPI ScriptActorEventListener(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
-
 
 
 };

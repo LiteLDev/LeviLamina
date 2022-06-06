@@ -23,6 +23,7 @@ public:
     BonusChestFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BonusChestFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -31,8 +32,10 @@ public:
 public:
 #endif
 
-
 //private:
     MCAPI bool _place(class BlockSource &, class BlockPos const &, class Random &) const;
+
+private:
+
 
 };

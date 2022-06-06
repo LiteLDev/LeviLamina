@@ -22,6 +22,7 @@ public:
     GuiDataPickItemPacket(class GuiDataPickItemPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GuiDataPickItemPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI GuiDataPickItemPacket(std::string const &, std::string const &, int const &);
     MCAPI GuiDataPickItemPacket();
-
 
 
 };

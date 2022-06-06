@@ -21,6 +21,7 @@ public:
     InverterNode(class InverterNode const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~InverterNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
@@ -29,7 +30,6 @@ public:
 public:
 #endif
     MCAPI InverterNode();
-
 
 
 };

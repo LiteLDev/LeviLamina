@@ -22,6 +22,7 @@ public:
     EconomyTradeableComponent() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ECONOMYTRADEABLECOMPONENT
 public:
@@ -61,7 +62,6 @@ public:
     MCAPI void tryToTransferOldOffers(class MerchantRecipeList *);
     MCAPI static bool isUseNewTradeScreen(class Actor const &);
 
-
 //private:
     MCAPI bool _generateTrades();
     MCAPI struct TradeTable * _getTradeTable();
@@ -69,5 +69,8 @@ public:
     MCAPI void _rearrangeTradeList(std::vector<struct Trade> &, unsigned __int64);
     MCAPI void _setMaxTradeTier(int);
     MCAPI void _setTradeTier(int);
+
+private:
+
 
 };

@@ -22,6 +22,7 @@ public:
     SyncActorPropertyPacket(class SyncActorPropertyPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SyncActorPropertyPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,7 +35,6 @@ public:
 #endif
     MCAPI SyncActorPropertyPacket(class Actor const &);
     MCAPI SyncActorPropertyPacket();
-
 
 
 };

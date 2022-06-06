@@ -23,6 +23,7 @@ public:
     TestForCommand() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TestForCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -30,7 +31,6 @@ public:
 public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
 
 
 };

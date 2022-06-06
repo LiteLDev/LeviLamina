@@ -23,6 +23,7 @@ public:
     BaseScriptBlockLiquidContainerComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BaseScriptBlockLiquidContainerComponent();
     /*4*/ virtual class Scripting::Result<void> setFillLevel(int);
@@ -36,6 +37,8 @@ public:
     MCAPI class CauldronBlock const * _tryGetCauldronBlock();
     MCAPI class CauldronBlockActor * _tryGetCauldronBlockActor();
     MCAPI static enum GameTestFluidType _getActualCauldronLiquidType(class BlockSource &, class BlockPos);
+
+protected:
 
 
 };

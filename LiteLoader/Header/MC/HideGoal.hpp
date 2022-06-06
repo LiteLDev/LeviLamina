@@ -23,6 +23,7 @@ public:
     HideGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HideGoal();
     /*1*/ virtual bool canUse();
@@ -39,7 +40,6 @@ public:
 public:
 #endif
     MCAPI HideGoal(class Mob &, float, float, float, enum POIType);
-
 
 
 };

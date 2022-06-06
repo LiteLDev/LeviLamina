@@ -22,6 +22,7 @@ public:
     SneezeGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SneezeGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI SneezeGoal(class Mob &, float, float, float, std::string const &, std::string const &, std::string const &, float, std::vector<struct MobDescriptor> const &, float);
-
 
 
 };

@@ -22,14 +22,17 @@ public:
     BalloonableComponent() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BALLOONABLECOMPONENT
 public:
 #endif
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
 
-
 //private:
     MCAPI bool attach(class Actor &, class Actor &, class ItemStack &);
+
+private:
+
 
 };

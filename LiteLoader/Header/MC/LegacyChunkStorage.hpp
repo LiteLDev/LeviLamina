@@ -23,6 +23,7 @@ public:
     LegacyChunkStorage() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LegacyChunkStorage();
     /*10*/ virtual void loadChunk(class LevelChunk &, bool);
@@ -33,12 +34,14 @@ public:
 #endif
     MCAPI LegacyChunkStorage(std::unique_ptr<class ChunkSource>, class LevelStorage &, enum StorageVersion, class Biome &);
 
-
 //private:
     MCAPI bool _isImported(class ChunkPos const &);
     MCAPI bool _loadChunk(class LevelChunk &);
     MCAPI void _loadEntities();
     MCAPI void _markChunkAsImported(class ChunkPos const &);
     MCAPI bool _openRegionFile();
+
+private:
+
 
 };

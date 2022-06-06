@@ -22,6 +22,7 @@ public:
     SetLocalPlayerAsInitializedPacket(class SetLocalPlayerAsInitializedPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SetLocalPlayerAsInitializedPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI SetLocalPlayerAsInitializedPacket();
-
 
 
 };

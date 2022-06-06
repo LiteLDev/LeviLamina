@@ -24,6 +24,7 @@ public:
     Parrot() = delete;
 #endif
 
+
 public:
     /*9*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Parrot();
@@ -70,7 +71,6 @@ public:
     MCAPI Parrot(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI float getFlap() const;
     MCAPI float getFlapSpeed() const;
-
 
 
 };

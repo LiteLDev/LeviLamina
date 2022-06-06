@@ -21,6 +21,7 @@ public:
     AttackNode(class AttackNode const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AttackNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
@@ -29,7 +30,6 @@ public:
 public:
 #endif
     MCAPI AttackNode();
-
 
 
 };

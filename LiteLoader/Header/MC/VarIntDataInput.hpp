@@ -22,6 +22,7 @@ public:
     VarIntDataInput() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~VarIntDataInput();
     /*1*/ virtual void __unk_vfn_1();
@@ -39,7 +40,6 @@ public:
     MCVAPI std::string readLongString();
     MCVAPI std::string readString();
 #endif
-
 
 
 };

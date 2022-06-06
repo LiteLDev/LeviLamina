@@ -22,6 +22,7 @@ public:
     PlaySoundPacket(class PlaySoundPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PlaySoundPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI PlaySoundPacket(std::string, class Vec3 const &, float, float);
     MCAPI PlaySoundPacket();
-
 
 
 };

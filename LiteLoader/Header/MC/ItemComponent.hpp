@@ -22,6 +22,7 @@ public:
     ItemComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemComponent();
     /*1*/ virtual bool checkComponentDataForContentErrors() const;
@@ -38,7 +39,6 @@ public:
 #endif
     MCAPI ItemComponent(class ComponentItem *);
     MCAPI static void bindItemComponentType();
-
 
 
 };

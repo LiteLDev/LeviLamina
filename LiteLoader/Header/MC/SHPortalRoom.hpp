@@ -23,6 +23,7 @@ public:
     SHPortalRoom() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SHPortalRoom();
     /*3*/ virtual enum StructurePieceType getType() const;
@@ -31,7 +32,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHPORTALROOM
 public:
 #endif
-
 
 
 };

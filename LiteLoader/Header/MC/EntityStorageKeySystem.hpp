@@ -20,6 +20,7 @@ public:
     EntityStorageKeySystem() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSTORAGEKEYSYSTEM
 public:
@@ -28,7 +29,6 @@ public:
     MCAPI static bool getIsDirtySinceSerialization(class EntityContext &, std::string const &);
     MCAPI static void setDirtyFromNonSerializedState(class EntityContext &);
     MCAPI static void setLastSerializedState(class EntityContext &, std::string const &);
-
 
 
 };

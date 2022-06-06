@@ -23,6 +23,7 @@ public:
     CameraShakeCommand() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CameraShakeCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -31,9 +32,11 @@ public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
 
-
 //private:
     MCAPI void _executeAdd(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void _executeStop(class CommandOrigin const &, class CommandOutput &) const;
+
+private:
+
 
 };

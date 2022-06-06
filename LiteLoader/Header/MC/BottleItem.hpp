@@ -24,6 +24,7 @@ public:
     BottleItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BottleItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -47,9 +48,11 @@ public:
 #endif
     MCAPI BottleItem(std::string const &, int);
 
-
 //private:
     MCAPI void _createBottledItem(class Actor &, class ItemStack &, class gsl::basic_string_span<char const, -1>) const;
     MCAPI void _fillBottleViaDispenser(class BlockSource &, class gsl::basic_string_span<char const, -1>, class Container &, int, class Vec3 const &, unsigned char) const;
+
+private:
+
 
 };

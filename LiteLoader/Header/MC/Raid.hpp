@@ -22,6 +22,7 @@ public:
     Raid() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAID
 public:
@@ -35,14 +36,16 @@ public:
     MCAPI void readAdditionalSaveData(class CompoundTag const &);
     MCAPI void tick();
     MCAPI ~Raid();
-    MCAPI static class Vec3 const INVALID_SPAWN_POINT;
-
+    MCAPI static unsigned char const NUM_GROUPS_ON_EASY;
+    MCAPI static unsigned char const NUM_GROUPS_ON_HARD;
+    MCAPI static unsigned char const NUM_GROUPS_ON_NORMAL;
 
 //private:
     MCAPI float _getTotalRaiderHealth() const;
     MCAPI void _tickGroupInPlay();
-    MCAPI static unsigned char const NUM_GROUPS_ON_EASY;
-    MCAPI static unsigned char const NUM_GROUPS_ON_HARD;
-    MCAPI static unsigned char const NUM_GROUPS_ON_NORMAL;
+
+private:
+    MCAPI static class Vec3 const INVALID_SPAWN_POINT;
+
 
 };

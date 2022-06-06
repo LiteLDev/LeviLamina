@@ -23,6 +23,7 @@ public:
     ScriptActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptActor();
     /*4*/ virtual class Scripting::Result<std::string> getNameTag() const;
@@ -70,6 +71,8 @@ public:
 
 //protected:
     MCAPI class Scripting::Result<struct Scripting::JSON> _runCommand(std::string const &, std::string const &, std::unique_ptr<class CommandOrigin>);
+
+protected:
 
 
 };

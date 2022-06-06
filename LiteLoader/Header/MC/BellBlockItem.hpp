@@ -24,6 +24,7 @@ public:
     BellBlockItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BellBlockItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -44,7 +45,6 @@ public:
 public:
 #endif
     MCAPI BellBlockItem(std::string const &, int);
-
 
 
 };

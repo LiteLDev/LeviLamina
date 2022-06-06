@@ -23,6 +23,7 @@ public:
     BiomeComponentFactory() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMECOMPONENTFACTORY
 public:
@@ -31,7 +32,6 @@ public:
     MCAPI void processDataComponents(class Biome &, class IWorldRegistriesProvider &, class CompoundTag &) const;
     MCAPI void processDataComponents(class Biome &, class IWorldRegistriesProvider &, class Json::Value &, class SemVersion const &) const;
     MCAPI void registrationFinished();
-
 
 
 };

@@ -24,6 +24,7 @@ public:
     Creeper() = delete;
 #endif
 
+
 public:
     /*14*/ virtual ~Creeper();
     /*40*/ virtual void __unk_vfn_40();
@@ -62,8 +63,10 @@ public:
     MCAPI float getSwelling(float) const;
     MCAPI static class Creeper * tryGetFromEntity(class EntityContext &, bool);
 
-
 //private:
     MCAPI void _setSwellDir(int);
+
+private:
+
 
 };

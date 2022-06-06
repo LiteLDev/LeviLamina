@@ -23,6 +23,7 @@ public:
     SurvivalMode() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SurvivalMode();
     /*1*/ virtual bool startDestroyBlock(class BlockPos const &, unsigned char, bool &);
@@ -41,11 +42,13 @@ public:
 public:
 #endif
     MCAPI SurvivalMode(class Player &);
-
+    MCAPI static bool mTrialHasEnded;
 
 //private:
     MCAPI void _messagePlayers(std::string);
     MCAPI void _showTrialReminder(bool);
-    MCAPI static bool mTrialHasEnded;
+
+private:
+
 
 };

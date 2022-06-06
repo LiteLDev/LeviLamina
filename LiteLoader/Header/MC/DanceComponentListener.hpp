@@ -23,6 +23,7 @@ public:
     DanceComponentListener() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DanceComponentListener();
     /*1*/ virtual void __unk_vfn_1();
@@ -55,7 +56,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DANCECOMPONENTLISTENER
 public:
 #endif
-
 
 
 };

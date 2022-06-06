@@ -22,6 +22,7 @@ public:
     BlockEventDispatcher() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTDISPATCHER
 public:
@@ -30,7 +31,6 @@ public:
     MCAPI class BlockEventDispatcherToken registerListener(class Vec3 const &, float, class std::function<void (class BlockPos const &, unsigned int, class Block const &, class Actor *)>);
     MCAPI void removeListener(int);
     MCAPI void updatePosition(int, class Vec3 const &);
-
 
 
 };

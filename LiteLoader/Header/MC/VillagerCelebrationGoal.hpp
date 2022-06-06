@@ -20,6 +20,7 @@ public:
     VillagerCelebrationGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~VillagerCelebrationGoal();
     /*1*/ virtual bool canUse();
@@ -34,9 +35,11 @@ public:
 #endif
     MCAPI VillagerCelebrationGoal(class Mob &);
 
-
 //private:
     MCAPI void _launchFirework();
     MCAPI void _setNextFireworkTick();
+
+private:
+
 
 };

@@ -19,6 +19,7 @@ public:
     NBTSchemaWriter(class NBTSchemaWriter const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NBTSchemaWriter();
     /*1*/ virtual bool write(std::string const &);
@@ -53,8 +54,10 @@ public:
 #endif
     MCAPI NBTSchemaWriter();
 
-
 //private:
     MCAPI bool _serializeTag(std::unique_ptr<class Tag>);
+
+private:
+
 
 };

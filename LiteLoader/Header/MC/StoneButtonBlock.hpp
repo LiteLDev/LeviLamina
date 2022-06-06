@@ -23,6 +23,7 @@ public:
     StoneButtonBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StoneButtonBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -62,7 +63,6 @@ public:
 public:
 #endif
     MCAPI StoneButtonBlock(std::string const &, int);
-
 
 
 };

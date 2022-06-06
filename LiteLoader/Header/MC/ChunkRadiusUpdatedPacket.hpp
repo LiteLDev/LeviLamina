@@ -22,6 +22,7 @@ public:
     ChunkRadiusUpdatedPacket(class ChunkRadiusUpdatedPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ChunkRadiusUpdatedPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI ChunkRadiusUpdatedPacket(int);
     MCAPI ChunkRadiusUpdatedPacket();
-
 
 
 };

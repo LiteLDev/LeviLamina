@@ -22,6 +22,7 @@ public:
     ScriptPlugin() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptPlugin();
     /*1*/ virtual class std::optional<std::string> onLoadScript(std::string const &);
@@ -40,8 +41,10 @@ public:
     MCAPI std::vector<std::string> reportErrors() const;
     MCAPI void setScriptContext(class Scripting::ScriptContext &&);
 
-
 //private:
     MCAPI class std::optional<std::string> _loadScript(std::string const &);
+
+private:
+
 
 };

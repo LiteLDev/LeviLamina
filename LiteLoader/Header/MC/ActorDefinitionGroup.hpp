@@ -30,6 +30,7 @@ public:
     ActorDefinitionGroup() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONGROUP
 public:
@@ -55,5 +56,10 @@ public:
     MCAPI void _loadTemplates(class Level &, std::string const &, struct DeserializeDataParams);
     MCAPI void _setupCommonResourceDefinitionMap(class ActorDefinition &, class Level &);
     MCAPI void _setupPropertyGroups(class Level &, class ActorDefinition const &);
+
+protected:
+
+private:
+
 
 };

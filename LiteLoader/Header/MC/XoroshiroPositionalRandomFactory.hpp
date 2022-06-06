@@ -24,6 +24,7 @@ public:
     XoroshiroPositionalRandomFactory() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~XoroshiroPositionalRandomFactory();
     /*1*/ virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const &) const;
@@ -32,9 +33,7 @@ public:
 public:
 #endif
     MCAPI class XoroshiroRandom forStringImpl(std::string const &) const;
-
-
-//private:
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class Crypto::Hash::md5, class std::allocator<class Crypto::Hash::md5>> mThreadLocalDigest;
+
 
 };

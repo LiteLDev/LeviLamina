@@ -22,6 +22,7 @@ public:
     CelebrateHuntComponent() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CELEBRATEHUNTCOMPONENT
 public:
@@ -33,7 +34,6 @@ public:
     MCAPI void setNextSoundEventTick(class Mob const &);
     MCAPI void startCelebrating(struct Tick const &);
     MCAPI void stopCelebrating();
-
 
 
 };

@@ -22,6 +22,7 @@ public:
     ScriptIsSaddledComponentFactory() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptIsSaddledComponentFactory();
     /*1*/ virtual class Scripting::StrongTypedObjectHandle<class ScriptActorComponent> createComponent(class WeakEntityRef, class Scripting::WeakLifetimeScope const &, std::string const &);
@@ -29,7 +30,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTISSADDLEDCOMPONENTFACTORY
 public:
 #endif
-
 
 
 };

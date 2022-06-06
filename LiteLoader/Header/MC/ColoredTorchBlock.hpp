@@ -23,6 +23,7 @@ public:
     ColoredTorchBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ColoredTorchBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -72,8 +73,10 @@ public:
     MCAPI ColoredTorchBlock(std::string const &, int, enum ColoredTorchColor);
     MCAPI static class ItemInstance getItemForColor(enum ColoredTorchColor);
 
-
 //private:
     MCAPI enum ColoredTorchColor _getColor(class Block const &) const;
+
+private:
+
 
 };

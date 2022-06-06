@@ -24,6 +24,7 @@ public:
     CoralFanBlockItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CoralFanBlockItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -46,7 +47,6 @@ public:
 public:
 #endif
     MCAPI CoralFanBlockItem(std::string const &, int);
-
 
 
 };

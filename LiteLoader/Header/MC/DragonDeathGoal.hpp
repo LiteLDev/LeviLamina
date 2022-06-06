@@ -22,6 +22,7 @@ public:
     DragonDeathGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DragonDeathGoal();
     /*1*/ virtual void __unk_vfn_1();
@@ -37,7 +38,6 @@ public:
     MCVAPI bool canUse();
 #endif
     MCAPI DragonDeathGoal(class EnderDragon &);
-
 
 
 };

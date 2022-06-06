@@ -23,6 +23,7 @@ public:
     TickSyncPacket() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TickSyncPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -32,7 +33,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKSYNCPACKET
 public:
 #endif
-
 
 
 };

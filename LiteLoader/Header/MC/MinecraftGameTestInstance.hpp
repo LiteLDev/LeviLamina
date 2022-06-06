@@ -22,6 +22,7 @@ public:
     MinecraftGameTestInstance() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MinecraftGameTestInstance();
     /*1*/ virtual void initialize();
@@ -43,7 +44,6 @@ public:
 public:
 #endif
     MCAPI MinecraftGameTestInstance(class gametest::BaseGameTestFunction const &, std::unique_ptr<class gametest::IGameTestHelperProvider>, class Dimension &);
-
 
 
 };

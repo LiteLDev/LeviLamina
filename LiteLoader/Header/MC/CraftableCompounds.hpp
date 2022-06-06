@@ -21,6 +21,7 @@ public:
     CraftableCompounds(class CraftableCompounds const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CraftableCompounds();
     /*1*/ virtual void _registerCompound(std::vector<class ItemStack> const &, class ItemStack const &, enum LabTableReactionType, enum CompoundContainerType);
@@ -37,6 +38,8 @@ public:
     MCAPI std::string _getCompoundId(std::vector<class ItemStack> const &);
     MCAPI void _registerCompound(std::vector<struct ChemistryIngredient> const &, class ItemStack const &, enum LabTableReactionType, enum CompoundContainerType);
     MCAPI void _registerCompound(std::vector<struct ChemistryIngredient> const &, enum CompoundType, enum LabTableReactionType, enum CompoundContainerType, int);
+
+protected:
 
 
 };

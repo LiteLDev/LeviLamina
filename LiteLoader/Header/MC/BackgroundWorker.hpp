@@ -25,6 +25,7 @@ public:
     BackgroundWorker() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BackgroundWorker();
     /*1*/ virtual bool isAsync() const;
@@ -43,12 +44,14 @@ public:
     MCAPI void resortPriorityQueue();
     MCAPI void start();
     MCAPI void wake();
+    MCAPI static class BackgroundWorker * gLocalWorkerMappingSingleton;
     MCAPI static class BackgroundWorker * getLocal();
-
 
 //private:
     MCAPI bool _processNextTask();
     MCAPI enum BackgroundWorker::RunOneResult _runOneTask();
-    MCAPI static class BackgroundWorker * gLocalWorkerMappingSingleton;
+
+private:
+
 
 };

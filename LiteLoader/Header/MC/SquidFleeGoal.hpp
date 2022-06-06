@@ -22,6 +22,7 @@ public:
     SquidFleeGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SquidFleeGoal();
     /*1*/ virtual bool canUse();
@@ -34,7 +35,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUIDFLEEGOAL
 public:
 #endif
-
 
 
 };

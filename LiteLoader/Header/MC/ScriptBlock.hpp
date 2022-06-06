@@ -23,6 +23,7 @@ public:
     ScriptBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptBlock();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCK
@@ -43,7 +44,6 @@ public:
     MCAPI void setType(class ScriptBlockType const &);
     MCAPI class Scripting::Result<void> setWaterlogged(bool);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlock> bind(struct Scripting::Version);
-
 
 
 };

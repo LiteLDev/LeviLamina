@@ -23,6 +23,7 @@ public:
     LegacySpringsFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LegacySpringsFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -31,7 +32,6 @@ public:
 public:
 #endif
     MCAPI LegacySpringsFeature(class FeatureRegistry const &, class BaseGameVersion const &);
-
 
 
 };

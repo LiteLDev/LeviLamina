@@ -23,6 +23,7 @@ public:
     SimplePlayerContainer() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SimplePlayerContainer();
     /*9*/ virtual void setItem(int, class ItemStack const &);
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI SimplePlayerContainer(class Player &, std::string const &, bool, int, enum ContainerType);
-
 
 
 };

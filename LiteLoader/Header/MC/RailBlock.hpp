@@ -23,6 +23,7 @@ public:
     RailBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RailBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -63,7 +64,6 @@ public:
 public:
 #endif
     MCAPI RailBlock(std::string const &, int);
-
 
 
 };

@@ -22,6 +22,7 @@ public:
     AdventureSettingsPacket(class AdventureSettingsPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AdventureSettingsPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -36,7 +37,6 @@ public:
     MCAPI void fillIn(struct AdventureSettings &, class Abilities &) const;
     MCAPI bool isSet(enum AdventureSettingsPacket::Flags) const;
     MCAPI bool isSetPermissions(unsigned int const &, enum AdventureSettingsPacket::PermissionsFlags) const;
-
 
 
 };

@@ -24,6 +24,7 @@ public:
     IronGolem() = delete;
 #endif
 
+
 public:
     /*14*/ virtual ~IronGolem();
     /*40*/ virtual void __unk_vfn_40();
@@ -65,7 +66,6 @@ public:
     MCAPI IronGolem(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI int getOfferFlowerTick() const;
     MCAPI void offerFlower(bool);
-
 
 
 };

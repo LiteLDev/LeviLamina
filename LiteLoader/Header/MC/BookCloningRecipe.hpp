@@ -23,6 +23,7 @@ public:
     BookCloningRecipe() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BookCloningRecipe();
     /*1*/ virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
@@ -36,8 +37,11 @@ public:
 #endif
     MCAPI BookCloningRecipe(class gsl::basic_string_span<char const, -1>);
     MCAPI BookCloningRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
-    MCAPI static class mce::UUID const ID;
 
+//private:
+
+private:
+    MCAPI static class mce::UUID const ID;
 
 
 };

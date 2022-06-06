@@ -22,6 +22,7 @@ public:
     ItemStackNetManagerScreen() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETMANAGERSCREEN
 public:
@@ -29,7 +30,6 @@ public:
     MCAPI ItemStackNetManagerScreen(class EntityRegistry &);
     MCAPI class EntityContext & getEntity();
     MCAPI class EntityContext const & getEntity() const;
-
 
 
 };

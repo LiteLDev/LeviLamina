@@ -23,6 +23,7 @@ public:
     LevelEntityContainerValidation() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LevelEntityContainerValidation();
     /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
@@ -37,7 +38,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELENTITYCONTAINERVALIDATION
 public:
 #endif
-
 
 
 };

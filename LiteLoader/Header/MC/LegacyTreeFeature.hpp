@@ -22,6 +22,7 @@ public:
     LegacyTreeFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LegacyTreeFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
@@ -29,7 +30,6 @@ public:
 public:
 #endif
     MCAPI LegacyTreeFeature(enum LegacyTreeFeature::Type, class FeatureRegistry &);
-
 
 
 };

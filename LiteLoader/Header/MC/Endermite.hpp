@@ -24,6 +24,7 @@ public:
     Endermite() = delete;
 #endif
 
+
 public:
     /*14*/ virtual ~Endermite();
     /*40*/ virtual void __unk_vfn_40();
@@ -61,7 +62,6 @@ public:
 public:
 #endif
     MCAPI Endermite(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
 
 
 };

@@ -22,6 +22,7 @@ public:
     StructureStart() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StructureStart();
     /*1*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
@@ -36,6 +37,8 @@ public:
     MCAPI void moveBoundingBoxes(int);
     MCAPI void moveInsideHeights(class Random &, short, short);
     MCAPI void moveToLevel(short, class Random &, int);
+
+protected:
 
 
 };

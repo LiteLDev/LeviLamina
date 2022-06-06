@@ -22,6 +22,7 @@ public:
     CommandBlockUpdatePacket(class CommandBlockUpdatePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CommandBlockUpdatePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI CommandBlockUpdatePacket();
-
 
 
 };

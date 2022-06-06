@@ -22,6 +22,7 @@ public:
     LevelEventListener() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELEVENTLISTENER
 public:
@@ -35,7 +36,6 @@ public:
     MCVAPI enum EventResult onLevelTick();
     MCVAPI enum EventResult onLevelWeatherChange(std::string const &, bool, bool);
 #endif
-
 
 
 };

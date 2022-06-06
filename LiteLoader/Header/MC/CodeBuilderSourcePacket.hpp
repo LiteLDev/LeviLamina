@@ -20,6 +20,7 @@ public:
     CodeBuilderSourcePacket(class CodeBuilderSourcePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CodeBuilderSourcePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -30,7 +31,6 @@ public:
 public:
 #endif
     MCAPI CodeBuilderSourcePacket();
-
 
 
 };

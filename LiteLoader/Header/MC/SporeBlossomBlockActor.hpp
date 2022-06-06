@@ -23,6 +23,7 @@ public:
     SporeBlossomBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SporeBlossomBlockActor();
     /*7*/ virtual void tick(class BlockSource &);
@@ -37,7 +38,6 @@ public:
 public:
 #endif
     MCAPI SporeBlossomBlockActor(class BlockPos const &);
-
 
 
 };

@@ -24,6 +24,7 @@ public:
     Panda() = delete;
 #endif
 
+
 public:
     /*14*/ virtual ~Panda();
     /*40*/ virtual void __unk_vfn_40();
@@ -63,7 +64,6 @@ public:
     MCAPI float getSitAmount(float) const;
     MCAPI int getSneezeCounter() const;
     MCAPI int getUnhappyCounter() const;
-
 
 
 };

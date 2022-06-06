@@ -23,6 +23,7 @@ public:
     RotatedPillarInfestedBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RotatedPillarInfestedBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -65,7 +66,6 @@ public:
 public:
 #endif
     MCAPI RotatedPillarInfestedBlock(std::string const &, int, class Material const &);
-
 
 
 };

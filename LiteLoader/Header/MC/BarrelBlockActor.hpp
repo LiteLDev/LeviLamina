@@ -22,6 +22,7 @@ public:
     BarrelBlockActor() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARRELBLOCKACTOR
 public:
@@ -33,7 +34,6 @@ public:
     MCVAPI void stopOpen(class Player &);
 #endif
     MCAPI BarrelBlockActor(class BlockPos const &);
-
 
 
 };

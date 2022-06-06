@@ -22,6 +22,7 @@ public:
     MoveTowardsTargetGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MoveTowardsTargetGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI MoveTowardsTargetGoal(class Mob &, float, float);
-
 
 
 };

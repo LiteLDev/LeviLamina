@@ -30,6 +30,7 @@ public:
     PlayerListEntry() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERLISTENTRY
 public:
@@ -39,7 +40,6 @@ public:
     MCAPI bool read(class ReadOnlyBinaryStream &);
     MCAPI void write(class BinaryStream &) const;
     MCAPI ~PlayerListEntry();
-
 
 
 };

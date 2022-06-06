@@ -34,11 +34,11 @@ public:
     ItemRegistry() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMREGISTRY
 public:
 #endif
-    MCAPI static class gsl::basic_string_span<char const, -1> const MINECRAFT_NAMESPACE;
     MCAPI static std::string _parseItemDefinition(std::string const &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum ItemVersion, enum PackType);
     MCAPI static void alterAvailableCreativeItems(class ActorInfoRegistry *, class LevelData &);
     MCAPI static void clearItemAndCreativeItemRegistry();
@@ -63,28 +63,6 @@ public:
     MCAPI static class WeakPtr<class Item> lookupByNameNoAlias(class HashedString const &);
     MCAPI static class WeakPtr<class Item> lookupByNameNoParsing(int &, class HashedString const &);
     MCAPI static class WeakPtr<class Item> lookupByNameNoParsing(class HashedString const &);
-    MCAPI static bool mCheckForItemWorldCompatibility;
-    MCAPI static class std::mutex mCompatibilityCheckLock;
-    MCAPI static std::vector<class SharedPtr<class Item>> mDeadItemRegistry;
-    MCAPI static std::unique_ptr<class ItemEventResponseFactory> mResponseFactory;
-    MCAPI static bool mServerInitializingCreativeItems;
-    MCAPI static class BaseGameVersion mWorldBaseGameVersion;
-    MCAPI static void registerAlias(class HashedString const &, class HashedString const &, class BaseGameVersion const &);
-    MCAPI static class Item & registerComplexAlias(class HashedString const &, class std::function<class HashedString (short)>);
-    MCAPI static void registerItem(class SharedPtr<class Item>);
-    MCAPI static void registerLegacyID(class HashedString const &, short);
-    MCAPI static void registerLegacyMapping(class HashedString const &, class HashedString const &, class BaseGameVersion const &);
-    MCAPI static unsigned __int64 remapToFullLegacyNameByHash(unsigned __int64);
-    MCAPI static unsigned __int64 remapToLegacyNameByHash(unsigned __int64);
-    MCAPI static void setOwningThreadId(class std::thread::id);
-    MCAPI static void setWorldBaseGameVersion(class BaseGameVersion const &);
-    MCAPI static void shutdown();
-    MCAPI static void startRegistration();
-    MCAPI static void unregisterItem(class HashedString const &);
-
-
-//private:
-    MCAPI static void _loadItemDefinition(class Json::Value &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum ItemVersion, enum PackType);
     MCAPI static std::vector<class HashedString> mAttachableDefinitions;
     MCAPI static class std::unordered_map<class HashedString, class std::function<class HashedString (short)>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::function<class HashedString (short)>>>> mComplexAliasLookupMap;
     MCAPI static class std::unordered_map<int, class WeakPtr<class Item>, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, class WeakPtr<class Item>>>> mIdToItemMap;
@@ -98,5 +76,30 @@ public:
     MCAPI static class std::unordered_map<unsigned __int64, struct ItemRegistry::ItemHashAlias, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, struct ItemRegistry::ItemHashAlias>>> mReverseFullNameAliasLookupMap;
     MCAPI static class std::unordered_map<class HashedString, class WeakPtr<class Item>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class WeakPtr<class Item>>>> mTileItemNameToItemMap;
     MCAPI static class std::unordered_map<class HashedString, class WeakPtr<class Item>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class WeakPtr<class Item>>>> mTileNamespaceToItemMap;
+    MCAPI static void registerAlias(class HashedString const &, class HashedString const &, class BaseGameVersion const &);
+    MCAPI static class Item & registerComplexAlias(class HashedString const &, class std::function<class HashedString (short)>);
+    MCAPI static void registerItem(class SharedPtr<class Item>);
+    MCAPI static void registerLegacyID(class HashedString const &, short);
+    MCAPI static void registerLegacyMapping(class HashedString const &, class HashedString const &, class BaseGameVersion const &);
+    MCAPI static unsigned __int64 remapToFullLegacyNameByHash(unsigned __int64);
+    MCAPI static unsigned __int64 remapToLegacyNameByHash(unsigned __int64);
+    MCAPI static void setOwningThreadId(class std::thread::id);
+    MCAPI static void setWorldBaseGameVersion(class BaseGameVersion const &);
+    MCAPI static void shutdown();
+    MCAPI static void startRegistration();
+    MCAPI static void unregisterItem(class HashedString const &);
+
+//private:
+    MCAPI static void _loadItemDefinition(class Json::Value &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum ItemVersion, enum PackType);
+
+private:
+    MCAPI static class gsl::basic_string_span<char const, -1> const MINECRAFT_NAMESPACE;
+    MCAPI static bool mCheckForItemWorldCompatibility;
+    MCAPI static class std::mutex mCompatibilityCheckLock;
+    MCAPI static std::vector<class SharedPtr<class Item>> mDeadItemRegistry;
+    MCAPI static std::unique_ptr<class ItemEventResponseFactory> mResponseFactory;
+    MCAPI static bool mServerInitializingCreativeItems;
+    MCAPI static class BaseGameVersion mWorldBaseGameVersion;
+
 
 };

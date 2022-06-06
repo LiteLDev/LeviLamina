@@ -21,6 +21,7 @@ public:
     ScriptInventoryComponentContainer() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptInventoryComponentContainer();
     /*5*/ virtual class Scripting::Result<int> getEmptySlotsCount() const;
@@ -32,7 +33,6 @@ public:
     MCAPI ScriptInventoryComponentContainer(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &);
     MCAPI class ScriptInventoryComponentContainer & operator=(class ScriptInventoryComponentContainer const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptInventoryComponentContainer> bind(struct Scripting::Version);
-
 
 
 };

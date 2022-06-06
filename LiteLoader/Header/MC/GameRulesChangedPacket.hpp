@@ -23,6 +23,7 @@ public:
     GameRulesChangedPacket() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GameRulesChangedPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -32,7 +33,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMERULESCHANGEDPACKET
 public:
 #endif
-
 
 
 };

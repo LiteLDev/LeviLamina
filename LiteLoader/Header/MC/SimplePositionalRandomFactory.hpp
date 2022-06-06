@@ -22,6 +22,7 @@ public:
     SimplePositionalRandomFactory() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SimplePositionalRandomFactory();
     /*1*/ virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const &) const;
@@ -31,7 +32,6 @@ public:
 #endif
     MCAPI SimplePositionalRandomFactory(__int64);
     MCAPI class SimpleRandom forBlockPosImpl(class BlockPos const &) const;
-
 
 
 };

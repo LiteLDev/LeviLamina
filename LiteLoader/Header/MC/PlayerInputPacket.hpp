@@ -22,6 +22,7 @@ public:
     PlayerInputPacket(class PlayerInputPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PlayerInputPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI PlayerInputPacket();
-
 
 
 };

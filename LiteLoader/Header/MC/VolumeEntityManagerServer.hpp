@@ -22,6 +22,7 @@ public:
     VolumeEntityManagerServer() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMEENTITYMANAGERSERVER
 public:
@@ -34,7 +35,6 @@ public:
     MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> removeVolumes(std::string const &, class AutomaticID<class Dimension, int>, class PacketSender &);
     MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> removeVolumes(class BlockPos const &, class AutomaticID<class Dimension, int>, class PacketSender &);
     MCAPI void sendAllVolumesToClient(class UserEntityIdentifierComponent const &, class NetworkIdentifier const &, class PacketSender &) const;
-
 
 
 };

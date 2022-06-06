@@ -23,6 +23,7 @@ public:
     MobSpawnerBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MobSpawnerBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -42,7 +43,6 @@ public:
 #endif
     MCAPI MobSpawnerBlockActor(class BlockPos const &);
     MCAPI class BaseMobSpawner & getSpawner();
-
 
 
 };

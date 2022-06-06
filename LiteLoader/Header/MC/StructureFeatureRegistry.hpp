@@ -19,6 +19,7 @@ public:
     StructureFeatureRegistry(class StructureFeatureRegistry const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREFEATUREREGISTRY
 public:
@@ -29,7 +30,6 @@ public:
     MCAPI class StructureFeature * getStructureFeatureOfType(enum StructureFeatureType) const;
     MCAPI bool isStructureFeatureTypeAt(class BlockPos const &, enum StructureFeatureType) const;
     MCAPI ~StructureFeatureRegistry();
-
 
 
 };

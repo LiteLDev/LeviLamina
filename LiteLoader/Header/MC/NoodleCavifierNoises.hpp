@@ -21,6 +21,7 @@ public:
     NoodleCavifierNoises() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NOODLECAVIFIERNOISES
 public:
@@ -28,7 +29,6 @@ public:
     MCAPI NoodleCavifierNoises(class NoodleCavifierNoises const &);
     MCAPI ~NoodleCavifierNoises();
     MCAPI static class NoodleCavifierNoises make(class XoroshiroPositionalRandomFactory const &);
-
 
 
 };

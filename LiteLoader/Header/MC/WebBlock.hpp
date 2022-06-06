@@ -23,6 +23,7 @@ public:
     WebBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~WebBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -67,7 +68,6 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI WebBlock(std::string const &, int);
-
 
 
 };

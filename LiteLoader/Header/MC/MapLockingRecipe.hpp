@@ -23,6 +23,7 @@ public:
     MapLockingRecipe() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MapLockingRecipe();
     /*1*/ virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
@@ -35,8 +36,11 @@ public:
 public:
 #endif
     MCAPI MapLockingRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
-    MCAPI static class mce::UUID const CartographyTableID;
 
+//private:
+
+private:
+    MCAPI static class mce::UUID const CartographyTableID;
 
 
 };

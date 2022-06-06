@@ -21,6 +21,7 @@ public:
     ContentTierManager(class ContentTierManager const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ContentTierManager();
     /*1*/ virtual class ContentTierInfo getContentTierInfo() const;
@@ -28,7 +29,6 @@ public:
 public:
 #endif
     MCAPI ContentTierManager();
-
 
 
 };

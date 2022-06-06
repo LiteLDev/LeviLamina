@@ -23,6 +23,7 @@ public:
     HeavyBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HeavyBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -78,6 +79,8 @@ public:
 //protected:
     MCAPI void _tickBlocksAround2D(class BlockSource &, class BlockPos const &, class Block const &) const;
     MCAPI void checkSlide(class BlockSource &, class BlockPos const &) const;
+
+protected:
 
 
 };

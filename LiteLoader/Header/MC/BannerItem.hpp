@@ -24,6 +24,7 @@ public:
     BannerItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BannerItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -49,7 +50,6 @@ public:
 #endif
     MCAPI BannerItem(std::string const &, int);
     MCAPI static std::vector<struct std::pair<class gsl::not_null<class BannerPattern const *>, enum ItemColor>> getPatternAndColorPairsFromItemStack(class ItemStackBase const &);
-
 
 
 };

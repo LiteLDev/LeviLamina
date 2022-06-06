@@ -22,6 +22,7 @@ public:
     FollowFlockGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FollowFlockGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI FollowFlockGoal(class Mob &, float);
-
 
 
 };

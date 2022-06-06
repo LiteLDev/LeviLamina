@@ -22,6 +22,7 @@ public:
     Recipe() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Recipe();
     /*1*/ virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const = 0;
@@ -55,6 +56,8 @@ public:
 
 //protected:
     MCAPI Recipe(class gsl::basic_string_span<char const, -1>, class HashedString, std::vector<class RecipeIngredient> const &);
+
+protected:
 
 
 };

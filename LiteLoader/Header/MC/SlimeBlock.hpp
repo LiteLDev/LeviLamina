@@ -23,6 +23,7 @@ public:
     SlimeBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SlimeBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -67,7 +68,6 @@ public:
     MCVAPI bool isBounceBlock() const;
 #endif
     MCAPI SlimeBlock(std::string const &, int, class Material const &);
-
 
 
 };

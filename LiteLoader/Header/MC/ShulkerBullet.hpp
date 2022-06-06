@@ -24,6 +24,7 @@ public:
     ShulkerBullet() = delete;
 #endif
 
+
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~ShulkerBullet();
@@ -56,7 +57,6 @@ public:
 public:
 #endif
     MCAPI ShulkerBullet(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
 
 
 };

@@ -22,6 +22,7 @@ public:
     CraftingDataPacket(class CraftingDataPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CraftingDataPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI CraftingDataPacket();
     MCAPI static std::unique_ptr<class CraftingDataPacket> prepareFromRecipes(class Recipes const &, bool);
-
 
 
 };

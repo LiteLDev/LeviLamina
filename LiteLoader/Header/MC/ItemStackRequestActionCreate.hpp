@@ -21,6 +21,7 @@ public:
     ItemStackRequestActionCreate(class ItemStackRequestActionCreate const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemStackRequestActionCreate();
     /*1*/ virtual void __unk_vfn_1();
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI ItemStackRequestActionCreate();
     MCAPI unsigned char getResultsIndex() const;
-
 
 
 };

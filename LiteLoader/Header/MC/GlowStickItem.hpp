@@ -24,6 +24,7 @@ public:
     GlowStickItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GlowStickItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -47,9 +48,12 @@ public:
 public:
 #endif
     MCAPI GlowStickItem(std::string const &, int);
+
+//private:
+
+private:
     MCAPI static enum ItemColor const COLORS[];
     MCAPI static int const MAX_ACTIVE_TICKS;
-
 
 
 };

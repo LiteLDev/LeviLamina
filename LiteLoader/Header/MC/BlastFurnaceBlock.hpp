@@ -23,6 +23,7 @@ public:
     BlastFurnaceBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BlastFurnaceBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -66,7 +67,6 @@ public:
 public:
 #endif
     MCAPI BlastFurnaceBlock(std::string const &, int, bool);
-
 
 
 };

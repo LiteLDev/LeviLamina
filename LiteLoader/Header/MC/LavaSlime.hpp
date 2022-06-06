@@ -24,6 +24,7 @@ public:
     LavaSlime() = delete;
 #endif
 
+
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~LavaSlime();
@@ -66,7 +67,6 @@ public:
 public:
 #endif
     MCAPI LavaSlime(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
 
 
 };

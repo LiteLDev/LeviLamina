@@ -20,6 +20,7 @@ public:
     SuspectTrackingComponent() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUSPECTTRACKINGCOMPONENT
 public:
@@ -28,7 +29,6 @@ public:
     MCAPI class std::optional<class BlockPos> getSuspiciousPos();
     MCAPI class std::optional<unsigned __int64> getTicksSinceLastSuspect(class ILevel const &) const;
     MCAPI void setSuspiciousPos(class std::optional<class BlockPos>, struct Tick);
-
 
 
 };

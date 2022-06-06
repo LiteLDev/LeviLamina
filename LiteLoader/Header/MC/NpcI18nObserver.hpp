@@ -22,6 +22,7 @@ public:
     NpcI18nObserver() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NpcI18nObserver();
     /*1*/ virtual void onLanguageChanged(std::string const &, bool);
@@ -31,8 +32,10 @@ public:
     MCVAPI void onLanguagesLoaded();
 #endif
 
-
 //private:
     MCAPI void _loadNpcData();
+
+private:
+
 
 };

@@ -24,6 +24,7 @@ public:
     CandleBlockItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CandleBlockItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -46,7 +47,6 @@ public:
     MCVAPI bool isCandle() const;
 #endif
     MCAPI CandleBlockItem(std::string const &, int);
-
 
 
 };

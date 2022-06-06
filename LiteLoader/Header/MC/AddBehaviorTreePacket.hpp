@@ -22,6 +22,7 @@ public:
     AddBehaviorTreePacket(class AddBehaviorTreePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AddBehaviorTreePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI AddBehaviorTreePacket();
-
 
 
 };

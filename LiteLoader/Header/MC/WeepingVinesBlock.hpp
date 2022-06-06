@@ -23,6 +23,7 @@ public:
     WeepingVinesBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~WeepingVinesBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -76,9 +77,11 @@ public:
     MCAPI WeepingVinesBlock(std::string const &, int);
     MCAPI static void placeVineString(class BlockSource &, class Random &, class BlockPos const &, int, int, int);
 
-
 //private:
     MCAPI int _getAge(class Block const &) const;
     MCAPI void _tryGrow(class BlockSource &, class BlockPos const &, int) const;
+
+private:
+
 
 };

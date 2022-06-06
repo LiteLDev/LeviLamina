@@ -23,6 +23,7 @@ public:
     ScriptRideableComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptRideableComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTRIDEABLECOMPONENT
@@ -41,7 +42,6 @@ public:
     MCAPI class Scripting::Result<int> getSeatCount() const;
     MCAPI class Scripting::Result<std::vector<struct SeatDescription>> getSeats() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptRideableComponent> bind(struct Scripting::Version);
-
 
 
 };

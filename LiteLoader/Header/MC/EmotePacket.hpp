@@ -22,6 +22,7 @@ public:
     EmotePacket(class EmotePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EmotePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,7 +35,6 @@ public:
     MCAPI EmotePacket();
     MCAPI bool isServerSide() const;
     MCAPI void setServerSide();
-
 
 
 };

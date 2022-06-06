@@ -20,6 +20,7 @@ public:
     ScriptMessagePacket(class ScriptMessagePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptMessagePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
     MCAPI ScriptMessagePacket();
     MCAPI std::string const & getMessageId() const;
     MCAPI std::string const & getMessageValue() const;
-
 
 
 };

@@ -22,6 +22,7 @@ public:
     CopperHornItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CopperHornItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -47,7 +48,6 @@ public:
 public:
 #endif
     MCAPI CopperHornItem(std::string const &, int);
-
 
 
 };

@@ -20,6 +20,7 @@ public:
     PlayerStartItemCooldownPacket(class PlayerStartItemCooldownPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PlayerStartItemCooldownPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -31,7 +32,6 @@ public:
 #endif
     MCAPI PlayerStartItemCooldownPacket(std::string const &, int);
     MCAPI PlayerStartItemCooldownPacket();
-
 
 
 };

@@ -24,6 +24,7 @@ public:
     ActorIsTargetTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorIsTargetTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
@@ -31,7 +32,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORISTARGETTEST
 public:
 #endif
-
 
 
 };

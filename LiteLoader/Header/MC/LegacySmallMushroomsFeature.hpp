@@ -23,6 +23,7 @@ public:
     LegacySmallMushroomsFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LegacySmallMushroomsFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -31,7 +32,6 @@ public:
 public:
 #endif
     MCAPI LegacySmallMushroomsFeature(class FeatureRegistry const &);
-
 
 
 };

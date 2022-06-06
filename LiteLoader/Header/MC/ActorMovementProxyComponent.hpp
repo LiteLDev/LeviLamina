@@ -20,6 +20,7 @@ public:
     ActorMovementProxyComponent() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORMOVEMENTPROXYCOMPONENT
 public:
@@ -27,7 +28,6 @@ public:
     MCAPI ActorMovementProxyComponent(class gsl::not_null<class std::shared_ptr<struct IActorMovementProxy>>);
     MCAPI class std::shared_ptr<struct IActorMovementProxy> getMovementProxy();
     MCAPI class std::shared_ptr<struct IActorMovementProxy const> getMovementProxy() const;
-
 
 
 };

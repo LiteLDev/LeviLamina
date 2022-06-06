@@ -22,6 +22,7 @@ public:
     OpenDoorGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~OpenDoorGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI OpenDoorGoal(class Mob &, bool);
-
 
 
 };

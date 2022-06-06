@@ -16,6 +16,7 @@ class Abilities {
 
 #undef AFTER_EXTRA
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABILITIES
 public:
@@ -41,13 +42,15 @@ public:
     MCAPI void setCommandPermissions(enum CommandPermissionLevel);
     MCAPI void setPlayerPermissions(enum PlayerPermissionLevel);
     MCAPI ~Abilities();
+    MCAPI static class std::array<char const *, 18> ABILITY_NAMES;
+    MCAPI static std::string const TAG;
     MCAPI static char const * getAbilityName(enum AbilitiesIndex);
     MCAPI static enum AbilitiesIndex nameToAbilityIndex(std::string const &);
 
-
 //private:
     MCAPI void _registerAbilities();
-    MCAPI static class std::array<char const *, 18> ABILITY_NAMES;
-    MCAPI static std::string const TAG;
+
+private:
+
 
 };

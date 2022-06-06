@@ -20,6 +20,7 @@ public:
     CodebuilderComponent() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CODEBUILDERCOMPONENT
 public:
@@ -28,7 +29,6 @@ public:
     MCAPI void resetCodeStatus();
     MCAPI void setCodeStatus(std::string const &);
     MCAPI enum CodeBuilderExecutionState::CodeStatus stringToCodeStatus(std::string const &) const;
-
 
 
 };

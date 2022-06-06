@@ -29,6 +29,7 @@ public:
     FilterTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FilterTest();
     /*1*/ virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
@@ -46,6 +47,8 @@ public:
     MCAPI bool _testValuesWithOperator(int, int) const;
     MCAPI bool _testValuesWithOperator(float, float) const;
     MCAPI bool _testValuesWithOperator(bool, bool) const;
+
+protected:
 
 
 };

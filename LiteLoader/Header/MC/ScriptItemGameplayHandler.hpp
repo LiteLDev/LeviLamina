@@ -20,6 +20,7 @@ public:
     ScriptItemGameplayHandler() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptItemGameplayHandler();
     /*1*/ virtual void __unk_vfn_1();
@@ -31,10 +32,12 @@ public:
 public:
 #endif
 
-
 //private:
     MCAPI bool _handleItemDefinitionEventTriggered(struct ItemDefinitionEventTriggeredEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
     MCAPI bool _handleItemUseEvent(struct ItemUseEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
     MCAPI bool _handleItemUseOnEvent(struct ItemUseOnEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
+
+private:
+
 
 };

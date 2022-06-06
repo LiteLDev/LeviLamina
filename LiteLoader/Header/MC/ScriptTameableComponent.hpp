@@ -23,6 +23,7 @@ public:
     ScriptTameableComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptTameableComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTTAMEABLECOMPONENT
@@ -34,7 +35,6 @@ public:
     MCAPI class Scripting::Result<std::vector<std::string>> getTameItems() const;
     MCAPI class Scripting::Result<bool> tame() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptTameableComponent> bind(struct Scripting::Version);
-
 
 
 };

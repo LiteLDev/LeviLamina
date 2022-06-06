@@ -23,6 +23,7 @@ public:
     Minecart() = delete;
 #endif
 
+
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*9*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -77,8 +78,10 @@ public:
     MCAPI void setCustomDisplay(bool);
     MCAPI void setDisplayBlock(class Block const &);
 
-
 //private:
     MCAPI void _registerLoopingSounds();
+
+private:
+
 
 };

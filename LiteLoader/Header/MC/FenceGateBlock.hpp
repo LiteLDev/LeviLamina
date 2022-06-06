@@ -23,6 +23,7 @@ public:
     FenceGateBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FenceGateBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -78,8 +79,10 @@ public:
     MCAPI FenceGateBlock(std::string const &, int, enum WoodType);
     MCAPI void resolveIsInWall(class BlockSource &, class BlockPos const &) const;
 
-
 //private:
     MCAPI void _onOpenChanged(class BlockSource &, class BlockPos const &) const;
+
+private:
+
 
 };

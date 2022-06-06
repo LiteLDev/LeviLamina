@@ -23,6 +23,7 @@ public:
     HungerAttributeDelegate() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HungerAttributeDelegate();
     /*1*/ virtual void tick();
@@ -31,7 +32,6 @@ public:
 public:
 #endif
     MCAPI HungerAttributeDelegate(class AttributeInstance const &, class Player *);
-
 
 
 };

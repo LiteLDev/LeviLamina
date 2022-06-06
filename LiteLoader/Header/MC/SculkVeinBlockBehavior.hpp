@@ -20,6 +20,7 @@ public:
     SculkVeinBlockBehavior() = delete;
 #endif
 
+
 public:
     /*0*/ virtual int updateDecayDelay(int) const;
     /*1*/ virtual int updateFacingData(int, class Block const &) const;
@@ -31,9 +32,11 @@ public:
 public:
 #endif
 
-
 //private:
     MCAPI static bool _attemptPlaceSculk(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class Random &);
     MCAPI static void _cleanUpVeinsWithSculkSubstrate(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &);
+
+private:
+
 
 };

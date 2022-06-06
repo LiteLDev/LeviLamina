@@ -22,6 +22,7 @@ public:
     ItemComponentPacket(class ItemComponentPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemComponentPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI ItemComponentPacket();
-
 
 
 };

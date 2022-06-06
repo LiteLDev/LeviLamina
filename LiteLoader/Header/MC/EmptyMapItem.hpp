@@ -24,6 +24,7 @@ public:
     EmptyMapItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EmptyMapItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -51,7 +52,6 @@ public:
     MCAPI static void addPlayerMarker(class ItemStack &);
     MCAPI static void addPlayerMarker(class ItemInstance &);
     MCAPI static bool isLocatorMap(class ItemStack const &);
-
 
 
 };

@@ -20,6 +20,7 @@ public:
     ScriptFormPromiseTracker(class ScriptFormPromiseTracker const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFORMPROMISETRACKER
 public:
@@ -31,7 +32,6 @@ public:
     MCAPI void handleFormResponse(unsigned int, class Json::Value const &);
     MCAPI void handlePlayerQuit(class NetworkIdentifier const &);
     MCAPI void rejectAllForShutdown();
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     EvocationFang() = delete;
 #endif
 
+
 public:
     /*14*/ virtual ~EvocationFang();
     /*40*/ virtual void __unk_vfn_40();
@@ -53,8 +54,10 @@ public:
 #endif
     MCAPI EvocationFang(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
-
 //private:
     MCAPI void _dealDamageTo(class Mob &);
+
+private:
+
 
 };

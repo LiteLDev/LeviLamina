@@ -23,6 +23,7 @@ public:
     SpawnGroupRegistry() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SpawnGroupRegistry();
     /*1*/ virtual std::string const & getRootKey();
@@ -34,7 +35,6 @@ public:
 #endif
     MCAPI SpawnGroupRegistry(class ResourcePackManager &);
     MCAPI class SpawnGroupData const * getSpawnGroup(std::string const &) const;
-
 
 
 };

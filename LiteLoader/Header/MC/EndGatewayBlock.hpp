@@ -23,6 +23,7 @@ public:
     EndGatewayBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EndGatewayBlock();
     /*2*/ virtual class std::shared_ptr<class BlockActor> newBlockEntity(class BlockPos const &, class Block const &) const;
@@ -71,7 +72,6 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI EndGatewayBlock(std::string const &, int);
-
 
 
 };

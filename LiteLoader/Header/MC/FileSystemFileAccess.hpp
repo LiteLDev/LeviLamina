@@ -23,6 +23,7 @@ public:
     FileSystemFileAccess() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FileSystemFileAccess();
     /*1*/ virtual void * fopen(class Core::Path const &, std::string const &);
@@ -36,7 +37,6 @@ public:
 public:
 #endif
     MCAPI FileSystemFileAccess(enum FileSystemMode);
-
 
 
 };

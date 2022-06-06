@@ -49,6 +49,7 @@ public:
     CraftingEventPacket(class CraftingEventPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CraftingEventPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -59,7 +60,6 @@ public:
 public:
 #endif
     MCAPI CraftingEventPacket();
-
 
 
 };

@@ -22,6 +22,7 @@ public:
     FunctionEntry() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FunctionEntry();
     /*1*/ virtual void execute(class FunctionManager &, class CommandOrigin const &, enum FunctionQueueOrder);
@@ -31,7 +32,6 @@ public:
     MCAPI FunctionEntry(std::vector<std::unique_ptr<class IFunctionEntry>> &&, enum FunctionState);
     MCAPI FunctionEntry(enum FunctionState);
     MCAPI enum FunctionState getErrorState() const;
-
 
 
 };

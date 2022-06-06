@@ -22,6 +22,7 @@ public:
     PlayerSkinPacket(class PlayerSkinPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PlayerSkinPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 public:
 #endif
     MCAPI PlayerSkinPacket();
-
 
 
 };

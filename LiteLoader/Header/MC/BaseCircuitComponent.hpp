@@ -21,6 +21,7 @@ public:
     BaseCircuitComponent(class BaseCircuitComponent const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BaseCircuitComponent();
     /*1*/ virtual int getStrength() const;
@@ -59,6 +60,8 @@ public:
 //protected:
     MCAPI bool trackPowerSource(class CircuitTrackingInfo const &, int, bool, int);
     MCAPI bool trackPowerSourceDuplicates(class CircuitTrackingInfo const &, int, bool);
+
+protected:
 
 
 };

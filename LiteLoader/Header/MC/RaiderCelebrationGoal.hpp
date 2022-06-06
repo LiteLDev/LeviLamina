@@ -22,6 +22,7 @@ public:
     RaiderCelebrationGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RaiderCelebrationGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI RaiderCelebrationGoal(class Mob &);
-
 
 
 };

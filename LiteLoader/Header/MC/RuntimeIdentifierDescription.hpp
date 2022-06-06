@@ -23,6 +23,7 @@ public:
     RuntimeIdentifierDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RuntimeIdentifierDescription();
     /*1*/ virtual char const * getJsonName() const;
@@ -30,7 +31,6 @@ public:
 public:
 #endif
     MCAPI void parse(class Json::Value const &);
-
 
 
 };

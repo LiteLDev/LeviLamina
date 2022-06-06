@@ -20,6 +20,7 @@ public:
     NBTSchemaReader() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NBTSchemaReader();
     /*1*/ virtual bool isValid() const;
@@ -75,7 +76,6 @@ public:
     MCVAPI bool isUInt8() const;
 #endif
     MCAPI NBTSchemaReader(class gsl::not_null<class CompoundTag const *>);
-
 
 
 };

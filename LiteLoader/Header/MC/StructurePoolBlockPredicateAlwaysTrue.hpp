@@ -21,6 +21,7 @@ public:
     StructurePoolBlockPredicateAlwaysTrue(class StructurePoolBlockPredicateAlwaysTrue const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLBLOCKPREDICATEALWAYSTRUE
 public:
@@ -28,7 +29,6 @@ public:
     MCVAPI bool test(class Block const &, class Randomize &) const;
 #endif
     MCAPI StructurePoolBlockPredicateAlwaysTrue();
-
 
 
 };

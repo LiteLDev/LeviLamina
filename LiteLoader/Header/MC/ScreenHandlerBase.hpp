@@ -22,6 +22,7 @@ public:
     ScreenHandlerBase() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScreenHandlerBase();
     /*1*/ virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const &);
@@ -35,6 +36,8 @@ public:
 
 //protected:
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum ContainerEnumName);
+
+protected:
 
 
 };

@@ -23,6 +23,7 @@ public:
     RakWebSocket() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RakWebSocket();
     /*1*/ virtual enum WSConnectionResult connect(std::string const &, std::vector<std::string> const &);
@@ -62,6 +63,8 @@ public:
     MCAPI void _subProcessHttpResponse(class RakNet::BitStream &);
     MCAPI void _validateFields();
     MCAPI bool _validateWebSocketURI();
+
+protected:
 
 
 };

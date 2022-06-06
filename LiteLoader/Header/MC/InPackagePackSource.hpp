@@ -22,6 +22,7 @@ public:
     InPackagePackSource() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~InPackagePackSource();
     /*1*/ virtual void __unk_vfn_1();
@@ -35,7 +36,6 @@ public:
     MCVAPI void forEachPackConst(class std::function<void (class Pack const &)>) const;
 #endif
     MCAPI InPackagePackSource(class std::shared_ptr<class IInPackagePacks> const &, enum PackType);
-
 
 
 };

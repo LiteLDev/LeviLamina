@@ -23,6 +23,7 @@ public:
     CopperBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CopperBlock();
     /*16*/ virtual void onLightningHit(class BlockSource &, class BlockPos const &) const;
@@ -73,7 +74,6 @@ public:
 #endif
     MCAPI CopperBlock(std::string const &, int, enum CopperType, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &);
     MCAPI CopperBlock(std::string const &, int, enum CopperType, class WeakPtr<class BlockLegacy> &);
-
 
 
 };

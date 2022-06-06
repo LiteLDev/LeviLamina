@@ -22,6 +22,7 @@ public:
     RakTcpProxy(class RakTcpProxy const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RakTcpProxy();
     /*1*/ virtual bool start(unsigned short, unsigned short, unsigned short);
@@ -38,7 +39,6 @@ public:
 public:
 #endif
     MCAPI RakTcpProxy();
-
 
 
 };

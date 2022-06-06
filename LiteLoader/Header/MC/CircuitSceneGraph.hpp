@@ -21,6 +21,7 @@ public:
     CircuitSceneGraph(class CircuitSceneGraph const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CIRCUITSCENEGRAPH
 public:
@@ -37,12 +38,14 @@ public:
     MCAPI void update(class BlockSource *);
     MCAPI ~CircuitSceneGraph();
 
-
 //private:
     MCAPI void findRelationships(class BlockPos const &, class BaseCircuitComponent *, class BlockSource *);
     MCAPI void processPendingAdds();
     MCAPI void removeComponent(class BlockPos const &);
     MCAPI void removeStaleRelationships();
     MCAPI void scheduleRelationshipUpdate(class BlockPos const &, class BaseCircuitComponent *);
+
+private:
+
 
 };

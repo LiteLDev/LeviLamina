@@ -33,6 +33,7 @@ public:
     IntArrayTag(class IntArrayTag const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~IntArrayTag();
     /*2*/ virtual void write(class IDataOutput &) const;
@@ -46,7 +47,6 @@ public:
 public:
 #endif
     MCAPI IntArrayTag();
-
 
 
 };

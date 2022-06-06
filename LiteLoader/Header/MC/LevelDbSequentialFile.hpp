@@ -23,6 +23,7 @@ public:
     LevelDbSequentialFile() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LevelDbSequentialFile();
     /*1*/ virtual class leveldb::Status Read(unsigned __int64, class leveldb::Slice *, char *);
@@ -31,7 +32,6 @@ public:
 public:
 #endif
     MCAPI LevelDbSequentialFile(class Core::File &&);
-
 
 
 };

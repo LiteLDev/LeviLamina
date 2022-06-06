@@ -23,6 +23,7 @@ public:
     JigsawBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~JigsawBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -72,7 +73,6 @@ public:
 #endif
     MCAPI JigsawBlock(std::string const &, int);
     MCAPI static bool canAttach(class JigsawBlockInfo const &, class JigsawBlockInfo const &);
-
 
 
 };

@@ -22,6 +22,7 @@ public:
     UpdateTradePacket(class UpdateTradePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~UpdateTradePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI UpdateTradePacket(enum ContainerID, enum ContainerType, int, std::string const &, class CompoundTag &&, struct ActorUniqueID const &, struct ActorUniqueID const &, int, bool, bool);
     MCAPI UpdateTradePacket();
-
 
 
 };

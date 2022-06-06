@@ -22,6 +22,7 @@ public:
     CommandResponse(class CommandResponse const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CommandResponse();
     /*1*/ virtual std::string const & getName() const;
@@ -31,11 +32,13 @@ public:
 public:
 #endif
     MCAPI CommandResponse();
-    MCAPI static std::string const NameID;
-
 
 //private:
     MCAPI void _addCommand(std::string const &);
     MCAPI void _compileCommands(class Level &) const;
+
+private:
+    MCAPI static std::string const NameID;
+
 
 };

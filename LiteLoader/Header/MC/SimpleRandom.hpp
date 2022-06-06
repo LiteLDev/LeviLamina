@@ -22,6 +22,7 @@ public:
     SimpleRandom() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SimpleRandom();
     /*1*/ virtual int nextInt();
@@ -37,7 +38,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLERANDOM
 public:
 #endif
-
 
 
 };

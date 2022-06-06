@@ -23,6 +23,7 @@ public:
     AllowListEntry() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AllowListEntry();
     /*1*/ virtual void serialize(class Json::Value &);
@@ -32,7 +33,6 @@ public:
 #endif
     MCAPI AllowListEntry(class Json::Value &);
     MCAPI AllowListEntry(std::string);
-
 
 
 };

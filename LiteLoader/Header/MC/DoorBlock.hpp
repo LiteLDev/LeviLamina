@@ -24,6 +24,7 @@ public:
     DoorBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DoorBlock();
     /*3*/ virtual class Block const * getNextBlockPermutation(class Block const &) const;
@@ -94,7 +95,6 @@ public:
     MCAPI bool isToggled(class IConstBlockSource const &, class BlockPos const &) const;
     MCAPI void setToggled(class BlockSource &, class BlockPos const &, bool) const;
     MCAPI static unsigned char getDoorFacing(int);
-
 
 
 };

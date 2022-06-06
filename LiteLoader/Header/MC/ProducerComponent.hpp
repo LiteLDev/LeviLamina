@@ -22,6 +22,7 @@ public:
     ProducerComponent(class ProducerComponent const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ProducerComponent();
     /*3*/ virtual void setStrength(int);
@@ -37,7 +38,6 @@ public:
 #endif
     MCAPI ProducerComponent();
     MCAPI void allowAttachments(bool);
-
 
 
 };

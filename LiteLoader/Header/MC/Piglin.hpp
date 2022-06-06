@@ -24,6 +24,7 @@ public:
     Piglin() = delete;
 #endif
 
+
 public:
     /*14*/ virtual ~Piglin();
     /*40*/ virtual void __unk_vfn_40();
@@ -58,7 +59,6 @@ public:
     MCVAPI bool canExistInPeaceful() const;
 #endif
     MCAPI Piglin(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
 
 
 };

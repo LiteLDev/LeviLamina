@@ -22,6 +22,7 @@ public:
     ItemStackRequestData() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTDATA
 public:
@@ -34,7 +35,6 @@ public:
     MCAPI void write(class BinaryStream &) const;
     MCAPI ~ItemStackRequestData();
     MCAPI static std::unique_ptr<class ItemStackRequestData> read(class ReadOnlyBinaryStream &);
-
 
 
 };

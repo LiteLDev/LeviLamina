@@ -22,6 +22,7 @@ public:
     ResourcePackClientResponsePacket(class ResourcePackClientResponsePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ResourcePackClientResponsePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,7 +35,6 @@ public:
     MCAPI ResourcePackClientResponsePacket();
     MCAPI class std::set<std::string, struct std::less<std::string>, class std::allocator<std::string>> const & getDownloadingPacks() const;
     MCAPI bool isResponse(enum ResourcePackResponse) const;
-
 
 
 };

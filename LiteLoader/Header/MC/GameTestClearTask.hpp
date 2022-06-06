@@ -22,6 +22,7 @@ public:
     GameTestClearTask() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTCLEARTASK
 public:
@@ -29,7 +30,6 @@ public:
     MCAPI GameTestClearTask(class Dimension &, class BoundingBox const &);
     MCAPI bool isDone() const;
     MCAPI void tick();
-
 
 
 };

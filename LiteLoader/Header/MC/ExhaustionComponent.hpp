@@ -20,6 +20,7 @@ public:
     ExhaustionComponent() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXHAUSTIONCOMPONENT
 public:
@@ -32,7 +33,6 @@ public:
     MCAPI float getSprintValue() const;
     MCAPI float getSwimValue() const;
     MCAPI float getWalkValue() const;
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     StainedGlassPaneBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StainedGlassPaneBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -66,7 +67,6 @@ public:
 public:
 #endif
     MCAPI StainedGlassPaneBlock(std::string const &, int, class Material const &, bool, bool, bool);
-
 
 
 };

@@ -21,6 +21,7 @@ public:
     ShootBowNode(class ShootBowNode const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ShootBowNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
@@ -29,7 +30,6 @@ public:
 public:
 #endif
     MCAPI ShootBowNode();
-
 
 
 };

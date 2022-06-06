@@ -15,6 +15,7 @@ class DefinitionTrigger {
 
 #undef AFTER_EXTRA
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFINITIONTRIGGER
 public:
@@ -28,10 +29,13 @@ public:
     MCAPI class DefinitionTrigger & operator=(class DefinitionTrigger const &);
     MCAPI std::unique_ptr<class CompoundTag> toCompoundTag() const;
     MCAPI ~DefinitionTrigger();
-    MCAPI static class BidirectionalUnorderedMap<std::string, enum FilterSubject> TargetEnumValues;
     MCAPI static void bindType();
     MCAPI static class DefinitionTrigger fromCompoundTag(class CompoundTag const &);
 
+//private:
+
+private:
+    MCAPI static class BidirectionalUnorderedMap<std::string, enum FilterSubject> TargetEnumValues;
 
 
 };

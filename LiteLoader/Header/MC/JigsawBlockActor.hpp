@@ -23,6 +23,7 @@ public:
     JigsawBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~JigsawBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -40,7 +41,6 @@ public:
 public:
 #endif
     MCAPI JigsawBlockActor(class BlockPos const &);
-
 
 
 };

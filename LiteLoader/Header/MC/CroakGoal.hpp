@@ -20,6 +20,7 @@ public:
     CroakGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CroakGoal();
     /*1*/ virtual bool canUse();
@@ -33,7 +34,6 @@ public:
 public:
 #endif
     MCAPI CroakGoal(class Mob &);
-
 
 
 };

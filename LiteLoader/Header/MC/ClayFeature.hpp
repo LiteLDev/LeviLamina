@@ -23,6 +23,7 @@ public:
     ClayFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ClayFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -31,7 +32,6 @@ public:
 public:
 #endif
     MCAPI ClayFeature(int);
-
 
 
 };

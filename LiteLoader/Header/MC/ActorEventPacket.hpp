@@ -25,6 +25,7 @@ public:
     ActorEventPacket(class ActorEventPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorEventPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -36,7 +37,6 @@ public:
 #endif
     MCAPI ActorEventPacket(class ActorRuntimeID, enum ActorEvent, int);
     MCAPI ActorEventPacket();
-
 
 
 };

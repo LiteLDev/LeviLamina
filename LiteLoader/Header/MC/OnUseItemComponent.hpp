@@ -22,6 +22,7 @@ public:
     OnUseItemComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~OnUseItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -36,7 +37,6 @@ public:
     MCAPI OnUseItemComponent(class ComponentItem *);
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
-
 
 
 };

@@ -22,6 +22,7 @@ public:
     CommandOutputPacket(class CommandOutputPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CommandOutputPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI CommandOutputPacket(class CommandOrigin const &, class CommandOutput const &);
     MCAPI CommandOutputPacket();
-
 
 
 };

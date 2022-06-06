@@ -21,6 +21,7 @@ public:
     SculkVeinMultifaceSpreader() = delete;
 #endif
 
+
 public:
     /*1*/ virtual bool _canSpreadFrom(class Block const &, unsigned char) const;
     /*2*/ virtual bool _canSpreadInto(class IBlockWorldGenAPI &, class Block const &, class BlockPos const &, unsigned char) const;
@@ -28,7 +29,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKVEINMULTIFACESPREADER
 public:
 #endif
-
 
 
 };

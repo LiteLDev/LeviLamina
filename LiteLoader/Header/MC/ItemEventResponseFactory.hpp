@@ -22,6 +22,7 @@ public:
     ItemEventResponseFactory() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemEventResponseFactory();
     /*1*/ virtual void initializeFactory(class Experiments const &);
@@ -29,7 +30,6 @@ public:
 public:
 #endif
     MCAPI void initSchema();
-
 
 
 };

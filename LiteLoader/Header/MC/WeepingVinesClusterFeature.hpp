@@ -23,6 +23,7 @@ public:
     WeepingVinesClusterFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~WeepingVinesClusterFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -31,10 +32,12 @@ public:
 public:
 #endif
 
-
 //private:
     MCAPI bool _isInvalidPlacementLocation(class BlockSource &, class BlockPos const &) const;
     MCAPI void _placeRoofNetherWart(class BlockSource &, class BlockPos const &, class Random &) const;
     MCAPI void _placeRoofWeepingVines(class BlockSource &, class BlockPos const &, class Random &) const;
+
+private:
+
 
 };

@@ -23,6 +23,7 @@ public:
     LoomInputContainerValidation() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LoomInputContainerValidation();
     /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
@@ -37,7 +38,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOMINPUTCONTAINERVALIDATION
 public:
 #endif
-
 
 
 };

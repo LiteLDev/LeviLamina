@@ -23,6 +23,7 @@ public:
     LegacySwampFoliageFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LegacySwampFoliageFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -31,7 +32,6 @@ public:
 public:
 #endif
     MCAPI LegacySwampFoliageFeature(class FeatureRegistry &);
-
 
 
 };

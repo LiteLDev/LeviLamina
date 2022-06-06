@@ -23,6 +23,7 @@ public:
     ActorTickNeededComponent() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORTICKNEEDEDCOMPONENT
 public:
@@ -32,7 +33,6 @@ public:
     MCAPI class WeakRefT<struct SharePtrRefTraits<class BlockSource>> getBlockSource();
     MCAPI class ActorTickNeededComponent & operator=(class ActorTickNeededComponent &&);
     MCAPI ~ActorTickNeededComponent();
-
 
 
 };

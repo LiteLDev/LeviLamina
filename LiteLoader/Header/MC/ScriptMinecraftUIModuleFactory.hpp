@@ -23,17 +23,16 @@ public:
     ScriptMinecraftUIModuleFactory() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptMinecraftUIModuleFactory();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMINECRAFTUIMODULEFACTORY
 public:
 #endif
     MCAPI ScriptMinecraftUIModuleFactory(class gsl::not_null<class Bedrock::NonOwnerPointer<class ScriptFormPromiseTracker>>);
-    MCAPI static std::string getModuleUUIDAsString();
-
-
-//private:
     MCAPI static char const * ModuleName;
     MCAPI static class mce::UUID const ModuleUUID;
+    MCAPI static std::string getModuleUUIDAsString();
+
 
 };

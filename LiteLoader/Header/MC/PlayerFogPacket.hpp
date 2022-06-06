@@ -23,6 +23,7 @@ public:
     PlayerFogPacket() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PlayerFogPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 public:
 #endif
     MCAPI PlayerFogPacket(std::vector<std::string>);
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     NetherWartBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NetherWartBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -71,9 +72,7 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI NetherWartBlock(std::string const &, int);
-
-
-//private:
     MCAPI static int const MAX_AGE;
+
 
 };

@@ -22,6 +22,7 @@ public:
     WebviewObserver() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBVIEWOBSERVER
 public:
@@ -35,7 +36,6 @@ public:
     MCVAPI void onMessageRecieved(std::string const &);
     MCVAPI void onWebviewChanged();
 #endif
-
 
 
 };

@@ -24,6 +24,7 @@ public:
     TopSnowBlockItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TopSnowBlockItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -45,7 +46,6 @@ public:
 public:
 #endif
     MCAPI TopSnowBlockItem(std::string const &, int);
-
 
 
 };

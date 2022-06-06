@@ -22,6 +22,7 @@ public:
     DyePowderItemComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DyePowderItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -37,7 +38,6 @@ public:
     MCAPI bool isValidAuxValue(int) const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
-
 
 
 };

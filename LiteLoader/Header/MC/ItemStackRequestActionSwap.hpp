@@ -22,6 +22,7 @@ public:
     ItemStackRequestActionSwap(class ItemStackRequestActionSwap const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemStackRequestActionSwap();
     /*1*/ virtual void __unk_vfn_1();
@@ -31,7 +32,6 @@ public:
 public:
 #endif
     MCAPI ItemStackRequestActionSwap();
-
 
 
 };

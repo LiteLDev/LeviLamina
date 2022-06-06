@@ -23,6 +23,7 @@ public:
     DesertPyramidPiece() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DesertPyramidPiece();
     /*3*/ virtual enum StructurePieceType getType() const;
@@ -31,7 +32,6 @@ public:
 public:
 #endif
     MCAPI DesertPyramidPiece(short, int, int);
-
 
 
 };

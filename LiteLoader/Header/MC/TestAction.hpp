@@ -22,6 +22,7 @@ public:
     TestAction(class TestAction const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TestAction();
     /*1*/ virtual void execute(class ServerLevel &, class Dimension &);
@@ -30,7 +31,6 @@ public:
 public:
 #endif
     MCAPI TestAction();
-
 
 
 };

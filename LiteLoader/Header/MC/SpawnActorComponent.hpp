@@ -22,6 +22,7 @@ public:
     SpawnActorComponent() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNACTORCOMPONENT
 public:
@@ -29,7 +30,6 @@ public:
     MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI std::vector<struct SpawnActorEntry> & getSpawnEntries();
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
-
 
 
 };

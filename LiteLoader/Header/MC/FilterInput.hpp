@@ -21,6 +21,7 @@ public:
     FilterInput() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERINPUT
 public:
@@ -28,7 +29,6 @@ public:
     MCAPI FilterInput(int);
     MCAPI class FilterInput & operator=(class FilterInput const &);
     MCAPI ~FilterInput();
-
 
 
 };

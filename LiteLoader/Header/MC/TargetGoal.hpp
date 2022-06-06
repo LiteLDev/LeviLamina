@@ -22,6 +22,7 @@ public:
     TargetGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TargetGoal();
     /*1*/ virtual bool canUse() = 0;
@@ -45,6 +46,8 @@ public:
     MCAPI bool _canReach(class Actor &);
     MCAPI bool _canReachAfterDelay(class Actor &);
     MCAPI bool _withinRange(class Actor const &);
+
+protected:
 
 
 };

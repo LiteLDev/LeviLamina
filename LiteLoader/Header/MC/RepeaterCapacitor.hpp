@@ -22,6 +22,7 @@ public:
     RepeaterCapacitor(class RepeaterCapacitor const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RepeaterCapacitor();
     /*1*/ virtual int getStrength() const;
@@ -44,7 +45,6 @@ public:
 #endif
     MCAPI RepeaterCapacitor();
     MCAPI void setDelay(int);
-
 
 
 };

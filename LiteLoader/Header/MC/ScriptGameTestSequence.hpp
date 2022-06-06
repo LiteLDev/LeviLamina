@@ -22,6 +22,7 @@ public:
     ScriptGameTestSequence() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTGAMETESTSEQUENCE
 public:
@@ -37,7 +38,6 @@ public:
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> thenWait(class Scripting::Closure<void (void)>);
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> thenWaitAfter(int, class Scripting::Closure<void (void)>);
     MCAPI ~ScriptGameTestSequence();
-
 
 
 };

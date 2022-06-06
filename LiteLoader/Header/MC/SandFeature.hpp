@@ -23,6 +23,7 @@ public:
     SandFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SandFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -31,7 +32,6 @@ public:
 public:
 #endif
     MCAPI SandFeature(class Block const &, int);
-
 
 
 };

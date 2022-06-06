@@ -34,6 +34,7 @@ public:
     BossEventPacket(class BossEventPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BossEventPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -46,7 +47,6 @@ public:
     MCAPI BossEventPacket(enum BossEventUpdateType, class RaidBossComponent &);
     MCAPI BossEventPacket(enum BossEventUpdateType, struct ActorUniqueID, class BossComponent &);
     MCAPI BossEventPacket();
-
 
 
 };

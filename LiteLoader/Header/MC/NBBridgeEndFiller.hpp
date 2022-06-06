@@ -23,6 +23,7 @@ public:
     NBBridgeEndFiller() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NBBridgeEndFiller();
     /*1*/ virtual void moveBoundingBox(int, int, int);
@@ -41,7 +42,6 @@ public:
 public:
 #endif
     MCAPI static std::unique_ptr<class NetherFortressPiece> createPiece(std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
-
 
 
 };

@@ -24,6 +24,7 @@ public:
     LoginPacket(class LoginPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LoginPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI LoginPacket();
-
 
 
 };

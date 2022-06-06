@@ -23,6 +23,7 @@ public:
     SoulSandBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SoulSandBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -68,9 +69,7 @@ public:
 public:
 #endif
     MCAPI SoulSandBlock(std::string const &, int);
-
-
-//private:
     MCAPI static class BaseGameVersion const SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION;
+
 
 };

@@ -21,6 +21,7 @@ public:
     RemoveOnHitSubcomponent(class RemoveOnHitSubcomponent const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RemoveOnHitSubcomponent();
     /*1*/ virtual void __unk_vfn_1();
@@ -33,7 +34,6 @@ public:
     MCVAPI void writetoJSON(class Json::Value &) const;
 #endif
     MCAPI RemoveOnHitSubcomponent();
-
 
 
 };

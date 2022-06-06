@@ -23,6 +23,7 @@ public:
     PoweredRailBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PoweredRailBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -64,7 +65,6 @@ public:
 public:
 #endif
     MCAPI PoweredRailBlock(std::string const &, int);
-
 
 
 };

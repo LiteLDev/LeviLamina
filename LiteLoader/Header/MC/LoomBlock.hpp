@@ -23,6 +23,7 @@ public:
     LoomBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LoomBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -65,7 +66,6 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI LoomBlock(std::string const &, int);
-
 
 
 };

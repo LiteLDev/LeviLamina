@@ -23,6 +23,7 @@ public:
     FlowerPotBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FlowerPotBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -43,7 +44,6 @@ public:
     MCAPI FlowerPotBlockActor(class BlockPos const &);
     MCAPI class Block const * getPlantItem() const;
     MCAPI void setPlantItem(class Block const *);
-
 
 
 };

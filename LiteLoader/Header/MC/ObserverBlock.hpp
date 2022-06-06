@@ -23,6 +23,7 @@ public:
     ObserverBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ObserverBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -78,9 +79,11 @@ public:
 #endif
     MCAPI ObserverBlock(std::string const &, int);
 
-
 //private:
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &, bool, bool) const;
     MCAPI void _updateState(class BlockSource &, class BlockPos const &, class PulseCapacitor &, bool) const;
+
+private:
+
 
 };

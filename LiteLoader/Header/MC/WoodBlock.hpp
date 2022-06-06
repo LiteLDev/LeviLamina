@@ -23,6 +23,7 @@ public:
     WoodBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~WoodBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -73,8 +74,10 @@ public:
 #endif
     MCAPI WoodBlock(std::string const &, int);
 
-
 //private:
     MCAPI class Block const & _createBlockWithStates(class Block const &) const;
+
+private:
+
 
 };

@@ -22,6 +22,7 @@ public:
     BaseMoveToGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BaseMoveToGoal();
     /*1*/ virtual bool canUse();
@@ -51,6 +52,8 @@ public:
     MCAPI void _checkIfStuck();
     MCAPI bool _isCooldownActive() const;
     MCAPI void setInterval(int);
+
+protected:
 
 
 };

@@ -23,6 +23,7 @@ public:
     RandomFlyingGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RandomFlyingGoal();
     /*1*/ virtual bool canUse();
@@ -35,8 +36,10 @@ public:
 #endif
     MCAPI RandomFlyingGoal(class Mob &, float, int, int, bool);
 
-
 //private:
     MCAPI bool _getTreePos(class Vec3 &) const;
+
+private:
+
 
 };

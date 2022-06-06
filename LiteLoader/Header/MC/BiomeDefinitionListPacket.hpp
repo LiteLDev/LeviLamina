@@ -22,6 +22,7 @@ public:
     BiomeDefinitionListPacket(class BiomeDefinitionListPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BiomeDefinitionListPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 public:
 #endif
     MCAPI BiomeDefinitionListPacket();
-
 
 
 };

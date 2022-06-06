@@ -24,6 +24,7 @@ public:
     SubChunkPacket(class SubChunkPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SubChunkPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -35,7 +36,6 @@ public:
 #endif
     MCAPI SubChunkPacket(class AutomaticID<class Dimension, int> const &, class SubChunkPos const &, bool);
     MCAPI SubChunkPacket();
-
 
 
 };

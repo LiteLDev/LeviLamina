@@ -22,6 +22,7 @@ public:
     ContainerSetDataPacket(class ContainerSetDataPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ContainerSetDataPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI ContainerSetDataPacket(enum ContainerID, int, int);
     MCAPI ContainerSetDataPacket();
-
 
 
 };

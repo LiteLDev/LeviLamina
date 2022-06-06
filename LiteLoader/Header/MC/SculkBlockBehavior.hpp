@@ -20,6 +20,7 @@ public:
     SculkBlockBehavior() = delete;
 #endif
 
+
 public:
     /*0*/ virtual int updateDecayDelay(int) const;
     /*1*/ virtual int updateFacingData(int, class Block const &) const;
@@ -31,9 +32,11 @@ public:
 public:
 #endif
 
-
 //private:
     MCAPI static bool _canPlaceGrowth(class IBlockWorldGenAPI &, class BlockPos const &, class BlockPos const &, class SculkSpreader &);
     MCAPI static void _placeGrowthAt(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class Random &);
+
+private:
+
 
 };

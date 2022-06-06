@@ -23,6 +23,7 @@ public:
     SwamplandHut() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SwamplandHut();
     /*3*/ virtual enum StructurePieceType getType() const;
@@ -36,6 +37,8 @@ public:
 
 //protected:
     MCAPI void placeCauldron(class BlockSource &, class Random &, int, int, int, class BoundingBox const &);
+
+protected:
 
 
 };

@@ -22,6 +22,7 @@ public:
     PacketObserver() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PacketObserver();
     /*1*/ virtual void packetSentTo(class NetworkIdentifier const &, class Packet const &, unsigned int);
@@ -31,7 +32,6 @@ public:
     MCVAPI void dataReceivedFrom(class NetworkIdentifier const &, std::string const &);
     MCVAPI void dataSentTo(class NetworkIdentifier const &, class gsl::basic_string_span<char const, -1>);
 #endif
-
 
 
 };

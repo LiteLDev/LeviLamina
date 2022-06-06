@@ -22,6 +22,7 @@ public:
     ActorAnimationEvent() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONEVENT
 public:
@@ -30,7 +31,6 @@ public:
     MCAPI ActorAnimationEvent(float, std::string const &, enum CurrentCmdVersion, enum MolangVersion);
     MCAPI void fire(class RenderParams &, class Actor *) const;
     MCAPI ~ActorAnimationEvent();
-
 
 
 };

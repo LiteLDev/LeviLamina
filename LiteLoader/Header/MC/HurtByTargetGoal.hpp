@@ -23,6 +23,7 @@ public:
     HurtByTargetGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HurtByTargetGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI HurtByTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, bool);
-
 
 
 };

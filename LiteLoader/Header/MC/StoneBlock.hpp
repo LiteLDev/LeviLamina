@@ -23,6 +23,7 @@ public:
     StoneBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StoneBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -71,7 +72,6 @@ public:
 #endif
     MCAPI StoneBlock(std::string const &, int);
     MCAPI static class mce::Color getStoneBlockMapColor(enum StoneType);
-
 
 
 };

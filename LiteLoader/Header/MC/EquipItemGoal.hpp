@@ -22,6 +22,7 @@ public:
     EquipItemGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EquipItemGoal();
     /*1*/ virtual bool canUse();
@@ -36,8 +37,10 @@ public:
 #endif
     MCAPI EquipItemGoal(class Mob &);
 
-
 //private:
     MCAPI void _dropItem(class ItemStack const &) const;
+
+private:
+
 
 };

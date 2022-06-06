@@ -22,6 +22,7 @@ public:
     RemoveEntityPacket(class RemoveEntityPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RemoveEntityPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -31,7 +32,6 @@ public:
 #endif
     MCAPI RemoveEntityPacket(class EntityContext &);
     MCAPI RemoveEntityPacket();
-
 
 
 };

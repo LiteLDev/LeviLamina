@@ -22,6 +22,7 @@ public:
     MoveIndoorsGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MoveIndoorsGoal();
     /*1*/ virtual bool canUse();
@@ -36,9 +37,11 @@ public:
 #endif
     MCAPI MoveIndoorsGoal(class Mob &);
 
-
 //private:
     MCAPI bool _isInside(class BlockPos const &);
     MCAPI void _startPathfinding();
+
+private:
+
 
 };

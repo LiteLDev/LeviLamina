@@ -23,6 +23,7 @@ public:
     ChorusPlantBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ChorusPlantBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -75,11 +76,14 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI ChorusPlantBlock(std::string const &, int);
+    MCAPI static bool canGrowChorus(class Block const &);
+
+//private:
+
+private:
     MCAPI static float const PLANT_HEIGHT;
     MCAPI static float const PLANT_ITEM_DIMENSION;
     MCAPI static float const PLANT_WIDTH;
-    MCAPI static bool canGrowChorus(class Block const &);
-
 
 
 };

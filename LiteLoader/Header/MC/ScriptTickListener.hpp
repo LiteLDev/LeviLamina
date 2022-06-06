@@ -20,6 +20,7 @@ public:
     ScriptTickListener() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptTickListener();
     /*1*/ virtual void __unk_vfn_1();
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI ScriptTickListener(class Scripting::ScriptEngine &, class ScriptFormPromiseTracker &);
-
 
 
 };

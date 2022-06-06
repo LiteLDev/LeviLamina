@@ -25,6 +25,7 @@ public:
     DoorItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DoorItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -46,7 +47,6 @@ public:
 #endif
     MCAPI DoorItem(std::string const &, int, enum DoorBlock::DoorType);
     MCAPI static bool place(class BlockSource *, int, int, int, int, class Block const *);
-
 
 
 };

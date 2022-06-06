@@ -23,6 +23,7 @@ public:
     OwnerHurtByTargetGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~OwnerHurtByTargetGoal();
     /*1*/ virtual bool canUse();
@@ -33,7 +34,6 @@ public:
 public:
 #endif
     MCAPI OwnerHurtByTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &);
-
 
 
 };

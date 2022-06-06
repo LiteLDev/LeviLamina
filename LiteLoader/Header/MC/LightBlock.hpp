@@ -23,6 +23,7 @@ public:
     LightBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LightBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -76,7 +77,6 @@ public:
 public:
 #endif
     MCAPI LightBlock(std::string const &, int, class Material const &);
-
 
 
 };

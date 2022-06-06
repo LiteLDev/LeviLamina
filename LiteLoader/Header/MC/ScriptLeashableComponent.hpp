@@ -23,6 +23,7 @@ public:
     ScriptLeashableComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptLeashableComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTLEASHABLECOMPONENT
@@ -33,7 +34,6 @@ public:
     MCAPI class Scripting::Result<void> leash(class ScriptActor &) const;
     MCAPI class Scripting::Result<void> unleash() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptLeashableComponent> bind(struct Scripting::Version);
-
 
 
 };

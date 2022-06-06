@@ -31,6 +31,7 @@ public:
     BlockLegacy() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BlockLegacy();
     /*1*/ virtual class Block const & getStateFromLegacyData(unsigned short) const;
@@ -333,8 +334,6 @@ public:
     MCAPI void setRandomTickingExtraLayer(bool) const;
     MCAPI void setSolid(bool);
     MCAPI class Block const * tryGetStateFromLegacyData(unsigned short) const;
-    MCAPI static std::string const BLOCK_DESCRIPTION_PREFIX;
-    MCAPI static float const SIZE_OFFSET;
     MCAPI static struct BlockLegacy::NameInfo extractBlockNameInfo(class HashedString const &);
     MCAPI static unsigned char getPlacementFacingAll(class Actor &, class BlockPos const &, float);
     MCAPI static unsigned char getPlacementFacingAllExceptAxisY(class Actor &, class BlockPos const &, float);
@@ -352,5 +351,12 @@ public:
 
 //private:
     MCAPI void initParams(class RenderParams &, class BlockSource &, class BlockPos const &, class Actor *) const;
+
+protected:
+
+private:
+    MCAPI static std::string const BLOCK_DESCRIPTION_PREFIX;
+    MCAPI static float const SIZE_OFFSET;
+
 
 };

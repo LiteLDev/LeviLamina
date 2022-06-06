@@ -23,6 +23,7 @@ public:
     ChunkLoadedRequest() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKLOADEDREQUEST
 public:
@@ -42,8 +43,10 @@ public:
     MCAPI static bool isValidTag(class CompoundTag const &);
     MCAPI static struct DeserializedChunkLoadedRequest load(std::string const &, class CompoundTag const &, class ICommandOriginLoader &, std::string const &);
 
-
 //private:
     MCAPI class ITickingAreaView const * _getTickingArea(class Dimension const &) const;
+
+private:
+
 
 };

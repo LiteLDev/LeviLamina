@@ -23,6 +23,7 @@ public:
     AmethystClusterBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AmethystClusterBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -79,8 +80,10 @@ public:
 #endif
     MCAPI AmethystClusterBlock(std::string const &, int, int, int);
 
-
 //private:
     MCAPI class AABB _shapeFromDirection(int) const;
+
+private:
+
 
 };

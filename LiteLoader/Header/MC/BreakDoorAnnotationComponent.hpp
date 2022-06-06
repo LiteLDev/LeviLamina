@@ -21,6 +21,7 @@ public:
     BreakDoorAnnotationComponent(class BreakDoorAnnotationComponent const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKDOORANNOTATIONCOMPONENT
 public:
@@ -32,9 +33,11 @@ public:
     MCAPI void obstructionCheck(class Mob &);
     MCAPI void onComponentRemoved(class EntityContext &);
 
-
 //private:
     MCAPI void _cleanUp(class Mob &);
     MCAPI bool _shouldBreakDoor(class Mob &);
+
+private:
+
 
 };

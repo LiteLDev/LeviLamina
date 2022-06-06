@@ -22,6 +22,7 @@ public:
     PortalForcer() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PortalForcer();
     /*1*/ virtual void deserialize(class CompoundTag const &);
@@ -39,8 +40,11 @@ public:
     MCAPI void removeMisalignedPortalRecords(class BlockSource &, class PortalShape const &, class PortalRecord const &);
     MCAPI void removePortalRecord(class BlockSource &, class BlockPos const &);
     MCAPI void travelPortal(class Actor &, class BlockPos const &, class AutomaticID<class Dimension, int>) const;
-    MCAPI static std::string const PORTAL_FILE_ID;
 
+//private:
+
+private:
+    MCAPI static std::string const PORTAL_FILE_ID;
 
 
 };

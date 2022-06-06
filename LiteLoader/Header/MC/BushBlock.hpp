@@ -23,6 +23,7 @@ public:
     BushBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BushBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -70,7 +71,6 @@ public:
 #endif
     MCAPI BushBlock(std::string const &, int, class Material const &);
     MCAPI bool growCrops(class BlockSource &, class BlockPos const &, enum FertilizerType) const;
-
 
 
 };

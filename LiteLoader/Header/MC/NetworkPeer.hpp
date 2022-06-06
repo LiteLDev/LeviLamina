@@ -37,6 +37,7 @@ public:
     NetworkPeer() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NetworkPeer();
     /*1*/ virtual void sendPacket(std::string const &, enum NetworkPeer::Reliability, int, unsigned short, enum Compressibility) = 0;
@@ -47,7 +48,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKPEER
 public:
 #endif
-
 
 
 };

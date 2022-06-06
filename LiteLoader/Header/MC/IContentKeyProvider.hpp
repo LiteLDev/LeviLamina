@@ -22,6 +22,7 @@ public:
     IContentKeyProvider() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~IContentKeyProvider();
     /*1*/ virtual void __unk_vfn_1() = 0;
@@ -30,7 +31,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTENTKEYPROVIDER
 public:
 #endif
-
 
 
 };

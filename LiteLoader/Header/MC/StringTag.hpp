@@ -31,6 +31,7 @@ public:
     StringTag(class StringTag const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StringTag();
     /*2*/ virtual void write(class IDataOutput &) const;
@@ -45,7 +46,6 @@ public:
 #endif
     MCAPI StringTag(std::string);
     MCAPI StringTag();
-
 
 
 };

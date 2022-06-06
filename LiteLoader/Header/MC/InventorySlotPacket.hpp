@@ -22,6 +22,7 @@ public:
     InventorySlotPacket(class InventorySlotPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~InventorySlotPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI InventorySlotPacket(enum ContainerID, unsigned int, class ItemStack const &);
     MCAPI InventorySlotPacket();
-
 
 
 };

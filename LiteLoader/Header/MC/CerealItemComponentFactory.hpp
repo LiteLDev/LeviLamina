@@ -28,6 +28,7 @@ public:
     CerealItemComponentFactory() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREALITEMCOMPONENTFACTORY
 public:
@@ -35,11 +36,9 @@ public:
     MCAPI static class entt::meta_any constructComponent(std::string const &);
     MCAPI static class std::shared_ptr<class ItemComponent> constructItemComponent(std::string const &);
     MCAPI static class entt::meta_any getComponent(std::string const &, void *);
-    MCAPI static void setItemContext(class ComponentItem *);
-
-
-//private:
     MCAPI static class ComponentItem * mItemContext;
     MCAPI static class std::map<std::string, struct CerealItemComponentFactory::Constructor, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, struct CerealItemComponentFactory::Constructor>>> mRegisteredComponents;
+    MCAPI static void setItemContext(class ComponentItem *);
+
 
 };

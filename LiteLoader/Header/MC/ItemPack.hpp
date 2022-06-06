@@ -19,6 +19,7 @@ public:
     ItemPack(class ItemPack const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMPACK
 public:
@@ -26,7 +27,6 @@ public:
     MCAPI ItemPack();
     MCAPI void add(class RecipeIngredient const &, int);
     MCAPI ~ItemPack();
-
 
 
 };

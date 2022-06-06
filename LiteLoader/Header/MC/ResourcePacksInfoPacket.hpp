@@ -22,6 +22,7 @@ public:
     ResourcePacksInfoPacket(class ResourcePacksInfoPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ResourcePacksInfoPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI ResourcePacksInfoPacket();
     MCAPI ResourcePacksInfoPacket(bool, std::vector<struct PackInfoData> &, std::vector<struct PackInfoData> &, bool);
-
 
 
 };

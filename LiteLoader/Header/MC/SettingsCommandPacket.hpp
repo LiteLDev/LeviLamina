@@ -22,6 +22,7 @@ public:
     SettingsCommandPacket(class SettingsCommandPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SettingsCommandPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,7 +35,6 @@ public:
     MCAPI SettingsCommandPacket();
     MCAPI std::string const & getCommandString() const;
     MCAPI bool getSupressOutput() const;
-
 
 
 };

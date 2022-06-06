@@ -24,6 +24,7 @@ public:
     Guardian() = delete;
 #endif
 
+
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*9*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -72,12 +73,13 @@ public:
     MCAPI bool isElderGhost() const;
     MCAPI void setAttackTime(int);
     MCAPI void setElder(bool);
+    MCAPI static int const ATTACK_TIME;
+    MCAPI static int const FIRST_DAMAGE_TIME;
 
 //protected:
     MCAPI void registerLoopingSounds();
 
-//private:
-    MCAPI static int const ATTACK_TIME;
-    MCAPI static int const FIRST_DAMAGE_TIME;
+protected:
+
 
 };

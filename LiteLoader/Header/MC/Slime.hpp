@@ -24,6 +24,7 @@ public:
     Slime() = delete;
 #endif
 
+
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Slime();
@@ -83,6 +84,8 @@ public:
 //protected:
     MCAPI void justJumped();
     MCAPI void justLanded();
+
+protected:
 
 
 };

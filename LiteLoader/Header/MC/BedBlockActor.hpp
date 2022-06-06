@@ -23,6 +23,7 @@ public:
     BedBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BedBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -49,7 +50,6 @@ public:
     MCAPI bool claimPetSleepOnBed(struct ActorUniqueID);
     MCAPI void startSleepingOn();
     MCAPI void stopSleepingOn(class BlockSource &, bool);
-
 
 
 };

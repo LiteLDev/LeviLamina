@@ -24,6 +24,7 @@ public:
     GameDirectorEntityServerCommandOrigin() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GameDirectorEntityServerCommandOrigin();
     /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
@@ -37,7 +38,6 @@ public:
     MCAPI GameDirectorEntityServerCommandOrigin(class Actor &);
     MCAPI GameDirectorEntityServerCommandOrigin(struct ActorUniqueID, class Level &);
     MCAPI static std::unique_ptr<class GameDirectorEntityServerCommandOrigin> load(class CompoundTag const &, class Level &);
-
 
 
 };

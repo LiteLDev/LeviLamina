@@ -22,6 +22,7 @@ public:
     SparseContainer() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPARSECONTAINER
 public:
@@ -34,6 +35,8 @@ public:
 //protected:
     MCAPI void _onItemNetworkChanged(int, class ItemStack const &, class ItemStack const &);
     MCAPI void _setBackingContainerSlot(int, class ItemStack const &);
+
+protected:
 
 
 };

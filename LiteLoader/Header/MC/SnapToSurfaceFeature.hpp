@@ -23,6 +23,7 @@ public:
     SnapToSurfaceFeature(class SnapToSurfaceFeature const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SnapToSurfaceFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
@@ -31,8 +32,10 @@ public:
 #endif
     MCAPI SnapToSurfaceFeature();
 
-
 //private:
     MCAPI class std::optional<class BlockPos> _findSnapPos(class IBlockWorldGenAPI &, class BlockPos const &, enum SnapToSurfaceFeature::Surface) const;
+
+private:
+
 
 };

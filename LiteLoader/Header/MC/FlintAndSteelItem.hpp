@@ -24,6 +24,7 @@ public:
     FlintAndSteelItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FlintAndSteelItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -49,7 +50,6 @@ public:
 public:
 #endif
     MCAPI FlintAndSteelItem(std::string const &, int);
-
 
 
 };

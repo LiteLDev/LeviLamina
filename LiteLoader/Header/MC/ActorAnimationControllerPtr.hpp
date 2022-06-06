@@ -22,6 +22,7 @@ public:
     ActorAnimationControllerPtr() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONCONTROLLERPTR
 public:
@@ -32,8 +33,11 @@ public:
     MCAPI class ActorAnimationController const * operator->() const;
     MCAPI class ActorAnimationController * operator->();
     MCAPI ~ActorAnimationControllerPtr();
-    MCAPI static class ActorAnimationControllerPtr const NONE;
 
+//private:
+
+private:
+    MCAPI static class ActorAnimationControllerPtr const NONE;
 
 
 };

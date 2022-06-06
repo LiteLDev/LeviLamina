@@ -21,6 +21,7 @@ public:
     ContainerWeakRef(class ContainerWeakRef const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERWEAKREF
 public:
@@ -30,7 +31,6 @@ public:
     MCAPI ContainerWeakRef();
     MCAPI operator bool() const;
     MCAPI ~ContainerWeakRef();
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     BedrockBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BedrockBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -65,7 +66,6 @@ public:
 public:
 #endif
     MCAPI BedrockBlock(std::string const &, int);
-
 
 
 };

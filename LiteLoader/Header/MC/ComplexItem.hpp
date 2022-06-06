@@ -24,6 +24,7 @@ public:
     ComplexItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ComplexItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -45,7 +46,6 @@ public:
     MCVAPI bool isComplex() const;
 #endif
     MCAPI ComplexItem(std::string const &, int);
-
 
 
 };

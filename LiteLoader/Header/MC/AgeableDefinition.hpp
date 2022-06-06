@@ -23,6 +23,7 @@ public:
     AgeableDefinition() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGEABLEDEFINITION
 public:
@@ -34,7 +35,6 @@ public:
     MCAPI int getTicksAsBaby() const;
     MCAPI void initialize(class EntityContext &, class AgeableComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AgeableDefinition>> &);
-
 
 
 };

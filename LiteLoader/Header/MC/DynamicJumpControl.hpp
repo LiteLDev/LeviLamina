@@ -21,6 +21,7 @@ public:
     DynamicJumpControl(class DynamicJumpControl const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DynamicJumpControl();
     /*1*/ virtual void initializeInternal(class Mob &, struct JumpControlDescription *);
@@ -34,7 +35,6 @@ public:
 public:
 #endif
     MCAPI DynamicJumpControl();
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     CryingObsidianBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CryingObsidianBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -65,7 +66,6 @@ public:
 public:
 #endif
     MCAPI CryingObsidianBlock(std::string const &, int);
-
 
 
 };

@@ -20,6 +20,7 @@ public:
     OwnerStorageFeature() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OWNERSTORAGEFEATURE
 public:
@@ -30,6 +31,8 @@ public:
     MCAPI OwnerStorageFeature(enum OwnerStorageFeature::VariadicInit, class FeatureRegistry &);
     MCAPI bool _hasValue() const;
     MCAPI ~OwnerStorageFeature();
+
+protected:
 
 
 };

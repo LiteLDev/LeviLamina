@@ -23,6 +23,7 @@ public:
     NullSoundPlayer() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NullSoundPlayer();
     /*1*/ virtual void __unk_vfn_1();
@@ -66,7 +67,6 @@ public:
     MCVAPI class std::optional<struct PlayingSoundAttributes> tryGetPlayingSoundAttributes(unsigned __int64) const;
     MCVAPI void unregisterLoop(unsigned __int64, bool);
 #endif
-
 
 
 };

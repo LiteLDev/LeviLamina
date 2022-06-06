@@ -23,6 +23,7 @@ public:
     QuartzBlockBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~QuartzBlockBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -70,7 +71,6 @@ public:
 public:
 #endif
     MCAPI QuartzBlockBlock(std::string const &, int);
-
 
 
 };

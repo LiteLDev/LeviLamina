@@ -21,6 +21,7 @@ public:
     LevelEventCoordinator(class LevelEventCoordinator const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELEVENTCOORDINATOR
 public:
@@ -33,7 +34,6 @@ public:
     MCAPI void sendLevelRemovedActor(class Level &, class Actor &);
     MCAPI void sendLevelTick();
     MCAPI void sendLevelWeatherChanged(std::string const &, bool, bool);
-
 
 
 };

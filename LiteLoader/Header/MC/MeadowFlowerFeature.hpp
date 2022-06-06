@@ -22,6 +22,7 @@ public:
     MeadowFlowerFeature(class MeadowFlowerFeature const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MeadowFlowerFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -31,8 +32,10 @@ public:
 #endif
     MCAPI MeadowFlowerFeature();
 
-
 //private:
     MCAPI int getRandomArrayIndex(class BlockPos const &, unsigned __int64, float) const;
+
+private:
+
 
 };

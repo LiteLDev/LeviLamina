@@ -22,6 +22,7 @@ public:
     EntitySensorSystem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EntitySensorSystem();
     /*1*/ virtual void __unk_vfn_1();
@@ -29,7 +30,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSENSORSYSTEM
 public:
 #endif
-
 
 
 };

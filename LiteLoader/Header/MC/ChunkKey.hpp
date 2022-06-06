@@ -20,6 +20,7 @@ public:
     ChunkKey() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKKEY
 public:
@@ -28,7 +29,6 @@ public:
     MCAPI ChunkKey(class LevelChunk const &);
     MCAPI class gsl::basic_string_span<char const, -1> asSpan() const;
     MCAPI unsigned __int64 hashCode() const;
-
 
 
 };

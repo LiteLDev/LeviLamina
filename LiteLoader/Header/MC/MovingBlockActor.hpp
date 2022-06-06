@@ -23,6 +23,7 @@ public:
     MovingBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MovingBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -54,7 +55,6 @@ public:
     MCAPI void setBlockEntity(class std::shared_ptr<class BlockActor>);
     MCAPI void setCollisionShape(class AABB const &);
     MCAPI void setExtraBlock(class Block const &);
-
 
 
 };

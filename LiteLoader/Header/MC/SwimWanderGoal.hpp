@@ -22,6 +22,7 @@ public:
     SwimWanderGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SwimWanderGoal();
     /*1*/ virtual bool canUse();
@@ -38,6 +39,8 @@ public:
 
 //protected:
     MCAPI bool _setWantedPosition();
+
+protected:
 
 
 };

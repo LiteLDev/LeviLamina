@@ -23,6 +23,7 @@ public:
     MusicCommand() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MusicCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -31,10 +32,12 @@ public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
 
-
 //private:
     MCAPI void _handleActionQueueOrPlay(class CompoundTag &, class CommandOutput &) const;
     MCAPI void _handleActionStop(class CompoundTag &, class CommandOutput &) const;
     MCAPI void _handleActionVolume(class CompoundTag &, class CommandOutput &) const;
+
+private:
+
 
 };

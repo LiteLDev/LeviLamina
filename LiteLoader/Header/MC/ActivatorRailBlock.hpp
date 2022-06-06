@@ -23,6 +23,7 @@ public:
     ActivatorRailBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActivatorRailBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -64,7 +65,6 @@ public:
 public:
 #endif
     MCAPI ActivatorRailBlock(std::string const &, int);
-
 
 
 };

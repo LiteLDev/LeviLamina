@@ -22,6 +22,7 @@ public:
     ItemStackRequestBatch() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTBATCH
 public:
@@ -31,7 +32,6 @@ public:
     MCAPI void write(class BinaryStream &) const;
     MCAPI ~ItemStackRequestBatch();
     MCAPI static std::unique_ptr<class ItemStackRequestBatch> read(class ReadOnlyBinaryStream &);
-
 
 
 };

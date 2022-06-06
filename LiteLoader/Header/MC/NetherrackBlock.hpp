@@ -23,6 +23,7 @@ public:
     NetherrackBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NetherrackBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -70,7 +71,6 @@ public:
 public:
 #endif
     MCAPI NetherrackBlock(std::string const &, int);
-
 
 
 };

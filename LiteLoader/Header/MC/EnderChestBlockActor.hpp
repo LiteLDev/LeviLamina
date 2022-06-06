@@ -22,6 +22,7 @@ public:
     EnderChestBlockActor() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERCHESTBLOCKACTOR
 public:
@@ -32,9 +33,7 @@ public:
     MCVAPI void playOpenSound(class BlockSource &);
 #endif
     MCAPI EnderChestBlockActor(enum BlockActorType, std::string const &, enum BlockActorRendererId, class BlockPos const &);
-
-
-//private:
     MCAPI static int const ITEMS_SIZE;
+
 
 };

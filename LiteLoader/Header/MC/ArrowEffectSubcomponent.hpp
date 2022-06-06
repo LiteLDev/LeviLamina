@@ -24,6 +24,7 @@ public:
     ArrowEffectSubcomponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ArrowEffectSubcomponent();
     /*2*/ virtual void writetoJSON(class Json::Value &) const;
@@ -32,7 +33,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARROWEFFECTSUBCOMPONENT
 public:
 #endif
-
 
 
 };

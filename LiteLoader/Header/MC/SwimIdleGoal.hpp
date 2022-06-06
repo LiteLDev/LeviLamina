@@ -22,6 +22,7 @@ public:
     SwimIdleGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SwimIdleGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI SwimIdleGoal(class Mob &);
-
 
 
 };

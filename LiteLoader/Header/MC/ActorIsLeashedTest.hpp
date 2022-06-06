@@ -24,6 +24,7 @@ public:
     ActorIsLeashedTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorIsLeashedTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
@@ -31,7 +32,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORISLEASHEDTEST
 public:
 #endif
-
 
 
 };

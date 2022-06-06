@@ -24,6 +24,7 @@ public:
     Minecraft() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Minecraft();
     /*1*/ virtual void __unk_vfn_1();
@@ -57,8 +58,10 @@ public:
     MCAPI void startLeaveGame(bool);
     MCAPI bool update();
 
-
 //private:
     MCAPI void _tryCatchupMovementTicks();
+
+private:
+
 
 };

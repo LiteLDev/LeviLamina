@@ -23,6 +23,7 @@ public:
     CaveVinesBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CaveVinesBlock();
     /*4*/ virtual bool hasTag(class BlockSource &, class BlockPos const &, class Block const &, std::string const &) const;
@@ -81,11 +82,13 @@ public:
 #endif
     MCAPI CaveVinesBlock(std::string const &, int, enum CaveVinesVariant);
 
-
 //private:
     MCAPI bool _isCaveVinesBlock(class Block const &) const;
     MCAPI bool _isCaveVinesHead(class BlockSource &, class BlockPos const &) const;
     MCAPI bool _pickBerries(class BlockSource &, class BlockPos const &) const;
     MCAPI void _updateBlockBasedOnNeighborBelow(class BlockSource &, class BlockPos const &) const;
+
+private:
+
 
 };

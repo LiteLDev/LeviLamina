@@ -21,6 +21,7 @@ public:
     MountTamingComponent(class MountTamingComponent const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOUNTTAMINGCOMPONENT
 public:
@@ -36,9 +37,11 @@ public:
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void tameToPlayer(class Actor &, class Player &, bool);
 
-
 //private:
     MCAPI void _feedItem(class Actor &, class Player &, int);
     MCAPI static bool _autoReject(class ItemStack const &, class MountTameableDefinition const *);
+
+private:
+
 
 };

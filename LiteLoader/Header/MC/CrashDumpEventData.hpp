@@ -28,5 +28,6 @@ public:
 protected:
 
 private:
+    MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
 
 };

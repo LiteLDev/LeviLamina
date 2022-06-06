@@ -22,6 +22,7 @@ public:
     MoveActorAbsolutePacket(class MoveActorAbsolutePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MoveActorAbsolutePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI MoveActorAbsolutePacket(class MoveActorAbsoluteData const &);
     MCAPI MoveActorAbsolutePacket();
-
 
 
 };

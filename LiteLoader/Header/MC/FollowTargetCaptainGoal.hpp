@@ -22,6 +22,7 @@ public:
     FollowTargetCaptainGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FollowTargetCaptainGoal();
     /*1*/ virtual bool canUse();
@@ -36,8 +37,10 @@ public:
 #endif
     MCAPI FollowTargetCaptainGoal(class Mob &, float, float, float);
 
-
 //private:
     MCAPI void _determineMovePos();
+
+private:
+
 
 };

@@ -21,6 +21,7 @@ public:
     ConditionalBandwidthOptimizationComponent() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONDITIONALBANDWIDTHOPTIMIZATIONCOMPONENT
 public:
@@ -31,7 +32,6 @@ public:
     MCAPI void initFromDefinition(class Actor &, class ConditionalBandwidthOptimizationDefinition const &);
     MCAPI class ConditionalBandwidthOptimizationComponent & operator=(class ConditionalBandwidthOptimizationComponent &&);
     MCAPI ~ConditionalBandwidthOptimizationComponent();
-
 
 
 };

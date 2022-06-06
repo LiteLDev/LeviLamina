@@ -22,6 +22,7 @@ public:
     LoopbackPacketSender() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LoopbackPacketSender();
     /*1*/ virtual void send(class Packet &);
@@ -39,7 +40,6 @@ public:
     MCAPI void addLoopbackCallback(class NetEventCallback &);
     MCAPI void removeLoopbackCallback(class NetEventCallback &);
     MCAPI void setUserList(std::vector<class OwnerPtrT<struct EntityRefTraits>> const *);
-
 
 
 };

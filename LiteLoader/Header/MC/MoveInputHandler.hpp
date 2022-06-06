@@ -22,6 +22,7 @@ public:
     MoveInputHandler(class MoveInputHandler const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MoveInputHandler();
     /*1*/ virtual void tick(struct IPlayerMovementProxy &);
@@ -43,6 +44,8 @@ public:
 
 //protected:
     MCAPI MoveInputHandler();
+
+protected:
 
 
 };

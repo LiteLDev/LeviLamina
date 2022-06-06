@@ -21,6 +21,7 @@ public:
     Trade1Ingredient2ContainerValidation() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Trade1Ingredient2ContainerValidation();
     /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
@@ -36,7 +37,6 @@ public:
 public:
 #endif
     MCAPI Trade1Ingredient2ContainerValidation(bool);
-
 
 
 };

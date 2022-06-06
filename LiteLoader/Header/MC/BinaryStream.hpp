@@ -54,6 +54,7 @@ public:
     BinaryStream(class BinaryStream const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BinaryStream();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BINARYSTREAM
@@ -81,8 +82,10 @@ public:
     MCAPI void writeVarInt(int);
     MCAPI void writeVarInt64(__int64);
 
-
 //private:
     MCAPI void write(void const *, unsigned __int64);
+
+private:
+
 
 };

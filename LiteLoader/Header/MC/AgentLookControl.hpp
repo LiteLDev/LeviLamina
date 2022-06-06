@@ -21,6 +21,7 @@ public:
     AgentLookControl(class AgentLookControl const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AgentLookControl();
     /*1*/ virtual void initializeInternal(class Mob &);
@@ -29,8 +30,11 @@ public:
 public:
 #endif
     MCAPI AgentLookControl();
-    MCAPI static float sBaseYMax;
 
+//private:
+
+private:
+    MCAPI static float sBaseYMax;
 
 
 };

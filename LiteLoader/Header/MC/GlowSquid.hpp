@@ -24,6 +24,7 @@ public:
     GlowSquid() = delete;
 #endif
 
+
 public:
     /*14*/ virtual ~GlowSquid();
     /*40*/ virtual void __unk_vfn_40();
@@ -59,7 +60,6 @@ public:
 public:
 #endif
     MCAPI GlowSquid(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
 
 
 };

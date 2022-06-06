@@ -22,6 +22,7 @@ public:
     NullSecureStorage() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NULLSECURESTORAGE
 public:
@@ -30,7 +31,6 @@ public:
     MCVAPI bool get(std::string const &, std::string &);
     MCVAPI bool remove(std::string const &);
 #endif
-
 
 
 };

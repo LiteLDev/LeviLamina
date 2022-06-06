@@ -24,6 +24,7 @@ public:
     BoatItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BoatItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -52,7 +53,6 @@ public:
 public:
 #endif
     MCAPI BoatItem(std::string const &, int, enum WoodType);
-
 
 
 };

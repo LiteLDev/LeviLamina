@@ -60,6 +60,7 @@ public:
     Packet() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Packet();
     /*1*/ virtual enum MinecraftPacketIds getId() const = 0;
@@ -74,7 +75,6 @@ public:
     MCAPI void handle(class NetworkIdentifier const &, class NetEventCallback &, class std::shared_ptr<class Packet> &);
     MCAPI bool readNoHeader(class ReadOnlyBinaryStream &, unsigned char const &, struct ExtendedStreamReadResult &);
     MCAPI void writeWithHeader(unsigned char, class BinaryStream &) const;
-
 
 
 };

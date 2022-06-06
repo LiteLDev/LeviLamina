@@ -22,6 +22,7 @@ public:
     FuelItemComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FuelItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -36,7 +37,6 @@ public:
     MCAPI FuelItemComponent(class ComponentItem *);
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     NBMonsterThrone() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NBMonsterThrone();
     /*1*/ virtual void moveBoundingBox(int, int, int);
@@ -40,7 +41,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBMONSTERTHRONE
 public:
 #endif
-
 
 
 };

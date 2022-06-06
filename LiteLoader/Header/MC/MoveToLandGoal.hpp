@@ -23,6 +23,7 @@ public:
     MoveToLandGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MoveToLandGoal();
     /*1*/ virtual bool canUse();
@@ -37,7 +38,6 @@ public:
 public:
 #endif
     MCAPI MoveToLandGoal(class Mob &, float, int, int, int, float);
-
 
 
 };

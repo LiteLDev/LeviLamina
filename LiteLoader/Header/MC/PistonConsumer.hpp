@@ -22,6 +22,7 @@ public:
     PistonConsumer(class PistonConsumer const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PistonConsumer();
     /*6*/ virtual bool canConsumePowerAnyDirection() const;
@@ -35,7 +36,6 @@ public:
 #endif
     MCAPI PistonConsumer();
     MCAPI void setBlockPowerFace(unsigned char);
-
 
 
 };

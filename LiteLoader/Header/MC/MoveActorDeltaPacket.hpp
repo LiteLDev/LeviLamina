@@ -22,6 +22,7 @@ public:
     MoveActorDeltaPacket(class MoveActorDeltaPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MoveActorDeltaPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI MoveActorDeltaPacket(class MoveActorDeltaData const &);
     MCAPI MoveActorDeltaPacket();
-
 
 
 };

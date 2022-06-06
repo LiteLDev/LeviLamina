@@ -24,6 +24,7 @@ public:
     WaterLilyBlockItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~WaterLilyBlockItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -46,7 +47,6 @@ public:
 public:
 #endif
     MCAPI WaterLilyBlockItem(std::string const &, int);
-
 
 
 };

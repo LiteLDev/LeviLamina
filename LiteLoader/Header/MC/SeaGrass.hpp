@@ -23,6 +23,7 @@ public:
     SeaGrass() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SeaGrass();
     /*8*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
@@ -83,7 +84,6 @@ public:
 #endif
     MCAPI SeaGrass(std::string const &, int);
     MCAPI static bool trySpawnSeaGrass(class BlockSource &, class BlockPos const &);
-
 
 
 };

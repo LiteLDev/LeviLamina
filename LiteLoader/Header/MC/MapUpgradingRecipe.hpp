@@ -23,6 +23,7 @@ public:
     MapUpgradingRecipe() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MapUpgradingRecipe();
     /*1*/ virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
@@ -35,9 +36,12 @@ public:
 public:
 #endif
     MCAPI MapUpgradingRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
+
+//private:
+
+private:
     MCAPI static class mce::UUID const CartographyTableID;
     MCAPI static class mce::UUID const CraftingTableID;
-
 
 
 };

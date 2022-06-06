@@ -22,6 +22,7 @@ public:
     CopperBehavior() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COPPERBEHAVIOR
 public:
@@ -37,8 +38,10 @@ public:
     MCAPI bool use(class Player &, class BlockPos const &, unsigned char) const;
     MCAPI ~CopperBehavior();
 
-
 //private:
     MCAPI void _incrementAge(class BlockSource &, class Block const &, class BlockPos const &, float) const;
+
+private:
+
 
 };

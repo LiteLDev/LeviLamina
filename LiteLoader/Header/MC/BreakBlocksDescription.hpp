@@ -22,6 +22,7 @@ public:
     BreakBlocksDescription(class BreakBlocksDescription const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~BreakBlocksDescription();
@@ -31,7 +32,6 @@ public:
 public:
 #endif
     MCAPI BreakBlocksDescription();
-
 
 
 };

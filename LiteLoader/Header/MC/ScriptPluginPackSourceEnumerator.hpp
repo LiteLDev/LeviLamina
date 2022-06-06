@@ -20,6 +20,7 @@ public:
     ScriptPluginPackSourceEnumerator() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptPluginPackSourceEnumerator();
     /*1*/ virtual std::vector<struct PackIdVersion> const & getFullPackStack() const;
@@ -28,7 +29,6 @@ public:
 public:
 #endif
     MCAPI ScriptPluginPackSourceEnumerator(std::string const &, std::vector<class PackInstance> const &, std::vector<class PackInstance> const &);
-
 
 
 };

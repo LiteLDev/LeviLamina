@@ -74,6 +74,7 @@ public:
     EventPacket(class EventPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EventPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -103,7 +104,6 @@ public:
     MCAPI EventPacket(class Player const *, bool, class Actor const *, class gsl::not_null<class Mob const *>, enum ActorDamageCause);
     MCAPI EventPacket();
     MCAPI class EventPacket & operator=(class EventPacket &&);
-
 
 
 };

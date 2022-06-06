@@ -23,6 +23,7 @@ public:
     NBRoomCrossing() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NBRoomCrossing();
     /*1*/ virtual void moveBoundingBox(int, int, int);
@@ -40,7 +41,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBROOMCROSSING
 public:
 #endif
-
 
 
 };

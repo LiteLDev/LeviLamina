@@ -16,6 +16,7 @@ class SerializedSkin {
     char filler[620];
 #undef AFTER_EXTRA
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERIALIZEDSKIN
 public:
@@ -35,7 +36,6 @@ public:
     MCAPI bool useBlinkingAnimation() const;
     MCAPI void write(class BinaryStream &) const;
     MCAPI ~SerializedSkin();
-
 
 
 };

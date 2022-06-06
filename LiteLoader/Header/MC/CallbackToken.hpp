@@ -21,6 +21,7 @@ public:
     CallbackToken(class CallbackToken const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CALLBACKTOKEN
 public:
@@ -31,7 +32,6 @@ public:
     MCAPI class CallbackToken & operator=(class CallbackToken &&);
     MCAPI void release();
     MCAPI ~CallbackToken();
-
 
 
 };

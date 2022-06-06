@@ -23,6 +23,7 @@ public:
     LodestoneBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LodestoneBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -45,9 +46,7 @@ public:
     MCAPI class PositionTrackingId const & getTrackingHandle() const;
     MCAPI bool hasTrackingHandle() const;
     MCAPI bool setTrackingHandle(class PositionTrackingId const &);
-
-
-//private:
     MCAPI static std::string const sTagName_Handle;
+
 
 };

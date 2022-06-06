@@ -28,6 +28,7 @@ public:
     PlayerInventory() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERINVENTORY
 public:
@@ -73,7 +74,6 @@ public:
     MCAPI void setupDefaultInventory();
     MCAPI void swapSlots(int, int);
     MCAPI void tick();
-
 
 
 };

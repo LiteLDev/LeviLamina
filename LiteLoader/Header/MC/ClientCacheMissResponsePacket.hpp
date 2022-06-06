@@ -22,6 +22,7 @@ public:
     ClientCacheMissResponsePacket(class ClientCacheMissResponsePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ClientCacheMissResponsePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI ClientCacheMissResponsePacket();
-
 
 
 };

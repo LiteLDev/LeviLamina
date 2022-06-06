@@ -24,6 +24,7 @@ public:
     FilterTestBiomeSnowCovered() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FilterTestBiomeSnowCovered();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
@@ -31,7 +32,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTBIOMESNOWCOVERED
 public:
 #endif
-
 
 
 };

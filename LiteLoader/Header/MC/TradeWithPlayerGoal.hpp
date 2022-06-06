@@ -22,6 +22,7 @@ public:
     TradeWithPlayerGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TradeWithPlayerGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI TradeWithPlayerGoal(class Mob &);
-
 
 
 };

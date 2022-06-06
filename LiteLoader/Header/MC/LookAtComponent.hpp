@@ -21,6 +21,7 @@ public:
     LookAtComponent(class LookAtComponent const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATCOMPONENT
 public:
@@ -30,7 +31,6 @@ public:
     MCAPI float getSearchRadius() const;
     MCAPI bool getTarget() const;
     MCAPI bool isLookingAtMe(class Actor &, class Actor &);
-
 
 
 };

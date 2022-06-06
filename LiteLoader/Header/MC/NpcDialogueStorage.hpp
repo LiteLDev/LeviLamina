@@ -22,6 +22,7 @@ public:
     NpcDialogueStorage() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCDIALOGUESTORAGE
 public:
@@ -30,7 +31,6 @@ public:
     MCAPI struct NpcDialogueScene * getScene(std::string const &);
     MCAPI void init(class ResourcePackManager &);
     MCAPI bool parseFile(std::string const &, std::string const &, enum CurrentCmdVersion);
-
 
 
 };

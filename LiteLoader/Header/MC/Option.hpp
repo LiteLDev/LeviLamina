@@ -24,6 +24,7 @@ public:
     Option() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Option();
     /*1*/ virtual void save(std::vector<struct std::pair<std::string, std::string>> &) = 0;
@@ -43,8 +44,10 @@ public:
     MCAPI void setRequestSaveCallback(class std::function<void (bool)>);
     MCAPI static bool read(std::string const &, bool &);
 
-
 //private:
     MCAPI void _updatePropertyVector(std::vector<struct std::pair<std::string, std::string>> &, std::string const &);
+
+private:
+
 
 };

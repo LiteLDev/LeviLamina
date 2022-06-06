@@ -22,6 +22,7 @@ public:
     NetheriteArmorEquippedListener() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NetheriteArmorEquippedListener();
     /*1*/ virtual void __unk_vfn_1();
@@ -44,7 +45,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERITEARMOREQUIPPEDLISTENER
 public:
 #endif
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     NetherSprouts() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NetherSprouts();
     /*8*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
@@ -74,7 +75,6 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI NetherSprouts(std::string const &, int);
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     Inventory() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Inventory();
     /*1*/ virtual void init();
@@ -43,7 +44,6 @@ public:
     MCAPI std::vector<class ItemStack> getComplexItems();
     MCAPI void setupDefault();
     MCAPI void tick(int);
-
 
 
 };

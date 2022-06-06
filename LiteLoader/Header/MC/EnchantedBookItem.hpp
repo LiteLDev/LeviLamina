@@ -24,6 +24,7 @@ public:
     EnchantedBookItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EnchantedBookItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -46,7 +47,6 @@ public:
 public:
 #endif
     MCAPI EnchantedBookItem(std::string const &, int, bool);
-
 
 
 };

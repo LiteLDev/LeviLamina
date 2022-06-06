@@ -22,6 +22,7 @@ public:
     ActorSkeletalAnimationPtr() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSKELETALANIMATIONPTR
 public:
@@ -33,8 +34,11 @@ public:
     MCAPI class ActorSkeletalAnimation * operator->();
     MCAPI class ActorSkeletalAnimationPtr & operator=(class ActorSkeletalAnimationPtr const &);
     MCAPI ~ActorSkeletalAnimationPtr();
-    MCAPI static class ActorSkeletalAnimationPtr const NONE;
 
+//private:
+
+private:
+    MCAPI static class ActorSkeletalAnimationPtr const NONE;
 
 
 };

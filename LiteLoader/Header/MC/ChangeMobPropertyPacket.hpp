@@ -27,6 +27,7 @@ public:
     ChangeMobPropertyPacket(class ChangeMobPropertyPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ChangeMobPropertyPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -37,7 +38,6 @@ public:
 public:
 #endif
     MCAPI ChangeMobPropertyPacket();
-
 
 
 };

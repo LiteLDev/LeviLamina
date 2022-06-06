@@ -23,6 +23,7 @@ public:
     DwellerDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~DwellerDescription();
@@ -31,7 +32,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DWELLERDESCRIPTION
 public:
 #endif
-
 
 
 };

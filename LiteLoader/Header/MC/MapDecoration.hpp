@@ -23,6 +23,7 @@ public:
     MapDecoration(class MapDecoration const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPDECORATION
 public:
@@ -38,7 +39,6 @@ public:
     MCAPI void load(class CompoundTag const &);
     MCAPI void save(class CompoundTag &);
     MCAPI ~MapDecoration();
-
 
 
 };

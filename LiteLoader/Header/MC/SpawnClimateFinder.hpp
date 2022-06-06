@@ -28,6 +28,7 @@ public:
     SpawnClimateFinder() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNCLIMATEFINDER
 public:
@@ -36,9 +37,11 @@ public:
     MCAPI class BlockPos findSpawnPosition() const;
     MCAPI ~SpawnClimateFinder();
 
-
 //private:
     MCAPI struct std::pair<class BlockPos, __int64> _getSpawnPositionAndFitness(class BlockPos) const;
     MCAPI struct SpawnClimateFinder::ResultDetails _radialSearch(struct SpawnClimateFinder::ResultDetails, int, int) const;
+
+private:
+
 
 };

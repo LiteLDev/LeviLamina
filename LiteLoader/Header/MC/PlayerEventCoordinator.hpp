@@ -22,6 +22,7 @@ public:
     PlayerEventCoordinator(class PlayerEventCoordinator const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYEREVENTCOORDINATOR
 public:
@@ -40,7 +41,6 @@ public:
     MCAPI void sendPlayerSlide(class Player &);
     MCAPI void sendPlayerTeleported(class Player &);
     MCAPI void sendPlayerTick(class Player &);
-
 
 
 };

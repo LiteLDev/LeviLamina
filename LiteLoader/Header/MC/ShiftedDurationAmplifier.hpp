@@ -22,6 +22,7 @@ public:
     ShiftedDurationAmplifier() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ShiftedDurationAmplifier();
     /*1*/ virtual void __unk_vfn_1();
@@ -31,7 +32,6 @@ public:
 public:
 #endif
     MCAPI ShiftedDurationAmplifier(int);
-
 
 
 };

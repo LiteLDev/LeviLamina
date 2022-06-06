@@ -21,6 +21,7 @@ public:
     InteractActionNode(class InteractActionNode const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~InteractActionNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
@@ -29,7 +30,6 @@ public:
 public:
 #endif
     MCAPI InteractActionNode();
-
 
 
 };

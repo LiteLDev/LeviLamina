@@ -22,6 +22,7 @@ public:
     CreativeItemEntry() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATIVEITEMENTRY
 public:
@@ -33,8 +34,10 @@ public:
     MCAPI unsigned int getIndex() const;
     MCAPI class ItemInstance const & getItemInstance() const;
 
-
 //private:
     MCAPI void _setGroup(class CreativeGroupInfo *);
+
+private:
+
 
 };

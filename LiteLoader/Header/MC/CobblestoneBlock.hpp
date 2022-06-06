@@ -23,6 +23,7 @@ public:
     CobblestoneBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CobblestoneBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -63,7 +64,6 @@ public:
 public:
 #endif
     MCAPI CobblestoneBlock(std::string const &, int, class Material const &);
-
 
 
 };

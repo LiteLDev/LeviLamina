@@ -23,6 +23,7 @@ public:
     BuoyancyDefinition(class BuoyancyDefinition const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUOYANCYDEFINITION
 public:
@@ -32,9 +33,11 @@ public:
     MCAPI void uninitialize(class EntityContext &, class BuoyancyComponent &) const;
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BuoyancyDefinition>> &);
 
-
 //private:
     MCAPI void _addLiquidBlockDescriptor(class BlockDescriptor const &);
     MCAPI class Json::Value _serialize() const;
+
+private:
+
 
 };

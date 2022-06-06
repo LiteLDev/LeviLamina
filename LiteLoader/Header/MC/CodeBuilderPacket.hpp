@@ -23,6 +23,7 @@ public:
     CodeBuilderPacket() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CodeBuilderPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -32,7 +33,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CODEBUILDERPACKET
 public:
 #endif
-
 
 
 };

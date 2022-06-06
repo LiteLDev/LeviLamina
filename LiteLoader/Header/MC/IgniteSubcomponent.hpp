@@ -21,6 +21,7 @@ public:
     IgniteSubcomponent(class IgniteSubcomponent const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~IgniteSubcomponent();
     /*1*/ virtual void __unk_vfn_1();
@@ -33,7 +34,6 @@ public:
     MCVAPI void writetoJSON(class Json::Value &) const;
 #endif
     MCAPI IgniteSubcomponent();
-
 
 
 };

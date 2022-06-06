@@ -22,6 +22,7 @@ public:
     CameraShakePacket(class CameraShakePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CameraShakePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,7 +35,6 @@ public:
     MCAPI CameraShakePacket(float, float, enum CameraShakeType);
     MCAPI CameraShakePacket(enum CameraShakeAction);
     MCAPI CameraShakePacket();
-
 
 
 };

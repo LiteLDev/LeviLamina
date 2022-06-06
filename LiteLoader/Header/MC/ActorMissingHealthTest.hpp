@@ -22,6 +22,7 @@ public:
     ActorMissingHealthTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorMissingHealthTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
@@ -29,7 +30,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORMISSINGHEALTHTEST
 public:
 #endif
-
 
 
 };

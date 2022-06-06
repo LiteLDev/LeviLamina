@@ -55,6 +55,7 @@ public:
 
 #undef AFTER_EXTRA
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HITRESULT
 public:
@@ -73,7 +74,6 @@ public:
     MCAPI class HitResult & operator=(class HitResult &&);
     MCAPI class HitResult & operator=(class HitResult const &);
     MCAPI ~HitResult();
-
 
 
 };

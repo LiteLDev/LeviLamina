@@ -23,6 +23,7 @@ public:
     AzaleaTreeAndRootsFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AzaleaTreeAndRootsFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -31,9 +32,11 @@ public:
 public:
 #endif
 
-
 //private:
     MCAPI bool _isLushGroundReplaceable(class BlockSource &, class BlockPos const &) const;
     MCAPI bool _tryPlaceAzaleaTree(class BlockSource &, class BlockPos const &, class Random &, unsigned int) const;
+
+private:
+
 
 };

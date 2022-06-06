@@ -22,6 +22,7 @@ public:
     KnockbackRoarGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~KnockbackRoarGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI KnockbackRoarGoal(class Mob &);
-
 
 
 };

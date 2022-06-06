@@ -24,6 +24,7 @@ public:
     MemoryMappedFileAccess() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MemoryMappedFileAccess();
     /*1*/ virtual void * fopen(class Core::Path const &, std::string const &);
@@ -37,8 +38,11 @@ public:
 public:
 #endif
     MCAPI MemoryMappedFileAccess(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const &, std::unique_ptr<class FileAccessTransforms>);
-    MCAPI static class FileAccessTransforms const EMPTY_TRANSFORMS;
 
+//private:
+
+private:
+    MCAPI static class FileAccessTransforms const EMPTY_TRANSFORMS;
 
 
 };

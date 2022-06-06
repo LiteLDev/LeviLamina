@@ -23,6 +23,7 @@ public:
     MineshaftRoom() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MineshaftRoom();
     /*1*/ virtual void moveBoundingBox(int, int, int);
@@ -33,7 +34,6 @@ public:
 public:
 #endif
     MCAPI MineshaftRoom(struct MineshaftData &, int, class Random &, int, int);
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     StonecutterBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StonecutterBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -72,7 +73,6 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI StonecutterBlock(std::string const &, int);
-
 
 
 };

@@ -22,6 +22,7 @@ public:
     ContainerOpenPacket(class ContainerOpenPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ContainerOpenPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI ContainerOpenPacket(enum ContainerID, enum ContainerType, class BlockPos const &, struct ActorUniqueID const &);
     MCAPI ContainerOpenPacket();
-
 
 
 };

@@ -21,6 +21,7 @@ public:
     SurfaceRelativeThresholdFeature(class SurfaceRelativeThresholdFeature const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SurfaceRelativeThresholdFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
@@ -28,7 +29,6 @@ public:
 public:
 #endif
     MCAPI SurfaceRelativeThresholdFeature();
-
 
 
 };

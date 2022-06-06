@@ -23,6 +23,7 @@ public:
     OceanMonumentFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~OceanMonumentFeature();
     /*1*/ virtual bool shouldAddHardcodedSpawnAreas() const;
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI OceanMonumentFeature(unsigned int);
-
 
 
 };

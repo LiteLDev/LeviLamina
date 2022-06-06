@@ -23,6 +23,7 @@ public:
     HorseEquipContainerValidation() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HorseEquipContainerValidation();
     /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
@@ -38,7 +39,6 @@ public:
 public:
 #endif
     MCAPI HorseEquipContainerValidation(class ContainerScreenContext const &);
-
 
 
 };

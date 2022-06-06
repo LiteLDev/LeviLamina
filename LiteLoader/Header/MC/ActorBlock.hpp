@@ -23,6 +23,7 @@ public:
     ActorBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -70,6 +71,8 @@ public:
 
 //protected:
     MCAPI ActorBlock(std::string const &, int, class Material const &);
+
+protected:
 
 
 };

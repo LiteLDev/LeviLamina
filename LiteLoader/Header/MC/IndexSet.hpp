@@ -15,6 +15,7 @@ class IndexSet {
 
 #undef AFTER_EXTRA
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INDEXSET
 public:
@@ -30,7 +31,6 @@ public:
     MCAPI bool operator==(class IndexSet const &) const;
     MCAPI void remove(unsigned __int64);
     MCAPI ~IndexSet();
-
 
 
 };

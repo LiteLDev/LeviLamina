@@ -22,6 +22,7 @@ public:
     CommandLexer() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDLEXER
 public:
@@ -31,7 +32,6 @@ public:
     MCAPI void step();
     MCAPI static bool isDigit(char);
     MCAPI static bool isFilePathCharacter(char);
-
 
 
 };

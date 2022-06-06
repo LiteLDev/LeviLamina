@@ -23,6 +23,7 @@ public:
     DropperBlockActor() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DROPPERBLOCKACTOR
 public:
@@ -33,9 +34,11 @@ public:
     MCAPI DropperBlockActor(class BlockPos);
     MCAPI bool pushOutItems(class BlockSource &);
 
-
 //private:
     MCAPI bool _addItem(class BlockSource &, class Container &, class ItemStack &, int);
     MCAPI class Container * _getContainerAt(class BlockSource &, class Vec3 const &);
+
+private:
+
 
 };

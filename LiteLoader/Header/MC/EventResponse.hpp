@@ -23,6 +23,7 @@ public:
     EventResponse() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EventResponse();
     /*1*/ virtual std::string const & getName() const;
@@ -31,7 +32,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVENTRESPONSE
 public:
 #endif
-
 
 
 };

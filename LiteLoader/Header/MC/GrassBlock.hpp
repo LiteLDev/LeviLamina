@@ -23,6 +23,7 @@ public:
     GrassBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GrassBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -76,11 +77,13 @@ public:
 #endif
     MCAPI GrassBlock(std::string const &, int);
     MCAPI bool fertilize(class BlockSource &, class BlockPos const &, class Randomize &) const;
-    MCAPI static struct Brightness const MIN_BRIGHTNESS;
-
 
 //private:
     MCAPI bool _canBeGrass(class BlockSource const &, class BlockPos const &) const;
     MCAPI bool _plantGrass(class BlockSource &, class BlockPos const &, class Randomize &) const;
+
+private:
+    MCAPI static struct Brightness const MIN_BRIGHTNESS;
+
 
 };

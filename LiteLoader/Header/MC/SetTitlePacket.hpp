@@ -24,6 +24,7 @@ public:
     SetTitlePacket(class SetTitlePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SetTitlePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -38,7 +39,6 @@ public:
     MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, std::string const &);
     MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, class ResolvedTextObject const &);
     MCAPI SetTitlePacket();
-
 
 
 };

@@ -28,6 +28,7 @@ public:
     CommandMessage(class CommandMessage const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDMESSAGE
 public:
@@ -35,7 +36,6 @@ public:
     MCAPI CommandMessage();
     MCAPI std::string getMessage(class CommandOrigin const &) const;
     MCAPI ~CommandMessage();
-
 
 
 };

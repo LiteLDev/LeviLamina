@@ -22,6 +22,7 @@ public:
     MobEffectPacket(class MobEffectPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MobEffectPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI MobEffectPacket(class ActorRuntimeID, enum MobEffectPacket::Event, int, int, int, bool);
     MCAPI MobEffectPacket();
-
 
 
 };

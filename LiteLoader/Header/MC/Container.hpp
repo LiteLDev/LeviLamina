@@ -34,6 +34,7 @@ public:
     Container() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Container();
     /*1*/ virtual void init();
@@ -91,6 +92,8 @@ public:
 //protected:
     MCAPI void _initRuntimeId(class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
     MCAPI void _serverInitId(int, class ItemStack &, class std::function<void (int, class ItemStack const &)>);
+
+protected:
     MCAPI static class BidirectionalUnorderedMap<enum ContainerType, std::string> const containerTypeMap;
 
 

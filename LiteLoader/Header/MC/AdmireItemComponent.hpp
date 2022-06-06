@@ -22,6 +22,7 @@ public:
     AdmireItemComponent() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADMIREITEMCOMPONENT
 public:
@@ -34,7 +35,6 @@ public:
     MCAPI void onAdmireItemPickedUp(class Actor const &, class ItemStack const &, class Actor *);
     MCAPI void stopAdmiring();
     MCAPI ~AdmireItemComponent();
-
 
 
 };

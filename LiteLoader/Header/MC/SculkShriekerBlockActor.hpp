@@ -21,6 +21,7 @@ public:
     SculkShriekerBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SculkShriekerBlockActor();
     /*7*/ virtual void tick(class BlockSource &);
@@ -36,7 +37,6 @@ public:
 public:
 #endif
     MCAPI SculkShriekerBlockActor(class BlockPos const &);
-
 
 
 };

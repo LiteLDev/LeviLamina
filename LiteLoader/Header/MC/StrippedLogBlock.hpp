@@ -23,6 +23,7 @@ public:
     StrippedLogBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StrippedLogBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -67,7 +68,6 @@ public:
 public:
 #endif
     MCAPI StrippedLogBlock(std::string const &, int);
-
 
 
 };

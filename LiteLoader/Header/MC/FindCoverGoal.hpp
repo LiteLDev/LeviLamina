@@ -22,6 +22,7 @@ public:
     FindCoverGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FindCoverGoal();
     /*1*/ virtual bool canUse();
@@ -36,7 +37,6 @@ public:
 #endif
     MCAPI FindCoverGoal(class Mob &, float, float);
     MCAPI class Mob const & getMob() const;
-
 
 
 };

@@ -24,6 +24,7 @@ public:
     SetItemLoreFunction() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SetItemLoreFunction();
     /*1*/ virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
-
 
 
 };

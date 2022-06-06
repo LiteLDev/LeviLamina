@@ -22,6 +22,7 @@ public:
     GenericMoveControl(class GenericMoveControl const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GenericMoveControl();
     /*1*/ virtual void initializeInternal(class Mob &, struct MoveControlDescription *);
@@ -30,7 +31,6 @@ public:
 public:
 #endif
     MCAPI GenericMoveControl();
-
 
 
 };

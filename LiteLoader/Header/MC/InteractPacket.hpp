@@ -22,6 +22,7 @@ public:
     InteractPacket(class InteractPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~InteractPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI InteractPacket(enum InteractPacket::Action, class ActorRuntimeID, class Vec3 const &);
     MCAPI InteractPacket();
-
 
 
 };

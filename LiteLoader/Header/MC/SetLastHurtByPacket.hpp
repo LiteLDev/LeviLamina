@@ -22,6 +22,7 @@ public:
     SetLastHurtByPacket(class SetLastHurtByPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SetLastHurtByPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI SetLastHurtByPacket(enum ActorType);
     MCAPI SetLastHurtByPacket();
-
 
 
 };

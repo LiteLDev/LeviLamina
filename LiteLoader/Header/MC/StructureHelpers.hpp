@@ -22,6 +22,7 @@ public:
     StructureHelpers() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREHELPERS
 public:
@@ -36,7 +37,6 @@ public:
     MCAPI static int getRailRotation(int, unsigned short);
     MCAPI static int getTorchRotation(int, unsigned short);
     MCAPI static int getWeirdoDirectionRotation(int, unsigned short);
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     LeverBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LeverBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -85,9 +86,11 @@ public:
     MCAPI void toggle(class BlockSource &, class BlockPos const &) const;
     MCAPI static enum LeverDirection getLeverFacing(int);
 
-
 //private:
     MCAPI bool _checkCanSurvive(class BlockSource &, class BlockPos const &) const;
     MCAPI void _getShape(class Block const &, class AABB &) const;
+
+private:
+
 
 };

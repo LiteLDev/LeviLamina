@@ -24,6 +24,7 @@ public:
     CopperSlabItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CopperSlabItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -45,8 +46,10 @@ public:
 #endif
     MCAPI CopperSlabItem(std::string const &, int, class Block const &);
 
-
 //private:
     MCAPI bool _isMatchingSlabs(class ItemStack &, class Block const &) const;
+
+private:
+
 
 };

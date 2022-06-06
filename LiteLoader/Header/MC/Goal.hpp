@@ -21,6 +21,7 @@ public:
     Goal(class Goal const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Goal();
     /*1*/ virtual void __unk_vfn_1() = 0;
@@ -43,7 +44,6 @@ public:
     MCAPI unsigned short getTypeId() const;
     MCAPI void setRequiredControlFlags(int);
     MCAPI void setTypeId(unsigned short);
-
 
 
 };

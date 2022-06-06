@@ -23,6 +23,7 @@ public:
     InventoryContainerModel() = delete;
 #endif
 
+
 public:
     /*0*/ virtual void containerContentChanged(int);
     /*1*/ virtual ~InventoryContainerModel();
@@ -43,8 +44,10 @@ public:
 #endif
     MCAPI InventoryContainerModel(enum ContainerEnumName, int, class Player &);
 
-
 //private:
     MCAPI void _refreshSlot(int);
+
+private:
+
 
 };

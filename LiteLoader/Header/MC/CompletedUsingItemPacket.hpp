@@ -22,6 +22,7 @@ public:
     CompletedUsingItemPacket(class CompletedUsingItemPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CompletedUsingItemPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI CompletedUsingItemPacket(short, int);
     MCAPI CompletedUsingItemPacket();
-
 
 
 };

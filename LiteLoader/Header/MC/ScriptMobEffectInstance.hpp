@@ -22,6 +22,7 @@ public:
     ScriptMobEffectInstance() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMOBEFFECTINSTANCE
 public:
@@ -31,7 +32,6 @@ public:
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptMobEffectInstance> getHandle(class MobEffectInstance const *, class Scripting::WeakLifetimeScope const &);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptMobEffectInstance> track(class MobEffectInstance const *, class Scripting::WeakLifetimeScope const &);
     MCAPI static void untrack(class MobEffectInstance const *, class Scripting::WeakLifetimeScope const &);
-
 
 
 };

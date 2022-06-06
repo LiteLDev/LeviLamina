@@ -21,6 +21,7 @@ public:
     MangroveLeafBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MangroveLeafBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -62,7 +63,6 @@ public:
 public:
 #endif
     MCAPI MangroveLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
-
 
 
 };

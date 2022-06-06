@@ -28,6 +28,7 @@ public:
     ComponentNetRelevancyRegistry() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPONENTNETRELEVANCYREGISTRY
 public:
@@ -36,7 +37,6 @@ public:
     MCAPI struct ComponentNetRelevancyRegistry::NetSerializationCallbacks & registerNetSerialization(class HashedString const &, class std::function<bool (class DefinitionInstanceGroup const &, class CompoundTag &)>);
     MCAPI bool serializeComponentDefinitionsForClient(class DefinitionInstanceGroup const &, class CompoundTag &) const;
     MCAPI ~ComponentNetRelevancyRegistry();
-
 
 
 };

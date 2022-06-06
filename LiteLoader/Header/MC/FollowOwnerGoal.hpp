@@ -22,6 +22,7 @@ public:
     FollowOwnerGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FollowOwnerGoal();
     /*1*/ virtual bool canUse();
@@ -37,7 +38,6 @@ public:
 public:
 #endif
     MCAPI FollowOwnerGoal(class Mob &, float, float, float, bool, bool, float);
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     ScriptContainer() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptContainer();
     /*4*/ virtual class Scripting::Result<int> getSize() const;
@@ -42,6 +43,8 @@ public:
 
 //protected:
     MCAPI static class std::optional<struct Scripting::Error> _isSlotInvalid(class Container &, int);
+
+protected:
 
 
 };

@@ -23,6 +23,7 @@ public:
     MineshaftCrossing() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MineshaftCrossing();
     /*3*/ virtual enum StructurePieceType getType() const;
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI void _placeSupportPillar(class BlockSource &, class BoundingBox const &, int, int, int, int);
-
 
 
 };

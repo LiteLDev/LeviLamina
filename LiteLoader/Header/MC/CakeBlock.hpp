@@ -23,6 +23,7 @@ public:
     CakeBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CakeBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -77,7 +78,6 @@ public:
     MCAPI CakeBlock(std::string const &, int);
     MCAPI static int getComparatorSignalFromBites(int);
     MCAPI static void removeCakeSlice(class Player &, class BlockSource &, class BlockPos const &, class Block const *);
-
 
 
 };

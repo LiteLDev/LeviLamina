@@ -22,6 +22,7 @@ public:
     PlayerBlockActions() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERBLOCKACTIONS
 public:
@@ -35,7 +36,6 @@ public:
     MCAPI ~PlayerBlockActions();
     MCAPI static class PlayerBlockActions read(class ReadOnlyBinaryStream &);
     MCAPI static void write(class PlayerBlockActions const &, class BinaryStream &);
-
 
 
 };

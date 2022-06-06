@@ -41,6 +41,7 @@ public:
     MerchantRecipe() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MERCHANTRECIPE
 public:
@@ -82,7 +83,6 @@ public:
     MCAPI void setUses(int);
     MCAPI bool shouldRewardExp() const;
     MCAPI ~MerchantRecipe();
-
 
 
 };

@@ -22,6 +22,7 @@ public:
     PlayerHotbarPacket(class PlayerHotbarPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PlayerHotbarPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI PlayerHotbarPacket(unsigned int, enum ContainerID, bool);
     MCAPI PlayerHotbarPacket();
-
 
 
 };

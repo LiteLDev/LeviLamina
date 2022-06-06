@@ -22,6 +22,7 @@ public:
     PassengerJumpPacket(class PassengerJumpPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PassengerJumpPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI PassengerJumpPacket();
-
 
 
 };

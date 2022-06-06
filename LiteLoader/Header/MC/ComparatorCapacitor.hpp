@@ -24,6 +24,7 @@ public:
     ComparatorCapacitor(class ComparatorCapacitor const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ComparatorCapacitor();
     /*6*/ virtual bool canConsumePowerAnyDirection() const;
@@ -47,7 +48,6 @@ public:
     MCAPI bool isSubtractMode();
     MCAPI void setAnalogStrength(int, unsigned char);
     MCAPI void setMode(enum ComparatorCapacitor::Mode);
-
 
 
 };

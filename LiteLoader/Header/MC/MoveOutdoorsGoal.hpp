@@ -21,6 +21,7 @@ public:
     MoveOutdoorsGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MoveOutdoorsGoal();
     /*1*/ virtual bool canUse();
@@ -36,8 +37,10 @@ public:
 #endif
     MCAPI MoveOutdoorsGoal(class Mob &);
 
-
 //private:
     MCAPI void _setNextTargetTick();
+
+private:
+
 
 };

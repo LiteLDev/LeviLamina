@@ -23,6 +23,7 @@ public:
     HoneycombBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HoneycombBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -62,7 +63,6 @@ public:
 public:
 #endif
     MCAPI HoneycombBlock(std::string const &, int, class Material const &);
-
 
 
 };

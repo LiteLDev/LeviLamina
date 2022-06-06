@@ -22,6 +22,7 @@ public:
     MossVegetationFeature(class MossVegetationFeature const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MossVegetationFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -30,7 +31,6 @@ public:
 public:
 #endif
     MCAPI MossVegetationFeature();
-
 
 
 };

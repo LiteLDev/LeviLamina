@@ -22,6 +22,7 @@ public:
     RemoveObjectivePacket(class RemoveObjectivePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RemoveObjectivePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI RemoveObjectivePacket(class Objective const &);
     MCAPI RemoveObjectivePacket();
-
 
 
 };

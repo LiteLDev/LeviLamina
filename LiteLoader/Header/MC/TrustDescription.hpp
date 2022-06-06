@@ -23,6 +23,7 @@ public:
     TrustDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~TrustDescription();
@@ -30,7 +31,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRUSTDESCRIPTION
 public:
 #endif
-
 
 
 };

@@ -24,6 +24,7 @@ public:
     BellBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BellBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -45,7 +46,6 @@ public:
     MCAPI void ejectItem(class BlockPos const &, class Actor &) const;
     MCAPI bool isRinging() const;
     MCAPI bool ring(enum Direction::Type, class BlockSource &, bool);
-
 
 
 };

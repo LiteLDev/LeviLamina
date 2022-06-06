@@ -20,6 +20,7 @@ public:
     BaseScriptGameTestFunction() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BaseScriptGameTestFunction();
     /*1*/ virtual std::unique_ptr<class gametest::IGameTestFunctionContext> createContext(class gametest::BaseGameTestHelper &) const;
@@ -38,7 +39,6 @@ public:
     MCAPI void setRotate(bool);
     MCAPI void setSetupTicks(int);
     MCAPI void setStructureName(std::string);
-
 
 
 };

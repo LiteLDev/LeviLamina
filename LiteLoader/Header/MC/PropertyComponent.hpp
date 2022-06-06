@@ -22,6 +22,7 @@ public:
     PropertyComponent() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYCOMPONENT
 public:
@@ -35,7 +36,6 @@ public:
     MCAPI bool hasProperty(unsigned __int64 const &) const;
     MCAPI class PropertyComponent & operator=(class PropertyComponent &&);
     MCAPI class CompoundTag updateDirtyProperties();
-
 
 
 };

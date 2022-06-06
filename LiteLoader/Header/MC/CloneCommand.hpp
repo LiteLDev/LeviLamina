@@ -23,6 +23,7 @@ public:
     CloneCommand() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CloneCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -31,8 +32,10 @@ public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
 
-
 //private:
     MCAPI static void convertClonedTag(class CompoundTag &, class BlockActor const &, class BlockPos const &);
+
+private:
+
 
 };

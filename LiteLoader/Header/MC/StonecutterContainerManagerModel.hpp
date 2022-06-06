@@ -23,6 +23,7 @@ public:
     StonecutterContainerManagerModel() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StonecutterContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
@@ -36,7 +37,6 @@ public:
 public:
 #endif
     MCAPI StonecutterContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-
 
 
 };

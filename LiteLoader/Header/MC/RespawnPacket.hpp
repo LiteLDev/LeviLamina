@@ -48,6 +48,7 @@ public:
     RespawnPacket(class RespawnPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RespawnPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -59,7 +60,6 @@ public:
 #endif
     MCAPI RespawnPacket(class Vec3 const &, enum PlayerRespawnState const &);
     MCAPI RespawnPacket();
-
 
 
 };

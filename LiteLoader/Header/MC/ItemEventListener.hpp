@@ -20,6 +20,7 @@ public:
     ItemEventListener() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMEVENTLISTENER
 public:
@@ -40,7 +41,6 @@ public:
     MCVAPI enum EventResult onPreviewItemPopulatedInContainer(class ItemStackBase const &, std::string const &);
     MCVAPI enum EventResult onRecipeSelected(class ItemStackBase const &);
 #endif
-
 
 
 };

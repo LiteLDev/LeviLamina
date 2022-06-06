@@ -24,6 +24,7 @@ public:
     DragonFireball() = delete;
 #endif
 
+
 public:
     /*14*/ virtual ~DragonFireball();
     /*40*/ virtual void __unk_vfn_40();
@@ -55,8 +56,11 @@ public:
     MCVAPI bool shouldBurn();
 #endif
     MCAPI DragonFireball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-    MCAPI static float SPLASH_RANGE;
 
+//private:
+
+private:
+    MCAPI static float SPLASH_RANGE;
 
 
 };

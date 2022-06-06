@@ -20,6 +20,7 @@ public:
     DigGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DigGoal();
     /*1*/ virtual bool canUse();
@@ -33,7 +34,6 @@ public:
 public:
 #endif
     MCAPI DigGoal(class Mob &);
-
 
 
 };

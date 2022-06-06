@@ -23,6 +23,7 @@ public:
     ServerCommunicationInterface() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCOMMUNICATIONINTERFACE
 public:
@@ -34,8 +35,10 @@ public:
     MCAPI ~ServerCommunicationInterface();
     MCAPI static std::unique_ptr<class ServerCommunicationInterface> create(struct NetworkAddress const &);
 
-
 //private:
     MCAPI void communicate(std::string const &, class Json::Value const &);
+
+private:
+
 
 };

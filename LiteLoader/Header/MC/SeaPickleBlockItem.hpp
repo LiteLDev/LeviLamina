@@ -24,6 +24,7 @@ public:
     SeaPickleBlockItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SeaPickleBlockItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -45,7 +46,6 @@ public:
 public:
 #endif
     MCAPI SeaPickleBlockItem(std::string const &, int);
-
 
 
 };

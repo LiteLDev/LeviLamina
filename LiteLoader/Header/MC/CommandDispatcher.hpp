@@ -21,6 +21,7 @@ public:
     CommandDispatcher(class CommandDispatcher const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CommandDispatcher();
     /*1*/ virtual int performCommand(class CommandOrigin const &, class Command &);
@@ -28,7 +29,6 @@ public:
 public:
 #endif
     MCAPI CommandDispatcher();
-
 
 
 };

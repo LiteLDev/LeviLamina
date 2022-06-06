@@ -22,6 +22,7 @@ public:
     Amplifier() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Amplifier();
     /*1*/ virtual float getAmount(int, float) const;
@@ -30,7 +31,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMPLIFIER
 public:
 #endif
-
 
 
 };

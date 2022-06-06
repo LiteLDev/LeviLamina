@@ -23,6 +23,7 @@ public:
     NearestAttackableTargetGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NearestAttackableTargetGoal();
     /*1*/ virtual bool canUse();
@@ -44,5 +45,10 @@ public:
 
 //private:
     MCAPI bool _selectTarget();
+
+protected:
+
+private:
+
 
 };

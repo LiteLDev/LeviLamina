@@ -23,6 +23,7 @@ public:
     NetherReactorBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NetherReactorBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -64,7 +65,6 @@ public:
 public:
 #endif
     MCAPI NetherReactorBlock(std::string const &, int, class Material const &);
-
 
 
 };

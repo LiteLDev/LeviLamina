@@ -23,6 +23,7 @@ public:
     AzaleaLeafBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AzaleaLeafBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -71,7 +72,6 @@ public:
 public:
 #endif
     MCAPI AzaleaLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
-
 
 
 };

@@ -22,6 +22,7 @@ public:
     RandomSitGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RandomSitGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI RandomSitGoal(class Mob &, float, float, float, float);
-
 
 
 };

@@ -22,6 +22,7 @@ public:
     RandomLookAroundGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RandomLookAroundGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI RandomLookAroundGoal(class Mob &, int, int, float);
-
 
 
 };

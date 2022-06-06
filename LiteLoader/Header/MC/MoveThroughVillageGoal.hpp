@@ -22,6 +22,7 @@ public:
     MoveThroughVillageGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MoveThroughVillageGoal();
     /*1*/ virtual void __unk_vfn_1();
@@ -37,7 +38,6 @@ public:
     MCVAPI bool canUse();
 #endif
     MCAPI MoveThroughVillageGoal(class Mob &, float, bool);
-
 
 
 };

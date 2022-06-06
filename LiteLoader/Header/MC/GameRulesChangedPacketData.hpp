@@ -22,6 +22,7 @@ public:
     GameRulesChangedPacketData() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMERULESCHANGEDPACKETDATA
 public:
@@ -30,7 +31,6 @@ public:
     MCAPI std::vector<class GameRule> const & getRules() const;
     MCAPI void setRules(std::vector<class GameRule>);
     MCAPI ~GameRulesChangedPacketData();
-
 
 
 };

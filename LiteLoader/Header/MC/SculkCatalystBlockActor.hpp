@@ -22,6 +22,7 @@ public:
     SculkCatalystBlockActor() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKCATALYSTBLOCKACTOR
 public:
@@ -35,9 +36,12 @@ public:
 #endif
     MCAPI SculkCatalystBlockActor(class BlockPos const &);
     MCAPI class SculkSpreader & getSculkSpreader();
+
+//private:
+
+private:
     MCAPI static enum BlockActorType const TypeId;
     MCAPI static std::string const TypeString;
-
 
 
 };

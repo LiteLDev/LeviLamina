@@ -24,6 +24,7 @@ public:
     DirectoryPackAccessStrategy() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DirectoryPackAccessStrategy();
     /*1*/ virtual unsigned __int64 getPackSize() const;
@@ -47,7 +48,6 @@ public:
 public:
 #endif
     MCAPI DirectoryPackAccessStrategy(class ResourceLocation const &, bool);
-
 
 
 };

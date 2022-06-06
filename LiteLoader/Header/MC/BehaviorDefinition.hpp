@@ -23,6 +23,7 @@ public:
     BehaviorDefinition() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BehaviorDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
@@ -31,7 +32,6 @@ public:
 public:
 #endif
     MCAPI class BehaviorTreeDefinitionPtr getTreeDefinition() const;
-
 
 
 };

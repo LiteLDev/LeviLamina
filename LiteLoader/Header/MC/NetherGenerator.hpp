@@ -23,6 +23,7 @@ public:
     NetherGenerator() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERGENERATOR
 public:
@@ -41,9 +42,11 @@ public:
     MCAPI void buildSurfaces(class BlockVolume &, class LevelChunk &, class ChunkPos const &);
     MCAPI class Util::MultidimensionalArray<float, 5, 5, 17> generateDensityCellsForChunk(class ChunkPos const &) const;
 
-
 //private:
     MCAPI void _prepareHeights(class BlockVolume &, class ChunkPos const &, bool, std::vector<short> *, int);
     MCAPI static std::unique_ptr<class BiomeSource> _makeBiomeSource(class Dimension &);
+
+private:
+
 
 };

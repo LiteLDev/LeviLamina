@@ -23,6 +23,7 @@ public:
     FarmBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FarmBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -73,7 +74,6 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI FarmBlock(std::string const &, int);
-
 
 
 };

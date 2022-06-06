@@ -24,6 +24,7 @@ public:
     BalloonItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BalloonItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -47,7 +48,6 @@ public:
 public:
 #endif
     MCAPI BalloonItem(std::string const &, int);
-
 
 
 };

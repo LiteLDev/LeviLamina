@@ -25,6 +25,7 @@ public:
     VillagerBase() = delete;
 #endif
 
+
 public:
     /*11*/ virtual void reloadComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~VillagerBase();
@@ -73,8 +74,10 @@ public:
     MCAPI void stopGoals();
     MCAPI static enum VillagerBase::BiomeType BiomeStrToEnum(std::string const &);
 
-
 //private:
     MCAPI void _addParticlesAroundSelf(enum ParticleType);
+
+private:
+
 
 };

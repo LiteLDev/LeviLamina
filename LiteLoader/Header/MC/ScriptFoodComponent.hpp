@@ -21,6 +21,7 @@ public:
     ScriptFoodComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptFoodComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFOODCOMPONENT
@@ -35,7 +36,6 @@ public:
     MCAPI class ScriptFoodComponent & operator=(class ScriptFoodComponent const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptFoodComponent> bind(struct Scripting::Version);
     MCAPI static std::string const & getTypeName();
-
 
 
 };

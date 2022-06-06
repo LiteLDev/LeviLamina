@@ -23,6 +23,7 @@ public:
     BrewingStandBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BrewingStandBlock();
     /*9*/ virtual void addAABBs(class Block const &, class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
@@ -77,7 +78,6 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI BrewingStandBlock(std::string const &, int);
-
 
 
 };

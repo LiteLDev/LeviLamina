@@ -23,6 +23,7 @@ public:
     DoublePlantBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DoublePlantBlock();
     /*3*/ virtual class Block const * getNextBlockPermutation(class Block const &) const;
@@ -95,7 +96,6 @@ public:
     MCAPI DoublePlantBlock(std::string const &, int);
     MCAPI int getType(class BlockSource &, class BlockPos const &, class Block const &) const;
     MCAPI bool placeAt(class BlockSource &, class BlockPos const &, enum DoublePlantType, int, class Actor *) const;
-
 
 
 };

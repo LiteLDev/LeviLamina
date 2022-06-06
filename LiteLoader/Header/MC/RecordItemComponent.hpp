@@ -22,6 +22,7 @@ public:
     RecordItemComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RecordItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -40,7 +41,6 @@ public:
     MCAPI enum LevelSoundEvent getSound() const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
-
 
 
 };

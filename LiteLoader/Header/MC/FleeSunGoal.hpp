@@ -23,6 +23,7 @@ public:
     FleeSunGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FleeSunGoal();
     /*1*/ virtual bool canUse();
@@ -33,7 +34,6 @@ public:
 public:
 #endif
     MCAPI FleeSunGoal(class Mob &, float);
-
 
 
 };

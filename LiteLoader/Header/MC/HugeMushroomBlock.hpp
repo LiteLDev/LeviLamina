@@ -23,6 +23,7 @@ public:
     HugeMushroomBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HugeMushroomBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -69,8 +70,10 @@ public:
 #endif
     MCAPI HugeMushroomBlock(std::string const &, int, class Material const &, enum HugeMushroomBlock::Type);
 
-
 //private:
     MCAPI class ItemInstance _getBlockItemWithState(class Block const &, enum MushroomOuterType) const;
+
+private:
+
 
 };

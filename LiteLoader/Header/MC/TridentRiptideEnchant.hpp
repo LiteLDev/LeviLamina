@@ -23,6 +23,7 @@ public:
     TridentRiptideEnchant() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TridentRiptideEnchant();
     /*1*/ virtual bool isCompatibleWith(enum Enchant::Type) const;
@@ -34,7 +35,6 @@ public:
 public:
 #endif
     MCAPI TridentRiptideEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
-
 
 
 };

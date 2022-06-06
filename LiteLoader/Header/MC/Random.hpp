@@ -22,6 +22,7 @@ public:
     Random(class Random const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOM
 public:
@@ -44,9 +45,7 @@ public:
     MCAPI int nextInt(int, int);
     MCAPI int nextIntInclusive(int, int);
     MCAPI static class Random & getThreadLocal();
-
-
-//private:
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random, class std::allocator<class Random>> mThreadLocalRandom;
+
 
 };

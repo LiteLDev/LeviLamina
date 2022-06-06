@@ -21,6 +21,7 @@ public:
     Experiments(class Experiments const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIMENTS
 public:
@@ -41,7 +42,6 @@ public:
     MCAPI ~Experiments();
     MCAPI static std::string const & getExperimentTextID(enum AllExperiments);
     MCAPI static std::vector<std::string> const & getToggleNames();
-
 
 
 };

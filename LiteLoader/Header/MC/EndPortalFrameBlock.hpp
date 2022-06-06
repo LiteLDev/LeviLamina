@@ -23,6 +23,7 @@ public:
     EndPortalFrameBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EndPortalFrameBlock();
     /*9*/ virtual void addAABBs(class Block const &, class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
@@ -74,8 +75,10 @@ public:
 #endif
     MCAPI EndPortalFrameBlock(std::string const &, int);
 
-
 //private:
     MCAPI static void createPortal(class BlockSource &, class BlockPos const &);
+
+private:
+
 
 };

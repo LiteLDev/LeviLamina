@@ -23,6 +23,7 @@ public:
     LootPool() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTPOOL
 public:
@@ -32,6 +33,8 @@ public:
 
 //protected:
     MCAPI void addRandomItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
+
+protected:
 
 
 };

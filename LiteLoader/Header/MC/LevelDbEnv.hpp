@@ -21,6 +21,7 @@ public:
     LevelDbEnv(class LevelDbEnv const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBENV
 public:
@@ -47,9 +48,7 @@ public:
 #endif
     MCAPI bool IsComplete() const;
     MCAPI LevelDbEnv();
-
-
-//private:
     MCAPI static class LevelDbEnv * sSingleton;
+
 
 };

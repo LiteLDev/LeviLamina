@@ -22,6 +22,7 @@ public:
     AdmireItemGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AdmireItemGoal();
     /*1*/ virtual bool canUse();
@@ -36,8 +37,10 @@ public:
 #endif
     MCAPI AdmireItemGoal(class Mob &, enum LevelSoundEvent, struct FloatRange, class DefinitionTrigger const &, class DefinitionTrigger const &);
 
-
 //private:
     MCAPI void _tryPlaceItemInInventory(class ContainerComponent &, class ShareableComponent const &);
+
+private:
+
 
 };

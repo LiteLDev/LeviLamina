@@ -22,6 +22,7 @@ public:
     RandomLookAroundAndSitGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RandomLookAroundAndSitGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI RandomLookAroundAndSitGoal(class Mob &, int, int, int, int, float);
-
 
 
 };

@@ -24,6 +24,7 @@ public:
     ItemDescriptorCount(class ItemDescriptorCount const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMDESCRIPTORCOUNT
 public:
@@ -37,7 +38,6 @@ public:
     MCAPI short getStackSize() const;
     MCAPI void setStackSize(short);
     MCAPI ~ItemDescriptorCount();
-
 
 
 };

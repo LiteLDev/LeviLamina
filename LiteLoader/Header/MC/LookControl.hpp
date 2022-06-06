@@ -21,6 +21,7 @@ public:
     LookControl(class LookControl const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LookControl();
     /*1*/ virtual void initializeInternal(class Mob &);
@@ -29,7 +30,6 @@ public:
 public:
 #endif
     MCAPI LookControl();
-
 
 
 };

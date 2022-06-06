@@ -23,6 +23,7 @@ public:
     TextObjectRoot() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TextObjectRoot();
     /*1*/ virtual std::string asString() const;
@@ -35,7 +36,6 @@ public:
     MCAPI void clear();
     MCAPI bool isEmpty() const;
     MCAPI class ResolvedTextObject resolveRoot(class Actor const &, class Scoreboard const &) const;
-
 
 
 };

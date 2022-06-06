@@ -22,6 +22,7 @@ public:
     InventoryMenu() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYMENU
 public:
@@ -34,7 +35,6 @@ public:
     MCVAPI ~InventoryMenu();
 #endif
     MCAPI InventoryMenu(class Player &, class Container *);
-
 
 
 };

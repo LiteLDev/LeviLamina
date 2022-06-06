@@ -23,6 +23,7 @@ public:
     LevelDbWritableFile() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LevelDbWritableFile();
     /*1*/ virtual class leveldb::Status Append(class leveldb::Slice const &);
@@ -33,7 +34,6 @@ public:
 public:
 #endif
     MCAPI LevelDbWritableFile(std::string, class Core::File &&);
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     MoveToLiquidGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MoveToLiquidGoal();
     /*1*/ virtual bool canUse();
@@ -37,7 +38,6 @@ public:
 public:
 #endif
     MCAPI MoveToLiquidGoal(class Mob &, float, int, int, int, enum MaterialType, float);
-
 
 
 };

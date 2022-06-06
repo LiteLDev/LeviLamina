@@ -23,6 +23,7 @@ public:
     ConduitBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ConduitBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -64,7 +65,6 @@ public:
 public:
 #endif
     MCAPI ConduitBlock(std::string const &, int);
-
 
 
 };

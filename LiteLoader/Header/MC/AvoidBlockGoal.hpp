@@ -22,6 +22,7 @@ public:
     AvoidBlockGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AvoidBlockGoal();
     /*1*/ virtual bool canUse();
@@ -36,8 +37,10 @@ public:
 #endif
     MCAPI AvoidBlockGoal(class Mob &);
 
-
 //private:
     MCAPI bool _isValidTarget(class Block const &) const;
+
+private:
+
 
 };

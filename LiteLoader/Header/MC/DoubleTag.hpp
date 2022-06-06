@@ -31,6 +31,7 @@ public:
     DoubleTag(class DoubleTag const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DoubleTag();
     /*2*/ virtual void write(class IDataOutput &) const;
@@ -44,7 +45,6 @@ public:
 public:
 #endif
     MCAPI DoubleTag();
-
 
 
 };

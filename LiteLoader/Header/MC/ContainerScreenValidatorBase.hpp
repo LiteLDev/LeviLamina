@@ -22,6 +22,7 @@ public:
     ContainerScreenValidatorBase() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ContainerScreenValidatorBase();
     /*1*/ virtual class std::shared_ptr<class ContainerValidationCommitObject> postCommitItemRemoved(enum ContainerEnumName, int, class ItemStack const &);
@@ -31,7 +32,6 @@ public:
 public:
 #endif
     MCAPI bool isValidContainerForScreen(enum ContainerEnumName) const;
-
 
 
 };

@@ -21,6 +21,7 @@ public:
     TeleportComponent(class TeleportComponent const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TELEPORTCOMPONENT
 public:
@@ -39,7 +40,6 @@ public:
     MCAPI void setTeleportTime(int);
     MCAPI bool teleport(class Actor &, class Vec3 const &);
     MCAPI bool teleportTowards(class Actor &, class Actor const &);
-
 
 
 };

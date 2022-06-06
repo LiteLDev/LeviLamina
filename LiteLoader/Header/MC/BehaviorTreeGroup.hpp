@@ -22,6 +22,7 @@ public:
     BehaviorTreeGroup() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORTREEGROUP
 public:
@@ -30,9 +31,11 @@ public:
     MCAPI class BehaviorTreeDefinitionPtr tryGetDefinition(std::string const &);
     MCAPI ~BehaviorTreeGroup();
 
-
 //private:
     MCAPI void _addRef(class BehaviorTreeDefinitionPtr &);
     MCAPI void _removeRef(class BehaviorTreeDefinitionPtr &);
+
+private:
+
 
 };

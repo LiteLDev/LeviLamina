@@ -23,6 +23,7 @@ public:
     BarrelBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BarrelBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -73,7 +74,6 @@ public:
 #endif
     MCAPI BarrelBlock(std::string const &, int, class Material const &);
     MCAPI static void setOpen(bool, class BlockSource &, class BlockPos const &);
-
 
 
 };

@@ -22,6 +22,7 @@ public:
     ContainerScreenValidation() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ContainerScreenValidation();
     /*1*/ virtual struct ContainerValidationResult tryCraft(std::unique_ptr<struct ContainerValidationCraftInputs>);
@@ -53,5 +54,10 @@ public:
     MCAPI void _commit();
     MCAPI class std::shared_ptr<class ContainerValidationBase const> _getOrCreateContainerValidator(enum ContainerEnumName);
     MCAPI bool _propagateContainers();
+
+protected:
+
+private:
+
 
 };

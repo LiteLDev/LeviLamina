@@ -22,6 +22,7 @@ public:
     ExtendedCertificate() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXTENDEDCERTIFICATE
 public:
@@ -30,7 +31,6 @@ public:
     MCAPI static std::string getIdentityName(class Certificate const &);
     MCAPI static std::string getXuid(class Certificate const &);
     MCAPI static std::string getXuid(class Certificate const *);
-
 
 
 };

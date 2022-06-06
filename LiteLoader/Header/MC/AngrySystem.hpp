@@ -22,6 +22,7 @@ public:
     AngrySystem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AngrySystem();
     /*1*/ virtual void __unk_vfn_1();
@@ -30,8 +31,10 @@ public:
 public:
 #endif
 
-
 //private:
     MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class AngryComponent> &);
+
+private:
+
 
 };

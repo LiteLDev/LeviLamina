@@ -23,6 +23,7 @@ public:
     Weather() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Weather();
     /*1*/ virtual void __unk_vfn_1();
@@ -75,7 +76,6 @@ public:
     MCAPI static int calcRainCycleTime(class IRandom &);
     MCAPI static int calcRainDuration(class IRandom &);
     MCAPI static void rebuildTopSnowToDepth(class BlockSource &, class BlockPos const &, int);
-
 
 
 };

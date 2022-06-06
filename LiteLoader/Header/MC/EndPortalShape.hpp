@@ -22,6 +22,7 @@ public:
     EndPortalShape() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDPORTALSHAPE
 public:
@@ -30,7 +31,6 @@ public:
     MCAPI class BlockPos getOrigin() const;
     MCAPI bool isValid(class BlockSource &);
     MCAPI ~EndPortalShape();
-
 
 
 };

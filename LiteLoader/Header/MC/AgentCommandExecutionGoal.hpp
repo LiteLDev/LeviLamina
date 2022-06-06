@@ -22,6 +22,7 @@ public:
     AgentCommandExecutionGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AgentCommandExecutionGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI AgentCommandExecutionGoal(class Mob &);
-
 
 
 };

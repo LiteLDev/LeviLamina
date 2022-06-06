@@ -23,6 +23,7 @@ public:
     BuddingAmethystBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BuddingAmethystBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -68,8 +69,10 @@ public:
     MCAPI BuddingAmethystBlock(std::string const &, int, class Material const &);
     MCAPI static bool canBudGrowAtPos(class BlockSource &, class BlockPos const &);
 
-
 //private:
     MCAPI bool _canGrowInDirection(class Block const &, unsigned char) const;
+
+private:
+
 
 };

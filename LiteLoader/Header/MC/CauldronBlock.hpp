@@ -24,6 +24,7 @@ public:
     CauldronBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CauldronBlock();
     /*9*/ virtual void addAABBs(class Block const &, class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
@@ -84,9 +85,11 @@ public:
     MCAPI CauldronBlock(std::string const &, int);
     MCAPI int getLiquidLevel(int) const;
     MCAPI void setLiquidLevel(class BlockSource &, class BlockPos const &, int, enum CauldronLiquidType) const;
+    MCAPI static int const BASE_WATER_PIXEL;
+    MCAPI static class BaseGameVersion const CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    MCAPI static int const PIXEL_PER_LEVEL;
     MCAPI static bool canReceiveStalactiteDrip(class BlockSource &, class BlockPos const &, enum MaterialType);
     MCAPI static void spawnPotionParticles(class Level &, class Vec3 const &, class Random &, int, int);
-
 
 //private:
     MCAPI void _explodeCauldronContents(class BlockSource &, class BlockPos const &, unsigned short) const;
@@ -94,8 +97,8 @@ public:
     MCAPI void _sendCauldronUsedEventToClient(class Player const &, short, enum MinecraftEventing::POIBlockInteractionType) const;
     MCAPI void _spawnCauldronEvent(class BlockSource &, class BlockPos const &, enum LevelEvent) const;
     MCAPI void _useInventory(class Player &, class ItemStack &, class ItemStack &, int) const;
-    MCAPI static int const BASE_WATER_PIXEL;
-    MCAPI static class BaseGameVersion const CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION;
-    MCAPI static int const PIXEL_PER_LEVEL;
+
+private:
+
 
 };

@@ -22,6 +22,7 @@ public:
     SetActorDataPacket(class SetActorDataPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SetActorDataPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI SetActorDataPacket(class ActorRuntimeID, class SynchedActorData &, bool);
     MCAPI SetActorDataPacket();
-
 
 
 };

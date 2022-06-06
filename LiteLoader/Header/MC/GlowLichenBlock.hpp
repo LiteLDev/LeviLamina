@@ -23,6 +23,7 @@ public:
     GlowLichenBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GlowLichenBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -70,7 +71,6 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI GlowLichenBlock(std::string const &, int, class Material const &);
-
 
 
 };

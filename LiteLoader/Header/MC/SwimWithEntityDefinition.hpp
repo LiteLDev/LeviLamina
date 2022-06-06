@@ -22,6 +22,7 @@ public:
     SwimWithEntityDefinition(class SwimWithEntityDefinition const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWIMWITHENTITYDEFINITION
 public:
@@ -29,7 +30,6 @@ public:
     MCAPI SwimWithEntityDefinition();
     MCAPI void initialize(class EntityContext &, class SwimWithEntityGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwimWithEntityDefinition>> &);
-
 
 
 };

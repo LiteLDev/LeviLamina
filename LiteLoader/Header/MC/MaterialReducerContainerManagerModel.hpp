@@ -23,6 +23,7 @@ public:
     MaterialReducerContainerManagerModel() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MaterialReducerContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
@@ -36,7 +37,6 @@ public:
 public:
 #endif
     MCAPI MaterialReducerContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-
 
 
 };

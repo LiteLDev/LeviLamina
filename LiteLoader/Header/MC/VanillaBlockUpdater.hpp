@@ -22,6 +22,7 @@ public:
     VanillaBlockUpdater() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLABLOCKUPDATER
 public:
@@ -29,7 +30,7 @@ public:
     MCAPI static void destroy();
     MCAPI static class CompoundTagUpdaterContext & get();
     MCAPI static void initialize();
-
+    MCAPI static std::unique_ptr<class CompoundTagUpdaterContext> mContext;
 
 //private:
     MCAPI static void addBaseUpdater(class CompoundTagUpdaterContext &);
@@ -42,6 +43,8 @@ public:
     MCAPI static void addUpdaters_1_16_0(class CompoundTagUpdaterContext &);
     MCAPI static void addUpdaters_1_16_210(class CompoundTagUpdaterContext &);
     MCAPI static void addUpdaters_1_18_10(class CompoundTagUpdaterContext &);
-    MCAPI static std::unique_ptr<class CompoundTagUpdaterContext> mContext;
+
+private:
+
 
 };

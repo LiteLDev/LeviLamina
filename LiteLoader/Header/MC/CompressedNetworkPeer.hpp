@@ -23,6 +23,7 @@ public:
     CompressedNetworkPeer() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CompressedNetworkPeer();
     /*1*/ virtual void sendPacket(std::string const &, enum NetworkPeer::Reliability, int, unsigned short, enum Compressibility);
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI CompressedNetworkPeer(class std::shared_ptr<class NetworkPeer>);
-
 
 
 };

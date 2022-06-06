@@ -22,6 +22,7 @@ public:
     StructurePoolBlockTagPredicateBlockTagStringMatches() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StructurePoolBlockTagPredicateBlockTagStringMatches();
     /*1*/ virtual bool test(class Block const &, class CompoundTag const &) const;
@@ -29,7 +30,6 @@ public:
 public:
 #endif
     MCAPI StructurePoolBlockTagPredicateBlockTagStringMatches(class Block const &, std::string, std::string);
-
 
 
 };

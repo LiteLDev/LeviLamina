@@ -22,14 +22,13 @@ public:
     ShieldItemUtils() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIELDITEMUTILS
 public:
 #endif
     MCAPI static bool isBlockedDamageCause(class ActorDamageSource const &);
-
-
-//private:
     MCAPI static std::vector<enum ActorDamageCause> const mAlwaysBlockableDamageCauses;
+
 
 };

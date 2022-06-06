@@ -21,6 +21,7 @@ public:
     ScriptItems(class ScriptItems const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMS
 public:
@@ -28,7 +29,6 @@ public:
     MCAPI ScriptItems();
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptItemType> get(class Scripting::WeakLifetimeScope &, std::string const &);
     MCAPI static void bind(class Scripting::ModuleBindingBuilder &, struct Scripting::Version);
-
 
 
 };

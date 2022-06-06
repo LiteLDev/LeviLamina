@@ -22,6 +22,7 @@ public:
     DragonHoldingPatternGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DragonHoldingPatternGoal();
     /*1*/ virtual bool canUse();
@@ -36,8 +37,10 @@ public:
 #endif
     MCAPI DragonHoldingPatternGoal(class EnderDragon &);
 
-
 //private:
     MCAPI void findNewTarget();
+
+private:
+
 
 };

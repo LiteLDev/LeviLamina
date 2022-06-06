@@ -20,6 +20,7 @@ public:
     StayNearNoteblockGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StayNearNoteblockGoal();
     /*1*/ virtual bool canUse();
@@ -34,8 +35,10 @@ public:
 #endif
     MCAPI StayNearNoteblockGoal(class Mob &);
 
-
 //private:
     MCAPI class std::optional<class BlockPos> const _hasLastVibrationAtNoteblock();
+
+private:
+
 
 };

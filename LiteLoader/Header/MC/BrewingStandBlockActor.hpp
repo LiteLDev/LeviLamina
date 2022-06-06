@@ -22,6 +22,7 @@ public:
     BrewingStandBlockActor() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREWINGSTANDBLOCKACTOR
 public:
@@ -54,8 +55,10 @@ public:
     MCAPI void setFuelTotal(int);
     MCAPI static bool isFuel(class ItemDescriptor const &);
 
-
 //private:
     MCAPI bool canBrew();
+
+private:
+
 
 };

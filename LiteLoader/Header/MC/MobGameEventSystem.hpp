@@ -22,6 +22,7 @@ public:
     MobGameEventSystem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MobGameEventSystem();
     /*1*/ virtual void registerEvents(class entt::dispatcher &);
@@ -29,8 +30,10 @@ public:
 public:
 #endif
 
-
 //private:
     MCAPI static void _onActorDie(struct ActorDieEvent &);
+
+private:
+
 
 };

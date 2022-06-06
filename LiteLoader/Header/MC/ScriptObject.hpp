@@ -22,6 +22,7 @@ public:
     ScriptObject() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptObject();
     /*1*/ virtual struct Scripting::Error _functionError(std::string const &) const;
@@ -31,7 +32,6 @@ public:
 public:
 #endif
     MCAPI ScriptObject(class Scripting::WeakLifetimeScope const &);
-
 
 
 };

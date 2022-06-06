@@ -27,5 +27,6 @@ public:
 protected:
 
 private:
+    MCAPI static class std::shared_ptr<struct ClientBlockPipeline::BlockSchematic> mBlockSchematic;
 
 };

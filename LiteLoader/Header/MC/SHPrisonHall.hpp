@@ -23,6 +23,7 @@ public:
     SHPrisonHall() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SHPrisonHall();
     /*3*/ virtual enum StructurePieceType getType() const;
@@ -31,7 +32,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHPRISONHALL
 public:
 #endif
-
 
 
 };

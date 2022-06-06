@@ -22,15 +22,14 @@ public:
     BlockActorFactory() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKACTORFACTORY
 public:
 #endif
     MCAPI static class std::shared_ptr<class BlockActor> createBlockEntity(enum BlockActorType, class BlockPos const &, class BlockLegacy const &);
     MCAPI static void flushCustomBlockEntityCreationCallbacks();
-
-
-//private:
     MCAPI static std::vector<struct std::pair<enum BlockActorType, class std::function<class std::shared_ptr<class BlockActor> (class BlockPos const &)>>> mCustomBlockEntityCreation;
+
 
 };

@@ -23,6 +23,7 @@ public:
     MainChunkSource() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MainChunkSource();
     /*3*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
@@ -38,7 +39,6 @@ public:
 public:
 #endif
     MCAPI MainChunkSource(std::unique_ptr<class ChunkSource>);
-
 
 
 };

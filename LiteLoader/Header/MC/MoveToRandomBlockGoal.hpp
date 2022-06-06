@@ -22,6 +22,7 @@ public:
     MoveToRandomBlockGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MoveToRandomBlockGoal();
     /*1*/ virtual bool canUse();
@@ -36,8 +37,10 @@ public:
 #endif
     MCAPI MoveToRandomBlockGoal(class Mob &, float, float, float);
 
-
 //private:
     MCAPI bool _isValidDestinationBlock(class BlockSource &, class BlockPos const &);
+
+private:
+
 
 };

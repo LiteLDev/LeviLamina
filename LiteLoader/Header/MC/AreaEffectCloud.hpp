@@ -23,6 +23,7 @@ public:
     AreaEffectCloud() = delete;
 #endif
 
+
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~AreaEffectCloud();
@@ -70,10 +71,12 @@ public:
     MCAPI void setRadiusPerTick(float);
     MCAPI void setReapplicationDelay(int);
 
-
 //private:
     MCAPI __int64 _getTicksAlive() const;
     MCAPI void _setSpawnTick(__int64);
     MCAPI void _spawnParticles(class Random &, unsigned int, float);
+
+private:
+
 
 };

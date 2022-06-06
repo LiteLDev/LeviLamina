@@ -22,6 +22,7 @@ public:
     TemptGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TemptGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI TemptGoal(class Mob &, float, std::vector<class ItemDescriptor> const &, enum LevelSoundEvent, struct FloatRange, bool, float, bool, bool);
-
 
 
 };

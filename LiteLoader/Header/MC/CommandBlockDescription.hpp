@@ -23,6 +23,7 @@ public:
     CommandBlockDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~CommandBlockDescription();
@@ -31,7 +32,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDBLOCKDESCRIPTION
 public:
 #endif
-
 
 
 };

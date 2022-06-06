@@ -24,6 +24,7 @@ public:
     ExternalFileLevelStorageSource() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ExternalFileLevelStorageSource();
     /*1*/ virtual std::string const & getName() const;
@@ -55,7 +56,6 @@ public:
     MCVAPI bool requiresConversion(std::string const &);
 #endif
     MCAPI ExternalFileLevelStorageSource(class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class SaveTransactionManager>> const &);
-
 
 
 };

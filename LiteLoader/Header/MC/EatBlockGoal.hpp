@@ -22,6 +22,7 @@ public:
     EatBlockGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EatBlockGoal();
     /*1*/ virtual bool canUse();
@@ -36,7 +37,6 @@ public:
 #endif
     MCAPI EatBlockGoal(class Mob &);
     MCAPI float getEatSuccessChance(class Actor &) const;
-
 
 
 };

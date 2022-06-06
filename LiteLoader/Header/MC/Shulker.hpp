@@ -24,6 +24,7 @@ public:
     Shulker() = delete;
 #endif
 
+
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Shulker();
@@ -77,8 +78,6 @@ public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Shulker(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-    MCAPI static class std::shared_ptr<class AttributeModifier> COVERED_ARMOR_MODIFIER;
-    MCAPI static class mce::UUID const COVERED_ARMOR_MODIFIER_UUID;
     MCAPI static void setShulkerAttachPos(class SynchedActorData &, class BlockPos const &);
 
 //protected:
@@ -92,5 +91,12 @@ public:
     MCAPI bool _tryAttachingToNeighbouringFaces(class BlockPos);
     MCAPI void _trySpawnShulker();
     MCAPI bool _tryTeleportSomewhere();
+
+protected:
+
+private:
+    MCAPI static class std::shared_ptr<class AttributeModifier> COVERED_ARMOR_MODIFIER;
+    MCAPI static class mce::UUID const COVERED_ARMOR_MODIFIER_UUID;
+
 
 };

@@ -23,6 +23,7 @@ public:
     FurnaceContainerManagerModel() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FurnaceContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
@@ -43,5 +44,10 @@ public:
 //private:
     MCAPI class FurnaceBlockActor * _getFurnaceEntity();
     MCAPI void _updateResultSlotInfo();
+
+protected:
+
+private:
+
 
 };

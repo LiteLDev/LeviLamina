@@ -23,6 +23,7 @@ public:
     ActorDamageByBlockSource() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorDamageByBlockSource();
     /*3*/ virtual bool isBlockSource() const;
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI ActorDamageByBlockSource(class Block const &, enum ActorDamageCause);
-
 
 
 };

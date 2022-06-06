@@ -22,6 +22,7 @@ public:
     DisplayObjective() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPLAYOBJECTIVE
 public:
@@ -34,7 +35,6 @@ public:
     MCAPI bool isValid() const;
     MCAPI static class DisplayObjective deserialize(class CompoundTag const &, class Scoreboard const &);
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class DisplayObjective const &);
-
 
 
 };

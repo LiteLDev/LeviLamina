@@ -23,6 +23,7 @@ public:
     IsSpawnableDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~IsSpawnableDescription();
     /*1*/ virtual char const * getJsonName() const;
@@ -30,7 +31,6 @@ public:
 public:
 #endif
     MCAPI void parse(class Json::Value const &);
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     RespawnAnchorBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RespawnAnchorBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -78,10 +79,12 @@ public:
     MCAPI static bool addItem(class Container &, int, class ItemStack &, class BlockSource &, class Block const &, class BlockPos const &);
     MCAPI static int getChargeLevel(class Block const &);
 
-
 //private:
     MCAPI static bool bumpCharge(class BlockSource &, class BlockPos const &, short);
     MCAPI static void explode(class Player &, class BlockPos const &, class BlockSource &, class Level &);
     MCAPI static bool trySetSpawn(class Player &, class BlockPos const &, class BlockSource &, class Level &);
+
+private:
+
 
 };

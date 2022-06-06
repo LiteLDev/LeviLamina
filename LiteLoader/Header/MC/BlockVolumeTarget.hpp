@@ -22,6 +22,7 @@ public:
     BlockVolumeTarget() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BlockVolumeTarget();
     /*1*/ virtual void __unk_vfn_1();
@@ -60,7 +61,6 @@ public:
     MCVAPI bool shimPlaceForOldFeatures(class Feature const &, class BlockPos const &, class Random &) const;
 #endif
     MCAPI BlockVolumeTarget(class BlockVolume &, class Level &, class BiomeSource const &, class AutomaticID<class Dimension, int>, struct WorldGenContext const &);
-
 
 
 };

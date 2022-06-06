@@ -22,6 +22,7 @@ public:
     SubscribedObjectives() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBSCRIBEDOBJECTIVES
 public:
@@ -29,7 +30,6 @@ public:
     MCAPI void addObjective(std::string const &);
     MCAPI void removeObjective(std::string const &);
     MCAPI void sendEvent(std::string const &, int) const;
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     BarrierBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BarrierBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -65,7 +66,6 @@ public:
 public:
 #endif
     MCAPI BarrierBlock(std::string const &, int);
-
 
 
 };

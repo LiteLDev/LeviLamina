@@ -22,6 +22,7 @@ public:
     ActorDefinitionDiffList() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONDIFFLIST
 public:
@@ -48,8 +49,10 @@ public:
     MCAPI void unlockChanges();
     MCAPI ~ActorDefinitionDiffList();
 
-
 //private:
     MCAPI void _updateStack();
+
+private:
+
 
 };

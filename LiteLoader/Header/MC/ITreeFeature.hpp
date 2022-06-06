@@ -22,6 +22,7 @@ public:
     ITreeFeature() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITREEFEATURE
 public:
@@ -30,6 +31,8 @@ public:
 
 //protected:
     MCAPI class std::optional<class BlockPos> _place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
+
+protected:
 
 
 };

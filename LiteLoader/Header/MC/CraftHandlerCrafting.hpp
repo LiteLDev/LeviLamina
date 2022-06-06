@@ -22,6 +22,7 @@ public:
     CraftHandlerCrafting() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CraftHandlerCrafting();
     /*1*/ virtual enum ItemStackNetResult handleConsumedItem(enum ContainerEnumName, unsigned char, class ItemStack const &);
@@ -35,9 +36,11 @@ public:
 #endif
     MCAPI CraftHandlerCrafting(bool, class Player &, class ItemStackRequestActionCraftHandler &);
 
-
 //private:
     MCAPI enum ItemStackNetResult _handleAutoCraft(class ItemStackRequestActionCraftRecipeAuto const &);
     MCAPI enum ItemStackNetResult _handleCraftOutput(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 12> const &);
+
+private:
+
 
 };

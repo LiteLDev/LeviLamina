@@ -22,6 +22,7 @@ public:
     NpcUrlAction(class NpcUrlAction const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NpcUrlAction();
     /*1*/ virtual class Json::Value toJson();
@@ -29,7 +30,6 @@ public:
 public:
 #endif
     MCAPI NpcUrlAction();
-
 
 
 };

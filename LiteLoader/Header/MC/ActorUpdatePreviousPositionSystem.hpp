@@ -22,6 +22,7 @@ public:
     ActorUpdatePreviousPositionSystem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorUpdatePreviousPositionSystem();
     /*1*/ virtual void __unk_vfn_1();
@@ -29,7 +30,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORUPDATEPREVIOUSPOSITIONSYSTEM
 public:
 #endif
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     LootItemFunction() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LootItemFunction();
     /*1*/ virtual void apply(class ItemStack &, class Random &, class LootTableContext &) = 0;
@@ -34,9 +35,7 @@ public:
 #endif
     MCAPI std::vector<std::unique_ptr<class LootItemCondition>> const & getConditions() const;
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value);
-
-
-//private:
     MCAPI static class std::unordered_map<class HashedString, class std::function<std::unique_ptr<class LootItemFunction> (class Json::Value &, std::vector<std::unique_ptr<class LootItemCondition>> &)>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::function<std::unique_ptr<class LootItemFunction> (class Json::Value &, std::vector<std::unique_ptr<class LootItemCondition>> &)>>>> const mLootingFunctions;
+
 
 };

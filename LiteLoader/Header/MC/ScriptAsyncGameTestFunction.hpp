@@ -21,6 +21,7 @@ public:
     ScriptAsyncGameTestFunction() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptAsyncGameTestFunction();
     /*2*/ virtual std::unique_ptr<class gametest::IGameTestFunctionRunResult> run(class gametest::BaseGameTestHelper &, class gametest::IGameTestFunctionContext &) const;
@@ -28,7 +29,6 @@ public:
 public:
 #endif
     MCAPI ScriptAsyncGameTestFunction(class Scripting::WeakLifetimeScope, class Scripting::Closure<class Scripting::Future<void> (struct Scripting::TypedObjectHandle<class ScriptGameTestHelper>)>, std::string const &);
-
 
 
 };

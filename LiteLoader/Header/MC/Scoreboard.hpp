@@ -68,6 +68,7 @@ public:
     Scoreboard() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Scoreboard();
     /*1*/ virtual class DisplayObjective const * setDisplayObjective(std::string const &, class Objective const &, enum ObjectiveSortOrder);
@@ -131,11 +132,6 @@ public:
     MCAPI void replaceFakePlayer(struct ScoreboardId const &, struct PlayerScoreboardId const &);
     MCAPI void resetPlayerScore(struct ScoreboardId const &);
     MCAPI void resetPlayerScore(struct ScoreboardId const &, class Objective &);
-    MCAPI static std::string const DEFAULT_CRITERIA;
-    MCAPI static std::string const DISPLAY_SLOT_BELOWNAME;
-    MCAPI static std::string const DISPLAY_SLOT_LIST;
-    MCAPI static std::string const DISPLAY_SLOT_SIDEBAR;
-    MCAPI static char const * OBJECTIVES_ENUM;
     MCAPI static bool shouldClearScoresOnDeath(class Actor const &);
 
 //protected:
@@ -147,5 +143,15 @@ public:
 //private:
     MCAPI struct ScoreboardId const & _getOrCreatePlayerId(class Player &);
     MCAPI void _init();
+
+protected:
+
+private:
+    MCAPI static std::string const DEFAULT_CRITERIA;
+    MCAPI static std::string const DISPLAY_SLOT_BELOWNAME;
+    MCAPI static std::string const DISPLAY_SLOT_LIST;
+    MCAPI static std::string const DISPLAY_SLOT_SIDEBAR;
+    MCAPI static char const * OBJECTIVES_ENUM;
+
 
 };

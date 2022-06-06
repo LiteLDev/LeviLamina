@@ -39,6 +39,7 @@ public:
     PlayStatusPacket(class PlayStatusPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PlayStatusPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -50,7 +51,6 @@ public:
 #endif
     MCAPI PlayStatusPacket(enum PlayStatus);
     MCAPI PlayStatusPacket();
-
 
 
 };

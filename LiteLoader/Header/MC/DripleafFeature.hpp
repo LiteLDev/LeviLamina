@@ -23,6 +23,7 @@ public:
     DripleafFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DripleafFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -31,8 +32,10 @@ public:
 public:
 #endif
 
-
 //private:
     MCAPI static bool _placeBigDripleaf(class BlockSource &, class BlockPos const &, class Random &);
+
+private:
+
 
 };

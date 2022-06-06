@@ -24,6 +24,7 @@ public:
     SimpleEventPacket(class SimpleEventPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SimpleEventPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -36,7 +37,6 @@ public:
     MCAPI SimpleEventPacket(enum SimpleEventPacket::Subtype const &);
     MCAPI SimpleEventPacket();
     MCAPI enum SimpleEventPacket::Subtype const & getSubtype() const;
-
 
 
 };

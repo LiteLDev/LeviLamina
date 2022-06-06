@@ -21,6 +21,7 @@ public:
     DanceComponent(class DanceComponent const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DANCECOMPONENT
 public:
@@ -28,7 +29,6 @@ public:
     MCAPI DanceComponent();
     MCAPI bool inListenDistance(class Vec3 const &) const;
     MCAPI void initFromDefinition(class Actor &);
-
 
 
 };

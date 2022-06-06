@@ -24,6 +24,7 @@ public:
     Fireball() = delete;
 #endif
 
+
 public:
     /*14*/ virtual ~Fireball();
     /*40*/ virtual void __unk_vfn_40();
@@ -65,8 +66,10 @@ public:
 #endif
     MCAPI Fireball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
-
 //private:
     MCAPI void _setPower(class Vec3 const &);
+
+private:
+
 
 };

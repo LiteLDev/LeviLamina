@@ -22,6 +22,7 @@ public:
     OceanMixerOperationNode() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~OceanMixerOperationNode();
     /*1*/ virtual void __unk_vfn_1();
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI OceanMixerOperationNode(unsigned int, class std::shared_ptr<class OperationNode<class Biome *, class Pos2d>> &, class std::shared_ptr<class OperationNode<enum BiomeTemperatureCategory, class Pos2d>> &, class BiomeRegistry const &, class Biome &, class Biome &);
-
 
 
 };

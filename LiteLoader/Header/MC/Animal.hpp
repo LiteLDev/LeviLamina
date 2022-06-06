@@ -24,6 +24,7 @@ public:
     Animal() = delete;
 #endif
 
+
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Animal();
@@ -59,7 +60,6 @@ public:
 public:
 #endif
     MCAPI Animal(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
 
 
 };

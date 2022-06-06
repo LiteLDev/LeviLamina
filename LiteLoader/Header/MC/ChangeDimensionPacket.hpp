@@ -30,6 +30,7 @@ public:
     ChangeDimensionPacket(class ChangeDimensionPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ChangeDimensionPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -41,7 +42,6 @@ public:
 #endif
     MCAPI ChangeDimensionPacket(class AutomaticID<class Dimension, int>, class Vec3, bool);
     MCAPI ChangeDimensionPacket();
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     SetHealthPacket(class SetHealthPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SetHealthPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,7 +35,6 @@ public:
 #endif
     MCAPI SetHealthPacket(int);
     MCAPI SetHealthPacket();
-
 
 
 };

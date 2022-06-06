@@ -24,6 +24,7 @@ public:
     ArrowItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ArrowItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -54,6 +55,8 @@ public:
 
 //protected:
     MCAPI std::vector<class MobEffectInstance> getMobEffects(int) const;
+
+protected:
 
 
 };

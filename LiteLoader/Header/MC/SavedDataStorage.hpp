@@ -22,6 +22,7 @@ public:
     SavedDataStorage() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAVEDDATASTORAGE
 public:
@@ -31,8 +32,10 @@ public:
     MCAPI void save();
     MCAPI void set(std::string const &, class SavedData &);
 
-
 //private:
     MCAPI void _save(class SavedData const &);
+
+private:
+
 
 };

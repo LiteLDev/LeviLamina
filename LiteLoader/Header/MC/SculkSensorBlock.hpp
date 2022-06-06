@@ -23,6 +23,7 @@ public:
     SculkSensorBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SculkSensorBlock();
     /*17*/ virtual bool liquidCanFlowIntoFromDirection(unsigned char, class std::function<class Block const & (class BlockPos const &)> const &, class BlockPos const &) const;
@@ -75,7 +76,6 @@ public:
     MCVAPI bool hasComparatorSignal() const;
 #endif
     MCAPI SculkSensorBlock(std::string const &, int);
-
 
 
 };

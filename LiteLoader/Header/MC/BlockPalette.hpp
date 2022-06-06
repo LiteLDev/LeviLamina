@@ -22,6 +22,7 @@ public:
     BlockPalette() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPALETTE
 public:
@@ -39,8 +40,10 @@ public:
     MCAPI class Block const & switchBlock(class Block const &, class BlockLegacy const &) const;
     MCAPI ~BlockPalette();
 
-
 //private:
     MCAPI bool shouldWarnFor(struct NewBlockID, unsigned short) const;
+
+private:
+
 
 };

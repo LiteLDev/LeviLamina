@@ -23,6 +23,7 @@ public:
     OreBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~OreBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -67,7 +68,6 @@ public:
 public:
 #endif
     MCAPI OreBlock(std::string const &, int);
-
 
 
 };

@@ -22,6 +22,7 @@ public:
     PurchaseReceiptPacket(class PurchaseReceiptPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PurchaseReceiptPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI PurchaseReceiptPacket();
-
 
 
 };

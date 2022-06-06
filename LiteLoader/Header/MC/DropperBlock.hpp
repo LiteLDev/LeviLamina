@@ -23,6 +23,7 @@ public:
     DropperBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DropperBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -67,7 +68,6 @@ public:
 #endif
     MCAPI DropperBlock(std::string const &, int);
     MCAPI static int getAttachedFace(int);
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     MineshaftFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MineshaftFeature();
     /*2*/ virtual bool shouldPostProcessMobs() const;
@@ -31,7 +32,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINESHAFTFEATURE
 public:
 #endif
-
 
 
 };

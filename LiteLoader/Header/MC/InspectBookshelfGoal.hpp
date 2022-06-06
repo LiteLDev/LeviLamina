@@ -23,6 +23,7 @@ public:
     InspectBookshelfGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~InspectBookshelfGoal();
     /*2*/ virtual bool canContinueToUse();
@@ -38,7 +39,6 @@ public:
 public:
 #endif
     MCAPI InspectBookshelfGoal(class Mob &, float, int, int, int, float);
-
 
 
 };

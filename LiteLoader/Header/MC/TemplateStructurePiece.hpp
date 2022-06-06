@@ -23,6 +23,7 @@ public:
     TemplateStructurePiece() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TemplateStructurePiece();
     /*1*/ virtual void moveBoundingBox(int, int, int);
@@ -37,5 +38,10 @@ public:
 
 //private:
     MCAPI void _setBoundingBoxFromTemplate();
+
+protected:
+
+private:
+
 
 };

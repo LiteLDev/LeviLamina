@@ -22,6 +22,7 @@ public:
     UpdateSubChunkBlocksPacket(class UpdateSubChunkBlocksPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~UpdateSubChunkBlocksPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,7 +35,6 @@ public:
     MCAPI UpdateSubChunkBlocksPacket(std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const &, std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const &);
     MCAPI UpdateSubChunkBlocksPacket();
     MCAPI void setSubChunkPosition(class SubChunkPos const &);
-
 
 
 };

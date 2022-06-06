@@ -23,6 +23,7 @@ public:
     ScriptPluginManager() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINMANAGER
 public:
@@ -33,9 +34,11 @@ public:
     MCAPI class ScriptPluginManagerResult runAll();
     MCAPI ~ScriptPluginManager();
 
-
 //private:
     MCAPI std::vector<struct Scripting::ModuleDescriptor> _generateModuleDependencies(std::vector<struct PackIdVersion> const &, std::vector<struct PackIdVersion> const &) const;
     MCAPI void _reportContextResults(struct Scripting::ScriptContextResult const &, class ScriptPluginResult &);
+
+private:
+
 
 };

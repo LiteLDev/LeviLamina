@@ -22,6 +22,7 @@ public:
     GoalSelectorSystem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GoalSelectorSystem();
     /*1*/ virtual void __unk_vfn_1();
@@ -30,8 +31,10 @@ public:
 public:
 #endif
 
-
 //private:
     MCAPI static void _tickGoalSelectorComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class GoalSelectorComponent> &);
+
+private:
+
 
 };

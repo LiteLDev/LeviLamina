@@ -22,6 +22,7 @@ public:
     PackError() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PackError();
     /*1*/ virtual std::string getLocErrorMessage() const;
@@ -35,7 +36,6 @@ public:
     MCAPI std::vector<std::string> const & getErrorParameters() const;
     MCAPI std::string getEventErrorMessage() const;
     MCAPI void serialize(class Json::Value &);
-
 
 
 };

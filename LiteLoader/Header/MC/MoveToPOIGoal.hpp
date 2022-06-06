@@ -23,6 +23,7 @@ public:
     MoveToPOIGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MoveToPOIGoal();
     /*1*/ virtual bool canUse();
@@ -47,5 +48,10 @@ public:
 
 //private:
     MCAPI void _updatePOIBooking();
+
+protected:
+
+private:
+
 
 };

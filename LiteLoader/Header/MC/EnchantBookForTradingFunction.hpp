@@ -23,6 +23,7 @@ public:
     EnchantBookForTradingFunction() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTBOOKFORTRADINGFUNCTION
 public:
@@ -33,8 +34,10 @@ public:
 #endif
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
-
 //private:
     MCAPI class EnchantmentInstance _getRandomEnchantAndCalculateCost(class ItemStackBase &, class Random &, int &) const;
+
+private:
+
 
 };

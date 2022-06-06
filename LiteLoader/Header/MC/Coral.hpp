@@ -23,6 +23,7 @@ public:
     Coral() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Coral();
     /*8*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
@@ -87,6 +88,8 @@ public:
 
 //protected:
     MCAPI void checkAlive(class BlockSource &, class BlockPos const &) const;
+
+protected:
 
 
 };

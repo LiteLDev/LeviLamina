@@ -24,6 +24,7 @@ public:
     ExperiencePotionItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ExperiencePotionItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -47,7 +48,6 @@ public:
 public:
 #endif
     MCAPI ExperiencePotionItem(std::string const &, int);
-
 
 
 };

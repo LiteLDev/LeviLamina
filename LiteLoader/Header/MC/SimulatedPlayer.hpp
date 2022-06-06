@@ -31,6 +31,7 @@ public:
     SimulatedPlayer() = delete;
 #endif
 
+
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~SimulatedPlayer();
@@ -118,7 +119,6 @@ public:
     MCAPI static class SimulatedPlayer * create(std::string const &, class BlockPos const &, class AutomaticID<class Dimension, int>, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>);
     MCAPI static class SimulatedPlayer * tryGetFromEntity(class EntityContext &, bool);
 
-
 //private:
     MCAPI void _addMoveComponent();
     MCAPI struct ScriptNavigationResult _createNavigationResult(class NavigationComponent *) const;
@@ -127,5 +127,8 @@ public:
     MCAPI bool _trySwing();
     MCAPI void _updateMovement();
     MCAPI void _updateRidingComponents();
+
+private:
+
 
 };

@@ -22,6 +22,7 @@ public:
     RangedAttackGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RangedAttackGoal();
     /*1*/ virtual bool canUse();
@@ -36,7 +37,6 @@ public:
 #endif
     MCAPI RangedAttackGoal(class Mob &);
     MCAPI void handleAttackBehavior(class Actor *, class Vec3 const &, float, bool);
-
 
 
 };

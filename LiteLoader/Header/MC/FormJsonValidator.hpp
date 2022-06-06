@@ -23,6 +23,7 @@ public:
     FormJsonValidator() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FORMJSONVALIDATOR
 public:
@@ -35,7 +36,6 @@ public:
     MCAPI static class JsonValidator::Property getStepSliderProperty(bool);
     MCAPI static class JsonValidator::Property getTextInputProperty(bool);
     MCAPI static class JsonValidator::Property getToggleProperty(bool);
-
 
 
 };

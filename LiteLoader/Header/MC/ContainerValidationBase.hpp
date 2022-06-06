@@ -22,6 +22,7 @@ public:
     ContainerValidationBase() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONBASE
 public:
@@ -35,7 +36,6 @@ public:
     MCVAPI bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     MCVAPI bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
 #endif
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     BaseRailTransporter() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BaseRailTransporter();
     /*11*/ virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
@@ -34,7 +35,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASERAILTRANSPORTER
 public:
 #endif
-
 
 
 };

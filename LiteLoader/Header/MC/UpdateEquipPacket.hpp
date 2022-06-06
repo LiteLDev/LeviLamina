@@ -22,6 +22,7 @@ public:
     UpdateEquipPacket(class UpdateEquipPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~UpdateEquipPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI UpdateEquipPacket(enum ContainerID, enum ContainerType, int, class CompoundTag &&, struct ActorUniqueID const &);
     MCAPI UpdateEquipPacket();
-
 
 
 };

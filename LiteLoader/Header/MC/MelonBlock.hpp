@@ -23,6 +23,7 @@ public:
     MelonBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MelonBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -65,7 +66,6 @@ public:
 public:
 #endif
     MCAPI MelonBlock(std::string const &, int);
-
 
 
 };

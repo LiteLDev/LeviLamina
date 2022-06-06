@@ -24,6 +24,7 @@ public:
     BannerAddPatternRecipe() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BannerAddPatternRecipe();
     /*1*/ virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
@@ -38,8 +39,11 @@ public:
     MCAPI BannerAddPatternRecipe(class gsl::basic_string_span<char const, -1>);
     MCAPI BannerAddPatternRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
     MCAPI class Bedrock::NonOwnerPointer<class BannerPattern const> const matchPatterns(class CraftingContainer &) const;
-    MCAPI static class mce::UUID const ID;
 
+//private:
+
+private:
+    MCAPI static class mce::UUID const ID;
 
 
 };

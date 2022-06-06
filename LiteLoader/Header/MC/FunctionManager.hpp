@@ -23,6 +23,7 @@ public:
     FunctionManager() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FUNCTIONMANAGER
 public:
@@ -44,5 +45,10 @@ public:
     MCAPI class CommandOrigin const & _addOriginReference(class CommandOrigin const &, unsigned int);
     MCAPI void _queueCommandsAfterCaller(std::vector<std::unique_ptr<class IFunctionEntry>> const &, class CommandOrigin const &);
     MCAPI void _removeOriginReference(class CommandOrigin const &, unsigned int);
+
+protected:
+
+private:
+
 
 };

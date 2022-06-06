@@ -23,14 +23,18 @@ public:
     OnStepOnTriggerDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~OnStepOnTriggerDescription();
     /*1*/ virtual std::string const & getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONSTEPONTRIGGERDESCRIPTION
 public:
 #endif
-    MCAPI static std::string const NameID;
 
+//private:
+
+private:
+    MCAPI static std::string const NameID;
 
 
 };

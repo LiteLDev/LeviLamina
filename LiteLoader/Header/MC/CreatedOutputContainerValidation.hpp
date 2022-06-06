@@ -23,6 +23,7 @@ public:
     CreatedOutputContainerValidation() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CreatedOutputContainerValidation();
     /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
@@ -40,7 +41,6 @@ public:
     MCVAPI bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     MCVAPI bool isItemAllowedToAdd(class ItemStack const &) const;
 #endif
-
 
 
 };

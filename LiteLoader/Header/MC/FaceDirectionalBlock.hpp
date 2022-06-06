@@ -23,6 +23,7 @@ public:
     FaceDirectionalBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FaceDirectionalBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -70,7 +71,6 @@ public:
     MCAPI static enum Flip getFaceFlipStatic(unsigned char, class Block const &, bool);
     MCAPI static unsigned char getFacingDirection(class Block const &, bool);
     MCAPI static unsigned char getMappedFaceStatic(unsigned char, class Block const &, bool);
-
 
 
 };

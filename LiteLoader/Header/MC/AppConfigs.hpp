@@ -22,6 +22,7 @@ public:
     AppConfigs(class AppConfigs const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AppConfigs();
     /*1*/ virtual void __unk_vfn_1();
@@ -92,7 +93,6 @@ public:
     MCVAPI bool worldsAreSingleUse() const;
 #endif
     MCAPI AppConfigs();
-
 
 
 };

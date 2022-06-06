@@ -22,6 +22,7 @@ public:
     RandomizableBlockActorFillingContainer() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMIZABLEBLOCKACTORFILLINGCONTAINER
 public:
@@ -32,7 +33,6 @@ public:
     MCVAPI ~RandomizableBlockActorFillingContainer();
 #endif
     MCAPI RandomizableBlockActorFillingContainer(enum BlockActorType, std::string const &, class BlockPos const &, int, enum ContainerType);
-
 
 
 };

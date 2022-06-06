@@ -21,6 +21,7 @@ public:
     BackgroundTaskQueue(class BackgroundTaskQueue const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKGROUNDTASKQUEUE
 public:
@@ -34,8 +35,10 @@ public:
     MCAPI class std::shared_ptr<class BackgroundTaskBase> tryPop(int);
     MCAPI ~BackgroundTaskQueue();
 
-
 //private:
     MCAPI bool _fetchAllAvailableTasks();
+
+private:
+
 
 };

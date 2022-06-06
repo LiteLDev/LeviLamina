@@ -23,6 +23,7 @@ public:
     FreezeOnHitSubcomponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FreezeOnHitSubcomponent();
     /*1*/ virtual void readfromJSON(class Json::Value &, class SemVersion const &);
@@ -32,7 +33,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FREEZEONHITSUBCOMPONENT
 public:
 #endif
-
 
 
 };

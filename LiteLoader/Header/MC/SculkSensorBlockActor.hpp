@@ -23,6 +23,7 @@ public:
     SculkSensorBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SculkSensorBlockActor();
     /*7*/ virtual void tick(class BlockSource &);
@@ -39,9 +40,12 @@ public:
 #endif
     MCAPI SculkSensorBlockActor(class BlockPos const &);
     MCAPI int getLatestGameEventFrequency() const;
+
+//private:
+
+private:
     MCAPI static enum BlockActorType const TypeId;
     MCAPI static std::string const TypeString;
-
 
 
 };

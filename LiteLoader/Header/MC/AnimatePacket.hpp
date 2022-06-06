@@ -36,6 +36,7 @@ public:
     AnimatePacket(class AnimatePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AnimatePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -49,7 +50,6 @@ public:
     MCAPI AnimatePacket(enum AnimatePacket::Action, class ActorRuntimeID);
     MCAPI AnimatePacket(enum AnimatePacket::Action, class ActorRuntimeID, float);
     MCAPI AnimatePacket();
-
 
 
 };

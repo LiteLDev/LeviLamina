@@ -21,6 +21,7 @@ public:
     VolumeDefinitionGroup() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMEDEFINITIONGROUP
 public:
@@ -31,9 +32,11 @@ public:
     MCAPI ~VolumeDefinitionGroup();
     MCAPI static void bindVolumeDefinitions();
 
-
 //private:
     MCAPI bool _parseAndRegisterDefinition(std::string const &, class SemVersion const &, std::string const &);
     MCAPI bool _registerDefinition(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator> &, class SemVersion const &, std::string const &);
+
+private:
+
 
 };

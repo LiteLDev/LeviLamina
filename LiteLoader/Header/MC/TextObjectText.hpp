@@ -23,6 +23,7 @@ public:
     TextObjectText() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TextObjectText();
     /*1*/ virtual std::string asString() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI TextObjectText(std::string);
     MCAPI static class Json::Value asJsonValue(std::string const &);
-
 
 
 };

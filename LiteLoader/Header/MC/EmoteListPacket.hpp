@@ -22,6 +22,7 @@ public:
     EmoteListPacket(class EmoteListPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EmoteListPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,8 +34,11 @@ public:
 #endif
     MCAPI EmoteListPacket(class ActorRuntimeID);
     MCAPI EmoteListPacket();
-    MCAPI static int const MAX_EMOTE_PIECE_IDS;
 
+//private:
+
+private:
+    MCAPI static int const MAX_EMOTE_PIECE_IDS;
 
 
 };

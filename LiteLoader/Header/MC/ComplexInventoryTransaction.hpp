@@ -32,6 +32,7 @@ public:
     ComplexInventoryTransaction() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ComplexInventoryTransaction();
     /*1*/ virtual void __unk_vfn_1();
@@ -49,9 +50,7 @@ public:
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum ComplexInventoryTransaction::Type);
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum ComplexInventoryTransaction::Type, class InventoryTransaction const &);
     MCAPI static std::string const getTransactionTypeName(enum ComplexInventoryTransaction::Type);
-
-
-//private:
     MCAPI static class BidirectionalUnorderedMap<enum ComplexInventoryTransaction::Type, std::string> const transactionTypeMap;
+
 
 };

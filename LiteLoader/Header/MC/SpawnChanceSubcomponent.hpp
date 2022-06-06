@@ -22,6 +22,7 @@ public:
     SpawnChanceSubcomponent(class SpawnChanceSubcomponent const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SpawnChanceSubcomponent();
     /*1*/ virtual void readfromJSON(class Json::Value &, class SemVersion const &);
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI SpawnChanceSubcomponent();
-
 
 
 };

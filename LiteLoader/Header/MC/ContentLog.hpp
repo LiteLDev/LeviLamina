@@ -21,6 +21,7 @@ public:
     ContentLog(class ContentLog const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTLOG
 public:
@@ -33,8 +34,10 @@ public:
     MCAPI static char const * getLogAreaName(enum LogArea);
     MCAPI static char const * getLogLevelName(enum LogLevel);
 
-
 //private:
     MCAPI void _writeToLog(bool, enum LogArea, enum LogLevel, char *&);
+
+private:
+
 
 };

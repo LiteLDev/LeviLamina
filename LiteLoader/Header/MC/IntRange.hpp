@@ -34,5 +34,6 @@ public:
 protected:
 
 private:
+    MCAPI static struct IntRange const ZERO;
 
 };

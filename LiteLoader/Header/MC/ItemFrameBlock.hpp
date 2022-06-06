@@ -23,6 +23,7 @@ public:
     ItemFrameBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemFrameBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -93,10 +94,12 @@ public:
 #endif
     MCAPI ItemFrameBlock(std::string const &, int);
 
-
 //private:
     MCAPI void _checkAchievements(class Player &, class BlockPos const &) const;
     MCAPI class ItemFrameBlockActor * _getItemFrame(class BlockSource &, class BlockPos const &) const;
     MCAPI void getShape(int, class AABB &, bool) const;
+
+private:
+
 
 };

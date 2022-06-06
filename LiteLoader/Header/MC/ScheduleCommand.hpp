@@ -29,6 +29,7 @@ public:
     ScheduleCommand() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScheduleCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -37,10 +38,12 @@ public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
 
-
 //private:
     MCAPI void _delay(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void _onAreaLoaded(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI struct ScheduleCommand::FunctionInfo _tryGetFunction(class FunctionManager &, class CommandOutput &) const;
+
+private:
+
 
 };

@@ -20,6 +20,7 @@ public:
     BlendingData() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLENDINGDATA
 public:
@@ -28,7 +29,6 @@ public:
     MCAPI class std::optional<float> getDensity(int, int, int) const;
     MCAPI class std::optional<short> getHeight(int, int) const;
     MCAPI bool hasBlendDataAt(int, int) const;
-
 
 
 };

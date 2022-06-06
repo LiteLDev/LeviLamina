@@ -20,6 +20,7 @@ public:
     ScriptActorTypeIterator() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTACTORTYPEITERATOR
 public:
@@ -27,7 +28,6 @@ public:
     MCAPI ScriptActorTypeIterator(class std::unordered_map<std::string, class Scripting::StrongTypedObjectHandle<class ScriptActorType>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, class Scripting::StrongTypedObjectHandle<class ScriptActorType>>>> &);
     MCAPI class ScriptActorTypeIterator & operator=(class ScriptActorTypeIterator &&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptActorTypeIterator> bind(struct Scripting::Version);
-
 
 
 };

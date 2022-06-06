@@ -29,6 +29,7 @@ public:
     BlockTickingQueue() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKTICKINGQUEUE
 public:
@@ -64,5 +65,10 @@ public:
 //private:
     MCAPI void _acquireAllTicks(class BlockTickingQueue &);
     MCAPI void _addToNextTickQueue(class BlockPos const &, class Block const &, int, int);
+
+protected:
+
+private:
+
 
 };

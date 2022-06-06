@@ -23,6 +23,7 @@ public:
     PreviewContainerValidation() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PreviewContainerValidation();
     /*1*/ virtual void __unk_vfn_1();
@@ -38,7 +39,6 @@ public:
     MCVAPI bool isItemAllowedToAdd(class ItemStack const &) const;
     MCVAPI bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
 #endif
-
 
 
 };

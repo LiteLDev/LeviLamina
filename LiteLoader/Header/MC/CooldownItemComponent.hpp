@@ -22,6 +22,7 @@ public:
     CooldownItemComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CooldownItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -36,7 +37,6 @@ public:
     MCAPI CooldownItemComponent(class ComponentItem *);
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
-
 
 
 };

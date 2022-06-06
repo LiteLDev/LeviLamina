@@ -22,6 +22,7 @@ public:
     ItemStackNetManagerScreenStack() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETMANAGERSCREENSTACK
 public:
@@ -34,7 +35,6 @@ public:
     MCAPI class ItemStackNetManagerScreen const * top() const;
     MCAPI class ItemStackNetManagerScreen * top();
     MCAPI ~ItemStackNetManagerScreenStack();
-
 
 
 };

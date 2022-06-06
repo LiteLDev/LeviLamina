@@ -22,6 +22,7 @@ public:
     OnFireServerSystem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~OnFireServerSystem();
     /*1*/ virtual void __unk_vfn_1();
@@ -30,8 +31,10 @@ public:
 public:
 #endif
 
-
 //private:
     MCAPI static void _tickServer(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class OnFireComponent> &);
+
+private:
+
 
 };

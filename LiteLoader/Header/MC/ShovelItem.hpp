@@ -25,6 +25,7 @@ public:
     ShovelItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ShovelItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -48,7 +49,6 @@ public:
 public:
 #endif
     MCAPI ShovelItem(std::string const &, int, class Item::Tier const &);
-
 
 
 };

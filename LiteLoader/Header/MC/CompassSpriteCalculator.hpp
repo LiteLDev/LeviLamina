@@ -22,6 +22,7 @@ public:
     CompassSpriteCalculator() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPASSSPRITECALCULATOR
 public:
@@ -31,7 +32,6 @@ public:
     MCAPI int update(class Actor &, bool);
     MCAPI int updateFromPosition(class BlockSource const *, class BlockPos const &, float, float, float, bool, bool, bool, bool);
     MCAPI int updateFromPosition(class BlockSource const *, float, float, float, bool, bool);
-
 
 
 };

@@ -22,6 +22,7 @@ public:
     WorldSessionEndPoint() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDSESSIONENDPOINT
 public:
@@ -32,7 +33,6 @@ public:
     MCVAPI void setEnabled(bool);
 #endif
     MCAPI WorldSessionEndPoint(class IMinecraftEventing &);
-
 
 
 };

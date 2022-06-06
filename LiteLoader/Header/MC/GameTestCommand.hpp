@@ -23,6 +23,7 @@ public:
     GameTestCommand() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GameTestCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -30,8 +31,8 @@ public:
 public:
 #endif
     MCAPI static void postScriptRegisterSetup(class CommandRegistry &);
+    MCAPI static class MinecraftGameTest * sGameTest;
     MCAPI static void setup(class CommandRegistry &);
-
 
 //private:
     MCAPI struct gametest::TestParameters _createTestParameters(class BlockSource &, class CommandOrigin const &) const;
@@ -42,6 +43,8 @@ public:
     MCAPI void _handleRunThis(class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void _handleShowPosition(class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void _runTestAt(class BlockSource &, class CommandOutput *, class BlockPos const &, class std::optional<enum Rotation>) const;
-    MCAPI static class MinecraftGameTest * sGameTest;
+
+private:
+
 
 };

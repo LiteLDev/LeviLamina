@@ -22,6 +22,7 @@ public:
     StructurePoolBlockPredicateBlockMatch() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StructurePoolBlockPredicateBlockMatch();
     /*1*/ virtual bool test(class Block const &, class Randomize &) const;
@@ -30,7 +31,6 @@ public:
 public:
 #endif
     MCAPI StructurePoolBlockPredicateBlockMatch(class Block const &);
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     CarrotBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CarrotBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -70,7 +71,6 @@ public:
 public:
 #endif
     MCAPI CarrotBlock(std::string const &, int);
-
 
 
 };

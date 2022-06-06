@@ -22,6 +22,7 @@ public:
     ScreenHandlerLabTable() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScreenHandlerLabTable();
     /*1*/ virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const &);
@@ -33,8 +34,10 @@ public:
 #endif
     MCAPI ScreenHandlerLabTable(class ContainerScreenContext const &, class ItemStackRequestActionHandler &);
 
-
 //private:
     MCAPI enum ItemStackNetResult _handleLabTableCombine(class ItemStackRequestActionDataless<9> const &);
+
+private:
+
 
 };

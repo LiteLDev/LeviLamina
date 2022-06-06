@@ -22,6 +22,7 @@ public:
     ProjectileItemComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ProjectileItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -39,7 +40,6 @@ public:
     MCAPI class Actor * shootProjectile(class BlockSource &, class Vec3 const &, class Vec3 const &, float, class Player *) const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
-
 
 
 };

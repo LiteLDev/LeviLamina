@@ -22,6 +22,7 @@ public:
     MoveTowardsDwellingRestrictionGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MoveTowardsDwellingRestrictionGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI MoveTowardsDwellingRestrictionGoal(class Mob &);
-
 
 
 };

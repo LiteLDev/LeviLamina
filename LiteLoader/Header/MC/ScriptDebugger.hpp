@@ -22,6 +22,7 @@ public:
     ScriptDebugger() = delete;
 #endif
 
+
 public:
     /*0*/ virtual bool listen(unsigned short);
     /*1*/ virtual bool connect(std::string const &, unsigned short);
@@ -32,9 +33,11 @@ public:
     MCAPI ScriptDebugger(class Scripting::ScriptEngine &, class IScriptDebuggerWatchdog &);
     MCAPI void checkConnections();
 
-
 //private:
     MCAPI class Scripting::IDebuggerController * _createController();
     MCAPI void _releaseController();
+
+private:
+
 
 };

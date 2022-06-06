@@ -23,6 +23,7 @@ public:
     BaseMoveToBlockGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BaseMoveToBlockGoal();
     /*1*/ virtual bool canUse();
@@ -36,7 +37,6 @@ public:
 public:
 #endif
     MCAPI BaseMoveToBlockGoal(class Mob &, float, int, int, int, float, float);
-
 
 
 };

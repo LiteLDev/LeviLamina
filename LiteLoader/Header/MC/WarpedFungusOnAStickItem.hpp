@@ -24,6 +24,7 @@ public:
     WarpedFungusOnAStickItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~WarpedFungusOnAStickItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -48,7 +49,6 @@ public:
 public:
 #endif
     MCAPI WarpedFungusOnAStickItem(std::string const &, int);
-
 
 
 };

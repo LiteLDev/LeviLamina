@@ -23,6 +23,7 @@ public:
     LootItemMatchToolCondition() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LootItemMatchToolCondition();
     /*1*/ virtual bool applies(class Random &, class LootTableContext &);
@@ -31,7 +32,6 @@ public:
 #endif
     MCAPI LootItemMatchToolCondition(struct IntRange, struct IntRange, std::string, std::vector<struct LootItemMatchToolCondition::EnchantInfo> const &);
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
-
 
 
 };

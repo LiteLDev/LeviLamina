@@ -22,6 +22,7 @@ public:
     PickupItemsGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PickupItemsGoal();
     /*1*/ virtual bool canUse();
@@ -36,10 +37,12 @@ public:
 #endif
     MCAPI PickupItemsGoal(class Mob &, float, bool, int, int, float, bool, bool, int, bool, bool, std::vector<class ItemDescriptor> const &);
 
-
 //private:
     MCAPI std::vector<class gsl::not_null<class ItemActor *>> _filterValidTargets(std::vector<struct DistanceSortedActor> const &) const;
     MCAPI struct Shareable const * _getShareableItem(class ItemStack const &) const;
     MCAPI void _pickItemUp(class ItemActor *);
+
+private:
+
 
 };

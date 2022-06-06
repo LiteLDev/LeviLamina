@@ -23,6 +23,7 @@ public:
     PoolElementStructurePiece() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PoolElementStructurePiece();
     /*1*/ virtual void moveBoundingBox(int, int, int);
@@ -41,7 +42,6 @@ public:
     MCAPI class StructurePoolElement const & getElement() const;
     MCAPI class BlockPos const & getPosition() const;
     MCAPI void setReferencePosition(class BlockPos const &);
-
 
 
 };

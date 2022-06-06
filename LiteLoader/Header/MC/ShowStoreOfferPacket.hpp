@@ -22,6 +22,7 @@ public:
     ShowStoreOfferPacket(class ShowStoreOfferPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ShowStoreOfferPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI ShowStoreOfferPacket();
-
 
 
 };

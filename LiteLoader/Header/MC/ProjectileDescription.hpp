@@ -22,6 +22,7 @@ public:
     ProjectileDescription(class ProjectileDescription const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~ProjectileDescription();
@@ -31,7 +32,6 @@ public:
 public:
 #endif
     MCAPI ProjectileDescription();
-
 
 
 };

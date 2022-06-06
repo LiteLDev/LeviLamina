@@ -23,6 +23,7 @@ public:
     TargetBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TargetBlock();
     /*15*/ virtual void onProjectileHit(class BlockSource &, class BlockPos const &, class Actor const &) const;
@@ -68,7 +69,6 @@ public:
 public:
 #endif
     MCAPI TargetBlock(std::string const &, int);
-
 
 
 };

@@ -24,6 +24,7 @@ public:
     VillageManager() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGEMANAGER
 public:
@@ -49,8 +50,9 @@ public:
     MCAPI void tickVillages(struct Tick const &, class Vec3 const &, class BlockSource &);
     MCAPI class std::shared_ptr<class POIInstance> tryCreatePOI(class BlockPos const &, class Block const &);
     MCAPI ~VillageManager();
-    MCAPI static int const MAX_POI_TOLERANCE_DIST;
-
+    MCAPI static unsigned __int64 const MAX_POI_QUERIES;
+    MCAPI static int const MAX_QUERY_SCAN_ITERATIONS;
+    MCAPI static int const VILLAGE_HERO_EFFECT_DURATION;
 
 //private:
     MCAPI void _addPOIWithinRadius(class BlockPos const &, class BlockSource &);
@@ -63,8 +65,9 @@ public:
     MCAPI void _removeEligibleVillages();
     MCAPI void _tryAssignPOIOrCreateVillage(class std::shared_ptr<class POIInstance> &&);
     MCAPI void _unclusterDerelictPOIs(std::vector<class std::weak_ptr<class POIInstance>> &);
-    MCAPI static unsigned __int64 const MAX_POI_QUERIES;
-    MCAPI static int const MAX_QUERY_SCAN_ITERATIONS;
-    MCAPI static int const VILLAGE_HERO_EFFECT_DURATION;
+
+private:
+    MCAPI static int const MAX_POI_TOLERANCE_DIST;
+
 
 };

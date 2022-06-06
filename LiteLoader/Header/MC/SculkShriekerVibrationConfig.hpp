@@ -20,6 +20,7 @@ public:
     SculkShriekerVibrationConfig() = delete;
 #endif
 
+
 public:
     /*0*/ virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
     /*1*/ virtual bool isValidVibration(class GameEvent const &, class Actor const *);
@@ -27,7 +28,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSHRIEKERVIBRATIONCONFIG
 public:
 #endif
-
 
 
 };

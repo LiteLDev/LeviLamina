@@ -20,6 +20,7 @@ public:
     StrictEntityContext() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRICTENTITYCONTEXT
 public:
@@ -33,6 +34,8 @@ public:
 //protected:
     MCAPI class EntityId _getEntityId() const;
     MCAPI unsigned int _getRegistryId() const;
+
+protected:
 
 
 };

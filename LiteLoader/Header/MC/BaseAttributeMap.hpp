@@ -21,6 +21,7 @@ public:
     BaseAttributeMap(class BaseAttributeMap const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEATTRIBUTEMAP
 public:
@@ -45,9 +46,7 @@ public:
     MCAPI unsigned __int64 size() const;
     MCAPI void updateAttribute(class HashedString const &, float, float, float, float);
     MCAPI ~BaseAttributeMap();
-
-
-//private:
     MCAPI static class AttributeInstance mInvalidInstance;
+
 
 };

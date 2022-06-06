@@ -22,6 +22,7 @@ public:
     PathNavigation() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PathNavigation();
     /*1*/ virtual void initializeInternal(class Mob &, struct NavigationDescription *);
@@ -44,6 +45,8 @@ public:
     MCAPI float _getHighestBlockHeight(class BlockSource &, class Mob &, class Vec3 const &, class Vec2 const &) const;
     MCAPI bool _isPositionOnlyInAir(class BlockSource const &, class Vec3 const &, class Vec2 const &) const;
     MCAPI enum NodeType isFree(class NavigationComponent &, class Mob &, class BlockPos const &, class BlockPos const &, class BlockPos const &, enum CanJumpIntoNode);
+
+protected:
 
 
 };

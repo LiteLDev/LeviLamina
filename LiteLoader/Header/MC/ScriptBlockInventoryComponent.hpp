@@ -22,6 +22,7 @@ public:
     ScriptBlockInventoryComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptBlockInventoryComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKINVENTORYCOMPONENT
@@ -33,7 +34,6 @@ public:
     MCAPI class ScriptBlockInventoryComponent & operator=(class ScriptBlockInventoryComponent &&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockInventoryComponent> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockInventoryComponent> tryCreate(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
-
 
 
 };

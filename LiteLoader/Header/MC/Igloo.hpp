@@ -23,6 +23,7 @@ public:
     Igloo() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Igloo();
     /*3*/ virtual enum StructurePieceType getType() const;
@@ -32,12 +33,10 @@ public:
 public:
 #endif
     MCAPI Igloo(short, int, int);
-
-
-//private:
     MCAPI static std::string const STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR;
     MCAPI static std::string const STRUCTURE_LOCATION_IGLOO_TRAPDOOR;
     MCAPI static std::string const STRUCTURE_LOCATION_LABORATORY;
     MCAPI static std::string const STRUCTURE_LOCATION_LADDER;
+
 
 };

@@ -21,6 +21,7 @@ public:
     JigsawStructureRegistry(class JigsawStructureRegistry const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWSTRUCTUREREGISTRY
 public:
@@ -33,7 +34,6 @@ public:
     MCAPI class StructureTemplatePool const * lookupByName(std::string) const;
     MCAPI void registerPool(std::unique_ptr<class StructureTemplatePool> &&);
     MCAPI ~JigsawStructureRegistry();
-
 
 
 };

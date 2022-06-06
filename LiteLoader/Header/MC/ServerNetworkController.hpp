@@ -22,6 +22,7 @@ public:
     ServerNetworkController() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ServerNetworkController();
     /*1*/ virtual bool isDedicatedServer() const;
@@ -31,7 +32,6 @@ public:
 public:
 #endif
     MCAPI ServerNetworkController(bool, class mce::UUID const &, class std::function<bool (class ServerPlayer const &, enum AbilitiesIndex)>);
-
 
 
 };

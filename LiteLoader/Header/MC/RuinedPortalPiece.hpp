@@ -23,6 +23,7 @@ public:
     RuinedPortalPiece() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RuinedPortalPiece();
     /*3*/ virtual enum StructurePieceType getType() const;
@@ -30,7 +31,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUINEDPORTALPIECE
 public:
 #endif
-
 
 //private:
     MCAPI void _addNetherrackDripColumn(class Random &, class BlockSource &, class BlockPos);
@@ -41,5 +41,8 @@ public:
     MCAPI void _spreadNetherrack(class Random &, class BlockSource &, struct PortalEnvironmentModifiers const &);
     MCAPI static class Block const & _getRandomFacingStairs(class Random &, class Block const &);
     MCAPI static bool _willLavaFlowIn(class BlockSource &, class BlockPos);
+
+private:
+
 
 };

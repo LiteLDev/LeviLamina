@@ -22,6 +22,7 @@ public:
     IconItemComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~IconItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -37,7 +38,6 @@ public:
     MCAPI void setOwnerIcon();
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
-
 
 
 };

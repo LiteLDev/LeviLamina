@@ -23,6 +23,7 @@ public:
     MusicBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MusicBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -40,7 +41,6 @@ public:
     MCAPI MusicBlockActor(class BlockPos const &);
     MCAPI void playNote(class BlockSource &, class BlockPos const &);
     MCAPI void tune();
-
 
 
 };

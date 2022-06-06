@@ -25,6 +25,7 @@ public:
     Ability() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABILITY
 public:
@@ -34,7 +35,6 @@ public:
     MCAPI enum Ability::Type getType() const;
     MCAPI bool hasOption(enum Ability::Options) const;
     MCAPI void setBool(bool);
-
 
 
 };

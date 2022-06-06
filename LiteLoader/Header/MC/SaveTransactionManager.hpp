@@ -22,6 +22,7 @@ public:
     SaveTransactionManager() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAVETRANSACTIONMANAGER
 public:
@@ -30,9 +31,11 @@ public:
     MCAPI void onBeginCompaction();
     MCAPI void onEndCompaction();
 
-
 //private:
     MCAPI void _hideGlobalSaveIcon();
     MCAPI void _showGlobalSaveIcon();
+
+private:
+
 
 };

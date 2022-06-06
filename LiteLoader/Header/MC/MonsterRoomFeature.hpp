@@ -22,6 +22,7 @@ public:
     MonsterRoomFeature(class MonsterRoomFeature const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MonsterRoomFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -30,7 +31,6 @@ public:
 public:
 #endif
     MCAPI MonsterRoomFeature();
-
 
 
 };

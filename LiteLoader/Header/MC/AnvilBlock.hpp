@@ -23,6 +23,7 @@ public:
     AnvilBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AnvilBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -83,7 +84,6 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI AnvilBlock(std::string const &, int);
-
 
 
 };

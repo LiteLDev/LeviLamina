@@ -21,6 +21,7 @@ public:
     MangrovePropagule() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MangrovePropagule();
     /*19*/ virtual void __unk_vfn_19();
@@ -70,11 +71,9 @@ public:
 public:
 #endif
     MCAPI MangrovePropagule(std::string const &, int, class BlockLegacy const &);
-
-
-//private:
     MCAPI static int const CHANCE_TO_GROW;
     MCAPI static int const DEFAULT_GROWTH;
     MCAPI static int const MAX_GROWTH;
+
 
 };

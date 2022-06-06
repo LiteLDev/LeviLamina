@@ -24,6 +24,7 @@ public:
     AbstractArrow() = delete;
 #endif
 
+
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -69,6 +70,8 @@ public:
 
 //protected:
     MCAPI bool _canPickup(class Player const &) const;
+
+protected:
 
 
 };

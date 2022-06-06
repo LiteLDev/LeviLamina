@@ -22,15 +22,19 @@ public:
     ITextObject() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEXTOBJECT
 public:
 #endif
+
+//private:
+
+private:
     MCAPI static std::string const RAW_TEXT_OBJECT_KEY;
     MCAPI static std::string const RAW_TEXT_TEXT_KEY;
     MCAPI static std::string const RAW_TEXT_TRANSLATE_KEY;
     MCAPI static std::string const RAW_TEXT_WITH_KEY;
-
 
 
 };

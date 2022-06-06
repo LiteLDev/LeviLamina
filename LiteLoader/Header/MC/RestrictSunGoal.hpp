@@ -22,6 +22,7 @@ public:
     RestrictSunGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RestrictSunGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI RestrictSunGoal(class Mob &);
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     BlockRotationDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BlockRotationDescription();
     /*1*/ virtual std::string const & getName() const;
@@ -34,8 +35,11 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKROTATIONDESCRIPTION
 public:
 #endif
-    MCAPI static std::string const NameID;
 
+//private:
+
+private:
+    MCAPI static std::string const NameID;
 
 
 };

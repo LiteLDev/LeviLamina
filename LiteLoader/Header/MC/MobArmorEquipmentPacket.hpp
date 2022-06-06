@@ -22,6 +22,7 @@ public:
     MobArmorEquipmentPacket(class MobArmorEquipmentPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MobArmorEquipmentPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI MobArmorEquipmentPacket(class Actor const &);
     MCAPI MobArmorEquipmentPacket();
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     RakWebSocketDataFrameParser() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKETDATAFRAMEPARSER
 public:
@@ -32,8 +33,10 @@ public:
     MCAPI void setOnFailHandler(class std::function<void (std::string const &, enum CloseStatusCode)>);
     MCAPI ~RakWebSocketDataFrameParser();
 
-
 //private:
     MCAPI class std::shared_ptr<class RakWebSocketDataFrame> _failReadFrame(std::string const &, enum CloseStatusCode);
+
+private:
+
 
 };

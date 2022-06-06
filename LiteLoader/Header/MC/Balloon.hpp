@@ -24,6 +24,7 @@ public:
     Balloon() = delete;
 #endif
 
+
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Balloon();
@@ -54,7 +55,6 @@ public:
 #endif
     MCAPI Balloon(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void remove(bool);
-
 
 
 };

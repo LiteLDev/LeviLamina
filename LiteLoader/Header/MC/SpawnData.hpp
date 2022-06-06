@@ -21,6 +21,7 @@ public:
     SpawnData() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNDATA
 public:
@@ -28,7 +29,6 @@ public:
     MCAPI SpawnData(class SpawnData const &);
     MCAPI SpawnData(class CompoundTag const &);
     MCAPI std::unique_ptr<class CompoundTag> save();
-
 
 
 };

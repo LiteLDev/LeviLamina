@@ -22,6 +22,7 @@ public:
     ItemStackNetManagerBase() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemStackNetManagerBase();
     /*1*/ virtual bool isEnabled() const;
@@ -47,6 +48,8 @@ public:
 
 //protected:
     MCAPI bool _isRequestActionAllowed(class ItemStackRequestAction const &);
+
+protected:
 
 
 };

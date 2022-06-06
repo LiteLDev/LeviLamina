@@ -22,6 +22,7 @@ public:
     MinecraftReportGameListener() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MinecraftReportGameListener();
     /*1*/ virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance &);
@@ -32,7 +33,6 @@ public:
 #endif
     MCAPI MinecraftReportGameListener(class MinecraftGameTestInstance &, class gametest::GameTestTicker &);
 
-
 //private:
     MCAPI std::string _generateErrorDescription(struct gametest::GameTestError const &) const;
     MCAPI void _reportFailure(struct gametest::GameTestError const &, class BlockSource &);
@@ -41,5 +41,8 @@ public:
     MCAPI void _spawnBeacon(class Block const &);
     MCAPI void _spawnLectern(std::string const &);
     MCAPI void _visualizeFailedTest(struct gametest::GameTestError const &, class BlockSource &);
+
+private:
+
 
 };

@@ -23,6 +23,7 @@ public:
     BlockActorDataPacket(class BlockActorDataPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BlockActorDataPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,7 +35,6 @@ public:
 #endif
     MCAPI BlockActorDataPacket(class BlockPos const &, class CompoundTag);
     MCAPI BlockActorDataPacket();
-
 
 
 };

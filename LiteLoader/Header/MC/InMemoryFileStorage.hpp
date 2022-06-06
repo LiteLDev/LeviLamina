@@ -23,6 +23,7 @@ public:
     InMemoryFileStorage() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INMEMORYFILESTORAGE
 public:
@@ -34,7 +35,6 @@ public:
     MCAPI void flushToDisk();
     MCAPI void populateFileList(std::vector<std::string> &);
     MCAPI ~InMemoryFileStorage();
-
 
 
 };

@@ -22,6 +22,7 @@ public:
     HugeMushroomFeature(class HugeMushroomFeature const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HugeMushroomFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -33,8 +34,10 @@ public:
     MCAPI HugeMushroomFeature();
     MCAPI bool placeFixed(class BlockSource &, class BlockPos const &, int, int) const;
 
-
 //private:
     MCAPI bool _canSurvive(class Block const &) const;
+
+private:
+
 
 };

@@ -23,6 +23,7 @@ public:
     AddVolumeEntityPacket() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AddVolumeEntityPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 public:
 #endif
     MCAPI AddVolumeEntityPacket(class EntityContext const &, class CompoundTag, class SemVersion const &);
-
 
 
 };

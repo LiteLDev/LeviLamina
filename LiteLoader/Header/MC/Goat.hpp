@@ -24,6 +24,7 @@ public:
     Goat() = delete;
 #endif
 
+
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Goat();
@@ -65,10 +66,8 @@ public:
     MCAPI int getHornCount() const;
     MCAPI bool isScreaming();
     MCAPI void reduceHornCount();
-
-
-//private:
     MCAPI static int DEFAULT_HORN_COUNT;
     MCAPI static int SCREAMING_GOAT_VARIANT;
+
 
 };

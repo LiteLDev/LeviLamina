@@ -23,6 +23,7 @@ public:
     BasePressurePlateBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BasePressurePlateBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -88,6 +89,8 @@ public:
 //protected:
     MCAPI BasePressurePlateBlock(std::string const &, int, class Material const &);
     MCAPI void checkPressed(class BlockSource &, class BlockPos const &, int, int) const;
+
+protected:
 
 
 };

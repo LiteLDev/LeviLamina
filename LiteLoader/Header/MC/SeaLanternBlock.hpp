@@ -23,6 +23,7 @@ public:
     SeaLanternBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SeaLanternBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -65,7 +66,6 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI SeaLanternBlock(std::string const &, int);
-
 
 
 };

@@ -24,6 +24,7 @@ public:
     FeaturePoolElement() = delete;
 #endif
 
+
 public:
     /*0*/ virtual class BlockPos getSize(enum Rotation) const;
     /*2*/ virtual std::vector<class JigsawBlockInfo> getJigsawMarkers(class BlockPos, class LegacyStructureSettings &, class BlockSource *) const;
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI FeaturePoolElement(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class WeakRefT<struct FeatureRefTraits>);
-
 
 
 };

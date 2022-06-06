@@ -27,6 +27,7 @@ public:
     ChunkLocalNoiseCache(class ChunkLocalNoiseCache const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKLOCALNOISECACHE
 public:
@@ -36,7 +37,6 @@ public:
     MCAPI struct ChunkLocalNoiseCache::CacheEntry const & getCacheEntry(class DividedPos2d<4> const &) const;
     MCAPI void setCacheEntry(class DividedPos2d<4> const &, struct ChunkLocalNoiseCache::CacheEntry const &);
     MCAPI ~ChunkLocalNoiseCache();
-
 
 
 };

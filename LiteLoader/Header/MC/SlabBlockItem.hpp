@@ -24,6 +24,7 @@ public:
     SlabBlockItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SlabBlockItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -45,7 +46,6 @@ public:
 public:
 #endif
     MCAPI SlabBlockItem(std::string const &, int);
-
 
 
 };

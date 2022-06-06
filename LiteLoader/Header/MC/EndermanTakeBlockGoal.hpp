@@ -22,6 +22,7 @@ public:
     EndermanTakeBlockGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EndermanTakeBlockGoal();
     /*1*/ virtual bool canUse();
@@ -38,7 +39,6 @@ public:
 public:
 #endif
     MCAPI EndermanTakeBlockGoal(class EnderMan &);
-
 
 
 };

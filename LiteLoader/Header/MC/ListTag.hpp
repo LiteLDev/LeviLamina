@@ -56,6 +56,7 @@ public:
     ListTag(class ListTag const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ListTag();
     /*1*/ virtual void deleteChildren();
@@ -84,7 +85,6 @@ public:
     MCAPI std::string const & getString(int) const;
     MCAPI void popBack();
     MCAPI int size() const;
-
 
 
 };

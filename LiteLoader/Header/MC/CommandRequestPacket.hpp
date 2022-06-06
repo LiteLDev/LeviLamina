@@ -23,6 +23,7 @@ public:
     CommandRequestPacket(class CommandRequestPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CommandRequestPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -36,7 +37,6 @@ public:
     MCAPI CommandRequestPacket();
     MCAPI std::unique_ptr<class CommandContext> createCommandContext(class NetworkIdentifier const &, class Bedrock::NonOwnerPointer<class ILevel> const &, int) const;
     MCAPI bool getInternalSource() const;
-
 
 
 };

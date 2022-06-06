@@ -23,6 +23,7 @@ public:
     NetworkEnableDisableListener() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKENABLEDISABLELISTENER
 public:
@@ -35,7 +36,6 @@ public:
     MCAPI bool isUninitialized() const;
     MCAPI void tryEnable();
     MCAPI void uninitialize();
-
 
 
 };

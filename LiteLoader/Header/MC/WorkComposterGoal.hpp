@@ -21,6 +21,7 @@ public:
     WorkComposterGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~WorkComposterGoal();
     /*3*/ virtual void __unk_vfn_3();
@@ -33,9 +34,11 @@ public:
 #endif
     MCAPI WorkComposterGoal(class Mob &);
 
-
 //private:
     MCAPI bool _tryCompostItems();
     MCAPI bool _tryEmptyComposter();
+
+private:
+
 
 };

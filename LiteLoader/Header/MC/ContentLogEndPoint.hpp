@@ -21,6 +21,7 @@ public:
     ContentLogEndPoint(class ContentLogEndPoint const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTLOGENDPOINT
 public:
@@ -28,7 +29,6 @@ public:
     MCVAPI ~ContentLogEndPoint();
 #endif
     MCAPI ContentLogEndPoint();
-
 
 
 };

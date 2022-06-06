@@ -22,6 +22,7 @@ public:
     RiverFollowingGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RiverFollowingGoal();
     /*1*/ virtual bool canUse();
@@ -38,6 +39,8 @@ public:
 
 //protected:
     MCAPI void determineSteerDirection();
+
+protected:
 
 
 };

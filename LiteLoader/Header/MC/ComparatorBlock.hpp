@@ -23,6 +23,7 @@ public:
     ComparatorBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ComparatorBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -81,9 +82,11 @@ public:
 #endif
     MCAPI ComparatorBlock(std::string const &, int, bool);
 
-
 //private:
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &, bool) const;
     MCAPI void _refreshOutputState(class BlockSource &, class BlockPos const &, int) const;
+
+private:
+
 
 };

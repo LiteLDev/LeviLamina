@@ -22,6 +22,7 @@ public:
     ScreenHandlerBeacon() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScreenHandlerBeacon();
     /*1*/ virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const &);
@@ -33,8 +34,10 @@ public:
 #endif
     MCAPI ScreenHandlerBeacon(class ContainerScreenContext const &, class ItemStackRequestActionHandler &);
 
-
 //private:
     MCAPI enum ItemStackNetResult _handleBeaconPaymentAction(class ItemStackRequestActionBeaconPayment const &);
+
+private:
+
 
 };

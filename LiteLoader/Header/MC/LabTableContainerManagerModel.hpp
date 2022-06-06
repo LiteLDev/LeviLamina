@@ -23,6 +23,7 @@ public:
     LabTableContainerManagerModel() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LabTableContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
@@ -36,8 +37,11 @@ public:
 public:
 #endif
     MCAPI LabTableContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-    MCAPI static int const INPUT_SLOTS;
 
+//private:
+
+private:
+    MCAPI static int const INPUT_SLOTS;
 
 
 };

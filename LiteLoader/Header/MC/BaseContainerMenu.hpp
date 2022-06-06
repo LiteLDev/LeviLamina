@@ -22,6 +22,7 @@ public:
     BaseContainerMenu() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASECONTAINERMENU
 public:
@@ -40,6 +41,8 @@ public:
 
 //protected:
     MCAPI void _saveLastSlots(class Container *);
+
+protected:
 
 
 };

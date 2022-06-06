@@ -22,6 +22,7 @@ public:
     BlockUtils() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKUTILS
 public:
@@ -35,7 +36,6 @@ public:
     MCAPI static bool isLiquidSource(class Block const &);
     MCAPI static bool isThinFenceOrWallBlock(class Block const &);
     MCAPI static bool isWaterSource(class Block const &);
-
 
 
 };

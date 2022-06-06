@@ -22,6 +22,7 @@ public:
     EquippableComponent() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EQUIPPABLECOMPONENT
 public:
@@ -35,7 +36,6 @@ public:
     MCAPI class EquippableComponent & operator=(class EquippableComponent &&);
     MCAPI std::vector<class ItemDescriptor> const * tryGetSlotAllowedItems(int) const;
     MCAPI ~EquippableComponent();
-
 
 
 };

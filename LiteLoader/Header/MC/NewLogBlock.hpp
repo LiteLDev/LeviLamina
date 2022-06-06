@@ -23,6 +23,7 @@ public:
     NewLogBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NewLogBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -69,7 +70,6 @@ public:
 public:
 #endif
     MCAPI NewLogBlock(std::string const &, int);
-
 
 
 };

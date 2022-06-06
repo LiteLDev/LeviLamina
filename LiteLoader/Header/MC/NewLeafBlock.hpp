@@ -23,6 +23,7 @@ public:
     NewLeafBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NewLeafBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -69,7 +70,6 @@ public:
 public:
 #endif
     MCAPI NewLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
-
 
 
 };

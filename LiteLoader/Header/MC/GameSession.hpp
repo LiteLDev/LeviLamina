@@ -23,6 +23,7 @@ public:
     GameSession() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMESESSION
 public:
@@ -34,7 +35,6 @@ public:
     MCAPI void startLeaveGame();
     MCAPI void tick();
     MCAPI ~GameSession();
-
 
 
 };

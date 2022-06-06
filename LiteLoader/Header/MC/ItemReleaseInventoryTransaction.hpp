@@ -22,6 +22,7 @@ public:
     ItemReleaseInventoryTransaction() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemReleaseInventoryTransaction();
     /*1*/ virtual void read(class ReadOnlyBinaryStream &);
@@ -32,7 +33,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMRELEASEINVENTORYTRANSACTION
 public:
 #endif
-
 
 
 };

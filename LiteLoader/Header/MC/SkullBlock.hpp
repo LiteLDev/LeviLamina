@@ -23,6 +23,7 @@ public:
     SkullBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SkullBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -76,8 +77,10 @@ public:
     MCAPI bool checkMobSpawn(class Level &, class BlockSource &, class BlockPos const &, class SkullBlockActor &) const;
     MCAPI static std::string getTypeDescriptionId(int);
 
-
 //private:
     MCAPI void _updatedDragonCircuit(class BlockSource &, class BlockPos const &) const;
+
+private:
+
 
 };

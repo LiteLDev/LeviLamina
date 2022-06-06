@@ -24,6 +24,7 @@ public:
     ActorHasNameTagTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorHasNameTagTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
@@ -31,7 +32,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORHASNAMETAGTEST
 public:
 #endif
-
 
 
 };

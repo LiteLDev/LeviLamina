@@ -22,6 +22,7 @@ public:
     BegGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BegGoal();
     /*1*/ virtual bool canUse();
@@ -36,8 +37,10 @@ public:
 #endif
     MCAPI BegGoal(class Mob &, std::vector<class ItemDescriptor> const &, float, int, int);
 
-
 //private:
     MCAPI bool _playerHoldingInteresting(class Player *);
+
+private:
+
 
 };

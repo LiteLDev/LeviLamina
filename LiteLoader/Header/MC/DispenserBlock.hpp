@@ -23,6 +23,7 @@ public:
     DispenserBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DispenserBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -86,6 +87,8 @@ public:
     MCAPI void ejectItem(class BlockSource &, class Vec3 const &, unsigned char, class ItemStack const &, class Container &, int) const;
     MCAPI class Vec3 getDispensePosition(class BlockSource &, class Vec3 const &) const;
     MCAPI unsigned char getFacing(class Block const &) const;
+
+protected:
 
 
 };

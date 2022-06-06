@@ -21,6 +21,7 @@ public:
     BodyControl(class BodyControl const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BodyControl();
     /*1*/ virtual void clientTick(class Mob &);
@@ -28,9 +29,7 @@ public:
 public:
 #endif
     MCAPI BodyControl();
-
-
-//private:
     MCAPI static float const MAX_CLAMP_ANGLE;
+
 
 };

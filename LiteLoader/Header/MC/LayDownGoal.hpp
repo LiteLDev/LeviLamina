@@ -22,6 +22,7 @@ public:
     LayDownGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LayDownGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI LayDownGoal(class Mob &, int, int);
-
 
 
 };

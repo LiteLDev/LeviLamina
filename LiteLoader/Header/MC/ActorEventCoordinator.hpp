@@ -22,6 +22,7 @@ public:
     ActorEventCoordinator() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTCOORDINATOR
 public:
@@ -45,7 +46,6 @@ public:
     MCAPI enum CoordinatorResult sendEvent(class EventRef<struct ActorGameplayEvent<enum CoordinatorResult>> const &);
     MCAPI enum CoordinatorResult sendEvent(class EventRef<struct MutableActorGameplayEvent<enum CoordinatorResult>>);
     MCAPI void sendEvent(class EventRef<struct ActorGameplayEvent<void>> const &);
-
 
 
 };

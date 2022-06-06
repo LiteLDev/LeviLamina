@@ -23,6 +23,7 @@ public:
     WitherRandomAttackPosGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~WitherRandomAttackPosGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI WitherRandomAttackPosGoal(class Mob &, float, int, int);
-
 
 
 };

@@ -21,6 +21,7 @@ public:
     ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING(class ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
     /*1*/ virtual void __unk_vfn_1();
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
-
 
 
 };

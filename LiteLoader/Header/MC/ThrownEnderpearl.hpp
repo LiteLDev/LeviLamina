@@ -24,6 +24,7 @@ public:
     ThrownEnderpearl() = delete;
 #endif
 
+
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~ThrownEnderpearl();
@@ -52,7 +53,6 @@ public:
 public:
 #endif
     MCAPI ThrownEnderpearl(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
 
 
 };

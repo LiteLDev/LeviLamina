@@ -23,6 +23,7 @@ public:
     OcelotSitOnBlockGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~OcelotSitOnBlockGoal();
     /*1*/ virtual bool canUse();
@@ -39,7 +40,6 @@ public:
 public:
 #endif
     MCAPI OcelotSitOnBlockGoal(class Mob &, float);
-
 
 
 };

@@ -22,6 +22,7 @@ public:
     SubClientConnectionRequest() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCLIENTCONNECTIONREQUEST
 public:
@@ -65,9 +66,11 @@ public:
     MCAPI ~SubClientConnectionRequest();
     MCAPI static class SubClientConnectionRequest fromString(std::string const &);
 
-
 //private:
     MCAPI SubClientConnectionRequest(std::unique_ptr<class WebToken>, std::string const &);
     MCAPI std::unique_ptr<class Certificate> validate(std::unique_ptr<class Certificate>, __int64) const;
+
+private:
+
 
 };

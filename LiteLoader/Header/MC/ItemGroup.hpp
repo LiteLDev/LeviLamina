@@ -22,6 +22,7 @@ public:
     ItemGroup() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMGROUP
 public:
@@ -30,7 +31,6 @@ public:
     MCAPI bool isEmpty() const;
     MCAPI class ItemGroup & operator=(class ItemGroup &&);
     MCAPI ~ItemGroup();
-
 
 
 };

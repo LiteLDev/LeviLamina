@@ -23,6 +23,7 @@ public:
     MinecraftGameTestHelper() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MinecraftGameTestHelper();
     /*1*/ virtual void succeedWhenEntityPresent(struct ActorDefinitionIdentifier const &, int, int, int, bool);
@@ -89,7 +90,6 @@ public:
 #endif
     MCAPI MinecraftGameTestHelper(class MinecraftGameTestInstance &);
 
-
 //private:
     MCAPI class std::optional<struct gametest::GameTestError> _assertEntityPresent(struct ActorDefinitionIdentifier const &, class AABB const &, class BlockPos const &, bool) const;
     MCAPI class Container const * _getContainer(class BlockPos const &);
@@ -97,5 +97,8 @@ public:
     MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>> _getServerNetworkHandler() const;
     MCAPI class std::optional<struct gametest::GameTestError> _getStructureBlockMissingError() const;
     MCAPI bool _isEntityPresent(struct ActorDefinitionIdentifier const &, class AABB const &) const;
+
+private:
+
 
 };

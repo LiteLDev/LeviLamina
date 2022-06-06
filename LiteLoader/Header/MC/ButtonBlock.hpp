@@ -23,6 +23,7 @@ public:
     ButtonBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ButtonBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -96,5 +97,10 @@ public:
     MCAPI void _buttonUnpressed(class BlockSource &, class Block const &, class Vec3 const &) const;
     MCAPI void _checkPressed(class BlockSource &, class BlockPos const &) const;
     MCAPI void _getShape(class AABB &, bool, unsigned char, bool) const;
+
+protected:
+
+private:
+
 
 };

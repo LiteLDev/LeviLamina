@@ -22,6 +22,7 @@ public:
     JigsawStructureElementRegistry() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWSTRUCTUREELEMENTREGISTRY
 public:
@@ -30,7 +31,6 @@ public:
     MCAPI class StructurePoolElement const * lookupByName(std::string) const;
     MCAPI void registerStructureElement(std::string, std::unique_ptr<class StructurePoolElement> &&);
     MCAPI ~JigsawStructureElementRegistry();
-
 
 
 };

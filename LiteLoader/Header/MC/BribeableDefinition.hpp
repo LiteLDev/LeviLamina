@@ -23,6 +23,7 @@ public:
     BribeableDefinition() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BRIBEABLEDEFINITION
 public:
@@ -30,7 +31,6 @@ public:
     MCAPI void addBribeItem(class ItemDescriptor const &);
     MCAPI void initialize(class EntityContext &, class BribeableComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BribeableDefinition>> &);
-
 
 
 };

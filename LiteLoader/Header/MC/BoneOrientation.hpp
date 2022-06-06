@@ -22,6 +22,7 @@ public:
     BoneOrientation() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BONEORIENTATION
 public:
@@ -31,7 +32,6 @@ public:
     MCAPI class Vec3 & getPivot();
     MCAPI class Vec3 const & getPivot() const;
     MCAPI void setDefaultPose();
-
 
 
 };

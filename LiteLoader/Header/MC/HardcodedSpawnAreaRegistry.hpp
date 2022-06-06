@@ -21,6 +21,7 @@ public:
     HardcodedSpawnAreaRegistry(class HardcodedSpawnAreaRegistry const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HARDCODEDSPAWNAREAREGISTRY
 public:
@@ -28,7 +29,6 @@ public:
     MCAPI HardcodedSpawnAreaRegistry();
     MCAPI std::vector<class MobSpawnerData> const & getMobSpawnsForType(enum HardcodedSpawnAreaType) const;
     MCAPI void initMobSpawnsForType(enum HardcodedSpawnAreaType, std::vector<class MobSpawnerData> &&);
-
 
 
 };

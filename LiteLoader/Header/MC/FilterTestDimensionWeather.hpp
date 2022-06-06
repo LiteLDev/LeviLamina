@@ -24,6 +24,7 @@ public:
     FilterTestDimensionWeather() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FilterTestDimensionWeather();
     /*1*/ virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
@@ -33,7 +34,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTDIMENSIONWEATHER
 public:
 #endif
-
 
 
 };

@@ -24,6 +24,7 @@ public:
     Painting() = delete;
 #endif
 
+
 public:
     /*14*/ virtual ~Painting();
     /*18*/ virtual void remove();
@@ -62,7 +63,6 @@ public:
 #endif
     MCAPI Painting(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI class Motive const & getCurrentMotive() const;
-
 
 
 };

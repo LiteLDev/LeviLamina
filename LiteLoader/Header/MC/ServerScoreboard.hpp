@@ -23,6 +23,7 @@ public:
     ServerScoreboard() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ServerScoreboard();
     /*1*/ virtual class DisplayObjective const * setDisplayObjective(std::string const &, class Objective const &, enum ObjectiveSortOrder);
@@ -52,9 +53,11 @@ public:
     MCAPI void setScoreRemovedCallback(class std::function<void (struct ScoreboardId const &)>);
     MCAPI void setSetDisplayObjectiveCallback(class std::function<void (std::string const &, class DisplayObjective const &)>);
 
-
 //private:
     MCAPI void _stopTrackingObjective(class Objective const &);
     MCAPI struct ScorePacketInfo _unpackIdentityDefToScorePacket(class ScoreboardIdentityRef const &, std::string const &, int);
+
+private:
+
 
 };

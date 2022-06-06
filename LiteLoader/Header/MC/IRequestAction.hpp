@@ -24,6 +24,7 @@ public:
     IRequestAction() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~IRequestAction();
     /*1*/ virtual void execute(class ServerLevel &, class Dimension &) = 0;
@@ -34,7 +35,6 @@ public:
 #endif
     MCAPI IRequestAction(enum IRequestAction::RequestActionType const &);
     MCAPI static bool isValidTag(class CompoundTag const &);
-
 
 
 };

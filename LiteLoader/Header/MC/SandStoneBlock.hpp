@@ -23,6 +23,7 @@ public:
     SandStoneBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SandStoneBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -68,7 +69,6 @@ public:
 public:
 #endif
     MCAPI SandStoneBlock(std::string const &, int, class Material const &);
-
 
 
 };

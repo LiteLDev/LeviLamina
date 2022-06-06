@@ -21,6 +21,7 @@ public:
     ItemStackRequestActionCraftRecipeAuto(class ItemStackRequestActionCraftRecipeAuto const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemStackRequestActionCraftRecipeAuto();
     /*1*/ virtual void __unk_vfn_1();
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI ItemStackRequestActionCraftRecipeAuto();
     MCAPI unsigned char getNumCrafts() const;
-
 
 
 };

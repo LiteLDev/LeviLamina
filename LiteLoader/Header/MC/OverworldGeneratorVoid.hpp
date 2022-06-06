@@ -20,6 +20,7 @@ public:
     OverworldGeneratorVoid() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDGENERATORVOID
 public:
@@ -35,7 +36,6 @@ public:
     MCVAPI void loadChunk(class LevelChunk &, bool);
 #endif
     MCAPI OverworldGeneratorVoid(class Dimension &, unsigned int);
-
 
 
 };

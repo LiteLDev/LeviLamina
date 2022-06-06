@@ -21,6 +21,7 @@ public:
     ActivateToolNode(class ActivateToolNode const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActivateToolNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
@@ -29,7 +30,6 @@ public:
 public:
 #endif
     MCAPI ActivateToolNode();
-
 
 
 };

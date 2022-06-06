@@ -22,6 +22,7 @@ public:
     ResourcePackStackPacket(class ResourcePackStackPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ResourcePackStackPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI ResourcePackStackPacket(std::vector<struct PackInstanceId>, std::vector<struct PackInstanceId>, class BaseGameVersion const &, bool, class Experiments const &);
     MCAPI ResourcePackStackPacket();
-
 
 
 };

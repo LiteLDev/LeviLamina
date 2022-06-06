@@ -23,6 +23,7 @@ public:
     PredictableProjectile() = delete;
 #endif
 
+
 public:
     /*13*/ virtual void _doInitialMove();
     /*14*/ virtual ~PredictableProjectile();
@@ -49,7 +50,6 @@ public:
 public:
 #endif
     MCAPI PredictableProjectile(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
 
 
 };

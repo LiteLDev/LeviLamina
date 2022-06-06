@@ -22,6 +22,7 @@ public:
     LootSystem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LootSystem();
     /*1*/ virtual void registerEvents(class entt::dispatcher &);
@@ -29,7 +30,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTSYSTEM
 public:
 #endif
-
 
 
 };

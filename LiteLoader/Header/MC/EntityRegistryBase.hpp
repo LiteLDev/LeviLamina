@@ -22,6 +22,7 @@ public:
     EntityRegistryBase() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYREGISTRYBASE
 public:
@@ -32,6 +33,8 @@ public:
 
 //protected:
     MCAPI void _assertValidRegistry(class EntityContextBase const &) const;
+
+protected:
     MCAPI static struct std::atomic<unsigned int> mRegistryCount;
 
 

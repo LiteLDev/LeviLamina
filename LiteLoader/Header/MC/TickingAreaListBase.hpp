@@ -22,6 +22,7 @@ public:
     TickingAreaListBase() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TickingAreaListBase();
     /*1*/ virtual bool removeDistantEntityAreasAndCheckForRemoved(std::vector<class Vec3> const &, class std::function<void (class ITickingArea const &)>, class LevelStorage &);
@@ -49,6 +50,8 @@ public:
 
 //protected:
     MCAPI bool _shouldRemoveArea(unsigned int, std::vector<class Vec3> const &) const;
+
+protected:
 
 
 };

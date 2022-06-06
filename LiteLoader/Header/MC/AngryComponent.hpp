@@ -21,6 +21,7 @@ public:
     AngryComponent(class AngryComponent const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANGRYCOMPONENT
 public:
@@ -42,7 +43,6 @@ public:
     MCAPI void setHasTicked(bool);
     MCAPI void setNextSoundEventTick(class Mob const &);
     MCAPI ~AngryComponent();
-
 
 
 };

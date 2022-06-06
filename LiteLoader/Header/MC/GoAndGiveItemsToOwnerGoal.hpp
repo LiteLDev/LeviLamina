@@ -20,6 +20,7 @@ public:
     GoAndGiveItemsToOwnerGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GoAndGiveItemsToOwnerGoal();
     /*1*/ virtual bool canUse();
@@ -33,7 +34,6 @@ public:
 public:
 #endif
     MCAPI GoAndGiveItemsToOwnerGoal(class Mob &);
-
 
 
 };

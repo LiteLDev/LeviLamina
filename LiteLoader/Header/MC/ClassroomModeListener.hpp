@@ -23,6 +23,7 @@ public:
     ClassroomModeListener() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ClassroomModeListener();
     /*1*/ virtual void __unk_vfn_1();
@@ -43,7 +44,6 @@ public:
     MCVAPI void onEntityRemoved(class Actor &);
 #endif
     MCAPI ClassroomModeListener(class IMinecraftEventing &);
-
 
 
 };

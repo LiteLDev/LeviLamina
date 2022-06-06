@@ -22,6 +22,7 @@ public:
     WorldPackHistory() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDPACKHISTORY
 public:
@@ -39,7 +40,6 @@ public:
     MCAPI bool hasSubpacks() const;
     MCAPI bool initializeFromJson(class Json::Value const &);
     MCAPI ~WorldPackHistory();
-
 
 
 };

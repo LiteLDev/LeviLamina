@@ -24,6 +24,7 @@ public:
     Monster() = delete;
 #endif
 
+
 public:
     /*14*/ virtual ~Monster();
     /*40*/ virtual void __unk_vfn_40();
@@ -64,7 +65,6 @@ public:
     MCVAPI bool canExistInPeaceful() const;
 #endif
     MCAPI Monster(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
 
 
 };

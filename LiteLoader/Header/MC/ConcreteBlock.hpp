@@ -23,6 +23,7 @@ public:
     ConcreteBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ConcreteBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -68,7 +69,6 @@ public:
 public:
 #endif
     MCAPI ConcreteBlock(std::string const &, int);
-
 
 
 };

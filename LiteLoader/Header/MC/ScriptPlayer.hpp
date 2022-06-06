@@ -23,6 +23,7 @@ public:
     ScriptPlayer() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptPlayer();
     /*4*/ virtual class Scripting::Result<std::string> getNameTag() const;
@@ -43,7 +44,6 @@ public:
     MCAPI class Player * tryGetPlayer() const;
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptPlayer> getHandle(class Player const &, class Scripting::WeakLifetimeScope const &);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptPlayer> getHandle(class StackRefResultT<struct EntityRefTraits>, class Scripting::WeakLifetimeScope const &);
-
 
 
 };

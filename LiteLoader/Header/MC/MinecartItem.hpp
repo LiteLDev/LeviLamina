@@ -24,6 +24,7 @@ public:
     MinecartItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MinecartItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -46,7 +47,6 @@ public:
 public:
 #endif
     MCAPI MinecartItem(std::string const &, int, enum MinecartType);
-
 
 
 };

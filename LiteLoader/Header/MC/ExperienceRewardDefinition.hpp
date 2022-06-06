@@ -23,6 +23,7 @@ public:
     ExperienceRewardDefinition() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCEREWARDDEFINITION
 public:
@@ -31,7 +32,6 @@ public:
     MCAPI void addDeathExpressionNode(class ExpressionNode const &);
     MCAPI void initialize(class EntityContext &, class ExperienceRewardComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ExperienceRewardDefinition>> &);
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     HopperBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HopperBlock();
     /*9*/ virtual void addAABBs(class Block const &, class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
@@ -80,12 +81,14 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI HopperBlock(std::string const &, int);
+    MCAPI static class BaseGameVersion const HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
     MCAPI static class BlockPos getAttachedOffset(unsigned char);
-
 
 //private:
     MCAPI class AABB _getSpoutAABB(class BlockSource const &, class BlockPos const &) const;
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &) const;
-    MCAPI static class BaseGameVersion const HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+
+private:
+
 
 };

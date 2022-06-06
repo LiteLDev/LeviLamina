@@ -99,6 +99,7 @@ public:
     CompoundTag(class CompoundTag const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CompoundTag();
     /*2*/ virtual void write(class IDataOutput &) const;
@@ -160,7 +161,6 @@ public:
     MCAPI class std::map<std::string, class CompoundTagVariant, struct std::less<void>, class std::allocator<struct std::pair<std::string const, class CompoundTagVariant>>> const & rawView() const;
     MCAPI bool remove(class gsl::basic_string_span<char const, -1>);
     MCAPI void rename(class gsl::basic_string_span<char const, -1>, std::string);
-
 
 
 };

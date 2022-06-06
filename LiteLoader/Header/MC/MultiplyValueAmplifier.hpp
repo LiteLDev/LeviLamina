@@ -22,6 +22,7 @@ public:
     MultiplyValueAmplifier() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MultiplyValueAmplifier();
     /*1*/ virtual float getAmount(int, float) const;
@@ -29,7 +30,6 @@ public:
 public:
 #endif
     MCAPI MultiplyValueAmplifier(float);
-
 
 
 };

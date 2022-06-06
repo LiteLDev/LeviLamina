@@ -22,6 +22,7 @@ public:
     BaseMobSpawner() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BaseMobSpawner();
     /*1*/ virtual void tick(class BlockSource &);
@@ -38,6 +39,8 @@ public:
 
 //protected:
     MCAPI void _delay(class BlockSource &);
+
+protected:
 
 
 };

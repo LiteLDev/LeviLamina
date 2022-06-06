@@ -20,6 +20,7 @@ public:
     DimensionDefinitionGroup() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONDEFINITIONGROUP
 public:
@@ -29,7 +30,6 @@ public:
     MCAPI bool isEmpty() const;
     MCAPI bool tryAddDimensionDefinitionByString(std::string const &);
     MCAPI ~DimensionDefinitionGroup();
-
 
 
 };

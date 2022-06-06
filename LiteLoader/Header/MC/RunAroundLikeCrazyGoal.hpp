@@ -22,6 +22,7 @@ public:
     RunAroundLikeCrazyGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RunAroundLikeCrazyGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI RunAroundLikeCrazyGoal(class Mob &, float);
-
 
 
 };

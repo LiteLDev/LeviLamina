@@ -20,6 +20,7 @@ public:
     LevelChunkTickingSystem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LevelChunkTickingSystem();
     /*1*/ virtual void __unk_vfn_1();
@@ -28,10 +29,12 @@ public:
 public:
 #endif
 
-
 //private:
     MCAPI static void _determineLevelChunksToTick(class Actor const &, class BlockSource &, class LoadedChunksComponent &, std::vector<class std::shared_ptr<class LevelChunk>> &, std::vector<class std::shared_ptr<class LevelChunk>> &, struct Tick const &);
     MCAPI static void _tickLevelChunksAroundActor(class Actor &, class BlockSource &, class LoadedChunksComponent &);
     MCAPI static void _tickLevelChunksAroundActorView(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorFlag>, class BlockSourceComponent, class LoadedChunksComponent> &);
+
+private:
+
 
 };

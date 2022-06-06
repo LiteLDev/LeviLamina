@@ -24,6 +24,7 @@ public:
     ChemistryStickItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ChemistryStickItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -53,6 +54,13 @@ public:
     MCVAPI bool uniqueAuxValues() const;
 #endif
     MCAPI ChemistryStickItem(std::string const &, int);
+    MCAPI static std::string const ACTIVATION_TIMESTAMP_TAG;
+    MCAPI static int const ACTIVE_BIT;
+    MCAPI static int const COLOR_BITS;
+    MCAPI static int const COLOR_MASK;
+    MCAPI static int const DAMAGE_BITS;
+    MCAPI static int const DAMAGE_MASK;
+    MCAPI static int const DAMAGE_START_BIT;
     MCAPI static enum ItemColor getColorType(int);
     MCAPI static bool isActive(int);
     MCAPI static bool isChemistryStick(class ItemStackBase const &);
@@ -63,12 +71,10 @@ public:
 
 //private:
     MCAPI void _storeActivationTimestamp(class ItemStack &, unsigned __int64, int) const;
-    MCAPI static std::string const ACTIVATION_TIMESTAMP_TAG;
-    MCAPI static int const ACTIVE_BIT;
-    MCAPI static int const COLOR_BITS;
-    MCAPI static int const COLOR_MASK;
-    MCAPI static int const DAMAGE_BITS;
-    MCAPI static int const DAMAGE_MASK;
-    MCAPI static int const DAMAGE_START_BIT;
+
+protected:
+
+private:
+
 
 };

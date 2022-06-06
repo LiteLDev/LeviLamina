@@ -24,6 +24,7 @@ public:
     WritableBookItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~WritableBookItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -51,7 +52,6 @@ public:
     MCAPI static void replacePage(class ItemStack &, int, struct PageContent const &);
     MCAPI static void signBook(class ItemStack &, std::string, std::string, std::string);
     MCAPI static void swapPages(class ItemStack &, int, int);
-
 
 
 };

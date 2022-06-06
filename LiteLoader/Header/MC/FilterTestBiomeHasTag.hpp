@@ -24,6 +24,7 @@ public:
     FilterTestBiomeHasTag() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FilterTestBiomeHasTag();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
@@ -33,8 +34,10 @@ public:
 public:
 #endif
 
-
 //private:
     MCAPI bool _evalBiome(class Biome const &, struct FilterContext const &) const;
+
+private:
+
 
 };

@@ -23,6 +23,7 @@ public:
     FileSecureStorage() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FileSecureStorage();
     /*1*/ virtual bool add(std::string const &, std::string const &);
@@ -42,5 +43,10 @@ public:
     MCAPI class SecureStorageKey _getSecureStorageKey() const;
     MCAPI void _initalizeSymmetricEncyrption(std::string &, bool);
     MCAPI void _rebuildSecureStorageFile();
+
+protected:
+
+private:
+
 
 };

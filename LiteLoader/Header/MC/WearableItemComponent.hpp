@@ -22,6 +22,7 @@ public:
     WearableItemComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~WearableItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -38,7 +39,6 @@ public:
     MCAPI bool use(class ItemStack &, class Player &) const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
-
 
 
 };

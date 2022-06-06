@@ -19,6 +19,7 @@ public:
     BlockAndItemUpgradePath(class BlockAndItemUpgradePath const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKANDITEMUPGRADEPATH
 public:
@@ -26,8 +27,10 @@ public:
     MCAPI BlockAndItemUpgradePath();
     MCAPI bool process(std::string &);
 
-
 //private:
     MCAPI void _addUpgradersFor118();
+
+private:
+
 
 };

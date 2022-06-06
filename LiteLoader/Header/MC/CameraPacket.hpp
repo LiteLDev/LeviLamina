@@ -22,6 +22,7 @@ public:
     CameraPacket(class CameraPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CameraPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI CameraPacket(struct ActorUniqueID, struct ActorUniqueID);
     MCAPI CameraPacket();
-
 
 
 };

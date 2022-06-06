@@ -22,6 +22,7 @@ public:
     ItemStackRequestActionTransferBase() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemStackRequestActionTransferBase();
     /*1*/ virtual void __unk_vfn_1();
@@ -35,7 +36,6 @@ public:
     MCAPI unsigned char getAmount() const;
     MCAPI struct ItemStackRequestSlotInfo const & getDst() const;
     MCAPI struct ItemStackRequestSlotInfo const & getSrc() const;
-
 
 
 };

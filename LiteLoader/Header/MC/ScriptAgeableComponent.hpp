@@ -23,6 +23,7 @@ public:
     ScriptAgeableComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptAgeableComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTAGEABLECOMPONENT
@@ -34,7 +35,6 @@ public:
     MCAPI class Scripting::Result<std::vector<struct ActorDefinitionFeedItem>> getFeedItems() const;
     MCAPI class Scripting::Result<class DefinitionTrigger> getGrowUp() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptAgeableComponent> bind(struct Scripting::Version);
-
 
 
 };

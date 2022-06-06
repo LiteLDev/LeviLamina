@@ -24,6 +24,7 @@ public:
     Bee() = delete;
 #endif
 
+
 public:
     /*9*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Bee();
@@ -60,6 +61,8 @@ public:
 
 //protected:
     MCAPI void _registerLoopingSounds();
+
+protected:
 
 
 };

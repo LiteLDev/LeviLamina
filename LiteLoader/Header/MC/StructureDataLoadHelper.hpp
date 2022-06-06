@@ -23,6 +23,7 @@ public:
     StructureDataLoadHelper() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StructureDataLoadHelper();
     /*1*/ virtual class Vec3 loadPosition(class Vec3 const &);
@@ -48,7 +49,6 @@ public:
     MCVAPI float loadRotationRadiansX(float);
 #endif
     MCAPI StructureDataLoadHelper(class BlockPos const &, class BlockPos const &, class Vec3 const &, struct ActorUniqueID, enum Rotation, enum Mirror, class Level &);
-
 
 
 };

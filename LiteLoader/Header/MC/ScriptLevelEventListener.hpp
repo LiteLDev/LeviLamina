@@ -22,6 +22,7 @@ public:
     ScriptLevelEventListener() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptLevelEventListener();
     /*1*/ virtual void __unk_vfn_1();
@@ -38,7 +39,6 @@ public:
 public:
 #endif
     MCAPI ScriptLevelEventListener(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
-
 
 
 };

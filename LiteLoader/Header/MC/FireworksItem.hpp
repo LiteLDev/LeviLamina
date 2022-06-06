@@ -24,6 +24,7 @@ public:
     FireworksItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FireworksItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -48,12 +49,15 @@ public:
 public:
 #endif
     MCAPI FireworksItem(std::string const &, int);
-    MCAPI static std::string const TAG_EXPLOSIONS;
-    MCAPI static std::string const TAG_E_FLIGHT;
-    MCAPI static std::string const TAG_FIREWORKS;
     MCAPI static class ItemInstance const & initFireworksRocketItem(class ItemInstance &, std::vector<class ItemInstance> const &, int);
     MCAPI static class ItemStack const & initFireworksRocketItem(class ItemStack &, std::vector<class ItemStack> const &, int);
 
+//private:
+
+private:
+    MCAPI static std::string const TAG_EXPLOSIONS;
+    MCAPI static std::string const TAG_E_FLIGHT;
+    MCAPI static std::string const TAG_FIREWORKS;
 
 
 };

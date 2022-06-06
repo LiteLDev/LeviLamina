@@ -22,6 +22,7 @@ public:
     CommandFunctionEntry() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CommandFunctionEntry();
     /*1*/ virtual void execute(class FunctionManager &, class CommandOrigin const &, enum FunctionQueueOrder);
@@ -29,7 +30,6 @@ public:
 public:
 #endif
     MCAPI CommandFunctionEntry(std::unique_ptr<class Command>);
-
 
 
 };

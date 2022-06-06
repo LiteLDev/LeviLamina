@@ -21,6 +21,7 @@ public:
     RepeatUntilSuccessNode(class RepeatUntilSuccessNode const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RepeatUntilSuccessNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
@@ -29,7 +30,6 @@ public:
 public:
 #endif
     MCAPI RepeatUntilSuccessNode();
-
 
 
 };

@@ -22,6 +22,7 @@ public:
     NpcDialoguePacket(class NpcDialoguePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NpcDialoguePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,7 +35,6 @@ public:
     MCAPI NpcDialoguePacket(struct ActorUniqueID);
     MCAPI NpcDialoguePacket();
     MCAPI static bool initializePacket(class NpcDialoguePacket &, class NpcDialogueStorage const *, std::string const &);
-
 
 
 };

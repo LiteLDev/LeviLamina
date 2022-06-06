@@ -23,6 +23,7 @@ public:
     MeleeWeaponEnchant() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MeleeWeaponEnchant();
     /*2*/ virtual int getMinCost(int) const;
@@ -40,9 +41,7 @@ public:
     MCVAPI bool isMeleeDamageEnchant() const;
 #endif
     MCAPI MeleeWeaponEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
-
-
-//private:
     MCAPI static std::vector<enum Enchant::Type> const VALID_ENCHANTMENTS;
+
 
 };

@@ -23,6 +23,7 @@ LIAPI int getCount() const;
 
 #undef AFTER_EXTRA
 
+
 public:
     /*0*/ virtual ~ItemStackBase();
     /*1*/ virtual void reinit(class Item const &, int, int);
@@ -155,13 +156,7 @@ public:
     MCAPI bool shouldVanish() const;
     MCAPI void startCoolDown(class Player *) const;
     MCAPI bool updateComponent(std::string const &, class Json::Value const &);
-    MCAPI static std::string const TAG_CAN_DESTROY;
-    MCAPI static std::string const TAG_CAN_PLACE_ON;
-    MCAPI static std::string const TAG_DISPLAY;
-    MCAPI static std::string const TAG_DISPLAY_NAME;
-    MCAPI static std::string const TAG_ENCHANTS;
-    MCAPI static std::string const TAG_LORE;
-    MCAPI static std::string const TAG_REPAIR_COST;
+    MCAPI static int const MAX_STACK_SIZE;
 
 //protected:
     MCAPI ItemStackBase(class ItemStackBase const &);
@@ -181,9 +176,6 @@ public:
     MCAPI void init(class Item const &, int, int, class CompoundTag const *, bool);
     MCAPI void init(int, int, int, bool);
     MCAPI class ItemStackBase & operator=(class ItemStackBase const &);
-    MCAPI static std::string const TAG_CHARGED_ITEM;
-    MCAPI static std::string const TAG_STORE_CAN_DESTROY;
-    MCAPI static std::string const TAG_STORE_CAN_PLACE_ON;
 
 //private:
     MCAPI void _addCustomUserDataCommon(std::unique_ptr<class CompoundTag> &&);
@@ -192,6 +184,20 @@ public:
     MCAPI void _loadItem(class CompoundTag const &);
     MCAPI void _setChargedItem(class ItemInstance const &);
     MCAPI void _updateCompareHashes();
-    MCAPI static int const MAX_STACK_SIZE;
+
+protected:
+    MCAPI static std::string const TAG_CHARGED_ITEM;
+    MCAPI static std::string const TAG_STORE_CAN_DESTROY;
+    MCAPI static std::string const TAG_STORE_CAN_PLACE_ON;
+
+private:
+    MCAPI static std::string const TAG_CAN_DESTROY;
+    MCAPI static std::string const TAG_CAN_PLACE_ON;
+    MCAPI static std::string const TAG_DISPLAY;
+    MCAPI static std::string const TAG_DISPLAY_NAME;
+    MCAPI static std::string const TAG_ENCHANTS;
+    MCAPI static std::string const TAG_LORE;
+    MCAPI static std::string const TAG_REPAIR_COST;
+
 
 };

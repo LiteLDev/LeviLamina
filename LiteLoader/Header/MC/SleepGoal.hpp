@@ -23,6 +23,7 @@ public:
     SleepGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SleepGoal();
     /*1*/ virtual bool canUse();
@@ -40,10 +41,12 @@ public:
 #endif
     MCAPI SleepGoal(class Mob &, float, float, float, float, int, float);
 
-
 //private:
     MCAPI void _wakeUp();
     MCAPI void lockPosToBedPos();
     MCAPI void setSleepVariables();
+
+private:
+
 
 };

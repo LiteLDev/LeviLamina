@@ -30,6 +30,7 @@ public:
     StructurePoolElement() = delete;
 #endif
 
+
 public:
     /*0*/ virtual class BlockPos getSize(enum Rotation) const;
     /*1*/ virtual std::vector<class JigsawBlockInfo> getJigsawMarkers(class BlockPos, enum Rotation) const;
@@ -50,8 +51,10 @@ public:
     MCAPI StructurePoolElement(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::string const &, struct StructurePoolElementSettings);
     MCAPI StructurePoolElement(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::string const &, enum Projection, enum PostProcessSettings);
 
-
 //private:
     MCAPI class StructurePoolElement::LazyTemplate const & _getTemplate() const;
+
+private:
+
 
 };

@@ -24,6 +24,7 @@ public:
     EnderEyeItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EnderEyeItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -45,7 +46,6 @@ public:
 public:
 #endif
     MCAPI EnderEyeItem(std::string const &, int);
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     ClientRequestPlaceholderBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ClientRequestPlaceholderBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -63,7 +64,6 @@ public:
 public:
 #endif
     MCAPI ClientRequestPlaceholderBlock(std::string const &, int, class Material const &);
-
 
 
 };

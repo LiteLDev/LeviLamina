@@ -25,6 +25,7 @@ public:
     HatchetItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HatchetItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -47,7 +48,6 @@ public:
 public:
 #endif
     MCAPI HatchetItem(std::string const &, int, class Item::Tier const &);
-
 
 
 };

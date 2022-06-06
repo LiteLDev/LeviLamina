@@ -23,6 +23,7 @@ public:
     ContentLogFileEndPoint() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTLOGFILEENDPOINT
 public:
@@ -33,8 +34,11 @@ public:
     MCVAPI void setEnabled(bool);
 #endif
     MCAPI ContentLogFileEndPoint(class Core::Path, class Core::Path);
-    MCAPI static class gsl::basic_string_span<char const, -1> const FILE_NAME;
 
+//private:
+
+private:
+    MCAPI static class gsl::basic_string_span<char const, -1> const FILE_NAME;
 
 
 };

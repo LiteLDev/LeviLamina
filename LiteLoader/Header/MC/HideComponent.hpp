@@ -21,6 +21,7 @@ public:
     HideComponent(class HideComponent const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HIDECOMPONENT
 public:
@@ -34,7 +35,6 @@ public:
     MCAPI void setInRaid();
     MCAPI void setNotHiding();
     MCAPI void setReactingToBell();
-
 
 
 };

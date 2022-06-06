@@ -22,6 +22,7 @@ public:
     SwimMoveControl(class SwimMoveControl const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SwimMoveControl();
     /*1*/ virtual void initializeInternal(class Mob &, struct MoveControlDescription *);
@@ -30,7 +31,6 @@ public:
 public:
 #endif
     MCAPI SwimMoveControl();
-
 
 
 };

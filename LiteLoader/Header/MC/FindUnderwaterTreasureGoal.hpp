@@ -22,6 +22,7 @@ public:
     FindUnderwaterTreasureGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FindUnderwaterTreasureGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI FindUnderwaterTreasureGoal(class Mob &, float, int, int);
-
 
 
 };

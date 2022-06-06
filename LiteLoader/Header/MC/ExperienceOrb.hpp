@@ -25,6 +25,7 @@ public:
     ExperienceOrb() = delete;
 #endif
 
+
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~ExperienceOrb();
@@ -62,12 +63,14 @@ public:
     MCAPI ExperienceOrb(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI int getIconIndex() const;
     MCAPI void setValue(int);
+    MCAPI static int const LIFETIME;
     MCAPI static void spawnOrbs(class BlockSource &, class Vec3 const &, int, int, enum ExperienceOrb::DropType, class Player *);
     MCAPI static void spawnOrbs(class BlockSource &, class Vec3 const &, int, enum ExperienceOrb::DropType, class Player *);
 
-
 //private:
     MCAPI void _handleMending(class Player &);
-    MCAPI static int const LIFETIME;
+
+private:
+
 
 };

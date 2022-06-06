@@ -20,6 +20,7 @@ public:
     GetCollisionShapeActorProxy() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GetCollisionShapeActorProxy();
     /*1*/ virtual bool readBytes(void *, unsigned __int64);
@@ -39,7 +40,6 @@ public:
     MCVAPI bool isRiding() const;
 #endif
     MCAPI GetCollisionShapeActorProxy(struct IActorMovementProxy const &);
-
 
 
 };

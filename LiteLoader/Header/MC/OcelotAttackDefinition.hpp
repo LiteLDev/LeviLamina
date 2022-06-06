@@ -22,6 +22,7 @@ public:
     OcelotAttackDefinition(class OcelotAttackDefinition const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCELOTATTACKDEFINITION
 public:
@@ -29,7 +30,6 @@ public:
     MCAPI OcelotAttackDefinition();
     MCAPI void initialize(class EntityContext &, class OcelotAttackGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class OcelotAttackDefinition>> &);
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     SetDisplayObjectivePacket(class SetDisplayObjectivePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SetDisplayObjectivePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,7 +35,6 @@ public:
 #endif
     MCAPI SetDisplayObjectivePacket(std::string const &, std::string const &, std::string const &, std::string const &, enum ObjectiveSortOrder);
     MCAPI SetDisplayObjectivePacket();
-
 
 
 };

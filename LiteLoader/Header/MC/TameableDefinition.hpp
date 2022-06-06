@@ -22,6 +22,7 @@ public:
     TameableDefinition(class TameableDefinition const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAMEABLEDEFINITION
 public:
@@ -30,7 +31,6 @@ public:
     MCAPI void addTamingItemByName(std::string const &);
     MCAPI void initialize(class EntityContext &, class TameableComponent &) const;
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TameableDefinition>> &);
-
 
 
 };

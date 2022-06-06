@@ -22,6 +22,7 @@ public:
     PositionTrackingDBServerBroadcastPacket(class PositionTrackingDBServerBroadcastPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PositionTrackingDBServerBroadcastPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI PositionTrackingDBServerBroadcastPacket();
-
 
 
 };

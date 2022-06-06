@@ -20,6 +20,7 @@ public:
     DefaultSculkBehavior() = delete;
 #endif
 
+
 public:
     /*0*/ virtual int updateDecayDelay(int) const;
     /*1*/ virtual int updateFacingData(int, class Block const &) const;
@@ -31,8 +32,10 @@ public:
 public:
 #endif
 
-
 //private:
     MCAPI static bool _attemptSpreadVeinsIntoBlock(class IBlockWorldGenAPI &, class BlockPos const &, class Block const &);
+
+private:
+
 
 };

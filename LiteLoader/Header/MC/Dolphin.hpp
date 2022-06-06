@@ -24,6 +24,7 @@ public:
     Dolphin() = delete;
 #endif
 
+
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Dolphin();
@@ -59,7 +60,6 @@ public:
 public:
 #endif
     MCAPI Dolphin(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
 
 
 };

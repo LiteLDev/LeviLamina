@@ -21,6 +21,7 @@ public:
     PacketViolationHandler(class PacketViolationHandler const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKETVIOLATIONHANDLER
 public:
@@ -28,8 +29,10 @@ public:
     MCAPI PacketViolationHandler();
     MCAPI enum PacketViolationResponse checkForViolation(enum MinecraftPacketIds, enum StreamReadResult, class NetworkIdentifier const &, bool *);
 
-
 //private:
     MCAPI enum PacketViolationResponse _handleViolation(enum MinecraftPacketIds, enum StreamReadResult, class NetworkIdentifier const &, bool *);
+
+private:
+
 
 };

@@ -22,6 +22,7 @@ public:
     VexRandomMoveGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~VexRandomMoveGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI VexRandomMoveGoal(class Mob &);
-
 
 
 };

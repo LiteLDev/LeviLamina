@@ -22,6 +22,7 @@ public:
     KnockbackResistanceItemComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~KnockbackResistanceItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -37,7 +38,6 @@ public:
     MCAPI float getProtectionValue() const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
-
 
 
 };

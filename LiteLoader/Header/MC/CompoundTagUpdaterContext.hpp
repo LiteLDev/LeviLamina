@@ -21,6 +21,7 @@ public:
     CompoundTagUpdaterContext(class CompoundTagUpdaterContext const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAGUPDATERCONTEXT
 public:
@@ -30,8 +31,10 @@ public:
     MCAPI void sortUpdaters();
     MCAPI enum CompoundTagUpdaterResult update(class CompoundTag &, unsigned int);
 
-
 //private:
     MCAPI static bool comparisonPredicate(std::unique_ptr<class CompoundTagUpdater> const &, std::unique_ptr<class CompoundTagUpdater> const &);
+
+private:
+
 
 };

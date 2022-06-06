@@ -23,6 +23,7 @@ public:
     Parser() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARSER
 public:
@@ -67,7 +68,6 @@ public:
     MCAPI static void serialize(enum ActorType const &, class Json::Value &, char const *);
     MCAPI static void serialize(enum Difficulty const &, class Json::Value &, char const *);
     MCAPI static void serialize(enum ParticleType const &, class Json::Value &, char const *);
-
 
 
 };

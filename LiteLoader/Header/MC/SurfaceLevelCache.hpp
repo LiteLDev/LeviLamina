@@ -22,6 +22,7 @@ public:
     SurfaceLevelCache() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SurfaceLevelCache();
     /*1*/ virtual class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
@@ -29,7 +30,6 @@ public:
 public:
 #endif
     MCAPI SurfaceLevelCache(class DividedPos2d<4>, class IPreliminarySurfaceProvider const &, unsigned __int64);
-
 
 
 };

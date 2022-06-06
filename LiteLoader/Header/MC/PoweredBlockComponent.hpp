@@ -23,6 +23,7 @@ public:
     PoweredBlockComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PoweredBlockComponent();
     /*1*/ virtual int getStrength() const;
@@ -38,7 +39,6 @@ public:
     MCVAPI bool hasChildrenSource() const;
 #endif
     MCAPI PoweredBlockComponent(unsigned char);
-
 
 
 };

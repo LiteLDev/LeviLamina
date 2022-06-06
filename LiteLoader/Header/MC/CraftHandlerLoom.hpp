@@ -23,6 +23,7 @@ public:
     CraftHandlerLoom() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CraftHandlerLoom();
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
@@ -30,7 +31,6 @@ public:
 public:
 #endif
     MCAPI CraftHandlerLoom(class ItemStackRequestActionCraftHandler &);
-
 
 
 };

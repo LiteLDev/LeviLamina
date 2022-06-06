@@ -21,6 +21,7 @@ public:
     FoodItemComponent() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOODITEMCOMPONENT
 public:
@@ -39,7 +40,6 @@ public:
     MCAPI class FoodItemComponent & operator=(class FoodItemComponent const &);
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
-
 
 
 };

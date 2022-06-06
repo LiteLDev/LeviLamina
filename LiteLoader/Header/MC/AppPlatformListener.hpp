@@ -21,6 +21,7 @@ public:
     AppPlatformListener(class AppPlatformListener const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORMLISTENER
 public:
@@ -44,7 +45,6 @@ public:
 #endif
     MCAPI AppPlatformListener();
     MCAPI void terminate();
-
 
 
 };

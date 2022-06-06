@@ -22,6 +22,7 @@ public:
     AppPlatform_win32() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORM_WIN32
 public:
@@ -75,8 +76,10 @@ public:
     MCAPI AppPlatform_win32(struct HWND__*, std::string const &, std::string const &, class gsl::basic_string_span<char const, -1>, class std::shared_ptr<class HIDController>, int, int);
     MCAPI static void setupWorkingDirectory();
 
-
 //private:
     MCAPI struct OSInformation _fetchOSInformation() const;
+
+private:
+
 
 };

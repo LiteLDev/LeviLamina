@@ -21,6 +21,7 @@ public:
     RoomDefinition() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROOMDEFINITION
 public:
@@ -31,7 +32,6 @@ public:
     MCAPI void setConnection(unsigned char const &, class std::shared_ptr<class RoomDefinition>);
     MCAPI void updateOpenings();
     MCAPI ~RoomDefinition();
-
 
 
 };

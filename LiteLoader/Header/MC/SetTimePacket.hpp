@@ -22,6 +22,7 @@ public:
     SetTimePacket(class SetTimePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SetTimePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI SetTimePacket(int);
     MCAPI SetTimePacket();
-
 
 
 };

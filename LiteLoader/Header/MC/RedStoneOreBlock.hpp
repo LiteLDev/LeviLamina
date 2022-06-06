@@ -23,6 +23,7 @@ public:
     RedStoneOreBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RedStoneOreBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -75,8 +76,10 @@ public:
 #endif
     MCAPI RedStoneOreBlock(std::string const &, int, bool);
 
-
 //private:
     MCAPI void _poofParticles(class BlockSource &, class BlockPos const &) const;
+
+private:
+
 
 };

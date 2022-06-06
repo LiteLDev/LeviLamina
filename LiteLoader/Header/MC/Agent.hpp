@@ -24,6 +24,7 @@ public:
     Agent() = delete;
 #endif
 
+
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Agent();
@@ -93,8 +94,10 @@ public:
     MCAPI static class Vec3 roundTeleportPos(class Vec3 const &);
     MCAPI static class Agent * tryGetFromEntity(class EntityContext &, bool);
 
-
 //private:
     MCAPI class ContainerComponent * _getContainerComponent();
+
+private:
+
 
 };

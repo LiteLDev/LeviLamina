@@ -22,6 +22,7 @@ public:
     Explosion() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPLOSION
 public:
@@ -34,7 +35,6 @@ public:
     MCAPI void setFire(bool);
     MCAPI void setMaxResistance(float);
     MCAPI ~Explosion();
-
 
 
 };

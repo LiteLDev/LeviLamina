@@ -22,6 +22,7 @@ public:
     RiseToLiquidLevelGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RiseToLiquidLevelGoal();
     /*1*/ virtual bool canUse();
@@ -36,8 +37,10 @@ public:
 #endif
     MCAPI RiseToLiquidLevelGoal(class Mob &, float, float, float);
 
-
 //private:
     MCAPI float findLiquidLevel();
+
+private:
+
 
 };

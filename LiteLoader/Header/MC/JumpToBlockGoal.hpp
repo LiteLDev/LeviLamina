@@ -22,6 +22,7 @@ public:
     JumpToBlockGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~JumpToBlockGoal();
     /*1*/ virtual bool canUse();
@@ -37,7 +38,6 @@ public:
     MCAPI JumpToBlockGoal(class Mob &);
     MCAPI void resetCooldown();
 
-
 //private:
     MCAPI bool _calculateJumpCurve(class BlockPos const &, struct JumpToBlockGoal::WeightedJumpToBlockPos &);
     MCAPI void _clearGoalState();
@@ -45,5 +45,8 @@ public:
     MCAPI bool _findJumpableBlocks(bool);
     MCAPI bool _findTargetBlock();
     MCAPI bool _validTransition(class Vec3 const &, class Vec3 const &) const;
+
+private:
+
 
 };

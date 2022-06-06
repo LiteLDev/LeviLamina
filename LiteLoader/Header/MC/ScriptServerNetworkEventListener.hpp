@@ -22,6 +22,7 @@ public:
     ScriptServerNetworkEventListener() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptServerNetworkEventListener();
     /*1*/ virtual enum EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const &);
@@ -31,7 +32,6 @@ public:
 public:
 #endif
     MCAPI ScriptServerNetworkEventListener(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
-
 
 
 };

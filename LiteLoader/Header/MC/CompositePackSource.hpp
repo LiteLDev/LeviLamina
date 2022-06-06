@@ -21,6 +21,7 @@ public:
     CompositePackSource(class CompositePackSource const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CompositePackSource();
     /*1*/ virtual void forEachPackConst(class std::function<void (class Pack const &)>) const;
@@ -35,7 +36,6 @@ public:
     MCAPI CompositePackSource();
     MCAPI void addPackSource(class PackSource *);
     MCAPI void clear();
-
 
 
 };

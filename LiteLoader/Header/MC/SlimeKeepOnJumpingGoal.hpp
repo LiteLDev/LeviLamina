@@ -22,6 +22,7 @@ public:
     SlimeKeepOnJumpingGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SlimeKeepOnJumpingGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI SlimeKeepOnJumpingGoal(class Mob &);
-
 
 
 };

@@ -22,6 +22,7 @@ public:
     OwnerStorageEntity() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OWNERSTORAGEENTITY
 public:
@@ -37,6 +38,8 @@ public:
     MCAPI void _reset();
     MCAPI class OwnerStorageEntity & operator=(class OwnerStorageEntity &&);
     MCAPI ~OwnerStorageEntity();
+
+protected:
 
 
 };

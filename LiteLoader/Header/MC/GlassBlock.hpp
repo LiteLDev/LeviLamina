@@ -23,6 +23,7 @@ public:
     GlassBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GlassBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -66,7 +67,6 @@ public:
 public:
 #endif
     MCAPI GlassBlock(std::string const &, int, class Material const &, bool, bool);
-
 
 
 };

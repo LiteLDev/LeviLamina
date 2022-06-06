@@ -21,6 +21,7 @@ public:
     JumpControl(class JumpControl const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~JumpControl();
     /*1*/ virtual void __unk_vfn_1();
@@ -36,7 +37,6 @@ public:
     MCVAPI void setJumpType(class JumpControlComponent &, class Mob &, enum JumpType);
 #endif
     MCAPI JumpControl();
-
 
 
 };

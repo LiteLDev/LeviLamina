@@ -23,6 +23,7 @@ public:
     ScriptMovementAmphibiousComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptMovementAmphibiousComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMOVEMENTAMPHIBIOUSCOMPONENT
@@ -30,7 +31,6 @@ public:
 #endif
     MCAPI class Scripting::Result<float> getMaxTurn() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMovementAmphibiousComponent> bind(struct Scripting::Version);
-
 
 
 };

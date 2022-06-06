@@ -22,6 +22,7 @@ public:
     SlimeRandomDirectionGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SlimeRandomDirectionGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI SlimeRandomDirectionGoal(class Mob &);
-
 
 
 };

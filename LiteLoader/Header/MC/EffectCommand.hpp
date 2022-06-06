@@ -23,6 +23,7 @@ public:
     EffectCommand() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EffectCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -31,8 +32,10 @@ public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
 
-
 //private:
     MCAPI void clear(class CommandOrigin const &, class CommandOutput &) const;
+
+private:
+
 
 };

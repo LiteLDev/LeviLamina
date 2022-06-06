@@ -22,6 +22,7 @@ public:
     LevelChunkGarbageCollector() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNKGARBAGECOLLECTOR
 public:
@@ -33,6 +34,8 @@ public:
 
 //protected:
     MCAPI void flush();
+
+protected:
 
 
 };

@@ -24,6 +24,7 @@ public:
     WaterAnimal() = delete;
 #endif
 
+
 public:
     /*14*/ virtual ~WaterAnimal();
     /*40*/ virtual void __unk_vfn_40();
@@ -57,7 +58,6 @@ public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI WaterAnimal(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
 
 
 };

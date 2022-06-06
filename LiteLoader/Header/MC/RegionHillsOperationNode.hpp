@@ -22,6 +22,7 @@ public:
     RegionHillsOperationNode() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RegionHillsOperationNode();
     /*1*/ virtual void init(__int64);
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI RegionHillsOperationNode(unsigned int, class std::shared_ptr<class OperationNode<class Biome *, class Pos2d>> &, class std::shared_ptr<class OperationNode<int, class Pos2d>> &, class BiomeRegistry const &);
-
 
 
 };

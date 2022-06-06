@@ -22,6 +22,7 @@ public:
     RandomHoverGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RandomHoverGoal();
     /*1*/ virtual bool canUse();
@@ -40,6 +41,8 @@ public:
     MCAPI bool _computeNewTarget();
     MCAPI bool _mobMeetsPreconditions() const;
     MCAPI void _moveToTarget();
+
+protected:
 
 
 };

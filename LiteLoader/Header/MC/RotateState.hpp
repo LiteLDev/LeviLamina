@@ -23,6 +23,7 @@ public:
     RotateState() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RotateState();
     /*1*/ virtual void tick();
@@ -31,7 +32,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROTATESTATE
 public:
 #endif
-
 
 
 };

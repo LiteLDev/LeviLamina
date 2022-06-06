@@ -21,6 +21,7 @@ public:
     ReinforcedDeepslateBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ReinforcedDeepslateBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -63,7 +64,6 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI ReinforcedDeepslateBlock(std::string const &, int);
-
 
 
 };

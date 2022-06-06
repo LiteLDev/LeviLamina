@@ -22,6 +22,7 @@ public:
     PackSource() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSOURCE
 public:
@@ -31,7 +32,6 @@ public:
 #endif
     MCAPI class Pack * fetchPack(struct PackIdVersion const &);
     MCAPI void resolveUpgradeDependencies(class Pack &, class IContentKeyProvider const &);
-
 
 
 };

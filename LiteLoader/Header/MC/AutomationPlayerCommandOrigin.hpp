@@ -24,6 +24,7 @@ public:
     AutomationPlayerCommandOrigin() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AutomationPlayerCommandOrigin();
     /*1*/ virtual std::string const & getRequestId() const;
@@ -42,7 +43,6 @@ public:
 #endif
     MCAPI AutomationPlayerCommandOrigin(std::string const &, class Player &);
     MCAPI AutomationPlayerCommandOrigin(struct ActorUniqueID, class Level &, std::string const &, enum CommandPermissionLevel, class NetworkIdentifier const &);
-
 
 
 };

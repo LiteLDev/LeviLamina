@@ -22,6 +22,7 @@ public:
     HurtArmorPacket(class HurtArmorPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HurtArmorPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI HurtArmorPacket(enum ActorDamageCause, int, class std::bitset<4>);
     MCAPI HurtArmorPacket();
-
 
 
 };

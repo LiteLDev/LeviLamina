@@ -23,6 +23,7 @@ public:
     CauldronBlockActor() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAULDRONBLOCKACTOR
 public:
@@ -52,8 +53,11 @@ public:
     MCAPI void mixDyes();
     MCAPI void setCustomColor(class mce::Color const &);
     MCAPI void setPotionType(enum Potion::PotionType);
-    MCAPI static class mce::Color WATER_COLOR;
 
+//private:
+
+private:
+    MCAPI static class mce::Color WATER_COLOR;
 
 
 };

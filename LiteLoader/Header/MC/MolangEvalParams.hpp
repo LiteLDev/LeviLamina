@@ -45,6 +45,5 @@ public:
 protected:
 
 private:
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<struct MolangEvalParams, class std::allocator<struct MolangEvalParams>> mThreadLocalMolangEvalParams;
 
 };

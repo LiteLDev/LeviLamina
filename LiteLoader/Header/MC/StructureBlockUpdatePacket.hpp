@@ -22,6 +22,7 @@ public:
     StructureBlockUpdatePacket(class StructureBlockUpdatePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StructureBlockUpdatePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI StructureBlockUpdatePacket();
-
 
 
 };

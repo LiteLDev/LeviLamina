@@ -22,6 +22,7 @@ public:
     MoveTowardsRestrictionGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MoveTowardsRestrictionGoal();
     /*1*/ virtual void __unk_vfn_1() = 0;
@@ -36,6 +37,8 @@ public:
 //protected:
     MCAPI class Mob const & _getMob() const;
     MCAPI bool _randomizeWantedPositionTowardsRestriction(class Vec3 const &);
+
+protected:
 
 
 };

@@ -22,6 +22,7 @@ public:
     WeaponItemComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~WeaponItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -40,7 +41,6 @@ public:
     MCAPI void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
-
 
 
 };

@@ -22,6 +22,7 @@ public:
     DisconnectPacket(class DisconnectPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DisconnectPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI DisconnectPacket(std::string const &, bool);
     MCAPI DisconnectPacket();
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     CoralFanHang() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CoralFanHang();
     /*8*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
@@ -74,7 +75,6 @@ public:
 public:
 #endif
     MCAPI CoralFanHang(std::string const &, int);
-
 
 
 };

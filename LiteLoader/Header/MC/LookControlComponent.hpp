@@ -21,6 +21,7 @@ public:
     LookControlComponent(class LookControlComponent const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKCONTROLCOMPONENT
 public:
@@ -42,7 +43,6 @@ public:
     MCAPI void setLookAtRotation(class Vec3 const &, float, float);
     MCAPI void setYMax(float);
     MCAPI void update(class Mob &);
-
 
 
 };

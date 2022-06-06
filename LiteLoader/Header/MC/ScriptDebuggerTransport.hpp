@@ -22,6 +22,7 @@ public:
     ScriptDebuggerTransport() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptDebuggerTransport();
     /*1*/ virtual bool listen(unsigned short);
@@ -38,7 +39,6 @@ public:
 public:
 #endif
     MCAPI ScriptDebuggerTransport(class IScriptDebuggerWatchdog &);
-
 
 
 };

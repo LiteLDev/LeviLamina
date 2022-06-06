@@ -24,6 +24,7 @@ public:
     ActorHasEquipmentTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorHasEquipmentTest();
     /*1*/ virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
@@ -35,7 +36,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORHASEQUIPMENTTEST
 public:
 #endif
-
 
 
 };

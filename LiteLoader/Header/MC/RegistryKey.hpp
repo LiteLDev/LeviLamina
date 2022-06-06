@@ -22,6 +22,7 @@ public:
     RegistryKey() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REGISTRYKEY
 public:
@@ -31,7 +32,6 @@ public:
     MCAPI bool readValue(char const *, std::string &) const;
     MCAPI ~RegistryKey();
     MCAPI static class RegistryKey open(struct HKEY__*, char const *, unsigned long);
-
 
 
 };

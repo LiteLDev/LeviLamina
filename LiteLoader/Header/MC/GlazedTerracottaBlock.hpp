@@ -23,6 +23,7 @@ public:
     GlazedTerracottaBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GlazedTerracottaBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -64,7 +65,6 @@ public:
 public:
 #endif
     MCAPI GlazedTerracottaBlock(std::string const &, int);
-
 
 
 };

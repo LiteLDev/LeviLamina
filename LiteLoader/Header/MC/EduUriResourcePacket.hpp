@@ -22,6 +22,7 @@ public:
     EduUriResourcePacket(class EduUriResourcePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EduUriResourcePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI EduUriResourcePacket(struct EduSharedUriResource const &);
     MCAPI EduUriResourcePacket();
-
 
 
 };

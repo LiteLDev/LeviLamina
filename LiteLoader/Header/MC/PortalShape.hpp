@@ -23,6 +23,7 @@ public:
     PortalShape() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PORTALSHAPE
 public:
@@ -39,9 +40,11 @@ public:
     MCAPI void setAxis(enum PortalAxis);
     MCAPI void updateNeighboringBlocks(class BlockSource &, class Vec3 const &) const;
 
-
 //private:
     MCAPI int _calculatePortalHeight(class BlockSource const &);
     MCAPI int _getDistanceUntilEdge(class BlockPos const &, enum Facing::Name, class BlockSource const &) const;
+
+private:
+
 
 };

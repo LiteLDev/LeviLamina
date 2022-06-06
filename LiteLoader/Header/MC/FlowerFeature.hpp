@@ -23,6 +23,7 @@ public:
     FlowerFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FlowerFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -32,8 +33,10 @@ public:
 #endif
     MCAPI FlowerFeature(class Block const &);
 
-
 //private:
     MCAPI bool _placeMushroom(class BlockSource &, class BlockPos const &, class Block const &, class Random &) const;
+
+private:
+
 
 };

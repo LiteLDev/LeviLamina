@@ -22,6 +22,7 @@ public:
     Attribute() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTE
 public:
@@ -32,7 +33,6 @@ public:
     MCAPI enum RedefinitionMode getRedefinitionMode() const;
     MCAPI bool isClientSyncable() const;
     MCAPI static class Attribute & getByName(class HashedString const &);
-
 
 
 };

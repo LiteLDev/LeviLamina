@@ -23,6 +23,7 @@ public:
     MushroomBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MushroomBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -71,7 +72,6 @@ public:
 public:
 #endif
     MCAPI MushroomBlock(std::string const &, int);
-
 
 
 };

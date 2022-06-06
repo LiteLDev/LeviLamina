@@ -24,6 +24,7 @@ public:
     ThrownTrident() = delete;
 #endif
 
+
 public:
     /*7*/ virtual void outOfWorld();
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -64,7 +65,6 @@ public:
     MCAPI class ItemStack getPickupItem() const;
     MCAPI void returnWithLoyalty(int);
     MCAPI void setTridentItem(class ItemStack const &);
-
 
 
 };

@@ -21,6 +21,7 @@ public:
     class GameRules& operator=(class GameRules const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMERULES
 public:
@@ -42,6 +43,14 @@ public:
     MCAPI std::unique_ptr<class GameRulesChangedPacket> setRule(struct GameRuleId, bool, bool, bool *, bool *, class GameRule::ValidationError *);
     MCAPI void setTagData(class CompoundTag &) const;
     MCAPI ~GameRules();
+
+//private:
+    MCAPI class GameRule & _registerRule(std::string const &, struct GameRuleId);
+    MCAPI void _registerRules();
+    MCAPI std::unique_ptr<class GameRulesChangedPacket> _setGameRule(class GameRule *, union GameRule::Value, enum GameRule::Type, bool, bool *, bool *, class GameRule::ValidationError *);
+    MCAPI std::unique_ptr<class GameRulesChangedPacket> _setRule(struct GameRuleId, union GameRule::Value, enum GameRule::Type, bool, bool *, bool *, class GameRule::ValidationError *);
+
+private:
     MCAPI static unsigned int const DEFAULT_PLAYER_SPAWN_RADIUS;
     MCAPI static int const DEFAULT_RANDOMTICKSPEED;
     MCAPI static int const MAX_FUNCTIONCOMMANDLIMIT;
@@ -50,11 +59,5 @@ public:
     MCAPI static unsigned int const MIN_PLAYER_SPAWN_RADIUS;
     MCAPI static std::string const WORLD_POLICY_TAG_NAME;
 
-
-//private:
-    MCAPI class GameRule & _registerRule(std::string const &, struct GameRuleId);
-    MCAPI void _registerRules();
-    MCAPI std::unique_ptr<class GameRulesChangedPacket> _setGameRule(class GameRule *, union GameRule::Value, enum GameRule::Type, bool, bool *, bool *, class GameRule::ValidationError *);
-    MCAPI std::unique_ptr<class GameRulesChangedPacket> _setRule(struct GameRuleId, union GameRule::Value, enum GameRule::Type, bool, bool *, bool *, class GameRule::ValidationError *);
 
 };

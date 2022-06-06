@@ -22,6 +22,7 @@ public:
     ContainerClosePacket(class ContainerClosePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ContainerClosePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI ContainerClosePacket(enum ContainerID, bool);
     MCAPI ContainerClosePacket();
-
 
 
 };

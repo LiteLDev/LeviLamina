@@ -22,6 +22,7 @@ public:
     BaseGoalDefinition() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEGOALDEFINITION
 public:
@@ -29,9 +30,7 @@ public:
     MCVAPI bool validateMobType(class Mob &);
 #endif
     MCAPI void initialize(class EntityContext &, class Goal &);
-
-
-//private:
     MCAPI static class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> mControlFlagMap;
+
 
 };

@@ -23,6 +23,7 @@ public:
     StainedGlassBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StainedGlassBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -70,9 +71,7 @@ public:
 public:
 #endif
     MCAPI StainedGlassBlock(std::string const &, int, class Material const &, bool, bool);
-
-
-//private:
     MCAPI static class BaseGameVersion const STAINED_GLASS_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+
 
 };

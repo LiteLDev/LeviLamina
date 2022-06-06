@@ -23,6 +23,7 @@ public:
     ScriptInventoryComponent2() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptInventoryComponent2();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTINVENTORYCOMPONENT2
@@ -37,7 +38,6 @@ public:
     MCAPI class Scripting::Result<bool> getRestrictToOwner() const;
     MCAPI class ScriptInventoryComponent2 & operator=(class ScriptInventoryComponent2 &&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptInventoryComponent2> bind(struct Scripting::Version);
-
 
 
 };

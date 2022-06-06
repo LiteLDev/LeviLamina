@@ -23,6 +23,7 @@ public:
     SetScorePacket() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SetScorePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -36,8 +37,10 @@ public:
     MCAPI static class SetScorePacket change(std::vector<struct ScorePacketInfo>);
     MCAPI static class SetScorePacket remove(struct ScoreboardId const &, class Objective const &);
 
-
 //private:
     MCAPI SetScorePacket(enum ScorePacketType, struct ScoreboardId const &, class Objective const &);
+
+private:
+
 
 };

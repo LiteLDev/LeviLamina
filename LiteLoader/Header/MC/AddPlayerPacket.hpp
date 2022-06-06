@@ -22,6 +22,7 @@ public:
     AddPlayerPacket(class AddPlayerPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AddPlayerPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,7 +34,6 @@ public:
 #endif
     MCAPI AddPlayerPacket(class Player &);
     MCAPI AddPlayerPacket();
-
 
 
 };

@@ -23,6 +23,7 @@ public:
     LiquidBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LiquidBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -89,5 +90,10 @@ public:
 //private:
     MCAPI class Vec3 _getFlow(class BlockSource &, class BlockPos const &) const;
     MCAPI void _solidify(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
+
+protected:
+
+private:
+
 
 };

@@ -22,6 +22,7 @@ public:
     VibrationListener() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~VibrationListener();
     /*1*/ virtual void handleGameEvent(class GameEvent const &, class BlockPos const &, class Actor *, class BlockSource &);
@@ -35,8 +36,10 @@ public:
     MCAPI void tick(class BlockSource &);
     MCAPI static int getGameEventFrequency(class GameEvent const &);
 
-
 //private:
     MCAPI void _sendSignal(class BlockSource &, class GameEvent const &, class Actor const *, class BlockPos const &, class GameEvents::PositionSource const &);
+
+private:
+
 
 };

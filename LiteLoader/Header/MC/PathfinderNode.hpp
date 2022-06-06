@@ -21,6 +21,7 @@ public:
     PathfinderNode() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PATHFINDERNODE
 public:
@@ -35,7 +36,6 @@ public:
     MCAPI bool inOpenSet();
     MCAPI void setCostMalus(float);
     MCAPI void setMoveMalus(float);
-
 
 
 };

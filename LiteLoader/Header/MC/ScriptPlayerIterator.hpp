@@ -19,6 +19,7 @@ public:
     ScriptPlayerIterator() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLAYERITERATOR
 public:
@@ -28,7 +29,6 @@ public:
     MCAPI class ScriptPlayerIterator & operator=(class ScriptPlayerIterator &&);
     MCAPI ~ScriptPlayerIterator();
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptPlayerIterator> bind(struct Scripting::Version);
-
 
 
 };

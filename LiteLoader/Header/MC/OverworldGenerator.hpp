@@ -28,6 +28,7 @@ public:
     OverworldGenerator() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDGENERATOR
 public:
@@ -45,7 +46,6 @@ public:
 #endif
     MCAPI OverworldGenerator(class Dimension &, bool, std::unique_ptr<class StructureFeatureRegistry>);
     MCAPI void buildSurfaces(struct OverworldGenerator::ThreadData &, class BlockVolume &, class LevelChunk &, class ChunkPos const &, class SurfaceLevelCache const &);
-
 
 
 };

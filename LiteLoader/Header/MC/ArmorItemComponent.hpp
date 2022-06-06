@@ -22,6 +22,7 @@ public:
     ArmorItemComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ArmorItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -38,7 +39,6 @@ public:
     MCAPI int getArmorValue() const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
-
 
 
 };

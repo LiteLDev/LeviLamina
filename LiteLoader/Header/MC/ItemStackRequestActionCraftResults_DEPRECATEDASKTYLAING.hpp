@@ -21,6 +21,7 @@ public:
     ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTRESULTS_DEPRECATEDASKTYLAING
 public:
@@ -31,7 +32,6 @@ public:
     MCAPI ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
     MCAPI unsigned char getNumCrafts() const;
     MCAPI std::vector<class ItemInstance> const & getResults() const;
-
 
 
 };

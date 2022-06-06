@@ -22,6 +22,7 @@ public:
     PlayDeadGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PlayDeadGoal();
     /*1*/ virtual bool canUse();
@@ -35,7 +36,6 @@ public:
 public:
 #endif
     MCAPI PlayDeadGoal(class Mob &);
-
 
 
 };

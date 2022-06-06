@@ -21,6 +21,7 @@ public:
     MoveNode(class MoveNode const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MoveNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
@@ -30,8 +31,10 @@ public:
 #endif
     MCAPI MoveNode();
 
-
 //private:
     MCAPI unsigned char convertDirectionStringToKeyPress(std::string);
+
+private:
+
 
 };

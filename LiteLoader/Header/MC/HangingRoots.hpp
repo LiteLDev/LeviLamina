@@ -23,6 +23,7 @@ public:
     HangingRoots() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HangingRoots();
     /*8*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
@@ -72,7 +73,6 @@ public:
 public:
 #endif
     MCAPI HangingRoots(std::string const &, int);
-
 
 
 };

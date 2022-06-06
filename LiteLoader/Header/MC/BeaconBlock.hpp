@@ -23,6 +23,7 @@ public:
     BeaconBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BeaconBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -65,7 +66,6 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI BeaconBlock(std::string const &, int);
-
 
 
 };

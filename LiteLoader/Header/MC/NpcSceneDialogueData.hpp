@@ -37,6 +37,7 @@ public:
     NpcSceneDialogueData() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NpcSceneDialogueData();
     /*1*/ virtual std::string const & getDialogueText() const;
@@ -55,7 +56,6 @@ public:
     MCVAPI class Actor & getActor();
 #endif
     MCAPI NpcSceneDialogueData(class NpcComponent &, class Actor &, std::string const &);
-
 
 
 };

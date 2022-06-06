@@ -24,6 +24,7 @@ public:
     TridentItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TridentItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -54,11 +55,13 @@ public:
 public:
 #endif
     MCAPI TridentItem(std::string const &, int);
-    MCAPI static int const CHARGE_THRESHOLD_TIME;
-    MCAPI static int const THROW_THRESHOLD_TIME;
-
 
 //private:
     MCAPI class Actor * _setupProjectile(class Actor *, class ItemStack, bool) const;
+
+private:
+    MCAPI static int const CHARGE_THRESHOLD_TIME;
+    MCAPI static int const THROW_THRESHOLD_TIME;
+
 
 };

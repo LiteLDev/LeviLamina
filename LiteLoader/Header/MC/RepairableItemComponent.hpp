@@ -22,6 +22,7 @@ public:
     RepairableItemComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RepairableItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -39,9 +40,11 @@ public:
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
-
 //private:
     MCAPI struct RepairItemEntry const * _getRepairItemEntry(class ItemStackBase const &) const;
     MCAPI int _repairItem(class ItemStackBase &, class ItemStackBase &, class ExpressionNode);
+
+private:
+
 
 };

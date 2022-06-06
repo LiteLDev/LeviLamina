@@ -20,6 +20,7 @@ public:
     VibrationDataComponent() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONDATACOMPONENT
 public:
@@ -28,7 +29,6 @@ public:
     MCAPI class std::optional<class BlockPos> const & getLastVibrationPos() const;
     MCAPI class std::optional<unsigned __int64> getTicksSinceLastVibration(class ILevel const &) const;
     MCAPI void setLastVibrationPos(class BlockPos, struct Tick);
-
 
 
 };

@@ -22,6 +22,7 @@ public:
     BasicTimer() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASICTIMER
 public:
@@ -30,7 +31,6 @@ public:
     MCAPI bool isFinished() const;
     MCAPI void resetTime();
     MCAPI ~BasicTimer();
-
 
 
 };

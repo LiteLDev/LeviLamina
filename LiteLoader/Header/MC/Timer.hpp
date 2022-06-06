@@ -22,6 +22,7 @@ public:
     Timer() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TIMER
 public:
@@ -34,7 +35,6 @@ public:
     MCAPI void setTimeScale(float);
     MCAPI void stepTick(int);
     MCAPI bool stepping() const;
-
 
 
 };

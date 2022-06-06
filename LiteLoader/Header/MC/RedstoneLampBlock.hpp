@@ -23,6 +23,7 @@ public:
     RedstoneLampBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RedstoneLampBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -70,7 +71,6 @@ public:
 public:
 #endif
     MCAPI RedstoneLampBlock(std::string const &, int, bool);
-
 
 
 };

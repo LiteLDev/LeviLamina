@@ -21,6 +21,7 @@ public:
     FakeThermalMonitorInterface(class FakeThermalMonitorInterface const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FakeThermalMonitorInterface();
     /*1*/ virtual enum ThermalState getThermalState() const;
@@ -30,7 +31,6 @@ public:
 public:
 #endif
     MCAPI FakeThermalMonitorInterface();
-
 
 
 };

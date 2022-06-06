@@ -24,6 +24,7 @@ public:
     ShearsItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ShearsItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -49,7 +50,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHEARSITEM
 public:
 #endif
-
 
 
 };

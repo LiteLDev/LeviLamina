@@ -513,10 +513,6 @@ public:
     MCAPI void sendPerformanceTelemetry();
     MCAPI void setPerformanceTelemetryPeriodicCallback(class std::function<void (void)>);
     MCAPI bool use3DBiomeMaps() const;
-    MCAPI static float const AVERAGE_GAME_TICKS_PER_RANDOM_TICK_PER_BLOCK;
-    MCAPI static float const AVERAGE_RANDOM_TICKS_PER_BLOCK_PER_GAME_DAY;
-    MCAPI static float const AVERAGE_RANDOM_TICKS_PER_BLOCK_PER_MINUTE;
-    MCAPI static float const RANDOM_TICKS_PER_TICK_PER_SUBCHUNK;
     MCAPI static void addLevelComponents(class EntityContext &, class IRandom &, bool);
     MCAPI static void addSideBySideLevelComponents(class EntityContext &, bool);
     MCAPI static unsigned int createRandomSeed();
@@ -540,5 +536,11 @@ public:
     MCAPI void _saveAutonomousEntities();
     MCAPI void _saveSomeChunks();
     MCAPI void _syncTime(int);
+
+private:
+    MCAPI static float const AVERAGE_GAME_TICKS_PER_RANDOM_TICK_PER_BLOCK;
+    MCAPI static float const AVERAGE_RANDOM_TICKS_PER_BLOCK_PER_GAME_DAY;
+    MCAPI static float const AVERAGE_RANDOM_TICKS_PER_BLOCK_PER_MINUTE;
+    MCAPI static float const RANDOM_TICKS_PER_TICK_PER_SUBCHUNK;	
 
 };

@@ -28,6 +28,7 @@ public:
     class RecipeIngredient& operator=(class RecipeIngredient const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECIPEINGREDIENT
 public:
@@ -40,8 +41,11 @@ public:
     MCAPI RecipeIngredient();
     MCAPI void __autoclassinit2(unsigned __int64);
     MCAPI ~RecipeIngredient();
-    MCAPI static class RecipeIngredient EMPTY_INGREDIENT;
 
+//private:
+
+private:
+    MCAPI static class RecipeIngredient EMPTY_INGREDIENT;
 
 
 };

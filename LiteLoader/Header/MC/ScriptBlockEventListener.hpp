@@ -22,6 +22,7 @@ public:
     ScriptBlockEventListener() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptBlockEventListener();
     /*1*/ virtual enum EventResult onBlockPlacedByPlayer(class Player &, class Block const &, class BlockPos const &, bool);
@@ -42,7 +43,6 @@ public:
 public:
 #endif
     MCAPI ScriptBlockEventListener(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
-
 
 
 };

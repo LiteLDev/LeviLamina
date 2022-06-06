@@ -22,6 +22,7 @@ public:
     EducationOptions() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUCATIONOPTIONS
 public:
@@ -30,15 +31,17 @@ public:
 #endif
     MCAPI EducationOptions(class ResourcePackManager *);
     MCAPI void init(class LevelData const &);
-    MCAPI static class gsl::basic_string_span<char const, -1> const CHEMISTRY_ENABLED;
+    MCAPI static class EducationOptions DEFAULT_OPTION;
     MCAPI static bool isBaseCodeBuilderEnabled();
     MCAPI static bool isChemistryEnabled();
     MCAPI static bool isCodeBuilderEnabled();
     MCAPI static bool isEducationEnabled();
 
-
 //private:
-    MCAPI static class EducationOptions DEFAULT_OPTION;
     MCAPI static class ServiceReference<class EducationOptions> _getCurrentOptions();
+
+private:
+    MCAPI static class gsl::basic_string_span<char const, -1> const CHEMISTRY_ENABLED;
+
 
 };

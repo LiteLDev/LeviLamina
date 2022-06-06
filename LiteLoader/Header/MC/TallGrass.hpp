@@ -23,6 +23,7 @@ public:
     TallGrass() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TallGrass();
     /*8*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
@@ -79,7 +80,6 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI TallGrass(std::string const &, int);
-
 
 
 };

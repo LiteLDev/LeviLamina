@@ -22,6 +22,7 @@ public:
     DispenserBlockActor() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPENSERBLOCKACTOR
 public:
@@ -45,7 +46,6 @@ public:
 #endif
     MCAPI DispenserBlockActor(class BlockPos);
     MCAPI DispenserBlockActor(class BlockPos, enum BlockActorType);
-
 
 
 };

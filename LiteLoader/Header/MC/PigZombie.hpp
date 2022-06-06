@@ -24,6 +24,7 @@ public:
     PigZombie() = delete;
 #endif
 
+
 public:
     /*14*/ virtual ~PigZombie();
     /*40*/ virtual void __unk_vfn_40();
@@ -61,9 +62,7 @@ public:
 public:
 #endif
     MCAPI PigZombie(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
-//private:
     MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACK_UUID;
+
 
 };

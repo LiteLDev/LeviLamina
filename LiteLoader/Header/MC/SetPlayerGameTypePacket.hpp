@@ -22,6 +22,7 @@ public:
     SetPlayerGameTypePacket(class SetPlayerGameTypePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SetPlayerGameTypePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI SetPlayerGameTypePacket();
-
 
 
 };

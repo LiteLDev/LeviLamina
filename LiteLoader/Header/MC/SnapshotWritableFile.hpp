@@ -22,6 +22,7 @@ public:
     SnapshotWritableFile() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SnapshotWritableFile();
     /*1*/ virtual class leveldb::Status Append(class leveldb::Slice const &);
@@ -32,7 +33,6 @@ public:
 public:
 #endif
     MCAPI SnapshotWritableFile(class leveldb::WritableFile *&&, class std::shared_mutex &);
-
 
 
 };

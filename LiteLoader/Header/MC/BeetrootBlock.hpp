@@ -23,6 +23,7 @@ public:
     BeetrootBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BeetrootBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -67,7 +68,6 @@ public:
 public:
 #endif
     MCAPI BeetrootBlock(std::string const &, int);
-
 
 
 };

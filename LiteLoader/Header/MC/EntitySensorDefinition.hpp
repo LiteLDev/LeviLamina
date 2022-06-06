@@ -22,6 +22,7 @@ public:
     EntitySensorDefinition(class EntitySensorDefinition const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSENSORDEFINITION
 public:
@@ -29,7 +30,6 @@ public:
     MCAPI EntitySensorDefinition();
     MCAPI void initialize(class EntityContext &, class EntitySensorComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EntitySensorDefinition>> &);
-
 
 
 };

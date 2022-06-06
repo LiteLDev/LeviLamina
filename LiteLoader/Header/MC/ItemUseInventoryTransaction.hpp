@@ -22,6 +22,7 @@ public:
     ItemUseInventoryTransaction() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemUseInventoryTransaction();
     /*1*/ virtual void read(class ReadOnlyBinaryStream &);
@@ -36,9 +37,7 @@ public:
     MCAPI class ItemUseInventoryTransaction & operator=(class ItemUseInventoryTransaction const &);
     MCAPI void resendBlocksAroundArea(class Player &, class BlockPos const &, unsigned char) const;
     MCAPI class ItemUseInventoryTransaction & setSelectedItem(class ItemStack const &);
-
-
-//private:
     MCAPI static class BidirectionalUnorderedMap<enum ItemUseInventoryTransaction::ActionType, std::string> const actionTypeMap;
+
 
 };

@@ -22,6 +22,7 @@ public:
     ExecuteContextCommandOrigin() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ExecuteContextCommandOrigin();
     /*1*/ virtual std::string const & getRequestId() const;
@@ -49,7 +50,6 @@ public:
     MCAPI void setPositionEntity(class Actor const &);
     MCAPI void setRotationEntity(class Actor const &);
     MCAPI static std::unique_ptr<class ExecuteContextCommandOrigin> load(class CompoundTag const &, class ServerLevel &);
-
 
 
 };

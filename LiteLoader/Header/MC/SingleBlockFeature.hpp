@@ -22,6 +22,7 @@ public:
     SingleBlockFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SingleBlockFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
@@ -29,8 +30,10 @@ public:
 public:
 #endif
 
-
 //private:
     MCAPI class Block const * _mayAttach(class IBlockWorldGenAPI &, class BlockPos const &) const;
+
+private:
+
 
 };
