@@ -23,13 +23,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMS
+public:
 #endif
     MCAPI ScriptItems();
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptItemType> get(class Scripting::WeakLifetimeScope &, std::string const &);
     MCAPI static void bind(class Scripting::ModuleBindingBuilder &, struct Scripting::Version);
 
-protected:
 
-private:
 
 };

@@ -24,10 +24,9 @@ public:
 public:
     /*0*/ virtual ~ScriptVariantComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTVARIANTCOMPONENT
+public:
 #endif
 
-protected:
 
-private:
 
 };

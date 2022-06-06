@@ -22,11 +22,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGARRAYVARIABLE
+public:
 #endif
     MCAPI ~MolangArrayVariable();
 
-protected:
 
-private:
 
 };

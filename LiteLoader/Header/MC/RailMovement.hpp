@@ -24,11 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAILMOVEMENT
+public:
 #endif
     MCAPI static bool getPos(class Actor &, class Vec3 &, class Vec3);
 
-protected:
 
-private:
 
 };

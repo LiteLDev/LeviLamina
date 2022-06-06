@@ -25,11 +25,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMCONDITION
+public:
 #endif
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
 
-protected:
 
-private:
 
 };

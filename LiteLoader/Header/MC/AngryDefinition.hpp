@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANGRYDEFINITION
+public:
 #endif
     MCAPI AngryDefinition();
     MCAPI void addBroadcastTargetByName(std::string const &);
@@ -31,8 +32,6 @@ public:
     MCAPI void uninitialize(class EntityContext &, class AngryComponent &) const;
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AngryDefinition>> &);
 
-protected:
 
-private:
 
 };

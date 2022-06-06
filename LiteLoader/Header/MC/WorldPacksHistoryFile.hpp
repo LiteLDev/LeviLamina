@@ -26,14 +26,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDPACKSHISTORYFILE
+public:
 #endif
     MCAPI WorldPacksHistoryFile();
     MCAPI std::vector<class WorldPackHistory> const & getPacks() const;
     MCAPI enum WorldPacksHistoryFile::ParseResult initializeFromJson(class Json::Value const &);
     MCAPI ~WorldPacksHistoryFile();
 
-protected:
 
-private:
 
 };

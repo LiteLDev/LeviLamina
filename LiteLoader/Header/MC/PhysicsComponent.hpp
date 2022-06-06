@@ -24,14 +24,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PHYSICSCOMPONENT
+public:
 #endif
     MCAPI bool _isAffectedByGravity(class SynchedActorData const &) const;
     MCAPI bool isAffectedByGravity(struct IActorMovementProxy const &) const;
     MCAPI void setAffectedByGravity(struct IActorMovementProxy &, bool) const;
     MCAPI void setHasCollision(class Actor &, bool);
 
-protected:
 
-private:
 
 };

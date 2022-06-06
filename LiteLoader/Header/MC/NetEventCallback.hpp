@@ -36,6 +36,7 @@ public:
     /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual class GameSpecificNetEventCallback * getGameSpecificNetEventCallback();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETEVENTCALLBACK
+public:
     MCVAPI void handle(class NetworkIdentifier const &, class MapInfoRequestPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class BlockEventPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class SetDefaultGameTypePacket const &);
@@ -229,8 +230,6 @@ public:
     MCVAPI void sendPacketViolationDetectedTelemetryData(struct ExtendedStreamReadResult const &, enum PacketViolationResponse, enum MinecraftPacketIds, class NetworkIdentifier const &);
 #endif
 
-protected:
 
-private:
 
 };

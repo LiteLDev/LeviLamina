@@ -26,6 +26,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGEMANAGER
+public:
 #endif
     MCAPI VillageManager(class Dimension &);
     MCAPI void applyHeroOfTheVillageEffect(class Actor &);
@@ -50,9 +51,8 @@ public:
     MCAPI ~VillageManager();
     MCAPI static int const MAX_POI_TOLERANCE_DIST;
 
-protected:
 
-private:
+//private:
     MCAPI void _addPOIWithinRadius(class BlockPos const &, class BlockSource &);
     MCAPI void _assignPOIOnly(class std::shared_ptr<class POIInstance> &&);
     MCAPI float _calculateDistanceFromPositionToEdgeOfVillage(class BlockPos const &, class Village const &) const;

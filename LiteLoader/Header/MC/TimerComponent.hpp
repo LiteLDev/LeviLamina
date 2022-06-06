@@ -22,6 +22,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TIMERCOMPONENT
+public:
 #endif
     MCAPI TimerComponent(class TimerComponent &&);
     MCAPI TimerComponent(class TimerComponent const &);
@@ -36,9 +37,8 @@ public:
     MCAPI void setHasExecuted(bool);
     MCAPI ~TimerComponent();
 
-protected:
 
-private:
+//private:
     MCAPI int getRandomTime(class Actor &);
 
 };

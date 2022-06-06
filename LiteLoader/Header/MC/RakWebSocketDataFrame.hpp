@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKETDATAFRAME
+public:
 #endif
     MCAPI RakWebSocketDataFrame();
     MCAPI enum CloseStatusCode getCloseCode() const;
@@ -35,9 +36,8 @@ public:
     MCAPI ~RakWebSocketDataFrame();
     MCAPI static void writeFrameToStream(class RakNet::BitStream &, unsigned char const *, unsigned int, enum OpCode, bool, unsigned int);
 
-protected:
 
-private:
+//private:
     MCAPI static bool _isContinuation(unsigned char);
     MCAPI static bool _isControl(unsigned char);
     MCAPI static bool _isNonControl(unsigned char);

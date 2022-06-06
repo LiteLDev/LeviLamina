@@ -77,6 +77,7 @@ public:
     /*195*/ virtual struct Brightness getLightEmission(class Block const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMPFIREBLOCK
+public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool canSpawnOn() const;
     MCVAPI bool hasVariableLighting() const;
@@ -87,8 +88,6 @@ public:
     MCAPI static bool tryDouseFire(class BlockSource &, class BlockPos const &, bool);
     MCAPI static bool tryLightFire(class BlockSource &, class BlockPos const &);
 
-protected:
 
-private:
 
 };

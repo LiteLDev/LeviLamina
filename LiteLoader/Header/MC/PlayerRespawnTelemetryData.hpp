@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERRESPAWNTELEMETRYDATA
+public:
 #endif
     MCAPI PlayerRespawnTelemetryData();
     MCAPI void WriteEventData(class Social::Events::Event &) const;
@@ -34,9 +35,8 @@ public:
     MCAPI void setSearchTime(double);
     MCAPI void setShortJumpCount(unsigned int);
 
-protected:
 
-private:
+//private:
     MCAPI static std::string const mEventName;
 
 };

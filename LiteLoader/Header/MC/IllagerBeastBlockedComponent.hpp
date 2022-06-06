@@ -24,12 +24,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ILLAGERBEASTBLOCKEDCOMPONENT
+public:
 #endif
     MCAPI void initFromDefinition(class Actor &);
     MCAPI void onBlocked(class Actor &, class ActorDamageSource const &, class Actor &);
 
-protected:
 
-private:
 
 };

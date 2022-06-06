@@ -26,6 +26,7 @@ public:
 public:
     /*0*/ virtual ~ScriptHealableComponent2();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTHEALABLECOMPONENT2
+public:
 #endif
     MCAPI ScriptHealableComponent2(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class Scripting::Result<class ActorFilterGroup> getFilters() const;
@@ -33,8 +34,6 @@ public:
     MCAPI class Scripting::Result<std::vector<struct FeedItem>> getItems() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptHealableComponent2> bind(struct Scripting::Version);
 
-protected:
 
-private:
 
 };

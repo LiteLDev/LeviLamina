@@ -42,10 +42,9 @@ public:
     /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual enum EventResult onActorEquippedArmor(class Actor &, class ItemInstance const &, enum ArmorSlot);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERITEARMOREQUIPPEDLISTENER
+public:
 #endif
 
-protected:
 
-private:
 
 };

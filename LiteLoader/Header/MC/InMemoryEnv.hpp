@@ -29,6 +29,7 @@ public:
     /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
     /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INMEMORYENV
+public:
     MCVAPI class leveldb::Status DeleteFileA(std::string const &);
     MCVAPI bool FileExists(std::string const &);
     MCVAPI class leveldb::Status GetChildren(std::string const &, std::vector<std::string> *);
@@ -39,9 +40,8 @@ public:
 #endif
     MCAPI InMemoryEnv(class leveldb::Env *, class Core::Path const &);
 
-protected:
 
-private:
+//private:
     MCAPI void _flushWithTransaction();
 
 };

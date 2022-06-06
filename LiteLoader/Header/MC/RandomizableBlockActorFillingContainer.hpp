@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMIZABLEBLOCKACTORFILLINGCONTAINER
+public:
     MCVAPI void dropContents(class BlockSource &, class Vec3 const &, bool);
     MCVAPI void initializeContainerContents(class BlockSource &);
     MCVAPI void setContainerChanged(int);
@@ -32,8 +33,6 @@ public:
 #endif
     MCAPI RandomizableBlockActorFillingContainer(enum BlockActorType, std::string const &, class BlockPos const &, int, enum ContainerType);
 
-protected:
 
-private:
 
 };

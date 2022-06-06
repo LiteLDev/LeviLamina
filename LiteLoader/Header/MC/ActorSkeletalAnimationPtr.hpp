@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSKELETALANIMATIONPTR
+public:
 #endif
     MCAPI ActorSkeletalAnimationPtr(class gsl::not_null<class Bedrock::NonOwnerPointer<class ActorAnimationGroup>> const &, class HashedString const &);
     MCAPI class HashedString const & getName() const;
@@ -34,8 +35,6 @@ public:
     MCAPI ~ActorSkeletalAnimationPtr();
     MCAPI static class ActorSkeletalAnimationPtr const NONE;
 
-protected:
 
-private:
 
 };

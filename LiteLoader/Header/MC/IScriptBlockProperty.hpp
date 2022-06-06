@@ -22,10 +22,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISCRIPTBLOCKPROPERTY
+public:
 #endif
 
-protected:
 
-private:
 
 };

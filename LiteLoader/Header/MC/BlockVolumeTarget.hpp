@@ -50,6 +50,7 @@ public:
     /*24*/ virtual struct WorldGenContext const & getContext();
     /*25*/ virtual void disableBlockSimple();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKVOLUMETARGET
+public:
     MCVAPI bool apply() const;
     MCVAPI bool canSurvive(class BlockPos const &, class Block const &) const;
     MCVAPI class Block const & getBlock(class BlockPos const &) const;
@@ -60,8 +61,6 @@ public:
 #endif
     MCAPI BlockVolumeTarget(class BlockVolume &, class Level &, class BiomeSource const &, class AutomaticID<class Dimension, int>, struct WorldGenContext const &);
 
-protected:
 
-private:
 
 };

@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMOBEFFECTINSTANCE
+public:
 #endif
     MCAPI std::string getDisplayName() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMobEffectInstance> bind(struct Scripting::Version);
@@ -31,8 +32,6 @@ public:
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptMobEffectInstance> track(class MobEffectInstance const *, class Scripting::WeakLifetimeScope const &);
     MCAPI static void untrack(class MobEffectInstance const *, class Scripting::WeakLifetimeScope const &);
 
-protected:
 
-private:
 
 };

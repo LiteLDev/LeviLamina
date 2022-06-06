@@ -25,12 +25,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYTYPES
+public:
 #endif
     MCAPI bool parseJson(class Json::Value const &);
     MCAPI ~EntityTypes();
 
-protected:
 
-private:
 
 };

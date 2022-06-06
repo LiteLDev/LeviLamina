@@ -22,11 +22,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERGETEXPERIENCEORBEVENT
+public:
 #endif
     MCAPI ~PlayerGetExperienceOrbEvent();
 
-protected:
 
-private:
 
 };

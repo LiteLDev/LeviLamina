@@ -25,6 +25,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLOWLISTFILE
+public:
 #endif
     MCAPI class AllowList & getAllowList() const;
     MCAPI enum FileReadResult reload();
@@ -32,8 +33,6 @@ public:
     MCAPI ~AllowListFile();
     MCAPI static class AllowListFile loadFromDefaultLocations(class Core::IFileSystem &);
 
-protected:
 
-private:
 
 };

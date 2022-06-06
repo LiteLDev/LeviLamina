@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREANIMATIONDATA
+public:
 #endif
     MCAPI StructureAnimationData(std::unique_ptr<class CommandArea>, unsigned __int64, std::string const &, class StructureSettings const &, unsigned char, class BlockPos const &);
     MCAPI bool allBlocksPlaced() const;
@@ -45,8 +46,6 @@ public:
     MCAPI ~StructureAnimationData();
     MCAPI static class StructureAnimationData load(std::string const &, class CompoundTag const &);
 
-protected:
 
-private:
 
 };

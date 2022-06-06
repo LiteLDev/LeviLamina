@@ -29,10 +29,9 @@ public:
     /*3*/ virtual void registerMolangQueries();
     /*4*/ virtual void registerServerInstanceHandler(class ServerInstanceEventCoordinator &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAGAMEMODULEDEDICATEDSERVER
+public:
 #endif
 
-protected:
 
-private:
 
 };

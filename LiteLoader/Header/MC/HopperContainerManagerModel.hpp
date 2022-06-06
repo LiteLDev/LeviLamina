@@ -27,12 +27,11 @@ public:
     /*0*/ virtual ~HopperContainerManagerModel();
     /*16*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPPERCONTAINERMANAGERMODEL
+public:
 #endif
     MCAPI HopperContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
     MCAPI HopperContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
-protected:
 
-private:
 
 };

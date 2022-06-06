@@ -22,12 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CDSCOPEDEVENT
+public:
 #endif
     MCAPI CDScopedEvent(enum CrashDumpLogStringID, enum CrashDumpLogStringID, enum CrashDumpLogStringID);
     MCAPI ~CDScopedEvent();
 
-protected:
 
-private:
 
 };

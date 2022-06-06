@@ -106,6 +106,7 @@ public:
     /*126*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPONENTITEM
+public:
     MCVAPI int getVariant(int, int, bool) const;
     MCVAPI bool hasCustomColor(class ItemStackBase const &) const;
     MCVAPI bool isComponentBased() const;
@@ -134,9 +135,8 @@ public:
     MCAPI void setDescriptionId(std::string const &);
     MCAPI static void registerItemComponentTypes();
 
-protected:
 
-private:
+//private:
     MCAPI std::unique_ptr<class CompoundTag> _buildItemPropertiesNetworkTag() const;
     MCAPI void _executeEvent(class ItemStackBase &, std::string const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;
     MCAPI bool _forceExecuteTrigger(class ItemStackBase &, class DefinitionTrigger const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;

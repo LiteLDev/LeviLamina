@@ -65,6 +65,7 @@ public:
     /*355*/ virtual void _serverAiMobStep();
     /*359*/ virtual void __unk_vfn_359();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPC
+public:
     MCVAPI bool breaksFallingBlocks() const;
     MCVAPI bool interactPreventDefault();
     MCVAPI bool isFishable() const;
@@ -75,8 +76,6 @@ public:
     MCAPI static std::string const SKIN_ID_TAG;
     MCAPI static std::vector<struct std::pair<std::string, std::string>> const Skins;
 
-protected:
 
-private:
 
 };

@@ -48,6 +48,7 @@ public:
     /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual struct ActorUniqueID const & getActorUniqueID();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCSCENEDIALOGUEDATA
+public:
     MCVAPI struct NpcActionsContainer & getActionsContainer();
     MCVAPI struct NpcActionsContainer const & getActionsContainer() const;
     MCVAPI class Actor const & getActor() const;
@@ -55,8 +56,6 @@ public:
 #endif
     MCAPI NpcSceneDialogueData(class NpcComponent &, class Actor &, std::string const &);
 
-protected:
 
-private:
 
 };

@@ -24,10 +24,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDATAOUTPUT
+public:
 #endif
 
-protected:
 
-private:
 
 };

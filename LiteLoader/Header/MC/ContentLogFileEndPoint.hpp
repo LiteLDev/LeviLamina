@@ -25,6 +25,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTLOGFILEENDPOINT
+public:
     MCVAPI void flush();
     MCVAPI bool isEnabled() const;
     MCVAPI void log(enum LogArea, enum LogLevel, char const *);
@@ -34,8 +35,6 @@ public:
     MCAPI ContentLogFileEndPoint(class Core::Path, class Core::Path);
     MCAPI static class gsl::basic_string_span<char const, -1> const FILE_NAME;
 
-protected:
 
-private:
 
 };

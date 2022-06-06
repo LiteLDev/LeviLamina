@@ -25,6 +25,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTBOOKFORTRADINGFUNCTION
+public:
     MCVAPI int apply(class ItemStack &, class Random &, struct Trade const &, class LootTableContext &);
     MCVAPI int apply(class ItemInstance &, class Random &, struct Trade const &, class LootTableContext &);
     MCVAPI void apply(class ItemStack &, class Random &, class LootTableContext &);
@@ -32,9 +33,8 @@ public:
 #endif
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
-protected:
 
-private:
+//private:
     MCAPI class EnchantmentInstance _getRandomEnchantAndCalculateCost(class ItemStackBase &, class Random &, int &) const;
 
 };

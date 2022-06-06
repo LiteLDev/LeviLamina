@@ -24,11 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYNETID
+public:
 #endif
     MCAPI static class EntityNetId _serverGetEntityNetId(class EntityContext const &);
 
-protected:
 
-private:
 
 };

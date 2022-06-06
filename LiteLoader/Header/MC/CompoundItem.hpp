@@ -44,6 +44,7 @@ public:
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*116*/ virtual class Item & setIcon(std::string const &, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDITEM
+public:
 #endif
     MCAPI CompoundItem(std::string const &, int, class Experiments const &);
     MCAPI static enum CompoundType getCompoundType(class ItemDescriptor const &);
@@ -52,9 +53,8 @@ public:
     MCAPI static bool isCompoundItem(class ItemStackBase const &);
     MCAPI static void unregisterSpecialCompounds();
 
-protected:
 
-private:
+//private:
     MCAPI void _registerSpecialCompound(class ItemInstance const &, enum CompoundType);
     MCAPI void _registerSpecialCompounds(class Experiments const &);
     MCAPI static std::string _getName(enum CompoundType);

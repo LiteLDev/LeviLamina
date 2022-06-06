@@ -24,11 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAILACTIVATORCOMPONENT
+public:
 #endif
     MCAPI void ejectAllPassengers(class Actor &);
 
-protected:
 
-private:
 
 };

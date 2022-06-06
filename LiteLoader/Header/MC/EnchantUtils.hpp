@@ -25,6 +25,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTUTILS
+public:
 #endif
     MCAPI static int const MAX_EXP_REPAIR_COST;
     MCAPI static int const PROTECTIONFACTOR_PRIMARYCAP;
@@ -65,9 +66,8 @@ public:
     MCAPI static void removeEnchants(class ItemStack &);
     MCAPI static class ItemEnchants selectEnchantments(class Item const *, int, int, bool);
 
-protected:
 
-private:
+//private:
     MCAPI static void _convertBookCheck(class ItemStackBase &);
     MCAPI static std::vector<std::string> mEnchantmentNames;
 

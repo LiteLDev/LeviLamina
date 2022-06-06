@@ -57,6 +57,7 @@ public:
     /*282*/ virtual void applyParticleColor(class Particle *);
     /*283*/ virtual class mce::Color getEffectColor();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARROW
+public:
     MCVAPI bool canMakeStepSound() const;
 #endif
     MCAPI Arrow(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
@@ -69,8 +70,6 @@ public:
     MCAPI void setEnchantPower(int);
     MCAPI void setEnchantPunch(int);
 
-protected:
 
-private:
 
 };

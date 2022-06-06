@@ -22,11 +22,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICEREALDEFINITIONSERIALIZER
+public:
     MCVAPI ~ICerealDefinitionSerializer();
 #endif
 
-protected:
 
-private:
 
 };

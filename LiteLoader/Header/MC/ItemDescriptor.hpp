@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMDESCRIPTOR
+public:
 #endif
     MCAPI ItemDescriptor(class ItemDescriptor &&);
     MCAPI ItemDescriptor(class ItemDescriptor const &);
@@ -55,9 +56,8 @@ public:
     MCAPI static class std::optional<class ItemDescriptor> fromTag(class CompoundTag const *);
     MCAPI static class ItemDescriptor fromTagExpression(std::string const &, enum MolangVersion);
 
-protected:
 
-private:
+//private:
     MCAPI ItemDescriptor(int, int);
     MCAPI bool _hasTagOfItem(class Item const *) const;
     MCAPI void _initFromBlockLegacy(class BlockLegacy const &, class WeakPtr<class Item>) const;

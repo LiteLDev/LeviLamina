@@ -24,12 +24,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERLOCATOR
+public:
     MCVAPI void _onDisable();
     MCVAPI void _onEnable();
 #endif
 
-protected:
 
-private:
 
 };

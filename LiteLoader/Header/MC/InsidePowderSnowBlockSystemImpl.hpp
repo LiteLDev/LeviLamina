@@ -22,11 +22,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEPOWDERSNOWBLOCKSYSTEMIMPL
+public:
 #endif
     MCAPI static class Vec3 const SLOWDOWN_MODIFIER;
 
-protected:
 
-private:
 
 };

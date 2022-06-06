@@ -70,6 +70,7 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHORUSPLANTBLOCK
+public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
@@ -79,8 +80,6 @@ public:
     MCAPI static float const PLANT_WIDTH;
     MCAPI static bool canGrowChorus(class Block const &);
 
-protected:
 
-private:
 
 };

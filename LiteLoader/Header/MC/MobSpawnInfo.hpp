@@ -24,11 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBSPAWNINFO
+public:
 #endif
     MCAPI static int categoryID(enum ActorType);
 
-protected:
 
-private:
 
 };

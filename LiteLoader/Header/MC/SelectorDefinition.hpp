@@ -28,10 +28,9 @@ public:
     /*0*/ virtual ~SelectorDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SELECTORDEFINITION
+public:
 #endif
 
-protected:
 
-private:
 
 };

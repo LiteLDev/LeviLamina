@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOPEDGAMETESTTICKINGAREA
+public:
 #endif
     MCAPI ScopedGameTestTickingArea(class Dimension &, class BoundingBox const &, std::string const &);
     MCAPI bool areChunksLoaded();
@@ -31,9 +32,8 @@ public:
     MCAPI ~ScopedGameTestTickingArea();
     MCAPI static std::string const TICKING_AREA_PREFIX;
 
-protected:
 
-private:
+//private:
     MCAPI void _removeTickingArea();
 
 };

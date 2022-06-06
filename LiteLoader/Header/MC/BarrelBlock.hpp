@@ -65,6 +65,7 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARRELBLOCK
+public:
     MCVAPI bool hasComparatorSignal() const;
     MCVAPI bool isContainerBlock() const;
     MCVAPI bool isInteractiveBlock() const;
@@ -73,8 +74,6 @@ public:
     MCAPI BarrelBlock(std::string const &, int, class Material const &);
     MCAPI static void setOpen(bool, class BlockSource &, class BlockPos const &);
 
-protected:
 
-private:
 
 };

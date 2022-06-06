@@ -25,6 +25,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKINSTANCE
+public:
 #endif
     MCAPI PackInstance(class PackInstance &&);
     MCAPI PackInstance(class PackInstance const &);
@@ -52,9 +53,8 @@ public:
     MCAPI void setLocale(std::string const &);
     MCAPI ~PackInstance();
 
-protected:
 
-private:
+//private:
     MCAPI bool _isPackPointerValid() const;
 
 };

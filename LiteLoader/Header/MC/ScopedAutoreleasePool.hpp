@@ -23,6 +23,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOPEDAUTORELEASEPOOL
+public:
 #endif
     MCAPI ScopedAutoreleasePool();
     MCAPI void drain();
@@ -30,8 +31,6 @@ public:
     MCAPI void reset();
     MCAPI ~ScopedAutoreleasePool();
 
-protected:
 
-private:
 
 };

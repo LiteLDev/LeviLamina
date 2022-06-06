@@ -22,6 +22,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STORAGEITEMCOMPONENT
+public:
 #endif
     MCAPI StorageItemComponent(class ComponentItem *);
     MCAPI unsigned int calculateAddableCount(class ItemStack const &, class ItemStackBase const &) const;
@@ -34,9 +35,8 @@ public:
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
-protected:
 
-private:
+//private:
     MCAPI unsigned int _calculateAddableCountForBasicStorage(class ItemStack const &, class ItemStackBase const &) const;
     MCAPI unsigned int _calculateAddableCountForBundleStorage(class ItemStack const &, class ItemStackBase const &) const;
     MCAPI unsigned int _getItemListSize(class ItemStack &) const;

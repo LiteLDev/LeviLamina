@@ -78,13 +78,12 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AIRBLOCK
+public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool canHaveExtraData() const;
 #endif
     MCAPI AirBlock(std::string const &, int, class Material const &);
 
-protected:
 
-private:
 
 };

@@ -24,11 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATLASITEMMANAGER
+public:
 #endif
     MCAPI class TextureAtlasItem const & getTextureItem(std::string const &) const;
 
-protected:
 
-private:
 
 };

@@ -30,6 +30,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATURETERRAINADJUSTMENTS
+public:
 #endif
     MCAPI struct FeatureTerrainAdjustments::Descriptions at(class ChunkPos const &);
     MCAPI void garbageCollectDescriptions();
@@ -41,9 +42,8 @@ public:
     MCAPI static struct BeardKernel & getBeardKernel();
     MCAPI static bool shouldDoTerrainAdjustments(struct FeatureTerrainAdjustments::Descriptions const &);
 
-protected:
 
-private:
+//private:
     MCAPI class std::shared_ptr<bool> _insertDescriptions(std::vector<class ChunkPos> const &, class std::function<void (struct FeatureTerrainAdjustments::Descriptions &, class std::weak_ptr<bool>)> &&);
     MCAPI static struct BeardKernel mBeardKernel;
 

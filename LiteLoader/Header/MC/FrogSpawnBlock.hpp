@@ -70,12 +70,11 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FROGSPAWNBLOCK
+public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI FrogSpawnBlock(std::string const &, int);
 
-protected:
 
-private:
 
 };

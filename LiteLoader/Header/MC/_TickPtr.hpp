@@ -24,10 +24,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL__TICKPTR
+public:
 #endif
 
-protected:
 
-private:
 
 };

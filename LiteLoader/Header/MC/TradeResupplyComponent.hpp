@@ -23,6 +23,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADERESUPPLYCOMPONENT
+public:
 #endif
     MCAPI TradeResupplyComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &);
@@ -30,8 +31,6 @@ public:
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void reloadComponent(class Actor &);
 
-protected:
 
-private:
 
 };

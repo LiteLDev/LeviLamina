@@ -24,11 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGVERSIONMAPPING
+public:
 #endif
     MCAPI static enum MolangVersion const getVersion(class SemVersion const &);
 
-protected:
 
-private:
 
 };

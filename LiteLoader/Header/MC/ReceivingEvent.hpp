@@ -22,11 +22,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECEIVINGEVENT
+public:
 #endif
     MCAPI ~ReceivingEvent();
 
-protected:
 
-private:
 
 };

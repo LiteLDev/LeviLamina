@@ -24,11 +24,10 @@ public:
 public:
     /*0*/ virtual ~ScriptIsChestedComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTISCHESTEDCOMPONENT
+public:
 #endif
     MCAPI static class HashedString const & getHashedName();
 
-protected:
 
-private:
 
 };

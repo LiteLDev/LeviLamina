@@ -31,12 +31,11 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual bool canAccess(class ContentIdentity const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCONTENTKEYPROVIDER
+public:
     MCVAPI void clearTempContentKeys();
     MCVAPI void setTempContentKeys(class std::unordered_map<class ContentIdentity, std::string, struct std::hash<class ContentIdentity>, struct std::equal_to<class ContentIdentity>, class std::allocator<struct std::pair<class ContentIdentity const, std::string>>> const &);
 #endif
 
-protected:
 
-private:
 
 };

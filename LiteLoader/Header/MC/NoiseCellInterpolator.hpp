@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NOISECELLINTERPOLATOR
+public:
 #endif
     MCAPI NoiseCellInterpolator(class gsl::span<float const, -1>);
     MCAPI NoiseCellInterpolator(class gsl::span<float const, -1>, int, int);
@@ -32,8 +33,6 @@ public:
     MCAPI void updateForX(unsigned char);
     MCAPI void updateForZ(unsigned char);
 
-protected:
 
-private:
 
 };

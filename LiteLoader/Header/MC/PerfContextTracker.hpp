@@ -23,14 +23,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERFCONTEXTTRACKER
+public:
 #endif
     MCAPI PerfContextTracker();
     MCAPI void incrementPacketReceivedInfo(unsigned int);
     MCAPI void incrementPacketSentInfo(unsigned int);
     MCAPI static class PerfContextTracker & getInstance();
 
-protected:
 
-private:
 
 };

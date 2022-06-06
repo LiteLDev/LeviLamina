@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLASERVERGAMEPLAYEVENTLISTENER
+public:
     MCVAPI enum EventResult onBlockInteractedWith(class Player &, class BlockPos const &);
     MCVAPI enum EventResult onBlockPlacedByPlayer(class Player &, class Block const &, class BlockPos const &, bool);
     MCVAPI enum EventResult onEvent(struct ActorHurtEvent const &);
@@ -33,8 +34,6 @@ public:
     MCVAPI enum EventResult onPlayerMovementCorrected(class Player &, class Vec3 const &, float, float);
 #endif
 
-protected:
 
-private:
 
 };

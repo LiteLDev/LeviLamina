@@ -23,6 +23,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOODITEMCOMPONENT
+public:
     MCVAPI std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     MCVAPI bool canAlwaysEat() const;
     MCVAPI class Item const * eatItem(class ItemStack &, class Actor &, class Level &);
@@ -39,8 +40,6 @@ public:
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
-protected:
 
-private:
 
 };

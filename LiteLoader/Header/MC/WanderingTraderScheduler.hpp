@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WANDERINGTRADERSCHEDULER
+public:
 #endif
     MCAPI WanderingTraderScheduler(class Level &);
     MCAPI bool isWanderingTraderCurrentlyManaged(class Actor const &);
@@ -32,9 +33,8 @@ public:
     MCAPI void writeSaveData() const;
     MCAPI ~WanderingTraderScheduler();
 
-protected:
 
-private:
+//private:
     MCAPI bool _doesWanderingTraderExist() const;
     MCAPI class std::optional<class BlockPos> _findClosestSpawnablePositionInColumn(class BlockPos const &, class BlockSource &);
     MCAPI class Actor * _getRandomPlayerInOverworld() const;

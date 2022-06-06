@@ -56,6 +56,7 @@ public:
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PANDA
+public:
 #endif
     MCAPI Panda(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI float getLieOnBackAmount(float) const;
@@ -63,8 +64,6 @@ public:
     MCAPI int getSneezeCounter() const;
     MCAPI int getUnhappyCounter() const;
 
-protected:
 
-private:
 
 };

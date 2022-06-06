@@ -26,10 +26,9 @@ public:
     /*0*/ virtual ~BiomeRegistryMergeStrategy();
     /*1*/ virtual void mergeFiles(std::vector<class LoadedResourceData> const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEREGISTRYMERGESTRATEGY
+public:
 #endif
 
-protected:
 
-private:
 
 };

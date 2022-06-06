@@ -21,12 +21,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTIONQUEUE
+public:
 #endif
     MCAPI ActionQueue();
     MCAPI void pushBackActionEvent(class ActionEvent);
 
-protected:
 
-private:
 
 };

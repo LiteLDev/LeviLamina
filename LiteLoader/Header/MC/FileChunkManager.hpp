@@ -23,6 +23,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILECHUNKMANAGER
+public:
 #endif
     MCAPI FileChunkManager();
     MCAPI struct FileChunkInfo getChunkInfo(int) const;
@@ -32,9 +33,8 @@ public:
     MCAPI void reset(unsigned __int64, unsigned int);
     MCAPI ~FileChunkManager();
 
-protected:
 
-private:
+//private:
     MCAPI void _generateChunkInfo();
 
 };

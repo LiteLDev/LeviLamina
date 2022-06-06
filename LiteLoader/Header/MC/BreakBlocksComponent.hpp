@@ -24,13 +24,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKBLOCKSCOMPONENT
+public:
 #endif
     MCAPI void breakNearbyBlocks(class Actor &);
     MCAPI void initFromDefinition(class Actor &);
     MCAPI bool isBreakable(class Actor &, class BlockLegacy const &) const;
 
-protected:
 
-private:
 
 };

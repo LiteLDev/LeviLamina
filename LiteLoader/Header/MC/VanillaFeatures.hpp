@@ -24,12 +24,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAFEATURES
+public:
 #endif
     MCAPI static void registerFeatureTypes(class FeatureTypeFactory &);
     MCAPI static void registerFeatures(class FeatureRegistry &, class BaseGameVersion const &, class Experiments const &);
 
-protected:
 
-private:
 
 };

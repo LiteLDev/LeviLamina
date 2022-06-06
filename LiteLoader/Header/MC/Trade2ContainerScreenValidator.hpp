@@ -23,11 +23,10 @@ public:
 public:
     /*0*/ virtual ~Trade2ContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADE2CONTAINERSCREENVALIDATOR
+public:
 #endif
     MCAPI Trade2ContainerScreenValidator();
 
-protected:
 
-private:
 
 };

@@ -22,11 +22,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKERPOOLGLOBALSTATE
+public:
 #endif
     MCAPI ~WorkerPoolGlobalState();
 
-protected:
 
-private:
 
 };

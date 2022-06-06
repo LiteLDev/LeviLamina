@@ -24,11 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFEATURE
+public:
     MCVAPI bool isValidPlacement(std::string const &);
 #endif
 
-protected:
 
-private:
 
 };

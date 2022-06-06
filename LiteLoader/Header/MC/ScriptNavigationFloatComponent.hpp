@@ -26,11 +26,10 @@ public:
 public:
     /*0*/ virtual ~ScriptNavigationFloatComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTNAVIGATIONFLOATCOMPONENT
+public:
 #endif
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptNavigationFloatComponent> bind(struct Scripting::Version);
 
-protected:
 
-private:
 
 };

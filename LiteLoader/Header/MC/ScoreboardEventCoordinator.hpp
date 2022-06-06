@@ -24,11 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDEVENTCOORDINATOR
+public:
 #endif
     MCAPI void sendOnScoreChanged(struct ScoreboardId const &, std::string const &, int);
 
-protected:
 
-private:
 
 };

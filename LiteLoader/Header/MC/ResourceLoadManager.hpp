@@ -22,11 +22,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCELOADMANAGER
+public:
 #endif
     MCAPI void cancel(enum ResourceLoadType);
 
-protected:
 
-private:
 
 };

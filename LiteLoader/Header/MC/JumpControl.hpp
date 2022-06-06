@@ -28,6 +28,7 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual float getJumpPower(class JumpControlComponent const &, class Mob const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPCONTROL
+public:
     MCVAPI int getJumpDelay(class JumpControlComponent const &, class Mob const &) const;
     MCVAPI enum JumpType getJumpType(class JumpControlComponent const &, class Mob const &) const;
     MCVAPI void initializeInternal(class Mob &, struct JumpControlDescription *);
@@ -36,8 +37,6 @@ public:
 #endif
     MCAPI JumpControl();
 
-protected:
 
-private:
 
 };

@@ -23,11 +23,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTPOOLTIERS
+public:
 #endif
     MCAPI static std::unique_ptr<class LootPoolTiers> deserialize(class Json::Value);
 
-protected:
 
-private:
 
 };

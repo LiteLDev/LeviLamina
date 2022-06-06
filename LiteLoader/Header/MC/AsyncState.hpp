@@ -22,11 +22,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ASYNCSTATE
+public:
 #endif
     MCAPI void Release();
 
-protected:
 
-private:
 
 };

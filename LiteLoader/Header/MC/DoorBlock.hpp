@@ -81,6 +81,7 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOORBLOCK
+public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool isDoorBlock() const;
     MCVAPI bool isInteractiveBlock() const;
@@ -94,8 +95,6 @@ public:
     MCAPI void setToggled(class BlockSource &, class BlockPos const &, bool) const;
     MCAPI static unsigned char getDoorFacing(int);
 
-protected:
 
-private:
 
 };

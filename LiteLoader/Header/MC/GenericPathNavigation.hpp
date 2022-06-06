@@ -31,10 +31,9 @@ public:
     /*9*/ virtual void stop(class NavigationComponent &, class Mob &);
     /*12*/ virtual void updatePath(class NavigationComponent &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENERICPATHNAVIGATION
+public:
 #endif
 
-protected:
 
-private:
 
 };

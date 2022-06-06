@@ -22,11 +22,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGCONTEXTVARIABLEMAP
+public:
 #endif
     MCAPI ~MolangContextVariableMap();
 
-protected:
 
-private:
 
 };

@@ -62,6 +62,7 @@ public:
     /*359*/ virtual void __unk_vfn_359();
     /*361*/ virtual bool isDarkEnoughToSpawn() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GUARDIAN
+public:
     MCVAPI bool canSeeInvisible() const;
 #endif
     MCAPI Guardian(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
@@ -72,10 +73,10 @@ public:
     MCAPI void setAttackTime(int);
     MCAPI void setElder(bool);
 
-protected:
+//protected:
     MCAPI void registerLoopingSounds();
 
-private:
+//private:
     MCAPI static int const ATTACK_TIME;
     MCAPI static int const FIRST_DAMAGE_TIME;
 

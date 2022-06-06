@@ -31,6 +31,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDPOSITION
+public:
 #endif
     MCAPI CommandPosition(class Vec3 const &);
     MCAPI CommandPosition();
@@ -41,8 +42,6 @@ public:
     MCAPI void load(class CompoundTag const &);
     MCAPI class CompoundTag serialize() const;
 
-protected:
 
-private:
 
 };

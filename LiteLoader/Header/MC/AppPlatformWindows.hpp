@@ -23,6 +23,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORMWINDOWS
+public:
     MCVAPI bool allowContentLogWriteToDisk();
     MCVAPI unsigned __int64 calculateAvailableDiskFreeSpace(class Core::Path const &);
     MCVAPI bool canAppSelfTerminate() const;
@@ -45,9 +46,8 @@ public:
     MCAPI AppPlatformWindows();
     MCAPI static std::string const EXPERIMENTS_ACTIVE_KEY;
 
-protected:
+//protected:
     MCAPI unsigned __int64 _findHighPerformanceThreadsCount() const;
 
-private:
 
 };

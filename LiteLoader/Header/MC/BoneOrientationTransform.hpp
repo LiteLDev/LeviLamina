@@ -21,11 +21,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BONEORIENTATIONTRANSFORM
+public:
 #endif
     MCAPI BoneOrientationTransform();
 
-protected:
 
-private:
 
 };

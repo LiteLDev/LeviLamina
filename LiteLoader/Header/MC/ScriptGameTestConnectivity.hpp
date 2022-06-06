@@ -21,12 +21,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTGAMETESTCONNECTIVITY
+public:
 #endif
     MCAPI ScriptGameTestConnectivity(class ScriptGameTestConnectivity const &);
     MCAPI ScriptGameTestConnectivity(bool, bool, bool, bool);
 
-protected:
 
-private:
 
 };

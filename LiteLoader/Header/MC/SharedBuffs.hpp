@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAREDBUFFS
+public:
 #endif
     MCAPI static class std::shared_ptr<class AttributeBuff> ABSORPTION;
     MCAPI static class std::shared_ptr<class AttributeBuff> FATAL_POISON;
@@ -36,8 +37,6 @@ public:
     MCAPI static class std::shared_ptr<class AttributeBuff> SATURATION;
     MCAPI static class std::shared_ptr<class AttributeBuff> WITHER;
 
-protected:
 
-private:
 
 };

@@ -28,10 +28,9 @@ public:
     /*0*/ virtual ~BreakBlockDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKBLOCKDEFINITION
+public:
 #endif
 
-protected:
 
-private:
 
 };

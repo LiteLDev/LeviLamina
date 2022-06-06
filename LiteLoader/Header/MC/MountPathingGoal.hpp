@@ -35,11 +35,10 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual float _getAttackReachSqr();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOUNTPATHINGGOAL
+public:
 #endif
     MCAPI MountPathingGoal(class Mob &, float, float, bool);
 
-protected:
 
-private:
 
 };

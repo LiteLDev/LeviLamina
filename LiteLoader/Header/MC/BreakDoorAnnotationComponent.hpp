@@ -23,6 +23,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKDOORANNOTATIONCOMPONENT
+public:
 #endif
     MCAPI BreakDoorAnnotationComponent();
     MCAPI bool canMobBreakDoor(class Mob &, class Path const &) const;
@@ -31,9 +32,8 @@ public:
     MCAPI void obstructionCheck(class Mob &);
     MCAPI void onComponentRemoved(class EntityContext &);
 
-protected:
 
-private:
+//private:
     MCAPI void _cleanUp(class Mob &);
     MCAPI bool _shouldBreakDoor(class Mob &);
 

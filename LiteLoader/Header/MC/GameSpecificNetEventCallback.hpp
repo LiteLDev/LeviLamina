@@ -26,10 +26,9 @@ public:
     /*0*/ virtual ~GameSpecificNetEventCallback();
     /*1*/ virtual void handle(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMESPECIFICNETEVENTCALLBACK
+public:
 #endif
 
-protected:
 
-private:
 
 };

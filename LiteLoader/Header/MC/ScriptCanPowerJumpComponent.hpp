@@ -24,11 +24,10 @@ public:
 public:
     /*0*/ virtual ~ScriptCanPowerJumpComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCANPOWERJUMPCOMPONENT
+public:
 #endif
     MCAPI static class HashedString const & getHashedName();
 
-protected:
 
-private:
 
 };

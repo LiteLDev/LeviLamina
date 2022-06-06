@@ -40,6 +40,7 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMPFIREBLOCKACTOR
+public:
 #endif
     MCAPI CampfireBlockActor(class BlockPos const &);
     MCAPI void dropAllItems(class BlockSource &);
@@ -48,9 +49,8 @@ public:
     MCAPI static int const MAX_SMOKE_THRESHOLD_COUNTER;
     MCAPI static int const MIN_SMOKE_THRESHOLD_COUNTER;
 
-protected:
 
-private:
+//private:
     MCAPI void _finishCooking(class BlockSource &, int);
 
 };

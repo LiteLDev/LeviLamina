@@ -41,6 +41,7 @@ public:
     /*15*/ virtual enum DataLoadHelperType getType() const;
     /*16*/ virtual bool shouldResetTime();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFAULTDATALOADHELPER
+public:
     MCVAPI struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
     MCVAPI class BlockPos loadBlockPosition(class BlockPos const &);
     MCVAPI class BlockPos loadBlockPositionOffset(class BlockPos const &);
@@ -57,8 +58,6 @@ public:
     MCVAPI float loadRotationRadiansY(float);
 #endif
 
-protected:
 
-private:
 
 };

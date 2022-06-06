@@ -24,13 +24,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTACKCOOLDOWNCOMPONENT
+public:
 #endif
     MCAPI AttackCooldownComponent(class AttackCooldownComponent &&);
     MCAPI class AttackCooldownComponent & operator=(class AttackCooldownComponent &&);
     MCAPI ~AttackCooldownComponent();
 
-protected:
 
-private:
 
 };

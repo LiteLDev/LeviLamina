@@ -22,11 +22,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDECOMPARISONFEATURETOGGLESYSTEM
+public:
 #endif
     MCAPI static struct TickingSystemWithInfo createSideBySideComparisonFeatureToggleSystem();
 
-protected:
 
-private:
 
 };

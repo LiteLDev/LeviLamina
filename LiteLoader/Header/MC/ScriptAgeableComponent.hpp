@@ -26,6 +26,7 @@ public:
 public:
     /*0*/ virtual ~ScriptAgeableComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTAGEABLECOMPONENT
+public:
 #endif
     MCAPI ScriptAgeableComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class Scripting::Result<std::vector<std::string>> getDropItems() const;
@@ -34,8 +35,6 @@ public:
     MCAPI class Scripting::Result<class DefinitionTrigger> getGrowUp() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptAgeableComponent> bind(struct Scripting::Version);
 
-protected:
 
-private:
 
 };

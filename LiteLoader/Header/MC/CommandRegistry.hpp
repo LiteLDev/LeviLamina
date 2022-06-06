@@ -672,6 +672,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDREGISTRY
+public:
 #endif
     MCAPI CommandRegistry();
     MCAPI void addEnumValueConstraints(std::string const &, std::vector<std::string> const &, enum SemanticConstraint);
@@ -706,9 +707,8 @@ public:
     MCAPI static char const * HASITEM_PARAM_SLOT;
     MCAPI static char const * TAG_VALUES_SOFTENUM_NAME;
 
-protected:
 
-private:
+//private:
     MCAPI void _addEnumValueConstraintsInternal(std::vector<struct std::pair<unsigned __int64, unsigned int>> const &, enum SemanticConstraint);
     MCAPI class CommandRegistry::Symbol _addEnumValuesInternal(std::string const &, std::vector<struct std::pair<std::string, unsigned __int64>> const &, class typeid_t<class CommandRegistry>, bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const);
     MCAPI class CommandRegistry::Symbol _addEnumValuesInternal(std::string const &, std::vector<struct std::pair<unsigned __int64, unsigned __int64>> const &, class typeid_t<class CommandRegistry>, bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const);

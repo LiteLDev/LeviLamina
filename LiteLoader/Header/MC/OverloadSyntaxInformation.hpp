@@ -22,11 +22,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERLOADSYNTAXINFORMATION
+public:
 #endif
     MCAPI OverloadSyntaxInformation(std::string const &, unsigned int, unsigned int);
 
-protected:
 
-private:
 
 };

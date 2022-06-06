@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDSESSIONENDPOINT
+public:
     MCVAPI void flush();
     MCVAPI bool isEnabled() const;
     MCVAPI void log(enum LogArea, enum LogLevel, char const *);
@@ -32,8 +33,6 @@ public:
 #endif
     MCAPI WorldSessionEndPoint(class IMinecraftEventing &);
 
-protected:
 
-private:
 
 };

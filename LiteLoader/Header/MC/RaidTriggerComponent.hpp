@@ -24,12 +24,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAIDTRIGGERCOMPONENT
+public:
 #endif
     MCAPI void initFromDefinition(class Actor &);
     MCAPI void reloadComponent(class Actor &);
 
-protected:
 
-private:
 
 };

@@ -55,6 +55,7 @@ public:
     /*5*/ virtual std::string toString() const;
     /*6*/ virtual std::string toDebugString() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACK
+public:
 #endif
     MCAPI ItemStack(class ItemStack const &);
     MCAPI ItemStack(class Block const &, int, class CompoundTag const *);
@@ -95,8 +96,6 @@ public:
     MCAPI static class ItemStack fromTag(class CompoundTag const &);
     MCAPI static class ItemStack fromTag(class CompoundTag const &, class Level &);
 
-protected:
 
-private:
 
 };

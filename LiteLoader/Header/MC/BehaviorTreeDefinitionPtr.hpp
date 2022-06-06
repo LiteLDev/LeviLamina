@@ -17,6 +17,7 @@ class BehaviorTreeDefinitionPtr {
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORTREEDEFINITIONPTR
+public:
 #endif
     MCAPI BehaviorTreeDefinitionPtr();
     MCAPI BehaviorTreeDefinitionPtr(class BehaviorTreeDefinitionPtr &&);
@@ -27,8 +28,6 @@ public:
     MCAPI ~BehaviorTreeDefinitionPtr();
     MCAPI static class BehaviorTreeDefinitionPtr const NONE;
 
-protected:
 
-private:
 
 };

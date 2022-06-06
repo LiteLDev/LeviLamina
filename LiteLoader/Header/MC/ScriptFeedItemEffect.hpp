@@ -25,11 +25,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFEEDITEMEFFECT
+public:
 #endif
     MCAPI static class Scripting::ClassBindingBuilder<struct FeedItem::Effect> bind(struct Scripting::Version);
 
-protected:
 
-private:
 
 };

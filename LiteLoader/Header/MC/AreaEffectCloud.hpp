@@ -51,6 +51,7 @@ public:
     /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
     /*269*/ virtual void __unk_vfn_269();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AREAEFFECTCLOUD
+public:
 #endif
     MCAPI AreaEffectCloud(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void addAreaEffect(class MobEffectInstance);
@@ -69,9 +70,8 @@ public:
     MCAPI void setRadiusPerTick(float);
     MCAPI void setReapplicationDelay(int);
 
-protected:
 
-private:
+//private:
     MCAPI __int64 _getTicksAlive() const;
     MCAPI void _setSpawnTick(__int64);
     MCAPI void _spawnParticles(class Random &, unsigned int, float);

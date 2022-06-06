@@ -22,11 +22,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTEXTACCESSOR
+public:
 #endif
     MCAPI ~ContextAccessor();
 
-protected:
 
-private:
 
 };

@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTDEFINITION
+public:
 #endif
     MCAPI MobEffectDefinition();
     MCAPI void initialize(class EntityContext &, class MobEffectComponent &);
@@ -31,9 +32,8 @@ public:
     MCAPI void setMobEffectByName(std::string const &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MobEffectDefinition>> &);
 
-protected:
 
-private:
+//private:
     MCAPI static int _parseMobEffectId(std::string const &);
 
 };

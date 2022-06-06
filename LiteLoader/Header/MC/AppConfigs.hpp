@@ -60,6 +60,7 @@ public:
     /*34*/ virtual std::unique_ptr<class IContentAccessibilityProvider> createContentAccessibility(class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntitlementManager>>) const;
     /*35*/ virtual std::string getFeedbackURL() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPCONFIGS
+public:
     MCVAPI bool allowGameArguments() const;
     MCVAPI void applyLevelDataOverride(class LevelData &) const;
     MCVAPI bool areEmotesSupported() const;
@@ -92,8 +93,6 @@ public:
 #endif
     MCAPI AppConfigs();
 
-protected:
 
-private:
 
 };

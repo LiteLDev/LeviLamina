@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAGUPDATERBUILDER
+public:
 #endif
     MCAPI class CompoundTagUpdaterBuilder & edit(std::string const &, class std::function<void (class CompoundTagEditHelper &)> &&);
     MCAPI class CompoundTagUpdaterBuilder & match(std::string const &, std::string);
@@ -34,8 +35,6 @@ public:
     MCAPI class CompoundTagUpdaterBuilder & tryEdit(std::string const &, class std::function<void (class CompoundTagEditHelper &)> &&);
     MCAPI class CompoundTagUpdaterBuilder & visit(std::string const &);
 
-protected:
 
-private:
 
 };

@@ -32,6 +32,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FACING
+public:
 #endif
     MCAPI static class std::array<std::vector<unsigned char>, 6> const ALL_EXCEPT;
     MCAPI static class std::array<std::vector<unsigned char>, 6> const ALL_EXCEPT_AXIS_Y;
@@ -71,8 +72,6 @@ public:
     MCAPI static unsigned char rotateFaceAroundGivenFace(unsigned char, unsigned char, enum Facing::Rotation);
     MCAPI static class gsl::basic_string_span<char const, -1> toString(unsigned char);
 
-protected:
 
-private:
 
 };

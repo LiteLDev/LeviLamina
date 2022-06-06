@@ -26,6 +26,7 @@ public:
 public:
     /*0*/ virtual ~ScriptBlockType();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKTYPE
+public:
 #endif
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>> createDefaultBlockPermutation() const;
     MCAPI class BlockLegacy const & getBlock() const;
@@ -34,8 +35,6 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockType> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockType> getOrCreateHandle(class Scripting::WeakLifetimeScope const &, class BlockLegacy const &);
 
-protected:
 
-private:
 
 };

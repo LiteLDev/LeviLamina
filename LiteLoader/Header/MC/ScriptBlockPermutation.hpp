@@ -26,6 +26,7 @@ public:
 public:
     /*0*/ virtual ~ScriptBlockPermutation();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKPERMUTATION
+public:
 #endif
     MCAPI ScriptBlockPermutation(class ScriptBlockPermutation &&);
     MCAPI ScriptBlockPermutation(class Block const &, class Scripting::WeakLifetimeScope const &);
@@ -41,9 +42,8 @@ public:
     MCAPI void setBlock(class Block const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockPermutation> bind(struct Scripting::Version);
 
-protected:
 
-private:
+//private:
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class IScriptBlockProperty>> _createProperty(std::string const &);
 
 };

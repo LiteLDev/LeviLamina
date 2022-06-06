@@ -24,12 +24,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDGENCLIMATEMAPPINGATTRIBUTES
+public:
 #endif
     MCAPI class WorldGenClimateMappingAttributes & operator=(class WorldGenClimateMappingAttributes &&);
     MCAPI ~WorldGenClimateMappingAttributes();
 
-protected:
 
-private:
 
 };

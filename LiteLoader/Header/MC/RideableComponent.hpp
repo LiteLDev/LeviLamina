@@ -23,6 +23,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RIDEABLECOMPONENT
+public:
 #endif
     MCAPI RideableComponent(class RideableComponent &&);
     MCAPI RideableComponent();
@@ -34,9 +35,8 @@ public:
     MCAPI void positionPassenger(class Actor &, class Actor &);
     MCAPI bool pullInEntity(class Actor &, class Actor &);
 
-protected:
 
-private:
+//private:
     MCAPI void _setCanPlayerRide(class Player &, bool);
     MCAPI struct SeatDescription getValidSeat(class Actor const &, int) const;
 

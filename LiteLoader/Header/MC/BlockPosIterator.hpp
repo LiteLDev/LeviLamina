@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPOSITERATOR
+public:
 #endif
     MCAPI BlockPosIterator(class BlockPos const &, class BlockPos const &);
     MCAPI class BlockPosIterator begin() const;
@@ -32,8 +33,6 @@ public:
     MCAPI class BlockPos const & operator*();
     MCAPI class BlockPosIterator & operator++();
 
-protected:
 
-private:
 
 };

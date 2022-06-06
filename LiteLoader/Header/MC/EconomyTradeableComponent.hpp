@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ECONOMYTRADEABLECOMPONENT
+public:
 #endif
     MCAPI EconomyTradeableComponent(class Actor &);
     MCAPI void addAdditionalSaveData(class CompoundTag &);
@@ -60,9 +61,8 @@ public:
     MCAPI void tryToTransferOldOffers(class MerchantRecipeList *);
     MCAPI static bool isUseNewTradeScreen(class Actor const &);
 
-protected:
 
-private:
+//private:
     MCAPI bool _generateTrades();
     MCAPI struct TradeTable * _getTradeTable();
     MCAPI unsigned int _getTradeTierFromCurrentExp() const;

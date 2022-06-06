@@ -23,6 +23,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPLODECOMPONENT
+public:
 #endif
     MCAPI ExplodeComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &);
@@ -37,8 +38,6 @@ public:
     MCAPI void setFuseLength(int);
     MCAPI void setTntExpodeGameRuleRequired();
 
-protected:
 
-private:
 
 };

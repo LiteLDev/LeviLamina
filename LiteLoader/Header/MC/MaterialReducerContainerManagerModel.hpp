@@ -33,11 +33,10 @@ public:
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATERIALREDUCERCONTAINERMANAGERMODEL
+public:
 #endif
     MCAPI MaterialReducerContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
-protected:
 
-private:
 
 };

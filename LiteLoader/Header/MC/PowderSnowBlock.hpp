@@ -74,6 +74,7 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POWDERSNOWBLOCK
+public:
     MCVAPI bool canBeDestroyedByWaterSpread() const;
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool causesFreezeEffect() const;
@@ -82,8 +83,6 @@ public:
     MCAPI static bool canWalkOnTop(struct IActorMovementProxy const &);
     MCAPI static bool canWalkOnTop(class GetCollisionShapeInterface const &);
 
-protected:
 
-private:
 
 };

@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REGISTRYKEY
+public:
 #endif
     MCAPI operator bool() const;
     MCAPI bool readValue(char const *, unsigned long &) const;
@@ -31,8 +32,6 @@ public:
     MCAPI ~RegistryKey();
     MCAPI static class RegistryKey open(struct HKEY__*, char const *, unsigned long);
 
-protected:
 
-private:
 
 };

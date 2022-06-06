@@ -32,11 +32,10 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMLOOKAROUNDGOAL
+public:
 #endif
     MCAPI RandomLookAroundGoal(class Mob &, int, int, float);
 
-protected:
 
-private:
 
 };

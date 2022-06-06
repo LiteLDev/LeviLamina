@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSOURCE
+public:
     MCVAPI enum PackOrigin getPackOrigin() const;
     MCVAPI enum PackType getPackType() const;
     MCVAPI ~PackSource();
@@ -31,8 +32,6 @@ public:
     MCAPI class Pack * fetchPack(struct PackIdVersion const &);
     MCAPI void resolveUpgradeDependencies(class Pack &, class IContentKeyProvider const &);
 
-protected:
 
-private:
 
 };

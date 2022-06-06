@@ -23,6 +23,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOCKINGCOMPONENT
+public:
 #endif
     MCAPI FlockingComponent(class FlockingComponent &&);
     MCAPI FlockingComponent();
@@ -38,8 +39,6 @@ public:
     MCAPI void updateNeighborhoodData(class Actor const &);
     MCAPI bool validateVariantEntityTypes(class Actor const &, class Actor const &) const;
 
-protected:
 
-private:
 
 };

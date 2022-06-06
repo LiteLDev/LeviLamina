@@ -29,12 +29,11 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATIVECONTENTPACKET
+public:
 #endif
     MCAPI CreativeContentPacket(std::vector<class CreativeItemEntry> const &);
     MCAPI CreativeContentPacket();
 
-protected:
 
-private:
 
 };

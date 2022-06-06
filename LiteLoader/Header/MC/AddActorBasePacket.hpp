@@ -22,11 +22,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDACTORBASEPACKET
+public:
     MCVAPI ~AddActorBasePacket();
 #endif
 
-protected:
 
-private:
 
 };

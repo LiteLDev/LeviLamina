@@ -24,13 +24,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCOMPONENTFACTORYBASE
+public:
     MCVAPI ~EntityComponentFactoryBase();
 #endif
     MCAPI void addComponents(class EntityContext &, class DefinitionInstanceGroup const &) const;
     MCAPI void removeComponents(class EntityContext &, class DefinitionInstanceGroup const &) const;
 
-protected:
 
-private:
 
 };

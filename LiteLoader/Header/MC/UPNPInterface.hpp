@@ -25,6 +25,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPNPINTERFACE
+public:
     MCVAPI void _onDisable();
     MCVAPI void _onEnable();
 #endif
@@ -32,8 +33,6 @@ public:
     MCAPI void reset();
     MCAPI void tick();
 
-protected:
 
-private:
 
 };

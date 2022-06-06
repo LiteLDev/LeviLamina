@@ -27,13 +27,12 @@ public:
     /*2*/ virtual double stopContinue();
     /*3*/ virtual void print(std::string const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STOPWATCH
+public:
 #endif
     MCAPI Stopwatch();
     MCAPI void reset();
     MCAPI void start();
 
-protected:
 
-private:
 
 };

@@ -32,6 +32,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORM
+public:
     MCVAPI std::unique_ptr<class Bedrock::Http::IProxyResolver> _createProxyResolver();
     MCVAPI void _disableCPUBoost();
     MCVAPI void _fireAppTerminated();
@@ -247,10 +248,10 @@ public:
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const LOG_PATH;
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const SETTINGS_PATH;
 
-protected:
+//protected:
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const SHADERCACHE_PATH;
 
-private:
+//private:
     MCAPI void _initializeLoadProfiler();
     MCAPI static bool mIsInitialized;
 

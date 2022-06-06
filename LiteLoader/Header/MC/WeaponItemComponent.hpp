@@ -31,6 +31,7 @@ public:
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAPONITEMCOMPONENT
+public:
 #endif
     MCAPI WeaponItemComponent(class ComponentItem *);
     MCAPI void appendFormattedHovertext(class ItemStackBase const &, std::string &, bool) const;
@@ -40,8 +41,6 @@ public:
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
-protected:
 
-private:
 
 };

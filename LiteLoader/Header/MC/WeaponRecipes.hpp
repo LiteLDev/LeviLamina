@@ -24,11 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAPONRECIPES
+public:
 #endif
     MCAPI static void addRecipes(class Recipes &);
 
-protected:
 
-private:
 
 };

@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYEREVENTLISTENER
+public:
     MCVAPI enum EventResult onCameraSetPlayerRot(class Player &, class Vec2 const &);
     MCVAPI enum EventResult onEvent(struct PlayerNotificationEvent const &);
     MCVAPI enum EventResult onLocalPlayerDeath(class IClientInstance &, class LocalPlayer &);
@@ -67,8 +68,6 @@ public:
     MCVAPI enum EventResult onStartDestroyBlock(class Player &, class BlockPos const &, unsigned char &);
 #endif
 
-protected:
 
-private:
 
 };

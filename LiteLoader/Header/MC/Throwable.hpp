@@ -58,6 +58,7 @@ public:
     /*282*/ virtual float getGravity();
     /*283*/ virtual enum ParticleType getParticleType();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THROWABLE
+public:
     MCVAPI bool canMakeStepSound() const;
     MCVAPI void onHit(class HitResult const &);
     MCVAPI bool stopUponGroundCollision() const;
@@ -66,8 +67,6 @@ public:
     MCAPI void shoot(class Mob &);
     MCAPI void shoot(class Vec3 const &, float, float, class Vec3 const &);
 
-protected:
 
-private:
 
 };

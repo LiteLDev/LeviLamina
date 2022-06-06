@@ -25,12 +25,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DATAGRAMHEADERFORMAT
+public:
 #endif
     MCAPI void Deserialize(class RakNet::BitStream *);
     MCAPI void Serialize(class RakNet::BitStream *);
 
-protected:
 
-private:
 
 };

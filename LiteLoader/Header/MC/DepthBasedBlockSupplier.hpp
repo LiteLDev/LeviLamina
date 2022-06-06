@@ -24,12 +24,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEPTHBASEDBLOCKSUPPLIER
+public:
 #endif
     MCAPI DepthBasedBlockSupplier(class XoroshiroPositionalRandomFactory, class Block const *);
     MCAPI class Block const * getBlock(class BlockPos const &, class Block const *) const;
 
-protected:
 
-private:
 
 };

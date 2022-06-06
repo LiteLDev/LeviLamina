@@ -24,11 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SORTITEMINSTANCEIDAUX
+public:
 #endif
     MCAPI bool operator()(class ItemInstance const &, class ItemInstance const &) const;
 
-protected:
 
-private:
 
 };

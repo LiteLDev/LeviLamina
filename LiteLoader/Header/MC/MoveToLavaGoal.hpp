@@ -29,11 +29,10 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOLAVAGOAL
+public:
 #endif
     MCAPI MoveToLavaGoal(class Mob &, float, int, int, int, float);
 
-protected:
 
-private:
 
 };

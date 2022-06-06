@@ -22,11 +22,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONGROUPPARSEMETADATA
+public:
 #endif
     MCAPI ~ActorAnimationGroupParseMetaData();
 
-protected:
 
-private:
 
 };

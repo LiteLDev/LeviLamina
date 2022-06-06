@@ -28,10 +28,9 @@ public:
     /*2*/ virtual bool shouldBuff(int, int) const;
     /*3*/ virtual int getTickInterval(int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMPLIFIER
+public:
 #endif
 
-protected:
 
-private:
 
 };

@@ -31,6 +31,7 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERAUTHINPUTPACKET
+public:
 #endif
     MCAPI PlayerAuthInputPacket(class PlayerAuthInputPacket &&);
     MCAPI PlayerAuthInputPacket();
@@ -40,8 +41,6 @@ public:
     MCAPI void setInput(enum PlayerAuthInputPacket::InputData, bool);
     MCAPI class PlayerAuthInputPacket takeCopy() const;
 
-protected:
 
-private:
 
 };

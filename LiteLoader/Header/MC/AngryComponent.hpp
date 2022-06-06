@@ -23,6 +23,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANGRYCOMPONENT
+public:
 #endif
     MCAPI AngryComponent(class AngryComponent &&);
     MCAPI AngryComponent();
@@ -42,8 +43,6 @@ public:
     MCAPI void setNextSoundEventTick(class Mob const &);
     MCAPI ~AngryComponent();
 
-protected:
 
-private:
 
 };

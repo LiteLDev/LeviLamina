@@ -24,11 +24,10 @@ public:
 public:
     /*0*/ virtual ~ScriptIsDyableComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTISDYABLECOMPONENT
+public:
 #endif
     MCAPI static class HashedString const & getHashedName();
 
-protected:
 
-private:
 
 };

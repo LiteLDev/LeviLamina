@@ -34,11 +34,10 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual enum EventResult onEvent(struct LevelNotificationEvent const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTLEVELLISTENER
+public:
 #endif
     MCAPI GameTestLevelListener(class gametest::GameTestTicker &);
 
-protected:
 
-private:
 
 };

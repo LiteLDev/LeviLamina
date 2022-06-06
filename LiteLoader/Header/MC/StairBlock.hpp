@@ -87,6 +87,7 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STAIRBLOCK
+public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool isStairBlock() const;
 #endif
@@ -95,9 +96,8 @@ public:
     MCAPI bool setStepShape(class Block const &, class BlockSource &, class BlockPos const &, class AABB &, bool) const;
     MCAPI static unsigned char stairDirectionToFacing(int);
 
-protected:
+//protected:
     MCAPI void shapeZFightShrink(class AABB &) const;
 
-private:
 
 };

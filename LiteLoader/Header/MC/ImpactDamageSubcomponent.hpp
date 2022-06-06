@@ -29,11 +29,10 @@ public:
     /*3*/ virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /*4*/ virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMPACTDAMAGESUBCOMPONENT
+public:
 #endif
     MCAPI ImpactDamageSubcomponent();
 
-protected:
 
-private:
 
 };

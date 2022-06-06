@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPINFO
+public:
 #endif
     MCAPI JumpInfo(float, float, int, int);
     MCAPI int getAnimDuration() const;
@@ -31,8 +32,6 @@ public:
     MCAPI float getHeight() const;
     MCAPI int getJumpDelay() const;
 
-protected:
 
-private:
 
 };

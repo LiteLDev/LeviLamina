@@ -28,10 +28,9 @@ public:
     /*2*/ virtual void __unk_vfn_2() = 0;
     /*3*/ virtual void onBeforeSimTick();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMECALLBACKS
+public:
 #endif
 
-protected:
 
-private:
 
 };

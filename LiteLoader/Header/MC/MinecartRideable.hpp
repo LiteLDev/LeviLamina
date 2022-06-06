@@ -49,11 +49,10 @@ public:
     /*280*/ virtual enum MinecartType getType();
     /*282*/ virtual void __unk_vfn_282();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTRIDEABLE
+public:
 #endif
     MCAPI MinecartRideable(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
-protected:
 
-private:
 
 };

@@ -23,6 +23,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEVENT
+public:
 #endif
     MCAPI MobEvent(class MobEvent const &);
     MCAPI MobEvent(std::string, std::string, bool);
@@ -31,8 +32,6 @@ public:
     MCAPI bool isEnabled() const;
     MCAPI ~MobEvent();
 
-protected:
 
-private:
 
 };

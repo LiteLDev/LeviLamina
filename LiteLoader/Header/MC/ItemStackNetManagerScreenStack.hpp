@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETMANAGERSCREENSTACK
+public:
 #endif
     MCAPI void foreachScreen(class std::function<bool (class ItemStackNetManagerScreen &)>);
     MCAPI class ItemStackNetManagerScreen * getScreenForRequest(class ItemStackRequestData const &);
@@ -34,8 +35,6 @@ public:
     MCAPI class ItemStackNetManagerScreen * top();
     MCAPI ~ItemStackNetManagerScreenStack();
 
-protected:
 
-private:
 
 };

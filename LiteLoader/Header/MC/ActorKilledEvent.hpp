@@ -22,11 +22,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORKILLEDEVENT
+public:
 #endif
     MCAPI ~ActorKilledEvent();
 
-protected:
 
-private:
 
 };

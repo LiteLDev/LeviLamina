@@ -28,10 +28,9 @@ public:
     /*1*/ virtual ~PersistentDescription();
     /*3*/ virtual void serializeData(class Json::Value &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERSISTENTDESCRIPTION
+public:
 #endif
 
-protected:
 
-private:
 
 };

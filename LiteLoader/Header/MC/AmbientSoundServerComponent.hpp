@@ -22,11 +22,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMBIENTSOUNDSERVERCOMPONENT
+public:
 #endif
     MCAPI ~AmbientSoundServerComponent();
 
-protected:
 
-private:
 
 };

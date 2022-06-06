@@ -30,10 +30,9 @@ public:
     /*4*/ virtual enum InventoryTransactionError handle(class Player &, bool) const;
     /*5*/ virtual void onTransactionError(class Player &, enum InventoryTransactionError) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMRELEASEINVENTORYTRANSACTION
+public:
 #endif
 
-protected:
 
-private:
 
 };

@@ -23,6 +23,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRUSTCOMPONENT
+public:
 #endif
     MCAPI TrustComponent(class TrustComponent &&);
     MCAPI TrustComponent();
@@ -33,8 +34,6 @@ public:
     MCAPI class TrustComponent & operator=(class TrustComponent &&);
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
 
-protected:
 
-private:
 
 };

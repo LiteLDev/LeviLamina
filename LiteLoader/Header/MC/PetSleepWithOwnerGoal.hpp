@@ -32,6 +32,7 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PETSLEEPWITHOWNERGOAL
+public:
 #endif
     MCAPI PetSleepWithOwnerGoal(class Mob &, float, int, int, float);
     MCAPI class Vec3 getBedTargetPos() const;
@@ -39,8 +40,6 @@ public:
     MCAPI class Mob & getMob() const;
     MCAPI void setState(std::unique_ptr<class PetSleepWithOwnerState>);
 
-protected:
 
-private:
 
 };

@@ -23,12 +23,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCREENCAPABILITIESREPO
+public:
 #endif
     MCAPI ScreenCapabilitiesRepo();
     MCAPI std::unique_ptr<class IScreenCapabilities> get(std::string const &) const;
 
-protected:
 
-private:
 
 };

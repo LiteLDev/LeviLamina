@@ -29,12 +29,11 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GUIDATAPICKITEMPACKET
+public:
 #endif
     MCAPI GuiDataPickItemPacket(std::string const &, std::string const &, int const &);
     MCAPI GuiDataPickItemPacket();
 
-protected:
 
-private:
 
 };

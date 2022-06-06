@@ -28,6 +28,7 @@ public:
     /*2*/ virtual bool isSerializable() const = 0;
     /*3*/ virtual void setDurationAmplifier(class std::shared_ptr<class Amplifier>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTEBUFF
+public:
 #endif
     MCAPI float getAmount() const;
     MCAPI enum ActorDamageCause getCause() const;
@@ -43,9 +44,8 @@ public:
     MCAPI void setValueAmplifier(class std::shared_ptr<class Amplifier>);
     MCAPI static enum ActorDamageCause buffTypeToDamageCause(enum AttributeBuffType);
 
-protected:
+//protected:
     MCAPI AttributeBuff(float, int, enum AttributeBuffType);
 
-private:
 
 };

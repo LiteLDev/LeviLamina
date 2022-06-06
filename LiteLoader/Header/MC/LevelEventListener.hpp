@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELEVENTLISTENER
+public:
     MCVAPI enum EventResult onEvent(struct LevelNotificationEvent const &);
     MCVAPI enum EventResult onLevelAddedPlayer(class Level &, class Player &);
     MCVAPI enum EventResult onLevelBiomesRegistered(class BiomeRegistry &);
@@ -35,8 +36,6 @@ public:
     MCVAPI enum EventResult onLevelWeatherChange(std::string const &, bool, bool);
 #endif
 
-protected:
 
-private:
 
 };

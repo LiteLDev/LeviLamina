@@ -22,14 +22,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUSPECTTRACKINGCOMPONENT
+public:
 #endif
     MCAPI void clearSuspiciousPos();
     MCAPI class std::optional<class BlockPos> getSuspiciousPos();
     MCAPI class std::optional<unsigned __int64> getTicksSinceLastSuspect(class ILevel const &) const;
     MCAPI void setSuspiciousPos(class std::optional<class BlockPos>, struct Tick);
 
-protected:
 
-private:
 
 };

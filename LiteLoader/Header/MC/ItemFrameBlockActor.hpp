@@ -40,6 +40,7 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMFRAMEBLOCKACTOR
+public:
 #endif
     MCAPI ItemFrameBlockActor(class BlockPos);
     MCAPI ItemFrameBlockActor(class BlockPos, enum BlockActorType, std::string);
@@ -52,9 +53,8 @@ public:
     MCAPI void updateNameTag();
     MCAPI static float const ROTATION_DEGREES;
 
-protected:
 
-private:
+//private:
     MCAPI void _checkMapRemoval(class BlockSource &, class ItemInstance &);
     MCAPI void _updateBit(class BlockSource &, class ItemStateVariant<bool> const &, class HashedString const &);
 

@@ -51,6 +51,7 @@ public:
     /*27*/ virtual void __unk_vfn_27();
     /*28*/ virtual void levelEvent(enum LevelEvent, class Vec3 const &, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEATHER
+public:
 #endif
     MCAPI Weather(class Dimension &, class IRandom &);
     MCAPI int calcSnowBlockDepth(class BlockSource &, class BlockPos const &, int) const;
@@ -75,8 +76,6 @@ public:
     MCAPI static int calcRainDuration(class IRandom &);
     MCAPI static void rebuildTopSnowToDepth(class BlockSource &, class BlockPos const &, int);
 
-protected:
 
-private:
 
 };

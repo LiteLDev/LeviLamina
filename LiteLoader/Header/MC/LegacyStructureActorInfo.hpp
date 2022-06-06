@@ -22,11 +22,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYSTRUCTUREACTORINFO
+public:
 #endif
     MCAPI LegacyStructureActorInfo(class Vec3 const &, class BlockPos const &, class CompoundTag);
 
-protected:
 
-private:
 
 };

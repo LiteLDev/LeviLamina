@@ -30,11 +30,10 @@ public:
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLEESUNGOAL
+public:
 #endif
     MCAPI FleeSunGoal(class Mob &, float);
 
-protected:
 
-private:
 
 };

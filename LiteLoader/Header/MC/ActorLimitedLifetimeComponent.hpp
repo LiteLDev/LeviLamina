@@ -23,6 +23,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORLIMITEDLIFETIMECOMPONENT
+public:
 #endif
     MCAPI ActorLimitedLifetimeComponent();
     MCAPI void addAdditionalSaveData(class Actor const &, class CompoundTag &) const;
@@ -30,8 +31,6 @@ public:
     MCAPI static void convertFromLegacyData(class CompoundTag const &, class CompoundTag &);
     MCAPI static bool needsLegacyConversion(class CompoundTag const &);
 
-protected:
 
-private:
 
 };

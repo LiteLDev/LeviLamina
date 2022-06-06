@@ -28,10 +28,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONNECTIONEVENTING
+public:
 #endif
 
-protected:
 
-private:
 
 };

@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LECTERNBLOCKACTOR
+public:
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     MCVAPI class Container * getContainer();
@@ -48,8 +49,6 @@ public:
     MCAPI void setPageOnServer(int, class BlockSource &);
     MCAPI void setTotalPages(int);
 
-protected:
 
-private:
 
 };

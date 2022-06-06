@@ -62,6 +62,7 @@ public:
     /*354*/ virtual void newServerAiStep();
     /*359*/ virtual void __unk_vfn_359();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WOLF
+public:
 #endif
     MCAPI Wolf(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI float getHeadRollAngle(float);
@@ -69,9 +70,8 @@ public:
     MCAPI float getTailAngle();
     MCAPI bool isShaking() const;
 
-protected:
 
-private:
+//private:
     MCAPI void _avoidSnowBury();
 
 };

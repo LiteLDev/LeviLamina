@@ -24,11 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORTREEDEFINITION
+public:
 #endif
     MCAPI class BehaviorDefinition const * getRoot() const;
 
-protected:
 
-private:
 
 };

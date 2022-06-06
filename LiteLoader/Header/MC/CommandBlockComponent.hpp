@@ -23,6 +23,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDBLOCKCOMPONENT
+public:
 #endif
     MCAPI CommandBlockComponent(class CommandBlockComponent &&);
     MCAPI CommandBlockComponent();
@@ -39,8 +40,6 @@ public:
     MCAPI void setLastOutput(class Actor &, std::string const &);
     MCAPI void setTicking(bool);
 
-protected:
 
-private:
 
 };

@@ -34,11 +34,10 @@ public:
     /*7*/ virtual bool canDestroy(class ContainerScreenContext const &) const;
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTINGINPUTCONTAINERVALIDATION
+public:
     MCVAPI int getAvailableSetCount(int, class ItemStackBase const &) const;
 #endif
 
-protected:
 
-private:
 
 };

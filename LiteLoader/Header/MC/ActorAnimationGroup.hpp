@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONGROUP
+public:
 #endif
     MCAPI ActorAnimationGroup();
     MCAPI class ActorSkeletalAnimationPtr getActorAnimation(class HashedString const &);
@@ -31,8 +32,6 @@ public:
     MCAPI void loadActorAnimation(std::string const &, class Core::Path const &, class PackStats &, class SemVersion const &, enum CurrentCmdVersion, bool);
     MCAPI void loadActorAnimationsSync(class ResourcePackManager &);
 
-protected:
 
-private:
 
 };

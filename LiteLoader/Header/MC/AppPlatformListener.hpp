@@ -23,6 +23,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORMLISTENER
+public:
     MCVAPI void onAppFocusGained();
     MCVAPI void onAppFocusLost();
     MCVAPI void onAppPaused();
@@ -44,8 +45,6 @@ public:
     MCAPI AppPlatformListener();
     MCAPI void terminate();
 
-protected:
 
-private:
 
 };

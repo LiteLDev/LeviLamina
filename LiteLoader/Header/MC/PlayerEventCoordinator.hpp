@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYEREVENTCOORDINATOR
+public:
 #endif
     MCAPI PlayerEventCoordinator();
     MCAPI void registerPlayerGameplayHandler(std::unique_ptr<class PlayerGameplayHandler> &&);
@@ -40,8 +41,6 @@ public:
     MCAPI void sendPlayerTeleported(class Player &);
     MCAPI void sendPlayerTick(class Player &);
 
-protected:
 
-private:
 
 };

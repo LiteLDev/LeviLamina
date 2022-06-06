@@ -24,13 +24,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERTICKSYSTEM
+public:
 #endif
     MCAPI static struct TickingSystemWithInfo create();
     MCAPI static void onTickAdded(struct PlayerTickComponent &, unsigned __int64);
     MCAPI static bool shouldTickMovementSystemOnEntity(class EntityContext const &);
 
-protected:
 
-private:
 
 };

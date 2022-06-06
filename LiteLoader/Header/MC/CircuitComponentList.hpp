@@ -24,12 +24,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CIRCUITCOMPONENTLIST
+public:
 #endif
     MCAPI bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
     MCAPI ~CircuitComponentList();
 
-protected:
 
-private:
 
 };

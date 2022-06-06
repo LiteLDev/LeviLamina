@@ -23,6 +23,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEVERSION
+public:
 #endif
     MCAPI GameVersion(class ListTag const &);
     MCAPI GameVersion(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int);
@@ -35,8 +36,6 @@ public:
     MCAPI ~GameVersion();
     MCAPI static class GameVersion current();
 
-protected:
 
-private:
 
 };

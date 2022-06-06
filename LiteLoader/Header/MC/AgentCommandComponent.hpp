@@ -23,6 +23,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTCOMMANDCOMPONENT
+public:
 #endif
     MCAPI AgentCommandComponent();
     MCAPI bool addCommand(std::unique_ptr<class AgentCommands::Command>);
@@ -30,8 +31,6 @@ public:
     MCAPI void initFromDefinition(class Actor &);
     MCAPI void setCurrentCommand(std::unique_ptr<class AgentCommands::Command>);
 
-protected:
 
-private:
 
 };

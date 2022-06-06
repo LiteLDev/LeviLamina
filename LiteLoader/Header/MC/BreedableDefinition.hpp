@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREEDABLEDEFINITION
+public:
 #endif
     MCAPI BreedableDefinition();
     MCAPI void addBreedItem(class ItemDescriptor const &);
@@ -33,8 +34,6 @@ public:
     MCAPI ~BreedableDefinition();
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BreedableDefinition>> &);
 
-protected:
 
-private:
 
 };

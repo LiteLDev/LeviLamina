@@ -21,11 +21,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKWARDSCOMPATTEXTUREINFO
+public:
 #endif
     MCAPI BackwardsCompatTextureInfo();
 
-protected:
 
-private:
 
 };

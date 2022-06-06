@@ -23,6 +23,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKGROUNDTASKQUEUE
+public:
 #endif
     MCAPI BackgroundTaskQueue();
     MCAPI void flush();
@@ -33,9 +34,8 @@ public:
     MCAPI class std::shared_ptr<class BackgroundTaskBase> tryPop(int);
     MCAPI ~BackgroundTaskQueue();
 
-protected:
 
-private:
+//private:
     MCAPI bool _fetchAllAvailableTasks();
 
 };

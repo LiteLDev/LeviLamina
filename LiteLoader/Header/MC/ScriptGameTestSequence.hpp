@@ -24,6 +24,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTGAMETESTSEQUENCE
+public:
 #endif
     MCAPI ScriptGameTestSequence(class gametest::GameTestSequence &, class Scripting::WeakLifetimeScope);
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> getScriptObjectHandle() const;
@@ -37,8 +38,6 @@ public:
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> thenWaitAfter(int, class Scripting::Closure<void (void)>);
     MCAPI ~ScriptGameTestSequence();
 
-protected:
 
-private:
 
 };
