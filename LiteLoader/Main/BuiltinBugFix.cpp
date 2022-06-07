@@ -304,5 +304,27 @@ TClasslessInstanceHook(void, "?fireEventPlayerMessage@MinecraftEventing@@AEAAXAE
         return;
     original(this, a1, a2, a3, a4);
 }
+TClasslessInstanceHook(void, "?fireEventPlayerTransform@MinecraftEventing@@SAXAEAVPlayer@@@Z",
+                       class Player& a1)
+{
+    if (LL::isServerStopping())
+        return;
+    original(this, a1);
+}
+
+TClasslessInstanceHook(void, "?fireEventPlayerTravelled@MinecraftEventing@@UEAAXPEAVPlayer@@M@Z",
+                       class Player& a1, float a2)
+{
+    if (LL::isServerStopping())
+        return;
+    original(this, a1, a2);
+}
+TClasslessInstanceHook(void, "?fireEventPlayerTeleported@MinecraftEventing@@SAXPEAVPlayer@@MW4TeleportationCause@1@H@Z",
+                       class Player* a1, float a2, int a3, int a4)
+{
+    if (LL::isServerStopping())
+        return;
+    original(this, a1, a2, a3, a4);
+}
 
 

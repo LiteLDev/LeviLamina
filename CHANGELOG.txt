@@ -39,6 +39,7 @@ This is a bug fix update.Please update as soon as possible!
 - Fix BDS bugs
   - move crash bug
   - fishing hook crash when teleported by End Gateway
+  - crash when server stopping #428
 - Fix LL bugs:
   - handle LoadLibrary errors
   - PreLoader crash when directory "./plugins" does not exist
