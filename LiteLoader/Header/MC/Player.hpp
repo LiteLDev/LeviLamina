@@ -10,10 +10,10 @@
     class ServerPlayer;
     class Player;
     class NetworkIdentifier;
-    class UserEntityIdentifierComponent;
     class Certificate;
     class Container;
     class CompoundTag;
+    #include "UserEntityIdentifierComponent.hpp"
     #include "ScorePacketInfo.hpp"
     #include "DataItem.hpp"
 #undef BEFORE_EXTRA

@@ -5,6 +5,8 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include <MC/NetworkIdentifier.hpp>
+class Certificate;
 
 #undef BEFORE_EXTRA
 
@@ -12,6 +14,12 @@ class UserEntityIdentifierComponent {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    NetworkIdentifier mNetworkId;
+    unsigned char mClientSubId;
+    mce::UUID mUUID;
+    std::string mPlayFabId;
+    std::unique_ptr<Certificate> mCertificate;
 
 #undef AFTER_EXTRA
 

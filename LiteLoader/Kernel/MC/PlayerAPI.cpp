@@ -50,7 +50,7 @@ Certificate* Player::getCertificate()
 {
     UserEntityIdentifierComponent* ueic = getUserEntityIdentifierComponent();
     if (ueic) {
-        return dAccess<Certificate*, 216>(ueic);
+        return ueic->mCertificate.get();
     }
     return nullptr;
 }
@@ -311,8 +311,7 @@ string Player::getUuid()
     auto ueic = getUserEntityIdentifierComponent();
     if (!ueic)
         return "";
-    auto& uuid = dAccess<mce::UUID>(ueic, 208);
-    return uuid.asString();
+    return ueic->mUUID.asString();
 }
 
 unsigned char Player::getClientSubId()
@@ -320,7 +319,7 @@ unsigned char Player::getClientSubId()
     auto ueic = getUserEntityIdentifierComponent();
     if (!ueic)
         return -1;
-    return dAccess<unsigned char>(ueic, 200);
+    return ueic->mClientSubId;
 }
 
 float Player::getAvgPacketLoss()
