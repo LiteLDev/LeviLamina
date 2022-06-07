@@ -31,7 +31,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKVOLUME
-public:
 #endif
     MCAPI BlockVolume(class buffer_span_mut<class Block const *>, int, int, int, class Block const &, int);
     MCAPI struct BlockVolume::BlockVolumeIter begin() const;
@@ -47,6 +46,7 @@ public:
     MCAPI unsigned int indexNoBoundsCheck(class Pos const &) const;
     MCAPI bool isInBounds(class Pos const &) const;
     MCAPI bool isInBounds(class BlockPos const &) const;
+
 
 
 };

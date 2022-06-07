@@ -27,7 +27,6 @@ public:
     /*0*/ virtual ~DolphinMoveControl();
     /*2*/ virtual void tick(class MoveControlComponent &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOLPHINMOVECONTROL
-public:
 #endif
     MCAPI DolphinMoveControl();
 
@@ -37,6 +36,7 @@ public:
     MCAPI bool _clearOfObstacles(class Mob const &, float, float, int) const;
     MCAPI bool _isInWater(class Mob const &) const;
     MCAPI void _setupBreach(class Mob &);
+
 
 private:
 

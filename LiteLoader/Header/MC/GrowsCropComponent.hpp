@@ -24,10 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GROWSCROPCOMPONENT
-public:
 #endif
     MCAPI GrowsCropComponent();
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
+
 
 
 };

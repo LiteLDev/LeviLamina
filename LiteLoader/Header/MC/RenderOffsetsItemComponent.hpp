@@ -41,19 +41,16 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
+    /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RENDEROFFSETSITEMCOMPONENT
-public:
 #endif
     MCAPI RenderOffsetsItemComponent(class ComponentItem *);
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
 //private:
-    MCAPI std::unique_ptr<class CompoundTag> _buildTRSTag(struct RenderOffsetsItemComponent::TRS const &) const;
-    MCAPI std::unique_ptr<class CompoundTag> _buildVector3Tag(class std::array<float, 3> const &) const;
-    MCAPI void _trsFromTag(class CompoundTag const &, struct RenderOffsetsItemComponent::TRS &);
     MCAPI static void _fromString(class RenderOffsetsItemComponent &, std::string const &);
+
 
 private:
     MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Main_Hand_Defaults;

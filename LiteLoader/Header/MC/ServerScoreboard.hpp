@@ -42,7 +42,6 @@ public:
     /*14*/ virtual void writeToLevelStorage();
     /*15*/ virtual bool isClientSide() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERSCOREBOARD
-public:
 #endif
     MCAPI ServerScoreboard(class CommandSoftEnumRegistry, class LevelStorage *);
     MCAPI void deserialize(std::unique_ptr<class CompoundTag>);
@@ -56,6 +55,7 @@ public:
 //private:
     MCAPI void _stopTrackingObjective(class Objective const &);
     MCAPI struct ScorePacketInfo _unpackIdentityDefToScorePacket(class ScoreboardIdentityRef const &, std::string const &, int);
+
 
 private:
 

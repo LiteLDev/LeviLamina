@@ -27,8 +27,8 @@ public:
     /*0*/ virtual ~MossStoneSelector();
     /*1*/ virtual class Block const & next(class Random &, int, int, int, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOSSSTONESELECTOR
-public:
 #endif
+
 
 
 };

@@ -26,14 +26,15 @@ public:
 
 public:
     /*0*/ virtual ~BrewingStandBlock();
-    /*9*/ virtual void addAABBs(class Block const &, class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
+    /*9*/ virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
-    /*11*/ virtual bool addCollisionShapes(class Block const &, class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
+    /*11*/ virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /*19*/ virtual void __unk_vfn_19();
-    /*30*/ virtual void __unk_vfn_30();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -71,13 +72,13 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREWINGSTANDBLOCK
-public:
     MCVAPI bool hasComparatorSignal() const;
     MCVAPI bool isContainerBlock() const;
     MCVAPI bool isCraftingBlock() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI BrewingStandBlock(std::string const &, int);
+
 
 
 };

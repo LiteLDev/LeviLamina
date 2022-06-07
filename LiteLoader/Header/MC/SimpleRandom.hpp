@@ -36,8 +36,8 @@ public:
     /*9*/ virtual std::unique_ptr<class IRandom> fork();
     /*10*/ virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLERANDOM
-public:
 #endif
+
 
 
 };

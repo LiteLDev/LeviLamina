@@ -25,6 +25,7 @@ public:
 public:
     MCAPI bool mayPlace(class BlockSource &, class BlockPos const &) const;
     MCAPI bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
+    MCAPI struct BlockPlacementFilterComponent & operator=(struct BlockPlacementFilterComponent &&);
     MCAPI ~BlockPlacementFilterComponent();
 
 protected:

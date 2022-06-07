@@ -25,12 +25,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEASONS
-public:
 #endif
     MCAPI Seasons(class Dimension &);
     MCAPI void postProcess(class LevelChunk &, class BlockSource &, class ChunkPos const &);
     MCAPI void tick();
     MCAPI ~Seasons();
+
 
 
 };

@@ -33,7 +33,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HASHEDSTRING
-public:
 #endif
     MCAPI HashedString(class HashedString &&);
     MCAPI HashedString(std::nullptr_t);
@@ -59,6 +58,7 @@ public:
     MCAPI static unsigned __int64 computeHash(char const *);
     MCAPI static class HashedString defaultErrorValue;
     MCAPI static class HashedString const & getEmptyString();
+
 
 
 };

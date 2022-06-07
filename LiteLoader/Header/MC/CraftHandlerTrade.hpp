@@ -31,7 +31,6 @@ public:
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /*5*/ virtual void _postCraftRequest(bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERTRADE
-public:
 #endif
     MCAPI CraftHandlerTrade(class ContainerScreenContext const &, class ItemStackRequestActionCraftHandler &);
 
@@ -41,6 +40,7 @@ public:
     MCAPI enum ItemStackNetResult _initResultItem(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);
     MCAPI enum ItemStackNetResult _initTrade2Consumes();
     MCAPI bool _matchesAuxValueTrade2(class ItemStackBase const &, class ItemStackBase const &) const;
+
 
 private:
 

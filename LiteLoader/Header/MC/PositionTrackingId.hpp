@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POSITIONTRACKINGID
-public:
 #endif
     MCAPI PositionTrackingId(class PositionTrackingId &&);
     MCAPI PositionTrackingId(class PositionTrackingId const &);
@@ -37,6 +36,7 @@ public:
     MCAPI static class PositionTrackingId const INVALID_ID;
 
 //protected:
+
 
 protected:
     MCAPI static unsigned int sNextId;

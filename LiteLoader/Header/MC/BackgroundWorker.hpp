@@ -31,7 +31,6 @@ public:
     /*1*/ virtual bool isAsync() const;
     /*2*/ virtual bool canTaskRunAgain() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKGROUNDWORKER
-public:
 #endif
     MCAPI BackgroundWorker(std::string, bool, class Bedrock::Threading::OSThreadPriority const &, class std::optional<unsigned __int64>, class WorkerPool &, bool);
     MCAPI unsigned __int64 getApproximateTaskCount() const;
@@ -49,6 +48,7 @@ public:
 //private:
     MCAPI bool _processNextTask();
     MCAPI enum BackgroundWorker::RunOneResult _runOneTask();
+
 
 private:
     MCAPI static class BackgroundWorker * gLocalWorkerMappingSingleton;

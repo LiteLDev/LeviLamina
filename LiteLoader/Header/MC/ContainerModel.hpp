@@ -48,7 +48,6 @@ public:
     /*21*/ virtual int _getContainerOffset() const;
     /*22*/ virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERMODEL
-public:
     MCVAPI bool isExpanableItemFiltered(int) const;
     MCVAPI bool isItemFiltered(class ItemStackBase const &) const;
     MCVAPI bool isItemInstanceBased() const;
@@ -77,6 +76,7 @@ public:
 
 //private:
     MCAPI void _onClientUIItemNetworkChanged(int, class ItemStack const &, class ItemStack const &);
+
 
 protected:
 

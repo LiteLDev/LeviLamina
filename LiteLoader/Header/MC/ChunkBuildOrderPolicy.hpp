@@ -31,9 +31,9 @@ public:
     /*5*/ virtual void setTickingAreaInfluence(unsigned int, class ChunkPos const &, int, int, bool, bool);
     /*6*/ virtual void updateInfluences();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKBUILDORDERPOLICY
-public:
 #endif
     MCAPI ChunkBuildOrderPolicy();
+
 
 
 };

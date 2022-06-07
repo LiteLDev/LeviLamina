@@ -27,12 +27,12 @@ public:
     /*0*/ virtual ~WoodlandMansionStart();
     /*1*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WOODLANDMANSIONSTART
-public:
 #endif
 
 //private:
     MCAPI void _create(class Dimension &, class Random &, int, int);
     MCAPI void _makeStairs(class BlockPos const &, class Block const &, unsigned char, unsigned char, class BlockSource &, class BoundingBox const &);
+
 
 private:
 

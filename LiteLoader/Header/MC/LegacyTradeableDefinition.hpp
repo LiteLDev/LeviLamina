@@ -25,11 +25,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYTRADEABLEDEFINITION
-public:
 #endif
     MCAPI LegacyTradeableDefinition();
     MCAPI void initialize(class EntityContext &, class LegacyTradeableComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LegacyTradeableDefinition>> &);
+
 
 
 };

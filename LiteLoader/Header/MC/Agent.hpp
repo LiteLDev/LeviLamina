@@ -31,50 +31,49 @@ public:
     /*40*/ virtual void __unk_vfn_40();
     /*43*/ virtual void teleportTo(class Vec3 const &, bool, int, int);
     /*48*/ virtual void normalTick();
-    /*59*/ virtual bool isInvisible() const;
-    /*60*/ virtual bool canShowNameTag() const;
-    /*61*/ virtual void __unk_vfn_61();
-    /*65*/ virtual std::string getFormattedNameTag() const;
-    /*68*/ virtual void __unk_vfn_68();
-    /*82*/ virtual void __unk_vfn_82();
-    /*88*/ virtual void __unk_vfn_88();
-    /*94*/ virtual bool isPickable();
-    /*95*/ virtual void __unk_vfn_95();
-    /*98*/ virtual void __unk_vfn_98();
-    /*105*/ virtual void __unk_vfn_105();
+    /*58*/ virtual bool isInvisible() const;
+    /*59*/ virtual bool canShowNameTag() const;
+    /*60*/ virtual void __unk_vfn_60();
+    /*64*/ virtual std::string getFormattedNameTag() const;
+    /*67*/ virtual void __unk_vfn_67();
+    /*81*/ virtual void __unk_vfn_81();
+    /*87*/ virtual void __unk_vfn_87();
+    /*93*/ virtual bool isPickable();
+    /*94*/ virtual void __unk_vfn_94();
+    /*97*/ virtual void __unk_vfn_97();
+    /*104*/ virtual void __unk_vfn_104();
+    /*106*/ virtual void __unk_vfn_106();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*109*/ virtual void __unk_vfn_109();
-    /*141*/ virtual void handleEntityEvent(enum ActorEvent, int);
-    /*161*/ virtual void setCarriedItem(class ItemStack const &);
-    /*181*/ virtual void __unk_vfn_181();
-    /*193*/ virtual bool canBePulledIntoVehicle() const;
-    /*195*/ virtual void __unk_vfn_195();
-    /*211*/ virtual bool canBeAffected(class MobEffectInstance const &) const;
+    /*140*/ virtual void handleEntityEvent(enum ActorEvent, int);
+    /*159*/ virtual void setCarriedItem(class ItemStack const &);
+    /*180*/ virtual void __unk_vfn_180();
+    /*192*/ virtual bool canBePulledIntoVehicle() const;
+    /*194*/ virtual void __unk_vfn_194();
+    /*210*/ virtual bool canBeAffected(class MobEffectInstance const &) const;
+    /*219*/ virtual void __unk_vfn_219();
     /*220*/ virtual void __unk_vfn_220();
-    /*221*/ virtual void __unk_vfn_221();
-    /*228*/ virtual bool isWorldBuilder() const;
-    /*230*/ virtual bool isAdventure() const;
-    /*246*/ virtual void __unk_vfn_246();
-    /*249*/ virtual void __unk_vfn_249();
-    /*250*/ virtual void kill();
-    /*259*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
-    /*261*/ virtual void __unk_vfn_261();
-    /*262*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /*269*/ virtual void __unk_vfn_269();
-    /*278*/ virtual void __unk_vfn_278();
-    /*279*/ virtual void knockback(class Actor *, int, float, float, float, float, float);
-    /*291*/ virtual void travel(float, float, float);
-    /*294*/ virtual void aiStep();
-    /*307*/ virtual void __unk_vfn_307();
-    /*311*/ virtual void __unk_vfn_311();
-    /*337*/ virtual bool createAIGoals();
-    /*344*/ virtual bool canExistWhenDisallowMob() const;
-    /*345*/ virtual void __unk_vfn_345();
-    /*350*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
-    /*359*/ virtual void __unk_vfn_359();
+    /*227*/ virtual bool isWorldBuilder() const;
+    /*229*/ virtual bool isAdventure() const;
+    /*245*/ virtual void __unk_vfn_245();
+    /*248*/ virtual void __unk_vfn_248();
+    /*249*/ virtual void kill();
+    /*262*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
+    /*264*/ virtual void __unk_vfn_264();
+    /*265*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    /*272*/ virtual void __unk_vfn_272();
+    /*281*/ virtual void __unk_vfn_281();
+    /*282*/ virtual void knockback(class Actor *, int, float, float, float, float, float);
+    /*294*/ virtual void travel(float, float, float);
+    /*297*/ virtual void aiStep();
+    /*310*/ virtual void __unk_vfn_310();
+    /*314*/ virtual void __unk_vfn_314();
+    /*340*/ virtual bool createAIGoals();
+    /*347*/ virtual bool canExistWhenDisallowMob() const;
+    /*348*/ virtual void __unk_vfn_348();
+    /*353*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
+    /*362*/ virtual void __unk_vfn_362();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENT
-public:
     MCVAPI bool breaksFallingBlocks() const;
     MCVAPI bool getAlwaysShowNameTag() const;
     MCVAPI bool interactPreventDefault();
@@ -96,6 +95,7 @@ public:
 
 //private:
     MCAPI class ContainerComponent * _getContainerComponent();
+
 
 private:
 

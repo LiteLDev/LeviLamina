@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DROPPERBLOCKACTOR
-public:
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     MCVAPI std::string getName() const;
@@ -37,6 +36,7 @@ public:
 //private:
     MCAPI bool _addItem(class BlockSource &, class Container &, class ItemStack &, int);
     MCAPI class Container * _getContainerAt(class BlockSource &, class Vec3 const &);
+
 
 private:
 

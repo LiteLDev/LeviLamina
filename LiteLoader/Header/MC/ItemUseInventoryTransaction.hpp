@@ -31,7 +31,6 @@ public:
     /*4*/ virtual enum InventoryTransactionError handle(class Player &, bool) const;
     /*5*/ virtual void onTransactionError(class Player &, enum InventoryTransactionError) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMUSEINVENTORYTRANSACTION
-public:
 #endif
     MCAPI ItemUseInventoryTransaction(class ItemUseInventoryTransaction const &);
     MCAPI class ItemUseInventoryTransaction & operator=(class ItemUseInventoryTransaction const &);
@@ -39,6 +38,7 @@ public:
     MCAPI class ItemUseInventoryTransaction & setSelectedItem(class ItemStack const &);
 
 //private:
+
 
 private:
     MCAPI static class BidirectionalUnorderedMap<enum ItemUseInventoryTransaction::ActionType, std::string> const actionTypeMap;

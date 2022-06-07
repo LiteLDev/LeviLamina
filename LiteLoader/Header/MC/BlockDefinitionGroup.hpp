@@ -32,7 +32,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDEFINITIONGROUP
-public:
 #endif
     MCAPI BlockDefinitionGroup();
     MCAPI void buildBlockSchema(class BlockComponentFactory const &);
@@ -55,6 +54,7 @@ public:
     MCAPI bool _loadComponents(class Json::Value const &, struct BlockDefinition &, class Experiments const &);
     MCAPI bool _loadEvents(class Json::Value const &, struct BlockDefinition &);
     MCAPI bool _parseComponents(class Json::Value const &, struct BlockComponentGroupDescription &, std::string const &, class SemVersion const &, class Experiments const &);
+
 
 private:
 

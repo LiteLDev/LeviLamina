@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INMEMORYFILE
-public:
 #endif
     MCAPI InMemoryFile(class Core::Path const &);
     MCAPI class leveldb::Status append(class leveldb::Slice const &);
@@ -40,6 +39,7 @@ public:
     MCAPI class leveldb::Status read(unsigned __int64, unsigned __int64, class leveldb::Slice *, char *, unsigned __int64 &) const;
     MCAPI void rename(class Core::Path const &);
     MCAPI ~InMemoryFile();
+
 
 
 };

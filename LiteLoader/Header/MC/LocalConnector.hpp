@@ -35,7 +35,6 @@ public:
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual struct Connector::NatPunchInfo getNatPunchInfo() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOCALCONNECTOR
-public:
     MCVAPI void addConnectionStateListener(class Connector::ConnectionStateListener *);
     MCVAPI unsigned short getIPv4Port() const;
     MCVAPI unsigned short getIPv6Port() const;
@@ -54,6 +53,7 @@ public:
     MCAPI void runEvents();
 
 //private:
+
 
 private:
     MCAPI static class LocalConnectivitySystem sLocalConnectivitySystem;

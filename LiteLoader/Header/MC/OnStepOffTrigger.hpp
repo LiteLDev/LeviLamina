@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct OnStepOffTrigger {
+class OnStepOffTrigger {
 
 #define AFTER_EXTRA
 
@@ -15,16 +15,17 @@ struct OnStepOffTrigger {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONSTEPOFFTRIGGER
 public:
-    struct OnStepOffTrigger& operator=(struct OnStepOffTrigger const &) = delete;
-    OnStepOffTrigger(struct OnStepOffTrigger const &) = delete;
+    class OnStepOffTrigger& operator=(class OnStepOffTrigger const &) = delete;
+    OnStepOffTrigger(class OnStepOffTrigger const &) = delete;
     OnStepOffTrigger() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONSTEPOFFTRIGGER
+#endif
     MCAPI ~OnStepOffTrigger();
 
-protected:
 
-private:
 
 };

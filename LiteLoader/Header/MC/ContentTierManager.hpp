@@ -26,9 +26,9 @@ public:
     /*0*/ virtual ~ContentTierManager();
     /*1*/ virtual class ContentTierInfo getContentTierInfo() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTTIERMANAGER
-public:
 #endif
     MCAPI ContentTierManager();
+
 
 
 };

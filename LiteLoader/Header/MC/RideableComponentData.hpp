@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct RideableComponentData {
+class RideableComponentData {
 
 #define AFTER_EXTRA
 
@@ -15,16 +15,17 @@ struct RideableComponentData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RIDEABLECOMPONENTDATA
 public:
-    struct RideableComponentData& operator=(struct RideableComponentData const &) = delete;
+    class RideableComponentData& operator=(class RideableComponentData const &) = delete;
+    RideableComponentData(class RideableComponentData const &) = delete;
     RideableComponentData() = delete;
 #endif
 
+
 public:
-    MCAPI RideableComponentData(struct RideableComponentData const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RIDEABLECOMPONENTDATA
+#endif
     MCAPI ~RideableComponentData();
 
-protected:
 
-private:
 
 };

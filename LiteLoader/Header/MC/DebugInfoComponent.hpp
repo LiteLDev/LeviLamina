@@ -56,7 +56,6 @@ public:
     /*30*/ virtual void __unk_vfn_30();
     /*31*/ virtual enum EventResult onEvent(struct ActorDefinitionEvent const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEBUGINFOCOMPONENT
-public:
 #endif
     MCAPI DebugInfoComponent(class DebugInfoComponent &&);
     MCAPI DebugInfoComponent(class DebugInfoComponent const &);
@@ -64,6 +63,7 @@ public:
     MCAPI bool listenersEmpty() const;
     MCAPI class DebugInfoComponent & operator=(class DebugInfoComponent &&);
     MCAPI void removeListener(class HashedString const &, class NetworkIdentifier, unsigned char);
+
 
 
 };

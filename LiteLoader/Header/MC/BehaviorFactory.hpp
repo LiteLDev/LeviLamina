@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORFACTORY
-public:
 #endif
     MCAPI BehaviorFactory();
     MCAPI std::unique_ptr<class BehaviorDefinition> loadNodeDefinition(std::string const &, class Json::Value, class BehaviorTreeDefinitionPtr &) const;
@@ -34,6 +33,7 @@ public:
 
 //private:
     MCAPI void _initNodes();
+
 
 private:
 

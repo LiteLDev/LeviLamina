@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct OnFallOnTrigger {
+class OnFallOnTrigger {
 
 #define AFTER_EXTRA
 
@@ -15,16 +15,17 @@ struct OnFallOnTrigger {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONFALLONTRIGGER
 public:
-    struct OnFallOnTrigger& operator=(struct OnFallOnTrigger const &) = delete;
-    OnFallOnTrigger(struct OnFallOnTrigger const &) = delete;
+    class OnFallOnTrigger& operator=(class OnFallOnTrigger const &) = delete;
+    OnFallOnTrigger(class OnFallOnTrigger const &) = delete;
     OnFallOnTrigger() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONFALLONTRIGGER
+#endif
     MCAPI ~OnFallOnTrigger();
 
-protected:
 
-private:
 
 };

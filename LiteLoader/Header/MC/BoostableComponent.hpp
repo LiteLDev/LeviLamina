@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOOSTABLECOMPONENT
-public:
 #endif
     MCAPI BoostableComponent();
     MCAPI int getBoostTime() const;
@@ -39,6 +38,7 @@ public:
 
 //private:
     MCAPI bool _canUseItem(class Actor &, class ItemStack &);
+
 
 private:
     MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_BOOSTING;

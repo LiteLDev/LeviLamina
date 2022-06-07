@@ -27,12 +27,12 @@ public:
     /*0*/ virtual ~VegetationPatchFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VEGETATIONPATCHFEATURE
-public:
 #endif
 
 //private:
     MCAPI bool _isExposedDirection(class IBlockWorldGenAPI &, class BlockPos const &, unsigned char) const;
     MCAPI std::vector<class BlockPos> _placeGroundPatch(class IBlockWorldGenAPI &, class Random &, class BlockPos const &, int, int) const;
+
 
 private:
 

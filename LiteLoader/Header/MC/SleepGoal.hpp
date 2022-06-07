@@ -37,14 +37,14 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*16*/ virtual unsigned __int64 _getRepathTime() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLEEPGOAL
-public:
 #endif
-    MCAPI SleepGoal(class Mob &, float, float, float, float, int, float);
+    MCAPI SleepGoal(class Mob &, float, float, float, bool, float, int, float);
 
 //private:
     MCAPI void _wakeUp();
     MCAPI void lockPosToBedPos();
     MCAPI void setSleepVariables();
+
 
 private:
 

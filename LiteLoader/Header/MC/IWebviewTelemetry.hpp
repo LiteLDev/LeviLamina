@@ -35,9 +35,9 @@ public:
     /*8*/ virtual void onDownloadComplete(struct WebviewDownloadInfo const &);
     /*9*/ virtual void onDownloadCanceled(struct WebviewDownloadInfo const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IWEBVIEWTELEMETRY
-public:
 #endif
     MCAPI IWebviewTelemetry(class IMinecraftEventing const &);
+
 
 
 };

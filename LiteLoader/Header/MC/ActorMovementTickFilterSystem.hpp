@@ -8,7 +8,7 @@
 
 #undef BEFORE_EXTRA
 
-struct ActorMovementTickFilterSystem {
+class ActorMovementTickFilterSystem {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,15 +17,19 @@ struct ActorMovementTickFilterSystem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORMOVEMENTTICKFILTERSYSTEM
 public:
-    struct ActorMovementTickFilterSystem& operator=(struct ActorMovementTickFilterSystem const &) = delete;
-    ActorMovementTickFilterSystem(struct ActorMovementTickFilterSystem const &) = delete;
+    class ActorMovementTickFilterSystem& operator=(class ActorMovementTickFilterSystem const &) = delete;
+    ActorMovementTickFilterSystem(class ActorMovementTickFilterSystem const &) = delete;
     ActorMovementTickFilterSystem() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORMOVEMENTTICKFILTERSYSTEM
+#endif
+    MCAPI static struct TickingSystemWithInfo createBase();
+    MCAPI static struct TickingSystemWithInfo createInputPacketDependentFilter();
+    MCAPI static struct TickingSystemWithInfo createSideBySide();
 
-protected:
 
-private:
 
 };

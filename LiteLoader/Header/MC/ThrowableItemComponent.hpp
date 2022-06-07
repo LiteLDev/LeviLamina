@@ -30,9 +30,8 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
+    /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THROWABLEITEMCOMPONENT
-public:
 #endif
     MCAPI ThrowableItemComponent(class ComponentItem *);
     MCAPI bool releaseUsing(class ItemStack &, class Player *, int) const;
@@ -42,6 +41,7 @@ public:
 
 //private:
     MCAPI float _getLaunchPower(int, int, int) const;
+
 
 private:
 

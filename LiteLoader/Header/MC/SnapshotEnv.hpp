@@ -30,7 +30,6 @@ public:
     /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
     /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNAPSHOTENV
-public:
     MCVAPI class leveldb::Status DeleteFileA(std::string const &);
     MCVAPI class leveldb::Status NewAppendableFile(std::string const &, class leveldb::WritableFile **);
     MCVAPI class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
@@ -42,6 +41,7 @@ public:
 
 //private:
     MCAPI bool _isQueuedForRemoval(class Core::PathBuffer<std::string> const &);
+
 
 private:
 

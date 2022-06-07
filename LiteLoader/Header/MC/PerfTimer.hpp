@@ -27,7 +27,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERFTIMER
-public:
 #endif
     MCAPI PerfTimer(class std::thread::id);
     MCAPI ~PerfTimer();
@@ -35,6 +34,7 @@ public:
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class PerfTimer, class std::allocator<class PerfTimer>> test;
 
 //protected:
+
 
 protected:
     MCAPI static int const MultiplyDeBruijnBitPosition[];

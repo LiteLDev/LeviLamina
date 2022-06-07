@@ -33,13 +33,13 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONSTRAFEPLAYERGOAL
-public:
 #endif
     MCAPI DragonStrafePlayerGoal(class Mob &);
 
 //private:
     MCAPI void navigateToNextPathNode();
     MCAPI void setTarget(class Actor *);
+
 
 private:
 

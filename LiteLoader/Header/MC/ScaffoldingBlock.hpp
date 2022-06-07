@@ -29,11 +29,12 @@ public:
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /*19*/ virtual void __unk_vfn_19();
-    /*30*/ virtual void __unk_vfn_30();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*33*/ virtual bool isWaterBlocking() const;
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
+    /*34*/ virtual bool isWaterBlocking() const;
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -78,7 +79,6 @@ public:
     /*204*/ virtual std::string getDustParticleName(class Block const &) const;
     /*205*/ virtual void __unk_vfn_205();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCAFFOLDINGBLOCK
-public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI ScaffoldingBlock(std::string const &, int);
@@ -89,6 +89,7 @@ public:
 
 //private:
     MCAPI bool _updateBlockStability(class BlockSource &, class BlockPos const &) const;
+
 
 protected:
 

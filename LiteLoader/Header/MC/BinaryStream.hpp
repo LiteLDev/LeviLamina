@@ -58,7 +58,6 @@ public:
 public:
     /*0*/ virtual ~BinaryStream();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BINARYSTREAM
-public:
 #endif
     MCAPI BinaryStream(std::string &, bool);
     MCAPI BinaryStream();
@@ -84,6 +83,7 @@ public:
 
 //private:
     MCAPI void write(void const *, unsigned __int64);
+
 
 private:
 

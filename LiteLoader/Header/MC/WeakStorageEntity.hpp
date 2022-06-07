@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAKSTORAGEENTITY
-public:
 #endif
     MCAPI bool operator==(class WeakStorageEntity const &) const;
 
@@ -36,6 +35,7 @@ public:
     MCAPI WeakStorageEntity(enum WeakStorageEntity::VariadicInit, class EntityContext const &);
     MCAPI bool _isSet() const;
     MCAPI void _reset();
+
 
 protected:
 

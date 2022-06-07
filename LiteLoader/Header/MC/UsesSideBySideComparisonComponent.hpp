@@ -21,7 +21,7 @@ public:
 #endif
 
 public:
-    MCAPI struct UsesSideBySideComparisonComponent & operator=(struct UsesSideBySideComparisonComponent &&);
+    MCAPI UsesSideBySideComparisonComponent(struct UsesSideBySideComparisonComponent &&);
 
 protected:
 

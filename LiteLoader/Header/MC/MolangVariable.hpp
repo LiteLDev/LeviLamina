@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGVARIABLE
-public:
 #endif
     MCAPI MolangVariable(enum MolangVariableIndex, class HashedString, struct MolangScriptArg);
     MCAPI ~MolangVariable();
@@ -39,6 +38,7 @@ public:
 
 //private:
     MCAPI static class std::recursive_mutex & _getMolangVariableIndexLock();
+
 
 private:
     MCAPI static bool mHasSetWatermark;

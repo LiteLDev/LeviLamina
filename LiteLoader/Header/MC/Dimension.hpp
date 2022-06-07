@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSION
-public:
     MCVAPI std::unique_ptr<class ChunkBuildOrderPolicyBase> _createChunkBuildOrderPolicy();
     MCVAPI void deserialize(class CompoundTag const &);
     MCVAPI bool forceCheckAllNeighChunkSavedStat() const;
@@ -134,6 +133,7 @@ public:
     MCAPI void unregisterDisplayEntity(class WeakRefT<struct EntityRefTraits>);
     MCAPI void unregisterEntity(struct ActorUniqueID const &);
     MCAPI void updateBlockLight(class BlockPos const &, struct Brightness, struct Brightness, struct Brightness, struct Brightness, bool);
+    MCAPI void updateDimensionBlockSourceTick();
     MCAPI static enum LimboEntitiesVersion const CurrentLimboEntitiesVersion;
     MCAPI static unsigned int const LOW_CPU_PACKET_BLOCK_LIMIT;
     MCAPI static float const MOON_BRIGHTNESS_PER_PHASE[];
@@ -147,6 +147,7 @@ public:
     MCAPI void _sendBlockEntityUpdatePacket(class NetworkBlockPosition const &);
     MCAPI void _sendBlocksChangedPackets();
     MCAPI void _tickEntityChunkMoves();
+
 
 protected:
 

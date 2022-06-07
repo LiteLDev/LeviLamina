@@ -31,48 +31,47 @@ public:
     /*19*/ virtual void setPos(class Vec3 const &);
     /*40*/ virtual void __unk_vfn_40();
     /*48*/ virtual void normalTick();
-    /*58*/ virtual bool isInWall() const;
-    /*61*/ virtual void __unk_vfn_61();
-    /*68*/ virtual void __unk_vfn_68();
-    /*80*/ virtual float getShadowRadius() const;
-    /*82*/ virtual void __unk_vfn_82();
-    /*88*/ virtual void __unk_vfn_88();
-    /*95*/ virtual void __unk_vfn_95();
-    /*98*/ virtual void __unk_vfn_98();
-    /*105*/ virtual void __unk_vfn_105();
+    /*57*/ virtual bool isInWall() const;
+    /*60*/ virtual void __unk_vfn_60();
+    /*67*/ virtual void __unk_vfn_67();
+    /*79*/ virtual float getShadowRadius() const;
+    /*81*/ virtual void __unk_vfn_81();
+    /*87*/ virtual void __unk_vfn_87();
+    /*94*/ virtual void __unk_vfn_94();
+    /*97*/ virtual void __unk_vfn_97();
+    /*104*/ virtual void __unk_vfn_104();
+    /*106*/ virtual void __unk_vfn_106();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*109*/ virtual void __unk_vfn_109();
-    /*111*/ virtual bool canAttack(class Actor *, bool) const;
-    /*131*/ virtual bool shouldRender() const;
-    /*134*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
-    /*142*/ virtual float getPickRadius();
-    /*181*/ virtual void __unk_vfn_181();
-    /*195*/ virtual void __unk_vfn_195();
+    /*110*/ virtual bool canAttack(class Actor *, bool) const;
+    /*130*/ virtual bool shouldRender() const;
+    /*133*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
+    /*141*/ virtual float getPickRadius();
+    /*180*/ virtual void __unk_vfn_180();
+    /*194*/ virtual void __unk_vfn_194();
+    /*219*/ virtual void __unk_vfn_219();
     /*220*/ virtual void __unk_vfn_220();
-    /*221*/ virtual void __unk_vfn_221();
-    /*246*/ virtual void __unk_vfn_246();
-    /*249*/ virtual void __unk_vfn_249();
-    /*259*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
-    /*261*/ virtual void __unk_vfn_261();
-    /*262*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /*265*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
-    /*269*/ virtual void __unk_vfn_269();
-    /*277*/ virtual void _onSizeUpdated();
-    /*278*/ virtual void __unk_vfn_278();
-    /*291*/ virtual void travel(float, float, float);
-    /*294*/ virtual void aiStep();
-    /*299*/ virtual bool checkSpawnRules(bool);
-    /*307*/ virtual void __unk_vfn_307();
-    /*308*/ virtual float getMaxHeadXRot();
-    /*311*/ virtual void __unk_vfn_311();
-    /*316*/ virtual int getArmorValue() const;
-    /*345*/ virtual void __unk_vfn_345();
-    /*350*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
-    /*359*/ virtual void __unk_vfn_359();
+    /*245*/ virtual void __unk_vfn_245();
+    /*248*/ virtual void __unk_vfn_248();
+    /*262*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
+    /*264*/ virtual void __unk_vfn_264();
+    /*265*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    /*268*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
+    /*269*/ virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /*272*/ virtual void __unk_vfn_272();
+    /*280*/ virtual void _onSizeUpdated();
+    /*281*/ virtual void __unk_vfn_281();
+    /*294*/ virtual void travel(float, float, float);
+    /*297*/ virtual void aiStep();
+    /*302*/ virtual bool checkSpawnRules(bool);
+    /*310*/ virtual void __unk_vfn_310();
+    /*311*/ virtual float getMaxHeadXRot();
+    /*314*/ virtual void __unk_vfn_314();
+    /*319*/ virtual int getArmorValue() const;
+    /*348*/ virtual void __unk_vfn_348();
+    /*353*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
+    /*362*/ virtual void __unk_vfn_362();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKER
-public:
     MCVAPI bool breaksFallingBlocks() const;
     MCVAPI bool isLeashableType();
     MCVAPI bool useNewAi() const;
@@ -83,16 +82,19 @@ public:
     MCAPI static void setShulkerAttachPos(class SynchedActorData &, class BlockPos const &);
 
 //protected:
+    MCAPI bool _canOpenLidAt(class BlockPos, unsigned char) const;
     MCAPI static void _setPeekAmount(class SynchedActorData &, int);
 
 //private:
     MCAPI void _calculateBB();
     MCAPI bool _isPosOccupiedByOtherShulker(class BlockPos) const;
     MCAPI bool _isValidAttach(class BlockPos, unsigned char);
+    MCAPI void _peekAmountTick();
     MCAPI void _setAttachFace(unsigned char);
     MCAPI bool _tryAttachingToNeighbouringFaces(class BlockPos);
     MCAPI void _trySpawnShulker();
     MCAPI bool _tryTeleportSomewhere();
+
 
 protected:
 

@@ -33,12 +33,12 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRINKPOTIONGOAL
-public:
 #endif
     MCAPI DrinkPotionGoal(class Mob &, float, std::vector<struct DrinkPotionData> const &);
 
 //private:
     MCAPI void _updateEquipment(class ItemStack const &);
+
 
 private:
     MCAPI static class mce::UUID const SPEED_MODIFIER_DRINKING_UUID;

@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKERPOOL
-public:
 #endif
     MCAPI WorkerPool(std::string, class Scheduler &);
     MCAPI WorkerPool(std::string, unsigned __int64, class Bedrock::Threading::OSThreadPriority const &, class std::optional<unsigned __int64>, bool);
@@ -40,6 +39,7 @@ public:
 
 //private:
     MCAPI bool _checkPendingWork();
+
 
 protected:
     MCAPI static class SmallSet<class WorkerPool *> sAllPools;

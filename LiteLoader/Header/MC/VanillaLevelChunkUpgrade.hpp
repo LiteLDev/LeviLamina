@@ -15,7 +15,9 @@ namespace VanillaLevelChunkUpgrade {
 enum Axis;
 
 #undef AFTER_EXTRA
+    MCAPI bool _updateBelowZero(class LevelChunk &, class LevelChunk &, class BlockSource &);
     MCAPI void _upgradeLevelChunkLegacy(class LevelChunk &, class BlockSource &);
+    MCAPI void _upgradeLevelChunkViaMetaData(class LevelChunk &, class LevelChunk &, class BlockSource &);
     MCAPI bool addBiomeSpecificVillageSkins(class CompoundTag &, class BlockSource &);
     MCAPI bool convertOcelotTagToCat(class CompoundTag &);
     MCAPI bool convertVillagerV1TagToV2(class CompoundTag &);

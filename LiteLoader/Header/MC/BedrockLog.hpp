@@ -31,7 +31,6 @@ struct LogDetails {
 };
 
 #undef AFTER_EXTRA
-    MCAPI enum LogAreaID _areaFilterFromString(std::string const &);
     MCAPI bool _constructAreaFilterFromString(std::string const &, class BedrockLog::LogAreaFilter &);
     MCAPI std::string _constructAreaFilterStringFromFilter(class BedrockLog::LogAreaFilter const &);
     MCAPI struct BedrockLog::LogDetails & _getLog(enum BedrockLog::LogCategory, enum BedrockLog::LogChannel);
@@ -39,6 +38,7 @@ struct LogDetails {
     MCAPI void _initPriorityFilterMap();
     MCAPI std::string _messageIdString(int);
     MCAPI void _openChannel(class Core::Path const &, std::string const &, std::string const &, enum BedrockLog::LogCategory, enum BedrockLog::LogChannel, bool, class LogSettingsUpdater *, double);
+    MCAPI char const * _priorityFilterString(unsigned int);
     MCAPI std::string _processIdString();
     MCAPI void closeAndResetAllLogs();
     MCAPI void createLog(class Core::Path const &, std::string const &, std::string const &, enum BedrockLog::LogCategory, class std::bitset<3>, bool, class LogSettingsUpdater *, double);

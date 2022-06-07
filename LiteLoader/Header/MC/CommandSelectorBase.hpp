@@ -50,7 +50,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDSELECTORBASE
-public:
 #endif
     MCAPI void addFamilyFilter(struct InvertableFilter<std::string> const &);
     MCAPI void addFilter(class std::function<bool (class CommandOrigin const &, class Actor const &)>);
@@ -93,6 +92,7 @@ public:
     MCAPI bool matchName(class Actor const &) const;
     MCAPI bool matchTag(class Actor const &) const;
     MCAPI bool matchType(class Actor const &) const;
+
 
 protected:
 

@@ -51,10 +51,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDCONTEXT
-public:
 #endif
     MCAPI CommandContext(std::string const &, std::unique_ptr<class CommandOrigin>, int);
     MCAPI class CommandOrigin const & getCommandOrigin() const;
+
 
 
 };

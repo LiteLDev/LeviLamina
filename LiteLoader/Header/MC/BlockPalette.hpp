@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPALETTE
-public:
 #endif
     MCAPI BlockPalette(class Level &);
     MCAPI BlockPalette(struct BlockPalette::ConstructorToken);
@@ -42,6 +41,7 @@ public:
 
 //private:
     MCAPI bool shouldWarnFor(struct NewBlockID, unsigned short) const;
+
 
 private:
 

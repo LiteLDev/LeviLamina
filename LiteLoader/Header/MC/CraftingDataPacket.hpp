@@ -30,10 +30,10 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTINGDATAPACKET
-public:
 #endif
     MCAPI CraftingDataPacket();
     MCAPI static std::unique_ptr<class CraftingDataPacket> prepareFromRecipes(class Recipes const &, bool);
+
 
 
 };

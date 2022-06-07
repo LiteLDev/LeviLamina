@@ -31,7 +31,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGE
-public:
 #endif
     MCAPI Village(class Dimension &, class mce::UUID, class BlockPos const &);
     MCAPI void addActorToVillage(enum DwellerRole, struct ActorUniqueID const &);
@@ -117,6 +116,7 @@ public:
     MCAPI void _updateAndRemoveInactiveDwellers(unsigned __int64, float);
     MCAPI void _updateClaimedPOIs(class BlockSource &);
     MCAPI void _updateUnclaimedPOIs(class BlockSource &);
+
 
 private:
     MCAPI static float const ACHIEVEMENT_SOUND_THE_ALARM_TOLERANCE;

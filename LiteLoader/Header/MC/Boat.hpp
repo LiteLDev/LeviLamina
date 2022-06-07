@@ -31,38 +31,37 @@ public:
     /*18*/ virtual void remove();
     /*40*/ virtual void __unk_vfn_40();
     /*48*/ virtual void normalTick();
-    /*56*/ virtual std::string getExitTip(std::string const &, enum InputMode) const;
-    /*61*/ virtual void __unk_vfn_61();
-    /*68*/ virtual void __unk_vfn_68();
-    /*79*/ virtual float getShadowHeightOffs();
-    /*80*/ virtual float getShadowRadius() const;
-    /*82*/ virtual void __unk_vfn_82();
-    /*88*/ virtual void __unk_vfn_88();
-    /*90*/ virtual void onAboveBubbleColumn(bool);
-    /*94*/ virtual bool isPickable();
-    /*95*/ virtual void __unk_vfn_95();
-    /*98*/ virtual void __unk_vfn_98();
-    /*105*/ virtual void __unk_vfn_105();
+    /*55*/ virtual std::string getExitTip(std::string const &, enum InputMode) const;
+    /*60*/ virtual void __unk_vfn_60();
+    /*67*/ virtual void __unk_vfn_67();
+    /*78*/ virtual float getShadowHeightOffs();
+    /*79*/ virtual float getShadowRadius() const;
+    /*81*/ virtual void __unk_vfn_81();
+    /*87*/ virtual void __unk_vfn_87();
+    /*89*/ virtual void onAboveBubbleColumn(bool);
+    /*93*/ virtual bool isPickable();
+    /*94*/ virtual void __unk_vfn_94();
+    /*97*/ virtual void __unk_vfn_97();
+    /*104*/ virtual void __unk_vfn_104();
+    /*106*/ virtual void __unk_vfn_106();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*109*/ virtual void __unk_vfn_109();
-    /*134*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
-    /*181*/ virtual void __unk_vfn_181();
-    /*183*/ virtual struct ActorUniqueID getControllingPlayer() const;
-    /*191*/ virtual bool canAddPassenger(class Actor &) const;
-    /*195*/ virtual void __unk_vfn_195();
+    /*133*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
+    /*180*/ virtual void __unk_vfn_180();
+    /*182*/ virtual struct ActorUniqueID getControllingPlayer() const;
+    /*190*/ virtual bool canAddPassenger(class Actor &) const;
+    /*194*/ virtual void __unk_vfn_194();
+    /*219*/ virtual void __unk_vfn_219();
     /*220*/ virtual void __unk_vfn_220();
-    /*221*/ virtual void __unk_vfn_221();
-    /*224*/ virtual float getPassengerYRotation(class Actor const &) const;
-    /*246*/ virtual void __unk_vfn_246();
-    /*249*/ virtual void __unk_vfn_249();
-    /*261*/ virtual void __unk_vfn_261();
-    /*262*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /*269*/ virtual void __unk_vfn_269();
-    /*278*/ virtual void __unk_vfn_278();
-    /*279*/ virtual void destroy(class Actor *);
+    /*223*/ virtual float getPassengerYRotation(class Actor const &) const;
+    /*245*/ virtual void __unk_vfn_245();
+    /*248*/ virtual void __unk_vfn_248();
+    /*264*/ virtual void __unk_vfn_264();
+    /*265*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    /*272*/ virtual void __unk_vfn_272();
+    /*281*/ virtual void __unk_vfn_281();
+    /*282*/ virtual void destroy(class Actor *);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOAT
-public:
 #endif
     MCAPI Boat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void computePaddleForcesBasedOnGaze(class Vec3 &, float &, float &, float, float);
@@ -77,6 +76,7 @@ public:
     MCAPI void _control();
     MCAPI void _move();
     MCAPI void _paddleControl(enum Side, class Vec3 &, class Vec3 &);
+
 
 private:
 

@@ -20,8 +20,8 @@ public:
 #endif
 
 public:
-    MCAPI struct ScriptScoreTargetSelectorOption & operator=(struct ScriptScoreTargetSelectorOption &&);
     MCAPI struct ScriptScoreTargetSelectorOption & operator=(struct ScriptScoreTargetSelectorOption const &);
+    MCAPI struct ScriptScoreTargetSelectorOption & operator=(struct ScriptScoreTargetSelectorOption &&);
     MCAPI ~ScriptScoreTargetSelectorOption();
 
 protected:

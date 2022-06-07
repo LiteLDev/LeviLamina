@@ -25,9 +25,9 @@ public:
 public:
     /*0*/ virtual ~ScriptIsStunnedComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTISSTUNNEDCOMPONENT
-public:
 #endif
     MCAPI static class HashedString const & getHashedName();
+
 
 
 };

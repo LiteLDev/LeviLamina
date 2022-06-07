@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PATHFINDERNODE
-public:
 #endif
     MCAPI PathfinderNode(class PathfinderNode const &);
     MCAPI PathfinderNode(class BlockPos const &, enum NodeType);
@@ -36,6 +35,7 @@ public:
     MCAPI bool inOpenSet();
     MCAPI void setCostMalus(float);
     MCAPI void setMoveMalus(float);
+
 
 
 };

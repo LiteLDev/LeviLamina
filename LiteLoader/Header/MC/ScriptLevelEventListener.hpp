@@ -29,16 +29,17 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual enum EventResult onLevelAddedPlayer(class Level &, class Player &);
     /*4*/ virtual enum EventResult onLevelRemovedPlayer(class Level &, class Player &);
-    /*5*/ virtual void __unk_vfn_5();
+    /*5*/ virtual enum EventResult onLevelRemovedActor(class Level &, class Actor &);
     /*6*/ virtual enum EventResult onLevelTick();
     /*7*/ virtual enum EventResult onLevelWeatherChange(std::string const &, bool, bool);
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual enum EventResult onEvent(struct LevelStartLeaveGameEvent const &);
-    /*10*/ virtual enum EventResult onEvent(struct LevelNotificationEvent const &);
+    /*10*/ virtual enum EventResult onEvent(struct ScriptingInitializeEvent const &);
+    /*11*/ virtual enum EventResult onEvent(struct LevelNotificationEvent const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTLEVELEVENTLISTENER
-public:
 #endif
     MCAPI ScriptLevelEventListener(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
+
 
 
 };

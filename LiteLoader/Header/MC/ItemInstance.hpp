@@ -23,7 +23,6 @@ public:
     /*2*/ virtual void reinit(class BlockLegacy const &, int);
     /*3*/ virtual void reinit(class gsl::basic_string_span<char const, -1>, int, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMINSTANCE
-public:
 #endif
     MCAPI ItemInstance(class ItemStackBase const &);
     MCAPI ItemInstance(class ItemInstance const &);
@@ -43,6 +42,7 @@ public:
 
 //protected:
     MCAPI ItemInstance(class BlockLegacy const &, int, short);
+
 
 protected:
 

@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBENV
-public:
     MCVAPI class leveldb::Status CreateDir(std::string const &);
     MCVAPI class leveldb::Status DeleteDir(std::string const &);
     MCVAPI class leveldb::Status DeleteFileA(std::string const &);
@@ -50,6 +49,7 @@ public:
     MCAPI LevelDbEnv();
 
 //private:
+
 
 private:
     MCAPI static class LevelDbEnv * sSingleton;

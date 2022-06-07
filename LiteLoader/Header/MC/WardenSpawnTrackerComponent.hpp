@@ -24,17 +24,17 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WARDENSPAWNTRACKERCOMPONENT
-public:
 #endif
     MCAPI WardenSpawnTrackerComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI bool canIncreaseThreatLevel() const;
-    MCAPI bool canSummonWarden() const;
     MCAPI void copyDataFrom(class WardenSpawnTrackerComponent const &);
-    MCAPI class std::optional<enum LevelSoundEvent> getSoundEventForCurrentThreatLevel() const;
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void tick();
-    MCAPI void tryIncreaseThreatLevel();
+    MCAPI int tryIncreaseThreatLevel();
+    MCAPI static bool canSummonWarden(int);
+    MCAPI static class std::optional<enum LevelSoundEvent> getSoundEventForThreatLevel(int);
+
 
 
 };

@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOCALIZATION
-public:
 #endif
     MCAPI Localization(std::string const &);
     MCAPI Localization(std::string const &, class Localization *);
@@ -47,6 +46,7 @@ public:
     MCAPI struct OptionalString _parseFormattedString(std::string const &) const;
     MCAPI void _replaceTokens(std::string &, std::vector<std::string> const &) const;
     MCAPI static bool _isCommaSeperatedLanguage(std::string const &);
+
 
 protected:
 

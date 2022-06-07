@@ -145,6 +145,7 @@ public:
     Level() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVEL
     MCVAPI void _checkUserStorage();
@@ -155,6 +156,7 @@ public:
     MCVAPI void _destroyEffect(class BlockPos const &, class Block const &, int);
     MCVAPI void _localPlayerChangedDimension();
     MCVAPI class Actor * addAutonomousEntity(class BlockSource &, class OwnerPtrT<struct EntityRefTraits>);
+    MCVAPI void addBlockSourceForValidityTracking(class BlockSource *);
     MCVAPI void addBossEventListener(class BossEventListener *);
     MCVAPI void addBreakingItemParticleEffect(class Vec3 const &, enum ParticleType, struct TextureUVCoordinateSet const &, bool);
     MCVAPI void addChunkViewTracker(class std::weak_ptr<class ChunkViewSource>);
@@ -192,7 +194,7 @@ public:
     MCVAPI void createPhotoStorage();
     MCVAPI void decrementTagCache(std::string const &, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> &);
     MCVAPI void denyEffect(class BlockSource &, class Vec3 const &);
-    //MCVAPI bool destroyBlock(class BlockSource &, class BlockPos const &, bool);
+    MCVAPI bool destroyBlock(class BlockSource &, class BlockPos const &, bool);
     MCVAPI void digestServerBlockProperties(class StartGamePacket const &, unsigned int);
     MCVAPI void digestServerItemComponents(class ItemComponentPacket const &);
     MCVAPI void directTickEntities(class BlockSource &);
@@ -209,8 +211,8 @@ public:
     MCVAPI void flushRunTimeLighting();
     MCVAPI void forEachDimension(class std::function<bool (class Dimension const &)>) const;
     MCVAPI void forEachDimension(class std::function<bool (class Dimension &)>);
-    //MCVAPI void forEachPlayer(class std::function<bool (class Player const &)>) const;
-    //MCVAPI void forEachPlayer(class std::function<bool (class Player &)>);
+    MCVAPI void forEachPlayer(class std::function<bool (class Player const &)>) const;
+    MCVAPI void forEachPlayer(class std::function<bool (class Player &)>);
     MCVAPI void forEachUser(class std::function<bool (class EntityContext &)>) const;
     MCVAPI void forceFlushRemovedPlayers();
     MCVAPI void forceRemoveEntity(class Actor &, bool);
@@ -228,16 +230,16 @@ public:
     MCVAPI struct AdventureSettings & getAdventureSettings();
     MCVAPI class BehaviorFactory & getBehaviorFactory() const;
     MCVAPI class BehaviorTreeGroup & getBehaviorTreeGroup() const;
-    MCVAPI class BiomeComponentFactory & getBiomeComponentFactory();
     MCVAPI class BiomeComponentFactory const & getBiomeComponentFactory() const;
+    MCVAPI class BiomeComponentFactory & getBiomeComponentFactory();
     MCVAPI class BiomeRegistry const & getBiomeRegistry() const;
     MCVAPI class BiomeRegistry & getBiomeRegistry();
     MCVAPI class BlockComponentFactory & getBlockComponentFactory();
     MCVAPI class BlockComponentFactory const & getBlockComponentFactory() const;
     MCVAPI class BlockDefinitionGroup * getBlockDefinitions() const;
     MCVAPI class BlockEventCoordinator & getBlockEventCoordinator();
-    //MCVAPI class BlockPalette const & getBlockPalette() const;
-    //MCVAPI class BlockPalette & getBlockPalette();
+    MCVAPI class BlockPalette const & getBlockPalette() const;
+    MCVAPI class BlockPalette & getBlockPalette();
     MCVAPI class BlockReducer * getBlockReducer() const;
     MCVAPI class std::weak_ptr<class BlockTypeRegistry> getBlockRegistry() const;
     MCVAPI unsigned int getChunkTickRange() const;
@@ -250,7 +252,7 @@ public:
     MCVAPI enum GameType getDefaultGameType() const;
     MCVAPI class BlockPos const & getDefaultSpawn() const;
     MCVAPI enum Difficulty getDifficulty() const;
-    //MCVAPI class Dimension * getDimension(class AutomaticID<class Dimension, int>) const;
+    MCVAPI class Dimension * getDimension(class AutomaticID<class Dimension, int>) const;
     MCVAPI class DimensionConversionData getDimensionConversionData() const;
     MCVAPI class std::optional<class DimensionDefinitionGroup> const getDimensionDefinitionGroup() const;
     MCVAPI class Factory<class Dimension, class Level &, class Scheduler &> const & getDimensionFactory() const;
@@ -286,13 +288,13 @@ public:
     MCVAPI std::string getLevelId() const;
     MCVAPI class LevelStorage const & getLevelStorage() const;
     MCVAPI class LevelStorage & getLevelStorage();
-    MCVAPI class Factory<class BaseLightTextureImageBuilder, class Level &, class Scheduler &> & getLightTextureImageBuilderFactory();
     MCVAPI class Factory<class BaseLightTextureImageBuilder, class Level &, class Scheduler &> const & getLightTextureImageBuilderFactory() const;
+    MCVAPI class Factory<class BaseLightTextureImageBuilder, class Level &, class Scheduler &> & getLightTextureImageBuilderFactory();
     MCVAPI class HitResult & getLiquidHitResult();
     MCVAPI class LootTables & getLootTables();
-    //MCVAPI class MapItemSavedData * getMapSavedData(class CompoundTag const &);
-    //MCVAPI class MapItemSavedData * getMapSavedData(class CompoundTag const *);
-    //MCVAPI class MapItemSavedData * getMapSavedData(struct ActorUniqueID);
+    MCVAPI class MapItemSavedData * getMapSavedData(class CompoundTag const &);
+    MCVAPI class MapItemSavedData * getMapSavedData(class CompoundTag const *);
+    MCVAPI class MapItemSavedData * getMapSavedData(struct ActorUniqueID);
     MCVAPI class Mob * getMob(struct ActorUniqueID) const;
     MCVAPI bool getMultiplayerGameIntent() const;
     MCVAPI class Bedrock::NonOwnerPointer<class NetEventCallback> getNetEventCallback() const;
@@ -309,9 +311,9 @@ public:
     MCVAPI enum Social::GamePublishSetting getPlatformBroadcastIntent() const;
     MCVAPI enum Social::GamePublishSetting getPlatformBroadcastMode() const;
     MCVAPI class Player * getPlatformPlayer(std::string const &) const;
-    //MCVAPI class Player * getPlayer(std::string const &) const;
-    //MCVAPI class Player * getPlayer(class mce::UUID const &) const;
-    //MCVAPI class Player * getPlayer(struct ActorUniqueID) const;
+    MCVAPI class Player * getPlayer(std::string const &) const;
+    MCVAPI class Player * getPlayer(class mce::UUID const &) const;
+    MCVAPI class Player * getPlayer(struct ActorUniqueID) const;
     MCVAPI class Abilities * getPlayerAbilities(struct ActorUniqueID const &);
     MCVAPI class Player * getPlayerByXuid(std::string const &) const;
     MCVAPI class mce::Color getPlayerColor(class Player const &) const;
@@ -324,8 +326,8 @@ public:
     MCVAPI std::string const & getPlayerPlatformOnlineId(class mce::UUID const &) const;
     MCVAPI std::string const & getPlayerXUID(class mce::UUID const &) const;
     MCVAPI class PortalForcer & getPortalForcer();
-    //MCVAPI class PositionTrackingDB::PositionTrackingDBClient * getPositionTrackerDBClient() const;
-    //MCVAPI class PositionTrackingDB::PositionTrackingDBServer * getPositionTrackerDBServer() const;
+    MCVAPI class PositionTrackingDB::PositionTrackingDBClient * getPositionTrackerDBClient() const;
+    MCVAPI class PositionTrackingDB::PositionTrackingDBServer * getPositionTrackerDBServer() const;
     MCVAPI class Player * getPrimaryLocalPlayer() const;
     MCVAPI class ProjectileFactory & getProjectileFactory() const;
     MCVAPI class Random & getRandom() const;
@@ -356,8 +358,8 @@ public:
     MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>> const getStructureManager() const;
     MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>> getStructureManager();
     MCVAPI class SubChunkRequestManager * getSubChunkRequestManager();
-    MCVAPI class SurfaceBuilderRegistry const & getSurfaceBuilderRegistry() const;
     MCVAPI class SurfaceBuilderRegistry & getSurfaceBuilderRegistry();
+    MCVAPI class SurfaceBuilderRegistry const & getSurfaceBuilderRegistry() const;
     MCVAPI class TaskGroup & getSyncTasksGroup();
     MCVAPI class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> & getTagRegistry();
     MCVAPI bool getTearingDown() const;
@@ -371,8 +373,8 @@ public:
     MCVAPI int getUserCount() const;
     MCVAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const & getUsers() const;
     MCVAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> & getUsers();
-    //MCVAPI enum Social::GamePublishSetting getXBLBroadcastIntent() const;
-    //MCVAPI enum Social::GamePublishSetting getXBLBroadcastMode() const;
+    MCVAPI enum Social::GamePublishSetting getXBLBroadcastIntent() const;
+    MCVAPI enum Social::GamePublishSetting getXBLBroadcastMode() const;
     MCVAPI void handleLevelEvent(enum LevelEvent, class CompoundTag const &);
     MCVAPI void handleLevelEvent(enum LevelEvent, class Vec3 const &, int);
     MCVAPI void handleSoundEvent(std::string const &, class Vec3 const &, float, float);
@@ -424,6 +426,7 @@ public:
     MCVAPI void registerTemporaryPointer(class _TickPtr &);
     MCVAPI class OwnerPtrT<struct EntityRefTraits> removeActorAndTakeEntity(class WeakEntityRef, bool);
     MCVAPI void removeAllNonPlayerEntities(struct ActorUniqueID);
+    MCVAPI void removeBlockSourceFromValidityTracking(class BlockSource *);
     MCVAPI void removeBossEventListener(class BossEventListener *);
     MCVAPI void removeDisplayEntity(class WeakEntityRef);
     MCVAPI class OwnerPtrT<struct EntityRefTraits> removeEntity(class Actor &);
@@ -471,8 +474,8 @@ public:
     MCVAPI void setMultiplayerGameIntent(bool);
     MCVAPI void setNetEventCallback(class Bedrock::NonOwnerPointer<class NetEventCallback>);
     MCVAPI void setPacketSender(class PacketSender *);
-    //MCVAPI void setPlatformBroadcastIntent(enum Social::GamePublishSetting);
-    //MCVAPI void setPlatformBroadcastMode(enum Social::GamePublishSetting);
+    MCVAPI void setPlatformBroadcastIntent(enum Social::GamePublishSetting);
+    MCVAPI void setPlatformBroadcastMode(enum Social::GamePublishSetting);
     MCVAPI void setPlayerAbilities(struct ActorUniqueID const &, class Abilities);
     MCVAPI void setPlayerMovementSettings(struct PlayerMovementSettings const &);
     MCVAPI void setRemotePlayerEventCoordinator(std::unique_ptr<class PlayerEventCoordinator> &&);
@@ -484,12 +487,12 @@ public:
     MCVAPI void setWorldTemplateOptionsUnlocked();
     MCVAPI void setXBLBroadcastIntent(enum Social::GamePublishSetting);
     MCVAPI void setXBLBroadcastMode(enum Social::GamePublishSetting);
-    //MCVAPI void spawnParticleEffect(std::string const &, class Vec3 const &, class Dimension *);
+    MCVAPI void spawnParticleEffect(std::string const &, class Vec3 const &, class Dimension *);
     MCVAPI void startLeaveGame();
     MCVAPI void suspendAndSave();
     MCVAPI void suspendPlayer(class Player &);
     MCVAPI class OwnerPtrT<struct EntityRefTraits> takeEntity(class WeakEntityRef, class LevelChunk *);
-    //MCVAPI void takePicture(class cg::ImageBuffer &, class Actor *, class Actor *, struct ScreenshotOptions &);
+    MCVAPI void takePicture(class cg::ImageBuffer &, class Actor *, class Actor *, struct ScreenshotOptions &);
     MCVAPI void tick();
     MCVAPI void tickEntities();
     MCVAPI void tickEntitySystems();
@@ -507,12 +510,16 @@ public:
     MCAPI class std::optional<struct DimensionDefinitionGroup::DimensionDefinition> getDimensionDefinition(std::string const &) const;
     MCAPI class LevelSeed64 getLevelSeed64() const;
     MCAPI class NpcDialogueStorage * getNpcDialogueStorage();
+    MCAPI class StrictEntityContext getSideBySideEntity() const;
     MCAPI double getTickDeltaTime() const;
     MCAPI bool isChunkInTickRange(class LevelChunk const &, class std::optional<int>) const;
     MCAPI enum NodeType isFree(class NavigationComponent &, class Actor &, class BlockPos const &, class BlockPos const &, class BlockPos const &, enum CanJumpIntoNode);
-    MCAPI void sendPerformanceTelemetry();
     MCAPI void setPerformanceTelemetryPeriodicCallback(class std::function<void (void)>);
     MCAPI bool use3DBiomeMaps() const;
+    MCAPI static float const AVERAGE_GAME_TICKS_PER_RANDOM_TICK_PER_BLOCK;
+    MCAPI static float const AVERAGE_RANDOM_TICKS_PER_BLOCK_PER_GAME_DAY;
+    MCAPI static float const AVERAGE_RANDOM_TICKS_PER_BLOCK_PER_MINUTE;
+    MCAPI static float const RANDOM_TICKS_PER_TICK_PER_SUBCHUNK;
     MCAPI static void addLevelComponents(class EntityContext &, class IRandom &, bool);
     MCAPI static void addSideBySideLevelComponents(class EntityContext &, bool);
     MCAPI static unsigned int createRandomSeed();
@@ -523,6 +530,7 @@ public:
     MCAPI class ServerLevelEventCoordinator & _getServerLevelEventCoordinator();
 
 //private:
+    MCAPI void _checkBlockSourceValidity();
     MCAPI void _cleanupDisconnectedPlayers();
     MCAPI class MapItemSavedData & _createMapSavedData(struct ActorUniqueID const &);
     MCAPI enum CrashDumpLogStringID _getCrashDumpLogCategory();
@@ -537,10 +545,10 @@ public:
     MCAPI void _saveSomeChunks();
     MCAPI void _syncTime(int);
 
+
+protected:
+
 private:
-    MCAPI static float const AVERAGE_GAME_TICKS_PER_RANDOM_TICK_PER_BLOCK;
-    MCAPI static float const AVERAGE_RANDOM_TICKS_PER_BLOCK_PER_GAME_DAY;
-    MCAPI static float const AVERAGE_RANDOM_TICKS_PER_BLOCK_PER_MINUTE;
-    MCAPI static float const RANDOM_TICKS_PER_TICK_PER_SUBCHUNK;	
+
 
 };

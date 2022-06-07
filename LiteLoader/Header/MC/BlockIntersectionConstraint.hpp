@@ -27,9 +27,9 @@ public:
     /*0*/ virtual ~BlockIntersectionConstraint();
     /*1*/ virtual bool isSatisfied(class IBlockWorldGenAPI const &, class BlockPos const &, enum Rotation const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKINTERSECTIONCONSTRAINT
-public:
 #endif
     MCAPI BlockIntersectionConstraint(class StructureTemplate &);
+
 
 
 };

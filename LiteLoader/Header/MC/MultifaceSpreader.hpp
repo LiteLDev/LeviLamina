@@ -27,7 +27,6 @@ public:
     /*2*/ virtual bool _canSpreadInto(class IBlockWorldGenAPI &, class Block const &, class BlockPos const &, unsigned char) const;
     /*3*/ virtual bool _isOtherBlockValidAsSource(class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIFACESPREADER
-public:
 #endif
     MCAPI class std::optional<struct std::pair<class BlockPos const, unsigned char const>> getSpreadFromFaceTowardDirection(class IBlockWorldGenAPI &, class Block const &, class Block const &, class BlockPos const &, unsigned char, unsigned char) const;
     MCAPI int spreadFromAllFacesTowardAllDirections(class IBlockWorldGenAPI &, class Block const &, class Block const &, class BlockPos const &) const;
@@ -38,6 +37,7 @@ public:
 
 //protected:
     MCAPI bool _canSpreadToFace(class IBlockWorldGenAPI &, class Block const &, class BlockPos const &, unsigned char) const;
+
 
 protected:
     MCAPI static std::vector<enum MultifaceSpreader::SpreadType> const ALL_SPREAD_TYPES;

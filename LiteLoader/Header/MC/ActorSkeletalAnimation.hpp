@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSKELETALANIMATION
-public:
 #endif
     MCAPI ActorSkeletalAnimation(std::string const &, std::string const &);
     MCAPI class ActorAnimationEvent & addActorEvent(float, std::string const &, enum CurrentCmdVersion, enum MolangVersion);
@@ -47,6 +46,7 @@ public:
     MCAPI void sortParticleEffectEvents();
     MCAPI void sortSoundEffectEvents();
     MCAPI ~ActorSkeletalAnimation();
+
 
 
 };

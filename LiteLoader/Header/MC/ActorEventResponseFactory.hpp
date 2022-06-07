@@ -26,10 +26,10 @@ public:
 public:
     /*0*/ virtual ~ActorEventResponseFactory();
     /*1*/ virtual void initializeFactory(class Experiments const &);
+    /*2*/ virtual void initSchema();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTRESPONSEFACTORY
-public:
 #endif
-    MCAPI void initSchema();
+
 
 
 };

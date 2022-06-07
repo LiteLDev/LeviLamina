@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYREGISTRY
-public:
 #endif
     MCAPI class WeakRefT<struct EntityRegistryRefTraits> getWeakRef();
     MCAPI ~EntityRegistry();
@@ -34,6 +33,7 @@ public:
 //private:
     MCAPI class EntityContext _createEntity();
     MCAPI void _destroyEntity(class EntityContext);
+
 
 protected:
 

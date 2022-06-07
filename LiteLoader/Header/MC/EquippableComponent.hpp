@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EQUIPPABLECOMPONENT
-public:
 #endif
     MCAPI EquippableComponent(class EquippableComponent &&);
     MCAPI class UpdateEquipPacket createDataPacket(class Actor &, enum ContainerID) const;
@@ -36,6 +35,7 @@ public:
     MCAPI class EquippableComponent & operator=(class EquippableComponent &&);
     MCAPI std::vector<class ItemDescriptor> const * tryGetSlotAllowedItems(int) const;
     MCAPI ~EquippableComponent();
+
 
 
 };

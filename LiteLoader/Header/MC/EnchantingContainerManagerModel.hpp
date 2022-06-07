@@ -31,15 +31,15 @@ public:
     /*8*/ virtual class ItemStack const & getSlot(int) const;
     /*9*/ virtual void setData(int, int);
     /*10*/ virtual void broadcastChanges();
-    /*15*/ virtual bool isValid(float);
-    /*16*/ virtual class ContainerScreenContext _postInit();
+    /*16*/ virtual bool isValid(float);
+    /*17*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTINGCONTAINERMANAGERMODEL
-public:
 #endif
     MCAPI EnchantingContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
     MCAPI std::vector<class ItemEnchantOption> const & getEnchantOptions() const;
     MCAPI void recalculateOptions();
     MCAPI static int const NUM_OPTIONS;
+
 
 
 };

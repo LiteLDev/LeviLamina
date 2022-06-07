@@ -25,11 +25,11 @@ public:
 
 public:
     /*0*/ virtual ~DwellerSystem();
-    /*1*/ virtual void registerEvents(class entt::dispatcher &);
+    /*1*/ virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
     /*2*/ virtual void tick(class EntityRegistry &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DWELLERSYSTEM
-public:
 #endif
+
 
 
 };

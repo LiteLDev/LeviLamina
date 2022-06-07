@@ -53,10 +53,8 @@ public:
     /*24*/ virtual void clearDeletedEntities();
     /*25*/ virtual bool canCreateViews() const;
     /*26*/ virtual std::unique_ptr<class BlendingDataProvider> tryGetBlendingDataProvider();
-    /*27*/ virtual class BiomeChunkBlendingAttenuator getBiomeHeightAttenuatorForLevelChunk(class ChunkPos const &);
-    /*28*/ virtual class std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();
+    /*27*/ virtual class std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKSOURCE
-public:
 #endif
     MCAPI ChunkSource(class Dimension *, int);
     MCAPI ChunkSource(std::unique_ptr<class ChunkSource>);
@@ -68,6 +66,7 @@ public:
     MCAPI class Dimension & getDimension() const;
     MCAPI class std::shared_ptr<class LevelChunk> getGeneratedChunk(class ChunkPos const &);
     MCAPI class Level & getLevel() const;
+    MCAPI void setShuttingDown(bool);
 
 //protected:
     MCAPI bool _checkAndDispatchTaskForLevelChunk(struct std::pair<class ChunkPos, enum ChunkState> const &, bool);
@@ -85,6 +84,7 @@ public:
     MCAPI void _loadChunkTask(class LevelChunk &);
     MCAPI void _postProcessingTask(class LevelChunk &, class ChunkViewSource &);
     MCAPI void _spawnChunkGenerationTasks(int, bool);
+
 
 protected:
 

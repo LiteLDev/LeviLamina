@@ -45,7 +45,6 @@ public:
     /*5*/ virtual bool carveEllipsoidVolume(class IBlockWorldGenAPI &, struct CaveFeatureUtils::CarverConfiguration const &, class Random &, class ChunkPos const &, class Vec3 const &, class BoundingBox const &, float, float, struct CaveFeatureUtils::CarvingParameters const &) const;
     /*6*/ virtual void addFeature(class IBlockWorldGenAPI &, class ChunkPos const &, class Random &, class ChunkPos const &, class RenderParams &, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams> &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAVEFEATURE
-public:
 #endif
     MCAPI CaveFeature();
     MCAPI float getWidthModifier(class RenderParams &) const;
@@ -55,6 +54,7 @@ public:
     MCAPI bool carveEllipsoid(class IBlockWorldGenAPI &, struct CaveFeatureUtils::CarverConfiguration const &, class Random &, class ChunkPos const &, class Vec3 const &, float, float, struct CaveFeatureUtils::CarvingParameters const &) const;
     MCAPI bool detectWater(class IBlockWorldGenAPI &, class BoundingBox const &) const;
     MCAPI static bool shouldSkipCarving(float, float, float, float, float);
+
 
 protected:
 

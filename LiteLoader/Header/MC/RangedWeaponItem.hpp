@@ -27,30 +27,30 @@ public:
 
 public:
     /*0*/ virtual ~RangedWeaponItem();
-    /*5*/ virtual void __unk_vfn_5();
     /*7*/ virtual void __unk_vfn_7();
     /*10*/ virtual void __unk_vfn_10();
-    /*12*/ virtual void __unk_vfn_12();
-    /*47*/ virtual void __unk_vfn_47();
-    /*49*/ virtual void __unk_vfn_49();
-    /*59*/ virtual int getEnchantValue() const;
-    /*62*/ virtual void __unk_vfn_62();
+    /*13*/ virtual void __unk_vfn_13();
+    /*15*/ virtual void __unk_vfn_15();
+    /*51*/ virtual void __unk_vfn_51();
+    /*53*/ virtual void __unk_vfn_53();
+    /*63*/ virtual int getEnchantValue() const;
     /*66*/ virtual void __unk_vfn_66();
-    /*67*/ virtual void __unk_vfn_67();
-    /*68*/ virtual void __unk_vfn_68();
+    /*70*/ virtual void __unk_vfn_70();
     /*71*/ virtual void __unk_vfn_71();
+    /*72*/ virtual void __unk_vfn_72();
     /*75*/ virtual void __unk_vfn_75();
-    /*76*/ virtual void __unk_vfn_76();
-    /*80*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
-    /*83*/ virtual void releaseUsing(class ItemStack &, class Player *, int) const;
-    /*85*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
-    /*89*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
-    /*111*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
+    /*79*/ virtual void __unk_vfn_79();
+    /*80*/ virtual void __unk_vfn_80();
+    /*84*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
+    /*87*/ virtual void releaseUsing(class ItemStack &, class Player *, int) const;
+    /*89*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
+    /*93*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
+    /*116*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANGEDWEAPONITEM
-public:
 #endif
     MCAPI RangedWeaponItem(std::string const &, int);
     MCAPI float getLaunchPower(int, int, int) const;
+
 
 
 };

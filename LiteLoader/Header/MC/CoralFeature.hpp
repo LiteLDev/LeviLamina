@@ -29,7 +29,6 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORALFEATURE
-public:
 #endif
 
 //private:
@@ -38,13 +37,13 @@ public:
     MCAPI void _buildPlantLike(class BlockSource &, class BlockPos const &, class Random &, std::vector<class BlockPos> &, std::vector<struct std::pair<class BlockPos, unsigned char>> &, class gsl::not_null<class Block const *>) const;
     MCAPI void _buildSmallClump(class BlockSource &, class BlockPos const &, class Random &, std::vector<class BlockPos> &, std::vector<struct std::pair<class BlockPos, unsigned char>> &, class gsl::not_null<class Block const *>) const;
     MCAPI void _buildSpire(class BlockSource &, class BlockPos const &, class Random &, std::vector<class BlockPos> &, std::vector<struct std::pair<class BlockPos, unsigned char>> &, class gsl::not_null<class Block const *>) const;
-    MCAPI void _placeCoral(class BlockSource &, class BlockPos const &, class Random &, std::vector<class BlockPos> &, std::vector<struct std::pair<class BlockPos, unsigned char>> &, int) const;
     MCAPI void _placeSideDecorations(class BlockSource &, class BlockPos const &, class Random &, unsigned char) const;
     MCAPI unsigned char _randomDirectionExcept(class Random &, unsigned char) const;
     MCAPI bool _setBlock(class BlockSource &, class BlockPos const &, class gsl::not_null<class Block const *>, int) const;
     MCAPI bool _setBlockOnSolid(class BlockSource &, class BlockPos const &, class gsl::not_null<class Block const *>, int) const;
     MCAPI void _starCorners(class BlockSource &, class Random &, class BlockPos const &, class gsl::not_null<class Block const *>, float, int, bool) const;
     MCAPI void _starFormation(class BlockSource &, class Random &, class BlockPos const &, class gsl::not_null<class Block const *>, float, int, bool) const;
+
 
 private:
 

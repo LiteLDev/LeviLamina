@@ -27,8 +27,8 @@ public:
     /*0*/ virtual ~PillagerOutpostStart();
     /*1*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PILLAGEROUTPOSTSTART
-public:
 #endif
+
 
 
 };

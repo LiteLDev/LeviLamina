@@ -30,9 +30,9 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWATERGOAL
-public:
 #endif
     MCAPI MoveToWaterGoal(class Mob &, float, int, int, int, float);
+
 
 
 };

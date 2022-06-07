@@ -2,13 +2,12 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "VibrationListenerConfig.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
-class WardenVibrationConfig : public VibrationListenerConfig {
+class WardenVibrationConfig {
 
 #define AFTER_EXTRA
 
@@ -23,13 +22,14 @@ public:
 
 
 public:
-    /*0*/ virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
-    /*1*/ virtual bool isValidVibration(class GameEvent const &, class Actor const *);
-    /*2*/ virtual bool shouldListen(class BlockSource &, class BlockPos, class GameEvent const &, class Actor const *);
+    /*0*/ virtual ~WardenVibrationConfig();
+    /*1*/ virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
+    /*2*/ virtual bool isValidVibration(class GameEvent const &);
+    /*3*/ virtual bool shouldListen(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WARDENVIBRATIONCONFIG
-public:
 #endif
     MCAPI WardenVibrationConfig(class Actor &, unsigned short);
+
 
 
 };

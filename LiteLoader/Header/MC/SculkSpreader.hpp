@@ -22,13 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSPREADER
-public:
 #endif
     MCAPI SculkSpreader();
     MCAPI SculkSpreader(bool, int, int, int, int);
     MCAPI void addCursors(class BlockPos const &, int);
     MCAPI void clearCursors();
-    MCAPI void disableSpreading();
     MCAPI int getAdditionalDecayRate() const;
     MCAPI int getChargeDecayRate() const;
     MCAPI class BlockPos getCursorPosition(int) const;
@@ -36,13 +34,14 @@ public:
     MCAPI int getMaxCharge() const;
     MCAPI int getNoGrowthRadius() const;
     MCAPI int getNumberOfCursors() const;
+    MCAPI class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> const & getSculkReplaceableBlocks();
     MCAPI int getTotalCharge() const;
-    MCAPI bool isSpreadingDisabled() const;
     MCAPI bool isWorldGen() const;
     MCAPI void load(class CompoundTag const &);
     MCAPI void save(class CompoundTag &) const;
-    MCAPI void updateCursors(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class Random &);
+    MCAPI void updateCursors(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class Random &, bool);
     MCAPI ~SculkSpreader();
+
 
 
 };

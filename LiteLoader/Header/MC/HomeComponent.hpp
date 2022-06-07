@@ -24,10 +24,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOMECOMPONENT
-public:
 #endif
     MCAPI HomeComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI class AutomaticID<class Dimension, int> getHomeDimension() const;
     MCAPI class BlockPos getHomePos() const;
     MCAPI int getRestrictionRadius() const;
@@ -38,6 +37,7 @@ public:
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void setHome(class BlockPos const &, class AutomaticID<class Dimension, int> const &);
     MCAPI void tick(class Actor &);
+
 
 
 };

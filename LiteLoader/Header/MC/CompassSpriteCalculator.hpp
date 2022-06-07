@@ -25,13 +25,18 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPASSSPRITECALCULATOR
-public:
 #endif
-    MCAPI CompassSpriteCalculator(float, float);
+    MCAPI CompassSpriteCalculator(class std::function<class BlockPos (class BlockSource const *, class Actor *)>, class std::function<bool (class BlockSource const *, class Actor *)>, float, float);
     MCAPI int getFrame() const;
     MCAPI int update(class Actor &, bool);
-    MCAPI int updateFromPosition(class BlockSource const *, class BlockPos const &, float, float, float, bool, bool, bool, bool);
-    MCAPI int updateFromPosition(class BlockSource const *, float, float, float, bool, bool);
+    MCAPI int updateFromPosition(class BlockSource const *, class BlockPos const &, float, float, float, bool, bool, bool);
+    MCAPI int updateFromPosition(class BlockSource const *, class Actor *, float, float, float, bool, bool);
+    MCAPI ~CompassSpriteCalculator();
+    MCAPI static class std::function<bool (class BlockSource const *, class Actor *)> isInLastDeathDimension();
+    MCAPI static class std::function<bool (class BlockSource const *, class Actor *)> isInOverworldDimension();
+    MCAPI static class std::function<class BlockPos (class BlockSource const *, class Actor *)> pointTowardsLastDeathLocation();
+    MCAPI static class std::function<class BlockPos (class BlockSource const *, class Actor *)> pointTowardsSpawnPoint();
+
 
 
 };

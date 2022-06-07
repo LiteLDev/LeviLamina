@@ -47,7 +47,6 @@ public:
     /*20*/ virtual bool hasUpgradeFiles() const;
     /*21*/ virtual class ContentIdentity readContentIdentity() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKACCESSSTRATEGY
-public:
 #endif
     MCAPI PackAccessStrategy();
     MCAPI bool hasGeneratedAssetSet() const;
@@ -57,6 +56,7 @@ public:
     MCAPI void _addToAssetSet(class Core::Path const &);
     MCAPI void _deleteFromAssetSet(class Core::PathBuffer<std::string> const &);
     MCAPI bool _isInAssetSet(class Core::Path const &) const;
+
 
 protected:
 

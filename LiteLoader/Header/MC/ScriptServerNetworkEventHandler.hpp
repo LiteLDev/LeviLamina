@@ -28,11 +28,11 @@ public:
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct ChatEvent &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSERVERNETWORKEVENTHANDLER
-public:
 #endif
 
 //private:
     MCAPI bool _handleChat(struct ChatEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>) const;
+
 
 private:
 

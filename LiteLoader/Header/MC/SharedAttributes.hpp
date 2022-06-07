@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAREDATTRIBUTES
-public:
 #endif
     MCAPI static class Attribute const ABSORPTION;
     MCAPI static class Attribute const ATTACK_DAMAGE;
@@ -49,6 +48,7 @@ public:
     MCAPI static void _loadAttribute(class AttributeInstance &, class CompoundTag const *);
     MCAPI static std::unique_ptr<class CompoundTag> _saveAttribute(class AttributeInstance const &);
     MCAPI static std::unique_ptr<class CompoundTag> _saveAttributeModifier(class AttributeModifier const &);
+
 
 private:
 

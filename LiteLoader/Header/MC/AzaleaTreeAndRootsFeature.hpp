@@ -29,12 +29,12 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AZALEATREEANDROOTSFEATURE
-public:
 #endif
 
 //private:
     MCAPI bool _isLushGroundReplaceable(class BlockSource &, class BlockPos const &) const;
     MCAPI bool _tryPlaceAzaleaTree(class BlockSource &, class BlockPos const &, class Random &, unsigned int) const;
+
 
 private:
 

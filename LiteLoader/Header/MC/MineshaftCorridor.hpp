@@ -26,12 +26,11 @@ public:
 
 public:
     /*0*/ virtual ~MineshaftCorridor();
-    /*3*/ virtual enum StructurePieceType getType() const;
-    /*4*/ virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
-    /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-    /*6*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
+    /*2*/ virtual enum StructurePieceType getType() const;
+    /*3*/ virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
+    /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
+    /*5*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINESHAFTCORRIDOR
-public:
 #endif
     MCAPI void _placeCobWeb(class BlockSource &, class BoundingBox const &, class Random &, float, int, int, int);
     MCAPI void _placeSupport(class BlockSource &, class BoundingBox const &, int, int, int, int, int, class Random &);
@@ -39,6 +38,7 @@ public:
 //private:
     MCAPI void _fillPillarDownOrChainUp(class BlockSource &, int, int, int, class BoundingBox const &);
     MCAPI void _placeDoubleLowerOrUpperSupport(class BlockSource &, class BoundingBox const &, int, int, int);
+
 
 private:
 

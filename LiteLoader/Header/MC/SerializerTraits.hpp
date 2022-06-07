@@ -26,6 +26,7 @@ public:
     MCAPI SerializerTraits();
     MCAPI struct SerializerTraits & arrayLengthConstraint(unsigned __int64, unsigned __int64);
     MCAPI struct SerializerTraits & enumMapper(class SerializerEnumMapping const *);
+    MCAPI struct SerializerTraits & error(std::string);
     MCAPI std::string const & error() const;
     MCAPI struct SerializerTraits & factory(class entt::meta_any ( *)(std::string const &), class entt::meta_any ( *)(std::string const &, void *));
     MCAPI bool isArrayMaxLengthConstraintSet() const;

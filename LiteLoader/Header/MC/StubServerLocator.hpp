@@ -42,13 +42,13 @@ public:
     /*15*/ virtual float getPingTimeForGUID(std::string const &);
     /*16*/ virtual void checkCanConnectToCustomServerAsync(std::string, int, class std::function<void (bool)>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STUBSERVERLOCATOR
-public:
     MCVAPI void addCustomServer(class AsynchronousIPResolver const &, int);
     MCVAPI void addCustomServer(std::string const &, int);
     MCVAPI bool isIPv4Supported() const;
     MCVAPI bool isIPv6Supported() const;
 #endif
     MCAPI StubServerLocator();
+
 
 
 };

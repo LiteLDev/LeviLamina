@@ -27,10 +27,11 @@ public:
 public:
     /*0*/ virtual ~FaceDirectionalBlock();
     /*19*/ virtual void __unk_vfn_19();
-    /*30*/ virtual void __unk_vfn_30();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -65,12 +66,12 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FACEDIRECTIONALBLOCK
-public:
 #endif
     MCAPI FaceDirectionalBlock(std::string const &, int, class Material const &, bool, float);
     MCAPI static enum Flip getFaceFlipStatic(unsigned char, class Block const &, bool);
     MCAPI static unsigned char getFacingDirection(class Block const &, bool);
     MCAPI static unsigned char getMappedFaceStatic(unsigned char, class Block const &, bool);
+
 
 
 };

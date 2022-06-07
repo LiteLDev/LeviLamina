@@ -36,12 +36,11 @@ public:
     /*0*/ virtual ~Block();
     /*1*/ virtual enum BlockRenderLayer getRenderLayer() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCK
-public:
 #endif
     MCAPI Block(unsigned short, class gsl::not_null<class BlockLegacy *>);
     MCAPI Block(unsigned short, class gsl::not_null<class BlockLegacy *>, class CompoundTag, unsigned int const &);
-    MCAPI void addAABBs(class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
-    MCAPI bool addCollisionShapes(class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
+    MCAPI void addAABBs(class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
+    MCAPI bool addCollisionShapes(class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
     MCAPI class Block & addTag(class HashedString const &);
     MCAPI void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     MCAPI class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &) const;
@@ -57,9 +56,11 @@ public:
     MCAPI bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     MCAPI bool canBeOriginalSurface() const;
     MCAPI bool canConnect(class Block const &, unsigned char, class Block const &) const;
+    MCAPI bool canDamperVibrations() const;
     MCAPI bool canHaveExtraData() const;
     MCAPI bool canHurtAndBreakItem() const;
     MCAPI bool canInstatick() const;
+    MCAPI bool canOccludeVibrations() const;
     MCAPI bool canProvideFullSupport(unsigned char) const;
     MCAPI bool canProvideMultifaceSupport(unsigned char) const;
     MCAPI bool canProvideSupport(unsigned char, enum BlockSupportType) const;
@@ -92,6 +93,8 @@ public:
     MCAPI std::string getDescriptionId() const;
     MCAPI float getDestroySpeed() const;
     MCAPI int getDirectSignal(class BlockSource &, class BlockPos const &, int) const;
+    MCAPI class EntityContext const & getEntity() const;
+    MCAPI class EntityContext & getEntityForModification() const;
     MCAPI float getExplosionResistance(class Actor *) const;
     MCAPI int getFlameOdds() const;
     MCAPI float getFriction() const;
@@ -114,10 +117,10 @@ public:
     MCAPI int getVariant() const;
     MCAPI class AABB const & getVisualShape(class AABB &, bool) const;
     MCAPI class AABB const & getVisualShapeInWorld(class BlockSource &, class BlockPos const &, class AABB &, bool) const;
-    MCAPI void handleEntityInside(class BlockSource &, class BlockPos const &, class Actor *, class Vec3 &) const;
     MCAPI bool hasBlockEntity() const;
     MCAPI bool hasComparatorSignal() const;
     MCAPI bool hasProperty(enum BlockProperty) const;
+    MCAPI bool hasPropertyNoLock(enum BlockProperty) const;
     MCAPI bool const hasRuntimeId() const;
     MCAPI bool hasState(class ItemState const &) const;
     MCAPI bool hasTag(class HashedString const &) const;
@@ -146,7 +149,6 @@ public:
     MCAPI bool isPartialBlock(class BlockSource const &, class BlockPos const &) const;
     MCAPI bool isPreservingMediumWhenPlaced(class Block const &) const;
     MCAPI bool isRailBlock() const;
-    MCAPI bool isSculkReplaceable(class Block const &) const;
     MCAPI bool isSignalSource() const;
     MCAPI bool isSlabBlock() const;
     MCAPI bool isSolid() const;
@@ -158,7 +160,6 @@ public:
     MCAPI bool isThinFenceBlock() const;
     MCAPI bool isTopPartialBlock(class BlockSource const &, class BlockPos const &) const;
     MCAPI bool isUnbreakable() const;
-    MCAPI bool isVibrationBlocking() const;
     MCAPI bool isWallBlock() const;
     MCAPI bool isWaterBlocking() const;
     MCAPI class Block const & keepState(class ItemState const &) const;
@@ -208,8 +209,8 @@ public:
     MCAPI void trySpawnResourcesOnExplosion(class BlockSource &, class BlockPos const &, class Block const &, std::vector<class Item const *> *, float, int) const;
     MCAPI bool tryToPlace(class BlockSource &, class BlockPos const &, struct ActorBlockSyncMessage const *) const;
     MCAPI bool tryToTill(class BlockSource &, class BlockPos const &, class Actor &, class ItemStack &) const;
-    MCAPI void updateEntityAfterFallOn(class BlockPos const &, struct IActorMovementProxy &) const;
-    MCAPI bool updateTallestCollisionShape(class BlockSource &, class BlockPos const &, class AABB const &, class optional_ref<class GetCollisionShapeInterface const>, class AABB &, class Vec3 const &, float &) const;
+    MCAPI void updateEntityAfterFallOn(class BlockPos const &, struct UpdateEntityAfterFallOnInterface &) const;
+    MCAPI bool updateTallestCollisionShape(class BlockSource const &, class BlockPos const &, class AABB const &, class optional_ref<class GetCollisionShapeInterface const>, class AABB &, class Vec3 const &, float &) const;
     MCAPI bool use(class Player &, class BlockPos const &, unsigned char) const;
     MCAPI static std::string const BLOCK_DESCRIPTION_PREFIX;
     MCAPI static float const SIZE_OFFSET;
@@ -219,7 +220,10 @@ public:
     MCAPI void setRuntimeId(unsigned int const &) const;
 
 //private:
+    MCAPI bool _isSolid() const;
+    MCAPI class BlockTypeRegistryReadLock _lockRegistryForRead() const;
     MCAPI void _tryInitEntityIfNotInitialized();
+
 
 protected:
 

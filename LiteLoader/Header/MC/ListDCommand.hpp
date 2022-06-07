@@ -28,9 +28,9 @@ public:
     /*0*/ virtual ~ListDCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LISTDCOMMAND
-public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
+
 
 
 };

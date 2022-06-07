@@ -25,9 +25,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHANNELTRANSFORM
-public:
 #endif
     MCAPI bool getDataValues(class Vec3 &, class Vec3 &) const;
+
 
 
 };

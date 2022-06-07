@@ -26,10 +26,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSETTING
-public:
 #endif
     MCAPI void set(class Json::Value const &);
     MCAPI ~PackSetting();
+
 
 
 };

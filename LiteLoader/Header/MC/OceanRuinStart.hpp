@@ -27,9 +27,9 @@ public:
 public:
     /*0*/ virtual ~OceanRuinStart();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANRUINSTART
-public:
 #endif
     MCAPI void createRuin(class Dimension &, class Random &, int, int);
+
 
 
 };

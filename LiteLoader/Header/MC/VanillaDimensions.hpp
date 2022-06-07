@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLADIMENSIONS
-public:
 #endif
     MCAPI static class AutomaticID<class Dimension, int> const Nether;
     MCAPI static class AutomaticID<class Dimension, int> const Overworld;
@@ -39,6 +38,7 @@ public:
     MCAPI static std::string const toString(class AutomaticID<class Dimension, int> const &);
 
 //protected:
+
 
 protected:
     MCAPI static class BidirectionalUnorderedMap<std::string, class AutomaticID<class Dimension, int>> const DimensionMap;

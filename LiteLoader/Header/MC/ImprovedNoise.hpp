@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMPROVEDNOISE
-public:
 #endif
     MCAPI ImprovedNoise(class IRandom &, struct YBlendingBugSettings);
     MCAPI float _getValue(class Vec3 const &) const;
@@ -34,6 +33,7 @@ public:
 //private:
     MCAPI void _blendCubeCorners(class Vec3 const &, int, int, int, float, float &, float &, float &, float &) const;
     MCAPI void _init(class Vec3 const &, class IRandom &, struct YBlendingBugSettings);
+
 
 private:
 

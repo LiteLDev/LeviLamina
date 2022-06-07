@@ -29,6 +29,7 @@ public:
 public:
     MCAPI FeedItem(struct FeedItem const &);
     MCAPI void addEffect(struct FeedItem::Effect const &);
+    MCAPI struct FeedItem & operator=(struct FeedItem &&);
     MCAPI ~FeedItem();
 
 protected:

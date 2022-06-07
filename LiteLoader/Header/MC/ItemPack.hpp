@@ -22,11 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMPACK
-public:
 #endif
     MCAPI ItemPack();
     MCAPI void add(class RecipeIngredient const &, int);
     MCAPI ~ItemPack();
+
 
 
 };

@@ -25,9 +25,9 @@ public:
 public:
     /*0*/ virtual ~ScriptFireImmuneComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFIREIMMUNECOMPONENT
-public:
 #endif
     MCAPI static class HashedString const & getHashedName();
+
 
 
 };

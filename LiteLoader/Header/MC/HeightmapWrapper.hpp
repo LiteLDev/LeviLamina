@@ -23,11 +23,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HEIGHTMAPWRAPPER
-public:
 #endif
     MCAPI bool empty() const;
     MCAPI short getHeightAt(class Pos const &) const;
     MCAPI static class HeightmapWrapper create(std::vector<short> const *, short);
+
 
 
 };

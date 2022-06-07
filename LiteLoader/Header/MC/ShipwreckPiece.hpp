@@ -26,15 +26,15 @@ public:
 
 public:
     /*0*/ virtual ~ShipwreckPiece();
-    /*3*/ virtual enum StructurePieceType getType() const;
-    /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
+    /*2*/ virtual enum StructurePieceType getType() const;
+    /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIPWRECKPIECE
-public:
 #endif
 
 //private:
     MCAPI static class BlockPos _calculateTargetPos(class BlockSource &, class BlockPos, enum Rotation, class BlockPos);
     MCAPI static class BlockPos _calculateTargetPosLegacy(class BlockSource &, class BlockPos, enum Rotation, class BlockPos);
+
 
 private:
     MCAPI static std::string const STRUCTURE_SHIPWRECK_TYPES[];

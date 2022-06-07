@@ -13,11 +13,14 @@ namespace SculkUtils {
 
 #undef AFTER_EXTRA
     MCAPI bool canSpreadIntoBlock(class Block const &);
+    MCAPI class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> const generateSculkReplaceableBlocks();
+    MCAPI class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> const generateSculkReplaceableBlocksWorldgen();
     MCAPI bool isPosInTickingRange(class BlockSource &, class BlockPos const &);
     MCAPI bool isSculk(class Block const &);
     MCAPI bool isSculkOrSculkVein(class Block const &);
+    MCAPI bool isSculkReplaceable(class Block const &, class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> const &);
     MCAPI bool isSculkVein(class Block const &);
-    MCAPI bool isSculkVeinWithSubstrateAccess(class IBlockWorldGenAPI &, class Block const &, class BlockPos const &);
+    MCAPI bool isSculkVeinWithSubstrateAccess(class IBlockWorldGenAPI &, class Block const &, class BlockPos const &, class SculkSpreader &);
     MCAPI void requestChargeEffects(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, int, int);
     MCAPI void requestChargePopEffects(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &);
 

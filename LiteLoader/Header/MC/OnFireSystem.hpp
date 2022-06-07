@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONFIRESYSTEM
-public:
 #endif
     MCAPI static void extinguishFire(class Actor &);
     MCAPI static void onFireChanged(class Actor &);
@@ -35,6 +34,7 @@ public:
 
 //protected:
     MCAPI static bool _extinguishFireIfInWater(class Actor &);
+
 
 protected:
 

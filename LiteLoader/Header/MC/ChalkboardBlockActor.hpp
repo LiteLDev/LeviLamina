@@ -42,7 +42,6 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHALKBOARDBLOCKACTOR
-public:
 #endif
     MCAPI ChalkboardBlockActor(class BlockPos const &);
     MCAPI enum ChalkboardSize const getChalkboardSize() const;
@@ -57,6 +56,7 @@ public:
 
 //private:
     MCAPI static struct ChalkboardBlockActor::ChalkboardFinder _findChalkboard(class BlockSource &, class BlockPos const &);
+
 
 private:
 

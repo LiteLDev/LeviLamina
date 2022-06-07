@@ -27,9 +27,9 @@ public:
 public:
     /*0*/ virtual ~ScriptNavigationFlyComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTNAVIGATIONFLYCOMPONENT
-public:
 #endif
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptNavigationFlyComponent> bind(struct Scripting::Version);
+
 
 
 };

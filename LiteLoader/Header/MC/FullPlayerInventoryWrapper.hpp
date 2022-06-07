@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FULLPLAYERINVENTORYWRAPPER
-public:
 #endif
     MCAPI FullPlayerInventoryWrapper(class PlayerInventory &, class SimpleContainer &, class SimpleContainer &, class InventoryTransactionManager *, class Player *);
     MCAPI int clearAllItems();
@@ -38,6 +37,7 @@ public:
     MCAPI int _removeCursorItem(class ItemStack const &, bool, int);
     MCAPI int _removeSimpleContainerItem(class SimpleContainer &, enum ContainerID, int, class ItemStack const &, bool, int);
     MCAPI void _sendCursorSlotPacket() const;
+
 
 private:
 

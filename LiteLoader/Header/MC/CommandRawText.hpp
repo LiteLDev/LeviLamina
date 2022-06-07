@@ -32,9 +32,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDRAWTEXT
-public:
 #endif
     MCAPI std::string const & getText() const;
+
 
 
 };

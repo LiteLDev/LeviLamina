@@ -56,7 +56,6 @@ public:
     /*31*/ virtual void pushElement(unsigned __int64);
     /*32*/ virtual void pop();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTSCHEMAREADER
-public:
     MCVAPI short asInt16() const;
     MCVAPI int asInt32() const;
     MCVAPI __int64 asInt64() const;
@@ -76,6 +75,7 @@ public:
     MCVAPI bool isUInt8() const;
 #endif
     MCAPI NBTSchemaReader(class gsl::not_null<class CompoundTag const *>);
+
 
 
 };

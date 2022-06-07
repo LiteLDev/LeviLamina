@@ -25,13 +25,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PETSLEEPWITHOWNERSTATE
-public:
     MCVAPI void start();
     MCVAPI void stop();
 #endif
 
 //protected:
     MCAPI void dampenSpeed();
+
 
 protected:
 

@@ -28,10 +28,10 @@ public:
 public:
     /*0*/ virtual ~FlushableStorageAreaEnv();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLUSHABLESTORAGEAREAENV
-public:
     MCVAPI void flushToPermanentStorage();
 #endif
     MCAPI FlushableStorageAreaEnv(class leveldb::Env *, class std::shared_ptr<class Core::FileStorageArea>);
+
 
 
 };

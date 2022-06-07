@@ -25,9 +25,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IUNKNOWNBLOCKTYPEREGISTRY
-public:
     MCVAPI ~IUnknownBlockTypeRegistry();
 #endif
+
 
 
 };

@@ -27,7 +27,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HTTPHEADERS
-public:
 #endif
     MCAPI HttpHeaders();
     MCAPI void clear();
@@ -36,6 +35,7 @@ public:
     MCAPI std::string getStatusCode() const;
     MCAPI enum HttpHeaders::ParseState parse(class RakNet::BitStream &);
     MCAPI ~HttpHeaders();
+
 
 
 };

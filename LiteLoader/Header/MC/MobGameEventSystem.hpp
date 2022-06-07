@@ -25,13 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~MobGameEventSystem();
-    /*1*/ virtual void registerEvents(class entt::dispatcher &);
+    /*1*/ virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBGAMEEVENTSYSTEM
-public:
 #endif
 
 //private:
     MCAPI static void _onActorDie(struct ActorDieEvent &);
+
 
 private:
 

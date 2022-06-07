@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CIRCUITSCENEGRAPH
-public:
 #endif
     MCAPI CircuitSceneGraph();
     MCAPI void add(class BlockPos const &, std::unique_ptr<class BaseCircuitComponent>);
@@ -44,6 +43,7 @@ public:
     MCAPI void removeComponent(class BlockPos const &);
     MCAPI void removeStaleRelationships();
     MCAPI void scheduleRelationshipUpdate(class BlockPos const &, class BaseCircuitComponent *);
+
 
 private:
 

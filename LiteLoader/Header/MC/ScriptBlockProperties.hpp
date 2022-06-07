@@ -25,9 +25,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKPROPERTIES
-public:
 #endif
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockProperties> bind(struct Scripting::Version);
+
 
 
 };

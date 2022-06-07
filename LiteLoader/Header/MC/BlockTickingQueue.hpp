@@ -32,7 +32,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKTICKINGQUEUE
-public:
 #endif
     MCAPI void acquireAllRandomTicks(class LevelChunk &);
     MCAPI void acquireAllTicks(class BlockTickingQueue &);
@@ -65,6 +64,7 @@ public:
 //private:
     MCAPI void _acquireAllTicks(class BlockTickingQueue &);
     MCAPI void _addToNextTickQueue(class BlockPos const &, class Block const &, int, int);
+
 
 protected:
 

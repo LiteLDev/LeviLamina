@@ -27,7 +27,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POTION
-public:
 #endif
     MCAPI Potion(class Potion const &);
     MCAPI void appendFormattedPotionText(std::string &, enum Potion::PotionType, enum Potion::PotionVariant, class Player const &, float) const;
@@ -100,6 +99,7 @@ public:
     MCAPI std::string _getDescriptionIdCombiningStrings(enum Potion::PotionType) const;
     MCAPI std::string _getDescriptionIdSingleString(enum Potion::PotionType) const;
     MCAPI static void addPotion(class std::shared_ptr<class Potion const>);
+
 
 private:
     MCAPI static int mLastId;

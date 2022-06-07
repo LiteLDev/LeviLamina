@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKINSTANCE
-public:
 #endif
     MCAPI PackInstance(class PackInstance &&);
     MCAPI PackInstance(class PackInstance const &);
@@ -56,6 +55,7 @@ public:
 
 //private:
     MCAPI bool _isPackPointerValid() const;
+
 
 private:
 

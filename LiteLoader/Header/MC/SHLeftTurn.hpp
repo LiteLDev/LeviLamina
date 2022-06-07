@@ -26,12 +26,12 @@ public:
 
 public:
     /*0*/ virtual ~SHLeftTurn();
-    /*3*/ virtual enum StructurePieceType getType() const;
-    /*4*/ virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
-    /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
+    /*2*/ virtual enum StructurePieceType getType() const;
+    /*3*/ virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
+    /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHLEFTTURN
-public:
 #endif
+
 
 
 };

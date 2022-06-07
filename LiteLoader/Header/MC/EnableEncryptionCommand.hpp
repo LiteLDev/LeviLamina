@@ -28,11 +28,11 @@ public:
     /*0*/ virtual ~EnableEncryptionCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENABLEENCRYPTIONCOMMAND
-public:
 #endif
     MCAPI static void setup(class CommandRegistry &, class IMinecraftApp &);
 
 //private:
+
 
 private:
     MCAPI static class IMinecraftApp * mApp;

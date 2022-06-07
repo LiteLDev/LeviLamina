@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKERBOXBLOCKACTOR
-public:
     MCVAPI bool _detectEntityObstruction(class BlockSource &) const;
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
@@ -49,6 +48,7 @@ public:
     MCAPI void _calculateBB();
     MCAPI class Vec3 _calculateMovementWithCollisions(class BlockSource &, class Actor *) const;
     MCAPI void _moveCollidedEntities(class BlockSource &) const;
+
 
 private:
     MCAPI static int const ITEMS_SIZE;

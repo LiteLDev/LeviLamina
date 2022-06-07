@@ -37,7 +37,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTOBJECTPARSER
-public:
 #endif
     MCAPI static std::string const RAW_TEXT_ERROR_NOT_ARRAY;
     MCAPI static std::string const RAW_TEXT_ERROR_NOT_OBJECT;
@@ -59,6 +58,7 @@ public:
     MCAPI static bool _parseSelectorTextObject(class TextObjectRoot &, std::string, struct TextObjectParser::ServerData *, struct TextObjectParser::ErrorLocalization &);
     MCAPI static bool _textObjectFromJson(class Json::Value const &, class TextObjectRoot &, struct TextObjectParser::ServerData *, struct TextObjectParser::ErrorLocalization &);
     MCAPI static bool _textObjectFromString(std::string const &, class TextObjectRoot &, struct TextObjectParser::ServerData *, struct TextObjectParser::ErrorLocalization &);
+
 
 private:
 

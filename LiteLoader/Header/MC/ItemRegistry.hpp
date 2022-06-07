@@ -37,7 +37,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMREGISTRY
-public:
 #endif
     MCAPI static class gsl::basic_string_span<char const, -1> const MINECRAFT_NAMESPACE;
     MCAPI static std::string _parseItemDefinition(std::string const &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum ItemVersion, enum PackType);
@@ -82,9 +81,11 @@ public:
     MCAPI static void shutdown();
     MCAPI static void startRegistration();
     MCAPI static void unregisterItem(class HashedString const &);
+    MCAPI static std::vector<std::string> validateServerItemComponents(std::vector<struct std::pair<std::string, class CompoundTag>> const &);
 
 //private:
     MCAPI static void _loadItemDefinition(class Json::Value &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum ItemVersion, enum PackType);
+
 
 private:
     MCAPI static std::vector<class HashedString> mAttachableDefinitions;

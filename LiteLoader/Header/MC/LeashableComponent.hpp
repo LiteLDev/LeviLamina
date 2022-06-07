@@ -25,11 +25,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEASHABLECOMPONENT
-public:
 #endif
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     MCAPI void leash(class Actor &, class Actor &);
     MCAPI void unleash(class Actor &);
+
 
 
 };

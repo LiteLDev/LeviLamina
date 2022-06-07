@@ -2,14 +2,13 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "ContainerScreenValidatorBase.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class CartographyContainerScreenValidator : public ContainerScreenValidatorBase {
+class CartographyContainerScreenValidator {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -25,10 +24,13 @@ public:
 
 public:
     /*0*/ virtual ~CartographyContainerScreenValidator();
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual bool isCraftingImplemented();
+    /*3*/ virtual struct ContainerValidationCraftResult getCraftResult(class ContainerScreenContext const &, class ContainerScreenValidation &, std::unique_ptr<struct ContainerValidationCraftInputs>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CARTOGRAPHYCONTAINERSCREENVALIDATOR
-public:
 #endif
     MCAPI CartographyContainerScreenValidator();
+
 
 
 };

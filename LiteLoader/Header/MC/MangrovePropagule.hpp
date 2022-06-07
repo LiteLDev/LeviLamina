@@ -2,13 +2,13 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "StemBlock.hpp"
+#include "BushBlock.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
-class MangrovePropagule : public StemBlock {
+class MangrovePropagule : public BushBlock {
 
 #define AFTER_EXTRA
 
@@ -25,10 +25,11 @@ public:
 public:
     /*0*/ virtual ~MangrovePropagule();
     /*19*/ virtual void __unk_vfn_19();
-    /*30*/ virtual void __unk_vfn_30();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -59,25 +60,28 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*144*/ virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
+    /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
     /*153*/ virtual class BlockLegacy & init();
     /*165*/ virtual void __unk_vfn_165();
+    /*166*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /*179*/ virtual void __unk_vfn_179();
     /*180*/ virtual void __unk_vfn_180();
     /*185*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*187*/ virtual void __unk_vfn_187();
+    /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MANGROVEPROPAGULE
-public:
 #endif
-    MCAPI MangrovePropagule(std::string const &, int, class BlockLegacy const &);
+    MCAPI MangrovePropagule(std::string const &, int);
 
 //private:
+    MCAPI bool _growTree(class BlockSource &, class BlockPos const &, class Random &) const;
+    MCAPI bool _isFullyGrown(class Block const &) const;
+    MCAPI bool _isHanging(class Block const &) const;
+
 
 private:
-    MCAPI static int const CHANCE_TO_GROW;
-    MCAPI static int const DEFAULT_GROWTH;
-    MCAPI static int const MAX_GROWTH;
 
 
 };

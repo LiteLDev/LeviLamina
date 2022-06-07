@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENETICSDEFINITION
-public:
 #endif
     MCAPI GeneticsDefinition();
     MCAPI void addGeneDefinition(struct GeneDefinition const &);
@@ -33,6 +32,7 @@ public:
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GeneticsDefinition>> &);
 
 //private:
+
 
 private:
     MCAPI static float const DEFAULT_MUTATION_RATE;

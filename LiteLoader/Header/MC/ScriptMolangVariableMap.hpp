@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMOLANGVARIABLEMAP
-public:
 #endif
     MCAPI class MolangVariableMap & getVariableMap();
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptMolangVariableMap> setColorRBG(std::string const &, class ScriptColor const &);
@@ -32,6 +31,7 @@ public:
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptMolangVariableMap> setVector3(std::string const &, class ScriptVector const &);
     MCAPI ~ScriptMolangVariableMap();
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMolangVariableMap> bind(struct Scripting::Version);
+
 
 
 };

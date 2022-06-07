@@ -48,7 +48,6 @@ public:
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*23*/ virtual enum CircuitComponentType getCircuitComponentGroupType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASECIRCUITCOMPONENT
-public:
     MCVAPI bool allowIndirect() const;
     MCVAPI bool hasChildrenSource() const;
 #endif
@@ -60,6 +59,7 @@ public:
 //protected:
     MCAPI bool trackPowerSource(class CircuitTrackingInfo const &, int, bool, int);
     MCAPI bool trackPowerSourceDuplicates(class CircuitTrackingInfo const &, int, bool);
+
 
 protected:
 

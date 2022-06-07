@@ -24,6 +24,7 @@ public:
 
 public:
     MCAPI bool isSolidOpaque() const;
+    MCAPI struct BlockBakedMaterialDataComponent & operator=(struct BlockBakedMaterialDataComponent &&);
 
 protected:
 

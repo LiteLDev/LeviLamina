@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct OnPlacedTrigger {
+class OnPlacedTrigger {
 
 #define AFTER_EXTRA
 
@@ -15,16 +15,17 @@ struct OnPlacedTrigger {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONPLACEDTRIGGER
 public:
-    struct OnPlacedTrigger& operator=(struct OnPlacedTrigger const &) = delete;
-    OnPlacedTrigger(struct OnPlacedTrigger const &) = delete;
+    class OnPlacedTrigger& operator=(class OnPlacedTrigger const &) = delete;
+    OnPlacedTrigger(class OnPlacedTrigger const &) = delete;
     OnPlacedTrigger() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLACEDTRIGGER
+#endif
     MCAPI ~OnPlacedTrigger();
 
-protected:
 
-private:
 
 };

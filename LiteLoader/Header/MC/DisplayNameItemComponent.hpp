@@ -30,13 +30,14 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
+    /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPLAYNAMEITEMCOMPONENT
-public:
 #endif
     MCAPI DisplayNameItemComponent(class ComponentItem *);
+    MCAPI std::string const & getDescriptionId() const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
+
 
 
 };

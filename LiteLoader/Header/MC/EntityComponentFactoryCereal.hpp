@@ -19,16 +19,16 @@ class EntityComponentFactoryCereal {
 public:
     class EntityComponentFactoryCereal& operator=(class EntityComponentFactoryCereal const &) = delete;
     EntityComponentFactoryCereal(class EntityComponentFactoryCereal const &) = delete;
-    EntityComponentFactoryCereal() = delete;
 #endif
 
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCOMPONENTFACTORYCEREAL
-public:
 #endif
+    MCAPI EntityComponentFactoryCereal();
     MCAPI void serializeComponentDefinitions(class DefinitionInstanceGroup &, class rapidjson::GenericValue<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>> &, class SemVersion const &) const;
     MCAPI class ICerealDefinitionSerializer * tryGetDefinitionSerializer(std::string const &) const;
+
 
 
 };

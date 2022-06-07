@@ -27,29 +27,29 @@ public:
 
 public:
     /*0*/ virtual ~BannerItem();
-    /*5*/ virtual void __unk_vfn_5();
     /*7*/ virtual void __unk_vfn_7();
     /*10*/ virtual void __unk_vfn_10();
-    /*12*/ virtual void __unk_vfn_12();
-    /*47*/ virtual void __unk_vfn_47();
-    /*49*/ virtual void __unk_vfn_49();
-    /*50*/ virtual bool isWearableThroughLootTable(class CompoundTag const *) const;
-    /*56*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
-    /*62*/ virtual void __unk_vfn_62();
-    /*63*/ virtual bool isValidAuxValue(int) const;
+    /*13*/ virtual void __unk_vfn_13();
+    /*15*/ virtual void __unk_vfn_15();
+    /*51*/ virtual void __unk_vfn_51();
+    /*53*/ virtual void __unk_vfn_53();
+    /*54*/ virtual bool isWearableThroughLootTable(class CompoundTag const *) const;
+    /*60*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /*66*/ virtual void __unk_vfn_66();
-    /*67*/ virtual void __unk_vfn_67();
-    /*68*/ virtual void __unk_vfn_68();
+    /*67*/ virtual bool isValidAuxValue(int) const;
+    /*70*/ virtual void __unk_vfn_70();
     /*71*/ virtual void __unk_vfn_71();
+    /*72*/ virtual void __unk_vfn_72();
     /*75*/ virtual void __unk_vfn_75();
-    /*76*/ virtual void __unk_vfn_76();
-    /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-    /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    /*79*/ virtual void __unk_vfn_79();
+    /*80*/ virtual void __unk_vfn_80();
+    /*95*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
+    /*132*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERITEM
-public:
 #endif
     MCAPI BannerItem(std::string const &, int);
     MCAPI static std::vector<struct std::pair<class gsl::not_null<class BannerPattern const *>, enum ItemColor>> getPatternAndColorPairsFromItemStack(class ItemStackBase const &);
+
 
 
 };

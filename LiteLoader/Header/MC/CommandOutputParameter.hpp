@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDOUTPUTPARAMETER
-public:
 #endif
     MCAPI CommandOutputParameter(class CommandOutputParameter &&);
     MCAPI CommandOutputParameter(class CommandOutputParameter const &);
@@ -43,6 +42,7 @@ public:
     MCAPI CommandOutputParameter(enum CommandOutputParameter::NoCountType);
     MCAPI CommandOutputParameter(bool);
     MCAPI ~CommandOutputParameter();
+
 
 
 };

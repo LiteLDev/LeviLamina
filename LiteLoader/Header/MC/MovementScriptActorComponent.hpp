@@ -29,9 +29,9 @@ public:
     /*0*/ virtual ~MovementScriptActorComponent();
     /*4*/ virtual class Scripting::Result<float> getMaxTurn() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEMENTSCRIPTACTORCOMPONENT
-public:
 #endif
     MCAPI MovementScriptActorComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &, struct Description *ActorDefinitionDescriptor::*);
+
 
 
 };

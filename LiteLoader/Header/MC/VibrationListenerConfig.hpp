@@ -23,9 +23,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONLISTENERCONFIG
-public:
-    MCVAPI bool isValidVibration(class GameEvent const &, class Actor const *);
+    MCVAPI bool isValidVibration(class GameEvent const &);
 #endif
+
 
 
 };

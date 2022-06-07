@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -29,13 +30,13 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual enum PackOrigin getPackOrigin() const;
     /*4*/ virtual enum PackType getPackType() const;
-    /*5*/ virtual class PackSourceReport load(class IPackManifestFactory &, class IContentKeyProvider const &);
+    /*5*/ virtual class PackSourceReport load(class IPackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REALMSUNKNOWNPACKSOURCE
-public:
     MCVAPI void forEachPack(class std::function<void (class Pack &)>);
     MCVAPI void forEachPackConst(class std::function<void (class Pack const &)>) const;
 #endif
     MCAPI RealmsUnknownPackSource(enum PackType, enum PackOrigin);
+
 
 
 };

@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPPERBLOCKACTOR
-public:
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     MCVAPI class Container * getContainer();
@@ -56,6 +55,7 @@ public:
     MCAPI void _tick(class BlockSource &, int);
     MCAPI bool isAttachedToContainerType(class BlockSource &, enum ContainerType);
     MCAPI bool isSourceOfContainerType(class BlockSource &, enum ContainerType);
+
 
 private:
 

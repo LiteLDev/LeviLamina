@@ -30,9 +30,8 @@ public:
     /*3*/ virtual bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
+    /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYPLACERITEMCOMPONENT
-public:
 #endif
     MCAPI EntityPlacerItemComponent(class ComponentItem *);
     MCAPI bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
@@ -42,6 +41,7 @@ public:
 //private:
     MCAPI void _positionAndRotateActor(class Actor &, class Vec3, unsigned char, class Vec3 const &, class BlockLegacy const *) const;
     MCAPI void _setActorCustomName(class Actor &, class ItemStack const &) const;
+
 
 private:
 

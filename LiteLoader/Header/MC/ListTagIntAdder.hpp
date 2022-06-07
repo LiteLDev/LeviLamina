@@ -25,10 +25,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LISTTAGINTADDER
-public:
 #endif
     MCAPI class ListTagIntAdder & operator()(int);
     MCAPI ~ListTagIntAdder();
+
 
 
 };

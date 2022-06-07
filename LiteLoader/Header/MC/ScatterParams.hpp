@@ -32,7 +32,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCATTERPARAMS
-public:
 #endif
     MCAPI class ScatterParams::ScatteredPositions scatter(class RenderParams &, class BlockPos const &, class Random &) const;
     MCAPI ~ScatterParams();
@@ -41,6 +40,7 @@ public:
 
 //private:
     MCAPI class BlockPos _getPos(unsigned int, class BlockPos const &, class Random &, class RenderParams &) const;
+
 
 private:
 

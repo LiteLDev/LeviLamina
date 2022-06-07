@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATURETOGGLES
-public:
 #endif
     MCAPI FeatureToggles(class AppPlatform &);
     MCAPI class Option * get(enum FeatureOptionID);
@@ -34,12 +33,14 @@ public:
 //private:
     MCAPI class std::function<void (class Option &)> _getDisabledIfOptionExpectationsNotMetSetupCallback(std::vector<enum FeatureOptionID>, std::vector<enum FeatureOptionID>);
     MCAPI class std::function<void (class Option &)> _getDisabledIfOtherOptionsEnabledSetupCallback(std::vector<enum FeatureOptionID>);
+    MCAPI class std::function<void (bool &)> _getLockIfInGameCallback();
     MCAPI class std::function<void (bool &)> _getLockIfInGameOrOptionExpectationsNotMetLockCallback(std::vector<enum FeatureOptionID>, std::vector<enum FeatureOptionID>);
     MCAPI class std::function<void (bool &)> _getLockIfOtherOptionDisabledLockCallback(enum FeatureOptionID) const;
     MCAPI void _initialize(class AppPlatform &);
     MCAPI void _registerFeature(enum FeatureOptionTabID, enum FeatureOptionID, std::string const &, std::string const &, bool, enum FeatureOptionID, class std::function<void (class Option &)>, class std::function<void (bool &)>);
     MCAPI void _registerFeatures();
     MCAPI void _setupDependencies();
+
 
 private:
     MCAPI static std::unique_ptr<class FeatureToggles> mFeatureToggles;

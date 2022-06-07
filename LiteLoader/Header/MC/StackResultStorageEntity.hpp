@@ -30,7 +30,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STACKRESULTSTORAGEENTITY
-public:
 #endif
 
 //protected:
@@ -39,6 +38,7 @@ public:
     MCAPI StackResultStorageEntity(class WeakStorageEntity const &);
     MCAPI class EntityContext & _getStackRef() const;
     MCAPI bool _hasValue() const;
+
 
 protected:
 

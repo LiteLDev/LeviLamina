@@ -34,9 +34,9 @@ public:
     /*0*/ virtual ~MobEventCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEVENTCOMMAND
-public:
 #endif
     MCAPI static void setup(class CommandRegistry &, struct MobEventCommand::InitProxy &&);
+
 
 
 };

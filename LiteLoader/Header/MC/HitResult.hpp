@@ -58,10 +58,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HITRESULT
-public:
 #endif
-    MCAPI HitResult(class HitResult &&);
     MCAPI HitResult(class HitResult const &);
+    MCAPI HitResult(class HitResult &&);
     MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Vec3 const &);
     MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Actor &, class Vec3 const &);
     MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Actor &);
@@ -74,6 +73,7 @@ public:
     MCAPI class HitResult & operator=(class HitResult &&);
     MCAPI class HitResult & operator=(class HitResult const &);
     MCAPI ~HitResult();
+
 
 
 };

@@ -27,9 +27,9 @@ public:
     /*0*/ virtual ~StructurePoolActorPredicateActorMatch();
     /*1*/ virtual bool test(std::string const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLACTORPREDICATEACTORMATCH
-public:
 #endif
     MCAPI StructurePoolActorPredicateActorMatch(std::string);
+
 
 
 };

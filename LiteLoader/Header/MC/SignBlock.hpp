@@ -29,10 +29,11 @@ public:
     /*0*/ virtual ~SignBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /*19*/ virtual void __unk_vfn_19();
-    /*30*/ virtual void __unk_vfn_30();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -71,7 +72,6 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIGNBLOCK
-public:
 #endif
     MCAPI SignBlock(std::string const &, int, bool, enum SignBlockActor::SignType);
 
@@ -79,6 +79,7 @@ public:
     MCAPI bool _canSurvive(class BlockSource &, class BlockPos const &, unsigned char) const;
     MCAPI class ItemInstance _getItemInstance() const;
     MCAPI void getShape(int, class AABB &) const;
+
 
 private:
 

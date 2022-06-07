@@ -25,10 +25,11 @@ public:
 public:
     /*0*/ virtual ~MangroveLeafBlock();
     /*19*/ virtual void __unk_vfn_19();
-    /*30*/ virtual void __unk_vfn_30();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -47,6 +48,7 @@ public:
     /*72*/ virtual void __unk_vfn_72();
     /*79*/ virtual void __unk_vfn_79();
     /*83*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
+    /*85*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*100*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /*104*/ virtual void __unk_vfn_104();
     /*124*/ virtual void __unk_vfn_124();
@@ -60,9 +62,9 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MANGROVELEAFBLOCK
-public:
 #endif
     MCAPI MangroveLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
+
 
 
 };

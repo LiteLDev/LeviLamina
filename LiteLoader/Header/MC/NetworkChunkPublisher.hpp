@@ -31,7 +31,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKCHUNKPUBLISHER
-public:
 #endif
     MCAPI NetworkChunkPublisher(class Level &, class NetworkHandler &, class ClientBlobCache::Server::ActiveTransfersManager &, class NetworkIdentifier const &, unsigned char);
     MCAPI void clearRegion();
@@ -45,6 +44,7 @@ public:
 //private:
     MCAPI bool _sendQueuedChunk(class ChunkPos const &, class ClientBlobCache::Server::TransferBuilder *);
     MCAPI void _serializeAndCache(class LevelChunkPacket &, class ClientBlobCache::Server::TransferBuilder &, class std::function<void (class VarIntDataOutput &)> &&);
+
 
 private:
 

@@ -33,13 +33,13 @@ public:
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERVEHICLETAMEDGOAL
-public:
     MCVAPI bool canContinueToUse();
     MCVAPI bool canUse();
     MCVAPI void start();
     MCVAPI void tick();
 #endif
     MCAPI PlayerVehicleTamedGoal(class Mob &);
+
 
 
 };

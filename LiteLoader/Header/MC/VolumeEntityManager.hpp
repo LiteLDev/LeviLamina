@@ -31,7 +31,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMEENTITYMANAGER
-public:
 #endif
     MCAPI unsigned __int64 getVolumeInstanceCount() const;
     MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const & getVolumeInstances(class AutomaticID<class Dimension, int>) const;
@@ -41,6 +40,7 @@ public:
 //protected:
     MCAPI VolumeEntityManager(class StackRefResultT<struct EntityRegistryRefTraits>);
     MCAPI class OwnerPtrT<struct EntityRefTraits> _createVolumeEntity(class DefinitionInstanceGroup const &);
+
 
 protected:
 

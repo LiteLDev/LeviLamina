@@ -28,7 +28,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDATA
-public:
 #endif
     MCAPI LevelData(class LevelSettings const &, std::string const &, enum GeneratorType, class BlockPos const &, bool, enum EducationEditionOffer, float, float);
     MCAPI LevelData(bool);
@@ -159,6 +158,7 @@ public:
     MCAPI void _determineMaxBaseGameVersion();
     MCAPI void _setGameRulesBasedOnPremiumContentIdentity();
     MCAPI void _setValue(class HashedString const &, struct LevelDataValue &&);
+
 
 private:
 

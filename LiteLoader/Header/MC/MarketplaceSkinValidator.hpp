@@ -25,9 +25,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MARKETPLACESKINVALIDATOR
-public:
 #endif
     MCAPI static bool checkIfValid(std::string const &);
+
 
 
 };

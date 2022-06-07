@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDTEMPLATELEVELDATA
-public:
 #endif
     MCAPI WorldTemplateLevelData();
     MCAPI WorldTemplateLevelData(bool, bool, class BaseGameVersion const &, class BaseGameVersion const &);
@@ -45,6 +44,7 @@ public:
 //protected:
     MCAPI void _getTagData(class CompoundTag const &);
     MCAPI void _setTagData(class CompoundTag &) const;
+
 
 protected:
 

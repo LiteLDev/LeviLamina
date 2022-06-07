@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARRELBLOCKACTOR
-public:
     MCVAPI std::string getName() const;
     MCVAPI void onPlace(class BlockSource &);
     MCVAPI void playCloseSound(class BlockSource &);
@@ -34,6 +33,7 @@ public:
     MCVAPI void stopOpen(class Player &);
 #endif
     MCAPI BarrelBlockActor(class BlockPos const &);
+
 
 
 };

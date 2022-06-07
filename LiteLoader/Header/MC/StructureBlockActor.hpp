@@ -39,7 +39,6 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREBLOCKACTOR
-public:
 #endif
     MCAPI StructureBlockActor(class BlockPos const &);
     MCAPI class StructureEditorData const & getStructureData() const;
@@ -54,6 +53,7 @@ public:
     MCAPI bool _loadStructure(class BlockSource &, class BlockPos const &, class BaseGameVersion const &);
     MCAPI bool _saveStructure(class BlockSource &, class BlockPos const &, bool);
     MCAPI void _trigger(class BlockSource &, class BlockPos const &, class BaseGameVersion const &, bool);
+
 
 private:
 

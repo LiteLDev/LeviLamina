@@ -34,42 +34,41 @@ public:
 
 public:
     /*0*/ virtual ~ArmorItem();
-    /*5*/ virtual void __unk_vfn_5();
     /*7*/ virtual void __unk_vfn_7();
-    /*8*/ virtual bool isArmor() const;
     /*10*/ virtual void __unk_vfn_10();
-    /*12*/ virtual void __unk_vfn_12();
-    /*14*/ virtual bool isDyeable() const;
-    /*47*/ virtual void __unk_vfn_47();
-    /*49*/ virtual void __unk_vfn_49();
-    /*56*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
-    /*57*/ virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
-    /*58*/ virtual int getEnchantSlot() const;
-    /*59*/ virtual int getEnchantValue() const;
-    /*60*/ virtual int getArmorValue() const;
-    /*61*/ virtual int getToughnessValue() const;
-    /*62*/ virtual void __unk_vfn_62();
-    /*64*/ virtual int getDamageChance(int) const;
+    /*11*/ virtual bool isArmor() const;
+    /*13*/ virtual void __unk_vfn_13();
+    /*15*/ virtual void __unk_vfn_15();
+    /*17*/ virtual bool isDyeable() const;
+    /*51*/ virtual void __unk_vfn_51();
+    /*53*/ virtual void __unk_vfn_53();
+    /*60*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
+    /*61*/ virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
+    /*62*/ virtual int getEnchantSlot() const;
+    /*63*/ virtual int getEnchantValue() const;
+    /*64*/ virtual int getArmorValue() const;
+    /*65*/ virtual int getToughnessValue() const;
     /*66*/ virtual void __unk_vfn_66();
-    /*67*/ virtual void __unk_vfn_67();
-    /*68*/ virtual void __unk_vfn_68();
-    /*69*/ virtual class mce::Color getColor(class CompoundTag const *, class ItemDescriptor const &) const;
-    /*70*/ virtual bool hasCustomColor(class CompoundTag const *) const;
+    /*68*/ virtual int getDamageChance(int) const;
+    /*70*/ virtual void __unk_vfn_70();
     /*71*/ virtual void __unk_vfn_71();
-    /*72*/ virtual void clearColor(class ItemStackBase &) const;
-    /*74*/ virtual void setColor(class ItemStackBase &, class mce::Color const &) const;
+    /*72*/ virtual void __unk_vfn_72();
+    /*73*/ virtual class mce::Color getColor(class CompoundTag const *, class ItemDescriptor const &) const;
+    /*74*/ virtual bool hasCustomColor(class CompoundTag const *) const;
     /*75*/ virtual void __unk_vfn_75();
-    /*76*/ virtual void __unk_vfn_76();
-    /*78*/ virtual int buildIdAux(short, class CompoundTag const *) const;
-    /*80*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
-    /*81*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
-    /*85*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
-    /*89*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
-    /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-    /*116*/ virtual class Item & setIcon(std::string const &, int);
-    /*128*/ virtual float getArmorKnockbackResistance() const;
+    /*76*/ virtual void clearColor(class ItemStackBase &) const;
+    /*78*/ virtual void setColor(class ItemStackBase &, class mce::Color const &) const;
+    /*79*/ virtual void __unk_vfn_79();
+    /*80*/ virtual void __unk_vfn_80();
+    /*82*/ virtual int buildIdAux(short, class CompoundTag const *) const;
+    /*84*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
+    /*85*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
+    /*89*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
+    /*93*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
+    /*119*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /*121*/ virtual class Item & setIcon(std::string const &, int);
+    /*133*/ virtual float getArmorKnockbackResistance() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARMORITEM
-public:
 #endif
     MCAPI ArmorItem(std::string const &, int, class ArmorItem::ArmorMaterial const &, int, enum ArmorSlot);
     MCAPI static class ArmorItem::ArmorMaterial const CHAIN;
@@ -87,6 +86,7 @@ public:
 
 //private:
     MCAPI class ItemInstance getTierItem() const;
+
 
 private:
 

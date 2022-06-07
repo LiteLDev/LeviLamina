@@ -27,10 +27,11 @@ public:
 public:
     /*0*/ virtual ~LecternBlock();
     /*19*/ virtual void __unk_vfn_19();
-    /*30*/ virtual void __unk_vfn_30();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -73,7 +74,6 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LECTERNBLOCK
-public:
     MCVAPI bool hasComparatorSignal() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
@@ -82,6 +82,7 @@ public:
 
 //private:
     MCAPI bool _dropBook(class Player &, class BlockPos const &) const;
+
 
 private:
 

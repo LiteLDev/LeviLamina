@@ -36,7 +36,6 @@ public:
     /*9*/ virtual void _addLegacyTransactionRequestSetItemSlot(class ItemStackNetManagerScreen &, enum ContainerType, int);
     /*10*/ virtual void _initScreen(class ItemStackNetManagerScreen &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETMANAGERBASE
-public:
 #endif
     MCAPI ItemStackNetManagerBase(class Player &, bool, bool);
     MCAPI class ItemStackNetManagerScreenStack & _getScreenStack();
@@ -48,6 +47,7 @@ public:
 
 //protected:
     MCAPI bool _isRequestActionAllowed(class ItemStackRequestAction const &);
+
 
 protected:
 
