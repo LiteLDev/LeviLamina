@@ -105,6 +105,8 @@ string Player::getLanguageCode()
 
 string Player::getServerAddress() 
 {
+    if (isSimulatedPlayer())
+        return "unknown";
     auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).rawToken.get()->dataInfo.value_.map_;
     for (auto iter = map->begin(); iter != map->end(); ++iter) 
     {
@@ -321,11 +323,15 @@ unsigned char Player::getClientSubId()
 
 float Player::getAvgPacketLoss()
 {
+    if (isSimulatedPlayer())
+        return 0.f;
     return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().avgpacketloss;
 }
 
 string Player::getClientId() 
 {
+    if (isSimulatedPlayer())
+        return "";
     return Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).getDeviceId();
 }
 
@@ -346,6 +352,8 @@ bool Player::isOP()
 
 bool Player::crashClient() 
 {
+    if (isSimulatedPlayer())
+        return false;
     auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::LevelChunk);
     dAccess<bool, 56>(pkt.get()) = 1;
     sendNetworkPacket(*pkt);
