@@ -80,7 +80,7 @@ Actor* EntityClass::extract(Local<Value> v)
         return nullptr;
 }
 
-std::optional<Actor*> tryExtractActor(Local<Value> v)
+std::optional<Actor*> EntityClass::tryExtractActor(Local<Value> v)
 {
     if (IsInstanceOf<EntityClass>(v))
         return EntityClass::extract(v);
