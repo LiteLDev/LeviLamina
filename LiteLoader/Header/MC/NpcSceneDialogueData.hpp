@@ -12,22 +12,11 @@ class NpcSceneDialogueData {
 
 #define AFTER_EXTRA
 // Add Member There
+#define ENABLE_VIRTUAL_FAKESYMBOL_NPCSCENEDIALOGUEDATA
 public:
 NpcComponent mComponent;
     Actor mActor;
     string mString;
-    inline struct NpcActionsContainer& getActionsContainer()
-    {
-        struct NpcActionsContainer& (NpcSceneDialogueData::*rv)();
-        *((void**)&rv) = dlsym("?getActionsContainer@NpcSceneDialogueData@@UEAAAEAUNpcActionsContainer@@XZ");
-        return (this->*rv)();
-    }
-    inline struct NpcActionsContainer const& getActionsContainer() const
-    {
-        struct NpcActionsContainer const& (NpcSceneDialogueData::*rv)() const;
-        *((void**)&rv) = dlsym("?getActionsContainer@NpcSceneDialogueData@@UEBAAEBUNpcActionsContainer@@XZ");
-        return (this->*rv)();
-    }
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCSCENEDIALOGUEDATA

@@ -2032,8 +2032,8 @@ TInstanceHook(void,
         //IDA NpcComponent::executeCommandAction
         //NpcSceneDialogueData data(*this, *ac, a5);
         NpcSceneDialogueData data(*(WeakEntityRef*)((char*)this + 8), a5);
-        auto& container = data.getActionsContainer();
-        auto actionAt = container.getActionAt(a4);
+        auto container = data.getActionsContainer();
+        auto actionAt = container->getActionAt(a4);
         if (actionAt && dAccess<char>(actionAt, 8) == (char)1)
         {
             
