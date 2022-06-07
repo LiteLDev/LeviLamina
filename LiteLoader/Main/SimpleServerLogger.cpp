@@ -27,7 +27,7 @@ void RegisterSimpleServerLogger()
 }
 
 #include <MC/Command.hpp>
-TInstanceHook(void, "?setPermissions@Player@@UEAAXW4CommandPermissionLevel@@@Z",
+TInstanceHook(void, "?setPermissions@Player@@QEAAXW4CommandPermissionLevel@@@Z",
               Player, CommandPermissionLevel perm)
 {
     if (LL::globalConfig.enableSimpleServerLogger)
