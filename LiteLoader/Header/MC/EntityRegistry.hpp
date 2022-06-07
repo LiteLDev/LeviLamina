@@ -20,15 +20,24 @@ public:
     EntityRegistry() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYREGISTRY
+public:
+#endif
     MCAPI class WeakRefT<struct EntityRegistryRefTraits> getWeakRef();
     MCAPI ~EntityRegistry();
 
-protected:
+//protected:
     MCAPI EntityRegistry(std::string);
 
-private:
+//private:
     MCAPI class EntityContext _createEntity();
     MCAPI void _destroyEntity(class EntityContext);
+
+protected:
+
+private:
+
 
 };

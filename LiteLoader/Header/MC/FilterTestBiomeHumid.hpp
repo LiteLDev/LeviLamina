@@ -24,20 +24,14 @@ public:
     FilterTestBiomeHumid() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FilterTestBiomeHumid();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-    /*
-    inline  ~FilterTestBiomeHumid(){
-         (FilterTestBiomeHumid::*rv)();
-        *((void**)&rv) = dlsym("??1FilterTestBiomeHumid@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTBIOMEHUMID
+public:
+#endif
 
-protected:
-
-private:
 
 };

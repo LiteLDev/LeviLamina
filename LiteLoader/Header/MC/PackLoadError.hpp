@@ -23,21 +23,15 @@ public:
     PackLoadError() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PackLoadError();
     /*2*/ virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string>>> const & getLocErrorMessageMap() const;
     /*3*/ virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string>>> const & getEventErrorMessageMap() const;
-    /*
-    inline  ~PackLoadError(){
-         (PackLoadError::*rv)();
-        *((void**)&rv) = dlsym("??1PackLoadError@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKLOADERROR
+public:
+#endif
     MCAPI PackLoadError(enum PackParseErrorType, std::vector<std::string> const &);
 
-protected:
-
-private:
 
 };

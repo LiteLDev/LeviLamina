@@ -21,13 +21,14 @@ public:
     AgentBodyControl(class AgentBodyControl const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AgentBodyControl();
     /*1*/ virtual void clientTick(class Mob &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTBODYCONTROL
+public:
+#endif
     MCAPI AgentBodyControl();
 
-protected:
-
-private:
 
 };

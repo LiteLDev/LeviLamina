@@ -22,14 +22,15 @@ public:
     EndPortalShape() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDPORTALSHAPE
+public:
+#endif
     MCAPI EndPortalShape(class BlockSource &, class BlockPos);
     MCAPI class BlockPos getOrigin() const;
     MCAPI bool isValid(class BlockSource &);
     MCAPI ~EndPortalShape();
 
-protected:
-
-private:
 
 };

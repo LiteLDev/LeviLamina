@@ -23,13 +23,14 @@ public:
     RideableDefinition() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RIDEABLEDEFINITION
+public:
+#endif
     MCAPI void addFamilyTypeByName(std::string const &);
     MCAPI void initialize(class EntityContext &, class RideableComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RideableDefinition>> &);
 
-protected:
-
-private:
 
 };

@@ -21,13 +21,14 @@ public:
     BoneAnimation() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BONEANIMATION
+public:
+#endif
     MCAPI BoneAnimation(class BoneAnimation const &);
     MCAPI class BoneAnimationChannel & addAnimationChannel(enum BoneTransformType);
     MCAPI void setRotationRelativeMode(enum BoneAnimationRelativeMode);
 
-protected:
-
-private:
 
 };

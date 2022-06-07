@@ -24,22 +24,20 @@ public:
     XoroshiroPositionalRandomFactory() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~XoroshiroPositionalRandomFactory();
     /*1*/ virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const &) const;
     /*2*/ virtual std::unique_ptr<class IRandom> forString(std::string const &) const;
-    /*
-    inline  ~XoroshiroPositionalRandomFactory(){
-         (XoroshiroPositionalRandomFactory::*rv)();
-        *((void**)&rv) = dlsym("??1XoroshiroPositionalRandomFactory@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_XOROSHIROPOSITIONALRANDOMFACTORY
+public:
+#endif
     MCAPI class XoroshiroRandom forStringImpl(std::string const &) const;
 
-protected:
+//private:
 
 private:
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class Crypto::Hash::md5, class std::allocator<class Crypto::Hash::md5>> mThreadLocalDigest;
+
 
 };

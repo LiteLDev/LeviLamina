@@ -23,27 +23,16 @@ public:
     ActorDamageByBlockSource() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorDamageByBlockSource();
-    /*1*/ virtual bool isEntitySource() const;
-    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool isBlockSource() const;
     /*8*/ virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor *) const;
-    /*9*/ virtual bool getIsCreative() const;
-    /*10*/ virtual bool getIsWorldBuilder() const;
-    /*11*/ virtual void __unk_vfn_11();
-    /*12*/ virtual void __unk_vfn_12();
-    /*13*/ virtual enum ActorCategory getEntityCategories() const;
-    /*14*/ virtual bool getDamagingEntityIsCreative() const;
-    /*15*/ virtual void __unk_vfn_15();
-    /*16*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
-    /*17*/ virtual void __unk_vfn_17();
-    /*18*/ virtual void __unk_vfn_18();
     /*19*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDAMAGEBYBLOCKSOURCE
+public:
+#endif
     MCAPI ActorDamageByBlockSource(class Block const &, enum ActorDamageCause);
 
-protected:
-
-private:
 
 };

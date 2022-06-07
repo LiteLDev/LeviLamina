@@ -21,7 +21,11 @@ public:
     BaseCommandBlock(class BaseCommandBlock const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASECOMMANDBLOCK
+public:
+#endif
     MCAPI BaseCommandBlock();
     MCAPI std::string const & getCommand() const;
     MCAPI std::string getLastOutput() const;
@@ -45,12 +49,13 @@ public:
     MCAPI bool shouldExecuteOnFirstTick() const;
     MCAPI ~BaseCommandBlock();
 
-protected:
-
-private:
+//private:
     MCAPI bool _performCommand(class BlockSource &, class CommandOrigin const &, bool &);
     MCAPI void _setCommand(class BlockSource &, class CommandOrigin const &, std::string const &);
     MCAPI void compile(class CommandOrigin const &, class Level &);
+
+private:
     MCAPI static std::string const DefaultCommandBlockName;
+
 
 };

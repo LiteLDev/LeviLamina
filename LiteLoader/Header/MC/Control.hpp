@@ -22,11 +22,11 @@ public:
     Control() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~Control();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTROL
+public:
+#endif
 
-protected:
-
-private:
 
 };

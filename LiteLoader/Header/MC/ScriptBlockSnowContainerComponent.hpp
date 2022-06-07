@@ -22,23 +22,17 @@ public:
     ScriptBlockSnowContainerComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptBlockSnowContainerComponent();
-    /*
-    inline  ~ScriptBlockSnowContainerComponent(){
-         (ScriptBlockSnowContainerComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptBlockSnowContainerComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKSNOWCONTAINERCOMPONENT
+public:
+#endif
     MCAPI ScriptBlockSnowContainerComponent(class ScriptBlockSnowContainerComponent &&);
     MCAPI ScriptBlockSnowContainerComponent(class ScriptBlockSnowContainerComponent const &);
     MCAPI class ScriptBlockSnowContainerComponent & operator=(class ScriptBlockSnowContainerComponent &&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockSnowContainerComponent> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockSnowContainerComponent> tryCreate(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
 
-protected:
-
-private:
 
 };

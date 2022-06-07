@@ -22,14 +22,14 @@ public:
     ServerLevelEventCoordinator() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~ServerLevelEventCoordinator();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERLEVELEVENTCOORDINATOR
+public:
+#endif
     MCAPI void sendLevelAddedPlayer(class Level &, class Player &);
     MCAPI void sendLevelRemovedPlayer(class Level &, class Player &);
     MCAPI void sendLevelSaveData(class Level &, class CompoundTag &);
 
-protected:
-
-private:
 
 };

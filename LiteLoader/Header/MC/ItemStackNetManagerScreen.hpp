@@ -22,14 +22,14 @@ public:
     ItemStackNetManagerScreen() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~ItemStackNetManagerScreen();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETMANAGERSCREEN
+public:
+#endif
     MCAPI ItemStackNetManagerScreen(class EntityRegistry &);
     MCAPI class EntityContext & getEntity();
     MCAPI class EntityContext const & getEntity() const;
 
-protected:
-
-private:
 
 };

@@ -29,7 +29,11 @@ public:
     IdentityDefinition() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDENTITYDEFINITION
+public:
+#endif
     MCAPI IdentityDefinition(class IdentityDefinition &&);
     MCAPI IdentityDefinition(struct ScoreboardId const &, struct ActorUniqueID const &);
     MCAPI IdentityDefinition(struct ScoreboardId const &, struct PlayerScoreboardId const &);
@@ -52,8 +56,5 @@ public:
     MCAPI static bool convertFakeToReal(class IdentityDefinition &, struct PlayerScoreboardId const &);
     MCAPI static bool isHiddenFakePlayerNameString(std::string const &);
 
-protected:
-
-private:
 
 };

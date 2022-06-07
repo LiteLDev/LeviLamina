@@ -59,6 +59,7 @@
 | pl.speed     | 玩家当前速度                | `Float`          |
 | pl.direction | 玩家当前朝向                | `DirectionAngle` |
 | pl.uniqueId  | 玩家（实体的）唯一标识符    | `String`         |
+| pl.langCode  | 玩家设置的语言的标识符(形如zh_CN) | `String`    |
 
 这些对象属性都是只读的，无法被修改。其中：
 
@@ -661,12 +662,13 @@ pl.removeSidebar();
 
 #### 设置玩家看到的自定义Boss血条  
 
-`pl.setBossBar(title,percent)`
+`pl.setBossBar(uid,title,percent,colour)`
 
 - 参数：
+  - uid : `Number`   
+    唯一标识符，不可冲突重复！一个uid对于一行bar
   - title : `String`  
     自定义血条标题  
-
   - percent : `Integer`  
     血条中的血量百分比，有效范围为0~100。0为空血条，100为满
   - colour : `Integer`  
@@ -677,14 +679,17 @@ pl.removeSidebar();
 ```clike
 [Js]
 //对于一个玩家对象pl
-pl.setBossBar("Hello ~ ",80,0);
+pl.setBossBar(1145141919,"Hello ~ ",80,0);
 [Lua]
 
 ```
 
-#### 移除玩家的自定义Boss血条  
+#### 移除玩家的自定义的指定Boss血条  
 
-`pl.removeBossBar()`
+`pl.removeBossBar(uid)`
+- 参数：
+  - uid : `Number`   
+    标识符，与setBossBar对应！
 
 - 返回值：是否成功移除
 - 返回值类型：`Boolean`
@@ -692,7 +697,7 @@ pl.setBossBar("Hello ~ ",80,0);
 ```clike
 [Js]
 //对于一个玩家对象pl
-pl.removeBossBar();
+pl.removeBossBar(1145141919);
 [Lua]
 
 ```
@@ -822,6 +827,36 @@ pl.removeBossBar();
 
 <br>
 
+#### 获取视线方向实体
+
+`pl.getEntityFromViewVector([maxDistance])`  
+
+- 参数：
+  - maxDistance : `Float`  
+    查找最大距离  
+- 返回值：视线方向实体，如果获取失败，返回 `Null`  
+- 返回值类型：`Entity?`
+
+<br>
+
+#### 获取视线方向方块
+
+`pl.getBlockFromViewVector([includeLiquid,solidOnly,maxDistance,fullOnly])`  
+
+- 参数：
+  - includeLiquid : `Boolean`  
+    是否包含液态方块
+  - solidOnly : `Boolean`  
+    是否仅允许 `Solid` 类型的方块
+  - maxDistance : `Float`  
+    查找最大距离
+  - fullOnly : `Boolean`  
+    是否仅允许完整方块  
+- 返回值：视线方向方块，如果获取失败，返回 `Null`  
+- 返回值类型：`Block?`
+
+<br>
+
 #### 判断是否为模拟玩家
 
 `pl.isSimulatedPlayer()`
@@ -831,7 +866,23 @@ pl.removeBossBar();
 
 <br>
 
-### 模拟玩家（由于与玩家API重合过多，未生成新的模拟玩家类）
+## 模拟玩家（由于与玩家API重合过多，未生成新的模拟玩家类）
+
+### 创建一个模拟玩家
+
+`mc.spawnSimulatedPlayer(name,pos)`  
+`mc.spawnSimulatedPlayer(name,x,y,z,dimid)`
+
+- 参数：
+  - name : `String`  
+    模拟玩家名称
+  - pos : `IntPos `/ `FloatPos`  
+    生成生物的位置的坐标对象（或者使用x, y, z, dimid来确定生成位置）
+- 返回值：生成的（模拟）玩家对象
+- 返回值类型：`Player`
+  - 如返回值为 `Null` 则表示生成失败
+
+### 模拟玩家 - 函数
 每一个模拟玩家对象都包含一些可以执行的成员函数（成员方法）。对于某个特定的模拟玩家对象`sp`，可以通过以下这些函数对这个模拟玩家进行一些操作
 
 
@@ -944,6 +995,50 @@ pl.removeBossBar();
 参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#lookatblock)
 
 
+#### 相对玩家坐标系移动
+
+`sp.simulateLocalMove()`
+
+- 参数：
+  - pos : `IntPos` / `FloatPos`  
+    移动方向  
+  - speed : `Number`  
+    （可选参数）移动速度，默认为1  
+
+- 返回值：是否请求移动成功
+- 返回值类型：`Boolean`
+
+
+#### 相对世界坐标系移动
+
+`sp.simulateWorldMove()`
+
+- 参数：
+  - pos : `IntPos` / `FloatPos`  
+    移动方向  
+  - speed : `Number`  
+    （可选参数）移动速度，默认为1  
+
+- 返回值：是否请求移动成功
+- 返回值类型：`Boolean`
+
+
+#### 直线移动到坐标
+
+`sp.simulateMoveTo()`
+
+- 参数：
+  - pos : `IntPos` / `FloatPos`  
+    目标位置  
+  - speed : `Number`  
+    （可选参数）移动速度，默认为1  
+
+- 返回值：是否请求移动成功
+- 返回值类型：`Boolean`
+
+参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#movetolocation)  
+注：如需自动寻路，请考虑使用 `模拟导航移动` 
+
 #### 模拟导航移动
 
 `sp.simulateNavigateTo(entity[,speed)`
@@ -1045,6 +1140,4 @@ pl.removeBossBar();
 - 返回值类型：`Boolean`
 
 参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#stopusingitem)
-
-`sp.simulateLocalMove()`
 

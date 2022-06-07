@@ -23,21 +23,15 @@ public:
     RaidTriggerDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~RaidTriggerDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
-    /*
-    inline  ~RaidTriggerDescription(){
-         (RaidTriggerDescription::*rv)();
-        *((void**)&rv) = dlsym("??1RaidTriggerDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAIDTRIGGERDESCRIPTION
+public:
+#endif
 
-protected:
-
-private:
 
 };

@@ -22,14 +22,15 @@ public:
     InsideBlockNotifierComponent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEBLOCKNOTIFIERCOMPONENT
+public:
+#endif
     MCAPI std::vector<class InsideBlockEventMap> const & getBlockList() const;
     MCAPI bool isTrackedBlock(class Block const &) const;
     MCAPI void resetBlocksInsideState();
     MCAPI void setInsideBlock(class Block const &, bool);
 
-protected:
-
-private:
 
 };

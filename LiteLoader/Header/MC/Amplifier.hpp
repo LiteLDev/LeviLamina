@@ -22,28 +22,15 @@ public:
     Amplifier() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Amplifier();
-    /*
-    inline bool shouldBuff(int a0, int a1) const{
-        bool (Amplifier::*rv)(int, int) const;
-        *((void**)&rv) = dlsym("?shouldBuff@Amplifier@@UEBA_NHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
-    }
-    inline int getTickInterval(int a0) const{
-        int (Amplifier::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getTickInterval@Amplifier@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline float getAmount(int a0, float a1) const{
-        float (Amplifier::*rv)(int, float) const;
-        *((void**)&rv) = dlsym("?getAmount@Amplifier@@UEBAMHM@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<float>(a1));
-    }
-    */
+    /*1*/ virtual float getAmount(int, float) const;
+    /*2*/ virtual bool shouldBuff(int, int) const;
+    /*3*/ virtual int getTickInterval(int) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMPLIFIER
+public:
+#endif
 
-protected:
-
-private:
 
 };

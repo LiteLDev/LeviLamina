@@ -23,19 +23,23 @@ public:
     CraftHandlerGrindstone() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CraftHandlerGrindstone();
-    /*3*/ virtual void endRequestBatch();
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /*5*/ virtual void _postCraftRequest(bool);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERGRINDSTONE
+public:
+#endif
     MCAPI CraftHandlerGrindstone(class Player &, class ItemStackRequestActionCraftHandler &);
 
-protected:
-
-private:
+//private:
     MCAPI class ItemStack _createResultItem(class ItemStack const &, class ItemStack const &);
     MCAPI int _getExperienceFromItem(class ItemStack const &) const;
     MCAPI class ItemStack _getResultItemWithNoEnchants(std::vector<class ItemStack> const &, bool &);
     MCAPI bool _resolveNetIdAndValidate(enum ContainerEnumName, unsigned char, struct ItemStackNetIdVariant const &);
+
+private:
+
 
 };

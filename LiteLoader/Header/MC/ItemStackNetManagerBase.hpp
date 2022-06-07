@@ -22,6 +22,7 @@ public:
     ItemStackNetManagerBase() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemStackNetManagerBase();
     /*1*/ virtual bool isEnabled() const;
@@ -32,25 +33,11 @@ public:
     /*6*/ virtual void onContainerScreenOpen(class ContainerScreenContext const &);
     /*7*/ virtual void onContainerScreenClose();
     /*8*/ virtual class SparseContainer * initOpenContainer(class BlockSource &, enum ContainerEnumName, class ContainerWeakRef const &);
-    /*9*/ virtual void __unk_vfn_9();
+    /*9*/ virtual void _addLegacyTransactionRequestSetItemSlot(class ItemStackNetManagerScreen &, enum ContainerType, int);
     /*10*/ virtual void _initScreen(class ItemStackNetManagerScreen &);
-    /*
-    inline void _initScreen(class ItemStackNetManagerScreen & a0){
-        void (ItemStackNetManagerBase::*rv)(class ItemStackNetManagerScreen &);
-        *((void**)&rv) = dlsym("?_initScreen@ItemStackNetManagerBase@@MEAAXAEAVItemStackNetManagerScreen@@@Z");
-        return (this->*rv)(std::forward<class ItemStackNetManagerScreen &>(a0));
-    }
-    inline void _addLegacyTransactionRequestSetItemSlot(class ItemStackNetManagerScreen & a0, enum ContainerType a1, int a2){
-        void (ItemStackNetManagerBase::*rv)(class ItemStackNetManagerScreen &, enum ContainerType, int);
-        *((void**)&rv) = dlsym("?_addLegacyTransactionRequestSetItemSlot@ItemStackNetManagerBase@@MEAAXAEAVItemStackNetManagerScreen@@W4ContainerType@@H@Z");
-        return (this->*rv)(std::forward<class ItemStackNetManagerScreen &>(a0), std::forward<enum ContainerType>(a1), std::forward<int>(a2));
-    }
-    inline  ~ItemStackNetManagerBase(){
-         (ItemStackNetManagerBase::*rv)();
-        *((void**)&rv) = dlsym("??1ItemStackNetManagerBase@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETMANAGERBASE
+public:
+#endif
     MCAPI ItemStackNetManagerBase(class Player &, bool, bool);
     MCAPI class ItemStackNetManagerScreenStack & _getScreenStack();
     MCAPI class ContainerScreenContext const & getScreenContext() const;
@@ -59,9 +46,10 @@ public:
     MCAPI static class gsl::final_action<class std::function<void (void)>> _tryBeginClientLegacyTransactionRequest(class Player *);
     MCAPI static bool setPlayerContainer(class Player &, enum ContainerType, int, class ItemStack const &, class ItemStack &, class std::function<void (class ItemStack const &)> const &);
 
-protected:
+//protected:
     MCAPI bool _isRequestActionAllowed(class ItemStackRequestAction const &);
 
-private:
+protected:
+
 
 };

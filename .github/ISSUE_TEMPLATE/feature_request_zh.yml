@@ -1,0 +1,26 @@
+name: "[简体中文] 新功能请求/建议"
+description: 提供建议/请求一个新的功能
+labels: ["enhancement"]
+body:
+- type: markdown
+  attributes:
+    value: |
+      感谢您花时间填写这份新功能请求!
+- type: textarea
+  id: problem
+  attributes:
+    label: 您的建议是否与现存的某个问题相关?请描述问题?
+    description: 简明扼要地描述问题是什么
+    placeholder: |
+      e.g. LiteLoader的...API总是让我...
+- type: textarea
+  id: solution
+  attributes:
+    label: 您认为还缺少什么?如何解决您的问题?
+    description: 简明扼要地描述你想要什么
+    placeholder: |
+      e.g. 我想要一个新的监听事件...
+- type: markdown
+  attributes:
+    value: |
+      再次感谢您对LiteLoader的贡献!

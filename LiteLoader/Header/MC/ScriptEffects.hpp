@@ -21,13 +21,14 @@ public:
     ScriptEffects(class ScriptEffects const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTEFFECTS
+public:
+#endif
     MCAPI ScriptEffects();
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptEffectType> get(class Scripting::WeakLifetimeScope &, std::string const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptEffects> bind(struct Scripting::Version);
 
-protected:
-
-private:
 
 };

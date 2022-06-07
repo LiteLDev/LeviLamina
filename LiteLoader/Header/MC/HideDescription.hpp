@@ -23,20 +23,14 @@ public:
     HideDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~HideDescription();
     /*3*/ virtual void serializeData(class Json::Value &) const;
-    /*
-    inline  ~HideDescription(){
-         (HideDescription::*rv)();
-        *((void**)&rv) = dlsym("??1HideDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HIDEDESCRIPTION
+public:
+#endif
 
-protected:
-
-private:
 
 };

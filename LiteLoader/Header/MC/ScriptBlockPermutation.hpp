@@ -23,15 +23,12 @@ public:
     ScriptBlockPermutation() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptBlockPermutation();
-    /*
-    inline  ~ScriptBlockPermutation(){
-         (ScriptBlockPermutation::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptBlockPermutation@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKPERMUTATION
+public:
+#endif
     MCAPI ScriptBlockPermutation(class ScriptBlockPermutation &&);
     MCAPI ScriptBlockPermutation(class Block const &, class Scripting::WeakLifetimeScope const &);
     MCAPI ScriptBlockPermutation(class BlockLegacy const &, class Scripting::WeakLifetimeScope const &);
@@ -46,9 +43,10 @@ public:
     MCAPI void setBlock(class Block const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockPermutation> bind(struct Scripting::Version);
 
-protected:
+//private:
+    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class IScriptBlockProperty>> _createProperty(std::string const &);
 
 private:
-    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class IScriptBlockProperty>> _createProperty(std::string const &);
+
 
 };

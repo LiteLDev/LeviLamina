@@ -22,16 +22,21 @@ public:
     OnFireSystem() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONFIRESYSTEM
+public:
+#endif
     MCAPI static void extinguishFire(class Actor &);
     MCAPI static void onFireChanged(class Actor &);
     MCAPI static void setOnFire(class Actor &, int);
     MCAPI static void setOnFireNoEffects(class Actor &, int);
     MCAPI static void stopFire(class Actor &);
 
-protected:
+//protected:
     MCAPI static bool _extinguishFireIfInWater(class Actor &);
 
-private:
+protected:
+
 
 };

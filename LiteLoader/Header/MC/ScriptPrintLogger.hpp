@@ -22,6 +22,7 @@ public:
     ScriptPrintLogger() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptPrintLogger();
     /*1*/ virtual void onInfo(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char>> const &) const;
@@ -29,16 +30,9 @@ public:
     /*3*/ virtual void onError(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char>> const &) const;
     /*4*/ virtual void onException(struct Scripting::ContextId, struct Scripting::Error const &) const;
     /*5*/ virtual bool shouldPrintException(struct Scripting::Error const &) const;
-    /*
-    inline  ~ScriptPrintLogger(){
-         (ScriptPrintLogger::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptPrintLogger@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPRINTLOGGER
+public:
+#endif
 
-protected:
-
-private:
 
 };

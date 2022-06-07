@@ -22,6 +22,7 @@ public:
     MinecraftGameTestInstance() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MinecraftGameTestInstance();
     /*1*/ virtual void initialize();
@@ -39,10 +40,10 @@ public:
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void __unk_vfn_14();
     /*15*/ virtual class BlockSource & getBlockSource() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTGAMETESTINSTANCE
+public:
+#endif
     MCAPI MinecraftGameTestInstance(class gametest::BaseGameTestFunction const &, std::unique_ptr<class gametest::IGameTestHelperProvider>, class Dimension &);
 
-protected:
-
-private:
 
 };

@@ -35,6 +35,7 @@ public:
     CaveFeature(class CaveFeature const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CaveFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
@@ -43,22 +44,19 @@ public:
     /*4*/ virtual void addTunnel(class IBlockWorldGenAPI &, struct CaveFeatureUtils::CarverConfiguration const &, class Random &, class ChunkPos const &, class Vec3 const &, float, float, float, int, int, float, class RenderParams &, struct CaveFeatureUtils::CarvingParameters const &, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams> &) const;
     /*5*/ virtual bool carveEllipsoidVolume(class IBlockWorldGenAPI &, struct CaveFeatureUtils::CarverConfiguration const &, class Random &, class ChunkPos const &, class Vec3 const &, class BoundingBox const &, float, float, struct CaveFeatureUtils::CarvingParameters const &) const;
     /*6*/ virtual void addFeature(class IBlockWorldGenAPI &, class ChunkPos const &, class Random &, class ChunkPos const &, class RenderParams &, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams> &) const;
-    /*
-    inline  ~CaveFeature(){
-         (CaveFeature::*rv)();
-        *((void**)&rv) = dlsym("??1CaveFeature@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAVEFEATURE
+public:
+#endif
     MCAPI CaveFeature();
     MCAPI float getWidthModifier(class RenderParams &) const;
 
-protected:
+//protected:
     MCAPI bool carveBlock(class IBlockWorldGenAPI &, struct CaveFeatureUtils::CarverConfiguration const &, class BlockPos, bool *, bool, class Vec3 const &, int, class BlockPos) const;
     MCAPI bool carveEllipsoid(class IBlockWorldGenAPI &, struct CaveFeatureUtils::CarverConfiguration const &, class Random &, class ChunkPos const &, class Vec3 const &, float, float, struct CaveFeatureUtils::CarvingParameters const &) const;
     MCAPI bool detectWater(class IBlockWorldGenAPI &, class BoundingBox const &) const;
     MCAPI static bool shouldSkipCarving(float, float, float, float, float);
 
-private:
+protected:
+
 
 };

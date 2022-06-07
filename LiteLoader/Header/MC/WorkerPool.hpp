@@ -23,15 +23,11 @@ public:
     WorkerPool() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~WorkerPool();
-    /*
-    inline  ~WorkerPool(){
-         (WorkerPool::*rv)();
-        *((void**)&rv) = dlsym("??1WorkerPool@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKERPOOL
+public:
+#endif
     MCAPI WorkerPool(std::string, class Scheduler &);
     MCAPI WorkerPool(std::string, unsigned __int64, class Bedrock::Threading::OSThreadPriority const &, class std::optional<unsigned __int64>, bool);
     MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>, bool);
@@ -39,12 +35,17 @@ public:
     MCAPI unsigned __int64 size() const;
     MCAPI class std::shared_ptr<class BackgroundTaskBase> tryPop(int);
 
-protected:
+//protected:
     MCAPI static void _registerPool(class WorkerPool &);
+
+//private:
+    MCAPI bool _checkPendingWork();
+
+protected:
     MCAPI static class SmallSet<class WorkerPool *> sAllPools;
     MCAPI static class std::mutex sAllPoolsMutex;
 
 private:
-    MCAPI bool _checkPendingWork();
+
 
 };

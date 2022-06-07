@@ -22,31 +22,20 @@ public:
     TradeWithPlayerGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TradeWithPlayerGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual void __unk_vfn_5();
+    /*4*/ virtual void start();
+    /*5*/ virtual void stop();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-    /*
-    inline void stop(){
-        void (TradeWithPlayerGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@TradeWithPlayerGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (TradeWithPlayerGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@TradeWithPlayerGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADEWITHPLAYERGOAL
+public:
+#endif
     MCAPI TradeWithPlayerGoal(class Mob &);
 
-protected:
-
-private:
 
 };

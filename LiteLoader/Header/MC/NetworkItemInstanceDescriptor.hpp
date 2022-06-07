@@ -22,7 +22,11 @@ public:
     NetworkItemInstanceDescriptor() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKITEMINSTANCEDESCRIPTOR
+public:
+#endif
     MCAPI NetworkItemInstanceDescriptor(class ItemInstance const &);
     MCAPI NetworkItemInstanceDescriptor(class ItemStackDescriptor const &);
     MCAPI class ItemInstance getItemInstance(class BlockPalette const &) const;
@@ -30,8 +34,5 @@ public:
     MCAPI void write(class BinaryStream &) const;
     MCAPI ~NetworkItemInstanceDescriptor();
 
-protected:
-
-private:
 
 };

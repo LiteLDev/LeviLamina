@@ -23,21 +23,24 @@ public:
     MineshaftCorridor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MineshaftCorridor();
-    /*2*/ virtual class PoolElementStructurePiece * asPoolElement();
     /*3*/ virtual enum StructurePieceType getType() const;
     /*4*/ virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
     /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /*6*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
-    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINESHAFTCORRIDOR
+public:
+#endif
     MCAPI void _placeCobWeb(class BlockSource &, class BoundingBox const &, class Random &, float, int, int, int);
     MCAPI void _placeSupport(class BlockSource &, class BoundingBox const &, int, int, int, int, int, class Random &);
 
-protected:
-
-private:
+//private:
     MCAPI void _fillPillarDownOrChainUp(class BlockSource &, int, int, int, class BoundingBox const &);
     MCAPI void _placeDoubleLowerOrUpperSupport(class BlockSource &, class BoundingBox const &, int, int, int);
+
+private:
+
 
 };

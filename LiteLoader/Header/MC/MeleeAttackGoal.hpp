@@ -22,6 +22,7 @@ public:
     MeleeAttackGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MeleeAttackGoal();
     /*1*/ virtual bool canUse();
@@ -35,21 +36,18 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void _attemptMoveToTarget(class Actor &);
     /*11*/ virtual void _attemptAttackTarget(class Actor &, float, float, float, float);
-    /*
-    inline  ~MeleeAttackGoal(){
-         (MeleeAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("??1MeleeAttackGoal@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MELEEATTACKGOAL
+public:
+#endif
     MCAPI MeleeAttackGoal(class Mob &);
 
-protected:
+//protected:
     MCAPI void _attemptMoveToTargetPosition(class Actor &, float);
     MCAPI float _getAttackReachSqr(class Actor const &) const;
     MCAPI bool _inSunlight(class Actor const &) const;
+
+protected:
     MCAPI static class BaseGameVersion const min3DAttackVersion;
 
-private:
 
 };

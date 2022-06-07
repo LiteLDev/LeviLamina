@@ -96,3 +96,9 @@ std::string FixCurlyBracket(std::string str) {
     ReplaceStr(str, "}", "}}");
     return str;
 }
+
+
+std::string UTF82String(std::u8string str)
+{
+    return reinterpret_cast<std::string&>(str);
+}

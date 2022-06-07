@@ -23,7 +23,11 @@ public:
     ActorFactory() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORFACTORY
+public:
+#endif
     MCAPI ActorFactory(class gsl::not_null<class Bedrock::NonOwnerPointer<class Level>>);
     MCAPI void applyEntityInitializer(struct ActorDefinitionIdentifier const &, class EntityContext &) const;
     MCAPI std::vector<struct std::pair<std::string, struct ActorDefinitionIdentifier const *>> buildSummonEntityTypeEnum(class Experiments const &) const;
@@ -44,15 +48,16 @@ public:
     MCAPI static class Actor * fixLegacyEntity(class BlockSource &, class CompoundTag const *);
     MCAPI static void registerEntityMapping(enum ActorType const &, bool, std::unique_ptr<class Actor> ( *const &)(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &), class std::optional<int>);
 
-protected:
-
-private:
+//private:
     MCAPI void _buildSummonableActorList(class Experiments const &, class std::function<void (std::string const &, struct ActorFactoryData const &)>) const;
     MCAPI class OwnerPtrT<struct EntityRefTraits> _constructActor(struct ActorDefinitionIdentifier const &, class Vec3 const &, class Vec2 const &) const;
     MCAPI void _initPropertiesOnActor(class Actor &) const;
     MCAPI void _loadDefinitionGroups(class ActorDefinitionGroup *);
     MCAPI void _loadDefinitionsHelper();
     MCAPI bool _validateActorData(class CompoundTag &, struct ActorDefinitionIdentifier &, class Vec3 &, class LevelChunk const *) const;
+
+private:
     MCAPI static std::vector<struct VanillaActorData> builtinEntityMappings;
+
 
 };

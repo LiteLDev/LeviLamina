@@ -23,20 +23,20 @@ public:
     TradeContainerManagerModel() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TradeContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
     /*7*/ virtual void setSlot(int, class ItemStack const &, bool);
     /*8*/ virtual class ItemStack const & getSlot(int) const;
-    /*9*/ virtual void broadcastChanges();
     /*10*/ virtual void broadcastChanges();
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADECONTAINERMANAGERMODEL
+public:
+#endif
     MCAPI TradeContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
     MCAPI class Actor * getEntity() const;
 
-protected:
-
-private:
 
 };

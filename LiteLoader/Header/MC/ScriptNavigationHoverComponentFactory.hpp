@@ -22,13 +22,14 @@ public:
     ScriptNavigationHoverComponentFactory() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptNavigationHoverComponentFactory();
     /*1*/ virtual class Scripting::StrongTypedObjectHandle<class ScriptActorComponent> createComponent(class WeakEntityRef, class Scripting::WeakLifetimeScope const &, std::string const &);
     /*2*/ virtual bool hasComponent(class WeakEntityRef) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTNAVIGATIONHOVERCOMPONENTFACTORY
+public:
+#endif
 
-protected:
-
-private:
 
 };

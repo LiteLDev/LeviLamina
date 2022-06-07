@@ -22,13 +22,14 @@ public:
     ShiftedValueAmplifier() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ShiftedValueAmplifier();
     /*1*/ virtual float getAmount(int, float) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIFTEDVALUEAMPLIFIER
+public:
+#endif
     MCAPI ShiftedValueAmplifier(int, float);
 
-protected:
-
-private:
 
 };

@@ -22,21 +22,15 @@ public:
     SleepState() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SleepState();
-    /*1*/ virtual void __unk_vfn_1();
+    /*1*/ virtual void tick();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void stop();
-    /*
-    inline void tick(){
-        void (SleepState::*rv)();
-        *((void**)&rv) = dlsym("?tick@SleepState@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLEEPSTATE
+public:
+#endif
 
-protected:
-
-private:
 
 };

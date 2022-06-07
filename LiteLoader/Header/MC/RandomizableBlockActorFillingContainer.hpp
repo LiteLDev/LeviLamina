@@ -22,38 +22,17 @@ public:
     RandomizableBlockActorFillingContainer() = delete;
 #endif
 
+
 public:
-    /*
-    inline  ~RandomizableBlockActorFillingContainer(){
-         (RandomizableBlockActorFillingContainer::*rv)();
-        *((void**)&rv) = dlsym("??1RandomizableBlockActorFillingContainer@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline void dropContents(class BlockSource & a0, class Vec3 const & a1, bool a2){
-        void (RandomizableBlockActorFillingContainer::*rv)(class BlockSource &, class Vec3 const &, bool);
-        *((void**)&rv) = dlsym("?dropContents@RandomizableBlockActorFillingContainer@@UEAAXAEAVBlockSource@@AEBVVec3@@_N@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class Vec3 const &>(a1), std::forward<bool>(a2));
-    }
-    inline void initializeContainerContents(class BlockSource & a0){
-        void (RandomizableBlockActorFillingContainer::*rv)(class BlockSource &);
-        *((void**)&rv) = dlsym("?initializeContainerContents@RandomizableBlockActorFillingContainer@@UEAAXAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0));
-    }
-    inline void setContainerChanged(int a0){
-        void (RandomizableBlockActorFillingContainer::*rv)(int);
-        *((void**)&rv) = dlsym("?setContainerChanged@RandomizableBlockActorFillingContainer@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void startOpen(class Player & a0){
-        void (RandomizableBlockActorFillingContainer::*rv)(class Player &);
-        *((void**)&rv) = dlsym("?startOpen@RandomizableBlockActorFillingContainer@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player &>(a0));
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMIZABLEBLOCKACTORFILLINGCONTAINER
+public:
+    MCVAPI void dropContents(class BlockSource &, class Vec3 const &, bool);
+    MCVAPI void initializeContainerContents(class BlockSource &);
+    MCVAPI void setContainerChanged(int);
+    MCVAPI void startOpen(class Player &);
+    MCVAPI ~RandomizableBlockActorFillingContainer();
+#endif
     MCAPI RandomizableBlockActorFillingContainer(enum BlockActorType, std::string const &, class BlockPos const &, int, enum ContainerType);
 
-protected:
-
-private:
 
 };

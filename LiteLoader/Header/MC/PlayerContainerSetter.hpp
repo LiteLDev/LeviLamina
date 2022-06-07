@@ -22,15 +22,16 @@ public:
     PlayerContainerSetter() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PlayerContainerSetter();
     /*1*/ virtual void setArmor(int, class ItemStack const &);
     /*2*/ virtual void setOffhandSlot(class ItemStack const &);
     /*3*/ virtual void setPlayerUIItem(int, class ItemStack const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERCONTAINERSETTER
+public:
+#endif
     MCAPI PlayerContainerSetter(class Player &);
 
-protected:
-
-private:
 
 };

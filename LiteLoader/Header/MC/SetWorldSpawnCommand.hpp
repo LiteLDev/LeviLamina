@@ -23,13 +23,14 @@ public:
     SetWorldSpawnCommand() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SetWorldSpawnCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETWORLDSPAWNCOMMAND
+public:
+#endif
     MCAPI static void setup(class CommandRegistry &);
 
-protected:
-
-private:
 
 };

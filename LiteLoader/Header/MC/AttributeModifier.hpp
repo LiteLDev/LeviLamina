@@ -15,20 +15,13 @@ class AttributeModifier {
 
 #undef AFTER_EXTRA
 
+
 public:
     /*0*/ virtual ~AttributeModifier();
-    /*
-    inline bool isInstantaneous() const{
-        bool (AttributeModifier::*rv)() const;
-        *((void**)&rv) = dlsym("?isInstantaneous@AttributeModifier@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline  ~AttributeModifier(){
-         (AttributeModifier::*rv)();
-        *((void**)&rv) = dlsym("??1AttributeModifier@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual bool isInstantaneous() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTEMODIFIER
+public:
+#endif
     MCAPI AttributeModifier(class AttributeModifier const &);
     MCAPI AttributeModifier(class mce::UUID, std::string const &, float, int, int, bool);
     MCAPI AttributeModifier(class mce::UUID, std::string const &, float, enum AttributeModifierOperation, enum AttributeOperands, bool);
@@ -42,9 +35,10 @@ public:
     MCAPI class AttributeModifier & operator=(class AttributeModifier const &);
     MCAPI bool operator==(class AttributeModifier const &) const;
 
-protected:
+//private:
 
 private:
     MCAPI static class mce::UUID const mInvalidUUID;
+
 
 };

@@ -23,14 +23,15 @@ public:
     LegacyForestRockFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LegacyForestRockFeature();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYFORESTROCKFEATURE
+public:
+#endif
     MCAPI LegacyForestRockFeature(class FeatureRegistry const &);
 
-protected:
-
-private:
 
 };

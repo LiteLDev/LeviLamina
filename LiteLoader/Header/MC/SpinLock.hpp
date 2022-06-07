@@ -21,15 +21,16 @@ public:
     SpinLock(class SpinLock const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPINLOCK
+public:
+#endif
     MCAPI SpinLock();
     MCAPI void lock();
     MCAPI bool try_lock();
     MCAPI void unlock();
     MCAPI ~SpinLock();
 
-protected:
-
-private:
 
 };

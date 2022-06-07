@@ -22,7 +22,11 @@ public:
     Randomize() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMIZE
+public:
+#endif
     MCAPI Randomize(class Random &);
     MCAPI bool chance(int, int) const;
     MCAPI bool chanceAllButOneIn(int) const;
@@ -35,8 +39,5 @@ public:
     MCAPI ~Randomize();
     MCAPI static float const ChanceFloatGreaterThan_MinExcessiveImprobability;
 
-protected:
-
-private:
 
 };

@@ -22,12 +22,13 @@ public:
     SmithingTableContainerScreenValidator(class SmithingTableContainerScreenValidator const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SmithingTableContainerScreenValidator();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMITHINGTABLECONTAINERSCREENVALIDATOR
+public:
+#endif
     MCAPI SmithingTableContainerScreenValidator();
 
-protected:
-
-private:
 
 };

@@ -21,20 +21,15 @@ public:
     ActivateToolNode(class ActivateToolNode const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActivateToolNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
-    /*
-    inline void initializeFromDefinition(class Actor & a0){
-        void (ActivateToolNode::*rv)(class Actor &);
-        *((void**)&rv) = dlsym("?initializeFromDefinition@ActivateToolNode@@EEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor &>(a0));
-    }
-    */
+    /*2*/ virtual void initializeFromDefinition(class Actor &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTIVATETOOLNODE
+public:
+#endif
     MCAPI ActivateToolNode();
 
-protected:
-
-private:
 
 };

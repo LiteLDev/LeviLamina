@@ -22,34 +22,27 @@ public:
     CircleAroundAnchorGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CircleAroundAnchorGoal();
-    /*1*/ virtual void __unk_vfn_1();
+    /*1*/ virtual bool canUse();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
-    /*5*/ virtual void __unk_vfn_5();
+    /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-    /*
-    inline bool canUse(){
-        bool (CircleAroundAnchorGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@CircleAroundAnchorGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (CircleAroundAnchorGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@CircleAroundAnchorGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CIRCLEAROUNDANCHORGOAL
+public:
+#endif
     MCAPI CircleAroundAnchorGoal(class Mob &);
 
-protected:
-
-private:
+//private:
     MCAPI float _calculateHeightOffset() const;
     MCAPI void _selectNext();
     MCAPI void _setAnchorAboveTarget();
+
+private:
+
 
 };

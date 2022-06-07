@@ -23,24 +23,14 @@ public:
     SHStartPiece() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SHStartPiece();
-    /*2*/ virtual class PoolElementStructurePiece * asPoolElement();
     /*3*/ virtual enum StructurePieceType getType() const;
-    /*6*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
-    /*10*/ virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);
-    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
-    /*
-    inline  ~SHStartPiece(){
-         (SHStartPiece::*rv)();
-        *((void**)&rv) = dlsym("??1SHStartPiece@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHSTARTPIECE
+public:
+#endif
     MCAPI SHStartPiece(int, class Random &, int, int);
 
-protected:
-
-private:
 
 };

@@ -23,13 +23,14 @@ public:
     LootItemKilledByPlayerCondition() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LootItemKilledByPlayerCondition();
     /*1*/ virtual bool applies(class Random &, class LootTableContext &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMKILLEDBYPLAYERCONDITION
+public:
+#endif
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
 
-protected:
-
-private:
 
 };

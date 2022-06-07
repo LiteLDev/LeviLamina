@@ -20,15 +20,16 @@ public:
     DimensionDefinitionGroup() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONDEFINITIONGROUP
+public:
+#endif
     MCAPI DimensionDefinitionGroup(class ResourcePackManager *const, bool);
     MCAPI class std::optional<struct DimensionDefinitionGroup::DimensionDefinition> getDimensionDefinition(std::string const &) const;
     MCAPI bool isEmpty() const;
     MCAPI bool tryAddDimensionDefinitionByString(std::string const &);
     MCAPI ~DimensionDefinitionGroup();
 
-protected:
-
-private:
 
 };

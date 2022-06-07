@@ -22,6 +22,7 @@ public:
     VanillaGameModuleServer(class VanillaGameModuleServer const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~VanillaGameModuleServer();
     /*1*/ virtual void init(class ServerInstance &, class Level &);
@@ -32,30 +33,20 @@ public:
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void setupCommands(class CommandRegistry &);
     /*8*/ virtual void configureServerNetworkHandler(class ServerInstance &, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>);
-    /*
-    inline void configureDocumentation(class IGameModuleDocumentation & a0){
-        void (VanillaGameModuleServer::*rv)(class IGameModuleDocumentation &);
-        *((void**)&rv) = dlsym("?configureDocumentation@VanillaGameModuleServer@@UEAAXAEAVIGameModuleDocumentation@@@Z");
-        return (this->*rv)(std::forward<class IGameModuleDocumentation &>(a0));
-    }
-    inline void tick(){
-        void (VanillaGameModuleServer::*rv)();
-        *((void**)&rv) = dlsym("?tick@VanillaGameModuleServer@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void configureNewPlayer(class Player & a0){
-        void (VanillaGameModuleServer::*rv)(class Player &);
-        *((void**)&rv) = dlsym("?configureNewPlayer@VanillaGameModuleServer@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player &>(a0));
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAGAMEMODULESERVER
+public:
+    MCVAPI void configureDocumentation(class IGameModuleDocumentation &);
+    MCVAPI void configureNewPlayer(class Player &);
+    MCVAPI void tick();
+#endif
     MCAPI VanillaGameModuleServer();
 
-protected:
-
-private:
+//private:
     MCAPI void _configureWorldGen(class IWorldRegistriesProvider &, struct SpawnSettings const &, class Experiments const &, class ResourcePackManager &, class BaseGameVersion const &);
     MCAPI void _registerGameplayHandlers(class Level &) const;
     MCAPI void _registerListeners(class Level &);
+
+private:
+
 
 };

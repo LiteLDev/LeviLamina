@@ -22,19 +22,13 @@ public:
     IDefinitionInstance() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~IDefinitionInstance();
     /*1*/ virtual unsigned short getRuntimeTypeId() const;
-    /*
-    inline  ~IDefinitionInstance(){
-         (IDefinitionInstance::*rv)();
-        *((void**)&rv) = dlsym("??1IDefinitionInstance@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDEFINITIONINSTANCE
+public:
+#endif
 
-protected:
-
-private:
 
 };

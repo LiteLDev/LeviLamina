@@ -23,15 +23,16 @@ public:
     BlockRandomTickingDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BlockRandomTickingDescription();
     /*1*/ virtual std::string const & getName() const;
     /*2*/ virtual void initializeComponent(class EntityContext &) const;
     /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKRANDOMTICKINGDESCRIPTION
+public:
+#endif
     MCAPI static std::string const NameID;
 
-protected:
-
-private:
 
 };

@@ -22,13 +22,18 @@ public:
     MobGameEventSystem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MobGameEventSystem();
     /*1*/ virtual void registerEvents(class entt::dispatcher &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBGAMEEVENTSYSTEM
+public:
+#endif
 
-protected:
+//private:
+    MCAPI static void _onActorDie(struct ActorDieEvent &);
 
 private:
-    MCAPI static void _onActorDie(struct ActorDieEvent &);
+
 
 };

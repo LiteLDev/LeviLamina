@@ -22,30 +22,19 @@ public:
     SquidIdleGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SquidIdleGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual void __unk_vfn_2();
+    /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
-    /*5*/ virtual void __unk_vfn_5();
+    /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-    /*
-    inline void stop(){
-        void (SquidIdleGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@SquidIdleGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool canContinueToUse(){
-        bool (SquidIdleGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@SquidIdleGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUIDIDLEGOAL
+public:
+#endif
 
-protected:
-
-private:
 
 };

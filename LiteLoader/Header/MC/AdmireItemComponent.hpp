@@ -22,7 +22,11 @@ public:
     AdmireItemComponent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADMIREITEMCOMPONENT
+public:
+#endif
     MCAPI AdmireItemComponent(class AdmireItemComponent &&);
     MCAPI class ItemStack const & getAdmireItem() const;
     MCAPI struct Tick const & getAdmireUntil() const;
@@ -32,8 +36,5 @@ public:
     MCAPI void stopAdmiring();
     MCAPI ~AdmireItemComponent();
 
-protected:
-
-private:
 
 };

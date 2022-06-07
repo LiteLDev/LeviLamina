@@ -23,19 +23,13 @@ public:
     NavigationClimbDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~NavigationClimbDescription();
-    /*
-    inline  ~NavigationClimbDescription(){
-         (NavigationClimbDescription::*rv)();
-        *((void**)&rv) = dlsym("??1NavigationClimbDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONCLIMBDESCRIPTION
+public:
+#endif
 
-protected:
-
-private:
 
 };

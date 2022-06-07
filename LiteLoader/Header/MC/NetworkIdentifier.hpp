@@ -26,7 +26,11 @@ public:
     NetworkIdentifier() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKIDENTIFIER
+public:
+#endif
     MCAPI NetworkIdentifier(struct NetherNet::NetworkID const &);
     MCAPI NetworkIdentifier(struct RakNet::RakNetGUID const &);
     MCAPI NetworkIdentifier(struct sockaddr_in6 const &);
@@ -38,9 +42,10 @@ public:
     MCAPI bool isUnassigned() const;
     MCAPI std::string toString() const;
 
-protected:
+//private:
+    MCAPI bool equalsTypeData(class NetworkIdentifier const &) const;
 
 private:
-    MCAPI bool equalsTypeData(class NetworkIdentifier const &) const;
+
 
 };

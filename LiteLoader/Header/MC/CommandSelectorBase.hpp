@@ -47,7 +47,11 @@ public:
     CommandSelectorBase() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDSELECTORBASE
+public:
+#endif
     MCAPI void addFamilyFilter(struct InvertableFilter<std::string> const &);
     MCAPI void addFilter(class std::function<bool (class CommandOrigin const &, class Actor const &)>);
     MCAPI void addGameModeFilter(struct InvertableFilter<enum GameType> const &);
@@ -77,11 +81,11 @@ public:
     MCAPI void setVersion(int);
     MCAPI ~CommandSelectorBase();
 
-protected:
+//protected:
     MCAPI CommandSelectorBase(bool);
     MCAPI class std::shared_ptr<std::vector<class Actor *>> newResults(class CommandOrigin const &) const;
 
-private:
+//private:
     MCAPI bool compareName(std::string const &) const;
     MCAPI bool filter(class CommandOrigin const &, class Actor &) const;
     MCAPI bool isExpansionAllowed(class CommandOrigin const &) const;
@@ -89,5 +93,10 @@ private:
     MCAPI bool matchName(class Actor const &) const;
     MCAPI bool matchTag(class Actor const &) const;
     MCAPI bool matchType(class Actor const &) const;
+
+protected:
+
+private:
+
 
 };

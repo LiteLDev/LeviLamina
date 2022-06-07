@@ -23,9 +23,9 @@ public:
     SimpleContainer() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SimpleContainer();
-    /*1*/ virtual void init();
     /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /*5*/ virtual class ItemStack const & getItem(int) const;
     /*9*/ virtual void setItem(int, class ItemStack const &);
@@ -35,18 +35,10 @@ public:
     /*17*/ virtual void stopOpen(class Player &);
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
-    /*31*/ virtual void __unk_vfn_31();
-    /*
-    inline  ~SimpleContainer(){
-         (SimpleContainer::*rv)();
-        *((void**)&rv) = dlsym("??1SimpleContainer@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLECONTAINER
+public:
+#endif
     MCAPI SimpleContainer(std::string const &, bool, int, enum ContainerType);
 
-protected:
-
-private:
 
 };

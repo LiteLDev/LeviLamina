@@ -192,12 +192,7 @@ bool CallPlayerCmdCallback(Player* player, const string& cmdPrefix, const vector
             args.add(String::newString(para));
         res = cmdData.func.get().call({}, PlayerClass::newPlayer(player), args);
     }
-    catch (const Exception& e)
-    {
-        logger.error("PlayerCmd Callback Failed!");
-        logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-        logger.error << e << logger.endl;
-    }
+    CATCH_IN_CALLBACK("PlayerCmd");
     if (res.isNull() || (res.isBoolean() && res.asBoolean().value() == false))
         return false;
 
@@ -216,12 +211,7 @@ bool CallServerCmdCallback(const string& cmdPrefix, const vector<string>& paras)
             args.add(String::newString(para));
         res = cmdData.func.get().call({}, args);
     }
-    catch (const Exception& e)
-    {
-        logger.error("ServerCmd Callback Failed!");
-        logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-        logger.error << e << logger.endl;
-    }
+    CATCH_IN_CALLBACK("ServerCmd");
     if (res.isNull() || (res.isBoolean() && res.asBoolean().value() == false))
         return false;
 

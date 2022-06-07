@@ -22,24 +22,18 @@ public:
     PlayerHotbarPacket(class PlayerHotbarPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PlayerHotbarPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~PlayerHotbarPacket(){
-         (PlayerHotbarPacket::*rv)();
-        *((void**)&rv) = dlsym("??1PlayerHotbarPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERHOTBARPACKET
+public:
+#endif
     MCAPI PlayerHotbarPacket(unsigned int, enum ContainerID, bool);
     MCAPI PlayerHotbarPacket();
 
-protected:
-
-private:
 
 };

@@ -22,13 +22,14 @@ public:
     NpcUrlAction(class NpcUrlAction const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NpcUrlAction();
     /*1*/ virtual class Json::Value toJson();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCURLACTION
+public:
+#endif
     MCAPI NpcUrlAction();
 
-protected:
-
-private:
 
 };

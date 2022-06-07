@@ -22,24 +22,22 @@ public:
     HugeMushroomFeature(class HugeMushroomFeature const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HugeMushroomFeature();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-    /*
-    inline  ~HugeMushroomFeature(){
-         (HugeMushroomFeature::*rv)();
-        *((void**)&rv) = dlsym("??1HugeMushroomFeature@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUGEMUSHROOMFEATURE
+public:
+#endif
     MCAPI HugeMushroomFeature(int);
     MCAPI HugeMushroomFeature();
     MCAPI bool placeFixed(class BlockSource &, class BlockPos const &, int, int) const;
 
-protected:
+//private:
+    MCAPI bool _canSurvive(class Block const &) const;
 
 private:
-    MCAPI bool _canSurvive(class Block const &) const;
+
 
 };

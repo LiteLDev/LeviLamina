@@ -22,6 +22,7 @@ public:
     IWebviewTelemetry() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~IWebviewTelemetry();
     /*1*/ virtual void __unk_vfn_1();
@@ -33,10 +34,10 @@ public:
     /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual void onDownloadComplete(struct WebviewDownloadInfo const &);
     /*9*/ virtual void onDownloadCanceled(struct WebviewDownloadInfo const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IWEBVIEWTELEMETRY
+public:
+#endif
     MCAPI IWebviewTelemetry(class IMinecraftEventing const &);
 
-protected:
-
-private:
 
 };

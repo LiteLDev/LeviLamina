@@ -20,12 +20,12 @@ public:
     VolumeComponentFactory() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~VolumeComponentFactory();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMECOMPONENTFACTORY
+public:
+#endif
     MCAPI void registerVolumeComponentDefinitions(bool);
 
-protected:
-
-private:
 
 };

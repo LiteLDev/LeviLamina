@@ -22,15 +22,16 @@ public:
     ScriptObject() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptObject();
     /*1*/ virtual struct Scripting::Error _functionError(std::string const &) const;
     /*2*/ virtual struct Scripting::Error _getPropertyError(std::string const &) const;
     /*3*/ virtual struct Scripting::Error _setPropertyError(std::string const &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTOBJECT
+public:
+#endif
     MCAPI ScriptObject(class Scripting::WeakLifetimeScope const &);
 
-protected:
-
-private:
 
 };

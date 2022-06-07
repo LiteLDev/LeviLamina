@@ -24,15 +24,20 @@ public:
     SetBookContentsFunction() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SetBookContentsFunction();
     /*1*/ virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /*3*/ virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETBOOKCONTENTSFUNCTION
+public:
+#endif
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
-protected:
+//private:
+    MCAPI void _fillUserData(class CompoundTag &);
 
 private:
-    MCAPI void _fillUserData(class CompoundTag &);
+
 
 };

@@ -22,11 +22,16 @@ public:
     ListenerInfo() = delete;
 #endif
 
-public:
 
-protected:
+public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LISTENERINFO
+public:
+#endif
+
+//private:
 
 private:
     MCAPI static float const SQRT_FLT_MAX;
+
 
 };

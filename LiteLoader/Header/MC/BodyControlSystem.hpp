@@ -22,13 +22,14 @@ public:
     BodyControlSystem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BodyControlSystem();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void tick(class EntityRegistry &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BODYCONTROLSYSTEM
+public:
+#endif
 
-protected:
-
-private:
 
 };

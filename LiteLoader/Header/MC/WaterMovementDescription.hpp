@@ -22,22 +22,16 @@ public:
     WaterMovementDescription(class WaterMovementDescription const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~WaterMovementDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
-    /*
-    inline  ~WaterMovementDescription(){
-         (WaterMovementDescription::*rv)();
-        *((void**)&rv) = dlsym("??1WaterMovementDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WATERMOVEMENTDESCRIPTION
+public:
+#endif
     MCAPI WaterMovementDescription();
 
-protected:
-
-private:
 
 };

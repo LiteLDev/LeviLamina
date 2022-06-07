@@ -22,13 +22,14 @@ public:
     BossSystem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BossSystem();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void tick(class EntityRegistry &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOSSSYSTEM
+public:
+#endif
 
-protected:
-
-private:
 
 };

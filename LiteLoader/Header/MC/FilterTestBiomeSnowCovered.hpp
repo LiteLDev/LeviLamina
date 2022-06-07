@@ -24,20 +24,14 @@ public:
     FilterTestBiomeSnowCovered() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FilterTestBiomeSnowCovered();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-    /*
-    inline  ~FilterTestBiomeSnowCovered(){
-         (FilterTestBiomeSnowCovered::*rv)();
-        *((void**)&rv) = dlsym("??1FilterTestBiomeSnowCovered@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTBIOMESNOWCOVERED
+public:
+#endif
 
-protected:
-
-private:
 
 };

@@ -69,7 +69,7 @@ std::optional<Addon> parseAddonFromPath(std::filesystem::path addonPath)
             manifestPath = addonPath;
             manifestPath.append("pack_manifest.json");
         }
-        auto manifestFile = ReadAllFile(manifestPath.u8string());
+        auto manifestFile = ReadAllFile(UTF82String(manifestPath.u8string()));
         if (!manifestFile || manifestFile->empty())
             throw std::exception("manifest.json not found!");
         std::string content = FixMojangJson(*manifestFile);
@@ -81,7 +81,7 @@ std::optional<Addon> parseAddonFromPath(std::filesystem::path addonPath)
         addon.name = header["name"];
         addon.description = header["description"];
         addon.uuid = uuid;
-        addon.directory = addonPath.u8string();
+        addon.directory = UTF82String(addonPath.u8string());
 
         auto ver = header["version"];
         addon.version = LL::Version(ver[0], ver[1], ver[2]);
@@ -99,19 +99,19 @@ std::optional<Addon> parseAddonFromPath(std::filesystem::path addonPath)
     catch (const seh_exception& e)
     {
         addonLogger.error("Uncaught SEH Exception Detected!");
-        addonLogger.error("In " __FUNCTION__ " " + addonPath.u8string());
+        addonLogger.error("In " __FUNCTION__ " " + UTF82String(addonPath.u8string()));
         addonLogger.error("Error: Code[{}] {}", e.code(), TextEncoding::toUTF8(e.what()));
     }
     catch (const std::exception& e)
     {
         addonLogger.error("Uncaught C++ Exception Detected!");
-        addonLogger.error("In " __FUNCTION__ " " + addonPath.u8string());
+        addonLogger.error("In " __FUNCTION__ " " + UTF82String(addonPath.u8string()));
         addonLogger.error("Error: Code[{}] {}", -1, TextEncoding::toUTF8(e.what()));
     }
     catch (...)
     {
         addonLogger.error("Uncaught Exception Detected!");
-        addonLogger.error("In " __FUNCTION__ " " + addonPath.u8string());
+        addonLogger.error("In " __FUNCTION__ " " + UTF82String(addonPath.u8string()));
     }
     return std::nullopt;
 }
@@ -170,7 +170,7 @@ bool AddAddonToList(Addon& addon)
         // Auto fix Addon List File
         if (!addonList.is_array())
         {
-            auto backupPath = filesystem::path(str2wstr(addonListFile)).stem().u8string() + "_error.json";
+            auto backupPath = UTF82String(filesystem::path(str2wstr(addonListFile)).stem().u8string()) + "_error.json";
             addonLogger.error("Invalid Addon List File {}, backup to {} and reset to default", addonListFile, backupPath);
             std::error_code ec;
             std::filesystem::rename(str2wstr(addonListFile), filesystem::path(addonListFile).remove_filename().append(str2wstr(backupPath)), ec);
@@ -253,9 +253,9 @@ void FindManifest(vector<string> &result, const string& path)
     for (auto& file : ent)
     {
         auto path = file.path();
-        if (isManifestFile(path.filename().u8string()))
+        if (isManifestFile(UTF82String(path.filename().u8string())))
         {
-            result.push_back(filesystem::canonical(path).parent_path().u8string());
+            result.push_back(UTF82String(filesystem::canonical(path).parent_path().u8string()));
             foundManifest = true;
             break;
         }
@@ -266,7 +266,7 @@ void FindManifest(vector<string> &result, const string& path)
         filesystem::directory_iterator ent2(str2wstr(path));
         for (auto& file : ent2)
             if (file.is_directory())
-                FindManifest(result, file.path().u8string());
+                FindManifest(result, UTF82String(file.path().u8string()));
     }
     return;
 }
@@ -288,13 +288,13 @@ bool AddonsManager::install(std::string packPath)
             addonLogger.error("Addon file \"{}\" not found!", packPath);
             return false;
         }
-        if (VALID_ADDON_FILE_EXTENSION.find(filesystem::path(str2wstr(packPath)).extension().u8string()) == VALID_ADDON_FILE_EXTENSION.end())
+        if (VALID_ADDON_FILE_EXTENSION.find(UTF82String(filesystem::path(str2wstr(packPath)).extension().u8string())) == VALID_ADDON_FILE_EXTENSION.end())
         {
             addonLogger.error("Unsupported type of file found!");
             return false;
         }
 
-        string name = filesystem::path(str2wstr(packPath)).filename().u8string();
+        string name = UTF82String(filesystem::path(str2wstr(packPath)).filename().u8string());
         addonLogger.warn("Installing addon <{}>...", name);
 
         std::error_code ec;
@@ -332,9 +332,9 @@ bool AddonsManager::install(std::string packPath)
 		
         for (auto& dir : paths)
         {
-            string addonName = filesystem::path(str2wstr(dir)).filename().u8string();
+            string addonName = UTF82String(filesystem::path(str2wstr(dir)).filename().u8string());
             if (addonName.empty() || addonName == "Temp")
-                addonName = filesystem::path(str2wstr(packPath)).stem().u8string();
+                addonName = UTF82String(filesystem::path(str2wstr(packPath)).stem().u8string());
             if (!InstallAddonToLevel(dir, addonName))
                 throw std::exception("Error in Install Addon To Level ");
         }
@@ -732,9 +732,9 @@ void AutoInstallAddons()
         if (!file.is_regular_file())
             continue;
 
-        if (VALID_ADDON_FILE_EXTENSION.count(file.path().extension().u8string()) > 0)
+        if (VALID_ADDON_FILE_EXTENSION.count(UTF82String(file.path().extension().u8string())) > 0)
         {
-            toInstallList.push_back(file.path().lexically_normal().u8string());
+            toInstallList.push_back(UTF82String(file.path().lexically_normal().u8string()));
         }
     }
 

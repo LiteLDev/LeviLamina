@@ -22,6 +22,7 @@ public:
     AvoidMobTypeGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AvoidMobTypeGoal();
     /*1*/ virtual bool canUse();
@@ -31,12 +32,12 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AVOIDMOBTYPEGOAL
+public:
+#endif
     MCAPI AvoidMobTypeGoal(class Mob &);
     MCAPI bool canFindAvoidPath(class Actor *);
     MCAPI class Actor * findNearestEntityToAvoid(float);
 
-protected:
-
-private:
 
 };

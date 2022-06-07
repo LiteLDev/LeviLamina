@@ -21,20 +21,15 @@ public:
     RepeatUntilFailureNode(class RepeatUntilFailureNode const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RepeatUntilFailureNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
-    /*
-    inline void initializeFromDefinition(class Actor & a0){
-        void (RepeatUntilFailureNode::*rv)(class Actor &);
-        *((void**)&rv) = dlsym("?initializeFromDefinition@RepeatUntilFailureNode@@MEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor &>(a0));
-    }
-    */
+    /*2*/ virtual void initializeFromDefinition(class Actor &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPEATUNTILFAILURENODE
+public:
+#endif
     MCAPI RepeatUntilFailureNode();
 
-protected:
-
-private:
 
 };

@@ -22,18 +22,11 @@ public:
     IWorldTemplateManager() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~IWorldTemplateManager();
-    /*
-    inline  ~IWorldTemplateManager(){
-         (IWorldTemplateManager::*rv)();
-        *((void**)&rv) = dlsym("??1IWorldTemplateManager@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IWORLDTEMPLATEMANAGER
+public:
+#endif
 
-protected:
-
-private:
 
 };

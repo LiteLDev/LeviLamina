@@ -21,13 +21,14 @@ public:
     CommandDispatcher(class CommandDispatcher const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CommandDispatcher();
     /*1*/ virtual int performCommand(class CommandOrigin const &, class Command &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDDISPATCHER
+public:
+#endif
     MCAPI CommandDispatcher();
 
-protected:
-
-private:
 
 };

@@ -20,17 +20,12 @@ public:
     ICerealDefinitionSerializer() = delete;
 #endif
 
+
 public:
-    /*
-    inline  ~ICerealDefinitionSerializer(){
-         (ICerealDefinitionSerializer::*rv)();
-        *((void**)&rv) = dlsym("??1ICerealDefinitionSerializer@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICEREALDEFINITIONSERIALIZER
+public:
+    MCVAPI ~ICerealDefinitionSerializer();
+#endif
 
-protected:
-
-private:
 
 };

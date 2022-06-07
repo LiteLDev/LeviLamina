@@ -22,6 +22,7 @@ public:
     RestrictOpenDoorGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RestrictOpenDoorGoal();
     /*1*/ virtual bool canUse();
@@ -31,10 +32,10 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESTRICTOPENDOORGOAL
+public:
+#endif
     MCAPI RestrictOpenDoorGoal(class Mob &);
 
-protected:
-
-private:
 
 };

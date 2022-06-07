@@ -21,19 +21,13 @@ public:
     ScriptWantsJockeyComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptWantsJockeyComponent();
-    /*
-    inline  ~ScriptWantsJockeyComponent(){
-         (ScriptWantsJockeyComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptWantsJockeyComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTWANTSJOCKEYCOMPONENT
+public:
+#endif
     MCAPI static class HashedString const & getHashedName();
 
-protected:
-
-private:
 
 };

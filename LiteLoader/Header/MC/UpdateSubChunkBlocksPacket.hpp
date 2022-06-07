@@ -22,25 +22,19 @@ public:
     UpdateSubChunkBlocksPacket(class UpdateSubChunkBlocksPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~UpdateSubChunkBlocksPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~UpdateSubChunkBlocksPacket(){
-         (UpdateSubChunkBlocksPacket::*rv)();
-        *((void**)&rv) = dlsym("??1UpdateSubChunkBlocksPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATESUBCHUNKBLOCKSPACKET
+public:
+#endif
     MCAPI UpdateSubChunkBlocksPacket(std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const &, std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const &);
     MCAPI UpdateSubChunkBlocksPacket();
     MCAPI void setSubChunkPosition(class SubChunkPos const &);
 
-protected:
-
-private:
 
 };

@@ -22,7 +22,11 @@ public:
     DamageOverTimeComponent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAMAGEOVERTIMECOMPONENT
+public:
+#endif
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI int getDamageTime() const;
     MCAPI int getDamageTimeInterval() const;
@@ -30,8 +34,5 @@ public:
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void setDamageTime(int);
 
-protected:
-
-private:
 
 };

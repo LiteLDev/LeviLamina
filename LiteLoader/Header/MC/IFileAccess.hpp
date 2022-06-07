@@ -21,19 +21,12 @@ public:
     IFileAccess(class IFileAccess const &) = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~IFileAccess();
-    /*
-    inline  ~IFileAccess(){
-         (IFileAccess::*rv)();
-        *((void**)&rv) = dlsym("??1IFileAccess@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFILEACCESS
+public:
+#endif
     MCAPI IFileAccess();
 
-protected:
-
-private:
 
 };

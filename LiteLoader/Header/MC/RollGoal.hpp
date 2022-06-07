@@ -22,27 +22,25 @@ public:
     RollGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RollGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual void __unk_vfn_3();
+    /*3*/ virtual bool canBeInterrupted();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-    /*
-    inline bool canBeInterrupted(){
-        bool (RollGoal::*rv)();
-        *((void**)&rv) = dlsym("?canBeInterrupted@RollGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROLLGOAL
+public:
+#endif
     MCAPI RollGoal(class Mob &, float);
 
-protected:
+//private:
+    MCAPI void _handleRoll(int, class Vec3 &, float &, float &) const;
 
 private:
-    MCAPI void _handleRoll(int, class Vec3 &, float &, float &) const;
+
 
 };

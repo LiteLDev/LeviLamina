@@ -24,20 +24,14 @@ public:
     ActorInVillageTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorInVillageTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-    /*
-    inline  ~ActorInVillageTest(){
-         (ActorInVillageTest::*rv)();
-        *((void**)&rv) = dlsym("??1ActorInVillageTest@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINVILLAGETEST
+public:
+#endif
 
-protected:
-
-private:
 
 };

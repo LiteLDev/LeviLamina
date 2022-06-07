@@ -22,6 +22,7 @@ public:
     BreedGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BreedGoal();
     /*1*/ virtual bool canUse();
@@ -31,12 +32,16 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREEDGOAL
+public:
+#endif
     MCAPI BreedGoal(class Mob &, float);
 
-protected:
-
-private:
+//private:
     MCAPI bool _isCloseEnoughToBreed(class Vec3, class Vec2, class Vec3, class Vec2) const;
     MCAPI class Mob * _moveToFreePartner() const;
+
+private:
+
 
 };

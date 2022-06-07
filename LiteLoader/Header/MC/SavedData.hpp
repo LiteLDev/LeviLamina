@@ -22,18 +22,11 @@ public:
     SavedData() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~SavedData();
-    /*
-    inline  ~SavedData(){
-         (SavedData::*rv)();
-        *((void**)&rv) = dlsym("??1SavedData@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAVEDDATA
+public:
+#endif
 
-protected:
-
-private:
 
 };

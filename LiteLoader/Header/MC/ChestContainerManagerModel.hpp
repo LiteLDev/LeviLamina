@@ -23,15 +23,16 @@ public:
     ChestContainerManagerModel() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ChestContainerManagerModel();
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTCONTAINERMANAGERMODEL
+public:
+#endif
     MCAPI ChestContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &, enum BlockActorType);
     MCAPI ChestContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID);
 
-protected:
-
-private:
 
 };

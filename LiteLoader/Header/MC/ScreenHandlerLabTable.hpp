@@ -22,17 +22,22 @@ public:
     ScreenHandlerLabTable() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScreenHandlerLabTable();
     /*1*/ virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const &);
     /*2*/ virtual enum ItemStackNetResult endRequest();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void postRequest(bool);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCREENHANDLERLABTABLE
+public:
+#endif
     MCAPI ScreenHandlerLabTable(class ContainerScreenContext const &, class ItemStackRequestActionHandler &);
 
-protected:
+//private:
+    MCAPI enum ItemStackNetResult _handleLabTableCombine(class ItemStackRequestActionDataless<9> const &);
 
 private:
-    MCAPI enum ItemStackNetResult _handleLabTableCombine(class ItemStackRequestActionDataless<9> const &);
+
 
 };

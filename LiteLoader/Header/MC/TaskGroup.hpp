@@ -23,6 +23,7 @@ public:
     TaskGroup() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TaskGroup();
     /*1*/ virtual void taskRegister(class std::shared_ptr<class BackgroundTaskBase>);
@@ -30,13 +31,9 @@ public:
     /*3*/ virtual enum TaskGroupState getState() const;
     /*4*/ virtual void processCoroutines();
     /*5*/ virtual void taskComplete(class gsl::not_null<class BackgroundTaskBase *>);
-    /*
-    inline  ~TaskGroup(){
-         (TaskGroup::*rv)();
-        *((void**)&rv) = dlsym("??1TaskGroup@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKGROUP
+public:
+#endif
     MCAPI TaskGroup(class WorkerPool &, class Scheduler &, std::string);
     MCAPI void disableOwnerThreadChecks();
     MCAPI void flush(class std::function<void (void)>);
@@ -52,12 +49,13 @@ public:
     MCAPI static class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queueChildSync_DEPRECATED(struct TaskStartInfoEx<void> const &, class std::function<class TaskResult (void)> &&);
     MCAPI static class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queueChild_DEPRECATED(struct TaskStartInfoEx<void> const &, class std::function<class TaskResult (void)> &&, class std::function<void (void)> &&);
 
-protected:
-
-private:
+//private:
     MCAPI void _forAllTasks(class Bedrock::Threading::UniqueLock<class std::mutex> &, class std::function<void (class std::shared_ptr<class BackgroundTaskBase> const &)>);
     MCAPI bool _isEmptyInternal() const;
     MCAPI void _queueInternal(class std::shared_ptr<class BackgroundTaskBase>);
     MCAPI static class TaskGroup * getCurrentTaskGroup();
+
+private:
+
 
 };

@@ -33,7 +33,11 @@ public:
     SpatialActorNetworkData() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPATIALACTORNETWORKDATA
+public:
+#endif
     MCAPI SpatialActorNetworkData(class Actor &);
     MCAPI void enableAutoSend(bool);
     MCAPI class Vec3 getLastSentPositionForAddingEntity();
@@ -46,14 +50,15 @@ public:
     MCAPI bool shouldSendUpdate(bool, bool) const;
     MCAPI static struct SpatialActorNetworkData::DebugSpatialPacketModifiers & getDebugSpatialPacketModifiers();
 
-protected:
-
-private:
+//private:
     MCAPI std::vector<struct NetworkIdentifierWithSubId> _findRelevantPlayersToSendUpdate();
     MCAPI unsigned __int64 _getOptimizationScore(struct ActorUniqueID const &) const;
     MCAPI void _initializeLastSentValues();
     MCAPI bool _shouldUpdateBasedOptimizationOnScore(struct ActorUniqueID const &) const;
+
+private:
     MCAPI static struct SpatialActorNetworkData::DebugSendRateModifiers mDebugSendRateModifiers;
     MCAPI static struct SpatialActorNetworkData::DebugSpatialPacketModifiers mDebugSpatialPacketModifiers;
+
 
 };

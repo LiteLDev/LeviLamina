@@ -23,6 +23,7 @@ public:
     FlyingPathNavigation() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FlyingPathNavigation();
     /*1*/ virtual void initializeInternal(class Mob &, struct NavigationDescription *);
@@ -33,11 +34,15 @@ public:
     /*9*/ virtual void stop(class NavigationComponent &, class Mob &);
     /*11*/ virtual bool canUpdatePath(class Mob const &) const;
     /*12*/ virtual void updatePath(class NavigationComponent &, class Mob &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLYINGPATHNAVIGATION
+public:
+#endif
 
-protected:
-
-private:
+//private:
     MCAPI void _restorePreviousGravityFlag(class Mob &);
     MCAPI void _storePreviousGravityFlag(class Mob &);
+
+private:
+
 
 };

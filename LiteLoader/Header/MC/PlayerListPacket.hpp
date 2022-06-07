@@ -33,6 +33,7 @@ public:
     PlayerListPacket(class PlayerListPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PlayerListPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -40,19 +41,12 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~PlayerListPacket(){
-         (PlayerListPacket::*rv)();
-        *((void**)&rv) = dlsym("??1PlayerListPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERLISTPACKET
+public:
+#endif
     MCAPI PlayerListPacket(class mce::UUID const &);
     MCAPI PlayerListPacket();
     MCAPI void emplace(class PlayerListEntry &&);
 
-protected:
-
-private:
 
 };

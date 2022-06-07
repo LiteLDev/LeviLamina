@@ -22,7 +22,11 @@ public:
     DyeableComponent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYEABLECOMPONENT
+public:
+#endif
     MCAPI void appendFormattedHovertext(class ItemStackBase const &, std::string &, bool) const;
     MCAPI void clearColor(class ItemStackBase &) const;
     MCAPI class mce::Color getColor(class CompoundTag const *, class ItemDescriptor const &) const;
@@ -33,8 +37,5 @@ public:
     MCAPI static void ResetDefaultLeatherColor();
     MCAPI static class HashedString const & getIdentifier();
 
-protected:
-
-private:
 
 };

@@ -3,13 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Core.hpp"
+#include "TransactionalWorldBlockTarget.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class SnapshotEnv {
+class SnapshotEnv : public TransactionalWorldBlockTarget {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -23,26 +24,26 @@ public:
     SnapshotEnv() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SnapshotEnv();
     /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
     /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
-    /*3*/ virtual class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
-    /*4*/ virtual class leveldb::Status NewAppendableFile(std::string const &, class leveldb::WritableFile **);
-    /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual class leveldb::Status DeleteFileA(std::string const &);
-    /*8*/ virtual void __unk_vfn_8();
-    /*9*/ virtual void __unk_vfn_9();
-    /*10*/ virtual void __unk_vfn_10();
-    /*11*/ virtual class leveldb::Status RenameFile(std::string const &, std::string const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNAPSHOTENV
+public:
+    MCVAPI class leveldb::Status DeleteFileA(std::string const &);
+    MCVAPI class leveldb::Status NewAppendableFile(std::string const &, class leveldb::WritableFile **);
+    MCVAPI class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
+    MCVAPI class leveldb::Status RenameFile(std::string const &, std::string const &);
+#endif
     MCAPI SnapshotEnv(class leveldb::Env *);
     MCAPI std::vector<struct SnapshotFilenameAndLength> createSnapshot(class Core::Path const &);
     MCAPI void releaseSnapshot();
 
-protected:
+//private:
+    MCAPI bool _isQueuedForRemoval(class Core::PathBuffer<std::string> const &);
 
 private:
-    MCAPI bool _isQueuedForRemoval(class Core::PathBuffer<std::string> const &);
+
 
 };

@@ -23,19 +23,12 @@ public:
     LootItemCondition() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~LootItemCondition();
-    /*
-    inline  ~LootItemCondition(){
-         (LootItemCondition::*rv)();
-        *((void**)&rv) = dlsym("??1LootItemCondition@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMCONDITION
+public:
+#endif
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
 
-protected:
-
-private:
 
 };

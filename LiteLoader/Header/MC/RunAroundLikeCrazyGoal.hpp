@@ -22,26 +22,20 @@ public:
     RunAroundLikeCrazyGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RunAroundLikeCrazyGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual void __unk_vfn_4();
+    /*4*/ virtual void start();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-    /*
-    inline void start(){
-        void (RunAroundLikeCrazyGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@RunAroundLikeCrazyGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUNAROUNDLIKECRAZYGOAL
+public:
+#endif
     MCAPI RunAroundLikeCrazyGoal(class Mob &, float);
 
-protected:
-
-private:
 
 };

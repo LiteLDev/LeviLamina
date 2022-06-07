@@ -20,11 +20,16 @@ public:
     LoadingProgressTickingSystem() = delete;
 #endif
 
-public:
 
-protected:
+public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOADINGPROGRESSTICKINGSYSTEM
+public:
+#endif
+
+//private:
 
 private:
     MCAPI static std::vector<class ChunkPos> const mChunksNeededForLoadOffsets;
+
 
 };

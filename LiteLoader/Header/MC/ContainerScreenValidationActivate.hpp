@@ -21,18 +21,13 @@ public:
     ContainerScreenValidationActivate() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ContainerScreenValidationActivate();
-    /*
-    inline struct ContainerValidationResult tryActivate(){
-        struct ContainerValidationResult (ContainerScreenValidationActivate::*rv)();
-        *((void**)&rv) = dlsym("?tryActivate@ContainerScreenValidationActivate@@EEAA?AUContainerValidationResult@@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*3*/ virtual struct ContainerValidationResult tryActivate();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSCREENVALIDATIONACTIVATE
+public:
+#endif
 
-protected:
-
-private:
 
 };

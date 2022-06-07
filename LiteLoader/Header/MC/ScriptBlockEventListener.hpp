@@ -22,6 +22,7 @@ public:
     ScriptBlockEventListener() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptBlockEventListener();
     /*1*/ virtual enum EventResult onBlockPlacedByPlayer(class Player &, class Block const &, class BlockPos const &, bool);
@@ -34,13 +35,14 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual enum EventResult onEvent(struct ExplosionStartedEvent const &);
+    /*11*/ virtual enum EventResult onEvent(struct BlockNotificationEvent const &);
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual enum EventResult onEvent(struct PistonActionEvent const &);
     /*14*/ virtual enum EventResult onEvent(struct LeverActionEvent const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKEVENTLISTENER
+public:
+#endif
     MCAPI ScriptBlockEventListener(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 
-protected:
-
-private:
 
 };

@@ -21,19 +21,13 @@ public:
     ScriptIsDyableComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptIsDyableComponent();
-    /*
-    inline  ~ScriptIsDyableComponent(){
-         (ScriptIsDyableComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptIsDyableComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTISDYABLECOMPONENT
+public:
+#endif
     MCAPI static class HashedString const & getHashedName();
 
-protected:
-
-private:
 
 };

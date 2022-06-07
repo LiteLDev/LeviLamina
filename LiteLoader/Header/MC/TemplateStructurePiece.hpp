@@ -23,29 +23,25 @@ public:
     TemplateStructurePiece() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TemplateStructurePiece();
     /*1*/ virtual void moveBoundingBox(int, int, int);
-    /*2*/ virtual class PoolElementStructurePiece * asPoolElement();
-    /*3*/ virtual enum StructurePieceType getType() const;
-    /*4*/ virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
     /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-    /*6*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
-    /*10*/ virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);
-    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
-    /*
-    inline  ~TemplateStructurePiece(){
-         (TemplateStructurePiece::*rv)();
-        *((void**)&rv) = dlsym("??1TemplateStructurePiece@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEMPLATESTRUCTUREPIECE
+public:
+#endif
     MCAPI TemplateStructurePiece(int);
 
-protected:
+//protected:
     MCAPI void _setup(class LegacyStructureTemplate &, class LegacyStructureSettings const &, class BlockPos const &);
 
-private:
+//private:
     MCAPI void _setBoundingBoxFromTemplate();
+
+protected:
+
+private:
+
 
 };

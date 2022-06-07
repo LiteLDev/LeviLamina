@@ -21,13 +21,14 @@ public:
     KeyFrameLerpMode() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_KEYFRAMELERPMODE
+public:
+#endif
     MCAPI struct glm::mat<4, 4, float, 0> const & getPrecomputedCubicCoeffs() const;
     MCAPI class KeyFrameLerpMode & operator=(class KeyFrameLerpMode const &);
     MCAPI void setLerpStyle(enum KeyFrameLerpStyle);
 
-protected:
-
-private:
 
 };

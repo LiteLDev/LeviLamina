@@ -128,7 +128,15 @@ inline void OutputError(std::string errorMsg, int errorCode, std::string errorWh
     logger.error("Error: Code [{}] {}", errorCode, errorWhat);
     logger.error("In Event ({})", eventName);
     if (!pluginName.empty())
-        logger.error("In Plugin <{}>", pluginName);
+    {
+        auto plugin = LL::getPlugin(pluginName);
+        if (plugin) {
+            logger.error("In Plugin <{} {}>", plugin->name, plugin->version.toString());
+        }
+        else {
+            logger.error("In Plugin <{}>", pluginName);
+        }
+    }
 }
 
 template<typename EVENT>
@@ -352,18 +360,18 @@ TInstanceHook(bool, "?setLocalPlayerAsInitialized@ServerPlayer@@QEAAXXZ",
 
 
 /////////////////// PlayerLeft ///////////////////
-TClasslessInstanceHook(void, "?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServerPlayer@@_N@Z",
-      ServerPlayer* sp, bool a3)
+THook(void, "?disconnect@ServerPlayer@@QEAAXXZ",
+      ServerPlayer* sp)
 {
     IF_LISTENED(PlayerLeftEvent)
     {
         PlayerLeftEvent ev{};
         ev.mPlayer = sp;
-        ev.mXUID = sp->getXuid();
+        ev.mXUID = "";
         ev.call();
     }
     IF_LISTENED_END(PlayerLeftEvent)
-    return original(this, sp, a3);
+    return original(sp);
 }
 
 /////////////////// PlayerRespawn ///////////////////
@@ -439,7 +447,7 @@ TClasslessInstanceHook(bool, "?requestPlayerChangeDimension@Level@@UEAAXAEAVPlay
     return original(this, sp, std::move(request));
 }
 
-
+int num = 0;
 /////////////////// PlayerJump ///////////////////
 TInstanceHook(void, "?jumpFromGround@Player@@UEAAXXZ", Player)
 {

@@ -21,7 +21,11 @@ public:
     TeleportComponent(class TeleportComponent const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TELEPORTCOMPONENT
+public:
+#endif
     MCAPI TeleportComponent();
     MCAPI float getDarkTeleportChance();
     MCAPI float getLightTeleportChance();
@@ -37,8 +41,5 @@ public:
     MCAPI bool teleport(class Actor &, class Vec3 const &);
     MCAPI bool teleportTowards(class Actor &, class Actor const &);
 
-protected:
-
-private:
 
 };

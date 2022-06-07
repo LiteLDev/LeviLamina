@@ -16,18 +16,15 @@ class ItemInstance : public ItemStackBase {
 
 #undef AFTER_EXTRA
 
+
 public:
     /*0*/ virtual ~ItemInstance();
     /*1*/ virtual void reinit(class Item const &, int, int);
     /*2*/ virtual void reinit(class BlockLegacy const &, int);
     /*3*/ virtual void reinit(class gsl::basic_string_span<char const, -1>, int, int);
-    /*
-    inline  ~ItemInstance(){
-         (ItemInstance::*rv)();
-        *((void**)&rv) = dlsym("??1ItemInstance@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMINSTANCE
+public:
+#endif
     MCAPI ItemInstance(class ItemStackBase const &);
     MCAPI ItemInstance(class ItemInstance const &);
     MCAPI ItemInstance(class Block const &, int, class CompoundTag const *);
@@ -44,9 +41,10 @@ public:
     MCAPI static class ItemInstance const EMPTY_ITEM;
     MCAPI static class ItemInstance fromTag(class CompoundTag const &);
 
-protected:
+//protected:
     MCAPI ItemInstance(class BlockLegacy const &, int, short);
 
-private:
+protected:
+
 
 };

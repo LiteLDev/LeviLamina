@@ -21,19 +21,13 @@ public:
     ScriptIsStunnedComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptIsStunnedComponent();
-    /*
-    inline  ~ScriptIsStunnedComponent(){
-         (ScriptIsStunnedComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptIsStunnedComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTISSTUNNEDCOMPONENT
+public:
+#endif
     MCAPI static class HashedString const & getHashedName();
 
-protected:
-
-private:
 
 };

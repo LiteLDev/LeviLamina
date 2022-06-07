@@ -22,11 +22,11 @@ public:
     IFileWriteAccess() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~IFileWriteAccess();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFILEWRITEACCESS
+public:
+#endif
 
-protected:
-
-private:
 
 };

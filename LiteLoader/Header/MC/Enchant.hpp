@@ -103,12 +103,13 @@ public:
     Enchant() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Enchant();
     /*1*/ virtual bool isCompatibleWith(enum Enchant::Type) const;
     /*2*/ virtual int getMinCost(int) const;
     /*3*/ virtual int getMaxCost(int) const;
-    /*4*/ virtual void __unk_vfn_4();
+    /*4*/ virtual int getMinLevel() const;
     /*5*/ virtual int getMaxLevel() const;
     /*6*/ virtual int getDamageProtection(int, class ActorDamageSource const &) const;
     /*7*/ virtual float getDamageBonus(int, class Actor const &) const;
@@ -119,38 +120,13 @@ public:
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
-    /*
-    inline bool isProtectionEnchant() const{
-        bool (Enchant::*rv)() const;
-        *((void**)&rv) = dlsym("?isProtectionEnchant@Enchant@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isTreasureOnly() const{
-        bool (Enchant::*rv)() const;
-        *((void**)&rv) = dlsym("?isTreasureOnly@Enchant@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isMeleeDamageEnchant() const{
-        bool (Enchant::*rv)() const;
-        *((void**)&rv) = dlsym("?isMeleeDamageEnchant@Enchant@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isDiscoverable() const{
-        bool (Enchant::*rv)() const;
-        *((void**)&rv) = dlsym("?isDiscoverable@Enchant@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int getMinLevel() const{
-        int (Enchant::*rv)() const;
-        *((void**)&rv) = dlsym("?getMinLevel@Enchant@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline  ~Enchant(){
-         (Enchant::*rv)();
-        *((void**)&rv) = dlsym("??1Enchant@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANT
+public:
+    MCVAPI bool isDiscoverable() const;
+    MCVAPI bool isMeleeDamageEnchant() const;
+    MCVAPI bool isProtectionEnchant() const;
+    MCVAPI bool isTreasureOnly() const;
+#endif
     MCAPI Enchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
     MCAPI Enchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int, bool);
     MCAPI bool canEnchant(int, bool) const;
@@ -172,8 +148,5 @@ public:
     MCAPI static void shutdownEnchants();
     MCAPI static std::string stringFromEnchantSlot(enum Enchant::Slot const &);
 
-protected:
-
-private:
 
 };

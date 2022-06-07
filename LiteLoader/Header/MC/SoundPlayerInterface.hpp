@@ -22,11 +22,11 @@ public:
     SoundPlayerInterface() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~SoundPlayerInterface();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOUNDPLAYERINTERFACE
+public:
+#endif
 
-protected:
-
-private:
 
 };

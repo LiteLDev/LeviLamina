@@ -22,13 +22,14 @@ public:
     FitDoubleXYRoom() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FitDoubleXYRoom();
     /*1*/ virtual bool fits(class RoomDefinition const &) const;
     /*2*/ virtual std::unique_ptr<class OceanMonumentPiece> create(int &, class std::shared_ptr<class RoomDefinition>, class Random &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FITDOUBLEXYROOM
+public:
+#endif
 
-protected:
-
-private:
 
 };

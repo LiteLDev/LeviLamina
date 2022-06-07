@@ -28,16 +28,13 @@ public:
     PackManifest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PackManifest();
     /*1*/ virtual std::unique_ptr<class PackManifest> clone() const;
-    /*
-    inline  ~PackManifest(){
-         (PackManifest::*rv)();
-        *((void**)&rv) = dlsym("??1PackManifest@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKMANIFEST
+public:
+#endif
     MCAPI PackManifest(class PackManifest const &);
     MCAPI PackManifest(enum ManifestType);
     MCAPI void addLegacyModuleDependency(struct LegacyPackIdVersion const &);
@@ -113,13 +110,14 @@ public:
     MCAPI static std::string const MarioPackId;
     MCAPI static enum PackScope StringToPackScope(std::string const &);
 
-protected:
-
-private:
+//private:
     MCAPI void _serializeDependencies(class Json::Value &) const;
     MCAPI void _serializeHeader(class Json::Value &) const;
     MCAPI void _serializeModules(class Json::Value &) const;
     MCAPI void _serializeVersion(class Json::Value &, class SemVersion const &) const;
+
+private:
     MCAPI static class std::unordered_map<std::string, enum PackScope, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum PackScope>>> const STRING_TO_PACK_SCOPE;
+
 
 };

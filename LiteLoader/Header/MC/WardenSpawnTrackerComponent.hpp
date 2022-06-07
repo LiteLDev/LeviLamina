@@ -21,7 +21,11 @@ public:
     WardenSpawnTrackerComponent(class WardenSpawnTrackerComponent const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WARDENSPAWNTRACKERCOMPONENT
+public:
+#endif
     MCAPI WardenSpawnTrackerComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI bool canIncreaseThreatLevel() const;
@@ -32,8 +36,5 @@ public:
     MCAPI void tick();
     MCAPI void tryIncreaseThreatLevel();
 
-protected:
-
-private:
 
 };

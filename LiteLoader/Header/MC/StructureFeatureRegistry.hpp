@@ -19,7 +19,11 @@ public:
     StructureFeatureRegistry(class StructureFeatureRegistry const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREFEATUREREGISTRY
+public:
+#endif
     MCAPI StructureFeatureRegistry();
     MCAPI bool findNearestStructureFeature(class Dimension &, class IPreliminarySurfaceProvider &, enum StructureFeatureType, class BlockPos const &, class BlockPos &, class BiomeSource const &, bool);
     MCAPI enum StructureFeatureType findStructureFeatureTypeAt(class BlockPos const &);
@@ -27,8 +31,5 @@ public:
     MCAPI bool isStructureFeatureTypeAt(class BlockPos const &, enum StructureFeatureType) const;
     MCAPI ~StructureFeatureRegistry();
 
-protected:
-
-private:
 
 };

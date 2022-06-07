@@ -23,15 +23,12 @@ public:
     ScriptAgeableComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptAgeableComponent();
-    /*
-    inline  ~ScriptAgeableComponent(){
-         (ScriptAgeableComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptAgeableComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTAGEABLECOMPONENT
+public:
+#endif
     MCAPI ScriptAgeableComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class Scripting::Result<std::vector<std::string>> getDropItems() const;
     MCAPI class Scripting::Result<float> getDuration() const;
@@ -39,8 +36,5 @@ public:
     MCAPI class Scripting::Result<class DefinitionTrigger> getGrowUp() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptAgeableComponent> bind(struct Scripting::Version);
 
-protected:
-
-private:
 
 };

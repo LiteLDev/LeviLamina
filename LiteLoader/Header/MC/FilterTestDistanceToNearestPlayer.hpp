@@ -24,20 +24,14 @@ public:
     FilterTestDistanceToNearestPlayer() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FilterTestDistanceToNearestPlayer();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-    /*
-    inline  ~FilterTestDistanceToNearestPlayer(){
-         (FilterTestDistanceToNearestPlayer::*rv)();
-        *((void**)&rv) = dlsym("??1FilterTestDistanceToNearestPlayer@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTDISTANCETONEARESTPLAYER
+public:
+#endif
 
-protected:
-
-private:
 
 };

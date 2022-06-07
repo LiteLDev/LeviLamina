@@ -79,12 +79,7 @@ bool SimpleFormClass::sendForm(Form::SimpleForm* form, Player* player, script::L
                 else
                     callback.get().call({}, PlayerClass::newPlayer(pl), Number::newNumber(chosen));
             }
-            catch (const Exception& e)
-            {
-                logger.error("Fail in form callback!");
-                logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                PrintException(e);
-            }
+            CATCH_WITHOUT_RETURN("Fail in form callback!")
         });
 }
 
@@ -175,12 +170,7 @@ bool CustomFormClass::sendForm(Form::CustomForm* form, Player* player, script::L
         {
             callback.get().call({}, PlayerClass::newPlayer(pl), JsonToValue(data));
         }
-        catch (const Exception& e)
-        {
-            logger.error("Fail in form callback!");
-            logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-            logger.error << e << ::Logger::endl;
-        }
+        CATCH_WITHOUT_RETURN("Fail in form callback!")
     });
 }
 

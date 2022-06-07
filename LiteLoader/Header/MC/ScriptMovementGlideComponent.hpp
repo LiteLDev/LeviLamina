@@ -23,21 +23,15 @@ public:
     ScriptMovementGlideComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptMovementGlideComponent();
-    /*
-    inline  ~ScriptMovementGlideComponent(){
-         (ScriptMovementGlideComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptMovementGlideComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMOVEMENTGLIDECOMPONENT
+public:
+#endif
     MCAPI class Scripting::Result<float> getSpeedWhenTurning() const;
     MCAPI class Scripting::Result<float> getStartSpeed() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMovementGlideComponent> bind(struct Scripting::Version);
 
-protected:
-
-private:
 
 };

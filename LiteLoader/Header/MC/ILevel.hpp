@@ -22,33 +22,14 @@ public:
     ILevel() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~ILevel();
-    /*
-    inline class MultiPlayerLevel * asMultiPlayerLevel(){
-        class MultiPlayerLevel * (ILevel::*rv)();
-        *((void**)&rv) = dlsym("?asMultiPlayerLevel@ILevel@@UEAAPEAVMultiPlayerLevel@@XZ");
-        return (this->*rv)();
-    }
-    inline class Level * asLevel(){
-        class Level * (ILevel::*rv)();
-        *((void**)&rv) = dlsym("?asLevel@ILevel@@UEAAPEAVLevel@@XZ");
-        return (this->*rv)();
-    }
-    inline class TradeTables * getTradeTables(){
-        class TradeTables * (ILevel::*rv)();
-        *((void**)&rv) = dlsym("?getTradeTables@ILevel@@UEAAPEAVTradeTables@@XZ");
-        return (this->*rv)();
-    }
-    inline  ~ILevel(){
-         (ILevel::*rv)();
-        *((void**)&rv) = dlsym("??1ILevel@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ILEVEL
+public:
+    MCVAPI class Level * asLevel();
+    MCVAPI class MultiPlayerLevel * asMultiPlayerLevel();
+    MCVAPI class TradeTables * getTradeTables();
+#endif
 
-protected:
-
-private:
 
 };

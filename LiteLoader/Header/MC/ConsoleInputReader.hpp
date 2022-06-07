@@ -21,14 +21,15 @@ public:
     ConsoleInputReader(class ConsoleInputReader const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSOLEINPUTREADER
+public:
+#endif
     MCAPI ConsoleInputReader();
     MCAPI bool getLine(std::string &);
     MCAPI void unblockReading();
     MCAPI ~ConsoleInputReader();
 
-protected:
-
-private:
 
 };

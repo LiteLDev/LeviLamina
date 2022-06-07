@@ -22,15 +22,16 @@ public:
     JumpInfo() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPINFO
+public:
+#endif
     MCAPI JumpInfo(float, float, int, int);
     MCAPI int getAnimDuration() const;
     MCAPI float getDistanceScale() const;
     MCAPI float getHeight() const;
     MCAPI int getJumpDelay() const;
 
-protected:
-
-private:
 
 };

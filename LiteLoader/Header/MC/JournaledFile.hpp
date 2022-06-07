@@ -23,7 +23,11 @@ public:
     JournaledFile() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JOURNALEDFILE
+public:
+#endif
     MCAPI JournaledFile(class std::function<class Core::Result (class Core::Path)> &&);
     MCAPI class Core::Result close();
     MCAPI class Core::Result open(class Core::Path, class Core::FileOpenMode, enum Core::FileBufferingMode);
@@ -35,9 +39,10 @@ public:
     MCAPI static void populateImportantFiles(class Core::Path, std::vector<std::string> &);
     MCAPI static class Core::Result replaceHeadFileWithBackup(class Core::Path);
 
-protected:
+//private:
+    MCAPI void _flushFiles();
 
 private:
-    MCAPI void _flushFiles();
+
 
 };

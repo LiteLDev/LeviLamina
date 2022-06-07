@@ -21,14 +21,15 @@ public:
     BreakBlockNode(class BreakBlockNode const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BreakBlockNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
     /*2*/ virtual void initializeFromDefinition(class Actor &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKBLOCKNODE
+public:
+#endif
     MCAPI BreakBlockNode();
 
-protected:
-
-private:
 
 };

@@ -8,6 +8,7 @@
 #endif
 
 #define MCAPI __declspec(dllimport)
+#define MCVAPI __declspec(dllimport)
 #define MCINLINE inline
 #define MCCLS
 
@@ -22,6 +23,7 @@
 #include <optional>
 #include <queue>
 #include <set>
+#include <map>
 #include <stack>
 #include <string>
 #include <cuchar>
@@ -30,6 +32,12 @@
 #include <utility>
 #include <variant>
 #include <vector>
+#include <numeric>
+#include <cmath>
+#include <random>
+#include <algorithm>
+#include <iomanip>
+#include <xhash>
 
 #include <minwindef.h>
 

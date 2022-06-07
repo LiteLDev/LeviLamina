@@ -21,7 +21,11 @@ public:
     InsideBlockEventMap() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEBLOCKEVENTMAP
+public:
+#endif
     MCAPI InsideBlockEventMap(class Block const &, bool, bool, bool, class DefinitionTrigger const &, class DefinitionTrigger const &);
     MCAPI InsideBlockEventMap(class InsideBlockEventMap const &);
     MCAPI class gsl::not_null<class Block const *> getBlock() const;
@@ -36,8 +40,5 @@ public:
     MCAPI bool wasActorInsideLastTick() const;
     MCAPI ~InsideBlockEventMap();
 
-protected:
-
-private:
 
 };

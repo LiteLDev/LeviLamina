@@ -22,11 +22,11 @@ public:
     NpcEventCoordinator() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~NpcEventCoordinator();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCEVENTCOORDINATOR
+public:
+#endif
 
-protected:
-
-private:
 
 };

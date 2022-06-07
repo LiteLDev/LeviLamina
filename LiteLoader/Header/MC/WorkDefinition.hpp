@@ -20,21 +20,14 @@ public:
     WorkDefinition(class WorkDefinition const &) = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~WorkDefinition();
-    /*
-    inline  ~WorkDefinition(){
-         (WorkDefinition::*rv)();
-        *((void**)&rv) = dlsym("??1WorkDefinition@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKDEFINITION
+public:
+#endif
     MCAPI WorkDefinition();
     MCAPI void initialize(class EntityContext &, class WorkGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class WorkDefinition>> &);
 
-protected:
-
-private:
 
 };

@@ -22,6 +22,7 @@ public:
     MoveTowardsHomeRestrictionGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MoveTowardsHomeRestrictionGoal();
     /*1*/ virtual bool canUse();
@@ -31,10 +32,10 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWARDSHOMERESTRICTIONGOAL
+public:
+#endif
     MCAPI MoveTowardsHomeRestrictionGoal(class Mob &);
 
-protected:
-
-private:
 
 };

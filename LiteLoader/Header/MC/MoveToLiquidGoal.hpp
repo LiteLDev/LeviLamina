@@ -23,6 +23,7 @@ public:
     MoveToLiquidGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MoveToLiquidGoal();
     /*1*/ virtual bool canUse();
@@ -33,10 +34,10 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /*17*/ virtual bool findTargetBlock();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOLIQUIDGOAL
+public:
+#endif
     MCAPI MoveToLiquidGoal(class Mob &, float, int, int, int, enum MaterialType, float);
 
-protected:
-
-private:
 
 };

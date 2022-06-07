@@ -22,13 +22,18 @@ public:
     LevelSoundEventMap() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSOUNDEVENTMAP
+public:
+#endif
     MCAPI static enum LevelSoundEvent getId(std::string const &);
     MCAPI static std::string const & getName(enum LevelSoundEvent);
 
-protected:
+//private:
 
 private:
     MCAPI static class BidirectionalUnorderedMap<std::string, enum LevelSoundEvent> const map;
+
 
 };

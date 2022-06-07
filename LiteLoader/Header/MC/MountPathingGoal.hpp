@@ -22,34 +22,23 @@ public:
     MountPathingGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MountPathingGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual void __unk_vfn_5();
+    /*4*/ virtual void start();
+    /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual float _getAttackReachSqr();
-    /*
-    inline void start(){
-        void (MountPathingGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@MountPathingGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (MountPathingGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@MountPathingGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOUNTPATHINGGOAL
+public:
+#endif
     MCAPI MountPathingGoal(class Mob &, float, float, bool);
 
-protected:
-
-private:
 
 };

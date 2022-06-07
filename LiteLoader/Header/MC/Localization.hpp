@@ -23,7 +23,11 @@ public:
     Localization() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOCALIZATION
+public:
+#endif
     MCAPI Localization(std::string const &);
     MCAPI Localization(std::string const &, class Localization *);
     MCAPI void appendTranslations(class Localization const &);
@@ -36,7 +40,7 @@ public:
     MCAPI ~Localization();
     MCAPI static std::string getLanguageCode(std::string const &);
 
-protected:
+//protected:
     MCAPI struct OptionalString _get(std::string const &, std::vector<std::string> const &) const;
     MCAPI class Core::PathBuffer<std::string> _getLangFilePath(std::string const &);
     MCAPI struct OptionalString _getSimple(std::string const &) const;
@@ -44,6 +48,7 @@ protected:
     MCAPI void _replaceTokens(std::string &, std::vector<std::string> const &) const;
     MCAPI static bool _isCommaSeperatedLanguage(std::string const &);
 
-private:
+protected:
+
 
 };

@@ -20,22 +20,16 @@ public:
     ExperienceCostCommitObject() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ExperienceCostCommitObject();
-    /*1*/ virtual void __unk_vfn_1();
+    /*1*/ virtual bool append(class ContainerValidationCommitObject *);
     /*2*/ virtual bool canCommit(class ContainerScreenContext const &) const;
     /*3*/ virtual void commit(class ContainerScreenContext const &);
-    /*
-    inline bool append(class ContainerValidationCommitObject * a0){
-        bool (ExperienceCostCommitObject::*rv)(class ContainerValidationCommitObject *);
-        *((void**)&rv) = dlsym("?append@ExperienceCostCommitObject@@UEAA_NPEAVContainerValidationCommitObject@@@Z");
-        return (this->*rv)(std::forward<class ContainerValidationCommitObject *>(a0));
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCECOSTCOMMITOBJECT
+public:
+#endif
     MCAPI ExperienceCostCommitObject(int);
 
-protected:
-
-private:
 
 };

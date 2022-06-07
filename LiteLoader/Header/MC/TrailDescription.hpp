@@ -22,22 +22,16 @@ public:
     TrailDescription(class TrailDescription const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~TrailDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
-    /*
-    inline  ~TrailDescription(){
-         (TrailDescription::*rv)();
-        *((void**)&rv) = dlsym("??1TrailDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRAILDESCRIPTION
+public:
+#endif
     MCAPI TrailDescription();
 
-protected:
-
-private:
 
 };

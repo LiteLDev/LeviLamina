@@ -24,17 +24,22 @@ public:
     RandomDyeFunction() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RandomDyeFunction();
     /*1*/ virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /*3*/ virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMDYEFUNCTION
+public:
+#endif
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
-protected:
-
-private:
+//private:
     MCAPI void _applyBase(class ItemStackBase &, class Random &) const;
     MCAPI class mce::Color _getRandomArmorColor(class Random &) const;
     MCAPI class mce::Color _getRandomDyeColor(class Random &) const;
+
+private:
+
 
 };

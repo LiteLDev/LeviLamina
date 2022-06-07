@@ -23,21 +23,15 @@ public:
     ScriptItemComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptItemComponent();
-    /*
-    inline  ~ScriptItemComponent(){
-         (ScriptItemComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptItemComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMCOMPONENT
+public:
+#endif
     MCAPI ScriptItemComponent(class Scripting::WeakTypedObjectHandle<class ScriptItemStack>, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI std::string const & getId() const;
     MCAPI bool valid() const;
 
-protected:
-
-private:
 
 };

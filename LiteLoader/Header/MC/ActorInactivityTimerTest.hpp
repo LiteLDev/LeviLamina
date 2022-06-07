@@ -24,14 +24,14 @@ public:
     ActorInactivityTimerTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorInactivityTimerTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-    /*6*/ virtual class Json::Value _serializeValue() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINACTIVITYTIMERTEST
+public:
+#endif
 
-protected:
-
-private:
 
 };

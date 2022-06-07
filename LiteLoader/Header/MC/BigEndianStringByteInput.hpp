@@ -23,6 +23,7 @@ public:
     BigEndianStringByteInput() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BigEndianStringByteInput();
     /*3*/ virtual float readFloat();
@@ -30,23 +31,11 @@ public:
     /*6*/ virtual short readShort();
     /*7*/ virtual int readInt();
     /*8*/ virtual __int64 readLongLong();
-    /*9*/ virtual void __unk_vfn_9();
+    /*9*/ virtual bool readBytes(void *, unsigned __int64);
     /*11*/ virtual bool readBigEndianBytes(void *, unsigned __int64);
-    /*
-    inline  ~BigEndianStringByteInput(){
-         (BigEndianStringByteInput::*rv)();
-        *((void**)&rv) = dlsym("??1BigEndianStringByteInput@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline bool readBytes(void * a0, unsigned __int64 a1){
-        bool (BigEndianStringByteInput::*rv)(void *, unsigned __int64);
-        *((void**)&rv) = dlsym("?readBytes@BigEndianStringByteInput@@UEAA_NPEAX_K@Z");
-        return (this->*rv)(std::forward<void *>(a0), std::forward<unsigned __int64>(a1));
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIGENDIANSTRINGBYTEINPUT
+public:
+#endif
 
-protected:
-
-private:
 
 };

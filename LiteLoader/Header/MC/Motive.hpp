@@ -22,7 +22,11 @@ public:
     Motive() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOTIVE
+public:
+#endif
     MCAPI int getHeight() const;
     MCAPI std::string const getName() const;
     MCAPI int getWidth() const;
@@ -61,8 +65,5 @@ public:
     MCAPI static class Motive const mWind;
     MCAPI static class Motive const mWither;
 
-protected:
-
-private:
 
 };

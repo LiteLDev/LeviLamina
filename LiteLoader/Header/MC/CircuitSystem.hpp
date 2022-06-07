@@ -21,7 +21,11 @@ public:
     CircuitSystem(class CircuitSystem const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CIRCUITSYSTEM
+public:
+#endif
     MCAPI CircuitSystem();
     MCAPI void evaluate(class BlockSource *);
     MCAPI int getStrength(class BlockPos const &);
@@ -33,11 +37,12 @@ public:
     MCAPI void updateBlocks(class BlockSource &, class BlockPos const &);
     MCAPI void updateDependencies(class BlockSource *);
 
-protected:
-
-private:
+//private:
     MCAPI class BaseCircuitComponent * createComponent(class BlockPos const &, unsigned char, std::unique_ptr<class BaseCircuitComponent>);
     MCAPI void evaluateComponents(bool);
     MCAPI void updateIndividualBlock(class gsl::not_null<class BaseCircuitComponent *>, class BlockPos const &, class BlockPos const &, class BlockSource &);
+
+private:
+
 
 };

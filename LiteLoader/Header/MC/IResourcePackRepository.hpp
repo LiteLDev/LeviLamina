@@ -22,18 +22,11 @@ public:
     IResourcePackRepository() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~IResourcePackRepository();
-    /*
-    inline  ~IResourcePackRepository(){
-         (IResourcePackRepository::*rv)();
-        *((void**)&rv) = dlsym("??1IResourcePackRepository@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IRESOURCEPACKREPOSITORY
+public:
+#endif
 
-protected:
-
-private:
 
 };

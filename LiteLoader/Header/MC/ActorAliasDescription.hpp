@@ -23,21 +23,15 @@ public:
     ActorAliasDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorAliasDescription();
     /*1*/ virtual char const * getJsonName() const;
-    /*
-    inline  ~ActorAliasDescription(){
-         (ActorAliasDescription::*rv)();
-        *((void**)&rv) = dlsym("??1ActorAliasDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORALIASDESCRIPTION
+public:
+#endif
     MCAPI struct AliasInfoDescription const * getAliasInfo(std::string const &) const;
     MCAPI void parse(class Json::Value &, bool);
 
-protected:
-
-private:
 
 };

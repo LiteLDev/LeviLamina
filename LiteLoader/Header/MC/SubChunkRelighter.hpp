@@ -23,7 +23,11 @@ public:
     SubChunkRelighter() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCHUNKRELIGHTER
+public:
+#endif
     MCAPI SubChunkRelighter(class BlockSource &, unsigned __int64, class ChunkPos const &, bool, bool);
     MCAPI struct SubChunk * _getAbsorption(struct SubChunkLightIndex, unsigned char &) const;
     MCAPI void _propagateBlockLight(struct SubChunkLightIndex, unsigned char);
@@ -51,18 +55,19 @@ public:
     MCAPI static void initializeStatics();
     MCAPI static void shutdownStatics();
 
-protected:
-
-private:
+//private:
     MCAPI struct SubChunk * _dirtySubChunk(struct SubChunkLightIndex, unsigned int &);
     MCAPI struct SubChunk * _getBlock(struct SubChunkLightIndex, class Block const *&, class Block const *&) const;
     MCAPI unsigned char _getLight(struct SubChunkLightIndex);
     MCAPI struct SubChunkBrightnessStorage::LightPair _getLightPair(struct SubChunkLightIndex) const;
+
+private:
     MCAPI static class std::bitset<196608> mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits;
     MCAPI static class std::bitset<196608> mOuterEdgeOfComputationBits;
     MCAPI static class SpinLock sDarkSpinLock;
     MCAPI static struct SubChunk sFullyDarkSubChunk;
     MCAPI static struct SubChunk sFullyLitSubChunk;
     MCAPI static class SpinLock sLitSpinLock;
+
 
 };

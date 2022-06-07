@@ -22,15 +22,11 @@ public:
     ScriptStringBlockProperty() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~ScriptStringBlockProperty();
-    /*
-    inline  ~ScriptStringBlockProperty(){
-         (ScriptStringBlockProperty::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptStringBlockProperty@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSTRINGBLOCKPROPERTY
+public:
+#endif
     MCAPI ScriptStringBlockProperty(class ScriptStringBlockProperty &&);
     MCAPI ScriptStringBlockProperty(std::string, class ItemState const &, std::vector<std::string>, class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>);
     MCAPI class Scripting::Result<std::string> getState() const;
@@ -38,8 +34,5 @@ public:
     MCAPI class Scripting::Result<void> setState(std::string);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptStringBlockProperty> bind(struct Scripting::Version);
 
-protected:
-
-private:
 
 };

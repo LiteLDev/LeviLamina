@@ -22,18 +22,11 @@ public:
     SecureStorage() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~SecureStorage();
-    /*
-    inline  ~SecureStorage(){
-         (SecureStorage::*rv)();
-        *((void**)&rv) = dlsym("??1SecureStorage@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SECURESTORAGE
+public:
+#endif
 
-protected:
-
-private:
 
 };

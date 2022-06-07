@@ -20,26 +20,20 @@ public:
     ScriptMessagePacket(class ScriptMessagePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptMessagePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~ScriptMessagePacket(){
-         (ScriptMessagePacket::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptMessagePacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMESSAGEPACKET
+public:
+#endif
     MCAPI ScriptMessagePacket(std::string const &, std::string const &);
     MCAPI ScriptMessagePacket();
     MCAPI std::string const & getMessageId() const;
     MCAPI std::string const & getMessageValue() const;
 
-protected:
-
-private:
 
 };

@@ -21,18 +21,12 @@ public:
     ScriptFrictionModifierComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptFrictionModifierComponent();
-    /*
-    inline  ~ScriptFrictionModifierComponent(){
-         (ScriptFrictionModifierComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptFrictionModifierComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFRICTIONMODIFIERCOMPONENT
+public:
+#endif
 
-protected:
-
-private:
 
 };

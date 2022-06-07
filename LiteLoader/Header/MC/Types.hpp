@@ -5,7 +5,7 @@
 #include "Vec2.hpp"
 #include "Vec3.hpp"
 #include "BlockPos.hpp"
-#include "AABB.hpp"
+#include "BoundingBox.hpp"
 #include "ChunkPos.hpp"
 #include "ChunkBlockPos.hpp"
 
@@ -64,23 +64,6 @@ public:
 };
 
 }; // namespace mce
-
-class BoundingBox
-{
-public:
-    BlockPos bpos1;
-    BlockPos bpos2;
-
-    inline BlockPos getCenter() const
-    {
-        return {(bpos1.x + bpos2.x) / 2, (bpos1.y + bpos2.y) / 2, (bpos1.z + bpos2.z) / 2};
-    }
-
-    // ignored with /clr
-#ifndef _M_CEE
-    LIAPI AABB toAABB() const;
-#endif // !_M_CEE
-};
 
 template <typename A, typename T>
 class AutomaticID
@@ -1160,3 +1143,59 @@ public:
         return data->empty();
     }
 };
+
+/*
+
+enum class BlockActorType : int
+{
+    Furnace = 0x01,
+    Chest = 0x02,
+    NetherReactor = 0x03,
+    Sign = 0x04,
+    MobSpawner = 0x05,
+    Skull = 0x06,
+    FlowerPot = 0x07,
+    BrewingStand = 0x08,
+    EnchantTable = 0x09,
+    DaylightDetector = 0x0A,
+    Music = 0x0B,
+    Comparator = 0x0C,
+    Dispenser = 0x0D,
+    Dropper = 0x0E,
+    Hopper = 0x0F,
+    Cauldron = 0x10,
+    ItemFrame = 0x11,
+    PistonArm = 0x12,
+    MovingBlock = 0x13,
+    ChalkboardBlock = 0x14,
+    Beacon = 0x15,
+    EndPortal = 0x16,
+    EnderChest = 0x17,
+    EndGateway = 0x18,
+    ShulkerBox = 0x19,
+    CommandBlock = 0x1A,
+    Bed = 0x1B,
+    Banner = 0x1C,
+    StructureBlock = 0x20,
+    Jukebox = 0x21,
+    ChemistryTable = 0x22,
+    Conduit = 0x23,
+    JigsawBlock = 0x24,
+    Lectern = 0x25,
+    BlastFurnace = 0x26,
+    Smoker = 0x27,
+    Bell = 0x28,
+    Campfire = 0x29,
+    Barrel = 0x2A,
+    Beehive = 0x2B,
+    Lodestone = 0x2C,
+    SculkSensor = 0x2D,
+    SporeBlossom = 0x2E,
+    GlowItemFrame = 0x2F,
+    SculkCatalyst = 0x30,
+    SculkShrieker = 0x31,
+};
+
+enum class ActorType;
+
+*/

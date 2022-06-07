@@ -21,6 +21,7 @@ public:
     ItemStackRequestActionCraftGrindstone(class ItemStackRequestActionCraftGrindstone const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemStackRequestActionCraftGrindstone();
     /*1*/ virtual void __unk_vfn_1();
@@ -28,12 +29,12 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void _write(class BinaryStream &) const;
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTGRINDSTONE
+public:
+#endif
     MCAPI ItemStackRequestActionCraftGrindstone();
     MCAPI struct ItemStackNetIdVariant const & getRecipeNetId() const;
     MCAPI int getRepairCost() const;
 
-protected:
-
-private:
 
 };

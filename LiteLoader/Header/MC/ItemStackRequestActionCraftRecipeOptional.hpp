@@ -21,25 +21,19 @@ public:
     ItemStackRequestActionCraftRecipeOptional(class ItemStackRequestActionCraftRecipeOptional const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemStackRequestActionCraftRecipeOptional();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void __unk_vfn_2();
+    /*2*/ virtual int getFilteredStringIndex() const;
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void _write(class BinaryStream &) const;
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
-    /*
-    inline int getFilteredStringIndex() const{
-        int (ItemStackRequestActionCraftRecipeOptional::*rv)() const;
-        *((void**)&rv) = dlsym("?getFilteredStringIndex@ItemStackRequestActionCraftRecipeOptional@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTRECIPEOPTIONAL
+public:
+#endif
     MCAPI ItemStackRequestActionCraftRecipeOptional();
     MCAPI class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const & getRecipeNetId() const;
 
-protected:
-
-private:
 
 };

@@ -21,16 +21,21 @@ public:
     OpenDoorAnnotationComponent(class OpenDoorAnnotationComponent const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OPENDOORANNOTATIONCOMPONENT
+public:
+#endif
     MCAPI OpenDoorAnnotationComponent(class OpenDoorAnnotationComponent &&);
     MCAPI OpenDoorAnnotationComponent();
     MCAPI void checkPath(class Mob &);
     MCAPI void initFromDefinition(class Actor &);
     MCAPI void onComponentRemoved(class EntityContext &);
 
-protected:
+//private:
+    MCAPI void _cleanUp(class Mob const &);
 
 private:
-    MCAPI void _cleanUp(class Mob const &);
+
 
 };

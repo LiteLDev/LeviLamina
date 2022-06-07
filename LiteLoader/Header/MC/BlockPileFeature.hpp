@@ -23,15 +23,16 @@ public:
     BlockPileFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BlockPileFeature();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /*4*/ virtual class Block const & getBlockToPlace(class Random &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPILEFEATURE
+public:
+#endif
     MCAPI BlockPileFeature(class Block const &);
 
-protected:
-
-private:
 
 };

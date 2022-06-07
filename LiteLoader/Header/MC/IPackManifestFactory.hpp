@@ -22,11 +22,11 @@ public:
     IPackManifestFactory() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~IPackManifestFactory();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IPACKMANIFESTFACTORY
+public:
+#endif
 
-protected:
-
-private:
 
 };

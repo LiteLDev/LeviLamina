@@ -2,12 +2,13 @@
 #include "BaseAPI.h"
 #include "BlockAPI.h"
 #include "EntityAPI.h"
+#include "PlayerAPI.h"
 #include "ItemAPI.h"
 #include "PlayerAPI.h"
 #include "McAPI.h"
 #include "ContainerAPI.h"
 #include "NbtAPI.h"
-#include <MC/Actor.hpp>
+#include <MC/ServerPlayer.hpp>
 #include <MC/Level.hpp>
 #include <MC/ItemActor.hpp>
 #include <MC/SimpleContainer.hpp>
@@ -54,6 +55,8 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("removeTag", &EntityClass::removeTag)
         .instanceFunction("hasTag", &EntityClass::hasTag)
         .instanceFunction("getAllTags", &EntityClass::getAllTags)
+        .instanceFunction("getEntityFromViewVector", &EntityClass::getEntityFromViewVector)
+        .instanceFunction("getBlockFromViewVector", &EntityClass::getBlockFromViewVector)
 
         //For Compatibility
         .instanceFunction("setTag", &EntityClass::setNbt)
@@ -75,6 +78,15 @@ Actor* EntityClass::extract(Local<Value> v)
         return EngineScope::currentEngine()->getNativeInstance<EntityClass>(v)->get();
     else
         return nullptr;
+}
+
+std::optional<Actor*> EntityClass::tryExtractActor(Local<Value> v)
+{
+    if (IsInstanceOf<EntityClass>(v))
+        return EntityClass::extract(v);
+    if (IsInstanceOf<PlayerClass>(v))
+        return PlayerClass::extract(v);
+    return std::nullopt;
 }
 
 //成员函数
@@ -298,7 +310,7 @@ Local<Value> EntityClass::teleport(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument in teleport!");
+                LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
         }
@@ -317,7 +329,7 @@ Local<Value> EntityClass::teleport(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong number of arguments in teleport!");
+            LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
         }
         
@@ -587,6 +599,68 @@ Local<Value> EntityClass::getAllTags(const Arguments& args)
     CATCH("Fail in getAllTags!");
 }
 
+Local<Value> EntityClass::getEntityFromViewVector(const Arguments& args)
+{
+
+    try
+    {
+        Actor* actor = get();
+        if (!actor)
+            return Local<Value>();
+        float maxDistance = 5.25f;
+        if (args.size() > 0)
+        {
+            CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+            maxDistance = args[0].asNumber().toFloat();
+        }
+        auto entity = actor->getActorFromViewVector(maxDistance);
+        if (entity)
+            return EntityClass::newEntity(entity);
+        return Local<Value>();
+    }
+    CATCH("Fail in getEntityFromViewVector!");
+}
+
+Local<Value> EntityClass::getBlockFromViewVector(const Arguments& args)
+{
+    try
+    {
+        Actor* actor = get();
+        if (!actor)
+            return Local<Value>();
+        bool includeLiquid = false;
+        bool solidOnly = false;
+        float maxDistance = 5.25f;
+        bool ignoreBorderBlocks = true;
+        bool fullOnly = false;
+        if (args.size() > 0)
+        {
+            CHECK_ARG_TYPE(args[0], ValueKind::kBoolean);
+            includeLiquid = args[0].asBoolean().value();
+        }
+        if (args.size() > 1)
+        {
+            CHECK_ARG_TYPE(args[1], ValueKind::kBoolean);
+            solidOnly = args[1].asBoolean().value();
+        }
+        if (args.size() > 2)
+        {
+            CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+            maxDistance = args[2].asNumber().toFloat();
+        }
+        if (args.size() > 3)
+        {
+            CHECK_ARG_TYPE(args[3], ValueKind::kBoolean);
+            fullOnly = args[3].asBoolean().value();
+        }
+        auto blockInstance = actor->getBlockFromViewVector(includeLiquid, solidOnly, maxDistance, ignoreBorderBlocks, fullOnly);
+        if (blockInstance.isNull())
+            return Local<Value>();
+        return BlockClass::newBlock(std::move(blockInstance));
+    }
+    CATCH("Fail in getBlockFromViewVector!");
+}
+
 Local<Value> McClass::getAllEntities(const Arguments& args) {
     try {
         auto entityList = Level::getAllEntities();
@@ -608,7 +682,7 @@ Local<Value> McClass::cloneMob(const Arguments& args)
         Actor* ac = EntityClass::extract(args[0]);
         if (!ac)
         {
-            logger.error("Wrong type of argument in CloneMob!");
+            LOG_WRONG_ARG_TYPE();
             return Local<Value>(); // Null
         }
 		
@@ -643,7 +717,7 @@ Local<Value> McClass::cloneMob(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument in CloneMob!");
+                LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
         }
@@ -658,7 +732,7 @@ Local<Value> McClass::cloneMob(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong number of arguments in CloneMob!");
+            LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
         }
 
@@ -709,7 +783,7 @@ Local<Value> McClass::spawnMob(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument in SpawnMob!");
+                LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
         }
@@ -724,7 +798,7 @@ Local<Value> McClass::spawnMob(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong number of arguments in SpawnMob!");
+            LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
         }
 
@@ -776,7 +850,7 @@ Local<Value> McClass::explode(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument in Explode!");
+                LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
         }
@@ -792,7 +866,7 @@ Local<Value> McClass::explode(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong number of arguments in Explode!");
+            LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
         }
 

@@ -22,14 +22,15 @@ public:
     JigsawStructureActorRulesRegistry() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWSTRUCTUREACTORRULESREGISTRY
+public:
+#endif
     MCAPI void clear();
     MCAPI std::vector<std::unique_ptr<class StructurePoolActorRule>> const * lookupByName(std::string) const;
     MCAPI void registerActorRules(std::string, std::unique_ptr<std::vector<class std::unique_ptr<class StructurePoolActorRule, struct std::default_delete<class StructurePoolActorRule>>>> &&);
     MCAPI ~JigsawStructureActorRulesRegistry();
 
-protected:
-
-private:
 
 };

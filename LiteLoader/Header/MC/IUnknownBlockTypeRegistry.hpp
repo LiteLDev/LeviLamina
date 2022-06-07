@@ -22,17 +22,12 @@ public:
     IUnknownBlockTypeRegistry() = delete;
 #endif
 
+
 public:
-    /*
-    inline  ~IUnknownBlockTypeRegistry(){
-         (IUnknownBlockTypeRegistry::*rv)();
-        *((void**)&rv) = dlsym("??1IUnknownBlockTypeRegistry@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IUNKNOWNBLOCKTYPEREGISTRY
+public:
+    MCVAPI ~IUnknownBlockTypeRegistry();
+#endif
 
-protected:
-
-private:
 
 };

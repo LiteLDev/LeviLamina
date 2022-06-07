@@ -23,15 +23,11 @@ public:
     NetworkEnableDisableListener() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~NetworkEnableDisableListener();
-    /*
-    inline  ~NetworkEnableDisableListener(){
-         (NetworkEnableDisableListener::*rv)();
-        *((void**)&rv) = dlsym("??1NetworkEnableDisableListener@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKENABLEDISABLELISTENER
+public:
+#endif
     MCAPI NetworkEnableDisableListener(class Bedrock::NonOwnerPointer<class AppPlatform> const &);
     MCAPI void disable();
     MCAPI bool isDisabled() const;
@@ -41,8 +37,5 @@ public:
     MCAPI void tryEnable();
     MCAPI void uninitialize();
 
-protected:
-
-private:
 
 };

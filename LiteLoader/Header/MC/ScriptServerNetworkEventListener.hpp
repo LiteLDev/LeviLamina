@@ -22,14 +22,16 @@ public:
     ScriptServerNetworkEventListener() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptServerNetworkEventListener();
+    /*1*/ virtual enum EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const &);
     /*2*/ virtual enum EventResult onMessage(struct MessageEvent const &);
     /*3*/ virtual enum EventResult onEvent(struct ChatEvent const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSERVERNETWORKEVENTLISTENER
+public:
+#endif
     MCAPI ScriptServerNetworkEventListener(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 
-protected:
-
-private:
 
 };

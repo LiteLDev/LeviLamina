@@ -23,19 +23,13 @@ public:
     NavigationFlyDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~NavigationFlyDescription();
-    /*
-    inline  ~NavigationFlyDescription(){
-         (NavigationFlyDescription::*rv)();
-        *((void**)&rv) = dlsym("??1NavigationFlyDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONFLYDESCRIPTION
+public:
+#endif
 
-protected:
-
-private:
 
 };

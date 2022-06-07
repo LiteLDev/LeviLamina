@@ -22,28 +22,13 @@ public:
     ServerLocator() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~ServerLocator();
-    /*
-    inline void _onEnable(){
-        void (ServerLocator::*rv)();
-        *((void**)&rv) = dlsym("?_onEnable@ServerLocator@@EEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void _onDisable(){
-        void (ServerLocator::*rv)();
-        *((void**)&rv) = dlsym("?_onDisable@ServerLocator@@EEAAXXZ");
-        return (this->*rv)();
-    }
-    inline  ~ServerLocator(){
-         (ServerLocator::*rv)();
-        *((void**)&rv) = dlsym("??1ServerLocator@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERLOCATOR
+public:
+    MCVAPI void _onDisable();
+    MCVAPI void _onEnable();
+#endif
 
-protected:
-
-private:
 
 };

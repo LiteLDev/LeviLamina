@@ -21,7 +21,11 @@ public:
     class PackReport& operator=(class PackReport const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKREPORT
+public:
+#endif
     MCAPI PackReport(class PackReport const &);
     MCAPI PackReport();
     MCAPI std::vector<class std::shared_ptr<class PackError>> const & getErrors() const;
@@ -42,8 +46,5 @@ public:
     MCAPI bool wasUpgraded() const;
     MCAPI ~PackReport();
 
-protected:
-
-private:
 
 };

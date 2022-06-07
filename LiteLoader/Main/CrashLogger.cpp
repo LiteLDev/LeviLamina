@@ -84,7 +84,7 @@ void LL::InitCrashLogger(bool enableCrashLogger)
 
     for (auto& i : ent) {
         if (i.is_regular_file() && i.path().extension().u8string() == u8".dll") {
-            auto path = i.path().u8string();
+            auto path = UTF82String(i.path().u8string());
 
             //Check crashLogger
             for (auto name : NoCrashLogger) {

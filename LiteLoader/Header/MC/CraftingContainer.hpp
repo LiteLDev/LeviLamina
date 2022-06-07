@@ -23,9 +23,9 @@ public:
     CraftingContainer() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CraftingContainer();
-    /*1*/ virtual void init();
     /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /*5*/ virtual class ItemStack const & getItem(int) const;
     /*9*/ virtual void setItem(int, class ItemStack const &);
@@ -36,19 +36,11 @@ public:
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
     /*24*/ virtual void setContainerChanged(int);
-    /*31*/ virtual void __unk_vfn_31();
-    /*
-    inline  ~CraftingContainer(){
-         (CraftingContainer::*rv)();
-        *((void**)&rv) = dlsym("??1CraftingContainer@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTINGCONTAINER
+public:
+#endif
     MCAPI CraftingContainer(int, int);
     MCAPI class ItemStack const & getItem(int, int) const;
 
-protected:
-
-private:
 
 };

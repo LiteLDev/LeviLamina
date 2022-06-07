@@ -20,19 +20,18 @@ public:
     ServerCommand() = delete;
 #endif
 
+
 public:
-    /*
-    inline  ~ServerCommand(){
-         (ServerCommand::*rv)();
-        *((void**)&rv) = dlsym("??1ServerCommand@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCOMMAND
+public:
+    MCVAPI ~ServerCommand();
+#endif
     MCAPI static void setup(class Minecraft &);
+
+//protected:
 
 protected:
     MCAPI static class Minecraft * mGame;
 
-private:
 
 };

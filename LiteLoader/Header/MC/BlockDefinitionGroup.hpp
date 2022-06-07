@@ -29,7 +29,11 @@ public:
     BlockDefinitionGroup(class BlockDefinitionGroup const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDEFINITIONGROUP
+public:
+#endif
     MCAPI BlockDefinitionGroup();
     MCAPI void buildBlockSchema(class BlockComponentFactory const &);
     MCAPI void digestServerBlockProperties(std::vector<struct std::pair<std::string, class CompoundTag>> const &, class BlockComponentFactory const &);
@@ -44,14 +48,15 @@ public:
     MCAPI void registerBlocks();
     MCAPI ~BlockDefinitionGroup();
 
-protected:
-
-private:
+//private:
     MCAPI void _buildBlockComponentsSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &);
     MCAPI void _buildBlockDescriptionSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockDescription>> &);
     MCAPI bool _loadBlockDescription(class Json::Value const &, struct BlockDescription &);
     MCAPI bool _loadComponents(class Json::Value const &, struct BlockDefinition &, class Experiments const &);
     MCAPI bool _loadEvents(class Json::Value const &, struct BlockDefinition &);
     MCAPI bool _parseComponents(class Json::Value const &, struct BlockComponentGroupDescription &, std::string const &, class SemVersion const &, class Experiments const &);
+
+private:
+
 
 };

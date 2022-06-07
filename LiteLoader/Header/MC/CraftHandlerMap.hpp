@@ -23,16 +23,15 @@ public:
     CraftHandlerMap() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CraftHandlerMap();
-    /*3*/ virtual void endRequestBatch();
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
-    /*5*/ virtual void _postCraftRequest(bool);
     /*6*/ virtual class Recipes const * _getLevelRecipes() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERMAP
+public:
+#endif
     MCAPI CraftHandlerMap(class Player &, class ItemStackRequestActionCraftHandler &);
 
-protected:
-
-private:
 
 };

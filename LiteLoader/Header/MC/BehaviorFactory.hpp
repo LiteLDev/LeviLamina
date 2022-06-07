@@ -22,15 +22,20 @@ public:
     BehaviorFactory(class BehaviorFactory const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORFACTORY
+public:
+#endif
     MCAPI BehaviorFactory();
     MCAPI std::unique_ptr<class BehaviorDefinition> loadNodeDefinition(std::string const &, class Json::Value, class BehaviorTreeDefinitionPtr &) const;
     MCAPI void registerNodePair(std::string const &, class std::function<std::unique_ptr<class BehaviorDefinition> (void)>, class std::function<std::unique_ptr<class BehaviorNode> (void)>);
     MCAPI std::unique_ptr<class BehaviorNode> tryGetNode(std::string const &) const;
 
-protected:
+//private:
+    MCAPI void _initNodes();
 
 private:
-    MCAPI void _initNodes();
+
 
 };

@@ -22,6 +22,7 @@ public:
     ContainerModel() = delete;
 #endif
 
+
 public:
     /*0*/ virtual void containerContentChanged(int);
     /*1*/ virtual ~ContainerModel();
@@ -40,54 +41,20 @@ public:
     /*14*/ virtual bool isValid();
     /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual void __unk_vfn_16();
-    /*17*/ virtual void __unk_vfn_17();
+    /*17*/ virtual enum ContainerExpandStatus getItemExpandStatus(int) const;
     /*18*/ virtual std::string const & getItemGroupName(int) const;
     /*19*/ virtual void __unk_vfn_19();
     /*20*/ virtual class Container * _getContainer() const;
     /*21*/ virtual int _getContainerOffset() const;
     /*22*/ virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
-    /*
-    inline bool isItemFiltered(class ItemStackBase const & a0) const{
-        bool (ContainerModel::*rv)(class ItemStackBase const &) const;
-        *((void**)&rv) = dlsym("?isItemFiltered@ContainerModel@@UEBA_NAEBVItemStackBase@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const &>(a0));
-    }
-    inline bool isExpanableItemFiltered(int a0) const{
-        bool (ContainerModel::*rv)(int) const;
-        *((void**)&rv) = dlsym("?isExpanableItemFiltered@ContainerModel@@UEBA_NH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline bool isItemInstanceBased() const{
-        bool (ContainerModel::*rv)() const;
-        *((void**)&rv) = dlsym("?isItemInstanceBased@ContainerModel@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline class Container * _getContainer() const{
-        class Container * (ContainerModel::*rv)() const;
-        *((void**)&rv) = dlsym("?_getContainer@ContainerModel@@MEBAPEAVContainer@@XZ");
-        return (this->*rv)();
-    }
-    inline enum ContainerExpandStatus getItemExpandStatus(int a0) const{
-        enum ContainerExpandStatus (ContainerModel::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getItemExpandStatus@ContainerModel@@UEBA?AW4ContainerExpandStatus@@H@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void switchItemExpando(int a0){
-        void (ContainerModel::*rv)(int);
-        *((void**)&rv) = dlsym("?switchItemExpando@ContainerModel@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void tick(int a0){
-        void (ContainerModel::*rv)(int);
-        *((void**)&rv) = dlsym("?tick@ContainerModel@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline  ~ContainerModel(){
-         (ContainerModel::*rv)();
-        *((void**)&rv) = dlsym("??1ContainerModel@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERMODEL
+public:
+    MCVAPI bool isExpanableItemFiltered(int) const;
+    MCVAPI bool isItemFiltered(class ItemStackBase const &) const;
+    MCVAPI bool isItemInstanceBased() const;
+    MCVAPI void switchItemExpando(int);
+    MCVAPI void tick(int);
+#endif
     MCAPI ContainerModel(enum ContainerEnumName, int, enum ContainerCategory, bool);
     MCAPI bool _useLegacyTransactions() const;
     MCAPI enum ContainerEnumName getContainerEnumName() const;
@@ -104,11 +71,16 @@ public:
     MCAPI void setClientUIContainer(class SparseContainerClient *);
     MCAPI void setItemSource(int, struct SlotData const &);
 
-protected:
+//protected:
     MCAPI void _init();
     MCAPI void _notifyPlayer(int, class ItemStack const &, class ItemStack const &);
 
-private:
+//private:
     MCAPI void _onClientUIItemNetworkChanged(int, class ItemStack const &, class ItemStack const &);
+
+protected:
+
+private:
+
 
 };

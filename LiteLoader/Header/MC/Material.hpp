@@ -22,7 +22,11 @@ public:
     Material() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATERIAL
+public:
+#endif
     MCAPI bool getBlocksMotion() const;
     MCAPI bool getBlocksPrecipitation() const;
     MCAPI float getTranslucency() const;
@@ -42,11 +46,12 @@ public:
     MCAPI static void initMaterials();
     MCAPI static void teardownMaterials();
 
-protected:
+//private:
+    MCAPI static void _setupSurfaceMaterials();
 
 private:
-    MCAPI static void _setupSurfaceMaterials();
     MCAPI static bool mInitialized;
     MCAPI static std::vector<std::unique_ptr<class Material>> mMaterials;
+
 
 };

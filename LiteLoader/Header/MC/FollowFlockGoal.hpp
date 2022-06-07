@@ -22,26 +22,20 @@ public:
     FollowFlockGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FollowFlockGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual void __unk_vfn_3();
+    /*3*/ virtual bool canBeInterrupted();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-    /*
-    inline bool canBeInterrupted(){
-        bool (FollowFlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?canBeInterrupted@FollowFlockGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLLOWFLOCKGOAL
+public:
+#endif
     MCAPI FollowFlockGoal(class Mob &, float);
 
-protected:
-
-private:
 
 };

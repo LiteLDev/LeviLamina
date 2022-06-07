@@ -22,14 +22,14 @@ public:
     SlimeRandomDirectionDefinition(class SlimeRandomDirectionDefinition const &) = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~SlimeRandomDirectionDefinition();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIMERANDOMDIRECTIONDEFINITION
+public:
+#endif
     MCAPI SlimeRandomDirectionDefinition();
     MCAPI void initialize(class EntityContext &, class SlimeRandomDirectionGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeRandomDirectionDefinition>> &);
 
-protected:
-
-private:
 
 };

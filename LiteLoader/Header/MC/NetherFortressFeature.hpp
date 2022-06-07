@@ -23,17 +23,17 @@ public:
     NetherFortressFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NetherFortressFeature();
     /*1*/ virtual bool shouldAddHardcodedSpawnAreas() const;
-    /*2*/ virtual bool shouldPostProcessMobs() const;
     /*4*/ virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry &);
     /*5*/ virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &);
     /*6*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERFORTRESSFEATURE
+public:
+#endif
     MCAPI NetherFortressFeature(unsigned int &, class BaseGameVersion const &);
 
-protected:
-
-private:
 
 };

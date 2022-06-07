@@ -23,13 +23,14 @@ public:
     EnchantCommand() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EnchantCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTCOMMAND
+public:
+#endif
     MCAPI static void setup(class CommandRegistry &);
 
-protected:
-
-private:
 
 };

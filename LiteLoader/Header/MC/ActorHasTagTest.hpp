@@ -24,20 +24,14 @@ public:
     ActorHasTagTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorHasTagTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-    /*
-    inline  ~ActorHasTagTest(){
-         (ActorHasTagTest::*rv)();
-        *((void**)&rv) = dlsym("??1ActorHasTagTest@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORHASTAGTEST
+public:
+#endif
 
-protected:
-
-private:
 
 };

@@ -280,7 +280,7 @@ Local<Value> McClass::getBlock(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument in GetBlock!");
+                LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
         }
@@ -295,14 +295,14 @@ Local<Value> McClass::getBlock(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong number of arguments in GetBlock!");
+            LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
         }
 
         auto block = Level::getBlock(pos.getBlockPos(),pos.dim);
         if (!block)
         {
-            logger.error("Wrong type of argument in SetBlock!");
+            LOG_WRONG_ARG_TYPE();
             return Local<Value>();
         }
         else
@@ -357,7 +357,7 @@ Local<Value> McClass::setBlock(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument in SetBlock!");
+                LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
         }
@@ -379,7 +379,7 @@ Local<Value> McClass::setBlock(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong number of arguments in SetBlock!");
+            LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
         }
 
@@ -401,7 +401,7 @@ Local<Value> McClass::setBlock(const Arguments& args)
             Block* bl = BlockClass::extract(block);
             if (!bl)
             {
-                logger.error("Wrong type of argument in SetBlock!");
+                LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
             return Boolean::newBoolean(Level::setBlock(pos.getBlockPos(), pos.dim, bl));
@@ -453,7 +453,7 @@ Local<Value> McClass::spawnParticle(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument in SpawnParticle!");
+                LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
         }
@@ -471,7 +471,7 @@ Local<Value> McClass::spawnParticle(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong number of arguments in SpawnParticle!");
+            LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
         }
 

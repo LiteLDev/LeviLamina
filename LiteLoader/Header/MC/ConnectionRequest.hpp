@@ -31,7 +31,11 @@ public:
     ConnectionRequest() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONNECTIONREQUEST
+public:
+#endif
     MCAPI ConnectionRequest(class ConnectionRequest const &);
     MCAPI std::vector<class AnimatedImageData> getAnimatedImageData() const;
     MCAPI std::string getArmSize() const;
@@ -73,10 +77,11 @@ public:
     MCAPI ~ConnectionRequest();
     MCAPI static class ConnectionRequest fromString(std::string const &);
 
-protected:
-
-private:
+//private:
     MCAPI ConnectionRequest(std::unique_ptr<class WebToken>, std::string const &);
     MCAPI std::unique_ptr<class Certificate> validate(std::unique_ptr<class Certificate>, __int64) const;
+
+private:
+
 
 };

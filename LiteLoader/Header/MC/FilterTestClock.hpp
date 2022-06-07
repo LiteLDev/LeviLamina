@@ -24,20 +24,14 @@ public:
     FilterTestClock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FilterTestClock();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-    /*
-    inline  ~FilterTestClock(){
-         (FilterTestClock::*rv)();
-        *((void**)&rv) = dlsym("??1FilterTestClock@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTCLOCK
+public:
+#endif
 
-protected:
-
-private:
 
 };

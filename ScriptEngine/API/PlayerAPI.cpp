@@ -2,6 +2,7 @@
 #include "BaseAPI.h"
 #include "BlockAPI.h"
 #include "DeviceAPI.h"
+#include "EntityAPI.h"
 #include "PlayerAPI.h"
 #include "McAPI.h"
 #include "ContainerAPI.h"
@@ -53,6 +54,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceProperty("speed",&PlayerClass::getSpeed)
         .instanceProperty("direction", &PlayerClass::getDirection)
         .instanceProperty("uniqueId", &PlayerClass::getUniqueID)
+        .instanceProperty("langCode", &PlayerClass::getLangCode)
 
         .instanceFunction("isOP", &PlayerClass::isOP)
         .instanceFunction("setPermLevel", &PlayerClass::setPermLevel)
@@ -121,6 +123,8 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("getAllTags", &PlayerClass::getAllTags)
         .instanceFunction("getAbilities", &PlayerClass::getAbilities)
         .instanceFunction("getAttributes", &PlayerClass::getAttributes)
+        .instanceFunction("getEntityFromViewVector", &PlayerClass::getEntityFromViewVector)
+        .instanceFunction("getBlockFromViewVector", &PlayerClass::getBlockFromViewVector)
         
         //SimulatedPlayer API
         .instanceFunction("isSimulatedPlayer", &PlayerClass::isSimulatedPlayer)
@@ -130,6 +134,8 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("simulateInteract", &PlayerClass::simulateInteract)
         .instanceFunction("simulateJump", &PlayerClass::simulateJump)
         .instanceFunction("simulateLocalMove", &PlayerClass::simulateLocalMove)
+        .instanceFunction("simulateWorldMove", &PlayerClass::simulateWorldMove)
+        .instanceFunction("simulateMoveTo", &PlayerClass::simulateMoveTo)
         .instanceFunction("simulateLookAt", &PlayerClass::simulateLookAt)
         .instanceFunction("simulateSetBodyRotation", &PlayerClass::simulateSetBodyRotation)
         .instanceFunction("simulateNavigateTo", &PlayerClass::simulateNavigateTo)
@@ -501,6 +507,15 @@ Local<Value> PlayerClass::getUniqueID()
     CATCH("Fail in getUniqueID!")
 }
 
+Local<Value> PlayerClass::getLangCode()
+{
+    try {
+        auto result = get()->getLanguageCode();
+        return String::newString(result);
+    }
+    CATCH("Fail in getLangCode!");
+}
+
 Local<Value> PlayerClass::teleport(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args,1)
@@ -537,7 +552,7 @@ Local<Value> PlayerClass::teleport(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument in teleport!");
+                LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
         }
@@ -556,7 +571,7 @@ Local<Value> PlayerClass::teleport(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong type of argument in teleport!");
+            LOG_WRONG_ARG_TYPE();
             return Local<Value>();
         }
 
@@ -840,7 +855,7 @@ Local<Value> PlayerClass::setRespawnPosition(const Arguments& args)
             }
             else
             {
-                logger.error("Wrong type of argument in setRespawnPosition!");
+                LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
         }
@@ -855,7 +870,7 @@ Local<Value> PlayerClass::setRespawnPosition(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong number of arguments in setRespawnPosition!");
+            LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
         }
         player->setRespawnPosition(pos.getBlockPos(), pos.dim);
@@ -1138,6 +1153,32 @@ Local<Value> PlayerClass::removeSidebar(const Arguments& args)
 Local<Value> PlayerClass::setBossBar(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 2);
+    if (args[0].getKind() == ValueKind::kNumber)
+    {
+        CHECK_ARGS_COUNT(args, 4);
+        CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+        CHECK_ARG_TYPE(args[1], ValueKind::kString);
+        CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+        CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
+        try
+        {
+            Player* player = get();
+            if (!player)
+                return Local<Value>();
+
+            int64_t uid = args[0].asNumber().toInt64();
+            int percent = args[2].toInt();
+            if (percent < 0)
+                percent = 0;
+            else if (percent > 100)
+                percent = 100;
+            float value = (float)percent / 100;
+            BossEventColour colour = (BossEventColour)args[3].toInt();
+            player->updateBossEvent(uid, args[1].toStr(), value, colour);
+            return Boolean::newBoolean(true);
+        }
+        CATCH("Fail in addBossBar!")
+    }
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
     if (args.size() >= 3)
@@ -1156,7 +1197,7 @@ Local<Value> PlayerClass::setBossBar(const Arguments& args)
         BossEventColour colour = BossEventColour::Red;
         if (args.size() >= 3)
             colour = (BossEventColour)args[2].toInt();
-        player->sendBossEventPacket(BossEvent::Show, args[0].toStr(), value, colour); // Set
+        player->sendBossEventPacket(BossEvent::Show, args[0].toStr(), value, colour);
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in setBossBar!")
@@ -1164,15 +1205,34 @@ Local<Value> PlayerClass::setBossBar(const Arguments& args)
 
 Local<Value> PlayerClass::removeBossBar(const Arguments& args)
 {
-    try{
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
+    if (args.size() == 0)
+    {
+        try
+        {
+            Player* player = get();
+            if (!player)
+                return Local<Value>();
 
-        player->sendBossEventPacket(BossEvent::Hide, "", 0, BossEventColour::Red);     //Remove
-        return Boolean::newBoolean(true);
+            player->sendBossEventPacket(BossEvent::Hide, "", 0, BossEventColour::Red); // Remove
+            return Boolean::newBoolean(true);
+        }
+        CATCH("Fail in removeBossBar!")
     }
-    CATCH("Fail in removeBossBar!")
+    else
+    {
+        CHECK_ARGS_COUNT(args, 1);
+        CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+        try
+        {
+            Player* player = get();
+            if (!player)
+                return Local<Value>();
+            int64_t uid = args[0].asNumber().toInt64();
+            player->removeBossEvent(uid); // Remove
+            return Boolean::newBoolean(true);
+        }
+        CATCH("Fail in removeBossBar!")
+    }
 }
 
 Local<Value> PlayerClass::sendSimpleForm(const Arguments& args)
@@ -1228,12 +1288,7 @@ Local<Value> PlayerClass::sendSimpleForm(const Arguments& args)
                 callback.get().call({}, PlayerClass::newPlayer(pl),
                     chosen >= 0 ? Number::newNumber(chosen) : Local<Value>());
             }
-            catch (const Exception& e)
-            {
-                logger.error("Fail in form callback!");
-                logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                PrintException(e);
-            }
+            CATCH_IN_CALLBACK("sendSimpleForm")
         });
 
         return Number::newNumber(1);
@@ -1275,12 +1330,7 @@ Local<Value> PlayerClass::sendModalForm(const Arguments& args)
                 callback.get().call({}, PlayerClass::newPlayer(pl),
                     chosen >= 0 ? Boolean::newBoolean(chosen) : Local<Value>());
             }
-            catch (const Exception& e)
-            {
-                logger.error("Fail in form callback!");
-                logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                PrintException(e);
-            }
+            CATCH_IN_CALLBACK("sendModalForm")
         });
 
         return Number::newNumber(2);
@@ -1321,12 +1371,7 @@ Local<Value> PlayerClass::sendCustomForm(const Arguments& args)
                 callback.get().call({}, PlayerClass::newPlayer(pl),
                     result != "null" ? JsonToValue(result) : Local<Value>());
             }
-            catch (const Exception& e)
-            {
-                logger.error("Fail in form callback!");
-                logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                PrintException(e);
-            }
+            CATCH_IN_CALLBACK("sendCustomForm")
         });
         return Number::newNumber(3);
     }
@@ -1334,7 +1379,7 @@ Local<Value> PlayerClass::sendCustomForm(const Arguments& args)
     {
         logger.error("Fail to parse Json string in sendCustomForm!");
         logger.error(TextEncoding::toUTF8(e.what()));
-
+        PrintScriptStackTrace();
         return Local<Value>();
     }
     CATCH("Fail in sendCustomForm!");
@@ -1365,7 +1410,7 @@ Local<Value> PlayerClass::sendForm(const Arguments& args)
         }
         else
         {
-            logger.error("Unknown Type of Form Parameter!");
+            LOG_WRONG_ARG_TYPE();
             return Local<Value>();
         }
         return Boolean::newBoolean(res);
@@ -1707,6 +1752,61 @@ Local<Value> PlayerClass::getAttributes(const Arguments& args)
         }
     }
     CATCH("Fail in getAttributes!");
+}
+
+Local<Value> PlayerClass::getEntityFromViewVector(const Arguments& args)
+{
+    
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        float maxDistance = 5.25f;
+        if (args.size() > 0) {
+            CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+            maxDistance = args[0].asNumber().toFloat();
+        }
+        auto entity = player->getActorFromViewVector(maxDistance);
+        if (entity)
+            return EntityClass::newEntity(entity);
+        return Local<Value>();
+    }
+    CATCH("Fail in getEntityFromViewVector!");
+}
+
+Local<Value> PlayerClass::getBlockFromViewVector(const Arguments& args)
+{
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        bool includeLiquid = false;
+        bool solidOnly = false;
+        float maxDistance = 5.25f;
+        bool ignoreBorderBlocks = true;
+        bool fullOnly = false;
+        if (args.size() > 0) {
+            CHECK_ARG_TYPE(args[0], ValueKind::kBoolean);
+            includeLiquid = args[0].asBoolean().value();
+        }
+        if (args.size() > 1) {
+            CHECK_ARG_TYPE(args[1], ValueKind::kBoolean);
+            solidOnly = args[1].asBoolean().value();
+        }
+        if (args.size() > 2) {
+            CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+            maxDistance = args[2].asNumber().toFloat();
+        }
+        if (args.size() > 3) {
+            CHECK_ARG_TYPE(args[3], ValueKind::kBoolean);
+            fullOnly = args[3].asBoolean().value();
+        }
+        auto blockInstance = player->getBlockFromViewVector(includeLiquid, solidOnly, maxDistance, ignoreBorderBlocks, fullOnly);
+        if (blockInstance.isNull())
+            return Local<Value>();
+        return BlockClass::newBlock(std::move(blockInstance));
+    }
+    CATCH("Fail in getBlockFromViewVector!");
 }
 
 Local<Value> PlayerClass::isSimulatedPlayer(const Arguments& args)

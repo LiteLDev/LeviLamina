@@ -22,20 +22,19 @@ public:
     HoldBlockSystem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HoldBlockSystem();
     /*1*/ virtual void registerEvents(class entt::dispatcher &);
-    /*
-    inline void tick(class EntityRegistry & a0){
-        void (HoldBlockSystem::*rv)(class EntityRegistry &);
-        *((void**)&rv) = dlsym("?tick@HoldBlockSystem@@UEAAXAEAVEntityRegistry@@@Z");
-        return (this->*rv)(std::forward<class EntityRegistry &>(a0));
-    }
-    */
+    /*2*/ virtual void tick(class EntityRegistry &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOLDBLOCKSYSTEM
+public:
+#endif
 
-protected:
+//private:
+    MCAPI static void _holdBlockSystemOnActorDie(struct ActorDieEvent &);
 
 private:
-    MCAPI static void _holdBlockSystemOnActorDie(struct ActorDieEvent &);
+
 
 };

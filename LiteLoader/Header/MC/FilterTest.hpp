@@ -29,6 +29,7 @@ public:
     FilterTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FilterTest();
     /*1*/ virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
@@ -37,20 +38,17 @@ public:
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const = 0;
     /*5*/ virtual class Json::Value _serializeDomain() const;
     /*6*/ virtual class Json::Value _serializeValue() const = 0;
-    /*
-    inline  ~FilterTest(){
-         (FilterTest::*rv)();
-        *((void**)&rv) = dlsym("??1FilterTest@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTEST
+public:
+#endif
     MCAPI class Json::Value serialize() const;
 
-protected:
+//protected:
     MCAPI bool _testValuesWithOperator(int, int) const;
     MCAPI bool _testValuesWithOperator(float, float) const;
     MCAPI bool _testValuesWithOperator(bool, bool) const;
 
-private:
+protected:
+
 
 };

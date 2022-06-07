@@ -22,6 +22,7 @@ public:
     LoopbackPacketSender() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LoopbackPacketSender();
     /*1*/ virtual void send(class Packet &);
@@ -32,13 +33,13 @@ public:
     /*6*/ virtual void sendBroadcast(class Packet const &);
     /*7*/ virtual void sendBroadcast(class NetworkIdentifier const &, unsigned char, class Packet const &);
     /*8*/ virtual void flush(class NetworkIdentifier const &, class std::function<void (void)> &&);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOPBACKPACKETSENDER
+public:
+#endif
     MCAPI LoopbackPacketSender(unsigned char, class NetworkHandler &);
     MCAPI void addLoopbackCallback(class NetEventCallback &);
     MCAPI void removeLoopbackCallback(class NetEventCallback &);
     MCAPI void setUserList(std::vector<class OwnerPtrT<struct EntityRefTraits>> const *);
 
-protected:
-
-private:
 
 };

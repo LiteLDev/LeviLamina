@@ -34,6 +34,7 @@ public:
     BlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -72,48 +73,16 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
-    /*
-    inline class Container * getContainer(){
-        class Container * (BlockActor::*rv)();
-        *((void**)&rv) = dlsym("?getContainer@BlockActor@@UEAAPEAVContainer@@XZ");
-        return (this->*rv)();
-    }
-    inline class Container const * getContainer() const{
-        class Container const * (BlockActor::*rv)() const;
-        *((void**)&rv) = dlsym("?getContainer@BlockActor@@UEBAPEBVContainer@@XZ");
-        return (this->*rv)();
-    }
-    inline void onChunkLoaded(class LevelChunk & a0){
-        void (BlockActor::*rv)(class LevelChunk &);
-        *((void**)&rv) = dlsym("?onChunkLoaded@BlockActor@@UEAAXAEAVLevelChunk@@@Z");
-        return (this->*rv)(std::forward<class LevelChunk &>(a0));
-    }
-    inline void onChunkUnloaded(class LevelChunk & a0){
-        void (BlockActor::*rv)(class LevelChunk &);
-        *((void**)&rv) = dlsym("?onChunkUnloaded@BlockActor@@UEAAXAEAVLevelChunk@@@Z");
-        return (this->*rv)(std::forward<class LevelChunk &>(a0));
-    }
-    inline void fixupOnLoad(class LevelChunk & a0){
-        void (BlockActor::*rv)(class LevelChunk &);
-        *((void**)&rv) = dlsym("?fixupOnLoad@BlockActor@@UEAAXAEAVLevelChunk@@@Z");
-        return (this->*rv)(std::forward<class LevelChunk &>(a0));
-    }
-    inline void onMove(){
-        void (BlockActor::*rv)();
-        *((void**)&rv) = dlsym("?onMove@BlockActor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void onNeighborChanged(class BlockSource & a0, class BlockPos const & a1){
-        void (BlockActor::*rv)(class BlockSource &, class BlockPos const &);
-        *((void**)&rv) = dlsym("?onNeighborChanged@BlockActor@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1));
-    }
-    inline  ~BlockActor(){
-         (BlockActor::*rv)();
-        *((void**)&rv) = dlsym("??1BlockActor@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKACTOR
+public:
+    MCVAPI void fixupOnLoad(class LevelChunk &);
+    MCVAPI class Container * getContainer();
+    MCVAPI class Container const * getContainer() const;
+    MCVAPI void onChunkLoaded(class LevelChunk &);
+    MCVAPI void onChunkUnloaded(class LevelChunk &);
+    MCVAPI void onMove();
+    MCVAPI void onNeighborChanged(class BlockSource &, class BlockPos const &);
+#endif
     MCAPI BlockActor(enum BlockActorType, class BlockPos const &, std::string const &);
     MCAPI void assignBlockIfNotAssigned(class BlockSource &);
     MCAPI class AABB const & getAABB() const;
@@ -133,12 +102,17 @@ public:
     MCAPI static bool isType(class BlockActor &, enum BlockActorType);
     MCAPI static class std::shared_ptr<class BlockActor> loadStatic(class Level &, class CompoundTag const &, class DataLoadHelper &);
 
-protected:
+//protected:
     MCAPI void _resetAABB();
 
-private:
+//private:
     MCAPI static class std::map<std::string, enum BlockActorType, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, enum BlockActorType>>> _createIdClassMap();
+
+protected:
+
+private:
     MCAPI static class std::map<enum BlockActorType, std::string, struct std::less<enum BlockActorType>, class std::allocator<struct std::pair<enum BlockActorType const, std::string>>> const mClassIdMap;
     MCAPI static class std::map<std::string, enum BlockActorType, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, enum BlockActorType>>> const mIdClassMap;
+
 
 };

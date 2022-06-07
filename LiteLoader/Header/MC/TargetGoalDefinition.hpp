@@ -22,19 +22,12 @@ public:
     TargetGoalDefinition() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~TargetGoalDefinition();
-    /*
-    inline  ~TargetGoalDefinition(){
-         (TargetGoalDefinition::*rv)();
-        *((void**)&rv) = dlsym("??1TargetGoalDefinition@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETGOALDEFINITION
+public:
+#endif
     MCAPI void initialize(class EntityContext &, class TargetGoal &);
 
-protected:
-
-private:
 
 };

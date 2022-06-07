@@ -23,14 +23,19 @@ public:
     BasaltPillarFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BasaltPillarFeature();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASALTPILLARFEATURE
+public:
+#endif
 
-protected:
+//private:
+    MCAPI bool _growColumn(class BlockSource &, class BlockPos const &, class Random &, float) const;
 
 private:
-    MCAPI bool _growColumn(class BlockSource &, class BlockPos const &, class Random &, float) const;
+
 
 };

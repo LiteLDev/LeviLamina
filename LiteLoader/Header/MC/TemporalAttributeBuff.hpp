@@ -21,25 +21,17 @@ public:
     TemporalAttributeBuff() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TemporalAttributeBuff();
-    /*1*/ virtual void __unk_vfn_1();
+    /*1*/ virtual bool isInstantaneous() const;
     /*2*/ virtual bool isSerializable() const;
     /*3*/ virtual void setDurationAmplifier(class std::shared_ptr<class Amplifier>);
     /*4*/ virtual bool shouldBuff() const;
     /*5*/ virtual bool isComplete() const;
-    /*
-    inline bool isInstantaneous() const{
-        bool (TemporalAttributeBuff::*rv)() const;
-        *((void**)&rv) = dlsym("?isInstantaneous@TemporalAttributeBuff@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline  ~TemporalAttributeBuff(){
-         (TemporalAttributeBuff::*rv)();
-        *((void**)&rv) = dlsym("??1TemporalAttributeBuff@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEMPORALATTRIBUTEBUFF
+public:
+#endif
     MCAPI TemporalAttributeBuff(class TemporalAttributeBuff const &);
     MCAPI TemporalAttributeBuff(float, int, enum AttributeBuffType, bool, std::string const &);
     MCAPI float getBaseAmount() const;
@@ -48,8 +40,5 @@ public:
     MCAPI void serializationSetLifeTime(int);
     MCAPI void tick();
 
-protected:
-
-private:
 
 };

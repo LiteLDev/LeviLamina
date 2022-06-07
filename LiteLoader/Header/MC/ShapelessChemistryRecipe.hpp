@@ -23,17 +23,15 @@ public:
     ShapelessChemistryRecipe() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ShapelessChemistryRecipe();
-    /*1*/ virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
-    /*4*/ virtual std::vector<class ItemInstance> const & getResultItem() const;
     /*6*/ virtual bool matches(class CraftingContainer &, class Level &) const;
     /*8*/ virtual class mce::UUID const & getId() const;
-    /*10*/ virtual bool isMultiRecipe() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAPELESSCHEMISTRYRECIPE
+public:
+#endif
     MCAPI static class mce::UUID const ID;
 
-protected:
-
-private:
 
 };

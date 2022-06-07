@@ -23,16 +23,17 @@ public:
     LevelDbWritableFile() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LevelDbWritableFile();
     /*1*/ virtual class leveldb::Status Append(class leveldb::Slice const &);
     /*2*/ virtual class leveldb::Status Close();
     /*3*/ virtual class leveldb::Status Flush();
     /*4*/ virtual class leveldb::Status Sync();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBWRITABLEFILE
+public:
+#endif
     MCAPI LevelDbWritableFile(std::string, class Core::File &&);
 
-protected:
-
-private:
 
 };

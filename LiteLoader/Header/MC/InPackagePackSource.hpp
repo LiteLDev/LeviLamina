@@ -22,39 +22,20 @@ public:
     InPackagePackSource() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~InPackagePackSource();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual void __unk_vfn_4();
+    /*3*/ virtual enum PackOrigin getPackOrigin() const;
+    /*4*/ virtual enum PackType getPackType() const;
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory &, class IContentKeyProvider const &);
-    /*
-    inline enum PackType getPackType() const{
-        enum PackType (InPackagePackSource::*rv)() const;
-        *((void**)&rv) = dlsym("?getPackType@InPackagePackSource@@UEBA?AW4PackType@@XZ");
-        return (this->*rv)();
-    }
-    inline void forEachPack(class std::function<void (class Pack &)> a0){
-        void (InPackagePackSource::*rv)(class std::function<void (class Pack &)>);
-        *((void**)&rv) = dlsym("?forEachPack@InPackagePackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<void (class Pack &)>>(a0));
-    }
-    inline void forEachPackConst(class std::function<void (class Pack const &)> a0) const{
-        void (InPackagePackSource::*rv)(class std::function<void (class Pack const &)>) const;
-        *((void**)&rv) = dlsym("?forEachPackConst@InPackagePackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<void (class Pack const &)>>(a0));
-    }
-    inline enum PackOrigin getPackOrigin() const{
-        enum PackOrigin (InPackagePackSource::*rv)() const;
-        *((void**)&rv) = dlsym("?getPackOrigin@InPackagePackSource@@UEBA?AW4PackOrigin@@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INPACKAGEPACKSOURCE
+public:
+    MCVAPI void forEachPack(class std::function<void (class Pack &)>);
+    MCVAPI void forEachPackConst(class std::function<void (class Pack const &)>) const;
+#endif
     MCAPI InPackagePackSource(class std::shared_ptr<class IInPackagePacks> const &, enum PackType);
 
-protected:
-
-private:
 
 };

@@ -24,13 +24,17 @@ public:
     ConsoleChunkBlender(class ConsoleChunkBlender const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSOLECHUNKBLENDER
+public:
+#endif
     MCAPI ConsoleChunkBlender();
     MCAPI void blendChunk(class LevelChunk &, class LevelChunk &, enum ConsoleChunkBlender::BlenderMode);
     MCAPI void setInterpolants(float, float, float, float);
     MCAPI ~ConsoleChunkBlender();
 
-protected:
+//protected:
     MCAPI void _blendChunkEnd4J(class LevelChunk &, class LevelChunk &);
     MCAPI void _blendChunkNether4J(class LevelChunk &, class LevelChunk &);
     MCAPI void _blendChunkOverworld(class LevelChunk &, class LevelChunk &, enum ConsoleChunkBlender::ShiftBlockTypes);
@@ -40,6 +44,7 @@ protected:
     MCAPI void _prepInterpTable();
     MCAPI void _shiftColumnBySetBlocks(class LevelChunk &, int, int, int, bool, class ChunkLocalHeight, enum ConsoleChunkBlender::ShiftBlockTypes, struct OverworldBlendRules const &);
 
-private:
+protected:
+
 
 };

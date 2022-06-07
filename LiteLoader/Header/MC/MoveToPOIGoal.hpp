@@ -23,6 +23,7 @@ public:
     MoveToPOIGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MoveToPOIGoal();
     /*1*/ virtual bool canUse();
@@ -36,20 +37,21 @@ public:
     /*14*/ virtual void _moveToBlock();
     /*15*/ virtual class Vec3 _getTargetPosition() const;
     /*17*/ virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType) const;
-    /*
-    inline  ~MoveToPOIGoal(){
-         (MoveToPOIGoal::*rv)();
-        *((void**)&rv) = dlsym("??1MoveToPOIGoal@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOPOIGOAL
+public:
+#endif
     MCAPI MoveToPOIGoal(class Mob &, float, enum POIType, float);
     MCAPI bool getPOI(enum POIType);
 
-protected:
+//protected:
     MCAPI bool _canReachPOI(class Vec3 const &, float, bool);
 
-private:
+//private:
     MCAPI void _updatePOIBooking();
+
+protected:
+
+private:
+
 
 };

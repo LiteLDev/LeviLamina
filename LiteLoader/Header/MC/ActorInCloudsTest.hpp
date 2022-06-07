@@ -24,20 +24,14 @@ public:
     ActorInCloudsTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorInCloudsTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-    /*
-    inline  ~ActorInCloudsTest(){
-         (ActorInCloudsTest::*rv)();
-        *((void**)&rv) = dlsym("??1ActorInCloudsTest@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINCLOUDSTEST
+public:
+#endif
 
-protected:
-
-private:
 
 };

@@ -22,18 +22,11 @@ public:
     IPackTelemetry() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~IPackTelemetry();
-    /*
-    inline  ~IPackTelemetry(){
-         (IPackTelemetry::*rv)();
-        *((void**)&rv) = dlsym("??1IPackTelemetry@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IPACKTELEMETRY
+public:
+#endif
 
-protected:
-
-private:
 
 };

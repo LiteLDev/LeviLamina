@@ -22,26 +22,17 @@ public:
     InMemoryWritableFile() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~InMemoryWritableFile();
     /*1*/ virtual class leveldb::Status Append(class leveldb::Slice const &);
     /*2*/ virtual class leveldb::Status Close();
-    /*
-    inline class leveldb::Status Sync(){
-        class leveldb::Status (InMemoryWritableFile::*rv)();
-        *((void**)&rv) = dlsym("?Sync@InMemoryWritableFile@@UEAA?AVStatus@leveldb@@XZ");
-        return (this->*rv)();
-    }
-    inline class leveldb::Status Flush(){
-        class leveldb::Status (InMemoryWritableFile::*rv)();
-        *((void**)&rv) = dlsym("?Flush@InMemoryWritableFile@@UEAA?AVStatus@leveldb@@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INMEMORYWRITABLEFILE
+public:
+    MCVAPI class leveldb::Status Flush();
+    MCVAPI class leveldb::Status Sync();
+#endif
     MCAPI InMemoryWritableFile(class std::shared_ptr<class InMemoryFile>);
 
-protected:
-
-private:
 
 };

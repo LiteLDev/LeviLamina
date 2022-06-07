@@ -182,6 +182,7 @@ string EventTypeToString(EVENT_TYPES e)
         logger.error("Event Callback Failed!"); \
         logger.error("C++ Uncaught Exception Detected!"); \
         logger.error(TextEncoding::toUTF8(e.what())); \
+        PrintScriptStackTrace(); \
         logger.error("In Event: " + EventTypeToString(TYPE)); \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
     } \
@@ -190,6 +191,7 @@ string EventTypeToString(EVENT_TYPES e)
         logger.error("Event Callback Failed!"); \
         logger.error("SEH Uncaught Exception Detected!"); \
         logger.error(TextEncoding::toUTF8(e.what())); \
+        PrintScriptStackTrace(); \
         logger.error("In Event: " + EventTypeToString(TYPE)); \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
     } \
@@ -307,6 +309,7 @@ bool LLSEAddEventListener(ScriptEngine *engine, const string &eventName, const L
     catch (const std::logic_error& e)
     {
         logger.error("Event \"" + eventName + "\" No Found!\n");
+        logger.error("In Plugin: " + ENGINE_GET_DATA(engine)->pluginName);
         return false;
     }
 }
@@ -859,9 +862,8 @@ void EnableEventListener(int eventId)
                 Actor* source = nullptr;
                 if (ev.mDamageSource->isEntitySource())
                 {
-                    auto getEntityUniqueID = (decltype(&ActorDamageSource::getDamagingEntityUniqueID))&ActorDamageSource::__unk_vfn_11;
                     if (ev.mDamageSource->isChildEntitySource())
-                        source = Level::getEntity((ev.mDamageSource->*getEntityUniqueID)());
+                        source = Level::getEntity(ev.mDamageSource->getEntityUniqueID());
                     else
                         source = Level::getEntity(ev.mDamageSource->getDamagingEntityUniqueID());
                 }
@@ -1123,102 +1125,84 @@ void InitBasicEventListeners()
 
     Event::PlayerCmdEvent::subscribe([](const PlayerCmdEvent& ev)
     {
-        try
+        string cmd = ev.mCommand;
+        Player* player = ev.mPlayer;
+
+        vector<string> paras;
+        bool isFromOtherEngine = false;
+        string prefix = LLSEFindCmdReg(true, cmd, paras, &isFromOtherEngine);
+
+        if (!prefix.empty())
         {
-            string cmd = ev.mCommand;
-            Player* player = ev.mPlayer;
+            //LLSE Registered Cmd
+            int perm = localShareData->playerCmdCallbacks[prefix].perm;
 
-            vector<string> paras;
-            bool isFromOtherEngine = false;
-            string prefix = LLSEFindCmdReg(true, cmd, paras, &isFromOtherEngine);
-
-            if (!prefix.empty())
+            if (player->getCommandPermissionLevel() >= perm)
             {
-                //LLSE Registered Cmd
-                int perm = localShareData->playerCmdCallbacks[prefix].perm;
-
-                if (player->getCommandPermissionLevel() >= perm)
-                {
-                    bool callbackRes = CallPlayerCmdCallback(player, prefix, paras);
-                    IF_LISTENED(EVENT_TYPES::onPlayerCmd)
-                    {
-                        CallEvent(EVENT_TYPES::onPlayerCmd, PlayerClass::newPlayer(player), String::newString(cmd));
-                    }
-                    IF_LISTENED_END(EVENT_TYPES::onPlayerCmd);
-                    if (!callbackRes)
-                        return false;
-                }
-            }
-            else
-            {
-                if (isFromOtherEngine)
-                    return false;
-
-                //Other Cmd
+                bool callbackRes = CallPlayerCmdCallback(player, prefix, paras);
                 IF_LISTENED(EVENT_TYPES::onPlayerCmd)
                 {
                     CallEvent(EVENT_TYPES::onPlayerCmd, PlayerClass::newPlayer(player), String::newString(cmd));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onPlayerCmd);
+                if (!callbackRes)
+                    return false;
             }
         }
-        catch (...)
+        else
         {
-            logger.error("Event Callback Failed!");
-            logger.error("Uncaught Exception Detected!");
-            logger.error("In Event: onPlayerCmd");
+            if (isFromOtherEngine)
+                return false;
+
+            //Other Cmd
+            IF_LISTENED(EVENT_TYPES::onPlayerCmd)
+            {
+                CallEvent(EVENT_TYPES::onPlayerCmd, PlayerClass::newPlayer(player), String::newString(cmd));
+            }
+            IF_LISTENED_END(EVENT_TYPES::onPlayerCmd);
         }
         return true;
     });
     
     Event::ConsoleCmdEvent::subscribe_ref([](ConsoleCmdEvent& ev)
     {
-        try
+        string cmd = ev.mCommand;
+
+        // PreProcess
+        if (!ProcessDebugEngine(cmd))
+            return false;
+        if (!ProcessOldHotManageCommand(ev.mCommand))
+            return false;
+
+        //CallEvents
+        vector<string> paras;
+        bool isFromOtherEngine = false;
+        string prefix = LLSEFindCmdReg(false, cmd, paras, &isFromOtherEngine);
+
+        if (!prefix.empty())
         {
-            string cmd = ev.mCommand;
+            //LLSE Registered Cmd
 
-            // PreProcess
-            if (!ProcessDebugEngine(cmd))
-                return false;
-            if (!ProcessOldHotManageCommand(ev.mCommand))
-                return false;
-
-            //CallEvents
-            vector<string> paras;
-            bool isFromOtherEngine = false;
-            string prefix = LLSEFindCmdReg(false, cmd, paras, &isFromOtherEngine);
-
-            if (!prefix.empty())
+            bool callbackRes = CallServerCmdCallback(prefix, paras);
+            IF_LISTENED(EVENT_TYPES::onConsoleCmd)
             {
-                //LLSE Registered Cmd
-
-                bool callbackRes = CallServerCmdCallback(prefix, paras);
-                IF_LISTENED(EVENT_TYPES::onConsoleCmd)
-                {
-                    CallEvent(EVENT_TYPES::onConsoleCmd, String::newString(cmd));
-                }
-                IF_LISTENED_END(EVENT_TYPES::onConsoleCmd);
-                if (!callbackRes)
-                    return false;
+                CallEvent(EVENT_TYPES::onConsoleCmd, String::newString(cmd));
             }
-            else
-            {
-                if (isFromOtherEngine)
-                    return false;
-
-                //Other Cmd
-                IF_LISTENED(EVENT_TYPES::onConsoleCmd)
-                {
-                    CallEvent(EVENT_TYPES::onConsoleCmd, String::newString(cmd));
-                }
-                IF_LISTENED_END(EVENT_TYPES::onConsoleCmd);
-            }
+            IF_LISTENED_END(EVENT_TYPES::onConsoleCmd);
+            if (!callbackRes)
+                return false;
         }
-        catch (...)
+        else
         {
-            logger.error("Event Callback Failed!");
-            logger.error("Uncaught Exception Detected!");
-            logger.error("In Event: onConsoleCmd");
+            if (isFromOtherEngine)
+                return false;
+
+            //Other Cmd
+            IF_LISTENED(EVENT_TYPES::onConsoleCmd)
+            {
+                CallEvent(EVENT_TYPES::onConsoleCmd, String::newString(cmd));
+            }
+            IF_LISTENED_END(EVENT_TYPES::onConsoleCmd);
         }
         return true;
     });

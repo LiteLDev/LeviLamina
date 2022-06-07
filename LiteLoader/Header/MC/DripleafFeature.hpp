@@ -23,14 +23,19 @@ public:
     DripleafFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DripleafFeature();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRIPLEAFFEATURE
+public:
+#endif
 
-protected:
+//private:
+    MCAPI static bool _placeBigDripleaf(class BlockSource &, class BlockPos const &, class Random &);
 
 private:
-    MCAPI static bool _placeBigDripleaf(class BlockSource &, class BlockPos const &, class Random &);
+
 
 };

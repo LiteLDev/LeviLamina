@@ -20,7 +20,11 @@ public:
     PropertyInstance(class PropertyInstance const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYINSTANCE
+public:
+#endif
     MCAPI PropertyInstance(class std::shared_ptr<struct PropertyDescription const>);
     MCAPI PropertyInstance();
     MCAPI struct MolangScriptArg getMolangValue() const;
@@ -35,8 +39,5 @@ public:
     MCAPI bool setIntValue(int);
     MCAPI ~PropertyInstance();
 
-protected:
-
-private:
 
 };

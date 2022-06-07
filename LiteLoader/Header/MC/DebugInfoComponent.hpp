@@ -21,8 +21,10 @@ public:
     DebugInfoComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DebugInfoComponent();
+    /*1*/ virtual enum EventResult onEvent(struct ActorNotificationEvent const &);
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
@@ -53,6 +55,9 @@ public:
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
     /*31*/ virtual enum EventResult onEvent(struct ActorDefinitionEvent const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEBUGINFOCOMPONENT
+public:
+#endif
     MCAPI DebugInfoComponent(class DebugInfoComponent &&);
     MCAPI DebugInfoComponent(class DebugInfoComponent const &);
     MCAPI void addListener(class HashedString const &, class NetworkIdentifier, unsigned char);
@@ -60,8 +65,5 @@ public:
     MCAPI class DebugInfoComponent & operator=(class DebugInfoComponent &&);
     MCAPI void removeListener(class HashedString const &, class NetworkIdentifier, unsigned char);
 
-protected:
-
-private:
 
 };

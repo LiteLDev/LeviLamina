@@ -24,6 +24,7 @@ public:
     ScriptingCommandOrigin() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptingCommandOrigin();
     /*1*/ virtual std::string const & getRequestId() const;
@@ -36,28 +37,16 @@ public:
     /*8*/ virtual class Actor * getEntity() const;
     /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*11*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
-    /*12*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
-    /*15*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
     /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
-    /*20*/ virtual unsigned char getSourceSubId() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*26*/ virtual void handleCommandOutputCallback(class Json::Value &&) const;
-    /*27*/ virtual void updateValues();
     /*30*/ virtual bool isValid() const;
-    /*
-    inline  ~ScriptingCommandOrigin(){
-         (ScriptingCommandOrigin::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptingCommandOrigin@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTINGCOMMANDORIGIN
+public:
+#endif
     MCAPI ScriptingCommandOrigin(class ServerLevel &, class Dimension *, class std::function<void (class Json::Value &&)>);
     MCAPI void __autoclassinit2(unsigned __int64);
 
-protected:
-
-private:
 
 };

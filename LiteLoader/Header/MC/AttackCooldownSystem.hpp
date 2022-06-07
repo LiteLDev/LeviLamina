@@ -22,13 +22,14 @@ public:
     AttackCooldownSystem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AttackCooldownSystem();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void tick(class EntityRegistry &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTACKCOOLDOWNSYSTEM
+public:
+#endif
 
-protected:
-
-private:
 
 };

@@ -23,19 +23,13 @@ public:
     ScriptNavigationFlyComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptNavigationFlyComponent();
-    /*
-    inline  ~ScriptNavigationFlyComponent(){
-         (ScriptNavigationFlyComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptNavigationFlyComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTNAVIGATIONFLYCOMPONENT
+public:
+#endif
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptNavigationFlyComponent> bind(struct Scripting::Version);
 
-protected:
-
-private:
 
 };

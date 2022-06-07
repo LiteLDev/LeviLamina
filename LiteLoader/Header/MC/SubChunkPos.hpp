@@ -29,7 +29,11 @@ public:
     SubChunkPos() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCHUNKPOS
+public:
+#endif
     MCAPI SubChunkPos(class BlockPos const &);
     MCAPI operator class BlockPos() const;
     MCAPI static class SubChunkPos const MAX;
@@ -37,8 +41,5 @@ public:
     MCAPI static class SubChunkPos const ONE;
     MCAPI static class SubChunkPos const ZERO;
 
-protected:
-
-private:
 
 };

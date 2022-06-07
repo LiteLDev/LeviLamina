@@ -20,7 +20,11 @@ public:
     RopePoints() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROPEPOINTS
+public:
+#endif
     MCAPI void beginRope();
     MCAPI void endRope();
     MCAPI void freezeInterpolation();
@@ -29,8 +33,5 @@ public:
     MCAPI unsigned __int64 size() const;
     MCAPI ~RopePoints();
 
-protected:
-
-private:
 
 };

@@ -23,18 +23,23 @@ public:
     StructureCommand() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StructureCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURECOMMAND
+public:
+#endif
     MCAPI static void setup(class CommandRegistry &);
 
-protected:
-
-private:
+//private:
     MCAPI void _delete(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI std::string _getFullName() const;
     MCAPI bool _isValidSize(class BlockPos const &, class DimensionHeightRange const &, class CommandOutput &) const;
     MCAPI void _load(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void _save(class CommandOrigin const &, class CommandOutput &) const;
+
+private:
+
 
 };

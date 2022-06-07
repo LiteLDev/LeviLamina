@@ -22,18 +22,23 @@ public:
     DolphinMoveControl(class DolphinMoveControl const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DolphinMoveControl();
     /*2*/ virtual void tick(class MoveControlComponent &, class Mob &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOLPHINMOVECONTROL
+public:
+#endif
     MCAPI DolphinMoveControl();
 
-protected:
-
-private:
+//private:
     MCAPI float _calcRotX(float, float, float);
     MCAPI float _calcRotY(float, float);
     MCAPI bool _clearOfObstacles(class Mob const &, float, float, int) const;
     MCAPI bool _isInWater(class Mob const &) const;
     MCAPI void _setupBreach(class Mob &);
+
+private:
+
 
 };

@@ -23,19 +23,19 @@ public:
     PlayerUIContainerModel() = delete;
 #endif
 
+
 public:
     /*1*/ virtual ~PlayerUIContainerModel();
     /*6*/ virtual void __unk_vfn_6();
     /*12*/ virtual void __unk_vfn_12();
     /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual void __unk_vfn_16();
-    /*17*/ virtual void __unk_vfn_17();
     /*19*/ virtual void __unk_vfn_19();
     /*21*/ virtual int _getContainerOffset() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERUICONTAINERMODEL
+public:
+#endif
     MCAPI PlayerUIContainerModel(enum ContainerEnumName, class Player &);
 
-protected:
-
-private:
 
 };

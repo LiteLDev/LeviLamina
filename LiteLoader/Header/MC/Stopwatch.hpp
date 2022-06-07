@@ -21,24 +21,18 @@ public:
     Stopwatch(class Stopwatch const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Stopwatch();
     /*1*/ virtual double stop();
     /*2*/ virtual double stopContinue();
     /*3*/ virtual void print(std::string const &);
-    /*
-    inline  ~Stopwatch(){
-         (Stopwatch::*rv)();
-        *((void**)&rv) = dlsym("??1Stopwatch@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STOPWATCH
+public:
+#endif
     MCAPI Stopwatch();
     MCAPI void reset();
     MCAPI void start();
 
-protected:
-
-private:
 
 };

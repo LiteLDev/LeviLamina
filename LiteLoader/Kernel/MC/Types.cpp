@@ -57,6 +57,11 @@ Vec3 BlockPos::center() const {
     return {(float)x + 0.5f, (float)y + 0.5f, (float)z + 0.5f};
 }
 
+bool BlockPos::containedWithin(BoundingBox const& box) const {
+        return x >= box.bpos1.x && y >= box.bpos1.y && z >= box.bpos1.z &&
+               x <= box.bpos2.x && y <= box.bpos2.y && z <= box.bpos2.z;
+    }
+
 BlockPos Vec3::toBlockPos() const {
     auto px = (int)x;
     auto py = (int)y;

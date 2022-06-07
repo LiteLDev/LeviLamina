@@ -16,7 +16,11 @@ class ExpressionNode {
 
 #undef AFTER_EXTRA
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPRESSIONNODE
+public:
+#endif
     MCAPI ExpressionNode(class ExpressionNode &&);
     MCAPI ExpressionNode(class ExpressionNode const &);
     MCAPI ExpressionNode(std::string const &, class SemVersion const &, class gsl::span<class HashedString const, -1>);
@@ -56,9 +60,7 @@ public:
     MCAPI static void setExperiments(class Experiments const &);
     MCAPI static void unregisterQueryFunction(std::string const &, class HashedString);
 
-protected:
-
-private:
+//private:
     MCAPI bool _buildTree(struct ExpressionOpBitField const &, enum MolangVersion);
     MCAPI bool _checkAllOperationsAreValid() const;
     MCAPI bool _optimize(enum MolangVersion);
@@ -81,16 +83,19 @@ private:
     MCAPI bool processSemicolons();
     MCAPI bool processUnaryExpression(enum ExpressionOp);
     MCAPI static enum MolangCompileResult _buildProgram(struct MolangProgramBuildState &, class ExpressionNode const *);
-    MCAPI static class std::function<struct MolangScriptArg const & (class RenderParams &, std::vector<class ExpressionNode> const &)> _defaultUnknownQueryFunction;
     MCAPI static struct MolangScriptArg * _getOrCreateReferencedMemberVariableScriptArg(struct MolangEvalParams &, class ExpressionNode const &);
     MCAPI static bool _getQueryFunctionAccessor(struct MolangScriptArg &, std::string const &, enum MolangVersion, enum MolangQueryFunctionReturnType, class HashedString const &);
     MCAPI static struct MolangScriptArg const * _getScriptArgFromMemberAccessedVariable(struct MolangEvalParams &, class ExpressionNode const &);
     MCAPI static bool _initializeMolangQueries();
     MCAPI static void _writeScriptArgToMemberAccessedVariable(struct MolangEvalParams &, class ExpressionNode const &, struct MolangScriptArg const &);
     MCAPI static void _writeScriptArgToMolangVariable(class MolangVariableMap &, enum MolangVariableIndex, struct MolangScriptArg const &);
+
+private:
+    MCAPI static class std::function<struct MolangScriptArg const & (class RenderParams &, std::vector<class ExpressionNode> const &)> _defaultUnknownQueryFunction;
     MCAPI static class ExperimentStorage mExperiments;
     MCAPI static bool mMolangInitialized;
     MCAPI static class std::unordered_multimap<class HashedString, struct MolangQueryFunction, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct MolangQueryFunction>>> mQueryFunctionAccessors;
     MCAPI static class std::unordered_map<class HashedString, class std::unordered_set<class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<class HashedString>>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::unordered_set<class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<class HashedString>>>>> mQuerySets;
+
 
 };

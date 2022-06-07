@@ -22,13 +22,14 @@ public:
     PhysicsDefinition(class PhysicsDefinition const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PHYSICSDEFINITION
+public:
+#endif
     MCAPI PhysicsDefinition();
     MCAPI void initialize(class EntityContext &, class PhysicsComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class PhysicsDefinition>> &);
 
-protected:
-
-private:
 
 };

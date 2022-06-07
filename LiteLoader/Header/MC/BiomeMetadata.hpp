@@ -20,11 +20,12 @@ public:
     BiomeMetadata() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEMETADATA
+public:
+#endif
     MCAPI ~BiomeMetadata();
 
-protected:
-
-private:
 
 };

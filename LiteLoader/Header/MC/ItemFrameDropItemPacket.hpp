@@ -22,23 +22,17 @@ public:
     ItemFrameDropItemPacket(class ItemFrameDropItemPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemFrameDropItemPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~ItemFrameDropItemPacket(){
-         (ItemFrameDropItemPacket::*rv)();
-        *((void**)&rv) = dlsym("??1ItemFrameDropItemPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMFRAMEDROPITEMPACKET
+public:
+#endif
     MCAPI ItemFrameDropItemPacket();
 
-protected:
-
-private:
 
 };

@@ -222,8 +222,6 @@ HMODULE GetCallerModule(unsigned long FramesToSkip)
     void* frames[maxFrameCount];
     int frameCount = CaptureStackBackTrace(FramesToSkip + 2, maxFrameCount, frames, NULL);
 
-    HANDLE hProcess = GetCurrentProcess();
-
     std::string name;
     if (0 < frameCount)
     {

@@ -23,22 +23,20 @@ public:
     LakeFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LakeFeature();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-    /*
-    inline  ~LakeFeature(){
-         (LakeFeature::*rv)();
-        *((void**)&rv) = dlsym("??1LakeFeature@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LAKEFEATURE
+public:
+#endif
     MCAPI LakeFeature(class Block const &, class std::optional<class XoroshiroPositionalRandomFactory>);
 
-protected:
+//private:
+    MCAPI bool _check(class BlockPos const &, class gsl::span<bool, 2048>) const;
 
 private:
-    MCAPI bool _check(class BlockPos const &, class gsl::span<bool, 2048>) const;
+
 
 };

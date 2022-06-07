@@ -23,19 +23,15 @@ public:
     MoveControlFlyDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~MoveControlFlyDescription();
-    /*
-    inline  ~MoveControlFlyDescription(){
-         (MoveControlFlyDescription::*rv)();
-        *((void**)&rv) = dlsym("??1MoveControlFlyDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*2*/ virtual void deserializeData(struct DeserializeDataParams);
+    /*3*/ virtual void serializeData(class Json::Value &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROLFLYDESCRIPTION
+public:
+#endif
 
-protected:
-
-private:
 
 };

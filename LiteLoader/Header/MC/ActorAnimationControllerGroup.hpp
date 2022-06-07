@@ -24,7 +24,11 @@ public:
     ActorAnimationControllerGroup(class ActorAnimationControllerGroup const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONCONTROLLERGROUP
+public:
+#endif
     MCAPI ActorAnimationControllerGroup();
     MCAPI class ActorAnimationControllerPtr getActorAnimationController(class HashedString const &);
     MCAPI class std::shared_ptr<class ActorAnimationControllerInfo> getActorAnimationControllerInfo(class HashedString const &);
@@ -32,12 +36,13 @@ public:
     MCAPI ~ActorAnimationControllerGroup();
     MCAPI static bool loadFormatVersion(class Json::Value const &, class SemVersion &);
 
-protected:
-
-private:
+//private:
     MCAPI void _loadActorAnimationController(std::string const &, class Core::Path const &, enum CurrentCmdVersion);
     MCAPI static class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorAnimationControllerGroupParseMetaData>> _buildAnimationControllerFileSchema_v1_10_Or_Later(class SemVersion const &);
     MCAPI static class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, bool>> _buildAnimationControllerFileSchema_v1_8();
     MCAPI static bool upgrade_v1_8_to_v1_10(class Json::Value &, class SemVersion const &);
+
+private:
+
 
 };

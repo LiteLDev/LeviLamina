@@ -22,18 +22,11 @@ public:
     JsonLoader() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~JsonLoader();
-    /*
-    inline  ~JsonLoader(){
-         (JsonLoader::*rv)();
-        *((void**)&rv) = dlsym("??1JsonLoader@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JSONLOADER
+public:
+#endif
 
-protected:
-
-private:
 
 };

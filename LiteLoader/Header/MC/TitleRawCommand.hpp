@@ -24,14 +24,19 @@ public:
     TitleRawCommand() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TitleRawCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TITLERAWCOMMAND
+public:
+#endif
     MCAPI static void setup(class CommandRegistry &);
 
-protected:
+//private:
+    MCAPI bool _sendTitlePacketTextObject(enum SetTitlePacket::TitleType, class CommandOrigin const &, class CommandOutput &, class CommandSelectorResults<class Player> const &) const;
 
 private:
-    MCAPI bool _sendTitlePacketTextObject(enum SetTitlePacket::TitleType, class CommandOrigin const &, class CommandOutput &, class CommandSelectorResults<class Player> const &) const;
+
 
 };

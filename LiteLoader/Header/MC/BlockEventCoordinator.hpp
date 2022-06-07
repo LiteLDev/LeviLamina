@@ -22,8 +22,11 @@ public:
     BlockEventCoordinator() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~BlockEventCoordinator();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTCOORDINATOR
+public:
+#endif
     MCAPI class BlockGameplayHandler & getBlockGameplayHandler();
     MCAPI void registerBlockGameplayHandler(std::unique_ptr<class BlockGameplayHandler> &&);
     MCAPI void sendBlockDestroyedByPlayer(class Player &, class Block const &, class BlockPos const &);
@@ -38,8 +41,5 @@ public:
     MCAPI void sendEvent(class EventRef<struct BlockGameplayEvent<void>> const &);
     MCAPI void sendUnknownBlockReceived(class Level &, struct NewBlockID const &, unsigned short);
 
-protected:
-
-private:
 
 };

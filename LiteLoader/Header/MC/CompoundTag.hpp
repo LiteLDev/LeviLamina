@@ -74,15 +74,19 @@ public:
     LIAPI string toPrettySNBT(bool forPlayer = false) const;
     LIAPI string toPrettySNBT(struct PrettySnbtFormat const& format) const;
     LIAPI std::string toBinaryNBT(bool isLittleEndian = true);
+    LIAPI static std::string nbtListToBinary(std::vector<std::unique_ptr<CompoundTag>> tags, bool isLittleEndian = true);
     LIAPI static std::unique_ptr<CompoundTag> fromSNBT(const std::string& snbt);
     LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(void* data, size_t len, bool isLittleEndian = true);
-    LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(void* data, size_t len, size_t& endOffset, bool isLittleEndian = true);
-    LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(std::string const& data, size_t& endOffset, bool isLittleEndian = true);
+    LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEndian = true);
+    LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(std::string const& data, size_t& offset, bool isLittleEndian = true);
     LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(std::string const& data, bool isLittleEndian = true);
-    // No Test
+    LIAPI static std::vector<std::unique_ptr<CompoundTag>> nbtListFromBinary(std::string const& data, bool isLittleEndian = true);
+
     LIAPI std::string toNetworkNBT() const;
     LIAPI static std::unique_ptr<CompoundTag> fromNetworkNBT(std::string const& data);
-    
+    LIAPI static std::string nbtListToNetwork(std::vector<std::unique_ptr<CompoundTag>> tags);
+    LIAPI static std::vector<std::unique_ptr<CompoundTag>> nbtListFromNetwork(std::string const& data);
+
 
     // Deprecated?
     LIAPI std::string toSNBT();
@@ -95,9 +99,9 @@ public:
     CompoundTag(class CompoundTag const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CompoundTag();
-    /*1*/ virtual void deleteChildren();
     /*2*/ virtual void write(class IDataOutput &) const;
     /*3*/ virtual void load(class IDataInput &);
     /*4*/ virtual std::string toString() const;
@@ -106,13 +110,9 @@ public:
     /*8*/ virtual void print(std::string const &, class PrintStream &) const;
     /*9*/ virtual std::unique_ptr<class Tag> copy() const;
     /*10*/ virtual unsigned __int64 hash() const;
-    /*
-    inline  ~CompoundTag(){
-         (CompoundTag::*rv)();
-        *((void**)&rv) = dlsym("??1CompoundTag@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAG
+public:
+#endif
     MCAPI CompoundTag(class CompoundTag &&);
     MCAPI CompoundTag();
     MCAPI void append(class CompoundTag const &);
@@ -138,8 +138,8 @@ public:
     MCAPI class Int64Tag * getInt64Tag(class gsl::basic_string_span<char const, -1>);
     MCAPI class IntTag * getIntTag(class gsl::basic_string_span<char const, -1>);
     MCAPI class IntTag const * getIntTag(class gsl::basic_string_span<char const, -1>) const;
-    MCAPI class ListTag const * getList(class gsl::basic_string_span<char const, -1>) const;
     MCAPI class ListTag * getList(class gsl::basic_string_span<char const, -1>);
+    MCAPI class ListTag const * getList(class gsl::basic_string_span<char const, -1>) const;
     MCAPI short getShort(class gsl::basic_string_span<char const, -1>) const;
     MCAPI class ShortTag const * getShortTag(class gsl::basic_string_span<char const, -1>) const;
     MCAPI std::string const & getString(class gsl::basic_string_span<char const, -1>) const;
@@ -162,8 +162,5 @@ public:
     MCAPI bool remove(class gsl::basic_string_span<char const, -1>);
     MCAPI void rename(class gsl::basic_string_span<char const, -1>, std::string);
 
-protected:
-
-private:
 
 };

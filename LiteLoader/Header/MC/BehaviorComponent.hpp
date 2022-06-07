@@ -21,14 +21,15 @@ public:
     BehaviorComponent(class BehaviorComponent const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORCOMPONENT
+public:
+#endif
     MCAPI BehaviorComponent(class BehaviorComponent &&);
     MCAPI BehaviorComponent();
     MCAPI class BehaviorComponent & operator=(class BehaviorComponent &&);
     MCAPI ~BehaviorComponent();
 
-protected:
-
-private:
 
 };

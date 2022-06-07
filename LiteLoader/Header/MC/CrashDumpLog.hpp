@@ -22,7 +22,11 @@ public:
     CrashDumpLog() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPLOG
+public:
+#endif
     MCAPI static void logEvent(struct CrashDumpEventData const &);
     MCAPI static void logFrame(struct CrashDumpFrameData const &);
     MCAPI static void logKeyValue(struct CrashDumpKeyValueData const &);
@@ -34,11 +38,15 @@ public:
     MCAPI static bool startCrashDumpLogThread();
     MCAPI static void stopCrashDumpLogThread();
 
+//protected:
+
+//private:
+    MCAPI static void crashDumpLogThreadRoutine();
+
 protected:
     MCAPI static struct CrashDump_AllData * mAllData;
 
 private:
-    MCAPI static void crashDumpLogThreadRoutine();
     MCAPI static class std::mutex mAssertDataMutex;
     MCAPI static std::unique_ptr<class std::thread> mCrashDumpLog_logThread;
     MCAPI static class std::mutex mCrashDumpThreadMutex;
@@ -51,5 +59,6 @@ private:
     MCAPI static class std::mutex mKeyValueDataMutex;
     MCAPI static class std::mutex mPlayerDataMutex;
     MCAPI static class std::mutex mRenderDataMutex;
+
 
 };

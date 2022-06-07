@@ -20,6 +20,7 @@ public:
     ScriptTickListener() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptTickListener();
     /*1*/ virtual void __unk_vfn_1();
@@ -28,10 +29,10 @@ public:
     /*4*/ virtual enum EventResult onLevelRemovedPlayer(class Level &, class Player &);
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual enum EventResult onLevelTick();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTTICKLISTENER
+public:
+#endif
     MCAPI ScriptTickListener(class Scripting::ScriptEngine &, class ScriptFormPromiseTracker &);
 
-protected:
-
-private:
 
 };

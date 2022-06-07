@@ -22,8 +22,11 @@ public:
     MobEvents() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~MobEvents();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEVENTS
+public:
+#endif
     MCAPI MobEvents(class LevelStorage &);
     MCAPI bool areEventsEnabled() const;
     MCAPI void deserialize(class CompoundTag const &);
@@ -38,8 +41,5 @@ public:
     MCAPI void writeToLevelStorage();
     MCAPI static std::string const EVENTS_ENABLED_STRING;
 
-protected:
-
-private:
 
 };

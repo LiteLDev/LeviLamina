@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -22,24 +23,18 @@ public:
     SpawnGroupRegistry() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SpawnGroupRegistry();
     /*1*/ virtual std::string const & getRootKey();
     /*2*/ virtual std::string const & getFileType();
-    /*3*/ virtual void __unk_vfn_3();
+    /*3*/ virtual bool processPopulationControl(std::string const &, class Json::Value &);
     /*4*/ virtual void readResourceFiles(class ResourcePackManager &, class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> &);
-    /*
-    inline bool processPopulationControl(std::string const & a0, class Json::Value & a1){
-        bool (SpawnGroupRegistry::*rv)(std::string const &, class Json::Value &);
-        *((void**)&rv) = dlsym("?processPopulationControl@SpawnGroupRegistry@@MEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class Json::Value &>(a1));
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNGROUPREGISTRY
+public:
+#endif
     MCAPI SpawnGroupRegistry(class ResourcePackManager &);
     MCAPI class SpawnGroupData const * getSpawnGroup(std::string const &) const;
 
-protected:
-
-private:
 
 };

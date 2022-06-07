@@ -22,23 +22,14 @@ public:
     ChunkBuildOrderPolicyBase() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ChunkBuildOrderPolicyBase();
-    /*
-    inline unsigned int registerForUpdates(){
-        unsigned int (ChunkBuildOrderPolicyBase::*rv)();
-        *((void**)&rv) = dlsym("?registerForUpdates@ChunkBuildOrderPolicyBase@@UEAAIXZ");
-        return (this->*rv)();
-    }
-    inline  ~ChunkBuildOrderPolicyBase(){
-         (ChunkBuildOrderPolicyBase::*rv)();
-        *((void**)&rv) = dlsym("??1ChunkBuildOrderPolicyBase@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual void __unk_vfn_1() = 0;
+    /*2*/ virtual unsigned int registerForUpdates();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKBUILDORDERPOLICYBASE
+public:
+#endif
 
-protected:
-
-private:
 
 };

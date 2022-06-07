@@ -22,7 +22,11 @@ public:
     ActorAnimationControllerState() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONCONTROLLERSTATE
+public:
+#endif
     MCAPI void addAnimation(class HashedString const &);
     MCAPI void addAnimation(class HashedString const &, class ExpressionNode const &);
     MCAPI void addBlendTransitionKeyFrame(float, float);
@@ -34,8 +38,5 @@ public:
     MCAPI class StateAnimationVariable & addVariable(std::string const &);
     MCAPI void setBlendTransitionTime(float);
 
-protected:
-
-private:
 
 };

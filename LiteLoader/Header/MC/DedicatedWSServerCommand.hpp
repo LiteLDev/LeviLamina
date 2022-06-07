@@ -23,14 +23,19 @@ public:
     DedicatedWSServerCommand() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DedicatedWSServerCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEDICATEDWSSERVERCOMMAND
+public:
+#endif
     MCAPI static void setup(class CommandRegistry &, class IMinecraftApp &);
 
-protected:
+//private:
 
 private:
     MCAPI static class IMinecraftApp * mApp;
+
 
 };

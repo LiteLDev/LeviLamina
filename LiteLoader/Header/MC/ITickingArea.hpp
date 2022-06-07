@@ -22,19 +22,12 @@ public:
     ITickingArea() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~ITickingArea();
-    /*
-    inline  ~ITickingArea(){
-         (ITickingArea::*rv)();
-        *((void**)&rv) = dlsym("??1ITickingArea@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITICKINGAREA
+public:
+#endif
     MCAPI class CompoundTag serialize() const;
 
-protected:
-
-private:
 
 };

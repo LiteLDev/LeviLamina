@@ -22,16 +22,21 @@ public:
     OnFireComponent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONFIRECOMPONENT
+public:
+#endif
     MCAPI void addAdditionalSaveData(class Actor const &, class CompoundTag &) const;
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &);
     MCAPI static void convertFromLegacyData(class CompoundTag const &, class CompoundTag &);
     MCAPI static bool needsLegacyConversion(class CompoundTag const &);
 
-protected:
+//private:
 
 private:
     MCAPI static std::string const LEGACY_FIRE_TAG;
     MCAPI static std::string const ON_FIRE_TAG;
+
 
 };

@@ -24,20 +24,14 @@ public:
     FilterTestHasTradeSupply() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FilterTestHasTradeSupply();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-    /*
-    inline  ~FilterTestHasTradeSupply(){
-         (FilterTestHasTradeSupply::*rv)();
-        *((void**)&rv) = dlsym("??1FilterTestHasTradeSupply@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTHASTRADESUPPLY
+public:
+#endif
 
-protected:
-
-private:
 
 };

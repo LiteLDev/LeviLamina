@@ -22,7 +22,11 @@ public:
     SharedModifiers() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAREDMODIFIERS
+public:
+#endif
     MCAPI static class std::shared_ptr<class AttributeModifier> DAMAGE_BOOST;
     MCAPI static class std::shared_ptr<class AttributeModifier> HEALTH_BOOST;
     MCAPI static class std::shared_ptr<class AttributeModifier> MOVEMENT_SLOWDOWN;
@@ -30,8 +34,5 @@ public:
     MCAPI static class std::shared_ptr<class AttributeModifier> SPRINTING_BOOST;
     MCAPI static class std::shared_ptr<class AttributeModifier> WEAKNESS;
 
-protected:
-
-private:
 
 };

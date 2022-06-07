@@ -22,24 +22,18 @@ public:
     ResourcePackDataInfoPacket(class ResourcePackDataInfoPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ResourcePackDataInfoPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~ResourcePackDataInfoPacket(){
-         (ResourcePackDataInfoPacket::*rv)();
-        *((void**)&rv) = dlsym("??1ResourcePackDataInfoPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKDATAINFOPACKET
+public:
+#endif
     MCAPI ResourcePackDataInfoPacket(std::string const &, unsigned int, int, unsigned __int64, std::string const &, bool, enum PackType);
     MCAPI ResourcePackDataInfoPacket();
 
-protected:
-
-private:
 
 };

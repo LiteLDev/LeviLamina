@@ -22,25 +22,19 @@ public:
     EmotePacket(class EmotePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EmotePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~EmotePacket(){
-         (EmotePacket::*rv)();
-        *((void**)&rv) = dlsym("??1EmotePacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EMOTEPACKET
+public:
+#endif
     MCAPI EmotePacket();
     MCAPI bool isServerSide() const;
     MCAPI void setServerSide();
 
-protected:
-
-private:
 
 };

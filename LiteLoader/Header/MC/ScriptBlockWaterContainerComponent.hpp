@@ -22,15 +22,12 @@ public:
     ScriptBlockWaterContainerComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptBlockWaterContainerComponent();
-    /*
-    inline  ~ScriptBlockWaterContainerComponent(){
-         (ScriptBlockWaterContainerComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptBlockWaterContainerComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKWATERCONTAINERCOMPONENT
+public:
+#endif
     MCAPI ScriptBlockWaterContainerComponent(class ScriptBlockWaterContainerComponent const &);
     MCAPI ScriptBlockWaterContainerComponent(class ScriptBlockWaterContainerComponent &&);
     MCAPI class Scripting::Result<void> addDye(class ScriptItemType const &);
@@ -40,8 +37,5 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockWaterContainerComponent> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockWaterContainerComponent> tryCreate(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
 
-protected:
-
-private:
 
 };

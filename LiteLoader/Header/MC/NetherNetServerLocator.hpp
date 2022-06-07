@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "RakNet.hpp"
 #include "StubServerLocator.hpp"
 
 #define BEFORE_EXTRA
@@ -28,9 +29,9 @@ public:
     NetherNetServerLocator(class NetherNetServerLocator const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NetherNetServerLocator();
-    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void startAnnouncingServer(std::string const &, std::string const &, enum GameType, int, int, bool);
     /*4*/ virtual void stopAnnouncingServer();
@@ -44,16 +45,20 @@ public:
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void __unk_vfn_14();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERNETSERVERLOCATOR
+public:
+#endif
     MCAPI NetherNetServerLocator();
 
-protected:
-
-private:
+//private:
     MCAPI bool _isNetherNetOverLANAllowed() const;
     MCAPI void _onBroadcastResponseCallback(unsigned __int64, void const *, int);
     MCAPI void _setBroadcastDiscoveryResponse(struct NetherNetServerLocator::ServerData const &);
     MCAPI void _setIsAnnouncing(bool);
     MCAPI void _setIsDiscovering(bool);
     MCAPI struct PingedCompatibleServer _transformFrom(unsigned __int64, struct NetherNetServerLocator::ServerData const &);
+
+private:
+
 
 };

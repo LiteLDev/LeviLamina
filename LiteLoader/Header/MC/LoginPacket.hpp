@@ -24,6 +24,7 @@ public:
     LoginPacket(class LoginPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LoginPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -31,10 +32,10 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*5*/ virtual bool disallowBatching() const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOGINPACKET
+public:
+#endif
     MCAPI LoginPacket();
 
-protected:
-
-private:
 
 };

@@ -21,20 +21,14 @@ public:
     ContentTierManager(class ContentTierManager const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ContentTierManager();
     /*1*/ virtual class ContentTierInfo getContentTierInfo() const;
-    /*
-    inline  ~ContentTierManager(){
-         (ContentTierManager::*rv)();
-        *((void**)&rv) = dlsym("??1ContentTierManager@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTTIERMANAGER
+public:
+#endif
     MCAPI ContentTierManager();
 
-protected:
-
-private:
 
 };

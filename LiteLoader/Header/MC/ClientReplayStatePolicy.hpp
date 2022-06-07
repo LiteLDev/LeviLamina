@@ -22,17 +22,18 @@ public:
     ClientReplayStatePolicy() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ClientReplayStatePolicy();
     /*1*/ virtual bool isReplayNeeded(enum AdvanceFrameResult) const;
     /*2*/ virtual bool canRewindToFrame(struct IActorMovementProxy &, unsigned __int64, unsigned __int64);
     /*3*/ virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy &, class PlayerAuthInputPacket const &, unsigned __int64);
     /*4*/ virtual void flagUnsupportedMovement(unsigned __int64);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTREPLAYSTATEPOLICY
+public:
+#endif
     MCAPI bool _checkSupportedFrame(struct IActorMovementProxy &) const;
     MCAPI bool _isSupportedMovementMode(struct IMobMovementProxy const &) const;
 
-protected:
-
-private:
 
 };

@@ -23,6 +23,7 @@ public:
     ScriptContainer() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptContainer();
     /*4*/ virtual class Scripting::Result<int> getSize() const;
@@ -34,12 +35,16 @@ public:
     /*10*/ virtual class Scripting::Result<bool> swapItems(int, int, class ScriptContainer &) const;
     /*11*/ virtual class Container * _tryGetContainer() const = 0;
     /*12*/ virtual void _balanceTransaction(class ItemStack const &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCONTAINER
+public:
+#endif
     MCAPI ScriptContainer(class Scripting::WeakLifetimeScope const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptContainer> bind(struct Scripting::Version);
 
-protected:
+//protected:
     MCAPI static class std::optional<struct Scripting::Error> _isSlotInvalid(class Container &, int);
 
-private:
+protected:
+
 
 };

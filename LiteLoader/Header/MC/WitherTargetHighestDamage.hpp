@@ -23,18 +23,25 @@ public:
     WitherTargetHighestDamage() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~WitherTargetHighestDamage();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
     /*4*/ virtual void start();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual bool _canAttack(class Mob *, class Actor *, bool, bool, struct MobDescriptor const **);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WITHERTARGETHIGHESTDAMAGE
+public:
+#endif
     MCAPI WitherTargetHighestDamage(class WitherBoss &, std::vector<struct MobDescriptor> const &);
 
-protected:
+//private:
+    MCAPI class Player * getHighestDamageTarget();
 
 private:
-    MCAPI class Player * getHighestDamageTarget();
+
 
 };

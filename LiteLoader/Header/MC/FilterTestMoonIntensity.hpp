@@ -24,20 +24,14 @@ public:
     FilterTestMoonIntensity() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FilterTestMoonIntensity();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-    /*
-    inline  ~FilterTestMoonIntensity(){
-         (FilterTestMoonIntensity::*rv)();
-        *((void**)&rv) = dlsym("??1FilterTestMoonIntensity@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTMOONINTENSITY
+public:
+#endif
 
-protected:
-
-private:
 
 };

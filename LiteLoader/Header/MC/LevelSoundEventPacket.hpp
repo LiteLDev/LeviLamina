@@ -22,24 +22,18 @@ public:
     LevelSoundEventPacket(class LevelSoundEventPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LevelSoundEventPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~LevelSoundEventPacket(){
-         (LevelSoundEventPacket::*rv)();
-        *((void**)&rv) = dlsym("??1LevelSoundEventPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSOUNDEVENTPACKET
+public:
+#endif
     MCAPI LevelSoundEventPacket(enum LevelSoundEvent, class Vec3 const &, int, std::string const &, bool, bool);
     MCAPI LevelSoundEventPacket();
 
-protected:
-
-private:
 
 };

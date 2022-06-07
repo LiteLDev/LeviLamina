@@ -23,16 +23,17 @@ public:
     OnPlayerPlacingTriggerDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~OnPlayerPlacingTriggerDescription();
     /*1*/ virtual std::string const & getName() const;
     /*4*/ virtual bool isNetworkComponent() const;
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLAYERPLACINGTRIGGERDESCRIPTION
+public:
+#endif
     MCAPI static std::string const NameID;
 
-protected:
-
-private:
 
 };

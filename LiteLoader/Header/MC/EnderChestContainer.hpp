@@ -22,20 +22,18 @@ public:
     EnderChestContainer(class EnderChestContainer const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EnderChestContainer();
-    /*1*/ virtual void init();
-    /*9*/ virtual void setItem(int, class ItemStack const &);
     /*16*/ virtual void startOpen(class Player &);
     /*17*/ virtual void stopOpen(class Player &);
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
-    /*31*/ virtual void __unk_vfn_31();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERCHESTCONTAINER
+public:
+#endif
     MCAPI EnderChestContainer();
     MCAPI static int const ITEMS_SIZE;
 
-protected:
-
-private:
 
 };

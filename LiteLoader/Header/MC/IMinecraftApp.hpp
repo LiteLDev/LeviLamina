@@ -22,18 +22,11 @@ public:
     IMinecraftApp() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~IMinecraftApp();
-    /*
-    inline  ~IMinecraftApp(){
-         (IMinecraftApp::*rv)();
-        *((void**)&rv) = dlsym("??1IMinecraftApp@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMINECRAFTAPP
+public:
+#endif
 
-protected:
-
-private:
 
 };

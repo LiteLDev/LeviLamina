@@ -22,16 +22,17 @@ public:
     SnapshotWritableFile() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SnapshotWritableFile();
     /*1*/ virtual class leveldb::Status Append(class leveldb::Slice const &);
     /*2*/ virtual class leveldb::Status Close();
     /*3*/ virtual class leveldb::Status Flush();
     /*4*/ virtual class leveldb::Status Sync();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNAPSHOTWRITABLEFILE
+public:
+#endif
     MCAPI SnapshotWritableFile(class leveldb::WritableFile *&&, class std::shared_mutex &);
 
-protected:
-
-private:
 
 };

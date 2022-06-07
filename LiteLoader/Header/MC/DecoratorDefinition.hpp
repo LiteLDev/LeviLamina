@@ -23,12 +23,17 @@ public:
     DecoratorDefinition() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DECORATORDEFINITION
+public:
+#endif
     MCAPI class BehaviorDefinition const * get() const;
 
-protected:
+//protected:
     MCAPI static std::unique_ptr<class BehaviorDefinition> _decoratorLoadChildBehavior(class Json::Value, class BehaviorFactory const &, class BehaviorTreeDefinitionPtr);
 
-private:
+protected:
+
 
 };

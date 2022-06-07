@@ -23,6 +23,7 @@ public:
     StompEggGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StompEggGoal();
     /*3*/ virtual void __unk_vfn_3();
@@ -33,10 +34,10 @@ public:
     /*19*/ virtual void _createDestroyParticles(class Level &, class BlockSource &, class BlockPos);
     /*20*/ virtual void _playBreakProgressSound(class Level &, class BlockSource &, class BlockPos);
     /*21*/ virtual void _playDestroySound(class Level &, class BlockSource &, class BlockPos);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STOMPEGGGOAL
+public:
+#endif
     MCAPI StompEggGoal(class Mob &, float, int, int, float, int);
 
-protected:
-
-private:
 
 };

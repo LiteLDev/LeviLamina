@@ -22,21 +22,16 @@ public:
     DragonFlamingDefinition(class DragonFlamingDefinition const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DragonFlamingDefinition();
-    /*
-    inline bool validateMobType(class Mob & a0){
-        bool (DragonFlamingDefinition::*rv)(class Mob &);
-        *((void**)&rv) = dlsym("?validateMobType@DragonFlamingDefinition@@UEAA_NAEAVMob@@@Z");
-        return (this->*rv)(std::forward<class Mob &>(a0));
-    }
-    */
+    /*1*/ virtual bool validateMobType(class Mob &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONFLAMINGDEFINITION
+public:
+#endif
     MCAPI DragonFlamingDefinition();
     MCAPI void initialize(class EntityContext &, class DragonFlamingGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonFlamingDefinition>> &);
 
-protected:
-
-private:
 
 };

@@ -22,8 +22,10 @@ public:
     ScriptActorEventListener() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptActorEventListener();
+    /*1*/ virtual enum EventResult onEvent(struct ActorNotificationEvent const &);
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
@@ -57,10 +59,10 @@ public:
     /*32*/ virtual enum EventResult onEvent(struct ActorAttackEvent const &);
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual enum EventResult onEvent(struct ActorAddEffectEvent const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTACTOREVENTLISTENER
+public:
+#endif
     MCAPI ScriptActorEventListener(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 
-protected:
-
-private:
 
 };

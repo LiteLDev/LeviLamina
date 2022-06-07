@@ -22,6 +22,7 @@ public:
 
     static Local<Object> newEntity(Actor *p);
     static Actor* extract(Local<Value> v);
+    static std::optional<Actor*> tryExtractActor(Local<Value> v);
     Local<Value> getRawPtr(const Arguments& args);
 
     Local<Value> getName();
@@ -58,5 +59,8 @@ public:
     Local<Value> removeTag(const Arguments& args);
     Local<Value> hasTag(const Arguments& args);
     Local<Value> getAllTags(const Arguments& args);
+    Local<Value> getEntityFromViewVector(const Arguments& args);
+    Local<Value> getBlockFromViewVector(const Arguments& args);
+        
 };
 extern ClassDefine<EntityClass> EntityClassBuilder;

@@ -24,6 +24,7 @@ public:
     IFileChunkUploader(class IFileChunkUploader const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~IFileChunkUploader();
     /*1*/ virtual void __unk_vfn_1();
@@ -37,27 +38,12 @@ public:
     /*9*/ virtual enum UploadError getInitErrorCode() const = 0;
     /*10*/ virtual float getUploadProgress(struct FileInfo const &) const = 0;
     /*11*/ virtual struct FileChunkInfo getChunkInfo(struct FileInfo const &, int) const;
-    /*
-    inline void confirmChunkReceived(struct FileInfo const & a0, struct FileChunkInfo const & a1){
-        void (IFileChunkUploader::*rv)(struct FileInfo const &, struct FileChunkInfo const &);
-        *((void**)&rv) = dlsym("?confirmChunkReceived@IFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@@Z");
-        return (this->*rv)(std::forward<struct FileInfo const &>(a0), std::forward<struct FileChunkInfo const &>(a1));
-    }
-    inline void update(){
-        void (IFileChunkUploader::*rv)();
-        *((void**)&rv) = dlsym("?update@IFileChunkUploader@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline  ~IFileChunkUploader(){
-         (IFileChunkUploader::*rv)();
-        *((void**)&rv) = dlsym("??1IFileChunkUploader@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFILECHUNKUPLOADER
+public:
+    MCVAPI void confirmChunkReceived(struct FileInfo const &, struct FileChunkInfo const &);
+    MCVAPI void update();
+#endif
     MCAPI IFileChunkUploader();
 
-protected:
-
-private:
 
 };

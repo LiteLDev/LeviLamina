@@ -22,11 +22,16 @@ public:
     ClassID() = delete;
 #endif
 
-public:
 
-protected:
+public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLASSID
+public:
+#endif
+
+//private:
+    MCAPI static unsigned __int64 getNextID();
 
 private:
-    MCAPI static unsigned __int64 getNextID();
+
 
 };

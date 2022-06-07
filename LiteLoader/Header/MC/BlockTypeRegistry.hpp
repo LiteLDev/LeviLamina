@@ -5,6 +5,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include <shared_mutex>
 
 #undef BEFORE_EXTRA
 
@@ -12,6 +13,7 @@ class BlockTypeRegistry {
 
 #define AFTER_EXTRA
 // Add Member There
+    class InhibitModificationsLock;
 
 #undef AFTER_EXTRA
 
@@ -22,7 +24,11 @@ public:
     BlockTypeRegistry() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKTYPEREGISTRY
+public:
+#endif
     MCAPI static unsigned __int64 computeBlockTypeRegistryChecksum(class BaseGameVersion const &);
     MCAPI static void forEachBlock(class std::function<bool (class BlockLegacy const &)>);
     MCAPI static class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
@@ -36,7 +42,7 @@ public:
     MCAPI static void unregisterBlock(class HashedString const &);
     MCAPI static void unregisterBlocks();
 
-protected:
+//private:
 
 private:
     MCAPI static class std::unordered_map<class HashedString, class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class HashedString>>> mBlockAliasLookupMap;
@@ -44,5 +50,6 @@ private:
     MCAPI static class OwnerPtrT<struct EntityRegistryRefTraits> mEntities;
     MCAPI static class std::set<std::string, struct std::less<std::string>, class std::allocator<std::string>> mKnownNamespaces;
     MCAPI static class std::shared_mutex mSharedMutex;
+
 
 };

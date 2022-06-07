@@ -270,7 +270,7 @@ template <typename RTN>
 RTN extractValue(Value&& value)
 {
     using Type = std::remove_const_t<std::remove_reference_t<RTN>>;
-    static_assert(is_one_of_v<Type, ElementType> || std::is_assignable_v<NumberType, RTN> || std::is_assignable_v<NbtType, RTN> || std::is_assignable_v<BlockType, RTN> || std::is_assignable_v<ItemType, RTN> || std::is_base_of_v<Player, std::remove_pointer_t<RTN>> || std::is_base_of_v<Actor, std::remove_pointer_t<RTN>>);
+    static_assert(std::is_void_v<Type> || is_one_of_v<Type, ElementType> || std::is_assignable_v<NumberType, RTN> || std::is_assignable_v<NbtType, RTN> || std::is_assignable_v<BlockType, RTN> || std::is_assignable_v<ItemType, RTN> || std::is_base_of_v<Player, std::remove_pointer_t<RTN>> || std::is_base_of_v<Actor, std::remove_pointer_t<RTN>>);
     if constexpr (is_one_of_v<Type, ElementType>)
         return std::get<Type>(value);
     else if constexpr (std::is_assignable_v<NumberType, RTN>)
@@ -285,6 +285,8 @@ RTN extractValue(Value&& value)
         return static_cast<RTN>(std::get<Player*>(value));
     else if constexpr (std::is_base_of_v<Actor, std::remove_pointer_t<RTN>>)
         return static_cast<RTN>(std::get<Actor*>(value));
+    else if constexpr (std::is_void_v<Type>)
+        return;
     else
         throw std::exception(fmt::format(__FUNCTION__ " - Unsupported Type: {}", typeid(RTN).name()).c_str());
 }
@@ -334,7 +336,7 @@ template <typename T>
 ValueType packValue(T val)
 {
     using RawType = std::remove_reference_t<std::remove_const_t<T>>;
-    static_assert(is_one_of_v<RawType, ElementType> || std::is_assignable_v<NumberType, T> || std::is_assignable_v<NbtType, T> || std::is_assignable_v<BlockType, T> || std::is_assignable_v<ItemType, T> || std::is_base_of_v<Player, std::remove_pointer_t<T>> || std::is_base_of_v<Actor, std::remove_pointer_t<T>>);
+    static_assert(std::is_void_v<RawType> || is_one_of_v<RawType, ElementType> || std::is_assignable_v<NumberType, T> || std::is_assignable_v<NbtType, T> || std::is_assignable_v<BlockType, T> || std::is_assignable_v<ItemType, T> || std::is_base_of_v<Player, std::remove_pointer_t<T>> || std::is_base_of_v<Actor, std::remove_pointer_t<T>>);
     if constexpr (is_one_of_v<RawType, ElementType>)
         return ValueType(std::forward<T>(val));
     else if constexpr (std::is_assignable_v<NumberType, T>)
@@ -349,6 +351,8 @@ ValueType packValue(T val)
         return ValueType(static_cast<Player*>(std::forward<T>(val)));
     else if constexpr (std::is_base_of_v<Actor, std::remove_pointer_t<T>>)
         return ValueType(static_cast<Actor*>(std::forward<T>(val)));
+    else if constexpr (std::is_void_v<RawType>)
+        return ValueType();
     throw std::exception(fmt::format(__FUNCTION__ " - Unsupported Type: {}", typeid(T).name()).c_str());
     return ValueType();
 }
@@ -468,8 +472,15 @@ inline bool _exportAs(std::string const& nameSpace, std::string const& funcName,
         if (sizeof...(Args) != args.size())
             return std::move(ValueType());
         int index = sizeof...(Args);
-        auto res = callback(extract<Args>(_expandArg(args, index))...);
-        return std::move(pack(std::move(res)));
+        if constexpr (std::is_void_v<RTN>)
+        {
+            callback(extract<Args>(_expandArg(args, index))...);
+            return std::move(ValueType());
+        }
+        else
+        {
+            return pack(callback(extract<Args>(_expandArg(args, index))...));
+        }
     };
     return exportFunc(nameSpace, funcName, std::move(cb), GetCurrentModule());
 }

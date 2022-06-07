@@ -9,6 +9,19 @@
 
 using namespace std;
 
+string GetLastErrorMessage(DWORD error_message_id)
+{
+    if (error_message_id == 0)
+        return "";
+
+    LPWSTR message_buffer = nullptr;
+    FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM,
+                  nullptr, error_message_id, MAKELANGID(0x09, SUBLANG_DEFAULT), (LPWSTR)&message_buffer, 0, nullptr);
+    string res = wstr2str(wstring(message_buffer));
+    LocalFree(message_buffer);
+    return res;
+}
+
 string GetLastErrorMessage() {
     DWORD error_message_id = ::GetLastError();
     if (error_message_id == 0)
@@ -163,5 +176,5 @@ string GetModuleName(HMODULE handler)
 {
     wchar_t buf[MAX_PATH] = { 0 };
     GetModuleFileNameEx(GetCurrentProcess(), handler, buf, MAX_PATH);
-    return std::filesystem::path(buf).filename().u8string();
+    return UTF82String(std::filesystem::path(buf).filename().u8string());
 }

@@ -22,6 +22,7 @@ public:
     DragonDeathGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DragonDeathGoal();
     /*1*/ virtual void __unk_vfn_1();
@@ -31,22 +32,12 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-    /*
-    inline bool canUse(){
-        bool (DragonDeathGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@DragonDeathGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canContinueToUse(){
-        bool (DragonDeathGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@DragonDeathGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONDEATHGOAL
+public:
+    MCVAPI bool canContinueToUse();
+    MCVAPI bool canUse();
+#endif
     MCAPI DragonDeathGoal(class EnderDragon &);
 
-protected:
-
-private:
 
 };

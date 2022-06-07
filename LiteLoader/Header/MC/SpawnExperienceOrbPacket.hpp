@@ -22,24 +22,18 @@ public:
     SpawnExperienceOrbPacket(class SpawnExperienceOrbPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SpawnExperienceOrbPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~SpawnExperienceOrbPacket(){
-         (SpawnExperienceOrbPacket::*rv)();
-        *((void**)&rv) = dlsym("??1SpawnExperienceOrbPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNEXPERIENCEORBPACKET
+public:
+#endif
     MCAPI SpawnExperienceOrbPacket(class Vec3 const &, int);
     MCAPI SpawnExperienceOrbPacket();
 
-protected:
-
-private:
 
 };

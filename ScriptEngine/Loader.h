@@ -5,7 +5,7 @@
 
 
 //基础库 & 依赖库
-extern std::vector<std::string> depends;
+extern std::unordered_map<std::string, std::string> depends;
 
 //前置声明
 extern void BindAPIs(ScriptEngine *engine);

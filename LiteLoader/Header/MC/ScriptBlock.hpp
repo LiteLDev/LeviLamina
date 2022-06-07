@@ -23,15 +23,12 @@ public:
     ScriptBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptBlock();
-    /*
-    inline  ~ScriptBlock(){
-         (ScriptBlock::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptBlock@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCK
+public:
+#endif
     MCAPI ScriptBlock(class ScriptBlock &&);
     MCAPI ScriptBlock(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<class Scripting::StrongObjectHandle> getComponent(std::string const &);
@@ -48,8 +45,5 @@ public:
     MCAPI class Scripting::Result<void> setWaterlogged(bool);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlock> bind(struct Scripting::Version);
 
-protected:
-
-private:
 
 };

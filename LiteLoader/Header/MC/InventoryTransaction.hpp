@@ -26,7 +26,11 @@ public:
     InventoryTransaction() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYTRANSACTION
+public:
+#endif
     MCAPI InventoryTransaction(class InventoryTransaction const &);
     MCAPI void _logTransaction(bool) const;
     MCAPI void addAction(class InventoryAction const &);
@@ -42,11 +46,12 @@ public:
     MCAPI static class InventoryTransaction deserialize(class ReadOnlyBinaryStream &);
     MCAPI static std::string const getInventoryTransactionErrorName(enum InventoryTransactionError);
 
-protected:
-
-private:
+//private:
     MCAPI void _dropCreatedItems(class Player &) const;
     MCAPI void addItemToContent(class ItemStack const &, int);
+
+private:
     MCAPI static class BidirectionalUnorderedMap<enum InventoryTransactionError, std::string> const inventoryTransactionErrorMap;
+
 
 };

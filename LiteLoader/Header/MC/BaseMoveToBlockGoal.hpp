@@ -23,28 +23,20 @@ public:
     BaseMoveToBlockGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BaseMoveToBlockGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_3();
-    /*7*/ virtual void appendDebugInfo(std::string &) const = 0;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &) = 0;
     /*14*/ virtual void _moveToBlock();
     /*17*/ virtual bool findTargetBlock();
-    /*
-    inline  ~BaseMoveToBlockGoal(){
-         (BaseMoveToBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("??1BaseMoveToBlockGoal@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEMOVETOBLOCKGOAL
+public:
+#endif
     MCAPI BaseMoveToBlockGoal(class Mob &, float, int, int, int, float, float);
 
-protected:
-
-private:
 
 };

@@ -22,6 +22,7 @@ public:
     RiseToLiquidLevelGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RiseToLiquidLevelGoal();
     /*1*/ virtual bool canUse();
@@ -31,11 +32,15 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RISETOLIQUIDLEVELGOAL
+public:
+#endif
     MCAPI RiseToLiquidLevelGoal(class Mob &, float, float, float);
 
-protected:
+//private:
+    MCAPI float findLiquidLevel();
 
 private:
-    MCAPI float findLiquidLevel();
+
 
 };

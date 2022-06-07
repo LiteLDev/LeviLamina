@@ -21,7 +21,11 @@ public:
     BalloonComponent(class BalloonComponent const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BALLOONCOMPONENT
+public:
+#endif
     MCAPI BalloonComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI void computeMaxHeight(class Actor &);
@@ -40,8 +44,5 @@ public:
     MCAPI static std::string const SHOULD_DROP_TAG;
     MCAPI static class Actor * getBalloonForActor(class Actor const &);
 
-protected:
-
-private:
 
 };

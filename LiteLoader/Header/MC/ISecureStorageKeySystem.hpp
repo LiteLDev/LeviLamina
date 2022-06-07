@@ -22,18 +22,11 @@ public:
     ISecureStorageKeySystem() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~ISecureStorageKeySystem();
-    /*
-    inline  ~ISecureStorageKeySystem(){
-         (ISecureStorageKeySystem::*rv)();
-        *((void**)&rv) = dlsym("??1ISecureStorageKeySystem@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISECURESTORAGEKEYSYSTEM
+public:
+#endif
 
-protected:
-
-private:
 
 };

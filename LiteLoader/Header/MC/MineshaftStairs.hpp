@@ -23,17 +23,15 @@ public:
     MineshaftStairs() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MineshaftStairs();
-    /*2*/ virtual class PoolElementStructurePiece * asPoolElement();
     /*3*/ virtual enum StructurePieceType getType() const;
     /*4*/ virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
     /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-    /*6*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
-    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINESHAFTSTAIRS
+public:
+#endif
 
-protected:
-
-private:
 
 };

@@ -24,20 +24,14 @@ public:
     ActorIsFamilyTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorIsFamilyTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-    /*
-    inline  ~ActorIsFamilyTest(){
-         (ActorIsFamilyTest::*rv)();
-        *((void**)&rv) = dlsym("??1ActorIsFamilyTest@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORISFAMILYTEST
+public:
+#endif
 
-protected:
-
-private:
 
 };

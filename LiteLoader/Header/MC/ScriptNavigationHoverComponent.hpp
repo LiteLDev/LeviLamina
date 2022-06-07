@@ -23,19 +23,13 @@ public:
     ScriptNavigationHoverComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptNavigationHoverComponent();
-    /*
-    inline  ~ScriptNavigationHoverComponent(){
-         (ScriptNavigationHoverComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptNavigationHoverComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTNAVIGATIONHOVERCOMPONENT
+public:
+#endif
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptNavigationHoverComponent> bind(struct Scripting::Version);
 
-protected:
-
-private:
 
 };

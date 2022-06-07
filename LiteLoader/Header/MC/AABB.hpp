@@ -26,7 +26,11 @@ public:
     AABB() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AABB
+public:
+#endif
     MCAPI AABB(class Vec3 const &, class Vec3 const &);
     MCAPI AABB(class Vec3 const &, float);
     MCAPI AABB(float, float, float, float, float, float);
@@ -63,8 +67,5 @@ public:
     MCAPI static class AABB const BLOCK_SHAPE;
     MCAPI static class AABB const BOX_AT_ORIGIN_WITH_NO_VOLUME;
 
-protected:
-
-private:
 
 };

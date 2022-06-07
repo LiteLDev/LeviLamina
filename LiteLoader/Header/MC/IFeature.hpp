@@ -22,17 +22,12 @@ public:
     IFeature() = delete;
 #endif
 
+
 public:
-    /*
-    inline bool isValidPlacement(std::string const & a0){
-        bool (IFeature::*rv)(std::string const &);
-        *((void**)&rv) = dlsym("?isValidPlacement@IFeature@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0));
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFEATURE
+public:
+    MCVAPI bool isValidPlacement(std::string const &);
+#endif
 
-protected:
-
-private:
 
 };

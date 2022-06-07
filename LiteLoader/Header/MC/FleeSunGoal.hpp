@@ -23,16 +23,17 @@ public:
     FleeSunGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FleeSunGoal();
     /*1*/ virtual bool canUse();
     /*3*/ virtual void __unk_vfn_3();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLEESUNGOAL
+public:
+#endif
     MCAPI FleeSunGoal(class Mob &, float);
 
-protected:
-
-private:
 
 };

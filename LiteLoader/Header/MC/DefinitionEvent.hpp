@@ -15,7 +15,11 @@ class DefinitionEvent {
 
 #undef AFTER_EXTRA
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFINITIONEVENT
+public:
+#endif
     MCAPI DefinitionEvent(class DefinitionEvent const &);
     MCAPI DefinitionEvent();
     MCAPI DefinitionEvent(class DefinitionEvent &&);
@@ -24,8 +28,5 @@ public:
     MCAPI class DefinitionEvent & operator=(class DefinitionEvent const &);
     MCAPI ~DefinitionEvent();
 
-protected:
-
-private:
 
 };

@@ -23,19 +23,13 @@ public:
     ScriptNavigationWalkComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptNavigationWalkComponent();
-    /*
-    inline  ~ScriptNavigationWalkComponent(){
-         (ScriptNavigationWalkComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptNavigationWalkComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTNAVIGATIONWALKCOMPONENT
+public:
+#endif
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptNavigationWalkComponent> bind(struct Scripting::Version);
 
-protected:
-
-private:
 
 };

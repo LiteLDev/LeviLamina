@@ -22,8 +22,11 @@ public:
     PlayerEventCoordinator(class PlayerEventCoordinator const &) = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~PlayerEventCoordinator();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYEREVENTCOORDINATOR
+public:
+#endif
     MCAPI PlayerEventCoordinator();
     MCAPI void registerPlayerGameplayHandler(std::unique_ptr<class PlayerGameplayHandler> &&);
     MCAPI enum CoordinatorResult sendEvent(class EventRef<struct PlayerGameplayEvent<enum CoordinatorResult>> const &);
@@ -39,8 +42,5 @@ public:
     MCAPI void sendPlayerTeleported(class Player &);
     MCAPI void sendPlayerTick(class Player &);
 
-protected:
-
-private:
 
 };

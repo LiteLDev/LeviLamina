@@ -22,16 +22,16 @@ public:
     ActorAnimationGroup(class ActorAnimationGroup const &) = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~ActorAnimationGroup();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONGROUP
+public:
+#endif
     MCAPI ActorAnimationGroup();
     MCAPI class ActorSkeletalAnimationPtr getActorAnimation(class HashedString const &);
     MCAPI class std::shared_ptr<class ActorAnimationInfo> getActorAnimationInfo(class HashedString const &);
     MCAPI void loadActorAnimation(std::string const &, class Core::Path const &, class PackStats &, class SemVersion const &, enum CurrentCmdVersion, bool);
     MCAPI void loadActorAnimationsSync(class ResourcePackManager &);
 
-protected:
-
-private:
 
 };

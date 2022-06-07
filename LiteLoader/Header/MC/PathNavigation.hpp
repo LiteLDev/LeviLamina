@@ -22,6 +22,7 @@ public:
     PathNavigation() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PathNavigation();
     /*1*/ virtual void initializeInternal(class Mob &, struct NavigationDescription *);
@@ -36,19 +37,16 @@ public:
     /*10*/ virtual bool travel(class NavigationComponent &, class Mob &, float &, float &, float &);
     /*11*/ virtual bool canUpdatePath(class Mob const &) const;
     /*12*/ virtual void updatePath(class NavigationComponent &, class Mob &);
-    /*
-    inline  ~PathNavigation(){
-         (PathNavigation::*rv)();
-        *((void**)&rv) = dlsym("??1PathNavigation@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PATHNAVIGATION
+public:
+#endif
 
-protected:
+//protected:
     MCAPI float _getHighestBlockHeight(class BlockSource &, class Mob &, class Vec3 const &, class Vec2 const &) const;
     MCAPI bool _isPositionOnlyInAir(class BlockSource const &, class Vec3 const &, class Vec2 const &) const;
     MCAPI enum NodeType isFree(class NavigationComponent &, class Mob &, class BlockPos const &, class BlockPos const &, class BlockPos const &, enum CanJumpIntoNode);
 
-private:
+protected:
+
 
 };

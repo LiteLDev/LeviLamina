@@ -160,6 +160,7 @@ LLSE提供了接口 import 来导入其他插件已经导出的函数。
 | `Vec3` | `Vec3` | `FloatPos` | - | 
 | `BlockPos` | `BlockPos` | `IntPos` | - | 
 | `RemoteCall::NbtType` | `CompoundTag*`,`std::unique_ptr<CompoundTag>` | `NBTCompound` | - | 
+
 #### 远程调用函数举例说明
 
 比如，有一个插件导出了某个函数，函数的导出名称为 AAA_Welcome  

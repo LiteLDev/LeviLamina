@@ -23,14 +23,19 @@ public:
     TwistingVinesClusterFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TwistingVinesClusterFeature();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TWISTINGVINESCLUSTERFEATURE
+public:
+#endif
 
-protected:
+//private:
+    MCAPI void _placeVineString(class BlockSource &, class Random &, class BlockPos const &, int, int, int) const;
 
 private:
-    MCAPI void _placeVineString(class BlockSource &, class Random &, class BlockPos const &, int, int, int) const;
+
 
 };

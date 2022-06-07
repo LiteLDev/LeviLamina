@@ -21,6 +21,7 @@ public:
     ItemStackRequestActionCraftLoom(class ItemStackRequestActionCraftLoom const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemStackRequestActionCraftLoom();
     /*1*/ virtual void __unk_vfn_1();
@@ -28,11 +29,11 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void _write(class BinaryStream &) const;
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTLOOM
+public:
+#endif
     MCAPI ItemStackRequestActionCraftLoom();
     MCAPI std::string const & getPatternNameId() const;
 
-protected:
-
-private:
 
 };

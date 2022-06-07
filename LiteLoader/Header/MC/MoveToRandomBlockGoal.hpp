@@ -22,6 +22,7 @@ public:
     MoveToRandomBlockGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MoveToRandomBlockGoal();
     /*1*/ virtual bool canUse();
@@ -31,11 +32,15 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETORANDOMBLOCKGOAL
+public:
+#endif
     MCAPI MoveToRandomBlockGoal(class Mob &, float, float, float);
 
-protected:
+//private:
+    MCAPI bool _isValidDestinationBlock(class BlockSource &, class BlockPos const &);
 
 private:
-    MCAPI bool _isValidDestinationBlock(class BlockSource &, class BlockPos const &);
+
 
 };

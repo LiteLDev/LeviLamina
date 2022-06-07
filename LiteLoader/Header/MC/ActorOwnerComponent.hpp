@@ -22,7 +22,11 @@ public:
     ActorOwnerComponent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOROWNERCOMPONENT
+public:
+#endif
     MCAPI ActorOwnerComponent(class ActorOwnerComponent &&);
     MCAPI ActorOwnerComponent(std::unique_ptr<class Actor>);
     MCAPI class Actor & getActor();
@@ -30,8 +34,5 @@ public:
     MCAPI class ActorOwnerComponent & operator=(class ActorOwnerComponent &&);
     MCAPI ~ActorOwnerComponent();
 
-protected:
-
-private:
 
 };

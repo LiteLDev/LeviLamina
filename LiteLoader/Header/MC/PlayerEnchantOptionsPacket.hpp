@@ -23,22 +23,16 @@ public:
     PlayerEnchantOptionsPacket() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PlayerEnchantOptionsPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~PlayerEnchantOptionsPacket(){
-         (PlayerEnchantOptionsPacket::*rv)();
-        *((void**)&rv) = dlsym("??1PlayerEnchantOptionsPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERENCHANTOPTIONSPACKET
+public:
+#endif
 
-protected:
-
-private:
 
 };

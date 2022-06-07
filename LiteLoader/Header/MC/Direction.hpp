@@ -24,7 +24,11 @@ public:
     Direction() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTION
+public:
+#endif
     MCAPI static enum Direction::Type const DIRECTION_CLOCKWISE[];
     MCAPI static enum Direction::Type const DIRECTION_COUNTER_CLOCKWISE[];
     MCAPI static unsigned char const DIRECTION_FACING[];
@@ -35,8 +39,5 @@ public:
     MCAPI static enum Direction::Type convertFacingDirectionToDirection(unsigned char);
     MCAPI static enum Direction::Type getDirection(float, float);
 
-protected:
-
-private:
 
 };

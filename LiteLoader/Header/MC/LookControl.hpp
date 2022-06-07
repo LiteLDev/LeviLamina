@@ -21,26 +21,15 @@ public:
     LookControl(class LookControl const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LookControl();
-    /*1*/ virtual void __unk_vfn_1();
+    /*1*/ virtual void initializeInternal(class Mob &);
     /*2*/ virtual void tick(class Mob &);
-    /*
-    inline void initializeInternal(class Mob & a0){
-        void (LookControl::*rv)(class Mob &);
-        *((void**)&rv) = dlsym("?initializeInternal@LookControl@@UEAAXAEAVMob@@@Z");
-        return (this->*rv)(std::forward<class Mob &>(a0));
-    }
-    inline  ~LookControl(){
-         (LookControl::*rv)();
-        *((void**)&rv) = dlsym("??1LookControl@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKCONTROL
+public:
+#endif
     MCAPI LookControl();
 
-protected:
-
-private:
 
 };

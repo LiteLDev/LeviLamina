@@ -22,18 +22,11 @@ public:
     IPreliminarySurfaceProvider() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~IPreliminarySurfaceProvider();
-    /*
-    inline  ~IPreliminarySurfaceProvider(){
-         (IPreliminarySurfaceProvider::*rv)();
-        *((void**)&rv) = dlsym("??1IPreliminarySurfaceProvider@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IPRELIMINARYSURFACEPROVIDER
+public:
+#endif
 
-protected:
-
-private:
 
 };

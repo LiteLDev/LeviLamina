@@ -22,25 +22,22 @@ public:
     StringByteInput() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StringByteInput();
-    /*9*/ virtual void __unk_vfn_9();
+    /*1*/ virtual std::string readString();
+    /*2*/ virtual std::string readLongString();
+    /*3*/ virtual float readFloat();
+    /*4*/ virtual double readDouble();
+    /*5*/ virtual char readByte();
+    /*6*/ virtual short readShort();
+    /*7*/ virtual int readInt();
+    /*8*/ virtual __int64 readLongLong();
+    /*9*/ virtual bool readBytes(void *, unsigned __int64);
     /*10*/ virtual unsigned __int64 numBytesLeft() const;
-    /*
-    inline  ~StringByteInput(){
-         (StringByteInput::*rv)();
-        *((void**)&rv) = dlsym("??1StringByteInput@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline bool readBytes(void * a0, unsigned __int64 a1){
-        bool (StringByteInput::*rv)(void *, unsigned __int64);
-        *((void**)&rv) = dlsym("?readBytes@StringByteInput@@UEAA_NPEAX_K@Z");
-        return (this->*rv)(std::forward<void *>(a0), std::forward<unsigned __int64>(a1));
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRINGBYTEINPUT
+public:
+#endif
 
-protected:
-
-private:
 
 };

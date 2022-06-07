@@ -21,15 +21,11 @@ public:
     CreativeItemRegistry(class CreativeItemRegistry const &) = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~CreativeItemRegistry();
-    /*
-    inline  ~CreativeItemRegistry(){
-         (CreativeItemRegistry::*rv)();
-        *((void**)&rv) = dlsym("??1CreativeItemRegistry@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATIVEITEMREGISTRY
+public:
+#endif
     MCAPI CreativeItemRegistry();
     MCAPI class CreativeItemEntry * findCreativeItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const &);
     MCAPI class CreativeItemEntry * findCreativeItemEntry(class ItemInstance const &);
@@ -49,10 +45,11 @@ public:
     MCAPI static void reset();
     MCAPI static void setCurrentRegistry(std::unique_ptr<class CreativeItemRegistry> &&);
 
-protected:
+//private:
+    MCAPI void _forEachCreativeItemInstance(class std::function<bool (class ItemInstance &)>);
 
 private:
-    MCAPI void _forEachCreativeItemInstance(class std::function<bool (class ItemInstance &)>);
     MCAPI static std::unique_ptr<class CreativeItemRegistry> mCurrentRegistry;
+
 
 };

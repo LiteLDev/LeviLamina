@@ -22,19 +22,12 @@ public:
     NBTLoader() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~NBTLoader();
-    /*
-    inline  ~NBTLoader(){
-         (NBTLoader::*rv)();
-        *((void**)&rv) = dlsym("??1NBTLoader@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTLOADER
+public:
+#endif
     MCAPI NBTLoader(class gsl::not_null<class CompoundTag const *>);
 
-protected:
-
-private:
 
 };

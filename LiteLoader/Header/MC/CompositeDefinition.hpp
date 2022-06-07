@@ -23,15 +23,20 @@ public:
     CompositeDefinition(class CompositeDefinition const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CompositeDefinition();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOSITEDEFINITION
+public:
+#endif
     MCAPI CompositeDefinition();
     MCAPI class BehaviorDefinition const * get(unsigned __int64) const;
     MCAPI unsigned __int64 getCount() const;
 
-protected:
+//protected:
     MCAPI static void _compositeLoadChildrenBehaviors(class Json::Value, std::vector<std::unique_ptr<class BehaviorDefinition>> &, class BehaviorFactory const &, class BehaviorTreeDefinitionPtr);
 
-private:
+protected:
+
 
 };

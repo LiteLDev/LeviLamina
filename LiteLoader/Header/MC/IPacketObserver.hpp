@@ -20,17 +20,12 @@ public:
     IPacketObserver() = delete;
 #endif
 
+
 public:
-    /*
-    inline  ~IPacketObserver(){
-         (IPacketObserver::*rv)();
-        *((void**)&rv) = dlsym("??1IPacketObserver@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IPACKETOBSERVER
+public:
+    MCVAPI ~IPacketObserver();
+#endif
 
-protected:
-
-private:
 
 };

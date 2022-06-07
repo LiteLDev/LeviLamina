@@ -21,6 +21,7 @@ public:
     ChunkBuildOrderPolicy(class ChunkBuildOrderPolicy const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ChunkBuildOrderPolicy();
     /*1*/ virtual int getChunkRebuildPriority(class ChunkPos const &) const;
@@ -29,10 +30,10 @@ public:
     /*4*/ virtual void setPlayerInfluence(unsigned int, class ChunkPos const &, class Vec3 const &);
     /*5*/ virtual void setTickingAreaInfluence(unsigned int, class ChunkPos const &, int, int, bool, bool);
     /*6*/ virtual void updateInfluences();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKBUILDORDERPOLICY
+public:
+#endif
     MCAPI ChunkBuildOrderPolicy();
 
-protected:
-
-private:
 
 };

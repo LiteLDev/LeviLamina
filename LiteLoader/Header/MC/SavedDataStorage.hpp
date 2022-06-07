@@ -22,16 +22,20 @@ public:
     SavedDataStorage() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~SavedDataStorage();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAVEDDATASTORAGE
+public:
+#endif
     MCAPI SavedDataStorage(class LevelStorage *);
     MCAPI bool loadAndSet(class SavedData &, std::string const &);
     MCAPI void save();
     MCAPI void set(std::string const &, class SavedData &);
 
-protected:
+//private:
+    MCAPI void _save(class SavedData const &);
 
 private:
-    MCAPI void _save(class SavedData const &);
+
 
 };

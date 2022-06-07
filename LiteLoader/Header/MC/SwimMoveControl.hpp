@@ -22,14 +22,15 @@ public:
     SwimMoveControl(class SwimMoveControl const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SwimMoveControl();
     /*1*/ virtual void initializeInternal(class Mob &, struct MoveControlDescription *);
     /*2*/ virtual void tick(class MoveControlComponent &, class Mob &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWIMMOVECONTROL
+public:
+#endif
     MCAPI SwimMoveControl();
 
-protected:
-
-private:
 
 };

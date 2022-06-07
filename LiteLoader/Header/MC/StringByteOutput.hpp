@@ -22,19 +22,21 @@ public:
     StringByteOutput() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StringByteOutput();
+    /*1*/ virtual void writeString(class gsl::basic_string_span<char const, -1>);
+    /*2*/ virtual void writeLongString(class gsl::basic_string_span<char const, -1>);
+    /*3*/ virtual void writeFloat(float);
+    /*4*/ virtual void writeDouble(double);
+    /*5*/ virtual void writeByte(char);
+    /*6*/ virtual void writeShort(short);
+    /*7*/ virtual void writeInt(int);
+    /*8*/ virtual void writeLongLong(__int64);
     /*9*/ virtual void writeBytes(void const *, unsigned __int64);
-    /*
-    inline  ~StringByteOutput(){
-         (StringByteOutput::*rv)();
-        *((void**)&rv) = dlsym("??1StringByteOutput@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRINGBYTEOUTPUT
+public:
+#endif
 
-protected:
-
-private:
 
 };

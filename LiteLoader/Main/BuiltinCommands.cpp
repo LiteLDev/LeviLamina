@@ -192,7 +192,7 @@ void LLListPluginsCommand(CommandOutput& output)
         if (desc.find("§") == string::npos)
             desc = "§7" + desc;
 
-        auto fileName = std::filesystem::path(str2wstr(plugin->filePath)).filename().u8string();
+        auto fileName = UTF82String(std::filesystem::path(str2wstr(plugin->filePath)).filename().u8string());
         oss << fmt::format("- {} §a[v{}] §8({})\n  {}\n",
             pluginName, plugin->version.toString(), fileName, desc);
     }
@@ -207,7 +207,7 @@ void LLPluginInfoCommand(CommandOutput& output, const string& pluginName)
     {
         std::map<std::string, std::string> outs;
         std::ostringstream oss;
-        auto fn = std::filesystem::path(str2wstr(plugin->filePath)).filename().u8string();
+        auto fn = UTF82String(std::filesystem::path(str2wstr(plugin->filePath)).filename().u8string());
         string pluginType = plugin->type == Plugin::PluginType::ScriptPlugin ? "Script Plugin" : "DLL Plugin";
 
         oss << "Plugin <" << pluginName << ">\n\n";

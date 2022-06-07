@@ -23,6 +23,7 @@ public:
     RakWebSocket() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RakWebSocket();
     /*1*/ virtual enum WSConnectionResult connect(std::string const &, std::vector<std::string> const &);
@@ -34,13 +35,9 @@ public:
     /*7*/ virtual void tick();
     /*8*/ virtual void _updateState() = 0;
     /*9*/ virtual unsigned int _genMaskingKey() const = 0;
-    /*
-    inline  ~RakWebSocket(){
-         (RakWebSocket::*rv)();
-        *((void**)&rv) = dlsym("??1RakWebSocket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKET
+public:
+#endif
     MCAPI RakWebSocket(std::unique_ptr<class TcpProxy>, bool);
     MCAPI void close(bool, bool);
     MCAPI std::string getUri() const;
@@ -48,7 +45,7 @@ public:
     MCAPI bool send(std::string const &);
     MCAPI bool sendBinary(unsigned char const *, unsigned __int64);
 
-protected:
+//protected:
     MCAPI void _close(enum CloseStatusCode);
     MCAPI void _createWebSocketKey();
     MCAPI void _fail(std::string const &, enum CloseStatusCode);
@@ -67,6 +64,7 @@ protected:
     MCAPI void _validateFields();
     MCAPI bool _validateWebSocketURI();
 
-private:
+protected:
+
 
 };

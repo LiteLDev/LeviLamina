@@ -22,13 +22,14 @@ public:
     AmphibiousMoveControl(class AmphibiousMoveControl const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AmphibiousMoveControl();
     /*2*/ virtual void tick(class MoveControlComponent &, class Mob &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMPHIBIOUSMOVECONTROL
+public:
+#endif
     MCAPI AmphibiousMoveControl();
 
-protected:
-
-private:
 
 };

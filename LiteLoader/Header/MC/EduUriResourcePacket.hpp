@@ -22,24 +22,18 @@ public:
     EduUriResourcePacket(class EduUriResourcePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EduUriResourcePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~EduUriResourcePacket(){
-         (EduUriResourcePacket::*rv)();
-        *((void**)&rv) = dlsym("??1EduUriResourcePacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUURIRESOURCEPACKET
+public:
+#endif
     MCAPI EduUriResourcePacket(struct EduSharedUriResource const &);
     MCAPI EduUriResourcePacket();
 
-protected:
-
-private:
 
 };

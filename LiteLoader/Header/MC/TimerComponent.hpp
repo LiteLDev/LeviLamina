@@ -20,7 +20,11 @@ public:
     class TimerComponent& operator=(class TimerComponent const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TIMERCOMPONENT
+public:
+#endif
     MCAPI TimerComponent(class TimerComponent &&);
     MCAPI TimerComponent(class TimerComponent const &);
     MCAPI TimerComponent();
@@ -34,9 +38,10 @@ public:
     MCAPI void setHasExecuted(bool);
     MCAPI ~TimerComponent();
 
-protected:
+//private:
+    MCAPI int getRandomTime(class Actor &);
 
 private:
-    MCAPI int getRandomTime(class Actor &);
+
 
 };

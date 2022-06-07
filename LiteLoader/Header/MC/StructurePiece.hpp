@@ -22,6 +22,7 @@ public:
     StructurePiece() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StructurePiece();
     /*1*/ virtual void moveBoundingBox(int, int, int);
@@ -36,13 +37,9 @@ public:
     /*10*/ virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);
     /*11*/ virtual void generateBox(class BlockSource &, class BoundingBox const &, int, int, int, int, int, int, class Block const &, class Block const &, bool);
     /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
-    /*
-    inline  ~StructurePiece(){
-         (StructurePiece::*rv)();
-        *((void**)&rv) = dlsym("??1StructurePiece@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPIECE
+public:
+#endif
     MCAPI class BlockPos _getWorldPos(int, int, int);
     MCAPI void addTerrainAdjustmentToken(class std::shared_ptr<bool>);
     MCAPI bool edgesLiquid(class BlockSource &, class BoundingBox const &);
@@ -61,8 +58,5 @@ public:
     MCAPI static class StructurePiece * findCollisionPiece(std::vector<std::unique_ptr<class StructurePiece>> const &, class BoundingBox const &);
     MCAPI static int getTotalWeight(std::vector<class PieceWeight> const &);
 
-protected:
-
-private:
 
 };

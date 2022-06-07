@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
 #include "ActorCommandOrigin.hpp"
 
 #define BEFORE_EXTRA
@@ -23,27 +24,21 @@ public:
     ActorServerCommandOrigin() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorServerCommandOrigin();
     /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*11*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
-    /*12*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
-    /*15*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
-    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
-    /*20*/ virtual unsigned char getSourceSubId() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
-    /*26*/ virtual void __unk_vfn_26();
-    /*27*/ virtual void updateValues();
     /*29*/ virtual class CompoundTag serialize() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSERVERCOMMANDORIGIN
+public:
+#endif
     MCAPI ActorServerCommandOrigin(class Actor &);
     MCAPI struct ActorUniqueID getTargetOther() const;
     MCAPI void setTargetOther(struct ActorUniqueID);
     MCAPI static std::unique_ptr<class ActorServerCommandOrigin> load(class CompoundTag const &, class Level &);
 
-protected:
-
-private:
 
 };

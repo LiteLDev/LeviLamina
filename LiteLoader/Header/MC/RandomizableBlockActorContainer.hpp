@@ -22,38 +22,17 @@ public:
     RandomizableBlockActorContainer() = delete;
 #endif
 
+
 public:
-    /*
-    inline  ~RandomizableBlockActorContainer(){
-         (RandomizableBlockActorContainer::*rv)();
-        *((void**)&rv) = dlsym("??1RandomizableBlockActorContainer@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline void dropContents(class BlockSource & a0, class Vec3 const & a1, bool a2){
-        void (RandomizableBlockActorContainer::*rv)(class BlockSource &, class Vec3 const &, bool);
-        *((void**)&rv) = dlsym("?dropContents@RandomizableBlockActorContainer@@UEAAXAEAVBlockSource@@AEBVVec3@@_N@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class Vec3 const &>(a1), std::forward<bool>(a2));
-    }
-    inline void initializeContainerContents(class BlockSource & a0){
-        void (RandomizableBlockActorContainer::*rv)(class BlockSource &);
-        *((void**)&rv) = dlsym("?initializeContainerContents@RandomizableBlockActorContainer@@UEAAXAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0));
-    }
-    inline void setContainerChanged(int a0){
-        void (RandomizableBlockActorContainer::*rv)(int);
-        *((void**)&rv) = dlsym("?setContainerChanged@RandomizableBlockActorContainer@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void startOpen(class Player & a0){
-        void (RandomizableBlockActorContainer::*rv)(class Player &);
-        *((void**)&rv) = dlsym("?startOpen@RandomizableBlockActorContainer@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player &>(a0));
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMIZABLEBLOCKACTORCONTAINER
+public:
+    MCVAPI void dropContents(class BlockSource &, class Vec3 const &, bool);
+    MCVAPI void initializeContainerContents(class BlockSource &);
+    MCVAPI void setContainerChanged(int);
+    MCVAPI void startOpen(class Player &);
+    MCVAPI ~RandomizableBlockActorContainer();
+#endif
     MCAPI RandomizableBlockActorContainer(enum BlockActorType, std::string const &, class BlockPos const &, enum ContainerType);
 
-protected:
-
-private:
 
 };

@@ -24,21 +24,14 @@ public:
     ActorIsColorTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorIsColorTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-    /*6*/ virtual class Json::Value _serializeValue() const;
-    /*
-    inline  ~ActorIsColorTest(){
-         (ActorIsColorTest::*rv)();
-        *((void**)&rv) = dlsym("??1ActorIsColorTest@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORISCOLORTEST
+public:
+#endif
 
-protected:
-
-private:
 
 };

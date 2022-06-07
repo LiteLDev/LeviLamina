@@ -23,20 +23,14 @@ public:
     TrustDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~TrustDescription();
     /*3*/ virtual void serializeData(class Json::Value &) const;
-    /*
-    inline  ~TrustDescription(){
-         (TrustDescription::*rv)();
-        *((void**)&rv) = dlsym("??1TrustDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRUSTDESCRIPTION
+public:
+#endif
 
-protected:
-
-private:
 
 };

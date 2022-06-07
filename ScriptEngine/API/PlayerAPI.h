@@ -39,6 +39,7 @@ public:
     Local<Value> getSpeed();
     Local<Value> getDirection();
     Local<Value> getUniqueID();
+    Local<Value> getLangCode();
 
     Local<Value> isOP(const Arguments& args);
     Local<Value> setPermLevel(const Arguments& args);
@@ -106,6 +107,8 @@ public:
     Local<Value> getAllTags(const Arguments& args);
     Local<Value> getAbilities(const Arguments& args);
     Local<Value> getAttributes(const Arguments& args);
+    Local<Value> getEntityFromViewVector(const Arguments& args);
+    Local<Value> getBlockFromViewVector(const Arguments& args);
 
     Local<Value> isSimulatedPlayer(const Arguments& args);
 
@@ -117,6 +120,8 @@ public:
     Local<Value> simulateInteract(const Arguments& args);
     Local<Value> simulateJump(const Arguments& args);
     Local<Value> simulateLocalMove(const Arguments& args);
+    Local<Value> simulateWorldMove(const Arguments& args);
+    Local<Value> simulateMoveTo(const Arguments& args);
     Local<Value> simulateLookAt(const Arguments& args);
     Local<Value> simulateSetBodyRotation(const Arguments& args);
     Local<Value> simulateNavigateTo(const Arguments& args);

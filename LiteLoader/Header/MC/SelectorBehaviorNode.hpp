@@ -21,20 +21,15 @@ public:
     SelectorBehaviorNode(class SelectorBehaviorNode const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SelectorBehaviorNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
-    /*
-    inline void initializeFromDefinition(class Actor & a0){
-        void (SelectorBehaviorNode::*rv)(class Actor &);
-        *((void**)&rv) = dlsym("?initializeFromDefinition@SelectorBehaviorNode@@MEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor &>(a0));
-    }
-    */
+    /*2*/ virtual void initializeFromDefinition(class Actor &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SELECTORBEHAVIORNODE
+public:
+#endif
     MCAPI SelectorBehaviorNode();
 
-protected:
-
-private:
 
 };

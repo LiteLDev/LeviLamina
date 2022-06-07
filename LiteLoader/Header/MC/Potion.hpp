@@ -24,7 +24,11 @@ public:
     Potion() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_POTION
+public:
+#endif
     MCAPI Potion(class Potion const &);
     MCAPI void appendFormattedPotionText(std::string &, enum Potion::PotionType, enum Potion::PotionVariant, class Player const &, float) const;
     MCAPI std::string effectDurationToString(enum Potion::PotionType, float, class MobEffectInstance const &) const;
@@ -90,16 +94,17 @@ public:
     MCAPI static void initPotions();
     MCAPI static void shutdownPotions();
 
-protected:
-
-private:
+//private:
     MCAPI Potion(class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, class MobEffectInstance const &, enum Potion::PotionVariant);
     MCAPI Potion(class gsl::basic_string_span<char const, -1>, std::vector<std::string>, std::vector<class MobEffectInstance>, enum Potion::PotionVariant);
     MCAPI std::string _getDescriptionIdCombiningStrings(enum Potion::PotionType) const;
     MCAPI std::string _getDescriptionIdSingleString(enum Potion::PotionType) const;
     MCAPI static void addPotion(class std::shared_ptr<class Potion const>);
+
+private:
     MCAPI static int mLastId;
     MCAPI static class std::shared_ptr<class Potion const> mPotionsById[];
     MCAPI static class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> mPotionsByName;
+
 
 };

@@ -22,30 +22,19 @@ public:
     BaseGoalDefinition() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~BaseGoalDefinition();
-    /*
-    inline bool validateMobType(class Mob & a0){
-        bool (BaseGoalDefinition::*rv)(class Mob &);
-        *((void**)&rv) = dlsym("?validateMobType@BaseGoalDefinition@@UEAA_NAEAVMob@@@Z");
-        return (this->*rv)(std::forward<class Mob &>(a0));
-    }
-    inline bool validate(class Mob & a0){
-        bool (BaseGoalDefinition::*rv)(class Mob &);
-        *((void**)&rv) = dlsym("?validate@BaseGoalDefinition@@UEAA_NAEAVMob@@@Z");
-        return (this->*rv)(std::forward<class Mob &>(a0));
-    }
-    inline  ~BaseGoalDefinition(){
-         (BaseGoalDefinition::*rv)();
-        *((void**)&rv) = dlsym("??1BaseGoalDefinition@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEGOALDEFINITION
+public:
+    MCVAPI bool validate(class Mob &);
+    MCVAPI bool validateMobType(class Mob &);
+#endif
     MCAPI void initialize(class EntityContext &, class Goal &);
 
-protected:
+//private:
 
 private:
     MCAPI static class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> mControlFlagMap;
+
 
 };

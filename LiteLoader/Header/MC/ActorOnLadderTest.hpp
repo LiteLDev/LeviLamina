@@ -24,20 +24,14 @@ public:
     ActorOnLadderTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorOnLadderTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-    /*
-    inline  ~ActorOnLadderTest(){
-         (ActorOnLadderTest::*rv)();
-        *((void**)&rv) = dlsym("??1ActorOnLadderTest@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORONLADDERTEST
+public:
+#endif
 
-protected:
-
-private:
 
 };

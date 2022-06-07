@@ -21,6 +21,7 @@ public:
     BaseCircuitComponent(class BaseCircuitComponent const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BaseCircuitComponent();
     /*1*/ virtual int getStrength() const;
@@ -29,7 +30,7 @@ public:
     /*4*/ virtual void setDirection(unsigned char);
     /*5*/ virtual void setConsumePowerAnyDirection(bool);
     /*6*/ virtual bool canConsumePowerAnyDirection() const;
-    /*7*/ virtual void __unk_vfn_7();
+    /*7*/ virtual bool canConsumerPower() const;
     /*8*/ virtual bool canStopPower() const;
     /*9*/ virtual void setStopPower(bool);
     /*10*/ virtual bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
@@ -46,37 +47,21 @@ public:
     /*21*/ virtual bool isSecondaryPowered() const;
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*23*/ virtual enum CircuitComponentType getCircuitComponentGroupType() const;
-    /*
-    inline bool allowIndirect() const{
-        bool (BaseCircuitComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?allowIndirect@BaseCircuitComponent@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canConsumerPower() const{
-        bool (BaseCircuitComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?canConsumerPower@BaseCircuitComponent@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool hasChildrenSource() const{
-        bool (BaseCircuitComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?hasChildrenSource@BaseCircuitComponent@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline  ~BaseCircuitComponent(){
-         (BaseCircuitComponent::*rv)();
-        *((void**)&rv) = dlsym("??1BaseCircuitComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASECIRCUITCOMPONENT
+public:
+    MCVAPI bool allowIndirect() const;
+    MCVAPI bool hasChildrenSource() const;
+#endif
     MCAPI BaseCircuitComponent();
     MCAPI bool hasDirectPower();
     MCAPI bool isRemoved() const;
     MCAPI void setRemoved();
 
-protected:
+//protected:
     MCAPI bool trackPowerSource(class CircuitTrackingInfo const &, int, bool, int);
     MCAPI bool trackPowerSourceDuplicates(class CircuitTrackingInfo const &, int, bool);
 
-private:
+protected:
+
 
 };

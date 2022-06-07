@@ -22,13 +22,14 @@ public:
     FlyMoveControl(class FlyMoveControl const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FlyMoveControl();
     /*2*/ virtual void tick(class MoveControlComponent &, class Mob &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLYMOVECONTROL
+public:
+#endif
     MCAPI FlyMoveControl();
 
-protected:
-
-private:
 
 };

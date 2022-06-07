@@ -22,6 +22,7 @@ public:
     ChargeAttackGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ChargeAttackGoal();
     /*1*/ virtual bool canUse();
@@ -31,10 +32,10 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHARGEATTACKGOAL
+public:
+#endif
     MCAPI ChargeAttackGoal(class Mob &);
 
-protected:
-
-private:
 
 };

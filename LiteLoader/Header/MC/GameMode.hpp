@@ -23,6 +23,7 @@ public:
     GameMode() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GameMode();
     /*1*/ virtual bool startDestroyBlock(class BlockPos const &, unsigned char, bool &);
@@ -43,13 +44,9 @@ public:
     /*16*/ virtual void setTrialMode(bool);
     /*17*/ virtual bool isInTrialMode();
     /*18*/ virtual void registerUpsellScreenCallback(class std::function<void (bool)>);
-    /*
-    inline  ~GameMode(){
-         (GameMode::*rv)();
-        *((void**)&rv) = dlsym("??1GameMode@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEMODE
+public:
+#endif
     MCAPI GameMode(class Player &, std::unique_ptr<struct IGameModeTimer>, std::unique_ptr<struct IGameModeMessenger>);
     MCAPI bool _startDestroyBlock(class BlockPos const &, class Vec3 const &, unsigned char, bool &);
     MCAPI bool _tickContinueDestroyBlock(class BlockPos const &, class Vec3 const &, unsigned char, bool &, class std::function<void (void)> const &);
@@ -72,11 +69,12 @@ public:
     MCAPI static float const PICKRANGE_VR_CREATIVE;
     MCAPI static float const PICKRANGE_VR_SURVIVAL;
 
-protected:
-
-private:
+//private:
     MCAPI bool _canDestroy(class BlockPos const &, unsigned char);
     MCAPI bool _canUseBlock(class Block const &);
     MCAPI bool _creativeDestroyBlock(class BlockPos const &, unsigned char);
+
+private:
+
 
 };

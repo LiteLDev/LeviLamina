@@ -21,15 +21,16 @@ public:
     ScopedAutoreleasePool(class ScopedAutoreleasePool const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOPEDAUTORELEASEPOOL
+public:
+#endif
     MCAPI ScopedAutoreleasePool();
     MCAPI void drain();
     MCAPI void drainNow();
     MCAPI void reset();
     MCAPI ~ScopedAutoreleasePool();
 
-protected:
-
-private:
 
 };

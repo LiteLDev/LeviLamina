@@ -23,7 +23,11 @@ public:
     LevelSummary() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSUMMARY
+public:
+#endif
     MCAPI static class Core::PathBuffer<std::string> const CUSTOM_ICON_FILENAME;
     MCAPI static std::string const DEFAULT_WORLD_ICON_FILENAME;
     MCAPI static std::string const INVALID_LEVEL_ID;
@@ -31,8 +35,5 @@ public:
     MCAPI static class Core::PathBuffer<std::string> buildCustomIconPath(class Core::Path const &);
     MCAPI static class Core::PathBuffer<std::string> buildWorldIconPath(class Core::Path const &);
 
-protected:
-
-private:
 
 };

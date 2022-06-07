@@ -22,14 +22,14 @@ public:
     SwimWanderDefinition(class SwimWanderDefinition const &) = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~SwimWanderDefinition();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWIMWANDERDEFINITION
+public:
+#endif
     MCAPI SwimWanderDefinition();
     MCAPI void initialize(class EntityContext &, class SwimWanderGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwimWanderDefinition>> &);
 
-protected:
-
-private:
 
 };

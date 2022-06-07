@@ -23,24 +23,18 @@ public:
     TransferPacket(class TransferPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TransferPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~TransferPacket(){
-         (TransferPacket::*rv)();
-        *((void**)&rv) = dlsym("??1TransferPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRANSFERPACKET
+public:
+#endif
     MCAPI TransferPacket(std::string const &, int);
     MCAPI TransferPacket();
 
-protected:
-
-private:
 
 };

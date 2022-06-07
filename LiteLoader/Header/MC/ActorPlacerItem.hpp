@@ -24,123 +24,53 @@ public:
     ActorPlacerItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorPlacerItem();
     /*2*/ virtual void tearDown();
-    /*3*/ virtual int getMaxUseDuration(class ItemStack const *) const;
-    /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual void executeEvent(class ItemStackBase &, std::string const &, class RenderParams &) const;
     /*7*/ virtual void __unk_vfn_7();
-    /*8*/ virtual bool isArmor() const;
-    /*9*/ virtual bool isBlockPlanterItem() const;
     /*10*/ virtual void __unk_vfn_10();
     /*12*/ virtual void __unk_vfn_12();
-    /*14*/ virtual bool isDyeable() const;
-    /*15*/ virtual bool isDye() const;
-    /*17*/ virtual bool isFertilizer() const;
-    /*18*/ virtual bool isFood() const;
-    /*19*/ virtual bool isThrowable() const;
-    /*20*/ virtual bool isUseable() const;
-    /*21*/ virtual class ItemComponent * getComponent(class HashedString const &) const;
-    /*24*/ virtual class FuelItemComponent * getFuel() const;
-    /*38*/ virtual enum BlockShape getBlockShape() const;
-    /*40*/ virtual bool canDestroySpecial(class Block const &) const;
-    /*41*/ virtual int getLevelDataForAuxValue(int) const;
-    /*43*/ virtual short getMaxDamage() const;
-    /*44*/ virtual int getAttackDamage() const;
-    /*46*/ virtual bool isGlint(class ItemStackBase const &) const;
     /*47*/ virtual void __unk_vfn_47();
-    /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*50*/ virtual bool isWearableThroughLootTable(class CompoundTag const *) const;
-    /*51*/ virtual bool canDestroyInCreative() const;
-    /*52*/ virtual bool isDestructive(int) const;
     /*53*/ virtual bool isLiquidClipItem(int) const;
     /*54*/ virtual bool shouldInteractionWithBlockBypassLiquid(class Block const &) const;
-    /*55*/ virtual bool requiresInteract() const;
-    /*57*/ virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
-    /*58*/ virtual int getEnchantSlot() const;
-    /*59*/ virtual int getEnchantValue() const;
-    /*60*/ virtual int getArmorValue() const;
-    /*61*/ virtual int getToughnessValue() const;
     /*62*/ virtual void __unk_vfn_62();
     /*63*/ virtual bool isValidAuxValue(int) const;
-    /*65*/ virtual void __unk_vfn_65();
     /*66*/ virtual void __unk_vfn_66();
     /*67*/ virtual void __unk_vfn_67();
     /*68*/ virtual void __unk_vfn_68();
-    /*69*/ virtual class mce::Color getColor(class CompoundTag const *, class ItemDescriptor const &) const;
-    /*70*/ virtual bool hasCustomColor(class CompoundTag const *) const;
     /*71*/ virtual void __unk_vfn_71();
-    /*72*/ virtual void clearColor(class CompoundTag *) const;
-    /*73*/ virtual void __unk_vfn_73();
-    /*74*/ virtual void __unk_vfn_74();
     /*75*/ virtual void __unk_vfn_75();
     /*76*/ virtual void __unk_vfn_76();
     /*77*/ virtual struct ActorDefinitionIdentifier getActorIdentifier(class ItemStack const &) const;
-    /*79*/ virtual bool canUseOnSimTick() const;
     /*81*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
-    /*84*/ virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
-    /*86*/ virtual void hitActor(class ItemStack &, class Actor &, class Mob &) const;
-    /*87*/ virtual void hitBlock(class ItemStack &, class Block const &, class BlockPos const &, class Mob &) const;
-    /*88*/ virtual bool mineBlock(class ItemInstance &, class Block const &, int, int, int, class Actor *) const;
-    /*89*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
-    /*90*/ virtual std::string buildDescriptionName(class ItemStackBase const &) const;
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-    /*96*/ virtual unsigned char getMaxStackSize(class ItemDescriptor const &) const;
-    /*97*/ virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
-    /*98*/ virtual void refreshedInContainer(class ItemStackBase const &, class Level &) const;
-    /*102*/ virtual void fixupCommon(class ItemStackBase &, class Level &) const;
-    /*105*/ virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemInstance const &, class ItemInstance const &, bool, bool) const;
-    /*106*/ virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
-    /*107*/ virtual bool validFishInteraction(int) const;
-    /*110*/ virtual std::string getInteractText(class Player const &) const;
-    /*111*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-    /*115*/ virtual int getIconYOffset() const;
-    /*119*/ virtual bool canBeCharged() const;
-    /*120*/ virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
-    /*121*/ virtual void __unk_vfn_121();
-    /*124*/ virtual std::string getAuxValuesDescription() const;
-    /*126*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-    /*
-    inline bool isMultiColorTinted(class ItemStack const & a0) const{
-        bool (ActorPlacerItem::*rv)(class ItemStack const &) const;
-        *((void**)&rv) = dlsym("?isMultiColorTinted@ActorPlacerItem@@UEBA_NAEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<class ItemStack const &>(a0));
-    }
-    inline bool isActorPlacerItem() const{
-        bool (ActorPlacerItem::*rv)() const;
-        *((void**)&rv) = dlsym("?isActorPlacerItem@ActorPlacerItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline class mce::Color getSecondaryColor(class ItemStack const & a0) const{
-        class mce::Color (ActorPlacerItem::*rv)(class ItemStack const &) const;
-        *((void**)&rv) = dlsym("?getSecondaryColor@ActorPlacerItem@@UEBA?AVColor@mce@@AEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<class ItemStack const &>(a0));
-    }
-    inline class mce::Color getBaseColor(class ItemStack const & a0) const{
-        class mce::Color (ActorPlacerItem::*rv)(class ItemStack const &) const;
-        *((void**)&rv) = dlsym("?getBaseColor@ActorPlacerItem@@UEBA?AVColor@mce@@AEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<class ItemStack const &>(a0));
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPLACERITEM
+public:
+    MCVAPI class mce::Color getBaseColor(class ItemStack const &) const;
+    MCVAPI class mce::Color getSecondaryColor(class ItemStack const &) const;
+    MCVAPI bool isActorPlacerItem() const;
+    MCVAPI bool isMultiColorTinted(class ItemStack const &) const;
+#endif
     MCAPI ActorPlacerItem(std::string const &, int, struct ActorDefinitionIdentifier const &);
     MCAPI static void forEachCustomEgg(class std::function<void (class Item const &)> const &);
     MCAPI static std::string getCustomSpawnEggName(int);
     MCAPI static void registerCustomEggs(class ActorInfoRegistry const &);
     MCAPI static class Actor * spawnOrMoveAgent(class Vec3 const &, class Actor &);
 
-protected:
-
-private:
+//private:
     MCAPI struct ActorDefinitionIdentifier _getActorID(class BlockSource &) const;
     MCAPI class Actor * _spawnActorAt(class BlockSource &, class Vec3 const &, class Vec3 const &, class ItemStack const &, class Actor *) const;
     MCAPI static void _setAgentOwner(class Player &, class Agent &);
+
+private:
     MCAPI static class std::unordered_map<unsigned int, std::string, struct std::hash<unsigned int>, struct std::equal_to<unsigned int>, class std::allocator<struct std::pair<unsigned int const, std::string>>> mCustomSpawnEggs;
     MCAPI static class std::unordered_map<class HashedString, struct TextureUVCoordinateSet, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct TextureUVCoordinateSet>>> mUVTextureMap;
     MCAPI static struct TextureUVCoordinateSet m_uvEggMask;
+
 
 };

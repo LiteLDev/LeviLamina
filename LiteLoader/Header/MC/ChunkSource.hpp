@@ -24,6 +24,7 @@ public:
     ChunkSource() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ChunkSource();
     /*1*/ virtual void shutdown();
@@ -54,13 +55,9 @@ public:
     /*26*/ virtual std::unique_ptr<class BlendingDataProvider> tryGetBlendingDataProvider();
     /*27*/ virtual class BiomeChunkBlendingAttenuator getBiomeHeightAttenuatorForLevelChunk(class ChunkPos const &);
     /*28*/ virtual class std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();
-    /*
-    inline  ~ChunkSource(){
-         (ChunkSource::*rv)();
-        *((void**)&rv) = dlsym("??1ChunkSource@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKSOURCE
+public:
+#endif
     MCAPI ChunkSource(class Dimension *, int);
     MCAPI ChunkSource(std::unique_ptr<class ChunkSource>);
     MCAPI void checkAndLaunchChunkGenerationTasks(bool);
@@ -72,7 +69,7 @@ public:
     MCAPI class std::shared_ptr<class LevelChunk> getGeneratedChunk(class ChunkPos const &);
     MCAPI class Level & getLevel() const;
 
-protected:
+//protected:
     MCAPI bool _checkAndDispatchTaskForLevelChunk(struct std::pair<class ChunkPos, enum ChunkState> const &, bool);
     MCAPI void _checkForReplacementDataTask(class LevelChunk &, class ChunkViewSource &);
     MCAPI void _checkForUnblockingChunks(class LevelChunk const &);
@@ -89,6 +86,7 @@ protected:
     MCAPI void _postProcessingTask(class LevelChunk &, class ChunkViewSource &);
     MCAPI void _spawnChunkGenerationTasks(int, bool);
 
-private:
+protected:
+
 
 };

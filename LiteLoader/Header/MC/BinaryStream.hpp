@@ -54,15 +54,12 @@ public:
     BinaryStream(class BinaryStream const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BinaryStream();
-    /*
-    inline  ~BinaryStream(){
-         (BinaryStream::*rv)();
-        *((void**)&rv) = dlsym("??1BinaryStream@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BINARYSTREAM
+public:
+#endif
     MCAPI BinaryStream(std::string &, bool);
     MCAPI BinaryStream();
     MCAPI std::string getAndReleaseData();
@@ -85,9 +82,10 @@ public:
     MCAPI void writeVarInt(int);
     MCAPI void writeVarInt64(__int64);
 
-protected:
+//private:
+    MCAPI void write(void const *, unsigned __int64);
 
 private:
-    MCAPI void write(void const *, unsigned __int64);
+
 
 };

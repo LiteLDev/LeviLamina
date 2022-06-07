@@ -23,21 +23,15 @@ public:
     IllagerBeastBlockedDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~IllagerBeastBlockedDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
-    /*
-    inline  ~IllagerBeastBlockedDescription(){
-         (IllagerBeastBlockedDescription::*rv)();
-        *((void**)&rv) = dlsym("??1IllagerBeastBlockedDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ILLAGERBEASTBLOCKEDDESCRIPTION
+public:
+#endif
 
-protected:
-
-private:
 
 };

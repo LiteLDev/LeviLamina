@@ -23,13 +23,14 @@ public:
     FunctionCommand() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FunctionCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FUNCTIONCOMMAND
+public:
+#endif
     MCAPI static void setup(class CommandRegistry &);
 
-protected:
-
-private:
 
 };

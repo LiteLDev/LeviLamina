@@ -22,28 +22,22 @@ public:
     IconItemComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~IconItemComponent();
-    /*1*/ virtual void __unk_vfn_1();
+    /*1*/ virtual bool isNetworkComponent() const;
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
-    /*
-    inline bool isNetworkComponent() const{
-        bool (IconItemComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?isNetworkComponent@IconItemComponent@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONITEMCOMPONENT
+public:
+#endif
     MCAPI IconItemComponent(class ComponentItem *);
     MCAPI void setOwnerIcon();
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
-protected:
-
-private:
 
 };

@@ -20,14 +20,14 @@ public:
     FertilizeFarmBlockDefinition(class FertilizeFarmBlockDefinition const &) = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~FertilizeFarmBlockDefinition();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FERTILIZEFARMBLOCKDEFINITION
+public:
+#endif
     MCAPI FertilizeFarmBlockDefinition();
     MCAPI void initialize(class EntityContext &, class FertilizeFarmBlockGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FertilizeFarmBlockDefinition>> &);
 
-protected:
-
-private:
 
 };

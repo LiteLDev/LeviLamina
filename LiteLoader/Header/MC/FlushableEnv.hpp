@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "TransactionalWorldBlockTarget.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class FlushableEnv {
+class FlushableEnv : public TransactionalWorldBlockTarget {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -22,19 +23,13 @@ public:
     FlushableEnv() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FlushableEnv();
-    /*
-    inline  ~FlushableEnv(){
-         (FlushableEnv::*rv)();
-        *((void**)&rv) = dlsym("??1FlushableEnv@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLUSHABLEENV
+public:
+#endif
     MCAPI FlushableEnv(class leveldb::Env *);
 
-protected:
-
-private:
 
 };

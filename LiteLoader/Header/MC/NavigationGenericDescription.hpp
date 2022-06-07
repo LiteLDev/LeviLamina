@@ -23,19 +23,13 @@ public:
     NavigationGenericDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~NavigationGenericDescription();
-    /*
-    inline  ~NavigationGenericDescription(){
-         (NavigationGenericDescription::*rv)();
-        *((void**)&rv) = dlsym("??1NavigationGenericDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONGENERICDESCRIPTION
+public:
+#endif
 
-protected:
-
-private:
 
 };

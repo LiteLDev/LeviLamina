@@ -22,15 +22,16 @@ public:
     LegacyBlockPlacementProcessor() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYBLOCKPLACEMENTPROCESSOR
+public:
+#endif
     MCAPI LegacyBlockPlacementProcessor(class LegacyStructureSettings const &);
     MCAPI class Block const * applyBlockRules(class BlockSource &, class BlockPos &, class Block const *, class BlockPos const &);
     MCAPI class BlockPos & applyGravity(class BlockSource &, int, class BlockPos &) const;
     MCAPI bool canPlace();
     MCAPI ~LegacyBlockPlacementProcessor();
 
-protected:
-
-private:
 
 };

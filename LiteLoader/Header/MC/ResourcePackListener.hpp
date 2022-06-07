@@ -22,38 +22,15 @@ public:
     ResourcePackListener() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~ResourcePackListener();
-    /*
-    inline void onBaseGamePackDownloadComplete(){
-        void (ResourcePackListener::*rv)();
-        *((void**)&rv) = dlsym("?onBaseGamePackDownloadComplete@ResourcePackListener@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void onFullPackStackInvalid(){
-        void (ResourcePackListener::*rv)();
-        *((void**)&rv) = dlsym("?onFullPackStackInvalid@ResourcePackListener@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void onResourceManagerDestroyed(class ResourcePackManager & a0){
-        void (ResourcePackListener::*rv)(class ResourcePackManager &);
-        *((void**)&rv) = dlsym("?onResourceManagerDestroyed@ResourcePackListener@@UEAAXAEAVResourcePackManager@@@Z");
-        return (this->*rv)(std::forward<class ResourcePackManager &>(a0));
-    }
-    inline void onLanguageSubpacksChanged(){
-        void (ResourcePackListener::*rv)();
-        *((void**)&rv) = dlsym("?onLanguageSubpacksChanged@ResourcePackListener@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline  ~ResourcePackListener(){
-         (ResourcePackListener::*rv)();
-        *((void**)&rv) = dlsym("??1ResourcePackListener@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKLISTENER
+public:
+    MCVAPI void onBaseGamePackDownloadComplete();
+    MCVAPI void onFullPackStackInvalid();
+    MCVAPI void onLanguageSubpacksChanged();
+    MCVAPI void onResourceManagerDestroyed(class ResourcePackManager &);
+#endif
 
-protected:
-
-private:
 
 };

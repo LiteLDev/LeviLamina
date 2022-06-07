@@ -16,7 +16,11 @@ class Abilities {
 
 #undef AFTER_EXTRA
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABILITIES
+public:
+#endif
     MCAPI Abilities(class Abilities const &);
     MCAPI Abilities();
     MCAPI void addSaveData(class CompoundTag &) const;
@@ -25,8 +29,8 @@ public:
     MCAPI class Ability const & getAbility(enum AbilitiesIndex) const;
     MCAPI bool getBool(enum AbilitiesIndex) const;
     MCAPI enum CommandPermissionLevel getCommandPermissions() const;
-    MCAPI class Ability const & getCustomAbilityFromCache(enum AbilitiesIndex) const;
     MCAPI class Ability & getCustomAbilityFromCache(enum AbilitiesIndex);
+    MCAPI class Ability const & getCustomAbilityFromCache(enum AbilitiesIndex) const;
     MCAPI float getFloat(enum AbilitiesIndex) const;
     MCAPI enum PlayerPermissionLevel getPlayerPermissions() const;
     MCAPI bool isFlying() const;
@@ -41,11 +45,12 @@ public:
     MCAPI static char const * getAbilityName(enum AbilitiesIndex);
     MCAPI static enum AbilitiesIndex nameToAbilityIndex(std::string const &);
 
-protected:
+//private:
+    MCAPI void _registerAbilities();
 
 private:
-    MCAPI void _registerAbilities();
     MCAPI static class std::array<char const *, 18> ABILITY_NAMES;
     MCAPI static std::string const TAG;
+
 
 };

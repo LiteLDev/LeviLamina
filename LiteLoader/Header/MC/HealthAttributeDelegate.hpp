@@ -22,6 +22,7 @@ public:
     HealthAttributeDelegate() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HealthAttributeDelegate();
     /*1*/ virtual void tick();
@@ -29,10 +30,10 @@ public:
     /*3*/ virtual bool willChange(float, float, class AttributeBuff const &);
     /*4*/ virtual float change(float, float, class AttributeBuff const &);
     /*5*/ virtual float getBuffValueWithModifiers(class AttributeBuff const &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HEALTHATTRIBUTEDELEGATE
+public:
+#endif
     MCAPI HealthAttributeDelegate(class AttributeInstance const &, class Mob *);
 
-protected:
-
-private:
 
 };

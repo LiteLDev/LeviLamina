@@ -23,13 +23,14 @@ public:
     XPCommand() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~XPCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_XPCOMMAND
+public:
+#endif
     MCAPI static void setup(class CommandRegistry &);
 
-protected:
-
-private:
 
 };

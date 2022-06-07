@@ -25,52 +25,40 @@ public:
     ServerPlayer() = delete;
 #endif
 
+
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*12*/ virtual void _serverInitItemStackIds();
     /*14*/ virtual ~ServerPlayer();
-    /*20*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*40*/ virtual void __unk_vfn_40();
     /*48*/ virtual void normalTick();
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
     /*82*/ virtual void __unk_vfn_82();
     /*88*/ virtual void __unk_vfn_88();
-    /*89*/ virtual void playerTouch(class Player &);
     /*95*/ virtual void __unk_vfn_95();
     /*98*/ virtual void __unk_vfn_98();
     /*105*/ virtual void __unk_vfn_105();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
     /*109*/ virtual void __unk_vfn_109();
-    /*113*/ virtual class Actor * findAttackTarget();
     /*114*/ virtual bool isValidTarget(class Actor *) const;
-    /*120*/ virtual void onTame();
-    /*121*/ virtual void onFailedTame();
-    /*130*/ virtual void vehicleLanded(class Vec3 const &, class Vec3 const &);
     /*141*/ virtual void handleEntityEvent(enum ActorEvent, int);
     /*152*/ virtual void setArmor(enum ArmorSlot, class ItemStack const &);
     /*162*/ virtual void setOffhandSlot(class ItemStack const &);
     /*167*/ virtual bool load(class CompoundTag const &, class DataLoadHelper &);
-    /*171*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*180*/ virtual bool canChangeDimensions() const;
     /*181*/ virtual void __unk_vfn_181();
     /*182*/ virtual void changeDimension(class AutomaticID<class Dimension, int>, bool);
     /*183*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*184*/ virtual void checkFallDamage(float, bool);
     /*186*/ virtual void handleFallDistanceOnServer(float, float, bool);
-    /*192*/ virtual bool canPickupItem(class ItemStack const &) const;
-    /*193*/ virtual bool canBePulledIntoVehicle() const;
     /*195*/ virtual void __unk_vfn_195();
-    /*197*/ virtual void sendMotionPacketIfNeeded();
-    /*198*/ virtual bool canSynchronizeNewEntity() const;
     /*213*/ virtual void onEffectAdded(class MobEffectInstance &);
     /*214*/ virtual void onEffectUpdated(class MobEffectInstance &);
     /*215*/ virtual void onEffectRemoved(class MobEffectInstance &);
     /*220*/ virtual void __unk_vfn_220();
     /*221*/ virtual void __unk_vfn_221();
-    /*237*/ virtual bool canDestroyBlock(class Block const &) const;
-    /*238*/ virtual void setAuxValue(int);
     /*246*/ virtual void __unk_vfn_246();
     /*249*/ virtual void __unk_vfn_249();
     /*251*/ virtual void die(class ActorDamageSource const &);
@@ -78,10 +66,8 @@ public:
     /*269*/ virtual void __unk_vfn_269();
     /*278*/ virtual void __unk_vfn_278();
     /*279*/ virtual void knockback(class Actor *, int, float, float, float, float, float);
-    /*280*/ virtual void spawnAnim();
     /*294*/ virtual void aiStep();
     /*307*/ virtual void __unk_vfn_307();
-    /*309*/ virtual bool isAlliedTo(class Mob *);
     /*311*/ virtual void __unk_vfn_311();
     /*319*/ virtual void hurtArmorSlots(class ActorDamageSource const &, int, class std::bitset<4> const &);
     /*320*/ virtual void setDamagedArmor(enum ArmorSlot, class ItemStack const &);
@@ -89,12 +75,7 @@ public:
     /*322*/ virtual void sendArmor(class std::bitset<4> const &);
     /*332*/ virtual void clearVanishEnchantedItemsOnDeath();
     /*333*/ virtual void sendInventory(bool);
-    /*338*/ virtual void onBorn(class Actor &, class Actor &);
-    /*343*/ virtual float _getWalkTargetValue(class BlockPos const &);
-    /*344*/ virtual bool canExistWhenDisallowMob() const;
     /*345*/ virtual void __unk_vfn_345();
-    /*353*/ virtual void updateAi();
-    /*355*/ virtual void _serverAiMobStep();
     /*359*/ virtual void __unk_vfn_359();
     /*361*/ virtual void prepareRegion(class ChunkSource &);
     /*362*/ virtual void destroyRegion();
@@ -114,7 +95,7 @@ public:
     /*385*/ virtual void __unk_vfn_385();
     /*386*/ virtual void openTrading(struct ActorUniqueID const &, bool);
     /*388*/ virtual void __unk_vfn_388();
-    /*389*/ virtual void __unk_vfn_389();
+    /*389*/ virtual void openNpcInteractScreen(class std::shared_ptr<struct INpcDialogueData>);
     /*390*/ virtual void openInventory();
     /*391*/ virtual void __unk_vfn_391();
     /*392*/ virtual void __unk_vfn_392();
@@ -149,28 +130,11 @@ public:
     /*441*/ virtual void __unk_vfn_441();
     /*446*/ virtual int _getSpawnChunkLimit() const;
     /*447*/ virtual void _updateChunkPublisherView(class Vec3 const &, float);
-    /*
-    inline void frameUpdate(class FrameUpdateContextBase & a0){
-        void (ServerPlayer::*rv)(class FrameUpdateContextBase &);
-        *((void**)&rv) = dlsym("?frameUpdate@ServerPlayer@@UEAAXAEAVFrameUpdateContextBase@@@Z");
-        return (this->*rv)(std::forward<class FrameUpdateContextBase &>(a0));
-    }
-    inline void openPortfolio(){
-        void (ServerPlayer::*rv)();
-        *((void**)&rv) = dlsym("?openPortfolio@ServerPlayer@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline  ~ServerPlayer(){
-         (ServerPlayer::*rv)();
-        *((void**)&rv) = dlsym("??1ServerPlayer@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline void openNpcInteractScreen(class std::shared_ptr<struct INpcDialogueData> a0){
-        void (ServerPlayer::*rv)(class std::shared_ptr<struct INpcDialogueData>);
-        *((void**)&rv) = dlsym("?openNpcInteractScreen@ServerPlayer@@UEAAXV?$shared_ptr@UINpcDialogueData@@@std@@@Z");
-        return (this->*rv)(std::forward<class std::shared_ptr<struct INpcDialogueData>>(a0));
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYER
+public:
+    MCVAPI void frameUpdate(class FrameUpdateContextBase &);
+    MCVAPI void openPortfolio();
+#endif
     MCAPI ServerPlayer(class Level &, class PacketSender &, class NetworkHandler &, class ClientBlobCache::Server::ActiveTransfersManager &, enum GameType, class NetworkIdentifier const &, unsigned char, class std::function<void (class ServerPlayer &)>, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>, int, bool, class EntityContext &);
     MCAPI void checkCheating(class Vec3 const &);
     MCAPI void disconnect();
@@ -192,14 +156,15 @@ public:
     MCAPI void triggerRespawnFromCompletingTheEnd();
     MCAPI static class ServerPlayer * tryGetFromEntity(class EntityContext &, bool);
 
-protected:
-
-private:
+//private:
     MCAPI void _logCDEvent(enum CrashDumpLogStringID, enum CrashDumpLogStringID, enum CrashDumpLogStringID, enum CrashDumpLogStringID);
     MCAPI enum ContainerID _nextContainerCounter();
     MCAPI void _removeNearbyEntities();
     MCAPI void _scanForNearbyActors();
     MCAPI void _setContainerManager(class std::shared_ptr<class IContainerManager>);
     MCAPI void _updateNearbyActors();
+
+private:
+
 
 };

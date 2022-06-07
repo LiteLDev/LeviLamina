@@ -23,17 +23,17 @@ public:
     DanceComponentListener() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DanceComponentListener();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void onSourceDestroyed(class BlockSource &);
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*6*/ virtual void __unk_vfn_6();
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void __unk_vfn_10();
-    /*11*/ virtual void __unk_vfn_11();
+    /*11*/ virtual class Particle * addParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void __unk_vfn_14();
@@ -53,9 +53,9 @@ public:
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void levelSoundEvent(enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DANCECOMPONENTLISTENER
+public:
+#endif
 
-protected:
-
-private:
 
 };

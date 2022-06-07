@@ -24,7 +24,11 @@ struct any_version_constructor {
 
 #undef AFTER_EXTRA
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEMVERSION
+public:
+#endif
     MCAPI SemVersion(class SemVersion const &);
     MCAPI SemVersion(unsigned short, unsigned short, unsigned short, std::string const &, std::string const &);
     MCAPI SemVersion(struct SemVersion::any_version_constructor);
@@ -48,9 +52,10 @@ public:
     MCAPI static enum SemVersion::MatchType fromJsonArray(class Json::Value const &, class SemVersion &);
     MCAPI static enum SemVersion::MatchType fromString(std::string const &, class SemVersion &, enum SemVersion::ParseOption);
 
-protected:
+//private:
+    MCAPI void _parseVersionToString();
 
 private:
-    MCAPI void _parseVersionToString();
+
 
 };

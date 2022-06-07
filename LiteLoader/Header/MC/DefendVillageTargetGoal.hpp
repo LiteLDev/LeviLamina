@@ -23,16 +23,19 @@ public:
     DefendVillageTargetGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DefendVillageTargetGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
     /*4*/ virtual void start();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFENDVILLAGETARGETGOAL
+public:
+#endif
     MCAPI DefendVillageTargetGoal(class Mob &);
 
-protected:
-
-private:
 
 };

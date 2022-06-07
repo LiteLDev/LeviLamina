@@ -21,19 +21,13 @@ public:
     ScriptCanFlyComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptCanFlyComponent();
-    /*
-    inline  ~ScriptCanFlyComponent(){
-         (ScriptCanFlyComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptCanFlyComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCANFLYCOMPONENT
+public:
+#endif
     MCAPI static class HashedString const & getHashedName();
 
-protected:
-
-private:
 
 };

@@ -23,6 +23,7 @@ public:
     ItemStackRequestActionMineBlock(class ItemStackRequestActionMineBlock const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemStackRequestActionMineBlock();
     /*1*/ virtual void __unk_vfn_1();
@@ -30,14 +31,14 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void _write(class BinaryStream &) const;
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONMINEBLOCK
+public:
+#endif
     MCAPI ItemStackRequestActionMineBlock();
     MCAPI enum ItemStackRequestActionMineBlock::PreValidationStatus getPreValidationStatus() const;
     MCAPI int getPredictedDurability() const;
     MCAPI struct ItemStackRequestSlotInfo getSrc() const;
     MCAPI void setPreValidationStatus(enum ItemStackRequestActionMineBlock::PreValidationStatus) const;
 
-protected:
-
-private:
 
 };

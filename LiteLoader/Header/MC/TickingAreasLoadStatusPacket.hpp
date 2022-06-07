@@ -20,24 +20,18 @@ public:
     TickingAreasLoadStatusPacket(class TickingAreasLoadStatusPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TickingAreasLoadStatusPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~TickingAreasLoadStatusPacket(){
-         (TickingAreasLoadStatusPacket::*rv)();
-        *((void**)&rv) = dlsym("??1TickingAreasLoadStatusPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREASLOADSTATUSPACKET
+public:
+#endif
     MCAPI TickingAreasLoadStatusPacket();
     MCAPI TickingAreasLoadStatusPacket(bool);
 
-protected:
-
-private:
 
 };

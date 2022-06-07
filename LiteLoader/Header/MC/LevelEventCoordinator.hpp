@@ -21,15 +21,11 @@ public:
     LevelEventCoordinator(class LevelEventCoordinator const &) = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~LevelEventCoordinator();
-    /*
-    inline  ~LevelEventCoordinator(){
-         (LevelEventCoordinator::*rv)();
-        *((void**)&rv) = dlsym("??1LevelEventCoordinator@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELEVENTCOORDINATOR
+public:
+#endif
     MCAPI LevelEventCoordinator();
     MCAPI void registerLevelGameplayHandler(std::unique_ptr<class LevelGameplayHandler> &&);
     MCAPI void sendEvent(class EventRef<struct LevelGameplayEvent<void>> const &);
@@ -39,8 +35,5 @@ public:
     MCAPI void sendLevelTick();
     MCAPI void sendLevelWeatherChanged(std::string const &, bool, bool);
 
-protected:
-
-private:
 
 };

@@ -10,12 +10,13 @@ using namespace DB;
     } \
     catch(const std::exception &e) \
     { \
-        throw Exception(e.what()); \
+        throw Exception(TextEncoding::toUTF8(e.what())); \
     } \
     catch(const seh_exception &e) \
     { \
         logger.error("SEH Uncaught Exception Detected!"); \
         logger.error(TextEncoding::toUTF8(e.what())); \
+        PrintScriptStackTrace(); \
         logger.error(std::string("In API: ") + __FUNCTION__); \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
         return Local<Value>(); \
@@ -23,6 +24,7 @@ using namespace DB;
     catch(...) \
     { \
         logger.error("Uncaught Exception Detected!"); \
+        PrintScriptStackTrace(); \
         logger.error(std::string("In API: ") + __FUNCTION__); \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
         return Local<Value>(); \
@@ -358,7 +360,7 @@ DBSessionClass* DBSessionClass::constructor(const Arguments& args)
                 }
                 else
                 {
-                    LOG_WRONG_ARGS;
+                    LOG_WRONG_ARG_TYPE();
                 }
                 break;
             }
@@ -375,7 +377,7 @@ DBSessionClass* DBSessionClass::constructor(const Arguments& args)
                 break;
             }
             default:
-                LOG_WRONG_ARGS;
+                LOG_WRONG_ARG_TYPE();
                 break;
         }
         return result;
@@ -533,7 +535,7 @@ Local<Value> DBStmtClass::bind(const Arguments& args)
                 }
                 else
                 {
-                    LOG_WRONG_ARGS;
+                    LOG_WRONG_ARG_TYPE();
                 }
             }
         }

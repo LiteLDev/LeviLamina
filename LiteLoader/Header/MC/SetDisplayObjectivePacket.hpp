@@ -23,24 +23,18 @@ public:
     SetDisplayObjectivePacket(class SetDisplayObjectivePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SetDisplayObjectivePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~SetDisplayObjectivePacket(){
-         (SetDisplayObjectivePacket::*rv)();
-        *((void**)&rv) = dlsym("??1SetDisplayObjectivePacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETDISPLAYOBJECTIVEPACKET
+public:
+#endif
     MCAPI SetDisplayObjectivePacket(std::string const &, std::string const &, std::string const &, std::string const &, enum ObjectiveSortOrder);
     MCAPI SetDisplayObjectivePacket();
 
-protected:
-
-private:
 
 };

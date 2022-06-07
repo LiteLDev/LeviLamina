@@ -22,15 +22,16 @@ public:
     PropertyBag(class PropertyBag const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYBAG
+public:
+#endif
     MCAPI PropertyBag(class Json::Value const &);
     MCAPI PropertyBag();
     MCAPI class Json::Value const & toJsonValue() const;
     MCAPI std::string toString() const;
     MCAPI static class PropertyBag EMPTY;
 
-protected:
-
-private:
 
 };

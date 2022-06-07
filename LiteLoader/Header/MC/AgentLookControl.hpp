@@ -21,15 +21,16 @@ public:
     AgentLookControl(class AgentLookControl const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AgentLookControl();
     /*1*/ virtual void initializeInternal(class Mob &);
     /*2*/ virtual void tick(class Mob &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTLOOKCONTROL
+public:
+#endif
     MCAPI AgentLookControl();
     MCAPI static float sBaseYMax;
 
-protected:
-
-private:
 
 };

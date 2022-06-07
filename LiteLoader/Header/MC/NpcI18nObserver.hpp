@@ -22,29 +22,20 @@ public:
     NpcI18nObserver() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NpcI18nObserver();
-    /*
-    inline void onLanguageChanged(std::string const & a0, bool a1){
-        void (NpcI18nObserver::*rv)(std::string const &, bool);
-        *((void**)&rv) = dlsym("?onLanguageChanged@NpcI18nObserver@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<bool>(a1));
-    }
-    inline void onLanguagesLoaded(){
-        void (NpcI18nObserver::*rv)();
-        *((void**)&rv) = dlsym("?onLanguagesLoaded@NpcI18nObserver@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void onLanguageKeywordsLoadedFromPack(class PackManifest const & a0){
-        void (NpcI18nObserver::*rv)(class PackManifest const &);
-        *((void**)&rv) = dlsym("?onLanguageKeywordsLoadedFromPack@NpcI18nObserver@@UEAAXAEBVPackManifest@@@Z");
-        return (this->*rv)(std::forward<class PackManifest const &>(a0));
-    }
-    */
+    /*1*/ virtual void onLanguageChanged(std::string const &, bool);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCI18NOBSERVER
+public:
+    MCVAPI void onLanguageKeywordsLoadedFromPack(class PackManifest const &);
+    MCVAPI void onLanguagesLoaded();
+#endif
 
-protected:
+//private:
+    MCAPI void _loadNpcData();
 
 private:
-    MCAPI void _loadNpcData();
+
 
 };

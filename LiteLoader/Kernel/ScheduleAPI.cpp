@@ -152,27 +152,26 @@ public:
                     logger.error("{}", TextEncoding::toUTF8(e.what()));
                     logger.error("TaskId: {}", t.taskId);
                     if (auto plugin = LL::getPlugin(t.handler))
-                        logger.error("Plugin: {}", plugin->name);
+                        logger.error("In Plugin: <{} {}>", plugin->name, plugin->version.toString());
                 }
                 catch (const std::exception& e) {
                     logger.error("Exception occurred in ScheduleTask!");
                     logger.error("{}", TextEncoding::toUTF8(e.what()));
                     logger.error("TaskId: {}", t.taskId);
                     if (auto plugin = LL::getPlugin(t.handler))
-                        logger.error("Plugin: {}", plugin->name);
+                        logger.error("In Plugin: <{} {}>", plugin->name, plugin->version.toString());
                 }
                 catch (...) {
                     logger.error("Exception occurred in ScheduleTask!");
                     logger.error("TaskId: {}", t.taskId);
                     if (auto plugin = LL::getPlugin(t.handler))
-                        logger.error("Plugin: {}", plugin->name);
+                        logger.error("In Plugin: <{} {}>", plugin->name, plugin->version.toString());
                 }
                 pop();
             }
         }
         catch (...) {
             logger.error("Exception occurred in ScheduleTask!");
-            PrintCurrentStackTraceback();
         }
 
     }

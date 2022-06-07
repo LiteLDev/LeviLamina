@@ -68,6 +68,7 @@ public:
     Scoreboard() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Scoreboard();
     /*1*/ virtual class DisplayObjective const * setDisplayObjective(std::string const &, class Objective const &, enum ObjectiveSortOrder);
@@ -78,68 +79,26 @@ public:
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void onObjectiveRemoved(class Objective &);
     /*8*/ virtual void onScoreChanged(struct ScoreboardId const &, class Objective const &);
-    /*
-    inline bool isClientSide() const{
-        bool (Scoreboard::*rv)() const;
-        *((void**)&rv) = dlsym("?isClientSide@Scoreboard@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void setPacketSender(class PacketSender * a0){
-        void (Scoreboard::*rv)(class PacketSender *);
-        *((void**)&rv) = dlsym("?setPacketSender@Scoreboard@@UEAAXPEAVPacketSender@@@Z");
-        return (this->*rv)(std::forward<class PacketSender *>(a0));
-    }
-    inline void writeToLevelStorage(){
-        void (Scoreboard::*rv)();
-        *((void**)&rv) = dlsym("?writeToLevelStorage@Scoreboard@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void onPlayerJoined(class Player const & a0){
-        void (Scoreboard::*rv)(class Player const &);
-        *((void**)&rv) = dlsym("?onPlayerJoined@Scoreboard@@UEAAXAEBVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player const &>(a0));
-    }
-    inline void tick(){
-        void (Scoreboard::*rv)();
-        *((void**)&rv) = dlsym("?tick@Scoreboard@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline  ~Scoreboard(){
-         (Scoreboard::*rv)();
-        *((void**)&rv) = dlsym("??1Scoreboard@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline struct ScoreboardId const & createScoreboardId(std::string const & a0){
-        struct ScoreboardId const & (Scoreboard::*rv)(std::string const &);
-        *((void**)&rv) = dlsym("?createScoreboardId@Scoreboard@@UEAAAEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0));
-    }
-    inline struct ScoreboardId const & createScoreboardId(class Player const & a0){
-        struct ScoreboardId const & (Scoreboard::*rv)(class Player const &);
-        *((void**)&rv) = dlsym("?createScoreboardId@Scoreboard@@UEAAAEBUScoreboardId@@AEBVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player const &>(a0));
-    }
-    inline struct ScoreboardId const & createScoreboardId(class Actor const & a0){
-        struct ScoreboardId const & (Scoreboard::*rv)(class Actor const &);
-        *((void**)&rv) = dlsym("?createScoreboardId@Scoreboard@@UEAAAEBUScoreboardId@@AEBVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor const &>(a0));
-    }
-    inline void onPlayerIdentityUpdated(struct PlayerScoreboardId const & a0){
-        void (Scoreboard::*rv)(struct PlayerScoreboardId const &);
-        *((void**)&rv) = dlsym("?onPlayerIdentityUpdated@Scoreboard@@UEAAXAEBUPlayerScoreboardId@@@Z");
-        return (this->*rv)(std::forward<struct PlayerScoreboardId const &>(a0));
-    }
-    inline void onPlayerScoreRemoved(struct ScoreboardId const & a0, class Objective const & a1){
-        void (Scoreboard::*rv)(struct ScoreboardId const &, class Objective const &);
-        *((void**)&rv) = dlsym("?onPlayerScoreRemoved@Scoreboard@@UEAAXAEBUScoreboardId@@AEBVObjective@@@Z");
-        return (this->*rv)(std::forward<struct ScoreboardId const &>(a0), std::forward<class Objective const &>(a1));
-    }
-    inline void onObjectiveAdded(class Objective const & a0){
-        void (Scoreboard::*rv)(class Objective const &);
-        *((void**)&rv) = dlsym("?onObjectiveAdded@Scoreboard@@UEAAXAEBVObjective@@@Z");
-        return (this->*rv)(std::forward<class Objective const &>(a0));
-    }
-    */
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual void __unk_vfn_10();
+    /*11*/ virtual void __unk_vfn_11();
+    /*12*/ virtual void __unk_vfn_12();
+    /*13*/ virtual void __unk_vfn_13();
+    /*14*/ virtual void __unk_vfn_14();
+    /*15*/ virtual bool isClientSide() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARD
+public:
+    MCVAPI struct ScoreboardId const & createScoreboardId(std::string const &);
+    MCVAPI struct ScoreboardId const & createScoreboardId(class Player const &);
+    MCVAPI struct ScoreboardId const & createScoreboardId(class Actor const &);
+    MCVAPI void onObjectiveAdded(class Objective const &);
+    MCVAPI void onPlayerIdentityUpdated(struct PlayerScoreboardId const &);
+    MCVAPI void onPlayerJoined(class Player const &);
+    MCVAPI void onPlayerScoreRemoved(struct ScoreboardId const &, class Objective const &);
+    MCVAPI void setPacketSender(class PacketSender *);
+    MCVAPI void tick();
+    MCVAPI void writeToLevelStorage();
+#endif
     MCAPI Scoreboard(class CommandSoftEnumRegistry);
     MCAPI class Objective * addObjective(std::string const &, std::string const &, class ObjectiveCriteria const &);
     MCAPI void addScoreListener(class Player &, std::string const &);
@@ -180,14 +139,19 @@ public:
     MCAPI static char const * OBJECTIVES_ENUM;
     MCAPI static bool shouldClearScoresOnDeath(class Actor const &);
 
-protected:
+//protected:
     MCAPI void _addLoadedCriteria(std::unique_ptr<class ObjectiveCriteria>);
     MCAPI void _addLoadedObjective(std::unique_ptr<class Objective>);
     MCAPI class std::unordered_map<std::string, std::unique_ptr<class ObjectiveCriteria>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class ObjectiveCriteria>>>> const & _getCriteriaMap() const;
     MCAPI class std::unordered_map<std::string, std::unique_ptr<class Objective>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class Objective>>>> const & _getObjectiveMap() const;
 
-private:
+//private:
     MCAPI struct ScoreboardId const & _getOrCreatePlayerId(class Player &);
     MCAPI void _init();
+
+protected:
+
+private:
+
 
 };

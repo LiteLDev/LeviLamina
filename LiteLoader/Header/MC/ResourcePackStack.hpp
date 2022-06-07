@@ -23,17 +23,14 @@ public:
     ResourcePackStack() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ResourcePackStack();
     /*1*/ virtual std::vector<class LoadedResourceData> loadAllVersionsOf(class ResourceLocation const &) const;
     /*2*/ virtual bool loadAllVersionsOf(class ResourceLocation const &, class ResourcePackMergeStrategy &) const;
-    /*
-    inline  ~ResourcePackStack(){
-         (ResourcePackStack::*rv)();
-        *((void**)&rv) = dlsym("??1ResourcePackStack@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKSTACK
+public:
+#endif
     MCAPI void add(class PackInstance, class IResourcePackRepository const &, bool);
     MCAPI void generateAssetSet();
     MCAPI void getSplitStacks(class ResourcePackStack &, class ResourcePackStack &) const;
@@ -44,10 +41,11 @@ public:
     MCAPI void removeInvalidPacks();
     MCAPI static std::unique_ptr<class ResourcePackStack> deserialize(class std::basic_istream<char, struct std::char_traits<char>> &, class IResourcePackRepository const &);
 
-protected:
+//private:
+    MCAPI static void _populateDependencies(std::vector<class PackInstance> &, class PackInstance &, class IResourcePackRepository const &, bool);
 
 private:
-    MCAPI static void _populateDependencies(std::vector<class PackInstance> &, class PackInstance &, class IResourcePackRepository const &, bool);
     MCAPI static class std::map<class Core::PathBuffer<std::string>, class Core::PathBuffer<std::string>, struct std::less<class Core::PathBuffer<std::string>>, class std::allocator<struct std::pair<class Core::PathBuffer<std::string> const, class Core::PathBuffer<std::string>>>> mUpgradePathMap;
+
 
 };

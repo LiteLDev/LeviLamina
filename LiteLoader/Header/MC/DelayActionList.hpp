@@ -21,14 +21,14 @@ public:
     DelayActionList(class DelayActionList const &) = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~DelayActionList();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DELAYACTIONLIST
+public:
+#endif
     MCAPI DelayActionList();
     MCAPI enum QueueRequestResult queueRequestOrExecuteAction(class DelayRequest, class ServerLevel &, class Dimension &, unsigned __int64, bool);
     MCAPI void tick(class ServerLevel &, class Dimension &, unsigned __int64);
 
-protected:
-
-private:
 
 };

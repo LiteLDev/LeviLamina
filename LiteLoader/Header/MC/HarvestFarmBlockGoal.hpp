@@ -23,6 +23,7 @@ public:
     HarvestFarmBlockGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HarvestFarmBlockGoal();
     /*1*/ virtual bool canUse();
@@ -35,11 +36,15 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HARVESTFARMBLOCKGOAL
+public:
+#endif
     MCAPI HarvestFarmBlockGoal(class Mob &);
 
-protected:
+//protected:
     MCAPI bool trySowCrop(class BlockSource &, class BlockPos const &);
 
-private:
+protected:
+
 
 };

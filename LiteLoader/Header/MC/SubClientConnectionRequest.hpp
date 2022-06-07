@@ -22,7 +22,11 @@ public:
     SubClientConnectionRequest() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCLIENTCONNECTIONREQUEST
+public:
+#endif
     MCAPI SubClientConnectionRequest(class SubClientConnectionRequest const &);
     MCAPI std::vector<class AnimatedImageData> getAnimatedImageData() const;
     MCAPI std::string getArmSize() const;
@@ -62,10 +66,11 @@ public:
     MCAPI ~SubClientConnectionRequest();
     MCAPI static class SubClientConnectionRequest fromString(std::string const &);
 
-protected:
-
-private:
+//private:
     MCAPI SubClientConnectionRequest(std::unique_ptr<class WebToken>, std::string const &);
     MCAPI std::unique_ptr<class Certificate> validate(std::unique_ptr<class Certificate>, __int64) const;
+
+private:
+
 
 };

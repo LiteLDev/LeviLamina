@@ -24,20 +24,14 @@ public:
     ActorIsMovingTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorIsMovingTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-    /*
-    inline  ~ActorIsMovingTest(){
-         (ActorIsMovingTest::*rv)();
-        *((void**)&rv) = dlsym("??1ActorIsMovingTest@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORISMOVINGTEST
+public:
+#endif
 
-protected:
-
-private:
 
 };

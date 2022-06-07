@@ -24,7 +24,11 @@ public:
     DateManager() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DATEMANAGER
+public:
+#endif
     MCAPI static std::string getCurrentTimestampFileName();
     MCAPI static __int64 getRealTime();
     MCAPI static struct tm toDateTime(__int64, enum DateManager::TimeZoneType);
@@ -33,8 +37,5 @@ public:
     MCAPI static std::string toString_DateTime(struct tm const &, enum DateManager::TimeZoneType);
     MCAPI static std::string toString_DateTime(__int64 const &, enum DateManager::TimeZoneType);
 
-protected:
-
-private:
 
 };

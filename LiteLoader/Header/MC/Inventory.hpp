@@ -23,29 +23,27 @@ public:
     Inventory() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Inventory();
     /*1*/ virtual void init();
     /*9*/ virtual void setItem(int, class ItemStack const &);
     /*10*/ virtual void setItemWithForceBalance(int, class ItemStack const &, bool);
-    /*16*/ virtual void startOpen(class Player &);
-    /*17*/ virtual void stopOpen(class Player &);
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
-    /*31*/ virtual void __unk_vfn_31();
     /*33*/ virtual bool add(class ItemStack &);
     /*34*/ virtual bool canAdd(class ItemStack const &) const;
     /*38*/ virtual int getEmptySlotsCount() const;
     /*39*/ virtual int getFirstEmptySlot() const;
     /*40*/ virtual void setContainerSize(int);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORY
+public:
+#endif
     MCAPI Inventory(class Player *);
     MCAPI void dropSlot(int, bool, bool, bool);
     MCAPI std::vector<class ItemStack> getComplexItems();
     MCAPI void setupDefault();
     MCAPI void tick(int);
 
-protected:
-
-private:
 
 };

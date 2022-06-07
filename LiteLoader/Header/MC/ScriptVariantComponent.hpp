@@ -21,18 +21,12 @@ public:
     ScriptVariantComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptVariantComponent();
-    /*
-    inline  ~ScriptVariantComponent(){
-         (ScriptVariantComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptVariantComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTVARIANTCOMPONENT
+public:
+#endif
 
-protected:
-
-private:
 
 };

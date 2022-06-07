@@ -22,25 +22,19 @@ public:
     InventoryContentPacket(class InventoryContentPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~InventoryContentPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~InventoryContentPacket(){
-         (InventoryContentPacket::*rv)();
-        *((void**)&rv) = dlsym("??1InventoryContentPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYCONTENTPACKET
+public:
+#endif
     MCAPI InventoryContentPacket(enum ContainerID, std::vector<class ItemStack> const &);
     MCAPI InventoryContentPacket();
     MCAPI static class InventoryContentPacket fromPlayerInventoryId(enum ContainerID, class Player &);
 
-protected:
-
-private:
 
 };

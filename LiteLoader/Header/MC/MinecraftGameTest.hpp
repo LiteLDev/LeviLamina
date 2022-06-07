@@ -23,17 +23,17 @@ public:
     MinecraftGameTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MinecraftGameTest();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void onSourceDestroyed(class BlockSource &);
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*6*/ virtual void __unk_vfn_6();
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void __unk_vfn_10();
-    /*11*/ virtual void __unk_vfn_11();
+    /*11*/ virtual class Particle * addParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void __unk_vfn_14();
@@ -49,6 +49,9 @@ public:
     /*24*/ virtual void __unk_vfn_24();
     /*25*/ virtual void __unk_vfn_25();
     /*26*/ virtual void onLevelDestruction(std::string const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTGAMETEST
+public:
+#endif
     MCAPI MinecraftGameTest(class Level &);
     MCAPI void clearAllTests(class BlockSource &);
     MCAPI class gametest::GameTestRegistry & getRegistry();
@@ -60,9 +63,10 @@ public:
     MCAPI std::string runTestAt(class BlockSource &, class BlockPos const &, class std::optional<enum Rotation>);
     MCAPI std::vector<class std::shared_ptr<class gametest::BaseGameTestInstance>> const & runTests(class Dimension &, struct gametest::TestParameters &&);
 
-protected:
+//private:
+    MCAPI void _runTestPreparation(class gametest::BaseGameTestFunction const &);
 
 private:
-    MCAPI void _runTestPreparation(class gametest::BaseGameTestFunction const &);
+
 
 };

@@ -20,11 +20,12 @@ public:
     PlayerSayCommandEvent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSAYCOMMANDEVENT
+public:
+#endif
     MCAPI ~PlayerSayCommandEvent();
 
-protected:
-
-private:
 
 };

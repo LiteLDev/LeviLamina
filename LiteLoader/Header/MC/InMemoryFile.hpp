@@ -23,7 +23,11 @@ public:
     InMemoryFile() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INMEMORYFILE
+public:
+#endif
     MCAPI InMemoryFile(class Core::Path const &);
     MCAPI class leveldb::Status append(class leveldb::Slice const &);
     MCAPI class leveldb::Status close(enum InMemoryAccessMode);
@@ -37,8 +41,5 @@ public:
     MCAPI void rename(class Core::Path const &);
     MCAPI ~InMemoryFile();
 
-protected:
-
-private:
 
 };

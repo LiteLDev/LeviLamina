@@ -22,19 +22,11 @@ public:
     ContainerContentChangeListener() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual void __unk_vfn_0() = 0;
-    /*1*/ virtual ~ContainerContentChangeListener();
-    /*
-    inline  ~ContainerContentChangeListener(){
-         (ContainerContentChangeListener::*rv)();
-        *((void**)&rv) = dlsym("??1ContainerContentChangeListener@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERCONTENTCHANGELISTENER
+public:
+#endif
 
-protected:
-
-private:
 
 };

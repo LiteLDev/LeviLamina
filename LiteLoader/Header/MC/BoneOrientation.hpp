@@ -22,15 +22,16 @@ public:
     BoneOrientation() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BONEORIENTATION
+public:
+#endif
     MCAPI void applyShortestPathBlend(class BoneOrientation const &, class BoneOrientation const &, float, float);
     MCAPI class HashedString const & getName() const;
     MCAPI class Vec3 & getPivot();
     MCAPI class Vec3 const & getPivot() const;
     MCAPI void setDefaultPose();
 
-protected:
-
-private:
 
 };

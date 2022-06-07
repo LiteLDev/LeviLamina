@@ -21,20 +21,13 @@ public:
     MoveTowardsRestrictionDefinition(class MoveTowardsRestrictionDefinition const &) = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~MoveTowardsRestrictionDefinition();
-    /*
-    inline  ~MoveTowardsRestrictionDefinition(){
-         (MoveTowardsRestrictionDefinition::*rv)();
-        *((void**)&rv) = dlsym("??1MoveTowardsRestrictionDefinition@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWARDSRESTRICTIONDEFINITION
+public:
+#endif
     MCAPI MoveTowardsRestrictionDefinition();
     MCAPI void initialize(class EntityContext &, class MoveTowardsRestrictionGoal &);
 
-protected:
-
-private:
 
 };

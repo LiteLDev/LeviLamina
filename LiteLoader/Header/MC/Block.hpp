@@ -31,9 +31,13 @@ public:
     Block() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Block();
     /*1*/ virtual enum BlockRenderLayer getRenderLayer() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCK
+public:
+#endif
     MCAPI Block(unsigned short, class gsl::not_null<class BlockLegacy *>);
     MCAPI Block(unsigned short, class gsl::not_null<class BlockLegacy *>, class CompoundTag, unsigned int const &);
     MCAPI void addAABBs(class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
@@ -210,11 +214,16 @@ public:
     MCAPI static std::string const BLOCK_DESCRIPTION_PREFIX;
     MCAPI static float const SIZE_OFFSET;
 
-protected:
+//protected:
     MCAPI void buildSerializationId(unsigned int);
     MCAPI void setRuntimeId(unsigned int const &) const;
 
-private:
+//private:
     MCAPI void _tryInitEntityIfNotInitialized();
+
+protected:
+
+private:
+
 
 };

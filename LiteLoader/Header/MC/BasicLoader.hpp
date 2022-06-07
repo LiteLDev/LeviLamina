@@ -22,11 +22,11 @@ public:
     BasicLoader() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~BasicLoader();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASICLOADER
+public:
+#endif
 
-protected:
-
-private:
 
 };

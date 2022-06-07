@@ -22,7 +22,11 @@ public:
     ShareableComponent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAREABLECOMPONENT
+public:
+#endif
     MCAPI int getCountToPickUp(class Actor const &, class ItemActor const &) const;
     MCAPI int getCountToPickUp(class Actor const &, class ItemStack const &) const;
     MCAPI int getSlotToSwap(class Actor &, class ItemActor const &) const;
@@ -32,11 +36,12 @@ public:
     MCAPI int wantsMore(class Actor const &, class ItemStack const &) const;
     MCAPI bool willPickup(class Actor &, class ItemStack const &, bool, bool) const;
 
-protected:
-
-private:
+//private:
     MCAPI int _getItemPriority(class ShareableDefinition const &, class ItemStack const &) const;
     MCAPI bool _shouldReplaceItem(class ItemStack const &, class ItemStack const &, class ShareableDefinition const &, bool) const;
     MCAPI static bool _useLegacySurplusRules(class Level const &);
+
+private:
+
 
 };

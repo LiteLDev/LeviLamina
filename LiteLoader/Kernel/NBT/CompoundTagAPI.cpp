@@ -152,9 +152,9 @@ void CompoundTag::setItemStack(ItemStack* item)
     (*(SetItemStackFn)func)(item, this);
 }
 
-std::unique_ptr<CompoundTag> CompoundTag::fromBlock(Block* blk)
+std::unique_ptr<CompoundTag> CompoundTag::fromBlock(Block* block)
 {
-    auto tag = (CompoundTag*)((uintptr_t)blk + 104);//Block::Block
+    auto tag = (CompoundTag*)((uintptr_t)block + 104); // Block::Block
     return tag->clone();
 }
 
@@ -193,18 +193,18 @@ bool CompoundTag::setPlayer(Player* player)
     return setActor(player);
 }
 
-bool CompoundTag::setBlockActor(BlockActor* ble) const
+bool CompoundTag::setBlockActor(BlockActor* blockActor) const
 {
     void* vtbl = dlsym("??_7DefaultDataLoadHelper@@6B@");
-    ble->load(*Global<Level>, *this, (DataLoadHelper&)vtbl);
-    ble->refreshData();
+    blockActor->load(*Global<Level>, *this, (DataLoadHelper&)vtbl);
+    blockActor->refreshData();
     return true;
 }
 
-std::unique_ptr<CompoundTag> CompoundTag::fromBlockActor(BlockActor* ble)
+std::unique_ptr<CompoundTag> CompoundTag::fromBlockActor(BlockActor* blockActor)
 {
     auto tag = CompoundTag::create();
-    ble->save(*tag);
+    blockActor->save(*tag);
     return std::move(tag);
 }
 
@@ -319,11 +319,21 @@ string CompoundTag::toBinaryNBT(bool isLittleEndian)
     return result;
 }
 
+std::string CompoundTag::nbtListToBinary(std::vector<std::unique_ptr<CompoundTag>> tags, bool isLittleEndian)
+{
+    std::string result = "";
+    for (auto& tag : tags)
+    {
+        result += tag->toBinaryNBT(isLittleEndian);
+    }
+    return result;
+}
+
 #pragma endregion
 
 #pragma region From Binary
 //////////////////// From Binary ////////////////////
-std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(void* data, size_t len, size_t& endOffset, bool isLittleEndian)
+std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEndian)
 {
     void* vtbl;
     if (isLittleEndian)
@@ -331,10 +341,10 @@ std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(void* data, size_t len, 
     else
         vtbl = dlsym("??_7BigEndianStringByteInput@@6B@");
 
-    uintptr_t iDataInput[4] = {(uintptr_t)vtbl, endOffset, len, (uintptr_t)data};
+    uintptr_t iDataInput[4] = {(uintptr_t)vtbl, offset, len, (uintptr_t)data};
     auto rtn = NbtIo::read((IDataInput&)iDataInput);
 
-    endOffset = iDataInput[1];
+    offset = iDataInput[1];
     return rtn;
 }
 
@@ -344,9 +354,9 @@ std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(void* data, size_t len, 
     return fromBinaryNBT(data, len, endOffset, isLittleEndian);
 }
 
-std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(std::string const& data, size_t& endOffset, bool isLittleEndian)
+std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(std::string const& data, size_t& offset, bool isLittleEndian)
 {
-    return fromBinaryNBT((void*)data.c_str(), data.size(), endOffset, isLittleEndian);
+    return fromBinaryNBT((void*)data.c_str(), data.size(), offset, isLittleEndian);
 }
 
 std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(std::string const& data, bool isLittleEndian)
@@ -355,26 +365,61 @@ std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(std::string const& data,
     return fromBinaryNBT(data, endOffset, isLittleEndian);
 }
 
+std::vector<std::unique_ptr<CompoundTag>> CompoundTag::nbtListFromBinary(std::string const& data, bool isLittleEndian)
+{
+    std::vector<std::unique_ptr<CompoundTag>> rtn;
+    size_t endOffset = 0;
+    while (endOffset < data.size())
+    {
+        auto tmp = CompoundTag::fromBinaryNBT(data, endOffset, isLittleEndian);
+        if (tmp)
+            rtn.push_back(std::move(tmp));
+    }
+    return rtn;
+}
+
 #pragma endregion
 
 #pragma region To Network NBT
-#include <MC/BinaryStream.hpp>
+
 //////////////////// To Network ////////////////////
+#include <MC/BinaryStream.hpp>
 std::string CompoundTag::toNetworkNBT() const
 {
     BinaryStream bs;
     bs.writeCompoundTag(*this);
     return bs.getAndReleaseData();
 }
+
+std::string CompoundTag::nbtListToNetwork(std::vector<std::unique_ptr<CompoundTag>> tags)
+{
+    BinaryStream bs;
+    for (auto& tag : tags)
+        bs.writeCompoundTag(*tag);
+    return bs.getAndReleaseData();
+}
+
 #pragma endregion
 
 #pragma region From Network NBT
+
 //////////////////// From Network ////////////////////
 std::unique_ptr<CompoundTag> CompoundTag::fromNetworkNBT(std::string const& data)
 {
     ReadOnlyBinaryStream bs(data, false);
     return bs.getCompoundTag();
 }
+std::vector<std::unique_ptr<CompoundTag>> CompoundTag::nbtListFromNetwork(std::string const& data)
+{
+    std::vector<std::unique_ptr<CompoundTag>> rtn;
+    ReadOnlyBinaryStream bs(data, false);
+    while (bs.getUnreadLength())
+    {
+        rtn.emplace_back(bs.getCompoundTag());
+    }
+    return rtn;
+}
+
 #pragma endregion
 
 #pragma region To SNBT

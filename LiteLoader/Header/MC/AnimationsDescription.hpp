@@ -22,22 +22,16 @@ public:
     AnimationsDescription(class AnimationsDescription const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~AnimationsDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
-    /*
-    inline  ~AnimationsDescription(){
-         (AnimationsDescription::*rv)();
-        *((void**)&rv) = dlsym("??1AnimationsDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATIONSDESCRIPTION
+public:
+#endif
     MCAPI AnimationsDescription();
 
-protected:
-
-private:
 
 };

@@ -21,14 +21,15 @@ public:
     WaitTicksNode(class WaitTicksNode const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~WaitTicksNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
     /*2*/ virtual void initializeFromDefinition(class Actor &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WAITTICKSNODE
+public:
+#endif
     MCAPI WaitTicksNode();
 
-protected:
-
-private:
 
 };

@@ -21,15 +21,16 @@ public:
     AtomicTimeAccumulator(class AtomicTimeAccumulator const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATOMICTIMEACCUMULATOR
+public:
+#endif
     MCAPI AtomicTimeAccumulator();
     MCAPI void addTime(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const &);
     MCAPI unsigned __int64 getCount() const;
     MCAPI float getTimeSumAverageSeconds() const;
     MCAPI void reset();
 
-protected:
-
-private:
 
 };

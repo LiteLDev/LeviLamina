@@ -22,6 +22,7 @@ public:
     StructureFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StructureFeature();
     /*1*/ virtual bool shouldAddHardcodedSpawnAreas() const;
@@ -31,13 +32,9 @@ public:
     /*5*/ virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &) = 0;
     /*6*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &) = 0;
     /*7*/ virtual class StructureStart * getStructureAt(int, int, int);
-    /*
-    inline  ~StructureFeature(){
-         (StructureFeature::*rv)();
-        *((void**)&rv) = dlsym("??1StructureFeature@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREFEATURE
+public:
+#endif
     MCAPI StructureFeature(unsigned int, enum StructureFeatureType);
     MCAPI void addHardcodedSpawnAreas(class LevelChunk &);
     MCAPI class BlockPos chunkStartAtSurfaceLevel(class IPreliminarySurfaceProvider const &, class ChunkPos, int);
@@ -55,9 +52,10 @@ public:
     MCAPI static class ChunkPos getChunkPosInSpace(class ChunkPos const &, class Random &, unsigned int, int, int, int, bool);
     MCAPI static void setRandomSeedFor(class Random &, int, int, int, unsigned int);
 
-protected:
+//protected:
     MCAPI void addFeature(class Dimension &, class Random &, class ChunkPos const &, class BiomeSource const &, class IPreliminarySurfaceProvider const &);
 
-private:
+protected:
+
 
 };

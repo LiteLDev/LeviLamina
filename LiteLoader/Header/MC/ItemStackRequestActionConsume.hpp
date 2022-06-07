@@ -22,15 +22,16 @@ public:
     ItemStackRequestActionConsume(class ItemStackRequestActionConsume const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemStackRequestActionConsume();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCONSUME
+public:
+#endif
     MCAPI ItemStackRequestActionConsume();
 
-protected:
-
-private:
 
 };

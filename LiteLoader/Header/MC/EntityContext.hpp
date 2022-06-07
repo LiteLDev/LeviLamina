@@ -22,13 +22,18 @@ public:
     EntityContext() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCONTEXT
+public:
+#endif
     MCAPI EntityContext(class EntityRegistry &, class EntityId);
     MCAPI class WeakRefT<struct EntityRefTraits> getWeakRef() const;
 
-protected:
+//protected:
     MCAPI class EntityRegistry & _registry() const;
 
-private:
+protected:
+
 
 };

@@ -22,6 +22,7 @@ public:
     ReceiveLoveGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ReceiveLoveGoal();
     /*1*/ virtual void __unk_vfn_1();
@@ -31,22 +32,12 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-    /*
-    inline bool canUse(){
-        bool (ReceiveLoveGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@ReceiveLoveGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canContinueToUse(){
-        bool (ReceiveLoveGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@ReceiveLoveGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECEIVELOVEGOAL
+public:
+    MCVAPI bool canContinueToUse();
+    MCVAPI bool canUse();
+#endif
     MCAPI ReceiveLoveGoal(class VillagerBase &);
 
-protected:
-
-private:
 
 };

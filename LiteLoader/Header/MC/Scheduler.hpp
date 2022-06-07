@@ -22,8 +22,11 @@ public:
     Scheduler() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~Scheduler();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCHEDULER
+public:
+#endif
     MCAPI Scheduler(std::string, unsigned int);
     MCAPI void changeThread(class std::thread::id);
     MCAPI class WorkerPool & getCoroutinePool();
@@ -32,8 +35,5 @@ public:
     MCAPI void setTargetFPS(unsigned int);
     MCAPI static float const AVERAGE_TASK_TOLERANCE;
 
-protected:
-
-private:
 
 };

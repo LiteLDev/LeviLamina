@@ -22,6 +22,7 @@ public:
     RamAttackGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RamAttackGoal();
     /*1*/ virtual bool canUse();
@@ -31,15 +32,23 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAMATTACKGOAL
+public:
+#endif
     MCAPI RamAttackGoal(class Mob &);
 
-protected:
+//protected:
     MCAPI bool _initiateRamAttack();
 
-private:
+//private:
     MCAPI bool _hasChargePath();
     MCAPI bool _pathablePos(class BlockSource const &, class BlockPos);
     MCAPI void _resetCooldown();
     MCAPI void _tryKnockbackTarget();
+
+protected:
+
+private:
+
 
 };

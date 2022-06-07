@@ -22,21 +22,15 @@ public:
     CommandOriginLoader() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CommandOriginLoader();
     /*1*/ virtual std::unique_ptr<class CommandOrigin> load(class CompoundTag const &);
-    /*
-    inline  ~CommandOriginLoader(){
-         (CommandOriginLoader::*rv)();
-        *((void**)&rv) = dlsym("??1CommandOriginLoader@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDORIGINLOADER
+public:
+#endif
     MCAPI CommandOriginLoader(class ServerLevel &);
     MCAPI static std::unique_ptr<class CommandOrigin> load(class CompoundTag const &, class ServerLevel &);
 
-protected:
-
-private:
 
 };

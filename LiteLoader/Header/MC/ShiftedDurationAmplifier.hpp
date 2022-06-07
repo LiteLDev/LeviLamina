@@ -22,15 +22,16 @@ public:
     ShiftedDurationAmplifier() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ShiftedDurationAmplifier();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual bool shouldBuff(int, int) const;
     /*3*/ virtual int getTickInterval(int) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIFTEDDURATIONAMPLIFIER
+public:
+#endif
     MCAPI ShiftedDurationAmplifier(int);
 
-protected:
-
-private:
 
 };

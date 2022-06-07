@@ -20,11 +20,12 @@ public:
     PlayerRespawnEvent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERRESPAWNEVENT
+public:
+#endif
     MCAPI ~PlayerRespawnEvent();
 
-protected:
-
-private:
 
 };

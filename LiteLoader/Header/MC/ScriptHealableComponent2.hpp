@@ -23,23 +23,17 @@ public:
     ScriptHealableComponent2() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptHealableComponent2();
-    /*
-    inline  ~ScriptHealableComponent2(){
-         (ScriptHealableComponent2::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptHealableComponent2@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTHEALABLECOMPONENT2
+public:
+#endif
     MCAPI ScriptHealableComponent2(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class Scripting::Result<class ActorFilterGroup> getFilters() const;
     MCAPI class Scripting::Result<bool> getForceUse() const;
     MCAPI class Scripting::Result<std::vector<struct FeedItem>> getItems() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptHealableComponent2> bind(struct Scripting::Version);
 
-protected:
-
-private:
 
 };

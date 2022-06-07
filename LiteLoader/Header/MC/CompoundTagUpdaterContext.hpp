@@ -21,15 +21,20 @@ public:
     CompoundTagUpdaterContext(class CompoundTagUpdaterContext const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAGUPDATERCONTEXT
+public:
+#endif
     MCAPI CompoundTagUpdaterContext();
     MCAPI class CompoundTagUpdaterBuilder addUpdater(unsigned char, unsigned char, unsigned char);
     MCAPI void sortUpdaters();
     MCAPI enum CompoundTagUpdaterResult update(class CompoundTag &, unsigned int);
 
-protected:
+//private:
+    MCAPI static bool comparisonPredicate(std::unique_ptr<class CompoundTagUpdater> const &, std::unique_ptr<class CompoundTagUpdater> const &);
 
 private:
-    MCAPI static bool comparisonPredicate(std::unique_ptr<class CompoundTagUpdater> const &, std::unique_ptr<class CompoundTagUpdater> const &);
+
 
 };

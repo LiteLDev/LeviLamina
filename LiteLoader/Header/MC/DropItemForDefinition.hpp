@@ -22,14 +22,14 @@ public:
     DropItemForDefinition(class DropItemForDefinition const &) = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~DropItemForDefinition();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DROPITEMFORDEFINITION
+public:
+#endif
     MCAPI DropItemForDefinition();
     MCAPI void initialize(class EntityContext &, class DropItemForGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DropItemForDefinition>> &);
 
-protected:
-
-private:
 
 };

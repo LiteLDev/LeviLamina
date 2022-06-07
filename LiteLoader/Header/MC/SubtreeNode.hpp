@@ -21,14 +21,15 @@ public:
     SubtreeNode(class SubtreeNode const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SubtreeNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
     /*2*/ virtual void initializeFromDefinition(class Actor &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBTREENODE
+public:
+#endif
     MCAPI SubtreeNode();
 
-protected:
-
-private:
 
 };

@@ -23,14 +23,17 @@ public:
     OwnerHurtTargetGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~OwnerHurtTargetGoal();
     /*1*/ virtual bool canUse();
     /*4*/ virtual void start();
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OWNERHURTTARGETGOAL
+public:
+#endif
     MCAPI OwnerHurtTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &);
 
-protected:
-
-private:
 
 };

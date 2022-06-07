@@ -21,23 +21,21 @@ public:
     DebugAssertException() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DebugAssertException();
     /*1*/ virtual char const * what() const;
-    /*
-    inline  ~DebugAssertException(){
-         (DebugAssertException::*rv)();
-        *((void**)&rv) = dlsym("??1DebugAssertException@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEBUGASSERTEXCEPTION
+public:
+#endif
     MCAPI DebugAssertException(class DebugAssertException const &);
     MCAPI DebugAssertException(char const *, char const *, char const *, int, char const *, char const *);
     MCAPI static bool isEnabled();
 
-protected:
+//private:
 
 private:
     MCAPI static char const *const WHAT;
+
 
 };

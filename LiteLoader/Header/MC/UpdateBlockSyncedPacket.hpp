@@ -22,24 +22,18 @@ public:
     UpdateBlockSyncedPacket(class UpdateBlockSyncedPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~UpdateBlockSyncedPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~UpdateBlockSyncedPacket(){
-         (UpdateBlockSyncedPacket::*rv)();
-        *((void**)&rv) = dlsym("??1UpdateBlockSyncedPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEBLOCKSYNCEDPACKET
+public:
+#endif
     MCAPI UpdateBlockSyncedPacket(class BlockPos const &, unsigned int, unsigned int, unsigned char, struct ActorBlockSyncMessage const &);
     MCAPI UpdateBlockSyncedPacket();
 
-protected:
-
-private:
 
 };

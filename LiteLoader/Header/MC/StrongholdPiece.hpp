@@ -24,14 +24,12 @@ public:
     StrongholdPiece() = delete;
 #endif
 
+
 public:
-    /*
-    inline  ~StrongholdPiece(){
-         (StrongholdPiece::*rv)();
-        *((void**)&rv) = dlsym("??1StrongholdPiece@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRONGHOLDPIECE
+public:
+    MCVAPI ~StrongholdPiece();
+#endif
     MCAPI std::unique_ptr<class StructurePiece> findAndCreatePieceFactory(std::string const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
     MCAPI class StructurePiece * generateAndAddPiece(class SHStartPiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
     MCAPI std::unique_ptr<class StructurePiece> generatePieceFromSmallDoor(class SHStartPiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random const &, int, int, int, int, int);
@@ -40,8 +38,5 @@ public:
     MCAPI class StructurePiece * generateSmallDoorChildLeft(class SHStartPiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int);
     MCAPI class StructurePiece * generateSmallDoorChildRight(class SHStartPiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int);
 
-protected:
-
-private:
 
 };

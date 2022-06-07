@@ -22,22 +22,16 @@ public:
     ProjectileDescription(class ProjectileDescription const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~ProjectileDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
-    /*
-    inline  ~ProjectileDescription(){
-         (ProjectileDescription::*rv)();
-        *((void**)&rv) = dlsym("??1ProjectileDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROJECTILEDESCRIPTION
+public:
+#endif
     MCAPI ProjectileDescription();
 
-protected:
-
-private:
 
 };

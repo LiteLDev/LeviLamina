@@ -3,13 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Core.hpp"
+#include "TransactionalWorldBlockTarget.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class InMemoryEnv {
+class InMemoryEnv : public TransactionalWorldBlockTarget {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -23,33 +24,27 @@ public:
     InMemoryEnv() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~InMemoryEnv();
     /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
     /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
-    /*3*/ virtual class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
-    /*4*/ virtual class leveldb::Status NewAppendableFile(std::string const &, class leveldb::WritableFile **);
-    /*5*/ virtual bool FileExists(std::string const &);
-    /*6*/ virtual class leveldb::Status GetChildren(std::string const &, std::vector<std::string> *);
-    /*7*/ virtual class leveldb::Status DeleteFileA(std::string const &);
-    /*8*/ virtual void __unk_vfn_8();
-    /*9*/ virtual void __unk_vfn_9();
-    /*10*/ virtual void __unk_vfn_10();
-    /*11*/ virtual class leveldb::Status RenameFile(std::string const &, std::string const &);
-    /*12*/ virtual void __unk_vfn_12();
-    /*13*/ virtual void __unk_vfn_13();
-    /*14*/ virtual void __unk_vfn_14();
-    /*15*/ virtual void __unk_vfn_15();
-    /*16*/ virtual void __unk_vfn_16();
-    /*17*/ virtual void __unk_vfn_17();
-    /*18*/ virtual void __unk_vfn_18();
-    /*19*/ virtual void __unk_vfn_19();
-    /*20*/ virtual void flushToPermanentStorage();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INMEMORYENV
+public:
+    MCVAPI class leveldb::Status DeleteFileA(std::string const &);
+    MCVAPI bool FileExists(std::string const &);
+    MCVAPI class leveldb::Status GetChildren(std::string const &, std::vector<std::string> *);
+    MCVAPI class leveldb::Status NewAppendableFile(std::string const &, class leveldb::WritableFile **);
+    MCVAPI class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
+    MCVAPI class leveldb::Status RenameFile(std::string const &, std::string const &);
+    MCVAPI void flushToPermanentStorage();
+#endif
     MCAPI InMemoryEnv(class leveldb::Env *, class Core::Path const &);
 
-protected:
+//private:
+    MCAPI void _flushWithTransaction();
 
 private:
-    MCAPI void _flushWithTransaction();
+
 
 };

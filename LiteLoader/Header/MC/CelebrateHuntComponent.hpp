@@ -22,7 +22,11 @@ public:
     CelebrateHuntComponent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CELEBRATEHUNTCOMPONENT
+public:
+#endif
     MCAPI enum LevelSoundEvent const getCelebrateSound(class Mob const &) const;
     MCAPI struct Tick const getCelebrateUntil() const;
     MCAPI struct Tick const getNextSoundEventTick() const;
@@ -31,8 +35,5 @@ public:
     MCAPI void startCelebrating(struct Tick const &);
     MCAPI void stopCelebrating();
 
-protected:
-
-private:
 
 };

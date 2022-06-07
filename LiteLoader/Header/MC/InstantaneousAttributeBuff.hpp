@@ -23,22 +23,16 @@ public:
     InstantaneousAttributeBuff() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~InstantaneousAttributeBuff();
     /*1*/ virtual bool isInstantaneous() const;
     /*2*/ virtual bool isSerializable() const;
-    /*
-    inline  ~InstantaneousAttributeBuff(){
-         (InstantaneousAttributeBuff::*rv)();
-        *((void**)&rv) = dlsym("??1InstantaneousAttributeBuff@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSTANTANEOUSATTRIBUTEBUFF
+public:
+#endif
     MCAPI InstantaneousAttributeBuff(float, class ActorDamageSource const &);
     MCAPI InstantaneousAttributeBuff(float, enum AttributeBuffType);
 
-protected:
-
-private:
 
 };

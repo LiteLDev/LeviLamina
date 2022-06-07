@@ -20,36 +20,26 @@ public:
     GetCollisionShapeActorProxy() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GetCollisionShapeActorProxy();
-    /*1*/ virtual float getFeetAttachPosY() const;
-    /*2*/ virtual bool canDecendThroughBlock() const;
+    /*1*/ virtual bool readBytes(void *, unsigned __int64);
+    /*2*/ virtual class Block const & getBlock(class BlockPos const &) const;
     /*3*/ virtual float getFallDistance() const;
-    /*4*/ virtual enum ActorType getEntityTypeId() const;
-    /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual bool hasLightWeightFamilyTag() const;
+    /*4*/ virtual bool hasPassenger() const;
+    /*5*/ virtual bool isWearingLeatherBoots() const;
+    /*6*/ virtual class Block const & getExtraBlock(class BlockPos const &) const;
     /*7*/ virtual class AABB const & getAABB() const;
-    /*
-    inline bool hasPassenger() const{
-        bool (GetCollisionShapeActorProxy::*rv)() const;
-        *((void**)&rv) = dlsym("?hasPassenger@GetCollisionShapeActorProxy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isRiding() const{
-        bool (GetCollisionShapeActorProxy::*rv)() const;
-        *((void**)&rv) = dlsym("?isRiding@GetCollisionShapeActorProxy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isWearingLeatherBoots() const{
-        bool (GetCollisionShapeActorProxy::*rv)() const;
-        *((void**)&rv) = dlsym("?isWearingLeatherBoots@GetCollisionShapeActorProxy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+    /*8*/ virtual bool hasBiomeTag(unsigned __int64, class BlockPos const &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GETCOLLISIONSHAPEACTORPROXY
+public:
+    MCVAPI bool canDecendThroughBlock() const;
+    MCVAPI enum ActorType getEntityTypeId() const;
+    MCVAPI float getFeetAttachPosY() const;
+    MCVAPI bool hasLightWeightFamilyTag() const;
+    MCVAPI bool isRiding() const;
+#endif
     MCAPI GetCollisionShapeActorProxy(struct IActorMovementProxy const &);
 
-protected:
-
-private:
 
 };

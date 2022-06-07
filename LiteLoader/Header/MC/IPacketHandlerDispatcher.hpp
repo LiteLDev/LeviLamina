@@ -22,11 +22,11 @@ public:
     IPacketHandlerDispatcher() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~IPacketHandlerDispatcher();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IPACKETHANDLERDISPATCHER
+public:
+#endif
 
-protected:
-
-private:
 
 };

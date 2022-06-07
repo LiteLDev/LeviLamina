@@ -100,7 +100,7 @@ FileClass* FileClass::constructor(const Arguments& args)
         CreateDirs(path);
 
         FileOpenMode fMode = (FileOpenMode)(args[1].toInt());
-        //Auto Create
+        // Auto Create
         if (fMode == FileOpenMode::ReadMode || fMode == FileOpenMode::WriteMode)
         {
             fstream tmp(path, ios_base::app);
@@ -109,12 +109,16 @@ FileClass* FileClass::constructor(const Arguments& args)
         }
 
         ios_base::openmode mode = ios_base::in;
-        if(fMode == FileOpenMode::WriteMode)
+        if (fMode == FileOpenMode::WriteMode)
         {
             mode |= ios_base::out;
+            //mode |= ios_base::ate;
+            mode |= ios_base::trunc;
         }
         else if (fMode == FileOpenMode::AppendMode)
+        {
             mode |= ios_base::app;
+        }
 
         bool isBinary = false;
         if (args.size() >= 3 && args[2].asBoolean().value())
@@ -126,14 +130,14 @@ FileClass* FileClass::constructor(const Arguments& args)
         fstream fs(path, mode);
         if (!fs.is_open())
         {
-            logger.error("Fail to Open File " + path + "!\n");
+            LOG_ERROR_WITH_SCRIPT_INFO("Fail to Open File " + path + "!\n");
             return nullptr;
         }
         return new FileClass(args.thiz(), std::move(fs), path, isBinary);
     }
     catch (const filesystem_error& e)
     {
-        logger.error("Fail to Open File " + args[0].asString().toString() + "!\n");
+        LOG_ERROR_WITH_SCRIPT_INFO("Fail to Open File " + args[0].asString().toString() + "!\n");
         return nullptr;
     }
     CATCH_C("Fail in OpenFile!");
@@ -181,7 +185,7 @@ Local<Value> FileClass::readSync(const Arguments& args)
         size_t bytes = file.gcount();
 
         Local<Value> res = isBinary ? ByteBuffer::newByteBuffer(buf, bytes).asValue() : String::newString(string_view(buf,bytes)).asValue();
-        delete buf;
+        delete[] buf;
         return res;
     }
     CATCH("Fail in readSync!");
@@ -221,7 +225,7 @@ Local<Value> FileClass::writeSync(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong type of argument in writeSync!");
+            LOG_WRONG_ARG_TYPE();
             return Local<Value>();
         }
         return Boolean::newBoolean(!file.fail() && !file.bad());
@@ -269,16 +273,11 @@ Local<Value> FileClass::read(const Arguments& args)
             try
             {
                 Local<Value> res = isBinary ? ByteBuffer::newByteBuffer(buf, bytes).asValue() : String::newString(string_view(buf, bytes)).asValue();
-                delete buf;
+                delete[] buf;
                 // dangerous
                 NewTimeout(callback.get(), { res }, 1);
             }
-            catch (const Exception& e)
-            {
-                logger.error("FileRead Callback Failed!");
-                logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                logger.error << e << logger.endl;
-            }
+            CATCH_IN_CALLBACK("ReadFile")
         });
         return Boolean::newBoolean(true);
     }
@@ -311,12 +310,7 @@ Local<Value> FileClass::readLine(const Arguments& args)
             {
                 NewTimeout(callback.get(), { String::newString(buf) }, 1);
             }
-            catch (const Exception& e)
-            {
-                logger.error("FileReadLine Callback Failed!");
-                logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                logger.error << e << logger.endl;
-            }
+            CATCH_IN_CALLBACK("FileReadLine")
         });
         return Boolean::newBoolean(true);
     }
@@ -349,12 +343,7 @@ Local<Value> FileClass::readAll(const Arguments& args)
                 Local<Value> readed = isBinary ? ByteBuffer::newByteBuffer(res.data(), res.size()).asValue() : String::newString(res).asValue();
                 NewTimeout(callback.get(), { readed }, 1);
             }
-            catch (const Exception& e)
-            {
-                logger.error("FileReadAll Callback Failed!");
-                logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                logger.error << e << logger.endl;
-            }
+            CATCH_IN_CALLBACK("FileReadAll")
         });
         return Boolean::newBoolean(true);
     }
@@ -381,7 +370,7 @@ Local<Value> FileClass::write(const Arguments& args)
         }
         else
         {
-            logger.error("Wrong type of argument in write!");
+            LOG_WRONG_ARG_TYPE();
             return Local<Value>();
         }
 
@@ -412,12 +401,7 @@ Local<Value> FileClass::write(const Arguments& args)
                 {
                     NewTimeout(callback.get(), { Boolean::newBoolean(isOk) }, 1);
                 }
-                catch (const Exception& e)
-                {
-                    logger.error("FileWrite Callback Failed!");
-                    logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                    logger.error << e << logger.endl;
-                }
+                CATCH_IN_CALLBACK("WriteFile")
             }
         });
         return Boolean::newBoolean(true);
@@ -459,12 +443,7 @@ Local<Value> FileClass::writeLine(const Arguments& args)
                 {
                     NewTimeout(callback.get(), { Boolean::newBoolean(isOk) }, 1);
                 }
-                catch (const Exception& e)
-                {
-                    logger.error("FileWriteLine Callback Failed!");
-                    logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-                    logger.error << e << logger.endl;
-                }
+                CATCH_IN_CALLBACK("FileWriteLine")
             }
         });
         return Boolean::newBoolean(true);
@@ -577,12 +556,11 @@ Local<Value> DirCreate(const Arguments& args)
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
     try{
-        CreateDirs(args[0].toStr());
-        return Boolean::newBoolean(true);
+        return Boolean::newBoolean(CreateDirs(args[0].toStr()));
     }
     catch(const filesystem_error& e)
     {
-        logger.error("Fail to Create Dir "+ args[0].asString().toString() +"!\n");
+        LOG_ERROR_WITH_SCRIPT_INFO("Fail to Create Dir "+ args[0].asString().toString() +"!\n");
         return Boolean::newBoolean(false);
     }
     CATCH("Fail in CreateDir!");
@@ -594,12 +572,11 @@ Local<Value> PathDelete(const Arguments& args)
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
     try{
-        remove_all(args[0].asString().toString());
-        return Boolean::newBoolean(true);
+        return Boolean::newBoolean(remove_all(args[0].asString().toString()) > 0);
     }
     catch(const filesystem_error& e)
     {
-        logger.error("Fail to Delete "+ args[0].asString().toString() +"!\n");
+        LOG_ERROR_WITH_SCRIPT_INFO("Fail to Delete " + args[0].asString().toString() + "!\n");
         return Boolean::newBoolean(false);
     }
     CATCH("Fail in DeletePath!");
@@ -615,7 +592,7 @@ Local<Value> PathExists(const Arguments& args)
     }
     catch(const filesystem_error& e)
     {
-        logger.error("Fail to Check "+ args[0].asString().toString() +"!\n");
+        LOG_ERROR_WITH_SCRIPT_INFO("Fail to Check " + args[0].asString().toString() + "!\n");
         return Boolean::newBoolean(false);
     }
     CATCH("Fail in ExistsPath!");
@@ -633,7 +610,7 @@ Local<Value> PathCopy(const Arguments& args)
     }
     catch(const filesystem_error& e)
     {
-        logger.error("Fail to Copy "+ args[0].asString().toString() +"!\n");
+        LOG_ERROR_WITH_SCRIPT_INFO("Fail to Copy " + args[0].asString().toString() + "!\n");
         return Boolean::newBoolean(false);
     }
     CATCH("Fail in CopyPath!");
@@ -651,7 +628,7 @@ Local<Value> PathRename(const Arguments& args)
     }
     catch(const filesystem_error& e)
     {
-        logger.error("Fail to Rename "+ args[0].asString().toString() +"!\n");
+        LOG_ERROR_WITH_SCRIPT_INFO("Fail to Rename " + args[0].asString().toString() + "!\n");
         return Boolean::newBoolean(false);
     }
     CATCH("Fail in RenamePath!");
@@ -670,7 +647,7 @@ Local<Value> PathMove(const Arguments& args)
     }
     catch(const filesystem_error& e)
     {
-        logger.error("Fail to Move "+ args[0].asString().toString() +"!\n");
+        LOG_ERROR_WITH_SCRIPT_INFO("Fail to Move " + args[0].asString().toString() + "!\n");
         return Boolean::newBoolean(false);
     }
     CATCH("Fail in MovePath!");
@@ -690,7 +667,7 @@ Local<Value> CheckIsDir(const Arguments& args)
     }
     catch (const filesystem_error& e)
     {
-        logger.error("Fail to Get Type of " + args[0].asString().toString() + "!\n");
+        LOG_ERROR_WITH_SCRIPT_INFO("Fail to Get Type of " + args[0].asString().toString() + "!\n");
         return Local<Value>();
     }
     CATCH("Fail in GetFilesList!");
@@ -713,7 +690,7 @@ Local<Value> GetFileSize(const Arguments& args)
     }
     catch (const filesystem_error& e)
     {
-        logger.error("Fail to Get Size of " + args[0].asString().toString() + "!\n");
+        LOG_ERROR_WITH_SCRIPT_INFO("Fail to Get Size of " + args[0].asString().toString() + "!\n");
         return Local<Value>();
     }
     CATCH("Fail in GetFilesList!");
@@ -819,14 +796,14 @@ Local<Value> OpenFile(const Arguments& args)
         fstream fs(path, mode);
         if (!fs.is_open())
         {
-            logger.error("Fail to Open File " + path + "!\n");
+            LOG_ERROR_WITH_SCRIPT_INFO("Fail to Open File " + path + "!\n");
             return Local<Value>();
         }
         return FileClass::newFile(std::move(fs), path, isBinary);
     }
     catch (const filesystem_error& e)
     {
-        logger.error("Fail to Open File " + args[0].asString().toString() + "!\n");
+        LOG_ERROR_WITH_SCRIPT_INFO("Fail to Open File " + args[0].asString().toString() + "!\n");
         return Local<Value>();
     }
     CATCH("Fail in OpenFile!");

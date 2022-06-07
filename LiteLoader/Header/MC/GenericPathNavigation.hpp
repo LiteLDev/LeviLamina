@@ -23,6 +23,7 @@ public:
     GenericPathNavigation() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GenericPathNavigation();
     /*1*/ virtual void initializeInternal(class Mob &, struct NavigationDescription *);
@@ -30,9 +31,9 @@ public:
     /*3*/ virtual class Vec3 getTempMobPos(class Mob const &) const;
     /*9*/ virtual void stop(class NavigationComponent &, class Mob &);
     /*12*/ virtual void updatePath(class NavigationComponent &, class Mob &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENERICPATHNAVIGATION
+public:
+#endif
 
-protected:
-
-private:
 
 };

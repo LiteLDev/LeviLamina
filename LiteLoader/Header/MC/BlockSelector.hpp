@@ -22,11 +22,11 @@ public:
     BlockSelector() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~BlockSelector();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSELECTOR
+public:
+#endif
 
-protected:
-
-private:
 
 };

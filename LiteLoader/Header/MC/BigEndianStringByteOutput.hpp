@@ -21,6 +21,7 @@ public:
     BigEndianStringByteOutput() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BigEndianStringByteOutput();
     /*3*/ virtual void writeFloat(float);
@@ -28,16 +29,9 @@ public:
     /*6*/ virtual void writeShort(short);
     /*7*/ virtual void writeInt(int);
     /*8*/ virtual void writeLongLong(__int64);
-    /*
-    inline  ~BigEndianStringByteOutput(){
-         (BigEndianStringByteOutput::*rv)();
-        *((void**)&rv) = dlsym("??1BigEndianStringByteOutput@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIGENDIANSTRINGBYTEOUTPUT
+public:
+#endif
 
-protected:
-
-private:
 
 };

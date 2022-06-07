@@ -20,11 +20,12 @@ public:
     MaterialReducerDataEntry() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATERIALREDUCERDATAENTRY
+public:
+#endif
     MCAPI ~MaterialReducerDataEntry();
 
-protected:
-
-private:
 
 };

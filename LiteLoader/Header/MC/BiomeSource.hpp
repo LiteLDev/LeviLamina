@@ -20,11 +20,12 @@ public:
     BiomeSource() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMESOURCE
+public:
+#endif
     MCAPI static class BlockPosIterator getAreaIterator(class BoundingBox const &, unsigned int);
 
-protected:
-
-private:
 
 };

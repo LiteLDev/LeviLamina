@@ -23,18 +23,12 @@ public:
     ScriptColorComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptColorComponent();
-    /*
-    inline  ~ScriptColorComponent(){
-         (ScriptColorComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptColorComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCOLORCOMPONENT
+public:
+#endif
 
-protected:
-
-private:
 
 };

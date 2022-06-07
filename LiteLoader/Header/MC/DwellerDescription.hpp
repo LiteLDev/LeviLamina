@@ -23,21 +23,15 @@ public:
     DwellerDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~DwellerDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
-    /*
-    inline  ~DwellerDescription(){
-         (DwellerDescription::*rv)();
-        *((void**)&rv) = dlsym("??1DwellerDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DWELLERDESCRIPTION
+public:
+#endif
 
-protected:
-
-private:
 
 };

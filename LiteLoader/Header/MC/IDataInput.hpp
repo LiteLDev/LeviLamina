@@ -22,11 +22,11 @@ public:
     IDataInput() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~IDataInput();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDATAINPUT
+public:
+#endif
 
-protected:
-
-private:
 
 };

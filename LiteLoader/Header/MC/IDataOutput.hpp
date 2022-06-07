@@ -22,11 +22,11 @@ public:
     IDataOutput() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~IDataOutput();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDATAOUTPUT
+public:
+#endif
 
-protected:
-
-private:
 
 };

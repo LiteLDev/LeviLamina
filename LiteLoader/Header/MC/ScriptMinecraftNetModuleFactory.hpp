@@ -20,13 +20,18 @@ public:
     ScriptMinecraftNetModuleFactory() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMINECRAFTNETMODULEFACTORY
+public:
+#endif
     MCAPI static std::string getModuleUUIDAsString();
 
-protected:
+//private:
 
 private:
     MCAPI static char const * ModuleName;
     MCAPI static class mce::UUID const ModuleUUID;
+
 
 };

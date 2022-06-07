@@ -24,20 +24,14 @@ public:
     ActorInNetherTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorInNetherTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-    /*
-    inline  ~ActorInNetherTest(){
-         (ActorInNetherTest::*rv)();
-        *((void**)&rv) = dlsym("??1ActorInNetherTest@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINNETHERTEST
+public:
+#endif
 
-protected:
-
-private:
 
 };

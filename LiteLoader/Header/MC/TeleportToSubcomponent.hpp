@@ -21,28 +21,19 @@ public:
     TeleportToSubcomponent(class TeleportToSubcomponent const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TeleportToSubcomponent();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /*4*/ virtual char const * getName();
-    /*
-    inline void readfromJSON(class Json::Value & a0, class SemVersion const & a1){
-        void (TeleportToSubcomponent::*rv)(class Json::Value &, class SemVersion const &);
-        *((void**)&rv) = dlsym("?readfromJSON@TeleportToSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z");
-        return (this->*rv)(std::forward<class Json::Value &>(a0), std::forward<class SemVersion const &>(a1));
-    }
-    inline void writetoJSON(class Json::Value & a0) const{
-        void (TeleportToSubcomponent::*rv)(class Json::Value &) const;
-        *((void**)&rv) = dlsym("?writetoJSON@TeleportToSubcomponent@@UEBAXAEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value &>(a0));
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TELEPORTTOSUBCOMPONENT
+public:
+    MCVAPI void readfromJSON(class Json::Value &, class SemVersion const &);
+    MCVAPI void writetoJSON(class Json::Value &) const;
+#endif
     MCAPI TeleportToSubcomponent();
 
-protected:
-
-private:
 
 };

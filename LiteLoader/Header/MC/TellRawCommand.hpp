@@ -23,13 +23,14 @@ public:
     TellRawCommand() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TellRawCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TELLRAWCOMMAND
+public:
+#endif
     MCAPI static void setup(class CommandRegistry &);
 
-protected:
-
-private:
 
 };

@@ -22,6 +22,7 @@ public:
     ItemStackRequestActionTransferBase() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemStackRequestActionTransferBase();
     /*1*/ virtual void __unk_vfn_1();
@@ -29,19 +30,12 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void _write(class BinaryStream &) const;
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~ItemStackRequestActionTransferBase(){
-         (ItemStackRequestActionTransferBase::*rv)();
-        *((void**)&rv) = dlsym("??1ItemStackRequestActionTransferBase@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONTRANSFERBASE
+public:
+#endif
     MCAPI unsigned char getAmount() const;
     MCAPI struct ItemStackRequestSlotInfo const & getDst() const;
     MCAPI struct ItemStackRequestSlotInfo const & getSrc() const;
 
-protected:
-
-private:
 
 };

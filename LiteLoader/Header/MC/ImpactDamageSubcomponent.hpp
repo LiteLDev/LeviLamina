@@ -22,16 +22,17 @@ public:
     ImpactDamageSubcomponent(class ImpactDamageSubcomponent const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ImpactDamageSubcomponent();
     /*1*/ virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /*2*/ virtual void writetoJSON(class Json::Value &) const;
     /*3*/ virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /*4*/ virtual char const * getName();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMPACTDAMAGESUBCOMPONENT
+public:
+#endif
     MCAPI ImpactDamageSubcomponent();
 
-protected:
-
-private:
 
 };

@@ -22,15 +22,12 @@ public:
     ScriptBlockPistonComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptBlockPistonComponent();
-    /*
-    inline  ~ScriptBlockPistonComponent(){
-         (ScriptBlockPistonComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptBlockPistonComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKPISTONCOMPONENT
+public:
+#endif
     MCAPI ScriptBlockPistonComponent(class ScriptBlockPistonComponent const &);
     MCAPI ScriptBlockPistonComponent(class ScriptBlockPistonComponent &&);
     MCAPI class Scripting::Result<std::vector<class BlockPos>> getAttachedBlocks();
@@ -43,8 +40,5 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockPistonComponent> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockPistonComponent> tryCreate(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
 
-protected:
-
-private:
 
 };

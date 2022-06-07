@@ -23,6 +23,7 @@ public:
     FurnaceContainerManagerModel() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FurnaceContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
@@ -32,20 +33,21 @@ public:
     /*10*/ virtual void broadcastChanges();
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
-    /*
-    inline  ~FurnaceContainerManagerModel(){
-         (FurnaceContainerManagerModel::*rv)();
-        *((void**)&rv) = dlsym("??1FurnaceContainerManagerModel@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACECONTAINERMANAGERMODEL
+public:
+#endif
     MCAPI FurnaceContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
-protected:
+//protected:
     MCAPI FurnaceContainerManagerModel(class HashedString const &, enum ContainerType, enum BlockActorType, enum ContainerID, class Player &, class BlockPos const &);
 
-private:
+//private:
     MCAPI class FurnaceBlockActor * _getFurnaceEntity();
     MCAPI void _updateResultSlotInfo();
+
+protected:
+
+private:
+
 
 };

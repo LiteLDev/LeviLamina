@@ -21,7 +21,11 @@ public:
     PathfinderNode() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PATHFINDERNODE
+public:
+#endif
     MCAPI PathfinderNode(class PathfinderNode const &);
     MCAPI PathfinderNode(class BlockPos const &, enum NodeType);
     MCAPI float distanceTo(class PathfinderNode *) const;
@@ -33,8 +37,5 @@ public:
     MCAPI void setCostMalus(float);
     MCAPI void setMoveMalus(float);
 
-protected:
-
-private:
 
 };

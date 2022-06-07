@@ -23,21 +23,15 @@ public:
     ScriptMovementSwayComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptMovementSwayComponent();
-    /*
-    inline  ~ScriptMovementSwayComponent(){
-         (ScriptMovementSwayComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptMovementSwayComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMOVEMENTSWAYCOMPONENT
+public:
+#endif
     MCAPI class Scripting::Result<float> getSwayAmplitude() const;
     MCAPI class Scripting::Result<float> getSwayFrequency() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMovementSwayComponent> bind(struct Scripting::Version);
 
-protected:
-
-private:
 
 };

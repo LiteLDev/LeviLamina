@@ -22,6 +22,7 @@ public:
     MoveInput() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MoveInput();
     /*1*/ virtual void tick(struct IPlayerMovementProxy &);
@@ -37,26 +38,12 @@ public:
     /*11*/ virtual bool isPlayerMoving() const;
     /*12*/ virtual class Vec3 const & getGazeDirection() const;
     /*13*/ virtual struct MoveInputComponent extractInputComponent() const;
-    /*
-    inline void clearMovementState(){
-        void (MoveInput::*rv)();
-        *((void**)&rv) = dlsym("?clearMovementState@MoveInput@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void setKey(int a0, bool a1){
-        void (MoveInput::*rv)(int, bool);
-        *((void**)&rv) = dlsym("?setKey@MoveInput@@UEAAXH_N@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<bool>(a1));
-    }
-    inline void render(float a0){
-        void (MoveInput::*rv)(float);
-        *((void**)&rv) = dlsym("?render@MoveInput@@UEAAXM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEINPUT
+public:
+    MCVAPI void clearMovementState();
+    MCVAPI void render(float);
+    MCVAPI void setKey(int, bool);
+#endif
 
-protected:
-
-private:
 
 };

@@ -25,6 +25,7 @@ public:
     ActorDamageSource() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorDamageSource();
     /*1*/ virtual bool isEntitySource() const;
@@ -37,8 +38,8 @@ public:
     /*8*/ virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor *) const;
     /*9*/ virtual bool getIsCreative() const;
     /*10*/ virtual bool getIsWorldBuilder() const;
-    /*11*/ virtual void __unk_vfn_11();
-    /*12*/ virtual void __unk_vfn_12();
+    /*11*/ virtual struct ActorUniqueID getEntityUniqueID() const;
+    /*12*/ virtual enum ActorType getEntityType() const;
     /*13*/ virtual enum ActorCategory getEntityCategories() const;
     /*14*/ virtual bool getDamagingEntityIsCreative() const;
     /*15*/ virtual bool getDamagingEntityIsWorldBuilder() const;
@@ -46,18 +47,9 @@ public:
     /*17*/ virtual enum ActorType getDamagingEntityType() const;
     /*18*/ virtual enum ActorCategory getDamagingEntityCategories() const;
     /*19*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
-    /*
-    inline enum ActorType getEntityType() const{
-        enum ActorType (ActorDamageSource::*rv)() const;
-        *((void**)&rv) = dlsym("?getEntityType@ActorDamageSource@@UEBA?AW4ActorType@@XZ");
-        return (this->*rv)();
-    }
-    inline struct ActorUniqueID getEntityUniqueID() const{
-        struct ActorUniqueID (ActorDamageSource::*rv)() const;
-        *((void**)&rv) = dlsym("?getEntityUniqueID@ActorDamageSource@@UEBA?AUActorUniqueID@@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDAMAGESOURCE
+public:
+#endif
     MCAPI ActorDamageSource(enum ActorDamageCause);
     MCAPI enum ActorDamageCause getCause() const;
     MCAPI void setCause(enum ActorDamageCause);
@@ -65,8 +57,5 @@ public:
     MCAPI static enum ActorDamageCause lookupCause(std::string const &);
     MCAPI static std::string const & lookupCauseName(enum ActorDamageCause);
 
-protected:
-
-private:
 
 };

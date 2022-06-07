@@ -22,7 +22,11 @@ public:
     BlockPatternBuilder() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPATTERNBUILDER
+public:
+#endif
     MCAPI class BlockPatternBuilder & aisle(int, ...);
     MCAPI class BlockPatternBuilder & build();
     MCAPI class BlockPatternBuilder & define(char, class Block const &);
@@ -34,9 +38,10 @@ public:
     MCAPI void replaceBlocks(char, struct BuildMatch, class Block const &);
     MCAPI static std::unique_ptr<class BlockPatternBuilder> start(class BlockSource &);
 
-protected:
+//private:
+    MCAPI bool _fitsBlockPatternEntry(int, int, class BlockPos const &, class Block const &);
 
 private:
-    MCAPI bool _fitsBlockPatternEntry(int, int, class BlockPos const &, class Block const &);
+
 
 };

@@ -24,20 +24,14 @@ public:
     ActorHasComponentTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorHasComponentTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-    /*
-    inline  ~ActorHasComponentTest(){
-         (ActorHasComponentTest::*rv)();
-        *((void**)&rv) = dlsym("??1ActorHasComponentTest@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORHASCOMPONENTTEST
+public:
+#endif
 
-protected:
-
-private:
 
 };

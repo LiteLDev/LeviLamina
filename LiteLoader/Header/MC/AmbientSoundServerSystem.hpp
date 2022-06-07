@@ -20,14 +20,19 @@ public:
     AmbientSoundServerSystem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AmbientSoundServerSystem();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void tick(class EntityRegistry &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMBIENTSOUNDSERVERSYSTEM
+public:
+#endif
 
-protected:
+//private:
+    MCAPI static void _tickAmbientSoundComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class AmbientSoundServerComponent> &);
 
 private:
-    MCAPI static void _tickAmbientSoundComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class AmbientSoundServerComponent> &);
+
 
 };

@@ -22,13 +22,14 @@ public:
     ParticlesBlockExplosionEvent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARTICLESBLOCKEXPLOSIONEVENT
+public:
+#endif
     MCAPI void addExplodePosition(class Vec3 const &);
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     MCAPI ~ParticlesBlockExplosionEvent();
 
-protected:
-
-private:
 
 };

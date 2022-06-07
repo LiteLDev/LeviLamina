@@ -35,6 +35,7 @@ public:
     MerchantRecipeList(class MerchantRecipeList const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MerchantRecipeList();
     /*1*/ virtual class MerchantRecipe * getRecipeFor(class ItemInstance const &, class ItemInstance const &, int);
@@ -43,14 +44,14 @@ public:
     /*4*/ virtual class MerchantRecipe * getMatchingRecipeFor(class MerchantRecipe const &);
     /*5*/ virtual void load(class CompoundTag const &);
     /*6*/ virtual std::unique_ptr<class CompoundTag> createTag(bool) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MERCHANTRECIPELIST
+public:
+#endif
     MCAPI MerchantRecipeList();
     MCAPI void assignNetIds();
     MCAPI class MerchantRecipe const * getRecipeByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &) const;
     MCAPI class std::optional<unsigned __int64> getRecipeIndexByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &) const;
     MCAPI bool isRequiredItem(class ItemInstance const &, class ItemInstance const &);
 
-protected:
-
-private:
 
 };

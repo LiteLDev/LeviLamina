@@ -24,6 +24,7 @@ public:
     ServerCommandOrigin() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ServerCommandOrigin();
     /*1*/ virtual std::string const & getRequestId() const;
@@ -36,29 +37,16 @@ public:
     /*8*/ virtual class Actor * getEntity() const;
     /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*11*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
-    /*12*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
-    /*15*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
     /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
-    /*20*/ virtual unsigned char getSourceSubId() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
-    /*26*/ virtual void handleCommandOutputCallback(class Json::Value &&) const;
-    /*27*/ virtual void updateValues();
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
-    /*
-    inline  ~ServerCommandOrigin(){
-         (ServerCommandOrigin::*rv)();
-        *((void**)&rv) = dlsym("??1ServerCommandOrigin@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCOMMANDORIGIN
+public:
+#endif
     MCAPI ServerCommandOrigin(std::string const &, class ServerLevel &, enum CommandPermissionLevel, class AutomaticID<class Dimension, int>);
     MCAPI static std::unique_ptr<class ServerCommandOrigin> load(class CompoundTag const &, class ServerLevel &);
 
-protected:
-
-private:
 
 };

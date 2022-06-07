@@ -23,13 +23,14 @@ public:
     FogCommand() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FogCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOGCOMMAND
+public:
+#endif
     MCAPI static void setup(class CommandRegistry &);
 
-protected:
-
-private:
 
 };

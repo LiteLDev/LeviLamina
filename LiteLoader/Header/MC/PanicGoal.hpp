@@ -22,6 +22,7 @@ public:
     PanicGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PanicGoal();
     /*1*/ virtual bool canUse();
@@ -31,18 +32,15 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-    /*
-    inline  ~PanicGoal(){
-         (PanicGoal::*rv)();
-        *((void**)&rv) = dlsym("??1PanicGoal@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PANICGOAL
+public:
+#endif
     MCAPI PanicGoal(class Mob &, float, bool, enum LevelSoundEvent, struct FloatRange, bool, bool, std::vector<enum ActorDamageCause>);
 
-protected:
+//private:
+    MCAPI bool _tryGeneratePathEnd();
 
 private:
-    MCAPI bool _tryGeneratePathEnd();
+
 
 };

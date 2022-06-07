@@ -22,11 +22,11 @@ public:
     IFilePicker() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~IFilePicker();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFILEPICKER
+public:
+#endif
 
-protected:
-
-private:
 
 };

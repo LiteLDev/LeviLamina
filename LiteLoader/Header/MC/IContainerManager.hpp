@@ -22,18 +22,11 @@ public:
     IContainerManager() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~IContainerManager();
-    /*
-    inline  ~IContainerManager(){
-         (IContainerManager::*rv)();
-        *((void**)&rv) = dlsym("??1IContainerManager@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTAINERMANAGER
+public:
+#endif
 
-protected:
-
-private:
 
 };

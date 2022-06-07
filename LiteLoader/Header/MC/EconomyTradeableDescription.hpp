@@ -23,21 +23,15 @@ public:
     EconomyTradeableDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~EconomyTradeableDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
-    /*
-    inline  ~EconomyTradeableDescription(){
-         (EconomyTradeableDescription::*rv)();
-        *((void**)&rv) = dlsym("??1EconomyTradeableDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ECONOMYTRADEABLEDESCRIPTION
+public:
+#endif
 
-protected:
-
-private:
 
 };

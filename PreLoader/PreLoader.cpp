@@ -78,6 +78,7 @@ bool loadLib(LPCTSTR libName, bool showFailInfo = true) {
 
 void loadPlugins()
 {
+    std::filesystem::create_directories("plugins");
     directory_iterator ent("plugins");
     for (auto& file : ent)
     {

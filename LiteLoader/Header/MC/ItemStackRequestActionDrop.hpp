@@ -21,6 +21,7 @@ public:
     ItemStackRequestActionDrop(class ItemStackRequestActionDrop const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemStackRequestActionDrop();
     /*1*/ virtual void __unk_vfn_1();
@@ -28,11 +29,11 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void _write(class BinaryStream &) const;
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONDROP
+public:
+#endif
     MCAPI ItemStackRequestActionDrop();
     MCAPI bool getRandomly() const;
 
-protected:
-
-private:
 
 };

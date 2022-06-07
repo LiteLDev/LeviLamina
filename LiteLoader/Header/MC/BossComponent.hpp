@@ -21,7 +21,11 @@ public:
     BossComponent(class BossComponent const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOSSCOMPONENT
+public:
+#endif
     MCAPI BossComponent(class BossComponent &&);
     MCAPI BossComponent();
     MCAPI void addPlayerToParty(class mce::UUID, int);
@@ -50,9 +54,10 @@ public:
     MCAPI void unRegisterPlayer(class Actor &, class Player *);
     MCAPI ~BossComponent();
 
-protected:
+//private:
+    MCAPI void _sendBossEvent(class Actor &, enum BossEventUpdateType, class Player *);
 
 private:
-    MCAPI void _sendBossEvent(class Actor &, enum BossEventUpdateType, class Player *);
+
 
 };

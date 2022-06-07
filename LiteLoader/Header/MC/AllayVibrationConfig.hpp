@@ -21,14 +21,15 @@ public:
     AllayVibrationConfig() = delete;
 #endif
 
+
 public:
     /*0*/ virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
+    /*1*/ virtual bool isValidVibration(class GameEvent const &, class Actor const *);
     /*2*/ virtual bool shouldListen(class BlockSource &, class BlockPos, class GameEvent const &, class Actor const *);
-    /*3*/ virtual ~AllayVibrationConfig();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLAYVIBRATIONCONFIG
+public:
+#endif
     MCAPI AllayVibrationConfig(class Actor &, unsigned short);
 
-protected:
-
-private:
 
 };

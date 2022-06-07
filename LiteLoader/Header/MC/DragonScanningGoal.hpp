@@ -22,6 +22,7 @@ public:
     DragonScanningGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DragonScanningGoal();
     /*1*/ virtual bool canUse();
@@ -31,13 +32,17 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONSCANNINGGOAL
+public:
+#endif
     MCAPI DragonScanningGoal(class EnderDragon &);
 
-protected:
+//private:
 
 private:
     MCAPI static float SITTING_ATTACK_VIEW_RANGE;
     MCAPI static float SITTING_CHARGE_VIEW_RANGE;
     MCAPI static int SITTING_SCANNING_IDLE_TICKS;
+
 
 };

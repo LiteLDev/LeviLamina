@@ -23,14 +23,15 @@ public:
     LevelDbSequentialFile() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LevelDbSequentialFile();
     /*1*/ virtual class leveldb::Status Read(unsigned __int64, class leveldb::Slice *, char *);
     /*2*/ virtual class leveldb::Status Skip(unsigned __int64);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBSEQUENTIALFILE
+public:
+#endif
     MCAPI LevelDbSequentialFile(class Core::File &&);
 
-protected:
-
-private:
 
 };

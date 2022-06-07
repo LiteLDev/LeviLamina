@@ -22,13 +22,14 @@ public:
     BlockStateCommandParam() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATECOMMANDPARAM
+public:
+#endif
     MCAPI BlockStateCommandParam(std::string, std::string, enum BlockStateCommandParam::Type);
     MCAPI bool setBlockState(class Block const **, class CommandOutput &) const;
     MCAPI ~BlockStateCommandParam();
 
-protected:
-
-private:
 
 };

@@ -23,15 +23,14 @@ public:
     CraftHandlerLoom() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CraftHandlerLoom();
-    /*3*/ virtual void endRequestBatch();
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
-    /*5*/ virtual void _postCraftRequest(bool);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERLOOM
+public:
+#endif
     MCAPI CraftHandlerLoom(class ItemStackRequestActionCraftHandler &);
 
-protected:
-
-private:
 
 };

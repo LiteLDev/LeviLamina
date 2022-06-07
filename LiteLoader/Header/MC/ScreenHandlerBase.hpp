@@ -22,40 +22,22 @@ public:
     ScreenHandlerBase() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScreenHandlerBase();
-    /*
-    inline enum ItemStackNetResult endRequest(){
-        enum ItemStackNetResult (ScreenHandlerBase::*rv)();
-        *((void**)&rv) = dlsym("?endRequest@ScreenHandlerBase@@UEAA?AW4ItemStackNetResult@@XZ");
-        return (this->*rv)();
-    }
-    inline void postRequest(bool a0){
-        void (ScreenHandlerBase::*rv)(bool);
-        *((void**)&rv) = dlsym("?postRequest@ScreenHandlerBase@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void endRequestBatch(){
-        void (ScreenHandlerBase::*rv)();
-        *((void**)&rv) = dlsym("?endRequestBatch@ScreenHandlerBase@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline enum ItemStackNetResult handleAction(class ItemStackRequestAction const & a0){
-        enum ItemStackNetResult (ScreenHandlerBase::*rv)(class ItemStackRequestAction const &);
-        *((void**)&rv) = dlsym("?handleAction@ScreenHandlerBase@@UEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z");
-        return (this->*rv)(std::forward<class ItemStackRequestAction const &>(a0));
-    }
-    inline  ~ScreenHandlerBase(){
-         (ScreenHandlerBase::*rv)();
-        *((void**)&rv) = dlsym("??1ScreenHandlerBase@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const &);
+    /*2*/ virtual enum ItemStackNetResult endRequest();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCREENHANDLERBASE
+public:
+    MCVAPI void endRequestBatch();
+    MCVAPI void postRequest(bool);
+#endif
     MCAPI ScreenHandlerBase(class ItemStackRequestActionHandler &);
 
-protected:
+//protected:
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum ContainerEnumName);
 
-private:
+protected:
+
 
 };

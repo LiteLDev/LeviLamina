@@ -23,6 +23,7 @@ public:
     MinecraftGameTestHelper() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MinecraftGameTestHelper();
     /*1*/ virtual void succeedWhenEntityPresent(struct ActorDefinitionIdentifier const &, int, int, int, bool);
@@ -84,16 +85,20 @@ public:
     /*57*/ virtual void removeSimulatedPlayer(class SimulatedPlayer &);
     /*58*/ virtual class std::variant<struct gametest::GameTestError, class Dimension *> getDimension();
     /*59*/ virtual class std::optional<struct gametest::GameTestError> getBlockSource(class BlockSource *&);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTGAMETESTHELPER
+public:
+#endif
     MCAPI MinecraftGameTestHelper(class MinecraftGameTestInstance &);
 
-protected:
-
-private:
+//private:
     MCAPI class std::optional<struct gametest::GameTestError> _assertEntityPresent(struct ActorDefinitionIdentifier const &, class AABB const &, class BlockPos const &, bool) const;
     MCAPI class Container const * _getContainer(class BlockPos const &);
     MCAPI int _getItemEntityCount(class Item const &, class AABB const &);
     MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>> _getServerNetworkHandler() const;
     MCAPI class std::optional<struct gametest::GameTestError> _getStructureBlockMissingError() const;
     MCAPI bool _isEntityPresent(struct ActorDefinitionIdentifier const &, class AABB const &) const;
+
+private:
+
 
 };

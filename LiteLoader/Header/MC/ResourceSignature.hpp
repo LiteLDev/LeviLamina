@@ -23,16 +23,21 @@ public:
     ResourceSignature() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCESIGNATURE
+public:
+#endif
     MCAPI bool areKnownFilesValid(class PackAccessStrategy const &);
     MCAPI ~ResourceSignature();
     MCAPI static class Core::PathBuffer<std::string> const SIGNATURE_FILENAME;
 
-protected:
-
-private:
+//private:
     MCAPI bool _areKnownFilesValid(class PackAccessStrategy const &, bool);
     MCAPI bool _checkSignedFiles(class PackAccessStrategy const &) const;
     MCAPI void _loadSignaturesFile(class Core::Path const &, class PackAccessStrategy const &);
+
+private:
+
 
 };

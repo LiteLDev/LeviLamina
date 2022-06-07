@@ -22,11 +22,11 @@ public:
     IFileReadAccess() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~IFileReadAccess();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFILEREADACCESS
+public:
+#endif
 
-protected:
-
-private:
 
 };

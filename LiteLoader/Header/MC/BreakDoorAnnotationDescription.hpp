@@ -23,21 +23,15 @@ public:
     BreakDoorAnnotationDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~BreakDoorAnnotationDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
-    /*
-    inline  ~BreakDoorAnnotationDescription(){
-         (BreakDoorAnnotationDescription::*rv)();
-        *((void**)&rv) = dlsym("??1BreakDoorAnnotationDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKDOORANNOTATIONDESCRIPTION
+public:
+#endif
 
-protected:
-
-private:
 
 };

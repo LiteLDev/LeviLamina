@@ -34,7 +34,11 @@ public:
     I18n() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_I18N
+public:
+#endif
     MCAPI static char const NeutralLangCode[];
     MCAPI static void addI18nObserver(class I18nObserver &);
     MCAPI static void appendLanguageStringsFromPack(class PackManifest const &, class std::multimap<std::string, struct std::pair<std::string, std::string>, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, struct std::pair<std::string, std::string>>>> const &);
@@ -52,9 +56,7 @@ public:
     MCAPI static void loadAllLanguages(class ResourcePackManager &);
     MCAPI static void loadLanguageKeywordsFromPack(class PackManifest const &, class PackAccessStrategy const &, std::vector<std::string> const &);
 
-protected:
-
-private:
+//private:
     MCAPI static void _findAvailableLanguageNames(class Json::Value const &, class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> &);
     MCAPI static void _findAvailableLanguages(class Json::Value const &, std::vector<std::string> &);
     MCAPI static class Localization * _findLocaleFor(std::string const &);
@@ -62,6 +64,8 @@ private:
     MCAPI static class Localization * _getAdditionalTranslationsBackupLocale(std::string const &, bool);
     MCAPI static std::string & _getLocaleCodeFor(std::string const &);
     MCAPI static class Localization & _getPackKeywordLocale(std::string const &);
+
+private:
     MCAPI static std::vector<std::unique_ptr<class Localization>> mAdditionalTranslationsBackup;
     MCAPI static class std::mutex mAdditionalTranslationsBackupMutex;
     MCAPI static class Localization const * mCurrentLanguage;
@@ -76,5 +80,6 @@ private:
     MCAPI static std::vector<std::string> const mPackReservedKeys;
     MCAPI static class ResourcePackManager * mResourcePackManager;
     MCAPI static class Core::Subject<class I18nObserver, class Core::SingleThreadedLock> mSubject;
+
 
 };

@@ -22,6 +22,7 @@ public:
     NetheriteArmorEquippedListener() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NetheriteArmorEquippedListener();
     /*1*/ virtual void __unk_vfn_1();
@@ -41,16 +42,9 @@ public:
     /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual enum EventResult onActorEquippedArmor(class Actor &, class ItemInstance const &, enum ArmorSlot);
-    /*
-    inline  ~NetheriteArmorEquippedListener(){
-         (NetheriteArmorEquippedListener::*rv)();
-        *((void**)&rv) = dlsym("??1NetheriteArmorEquippedListener@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERITEARMOREQUIPPEDLISTENER
+public:
+#endif
 
-protected:
-
-private:
 
 };

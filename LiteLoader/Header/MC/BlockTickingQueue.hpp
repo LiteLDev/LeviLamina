@@ -29,7 +29,11 @@ public:
     BlockTickingQueue() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKTICKINGQUEUE
+public:
+#endif
     MCAPI void acquireAllRandomTicks(class LevelChunk &);
     MCAPI void acquireAllTicks(class BlockTickingQueue &);
     MCAPI void acquireAllTicks(class LevelChunk &);
@@ -55,11 +59,16 @@ public:
     MCAPI int ticksFromNow(int) const;
     MCAPI ~BlockTickingQueue();
 
-protected:
+//protected:
     MCAPI void _saveQueue(class ListTag &, class BlockTickingQueue::TickDataSet const &) const;
 
-private:
+//private:
     MCAPI void _acquireAllTicks(class BlockTickingQueue &);
     MCAPI void _addToNextTickQueue(class BlockPos const &, class Block const &, int, int);
+
+protected:
+
+private:
+
 
 };

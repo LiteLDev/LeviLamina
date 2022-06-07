@@ -23,20 +23,17 @@ public:
     WorldLimitChunkSource() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~WorldLimitChunkSource();
     /*3*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
-    /*4*/ virtual class std::shared_ptr<class LevelChunk> getRandomChunk(class Random &);
     /*6*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum ChunkSource::LoadMode, bool);
-    /*8*/ virtual bool postProcess(class ChunkViewSource &);
-    /*9*/ virtual void checkAndReplaceChunk(class ChunkViewSource &, class LevelChunk &);
     /*21*/ virtual bool isWithinWorldLimit(class ChunkPos const &) const;
-    /*24*/ virtual void clearDeletedEntities();
     /*25*/ virtual bool canCreateViews() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDLIMITCHUNKSOURCE
+public:
+#endif
     MCAPI WorldLimitChunkSource(std::unique_ptr<class ChunkSource>, class BlockPos const &, int, int);
 
-protected:
-
-private:
 
 };

@@ -20,6 +20,7 @@ public:
     DigGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DigGoal();
     /*1*/ virtual bool canUse();
@@ -27,19 +28,12 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
-    /*6*/ virtual void __unk_vfn_6();
+    /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-    /*
-    inline void tick(){
-        void (DigGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@DigGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIGGOAL
+public:
+#endif
     MCAPI DigGoal(class Mob &);
 
-protected:
-
-private:
 
 };

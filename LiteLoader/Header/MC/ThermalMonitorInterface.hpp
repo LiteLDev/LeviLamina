@@ -22,11 +22,11 @@ public:
     ThermalMonitorInterface() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~ThermalMonitorInterface();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_THERMALMONITORINTERFACE
+public:
+#endif
 
-protected:
-
-private:
 
 };

@@ -23,6 +23,7 @@ public:
     RandomScatteredLargeFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RandomScatteredLargeFeature();
     /*1*/ virtual bool shouldAddHardcodedSpawnAreas() const;
@@ -31,10 +32,10 @@ public:
     /*4*/ virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry &);
     /*5*/ virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &);
     /*6*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMSCATTEREDLARGEFEATURE
+public:
+#endif
     MCAPI RandomScatteredLargeFeature(unsigned int);
 
-protected:
-
-private:
 
 };

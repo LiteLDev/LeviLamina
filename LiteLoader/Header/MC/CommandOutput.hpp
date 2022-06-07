@@ -26,7 +26,11 @@ public:
     CommandOutput() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDOUTPUT
+public:
+#endif
     MCAPI CommandOutput(class CommandOutput const &);
     MCAPI CommandOutput(enum CommandOutputType);
     MCAPI void addToResultList(std::string const &, std::string const &);
@@ -46,9 +50,10 @@ public:
     MCAPI bool wantsData() const;
     MCAPI ~CommandOutput();
 
-protected:
+//private:
+    MCAPI void addMessage(std::string const &, std::vector<class CommandOutputParameter> const &, enum CommandOutputMessageType);
 
 private:
-    MCAPI void addMessage(std::string const &, std::vector<class CommandOutputParameter> const &, enum CommandOutputMessageType);
+
 
 };

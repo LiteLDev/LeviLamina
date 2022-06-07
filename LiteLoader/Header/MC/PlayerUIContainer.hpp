@@ -23,27 +23,17 @@ public:
     PlayerUIContainer() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PlayerUIContainer();
-    /*1*/ virtual void init();
-    /*16*/ virtual void startOpen(class Player &);
-    /*17*/ virtual void stopOpen(class Player &);
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
-    /*31*/ virtual void __unk_vfn_31();
-    /*
-    inline  ~PlayerUIContainer(){
-         (PlayerUIContainer::*rv)();
-        *((void**)&rv) = dlsym("??1PlayerUIContainer@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERUICONTAINER
+public:
+#endif
     MCAPI PlayerUIContainer(std::string const &, bool, int);
     MCAPI void load(class ListTag const &, class SemVersion const &);
     MCAPI std::unique_ptr<class ListTag> save();
 
-protected:
-
-private:
 
 };

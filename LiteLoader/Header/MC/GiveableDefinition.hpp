@@ -23,13 +23,14 @@ public:
     GiveableDefinition() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GIVEABLEDEFINITION
+public:
+#endif
     MCAPI void addGiveableTrigger(struct GiveableTrigger const &);
     MCAPI void initialize(class EntityContext &, class GiveableComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GiveableDefinition>> &);
 
-protected:
-
-private:
 
 };

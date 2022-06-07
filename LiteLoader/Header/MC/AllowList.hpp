@@ -23,10 +23,14 @@ public:
     AllowList() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AllowList();
     /*1*/ virtual void serialize(class Json::Value &);
     /*2*/ virtual void deserialize(class Json::Value &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLOWLIST
+public:
+#endif
     MCAPI AllowList(class std::function<void (void)>);
     MCAPI bool addEntry(class AllowListEntry const &);
     MCAPI std::vector<class AllowListEntry> const & getEntries() const;
@@ -35,8 +39,5 @@ public:
     MCAPI bool removeByName(std::string const &);
     MCAPI void tryUpdateEntries(class mce::UUID const &, std::string const &, std::string const &);
 
-protected:
-
-private:
 
 };

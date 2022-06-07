@@ -22,33 +22,14 @@ public:
     LabTableReactionComponent() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~LabTableReactionComponent();
-    /*
-    inline void _onStart(class LabTableReaction & a0, class BlockSource & a1){
-        void (LabTableReactionComponent::*rv)(class LabTableReaction &, class BlockSource &);
-        *((void**)&rv) = dlsym("?_onStart@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class LabTableReaction &>(a0), std::forward<class BlockSource &>(a1));
-    }
-    inline void _onEnd(class LabTableReaction & a0, class BlockSource & a1){
-        void (LabTableReactionComponent::*rv)(class LabTableReaction &, class BlockSource &);
-        *((void**)&rv) = dlsym("?_onEnd@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class LabTableReaction &>(a0), std::forward<class BlockSource &>(a1));
-    }
-    inline void _onTick(class LabTableReaction & a0, class BlockSource & a1){
-        void (LabTableReactionComponent::*rv)(class LabTableReaction &, class BlockSource &);
-        *((void**)&rv) = dlsym("?_onTick@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class LabTableReaction &>(a0), std::forward<class BlockSource &>(a1));
-    }
-    inline  ~LabTableReactionComponent(){
-         (LabTableReactionComponent::*rv)();
-        *((void**)&rv) = dlsym("??1LabTableReactionComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLEREACTIONCOMPONENT
+public:
+    MCVAPI void _onEnd(class LabTableReaction &, class BlockSource &);
+    MCVAPI void _onStart(class LabTableReaction &, class BlockSource &);
+    MCVAPI void _onTick(class LabTableReaction &, class BlockSource &);
+#endif
 
-protected:
-
-private:
 
 };

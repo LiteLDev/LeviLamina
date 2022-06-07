@@ -54,7 +54,9 @@ Local<Value> ColorLog(const Arguments& args)
             case H("pink")     : prefix = "\x1b[95m"; break;
             case H("yellow")   : prefix = "\x1b[93m"; break;
             case H("white")    : prefix = "\x1b[97m"; break;
-            default: logger.error("Invalid color!");break;
+            default: 
+                LOG_ERROR_WITH_SCRIPT_INFO("Invalid color!");
+                break;
         }
         //if (!LL::globalConfig.colorLog)
         //    prefix = "";
@@ -94,12 +96,11 @@ Local<Value> SetTimeout(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 2)
     CHECK_ARG_TYPE(args[1], ValueKind::kNumber)
-
     try {
         bool isFunc = args[0].getKind() == ValueKind::kFunction;
         if (!isFunc && args[0].getKind() != ValueKind::kString)
         {
-            logger.error("Unknown type of time task!");
+            LOG_WRONG_ARG_TYPE();
             return Local<Value>();
         }
 
@@ -124,7 +125,7 @@ Local<Value> SetInterval(const Arguments& args)
         bool isFunc = args[0].getKind() == ValueKind::kFunction;
         if (!isFunc && args[0].getKind() != ValueKind::kString)
         {
-            logger.error("Unknown type of time task!");
+            LOG_WRONG_ARG_TYPE();
             return Local<Value>();
         }
 

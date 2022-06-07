@@ -22,6 +22,7 @@ public:
     RandomLookAroundGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RandomLookAroundGoal();
     /*1*/ virtual bool canUse();
@@ -31,10 +32,10 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMLOOKAROUNDGOAL
+public:
+#endif
     MCAPI RandomLookAroundGoal(class Mob &, int, int, float);
 
-protected:
-
-private:
 
 };

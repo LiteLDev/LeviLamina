@@ -22,35 +22,21 @@ public:
     SquidDiveGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SquidDiveGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual void __unk_vfn_2();
+    /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-    /*
-    inline void stop(){
-        void (SquidDiveGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@SquidDiveGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (SquidDiveGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@SquidDiveGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool canContinueToUse(){
-        bool (SquidDiveGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@SquidDiveGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUIDDIVEGOAL
+public:
+    MCVAPI void stop();
+    MCVAPI void tick();
+#endif
 
-protected:
-
-private:
 
 };

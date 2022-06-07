@@ -22,12 +22,13 @@ public:
     DescriptionIdSetter() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESCRIPTIONIDSETTER
+public:
+#endif
     MCAPI std::string getDescriptionId() const;
     MCAPI void setDescriptionId(std::string const &);
 
-protected:
-
-private:
 
 };

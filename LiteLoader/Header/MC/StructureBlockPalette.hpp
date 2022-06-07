@@ -28,7 +28,11 @@ public:
     StructureBlockPalette() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREBLOCKPALETTE
+public:
+#endif
     MCAPI void addBlockPositionData(unsigned __int64, struct StructureBlockPalette::BlockPositionData);
     MCAPI unsigned __int64 addMapping(std::unique_ptr<class CompoundTag>);
     MCAPI class std::unordered_map<unsigned __int64, struct StructureBlockPalette::BlockPositionData, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, struct StructureBlockPalette::BlockPositionData>>> const & getAllBlockPositionData() const;
@@ -38,13 +42,18 @@ public:
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     MCAPI ~StructureBlockPalette();
 
-protected:
+//protected:
     MCAPI enum StructureBlockPaletteLoadResult _parseBlockPalette(class CompoundTag const &);
     MCAPI enum StructureBlockPaletteLoadResult _parseBlockPositionData(class CompoundTag const &, int);
     MCAPI enum StructureBlockPaletteLoadResult _parseBlockPositionDataList(class CompoundTag const &);
     MCAPI void _saveBlockPositionDataList(class CompoundTag &) const;
 
-private:
+//private:
     MCAPI void _contentErrorMissingField(std::string const &) const;
+
+protected:
+
+private:
+
 
 };

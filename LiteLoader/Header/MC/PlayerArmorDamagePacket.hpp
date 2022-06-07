@@ -23,22 +23,16 @@ public:
     PlayerArmorDamagePacket() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PlayerArmorDamagePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~PlayerArmorDamagePacket(){
-         (PlayerArmorDamagePacket::*rv)();
-        *((void**)&rv) = dlsym("??1PlayerArmorDamagePacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERARMORDAMAGEPACKET
+public:
+#endif
 
-protected:
-
-private:
 
 };

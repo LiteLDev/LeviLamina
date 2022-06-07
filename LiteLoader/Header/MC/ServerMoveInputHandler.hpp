@@ -22,24 +22,19 @@ public:
     ServerMoveInputHandler(class ServerMoveInputHandler const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ServerMoveInputHandler();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*5*/ virtual void __unk_vfn_5();
     /*15*/ virtual void __unk_vfn_15();
-    /*
-    inline void registerInputHandlers(class InputHandler & a0){
-        void (ServerMoveInputHandler::*rv)(class InputHandler &);
-        *((void**)&rv) = dlsym("?registerInputHandlers@ServerMoveInputHandler@@UEAAXAEAVInputHandler@@@Z");
-        return (this->*rv)(std::forward<class InputHandler &>(a0));
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERMOVEINPUTHANDLER
+public:
+    MCVAPI void registerInputHandlers(class InputHandler &);
+#endif
     MCAPI ServerMoveInputHandler();
     MCAPI void digestPlayerInputPacket(class PlayerAuthInputPacket const &);
 
-protected:
-
-private:
 
 };

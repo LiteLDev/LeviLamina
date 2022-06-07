@@ -21,7 +21,11 @@ public:
     ExplodeComponent(class ExplodeComponent const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPLODECOMPONENT
+public:
+#endif
     MCAPI ExplodeComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI void explode(class Actor &, class Vec3 const &);
@@ -35,8 +39,5 @@ public:
     MCAPI void setFuseLength(int);
     MCAPI void setTntExpodeGameRuleRequired();
 
-protected:
-
-private:
 
 };

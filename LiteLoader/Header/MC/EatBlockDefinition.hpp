@@ -22,15 +22,15 @@ public:
     EatBlockDefinition(class EatBlockDefinition const &) = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~EatBlockDefinition();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EATBLOCKDEFINITION
+public:
+#endif
     MCAPI EatBlockDefinition();
     MCAPI void addSuccessChanceExpressionNode(class ExpressionNode const &);
     MCAPI void initialize(class EntityContext &, class EatBlockGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EatBlockDefinition>> &);
 
-protected:
-
-private:
 
 };

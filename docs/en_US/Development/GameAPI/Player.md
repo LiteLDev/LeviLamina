@@ -671,12 +671,13 @@ pl.removeSidebar();
 
 #### Sets the Custom Boss Health Bar That the Player Sees  
 
-`pl.setBossBar(title,percent,colour)`
+`pl.setBossBar(uid,title,percent,colour)`
 
 - Parameters: 
+  - uid : `Number`   
+    Unique identifier, no conflicting duplicates! One uid for one line of bar
   - title : `String`  
     Custom Health Bar Title  
-
   - percent : `Integer`  
     The percentage of health in the boss bar, the valid range is 0~100. `0` is empty boss bar, `100` is full.
   - colour : `Integer`
@@ -687,22 +688,25 @@ pl.removeSidebar();
 ```Javascript
 [JS]
 //For a `Player` object pl
-pl.setBossBar("Hello ~ ",80,0);
+pl.setBossBar(1145141919,"Hello ~ ",80,0);
 [Lua]
 
 ```
 
 #### Remove the Player’s Custom Boss Health Bar  
 
-`pl.removeBossBar()`
+`pl.removeBossBar(uid)`
 
+- Parameters: 
+  - uid : `Number`  
+    Identifier, corresponding to setBossBar!
 - Return value: Whether the removal was successful.
 - Return value type: `Boolean`
 
 ```Javascript
 [JS]
 //For a `Player` object pl
-pl.removeBossBar();
+pl.removeBossBar(1145141919);
 [Lua]
 
 ```

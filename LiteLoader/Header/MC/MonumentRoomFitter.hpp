@@ -22,11 +22,11 @@ public:
     MonumentRoomFitter() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~MonumentRoomFitter();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MONUMENTROOMFITTER
+public:
+#endif
 
-protected:
-
-private:
 
 };

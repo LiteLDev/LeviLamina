@@ -22,11 +22,11 @@ public:
     LevelDbFileLock() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~LevelDbFileLock();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBFILELOCK
+public:
+#endif
 
-protected:
-
-private:
 
 };

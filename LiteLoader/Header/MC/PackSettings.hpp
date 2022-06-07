@@ -23,13 +23,18 @@ public:
     PackSettings() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSETTINGS
+public:
+#endif
     MCAPI class Json::Value const & getAllSettings() const;
     MCAPI void loadPackSettings(struct PackIdVersion const &, class Json::Value const &);
 
-protected:
+//private:
+    MCAPI void _initPackSetting(std::string const &, class Json::Value const &);
 
 private:
-    MCAPI void _initPackSetting(std::string const &, class Json::Value const &);
+
 
 };

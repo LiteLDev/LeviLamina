@@ -26,12 +26,11 @@ public:
     DBChunkStorage() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DBChunkStorage();
     /*1*/ virtual void shutdown();
     /*2*/ virtual bool isShutdownDone();
-    /*3*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
-    /*4*/ virtual class std::shared_ptr<class LevelChunk> getRandomChunk(class Random &);
     /*5*/ virtual bool isChunkKnown(class ChunkPos const &);
     /*8*/ virtual bool postProcess(class ChunkViewSource &);
     /*9*/ virtual void checkAndReplaceChunk(class ChunkViewSource &, class LevelChunk &);
@@ -44,18 +43,17 @@ public:
     /*17*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /*19*/ virtual void flushPendingDiscardedChunkWrites();
     /*20*/ virtual void flushThreadBatch();
-    /*21*/ virtual bool isWithinWorldLimit(class ChunkPos const &) const;
-    /*24*/ virtual void clearDeletedEntities();
     /*26*/ virtual std::unique_ptr<class BlendingDataProvider> tryGetBlendingDataProvider();
     /*27*/ virtual class BiomeChunkBlendingAttenuator getBiomeHeightAttenuatorForLevelChunk(class ChunkPos const &);
     /*28*/ virtual class std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DBCHUNKSTORAGE
+public:
+#endif
     MCAPI DBChunkStorage(std::unique_ptr<class ChunkSource>, class DBStorage &, class Scheduler &, class Experiments const &);
     MCAPI void freeCaches();
     MCAPI static enum ConsoleChunkBlender::BlenderMode _getBlenderMode(class LevelChunk const &, class Experiments const &, bool);
 
-protected:
-
-private:
+//private:
     MCAPI bool _checkSubChunksUseAbsoluteIndices(class DBChunkStorageKey, class LevelChunk const &, bool &) const;
     MCAPI std::vector<std::string> _deserializeChunkActorStorageKeys(class IDataInput &);
     MCAPI void _deserializeIndependentActorStorage(class LevelChunk &, std::string &);
@@ -69,7 +67,10 @@ private:
     MCAPI void _serializeEntities(class LevelChunk &, class LevelStorageWriteBatch &, std::string &, bool);
     MCAPI std::string _upgradeActorStorage(class ChunkKey, class gsl::basic_string_span<char const, -1> &);
     MCAPI void _writeDiscardChunksBatch();
+
+private:
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class LevelStorageWriteBatch, class std::allocator<class LevelStorageWriteBatch>> threadBatch;
     MCAPI static class Bedrock::Threading::ThreadLocalObject<std::string, class std::allocator<std::string>> threadBuffer;
+
 
 };

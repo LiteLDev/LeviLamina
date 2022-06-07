@@ -23,19 +23,13 @@ public:
     ScriptNavigationGenericComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptNavigationGenericComponent();
-    /*
-    inline  ~ScriptNavigationGenericComponent(){
-         (ScriptNavigationGenericComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptNavigationGenericComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTNAVIGATIONGENERICCOMPONENT
+public:
+#endif
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptNavigationGenericComponent> bind(struct Scripting::Version);
 
-protected:
-
-private:
 
 };

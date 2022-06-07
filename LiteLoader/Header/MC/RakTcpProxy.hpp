@@ -22,6 +22,7 @@ public:
     RakTcpProxy(class RakTcpProxy const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RakTcpProxy();
     /*1*/ virtual bool start(unsigned short, unsigned short, unsigned short);
@@ -34,10 +35,10 @@ public:
     /*8*/ virtual struct RakNet::SystemAddress nextCompletedConnectionAttempt();
     /*9*/ virtual struct RakNet::SystemAddress nextFailedConnectionAttempt();
     /*10*/ virtual struct RakNet::SystemAddress nextLostConnection();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKTCPPROXY
+public:
+#endif
     MCAPI RakTcpProxy();
 
-protected:
-
-private:
 
 };

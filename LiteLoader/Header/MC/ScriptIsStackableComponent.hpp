@@ -21,19 +21,13 @@ public:
     ScriptIsStackableComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptIsStackableComponent();
-    /*
-    inline  ~ScriptIsStackableComponent(){
-         (ScriptIsStackableComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptIsStackableComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTISSTACKABLECOMPONENT
+public:
+#endif
     MCAPI static class HashedString const & getHashedName();
 
-protected:
-
-private:
 
 };

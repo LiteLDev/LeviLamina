@@ -23,19 +23,13 @@ public:
     NavigationFloatDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~NavigationFloatDescription();
-    /*
-    inline  ~NavigationFloatDescription(){
-         (NavigationFloatDescription::*rv)();
-        *((void**)&rv) = dlsym("??1NavigationFloatDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONFLOATDESCRIPTION
+public:
+#endif
 
-protected:
-
-private:
 
 };

@@ -23,19 +23,13 @@ public:
     ScriptHealthComponent2() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptHealthComponent2();
-    /*
-    inline  ~ScriptHealthComponent2(){
-         (ScriptHealthComponent2::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptHealthComponent2@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTHEALTHCOMPONENT2
+public:
+#endif
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptHealthComponent2> bind(struct Scripting::Version);
 
-protected:
-
-private:
 
 };

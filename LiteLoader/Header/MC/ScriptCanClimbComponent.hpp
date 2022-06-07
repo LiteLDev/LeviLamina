@@ -21,19 +21,13 @@ public:
     ScriptCanClimbComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptCanClimbComponent();
-    /*
-    inline  ~ScriptCanClimbComponent(){
-         (ScriptCanClimbComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptCanClimbComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCANCLIMBCOMPONENT
+public:
+#endif
     MCAPI static class HashedString const & getHashedName();
 
-protected:
-
-private:
 
 };

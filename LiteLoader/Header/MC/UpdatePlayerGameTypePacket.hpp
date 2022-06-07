@@ -22,24 +22,18 @@ public:
     UpdatePlayerGameTypePacket(class UpdatePlayerGameTypePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~UpdatePlayerGameTypePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~UpdatePlayerGameTypePacket(){
-         (UpdatePlayerGameTypePacket::*rv)();
-        *((void**)&rv) = dlsym("??1UpdatePlayerGameTypePacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEPLAYERGAMETYPEPACKET
+public:
+#endif
     MCAPI UpdatePlayerGameTypePacket(enum GameType, struct ActorUniqueID const &);
     MCAPI UpdatePlayerGameTypePacket();
 
-protected:
-
-private:
 
 };

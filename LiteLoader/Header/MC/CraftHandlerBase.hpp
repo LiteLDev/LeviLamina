@@ -23,6 +23,7 @@ public:
     CraftHandlerBase() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CraftHandlerBase();
     /*1*/ virtual enum ItemStackNetResult handleConsumedItem(enum ContainerEnumName, unsigned char, class ItemStack const &);
@@ -31,18 +32,9 @@ public:
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &) = 0;
     /*5*/ virtual void _postCraftRequest(bool);
     /*6*/ virtual class Recipes const * _getLevelRecipes() const;
-    /*
-    inline void endRequestBatch(){
-        void (CraftHandlerBase::*rv)();
-        *((void**)&rv) = dlsym("?endRequestBatch@CraftHandlerBase@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline  ~CraftHandlerBase(){
-         (CraftHandlerBase::*rv)();
-        *((void**)&rv) = dlsym("??1CraftHandlerBase@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERBASE
+public:
+#endif
     MCAPI CraftHandlerBase(class ItemStackRequestActionCraftHandler &);
     MCAPI bool _isNonImplementedTrustClientResults() const;
     MCAPI enum ItemStackNetResult endRequest(enum ItemStackNetResult);
@@ -50,11 +42,12 @@ public:
     MCAPI bool isCraftRequest();
     MCAPI void postRequest(bool);
 
-protected:
+//protected:
     MCAPI class std::tuple<enum ItemStackNetResult, class Recipe const *> _getRecipeFromNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum ContainerEnumName);
     MCAPI struct ItemStackRequestHandlerSlotInfo _validateRequestSlot(struct ItemStackRequestSlotInfo);
 
-private:
+protected:
+
 
 };

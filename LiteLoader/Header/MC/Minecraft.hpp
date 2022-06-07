@@ -24,6 +24,7 @@ public:
     Minecraft() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Minecraft();
     /*1*/ virtual void __unk_vfn_1();
@@ -32,23 +33,11 @@ public:
     /*4*/ virtual void setSimTimeScale(float);
     /*5*/ virtual bool getSimPaused() const;
     /*6*/ virtual bool isOnlineClient() const;
-    /*
-    inline  ~Minecraft(){
-         (Minecraft::*rv)();
-        *((void**)&rv) = dlsym("??1Minecraft@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry(){
-        class StackRefResultT<struct EntityRegistryRefTraits> (Minecraft::*rv)();
-        *((void**)&rv) = dlsym("?getEntityRegistry@Minecraft@@UEAA?AV?$StackRefResultT@UEntityRegistryRefTraits@@@@XZ");
-        return (this->*rv)();
-    }
-    inline class StackRefResultT<struct EntityRegistryConstRefTraits> getEntityRegistry() const{
-        class StackRefResultT<struct EntityRegistryConstRefTraits> (Minecraft::*rv)() const;
-        *((void**)&rv) = dlsym("?getEntityRegistry@Minecraft@@UEBA?AV?$StackRefResultT@UEntityRegistryConstRefTraits@@@@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFT
+public:
+    MCVAPI class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
+    MCVAPI class StackRefResultT<struct EntityRegistryConstRefTraits> getEntityRegistry() const;
+#endif
     MCAPI Minecraft(class IMinecraftApp &, class GameCallbacks &, class AllowList &, class PermissionsFile *, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, class std::chrono::duration<__int64, struct std::ratio<1, 1>>, class IMinecraftEventing &, class NetworkHandler &, class PacketSender &, unsigned char, class Timer &, class Timer &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentTierManager const>> const &, class ServerMetrics *);
     MCAPI void activateAllowList();
     MCAPI void configureGameTest(class Level &, class Experiments const &);
@@ -69,9 +58,10 @@ public:
     MCAPI void startLeaveGame(bool);
     MCAPI bool update();
 
-protected:
+//private:
+    MCAPI void _tryCatchupMovementTicks();
 
 private:
-    MCAPI void _tryCatchupMovementTicks();
+
 
 };

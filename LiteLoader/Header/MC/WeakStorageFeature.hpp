@@ -22,15 +22,20 @@ public:
     WeakStorageFeature() = delete;
 #endif
 
-public:
 
-protected:
+public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAKSTORAGEFEATURE
+public:
+#endif
+
+//protected:
     MCAPI WeakStorageFeature(class WeakStorageFeature &&);
     MCAPI WeakStorageFeature(class OwnerStorageFeature const &);
     MCAPI WeakStorageFeature(enum WeakStorageFeature::EmptyInit);
     MCAPI bool _isSet() const;
     MCAPI class WeakStorageFeature & operator=(class WeakStorageFeature &&);
 
-private:
+protected:
+
 
 };

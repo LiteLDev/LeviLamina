@@ -21,14 +21,15 @@ public:
     WaterMovementComponent(class WaterMovementComponent const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WATERMOVEMENTCOMPONENT
+public:
+#endif
     MCAPI WaterMovementComponent();
     MCAPI float getDragFactor() const;
     MCAPI void initFromDefinition(class Actor &);
     MCAPI static float getDefaultDragFactor();
 
-protected:
-
-private:
 
 };

@@ -20,6 +20,7 @@ public:
     RoarGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RoarGoal();
     /*1*/ virtual bool canUse();
@@ -29,11 +30,15 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROARGOAL
+public:
+#endif
     MCAPI RoarGoal(class Mob &);
 
-protected:
+//private:
+    MCAPI class std::optional<class WeakEntityRef> _findRoarTarget() const;
 
 private:
-    MCAPI class std::optional<class WeakEntityRef> _findRoarTarget() const;
+
 
 };

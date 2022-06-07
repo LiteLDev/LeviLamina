@@ -23,15 +23,17 @@ public:
     GameTestCommand() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GameTestCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTCOMMAND
+public:
+#endif
     MCAPI static void postScriptRegisterSetup(class CommandRegistry &);
     MCAPI static void setup(class CommandRegistry &);
 
-protected:
-
-private:
+//private:
     MCAPI struct gametest::TestParameters _createTestParameters(class BlockSource &, class CommandOrigin const &) const;
     MCAPI void _handleCreateTest(class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void _handleRun(class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
@@ -40,6 +42,9 @@ private:
     MCAPI void _handleRunThis(class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void _handleShowPosition(class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void _runTestAt(class BlockSource &, class CommandOutput *, class BlockPos const &, class std::optional<enum Rotation>) const;
+
+private:
     MCAPI static class MinecraftGameTest * sGameTest;
+
 
 };

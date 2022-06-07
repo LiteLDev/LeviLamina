@@ -22,12 +22,13 @@ public:
     HorseContainerScreenValidator(class HorseContainerScreenValidator const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HorseContainerScreenValidator();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HORSECONTAINERSCREENVALIDATOR
+public:
+#endif
     MCAPI HorseContainerScreenValidator();
 
-protected:
-
-private:
 
 };

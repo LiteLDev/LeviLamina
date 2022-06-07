@@ -34,21 +34,16 @@ public:
     ScoreboardCommand() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScoreboardCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-    /*
-    inline  ~ScoreboardCommand(){
-         (ScoreboardCommand::*rv)();
-        *((void**)&rv) = dlsym("??1ScoreboardCommand@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDCOMMAND
+public:
+#endif
     MCAPI static void setup(class CommandRegistry &, struct ScoreboardCommand::InitProxy &&);
 
-protected:
-
-private:
+//private:
     MCAPI void _generateCumulativeOutput(struct ScoreboardCommand::SetScoreOutput const &, class Objective const &, class CommandOutput &) const;
     MCAPI class Objective * _getObjective(class Scoreboard const &, std::string const &, bool, class CommandOutput &) const;
     MCAPI std::vector<struct ScoreboardId> _getScoreboardIdsForSelector(class Scoreboard &, class WildcardCommandSelector<class Actor> const &, class CommandOrigin const &, class CommandOutput &, bool) const;
@@ -67,5 +62,8 @@ private:
     MCAPI void testPlayerScore(struct ScoreboardId const &, class Objective &, class std::function<std::string const & (struct ActorUniqueID)> const &, class CommandOutput &) const;
     MCAPI static std::vector<std::string> _getNonSortableDisplaySlots(class Scoreboard &);
     MCAPI static std::vector<std::string> _getSortableDisplaySlots(class Scoreboard &);
+
+private:
+
 
 };

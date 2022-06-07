@@ -23,25 +23,19 @@ public:
     BlockRotationDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BlockRotationDescription();
     /*1*/ virtual std::string const & getName() const;
     /*2*/ virtual void initializeComponent(class EntityContext &) const;
     /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &) const;
-    /*4*/ virtual void __unk_vfn_4();
+    /*4*/ virtual bool isNetworkComponent() const;
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
-    /*
-    inline bool isNetworkComponent() const{
-        bool (BlockRotationDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?isNetworkComponent@BlockRotationDescription@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKROTATIONDESCRIPTION
+public:
+#endif
     MCAPI static std::string const NameID;
 
-protected:
-
-private:
 
 };

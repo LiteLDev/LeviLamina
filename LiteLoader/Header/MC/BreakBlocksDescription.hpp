@@ -22,22 +22,16 @@ public:
     BreakBlocksDescription(class BreakBlocksDescription const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~BreakBlocksDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
-    /*
-    inline  ~BreakBlocksDescription(){
-         (BreakBlocksDescription::*rv)();
-        *((void**)&rv) = dlsym("??1BreakBlocksDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKBLOCKSDESCRIPTION
+public:
+#endif
     MCAPI BreakBlocksDescription();
 
-protected:
-
-private:
 
 };

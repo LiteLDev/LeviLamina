@@ -20,27 +20,25 @@ public:
     ScriptActorComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptActorComponent();
     /*1*/ virtual struct Scripting::Error _functionError(std::string const &) const;
     /*2*/ virtual struct Scripting::Error _getPropertyError(std::string const &) const;
     /*3*/ virtual struct Scripting::Error _setPropertyError(std::string const &) const;
-    /*
-    inline  ~ScriptActorComponent(){
-         (ScriptActorComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptActorComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTACTORCOMPONENT
+public:
+#endif
     MCAPI ScriptActorComponent(class ScriptActorComponent const &);
     MCAPI ScriptActorComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class ScriptActorComponent & operator=(class ScriptActorComponent const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptActorComponent> bind(struct Scripting::Version);
 
-protected:
+//protected:
     MCAPI class Actor * _tryGetOwner() const;
     MCAPI class Mob * _tryGetOwnerAsMob() const;
 
-private:
+protected:
+
 
 };

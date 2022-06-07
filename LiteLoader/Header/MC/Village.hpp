@@ -28,7 +28,11 @@ public:
     Village() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGE
+public:
+#endif
     MCAPI Village(class Dimension &, class mce::UUID, class BlockPos const &);
     MCAPI void addActorToVillage(enum DwellerRole, struct ActorUniqueID const &);
     MCAPI void addAggressor(class Mob const &);
@@ -82,9 +86,7 @@ public:
     MCAPI static bool isVillagePOI(class BlockSource const &, class BlockPos const &);
     MCAPI static bool isVillagePOI(class VillageManager const &, class Block const &);
 
-protected:
-
-private:
+//private:
     MCAPI void _addPoiToVillage(struct ActorUniqueID const &, class std::weak_ptr<class POIInstance>);
     MCAPI void _calcPOIDist();
     MCAPI void _claimUnclaimedPOIs();
@@ -115,6 +117,8 @@ private:
     MCAPI void _updateAndRemoveInactiveDwellers(unsigned __int64, float);
     MCAPI void _updateClaimedPOIs(class BlockSource &);
     MCAPI void _updateUnclaimedPOIs(class BlockSource &);
+
+private:
     MCAPI static float const ACHIEVEMENT_SOUND_THE_ALARM_TOLERANCE;
     MCAPI static std::string const CELEBRATION_EVENT;
     MCAPI static class Vec3 const RAID_BOUNDS_PADDING;
@@ -142,5 +146,6 @@ private:
     MCAPI static int const VILLAGE_UNCLAIMED_POI_CAP;
     MCAPI static unsigned __int64 const VILLAGE_UPDATE_TICK_DELAY;
     MCAPI static unsigned char const VILLAGE_VERSION_CURRENT;
+
 
 };

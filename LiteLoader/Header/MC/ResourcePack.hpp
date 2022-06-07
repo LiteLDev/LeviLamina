@@ -23,8 +23,11 @@ public:
     ResourcePack() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~ResourcePack();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACK
+public:
+#endif
     MCAPI ResourcePack(class Pack &);
     MCAPI bool areKnownFilesValid();
     MCAPI void forEachIn(class Core::Path const &, class std::function<void (class Core::Path const &)>, int, bool) const;
@@ -56,11 +59,12 @@ public:
     MCAPI static class Core::PathBuffer<std::string> const RESOURCE_PACK_ICON_PATH;
     MCAPI static class Core::PathBuffer<std::string> const TEXTURES_LIST_PATH;
 
-protected:
-
-private:
+//private:
     MCAPI void _createSubpack(struct SubpackInfo const &);
     MCAPI void _createSubpacks();
     MCAPI void _generateIconPath();
+
+private:
+
 
 };

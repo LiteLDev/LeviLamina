@@ -22,11 +22,12 @@ public:
     VanillaVillageJigsawStructureBlockRules() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAVILLAGEJIGSAWSTRUCTUREBLOCKRULES
+public:
+#endif
     MCAPI static void initialize(class JigsawStructureRegistry &);
 
-protected:
-
-private:
 
 };

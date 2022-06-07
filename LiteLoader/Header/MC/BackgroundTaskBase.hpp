@@ -22,15 +22,11 @@ public:
     BackgroundTaskBase() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~BackgroundTaskBase();
-    /*
-    inline  ~BackgroundTaskBase(){
-         (BackgroundTaskBase::*rv)();
-        *((void**)&rv) = dlsym("??1BackgroundTaskBase@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKGROUNDTASKBASE
+public:
+#endif
     MCAPI BackgroundTaskBase(class gsl::not_null<class IBackgroundTaskOwner *>, struct TaskStartInfoBase const &, bool);
     MCAPI void _makeOrphan();
     MCAPI bool canBeRunBy(class std::thread::id) const;
@@ -50,11 +46,16 @@ public:
     MCAPI void setSyncPriority();
     MCAPI static class BackgroundTaskBase * getCurrent();
 
-protected:
+//protected:
     MCAPI void backDownPriority();
     MCAPI void taskComplete();
 
+//private:
+
+protected:
+
 private:
     MCAPI static class BackgroundTaskBase * gCurrentTask;
+
 
 };

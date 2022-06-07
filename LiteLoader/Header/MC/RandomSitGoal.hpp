@@ -22,6 +22,7 @@ public:
     RandomSitGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RandomSitGoal();
     /*1*/ virtual bool canUse();
@@ -31,10 +32,10 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMSITGOAL
+public:
+#endif
     MCAPI RandomSitGoal(class Mob &, float, float, float, float);
 
-protected:
-
-private:
 
 };

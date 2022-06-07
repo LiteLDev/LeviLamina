@@ -23,21 +23,18 @@ public:
     MessagingCommand() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MessagingCommand();
-    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const = 0;
-    /*
-    inline  ~MessagingCommand(){
-         (MessagingCommand::*rv)();
-        *((void**)&rv) = dlsym("??1MessagingCommand@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MESSAGINGCOMMAND
+public:
+#endif
 
-protected:
+//protected:
     MCAPI MessagingCommand(bool, bool);
     MCAPI bool checkChatPermissions(class CommandOrigin const &, class CommandOutput &) const;
 
-private:
+protected:
+
 
 };

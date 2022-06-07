@@ -21,6 +21,7 @@ public:
     ItemStackRequestActionCreate(class ItemStackRequestActionCreate const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemStackRequestActionCreate();
     /*1*/ virtual void __unk_vfn_1();
@@ -28,11 +29,11 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void _write(class BinaryStream &) const;
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCREATE
+public:
+#endif
     MCAPI ItemStackRequestActionCreate();
     MCAPI unsigned char getResultsIndex() const;
 
-protected:
-
-private:
 
 };

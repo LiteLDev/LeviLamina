@@ -20,11 +20,11 @@ public:
     IEntitySystems() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~IEntitySystems();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IENTITYSYSTEMS
+public:
+#endif
 
-protected:
-
-private:
 
 };
