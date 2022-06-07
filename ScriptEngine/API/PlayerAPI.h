@@ -120,6 +120,8 @@ public:
     Local<Value> simulateInteract(const Arguments& args);
     Local<Value> simulateJump(const Arguments& args);
     Local<Value> simulateLocalMove(const Arguments& args);
+    Local<Value> simulateWorldMove(const Arguments& args);
+    Local<Value> simulateMoveTo(const Arguments& args);
     Local<Value> simulateLookAt(const Arguments& args);
     Local<Value> simulateSetBodyRotation(const Arguments& args);
     Local<Value> simulateNavigateTo(const Arguments& args);

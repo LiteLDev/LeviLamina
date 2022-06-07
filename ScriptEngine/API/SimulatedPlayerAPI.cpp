@@ -99,13 +99,17 @@ Local<Value> PlayerClass::simulateAttack(const Arguments& args)
         auto sp = asSimulatedPlayer();
         if (!sp)
             return Local<Value>();
+        
         if (args.size()==0)
             return Boolean::newBoolean(sp->simulateAttack());
-        Actor* target = EntityClass::extract(args[0]);
-        if (!target)
-            target = PlayerClass::extract(args[0]);
-        if (target)
-            return Boolean::newBoolean(sp->simulateAttack(target));
+        
+        if (auto actor = EntityClass::tryExtractActor(args[0]))
+        {
+            if (!*actor)
+                return Local<Value>();
+            return Boolean::newBoolean(sp->simulateAttack(*actor));
+        }
+        
         LOG_WRONG_ARG_TYPE();
         return Local<Value>();
     }
@@ -120,8 +124,10 @@ Local<Value> PlayerClass::simulateDestory(const Arguments& args){
         auto sp = asSimulatedPlayer();
         if (!sp)
             return Local<Value>();
+        
         if (args.size() == 0)
             return Boolean::newBoolean(sp->simulateDestory());
+        
         int dimid = sp->getDimensionId();
         BlockPos bpos;
         size_t index = 0;
@@ -203,18 +209,12 @@ Local<Value> PlayerClass::simulateInteract(const Arguments& args){
             return Local<Value>();
         if (args.size() == 0)
             return Boolean::newBoolean(sp->simulateInteract());
-        if (IsInstanceOf<EntityClass>(args[0])) {
-            Actor* actor = EntityClass::extract(args[0]);
-            if (!actor)
-                return Local<Value>();
-            return Boolean::newBoolean(sp->simulateInteract(*actor));
-        }
-        else if (IsInstanceOf<PlayerClass>(args[0]))
+        
+        if (auto actor = EntityClass::tryExtractActor(args[0]))
         {
-            Actor* actor = PlayerClass::extract(args[0]);
-            if (!actor)
+            if (!*actor)
                 return Local<Value>();
-            return Boolean::newBoolean(sp->simulateInteract(*actor));
+            return Boolean::newBoolean(sp->simulateInteract(**actor));
         }
 
         int dimid = sp->getDimensionId();
@@ -281,11 +281,162 @@ Local<Value> PlayerClass::simulateJump(const Arguments& args){
 };
 
 // void simulateLocalMove(class Vec3 const&, float);
-// void simulateWorldMove(class Vec3 const&, float);
-// void simulateMoveToLocation(class Vec3 const&, float);
 Local<Value> PlayerClass::simulateLocalMove(const Arguments& args)
 {
-    return Local<Value>();
+    CHECK_ARGS_COUNT(args, 1);
+    try
+    {
+        auto sp = asSimulatedPlayer();
+        if (!sp)
+            return Local<Value>();
+        Vec3 target;
+        float speed = 1.0f;
+        size_t index = 0;
+        if (IsInstanceOf<IntPos>(args[0]))
+        {
+            auto pos = IntPos::extractPos(args[0]);
+            target = pos->getBlockPos().toVec3();
+            index += 1;
+        }
+        else if (IsInstanceOf<FloatPos>(args[0]))
+        {
+            auto pos = FloatPos::extractPos(args[0]);
+            target = pos->getVec3();
+            index += 1;
+        }
+#ifdef ENABLE_NUMBERS_AS_POS
+        else if (args[0].isNumber())
+        {
+            CHECK_ARGS_COUNT(args, 3);
+            CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+            Vec3 pos = Vec3(args[0].asNumber().toFloat(), args[1].asNumber().toFloat(), args[2].asNumber().toFloat());
+            index += 3;
+        }
+#endif // ENABLE_NUMBERS_AS_POS
+        else
+        {
+            LOG_WRONG_ARG_TYPE();
+            return Local<Value>();
+        }
+        
+        if (args.size() > index)
+        {
+            CHECK_ARG_TYPE(args[index], ValueKind::kNumber);
+            speed = args[index].asNumber().toFloat();
+        }
+        
+        sp->simulateLocalMove(target, speed);
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in " __FUNCTION__ "!")
+}
+
+// void simulateWorldMove(class Vec3 const&, float);
+Local<Value> PlayerClass::simulateWorldMove(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    try
+    {
+        auto sp = asSimulatedPlayer();
+        if (!sp)
+            return Local<Value>();
+        Vec3 target;
+        float speed = 1.0f;
+        size_t index = 0;
+        if (IsInstanceOf<IntPos>(args[0]))
+        {
+            auto pos = IntPos::extractPos(args[0]);
+            target = pos->getBlockPos().toVec3();
+            index += 1;
+        }
+        else if (IsInstanceOf<FloatPos>(args[0]))
+        {
+            auto pos = FloatPos::extractPos(args[0]);
+            target = pos->getVec3();
+            index += 1;
+        }
+#ifdef ENABLE_NUMBERS_AS_POS
+        else if (args[0].isNumber())
+        {
+            CHECK_ARGS_COUNT(args, 3);
+            CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+            Vec3 pos = Vec3(args[0].asNumber().toFloat(), args[1].asNumber().toFloat(), args[2].asNumber().toFloat());
+            index += 3;
+        }
+#endif // ENABLE_NUMBERS_AS_POS
+        else
+        {
+            LOG_WRONG_ARG_TYPE();
+            return Local<Value>();
+        }
+
+        if (args.size() > index)
+        {
+            CHECK_ARG_TYPE(args[index], ValueKind::kNumber);
+            speed = args[index].asNumber().toFloat();
+        }
+
+        sp->simulateLocalMove(target, speed);
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in " __FUNCTION__ "!")
+};
+
+// void simulateMoveToLocation(class Vec3 const&, float);
+Local<Value> PlayerClass::simulateMoveTo(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    try
+    {
+        auto sp = asSimulatedPlayer();
+        if (!sp)
+            return Local<Value>();
+        Vec3 target;
+        float speed = 1.0f;
+        size_t index = 0;
+        if (IsInstanceOf<IntPos>(args[0]))
+        {
+            auto pos = IntPos::extractPos(args[0]);
+            target = pos->getBlockPos().toVec3();
+            index += 1;
+        }
+        else if (IsInstanceOf<FloatPos>(args[0]))
+        {
+            auto pos = FloatPos::extractPos(args[0]);
+            target = pos->getVec3();
+            index += 1;
+        }
+#ifdef ENABLE_NUMBERS_AS_POS
+        else if (args[0].isNumber())
+        {
+            CHECK_ARGS_COUNT(args, 3);
+            CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+            Vec3 pos = Vec3(args[0].asNumber().toFloat(), args[1].asNumber().toFloat(), args[2].asNumber().toFloat());
+            index += 3;
+        }
+#endif // ENABLE_NUMBERS_AS_POS
+        else
+        {
+            LOG_WRONG_ARG_TYPE();
+            return Local<Value>();
+        }
+
+        if (args.size() > index)
+        {
+            CHECK_ARG_TYPE(args[index], ValueKind::kNumber);
+            speed = args[index].asNumber().toFloat();
+        }
+
+        sp->simulateLocalMove(target, speed);
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in " __FUNCTION__ "!")
 };
 
 // void simulateLookAt(class Actor&);
@@ -338,13 +489,11 @@ Local<Value> PlayerClass::simulateLookAt(const Arguments& args)
             logger.debug("Can't simulate look at other dimension!");
             return Boolean::newBoolean(false);
         }
-        else if (IsInstanceOf<EntityClass>(args[0]) || IsInstanceOf<PlayerClass>(args[0]))
+        else if (auto actor = EntityClass::tryExtractActor(args[0]))
         {
-            auto actor = EntityClass::extract(args[0]);
-            if (!actor)
-                actor = PlayerClass::extract(args[0]);
-            sp->simulateLookAt(*actor);
-            return Boolean::newBoolean(false);
+            if (!*actor)
+                return Local<Value>();
+            return Boolean::newBoolean(sp->simulateInteract(**actor));
         }
         LOG_WRONG_ARG_TYPE();
         return Local<Value>();
@@ -432,12 +581,11 @@ Local<Value> PlayerClass::simulateNavigateTo(const Arguments& args)
             sp->simulateNavigateToLocations(std::move(path), speed);
             return Boolean::newBoolean(true);
         }
-        else if (IsInstanceOf<PlayerClass>(args[0])||IsInstanceOf<EntityClass>(args[0]))
+        else if (auto actor = EntityClass::tryExtractActor(args[0]))
         {
-            Actor* actor = EntityClass::extract(args[0]);
-            if (!actor)
-                actor = PlayerClass::extract(args[0]);
-            auto res = sp->simulateNavigateToEntity(*actor, speed);
+            if (!*actor)
+                return Local<Value>();
+            auto res = sp->simulateNavigateToEntity(**actor, speed);
             return NavigateResultToObject(res);
         }
         else if (IsInstanceOf<IntPos>(args[0]) || IsInstanceOf<FloatPos>(args[0]))
@@ -491,8 +639,10 @@ Local<Value> PlayerClass::simulateUseItem(const Arguments& args)
         auto sp = asSimulatedPlayer();
         if (!sp)
             return Local<Value>();
+        
         if (args.size() == 0)
             return Boolean::newBoolean(sp->simulateUseItem());
+        
         int slot = -1;
         ItemStack* item = nullptr;
         if (args[0].isNumber())
@@ -505,10 +655,12 @@ Local<Value> PlayerClass::simulateUseItem(const Arguments& args)
             return Local<Value>();
         }
         if (args.size() == 1)
+        {
             if (item)
                 return Boolean::newBoolean(sp->simulateUseItem(*item));
-            else 
+            else
                 return Boolean::newBoolean(sp->simulateUseItemInSlot(slot));
+        }
 
         BlockPos bpos;
         ScriptFacing face = (ScriptFacing)0;
@@ -529,7 +681,9 @@ Local<Value> PlayerClass::simulateUseItem(const Arguments& args)
             if (args.size()>3)
             {
                 if (IsInstanceOf<FloatPos>(args[3]))
+                {
                     relativePos = FloatPos::extractPos(args[3])->getVec3();
+                }
                 else
                 {
                     LOG_WRONG_ARG_TYPE();

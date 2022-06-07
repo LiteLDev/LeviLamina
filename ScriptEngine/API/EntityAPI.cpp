@@ -2,12 +2,13 @@
 #include "BaseAPI.h"
 #include "BlockAPI.h"
 #include "EntityAPI.h"
+#include "PlayerAPI.h"
 #include "ItemAPI.h"
 #include "PlayerAPI.h"
 #include "McAPI.h"
 #include "ContainerAPI.h"
 #include "NbtAPI.h"
-#include <MC/Actor.hpp>
+#include <MC/ServerPlayer.hpp>
 #include <MC/Level.hpp>
 #include <MC/ItemActor.hpp>
 #include <MC/SimpleContainer.hpp>
@@ -77,6 +78,15 @@ Actor* EntityClass::extract(Local<Value> v)
         return EngineScope::currentEngine()->getNativeInstance<EntityClass>(v)->get();
     else
         return nullptr;
+}
+
+std::optional<Actor*> tryExtractActor(Local<Value> v)
+{
+    if (IsInstanceOf<EntityClass>(v))
+        return EntityClass::extract(v);
+    if (IsInstanceOf<PlayerClass>(v))
+        return PlayerClass::extract(v);
+    return std::nullopt;
 }
 
 //成员函数

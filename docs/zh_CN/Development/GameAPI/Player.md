@@ -995,6 +995,50 @@ pl.removeBossBar(1145141919);
 参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#lookatblock)
 
 
+#### 相对玩家坐标系移动
+
+`sp.simulateLocalMove()`
+
+- 参数：
+  - pos : `IntPos` / `FloatPos`  
+    移动方向  
+  - speed : `Number`  
+    （可选参数）移动速度，默认为1  
+
+- 返回值：是否请求移动成功
+- 返回值类型：`Boolean`
+
+
+#### 相对世界坐标系移动
+
+`sp.simulateWorldMove()`
+
+- 参数：
+  - pos : `IntPos` / `FloatPos`  
+    移动方向  
+  - speed : `Number`  
+    （可选参数）移动速度，默认为1  
+
+- 返回值：是否请求移动成功
+- 返回值类型：`Boolean`
+
+
+#### 直线移动到坐标
+
+`sp.simulateMoveTo()`
+
+- 参数：
+  - pos : `IntPos` / `FloatPos`  
+    目标位置  
+  - speed : `Number`  
+    （可选参数）移动速度，默认为1  
+
+- 返回值：是否请求移动成功
+- 返回值类型：`Boolean`
+
+参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#movetolocation)  
+注：如需自动寻路，请考虑使用 `模拟导航移动` 
+
 #### 模拟导航移动
 
 `sp.simulateNavigateTo(entity[,speed)`
@@ -1096,6 +1140,4 @@ pl.removeBossBar(1145141919);
 - 返回值类型：`Boolean`
 
 参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#stopusingitem)
-
-`sp.simulateLocalMove()`
 

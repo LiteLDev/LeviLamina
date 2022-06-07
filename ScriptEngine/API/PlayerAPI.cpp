@@ -134,6 +134,8 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("simulateInteract", &PlayerClass::simulateInteract)
         .instanceFunction("simulateJump", &PlayerClass::simulateJump)
         .instanceFunction("simulateLocalMove", &PlayerClass::simulateLocalMove)
+        .instanceFunction("simulateWorldMove", &PlayerClass::simulateWorldMove)
+        .instanceFunction("simulateMoveTo", &PlayerClass::simulateMoveTo)
         .instanceFunction("simulateLookAt", &PlayerClass::simulateLookAt)
         .instanceFunction("simulateSetBodyRotation", &PlayerClass::simulateSetBodyRotation)
         .instanceFunction("simulateNavigateTo", &PlayerClass::simulateNavigateTo)
