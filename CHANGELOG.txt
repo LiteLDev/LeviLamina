@@ -1,14 +1,65 @@
 ## [LiteLoader Release Note]
-This version is an important update.Please update the SDK in time for developers!
+This is a bug fix update.Please update as soon as possible!
 
-## [Major]
-- Performance Enhancement
 
-<img src="https://s1.ax1x.com/2022/05/21/OjVmVI.png">
+## [Changes]
+- Ignore simulated player in Player DB
+- change create bossbar api, #416
+- Set file name when LLSE load script content
+    - for friendly error output
+- Plugin version will now be displayed in Event Error and Schedule Error
+- Script stack and plugin info is now output if there is an error in LLSE, #430
+
 
 ## [New features]
-- Add LLSE ll.hasExported API
+- Add Auto Init dlsym functions on cpp20+API
+- Add CompoundTag APIs
+	- CompoundTag::nbtListToBinary
+	- CompoundTag::nbtListFromBinary
+	- CompoundTag::nbtListFromNetwork
+	- CompoundTag::nbtListToNetwork
+- Add BoundingBox APIs
+	- BoundingBox::forEachBlockInBox
+	- BoundingBox::mergeBoundingBox
+- Add APIs in BlockPos and Vec3
+- Add void return type support for remote call API
+- Add LLSE APIs
+  - pl.langCode property
+  - en.getBlockFromViewVector
+  - en.getEntityFromViewVector
+  - pl.getBlockFromViewVector
+  - pl.getEntityFromViewVector
+  - sp.simulateWorldMove
+  - sp.simulateMoveTo
+- Virtual functions can now be imported via dlsym via MCVAPI
+- Update LibraryBuilder
+
 
 ## [Bug Fixes]
-- Fix BlockActor::refreshData
+- Fix BDS bugs
+  - move crash bug
+  - fishing hook crash when teleported by End Gateway
+- Fix LL bugs:
+  - handle LoadLibrary errors
+  - PreLoader crash when directory "./plugins" does not exist
+  - CompoundTag::fromNetworkNBT
+  - PlayerLeftEvent for Simulated Player
+  - Player APIs for SimulatedPlayer
+- Fix DB bugs:
+  - DB DB::MySQLStmt::bind bug
+  - DB the bug copying data of DB::MySQLStmt
+- Fix LLSE bugs:
+  - mc.spawnSimulatedPlayer by pos
+  - File API return value, #429
+  - file.read memory leak
+  - file.WriteMode and writeSync error, #431
+  - logger stack overflow
+  - WebSocket crash
+  - "get on empty global" or other errors
+  - simulateAttack param
+  - simulateDestory error output
+  - simulateLookAt Entity param
+  - simulateNavigateTo positions param
+  - remote call pos type error
+  - simulateLocalMove
 
