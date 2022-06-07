@@ -380,7 +380,7 @@ Local<Value> PlayerClass::simulateWorldMove(const Arguments& args)
             speed = args[index].asNumber().toFloat();
         }
 
-        sp->simulateLocalMove(target, speed);
+        sp->simulateWorldMove(target, speed);
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in " __FUNCTION__ "!")
@@ -433,7 +433,7 @@ Local<Value> PlayerClass::simulateMoveTo(const Arguments& args)
             speed = args[index].asNumber().toFloat();
         }
 
-        sp->simulateLocalMove(target, speed);
+        sp->simulateMoveToLocation(target, speed);
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in " __FUNCTION__ "!")
