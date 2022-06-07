@@ -13,7 +13,7 @@ This is a bug fix update.Please update as soon as possible!
 
 
 ## [New features]
-- Add Auto Init dlsym functions on cpp20+API
+- Add Auto Init dlsym functions on cpp20+ API
 - Add CompoundTag APIs
 	- CompoundTag::nbtListToBinary
 	- CompoundTag::nbtListFromBinary
@@ -32,7 +32,7 @@ This is a bug fix update.Please update as soon as possible!
   - pl.getEntityFromViewVector
   - sp.simulateWorldMove
   - sp.simulateMoveTo
-- Virtual functions can now be imported via dlsym via MCVAPI
+- Virtual functions can be called via dlsym or MCVAPI now
 - Update LibraryBuilder
 
 
@@ -64,4 +64,5 @@ This is a bug fix update.Please update as soon as possible!
   - simulateNavigateTo positions param
   - remote call pos type error
   - simulateLocalMove
+  - simulateLookAt
 
