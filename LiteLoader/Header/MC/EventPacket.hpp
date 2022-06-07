@@ -57,7 +57,7 @@ public:
     Data data;
 
     inline std::string toDebugString() {
-        std::string name = data.usePlayerId ? Level::getPlayer(uniqueId)->getNameTag() : "Null";
+        std::string name = data.usePlayerId ? Global<Level>->getPlayer(uniqueId)->getNameTag() : "Null";
         std::string debugString = fmt::format("{}: type: {}, player: {}",
             __super::toDebugString(), (int)data.type, name);
         if (data.type == PORTAL_USED) {

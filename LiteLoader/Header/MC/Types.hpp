@@ -223,6 +223,8 @@ struct OperationNodeDetails
 struct PositionTrackingDB
 {
     class TrackingRecord;
+    class PositionTrackingDBClient;
+    class PositionTrackingDBServer;
 };
 
 struct BlockGeometry
@@ -445,6 +447,11 @@ public:
     }
 };
 
+namespace cg
+{
+    class ImageBuffer;
+};
+
 template <int a>
 class DividedPos2d;
 
@@ -470,11 +477,6 @@ template <typename T1>
 class WildcardCommandSelector;
 
 //enum
-class CodeBuilder
-{
-public:
-    enum ProtocolVersion;
-};
 
 enum class ContainerType : char {
     INVENTORY              = -1,

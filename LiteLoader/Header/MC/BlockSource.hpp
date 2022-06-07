@@ -13,6 +13,7 @@ class BlockSource {
 
 #define AFTER_EXTRA
 // Add Member There
+#define ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSOURCE
 public:
 struct ClipParameters
 {

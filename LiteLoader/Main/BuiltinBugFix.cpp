@@ -116,8 +116,8 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
             {
                 for (auto& a : action.second)
                 {
-                    auto fromDesc = ItemStack::fromDescriptor(a.fromDescriptor, *Global<Level>->getBlockPalette(), true);
-                    auto toDesc = ItemStack::fromDescriptor(a.fromDescriptor, *Global<Level>->getBlockPalette(), true);
+                    auto fromDesc = ItemStack::fromDescriptor(a.fromDescriptor, Global<Level>->getBlockPalette(), true);
+                    auto toDesc = ItemStack::fromDescriptor(a.fromDescriptor, Global<Level>->getBlockPalette(), true);
                     if (!itemMayFromReducer(fromDesc) || !itemMayFromReducer(toDesc) || !itemMayFromReducer(a.fromItem) || !itemMayFromReducer(a.toItem))
                     {
                         if (mayFromReducer)

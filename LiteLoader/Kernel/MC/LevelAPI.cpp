@@ -38,48 +38,6 @@ Actor* Level::getEntity(ActorUniqueID uniqueId)
     }
 }
 
-Dimension* Level::getDimension(class AutomaticID<class Dimension, int> a0) {
-    class Dimension* (Level::*rv)(class AutomaticID<class Dimension, int>) const;
-    *((void**)&rv) = dlsym("?getDimension@Level@@UEBAPEAVDimension@@V?$AutomaticID@VDimension@@H@@@Z");
-    return (Global<Level>->*rv)(std::forward<class AutomaticID<class Dimension, int>>(a0));
-}
-    
-MCINLINE class MapItemSavedData* Level::getMapSavedData(struct ActorUniqueID a0) {
-    class MapItemSavedData* (Level::*rv)(struct ActorUniqueID);
-    *((void**)&rv) = dlsym("?getMapSavedData@Level@@UEAAPEAVMapItemSavedData@@UActorUniqueID@@@Z");
-    return (Global<Level>->*rv)(a0);
-}
-MCINLINE class LevelStorage& getLevelStorage() {
-    class LevelStorage& (Level::*rv)();
-    *((void**)&rv) = dlsym("?getLevelStorage@Level@@UEAAAEAVLevelStorage@@XZ");
-    return (Global<Level>->*rv)();
-}
-
-void Level::forEachPlayer(class std::function<bool(class Player&)> a0) {
-    void (Level::*rv)(class std::function<bool(class Player&)>);
-    *((void**)&rv) = dlsym("?forEachPlayer@Level@@UEAAXV?$function@$$A6A_NAEAVPlayer@@@Z@std@@@Z");
-    return (Global<Level>->*rv)(std::forward<class std::function<bool(class Player&)>>(a0));
-}
-
-void Level::forEachPlayer(class std::function<bool(class Player const&)> a0) {
-    void (Level::*rv)(class std::function<bool(class Player const&)>) const;
-    *((void**)&rv) = dlsym("?forEachPlayer@Level@@UEBAXV?$function@$$A6A_NAEBVPlayer@@@Z@std@@@Z");
-    return (Global<Level>->*rv)(std::forward<class std::function<bool(class Player const&)>>(a0));
-}
-bool Level::destroyBlock(class BlockSource& a0, class BlockPos const& a1, bool a2) {
-    bool (Level::*rv)(class BlockSource&, class BlockPos const&, bool);
-    *((void**)&rv) = dlsym("?destroyBlock@Level@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@_N@Z");
-    return (Global<Level>->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1), std::forward<bool>(a2));
-}
-
-void Level::spawnParticleEffect(std::string const& a0, class Vec3 const& a1, class Dimension* a2)
-{
-    void (Level::*rv)(std::string const&, class Vec3 const&, class Dimension*);
-    *((void**)&rv) = dlsym("?spawnParticleEffect@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@PEAVDimension@@@Z");
-    return (Global<Level>->*rv)(std::forward<std::string const&>(a0), std::forward<class Vec3 const&>(a1), std::forward<class Dimension*>(a2));
-}
-
-
 
 BlockSource* Level::getBlockSource(int dimID) {
     //auto dim = Global<Level>->createDimension(dimID);
@@ -90,12 +48,6 @@ BlockSource* Level::getBlockSource(int dimID) {
 
 BlockSource* Level::getBlockSource(Actor* ac) {
     return const_cast<BlockSource*>(&ac->getRegionConst());
-}
-
-BlockPalette* Level::getBlockPalette() {
-    BlockPalette* (Level::*rv)();
-    *((void**)&rv) = dlsym("?getBlockPalette@Level@@UEAAAEAVBlockPalette@@XZ");
-    return (Global<Level>->*rv)();
 }
 
 Block* Level::getBlock(BlockPos* pos, int dimId) {

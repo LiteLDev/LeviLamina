@@ -11,6 +11,16 @@
 namespace CodeBuilder {
 
 #define AFTER_EXTRA
+enum ProtocolVersion;
+
+struct RequestHeader;
+enum RequestPurpose;
+struct AgentMessage;
+struct ChatMessage;
+struct CommandMessage;
+struct ErrorMessage;
+enum ResponsePurpose;
+struct EventMessage;
 
 #undef AFTER_EXTRA
     MCAPI struct MCRESULT deserialize(class Json::Value const &, struct CodeBuilder::RequestHeader &);

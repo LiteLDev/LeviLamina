@@ -38,6 +38,7 @@
 #include <algorithm>
 #include <iomanip>
 #include <xhash>
+#include <shared_mutex>
 
 #include <minwindef.h>
 

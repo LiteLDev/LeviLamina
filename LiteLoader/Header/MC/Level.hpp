@@ -35,18 +35,18 @@ public:
 
     #define ENABLE_VIRTUAL_FAKESYMBOL_LEVEL
     //Entity & Player
-    LIAPI static void forEachPlayer(class std::function<bool(class Player&)> callback);
-    LIAPI static void forEachPlayer(class std::function<bool(class Player const&)> callback);
+    //LIAPI static void forEachPlayer(class std::function<bool(class Player&)> callback);
+    //LIAPI static void forEachPlayer(class std::function<bool(class Player const&)> callback);
     LIAPI static std::vector<Player*> getAllPlayers();
-    LIAPI static Player* getPlayer(const string& info);     // name or xuid
-    LIAPI static Player* getPlayer(ActorUniqueID id);       // UniqueID
+    LIAPI Player* getPlayer(const string& info);     // name or xuid
+    LIAPI Player* getPlayer(ActorUniqueID id);       // UniqueID
     LIAPI static Actor* getEntity(ActorUniqueID id);
     LIAPI static std::vector<Actor*> getAllEntities(int dimId);
     LIAPI static std::vector<Actor*> getAllEntities();
     LIAPI static Actor* spawnMob(Vec3 pos, int dimId, std::string typeName);
     LIAPI static Actor* spawnItem(Vec3 pos, int dimId, ItemStack *item);
     LIAPI static bool createExplosion(Vec3 pos, int dimId, Actor* source, float radius, bool createFire, bool canBreak, float maxResistance = 3.40282347e+38);
-    LIAPI static class MapItemSavedData* getMapSavedData(struct ActorUniqueID a0);
+    //LIAPI static class MapItemSavedData* getMapSavedData(struct ActorUniqueID a0);
     LIAPI static Actor* cloneMob(Vec3 pos, int dimId, Actor* ac);
 	
     //Block
@@ -68,9 +68,9 @@ public:
     LIAPI static bool setBlock(const BlockPos& pos, int dim, CompoundTag* nbt);
     LIAPI static bool breakBlockNaturally(BlockSource* bs, const BlockPos& pos);
     LIAPI static bool breakBlockNaturally(BlockSource* bs, const BlockPos& pos, ItemStack* tool);
-    LIAPI static bool destroyBlock(class BlockSource& bs, class BlockPos const& pos, bool a2);
-    LIAPI static void spawnParticleEffect(std::string const& type, class Vec3 const& pos, class Dimension* a2);
-    LIAPI static void spawnParticleEffect(std::string const& type, class Actor const& a1, class Vec3 const& a2);
+    //LIAPI static bool destroyBlock(class BlockSource& bs, class BlockPos const& pos, bool a2);
+    //LIAPI static void spawnParticleEffect(std::string const& type, class Vec3 const& pos, class Dimension* a2);
+    //LIAPI static void spawnParticleEffect(std::string const& type, class Actor const& a1, class Vec3 const& a2);
     LIAPI static bool hasContainer(Vec3 pos, int dim);
     LIAPI static Container* getContainer(Vec3 pos, int dim);
 
@@ -81,8 +81,8 @@ public:
     //Helper
     LIAPI static BlockSource* getBlockSource(int dimid);
     LIAPI static BlockSource* getBlockSource(Actor* actor);
-    LIAPI static BlockPalette* getBlockPalette();
-    LIAPI static Dimension* getDimension(class AutomaticID<class Dimension, int> a0);
+    //LIAPI static BlockPalette* getBlockPalette();
+    //LIAPI static Dimension* getDimension(class AutomaticID<class Dimension, int> a0);
     LIAPI static Actor* getDamageSourceEntity(ActorDamageSource* ads);
     LIAPI static void broadcastText(const string& text, TextType type);
     LIAPI static void broadcastTitle(const string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
