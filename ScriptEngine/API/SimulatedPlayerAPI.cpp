@@ -493,7 +493,8 @@ Local<Value> PlayerClass::simulateLookAt(const Arguments& args)
         {
             if (!*actor)
                 return Local<Value>();
-            return Boolean::newBoolean(sp->simulateInteract(**actor));
+            sp->simulateLookAt(**actor);
+            return Boolean::newBoolean(true);
         }
         LOG_WRONG_ARG_TYPE();
         return Local<Value>();
