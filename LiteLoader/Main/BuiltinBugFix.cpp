@@ -244,7 +244,7 @@ TInstanceHook(void, "?move@Player@@UEAAXAEBVVec3@@@Z", Player, Vec3 pos)
     return;
 }
 
-
+#if false
 TInstanceHook(void, "?die@ServerPlayer@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer , ActorDamageSource* ds)
 {
     original(this, ds);
@@ -258,6 +258,7 @@ TInstanceHook(void, "?die@ServerPlayer@@UEAAXAEBVActorDamageSource@@@Z", ServerP
         },1);
     }
 }
+#endif
 
 //fix Fishing Hook changeDimension Crash
 TInstanceHook(__int64, "?changeDimension@Actor@@UEAAXV?$AutomaticID@VDimension@@H@@_N@Z", Actor, unsigned int a1, char a2)

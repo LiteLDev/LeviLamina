@@ -9,6 +9,7 @@ This is a bug fix update.Please update as soon as possible!
     - for friendly error output
 - Plugin version will now be displayed in Event Error and Schedule Error
 - Script stack and plugin info is now output if there is an error in LLSE, #430
+- Remove a unstable bug fix
 
 
 ## [New features]
