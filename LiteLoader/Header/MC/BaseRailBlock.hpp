@@ -28,11 +28,12 @@ public:
     /*0*/ virtual ~BaseRailBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /*19*/ virtual void __unk_vfn_19();
-    /*30*/ virtual void __unk_vfn_30();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*33*/ virtual bool isWaterBlocking() const;
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
+    /*34*/ virtual bool isWaterBlocking() const;
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -74,7 +75,6 @@ public:
     /*192*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASERAILBLOCK
-public:
     MCVAPI bool canSpawnOn() const;
     MCVAPI bool isRailBlock() const;
     MCVAPI bool waterSpreadCausesSpawn() const;
@@ -90,6 +90,7 @@ public:
     MCAPI bool _canSurvive(class BlockSource const &, class BlockPos const &) const;
     MCAPI void _updatePlacement(class BlockSource &, class BlockPos const &) const;
     MCAPI static void _createCircuitComponent(class BlockSource &, class BlockPos const &);
+
 
 private:
 

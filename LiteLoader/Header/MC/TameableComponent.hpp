@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAMEABLECOMPONENT
-public:
 #endif
     MCAPI TameableComponent();
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
@@ -33,6 +32,7 @@ public:
 //private:
     MCAPI bool _attemptToTame(class Actor &, class Player &);
     MCAPI bool _canTame(class Actor &, class Player &);
+
 
 private:
 

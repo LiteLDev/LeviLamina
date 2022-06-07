@@ -32,7 +32,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDDRAGONFIGHT
-public:
 #endif
     MCAPI EndDragonFight(class BlockSource &);
     MCAPI void loadData(class CompoundTag const &);
@@ -60,6 +59,7 @@ public:
     MCAPI void _tickRespawnAnimation(std::vector<struct ActorUniqueID> const &, int);
     MCAPI void _updateCrystalCount();
     MCAPI void _verifyExitPositionsTask(class std::tuple<enum EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator> &);
+
 
 private:
     MCAPI static int const ARENA_SIZE_CHUNKS;

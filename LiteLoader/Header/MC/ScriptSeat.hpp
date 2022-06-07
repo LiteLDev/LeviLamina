@@ -25,9 +25,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSEAT
-public:
 #endif
     MCAPI static class Scripting::ClassBindingBuilder<struct SeatDescription> bind(struct Scripting::Version);
+
 
 
 };

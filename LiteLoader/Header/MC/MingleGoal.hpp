@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "MingleComponent.hpp"
 #include "MoveToPOIGoal.hpp"
 
 #define BEFORE_EXTRA
@@ -37,7 +36,6 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINGLEGOAL
-public:
 #endif
     MCAPI MingleGoal(class Mob &, float, float, float, struct ActorDefinitionIdentifier, float);
 
@@ -45,7 +43,7 @@ public:
     MCAPI void _findNewPartner(struct ActorUniqueID);
     MCAPI bool _isWithinInteractRange(class Actor &) const;
     MCAPI void _lookAt(class Actor *);
-    MCAPI bool _validatePartnerState(enum MingleComponent::MingleState, class MingleComponent &, bool);
+
 
 private:
     MCAPI static int const FIND_PARTNER_INTERVAL_TICKS;

@@ -391,17 +391,16 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKHANDLER
-public:
     MCVAPI bool allowIncomingPacketId(class NetworkIdentifier const &, enum MinecraftPacketIds);
     MCVAPI class GameSpecificNetEventCallback * getGameSpecificNetEventCallback();
     MCVAPI void handle(class NetworkIdentifier const &, class CreatePhotoPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class CompletedUsingItemPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class ChangeMobPropertyPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class PurchaseReceiptPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class AdventureSettingsPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class PhotoTransferPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class ActorEventPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class ActorPickRequestPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class AdventureSettingsPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class AnimatePacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class AnvilDamagePacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class BlockPickRequestPacket const &);
@@ -446,7 +445,9 @@ public:
     MCVAPI void handle(class NetworkIdentifier const &, class PlayerInputPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class PlayerSkinPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class PositionTrackingDBClientRequestPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class RequestAbilityPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class RequestChunkRadiusPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class RequestPermissionsPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class ResourcePackChunkRequestPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class RespawnPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class ScriptMessagePacket const &);
@@ -517,6 +518,7 @@ public:
     MCAPI void _onSubClientAuthenticated(class NetworkIdentifier const &, class Certificate const &, class SubClientLoginPacket const &);
     MCAPI void _sendAdditionalLevelData(class ServerPlayer &, class NetworkIdentifier const &);
     MCAPI void _sendLevelData(class ServerPlayer &, class NetworkIdentifier const &);
+
 
 private:
 

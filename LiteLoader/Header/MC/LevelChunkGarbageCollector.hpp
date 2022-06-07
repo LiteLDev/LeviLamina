@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNKGARBAGECOLLECTOR
-public:
 #endif
     MCAPI LevelChunkGarbageCollector(class Dimension &);
     MCAPI void acquireDiscardedChunk(std::unique_ptr<class LevelChunk>);
@@ -34,6 +33,7 @@ public:
 
 //protected:
     MCAPI void flush();
+
 
 protected:
 

@@ -33,7 +33,6 @@ public:
     /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual bool isTargetGoal() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOAL
-public:
     MCVAPI void onPlayerDimensionChanged(class Player *, class AutomaticID<class Dimension, int>);
     MCVAPI void start();
     MCVAPI void stop();
@@ -44,6 +43,7 @@ public:
     MCAPI unsigned short getTypeId() const;
     MCAPI void setRequiredControlFlags(int);
     MCAPI void setTypeId(unsigned short);
+
 
 
 };

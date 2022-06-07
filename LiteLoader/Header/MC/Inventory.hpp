@@ -37,13 +37,13 @@ public:
     /*39*/ virtual int getFirstEmptySlot() const;
     /*40*/ virtual void setContainerSize(int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORY
-public:
 #endif
     MCAPI Inventory(class Player *);
     MCAPI void dropSlot(int, bool, bool, bool);
     MCAPI std::vector<class ItemStack> getComplexItems();
     MCAPI void setupDefault();
     MCAPI void tick(int);
+
 
 
 };

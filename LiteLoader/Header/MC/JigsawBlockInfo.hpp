@@ -25,10 +25,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWBLOCKINFO
-public:
 #endif
     MCAPI JigsawBlockInfo(class BlockPos const &, class Block const *, class Block const *, class JigsawEditorData);
     MCAPI class JigsawBlockInfo & operator=(class JigsawBlockInfo &&);
+
 
 
 };

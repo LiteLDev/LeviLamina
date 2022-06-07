@@ -27,27 +27,26 @@ public:
 
 public:
     /*0*/ virtual ~WrittenBookItem();
-    /*5*/ virtual void __unk_vfn_5();
     /*7*/ virtual void __unk_vfn_7();
     /*10*/ virtual void __unk_vfn_10();
-    /*12*/ virtual void __unk_vfn_12();
-    /*46*/ virtual bool isGlint(class ItemStackBase const &) const;
-    /*47*/ virtual void __unk_vfn_47();
-    /*49*/ virtual void __unk_vfn_49();
-    /*55*/ virtual bool requiresInteract() const;
-    /*56*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
-    /*62*/ virtual void __unk_vfn_62();
+    /*13*/ virtual void __unk_vfn_13();
+    /*15*/ virtual void __unk_vfn_15();
+    /*50*/ virtual bool isGlint(class ItemStackBase const &) const;
+    /*51*/ virtual void __unk_vfn_51();
+    /*53*/ virtual void __unk_vfn_53();
+    /*59*/ virtual bool requiresInteract() const;
+    /*60*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /*66*/ virtual void __unk_vfn_66();
-    /*67*/ virtual void __unk_vfn_67();
-    /*68*/ virtual void __unk_vfn_68();
+    /*70*/ virtual void __unk_vfn_70();
     /*71*/ virtual void __unk_vfn_71();
+    /*72*/ virtual void __unk_vfn_72();
     /*75*/ virtual void __unk_vfn_75();
-    /*76*/ virtual void __unk_vfn_76();
-    /*80*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
-    /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-    /*110*/ virtual std::string getInteractText(class Player const &) const;
+    /*79*/ virtual void __unk_vfn_79();
+    /*80*/ virtual void __unk_vfn_80();
+    /*84*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
+    /*95*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
+    /*115*/ virtual std::string getInteractText(class Player const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WRITTENBOOKITEM
-public:
 #endif
     MCAPI WrittenBookItem(std::string const &, int);
     MCAPI static int const MAX_GENERATION;
@@ -67,6 +66,7 @@ public:
     MCAPI static int getGeneration(class CompoundTag const *);
     MCAPI static int getPageCount(class ItemStack const &);
     MCAPI static std::vector<struct PageContent> getPages(class ItemStack const &);
+
 
 
 };

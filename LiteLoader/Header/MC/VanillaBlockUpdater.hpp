@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLABLOCKUPDATER
-public:
 #endif
     MCAPI static void destroy();
     MCAPI static class CompoundTagUpdaterContext & get();
@@ -42,6 +41,7 @@ public:
     MCAPI static void addUpdaters_1_16_0(class CompoundTagUpdaterContext &);
     MCAPI static void addUpdaters_1_16_210(class CompoundTagUpdaterContext &);
     MCAPI static void addUpdaters_1_18_10(class CompoundTagUpdaterContext &);
+
 
 private:
     MCAPI static std::unique_ptr<class CompoundTagUpdaterContext> mContext;

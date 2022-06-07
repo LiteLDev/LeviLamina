@@ -30,12 +30,13 @@ public:
     /*1*/ virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /*3*/ virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETBOOKCONTENTSFUNCTION
-public:
 #endif
+    MCAPI SetBookContentsFunction(std::vector<std::unique_ptr<class LootItemCondition>> &, std::string const &, std::string const &, std::vector<std::string> const &);
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 //private:
     MCAPI void _fillUserData(class CompoundTag &);
+
 
 private:
 

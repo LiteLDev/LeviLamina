@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREEDITORDATA
-public:
 #endif
     MCAPI StructureEditorData();
     MCAPI std::string getAnimationModeAsString() const;
@@ -73,6 +72,7 @@ public:
 
 //private:
     MCAPI void _setPivotFromStructureSize();
+
 
 private:
     MCAPI static enum StructureBlockType const DEFAULT_STRUCTURE_TYPE;

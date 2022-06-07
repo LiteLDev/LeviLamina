@@ -29,12 +29,12 @@ public:
     /*2*/ virtual void sendServerTickTime(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const &);
     /*3*/ virtual void sendChunkLoadTelemetryData();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERMETRICSIMPL
-public:
 #endif
     MCAPI ServerMetricsImpl(class ServerCommunicationInterface *);
 
 //private:
     MCAPI void sendPeriodicMetricsInternal(class ServerInstance &);
+
 
 private:
 

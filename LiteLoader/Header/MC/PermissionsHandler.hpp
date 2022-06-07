@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERMISSIONSHANDLER
-public:
 #endif
     MCAPI PermissionsHandler(class PermissionsHandler const &);
     MCAPI PermissionsHandler();
@@ -31,10 +30,12 @@ public:
     MCAPI enum CommandPermissionLevel getCommandPermissions() const;
     MCAPI enum PlayerPermissionLevel getPlayerPermissions() const;
     MCAPI bool loadSaveData(class CompoundTag const &);
+    MCAPI bool operator==(class PermissionsHandler const &) const;
     MCAPI void setCommandPermissions(enum CommandPermissionLevel);
     MCAPI void setPlayerPermissions(enum PlayerPermissionLevel);
     MCAPI static enum PlayerPermissionLevel playerPermissionLevelFromString(std::string const &);
     MCAPI static std::string playerPermissionLevelToString(enum PlayerPermissionLevel const &);
+
 
 
 };

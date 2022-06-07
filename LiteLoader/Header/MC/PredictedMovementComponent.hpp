@@ -41,21 +41,19 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PREDICTEDMOVEMENTCOMPONENT
-public:
 #endif
     MCAPI PredictedMovementComponent(class Actor &);
     MCAPI bool isEnabled() const;
     MCAPI void reset();
     MCAPI void tick(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> const &);
+    MCAPI ~PredictedMovementComponent();
 
 //private:
     MCAPI void _debugLog(struct PredictedMovementComponent::PredictionDbgData const &) const;
     MCAPI bool _isDebugLoggingEnabled() const;
-    MCAPI bool _isFeatureEnabled() const;
-    MCAPI void _sendPredictionEvent(enum MovePredictionType, class Vec3 const &) const;
     MCAPI void _tickNextPosition(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> const &);
-    MCAPI bool _tryIfTeleport(class std::shared_ptr<struct PredictedMovementComponent::HistoryItem const> const &, class std::shared_ptr<struct PredictedMovementComponent::HistoryItem const> const &, bool);
     MCAPI bool _tryInterpolate(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> const &);
+
 
 private:
     MCAPI static unsigned int const LERP_STEP_SIZE;

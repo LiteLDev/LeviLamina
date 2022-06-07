@@ -27,12 +27,13 @@ public:
 public:
     /*0*/ virtual ~ChorusFlowerBlock();
     /*19*/ virtual void __unk_vfn_19();
-    /*23*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
-    /*30*/ virtual void __unk_vfn_30();
+    /*22*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*33*/ virtual bool isWaterBlocking() const;
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
+    /*34*/ virtual bool isWaterBlocking() const;
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -71,7 +72,6 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHORUSFLOWERBLOCK
-public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI ChorusFlowerBlock(std::string const &, int);
@@ -84,6 +84,7 @@ public:
     MCAPI void _placeDeadFlower(class BlockSource &, class BlockPos const &) const;
     MCAPI void _placeGrownFlower(class BlockSource &, class BlockPos const &, int) const;
     MCAPI static void _growTreeRecursive(class BlockSource &, class BlockPos const &, class BlockPos const &, class Random &, int, int);
+
 
 private:
 

@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKGROUNDTASKQUEUE
-public:
 #endif
     MCAPI BackgroundTaskQueue();
     MCAPI void flush();
@@ -37,6 +36,7 @@ public:
 
 //private:
     MCAPI bool _fetchAllAvailableTasks();
+
 
 private:
 

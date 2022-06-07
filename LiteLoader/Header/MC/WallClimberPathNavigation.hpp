@@ -32,8 +32,8 @@ public:
     /*7*/ virtual bool moveTo(class NavigationComponent &, class Mob &, class Actor &, float);
     /*11*/ virtual bool canUpdatePath(class Mob const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WALLCLIMBERPATHNAVIGATION
-public:
 #endif
+
 
 
 };

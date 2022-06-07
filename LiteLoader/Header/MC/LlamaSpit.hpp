@@ -29,33 +29,33 @@ public:
     /*14*/ virtual ~LlamaSpit();
     /*40*/ virtual void __unk_vfn_40();
     /*48*/ virtual void normalTick();
-    /*61*/ virtual void __unk_vfn_61();
-    /*68*/ virtual void __unk_vfn_68();
-    /*79*/ virtual float getShadowHeightOffs();
-    /*82*/ virtual void __unk_vfn_82();
-    /*87*/ virtual float getBrightness(float) const;
-    /*88*/ virtual void __unk_vfn_88();
-    /*94*/ virtual bool isPickable();
-    /*95*/ virtual void __unk_vfn_95();
-    /*98*/ virtual void __unk_vfn_98();
-    /*105*/ virtual void __unk_vfn_105();
+    /*60*/ virtual void __unk_vfn_60();
+    /*67*/ virtual void __unk_vfn_67();
+    /*78*/ virtual float getShadowHeightOffs();
+    /*81*/ virtual void __unk_vfn_81();
+    /*86*/ virtual float getBrightness(float) const;
+    /*87*/ virtual void __unk_vfn_87();
+    /*93*/ virtual bool isPickable();
+    /*94*/ virtual void __unk_vfn_94();
+    /*97*/ virtual void __unk_vfn_97();
+    /*104*/ virtual void __unk_vfn_104();
+    /*106*/ virtual void __unk_vfn_106();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*109*/ virtual void __unk_vfn_109();
-    /*142*/ virtual float getPickRadius();
-    /*171*/ virtual struct ActorUniqueID getSourceUniqueID() const;
-    /*181*/ virtual void __unk_vfn_181();
-    /*195*/ virtual void __unk_vfn_195();
+    /*141*/ virtual float getPickRadius();
+    /*170*/ virtual struct ActorUniqueID getSourceUniqueID() const;
+    /*180*/ virtual void __unk_vfn_180();
+    /*194*/ virtual void __unk_vfn_194();
+    /*219*/ virtual void __unk_vfn_219();
     /*220*/ virtual void __unk_vfn_220();
-    /*221*/ virtual void __unk_vfn_221();
-    /*246*/ virtual void __unk_vfn_246();
-    /*249*/ virtual void __unk_vfn_249();
-    /*261*/ virtual void __unk_vfn_261();
-    /*269*/ virtual void __unk_vfn_269();
+    /*245*/ virtual void __unk_vfn_245();
+    /*248*/ virtual void __unk_vfn_248();
+    /*264*/ virtual void __unk_vfn_264();
+    /*272*/ virtual void __unk_vfn_272();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LLAMASPIT
-public:
 #endif
     MCAPI LlamaSpit(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

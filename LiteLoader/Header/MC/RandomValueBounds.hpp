@@ -26,13 +26,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMVALUEBOUNDS
-public:
 #endif
     MCAPI void deserialize(class Json::Value const &);
     MCAPI float getFloat(class Random &) const;
     MCAPI int getInt(class Random &) const;
     MCAPI float getMax() const;
     MCAPI float getMin() const;
+
 
 
 };

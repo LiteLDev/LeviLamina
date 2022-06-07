@@ -33,12 +33,12 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SENDEVENTGOAL
-public:
 #endif
     MCAPI SendEventGoal(class Mob &, std::vector<struct SendEventData> const &);
 
 //private:
     MCAPI int _selectBestSpell();
+
 
 private:
 

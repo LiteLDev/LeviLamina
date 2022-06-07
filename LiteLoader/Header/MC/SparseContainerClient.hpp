@@ -27,11 +27,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPARSECONTAINERCLIENT
-public:
 #endif
     MCAPI void _networkUpdateItem(int, class ItemStack const &);
 
 //private:
+
 
 private:
     MCAPI static class BidirectionalUnorderedMap<enum SparseContainerClient::PushSlotPredictionResult, std::string> const pushSlotPredictionResultMap;

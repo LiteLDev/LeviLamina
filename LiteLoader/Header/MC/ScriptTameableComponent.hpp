@@ -27,7 +27,6 @@ public:
 public:
     /*0*/ virtual ~ScriptTameableComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTTAMEABLECOMPONENT
-public:
 #endif
     MCAPI ScriptTameableComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class Scripting::Result<float> getProbability() const;
@@ -35,6 +34,7 @@ public:
     MCAPI class Scripting::Result<std::vector<std::string>> getTameItems() const;
     MCAPI class Scripting::Result<bool> tame() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptTameableComponent> bind(struct Scripting::Version);
+
 
 
 };

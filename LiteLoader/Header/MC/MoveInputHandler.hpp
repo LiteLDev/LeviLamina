@@ -38,12 +38,12 @@ public:
     /*15*/ virtual void __unk_vfn_15() = 0;
     /*16*/ virtual std::unique_ptr<struct IReplayableActorInput> createSnapshot();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEINPUTHANDLER
-public:
 #endif
     MCAPI bool wantsMoveForward() const;
 
 //protected:
     MCAPI MoveInputHandler();
+
 
 protected:
 

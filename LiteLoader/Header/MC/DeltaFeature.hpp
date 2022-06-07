@@ -29,12 +29,12 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DELTAFEATURE
-public:
 #endif
 
 //private:
     MCAPI class std::optional<class BlockPos> _findDeltaLevel(class BlockSource &, class BlockPos) const;
     MCAPI bool _isValidPlacement(class BlockSource &, class BlockPos) const;
+
 
 private:
 

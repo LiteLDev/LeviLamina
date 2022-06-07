@@ -30,10 +30,11 @@ public:
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /*15*/ virtual void onProjectileHit(class BlockSource &, class BlockPos const &, class Actor const &) const;
     /*19*/ virtual void __unk_vfn_19();
-    /*30*/ virtual void __unk_vfn_30();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -82,14 +83,15 @@ public:
     /*206*/ virtual void onLand(class BlockSource &, class BlockPos const &) const;
     /*208*/ virtual void startFalling(class BlockSource &, class BlockPos const &, class Block const &, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POINTEDDRIPSTONEBLOCK
-public:
     MCVAPI bool falling() const;
 #endif
     MCAPI PointedDripstoneBlock(std::string const &, int);
+    MCAPI static void addDripParticle(class BlockSource &, class BlockPos const &, enum ParticleType);
     MCAPI static bool canGrow(class BlockSource &, class BlockPos const &, class BlockPos const &);
     MCAPI static void fillCauldron(class BlockSource &, class BlockPos const &);
     MCAPI static class std::optional<class BlockPos> findStalactiteTipAboveCauldron(class BlockSource &, class BlockPos const &);
     MCAPI static class std::optional<enum MaterialType> getCauldronFillLiquidType(class BlockSource &, class BlockPos const &);
+    MCAPI static class std::optional<class BlockPos> getStalactiteTipBelowFillSource(class BlockSource &, class BlockPos const &);
     MCAPI static void growStalactite(class BlockSource &, class BlockPos const &);
     MCAPI static void growStalagmite(class BlockSource &, class BlockPos const &);
 
@@ -100,6 +102,7 @@ public:
     MCAPI static bool _canFillCauldron(class Block const &);
     MCAPI static bool _canTipGrow(class BlockSource &, class BlockPos const &);
     MCAPI static void _createDripstone(class BlockSource &, class BlockPos const &, unsigned char, enum DripstoneThickness);
+    MCAPI static void _createMergedTips(class BlockSource &, class Block const &, class BlockPos const &);
     MCAPI static class std::optional<class BlockPos> _findBlockVertically(class BlockSource &, class BlockPos const &, unsigned char, class std::function<bool (class BlockSource &, class BlockPos const &)>, class std::function<bool (class BlockSource &, class BlockPos const &)>, int);
     MCAPI static class std::optional<class BlockPos> _findRootBlock(class BlockSource &, class BlockPos const &, int);
     MCAPI static class std::optional<class BlockPos> _findTip(class BlockSource &, class BlockPos const &, unsigned char, int, bool);
@@ -112,6 +115,7 @@ public:
     MCAPI static bool _isValidPointedDripstonePlacement(class BlockSource &, class BlockPos const &, bool);
     MCAPI static bool _mayPlaceHanging(class BlockSource &, class BlockPos const &);
     MCAPI static bool _mayPlaceStanding(class BlockSource &, class BlockPos const &);
+
 
 private:
 

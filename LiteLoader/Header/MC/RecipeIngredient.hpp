@@ -31,7 +31,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECIPEINGREDIENT
-public:
 #endif
     MCAPI RecipeIngredient(class RecipeIngredient const &);
     MCAPI RecipeIngredient(class Block const &, unsigned short);
@@ -42,6 +41,7 @@ public:
     MCAPI void __autoclassinit2(unsigned __int64);
     MCAPI ~RecipeIngredient();
     MCAPI static class RecipeIngredient EMPTY_INGREDIENT;
+
 
 
 };

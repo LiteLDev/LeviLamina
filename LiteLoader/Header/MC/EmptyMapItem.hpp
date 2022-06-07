@@ -27,31 +27,31 @@ public:
 
 public:
     /*0*/ virtual ~EmptyMapItem();
-    /*5*/ virtual void __unk_vfn_5();
     /*7*/ virtual void __unk_vfn_7();
     /*10*/ virtual void __unk_vfn_10();
-    /*12*/ virtual void __unk_vfn_12();
-    /*47*/ virtual void __unk_vfn_47();
-    /*49*/ virtual void __unk_vfn_49();
-    /*55*/ virtual bool requiresInteract() const;
-    /*62*/ virtual void __unk_vfn_62();
+    /*13*/ virtual void __unk_vfn_13();
+    /*15*/ virtual void __unk_vfn_15();
+    /*51*/ virtual void __unk_vfn_51();
+    /*53*/ virtual void __unk_vfn_53();
+    /*59*/ virtual bool requiresInteract() const;
     /*66*/ virtual void __unk_vfn_66();
-    /*67*/ virtual void __unk_vfn_67();
-    /*68*/ virtual void __unk_vfn_68();
+    /*70*/ virtual void __unk_vfn_70();
     /*71*/ virtual void __unk_vfn_71();
+    /*72*/ virtual void __unk_vfn_72();
     /*75*/ virtual void __unk_vfn_75();
-    /*76*/ virtual void __unk_vfn_76();
-    /*80*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
-    /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-    /*110*/ virtual std::string getInteractText(class Player const &) const;
-    /*128*/ virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
+    /*79*/ virtual void __unk_vfn_79();
+    /*80*/ virtual void __unk_vfn_80();
+    /*84*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
+    /*95*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
+    /*115*/ virtual std::string getInteractText(class Player const &) const;
+    /*133*/ virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EMPTYMAPITEM
-public:
 #endif
     MCAPI EmptyMapItem(std::string const &, short);
     MCAPI static void addPlayerMarker(class ItemStack &);
     MCAPI static void addPlayerMarker(class ItemInstance &);
     MCAPI static bool isLocatorMap(class ItemStack const &);
+
 
 
 };

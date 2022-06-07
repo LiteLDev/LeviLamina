@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUOYANCYDEFINITION
-public:
 #endif
     MCAPI BuoyancyDefinition();
     MCAPI void initialize(class EntityContext &, class BuoyancyComponent &) const;
@@ -36,6 +35,7 @@ public:
 //private:
     MCAPI void _addLiquidBlockDescriptor(class BlockDescriptor const &);
     MCAPI class Json::Value _serialize() const;
+
 
 private:
 

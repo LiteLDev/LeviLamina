@@ -23,9 +23,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEARDINGDESCRIPTIONCACHE
-public:
 #endif
     MCAPI BeardingDescriptionCache(class BoundingBox const &, int);
+
 
 
 };

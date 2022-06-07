@@ -28,7 +28,6 @@ public:
     /*1*/ virtual void deserialize(class CompoundTag const &);
     /*2*/ virtual void serialize(class CompoundTag &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PORTALFORCER
-public:
 #endif
     MCAPI PortalForcer(class Level &);
     MCAPI class PortalRecord const & addPortalRecord(class AutomaticID<class Dimension, int>, class PortalShape const &);
@@ -41,6 +40,7 @@ public:
     MCAPI void removePortalRecord(class BlockSource &, class BlockPos const &);
     MCAPI void travelPortal(class Actor &, class BlockPos const &, class AutomaticID<class Dimension, int>) const;
     MCAPI static std::string const PORTAL_FILE_ID;
+
 
 
 };

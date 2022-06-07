@@ -30,8 +30,9 @@ public:
 public:
     MCAPI class Block const * getCeilingMaterial(class Vec3 const &) const;
     MCAPI class Block const * getFloorMaterial(class Vec3 const &) const;
+    MCAPI void initializeNoise(unsigned int);
     MCAPI struct CappedSurfaceAttributes & operator=(struct CappedSurfaceAttributes &&);
-    MCAPI void tryInitializeNoise(unsigned int);
+    MCAPI ~CappedSurfaceAttributes();
 
 protected:
 

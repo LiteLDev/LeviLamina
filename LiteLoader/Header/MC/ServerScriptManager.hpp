@@ -34,15 +34,20 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual enum EventResult onServerThreadStarted(class ServerInstance &);
     /*10*/ virtual enum EventResult onServerThreadStopped(class ServerInstance &);
+    /*11*/ virtual void __unk_vfn_11();
+    /*12*/ virtual enum EventResult onEvent(struct ServerInstanceRequestResourceReload const &);
+    /*13*/ virtual enum EventResult onEvent(struct ServerInstanceNotificationEvent const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERSCRIPTMANAGER
-public:
 #endif
-    MCAPI ServerScriptManager(class std::optional<struct ScriptSettings> &&, class Bedrock::NonOwnerPointer<class Scheduler>);
+    MCAPI ServerScriptManager(struct ScriptSettings, class Bedrock::NonOwnerPointer<class Scheduler>);
     MCAPI void onMainThreadStartLeaveGame();
 
 //private:
+    MCAPI void _loadAndRunAllPlugins(class Minecraft &, class ServerLevel &);
     MCAPI void _registerEventHandlers(class Level &) const;
+    MCAPI void _sendInitializeEvent(class ServerLevel &) const;
     MCAPI void _unregisterEventHandlers(class Level &) const;
+
 
 private:
 

@@ -46,7 +46,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECIPES
-public:
 #endif
     MCAPI Recipes(class Level *);
     MCAPI void addShapedRecipe(std::string, std::vector<class ItemInstance> const &, std::vector<std::string> const &, std::vector<class Recipes::Type> const &, std::vector<class HashedString> const &, int, class std::function<std::unique_ptr<class ShapedRecipe> (std::string, int, int, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString)>);
@@ -81,6 +80,7 @@ public:
     MCAPI bool _loadBrewingMix(class Json::Value const &, class SemVersion const &);
     MCAPI void _loadHardcodedRecipes();
     MCAPI class RecipeIngredient const _loadIngredientFromJson(class Json::Value const &, class SemVersion const &) const;
+
 
 protected:
 

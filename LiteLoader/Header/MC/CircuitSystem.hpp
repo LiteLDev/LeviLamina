@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CIRCUITSYSTEM
-public:
 #endif
     MCAPI CircuitSystem();
     MCAPI void evaluate(class BlockSource *);
@@ -41,6 +40,7 @@ public:
     MCAPI class BaseCircuitComponent * createComponent(class BlockPos const &, unsigned char, std::unique_ptr<class BaseCircuitComponent>);
     MCAPI void evaluateComponents(bool);
     MCAPI void updateIndividualBlock(class gsl::not_null<class BaseCircuitComponent *>, class BlockPos const &, class BlockPos const &, class BlockSource &);
+
 
 private:
 

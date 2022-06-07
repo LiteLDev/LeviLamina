@@ -32,12 +32,12 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual bool _setWantedPosition();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMFLYINGGOAL
-public:
 #endif
     MCAPI RandomFlyingGoal(class Mob &, float, int, int, bool);
 
 //private:
     MCAPI bool _getTreePos(class Vec3 &) const;
+
 
 private:
 

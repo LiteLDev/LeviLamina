@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMLOCKHELPER
-public:
 #endif
     MCAPI static bool addItemLockMode(class ItemStackBase &, class Json::Value const &);
     MCAPI static bool addKeepOnDeath(class ItemStackBase &, class Json::Value const &);
@@ -39,6 +38,7 @@ public:
 
 //private:
     MCAPI static bool _parseItemLockMode(class ItemStackBase &, class Json::Value const &);
+
 
 private:
 

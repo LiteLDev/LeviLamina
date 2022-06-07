@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLASSROOMMODENETWORKHANDLER
-public:
     MCVAPI bool allowIncomingPacketId(class NetworkIdentifier const &, enum MinecraftPacketIds);
     MCVAPI void onWebsocketRequest(std::string const &, std::string const &, class std::function<void (void)>);
 #endif
@@ -33,6 +32,7 @@ public:
 
 //private:
     MCAPI void _connect(std::string const &);
+
 
 private:
 

@@ -26,18 +26,19 @@ public:
 
 public:
     /*0*/ virtual ~StairBlock();
-    /*9*/ virtual void addAABBs(class Block const &, class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
-    /*11*/ virtual bool addCollisionShapes(class Block const &, class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
+    /*9*/ virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
+    /*11*/ virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /*13*/ virtual class AABB const & getOutline(class BlockSource &, class BlockPos const &, class AABB &) const;
     /*14*/ virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
     /*17*/ virtual bool liquidCanFlowIntoFromDirection(unsigned char, class std::function<class Block const & (class BlockPos const &)> const &, class BlockPos const &) const;
     /*19*/ virtual void __unk_vfn_19();
-    /*23*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
-    /*26*/ virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
-    /*30*/ virtual void __unk_vfn_30();
+    /*22*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    /*25*/ virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -88,17 +89,17 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STAIRBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool isStairBlock() const;
 #endif
     MCAPI StairBlock(std::string const &, int, class BlockLegacy const &, int);
-    MCAPI bool setInnerPieceShape(class Block const &, class BlockSource &, class BlockPos const &, class AABB &, bool) const;
-    MCAPI bool setStepShape(class Block const &, class BlockSource &, class BlockPos const &, class AABB &, bool) const;
+    MCAPI bool setInnerPieceShape(class Block const &, class BlockSource const &, class BlockPos const &, class AABB &, bool) const;
+    MCAPI bool setStepShape(class Block const &, class BlockSource const &, class BlockPos const &, class AABB &, bool) const;
     MCAPI static unsigned char stairDirectionToFacing(int);
 
 //protected:
     MCAPI void shapeZFightShrink(class AABB &) const;
+
 
 protected:
 

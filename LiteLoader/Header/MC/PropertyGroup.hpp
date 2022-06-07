@@ -3,6 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Json.hpp"
+#include "PropertyMetadata.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -25,21 +26,25 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYGROUP
-public:
 #endif
     MCAPI PropertyGroup();
-    MCAPI class CompoundTag getPropertyDescriptionsAsCompound(bool) const;
-    MCAPI void initPropertiesOnComponent(class PropertyComponent &) const;
-    MCAPI void registerProperty(class std::shared_ptr<struct PropertyDescription>);
-    MCAPI ~PropertyGroup();
-    MCAPI static int const MAX_ENUM_SIZE;
-    MCAPI static bool loadPropertiesFromJson(std::vector<class std::shared_ptr<struct PropertyDescription>> &, class Json::Value const &);
-    MCAPI static bool loadPropertyFromJson(struct PropertyDescription &, std::string const &, class Json::Value const &);
+    MCAPI class CompoundTag getNetworkSyncPropertyDescriptionsAsCompound() const;
+    MCAPI class PropertyMetadata const * getPropertyMetadata(unsigned __int64) const;
+    MCAPI class PropertyMetadata const * getPropertyMetadataByString(std::string const &) const;
+    MCAPI static unsigned __int64 const MAX_ENUM_SIZE;
+    MCAPI static class std::shared_ptr<class PropertyGroup const> loadPropertiesFromJson(class Json::Value const &);
 
 //private:
+    MCAPI void _addEnumIndexProperty(std::string const &, bool, unsigned __int64, std::vector<std::string> const &);
+    MCAPI void _addFloatProperty(std::string const &, bool, float, float, float);
+    MCAPI void _addIntProperty(std::string const &, bool, int, int, int);
+    MCAPI void _addPropertyMetadata(std::string const &, bool, enum PropertyMetadata::ContainedPropertyType);
+    MCAPI bool _loadPropertyFromJson(std::string const &, class Json::Value const &);
+    MCAPI void _reserveSpaceForTypes(std::vector<unsigned __int64> const &);
+    MCAPI static enum PropertyMetadata::ContainedPropertyType _getJsonPropertyType(class Json::Value const &);
+
 
 private:
-    MCAPI static class std::unordered_map<class HashedString, class std::shared_ptr<struct PropertyDescription>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::shared_ptr<struct PropertyDescription>>>> MinecraftEngineProperties;
 
 
 };

@@ -34,8 +34,8 @@ public:
     /*5*/ virtual class Json::Value _serializeDomain() const;
     /*6*/ virtual class Json::Value _serializeValue() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORHASEQUIPMENTTEST
-public:
 #endif
+
 
 
 };

@@ -27,10 +27,11 @@ public:
 public:
     /*0*/ virtual ~JukeboxBlock();
     /*19*/ virtual void __unk_vfn_19();
-    /*30*/ virtual void __unk_vfn_30();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -67,7 +68,6 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUKEBOXBLOCK
-public:
     MCVAPI bool hasComparatorSignal() const;
 #endif
     MCAPI JukeboxBlock(std::string const &, int);
@@ -75,6 +75,7 @@ public:
 //private:
     MCAPI void _dropRecording(class BlockSource &, class BlockPos const &) const;
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &) const;
+
 
 private:
 

@@ -25,13 +25,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAKENTITYREF
-public:
 #endif
     MCAPI WeakEntityRef(class WeakRefT<struct EntityRefTraits>);
     MCAPI class WeakEntityRef & operator=(class WeakEntityRef &&);
     MCAPI bool operator==(class WeakEntityRef) const;
     MCAPI bool operator==(class WeakRefT<struct EntityRefTraits>) const;
     MCAPI ~WeakEntityRef();
+
 
 
 };

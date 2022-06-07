@@ -39,13 +39,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKBLOCKPOS
-public:
 #endif
     MCAPI ChunkBlockPos(class BlockPos const &, short);
     MCAPI ChunkBlockPos(unsigned char, class ChunkLocalHeight, unsigned char);
     MCAPI class Pos toPos() const;
     MCAPI static class ChunkBlockPos from2D(unsigned char, unsigned char);
     MCAPI static class ChunkBlockPos fromLegacyIndex(unsigned short);
+
 
 
 };

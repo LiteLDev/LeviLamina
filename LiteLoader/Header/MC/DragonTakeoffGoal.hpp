@@ -33,12 +33,12 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONTAKEOFFGOAL
-public:
 #endif
     MCAPI DragonTakeoffGoal(class EnderDragon &);
 
 //private:
     MCAPI void _findNewTarget();
+
 
 private:
 

@@ -28,7 +28,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKPEERHELPER
-public:
 #endif
     MCAPI RakPeerHelper(class RakPeerHelper::IPSupportInterface &);
     MCAPI int getConnectionIndex(class Social::GameConnectionInfo const &) const;
@@ -45,6 +44,7 @@ public:
     MCAPI void LogIPSupport();
     MCAPI void _resetToIPv6Only(class gsl::span<struct RakNet::SocketDescriptor, 2>, int &);
     MCAPI enum RakNet::StartupResult _startupInternal(class gsl::not_null<class RakNet::RakPeerInterface *>, struct ConnectionDefinition const &, struct RakNet::SocketDescriptor *, int &, int);
+
 
 private:
 

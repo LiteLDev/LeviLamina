@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTDATA
-public:
 #endif
     MCAPI std::vector<std::unique_ptr<class ItemStackRequestAction>> const & getActions() const;
     MCAPI class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> const & getRequestId() const;
@@ -35,6 +34,7 @@ public:
     MCAPI void write(class BinaryStream &) const;
     MCAPI ~ItemStackRequestData();
     MCAPI static std::unique_ptr<class ItemStackRequestData> read(class ReadOnlyBinaryStream &);
+
 
 
 };

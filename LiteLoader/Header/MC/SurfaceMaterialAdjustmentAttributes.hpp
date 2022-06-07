@@ -24,6 +24,7 @@ public:
 
 public:
     MCAPI struct SurfaceMaterialAdjustmentEvaluated evaluateAdjustments(class RenderParams &, class gsl::not_null<class PerlinSimplexNoise *>, class BlockPos const &, int, int) const;
+    MCAPI struct SurfaceMaterialAdjustmentAttributes & operator=(struct SurfaceMaterialAdjustmentAttributes &&);
     MCAPI ~SurfaceMaterialAdjustmentAttributes();
 
 protected:

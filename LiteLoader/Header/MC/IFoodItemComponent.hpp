@@ -23,13 +23,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFOODITEMCOMPONENT
-public:
 #endif
     MCAPI static char const CAN_ALWAYS_EAT[];
     MCAPI static char const NUTRITION[];
-    MCAPI static char const ON_CONSUME[];
     MCAPI static char const SATURATION_MODIFIER[];
-    MCAPI static char const USING_CONVERTS_TO[];
+
 
 
 };

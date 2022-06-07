@@ -29,43 +29,42 @@ public:
     /*14*/ virtual ~EnderMan();
     /*40*/ virtual void __unk_vfn_40();
     /*48*/ virtual void normalTick();
-    /*61*/ virtual void __unk_vfn_61();
-    /*68*/ virtual void __unk_vfn_68();
-    /*82*/ virtual void __unk_vfn_82();
-    /*88*/ virtual void __unk_vfn_88();
-    /*95*/ virtual void __unk_vfn_95();
-    /*98*/ virtual void __unk_vfn_98();
-    /*105*/ virtual void __unk_vfn_105();
+    /*60*/ virtual void __unk_vfn_60();
+    /*67*/ virtual void __unk_vfn_67();
+    /*81*/ virtual void __unk_vfn_81();
+    /*87*/ virtual void __unk_vfn_87();
+    /*94*/ virtual void __unk_vfn_94();
+    /*97*/ virtual void __unk_vfn_97();
+    /*104*/ virtual void __unk_vfn_104();
+    /*106*/ virtual void __unk_vfn_106();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*109*/ virtual void __unk_vfn_109();
-    /*131*/ virtual bool shouldRender() const;
-    /*133*/ virtual enum LevelSoundEvent getAmbientSound() const;
-    /*181*/ virtual void __unk_vfn_181();
-    /*195*/ virtual void __unk_vfn_195();
-    /*212*/ virtual bool canBeAffectedByArrow(class MobEffectInstance const &) const;
+    /*130*/ virtual bool shouldRender() const;
+    /*132*/ virtual enum LevelSoundEvent getAmbientSound() const;
+    /*180*/ virtual void __unk_vfn_180();
+    /*194*/ virtual void __unk_vfn_194();
+    /*211*/ virtual bool canBeAffectedByArrow(class MobEffectInstance const &) const;
+    /*219*/ virtual void __unk_vfn_219();
     /*220*/ virtual void __unk_vfn_220();
-    /*221*/ virtual void __unk_vfn_221();
-    /*246*/ virtual void __unk_vfn_246();
-    /*249*/ virtual void __unk_vfn_249();
-    /*261*/ virtual void __unk_vfn_261();
-    /*262*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /*265*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
-    /*269*/ virtual void __unk_vfn_269();
-    /*278*/ virtual void __unk_vfn_278();
-    /*288*/ virtual void hurtEffects(class ActorDamageSource const &, float, bool, bool);
-    /*294*/ virtual void aiStep();
-    /*307*/ virtual void __unk_vfn_307();
-    /*311*/ virtual void __unk_vfn_311();
-    /*345*/ virtual void __unk_vfn_345();
-    /*354*/ virtual void newServerAiStep();
-    /*359*/ virtual void __unk_vfn_359();
+    /*245*/ virtual void __unk_vfn_245();
+    /*248*/ virtual void __unk_vfn_248();
+    /*264*/ virtual void __unk_vfn_264();
+    /*265*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    /*268*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
+    /*269*/ virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /*272*/ virtual void __unk_vfn_272();
+    /*281*/ virtual void __unk_vfn_281();
+    /*291*/ virtual void hurtEffects(class ActorDamageSource const &, float, bool, bool);
+    /*297*/ virtual void aiStep();
+    /*310*/ virtual void __unk_vfn_310();
+    /*314*/ virtual void __unk_vfn_314();
+    /*348*/ virtual void __unk_vfn_348();
+    /*357*/ virtual void newServerAiStep();
+    /*362*/ virtual void __unk_vfn_362();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERMAN
-public:
 #endif
     MCAPI EnderMan(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-    MCAPI class Block const & getCarryingBlock();
+    MCAPI class Block const & getCarryingBlock() const;
     MCAPI void setCarryingBlock(class Block const &);
     MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_ATTACKING;
     MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACKING_UUID;
@@ -73,6 +72,7 @@ public:
     MCAPI static void shutdown();
 
 //private:
+
 
 private:
     MCAPI static bool mMayTakeIsSetup;

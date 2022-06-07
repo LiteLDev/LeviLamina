@@ -23,13 +23,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBPACKINFOCOLLECTION
-public:
 #endif
     MCAPI void addSubpackInfo(struct SubpackInfo &&);
     MCAPI class ContentTierInfo getSubpackContentTier(int) const;
     MCAPI std::string const & getSubpackFolderName(int) const;
     MCAPI std::vector<struct SubpackInfo> const & getSubpackInfo() const;
     MCAPI bool hasSubpacks() const;
+
 
 
 };

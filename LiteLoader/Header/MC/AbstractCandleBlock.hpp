@@ -27,11 +27,12 @@ public:
 public:
     /*0*/ virtual ~AbstractCandleBlock();
     /*19*/ virtual void __unk_vfn_19();
-    /*30*/ virtual void __unk_vfn_30();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*33*/ virtual bool isWaterBlocking() const;
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
+    /*34*/ virtual bool isWaterBlocking() const;
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -68,7 +69,7 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual int _getNumCandles(class Block const &) const;
     /*204*/ virtual void _iterateCandles(class Block const &, class BlockPos const &, class std::function<void (class Vec3 const &, int)>) const;
-    /*205*/ virtual void _tryLightOnFire(class BlockSource &, class BlockPos const &) const;
+    /*205*/ virtual void _tryLightOnFire(class BlockSource &, class BlockPos const &, class Actor *) const;
     /*206*/ virtual void __unk_vfn_206();
     /*207*/ virtual void __unk_vfn_207();
     /*208*/ virtual void __unk_vfn_208();
@@ -76,7 +77,6 @@ public:
     /*210*/ virtual void __unk_vfn_210();
     /*211*/ MCAPI std::string const & getDescriptionId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABSTRACTCANDLEBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool hasVariableLighting() const;
     MCVAPI bool isInteractiveBlock() const;
@@ -84,9 +84,11 @@ public:
     MCAPI AbstractCandleBlock(std::string const &, int, class Material const &);
 
 //protected:
-    MCAPI void _addExtinguishEffects(class Block const &, class BlockSource &, class BlockPos const &) const;
     MCAPI void _checkForWaterlogging(class BlockSource &, class BlockPos const &) const;
+    MCAPI void _extinguish(class Actor *, class Block const &, class BlockSource &, class BlockPos const &) const;
     MCAPI static bool _canBeLit(class Block const &, class BlockSource &, class BlockPos const &);
+    MCAPI static bool _isLit(class Block const &);
+
 
 protected:
 

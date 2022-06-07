@@ -24,6 +24,7 @@ public:
 
 public:
     MCAPI OverworldNoises3d(struct OverworldNoises3d const &);
+    MCAPI struct std::pair<float, float> computeErosionAndDepth(class BlockPos) const;
     MCAPI struct ChunkLocalNoiseCache::CacheEntry computeNoiseValues(class DividedPos2d<4> const &) const;
     MCAPI struct TerrainInfo computeOffsetAndFactor(class DividedPos2d<4> const &) const;
     MCAPI struct TargetPoint sample(int, struct ChunkLocalNoiseCache::CacheEntry const &) const;

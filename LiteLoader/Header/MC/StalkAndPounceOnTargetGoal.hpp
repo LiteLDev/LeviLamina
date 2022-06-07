@@ -33,13 +33,13 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STALKANDPOUNCEONTARGETGOAL
-public:
 #endif
     MCAPI StalkAndPounceOnTargetGoal(class Mob &, class ActorFilterGroup const &, float, float, float, float, float, float, float, float, bool);
 
 //private:
     MCAPI bool _isStuckBlock(class BlockPos) const;
     MCAPI void _preparePounce(class Vec3 const &, class Vec3 const &);
+
 
 private:
 

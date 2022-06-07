@@ -33,10 +33,10 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EATBLOCKGOAL
-public:
 #endif
     MCAPI EatBlockGoal(class Mob &);
     MCAPI float getEatSuccessChance(class Actor &) const;
+
 
 
 };

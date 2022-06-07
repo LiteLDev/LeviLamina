@@ -33,12 +33,12 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EQUIPITEMGOAL
-public:
 #endif
     MCAPI EquipItemGoal(class Mob &);
 
 //private:
     MCAPI void _dropItem(class ItemStack const &) const;
+
 
 private:
 

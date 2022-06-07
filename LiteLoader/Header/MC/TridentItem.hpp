@@ -27,32 +27,31 @@ public:
 
 public:
     /*0*/ virtual ~TridentItem();
-    /*5*/ virtual void __unk_vfn_5();
     /*7*/ virtual void __unk_vfn_7();
     /*10*/ virtual void __unk_vfn_10();
-    /*12*/ virtual void __unk_vfn_12();
-    /*19*/ virtual bool isThrowable() const;
-    /*43*/ virtual short getMaxDamage() const;
-    /*44*/ virtual int getAttackDamage() const;
-    /*47*/ virtual void __unk_vfn_47();
-    /*49*/ virtual void __unk_vfn_49();
-    /*51*/ virtual bool canDestroyInCreative() const;
-    /*56*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
-    /*58*/ virtual int getEnchantSlot() const;
-    /*59*/ virtual int getEnchantValue() const;
-    /*62*/ virtual void __unk_vfn_62();
+    /*13*/ virtual void __unk_vfn_13();
+    /*15*/ virtual void __unk_vfn_15();
+    /*22*/ virtual bool isThrowable() const;
+    /*47*/ virtual short getMaxDamage() const;
+    /*48*/ virtual int getAttackDamage() const;
+    /*51*/ virtual void __unk_vfn_51();
+    /*53*/ virtual void __unk_vfn_53();
+    /*55*/ virtual bool canDestroyInCreative() const;
+    /*60*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
+    /*62*/ virtual int getEnchantSlot() const;
+    /*63*/ virtual int getEnchantValue() const;
     /*66*/ virtual void __unk_vfn_66();
-    /*67*/ virtual void __unk_vfn_67();
-    /*68*/ virtual void __unk_vfn_68();
+    /*70*/ virtual void __unk_vfn_70();
     /*71*/ virtual void __unk_vfn_71();
+    /*72*/ virtual void __unk_vfn_72();
     /*75*/ virtual void __unk_vfn_75();
-    /*76*/ virtual void __unk_vfn_76();
-    /*80*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
-    /*81*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
-    /*83*/ virtual void releaseUsing(class ItemStack &, class Player *, int) const;
-    /*85*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
+    /*79*/ virtual void __unk_vfn_79();
+    /*80*/ virtual void __unk_vfn_80();
+    /*84*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
+    /*85*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
+    /*87*/ virtual void releaseUsing(class ItemStack &, class Player *, int) const;
+    /*89*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIDENTITEM
-public:
 #endif
     MCAPI TridentItem(std::string const &, int);
     MCAPI static int const CHARGE_THRESHOLD_TIME;
@@ -60,6 +59,7 @@ public:
 
 //private:
     MCAPI class Actor * _setupProjectile(class Actor *, class ItemStack, bool) const;
+
 
 private:
 

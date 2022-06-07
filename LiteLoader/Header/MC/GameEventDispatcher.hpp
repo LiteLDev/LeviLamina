@@ -25,10 +25,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTDISPATCHER
-public:
 #endif
-    MCAPI void post(class GameEvent const &, class BlockPos const &, class Actor *, class BlockSource &);
+    MCAPI void post(class GameEvent const &, struct GameEventContext const &, class BlockSource &);
     MCAPI class gsl::final_action<class std::function<void (void)>> registerListener(class GameEventListener &);
+
 
 
 };

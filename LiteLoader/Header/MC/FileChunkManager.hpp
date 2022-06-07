@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILECHUNKMANAGER
-public:
 #endif
     MCAPI FileChunkManager();
     MCAPI struct FileChunkInfo getChunkInfo(int) const;
@@ -36,6 +35,7 @@ public:
 
 //private:
     MCAPI void _generateChunkInfo();
+
 
 private:
 

@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACEBLOCKACTOR
-public:
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     MCVAPI bool canPullOutItem(class BlockSource &, int, int, class ItemInstance const &) const;
@@ -80,6 +79,7 @@ public:
     MCAPI bool canBurn(class Recipes const &);
     MCAPI static float _getXPRewardMultiplier(class ItemStackBase const &);
     MCAPI static int _roundXPReward(float);
+
 
 protected:
 

@@ -33,9 +33,9 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCAREDGOAL
-public:
 #endif
     MCAPI ScaredGoal(class Mob &, int);
+
 
 
 };

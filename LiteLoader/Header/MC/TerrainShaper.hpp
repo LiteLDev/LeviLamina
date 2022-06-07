@@ -31,7 +31,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TERRAINSHAPER
-public:
 #endif
     MCAPI float factor(float, float, float) const;
     MCAPI float jaggedness(float, float, float) const;
@@ -46,6 +45,7 @@ public:
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> buildWeirdnessJaggednessSpline(float);
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> getErosionFactor(float, bool);
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> ridgeSpline(std::string const &, float, float, float, float, float, float);
+
 
 private:
 

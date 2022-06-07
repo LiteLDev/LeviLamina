@@ -25,11 +25,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORCOMPONENTFACTORY
-public:
 #endif
 
 //private:
-    MCAPI void _initialize(class BaseGameVersion const &, class Experiments const &);
+    MCAPI void _initialize(class Experiments const &);
+
 
 private:
 

@@ -21,7 +21,6 @@ public:
 #endif
 
 public:
-    MCAPI ItemStackResponseContainerInfo(struct ItemStackResponseContainerInfo &&);
     MCAPI ItemStackResponseContainerInfo(enum ContainerEnumName);
     MCAPI ~ItemStackResponseContainerInfo();
 

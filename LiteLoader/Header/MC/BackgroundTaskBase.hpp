@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKGROUNDTASKBASE
-public:
 #endif
     MCAPI BackgroundTaskBase(class gsl::not_null<class IBackgroundTaskOwner *>, struct TaskStartInfoBase const &, bool);
     MCAPI void _makeOrphan();
@@ -51,6 +50,7 @@ public:
     MCAPI void taskComplete();
 
 //private:
+
 
 protected:
 

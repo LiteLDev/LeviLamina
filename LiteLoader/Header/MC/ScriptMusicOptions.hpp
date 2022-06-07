@@ -15,13 +15,12 @@ struct ScriptMusicOptions {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMUSICOPTIONS
 public:
+    struct ScriptMusicOptions& operator=(struct ScriptMusicOptions const &) = delete;
     ScriptMusicOptions(struct ScriptMusicOptions const &) = delete;
     ScriptMusicOptions() = delete;
 #endif
 
 public:
-    MCAPI struct ScriptMusicOptions & operator=(struct ScriptMusicOptions const &);
-    MCAPI struct ScriptMusicOptions & operator=(struct ScriptMusicOptions &&);
 
 protected:
 

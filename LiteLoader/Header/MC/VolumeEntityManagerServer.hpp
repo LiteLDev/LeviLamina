@@ -25,16 +25,17 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMEENTITYMANAGERSERVER
-public:
 #endif
     MCAPI VolumeEntityManagerServer(class StackRefResultT<struct EntityRegistryRefTraits>);
-    MCAPI struct std::pair<enum VolumeEntityManagerServer::CreateVolumeResult, class StackRefResultT<struct EntityRefTraits>> createVolume(class PacketSender &, std::string const &, class BlockPos const &, class BlockPos const &, class AutomaticID<class Dimension, int>, std::string const &);
+    MCAPI struct std::pair<enum VolumeEntityManagerServer::CreateVolumeResult, class StackRefResultT<struct EntityRefTraits>> createVolume(class LevelStorage &, class PacketSender &, std::string const &, class BlockPos const &, class BlockPos const &, class AutomaticID<class Dimension, int>, std::string const &);
     MCAPI std::vector<class WeakRefT<struct EntityRefTraits>> getAllVolumesOverlappingChunkPosition(class ChunkPos const &, class AutomaticID<class Dimension, int>) const;
     MCAPI void loadVolumeFiles(class ResourcePackManager const &, bool);
-    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> removeAllVolumes(class AutomaticID<class Dimension, int>, class PacketSender &);
-    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> removeVolumes(std::string const &, class AutomaticID<class Dimension, int>, class PacketSender &);
-    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> removeVolumes(class BlockPos const &, class AutomaticID<class Dimension, int>, class PacketSender &);
+    MCAPI void loadVolumeInstances(class LevelStorage const &, bool);
+    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> removeAllVolumes(class LevelStorage &, class AutomaticID<class Dimension, int>, class PacketSender &);
+    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> removeVolumes(class LevelStorage &, std::string const &, class AutomaticID<class Dimension, int>, class PacketSender &);
+    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> removeVolumes(class LevelStorage &, class BlockPos const &, class AutomaticID<class Dimension, int>, class PacketSender &);
     MCAPI void sendAllVolumesToClient(class UserEntityIdentifierComponent const &, class NetworkIdentifier const &, class PacketSender &) const;
+
 
 
 };

@@ -39,7 +39,6 @@ public:
     /*0*/ virtual ~ScoreboardCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDCOMMAND
-public:
 #endif
     MCAPI static void setup(class CommandRegistry &, struct ScoreboardCommand::InitProxy &&);
 
@@ -62,6 +61,7 @@ public:
     MCAPI void testPlayerScore(struct ScoreboardId const &, class Objective &, class std::function<std::string const & (struct ActorUniqueID)> const &, class CommandOutput &) const;
     MCAPI static std::vector<std::string> _getNonSortableDisplaySlots(class Scoreboard &);
     MCAPI static std::vector<std::string> _getSortableDisplaySlots(class Scoreboard &);
+
 
 private:
 

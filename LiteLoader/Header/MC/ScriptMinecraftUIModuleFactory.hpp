@@ -3,7 +3,6 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Json.hpp"
-#include "Bedrock.hpp"
 #include "TextObjectText.hpp"
 
 #define BEFORE_EXTRA
@@ -20,19 +19,18 @@ class ScriptMinecraftUIModuleFactory : public TextObjectText {
 public:
     class ScriptMinecraftUIModuleFactory& operator=(class ScriptMinecraftUIModuleFactory const &) = delete;
     ScriptMinecraftUIModuleFactory(class ScriptMinecraftUIModuleFactory const &) = delete;
-    ScriptMinecraftUIModuleFactory() = delete;
 #endif
 
 
 public:
     /*0*/ virtual ~ScriptMinecraftUIModuleFactory();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMINECRAFTUIMODULEFACTORY
-public:
 #endif
-    MCAPI ScriptMinecraftUIModuleFactory(class gsl::not_null<class Bedrock::NonOwnerPointer<class ScriptFormPromiseTracker>>);
+    MCAPI ScriptMinecraftUIModuleFactory();
     MCAPI static std::string getModuleUUIDAsString();
 
 //private:
+
 
 private:
     MCAPI static char const * ModuleName;

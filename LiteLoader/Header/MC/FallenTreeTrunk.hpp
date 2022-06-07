@@ -26,10 +26,11 @@ public:
 
 public:
     /*0*/ virtual ~FallenTreeTrunk();
-    /*1*/ virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &, struct TreeHelper::TreeParams const &, class ITreeCanopy const *) const;
+    /*1*/ virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, int, class RenderParams &, struct TreeHelper::TreeParams const &, class ITreeCanopy const *) const;
+    /*2*/ virtual int getTreeHeight(class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FALLENTREETRUNK
-public:
 #endif
+
 
 
 };

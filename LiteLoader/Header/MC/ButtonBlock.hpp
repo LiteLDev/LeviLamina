@@ -28,10 +28,11 @@ public:
     /*0*/ virtual ~ButtonBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /*19*/ virtual void __unk_vfn_19();
-    /*30*/ virtual void __unk_vfn_30();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -81,22 +82,22 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUTTONBLOCK
-public:
     MCVAPI bool canSpawnOn() const;
     MCVAPI bool isButtonBlock() const;
     MCVAPI bool isInteractiveBlock() const;
     MCVAPI bool isSignalSource() const;
 #endif
-    MCAPI void buttonPressed(class BlockSource &, class Block const &, class Vec3 const &) const;
+    MCAPI void buttonPressed(class BlockSource &, class Block const &, class Vec3 const &, class Actor *) const;
     MCAPI static bool canAttachTo(class BlockSource &, class BlockPos const &, unsigned char);
 
 //protected:
     MCAPI ButtonBlock(std::string const &, int, class Material const &, bool);
 
 //private:
-    MCAPI void _buttonUnpressed(class BlockSource &, class Block const &, class Vec3 const &) const;
+    MCAPI void _buttonUnpressed(class BlockSource &, class Block const &, class Vec3 const &, class Actor *) const;
     MCAPI void _checkPressed(class BlockSource &, class BlockPos const &) const;
     MCAPI void _getShape(class AABB &, bool, unsigned char, bool) const;
+
 
 protected:
 

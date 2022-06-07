@@ -35,14 +35,14 @@ public:
     /*8*/ virtual class ItemStack const & getSlot(int) const = 0;
     /*9*/ virtual void setData(int, int) = 0;
     /*10*/ virtual void broadcastChanges() = 0;
-    /*11*/ virtual void debitPlayerLevels(int);
-    /*12*/ virtual bool isCreativeMode() const;
-    /*13*/ virtual bool isClientSide() const;
-    /*14*/ virtual bool isServerAuthoritative() const;
-    /*15*/ virtual bool isValid(float);
-    /*16*/ virtual class ContainerScreenContext _postInit() = 0;
+    /*11*/ virtual bool tick();
+    /*12*/ virtual void debitPlayerLevels(int);
+    /*13*/ virtual bool isCreativeMode() const;
+    /*14*/ virtual bool isClientSide() const;
+    /*15*/ virtual bool isServerAuthoritative() const;
+    /*16*/ virtual bool isValid(float);
+    /*17*/ virtual class ContainerScreenContext _postInit() = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERMANAGERMODEL
-public:
 #endif
     MCAPI ContainerManagerModel(enum ContainerID, class Player &);
     MCAPI class Player & getPlayer() const;
@@ -55,6 +55,7 @@ public:
     MCAPI class std::shared_ptr<class ContainerModel> _getContainer(enum ContainerEnumName) const;
     MCAPI bool _isPlayerInRangeOfPosition(class BlockPos const &, float) const;
     MCAPI static void _appendCopies(std::vector<class ItemStack> &, std::vector<class ItemStack> const &);
+
 
 protected:
 

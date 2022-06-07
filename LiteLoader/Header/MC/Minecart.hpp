@@ -31,55 +31,56 @@ public:
     /*33*/ virtual float getInterpolatedBodyYaw(float) const;
     /*40*/ virtual void __unk_vfn_40();
     /*48*/ virtual void normalTick();
-    /*61*/ virtual void __unk_vfn_61();
-    /*68*/ virtual void __unk_vfn_68();
-    /*79*/ virtual float getShadowHeightOffs();
-    /*80*/ virtual float getShadowRadius() const;
-    /*82*/ virtual void __unk_vfn_82();
-    /*88*/ virtual void __unk_vfn_88();
-    /*94*/ virtual bool isPickable();
-    /*95*/ virtual void __unk_vfn_95();
-    /*98*/ virtual void __unk_vfn_98();
-    /*105*/ virtual void __unk_vfn_105();
+    /*60*/ virtual void __unk_vfn_60();
+    /*67*/ virtual void __unk_vfn_67();
+    /*78*/ virtual float getShadowHeightOffs();
+    /*79*/ virtual float getShadowRadius() const;
+    /*81*/ virtual void __unk_vfn_81();
+    /*87*/ virtual void __unk_vfn_87();
+    /*93*/ virtual bool isPickable();
+    /*94*/ virtual void __unk_vfn_94();
+    /*97*/ virtual void __unk_vfn_97();
+    /*104*/ virtual void __unk_vfn_104();
+    /*106*/ virtual void __unk_vfn_106();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*109*/ virtual void __unk_vfn_109();
-    /*134*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
-    /*139*/ virtual void onBounceStarted(class BlockPos const &, class Block const &);
-    /*181*/ virtual void __unk_vfn_181();
-    /*183*/ virtual struct ActorUniqueID getControllingPlayer() const;
-    /*195*/ virtual void __unk_vfn_195();
+    /*133*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
+    /*138*/ virtual void onBounceStarted(class BlockPos const &, class Block const &);
+    /*180*/ virtual void __unk_vfn_180();
+    /*182*/ virtual struct ActorUniqueID getControllingPlayer() const;
+    /*194*/ virtual void __unk_vfn_194();
+    /*219*/ virtual void __unk_vfn_219();
     /*220*/ virtual void __unk_vfn_220();
-    /*221*/ virtual void __unk_vfn_221();
-    /*246*/ virtual void __unk_vfn_246();
-    /*249*/ virtual void __unk_vfn_249();
-    /*250*/ virtual void kill();
-    /*258*/ virtual void interpolatorTick();
-    /*261*/ virtual void __unk_vfn_261();
-    /*262*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /*265*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
-    /*269*/ virtual void __unk_vfn_269();
-    /*277*/ virtual void _onSizeUpdated();
-    /*278*/ virtual void __unk_vfn_278();
-    /*279*/ virtual void destroy(class ActorDamageSource const &, bool);
-    /*280*/ virtual enum MinecartType getType() = 0;
-    /*281*/ virtual class Block const * getDefaultDisplayBlock() const;
-    /*282*/ virtual void __unk_vfn_282();
-    /*283*/ virtual int getDefaultDisplayOffset() const;
-    /*284*/ virtual void applyNaturalSlowdown(class BlockSource &);
-    /*285*/ virtual void _lazyInitDisplayBlock();
+    /*245*/ virtual void __unk_vfn_245();
+    /*248*/ virtual void __unk_vfn_248();
+    /*249*/ virtual void kill();
+    /*257*/ virtual void interpolatorTick();
+    /*264*/ virtual void __unk_vfn_264();
+    /*265*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    /*268*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
+    /*269*/ virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /*272*/ virtual void __unk_vfn_272();
+    /*280*/ virtual void _onSizeUpdated();
+    /*281*/ virtual void __unk_vfn_281();
+    /*282*/ virtual void destroy(class ActorDamageSource const &, bool);
+    /*283*/ virtual enum MinecartType getType() = 0;
+    /*284*/ virtual class Block const * getDefaultDisplayBlock() const;
+    /*285*/ virtual void __unk_vfn_285();
+    /*286*/ virtual int getDefaultDisplayOffset() const;
+    /*287*/ virtual void applyNaturalSlowdown(class BlockSource &);
+    /*288*/ virtual void _lazyInitDisplayBlock();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECART
-public:
     MCVAPI bool canMakeStepSound() const;
     MCVAPI int getDefaultDisplayData() const;
 #endif
     MCAPI Minecart(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+    MCAPI void dropMinecartWithContentsAndRemove(class gsl::basic_string_span<char const, -1>, bool);
     MCAPI void setCustomDisplay(bool);
     MCAPI void setDisplayBlock(class Block const &);
 
 //private:
     MCAPI void _registerLoopingSounds();
+
 
 private:
 

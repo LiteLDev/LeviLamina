@@ -30,7 +30,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKITEMSTACKDESCRIPTOR
-public:
 #endif
     MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor &&);
     MCAPI NetworkItemStackDescriptor(class ItemStack const &);
@@ -43,6 +42,7 @@ public:
 
 //private:
     MCAPI class ItemStack getItemStack(class BlockPalette const &) const;
+
 
 private:
 

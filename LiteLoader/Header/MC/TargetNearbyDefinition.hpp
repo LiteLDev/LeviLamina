@@ -20,15 +20,15 @@ class TargetNearbyDefinition {
 public:
     class TargetNearbyDefinition& operator=(class TargetNearbyDefinition const &) = delete;
     TargetNearbyDefinition(class TargetNearbyDefinition const &) = delete;
-    TargetNearbyDefinition() = delete;
 #endif
 
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETNEARBYDEFINITION
-public:
 #endif
+    MCAPI TargetNearbyDefinition();
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TargetNearbyDefinition>> &);
+
 
 
 };

@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATIVEITEMREGISTRY
-public:
 #endif
     MCAPI CreativeItemRegistry();
     MCAPI class CreativeItemEntry * findCreativeItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const &);
@@ -47,6 +46,7 @@ public:
 
 //private:
     MCAPI void _forEachCreativeItemInstance(class std::function<bool (class ItemInstance &)>);
+
 
 private:
     MCAPI static std::unique_ptr<class CreativeItemRegistry> mCurrentRegistry;

@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREWINGSTANDBLOCKACTOR
-public:
     MCVAPI bool canPullOutItem(class BlockSource &, int, int, class ItemInstance const &) const;
     MCVAPI bool canPushInItem(class BlockSource &, int, int, class ItemInstance const &) const;
     MCVAPI class Container const * getContainer() const;
@@ -57,6 +56,7 @@ public:
 
 //private:
     MCAPI bool canBrew();
+
 
 private:
 

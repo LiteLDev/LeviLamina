@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREASMANAGER
-public:
 #endif
     MCAPI TickingAreasManager();
     MCAPI enum AddTickingAreaStatus addArea(class AutomaticID<class Dimension, int>, std::string const &, class BlockPos const &, class BlockPos const &, enum TickingAreasManager::AreaLimitCheck, bool, enum TickingAreaLoadMode, class LevelStorage &);
@@ -57,6 +56,7 @@ public:
     MCAPI void _processAdds(class Level &);
     MCAPI void _processRemoves(class Level &, class LevelStorage &);
     MCAPI void _savePendingArea(class LevelStorage &, class AutomaticID<class Dimension, int>, struct PendingArea const &);
+
 
 private:
 

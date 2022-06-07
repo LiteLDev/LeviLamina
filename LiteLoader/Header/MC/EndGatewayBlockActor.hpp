@@ -41,7 +41,6 @@ public:
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDGATEWAYBLOCKACTOR
-public:
 #endif
     MCAPI EndGatewayBlockActor(class BlockPos const &);
     MCAPI bool canTeleport(class GetCollisionShapeInterface const *, class BlockSource const &) const;
@@ -58,6 +57,7 @@ public:
 
 //private:
     MCAPI static int _getHighestSection(class WorldGenerator &, class BlockVolume &, class BlockPos const &);
+
 
 private:
 

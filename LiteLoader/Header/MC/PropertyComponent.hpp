@@ -25,17 +25,19 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYCOMPONENT
-public:
 #endif
     MCAPI PropertyComponent(class PropertyComponent &&);
+    MCAPI PropertyComponent(class gsl::not_null<class std::shared_ptr<class PropertyGroup const>>);
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
-    MCAPI void addProperty(class PropertyInstance const &);
-    MCAPI class PropertyInstance * getProperty(class HashedString const &);
-    MCAPI class PropertyInstance const * getProperty(unsigned __int64 const &) const;
-    MCAPI class PropertyInstance * getProperty(unsigned __int64 const &);
-    MCAPI bool hasProperty(unsigned __int64 const &) const;
+    MCAPI void applyQueuedChanges(class QueuedPropertyChangesComponent const &);
+    MCAPI bool getMolangValue(unsigned __int64, struct MolangScriptArg &) const;
+    MCAPI bool hasProperty(unsigned __int64) const;
     MCAPI class PropertyComponent & operator=(class PropertyComponent &&);
+    MCAPI void readLoadedProperties(class CompoundTag const &);
+    MCAPI void setAliasProperties(class std::unordered_map<class HashedString, class std::shared_ptr<class Tag>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::shared_ptr<class Tag>>>> const &, std::string const &, std::string const &);
     MCAPI class CompoundTag updateDirtyProperties();
+    MCAPI ~PropertyComponent();
+
 
 
 };

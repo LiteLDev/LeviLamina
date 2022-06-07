@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FUNCTIONMANAGER
-public:
 #endif
     MCAPI FunctionManager(std::unique_ptr<class ICommandDispatcher>, std::unique_ptr<class CommandOrigin>, class GameRule const *);
     MCAPI int execute(class FunctionEntry &, class CommandOrigin const &, enum FunctionQueueOrder);
@@ -45,6 +44,7 @@ public:
     MCAPI class CommandOrigin const & _addOriginReference(class CommandOrigin const &, unsigned int);
     MCAPI void _queueCommandsAfterCaller(std::vector<std::unique_ptr<class IFunctionEntry>> const &, class CommandOrigin const &);
     MCAPI void _removeOriginReference(class CommandOrigin const &, unsigned int);
+
 
 protected:
 

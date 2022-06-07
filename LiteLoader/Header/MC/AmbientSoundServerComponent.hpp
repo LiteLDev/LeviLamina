@@ -23,9 +23,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMBIENTSOUNDSERVERCOMPONENT
-public:
 #endif
+    MCAPI class AmbientSoundServerComponent & operator=(class AmbientSoundServerComponent &&);
     MCAPI ~AmbientSoundServerComponent();
+
 
 
 };

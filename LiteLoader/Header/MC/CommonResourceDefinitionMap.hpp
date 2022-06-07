@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMONRESOURCEDEFINITIONMAP
-public:
 #endif
     MCAPI CommonResourceDefinitionMap();
     MCAPI std::vector<struct NamedMolangScript> const & getAnimateScriptArray() const;
@@ -38,6 +37,7 @@ public:
 
 //private:
     MCAPI static class std::recursive_mutex & _getAnimationResourceDefinitionLock();
+
 
 private:
 

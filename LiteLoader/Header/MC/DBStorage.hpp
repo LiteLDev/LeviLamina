@@ -67,7 +67,6 @@ public:
     /*30*/ virtual void setCriticalSyncSaveCallback(class std::function<void (void)>);
     /*31*/ virtual void corruptLevel();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DBSTORAGE
-public:
     MCVAPI struct Core::LevelStorageResult getLevelStorageState() const;
     MCVAPI struct Core::LevelStorageResult getState() const;
 #endif
@@ -90,6 +89,7 @@ public:
     MCAPI void _markAsCorrupted(class gsl::basic_string_span<char const, -1>) const;
     MCAPI void _scheduleNextAutoCompaction();
     MCAPI bool _suspendAndPerformSaveAction(class std::function<class TaskResult (void)>, class std::function<void (void)>);
+
 
 protected:
 

@@ -27,9 +27,9 @@ public:
     /*0*/ virtual ~MultiplyValueAmplifier();
     /*1*/ virtual float getAmount(int, float) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIPLYVALUEAMPLIFIER
-public:
 #endif
     MCAPI MultiplyValueAmplifier(float);
+
 
 
 };

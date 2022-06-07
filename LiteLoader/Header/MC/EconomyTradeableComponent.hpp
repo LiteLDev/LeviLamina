@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ECONOMYTRADEABLECOMPONENT
-public:
 #endif
     MCAPI EconomyTradeableComponent(class Actor &);
     MCAPI void addAdditionalSaveData(class CompoundTag &);
@@ -49,7 +48,6 @@ public:
     MCAPI void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     MCAPI void reloadComponent();
     MCAPI void resupplyTrades();
-    MCAPI void setCurrentTradeExp(int);
     MCAPI void setNearbyCuredDiscount(int);
     MCAPI void setOffers(class MerchantRecipeList &);
     MCAPI void setRiches(int);
@@ -69,6 +67,7 @@ public:
     MCAPI void _rearrangeTradeList(std::vector<struct Trade> &, unsigned __int64);
     MCAPI void _setMaxTradeTier(int);
     MCAPI void _setTradeTier(int);
+
 
 private:
 

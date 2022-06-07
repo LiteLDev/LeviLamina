@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LODESTONECOMPASSCOMPONENT
-public:
 #endif
     MCAPI LodestoneCompassComponent(class LodestoneCompassComponent &&);
     MCAPI int getAnimationFrame(class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> const &, class BlockPos const &, class AutomaticID<class Dimension, int> const &);
@@ -38,6 +37,7 @@ public:
 
 //private:
     MCAPI class LodestoneCompassComponentCalculator * _findCalculator(class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> const &, bool);
+
 
 private:
     MCAPI static class CompassSpriteCalculator mSpinningLodestone;

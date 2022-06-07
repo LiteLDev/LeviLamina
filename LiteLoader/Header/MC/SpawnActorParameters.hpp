@@ -21,8 +21,8 @@ public:
 #endif
 
 public:
-    MCAPI SpawnActorParameters(struct SpawnActorParameters const &);
     MCAPI SpawnActorParameters(struct SpawnActorParameters &&);
+    MCAPI SpawnActorParameters(struct SpawnActorParameters const &);
     MCAPI SpawnActorParameters();
     MCAPI void setItem(class ItemDescriptor const &);
     MCAPI void setSpawnEntity(std::string const &);

@@ -24,10 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXHAUSTIONDEFINITION
-public:
 #endif
     MCAPI void initialize(class EntityContext &, class ExhaustionComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ExhaustionDefinition>> &);
+
 
 
 };

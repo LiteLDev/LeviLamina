@@ -31,7 +31,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PATH
-public:
 #endif
     MCAPI Path();
     MCAPI class Vec3 currentPos(class Actor const *) const;
@@ -56,6 +55,7 @@ public:
 
 //private:
     MCAPI void buildFromNodes(std::vector<class Path::Node> &&, enum PathCompletionType);
+
 
 private:
 

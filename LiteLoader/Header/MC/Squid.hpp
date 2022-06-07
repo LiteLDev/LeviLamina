@@ -29,45 +29,45 @@ public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Squid();
     /*40*/ virtual void __unk_vfn_40();
-    /*61*/ virtual void __unk_vfn_61();
-    /*68*/ virtual void __unk_vfn_68();
-    /*82*/ virtual void __unk_vfn_82();
-    /*88*/ virtual void __unk_vfn_88();
-    /*95*/ virtual void __unk_vfn_95();
-    /*98*/ virtual void __unk_vfn_98();
-    /*105*/ virtual void __unk_vfn_105();
+    /*60*/ virtual void __unk_vfn_60();
+    /*67*/ virtual void __unk_vfn_67();
+    /*81*/ virtual void __unk_vfn_81();
+    /*87*/ virtual void __unk_vfn_87();
+    /*94*/ virtual void __unk_vfn_94();
+    /*97*/ virtual void __unk_vfn_97();
+    /*104*/ virtual void __unk_vfn_104();
+    /*106*/ virtual void __unk_vfn_106();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*109*/ virtual void __unk_vfn_109();
-    /*141*/ virtual void handleEntityEvent(enum ActorEvent, int);
-    /*181*/ virtual void __unk_vfn_181();
-    /*195*/ virtual void __unk_vfn_195();
+    /*140*/ virtual void handleEntityEvent(enum ActorEvent, int);
+    /*180*/ virtual void __unk_vfn_180();
+    /*194*/ virtual void __unk_vfn_194();
+    /*219*/ virtual void __unk_vfn_219();
     /*220*/ virtual void __unk_vfn_220();
-    /*221*/ virtual void __unk_vfn_221();
-    /*246*/ virtual void __unk_vfn_246();
-    /*249*/ virtual void __unk_vfn_249();
-    /*259*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
-    /*261*/ virtual void __unk_vfn_261();
-    /*262*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /*269*/ virtual void __unk_vfn_269();
-    /*278*/ virtual void __unk_vfn_278();
-    /*287*/ virtual float getJumpPower() const;
-    /*294*/ virtual void aiStep();
-    /*299*/ virtual bool checkSpawnRules(bool);
-    /*300*/ virtual bool checkSpawnObstruction() const;
-    /*307*/ virtual void __unk_vfn_307();
-    /*311*/ virtual void __unk_vfn_311();
-    /*345*/ virtual void __unk_vfn_345();
-    /*359*/ virtual void __unk_vfn_359();
-    /*361*/ virtual enum LevelSoundEvent _getInkSquirtSoundEvent() const;
+    /*245*/ virtual void __unk_vfn_245();
+    /*248*/ virtual void __unk_vfn_248();
+    /*262*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
+    /*264*/ virtual void __unk_vfn_264();
+    /*265*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    /*272*/ virtual void __unk_vfn_272();
+    /*281*/ virtual void __unk_vfn_281();
+    /*290*/ virtual float getJumpPower() const;
+    /*297*/ virtual void aiStep();
+    /*302*/ virtual bool checkSpawnRules(bool);
+    /*303*/ virtual bool checkSpawnObstruction() const;
+    /*310*/ virtual void __unk_vfn_310();
+    /*314*/ virtual void __unk_vfn_314();
+    /*348*/ virtual void __unk_vfn_348();
+    /*362*/ virtual void __unk_vfn_362();
+    /*364*/ virtual enum LevelSoundEvent _getInkSquirtSoundEvent() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUID
-public:
 #endif
     MCAPI Squid(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &, class mce::Color const &);
     MCAPI void spawnInkParticles();
 
 //private:
     MCAPI class Vec3 _randomInkDir();
+
 
 private:
 

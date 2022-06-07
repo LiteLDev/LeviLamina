@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAULDRONBLOCKACTOR
-public:
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     MCVAPI class Container const * getContainer() const;
@@ -54,6 +53,7 @@ public:
     MCAPI void setCustomColor(class mce::Color const &);
     MCAPI void setPotionType(enum Potion::PotionType);
     MCAPI static class mce::Color WATER_COLOR;
+
 
 
 };

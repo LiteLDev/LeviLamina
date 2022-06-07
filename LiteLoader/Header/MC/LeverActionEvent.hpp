@@ -16,11 +16,11 @@ struct LeverActionEvent {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVERACTIONEVENT
 public:
     struct LeverActionEvent& operator=(struct LeverActionEvent const &) = delete;
-    LeverActionEvent(struct LeverActionEvent const &) = delete;
     LeverActionEvent() = delete;
 #endif
 
 public:
+    MCAPI LeverActionEvent(struct LeverActionEvent const &);
     MCAPI ~LeverActionEvent();
 
 protected:

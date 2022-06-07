@@ -31,7 +31,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREBLOCKPALETTE
-public:
 #endif
     MCAPI void addBlockPositionData(unsigned __int64, struct StructureBlockPalette::BlockPositionData);
     MCAPI unsigned __int64 addMapping(std::unique_ptr<class CompoundTag>);
@@ -50,6 +49,7 @@ public:
 
 //private:
     MCAPI void _contentErrorMissingField(std::string const &) const;
+
 
 protected:
 

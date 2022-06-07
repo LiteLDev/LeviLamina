@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOM
-public:
     MCVAPI void consumeCount(unsigned int);
     MCVAPI std::unique_ptr<class IRandom> fork();
     MCVAPI bool nextBoolean();
@@ -47,6 +46,7 @@ public:
     MCAPI static class Random & getThreadLocal();
 
 //private:
+
 
 private:
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random, class std::allocator<class Random>> mThreadLocalRandom;

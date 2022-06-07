@@ -28,7 +28,6 @@ public:
     /*0*/ virtual ~StructureCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURECOMMAND
-public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
 
@@ -38,6 +37,7 @@ public:
     MCAPI bool _isValidSize(class BlockPos const &, class DimensionHeightRange const &, class CommandOutput &) const;
     MCAPI void _load(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void _save(class CommandOrigin const &, class CommandOutput &) const;
+
 
 private:
 

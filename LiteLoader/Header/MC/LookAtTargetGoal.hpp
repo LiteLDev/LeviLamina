@@ -28,8 +28,8 @@ public:
     /*0*/ virtual ~LookAtTargetGoal();
     /*3*/ virtual void __unk_vfn_3();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATTARGETGOAL
-public:
 #endif
+
 
 
 };

@@ -32,7 +32,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNER
-public:
 #endif
     MCAPI Spawner(class Level &);
     MCAPI void postProcessSpawnMobs(class BlockSource &, int, int, class Random &);
@@ -57,6 +56,7 @@ public:
     MCAPI void _spawnStructureMob(class BlockSource &, class BlockPos const &, struct LevelChunk::HardcodedSpawningArea const &, class SpawnConditions const &);
     MCAPI void _updateBaseTypeCount(class BlockSource &, class ChunkPos const &);
     MCAPI void _updateMobCounts(class BlockSource &, struct ActorDefinitionIdentifier const &, class SpawnConditions const &);
+
 
 protected:
 

@@ -46,17 +46,18 @@ public:
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void __unk_vfn_14();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERNETSERVERLOCATOR
-public:
 #endif
     MCAPI NetherNetServerLocator();
 
 //private:
     MCAPI bool _isNetherNetOverLANAllowed() const;
     MCAPI void _onBroadcastResponseCallback(unsigned __int64, void const *, int);
+    MCAPI void _pruneStaleServers(class std::chrono::duration<__int64, struct std::ratio<1, 1>>);
     MCAPI void _setBroadcastDiscoveryResponse(struct NetherNetServerLocator::ServerData const &);
     MCAPI void _setIsAnnouncing(bool);
     MCAPI void _setIsDiscovering(bool);
     MCAPI struct PingedCompatibleServer _transformFrom(unsigned __int64, struct NetherNetServerLocator::ServerData const &);
+
 
 private:
 

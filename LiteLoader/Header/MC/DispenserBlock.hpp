@@ -27,10 +27,11 @@ public:
 public:
     /*0*/ virtual ~DispenserBlock();
     /*19*/ virtual void __unk_vfn_19();
-    /*30*/ virtual void __unk_vfn_30();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -75,7 +76,6 @@ public:
     /*204*/ virtual int getTickDelay() const;
     /*205*/ virtual void dispenseFrom(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPENSERBLOCK
-public:
     MCVAPI bool hasComparatorSignal() const;
     MCVAPI bool isContainerBlock() const;
     MCVAPI bool isInteractiveBlock() const;
@@ -87,6 +87,7 @@ public:
     MCAPI void ejectItem(class BlockSource &, class Vec3 const &, unsigned char, class ItemStack const &, class Container &, int) const;
     MCAPI class Vec3 getDispensePosition(class BlockSource &, class Vec3 const &) const;
     MCAPI unsigned char getFacing(class Block const &) const;
+
 
 protected:
 

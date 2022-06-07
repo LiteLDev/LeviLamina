@@ -28,36 +28,36 @@ public:
 public:
     /*14*/ virtual ~CaveSpider();
     /*40*/ virtual void __unk_vfn_40();
-    /*61*/ virtual void __unk_vfn_61();
-    /*68*/ virtual void __unk_vfn_68();
-    /*82*/ virtual void __unk_vfn_82();
-    /*88*/ virtual void __unk_vfn_88();
-    /*95*/ virtual void __unk_vfn_95();
-    /*98*/ virtual void __unk_vfn_98();
-    /*105*/ virtual void __unk_vfn_105();
+    /*60*/ virtual void __unk_vfn_60();
+    /*67*/ virtual void __unk_vfn_67();
+    /*81*/ virtual void __unk_vfn_81();
+    /*87*/ virtual void __unk_vfn_87();
+    /*94*/ virtual void __unk_vfn_94();
+    /*97*/ virtual void __unk_vfn_97();
+    /*104*/ virtual void __unk_vfn_104();
+    /*106*/ virtual void __unk_vfn_106();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*109*/ virtual void __unk_vfn_109();
-    /*181*/ virtual void __unk_vfn_181();
-    /*195*/ virtual void __unk_vfn_195();
+    /*180*/ virtual void __unk_vfn_180();
+    /*194*/ virtual void __unk_vfn_194();
+    /*219*/ virtual void __unk_vfn_219();
     /*220*/ virtual void __unk_vfn_220();
-    /*221*/ virtual void __unk_vfn_221();
-    /*222*/ virtual void getDebugText(std::vector<std::string> &);
-    /*246*/ virtual void __unk_vfn_246();
-    /*249*/ virtual void __unk_vfn_249();
-    /*261*/ virtual void __unk_vfn_261();
-    /*269*/ virtual void __unk_vfn_269();
-    /*278*/ virtual void __unk_vfn_278();
-    /*307*/ virtual void __unk_vfn_307();
-    /*311*/ virtual void __unk_vfn_311();
-    /*345*/ virtual void __unk_vfn_345();
-    /*359*/ virtual void __unk_vfn_359();
-    /*362*/ virtual float getModelScale() const;
-    /*363*/ virtual enum Spider::Type getSpiderType() const;
+    /*221*/ virtual void getDebugText(std::vector<std::string> &);
+    /*245*/ virtual void __unk_vfn_245();
+    /*248*/ virtual void __unk_vfn_248();
+    /*264*/ virtual void __unk_vfn_264();
+    /*272*/ virtual void __unk_vfn_272();
+    /*281*/ virtual void __unk_vfn_281();
+    /*310*/ virtual void __unk_vfn_310();
+    /*314*/ virtual void __unk_vfn_314();
+    /*348*/ virtual void __unk_vfn_348();
+    /*362*/ virtual void __unk_vfn_362();
+    /*365*/ virtual float getModelScale() const;
+    /*366*/ virtual enum Spider::Type getSpiderType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAVESPIDER
-public:
 #endif
     MCAPI CaveSpider(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

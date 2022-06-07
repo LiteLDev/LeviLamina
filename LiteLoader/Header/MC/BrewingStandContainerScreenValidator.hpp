@@ -26,9 +26,9 @@ public:
 public:
     /*0*/ virtual ~BrewingStandContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREWINGSTANDCONTAINERSCREENVALIDATOR
-public:
 #endif
     MCAPI BrewingStandContainerScreenValidator();
+
 
 
 };

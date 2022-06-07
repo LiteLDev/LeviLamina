@@ -31,15 +31,16 @@ public:
     /*6*/ virtual class Block const & getExtraBlock(class BlockPos const &) const;
     /*7*/ virtual class AABB const & getAABB() const;
     /*8*/ virtual bool hasBiomeTag(unsigned __int64, class BlockPos const &) const;
+    /*9*/ virtual bool isRiding() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GETCOLLISIONSHAPEACTORPROXY
-public:
-    MCVAPI bool canDecendThroughBlock() const;
+    MCVAPI bool canDescendThroughBlock() const;
     MCVAPI enum ActorType getEntityTypeId() const;
     MCVAPI float getFeetAttachPosY() const;
     MCVAPI bool hasLightWeightFamilyTag() const;
-    MCVAPI bool isRiding() const;
+    MCVAPI bool isWorldBuilder() const;
 #endif
     MCAPI GetCollisionShapeActorProxy(struct IActorMovementProxy const &);
+
 
 
 };

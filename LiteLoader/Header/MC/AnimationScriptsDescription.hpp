@@ -9,7 +9,7 @@
 
 #undef BEFORE_EXTRA
 
-struct AnimationScriptsDescription {
+class AnimationScriptsDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -18,15 +18,20 @@ struct AnimationScriptsDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATIONSCRIPTSDESCRIPTION
 public:
-    struct AnimationScriptsDescription& operator=(struct AnimationScriptsDescription const &) = delete;
+    class AnimationScriptsDescription& operator=(class AnimationScriptsDescription const &) = delete;
+    AnimationScriptsDescription(class AnimationScriptsDescription const &) = delete;
     AnimationScriptsDescription() = delete;
 #endif
 
+
 public:
-    MCAPI AnimationScriptsDescription(struct AnimationScriptsDescription const &);
+    /*0*/ virtual char const * getJsonName() const;
+    /*1*/ virtual ~AnimationScriptsDescription();
+    /*2*/ virtual void deserializeData(struct DeserializeDataParams);
+    /*3*/ virtual void serializeData(class Json::Value &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATIONSCRIPTSDESCRIPTION
+#endif
 
-protected:
 
-private:
 
 };

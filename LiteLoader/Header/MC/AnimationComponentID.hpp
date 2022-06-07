@@ -23,9 +23,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATIONCOMPONENTID
-public:
 #endif
     MCAPI AnimationComponentID(struct ActorUniqueID const &, unsigned short, enum AttachableSlotIndex);
+
 
 
 };

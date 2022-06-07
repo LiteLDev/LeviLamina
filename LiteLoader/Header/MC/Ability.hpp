@@ -28,13 +28,15 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABILITY
-public:
 #endif
+    MCAPI Ability(bool, enum Ability::Options);
     MCAPI bool getBool() const;
     MCAPI float getFloat() const;
     MCAPI enum Ability::Type getType() const;
     MCAPI bool hasOption(enum Ability::Options) const;
+    MCAPI bool operator!=(class Ability const &) const;
     MCAPI void setBool(bool);
+
 
 
 };

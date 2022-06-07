@@ -27,7 +27,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONCONTROLLERGROUP
-public:
 #endif
     MCAPI ActorAnimationControllerGroup();
     MCAPI class ActorAnimationControllerPtr getActorAnimationController(class HashedString const &);
@@ -41,6 +40,7 @@ public:
     MCAPI static class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorAnimationControllerGroupParseMetaData>> _buildAnimationControllerFileSchema_v1_10_Or_Later(class SemVersion const &);
     MCAPI static class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, bool>> _buildAnimationControllerFileSchema_v1_8();
     MCAPI static bool upgrade_v1_8_to_v1_10(class Json::Value &, class SemVersion const &);
+
 
 private:
 

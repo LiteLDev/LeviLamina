@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOSSCOMPONENT
-public:
 #endif
     MCAPI BossComponent(class BossComponent &&);
     MCAPI BossComponent();
@@ -56,6 +55,7 @@ public:
 
 //private:
     MCAPI void _sendBossEvent(class Actor &, enum BossEventUpdateType, class Player *);
+
 
 private:
 

@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPLOG
-public:
 #endif
     MCAPI static void logEvent(struct CrashDumpEventData const &);
     MCAPI static void logFrame(struct CrashDumpFrameData const &);
@@ -42,6 +41,7 @@ public:
 
 //private:
     MCAPI static void crashDumpLogThreadRoutine();
+
 
 protected:
     MCAPI static struct CrashDump_AllData * mAllData;

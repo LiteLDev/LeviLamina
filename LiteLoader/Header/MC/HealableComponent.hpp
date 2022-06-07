@@ -25,13 +25,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HEALABLECOMPONENT
-public:
 #endif
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
 
 //private:
     MCAPI void _useFeedItem(class Actor &, class Player &, struct FeedItem const &);
     MCAPI static bool _canHeal(class Actor &, class ItemStack const &, class HealableDefinition const *);
+
 
 private:
 

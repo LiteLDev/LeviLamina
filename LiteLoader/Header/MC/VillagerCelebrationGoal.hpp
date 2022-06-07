@@ -31,13 +31,13 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGERCELEBRATIONGOAL
-public:
 #endif
     MCAPI VillagerCelebrationGoal(class Mob &);
 
 //private:
     MCAPI void _launchFirework();
     MCAPI void _setNextFireworkTick();
+
 
 private:
 

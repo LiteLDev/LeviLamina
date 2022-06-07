@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UNVERIFIEDCERTIFICATE
-public:
 #endif
     MCAPI UnverifiedCertificate(class UnverifiedCertificate &&);
     MCAPI UnverifiedCertificate(class UnverifiedCertificate const &);
@@ -38,6 +37,7 @@ public:
 //private:
     MCAPI UnverifiedCertificate(class WebToken const &, std::unique_ptr<class UnverifiedCertificate>);
     MCAPI void addToChain(class Json::Value &) const;
+
 
 private:
 

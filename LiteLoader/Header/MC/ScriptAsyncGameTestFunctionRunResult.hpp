@@ -26,9 +26,9 @@ public:
     /*1*/ virtual bool isComplete() const;
     /*2*/ virtual class std::optional<struct gametest::GameTestError> getError();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTASYNCGAMETESTFUNCTIONRUNRESULT
-public:
 #endif
     MCAPI ScriptAsyncGameTestFunctionRunResult(class Scripting::Result<class Scripting::Future<void>>);
+
 
 
 };

@@ -25,20 +25,20 @@ public:
 
 public:
     /*0*/ virtual ~ItemComponent();
-    /*1*/ virtual bool checkComponentDataForContentErrors() const;
-    /*2*/ virtual void __unk_vfn_2();
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void writeSettings();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMCOMPONENT
-public:
-    MCVAPI void initializeFromNetwork(class CompoundTag const &);
+    MCVAPI bool checkComponentDataForContentErrors() const;
+    MCVAPI bool initializeFromNetwork(class CompoundTag const &);
     MCVAPI bool isNetworkComponent() const;
     MCVAPI bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
-    MCVAPI void writeSettings();
 #endif
     MCAPI ItemComponent(class ComponentItem *);
     MCAPI static void bindItemComponentType();
+
 
 
 };

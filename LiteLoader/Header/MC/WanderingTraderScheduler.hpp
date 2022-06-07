@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WANDERINGTRADERSCHEDULER
-public:
 #endif
     MCAPI WanderingTraderScheduler(class Level &);
     MCAPI bool isWanderingTraderCurrentlyManaged(class Actor const &);
@@ -41,6 +40,7 @@ public:
     MCAPI class BlockPos _getRandomXZAroundPos(class BlockPos const &, int, bool);
     MCAPI class std::optional<class BlockPos> _getSpawnPosFromNearestVillageToPlayerPos(class BlockPos const &, class BlockSource &);
     MCAPI bool _isPosSafeForSpawning(class BlockPos const &, class BlockSource &);
+
 
 private:
     MCAPI static float const CHANCE_TO_SPAWN_IN_WILDERNESS;

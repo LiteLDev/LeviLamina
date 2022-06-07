@@ -28,12 +28,12 @@ public:
     /*0*/ virtual ~CloneCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLONECOMMAND
-public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     MCAPI static void convertClonedTag(class CompoundTag &, class BlockActor const &, class BlockPos const &);
+
 
 private:
 

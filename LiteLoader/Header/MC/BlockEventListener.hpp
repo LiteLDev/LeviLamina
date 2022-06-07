@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTLISTENER
-public:
     MCVAPI enum EventResult onBlockDestroyedByPlayer(class Player &, class Block const &, class BlockPos const &);
     MCVAPI enum EventResult onBlockDestructionStarted(class Player &, class BlockPos const &);
     MCVAPI enum EventResult onBlockDestructionStopped(class Player &, class BlockPos const &, int);
@@ -37,6 +36,7 @@ public:
     MCVAPI enum EventResult onEvent(struct BlockNotificationEvent const &);
     MCVAPI enum EventResult onUnknownBlockReceived(class Level &, struct NewBlockID const &, unsigned short);
 #endif
+
 
 
 };

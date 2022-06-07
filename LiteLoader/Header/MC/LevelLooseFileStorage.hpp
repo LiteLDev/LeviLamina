@@ -3,6 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Core.hpp"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -26,10 +27,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELLOOSEFILESTORAGE
-public:
 #endif
-    MCAPI LevelLooseFileStorage(class Core::Path const &, class ContentIdentity const &, class IContentKeyProvider const &);
+    MCAPI LevelLooseFileStorage(class Core::Path const &, class ContentIdentity const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
     MCAPI std::unique_ptr<class PackAccessStrategy> getAccessStrategy() const;
+
 
 
 };

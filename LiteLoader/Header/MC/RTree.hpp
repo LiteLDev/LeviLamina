@@ -37,13 +37,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RTREE
-public:
 #endif
     MCAPI ~RTree();
     MCAPI static class std::optional<class RTree> create(std::vector<struct BiomeNoiseTarget> const &);
 
 //private:
     MCAPI static class std::optional<class RTree::Node> build(std::vector<class RTree::Node> &&);
+
 
 private:
 

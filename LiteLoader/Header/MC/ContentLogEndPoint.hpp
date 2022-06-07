@@ -24,11 +24,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTLOGENDPOINT
-public:
     MCVAPI void log(char const *);
     MCVAPI ~ContentLogEndPoint();
 #endif
     MCAPI ContentLogEndPoint();
+
 
 
 };

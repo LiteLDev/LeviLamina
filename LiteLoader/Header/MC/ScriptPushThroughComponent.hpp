@@ -25,8 +25,8 @@ public:
 public:
     /*0*/ virtual ~ScriptPushThroughComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPUSHTHROUGHCOMPONENT
-public:
 #endif
+
 
 
 };

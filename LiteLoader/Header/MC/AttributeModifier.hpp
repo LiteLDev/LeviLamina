@@ -20,7 +20,6 @@ public:
     /*0*/ virtual ~AttributeModifier();
     /*1*/ virtual bool isInstantaneous() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTEMODIFIER
-public:
 #endif
     MCAPI AttributeModifier(class AttributeModifier const &);
     MCAPI AttributeModifier(class mce::UUID, std::string const &, float, int, int, bool);
@@ -36,6 +35,7 @@ public:
     MCAPI bool operator==(class AttributeModifier const &) const;
 
 //private:
+
 
 private:
     MCAPI static class mce::UUID const mInvalidUUID;

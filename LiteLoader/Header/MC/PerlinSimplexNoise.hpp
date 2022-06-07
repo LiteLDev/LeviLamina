@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERLINSIMPLEXNOISE
-public:
 #endif
     MCAPI PerlinSimplexNoise(class PerlinSimplexNoise const &);
     MCAPI PerlinSimplexNoise(class IRandom &, int, bool);
@@ -38,6 +37,7 @@ public:
 
 //private:
     MCAPI void _init(class IRandom &, bool);
+
 
 private:
 

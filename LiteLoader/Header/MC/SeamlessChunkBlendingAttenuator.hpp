@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "OverworldGeneratorMultinoise.hpp"
 
 #define BEFORE_EXTRA
 
@@ -23,13 +24,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEAMLESSCHUNKBLENDINGATTENUATOR
-public:
 #endif
-    MCAPI SeamlessChunkBlendingAttenuator(class ChunkPos, class std::optional<std::vector<class std::array<struct SeamlessChunkBlendingAttenuatorUtil::AttenuationData, 4>>>, short);
+    MCAPI SeamlessChunkBlendingAttenuator(class ChunkPos, std::vector<class std::array<struct SeamlessChunkBlendingAttenuatorUtil::AttenuationData, 4>> &&, short);
     MCAPI float attenuateDensity(class DividedPos2d<4> const &, int, float) const;
     MCAPI struct TerrainInfo attenuateTerrainInfo(class DividedPos2d<4> const &, struct TerrainInfo const &) const;
     MCAPI class Biome const * tryGetAttenuatedBiome(class DividedPos<4> const &, class BiomeRegistry const &, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> const &) const;
+    MCAPI struct OverworldGeneratorMultinoise::BlockGenerationResult const tryMoveWaterEdges(class BlockPos const &, struct OverworldGeneratorMultinoise::BlockGenerationResult) const;
     MCAPI ~SeamlessChunkBlendingAttenuator();
+
 
 
 };

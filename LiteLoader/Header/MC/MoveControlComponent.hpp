@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROLCOMPONENT
-public:
 #endif
     MCAPI MoveControlComponent();
     MCAPI bool getHasWantedPosition() const;
@@ -45,6 +44,7 @@ public:
 
 //private:
     MCAPI void _setWantedPosition(class Vec3 const &);
+
 
 private:
 

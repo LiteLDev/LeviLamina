@@ -24,12 +24,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTERCOMPONENT
-public:
 #endif
     MCAPI ShooterComponent();
     MCAPI int getAuxValue();
     MCAPI void onShoot(class Actor &);
     MCAPI ~ShooterComponent();
+
 
 
 };

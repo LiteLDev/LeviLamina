@@ -12,9 +12,9 @@ namespace BlockDescriptorSerializer {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-    MCAPI void fromName(class BlockDescriptor &, struct NameProxy);
+    MCAPI void fromProxy(class BlockDescriptor &, struct BlockDescriptorSerializer::BlockDescriptorProxy);
     MCAPI void fromString(class BlockDescriptor &, std::string const &);
     MCAPI void fromTags(class BlockDescriptor &, class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> const &, class BedrockLoadContext const &);
-    MCAPI std::string toString(class BlockDescriptor const &);
+    MCAPI struct BlockDescriptorSerializer::BlockDescriptorProxy toProxy(class BlockDescriptor const &);
 
 };

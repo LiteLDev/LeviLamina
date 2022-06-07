@@ -28,27 +28,27 @@ public:
 
 public:
     /*0*/ virtual ~ShovelItem();
-    /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual void executeEvent(class ItemStackBase &, std::string const &, class RenderParams &) const;
     /*7*/ virtual void __unk_vfn_7();
+    /*9*/ virtual void executeEvent(class ItemStackBase &, std::string const &, class RenderParams &) const;
     /*10*/ virtual void __unk_vfn_10();
-    /*12*/ virtual void __unk_vfn_12();
-    /*40*/ virtual bool canDestroySpecial(class Block const &) const;
-    /*47*/ virtual void __unk_vfn_47();
-    /*49*/ virtual void __unk_vfn_49();
-    /*58*/ virtual int getEnchantSlot() const;
-    /*62*/ virtual void __unk_vfn_62();
+    /*13*/ virtual void __unk_vfn_13();
+    /*15*/ virtual void __unk_vfn_15();
+    /*44*/ virtual bool canDestroySpecial(class Block const &) const;
+    /*51*/ virtual void __unk_vfn_51();
+    /*53*/ virtual void __unk_vfn_53();
+    /*62*/ virtual int getEnchantSlot() const;
     /*66*/ virtual void __unk_vfn_66();
-    /*67*/ virtual void __unk_vfn_67();
-    /*68*/ virtual void __unk_vfn_68();
+    /*70*/ virtual void __unk_vfn_70();
     /*71*/ virtual void __unk_vfn_71();
+    /*72*/ virtual void __unk_vfn_72();
     /*75*/ virtual void __unk_vfn_75();
-    /*76*/ virtual void __unk_vfn_76();
-    /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    /*79*/ virtual void __unk_vfn_79();
+    /*80*/ virtual void __unk_vfn_80();
+    /*132*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOVELITEM
-public:
 #endif
     MCAPI ShovelItem(std::string const &, int, class Item::Tier const &);
+
 
 
 };

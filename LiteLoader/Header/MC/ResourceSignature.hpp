@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCESIGNATURE
-public:
 #endif
     MCAPI bool areKnownFilesValid(class PackAccessStrategy const &);
     MCAPI ~ResourceSignature();
@@ -36,6 +35,7 @@ public:
     MCAPI bool _areKnownFilesValid(class PackAccessStrategy const &, bool);
     MCAPI bool _checkSignedFiles(class PackAccessStrategy const &) const;
     MCAPI void _loadSignaturesFile(class Core::Path const &, class PackAccessStrategy const &);
+
 
 private:
 

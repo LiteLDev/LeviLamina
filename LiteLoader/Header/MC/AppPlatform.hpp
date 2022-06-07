@@ -33,7 +33,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORM
-public:
     MCVAPI std::unique_ptr<class Bedrock::Http::IProxyResolver> _createProxyResolver();
     MCVAPI void _disableCPUBoost();
     MCVAPI void _fireAppTerminated();
@@ -42,12 +41,14 @@ public:
     MCVAPI void _onTeardown();
     MCVAPI void _teardownFileStorageAreas();
     MCVAPI bool _tryEnableCPUBoost();
+    MCVAPI void addListener(class AppPlatformListener *, float);
     MCVAPI bool allowBetaXblSignIn() const;
     MCVAPI bool allowContentLogWriteToDisk();
     MCVAPI bool allowsResourcePackDevelopment() const;
     MCVAPI bool alwaysUseZippedPacksForDlc() const;
     MCVAPI bool areThreadsFrozen() const;
     MCVAPI void buyGame();
+    MCVAPI void calculateIfLowMemoryDevice();
     MCVAPI bool canLaunchUri(std::string const &);
     MCVAPI bool canManageLegacyData() const;
     MCVAPI bool canSwapVRMode(bool) const;
@@ -58,12 +59,14 @@ public:
     MCVAPI class Core::PathBuffer<std::string> copyImportFileToTempFolder(class Core::Path const &);
     MCVAPI class std::shared_ptr<class Core::FileStorageArea> createLoggingStorageArea(enum Core::FileAccessType, class Core::Path const &);
     MCVAPI void createUserInput();
+    MCVAPI void createUserInput(int);
     MCVAPI class std::shared_ptr<class WebviewInterface> createWebview(class Webview::PlatformArguments &&) const;
     MCVAPI bool doesLANRequireMultiplayerRestrictions() const;
     MCVAPI void exitVRMode(class std::function<void (void)>);
     MCVAPI void finish();
     MCVAPI enum ARVRPlatform getARVRPlatform() const;
     MCVAPI struct AppPlatform::AndroidScopedStorageInfo const & getAndroidScopedStorageInfo() const;
+    MCVAPI class AppLifecycleContext & getAppLifecycleContext();
     MCVAPI class Core::PathBuffer<std::string> getAssetFileFullPath(class Core::Path const &);
     MCVAPI std::vector<std::string> getBroadcastAddresses();
     MCVAPI std::vector<enum Social::MultiplayerServiceIdentifier> getBroadcastingMultiplayerServiceIds(bool, bool) const;
@@ -80,11 +83,13 @@ public:
     MCVAPI enum DeviceSunsetTier getDeviceSunsetTier() const;
     MCVAPI int getDisplayHeight();
     MCVAPI int getDisplayWidth();
+    MCVAPI int getDpi() const;
     MCVAPI std::string getEdition() const;
     MCVAPI class std::optional<struct ScreenshotOptions> getExtraLevelSaveDataIconParams(std::string const &) const;
     MCVAPI std::string getFeedbackBugsLink() const;
     MCVAPI std::string getFeedbackHelpLink() const;
     MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> getFileAccess(enum ResourceFileSystem);
+    MCVAPI enum AppFocusState getFocusState();
     MCVAPI unsigned __int64 getHighPerformanceThreadsCount() const;
     MCVAPI std::vector<std::string> getIPAddresses();
     MCVAPI class Core::PathBuffer<std::string> getInternalPackStoragePath() const;
@@ -125,6 +130,7 @@ public:
     MCVAPI float getStoreNetworkFailureTimeout() const;
     MCVAPI class mce::UUID const & getThirdPartyPackUUID() const;
     MCVAPI unsigned __int64 getTotalHardwareThreadsCount() const;
+    MCVAPI enum UIScalingRules getUIScalingRules() const;
     MCVAPI std::vector<std::string> getUserInput();
     MCVAPI int getUserInputStatus();
     MCVAPI class Core::PathBuffer<std::string> getUserStorageRootPath() const;
@@ -141,11 +147,11 @@ public:
     MCVAPI bool hasSeparatedStorageAreasForContentAcquisition() const;
     MCVAPI void hideSplashScreen();
     MCVAPI bool importAsFlatFile() const;
+    MCVAPI void initAppPlatformNetworkSettings();
     MCVAPI void initialize();
     MCVAPI void initializeGameStreaming();
     MCVAPI void initializeScreenDependentResources();
     MCVAPI bool isAutoCompactionEnabled() const;
-    MCVAPI bool isBrazeEnabled() const;
     MCVAPI bool isCentennial() const;
     MCVAPI bool isContentAutoUpdateAllowed() const;
     MCVAPI bool isCrossPlatformToggleVisible() const;
@@ -186,27 +192,27 @@ public:
     MCVAPI void registerExperimentsActiveCrashDump(std::vector<std::string> const &) const;
     MCVAPI void registerFileForCollectionWithCrashDump(class Core::Path const &);
     MCVAPI bool reloadRenderResourcesOnResume() const;
+    MCVAPI void removeListener(class AppPlatformListener *);
     MCVAPI bool requireControllerAtStartup() const;
     MCVAPI bool requiresAutoSaveIconExplanationPopup() const;
     MCVAPI bool requiresLiveGoldForMultiplayer() const;
-    MCVAPI bool requiresNetworkOutageMessaging() const;
     MCVAPI bool requiresPatchNoticePopup() const;
     MCVAPI bool requiresXboxLiveSigninToPlay() const;
     MCVAPI void restartApp(bool);
     MCVAPI bool restartRequested();
     MCVAPI void setARVRPlatform(enum ARVRPlatform);
-    MCVAPI void setBrazeID(std::string const &);
+    MCVAPI void setDpi(int);
     MCVAPI void setFullscreenMode(enum FullscreenMode);
     MCVAPI void setNetworkAllowed(bool);
     MCVAPI void setScreenSize(int, int);
     MCVAPI void setSecureStorageKey(std::string const &, class SecureStorageKey const &);
     MCVAPI void setSleepEnabled(bool);
     MCVAPI void setThreadsFrozen(bool);
+    MCVAPI void setUIScalingRules(enum UIScalingRules);
     MCVAPI void setVRControllerType(enum VRControllerType);
     MCVAPI void setWindowSize(int, int);
     MCVAPI void setWindowText(std::string const &);
     MCVAPI bool shouldPauseDownloadsWhenEnterGame() const;
-    MCVAPI bool shouldRegisterForXboxLiveNotifications() const;
     MCVAPI bool shouldRemoveGraphicsDeviceOnAppTermination() const;
     MCVAPI void showDialog(int);
     MCVAPI void showPlatformEmptyStoreDialog(class std::function<void (bool)> &&);
@@ -238,13 +244,15 @@ public:
 #endif
     MCAPI AppPlatform(bool);
     MCAPI std::unique_ptr<struct Bedrock::PlatformRuntimeInfo> & accessPlatformRuntimeInformation_Shim();
-    MCAPI void addListener(class AppPlatformListener *, float);
+    MCAPI class Core::PathBuffer<std::string> getCurrentStoragePath() const;
+    MCAPI class Core::PathBuffer<std::string> getInternalStoragePath() const;
     MCAPI std::unique_ptr<struct Bedrock::PlatformRuntimeInfo> const & getPlatformRuntimeInformation() const;
     MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class Bedrock::Http::IProxyResolver>> getProxyResolver();
     MCAPI class Core::PathBuffer<std::string> getScratchPath();
+    MCAPI class Core::PathBuffer<std::string> getUserdataPath() const;
     MCAPI bool isEduMode() const;
     MCAPI bool isTerminating() const;
-    MCAPI void removeListener(class AppPlatformListener *);
+    MCAPI void notifyUserStorageInitialized();
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const HOME_PATH;
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const LOG_PATH;
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const SETTINGS_PATH;
@@ -253,6 +261,7 @@ public:
 
 //private:
     MCAPI void _initializeLoadProfiler();
+
 
 protected:
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const SHADERCACHE_PATH;

@@ -26,7 +26,6 @@ public:
     MCAPI void copyTo(struct ExplosionStartedEvent &) const;
     MCAPI struct ScriptExplosionStartedEvent & operator=(struct ScriptExplosionStartedEvent &&);
     MCAPI struct ScriptExplosionStartedEvent & operator=(struct ScriptExplosionStartedEvent const &);
-    MCAPI ~ScriptExplosionStartedEvent();
 
 protected:
 

@@ -12,9 +12,8 @@ namespace ItemDescriptorSerializer {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-    MCAPI void fromName(class ItemDescriptor &, class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> const &);
+    MCAPI void fromMap(class ItemDescriptor &, class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> const &, class BedrockLoadContext const &);
     MCAPI void fromString(class ItemDescriptor &, std::string const &);
-    MCAPI void fromTags(class ItemDescriptor &, class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> const &, class BedrockLoadContext const &);
-    MCAPI std::string toString(class ItemDescriptor const &);
+    MCAPI class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> toMap(class ItemDescriptor const &);
 
 };

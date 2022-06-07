@@ -42,7 +42,6 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PISTONBLOCKACTOR
-public:
 #endif
     MCAPI PistonBlockActor(class BlockPos const &, bool);
     MCAPI std::vector<class BlockPos> const & getAttachedBlocks() const;
@@ -68,6 +67,7 @@ public:
     MCAPI void _sortAttachedBlocks(class BlockSource &);
     MCAPI void _spawnBlocks(class BlockSource &);
     MCAPI void _spawnMovingBlocks(class BlockSource &);
+
 
 private:
     MCAPI static float const ARM_ANIMATION_SPEED;

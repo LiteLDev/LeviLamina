@@ -50,7 +50,6 @@ public:
     /*25*/ virtual void __unk_vfn_25();
     /*26*/ virtual void onLevelDestruction(std::string const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTGAMETEST
-public:
 #endif
     MCAPI MinecraftGameTest(class Level &);
     MCAPI void clearAllTests(class BlockSource &);
@@ -65,6 +64,7 @@ public:
 
 //private:
     MCAPI void _runTestPreparation(class gametest::BaseGameTestFunction const &);
+
 
 private:
 

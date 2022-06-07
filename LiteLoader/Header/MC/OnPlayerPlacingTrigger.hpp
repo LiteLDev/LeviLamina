@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct OnPlayerPlacingTrigger {
+class OnPlayerPlacingTrigger {
 
 #define AFTER_EXTRA
 
@@ -15,16 +15,17 @@ struct OnPlayerPlacingTrigger {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONPLAYERPLACINGTRIGGER
 public:
-    struct OnPlayerPlacingTrigger& operator=(struct OnPlayerPlacingTrigger const &) = delete;
-    OnPlayerPlacingTrigger(struct OnPlayerPlacingTrigger const &) = delete;
+    class OnPlayerPlacingTrigger& operator=(class OnPlayerPlacingTrigger const &) = delete;
+    OnPlayerPlacingTrigger(class OnPlayerPlacingTrigger const &) = delete;
     OnPlayerPlacingTrigger() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLAYERPLACINGTRIGGER
+#endif
     MCAPI ~OnPlayerPlacingTrigger();
 
-protected:
 
-private:
 
 };

@@ -29,45 +29,44 @@ public:
     /*14*/ virtual ~Skeleton();
     /*40*/ virtual void __unk_vfn_40();
     /*48*/ virtual void normalTick();
-    /*50*/ virtual void vehicleTick();
-    /*52*/ virtual float getRidingHeight();
-    /*61*/ virtual void __unk_vfn_61();
-    /*68*/ virtual void __unk_vfn_68();
-    /*82*/ virtual void __unk_vfn_82();
-    /*88*/ virtual void __unk_vfn_88();
-    /*95*/ virtual void __unk_vfn_95();
-    /*98*/ virtual void __unk_vfn_98();
-    /*105*/ virtual void __unk_vfn_105();
+    /*50*/ virtual void passengerTick();
+    /*60*/ virtual void __unk_vfn_60();
+    /*67*/ virtual void __unk_vfn_67();
+    /*81*/ virtual void __unk_vfn_81();
+    /*87*/ virtual void __unk_vfn_87();
+    /*94*/ virtual void __unk_vfn_94();
+    /*97*/ virtual void __unk_vfn_97();
+    /*104*/ virtual void __unk_vfn_104();
+    /*106*/ virtual void __unk_vfn_106();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*109*/ virtual void __unk_vfn_109();
-    /*112*/ virtual void setTarget(class Actor *);
-    /*173*/ virtual bool canFreeze() const;
-    /*181*/ virtual void __unk_vfn_181();
-    /*195*/ virtual void __unk_vfn_195();
-    /*211*/ virtual bool canBeAffected(class MobEffectInstance const &) const;
+    /*111*/ virtual void setTarget(class Actor *);
+    /*172*/ virtual bool canFreeze() const;
+    /*180*/ virtual void __unk_vfn_180();
+    /*194*/ virtual void __unk_vfn_194();
+    /*210*/ virtual bool canBeAffected(class MobEffectInstance const &) const;
+    /*219*/ virtual void __unk_vfn_219();
     /*220*/ virtual void __unk_vfn_220();
-    /*221*/ virtual void __unk_vfn_221();
-    /*222*/ virtual void getDebugText(std::vector<std::string> &);
-    /*246*/ virtual void __unk_vfn_246();
-    /*249*/ virtual void __unk_vfn_249();
-    /*251*/ virtual void die(class ActorDamageSource const &);
-    /*261*/ virtual void __unk_vfn_261();
-    /*269*/ virtual void __unk_vfn_269();
-    /*278*/ virtual void __unk_vfn_278();
-    /*307*/ virtual void __unk_vfn_307();
-    /*310*/ virtual bool doHurtTarget(class Actor *, enum ActorDamageCause const &);
-    /*311*/ virtual void __unk_vfn_311();
-    /*345*/ virtual void __unk_vfn_345();
-    /*359*/ virtual void __unk_vfn_359();
+    /*221*/ virtual void getDebugText(std::vector<std::string> &);
+    /*245*/ virtual void __unk_vfn_245();
+    /*248*/ virtual void __unk_vfn_248();
+    /*250*/ virtual void die(class ActorDamageSource const &);
+    /*264*/ virtual void __unk_vfn_264();
+    /*272*/ virtual void __unk_vfn_272();
+    /*281*/ virtual void __unk_vfn_281();
+    /*310*/ virtual void __unk_vfn_310();
+    /*313*/ virtual bool doHurtTarget(class Actor *, enum ActorDamageCause const &);
+    /*314*/ virtual void __unk_vfn_314();
+    /*348*/ virtual void __unk_vfn_348();
+    /*362*/ virtual void __unk_vfn_362();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKELETON
-public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Skeleton(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void setWitherParent(class WitherBoss *);
 
 //private:
+
 
 private:
     MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACK_UUID;

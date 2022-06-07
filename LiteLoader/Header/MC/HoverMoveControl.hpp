@@ -27,9 +27,9 @@ public:
     /*0*/ virtual ~HoverMoveControl();
     /*2*/ virtual void tick(class MoveControlComponent &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOVERMOVECONTROL
-public:
 #endif
     MCAPI HoverMoveControl();
+
 
 
 };

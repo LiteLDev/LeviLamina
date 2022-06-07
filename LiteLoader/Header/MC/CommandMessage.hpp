@@ -31,11 +31,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDMESSAGE
-public:
 #endif
     MCAPI CommandMessage();
     MCAPI std::string getMessage(class CommandOrigin const &) const;
     MCAPI ~CommandMessage();
+
 
 
 };

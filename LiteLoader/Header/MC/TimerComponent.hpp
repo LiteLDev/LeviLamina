@@ -23,12 +23,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TIMERCOMPONENT
-public:
 #endif
     MCAPI TimerComponent(class TimerComponent &&);
     MCAPI TimerComponent(class TimerComponent const &);
     MCAPI TimerComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI bool getHasExecuted() const;
     MCAPI bool getLooping() const;
     MCAPI unsigned __int64 getTimeStamp(class Level const &);
@@ -40,6 +39,7 @@ public:
 
 //private:
     MCAPI int getRandomTime(class Actor &);
+
 
 private:
 

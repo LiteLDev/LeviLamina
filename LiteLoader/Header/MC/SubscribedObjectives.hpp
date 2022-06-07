@@ -25,11 +25,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBSCRIBEDOBJECTIVES
-public:
 #endif
     MCAPI void addObjective(std::string const &);
     MCAPI void removeObjective(std::string const &);
     MCAPI void sendEvent(std::string const &, int) const;
+
 
 
 };

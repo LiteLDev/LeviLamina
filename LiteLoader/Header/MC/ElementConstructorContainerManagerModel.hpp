@@ -31,12 +31,12 @@ public:
     /*8*/ virtual class ItemStack const & getSlot(int) const;
     /*9*/ virtual void setData(int, int);
     /*10*/ virtual void broadcastChanges();
-    /*15*/ virtual bool isValid(float);
-    /*16*/ virtual class ContainerScreenContext _postInit();
+    /*16*/ virtual bool isValid(float);
+    /*17*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ELEMENTCONSTRUCTORCONTAINERMANAGERMODEL
-public:
 #endif
     MCAPI ElementConstructorContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+
 
 
 };

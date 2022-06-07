@@ -29,37 +29,37 @@ public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~ThrownPotion();
     /*40*/ virtual void __unk_vfn_40();
-    /*61*/ virtual void __unk_vfn_61();
-    /*68*/ virtual void __unk_vfn_68();
-    /*82*/ virtual void __unk_vfn_82();
-    /*88*/ virtual void __unk_vfn_88();
-    /*95*/ virtual void __unk_vfn_95();
-    /*98*/ virtual void __unk_vfn_98();
-    /*105*/ virtual void __unk_vfn_105();
+    /*60*/ virtual void __unk_vfn_60();
+    /*67*/ virtual void __unk_vfn_67();
+    /*81*/ virtual void __unk_vfn_81();
+    /*87*/ virtual void __unk_vfn_87();
+    /*94*/ virtual void __unk_vfn_94();
+    /*97*/ virtual void __unk_vfn_97();
+    /*104*/ virtual void __unk_vfn_104();
+    /*106*/ virtual void __unk_vfn_106();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*109*/ virtual void __unk_vfn_109();
-    /*170*/ virtual class HashedString const & queryEntityRenderer() const;
-    /*181*/ virtual void __unk_vfn_181();
-    /*195*/ virtual void __unk_vfn_195();
+    /*169*/ virtual class HashedString const & queryEntityRenderer() const;
+    /*180*/ virtual void __unk_vfn_180();
+    /*194*/ virtual void __unk_vfn_194();
+    /*219*/ virtual void __unk_vfn_219();
     /*220*/ virtual void __unk_vfn_220();
-    /*221*/ virtual void __unk_vfn_221();
-    /*238*/ virtual void setAuxValue(int);
-    /*246*/ virtual void __unk_vfn_246();
-    /*249*/ virtual void __unk_vfn_249();
-    /*261*/ virtual void __unk_vfn_261();
-    /*265*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
-    /*269*/ virtual void __unk_vfn_269();
-    /*278*/ virtual void __unk_vfn_278();
-    /*280*/ virtual void __unk_vfn_280();
+    /*237*/ virtual void setAuxValue(int);
+    /*245*/ virtual void __unk_vfn_245();
+    /*248*/ virtual void __unk_vfn_248();
+    /*264*/ virtual void __unk_vfn_264();
+    /*268*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
+    /*269*/ virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /*272*/ virtual void __unk_vfn_272();
+    /*281*/ virtual void __unk_vfn_281();
+    /*283*/ virtual void __unk_vfn_283();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THROWNPOTION
-public:
 #endif
     MCAPI ThrownPotion(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI short getPotionId() const;
     MCAPI void setLinger(bool);
     MCAPI static float const SPLASH_RANGE;
+
 
 
 };

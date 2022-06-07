@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTHANDLER
-public:
 #endif
     MCAPI ItemStackRequestActionCraftHandler(class ItemStackRequestActionHandler &, class Player &);
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _getOrInitSparseContainer(enum ContainerEnumName);
@@ -34,7 +33,6 @@ public:
     MCAPI struct ItemStackRequestHandlerSlotInfo _validateRequestSlot(struct ItemStackRequestSlotInfo const &);
     MCAPI enum ItemStackNetResult endRequest(enum ItemStackNetResult);
     MCAPI void endRequestBatch();
-    MCAPI class ItemStackRequestActionHandler const & getActionHandler() const;
     MCAPI enum ItemStackNetResult handleConsume(class ItemStackRequestActionConsume const &);
     MCAPI enum ItemStackNetResult handleCraftAction(class ItemStackRequestActionCraftBase const &);
     MCAPI enum ItemStackNetResult handleCraftResults(class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const &);
@@ -47,6 +45,7 @@ public:
 //private:
     MCAPI std::unique_ptr<struct ContainerValidationCraftInputs> _createCraftInputs(class ItemStackRequestActionCraftBase const &);
     MCAPI enum ItemStackNetResult _setCreatedItemOutputSlot(unsigned char);
+
 
 private:
 

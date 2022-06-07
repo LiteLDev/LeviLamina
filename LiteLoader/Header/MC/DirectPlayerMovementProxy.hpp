@@ -25,14 +25,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTPLAYERMOVEMENTPROXY
-public:
     MCVAPI class Player * _getPlayer();
     MCVAPI void _onMovePlayerPacketNormal(class Vec3 const &, class Vec2 const &, float);
     MCVAPI void _resetPos(bool);
     MCVAPI void _setPositionMode(int);
     MCVAPI bool areHandsBusy() const;
     MCVAPI void checkMovementStats(class Vec3 const &);
-    MCVAPI void fireEventPersonaEmotePlayed();
+    MCVAPI void fireEventPersonaEmotePlayed(bool);
+    MCVAPI class Abilities const & getAbilities() const;
     MCVAPI bool getAbilityBool(enum AbilitiesIndex) const;
     MCVAPI float getAbilityFloat(enum AbilitiesIndex) const;
     MCVAPI float getBob() const;
@@ -41,6 +41,7 @@ public:
     MCVAPI struct Tick const & getCurrentTick() const;
     MCVAPI int getGlidingTicks() const;
     MCVAPI enum InputMode getInputMode() const;
+    MCVAPI float getItemUseMovementModifier() const;
     MCVAPI float getJumpRidingScale();
     MCVAPI float getLastBob() const;
     MCVAPI class Vec3 getLastDelta() const;
@@ -63,6 +64,7 @@ public:
     MCVAPI bool isServerAuthoritativeMovement() const;
     MCVAPI bool isSleeping() const;
     MCVAPI bool isSlowedByItemUse() const;
+    MCVAPI bool isSpectator() const;
     MCVAPI bool isUsingItem() const;
     MCVAPI void registerFramewiseActionOrStop();
     MCVAPI void sendAdventureSettingsPacket();
@@ -73,12 +75,12 @@ public:
     MCVAPI void sendPlayerInput();
     MCVAPI void sendPlayerMove();
     MCVAPI void sendPosition();
+    MCVAPI void sendRequestAbilityPacket(enum AbilitiesIndex, bool);
     MCVAPI void setAbilityBool(enum AbilitiesIndex, bool);
     MCVAPI void setAbilityFloat(enum AbilitiesIndex, float);
     MCVAPI void setAutoJumping(bool);
     MCVAPI void setBob(float);
     MCVAPI void setCurrentLocalMoveVelocity(class Vec2 const &);
-    MCVAPI void setEmotePlayedEndedEarly(bool);
     MCVAPI void setEmotingStatus(bool);
     MCVAPI void setHandsBusy(bool);
     MCVAPI void setHasMoveInput(bool);
@@ -100,6 +102,7 @@ public:
     MCVAPI void updateTouch();
     MCVAPI bool wasAutoJumping() const;
 #endif
+
 
 
 };

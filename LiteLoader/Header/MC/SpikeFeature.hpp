@@ -36,13 +36,13 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPIKEFEATURE
-public:
 #endif
     MCAPI SpikeFeature(class SpikeFeature::EndSpike const &);
     MCAPI bool placeManually(class BlockSource &, class BlockPos const &, class Random &, class Actor *);
     MCAPI void postProcessMobsAt(class BlockSource &, class BlockPos const &, class Random &) const;
     MCAPI void setCrystalBeamTarget(class BlockPos const &);
     MCAPI void setCrystalInvulnerable(bool);
+
 
 
 };

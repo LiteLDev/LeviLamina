@@ -20,8 +20,8 @@ public:
 #endif
 
 public:
-    MCAPI ContainerValidationCraftResult(struct ContainerValidationCraftResult &&);
     MCAPI ContainerValidationCraftResult();
+    MCAPI ContainerValidationCraftResult(struct ContainerValidationCraftResult &&);
     MCAPI ~ContainerValidationCraftResult();
 
 protected:

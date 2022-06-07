@@ -25,8 +25,8 @@ public:
 public:
     /*0*/ virtual ~ScriptMarkVariantComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMARKVARIANTCOMPONENT
-public:
 #endif
+
 
 
 };

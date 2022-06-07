@@ -27,8 +27,8 @@ public:
 public:
     /*0*/ virtual ~OverworldBrightnessRamp();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDBRIGHTNESSRAMP
-public:
 #endif
+
 
 
 };

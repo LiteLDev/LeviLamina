@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONFIRECOMPONENT
-public:
 #endif
     MCAPI void addAdditionalSaveData(class Actor const &, class CompoundTag &) const;
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &);
@@ -33,6 +32,7 @@ public:
     MCAPI static bool needsLegacyConversion(class CompoundTag const &);
 
 //private:
+
 
 private:
     MCAPI static std::string const LEGACY_FIRE_TAG;

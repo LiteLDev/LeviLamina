@@ -25,12 +25,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMBATREGENERATIONCOMPONENT
-public:
 #endif
     MCAPI void tick(class Actor &);
 
 //private:
     MCAPI void _applyCombatBuffsToMob(class Actor &, class Actor &);
+
 
 private:
 

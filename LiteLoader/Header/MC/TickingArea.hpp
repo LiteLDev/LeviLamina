@@ -50,8 +50,8 @@ public:
     /*23*/ virtual bool isRemoved();
     /*24*/ virtual void remove(class LevelStorage &);
     /*25*/ virtual void onComponentChanged(unsigned int, float, bool, class LevelStorage &);
+    /*26*/ virtual void updateBlockSourceCurrentTick(struct Tick const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREA
-public:
     MCVAPI class BlockSource & getBlockSource();
     MCVAPI class BlockSource const & getBlockSource() const;
     MCVAPI class ITickingAreaView const & getView() const;
@@ -63,7 +63,9 @@ public:
 
 //private:
     MCAPI TickingArea(class Dimension &, class mce::UUID, std::string const &, struct ActorUniqueID, struct Bounds const &, bool, float, bool, enum TickingAreaLoadMode);
+    MCAPI void _center(class LevelStorage &);
     MCAPI void _save(class LevelStorage &);
+
 
 private:
 

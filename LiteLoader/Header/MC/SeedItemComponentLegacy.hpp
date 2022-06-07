@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEEDITEMCOMPONENTLEGACY
-public:
 #endif
     MCAPI SeedItemComponentLegacy(class Item &);
     MCAPI bool init(class Json::Value &, class SemVersion const &);
@@ -36,6 +35,7 @@ public:
 
 //private:
     MCAPI bool _canPlant(class Block const &) const;
+
 
 private:
 

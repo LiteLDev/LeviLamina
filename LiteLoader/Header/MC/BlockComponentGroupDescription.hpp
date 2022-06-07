@@ -26,6 +26,7 @@ public:
     MCAPI BlockComponentGroupDescription();
     MCAPI void foreachDescription(class std::function<void (struct BlockComponentDescription const &)>) const;
     MCAPI struct BlockComponentDescription * getComponentDescription(std::string const &) const;
+    MCAPI struct BlockComponentGroupDescription & operator=(struct BlockComponentGroupDescription &&);
     MCAPI ~BlockComponentGroupDescription();
 
 protected:

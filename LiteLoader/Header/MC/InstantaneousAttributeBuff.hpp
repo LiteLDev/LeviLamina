@@ -29,10 +29,10 @@ public:
     /*1*/ virtual bool isInstantaneous() const;
     /*2*/ virtual bool isSerializable() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSTANTANEOUSATTRIBUTEBUFF
-public:
 #endif
     MCAPI InstantaneousAttributeBuff(float, class ActorDamageSource const &);
     MCAPI InstantaneousAttributeBuff(float, enum AttributeBuffType);
+
 
 
 };

@@ -31,22 +31,23 @@ public:
     /*6*/ virtual class Scripting::Result<bool> getSneaking() const;
     /*7*/ virtual class Scripting::Result<void> setSneaking(bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTACTOR
-public:
 #endif
     MCAPI ScriptActor(class ScriptActor &&);
     MCAPI ScriptActor(class Actor const &, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<void> addEffect(class ScriptEffectType const &, int, int, bool);
     MCAPI class Scripting::Result<bool> addTag(std::string const &) const;
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptBlock>> getBlockFromViewVector(class Scripting::WeakLifetimeScope, class std::optional<struct ScriptBlockRaycastOptions> const &) const;
-    MCAPI class Scripting::Result<float> getBodyRotation() const;
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptActorComponent> getComponent(class Scripting::WeakLifetimeScope, class std::unordered_map<std::string, std::unique_ptr<class IComponentFactory>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class IComponentFactory>>>> const &, std::string const &);
     MCAPI std::vector<class Scripting::WeakTypedObjectHandle<class ScriptActorComponent>> getComponents(class Scripting::WeakLifetimeScope, class std::unordered_map<std::string, std::unique_ptr<class IComponentFactory>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class IComponentFactory>>>> const &);
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptDimension>> getDimension();
+    MCAPI class Scripting::Result<class std::optional<class std::variant<float, bool, std::string>>> getDynamicProperty(struct Scripting::ContextConfig const &, std::string const &);
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptMobEffectInstance>> getEffect(class ScriptEffectType const &);
     MCAPI class Scripting::Result<std::vector<class Scripting::StrongTypedObjectHandle<class ScriptActor>>> getEntitiesFromViewVector(class Scripting::WeakLifetimeScope, class std::optional<struct ScriptEntityRaycastOptions> const &) const;
     MCAPI class Scripting::Result<class Vec3> getHeadLocation() const;
     MCAPI class Scripting::Result<std::string> getId() const;
     MCAPI class Scripting::Result<class Vec3> getLocation() const;
+    MCAPI class Scripting::Result<struct ScriptXYRotation> getRotation() const;
+    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptScoreboardIdentity>> getScoreboardIdentity() const;
     MCAPI class Scripting::Result<std::vector<std::string>> getTags() const;
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptActor>> getTarget();
     MCAPI class Scripting::Result<class ScriptVector> getVelocity() const;
@@ -56,8 +57,12 @@ public:
     MCAPI class Scripting::Result<bool> hasTag(std::string const &) const;
     MCAPI class Scripting::Result<void> kill() const;
     MCAPI class ScriptActor & operator=(class ScriptActor &&);
+    MCAPI class Scripting::Result<bool> removeDynamicProperty(struct Scripting::ContextConfig const &, std::string const &);
     MCAPI class Scripting::Result<bool> removeTag(std::string const &) const;
     MCAPI class Scripting::Result<struct Scripting::JSON> runCommand(struct Scripting::ContextConfig const &, std::string const &);
+    MCAPI class Scripting::Result<class Scripting::Promise<class Scripting::StrongTypedObjectHandle<struct ScriptCommandResult>>> runCommandAsync(struct Scripting::ContextConfig const &, class Scripting::ScriptObjectFactory &, class Scripting::DependencyLocator &, std::string const &);
+    MCAPI class Scripting::Result<void> setDynamicProperty(struct Scripting::ContextConfig const &, std::string const &, class std::variant<float, bool, std::string> const &);
+    MCAPI class Scripting::Result<void> setRotation(float, float) const;
     MCAPI class Scripting::Result<void> setTarget(class ScriptActor &);
     MCAPI class Scripting::Result<void> setVelocity(class ScriptVector const &) const;
     MCAPI class Scripting::Result<void> teleport(class Vec3 const &, class ScriptDimension &, float, float);
@@ -67,10 +72,13 @@ public:
     MCAPI static void destroyHandle(struct ActorUniqueID const &, class Scripting::WeakLifetimeScope const &);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptActor> getHandle(class Actor const *, class Scripting::WeakLifetimeScope const &);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptActor> getHandle(class StackRefResultT<struct EntityRefTraits>, class Scripting::WeakLifetimeScope const &);
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptActor> getHandle(class WeakEntityRef, class Scripting::WeakLifetimeScope const &);
     MCAPI static class Actor * tryGetActor(struct Scripting::TypedObjectHandle<class ScriptActor> &, class Scripting::WeakLifetimeScope const &);
 
 //protected:
     MCAPI class Scripting::Result<struct Scripting::JSON> _runCommand(std::string const &, std::string const &, std::unique_ptr<class CommandOrigin>);
+    MCAPI class std::optional<struct Scripting::Error> _validateDynamicProperty(class Actor *, std::string const &, class std::variant<float, bool, std::string> const *, std::string const &);
+
 
 protected:
 

@@ -34,7 +34,6 @@ public:
     /*5*/ virtual bool getSimPaused() const;
     /*6*/ virtual bool isOnlineClient() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFT
-public:
     MCVAPI class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
     MCVAPI class StackRefResultT<struct EntityRegistryConstRefTraits> getEntityRegistry() const;
 #endif
@@ -55,11 +54,13 @@ public:
     MCAPI void init();
     MCAPI void initAsDedicatedServer();
     MCAPI bool isLeaveGameDone() const;
+    MCAPI void requestResourceReload();
     MCAPI void startLeaveGame(bool);
     MCAPI bool update();
 
 //private:
     MCAPI void _tryCatchupMovementTicks();
+
 
 private:
 

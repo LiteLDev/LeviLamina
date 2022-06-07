@@ -28,7 +28,6 @@ public:
     /*1*/ virtual void send(class CommandOrigin const &, class CommandOutput const &);
     /*2*/ virtual void registerOutputCallback(class std::function<void (class AutomationCmdOutput &)> const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDOUTPUTSENDER
-public:
 #endif
     MCAPI CommandOutputSender();
     MCAPI void sendToAdmins(class CommandOrigin const &, class CommandOutput const &, enum CommandPermissionLevel);
@@ -36,6 +35,7 @@ public:
 
 //protected:
     MCAPI class Json::Value _toJson(class CommandOutput const &) const;
+
 
 protected:
 

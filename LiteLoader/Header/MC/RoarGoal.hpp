@@ -31,12 +31,12 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROARGOAL
-public:
 #endif
     MCAPI RoarGoal(class Mob &);
 
 //private:
     MCAPI class std::optional<class WeakEntityRef> _findRoarTarget() const;
+
 
 private:
 

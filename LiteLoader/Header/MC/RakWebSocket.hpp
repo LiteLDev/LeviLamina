@@ -36,7 +36,6 @@ public:
     /*8*/ virtual void _updateState() = 0;
     /*9*/ virtual unsigned int _genMaskingKey() const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKET
-public:
 #endif
     MCAPI RakWebSocket(std::unique_ptr<class TcpProxy>, bool);
     MCAPI void close(bool, bool);
@@ -63,6 +62,7 @@ public:
     MCAPI void _subProcessHttpResponse(class RakNet::BitStream &);
     MCAPI void _validateFields();
     MCAPI bool _validateWebSocketURI();
+
 
 protected:
 

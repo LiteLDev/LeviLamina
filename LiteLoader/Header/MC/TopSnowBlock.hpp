@@ -29,11 +29,12 @@ public:
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /*19*/ virtual void __unk_vfn_19();
-    /*30*/ virtual void __unk_vfn_30();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*33*/ virtual bool isWaterBlocking() const;
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
+    /*34*/ virtual bool isWaterBlocking() const;
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -90,7 +91,6 @@ public:
     /*207*/ virtual bool isFreeToFall(class BlockSource &, class BlockPos const &) const;
     /*208*/ virtual void startFalling(class BlockSource &, class BlockPos const &, class Block const &, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TOPSNOWBLOCK
-public:
     MCVAPI bool canBeDestroyedByWaterSpread() const;
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool canHaveExtraData() const;
@@ -106,6 +106,7 @@ public:
 //private:
     MCAPI bool _canBeBuiltOver(class BlockSource &, class BlockPos const &, class BlockItem const *) const;
     MCAPI bool _canSurvive(class BlockSource &, class BlockPos const &) const;
+
 
 private:
 

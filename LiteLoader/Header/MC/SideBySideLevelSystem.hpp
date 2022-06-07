@@ -23,9 +23,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDELEVELSYSTEM
-public:
 #endif
     MCAPI static struct TickingSystemWithInfo emptySoundRequests();
+
 
 
 };

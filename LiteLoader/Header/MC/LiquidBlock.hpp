@@ -28,10 +28,11 @@ public:
     /*0*/ virtual ~LiquidBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /*19*/ virtual void __unk_vfn_19();
-    /*30*/ virtual void __unk_vfn_30();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -73,23 +74,24 @@ public:
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIQUIDBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI LiquidBlock(std::string const &, int, class Material const &);
     MCAPI int getTickDelay(class BlockSource &) const;
     MCAPI static float getHeightFromDepth(int);
+    MCAPI static void handleEntityInside(class IConstBlockSource const &, class BlockPos const &, class Vec3 &, class Material const &);
 
 //protected:
     MCAPI void emitFizzParticle(class BlockSource &, class BlockPos const &) const;
-    MCAPI int getDepth(class BlockSource &, class BlockPos const &) const;
-    MCAPI int getRenderedDepth(class BlockSource &, class BlockPos const &) const;
     MCAPI void solidify(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     MCAPI void trySpreadFire(class BlockSource &, class BlockPos const &, class Random &) const;
+    MCAPI static int getDepth(class IConstBlockSource const &, class BlockPos const &, class Material const &);
+    MCAPI static int getRenderedDepth(class IConstBlockSource const &, class BlockPos const &, class Material const &);
 
 //private:
-    MCAPI class Vec3 _getFlow(class BlockSource &, class BlockPos const &) const;
     MCAPI void _solidify(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
+    MCAPI static class Vec3 _getFlow(class IConstBlockSource const &, class BlockPos const &, class Material const &);
+
 
 protected:
 

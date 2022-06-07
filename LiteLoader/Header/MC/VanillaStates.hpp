@@ -37,6 +37,7 @@ struct CachedItemStateMapPtr {
     MCAPI extern class ItemStateVariant<bool> const BrewingStandSlotBBit;
     MCAPI extern class ItemStateVariant<bool> const BrewingStandSlotCBit;
     MCAPI extern class ItemStateVariant<bool> const ButtonPressedBit;
+    MCAPI extern class ItemStateVariant<bool> const CanSummon;
     MCAPI extern class ItemStateVariant<int> const Candles;
     MCAPI extern class ItemStateVariant<enum CauldronLiquidType> const CauldronLiquid;
     MCAPI extern class ItemStateVariant<enum ChemistryTableType> const ChemistryTableType;
@@ -99,6 +100,7 @@ struct CachedItemStateMapPtr {
     MCAPI extern class ItemStateVariant<enum PortalAxis> const PortalAxis;
     MCAPI extern class ItemStateVariant<bool> const PoweredBit;
     MCAPI extern class ItemStateVariant<enum PrismarineBlockType> const PrismarineBlockType;
+    MCAPI extern class ItemStateVariant<int> const PropaguleStage;
     MCAPI extern class ItemStateVariant<bool> const RailDataBit;
     MCAPI extern class ItemStateVariant<int> const RailDirection;
     MCAPI extern class ItemStateVariant<int> const RedstoneSignal;

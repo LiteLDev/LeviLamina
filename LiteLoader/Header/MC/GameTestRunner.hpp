@@ -25,13 +25,18 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTRUNNER
-public:
 #endif
     MCAPI static void clearAllTests(class BlockSource &, class gametest::GameTestTicker &, std::vector<class BoundingBox> const &);
     MCAPI static void clearMarkers(class Level &);
     MCAPI static std::vector<class gametest::GameTestBatch> groupTestsIntoBatches(class gametest::GameTestRegistry &, std::vector<class std::shared_ptr<class gametest::BaseGameTestFunction>> const &, int);
     MCAPI static void runTest(class std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker &);
     MCAPI static std::unique_ptr<class gametest::BaseGameTestBatchRunner> runTests(class Dimension &, class gametest::GameTestRegistry &, std::unique_ptr<class gametest::IGameTestHelperProvider>, class gametest::GameTestTicker &, struct gametest::TestParameters &&);
+
+//private:
+    MCAPI static std::vector<class std::vector<class std::shared_ptr<class gametest::BaseGameTestFunction>, class std::allocator<class std::shared_ptr<class gametest::BaseGameTestFunction>>>> _subdivideBatch(std::vector<class std::shared_ptr<class gametest::BaseGameTestFunction>> &, int);
+
+
+private:
 
 
 };

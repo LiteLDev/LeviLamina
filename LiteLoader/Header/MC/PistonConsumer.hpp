@@ -32,10 +32,10 @@ public:
     /*20*/ virtual void __unk_vfn_20();
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PISTONCONSUMER
-public:
 #endif
     MCAPI PistonConsumer();
     MCAPI void setBlockPowerFace(unsigned char);
+
 
 
 };

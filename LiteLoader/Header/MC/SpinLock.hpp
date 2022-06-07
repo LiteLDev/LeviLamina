@@ -24,13 +24,18 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPINLOCK
-public:
 #endif
     MCAPI SpinLock();
     MCAPI void lock();
     MCAPI bool try_lock();
     MCAPI void unlock();
     MCAPI ~SpinLock();
+
+//private:
+    MCAPI unsigned __int64 _getThreadId();
+
+
+private:
 
 
 };

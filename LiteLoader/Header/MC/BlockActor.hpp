@@ -74,7 +74,6 @@ public:
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKACTOR
-public:
     MCVAPI void fixupOnLoad(class LevelChunk &);
     MCVAPI class Container * getContainer();
     MCVAPI class Container const * getContainer() const;
@@ -107,6 +106,7 @@ public:
 
 //private:
     MCAPI static class std::map<std::string, enum BlockActorType, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, enum BlockActorType>>> _createIdClassMap();
+
 
 protected:
 

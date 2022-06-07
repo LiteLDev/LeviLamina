@@ -31,13 +31,13 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNIFFGOAL
-public:
 #endif
     MCAPI SniffGoal(class Mob &);
 
 //private:
+    MCAPI std::vector<struct DistanceSortedActor> _fetchNearbySniffableActors(enum ActorType) const;
     MCAPI class std::optional<struct DistanceSortedActor> _fetchNearestSniffableActor() const;
-    MCAPI void _suspectClosestMob() const;
+
 
 private:
 

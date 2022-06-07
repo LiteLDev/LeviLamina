@@ -27,33 +27,33 @@ public:
 
 public:
     /*0*/ virtual ~ShieldItem();
-    /*5*/ virtual void __unk_vfn_5();
     /*7*/ virtual void __unk_vfn_7();
     /*10*/ virtual void __unk_vfn_10();
-    /*12*/ virtual void __unk_vfn_12();
-    /*45*/ virtual bool isHandEquipped() const;
-    /*47*/ virtual void __unk_vfn_47();
-    /*49*/ virtual void __unk_vfn_49();
-    /*57*/ virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
-    /*58*/ virtual int getEnchantSlot() const;
-    /*62*/ virtual void __unk_vfn_62();
+    /*13*/ virtual void __unk_vfn_13();
+    /*15*/ virtual void __unk_vfn_15();
+    /*49*/ virtual bool isHandEquipped() const;
+    /*51*/ virtual void __unk_vfn_51();
+    /*53*/ virtual void __unk_vfn_53();
+    /*61*/ virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
+    /*62*/ virtual int getEnchantSlot() const;
     /*66*/ virtual void __unk_vfn_66();
-    /*67*/ virtual void __unk_vfn_67();
-    /*68*/ virtual void __unk_vfn_68();
+    /*70*/ virtual void __unk_vfn_70();
     /*71*/ virtual void __unk_vfn_71();
+    /*72*/ virtual void __unk_vfn_72();
     /*75*/ virtual void __unk_vfn_75();
-    /*76*/ virtual void __unk_vfn_76();
-    /*81*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
-    /*85*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
-    /*94*/ virtual void readUserData(class ItemStackBase &, class IDataInput &, class ReadOnlyBinaryStream &) const;
-    /*95*/ virtual void writeUserData(class ItemStackBase const &, class IDataOutput &) const;
-    /*97*/ virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
-    /*99*/ virtual class HashedString const & getCooldownType() const;
-    /*100*/ virtual int getCooldownTime() const;
-    /*105*/ virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemInstance const &, class ItemInstance const &, bool, bool) const;
-    /*106*/ virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
+    /*79*/ virtual void __unk_vfn_79();
+    /*80*/ virtual void __unk_vfn_80();
+    /*84*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
+    /*85*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
+    /*89*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
+    /*98*/ virtual void readUserData(class ItemStackBase &, class IDataInput &, class ReadOnlyBinaryStream &) const;
+    /*99*/ virtual void writeUserData(class ItemStackBase const &, class IDataOutput &) const;
+    /*101*/ virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
+    /*103*/ virtual class HashedString const & getCooldownType() const;
+    /*104*/ virtual int getCooldownTime() const;
+    /*110*/ virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemInstance const &, class ItemInstance const &, bool, bool) const;
+    /*111*/ virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIELDITEM
-public:
 #endif
     MCAPI ShieldItem(std::string const &, int);
     MCAPI void playBlockSound(class Player *) const;
@@ -64,6 +64,7 @@ public:
 
 //private:
     MCAPI enum InHandUpdateType _getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
+
 
 private:
 

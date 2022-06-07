@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLATWORLDGENERATOR
-public:
     MCVAPI void decorateWorldGenLoadChunk(class Biome &, class LevelChunk &, class BlockVolumeTarget &, class Random &, class ChunkPos const &) const;
     MCVAPI void decorateWorldGenPostProcess(class Biome &, class LevelChunk &, class BlockSource &, class Random &) const;
     MCVAPI bool findNearestStructureFeature(enum StructureFeatureType, class BlockPos const &, class BlockPos &, bool);
@@ -46,6 +45,7 @@ public:
 
 //private:
     MCAPI void _generatePrototypeBlockValues(class FlatWorldGeneratorOptions const &, short);
+
 
 private:
 

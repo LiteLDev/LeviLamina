@@ -25,10 +25,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWARDSHOMERESTRICTIONDEFINITION
-public:
 #endif
     MCAPI MoveTowardsHomeRestrictionDefinition();
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MoveTowardsHomeRestrictionDefinition>> &);
+
 
 
 };

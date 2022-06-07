@@ -27,10 +27,11 @@ public:
 public:
     /*0*/ virtual ~GlowLichenBlock();
     /*19*/ virtual void __unk_vfn_19();
-    /*30*/ virtual void __unk_vfn_30();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -67,10 +68,10 @@ public:
     /*203*/ virtual class Block const & getMultifaceBlock() const;
     /*204*/ virtual class MultifaceSpreader const & getMultifaceSpreader() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLOWLICHENBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI GlowLichenBlock(std::string const &, int, class Material const &);
+
 
 
 };

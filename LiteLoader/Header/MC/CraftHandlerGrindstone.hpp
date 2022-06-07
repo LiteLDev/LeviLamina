@@ -29,7 +29,6 @@ public:
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /*5*/ virtual void _postCraftRequest(bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERGRINDSTONE
-public:
 #endif
     MCAPI CraftHandlerGrindstone(class Player &, class ItemStackRequestActionCraftHandler &);
 
@@ -38,6 +37,7 @@ public:
     MCAPI int _getExperienceFromItem(class ItemStack const &) const;
     MCAPI class ItemStack _getResultItemWithNoEnchants(std::vector<class ItemStack> const &, bool &);
     MCAPI bool _resolveNetIdAndValidate(enum ContainerEnumName, unsigned char, struct ItemStackNetIdVariant const &);
+
 
 private:
 

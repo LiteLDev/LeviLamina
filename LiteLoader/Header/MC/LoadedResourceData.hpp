@@ -23,9 +23,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOADEDRESOURCEDATA
-public:
 #endif
     MCAPI ~LoadedResourceData();
+
 
 
 };

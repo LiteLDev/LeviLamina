@@ -42,10 +42,10 @@ public:
     /*9*/ virtual std::unique_ptr<class Tag> copy() const;
     /*10*/ virtual unsigned __int64 hash() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INT64TAG
-public:
 #endif
     MCAPI Int64Tag();
     MCAPI Int64Tag(__int64);
+
 
 
 };

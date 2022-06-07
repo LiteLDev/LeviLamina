@@ -42,7 +42,6 @@ public:
     /*15*/ virtual class Vec3 _getTargetPosition() const;
     /*16*/ virtual unsigned __int64 _getRepathTime() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEMOVETOGOAL
-public:
 #endif
     MCAPI BaseMoveToGoal(class Mob &, float, float, float, int, int);
     MCAPI void setTargetPositionOffset(class Vec3 const &);
@@ -52,6 +51,7 @@ public:
     MCAPI void _checkIfStuck();
     MCAPI bool _isCooldownActive() const;
     MCAPI void setInterval(int);
+
 
 protected:
 

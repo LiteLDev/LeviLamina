@@ -28,9 +28,8 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
+    /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DURABILITYITEMCOMPONENT
-public:
 #endif
     MCAPI DurabilityItemComponent(class ComponentItem *);
     MCAPI int getDamageChance(int) const;
@@ -39,6 +38,7 @@ public:
     MCAPI void setMaxDamage(int);
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
+
 
 
 };

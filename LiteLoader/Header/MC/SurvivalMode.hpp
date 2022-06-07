@@ -39,13 +39,13 @@ public:
     /*17*/ virtual bool isInTrialMode();
     /*18*/ virtual void registerUpsellScreenCallback(class std::function<void (bool)>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SURVIVALMODE
-public:
 #endif
     MCAPI SurvivalMode(class Player &);
 
 //private:
     MCAPI void _messagePlayers(std::string);
     MCAPI void _showTrialReminder(bool);
+
 
 private:
     MCAPI static bool mTrialHasEnded;

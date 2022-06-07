@@ -31,7 +31,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREALITEMCOMPONENTFACTORY
-public:
 #endif
     MCAPI static class entt::meta_any constructComponent(std::string const &);
     MCAPI static class std::shared_ptr<class ItemComponent> constructItemComponent(std::string const &);
@@ -39,6 +38,7 @@ public:
     MCAPI static void setItemContext(class ComponentItem *);
 
 //private:
+
 
 private:
     MCAPI static class ComponentItem * mItemContext;

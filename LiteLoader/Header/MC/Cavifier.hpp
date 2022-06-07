@@ -25,13 +25,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAVIFIER
-public:
 #endif
     MCAPI Cavifier(class CavifierNoises const &, float, float);
     MCAPI float cavify(class Vec3, int, float) const;
 
 //private:
     MCAPI float _getSpaghetti2d(class Vec3) const;
+
 
 private:
 

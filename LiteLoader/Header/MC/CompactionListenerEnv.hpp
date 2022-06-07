@@ -27,11 +27,11 @@ public:
 public:
     /*0*/ virtual ~CompactionListenerEnv();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPACTIONLISTENERENV
-public:
     MCVAPI void Schedule(void ( *)(void *), void *);
 #endif
     MCAPI CompactionListenerEnv(class leveldb::Env *);
     MCAPI void setCompactionCallback(class std::function<void (enum CompactionStatus)>);
+
 
 
 };

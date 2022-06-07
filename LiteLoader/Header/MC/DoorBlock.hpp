@@ -31,10 +31,11 @@ public:
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /*14*/ virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
     /*19*/ virtual void __unk_vfn_19();
-    /*30*/ virtual void __unk_vfn_30();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -82,7 +83,6 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOORBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool isDoorBlock() const;
     MCVAPI bool isInteractiveBlock() const;
@@ -93,8 +93,9 @@ public:
     MCAPI void getDoorBlocks(class IConstBlockSource const &, class BlockPos const &, class Block const *&, class Block const *&) const;
     MCAPI float getDoorThickness() const;
     MCAPI bool isToggled(class IConstBlockSource const &, class BlockPos const &) const;
-    MCAPI void setToggled(class BlockSource &, class BlockPos const &, bool) const;
+    MCAPI void setToggled(class BlockSource &, class BlockPos const &, class Actor *, bool) const;
     MCAPI static unsigned char getDoorFacing(int);
+
 
 
 };

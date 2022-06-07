@@ -26,9 +26,9 @@ public:
 public:
     /*0*/ virtual ~BeaconContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEACONCONTAINERSCREENVALIDATOR
-public:
 #endif
     MCAPI BeaconContainerScreenValidator();
+
 
 
 };

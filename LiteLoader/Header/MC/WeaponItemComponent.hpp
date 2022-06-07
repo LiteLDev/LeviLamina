@@ -30,9 +30,8 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
+    /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAPONITEMCOMPONENT
-public:
 #endif
     MCAPI WeaponItemComponent(class ComponentItem *);
     MCAPI void appendFormattedHovertext(class ItemStackBase const &, std::string &, bool) const;
@@ -41,6 +40,7 @@ public:
     MCAPI void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
+
 
 
 };

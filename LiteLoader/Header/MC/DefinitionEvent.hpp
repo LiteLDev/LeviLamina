@@ -18,7 +18,6 @@ class DefinitionEvent {
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFINITIONEVENT
-public:
 #endif
     MCAPI DefinitionEvent(class DefinitionEvent const &);
     MCAPI DefinitionEvent();
@@ -27,6 +26,7 @@ public:
     MCAPI void evaluateGroups(class Actor &, std::vector<struct DefinitionModifier> &, class VariantParameterList const &);
     MCAPI class DefinitionEvent & operator=(class DefinitionEvent const &);
     MCAPI ~DefinitionEvent();
+
 
 
 };

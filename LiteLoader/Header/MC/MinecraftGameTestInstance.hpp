@@ -38,12 +38,11 @@ public:
     /*11*/ virtual bool _isTestReady();
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
-    /*14*/ virtual void __unk_vfn_14();
-    /*15*/ virtual class BlockSource & getBlockSource() const;
+    /*14*/ virtual class BlockSource & getBlockSource() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTGAMETESTINSTANCE
-public:
 #endif
     MCAPI MinecraftGameTestInstance(class gametest::BaseGameTestFunction const &, std::unique_ptr<class gametest::IGameTestHelperProvider>, class Dimension &);
+
 
 
 };

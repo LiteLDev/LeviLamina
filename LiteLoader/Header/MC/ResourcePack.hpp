@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACK
-public:
 #endif
     MCAPI ResourcePack(class Pack &);
     MCAPI bool areKnownFilesValid();
@@ -63,6 +62,7 @@ public:
     MCAPI void _createSubpack(struct SubpackInfo const &);
     MCAPI void _createSubpacks();
     MCAPI void _generateIconPath();
+
 
 private:
 
