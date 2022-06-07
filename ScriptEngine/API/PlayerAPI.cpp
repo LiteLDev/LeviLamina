@@ -267,7 +267,7 @@ Player* PlayerClass::get()
     if (!isValid)
         return nullptr;
     else
-        return Level::getPlayer(id);
+        return Global<Level>->getPlayer(id);
 }
 
 Local<Value> PlayerClass::getName()
@@ -1278,7 +1278,7 @@ Local<Value> PlayerClass::sendSimpleForm(const Arguments& args)
             if (!EngineManager::isValid(engine))
                 return;
 
-            Player* pl = Level::getPlayer(id);
+            Player* pl = Global<Level>->getPlayer(id);
             if (!pl)
                 return;
 
@@ -1320,7 +1320,7 @@ Local<Value> PlayerClass::sendModalForm(const Arguments& args)
             if (!EngineManager::isValid(engine))
                 return;
 
-            Player* pl = Level::getPlayer(id);
+            Player* pl = Global<Level>->getPlayer(id);
             if (!pl)
                 return;
 
@@ -1361,7 +1361,7 @@ Local<Value> PlayerClass::sendCustomForm(const Arguments& args)
             if (!EngineManager::isValid(engine))
                 return;
 
-            Player* pl = Level::getPlayer(id);
+            Player* pl = Global<Level>->getPlayer(id);
             if (!pl)
                 return;
 
