@@ -23,15 +23,16 @@ public:
     StopCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StopCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STOPCOMMAND
 public:
 #endif
-    MCAPI static class DedicatedServer * mServer;
     MCAPI static void setup(class CommandRegistry &, class DedicatedServer &);
 
+
+//private:
+    MCAPI static class DedicatedServer * mServer;
 
 };

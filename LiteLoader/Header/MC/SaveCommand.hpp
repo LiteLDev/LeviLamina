@@ -25,24 +25,21 @@ public:
     SaveCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SaveCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAVECOMMAND
 public:
 #endif
+    MCAPI static void setup(class CommandRegistry &);
+
+
+//private:
     MCAPI static std::vector<struct SnapshotFilenameAndLength> mSaveAllFileList;
     MCAPI static class std::mutex mSaveAllMutex;
     MCAPI static enum SaveCommand::State mState;
-    MCAPI static void setup(class CommandRegistry &);
-
-//private:
     MCAPI static void saveHold(class CommandOutput &);
     MCAPI static void saveResume(class CommandOutput &);
     MCAPI static void saveState(class CommandOutput &);
-
-private:
-
 
 };

@@ -23,7 +23,6 @@ public:
     VillagePiece() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~VillagePiece();
     /*13*/ virtual int generateHeightAtPosition(class BlockPos const &, class Dimension &, class BlockVolume &, class std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<std::vector<short>>>>> &) const;
@@ -35,6 +34,7 @@ public:
 public:
 #endif
     MCAPI static void addPieces(class BlockPos, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, class JigsawStructureRegistry &, enum VanillaBiomeTypes, class Dimension &);
+
 
 
 };

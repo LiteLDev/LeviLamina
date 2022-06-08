@@ -23,7 +23,6 @@ public:
     ChalkboardBlockActor() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ChalkboardBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -55,10 +54,8 @@ public:
     MCAPI static class ChalkboardBlockActor * convertFromEntity(class BlockSource &, class CompoundTag const &);
     MCAPI static class ChalkboardBlockActor * createChalkboard(class Actor *, class BlockSource &, class BlockPos const &, enum ChalkboardSize, unsigned char, int, bool, class ItemStack const &, std::string);
 
+
 //private:
     MCAPI static struct ChalkboardBlockActor::ChalkboardFinder _findChalkboard(class BlockSource &, class BlockPos const &);
-
-private:
-
 
 };

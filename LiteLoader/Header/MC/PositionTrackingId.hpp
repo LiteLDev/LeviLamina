@@ -20,7 +20,6 @@ public:
     PositionTrackingId() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POSITIONTRACKINGID
 public:
@@ -34,16 +33,10 @@ public:
     MCAPI class PositionTrackingId & operator=(class PositionTrackingId &&);
     MCAPI class PositionTrackingId & operator=(class PositionTrackingId const &);
     MCAPI std::string const toString() const;
+    MCAPI static class PositionTrackingId const INVALID_ID;
 
 //protected:
-
-//private:
-
-protected:
     MCAPI static unsigned int sNextId;
-
-private:
-    MCAPI static class PositionTrackingId const INVALID_ID;
 
 
 };

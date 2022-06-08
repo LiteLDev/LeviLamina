@@ -22,7 +22,6 @@ public:
     ScriptWorld() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTWORLD
 public:
@@ -38,6 +37,7 @@ public:
     MCAPI void stopMusic();
     MCAPI ~ScriptWorld();
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptWorld> bind(struct Scripting::Version);
+
 
 
 };

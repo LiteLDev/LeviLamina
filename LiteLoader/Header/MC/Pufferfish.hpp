@@ -24,7 +24,6 @@ public:
     Pufferfish() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~Pufferfish();
     /*40*/ virtual void __unk_vfn_40();
@@ -60,6 +59,7 @@ public:
 public:
 #endif
     MCAPI Pufferfish(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

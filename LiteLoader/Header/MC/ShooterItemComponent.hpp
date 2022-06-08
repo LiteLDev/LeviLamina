@@ -21,7 +21,6 @@ public:
     ShooterItemComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ShooterItemComponent();
     /*1*/ virtual bool checkComponentDataForContentErrors() const;
@@ -40,12 +39,10 @@ public:
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
+
 //private:
     MCAPI void _consumeAmmunition(class Player *, class ItemStack const &, int, bool, bool) const;
     MCAPI int _getAmmunition(class Player const *, bool, class ItemStack &, bool &) const;
     MCAPI void _shootProjectiles(class ItemStack &, class Player *, int) const;
-
-private:
-
 
 };

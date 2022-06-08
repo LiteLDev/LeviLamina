@@ -23,7 +23,6 @@ public:
     SmithingTableContainerManagerModel() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SmithingTableContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
@@ -37,13 +36,10 @@ public:
 public:
 #endif
     MCAPI SmithingTableContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-
-//private:
-
-private:
     MCAPI static int const INPUT_SLOT;
     MCAPI static int const MATERIAL_SLOT;
     MCAPI static int const RESULT_SLOT;
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     PlayerArmorDamagePacket() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PlayerArmorDamagePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,6 +32,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERARMORDAMAGEPACKET
 public:
 #endif
+
 
 
 };

@@ -24,7 +24,6 @@ public:
     IFileChunkUploader(class IFileChunkUploader const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~IFileChunkUploader();
     /*1*/ virtual void __unk_vfn_1();
@@ -44,6 +43,7 @@ public:
     MCVAPI void update();
 #endif
     MCAPI IFileChunkUploader();
+
 
 
 };

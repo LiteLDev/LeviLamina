@@ -22,7 +22,6 @@ public:
     MinecraftGameTestBatchRunner() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MinecraftGameTestBatchRunner();
     /*1*/ virtual class std::shared_ptr<class gametest::BaseGameTestInstance> _createGameTestInstance(class gametest::BaseGameTestFunction &);
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI MinecraftGameTestBatchRunner(std::vector<class gametest::GameTestBatch> &&, class gametest::GameTestTicker &, struct gametest::TestParameters &&, std::unique_ptr<class gametest::IGameTestHelperProvider>, class Dimension &);
+
 
 
 };

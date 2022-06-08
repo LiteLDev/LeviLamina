@@ -24,7 +24,6 @@ public:
     TripodCamera() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~TripodCamera();
@@ -69,6 +68,7 @@ public:
     MCAPI bool interactWithPlayer(class Player &);
     MCAPI bool isActivated() const;
     MCAPI void startTakingPicture(class Player &);
+
 
 
 };

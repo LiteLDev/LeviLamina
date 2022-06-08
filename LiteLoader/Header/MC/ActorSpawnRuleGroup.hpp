@@ -23,7 +23,6 @@ public:
     ActorSpawnRuleGroup() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorSpawnRuleGroup();
     /*1*/ virtual std::string const & getRootKey();
@@ -38,6 +37,7 @@ public:
     MCAPI int getDelayEnd(std::string) const;
     MCAPI void offSetDelayByCurrentTick(struct Tick const &);
     MCAPI void resetDelayEnd(class MobSpawnRules, unsigned __int64, class Random &);
+
 
 
 };

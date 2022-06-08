@@ -22,7 +22,6 @@ public:
     RamAttackGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RamAttackGoal();
     /*1*/ virtual bool canUse();
@@ -45,10 +44,5 @@ public:
     MCAPI bool _pathablePos(class BlockSource const &, class BlockPos);
     MCAPI void _resetCooldown();
     MCAPI void _tryKnockbackTarget();
-
-protected:
-
-private:
-
 
 };

@@ -24,7 +24,6 @@ public:
     Wolf() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~Wolf();
     /*40*/ virtual void __unk_vfn_40();
@@ -71,10 +70,8 @@ public:
     MCAPI float getTailAngle();
     MCAPI bool isShaking() const;
 
+
 //private:
     MCAPI void _avoidSnowBury();
-
-private:
-
 
 };

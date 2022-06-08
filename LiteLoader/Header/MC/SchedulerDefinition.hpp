@@ -22,7 +22,6 @@ public:
     SchedulerDefinition(class SchedulerDefinition const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCHEDULERDEFINITION
 public:
@@ -32,6 +31,7 @@ public:
     MCAPI void setMaxDelayTicks(float const &);
     MCAPI void setMinDelayTicks(float const &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SchedulerDefinition>> &);
+
 
 
 };

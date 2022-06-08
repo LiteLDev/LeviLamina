@@ -22,7 +22,6 @@ public:
     BeardAndShaverDescription() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEARDANDSHAVERDESCRIPTION
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI BeardAndShaverDescription(class BeardingDescriptionCache, struct BeardKernel const &, float, float);
     MCAPI float calculateContribution(class BlockPos const &) const;
     MCAPI class BeardingDescriptionCache const & getCache() const;
+
 
 
 };

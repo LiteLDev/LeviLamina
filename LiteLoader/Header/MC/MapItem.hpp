@@ -25,7 +25,6 @@ public:
     MapItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MapItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -56,6 +55,13 @@ public:
     MCAPI MapItem(std::string const &, short);
     MCAPI void blockTick(class ItemStack &, class BlockSource &, class BlockPos const &) const;
     MCAPI void update(class Level &, class Actor &, class MapItemSavedData &) const;
+    MCAPI static std::string const TAG_MAP_INIT;
+    MCAPI static std::string const TAG_MAP_NAME_INDEX;
+    MCAPI static std::string const TAG_MAP_PLAYER_DISPLAY;
+    MCAPI static std::string const TAG_MAP_REGENERATE;
+    MCAPI static std::string const TAG_MAP_SCALE;
+    MCAPI static std::string const TAG_MAP_SCALING;
+    MCAPI static std::string const TAG_MAP_UUID;
     MCAPI static bool doesDisplayPlayerMarkers(class ItemStack const &);
     MCAPI static struct ActorUniqueID getMapId(class CompoundTag const *);
     MCAPI static void markForRegeneration(class ItemInstance &);
@@ -66,18 +72,9 @@ public:
     MCAPI static void setItemInstanceInfo(class ItemStack &, class MapItemSavedData &);
     MCAPI static void setMapNameIndex(class ItemStack &, int);
 
+
 //private:
     MCAPI void _makeNewExplorationMap(class ItemStack &, class Level &, class Actor *, std::string &) const;
     MCAPI static void _scheduleMapChunkRendering(class Dimension &, class MapItemSavedData const &, struct MapItemSavedData::ChunkBounds, class std::shared_ptr<bool>);
-
-private:
-    MCAPI static std::string const TAG_MAP_INIT;
-    MCAPI static std::string const TAG_MAP_NAME_INDEX;
-    MCAPI static std::string const TAG_MAP_PLAYER_DISPLAY;
-    MCAPI static std::string const TAG_MAP_REGENERATE;
-    MCAPI static std::string const TAG_MAP_SCALE;
-    MCAPI static std::string const TAG_MAP_SCALING;
-    MCAPI static std::string const TAG_MAP_UUID;
-
 
 };

@@ -21,7 +21,6 @@ public:
     DamageCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DamageCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -30,10 +29,8 @@ public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
 
+
 //private:
     MCAPI void _applyDamage(class CommandSelectorResults<class Actor> &, class ActorDamageSource const &, class CommandOutput &) const;
-
-private:
-
 
 };

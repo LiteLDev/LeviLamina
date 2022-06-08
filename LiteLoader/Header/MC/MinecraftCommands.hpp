@@ -51,7 +51,6 @@ public:
     MinecraftCommands() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTCOMMANDS
 public:
@@ -71,10 +70,8 @@ public:
     MCAPI static void initBlockEnum(class CommandRegistry &, class BaseGameVersion const &);
     MCAPI static void initItemEnum(class CommandRegistry &, class BaseGameVersion const &);
 
+
 //private:
     MCAPI void _registerSharedClientServerEnums();
-
-private:
-
 
 };

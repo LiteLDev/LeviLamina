@@ -23,7 +23,6 @@ public:
     ItemStackRequestActionMineBlock(class ItemStackRequestActionMineBlock const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ItemStackRequestActionMineBlock();
     /*1*/ virtual void __unk_vfn_1();
@@ -39,6 +38,7 @@ public:
     MCAPI int getPredictedDurability() const;
     MCAPI struct ItemStackRequestSlotInfo getSrc() const;
     MCAPI void setPreValidationStatus(enum ItemStackRequestActionMineBlock::PreValidationStatus) const;
+
 
 
 };

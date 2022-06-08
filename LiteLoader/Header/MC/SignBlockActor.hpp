@@ -25,7 +25,6 @@ public:
     SignBlockActor() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SignBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -53,6 +52,7 @@ public:
     MCAPI void setMessage(class TextObjectRoot, std::string);
     MCAPI void setSignTextColor(class mce::Color const &);
     MCAPI void setType(enum SignBlockActor::SignType);
+
 
 
 };

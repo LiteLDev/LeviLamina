@@ -22,7 +22,6 @@ public:
     ClientCacheStatusPacket(class ClientCacheStatusPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ClientCacheStatusPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI ClientCacheStatusPacket();
+
 
 
 };

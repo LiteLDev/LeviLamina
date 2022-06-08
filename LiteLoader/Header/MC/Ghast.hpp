@@ -24,7 +24,6 @@ public:
     Ghast() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Ghast();
@@ -61,6 +60,7 @@ public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Ghast(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

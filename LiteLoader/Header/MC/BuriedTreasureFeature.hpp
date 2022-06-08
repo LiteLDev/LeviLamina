@@ -23,7 +23,6 @@ public:
     BuriedTreasureFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BuriedTreasureFeature();
     /*3*/ virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI BuriedTreasureFeature(unsigned int);
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     DaylightDetectorBlockActor() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DaylightDetectorBlockActor();
     /*7*/ virtual void tick(class BlockSource &);
@@ -38,6 +37,7 @@ public:
 public:
 #endif
     MCAPI DaylightDetectorBlockActor(class BlockPos const &);
+
 
 
 };

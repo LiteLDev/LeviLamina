@@ -23,7 +23,6 @@ public:
     Sapling() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~Sapling();
     /*19*/ virtual void __unk_vfn_19();
@@ -86,10 +85,5 @@ public:
     MCAPI class WeakRefT<struct FeatureRefTraits> _generateRoofTree(int &, int &, bool &, class BlockPos const &, class BlockSource &, class FeatureRegistry const &) const;
     MCAPI bool _growTree(class BlockSource &, class BlockPos const &, class Random &, bool) const;
     MCAPI bool _isNearFlowerBlock(class BlockSource &, class BlockPos const &) const;
-
-protected:
-
-private:
-
 
 };

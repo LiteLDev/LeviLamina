@@ -23,7 +23,6 @@ public:
     ChestBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ChestBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -81,6 +80,7 @@ public:
 #endif
     MCAPI ChestBlock(std::string const &, int, enum ChestBlock::ChestType, enum MaterialType);
     MCAPI void updateSignalStrength(class BlockSource &, class BlockPos const &, int) const;
+
 
 
 };

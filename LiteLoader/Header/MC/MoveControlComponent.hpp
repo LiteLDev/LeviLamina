@@ -21,7 +21,6 @@ public:
     MoveControlComponent(class MoveControlComponent const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROLCOMPONENT
 public:
@@ -43,10 +42,8 @@ public:
     MCAPI void setWantedPosition(class Mob &, class Vec3 const &, float);
     MCAPI void update(class Mob &);
 
+
 //private:
     MCAPI void _setWantedPosition(class Vec3 const &);
-
-private:
-
 
 };

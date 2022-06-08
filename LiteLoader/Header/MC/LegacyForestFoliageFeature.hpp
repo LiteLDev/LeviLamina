@@ -23,7 +23,6 @@ public:
     LegacyForestFoliageFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LegacyForestFoliageFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -32,6 +31,7 @@ public:
 public:
 #endif
     MCAPI LegacyForestFoliageFeature(enum LegacyForestFoliageFeature::Type, class FeatureRegistry &);
+
 
 
 };

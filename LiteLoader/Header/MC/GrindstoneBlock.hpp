@@ -23,7 +23,6 @@ public:
     GrindstoneBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GrindstoneBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -75,11 +74,9 @@ public:
 #endif
     MCAPI GrindstoneBlock(std::string const &, int);
 
+
 //private:
     MCAPI class Block const & _determineAttachment(class Actor &, class BlockPos const &, unsigned char) const;
     MCAPI class AABB const & _getShape(class Block const &, class AABB &) const;
-
-private:
-
 
 };

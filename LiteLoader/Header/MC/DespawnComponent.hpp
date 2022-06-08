@@ -22,7 +22,6 @@ public:
     DespawnComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESPAWNCOMPONENT
 public:
@@ -30,10 +29,8 @@ public:
     MCAPI void onDespawn(class Actor &);
     MCAPI void tick(class Actor &);
 
+
 //private:
     MCAPI bool _tryStandardDespawnRules(class Actor &) const;
-
-private:
-
 
 };

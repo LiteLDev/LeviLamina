@@ -22,7 +22,6 @@ public:
     IWebviewTelemetry() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~IWebviewTelemetry();
     /*1*/ virtual void __unk_vfn_1();
@@ -38,6 +37,7 @@ public:
 public:
 #endif
     MCAPI IWebviewTelemetry(class IMinecraftEventing const &);
+
 
 
 };

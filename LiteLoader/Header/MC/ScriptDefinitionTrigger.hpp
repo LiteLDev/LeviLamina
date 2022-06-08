@@ -22,12 +22,12 @@ public:
     ScriptDefinitionTrigger() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEFINITIONTRIGGER
 public:
 #endif
     MCAPI static class Scripting::ClassBindingBuilder<class DefinitionTrigger> bind(struct Scripting::Version);
+
 
 
 };

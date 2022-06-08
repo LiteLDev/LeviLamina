@@ -30,7 +30,6 @@ public:
     GameRuleCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GameRuleCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -39,12 +38,10 @@ public:
 #endif
     MCAPI static void setup(class CommandRegistry &, struct GameRuleCommand::InitProxy &&);
 
+
 //private:
     MCAPI void getGameRule(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void setGameRule(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI static void createJsonIndex(std::string const &, class GameRule const &, class Json::Value &, std::string *);
-
-private:
-
 
 };

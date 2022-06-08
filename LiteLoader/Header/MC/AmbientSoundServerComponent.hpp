@@ -20,12 +20,12 @@ public:
     AmbientSoundServerComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMBIENTSOUNDSERVERCOMPONENT
 public:
 #endif
     MCAPI ~AmbientSoundServerComponent();
+
 
 
 };

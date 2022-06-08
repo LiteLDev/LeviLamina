@@ -22,7 +22,6 @@ public:
     VanillaGameModuleServer(class VanillaGameModuleServer const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~VanillaGameModuleServer();
     /*1*/ virtual void init(class ServerInstance &, class Level &);
@@ -41,12 +40,10 @@ public:
 #endif
     MCAPI VanillaGameModuleServer();
 
+
 //private:
     MCAPI void _configureWorldGen(class IWorldRegistriesProvider &, struct SpawnSettings const &, class Experiments const &, class ResourcePackManager &, class BaseGameVersion const &);
     MCAPI void _registerGameplayHandlers(class Level &) const;
     MCAPI void _registerListeners(class Level &);
-
-private:
-
 
 };

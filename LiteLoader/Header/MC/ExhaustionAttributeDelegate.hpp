@@ -23,7 +23,6 @@ public:
     ExhaustionAttributeDelegate() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ExhaustionAttributeDelegate();
     /*1*/ virtual void tick();
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI ExhaustionAttributeDelegate(class AttributeInstance const &);
+
 
 
 };

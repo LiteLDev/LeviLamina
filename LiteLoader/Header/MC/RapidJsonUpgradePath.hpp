@@ -20,7 +20,6 @@ public:
     RapidJsonUpgradePath() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAPIDJSONUPGRADEPATH
 public:
@@ -31,8 +30,6 @@ public:
 
 //protected:
     MCAPI std::string _getVersion(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator> &);
-
-protected:
 
 
 };

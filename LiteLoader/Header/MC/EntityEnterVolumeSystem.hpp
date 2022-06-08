@@ -23,7 +23,6 @@ public:
     EntityEnterVolumeSystem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EntityEnterVolumeSystem();
     /*1*/ virtual void __unk_vfn_1();
@@ -33,10 +32,8 @@ public:
 #endif
     MCAPI EntityEnterVolumeSystem(class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>);
 
+
 //private:
     MCAPI void _tick(class EntityContext &, class VolumeBoundsComponent &) const;
-
-private:
-
 
 };

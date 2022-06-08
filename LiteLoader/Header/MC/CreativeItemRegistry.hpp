@@ -21,7 +21,6 @@ public:
     CreativeItemRegistry(class CreativeItemRegistry const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATIVEITEMREGISTRY
 public:
@@ -41,15 +40,13 @@ public:
     MCAPI void updateNetIdMap();
     MCAPI static class CreativeItemRegistry * current();
     MCAPI static void forEachCreativeItemInstance(class std::function<bool (class ItemInstance &)>);
-    MCAPI static std::unique_ptr<class CreativeItemRegistry> mCurrentRegistry;
+    MCAPI static class std::mutex mCreativeListMutex;
     MCAPI static void reset();
     MCAPI static void setCurrentRegistry(std::unique_ptr<class CreativeItemRegistry> &&);
 
+
 //private:
     MCAPI void _forEachCreativeItemInstance(class std::function<bool (class ItemInstance &)>);
-
-private:
-    MCAPI static class std::mutex mCreativeListMutex;
-
+    MCAPI static std::unique_ptr<class CreativeItemRegistry> mCurrentRegistry;
 
 };

@@ -22,7 +22,6 @@ public:
     ScriptWorldEvents() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTWORLDEVENTS
 public:
@@ -62,6 +61,7 @@ public:
     MCAPI void registerListener(struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
     MCAPI ~ScriptWorldEvents();
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptWorldEvents> bind(struct Scripting::Version);
+
 
 
 };

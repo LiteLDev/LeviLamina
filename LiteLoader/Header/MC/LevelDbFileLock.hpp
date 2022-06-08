@@ -22,11 +22,11 @@ public:
     LevelDbFileLock() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBFILELOCK
 public:
 #endif
+
 
 
 };

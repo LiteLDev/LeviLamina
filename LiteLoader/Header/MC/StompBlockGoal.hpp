@@ -23,7 +23,6 @@ public:
     StompBlockGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StompBlockGoal();
     /*1*/ virtual bool canUse();
@@ -47,6 +46,7 @@ public:
 public:
 #endif
     MCAPI StompBlockGoal(class Block const *, class Mob &, float, int, int, float, int);
+
 
 
 };

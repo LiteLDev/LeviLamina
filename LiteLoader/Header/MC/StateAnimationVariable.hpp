@@ -20,12 +20,12 @@ public:
     StateAnimationVariable() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STATEANIMATIONVARIABLE
 public:
 #endif
     MCAPI void addKeyFrame(float, float);
+
 
 
 };

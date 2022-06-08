@@ -23,7 +23,6 @@ public:
     VillageFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~VillageFeature();
     /*2*/ virtual bool shouldPostProcessMobs() const;
@@ -34,6 +33,7 @@ public:
 public:
 #endif
     MCAPI VillageFeature(unsigned int, int, int);
+
 
 
 };

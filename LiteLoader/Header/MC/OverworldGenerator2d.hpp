@@ -23,7 +23,6 @@ public:
     OverworldGenerator2d() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDGENERATOR2D
 public:
@@ -39,12 +38,10 @@ public:
 #endif
     MCAPI OverworldGenerator2d(class Dimension &, unsigned int, bool, class Biome const *, std::unique_ptr<class StructureFeatureRegistry>);
 
+
 //private:
     MCAPI class Util::MultidimensionalArray<float, 5, 5, 41> _generateDensityCellsForChunk(class ChunkPos const &) const;
     MCAPI static std::unique_ptr<class BiomeSource> _makeBiomeSource(unsigned int, class Dimension const &);
     MCAPI static class std::shared_ptr<class OperationNode<class Biome *, class Pos2d>> _makeCommonNodeGraph(enum GeneratorType, class BiomeRegistry const &);
-
-private:
-
 
 };

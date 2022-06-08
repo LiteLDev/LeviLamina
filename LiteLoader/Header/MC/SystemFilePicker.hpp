@@ -22,7 +22,6 @@ public:
     SystemFilePicker(class SystemFilePicker const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SystemFilePicker();
     /*1*/ virtual void initFilePick(class Core::Path const &, class std::function<void (bool, struct FileInfo)>);
@@ -35,8 +34,6 @@ public:
 
 //protected:
     MCAPI struct FileInfo _fillFileInfo(class Core::Path const &);
-
-protected:
 
 
 };

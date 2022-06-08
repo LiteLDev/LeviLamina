@@ -31,7 +31,6 @@ public:
     ShortTag(class ShortTag const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ShortTag();
     /*2*/ virtual void write(class IDataOutput &) const;
@@ -46,6 +45,7 @@ public:
 #endif
     MCAPI ShortTag(short);
     MCAPI ShortTag();
+
 
 
 };

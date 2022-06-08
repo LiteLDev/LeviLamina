@@ -21,7 +21,6 @@ public:
     WardenVibrationConfig() = delete;
 #endif
 
-
 public:
     /*0*/ virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
     /*1*/ virtual bool isValidVibration(class GameEvent const &, class Actor const *);
@@ -30,6 +29,7 @@ public:
 public:
 #endif
     MCAPI WardenVibrationConfig(class Actor &, unsigned short);
+
 
 
 };

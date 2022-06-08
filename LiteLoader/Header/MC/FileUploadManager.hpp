@@ -24,7 +24,6 @@ public:
     FileUploadManager() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FileUploadManager();
     /*1*/ virtual float getUploadProgress() const;
@@ -39,16 +38,15 @@ public:
     MCAPI void update();
     MCAPI void uploadChunk(int);
     MCAPI void uploadFile(std::string const &, class Core::Path const &, bool, class Json::Value const &);
-    MCAPI static std::string const BOUNDARY;
 
 //protected:
     MCAPI void _generateMultiPartHelper();
     MCAPI void _resumeUpload();
     MCAPI void _uploadChunk(struct FileChunkInfo const &);
     MCAPI void _uploadStream();
-
-protected:
     MCAPI static int const CHUNK_UPLOAD_SIZE;
 
+//private:
+    MCAPI static std::string const BOUNDARY;
 
 };

@@ -22,7 +22,6 @@ public:
     RemoveActorPacket(class RemoveActorPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RemoveActorPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI RemoveActorPacket(struct ActorUniqueID);
     MCAPI RemoveActorPacket();
+
 
 
 };

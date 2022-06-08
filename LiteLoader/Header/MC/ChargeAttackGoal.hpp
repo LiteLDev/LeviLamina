@@ -22,7 +22,6 @@ public:
     ChargeAttackGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ChargeAttackGoal();
     /*1*/ virtual bool canUse();
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI ChargeAttackGoal(class Mob &);
+
 
 
 };

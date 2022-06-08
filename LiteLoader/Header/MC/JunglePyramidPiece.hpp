@@ -23,7 +23,6 @@ public:
     JunglePyramidPiece() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~JunglePyramidPiece();
     /*3*/ virtual enum StructurePieceType getType() const;
@@ -32,6 +31,7 @@ public:
 public:
 #endif
     MCAPI JunglePyramidPiece(short, int, int);
+
 
 
 };

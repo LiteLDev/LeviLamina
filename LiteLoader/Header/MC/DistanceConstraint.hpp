@@ -22,7 +22,6 @@ public:
     DistanceConstraint() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISTANCECONSTRAINT
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI DistanceConstraint(float, float, float);
     MCAPI float setup(class Vec3 const &, class Vec3 const &, float, float);
     MCAPI void solve(class Vec3 &, class Vec3 &);
+
 
 
 };

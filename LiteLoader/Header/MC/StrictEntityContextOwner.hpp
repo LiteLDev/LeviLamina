@@ -20,7 +20,6 @@ public:
     StrictEntityContextOwner() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRICTENTITYCONTEXTOWNER
 public:
@@ -28,6 +27,7 @@ public:
     MCAPI StrictEntityContextOwner(class StrictEntityContextOwner &&);
     MCAPI class StrictEntityContextOwner & operator=(class StrictEntityContextOwner &&);
     MCAPI ~StrictEntityContextOwner();
+
 
 
 };

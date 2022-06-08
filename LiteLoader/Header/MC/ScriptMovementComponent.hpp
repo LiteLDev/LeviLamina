@@ -23,13 +23,13 @@ public:
     ScriptMovementComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptMovementComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMOVEMENTCOMPONENT
 public:
 #endif
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMovementComponent> bind(struct Scripting::Version);
+
 
 
 };

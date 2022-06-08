@@ -22,7 +22,6 @@ public:
     FitDoubleZRoom() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FitDoubleZRoom();
     /*1*/ virtual bool fits(class RoomDefinition const &) const;
@@ -30,6 +29,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FITDOUBLEZROOM
 public:
 #endif
+
 
 
 };

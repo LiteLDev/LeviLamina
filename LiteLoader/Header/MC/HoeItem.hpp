@@ -25,7 +25,6 @@ public:
     HoeItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~HoeItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -47,6 +46,7 @@ public:
 public:
 #endif
     MCAPI HoeItem(std::string const &, int, class Item::Tier const &, class Experiments const &);
+
 
 
 };

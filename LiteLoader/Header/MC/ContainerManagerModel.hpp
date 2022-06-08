@@ -22,7 +22,6 @@ public:
     ContainerManagerModel() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ContainerManagerModel();
     /*1*/ virtual enum ContainerID getContainerId() const;
@@ -55,8 +54,6 @@ public:
     MCAPI class std::shared_ptr<class ContainerModel> _getContainer(enum ContainerEnumName) const;
     MCAPI bool _isPlayerInRangeOfPosition(class BlockPos const &, float) const;
     MCAPI static void _appendCopies(std::vector<class ItemStack> &, std::vector<class ItemStack> const &);
-
-protected:
 
 
 };

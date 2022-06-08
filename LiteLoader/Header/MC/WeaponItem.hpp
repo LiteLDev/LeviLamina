@@ -24,7 +24,6 @@ public:
     WeaponItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WeaponItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -55,6 +54,7 @@ public:
 public:
 #endif
     MCAPI WeaponItem(std::string const &, int, class Item::Tier const &);
+
 
 
 };

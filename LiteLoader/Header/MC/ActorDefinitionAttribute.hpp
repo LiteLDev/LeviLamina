@@ -20,12 +20,12 @@ public:
     ActorDefinitionAttribute() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONATTRIBUTE
 public:
 #endif
     MCAPI ~ActorDefinitionAttribute();
+
 
 
 };

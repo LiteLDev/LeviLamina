@@ -22,7 +22,6 @@ public:
     BlockEventPacket(class BlockEventPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BlockEventPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI BlockEventPacket(class BlockPos, int, int);
     MCAPI BlockEventPacket();
+
 
 
 };

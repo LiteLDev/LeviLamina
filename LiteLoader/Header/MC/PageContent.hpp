@@ -29,6 +29,5 @@ public:
 protected:
 
 private:
-    MCAPI static struct PageContent const BLANK_PAGE;
 
 };

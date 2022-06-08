@@ -22,7 +22,6 @@ public:
     GoHomeGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GoHomeGoal();
     /*1*/ virtual bool canUse();
@@ -37,12 +36,10 @@ public:
 #endif
     MCAPI GoHomeGoal(class Mob &);
 
+
 //private:
     MCAPI bool _hasReachedHome() const;
     MCAPI bool _hasRequiredComponents() const;
     MCAPI void _triggerOnFailedEvents();
-
-private:
-
 
 };

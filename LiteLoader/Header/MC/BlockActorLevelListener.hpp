@@ -22,7 +22,6 @@ public:
     BlockActorLevelListener(class BlockActorLevelListener const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BlockActorLevelListener();
     /*1*/ virtual void __unk_vfn_1();
@@ -51,6 +50,7 @@ public:
 public:
 #endif
     MCAPI BlockActorLevelListener();
+
 
 
 };

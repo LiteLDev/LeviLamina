@@ -21,7 +21,6 @@ public:
     AtomicTimeAccumulator(class AtomicTimeAccumulator const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATOMICTIMEACCUMULATOR
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI unsigned __int64 getCount() const;
     MCAPI float getTimeSumAverageSeconds() const;
     MCAPI void reset();
+
 
 
 };

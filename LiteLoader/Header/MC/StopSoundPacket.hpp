@@ -22,7 +22,6 @@ public:
     StopSoundPacket(class StopSoundPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StopSoundPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI StopSoundPacket(std::string const &, bool);
     MCAPI StopSoundPacket();
+
 
 
 };

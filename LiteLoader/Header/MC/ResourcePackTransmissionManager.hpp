@@ -22,7 +22,6 @@ public:
     ResourcePackTransmissionManager() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKTRANSMISSIONMANAGER
 public:
@@ -32,6 +31,7 @@ public:
     MCAPI class ResourcePackFileUploadManager & getResourcePackUploadManager(class PacketSender &, class NetworkIdentifier const &, std::string const &);
     MCAPI void update();
     MCAPI ~ResourcePackTransmissionManager();
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     HudContainerModel() = delete;
 #endif
 
-
 public:
     /*0*/ virtual void containerContentChanged(int);
     /*1*/ virtual ~HudContainerModel();
@@ -40,10 +39,8 @@ public:
 #endif
     MCAPI HudContainerModel(enum ContainerEnumName, class Player &);
 
+
 //private:
     MCAPI void _refreshContainer();
-
-private:
-
 
 };

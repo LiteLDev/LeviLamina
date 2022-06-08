@@ -23,7 +23,6 @@ public:
     ConcretePowderBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ConcretePowderBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -76,10 +75,8 @@ public:
 #endif
     MCAPI ConcretePowderBlock(std::string const &, int);
 
+
 //private:
     MCAPI bool _tryTouchWater(class BlockSource &, class BlockPos const &, class std::optional<enum BlockColor>) const;
-
-private:
-
 
 };

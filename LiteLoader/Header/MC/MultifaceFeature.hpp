@@ -21,7 +21,6 @@ public:
     MultifaceFeature(class MultifaceFeature const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MultifaceFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
@@ -30,12 +29,10 @@ public:
 #endif
     MCAPI MultifaceFeature();
 
+
 //private:
     MCAPI class std::optional<class BlockPos> _placeBlockIfPossible(class BlockSource &, class BlockPos const &, class Random &, std::vector<unsigned char> const &) const;
     MCAPI static std::vector<unsigned char> _getShuffledDirections(std::vector<unsigned char>);
     MCAPI static std::vector<unsigned char> _getShuffledDirectionsExcept(unsigned char, std::vector<unsigned char> const &);
-
-private:
-
 
 };

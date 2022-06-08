@@ -23,7 +23,6 @@ public:
     WallClimberPathNavigation() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WallClimberPathNavigation();
     /*2*/ virtual void tick(class NavigationComponent &, class Mob &);
@@ -34,6 +33,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WALLCLIMBERPATHNAVIGATION
 public:
 #endif
+
 
 
 };

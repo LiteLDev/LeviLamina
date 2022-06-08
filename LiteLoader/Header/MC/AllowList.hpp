@@ -23,7 +23,6 @@ public:
     AllowList() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AllowList();
     /*1*/ virtual void serialize(class Json::Value &);
@@ -38,6 +37,7 @@ public:
     MCAPI bool isIgnoringPlayerLimit(class mce::UUID const &, std::string const &) const;
     MCAPI bool removeByName(std::string const &);
     MCAPI void tryUpdateEntries(class mce::UUID const &, std::string const &, std::string const &);
+
 
 
 };

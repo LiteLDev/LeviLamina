@@ -20,12 +20,12 @@ public:
     SpatialQueryUtility() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPATIALQUERYUTILITY
 public:
 #endif
     MCAPI static void forEachBlockInAABB(class IConstBlockSource const &, class AABB const &, class std::function<void (class Block const &, class BlockPos const &)> const &);
+
 
 
 };

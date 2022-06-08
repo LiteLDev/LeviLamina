@@ -24,7 +24,6 @@ public:
     CarrotOnAStickItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CarrotOnAStickItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -50,6 +49,7 @@ public:
 public:
 #endif
     MCAPI CarrotOnAStickItem(std::string const &, int);
+
 
 
 };

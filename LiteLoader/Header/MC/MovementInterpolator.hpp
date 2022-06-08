@@ -21,7 +21,6 @@ public:
     MovementInterpolator(class MovementInterpolator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MovementInterpolator();
     /*1*/ virtual void lerpTo(class Vec3 const &, class Vec2 const &, int);
@@ -38,6 +37,7 @@ public:
 public:
 #endif
     MCAPI MovementInterpolator();
+
 
 
 };

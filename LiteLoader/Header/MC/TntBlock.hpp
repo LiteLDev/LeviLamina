@@ -23,7 +23,6 @@ public:
     TntBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TntBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -80,6 +79,7 @@ public:
     MCAPI void _setAllowUnderwater(class Actor *) const;
     MCAPI bool _shouldAllowUnderwater(class Block const &) const;
     MCAPI static bool tryLightTnt(class Player &, class BlockPos const &);
+
 
 
 };

@@ -29,7 +29,6 @@ public:
     NetherNetServerLocator(class NetherNetServerLocator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NetherNetServerLocator();
     /*2*/ virtual void __unk_vfn_2();
@@ -50,6 +49,7 @@ public:
 #endif
     MCAPI NetherNetServerLocator();
 
+
 //private:
     MCAPI bool _isNetherNetOverLANAllowed() const;
     MCAPI void _onBroadcastResponseCallback(unsigned __int64, void const *, int);
@@ -57,8 +57,5 @@ public:
     MCAPI void _setIsAnnouncing(bool);
     MCAPI void _setIsDiscovering(bool);
     MCAPI struct PingedCompatibleServer _transformFrom(unsigned __int64, struct NetherNetServerLocator::ServerData const &);
-
-private:
-
 
 };

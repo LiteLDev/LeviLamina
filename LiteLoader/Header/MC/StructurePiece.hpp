@@ -22,7 +22,6 @@ public:
     StructurePiece() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StructurePiece();
     /*1*/ virtual void moveBoundingBox(int, int, int);
@@ -57,6 +56,7 @@ public:
     MCAPI void maybeGenerateBlockIfNotFloating(class BlockSource &, class BoundingBox const &, class Random &, float, int, int, int, class Block const &);
     MCAPI static class StructurePiece * findCollisionPiece(std::vector<std::unique_ptr<class StructurePiece>> const &, class BoundingBox const &);
     MCAPI static int getTotalWeight(std::vector<class PieceWeight> const &);
+
 
 
 };

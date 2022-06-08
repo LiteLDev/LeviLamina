@@ -22,7 +22,6 @@ public:
     VanillaServerGameplayEventListener() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLASERVERGAMEPLAYEVENTLISTENER
 public:
@@ -34,6 +33,7 @@ public:
     MCVAPI enum EventResult onPlayerMovementAnomaly(class Player &, class Vec3 const &, float, float);
     MCVAPI enum EventResult onPlayerMovementCorrected(class Player &, class Vec3 const &, float, float);
 #endif
+
 
 
 };

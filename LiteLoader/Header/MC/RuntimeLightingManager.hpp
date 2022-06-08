@@ -22,7 +22,6 @@ public:
     RuntimeLightingManager() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUNTIMELIGHTINGMANAGER
 public:
@@ -32,13 +31,11 @@ public:
     MCAPI void updateBlockLight(class BlockPos const &, struct Brightness, struct Brightness, struct Brightness, struct Brightness, bool);
     MCAPI ~RuntimeLightingManager();
 
+
 //private:
     MCAPI void _checkForRelightingTask(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
     MCAPI void _getListOfChunksWithPlayerDistance();
     MCAPI void _relightChunks(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
     MCAPI void _removeProcessedSubchunks();
-
-private:
-
 
 };

@@ -22,12 +22,12 @@ public:
     ActorLegacySaveConverter() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORLEGACYSAVECONVERTER
 public:
 #endif
     MCAPI static void convertSave(class Actor &, class CompoundTag const &);
+
 
 //private:
     MCAPI static void convertBoat(class Actor &, class CompoundTag const &);
@@ -54,8 +54,5 @@ public:
     MCAPI static void convertWolf(class Actor &, class CompoundTag const &);
     MCAPI static void convertZombie(class Actor &, class CompoundTag const &);
     MCAPI static void convertZombieVillager(class Actor &, class CompoundTag const &);
-
-private:
-
 
 };

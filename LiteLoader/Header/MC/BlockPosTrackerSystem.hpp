@@ -22,7 +22,6 @@ public:
     BlockPosTrackerSystem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BlockPosTrackerSystem();
     /*1*/ virtual void __unk_vfn_1();
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI static void _tickBlockPosTrackerComponent(class Actor *, class BlockPosTrackerComponent &);
+
 
 
 };

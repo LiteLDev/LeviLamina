@@ -22,7 +22,6 @@ public:
     ScriptGameTestRegistrationBuilder() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTGAMETESTREGISTRATIONBUILDER
 public:
@@ -42,6 +41,7 @@ public:
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptGameTestRegistrationBuilder> structureName(std::string);
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptGameTestRegistrationBuilder> tag(std::string);
     MCAPI ~ScriptGameTestRegistrationBuilder();
+
 
 
 };

@@ -23,13 +23,13 @@ public:
     FloatNavigation() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FloatNavigation();
     /*10*/ virtual bool travel(class NavigationComponent &, class Mob &, float &, float &, float &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOATNAVIGATION
 public:
 #endif
+
 
 
 };

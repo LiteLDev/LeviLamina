@@ -22,7 +22,6 @@ public:
     HealableDefinition(class HealableDefinition const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HEALABLEDEFINITION
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI void addFeedItem(struct FeedItem const &);
     MCAPI void addFeedItemByName(std::string const &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HealableDefinition>> &);
+
 
 
 };

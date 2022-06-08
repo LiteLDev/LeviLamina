@@ -22,7 +22,6 @@ public:
     ScriptDebuggerWatchdog() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptDebuggerWatchdog();
     /*1*/ virtual bool requireClose() const;
@@ -33,6 +32,7 @@ public:
 #endif
     MCAPI ScriptDebuggerWatchdog(class std::chrono::duration<int, struct std::ratio<60, 1>>);
     MCAPI void startLeaveGame();
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     ScriptDimension() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptDimension();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDIMENSION
@@ -46,6 +45,7 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptDimension> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptDimension> getOrCreateHandle(class Dimension &, class Scripting::WeakLifetimeScope const &);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptDimension> getOrCreateHandle(class AutomaticID<class Dimension, int>, class Level &, class Scripting::WeakLifetimeScope const &);
+
 
 
 };

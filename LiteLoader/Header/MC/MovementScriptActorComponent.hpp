@@ -24,7 +24,6 @@ public:
     MovementScriptActorComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MovementScriptActorComponent();
     /*4*/ virtual class Scripting::Result<float> getMaxTurn() const;
@@ -32,6 +31,7 @@ public:
 public:
 #endif
     MCAPI MovementScriptActorComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &, struct Description *ActorDefinitionDescriptor::*);
+
 
 
 };

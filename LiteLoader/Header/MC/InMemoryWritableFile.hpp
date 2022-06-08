@@ -22,7 +22,6 @@ public:
     InMemoryWritableFile() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~InMemoryWritableFile();
     /*1*/ virtual class leveldb::Status Append(class leveldb::Slice const &);
@@ -33,6 +32,7 @@ public:
     MCVAPI class leveldb::Status Sync();
 #endif
     MCAPI InMemoryWritableFile(class std::shared_ptr<class InMemoryFile>);
+
 
 
 };

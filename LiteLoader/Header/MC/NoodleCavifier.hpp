@@ -22,7 +22,6 @@ public:
     NoodleCavifier() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NOODLECAVIFIER
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI float cavify(float, class BlockPos const &) const;
     MCAPI void fillNoiseAtPos(class Vec3 const &, int, float);
     MCAPI class std::array<class NoiseCellInterpolator *, 4> getInterpolators(int, int);
+
 
 
 };

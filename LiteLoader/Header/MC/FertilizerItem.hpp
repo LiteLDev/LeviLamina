@@ -24,7 +24,6 @@ public:
     FertilizerItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FertilizerItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -49,6 +48,7 @@ public:
 #endif
     MCAPI FertilizerItem(std::string const &, int, enum FertilizerType);
     MCAPI enum FertilizerType getFertilizerType() const;
+
 
 
 };

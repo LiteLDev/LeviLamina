@@ -22,7 +22,6 @@ public:
     RakWebSocketDataFrame(class RakWebSocketDataFrame const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKETDATAFRAME
 public:
@@ -37,14 +36,12 @@ public:
     MCAPI ~RakWebSocketDataFrame();
     MCAPI static void writeFrameToStream(class RakNet::BitStream &, unsigned char const *, unsigned int, enum OpCode, bool, unsigned int);
 
+
 //private:
     MCAPI static bool _isContinuation(unsigned char);
     MCAPI static bool _isControl(unsigned char);
     MCAPI static bool _isNonControl(unsigned char);
     MCAPI static bool _isUnsupported(unsigned char);
     MCAPI static void _maskUnmaskData(unsigned char *, unsigned int, unsigned int, unsigned int);
-
-private:
-
 
 };

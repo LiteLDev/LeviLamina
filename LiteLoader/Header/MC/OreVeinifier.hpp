@@ -22,7 +22,6 @@ public:
     OreVeinifier() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OREVEINIFIER
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI void fillNoiseAtPos(class Vec3 const &, int, float);
     MCAPI class Block const * getVeinBlockOrFallback(class Vec3, class Block const *) const;
     MCAPI class std::array<class NoiseCellInterpolator *, 3> resetAndGetInterpolators();
+
 
 
 };

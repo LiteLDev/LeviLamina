@@ -21,7 +21,6 @@ public:
     FertilizeFarmBlockGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FertilizeFarmBlockGoal();
     /*1*/ virtual bool canUse();
@@ -44,10 +43,5 @@ public:
 
 //private:
     MCAPI bool _findFertilizer();
-
-protected:
-
-private:
-
 
 };

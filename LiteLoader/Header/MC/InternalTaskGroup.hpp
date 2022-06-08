@@ -22,7 +22,6 @@ public:
     InternalTaskGroup() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~InternalTaskGroup();
     /*1*/ virtual void __unk_vfn_1();
@@ -35,6 +34,7 @@ public:
     MCVAPI void taskComplete(class gsl::not_null<class BackgroundTaskBase *>);
     MCVAPI void taskRegister(class std::shared_ptr<class BackgroundTaskBase>);
 #endif
+
 
 
 };

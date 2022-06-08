@@ -20,7 +20,6 @@ public:
     LevelChunkMetaDataDictionary() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNKMETADATADICTIONARY
 public:
@@ -32,8 +31,6 @@ public:
 
 //protected:
     MCAPI class std::shared_ptr<class LevelChunkMetaData> _registerMetaData(class LevelChunkMetaData const &);
-
-protected:
 
 
 };

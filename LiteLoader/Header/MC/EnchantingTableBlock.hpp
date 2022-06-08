@@ -23,7 +23,6 @@ public:
     EnchantingTableBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EnchantingTableBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -67,6 +66,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI EnchantingTableBlock(std::string const &, int);
+
 
 
 };

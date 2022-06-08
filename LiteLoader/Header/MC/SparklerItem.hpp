@@ -30,7 +30,6 @@ public:
     SparklerItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SparklerItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -56,12 +55,9 @@ public:
 public:
 #endif
     MCAPI SparklerItem(std::string const &, int);
-
-//private:
-
-private:
     MCAPI static struct SparklerItem::ColorInfo const COLORS[];
     MCAPI static int const MAX_ACTIVE_TICKS;
+
 
 
 };

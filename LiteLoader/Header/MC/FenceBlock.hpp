@@ -23,7 +23,6 @@ public:
     FenceBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FenceBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -79,7 +78,9 @@ public:
 #endif
     MCAPI FenceBlock(std::string const &, int, class Material const &);
     MCAPI void fetchPathableNeighbors(std::vector<class BlockPos> &, class BlockSource &, class BlockPos const &, class Vec3 const &) const;
-    MCAPI static class BaseGameVersion const FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
+
+//private:
+    MCAPI static class BaseGameVersion const FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 };

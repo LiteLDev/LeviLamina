@@ -20,7 +20,6 @@ public:
     BiomeChunkBlendingAttenuator() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMECHUNKBLENDINGATTENUATOR
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI ~BiomeChunkBlendingAttenuator();
     MCAPI static void adjustHeightAttenuationFactors(class std::array<class std::array<struct BiomeChunkBlendingAttenuator::HeightAttenuationData, 2>, 2> &, class std::array<class std::array<struct BiomeChunkBlendingAttenuator::CornerDepthData, 2>, 2> &, class ChunkPos const &, class std::array<class std::array<class Vec2, 2>, 2> const &, float);
     MCAPI static class std::optional<class std::array<class std::array<struct BiomeChunkBlendingAttenuator::HeightAttenuationData, 2>, 2>> determineHeightAttenuationFactors(class ChunkPos const &, class std::function<class std::tuple<bool, float> (class ChunkPos const &)>);
+
 
 
 };

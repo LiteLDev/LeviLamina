@@ -23,7 +23,6 @@ public:
     RaidTriggerDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~RaidTriggerDescription();
@@ -32,6 +31,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAIDTRIGGERDESCRIPTION
 public:
 #endif
+
 
 
 };

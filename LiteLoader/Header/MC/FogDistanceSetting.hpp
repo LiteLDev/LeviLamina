@@ -27,6 +27,5 @@ public:
 protected:
 
 private:
-    MCAPI static struct FogDistanceSetting const ZERO_SETTING;
 
 };

@@ -23,7 +23,6 @@ public:
     NetherFortressFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NetherFortressFeature();
     /*1*/ virtual bool shouldAddHardcodedSpawnAreas() const;
@@ -34,6 +33,7 @@ public:
 public:
 #endif
     MCAPI NetherFortressFeature(unsigned int &, class BaseGameVersion const &);
+
 
 
 };

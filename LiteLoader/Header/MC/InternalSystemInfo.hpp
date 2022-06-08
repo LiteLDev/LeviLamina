@@ -20,12 +20,12 @@ public:
     InternalSystemInfo() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERNALSYSTEMINFO
 public:
 #endif
     MCAPI ~InternalSystemInfo();
+
 
 
 };

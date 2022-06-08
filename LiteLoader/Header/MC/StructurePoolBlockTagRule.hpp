@@ -20,13 +20,13 @@ public:
     StructurePoolBlockTagRule() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLBLOCKTAGRULE
 public:
 #endif
     MCAPI StructurePoolBlockTagRule(std::unique_ptr<class IStructurePoolBlockTagPredicate> &&, std::string, std::string);
     MCAPI bool processRule(class Block const &, class CompoundTag &) const;
+
 
 
 };

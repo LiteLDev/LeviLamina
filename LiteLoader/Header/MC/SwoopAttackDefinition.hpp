@@ -22,7 +22,6 @@ public:
     SwoopAttackDefinition(class SwoopAttackDefinition const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWOOPATTACKDEFINITION
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI SwoopAttackDefinition();
     MCAPI void initialize(class EntityContext &, class SwoopAttackGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwoopAttackDefinition>> &);
+
 
 
 };

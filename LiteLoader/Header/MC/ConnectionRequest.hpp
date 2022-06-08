@@ -31,7 +31,6 @@ public:
     ConnectionRequest() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONNECTIONREQUEST
 public:
@@ -77,11 +76,9 @@ public:
     MCAPI ~ConnectionRequest();
     MCAPI static class ConnectionRequest fromString(std::string const &);
 
+
 //private:
     MCAPI ConnectionRequest(std::unique_ptr<class WebToken>, std::string const &);
     MCAPI std::unique_ptr<class Certificate> validate(std::unique_ptr<class Certificate>, __int64) const;
-
-private:
-
 
 };

@@ -20,16 +20,13 @@ public:
     SideBySideCrossEntityRemapSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDECROSSENTITYREMAPSYSTEM
 public:
 #endif
 
+
 //private:
     MCAPI static void _removeNullStrictEntityContexts(std::vector<class StrictEntityContext> &);
-
-private:
-
 
 };

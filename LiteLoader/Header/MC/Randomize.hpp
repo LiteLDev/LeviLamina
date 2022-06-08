@@ -22,7 +22,6 @@ public:
     Randomize() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMIZE
 public:
@@ -37,11 +36,8 @@ public:
     MCAPI float nextFloat() const;
     MCAPI int nextIntInclusive(int, int) const;
     MCAPI ~Randomize();
-
-//private:
-
-private:
     MCAPI static float const ChanceFloatGreaterThan_MinExcessiveImprobability;
+
 
 
 };

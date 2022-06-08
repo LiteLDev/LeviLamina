@@ -23,7 +23,6 @@ public:
     NetherFossilFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NetherFossilFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -32,7 +31,9 @@ public:
 public:
 #endif
     MCAPI NetherFossilFeature(std::vector<class Block const *> &&, bool);
-    MCAPI static std::string const STRUCTURE_LOCATION_FOSSIL[];
 
+
+//private:
+    MCAPI static std::string const STRUCTURE_LOCATION_FOSSIL[];
 
 };

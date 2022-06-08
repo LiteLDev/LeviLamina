@@ -24,7 +24,6 @@ public:
     BucketItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BucketItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -62,7 +61,7 @@ public:
     MCVAPI bool uniqueAuxValues() const;
 #endif
     MCAPI BucketItem(std::string const &, int, enum BucketFillType);
-    MCAPI static std::vector<struct std::pair<enum BucketFillType, enum ActorType>> const mFillTypeToEntityType;
+    MCAPI static int const DRINK_DURATION;
 
 //protected:
     MCAPI void addBucketEntitySaveData(class Actor &, class ItemStack &) const;
@@ -72,11 +71,6 @@ public:
     MCAPI bool _emptyBucket(class BlockSource &, class Block const &, class BlockPos const &, class Actor *, class ItemStack const &, unsigned char) const;
     MCAPI bool _takeLiquid(class ItemStack &, class Actor &, class BlockPos const &) const;
     MCAPI bool _takePowderSnow(class ItemStack &, class Actor &, class BlockPos const &) const;
-
-protected:
-
-private:
-    MCAPI static int const DRINK_DURATION;
-
+    MCAPI static std::vector<struct std::pair<enum BucketFillType, enum ActorType>> const mFillTypeToEntityType;
 
 };

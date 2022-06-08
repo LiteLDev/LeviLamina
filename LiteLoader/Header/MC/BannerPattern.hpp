@@ -22,7 +22,6 @@ public:
     BannerPattern() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERPATTERN
 public:
@@ -40,10 +39,6 @@ public:
     MCAPI static class std::optional<unsigned char> getPatternIndexFromName(std::string const &);
     MCAPI static unsigned char getPatternIndexFromNameID(std::string const &);
     MCAPI static void initPatterns();
-
-//private:
-
-private:
     MCAPI static class BannerPattern * mBase;
     MCAPI static class BannerPattern * mBorder;
     MCAPI static class BannerPattern * mBricks;
@@ -86,6 +81,7 @@ private:
     MCAPI static class BannerPattern * mTriangleTop;
     MCAPI static class BannerPattern * mTrianglesBottom;
     MCAPI static class BannerPattern * mTrianglesTop;
+
 
 
 };

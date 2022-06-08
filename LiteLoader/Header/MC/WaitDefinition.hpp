@@ -24,13 +24,13 @@ public:
     WaitDefinition() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WaitDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WAITDEFINITION
 public:
 #endif
+
 
 
 };

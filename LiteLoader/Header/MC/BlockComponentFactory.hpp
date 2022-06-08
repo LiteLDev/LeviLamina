@@ -28,7 +28,6 @@ public:
     BlockComponentFactory() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOMPONENTFACTORY
 public:
@@ -38,12 +37,9 @@ public:
     MCAPI void initializeFactory(class Experiments const &);
     MCAPI static class entt::meta_any constructComponent(std::string const &);
     MCAPI static class entt::meta_any getComponent(std::string const &, void *);
+    MCAPI static class std::unordered_map<std::string, struct BlockComponentFactory::Constructor, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, struct BlockComponentFactory::Constructor>>> mRegisteredCerealComponents;
     MCAPI static void registerAllCerealDescriptions();
 
-//private:
-
-private:
-    MCAPI static class std::unordered_map<std::string, struct BlockComponentFactory::Constructor, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, struct BlockComponentFactory::Constructor>>> mRegisteredCerealComponents;
 
 
 };

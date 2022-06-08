@@ -20,13 +20,13 @@ public:
     EntitiesPendingEnterVolumeComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITIESPENDINGENTERVOLUMECOMPONENT
 public:
 #endif
     MCAPI EntitiesPendingEnterVolumeComponent(class EntitiesPendingEnterVolumeComponent &&);
     MCAPI ~EntitiesPendingEnterVolumeComponent();
+
 
 
 };

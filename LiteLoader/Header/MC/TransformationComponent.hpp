@@ -21,7 +21,6 @@ public:
     TransformationComponent(class TransformationComponent const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRANSFORMATIONCOMPONENT
 public:
@@ -33,6 +32,7 @@ public:
     MCAPI void reloadComponent(class Actor &);
     MCAPI void setDelayTicks(int);
     MCAPI void transformIfAble(class Actor &, bool);
+
 
 
 };

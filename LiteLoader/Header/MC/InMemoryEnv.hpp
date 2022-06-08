@@ -24,7 +24,6 @@ public:
     InMemoryEnv() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~InMemoryEnv();
     /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
@@ -41,10 +40,8 @@ public:
 #endif
     MCAPI InMemoryEnv(class leveldb::Env *, class Core::Path const &);
 
+
 //private:
     MCAPI void _flushWithTransaction();
-
-private:
-
 
 };

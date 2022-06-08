@@ -22,7 +22,6 @@ public:
     ScriptBlockRecordPlayerComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptBlockRecordPlayerComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKRECORDPLAYERCOMPONENT
@@ -38,8 +37,6 @@ public:
     MCAPI class Scripting::Result<void> clearRecord();
     MCAPI class Scripting::Result<bool> isPlaying();
     MCAPI class Scripting::Result<void> setRecord(class ScriptItemType const &);
-
-protected:
 
 
 };

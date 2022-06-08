@@ -21,7 +21,6 @@ public:
     ScriptSculkSpreader() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptSculkSpreader();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSCULKSPREADER
@@ -34,6 +33,7 @@ public:
     MCAPI class Scripting::Result<int> getTotalCharge() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptSculkSpreader> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptSculkSpreader> getHandle(class BlockSource &, class BlockPos const &, class Scripting::WeakLifetimeScope const &);
+
 
 
 };

@@ -20,7 +20,6 @@ public:
     EntityRegistry() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYREGISTRY
 public:
@@ -34,10 +33,5 @@ public:
 //private:
     MCAPI class EntityContext _createEntity();
     MCAPI void _destroyEntity(class EntityContext);
-
-protected:
-
-private:
-
 
 };

@@ -21,7 +21,6 @@ public:
     BucketableComponent(class BucketableComponent const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUCKETABLECOMPONENT
 public:
@@ -29,8 +28,10 @@ public:
     MCAPI BucketableComponent();
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     MCAPI void initFromDefinition(class Actor &);
-    MCAPI static class BaseGameVersion const WATER_BUCKET_USEABLE_VERSION;
     MCAPI static void implInteraction(class Actor &, class Player &);
 
+
+//private:
+    MCAPI static class BaseGameVersion const WATER_BUCKET_USEABLE_VERSION;
 
 };

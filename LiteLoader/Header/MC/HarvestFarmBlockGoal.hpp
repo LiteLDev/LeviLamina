@@ -23,7 +23,6 @@ public:
     HarvestFarmBlockGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~HarvestFarmBlockGoal();
     /*1*/ virtual bool canUse();
@@ -43,8 +42,6 @@ public:
 
 //protected:
     MCAPI bool trySowCrop(class BlockSource &, class BlockPos const &);
-
-protected:
 
 
 };

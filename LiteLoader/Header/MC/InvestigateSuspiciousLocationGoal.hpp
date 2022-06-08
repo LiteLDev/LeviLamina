@@ -20,7 +20,6 @@ public:
     InvestigateSuspiciousLocationGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~InvestigateSuspiciousLocationGoal();
     /*1*/ virtual bool canUse();
@@ -34,6 +33,7 @@ public:
 public:
 #endif
     MCAPI InvestigateSuspiciousLocationGoal(class Mob &);
+
 
 
 };

@@ -20,12 +20,12 @@ public:
     PlayerDropItemEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERDROPITEMEVENT
 public:
 #endif
     MCAPI ~PlayerDropItemEvent();
+
 
 
 };

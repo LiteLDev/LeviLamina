@@ -20,16 +20,12 @@ public:
     InsidePowderSnowBlockSystemImpl() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEPOWDERSNOWBLOCKSYSTEMIMPL
 public:
 #endif
-
-//private:
-
-private:
     MCAPI static class Vec3 const SLOWDOWN_MODIFIER;
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     AnvilDamagePacket(class AnvilDamagePacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AnvilDamagePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI AnvilDamagePacket();
+
 
 
 };

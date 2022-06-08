@@ -22,7 +22,6 @@ public:
     HoverGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~HoverGoal();
     /*1*/ virtual bool canUse();
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI HoverGoal(class Mob &, float);
+
 
 
 };

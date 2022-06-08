@@ -23,7 +23,6 @@ public:
     TorchBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TorchBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -77,14 +76,13 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI TorchBlock(std::string const &, int, enum MaterialType);
-    MCAPI static enum TorchFacing const DATA_FROM_FACING[];
-    MCAPI static unsigned short const FACING_FROM_DATA[];
 
 //protected:
     MCAPI class Vec3 _flameParticlePos(class BlockPos const &, enum TorchFacing) const;
     MCAPI bool canBePlacedOn(class BlockSource &, class BlockPos const &, unsigned char) const;
 
-protected:
-
+//private:
+    MCAPI static enum TorchFacing const DATA_FROM_FACING[];
+    MCAPI static unsigned short const FACING_FROM_DATA[];
 
 };

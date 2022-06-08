@@ -20,12 +20,12 @@ public:
     HasItemFilter() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HASITEMFILTER
 public:
 #endif
     MCAPI ~HasItemFilter();
+
 
 
 };

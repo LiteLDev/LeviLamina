@@ -22,7 +22,6 @@ public:
     ActorPermutationEventHandler() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPERMUTATIONEVENTHANDLER
 public:
@@ -34,6 +33,7 @@ public:
     MCAPI void initPermutations(std::vector<class std::shared_ptr<class ActorPermutation>> &);
     MCAPI void reload(class RenderParams &);
     MCAPI ~ActorPermutationEventHandler();
+
 
 
 };

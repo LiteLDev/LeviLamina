@@ -22,7 +22,6 @@ public:
     SaveSurroundingChunksSystem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SaveSurroundingChunksSystem();
     /*1*/ virtual void __unk_vfn_1();
@@ -31,10 +30,8 @@ public:
 public:
 #endif
 
+
 //private:
     MCAPI static void _tickSaveSurroundingChunks(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class FlagComponent<struct SaveSurroundingChunksFlag>> &);
-
-private:
-
 
 };

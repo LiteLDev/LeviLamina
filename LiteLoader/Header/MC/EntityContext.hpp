@@ -22,7 +22,6 @@ public:
     EntityContext() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCONTEXT
 public:
@@ -32,8 +31,6 @@ public:
 
 //protected:
     MCAPI class EntityRegistry & _registry() const;
-
-protected:
 
 
 };

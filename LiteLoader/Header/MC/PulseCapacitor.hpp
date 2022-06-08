@@ -22,7 +22,6 @@ public:
     PulseCapacitor(class PulseCapacitor const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PulseCapacitor();
     /*1*/ virtual int getStrength() const;
@@ -39,6 +38,7 @@ public:
 public:
 #endif
     MCAPI PulseCapacitor();
+
 
 
 };

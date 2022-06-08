@@ -22,7 +22,6 @@ public:
     JukeboxBlockActor() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUKEBOXBLOCKACTOR
 public:
@@ -50,11 +49,9 @@ public:
     MCAPI void setRecord(class ItemStack const &);
     MCAPI void stopPlayingRecord(class BlockSource &) const;
 
+
 //private:
     MCAPI void _onChanged(class BlockSource &, enum LevelSoundEvent);
     MCAPI void _spawnMusicParticles(class Level &, float);
-
-private:
-
 
 };

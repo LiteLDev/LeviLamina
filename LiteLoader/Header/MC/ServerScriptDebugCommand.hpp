@@ -21,16 +21,17 @@ public:
     ServerScriptDebugCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ServerScriptDebugCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERSCRIPTDEBUGCOMMAND
 public:
 #endif
-    MCAPI static class std::optional<unsigned short> sForcedPort;
-    MCAPI static class IScriptDebugger * sServerScriptDebugger;
     MCAPI static void setup(class CommandRegistry &, class IScriptDebugger *, class std::optional<struct ScriptSettings> const &);
 
+
+//private:
+    MCAPI static class std::optional<unsigned short> sForcedPort;
+    MCAPI static class IScriptDebugger * sServerScriptDebugger;
 
 };

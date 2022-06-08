@@ -22,7 +22,6 @@ public:
     StructureTemplateDataRequestPacket(class StructureTemplateDataRequestPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StructureTemplateDataRequestPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI StructureTemplateDataRequestPacket();
+
 
 
 };

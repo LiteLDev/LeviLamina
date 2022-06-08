@@ -23,7 +23,6 @@ public:
     BellBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BellBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -82,13 +81,11 @@ public:
     MCAPI BellBlock(std::string const &, int);
     MCAPI bool hasValidAttachment(class Block const &, class BlockSource &, class BlockPos const &) const;
 
+
 //private:
     MCAPI class Block const & _determineAttachment(class Actor &, class BlockSource &, class BlockPos const &, unsigned char) const;
     MCAPI short _getItemId(class gsl::basic_string_span<char const, -1>) const;
     MCAPI class AABB const & _getShape(class Block const &, class AABB &) const;
     MCAPI void _sendBellUsedEventToClient(class BlockSource const &, class Actor const &) const;
-
-private:
-
 
 };

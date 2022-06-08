@@ -20,7 +20,6 @@ public:
     DelayRequest() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DELAYREQUEST
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI unsigned __int64 getTickToExecuteOn() const;
     MCAPI bool operator>(class DelayRequest const &) const;
     MCAPI ~DelayRequest();
+
 
 
 };

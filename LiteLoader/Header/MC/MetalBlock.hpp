@@ -23,7 +23,6 @@ public:
     MetalBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MetalBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -63,6 +62,7 @@ public:
 public:
 #endif
     MCAPI MetalBlock(std::string const &, int);
+
 
 
 };

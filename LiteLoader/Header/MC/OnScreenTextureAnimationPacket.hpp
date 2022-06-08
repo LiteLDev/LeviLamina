@@ -22,7 +22,6 @@ public:
     OnScreenTextureAnimationPacket(class OnScreenTextureAnimationPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~OnScreenTextureAnimationPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI OnScreenTextureAnimationPacket(unsigned int);
     MCAPI OnScreenTextureAnimationPacket();
+
 
 
 };

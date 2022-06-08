@@ -21,7 +21,6 @@ public:
     MobEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEVENT
 public:
@@ -32,6 +31,7 @@ public:
     MCAPI std::string const & getName() const;
     MCAPI bool isEnabled() const;
     MCAPI ~MobEvent();
+
 
 
 };

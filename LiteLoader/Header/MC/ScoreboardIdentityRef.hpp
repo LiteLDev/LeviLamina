@@ -22,7 +22,6 @@ public:
     ScoreboardIdentityRef(class ScoreboardIdentityRef const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDIDENTITYREF
 public:
@@ -38,12 +37,9 @@ public:
     MCAPI bool isPlayerType() const;
     MCAPI bool modifyScoreInObjective(int &, class Objective &, int, enum PlayerScoreSetFunction);
     MCAPI bool removeFromObjective(class Scoreboard &, class Objective &);
+    MCAPI static class ScoreboardIdentityRef const Undefined;
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class ScoreboardIdentityRef const &);
 
-//private:
-
-private:
-    MCAPI static class ScoreboardIdentityRef const Undefined;
 
 
 };

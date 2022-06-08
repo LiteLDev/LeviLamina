@@ -23,7 +23,6 @@ public:
     VillageStart() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~VillageStart();
     /*2*/ virtual bool isValid() const;
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI VillageStart(class Dimension &, class BiomeSource const &, class Random &, int, int, class IPreliminarySurfaceProvider const &);
+
 
 
 };

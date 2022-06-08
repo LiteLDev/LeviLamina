@@ -23,7 +23,6 @@ public:
     BubbleColumnBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BubbleColumnBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -82,11 +81,9 @@ public:
     MCAPI static bool addBubbleColumnSegment(class BlockSource &, class BlockPos const &);
     MCAPI static void spawnBubbles(class BlockSource &, class BlockPos const &);
 
+
 //private:
     MCAPI static void createParticles(class BlockSource &, class BlockPos const &, class Random &, bool);
     MCAPI static bool getFlowDownward(class Block const &);
-
-private:
-
 
 };

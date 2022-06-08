@@ -23,7 +23,6 @@ public:
     LevelContainerManagerModel() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LevelContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
@@ -44,8 +43,6 @@ public:
 //protected:
     MCAPI class BlockActor * _getBlockEntity();
     MCAPI class Container * _getRawContainer();
-
-protected:
 
 
 };

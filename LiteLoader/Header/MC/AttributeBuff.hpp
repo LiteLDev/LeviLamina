@@ -22,7 +22,6 @@ public:
     AttributeBuff() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AttributeBuff();
     /*1*/ virtual bool isInstantaneous() const = 0;
@@ -47,8 +46,6 @@ public:
 
 //protected:
     MCAPI AttributeBuff(float, int, enum AttributeBuffType);
-
-protected:
 
 
 };

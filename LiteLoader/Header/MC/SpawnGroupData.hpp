@@ -22,7 +22,6 @@ public:
     SpawnGroupData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNGROUPDATA
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI void addSpawnRules(class MobSpawnRules &);
     MCAPI std::string const & getIdentifier() const;
     MCAPI std::vector<class MobSpawnRules> const & getSpawnRules() const;
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     ClassroomModeNetworkHandler() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLASSROOMMODENETWORKHANDLER
 public:
@@ -31,10 +30,8 @@ public:
 #endif
     MCAPI ClassroomModeNetworkHandler(bool);
 
+
 //private:
     MCAPI void _connect(std::string const &);
-
-private:
-
 
 };

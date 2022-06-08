@@ -20,7 +20,6 @@ public:
     ScriptVector() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTVECTOR
 public:
@@ -38,6 +37,7 @@ public:
     MCAPI static class ScriptVector multiply(class ScriptVector const &, class std::variant<float, class ScriptVector> const &);
     MCAPI static class ScriptVector slerp(class ScriptVector const &, class ScriptVector const &, float);
     MCAPI static class ScriptVector subtract(class ScriptVector const &, class ScriptVector const &);
+
 
 
 };

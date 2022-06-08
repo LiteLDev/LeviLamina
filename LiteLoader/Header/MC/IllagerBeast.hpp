@@ -24,7 +24,6 @@ public:
     IllagerBeast() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~IllagerBeast();
     /*40*/ virtual void __unk_vfn_40();
@@ -57,6 +56,7 @@ public:
 public:
 #endif
     MCAPI IllagerBeast(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

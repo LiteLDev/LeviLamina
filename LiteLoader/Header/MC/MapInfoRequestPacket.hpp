@@ -22,7 +22,6 @@ public:
     MapInfoRequestPacket(class MapInfoRequestPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MapInfoRequestPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -35,6 +34,7 @@ public:
     MCAPI MapInfoRequestPacket(struct ActorUniqueID);
     MCAPI MapInfoRequestPacket();
     MCAPI struct ActorUniqueID getMapId() const;
+
 
 
 };

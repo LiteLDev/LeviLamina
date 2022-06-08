@@ -24,7 +24,6 @@ public:
     SuspiciousStewItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SuspiciousStewItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -47,6 +46,7 @@ public:
 #endif
     MCAPI SuspiciousStewItem(std::string const &, short);
     MCAPI static void applyStewEffect(class ItemStack const &, class Actor &);
+
 
 
 };

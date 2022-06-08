@@ -22,7 +22,6 @@ public:
     RandomThreadCheckManager() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RandomThreadCheckManager();
     /*1*/ virtual void __unk_vfn_1();
@@ -35,8 +34,10 @@ public:
 public:
 #endif
     MCAPI static void invalidateThreadIndex();
+
+
+//private:
     MCAPI static std::unique_ptr<class RandomThreadCheckManager> mInstance;
     MCAPI static class std::recursive_mutex mMutex;
-
 
 };

@@ -23,7 +23,6 @@ public:
     SculkShriekerBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SculkShriekerBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -72,6 +71,7 @@ public:
 #endif
     MCAPI SculkShriekerBlock(std::string const &, int, class Material const &);
     MCAPI void provokePotentialShriek(class BlockSource &, class BlockPos) const;
+
 
 
 };

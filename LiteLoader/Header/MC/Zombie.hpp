@@ -26,7 +26,6 @@ public:
     Zombie() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Zombie();
@@ -66,8 +65,6 @@ public:
     MCAPI void setZombieType(enum Zombie::ZombieType);
 
 //protected:
-
-protected:
     MCAPI static class mce::UUID const SPAWN_BONUS_UUID;
     MCAPI static class Attribute const SPAWN_REINFORCEMENTS_CHANCE;
 

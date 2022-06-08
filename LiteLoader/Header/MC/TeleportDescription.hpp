@@ -22,7 +22,6 @@ public:
     TeleportDescription(class TeleportDescription const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~TeleportDescription();
@@ -32,6 +31,7 @@ public:
 public:
 #endif
     MCAPI TeleportDescription();
+
 
 
 };

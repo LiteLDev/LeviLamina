@@ -22,13 +22,13 @@ public:
     SchedulerComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCHEDULERCOMPONENT
 public:
 #endif
     MCAPI int getCurrentEventIndex() const;
     MCAPI void setCurrentEventIndex(int);
+
 
 
 };

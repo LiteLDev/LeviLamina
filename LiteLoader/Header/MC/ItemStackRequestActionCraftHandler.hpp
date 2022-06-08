@@ -22,7 +22,6 @@ public:
     ItemStackRequestActionCraftHandler() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTHANDLER
 public:
@@ -44,11 +43,9 @@ public:
     MCAPI void postRequest(bool);
     MCAPI enum ItemStackNetResult preHandleAction(enum ItemStackRequestActionType);
 
+
 //private:
     MCAPI std::unique_ptr<struct ContainerValidationCraftInputs> _createCraftInputs(class ItemStackRequestActionCraftBase const &);
     MCAPI enum ItemStackNetResult _setCreatedItemOutputSlot(unsigned char);
-
-private:
-
 
 };

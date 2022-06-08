@@ -22,7 +22,6 @@ public:
     ScriptGameTestHelper() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTGAMETESTHELPER
 public:
@@ -92,10 +91,8 @@ public:
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class Vec3>> worldPosition(class Vec3 const &) const;
     MCAPI ~ScriptGameTestHelper();
 
+
 //private:
     MCAPI static class std::optional<struct gametest::GameTestError> _callClosure(class Scripting::Closure<void (void)> const &);
-
-private:
-
 
 };

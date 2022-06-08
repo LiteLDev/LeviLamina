@@ -22,12 +22,12 @@ public:
     RopeAABB() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROPEAABB
 public:
 #endif
     MCAPI bool getContactPoint(class Vec3 const &, float, struct AABBContactPoint &) const;
+
 
 
 };

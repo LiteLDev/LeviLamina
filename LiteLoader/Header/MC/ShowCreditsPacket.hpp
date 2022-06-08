@@ -35,7 +35,6 @@ public:
     ShowCreditsPacket(class ShowCreditsPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ShowCreditsPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -47,6 +46,7 @@ public:
 #endif
     MCAPI ShowCreditsPacket(class ActorRuntimeID, enum ShowCreditsPacket::CreditsState);
     MCAPI ShowCreditsPacket();
+
 
 
 };

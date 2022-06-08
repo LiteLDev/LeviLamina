@@ -22,7 +22,6 @@ public:
     NetEventCallback() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NetEventCallback();
     /*1*/ virtual void __unk_vfn_1() = 0;
@@ -230,6 +229,7 @@ public:
     MCVAPI void onUnableToConnect();
     MCVAPI void sendPacketViolationDetectedTelemetryData(struct ExtendedStreamReadResult const &, enum PacketViolationResponse, enum MinecraftPacketIds, class NetworkIdentifier const &);
 #endif
+
 
 
 };

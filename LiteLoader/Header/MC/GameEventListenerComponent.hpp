@@ -19,7 +19,6 @@ public:
     GameEventListenerComponent(class GameEventListenerComponent const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTLISTENERCOMPONENT
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI class GameEventListenerComponent & operator=(class GameEventListenerComponent &&);
     MCAPI class GameEventDynamicRegistration * tryGetListenerRegistration() const;
     MCAPI ~GameEventListenerComponent();
+
 
 
 };

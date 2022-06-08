@@ -21,7 +21,6 @@ public:
     TemporalAttributeBuff() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TemporalAttributeBuff();
     /*1*/ virtual bool isInstantaneous() const;
@@ -39,6 +38,7 @@ public:
     MCAPI int getLifeTimer() const;
     MCAPI void serializationSetLifeTime(int);
     MCAPI void tick();
+
 
 
 };

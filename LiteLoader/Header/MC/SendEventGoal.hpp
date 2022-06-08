@@ -22,7 +22,6 @@ public:
     SendEventGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SendEventGoal();
     /*1*/ virtual bool canUse();
@@ -37,10 +36,8 @@ public:
 #endif
     MCAPI SendEventGoal(class Mob &, std::vector<struct SendEventData> const &);
 
+
 //private:
     MCAPI int _selectBestSpell();
-
-private:
-
 
 };

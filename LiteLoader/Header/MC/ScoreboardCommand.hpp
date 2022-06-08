@@ -34,7 +34,6 @@ public:
     ScoreboardCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScoreboardCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -42,6 +41,7 @@ public:
 public:
 #endif
     MCAPI static void setup(class CommandRegistry &, struct ScoreboardCommand::InitProxy &&);
+
 
 //private:
     MCAPI void _generateCumulativeOutput(struct ScoreboardCommand::SetScoreOutput const &, class Objective const &, class CommandOutput &) const;
@@ -62,8 +62,5 @@ public:
     MCAPI void testPlayerScore(struct ScoreboardId const &, class Objective &, class std::function<std::string const & (struct ActorUniqueID)> const &, class CommandOutput &) const;
     MCAPI static std::vector<std::string> _getNonSortableDisplaySlots(class Scoreboard &);
     MCAPI static std::vector<std::string> _getSortableDisplaySlots(class Scoreboard &);
-
-private:
-
 
 };

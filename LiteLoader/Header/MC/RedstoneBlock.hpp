@@ -23,7 +23,6 @@ public:
     RedstoneBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RedstoneBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -68,6 +67,7 @@ public:
     MCVAPI bool canSpawnOn() const;
 #endif
     MCAPI RedstoneBlock(std::string const &, int);
+
 
 
 };

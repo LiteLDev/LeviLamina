@@ -23,7 +23,6 @@ public:
     PointedDripstoneBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PointedDripstoneBlock();
     /*8*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
@@ -93,6 +92,7 @@ public:
     MCAPI static void growStalactite(class BlockSource &, class BlockPos const &);
     MCAPI static void growStalagmite(class BlockSource &, class BlockPos const &);
 
+
 //private:
     MCAPI void _updateBlockThickness(class BlockSource &, class BlockPos const &) const;
     MCAPI static enum DripstoneThickness _calculateDripstoneThickness(class BlockSource &, class BlockPos const &, unsigned char, bool);
@@ -112,8 +112,5 @@ public:
     MCAPI static bool _isValidPointedDripstonePlacement(class BlockSource &, class BlockPos const &, bool);
     MCAPI static bool _mayPlaceHanging(class BlockSource &, class BlockPos const &);
     MCAPI static bool _mayPlaceStanding(class BlockSource &, class BlockPos const &);
-
-private:
-
 
 };

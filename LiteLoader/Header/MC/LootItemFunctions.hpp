@@ -23,12 +23,12 @@ public:
     LootItemFunctions() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMFUNCTIONS
 public:
 #endif
     MCAPI static std::vector<std::unique_ptr<class LootItemFunction>> deserialize(class Json::Value);
+
 
 
 };

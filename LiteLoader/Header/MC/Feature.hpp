@@ -22,7 +22,6 @@ public:
     Feature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~Feature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
@@ -36,8 +35,6 @@ public:
 //protected:
     MCAPI bool _placeBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     MCAPI void _setManuallyPlaced(class Actor *);
-
-protected:
 
 
 };

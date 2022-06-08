@@ -23,7 +23,6 @@ public:
     DoublePlantFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DoublePlantFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -32,6 +31,7 @@ public:
 public:
 #endif
     MCAPI bool place(class BlockSource &, class BlockPos const &, class Random &, enum DoublePlantType) const;
+
 
 
 };

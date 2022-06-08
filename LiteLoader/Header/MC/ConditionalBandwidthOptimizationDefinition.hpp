@@ -23,7 +23,6 @@ public:
     ConditionalBandwidthOptimizationDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONDITIONALBANDWIDTHOPTIMIZATIONDEFINITION
 public:
@@ -33,6 +32,7 @@ public:
     MCAPI void initialize(class EntityContext &, class ConditionalBandwidthOptimizationComponent &) const;
     MCAPI ~ConditionalBandwidthOptimizationDefinition();
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ConditionalBandwidthOptimizationDefinition>> &);
+
 
 
 };

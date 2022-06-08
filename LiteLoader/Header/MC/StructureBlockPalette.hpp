@@ -28,7 +28,6 @@ public:
     StructureBlockPalette() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREBLOCKPALETTE
 public:
@@ -50,10 +49,5 @@ public:
 
 //private:
     MCAPI void _contentErrorMissingField(std::string const &) const;
-
-protected:
-
-private:
-
 
 };

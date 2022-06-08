@@ -23,7 +23,6 @@ public:
     BlockListSerializer() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKLISTSERIALIZER
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI static void loadJSON(class Json::Value, class SemVersion const &, std::vector<class BlockDescriptor> &);
     MCAPI static void loadJSON(class Json::Value, class SemVersion const &, class BlockDescriptor &);
     MCAPI static void saveJSON(std::vector<class BlockDescriptor> const &, class Json::Value &);
+
 
 
 };

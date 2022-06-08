@@ -24,7 +24,6 @@ public:
     BannerPatternItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BannerPatternItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -48,6 +47,7 @@ public:
     MCVAPI bool isPattern() const;
 #endif
     MCAPI BannerPatternItem(std::string const &, int, enum BannerPatternItem::Type);
+
 
 
 };

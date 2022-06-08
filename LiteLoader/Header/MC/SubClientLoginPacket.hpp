@@ -22,7 +22,6 @@ public:
     SubClientLoginPacket(class SubClientLoginPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SubClientLoginPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 public:
 #endif
     MCAPI SubClientLoginPacket();
+
 
 
 };

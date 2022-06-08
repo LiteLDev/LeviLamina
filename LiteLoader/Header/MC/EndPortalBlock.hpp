@@ -23,7 +23,6 @@ public:
     EndPortalBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EndPortalBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -76,6 +75,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI EndPortalBlock(std::string const &, int);
+
 
 
 };

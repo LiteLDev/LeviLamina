@@ -22,13 +22,13 @@ public:
     ManagedWanderingTraderComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MANAGEDWANDERINGTRADERCOMPONENT
 public:
 #endif
     MCAPI void initFromDefinition(class Actor &);
     MCAPI void reloadComponent(class Actor &);
+
 
 
 };

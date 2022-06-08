@@ -23,7 +23,6 @@ public:
     MultiRecipe() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MultiRecipe();
     /*5*/ virtual bool isShapeless() const;
@@ -31,6 +30,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIRECIPE
 public:
 #endif
+
 
 
 };

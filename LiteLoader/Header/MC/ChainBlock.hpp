@@ -23,7 +23,6 @@ public:
     ChainBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ChainBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -70,6 +69,7 @@ public:
 public:
 #endif
     MCAPI ChainBlock(std::string const &, int, class Material const &);
+
 
 
 };

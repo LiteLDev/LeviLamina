@@ -22,7 +22,6 @@ public:
     ContainerValidatorFactory() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATORFACTORY
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI static std::unique_ptr<class ContainerScreenValidatorBase> createContainerScreenValidator(class ContainerScreenContext const &);
     MCAPI static class std::shared_ptr<class ContainerValidationBase const> createContainerValidator(enum ContainerEnumName, class ContainerScreenContext const &, enum ContainerValidationCaller);
     MCAPI static class Container * getBackingContainer(enum ContainerEnumName, class ContainerScreenContext const &);
+
 
 
 };

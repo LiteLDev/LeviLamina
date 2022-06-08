@@ -22,7 +22,6 @@ public:
     MultiplayerSettingsPacket(class MultiplayerSettingsPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MultiplayerSettingsPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI MultiplayerSettingsPacket(enum MultiplayerSettingsPacketType);
     MCAPI MultiplayerSettingsPacket();
+
 
 
 };

@@ -120,7 +120,6 @@ public:
     AvailableCommandsPacket(class AvailableCommandsPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AvailableCommandsPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -132,6 +131,7 @@ public:
 #endif
     MCAPI AvailableCommandsPacket(std::vector<std::string> const &, std::vector<std::string> const &, std::vector<struct AvailableCommandsPacket::EnumData> &&, std::vector<struct AvailableCommandsPacket::ConstrainedValueData> &&, std::vector<struct AvailableCommandsPacket::CommandData> &&, std::vector<struct AvailableCommandsPacket::SoftEnumData> &&);
     MCAPI AvailableCommandsPacket();
+
 
 
 };

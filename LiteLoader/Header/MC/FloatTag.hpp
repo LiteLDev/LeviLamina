@@ -31,7 +31,6 @@ public:
     FloatTag(class FloatTag const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FloatTag();
     /*2*/ virtual void write(class IDataOutput &) const;
@@ -46,6 +45,7 @@ public:
 #endif
     MCAPI FloatTag(float);
     MCAPI FloatTag();
+
 
 
 };

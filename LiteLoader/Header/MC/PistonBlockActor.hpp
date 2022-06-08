@@ -23,7 +23,6 @@ public:
     PistonBlockActor() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PistonBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -56,7 +55,7 @@ public:
     MCAPI bool isRetracting() const;
     MCAPI void moveEntityLastProgress(class Actor &, class Vec3);
     MCAPI void setShouldVerifyArmType(bool);
-    MCAPI static float const ARM_ANIMATION_SPEED;
+
 
 //private:
     MCAPI bool _attachedBlockWalker(class BlockSource &, class BlockPos const &, unsigned char, unsigned char);
@@ -69,8 +68,6 @@ public:
     MCAPI void _sortAttachedBlocks(class BlockSource &);
     MCAPI void _spawnBlocks(class BlockSource &);
     MCAPI void _spawnMovingBlocks(class BlockSource &);
-
-private:
-
+    MCAPI static float const ARM_ANIMATION_SPEED;
 
 };

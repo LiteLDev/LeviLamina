@@ -24,7 +24,6 @@ public:
     SignBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SignBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -75,12 +74,10 @@ public:
 #endif
     MCAPI SignBlock(std::string const &, int, bool, enum SignBlockActor::SignType);
 
+
 //private:
     MCAPI bool _canSurvive(class BlockSource &, class BlockPos const &, unsigned char) const;
     MCAPI class ItemInstance _getItemInstance() const;
     MCAPI void getShape(int, class AABB &) const;
-
-private:
-
 
 };

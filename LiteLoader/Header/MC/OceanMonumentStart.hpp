@@ -22,7 +22,6 @@ public:
     OceanMonumentStart() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~OceanMonumentStart();
     /*1*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
@@ -30,6 +29,7 @@ public:
 public:
 #endif
     MCAPI void createMonument(class Dimension &, class Random &, int, int);
+
 
 
 };

@@ -30,12 +30,12 @@ public:
     JsonValidator() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JSONVALIDATOR
 public:
 #endif
     MCAPI static bool validate(class JsonValidator::Property const &, class Json::Value const &, std::vector<std::string> *);
+
 
 
 };

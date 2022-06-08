@@ -20,12 +20,12 @@ public:
     PlayerUseNameTagEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERUSENAMETAGEVENT
 public:
 #endif
     MCAPI ~PlayerUseNameTagEvent();
+
 
 
 };

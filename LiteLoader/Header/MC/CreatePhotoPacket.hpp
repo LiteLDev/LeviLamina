@@ -22,7 +22,6 @@ public:
     CreatePhotoPacket(class CreatePhotoPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CreatePhotoPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI CreatePhotoPacket();
+
 
 
 };

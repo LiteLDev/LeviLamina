@@ -28,7 +28,6 @@ public:
     PackManifest() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PackManifest();
     /*1*/ virtual std::unique_ptr<class PackManifest> clone() const;
@@ -107,17 +106,15 @@ public:
     MCAPI void setPlatformLocked(bool);
     MCAPI void setRequiredBaseGameVersion(class BaseGameVersion const &);
     MCAPI void setSourceIdentity(class ContentIdentity const &);
-    MCAPI static class std::unordered_map<std::string, enum PackScope, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum PackScope>>> const STRING_TO_PACK_SCOPE;
+    MCAPI static std::string const MarioPackId;
     MCAPI static enum PackScope StringToPackScope(std::string const &);
+
 
 //private:
     MCAPI void _serializeDependencies(class Json::Value &) const;
     MCAPI void _serializeHeader(class Json::Value &) const;
     MCAPI void _serializeModules(class Json::Value &) const;
     MCAPI void _serializeVersion(class Json::Value &, class SemVersion const &) const;
-
-private:
-    MCAPI static std::string const MarioPackId;
-
+    MCAPI static class std::unordered_map<std::string, enum PackScope, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum PackScope>>> const STRING_TO_PACK_SCOPE;
 
 };

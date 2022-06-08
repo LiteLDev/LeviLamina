@@ -22,7 +22,6 @@ public:
     FreezingComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FREEZINGCOMPONENT
 public:
@@ -35,6 +34,7 @@ public:
     MCAPI bool isFullyUnfrozen() const;
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void resetFreezingEffect();
+
 
 
 };

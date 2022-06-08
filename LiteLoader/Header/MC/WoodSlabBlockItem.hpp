@@ -24,7 +24,6 @@ public:
     WoodSlabBlockItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WoodSlabBlockItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -44,6 +43,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WOODSLABBLOCKITEM
 public:
 #endif
+
 
 
 };

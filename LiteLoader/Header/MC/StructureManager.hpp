@@ -22,7 +22,6 @@ public:
     StructureManager(class StructureManager const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREMANAGER
 public:
@@ -42,9 +41,8 @@ public:
     MCAPI void saveToLevel(class StructureTemplate const &, class LevelStorage &);
     MCAPI void tick(class Dimension const &);
     MCAPI enum QueueRequestResult tryPlaceStructureInWorld(std::unique_ptr<class CommandArea>, class ServerLevel &, class Dimension &, class BoundingBox const &, class BlockPos const &, class StructureSettings const &, class StructureTemplate const &, std::unique_ptr<class StructureAnimationData>);
-    MCAPI static char const * BEHAVIOR_PACK_STRUCTURES_FOLDER;
-    MCAPI static char const * LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX;
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> getStructurePath(std::string const &);
+
 
 //private:
     MCAPI std::string _createLevelStorageId(std::string const &, std::string const &);
@@ -53,8 +51,7 @@ public:
     MCAPI class LegacyStructureTemplate * _readLegacyStructure(std::string const &);
     MCAPI void _removePlacementQueueItem(std::string const &, class StructureAnimationData &);
     MCAPI void _savePlacementQueueItem(std::string const &, class StructureAnimationData &);
-
-private:
-
+    MCAPI static char const * BEHAVIOR_PACK_STRUCTURES_FOLDER;
+    MCAPI static char const * LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX;
 
 };

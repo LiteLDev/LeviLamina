@@ -24,7 +24,6 @@ public:
     Strider() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~Strider();
     /*40*/ virtual void __unk_vfn_40();
@@ -60,6 +59,7 @@ public:
 public:
 #endif
     MCAPI Strider(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     ShiftedValueAmplifier() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ShiftedValueAmplifier();
     /*1*/ virtual float getAmount(int, float) const;
@@ -30,6 +29,7 @@ public:
 public:
 #endif
     MCAPI ShiftedValueAmplifier(int, float);
+
 
 
 };

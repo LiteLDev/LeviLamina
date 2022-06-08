@@ -21,7 +21,6 @@ public:
     WorldTemplatePackManifest(class WorldTemplatePackManifest const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WorldTemplatePackManifest();
     /*1*/ virtual std::unique_ptr<class PackManifest> clone() const;
@@ -32,6 +31,7 @@ public:
     MCAPI WorldTemplatePackManifest();
     MCAPI enum GameType getGameType() const;
     MCAPI void setGameType(enum GameType);
+
 
 
 };

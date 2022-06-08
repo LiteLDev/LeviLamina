@@ -22,7 +22,6 @@ public:
     PlayerContainerSetter() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PlayerContainerSetter();
     /*1*/ virtual void setArmor(int, class ItemStack const &);
@@ -32,6 +31,7 @@ public:
 public:
 #endif
     MCAPI PlayerContainerSetter(class Player &);
+
 
 
 };

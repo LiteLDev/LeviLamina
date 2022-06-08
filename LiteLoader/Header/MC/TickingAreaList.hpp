@@ -22,13 +22,13 @@ public:
     TickingAreaList() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TickingAreaList();
     /*1*/ virtual bool removeDistantEntityAreasAndCheckForRemoved(std::vector<class Vec3> const &, class std::function<void (class ITickingArea const &)>, class LevelStorage &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREALIST
 public:
 #endif
+
 
 
 };

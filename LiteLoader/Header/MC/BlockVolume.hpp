@@ -28,7 +28,6 @@ public:
     BlockVolume() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKVOLUME
 public:
@@ -47,6 +46,7 @@ public:
     MCAPI unsigned int indexNoBoundsCheck(class Pos const &) const;
     MCAPI bool isInBounds(class Pos const &) const;
     MCAPI bool isInBounds(class BlockPos const &) const;
+
 
 
 };

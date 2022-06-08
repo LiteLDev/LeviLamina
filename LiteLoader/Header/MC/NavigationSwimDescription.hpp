@@ -23,7 +23,6 @@ public:
     NavigationSwimDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~NavigationSwimDescription();
@@ -31,6 +30,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONSWIMDESCRIPTION
 public:
 #endif
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     ExperienceRewardComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCEREWARDCOMPONENT
 public:
@@ -34,7 +33,9 @@ public:
     MCAPI class ExperienceRewardComponent & operator=(class ExperienceRewardComponent &&);
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void setIsExperienceDropEnabled(bool);
-    MCAPI static std::string const mIsExperienceDropEnabledTag;
 
+
+//private:
+    MCAPI static std::string const mIsExperienceDropEnabledTag;
 
 };

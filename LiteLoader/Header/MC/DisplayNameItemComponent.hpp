@@ -22,7 +22,6 @@ public:
     DisplayNameItemComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DisplayNameItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -37,6 +36,7 @@ public:
     MCAPI DisplayNameItemComponent(class ComponentItem *);
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
+
 
 
 };

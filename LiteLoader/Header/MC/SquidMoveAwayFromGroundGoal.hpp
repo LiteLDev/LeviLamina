@@ -22,7 +22,6 @@ public:
     SquidMoveAwayFromGroundGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SquidMoveAwayFromGroundGoal();
     /*1*/ virtual void __unk_vfn_1();
@@ -39,6 +38,7 @@ public:
     MCVAPI void stop();
     MCVAPI void tick();
 #endif
+
 
 
 };

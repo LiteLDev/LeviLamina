@@ -24,7 +24,6 @@ public:
     WanderingTrader() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~WanderingTrader();
     /*40*/ virtual void __unk_vfn_40();
@@ -58,6 +57,7 @@ public:
     MCVAPI bool interactPreventDefault();
 #endif
     MCAPI WanderingTrader(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

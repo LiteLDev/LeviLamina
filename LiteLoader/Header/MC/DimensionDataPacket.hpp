@@ -21,7 +21,6 @@ public:
     DimensionDataPacket() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DimensionDataPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -32,6 +31,7 @@ public:
 public:
 #endif
     MCAPI DimensionDataPacket(class DimensionDefinitionGroup const &);
+
 
 
 };

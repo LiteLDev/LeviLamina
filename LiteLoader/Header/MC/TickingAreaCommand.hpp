@@ -23,7 +23,6 @@ public:
     TickingAreaCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TickingAreaCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -33,14 +32,12 @@ public:
     MCAPI static std::string formatTickingAreaList(std::vector<struct TickingAreaDescription> const &);
     MCAPI static void setup(class CommandRegistry &);
 
+
 //private:
     MCAPI void _add(class CommandOrigin const &, class CommandOutput &, class Level &, class Dimension &) const;
     MCAPI void _list(class CommandOrigin const &, class CommandOutput &, class Level &, class Dimension &) const;
     MCAPI void _preload(class CommandOrigin const &, class CommandOutput &, class Level &, class Dimension &) const;
     MCAPI void _remove(class CommandOrigin const &, class CommandOutput &, class Level &, class Dimension &) const;
     MCAPI void _removeAll(class CommandOrigin const &, class CommandOutput &, class Level &, class Dimension &) const;
-
-private:
-
 
 };

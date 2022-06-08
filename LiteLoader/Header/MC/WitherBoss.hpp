@@ -24,7 +24,6 @@ public:
     WitherBoss() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*9*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -90,17 +89,15 @@ public:
     MCAPI void setShotDelay(int);
     MCAPI void setWantsToMove(bool);
     MCAPI bool wantsToMove();
-    MCAPI static int const TIME_BEFORE_MOVING;
+    MCAPI static class mce::UUID const MAX_HEALTH_CAP_UUID;
     MCAPI static bool canDestroy(class Block const &);
+
 
 //private:
     MCAPI void _destroyBlocks(class Level &, class AABB const &, class BlockSource &, int);
     MCAPI void _performRangedAttack(int, class Actor &);
     MCAPI void _performRangedAttack(int, class Vec3 const &, bool);
     MCAPI bool canShoot();
-
-private:
-    MCAPI static class mce::UUID const MAX_HEALTH_CAP_UUID;
-
+    MCAPI static int const TIME_BEFORE_MOVING;
 
 };

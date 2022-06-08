@@ -23,7 +23,6 @@ public:
     EnderCrystal() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*9*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -60,11 +59,8 @@ public:
     MCAPI EnderCrystal(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void setBeamTarget(class BlockPos const &);
     MCAPI void setCrystalDamagedCallback(class std::function<void (class EnderCrystal &, class ActorDamageSource const &)>);
-
-//private:
-
-private:
     MCAPI static float const HEAL_DISTANCE;
+
 
 
 };

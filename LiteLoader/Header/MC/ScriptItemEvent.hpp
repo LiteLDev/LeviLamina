@@ -20,11 +20,11 @@ public:
     ScriptItemEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMEVENT
 public:
 #endif
+
 
 
 };

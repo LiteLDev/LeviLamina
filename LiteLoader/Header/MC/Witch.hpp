@@ -24,7 +24,6 @@ public:
     Witch() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~Witch();
     /*40*/ virtual void __unk_vfn_40();
@@ -62,8 +61,10 @@ public:
 public:
 #endif
     MCAPI Witch(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
+
+//private:
     MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_DRINKING;
     MCAPI static class mce::UUID const SPEED_MODIFIER_DRINKING_UUID;
-
 
 };

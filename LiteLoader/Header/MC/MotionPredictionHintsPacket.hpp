@@ -22,7 +22,6 @@ public:
     MotionPredictionHintsPacket(class MotionPredictionHintsPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MotionPredictionHintsPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI MotionPredictionHintsPacket(class Actor const &);
     MCAPI MotionPredictionHintsPacket();
+
 
 
 };

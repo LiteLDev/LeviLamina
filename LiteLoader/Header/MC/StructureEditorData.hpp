@@ -21,7 +21,6 @@ public:
     StructureEditorData(class StructureEditorData const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREEDITORDATA
 public:
@@ -63,19 +62,17 @@ public:
     MCAPI void setStructureOffset(class BlockPos const &);
     MCAPI void setStructureSize(class BlockPos const &);
     MCAPI ~StructureEditorData();
-    MCAPI static enum StructureBlockType const DEFAULT_STRUCTURE_TYPE;
-    MCAPI static class BlockPos getOrientedBounds(class BlockPos const &, enum Rotation);
-
-//private:
-    MCAPI void _setPivotFromStructureSize();
-
-private:
     MCAPI static std::string const DEFAULT_EXPORT_NAME;
     MCAPI static std::string const DEFAULT_STRUCTURE_NAMESPACE;
     MCAPI static class BlockPos const MAX_STRUCTURE_OFFSET;
     MCAPI static class BlockPos const MIN_STRUCTURE_OFFSET;
     MCAPI static class BlockPos const MIN_STRUCTURE_SIZE;
     MCAPI static char const NAMESPACE_DELIMITER;
+    MCAPI static class BlockPos getOrientedBounds(class BlockPos const &, enum Rotation);
 
+
+//private:
+    MCAPI void _setPivotFromStructureSize();
+    MCAPI static enum StructureBlockType const DEFAULT_STRUCTURE_TYPE;
 
 };

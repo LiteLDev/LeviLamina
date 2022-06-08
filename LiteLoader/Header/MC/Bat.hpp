@@ -24,7 +24,6 @@ public:
     Bat() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~Bat();
     /*40*/ virtual void __unk_vfn_40();
@@ -63,6 +62,7 @@ public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Bat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

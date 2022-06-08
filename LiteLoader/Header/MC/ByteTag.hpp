@@ -31,7 +31,6 @@ public:
     ByteTag(class ByteTag const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ByteTag();
     /*2*/ virtual void write(class IDataOutput &) const;
@@ -46,6 +45,7 @@ public:
 #endif
     MCAPI ByteTag(unsigned char);
     MCAPI ByteTag();
+
 
 
 };

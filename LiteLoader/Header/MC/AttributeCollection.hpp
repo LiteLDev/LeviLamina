@@ -22,18 +22,15 @@ public:
     AttributeCollection() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTECOLLECTION
 public:
 #endif
     MCAPI static bool hasAttribute(class HashedString const &);
 
+
 //private:
     MCAPI class Attribute & getAttribute(class HashedString const &);
     MCAPI static class AttributeCollection & instance();
-
-private:
-
 
 };

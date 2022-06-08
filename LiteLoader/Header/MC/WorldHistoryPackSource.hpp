@@ -23,7 +23,6 @@ public:
     WorldHistoryPackSource() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WorldHistoryPackSource();
     /*1*/ virtual void __unk_vfn_1();
@@ -40,12 +39,10 @@ public:
     MCAPI class Core::PathBuffer<std::string> const & getPathToWorld() const;
     MCAPI static class Core::PathBuffer<std::string> generateHistoryFilePath(class Core::Path const &, enum PackType);
 
+
 //private:
     MCAPI void _addPackFromHistoryPack(class WorldPackHistory const &);
     MCAPI std::unique_ptr<class Pack> _createPackFromHistoryPack(class WorldPackHistory const &);
     MCAPI bool _readWorldHistoryFile();
-
-private:
-
 
 };

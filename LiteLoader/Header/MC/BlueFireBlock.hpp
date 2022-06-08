@@ -23,7 +23,6 @@ public:
     BlueFireBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BlueFireBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -77,6 +76,7 @@ public:
 #endif
     MCAPI BlueFireBlock(std::string const &, int);
     MCAPI static bool isValidBlueFireFuel(class BlockLegacy const &);
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     GuardianAttackDefinition(class GuardianAttackDefinition const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GuardianAttackDefinition();
     /*1*/ virtual bool validateMobType(class Mob &);
@@ -32,6 +31,7 @@ public:
     MCAPI GuardianAttackDefinition();
     MCAPI void initialize(class EntityContext &, class GuardianAttackGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GuardianAttackDefinition>> &);
+
 
 
 };

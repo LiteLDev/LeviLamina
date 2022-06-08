@@ -23,7 +23,6 @@ public:
     ClothBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ClothBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -69,6 +68,7 @@ public:
     MCVAPI bool isVibrationBlocking() const;
 #endif
     MCAPI ClothBlock(std::string const &, int);
+
 
 
 };

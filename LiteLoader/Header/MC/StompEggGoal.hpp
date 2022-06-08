@@ -23,7 +23,6 @@ public:
     StompEggGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StompEggGoal();
     /*3*/ virtual void __unk_vfn_3();
@@ -38,6 +37,7 @@ public:
 public:
 #endif
     MCAPI StompEggGoal(class Mob &, float, int, int, float, int);
+
 
 
 };

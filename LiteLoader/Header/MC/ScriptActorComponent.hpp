@@ -20,7 +20,6 @@ public:
     ScriptActorComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptActorComponent();
     /*1*/ virtual struct Scripting::Error _functionError(std::string const &) const;
@@ -37,8 +36,6 @@ public:
 //protected:
     MCAPI class Actor * _tryGetOwner() const;
     MCAPI class Mob * _tryGetOwnerAsMob() const;
-
-protected:
 
 
 };

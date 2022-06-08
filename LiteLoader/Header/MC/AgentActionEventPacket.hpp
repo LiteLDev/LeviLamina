@@ -21,7 +21,6 @@ public:
     AgentActionEventPacket(class AgentActionEventPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AgentActionEventPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,6 +32,7 @@ public:
 #endif
     MCAPI AgentActionEventPacket(std::string const &, enum AgentActionType, class Json::Value const &);
     MCAPI AgentActionEventPacket();
+
 
 
 };

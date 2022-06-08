@@ -29,7 +29,6 @@ public:
     CommandPosition(class CommandPosition const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDPOSITION
 public:
@@ -42,6 +41,7 @@ public:
     MCAPI class Vec3 getPosition(class CommandOrigin const &, class Vec3 const &) const;
     MCAPI void load(class CompoundTag const &);
     MCAPI class CompoundTag serialize() const;
+
 
 
 };

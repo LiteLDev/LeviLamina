@@ -21,13 +21,13 @@ public:
     _ProfilerLiteTimer() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL__PROFILERLITETIMER
 public:
 #endif
     MCAPI _ProfilerLiteTimer(struct ProfilerLite::ScopedData &, class std::thread::id);
     MCAPI ~_ProfilerLiteTimer();
+
 
 
 };

@@ -25,7 +25,6 @@ public:
     LevelData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDATA
 public:
@@ -155,12 +154,10 @@ public:
     MCAPI void v1_read(class RakNet::BitStream &, enum StorageVersion);
     MCAPI ~LevelData();
 
+
 //private:
     MCAPI void _determineMaxBaseGameVersion();
     MCAPI void _setGameRulesBasedOnPremiumContentIdentity();
     MCAPI void _setValue(class HashedString const &, struct LevelDataValue &&);
-
-private:
-
 
 };

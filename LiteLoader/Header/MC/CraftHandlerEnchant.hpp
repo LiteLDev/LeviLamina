@@ -23,7 +23,6 @@ public:
     CraftHandlerEnchant() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CraftHandlerEnchant();
     /*3*/ virtual void endRequestBatch();
@@ -34,11 +33,9 @@ public:
 #endif
     MCAPI CraftHandlerEnchant(class Player &, class ItemStackRequestActionCraftHandler &);
 
+
 //private:
     MCAPI class EnchantingContainerManagerModel & _getEnchantingModel() const;
     MCAPI enum ItemStackNetResult _handleEnchant(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 12> const &);
-
-private:
-
 
 };

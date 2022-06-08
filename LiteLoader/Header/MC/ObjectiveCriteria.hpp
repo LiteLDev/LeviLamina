@@ -22,7 +22,6 @@ public:
     ObjectiveCriteria() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OBJECTIVECRITERIA
 public:
@@ -32,6 +31,7 @@ public:
     MCAPI bool isReadOnly() const;
     MCAPI static std::unique_ptr<class ObjectiveCriteria> deserialize(class CompoundTag const &);
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class ObjectiveCriteria const &);
+
 
 
 };

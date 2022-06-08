@@ -22,13 +22,13 @@ public:
     LevelDbLogger() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LevelDbLogger();
     /*1*/ virtual void Logv(char const *, char *);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBLOGGER
 public:
 #endif
+
 
 
 };

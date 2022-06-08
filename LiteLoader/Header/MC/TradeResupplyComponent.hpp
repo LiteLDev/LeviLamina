@@ -21,7 +21,6 @@ public:
     TradeResupplyComponent(class TradeResupplyComponent const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADERESUPPLYCOMPONENT
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI void initFromDefinition(class Actor &);
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void reloadComponent(class Actor &);
+
 
 
 };

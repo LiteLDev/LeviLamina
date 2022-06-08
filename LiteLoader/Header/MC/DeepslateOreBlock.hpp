@@ -23,7 +23,6 @@ public:
     DeepslateOreBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DeepslateOreBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -68,6 +67,7 @@ public:
 public:
 #endif
     MCAPI DeepslateOreBlock(std::string const &, int);
+
 
 
 };

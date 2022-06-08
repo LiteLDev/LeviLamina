@@ -22,7 +22,6 @@ public:
     BlockEventListener() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTLISTENER
 public:
@@ -37,6 +36,7 @@ public:
     MCVAPI enum EventResult onEvent(struct BlockNotificationEvent const &);
     MCVAPI enum EventResult onUnknownBlockReceived(class Level &, struct NewBlockID const &, unsigned short);
 #endif
+
 
 
 };

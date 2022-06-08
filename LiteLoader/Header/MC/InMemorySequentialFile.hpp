@@ -22,7 +22,6 @@ public:
     InMemorySequentialFile() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~InMemorySequentialFile();
     /*1*/ virtual class leveldb::Status Read(unsigned __int64, class leveldb::Slice *, char *);
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI InMemorySequentialFile(class std::shared_ptr<class InMemoryFile>);
+
 
 
 };

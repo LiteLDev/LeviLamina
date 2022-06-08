@@ -23,7 +23,6 @@ public:
     ActorDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITION
 public:
@@ -36,6 +35,7 @@ public:
     MCAPI void parsePermutations(class Json::Value &, class SemVersion const &, class SemVersion const &, class ActorFactory &);
     MCAPI bool validatePermutationJson(class Json::Value &);
     MCAPI ~ActorDefinition();
+
 
 
 };

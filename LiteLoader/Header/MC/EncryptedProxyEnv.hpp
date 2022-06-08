@@ -23,7 +23,6 @@ public:
     EncryptedProxyEnv() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EncryptedProxyEnv();
     /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
@@ -35,6 +34,7 @@ public:
     MCVAPI class leveldb::Status RenameFile(std::string const &, std::string const &);
 #endif
     MCAPI EncryptedProxyEnv(class leveldb::Env *, class ContentIdentity const &, std::string const &, enum EncryptedProxyReadMode);
+
 
 
 };

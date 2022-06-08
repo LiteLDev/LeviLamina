@@ -24,7 +24,6 @@ public:
     ScaffoldingBlockItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScaffoldingBlockItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -45,6 +44,7 @@ public:
 public:
 #endif
     MCAPI ScaffoldingBlockItem(std::string const &, int);
+
 
 
 };

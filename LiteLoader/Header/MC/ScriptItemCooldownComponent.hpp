@@ -19,7 +19,6 @@ public:
     ScriptItemCooldownComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptItemCooldownComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMCOOLDOWNCOMPONENT
@@ -33,6 +32,7 @@ public:
     MCAPI class Scripting::Result<void> startCooldown(class ScriptPlayer &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptItemCooldownComponent> bind(struct Scripting::Version);
     MCAPI static std::string const & getTypeName();
+
 
 
 };

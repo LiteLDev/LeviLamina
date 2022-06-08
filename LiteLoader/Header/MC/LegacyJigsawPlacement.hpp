@@ -22,7 +22,6 @@ public:
     LegacyJigsawPlacement() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYJIGSAWPLACEMENT
 public:
@@ -31,12 +30,10 @@ public:
     MCAPI void addPieces(std::vector<std::unique_ptr<class StructurePiece>> &, class StructurePoolElement const &, class Random &, class BlockPos const &, enum Rotation const &, class JigsawStructureRegistry const &, class Dimension &);
     MCAPI ~LegacyJigsawPlacement();
 
+
 //private:
     MCAPI void _addPiece(std::vector<std::unique_ptr<class StructurePiece>> &, class PoolElementStructurePiece const &, class Random &, class BlockPos const &, enum Rotation const &, class JigsawStructureRegistry const &, class Dimension &, class BlockVolume &, class BlockPos const &);
     MCAPI bool _tryPlacingPiece(std::vector<std::unique_ptr<class StructurePiece>> &, class PoolElementStructurePiece const &, class Random &, class JigsawBlockInfo const &, class BoundingBox const &, std::vector<class BoundingBox> &, class BlockPos const &, class StructureTemplatePool const *, class JigsawStructureRegistry const &, class Dimension &, class BlockVolume &, class BlockPos const &);
     MCAPI static class std::shared_ptr<bool> _setTerrainAdjustment(enum AdjustmentEffect, class BoundingBox const &, struct JigsawJunction const &, class Dimension &);
-
-private:
-
 
 };

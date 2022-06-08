@@ -21,7 +21,6 @@ public:
     AreaAttackComponent(class AreaAttackComponent const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AREAATTACKCOMPONENT
 public:
@@ -29,6 +28,7 @@ public:
     MCAPI AreaAttackComponent();
     MCAPI class AreaAttackComponent & operator=(class AreaAttackComponent &&);
     MCAPI ~AreaAttackComponent();
+
 
 
 };

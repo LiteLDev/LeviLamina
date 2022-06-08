@@ -22,7 +22,6 @@ public:
     FindMountGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FindMountGoal();
     /*1*/ virtual bool canUse();
@@ -37,6 +36,7 @@ public:
 #endif
     MCAPI FindMountGoal(class Mob &, float, int, bool, bool, float, int);
     MCAPI bool isInMountRange();
+
 
 
 };

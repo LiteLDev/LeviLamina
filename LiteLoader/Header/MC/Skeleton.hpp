@@ -24,7 +24,6 @@ public:
     Skeleton() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~Skeleton();
     /*40*/ virtual void __unk_vfn_40();
@@ -66,7 +65,9 @@ public:
 #endif
     MCAPI Skeleton(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void setWitherParent(class WitherBoss *);
-    MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACK_UUID;
 
+
+//private:
+    MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACK_UUID;
 
 };

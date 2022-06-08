@@ -31,7 +31,6 @@ public:
     Int64Tag(class Int64Tag const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~Int64Tag();
     /*2*/ virtual void write(class IDataOutput &) const;
@@ -46,6 +45,7 @@ public:
 #endif
     MCAPI Int64Tag();
     MCAPI Int64Tag(__int64);
+
 
 
 };

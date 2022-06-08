@@ -20,13 +20,13 @@ public:
     ScriptBlockAreaSize() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKAREASIZE
 public:
 #endif
     MCAPI bool operator==(class ScriptBlockAreaSize const &) const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockAreaSize> bind(struct Scripting::Version);
+
 
 
 };

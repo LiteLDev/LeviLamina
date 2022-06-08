@@ -22,7 +22,6 @@ public:
     ScriptCustomEventPacket(class ScriptCustomEventPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptCustomEventPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI ScriptCustomEventPacket();
+
 
 
 };

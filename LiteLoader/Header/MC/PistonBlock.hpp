@@ -23,7 +23,6 @@ public:
     PistonBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PistonBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -81,7 +80,9 @@ public:
     MCVAPI bool pushesUpFallingBlocks() const;
 #endif
     MCAPI PistonBlock(std::string const &, int, enum PistonBlock::Type);
-    MCAPI static class BlockPos const ARM_DIRECTION_OFFSETS[];
 
+
+//private:
+    MCAPI static class BlockPos const ARM_DIRECTION_OFFSETS[];
 
 };

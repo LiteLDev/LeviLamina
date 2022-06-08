@@ -24,7 +24,6 @@ public:
     Axolotl() = delete;
 #endif
 
-
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Axolotl();
@@ -58,6 +57,7 @@ public:
 public:
 #endif
     MCAPI Axolotl(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

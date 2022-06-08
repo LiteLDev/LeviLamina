@@ -20,7 +20,6 @@ public:
     DurabilityItemComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DurabilityItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -39,6 +38,7 @@ public:
     MCAPI void setMaxDamage(int);
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
+
 
 
 };

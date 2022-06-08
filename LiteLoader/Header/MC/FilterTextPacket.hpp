@@ -22,7 +22,6 @@ public:
     FilterTextPacket(class FilterTextPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FilterTextPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI FilterTextPacket(std::string const &, bool);
     MCAPI FilterTextPacket();
+
 
 
 };

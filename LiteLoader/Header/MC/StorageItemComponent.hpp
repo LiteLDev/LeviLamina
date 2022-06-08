@@ -20,7 +20,6 @@ public:
     StorageItemComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STORAGEITEMCOMPONENT
 public:
@@ -32,8 +31,10 @@ public:
     MCAPI class ItemStack tryRemoveItemStack(class ItemStack &) const;
     MCAPI class ItemStack tryRemoveOneFromItemStack(class ItemStack &) const;
     MCAPI bool use(class ItemStack &, class Player &) const;
+    MCAPI static unsigned int const DEFAULT_MAX_CARRY_WEIGHT;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
+
 
 //private:
     MCAPI unsigned int _calculateAddableCountForBasicStorage(class ItemStack const &, class ItemStackBase const &) const;
@@ -42,9 +43,5 @@ public:
     MCAPI unsigned int _getPerItemCost(class ItemStack const &, class ItemStackBase const &) const;
     MCAPI void _storeItemInNewOrExistingSlot(class ItemStack &, class ItemStack &, unsigned int) const;
     MCAPI void _updateRemainingWeight(class ItemStack &, class ItemStack const &, int) const;
-
-private:
-    MCAPI static unsigned int const DEFAULT_MAX_CARRY_WEIGHT;
-
 
 };

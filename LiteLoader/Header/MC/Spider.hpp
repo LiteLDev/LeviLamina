@@ -26,7 +26,6 @@ public:
     Spider() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~Spider();
     /*40*/ virtual void __unk_vfn_40();
@@ -68,6 +67,7 @@ public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Spider(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

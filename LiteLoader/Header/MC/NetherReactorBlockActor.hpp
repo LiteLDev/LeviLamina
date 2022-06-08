@@ -23,7 +23,6 @@ public:
     NetherReactorBlockActor() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NetherReactorBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -39,6 +38,7 @@ public:
 public:
 #endif
     MCAPI NetherReactorBlockActor(class BlockPos const &);
+
 
 
 };

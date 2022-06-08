@@ -24,7 +24,6 @@ public:
     RangedWeaponItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RangedWeaponItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -51,6 +50,7 @@ public:
 #endif
     MCAPI RangedWeaponItem(std::string const &, int);
     MCAPI float getLaunchPower(int, int, int) const;
+
 
 
 };

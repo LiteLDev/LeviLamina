@@ -33,7 +33,6 @@ public:
     DBStorage() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DBStorage();
     /*1*/ virtual void addStorageObserver(std::unique_ptr<class LevelStorageObserver>);
@@ -90,10 +89,5 @@ public:
     MCAPI void _markAsCorrupted(class gsl::basic_string_span<char const, -1>) const;
     MCAPI void _scheduleNextAutoCompaction();
     MCAPI bool _suspendAndPerformSaveAction(class std::function<class TaskResult (void)>, class std::function<void (void)>);
-
-protected:
-
-private:
-
 
 };

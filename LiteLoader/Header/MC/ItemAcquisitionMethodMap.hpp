@@ -22,12 +22,13 @@ public:
     ItemAcquisitionMethodMap() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMACQUISITIONMETHODMAP
 public:
 #endif
-    MCAPI static class BidirectionalUnorderedMap<enum ItemAcquisitionMethod, std::string> const mMap;
 
+
+//private:
+    MCAPI static class BidirectionalUnorderedMap<enum ItemAcquisitionMethod, std::string> const mMap;
 
 };

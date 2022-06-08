@@ -22,7 +22,6 @@ public:
     AgentCommandSystem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AgentCommandSystem();
     /*1*/ virtual void __unk_vfn_1();
@@ -34,6 +33,7 @@ public:
     MCAPI static void initialize(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct AgentComponents::InitializingFlag>, class FlagComponent<struct AgentComponents::LegacyCommandFlag>> &);
     MCAPI static void tickAgentCooldown(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentComponents::CommandCooldown, class AgentComponents::ActionQueue> &);
     MCAPI static void tickLegacy(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentCommandComponent, class FlagComponent<struct AgentComponents::ExecutingFlag>, class FlagComponent<struct AgentComponents::LegacyCommandFlag>> &);
+
 
 
 };

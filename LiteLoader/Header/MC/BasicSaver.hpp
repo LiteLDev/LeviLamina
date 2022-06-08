@@ -22,11 +22,11 @@ public:
     BasicSaver() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASICSAVER
 public:
 #endif
+
 
 
 };

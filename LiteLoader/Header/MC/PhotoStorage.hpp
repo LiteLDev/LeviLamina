@@ -23,22 +23,19 @@ public:
     PhotoStorage() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PHOTOSTORAGE
 public:
 #endif
     MCAPI PhotoStorage(class Core::Path const &);
     MCAPI ~PhotoStorage();
-
-//private:
-    MCAPI void _readManifest();
-
-private:
     MCAPI static std::string const BOOKS_DIR;
     MCAPI static std::string const MANIFEST_NAME;
     MCAPI static std::string const PHOTOITEM_DIR;
     MCAPI static std::string const PHOTO_DIR;
 
+
+//private:
+    MCAPI void _readManifest();
 
 };

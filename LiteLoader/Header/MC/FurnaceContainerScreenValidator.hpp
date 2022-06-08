@@ -22,7 +22,6 @@ public:
     FurnaceContainerScreenValidator(class FurnaceContainerScreenValidator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FurnaceContainerScreenValidator();
     /*1*/ virtual class std::shared_ptr<class ContainerValidationCommitObject> postCommitItemRemoved(enum ContainerEnumName, int, class ItemStack const &);
@@ -30,6 +29,7 @@ public:
 public:
 #endif
     MCAPI FurnaceContainerScreenValidator();
+
 
 
 };

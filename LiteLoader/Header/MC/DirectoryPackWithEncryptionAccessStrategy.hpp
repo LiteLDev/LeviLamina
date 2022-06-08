@@ -24,7 +24,6 @@ public:
     DirectoryPackWithEncryptionAccessStrategy() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DirectoryPackWithEncryptionAccessStrategy();
     /*1*/ virtual unsigned __int64 getPackSize() const;
@@ -50,11 +49,9 @@ public:
 #endif
     MCAPI DirectoryPackWithEncryptionAccessStrategy(class ResourceLocation const &, class ResourceLocation const &, class IContentKeyProvider const &);
 
+
 //private:
     MCAPI bool _getUnencryptedAsset(class Core::Path const &, std::string &) const;
     MCAPI bool _hasUnencryptedAsset(class Core::Path const &) const;
-
-private:
-
 
 };

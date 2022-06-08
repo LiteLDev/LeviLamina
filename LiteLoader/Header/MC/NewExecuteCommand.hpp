@@ -21,7 +21,6 @@ public:
     NewExecuteCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NewExecuteCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -30,10 +29,8 @@ public:
 #endif
     MCAPI static void setup(class CommandRegistry &, int);
 
+
 //private:
     MCAPI bool _detectConditionSubcommand(class CommandOrigin const &, class CommandOutput &) const;
-
-private:
-
 
 };

@@ -4,6 +4,7 @@
 #include <string>
 #include "../Tools/Demangler/include/MicrosoftDemangle.h"
 
+
 namespace FakeSymbol
 {
 
@@ -64,63 +65,38 @@ inline static std::optional<std::string> getFakeSymbol(const std::string& fn)
     if (SIK != SpecialIntrinsicKind::None)
         return std::nullopt;
 
-    SymbolNode* DemangledName = Demangler.demangleDeclarator(Name);
-    if (DemangledName == nullptr || (DemangledName->kind() != NodeKind::FunctionSymbol && DemangledName->kind() != NodeKind::VariableSymbol) || Demangler.Error)
+    FunctionSymbolNode* DemangledName = (FunctionSymbolNode*)Demangler.demangleDeclarator(Name);
+    if (DemangledName == nullptr || DemangledName->kind() != NodeKind::FunctionSymbol || Demangler.Error)
         return std::nullopt;
 
-	if (DemangledName->kind() == NodeKind::FunctionSymbol)
+    auto& FunctionClass = DemangledName->Signature->FunctionClass;
+    bool modified = false;
+    size_t originalSize = FunctionClass.toString().size();
+    if (FunctionClass.has(FC_Virtual))
     {
-        auto& FunctionClass = ((FunctionSymbolNode*)DemangledName)->Signature->FunctionClass;
-        bool modified = false;
-        size_t originalSize = FunctionClass.toString().size();
-        if (FunctionClass.has(FC_Virtual))
-        {
-            FunctionClass.remove(FC_Virtual);
-            modified = true;
-        }
-        if (FunctionClass.has(FC_Protected))
-        {
-            FunctionClass.remove(FC_Protected);
-            FunctionClass.add(FC_Public);
-            modified = true;
-        }
-        if (FunctionClass.has(FC_Private))
-        {
-            FunctionClass.remove(FC_Private);
-            FunctionClass.add(FC_Public);
-            modified = true;
-        }
-        if (modified)
-        {
-            std::string FakeSymbol = fn;
-            std::string FakeFunctionClass = FunctionClass.toString();
-            size_t BeginPos = fn.size() - FunctionClass.pos->size();
-            FakeSymbol.erase(BeginPos, originalSize);
-            FakeSymbol.insert(BeginPos, FakeFunctionClass);
-            return FakeSymbol;
-        }
+        FunctionClass.remove(FC_Virtual);
+        modified = true;
     }
-
-    if (DemangledName->kind() == NodeKind::VariableSymbol) {
-        auto& StorageClass = ((VariableSymbolNode*)DemangledName)->SC;
-        bool modified = false;
-        if (StorageClass == StorageClass::PrivateStatic)
-        {
-            StorageClass.set(StorageClass::PublicStatic);
-            modified = true;
-        }
-        if (StorageClass == StorageClass::ProtectedStatic)
-        {
-			StorageClass.set(StorageClass::PublicStatic);
-            modified = true;
-        }
-        if (modified) {
-			std::string FakeSymbol = fn;
-            char FakeStorageClass = StorageClass.toChar();
-			size_t BeginPos = fn.size() - StorageClass.pos->size();
-            FakeSymbol[BeginPos] = FakeStorageClass;
-			return FakeSymbol;
-        }
+    if (FunctionClass.has(FC_Protected))
+    {
+        FunctionClass.remove(FC_Protected);
+        FunctionClass.add(FC_Public);
+        modified = true;
+    }
+    if (FunctionClass.has(FC_Private))
+    {
+        FunctionClass.remove(FC_Private);
+        FunctionClass.add(FC_Public);
+        modified = true;
+    }
+    if (modified)
+    {
+        std::string FakeSymbol = fn;
+        std::string FakeFunctionClass = FunctionClass.toString();
+        size_t BeginPos = fn.size() - FunctionClass.backup->size();
+        FakeSymbol.erase(BeginPos, originalSize);
+        FakeSymbol.insert(BeginPos, FakeFunctionClass);
+        return FakeSymbol;
     }
 
     return std::nullopt;

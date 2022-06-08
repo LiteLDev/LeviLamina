@@ -23,7 +23,6 @@ public:
     InfestedBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~InfestedBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -67,6 +66,7 @@ public:
 #endif
     MCAPI InfestedBlock(std::string const &, int, class Material const &);
     MCAPI static void spawnSilverfish(class BlockSource &, class BlockPos const &);
+
 
 
 };

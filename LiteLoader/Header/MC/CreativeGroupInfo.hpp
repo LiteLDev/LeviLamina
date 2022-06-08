@@ -21,7 +21,6 @@ public:
     CreativeGroupInfo() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATIVEGROUPINFO
 public:
@@ -32,6 +31,7 @@ public:
     MCAPI class ItemInstance const getIcon() const;
     MCAPI unsigned int getIndex() const;
     MCAPI std::string const getName() const;
+
 
 
 };

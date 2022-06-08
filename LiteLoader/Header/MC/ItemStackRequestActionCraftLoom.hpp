@@ -21,7 +21,6 @@ public:
     ItemStackRequestActionCraftLoom(class ItemStackRequestActionCraftLoom const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ItemStackRequestActionCraftLoom();
     /*1*/ virtual void __unk_vfn_1();
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI ItemStackRequestActionCraftLoom();
     MCAPI std::string const & getPatternNameId() const;
+
 
 
 };

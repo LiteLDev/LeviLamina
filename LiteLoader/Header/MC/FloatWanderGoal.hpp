@@ -22,7 +22,6 @@ public:
     FloatWanderGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FloatWanderGoal();
     /*1*/ virtual bool canUse();
@@ -37,10 +36,8 @@ public:
 #endif
     MCAPI FloatWanderGoal(class Mob &, float, float, float, bool, bool, struct FloatRange);
 
+
 //private:
     MCAPI bool _canReach(class Vec3 const &, float);
-
-private:
-
 
 };

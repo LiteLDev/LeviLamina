@@ -22,7 +22,6 @@ public:
     PackAccessStrategyFactory() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKACCESSSTRATEGYFACTORY
 public:
@@ -32,6 +31,7 @@ public:
     MCAPI static std::unique_ptr<class PackAccessStrategy> createForEncrypted(class ResourceLocation const &, class ContentIdentity const &, class IContentKeyProvider const &, bool);
     MCAPI static std::unique_ptr<class PackAccessStrategy> createForEncryptedZip(class ResourceLocation const &, class IContentKeyProvider const &);
     MCAPI static std::unique_ptr<class PackAccessStrategy> createForZip(class ResourceLocation const &, bool);
+
 
 
 };

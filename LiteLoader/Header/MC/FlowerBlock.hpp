@@ -23,7 +23,6 @@ public:
     FlowerBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FlowerBlock();
     /*8*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
@@ -80,10 +79,8 @@ public:
 #endif
     MCAPI FlowerBlock(std::string const &, int, enum FlowerBlock::Type, class Material const &);
 
+
 //private:
     MCAPI bool _fertilizable(class BlockSource &, class BlockPos const &) const;
-
-private:
-
 
 };

@@ -29,7 +29,6 @@ public:
     BlockDefinitionGroup(class BlockDefinitionGroup const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDEFINITIONGROUP
 public:
@@ -48,6 +47,7 @@ public:
     MCAPI void registerBlocks();
     MCAPI ~BlockDefinitionGroup();
 
+
 //private:
     MCAPI void _buildBlockComponentsSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &);
     MCAPI void _buildBlockDescriptionSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockDescription>> &);
@@ -55,8 +55,5 @@ public:
     MCAPI bool _loadComponents(class Json::Value const &, struct BlockDefinition &, class Experiments const &);
     MCAPI bool _loadEvents(class Json::Value const &, struct BlockDefinition &);
     MCAPI bool _parseComponents(class Json::Value const &, struct BlockComponentGroupDescription &, std::string const &, class SemVersion const &, class Experiments const &);
-
-private:
-
 
 };

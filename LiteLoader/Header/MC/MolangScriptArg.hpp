@@ -33,12 +33,5 @@ public:
 protected:
 
 private:
-    MCAPI static struct MolangScriptArg const mDefaultReturnValue_break;
-    MCAPI static struct MolangScriptArg const mDefaultReturnValue_emptyStringHash;
-    MCAPI static struct MolangScriptArg const mDefaultReturnValue_float0;
-    MCAPI static struct MolangScriptArg const mDefaultReturnValue_float1;
-    MCAPI static struct MolangScriptArg const mDefaultReturnValue_floatNeg1;
-    MCAPI static struct MolangScriptArg const mDefaultReturnValue_molangActorIdEmptyArrayPtr;
-    MCAPI static struct MolangScriptArg const mDefaultReturnValue_structUV0;
 
 };

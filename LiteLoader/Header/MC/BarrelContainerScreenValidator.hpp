@@ -22,13 +22,13 @@ public:
     BarrelContainerScreenValidator(class BarrelContainerScreenValidator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BarrelContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARRELCONTAINERSCREENVALIDATOR
 public:
 #endif
     MCAPI BarrelContainerScreenValidator();
+
 
 
 };

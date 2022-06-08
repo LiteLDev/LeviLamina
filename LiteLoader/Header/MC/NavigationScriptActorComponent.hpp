@@ -24,7 +24,6 @@ public:
     NavigationScriptActorComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NavigationScriptActorComponent();
     /*4*/ virtual class Scripting::Result<bool> getIsAmphibious() const;
@@ -50,6 +49,7 @@ public:
 public:
 #endif
     MCAPI NavigationScriptActorComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &, struct Description *ActorDefinitionDescriptor::*);
+
 
 
 };

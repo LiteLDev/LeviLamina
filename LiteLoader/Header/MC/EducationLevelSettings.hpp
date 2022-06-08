@@ -26,6 +26,5 @@ public:
 protected:
 
 private:
-    MCAPI static std::string const DEFAULT_BORDER_PATH;
 
 };

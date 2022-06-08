@@ -22,7 +22,6 @@ public:
     ItemStackRequestActionCraftBase() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTBASE
 public:
@@ -30,6 +29,7 @@ public:
     MCVAPI void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette &, bool);
     MCVAPI ~ItemStackRequestActionCraftBase();
 #endif
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     ScriptItemStack() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMSTACK
 public:
@@ -43,6 +42,7 @@ public:
     MCAPI void setNameTag(class std::optional<std::string>);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptItemStack> bind(struct Scripting::Version, class Level *);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptItemStack> createHandle(class Scripting::WeakLifetimeScope, class ItemStackBase const &);
+
 
 
 };

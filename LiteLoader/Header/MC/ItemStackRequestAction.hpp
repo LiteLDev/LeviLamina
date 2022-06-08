@@ -26,7 +26,6 @@ public:
     ItemStackRequestAction() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ItemStackRequestAction();
     /*1*/ virtual class ItemStackRequestActionCraftBase const * getCraftAction() const;
@@ -38,9 +37,11 @@ public:
     MCAPI ItemStackRequestAction(enum ItemStackRequestActionType);
     MCAPI enum ItemStackRequestActionType getActionType() const;
     MCAPI void write(class BinaryStream &) const;
-    MCAPI static class BidirectionalUnorderedMap<enum ItemStackRequestActionType, std::string> const actionTypeMap;
     MCAPI static std::string const getActionTypeName(enum ItemStackRequestActionType);
     MCAPI static std::unique_ptr<class ItemStackRequestAction> read(class ReadOnlyBinaryStream &);
 
+
+//private:
+    MCAPI static class BidirectionalUnorderedMap<enum ItemStackRequestActionType, std::string> const actionTypeMap;
 
 };

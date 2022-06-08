@@ -20,7 +20,6 @@ public:
     AmbientSoundServerSystem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AmbientSoundServerSystem();
     /*1*/ virtual void __unk_vfn_1();
@@ -29,10 +28,8 @@ public:
 public:
 #endif
 
+
 //private:
     MCAPI static void _tickAmbientSoundComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class AmbientSoundServerComponent> &);
-
-private:
-
 
 };

@@ -31,7 +31,6 @@ public:
     IntTag(class IntTag const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~IntTag();
     /*2*/ virtual void write(class IDataOutput &) const;
@@ -46,6 +45,7 @@ public:
 #endif
     MCAPI IntTag(int);
     MCAPI IntTag();
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     NBCastleCorridorStairsPiece() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NBCastleCorridorStairsPiece();
     /*1*/ virtual void moveBoundingBox(int, int, int);
@@ -41,6 +40,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBCASTLECORRIDORSTAIRSPIECE
 public:
 #endif
+
 
 
 };

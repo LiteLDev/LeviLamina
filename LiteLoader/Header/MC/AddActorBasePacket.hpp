@@ -20,12 +20,12 @@ public:
     AddActorBasePacket() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDACTORBASEPACKET
 public:
     MCVAPI ~AddActorBasePacket();
 #endif
+
 
 
 };

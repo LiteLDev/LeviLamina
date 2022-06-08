@@ -22,7 +22,6 @@ public:
     JigsawPlacement() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWPLACEMENT
 public:
@@ -31,12 +30,10 @@ public:
     MCAPI void addPieces(class StructurePoolElement const &, class BlockPos const &, enum Rotation const &);
     MCAPI ~JigsawPlacement();
 
+
 //private:
     MCAPI void _addPiece(class PoolElementStructurePiece const &, class BlockPos const &, enum Rotation const &, class BlockPos const &, unsigned __int64);
     MCAPI class std::shared_ptr<bool> _setTerrainAdjustment(enum AdjustmentEffect, class BoundingBox const &, struct JigsawJunction const &) const;
     MCAPI bool _tryPlacingPiece(class PoolElementStructurePiece const &, class BoundingBox const &, class JigsawBlockInfo const &, class BlockPos const &, class StructureTemplatePool const *, class BlockPos const &, unsigned __int64);
-
-private:
-
 
 };

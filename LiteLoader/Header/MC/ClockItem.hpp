@@ -24,7 +24,6 @@ public:
     ClockItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ClockItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -46,6 +45,7 @@ public:
 public:
 #endif
     MCAPI ClockItem(std::string const &, int);
+
 
 
 };

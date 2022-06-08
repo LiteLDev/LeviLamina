@@ -25,7 +25,6 @@ public:
     ZipPackAccessStrategy() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ZipPackAccessStrategy();
     /*1*/ virtual unsigned __int64 getPackSize() const;
@@ -50,10 +49,8 @@ public:
 #endif
     MCAPI ZipPackAccessStrategy(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const &, class ResourceLocation const &, class Core::Path const &);
 
+
 //private:
     MCAPI bool _tryReadFromPendingQueue(class Core::Path const &, std::string &) const;
-
-private:
-
 
 };

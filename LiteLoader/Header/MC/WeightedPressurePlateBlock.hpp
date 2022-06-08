@@ -23,7 +23,6 @@ public:
     WeightedPressurePlateBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WeightedPressurePlateBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -68,12 +67,9 @@ public:
 public:
 #endif
     MCAPI WeightedPressurePlateBlock(std::string const &, int, class Material const &, int);
-
-//private:
-
-private:
     MCAPI static int const MAX_WEIGHT_HEAVY;
     MCAPI static int const MAX_WEIGHT_LIGHT;
+
 
 
 };

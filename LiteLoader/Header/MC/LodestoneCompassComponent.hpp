@@ -22,7 +22,6 @@ public:
     LodestoneCompassComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LODESTONECOMPASSCOMPONENT
 public:
@@ -34,13 +33,11 @@ public:
     MCAPI void setTrackOnlyInSameDimension(class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> const &, bool);
     MCAPI ~LodestoneCompassComponent();
     MCAPI static int getSpinningAnimationFrame();
-    MCAPI static class CompassSpriteCalculator mSpinningLodestone;
     MCAPI static class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> makeCalculatorId(struct ActorUniqueID const &);
+
 
 //private:
     MCAPI class LodestoneCompassComponentCalculator * _findCalculator(class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> const &, bool);
-
-private:
-
+    MCAPI static class CompassSpriteCalculator mSpinningLodestone;
 
 };

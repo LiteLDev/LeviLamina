@@ -22,7 +22,6 @@ public:
     SquidIdleGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SquidIdleGoal();
     /*1*/ virtual bool canUse();
@@ -35,6 +34,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUIDIDLEGOAL
 public:
 #endif
+
 
 
 };

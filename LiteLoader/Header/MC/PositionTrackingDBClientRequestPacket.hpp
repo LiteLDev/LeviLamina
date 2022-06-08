@@ -22,7 +22,6 @@ public:
     PositionTrackingDBClientRequestPacket(class PositionTrackingDBClientRequestPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PositionTrackingDBClientRequestPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI PositionTrackingDBClientRequestPacket();
+
 
 
 };

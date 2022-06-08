@@ -22,13 +22,13 @@ public:
     BlockPlacementCondition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPLACEMENTCONDITION
 public:
 #endif
     MCAPI void _addBlockDescriptor(class BlockDescriptor const &);
     MCAPI ~BlockPlacementCondition();
+
 
 
 };

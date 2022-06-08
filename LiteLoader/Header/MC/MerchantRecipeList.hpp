@@ -35,7 +35,6 @@ public:
     MerchantRecipeList(class MerchantRecipeList const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MerchantRecipeList();
     /*1*/ virtual class MerchantRecipe * getRecipeFor(class ItemInstance const &, class ItemInstance const &, int);
@@ -52,6 +51,7 @@ public:
     MCAPI class MerchantRecipe const * getRecipeByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &) const;
     MCAPI class std::optional<unsigned __int64> getRecipeIndexByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &) const;
     MCAPI bool isRequiredItem(class ItemInstance const &, class ItemInstance const &);
+
 
 
 };

@@ -27,7 +27,6 @@ public:
     ItemActor() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~ItemActor();
@@ -69,16 +68,14 @@ public:
 #endif
     MCAPI ItemActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void setSourceEntity(class Actor const *);
-    MCAPI static int const LIFETIME;
     MCAPI static class ItemActor * tryGetFromEntity(class EntityContext &, bool);
+
 
 //private:
     MCAPI void _addComponents();
     MCAPI void _dropContents();
     MCAPI bool _merge(class ItemActor *);
     MCAPI void _validateItem();
-
-private:
-
+    MCAPI static int const LIFETIME;
 
 };

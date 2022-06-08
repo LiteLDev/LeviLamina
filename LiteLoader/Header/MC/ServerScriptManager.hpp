@@ -21,7 +21,6 @@ public:
     ServerScriptManager() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ServerScriptManager();
     /*1*/ virtual enum EventResult onServerLevelInitialized(class ServerInstance &, class Level &);
@@ -40,11 +39,9 @@ public:
     MCAPI ServerScriptManager(class std::optional<struct ScriptSettings> &&, class Bedrock::NonOwnerPointer<class Scheduler>);
     MCAPI void onMainThreadStartLeaveGame();
 
+
 //private:
     MCAPI void _registerEventHandlers(class Level &) const;
     MCAPI void _unregisterEventHandlers(class Level &) const;
-
-private:
-
 
 };

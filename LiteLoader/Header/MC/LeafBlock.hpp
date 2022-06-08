@@ -23,7 +23,6 @@ public:
     LeafBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LeafBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -84,8 +83,6 @@ public:
 //protected:
     MCAPI class Block const & getSapling() const;
     MCAPI static bool _isTransparent(class Block const &, enum BlockProperty const &);
-
-protected:
 
 
 };

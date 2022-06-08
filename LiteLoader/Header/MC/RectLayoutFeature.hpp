@@ -28,7 +28,6 @@ public:
     RectLayoutFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RectLayoutFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
@@ -36,10 +35,8 @@ public:
 public:
 #endif
 
+
 //private:
     MCAPI class std::optional<struct RectLayoutFeature::FeatureArea> _tryPlaceFeature(class Vec2 const &, int, class std::array<class std::array<unsigned char, 16>, 16> const &) const;
-
-private:
-
 
 };

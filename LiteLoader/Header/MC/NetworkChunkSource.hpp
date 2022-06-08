@@ -23,7 +23,6 @@ public:
     NetworkChunkSource() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NetworkChunkSource();
     /*3*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
@@ -37,6 +36,7 @@ public:
 public:
 #endif
     MCAPI NetworkChunkSource(class Dimension &);
+
 
 
 };

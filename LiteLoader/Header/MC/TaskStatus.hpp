@@ -22,7 +22,6 @@ public:
     TaskStatus(class TaskStatus const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKSTATUS
 public:
@@ -32,6 +31,7 @@ public:
     MCAPI operator enum TaskStatus::Value() const;
     MCAPI enum Bedrock::Threading::AsyncStatus toAsyncStatus() const;
     MCAPI class std::error_code toErrorCode() const;
+
 
 
 };

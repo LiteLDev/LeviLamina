@@ -22,7 +22,6 @@ public:
     TargetWhenPushedGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TargetWhenPushedGoal();
     /*1*/ virtual bool canUse();
@@ -37,6 +36,7 @@ public:
     MCVAPI bool canContinueToUse();
 #endif
     MCAPI TargetWhenPushedGoal(class Mob &, std::vector<struct MobDescriptor>, float);
+
 
 
 };

@@ -22,13 +22,14 @@ public:
     ItemUseMethodMap() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMUSEMETHODMAP
 public:
 #endif
     MCAPI static std::string const & getItemUseMethodName(enum ItemUseMethod);
-    MCAPI static class BidirectionalUnorderedMap<enum ItemUseMethod, std::string> const mMap;
 
+
+//private:
+    MCAPI static class BidirectionalUnorderedMap<enum ItemUseMethod, std::string> const mMap;
 
 };

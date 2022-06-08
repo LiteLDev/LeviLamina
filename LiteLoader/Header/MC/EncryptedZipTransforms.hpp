@@ -22,7 +22,6 @@ public:
     EncryptedZipTransforms() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EncryptedZipTransforms();
     /*1*/ virtual bool readTransform(std::vector<unsigned char> &) const;
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI EncryptedZipTransforms(class IContentKeyProvider const &);
+
 
 
 };

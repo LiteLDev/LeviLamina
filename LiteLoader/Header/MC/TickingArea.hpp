@@ -22,7 +22,6 @@ public:
     TickingArea() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TickingArea();
     /*1*/ virtual class mce::UUID const & getId() const;
@@ -61,11 +60,9 @@ public:
     MCAPI TickingArea(class Dimension &, class mce::UUID, struct Bounds const &, struct ActorUniqueID, float);
     MCAPI TickingArea(class Dimension &, class mce::UUID, std::string const &, struct Bounds const &, bool, enum TickingAreaLoadMode);
 
+
 //private:
     MCAPI TickingArea(class Dimension &, class mce::UUID, std::string const &, struct ActorUniqueID, struct Bounds const &, bool, float, bool, enum TickingAreaLoadMode);
     MCAPI void _save(class LevelStorage &);
-
-private:
-
 
 };

@@ -22,7 +22,6 @@ public:
     BreakDoorGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BreakDoorGoal();
     /*1*/ virtual bool canUse();
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI BreakDoorGoal(class Mob &);
+
 
 
 };

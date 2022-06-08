@@ -22,7 +22,6 @@ public:
     ReplayStateComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPLAYSTATECOMPONENT
 public:
@@ -34,6 +33,7 @@ public:
     MCAPI struct MovementCorrection shouldSendCorrectionToClient(struct IActorMovementProxy &, class PlayerAuthInputPacket const &) const;
     MCAPI void tick(struct IActorMovementProxy *, unsigned __int64);
     MCAPI ~ReplayStateComponent();
+
 
 
 };

@@ -22,13 +22,13 @@ public:
     ExternalRecipeStore() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXTERNALRECIPESTORE
 public:
 #endif
     MCAPI void registerBlockReduction(class ItemStack const &, std::vector<class ItemStack> &&);
     MCAPI void setBlockReducer(class BlockReducer *);
+
 
 
 };

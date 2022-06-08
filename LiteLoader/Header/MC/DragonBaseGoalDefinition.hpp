@@ -21,7 +21,6 @@ public:
     DragonBaseGoalDefinition(class DragonBaseGoalDefinition const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DragonBaseGoalDefinition();
     /*1*/ virtual bool validateMobType(class Mob &);
@@ -30,6 +29,7 @@ public:
 #endif
     MCAPI DragonBaseGoalDefinition();
     MCAPI void initialize(class EntityContext &, class DragonBaseGoal &);
+
 
 
 };

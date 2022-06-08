@@ -23,7 +23,6 @@ public:
     EncryptedNetworkPeer() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EncryptedNetworkPeer();
     /*1*/ virtual void sendPacket(std::string const &, enum NetworkPeer::Reliability, int, unsigned short, enum Compressibility);
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI EncryptedNetworkPeer(class std::shared_ptr<class NetworkPeer>);
     MCAPI void enableEncryption(std::string const &);
+
 
 
 };

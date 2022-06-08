@@ -23,7 +23,6 @@ public:
     PackDiscoveryError() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PackDiscoveryError();
     /*2*/ virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string>>> const & getLocErrorMessageMap() const;
@@ -32,6 +31,7 @@ public:
 public:
 #endif
     MCAPI PackDiscoveryError(enum PackParseErrorType, std::vector<std::string> const &);
+
 
 
 };

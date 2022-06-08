@@ -19,13 +19,13 @@ public:
     SyncedPlayerMovementSettings(class SyncedPlayerMovementSettings const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYNCEDPLAYERMOVEMENTSETTINGS
 public:
 #endif
     MCAPI SyncedPlayerMovementSettings(struct PlayerMovementSettings const &);
     MCAPI SyncedPlayerMovementSettings();
+
 
 
 };

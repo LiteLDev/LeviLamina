@@ -22,7 +22,6 @@ public:
     MeleeAttackGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MeleeAttackGoal();
     /*1*/ virtual bool canUse();
@@ -45,8 +44,6 @@ public:
     MCAPI void _attemptMoveToTargetPosition(class Actor &, float);
     MCAPI float _getAttackReachSqr(class Actor const &) const;
     MCAPI bool _inSunlight(class Actor const &) const;
-
-protected:
     MCAPI static class BaseGameVersion const min3DAttackVersion;
 
 

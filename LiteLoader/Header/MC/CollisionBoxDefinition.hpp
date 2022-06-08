@@ -30,6 +30,5 @@ public:
 protected:
 
 private:
-    MCAPI static float const mBoxEpsilon;
 
 };

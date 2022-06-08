@@ -23,7 +23,6 @@ public:
     StructureVoid() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StructureVoid();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -71,6 +70,7 @@ public:
     MCVAPI bool canHaveExtraData() const;
 #endif
     MCAPI StructureVoid(std::string const &, int);
+
 
 
 };

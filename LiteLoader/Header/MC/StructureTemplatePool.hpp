@@ -22,7 +22,6 @@ public:
     StructureTemplatePool() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETEMPLATEPOOL
 public:
@@ -34,6 +33,7 @@ public:
     MCAPI std::vector<unsigned __int64> getShuffledTemplateIndexes(class Random &) const;
     MCAPI class StructurePoolElement const * getTemplate(unsigned __int64) const;
     MCAPI bool isValid() const;
+
 
 
 };

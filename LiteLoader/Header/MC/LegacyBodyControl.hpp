@@ -21,7 +21,6 @@ public:
     LegacyBodyControl(class LegacyBodyControl const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LegacyBodyControl();
     /*1*/ virtual void clientTick(class Mob &);
@@ -29,6 +28,7 @@ public:
 public:
 #endif
     MCAPI LegacyBodyControl();
+
 
 
 };

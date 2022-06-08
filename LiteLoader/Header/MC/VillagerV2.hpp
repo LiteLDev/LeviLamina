@@ -24,7 +24,6 @@ public:
     VillagerV2() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~VillagerV2();
@@ -64,6 +63,7 @@ public:
 public:
 #endif
     MCAPI VillagerV2(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

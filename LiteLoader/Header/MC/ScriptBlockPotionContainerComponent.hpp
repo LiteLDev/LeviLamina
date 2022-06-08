@@ -22,7 +22,6 @@ public:
     ScriptBlockPotionContainerComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptBlockPotionContainerComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKPOTIONCONTAINERCOMPONENT
@@ -34,6 +33,7 @@ public:
     MCAPI class Scripting::Result<void> setPotionType(class ScriptItemStack const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockPotionContainerComponent> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockPotionContainerComponent> tryCreate(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
+
 
 
 };

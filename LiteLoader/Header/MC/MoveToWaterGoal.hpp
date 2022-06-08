@@ -23,7 +23,6 @@ public:
     MoveToWaterGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MoveToWaterGoal();
     /*3*/ virtual void __unk_vfn_3();
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI MoveToWaterGoal(class Mob &, float, int, int, int, float);
+
 
 
 };

@@ -20,7 +20,6 @@ public:
     PropertyInstance(class PropertyInstance const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYINSTANCE
 public:
@@ -38,6 +37,7 @@ public:
     MCAPI bool setFloatValue(float);
     MCAPI bool setIntValue(int);
     MCAPI ~PropertyInstance();
+
 
 
 };

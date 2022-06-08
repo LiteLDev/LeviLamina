@@ -23,7 +23,6 @@ public:
     OceanRuinFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~OceanRuinFeature();
     /*3*/ virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI OceanRuinFeature(class OceanMonumentFeature &, unsigned int, class BaseGameVersion const &);
+
 
 
 };

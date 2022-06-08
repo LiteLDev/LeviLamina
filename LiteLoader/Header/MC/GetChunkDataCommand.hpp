@@ -23,7 +23,6 @@ public:
     GetChunkDataCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GetChunkDataCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
+
 
 
 };

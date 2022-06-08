@@ -22,12 +22,12 @@ public:
     TestConfig() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TESTCONFIG
 public:
 #endif
     MCAPI static void bindType();
+
 
 
 };

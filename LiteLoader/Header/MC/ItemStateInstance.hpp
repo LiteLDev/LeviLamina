@@ -22,13 +22,13 @@ public:
     ItemStateInstance() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTATEINSTANCE
 public:
 #endif
     MCAPI void initState(unsigned int &, unsigned int, unsigned int, class ItemState const &);
     MCAPI bool isValidData(unsigned int) const;
+
 
 
 };

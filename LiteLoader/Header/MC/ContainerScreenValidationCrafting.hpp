@@ -20,7 +20,6 @@ public:
     ContainerScreenValidationCrafting() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ContainerScreenValidationCrafting();
     /*1*/ virtual struct ContainerValidationResult tryCraft(std::unique_ptr<struct ContainerValidationCraftInputs>);
@@ -29,10 +28,8 @@ public:
 public:
 #endif
 
+
 //private:
     MCAPI void _appendCraftResult(struct ContainerValidationCraftResult &);
-
-private:
-
 
 };

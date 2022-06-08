@@ -23,7 +23,6 @@ public:
     Trade2Ingredient2ContainerValidation() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~Trade2Ingredient2ContainerValidation();
     /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
@@ -38,6 +37,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADE2INGREDIENT2CONTAINERVALIDATION
 public:
 #endif
+
 
 
 };

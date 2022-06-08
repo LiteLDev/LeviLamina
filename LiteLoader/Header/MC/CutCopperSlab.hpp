@@ -23,7 +23,6 @@ public:
     CutCopperSlab() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CutCopperSlab();
     /*16*/ virtual void onLightningHit(class BlockSource &, class BlockPos const &) const;
@@ -77,6 +76,7 @@ public:
 #endif
     MCAPI CutCopperSlab(std::string const &, int, bool, class WeakPtr<class BlockLegacy>, enum CopperType, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &);
     MCAPI CutCopperSlab(std::string const &, int, bool, class WeakPtr<class BlockLegacy>, enum CopperType, class WeakPtr<class BlockLegacy> &);
+
 
 
 };

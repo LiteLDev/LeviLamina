@@ -22,7 +22,6 @@ public:
     ThrowableItemComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ThrowableItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -40,10 +39,8 @@ public:
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
+
 //private:
     MCAPI float _getLaunchPower(int, int, int) const;
-
-private:
-
 
 };

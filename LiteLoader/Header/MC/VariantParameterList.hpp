@@ -22,12 +22,12 @@ public:
     VariantParameterList() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VARIANTPARAMETERLIST
 public:
 #endif
     MCAPI bool hasParameter(enum FilterSubject) const;
+
 
 
 };

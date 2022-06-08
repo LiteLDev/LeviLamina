@@ -21,7 +21,6 @@ public:
     ProfilerLite(class ProfilerLite const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROFILERLITE
 public:
@@ -30,12 +29,10 @@ public:
     MCAPI void calculateAndSetServerTickTimes(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>);
     MCAPI class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> getServerTickTime() const;
     MCAPI ~ProfilerLite();
-    MCAPI static class ProfilerLite gProfilerLiteInstance;
-
-//private:
-
-private:
     MCAPI static class std::thread::id sEmptyThreadID;
 
+
+//private:
+    MCAPI static class ProfilerLite gProfilerLiteInstance;
 
 };

@@ -22,7 +22,6 @@ public:
     MobEvents() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEVENTS
 public:
@@ -39,11 +38,8 @@ public:
     MCAPI void setMarketplaceDefaults();
     MCAPI void tick();
     MCAPI void writeToLevelStorage();
-
-//private:
-
-private:
     MCAPI static std::string const EVENTS_ENABLED_STRING;
+
 
 
 };

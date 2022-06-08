@@ -22,7 +22,6 @@ public:
     DelayedAttackDefinition(class DelayedAttackDefinition const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DELAYEDATTACKDEFINITION
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI DelayedAttackDefinition();
     MCAPI void initialize(class EntityContext &, class DelayedAttackGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DelayedAttackDefinition>> &);
+
 
 
 };

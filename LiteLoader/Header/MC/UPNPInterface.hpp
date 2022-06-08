@@ -23,7 +23,6 @@ public:
     UPNPInterface() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPNPINTERFACE
 public:
@@ -33,6 +32,7 @@ public:
     MCAPI UPNPInterface(class Bedrock::NonOwnerPointer<class AppPlatform> const &);
     MCAPI void reset();
     MCAPI void tick();
+
 
 
 };

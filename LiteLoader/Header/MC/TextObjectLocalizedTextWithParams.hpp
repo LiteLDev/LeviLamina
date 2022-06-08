@@ -23,7 +23,6 @@ public:
     TextObjectLocalizedTextWithParams() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TextObjectLocalizedTextWithParams();
     /*1*/ virtual std::string asString() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI TextObjectLocalizedTextWithParams(std::string, std::vector<std::string> const &);
     MCAPI TextObjectLocalizedTextWithParams(std::string, std::unique_ptr<class TextObjectRoot>);
+
 
 
 };

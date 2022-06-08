@@ -22,7 +22,6 @@ public:
     Warden() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~Warden();
     /*40*/ virtual void __unk_vfn_40();
@@ -56,6 +55,7 @@ public:
 public:
 #endif
     MCAPI Warden(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

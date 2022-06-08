@@ -34,7 +34,6 @@ public:
     Mob() = delete;
 #endif
 
-
 public:
     /*0*/ virtual bool hasComponent(class HashedString const &) const;
     /*7*/ virtual void outOfWorld();
@@ -279,6 +278,24 @@ public:
     MCAPI void setZza(float);
     MCAPI void snapToYBodyRot(float);
     MCAPI void snapToYHeadRot(float);
+    MCAPI static int const ARMOR_DAMAGE_DIVISOR;
+    MCAPI static float const ARMOR_PROTECTION_DIVIDER;
+    MCAPI static float const ASCEND_BLOCK_BY_JUMPING_SPEED;
+    MCAPI static float const BASE_ARMOR_TOUGHNESS;
+    MCAPI static float const DEFAULT_GRAVITY;
+    MCAPI static float const FRICTION_CONSTANT;
+    MCAPI static float const FRICTION_CONSTANT_MODIFIED;
+    MCAPI static float const FRICTION_MODIFIER;
+    MCAPI static float const GLIDING_FALL_RESET_DELTA;
+    MCAPI static float const LADDER_CLIMB_SPEED;
+    MCAPI static float const MAX_ARMOR;
+    MCAPI static float const MIN_ARMOR_RATIO;
+    MCAPI static float const NUM_ARMOR_ITEMS;
+    MCAPI static float const PLAYER_SWIMMING_SURFACE_OFFSET;
+    MCAPI static int const REMOVE_PASSENGERS_DELAY;
+    MCAPI static float const SLOW_FALL_GRAVITY;
+    MCAPI static int const SPAWN_XP_DELAY;
+    MCAPI static int const TOTAL_ROLL_STEPS;
     MCAPI static void _aiStep(struct IMobMovementProxy &);
     MCAPI static float _calcMoveRelativeSpeed(struct IMobMovementProxy &, enum TravelType);
     MCAPI static void _travel(struct IMobMovementProxy &, float, float, float);
@@ -300,6 +317,7 @@ public:
     MCAPI void tickEffects();
     MCAPI void updateAttackAnim();
     MCAPI bool updateGlidingDurability();
+    MCAPI static int const MAX_INACTIVITY_TIMER;
     MCAPI static void _jumpFromGround(struct IMobMovementProxy &);
 
 //private:
@@ -308,29 +326,5 @@ public:
     MCAPI void _updateSprintingState();
     MCAPI void _verifyAttributes();
     MCAPI static bool _tryApplyingLevitation(struct IMobMovementProxy const &, class Vec3 &);
-
-protected:
-    MCAPI static int const MAX_INACTIVITY_TIMER;
-
-private:
-    MCAPI static int const ARMOR_DAMAGE_DIVISOR;
-    MCAPI static float const ARMOR_PROTECTION_DIVIDER;
-    MCAPI static float const ASCEND_BLOCK_BY_JUMPING_SPEED;
-    MCAPI static float const BASE_ARMOR_TOUGHNESS;
-    MCAPI static float const DEFAULT_GRAVITY;
-    MCAPI static float const FRICTION_CONSTANT;
-    MCAPI static float const FRICTION_CONSTANT_MODIFIED;
-    MCAPI static float const FRICTION_MODIFIER;
-    MCAPI static float const GLIDING_FALL_RESET_DELTA;
-    MCAPI static float const LADDER_CLIMB_SPEED;
-    MCAPI static float const MAX_ARMOR;
-    MCAPI static float const MIN_ARMOR_RATIO;
-    MCAPI static float const NUM_ARMOR_ITEMS;
-    MCAPI static float const PLAYER_SWIMMING_SURFACE_OFFSET;
-    MCAPI static int const REMOVE_PASSENGERS_DELAY;
-    MCAPI static float const SLOW_FALL_GRAVITY;
-    MCAPI static int const SPAWN_XP_DELAY;
-    MCAPI static int const TOTAL_ROLL_STEPS;
-
 
 };

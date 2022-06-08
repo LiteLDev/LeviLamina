@@ -23,7 +23,6 @@ public:
     EnchantingTableBlockActor() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EnchantingTableBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -43,6 +42,7 @@ public:
 public:
 #endif
     MCAPI EnchantingTableBlockActor(class BlockPos const &);
+
 
 
 };

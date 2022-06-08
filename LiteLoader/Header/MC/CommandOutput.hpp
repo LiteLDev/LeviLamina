@@ -26,7 +26,6 @@ public:
     CommandOutput() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDOUTPUT
 public:
@@ -50,10 +49,8 @@ public:
     MCAPI bool wantsData() const;
     MCAPI ~CommandOutput();
 
+
 //private:
     MCAPI void addMessage(std::string const &, std::vector<class CommandOutputParameter> const &, enum CommandOutputMessageType);
-
-private:
-
 
 };

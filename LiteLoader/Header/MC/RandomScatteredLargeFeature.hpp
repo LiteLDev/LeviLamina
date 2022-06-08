@@ -23,7 +23,6 @@ public:
     RandomScatteredLargeFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RandomScatteredLargeFeature();
     /*1*/ virtual bool shouldAddHardcodedSpawnAreas() const;
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI RandomScatteredLargeFeature(unsigned int);
+
 
 
 };

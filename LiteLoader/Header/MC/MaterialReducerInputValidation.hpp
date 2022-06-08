@@ -23,7 +23,6 @@ public:
     MaterialReducerInputValidation() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MaterialReducerInputValidation();
     /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
@@ -40,6 +39,7 @@ public:
     MCVAPI int getAvailableSetCount(int, class ItemStackBase const &) const;
 #endif
     MCAPI MaterialReducerInputValidation(class ContainerScreenContext const &);
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     ResourceLocation(class ResourceLocation const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCELOCATION
 public:
@@ -38,6 +37,7 @@ public:
     MCAPI void setRelativePath(class Core::PathBuffer<std::string> const &);
     MCAPI ~ResourceLocation();
     MCAPI static class ResourceLocation const & getEmptyLocation();
+
 
 
 };

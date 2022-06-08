@@ -22,7 +22,6 @@ public:
     TickingAreaView() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TickingAreaView();
     /*1*/ virtual void init(struct Bounds const &, bool);
@@ -43,10 +42,8 @@ public:
     MCAPI TickingAreaView(class ChunkSource &);
     MCAPI void unregisterChunkBuildOrderPolicy(class ChunkBuildOrderPolicyBase &);
 
+
 //private:
     MCAPI bool _tickChunk(struct Tick const &, class BlockSource &, class Level &, class ChunkPos const &);
-
-private:
-
 
 };

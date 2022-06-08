@@ -21,7 +21,6 @@ public:
     MudBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MudBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -63,6 +62,7 @@ public:
 public:
 #endif
     MCAPI MudBlock(std::string const &, int);
+
 
 
 };

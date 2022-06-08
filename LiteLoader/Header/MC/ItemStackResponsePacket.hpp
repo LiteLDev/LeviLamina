@@ -22,7 +22,6 @@ public:
     ItemStackResponsePacket(class ItemStackResponsePacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ItemStackResponsePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -35,6 +34,7 @@ public:
     MCAPI ItemStackResponsePacket(std::vector<struct ItemStackResponseInfo> &&);
     MCAPI ItemStackResponsePacket();
     MCAPI std::vector<struct ItemStackResponseInfo> const & getResponses() const;
+
 
 
 };

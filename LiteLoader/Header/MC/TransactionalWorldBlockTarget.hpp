@@ -22,7 +22,6 @@ public:
     TransactionalWorldBlockTarget() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TransactionalWorldBlockTarget();
     /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
@@ -54,6 +53,7 @@ public:
 public:
 #endif
     MCAPI TransactionalWorldBlockTarget(class IBlockWorldGenAPI &);
+
 
 
 };

@@ -21,7 +21,6 @@ public:
     ItemStackRequestActionCraftGrindstone(class ItemStackRequestActionCraftGrindstone const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ItemStackRequestActionCraftGrindstone();
     /*1*/ virtual void __unk_vfn_1();
@@ -35,6 +34,7 @@ public:
     MCAPI ItemStackRequestActionCraftGrindstone();
     MCAPI struct ItemStackNetIdVariant const & getRecipeNetId() const;
     MCAPI int getRepairCost() const;
+
 
 
 };

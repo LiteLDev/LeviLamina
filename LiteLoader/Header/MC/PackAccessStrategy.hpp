@@ -22,7 +22,6 @@ public:
     PackAccessStrategy(class PackAccessStrategy const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PackAccessStrategy();
     /*1*/ virtual unsigned __int64 getPackSize() const = 0;
@@ -51,18 +50,12 @@ public:
 #endif
     MCAPI PackAccessStrategy();
     MCAPI bool hasGeneratedAssetSet() const;
+    MCAPI static class Core::PathBuffer<std::string> const PACK_IMPORT_LOCK_FILE;
 
 //protected:
     MCAPI void _addToAssetSet(class Core::Path const &);
     MCAPI void _deleteFromAssetSet(class Core::PathBuffer<std::string> const &);
     MCAPI bool _isInAssetSet(class Core::Path const &) const;
-
-//private:
-
-protected:
-
-private:
-    MCAPI static class Core::PathBuffer<std::string> const PACK_IMPORT_LOCK_FILE;
 
 
 };

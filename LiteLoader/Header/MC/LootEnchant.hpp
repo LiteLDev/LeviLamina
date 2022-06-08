@@ -23,7 +23,6 @@ public:
     LootEnchant() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LootEnchant();
     /*2*/ virtual int getMinCost(int) const;
@@ -37,6 +36,7 @@ public:
 public:
 #endif
     MCAPI LootEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
+
 
 
 };

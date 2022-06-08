@@ -33,7 +33,6 @@ public:
     RakNetInstance() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKNETINSTANCE
 public:
@@ -66,14 +65,12 @@ public:
 #endif
     MCAPI RakNetInstance(class RakNetInstance::ConnectionCallbacks &, class RakPeerHelper::IPSupportInterface &, class Bedrock::NonOwnerPointer<class AppPlatform> const &);
 
+
 //private:
     MCAPI void _changeNatState(enum RakNetInstance::NATState, int, std::string const &);
     MCAPI class std::shared_ptr<class RakNetInstance::RakNetNetworkPeer> _createPeer(class NetworkIdentifier const &);
     MCAPI void _openNatConnection(struct RakNet::SystemAddress const &);
     MCAPI void _pingNatService(bool);
     MCAPI void _storeLocalIP();
-
-private:
-
 
 };

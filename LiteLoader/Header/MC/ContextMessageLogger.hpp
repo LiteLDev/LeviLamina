@@ -20,13 +20,13 @@ public:
     ContextMessageLogger() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTEXTMESSAGELOGGER
 public:
 #endif
     MCAPI void log(enum LogArea, enum LogLevel, char const *);
     MCAPI bool shouldMessagePostToParentMessageLoggers();
+
 
 
 };

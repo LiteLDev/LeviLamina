@@ -23,7 +23,6 @@ public:
     ActorFactory() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORFACTORY
 public:
@@ -44,10 +43,10 @@ public:
     MCAPI void setDefinitionGroup(class ActorDefinitionGroup *);
     MCAPI void setEntityInitializer(class std::shared_ptr<class IEntityInitializer>);
     MCAPI ~ActorFactory();
-    MCAPI static std::vector<struct VanillaActorData> builtinEntityMappings;
     MCAPI static void clearEntityMappings();
     MCAPI static class Actor * fixLegacyEntity(class BlockSource &, class CompoundTag const *);
     MCAPI static void registerEntityMapping(enum ActorType const &, bool, std::unique_ptr<class Actor> ( *const &)(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &), class std::optional<int>);
+
 
 //private:
     MCAPI void _buildSummonableActorList(class Experiments const &, class std::function<void (std::string const &, struct ActorFactoryData const &)>) const;
@@ -56,8 +55,6 @@ public:
     MCAPI void _loadDefinitionGroups(class ActorDefinitionGroup *);
     MCAPI void _loadDefinitionsHelper();
     MCAPI bool _validateActorData(class CompoundTag &, struct ActorDefinitionIdentifier &, class Vec3 &, class LevelChunk const *) const;
-
-private:
-
+    MCAPI static std::vector<struct VanillaActorData> builtinEntityMappings;
 
 };

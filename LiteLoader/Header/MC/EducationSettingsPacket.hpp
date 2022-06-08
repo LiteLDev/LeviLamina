@@ -22,7 +22,6 @@ public:
     EducationSettingsPacket(class EducationSettingsPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EducationSettingsPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI EducationSettingsPacket(struct EducationLevelSettings);
     MCAPI EducationSettingsPacket();
+
 
 
 };

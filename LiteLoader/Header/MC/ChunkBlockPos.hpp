@@ -36,7 +36,6 @@ public:
     ChunkBlockPos() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKBLOCKPOS
 public:
@@ -46,6 +45,7 @@ public:
     MCAPI class Pos toPos() const;
     MCAPI static class ChunkBlockPos from2D(unsigned char, unsigned char);
     MCAPI static class ChunkBlockPos fromLegacyIndex(unsigned short);
+
 
 
 };

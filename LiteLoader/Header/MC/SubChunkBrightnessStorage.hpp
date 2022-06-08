@@ -21,13 +21,13 @@ public:
     SubChunkBrightnessStorage(class SubChunkBrightnessStorage const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCHUNKBRIGHTNESSSTORAGE
 public:
 #endif
     MCAPI SubChunkBrightnessStorage();
     MCAPI void reset(bool);
+
 
 
 };

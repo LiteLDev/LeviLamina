@@ -22,13 +22,14 @@ public:
     LevelSoundEventUtils() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSOUNDEVENTUTILS
 public:
 #endif
-    MCAPI static int const MAX_INT_REPRESENTABLE_AS_FLOAT;
     MCAPI static int serializePercentageToData(float);
 
+
+//private:
+    MCAPI static int const MAX_INT_REPRESENTABLE_AS_FLOAT;
 
 };

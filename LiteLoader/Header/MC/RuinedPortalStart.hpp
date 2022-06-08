@@ -23,13 +23,13 @@ public:
     RuinedPortalStart() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RuinedPortalStart();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUINEDPORTALSTART
 public:
 #endif
     MCAPI RuinedPortalStart(class BiomeRegistry &, class BiomeSource const &, int, int, class IPreliminarySurfaceProvider const &);
+
 
 
 };

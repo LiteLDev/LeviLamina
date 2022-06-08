@@ -22,11 +22,11 @@ public:
     IFileReadAccess() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFILEREADACCESS
 public:
 #endif
+
 
 
 };

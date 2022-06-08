@@ -23,7 +23,6 @@ public:
     WorkGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WorkGoal();
     /*1*/ virtual bool canUse();
@@ -41,13 +40,11 @@ public:
 #endif
     MCAPI WorkGoal(class Mob &);
     MCAPI void playPOISoundEvent() const;
-    MCAPI static int const RAIN_CHECK_MAX_COOLDOWN;
-    MCAPI static int const WORK_TIMESTAMP_UPDATE_INVERVAL;
+
 
 //private:
     MCAPI bool _isInsideOrIsNotRaining();
-
-private:
-
+    MCAPI static int const RAIN_CHECK_MAX_COOLDOWN;
+    MCAPI static int const WORK_TIMESTAMP_UPDATE_INVERVAL;
 
 };

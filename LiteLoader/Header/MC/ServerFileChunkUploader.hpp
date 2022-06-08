@@ -24,7 +24,6 @@ public:
     ServerFileChunkUploader() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ServerFileChunkUploader();
     /*1*/ virtual void __unk_vfn_1();
@@ -44,6 +43,7 @@ public:
     MCVAPI void update();
 #endif
     MCAPI ServerFileChunkUploader(class PacketSender &, class NetworkIdentifier const &);
+
 
 
 };

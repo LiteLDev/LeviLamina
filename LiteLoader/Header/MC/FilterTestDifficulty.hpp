@@ -24,7 +24,6 @@ public:
     FilterTestDifficulty() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FilterTestDifficulty();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
@@ -32,6 +31,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTDIFFICULTY
 public:
 #endif
+
 
 
 };

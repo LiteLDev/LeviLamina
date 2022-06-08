@@ -22,7 +22,6 @@ public:
     ItemStackRequestPacket(class ItemStackRequestPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ItemStackRequestPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI ItemStackRequestPacket();
     MCAPI class ItemStackRequestBatch const & getRequestBatch() const;
+
 
 
 };

@@ -26,7 +26,6 @@ public:
     NetworkIdentifier() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKIDENTIFIER
 public:
@@ -42,10 +41,8 @@ public:
     MCAPI bool isUnassigned() const;
     MCAPI std::string toString() const;
 
+
 //private:
     MCAPI bool equalsTypeData(class NetworkIdentifier const &) const;
-
-private:
-
 
 };

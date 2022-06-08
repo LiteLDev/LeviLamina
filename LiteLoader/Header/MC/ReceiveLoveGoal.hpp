@@ -22,7 +22,6 @@ public:
     ReceiveLoveGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ReceiveLoveGoal();
     /*1*/ virtual void __unk_vfn_1();
@@ -38,6 +37,7 @@ public:
     MCVAPI bool canUse();
 #endif
     MCAPI ReceiveLoveGoal(class VillagerBase &);
+
 
 
 };

@@ -22,11 +22,11 @@ public:
     IResourcePackRepository() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IRESOURCEPACKREPOSITORY
 public:
 #endif
+
 
 
 };

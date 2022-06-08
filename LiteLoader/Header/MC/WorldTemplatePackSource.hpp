@@ -22,7 +22,6 @@ public:
     WorldTemplatePackSource() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WorldTemplatePackSource();
     /*1*/ virtual void __unk_vfn_1();
@@ -35,6 +34,7 @@ public:
 #endif
     MCAPI WorldTemplatePackSource(class WorldTemplateManager const &, class mce::UUID const &, enum PackType, enum PackOrigin);
     MCAPI class mce::UUID const & getWorldTemplateId() const;
+
 
 
 };

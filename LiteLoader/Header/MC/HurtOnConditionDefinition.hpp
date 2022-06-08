@@ -23,13 +23,13 @@ public:
     HurtOnConditionDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HURTONCONDITIONDEFINITION
 public:
 #endif
     MCAPI void addDamageCondition(struct DamageCondition const &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HurtOnConditionDefinition>> &);
+
 
 
 };

@@ -24,7 +24,6 @@ public:
     PlayerCommandOrigin() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PlayerCommandOrigin();
     /*1*/ virtual std::string const & getRequestId() const;
@@ -52,6 +51,7 @@ public:
 #endif
     MCAPI PlayerCommandOrigin(class Player &);
     MCAPI static std::unique_ptr<class PlayerCommandOrigin> load(class CompoundTag const &, class Level &);
+
 
 
 };

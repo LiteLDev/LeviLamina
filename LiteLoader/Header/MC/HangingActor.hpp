@@ -23,7 +23,6 @@ public:
     HangingActor() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*9*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -68,7 +67,6 @@ public:
 #endif
     MCAPI HangingActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI int getDirection() const;
-    MCAPI static float const HANGING_OFFSET;
 
 //protected:
     MCAPI void _calculateAABB();
@@ -78,10 +76,6 @@ public:
 //private:
     MCAPI bool _blockContainsObstruction(class BlockSource const &, class BlockPos const &) const;
     MCAPI bool _canSurviveOnBlock(class BlockSource const &, class BlockPos const &, bool) const;
-
-protected:
-
-private:
-
+    MCAPI static float const HANGING_OFFSET;
 
 };

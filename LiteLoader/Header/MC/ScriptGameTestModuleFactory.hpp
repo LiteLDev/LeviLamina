@@ -24,21 +24,18 @@ public:
     ScriptGameTestModuleFactory() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptGameTestModuleFactory();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTGAMETESTMODULEFACTORY
 public:
 #endif
     MCAPI ScriptGameTestModuleFactory(class gametest::GameTestRegistry &);
-    MCAPI static char const * ModuleName;
-    MCAPI static class mce::UUID ModuleUUID;
     MCAPI static std::string getModuleUUIDAsString();
+
 
 //private:
     MCAPI void _addV1();
-
-private:
-
+    MCAPI static char const * ModuleName;
+    MCAPI static class mce::UUID ModuleUUID;
 
 };

@@ -22,7 +22,6 @@ public:
     ShulkerBoxBlockActor() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKERBOXBLOCKACTOR
 public:
@@ -42,16 +41,14 @@ public:
 #endif
     MCAPI ShulkerBoxBlockActor(enum BlockActorType, std::string const &, enum BlockActorRendererId, class BlockPos const &);
     MCAPI void setFacingDir(unsigned char);
-    MCAPI static int const ITEMS_SIZE;
     MCAPI static bool itemAllowed(class ItemStackBase const &);
     MCAPI static bool itemAllowedInSlot(int, class ItemStackBase const &, int);
+
 
 //private:
     MCAPI void _calculateBB();
     MCAPI class Vec3 _calculateMovementWithCollisions(class BlockSource &, class Actor *) const;
     MCAPI void _moveCollidedEntities(class BlockSource &) const;
-
-private:
-
+    MCAPI static int const ITEMS_SIZE;
 
 };

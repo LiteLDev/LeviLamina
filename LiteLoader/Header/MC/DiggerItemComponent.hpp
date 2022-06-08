@@ -22,7 +22,6 @@ public:
     DiggerItemComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DiggerItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -40,6 +39,7 @@ public:
     MCAPI bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *);
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     PetSleepWithOwnerState() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PETSLEEPWITHOWNERSTATE
 public:
@@ -32,8 +31,6 @@ public:
 
 //protected:
     MCAPI void dampenSpeed();
-
-protected:
 
 
 };

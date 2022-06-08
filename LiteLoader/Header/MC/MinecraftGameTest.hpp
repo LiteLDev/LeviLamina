@@ -23,7 +23,6 @@ public:
     MinecraftGameTest() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MinecraftGameTest();
     /*1*/ virtual void __unk_vfn_1();
@@ -63,10 +62,8 @@ public:
     MCAPI std::string runTestAt(class BlockSource &, class BlockPos const &, class std::optional<enum Rotation>);
     MCAPI std::vector<class std::shared_ptr<class gametest::BaseGameTestInstance>> const & runTests(class Dimension &, struct gametest::TestParameters &&);
 
+
 //private:
     MCAPI void _runTestPreparation(class gametest::BaseGameTestFunction const &);
-
-private:
-
 
 };

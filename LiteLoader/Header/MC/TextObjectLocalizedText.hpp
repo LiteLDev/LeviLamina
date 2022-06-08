@@ -23,7 +23,6 @@ public:
     TextObjectLocalizedText() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TextObjectLocalizedText();
     /*1*/ virtual std::string asString() const;
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI TextObjectLocalizedText(std::string);
+
 
 
 };

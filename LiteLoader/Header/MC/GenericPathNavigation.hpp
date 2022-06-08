@@ -23,7 +23,6 @@ public:
     GenericPathNavigation() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GenericPathNavigation();
     /*1*/ virtual void initializeInternal(class Mob &, struct NavigationDescription *);
@@ -34,6 +33,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENERICPATHNAVIGATION
 public:
 #endif
+
 
 
 };

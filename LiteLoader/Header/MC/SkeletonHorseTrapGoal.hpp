@@ -22,7 +22,6 @@ public:
     SkeletonHorseTrapGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SkeletonHorseTrapGoal();
     /*1*/ virtual bool canUse();
@@ -37,10 +36,8 @@ public:
 #endif
     MCAPI SkeletonHorseTrapGoal(class Horse &, int, float);
 
+
 //private:
     MCAPI class Skeleton * _createSkeleton(enum Difficulty const &, class Horse const &);
-
-private:
-
 
 };

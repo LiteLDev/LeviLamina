@@ -24,7 +24,6 @@ public:
     LodestoneCompassItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LodestoneCompassItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -50,6 +49,7 @@ public:
     MCAPI LodestoneCompassItem(std::string const &, int);
     MCAPI static class PositionTrackingId getPositionTrackingId(class ItemStackBase const &);
     MCAPI static bool linkCompassToLodestone(class ItemStack &, class BlockSource &, class BlockPos);
+
 
 
 };

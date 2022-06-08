@@ -22,7 +22,6 @@ public:
     AddEntityPacket(class AddEntityPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AddEntityPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -32,6 +31,7 @@ public:
 #endif
     MCAPI AddEntityPacket(class EntityContext const &);
     MCAPI AddEntityPacket();
+
 
 
 };

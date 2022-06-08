@@ -21,7 +21,6 @@ public:
     InsideBlockEventMap() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEBLOCKEVENTMAP
 public:
@@ -39,6 +38,7 @@ public:
     MCAPI void setWasInside(bool);
     MCAPI bool wasActorInsideLastTick() const;
     MCAPI ~InsideBlockEventMap();
+
 
 
 };

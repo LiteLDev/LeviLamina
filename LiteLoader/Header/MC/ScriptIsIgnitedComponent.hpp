@@ -21,13 +21,13 @@ public:
     ScriptIsIgnitedComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptIsIgnitedComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTISIGNITEDCOMPONENT
 public:
 #endif
     MCAPI static class HashedString const & getHashedName();
+
 
 
 };

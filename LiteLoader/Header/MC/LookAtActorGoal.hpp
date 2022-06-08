@@ -22,7 +22,6 @@ public:
     LookAtActorGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LookAtActorGoal();
     /*1*/ virtual bool canUse();
@@ -37,10 +36,8 @@ public:
 #endif
     MCAPI LookAtActorGoal(class Mob &, float, float, int, int, int, int);
 
+
 //private:
     MCAPI bool _withinFieldOfView(class Actor &);
-
-private:
-
 
 };

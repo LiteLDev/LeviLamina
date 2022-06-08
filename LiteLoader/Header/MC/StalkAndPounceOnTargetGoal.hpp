@@ -22,7 +22,6 @@ public:
     StalkAndPounceOnTargetGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StalkAndPounceOnTargetGoal();
     /*1*/ virtual bool canUse();
@@ -37,11 +36,9 @@ public:
 #endif
     MCAPI StalkAndPounceOnTargetGoal(class Mob &, class ActorFilterGroup const &, float, float, float, float, float, float, float, float, bool);
 
+
 //private:
     MCAPI bool _isStuckBlock(class BlockPos) const;
     MCAPI void _preparePounce(class Vec3 const &, class Vec3 const &);
-
-private:
-
 
 };

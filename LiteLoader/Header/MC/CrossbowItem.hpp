@@ -24,7 +24,6 @@ public:
     CrossbowItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CrossbowItem();
     /*4*/ virtual int getMaxUseDuration(class ItemStack const *) const;
@@ -54,14 +53,12 @@ public:
 public:
 #endif
     MCAPI CrossbowItem(std::string const &, int);
-    MCAPI static int const DEFAULT_USE_DURATION;
+
 
 //private:
     MCAPI class Vec3 _getShootDir(class Player const &, float) const;
     MCAPI void _shootArrow(class ItemInstance const &, class ItemInstance const &, class Player &) const;
     MCAPI void _shootFirework(class ItemInstance const &, class Player &) const;
-
-private:
-
+    MCAPI static int const DEFAULT_USE_DURATION;
 
 };

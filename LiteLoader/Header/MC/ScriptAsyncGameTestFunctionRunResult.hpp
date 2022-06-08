@@ -20,7 +20,6 @@ public:
     ScriptAsyncGameTestFunctionRunResult() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptAsyncGameTestFunctionRunResult();
     /*1*/ virtual bool isComplete() const;
@@ -29,6 +28,7 @@ public:
 public:
 #endif
     MCAPI ScriptAsyncGameTestFunctionRunResult(class Scripting::Result<class Scripting::Future<void>>);
+
 
 
 };

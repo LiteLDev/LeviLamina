@@ -22,7 +22,6 @@ public:
     UserEntityIdentifierComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_USERENTITYIDENTIFIERCOMPONENT
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI bool isPrimaryClient() const;
     MCAPI class UserEntityIdentifierComponent & operator=(class UserEntityIdentifierComponent &&);
     MCAPI static class UserEntityIdentifierComponent * tryGetFromEntity(class EntityContext &);
+
 
 
 };

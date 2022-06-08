@@ -23,7 +23,6 @@ public:
     FurnaceBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FurnaceBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -78,6 +77,7 @@ public:
 #endif
     MCAPI FurnaceBlock(std::string const &, int, bool);
     MCAPI static void setLit(bool, class BlockSource &, class BlockPos const &, enum BlockActorType, class Block const &, class Block const &);
+
 
 
 };

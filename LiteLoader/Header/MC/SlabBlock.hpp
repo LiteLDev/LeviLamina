@@ -23,7 +23,6 @@ public:
     SlabBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SlabBlock();
     /*6*/ virtual bool isObstructingChests(class BlockSource &, class BlockPos const &) const;
@@ -78,12 +77,11 @@ public:
     MCVAPI bool isSlabBlock() const;
 #endif
     MCAPI SlabBlock(std::string const &, int, bool, class Material const &, class WeakPtr<class BlockLegacy>);
-    MCAPI static class BaseGameVersion const TOP_SLAB_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 //protected:
     MCAPI class Block const & getBaseSlab() const;
 
-protected:
-
+//private:
+    MCAPI static class BaseGameVersion const TOP_SLAB_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 };

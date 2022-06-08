@@ -24,7 +24,6 @@ public:
     GoatHornItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GoatHornItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -51,6 +50,7 @@ public:
 #endif
     MCAPI GoatHornItem(std::string const &, int);
     MCAPI static void addGoatHornVarationSaveData(class Goat &, class ItemStack &);
+
 
 
 };

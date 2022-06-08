@@ -20,7 +20,6 @@ public:
     class MobSpawnRules& operator=(class MobSpawnRules const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBSPAWNRULES
 public:
@@ -72,14 +71,11 @@ public:
     MCAPI class MobSpawnRules & setUnderwaterSpawner();
     MCAPI class MobSpawnRules & setWorldAgeRange(unsigned __int64, unsigned __int64);
     MCAPI ~MobSpawnRules();
-
-//private:
-
-private:
     MCAPI static int const LOW_END_MAX_SPAWN_DISTANCE;
     MCAPI static int const MAX_DEFAULT_SPAWN_DISTANCE;
     MCAPI static unsigned __int64 const MAX_WORLD_AGE;
     MCAPI static int const MIN_DEFAULT_SPAWN_DISTANCE;
+
 
 
 };

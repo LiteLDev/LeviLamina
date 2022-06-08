@@ -22,7 +22,6 @@ public:
     StructureAnimationData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREANIMATIONDATA
 public:
@@ -46,6 +45,7 @@ public:
     MCAPI void setTargetDimension(class AutomaticID<class Dimension, int> const &);
     MCAPI ~StructureAnimationData();
     MCAPI static class StructureAnimationData load(std::string const &, class CompoundTag const &);
+
 
 
 };

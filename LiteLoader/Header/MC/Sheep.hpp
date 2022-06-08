@@ -24,7 +24,6 @@ public:
     Sheep() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~Sheep();
     /*40*/ virtual void __unk_vfn_40();
@@ -61,7 +60,9 @@ public:
 #endif
     MCAPI Sheep(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI bool isGrazing() const;
-    MCAPI static int const EAT_ANIMATION_TICKS;
 
+
+//private:
+    MCAPI static int const EAT_ANIMATION_TICKS;
 
 };

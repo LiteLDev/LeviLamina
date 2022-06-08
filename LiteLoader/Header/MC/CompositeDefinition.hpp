@@ -23,7 +23,6 @@ public:
     CompositeDefinition(class CompositeDefinition const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CompositeDefinition();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOSITEDEFINITION
@@ -35,8 +34,6 @@ public:
 
 //protected:
     MCAPI static void _compositeLoadChildrenBehaviors(class Json::Value, std::vector<std::unique_ptr<class BehaviorDefinition>> &, class BehaviorFactory const &, class BehaviorTreeDefinitionPtr);
-
-protected:
 
 
 };

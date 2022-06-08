@@ -25,7 +25,6 @@ public:
     ModalFormRequestPacket(class ModalFormRequestPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ModalFormRequestPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -37,6 +36,7 @@ public:
 #endif
     MCAPI ModalFormRequestPacket(unsigned int, std::string const &);
     MCAPI ModalFormRequestPacket();
+
 
 
 };

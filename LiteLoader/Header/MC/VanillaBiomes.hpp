@@ -22,11 +22,12 @@ public:
     VanillaBiomes() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLABIOMES
 public:
 #endif
+    MCAPI static class mce::Color const SWAMP_WATER_COLOR;
+    MCAPI static class mce::Color const WATER_FOG_COLOR_SWAMP;
     MCAPI static void initBiomeComponents(class BiomeComponentFactory &);
     MCAPI static void initBiomeDimensionComponent(class BiomeRegistry &);
     MCAPI static void initBiomes(class BiomeRegistry &, struct SpawnSettings const &, class BaseGameVersion const &, class Experiments const &);
@@ -34,14 +35,6 @@ public:
     MCAPI static void initDefaultWorldGenComponents(class IWorldRegistriesProvider &);
     MCAPI static void initSurfaceBuilders(class SurfaceBuilderRegistry &, class BaseGameVersion const &);
     MCAPI static void initVanillaBiomeTypeComponent(class BiomeRegistry &);
-    MCAPI static void shutdownBiomes();
-
-//private:
-    MCAPI static void addBiomeDimensionAttributeComponentHelper(class BiomeRegistry &, std::string const &, class AutomaticID<class Dimension, int>);
-
-private:
-    MCAPI static class mce::Color const SWAMP_WATER_COLOR;
-    MCAPI static class mce::Color const WATER_FOG_COLOR_SWAMP;
     MCAPI static class Biome * mBambooJungle;
     MCAPI static class Biome * mBambooJungleHills;
     MCAPI static class Biome * mBasaltDeltas;
@@ -117,6 +110,10 @@ private:
     MCAPI static class Biome * mTaigaColdMutated;
     MCAPI static class Biome * mTaigaHills;
     MCAPI static class Biome * mWarpedForest;
+    MCAPI static void shutdownBiomes();
 
+
+//private:
+    MCAPI static void addBiomeDimensionAttributeComponentHelper(class BiomeRegistry &, std::string const &, class AutomaticID<class Dimension, int>);
 
 };

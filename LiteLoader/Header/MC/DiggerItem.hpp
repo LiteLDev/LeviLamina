@@ -24,7 +24,6 @@ public:
     DiggerItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DiggerItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -54,8 +53,6 @@ public:
 
 //protected:
     MCAPI DiggerItem(std::string const &, int, int, class Item::Tier const &, std::vector<class Block const *> const &);
-
-protected:
 
 
 };

@@ -24,7 +24,6 @@ public:
     WitherSkull() = delete;
 #endif
 
-
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~WitherSkull();
@@ -59,6 +58,7 @@ public:
     MCVAPI bool shouldBurn();
 #endif
     MCAPI WitherSkull(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

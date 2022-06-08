@@ -21,7 +21,6 @@ public:
     FakeBatteryMonitorInterface(class FakeBatteryMonitorInterface const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FakeBatteryMonitorInterface();
     /*1*/ virtual enum BatteryStatus getBatteryStatus() const;
@@ -30,6 +29,7 @@ public:
 public:
 #endif
     MCAPI FakeBatteryMonitorInterface();
+
 
 
 };

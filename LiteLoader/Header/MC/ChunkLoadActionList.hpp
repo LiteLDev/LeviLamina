@@ -21,7 +21,6 @@ public:
     ChunkLoadActionList(class ChunkLoadActionList const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKLOADACTIONLIST
 public:
@@ -35,13 +34,11 @@ public:
     MCAPI void tickRequests(class ServerLevel &, class Dimension &);
     MCAPI ~ChunkLoadActionList();
 
+
 //private:
     MCAPI void _addChunkLoadedRequest(class ChunkLoadedRequest, std::string const &, enum ChunksLoadedStatus, class LevelStorage &);
     MCAPI void _saveRequest(class ChunkLoadedRequest &, std::string const &, enum ChunkRequestListType, class LevelStorage &);
     MCAPI void _updateAsyncList(class LevelStorage &, class Dimension &, class std::function<enum ChunksLoadedStatus (class ChunkLoadedRequest &)>);
     MCAPI void _updateTickingList(class ServerLevel &, class Dimension &, class std::function<enum ChunksLoadedStatus (class ChunkLoadedRequest &)>);
-
-private:
-
 
 };

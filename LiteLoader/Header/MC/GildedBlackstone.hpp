@@ -23,7 +23,6 @@ public:
     GildedBlackstone() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GildedBlackstone();
     /*19*/ virtual void __unk_vfn_19();
@@ -66,6 +65,7 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI GildedBlackstone(std::string const &, int, class Material const &);
+
 
 
 };

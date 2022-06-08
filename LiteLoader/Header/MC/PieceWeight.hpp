@@ -20,12 +20,12 @@ public:
     PieceWeight() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PIECEWEIGHT
 public:
 #endif
     MCAPI ~PieceWeight();
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     CommandPropertyBag(class CommandPropertyBag const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDPROPERTYBAG
 public:
@@ -33,6 +32,7 @@ public:
     MCAPI std::unique_ptr<class CommandPropertyBag> clone() const;
     MCAPI void set(std::string const &, class BlockPos const &);
     MCAPI void set(std::string const &, class Vec3);
+
 
 
 };

@@ -25,7 +25,6 @@ public:
     ServerPlayer() = delete;
 #endif
 
-
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*12*/ virtual void _serverInitItemStackIds();
@@ -156,6 +155,7 @@ public:
     MCAPI void triggerRespawnFromCompletingTheEnd();
     MCAPI static class ServerPlayer * tryGetFromEntity(class EntityContext &, bool);
 
+
 //private:
     MCAPI void _logCDEvent(enum CrashDumpLogStringID, enum CrashDumpLogStringID, enum CrashDumpLogStringID, enum CrashDumpLogStringID);
     MCAPI enum ContainerID _nextContainerCounter();
@@ -163,8 +163,5 @@ public:
     MCAPI void _scanForNearbyActors();
     MCAPI void _setContainerManager(class std::shared_ptr<class IContainerManager>);
     MCAPI void _updateNearbyActors();
-
-private:
-
 
 };

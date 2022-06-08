@@ -23,7 +23,6 @@ public:
     DiodeBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DiodeBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -90,8 +89,6 @@ public:
 
 //protected:
     MCAPI int getAlternateSignalAt(class BlockSource &, class BlockPos const &, int) const;
-
-protected:
 
 
 };

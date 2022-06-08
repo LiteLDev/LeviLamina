@@ -21,7 +21,6 @@ public:
     RepeatUntilFailureNode(class RepeatUntilFailureNode const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RepeatUntilFailureNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
@@ -30,6 +29,7 @@ public:
 public:
 #endif
     MCAPI RepeatUntilFailureNode();
+
 
 
 };

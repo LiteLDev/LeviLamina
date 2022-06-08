@@ -21,13 +21,13 @@ public:
     ScriptIsShakingComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptIsShakingComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTISSHAKINGCOMPONENT
 public:
 #endif
     MCAPI static class HashedString const & getHashedName();
+
 
 
 };

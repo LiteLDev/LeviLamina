@@ -22,7 +22,6 @@ public:
     ResourcePackListener() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKLISTENER
 public:
@@ -31,6 +30,7 @@ public:
     MCVAPI void onLanguageSubpacksChanged();
     MCVAPI void onResourceManagerDestroyed(class ResourcePackManager &);
 #endif
+
 
 
 };

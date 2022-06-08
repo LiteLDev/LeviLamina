@@ -23,7 +23,6 @@ public:
     CoralFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CoralFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -31,6 +30,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORALFEATURE
 public:
 #endif
+
 
 //private:
     MCAPI void _buildHand(class BlockSource &, class BlockPos const &, class Random &, std::vector<class BlockPos> &, std::vector<struct std::pair<class BlockPos, unsigned char>> &, class gsl::not_null<class Block const *>) const;
@@ -45,8 +45,5 @@ public:
     MCAPI bool _setBlockOnSolid(class BlockSource &, class BlockPos const &, class gsl::not_null<class Block const *>, int) const;
     MCAPI void _starCorners(class BlockSource &, class Random &, class BlockPos const &, class gsl::not_null<class Block const *>, float, int, bool) const;
     MCAPI void _starFormation(class BlockSource &, class Random &, class BlockPos const &, class gsl::not_null<class Block const *>, float, int, bool) const;
-
-private:
-
 
 };

@@ -23,7 +23,6 @@ public:
     OceanMonumentWingRoom() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~OceanMonumentWingRoom();
     /*3*/ virtual enum StructurePieceType getType() const;
@@ -32,6 +31,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANMONUMENTWINGROOM
 public:
 #endif
+
 
 
 };

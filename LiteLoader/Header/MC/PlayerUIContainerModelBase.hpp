@@ -23,7 +23,6 @@ public:
     PlayerUIContainerModelBase() = delete;
 #endif
 
-
 public:
     /*0*/ virtual void containerContentChanged(int);
     /*1*/ virtual ~PlayerUIContainerModelBase();
@@ -46,8 +45,6 @@ public:
 
 //protected:
     MCAPI void _refreshContainer(bool);
-
-protected:
 
 
 };

@@ -23,7 +23,6 @@ public:
     CommandBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CommandBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -84,15 +83,13 @@ public:
     MCAPI CommandBlock(std::string const &, int, enum CommandBlockMode);
     MCAPI enum CommandBlockMode getMode() const;
     MCAPI void updateBlock(class BlockSource &, class BlockPos const &, enum CommandBlockMode, bool) const;
-    MCAPI static int mCBModeMap[];
+
 
 //private:
     MCAPI void _execute(class BlockSource &, class CommandBlockActor &, class BlockPos const &, bool) const;
     MCAPI void _executeChain(class BlockSource &, class BlockPos const &) const;
     MCAPI bool _executeChainBlock(class BlockSource &, class BlockPos const &, class CommandBlockActor &, bool) const;
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &, bool) const;
-
-private:
-
+    MCAPI static int mCBModeMap[];
 
 };

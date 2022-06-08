@@ -20,7 +20,6 @@ public:
     MultifaceSpreader() = delete;
 #endif
 
-
 public:
     /*0*/ virtual std::vector<enum MultifaceSpreader::SpreadType> const & _getSpreadTypes() const;
     /*1*/ virtual bool _canSpreadFrom(class Block const &, unsigned char) const;
@@ -38,8 +37,6 @@ public:
 
 //protected:
     MCAPI bool _canSpreadToFace(class IBlockWorldGenAPI &, class Block const &, class BlockPos const &, unsigned char) const;
-
-protected:
     MCAPI static std::vector<enum MultifaceSpreader::SpreadType> const ALL_SPREAD_TYPES;
 
 

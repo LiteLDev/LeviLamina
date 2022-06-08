@@ -22,7 +22,6 @@ public:
     VanillaGameModuleDedicatedServer() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~VanillaGameModuleDedicatedServer();
     /*1*/ virtual std::unique_ptr<class GameModuleServer> createGameModuleServer();
@@ -32,6 +31,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAGAMEMODULEDEDICATEDSERVER
 public:
 #endif
+
 
 
 };

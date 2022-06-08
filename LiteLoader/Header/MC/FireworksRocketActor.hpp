@@ -24,7 +24,6 @@ public:
     FireworksRocketActor() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~FireworksRocketActor();
     /*40*/ virtual void __unk_vfn_40();
@@ -61,12 +60,10 @@ public:
     MCAPI bool isAttachedToEntity() const;
     MCAPI void setDispensed(bool);
 
+
 //private:
     MCAPI void checkAchievement() const;
     MCAPI void dealExplosionDamage();
     MCAPI void initTagData(class Random &);
-
-private:
-
 
 };

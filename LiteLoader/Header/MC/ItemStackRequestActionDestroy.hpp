@@ -22,7 +22,6 @@ public:
     ItemStackRequestActionDestroy(class ItemStackRequestActionDestroy const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ItemStackRequestActionDestroy();
     /*1*/ virtual void __unk_vfn_1();
@@ -32,6 +31,7 @@ public:
 public:
 #endif
     MCAPI ItemStackRequestActionDestroy();
+
 
 
 };

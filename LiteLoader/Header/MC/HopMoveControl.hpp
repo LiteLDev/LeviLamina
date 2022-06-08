@@ -22,7 +22,6 @@ public:
     HopMoveControl(class HopMoveControl const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~HopMoveControl();
     /*2*/ virtual void tick(class MoveControlComponent &, class Mob &);
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI HopMoveControl();
+
 
 
 };

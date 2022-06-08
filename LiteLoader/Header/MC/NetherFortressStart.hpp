@@ -23,13 +23,13 @@ public:
     NetherFortressStart() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NetherFortressStart();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERFORTRESSSTART
 public:
 #endif
     MCAPI NetherFortressStart(class Random &, short, int, int);
+
 
 
 };

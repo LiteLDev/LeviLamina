@@ -24,7 +24,6 @@ public:
     MinecartBlockCommandOrigin() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MinecartBlockCommandOrigin();
     /*3*/ virtual class BlockPos getBlockPosition() const;
@@ -42,6 +41,7 @@ public:
 #endif
     MCAPI MinecartBlockCommandOrigin(class BlockSource &, struct ActorUniqueID const &);
     MCAPI static std::unique_ptr<class MinecartBlockCommandOrigin> load(class CompoundTag const &, class Level &);
+
 
 
 };

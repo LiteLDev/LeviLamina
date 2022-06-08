@@ -22,13 +22,13 @@ public:
     BlockEventDispatcherToken() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTDISPATCHERTOKEN
 public:
 #endif
     MCAPI class BlockEventDispatcherToken & operator=(class BlockEventDispatcherToken &&);
     MCAPI ~BlockEventDispatcherToken();
+
 
 
 };

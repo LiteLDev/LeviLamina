@@ -23,7 +23,6 @@ public:
     RaidGardenGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RaidGardenGoal();
     /*1*/ virtual bool canUse();
@@ -39,6 +38,7 @@ public:
 public:
 #endif
     MCAPI RaidGardenGoal(class Mob &, float, int, int, int, float, int, int, int, int, std::vector<class BlockDescriptor> const &);
+
 
 
 };

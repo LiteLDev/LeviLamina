@@ -21,7 +21,6 @@ public:
     EntityOptionalOwnerRef(class EntityOptionalOwnerRef const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYOPTIONALOWNERREF
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI void setOwnedRef(class OwnerPtrT<struct EntityRefTraits>);
     MCAPI void setWeakRef(class WeakRefT<struct EntityRefTraits>);
     MCAPI class StackRefResultT<struct EntityRefTraits> tryGet() const;
+
 
 
 };

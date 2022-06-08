@@ -22,7 +22,6 @@ public:
     RangedAttackDefinition(class RangedAttackDefinition const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANGEDATTACKDEFINITION
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI RangedAttackDefinition();
     MCAPI void initialize(class EntityContext &, class RangedAttackGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RangedAttackDefinition>> &);
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     StubServerLocator(class StubServerLocator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StubServerLocator();
     /*1*/ virtual void setGetHostGUIDFn(class std::function<struct RakNet::RakNetGUID (void)> const &);
@@ -49,6 +48,7 @@ public:
     MCVAPI bool isIPv6Supported() const;
 #endif
     MCAPI StubServerLocator();
+
 
 
 };

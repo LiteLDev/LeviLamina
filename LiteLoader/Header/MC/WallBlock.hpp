@@ -23,7 +23,6 @@ public:
     WallBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WallBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -86,20 +85,18 @@ public:
     MCAPI WallBlock(std::string const &, int, class BlockLegacy const &);
     MCAPI WallBlock(std::string const &, int, class Material const &);
     MCAPI void tryFixWallStates(class BlockSource &, class BlockPos const &, int) const;
-    MCAPI static class BaseGameVersion const WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION;
-
-//private:
-    MCAPI enum WallConnectionType _desiredConnectionState(class BlockSource &, class BlockPos const &, unsigned char) const;
-    MCAPI bool _isCovered(class BlockSource &, class BlockPos const &, class AABB const &) const;
-    MCAPI bool _shouldBePost(class BlockSource &, class BlockPos const &, class Block const &) const;
-    MCAPI bool _tryAddToTickingQueue(class BlockSource &, class BlockPos const &) const;
-
-private:
     MCAPI static float const POST_HEIGHT;
     MCAPI static float const POST_WIDTH;
     MCAPI static float const WALL_HEIGHT;
     MCAPI static class std::array<std::string, 14> const WALL_NAMES;
     MCAPI static float const WALL_WIDTH;
 
+
+//private:
+    MCAPI enum WallConnectionType _desiredConnectionState(class BlockSource &, class BlockPos const &, unsigned char) const;
+    MCAPI bool _isCovered(class BlockSource &, class BlockPos const &, class AABB const &) const;
+    MCAPI bool _shouldBePost(class BlockSource &, class BlockPos const &, class Block const &) const;
+    MCAPI bool _tryAddToTickingQueue(class BlockSource &, class BlockPos const &) const;
+    MCAPI static class BaseGameVersion const WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 };

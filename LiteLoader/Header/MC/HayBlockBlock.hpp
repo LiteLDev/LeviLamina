@@ -23,7 +23,6 @@ public:
     HayBlockBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~HayBlockBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -66,6 +65,7 @@ public:
 public:
 #endif
     MCAPI HayBlockBlock(std::string const &, int);
+
 
 
 };

@@ -20,12 +20,12 @@ public:
     IEntityRegistryOwner() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IENTITYREGISTRYOWNER
 public:
     MCVAPI ~IEntityRegistryOwner();
 #endif
+
 
 
 };

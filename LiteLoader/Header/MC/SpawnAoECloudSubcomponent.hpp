@@ -22,7 +22,6 @@ public:
     SpawnAoECloudSubcomponent(class SpawnAoECloudSubcomponent const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SpawnAoECloudSubcomponent();
     /*1*/ virtual void readfromJSON(class Json::Value &, class SemVersion const &);
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI SpawnAoECloudSubcomponent();
+
 
 
 };

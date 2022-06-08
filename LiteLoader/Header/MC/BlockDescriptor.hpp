@@ -20,7 +20,6 @@ public:
     class BlockDescriptor& operator=(class BlockDescriptor const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDESCRIPTOR
 public:
@@ -38,20 +37,18 @@ public:
     MCAPI void operator=(class BlockDescriptor const &);
     MCAPI std::unique_ptr<class CompoundTag> toCompoundTag() const;
     MCAPI ~BlockDescriptor();
+    MCAPI static char const JSON_NAME_FIELD[];
+    MCAPI static char const JSON_STATES_FIELD[];
+    MCAPI static char const JSON_TAGS_FIELD[];
     MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const &, class BlockDescriptor const &);
     MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const &, class Block const &);
     MCAPI static void bindType();
     MCAPI static class BlockDescriptor fromCompoundTag(class CompoundTag const &);
     MCAPI static class BlockDescriptor fromTagExpression(std::string const &, enum MolangVersion);
 
+
 //private:
     MCAPI bool _anyTagsMatch(class Block const &) const;
     MCAPI void _resolveImpl() const;
-
-private:
-    MCAPI static char const JSON_NAME_FIELD[];
-    MCAPI static char const JSON_STATES_FIELD[];
-    MCAPI static char const JSON_TAGS_FIELD[];
-
 
 };

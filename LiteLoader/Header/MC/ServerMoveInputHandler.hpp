@@ -22,7 +22,6 @@ public:
     ServerMoveInputHandler(class ServerMoveInputHandler const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ServerMoveInputHandler();
     /*2*/ virtual void __unk_vfn_2();
@@ -35,6 +34,7 @@ public:
 #endif
     MCAPI ServerMoveInputHandler();
     MCAPI void digestPlayerInputPacket(class PlayerAuthInputPacket const &);
+
 
 
 };

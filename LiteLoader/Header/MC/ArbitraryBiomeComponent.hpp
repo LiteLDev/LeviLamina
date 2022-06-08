@@ -20,12 +20,12 @@ public:
     ArbitraryBiomeComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARBITRARYBIOMECOMPONENT
 public:
 #endif
     MCAPI ~ArbitraryBiomeComponent();
+
 
 
 };

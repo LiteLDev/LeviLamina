@@ -25,7 +25,6 @@ public:
     SplashPotionItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SplashPotionItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -53,6 +52,7 @@ public:
 public:
 #endif
     MCAPI SplashPotionItem(std::string const &, int);
+
 
 
 };

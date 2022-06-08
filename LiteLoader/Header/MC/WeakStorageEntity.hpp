@@ -22,7 +22,6 @@ public:
     WeakStorageEntity() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAKSTORAGEENTITY
 public:
@@ -36,8 +35,6 @@ public:
     MCAPI WeakStorageEntity(enum WeakStorageEntity::VariadicInit, class EntityContext const &);
     MCAPI bool _isSet() const;
     MCAPI void _reset();
-
-protected:
 
 
 };

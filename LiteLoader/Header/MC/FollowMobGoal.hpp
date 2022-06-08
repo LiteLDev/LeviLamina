@@ -22,7 +22,6 @@ public:
     FollowMobGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FollowMobGoal();
     /*1*/ virtual bool canUse();
@@ -37,10 +36,8 @@ public:
 #endif
     MCAPI FollowMobGoal(class Mob &, float, float, int);
 
+
 //private:
     MCAPI bool _setWantedMob();
-
-private:
-
 
 };

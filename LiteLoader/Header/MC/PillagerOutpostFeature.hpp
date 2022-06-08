@@ -23,7 +23,6 @@ public:
     PillagerOutpostFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PillagerOutpostFeature();
     /*1*/ virtual bool shouldAddHardcodedSpawnAreas() const;
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI PillagerOutpostFeature(unsigned int);
+
 
 
 };

@@ -21,7 +21,6 @@ public:
     DebugInfoComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DebugInfoComponent();
     /*1*/ virtual enum EventResult onEvent(struct ActorNotificationEvent const &);
@@ -64,6 +63,7 @@ public:
     MCAPI bool listenersEmpty() const;
     MCAPI class DebugInfoComponent & operator=(class DebugInfoComponent &&);
     MCAPI void removeListener(class HashedString const &, class NetworkIdentifier, unsigned char);
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     ShipwreckFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ShipwreckFeature();
     /*3*/ virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI ShipwreckFeature(class OceanMonumentFeature &, unsigned int, class BaseGameVersion const &);
+
 
 
 };

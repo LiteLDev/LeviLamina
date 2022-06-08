@@ -23,7 +23,6 @@ public:
     FrostedIceBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FrostedIceBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -72,8 +71,10 @@ public:
 #endif
     MCAPI FrostedIceBlock(std::string const &, int, bool);
     MCAPI void _slightlyMelt(class BlockSource &, class BlockPos const &, class Random &, bool) const;
+
+
+//private:
     MCAPI static int const MAX_AGE;
     MCAPI static int const MIN_NEIGHBORS;
-
 
 };

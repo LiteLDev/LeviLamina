@@ -22,7 +22,6 @@ public:
     SnackGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SnackGoal();
     /*1*/ virtual bool canUse();
@@ -39,6 +38,12 @@ public:
 public:
 #endif
     MCAPI SnackGoal(class Mob &, std::vector<class ItemDescriptor> const &, float, float, float);
+
+
+//private:
+    MCAPI bool _hasSnackableItems();
+    MCAPI bool _isSnackableItem(class ItemStack const &) const;
+    MCAPI void _updateHand(class ItemStack const &);
     MCAPI static int const CHEW_CHANCE;
     MCAPI static int const EATING_TIME;
     MCAPI static float const PATH_RANGE;
@@ -46,13 +51,5 @@ public:
     MCAPI static int const RANDOM_EATING_START;
     MCAPI static float const SEARCH_SIZE;
     MCAPI static float const STOP_DIST_SQRD;
-
-//private:
-    MCAPI bool _hasSnackableItems();
-    MCAPI bool _isSnackableItem(class ItemStack const &) const;
-    MCAPI void _updateHand(class ItemStack const &);
-
-private:
-
 
 };

@@ -129,7 +129,6 @@ public:
     Player() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -471,41 +470,6 @@ public:
     MCAPI void updateSpawnChunkView();
     MCAPI void updateTrackedBosses();
     MCAPI void useSelectedItem(enum ItemUseMethod, bool);
-    MCAPI static void _aiStep(struct IPlayerMovementProxy &);
-    MCAPI static void _travel(struct IPlayerMovementProxy &, float, float, float);
-    MCAPI static bool canJump(struct IPlayerMovementProxy &);
-    MCAPI static bool checkAndFixSpawnPosition(class Vec3 &, std::vector<class gsl::not_null<class BlockSource *>>, class AABB, bool, bool, bool, bool, bool, bool, short);
-    MCAPI static bool checkNeedAutoJump(struct IPlayerMovementProxy *, float, float);
-    MCAPI static void goDownInWater(struct IActorMovementProxy &);
-    MCAPI static void handleJumpEffects(struct IPlayerMovementProxy &);
-    MCAPI static class Player * tryGetFromComponent(class FlagComponent<struct PlayerComponentFlag> const &, class ActorOwnerComponent &, bool);
-    MCAPI static class Player * tryGetFromEntity(class EntityContext &, bool);
-    MCAPI static class Player * tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
-
-//protected:
-    MCAPI bool _checkAndFixSpawnPosition(class Vec3 &, std::vector<class gsl::not_null<class BlockSource *>>, bool, bool, bool, bool, bool) const;
-    MCAPI void _chooseSpawnArea();
-    MCAPI bool _chooseSpawnPositionWithinArea();
-    MCAPI void _registerPlayerAttributes();
-    MCAPI void _updateInteraction();
-    MCAPI bool _validateSpawnPositionAvailability(class Vec3 const &, class BlockSource *, class Vec3 const *const) const;
-    MCAPI bool checkBed(class BlockSource *, class Vec3 const *const);
-    MCAPI bool checkSpawnBlock(class BlockSource const &) const;
-    MCAPI static bool _isDangerousBlock(class Block const &, bool);
-
-//private:
-    MCAPI void _addLevels(int);
-    MCAPI bool _blockUsingShield(class ActorDamageSource const &, float);
-    MCAPI void _ensureSafeSpawnPosition(class Vec3 &);
-    MCAPI bool _findFallbackSpawnPosition(class Vec3 &, std::vector<class gsl::not_null<class BlockSource *>>, unsigned int);
-    MCAPI void _handleCarriedItemInteractText();
-    MCAPI bool _isChunkSourceLoaded(class Vec3 const &, class BlockSource const &) const;
-    MCAPI void _registerElytraLoopSound();
-    MCAPI void _sendShieldUpdatePacket(class ShieldItem const &, class ItemStack const &, class ItemStack const &, enum ContainerID, int);
-
-protected:
-
-private:
     MCAPI static float const DEFAULT_BB_HEIGHT;
     MCAPI static float const DEFAULT_BB_WIDTH;
     MCAPI static float const DEFAULT_FLY_SPEED;
@@ -538,6 +502,36 @@ private:
     MCAPI static class Attribute const SATURATION;
     MCAPI static unsigned int const SPAWN_CHUNK_LARGE_JUMP;
     MCAPI static unsigned int const SPAWN_CHUNK_RADIUS;
+    MCAPI static void _aiStep(struct IPlayerMovementProxy &);
+    MCAPI static void _travel(struct IPlayerMovementProxy &, float, float, float);
+    MCAPI static bool canJump(struct IPlayerMovementProxy &);
+    MCAPI static bool checkAndFixSpawnPosition(class Vec3 &, std::vector<class gsl::not_null<class BlockSource *>>, class AABB, bool, bool, bool, bool, bool, bool, short);
+    MCAPI static bool checkNeedAutoJump(struct IPlayerMovementProxy *, float, float);
+    MCAPI static void goDownInWater(struct IActorMovementProxy &);
+    MCAPI static void handleJumpEffects(struct IPlayerMovementProxy &);
+    MCAPI static class Player * tryGetFromComponent(class FlagComponent<struct PlayerComponentFlag> const &, class ActorOwnerComponent &, bool);
+    MCAPI static class Player * tryGetFromEntity(class EntityContext &, bool);
+    MCAPI static class Player * tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
 
+//protected:
+    MCAPI bool _checkAndFixSpawnPosition(class Vec3 &, std::vector<class gsl::not_null<class BlockSource *>>, bool, bool, bool, bool, bool) const;
+    MCAPI void _chooseSpawnArea();
+    MCAPI bool _chooseSpawnPositionWithinArea();
+    MCAPI void _registerPlayerAttributes();
+    MCAPI void _updateInteraction();
+    MCAPI bool _validateSpawnPositionAvailability(class Vec3 const &, class BlockSource *, class Vec3 const *const) const;
+    MCAPI bool checkBed(class BlockSource *, class Vec3 const *const);
+    MCAPI bool checkSpawnBlock(class BlockSource const &) const;
+    MCAPI static bool _isDangerousBlock(class Block const &, bool);
+
+//private:
+    MCAPI void _addLevels(int);
+    MCAPI bool _blockUsingShield(class ActorDamageSource const &, float);
+    MCAPI void _ensureSafeSpawnPosition(class Vec3 &);
+    MCAPI bool _findFallbackSpawnPosition(class Vec3 &, std::vector<class gsl::not_null<class BlockSource *>>, unsigned int);
+    MCAPI void _handleCarriedItemInteractText();
+    MCAPI bool _isChunkSourceLoaded(class Vec3 const &, class BlockSource const &) const;
+    MCAPI void _registerElytraLoopSound();
+    MCAPI void _sendShieldUpdatePacket(class ShieldItem const &, class ItemStack const &, class ItemStack const &, enum ContainerID, int);
 
 };

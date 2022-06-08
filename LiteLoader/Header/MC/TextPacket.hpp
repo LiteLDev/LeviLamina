@@ -23,7 +23,6 @@ public:
     TextPacket(class TextPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TextPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -44,10 +43,8 @@ public:
     MCAPI static class TextPacket createTranslatedAnnouncement(std::string const &, std::string const &, std::string const &, std::string const &);
     MCAPI static class TextPacket createWhisper(std::string const &, std::string const &, std::string const &, std::string const &);
 
+
 //private:
     MCAPI TextPacket(enum TextPacketType, std::string const &, std::string const &, std::vector<std::string> const &, bool, std::string const &, std::string const &);
-
-private:
-
 
 };

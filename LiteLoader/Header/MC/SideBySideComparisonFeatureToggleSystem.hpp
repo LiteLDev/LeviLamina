@@ -20,12 +20,12 @@ public:
     SideBySideComparisonFeatureToggleSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDECOMPARISONFEATURETOGGLESYSTEM
 public:
 #endif
     MCAPI static struct TickingSystemWithInfo createSideBySideComparisonFeatureToggleSystem();
+
 
 
 };

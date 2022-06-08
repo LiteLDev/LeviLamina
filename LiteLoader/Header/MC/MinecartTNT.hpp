@@ -24,7 +24,6 @@ public:
     MinecartTNT() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~MinecartTNT();
     /*40*/ virtual void __unk_vfn_40();
@@ -60,7 +59,9 @@ public:
 #endif
     MCAPI MinecartTNT(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void primeFuse(enum ActorDamageCause);
-    MCAPI static int const DEFAULT_FUSE_LENGTH;
 
+
+//private:
+    MCAPI static int const DEFAULT_FUSE_LENGTH;
 
 };

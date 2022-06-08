@@ -22,7 +22,6 @@ public:
     NpcSystem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NpcSystem();
     /*1*/ virtual void __unk_vfn_1();
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI static void tickCountdown(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, struct NpcComponents::LeaveMenuCountdown> &);
+
 
 
 };

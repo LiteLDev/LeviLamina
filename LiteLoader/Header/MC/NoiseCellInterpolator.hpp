@@ -22,7 +22,6 @@ public:
     NoiseCellInterpolator() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NOISECELLINTERPOLATOR
 public:
@@ -33,6 +32,7 @@ public:
     MCAPI void selectCellXZ(int, int, int, int);
     MCAPI void updateForX(unsigned char);
     MCAPI void updateForZ(unsigned char);
+
 
 
 };

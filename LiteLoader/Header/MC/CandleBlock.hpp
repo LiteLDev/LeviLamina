@@ -23,7 +23,6 @@ public:
     CandleBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CandleBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -80,10 +79,8 @@ public:
     MCAPI CandleBlock(std::string const &, int);
     MCAPI static bool tryLightFire(class BlockSource &, class BlockPos const &);
 
+
 //private:
     MCAPI static void _forEachCandle(class Block const &, class BlockPos const &, class std::function<void (class Vec3 const &, int)>);
-
-private:
-
 
 };

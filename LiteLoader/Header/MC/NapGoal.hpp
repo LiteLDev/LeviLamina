@@ -22,7 +22,6 @@ public:
     NapGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NapGoal();
     /*1*/ virtual bool canUse();
@@ -36,14 +35,12 @@ public:
 public:
 #endif
     MCAPI NapGoal(class Mob &, float, float, float, float, class ActorFilterGroup const &, class ActorFilterGroup const &);
-    MCAPI static float const MOB_DETECT_TIME;
+
 
 //private:
     MCAPI bool _canSleep(struct Tick const &) const;
     MCAPI bool _detectsMobs() const;
     MCAPI void _setCooldown();
-
-private:
-
+    MCAPI static float const MOB_DETECT_TIME;
 
 };

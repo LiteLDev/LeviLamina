@@ -22,7 +22,6 @@ public:
     GameTestInstanceLedger() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GameTestInstanceLedger();
     /*1*/ virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance &);
@@ -32,7 +31,9 @@ public:
     MCAPI GameTestInstanceLedger(class LevelStorage &);
     MCAPI void clear(class AutomaticID<class Dimension, int>);
     MCAPI std::vector<class BoundingBox> getBoundingBoxes(class AutomaticID<class Dimension, int>) const;
-    MCAPI static std::string const GAME_TEST_INSTANCE_PREFIX;
 
+
+//private:
+    MCAPI static std::string const GAME_TEST_INSTANCE_PREFIX;
 
 };

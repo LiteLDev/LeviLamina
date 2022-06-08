@@ -23,7 +23,6 @@ public:
     PlayerUIContainer() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PlayerUIContainer();
     /*22*/ virtual void __unk_vfn_22();
@@ -34,6 +33,7 @@ public:
     MCAPI PlayerUIContainer(std::string const &, bool, int);
     MCAPI void load(class ListTag const &, class SemVersion const &);
     MCAPI std::unique_ptr<class ListTag> save();
+
 
 
 };

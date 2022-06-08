@@ -24,7 +24,6 @@ public:
     DBStorageEnvironmentChain() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DBSTORAGEENVIRONMENTCHAIN
 public:
@@ -39,10 +38,8 @@ public:
     MCAPI ~DBStorageEnvironmentChain();
     MCAPI static bool isContentKeyValid(class leveldb::Env *, class Core::Path const &, class ContentIdentity const &, std::string const &, class std::shared_ptr<class Core::FileStorageArea>);
 
+
 //private:
     MCAPI static std::unique_ptr<class FlushableEnv> createFlushableEnv(class leveldb::Env *, class std::shared_ptr<class Core::FileStorageArea>, class Core::Path const &);
-
-private:
-
 
 };

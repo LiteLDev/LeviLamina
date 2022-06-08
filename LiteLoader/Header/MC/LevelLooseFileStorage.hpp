@@ -23,13 +23,13 @@ public:
     LevelLooseFileStorage() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELLOOSEFILESTORAGE
 public:
 #endif
     MCAPI LevelLooseFileStorage(class Core::Path const &, class ContentIdentity const &, class IContentKeyProvider const &);
     MCAPI std::unique_ptr<class PackAccessStrategy> getAccessStrategy() const;
+
 
 
 };

@@ -21,7 +21,6 @@ public:
     CraftHandlerSmithingTable() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CraftHandlerSmithingTable();
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
@@ -30,6 +29,7 @@ public:
 public:
 #endif
     MCAPI CraftHandlerSmithingTable(class Player &, class ItemStackRequestActionCraftHandler &);
+
 
 
 };

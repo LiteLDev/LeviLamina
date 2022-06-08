@@ -23,7 +23,6 @@ public:
     OceanMonumentPiece() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~OceanMonumentPiece();
     /*6*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
@@ -39,8 +38,6 @@ public:
     MCAPI bool chunkIntersects(class BoundingBox const &, int, int, int, int);
     MCAPI void generateDefaultFloor(class BlockSource &, class BoundingBox const &, int, int, bool);
     MCAPI void spawnElder(class BlockSource &, class BoundingBox const &, int, int, int);
-
-protected:
     MCAPI static int mGridroomLeftWingConnectIndex;
     MCAPI static int mGridroomRightWingConnectIndex;
     MCAPI static int mGridroomSourceIndex;

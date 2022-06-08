@@ -20,12 +20,12 @@ public:
     ChestBlockTryPairEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTBLOCKTRYPAIREVENT
 public:
 #endif
     MCAPI ~ChestBlockTryPairEvent();
+
 
 
 };

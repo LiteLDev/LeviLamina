@@ -28,7 +28,6 @@ public:
     UpdateSoftEnumPacket(class UpdateSoftEnumPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~UpdateSoftEnumPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -40,6 +39,7 @@ public:
 #endif
     MCAPI UpdateSoftEnumPacket(enum SoftEnumUpdateType, std::string const &, std::vector<std::string> const &);
     MCAPI UpdateSoftEnumPacket();
+
 
 
 };

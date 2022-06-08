@@ -30,7 +30,6 @@ public:
     AppPlatform() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORM
 public:
@@ -245,20 +244,15 @@ public:
     MCAPI bool isEduMode() const;
     MCAPI bool isTerminating() const;
     MCAPI void removeListener(class AppPlatformListener *);
-    MCAPI static bool mIsInitialized;
-
-//protected:
-
-//private:
-    MCAPI void _initializeLoadProfiler();
-
-protected:
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const SHADERCACHE_PATH;
-
-private:
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const HOME_PATH;
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const LOG_PATH;
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const SETTINGS_PATH;
 
+//protected:
+    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const SHADERCACHE_PATH;
+
+//private:
+    MCAPI void _initializeLoadProfiler();
+    MCAPI static bool mIsInitialized;
 
 };

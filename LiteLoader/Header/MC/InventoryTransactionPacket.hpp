@@ -28,7 +28,6 @@ public:
     InventoryTransactionPacket(class InventoryTransactionPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~InventoryTransactionPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -41,6 +40,7 @@ public:
     MCAPI InventoryTransactionPacket(std::unique_ptr<class ComplexInventoryTransaction>, bool);
     MCAPI InventoryTransactionPacket();
     MCAPI void postLoadItems(class BlockPalette &, bool) const;
+
 
 
 };

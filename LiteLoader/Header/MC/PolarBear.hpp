@@ -24,7 +24,6 @@ public:
     PolarBear() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~PolarBear();
     /*40*/ virtual void __unk_vfn_40();
@@ -58,7 +57,9 @@ public:
 #endif
     MCAPI PolarBear(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI float getStandingAnimationScale(float);
-    MCAPI static float const STAND_ANIMATION_TICKS;
 
+
+//private:
+    MCAPI static float const STAND_ANIMATION_TICKS;
 
 };

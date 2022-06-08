@@ -22,7 +22,6 @@ public:
     ExploreOutskirtsGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ExploreOutskirtsGoal();
     /*1*/ virtual bool canUse();
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI ExploreOutskirtsGoal(class Mob &);
+
 
 
 };

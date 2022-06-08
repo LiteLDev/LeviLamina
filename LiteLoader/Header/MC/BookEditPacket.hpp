@@ -21,7 +21,6 @@ public:
     class BookEditPacket& operator=(class BookEditPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BookEditPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -35,11 +34,9 @@ public:
     MCAPI BookEditPacket();
     MCAPI struct PageContent getPage() const;
 
+
 //private:
     MCAPI void _readPage(class ReadOnlyBinaryStream &);
     MCAPI void _writePage(class BinaryStream &) const;
-
-private:
-
 
 };

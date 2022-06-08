@@ -21,13 +21,13 @@ public:
     BlockAimCollisionComponentProcessor() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKAIMCOLLISIONCOMPONENTPROCESSOR
 public:
 #endif
     MCAPI static void _tryBake(struct BlockRotationComponent const *, struct BlockAimCollisionComponent *);
     MCAPI static std::unique_ptr<class Util::EntityComponentProcessor> getProcessor();
+
 
 
 };

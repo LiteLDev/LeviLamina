@@ -23,7 +23,6 @@ public:
     TurtleEggBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TurtleEggBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -81,11 +80,9 @@ public:
 #endif
     MCAPI TurtleEggBlock(std::string const &, int);
 
+
 //private:
     MCAPI static void _decreaseEggs(class BlockSource &, class BlockPos const &, unsigned int, bool);
     MCAPI static void _destroyEgg(class BlockSource &, class BlockPos const &, class Actor &, int, bool);
-
-private:
-
 
 };

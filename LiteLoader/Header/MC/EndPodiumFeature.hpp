@@ -23,7 +23,6 @@ public:
     EndPodiumFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EndPodiumFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -32,16 +31,13 @@ public:
 public:
 #endif
     MCAPI EndPodiumFeature(bool);
-
-//private:
-
-private:
     MCAPI static float const CORNER_ROUNDING;
     MCAPI static class BlockPos const END_PODIUM_CHUNK_POSITION;
     MCAPI static class BlockPos const END_PODIUM_LOCATION;
     MCAPI static int const PODIUM_PILLAR_HEIGHT;
     MCAPI static int const PODIUM_RADIUS;
     MCAPI static int const RIM_RADIUS;
+
 
 
 };

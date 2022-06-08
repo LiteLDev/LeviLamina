@@ -22,7 +22,6 @@ public:
     EntityPlacerItemComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EntityPlacerItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -39,11 +38,9 @@ public:
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
+
 //private:
     MCAPI void _positionAndRotateActor(class Actor &, class Vec3, unsigned char, class Vec3 const &, class BlockLegacy const *) const;
     MCAPI void _setActorCustomName(class Actor &, class ItemStack const &) const;
-
-private:
-
 
 };

@@ -24,7 +24,6 @@ public:
     HangingActorItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~HangingActorItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -45,6 +44,7 @@ public:
 public:
 #endif
     MCAPI HangingActorItem(std::string const &, int, enum ActorType);
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     POIInstance() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POIINSTANCE
 public:
@@ -49,6 +48,7 @@ public:
     MCAPI void setVillage(class Village *);
     MCAPI void trySpawnParticles(class BlockSource &, class Random &, int) const;
     MCAPI bool useBoundingBox() const;
+
 
 
 };

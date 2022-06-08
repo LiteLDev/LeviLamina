@@ -22,7 +22,6 @@ public:
     NetworkItemInstanceDescriptor() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKITEMINSTANCEDESCRIPTOR
 public:
@@ -33,6 +32,7 @@ public:
     MCAPI void read(class ReadOnlyBinaryStream &);
     MCAPI void write(class BinaryStream &) const;
     MCAPI ~NetworkItemInstanceDescriptor();
+
 
 
 };

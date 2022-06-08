@@ -23,7 +23,6 @@ public:
     BehaviorTreeDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~BehaviorTreeDescription();
@@ -31,6 +30,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORTREEDESCRIPTION
 public:
 #endif
+
 
 
 };

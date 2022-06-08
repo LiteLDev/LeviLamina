@@ -22,7 +22,6 @@ public:
     TickWorldDescription(class TickWorldDescription const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~TickWorldDescription();
@@ -32,6 +31,7 @@ public:
 public:
 #endif
     MCAPI TickWorldDescription();
+
 
 
 };

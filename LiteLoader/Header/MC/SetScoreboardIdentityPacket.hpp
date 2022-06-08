@@ -23,7 +23,6 @@ public:
     SetScoreboardIdentityPacket() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SetScoreboardIdentityPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 public:
 #endif
     MCAPI static class SetScoreboardIdentityPacket change(struct ScoreboardId const &, struct PlayerScoreboardId const &);
+
 
 
 };

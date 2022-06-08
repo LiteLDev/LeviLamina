@@ -22,13 +22,13 @@ public:
     ShulkerBoxContainerScreenValidator(class ShulkerBoxContainerScreenValidator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ShulkerBoxContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKERBOXCONTAINERSCREENVALIDATOR
 public:
 #endif
     MCAPI ShulkerBoxContainerScreenValidator();
+
 
 
 };

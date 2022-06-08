@@ -21,7 +21,6 @@ public:
     AquiferNoises() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AQUIFERNOISES
 public:
@@ -30,10 +29,8 @@ public:
     MCAPI ~AquiferNoises();
     MCAPI static class AquiferNoises make(class XoroshiroPositionalRandomFactory const &);
 
+
 //private:
     MCAPI AquiferNoises(class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class XoroshiroPositionalRandomFactory);
-
-private:
-
 
 };

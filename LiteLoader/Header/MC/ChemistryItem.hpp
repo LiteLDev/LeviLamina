@@ -24,7 +24,6 @@ public:
     ChemistryItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ChemistryItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -45,6 +44,7 @@ public:
 public:
 #endif
     MCAPI static void validate(class ItemStackBase &);
+
 
 
 };

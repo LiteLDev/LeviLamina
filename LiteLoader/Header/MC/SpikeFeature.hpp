@@ -30,7 +30,6 @@ public:
     SpikeFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SpikeFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -43,6 +42,7 @@ public:
     MCAPI void postProcessMobsAt(class BlockSource &, class BlockPos const &, class Random &) const;
     MCAPI void setCrystalBeamTarget(class BlockPos const &);
     MCAPI void setCrystalInvulnerable(bool);
+
 
 
 };

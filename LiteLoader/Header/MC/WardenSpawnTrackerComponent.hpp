@@ -21,7 +21,6 @@ public:
     WardenSpawnTrackerComponent(class WardenSpawnTrackerComponent const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WARDENSPAWNTRACKERCOMPONENT
 public:
@@ -35,6 +34,7 @@ public:
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void tick();
     MCAPI void tryIncreaseThreatLevel();
+
 
 
 };

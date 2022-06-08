@@ -23,7 +23,6 @@ public:
     StemBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StemBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -80,10 +79,8 @@ public:
     MCAPI StemBlock(std::string const &, int, class BlockLegacy const &);
     MCAPI class BlockLegacy const & getFruitBlock() const;
 
+
 //private:
     MCAPI float getGrowthSpeed(class BlockSource &, class BlockPos const &) const;
-
-private:
-
 
 };

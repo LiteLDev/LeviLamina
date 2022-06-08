@@ -23,7 +23,6 @@ public:
     FlatWorldGeneratorOptions() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLATWORLDGENERATOROPTIONS
 public:
@@ -34,8 +33,6 @@ public:
 
 //protected:
     MCAPI bool _load(class Json::Value const &, class BlockPalette const &, class LevelData const &);
-
-protected:
 
 
 };

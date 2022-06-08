@@ -22,7 +22,6 @@ public:
     PlanterItemComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PlanterItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -38,6 +37,7 @@ public:
     MCAPI bool calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
+
 
 
 };

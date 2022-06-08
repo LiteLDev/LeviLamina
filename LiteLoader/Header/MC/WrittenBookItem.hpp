@@ -24,7 +24,6 @@ public:
     WrittenBookItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WrittenBookItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -50,14 +49,6 @@ public:
 public:
 #endif
     MCAPI WrittenBookItem(std::string const &, int);
-    MCAPI static bool canBeCopied(class CompoundTag const *);
-    MCAPI static int getGeneration(class CompoundTag const *);
-    MCAPI static int getPageCount(class ItemStack const &);
-    MCAPI static std::vector<struct PageContent> getPages(class ItemStack const &);
-
-//private:
-
-private:
     MCAPI static int const MAX_GENERATION;
     MCAPI static int const MAX_PAGES;
     MCAPI static int const MAX_PAGE_LENGTH;
@@ -71,6 +62,11 @@ private:
     MCAPI static class gsl::basic_string_span<char const, -1> const TAG_RESOLVED;
     MCAPI static class gsl::basic_string_span<char const, -1> const TAG_TITLE;
     MCAPI static class gsl::basic_string_span<char const, -1> const TAG_XUID;
+    MCAPI static bool canBeCopied(class CompoundTag const *);
+    MCAPI static int getGeneration(class CompoundTag const *);
+    MCAPI static int getPageCount(class ItemStack const &);
+    MCAPI static std::vector<struct PageContent> getPages(class ItemStack const &);
+
 
 
 };

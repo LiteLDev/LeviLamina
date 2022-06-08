@@ -23,7 +23,6 @@ public:
     AnvilInputContainerValidation() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AnvilInputContainerValidation();
     /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
@@ -37,6 +36,7 @@ public:
 public:
     MCVAPI int getContainerOffset(class ContainerScreenContext const &) const;
 #endif
+
 
 
 };

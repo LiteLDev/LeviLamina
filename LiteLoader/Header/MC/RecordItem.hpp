@@ -24,7 +24,6 @@ public:
     RecordItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RecordItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -49,6 +48,7 @@ public:
     MCAPI RecordItem(std::string const &, int, enum LevelSoundEvent);
     MCAPI float getDuration() const;
     MCAPI enum LevelSoundEvent getSound() const;
+
 
 
 };

@@ -24,7 +24,6 @@ public:
     LocalConnector() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LocalConnector();
     /*1*/ virtual void __unk_vfn_1();
@@ -52,7 +51,9 @@ public:
     MCAPI void disconnect();
     MCAPI void host(class NetworkIdentifier const &);
     MCAPI void runEvents();
-    MCAPI static class LocalConnectivitySystem sLocalConnectivitySystem;
 
+
+//private:
+    MCAPI static class LocalConnectivitySystem sLocalConnectivitySystem;
 
 };

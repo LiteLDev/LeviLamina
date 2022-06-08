@@ -23,7 +23,6 @@ public:
     UnderwaterCaveFeature(class UnderwaterCaveFeature const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~UnderwaterCaveFeature();
     /*5*/ virtual bool carveEllipsoidVolume(class IBlockWorldGenAPI &, struct CaveFeatureUtils::CarverConfiguration const &, class Random &, class ChunkPos const &, class Vec3 const &, class BoundingBox const &, float, float, struct CaveFeatureUtils::CarvingParameters const &) const;
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI UnderwaterCaveFeature();
+
 
 
 };

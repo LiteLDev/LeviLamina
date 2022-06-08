@@ -33,7 +33,6 @@ public:
     ByteArrayTag(class ByteArrayTag const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ByteArrayTag();
     /*2*/ virtual void write(class IDataOutput &) const;
@@ -48,6 +47,7 @@ public:
 #endif
     MCAPI ByteArrayTag(struct TagMemoryChunk);
     MCAPI ByteArrayTag();
+
 
 
 };

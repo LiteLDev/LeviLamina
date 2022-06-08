@@ -22,7 +22,6 @@ public:
     ChunkBuildOrderPolicyBase() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ChunkBuildOrderPolicyBase();
     /*1*/ virtual void __unk_vfn_1() = 0;
@@ -30,6 +29,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKBUILDORDERPOLICYBASE
 public:
 #endif
+
 
 
 };

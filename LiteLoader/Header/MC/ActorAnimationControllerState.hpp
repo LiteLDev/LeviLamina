@@ -22,7 +22,6 @@ public:
     ActorAnimationControllerState() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONCONTROLLERSTATE
 public:
@@ -37,6 +36,7 @@ public:
     MCAPI void addTransition(std::string const &, std::string const &, enum MolangVersion, bool);
     MCAPI class StateAnimationVariable & addVariable(std::string const &);
     MCAPI void setBlendTransitionTime(float);
+
 
 
 };

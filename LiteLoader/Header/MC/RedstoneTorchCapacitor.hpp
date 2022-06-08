@@ -22,7 +22,6 @@ public:
     RedstoneTorchCapacitor(class RedstoneTorchCapacitor const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RedstoneTorchCapacitor();
     /*1*/ virtual int getStrength() const;
@@ -44,10 +43,8 @@ public:
     MCAPI void resetBurnOutCount();
     MCAPI void setOn(bool);
 
+
 //private:
     MCAPI int FindStrongestStrength(class BlockPos const &, class CircuitSystem &, bool &);
-
-private:
-
 
 };

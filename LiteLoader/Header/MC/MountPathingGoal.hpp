@@ -22,7 +22,6 @@ public:
     MountPathingGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MountPathingGoal();
     /*1*/ virtual bool canUse();
@@ -39,6 +38,7 @@ public:
 public:
 #endif
     MCAPI MountPathingGoal(class Mob &, float, float, bool);
+
 
 
 };

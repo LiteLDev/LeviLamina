@@ -20,11 +20,11 @@ public:
     IScriptBlockProperty() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISCRIPTBLOCKPROPERTY
 public:
 #endif
+
 
 
 };

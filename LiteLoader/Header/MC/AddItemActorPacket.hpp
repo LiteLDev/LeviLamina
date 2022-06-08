@@ -22,7 +22,6 @@ public:
     AddItemActorPacket(class AddItemActorPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AddItemActorPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI AddItemActorPacket(class ItemActor &);
     MCAPI AddItemActorPacket();
+
 
 
 };

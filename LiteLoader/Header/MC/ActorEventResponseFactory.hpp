@@ -22,7 +22,6 @@ public:
     ActorEventResponseFactory() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorEventResponseFactory();
     /*1*/ virtual void initializeFactory(class Experiments const &);
@@ -30,6 +29,7 @@ public:
 public:
 #endif
     MCAPI void initSchema();
+
 
 
 };

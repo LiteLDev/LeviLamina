@@ -22,7 +22,6 @@ public:
     ChemistryTableBlockActor() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYTABLEBLOCKACTOR
 public:
@@ -47,12 +46,10 @@ public:
     MCAPI void serverCombine(class BlockSource &, std::vector<class ItemStack> const &);
     MCAPI void serverLabTablePacket_DEPRECATED(class LabTablePacket const &, class BlockSource &);
 
+
 //private:
     MCAPI std::unique_ptr<class LabTableReaction> _createReaction(class Random &, std::vector<class ItemStack> const &);
     MCAPI void _popPendingReactionOutput(class BlockSource &);
     MCAPI enum ChemistryTableType _updateType(class BlockSource &);
-
-private:
-
 
 };

@@ -22,7 +22,6 @@ public:
     ShooterDefinition(class ShooterDefinition const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTERDEFINITION
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI void initialize(class EntityContext &, class ShooterComponent &) const;
     MCAPI void setActorDefByName(std::string const &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ShooterDefinition>> &);
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     PanicGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PanicGoal();
     /*1*/ virtual bool canUse();
@@ -37,10 +36,8 @@ public:
 #endif
     MCAPI PanicGoal(class Mob &, float, bool, enum LevelSoundEvent, struct FloatRange, bool, bool, std::vector<enum ActorDamageCause>);
 
+
 //private:
     MCAPI bool _tryGeneratePathEnd();
-
-private:
-
 
 };

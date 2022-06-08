@@ -20,7 +20,6 @@ public:
     TaskQueuePortContextImpl() = delete;
 #endif
 
-
 public:
     /*0*/ virtual unsigned int AddRef();
     /*1*/ virtual unsigned int Release();
@@ -37,6 +36,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKQUEUEPORTCONTEXTIMPL
 public:
 #endif
+
 
 
 };

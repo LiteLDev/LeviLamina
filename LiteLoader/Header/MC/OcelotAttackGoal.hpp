@@ -22,7 +22,6 @@ public:
     OcelotAttackGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~OcelotAttackGoal();
     /*1*/ virtual bool canUse();
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI OcelotAttackGoal(class Mob &);
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     MoveToLavaGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MoveToLavaGoal();
     /*3*/ virtual void __unk_vfn_3();
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI MoveToLavaGoal(class Mob &, float, int, int, int, float);
+
 
 
 };

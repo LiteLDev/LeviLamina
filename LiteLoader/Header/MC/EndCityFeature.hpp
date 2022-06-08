@@ -23,7 +23,6 @@ public:
     EndCityFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EndCityFeature();
     /*2*/ virtual bool shouldPostProcessMobs() const;
@@ -34,6 +33,7 @@ public:
 public:
 #endif
     MCAPI EndCityFeature(class Dimension &, unsigned int &);
+
 
 
 };

@@ -28,7 +28,6 @@ public:
     NpcCommandAction(class NpcCommandAction const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NpcCommandAction();
     /*1*/ virtual class Json::Value toJson();
@@ -39,13 +38,11 @@ public:
     MCAPI NpcCommandAction();
     MCAPI std::vector<struct NpcCommandAction::SavedCommand> & getCommands();
     MCAPI void setCommands(std::vector<struct NpcCommandAction::SavedCommand> &&);
-    MCAPI static std::string const COMMAND_LINE_KEY;
-    MCAPI static std::string const COMMAND_VERSION_KEY;
-
-//private:
-
-private:
     MCAPI static char const COMMAND_DELIMITER;
 
+
+//private:
+    MCAPI static std::string const COMMAND_LINE_KEY;
+    MCAPI static std::string const COMMAND_VERSION_KEY;
 
 };

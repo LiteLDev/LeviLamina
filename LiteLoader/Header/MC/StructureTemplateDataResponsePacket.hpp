@@ -22,7 +22,6 @@ public:
     StructureTemplateDataResponsePacket(class StructureTemplateDataResponsePacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StructureTemplateDataResponsePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -35,6 +34,7 @@ public:
     MCAPI StructureTemplateDataResponsePacket(std::string const &, std::unique_ptr<class CompoundTag>, enum StructureTemplateResponseType);
     MCAPI StructureTemplateDataResponsePacket();
     MCAPI class StructureTemplateDataResponsePacket & operator=(class StructureTemplateDataResponsePacket &&);
+
 
 
 };

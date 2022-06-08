@@ -24,7 +24,6 @@ public:
     ActorInNetherTest() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorInNetherTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
@@ -32,6 +31,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINNETHERTEST
 public:
 #endif
+
 
 
 };

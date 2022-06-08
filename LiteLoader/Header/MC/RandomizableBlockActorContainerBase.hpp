@@ -23,7 +23,6 @@ public:
     RandomizableBlockActorContainerBase() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RandomizableBlockActorContainerBase();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -40,6 +39,7 @@ public:
 #endif
     MCAPI void setLootTable(std::string const &, int);
     MCAPI void unPackLootTable(class Level &, class Container &, class AutomaticID<class Dimension, int>, class Actor *);
+
 
 
 };

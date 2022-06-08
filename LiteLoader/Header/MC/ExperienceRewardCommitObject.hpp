@@ -20,7 +20,6 @@ public:
     ExperienceRewardCommitObject() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ExperienceRewardCommitObject();
     /*1*/ virtual bool append(class ContainerValidationCommitObject *);
@@ -30,6 +29,7 @@ public:
 public:
 #endif
     MCAPI ExperienceRewardCommitObject(int);
+
 
 
 };

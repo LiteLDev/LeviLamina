@@ -25,12 +25,12 @@ public:
     TeleportRotationData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TELEPORTROTATIONDATA
 public:
 #endif
     MCAPI TeleportRotationData(class RelativeFloat const &, class RelativeFloat const &, class std::optional<class Vec2> const &);
+
 
 
 };

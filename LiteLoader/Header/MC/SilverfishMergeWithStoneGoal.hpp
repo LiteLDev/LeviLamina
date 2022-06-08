@@ -23,7 +23,6 @@ public:
     SilverfishMergeWithStoneGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SilverfishMergeWithStoneGoal();
     /*1*/ virtual bool canUse();
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI SilverfishMergeWithStoneGoal(class Silverfish &);
+
 
 
 };

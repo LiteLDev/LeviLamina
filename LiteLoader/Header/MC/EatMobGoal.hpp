@@ -20,7 +20,6 @@ public:
     EatMobGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EatMobGoal();
     /*1*/ virtual bool canUse();
@@ -34,6 +33,7 @@ public:
 public:
 #endif
     MCAPI EatMobGoal(class Mob &);
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     LabTableReactionComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLEREACTIONCOMPONENT
 public:
@@ -30,6 +29,7 @@ public:
     MCVAPI void _onStart(class LabTableReaction &, class BlockSource &);
     MCVAPI void _onTick(class LabTableReaction &, class BlockSource &);
 #endif
+
 
 
 };

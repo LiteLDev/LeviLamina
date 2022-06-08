@@ -22,7 +22,6 @@ public:
     WorldBlockTarget() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WorldBlockTarget();
     /*1*/ virtual void __unk_vfn_1();
@@ -56,6 +55,7 @@ public:
     MCVAPI bool canGetChunk() const;
 #endif
     MCAPI WorldBlockTarget(class BlockSource &, struct WorldGenContext const &);
+
 
 
 };

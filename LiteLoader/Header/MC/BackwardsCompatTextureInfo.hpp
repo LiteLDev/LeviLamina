@@ -19,12 +19,12 @@ public:
     BackwardsCompatTextureInfo(class BackwardsCompatTextureInfo const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKWARDSCOMPATTEXTUREINFO
 public:
 #endif
     MCAPI BackwardsCompatTextureInfo();
+
 
 
 };

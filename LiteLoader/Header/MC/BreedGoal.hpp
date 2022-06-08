@@ -22,7 +22,6 @@ public:
     BreedGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BreedGoal();
     /*1*/ virtual bool canUse();
@@ -37,11 +36,9 @@ public:
 #endif
     MCAPI BreedGoal(class Mob &, float);
 
+
 //private:
     MCAPI bool _isCloseEnoughToBreed(class Vec3, class Vec2, class Vec3, class Vec2) const;
     MCAPI class Mob * _moveToFreePartner() const;
-
-private:
-
 
 };

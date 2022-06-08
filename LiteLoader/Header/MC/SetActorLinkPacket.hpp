@@ -22,7 +22,6 @@ public:
     SetActorLinkPacket(class SetActorLinkPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SetActorLinkPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI SetActorLinkPacket(struct ActorLink const &);
     MCAPI SetActorLinkPacket();
+
 
 
 };

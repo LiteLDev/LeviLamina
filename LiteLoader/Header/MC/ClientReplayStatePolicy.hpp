@@ -22,7 +22,6 @@ public:
     ClientReplayStatePolicy() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ClientReplayStatePolicy();
     /*1*/ virtual bool isReplayNeeded(enum AdvanceFrameResult) const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI bool _checkSupportedFrame(struct IActorMovementProxy &) const;
     MCAPI bool _isSupportedMovementMode(struct IMobMovementProxy const &) const;
+
 
 
 };

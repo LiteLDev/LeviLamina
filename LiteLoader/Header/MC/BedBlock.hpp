@@ -23,7 +23,6 @@ public:
     BedBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BedBlock();
     /*3*/ virtual class Block const * getNextBlockPermutation(class Block const &) const;
@@ -84,16 +83,13 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI BedBlock(std::string const &, int);
+    MCAPI static unsigned short const HEAD_PIECE_DATA;
+    MCAPI static unsigned short const OCCUPIED_DATA;
     MCAPI static class std::optional<class BlockPos> findWakeupPosition(class BlockSource &, class BlockPos const &, bool, class std::optional<class Vec3> const &);
     MCAPI static bool isDangerousSpawnBlock(class BlockSource &, class BlockPos const &);
     MCAPI static bool isValidStandUpPosition(class BlockSource &, class BlockPos const &);
     MCAPI static void setOccupied(class BlockSource &, class BlockPos const &, bool);
 
-//private:
-
-private:
-    MCAPI static unsigned short const HEAD_PIECE_DATA;
-    MCAPI static unsigned short const OCCUPIED_DATA;
 
 
 };

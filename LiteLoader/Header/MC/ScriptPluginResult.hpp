@@ -22,7 +22,6 @@ public:
     ScriptPluginResult() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINRESULT
 public:
@@ -35,6 +34,7 @@ public:
     MCAPI std::vector<class std::variant<struct ScriptPluginResult::Error, struct ScriptPluginResult::Warning, struct ScriptPluginResult::Info>> const & getMessages() const;
     MCAPI struct Scripting::ModuleDescriptor const & getModuleDescriptor() const;
     MCAPI ~ScriptPluginResult();
+
 
 
 };

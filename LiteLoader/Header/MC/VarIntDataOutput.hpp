@@ -34,7 +34,6 @@ public:
     VarIntDataOutput() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~VarIntDataOutput();
     /*1*/ virtual void __unk_vfn_1();
@@ -51,6 +50,7 @@ public:
     MCVAPI void writeLongString(class gsl::basic_string_span<char const, -1>);
     MCVAPI void writeString(class gsl::basic_string_span<char const, -1>);
 #endif
+
 
 
 };

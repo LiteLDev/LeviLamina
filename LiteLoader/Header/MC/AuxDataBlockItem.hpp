@@ -24,7 +24,6 @@ public:
     AuxDataBlockItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AuxDataBlockItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -46,6 +45,7 @@ public:
 public:
 #endif
     MCAPI AuxDataBlockItem(std::string const &, int, class Block const *);
+
 
 
 };

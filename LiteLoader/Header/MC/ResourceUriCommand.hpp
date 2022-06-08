@@ -23,7 +23,6 @@ public:
     ResourceUriCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ResourceUriCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -32,12 +31,10 @@ public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
 
+
 //private:
     MCAPI void _executeClear(class Level &, class Player *, class CommandOutput &) const;
     MCAPI void _executeNamed(class Level &, class Player *, class CommandOutput &) const;
     MCAPI void _executeUriOnly(class Level &, class Player *, class CommandOutput &) const;
-
-private:
-
 
 };

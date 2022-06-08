@@ -23,7 +23,6 @@ public:
     ClientCacheBlobStatusPacket() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ClientCacheBlobStatusPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,6 +32,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTCACHEBLOBSTATUSPACKET
 public:
 #endif
+
 
 
 };

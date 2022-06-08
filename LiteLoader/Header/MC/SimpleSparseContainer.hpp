@@ -28,7 +28,6 @@ public:
     SimpleSparseContainer() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLESPARSECONTAINER
 public:
@@ -45,10 +44,8 @@ public:
     MCAPI void clearItem(int);
     MCAPI void pushAllToBackingContainer();
 
+
 //private:
     MCAPI void _setBackingContainerSlot(int, class ItemStack const &);
-
-private:
-
 
 };

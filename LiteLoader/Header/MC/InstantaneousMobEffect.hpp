@@ -23,7 +23,6 @@ public:
     InstantaneousMobEffect() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~InstantaneousMobEffect();
     /*4*/ virtual bool isInstantaneous() const;
@@ -32,6 +31,7 @@ public:
 public:
 #endif
     MCAPI InstantaneousMobEffect(int, std::string const &, std::string const &, bool, int, int);
+
 
 
 };

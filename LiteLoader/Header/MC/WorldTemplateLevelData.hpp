@@ -21,7 +21,6 @@ public:
     WorldTemplateLevelData(class WorldTemplateLevelData const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDTEMPLATELEVELDATA
 public:
@@ -45,8 +44,6 @@ public:
 //protected:
     MCAPI void _getTagData(class CompoundTag const &);
     MCAPI void _setTagData(class CompoundTag &) const;
-
-protected:
 
 
 };

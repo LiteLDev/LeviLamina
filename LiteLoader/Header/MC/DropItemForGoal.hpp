@@ -23,7 +23,6 @@ public:
     DropItemForGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DropItemForGoal();
     /*1*/ virtual bool canUse();
@@ -41,6 +40,7 @@ public:
 public:
 #endif
     MCAPI DropItemForGoal(class Mob &);
+
 
 
 };

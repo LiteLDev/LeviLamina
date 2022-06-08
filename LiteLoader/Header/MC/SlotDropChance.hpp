@@ -22,12 +22,12 @@ public:
     SlotDropChance() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLOTDROPCHANCE
 public:
 #endif
     MCAPI void setEquipmentSlot(std::string const &);
+
 
 
 };

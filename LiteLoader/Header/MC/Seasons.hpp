@@ -22,7 +22,6 @@ public:
     Seasons() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEASONS
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI void postProcess(class LevelChunk &, class BlockSource &, class ChunkPos const &);
     MCAPI void tick();
     MCAPI ~Seasons();
+
 
 
 };

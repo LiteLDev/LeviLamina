@@ -24,7 +24,6 @@ public:
     LeashFenceKnotActor() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~LeashFenceKnotActor();
@@ -67,6 +66,7 @@ public:
     MCAPI LeashFenceKnotActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI int numberofAnimalsAttached();
     MCAPI void removeAnimals(class Player *);
+
 
 
 };

@@ -21,7 +21,6 @@ public:
     ContainerScreenContext(class ContainerScreenContext const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSCREENCONTEXT
 public:
@@ -33,6 +32,7 @@ public:
     MCAPI enum ContainerType getScreenContainerType() const;
     MCAPI class Actor * tryGetActor() const;
     MCAPI class BlockActor * tryGetBlockActor() const;
+
 
 
 };

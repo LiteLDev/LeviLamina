@@ -23,7 +23,6 @@ public:
     CraftHandlerMap() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CraftHandlerMap();
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
@@ -32,6 +31,7 @@ public:
 public:
 #endif
     MCAPI CraftHandlerMap(class Player &, class ItemStackRequestActionCraftHandler &);
+
 
 
 };

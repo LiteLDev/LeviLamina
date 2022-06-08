@@ -22,7 +22,6 @@ public:
     MapCreateLockedCopyPacket(class MapCreateLockedCopyPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MapCreateLockedCopyPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -36,6 +35,7 @@ public:
     MCAPI MapCreateLockedCopyPacket();
     MCAPI struct ActorUniqueID getNewMapId() const;
     MCAPI struct ActorUniqueID getOriginalMapId() const;
+
 
 
 };

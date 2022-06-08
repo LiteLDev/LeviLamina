@@ -23,7 +23,6 @@ public:
     CraftHandleNonImplemented_DEPRECATEDASKTYLAING() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CraftHandleNonImplemented_DEPRECATEDASKTYLAING();
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI CraftHandleNonImplemented_DEPRECATEDASKTYLAING(class ItemStackRequestActionCraftHandler &);
+
 
 
 };

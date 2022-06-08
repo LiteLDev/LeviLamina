@@ -15,7 +15,6 @@ class ContentIdentity {
 
 #undef AFTER_EXTRA
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTIDENTITY
 public:
@@ -31,12 +30,9 @@ public:
     MCAPI class ContentIdentity & operator=(class ContentIdentity const &);
     MCAPI class ContentIdentity & operator=(class ContentIdentity &&);
     MCAPI bool operator==(class ContentIdentity const &) const;
+    MCAPI static class ContentIdentity EMPTY;
     MCAPI static class ContentIdentity fromString(std::string const &);
 
-//private:
-
-private:
-    MCAPI static class ContentIdentity EMPTY;
 
 
 };

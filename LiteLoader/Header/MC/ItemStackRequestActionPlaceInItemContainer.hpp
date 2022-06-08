@@ -20,7 +20,6 @@ public:
     ItemStackRequestActionPlaceInItemContainer(class ItemStackRequestActionPlaceInItemContainer const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ItemStackRequestActionPlaceInItemContainer();
     /*1*/ virtual void __unk_vfn_1();
@@ -30,6 +29,7 @@ public:
 public:
 #endif
     MCAPI ItemStackRequestActionPlaceInItemContainer();
+
 
 
 };

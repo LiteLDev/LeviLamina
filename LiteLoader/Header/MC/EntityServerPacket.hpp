@@ -22,7 +22,6 @@ public:
     EntityServerPacket(class EntityServerPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EntityServerPacket();
     /*3*/ virtual void write(class BinaryStream &) const;
@@ -32,6 +31,7 @@ public:
 #endif
     MCAPI EntityServerPacket(class EntityContext const &);
     MCAPI EntityServerPacket();
+
 
 
 };

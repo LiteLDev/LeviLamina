@@ -22,7 +22,6 @@ public:
     DragonLandingGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DragonLandingGoal();
     /*1*/ virtual bool canUse();
@@ -37,10 +36,8 @@ public:
 #endif
     MCAPI DragonLandingGoal(class EnderDragon &);
 
+
 //private:
     MCAPI void findNewTarget();
-
-private:
-
 
 };

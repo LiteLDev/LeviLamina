@@ -23,7 +23,6 @@ public:
     CropBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CropBlock();
     /*4*/ virtual bool hasTag(class BlockSource &, class BlockPos const &, class Block const &, std::string const &) const;
@@ -82,10 +81,8 @@ public:
 #endif
     MCAPI CropBlock(std::string const &, int);
 
+
 //private:
     MCAPI float getGrowthSpeed(class BlockSource &, class BlockPos const &) const;
-
-private:
-
 
 };

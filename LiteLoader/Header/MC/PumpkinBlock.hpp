@@ -23,7 +23,6 @@ public:
     PumpkinBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PumpkinBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -74,10 +73,8 @@ public:
 #endif
     MCAPI PumpkinBlock(std::string const &, int, bool, bool);
 
+
 //private:
     MCAPI bool _canSpawnGolem(class BlockSource &, class BlockPos const &) const;
-
-private:
-
 
 };

@@ -23,7 +23,6 @@ public:
     PodzolAreaFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PodzolAreaFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -31,6 +30,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PODZOLAREAFEATURE
 public:
 #endif
+
 
 
 };

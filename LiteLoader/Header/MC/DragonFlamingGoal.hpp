@@ -22,7 +22,6 @@ public:
     DragonFlamingGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DragonFlamingGoal();
     /*1*/ virtual bool canUse();
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI DragonFlamingGoal(class Mob &);
+
 
 
 };

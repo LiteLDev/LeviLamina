@@ -22,12 +22,12 @@ public:
     TransportInterface() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRANSPORTINTERFACE
 public:
     MCVAPI ~TransportInterface();
 #endif
+
 
 
 };

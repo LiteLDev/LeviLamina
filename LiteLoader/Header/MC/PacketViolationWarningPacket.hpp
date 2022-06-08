@@ -22,7 +22,6 @@ public:
     PacketViolationWarningPacket(class PacketViolationWarningPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PacketViolationWarningPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI PacketViolationWarningPacket(enum StreamReadResult, enum PacketViolationResponse, enum MinecraftPacketIds, std::string const &);
     MCAPI PacketViolationWarningPacket();
+
 
 
 };

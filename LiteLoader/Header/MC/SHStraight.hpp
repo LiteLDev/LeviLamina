@@ -23,7 +23,6 @@ public:
     SHStraight() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SHStraight();
     /*3*/ virtual enum StructurePieceType getType() const;
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI static std::unique_ptr<class StrongholdPiece> createPiece(std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     DimensionDataSerializer() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONDATASERIALIZER
 public:
@@ -34,8 +33,6 @@ public:
 
 //protected:
     MCAPI std::string _createLevelStorageID(std::string const &, std::string const &, std::string const &);
-
-protected:
 
 
 };

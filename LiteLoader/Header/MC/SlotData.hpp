@@ -28,6 +28,5 @@ public:
 protected:
 
 private:
-    MCAPI static struct SlotData UNKNOWN_LOCATION;
 
 };

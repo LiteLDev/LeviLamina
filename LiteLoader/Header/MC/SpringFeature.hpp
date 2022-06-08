@@ -23,7 +23,6 @@ public:
     SpringFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SpringFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -33,10 +32,8 @@ public:
 #endif
     MCAPI SpringFeature(class Block const &);
 
+
 //private:
     MCAPI bool isValidSpringBorderBlock(class BlockLegacy const &, class BlockSource &) const;
-
-private:
-
 
 };

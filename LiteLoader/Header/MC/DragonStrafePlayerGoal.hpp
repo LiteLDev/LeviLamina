@@ -22,7 +22,6 @@ public:
     DragonStrafePlayerGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DragonStrafePlayerGoal();
     /*1*/ virtual bool canUse();
@@ -37,11 +36,9 @@ public:
 #endif
     MCAPI DragonStrafePlayerGoal(class Mob &);
 
+
 //private:
     MCAPI void navigateToNextPathNode();
     MCAPI void setTarget(class Actor *);
-
-private:
-
 
 };

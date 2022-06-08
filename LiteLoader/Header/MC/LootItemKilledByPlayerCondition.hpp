@@ -23,7 +23,6 @@ public:
     LootItemKilledByPlayerCondition() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LootItemKilledByPlayerCondition();
     /*1*/ virtual bool applies(class Random &, class LootTableContext &);
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     LootTableContext() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTTABLECONTEXT
 public:
@@ -44,6 +43,7 @@ public:
     MCAPI void removeVisitedTable(class LootTable const *);
     MCAPI void setOriginalItemName(std::string const &);
     MCAPI ~LootTableContext();
+
 
 
 };

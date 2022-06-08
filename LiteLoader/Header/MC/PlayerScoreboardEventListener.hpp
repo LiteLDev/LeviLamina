@@ -22,7 +22,6 @@ public:
     PlayerScoreboardEventListener() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PlayerScoreboardEventListener();
     /*1*/ virtual enum EventResult onScoreChanged(struct ScoreboardId const &, std::string const &, int);
@@ -31,6 +30,7 @@ public:
 #endif
     MCAPI class SubscribedObjectives & getPlayerSubscriptions(struct ScoreboardId const &, class Player const &);
     MCAPI void removePlayerSubscriptions(struct ScoreboardId const &);
+
 
 
 };

@@ -19,7 +19,6 @@ public:
     ScriptMinecraftCommonModuleFactory(class ScriptMinecraftCommonModuleFactory const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMINECRAFTCOMMONMODULEFACTORY
 public:
@@ -27,6 +26,7 @@ public:
     MCAPI ScriptMinecraftCommonModuleFactory();
     MCAPI void addCommon(class Scripting::ModuleBindingBuilder &, struct Scripting::Version);
     MCAPI ~ScriptMinecraftCommonModuleFactory();
+
 
 
 };

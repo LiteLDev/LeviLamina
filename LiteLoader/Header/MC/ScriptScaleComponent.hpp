@@ -21,12 +21,12 @@ public:
     ScriptScaleComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptScaleComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSCALECOMPONENT
 public:
 #endif
+
 
 
 };

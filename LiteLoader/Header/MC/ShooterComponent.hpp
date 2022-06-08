@@ -21,7 +21,6 @@ public:
     ShooterComponent(class ShooterComponent const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTERCOMPONENT
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI int getAuxValue();
     MCAPI void onShoot(class Actor &);
     MCAPI ~ShooterComponent();
+
 
 
 };

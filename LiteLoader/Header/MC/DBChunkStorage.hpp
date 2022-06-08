@@ -4,8 +4,8 @@
 #include "../Global.h"
 #include "ChunkSource.hpp"
 #include "ConsoleChunkBlender.hpp"
-#include "Bedrock.hpp"
 #include "LevelChunk.hpp"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -25,7 +25,6 @@ public:
     DBChunkStorage(class DBChunkStorage const &) = delete;
     DBChunkStorage() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DBChunkStorage();
@@ -52,8 +51,7 @@ public:
     MCAPI DBChunkStorage(std::unique_ptr<class ChunkSource>, class DBStorage &, class Scheduler &, class Experiments const &);
     MCAPI void freeCaches();
     MCAPI static enum ConsoleChunkBlender::BlenderMode _getBlenderMode(class LevelChunk const &, class Experiments const &, bool);
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<class LevelStorageWriteBatch, class std::allocator<class LevelStorageWriteBatch>> threadBatch;
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<std::string, class std::allocator<std::string>> threadBuffer;
+
 
 //private:
     MCAPI bool _checkSubChunksUseAbsoluteIndices(class DBChunkStorageKey, class LevelChunk const &, bool &) const;
@@ -69,8 +67,7 @@ public:
     MCAPI void _serializeEntities(class LevelChunk &, class LevelStorageWriteBatch &, std::string &, bool);
     MCAPI std::string _upgradeActorStorage(class ChunkKey, class gsl::basic_string_span<char const, -1> &);
     MCAPI void _writeDiscardChunksBatch();
-
-private:
-
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<class LevelStorageWriteBatch, class std::allocator<class LevelStorageWriteBatch>> threadBatch;
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<std::string, class std::allocator<std::string>> threadBuffer;
 
 };

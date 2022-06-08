@@ -23,7 +23,6 @@ public:
     ScriptPlayerInventoryComponentContainer() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptPlayerInventoryComponentContainer();
     /*11*/ virtual class Container * _tryGetContainer() const;
@@ -33,6 +32,7 @@ public:
 #endif
     MCAPI ScriptPlayerInventoryComponentContainer(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptPlayerInventoryComponentContainer> bind(struct Scripting::Version);
+
 
 
 };

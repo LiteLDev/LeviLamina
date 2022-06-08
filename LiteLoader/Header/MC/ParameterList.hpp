@@ -21,7 +21,6 @@ public:
     ParameterList() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARAMETERLIST
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI ParameterList(std::vector<struct BiomeNoiseTarget> const &);
     MCAPI class Biome * findTarget(struct TargetPoint const &, struct RTree::Hint *) const;
     MCAPI ~ParameterList();
+
 
 
 };

@@ -24,7 +24,6 @@ public:
     Ocelot() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~Ocelot();
     /*40*/ virtual void __unk_vfn_40();
@@ -57,12 +56,9 @@ public:
 public:
 #endif
     MCAPI Ocelot(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-//private:
-
-private:
     MCAPI static float const SNEAK_SPEED_MOD;
     MCAPI static float const SPRINT_SPEED_MOD;
+
 
 
 };

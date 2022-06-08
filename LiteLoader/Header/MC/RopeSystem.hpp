@@ -21,7 +21,6 @@ public:
     RopeSystem(class RopeSystem const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROPESYSTEM
 public:
@@ -34,6 +33,10 @@ public:
     MCAPI bool isDestroyed() const;
     MCAPI void queueTick(class BlockSource &, class std::shared_ptr<class RopeSystem> &);
     MCAPI ~RopeSystem();
+    MCAPI static float const sBucketLength;
+    MCAPI static bool sEnabled;
+    MCAPI static float const sEpsilon;
+
 
 //private:
     MCAPI void _finalizeBucket(struct AABBBucket &);
@@ -49,11 +52,5 @@ public:
     MCAPI float _solveDistanceConstraints3();
     MCAPI void _tick();
     MCAPI void _tickWaves();
-
-private:
-    MCAPI static float const sBucketLength;
-    MCAPI static bool sEnabled;
-    MCAPI static float const sEpsilon;
-
 
 };

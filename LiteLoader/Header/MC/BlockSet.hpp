@@ -20,12 +20,12 @@ public:
     BlockSet() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSET
 public:
 #endif
     MCAPI ~BlockSet();
+
 
 
 };

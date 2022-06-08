@@ -23,7 +23,6 @@ public:
     JukeboxBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~JukeboxBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -72,11 +71,9 @@ public:
 #endif
     MCAPI JukeboxBlock(std::string const &, int);
 
+
 //private:
     MCAPI void _dropRecording(class BlockSource &, class BlockPos const &) const;
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &) const;
-
-private:
-
 
 };

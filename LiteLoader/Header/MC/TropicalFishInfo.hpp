@@ -20,12 +20,12 @@ public:
     TropicalFishInfo() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TROPICALFISHINFO
 public:
 #endif
     MCAPI ~TropicalFishInfo();
+
 
 
 };

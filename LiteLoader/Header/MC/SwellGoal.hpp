@@ -22,7 +22,6 @@ public:
     SwellGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SwellGoal();
     /*1*/ virtual bool canUse();
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI SwellGoal(class Creeper *, float, float);
+
 
 
 };

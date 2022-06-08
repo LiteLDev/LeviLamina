@@ -22,7 +22,6 @@ public:
     RollGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RollGoal();
     /*1*/ virtual bool canUse();
@@ -37,10 +36,8 @@ public:
 #endif
     MCAPI RollGoal(class Mob &, float);
 
+
 //private:
     MCAPI void _handleRoll(int, class Vec3 &, float &, float &) const;
-
-private:
-
 
 };

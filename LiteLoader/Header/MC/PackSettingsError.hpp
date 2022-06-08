@@ -22,7 +22,6 @@ public:
     PackSettingsError() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PackSettingsError();
     /*1*/ virtual std::string getLocErrorMessage() const;
@@ -32,6 +31,7 @@ public:
 public:
 #endif
     MCAPI PackSettingsError(std::vector<std::string> const &);
+
 
 
 };

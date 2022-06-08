@@ -22,14 +22,15 @@ public:
     MinecraftScheduler() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTSCHEDULER
 public:
 #endif
     MCAPI static class Scheduler & client();
     MCAPI static void destroyClientSingleton();
-    MCAPI static std::unique_ptr<class Scheduler> mInstance;
 
+
+//private:
+    MCAPI static std::unique_ptr<class Scheduler> mInstance;
 
 };

@@ -23,7 +23,6 @@ public:
     PrivateKeyManager() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PrivateKeyManager();
     /*1*/ virtual bool isValid() const;
@@ -33,6 +32,7 @@ public:
     MCAPI PrivateKeyManager(enum Crypto::Asymmetric::System);
     MCAPI std::string computeSecret(class KeyManager const &) const;
     MCAPI std::string sign(std::string const &, enum Crypto::Hash::HashType) const;
+
 
 
 };

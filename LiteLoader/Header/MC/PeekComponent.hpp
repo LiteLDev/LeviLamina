@@ -22,7 +22,6 @@ public:
     PeekComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PEEKCOMPONENT
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI int & getDuration();
     MCAPI bool getHadTarget() const;
     MCAPI void setHadTarget(bool);
+
 
 
 };

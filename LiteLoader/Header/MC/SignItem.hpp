@@ -25,7 +25,6 @@ public:
     SignItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SignItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -47,6 +46,7 @@ public:
 public:
 #endif
     MCAPI SignItem(std::string const &, int, enum SignBlockActor::SignType);
+
 
 
 };

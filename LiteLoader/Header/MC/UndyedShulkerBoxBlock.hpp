@@ -23,7 +23,6 @@ public:
     UndyedShulkerBoxBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~UndyedShulkerBoxBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -64,6 +63,7 @@ public:
 public:
 #endif
     MCAPI UndyedShulkerBoxBlock(std::string const &, int);
+
 
 
 };

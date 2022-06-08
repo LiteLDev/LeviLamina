@@ -20,7 +20,6 @@ public:
     ScriptPluginPackSource() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptPluginPackSource();
     /*1*/ virtual class PackManifest const & getManifest();
@@ -28,6 +27,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINPACKSOURCE
 public:
 #endif
+
 
 
 };

@@ -30,7 +30,6 @@ public:
     GameRule() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMERULE
 public:
@@ -54,6 +53,7 @@ public:
     MCAPI class GameRule & setTagDataNotFoundCallback(class std::function<void (class GameRule &)>);
     MCAPI class GameRule & setValidateValueCallback(class std::function<bool (union GameRule::Value const &, class GameRule::ValidationError *)>);
     MCAPI ~GameRule();
+
 
 
 };

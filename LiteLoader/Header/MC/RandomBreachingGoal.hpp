@@ -23,7 +23,6 @@ public:
     RandomBreachingGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RandomBreachingGoal();
     /*1*/ virtual bool canUse();
@@ -39,6 +38,7 @@ public:
 public:
 #endif
     MCAPI RandomBreachingGoal(class Mob &, float, int, int, int, float);
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     MagmaBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MagmaBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -71,10 +70,8 @@ public:
 #endif
     MCAPI MagmaBlock(std::string const &, int);
 
+
 //private:
     MCAPI void addToTickQueue(class BlockSource &, class BlockPos const &, class Random &) const;
-
-private:
-
 
 };

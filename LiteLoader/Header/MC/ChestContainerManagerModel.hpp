@@ -23,7 +23,6 @@ public:
     ChestContainerManagerModel() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ChestContainerManagerModel();
     /*15*/ virtual bool isValid(float);
@@ -33,6 +32,7 @@ public:
 #endif
     MCAPI ChestContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &, enum BlockActorType);
     MCAPI ChestContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID);
+
 
 
 };

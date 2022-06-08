@@ -24,7 +24,6 @@ public:
     SkullItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SkullItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -54,6 +53,7 @@ public:
 public:
 #endif
     MCAPI SkullItem(std::string const &, int);
+
 
 
 };

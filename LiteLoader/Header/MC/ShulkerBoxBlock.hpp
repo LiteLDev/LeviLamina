@@ -23,7 +23,6 @@ public:
     ShulkerBoxBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ShulkerBoxBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -79,8 +78,6 @@ public:
 
 //protected:
     MCAPI void spawnBoxInstance(class BlockSource &, class Level &, class BlockPos const &, class Block const &, std::string const &, std::unique_ptr<class CompoundTag>, int) const;
-
-protected:
     MCAPI static class BaseGameVersion const SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 

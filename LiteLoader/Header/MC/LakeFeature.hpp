@@ -23,7 +23,6 @@ public:
     LakeFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LakeFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -33,10 +32,8 @@ public:
 #endif
     MCAPI LakeFeature(class Block const &, class std::optional<class XoroshiroPositionalRandomFactory>);
 
+
 //private:
     MCAPI bool _check(class BlockPos const &, class gsl::span<bool, 2048>) const;
-
-private:
-
 
 };

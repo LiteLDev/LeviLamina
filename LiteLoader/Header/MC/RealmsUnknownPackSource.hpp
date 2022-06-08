@@ -22,7 +22,6 @@ public:
     RealmsUnknownPackSource() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RealmsUnknownPackSource();
     /*1*/ virtual void __unk_vfn_1();
@@ -36,6 +35,7 @@ public:
     MCVAPI void forEachPackConst(class std::function<void (class Pack const &)>) const;
 #endif
     MCAPI RealmsUnknownPackSource(enum PackType, enum PackOrigin);
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     DrinkPotionGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DrinkPotionGoal();
     /*1*/ virtual bool canUse();
@@ -36,13 +35,11 @@ public:
 public:
 #endif
     MCAPI DrinkPotionGoal(class Mob &, float, std::vector<struct DrinkPotionData> const &);
-    MCAPI static class mce::UUID const SPEED_MODIFIER_DRINKING_UUID;
-    MCAPI static int const THROTTLE_COOLDOWN;
+
 
 //private:
     MCAPI void _updateEquipment(class ItemStack const &);
-
-private:
-
+    MCAPI static class mce::UUID const SPEED_MODIFIER_DRINKING_UUID;
+    MCAPI static int const THROTTLE_COOLDOWN;
 
 };

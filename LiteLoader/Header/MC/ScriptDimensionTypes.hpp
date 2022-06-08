@@ -20,15 +20,16 @@ public:
     ScriptDimensionTypes() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDIMENSIONTYPES
 public:
 #endif
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptDimensionTypes> bind(struct Scripting::Version);
     MCAPI static class AutomaticID<class Dimension, int> fromString(std::string const &);
-    MCAPI static std::string const sMinecraftNamespace;
     MCAPI static class std::optional<std::string> toString(class AutomaticID<class Dimension, int> const &);
 
+
+//private:
+    MCAPI static std::string const sMinecraftNamespace;
 
 };

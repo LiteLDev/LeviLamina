@@ -22,7 +22,6 @@ public:
     AttributeInstanceDelegate() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AttributeInstanceDelegate();
     /*1*/ virtual void tick();
@@ -38,8 +37,6 @@ public:
 //protected:
     MCAPI class AttributeInstance const & _getInstance() const;
     MCAPI class AttributeInstance * _getMutableInstance() const;
-
-protected:
 
 
 };

@@ -23,7 +23,6 @@ public:
     IceBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~IceBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -68,6 +67,7 @@ public:
 #endif
     MCAPI IceBlock(std::string const &, int, bool);
     MCAPI static void melt(class BlockSource &, class BlockPos const &);
+
 
 
 };

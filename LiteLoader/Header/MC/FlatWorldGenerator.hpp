@@ -23,7 +23,6 @@ public:
     FlatWorldGenerator() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLATWORLDGENERATOR
 public:
@@ -44,10 +43,8 @@ public:
 #endif
     MCAPI FlatWorldGenerator(class Dimension &, unsigned int, class Json::Value const &);
 
+
 //private:
     MCAPI void _generatePrototypeBlockValues(class FlatWorldGeneratorOptions const &, short);
-
-private:
-
 
 };

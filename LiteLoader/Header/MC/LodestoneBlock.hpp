@@ -23,7 +23,6 @@ public:
     LodestoneBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LodestoneBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -65,6 +64,7 @@ public:
 #endif
     MCAPI LodestoneBlock(std::string const &, int, class Material const &);
     MCAPI static class LodestoneBlockActor * getBlockActor(class BlockSource &, class BlockPos const &);
+
 
 
 };

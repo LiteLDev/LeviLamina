@@ -20,12 +20,12 @@ public:
     VibrationListenerComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONLISTENERCOMPONENT
 public:
 #endif
     MCAPI ~VibrationListenerComponent();
+
 
 
 };

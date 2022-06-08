@@ -23,7 +23,6 @@ public:
     SimpleContainer() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SimpleContainer();
     /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
@@ -39,6 +38,7 @@ public:
 public:
 #endif
     MCAPI SimpleContainer(std::string const &, bool, int, enum ContainerType);
+
 
 
 };

@@ -20,12 +20,12 @@ public:
     ServerPlayerInputSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYERINPUTSYSTEM
 public:
 #endif
     MCAPI static struct TickingSystemWithInfo create();
+
 
 
 };

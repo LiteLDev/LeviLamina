@@ -24,7 +24,6 @@ public:
     ZombieVillager() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~ZombieVillager();
@@ -59,6 +58,7 @@ public:
 public:
 #endif
     MCAPI ZombieVillager(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     ScaredGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScaredGoal();
     /*1*/ virtual bool canUse();
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI ScaredGoal(class Mob &, int);
+
 
 
 };

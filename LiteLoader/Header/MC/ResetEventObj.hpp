@@ -22,7 +22,6 @@ public:
     ResetEventObj() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESETEVENTOBJ
 public:
@@ -32,6 +31,7 @@ public:
     MCAPI void wait();
     MCAPI bool wait_until(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>);
     MCAPI ~ResetEventObj();
+
 
 
 };

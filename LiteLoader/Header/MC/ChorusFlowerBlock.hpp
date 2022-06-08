@@ -23,7 +23,6 @@ public:
     ChorusFlowerBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ChorusFlowerBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -75,17 +74,15 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI ChorusFlowerBlock(std::string const &, int);
+    MCAPI static int const BRANCH_DIRECTIONS;
+    MCAPI static unsigned short const DEAD_AGE;
+    MCAPI static int const GROW_RATE;
     MCAPI static void generatePlant(class BlockSource &, class BlockPos const &, class Random &, int);
+
 
 //private:
     MCAPI void _placeDeadFlower(class BlockSource &, class BlockPos const &) const;
     MCAPI void _placeGrownFlower(class BlockSource &, class BlockPos const &, int) const;
     MCAPI static void _growTreeRecursive(class BlockSource &, class BlockPos const &, class BlockPos const &, class Random &, int, int);
-
-private:
-    MCAPI static int const BRANCH_DIRECTIONS;
-    MCAPI static unsigned short const DEAD_AGE;
-    MCAPI static int const GROW_RATE;
-
 
 };

@@ -24,7 +24,6 @@ public:
     Blaze() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~Blaze();
     /*40*/ virtual void __unk_vfn_40();
@@ -62,6 +61,7 @@ public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Blaze(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     PressurePlateBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PressurePlateBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -68,6 +67,7 @@ public:
 public:
 #endif
     MCAPI PressurePlateBlock(std::string const &, int, class Material const &, enum PressurePlateBlock::Sensitivity);
+
 
 
 };

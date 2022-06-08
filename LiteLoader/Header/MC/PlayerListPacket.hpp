@@ -33,7 +33,6 @@ public:
     PlayerListPacket(class PlayerListPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PlayerListPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -47,6 +46,7 @@ public:
     MCAPI PlayerListPacket(class mce::UUID const &);
     MCAPI PlayerListPacket();
     MCAPI void emplace(class PlayerListEntry &&);
+
 
 
 };

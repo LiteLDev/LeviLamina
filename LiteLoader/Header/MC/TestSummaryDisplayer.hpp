@@ -22,7 +22,6 @@ public:
     TestSummaryDisplayer() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TESTSUMMARYDISPLAYER
 public:
@@ -31,11 +30,9 @@ public:
 #endif
     MCAPI TestSummaryDisplayer(class Level &, class gametest::MultipleTestTracker &);
 
+
 //private:
     MCAPI void _say(std::string const &, std::string const &) const;
     MCAPI void _showTestSummaryIfAllDone() const;
-
-private:
-
 
 };

@@ -29,7 +29,6 @@ public:
     BeehiveBlockActor() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BeehiveBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -50,17 +49,15 @@ public:
     MCAPI void evictAll(class BlockSource &, bool);
     MCAPI void saveUserData(class CompoundTag &) const;
     MCAPI bool tryAdmit(class Actor &);
+    MCAPI static unsigned int const MAX_OCCUPANCY;
+    MCAPI static enum BlockActorType const TypeId;
+    MCAPI static std::string const TypeString;
+
 
 //private:
     MCAPI class Actor * _revive(class BlockSource &, struct BeehiveBlockActor::Occupant const &, unsigned char);
     MCAPI bool _tickOccupant(class BlockSource &, struct BeehiveBlockActor::Occupant &);
     MCAPI void _trySpawnBees(class BlockSource &);
     MCAPI static bool _validSpawnDirection(class BlockSource &, class BlockPos const &, unsigned char);
-
-private:
-    MCAPI static unsigned int const MAX_OCCUPANCY;
-    MCAPI static enum BlockActorType const TypeId;
-    MCAPI static std::string const TypeString;
-
 
 };

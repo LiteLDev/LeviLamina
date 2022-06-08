@@ -19,7 +19,6 @@ public:
     ScriptItemEnchantmentComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptItemEnchantmentComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMENCHANTMENTCOMPONENT
@@ -33,6 +32,7 @@ public:
     MCAPI class Scripting::Result<void> setEnchantments(class ScriptItemEnchantments const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptItemEnchantmentComponent> bind(struct Scripting::Version);
     MCAPI static std::string getTypeName();
+
 
 
 };

@@ -20,7 +20,6 @@ public:
     GoAndGiveItemsToNoteblockGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GoAndGiveItemsToNoteblockGoal();
     /*1*/ virtual bool canUse();
@@ -34,6 +33,7 @@ public:
 public:
 #endif
     MCAPI GoAndGiveItemsToNoteblockGoal(class Mob &);
+
 
 
 };

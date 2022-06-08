@@ -22,7 +22,6 @@ public:
     DamageOverTimeComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAMAGEOVERTIMECOMPONENT
 public:
@@ -33,6 +32,7 @@ public:
     MCAPI int getHurtValue() const;
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void setDamageTime(int);
+
 
 
 };

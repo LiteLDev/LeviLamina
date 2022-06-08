@@ -22,7 +22,6 @@ public:
     LevelEventPacket(class LevelEventPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LevelEventPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -35,6 +34,7 @@ public:
     MCAPI LevelEventPacket(enum LevelEvent, class Vec3 const &, int);
     MCAPI LevelEventPacket(enum LevelEvent, float, float, float, int);
     MCAPI LevelEventPacket();
+
 
 
 };

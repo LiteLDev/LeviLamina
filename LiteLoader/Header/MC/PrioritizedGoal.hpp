@@ -22,7 +22,6 @@ public:
     PrioritizedGoal() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRIORITIZEDGOAL
 public:
@@ -33,6 +32,7 @@ public:
     MCAPI void setToStart(bool);
     MCAPI void setUsed(bool);
     MCAPI ~PrioritizedGoal();
+
 
 
 };

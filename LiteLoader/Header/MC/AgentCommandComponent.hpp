@@ -21,7 +21,6 @@ public:
     AgentCommandComponent(class AgentCommandComponent const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTCOMMANDCOMPONENT
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI std::unique_ptr<class AgentCommands::Command> const & getCurrentCommand() const;
     MCAPI void initFromDefinition(class Actor &);
     MCAPI void setCurrentCommand(std::unique_ptr<class AgentCommands::Command>);
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     ThinFenceBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ThinFenceBlock();
     /*9*/ virtual void addAABBs(class Block const &, class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
@@ -74,7 +73,9 @@ public:
     MCVAPI bool isThinFenceBlock() const;
 #endif
     MCAPI ThinFenceBlock(std::string const &, int, class Material const &, bool, bool, bool);
-    MCAPI static class BaseGameVersion const THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
+
+//private:
+    MCAPI static class BaseGameVersion const THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 };

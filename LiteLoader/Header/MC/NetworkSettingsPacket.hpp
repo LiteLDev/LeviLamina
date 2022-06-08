@@ -23,7 +23,6 @@ public:
     NetworkSettingsPacket() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NetworkSettingsPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,6 +32,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKSETTINGSPACKET
 public:
 #endif
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     StartGamePacket(class StartGamePacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StartGamePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI StartGamePacket(class LevelSettings const &, struct ActorUniqueID, class ActorRuntimeID, enum GameType, bool, class Vec3 const &, class Vec2 const &, std::string const &, std::string const &, class ContentIdentity const &, class BlockPalette const &, std::string const &, class BlockDefinitionGroup const &, bool, struct PlayerMovementSettings const &, std::string const &, unsigned __int64, int, unsigned __int64);
     MCAPI StartGamePacket();
+
 
 
 };

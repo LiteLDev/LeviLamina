@@ -23,7 +23,6 @@ public:
     AgentCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AgentCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
+
 
 //private:
     MCAPI void createAgent(class Player &, class CommandOrigin const &, class CommandOutput &) const;
@@ -42,8 +42,5 @@ public:
     MCAPI void setAgentOwner(class Agent &, class Player &) const;
     MCAPI void setItem(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void tpAgent(class Player &, class CommandOrigin const &, class CommandOutput &) const;
-
-private:
-
 
 };

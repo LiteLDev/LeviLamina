@@ -22,7 +22,6 @@ public:
     ScriptActorGameplayHandler() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptActorGameplayHandler();
     /*1*/ virtual void __unk_vfn_1();
@@ -33,10 +32,8 @@ public:
 public:
 #endif
 
+
 //private:
     MCAPI bool _handleActorDefinitionStartedEvent(struct ActorDefinitionStartedEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>) const;
-
-private:
-
 
 };

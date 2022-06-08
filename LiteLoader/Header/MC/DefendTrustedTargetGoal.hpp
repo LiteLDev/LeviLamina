@@ -23,7 +23,6 @@ public:
     DefendTrustedTargetGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DefendTrustedTargetGoal();
     /*1*/ virtual bool canUse();
@@ -36,10 +35,8 @@ public:
 #endif
     MCAPI DefendTrustedTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int, bool, int, enum LevelSoundEvent, class DefinitionTrigger const &);
 
+
 //private:
     MCAPI struct ActorUniqueID _findTrustedTarget(class TrustComponent const &);
-
-private:
-
 
 };

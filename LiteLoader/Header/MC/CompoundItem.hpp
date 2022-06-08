@@ -24,7 +24,6 @@ public:
     CompoundItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CompoundItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -52,16 +51,14 @@ public:
     MCAPI static class RecipeIngredient getIngredientForCompound(enum CompoundType);
     MCAPI static class ItemInstance getItemForCompound(enum CompoundType, int);
     MCAPI static bool isCompoundItem(class ItemStackBase const &);
-    MCAPI static class std::unordered_map<int, int, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, int>>> mIdToSpecialCompound;
-    MCAPI static class std::unordered_map<int, class ItemInstance, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, class ItemInstance>>> mTypeToSpecialCompound;
     MCAPI static void unregisterSpecialCompounds();
+
 
 //private:
     MCAPI void _registerSpecialCompound(class ItemInstance const &, enum CompoundType);
     MCAPI void _registerSpecialCompounds(class Experiments const &);
     MCAPI static std::string _getName(enum CompoundType);
-
-private:
-
+    MCAPI static class std::unordered_map<int, int, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, int>>> mIdToSpecialCompound;
+    MCAPI static class std::unordered_map<int, class ItemInstance, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, class ItemInstance>>> mTypeToSpecialCompound;
 
 };

@@ -22,13 +22,13 @@ public:
     BarterComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARTERCOMPONENT
 public:
 #endif
     MCAPI void onBarterItemPickedUp(class Actor const &, struct ActorUniqueID, short);
     MCAPI void stopBarter();
+
 
 
 };

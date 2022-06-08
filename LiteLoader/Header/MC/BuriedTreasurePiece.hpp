@@ -23,7 +23,6 @@ public:
     BuriedTreasurePiece() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BuriedTreasurePiece();
     /*3*/ virtual enum StructurePieceType getType() const;
@@ -32,10 +31,8 @@ public:
 public:
 #endif
 
+
 //private:
     MCAPI bool _isCovered(class BlockSource const &, class BlockPos const &) const;
-
-private:
-
 
 };

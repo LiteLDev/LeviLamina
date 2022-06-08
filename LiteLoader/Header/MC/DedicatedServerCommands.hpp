@@ -23,13 +23,14 @@ public:
     DedicatedServerCommands() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEDICATEDSERVERCOMMANDS
 public:
 #endif
-    MCAPI static std::vector<std::string> mSaveAllFileList;
     MCAPI static void setupStandaloneServer(class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const &, class IMinecraftApp &, class Level &, class LevelStorage &, class DedicatedServer &, class AllowListFile &);
 
+
+//private:
+    MCAPI static std::vector<std::string> mSaveAllFileList;
 
 };

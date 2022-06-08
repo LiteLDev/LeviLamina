@@ -19,13 +19,13 @@ public:
     PackMetadata(class PackMetadata const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKMETADATA
 public:
 #endif
     MCAPI PackMetadata(std::unique_ptr<struct EducationMetadata>);
     MCAPI PackMetadata();
+
 
 
 };

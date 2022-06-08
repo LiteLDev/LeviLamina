@@ -23,13 +23,13 @@ public:
     LootItemConditions() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMCONDITIONS
 public:
 #endif
     MCAPI static bool allApply(std::vector<std::unique_ptr<class LootItemCondition>> const &, class Random &, class LootTableContext &);
     MCAPI static std::vector<std::unique_ptr<class LootItemCondition>> deserialize(class Json::Value);
+
 
 
 };

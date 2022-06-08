@@ -21,7 +21,6 @@ public:
     LegacyStructureBlockPalette(class LegacyStructureBlockPalette const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYSTRUCTUREBLOCKPALETTE
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI void clearMap();
     MCAPI class Block const & getBlock(int);
     MCAPI ~LegacyStructureBlockPalette();
+
 
 
 };

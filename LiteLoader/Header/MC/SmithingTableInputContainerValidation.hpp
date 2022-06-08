@@ -23,7 +23,6 @@ public:
     SmithingTableInputContainerValidation() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SmithingTableInputContainerValidation();
     /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
@@ -38,6 +37,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMITHINGTABLEINPUTCONTAINERVALIDATION
 public:
 #endif
+
 
 
 };

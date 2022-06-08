@@ -20,13 +20,13 @@ public:
     BiomeArea() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEAREA
 public:
 #endif
     MCAPI BiomeArea(class BoundingBox const &, unsigned int);
     MCAPI ~BiomeArea();
+
 
 
 };

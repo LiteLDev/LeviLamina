@@ -22,12 +22,12 @@ public:
     SitComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SITCOMPONENT
 public:
 #endif
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
+
 
 
 };

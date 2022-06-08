@@ -23,7 +23,6 @@ public:
     CocoaBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CocoaBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -76,6 +75,7 @@ public:
 #endif
     MCAPI CocoaBlock(std::string const &, int);
     MCAPI static bool isSupportedBy(class Block const &);
+
 
 
 };

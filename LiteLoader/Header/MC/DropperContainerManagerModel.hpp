@@ -23,7 +23,6 @@ public:
     DropperContainerManagerModel() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DropperContainerManagerModel();
     /*16*/ virtual class ContainerScreenContext _postInit();
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI DropperContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+
 
 
 };

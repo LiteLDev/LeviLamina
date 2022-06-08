@@ -22,7 +22,6 @@ public:
     ServerMetricsImpl() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ServerMetricsImpl();
     /*1*/ virtual void sendPeriodicMetrics(class ServerInstance &);
@@ -33,10 +32,8 @@ public:
 #endif
     MCAPI ServerMetricsImpl(class ServerCommunicationInterface *);
 
+
 //private:
     MCAPI void sendPeriodicMetricsInternal(class ServerInstance &);
-
-private:
-
 
 };

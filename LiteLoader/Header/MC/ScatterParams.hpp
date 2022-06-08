@@ -29,7 +29,6 @@ public:
     ScatterParams() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCATTERPARAMS
 public:
@@ -39,10 +38,8 @@ public:
     MCAPI static void initMolangParams(class RenderParams &, class BlockPos const &, class Random &);
     MCAPI static void initScatterParamIndices();
 
+
 //private:
     MCAPI class BlockPos _getPos(unsigned int, class BlockPos const &, class Random &, class RenderParams &) const;
-
-private:
-
 
 };

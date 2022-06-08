@@ -22,7 +22,6 @@ public:
     EntityComponentFactoryBase() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCOMPONENTFACTORYBASE
 public:
@@ -30,6 +29,7 @@ public:
 #endif
     MCAPI void addComponents(class EntityContext &, class DefinitionInstanceGroup const &) const;
     MCAPI void removeComponents(class EntityContext &, class DefinitionInstanceGroup const &) const;
+
 
 
 };

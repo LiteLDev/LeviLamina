@@ -24,7 +24,6 @@ public:
     ActorHasMobEffect() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorHasMobEffect();
     /*1*/ virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
@@ -34,6 +33,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORHASMOBEFFECT
 public:
 #endif
+
 
 
 };

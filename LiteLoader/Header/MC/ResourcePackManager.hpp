@@ -24,7 +24,6 @@ public:
     ResourcePackManager() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ResourcePackManager();
     /*1*/ virtual bool load(class ResourceLocation const &, std::string &) const;
@@ -59,13 +58,11 @@ public:
     MCAPI void unRegisterResourcePackListener(class ResourcePackListener &);
     MCAPI bool upgradeJson(std::string &, class Core::Path const &);
 
+
 //private:
     MCAPI void _calculateMinEngineVersionFromFullStack();
     MCAPI void _composeFullStack();
     MCAPI void _getResourcesOfGroup(class PackInstance const &, std::string const &, std::vector<class Core::PathBuffer<std::string>> &) const;
     MCAPI void _updateLanguageSubpacks();
-
-private:
-
 
 };

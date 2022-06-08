@@ -21,7 +21,6 @@ public:
     ScriptItemDurabilityComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptItemDurabilityComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMDURABILITYCOMPONENT
@@ -37,6 +36,7 @@ public:
     MCAPI void setCurrentDamage(int);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptItemDurabilityComponent> bind(struct Scripting::Version);
     MCAPI static std::string const & getTypeName();
+
 
 
 };

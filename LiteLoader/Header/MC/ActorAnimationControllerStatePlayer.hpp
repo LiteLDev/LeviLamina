@@ -22,7 +22,6 @@ public:
     ActorAnimationControllerStatePlayer() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorAnimationControllerStatePlayer();
     /*1*/ virtual void applyToPose(class RenderParams &, class std::unordered_map<enum SkeletalHierarchyIndex, std::vector<class BoneOrientation>, struct std::hash<enum SkeletalHierarchyIndex>, struct std::equal_to<enum SkeletalHierarchyIndex>, class std::allocator<struct std::pair<enum SkeletalHierarchyIndex const, std::vector<class BoneOrientation>>>> &, float);
@@ -42,6 +41,7 @@ public:
     MCAPI ActorAnimationControllerStatePlayer(class HashedString const &, class ActorAnimationControllerPlayer &, class std::shared_ptr<class ActorAnimationControllerState>, class AnimationComponent &, class ExpressionNode const &, class std::set<class HashedString, struct std::hash<class HashedString>, class std::allocator<class HashedString>> &);
     MCAPI bool allAnimationsFinished() const;
     MCAPI bool anyAnimationsFinished() const;
+
 
 
 };

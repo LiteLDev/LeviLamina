@@ -23,7 +23,6 @@ public:
     BorderBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BorderBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -74,6 +73,7 @@ public:
 public:
 #endif
     MCAPI BorderBlock(std::string const &, int);
+
 
 
 };

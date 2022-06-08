@@ -23,7 +23,6 @@ public:
     SculkCatalystBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SculkCatalystBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -70,6 +69,7 @@ public:
 #endif
     MCAPI SculkCatalystBlock(std::string const &, int, class Material const &);
     MCAPI static void bloom(class BlockSource &, class BlockPos const &, class Block const &, class Random &);
+
 
 
 };

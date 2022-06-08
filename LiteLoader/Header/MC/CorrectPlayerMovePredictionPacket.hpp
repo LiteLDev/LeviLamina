@@ -23,7 +23,6 @@ public:
     CorrectPlayerMovePredictionPacket() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CorrectPlayerMovePredictionPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,6 +32,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORRECTPLAYERMOVEPREDICTIONPACKET
 public:
 #endif
+
 
 
 };

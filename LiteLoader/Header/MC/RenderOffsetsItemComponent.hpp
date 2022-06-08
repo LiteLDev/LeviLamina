@@ -33,7 +33,6 @@ public:
     RenderOffsetsItemComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RenderOffsetsItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -46,18 +45,16 @@ public:
 public:
 #endif
     MCAPI RenderOffsetsItemComponent(class ComponentItem *);
-    MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Main_Hand_Defaults;
-    MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Off_Hand_Defaults;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
+
 
 //private:
     MCAPI std::unique_ptr<class CompoundTag> _buildTRSTag(struct RenderOffsetsItemComponent::TRS const &) const;
     MCAPI std::unique_ptr<class CompoundTag> _buildVector3Tag(class std::array<float, 3> const &) const;
     MCAPI void _trsFromTag(class CompoundTag const &, struct RenderOffsetsItemComponent::TRS &);
+    MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Main_Hand_Defaults;
+    MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Off_Hand_Defaults;
     MCAPI static void _fromString(class RenderOffsetsItemComponent &, std::string const &);
-
-private:
-
 
 };

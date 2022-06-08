@@ -24,7 +24,6 @@ public:
     Npc() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -74,12 +73,9 @@ public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Npc(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-//private:
-
-private:
     MCAPI static std::string const SKIN_ID_TAG;
     MCAPI static std::vector<struct std::pair<std::string, std::string>> const Skins;
+
 
 
 };

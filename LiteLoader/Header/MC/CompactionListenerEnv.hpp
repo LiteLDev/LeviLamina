@@ -23,7 +23,6 @@ public:
     CompactionListenerEnv() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CompactionListenerEnv();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPACTIONLISTENERENV
@@ -32,6 +31,7 @@ public:
 #endif
     MCAPI CompactionListenerEnv(class leveldb::Env *);
     MCAPI void setCompactionCallback(class std::function<void (enum CompactionStatus)>);
+
 
 
 };

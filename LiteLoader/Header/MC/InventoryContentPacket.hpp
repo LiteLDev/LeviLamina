@@ -22,7 +22,6 @@ public:
     InventoryContentPacket(class InventoryContentPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~InventoryContentPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -35,6 +34,7 @@ public:
     MCAPI InventoryContentPacket(enum ContainerID, std::vector<class ItemStack> const &);
     MCAPI InventoryContentPacket();
     MCAPI static class InventoryContentPacket fromPlayerInventoryId(enum ContainerID, class Player &);
+
 
 
 };

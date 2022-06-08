@@ -22,7 +22,6 @@ public:
     ClientToServerHandshakePacket(class ClientToServerHandshakePacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ClientToServerHandshakePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI ClientToServerHandshakePacket();
+
 
 
 };

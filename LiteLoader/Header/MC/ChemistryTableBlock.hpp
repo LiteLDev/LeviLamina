@@ -23,7 +23,6 @@ public:
     ChemistryTableBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ChemistryTableBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -81,6 +80,7 @@ public:
     MCAPI ChemistryTableBlock(std::string const &, int);
     MCAPI static class ItemInstance getItemForType(enum ChemistryTableType, int);
     MCAPI static bool isUIValidForPlayer(class BlockPos const &, class Player &, float, enum ChemistryTableType);
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     NpcRequestPacket(class NpcRequestPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NpcRequestPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -41,10 +40,8 @@ public:
     MCAPI static class NpcRequestPacket requestSetName(class ActorRuntimeID, std::string);
     MCAPI static class NpcRequestPacket requestSetSkin(class ActorRuntimeID, int);
 
+
 //private:
     MCAPI NpcRequestPacket(class ActorRuntimeID, enum NpcRequestPacket::RequestType, std::string, unsigned char);
-
-private:
-
 
 };

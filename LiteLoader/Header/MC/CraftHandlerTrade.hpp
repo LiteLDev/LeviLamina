@@ -22,7 +22,6 @@ public:
     CraftHandlerTrade() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CraftHandlerTrade();
     /*1*/ virtual enum ItemStackNetResult handleConsumedItem(enum ContainerEnumName, unsigned char, class ItemStack const &);
@@ -35,14 +34,12 @@ public:
 #endif
     MCAPI CraftHandlerTrade(class ContainerScreenContext const &, class ItemStackRequestActionCraftHandler &);
 
+
 //private:
     MCAPI class std::tuple<enum ItemStackNetResult, class MerchantRecipe const *> _getMerchantRecipeFromNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);
     MCAPI enum ItemStackNetResult _handleTrade1(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 12> const &);
     MCAPI enum ItemStackNetResult _initResultItem(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);
     MCAPI enum ItemStackNetResult _initTrade2Consumes();
     MCAPI bool _matchesAuxValueTrade2(class ItemStackBase const &, class ItemStackBase const &) const;
-
-private:
-
 
 };

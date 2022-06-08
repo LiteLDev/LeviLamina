@@ -22,7 +22,6 @@ public:
     ShowProfilePacket(class ShowProfilePacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ShowProfilePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI ShowProfilePacket();
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     RuinedPortalFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RuinedPortalFeature();
     /*3*/ virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI RuinedPortalFeature(unsigned int, bool);
+
 
 
 };

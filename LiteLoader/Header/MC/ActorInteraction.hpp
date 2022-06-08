@@ -22,7 +22,6 @@ public:
     ActorInteraction() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINTERACTION
 public:
@@ -34,6 +33,7 @@ public:
     MCAPI void setInteractText(std::string const &);
     MCAPI bool shouldCapture() const;
     MCAPI ~ActorInteraction();
+
 
 
 };

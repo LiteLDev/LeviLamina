@@ -22,7 +22,6 @@ public:
     TrustingDefinition(class TrustingDefinition const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRUSTINGDEFINITION
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI void addTrustItemByName(std::string const &);
     MCAPI void initialize(class EntityContext &, class TrustingComponent &) const;
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TrustingDefinition>> &);
+
 
 
 };

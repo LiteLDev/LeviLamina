@@ -19,13 +19,13 @@ public:
     MobSpawnerData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBSPAWNERDATA
 public:
 #endif
     MCAPI MobSpawnerData(class MobSpawnerData const &);
     MCAPI ~MobSpawnerData();
+
 
 
 };

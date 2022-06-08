@@ -24,7 +24,6 @@ public:
     EnderpearlItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EnderpearlItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -48,11 +47,8 @@ public:
 public:
 #endif
     MCAPI EnderpearlItem(std::string const &, int);
-
-//private:
-
-private:
     MCAPI static class HashedString const ENDER_PEARL_COOLDOWN;
+
 
 
 };

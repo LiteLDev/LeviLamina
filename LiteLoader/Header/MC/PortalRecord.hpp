@@ -20,7 +20,6 @@ public:
     PortalRecord() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PORTALRECORD
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI class BlockPos closestBlockPosTo(class Actor const &) const;
     MCAPI unsigned __int64 hashCode() const;
     MCAPI bool operator==(class PortalRecord const &) const;
+
 
 
 };

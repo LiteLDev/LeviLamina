@@ -24,7 +24,6 @@ public:
     BambooBlockItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BambooBlockItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -46,6 +45,7 @@ public:
 public:
 #endif
     MCAPI BambooBlockItem(std::string const &, int);
+
 
 
 };

@@ -21,7 +21,6 @@ public:
     SelectorBehaviorNode(class SelectorBehaviorNode const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SelectorBehaviorNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
@@ -30,6 +29,7 @@ public:
 public:
 #endif
     MCAPI SelectorBehaviorNode();
+
 
 
 };

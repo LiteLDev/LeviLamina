@@ -24,7 +24,6 @@ public:
     ArmorStandItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ArmorStandItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -45,6 +44,7 @@ public:
 public:
 #endif
     MCAPI ArmorStandItem(std::string const &, short);
+
 
 
 };

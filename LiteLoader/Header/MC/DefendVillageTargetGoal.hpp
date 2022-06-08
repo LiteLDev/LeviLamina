@@ -23,7 +23,6 @@ public:
     DefendVillageTargetGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DefendVillageTargetGoal();
     /*1*/ virtual bool canUse();
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI DefendVillageTargetGoal(class Mob &);
+
 
 
 };

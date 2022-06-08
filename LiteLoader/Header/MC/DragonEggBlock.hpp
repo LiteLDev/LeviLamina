@@ -23,7 +23,6 @@ public:
     DragonEggBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DragonEggBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -71,10 +70,8 @@ public:
 #endif
     MCAPI DragonEggBlock(std::string const &, int);
 
+
 //private:
     MCAPI void _teleport(class BlockSource &, class Random &, class BlockPos const &) const;
-
-private:
-
 
 };

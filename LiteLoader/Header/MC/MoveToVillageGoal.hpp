@@ -23,7 +23,6 @@ public:
     MoveToVillageGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MoveToVillageGoal();
     /*1*/ virtual bool canUse();
@@ -44,8 +43,6 @@ public:
 
 //protected:
     MCAPI class std::shared_ptr<class Village> _tryGetCurrentVillage();
-
-protected:
 
 
 };

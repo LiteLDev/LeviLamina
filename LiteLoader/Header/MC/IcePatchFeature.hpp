@@ -23,7 +23,6 @@ public:
     IcePatchFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~IcePatchFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -32,6 +31,7 @@ public:
 public:
 #endif
     MCAPI IcePatchFeature(int);
+
 
 
 };

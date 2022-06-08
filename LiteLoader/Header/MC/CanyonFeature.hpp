@@ -25,7 +25,6 @@ public:
     CanyonFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CanyonFeature();
     /*1*/ virtual bool carve(class BlockVolume &, class BiomeSource const &, class Random &, class ChunkPos const &, class Vec3 const &, class Vec3 const &, int, int, int, int, int, int, float, float, class gsl::span<float const, -1>, struct WorldGenContext const &) const;
@@ -38,8 +37,6 @@ public:
 
 //protected:
     MCAPI void addTunnel(class BlockVolume &, class BiomeSource const &, class Random &, class ChunkPos const &, class Vec3 const &, class Vec3 const &, float, float, float, int, int, float, struct WorldGenContext const &) const;
-
-protected:
 
 
 };

@@ -27,7 +27,6 @@ public:
     LevelContainerModel() = delete;
 #endif
 
-
 public:
     /*0*/ virtual void containerContentChanged(int);
     /*1*/ virtual ~LevelContainerModel();
@@ -51,11 +50,9 @@ public:
     MCAPI static class Container * getContainerHelper(class Player &, struct ActorUniqueID const &);
     MCAPI static class Container * getContainerHelper(class Player &, enum BlockActorType, class BlockPos const &);
 
+
 //private:
     MCAPI class Actor * _getEntity() const;
     MCAPI void _refreshSlot(int);
-
-private:
-
 
 };

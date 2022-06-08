@@ -23,7 +23,6 @@ public:
     TripWireBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TripWireBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -75,11 +74,9 @@ public:
 #endif
     MCAPI TripWireBlock(std::string const &, int);
 
+
 //private:
     MCAPI void checkPressed(class BlockSource &, class BlockPos const &) const;
     MCAPI void updateSource(class BlockSource &, class BlockPos const &, class Block const &) const;
-
-private:
-
 
 };

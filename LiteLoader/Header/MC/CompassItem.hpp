@@ -24,7 +24,6 @@ public:
     CompassItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CompassItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -48,6 +47,7 @@ public:
 public:
 #endif
     MCAPI CompassItem(std::string const &, int);
+
 
 
 };

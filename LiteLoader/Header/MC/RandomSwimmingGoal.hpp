@@ -23,7 +23,6 @@ public:
     RandomSwimmingGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RandomSwimmingGoal();
     /*1*/ virtual bool canUse();
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI RandomSwimmingGoal(class Mob &, float, int, int, int, bool);
+
 
 
 };

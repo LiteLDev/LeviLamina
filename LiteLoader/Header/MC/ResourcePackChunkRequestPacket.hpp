@@ -22,7 +22,6 @@ public:
     ResourcePackChunkRequestPacket(class ResourcePackChunkRequestPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ResourcePackChunkRequestPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI ResourcePackChunkRequestPacket();
+
 
 
 };

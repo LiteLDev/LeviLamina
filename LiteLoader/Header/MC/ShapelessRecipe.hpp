@@ -23,7 +23,6 @@ public:
     ShapelessRecipe() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ShapelessRecipe();
     /*1*/ virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
@@ -40,10 +39,8 @@ public:
     MCAPI ShapelessRecipe(class gsl::basic_string_span<char const, -1>, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int, class mce::UUID const *);
     MCAPI void generateUUID();
 
+
 //private:
     MCAPI void init(class gsl::basic_string_span<char const, -1>, int, class mce::UUID const *);
-
-private:
-
 
 };

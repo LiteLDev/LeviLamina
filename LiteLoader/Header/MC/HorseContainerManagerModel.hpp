@@ -23,7 +23,6 @@ public:
     HorseContainerManagerModel() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~HorseContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
@@ -34,6 +33,7 @@ public:
 public:
 #endif
     MCAPI HorseContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
+
 
 
 };

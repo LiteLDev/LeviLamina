@@ -23,7 +23,6 @@ public:
     SHRightTurn() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SHRightTurn();
     /*3*/ virtual enum StructurePieceType getType() const;
@@ -32,6 +31,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHRIGHTTURN
 public:
 #endif
+
 
 
 };

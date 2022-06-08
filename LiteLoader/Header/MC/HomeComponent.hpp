@@ -21,7 +21,6 @@ public:
     HomeComponent(class HomeComponent const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOMECOMPONENT
 public:
@@ -38,6 +37,7 @@ public:
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void setHome(class BlockPos const &, class AutomaticID<class Dimension, int> const &);
     MCAPI void tick(class Actor &);
+
 
 
 };

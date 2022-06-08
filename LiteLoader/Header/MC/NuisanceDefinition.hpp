@@ -20,12 +20,12 @@ public:
     NuisanceDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NUISANCEDEFINITION
 public:
 #endif
     MCAPI ~NuisanceDefinition();
+
 
 
 };

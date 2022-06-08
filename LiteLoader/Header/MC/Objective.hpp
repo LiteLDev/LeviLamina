@@ -24,7 +24,6 @@ public:
     Objective() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OBJECTIVE
 public:
@@ -43,11 +42,9 @@ public:
     MCAPI static std::unique_ptr<class Objective> deserialize(class CompoundTag const &, class Scoreboard &);
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class Objective const &);
 
+
 //private:
     MCAPI bool _modifyPlayerScore(int &, struct ScoreboardId const &, int, enum PlayerScoreSetFunction);
     MCAPI void _resetPlayer(struct ScoreboardId const &);
-
-private:
-
 
 };

@@ -21,7 +21,6 @@ public:
     ActorLimitedLifetimeComponent(class ActorLimitedLifetimeComponent const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORLIMITEDLIFETIMECOMPONENT
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &);
     MCAPI static void convertFromLegacyData(class CompoundTag const &, class CompoundTag &);
     MCAPI static bool needsLegacyConversion(class CompoundTag const &);
+
 
 
 };

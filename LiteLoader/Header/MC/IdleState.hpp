@@ -23,7 +23,6 @@ public:
     IdleState() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~IdleState();
     /*1*/ virtual void tick();
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI static std::unique_ptr<class IdleState> create(class PetSleepWithOwnerGoal &);
+
 
 
 };

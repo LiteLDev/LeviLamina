@@ -23,7 +23,6 @@ public:
     BreathableComponent(class BreathableComponent const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREATHABLECOMPONENT
 public:
@@ -42,6 +41,7 @@ public:
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void setAirSupply(short);
     MCAPI void updateBreathableState(class Actor &);
+
 
 
 };

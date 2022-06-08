@@ -22,13 +22,13 @@ public:
     VinesSingleFaceFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~VinesSingleFaceFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VINESSINGLEFACEFEATURE
 public:
 #endif
+
 
 
 };

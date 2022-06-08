@@ -22,7 +22,6 @@ public:
     ServerSettingsResponsePacket(class ServerSettingsResponsePacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ServerSettingsResponsePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI ServerSettingsResponsePacket();
+
 
 
 };

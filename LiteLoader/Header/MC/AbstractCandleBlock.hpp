@@ -23,7 +23,6 @@ public:
     AbstractCandleBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AbstractCandleBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -87,8 +86,6 @@ public:
     MCAPI void _addExtinguishEffects(class Block const &, class BlockSource &, class BlockPos const &) const;
     MCAPI void _checkForWaterlogging(class BlockSource &, class BlockPos const &) const;
     MCAPI static bool _canBeLit(class Block const &, class BlockSource &, class BlockPos const &);
-
-protected:
 
 
 };

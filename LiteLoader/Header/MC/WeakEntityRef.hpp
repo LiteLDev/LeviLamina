@@ -22,7 +22,6 @@ public:
     WeakEntityRef() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAKENTITYREF
 public:
@@ -32,6 +31,7 @@ public:
     MCAPI bool operator==(class WeakEntityRef) const;
     MCAPI bool operator==(class WeakRefT<struct EntityRefTraits>) const;
     MCAPI ~WeakEntityRef();
+
 
 
 };

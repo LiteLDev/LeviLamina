@@ -46,7 +46,6 @@ public:
 
 #undef AFTER_EXTRA
 
-
 public:
     /*0*/ virtual ~ItemStack();
     /*1*/ virtual void reinit(class Item const &, int, int);
@@ -92,14 +91,11 @@ public:
     MCAPI void useAsFuel();
     MCAPI bool useOn(class Actor &, int, int, int, unsigned char, class Vec3 const &);
     MCAPI enum ItemUseMethod useTimeDepleted(class Level *, class Player *);
+    MCAPI static class ItemStack const EMPTY_ITEM;
     MCAPI static class ItemStack fromDescriptor(class NetworkItemStackDescriptor const &, class BlockPalette &, bool);
     MCAPI static class ItemStack fromTag(class CompoundTag const &);
     MCAPI static class ItemStack fromTag(class CompoundTag const &, class Level &);
 
-//private:
-
-private:
-    MCAPI static class ItemStack const EMPTY_ITEM;
 
 
 };

@@ -23,7 +23,6 @@ public:
     BeehiveBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BeehiveBlock();
     /*3*/ virtual class Block const * getNextBlockPermutation(class Block const &) const;
@@ -82,10 +81,8 @@ public:
     MCAPI static bool hasHoneyToHarvest(class Block const &);
     MCAPI static void resetHoneyLevel(class BlockSource &, class Block const &, class BlockPos const &);
 
+
 //private:
     MCAPI void _fillHoneyBottle(class Player &, class ItemStack &, class ItemStack &, class BlockSource &, class BlockPos const &) const;
-
-private:
-
 
 };

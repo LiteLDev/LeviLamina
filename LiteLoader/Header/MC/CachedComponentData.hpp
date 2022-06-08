@@ -22,12 +22,12 @@ public:
     CachedComponentData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CACHEDCOMPONENTDATA
 public:
 #endif
     MCAPI void cacheComponentData(class Block const &);
+
 
 
 };

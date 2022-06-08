@@ -25,7 +25,6 @@ public:
     ComponentItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ComponentItem();
     /*1*/ virtual bool initServer(class Json::Value &, class SemVersion const &);
@@ -136,6 +135,7 @@ public:
     MCAPI void setDescriptionId(std::string const &);
     MCAPI static void registerItemComponentTypes();
 
+
 //private:
     MCAPI std::unique_ptr<class CompoundTag> _buildItemPropertiesNetworkTag() const;
     MCAPI void _executeEvent(class ItemStackBase &, std::string const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;
@@ -143,8 +143,5 @@ public:
     MCAPI void _loadComponentsFromNetworkTag(std::string const &, class CompoundTag const &);
     MCAPI void _loadItemPropertiesNetworkTag(class CompoundTag const &);
     MCAPI void _loadItemTagsNetworkTag(class ListTag const &);
-
-private:
-
 
 };

@@ -26,7 +26,6 @@ public:
     FireworkChargeItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FireworkChargeItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -51,22 +50,20 @@ public:
 public:
 #endif
     MCAPI FireworkChargeItem(std::string const &, int);
-    MCAPI static void getFormattedHoverText(class CompoundTag const &, std::string &, std::string const &);
-    MCAPI static class ItemInstance const & initFireworkChargeItem(class ItemInstance &, enum FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
-    MCAPI static class ItemStack const & initFireworkChargeItem(class ItemStack &, enum FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
-    MCAPI static void setColor(class ItemStackBase &);
-
-//private:
-    MCAPI static void _initFireworkChargeItem(class ItemStackBase &, enum FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
-    MCAPI static void appendColors(std::string &, std::vector<unsigned char>);
-
-private:
     MCAPI static std::string const TAG_EXPLOSION;
     MCAPI static std::string const TAG_E_COLORS;
     MCAPI static std::string const TAG_E_FADECOLORS;
     MCAPI static std::string const TAG_E_FLICKER;
     MCAPI static std::string const TAG_E_TRAIL;
     MCAPI static std::string const TAG_E_TYPE;
+    MCAPI static void getFormattedHoverText(class CompoundTag const &, std::string &, std::string const &);
+    MCAPI static class ItemInstance const & initFireworkChargeItem(class ItemInstance &, enum FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
+    MCAPI static class ItemStack const & initFireworkChargeItem(class ItemStack &, enum FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
+    MCAPI static void setColor(class ItemStackBase &);
 
+
+//private:
+    MCAPI static void _initFireworkChargeItem(class ItemStackBase &, enum FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
+    MCAPI static void appendColors(std::string &, std::vector<unsigned char>);
 
 };

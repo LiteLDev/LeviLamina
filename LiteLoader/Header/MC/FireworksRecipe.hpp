@@ -23,7 +23,6 @@ public:
     FireworksRecipe() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FireworksRecipe();
     /*1*/ virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
@@ -37,11 +36,8 @@ public:
 public:
 #endif
     MCAPI FireworksRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const *);
-
-//private:
-
-private:
     MCAPI static class mce::UUID ID;
+
 
 
 };

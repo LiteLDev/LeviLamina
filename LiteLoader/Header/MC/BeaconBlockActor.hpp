@@ -22,7 +22,6 @@ public:
     BeaconBlockActor() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEACONBLOCKACTOR
 public:
@@ -53,6 +52,7 @@ public:
     MCAPI bool setSecondaryEffect(int);
     MCAPI static bool isPaymentItem(class ItemDescriptor const &);
 
+
 //private:
     MCAPI void _applyEffects(class BlockSource &);
     MCAPI int _getEffectTier(int) const;
@@ -60,8 +60,5 @@ public:
     MCAPI bool _isSecondaryEffectValid(int) const;
     MCAPI void _loadClientSideState(class Level &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI bool _saveClientSideState(class CompoundTag &) const;
-
-private:
-
 
 };

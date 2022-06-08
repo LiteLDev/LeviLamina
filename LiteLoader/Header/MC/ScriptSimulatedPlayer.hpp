@@ -23,7 +23,6 @@ public:
     ScriptSimulatedPlayer() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptSimulatedPlayer();
     /*4*/ virtual class Scripting::Result<std::string> getNameTag() const;
@@ -70,12 +69,10 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptSimulatedPlayer> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptSimulatedPlayer> getHandle(class Player const &, class Scripting::WeakLifetimeScope const &);
 
+
 //private:
     MCAPI static class gametest::BaseGameTestHelper const * _getHelper(class SimulatedPlayer const &);
     MCAPI static class std::optional<struct gametest::GameTestError> _toWorld(class SimulatedPlayer &, class BlockPos *, unsigned char *, class Vec3 *);
     MCAPI static struct ScriptNavigationResult _worldToLocalNavigationResult(class SimulatedPlayer &, struct ScriptNavigationResult);
-
-private:
-
 
 };

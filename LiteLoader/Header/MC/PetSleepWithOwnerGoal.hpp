@@ -22,7 +22,6 @@ public:
     PetSleepWithOwnerGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PetSleepWithOwnerGoal();
     /*1*/ virtual bool canUse();
@@ -40,6 +39,7 @@ public:
     MCAPI struct PetSleepWithOwnerGoalData getData() const;
     MCAPI class Mob & getMob() const;
     MCAPI void setState(std::unique_ptr<class PetSleepWithOwnerState>);
+
 
 
 };

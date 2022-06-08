@@ -23,7 +23,6 @@ public:
     ElementConstructorContainerManagerModel() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ElementConstructorContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
@@ -37,6 +36,7 @@ public:
 public:
 #endif
     MCAPI ElementConstructorContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+
 
 
 };

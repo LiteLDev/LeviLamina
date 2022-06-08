@@ -22,7 +22,6 @@ public:
     Motive() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOTIVE
 public:
@@ -33,10 +32,6 @@ public:
     MCAPI bool isPublic() const;
     MCAPI static std::vector<class Motive const *> getAllMotivesAsList();
     MCAPI static class Motive const & getMotiveByName(std::string const &);
-
-//private:
-
-private:
     MCAPI static class Motive const mAlban;
     MCAPI static class Motive const mAztec;
     MCAPI static class Motive const mAztec2;
@@ -68,6 +63,7 @@ private:
     MCAPI static class Motive const mWater;
     MCAPI static class Motive const mWind;
     MCAPI static class Motive const mWither;
+
 
 
 };

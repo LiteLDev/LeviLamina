@@ -22,7 +22,6 @@ public:
     HoldBlockSystem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~HoldBlockSystem();
     /*1*/ virtual void registerEvents(class entt::dispatcher &);
@@ -31,10 +30,8 @@ public:
 public:
 #endif
 
+
 //private:
     MCAPI static void _holdBlockSystemOnActorDie(struct ActorDieEvent &);
-
-private:
-
 
 };

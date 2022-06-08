@@ -23,7 +23,6 @@ public:
     WebRTCNetworkPeer() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WebRTCNetworkPeer();
     /*1*/ virtual void sendPacket(std::string const &, enum NetworkPeer::Reliability, int, unsigned short, enum Compressibility);
@@ -37,10 +36,8 @@ public:
     MCAPI void setRemoteUserID(unsigned __int64);
     MCAPI static void pullIncomingData(class std::shared_ptr<struct NetherNetInstance> const &, class NetworkHandler &);
 
+
 //private:
     MCAPI void _updateConnectionStatus();
-
-private:
-
 
 };

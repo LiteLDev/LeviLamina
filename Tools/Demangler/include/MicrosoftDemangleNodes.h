@@ -47,110 +47,14 @@ enum Qualifiers : uint8_t
     Q_Pointer64 = 1 << 6
 };
 
-
-
-class StorageClass
+enum class StorageClass : uint8_t
 {
-public:
-    enum StorageClassValue : uint8_t
-    {
-        None,
-        PrivateStatic,
-        ProtectedStatic,
-        PublicStatic,
-        Global,
-        FunctionLocalStatic,
-    };
-
-    StringView* pos = nullptr;
-    StorageClass() = default;
-    constexpr StorageClass(StorageClassValue type)
-        : type(type)
-    {
-    }
-
-    operator StorageClass() const
-    {
-        return type;
-    }
-    void set(StorageClassValue type)
-    {
-        this->type = type;
-    }
-    constexpr bool operator==(StorageClass type) const
-    {
-        return this->type == type.type;
-    }
-    constexpr bool operator!=(StorageClass type) const
-    {
-        return this->type != type.type;
-    }
-    constexpr bool operator==(StorageClassValue type) const
-    {
-        return this->type == type;
-    }
-    constexpr bool operator!=(StorageClassValue type) const
-    {
-        return this->type != type;
-    }
-
-    inline std::string toEnumString()
-    {
-        std::string ret;
-        ret += std::to_string((int)this->type);
-        if (this->type == None)
-            ret += "\t| None";
-        if (this->type == PrivateStatic)
-            ret += "\t| PrivateStatic";
-        if (this->type == ProtectedStatic)
-            ret += "\t| ProtectedStatic";
-        if (this->type == PublicStatic)
-            ret += "\t| PublicStatic";
-        if (this->type == Global)
-            ret += "\t| StaGlobaltic";
-        if (this->type == FunctionLocalStatic)
-            ret += "\t| FunctionLocalStatic";
-        return ret;
-    }
-
-    inline void fromMangledName(StringView& MangledName)
-    {
-        switch (MangledName.popFront())
-        {
-            case '0':
-                this->type = PrivateStatic;
-            case '1':
-                this->type = ProtectedStatic;
-            case '2':
-                this->type = PublicStatic;
-            case '3':
-                this->type = Global;
-            case '4':
-                this->type = FunctionLocalStatic;
-        }
-        DEMANGLE_UNREACHABLE;
-    }
-    inline char toChar() const
-    {
-        switch (this->type)
-        {
-            case PrivateStatic:
-                return '0';
-            case ProtectedStatic:
-                return '1';
-            case PublicStatic:
-                return '2';
-            case Global:
-                return '3';
-            case FunctionLocalStatic:
-                return '4';
-        }
-        DEMANGLE_UNREACHABLE;
-    }
-
-
-private:
-    StorageClassValue type;
+    None,
+    PrivateStatic,
+    ProtectedStatic,
+    PublicStatic,
+    Global,
+    FunctionLocalStatic,
 };
 
 enum class PointerAffinity
@@ -349,7 +253,7 @@ enum FuncClass : uint16_t
 class FuncClassType
 {
 public:
-    StringView* pos = nullptr;
+    StringView* backup = nullptr;
     FuncClassType() = default;
     constexpr FuncClassType(FuncClass type)
         : type(type)

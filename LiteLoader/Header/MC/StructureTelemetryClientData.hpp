@@ -22,7 +22,6 @@ public:
     StructureTelemetryClientData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETELEMETRYCLIENTDATA
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI unsigned int getOffsetEditCount() const;
     MCAPI unsigned int getRotationEditCount() const;
     MCAPI unsigned int getSizeEditCount() const;
+
 
 
 };

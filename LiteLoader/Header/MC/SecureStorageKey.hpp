@@ -20,12 +20,12 @@ public:
     SecureStorageKey() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SECURESTORAGEKEY
 public:
 #endif
     MCAPI ~SecureStorageKey();
+
 
 
 };

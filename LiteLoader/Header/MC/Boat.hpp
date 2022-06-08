@@ -23,7 +23,6 @@ public:
     Boat() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*9*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -72,13 +71,11 @@ public:
     MCAPI bool setPaddleState(enum Side, bool);
     MCAPI void setRowingTime(enum Side, float);
 
+
 //private:
     MCAPI void _computePaddleForce(float &, float &, float, float);
     MCAPI void _control();
     MCAPI void _move();
     MCAPI void _paddleControl(enum Side, class Vec3 &, class Vec3 &);
-
-private:
-
 
 };

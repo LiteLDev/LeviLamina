@@ -19,7 +19,6 @@ public:
     CommandFilePath(class CommandFilePath const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDFILEPATH
 public:
@@ -28,6 +27,7 @@ public:
     MCAPI int findInvalidCharacter() const;
     MCAPI std::string const & getText() const;
     MCAPI ~CommandFilePath();
+
 
 
 };

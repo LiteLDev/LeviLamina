@@ -21,7 +21,6 @@ public:
     FeatureRegistry(class FeatureRegistry const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATUREREGISTRY
 public:
@@ -37,13 +36,6 @@ public:
     MCAPI class WeakRefT<struct FeatureRefTraits> reserveFeature(std::string const &);
     MCAPI void setLargeFeaturePasses(std::vector<std::string>);
     MCAPI void setSmallFeaturePasses(std::vector<std::string>);
-
-//private:
-    MCAPI std::string const _featureNamespaceFromInput(std::string const &, std::string const &);
-    MCAPI void _registerFeature(std::string const &, std::unique_ptr<class IFeature>);
-    MCAPI void _setupFeature(class IWorldRegistriesProvider &, class ResourcePackManager const &, std::string const &, std::string const &, class SemVersion const &);
-
-private:
     MCAPI static std::string const AFTER_SKY_PASS;
     MCAPI static std::string const AFTER_SURFACE_PASS;
     MCAPI static std::string const AFTER_UNDERGROUND_PASS;
@@ -57,5 +49,10 @@ private:
     MCAPI static std::string const SURFACE_PASS;
     MCAPI static std::string const UNDERGROUND_PASS;
 
+
+//private:
+    MCAPI std::string const _featureNamespaceFromInput(std::string const &, std::string const &);
+    MCAPI void _registerFeature(std::string const &, std::unique_ptr<class IFeature>);
+    MCAPI void _setupFeature(class IWorldRegistriesProvider &, class ResourcePackManager const &, std::string const &, std::string const &, class SemVersion const &);
 
 };

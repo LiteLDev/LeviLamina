@@ -23,7 +23,6 @@ public:
     FlowerPotBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FlowerPotBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -80,13 +79,11 @@ public:
     MCAPI class FlowerPotBlockActor * getFlowerPotEntity(class BlockSource &, class BlockPos const &) const;
     MCAPI static bool isValidResource(class Block const &);
 
+
 //private:
     MCAPI bool _tryPlaceFlower(class Player &, class BlockPos const &) const;
     MCAPI bool _tryTakeFlower(class Player &, class BlockPos const &) const;
     MCAPI void _updateFlowerPotEntity(class BlockSource &, class BlockPos const &, class FlowerPotBlockActor *, class Block const *) const;
     MCAPI bool isSupportedBlock(class Block const &) const;
-
-private:
-
 
 };

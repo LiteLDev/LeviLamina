@@ -23,7 +23,6 @@ public:
     ConduitBlockActor() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ConduitBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -44,12 +43,10 @@ public:
 #endif
     MCAPI ConduitBlockActor(class BlockPos const &);
 
+
 //private:
     MCAPI void _animateTick(class BlockSource &) const;
     MCAPI void _checkShape(class BlockSource &);
     MCAPI void _updateTarget(class BlockSource &);
-
-private:
-
 
 };

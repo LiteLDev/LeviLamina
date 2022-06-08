@@ -22,7 +22,6 @@ public:
     TransporterComponent(class TransporterComponent const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TransporterComponent();
     /*7*/ virtual bool canConsumerPower() const;
@@ -37,6 +36,7 @@ public:
 public:
 #endif
     MCAPI TransporterComponent();
+
 
 
 };

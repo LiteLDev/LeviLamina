@@ -23,7 +23,6 @@ public:
     MobSpawnerBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MobSpawnerBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -70,6 +69,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI MobSpawnerBlock(std::string const &, int);
+
 
 
 };

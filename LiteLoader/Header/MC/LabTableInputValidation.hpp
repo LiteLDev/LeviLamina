@@ -23,7 +23,6 @@ public:
     LabTableInputValidation() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LabTableInputValidation();
     /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
@@ -39,6 +38,7 @@ public:
 public:
     MCVAPI bool canDestroy(class ContainerScreenContext const &) const;
 #endif
+
 
 
 };

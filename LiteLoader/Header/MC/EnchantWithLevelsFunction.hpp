@@ -23,7 +23,6 @@ public:
     EnchantWithLevelsFunction() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTWITHLEVELSFUNCTION
 public:
@@ -33,6 +32,7 @@ public:
     MCVAPI void apply(class ItemStack &, class Random &, class LootTableContext &);
 #endif
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
+
 
 
 };

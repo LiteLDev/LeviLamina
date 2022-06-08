@@ -23,11 +23,13 @@ public:
     EnchantUtils() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTUTILS
 public:
 #endif
+    MCAPI static int const MAX_EXP_REPAIR_COST;
+    MCAPI static int const PROTECTIONFACTOR_PRIMARYCAP;
+    MCAPI static int const PROTECTIONFACTOR_SECONDARYCAP;
     MCAPI static void appendEnchantToFormattedText(enum Enchant::Type, class gsl::basic_string_span<char const, -1>, std::string &);
     MCAPI static int applyEnchant(class ItemStackBase &, class ItemEnchants const &, bool);
     MCAPI static bool applyEnchant(class ItemStackBase &, class EnchantmentInstance const &, bool);
@@ -59,19 +61,14 @@ public:
     MCAPI static bool hasCurse(class ItemStackBase const &);
     MCAPI static bool hasEnchant(enum Enchant::Type, class ItemStackBase const &);
     MCAPI static bool isCurse(enum Enchant::Type);
-    MCAPI static std::vector<std::string> mEnchantmentNames;
     MCAPI static void randomlyEnchant(class ItemInstance &, int, int, bool);
     MCAPI static void randomlyEnchant(class ItemStack &, int, int, bool);
     MCAPI static void removeEnchants(class ItemStack &);
     MCAPI static class ItemEnchants selectEnchantments(class Item const *, int, int, bool);
 
+
 //private:
     MCAPI static void _convertBookCheck(class ItemStackBase &);
-
-private:
-    MCAPI static int const MAX_EXP_REPAIR_COST;
-    MCAPI static int const PROTECTIONFACTOR_PRIMARYCAP;
-    MCAPI static int const PROTECTIONFACTOR_SECONDARYCAP;
-
+    MCAPI static std::vector<std::string> mEnchantmentNames;
 
 };

@@ -22,7 +22,6 @@ public:
     GameTestLevelListener() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GameTestLevelListener();
     /*1*/ virtual void __unk_vfn_1();
@@ -38,6 +37,7 @@ public:
 public:
 #endif
     MCAPI GameTestLevelListener(class gametest::GameTestTicker &);
+
 
 
 };

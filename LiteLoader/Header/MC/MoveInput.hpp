@@ -22,7 +22,6 @@ public:
     MoveInput() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MoveInput();
     /*1*/ virtual void tick(struct IPlayerMovementProxy &);
@@ -44,6 +43,7 @@ public:
     MCVAPI void render(float);
     MCVAPI void setKey(int, bool);
 #endif
+
 
 
 };

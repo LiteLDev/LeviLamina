@@ -22,7 +22,6 @@ public:
     CircleAroundAnchorGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CircleAroundAnchorGoal();
     /*1*/ virtual bool canUse();
@@ -37,12 +36,10 @@ public:
 #endif
     MCAPI CircleAroundAnchorGoal(class Mob &);
 
+
 //private:
     MCAPI float _calculateHeightOffset() const;
     MCAPI void _selectNext();
     MCAPI void _setAnchorAboveTarget();
-
-private:
-
 
 };

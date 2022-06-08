@@ -21,7 +21,6 @@ public:
     DebugAssertException() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DebugAssertException();
     /*1*/ virtual char const * what() const;
@@ -30,8 +29,10 @@ public:
 #endif
     MCAPI DebugAssertException(class DebugAssertException const &);
     MCAPI DebugAssertException(char const *, char const *, char const *, int, char const *, char const *);
-    MCAPI static char const *const WHAT;
     MCAPI static bool isEnabled();
 
+
+//private:
+    MCAPI static char const *const WHAT;
 
 };

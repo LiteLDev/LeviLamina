@@ -22,7 +22,6 @@ public:
     ConsumerComponent(class ConsumerComponent const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ConsumerComponent();
     /*7*/ virtual bool canConsumerPower() const;
@@ -37,6 +36,7 @@ public:
 public:
 #endif
     MCAPI ConsumerComponent();
+
 
 
 };

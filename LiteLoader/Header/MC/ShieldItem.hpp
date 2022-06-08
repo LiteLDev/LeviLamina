@@ -24,7 +24,6 @@ public:
     ShieldItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ShieldItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -58,14 +57,12 @@ public:
     MCAPI ShieldItem(std::string const &, int);
     MCAPI void playBlockSound(class Player *) const;
     MCAPI void playBreakSound(class Player *) const;
-
-//private:
-    MCAPI enum InHandUpdateType _getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
-
-private:
     MCAPI static int const EFFECTIVE_BLOCK_DELAY;
     MCAPI static int const IN_HAND_BLOCK_DURATION;
     MCAPI static std::string const TIMESTAMP_TAG;
 
+
+//private:
+    MCAPI enum InHandUpdateType _getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
 
 };

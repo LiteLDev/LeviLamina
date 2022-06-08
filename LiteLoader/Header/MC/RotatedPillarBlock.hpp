@@ -23,7 +23,6 @@ public:
     RotatedPillarBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RotatedPillarBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -67,8 +66,10 @@ public:
 public:
 #endif
     MCAPI RotatedPillarBlock(std::string const &, int, class Material const &);
+
+
+//private:
     MCAPI static int const mRotatedX[];
     MCAPI static int const mRotatedZ[];
-
 
 };

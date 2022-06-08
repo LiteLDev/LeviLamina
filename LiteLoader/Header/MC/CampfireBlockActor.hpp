@@ -23,7 +23,6 @@ public:
     CampfireBlockActor() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CampfireBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -47,13 +46,11 @@ public:
     MCAPI void dropAllItems(class BlockSource &);
     MCAPI class ItemInstance const & getCookingItem(int);
     MCAPI bool setItem(class BlockSource &, class ItemInstance const &);
-
-//private:
-    MCAPI void _finishCooking(class BlockSource &, int);
-
-private:
     MCAPI static int const MAX_SMOKE_THRESHOLD_COUNTER;
     MCAPI static int const MIN_SMOKE_THRESHOLD_COUNTER;
 
+
+//private:
+    MCAPI void _finishCooking(class BlockSource &, int);
 
 };

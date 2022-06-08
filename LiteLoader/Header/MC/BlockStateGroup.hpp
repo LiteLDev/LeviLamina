@@ -22,7 +22,6 @@ public:
     BlockStateGroup(class BlockStateGroup const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATEGROUP
 public:
@@ -32,14 +31,11 @@ public:
     MCAPI class BlockStateMeta const * getBlockStateFromName(std::string const &) const;
     MCAPI void registerBlockStateDefinition(struct BlockStateDefinition const &);
     MCAPI void registerToBlock(class BlockLegacy &);
+    MCAPI static int const MAX_ENUM_SIZE;
     MCAPI static std::unique_ptr<struct BlockStateDefinition> createFromItemState(std::string const &, class ItemState const &);
     MCAPI static std::unique_ptr<class ListTag> createItemStateEnum(class ItemState const &);
     MCAPI static bool loadBlockStateFromJson(struct BlockStateDefinition &, std::string const &, class Json::Value const &);
 
-//private:
-
-private:
-    MCAPI static int const MAX_ENUM_SIZE;
 
 
 };

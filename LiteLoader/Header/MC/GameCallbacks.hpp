@@ -22,7 +22,6 @@ public:
     GameCallbacks() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GameCallbacks();
     /*1*/ virtual void __unk_vfn_1() = 0;
@@ -31,6 +30,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMECALLBACKS
 public:
 #endif
+
 
 
 };

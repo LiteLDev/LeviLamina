@@ -22,7 +22,6 @@ public:
     BlockSourceListener() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BlockSourceListener();
     /*1*/ virtual void __unk_vfn_1();
@@ -41,6 +40,7 @@ public:
     MCVAPI void onEntityChanged(class BlockSource &, class Actor &);
     MCVAPI void onSourceCreated(class BlockSource &);
 #endif
+
 
 
 };

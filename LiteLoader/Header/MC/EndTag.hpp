@@ -28,7 +28,6 @@ public:
     EndTag() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EndTag();
     /*2*/ virtual void write(class IDataOutput &) const;
@@ -41,6 +40,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDTAG
 public:
 #endif
+
 
 
 };

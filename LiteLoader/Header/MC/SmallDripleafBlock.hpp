@@ -23,7 +23,6 @@ public:
     SmallDripleafBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SmallDripleafBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -82,11 +81,9 @@ public:
     MCAPI SmallDripleafBlock(std::string const &, int);
     MCAPI static bool tryPlaceSmallDripleaf(class BlockSource &, class BlockPos const &, int, int);
 
+
 //private:
     MCAPI bool _isViablePlacePos(class BlockSource &, class BlockPos const &) const;
     MCAPI static void placeUpperBlock(class BlockSource &, class BlockPos const &, int);
-
-private:
-
 
 };

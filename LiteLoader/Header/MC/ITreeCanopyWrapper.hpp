@@ -20,12 +20,12 @@ public:
     ITreeCanopyWrapper() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITREECANOPYWRAPPER
 public:
 #endif
     MCAPI ~ITreeCanopyWrapper();
+
 
 
 };

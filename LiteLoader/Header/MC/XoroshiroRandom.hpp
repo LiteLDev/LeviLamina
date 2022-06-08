@@ -22,7 +22,6 @@ public:
     XoroshiroRandom() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~XoroshiroRandom();
     /*1*/ virtual int nextInt();
@@ -38,6 +37,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_XOROSHIRORANDOM
 public:
 #endif
+
 
 
 };

@@ -22,16 +22,12 @@ public:
     EduAppConfigs() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUAPPCONFIGS
 public:
 #endif
-
-//private:
-
-private:
     MCAPI static struct PackIdVersion const EDUResourcePack;
+
 
 
 };

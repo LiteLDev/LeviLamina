@@ -20,11 +20,11 @@ public:
     IEntitySystems() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IENTITYSYSTEMS
 public:
 #endif
+
 
 
 };

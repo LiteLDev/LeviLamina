@@ -22,7 +22,6 @@ public:
     DebugInfoPacket(class DebugInfoPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DebugInfoPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI DebugInfoPacket();
+
 
 
 };

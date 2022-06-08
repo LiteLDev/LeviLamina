@@ -22,7 +22,6 @@ public:
     ChanceInformation() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHANCEINFORMATION
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI bool roll(class Random &) const;
     MCAPI void set(unsigned int, unsigned int);
     MCAPI void set(float);
+
 
 
 };

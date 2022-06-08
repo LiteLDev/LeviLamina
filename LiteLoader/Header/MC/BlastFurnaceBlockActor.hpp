@@ -22,13 +22,13 @@ public:
     BlastFurnaceBlockActor() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLASTFURNACEBLOCKACTOR
 public:
     MCVAPI std::string getName() const;
 #endif
     MCAPI BlastFurnaceBlockActor(class BlockPos const &);
+
 
 
 };

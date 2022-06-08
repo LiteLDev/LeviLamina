@@ -22,11 +22,11 @@ public:
     IMinecraftApp() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMINECRAFTAPP
 public:
 #endif
+
 
 
 };

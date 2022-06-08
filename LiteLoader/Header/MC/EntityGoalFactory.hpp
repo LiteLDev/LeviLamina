@@ -22,7 +22,6 @@ public:
     EntityGoalFactory() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYGOALFACTORY
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI class IJsonDefinitionSerializer * tryGetDefinitionSerializer(std::string const &);
     MCAPI ~EntityGoalFactory();
     MCAPI static void addGoals(class EntityContext &, class DefinitionInstanceGroup const &);
+
 
 
 };

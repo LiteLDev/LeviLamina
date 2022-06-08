@@ -22,7 +22,6 @@ public:
     TakeFlowerGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TakeFlowerGoal();
     /*1*/ virtual bool canUse();
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI TakeFlowerGoal(class Mob &);
+
 
 
 };

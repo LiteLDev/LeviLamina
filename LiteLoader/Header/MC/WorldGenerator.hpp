@@ -28,7 +28,6 @@ public:
     WorldGenerator() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDGENERATOR
 public:
@@ -49,8 +48,6 @@ public:
 //protected:
     MCAPI void postProcessStructureFeatures(class BlockSource &, class Random &, int, int);
     MCAPI void prepareStructureFeatureBlueprints(class Dimension &, class ChunkPos const &, class BiomeSource const &, class IPreliminarySurfaceProvider const &);
-
-protected:
     MCAPI static unsigned __int64 const TICKING_QUEUE_PASS_LIMIT;
 
 

@@ -22,7 +22,6 @@ public:
     TradeInterestGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TradeInterestGoal();
     /*1*/ virtual bool canUse();
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI TradeInterestGoal(class Mob &, float, float, float, float, float);
+
 
 
 };

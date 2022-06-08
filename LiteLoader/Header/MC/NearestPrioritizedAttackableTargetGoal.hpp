@@ -23,7 +23,6 @@ public:
     NearestPrioritizedAttackableTargetGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NearestPrioritizedAttackableTargetGoal();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
@@ -34,6 +33,7 @@ public:
 public:
 #endif
     MCAPI NearestPrioritizedAttackableTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int, bool, int, bool, bool, int, float, bool, int, bool);
+
 
 
 };

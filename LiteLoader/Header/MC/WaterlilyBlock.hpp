@@ -23,7 +23,6 @@ public:
     WaterlilyBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WaterlilyBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -71,6 +70,7 @@ public:
 public:
 #endif
     MCAPI WaterlilyBlock(std::string const &, int);
+
 
 
 };

@@ -20,12 +20,12 @@ public:
     ContainerValidationCommitObject() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONCOMMITOBJECT
 public:
 #endif
     MCAPI static void append(class std::shared_ptr<class ContainerValidationCommitObject>, std::vector<class std::shared_ptr<class ContainerValidationCommitObject>> &);
+
 
 
 };

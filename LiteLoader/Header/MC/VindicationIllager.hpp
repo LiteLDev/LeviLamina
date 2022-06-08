@@ -24,7 +24,6 @@ public:
     VindicationIllager() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~VindicationIllager();
     /*40*/ virtual void __unk_vfn_40();
@@ -59,6 +58,7 @@ public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI VindicationIllager(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     ServerLevel() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERLEVEL
 public:
@@ -59,6 +58,7 @@ public:
     MCAPI void setShouldSendSleepMessage(bool);
     MCAPI bool shouldSendSleepMessage() const;
     MCAPI class Bedrock::NonOwnerPointer<class VolumeEntityManagerServer> tryGetVolumeEntityManager() const;
+
 
 
 };

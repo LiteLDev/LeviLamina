@@ -21,13 +21,13 @@ public:
     IMinecraftEventing() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMINECRAFTEVENTING
 public:
     MCVAPI void updatePlayerUndergroundStatus(class Player *, bool);
     MCVAPI ~IMinecraftEventing();
 #endif
+
 
 
 };

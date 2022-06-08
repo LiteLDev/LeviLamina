@@ -21,7 +21,6 @@ public:
     ItemStackRequestActionBeaconPayment(class ItemStackRequestActionBeaconPayment const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ItemStackRequestActionBeaconPayment();
     /*1*/ virtual void __unk_vfn_1();
@@ -35,6 +34,7 @@ public:
     MCAPI ItemStackRequestActionBeaconPayment();
     MCAPI int getPrimaryEffectId() const;
     MCAPI int getSecondaryEffectId() const;
+
 
 
 };

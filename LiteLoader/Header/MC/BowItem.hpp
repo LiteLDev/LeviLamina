@@ -24,7 +24,6 @@ public:
     BowItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BowItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -47,6 +46,7 @@ public:
 public:
 #endif
     MCAPI BowItem(std::string const &, int);
+
 
 
 };

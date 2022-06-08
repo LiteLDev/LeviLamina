@@ -23,7 +23,6 @@ public:
     ObsidianBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ObsidianBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -65,6 +64,7 @@ public:
 #endif
     MCAPI ObsidianBlock(std::string const &, int, bool);
     MCAPI void poofParticles(class BlockSource &, class BlockPos const &) const;
+
 
 
 };

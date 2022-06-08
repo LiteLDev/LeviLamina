@@ -23,7 +23,6 @@ public:
     InfestedDeepslateBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~InfestedDeepslateBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -64,6 +63,7 @@ public:
 public:
 #endif
     MCAPI InfestedDeepslateBlock(std::string const &, int, class Material const &);
+
 
 
 };

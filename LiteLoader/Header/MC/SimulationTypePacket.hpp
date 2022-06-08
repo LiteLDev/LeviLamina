@@ -22,7 +22,6 @@ public:
     SimulationTypePacket(class SimulationTypePacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SimulationTypePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI SimulationTypePacket();
+
 
 
 };

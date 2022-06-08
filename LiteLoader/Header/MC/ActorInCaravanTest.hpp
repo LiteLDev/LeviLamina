@@ -24,7 +24,6 @@ public:
     ActorInCaravanTest() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorInCaravanTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
@@ -32,6 +31,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINCARAVANTEST
 public:
 #endif
+
 
 
 };

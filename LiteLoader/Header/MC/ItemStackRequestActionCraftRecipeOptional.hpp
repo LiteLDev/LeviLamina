@@ -21,7 +21,6 @@ public:
     ItemStackRequestActionCraftRecipeOptional(class ItemStackRequestActionCraftRecipeOptional const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ItemStackRequestActionCraftRecipeOptional();
     /*1*/ virtual void __unk_vfn_1();
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI ItemStackRequestActionCraftRecipeOptional();
     MCAPI class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const & getRecipeNetId() const;
+
 
 
 };

@@ -24,7 +24,6 @@ public:
     ActorServerCommandOrigin() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorServerCommandOrigin();
     /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
@@ -39,6 +38,7 @@ public:
     MCAPI struct ActorUniqueID getTargetOther() const;
     MCAPI void setTargetOther(struct ActorUniqueID);
     MCAPI static std::unique_ptr<class ActorServerCommandOrigin> load(class CompoundTag const &, class Level &);
+
 
 
 };

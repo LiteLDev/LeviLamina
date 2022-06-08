@@ -22,7 +22,6 @@ public:
     ActorPickRequestPacket(class ActorPickRequestPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorPickRequestPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI ActorPickRequestPacket();
+
 
 
 };

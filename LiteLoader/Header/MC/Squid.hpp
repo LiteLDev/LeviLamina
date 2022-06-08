@@ -24,7 +24,6 @@ public:
     Squid() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Squid();
@@ -66,10 +65,8 @@ public:
     MCAPI Squid(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &, class mce::Color const &);
     MCAPI void spawnInkParticles();
 
+
 //private:
     MCAPI class Vec3 _randomInkDir();
-
-private:
-
 
 };

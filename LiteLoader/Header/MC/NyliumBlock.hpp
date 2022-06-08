@@ -23,7 +23,6 @@ public:
     NyliumBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NyliumBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -73,10 +72,8 @@ public:
     MCAPI static class Block const & netherSproutBlockProvider(class Randomize const &);
     MCAPI static class Block const & warpedBlockProvider(class Randomize const &);
 
+
 //private:
     MCAPI bool _scatterVegetation(class BlockSource &, class BlockPos const &, class Random &, class std::function<class Block const & (class Randomize const &)>) const;
-
-private:
-
 
 };

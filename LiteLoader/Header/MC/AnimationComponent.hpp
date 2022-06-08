@@ -22,7 +22,6 @@ public:
     AnimationComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATIONCOMPONENT
 public:
@@ -50,15 +49,13 @@ public:
     MCAPI static class std::shared_ptr<class AnimationComponent> getAnimationComponent(enum AnimationComponentGroup, class AnimationComponentID);
     MCAPI static unsigned __int64 getReloadTimeStampClient();
     MCAPI static void incrementCurrentServerFrameIndex();
-    MCAPI static struct std::atomic<__int64> mClientFrameIndex;
-    MCAPI static struct std::atomic<__int64> mReloadTimeStampClient;
-    MCAPI static struct std::atomic<__int64> mServerFrameIndex;
+
 
 //private:
     MCAPI static class std::unordered_map<class AnimationComponentID, class std::weak_ptr<class AnimationComponent>, struct std::hash<class AnimationComponentID>, struct std::equal_to<class AnimationComponentID>, class std::allocator<struct std::pair<class AnimationComponentID const, class std::weak_ptr<class AnimationComponent>>>> & _getAllAnimationComponents(enum AnimationComponentGroup);
     MCAPI static class std::recursive_mutex & _getAnimationComponentMapLock();
-
-private:
-
+    MCAPI static struct std::atomic<__int64> mClientFrameIndex;
+    MCAPI static struct std::atomic<__int64> mReloadTimeStampClient;
+    MCAPI static struct std::atomic<__int64> mServerFrameIndex;
 
 };

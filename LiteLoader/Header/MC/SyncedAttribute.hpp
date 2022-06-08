@@ -20,12 +20,12 @@ public:
     SyncedAttribute() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYNCEDATTRIBUTE
 public:
 #endif
     MCAPI ~SyncedAttribute();
+
 
 
 };

@@ -33,6 +33,5 @@ public:
 protected:
 
 private:
-    MCAPI static struct ScoreboardId INVALID;
 
 };

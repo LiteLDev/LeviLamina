@@ -22,7 +22,6 @@ public:
     ScriptColor() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCOLOR
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI class mce::Color const & getColor() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptColor> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptColor> fromRBGA(class Scripting::WeakLifetimeScope, float, float, float, float);
+
 
 
 };

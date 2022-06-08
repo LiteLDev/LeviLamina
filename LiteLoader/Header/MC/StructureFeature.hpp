@@ -22,7 +22,6 @@ public:
     StructureFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StructureFeature();
     /*1*/ virtual bool shouldAddHardcodedSpawnAreas() const;
@@ -54,8 +53,6 @@ public:
 
 //protected:
     MCAPI void addFeature(class Dimension &, class Random &, class ChunkPos const &, class BiomeSource const &, class IPreliminarySurfaceProvider const &);
-
-protected:
 
 
 };

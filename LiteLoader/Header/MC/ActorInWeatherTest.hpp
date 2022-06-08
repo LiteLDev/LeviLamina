@@ -24,7 +24,6 @@ public:
     ActorInWeatherTest() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorInWeatherTest();
     /*1*/ virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
@@ -34,6 +33,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINWEATHERTEST
 public:
 #endif
+
 
 
 };

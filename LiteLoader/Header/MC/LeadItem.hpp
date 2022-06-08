@@ -24,7 +24,6 @@ public:
     LeadItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LeadItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -47,6 +46,7 @@ public:
     MCAPI LeadItem(std::string const &, int);
     MCAPI static bool bindPlayerMobs(class Actor &, int, int, int, class ItemInstance *);
     MCAPI static bool canBindPlayerMobs(class Actor const &, class BlockPos const &);
+
 
 
 };

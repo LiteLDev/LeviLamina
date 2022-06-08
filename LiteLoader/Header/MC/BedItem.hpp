@@ -24,7 +24,6 @@ public:
     BedItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BedItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -50,10 +49,8 @@ public:
 public:
 #endif
 
+
 //private:
     MCAPI bool _tryUseOn(class ItemStackBase &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-
-private:
-
 
 };

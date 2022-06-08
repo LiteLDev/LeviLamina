@@ -23,7 +23,6 @@ public:
     AllowListFile() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLOWLISTFILE
 public:
@@ -33,6 +32,7 @@ public:
     MCAPI void syncToDisc();
     MCAPI ~AllowListFile();
     MCAPI static class AllowListFile loadFromDefaultLocations(class Core::IFileSystem &);
+
 
 
 };

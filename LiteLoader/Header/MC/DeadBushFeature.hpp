@@ -23,7 +23,6 @@ public:
     DeadBushFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DeadBushFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -31,6 +30,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEADBUSHFEATURE
 public:
 #endif
+
 
 
 };

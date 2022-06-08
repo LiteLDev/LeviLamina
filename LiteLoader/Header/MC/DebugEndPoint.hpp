@@ -23,13 +23,14 @@ public:
     DebugEndPoint() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEBUGENDPOINT
 public:
 #endif
     MCAPI void initializeContentLogging(class ResourcePackManager &, class Core::Path const &);
-    MCAPI static class std::unordered_map<enum LogArea, bool, struct std::hash<enum LogArea>, struct std::equal_to<enum LogArea>, class std::allocator<struct std::pair<enum LogArea const, bool>>> const mAssertAreas;
 
+
+//private:
+    MCAPI static class std::unordered_map<enum LogArea, bool, struct std::hash<enum LogArea>, struct std::equal_to<enum LogArea>, class std::allocator<struct std::pair<enum LogArea const, bool>>> const mAssertAreas;
 
 };

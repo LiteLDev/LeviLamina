@@ -20,7 +20,6 @@ public:
     CapacitorComponent(class CapacitorComponent const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CapacitorComponent();
     /*17*/ virtual void __unk_vfn_17();
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI CapacitorComponent();
+
 
 
 };

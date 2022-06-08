@@ -23,7 +23,6 @@ public:
     Pack() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACK
 public:
@@ -41,14 +40,12 @@ public:
     MCAPI void registerPackUpdatedCallback(void *, class std::function<void (class Pack &)>);
     MCAPI void unregisterPackDeletedCallback(void *);
     MCAPI void unregisterPackUpdatedCallback(void *);
-    MCAPI static class Core::PathBuffer<std::string> const EDUCATION_METADATA_FILE;
     MCAPI static std::unique_ptr<class Pack> createPack(class ResourceLocation const &, enum PackType, enum PackOrigin, class IPackManifestFactory &, class IContentKeyProvider const &, class PackSourceReport *);
     MCAPI static std::unique_ptr<class PackMetadata> createPackMetadata(enum PackType, class PackManifest &, class PackAccessStrategy const &, class PackReport &);
 
+
 //private:
     MCAPI void _loadLocalizationFiles();
-
-private:
-
+    MCAPI static class Core::PathBuffer<std::string> const EDUCATION_METADATA_FILE;
 
 };

@@ -23,7 +23,6 @@ public:
     OceanMonumentDoubleYRoom() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~OceanMonumentDoubleYRoom();
     /*3*/ virtual enum StructurePieceType getType() const;
@@ -31,6 +30,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANMONUMENTDOUBLEYROOM
 public:
 #endif
+
 
 
 };

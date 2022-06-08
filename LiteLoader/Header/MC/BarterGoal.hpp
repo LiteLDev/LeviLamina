@@ -22,7 +22,6 @@ public:
     BarterGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BarterGoal();
     /*1*/ virtual bool canUse();
@@ -37,10 +36,8 @@ public:
 #endif
     MCAPI BarterGoal(class Mob &);
 
+
 //private:
     MCAPI class Vec3 _getThrowVector();
-
-private:
-
 
 };

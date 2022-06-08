@@ -23,7 +23,6 @@ public:
     TrapDoorBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TrapDoorBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -79,12 +78,10 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI TrapDoorBlock(std::string const &, int, class Material const &);
-    MCAPI static class BaseGameVersion const TRAP_DOOR_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+
 
 //private:
     MCAPI void _toggleOpen(class BlockSource &, class Actor *, class BlockPos const &) const;
-
-private:
-
+    MCAPI static class BaseGameVersion const TRAP_DOOR_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 };

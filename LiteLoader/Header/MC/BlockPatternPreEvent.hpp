@@ -20,12 +20,12 @@ public:
     BlockPatternPreEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPATTERNPREEVENT
 public:
 #endif
     MCAPI ~BlockPatternPreEvent();
+
 
 
 };

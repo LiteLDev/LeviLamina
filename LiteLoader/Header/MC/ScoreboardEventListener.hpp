@@ -22,13 +22,13 @@ public:
     ScoreboardEventListener() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScoreboardEventListener();
     /*1*/ virtual enum EventResult onScoreChanged(struct ScoreboardId const &, std::string const &, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDEVENTLISTENER
 public:
 #endif
+
 
 
 };

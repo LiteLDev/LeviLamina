@@ -30,7 +30,6 @@ public:
     ArmorStand() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~ArmorStand();
     /*40*/ virtual void __unk_vfn_40();
@@ -75,6 +74,15 @@ public:
     MCAPI ArmorStand(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI int getNumSlotsFilled() const;
     MCAPI void setPoseIndex(int);
+
+
+//private:
+    MCAPI void _causeDamage(float);
+    MCAPI void _destroyWithEffects(class Vec3 const &);
+    MCAPI void _dropHeldItems();
+    MCAPI void _dropHeldItemsAndResource();
+    MCAPI void _dropItem(class ItemStack const &);
+    MCAPI bool _trySwapItem(class Player &, enum EquipmentSlot);
     MCAPI static struct ArmorStand::Pose const POSE_ATHENA;
     MCAPI static struct ArmorStand::Pose const POSE_BRANDISH;
     MCAPI static struct ArmorStand::Pose const POSE_CANCAN_A;
@@ -89,16 +97,5 @@ public:
     MCAPI static struct ArmorStand::Pose const POSE_ZERO_ROTATION;
     MCAPI static struct ArmorStand::Pose const POSE_ZOMBIE;
     MCAPI static struct ArmorStand::Pose const * STAND_POSES[];
-
-//private:
-    MCAPI void _causeDamage(float);
-    MCAPI void _destroyWithEffects(class Vec3 const &);
-    MCAPI void _dropHeldItems();
-    MCAPI void _dropHeldItemsAndResource();
-    MCAPI void _dropItem(class ItemStack const &);
-    MCAPI bool _trySwapItem(class Player &, enum EquipmentSlot);
-
-private:
-
 
 };

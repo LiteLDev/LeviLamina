@@ -23,7 +23,6 @@ public:
     EndPortalBlockActor() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EndPortalBlockActor();
     /*12*/ virtual void __unk_vfn_12();
@@ -37,6 +36,7 @@ public:
 public:
 #endif
     MCAPI EndPortalBlockActor(class BlockPos const &);
+
 
 
 };

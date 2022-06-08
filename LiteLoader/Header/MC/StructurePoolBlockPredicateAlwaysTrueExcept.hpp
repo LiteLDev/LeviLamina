@@ -20,7 +20,6 @@ public:
     StructurePoolBlockPredicateAlwaysTrueExcept() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StructurePoolBlockPredicateAlwaysTrueExcept();
     /*1*/ virtual bool test(class Block const &, class Randomize &) const;
@@ -29,6 +28,7 @@ public:
 public:
 #endif
     MCAPI StructurePoolBlockPredicateAlwaysTrueExcept(class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> const &, float);
+
 
 
 };

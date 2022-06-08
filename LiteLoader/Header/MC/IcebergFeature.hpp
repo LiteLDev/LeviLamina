@@ -23,7 +23,6 @@ public:
     IcebergFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~IcebergFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -32,13 +31,11 @@ public:
 public:
 #endif
 
+
 //private:
     MCAPI void carve(int, int, class BlockPos const &, class BlockSource &, bool, float, class BlockPos const &, int, int) const;
     MCAPI void generateIcebergBlock(class BlockSource &, class Random &, class BlockPos const &, int, int, int, int, int, int, bool, bool, float, int, class Block const &) const;
     MCAPI int heightDependentRadiusRound(class Random &, int, int, int) const;
     MCAPI float signedDistanceEllipse(int, int, class BlockPos const &, int, int, float) const;
-
-private:
-
 
 };

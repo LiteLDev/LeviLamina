@@ -23,13 +23,13 @@ public:
     BuriedTreasureStart() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BuriedTreasureStart();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BURIEDTREASURESTART
 public:
 #endif
     MCAPI BuriedTreasureStart(class Dimension &, class Random &, int, int);
+
 
 
 };

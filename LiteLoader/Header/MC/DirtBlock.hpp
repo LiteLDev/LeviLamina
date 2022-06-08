@@ -23,7 +23,6 @@ public:
     DirtBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DirtBlock();
     /*18*/ virtual bool isSolid() const;
@@ -79,6 +78,7 @@ public:
 public:
 #endif
     MCAPI DirtBlock(std::string const &, int);
+
 
 
 };

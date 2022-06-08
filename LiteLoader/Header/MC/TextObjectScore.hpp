@@ -23,7 +23,6 @@ public:
     TextObjectScore() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TextObjectScore();
     /*1*/ virtual std::string asString() const;
@@ -33,14 +32,11 @@ public:
 public:
 #endif
     MCAPI TextObjectScore(std::string, std::string);
-
-//private:
-
-private:
     MCAPI static std::string const RAW_TEXT_SCORE_KEY;
     MCAPI static std::string const RAW_TEXT_SCORE_NAME_KEY;
     MCAPI static std::string const RAW_TEXT_SCORE_OBJECTIVE_KEY;
     MCAPI static std::string const RAW_TEXT_SCORE_STAR;
+
 
 
 };

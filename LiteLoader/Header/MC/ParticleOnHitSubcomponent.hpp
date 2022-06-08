@@ -22,7 +22,6 @@ public:
     ParticleOnHitSubcomponent(class ParticleOnHitSubcomponent const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ParticleOnHitSubcomponent();
     /*1*/ virtual void readfromJSON(class Json::Value &, class SemVersion const &);
@@ -34,10 +33,8 @@ public:
 #endif
     MCAPI ParticleOnHitSubcomponent();
 
+
 //private:
     MCAPI bool isParticleTypeIconBreak() const;
-
-private:
-
 
 };

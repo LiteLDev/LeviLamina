@@ -22,7 +22,6 @@ public:
     ChunkViewSource() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ChunkViewSource();
     /*3*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
@@ -44,6 +43,7 @@ public:
     MCAPI void move(class BlockPos const &, class BlockPos const &, bool, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>);
     MCAPI void move(class BlockPos const &, int, bool, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>);
     MCAPI void rebuildSpecificArea(struct Bounds const &, bool, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>);
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     ScriptItemType() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMTYPE
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI ScriptItemType(class Item const &);
     MCAPI class Item const & getItem() const;
     MCAPI std::string getName() const;
+
 
 
 };

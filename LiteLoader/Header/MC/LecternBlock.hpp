@@ -23,7 +23,6 @@ public:
     LecternBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LecternBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -80,10 +79,8 @@ public:
     MCAPI LecternBlock(std::string const &, int);
     MCAPI void emitRedstonePulse(class BlockSource &, class BlockPos const &) const;
 
+
 //private:
     MCAPI bool _dropBook(class Player &, class BlockPos const &) const;
-
-private:
-
 
 };

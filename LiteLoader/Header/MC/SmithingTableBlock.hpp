@@ -23,7 +23,6 @@ public:
     SmithingTableBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SmithingTableBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -66,6 +65,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI SmithingTableBlock(std::string const &, int, class Material const &);
+
 
 
 };

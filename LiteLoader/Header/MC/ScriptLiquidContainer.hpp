@@ -22,12 +22,12 @@ public:
     ScriptLiquidContainer() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTLIQUIDCONTAINER
 public:
 #endif
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptLiquidContainer> bind(struct Scripting::Version);
+
 
 
 };

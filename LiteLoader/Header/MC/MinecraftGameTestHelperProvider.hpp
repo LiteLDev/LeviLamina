@@ -22,7 +22,6 @@ public:
     MinecraftGameTestHelperProvider() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MinecraftGameTestHelperProvider();
     /*1*/ virtual std::unique_ptr<class gametest::BaseGameTestHelper> createGameTestHelper(class gametest::BaseGameTestInstance &);
@@ -30,6 +29,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTGAMETESTHELPERPROVIDER
 public:
 #endif
+
 
 
 };

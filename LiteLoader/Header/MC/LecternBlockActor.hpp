@@ -22,7 +22,6 @@ public:
     LecternBlockActor() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LECTERNBLOCKACTOR
 public:
@@ -49,6 +48,7 @@ public:
     MCAPI void setItemFromBlock(int, class ItemStack const &);
     MCAPI void setPageOnServer(int, class BlockSource &);
     MCAPI void setTotalPages(int);
+
 
 
 };

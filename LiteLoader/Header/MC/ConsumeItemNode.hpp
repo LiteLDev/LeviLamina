@@ -21,7 +21,6 @@ public:
     ConsumeItemNode(class ConsumeItemNode const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ConsumeItemNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
@@ -29,6 +28,7 @@ public:
 public:
 #endif
     MCAPI ConsumeItemNode();
+
 
 
 };

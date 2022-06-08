@@ -23,13 +23,13 @@ public:
     SittableDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SITTABLEDEFINITION
 public:
 #endif
     MCAPI void uninitialize(class EntityContext &, class SitComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SittableDefinition>> &);
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     TheEndDimension() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THEENDDIMENSION
 public:
@@ -52,12 +51,10 @@ public:
     MCVAPI void upgradeLevelChunk(class ChunkSource &, class LevelChunk &, class LevelChunk &);
 #endif
     MCAPI TheEndDimension(class Level &, class Scheduler &);
+    MCAPI static float const AMBIENT_MULTIPLIER;
+
 
 //private:
     MCAPI static std::unique_ptr<class StructureFeatureRegistry> makeStructureFeatures(class Dimension &, unsigned int);
-
-private:
-    MCAPI static float const AMBIENT_MULTIPLIER;
-
 
 };

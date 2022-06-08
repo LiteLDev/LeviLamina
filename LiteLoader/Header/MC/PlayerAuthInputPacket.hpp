@@ -24,7 +24,6 @@ public:
     PlayerAuthInputPacket(class PlayerAuthInputPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PlayerAuthInputPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -41,6 +40,7 @@ public:
     MCAPI struct PlayerActionComponent readIntoComponent() const;
     MCAPI void setInput(enum PlayerAuthInputPacket::InputData, bool);
     MCAPI class PlayerAuthInputPacket takeCopy() const;
+
 
 
 };

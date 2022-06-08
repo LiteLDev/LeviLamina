@@ -21,7 +21,6 @@ public:
     EntitySensorComponent(class EntitySensorComponent const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSENSORCOMPONENT
 public:
@@ -31,7 +30,9 @@ public:
     MCAPI void evaluateActor(class Actor &);
     MCAPI class EntitySensorComponent & operator=(class EntitySensorComponent &&);
     MCAPI ~EntitySensorComponent();
-    MCAPI static int const NO_MAX_COUNT;
 
+
+//private:
+    MCAPI static int const NO_MAX_COUNT;
 
 };

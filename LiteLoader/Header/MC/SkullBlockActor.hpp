@@ -25,7 +25,6 @@ public:
     SkullBlockActor() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SkullBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -48,6 +47,7 @@ public:
     MCAPI enum SkullBlockActor::SkullType getSkullType() const;
     MCAPI void setRotation(float);
     MCAPI void setSkullType(int);
+
 
 
 };

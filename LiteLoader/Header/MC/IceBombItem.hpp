@@ -24,7 +24,6 @@ public:
     IceBombItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~IceBombItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -49,11 +48,8 @@ public:
 public:
 #endif
     MCAPI IceBombItem(std::string const &, int);
-
-//private:
-
-private:
     MCAPI static class HashedString const ICE_BOMB_COOLDOWN;
+
 
 
 };

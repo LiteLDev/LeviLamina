@@ -22,7 +22,6 @@ public:
     Dimension() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSION
 public:
@@ -134,6 +133,10 @@ public:
     MCAPI void unregisterDisplayEntity(class WeakRefT<struct EntityRefTraits>);
     MCAPI void unregisterEntity(struct ActorUniqueID const &);
     MCAPI void updateBlockLight(class BlockPos const &, struct Brightness, struct Brightness, struct Brightness, struct Brightness, bool);
+    MCAPI static enum LimboEntitiesVersion const CurrentLimboEntitiesVersion;
+    MCAPI static unsigned int const LOW_CPU_PACKET_BLOCK_LIMIT;
+    MCAPI static float const MOON_BRIGHTNESS_PER_PHASE[];
+    MCAPI static class std::chrono::duration<__int64, struct std::ratio<1, 1>> const STRUCTURE_PRUNE_INTERVAL;
 
 //protected:
     MCAPI void _completeEntityTransfer(class BlockSource &, class OwnerPtrT<struct EntityRefTraits>, bool);
@@ -143,14 +146,5 @@ public:
     MCAPI void _sendBlockEntityUpdatePacket(class NetworkBlockPosition const &);
     MCAPI void _sendBlocksChangedPackets();
     MCAPI void _tickEntityChunkMoves();
-
-protected:
-
-private:
-    MCAPI static enum LimboEntitiesVersion const CurrentLimboEntitiesVersion;
-    MCAPI static unsigned int const LOW_CPU_PACKET_BLOCK_LIMIT;
-    MCAPI static float const MOON_BRIGHTNESS_PER_PHASE[];
-    MCAPI static class std::chrono::duration<__int64, struct std::ratio<1, 1>> const STRUCTURE_PRUNE_INTERVAL;
-
 
 };

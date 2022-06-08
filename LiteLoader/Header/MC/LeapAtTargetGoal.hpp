@@ -22,7 +22,6 @@ public:
     LeapAtTargetGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LeapAtTargetGoal();
     /*1*/ virtual bool canUse();
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI LeapAtTargetGoal(class Mob &, float, bool, bool);
+
 
 
 };

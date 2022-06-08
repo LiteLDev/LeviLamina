@@ -23,7 +23,6 @@ public:
     BlockStateMeta() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATEMETA
 public:
@@ -37,6 +36,7 @@ public:
     MCAPI std::string const & getString(int) const;
     MCAPI enum Tag::Type const getType() const;
     MCAPI int indexOf(unsigned __int64 const &) const;
+
 
 
 };

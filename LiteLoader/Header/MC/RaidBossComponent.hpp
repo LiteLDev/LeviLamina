@@ -22,7 +22,6 @@ public:
     RaidBossComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAIDBOSSCOMPONENT
 public:
@@ -50,11 +49,9 @@ public:
     MCAPI void updateBossBarStats(class Actor &, class Raid const &);
     MCAPI ~RaidBossComponent();
 
+
 //private:
     MCAPI void _broadcastBossEvent(enum BossEventUpdateType, class Actor &);
     MCAPI void _sendBossEvent(enum BossEventUpdateType, class Player &);
-
-private:
-
 
 };

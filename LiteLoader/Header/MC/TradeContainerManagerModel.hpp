@@ -23,7 +23,6 @@ public:
     TradeContainerManagerModel() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TradeContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
@@ -37,6 +36,7 @@ public:
 #endif
     MCAPI TradeContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
     MCAPI class Actor * getEntity() const;
+
 
 
 };

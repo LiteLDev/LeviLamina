@@ -22,7 +22,6 @@ public:
     SetDefaultGameTypePacket(class SetDefaultGameTypePacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SetDefaultGameTypePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI SetDefaultGameTypePacket(enum GameType);
     MCAPI SetDefaultGameTypePacket();
+
 
 
 };

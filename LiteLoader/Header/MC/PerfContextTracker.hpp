@@ -21,7 +21,6 @@ public:
     PerfContextTracker(class PerfContextTracker const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERFCONTEXTTRACKER
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI void incrementPacketReceivedInfo(unsigned int);
     MCAPI void incrementPacketSentInfo(unsigned int);
     MCAPI static class PerfContextTracker & getInstance();
+
 
 
 };

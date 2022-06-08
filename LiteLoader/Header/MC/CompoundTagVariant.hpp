@@ -82,7 +82,6 @@ public:
     CompoundTagVariant() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAGVARIANT
 public:
@@ -92,6 +91,7 @@ public:
     MCAPI class Tag * get();
     MCAPI class Tag const * get() const;
     MCAPI ~CompoundTagVariant();
+
 
 
 };

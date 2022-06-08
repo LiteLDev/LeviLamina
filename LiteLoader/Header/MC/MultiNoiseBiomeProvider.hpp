@@ -22,7 +22,6 @@ public:
     MultiNoiseBiomeProvider() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTINOISEBIOMEPROVIDER
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI class Biome const * tryGetBiome(class BlockPos const &) const;
     MCAPI class Biome const * tryGetBiome(class BlockPos const &, struct ChunkLocalNoiseCache::CacheEntry const &, struct RTree::Hint *) const;
     MCAPI ~MultiNoiseBiomeProvider();
+
 
 
 };

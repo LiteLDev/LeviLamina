@@ -23,13 +23,13 @@ public:
     MegaTreeCanopy() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MegaTreeCanopy();
     /*1*/ virtual class std::optional<class BlockPos> placeCanopy(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &, struct TreeHelper::TreeParams const &, std::vector<class BlockPos> const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MEGATREECANOPY
 public:
 #endif
+
 
 
 };

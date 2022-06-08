@@ -22,7 +22,6 @@ public:
     GrantXPSubcomponent(class GrantXPSubcomponent const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GrantXPSubcomponent();
     /*1*/ virtual void readfromJSON(class Json::Value &, class SemVersion const &);
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI GrantXPSubcomponent();
+
 
 
 };

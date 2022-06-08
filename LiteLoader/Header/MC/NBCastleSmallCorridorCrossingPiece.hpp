@@ -23,7 +23,6 @@ public:
     NBCastleSmallCorridorCrossingPiece() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NBCastleSmallCorridorCrossingPiece();
     /*1*/ virtual void moveBoundingBox(int, int, int);
@@ -41,6 +40,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBCASTLESMALLCORRIDORCROSSINGPIECE
 public:
 #endif
+
 
 
 };

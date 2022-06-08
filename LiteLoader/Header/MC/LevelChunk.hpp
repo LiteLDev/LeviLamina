@@ -36,7 +36,6 @@ public:
     LevelChunk() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNK
 public:
@@ -217,6 +216,7 @@ public:
     MCAPI bool _recalcHeight(class ChunkBlockPos const &, class BlockSource *);
     MCAPI void _removeCallbacks(class ChunkBlockPos const &, class Block const &, class Block const &, class BlockSource *);
     MCAPI void _setAllBiomesFrom2D(class std::array<struct BiomeChunkData, 256> &);
+    MCAPI static int const UPDATE_MAP_BIT_SHIFT;
 
 //private:
     MCAPI void _addEntityToVolumes(class gsl::not_null<class Actor *>);
@@ -229,11 +229,5 @@ public:
     MCAPI void _replaceBiomeStorage(unsigned short, std::unique_ptr<class SubChunkStorage<class Biome>>, class Bedrock::Threading::LockGuard<class std::mutex> &);
     MCAPI void _setBiome(class Biome const &, class ChunkBlockPos const &, bool);
     MCAPI void _setBiome(class Biome const &, unsigned short, unsigned short, class Bedrock::Threading::LockGuard<class std::mutex> &);
-
-protected:
-    MCAPI static int const UPDATE_MAP_BIT_SHIFT;
-
-private:
-
 
 };

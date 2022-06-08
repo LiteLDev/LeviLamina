@@ -24,7 +24,6 @@ public:
     CommandSoftEnumRegistry() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDSOFTENUMREGISTRY
 public:
@@ -32,6 +31,7 @@ public:
     MCAPI CommandSoftEnumRegistry(class CommandRegistry *);
     MCAPI void updateSoftEnum(enum SoftEnumUpdateType, std::string const &, std::vector<std::string>);
     MCAPI ~CommandSoftEnumRegistry();
+
 
 
 };

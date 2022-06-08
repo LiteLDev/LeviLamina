@@ -21,13 +21,13 @@ public:
     ScriptIsBabyComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptIsBabyComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTISBABYCOMPONENT
 public:
 #endif
     MCAPI static class HashedString const & getHashedName();
+
 
 
 };

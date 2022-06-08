@@ -22,7 +22,6 @@ public:
     StringByteInput() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StringByteInput();
     /*1*/ virtual std::string readString();
@@ -38,6 +37,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRINGBYTEINPUT
 public:
 #endif
+
 
 
 };

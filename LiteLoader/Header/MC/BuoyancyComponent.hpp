@@ -20,7 +20,6 @@ public:
     class BuoyancyComponent& operator=(class BuoyancyComponent const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUOYANCYCOMPONENT
 public:
@@ -38,6 +37,7 @@ public:
     MCAPI class BuoyancyComponent & operator=(class BuoyancyComponent &&);
     MCAPI bool shouldApplyGravity() const;
     MCAPI bool shouldSimulateWaves() const;
+
 
 
 };

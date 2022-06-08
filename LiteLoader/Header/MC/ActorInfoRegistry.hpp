@@ -21,7 +21,6 @@ public:
     ActorInfoRegistry(class ActorInfoRegistry const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINFOREGISTRY
 public:
@@ -34,6 +33,7 @@ public:
     MCAPI bool isSpawnEggAvailable(std::string);
     MCAPI void registerActorInfo(struct ActorInfo const &);
     MCAPI void setSpawnEggAvailable(std::string, bool);
+
 
 
 };

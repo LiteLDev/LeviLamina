@@ -23,7 +23,6 @@ public:
     CraftingContainer() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CraftingContainer();
     /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
@@ -41,6 +40,7 @@ public:
 #endif
     MCAPI CraftingContainer(int, int);
     MCAPI class ItemStack const & getItem(int, int) const;
+
 
 
 };

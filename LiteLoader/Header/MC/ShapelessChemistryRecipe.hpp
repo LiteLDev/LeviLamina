@@ -23,7 +23,6 @@ public:
     ShapelessChemistryRecipe() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ShapelessChemistryRecipe();
     /*6*/ virtual bool matches(class CraftingContainer &, class Level &) const;
@@ -31,11 +30,8 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAPELESSCHEMISTRYRECIPE
 public:
 #endif
-
-//private:
-
-private:
     MCAPI static class mce::UUID const ID;
+
 
 
 };

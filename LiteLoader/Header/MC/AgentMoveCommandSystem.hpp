@@ -20,7 +20,6 @@ public:
     AgentMoveCommandSystem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AgentMoveCommandSystem();
     /*1*/ virtual void __unk_vfn_1();
@@ -31,6 +30,7 @@ public:
     MCAPI static void cleanUp(class EntityContext &, float);
     MCAPI static void initialize(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentComponents::Agent, struct AgentComponents::ActionDetails, class FlagComponent<struct AgentComponents::InitializingFlag>, class AgentComponents::Move> &);
     MCAPI static void tickMove(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentComponents::Agent, struct AgentComponents::ActionDetails, class FlagComponent<struct AgentComponents::ExecutingFlag>, class AgentComponents::Move> &);
+
 
 
 };

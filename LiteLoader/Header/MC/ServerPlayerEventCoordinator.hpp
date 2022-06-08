@@ -22,7 +22,6 @@ public:
     ServerPlayerEventCoordinator() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYEREVENTCOORDINATOR
 public:
@@ -32,6 +31,7 @@ public:
     MCAPI void sendPlayerMovementAnomaly(class Player &, class Vec3 const &, float, float);
     MCAPI void sendPlayerMovementCorrected(class Player &, class Vec3 const &, float, float);
     MCAPI void sendPlayerOnGround(class Player &);
+
 
 
 };

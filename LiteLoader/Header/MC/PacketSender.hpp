@@ -22,11 +22,11 @@ public:
     PacketSender() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKETSENDER
 public:
 #endif
+
 
 
 };

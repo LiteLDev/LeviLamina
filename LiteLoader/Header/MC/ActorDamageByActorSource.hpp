@@ -23,7 +23,6 @@ public:
     ActorDamageByActorSource() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorDamageByActorSource();
     /*1*/ virtual bool isEntitySource() const;
@@ -40,6 +39,7 @@ public:
 public:
 #endif
     MCAPI ActorDamageByActorSource(class Actor &, enum ActorDamageCause);
+
 
 
 };

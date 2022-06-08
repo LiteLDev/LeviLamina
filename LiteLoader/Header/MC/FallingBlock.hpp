@@ -24,7 +24,6 @@ public:
     FallingBlock() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~FallingBlock();
@@ -67,11 +66,9 @@ public:
     MCAPI void setFallDamageAmount(float);
     MCAPI void setFallingBlock(class Block const &, bool);
 
+
 //private:
     MCAPI void _breakBlock();
     MCAPI void _waitRemoval();
-
-private:
-
 
 };

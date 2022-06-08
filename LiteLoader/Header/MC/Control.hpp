@@ -22,11 +22,11 @@ public:
     Control() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTROL
 public:
 #endif
+
 
 
 };

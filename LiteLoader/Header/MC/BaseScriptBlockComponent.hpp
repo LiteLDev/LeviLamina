@@ -23,12 +23,12 @@ public:
     BaseScriptBlockComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BaseScriptBlockComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASESCRIPTBLOCKCOMPONENT
 public:
 #endif
+
 
 
 };

@@ -24,13 +24,13 @@ public:
     GetInteractionPositionForBlockDefinition() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GetInteractionPositionForBlockDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GETINTERACTIONPOSITIONFORBLOCKDEFINITION
 public:
 #endif
+
 
 
 };

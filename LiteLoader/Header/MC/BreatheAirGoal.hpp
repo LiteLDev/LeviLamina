@@ -22,7 +22,6 @@ public:
     BreatheAirGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BreatheAirGoal();
     /*1*/ virtual bool canUse();
@@ -37,11 +36,9 @@ public:
 #endif
     MCAPI BreatheAirGoal(class Mob &);
 
+
 //private:
     MCAPI int _determineApproximateDepth();
     MCAPI void _findAirPosition();
-
-private:
-
 
 };

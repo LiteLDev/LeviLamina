@@ -25,7 +25,6 @@ public:
     PickaxeItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PickaxeItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -49,11 +48,9 @@ public:
 #endif
     MCAPI PickaxeItem(std::string const &, int, class Item::Tier const &);
 
+
 //private:
     MCAPI bool const _isTierOneBlock(class BlockLegacy const &) const;
     MCAPI bool const _isTierTwoBlock(class BlockLegacy const &) const;
-
-private:
-
 
 };

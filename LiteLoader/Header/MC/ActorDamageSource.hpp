@@ -25,7 +25,6 @@ public:
     ActorDamageSource() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorDamageSource();
     /*1*/ virtual bool isEntitySource() const;
@@ -56,6 +55,7 @@ public:
     MCAPI static std::vector<struct std::pair<std::string, enum ActorDamageCause>> generateDamageCauseCommandEnum();
     MCAPI static enum ActorDamageCause lookupCause(std::string const &);
     MCAPI static std::string const & lookupCauseName(enum ActorDamageCause);
+
 
 
 };

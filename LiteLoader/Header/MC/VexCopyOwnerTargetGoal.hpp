@@ -23,7 +23,6 @@ public:
     VexCopyOwnerTargetGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~VexCopyOwnerTargetGoal();
     /*1*/ virtual bool canUse();
@@ -35,6 +34,7 @@ public:
 public:
 #endif
     MCAPI VexCopyOwnerTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &);
+
 
 
 };

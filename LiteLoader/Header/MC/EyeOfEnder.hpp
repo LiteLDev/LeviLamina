@@ -23,7 +23,6 @@ public:
     EyeOfEnder() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~EyeOfEnder();
@@ -54,6 +53,7 @@ public:
 #endif
     MCAPI EyeOfEnder(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void signalTo(class Player const &, class BlockPos &);
+
 
 
 };

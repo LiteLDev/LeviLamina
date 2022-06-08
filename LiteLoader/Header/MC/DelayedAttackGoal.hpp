@@ -23,7 +23,6 @@ public:
     DelayedAttackGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DelayedAttackGoal();
     /*1*/ virtual bool canUse();
@@ -41,12 +40,10 @@ public:
 #endif
     MCAPI DelayedAttackGoal(class Mob &);
 
+
 //private:
     MCAPI void _attemptAttack(class Actor *);
     MCAPI void _attemptStartAttacking(class Actor *) const;
     MCAPI void _manageAttackTime();
-
-private:
-
 
 };

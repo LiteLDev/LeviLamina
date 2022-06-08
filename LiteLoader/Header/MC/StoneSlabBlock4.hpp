@@ -23,7 +23,6 @@ public:
     StoneSlabBlock4() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StoneSlabBlock4();
     /*19*/ virtual void __unk_vfn_19();
@@ -70,11 +69,8 @@ public:
 public:
 #endif
     MCAPI StoneSlabBlock4(std::string const &, int, bool, class WeakPtr<class BlockLegacy>);
-
-//private:
-
-private:
     MCAPI static class std::array<std::string, 5> const SLAB_NAMES;
+
 
 
 };

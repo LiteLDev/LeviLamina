@@ -22,7 +22,6 @@ public:
     StringByteOutput() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StringByteOutput();
     /*1*/ virtual void writeString(class gsl::basic_string_span<char const, -1>);
@@ -37,6 +36,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRINGBYTEOUTPUT
 public:
 #endif
+
 
 
 };

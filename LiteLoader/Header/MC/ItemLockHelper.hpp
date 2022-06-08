@@ -23,7 +23,6 @@ public:
     ItemLockHelper() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMLOCKHELPER
 public:
@@ -37,10 +36,8 @@ public:
     MCAPI static bool shouldKeepOnDeath(class Actor const &, class ItemStackBase const &);
     MCAPI static bool shouldKeepOnDeath(class ItemStackBase const &);
 
+
 //private:
     MCAPI static bool _parseItemLockMode(class ItemStackBase &, class Json::Value const &);
-
-private:
-
 
 };

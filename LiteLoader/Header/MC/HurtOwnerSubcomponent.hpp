@@ -22,7 +22,6 @@ public:
     HurtOwnerSubcomponent(class HurtOwnerSubcomponent const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~HurtOwnerSubcomponent();
     /*1*/ virtual void readfromJSON(class Json::Value &, class SemVersion const &);
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI HurtOwnerSubcomponent();
+
 
 
 };

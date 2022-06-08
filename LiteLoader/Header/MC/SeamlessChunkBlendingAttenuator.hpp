@@ -20,7 +20,6 @@ public:
     SeamlessChunkBlendingAttenuator() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEAMLESSCHUNKBLENDINGATTENUATOR
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI struct TerrainInfo attenuateTerrainInfo(class DividedPos2d<4> const &, struct TerrainInfo const &) const;
     MCAPI class Biome const * tryGetAttenuatedBiome(class DividedPos<4> const &, class BiomeRegistry const &, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> const &) const;
     MCAPI ~SeamlessChunkBlendingAttenuator();
+
 
 
 };

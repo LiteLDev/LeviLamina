@@ -22,7 +22,6 @@ public:
     SimplexNoise() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLEXNOISE
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI void _add(float *, float, float, int, int, float, float, float) const;
     MCAPI float _getValue(class Vec2 const &) const;
     MCAPI float _getValue(class Vec3 const &) const;
+
 
 
 };

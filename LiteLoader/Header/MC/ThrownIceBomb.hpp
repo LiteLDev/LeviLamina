@@ -24,7 +24,6 @@ public:
     ThrownIceBomb() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~ThrownIceBomb();
@@ -53,6 +52,7 @@ public:
 public:
 #endif
     MCAPI ThrownIceBomb(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

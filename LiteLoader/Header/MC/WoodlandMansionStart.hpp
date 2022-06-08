@@ -22,7 +22,6 @@ public:
     WoodlandMansionStart() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WoodlandMansionStart();
     /*1*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
@@ -30,11 +29,9 @@ public:
 public:
 #endif
 
+
 //private:
     MCAPI void _create(class Dimension &, class Random &, int, int);
     MCAPI void _makeStairs(class BlockPos const &, class Block const &, unsigned char, unsigned char, class BlockSource &, class BoundingBox const &);
-
-private:
-
 
 };

@@ -23,12 +23,12 @@ public:
     VanillaBastionJigsawStructures() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLABASTIONJIGSAWSTRUCTURES
 public:
 #endif
     MCAPI static void initialize(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class FeatureRegistry &, class JigsawStructureRegistry &);
+
 
 
 };

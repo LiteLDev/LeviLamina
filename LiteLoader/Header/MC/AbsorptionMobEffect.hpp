@@ -23,7 +23,6 @@ public:
     AbsorptionMobEffect() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AbsorptionMobEffect();
     /*1*/ virtual void applyEffects(class Actor *, int, int) const;
@@ -32,6 +31,7 @@ public:
 public:
 #endif
     MCAPI AbsorptionMobEffect(int, std::string const &, std::string const &, bool, int, int);
+
 
 
 };

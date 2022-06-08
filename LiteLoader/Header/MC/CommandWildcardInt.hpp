@@ -21,7 +21,6 @@ public:
     CommandWildcardInt(class CommandWildcardInt const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDWILDCARDINT
 public:
@@ -29,6 +28,7 @@ public:
     MCAPI CommandWildcardInt();
     MCAPI int getValue() const;
     MCAPI bool isWildcard() const;
+
 
 
 };

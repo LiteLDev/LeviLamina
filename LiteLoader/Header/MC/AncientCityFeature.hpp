@@ -21,7 +21,6 @@ public:
     AncientCityFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AncientCityFeature();
     /*3*/ virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI AncientCityFeature(unsigned int, class BaseGameVersion const &);
+
 
 
 };

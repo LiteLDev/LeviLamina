@@ -22,7 +22,6 @@ public:
     MountTameableDefinition(class MountTameableDefinition const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOUNTTAMEABLEDEFINITION
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI MountTameableDefinition();
     MCAPI void initialize(class EntityContext &, class MountTamingComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MountTameableDefinition>> &);
+
 
 
 };

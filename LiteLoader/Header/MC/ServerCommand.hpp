@@ -20,7 +20,6 @@ public:
     ServerCommand() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCOMMAND
 public:
@@ -29,8 +28,6 @@ public:
     MCAPI static void setup(class Minecraft &);
 
 //protected:
-
-protected:
     MCAPI static class Minecraft * mGame;
 
 

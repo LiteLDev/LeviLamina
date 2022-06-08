@@ -21,7 +21,6 @@ public:
     ScriptEventHandler(class ScriptEventHandler const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTEVENTHANDLER
 public:
@@ -29,6 +28,7 @@ public:
     MCAPI ScriptEventHandler();
     MCAPI void registerSubHandler(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
     MCAPI void unregisterSubHandler(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     BlueIceBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BlueIceBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -64,6 +63,7 @@ public:
 public:
 #endif
     MCAPI BlueIceBlock(std::string const &, int);
+
 
 
 };

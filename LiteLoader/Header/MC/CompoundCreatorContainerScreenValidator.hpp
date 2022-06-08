@@ -22,13 +22,13 @@ public:
     CompoundCreatorContainerScreenValidator(class CompoundCreatorContainerScreenValidator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CompoundCreatorContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDCREATORCONTAINERSCREENVALIDATOR
 public:
 #endif
     MCAPI CompoundCreatorContainerScreenValidator();
+
 
 
 };

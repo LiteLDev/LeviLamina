@@ -22,7 +22,6 @@ public:
     PartiallyExposedBlobFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PartiallyExposedBlobFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
@@ -30,10 +29,8 @@ public:
 public:
 #endif
 
+
 //private:
     MCAPI static bool isWaterOrAir(class IBlockWorldGenAPI const &, class BlockPos const &);
-
-private:
-
 
 };

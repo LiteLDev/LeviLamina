@@ -22,7 +22,6 @@ public:
     LabTablePacket(class LabTablePacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LabTablePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -35,6 +34,7 @@ public:
     MCAPI LabTablePacket(class BlockPos const &, enum LabTableReactionType);
     MCAPI LabTablePacket(enum LabTablePacket::Type, class BlockPos const &);
     MCAPI LabTablePacket();
+
 
 
 };

@@ -31,7 +31,6 @@ public:
     Block() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~Block();
     /*1*/ virtual enum BlockRenderLayer getRenderLayer() const;
@@ -211,6 +210,8 @@ public:
     MCAPI void updateEntityAfterFallOn(class BlockPos const &, struct IActorMovementProxy &) const;
     MCAPI bool updateTallestCollisionShape(class BlockSource &, class BlockPos const &, class AABB const &, class optional_ref<class GetCollisionShapeInterface const>, class AABB &, class Vec3 const &, float &) const;
     MCAPI bool use(class Player &, class BlockPos const &, unsigned char) const;
+    MCAPI static std::string const BLOCK_DESCRIPTION_PREFIX;
+    MCAPI static float const SIZE_OFFSET;
 
 //protected:
     MCAPI void buildSerializationId(unsigned int);
@@ -218,12 +219,5 @@ public:
 
 //private:
     MCAPI void _tryInitEntityIfNotInitialized();
-
-protected:
-
-private:
-    MCAPI static std::string const BLOCK_DESCRIPTION_PREFIX;
-    MCAPI static float const SIZE_OFFSET;
-
 
 };

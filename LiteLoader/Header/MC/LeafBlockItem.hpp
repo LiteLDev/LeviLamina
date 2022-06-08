@@ -24,7 +24,6 @@ public:
     LeafBlockItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LeafBlockItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -47,6 +46,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEAFBLOCKITEM
 public:
 #endif
+
 
 
 };

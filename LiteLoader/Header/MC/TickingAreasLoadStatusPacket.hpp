@@ -20,7 +20,6 @@ public:
     TickingAreasLoadStatusPacket(class TickingAreasLoadStatusPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TickingAreasLoadStatusPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -32,6 +31,7 @@ public:
 #endif
     MCAPI TickingAreasLoadStatusPacket();
     MCAPI TickingAreasLoadStatusPacket(bool);
+
 
 
 };

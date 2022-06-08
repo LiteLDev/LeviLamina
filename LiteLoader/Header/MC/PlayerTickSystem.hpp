@@ -22,7 +22,6 @@ public:
     PlayerTickSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERTICKSYSTEM
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI static struct TickingSystemWithInfo create();
     MCAPI static void onTickAdded(struct PlayerTickComponent &, unsigned __int64);
     MCAPI static bool shouldTickMovementSystemOnEntity(class EntityContext const &);
+
 
 
 };

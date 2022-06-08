@@ -23,7 +23,6 @@ public:
     WorldLimitChunkSource() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WorldLimitChunkSource();
     /*3*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
@@ -34,6 +33,7 @@ public:
 public:
 #endif
     MCAPI WorldLimitChunkSource(std::unique_ptr<class ChunkSource>, class BlockPos const &, int, int);
+
 
 
 };

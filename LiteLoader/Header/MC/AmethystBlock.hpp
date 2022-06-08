@@ -23,7 +23,6 @@ public:
     AmethystBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AmethystBlock();
     /*15*/ virtual void onProjectileHit(class BlockSource &, class BlockPos const &, class Actor const &) const;
@@ -67,6 +66,7 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI AmethystBlock(std::string const &, int, class Material const &);
+
 
 
 };

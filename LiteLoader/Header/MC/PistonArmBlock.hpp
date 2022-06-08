@@ -24,7 +24,6 @@ public:
     PistonArmBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PistonArmBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -80,10 +79,8 @@ public:
 #endif
     MCAPI PistonArmBlock(std::string const &, int, enum PistonBlock::Type);
 
+
 //private:
     MCAPI void _getCollisions(class AABB &, class AABB &, class AABB &, unsigned char) const;
-
-private:
-
 
 };

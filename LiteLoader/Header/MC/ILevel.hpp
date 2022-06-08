@@ -22,7 +22,6 @@ public:
     ILevel() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ILEVEL
 public:
@@ -30,6 +29,7 @@ public:
     MCVAPI class MultiPlayerLevel * asMultiPlayerLevel();
     MCVAPI class TradeTables * getTradeTables();
 #endif
+
 
 
 };

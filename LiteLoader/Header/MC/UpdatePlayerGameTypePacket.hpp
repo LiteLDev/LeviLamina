@@ -22,7 +22,6 @@ public:
     UpdatePlayerGameTypePacket(class UpdatePlayerGameTypePacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~UpdatePlayerGameTypePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI UpdatePlayerGameTypePacket(enum GameType, struct ActorUniqueID const &);
     MCAPI UpdatePlayerGameTypePacket();
+
 
 
 };

@@ -20,7 +20,6 @@ public:
     ScriptActorQuery() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTACTORQUERY
 public:
@@ -30,10 +29,8 @@ public:
     MCAPI static class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptActorIterator>> queryActors(enum ActorSelectorType, class std::optional<struct ScriptActorQueryOptions> const &, class Scripting::WeakLifetimeScope const &, class Dimension *, class Level &);
     MCAPI static class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptPlayerIterator>> queryPlayers(class std::optional<struct ScriptActorQueryOptions> const &, class Scripting::WeakLifetimeScope const &, class Dimension *, class Level &);
 
+
 //private:
     MCAPI static class ScriptingCommandOrigin _createScriptingOrigin(class Dimension *, class ServerLevel &);
-
-private:
-
 
 };

@@ -24,7 +24,6 @@ public:
     VirtualCommandOrigin() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~VirtualCommandOrigin();
     /*1*/ virtual std::string const & getRequestId() const;
@@ -58,6 +57,7 @@ public:
     MCAPI VirtualCommandOrigin(std::unique_ptr<class CommandOrigin>, std::unique_ptr<class CommandOrigin>, class CommandPositionFloat const &, int);
     MCAPI class CommandOrigin * getOrigin() const;
     MCAPI static std::unique_ptr<class VirtualCommandOrigin> load(class CompoundTag const &, class ServerLevel &);
+
 
 
 };

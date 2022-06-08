@@ -23,7 +23,6 @@ public:
     DeltaFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DeltaFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -32,11 +31,9 @@ public:
 public:
 #endif
 
+
 //private:
     MCAPI class std::optional<class BlockPos> _findDeltaLevel(class BlockSource &, class BlockPos) const;
     MCAPI bool _isValidPlacement(class BlockSource &, class BlockPos) const;
-
-private:
-
 
 };

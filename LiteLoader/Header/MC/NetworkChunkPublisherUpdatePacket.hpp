@@ -22,7 +22,6 @@ public:
     NetworkChunkPublisherUpdatePacket(class NetworkChunkPublisherUpdatePacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NetworkChunkPublisherUpdatePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI NetworkChunkPublisherUpdatePacket(class BlockPos const &, unsigned int);
     MCAPI NetworkChunkPublisherUpdatePacket();
+
 
 
 };

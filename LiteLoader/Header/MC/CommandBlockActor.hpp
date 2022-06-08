@@ -23,7 +23,6 @@ public:
     CommandBlockActor() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CommandBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -69,10 +68,8 @@ public:
     MCAPI void updateBlock(class BlockSource &, std::string const &, std::string const &, enum CommandBlockMode, bool, bool, bool, int, bool);
     MCAPI bool wasConditionMet();
 
+
 //private:
     MCAPI void _setAutomatic(class BlockSource &, bool, enum CommandBlockMode);
-
-private:
-
 
 };

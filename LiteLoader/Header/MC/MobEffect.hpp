@@ -61,7 +61,6 @@ public:
     MobEffect() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MobEffect();
     /*1*/ virtual void applyEffects(class Actor *, int, int) const;
@@ -87,22 +86,6 @@ public:
     MCAPI void setDurationAmplifier(class std::shared_ptr<class Amplifier>);
     MCAPI void setValueAmplifier(class std::shared_ptr<class Amplifier>);
     MCAPI std::vector<struct std::pair<class Attribute const *, class std::shared_ptr<class AttributeModifier>>> const & viewAttributeModifiers() const;
-    MCAPI static class MobEffect * getById(int);
-    MCAPI static class MobEffect * getByName(std::string const &);
-    MCAPI static std::string getNameById(int);
-    MCAPI static void initEffects(class ResourcePackManager *, class Experiments const &);
-    MCAPI static void shutdownEffects();
-
-//protected:
-    MCAPI class InstantaneousAttributeBuff _createInstantBuff(class AttributeBuff const &, int, float) const;
-    MCAPI class TemporalAttributeBuff _createTemporalBuff(class AttributeBuff const &, int, int) const;
-
-//private:
-    MCAPI static void darknessEffectFactorUpdate(struct MobEffect::FactorCalculationData &, int);
-
-protected:
-
-private:
     MCAPI static class MobEffect * ABSORPTION;
     MCAPI static class MobEffect * BAD_OMEN;
     MCAPI static class MobEffect * BLINDNESS;
@@ -135,7 +118,18 @@ private:
     MCAPI static class MobEffect * WATER_BREATHING;
     MCAPI static class MobEffect * WEAKNESS;
     MCAPI static class MobEffect * WITHER;
+    MCAPI static class MobEffect * getById(int);
+    MCAPI static class MobEffect * getByName(std::string const &);
+    MCAPI static std::string getNameById(int);
+    MCAPI static void initEffects(class ResourcePackManager *, class Experiments const &);
     MCAPI static std::unique_ptr<class MobEffect> mMobEffects[];
+    MCAPI static void shutdownEffects();
 
+//protected:
+    MCAPI class InstantaneousAttributeBuff _createInstantBuff(class AttributeBuff const &, int, float) const;
+    MCAPI class TemporalAttributeBuff _createTemporalBuff(class AttributeBuff const &, int, int) const;
+
+//private:
+    MCAPI static void darknessEffectFactorUpdate(struct MobEffect::FactorCalculationData &, int);
 
 };

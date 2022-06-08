@@ -21,7 +21,6 @@ public:
     GameVersion(class GameVersion const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEVERSION
 public:
@@ -36,6 +35,7 @@ public:
     MCAPI std::unique_ptr<class ListTag> serialize() const;
     MCAPI ~GameVersion();
     MCAPI static class GameVersion current();
+
 
 
 };

@@ -20,12 +20,12 @@ public:
     ContainerValidationDebug() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONDEBUG
 public:
 #endif
     MCAPI ContainerValidationDebug(enum ContainerValidationCaller);
+
 
 
 };

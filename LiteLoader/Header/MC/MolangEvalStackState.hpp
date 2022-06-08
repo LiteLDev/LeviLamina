@@ -20,12 +20,12 @@ public:
     MolangEvalStackState() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGEVALSTACKSTATE
 public:
 #endif
     MCAPI MolangEvalStackState(struct MolangEvalParams &);
+
 
 
 };

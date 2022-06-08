@@ -22,7 +22,6 @@ public:
     RaidBossSystem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RaidBossSystem();
     /*1*/ virtual void __unk_vfn_1();
@@ -30,6 +29,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAIDBOSSSYSTEM
 public:
 #endif
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     GetInteractionPositionForBlockNode(class GetInteractionPositionForBlockNode const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GetInteractionPositionForBlockNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
@@ -32,10 +31,8 @@ public:
 #endif
     MCAPI GetInteractionPositionForBlockNode();
 
+
 //private:
     MCAPI enum Facing::Name parseFacingNameFromString(std::string);
-
-private:
-
 
 };

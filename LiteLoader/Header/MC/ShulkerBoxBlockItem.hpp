@@ -24,7 +24,6 @@ public:
     ShulkerBoxBlockItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ShulkerBoxBlockItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -49,10 +48,8 @@ public:
 #endif
     MCAPI ShulkerBoxBlockItem(std::string const &, int, class Block const *);
 
+
 //private:
     MCAPI std::string buildContainedItemList(class CompoundTag const *) const;
-
-private:
-
 
 };

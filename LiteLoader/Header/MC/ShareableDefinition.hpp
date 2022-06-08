@@ -22,7 +22,6 @@ public:
     ShareableDefinition(class ShareableDefinition const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAREABLEDEFINITION
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI void addShareable(struct Shareable const &);
     MCAPI void addShareableByName(std::string const &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ShareableDefinition>> &);
+
 
 
 };

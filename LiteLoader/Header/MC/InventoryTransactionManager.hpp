@@ -22,7 +22,6 @@ public:
     InventoryTransactionManager() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYTRANSACTIONMANAGER
 public:
@@ -35,6 +34,7 @@ public:
     MCAPI void forceBalanceTransaction();
     MCAPI void resetExpectedActions();
     MCAPI ~InventoryTransactionManager();
+
 
 
 };

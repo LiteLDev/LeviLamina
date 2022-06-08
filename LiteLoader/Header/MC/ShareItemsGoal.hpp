@@ -22,7 +22,6 @@ public:
     ShareItemsGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ShareItemsGoal();
     /*1*/ virtual bool canUse();
@@ -39,8 +38,6 @@ public:
 
 //protected:
     MCAPI struct std::pair<int, class ItemStack> selectEntityToShareWith(std::vector<struct std::pair<int, class ItemStack>> const &);
-
-protected:
 
 
 };

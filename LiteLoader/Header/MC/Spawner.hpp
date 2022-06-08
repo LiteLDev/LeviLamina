@@ -29,7 +29,6 @@ public:
     Spawner() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNER
 public:
@@ -41,7 +40,6 @@ public:
     MCAPI class std::unordered_set<struct ActorUniqueID, struct std::hash<struct ActorUniqueID>, struct std::equal_to<struct ActorUniqueID>, class std::allocator<struct ActorUniqueID>> spawnMobGroup(class BlockSource &, std::string const &, class Vec3 const &, bool, bool, class std::function<void (class Mob &)> &&);
     MCAPI class Actor * spawnProjectile(class BlockSource &, struct ActorDefinitionIdentifier const &, class Actor *, class Vec3 const &, class Vec3 const &);
     MCAPI void tick(class BlockSource &, class LevelChunk const &);
-    MCAPI static class std::unordered_set<class ChunkPos, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<class ChunkPos>> const SPAWN_RING_OFFSETS;
     MCAPI static bool findNextSpawnBlockUnder(class BlockSource const &, class BlockPos &, enum MaterialType, enum SpawnBlockRequirements);
 
 //protected:
@@ -58,10 +56,6 @@ public:
     MCAPI void _spawnStructureMob(class BlockSource &, class BlockPos const &, struct LevelChunk::HardcodedSpawningArea const &, class SpawnConditions const &);
     MCAPI void _updateBaseTypeCount(class BlockSource &, class ChunkPos const &);
     MCAPI void _updateMobCounts(class BlockSource &, struct ActorDefinitionIdentifier const &, class SpawnConditions const &);
-
-protected:
-
-private:
-
+    MCAPI static class std::unordered_set<class ChunkPos, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<class ChunkPos>> const SPAWN_RING_OFFSETS;
 
 };

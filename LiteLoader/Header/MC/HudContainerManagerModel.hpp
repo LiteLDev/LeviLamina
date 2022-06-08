@@ -23,7 +23,6 @@ public:
     HudContainerManagerModel() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~HudContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI HudContainerManagerModel(enum ContainerID, class Player &);
+
 
 
 };

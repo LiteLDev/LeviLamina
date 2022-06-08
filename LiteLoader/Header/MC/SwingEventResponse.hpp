@@ -23,7 +23,6 @@ public:
     SwingEventResponse() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SwingEventResponse();
     /*1*/ virtual std::string const & getName() const;
@@ -32,11 +31,8 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWINGEVENTRESPONSE
 public:
 #endif
-
-//private:
-
-private:
     MCAPI static std::string const NameID;
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     WitherTargetHighestDamage() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WitherTargetHighestDamage();
     /*1*/ virtual bool canUse();
@@ -38,10 +37,8 @@ public:
 #endif
     MCAPI WitherTargetHighestDamage(class WitherBoss &, std::vector<struct MobDescriptor> const &);
 
+
 //private:
     MCAPI class Player * getHighestDamageTarget();
-
-private:
-
 
 };

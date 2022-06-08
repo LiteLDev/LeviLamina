@@ -21,7 +21,6 @@ public:
     RoleChecker(class RoleChecker const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROLECHECKER
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI void checkRole(std::string const &, class std::function<void (enum ADRole, std::string const &, std::string const &)>);
     MCAPI bool lookupInProgress() const;
     MCAPI ~RoleChecker();
+
 
 
 };

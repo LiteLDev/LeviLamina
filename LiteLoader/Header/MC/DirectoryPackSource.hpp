@@ -23,7 +23,6 @@ public:
     DirectoryPackSource() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DirectoryPackSource();
     /*1*/ virtual void __unk_vfn_1();
@@ -40,6 +39,7 @@ public:
     MCAPI class Core::PathBuffer<std::string> const & getPath() const;
     MCAPI bool removePack(class Core::Path const &);
     MCAPI static void checkAndRemoveIncompletePacks(class Core::Path const &);
+
 
 
 };

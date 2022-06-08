@@ -22,7 +22,6 @@ public:
     SpawnExperienceOrbPacket(class SpawnExperienceOrbPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SpawnExperienceOrbPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI SpawnExperienceOrbPacket(class Vec3 const &, int);
     MCAPI SpawnExperienceOrbPacket();
+
 
 
 };

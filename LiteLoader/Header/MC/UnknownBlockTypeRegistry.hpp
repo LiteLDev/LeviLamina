@@ -22,7 +22,6 @@ public:
     UnknownBlockTypeRegistry() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~UnknownBlockTypeRegistry();
     /*1*/ virtual class Block const & getUnknownBlock(class CompoundTag const &);
@@ -30,10 +29,8 @@ public:
 public:
 #endif
 
+
 //private:
     MCAPI void _registerBlock(std::string const &, unsigned __int64);
-
-private:
-
 
 };

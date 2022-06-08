@@ -23,7 +23,6 @@ public:
     CactusFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CactusFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -31,6 +30,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CACTUSFEATURE
 public:
 #endif
+
 
 
 };

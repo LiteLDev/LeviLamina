@@ -23,7 +23,6 @@ public:
     BannerBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BannerBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -74,16 +73,14 @@ public:
 public:
 #endif
     MCAPI BannerBlock(std::string const &, int, bool);
-
-//private:
-    MCAPI class ItemInstance _itemInstanceFromBlockEntity(class gsl::not_null<class BannerBlockActor const *>) const;
-
-private:
     MCAPI static class AABB EAST_AABB;
     MCAPI static class AABB NORTH_AABB;
     MCAPI static class AABB SOUTH_AABB;
     MCAPI static class AABB STANDING_AABB;
     MCAPI static class AABB WEST_AABB;
 
+
+//private:
+    MCAPI class ItemInstance _itemInstanceFromBlockEntity(class gsl::not_null<class BannerBlockActor const *>) const;
 
 };

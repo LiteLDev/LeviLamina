@@ -23,7 +23,6 @@ public:
     RakWebSocketClient() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RakWebSocketClient();
     /*8*/ virtual void _updateState();
@@ -32,6 +31,7 @@ public:
 public:
 #endif
     MCAPI RakWebSocketClient(std::unique_ptr<class TcpProxy>);
+
 
 
 };

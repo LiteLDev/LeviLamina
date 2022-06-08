@@ -21,12 +21,12 @@ public:
     GameModuleServer(class GameModuleServer const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEMODULESERVER
 public:
 #endif
     MCAPI GameModuleServer();
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     Certificate() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CERTIFICATE
 public:
@@ -38,10 +37,8 @@ public:
     MCAPI bool validate(__int64);
     MCAPI ~Certificate();
 
+
 //private:
     MCAPI Certificate(class UnverifiedCertificate const &, std::unique_ptr<class Certificate>);
-
-private:
-
 
 };

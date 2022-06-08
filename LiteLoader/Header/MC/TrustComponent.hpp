@@ -21,7 +21,6 @@ public:
     TrustComponent(class TrustComponent const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRUSTCOMPONENT
 public:
@@ -34,6 +33,7 @@ public:
     MCAPI void initFromDefinition(class Actor &);
     MCAPI class TrustComponent & operator=(class TrustComponent &&);
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
+
 
 
 };

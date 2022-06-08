@@ -23,12 +23,12 @@ public:
     ScriptColorComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptColorComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCOLORCOMPONENT
 public:
 #endif
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     ActorAliasDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorAliasDescription();
     /*1*/ virtual char const * getJsonName() const;
@@ -32,6 +31,7 @@ public:
 #endif
     MCAPI struct AliasInfoDescription const * getAliasInfo(std::string const &) const;
     MCAPI void parse(class Json::Value &, bool);
+
 
 
 };

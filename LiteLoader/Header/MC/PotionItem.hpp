@@ -25,7 +25,6 @@ public:
     PotionItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PotionItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -61,6 +60,7 @@ public:
     MCAPI PotionItem(std::string const &, int);
     MCAPI static void applyEffect(class ThrownPotion *, class ItemStack const &);
     MCAPI static bool isDestructivePotion(enum Potion::PotionVariant);
+
 
 
 };

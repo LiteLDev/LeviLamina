@@ -23,7 +23,6 @@ public:
     EndRodBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EndRodBlock();
     /*9*/ virtual void addAABBs(class Block const &, class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
@@ -75,6 +74,7 @@ public:
 public:
 #endif
     MCAPI EndRodBlock(std::string const &, int);
+
 
 
 };

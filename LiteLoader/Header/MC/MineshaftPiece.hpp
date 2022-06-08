@@ -23,7 +23,6 @@ public:
     MineshaftPiece() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MineshaftPiece();
     /*10*/ virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);
@@ -33,6 +32,7 @@ public:
     MCAPI std::unique_ptr<class StructurePiece> createRandomShaftPiece(struct MineshaftData &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
     MCAPI class StructurePiece * generateAndAddPiece(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
     MCAPI void setPlanksBlock(class BlockSource &, class Block const &, int, int, int);
+
 
 
 };

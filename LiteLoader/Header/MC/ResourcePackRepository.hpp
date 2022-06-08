@@ -30,7 +30,6 @@ public:
     ResourcePackRepository() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ResourcePackRepository();
     /*1*/ virtual void getResourcePacksByPackId(std::vector<struct PackInstanceId> const &, std::vector<class PackInstance> &) const;
@@ -86,6 +85,9 @@ public:
 public:
 #endif
     MCAPI ResourcePackRepository(class IMinecraftEventing &, class PackManifestFactory &, class IContentAccessibilityProvider &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, class PackSourceFactory &, bool);
+    MCAPI static class mce::UUID const CHEMISTRY_PACK_UUID;
+    MCAPI static class mce::UUID const CHEMISTRY_SERVER_PACK_UUID;
+
 
 //private:
     MCAPI void _detectKnownPacksChange(struct ResourcePackRepository::KnownPackContainer &, struct ResourcePackRepository::KnownPackContainer const &, enum KnownPackType);
@@ -101,10 +103,5 @@ public:
     MCAPI bool _removePack(class ResourceLocation const &, bool);
     MCAPI void _saveKnownUserPacks(struct ResourcePackRepository::KnownPackContainer &, enum KnownPackType);
     MCAPI void _triggerRemoveResourcePackCallback(class ResourcePack *);
-
-private:
-    MCAPI static class mce::UUID const CHEMISTRY_PACK_UUID;
-    MCAPI static class mce::UUID const CHEMISTRY_SERVER_PACK_UUID;
-
 
 };

@@ -23,7 +23,6 @@ public:
     WaterBoundPathNavigation() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WaterBoundPathNavigation();
     /*1*/ virtual void initializeInternal(class Mob &, struct NavigationDescription *);
@@ -35,6 +34,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WATERBOUNDPATHNAVIGATION
 public:
 #endif
+
 
 
 };

@@ -22,18 +22,14 @@ public:
     NullLogger() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NullLogger();
     /*1*/ virtual void Logv(char const *, char *);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NULLLOGGER
 public:
 #endif
-
-//private:
-
-private:
     MCAPI static class NullLogger instance;
+
 
 
 };

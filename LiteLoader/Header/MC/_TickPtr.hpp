@@ -22,11 +22,11 @@ public:
     _TickPtr() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL__TICKPTR
 public:
 #endif
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     AutomationClientConnectPacket(class AutomationClientConnectPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AutomationClientConnectPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI AutomationClientConnectPacket(struct WebSocketPacketData);
     MCAPI AutomationClientConnectPacket();
+
 
 
 };

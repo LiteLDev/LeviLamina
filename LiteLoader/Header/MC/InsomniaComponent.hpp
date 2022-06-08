@@ -22,7 +22,6 @@ public:
     InsomniaComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSOMNIACOMPONENT
 public:
@@ -33,6 +32,7 @@ public:
     MCAPI int incrementTimeSinceRest();
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void restartTimer();
+
 
 
 };

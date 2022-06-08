@@ -20,12 +20,12 @@ public:
     WorkerPoolGlobalState() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKERPOOLGLOBALSTATE
 public:
 #endif
     MCAPI ~WorkerPoolGlobalState();
+
 
 
 };

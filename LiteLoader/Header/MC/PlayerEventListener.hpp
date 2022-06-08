@@ -22,7 +22,6 @@ public:
     PlayerEventListener() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYEREVENTLISTENER
 public:
@@ -68,6 +67,7 @@ public:
     MCVAPI enum EventResult onPlayerWaxOnWaxOff(class Player &, int);
     MCVAPI enum EventResult onStartDestroyBlock(class Player &, class BlockPos const &, unsigned char &);
 #endif
+
 
 
 };

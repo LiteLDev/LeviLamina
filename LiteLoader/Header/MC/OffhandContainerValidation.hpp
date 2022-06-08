@@ -23,7 +23,6 @@ public:
     OffhandContainerValidation() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~OffhandContainerValidation();
     /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
@@ -38,6 +37,7 @@ public:
     MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;
     MCVAPI int getContainerOffset(class ContainerScreenContext const &) const;
 #endif
+
 
 
 };

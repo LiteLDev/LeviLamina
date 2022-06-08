@@ -23,7 +23,6 @@ public:
     MobEffectInstance() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTINSTANCE
 public:
@@ -59,15 +58,12 @@ public:
     MCAPI void tryInitializeMobEffectData();
     MCAPI void update(class MobEffectInstance const &);
     MCAPI ~MobEffectInstance();
+    MCAPI static int const MAX_AMPLIFIER_COUNT;
+    MCAPI static class MobEffectInstance const NO_EFFECT;
     MCAPI static bool areAllEffectsAmbient(std::vector<class MobEffectInstance> const &);
     MCAPI static class mce::Color getColorValue(std::vector<class MobEffectInstance> const &);
     MCAPI static class MobEffectInstance load(class CompoundTag const &);
 
-//private:
-
-private:
-    MCAPI static int const MAX_AMPLIFIER_COUNT;
-    MCAPI static class MobEffectInstance const NO_EFFECT;
 
 
 };

@@ -22,7 +22,6 @@ public:
     ItemUseOnActorInventoryTransaction() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ItemUseOnActorInventoryTransaction();
     /*1*/ virtual void read(class ReadOnlyBinaryStream &);
@@ -34,6 +33,7 @@ public:
 public:
 #endif
     MCAPI class ItemUseOnActorInventoryTransaction & setSelectedItem(class ItemStack const &);
+
 
 
 };

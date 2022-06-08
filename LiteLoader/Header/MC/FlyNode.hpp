@@ -21,7 +21,6 @@ public:
     FlyNode(class FlyNode const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FlyNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
@@ -30,6 +29,7 @@ public:
 public:
 #endif
     MCAPI FlyNode();
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     HoneyBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~HoneyBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -69,6 +68,7 @@ public:
 public:
 #endif
     MCAPI HoneyBlock(std::string const &, int, class Material const &);
+
 
 
 };

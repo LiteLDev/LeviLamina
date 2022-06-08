@@ -23,7 +23,6 @@ public:
     TwistingVinesBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TwistingVinesBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -76,11 +75,9 @@ public:
 #endif
     MCAPI TwistingVinesBlock(std::string const &, int);
 
+
 //private:
     MCAPI int _getAge(class Block const &) const;
     MCAPI void _tryGrow(class BlockSource &, class BlockPos const &, int) const;
-
-private:
-
 
 };

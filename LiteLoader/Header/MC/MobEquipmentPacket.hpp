@@ -22,7 +22,6 @@ public:
     MobEquipmentPacket(class MobEquipmentPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MobEquipmentPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -35,6 +34,7 @@ public:
     MCAPI MobEquipmentPacket(class ActorRuntimeID, class ItemStack const &, int, int, enum ContainerID);
     MCAPI MobEquipmentPacket(class ActorRuntimeID, class NetworkItemStackDescriptor const &, int, int, enum ContainerID);
     MCAPI MobEquipmentPacket();
+
 
 
 };

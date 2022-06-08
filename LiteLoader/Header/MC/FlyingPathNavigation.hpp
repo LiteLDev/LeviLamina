@@ -23,7 +23,6 @@ public:
     FlyingPathNavigation() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FlyingPathNavigation();
     /*1*/ virtual void initializeInternal(class Mob &, struct NavigationDescription *);
@@ -38,11 +37,9 @@ public:
 public:
 #endif
 
+
 //private:
     MCAPI void _restorePreviousGravityFlag(class Mob &);
     MCAPI void _storePreviousGravityFlag(class Mob &);
-
-private:
-
 
 };

@@ -20,7 +20,6 @@ public:
     EmergeGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EmergeGoal();
     /*1*/ virtual bool canUse();
@@ -34,6 +33,7 @@ public:
 public:
 #endif
     MCAPI EmergeGoal(class Mob &);
+
 
 
 };

@@ -24,7 +24,6 @@ public:
     ChunkSource() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ChunkSource();
     /*1*/ virtual void shutdown();
@@ -85,8 +84,6 @@ public:
     MCAPI void _loadChunkTask(class LevelChunk &);
     MCAPI void _postProcessingTask(class LevelChunk &, class ChunkViewSource &);
     MCAPI void _spawnChunkGenerationTasks(int, bool);
-
-protected:
 
 
 };

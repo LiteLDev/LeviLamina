@@ -22,7 +22,6 @@ public:
     AnimationsDescription(class AnimationsDescription const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~AnimationsDescription();
@@ -32,6 +31,7 @@ public:
 public:
 #endif
     MCAPI AnimationsDescription();
+
 
 
 };

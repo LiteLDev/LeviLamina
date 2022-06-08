@@ -46,7 +46,6 @@ public:
     MovePlayerPacket(class MovePlayerPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MovePlayerPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -59,6 +58,7 @@ public:
     MCAPI MovePlayerPacket(class Player const &, class Vec3 const &);
     MCAPI MovePlayerPacket(class Player const &, enum Player::PositionMode, int, int);
     MCAPI MovePlayerPacket();
+
 
 
 };

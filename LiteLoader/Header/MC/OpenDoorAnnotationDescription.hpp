@@ -23,7 +23,6 @@ public:
     OpenDoorAnnotationDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~OpenDoorAnnotationDescription();
@@ -31,6 +30,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OPENDOORANNOTATIONDESCRIPTION
 public:
 #endif
+
 
 
 };

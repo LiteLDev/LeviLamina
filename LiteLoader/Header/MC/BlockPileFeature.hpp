@@ -23,7 +23,6 @@ public:
     BlockPileFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BlockPileFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI BlockPileFeature(class Block const &);
+
 
 
 };

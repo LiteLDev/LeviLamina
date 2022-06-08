@@ -20,7 +20,6 @@ public:
     class PermissionsHandler& operator=(class PermissionsHandler const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERMISSIONSHANDLER
 public:
@@ -35,6 +34,7 @@ public:
     MCAPI void setPlayerPermissions(enum PlayerPermissionLevel);
     MCAPI static enum PlayerPermissionLevel playerPermissionLevelFromString(std::string const &);
     MCAPI static std::string playerPermissionLevelToString(enum PlayerPermissionLevel const &);
+
 
 
 };

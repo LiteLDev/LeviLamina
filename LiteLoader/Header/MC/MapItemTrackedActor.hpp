@@ -28,7 +28,6 @@ public:
     MapItemTrackedActor() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPITEMTRACKEDACTOR
 public:
@@ -38,6 +37,7 @@ public:
     MCAPI class Actor * getEntity(class BlockSource &);
     MCAPI std::unique_ptr<class Packet> nextUpdatePacket(class MapItemSavedData const &);
     MCAPI void setPixelDirty(unsigned int, unsigned int);
+
 
 
 };

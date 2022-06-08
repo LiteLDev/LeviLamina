@@ -22,7 +22,6 @@ public:
     ChestBlockActor() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTBLOCKACTOR
 public:
@@ -91,10 +90,5 @@ public:
     MCAPI bool _saveClientSideState(class CompoundTag &) const;
     MCAPI void _tryToPairWith(class BlockSource &, class BlockPos const &);
     MCAPI void _unpair();
-
-protected:
-
-private:
-
 
 };

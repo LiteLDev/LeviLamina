@@ -23,7 +23,6 @@ public:
     AzaleaBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AzaleaBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -70,10 +69,8 @@ public:
 #endif
     MCAPI AzaleaBlock(std::string const &, int);
 
+
 //private:
     MCAPI bool _growTree(class BlockSource &, class BlockPos const &, class Random &) const;
-
-private:
-
 
 };

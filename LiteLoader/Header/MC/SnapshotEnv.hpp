@@ -24,7 +24,6 @@ public:
     SnapshotEnv() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SnapshotEnv();
     /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
@@ -40,10 +39,8 @@ public:
     MCAPI std::vector<struct SnapshotFilenameAndLength> createSnapshot(class Core::Path const &);
     MCAPI void releaseSnapshot();
 
+
 //private:
     MCAPI bool _isQueuedForRemoval(class Core::PathBuffer<std::string> const &);
-
-private:
-
 
 };

@@ -22,7 +22,6 @@ public:
     SwimWithEntityGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SwimWithEntityGoal();
     /*1*/ virtual bool canUse();
@@ -37,10 +36,8 @@ public:
 #endif
     MCAPI SwimWithEntityGoal(class Mob &);
 
+
 //private:
     MCAPI bool _setWantedMob();
-
-private:
-
 
 };

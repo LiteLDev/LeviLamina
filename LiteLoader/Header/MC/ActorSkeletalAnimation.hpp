@@ -22,7 +22,6 @@ public:
     ActorSkeletalAnimation() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSKELETALANIMATION
 public:
@@ -47,6 +46,7 @@ public:
     MCAPI void sortParticleEffectEvents();
     MCAPI void sortSoundEffectEvents();
     MCAPI ~ActorSkeletalAnimation();
+
 
 
 };

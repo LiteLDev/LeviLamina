@@ -22,7 +22,6 @@ public:
     FixedBiomeSource() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FixedBiomeSource();
     /*1*/ virtual void fillBiomes(class LevelChunk &, class ChunkLocalNoiseCache const &) const;
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI FixedBiomeSource(class Biome const &);
+
 
 
 };

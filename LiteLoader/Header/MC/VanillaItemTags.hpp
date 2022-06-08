@@ -22,15 +22,10 @@ public:
     VanillaItemTags() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAITEMTAGS
 public:
 #endif
-
-//private:
-
-private:
     MCAPI static char const Armor[];
     MCAPI static char const Arrows[];
     MCAPI static char const Banners[];
@@ -62,6 +57,7 @@ private:
     MCAPI static char const Sword[];
     MCAPI static char const Tool[];
     MCAPI static char const WoodenTier[];
+
 
 
 };

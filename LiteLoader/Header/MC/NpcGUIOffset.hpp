@@ -21,12 +21,12 @@ public:
     NpcGUIOffset() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCGUIOFFSET
 public:
 #endif
     MCAPI NpcGUIOffset(class Json::Value const &);
+
 
 
 };

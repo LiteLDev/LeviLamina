@@ -23,7 +23,6 @@ public:
     AttributeScriptActorComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AttributeScriptActorComponent();
     /*4*/ virtual class Scripting::Result<float> getCurrent() const;
@@ -35,6 +34,7 @@ public:
     MCAPI class Scripting::Result<void> resetToDefaultValue() const;
     MCAPI class Scripting::Result<void> resetToMaxValue() const;
     MCAPI class Scripting::Result<void> resetToMinValue() const;
+
 
 
 };

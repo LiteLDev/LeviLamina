@@ -22,7 +22,6 @@ public:
     OnFireSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONFIRESYSTEM
 public:
@@ -35,8 +34,6 @@ public:
 
 //protected:
     MCAPI static bool _extinguishFireIfInWater(class Actor &);
-
-protected:
 
 
 };

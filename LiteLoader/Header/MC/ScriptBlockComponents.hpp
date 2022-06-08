@@ -22,13 +22,13 @@ public:
     ScriptBlockComponents() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKCOMPONENTS
 public:
 #endif
     MCAPI static void bind(class Scripting::ModuleBindingBuilder &, struct Scripting::Version);
     MCAPI static class Scripting::Result<class Scripting::StrongObjectHandle> create(std::string const &, class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
+
 
 
 };

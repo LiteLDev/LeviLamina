@@ -23,7 +23,6 @@ public:
     PackSourceFactory() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PackSourceFactory();
     /*1*/ virtual class WorldTemplatePackSource & createWorldTemplatePackSource(class WorldTemplateManager const &, class mce::UUID const &, enum PackType, enum PackOrigin);
@@ -44,6 +43,7 @@ public:
 public:
 #endif
     MCAPI PackSourceFactory(class std::shared_ptr<class IInPackagePacks> const &);
+
 
 
 };

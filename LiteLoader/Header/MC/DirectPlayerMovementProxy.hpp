@@ -22,7 +22,6 @@ public:
     DirectPlayerMovementProxy() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTPLAYERMOVEMENTPROXY
 public:
@@ -100,6 +99,7 @@ public:
     MCVAPI void updateTouch();
     MCVAPI bool wasAutoJumping() const;
 #endif
+
 
 
 };

@@ -24,7 +24,6 @@ public:
     MedicineItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MedicineItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -50,6 +49,7 @@ public:
 #endif
     MCAPI MedicineItem(std::string const &, int);
     MCAPI static class MobEffect const * getMobEffect(class ItemStack const &);
+
 
 
 };

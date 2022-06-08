@@ -20,12 +20,12 @@ public:
     PlayerUpdateInteractionEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERUPDATEINTERACTIONEVENT
 public:
 #endif
     MCAPI ~PlayerUpdateInteractionEvent();
+
 
 
 };

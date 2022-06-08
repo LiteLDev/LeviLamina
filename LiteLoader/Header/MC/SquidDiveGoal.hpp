@@ -22,7 +22,6 @@ public:
     SquidDiveGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SquidDiveGoal();
     /*1*/ virtual bool canUse();
@@ -37,6 +36,7 @@ public:
     MCVAPI void stop();
     MCVAPI void tick();
 #endif
+
 
 
 };

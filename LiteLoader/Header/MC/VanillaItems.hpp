@@ -22,7 +22,6 @@ public:
     VanillaItems() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAITEMS
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI static void registerItems(class BaseGameVersion const &, class Experiments const &, bool);
     MCAPI static void serverInitCreativeItemsCallback(class ActorInfoRegistry *, class BlockDefinitionGroup *, class CreativeItemRegistry *, bool, class BaseGameVersion const &, class Experiments const &);
     MCAPI static void unregisterItems();
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     SeedItemComponentLegacy() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEEDITEMCOMPONENTLEGACY
 public:
@@ -34,10 +33,8 @@ public:
     MCAPI void setPlanting(bool);
     MCAPI bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &);
 
+
 //private:
     MCAPI bool _canPlant(class Block const &) const;
-
-private:
-
 
 };

@@ -24,7 +24,6 @@ public:
     Chicken() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~Chicken();
     /*40*/ virtual void __unk_vfn_40();
@@ -59,6 +58,7 @@ public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Chicken(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

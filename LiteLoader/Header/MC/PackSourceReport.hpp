@@ -20,7 +20,6 @@ public:
     class PackSourceReport& operator=(class PackSourceReport const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSOURCEREPORT
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI class std::unordered_map<struct PackIdVersion, class PackReport, struct std::hash<struct PackIdVersion>, struct std::equal_to<struct PackIdVersion>, class std::allocator<struct std::pair<struct PackIdVersion const, class PackReport>>> const & getReports() const;
     MCAPI bool hasErrors() const;
     MCAPI ~PackSourceReport();
+
 
 
 };

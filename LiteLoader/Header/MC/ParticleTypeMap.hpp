@@ -22,14 +22,15 @@ public:
     ParticleTypeMap() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARTICLETYPEMAP
 public:
 #endif
     MCAPI static std::string const & getParticleName(enum ParticleType);
     MCAPI static enum ParticleType getParticleTypeId(std::string const &);
-    MCAPI static class BidirectionalUnorderedMap<enum ParticleType, std::string> const map;
 
+
+//private:
+    MCAPI static class BidirectionalUnorderedMap<enum ParticleType, std::string> const map;
 
 };

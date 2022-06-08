@@ -22,7 +22,6 @@ public:
     SlimeAttackGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SlimeAttackGoal();
     /*1*/ virtual bool canUse();
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI SlimeAttackGoal(class Mob &);
+
 
 
 };

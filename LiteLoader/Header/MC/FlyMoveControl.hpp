@@ -22,7 +22,6 @@ public:
     FlyMoveControl(class FlyMoveControl const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FlyMoveControl();
     /*2*/ virtual void tick(class MoveControlComponent &, class Mob &);
@@ -30,6 +29,7 @@ public:
 public:
 #endif
     MCAPI FlyMoveControl();
+
 
 
 };

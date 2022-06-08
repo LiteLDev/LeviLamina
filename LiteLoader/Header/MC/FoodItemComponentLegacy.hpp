@@ -23,7 +23,6 @@ public:
     FoodItemComponentLegacy() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FoodItemComponentLegacy();
     /*1*/ virtual int getNutrition() const;
@@ -40,12 +39,10 @@ public:
     MCAPI bool init(class Json::Value &, class SemVersion const &);
     MCAPI static class Json::Value initializeFromNetwork(class CompoundTag const &);
 
+
 //private:
     MCAPI void _applyEatEffects(class ItemStack const &, class Actor &, class Level &);
     MCAPI void _loadEffects(class Json::Value &);
     MCAPI void _loadRemoveEffects(class Json::Value &);
-
-private:
-
 
 };

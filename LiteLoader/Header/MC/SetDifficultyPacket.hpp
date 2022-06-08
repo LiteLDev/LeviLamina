@@ -22,7 +22,6 @@ public:
     SetDifficultyPacket(class SetDifficultyPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SetDifficultyPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -35,6 +34,7 @@ public:
     MCAPI SetDifficultyPacket(enum Difficulty);
     MCAPI SetDifficultyPacket();
     MCAPI enum Difficulty getDifficulty() const;
+
 
 
 };

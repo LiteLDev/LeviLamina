@@ -23,7 +23,6 @@ public:
     BambooBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BambooBlock();
     /*8*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
@@ -91,12 +90,10 @@ public:
     MCAPI BambooBlock(std::string const &, int);
     MCAPI static int getMaxHeight(class BlockPos const &);
 
+
 //private:
     MCAPI class Block const & _determineNewBlockState(class BlockSource &, class BlockPos const &) const;
     MCAPI enum LeafSize _getLeafSize(class Block const &) const;
     MCAPI enum StalkThickness _getStalkThickness(class Block const &) const;
-
-private:
-
 
 };

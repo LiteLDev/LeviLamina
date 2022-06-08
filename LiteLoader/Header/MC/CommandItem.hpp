@@ -24,7 +24,6 @@ public:
     CommandItem(class CommandItem const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDITEM
 public:
@@ -36,6 +35,7 @@ public:
     MCAPI int getId() const;
     MCAPI operator bool() const;
     MCAPI operator unsigned __int64() const;
+
 
 
 };

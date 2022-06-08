@@ -1597,7 +1597,7 @@ QualifiedNameNode*
 
 FuncClassType Demangler::demangleFunctionClass(StringView& MangledName) {
     FuncClassType result;
-    result.pos = new StringView(MangledName);
+    result.backup = new StringView(MangledName);
     switch (MangledName.popFront()) {
         case '9':
             result.set(FuncClass(FC_ExternC | FC_NoParameterList));
@@ -1753,27 +1753,20 @@ CallingConv Demangler::demangleCallingConvention(StringView& MangledName) {
     return CallingConv::None;
 }
 
-StorageClass Demangler::demangleVariableStorageClass(StringView& MangledName)
-{
+StorageClass Demangler::demangleVariableStorageClass(StringView& MangledName) {
     assert(MangledName.front() >= '0' && MangledName.front() <= '4');
-    StorageClass result;
-    result.pos = new StringView(MangledName);
+
     switch (MangledName.popFront()) {
         case '0':
-            result.set(StorageClass::PrivateStatic);
-            return result;
+            return StorageClass::PrivateStatic;
         case '1':
-            result.set(StorageClass::ProtectedStatic);
-            return result;
+            return StorageClass::ProtectedStatic;
         case '2':
-            result.set(StorageClass::PublicStatic);
-            return result;
+            return StorageClass::PublicStatic;
         case '3':
-            result.set(StorageClass::Global);
-            return result;
+            return StorageClass::Global;
         case '4':
-            result.set(StorageClass::FunctionLocalStatic);
-            return result;
+            return StorageClass::FunctionLocalStatic;
     }
     DEMANGLE_UNREACHABLE;
 }

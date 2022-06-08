@@ -21,7 +21,6 @@ public:
     DouseFireSubcomponent(class DouseFireSubcomponent const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DouseFireSubcomponent();
     /*1*/ virtual void __unk_vfn_1();
@@ -35,6 +34,7 @@ public:
 #endif
     MCAPI DouseFireSubcomponent();
     MCAPI void douseFire(class BlockSource &, class BlockPos const &);
+
 
 
 };

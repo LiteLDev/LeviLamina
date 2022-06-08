@@ -22,7 +22,6 @@ public:
     SetActorMotionPacket(class SetActorMotionPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SetActorMotionPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI SetActorMotionPacket(class Actor const &);
     MCAPI SetActorMotionPacket();
+
 
 
 };

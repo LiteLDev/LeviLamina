@@ -22,7 +22,6 @@ public:
     SummonActorGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SummonActorGoal();
     /*1*/ virtual bool canUse();
@@ -37,11 +36,9 @@ public:
 #endif
     MCAPI SummonActorGoal(class Mob &, std::vector<struct SummonSpellData> const &);
 
+
 //private:
     MCAPI void _createSpellEntity(float, float, float, float, float, int, struct ActorDefinitionIdentifier) const;
     MCAPI int _selectBestSpell(class Actor &) const;
-
-private:
-
 
 };

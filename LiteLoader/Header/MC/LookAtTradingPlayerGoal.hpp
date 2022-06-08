@@ -23,7 +23,6 @@ public:
     LookAtTradingPlayerGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LookAtTradingPlayerGoal();
     /*1*/ virtual bool canUse();
@@ -34,6 +33,7 @@ public:
 public:
 #endif
     MCAPI LookAtTradingPlayerGoal(class Mob &, float, float, int, int, int, int);
+
 
 
 };

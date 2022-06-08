@@ -23,7 +23,6 @@ public:
     WorkerPool() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKERPOOL
 public:
@@ -37,15 +36,10 @@ public:
 
 //protected:
     MCAPI static void _registerPool(class WorkerPool &);
-
-//private:
-    MCAPI bool _checkPendingWork();
-
-protected:
     MCAPI static class SmallSet<class WorkerPool *> sAllPools;
     MCAPI static class std::mutex sAllPoolsMutex;
 
-private:
-
+//private:
+    MCAPI bool _checkPendingWork();
 
 };

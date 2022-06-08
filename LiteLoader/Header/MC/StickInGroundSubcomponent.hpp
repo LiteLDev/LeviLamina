@@ -22,7 +22,6 @@ public:
     StickInGroundSubcomponent(class StickInGroundSubcomponent const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StickInGroundSubcomponent();
     /*1*/ virtual void readfromJSON(class Json::Value &, class SemVersion const &);
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI StickInGroundSubcomponent();
+
 
 
 };

@@ -78,7 +78,6 @@ public:
     Actor() = delete;
 #endif
 
-
 public:
     /*0*/ virtual bool hasComponent(class HashedString const &) const;
     /*1*/ virtual class Mob * getLastHurtByMob();
@@ -739,9 +738,17 @@ public:
     MCAPI bool useSaddle(class ItemStackBase &, class Player *);
     MCAPI bool wasLastHitByPlayer();
     MCAPI bool wasLoadedFromNBTThisFrame() const;
-    MCAPI static int const DAMAGE_NEARBY_MOBS_DURATION;
-    MCAPI static float const DEFAULT_MAX_DISTANCE_OPTIMIZATION;
-    MCAPI static unsigned __int64 const DEFAULT_MAX_TICK_DELAY_OPTIMIZATION;
+    MCAPI static float const DEFAULT_AMBIENT_SOUND_INTERVAL;
+    MCAPI static float const DEFAULT_AMBIENT_SOUND_INTERVAL_RANGE;
+    MCAPI static float const DEFAULT_MOVEMENT_SOUND_DISTANCE_OFFSET;
+    MCAPI static class Vec3 const LAVA_AABB_SHRINK_AMOUNT;
+    MCAPI static float const LAVA_FLOW_STRENGTH_MULTIPLIER;
+    MCAPI static int const MAX_BYTE_CHARGE_AMOUNT;
+    MCAPI static int const PLAYER_HURT_EXPERIENCE_TIME;
+    MCAPI static std::string const RIDING_TAG;
+    MCAPI static int const TOTAL_AIR_SUPPLY;
+    MCAPI static class Vec3 const WATER_AABB_SHRINK_AMOUNT;
+    MCAPI static float const WATER_FLOW_STRENGTH_MULTIPLIER;
     MCAPI static void _move(struct IActorMovementProxy &, class Vec3 const &);
     MCAPI static class Vec3 buildForward(struct IActorMovementProxy const &);
     MCAPI static bool canBeginOrContinueClimbingLadder(struct IActorMovementProxy const &);
@@ -800,22 +807,9 @@ public:
     MCAPI void _tryPlantWitherRose();
     MCAPI void _updateComposition(bool);
     MCAPI void _updateOwnerChunk();
+    MCAPI static int const DAMAGE_NEARBY_MOBS_DURATION;
+    MCAPI static float const DEFAULT_MAX_DISTANCE_OPTIMIZATION;
+    MCAPI static unsigned __int64 const DEFAULT_MAX_TICK_DELAY_OPTIMIZATION;
     MCAPI static bool _containsSneakCollisionShapes(struct IActorMovementProxy &, class AABB const &);
-
-protected:
-
-private:
-    MCAPI static float const DEFAULT_AMBIENT_SOUND_INTERVAL;
-    MCAPI static float const DEFAULT_AMBIENT_SOUND_INTERVAL_RANGE;
-    MCAPI static float const DEFAULT_MOVEMENT_SOUND_DISTANCE_OFFSET;
-    MCAPI static class Vec3 const LAVA_AABB_SHRINK_AMOUNT;
-    MCAPI static float const LAVA_FLOW_STRENGTH_MULTIPLIER;
-    MCAPI static int const MAX_BYTE_CHARGE_AMOUNT;
-    MCAPI static int const PLAYER_HURT_EXPERIENCE_TIME;
-    MCAPI static std::string const RIDING_TAG;
-    MCAPI static int const TOTAL_AIR_SUPPLY;
-    MCAPI static class Vec3 const WATER_AABB_SHRINK_AMOUNT;
-    MCAPI static float const WATER_FLOW_STRENGTH_MULTIPLIER;
-
 
 };

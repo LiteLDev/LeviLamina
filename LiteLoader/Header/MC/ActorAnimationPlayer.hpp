@@ -22,7 +22,6 @@ public:
     ActorAnimationPlayer() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONPLAYER
 public:
@@ -31,6 +30,7 @@ public:
     MCVAPI void buildBoneToPartMapping(class AnimationComponent &);
 #endif
     MCAPI ActorAnimationPlayer(class HashedString const &, class ExpressionNode const &);
+
 
 
 };

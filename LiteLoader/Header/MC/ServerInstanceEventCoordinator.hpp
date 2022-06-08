@@ -23,7 +23,6 @@ public:
     ServerInstanceEventCoordinator() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCEEVENTCOORDINATOR
 public:
@@ -39,6 +38,7 @@ public:
     MCAPI void sendServerUpdateEnd(class ServerInstance &);
     MCAPI void sendServerUpdateStart(class ServerInstance &);
     MCAPI void sendStartLeaveGame(class ServerInstance &);
+
 
 
 };

@@ -21,7 +21,6 @@ public:
     FindBlockNode(class FindBlockNode const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FindBlockNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
@@ -30,6 +29,7 @@ public:
 public:
 #endif
     MCAPI FindBlockNode();
+
 
 
 };

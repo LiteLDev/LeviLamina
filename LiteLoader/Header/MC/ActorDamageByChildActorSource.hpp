@@ -23,7 +23,6 @@ public:
     ActorDamageByChildActorSource() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorDamageByChildActorSource();
     /*2*/ virtual bool isChildEntitySource() const;
@@ -38,6 +37,7 @@ public:
 public:
 #endif
     MCAPI ActorDamageByChildActorSource(class Actor &, class Actor &, enum ActorDamageCause);
+
 
 
 };

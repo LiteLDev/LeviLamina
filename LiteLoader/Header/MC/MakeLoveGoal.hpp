@@ -22,7 +22,6 @@ public:
     MakeLoveGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MakeLoveGoal();
     /*1*/ virtual bool canUse();
@@ -37,10 +36,8 @@ public:
 #endif
     MCAPI MakeLoveGoal(class VillagerBase &);
 
+
 //private:
     MCAPI class VillagerBase * _findMate() const;
-
-private:
-
 
 };

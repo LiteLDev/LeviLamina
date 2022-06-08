@@ -24,7 +24,6 @@ public:
     DedicatedServer(class DedicatedServer const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEDICATEDSERVER
 public:
@@ -41,12 +40,10 @@ public:
     MCAPI enum DedicatedServer::StartResult runDedicatedServerLoop(class Core::FilePathManager &, class PropertiesSettings &, class LevelSettings &, class AllowListFile &, std::unique_ptr<class PermissionsFile> &);
     MCAPI enum DedicatedServer::StartResult start(std::string const &);
 
+
 //private:
     MCAPI void initalizeAppConfigs();
     MCAPI void initializeHttp();
     MCAPI void initializeLogging();
-
-private:
-
 
 };

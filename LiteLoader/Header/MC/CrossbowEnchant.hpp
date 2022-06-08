@@ -23,7 +23,6 @@ public:
     CrossbowEnchant() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CrossbowEnchant();
     /*1*/ virtual bool isCompatibleWith(enum Enchant::Type) const;
@@ -44,7 +43,9 @@ public:
 public:
 #endif
     MCAPI CrossbowEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
-    MCAPI static std::vector<enum Enchant::Type> const VALID_ENCHANTMENTS;
 
+
+//private:
+    MCAPI static std::vector<enum Enchant::Type> const VALID_ENCHANTMENTS;
 
 };

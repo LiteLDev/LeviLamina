@@ -20,12 +20,12 @@ public:
     ScriptFilterGroup() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFILTERGROUP
 public:
 #endif
     MCAPI static class Scripting::ClassBindingBuilder<class ActorFilterGroup> bind(struct Scripting::Version);
+
 
 
 };

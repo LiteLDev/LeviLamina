@@ -23,7 +23,6 @@ public:
     SHStairsDown() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SHStairsDown();
     /*3*/ virtual enum StructurePieceType getType() const;
@@ -32,6 +31,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHSTAIRSDOWN
 public:
 #endif
+
 
 
 };

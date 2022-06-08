@@ -22,16 +22,12 @@ public:
     CrashDumpAssertData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPASSERTDATA
 public:
 #endif
-
-//private:
-
-private:
     MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
+
 
 
 };

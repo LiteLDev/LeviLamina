@@ -43,7 +43,6 @@ public:
     Recipes() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECIPES
 public:
@@ -65,6 +64,8 @@ public:
     MCAPI void init(class ResourcePackManager &, class ExternalRecipeStore &);
     MCAPI bool loadRecipe(struct std::pair<std::string, class Json::Value> const &, class SemVersion const &);
     MCAPI ~Recipes();
+    MCAPI static int const RECIPE_MAXIMUM_HEIGHT;
+    MCAPI static int const RECIPE_MAXIMUM_WIDTH;
     MCAPI static std::vector<std::string> Shape(std::string const &, std::string const &, std::string const &);
 
 //protected:
@@ -79,12 +80,5 @@ public:
     MCAPI bool _loadBrewingMix(class Json::Value const &, class SemVersion const &);
     MCAPI void _loadHardcodedRecipes();
     MCAPI class RecipeIngredient const _loadIngredientFromJson(class Json::Value const &, class SemVersion const &) const;
-
-protected:
-
-private:
-    MCAPI static int const RECIPE_MAXIMUM_HEIGHT;
-    MCAPI static int const RECIPE_MAXIMUM_WIDTH;
-
 
 };

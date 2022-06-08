@@ -28,7 +28,6 @@ public:
     CommandOrigin(class CommandOrigin const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CommandOrigin();
     /*1*/ virtual std::string const & getRequestId() const = 0;
@@ -73,8 +72,6 @@ public:
     MCAPI static std::unique_ptr<class CommandOrigin> fromCommandOriginData(struct CommandOriginData const &, class Bedrock::NonOwnerPointer<class ILevel> const &, class NetworkIdentifier const &, unsigned char);
 
 //protected:
-
-protected:
     MCAPI static class NetworkIdentifier sUnknownSource;
 
 

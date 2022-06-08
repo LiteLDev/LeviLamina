@@ -22,7 +22,6 @@ public:
     GlideMoveControl(class GlideMoveControl const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GlideMoveControl();
     /*1*/ virtual void initializeInternal(class Mob &, struct MoveControlDescription *);
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI GlideMoveControl();
+
 
 
 };

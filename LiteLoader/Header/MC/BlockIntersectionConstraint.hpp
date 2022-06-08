@@ -22,7 +22,6 @@ public:
     BlockIntersectionConstraint() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BlockIntersectionConstraint();
     /*1*/ virtual bool isSatisfied(class IBlockWorldGenAPI const &, class BlockPos const &, enum Rotation const &) const;
@@ -30,6 +29,7 @@ public:
 public:
 #endif
     MCAPI BlockIntersectionConstraint(class StructureTemplate &);
+
 
 
 };

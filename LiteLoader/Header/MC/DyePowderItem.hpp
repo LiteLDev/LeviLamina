@@ -24,7 +24,6 @@ public:
     DyePowderItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DyePowderItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -52,6 +51,7 @@ public:
 public:
 #endif
     MCAPI DyePowderItem(std::string const &, int, enum ItemColor, bool, bool);
+
 
 
 };

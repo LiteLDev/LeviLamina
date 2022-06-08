@@ -22,7 +22,6 @@ public:
     LevelEventGenericPacket(class LevelEventGenericPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LevelEventGenericPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI LevelEventGenericPacket(enum LevelEvent, class CompoundTag const &);
     MCAPI LevelEventGenericPacket();
+
 
 
 };

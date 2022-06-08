@@ -20,7 +20,6 @@ public:
     GameEventDynamicRegistration() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTDYNAMICREGISTRATION
 public:
@@ -29,6 +28,7 @@ public:
     MCAPI bool isRegistered() const;
     MCAPI void onListenerMoveChunk(class BlockSource &, class ChunkPos);
     MCAPI void onListenerRemoved();
+
 
 
 };

@@ -20,7 +20,6 @@ public:
     SniffGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SniffGoal();
     /*1*/ virtual bool canUse();
@@ -35,11 +34,9 @@ public:
 #endif
     MCAPI SniffGoal(class Mob &);
 
+
 //private:
     MCAPI class std::optional<struct DistanceSortedActor> _fetchNearestSniffableActor() const;
     MCAPI void _suspectClosestMob() const;
-
-private:
-
 
 };

@@ -24,7 +24,6 @@ public:
     SmallFireball() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~SmallFireball();
     /*40*/ virtual void __unk_vfn_40();
@@ -54,6 +53,7 @@ public:
 public:
 #endif
     MCAPI SmallFireball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

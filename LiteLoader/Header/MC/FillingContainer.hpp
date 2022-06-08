@@ -22,7 +22,6 @@ public:
     FillingContainer() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FillingContainer();
     /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
@@ -65,8 +64,6 @@ public:
     MCAPI int _getSlotWithRemainingSpace(class ItemStack const &) const;
     MCAPI bool _isCreative() const;
     MCAPI void _release(int);
-
-protected:
 
 
 };

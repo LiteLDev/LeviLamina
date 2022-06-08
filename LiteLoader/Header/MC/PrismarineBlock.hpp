@@ -23,7 +23,6 @@ public:
     PrismarineBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PrismarineBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -67,6 +66,7 @@ public:
 public:
 #endif
     MCAPI PrismarineBlock(std::string const &, int);
+
 
 
 };

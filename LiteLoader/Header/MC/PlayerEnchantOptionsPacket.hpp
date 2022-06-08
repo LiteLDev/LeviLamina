@@ -23,7 +23,6 @@ public:
     PlayerEnchantOptionsPacket() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PlayerEnchantOptionsPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,6 +32,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERENCHANTOPTIONSPACKET
 public:
 #endif
+
 
 
 };

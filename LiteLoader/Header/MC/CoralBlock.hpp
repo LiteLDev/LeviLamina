@@ -23,7 +23,6 @@ public:
     CoralBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CoralBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -74,12 +73,9 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI CoralBlock(std::string const &, int);
-
-//private:
-
-private:
     MCAPI static int const DEAD_CORAL_BIT;
     MCAPI static int const DEAD_CORAL_OFFSET;
+
 
 
 };

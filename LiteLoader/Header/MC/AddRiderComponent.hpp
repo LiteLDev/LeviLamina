@@ -20,13 +20,13 @@ public:
     AddRiderComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDRIDERCOMPONENT
 public:
 #endif
     MCAPI void reloadComponent(class Actor &);
     MCAPI ~AddRiderComponent();
+
 
 
 };

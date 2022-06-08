@@ -24,7 +24,6 @@ public:
     ItemStackNetManagerServer() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ItemStackNetManagerServer();
     /*2*/ virtual class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> getRequestId() const;
@@ -45,14 +44,12 @@ public:
     MCAPI void startCrafting(bool, class BlockPos const &);
     MCAPI class CallbackToken tryCloseContainerScreen(class std::function<void (void)>);
 
+
 //private:
     MCAPI void _filterStrings(class TypedClientNetId<struct ItemStackRequestIdTag, int, 0>, std::vector<std::string> const &);
     MCAPI void _handleRequestData(std::vector<struct ItemStackResponseInfo> &, class ItemStackRequestData const *);
     MCAPI void _processQueue();
     MCAPI void _queueRequest(std::unique_ptr<class ItemStackRequestData>);
     MCAPI bool _tryFilterText(class ItemStackRequestData const *);
-
-private:
-
 
 };

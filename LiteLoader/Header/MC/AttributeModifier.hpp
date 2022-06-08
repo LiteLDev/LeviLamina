@@ -15,7 +15,6 @@ class AttributeModifier {
 
 #undef AFTER_EXTRA
 
-
 public:
     /*0*/ virtual ~AttributeModifier();
     /*1*/ virtual bool isInstantaneous() const;
@@ -34,7 +33,9 @@ public:
     MCAPI bool isSerializable() const;
     MCAPI class AttributeModifier & operator=(class AttributeModifier const &);
     MCAPI bool operator==(class AttributeModifier const &) const;
-    MCAPI static class mce::UUID const mInvalidUUID;
 
+
+//private:
+    MCAPI static class mce::UUID const mInvalidUUID;
 
 };

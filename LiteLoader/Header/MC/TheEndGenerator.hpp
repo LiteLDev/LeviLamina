@@ -23,7 +23,6 @@ public:
     TheEndGenerator() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THEENDGENERATOR
 public:
@@ -45,11 +44,9 @@ public:
     MCAPI class Util::MultidimensionalArray<float, 3, 3, 33> generateDensityCellsForChunk(class ChunkPos const &) const;
     MCAPI static bool isOutsideCentralIslandArea(class ChunkPos const &);
 
+
 //private:
     MCAPI void _prepareHeights(class BlockVolume &, class ChunkPos const &, bool, std::vector<short> *, int);
     MCAPI float getIslandHeightValue(int, int, int, int) const;
-
-private:
-
 
 };

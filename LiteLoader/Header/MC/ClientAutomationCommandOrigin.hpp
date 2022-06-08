@@ -24,7 +24,6 @@ public:
     ClientAutomationCommandOrigin() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ClientAutomationCommandOrigin();
     /*1*/ virtual std::string const & getRequestId() const;
@@ -47,6 +46,7 @@ public:
 public:
 #endif
     MCAPI ClientAutomationCommandOrigin(std::string const &);
+
 
 
 };

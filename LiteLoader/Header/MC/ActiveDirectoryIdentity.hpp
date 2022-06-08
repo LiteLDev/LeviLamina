@@ -22,16 +22,10 @@ public:
     ActiveDirectoryIdentity() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTIVEDIRECTORYIDENTITY
 public:
 #endif
-    MCAPI static std::string mCachedServiceEndpoint;
-
-//private:
-
-private:
     MCAPI static std::string const IS_VALID_FIELD;
     MCAPI static std::string const JWT_EXPIRATION_FIELD;
     MCAPI static std::string const JWT_REQUEST_ID_FIELD;
@@ -40,5 +34,8 @@ private:
     MCAPI static std::string const REQUEST_ID_FIELD;
     MCAPI static std::string const RESPONSE_FIELD;
 
+
+//private:
+    MCAPI static std::string mCachedServiceEndpoint;
 
 };

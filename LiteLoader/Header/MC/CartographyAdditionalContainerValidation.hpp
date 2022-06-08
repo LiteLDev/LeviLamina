@@ -23,7 +23,6 @@ public:
     CartographyAdditionalContainerValidation() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CartographyAdditionalContainerValidation();
     /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
@@ -38,6 +37,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CARTOGRAPHYADDITIONALCONTAINERVALIDATION
 public:
 #endif
+
 
 
 };

@@ -27,7 +27,6 @@ public:
     StackResultStorageEntity() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STACKRESULTSTORAGEENTITY
 public:
@@ -39,8 +38,6 @@ public:
     MCAPI StackResultStorageEntity(class WeakStorageEntity const &);
     MCAPI class EntityContext & _getStackRef() const;
     MCAPI bool _hasValue() const;
-
-protected:
 
 
 };

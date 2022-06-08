@@ -64,7 +64,6 @@ public:
     PlayerActionPacket(class PlayerActionPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PlayerActionPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -78,6 +77,7 @@ public:
     MCAPI PlayerActionPacket(enum PlayerActionType, class BlockPos const &, int, class ActorRuntimeID);
     MCAPI PlayerActionPacket(enum PlayerActionType, class ActorRuntimeID);
     MCAPI PlayerActionPacket();
+
 
 
 };

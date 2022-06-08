@@ -24,7 +24,6 @@ public:
     ScriptingCommandOrigin() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptingCommandOrigin();
     /*1*/ virtual std::string const & getRequestId() const;
@@ -47,6 +46,7 @@ public:
 #endif
     MCAPI ScriptingCommandOrigin(class ServerLevel &, class Dimension *, class std::function<void (class Json::Value &&)>);
     MCAPI void __autoclassinit2(unsigned __int64);
+
 
 
 };

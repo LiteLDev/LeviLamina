@@ -22,7 +22,6 @@ public:
     ScriptEffectType() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTEFFECTTYPE
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI ScriptEffectType(class MobEffect const &);
     MCAPI class MobEffect const & getEffect() const;
     MCAPI std::string getName() const;
+
 
 
 };

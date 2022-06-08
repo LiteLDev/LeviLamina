@@ -22,7 +22,6 @@ public:
     EntityContextBase() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCONTEXTBASE
 public:
@@ -37,8 +36,6 @@ public:
     MCAPI class entt::basic_registry<class EntityId> const & _enttRegistry() const;
     MCAPI class EntityId _getEntityId() const;
     MCAPI unsigned int _getRegistryId() const;
-
-protected:
 
 
 };

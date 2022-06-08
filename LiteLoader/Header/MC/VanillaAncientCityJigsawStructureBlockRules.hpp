@@ -20,12 +20,12 @@ public:
     VanillaAncientCityJigsawStructureBlockRules() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAANCIENTCITYJIGSAWSTRUCTUREBLOCKRULES
 public:
 #endif
     MCAPI static void initialize(class JigsawStructureRegistry &);
+
 
 
 };

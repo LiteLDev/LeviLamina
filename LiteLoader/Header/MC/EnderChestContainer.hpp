@@ -22,7 +22,6 @@ public:
     EnderChestContainer(class EnderChestContainer const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EnderChestContainer();
     /*16*/ virtual void startOpen(class Player &);
@@ -33,11 +32,8 @@ public:
 public:
 #endif
     MCAPI EnderChestContainer();
-
-//private:
-
-private:
     MCAPI static int const ITEMS_SIZE;
+
 
 
 };

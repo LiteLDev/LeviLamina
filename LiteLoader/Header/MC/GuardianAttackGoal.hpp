@@ -22,7 +22,6 @@ public:
     GuardianAttackGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GuardianAttackGoal();
     /*1*/ virtual bool canUse();
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI GuardianAttackGoal(class Mob &);
+
 
 
 };

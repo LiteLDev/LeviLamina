@@ -23,7 +23,6 @@ public:
     LevelListener() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LevelListener();
     /*1*/ virtual void __unk_vfn_1();
@@ -61,6 +60,7 @@ public:
     MCVAPI void stopSoundEvent(std::string const &);
     MCVAPI void takePicture(class cg::ImageBuffer &, class Actor *, class Actor *, struct ScreenshotOptions &);
 #endif
+
 
 
 };

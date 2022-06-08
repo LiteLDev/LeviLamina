@@ -24,7 +24,6 @@ public:
     PrecompiledCommandOrigin() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PrecompiledCommandOrigin();
     /*1*/ virtual std::string const & getRequestId() const;
@@ -49,6 +48,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRECOMPILEDCOMMANDORIGIN
 public:
 #endif
+
 
 
 };

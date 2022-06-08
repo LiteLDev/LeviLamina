@@ -31,7 +31,6 @@ public:
     RakNetServerLocator() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RakNetServerLocator();
     /*1*/ virtual void _onDisable();
@@ -56,6 +55,7 @@ public:
     MCAPI RakNetServerLocator(class RakNetInstance &, class RakPeerHelper::IPSupportInterface &, std::vector<std::string>, bool, enum PermissionLAN, enum PermissionIPv6, class Bedrock::NonOwnerPointer<class AppPlatform> const &, class std::function<class std::unique_ptr<class RakNet::RakPeerInterface, void ( *)(class RakNet::RakPeerInterface *)> (void)>);
     MCAPI static bool parseUnconnectedPongPacketData(std::string const &, std::vector<std::string> &);
 
+
 //private:
     MCAPI void _activate();
     MCAPI void _addCustomServerFromIpResolver(class AsynchronousIPResolver const &, int);
@@ -77,8 +77,5 @@ public:
     MCAPI void _stopServerDiscovery();
     MCAPI void _updateNetwork();
     MCAPI bool _updateQueuedPings();
-
-private:
-
 
 };

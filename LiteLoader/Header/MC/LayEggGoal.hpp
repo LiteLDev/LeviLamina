@@ -23,7 +23,6 @@ public:
     LayEggGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LayEggGoal();
     /*1*/ virtual bool canUse();
@@ -45,8 +44,6 @@ public:
 //protected:
     MCAPI bool _isTargetBlock(class BlockLegacy const &) const;
     MCAPI void _layEgg(class BlockPos const &);
-
-protected:
 
 
 };

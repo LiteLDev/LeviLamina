@@ -22,7 +22,6 @@ public:
     CommandOutputSender(class CommandOutputSender const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CommandOutputSender();
     /*1*/ virtual void send(class CommandOrigin const &, class CommandOutput const &);
@@ -36,8 +35,6 @@ public:
 
 //protected:
     MCAPI class Json::Value _toJson(class CommandOutput const &) const;
-
-protected:
 
 
 };

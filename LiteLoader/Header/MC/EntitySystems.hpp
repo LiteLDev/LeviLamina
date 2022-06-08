@@ -22,7 +22,6 @@ public:
     EntitySystems() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSYSTEMS
 public:
@@ -39,6 +38,7 @@ public:
     MCAPI void registerUnconditionalTickingSystem(struct TickingSystemWithInfo &&);
     MCAPI void tick(class EntityRegistry &);
     MCAPI void tickEditor(class EntityRegistry &);
+
 
 
 };

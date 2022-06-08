@@ -22,7 +22,6 @@ public:
     SleepState() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SleepState();
     /*1*/ virtual void tick();
@@ -31,6 +30,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLEEPSTATE
 public:
 #endif
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     StructurePoolBlockPredicateAxisAlignedPosition() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StructurePoolBlockPredicateAxisAlignedPosition();
     /*1*/ virtual bool test(class Block const &, class Randomize &) const;
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI StructurePoolBlockPredicateAxisAlignedPosition(float, float, int, int, unsigned char);
+
 
 
 };

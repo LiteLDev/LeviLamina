@@ -18,7 +18,6 @@ public:
     class ThirdPartyInfo& operator=(class ThirdPartyInfo const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THIRDPARTYINFO
 public:
@@ -26,6 +25,7 @@ public:
     MCAPI ThirdPartyInfo();
     MCAPI ThirdPartyInfo(class ThirdPartyInfo const &);
     MCAPI ~ThirdPartyInfo();
+
 
 
 };

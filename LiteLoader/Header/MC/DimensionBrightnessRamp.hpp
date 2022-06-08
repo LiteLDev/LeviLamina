@@ -22,7 +22,6 @@ public:
     DimensionBrightnessRamp() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DimensionBrightnessRamp();
     /*1*/ virtual void buildBrightnessRamp();
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI float getBrightnessRampValue(int) const;
+
 
 
 };

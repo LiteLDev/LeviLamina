@@ -23,7 +23,6 @@ public:
     BastionFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BastionFeature();
     /*2*/ virtual bool shouldPostProcessMobs() const;
@@ -34,6 +33,7 @@ public:
 public:
 #endif
     MCAPI BastionFeature(unsigned int, class BaseGameVersion const &);
+
 
 
 };

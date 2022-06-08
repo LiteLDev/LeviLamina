@@ -45,7 +45,6 @@ public:
     StructureSettings(class StructureSettings const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURESETTINGS
 public:
@@ -90,12 +89,9 @@ public:
     MCAPI void setStructureSize(class BlockPos const &);
     MCAPI bool shouldAllowNonTickingPlayerAndTickingAreaChunks() const;
     MCAPI ~StructureSettings();
-
-//private:
-
-private:
     MCAPI static class BlockPos const DEFAULT_STRUCTURE_OFFSET;
     MCAPI static class BlockPos const DEFAULT_STRUCTURE_SIZE;
+
 
 
 };

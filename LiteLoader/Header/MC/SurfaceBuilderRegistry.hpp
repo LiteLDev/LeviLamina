@@ -22,12 +22,12 @@ public:
     SurfaceBuilderRegistry() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SURFACEBUILDERREGISTRY
 public:
 #endif
     MCAPI class ISurfaceBuilder * lookupForEntity(class EntityContext &) const;
+
 
 
 };

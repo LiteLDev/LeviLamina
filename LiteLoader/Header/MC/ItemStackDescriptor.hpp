@@ -22,7 +22,6 @@ public:
     ItemStackDescriptor(class ItemStackDescriptor const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKDESCRIPTOR
 public:
@@ -31,6 +30,7 @@ public:
     MCAPI ItemStackDescriptor();
     MCAPI class ItemStackDescriptor & operator=(class ItemStackDescriptor &&);
     MCAPI ~ItemStackDescriptor();
+
 
 
 };

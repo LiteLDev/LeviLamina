@@ -23,7 +23,6 @@ public:
     CursorContainerValidation() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CursorContainerValidation();
     /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
@@ -39,6 +38,7 @@ public:
 public:
     MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;
 #endif
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     SculkVeinBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SculkVeinBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -67,6 +66,7 @@ public:
 public:
 #endif
     MCAPI SculkVeinBlock(std::string const &, int, class Material const &);
+
 
 
 };

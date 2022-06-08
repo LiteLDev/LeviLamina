@@ -23,7 +23,6 @@ public:
     GlowItemFrameBlockActor() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GlowItemFrameBlockActor();
     /*12*/ virtual void __unk_vfn_12();
@@ -37,6 +36,7 @@ public:
 public:
 #endif
     MCAPI GlowItemFrameBlockActor(class BlockPos);
+
 
 
 };

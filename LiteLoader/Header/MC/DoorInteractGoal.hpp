@@ -23,7 +23,6 @@ public:
     DoorInteractGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DoorInteractGoal();
     /*1*/ virtual bool canUse();
@@ -43,10 +42,5 @@ public:
 
 //private:
     MCAPI static class DoorBlock const * _findBlockingDoorAtPos(class BlockPos const &, class Mob const &, class Path *, enum Direction::Type &, enum Direction::Type &);
-
-protected:
-
-private:
-
 
 };

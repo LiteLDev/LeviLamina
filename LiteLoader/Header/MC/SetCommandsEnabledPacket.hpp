@@ -22,7 +22,6 @@ public:
     SetCommandsEnabledPacket(class SetCommandsEnabledPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SetCommandsEnabledPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI SetCommandsEnabledPacket();
     MCAPI SetCommandsEnabledPacket(bool);
+
 
 
 };

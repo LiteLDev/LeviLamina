@@ -23,7 +23,6 @@ public:
     RandomValueBounds() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMVALUEBOUNDS
 public:
@@ -33,6 +32,7 @@ public:
     MCAPI int getInt(class Random &) const;
     MCAPI float getMax() const;
     MCAPI float getMin() const;
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     SpongeBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SpongeBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -73,14 +72,12 @@ public:
 #endif
     MCAPI SpongeBlock(std::string const &, int, class Material const &);
 
+
 //private:
     MCAPI void _attemptAbsorbWater(class BlockSource &, class BlockPos const &) const;
     MCAPI void _evaporateWater(class BlockSource &, class BlockPos const &) const;
     MCAPI bool _performAbsorbWater(class BlockSource &, class BlockPos const &) const;
     MCAPI void _setShouldDry(class BlockSource &, class BlockPos const &) const;
     MCAPI void _spawnAbsorbParticles(class BlockSource &, class BlockPos const &) const;
-
-private:
-
 
 };

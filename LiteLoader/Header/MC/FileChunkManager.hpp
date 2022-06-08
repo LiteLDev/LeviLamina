@@ -21,7 +21,6 @@ public:
     FileChunkManager(class FileChunkManager const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILECHUNKMANAGER
 public:
@@ -34,10 +33,8 @@ public:
     MCAPI void reset(unsigned __int64, unsigned int);
     MCAPI ~FileChunkManager();
 
+
 //private:
     MCAPI void _generateChunkInfo();
-
-private:
-
 
 };

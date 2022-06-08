@@ -21,7 +21,6 @@ public:
     ChunkBuildOrderPolicy(class ChunkBuildOrderPolicy const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ChunkBuildOrderPolicy();
     /*1*/ virtual int getChunkRebuildPriority(class ChunkPos const &) const;
@@ -34,6 +33,7 @@ public:
 public:
 #endif
     MCAPI ChunkBuildOrderPolicy();
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     BookshelfBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BookshelfBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -66,6 +65,7 @@ public:
 public:
 #endif
     MCAPI BookshelfBlock(std::string const &, int);
+
 
 
 };

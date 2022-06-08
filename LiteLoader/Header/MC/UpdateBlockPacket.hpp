@@ -22,7 +22,6 @@ public:
     UpdateBlockPacket(class UpdateBlockPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~UpdateBlockPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI UpdateBlockPacket(class BlockPos const &, unsigned int, unsigned int, unsigned char);
     MCAPI UpdateBlockPacket();
+
 
 
 };

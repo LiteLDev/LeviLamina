@@ -22,7 +22,6 @@ public:
     AddPaintingPacket(class AddPaintingPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AddPaintingPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI AddPaintingPacket(class Painting const &);
     MCAPI AddPaintingPacket();
+
 
 
 };

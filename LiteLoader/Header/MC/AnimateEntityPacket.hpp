@@ -22,7 +22,6 @@ public:
     AnimateEntityPacket(class AnimateEntityPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AnimateEntityPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI AnimateEntityPacket(std::vector<class ActorRuntimeID> const &, std::string const &, std::string const &, float, std::string const &, enum MolangVersion, std::string const &);
     MCAPI AnimateEntityPacket();
+
 
 
 };

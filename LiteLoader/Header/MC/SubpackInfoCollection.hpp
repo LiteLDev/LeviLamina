@@ -20,7 +20,6 @@ public:
     SubpackInfoCollection() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBPACKINFOCOLLECTION
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI std::string const & getSubpackFolderName(int) const;
     MCAPI std::vector<struct SubpackInfo> const & getSubpackInfo() const;
     MCAPI bool hasSubpacks() const;
+
 
 
 };

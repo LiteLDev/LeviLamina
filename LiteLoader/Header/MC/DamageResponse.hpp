@@ -23,7 +23,6 @@ public:
     DamageResponse() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DamageResponse();
     /*1*/ virtual std::string const & getName() const;
@@ -32,12 +31,10 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAMAGERESPONSE
 public:
 #endif
+    MCAPI static std::string const NameID;
+
 
 //private:
     MCAPI void repairOrHurtItem(int const &, class RenderParams &) const;
-
-private:
-    MCAPI static std::string const NameID;
-
 
 };

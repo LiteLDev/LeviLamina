@@ -22,7 +22,6 @@ public:
     ScriptBlockSnowContainerComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptBlockSnowContainerComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKSNOWCONTAINERCOMPONENT
@@ -33,6 +32,7 @@ public:
     MCAPI class ScriptBlockSnowContainerComponent & operator=(class ScriptBlockSnowContainerComponent &&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockSnowContainerComponent> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockSnowContainerComponent> tryCreate(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
+
 
 
 };

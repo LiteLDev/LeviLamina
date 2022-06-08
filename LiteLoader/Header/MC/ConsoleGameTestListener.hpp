@@ -22,7 +22,6 @@ public:
     ConsoleGameTestListener() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ConsoleGameTestListener();
     /*1*/ virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance &);
@@ -31,6 +30,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSOLEGAMETESTLISTENER
 public:
 #endif
+
 
 
 };

@@ -24,7 +24,6 @@ public:
     Llama() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~Llama();
     /*40*/ virtual void __unk_vfn_40();
@@ -61,6 +60,7 @@ public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Llama(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

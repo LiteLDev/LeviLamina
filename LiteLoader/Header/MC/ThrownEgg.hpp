@@ -24,7 +24,6 @@ public:
     ThrownEgg() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~ThrownEgg();
@@ -53,6 +52,7 @@ public:
 public:
 #endif
     MCAPI ThrownEgg(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

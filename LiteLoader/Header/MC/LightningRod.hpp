@@ -23,7 +23,6 @@ public:
     LightningRod() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LightningRod();
     /*15*/ virtual void onProjectileHit(class BlockSource &, class BlockPos const &, class Actor const &) const;
@@ -79,6 +78,7 @@ public:
 public:
 #endif
     MCAPI LightningRod(std::string const &, int, class Material const &);
+
 
 
 };

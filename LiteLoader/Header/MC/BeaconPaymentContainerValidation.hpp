@@ -23,7 +23,6 @@ public:
     BeaconPaymentContainerValidation() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BeaconPaymentContainerValidation();
     /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
@@ -39,6 +38,7 @@ public:
     MCVAPI bool canDestroy(class ContainerScreenContext const &) const;
     MCVAPI int getAvailableSetCount(int, class ItemStackBase const &) const;
 #endif
+
 
 
 };

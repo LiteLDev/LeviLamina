@@ -22,7 +22,6 @@ public:
     NetherDimension() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERDIMENSION
 public:
@@ -45,10 +44,8 @@ public:
 #endif
     MCAPI NetherDimension(class Level &, class Scheduler &);
 
+
 //private:
     MCAPI static std::unique_ptr<class StructureFeatureRegistry> makeStructureFeatures(unsigned int, class BaseGameVersion const &);
-
-private:
-
 
 };

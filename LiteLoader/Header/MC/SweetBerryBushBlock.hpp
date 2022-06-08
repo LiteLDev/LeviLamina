@@ -23,7 +23,6 @@ public:
     SweetBerryBushBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SweetBerryBushBlock();
     /*4*/ virtual bool hasTag(class BlockSource &, class BlockPos const &, class Block const &, std::string const &) const;
@@ -87,14 +86,12 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI SweetBerryBushBlock(std::string const &, int);
+    MCAPI static class Vec3 const SLOWDOWN_MULTIPLIER;
+
 
 //private:
     MCAPI bool _growBush(class BlockSource &, class BlockPos const &) const;
     MCAPI bool _pickBerries(class BlockSource &, class BlockPos const &, class Block const &) const;
     MCAPI void _popBerries(class BlockSource &, class BlockPos const &, int const &, std::vector<class Item const *> *) const;
-
-private:
-    MCAPI static class Vec3 const SLOWDOWN_MULTIPLIER;
-
 
 };

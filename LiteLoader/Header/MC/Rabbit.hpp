@@ -24,7 +24,6 @@ public:
     Rabbit() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~Rabbit();
     /*40*/ virtual void __unk_vfn_40();
@@ -60,6 +59,7 @@ public:
 public:
 #endif
     MCAPI Rabbit(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

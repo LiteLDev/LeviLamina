@@ -24,7 +24,6 @@ public:
     MinecartCommandBlock() = delete;
 #endif
 
-
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~MinecartCommandBlock();
@@ -60,6 +59,7 @@ public:
 public:
 #endif
     MCAPI MinecartCommandBlock(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
 
 
 };

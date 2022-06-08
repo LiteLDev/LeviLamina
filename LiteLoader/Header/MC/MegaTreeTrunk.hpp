@@ -23,7 +23,6 @@ public:
     MegaTreeTrunk() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MegaTreeTrunk();
     /*1*/ virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &, struct TreeHelper::TreeParams const &, class ITreeCanopy const *) const;
@@ -31,10 +30,8 @@ public:
 public:
 #endif
 
+
 //private:
     MCAPI bool _prepareSpawn(class IBlockWorldGenAPI &, class BlockPos const &, int, struct TreeHelper::TreeParams const &) const;
-
-private:
-
 
 };

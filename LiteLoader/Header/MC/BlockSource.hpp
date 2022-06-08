@@ -29,7 +29,6 @@ public:
     BlockSource() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BlockSource();
     /*1*/ virtual class Block const & getBlock(int, int, int) const;
@@ -208,10 +207,5 @@ public:
     MCAPI float _getLiquidHeight(class BlockPos const &, enum MaterialType, bool);
     MCAPI struct Brightness _getRawBrightness(class BlockPos const &, struct Brightness, bool, bool) const;
     MCAPI void _removeFromTickingQueue(class BlockPos const &, class Block const &, enum TickingQueueType);
-
-protected:
-
-private:
-
 
 };

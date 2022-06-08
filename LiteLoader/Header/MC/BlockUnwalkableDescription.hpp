@@ -23,7 +23,6 @@ public:
     BlockUnwalkableDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BlockUnwalkableDescription();
     /*1*/ virtual std::string const & getName() const;
@@ -35,11 +34,8 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKUNWALKABLEDESCRIPTION
 public:
 #endif
-
-//private:
-
-private:
     MCAPI static std::string const NameID;
+
 
 
 };

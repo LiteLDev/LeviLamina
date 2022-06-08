@@ -23,7 +23,6 @@ public:
     CoralCrustFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CoralCrustFeature();
     /*2*/ virtual void __unk_vfn_2();
@@ -32,14 +31,12 @@ public:
 public:
 #endif
 
+
 //private:
     MCAPI class BlockPos _getCropOffsetFromRot(int, int) const;
     MCAPI class BlockPos _getOffsetFromRot(int, int) const;
     MCAPI void _placeCoral(class BlockSource &, class BlockPos const &, class Random &, std::vector<class BlockPos> &, std::vector<struct std::pair<class BlockPos, unsigned char>> &, int) const;
     MCAPI void _placeCoralBase(class BlockSource &, class BlockPos const &, class Random &, class LegacyStructureTemplate &, class LegacyStructureSettings &) const;
     MCAPI void _placeSideDecorations(class BlockSource &, class BlockPos const &, class Random &, unsigned char) const;
-
-private:
-
 
 };

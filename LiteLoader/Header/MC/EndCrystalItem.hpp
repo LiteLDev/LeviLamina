@@ -24,7 +24,6 @@ public:
     EndCrystalItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EndCrystalItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -47,6 +46,7 @@ public:
 public:
 #endif
     MCAPI EndCrystalItem(std::string const &, int);
+
 
 
 };

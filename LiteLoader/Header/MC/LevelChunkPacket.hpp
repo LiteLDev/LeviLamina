@@ -22,7 +22,6 @@ public:
     LevelChunkPacket(class LevelChunkPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LevelChunkPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -35,6 +34,7 @@ public:
     MCAPI LevelChunkPacket(class ChunkPos const &, bool);
     MCAPI LevelChunkPacket();
     MCAPI void pushSubChunkMetadata(unsigned __int64);
+
 
 
 };

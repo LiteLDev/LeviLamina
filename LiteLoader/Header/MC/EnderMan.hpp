@@ -24,7 +24,6 @@ public:
     EnderMan() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~EnderMan();
     /*40*/ virtual void __unk_vfn_40();
@@ -67,15 +66,13 @@ public:
     MCAPI EnderMan(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI class Block const & getCarryingBlock();
     MCAPI void setCarryingBlock(class Block const &);
-    MCAPI static bool mMayTakeIsSetup;
-    MCAPI static void shutdown();
-
-//private:
-
-private:
     MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_ATTACKING;
     MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACKING_UUID;
     MCAPI static class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> mMayTake;
+    MCAPI static void shutdown();
 
+
+//private:
+    MCAPI static bool mMayTakeIsSetup;
 
 };

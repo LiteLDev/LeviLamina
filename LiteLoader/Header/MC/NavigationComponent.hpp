@@ -21,7 +21,6 @@ public:
     NavigationComponent(class NavigationComponent const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONCOMPONENT
 public:
@@ -91,6 +90,7 @@ public:
     MCAPI void update(class Mob &);
     MCAPI void updateLastStuckCheck(class Mob const &);
     MCAPI ~NavigationComponent();
+
 
 
 };

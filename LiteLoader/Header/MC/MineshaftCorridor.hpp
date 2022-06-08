@@ -23,7 +23,6 @@ public:
     MineshaftCorridor() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MineshaftCorridor();
     /*3*/ virtual enum StructurePieceType getType() const;
@@ -36,11 +35,9 @@ public:
     MCAPI void _placeCobWeb(class BlockSource &, class BoundingBox const &, class Random &, float, int, int, int);
     MCAPI void _placeSupport(class BlockSource &, class BoundingBox const &, int, int, int, int, int, class Random &);
 
+
 //private:
     MCAPI void _fillPillarDownOrChainUp(class BlockSource &, int, int, int, class BoundingBox const &);
     MCAPI void _placeDoubleLowerOrUpperSupport(class BlockSource &, class BoundingBox const &, int, int, int);
-
-private:
-
 
 };

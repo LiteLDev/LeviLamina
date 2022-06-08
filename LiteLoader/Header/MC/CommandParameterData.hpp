@@ -79,7 +79,6 @@ public:
     CommandParameterData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDPARAMETERDATA
 public:
@@ -88,6 +87,7 @@ public:
     MCAPI CommandParameterData(class typeid_t<class CommandRegistry>, bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const, char const *, enum CommandParameterDataType, char const *, int, bool, int);
     MCAPI class CommandParameterData & addOptions(enum CommandParameterOption);
     MCAPI ~CommandParameterData();
+
 
 
 };

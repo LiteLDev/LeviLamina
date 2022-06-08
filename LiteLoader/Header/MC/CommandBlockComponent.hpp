@@ -21,7 +21,6 @@ public:
     CommandBlockComponent(class CommandBlockComponent const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDBLOCKCOMPONENT
 public:
@@ -40,6 +39,7 @@ public:
     MCAPI void resetCurrentTick();
     MCAPI void setLastOutput(class Actor &, std::string const &);
     MCAPI void setTicking(bool);
+
 
 
 };

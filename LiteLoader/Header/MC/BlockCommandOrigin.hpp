@@ -24,7 +24,6 @@ public:
     BlockCommandOrigin() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BlockCommandOrigin();
     /*1*/ virtual std::string const & getRequestId() const;
@@ -53,8 +52,6 @@ public:
 
 //protected:
     MCAPI std::string _getName(class BlockSource &) const;
-
-protected:
 
 
 };

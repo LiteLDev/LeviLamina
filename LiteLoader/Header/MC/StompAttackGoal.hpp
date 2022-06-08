@@ -23,7 +23,6 @@ public:
     StompAttackGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StompAttackGoal();
     /*1*/ virtual bool canUse();
@@ -39,6 +38,7 @@ public:
 public:
 #endif
     MCAPI StompAttackGoal(class Mob &);
+
 
 
 };

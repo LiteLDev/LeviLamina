@@ -26,7 +26,6 @@ public:
     TeleportCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TeleportCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -37,13 +36,11 @@ public:
     MCAPI static class TeleportTarget computeTarget(class Actor &, class Vec3, class Vec3 *, class AutomaticID<class Dimension, int>, class std::optional<class TeleportRotationData> const &, int);
     MCAPI static void setup(class CommandRegistry &);
 
+
 //private:
     MCAPI enum TeleportCommand::FacingResult getFacingDirection(class CommandOrigin const &, class CommandOutput &, class Vec3 &, class Actor *) const;
     MCAPI static enum TeleportCommand::TeleportAnalysis actorToLocationTeleportAnalysis(class CommandOrigin const &, class CommandArea const &, class CommandArea &, class Actor const &, class Vec3);
     MCAPI static std::unique_ptr<class CommandArea> getCommandAreaForTargets(class CommandOrigin const &, class CommandSelectorResults<class Actor> const &, class Vec3, int, bool);
     MCAPI static class AABB getSafetyAABB(class Actor const &, class Vec3);
-
-private:
-
 
 };

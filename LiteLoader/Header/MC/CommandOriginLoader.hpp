@@ -22,7 +22,6 @@ public:
     CommandOriginLoader() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CommandOriginLoader();
     /*1*/ virtual std::unique_ptr<class CommandOrigin> load(class CompoundTag const &);
@@ -31,6 +30,7 @@ public:
 #endif
     MCAPI CommandOriginLoader(class ServerLevel &);
     MCAPI static std::unique_ptr<class CommandOrigin> load(class CompoundTag const &, class ServerLevel &);
+
 
 
 };

@@ -22,7 +22,6 @@ public:
     AvailableActorIdentifiersPacket(class AvailableActorIdentifiersPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AvailableActorIdentifiersPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -35,6 +34,7 @@ public:
 #endif
     MCAPI AvailableActorIdentifiersPacket(std::vector<struct ActorInfo> const &);
     MCAPI AvailableActorIdentifiersPacket();
+
 
 
 };

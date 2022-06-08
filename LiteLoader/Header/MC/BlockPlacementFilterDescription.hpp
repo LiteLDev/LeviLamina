@@ -23,7 +23,6 @@ public:
     BlockPlacementFilterDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BlockPlacementFilterDescription();
     /*1*/ virtual std::string const & getName() const;
@@ -35,11 +34,8 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPLACEMENTFILTERDESCRIPTION
 public:
 #endif
-
-//private:
-
-private:
     MCAPI static std::string const NameID;
+
 
 
 };

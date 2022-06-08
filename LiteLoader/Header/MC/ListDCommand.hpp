@@ -23,7 +23,6 @@ public:
     ListDCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ListDCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
+
 
 
 };

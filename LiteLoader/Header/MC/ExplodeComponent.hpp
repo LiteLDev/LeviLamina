@@ -21,7 +21,6 @@ public:
     ExplodeComponent(class ExplodeComponent const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPLODECOMPONENT
 public:
@@ -38,6 +37,7 @@ public:
     MCAPI void setAllowUnderwater(bool);
     MCAPI void setFuseLength(int);
     MCAPI void setTntExpodeGameRuleRequired();
+
 
 
 };

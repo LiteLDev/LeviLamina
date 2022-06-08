@@ -23,7 +23,6 @@ public:
     TransferPacket(class TransferPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TransferPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -35,6 +34,7 @@ public:
 #endif
     MCAPI TransferPacket(std::string const &, int);
     MCAPI TransferPacket();
+
 
 
 };

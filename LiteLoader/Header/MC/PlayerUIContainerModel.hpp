@@ -23,7 +23,6 @@ public:
     PlayerUIContainerModel() = delete;
 #endif
 
-
 public:
     /*1*/ virtual ~PlayerUIContainerModel();
     /*6*/ virtual void __unk_vfn_6();
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI PlayerUIContainerModel(enum ContainerEnumName, class Player &);
+
 
 
 };

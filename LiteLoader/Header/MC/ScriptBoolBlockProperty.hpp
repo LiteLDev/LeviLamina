@@ -22,7 +22,6 @@ public:
     ScriptBoolBlockProperty() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBOOLBLOCKPROPERTY
 public:
@@ -33,6 +32,7 @@ public:
     MCAPI class ScriptBoolBlockProperty & operator=(class ScriptBoolBlockProperty &&);
     MCAPI class Scripting::Result<void> setState(bool);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBoolBlockProperty> bind(struct Scripting::Version);
+
 
 
 };

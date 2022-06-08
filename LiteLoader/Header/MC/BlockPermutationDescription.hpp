@@ -20,12 +20,12 @@ public:
     BlockPermutationDescription() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPERMUTATIONDESCRIPTION
 public:
 #endif
     MCAPI ~BlockPermutationDescription();
+
 
 
 };

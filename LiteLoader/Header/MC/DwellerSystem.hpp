@@ -22,7 +22,6 @@ public:
     DwellerSystem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DwellerSystem();
     /*1*/ virtual void registerEvents(class entt::dispatcher &);
@@ -30,6 +29,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DWELLERSYSTEM
 public:
 #endif
+
 
 
 };

@@ -22,13 +22,13 @@ public:
     LoomContainerScreenValidator(class LoomContainerScreenValidator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LoomContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOMCONTAINERSCREENVALIDATOR
 public:
 #endif
     MCAPI LoomContainerScreenValidator();
+
 
 
 };

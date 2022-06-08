@@ -23,7 +23,6 @@ public:
     RedstoneTorchBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RedstoneTorchBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -76,10 +75,8 @@ public:
 #endif
     MCAPI RedstoneTorchBlock(std::string const &, int, bool);
 
+
 //private:
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &) const;
-
-private:
-
 
 };

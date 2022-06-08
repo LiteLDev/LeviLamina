@@ -26,7 +26,6 @@ public:
     HorseArmorItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~HorseArmorItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -55,11 +54,8 @@ public:
 #endif
     MCAPI HorseArmorItem(std::string const &, int, int, enum HorseArmorItem::Tier);
     MCAPI enum HorseArmorItem::Tier getTier() const;
-
-//private:
-
-private:
     MCAPI static int const mHealthPerTier[];
+
 
 
 };

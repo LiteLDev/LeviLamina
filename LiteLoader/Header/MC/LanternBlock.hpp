@@ -23,7 +23,6 @@ public:
     LanternBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LanternBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -78,10 +77,8 @@ public:
 #endif
     MCAPI LanternBlock(std::string const &, int);
 
+
 //private:
     MCAPI bool _couldHang(class BlockSource &, class BlockPos const &) const;
-
-private:
-
 
 };

@@ -20,12 +20,12 @@ public:
     ScriptDefinitionModifier() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEFINITIONMODIFIER
 public:
 #endif
     MCAPI static class Scripting::ClassBindingBuilder<struct DefinitionModifier> bind(struct Scripting::Version);
+
 
 
 };

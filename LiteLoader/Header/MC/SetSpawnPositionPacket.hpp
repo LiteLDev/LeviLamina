@@ -22,7 +22,6 @@ public:
     SetSpawnPositionPacket(class SetSpawnPositionPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SetSpawnPositionPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -35,6 +34,7 @@ public:
     MCAPI SetSpawnPositionPacket(class AutomaticID<class Dimension, int>, class BlockPos const &, class BlockPos const &);
     MCAPI SetSpawnPositionPacket(enum SpawnPositionType, class AutomaticID<class Dimension, int>, class BlockPos const &);
     MCAPI SetSpawnPositionPacket();
+
 
 
 };

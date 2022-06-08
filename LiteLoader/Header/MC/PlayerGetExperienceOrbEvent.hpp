@@ -20,12 +20,12 @@ public:
     PlayerGetExperienceOrbEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERGETEXPERIENCEORBEVENT
 public:
 #endif
     MCAPI ~PlayerGetExperienceOrbEvent();
+
 
 
 };

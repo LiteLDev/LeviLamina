@@ -22,7 +22,6 @@ public:
     LevelSoundEventPacket(class LevelSoundEventPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LevelSoundEventPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI LevelSoundEventPacket(enum LevelSoundEvent, class Vec3 const &, int, std::string const &, bool, bool);
     MCAPI LevelSoundEventPacket();
+
 
 
 };

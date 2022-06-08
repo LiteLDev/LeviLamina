@@ -22,7 +22,6 @@ public:
     PhotoTransferPacket(class PhotoTransferPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PhotoTransferPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -33,6 +32,7 @@ public:
 public:
 #endif
     MCAPI PhotoTransferPacket();
+
 
 
 };

@@ -28,7 +28,6 @@ public:
     ActorFilterGroup() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorFilterGroup();
     /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType) const;
@@ -45,8 +44,6 @@ public:
     MCAPI bool _addLegacyFilter(std::string const &, struct ActorFilterGroup::LegacyMapping const &, class FilterInput const &);
     MCAPI bool _processLegacyArray(std::string const &, class Json::Value const &, struct ActorFilterGroup::LegacyMapping const &);
     MCAPI bool _processLegacyMember(std::string const &, class Json::Value const &, struct ActorFilterGroup::LegacyMapping const &);
-
-protected:
 
 
 };

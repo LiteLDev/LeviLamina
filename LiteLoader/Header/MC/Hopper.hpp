@@ -22,7 +22,6 @@ public:
     Hopper() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPPER
 public:
@@ -49,8 +48,6 @@ public:
     MCAPI bool _tryPullInItemsFromAboveContainer(class BlockSource &, class Container &, class Vec3 const &);
     MCAPI bool _tryPushToComposter(class BlockSource &, class Container &, class BlockPos, int);
     MCAPI bool _tryTakeInItemFromSlot(class BlockSource &, class Container &, class Container &, int, int);
-
-protected:
 
 
 };

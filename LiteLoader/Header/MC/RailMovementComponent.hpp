@@ -21,7 +21,6 @@ public:
     RailMovementComponent(class RailMovementComponent const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAILMOVEMENTCOMPONENT
 public:
@@ -30,6 +29,7 @@ public:
     MCAPI bool canSnapOnRail(class Actor const &, class BlockPos &);
     MCAPI void comeOffTrack(class Actor &);
     MCAPI void moveAlongTrack(class Actor &, class Block const &, class BlockPos const &);
+
 
 
 };

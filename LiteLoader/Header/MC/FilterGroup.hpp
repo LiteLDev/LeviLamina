@@ -25,7 +25,6 @@ public:
     FilterGroup() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FilterGroup();
     /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType) const = 0;
@@ -50,8 +49,6 @@ public:
     MCAPI bool _parseMember(std::string const &, class Json::Value const &);
     MCAPI bool _parseObject(std::string const &, class Json::Value const &);
     MCAPI bool _parseTest(class Json::Value const &);
-
-protected:
 
 
 };

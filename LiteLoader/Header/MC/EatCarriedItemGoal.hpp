@@ -22,7 +22,6 @@ public:
     EatCarriedItemGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EatCarriedItemGoal();
     /*1*/ virtual bool canUse();
@@ -36,8 +35,10 @@ public:
 public:
 #endif
     MCAPI EatCarriedItemGoal(class Mob &, int);
+
+
+//private:
     MCAPI static int const CHEW_CHANCE;
     MCAPI static int const EATING_TIME;
-
 
 };

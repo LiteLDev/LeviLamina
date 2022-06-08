@@ -22,7 +22,6 @@ public:
     AsynchronousIPResolver() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ASYNCHRONOUSIPRESOLVER
 public:
@@ -33,10 +32,8 @@ public:
     MCAPI bool isDone() const;
     MCAPI ~AsynchronousIPResolver();
 
+
 //private:
     MCAPI void _resolve();
-
-private:
-
 
 };

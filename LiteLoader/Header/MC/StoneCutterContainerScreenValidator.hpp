@@ -21,7 +21,6 @@ public:
     StoneCutterContainerScreenValidator(class StoneCutterContainerScreenValidator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StoneCutterContainerScreenValidator();
     /*1*/ virtual void __unk_vfn_1();
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI StoneCutterContainerScreenValidator();
+
 
 
 };

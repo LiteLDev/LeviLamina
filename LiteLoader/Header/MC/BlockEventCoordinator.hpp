@@ -22,7 +22,6 @@ public:
     BlockEventCoordinator() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTCOORDINATOR
 public:
@@ -40,6 +39,7 @@ public:
     MCAPI enum CoordinatorResult sendEvent(class EventRef<struct MutableBlockGameplayEvent<enum CoordinatorResult>>);
     MCAPI void sendEvent(class EventRef<struct BlockGameplayEvent<void>> const &);
     MCAPI void sendUnknownBlockReceived(class Level &, struct NewBlockID const &, unsigned short);
+
 
 
 };

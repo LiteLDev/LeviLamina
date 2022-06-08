@@ -21,7 +21,6 @@ public:
     MangrovePropaguleHanging() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MangrovePropaguleHanging();
     /*19*/ virtual void __unk_vfn_19();
@@ -65,7 +64,9 @@ public:
 public:
 #endif
     MCAPI MangrovePropaguleHanging(std::string const &, int, class BlockLegacy const &);
-    MCAPI static int const MAX_GROWTH;
 
+
+//private:
+    MCAPI static int const MAX_GROWTH;
 
 };

@@ -22,7 +22,6 @@ public:
     FloatGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FloatGoal();
     /*1*/ virtual bool canUse();
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI FloatGoal(class Mob &);
+
 
 
 };

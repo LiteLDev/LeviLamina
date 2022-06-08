@@ -22,7 +22,6 @@ public:
     ActorOwnerComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOROWNERCOMPONENT
 public:
@@ -33,6 +32,7 @@ public:
     MCAPI class Actor & getActor() const;
     MCAPI class ActorOwnerComponent & operator=(class ActorOwnerComponent &&);
     MCAPI ~ActorOwnerComponent();
+
 
 
 };

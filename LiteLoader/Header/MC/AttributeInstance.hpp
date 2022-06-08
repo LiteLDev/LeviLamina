@@ -20,7 +20,6 @@ public:
     class AttributeInstance& operator=(class AttributeInstance const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AttributeInstance();
     /*1*/ virtual void tick();
@@ -68,13 +67,11 @@ public:
     MCAPI void setMaxValue(float);
     MCAPI void setRange(float, float, float);
 
+
 //private:
     MCAPI AttributeInstance(class BaseAttributeMap *, class Attribute const *);
     MCAPI float _calculateValue(class AttributeBuff const &);
     MCAPI float _calculateValue();
     MCAPI float _sanitizeValue(float);
-
-private:
-
 
 };

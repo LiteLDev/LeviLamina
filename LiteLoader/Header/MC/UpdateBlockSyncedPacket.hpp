@@ -22,7 +22,6 @@ public:
     UpdateBlockSyncedPacket(class UpdateBlockSyncedPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~UpdateBlockSyncedPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -34,6 +33,7 @@ public:
 #endif
     MCAPI UpdateBlockSyncedPacket(class BlockPos const &, unsigned int, unsigned int, unsigned char, struct ActorBlockSyncMessage const &);
     MCAPI UpdateBlockSyncedPacket();
+
 
 
 };

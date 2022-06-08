@@ -23,7 +23,6 @@ public:
     ActorPropertiesDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorPropertiesDescription();
     /*1*/ virtual char const * getJsonName() const;
@@ -31,6 +30,7 @@ public:
 public:
 #endif
     MCAPI void parse(class Json::Value &);
+
 
 
 };

@@ -21,7 +21,6 @@ public:
     Stopwatch(class Stopwatch const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~Stopwatch();
     /*1*/ virtual double stop();
@@ -33,6 +32,7 @@ public:
     MCAPI Stopwatch();
     MCAPI void reset();
     MCAPI void start();
+
 
 
 };

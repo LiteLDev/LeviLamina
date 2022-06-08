@@ -23,7 +23,6 @@ public:
     BiomeFilterGroup() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BiomeFilterGroup();
     /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType) const;
@@ -32,6 +31,7 @@ public:
 #endif
     MCAPI BiomeFilterGroup(class BiomeFilterGroup const &);
     MCAPI void finalizeParsedValue(class IWorldRegistriesProvider &);
+
 
 
 };

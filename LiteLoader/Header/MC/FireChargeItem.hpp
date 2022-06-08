@@ -24,7 +24,6 @@ public:
     FireChargeItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FireChargeItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -48,11 +47,8 @@ public:
 public:
 #endif
     MCAPI FireChargeItem(std::string const &, int);
-
-//private:
-
-private:
     MCAPI static int const LEVEL_SOUND_EVENT_VOLUME;
+
 
 
 };

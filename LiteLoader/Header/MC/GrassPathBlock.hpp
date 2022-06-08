@@ -23,7 +23,6 @@ public:
     GrassPathBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GrassPathBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -72,6 +71,7 @@ public:
 public:
 #endif
     MCAPI GrassPathBlock(std::string const &, int);
+
 
 
 };

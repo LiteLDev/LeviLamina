@@ -22,13 +22,13 @@ public:
     MockUnknownBlockTypeRegistry() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MockUnknownBlockTypeRegistry();
     /*1*/ virtual class Block const & getUnknownBlock(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOCKUNKNOWNBLOCKTYPEREGISTRY
 public:
 #endif
+
 
 
 };

@@ -23,7 +23,6 @@ public:
     WoodlandMansionFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WoodlandMansionFeature();
     /*2*/ virtual bool shouldPostProcessMobs() const;
@@ -34,6 +33,7 @@ public:
 public:
 #endif
     MCAPI WoodlandMansionFeature(unsigned int);
+
 
 
 };

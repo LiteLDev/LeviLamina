@@ -22,7 +22,6 @@ public:
     ContainerModel() = delete;
 #endif
 
-
 public:
     /*0*/ virtual void containerContentChanged(int);
     /*1*/ virtual ~ContainerModel();
@@ -77,10 +76,5 @@ public:
 
 //private:
     MCAPI void _onClientUIItemNetworkChanged(int, class ItemStack const &, class ItemStack const &);
-
-protected:
-
-private:
-
 
 };

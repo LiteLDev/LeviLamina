@@ -23,7 +23,6 @@ public:
     BambooSapling() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BambooSapling();
     /*8*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
@@ -78,10 +77,8 @@ public:
 public:
 #endif
 
+
 //private:
     MCAPI bool _grow(class BlockSource &, class BlockPos const &) const;
-
-private:
-
 
 };

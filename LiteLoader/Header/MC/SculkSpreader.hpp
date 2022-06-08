@@ -19,7 +19,6 @@ public:
     SculkSpreader(class SculkSpreader const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSPREADER
 public:
@@ -43,6 +42,7 @@ public:
     MCAPI void save(class CompoundTag &) const;
     MCAPI void updateCursors(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class Random &);
     MCAPI ~SculkSpreader();
+
 
 
 };

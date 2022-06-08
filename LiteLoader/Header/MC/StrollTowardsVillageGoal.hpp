@@ -23,7 +23,6 @@ public:
     StrollTowardsVillageGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StrollTowardsVillageGoal();
     /*1*/ virtual bool canUse();
@@ -36,6 +35,7 @@ public:
 public:
 #endif
     MCAPI StrollTowardsVillageGoal(class Mob &, float, float, float, int, float);
+
 
 
 };

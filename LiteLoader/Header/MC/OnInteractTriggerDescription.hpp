@@ -23,7 +23,6 @@ public:
     OnInteractTriggerDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~OnInteractTriggerDescription();
     /*1*/ virtual std::string const & getName() const;
@@ -33,11 +32,8 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONINTERACTTRIGGERDESCRIPTION
 public:
 #endif
-
-//private:
-
-private:
     MCAPI static std::string const NameID;
+
 
 
 };

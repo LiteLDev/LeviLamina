@@ -24,7 +24,6 @@ public:
     Arrow() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Arrow();
@@ -70,6 +69,7 @@ public:
     MCAPI void setEnchantInfinity(int);
     MCAPI void setEnchantPower(int);
     MCAPI void setEnchantPunch(int);
+
 
 
 };

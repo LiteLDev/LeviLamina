@@ -22,7 +22,6 @@ public:
     ActorClassTree() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORCLASSTREE
 public:
@@ -35,6 +34,7 @@ public:
     MCAPI static bool isMobLegacy(enum ActorType);
     MCAPI static bool isOfType(enum ActorType, enum ActorType);
     MCAPI static bool isTypeInstanceOf(enum ActorType, enum ActorType);
+
 
 
 };

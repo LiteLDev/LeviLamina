@@ -27,6 +27,5 @@ public:
 protected:
 
 private:
-    MCAPI static struct FogVolumetricCoefficientSetting const ZERO_SETTING;
 
 };
