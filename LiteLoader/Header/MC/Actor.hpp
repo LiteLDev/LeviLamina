@@ -44,7 +44,7 @@ public:
     LIAPI BlockInstance getBlockStandingOn() const;
 
 	LIAPI bool isSimulatedPlayer() const;
-	LIAPI bool isPlayer() const;
+    LIAPI bool isPlayer(bool allowSimulatedPlayer = true) const;
     LIAPI bool isItemActor() const;
     LIAPI bool isOnGround() const;
     LIAPI bool setOnFire(int time, bool isEffect);
