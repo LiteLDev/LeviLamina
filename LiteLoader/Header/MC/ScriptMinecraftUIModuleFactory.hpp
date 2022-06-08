@@ -2,15 +2,13 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Json.hpp"
 #include "Bedrock.hpp"
-#include "TextObjectText.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
-class ScriptMinecraftUIModuleFactory : public TextObjectText {
+class ScriptMinecraftUIModuleFactory {
 
 #define AFTER_EXTRA
 
@@ -25,8 +23,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptMinecraftUIModuleFactory();
-    /*2*/ virtual class Json::Value asJsonValue() const;
-    /*3*/ virtual class Json::Value resolve(struct ResolveData const &) const;
     MCAPI ScriptMinecraftUIModuleFactory(class gsl::not_null<class Bedrock::NonOwnerPointer<class ScriptFormPromiseTracker>>);
     MCAPI static std::string getModuleUUIDAsString();
 

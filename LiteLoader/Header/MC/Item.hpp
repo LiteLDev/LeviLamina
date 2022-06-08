@@ -34,16 +34,16 @@ public:
     /*0*/ virtual ~Item();
     /*1*/ virtual bool initServer(class Json::Value &, class SemVersion const &);
     /*2*/ virtual void tearDown();
-    /*3*/ virtual int getMaxUseDuration(class ItemInstance const *) const;
-    /*4*/ virtual int getMaxUseDuration(class ItemStack const *) const;
-    /*5*/ virtual bool isMusicDisk() const;
+    /*3*/ virtual int getMaxUseDuration(class ItemStack const *) const;
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void executeEvent(class ItemStackBase &, std::string const &, class RenderParams &) const;
-    /*7*/ virtual bool isComponentBased() const;
+    /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual bool isArmor() const;
     /*9*/ virtual bool isBlockPlanterItem() const;
-    /*10*/ virtual bool isMultiColorTinted(class ItemStack const &) const;
+    /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual bool isCamera() const;
-    /*12*/ virtual bool isCandle() const;
+    /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual bool isDamageable() const;
     /*14*/ virtual bool isDyeable() const;
     /*15*/ virtual bool isDye() const;
@@ -55,7 +55,7 @@ public:
     /*21*/ virtual class ItemComponent * getComponent(class HashedString const &) const;
     /*22*/ virtual class ICameraItemComponent * getCamera() const;
     /*23*/ virtual class IFoodItemComponent * getFood() const;
-    /*24*/ virtual class FuelItemComponent const * getFuel() const;
+    /*24*/ virtual class FuelItemComponent * getFuel() const;
     /*25*/ virtual class Item & setMaxStackSize(unsigned char);
     /*26*/ virtual class Item & setStackedByData(bool);
     /*27*/ virtual class Item & setMaxDamage(int);
@@ -78,9 +78,9 @@ public:
     /*44*/ virtual int getAttackDamage() const;
     /*45*/ virtual bool isHandEquipped() const;
     /*46*/ virtual bool isGlint(class ItemStackBase const &) const;
-    /*47*/ virtual bool isPattern() const;
+    /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual int getPatternIndex() const;
-    /*49*/ virtual bool showsDurabilityInCreative() const;
+    /*49*/ virtual void __unk_vfn_49();
     /*50*/ virtual bool isWearableThroughLootTable(class CompoundTag const *) const;
     /*51*/ virtual bool canDestroyInCreative() const;
     /*52*/ virtual bool isDestructive(int) const;
@@ -93,12 +93,12 @@ public:
     /*59*/ virtual int getEnchantValue() const;
     /*60*/ virtual int getArmorValue() const;
     /*61*/ virtual int getToughnessValue() const;
-    /*62*/ virtual bool isComplex() const;
+    /*62*/ virtual void __unk_vfn_62();
     /*63*/ virtual bool isValidAuxValue(int) const;
     /*64*/ virtual int getDamageChance(int) const;
     /*65*/ virtual float getViewDamping() const;
-    /*66*/ virtual bool uniqueAuxValues() const;
-    /*67*/ virtual bool isActorPlacerItem() const;
+    /*66*/ virtual void __unk_vfn_66();
+    /*67*/ virtual void __unk_vfn_67();
     /*68*/ virtual void __unk_vfn_68();
     /*69*/ virtual class mce::Color getColor(class CompoundTag const *, class ItemDescriptor const &) const;
     /*70*/ virtual bool hasCustomColor(class CompoundTag const *) const;
@@ -151,8 +151,8 @@ public:
     /*117*/ virtual class Item & setIcon(struct TextureUVCoordinateSet const &);
     /*118*/ virtual class Item & setIconAtlas(std::string const &, int);
     /*119*/ virtual bool canBeCharged() const;
-    /*120*/ virtual void playSoundIncrementally(class ItemInstance const &, class Mob &) const;
-    /*121*/ virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
+    /*120*/ virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
+    /*121*/ virtual void __unk_vfn_121();
     /*122*/ virtual float getFurnaceBurnIntervalMultipler(class ItemStackBase const &) const;
     /*123*/ virtual float getFurnaceXPmultiplier(class ItemStackBase const &) const;
     /*124*/ virtual std::string getAuxValuesDescription() const;
@@ -160,15 +160,85 @@ public:
     /*126*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /*
+    inline bool isComponentBased() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isComponentBased@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isMultiColorTinted(class ItemStack const & a0) const{
+        bool (Item::*rv)(class ItemStack const &) const;
+        *((void**)&rv) = dlsym("?isMultiColorTinted@Item@@UEBA_NAEBVItemStack@@@Z");
+        return (this->*rv)(std::forward<class ItemStack const &>(a0));
+    }
     inline bool isBucket() const{
         bool (Item::*rv)() const;
         *((void**)&rv) = dlsym("?isBucket@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isActorPlacerItem() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isActorPlacerItem@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool hasCustomColor(class ItemStackBase const & a0) const{
         bool (Item::*rv)(class ItemStackBase const &) const;
         *((void**)&rv) = dlsym("?hasCustomColor@Item@@UEBA_NAEBVItemStackBase@@@Z");
         return (this->*rv)(std::forward<class ItemStackBase const &>(a0));
+    }
+    inline bool uniqueAuxValues() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?uniqueAuxValues@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool showsDurabilityInCreative() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?showsDurabilityInCreative@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isComplex() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isComplex@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isMusicDisk() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isMusicDisk@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isCandle() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isCandle@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isPattern() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isPattern@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline class FuelItemComponent const * getFuel() const{
+        class FuelItemComponent const * (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?getFuel@Item@@UEBAPEBVFuelItemComponent@@XZ");
+        return (this->*rv)();
+    }
+    inline bool _calculatePlacePos(class ItemStackBase & a0, class Actor & a1, unsigned char & a2, class BlockPos & a3) const{
+        bool (Item::*rv)(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
+        *((void**)&rv) = dlsym("?_calculatePlacePos@Item@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class ItemStackBase &>(a0), std::forward<class Actor &>(a1), std::forward<unsigned char &>(a2), std::forward<class BlockPos &>(a3));
+    }
+    inline void playSoundIncrementally(class ItemInstance const & a0, class Mob & a1) const{
+        void (Item::*rv)(class ItemInstance const &, class Mob &) const;
+        *((void**)&rv) = dlsym("?playSoundIncrementally@Item@@UEBAXAEBVItemInstance@@AEAVMob@@@Z");
+        return (this->*rv)(std::forward<class ItemInstance const &>(a0), std::forward<class Mob &>(a1));
+    }
+    inline int getMaxUseDuration(class ItemInstance const * a0) const{
+        int (Item::*rv)(class ItemInstance const *) const;
+        *((void**)&rv) = dlsym("?getMaxUseDuration@Item@@UEBAHPEBVItemInstance@@@Z");
+        return (this->*rv)(std::forward<class ItemInstance const *>(a0));
+    }
+    inline  ~Item(){
+         (Item::*rv)();
+        *((void**)&rv) = dlsym("??1Item@@UEAA@XZ");
+        return (this->*rv)();
     }
     inline class mce::Color getBaseColor(class ItemStack const & a0) const{
         class mce::Color (Item::*rv)(class ItemStack const &) const;

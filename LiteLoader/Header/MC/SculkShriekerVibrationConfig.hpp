@@ -22,8 +22,16 @@ public:
 
 public:
     /*0*/ virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
-    /*1*/ virtual bool isValidVibration(class GameEvent const &, class Actor const *);
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual bool shouldListen(class BlockSource &, class BlockPos, class GameEvent const &, class Actor const *);
+    /*3*/ virtual ~SculkShriekerVibrationConfig();
+    /*
+    inline bool isValidVibration(class GameEvent const & a0, class Actor const * a1){
+        bool (SculkShriekerVibrationConfig::*rv)(class GameEvent const &, class Actor const *);
+        *((void**)&rv) = dlsym("?isValidVibration@SculkShriekerVibrationConfig@@UEAA_NAEBVGameEvent@@PEBVActor@@@Z");
+        return (this->*rv)(std::forward<class GameEvent const &>(a0), std::forward<class Actor const *>(a1));
+    }
+    */
 
 protected:
 

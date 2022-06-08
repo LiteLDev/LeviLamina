@@ -22,6 +22,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~StructureTemplateData();
+    /*
+    inline  ~StructureTemplateData(){
+         (StructureTemplateData::*rv)();
+        *((void**)&rv) = dlsym("??1StructureTemplateData@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI StructureTemplateData();
     MCAPI void addEntityData(std::unique_ptr<class CompoundTag>);
     MCAPI void addPalette(std::string const &, class StructureBlockPalette);

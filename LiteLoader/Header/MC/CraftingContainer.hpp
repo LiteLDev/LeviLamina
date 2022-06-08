@@ -29,7 +29,6 @@ public:
     /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /*5*/ virtual class ItemStack const & getItem(int) const;
     /*9*/ virtual void setItem(int, class ItemStack const &);
-    /*10*/ virtual void setItemWithForceBalance(int, class ItemStack const &, bool);
     /*14*/ virtual int getContainerSize() const;
     /*15*/ virtual int getMaxStackSize() const;
     /*16*/ virtual void startOpen(class Player &);
@@ -37,7 +36,14 @@ public:
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
     /*24*/ virtual void setContainerChanged(int);
-    /*31*/ virtual void initializeContainerContents(class BlockSource &);
+    /*31*/ virtual void __unk_vfn_31();
+    /*
+    inline  ~CraftingContainer(){
+         (CraftingContainer::*rv)();
+        *((void**)&rv) = dlsym("??1CraftingContainer@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI CraftingContainer(int, int);
     MCAPI class ItemStack const & getItem(int, int) const;
 

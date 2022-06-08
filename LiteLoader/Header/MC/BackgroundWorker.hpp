@@ -27,8 +27,20 @@ public:
 
 public:
     /*0*/ virtual ~BackgroundWorker();
-    /*1*/ virtual bool isAsync() const;
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual bool canTaskRunAgain() const;
+    /*
+    inline bool isAsync() const{
+        bool (BackgroundWorker::*rv)() const;
+        *((void**)&rv) = dlsym("?isAsync@BackgroundWorker@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline  ~BackgroundWorker(){
+         (BackgroundWorker::*rv)();
+        *((void**)&rv) = dlsym("??1BackgroundWorker@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BackgroundWorker(std::string, bool, class Bedrock::Threading::OSThreadPriority const &, class std::optional<unsigned __int64>, class WorkerPool &, bool);
     MCAPI unsigned __int64 getApproximateTaskCount() const;
     MCAPI class std::thread::id getThreadId() const;

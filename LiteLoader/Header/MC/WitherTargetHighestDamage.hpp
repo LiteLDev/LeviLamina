@@ -27,12 +27,8 @@ public:
     /*0*/ virtual ~WitherTargetHighestDamage();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual bool isTargetGoal() const;
     /*4*/ virtual void start();
-    /*5*/ virtual void stop();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-    /*8*/ virtual void __unk_vfn_8();
-    /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual bool _canAttack(class Mob *, class Actor *, bool, bool, struct MobDescriptor const **);
     MCAPI WitherTargetHighestDamage(class WitherBoss &, std::vector<struct MobDescriptor> const &);
 

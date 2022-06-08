@@ -24,6 +24,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~NetworkEnableDisableListener();
+    /*
+    inline  ~NetworkEnableDisableListener(){
+         (NetworkEnableDisableListener::*rv)();
+        *((void**)&rv) = dlsym("??1NetworkEnableDisableListener@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI NetworkEnableDisableListener(class Bedrock::NonOwnerPointer<class AppPlatform> const &);
     MCAPI void disable();
     MCAPI bool isDisabled() const;

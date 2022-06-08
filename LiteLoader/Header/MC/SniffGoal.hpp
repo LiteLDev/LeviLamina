@@ -27,8 +27,15 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
-    /*6*/ virtual void tick();
+    /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+    /*
+    inline void tick(){
+        void (SniffGoal::*rv)();
+        *((void**)&rv) = dlsym("?tick@SniffGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SniffGoal(class Mob &);
 
 protected:

@@ -24,6 +24,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~EnchantWithLevelsFunction();
     /*
     inline int apply(class ItemInstance & a0, class Random & a1, struct Trade const & a2, class LootTableContext & a3){
         int (EnchantWithLevelsFunction::*rv)(class ItemInstance &, class Random &, struct Trade const &, class LootTableContext &);

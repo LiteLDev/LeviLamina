@@ -31,7 +31,6 @@ public:
     /*8*/ virtual bool postProcess(class ChunkViewSource &);
     /*9*/ virtual void checkAndReplaceChunk(class ChunkViewSource &, class LevelChunk &);
     /*21*/ virtual bool isWithinWorldLimit(class ChunkPos const &) const;
-    /*22*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const * getChunkMap();
     /*24*/ virtual void clearDeletedEntities();
     /*25*/ virtual bool canCreateViews() const;
     MCAPI WorldLimitChunkSource(std::unique_ptr<class ChunkSource>, class BlockPos const &, int, int);

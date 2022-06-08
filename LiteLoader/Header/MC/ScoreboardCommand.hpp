@@ -37,6 +37,13 @@ public:
 public:
     /*0*/ virtual ~ScoreboardCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+    /*
+    inline  ~ScoreboardCommand(){
+         (ScoreboardCommand::*rv)();
+        *((void**)&rv) = dlsym("??1ScoreboardCommand@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static void setup(class CommandRegistry &, struct ScoreboardCommand::InitProxy &&);
 
 protected:

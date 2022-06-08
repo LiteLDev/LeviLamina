@@ -25,6 +25,13 @@ public:
 public:
     /*0*/ virtual ~SurfaceLevelCache();
     /*1*/ virtual class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
+    /*
+    inline  ~SurfaceLevelCache(){
+         (SurfaceLevelCache::*rv)();
+        *((void**)&rv) = dlsym("??1SurfaceLevelCache@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SurfaceLevelCache(class DividedPos2d<4>, class IPreliminarySurfaceProvider const &, unsigned __int64);
 
 protected:

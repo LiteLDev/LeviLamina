@@ -37,19 +37,11 @@ public:
     /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /*13*/ virtual bool _canReach(class BlockPos const &);
     /*14*/ virtual void _moveToBlock();
-    /*16*/ virtual unsigned __int64 _getRepathTime() const;
     /*17*/ virtual bool findTargetBlock();
-    /*18*/ virtual void __unk_vfn_18();
+    /*18*/ virtual void _createBreakProgressParticles(class Level &, class BlockSource &, class BlockPos);
     /*19*/ virtual void _createDestroyParticles(class Level &, class BlockSource &, class BlockPos);
     /*20*/ virtual void _playBreakProgressSound(class Level &, class BlockSource &, class BlockPos);
     /*21*/ virtual void _playDestroySound(class Level &, class BlockSource &, class BlockPos);
-    /*
-    inline void _createBreakProgressParticles(class Level & a0, class BlockSource & a1, class BlockPos a2){
-        void (StompBlockGoal::*rv)(class Level &, class BlockSource &, class BlockPos);
-        *((void**)&rv) = dlsym("?_createBreakProgressParticles@StompBlockGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z");
-        return (this->*rv)(std::forward<class Level &>(a0), std::forward<class BlockSource &>(a1), std::forward<class BlockPos>(a2));
-    }
-    */
     MCAPI StompBlockGoal(class Block const *, class Mob &, float, int, int, float, int);
 
 protected:

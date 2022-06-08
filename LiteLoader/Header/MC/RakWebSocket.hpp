@@ -34,6 +34,13 @@ public:
     /*7*/ virtual void tick();
     /*8*/ virtual void _updateState() = 0;
     /*9*/ virtual unsigned int _genMaskingKey() const = 0;
+    /*
+    inline  ~RakWebSocket(){
+         (RakWebSocket::*rv)();
+        *((void**)&rv) = dlsym("??1RakWebSocket@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI RakWebSocket(std::unique_ptr<class TcpProxy>, bool);
     MCAPI void close(bool, bool);
     MCAPI std::string getUri() const;

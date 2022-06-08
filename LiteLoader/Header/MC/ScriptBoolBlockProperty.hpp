@@ -23,6 +23,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~ScriptBoolBlockProperty();
+    /*
+    inline  ~ScriptBoolBlockProperty(){
+         (ScriptBoolBlockProperty::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptBoolBlockProperty@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptBoolBlockProperty(class ScriptBoolBlockProperty &&);
     MCAPI ScriptBoolBlockProperty(std::string, class ItemState const &, std::vector<bool>, class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>);
     MCAPI class Scripting::Result<bool> getState() const;

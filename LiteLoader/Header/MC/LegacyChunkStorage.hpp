@@ -33,9 +33,7 @@ public:
     /*12*/ virtual bool saveLiveChunk(class LevelChunk &);
     /*17*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /*21*/ virtual bool isWithinWorldLimit(class ChunkPos const &) const;
-    /*22*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const * getChunkMap();
     /*24*/ virtual void clearDeletedEntities();
-    /*25*/ virtual bool canCreateViews() const;
     MCAPI LegacyChunkStorage(std::unique_ptr<class ChunkSource>, class LevelStorage &, enum StorageVersion, class Biome &);
 
 protected:

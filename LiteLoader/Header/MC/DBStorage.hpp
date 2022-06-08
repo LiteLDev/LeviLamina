@@ -66,6 +66,11 @@ public:
     /*30*/ virtual void setCriticalSyncSaveCallback(class std::function<void (void)>);
     /*31*/ virtual void corruptLevel();
     /*
+    inline  ~DBStorage(){
+         (DBStorage::*rv)();
+        *((void**)&rv) = dlsym("??1DBStorage@@UEAA@XZ");
+        return (this->*rv)();
+    }
     inline struct Core::LevelStorageResult getState() const{
         struct Core::LevelStorageResult (DBStorage::*rv)() const;
         *((void**)&rv) = dlsym("?getState@DBStorage@@UEBA?AULevelStorageResult@Core@@XZ");

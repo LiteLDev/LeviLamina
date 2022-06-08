@@ -26,11 +26,18 @@ public:
     /*0*/ virtual ~BreatheAirGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual bool canBeInterrupted();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+    /*
+    inline bool canBeInterrupted(){
+        bool (BreatheAirGoal::*rv)();
+        *((void**)&rv) = dlsym("?canBeInterrupted@BreatheAirGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BreatheAirGoal(class Mob &);
 
 protected:

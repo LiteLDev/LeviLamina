@@ -25,6 +25,13 @@ public:
 public:
     /*0*/ virtual ~BlockEventResponseFactory();
     /*1*/ virtual void initializeFactory(class Experiments const &);
+    /*
+    inline  ~BlockEventResponseFactory(){
+         (BlockEventResponseFactory::*rv)();
+        *((void**)&rv) = dlsym("??1BlockEventResponseFactory@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI void initSchema();
 
 protected:

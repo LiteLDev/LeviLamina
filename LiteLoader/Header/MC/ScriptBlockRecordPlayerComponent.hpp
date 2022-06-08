@@ -24,6 +24,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlockRecordPlayerComponent();
+    /*
+    inline  ~ScriptBlockRecordPlayerComponent(){
+         (ScriptBlockRecordPlayerComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptBlockRecordPlayerComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptBlockRecordPlayerComponent(class ScriptBlockRecordPlayerComponent const &);
     MCAPI ScriptBlockRecordPlayerComponent(class ScriptBlockRecordPlayerComponent &&);
     MCAPI class ScriptBlockRecordPlayerComponent & operator=(class ScriptBlockRecordPlayerComponent &&);

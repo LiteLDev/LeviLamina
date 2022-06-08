@@ -27,6 +27,13 @@ public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~TrustDescription();
     /*3*/ virtual void serializeData(class Json::Value &) const;
+    /*
+    inline  ~TrustDescription(){
+         (TrustDescription::*rv)();
+        *((void**)&rv) = dlsym("??1TrustDescription@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

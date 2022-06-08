@@ -26,6 +26,13 @@ public:
 public:
     /*0*/ virtual ~ActorPropertiesDescription();
     /*1*/ virtual char const * getJsonName() const;
+    /*
+    inline  ~ActorPropertiesDescription(){
+         (ActorPropertiesDescription::*rv)();
+        *((void**)&rv) = dlsym("??1ActorPropertiesDescription@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI void parse(class Json::Value &);
 
 protected:

@@ -25,6 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptLavaMovementComponent();
+    /*
+    inline  ~ScriptLavaMovementComponent(){
+         (ScriptLavaMovementComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptLavaMovementComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptLavaMovementComponent> bind(struct Scripting::Version);
 
 protected:

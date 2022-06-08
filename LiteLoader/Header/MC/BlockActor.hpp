@@ -108,6 +108,11 @@ public:
         *((void**)&rv) = dlsym("?onNeighborChanged@BlockActor@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1));
     }
+    inline  ~BlockActor(){
+         (BlockActor::*rv)();
+        *((void**)&rv) = dlsym("??1BlockActor@@UEAA@XZ");
+        return (this->*rv)();
+    }
     */
     MCAPI BlockActor(enum BlockActorType, class BlockPos const &, std::string const &);
     MCAPI void assignBlockIfNotAssigned(class BlockSource &);

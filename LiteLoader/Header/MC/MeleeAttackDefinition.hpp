@@ -23,6 +23,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~MeleeAttackDefinition();
+    /*
+    inline  ~MeleeAttackDefinition(){
+         (MeleeAttackDefinition::*rv)();
+        *((void**)&rv) = dlsym("??1MeleeAttackDefinition@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI MeleeAttackDefinition();
     MCAPI void initialize(class EntityContext &, class MeleeAttackGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MeleeAttackDefinition>> &);

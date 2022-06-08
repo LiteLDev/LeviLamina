@@ -23,6 +23,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptWantsJockeyComponent();
+    /*
+    inline  ~ScriptWantsJockeyComponent(){
+         (ScriptWantsJockeyComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptWantsJockeyComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class HashedString const & getHashedName();
 
 protected:

@@ -24,6 +24,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~EventResponseFactory();
+    /*
+    inline  ~EventResponseFactory(){
+         (EventResponseFactory::*rv)();
+        *((void**)&rv) = dlsym("??1EventResponseFactory@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> const & getSchema() const;
     MCAPI void initSchema(std::string const &, class SemVersion const &);
 

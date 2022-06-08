@@ -34,7 +34,7 @@ public:
     /*1*/ virtual class Block const & getBlock(int, int, int) const;
     /*2*/ virtual class Block const & getBlock(class BlockPos const &) const;
     /*3*/ virtual class Block const & getBlock(class BlockPos const &, unsigned int) const;
-    /*4*/ virtual class BlockActor const * getBlockEntity(class BlockPos const &) const;
+    /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual class Block const & getExtraBlock(class BlockPos const &) const;
     /*6*/ virtual class Block const & getLiquidBlock(class BlockPos const &) const;
     /*7*/ virtual bool hasBlock(class BlockPos const &) const;
@@ -55,13 +55,23 @@ public:
     /*22*/ virtual short getMinHeight() const;
     /*23*/ virtual void __unk_vfn_23();
     /*24*/ virtual void __unk_vfn_24();
-    /*25*/ virtual class ILevel & getILevel() const;
+    /*25*/ virtual void __unk_vfn_25();
     /*26*/ virtual std::vector<class AABB> & fetchAABBs(class AABB const &, bool);
     /*27*/ virtual std::vector<class AABB> & fetchCollisionShapes(class AABB const &, float *, bool, struct IActorMovementProxy *);
     /*28*/ virtual class AABB getTallestCollisionShape(class AABB const &, float *, bool, struct IActorMovementProxy *);
-    /*29*/ virtual class ChunkSource & getChunkSource();
+    /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual bool isSolidBlockingBlock(class BlockPos const &) const;
     /*
+    inline class ILevel & getILevel() const{
+        class ILevel & (BlockSource::*rv)() const;
+        *((void**)&rv) = dlsym("?getILevel@BlockSource@@UEBAAEAVILevel@@XZ");
+        return (this->*rv)();
+    }
+    inline class ChunkSource & getChunkSource(){
+        class ChunkSource & (BlockSource::*rv)();
+        *((void**)&rv) = dlsym("?getChunkSource@BlockSource@@UEAAAEAVChunkSource@@XZ");
+        return (this->*rv)();
+    }
     inline class Dimension & getDimension(){
         class Dimension & (BlockSource::*rv)();
         *((void**)&rv) = dlsym("?getDimension@BlockSource@@UEAAAEAVDimension@@XZ");
@@ -71,6 +81,16 @@ public:
         class Dimension & (BlockSource::*rv)() const;
         *((void**)&rv) = dlsym("?getDimension@BlockSource@@UEBAAEAVDimension@@XZ");
         return (this->*rv)();
+    }
+    inline  ~BlockSource(){
+         (BlockSource::*rv)();
+        *((void**)&rv) = dlsym("??1BlockSource@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline class BlockActor const * getBlockEntity(class BlockPos const & a0) const{
+        class BlockActor const * (BlockSource::*rv)(class BlockPos const &) const;
+        *((void**)&rv) = dlsym("?getBlockEntity@BlockSource@@UEBAPEBVBlockActor@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0));
     }
     */
     MCAPI BlockSource(class ChunkSource &, bool, bool);

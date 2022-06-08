@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~ClientPlayerEventCoordinator();
     MCAPI void sendPlayerDestroyedBlock(class Player &, class BlockLegacy const &);
     MCAPI void sendPlayerInput(struct IPlayerMovementProxy &, class MoveInputHandler &);
     MCAPI void sendStartDestroyBlock(class Player &, class BlockPos const &, unsigned char &);

@@ -29,14 +29,14 @@ public:
         *((void**)&rv) = dlsym("?isValidSpawn@TheEndDimension@@UEBA_NHH@Z");
         return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
     }
-    inline bool isDay() const{
-        bool (TheEndDimension::*rv)() const;
-        *((void**)&rv) = dlsym("?isDay@TheEndDimension@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool hasGround() const{
         bool (TheEndDimension::*rv)() const;
         *((void**)&rv) = dlsym("?hasGround@TheEndDimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isDay() const{
+        bool (TheEndDimension::*rv)() const;
+        *((void**)&rv) = dlsym("?isDay@TheEndDimension@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isFoggyAt(int a0, int a1) const{

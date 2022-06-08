@@ -23,6 +23,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptGroundOffsetComponent();
+    /*
+    inline  ~ScriptGroundOffsetComponent(){
+         (ScriptGroundOffsetComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptGroundOffsetComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

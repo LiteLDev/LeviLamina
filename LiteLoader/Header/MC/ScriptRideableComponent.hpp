@@ -25,6 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptRideableComponent();
+    /*
+    inline  ~ScriptRideableComponent(){
+         (ScriptRideableComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptRideableComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptRideableComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class Scripting::Result<bool> addPassenger(class ScriptActor &) const;
     MCAPI class Scripting::Result<void> ejectPassenger(class ScriptActor &) const;

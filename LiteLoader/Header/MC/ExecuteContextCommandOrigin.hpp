@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Json.hpp"
 #include "CommandOrigin.hpp"
 
 #define BEFORE_EXTRA
@@ -39,10 +38,8 @@ public:
     /*15*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
     /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*20*/ virtual unsigned char getSourceSubId() const;
-    /*21*/ virtual class CommandOrigin const & getOutputReceiver() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
-    /*25*/ virtual class mce::UUID const & getUUID() const;
-    /*26*/ virtual void handleCommandOutputCallback(class Json::Value &&) const;
+    /*26*/ virtual void __unk_vfn_26();
     /*27*/ virtual void updateValues();
     /*28*/ virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const &) const;
     /*29*/ virtual class CompoundTag serialize() const;

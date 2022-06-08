@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~ItemStackNetManagerScreen();
     MCAPI ItemStackNetManagerScreen(class EntityRegistry &);
     MCAPI class EntityContext & getEntity();
     MCAPI class EntityContext const & getEntity() const;

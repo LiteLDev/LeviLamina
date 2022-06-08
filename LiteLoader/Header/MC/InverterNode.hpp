@@ -24,7 +24,13 @@ public:
 public:
     /*0*/ virtual ~InverterNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
-    /*2*/ virtual void initializeFromDefinition(class Actor &);
+    /*
+    inline void initializeFromDefinition(class Actor & a0){
+        void (InverterNode::*rv)(class Actor &);
+        *((void**)&rv) = dlsym("?initializeFromDefinition@InverterNode@@MEAAXAEAVActor@@@Z");
+        return (this->*rv)(std::forward<class Actor &>(a0));
+    }
+    */
     MCAPI InverterNode();
 
 protected:

@@ -23,6 +23,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~TargetGoalDefinition();
+    /*
+    inline  ~TargetGoalDefinition(){
+         (TargetGoalDefinition::*rv)();
+        *((void**)&rv) = dlsym("??1TargetGoalDefinition@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI void initialize(class EntityContext &, class TargetGoal &);
 
 protected:

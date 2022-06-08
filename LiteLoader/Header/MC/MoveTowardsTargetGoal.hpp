@@ -28,9 +28,21 @@ public:
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
-    /*5*/ virtual void stop();
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+    /*
+    inline void stop(){
+        void (MoveTowardsTargetGoal::*rv)();
+        *((void**)&rv) = dlsym("?stop@MoveTowardsTargetGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline  ~MoveTowardsTargetGoal(){
+         (MoveTowardsTargetGoal::*rv)();
+        *((void**)&rv) = dlsym("??1MoveTowardsTargetGoal@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI MoveTowardsTargetGoal(class Mob &, float, float);
 
 protected:

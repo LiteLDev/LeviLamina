@@ -24,7 +24,13 @@ public:
 
 public:
     /*0*/ virtual ~PrintStream();
-    /*1*/ virtual void print(std::string const &);
+    /*
+    inline void print(std::string const & a0){
+        void (PrintStream::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?print@PrintStream@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    */
 
 protected:
 

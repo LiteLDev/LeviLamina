@@ -29,15 +29,16 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~BiomeRegistry();
     /*
-    inline class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry(){
-        class StackRefResultT<struct EntityRegistryRefTraits> (BiomeRegistry::*rv)();
-        *((void**)&rv) = dlsym("?getEntityRegistry@BiomeRegistry@@UEAA?AV?$StackRefResultT@UEntityRegistryRefTraits@@@@XZ");
-        return (this->*rv)();
-    }
     inline class StackRefResultT<struct EntityRegistryConstRefTraits> getEntityRegistry() const{
         class StackRefResultT<struct EntityRegistryConstRefTraits> (BiomeRegistry::*rv)() const;
         *((void**)&rv) = dlsym("?getEntityRegistry@BiomeRegistry@@UEBA?AV?$StackRefResultT@UEntityRegistryConstRefTraits@@@@XZ");
+        return (this->*rv)();
+    }
+    inline class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry(){
+        class StackRefResultT<struct EntityRegistryRefTraits> (BiomeRegistry::*rv)();
+        *((void**)&rv) = dlsym("?getEntityRegistry@BiomeRegistry@@UEAA?AV?$StackRefResultT@UEntityRegistryRefTraits@@@@XZ");
         return (this->*rv)();
     }
     */

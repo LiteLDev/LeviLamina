@@ -37,15 +37,15 @@ public:
     /*10*/ virtual float getUploadProgress(struct FileInfo const &) const;
     /*11*/ virtual struct FileChunkInfo getChunkInfo(struct FileInfo const &, int) const;
     /*
-    inline void confirmChunkReceived(struct FileInfo const & a0, struct FileChunkInfo const & a1){
-        void (ServerFileChunkUploader::*rv)(struct FileInfo const &, struct FileChunkInfo const &);
-        *((void**)&rv) = dlsym("?confirmChunkReceived@ServerFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@@Z");
-        return (this->*rv)(std::forward<struct FileInfo const &>(a0), std::forward<struct FileChunkInfo const &>(a1));
-    }
     inline void update(){
         void (ServerFileChunkUploader::*rv)();
         *((void**)&rv) = dlsym("?update@ServerFileChunkUploader@@UEAAXXZ");
         return (this->*rv)();
+    }
+    inline void confirmChunkReceived(struct FileInfo const & a0, struct FileChunkInfo const & a1){
+        void (ServerFileChunkUploader::*rv)(struct FileInfo const &, struct FileChunkInfo const &);
+        *((void**)&rv) = dlsym("?confirmChunkReceived@ServerFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@@Z");
+        return (this->*rv)(std::forward<struct FileInfo const &>(a0), std::forward<struct FileChunkInfo const &>(a1));
     }
     inline void cancelUpload(struct FileInfo const & a0){
         void (ServerFileChunkUploader::*rv)(struct FileInfo const &);

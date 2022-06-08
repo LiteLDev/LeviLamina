@@ -25,14 +25,9 @@ public:
 
 public:
     /*0*/ virtual ~HorseContainerManagerModel();
-    /*1*/ virtual enum ContainerID getContainerId() const;
-    /*2*/ virtual void setContainerId(enum ContainerID);
-    /*3*/ virtual enum ContainerType getContainerType() const;
-    /*4*/ virtual void setContainerType(enum ContainerType);
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
     /*7*/ virtual void setSlot(int, class ItemStack const &, bool);
     /*8*/ virtual class ItemStack const & getSlot(int) const;
-    /*9*/ virtual void setData(int, int);
     /*16*/ virtual class ContainerScreenContext _postInit();
     MCAPI HorseContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
 

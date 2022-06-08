@@ -27,7 +27,13 @@ public:
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void _fillArea(class OperationNodeDetails::WorkingData<class Biome *, class Biome *> &, class Pos2d const &, class Pos2d const &, int, class OperationGraphResult<enum BiomeTemperatureCategory>) const;
-    /*4*/ virtual class std::tuple<class Pos2d, class Pos2d> _getAreaRead(class Pos2d const &, class Pos2d const &) const;
+    /*
+    inline class std::tuple<class Pos2d, class Pos2d> _getAreaRead(class Pos2d const & a0, class Pos2d const & a1) const{
+        class std::tuple<class Pos2d, class Pos2d> (OceanMixerOperationNode::*rv)(class Pos2d const &, class Pos2d const &) const;
+        *((void**)&rv) = dlsym("?_getAreaRead@OceanMixerOperationNode@@MEBA?AV?$tuple@VPos2d@@V1@@std@@AEBVPos2d@@0@Z");
+        return (this->*rv)(std::forward<class Pos2d const &>(a0), std::forward<class Pos2d const &>(a1));
+    }
+    */
     MCAPI OceanMixerOperationNode(unsigned int, class std::shared_ptr<class OperationNode<class Biome *, class Pos2d>> &, class std::shared_ptr<class OperationNode<enum BiomeTemperatureCategory, class Pos2d>> &, class BiomeRegistry const &, class Biome &, class Biome &);
 
 protected:

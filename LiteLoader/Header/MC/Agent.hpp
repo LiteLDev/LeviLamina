@@ -29,28 +29,27 @@ public:
     /*14*/ virtual ~Agent();
     /*16*/ virtual void resetUserPos(bool);
     /*20*/ virtual bool isRuntimePredictedMovementEnabled() const;
-    /*36*/ virtual class Vec3 getInterpolatedRidingOffset(float) const;
-    /*40*/ virtual bool breaksFallingBlocks() const;
+    /*40*/ virtual void __unk_vfn_40();
     /*43*/ virtual void teleportTo(class Vec3 const &, bool, int, int);
     /*48*/ virtual void normalTick();
     /*59*/ virtual bool isInvisible() const;
     /*60*/ virtual bool canShowNameTag() const;
-    /*61*/ virtual bool canExistInPeaceful() const;
+    /*61*/ virtual void __unk_vfn_61();
     /*65*/ virtual std::string getFormattedNameTag() const;
-    /*68*/ virtual bool canMakeStepSound() const;
+    /*68*/ virtual void __unk_vfn_68();
     /*78*/ virtual float getCameraOffset() const;
-    /*82*/ virtual bool canSeeInvisible() const;
+    /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual bool canInteractWithOtherEntitiesInGame() const;
-    /*88*/ virtual bool interactPreventDefault();
+    /*88*/ virtual void __unk_vfn_88();
     /*89*/ virtual void playerTouch(class Player &);
     /*94*/ virtual bool isPickable();
-    /*95*/ virtual bool isFishable() const;
-    /*98*/ virtual bool useNewAi() const;
+    /*95*/ virtual void __unk_vfn_95();
+    /*98*/ virtual void __unk_vfn_98();
     /*101*/ virtual bool isDamageBlocked(class ActorDamageSource const &) const;
-    /*105*/ virtual bool shouldBurn();
-    /*107*/ virtual bool isTargetable() const;
-    /*108*/ virtual bool canBeControlledByPassenger();
-    /*109*/ virtual bool isLeashableType();
+    /*105*/ virtual void __unk_vfn_105();
+    /*107*/ virtual void __unk_vfn_107();
+    /*108*/ virtual void __unk_vfn_108();
+    /*109*/ virtual void __unk_vfn_109();
     /*113*/ virtual class Actor * findAttackTarget();
     /*114*/ virtual bool isValidTarget(class Actor *) const;
     /*120*/ virtual void onTame();
@@ -58,23 +57,20 @@ public:
     /*130*/ virtual void vehicleLanded(class Vec3 const &, class Vec3 const &);
     /*139*/ virtual void onBounceStarted(class BlockPos const &, class Block const &);
     /*141*/ virtual void handleEntityEvent(enum ActorEvent, int);
-    /*142*/ virtual float getPickRadius();
     /*151*/ virtual void awardKillScore(class Actor &, int);
     /*161*/ virtual void setCarriedItem(class ItemStack const &);
-    /*170*/ virtual class HashedString const & queryEntityRenderer() const;
     /*171*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*178*/ virtual int getPortalWaitTime() const;
     /*180*/ virtual bool canChangeDimensions() const;
-    /*181*/ virtual void onHit(class HitResult const &);
+    /*181*/ virtual void __unk_vfn_181();
     /*183*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*192*/ virtual bool canPickupItem(class ItemStack const &) const;
     /*193*/ virtual bool canBePulledIntoVehicle() const;
-    /*195*/ virtual bool stopUponGroundCollision() const;
+    /*195*/ virtual void __unk_vfn_195();
     /*198*/ virtual bool canSynchronizeNewEntity() const;
     /*211*/ virtual bool canBeAffected(class MobEffectInstance const &) const;
     /*220*/ virtual void __unk_vfn_220();
-    /*221*/ virtual unsigned int getUserId() const;
-    /*227*/ virtual float getYHeadRotO() const;
+    /*221*/ virtual void __unk_vfn_221();
     /*228*/ virtual bool isWorldBuilder() const;
     /*229*/ virtual bool isCreative() const;
     /*230*/ virtual bool isAdventure() const;
@@ -84,15 +80,15 @@ public:
     /*238*/ virtual void setAuxValue(int);
     /*244*/ virtual void stopSpinAttack();
     /*246*/ virtual void __unk_vfn_246();
-    /*249*/ virtual float getDeletionDelayTimeSeconds() const;
+    /*249*/ virtual void __unk_vfn_249();
     /*250*/ virtual void kill();
     /*259*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
-    /*261*/ virtual bool shouldAlwaysRender();
+    /*261*/ virtual void __unk_vfn_261();
     /*262*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /*269*/ virtual bool _makeFlySound() const;
+    /*269*/ virtual void __unk_vfn_269();
     /*278*/ virtual void __unk_vfn_278();
-    /*279*/ virtual void __unk_vfn_279();
-    /*280*/ virtual void __unk_vfn_280();
+    /*279*/ virtual void knockback(class Actor *, int, float, float, float, float, float);
+    /*280*/ virtual void spawnAnim();
     /*291*/ virtual void travel(float, float, float);
     /*294*/ virtual void aiStep();
     /*302*/ virtual int getItemUseDuration() const;
@@ -104,17 +100,16 @@ public:
     /*321*/ virtual void sendArmorDamage(class std::bitset<4> const &);
     /*337*/ virtual bool createAIGoals();
     /*338*/ virtual void onBorn(class Actor &, class Actor &);
-    /*342*/ virtual int getAttackTime();
     /*343*/ virtual float _getWalkTargetValue(class BlockPos const &);
     /*344*/ virtual bool canExistWhenDisallowMob() const;
-    /*345*/ virtual bool isSimulated() const;
+    /*345*/ virtual void __unk_vfn_345();
     /*350*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
-    /*355*/ virtual void _serverAiMobStep();
+    /*355*/ virtual void __unk_vfn_355();
     /*359*/ virtual void __unk_vfn_359();
     /*
-    inline bool interactPreventDefault(){
-        bool (Agent::*rv)();
-        *((void**)&rv) = dlsym("?interactPreventDefault@Agent@@UEAA_NXZ");
+    inline bool isTargetable() const{
+        bool (Agent::*rv)() const;
+        *((void**)&rv) = dlsym("?isTargetable@Agent@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool getAlwaysShowNameTag() const{
@@ -122,10 +117,15 @@ public:
         *((void**)&rv) = dlsym("?getAlwaysShowNameTag@Agent@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline void knockback(class Actor * a0, int a1, float a2, float a3, float a4, float a5, float a6){
-        void (Agent::*rv)(class Actor *, int, float, float, float, float, float);
-        *((void**)&rv) = dlsym("?knockback@Agent@@UEAAXPEAVActor@@HMMMMM@Z");
-        return (this->*rv)(std::forward<class Actor *>(a0), std::forward<int>(a1), std::forward<float>(a2), std::forward<float>(a3), std::forward<float>(a4), std::forward<float>(a5), std::forward<float>(a6));
+    inline bool interactPreventDefault(){
+        bool (Agent::*rv)();
+        *((void**)&rv) = dlsym("?interactPreventDefault@Agent@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool breaksFallingBlocks() const{
+        bool (Agent::*rv)() const;
+        *((void**)&rv) = dlsym("?breaksFallingBlocks@Agent@@UEBA_NXZ");
+        return (this->*rv)();
     }
     */
     MCAPI Agent(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

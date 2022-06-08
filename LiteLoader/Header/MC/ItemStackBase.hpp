@@ -31,6 +31,13 @@ public:
     /*4*/ virtual void setNull();
     /*5*/ virtual std::string toString() const;
     /*6*/ virtual std::string toDebugString() const;
+    /*
+    inline  ~ItemStackBase(){
+         (ItemStackBase::*rv)();
+        *((void**)&rv) = dlsym("??1ItemStackBase@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI void add(int);
     MCAPI bool addComponents(class Json::Value const &, std::string &);
     MCAPI void addCustomUserData(class BlockActor &, class BlockSource &);

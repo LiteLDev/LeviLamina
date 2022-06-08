@@ -80,6 +80,13 @@ public:
 public:
     /*0*/ virtual ~Command();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const = 0;
+    /*
+    inline  ~Command(){
+         (Command::*rv)();
+        *((void**)&rv) = dlsym("??1Command@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI Command();
     MCAPI std::string getCommandName() const;
     MCAPI bool hasFlag(struct CommandFlag) const;

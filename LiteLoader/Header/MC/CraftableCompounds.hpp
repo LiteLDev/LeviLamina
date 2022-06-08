@@ -24,6 +24,13 @@ public:
 public:
     /*0*/ virtual ~CraftableCompounds();
     /*1*/ virtual void _registerCompound(std::vector<class ItemStack> const &, class ItemStack const &, enum LabTableReactionType, enum CompoundContainerType);
+    /*
+    inline  ~CraftableCompounds(){
+         (CraftableCompounds::*rv)();
+        *((void**)&rv) = dlsym("??1CraftableCompounds@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI CraftableCompounds();
     MCAPI std::vector<class ItemStack> const * getComponents(class ItemDescriptor const &) const;
     MCAPI class ItemStack const & getCompound(std::vector<class ItemStack> const &);

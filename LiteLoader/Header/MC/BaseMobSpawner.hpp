@@ -28,6 +28,13 @@ public:
     /*2*/ virtual void load(class CompoundTag const &);
     /*3*/ virtual void save(class CompoundTag &);
     /*4*/ virtual class BlockPos const & getPos() = 0;
+    /*
+    inline  ~BaseMobSpawner(){
+         (BaseMobSpawner::*rv)();
+        *((void**)&rv) = dlsym("??1BaseMobSpawner@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BaseMobSpawner(struct ActorDefinitionIdentifier);
     MCAPI class Actor * createAndAddDisplayEntity(class BlockSource &);
     MCAPI void setEntityId(struct ActorDefinitionIdentifier);

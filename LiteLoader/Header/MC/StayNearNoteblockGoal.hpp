@@ -26,9 +26,16 @@ public:
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
-    /*5*/ virtual void stop();
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+    /*
+    inline void stop(){
+        void (StayNearNoteblockGoal::*rv)();
+        *((void**)&rv) = dlsym("?stop@StayNearNoteblockGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI StayNearNoteblockGoal(class Mob &);
 
 protected:

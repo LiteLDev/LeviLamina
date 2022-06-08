@@ -22,6 +22,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~StructurePoolBlockPredicateAlwaysTrue();
     /*
     inline bool test(class BlockPos const & a0, class BlockPos const & a1, class Randomize & a2) const{
         bool (StructurePoolBlockPredicateAlwaysTrue::*rv)(class BlockPos const &, class BlockPos const &, class Randomize &) const;

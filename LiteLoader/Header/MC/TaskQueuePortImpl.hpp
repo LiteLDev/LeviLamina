@@ -20,7 +20,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual unsigned int AddRef();
     /*3*/ virtual struct XTaskQueuePortObject * GetHandle();
     /*4*/ virtual long QueueItem(struct ITaskQueuePortContext *, unsigned int, void *, void ( *)(void *, bool));
     /*5*/ virtual long RegisterWaitHandle(struct ITaskQueuePortContext *, void *, void *, void ( *)(void *, bool), struct XTaskQueueRegistrationToken *);
@@ -36,7 +35,13 @@ public:
     /*15*/ virtual long SuspendTermination(struct ITaskQueuePortContext *);
     /*16*/ virtual void ResumeTermination(struct ITaskQueuePortContext *);
     /*17*/ virtual ~TaskQueuePortImpl();
-    /*19*/ virtual void RundownObject();
+    /*
+    inline  ~TaskQueuePortImpl(){
+         (TaskQueuePortImpl::*rv)();
+        *((void**)&rv) = dlsym("??1TaskQueuePortImpl@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI long Initialize(enum XTaskQueueDispatchMode);
     MCAPI TaskQueuePortImpl();
 

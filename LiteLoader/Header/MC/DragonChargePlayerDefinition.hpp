@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~DragonChargePlayerDefinition();
     MCAPI DragonChargePlayerDefinition();
     MCAPI void initialize(class EntityContext &, class DragonChargePlayerGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonChargePlayerDefinition>> &);

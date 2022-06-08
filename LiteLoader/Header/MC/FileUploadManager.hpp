@@ -28,6 +28,13 @@ public:
     /*0*/ virtual ~FileUploadManager();
     /*1*/ virtual float getUploadProgress() const;
     /*2*/ virtual void uploadFileToRealmStorage(std::string const &, class Core::Path const &, int, std::string const &) = 0;
+    /*
+    inline  ~FileUploadManager(){
+         (FileUploadManager::*rv)();
+        *((void**)&rv) = dlsym("??1FileUploadManager@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI FileUploadManager(class TaskGroup &, class std::shared_ptr<class IFileChunkUploader>);
     MCAPI void addCallbackQueue(class std::function<void (void)>);
     MCAPI void setFailed(enum UploadError);

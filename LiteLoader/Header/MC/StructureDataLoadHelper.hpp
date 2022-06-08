@@ -39,10 +39,25 @@ public:
     /*12*/ virtual enum Mirror loadMirror(enum Mirror);
     /*13*/ virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
     /*14*/ virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
-    /*15*/ virtual enum DataLoadHelperType getType() const;
-    /*16*/ virtual bool shouldResetTime();
+    /*15*/ virtual void __unk_vfn_15();
+    /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual struct ActorUniqueID _generateNewID();
     /*
+    inline bool shouldResetTime(){
+        bool (StructureDataLoadHelper::*rv)();
+        *((void**)&rv) = dlsym("?shouldResetTime@StructureDataLoadHelper@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline enum DataLoadHelperType getType() const{
+        enum DataLoadHelperType (StructureDataLoadHelper::*rv)() const;
+        *((void**)&rv) = dlsym("?getType@StructureDataLoadHelper@@UEBA?AW4DataLoadHelperType@@XZ");
+        return (this->*rv)();
+    }
+    inline  ~StructureDataLoadHelper(){
+         (StructureDataLoadHelper::*rv)();
+        *((void**)&rv) = dlsym("??1StructureDataLoadHelper@@UEAA@XZ");
+        return (this->*rv)();
+    }
     inline float loadRotationDegreesX(float a0){
         float (StructureDataLoadHelper::*rv)(float);
         *((void**)&rv) = dlsym("?loadRotationDegreesX@StructureDataLoadHelper@@UEAAMM@Z");

@@ -24,6 +24,13 @@ public:
 public:
     /*0*/ virtual ~DebugAssertException();
     /*1*/ virtual char const * what() const;
+    /*
+    inline  ~DebugAssertException(){
+         (DebugAssertException::*rv)();
+        *((void**)&rv) = dlsym("??1DebugAssertException@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI DebugAssertException(class DebugAssertException const &);
     MCAPI DebugAssertException(char const *, char const *, char const *, int, char const *, char const *);
     MCAPI static bool isEnabled();

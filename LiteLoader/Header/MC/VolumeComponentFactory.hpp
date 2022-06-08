@@ -21,6 +21,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~VolumeComponentFactory();
     MCAPI void registerVolumeComponentDefinitions(bool);
 
 protected:

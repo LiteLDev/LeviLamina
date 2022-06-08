@@ -27,9 +27,9 @@ public:
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual class LevelChunk * getChunk(class ChunkPos const &);
     /*3*/ virtual class Block const * tryGetLiquidBlock(class BlockPos const &) const;
-    /*4*/ virtual class Block const & getBlock(class BlockPos const &) const;
-    /*5*/ virtual class Block const & getBlockNoBoundsCheck(class BlockPos const &) const;
-    /*6*/ virtual class Block const & getExtraBlock(class BlockPos const &) const;
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
+    /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual class gsl::span<class BlockDataFetchResult<class Block> const, -1> fetchBlocksInBox(class BoundingBox const &, class std::function<bool (class Block const &)>);
     /*8*/ virtual bool hasBiomeTag(unsigned __int64, class BlockPos const &) const;
     /*9*/ virtual bool setBlock(class BlockPos const &, class Block const &, int);
@@ -39,7 +39,7 @@ public:
     /*13*/ virtual bool mayPlace(class BlockPos const &, class Block const &) const;
     /*14*/ virtual bool canSurvive(class BlockPos const &, class Block const &) const;
     /*15*/ virtual short getMaxHeight() const;
-    /*16*/ virtual short getMinHeight() const;
+    /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual bool shimPlaceForOldFeatures(class Feature const &, class BlockPos const &, class Random &) const;
     /*18*/ virtual short getHeightmap(int, int);
     /*19*/ virtual bool isLegacyLevel();
@@ -47,7 +47,7 @@ public:
     /*21*/ virtual bool isInBounds(class Pos const &) const;
     /*22*/ virtual short getLocalWaterLevel(class BlockPos const &) const;
     /*23*/ virtual class LevelData const & getLevelData() const;
-    /*24*/ virtual struct WorldGenContext const & getContext();
+    /*24*/ virtual void __unk_vfn_24();
     /*25*/ virtual void disableBlockSimple();
     /*
     inline bool apply() const{
@@ -58,6 +58,36 @@ public:
     inline bool canGetChunk() const{
         bool (WorldBlockTarget::*rv)() const;
         *((void**)&rv) = dlsym("?canGetChunk@WorldBlockTarget@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline  ~WorldBlockTarget(){
+         (WorldBlockTarget::*rv)();
+        *((void**)&rv) = dlsym("??1WorldBlockTarget@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline struct WorldGenContext const & getContext(){
+        struct WorldGenContext const & (WorldBlockTarget::*rv)();
+        *((void**)&rv) = dlsym("?getContext@WorldBlockTarget@@UEAAAEBUWorldGenContext@@XZ");
+        return (this->*rv)();
+    }
+    inline class Block const & getBlockNoBoundsCheck(class BlockPos const & a0) const{
+        class Block const & (WorldBlockTarget::*rv)(class BlockPos const &) const;
+        *((void**)&rv) = dlsym("?getBlockNoBoundsCheck@WorldBlockTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0));
+    }
+    inline class Block const & getBlock(class BlockPos const & a0) const{
+        class Block const & (WorldBlockTarget::*rv)(class BlockPos const &) const;
+        *((void**)&rv) = dlsym("?getBlock@WorldBlockTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0));
+    }
+    inline class Block const & getExtraBlock(class BlockPos const & a0) const{
+        class Block const & (WorldBlockTarget::*rv)(class BlockPos const &) const;
+        *((void**)&rv) = dlsym("?getExtraBlock@WorldBlockTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0));
+    }
+    inline short getMinHeight() const{
+        short (WorldBlockTarget::*rv)() const;
+        *((void**)&rv) = dlsym("?getMinHeight@WorldBlockTarget@@UEBAFXZ");
         return (this->*rv)();
     }
     */

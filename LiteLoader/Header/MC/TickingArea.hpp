@@ -24,9 +24,9 @@ public:
 
 public:
     /*0*/ virtual ~TickingArea();
-    /*1*/ virtual class mce::UUID const & getId() const;
-    /*2*/ virtual std::string const & getName() const;
-    /*3*/ virtual struct ActorUniqueID const & getEntityId() const;
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual bool isEntityOwned() const;
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
@@ -36,7 +36,7 @@ public:
     /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual struct TickingAreaDescription getDescription() const;
-    /*13*/ virtual enum TickingAreaLoadMode getLoadMode() const;
+    /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void setLoadMode(enum TickingAreaLoadMode, class LevelStorage &);
     /*15*/ virtual bool isPreloadDone() const;
     /*16*/ virtual void tick(struct Tick const &, bool);
@@ -50,6 +50,31 @@ public:
     /*24*/ virtual void remove(class LevelStorage &);
     /*25*/ virtual void onComponentChanged(unsigned int, float, bool, class LevelStorage &);
     /*
+    inline class mce::UUID const & getId() const{
+        class mce::UUID const & (TickingArea::*rv)() const;
+        *((void**)&rv) = dlsym("?getId@TickingArea@@UEBAAEBVUUID@mce@@XZ");
+        return (this->*rv)();
+    }
+    inline struct ActorUniqueID const & getEntityId() const{
+        struct ActorUniqueID const & (TickingArea::*rv)() const;
+        *((void**)&rv) = dlsym("?getEntityId@TickingArea@@UEBAAEBUActorUniqueID@@XZ");
+        return (this->*rv)();
+    }
+    inline std::string const & getName() const{
+        std::string const & (TickingArea::*rv)() const;
+        *((void**)&rv) = dlsym("?getName@TickingArea@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline enum TickingAreaLoadMode getLoadMode() const{
+        enum TickingAreaLoadMode (TickingArea::*rv)() const;
+        *((void**)&rv) = dlsym("?getLoadMode@TickingArea@@UEBA?AW4TickingAreaLoadMode@@XZ");
+        return (this->*rv)();
+    }
+    inline  ~TickingArea(){
+         (TickingArea::*rv)();
+        *((void**)&rv) = dlsym("??1TickingArea@@UEAA@XZ");
+        return (this->*rv)();
+    }
     inline class BlockSource & getBlockSource(){
         class BlockSource & (TickingArea::*rv)();
         *((void**)&rv) = dlsym("?getBlockSource@TickingArea@@UEAAAEAVBlockSource@@XZ");

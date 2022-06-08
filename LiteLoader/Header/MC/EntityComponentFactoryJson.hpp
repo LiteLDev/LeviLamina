@@ -23,6 +23,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~EntityComponentFactoryJson();
+    /*
+    inline  ~EntityComponentFactoryJson(){
+         (EntityComponentFactoryJson::*rv)();
+        *((void**)&rv) = dlsym("??1EntityComponentFactoryJson@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI class IJsonDefinitionSerializer * tryGetDefinitionSerializer(std::string const &) const;
 
 protected:

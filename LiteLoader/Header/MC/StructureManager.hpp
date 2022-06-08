@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~StructureManager();
     MCAPI StructureManager();
     MCAPI void clearAndShutdownStructurePlacement();
     MCAPI class StructureTemplateDataResponsePacket createStructureDataExportPacket(std::string const &, class ResourcePackManager const *, class LevelStorage *, enum StructureTemplateResponseType);

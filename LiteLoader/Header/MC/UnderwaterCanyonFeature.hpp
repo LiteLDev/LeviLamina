@@ -27,6 +27,13 @@ public:
 public:
     /*0*/ virtual ~UnderwaterCanyonFeature();
     /*1*/ virtual bool carve(class BlockVolume &, class BiomeSource const &, class Random &, class ChunkPos const &, class Vec3 const &, class Vec3 const &, int, int, int, int, int, int, float, float, class gsl::span<float const, -1>, struct WorldGenContext const &) const;
+    /*
+    inline  ~UnderwaterCanyonFeature(){
+         (UnderwaterCanyonFeature::*rv)();
+        *((void**)&rv) = dlsym("??1UnderwaterCanyonFeature@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI UnderwaterCanyonFeature(short);
 
 protected:

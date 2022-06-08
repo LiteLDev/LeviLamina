@@ -40,6 +40,13 @@ public:
     /*14*/ virtual void _moveToBlock() = 0;
     /*15*/ virtual class Vec3 _getTargetPosition() const;
     /*16*/ virtual unsigned __int64 _getRepathTime() const;
+    /*
+    inline  ~BaseMoveToGoal(){
+         (BaseMoveToGoal::*rv)();
+        *((void**)&rv) = dlsym("??1BaseMoveToGoal@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BaseMoveToGoal(class Mob &, float, float, float, int, int);
     MCAPI void setTargetPositionOffset(class Vec3 const &);
 

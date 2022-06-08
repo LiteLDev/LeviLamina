@@ -54,20 +54,25 @@ public:
         *((void**)&rv) = dlsym("?write@NBTSchemaWriter@@UEAA_N_J@Z");
         return (this->*rv)(std::forward<__int64>(a0));
     }
+    inline  ~NBTSchemaWriter(){
+         (NBTSchemaWriter::*rv)();
+        *((void**)&rv) = dlsym("??1NBTSchemaWriter@@UEAA@XZ");
+        return (this->*rv)();
+    }
     inline bool write(signed char a0){
         bool (NBTSchemaWriter::*rv)(signed char);
         *((void**)&rv) = dlsym("?write@NBTSchemaWriter@@UEAA_NC@Z");
         return (this->*rv)(std::forward<signed char>(a0));
     }
-    inline bool write(unsigned char a0){
-        bool (NBTSchemaWriter::*rv)(unsigned char);
-        *((void**)&rv) = dlsym("?write@NBTSchemaWriter@@UEAA_NE@Z");
-        return (this->*rv)(std::forward<unsigned char>(a0));
-    }
     inline bool write(bool a0){
         bool (NBTSchemaWriter::*rv)(bool);
         *((void**)&rv) = dlsym("?write@NBTSchemaWriter@@UEAA_N_N@Z");
         return (this->*rv)(std::forward<bool>(a0));
+    }
+    inline bool write(unsigned char a0){
+        bool (NBTSchemaWriter::*rv)(unsigned char);
+        *((void**)&rv) = dlsym("?write@NBTSchemaWriter@@UEAA_NE@Z");
+        return (this->*rv)(std::forward<unsigned char>(a0));
     }
     inline bool write(short a0){
         bool (NBTSchemaWriter::*rv)(short);

@@ -25,7 +25,13 @@ public:
     /*0*/ virtual ~ScriptInventoryComponentContainer();
     /*5*/ virtual class Scripting::Result<int> getEmptySlotsCount() const;
     /*11*/ virtual class Container * _tryGetContainer() const;
-    /*12*/ virtual void _balanceTransaction(class ItemStack const &) const;
+    /*
+    inline  ~ScriptInventoryComponentContainer(){
+         (ScriptInventoryComponentContainer::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptInventoryComponentContainer@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptInventoryComponentContainer(class ScriptInventoryComponentContainer const &);
     MCAPI ScriptInventoryComponentContainer(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &);
     MCAPI class ScriptInventoryComponentContainer & operator=(class ScriptInventoryComponentContainer const &);

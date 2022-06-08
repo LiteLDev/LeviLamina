@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~ActorEventListener();
     /*
     inline enum EventResult onActorPlacedItem(class Actor & a0, class ItemInstance const & a1){
         enum EventResult (ActorEventListener::*rv)(class Actor &, class ItemInstance const &);
@@ -118,6 +119,11 @@ public:
         enum EventResult (ActorEventListener::*rv)(class Actor &, std::string const &, std::vector<struct DefinitionModifier> &);
         *((void**)&rv) = dlsym("?onActorDefinitionEvent@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@UDefinitionModifier@@V?$allocator@UDefinitionModifier@@@std@@@5@@Z");
         return (this->*rv)(std::forward<class Actor &>(a0), std::forward<std::string const &>(a1), std::forward<std::vector<struct DefinitionModifier> &>(a2));
+    }
+    inline  ~ActorEventListener(){
+         (ActorEventListener::*rv)();
+        *((void**)&rv) = dlsym("??1ActorEventListener@@UEAA@XZ");
+        return (this->*rv)();
     }
     */
 

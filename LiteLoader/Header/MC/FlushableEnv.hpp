@@ -2,14 +2,13 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "TransactionalWorldBlockTarget.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class FlushableEnv : public TransactionalWorldBlockTarget {
+class FlushableEnv {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -25,20 +24,13 @@ public:
 
 public:
     /*0*/ virtual ~FlushableEnv();
-    /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
-    /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
-    /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual void __unk_vfn_4();
-    /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void __unk_vfn_7();
-    /*8*/ virtual bool hasBiomeTag(unsigned __int64, class BlockPos const &) const;
-    /*9*/ virtual bool setBlock(class BlockPos const &, class Block const &, int);
-    /*10*/ virtual bool setBlockSimple(class BlockPos const &, class Block const &);
-    /*11*/ virtual void __unk_vfn_11();
-    /*12*/ virtual bool placeStructure(class BlockPos const &, class StructureTemplate &, class StructureSettings &);
-    /*13*/ virtual bool mayPlace(class BlockPos const &, class Block const &) const;
-    /*16*/ virtual short getMinHeight() const;
-    /*17*/ virtual bool shimPlaceForOldFeatures(class Feature const &, class BlockPos const &, class Random &) const;
+    /*
+    inline  ~FlushableEnv(){
+         (FlushableEnv::*rv)();
+        *((void**)&rv) = dlsym("??1FlushableEnv@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI FlushableEnv(class leveldb::Env *);
 
 protected:

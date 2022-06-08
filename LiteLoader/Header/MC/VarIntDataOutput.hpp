@@ -46,6 +46,11 @@ public:
     /*8*/ virtual void writeLongLong(__int64);
     /*9*/ virtual void writeBytes(void const *, unsigned __int64);
     /*
+    inline  ~VarIntDataOutput(){
+         (VarIntDataOutput::*rv)();
+        *((void**)&rv) = dlsym("??1VarIntDataOutput@@UEAA@XZ");
+        return (this->*rv)();
+    }
     inline void writeString(class gsl::basic_string_span<char const, -1> a0){
         void (VarIntDataOutput::*rv)(class gsl::basic_string_span<char const, -1>);
         *((void**)&rv) = dlsym("?writeString@VarIntDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z");

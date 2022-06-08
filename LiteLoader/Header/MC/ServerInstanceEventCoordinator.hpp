@@ -24,6 +24,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~ServerInstanceEventCoordinator();
     MCAPI void registerServerInstanceEventHandler(std::unique_ptr<class ServerInstanceEventHandler> &&);
     MCAPI void sendEvent(class EventRef<struct ServerInstanceGameplayEvent<void>> const &);
     MCAPI void sendServerInitializeEnd(class ServerInstance &);

@@ -27,8 +27,15 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
-    /*6*/ virtual void tick();
+    /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+    /*
+    inline void tick(){
+        void (DigGoal::*rv)();
+        *((void**)&rv) = dlsym("?tick@DigGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI DigGoal(class Mob &);
 
 protected:

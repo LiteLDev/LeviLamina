@@ -25,7 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ServerCorrectionPolicy();
-    /*1*/ virtual bool isReplayNeeded(enum AdvanceFrameResult) const;
     /*3*/ virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy &, class PlayerAuthInputPacket const &, unsigned __int64);
 
 protected:

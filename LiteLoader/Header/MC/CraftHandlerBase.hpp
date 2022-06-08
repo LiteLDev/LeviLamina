@@ -31,6 +31,18 @@ public:
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &) = 0;
     /*5*/ virtual void _postCraftRequest(bool);
     /*6*/ virtual class Recipes const * _getLevelRecipes() const;
+    /*
+    inline void endRequestBatch(){
+        void (CraftHandlerBase::*rv)();
+        *((void**)&rv) = dlsym("?endRequestBatch@CraftHandlerBase@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline  ~CraftHandlerBase(){
+         (CraftHandlerBase::*rv)();
+        *((void**)&rv) = dlsym("??1CraftHandlerBase@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI CraftHandlerBase(class ItemStackRequestActionCraftHandler &);
     MCAPI bool _isNonImplementedTrustClientResults() const;
     MCAPI enum ItemStackNetResult endRequest(enum ItemStackNetResult);

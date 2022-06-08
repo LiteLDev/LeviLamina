@@ -27,8 +27,14 @@ public:
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
-    /*5*/ virtual bool disallowBatching() const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    /*
+    inline  ~LevelChunkPacket(){
+         (LevelChunkPacket::*rv)();
+        *((void**)&rv) = dlsym("??1LevelChunkPacket@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI LevelChunkPacket(class ChunkPos const &, bool);
     MCAPI LevelChunkPacket();
     MCAPI void pushSubChunkMetadata(unsigned __int64);

@@ -65,6 +65,13 @@ public:
 public:
     /*0*/ virtual ~ReadOnlyBinaryStream();
     /*1*/ virtual bool read(void *, unsigned __int64);
+    /*
+    inline  ~ReadOnlyBinaryStream(){
+         (ReadOnlyBinaryStream::*rv)();
+        *((void**)&rv) = dlsym("??1ReadOnlyBinaryStream@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ReadOnlyBinaryStream(std::string &&);
     MCAPI ReadOnlyBinaryStream(std::string const &, bool);
     MCAPI bool canReadBool() const;

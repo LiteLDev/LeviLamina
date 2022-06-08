@@ -25,8 +25,8 @@ public:
     MCAPI class Ability const & getAbility(enum AbilitiesIndex) const;
     MCAPI bool getBool(enum AbilitiesIndex) const;
     MCAPI enum CommandPermissionLevel getCommandPermissions() const;
-    MCAPI class Ability & getCustomAbilityFromCache(enum AbilitiesIndex);
     MCAPI class Ability const & getCustomAbilityFromCache(enum AbilitiesIndex) const;
+    MCAPI class Ability & getCustomAbilityFromCache(enum AbilitiesIndex);
     MCAPI float getFloat(enum AbilitiesIndex) const;
     MCAPI enum PlayerPermissionLevel getPlayerPermissions() const;
     MCAPI bool isFlying() const;

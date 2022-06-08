@@ -25,17 +25,11 @@ public:
 
 public:
     /*1*/ virtual ~PlayerUIContainerModel();
-    /*3*/ virtual void releaseResources();
-    /*5*/ virtual int getFilteredContainerSize() const;
     /*6*/ virtual void __unk_vfn_6();
-    /*9*/ virtual std::vector<class ItemStack> const & getItems() const;
-    /*11*/ virtual class ItemStackBase const & getItemStackBase(int) const;
     /*12*/ virtual void __unk_vfn_12();
-    /*14*/ virtual bool isValid();
     /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual void __unk_vfn_16();
-    /*17*/ virtual enum ContainerExpandStatus getItemExpandStatus(int) const;
-    /*18*/ virtual std::string const & getItemGroupName(int) const;
+    /*17*/ virtual void __unk_vfn_17();
     /*19*/ virtual void __unk_vfn_19();
     /*21*/ virtual int _getContainerOffset() const;
     MCAPI PlayerUIContainerModel(enum ContainerEnumName, class Player &);

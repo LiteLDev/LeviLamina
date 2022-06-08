@@ -25,6 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptMovementHoverComponent();
+    /*
+    inline  ~ScriptMovementHoverComponent(){
+         (ScriptMovementHoverComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptMovementHoverComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMovementHoverComponent> bind(struct Scripting::Version);
 
 protected:

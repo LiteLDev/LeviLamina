@@ -25,6 +25,13 @@ public:
 public:
     /*0*/ virtual ~RakDataOutput();
     /*9*/ virtual void writeBytes(void const *, unsigned __int64);
+    /*
+    inline  ~RakDataOutput(){
+         (RakDataOutput::*rv)();
+        *((void**)&rv) = dlsym("??1RakDataOutput@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

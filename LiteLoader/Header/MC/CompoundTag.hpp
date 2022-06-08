@@ -110,6 +110,13 @@ public:
     /*8*/ virtual void print(std::string const &, class PrintStream &) const;
     /*9*/ virtual std::unique_ptr<class Tag> copy() const;
     /*10*/ virtual unsigned __int64 hash() const;
+    /*
+    inline  ~CompoundTag(){
+         (CompoundTag::*rv)();
+        *((void**)&rv) = dlsym("??1CompoundTag@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI CompoundTag(class CompoundTag &&);
     MCAPI CompoundTag();
     MCAPI void append(class CompoundTag const &);
@@ -135,8 +142,8 @@ public:
     MCAPI class Int64Tag * getInt64Tag(class gsl::basic_string_span<char const, -1>);
     MCAPI class IntTag * getIntTag(class gsl::basic_string_span<char const, -1>);
     MCAPI class IntTag const * getIntTag(class gsl::basic_string_span<char const, -1>) const;
-    MCAPI class ListTag * getList(class gsl::basic_string_span<char const, -1>);
     MCAPI class ListTag const * getList(class gsl::basic_string_span<char const, -1>) const;
+    MCAPI class ListTag * getList(class gsl::basic_string_span<char const, -1>);
     MCAPI short getShort(class gsl::basic_string_span<char const, -1>) const;
     MCAPI class ShortTag const * getShortTag(class gsl::basic_string_span<char const, -1>) const;
     MCAPI std::string const & getString(class gsl::basic_string_span<char const, -1>) const;

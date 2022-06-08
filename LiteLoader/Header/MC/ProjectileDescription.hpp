@@ -27,6 +27,13 @@ public:
     /*1*/ virtual ~ProjectileDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
+    /*
+    inline  ~ProjectileDescription(){
+         (ProjectileDescription::*rv)();
+        *((void**)&rv) = dlsym("??1ProjectileDescription@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ProjectileDescription();
 
 protected:

@@ -25,7 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~NetherFortressStart();
-    /*2*/ virtual bool isValid() const;
     MCAPI NetherFortressStart(class Random &, short, int, int);
 
 protected:

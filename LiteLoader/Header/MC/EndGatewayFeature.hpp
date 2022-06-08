@@ -27,6 +27,13 @@ public:
     /*0*/ virtual ~EndGatewayFeature();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+    /*
+    inline  ~EndGatewayFeature(){
+         (EndGatewayFeature::*rv)();
+        *((void**)&rv) = dlsym("??1EndGatewayFeature@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

@@ -25,6 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptInventoryComponent2();
+    /*
+    inline  ~ScriptInventoryComponent2(){
+         (ScriptInventoryComponent2::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptInventoryComponent2@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI class Scripting::Result<int> getAdditionalSlotsPerStrength() const;
     MCAPI class Scripting::Result<bool> getCanBeSiphonedFrom() const;
     MCAPI class Scripting::Result<std::string> getContainerType() const;

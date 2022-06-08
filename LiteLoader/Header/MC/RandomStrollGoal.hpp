@@ -26,7 +26,6 @@ public:
     /*0*/ virtual ~RandomStrollGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual bool canBeInterrupted();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
@@ -34,6 +33,13 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual bool _setWantedPosition();
+    /*
+    inline  ~RandomStrollGoal(){
+         (RandomStrollGoal::*rv)();
+        *((void**)&rv) = dlsym("??1RandomStrollGoal@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI RandomStrollGoal(class Mob &, float, int, int, int);
 
 protected:

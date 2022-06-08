@@ -36,13 +36,20 @@ public:
     /*17*/ virtual void stopOpen(class Player &);
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
-    /*31*/ virtual void initializeContainerContents(class BlockSource &);
+    /*31*/ virtual void __unk_vfn_31();
     /*33*/ virtual bool add(class ItemStack &);
     /*34*/ virtual bool canAdd(class ItemStack const &) const;
     /*35*/ virtual void clearSlot(int);
     /*36*/ virtual int clearInventory(int);
     /*37*/ virtual void load(class ListTag const &, class SemVersion const &, class Level &);
     /*38*/ virtual int getEmptySlotsCount() const;
+    /*
+    inline  ~FillingContainer(){
+         (FillingContainer::*rv)();
+        *((void**)&rv) = dlsym("??1FillingContainer@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI FillingContainer(class Player *, int, enum ContainerType);
     MCAPI int getHotbarSize() const;
     MCAPI int getSlotWithItem(class ItemStack const &, bool, bool) const;

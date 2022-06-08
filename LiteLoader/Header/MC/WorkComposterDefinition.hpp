@@ -21,6 +21,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~WorkComposterDefinition();
     MCAPI WorkComposterDefinition();
     MCAPI void initialize(class EntityContext &, class WorkComposterGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class WorkComposterDefinition>> &);

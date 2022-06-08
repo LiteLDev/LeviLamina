@@ -26,6 +26,13 @@ public:
 public:
     /*0*/ virtual ~PackManifestFactory();
     /*1*/ virtual std::unique_ptr<class PackManifest> create(class PackAccessStrategy &, class ResourceLocation const &, class PackReport &, class SubpackInfoCollection *);
+    /*
+    inline  ~PackManifestFactory(){
+         (PackManifestFactory::*rv)();
+        *((void**)&rv) = dlsym("??1PackManifestFactory@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI PackManifestFactory(class IPackTelemetry &);
     MCAPI static class Core::PathBuffer<std::string> const MANIFEST_LOG_PATH;
     MCAPI static std::string const MANIFEST_PACK_UUID_UPGRADE_SALT;

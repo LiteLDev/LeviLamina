@@ -26,6 +26,13 @@ public:
 public:
     /*0*/ virtual ~RuntimeIdentifierDescription();
     /*1*/ virtual char const * getJsonName() const;
+    /*
+    inline  ~RuntimeIdentifierDescription(){
+         (RuntimeIdentifierDescription::*rv)();
+        *((void**)&rv) = dlsym("??1RuntimeIdentifierDescription@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI void parse(class Json::Value const &);
 
 protected:

@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~NetworkPacketEventCoordinator();
     MCAPI void sendPacketReceivedFrom(class PacketHeader const &, class Packet const &);
 
 protected:

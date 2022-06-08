@@ -22,7 +22,7 @@ public:
 
 public:
     /*0*/ virtual ~NBTSchemaReader();
-    /*1*/ virtual bool isValid() const;
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual bool isString() const;
     /*3*/ virtual bool isObject() const;
     /*4*/ virtual bool isArray() const;
@@ -55,6 +55,16 @@ public:
     /*31*/ virtual void pushElement(unsigned __int64);
     /*32*/ virtual void pop();
     /*
+    inline bool isValid() const{
+        bool (NBTSchemaReader::*rv)() const;
+        *((void**)&rv) = dlsym("?isValid@NBTSchemaReader@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline  ~NBTSchemaReader(){
+         (NBTSchemaReader::*rv)();
+        *((void**)&rv) = dlsym("??1NBTSchemaReader@@UEAA@XZ");
+        return (this->*rv)();
+    }
     inline short asInt16() const{
         short (NBTSchemaReader::*rv)() const;
         *((void**)&rv) = dlsym("?asInt16@NBTSchemaReader@@UEBAFXZ");
@@ -110,14 +120,14 @@ public:
         *((void**)&rv) = dlsym("?isInt8@NBTSchemaReader@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isUInt16() const{
-        bool (NBTSchemaReader::*rv)() const;
-        *((void**)&rv) = dlsym("?isUInt16@NBTSchemaReader@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isInt16() const{
         bool (NBTSchemaReader::*rv)() const;
         *((void**)&rv) = dlsym("?isInt16@NBTSchemaReader@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isUInt16() const{
+        bool (NBTSchemaReader::*rv)() const;
+        *((void**)&rv) = dlsym("?isUInt16@NBTSchemaReader@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isUInt32() const{

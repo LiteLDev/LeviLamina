@@ -25,6 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptNavigationFloatComponent();
+    /*
+    inline  ~ScriptNavigationFloatComponent(){
+         (ScriptNavigationFloatComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptNavigationFloatComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptNavigationFloatComponent> bind(struct Scripting::Version);
 
 protected:

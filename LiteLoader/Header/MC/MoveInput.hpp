@@ -25,7 +25,7 @@ public:
 public:
     /*0*/ virtual ~MoveInput();
     /*1*/ virtual void tick(struct IPlayerMovementProxy &);
-    /*2*/ virtual void registerInputHandlers(class InputHandler &);
+    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void clearInputState();
     /*5*/ virtual void __unk_vfn_5();

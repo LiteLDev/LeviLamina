@@ -44,6 +44,13 @@ public:
     /*3*/ virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const = 0;
     /*4*/ virtual void update();
     /*5*/ virtual void flush(class std::function<void (void)> &&);
+    /*
+    inline  ~NetworkPeer(){
+         (NetworkPeer::*rv)();
+        *((void**)&rv) = dlsym("??1NetworkPeer@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

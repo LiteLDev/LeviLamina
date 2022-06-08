@@ -31,6 +31,13 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+    /*
+    inline  ~PanicGoal(){
+         (PanicGoal::*rv)();
+        *((void**)&rv) = dlsym("??1PanicGoal@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI PanicGoal(class Mob &, float, bool, enum LevelSoundEvent, struct FloatRange, bool, bool, std::vector<enum ActorDamageCause>);
 
 protected:

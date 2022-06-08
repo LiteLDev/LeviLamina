@@ -29,6 +29,13 @@ public:
     /*2*/ virtual int apply(class ItemStack &, class Random &, struct Trade const &, class LootTableContext &);
     /*3*/ virtual void apply(class ItemInstance &, class Random &, class LootTableContext &) = 0;
     /*4*/ virtual int apply(class ItemInstance &, class Random &, struct Trade const &, class LootTableContext &);
+    /*
+    inline  ~LootItemFunction(){
+         (LootItemFunction::*rv)();
+        *((void**)&rv) = dlsym("??1LootItemFunction@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI std::vector<std::unique_ptr<class LootItemCondition>> const & getConditions() const;
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value);
 

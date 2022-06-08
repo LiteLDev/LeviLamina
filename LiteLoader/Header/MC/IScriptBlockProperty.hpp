@@ -21,6 +21,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~IScriptBlockProperty();
+    /*
+    inline  ~IScriptBlockProperty(){
+         (IScriptBlockProperty::*rv)();
+        *((void**)&rv) = dlsym("??1IScriptBlockProperty@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

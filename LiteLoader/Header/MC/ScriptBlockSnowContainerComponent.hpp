@@ -24,6 +24,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlockSnowContainerComponent();
+    /*
+    inline  ~ScriptBlockSnowContainerComponent(){
+         (ScriptBlockSnowContainerComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptBlockSnowContainerComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptBlockSnowContainerComponent(class ScriptBlockSnowContainerComponent &&);
     MCAPI ScriptBlockSnowContainerComponent(class ScriptBlockSnowContainerComponent const &);
     MCAPI class ScriptBlockSnowContainerComponent & operator=(class ScriptBlockSnowContainerComponent &&);

@@ -24,16 +24,18 @@ public:
 
 public:
     /*0*/ virtual ~IRandom();
-    /*1*/ virtual void __unk_vfn_1() = 0;
-    /*2*/ virtual void __unk_vfn_2() = 0;
-    /*3*/ virtual void __unk_vfn_3() = 0;
-    /*4*/ virtual void __unk_vfn_4() = 0;
-    /*5*/ virtual void __unk_vfn_5() = 0;
-    /*6*/ virtual void __unk_vfn_6() = 0;
-    /*7*/ virtual void __unk_vfn_7() = 0;
-    /*8*/ virtual void __unk_vfn_8() = 0;
-    /*9*/ virtual void __unk_vfn_9() = 0;
-    /*10*/ virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
+    /*
+    inline std::unique_ptr<class IPositionalRandomFactory> forkPositional(){
+        std::unique_ptr<class IPositionalRandomFactory> (IRandom::*rv)();
+        *((void**)&rv) = dlsym("?forkPositional@IRandom@@UEAA?AV?$unique_ptr@VIPositionalRandomFactory@@U?$default_delete@VIPositionalRandomFactory@@@std@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline  ~IRandom(){
+         (IRandom::*rv)();
+        *((void**)&rv) = dlsym("??1IRandom@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

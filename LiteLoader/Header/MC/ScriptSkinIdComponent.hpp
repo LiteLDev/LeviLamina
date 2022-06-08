@@ -23,6 +23,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptSkinIdComponent();
+    /*
+    inline  ~ScriptSkinIdComponent(){
+         (ScriptSkinIdComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptSkinIdComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

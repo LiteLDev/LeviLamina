@@ -2,15 +2,13 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Json.hpp"
-#include "TextObjectText.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class ScriptMinecraftModuleFactory : public TextObjectText {
+class ScriptMinecraftModuleFactory {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -26,8 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptMinecraftModuleFactory();
-    /*2*/ virtual class Json::Value asJsonValue() const;
-    /*3*/ virtual class Json::Value resolve(struct ResolveData const &) const;
     MCAPI ScriptMinecraftModuleFactory(class ServerLevel *, class MinecraftCommands *, std::unique_ptr<class ScriptMinecraftCommonModuleFactory>);
     MCAPI static class std::unordered_map<std::string, std::unique_ptr<class IComponentFactory>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class IComponentFactory>>>> & getActorComponentFactoriesV1();
     MCAPI static std::string getModuleUUIDAsString();

@@ -31,6 +31,13 @@ public:
     /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /*6*/ virtual void __unk_vfn_6();
     /*10*/ virtual void __unk_vfn_10();
+    /*
+    inline  ~NBBridgeCrossing(){
+         (NBBridgeCrossing::*rv)();
+        *((void**)&rv) = dlsym("??1NBBridgeCrossing@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

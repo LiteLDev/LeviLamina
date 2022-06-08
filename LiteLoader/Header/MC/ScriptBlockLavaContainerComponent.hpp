@@ -24,6 +24,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlockLavaContainerComponent();
+    /*
+    inline  ~ScriptBlockLavaContainerComponent(){
+         (ScriptBlockLavaContainerComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptBlockLavaContainerComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptBlockLavaContainerComponent(class ScriptBlockLavaContainerComponent const &);
     MCAPI ScriptBlockLavaContainerComponent(class ScriptBlockLavaContainerComponent &&);
     MCAPI class ScriptBlockLavaContainerComponent & operator=(class ScriptBlockLavaContainerComponent &&);

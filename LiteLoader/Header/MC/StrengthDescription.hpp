@@ -28,6 +28,13 @@ public:
     /*1*/ virtual ~StrengthDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
+    /*
+    inline  ~StrengthDescription(){
+         (StrengthDescription::*rv)();
+        *((void**)&rv) = dlsym("??1StrengthDescription@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

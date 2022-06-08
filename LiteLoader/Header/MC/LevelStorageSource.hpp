@@ -23,6 +23,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~LevelStorageSource();
+    /*
+    inline  ~LevelStorageSource(){
+         (LevelStorageSource::*rv)();
+        *((void**)&rv) = dlsym("??1LevelStorageSource@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const WORLD_SAVE_FLUSH_INTERVAL;
     MCAPI static class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const WORLD_SAVE_MENU_FLUSH_INTERVAL;
 

@@ -23,6 +23,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~ISecureStorageKeySystem();
+    /*
+    inline  ~ISecureStorageKeySystem(){
+         (ISecureStorageKeySystem::*rv)();
+        *((void**)&rv) = dlsym("??1ISecureStorageKeySystem@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

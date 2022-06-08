@@ -32,61 +32,57 @@ public:
     /*20*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*32*/ virtual float getInterpolatedHeadRot(float) const;
     /*33*/ virtual float getInterpolatedBodyYaw(float) const;
-    /*36*/ virtual class Vec3 getInterpolatedRidingOffset(float) const;
-    /*40*/ virtual bool breaksFallingBlocks() const;
+    /*40*/ virtual void __unk_vfn_40();
     /*43*/ virtual void teleportTo(class Vec3 const &, bool, int, int);
-    /*61*/ virtual bool canExistInPeaceful() const;
-    /*68*/ virtual bool canMakeStepSound() const;
+    /*61*/ virtual void __unk_vfn_61();
+    /*68*/ virtual void __unk_vfn_68();
     /*78*/ virtual float getCameraOffset() const;
     /*80*/ virtual float getShadowRadius() const;
-    /*82*/ virtual bool canSeeInvisible() const;
+    /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual bool canInteractWithOtherEntitiesInGame() const;
-    /*88*/ virtual bool interactPreventDefault();
+    /*88*/ virtual void __unk_vfn_88();
     /*89*/ virtual void playerTouch(class Player &);
     /*94*/ virtual bool isPickable();
-    /*95*/ virtual bool isFishable() const;
+    /*95*/ virtual void __unk_vfn_95();
     /*96*/ virtual bool isSleeping() const;
     /*97*/ virtual void setSleeping(bool);
-    /*98*/ virtual bool useNewAi() const;
+    /*98*/ virtual void __unk_vfn_98();
     /*100*/ virtual bool isBlocking() const;
     /*101*/ virtual bool isDamageBlocked(class ActorDamageSource const &) const;
-    /*105*/ virtual bool shouldBurn();
+    /*105*/ virtual void __unk_vfn_105();
     /*106*/ virtual bool isSurfaceMob() const;
-    /*107*/ virtual bool isTargetable() const;
-    /*108*/ virtual bool canBeControlledByPassenger();
-    /*109*/ virtual bool isLeashableType();
+    /*107*/ virtual void __unk_vfn_107();
+    /*108*/ virtual void __unk_vfn_108();
+    /*109*/ virtual void __unk_vfn_109();
     /*113*/ virtual class Actor * findAttackTarget();
     /*114*/ virtual bool isValidTarget(class Actor *) const;
     /*120*/ virtual void onTame();
     /*121*/ virtual void onFailedTame();
     /*128*/ virtual bool isJumping() const;
     /*130*/ virtual void vehicleLanded(class Vec3 const &, class Vec3 const &);
-    /*134*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /*136*/ virtual void animateHurt();
     /*139*/ virtual void onBounceStarted(class BlockPos const &, class Block const &);
-    /*142*/ virtual float getPickRadius();
     /*151*/ virtual void awardKillScore(class Actor &, int);
     /*155*/ virtual enum ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot) const;
     /*156*/ virtual enum ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot) const;
     /*157*/ virtual float getArmorColorInSlot(enum ArmorSlot, int) const;
     /*159*/ virtual void setEquippedSlot(enum EquipmentSlot, class ItemStack const &);
-    /*170*/ virtual class HashedString const & queryEntityRenderer() const;
     /*171*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*173*/ virtual bool canFreeze() const;
     /*178*/ virtual int getPortalWaitTime() const;
     /*180*/ virtual bool canChangeDimensions() const;
-    /*181*/ virtual void onHit(class HitResult const &);
+    /*181*/ virtual void __unk_vfn_181();
     /*183*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*192*/ virtual bool canPickupItem(class ItemStack const &) const;
     /*193*/ virtual bool canBePulledIntoVehicle() const;
     /*194*/ virtual bool inCaravan() const;
-    /*195*/ virtual bool stopUponGroundCollision() const;
+    /*195*/ virtual void __unk_vfn_195();
     /*198*/ virtual bool canSynchronizeNewEntity() const;
     /*202*/ virtual void buildDebugInfo(std::string &) const;
     /*207*/ virtual int getDeathTime() const;
     /*218*/ virtual void swing();
     /*220*/ virtual void __unk_vfn_220();
-    /*221*/ virtual unsigned int getUserId() const;
+    /*221*/ virtual void __unk_vfn_221();
     /*225*/ virtual float getYHeadRot() const;
     /*226*/ virtual void setYHeadRot(float);
     /*227*/ virtual float getYHeadRotO() const;
@@ -101,40 +97,30 @@ public:
     /*239*/ virtual void setSize(float, float);
     /*244*/ virtual void stopSpinAttack();
     /*246*/ virtual void __unk_vfn_246();
-    /*249*/ virtual float getDeletionDelayTimeSeconds() const;
+    /*249*/ virtual void __unk_vfn_249();
     /*259*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
-    /*261*/ virtual bool shouldAlwaysRender();
+    /*261*/ virtual void __unk_vfn_261();
     /*265*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
-    /*269*/ virtual bool _makeFlySound() const;
+    /*269*/ virtual void __unk_vfn_269();
     /*277*/ virtual void _onSizeUpdated();
     /*278*/ virtual void __unk_vfn_278();
-    /*279*/ virtual void __unk_vfn_279();
-    /*280*/ virtual void __unk_vfn_280();
-    /*281*/ virtual void __unk_vfn_281();
-    /*282*/ virtual void __unk_vfn_282();
-    /*283*/ virtual void __unk_vfn_283();
+    /*279*/ virtual void setDir(int);
+    /*280*/ virtual int getWidth() const;
+    /*281*/ virtual int getHeight() const;
+    /*282*/ virtual void dropItem();
+    /*283*/ virtual bool placeHangingEntity(class BlockSource &, int);
     /*284*/ virtual bool wouldSurvive(class BlockSource &);
     /*
-    inline void dropItem(){
-        void (LeashFenceKnotActor::*rv)();
-        *((void**)&rv) = dlsym("?dropItem@LeashFenceKnotActor@@UEAAXXZ");
-        return (this->*rv)();
+    inline void addAdditionalSaveData(class CompoundTag & a0){
+        void (LeashFenceKnotActor::*rv)(class CompoundTag &);
+        *((void**)&rv) = dlsym("?addAdditionalSaveData@LeashFenceKnotActor@@UEAAXAEAVCompoundTag@@@Z");
+        return (this->*rv)(std::forward<class CompoundTag &>(a0));
     }
-    inline void setDir(int a0){
-        void (LeashFenceKnotActor::*rv)(int);
-        *((void**)&rv) = dlsym("?setDir@LeashFenceKnotActor@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline int getHeight() const{
-        int (LeashFenceKnotActor::*rv)() const;
-        *((void**)&rv) = dlsym("?getHeight@LeashFenceKnotActor@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline int getWidth() const{
-        int (LeashFenceKnotActor::*rv)() const;
-        *((void**)&rv) = dlsym("?getWidth@LeashFenceKnotActor@@UEBAHXZ");
-        return (this->*rv)();
+    inline void readAdditionalSaveData(class CompoundTag const & a0, class DataLoadHelper & a1){
+        void (LeashFenceKnotActor::*rv)(class CompoundTag const &, class DataLoadHelper &);
+        *((void**)&rv) = dlsym("?readAdditionalSaveData@LeashFenceKnotActor@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
+        return (this->*rv)(std::forward<class CompoundTag const &>(a0), std::forward<class DataLoadHelper &>(a1));
     }
     */
     MCAPI LeashFenceKnotActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

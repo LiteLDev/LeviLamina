@@ -44,6 +44,11 @@ public:
         *((void**)&rv) = dlsym("?getClientInstance@DirectPlayerMovementProxy@@UEBAPEBUIClientInstanceProxy@@XZ");
         return (this->*rv)();
     }
+    inline void setLookBob(class Vec2 const & a0){
+        void (DirectPlayerMovementProxy::*rv)(class Vec2 const &);
+        *((void**)&rv) = dlsym("?setLookBob@DirectPlayerMovementProxy@@UEAAXAEBVVec2@@@Z");
+        return (this->*rv)(std::forward<class Vec2 const &>(a0));
+    }
     inline void setLastLookBob(class Vec2 const & a0){
         void (DirectPlayerMovementProxy::*rv)(class Vec2 const &);
         *((void**)&rv) = dlsym("?setLastLookBob@DirectPlayerMovementProxy@@UEAAXAEBVVec2@@@Z");
@@ -53,11 +58,6 @@ public:
         void (DirectPlayerMovementProxy::*rv)();
         *((void**)&rv) = dlsym("?registerFramewiseActionOrStop@DirectPlayerMovementProxy@@UEAAXXZ");
         return (this->*rv)();
-    }
-    inline void setLookBob(class Vec2 const & a0){
-        void (DirectPlayerMovementProxy::*rv)(class Vec2 const &);
-        *((void**)&rv) = dlsym("?setLookBob@DirectPlayerMovementProxy@@UEAAXAEBVVec2@@@Z");
-        return (this->*rv)(std::forward<class Vec2 const &>(a0));
     }
     inline void setJumpRidingScale(float a0){
         void (DirectPlayerMovementProxy::*rv)(float);
@@ -69,30 +69,30 @@ public:
         *((void**)&rv) = dlsym("?setCurrentLocalMoveVelocity@DirectPlayerMovementProxy@@UEAAXAEBVVec2@@@Z");
         return (this->*rv)(std::forward<class Vec2 const &>(a0));
     }
-    inline void sendInput(){
-        void (DirectPlayerMovementProxy::*rv)();
-        *((void**)&rv) = dlsym("?sendInput@DirectPlayerMovementProxy@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void setLastDelta(class Vec3 const & a0){
         void (DirectPlayerMovementProxy::*rv)(class Vec3 const &);
         *((void**)&rv) = dlsym("?setLastDelta@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@@Z");
         return (this->*rv)(std::forward<class Vec3 const &>(a0));
+    }
+    inline void sendInput(){
+        void (DirectPlayerMovementProxy::*rv)();
+        *((void**)&rv) = dlsym("?sendInput@DirectPlayerMovementProxy@@UEAAXXZ");
+        return (this->*rv)();
     }
     inline void updateClientPlayerInputState(){
         void (DirectPlayerMovementProxy::*rv)();
         *((void**)&rv) = dlsym("?updateClientPlayerInputState@DirectPlayerMovementProxy@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void sendPosition(){
-        void (DirectPlayerMovementProxy::*rv)();
-        *((void**)&rv) = dlsym("?sendPosition@DirectPlayerMovementProxy@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void setLastPos(class Vec3 const & a0){
         void (DirectPlayerMovementProxy::*rv)(class Vec3 const &);
         *((void**)&rv) = dlsym("?setLastPos@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@@Z");
         return (this->*rv)(std::forward<class Vec3 const &>(a0));
+    }
+    inline void sendPosition(){
+        void (DirectPlayerMovementProxy::*rv)();
+        *((void**)&rv) = dlsym("?sendPosition@DirectPlayerMovementProxy@@UEAAXXZ");
+        return (this->*rv)();
     }
     inline void setWasAutoJumping(bool a0){
         void (DirectPlayerMovementProxy::*rv)(bool);
@@ -104,14 +104,14 @@ public:
         *((void**)&rv) = dlsym("?setEmotePlayedEndedEarly@DirectPlayerMovementProxy@@UEAAX_N@Z");
         return (this->*rv)(std::forward<bool>(a0));
     }
-    inline void fireEventPersonaEmotePlayed(){
-        void (DirectPlayerMovementProxy::*rv)();
-        *((void**)&rv) = dlsym("?fireEventPersonaEmotePlayed@DirectPlayerMovementProxy@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void sendClientAuthInput(){
         void (DirectPlayerMovementProxy::*rv)();
         *((void**)&rv) = dlsym("?sendClientAuthInput@DirectPlayerMovementProxy@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void fireEventPersonaEmotePlayed(){
+        void (DirectPlayerMovementProxy::*rv)();
+        *((void**)&rv) = dlsym("?fireEventPersonaEmotePlayed@DirectPlayerMovementProxy@@UEAAXXZ");
         return (this->*rv)();
     }
     inline struct IPlayerMovementProxy const * tryAsPlayer() const{

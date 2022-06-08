@@ -27,7 +27,13 @@ public:
     /*1*/ virtual void fillBiomes(class LevelChunk &, class ChunkLocalNoiseCache const &) const;
     /*2*/ virtual class BiomeArea getBiomeArea(class BoundingBox const &, unsigned int) const;
     /*3*/ virtual bool containsOnly(int, int, int, int, class gsl::span<int const, -1>) const;
-    /*4*/ virtual class Biome const * getBiome(int, int, int) const;
+    /*
+    inline class Biome const * getBiome(int a0, int a1, int a2) const{
+        class Biome const * (FixedBiomeSource::*rv)(int, int, int) const;
+        *((void**)&rv) = dlsym("?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@HHH@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<int>(a2));
+    }
+    */
     MCAPI FixedBiomeSource(class Biome const &);
 
 protected:

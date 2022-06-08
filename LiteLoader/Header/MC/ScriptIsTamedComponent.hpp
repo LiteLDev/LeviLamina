@@ -23,6 +23,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptIsTamedComponent();
+    /*
+    inline  ~ScriptIsTamedComponent(){
+         (ScriptIsTamedComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptIsTamedComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class HashedString const & getHashedName();
 
 protected:

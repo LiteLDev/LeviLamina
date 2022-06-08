@@ -32,6 +32,13 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+    /*
+    inline  ~DoorInteractGoal(){
+         (DoorInteractGoal::*rv)();
+        *((void**)&rv) = dlsym("??1DoorInteractGoal@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI DoorInteractGoal(class Mob &);
 
 protected:

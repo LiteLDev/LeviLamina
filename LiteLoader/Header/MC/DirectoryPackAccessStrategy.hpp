@@ -43,6 +43,13 @@ public:
     /*16*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const &) const;
     /*18*/ virtual bool canRecurse() const;
     /*19*/ virtual void unload();
+    /*
+    inline  ~DirectoryPackAccessStrategy(){
+         (DirectoryPackAccessStrategy::*rv)();
+        *((void**)&rv) = dlsym("??1DirectoryPackAccessStrategy@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI DirectoryPackAccessStrategy(class ResourceLocation const &, bool);
 
 protected:

@@ -25,8 +25,18 @@ public:
 public:
     /*0*/ virtual ~VibrationListener();
     /*1*/ virtual void handleGameEvent(class GameEvent const &, class BlockPos const &, class Actor *, class BlockSource &);
-    /*2*/ virtual class GameEvents::PositionSource const & getPositionSource() const;
-    /*3*/ virtual unsigned int getRange() const;
+    /*
+    inline unsigned int getRange() const{
+        unsigned int (VibrationListener::*rv)() const;
+        *((void**)&rv) = dlsym("?getRange@VibrationListener@@UEBAIXZ");
+        return (this->*rv)();
+    }
+    inline class GameEvents::PositionSource const & getPositionSource() const{
+        class GameEvents::PositionSource const & (VibrationListener::*rv)() const;
+        *((void**)&rv) = dlsym("?getPositionSource@VibrationListener@@UEBAAEBVPositionSource@GameEvents@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI VibrationListener(std::unique_ptr<class VibrationListenerConfig> &&, class GameEvents::PositionSource, unsigned int, enum VibrationListener::OwnerType);
     MCAPI class GameEvent const & getGameEvent() const;
     MCAPI void tick(class BlockSource &);

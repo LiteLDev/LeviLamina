@@ -24,15 +24,32 @@ public:
     /*0*/ virtual unsigned int AddRef();
     /*1*/ virtual unsigned int Release();
     /*2*/ virtual long QueryApi(enum ApiId, void **);
-    /*3*/ virtual enum XTaskQueuePort GetType();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual enum TaskQueuePortStatus GetStatus();
-    /*5*/ virtual struct ITaskQueue * GetQueue();
-    /*6*/ virtual struct ITaskQueuePort * GetPort();
+    /*5*/ virtual void __unk_vfn_5();
+    /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual bool TrySetStatus(enum TaskQueuePortStatus, enum TaskQueuePortStatus);
     /*8*/ virtual void SetStatus(enum TaskQueuePortStatus);
     /*9*/ virtual void ItemQueued();
     /*10*/ virtual bool AddSuspend();
     /*11*/ virtual bool RemoveSuspend();
+    /*
+    inline struct ITaskQueuePort * GetPort(){
+        struct ITaskQueuePort * (TaskQueuePortContextImpl::*rv)();
+        *((void**)&rv) = dlsym("?GetPort@TaskQueuePortContextImpl@@UEAAPEAUITaskQueuePort@@XZ");
+        return (this->*rv)();
+    }
+    inline struct ITaskQueue * GetQueue(){
+        struct ITaskQueue * (TaskQueuePortContextImpl::*rv)();
+        *((void**)&rv) = dlsym("?GetQueue@TaskQueuePortContextImpl@@UEAAPEAUITaskQueue@@XZ");
+        return (this->*rv)();
+    }
+    inline enum XTaskQueuePort GetType(){
+        enum XTaskQueuePort (TaskQueuePortContextImpl::*rv)();
+        *((void**)&rv) = dlsym("?GetType@TaskQueuePortContextImpl@@UEAA?AW4XTaskQueuePort@@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

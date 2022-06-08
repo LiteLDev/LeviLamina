@@ -22,6 +22,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~ContentLog();
     MCAPI ContentLog();
     MCAPI bool isEnabled() const;
     MCAPI void log(bool, enum LogLevel, enum LogArea, ...);

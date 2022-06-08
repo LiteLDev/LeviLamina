@@ -26,6 +26,13 @@ public:
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~MoveControlBasicDescription();
+    /*
+    inline  ~MoveControlBasicDescription(){
+         (MoveControlBasicDescription::*rv)();
+        *((void**)&rv) = dlsym("??1MoveControlBasicDescription@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

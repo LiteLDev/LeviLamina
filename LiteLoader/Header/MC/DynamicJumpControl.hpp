@@ -23,13 +23,20 @@ public:
 
 public:
     /*0*/ virtual ~DynamicJumpControl();
-    /*1*/ virtual void initializeInternal(class Mob &, struct JumpControlDescription *);
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void tick(class JumpControlComponent &, class Mob &);
     /*3*/ virtual int getJumpDelay(class JumpControlComponent const &, class Mob const &) const;
     /*4*/ virtual float getJumpPower(class JumpControlComponent const &, class Mob const &) const;
     /*5*/ virtual enum JumpType getJumpType(class JumpControlComponent const &, class Mob const &) const;
     /*6*/ virtual void setJumpType(class JumpControlComponent &, class Mob &, enum JumpType);
     /*7*/ virtual void resetSpeedModifier(class JumpControlComponent const &, class Mob &);
+    /*
+    inline void initializeInternal(class Mob & a0, struct JumpControlDescription * a1){
+        void (DynamicJumpControl::*rv)(class Mob &, struct JumpControlDescription *);
+        *((void**)&rv) = dlsym("?initializeInternal@DynamicJumpControl@@UEAAXAEAVMob@@PEAUJumpControlDescription@@@Z");
+        return (this->*rv)(std::forward<class Mob &>(a0), std::forward<struct JumpControlDescription *>(a1));
+    }
+    */
     MCAPI DynamicJumpControl();
 
 protected:

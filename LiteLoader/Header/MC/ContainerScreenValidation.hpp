@@ -26,7 +26,13 @@ public:
     /*0*/ virtual ~ContainerScreenValidation();
     /*1*/ virtual struct ContainerValidationResult tryCraft(std::unique_ptr<struct ContainerValidationCraftInputs>);
     /*2*/ virtual struct ContainerValidationCraftResult getCraftResults(std::unique_ptr<struct ContainerValidationCraftInputs>);
-    /*3*/ virtual struct ContainerValidationResult tryActivate();
+    /*
+    inline struct ContainerValidationResult tryActivate(){
+        struct ContainerValidationResult (ContainerScreenValidation::*rv)();
+        *((void**)&rv) = dlsym("?tryActivate@ContainerScreenValidation@@UEAA?AUContainerValidationResult@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ContainerScreenValidation(class ContainerScreenContext const &, enum ContainerValidationCaller, class std::unordered_map<enum ContainerEnumName, class std::shared_ptr<class Container>, struct std::hash<enum ContainerEnumName>, struct std::equal_to<enum ContainerEnumName>, class std::allocator<struct std::pair<enum ContainerEnumName const, class std::shared_ptr<class Container>>>>);
     MCAPI class std::shared_ptr<class SimpleSparseContainer> getOrCreateSparseContainer(enum ContainerEnumName);
     MCAPI bool isCraftingImplemented();

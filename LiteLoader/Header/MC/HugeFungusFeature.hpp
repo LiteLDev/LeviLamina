@@ -27,6 +27,13 @@ public:
     /*0*/ virtual ~HugeFungusFeature();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+    /*
+    inline  ~HugeFungusFeature(){
+         (HugeFungusFeature::*rv)();
+        *((void**)&rv) = dlsym("??1HugeFungusFeature@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI HugeFungusFeature(bool);
 
 protected:

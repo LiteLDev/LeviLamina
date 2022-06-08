@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~ChargeAttackDefinition();
     MCAPI ChargeAttackDefinition();
     MCAPI void initialize(class EntityContext &, class ChargeAttackGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ChargeAttackDefinition>> &);

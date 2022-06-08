@@ -28,6 +28,13 @@ public:
     /*6*/ virtual void writeShort(short);
     /*7*/ virtual void writeInt(int);
     /*8*/ virtual void writeLongLong(__int64);
+    /*
+    inline  ~BigEndianStringByteOutput(){
+         (BigEndianStringByteOutput::*rv)();
+        *((void**)&rv) = dlsym("??1BigEndianStringByteOutput@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

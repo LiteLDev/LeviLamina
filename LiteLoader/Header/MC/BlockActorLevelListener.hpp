@@ -29,11 +29,10 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void onBlockEntityAboutToBeRemoved(class BlockSource &, class std::shared_ptr<class BlockActor>);
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void __unk_vfn_10();
-    /*11*/ virtual class Particle * addParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
+    /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void __unk_vfn_14();
@@ -48,11 +47,13 @@ public:
     /*23*/ virtual void __unk_vfn_23();
     /*24*/ virtual void __unk_vfn_24();
     /*25*/ virtual void onChunkUnloaded(class LevelChunk &);
-    /*26*/ virtual void onLevelDestruction(std::string const &);
-    /*27*/ virtual void __unk_vfn_27();
-    /*28*/ virtual void levelEvent(enum LevelEvent, class Vec3 const &, int);
-    /*29*/ virtual void __unk_vfn_29();
-    /*30*/ virtual void levelSoundEvent(enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
+    /*
+    inline  ~BlockActorLevelListener(){
+         (BlockActorLevelListener::*rv)();
+        *((void**)&rv) = dlsym("??1BlockActorLevelListener@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BlockActorLevelListener();
 
 protected:

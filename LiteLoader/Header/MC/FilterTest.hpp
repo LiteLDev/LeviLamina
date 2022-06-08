@@ -37,6 +37,13 @@ public:
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const = 0;
     /*5*/ virtual class Json::Value _serializeDomain() const;
     /*6*/ virtual class Json::Value _serializeValue() const = 0;
+    /*
+    inline  ~FilterTest(){
+         (FilterTest::*rv)();
+        *((void**)&rv) = dlsym("??1FilterTest@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI class Json::Value serialize() const;
 
 protected:

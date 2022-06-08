@@ -35,6 +35,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~Connector();
+    /*
+    inline  ~Connector(){
+         (Connector::*rv)();
+        *((void**)&rv) = dlsym("??1Connector@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

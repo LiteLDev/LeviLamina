@@ -27,8 +27,14 @@ public:
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
-    /*5*/ virtual bool disallowBatching() const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    /*
+    inline  ~ResourcePackStackPacket(){
+         (ResourcePackStackPacket::*rv)();
+        *((void**)&rv) = dlsym("??1ResourcePackStackPacket@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ResourcePackStackPacket(std::vector<struct PackInstanceId>, std::vector<struct PackInstanceId>, class BaseGameVersion const &, bool, class Experiments const &);
     MCAPI ResourcePackStackPacket();
 

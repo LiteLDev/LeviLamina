@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~SwoopAttackDefinition();
     MCAPI SwoopAttackDefinition();
     MCAPI void initialize(class EntityContext &, class SwoopAttackGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwoopAttackDefinition>> &);

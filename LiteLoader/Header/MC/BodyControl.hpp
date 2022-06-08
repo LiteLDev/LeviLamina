@@ -24,6 +24,13 @@ public:
 public:
     /*0*/ virtual ~BodyControl();
     /*1*/ virtual void clientTick(class Mob &);
+    /*
+    inline  ~BodyControl(){
+         (BodyControl::*rv)();
+        *((void**)&rv) = dlsym("??1BodyControl@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BodyControl();
 
 protected:

@@ -28,6 +28,13 @@ public:
 public:
     /*0*/ virtual ~ResourcePackFileUploadManager();
     /*2*/ virtual void uploadFileToRealmStorage(std::string const &, class Core::Path const &, int, std::string const &);
+    /*
+    inline  ~ResourcePackFileUploadManager(){
+         (ResourcePackFileUploadManager::*rv)();
+        *((void**)&rv) = dlsym("??1ResourcePackFileUploadManager@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ResourcePackFileUploadManager(class TaskGroup &, class std::shared_ptr<class IFileChunkUploader>);
     MCAPI void uploadResourcePack(std::string const &, class ResourceLocation const &, bool, bool, enum PackType);
 

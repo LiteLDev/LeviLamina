@@ -27,9 +27,16 @@ public:
     /*0*/ virtual ~BatchedNetworkPeer();
     /*1*/ virtual void sendPacket(std::string const &, enum NetworkPeer::Reliability, int, unsigned short, enum Compressibility);
     /*2*/ virtual enum NetworkPeer::DataStatus receivePacket(std::string &, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>> const &);
-    /*3*/ virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void update();
     /*5*/ virtual void flush(class std::function<void (void)> &&);
+    /*
+    inline struct NetworkPeer::NetworkStatus getNetworkStatus() const{
+        struct NetworkPeer::NetworkStatus (BatchedNetworkPeer::*rv)() const;
+        *((void**)&rv) = dlsym("?getNetworkStatus@BatchedNetworkPeer@@UEBA?AUNetworkStatus@NetworkPeer@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BatchedNetworkPeer(class std::shared_ptr<class NetworkPeer>, class Scheduler &);
     MCAPI void setAsyncEnabled(bool);
 

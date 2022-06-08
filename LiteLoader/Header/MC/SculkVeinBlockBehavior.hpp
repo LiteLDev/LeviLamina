@@ -21,12 +21,29 @@ public:
 #endif
 
 public:
-    /*0*/ virtual int updateDecayDelay(int) const;
+    /*0*/ virtual void __unk_vfn_0();
     /*1*/ virtual int updateFacingData(int, class Block const &) const;
-    /*2*/ virtual bool canChangeBlockOnSpread() const;
-    /*3*/ virtual bool attemptSpreadVeins(class IBlockWorldGenAPI &, class BlockPos const &, class Block const &, int, class SculkSpreader &) const;
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual int attemptUseCharge(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class BlockPos const &, int, int, class Random &, class SculkSpreader &) const;
     /*5*/ virtual void onDischarged(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &) const;
+    /*
+    inline bool canChangeBlockOnSpread() const{
+        bool (SculkVeinBlockBehavior::*rv)() const;
+        *((void**)&rv) = dlsym("?canChangeBlockOnSpread@SculkVeinBlockBehavior@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline int updateDecayDelay(int a0) const{
+        int (SculkVeinBlockBehavior::*rv)(int) const;
+        *((void**)&rv) = dlsym("?updateDecayDelay@SculkVeinBlockBehavior@@UEBAHH@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    inline bool attemptSpreadVeins(class IBlockWorldGenAPI & a0, class BlockPos const & a1, class Block const & a2, int a3, class SculkSpreader & a4) const{
+        bool (SculkVeinBlockBehavior::*rv)(class IBlockWorldGenAPI &, class BlockPos const &, class Block const &, int, class SculkSpreader &) const;
+        *((void**)&rv) = dlsym("?attemptSpreadVeins@SculkVeinBlockBehavior@@UEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@HAEAVSculkSpreader@@@Z");
+        return (this->*rv)(std::forward<class IBlockWorldGenAPI &>(a0), std::forward<class BlockPos const &>(a1), std::forward<class Block const &>(a2), std::forward<int>(a3), std::forward<class SculkSpreader &>(a4));
+    }
+    */
 
 protected:
 

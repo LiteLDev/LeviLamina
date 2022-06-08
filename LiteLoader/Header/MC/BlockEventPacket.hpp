@@ -27,8 +27,14 @@ public:
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
-    /*5*/ virtual bool disallowBatching() const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    /*
+    inline  ~BlockEventPacket(){
+         (BlockEventPacket::*rv)();
+        *((void**)&rv) = dlsym("??1BlockEventPacket@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BlockEventPacket(class BlockPos, int, int);
     MCAPI BlockEventPacket();
 

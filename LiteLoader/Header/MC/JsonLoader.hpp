@@ -23,6 +23,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~JsonLoader();
+    /*
+    inline  ~JsonLoader(){
+         (JsonLoader::*rv)();
+        *((void**)&rv) = dlsym("??1JsonLoader@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

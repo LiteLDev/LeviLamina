@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~BaseGoalDefinition();
     /*
     inline bool validateMobType(class Mob & a0){
         bool (BaseGoalDefinition::*rv)(class Mob &);
@@ -33,6 +34,11 @@ public:
         bool (BaseGoalDefinition::*rv)(class Mob &);
         *((void**)&rv) = dlsym("?validate@BaseGoalDefinition@@UEAA_NAEAVMob@@@Z");
         return (this->*rv)(std::forward<class Mob &>(a0));
+    }
+    inline  ~BaseGoalDefinition(){
+         (BaseGoalDefinition::*rv)();
+        *((void**)&rv) = dlsym("??1BaseGoalDefinition@@UEAA@XZ");
+        return (this->*rv)();
     }
     */
     MCAPI void initialize(class EntityContext &, class Goal &);

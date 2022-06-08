@@ -24,6 +24,13 @@ public:
     /*0*/ virtual ~BaseScriptGameTestFunction();
     /*1*/ virtual std::unique_ptr<class gametest::IGameTestFunctionContext> createContext(class gametest::BaseGameTestHelper &) const;
     /*2*/ virtual std::unique_ptr<class gametest::IGameTestFunctionRunResult> run(class gametest::BaseGameTestHelper &, class gametest::IGameTestFunctionContext &) const = 0;
+    /*
+    inline  ~BaseScriptGameTestFunction(){
+         (BaseScriptGameTestFunction::*rv)();
+        *((void**)&rv) = dlsym("??1BaseScriptGameTestFunction@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BaseScriptGameTestFunction(class Scripting::WeakLifetimeScope, std::string const &);
     MCAPI void addTag(std::string);
     MCAPI void setBatch(std::string);

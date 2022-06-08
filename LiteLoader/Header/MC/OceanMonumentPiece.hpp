@@ -34,6 +34,13 @@ public:
     /*8*/ virtual int getWorldZ(int, int);
     /*10*/ virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);
     /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
+    /*
+    inline  ~OceanMonumentPiece(){
+         (OceanMonumentPiece::*rv)();
+        *((void**)&rv) = dlsym("??1OceanMonumentPiece@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
     MCAPI OceanMonumentPiece(int, int &, class std::shared_ptr<class RoomDefinition>, int, int, int);

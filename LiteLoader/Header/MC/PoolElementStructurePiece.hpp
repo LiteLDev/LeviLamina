@@ -38,6 +38,13 @@ public:
     /*15*/ virtual class Block const & getBeardStabilizeBlock(class Block const &) const = 0;
     /*16*/ virtual enum AdjustmentEffect getTerrainAdjustmentEffect() const = 0;
     /*17*/ virtual bool _needsPostProcessing(class BlockSource &);
+    /*
+    inline  ~PoolElementStructurePiece(){
+         (PoolElementStructurePiece::*rv)();
+        *((void**)&rv) = dlsym("??1PoolElementStructurePiece@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI PoolElementStructurePiece(class StructurePoolElement const &, class BlockPos, enum Rotation, int, struct JigsawJunction &, class BoundingBox const &, class BlockPos);
     MCAPI class StructurePoolElement const & getElement() const;
     MCAPI class BlockPos const & getPosition() const;

@@ -26,9 +26,20 @@ public:
     /*0*/ virtual ~ItemUseOnActorInventoryTransaction();
     /*1*/ virtual void read(class ReadOnlyBinaryStream &);
     /*2*/ virtual void write(class BinaryStream &) const;
-    /*3*/ virtual void postLoadItems(class BlockPalette &, bool);
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual enum InventoryTransactionError handle(class Player &, bool) const;
-    /*5*/ virtual void onTransactionError(class Player &, enum InventoryTransactionError) const;
+    /*
+    inline void postLoadItems(class BlockPalette & a0, bool a1){
+        void (ItemUseOnActorInventoryTransaction::*rv)(class BlockPalette &, bool);
+        *((void**)&rv) = dlsym("?postLoadItems@ItemUseOnActorInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z");
+        return (this->*rv)(std::forward<class BlockPalette &>(a0), std::forward<bool>(a1));
+    }
+    inline void onTransactionError(class Player & a0, enum InventoryTransactionError a1) const{
+        void (ItemUseOnActorInventoryTransaction::*rv)(class Player &, enum InventoryTransactionError) const;
+        *((void**)&rv) = dlsym("?onTransactionError@ItemUseOnActorInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<enum InventoryTransactionError>(a1));
+    }
+    */
     MCAPI class ItemUseOnActorInventoryTransaction & setSelectedItem(class ItemStack const &);
 
 protected:

@@ -27,8 +27,14 @@ public:
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
-    /*5*/ virtual bool disallowBatching() const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    /*
+    inline  ~ContainerSetDataPacket(){
+         (ContainerSetDataPacket::*rv)();
+        *((void**)&rv) = dlsym("??1ContainerSetDataPacket@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ContainerSetDataPacket(enum ContainerID, int, int);
     MCAPI ContainerSetDataPacket();
 

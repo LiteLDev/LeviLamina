@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~SlimeAttackDefinition();
     MCAPI SlimeAttackDefinition();
     MCAPI void initialize(class EntityContext &, class SlimeAttackGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeAttackDefinition>> &);

@@ -31,9 +31,13 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-    /*8*/ virtual void __unk_vfn_8();
-    /*9*/ virtual void __unk_vfn_9();
-    /*10*/ virtual int getRandomEatingEnd() const;
+    /*
+    inline int getRandomEatingEnd() const{
+        int (SnackGoal::*rv)() const;
+        *((void**)&rv) = dlsym("?getRandomEatingEnd@SnackGoal@@MEBAHXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SnackGoal(class Mob &, std::vector<class ItemDescriptor> const &, float, float, float);
 
 protected:

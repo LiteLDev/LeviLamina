@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~ActorAnimationPlayer();
     /*
     inline void buildBoneToPartMapping(class AnimationComponent & a0){
         void (ActorAnimationPlayer::*rv)(class AnimationComponent &);
@@ -38,6 +39,11 @@ public:
         void (ActorAnimationPlayer::*rv)(class std::unordered_map<class HashedString, std::string, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, std::string>>> const &);
         *((void**)&rv) = dlsym("?bindSoundEffects@ActorAnimationPlayer@@UEAAXAEBV?$unordered_map@VHashedString@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@VHashedString@@@3@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@std@@@Z");
         return (this->*rv)(std::forward<class std::unordered_map<class HashedString, std::string, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, std::string>>> const &>(a0));
+    }
+    inline  ~ActorAnimationPlayer(){
+         (ActorAnimationPlayer::*rv)();
+        *((void**)&rv) = dlsym("??1ActorAnimationPlayer@@UEAA@XZ");
+        return (this->*rv)();
     }
     */
     MCAPI ActorAnimationPlayer(class HashedString const &, class ExpressionNode const &);

@@ -26,10 +26,16 @@ public:
 public:
     /*0*/ virtual ~BrewingStandInputContainerValidation();
     /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
-    /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const &) const;
-    /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
-    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
-    /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
+    /*8*/ virtual void __unk_vfn_8();
+    /*
+    inline int getContainerOffset(class ContainerScreenContext const & a0) const{
+        int (BrewingStandInputContainerValidation::*rv)(class ContainerScreenContext const &) const;
+        *((void**)&rv) = dlsym("?getContainerOffset@BrewingStandInputContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z");
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
+    }
+    */
 
 protected:
 

@@ -23,6 +23,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptIsShearedComponent();
+    /*
+    inline  ~ScriptIsShearedComponent(){
+         (ScriptIsShearedComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptIsShearedComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class HashedString const & getHashedName();
 
 protected:

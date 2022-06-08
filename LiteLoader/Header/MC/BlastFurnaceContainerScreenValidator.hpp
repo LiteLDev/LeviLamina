@@ -24,7 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~BlastFurnaceContainerScreenValidator();
-    /*2*/ virtual bool isCraftingImplemented();
     MCAPI BlastFurnaceContainerScreenValidator();
 
 protected:

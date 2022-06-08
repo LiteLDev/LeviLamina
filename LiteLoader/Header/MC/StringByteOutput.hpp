@@ -25,6 +25,13 @@ public:
 public:
     /*0*/ virtual ~StringByteOutput();
     /*9*/ virtual void writeBytes(void const *, unsigned __int64);
+    /*
+    inline  ~StringByteOutput(){
+         (StringByteOutput::*rv)();
+        *((void**)&rv) = dlsym("??1StringByteOutput@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

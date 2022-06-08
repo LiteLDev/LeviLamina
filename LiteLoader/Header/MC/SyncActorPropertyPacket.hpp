@@ -28,8 +28,14 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
-    /*5*/ virtual bool disallowBatching() const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    /*
+    inline  ~SyncActorPropertyPacket(){
+         (SyncActorPropertyPacket::*rv)();
+        *((void**)&rv) = dlsym("??1SyncActorPropertyPacket@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SyncActorPropertyPacket(class Actor const &);
     MCAPI SyncActorPropertyPacket();
 

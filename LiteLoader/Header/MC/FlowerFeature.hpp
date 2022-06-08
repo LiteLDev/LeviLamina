@@ -27,6 +27,13 @@ public:
     /*0*/ virtual ~FlowerFeature();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+    /*
+    inline  ~FlowerFeature(){
+         (FlowerFeature::*rv)();
+        *((void**)&rv) = dlsym("??1FlowerFeature@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI FlowerFeature(class Block const &);
 
 protected:

@@ -25,6 +25,13 @@ public:
 public:
     /*0*/ virtual ~MossStoneSelector();
     /*1*/ virtual class Block const & next(class Random &, int, int, int, bool) const;
+    /*
+    inline  ~MossStoneSelector(){
+         (MossStoneSelector::*rv)();
+        *((void**)&rv) = dlsym("??1MossStoneSelector@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

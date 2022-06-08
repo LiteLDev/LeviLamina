@@ -27,7 +27,6 @@ public:
     /*0*/ virtual ~ExhaustionAttributeDelegate();
     /*1*/ virtual void tick();
     /*2*/ virtual void notify(__int64);
-    /*3*/ virtual bool willChange(float, float, class AttributeBuff const &);
     MCAPI ExhaustionAttributeDelegate(class AttributeInstance const &);
 
 protected:

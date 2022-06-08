@@ -24,13 +24,17 @@ public:
 
 public:
     /*0*/ virtual ~ServerMoveInputHandler();
-    /*2*/ virtual void registerInputHandlers(class InputHandler &);
+    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual bool allowPicking(float, float);
-    /*12*/ virtual class Vec3 const & getGazeDirection() const;
     /*15*/ virtual void __unk_vfn_15();
-    /*16*/ virtual std::unique_ptr<struct IReplayableActorInput> createSnapshot();
+    /*
+    inline void registerInputHandlers(class InputHandler & a0){
+        void (ServerMoveInputHandler::*rv)(class InputHandler &);
+        *((void**)&rv) = dlsym("?registerInputHandlers@ServerMoveInputHandler@@UEAAXAEAVInputHandler@@@Z");
+        return (this->*rv)(std::forward<class InputHandler &>(a0));
+    }
+    */
     MCAPI ServerMoveInputHandler();
     MCAPI void digestPlayerInputPacket(class PlayerAuthInputPacket const &);
 

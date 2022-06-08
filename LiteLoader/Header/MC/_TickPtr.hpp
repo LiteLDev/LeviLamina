@@ -23,6 +23,15 @@ public:
 #endif
 
 public:
+    /*0*/ virtual void __unk_vfn_0() = 0;
+    /*1*/ virtual ~_TickPtr();
+    /*
+    inline  ~_TickPtr(){
+         (_TickPtr::*rv)();
+        *((void**)&rv) = dlsym("??1_TickPtr@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

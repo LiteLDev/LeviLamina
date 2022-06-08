@@ -67,6 +67,13 @@ public:
     /*8*/ virtual void print(std::string const &, class PrintStream &) const;
     /*9*/ virtual std::unique_ptr<class Tag> copy() const;
     /*10*/ virtual unsigned __int64 hash() const;
+    /*
+    inline  ~ListTag(){
+         (ListTag::*rv)();
+        *((void**)&rv) = dlsym("??1ListTag@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ListTag();
     MCAPI void add(std::unique_ptr<class Tag>);
     MCAPI std::unique_ptr<class ListTag> copyList() const;

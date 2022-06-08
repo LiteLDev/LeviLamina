@@ -25,6 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptTameableComponent();
+    /*
+    inline  ~ScriptTameableComponent(){
+         (ScriptTameableComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptTameableComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptTameableComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class Scripting::Result<float> getProbability() const;
     MCAPI class Scripting::Result<class DefinitionTrigger> getTameEvent() const;

@@ -27,10 +27,22 @@ public:
     /*1*/ virtual bool canUse();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual void start();
-    /*5*/ virtual void stop();
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+    /*
+    inline void stop(){
+        void (SitGoal::*rv)();
+        *((void**)&rv) = dlsym("?stop@SitGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void start(){
+        void (SitGoal::*rv)();
+        *((void**)&rv) = dlsym("?start@SitGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SitGoal(class Mob &);
 
 protected:

@@ -22,9 +22,21 @@ public:
 
 public:
     /*0*/ virtual ~ExperienceRewardCommitObject();
-    /*1*/ virtual bool append(class ContainerValidationCommitObject *);
-    /*2*/ virtual bool canCommit(class ContainerScreenContext const &) const;
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void commit(class ContainerScreenContext const &);
+    /*
+    inline bool canCommit(class ContainerScreenContext const & a0) const{
+        bool (ExperienceRewardCommitObject::*rv)(class ContainerScreenContext const &) const;
+        *((void**)&rv) = dlsym("?canCommit@ExperienceRewardCommitObject@@UEBA_NAEBVContainerScreenContext@@@Z");
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
+    }
+    inline bool append(class ContainerValidationCommitObject * a0){
+        bool (ExperienceRewardCommitObject::*rv)(class ContainerValidationCommitObject *);
+        *((void**)&rv) = dlsym("?append@ExperienceRewardCommitObject@@UEAA_NPEAVContainerValidationCommitObject@@@Z");
+        return (this->*rv)(std::forward<class ContainerValidationCommitObject *>(a0));
+    }
+    */
     MCAPI ExperienceRewardCommitObject(int);
 
 protected:

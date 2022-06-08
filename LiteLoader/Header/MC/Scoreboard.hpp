@@ -78,32 +78,35 @@ public:
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void onObjectiveRemoved(class Objective &);
     /*8*/ virtual void onScoreChanged(struct ScoreboardId const &, class Objective const &);
-    /*9*/ virtual void __unk_vfn_9();
-    /*10*/ virtual void __unk_vfn_10();
-    /*11*/ virtual void __unk_vfn_11();
-    /*12*/ virtual void __unk_vfn_12();
-    /*13*/ virtual void __unk_vfn_13();
-    /*14*/ virtual void __unk_vfn_14();
-    /*15*/ virtual bool isClientSide() const;
     /*
+    inline bool isClientSide() const{
+        bool (Scoreboard::*rv)() const;
+        *((void**)&rv) = dlsym("?isClientSide@Scoreboard@@MEBA_NXZ");
+        return (this->*rv)();
+    }
     inline void setPacketSender(class PacketSender * a0){
         void (Scoreboard::*rv)(class PacketSender *);
         *((void**)&rv) = dlsym("?setPacketSender@Scoreboard@@UEAAXPEAVPacketSender@@@Z");
         return (this->*rv)(std::forward<class PacketSender *>(a0));
-    }
-    inline void onPlayerJoined(class Player const & a0){
-        void (Scoreboard::*rv)(class Player const &);
-        *((void**)&rv) = dlsym("?onPlayerJoined@Scoreboard@@UEAAXAEBVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player const &>(a0));
     }
     inline void writeToLevelStorage(){
         void (Scoreboard::*rv)();
         *((void**)&rv) = dlsym("?writeToLevelStorage@Scoreboard@@UEAAXXZ");
         return (this->*rv)();
     }
+    inline void onPlayerJoined(class Player const & a0){
+        void (Scoreboard::*rv)(class Player const &);
+        *((void**)&rv) = dlsym("?onPlayerJoined@Scoreboard@@UEAAXAEBVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Player const &>(a0));
+    }
     inline void tick(){
         void (Scoreboard::*rv)();
         *((void**)&rv) = dlsym("?tick@Scoreboard@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline  ~Scoreboard(){
+         (Scoreboard::*rv)();
+        *((void**)&rv) = dlsym("??1Scoreboard@@UEAA@XZ");
         return (this->*rv)();
     }
     inline struct ScoreboardId const & createScoreboardId(std::string const & a0){
@@ -126,15 +129,15 @@ public:
         *((void**)&rv) = dlsym("?onPlayerIdentityUpdated@Scoreboard@@UEAAXAEBUPlayerScoreboardId@@@Z");
         return (this->*rv)(std::forward<struct PlayerScoreboardId const &>(a0));
     }
-    inline void onObjectiveAdded(class Objective const & a0){
-        void (Scoreboard::*rv)(class Objective const &);
-        *((void**)&rv) = dlsym("?onObjectiveAdded@Scoreboard@@UEAAXAEBVObjective@@@Z");
-        return (this->*rv)(std::forward<class Objective const &>(a0));
-    }
     inline void onPlayerScoreRemoved(struct ScoreboardId const & a0, class Objective const & a1){
         void (Scoreboard::*rv)(struct ScoreboardId const &, class Objective const &);
         *((void**)&rv) = dlsym("?onPlayerScoreRemoved@Scoreboard@@UEAAXAEBUScoreboardId@@AEBVObjective@@@Z");
         return (this->*rv)(std::forward<struct ScoreboardId const &>(a0), std::forward<class Objective const &>(a1));
+    }
+    inline void onObjectiveAdded(class Objective const & a0){
+        void (Scoreboard::*rv)(class Objective const &);
+        *((void**)&rv) = dlsym("?onObjectiveAdded@Scoreboard@@UEAAXAEBVObjective@@@Z");
+        return (this->*rv)(std::forward<class Objective const &>(a0));
     }
     */
     MCAPI Scoreboard(class CommandSoftEnumRegistry);

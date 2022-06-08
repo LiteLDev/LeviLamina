@@ -22,6 +22,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~NpcComponent();
+    /*
+    inline  ~NpcComponent(){
+         (NpcComponent::*rv)();
+        *((void**)&rv) = dlsym("??1NpcComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI NpcComponent(class NpcComponent &&);
     MCAPI NpcComponent();
     MCAPI void addAdditionalSaveData(class Actor &, class CompoundTag &) const;

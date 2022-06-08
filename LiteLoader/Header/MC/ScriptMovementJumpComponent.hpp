@@ -25,6 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptMovementJumpComponent();
+    /*
+    inline  ~ScriptMovementJumpComponent(){
+         (ScriptMovementJumpComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptMovementJumpComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMovementJumpComponent> bind(struct Scripting::Version);
 
 protected:

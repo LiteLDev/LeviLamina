@@ -43,15 +43,20 @@ public:
         *((void**)&rv) = dlsym("?setJumpType@JumpControl@@MEAAXAEAVJumpControlComponent@@AEAVMob@@W4JumpType@@@Z");
         return (this->*rv)(std::forward<class JumpControlComponent &>(a0), std::forward<class Mob &>(a1), std::forward<enum JumpType>(a2));
     }
+    inline void initializeInternal(class Mob & a0, struct JumpControlDescription * a1){
+        void (JumpControl::*rv)(class Mob &, struct JumpControlDescription *);
+        *((void**)&rv) = dlsym("?initializeInternal@JumpControl@@UEAAXAEAVMob@@PEAUJumpControlDescription@@@Z");
+        return (this->*rv)(std::forward<class Mob &>(a0), std::forward<struct JumpControlDescription *>(a1));
+    }
     inline void resetSpeedModifier(class JumpControlComponent const & a0, class Mob & a1){
         void (JumpControl::*rv)(class JumpControlComponent const &, class Mob &);
         *((void**)&rv) = dlsym("?resetSpeedModifier@JumpControl@@MEAAXAEBVJumpControlComponent@@AEAVMob@@@Z");
         return (this->*rv)(std::forward<class JumpControlComponent const &>(a0), std::forward<class Mob &>(a1));
     }
-    inline void initializeInternal(class Mob & a0, struct JumpControlDescription * a1){
-        void (JumpControl::*rv)(class Mob &, struct JumpControlDescription *);
-        *((void**)&rv) = dlsym("?initializeInternal@JumpControl@@UEAAXAEAVMob@@PEAUJumpControlDescription@@@Z");
-        return (this->*rv)(std::forward<class Mob &>(a0), std::forward<struct JumpControlDescription *>(a1));
+    inline  ~JumpControl(){
+         (JumpControl::*rv)();
+        *((void**)&rv) = dlsym("??1JumpControl@@UEAA@XZ");
+        return (this->*rv)();
     }
     */
     MCAPI JumpControl();

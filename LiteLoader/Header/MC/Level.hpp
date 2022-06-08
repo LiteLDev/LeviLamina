@@ -371,6 +371,46 @@ public:
         *((void**)&rv) = dlsym("?getActorInfoRegistry@Level@@UEAAPEAVActorInfoRegistry@@XZ");
         return (this->*rv)();
     }
+    inline class BiomeComponentFactory const & getBiomeComponentFactory() const{
+        class BiomeComponentFactory const & (Level::*rv)() const;
+        *((void**)&rv) = dlsym("?getBiomeComponentFactory@Level@@WCA@EBAAEBVBiomeComponentFactory@@XZ");
+        return (this->*rv)();
+    }
+    inline class BiomeComponentFactory & getBiomeComponentFactory(){
+        class BiomeComponentFactory & (Level::*rv)();
+        *((void**)&rv) = dlsym("?getBiomeComponentFactory@Level@@WCA@EAAAEAVBiomeComponentFactory@@XZ");
+        return (this->*rv)();
+    }
+    inline class BiomeRegistry & getBiomeRegistry(){
+        class BiomeRegistry & (Level::*rv)();
+        *((void**)&rv) = dlsym("?getBiomeRegistry@Level@@WCA@EAAAEAVBiomeRegistry@@XZ");
+        return (this->*rv)();
+    }
+    inline class BiomeRegistry const & getBiomeRegistry() const{
+        class BiomeRegistry const & (Level::*rv)() const;
+        *((void**)&rv) = dlsym("?getBiomeRegistry@Level@@WCA@EBAAEBVBiomeRegistry@@XZ");
+        return (this->*rv)();
+    }
+    inline class BlockPalette & getBlockPalette(){
+        class BlockPalette & (Level::*rv)();
+        *((void**)&rv) = dlsym("?getBlockPalette@Level@@WCA@EAAAEAVBlockPalette@@XZ");
+        return (this->*rv)();
+    }
+    inline class BlockPalette const & getBlockPalette() const{
+        class BlockPalette const & (Level::*rv)() const;
+        *((void**)&rv) = dlsym("?getBlockPalette@Level@@WCA@EBAAEBVBlockPalette@@XZ");
+        return (this->*rv)();
+    }
+    inline class Factory<class Dimension, class Level &, class Scheduler &> & getDimensionFactory(){
+        class Factory<class Dimension, class Level &, class Scheduler &> & (Level::*rv)();
+        *((void**)&rv) = dlsym("?getDimensionFactory@Level@@WCA@EAAAEAV?$Factory@VDimension@@AEAVLevel@@AEAVScheduler@@@@XZ");
+        return (this->*rv)();
+    }
+    inline class Factory<class Dimension, class Level &, class Scheduler &> const & getDimensionFactory() const{
+        class Factory<class Dimension, class Level &, class Scheduler &> const & (Level::*rv)() const;
+        *((void**)&rv) = dlsym("?getDimensionFactory@Level@@WCA@EBAAEBV?$Factory@VDimension@@AEAVLevel@@AEAVScheduler@@@@XZ");
+        return (this->*rv)();
+    }
     inline class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry(){
         class StackRefResultT<struct EntityRegistryRefTraits> (Level::*rv)();
         *((void**)&rv) = dlsym("?getEntityRegistry@Level@@UEAA?AV?$StackRefResultT@UEntityRegistryRefTraits@@@@XZ");
@@ -381,9 +421,39 @@ public:
         *((void**)&rv) = dlsym("?getEntityRegistry@Level@@UEBA?AV?$StackRefResultT@UEntityRegistryConstRefTraits@@@@XZ");
         return (this->*rv)();
     }
+    inline class FeatureRegistry const & getFeatureRegistry() const{
+        class FeatureRegistry const & (Level::*rv)() const;
+        *((void**)&rv) = dlsym("?getFeatureRegistry@Level@@WCA@EBAAEBVFeatureRegistry@@XZ");
+        return (this->*rv)();
+    }
+    inline class FeatureRegistry & getFeatureRegistry(){
+        class FeatureRegistry & (Level::*rv)();
+        *((void**)&rv) = dlsym("?getFeatureRegistry@Level@@WCA@EAAAEAVFeatureRegistry@@XZ");
+        return (this->*rv)();
+    }
+    inline class FeatureTypeFactory & getFeatureTypeFactory(){
+        class FeatureTypeFactory & (Level::*rv)();
+        *((void**)&rv) = dlsym("?getFeatureTypeFactory@Level@@WCA@EAAAEAVFeatureTypeFactory@@XZ");
+        return (this->*rv)();
+    }
+    inline class FeatureTypeFactory const & getFeatureTypeFactory() const{
+        class FeatureTypeFactory const & (Level::*rv)() const;
+        *((void**)&rv) = dlsym("?getFeatureTypeFactory@Level@@WCA@EBAAEBVFeatureTypeFactory@@XZ");
+        return (this->*rv)();
+    }
     inline class TaskGroup & getIOTasksGroup(){
         class TaskGroup & (Level::*rv)();
         *((void**)&rv) = dlsym("?getIOTasksGroup@Level@@UEAAAEAVTaskGroup@@XZ");
+        return (this->*rv)();
+    }
+    inline class JigsawStructureRegistry const & getJigsawStructureRegistry() const{
+        class JigsawStructureRegistry const & (Level::*rv)() const;
+        *((void**)&rv) = dlsym("?getJigsawStructureRegistry@Level@@WCA@EBAAEBVJigsawStructureRegistry@@XZ");
+        return (this->*rv)();
+    }
+    inline class JigsawStructureRegistry & getJigsawStructureRegistry(){
+        class JigsawStructureRegistry & (Level::*rv)();
+        *((void**)&rv) = dlsym("?getJigsawStructureRegistry@Level@@WCA@EAAAEAVJigsawStructureRegistry@@XZ");
         return (this->*rv)();
     }
     inline class WeakRefT<struct EntityRefTraits> getLevelEntity(){
@@ -404,6 +474,26 @@ public:
     inline class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> getSoundPlayer() const{
         class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> (Level::*rv)() const;
         *((void**)&rv) = dlsym("?getSoundPlayer@Level@@UEBA?AV?$not_null@V?$NonOwnerPointer@VSoundPlayerInterface@@@Bedrock@@@gsl@@XZ");
+        return (this->*rv)();
+    }
+    inline class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>> const getStructureManager() const{
+        class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>> const (Level::*rv)() const;
+        *((void**)&rv) = dlsym("?getStructureManager@Level@@WCA@EBA?BV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@XZ");
+        return (this->*rv)();
+    }
+    inline class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>> getStructureManager(){
+        class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>> (Level::*rv)();
+        *((void**)&rv) = dlsym("?getStructureManager@Level@@WCA@EAA?AV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@XZ");
+        return (this->*rv)();
+    }
+    inline class SurfaceBuilderRegistry const & getSurfaceBuilderRegistry() const{
+        class SurfaceBuilderRegistry const & (Level::*rv)() const;
+        *((void**)&rv) = dlsym("?getSurfaceBuilderRegistry@Level@@WCA@EBAAEBVSurfaceBuilderRegistry@@XZ");
+        return (this->*rv)();
+    }
+    inline class SurfaceBuilderRegistry & getSurfaceBuilderRegistry(){
+        class SurfaceBuilderRegistry & (Level::*rv)();
+        *((void**)&rv) = dlsym("?getSurfaceBuilderRegistry@Level@@WCA@EAAAEAVSurfaceBuilderRegistry@@XZ");
         return (this->*rv)();
     }
     inline class TaskGroup & getSyncTasksGroup(){

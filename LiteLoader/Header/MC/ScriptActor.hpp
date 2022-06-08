@@ -29,6 +29,13 @@ public:
     /*5*/ virtual class Scripting::Result<void> setNameTag(std::string const &) const;
     /*6*/ virtual class Scripting::Result<bool> getSneaking() const;
     /*7*/ virtual class Scripting::Result<void> setSneaking(bool) const;
+    /*
+    inline  ~ScriptActor(){
+         (ScriptActor::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptActor@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptActor(class ScriptActor &&);
     MCAPI ScriptActor(class Actor const &, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<void> addEffect(class ScriptEffectType const &, int, int, bool);

@@ -27,17 +27,27 @@ public:
     /*0*/ virtual ~SoulSpeedEnchant();
     /*2*/ virtual int getMinCost(int) const;
     /*3*/ virtual int getMaxCost(int) const;
-    /*4*/ virtual int getMinLevel() const;
+    /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual int getMaxLevel() const;
-    /*6*/ virtual int getDamageProtection(int, class ActorDamageSource const &) const;
-    /*7*/ virtual float getDamageBonus(int, class Actor const &) const;
     /*8*/ virtual void doPostAttack(class Actor &, class Actor &, int) const;
     /*9*/ virtual void doPostHurt(class ItemInstance &, class Actor &, class Actor &, int) const;
-    /*10*/ virtual bool isMeleeDamageEnchant() const;
-    /*11*/ virtual bool isProtectionEnchant() const;
-    /*12*/ virtual bool isTreasureOnly() const;
-    /*13*/ virtual bool isDiscoverable() const;
+    /*10*/ virtual void __unk_vfn_10();
+    /*11*/ virtual void __unk_vfn_11();
+    /*12*/ virtual void __unk_vfn_12();
+    /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
+    /*
+    inline bool isDiscoverable() const{
+        bool (SoulSpeedEnchant::*rv)() const;
+        *((void**)&rv) = dlsym("?isDiscoverable@SoulSpeedEnchant@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isTreasureOnly() const{
+        bool (SoulSpeedEnchant::*rv)() const;
+        *((void**)&rv) = dlsym("?isTreasureOnly@SoulSpeedEnchant@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SoulSpeedEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
     MCAPI static class mce::UUID const SOUL_SPEED_BOOST_UUID;
     MCAPI static int getLevel(class Actor const &);

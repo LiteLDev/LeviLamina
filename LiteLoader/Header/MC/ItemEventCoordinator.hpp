@@ -22,6 +22,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~ItemEventCoordinator();
     MCAPI ItemEventCoordinator();
     MCAPI class ItemGameplayHandler & getItemGameplayHandler();
     MCAPI void onItemModifiedActor(class ItemStackBase const &, class Actor const &);

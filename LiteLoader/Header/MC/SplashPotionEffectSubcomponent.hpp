@@ -28,6 +28,13 @@ public:
     /*2*/ virtual void writetoJSON(class Json::Value &) const;
     /*3*/ virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /*4*/ virtual char const * getName();
+    /*
+    inline  ~SplashPotionEffectSubcomponent(){
+         (SplashPotionEffectSubcomponent::*rv)();
+        *((void**)&rv) = dlsym("??1SplashPotionEffectSubcomponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SplashPotionEffectSubcomponent();
     MCAPI void applyMobEffects(class MobEffectInstance const &, std::vector<class Actor *> const &, class Actor &, class std::shared_ptr<class Potion const> const &, float, class MobEffect *, class HitResult &, int);
 

@@ -28,14 +28,36 @@ public:
     
 #undef AFTER_EXTRA
 
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOUNDINGBOX
+#define DISABLE_CONSTRUCTOR_PREVENTION_BOUNDINGBOX
+#endif
+
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOUNDINGBOX
 public:
     class BoundingBox& operator=(class BoundingBox const &) = delete;
     BoundingBox(class BoundingBox const &) = delete;
     BoundingBox() = delete;
+#else
+   public:
+    BoundingBox(class BoundingBox const& k) : bpos1(k.bpos1), bpos2(k.bpos2){};
+    BoundingBox(BlockPos const& p1, BlockPos const& p2) : bpos1(p1), bpos2(p2){};
+    BoundingBox() : bpos1(BlockPos::MIN), bpos2(BlockPos::MIN){};
 #endif
 
 public:
+    void forEachBlockInBox(const std::function<void(const BlockPos&)>& todo) {
+        for (int y = bpos1.y; y <= bpos2.y; y++)
+            for (int x = bpos1.x; x <= bpos2.x; x++)
+                for (int z = bpos1.z; z <= bpos2.z; z++) {
+                    todo({x, y, z});
+                }
+        }
+    
+    static BoundingBox mergeBoundingBox(BoundingBox const& a, BoundingBox const& b) {
+        return BoundingBox(min(a.bpos1, b.bpos1), max(a.bpos2, b.bpos2));
+    }
+    
     MCAPI BoundingBox(class BlockPos const &, class BlockPos const &, enum Rotation);
     MCAPI bool isValid() const;
     MCAPI static class BoundingBox orientBox(int, int, int, int, int, int, int, int, int, int);

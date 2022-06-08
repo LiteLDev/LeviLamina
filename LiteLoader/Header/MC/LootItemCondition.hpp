@@ -24,6 +24,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~LootItemCondition();
+    /*
+    inline  ~LootItemCondition(){
+         (LootItemCondition::*rv)();
+        *((void**)&rv) = dlsym("??1LootItemCondition@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
 
 protected:

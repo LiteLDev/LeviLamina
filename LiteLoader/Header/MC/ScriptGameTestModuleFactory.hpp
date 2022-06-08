@@ -2,15 +2,13 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Json.hpp"
-#include "TextObjectText.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class ScriptGameTestModuleFactory : public TextObjectText {
+class ScriptGameTestModuleFactory {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -26,8 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptGameTestModuleFactory();
-    /*2*/ virtual class Json::Value asJsonValue() const;
-    /*3*/ virtual class Json::Value resolve(struct ResolveData const &) const;
     MCAPI ScriptGameTestModuleFactory(class gametest::GameTestRegistry &);
     MCAPI static std::string getModuleUUIDAsString();
 

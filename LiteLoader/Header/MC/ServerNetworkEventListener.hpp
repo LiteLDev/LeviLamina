@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~ServerNetworkEventListener();
     /*
     inline enum EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const & a0){
         enum EventResult (ServerNetworkEventListener::*rv)(struct ServerNetworkGameplayNotificationEvent const &);

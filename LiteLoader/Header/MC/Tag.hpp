@@ -118,6 +118,13 @@ public:
     /*8*/ virtual void print(std::string const &, class PrintStream &) const;
     /*9*/ virtual std::unique_ptr<class Tag> copy() const = 0;
     /*10*/ virtual unsigned __int64 hash() const = 0;
+    /*
+    inline  ~Tag(){
+         (Tag::*rv)();
+        *((void**)&rv) = dlsym("??1Tag@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static std::string const NullString;
     MCAPI static std::string getTagName(enum Tag::Type);
     MCAPI static std::unique_ptr<class Tag> newTag(enum Tag::Type);

@@ -26,6 +26,13 @@ public:
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~NavigationHoverDescription();
+    /*
+    inline  ~NavigationHoverDescription(){
+         (NavigationHoverDescription::*rv)();
+        *((void**)&rv) = dlsym("??1NavigationHoverDescription@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

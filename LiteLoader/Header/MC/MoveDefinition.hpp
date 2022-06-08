@@ -27,6 +27,13 @@ public:
 public:
     /*0*/ virtual ~MoveDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
+    /*
+    inline  ~MoveDefinition(){
+         (MoveDefinition::*rv)();
+        *((void**)&rv) = dlsym("??1MoveDefinition@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

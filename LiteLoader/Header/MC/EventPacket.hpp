@@ -79,8 +79,14 @@ public:
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
-    /*5*/ virtual bool disallowBatching() const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    /*
+    inline  ~EventPacket(){
+         (EventPacket::*rv)();
+        *((void**)&rv) = dlsym("??1EventPacket@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI EventPacket(class Player const &, std::string const &);
     MCAPI EventPacket(class Player const &, std::string const &, int);
     MCAPI EventPacket(class Player const &, enum MovementEventType, float, float, float, float, float);

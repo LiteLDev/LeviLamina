@@ -23,23 +23,20 @@ public:
 
 public:
     /*0*/ virtual ~Goal();
-    /*1*/ virtual void __unk_vfn_1() = 0;
-    /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual bool canBeInterrupted();
-    /*4*/ virtual void __unk_vfn_4() = 0;
-    /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void __unk_vfn_7();
-    /*8*/ virtual bool isTargetGoal() const;
     /*
+    inline bool isTargetGoal() const{
+        bool (Goal::*rv)() const;
+        *((void**)&rv) = dlsym("?isTargetGoal@Goal@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canBeInterrupted(){
+        bool (Goal::*rv)();
+        *((void**)&rv) = dlsym("?canBeInterrupted@Goal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
     inline void tick(){
         void (Goal::*rv)();
         *((void**)&rv) = dlsym("?tick@Goal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (Goal::*rv)();
-        *((void**)&rv) = dlsym("?stop@Goal@@UEAAXXZ");
         return (this->*rv)();
     }
     inline void start(){
@@ -47,10 +44,25 @@ public:
         *((void**)&rv) = dlsym("?start@Goal@@UEAAXXZ");
         return (this->*rv)();
     }
+    inline void stop(){
+        void (Goal::*rv)();
+        *((void**)&rv) = dlsym("?stop@Goal@@UEAAXXZ");
+        return (this->*rv)();
+    }
     inline void onPlayerDimensionChanged(class Player * a0, class AutomaticID<class Dimension, int> a1){
         void (Goal::*rv)(class Player *, class AutomaticID<class Dimension, int>);
         *((void**)&rv) = dlsym("?onPlayerDimensionChanged@Goal@@UEAAXPEAVPlayer@@V?$AutomaticID@VDimension@@H@@@Z");
         return (this->*rv)(std::forward<class Player *>(a0), std::forward<class AutomaticID<class Dimension, int>>(a1));
+    }
+    inline bool canContinueToUse(){
+        bool (Goal::*rv)();
+        *((void**)&rv) = dlsym("?canContinueToUse@Goal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline  ~Goal(){
+         (Goal::*rv)();
+        *((void**)&rv) = dlsym("??1Goal@@UEAA@XZ");
+        return (this->*rv)();
     }
     */
     MCAPI Goal();

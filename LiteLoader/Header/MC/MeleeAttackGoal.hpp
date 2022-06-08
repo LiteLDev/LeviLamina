@@ -35,6 +35,13 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void _attemptMoveToTarget(class Actor &);
     /*11*/ virtual void _attemptAttackTarget(class Actor &, float, float, float, float);
+    /*
+    inline  ~MeleeAttackGoal(){
+         (MeleeAttackGoal::*rv)();
+        *((void**)&rv) = dlsym("??1MeleeAttackGoal@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI MeleeAttackGoal(class Mob &);
 
 protected:

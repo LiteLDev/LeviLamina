@@ -26,9 +26,8 @@ public:
 
 public:
     /*0*/ virtual ~ComparatorCapacitor();
-    /*1*/ virtual int getStrength() const;
     /*6*/ virtual bool canConsumePowerAnyDirection() const;
-    /*7*/ virtual bool canConsumerPower() const;
+    /*7*/ virtual void __unk_vfn_7();
     /*10*/ virtual bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
     /*11*/ virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /*12*/ virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
@@ -38,10 +37,17 @@ public:
     /*16*/ virtual void updateDependencies(class CircuitSceneGraph &, class BlockPos const &);
     /*17*/ virtual void __unk_vfn_17();
     /*18*/ virtual bool isHalfPulse() const;
-    /*20*/ virtual bool hasChildrenSource() const;
+    /*20*/ virtual void __unk_vfn_20();
     /*21*/ virtual bool isSecondaryPowered() const;
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*24*/ virtual unsigned char getPoweroutDirection() const;
+    /*
+    inline bool canConsumerPower() const{
+        bool (ComparatorCapacitor::*rv)() const;
+        *((void**)&rv) = dlsym("?canConsumerPower@ComparatorCapacitor@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ComparatorCapacitor();
     MCAPI void clearAnalogStrength(unsigned char);
     MCAPI int getOldStrength();

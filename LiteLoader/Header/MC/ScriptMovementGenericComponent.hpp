@@ -25,6 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptMovementGenericComponent();
+    /*
+    inline  ~ScriptMovementGenericComponent(){
+         (ScriptMovementGenericComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptMovementGenericComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMovementGenericComponent> bind(struct Scripting::Version);
 
 protected:

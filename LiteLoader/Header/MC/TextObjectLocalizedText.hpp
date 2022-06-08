@@ -27,7 +27,13 @@ public:
     /*0*/ virtual ~TextObjectLocalizedText();
     /*1*/ virtual std::string asString() const;
     /*2*/ virtual class Json::Value asJsonValue() const;
-    /*3*/ virtual class Json::Value resolve(struct ResolveData const &) const;
+    /*
+    inline class Json::Value resolve(struct ResolveData const & a0) const{
+        class Json::Value (TextObjectLocalizedText::*rv)(struct ResolveData const &) const;
+        *((void**)&rv) = dlsym("?resolve@TextObjectLocalizedText@@UEBA?AVValue@Json@@AEBUResolveData@@@Z");
+        return (this->*rv)(std::forward<struct ResolveData const &>(a0));
+    }
+    */
     MCAPI TextObjectLocalizedText(std::string);
 
 protected:

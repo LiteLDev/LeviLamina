@@ -29,7 +29,6 @@ public:
     /*2*/ virtual void tick(class NavigationComponent &, class Mob &);
     /*3*/ virtual class Vec3 getTempMobPos(class Mob const &) const;
     /*9*/ virtual void stop(class NavigationComponent &, class Mob &);
-    /*10*/ virtual bool travel(class NavigationComponent &, class Mob &, float &, float &, float &);
     /*12*/ virtual void updatePath(class NavigationComponent &, class Mob &);
 
 protected:

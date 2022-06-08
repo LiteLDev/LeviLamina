@@ -29,12 +29,10 @@ public:
     /*2*/ virtual int getCraftingSize() const;
     /*3*/ virtual class RecipeIngredient const & getIngredient(int, int) const;
     /*4*/ virtual std::vector<class ItemInstance> const & getResultItem() const;
-    /*5*/ virtual bool isShapeless() const;
+    /*5*/ virtual bool isMultiRecipe() const;
     /*6*/ virtual bool matches(class CraftingContainer &, class Level &) const;
     /*7*/ virtual int size() const;
-    /*9*/ virtual class ItemPack const & getItemPack() const;
     /*10*/ virtual bool isMultiRecipe() const;
-    /*15*/ virtual void loadResultList(class BlockPalette const &) const;
     MCAPI RepairItemRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const *);
     MCAPI static class mce::UUID ID;
 

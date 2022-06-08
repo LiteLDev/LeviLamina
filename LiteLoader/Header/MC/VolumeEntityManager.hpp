@@ -29,6 +29,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~VolumeEntityManager();
+    /*
+    inline  ~VolumeEntityManager(){
+         (VolumeEntityManager::*rv)();
+        *((void**)&rv) = dlsym("??1VolumeEntityManager@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI unsigned __int64 getVolumeInstanceCount() const;
     MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const & getVolumeInstances(class AutomaticID<class Dimension, int>) const;
     MCAPI static bool isTriggerVolumesEnabled;

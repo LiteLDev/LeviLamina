@@ -27,7 +27,6 @@ public:
     /*4*/ virtual void start();
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*16*/ virtual unsigned __int64 _getRepathTime() const;
     /*18*/ virtual void useWorkstation();
     MCAPI WorkComposterGoal(class Mob &);
 

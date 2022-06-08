@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~MonumentRoomFitter();
 
 protected:
 

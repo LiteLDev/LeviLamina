@@ -23,6 +23,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~TcpProxy();
+    /*
+    inline  ~TcpProxy(){
+         (TcpProxy::*rv)();
+        *((void**)&rv) = dlsym("??1TcpProxy@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

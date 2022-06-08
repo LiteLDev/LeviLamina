@@ -27,6 +27,13 @@ public:
     /*0*/ virtual ~ResourcePackStack();
     /*1*/ virtual std::vector<class LoadedResourceData> loadAllVersionsOf(class ResourceLocation const &) const;
     /*2*/ virtual bool loadAllVersionsOf(class ResourceLocation const &, class ResourcePackMergeStrategy &) const;
+    /*
+    inline  ~ResourcePackStack(){
+         (ResourcePackStack::*rv)();
+        *((void**)&rv) = dlsym("??1ResourcePackStack@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI void add(class PackInstance, class IResourcePackRepository const &, bool);
     MCAPI void generateAssetSet();
     MCAPI void getSplitStacks(class ResourcePackStack &, class ResourcePackStack &) const;

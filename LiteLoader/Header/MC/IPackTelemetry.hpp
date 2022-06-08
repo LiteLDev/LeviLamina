@@ -23,6 +23,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~IPackTelemetry();
+    /*
+    inline  ~IPackTelemetry(){
+         (IPackTelemetry::*rv)();
+        *((void**)&rv) = dlsym("??1IPackTelemetry@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

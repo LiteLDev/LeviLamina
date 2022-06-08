@@ -54,6 +54,13 @@ public:
     /*4*/ virtual void setNull();
     /*5*/ virtual std::string toString() const;
     /*6*/ virtual std::string toDebugString() const;
+    /*
+    inline  ~ItemStack(){
+         (ItemStack::*rv)();
+        *((void**)&rv) = dlsym("??1ItemStack@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ItemStack(class ItemStack const &);
     MCAPI ItemStack(class Block const &, int, class CompoundTag const *);
     MCAPI ItemStack(class BlockLegacy const &, int);

@@ -68,6 +68,13 @@ public:
     /*3*/ virtual void applyInstantaneousEffect(class Actor *, class Actor *, class Actor *, int, float) const;
     /*4*/ virtual bool isInstantaneous() const;
     /*5*/ virtual float getAttributeModifierValue(int, class AttributeModifier const &) const;
+    /*
+    inline  ~MobEffect(){
+         (MobEffect::*rv)();
+        *((void**)&rv) = dlsym("??1MobEffect@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI MobEffect(int, std::string const &, std::string const &, bool, int, int, std::string const &, bool, struct MobEffect::FactorCalculationData const &);
     MCAPI void addAttributeBuff(class Attribute const &, class std::shared_ptr<class AttributeBuff>);
     MCAPI void addAttributeModifier(class Attribute const &, class std::shared_ptr<class AttributeModifier>);

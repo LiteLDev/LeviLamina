@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "JsonUtil.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -25,9 +24,23 @@ public:
 
 public:
     /*0*/ virtual ~EventResponse();
-    /*1*/ virtual std::string const & getName() const;
-    /*2*/ virtual void __unk_vfn_2() = 0;
-    /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
+    /*
+    inline void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> & a0, class Factory<class EventResponse> const & a1) const{
+        void (EventResponse::*rv)(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
+        *((void**)&rv) = dlsym("?buildSchema@EventResponse@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VEventResponse@@$$V@@@Z");
+        return (this->*rv)(std::forward<class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &>(a0), std::forward<class Factory<class EventResponse> const &>(a1));
+    }
+    inline std::string const & getName() const{
+        std::string const & (EventResponse::*rv)() const;
+        *((void**)&rv) = dlsym("?getName@EventResponse@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline  ~EventResponse(){
+         (EventResponse::*rv)();
+        *((void**)&rv) = dlsym("??1EventResponse@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

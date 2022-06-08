@@ -22,6 +22,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~MoveTowardsRestrictionDefinition();
+    /*
+    inline  ~MoveTowardsRestrictionDefinition(){
+         (MoveTowardsRestrictionDefinition::*rv)();
+        *((void**)&rv) = dlsym("??1MoveTowardsRestrictionDefinition@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI MoveTowardsRestrictionDefinition();
     MCAPI void initialize(class EntityContext &, class MoveTowardsRestrictionGoal &);
 

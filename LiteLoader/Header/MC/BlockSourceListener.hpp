@@ -62,6 +62,11 @@ public:
         *((void**)&rv) = dlsym("?onBlockEvent@BlockSourceListener@@UEAAXAEAVBlockSource@@HHHHH@Z");
         return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<int>(a3), std::forward<int>(a4), std::forward<int>(a5));
     }
+    inline  ~BlockSourceListener(){
+         (BlockSourceListener::*rv)();
+        *((void**)&rv) = dlsym("??1BlockSourceListener@@UEAA@XZ");
+        return (this->*rv)();
+    }
     */
 
 protected:

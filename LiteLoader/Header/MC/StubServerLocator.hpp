@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "RakNet.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -24,7 +23,7 @@ public:
 
 public:
     /*0*/ virtual ~StubServerLocator();
-    /*1*/ virtual void setGetHostGUIDFn(class std::function<struct RakNet::RakNetGUID (void)> const &);
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void startAnnouncingServer(std::string const &, std::string const &, enum GameType, int, int, bool);
     /*4*/ virtual void stopAnnouncingServer();
@@ -49,6 +48,16 @@ public:
     inline bool isIPv4Supported() const{
         bool (StubServerLocator::*rv)() const;
         *((void**)&rv) = dlsym("?isIPv4Supported@StubServerLocator@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline void setGetHostGUIDFn(class std::function<struct RakNet::RakNetGUID (void)> const & a0){
+        void (StubServerLocator::*rv)(class std::function<struct RakNet::RakNetGUID (void)> const &);
+        *((void**)&rv) = dlsym("?setGetHostGUIDFn@StubServerLocator@@UEAAXAEBV?$function@$$A6A?AURakNetGUID@RakNet@@XZ@std@@@Z");
+        return (this->*rv)(std::forward<class std::function<struct RakNet::RakNetGUID (void)> const &>(a0));
+    }
+    inline  ~StubServerLocator(){
+         (StubServerLocator::*rv)();
+        *((void**)&rv) = dlsym("??1StubServerLocator@@UEAA@XZ");
         return (this->*rv)();
     }
     inline void addCustomServer(class AsynchronousIPResolver const & a0, int a1){

@@ -27,18 +27,17 @@ public:
 public:
     /*0*/ virtual ~WrittenBookItem();
     /*2*/ virtual void tearDown();
-    /*3*/ virtual int getMaxUseDuration(class ItemInstance const *) const;
-    /*4*/ virtual int getMaxUseDuration(class ItemStack const *) const;
-    /*5*/ virtual bool isMusicDisk() const;
+    /*3*/ virtual int getMaxUseDuration(class ItemStack const *) const;
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void executeEvent(class ItemStackBase &, std::string const &, class RenderParams &) const;
-    /*7*/ virtual bool isComponentBased() const;
+    /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual bool isArmor() const;
     /*9*/ virtual bool isBlockPlanterItem() const;
-    /*10*/ virtual bool isMultiColorTinted(class ItemStack const &) const;
-    /*12*/ virtual bool isCandle() const;
+    /*10*/ virtual void __unk_vfn_10();
+    /*12*/ virtual void __unk_vfn_12();
     /*14*/ virtual bool isDyeable() const;
     /*15*/ virtual bool isDye() const;
-    /*16*/ virtual enum ItemColor getItemColor() const;
     /*17*/ virtual bool isFertilizer() const;
     /*18*/ virtual bool isFood() const;
     /*19*/ virtual bool isThrowable() const;
@@ -51,9 +50,9 @@ public:
     /*43*/ virtual short getMaxDamage() const;
     /*44*/ virtual int getAttackDamage() const;
     /*46*/ virtual bool isGlint(class ItemStackBase const &) const;
-    /*47*/ virtual bool isPattern() const;
+    /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual int getPatternIndex() const;
-    /*49*/ virtual bool showsDurabilityInCreative() const;
+    /*49*/ virtual void __unk_vfn_49();
     /*50*/ virtual bool isWearableThroughLootTable(class CompoundTag const *) const;
     /*51*/ virtual bool canDestroyInCreative() const;
     /*52*/ virtual bool isDestructive(int) const;
@@ -66,11 +65,11 @@ public:
     /*59*/ virtual int getEnchantValue() const;
     /*60*/ virtual int getArmorValue() const;
     /*61*/ virtual int getToughnessValue() const;
-    /*62*/ virtual bool isComplex() const;
+    /*62*/ virtual void __unk_vfn_62();
     /*63*/ virtual bool isValidAuxValue(int) const;
     /*65*/ virtual float getViewDamping() const;
-    /*66*/ virtual bool uniqueAuxValues() const;
-    /*67*/ virtual bool isActorPlacerItem() const;
+    /*66*/ virtual void __unk_vfn_66();
+    /*67*/ virtual void __unk_vfn_67();
     /*68*/ virtual void __unk_vfn_68();
     /*69*/ virtual class mce::Color getColor(class CompoundTag const *, class ItemDescriptor const &) const;
     /*70*/ virtual bool hasCustomColor(class CompoundTag const *) const;
@@ -98,13 +97,19 @@ public:
     /*107*/ virtual bool validFishInteraction(int) const;
     /*110*/ virtual std::string getInteractText(class Player const &) const;
     /*111*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
-    /*113*/ virtual struct Brightness getLightEmission(int) const;
     /*115*/ virtual int getIconYOffset() const;
     /*119*/ virtual bool canBeCharged() const;
-    /*120*/ virtual void playSoundIncrementally(class ItemInstance const &, class Mob &) const;
-    /*121*/ virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
+    /*120*/ virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
+    /*121*/ virtual void __unk_vfn_121();
     /*124*/ virtual std::string getAuxValuesDescription() const;
     /*126*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
+    /*
+    inline bool isGlint(class ItemStackBase const & a0) const{
+        bool (WrittenBookItem::*rv)(class ItemStackBase const &) const;
+        *((void**)&rv) = dlsym("?isGlint@WrittenBookItem@@MEBA_NAEBVItemStackBase@@@Z");
+        return (this->*rv)(std::forward<class ItemStackBase const &>(a0));
+    }
+    */
     MCAPI WrittenBookItem(std::string const &, int);
     MCAPI static int const MAX_GENERATION;
     MCAPI static int const MAX_PAGES;

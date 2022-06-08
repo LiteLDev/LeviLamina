@@ -25,6 +25,13 @@ public:
 public:
     /*0*/ virtual ~ActorEventResponseFactory();
     /*1*/ virtual void initializeFactory(class Experiments const &);
+    /*
+    inline  ~ActorEventResponseFactory(){
+         (ActorEventResponseFactory::*rv)();
+        *((void**)&rv) = dlsym("??1ActorEventResponseFactory@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI void initSchema();
 
 protected:

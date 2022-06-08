@@ -27,6 +27,13 @@ public:
     /*0*/ virtual ~InstantaneousAttributeBuff();
     /*1*/ virtual bool isInstantaneous() const;
     /*2*/ virtual bool isSerializable() const;
+    /*
+    inline  ~InstantaneousAttributeBuff(){
+         (InstantaneousAttributeBuff::*rv)();
+        *((void**)&rv) = dlsym("??1InstantaneousAttributeBuff@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI InstantaneousAttributeBuff(float, class ActorDamageSource const &);
     MCAPI InstantaneousAttributeBuff(float, enum AttributeBuffType);
 

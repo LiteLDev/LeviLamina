@@ -29,6 +29,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~NetworkChunkPublisher();
+    /*
+    inline  ~NetworkChunkPublisher(){
+         (NetworkChunkPublisher::*rv)();
+        *((void**)&rv) = dlsym("??1NetworkChunkPublisher@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI NetworkChunkPublisher(class Level &, class NetworkHandler &, class ClientBlobCache::Server::ActiveTransfersManager &, class NetworkIdentifier const &, unsigned char);
     MCAPI void clearRegion();
     MCAPI void destroyRegion();

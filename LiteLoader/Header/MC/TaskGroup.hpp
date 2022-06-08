@@ -30,6 +30,13 @@ public:
     /*3*/ virtual enum TaskGroupState getState() const;
     /*4*/ virtual void processCoroutines();
     /*5*/ virtual void taskComplete(class gsl::not_null<class BackgroundTaskBase *>);
+    /*
+    inline  ~TaskGroup(){
+         (TaskGroup::*rv)();
+        *((void**)&rv) = dlsym("??1TaskGroup@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI TaskGroup(class WorkerPool &, class Scheduler &, std::string);
     MCAPI void disableOwnerThreadChecks();
     MCAPI void flush(class std::function<void (void)>);

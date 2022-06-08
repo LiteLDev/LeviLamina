@@ -23,6 +23,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~ScriptIntBlockProperty();
+    /*
+    inline  ~ScriptIntBlockProperty(){
+         (ScriptIntBlockProperty::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptIntBlockProperty@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptIntBlockProperty(class ScriptIntBlockProperty &&);
     MCAPI ScriptIntBlockProperty(std::string, class ItemState const &, std::vector<int>, class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>);
     MCAPI class Scripting::Result<int> getState() const;

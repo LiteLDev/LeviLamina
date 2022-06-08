@@ -29,9 +29,20 @@ public:
     /*2*/ virtual int fclose(void *);
     /*3*/ virtual int fseek(void *, __int64, int);
     /*4*/ virtual __int64 ftell(void *);
-    /*5*/ virtual class IFileReadAccess const * getReadInterface() const;
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual class IFileWriteAccess * getWriteInterface();
-    /*7*/ virtual void unload();
+    /*
+    inline void unload(){
+        void (FileSystemFileAccess::*rv)();
+        *((void**)&rv) = dlsym("?unload@FileSystemFileAccess@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline class IFileReadAccess const * getReadInterface() const{
+        class IFileReadAccess const * (FileSystemFileAccess::*rv)() const;
+        *((void**)&rv) = dlsym("?getReadInterface@FileSystemFileAccess@@UEBAPEBVIFileReadAccess@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI FileSystemFileAccess(enum FileSystemMode);
 
 protected:

@@ -25,6 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptNavigationClimbComponent();
+    /*
+    inline  ~ScriptNavigationClimbComponent(){
+         (ScriptNavigationClimbComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptNavigationClimbComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptNavigationClimbComponent> bind(struct Scripting::Version);
 
 protected:

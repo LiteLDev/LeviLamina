@@ -29,8 +29,15 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
     /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual void tick();
+    /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+    /*
+    inline void tick(){
+        void (SwimIdleGoal::*rv)();
+        *((void**)&rv) = dlsym("?tick@SwimIdleGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SwimIdleGoal(class Mob &);
 
 protected:

@@ -25,12 +25,24 @@ public:
 public:
     /*0*/ virtual ~SquidIdleGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual bool canContinueToUse();
+    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
-    /*5*/ virtual void stop();
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+    /*
+    inline void stop(){
+        void (SquidIdleGoal::*rv)();
+        *((void**)&rv) = dlsym("?stop@SquidIdleGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline bool canContinueToUse(){
+        bool (SquidIdleGoal::*rv)();
+        *((void**)&rv) = dlsym("?canContinueToUse@SquidIdleGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

@@ -25,9 +25,16 @@ public:
 
 public:
     /*0*/ virtual ~TextObjectScore();
-    /*1*/ virtual std::string asString() const;
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual class Json::Value asJsonValue() const;
     /*3*/ virtual class Json::Value resolve(struct ResolveData const &) const;
+    /*
+    inline std::string asString() const{
+        std::string (TextObjectScore::*rv)() const;
+        *((void**)&rv) = dlsym("?asString@TextObjectScore@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI TextObjectScore(std::string, std::string);
     MCAPI static std::string const RAW_TEXT_SCORE_KEY;
     MCAPI static std::string const RAW_TEXT_SCORE_NAME_KEY;

@@ -25,6 +25,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~Biome();
     MCAPI Biome(int);
     MCAPI class Biome & addTag(class HashedString, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> &);
     MCAPI bool canHaveSnowfall(class BlockSource const &, class BlockPos const &) const;

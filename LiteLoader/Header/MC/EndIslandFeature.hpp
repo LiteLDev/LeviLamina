@@ -27,6 +27,13 @@ public:
     /*0*/ virtual ~EndIslandFeature();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+    /*
+    inline  ~EndIslandFeature(){
+         (EndIslandFeature::*rv)();
+        *((void**)&rv) = dlsym("??1EndIslandFeature@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

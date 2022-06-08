@@ -27,6 +27,13 @@ public:
     /*1*/ virtual ~BreakBlocksDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
+    /*
+    inline  ~BreakBlocksDescription(){
+         (BreakBlocksDescription::*rv)();
+        *((void**)&rv) = dlsym("??1BreakBlocksDescription@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BreakBlocksDescription();
 
 protected:

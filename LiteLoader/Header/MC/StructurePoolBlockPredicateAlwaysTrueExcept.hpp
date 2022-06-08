@@ -22,8 +22,15 @@ public:
 
 public:
     /*0*/ virtual ~StructurePoolBlockPredicateAlwaysTrueExcept();
-    /*1*/ virtual bool test(class Block const &, class Randomize &) const;
-    /*2*/ virtual bool test(class BlockPos const &, class BlockPos const &, class Randomize &) const;
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual bool test(class Block const &, class Randomize &) const;
+    /*
+    inline bool test(class BlockPos const & a0, class BlockPos const & a1, class Randomize & a2) const{
+        bool (StructurePoolBlockPredicateAlwaysTrueExcept::*rv)(class BlockPos const &, class BlockPos const &, class Randomize &) const;
+        *((void**)&rv) = dlsym("?test@StructurePoolBlockPredicateAlwaysTrueExcept@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0), std::forward<class BlockPos const &>(a1), std::forward<class Randomize &>(a2));
+    }
+    */
     MCAPI StructurePoolBlockPredicateAlwaysTrueExcept(class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> const &, float);
 
 protected:

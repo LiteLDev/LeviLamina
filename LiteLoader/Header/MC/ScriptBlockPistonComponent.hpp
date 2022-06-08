@@ -24,6 +24,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlockPistonComponent();
+    /*
+    inline  ~ScriptBlockPistonComponent(){
+         (ScriptBlockPistonComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptBlockPistonComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptBlockPistonComponent(class ScriptBlockPistonComponent const &);
     MCAPI ScriptBlockPistonComponent(class ScriptBlockPistonComponent &&);
     MCAPI class Scripting::Result<std::vector<class BlockPos>> getAttachedBlocks();

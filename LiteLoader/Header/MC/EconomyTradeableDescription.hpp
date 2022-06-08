@@ -28,6 +28,13 @@ public:
     /*1*/ virtual ~EconomyTradeableDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
+    /*
+    inline  ~EconomyTradeableDescription(){
+         (EconomyTradeableDescription::*rv)();
+        *((void**)&rv) = dlsym("??1EconomyTradeableDescription@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

@@ -27,6 +27,13 @@ public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~BehaviorTreeDescription();
     /*3*/ virtual void serializeData(class Json::Value &) const;
+    /*
+    inline  ~BehaviorTreeDescription(){
+         (BehaviorTreeDescription::*rv)();
+        *((void**)&rv) = dlsym("??1BehaviorTreeDescription@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

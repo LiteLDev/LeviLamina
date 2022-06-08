@@ -27,8 +27,14 @@ public:
 public:
     /*0*/ virtual ~ActorOnGroundTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
-    /*3*/ virtual void finalizeParsedValue(class IWorldRegistriesProvider &);
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
+    /*
+    inline  ~ActorOnGroundTest(){
+         (ActorOnGroundTest::*rv)();
+        *((void**)&rv) = dlsym("??1ActorOnGroundTest@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

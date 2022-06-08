@@ -26,20 +26,42 @@ public:
 public:
     /*0*/ virtual ~ActorDamageByActorSource();
     /*1*/ virtual bool isEntitySource() const;
-    /*2*/ virtual bool isChildEntitySource() const;
-    /*3*/ virtual bool isBlockSource() const;
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
     /*8*/ virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor *) const;
     /*9*/ virtual bool getIsCreative() const;
     /*10*/ virtual bool getIsWorldBuilder() const;
-    /*11*/ virtual struct ActorUniqueID getEntityUniqueID() const;
-    /*12*/ virtual enum ActorType getEntityType() const;
+    /*11*/ virtual void __unk_vfn_11();
+    /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual enum ActorCategory getEntityCategories() const;
     /*14*/ virtual bool getDamagingEntityIsCreative() const;
-    /*15*/ virtual bool getDamagingEntityIsWorldBuilder() const;
+    /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
-    /*17*/ virtual enum ActorType getDamagingEntityType() const;
-    /*18*/ virtual enum ActorCategory getDamagingEntityCategories() const;
+    /*17*/ virtual void __unk_vfn_17();
+    /*18*/ virtual void __unk_vfn_18();
     /*19*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
+    /*
+    inline  ~ActorDamageByActorSource(){
+         (ActorDamageByActorSource::*rv)();
+        *((void**)&rv) = dlsym("??1ActorDamageByActorSource@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline enum ActorType getDamagingEntityType() const{
+        enum ActorType (ActorDamageByActorSource::*rv)() const;
+        *((void**)&rv) = dlsym("?getDamagingEntityType@ActorDamageByActorSource@@UEBA?AW4ActorType@@XZ");
+        return (this->*rv)();
+    }
+    inline enum ActorType getEntityType() const{
+        enum ActorType (ActorDamageByActorSource::*rv)() const;
+        *((void**)&rv) = dlsym("?getEntityType@ActorDamageByActorSource@@UEBA?AW4ActorType@@XZ");
+        return (this->*rv)();
+    }
+    inline struct ActorUniqueID getEntityUniqueID() const{
+        struct ActorUniqueID (ActorDamageByActorSource::*rv)() const;
+        *((void**)&rv) = dlsym("?getEntityUniqueID@ActorDamageByActorSource@@UEBA?AUActorUniqueID@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ActorDamageByActorSource(class Actor &, enum ActorDamageCause);
 
 protected:

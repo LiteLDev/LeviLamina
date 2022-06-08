@@ -29,29 +29,29 @@ public:
         *((void**)&rv) = dlsym("?onServerResume@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z");
         return (this->*rv)(std::forward<class ServerInstance &>(a0));
     }
-    inline enum EventResult onServerInitializeEnd(class ServerInstance & a0){
-        enum EventResult (ServerInstanceEventListener::*rv)(class ServerInstance &);
-        *((void**)&rv) = dlsym("?onServerInitializeEnd@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z");
-        return (this->*rv)(std::forward<class ServerInstance &>(a0));
-    }
     inline enum EventResult onServerMinecraftInitialized(class ServerInstance & a0, class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const & a1){
         enum EventResult (ServerInstanceEventListener::*rv)(class ServerInstance &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const &);
         *((void**)&rv) = dlsym("?onServerMinecraftInitialized@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@AEBV?$not_null@V?$NonOwnerPointer@VMinecraft@@@Bedrock@@@gsl@@@Z");
         return (this->*rv)(std::forward<class ServerInstance &>(a0), std::forward<class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const &>(a1));
+    }
+    inline enum EventResult onServerInitializeEnd(class ServerInstance & a0){
+        enum EventResult (ServerInstanceEventListener::*rv)(class ServerInstance &);
+        *((void**)&rv) = dlsym("?onServerInitializeEnd@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z");
+        return (this->*rv)(std::forward<class ServerInstance &>(a0));
     }
     inline enum EventResult onServerInitializeStart(class ServerInstance & a0){
         enum EventResult (ServerInstanceEventListener::*rv)(class ServerInstance &);
         *((void**)&rv) = dlsym("?onServerInitializeStart@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z");
         return (this->*rv)(std::forward<class ServerInstance &>(a0));
     }
-    inline enum EventResult onServerSuspend(class ServerInstance & a0){
-        enum EventResult (ServerInstanceEventListener::*rv)(class ServerInstance &);
-        *((void**)&rv) = dlsym("?onServerSuspend@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z");
-        return (this->*rv)(std::forward<class ServerInstance &>(a0));
-    }
     inline enum EventResult onStartLeaveGame(class ServerInstance & a0){
         enum EventResult (ServerInstanceEventListener::*rv)(class ServerInstance &);
         *((void**)&rv) = dlsym("?onStartLeaveGame@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z");
+        return (this->*rv)(std::forward<class ServerInstance &>(a0));
+    }
+    inline enum EventResult onServerSuspend(class ServerInstance & a0){
+        enum EventResult (ServerInstanceEventListener::*rv)(class ServerInstance &);
+        *((void**)&rv) = dlsym("?onServerSuspend@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z");
         return (this->*rv)(std::forward<class ServerInstance &>(a0));
     }
     inline enum EventResult onEvent(struct ServerInstanceNotificationEvent const & a0){

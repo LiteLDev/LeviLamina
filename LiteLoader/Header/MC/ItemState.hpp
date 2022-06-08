@@ -23,6 +23,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~ItemState();
+    /*
+    inline  ~ItemState(){
+         (ItemState::*rv)();
+        *((void**)&rv) = dlsym("??1ItemState@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

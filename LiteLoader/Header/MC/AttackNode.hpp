@@ -24,7 +24,13 @@ public:
 public:
     /*0*/ virtual ~AttackNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
-    /*2*/ virtual void initializeFromDefinition(class Actor &);
+    /*
+    inline void initializeFromDefinition(class Actor & a0){
+        void (AttackNode::*rv)(class Actor &);
+        *((void**)&rv) = dlsym("?initializeFromDefinition@AttackNode@@EEAAXAEAVActor@@@Z");
+        return (this->*rv)(std::forward<class Actor &>(a0));
+    }
+    */
     MCAPI AttackNode();
 
 protected:

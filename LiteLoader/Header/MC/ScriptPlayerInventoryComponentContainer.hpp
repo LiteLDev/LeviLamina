@@ -27,6 +27,13 @@ public:
     /*0*/ virtual ~ScriptPlayerInventoryComponentContainer();
     /*11*/ virtual class Container * _tryGetContainer() const;
     /*12*/ virtual void _balanceTransaction(class ItemStack const &) const;
+    /*
+    inline  ~ScriptPlayerInventoryComponentContainer(){
+         (ScriptPlayerInventoryComponentContainer::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptPlayerInventoryComponentContainer@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptPlayerInventoryComponentContainer(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptPlayerInventoryComponentContainer> bind(struct Scripting::Version);
 

@@ -23,6 +23,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~ScriptItemStack();
+    /*
+    inline  ~ScriptItemStack(){
+         (ScriptItemStack::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptItemStack@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptItemStack(class ScriptItemStack &&);
     MCAPI ScriptItemStack(class ScriptItemStack const &);
     MCAPI ScriptItemStack(class ItemStackBase const &);

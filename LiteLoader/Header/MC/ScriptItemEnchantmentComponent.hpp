@@ -21,6 +21,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptItemEnchantmentComponent();
+    /*
+    inline  ~ScriptItemEnchantmentComponent(){
+         (ScriptItemEnchantmentComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptItemEnchantmentComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptItemEnchantmentComponent(class ScriptItemEnchantmentComponent const &);
     MCAPI ScriptItemEnchantmentComponent(class Scripting::WeakTypedObjectHandle<class ScriptItemStack>, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<class ScriptItemEnchantments> getEnchantments() const;

@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~EatBlockDefinition();
     MCAPI EatBlockDefinition();
     MCAPI void addSuccessChanceExpressionNode(class ExpressionNode const &);
     MCAPI void initialize(class EntityContext &, class EatBlockGoal &);

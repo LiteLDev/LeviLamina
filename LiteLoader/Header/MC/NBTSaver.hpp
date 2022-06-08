@@ -23,6 +23,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~NBTSaver();
+    /*
+    inline  ~NBTSaver(){
+         (NBTSaver::*rv)();
+        *((void**)&rv) = dlsym("??1NBTSaver@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI class CompoundTag getSavedCompoundTag();
 
 protected:

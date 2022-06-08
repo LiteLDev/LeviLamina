@@ -23,6 +23,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~ITickingArea();
+    /*
+    inline  ~ITickingArea(){
+         (ITickingArea::*rv)();
+        *((void**)&rv) = dlsym("??1ITickingArea@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI class CompoundTag serialize() const;
 
 protected:

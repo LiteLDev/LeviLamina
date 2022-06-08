@@ -24,6 +24,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~EnchantBookForTradingFunction();
     /*
     inline int apply(class ItemStack & a0, class Random & a1, struct Trade const & a2, class LootTableContext & a3){
         int (EnchantBookForTradingFunction::*rv)(class ItemStack &, class Random &, struct Trade const &, class LootTableContext &);

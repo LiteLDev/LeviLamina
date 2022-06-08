@@ -22,6 +22,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~LevelEventCoordinator();
+    /*
+    inline  ~LevelEventCoordinator(){
+         (LevelEventCoordinator::*rv)();
+        *((void**)&rv) = dlsym("??1LevelEventCoordinator@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI LevelEventCoordinator();
     MCAPI void registerLevelGameplayHandler(std::unique_ptr<class LevelGameplayHandler> &&);
     MCAPI void sendEvent(class EventRef<struct LevelGameplayEvent<void>> const &);

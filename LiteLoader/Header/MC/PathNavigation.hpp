@@ -36,6 +36,13 @@ public:
     /*10*/ virtual bool travel(class NavigationComponent &, class Mob &, float &, float &, float &);
     /*11*/ virtual bool canUpdatePath(class Mob const &) const;
     /*12*/ virtual void updatePath(class NavigationComponent &, class Mob &);
+    /*
+    inline  ~PathNavigation(){
+         (PathNavigation::*rv)();
+        *((void**)&rv) = dlsym("??1PathNavigation@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
     MCAPI float _getHighestBlockHeight(class BlockSource &, class Mob &, class Vec3 const &, class Vec2 const &) const;

@@ -26,6 +26,13 @@ public:
     /*1*/ virtual double stop();
     /*2*/ virtual double stopContinue();
     /*3*/ virtual void print(std::string const &);
+    /*
+    inline  ~Stopwatch(){
+         (Stopwatch::*rv)();
+        *((void**)&rv) = dlsym("??1Stopwatch@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI Stopwatch();
     MCAPI void reset();
     MCAPI void start();

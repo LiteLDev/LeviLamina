@@ -24,6 +24,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlockWaterContainerComponent();
+    /*
+    inline  ~ScriptBlockWaterContainerComponent(){
+         (ScriptBlockWaterContainerComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptBlockWaterContainerComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptBlockWaterContainerComponent(class ScriptBlockWaterContainerComponent const &);
     MCAPI ScriptBlockWaterContainerComponent(class ScriptBlockWaterContainerComponent &&);
     MCAPI class Scripting::Result<void> addDye(class ScriptItemType const &);

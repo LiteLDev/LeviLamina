@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~CircleAroundAnchorDefinition();
     MCAPI CircleAroundAnchorDefinition();
     MCAPI void initialize(class EntityContext &, class CircleAroundAnchorGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class CircleAroundAnchorDefinition>> &);

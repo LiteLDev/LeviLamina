@@ -25,6 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptDimension();
+    /*
+    inline  ~ScriptDimension(){
+         (ScriptDimension::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptDimension@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI class Scripting::Result<void> createExplosion(class Vec3 const &, float, struct Scripting::TypedObjectHandle<struct ScriptExplosionOptions>) const;
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptBlock> getBlock(class Scripting::WeakLifetimeScope, class BlockPos const &);
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptBlock>> getBlockFromRay(class Scripting::WeakLifetimeScope, class Vec3 const &, class ScriptVector const &, class std::optional<struct ScriptBlockRaycastOptions> const &) const;

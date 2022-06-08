@@ -25,6 +25,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~RegionFile();
     MCAPI RegionFile(class Core::Path const &);
     MCAPI bool open();
     MCAPI bool readChunk(int, int, class RakNet::BitStream **);

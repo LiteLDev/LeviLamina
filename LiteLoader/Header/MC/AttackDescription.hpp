@@ -28,6 +28,13 @@ public:
     /*1*/ virtual ~AttackDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
+    /*
+    inline  ~AttackDescription(){
+         (AttackDescription::*rv)();
+        *((void**)&rv) = dlsym("??1AttackDescription@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

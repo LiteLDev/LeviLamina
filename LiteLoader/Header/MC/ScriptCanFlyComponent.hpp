@@ -23,6 +23,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptCanFlyComponent();
+    /*
+    inline  ~ScriptCanFlyComponent(){
+         (ScriptCanFlyComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptCanFlyComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class HashedString const & getHashedName();
 
 protected:

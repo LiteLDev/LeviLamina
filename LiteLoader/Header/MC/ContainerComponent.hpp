@@ -23,6 +23,14 @@ public:
 
 public:
     /*0*/ virtual void containerContentChanged(int);
+    /*1*/ virtual ~ContainerComponent();
+    /*
+    inline  ~ContainerComponent(){
+         (ContainerComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ContainerComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ContainerComponent(class ContainerComponent &&);
     MCAPI ContainerComponent();
     MCAPI class FillingContainer * _getRawContainerPtr();

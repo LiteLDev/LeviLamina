@@ -27,6 +27,13 @@ public:
     /*0*/ virtual ~HellSpringFeature();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+    /*
+    inline  ~HellSpringFeature(){
+         (HellSpringFeature::*rv)();
+        *((void**)&rv) = dlsym("??1HellSpringFeature@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI HellSpringFeature(class Block const &, bool);
 
 protected:

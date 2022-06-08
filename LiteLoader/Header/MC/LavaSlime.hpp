@@ -29,45 +29,40 @@ public:
     /*14*/ virtual ~LavaSlime();
     /*16*/ virtual void resetUserPos(bool);
     /*20*/ virtual bool isRuntimePredictedMovementEnabled() const;
-    /*36*/ virtual class Vec3 getInterpolatedRidingOffset(float) const;
-    /*40*/ virtual bool breaksFallingBlocks() const;
-    /*61*/ virtual bool canExistInPeaceful() const;
-    /*68*/ virtual bool canMakeStepSound() const;
+    /*40*/ virtual void __unk_vfn_40();
+    /*61*/ virtual void __unk_vfn_61();
+    /*68*/ virtual void __unk_vfn_68();
     /*73*/ virtual bool isInLava() const;
     /*78*/ virtual float getCameraOffset() const;
-    /*82*/ virtual bool canSeeInvisible() const;
+    /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual bool canInteractWithOtherEntitiesInGame() const;
     /*87*/ virtual float getBrightness(float) const;
-    /*88*/ virtual bool interactPreventDefault();
-    /*95*/ virtual bool isFishable() const;
-    /*98*/ virtual bool useNewAi() const;
+    /*88*/ virtual void __unk_vfn_88();
+    /*95*/ virtual void __unk_vfn_95();
+    /*98*/ virtual void __unk_vfn_98();
     /*101*/ virtual bool isDamageBlocked(class ActorDamageSource const &) const;
     /*103*/ virtual bool isOnFire() const;
-    /*105*/ virtual bool shouldBurn();
-    /*107*/ virtual bool isTargetable() const;
-    /*108*/ virtual bool canBeControlledByPassenger();
-    /*109*/ virtual bool isLeashableType();
-    /*113*/ virtual class Actor * findAttackTarget();
+    /*105*/ virtual void __unk_vfn_105();
+    /*107*/ virtual void __unk_vfn_107();
+    /*108*/ virtual void __unk_vfn_108();
+    /*109*/ virtual void __unk_vfn_109();
     /*114*/ virtual bool isValidTarget(class Actor *) const;
     /*120*/ virtual void onTame();
     /*121*/ virtual void onFailedTame();
     /*130*/ virtual void vehicleLanded(class Vec3 const &, class Vec3 const &);
     /*139*/ virtual void onBounceStarted(class BlockPos const &, class Block const &);
-    /*142*/ virtual float getPickRadius();
     /*151*/ virtual void awardKillScore(class Actor &, int);
-    /*170*/ virtual class HashedString const & queryEntityRenderer() const;
     /*171*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*178*/ virtual int getPortalWaitTime() const;
     /*180*/ virtual bool canChangeDimensions() const;
-    /*181*/ virtual void onHit(class HitResult const &);
+    /*181*/ virtual void __unk_vfn_181();
     /*183*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*192*/ virtual bool canPickupItem(class ItemStack const &) const;
     /*193*/ virtual bool canBePulledIntoVehicle() const;
-    /*195*/ virtual bool stopUponGroundCollision() const;
+    /*195*/ virtual void __unk_vfn_195();
     /*198*/ virtual bool canSynchronizeNewEntity() const;
     /*220*/ virtual void __unk_vfn_220();
-    /*221*/ virtual unsigned int getUserId() const;
-    /*227*/ virtual float getYHeadRotO() const;
+    /*221*/ virtual void __unk_vfn_221();
     /*228*/ virtual bool isWorldBuilder() const;
     /*229*/ virtual bool isCreative() const;
     /*230*/ virtual bool isAdventure() const;
@@ -77,12 +72,11 @@ public:
     /*238*/ virtual void setAuxValue(int);
     /*244*/ virtual void stopSpinAttack();
     /*246*/ virtual void __unk_vfn_246();
-    /*249*/ virtual float getDeletionDelayTimeSeconds() const;
-    /*261*/ virtual bool shouldAlwaysRender();
-    /*269*/ virtual bool _makeFlySound() const;
+    /*249*/ virtual void __unk_vfn_249();
+    /*261*/ virtual void __unk_vfn_261();
+    /*269*/ virtual void __unk_vfn_269();
     /*278*/ virtual void __unk_vfn_278();
-    /*280*/ virtual void __unk_vfn_280();
-    /*294*/ virtual void aiStep();
+    /*280*/ virtual void spawnAnim();
     /*299*/ virtual bool checkSpawnRules(bool);
     /*302*/ virtual int getItemUseDuration() const;
     /*303*/ virtual float getItemUseStartupProgress() const;
@@ -93,30 +87,24 @@ public:
     /*316*/ virtual int getArmorValue() const;
     /*321*/ virtual void sendArmorDamage(class std::bitset<4> const &);
     /*338*/ virtual void onBorn(class Actor &, class Actor &);
-    /*342*/ virtual int getAttackTime();
-    /*345*/ virtual bool isSimulated() const;
+    /*345*/ virtual void __unk_vfn_345();
     /*351*/ virtual void jumpFromGround();
     /*355*/ virtual void _serverAiMobStep();
     /*359*/ virtual void __unk_vfn_359();
-    /*361*/ virtual void __unk_vfn_361();
-    /*362*/ virtual void __unk_vfn_362();
-    /*366*/ virtual void __unk_vfn_366();
+    /*361*/ virtual bool isDarkEnoughToSpawn() const;
+    /*362*/ virtual bool canDealDamage();
+    /*366*/ virtual bool doPlayLandSound();
     /*369*/ virtual void decreaseSquish();
     /*370*/ virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
     /*
-    inline bool isDarkEnoughToSpawn() const{
+    inline bool isOnFire() const{
         bool (LavaSlime::*rv)() const;
-        *((void**)&rv) = dlsym("?isDarkEnoughToSpawn@LavaSlime@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?isOnFire@LavaSlime@@MEBA_NXZ");
         return (this->*rv)();
     }
     inline bool canDealDamage(){
         bool (LavaSlime::*rv)();
         *((void**)&rv) = dlsym("?canDealDamage@LavaSlime@@MEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool doPlayLandSound(){
-        bool (LavaSlime::*rv)();
-        *((void**)&rv) = dlsym("?doPlayLandSound@LavaSlime@@MEAA_NXZ");
         return (this->*rv)();
     }
     */

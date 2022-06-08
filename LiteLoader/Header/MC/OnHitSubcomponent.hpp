@@ -27,6 +27,13 @@ public:
     /*2*/ virtual void __unk_vfn_2() = 0;
     /*3*/ virtual void __unk_vfn_3() = 0;
     /*4*/ virtual char const * getName();
+    /*
+    inline  ~OnHitSubcomponent(){
+         (OnHitSubcomponent::*rv)();
+        *((void**)&rv) = dlsym("??1OnHitSubcomponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI OnHitSubcomponent();
 
 protected:

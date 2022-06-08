@@ -26,7 +26,13 @@ public:
     /*0*/ virtual ~StructureAnimationAction();
     /*1*/ virtual void execute(class ServerLevel &, class Dimension &);
     /*2*/ virtual void serialize(class CompoundTag &);
-    /*3*/ virtual bool operator==(class IRequestAction &) const;
+    /*
+    inline bool operator==(class IRequestAction & a0) const{
+        bool (StructureAnimationAction::*rv)(class IRequestAction &) const;
+        *((void**)&rv) = dlsym("??8StructureAnimationAction@@UEBA_NAEAVIRequestAction@@@Z");
+        return (this->*rv)(std::forward<class IRequestAction &>(a0));
+    }
+    */
     MCAPI StructureAnimationAction(class StructureSettings const &, class AutomaticID<class Dimension, int>, class BlockPos const &, std::string const &);
     MCAPI StructureAnimationAction(std::unique_ptr<class StructureAnimationData>, class AutomaticID<class Dimension, int>);
     MCAPI static bool isValidTag(class CompoundTag const &);

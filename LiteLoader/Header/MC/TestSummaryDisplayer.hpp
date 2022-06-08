@@ -23,15 +23,16 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~TestSummaryDisplayer();
     /*
-    inline void onTestFailed(class gametest::BaseGameTestInstance & a0){
-        void (TestSummaryDisplayer::*rv)(class gametest::BaseGameTestInstance &);
-        *((void**)&rv) = dlsym("?onTestFailed@TestSummaryDisplayer@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z");
-        return (this->*rv)(std::forward<class gametest::BaseGameTestInstance &>(a0));
-    }
     inline void onTestPassed(class gametest::BaseGameTestInstance & a0){
         void (TestSummaryDisplayer::*rv)(class gametest::BaseGameTestInstance &);
         *((void**)&rv) = dlsym("?onTestPassed@TestSummaryDisplayer@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z");
+        return (this->*rv)(std::forward<class gametest::BaseGameTestInstance &>(a0));
+    }
+    inline void onTestFailed(class gametest::BaseGameTestInstance & a0){
+        void (TestSummaryDisplayer::*rv)(class gametest::BaseGameTestInstance &);
+        *((void**)&rv) = dlsym("?onTestFailed@TestSummaryDisplayer@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z");
         return (this->*rv)(std::forward<class gametest::BaseGameTestInstance &>(a0));
     }
     */

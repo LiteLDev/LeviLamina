@@ -33,6 +33,11 @@ public:
     /*5*/ virtual bool getSimPaused() const;
     /*6*/ virtual bool isOnlineClient() const;
     /*
+    inline  ~Minecraft(){
+         (Minecraft::*rv)();
+        *((void**)&rv) = dlsym("??1Minecraft@@UEAA@XZ");
+        return (this->*rv)();
+    }
     inline class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry(){
         class StackRefResultT<struct EntityRegistryRefTraits> (Minecraft::*rv)();
         *((void**)&rv) = dlsym("?getEntityRegistry@Minecraft@@UEAA?AV?$StackRefResultT@UEntityRegistryRefTraits@@@@XZ");

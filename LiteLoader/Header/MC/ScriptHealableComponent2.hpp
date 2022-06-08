@@ -25,6 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptHealableComponent2();
+    /*
+    inline  ~ScriptHealableComponent2(){
+         (ScriptHealableComponent2::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptHealableComponent2@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptHealableComponent2(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class Scripting::Result<class ActorFilterGroup> getFilters() const;
     MCAPI class Scripting::Result<bool> getForceUse() const;

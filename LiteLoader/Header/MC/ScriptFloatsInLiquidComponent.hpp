@@ -23,6 +23,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptFloatsInLiquidComponent();
+    /*
+    inline  ~ScriptFloatsInLiquidComponent(){
+         (ScriptFloatsInLiquidComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptFloatsInLiquidComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class HashedString const & getHashedName();
 
 protected:

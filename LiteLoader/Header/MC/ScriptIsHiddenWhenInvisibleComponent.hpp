@@ -23,6 +23,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptIsHiddenWhenInvisibleComponent();
+    /*
+    inline  ~ScriptIsHiddenWhenInvisibleComponent(){
+         (ScriptIsHiddenWhenInvisibleComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptIsHiddenWhenInvisibleComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class HashedString const & getHashedName();
 
 protected:

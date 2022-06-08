@@ -25,6 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptMovementAmphibiousComponent();
+    /*
+    inline  ~ScriptMovementAmphibiousComponent(){
+         (ScriptMovementAmphibiousComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptMovementAmphibiousComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI class Scripting::Result<float> getMaxTurn() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMovementAmphibiousComponent> bind(struct Scripting::Version);
 

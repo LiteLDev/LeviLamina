@@ -25,6 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptHealthComponent2();
+    /*
+    inline  ~ScriptHealthComponent2(){
+         (ScriptHealthComponent2::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptHealthComponent2@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptHealthComponent2> bind(struct Scripting::Version);
 
 protected:

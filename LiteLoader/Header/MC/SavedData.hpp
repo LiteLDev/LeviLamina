@@ -23,6 +23,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~SavedData();
+    /*
+    inline  ~SavedData(){
+         (SavedData::*rv)();
+        *((void**)&rv) = dlsym("??1SavedData@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

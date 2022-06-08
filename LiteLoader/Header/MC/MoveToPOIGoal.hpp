@@ -35,8 +35,14 @@ public:
     /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /*14*/ virtual void _moveToBlock();
     /*15*/ virtual class Vec3 _getTargetPosition() const;
-    /*16*/ virtual unsigned __int64 _getRepathTime() const;
     /*17*/ virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType) const;
+    /*
+    inline  ~MoveToPOIGoal(){
+         (MoveToPOIGoal::*rv)();
+        *((void**)&rv) = dlsym("??1MoveToPOIGoal@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI MoveToPOIGoal(class Mob &, float, enum POIType, float);
     MCAPI bool getPOI(enum POIType);
 

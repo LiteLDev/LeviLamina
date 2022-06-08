@@ -23,6 +23,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptFrictionModifierComponent();
+    /*
+    inline  ~ScriptFrictionModifierComponent(){
+         (ScriptFrictionModifierComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptFrictionModifierComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

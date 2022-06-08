@@ -31,9 +31,16 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-    /*8*/ virtual void __unk_vfn_8();
-    /*9*/ virtual void __unk_vfn_9();
+    /*8*/ virtual bool isTargetGoal() const;
+    /*9*/ virtual void stop();
     /*10*/ virtual bool _canAttack(class Mob *, class Actor *, bool, bool, struct MobDescriptor const **);
+    /*
+    inline  ~TargetGoal(){
+         (TargetGoal::*rv)();
+        *((void**)&rv) = dlsym("??1TargetGoal@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI TargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, bool, int, bool, float, bool, int);
     MCAPI TargetGoal(class Mob &, bool, int, bool, float, bool, int);
 

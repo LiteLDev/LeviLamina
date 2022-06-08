@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~BannerPattern();
     MCAPI bool getIgnoreAux() const;
     MCAPI class ItemStack const & getIngredientItem() const;
     MCAPI std::string const & getName() const;

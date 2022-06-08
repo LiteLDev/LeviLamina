@@ -23,6 +23,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~JsonSaver();
+    /*
+    inline  ~JsonSaver(){
+         (JsonSaver::*rv)();
+        *((void**)&rv) = dlsym("??1JsonSaver@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI std::string toString();
 
 protected:

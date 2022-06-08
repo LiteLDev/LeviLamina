@@ -24,6 +24,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlockPotionContainerComponent();
+    /*
+    inline  ~ScriptBlockPotionContainerComponent(){
+         (ScriptBlockPotionContainerComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptBlockPotionContainerComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptBlockPotionContainerComponent(class ScriptBlockPotionContainerComponent const &);
     MCAPI ScriptBlockPotionContainerComponent(class ScriptBlockPotionContainerComponent &&);
     MCAPI class ScriptBlockPotionContainerComponent & operator=(class ScriptBlockPotionContainerComponent &&);

@@ -24,10 +24,12 @@ public:
 
 public:
     /*0*/ virtual ~InternalTaskGroup();
-    /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual enum TaskGroupState getState() const;
     /*
+    inline enum TaskGroupState getState() const{
+        enum TaskGroupState (InternalTaskGroup::*rv)() const;
+        *((void**)&rv) = dlsym("?getState@InternalTaskGroup@@UEBA?AW4TaskGroupState@@XZ");
+        return (this->*rv)();
+    }
     inline void processCoroutines(){
         void (InternalTaskGroup::*rv)();
         *((void**)&rv) = dlsym("?processCoroutines@InternalTaskGroup@@UEAAXXZ");

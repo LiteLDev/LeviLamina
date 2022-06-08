@@ -24,8 +24,15 @@ public:
 
 public:
     /*0*/ virtual ~FitSimpleRoom();
-    /*1*/ virtual bool fits(class RoomDefinition const &) const;
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual std::unique_ptr<class OceanMonumentPiece> create(int &, class std::shared_ptr<class RoomDefinition>, class Random &);
+    /*
+    inline bool fits(class RoomDefinition const & a0) const{
+        bool (FitSimpleRoom::*rv)(class RoomDefinition const &) const;
+        *((void**)&rv) = dlsym("?fits@FitSimpleRoom@@UEBA_NAEBVRoomDefinition@@@Z");
+        return (this->*rv)(std::forward<class RoomDefinition const &>(a0));
+    }
+    */
 
 protected:
 

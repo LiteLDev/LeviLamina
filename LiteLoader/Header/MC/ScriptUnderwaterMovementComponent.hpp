@@ -25,6 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptUnderwaterMovementComponent();
+    /*
+    inline  ~ScriptUnderwaterMovementComponent(){
+         (ScriptUnderwaterMovementComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptUnderwaterMovementComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptUnderwaterMovementComponent> bind(struct Scripting::Version);
 
 protected:

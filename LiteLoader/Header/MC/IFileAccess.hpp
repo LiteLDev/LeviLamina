@@ -22,6 +22,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~IFileAccess();
+    /*
+    inline  ~IFileAccess(){
+         (IFileAccess::*rv)();
+        *((void**)&rv) = dlsym("??1IFileAccess@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI IFileAccess();
 
 protected:

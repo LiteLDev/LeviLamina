@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~ServerPlayerEventCoordinator();
     MCAPI void sendPlayerAuthInputApplied(class Player &);
     MCAPI void sendPlayerAuthInputReceived(class Player &);
     MCAPI void sendPlayerMovementAnomaly(class Player &, class Vec3 const &, float, float);

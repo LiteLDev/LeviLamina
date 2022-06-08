@@ -23,6 +23,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptPushThroughComponent();
+    /*
+    inline  ~ScriptPushThroughComponent(){
+         (ScriptPushThroughComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptPushThroughComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

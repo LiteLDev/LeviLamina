@@ -42,12 +42,17 @@ public:
     /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*20*/ virtual unsigned char getSourceSubId() const;
-    /*21*/ virtual class CommandOrigin const & getOutputReceiver() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
-    /*25*/ virtual class mce::UUID const & getUUID() const;
     /*26*/ virtual void handleCommandOutputCallback(class Json::Value &&) const;
     /*27*/ virtual void updateValues();
     /*30*/ virtual bool isValid() const;
+    /*
+    inline  ~ScriptingCommandOrigin(){
+         (ScriptingCommandOrigin::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptingCommandOrigin@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptingCommandOrigin(class ServerLevel &, class Dimension *, class std::function<void (class Json::Value &&)>);
     MCAPI void __autoclassinit2(unsigned __int64);
 

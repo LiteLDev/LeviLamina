@@ -25,6 +25,13 @@ public:
 public:
     /*0*/ virtual ~PlayerScoreboardEventListener();
     /*1*/ virtual enum EventResult onScoreChanged(struct ScoreboardId const &, std::string const &, int);
+    /*
+    inline  ~PlayerScoreboardEventListener(){
+         (PlayerScoreboardEventListener::*rv)();
+        *((void**)&rv) = dlsym("??1PlayerScoreboardEventListener@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI class SubscribedObjectives & getPlayerSubscriptions(struct ScoreboardId const &, class Player const &);
     MCAPI void removePlayerSubscriptions(struct ScoreboardId const &);
 

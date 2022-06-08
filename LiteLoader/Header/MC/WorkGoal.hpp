@@ -34,8 +34,14 @@ public:
     /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*16*/ virtual unsigned __int64 _getRepathTime() const;
     /*18*/ virtual void useWorkstation();
+    /*
+    inline  ~WorkGoal(){
+         (WorkGoal::*rv)();
+        *((void**)&rv) = dlsym("??1WorkGoal@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI WorkGoal(class Mob &);
     MCAPI void playPOISoundEvent() const;
 

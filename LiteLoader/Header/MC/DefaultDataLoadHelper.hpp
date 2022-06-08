@@ -24,23 +24,17 @@ public:
 
 public:
     /*0*/ virtual ~DefaultDataLoadHelper();
-    /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void __unk_vfn_7();
-    /*8*/ virtual void __unk_vfn_8();
-    /*9*/ virtual void __unk_vfn_9();
-    /*10*/ virtual void __unk_vfn_10();
-    /*11*/ virtual void __unk_vfn_11();
-    /*12*/ virtual void __unk_vfn_12();
-    /*13*/ virtual void __unk_vfn_13();
-    /*14*/ virtual void __unk_vfn_14();
-    /*15*/ virtual enum DataLoadHelperType getType() const;
-    /*16*/ virtual bool shouldResetTime();
     /*
+    inline bool shouldResetTime(){
+        bool (DefaultDataLoadHelper::*rv)();
+        *((void**)&rv) = dlsym("?shouldResetTime@DefaultDataLoadHelper@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline enum DataLoadHelperType getType() const{
+        enum DataLoadHelperType (DefaultDataLoadHelper::*rv)() const;
+        *((void**)&rv) = dlsym("?getType@DefaultDataLoadHelper@@UEBA?AW4DataLoadHelperType@@XZ");
+        return (this->*rv)();
+    }
     inline struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID a0){
         struct ActorUniqueID (DefaultDataLoadHelper::*rv)(struct ActorUniqueID);
         *((void**)&rv) = dlsym("?loadActorUniqueID@DefaultDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z");
@@ -61,15 +55,15 @@ public:
         *((void**)&rv) = dlsym("?loadPosition@DefaultDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z");
         return (this->*rv)(std::forward<class Vec3 const &>(a0));
     }
-    inline class BlockPos loadBlockPositionOffset(class BlockPos const & a0){
-        class BlockPos (DefaultDataLoadHelper::*rv)(class BlockPos const &);
-        *((void**)&rv) = dlsym("?loadBlockPositionOffset@DefaultDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z");
-        return (this->*rv)(std::forward<class BlockPos const &>(a0));
-    }
     inline class Vec3 loadDirection(class Vec3 const & a0){
         class Vec3 (DefaultDataLoadHelper::*rv)(class Vec3 const &);
         *((void**)&rv) = dlsym("?loadDirection@DefaultDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z");
         return (this->*rv)(std::forward<class Vec3 const &>(a0));
+    }
+    inline class BlockPos loadBlockPositionOffset(class BlockPos const & a0){
+        class BlockPos (DefaultDataLoadHelper::*rv)(class BlockPos const &);
+        *((void**)&rv) = dlsym("?loadBlockPositionOffset@DefaultDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0));
     }
     inline enum Mirror loadMirror(enum Mirror a0){
         enum Mirror (DefaultDataLoadHelper::*rv)(enum Mirror);
@@ -81,29 +75,29 @@ public:
         *((void**)&rv) = dlsym("?loadRotation@DefaultDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z");
         return (this->*rv)(std::forward<enum Rotation>(a0));
     }
-    inline enum Direction::Type loadDirection(enum Direction::Type a0){
-        enum Direction::Type (DefaultDataLoadHelper::*rv)(enum Direction::Type);
-        *((void**)&rv) = dlsym("?loadDirection@DefaultDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z");
-        return (this->*rv)(std::forward<enum Direction::Type>(a0));
-    }
     inline unsigned char loadFacingID(unsigned char a0){
         unsigned char (DefaultDataLoadHelper::*rv)(unsigned char);
         *((void**)&rv) = dlsym("?loadFacingID@DefaultDataLoadHelper@@UEAAEE@Z");
         return (this->*rv)(std::forward<unsigned char>(a0));
+    }
+    inline enum Direction::Type loadDirection(enum Direction::Type a0){
+        enum Direction::Type (DefaultDataLoadHelper::*rv)(enum Direction::Type);
+        *((void**)&rv) = dlsym("?loadDirection@DefaultDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z");
+        return (this->*rv)(std::forward<enum Direction::Type>(a0));
     }
     inline float loadRotationRadiansX(float a0){
         float (DefaultDataLoadHelper::*rv)(float);
         *((void**)&rv) = dlsym("?loadRotationRadiansX@DefaultDataLoadHelper@@UEAAMM@Z");
         return (this->*rv)(std::forward<float>(a0));
     }
-    inline float loadRotationDegreesX(float a0){
-        float (DefaultDataLoadHelper::*rv)(float);
-        *((void**)&rv) = dlsym("?loadRotationDegreesX@DefaultDataLoadHelper@@UEAAMM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
     inline float loadRotationRadiansY(float a0){
         float (DefaultDataLoadHelper::*rv)(float);
         *((void**)&rv) = dlsym("?loadRotationRadiansY@DefaultDataLoadHelper@@UEAAMM@Z");
+        return (this->*rv)(std::forward<float>(a0));
+    }
+    inline float loadRotationDegreesX(float a0){
+        float (DefaultDataLoadHelper::*rv)(float);
+        *((void**)&rv) = dlsym("?loadRotationDegreesX@DefaultDataLoadHelper@@UEAAMM@Z");
         return (this->*rv)(std::forward<float>(a0));
     }
     inline float loadRotationDegreesY(float a0){

@@ -24,9 +24,18 @@ public:
 
 public:
     /*0*/ virtual ~GameCallbacks();
-    /*1*/ virtual void __unk_vfn_1() = 0;
-    /*2*/ virtual void __unk_vfn_2() = 0;
-    /*3*/ virtual void onBeforeSimTick();
+    /*
+    inline void onBeforeSimTick(){
+        void (GameCallbacks::*rv)();
+        *((void**)&rv) = dlsym("?onBeforeSimTick@GameCallbacks@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline  ~GameCallbacks(){
+         (GameCallbacks::*rv)();
+        *((void**)&rv) = dlsym("??1GameCallbacks@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

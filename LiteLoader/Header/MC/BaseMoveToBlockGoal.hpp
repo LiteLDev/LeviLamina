@@ -33,8 +33,14 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &) = 0;
     /*14*/ virtual void _moveToBlock();
-    /*16*/ virtual unsigned __int64 _getRepathTime() const;
     /*17*/ virtual bool findTargetBlock();
+    /*
+    inline  ~BaseMoveToBlockGoal(){
+         (BaseMoveToBlockGoal::*rv)();
+        *((void**)&rv) = dlsym("??1BaseMoveToBlockGoal@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BaseMoveToBlockGoal(class Mob &, float, int, int, int, float, float);
 
 protected:

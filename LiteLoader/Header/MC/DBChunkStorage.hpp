@@ -45,9 +45,7 @@ public:
     /*19*/ virtual void flushPendingDiscardedChunkWrites();
     /*20*/ virtual void flushThreadBatch();
     /*21*/ virtual bool isWithinWorldLimit(class ChunkPos const &) const;
-    /*22*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const * getChunkMap();
     /*24*/ virtual void clearDeletedEntities();
-    /*25*/ virtual bool canCreateViews() const;
     /*26*/ virtual std::unique_ptr<class BlendingDataProvider> tryGetBlendingDataProvider();
     /*27*/ virtual class BiomeChunkBlendingAttenuator getBiomeHeightAttenuatorForLevelChunk(class ChunkPos const &);
     /*28*/ virtual class std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();

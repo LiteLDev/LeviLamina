@@ -24,6 +24,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlockInventoryComponent();
+    /*
+    inline  ~ScriptBlockInventoryComponent(){
+         (ScriptBlockInventoryComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptBlockInventoryComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptBlockInventoryComponent(class ScriptBlockInventoryComponent &&);
     MCAPI ScriptBlockInventoryComponent(class ScriptBlockInventoryComponent const &);
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptBlockInventoryComponentContainer>> getOrCreateContainer();

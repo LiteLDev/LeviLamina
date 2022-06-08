@@ -30,25 +30,24 @@ public:
     /*16*/ virtual void resetUserPos(bool);
     /*18*/ virtual void remove();
     /*20*/ virtual bool isRuntimePredictedMovementEnabled() const;
-    /*36*/ virtual class Vec3 getInterpolatedRidingOffset(float) const;
-    /*40*/ virtual bool breaksFallingBlocks() const;
-    /*61*/ virtual bool canExistInPeaceful() const;
-    /*68*/ virtual bool canMakeStepSound() const;
+    /*40*/ virtual void __unk_vfn_40();
+    /*61*/ virtual void __unk_vfn_61();
+    /*68*/ virtual void __unk_vfn_68();
     /*78*/ virtual float getCameraOffset() const;
     /*80*/ virtual float getShadowRadius() const;
     /*81*/ virtual class Vec3 getHeadLookVector(float) const;
-    /*82*/ virtual bool canSeeInvisible() const;
+    /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual bool canInteractWithOtherEntitiesInGame() const;
-    /*88*/ virtual bool interactPreventDefault();
+    /*88*/ virtual void __unk_vfn_88();
     /*89*/ virtual void playerTouch(class Player &);
     /*92*/ virtual bool isImmobile() const;
-    /*95*/ virtual bool isFishable() const;
-    /*98*/ virtual bool useNewAi() const;
+    /*95*/ virtual void __unk_vfn_95();
+    /*98*/ virtual void __unk_vfn_98();
     /*101*/ virtual bool isDamageBlocked(class ActorDamageSource const &) const;
-    /*105*/ virtual bool shouldBurn();
-    /*107*/ virtual bool isTargetable() const;
-    /*108*/ virtual bool canBeControlledByPassenger();
-    /*109*/ virtual bool isLeashableType();
+    /*105*/ virtual void __unk_vfn_105();
+    /*107*/ virtual void __unk_vfn_107();
+    /*108*/ virtual void __unk_vfn_108();
+    /*109*/ virtual void __unk_vfn_109();
     /*114*/ virtual bool isValidTarget(class Actor *) const;
     /*119*/ virtual void setSitting(bool);
     /*120*/ virtual void onTame();
@@ -57,22 +56,19 @@ public:
     /*134*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /*139*/ virtual void onBounceStarted(class BlockPos const &, class Block const &);
     /*141*/ virtual void handleEntityEvent(enum ActorEvent, int);
-    /*142*/ virtual float getPickRadius();
     /*151*/ virtual void awardKillScore(class Actor &, int);
-    /*170*/ virtual class HashedString const & queryEntityRenderer() const;
     /*171*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*178*/ virtual int getPortalWaitTime() const;
     /*180*/ virtual bool canChangeDimensions() const;
-    /*181*/ virtual void onHit(class HitResult const &);
+    /*181*/ virtual void __unk_vfn_181();
     /*183*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*192*/ virtual bool canPickupItem(class ItemStack const &) const;
     /*193*/ virtual bool canBePulledIntoVehicle() const;
-    /*195*/ virtual bool stopUponGroundCollision() const;
+    /*195*/ virtual void __unk_vfn_195();
     /*198*/ virtual bool canSynchronizeNewEntity() const;
     /*211*/ virtual bool canBeAffected(class MobEffectInstance const &) const;
     /*220*/ virtual void __unk_vfn_220();
-    /*221*/ virtual unsigned int getUserId() const;
-    /*227*/ virtual float getYHeadRotO() const;
+    /*221*/ virtual void __unk_vfn_221();
     /*228*/ virtual bool isWorldBuilder() const;
     /*229*/ virtual bool isCreative() const;
     /*230*/ virtual bool isAdventure() const;
@@ -82,14 +78,14 @@ public:
     /*238*/ virtual void setAuxValue(int);
     /*244*/ virtual void stopSpinAttack();
     /*246*/ virtual void __unk_vfn_246();
-    /*249*/ virtual float getDeletionDelayTimeSeconds() const;
+    /*249*/ virtual void __unk_vfn_249();
     /*259*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
-    /*261*/ virtual bool shouldAlwaysRender();
+    /*261*/ virtual void __unk_vfn_261();
     /*262*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /*269*/ virtual bool _makeFlySound() const;
+    /*269*/ virtual void __unk_vfn_269();
     /*277*/ virtual void _onSizeUpdated();
     /*278*/ virtual void __unk_vfn_278();
-    /*280*/ virtual void __unk_vfn_280();
+    /*280*/ virtual void spawnAnim();
     /*294*/ virtual void aiStep();
     /*302*/ virtual int getItemUseDuration() const;
     /*303*/ virtual float getItemUseStartupProgress() const;
@@ -99,11 +95,22 @@ public:
     /*311*/ virtual void __unk_vfn_311();
     /*321*/ virtual void sendArmorDamage(class std::bitset<4> const &);
     /*338*/ virtual void onBorn(class Actor &, class Actor &);
-    /*342*/ virtual int getAttackTime();
-    /*345*/ virtual bool isSimulated() const;
+    /*345*/ virtual void __unk_vfn_345();
     /*355*/ virtual void _serverAiMobStep();
     /*357*/ virtual void tickDeath();
     /*359*/ virtual void __unk_vfn_359();
+    /*
+    inline bool isFishable() const{
+        bool (EnderDragon::*rv)() const;
+        *((void**)&rv) = dlsym("?isFishable@EnderDragon@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canExistInPeaceful() const{
+        bool (EnderDragon::*rv)() const;
+        *((void**)&rv) = dlsym("?canExistInPeaceful@EnderDragon@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI EnderDragon(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void dieNaturally();
     MCAPI int findClosestNode(class Vec3 const &);

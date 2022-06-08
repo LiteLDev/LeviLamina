@@ -26,11 +26,26 @@ public:
     /*2*/ virtual bool canDecendThroughBlock() const;
     /*3*/ virtual float getFallDistance() const;
     /*4*/ virtual enum ActorType getEntityTypeId() const;
-    /*5*/ virtual bool isWearingLeatherBoots() const;
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual bool hasLightWeightFamilyTag() const;
     /*7*/ virtual class AABB const & getAABB() const;
-    /*8*/ virtual bool isRiding() const;
-    /*9*/ virtual bool hasPassenger() const;
+    /*
+    inline bool hasPassenger() const{
+        bool (GetCollisionShapeActorProxy::*rv)() const;
+        *((void**)&rv) = dlsym("?hasPassenger@GetCollisionShapeActorProxy@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isRiding() const{
+        bool (GetCollisionShapeActorProxy::*rv)() const;
+        *((void**)&rv) = dlsym("?isRiding@GetCollisionShapeActorProxy@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isWearingLeatherBoots() const{
+        bool (GetCollisionShapeActorProxy::*rv)() const;
+        *((void**)&rv) = dlsym("?isWearingLeatherBoots@GetCollisionShapeActorProxy@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI GetCollisionShapeActorProxy(struct IActorMovementProxy const &);
 
 protected:

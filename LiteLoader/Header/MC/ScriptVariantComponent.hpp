@@ -23,6 +23,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptVariantComponent();
+    /*
+    inline  ~ScriptVariantComponent(){
+         (ScriptVariantComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptVariantComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

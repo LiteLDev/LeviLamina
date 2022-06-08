@@ -23,6 +23,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptIsDyableComponent();
+    /*
+    inline  ~ScriptIsDyableComponent(){
+         (ScriptIsDyableComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptIsDyableComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class HashedString const & getHashedName();
 
 protected:

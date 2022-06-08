@@ -29,6 +29,13 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void _write(class BinaryStream &) const;
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
+    /*
+    inline  ~ItemStackRequestActionTransferBase(){
+         (ItemStackRequestActionTransferBase::*rv)();
+        *((void**)&rv) = dlsym("??1ItemStackRequestActionTransferBase@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI unsigned char getAmount() const;
     MCAPI struct ItemStackRequestSlotInfo const & getDst() const;
     MCAPI struct ItemStackRequestSlotInfo const & getSrc() const;

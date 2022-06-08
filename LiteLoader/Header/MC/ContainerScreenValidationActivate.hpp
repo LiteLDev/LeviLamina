@@ -23,7 +23,13 @@ public:
 
 public:
     /*0*/ virtual ~ContainerScreenValidationActivate();
-    /*3*/ virtual struct ContainerValidationResult tryActivate();
+    /*
+    inline struct ContainerValidationResult tryActivate(){
+        struct ContainerValidationResult (ContainerScreenValidationActivate::*rv)();
+        *((void**)&rv) = dlsym("?tryActivate@ContainerScreenValidationActivate@@EEAA?AUContainerValidationResult@@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

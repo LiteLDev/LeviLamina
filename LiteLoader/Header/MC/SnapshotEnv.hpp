@@ -3,14 +3,13 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Core.hpp"
-#include "TransactionalWorldBlockTarget.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class SnapshotEnv : public TransactionalWorldBlockTarget {
+class SnapshotEnv {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -30,16 +29,13 @@ public:
     /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
     /*3*/ virtual class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
     /*4*/ virtual class leveldb::Status NewAppendableFile(std::string const &, class leveldb::WritableFile **);
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual class leveldb::Status DeleteFileA(std::string const &);
-    /*8*/ virtual bool hasBiomeTag(unsigned __int64, class BlockPos const &) const;
-    /*9*/ virtual bool setBlock(class BlockPos const &, class Block const &, int);
-    /*10*/ virtual bool setBlockSimple(class BlockPos const &, class Block const &);
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual class leveldb::Status RenameFile(std::string const &, std::string const &);
-    /*12*/ virtual bool placeStructure(class BlockPos const &, class StructureTemplate &, class StructureSettings &);
-    /*13*/ virtual bool mayPlace(class BlockPos const &, class Block const &) const;
-    /*16*/ virtual short getMinHeight() const;
-    /*17*/ virtual bool shimPlaceForOldFeatures(class Feature const &, class BlockPos const &, class Random &) const;
     MCAPI SnapshotEnv(class leveldb::Env *);
     MCAPI std::vector<struct SnapshotFilenameAndLength> createSnapshot(class Core::Path const &);
     MCAPI void releaseSnapshot();

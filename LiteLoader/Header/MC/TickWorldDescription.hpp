@@ -27,6 +27,13 @@ public:
     /*1*/ virtual ~TickWorldDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
+    /*
+    inline  ~TickWorldDescription(){
+         (TickWorldDescription::*rv)();
+        *((void**)&rv) = dlsym("??1TickWorldDescription@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI TickWorldDescription();
 
 protected:

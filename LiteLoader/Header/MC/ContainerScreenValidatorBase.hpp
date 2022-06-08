@@ -27,6 +27,13 @@ public:
     /*1*/ virtual class std::shared_ptr<class ContainerValidationCommitObject> postCommitItemRemoved(enum ContainerEnumName, int, class ItemStack const &);
     /*2*/ virtual bool isCraftingImplemented();
     /*3*/ virtual struct ContainerValidationCraftResult getCraftResult(class ContainerScreenContext const &, class ContainerScreenValidation &, std::unique_ptr<struct ContainerValidationCraftInputs>);
+    /*
+    inline  ~ContainerScreenValidatorBase(){
+         (ContainerScreenValidatorBase::*rv)();
+        *((void**)&rv) = dlsym("??1ContainerScreenValidatorBase@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI bool isValidContainerForScreen(enum ContainerEnumName) const;
 
 protected:

@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~SavedDataStorage();
     MCAPI SavedDataStorage(class LevelStorage *);
     MCAPI bool loadAndSet(class SavedData &, std::string const &);
     MCAPI void save();

@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~PlayerEventListener();
     /*
     inline enum EventResult onPlayerAction(class Player & a0, enum PlayerActionType a1, class BlockPos const & a2, int a3){
         enum EventResult (PlayerEventListener::*rv)(class Player &, enum PlayerActionType, class BlockPos const &, int);

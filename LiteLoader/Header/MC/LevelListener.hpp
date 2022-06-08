@@ -30,35 +30,20 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void onBlockEntityAboutToBeRemoved(class BlockSource &, class std::shared_ptr<class BlockActor>);
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual class Particle * addParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
-    /*12*/ virtual void __unk_vfn_12();
-    /*13*/ virtual void __unk_vfn_13();
-    /*14*/ virtual void __unk_vfn_14();
-    /*15*/ virtual void __unk_vfn_15();
-    /*16*/ virtual void __unk_vfn_16();
-    /*17*/ virtual void __unk_vfn_17();
-    /*18*/ virtual void __unk_vfn_18();
-    /*19*/ virtual void __unk_vfn_19();
-    /*20*/ virtual void __unk_vfn_20();
-    /*21*/ virtual void __unk_vfn_21();
-    /*22*/ virtual void onChunkLoaded(class ChunkSource &, class LevelChunk &);
-    /*23*/ virtual void __unk_vfn_23();
-    /*24*/ virtual void __unk_vfn_24();
-    /*25*/ virtual void onChunkUnloaded(class LevelChunk &);
-    /*26*/ virtual void onLevelDestruction(std::string const &);
-    /*27*/ virtual void __unk_vfn_27();
-    /*28*/ virtual void levelEvent(enum LevelEvent, class Vec3 const &, int);
-    /*29*/ virtual void __unk_vfn_29();
-    /*30*/ virtual void levelSoundEvent(enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
     /*
     inline void playMusic(std::string const & a0, class Vec3 const & a1, float a2, float a3){
         void (LevelListener::*rv)(std::string const &, class Vec3 const &, float, float);
         *((void**)&rv) = dlsym("?playMusic@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z");
         return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class Vec3 const &>(a1), std::forward<float>(a2), std::forward<float>(a3));
+    }
+    inline void levelSoundEvent(enum LevelSoundEvent a0, class Vec3 const & a1, int a2, struct ActorDefinitionIdentifier const & a3, bool a4, bool a5){
+        void (LevelListener::*rv)(enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
+        *((void**)&rv) = dlsym("?levelSoundEvent@LevelListener@@UEAAXW4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z");
+        return (this->*rv)(std::forward<enum LevelSoundEvent>(a0), std::forward<class Vec3 const &>(a1), std::forward<int>(a2), std::forward<struct ActorDefinitionIdentifier const &>(a3), std::forward<bool>(a4), std::forward<bool>(a5));
     }
     inline void onChunkReloaded(class ChunkSource & a0, class LevelChunk & a1){
         void (LevelListener::*rv)(class ChunkSource &, class LevelChunk &);
@@ -84,6 +69,11 @@ public:
         void (LevelListener::*rv)();
         *((void**)&rv) = dlsym("?playerListChanged@LevelListener@@UEAAXXZ");
         return (this->*rv)();
+    }
+    inline void levelEvent(enum LevelEvent a0, class Vec3 const & a1, int a2){
+        void (LevelListener::*rv)(enum LevelEvent, class Vec3 const &, int);
+        *((void**)&rv) = dlsym("?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z");
+        return (this->*rv)(std::forward<enum LevelEvent>(a0), std::forward<class Vec3 const &>(a1), std::forward<int>(a2));
     }
     inline void onEntityRemoved(class Actor & a0){
         void (LevelListener::*rv)(class Actor &);
@@ -145,10 +135,30 @@ public:
         *((void**)&rv) = dlsym("?playStreamingMusic@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z");
         return (this->*rv)(std::forward<std::string const &>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<int>(a3));
     }
+    inline void onLevelDestruction(std::string const & a0){
+        void (LevelListener::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?onLevelDestruction@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
     inline void sendServerLegacyParticle(enum ParticleType a0, class Vec3 const & a1, class Vec3 const & a2, int a3){
         void (LevelListener::*rv)(enum ParticleType, class Vec3 const &, class Vec3 const &, int);
         *((void**)&rv) = dlsym("?sendServerLegacyParticle@LevelListener@@UEAAXW4ParticleType@@AEBVVec3@@1H@Z");
         return (this->*rv)(std::forward<enum ParticleType>(a0), std::forward<class Vec3 const &>(a1), std::forward<class Vec3 const &>(a2), std::forward<int>(a3));
+    }
+    inline void onChunkLoaded(class ChunkSource & a0, class LevelChunk & a1){
+        void (LevelListener::*rv)(class ChunkSource &, class LevelChunk &);
+        *((void**)&rv) = dlsym("?onChunkLoaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z");
+        return (this->*rv)(std::forward<class ChunkSource &>(a0), std::forward<class LevelChunk &>(a1));
+    }
+    inline void onChunkUnloaded(class LevelChunk & a0){
+        void (LevelListener::*rv)(class LevelChunk &);
+        *((void**)&rv) = dlsym("?onChunkUnloaded@LevelListener@@UEAAXAEAVLevelChunk@@@Z");
+        return (this->*rv)(std::forward<class LevelChunk &>(a0));
+    }
+    inline  ~LevelListener(){
+         (LevelListener::*rv)();
+        *((void**)&rv) = dlsym("??1LevelListener@@UEAA@XZ");
+        return (this->*rv)();
     }
     */
 

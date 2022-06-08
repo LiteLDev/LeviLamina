@@ -8,6 +8,12 @@
 
 #undef BEFORE_EXTRA
 
+class DimensionHeightRange {
+   public:
+    short min;
+    short max;
+};
+
 class Dimension {
 
 #define AFTER_EXTRA
@@ -29,15 +35,15 @@ public:
         *((void**)&rv) = dlsym("?forceCheckAllNeighChunkSavedStat@Dimension@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool hasBedrockFog(){
-        bool (Dimension::*rv)();
-        *((void**)&rv) = dlsym("?hasBedrockFog@Dimension@@UEAA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isFoggyAt(int a0, int a1) const{
         bool (Dimension::*rv)(int, int) const;
         *((void**)&rv) = dlsym("?isFoggyAt@Dimension@@UEBA_NHH@Z");
         return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
+    inline bool hasBedrockFog(){
+        bool (Dimension::*rv)();
+        *((void**)&rv) = dlsym("?hasBedrockFog@Dimension@@UEAA_NXZ");
+        return (this->*rv)();
     }
     inline bool isValidSpawn(int a0, int a1) const{
         bool (Dimension::*rv)(int, int) const;
@@ -54,14 +60,14 @@ public:
         *((void**)&rv) = dlsym("?getSpawnYPosition@Dimension@@UEBAHXZ");
         return (this->*rv)();
     }
-    inline bool mayRespawnViaBed() const{
-        bool (Dimension::*rv)() const;
-        *((void**)&rv) = dlsym("?mayRespawnViaBed@Dimension@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool hasGround() const{
         bool (Dimension::*rv)() const;
         *((void**)&rv) = dlsym("?hasGround@Dimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool mayRespawnViaBed() const{
+        bool (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?mayRespawnViaBed@Dimension@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isNaturalDimension() const{

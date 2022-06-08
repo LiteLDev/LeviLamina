@@ -25,12 +25,29 @@ public:
 
 public:
     /*0*/ virtual ~FoodItemComponentLegacy();
-    /*1*/ virtual int getNutrition() const;
-    /*2*/ virtual float getSaturationModifier() const;
-    /*3*/ virtual bool canAlwaysEat() const;
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual class Item const * eatItem(class ItemStack &, class Actor &, class Level &);
     /*5*/ virtual bool use(class ItemStack &, class Player &);
     /*6*/ virtual class Item const * useTimeDepleted(class ItemStack &, class Player &, class Level &);
+    /*
+    inline float getSaturationModifier() const{
+        float (FoodItemComponentLegacy::*rv)() const;
+        *((void**)&rv) = dlsym("?getSaturationModifier@FoodItemComponentLegacy@@UEBAMXZ");
+        return (this->*rv)();
+    }
+    inline int getNutrition() const{
+        int (FoodItemComponentLegacy::*rv)() const;
+        *((void**)&rv) = dlsym("?getNutrition@FoodItemComponentLegacy@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline bool canAlwaysEat() const{
+        bool (FoodItemComponentLegacy::*rv)() const;
+        *((void**)&rv) = dlsym("?canAlwaysEat@FoodItemComponentLegacy@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI FoodItemComponentLegacy(class Item &);
     MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     MCAPI bool init(class Json::Value &, class SemVersion const &);

@@ -23,6 +23,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptFireImmuneComponent();
+    /*
+    inline  ~ScriptFireImmuneComponent(){
+         (ScriptFireImmuneComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptFireImmuneComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class HashedString const & getHashedName();
 
 protected:

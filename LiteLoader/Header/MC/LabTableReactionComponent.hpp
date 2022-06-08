@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~LabTableReactionComponent();
     /*
     inline void _onStart(class LabTableReaction & a0, class BlockSource & a1){
         void (LabTableReactionComponent::*rv)(class LabTableReaction &, class BlockSource &);
@@ -38,6 +39,11 @@ public:
         void (LabTableReactionComponent::*rv)(class LabTableReaction &, class BlockSource &);
         *((void**)&rv) = dlsym("?_onTick@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z");
         return (this->*rv)(std::forward<class LabTableReaction &>(a0), std::forward<class BlockSource &>(a1));
+    }
+    inline  ~LabTableReactionComponent(){
+         (LabTableReactionComponent::*rv)();
+        *((void**)&rv) = dlsym("??1LabTableReactionComponent@@UEAA@XZ");
+        return (this->*rv)();
     }
     */
 

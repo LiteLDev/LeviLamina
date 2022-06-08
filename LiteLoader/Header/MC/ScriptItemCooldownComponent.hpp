@@ -21,6 +21,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptItemCooldownComponent();
+    /*
+    inline  ~ScriptItemCooldownComponent(){
+         (ScriptItemCooldownComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptItemCooldownComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptItemCooldownComponent(class ScriptItemCooldownComponent const &);
     MCAPI ScriptItemCooldownComponent(class Scripting::WeakTypedObjectHandle<class ScriptItemStack>, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<std::string> getCooldownCategory();

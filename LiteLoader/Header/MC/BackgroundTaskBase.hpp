@@ -23,6 +23,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~BackgroundTaskBase();
+    /*
+    inline  ~BackgroundTaskBase(){
+         (BackgroundTaskBase::*rv)();
+        *((void**)&rv) = dlsym("??1BackgroundTaskBase@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BackgroundTaskBase(class gsl::not_null<class IBackgroundTaskOwner *>, struct TaskStartInfoBase const &, bool);
     MCAPI void _makeOrphan();
     MCAPI bool canBeRunBy(class std::thread::id) const;

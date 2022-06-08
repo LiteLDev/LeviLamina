@@ -24,6 +24,15 @@ public:
 #endif
 
 public:
+    /*0*/ virtual void __unk_vfn_0() = 0;
+    /*1*/ virtual ~LootPoolEntry();
+    /*
+    inline  ~LootPoolEntry(){
+         (LootPoolEntry::*rv)();
+        *((void**)&rv) = dlsym("??1LootPoolEntry@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI void createItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
     MCAPI std::vector<std::unique_ptr<class LootItemCondition>> const & getConditions() const;
     MCAPI int getWeight(float) const;

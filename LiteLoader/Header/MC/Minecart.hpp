@@ -31,30 +31,29 @@ public:
     /*20*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*32*/ virtual float getInterpolatedHeadRot(float) const;
     /*33*/ virtual float getInterpolatedBodyYaw(float) const;
-    /*36*/ virtual class Vec3 getInterpolatedRidingOffset(float) const;
-    /*40*/ virtual bool breaksFallingBlocks() const;
+    /*40*/ virtual void __unk_vfn_40();
     /*48*/ virtual void normalTick();
-    /*61*/ virtual bool canExistInPeaceful() const;
-    /*68*/ virtual bool canMakeStepSound() const;
+    /*61*/ virtual void __unk_vfn_61();
+    /*68*/ virtual void __unk_vfn_68();
     /*78*/ virtual float getCameraOffset() const;
     /*79*/ virtual float getShadowHeightOffs();
     /*80*/ virtual float getShadowRadius() const;
-    /*82*/ virtual bool canSeeInvisible() const;
+    /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual bool canInteractWithOtherEntitiesInGame() const;
-    /*88*/ virtual bool interactPreventDefault();
+    /*88*/ virtual void __unk_vfn_88();
     /*89*/ virtual void playerTouch(class Player &);
     /*94*/ virtual bool isPickable();
-    /*95*/ virtual bool isFishable() const;
+    /*95*/ virtual void __unk_vfn_95();
     /*96*/ virtual bool isSleeping() const;
     /*97*/ virtual void setSleeping(bool);
-    /*98*/ virtual bool useNewAi() const;
+    /*98*/ virtual void __unk_vfn_98();
     /*100*/ virtual bool isBlocking() const;
     /*101*/ virtual bool isDamageBlocked(class ActorDamageSource const &) const;
-    /*105*/ virtual bool shouldBurn();
+    /*105*/ virtual void __unk_vfn_105();
     /*106*/ virtual bool isSurfaceMob() const;
-    /*107*/ virtual bool isTargetable() const;
-    /*108*/ virtual bool canBeControlledByPassenger();
-    /*109*/ virtual bool isLeashableType();
+    /*107*/ virtual void __unk_vfn_107();
+    /*108*/ virtual void __unk_vfn_108();
+    /*109*/ virtual void __unk_vfn_109();
     /*113*/ virtual class Actor * findAttackTarget();
     /*114*/ virtual bool isValidTarget(class Actor *) const;
     /*120*/ virtual void onTame();
@@ -64,29 +63,27 @@ public:
     /*134*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /*136*/ virtual void animateHurt();
     /*139*/ virtual void onBounceStarted(class BlockPos const &, class Block const &);
-    /*142*/ virtual float getPickRadius();
     /*151*/ virtual void awardKillScore(class Actor &, int);
     /*155*/ virtual enum ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot) const;
     /*156*/ virtual enum ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot) const;
     /*157*/ virtual float getArmorColorInSlot(enum ArmorSlot, int) const;
     /*159*/ virtual void setEquippedSlot(enum EquipmentSlot, class ItemStack const &);
-    /*170*/ virtual class HashedString const & queryEntityRenderer() const;
     /*171*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*173*/ virtual bool canFreeze() const;
     /*178*/ virtual int getPortalWaitTime() const;
     /*180*/ virtual bool canChangeDimensions() const;
-    /*181*/ virtual void onHit(class HitResult const &);
+    /*181*/ virtual void __unk_vfn_181();
     /*183*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*192*/ virtual bool canPickupItem(class ItemStack const &) const;
     /*193*/ virtual bool canBePulledIntoVehicle() const;
     /*194*/ virtual bool inCaravan() const;
-    /*195*/ virtual bool stopUponGroundCollision() const;
+    /*195*/ virtual void __unk_vfn_195();
     /*198*/ virtual bool canSynchronizeNewEntity() const;
     /*202*/ virtual void buildDebugInfo(std::string &) const;
     /*207*/ virtual int getDeathTime() const;
     /*218*/ virtual void swing();
     /*220*/ virtual void __unk_vfn_220();
-    /*221*/ virtual unsigned int getUserId() const;
+    /*221*/ virtual void __unk_vfn_221();
     /*225*/ virtual float getYHeadRot() const;
     /*226*/ virtual void setYHeadRot(float);
     /*227*/ virtual float getYHeadRotO() const;
@@ -99,33 +96,38 @@ public:
     /*238*/ virtual void setAuxValue(int);
     /*244*/ virtual void stopSpinAttack();
     /*246*/ virtual void __unk_vfn_246();
-    /*249*/ virtual float getDeletionDelayTimeSeconds() const;
+    /*249*/ virtual void __unk_vfn_249();
     /*250*/ virtual void kill();
     /*258*/ virtual void interpolatorTick();
     /*259*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
-    /*261*/ virtual bool shouldAlwaysRender();
+    /*261*/ virtual void __unk_vfn_261();
     /*262*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /*265*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
-    /*269*/ virtual bool _makeFlySound() const;
+    /*269*/ virtual void __unk_vfn_269();
     /*277*/ virtual void _onSizeUpdated();
     /*278*/ virtual void __unk_vfn_278();
     /*279*/ virtual void destroy(class ActorDamageSource const &, bool);
-    /*280*/ virtual void __unk_vfn_280();
-    /*281*/ virtual void __unk_vfn_281();
-    /*282*/ virtual void __unk_vfn_282() = 0;
+    /*280*/ virtual enum MinecartType getType() = 0;
+    /*281*/ virtual class Block const * getDefaultDisplayBlock() const;
+    /*282*/ virtual void __unk_vfn_282();
     /*283*/ virtual int getDefaultDisplayOffset() const;
     /*284*/ virtual void applyNaturalSlowdown(class BlockSource &);
     /*285*/ virtual void _lazyInitDisplayBlock();
     /*
+    inline bool canMakeStepSound() const{
+        bool (Minecart::*rv)() const;
+        *((void**)&rv) = dlsym("?canMakeStepSound@Minecart@@EEBA_NXZ");
+        return (this->*rv)();
+    }
     inline int getDefaultDisplayData() const{
         int (Minecart::*rv)() const;
         *((void**)&rv) = dlsym("?getDefaultDisplayData@Minecart@@UEBAHXZ");
         return (this->*rv)();
     }
-    inline class Block const * getDefaultDisplayBlock() const{
-        class Block const * (Minecart::*rv)() const;
-        *((void**)&rv) = dlsym("?getDefaultDisplayBlock@Minecart@@UEBAPEBVBlock@@XZ");
+    inline  ~Minecart(){
+         (Minecart::*rv)();
+        *((void**)&rv) = dlsym("??1Minecart@@UEAA@XZ");
         return (this->*rv)();
     }
     */

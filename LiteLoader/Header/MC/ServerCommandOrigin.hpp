@@ -42,13 +42,18 @@ public:
     /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*20*/ virtual unsigned char getSourceSubId() const;
-    /*21*/ virtual class CommandOrigin const & getOutputReceiver() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
-    /*25*/ virtual class mce::UUID const & getUUID() const;
     /*26*/ virtual void handleCommandOutputCallback(class Json::Value &&) const;
     /*27*/ virtual void updateValues();
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
+    /*
+    inline  ~ServerCommandOrigin(){
+         (ServerCommandOrigin::*rv)();
+        *((void**)&rv) = dlsym("??1ServerCommandOrigin@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ServerCommandOrigin(std::string const &, class ServerLevel &, enum CommandPermissionLevel, class AutomaticID<class Dimension, int>);
     MCAPI static std::unique_ptr<class ServerCommandOrigin> load(class CompoundTag const &, class ServerLevel &);
 

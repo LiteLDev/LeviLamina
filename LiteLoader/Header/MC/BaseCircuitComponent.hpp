@@ -29,7 +29,7 @@ public:
     /*4*/ virtual void setDirection(unsigned char);
     /*5*/ virtual void setConsumePowerAnyDirection(bool);
     /*6*/ virtual bool canConsumePowerAnyDirection() const;
-    /*7*/ virtual bool canConsumerPower() const;
+    /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual bool canStopPower() const;
     /*9*/ virtual void setStopPower(bool);
     /*10*/ virtual bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
@@ -42,7 +42,7 @@ public:
     /*17*/ virtual void __unk_vfn_17();
     /*18*/ virtual bool isHalfPulse() const;
     /*19*/ virtual bool hasSource(class BaseCircuitComponent &);
-    /*20*/ virtual bool hasChildrenSource() const;
+    /*20*/ virtual void __unk_vfn_20();
     /*21*/ virtual bool isSecondaryPowered() const;
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*23*/ virtual enum CircuitComponentType getCircuitComponentGroupType() const;
@@ -52,9 +52,19 @@ public:
         *((void**)&rv) = dlsym("?allowIndirect@BaseCircuitComponent@@UEBA_NXZ");
         return (this->*rv)();
     }
+    inline bool canConsumerPower() const{
+        bool (BaseCircuitComponent::*rv)() const;
+        *((void**)&rv) = dlsym("?canConsumerPower@BaseCircuitComponent@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline bool hasChildrenSource() const{
         bool (BaseCircuitComponent::*rv)() const;
         *((void**)&rv) = dlsym("?hasChildrenSource@BaseCircuitComponent@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline  ~BaseCircuitComponent(){
+         (BaseCircuitComponent::*rv)();
+        *((void**)&rv) = dlsym("??1BaseCircuitComponent@@UEAA@XZ");
         return (this->*rv)();
     }
     */

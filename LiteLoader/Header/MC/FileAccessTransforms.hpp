@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~FileAccessTransforms();
     /*
     inline bool writeTransform(std::vector<unsigned char> & a0) const{
         bool (FileAccessTransforms::*rv)(std::vector<unsigned char> &) const;

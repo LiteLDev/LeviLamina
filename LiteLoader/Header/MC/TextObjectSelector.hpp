@@ -25,9 +25,16 @@ public:
 
 public:
     /*0*/ virtual ~TextObjectSelector();
-    /*1*/ virtual std::string asString() const;
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual class Json::Value asJsonValue() const;
     /*3*/ virtual class Json::Value resolve(struct ResolveData const &) const;
+    /*
+    inline std::string asString() const{
+        std::string (TextObjectSelector::*rv)() const;
+        *((void**)&rv) = dlsym("?asString@TextObjectSelector@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI TextObjectSelector(std::string);
     MCAPI static std::string const RAW_TEXT_SELECTOR_KEY;
     MCAPI static std::string const RAW_TEXT_SELECTOR_STAR;

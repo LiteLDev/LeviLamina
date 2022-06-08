@@ -23,7 +23,6 @@ public:
 
 public:
     /*0*/ virtual ~AncientCityPiece();
-    /*2*/ virtual class PoolElementStructurePiece * asPoolElement();
     /*3*/ virtual enum StructurePieceType getType() const;
     /*4*/ virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
     /*10*/ virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);

@@ -40,20 +40,20 @@ public:
         *((void**)&rv) = dlsym("?findStructureFeatureTypeAt@FlatWorldGenerator@@UEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class BlockPos const &>(a0));
     }
-    inline void prepareAndComputeHeights(class BlockVolume & a0, class ChunkPos const & a1, std::vector<short> & a2, bool a3, int a4){
-        void (FlatWorldGenerator::*rv)(class BlockVolume &, class ChunkPos const &, std::vector<short> &, bool, int);
-        *((void**)&rv) = dlsym("?prepareAndComputeHeights@FlatWorldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z");
-        return (this->*rv)(std::forward<class BlockVolume &>(a0), std::forward<class ChunkPos const &>(a1), std::forward<std::vector<short> &>(a2), std::forward<bool>(a3), std::forward<int>(a4));
+    inline void garbageCollectBlueprints(class buffer_span<class ChunkPos> a0){
+        void (FlatWorldGenerator::*rv)(class buffer_span<class ChunkPos>);
+        *((void**)&rv) = dlsym("?garbageCollectBlueprints@FlatWorldGenerator@@UEAAXV?$buffer_span@VChunkPos@@@@@Z");
+        return (this->*rv)(std::forward<class buffer_span<class ChunkPos>>(a0));
     }
     inline void prepareHeights(class BlockVolume & a0, class ChunkPos const & a1, bool a2){
         void (FlatWorldGenerator::*rv)(class BlockVolume &, class ChunkPos const &, bool);
         *((void**)&rv) = dlsym("?prepareHeights@FlatWorldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z");
         return (this->*rv)(std::forward<class BlockVolume &>(a0), std::forward<class ChunkPos const &>(a1), std::forward<bool>(a2));
     }
-    inline void garbageCollectBlueprints(class buffer_span<class ChunkPos> a0){
-        void (FlatWorldGenerator::*rv)(class buffer_span<class ChunkPos>);
-        *((void**)&rv) = dlsym("?garbageCollectBlueprints@FlatWorldGenerator@@UEAAXV?$buffer_span@VChunkPos@@@@@Z");
-        return (this->*rv)(std::forward<class buffer_span<class ChunkPos>>(a0));
+    inline void prepareAndComputeHeights(class BlockVolume & a0, class ChunkPos const & a1, std::vector<short> & a2, bool a3, int a4){
+        void (FlatWorldGenerator::*rv)(class BlockVolume &, class ChunkPos const &, std::vector<short> &, bool, int);
+        *((void**)&rv) = dlsym("?prepareAndComputeHeights@FlatWorldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z");
+        return (this->*rv)(std::forward<class BlockVolume &>(a0), std::forward<class ChunkPos const &>(a1), std::forward<std::vector<short> &>(a2), std::forward<bool>(a3), std::forward<int>(a4));
     }
     inline void decorateWorldGenLoadChunk(class Biome & a0, class LevelChunk & a1, class BlockVolumeTarget & a2, class Random & a3, class ChunkPos const & a4) const{
         void (FlatWorldGenerator::*rv)(class Biome &, class LevelChunk &, class BlockVolumeTarget &, class Random &, class ChunkPos const &) const;

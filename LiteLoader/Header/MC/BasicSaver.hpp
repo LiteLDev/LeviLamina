@@ -23,6 +23,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~BasicSaver();
+    /*
+    inline  ~BasicSaver(){
+         (BasicSaver::*rv)();
+        *((void**)&rv) = dlsym("??1BasicSaver@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

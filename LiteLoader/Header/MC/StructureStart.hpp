@@ -26,6 +26,13 @@ public:
     /*0*/ virtual ~StructureStart();
     /*1*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /*2*/ virtual bool isValid() const;
+    /*
+    inline  ~StructureStart(){
+         (StructureStart::*rv)();
+        *((void**)&rv) = dlsym("??1StructureStart@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
 
 protected:

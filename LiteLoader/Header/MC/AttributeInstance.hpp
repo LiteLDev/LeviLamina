@@ -23,6 +23,13 @@ public:
 public:
     /*0*/ virtual ~AttributeInstance();
     /*1*/ virtual void tick();
+    /*
+    inline  ~AttributeInstance(){
+         (AttributeInstance::*rv)();
+        *((void**)&rv) = dlsym("??1AttributeInstance@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI AttributeInstance(class AttributeInstance const &);
     MCAPI AttributeInstance();
     MCAPI void addBuff(class AttributeBuff const &);

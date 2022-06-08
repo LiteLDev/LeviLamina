@@ -24,6 +24,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~ResourcePack();
     MCAPI ResourcePack(class Pack &);
     MCAPI bool areKnownFilesValid();
     MCAPI void forEachIn(class Core::Path const &, class std::function<void (class Core::Path const &)>, int, bool) const;

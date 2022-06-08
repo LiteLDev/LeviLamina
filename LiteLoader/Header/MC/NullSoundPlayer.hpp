@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Core.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -39,19 +38,19 @@ public:
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void __unk_vfn_14();
-    /*15*/ virtual class Core::PathBuffer<std::string> const getCurrentlyPlayingMusicName();
+    /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual unsigned __int64 registerLoop(std::string const &, class std::function<void (struct LoopingSoundState &)>, float, float);
     /*
-    inline bool isPlayingMusicEvent(std::string const & a0) const{
-        bool (NullSoundPlayer::*rv)(std::string const &) const;
-        *((void**)&rv) = dlsym("?isPlayingMusicEvent@NullSoundPlayer@@UEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0));
-    }
     inline bool isPlayingMusic(class Core::Path const & a0) const{
         bool (NullSoundPlayer::*rv)(class Core::Path const &) const;
         *((void**)&rv) = dlsym("?isPlayingMusic@NullSoundPlayer@@UEBA_NAEBVPath@Core@@@Z");
         return (this->*rv)(std::forward<class Core::Path const &>(a0));
+    }
+    inline bool isPlayingMusicEvent(std::string const & a0) const{
+        bool (NullSoundPlayer::*rv)(std::string const &) const;
+        *((void**)&rv) = dlsym("?isPlayingMusicEvent@NullSoundPlayer@@UEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
     }
     inline bool getItem(std::string const & a0, class Core::Path const & a1, class SoundItem & a2) const{
         bool (NullSoundPlayer::*rv)(std::string const &, class Core::Path const &, class SoundItem &) const;
@@ -73,15 +72,15 @@ public:
         *((void**)&rv) = dlsym("?stop@NullSoundPlayer@@UEAAX_K@Z");
         return (this->*rv)(std::forward<unsigned __int64>(a0));
     }
-    inline void setMusicVolumeMultiplier(float a0){
-        void (NullSoundPlayer::*rv)(float);
-        *((void**)&rv) = dlsym("?setMusicVolumeMultiplier@NullSoundPlayer@@UEAAXM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
     inline void stopMusic(){
         void (NullSoundPlayer::*rv)();
         *((void**)&rv) = dlsym("?stopMusic@NullSoundPlayer@@UEAAXXZ");
         return (this->*rv)();
+    }
+    inline void setMusicVolumeMultiplier(float a0){
+        void (NullSoundPlayer::*rv)(float);
+        *((void**)&rv) = dlsym("?setMusicVolumeMultiplier@NullSoundPlayer@@UEAAXM@Z");
+        return (this->*rv)(std::forward<float>(a0));
     }
     inline void fadeToStopMusic(float a0){
         void (NullSoundPlayer::*rv)(float);
@@ -103,15 +102,15 @@ public:
         *((void**)&rv) = dlsym("?unregisterLoop@NullSoundPlayer@@UEAAX_K_N@Z");
         return (this->*rv)(std::forward<unsigned __int64>(a0), std::forward<bool>(a1));
     }
-    inline void stopAllDelayedSoundActions(){
-        void (NullSoundPlayer::*rv)();
-        *((void**)&rv) = dlsym("?stopAllDelayedSoundActions@NullSoundPlayer@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void playMusic(std::string const & a0, float a1, unsigned int & a2){
         void (NullSoundPlayer::*rv)(std::string const &, float, unsigned int &);
         *((void**)&rv) = dlsym("?playMusic@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MAEAI@Z");
         return (this->*rv)(std::forward<std::string const &>(a0), std::forward<float>(a1), std::forward<unsigned int &>(a2));
+    }
+    inline void stopAllDelayedSoundActions(){
+        void (NullSoundPlayer::*rv)();
+        *((void**)&rv) = dlsym("?stopAllDelayedSoundActions@NullSoundPlayer@@UEAAXXZ");
+        return (this->*rv)();
     }
     inline void stop(std::string const & a0){
         void (NullSoundPlayer::*rv)(std::string const &);
@@ -121,6 +120,11 @@ public:
     inline void stopAllSounds(){
         void (NullSoundPlayer::*rv)();
         *((void**)&rv) = dlsym("?stopAllSounds@NullSoundPlayer@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline class Core::PathBuffer<std::string> const getCurrentlyPlayingMusicName(){
+        class Core::PathBuffer<std::string> const (NullSoundPlayer::*rv)();
+        *((void**)&rv) = dlsym("?getCurrentlyPlayingMusicName@NullSoundPlayer@@UEAA?BV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
         return (this->*rv)();
     }
     inline class std::optional<struct LoopingSoundAttributes> tryGetLoopingSoundAttributes(unsigned __int64 a0) const{

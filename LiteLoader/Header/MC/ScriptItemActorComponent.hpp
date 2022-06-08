@@ -23,6 +23,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptItemActorComponent();
+    /*
+    inline  ~ScriptItemActorComponent(){
+         (ScriptItemActorComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptItemActorComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptItemStack>> getItemStack() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptItemActorComponent> bind(struct Scripting::Version);
 

@@ -27,10 +27,15 @@ public:
     /*0*/ virtual ~WorldHistoryPackSource();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual enum PackOrigin getPackOrigin() const;
-    /*4*/ virtual enum PackType getPackType() const;
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory &, class IContentKeyProvider const &);
     /*
+    inline enum PackType getPackType() const{
+        enum PackType (WorldHistoryPackSource::*rv)() const;
+        *((void**)&rv) = dlsym("?getPackType@WorldHistoryPackSource@@UEBA?AW4PackType@@XZ");
+        return (this->*rv)();
+    }
     inline void forEachPack(class std::function<void (class Pack &)> a0){
         void (WorldHistoryPackSource::*rv)(class std::function<void (class Pack &)>);
         *((void**)&rv) = dlsym("?forEachPack@WorldHistoryPackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z");
@@ -40,6 +45,11 @@ public:
         void (WorldHistoryPackSource::*rv)(class std::function<void (class Pack const &)>) const;
         *((void**)&rv) = dlsym("?forEachPackConst@WorldHistoryPackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z");
         return (this->*rv)(std::forward<class std::function<void (class Pack const &)>>(a0));
+    }
+    inline enum PackOrigin getPackOrigin() const{
+        enum PackOrigin (WorldHistoryPackSource::*rv)() const;
+        *((void**)&rv) = dlsym("?getPackOrigin@WorldHistoryPackSource@@UEBA?AW4PackOrigin@@XZ");
+        return (this->*rv)();
     }
     */
     MCAPI WorldHistoryPackSource(class Core::Path const &, enum PackType);

@@ -22,6 +22,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~CreativeItemRegistry();
+    /*
+    inline  ~CreativeItemRegistry(){
+         (CreativeItemRegistry::*rv)();
+        *((void**)&rv) = dlsym("??1CreativeItemRegistry@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI CreativeItemRegistry();
     MCAPI class CreativeItemEntry * findCreativeItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const &);
     MCAPI class CreativeItemEntry * findCreativeItemEntry(class ItemInstance const &);

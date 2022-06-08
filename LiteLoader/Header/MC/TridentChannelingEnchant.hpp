@@ -26,9 +26,23 @@ public:
 public:
     /*0*/ virtual ~TridentChannelingEnchant();
     /*1*/ virtual bool isCompatibleWith(enum Enchant::Type) const;
-    /*2*/ virtual int getMinCost(int) const;
-    /*3*/ virtual int getMaxCost(int) const;
-    /*4*/ virtual int getMaxLevel() const;
+    /*
+    inline int getMaxLevel() const{
+        int (TridentChannelingEnchant::*rv)() const;
+        *((void**)&rv) = dlsym("?getMaxLevel@TridentChannelingEnchant@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline int getMinCost(int a0) const{
+        int (TridentChannelingEnchant::*rv)(int) const;
+        *((void**)&rv) = dlsym("?getMinCost@TridentChannelingEnchant@@UEBAHH@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    inline int getMaxCost(int a0) const{
+        int (TridentChannelingEnchant::*rv)(int) const;
+        *((void**)&rv) = dlsym("?getMaxCost@TridentChannelingEnchant@@UEBAHH@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    */
     MCAPI TridentChannelingEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 
 protected:

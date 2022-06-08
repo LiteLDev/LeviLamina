@@ -25,6 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlockType();
+    /*
+    inline  ~ScriptBlockType(){
+         (ScriptBlockType::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptBlockType@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>> createDefaultBlockPermutation() const;
     MCAPI class BlockLegacy const & getBlock() const;
     MCAPI std::string getId() const;

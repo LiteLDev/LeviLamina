@@ -29,6 +29,13 @@ public:
     /*1*/ virtual void execute(class ServerLevel &, class Dimension &) = 0;
     /*2*/ virtual void serialize(class CompoundTag &);
     /*3*/ virtual bool operator==(class IRequestAction &) const;
+    /*
+    inline  ~IRequestAction(){
+         (IRequestAction::*rv)();
+        *((void**)&rv) = dlsym("??1IRequestAction@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI IRequestAction(enum IRequestAction::RequestActionType const &);
     MCAPI static bool isValidTag(class CompoundTag const &);
 

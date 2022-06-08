@@ -22,6 +22,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~CreativeItemGroupCategory();
+    /*
+    inline  ~CreativeItemGroupCategory(){
+         (CreativeItemGroupCategory::*rv)();
+        *((void**)&rv) = dlsym("??1CreativeItemGroupCategory@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI CreativeItemGroupCategory(class CreativeItemRegistry *, std::string const &, enum CreativeItemCategory);
     MCAPI CreativeItemGroupCategory();
     MCAPI class CreativeGroupInfo * addAnonymousGroup();

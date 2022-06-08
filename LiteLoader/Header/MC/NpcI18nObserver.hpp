@@ -24,8 +24,12 @@ public:
 
 public:
     /*0*/ virtual ~NpcI18nObserver();
-    /*1*/ virtual void onLanguageChanged(std::string const &, bool);
     /*
+    inline void onLanguageChanged(std::string const & a0, bool a1){
+        void (NpcI18nObserver::*rv)(std::string const &, bool);
+        *((void**)&rv) = dlsym("?onLanguageChanged@NpcI18nObserver@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<bool>(a1));
+    }
     inline void onLanguagesLoaded(){
         void (NpcI18nObserver::*rv)();
         *((void**)&rv) = dlsym("?onLanguagesLoaded@NpcI18nObserver@@UEAAXXZ");

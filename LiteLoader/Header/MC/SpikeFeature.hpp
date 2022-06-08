@@ -34,6 +34,13 @@ public:
     /*0*/ virtual ~SpikeFeature();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+    /*
+    inline  ~SpikeFeature(){
+         (SpikeFeature::*rv)();
+        *((void**)&rv) = dlsym("??1SpikeFeature@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SpikeFeature(class SpikeFeature::EndSpike const &);
     MCAPI bool placeManually(class BlockSource &, class BlockPos const &, class Random &, class Actor *);
     MCAPI void postProcessMobsAt(class BlockSource &, class BlockPos const &, class Random &) const;

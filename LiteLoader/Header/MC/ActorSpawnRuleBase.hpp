@@ -24,6 +24,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~ActorSpawnRuleBase();
+    /*
+    inline  ~ActorSpawnRuleBase(){
+         (ActorSpawnRuleBase::*rv)();
+        *((void**)&rv) = dlsym("??1ActorSpawnRuleBase@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
     MCAPI void _applySpawnCondition(class std::function<void (std::string const &, int, class BiomeFilterGroup &, class MobSpawnRules &)>, class Json::Value &, class MobSpawnRules const &, std::string const &);

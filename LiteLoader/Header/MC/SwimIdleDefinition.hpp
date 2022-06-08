@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~SwimIdleDefinition();
     MCAPI SwimIdleDefinition();
     MCAPI void initialize(class EntityContext &, class SwimIdleGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwimIdleDefinition>> &);

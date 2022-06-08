@@ -24,6 +24,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~WorkerPool();
+    /*
+    inline  ~WorkerPool(){
+         (WorkerPool::*rv)();
+        *((void**)&rv) = dlsym("??1WorkerPool@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI WorkerPool(std::string, class Scheduler &);
     MCAPI WorkerPool(std::string, unsigned __int64, class Bedrock::Threading::OSThreadPriority const &, class std::optional<unsigned __int64>, bool);
     MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>, bool);

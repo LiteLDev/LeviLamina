@@ -23,6 +23,13 @@ public:
 
 public:
     /*0*/ virtual ~ScriptIsShakingComponent();
+    /*
+    inline  ~ScriptIsShakingComponent(){
+         (ScriptIsShakingComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptIsShakingComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class HashedString const & getHashedName();
 
 protected:
