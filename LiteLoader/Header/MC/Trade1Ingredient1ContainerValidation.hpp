@@ -27,6 +27,7 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
+    /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
     MCAPI Trade1Ingredient1ContainerValidation(bool);
 
 protected:

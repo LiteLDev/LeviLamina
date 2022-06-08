@@ -34,6 +34,7 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
+    /*16*/ virtual unsigned __int64 _getRepathTime() const;
     MCAPI RaidGardenGoal(class Mob &, float, int, int, int, float, int, int, int, int, std::vector<class BlockDescriptor> const &);
 
 protected:

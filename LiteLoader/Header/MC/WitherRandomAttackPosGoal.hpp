@@ -27,6 +27,7 @@ public:
     /*0*/ virtual ~WitherRandomAttackPosGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual bool canBeInterrupted();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*8*/ virtual void __unk_vfn_8();

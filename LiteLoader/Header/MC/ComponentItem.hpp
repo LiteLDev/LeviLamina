@@ -3,7 +3,6 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Json.hpp"
-#include "Potion.hpp"
 #include "JsonUtil.hpp"
 #include "Item.hpp"
 
@@ -30,6 +29,8 @@ public:
     /*0*/ virtual ~ComponentItem();
     /*1*/ virtual bool initServer(class Json::Value &, class SemVersion const &);
     /*2*/ virtual void tearDown();
+    /*3*/ virtual int getMaxUseDuration(class ItemInstance const *) const;
+    /*4*/ virtual int getMaxUseDuration(class ItemStack const *) const;
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void executeEvent(class ItemStackBase &, std::string const &, class RenderParams &) const;
     /*7*/ virtual void __unk_vfn_7();
@@ -40,6 +41,8 @@ public:
     /*13*/ virtual bool isDamageable() const;
     /*14*/ virtual bool isDyeable() const;
     /*15*/ virtual bool isDye() const;
+    /*16*/ virtual enum ItemColor getItemColor() const;
+    /*17*/ virtual bool isFertilizer() const;
     /*18*/ virtual bool isFood() const;
     /*19*/ virtual bool isThrowable() const;
     /*20*/ virtual bool isUseable() const;
@@ -57,28 +60,36 @@ public:
     /*44*/ virtual int getAttackDamage() const;
     /*46*/ virtual bool isGlint(class ItemStackBase const &) const;
     /*47*/ virtual void __unk_vfn_47();
+    /*48*/ virtual int getPatternIndex() const;
     /*49*/ virtual void __unk_vfn_49();
+    /*50*/ virtual bool isWearableThroughLootTable(class CompoundTag const *) const;
     /*51*/ virtual bool canDestroyInCreative() const;
     /*52*/ virtual bool isDestructive(int) const;
     /*53*/ virtual bool isLiquidClipItem(int) const;
+    /*54*/ virtual bool shouldInteractionWithBlockBypassLiquid(class Block const &) const;
     /*55*/ virtual bool requiresInteract() const;
     /*56*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /*57*/ virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
     /*58*/ virtual int getEnchantSlot() const;
     /*59*/ virtual int getEnchantValue() const;
     /*60*/ virtual int getArmorValue() const;
+    /*61*/ virtual int getToughnessValue() const;
     /*62*/ virtual void __unk_vfn_62();
     /*63*/ virtual bool isValidAuxValue(int) const;
     /*64*/ virtual int getDamageChance(int) const;
+    /*65*/ virtual float getViewDamping() const;
     /*66*/ virtual void __unk_vfn_66();
     /*67*/ virtual void __unk_vfn_67();
     /*68*/ virtual void __unk_vfn_68();
     /*69*/ virtual class mce::Color getColor(class CompoundTag const *, class ItemDescriptor const &) const;
+    /*70*/ virtual bool hasCustomColor(class CompoundTag const *) const;
     /*71*/ virtual void __unk_vfn_71();
     /*72*/ virtual void clearColor(class ItemStackBase &) const;
+    /*73*/ virtual void clearColor(class CompoundTag *) const;
     /*74*/ virtual void setColor(class ItemStackBase &, class mce::Color const &) const;
     /*75*/ virtual void __unk_vfn_75();
     /*76*/ virtual void __unk_vfn_76();
+    /*79*/ virtual bool canUseOnSimTick() const;
     /*80*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*81*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /*82*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
@@ -93,20 +104,29 @@ public:
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*92*/ virtual std::string buildEffectDescriptionName(class ItemStackBase const &) const;
     /*96*/ virtual unsigned char getMaxStackSize(class ItemDescriptor const &) const;
+    /*97*/ virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
+    /*98*/ virtual void __unk_vfn_98();
     /*99*/ virtual class HashedString const & getCooldownType() const;
     /*100*/ virtual int getCooldownTime() const;
+    /*102*/ virtual void fixupCommon(class ItemStackBase &, class Level &) const;
+    /*105*/ virtual void __unk_vfn_105();
+    /*106*/ virtual void __unk_vfn_106();
+    /*107*/ virtual bool validFishInteraction(int) const;
     /*109*/ virtual void initClient(class Json::Value &, class SemVersion const &);
     /*110*/ virtual std::string getInteractText(class Player const &) const;
     /*111*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /*112*/ virtual bool isEmissive(int) const;
+    /*113*/ virtual struct Brightness getLightEmission(int) const;
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /*115*/ virtual int getIconYOffset() const;
     /*116*/ virtual class Item & setIcon(std::string const &, int);
     /*119*/ virtual bool canBeCharged() const;
+    /*120*/ virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
+    /*121*/ virtual void __unk_vfn_121();
     /*124*/ virtual std::string getAuxValuesDescription() const;
     /*125*/ virtual bool _checkUseOnPermissions(class Actor &, class ItemStackBase &, unsigned char const &, class BlockPos const &) const;
     /*126*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-    /*129*/ virtual int getVariant(int, int, bool) const;
     /*
     inline bool useVariant(int a0, int a1, bool a2) const{
         bool (ComponentItem::*rv)(int, int, bool) const;
@@ -117,6 +137,11 @@ public:
         bool (ComponentItem::*rv)(class ItemStackBase const &) const;
         *((void**)&rv) = dlsym("?hasCustomColor@ComponentItem@@UEBA_NAEBVItemStackBase@@@Z");
         return (this->*rv)(std::forward<class ItemStackBase const &>(a0));
+    }
+    inline int getVariant(int a0, int a1, bool a2) const{
+        int (ComponentItem::*rv)(int, int, bool) const;
+        *((void**)&rv) = dlsym("?getVariant@ComponentItem@@UEBAHHH_N@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<bool>(a2));
     }
     inline bool isComponentBased() const{
         bool (ComponentItem::*rv)() const;

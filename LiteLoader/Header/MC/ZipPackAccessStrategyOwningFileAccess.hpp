@@ -24,6 +24,10 @@ public:
 
 public:
     /*0*/ virtual ~ZipPackAccessStrategyOwningFileAccess();
+    /*13*/ virtual void forEachInAssetSet(class Core::Path const &, class std::function<void (class Core::Path const &)>) const;
+    /*14*/ virtual enum PackAccessStrategyType getStrategyType() const;
+    /*15*/ virtual class Core::PathBuffer<std::string> const & getSubPath() const;
+    /*18*/ virtual bool canRecurse() const;
     MCAPI ZipPackAccessStrategyOwningFileAccess(class std::shared_ptr<class IFileAccess>, class ResourceLocation const &, class Core::Path const &);
 
 protected:

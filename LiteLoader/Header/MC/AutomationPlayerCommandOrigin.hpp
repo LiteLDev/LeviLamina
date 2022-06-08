@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Json.hpp"
 #include "PlayerCommandOrigin.hpp"
 
 #define BEFORE_EXTRA
@@ -28,13 +27,21 @@ public:
     /*0*/ virtual ~AutomationPlayerCommandOrigin();
     /*1*/ virtual std::string const & getRequestId() const;
     /*2*/ virtual std::string getName() const;
+    /*5*/ virtual class std::optional<class Vec2> getRotation() const;
+    /*6*/ virtual class Level * getLevel() const;
     /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
     /*13*/ virtual bool hasChatPerms() const;
     /*14*/ virtual bool hasTellPerms() const;
+    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
+    /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*19*/ virtual class NetworkIdentifier const & getSourceId() const;
+    /*21*/ virtual class CommandOrigin const & getOutputReceiver() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*24*/ virtual struct CommandOriginData toCommandOriginData() const;
+    /*25*/ virtual class mce::UUID const & getUUID() const;
+    /*26*/ virtual void __unk_vfn_26();
+    /*27*/ virtual void __unk_vfn_27();
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
     MCAPI AutomationPlayerCommandOrigin(std::string const &, class Player &);

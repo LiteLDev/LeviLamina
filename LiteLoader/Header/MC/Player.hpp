@@ -136,9 +136,11 @@ public:
     /*14*/ virtual ~Player();
     /*16*/ virtual void resetUserPos(bool);
     /*18*/ virtual void remove();
+    /*20*/ virtual void __unk_vfn_20();
     /*25*/ virtual class Vec3 getAttachPos(enum ActorLocation, float) const;
     /*28*/ virtual void move(class Vec3 const &);
     /*29*/ virtual void move(struct IActorMovementProxy &, class Vec3 const &) const;
+    /*36*/ virtual class Vec3 getInterpolatedRidingOffset(float) const;
     /*40*/ virtual void __unk_vfn_40();
     /*43*/ virtual void teleportTo(class Vec3 const &, bool, int, int);
     /*47*/ virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
@@ -153,6 +155,7 @@ public:
     /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual bool canInteractWithOtherEntitiesInGame() const;
     /*88*/ virtual void __unk_vfn_88();
+    /*89*/ virtual void playerTouch(class Player &);
     /*92*/ virtual bool isImmobile() const;
     /*95*/ virtual void __unk_vfn_95();
     /*96*/ virtual bool isSleeping() const;
@@ -164,12 +167,18 @@ public:
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
     /*109*/ virtual void __unk_vfn_109();
+    /*113*/ virtual class Actor * findAttackTarget();
+    /*114*/ virtual bool isValidTarget(class Actor *) const;
     /*115*/ virtual bool attack(class Actor &, enum ActorDamageCause const &);
+    /*120*/ virtual void onTame();
+    /*121*/ virtual void onFailedTame();
     /*128*/ virtual bool isJumping() const;
+    /*130*/ virtual void __unk_vfn_130();
     /*134*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /*139*/ virtual void onBounceStarted(class BlockPos const &, class Block const &);
     /*140*/ virtual void feed(int);
     /*141*/ virtual void handleEntityEvent(enum ActorEvent, int);
+    /*142*/ virtual float getPickRadius();
     /*143*/ virtual class HashedString const & getActorRendererId() const;
     /*151*/ virtual void awardKillScore(class Actor &, int);
     /*152*/ virtual void setArmor(enum ArmorSlot, class ItemStack const &);
@@ -179,15 +188,21 @@ public:
     /*163*/ virtual class ItemStack const & getEquippedTotem() const;
     /*164*/ virtual bool consumeTotem();
     /*169*/ virtual enum ActorType getEntityTypeId() const;
+    /*170*/ virtual class HashedString const & queryEntityRenderer() const;
+    /*171*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*173*/ virtual bool canFreeze() const;
     /*177*/ virtual int getPortalCooldown() const;
     /*178*/ virtual int getPortalWaitTime() const;
+    /*180*/ virtual bool canChangeDimensions() const;
     /*181*/ virtual void __unk_vfn_181();
+    /*183*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*190*/ virtual void onSynchedDataUpdate(int);
     /*191*/ virtual bool canAddPassenger(class Actor &) const;
-    /*193*/ virtual bool canBePulledIntoVehicle() const;
+    /*192*/ virtual void __unk_vfn_192();
+    /*193*/ virtual void __unk_vfn_193();
     /*195*/ virtual void __unk_vfn_195();
     /*197*/ virtual void sendMotionPacketIfNeeded();
+    /*198*/ virtual void __unk_vfn_198();
     /*200*/ virtual void startSwimming();
     /*201*/ virtual void stopSwimming();
     /*203*/ virtual enum CommandPermissionLevel getCommandPermissionLevel() const;
@@ -196,6 +211,7 @@ public:
     /*220*/ virtual void __unk_vfn_220();
     /*221*/ virtual void __unk_vfn_221();
     /*223*/ virtual float getMapDecorationRotation() const;
+    /*227*/ virtual float getYHeadRotO() const;
     /*228*/ virtual bool isWorldBuilder() const;
     /*229*/ virtual bool isCreative() const;
     /*230*/ virtual bool isAdventure() const;
@@ -203,6 +219,8 @@ public:
     /*232*/ virtual bool isSpectator() const;
     /*234*/ virtual bool add(class ItemStack &);
     /*235*/ virtual bool drop(class ItemStack const &, bool);
+    /*237*/ virtual void __unk_vfn_237();
+    /*238*/ virtual void __unk_vfn_238();
     /*239*/ virtual void setSize(float, float);
     /*243*/ virtual void startSpinAttack();
     /*244*/ virtual void stopSpinAttack();
@@ -228,7 +246,9 @@ public:
     /*303*/ virtual float getItemUseStartupProgress() const;
     /*304*/ virtual float getItemUseIntervalProgress() const;
     /*307*/ virtual void __unk_vfn_307();
+    /*309*/ virtual bool isAlliedTo(class Mob *);
     /*311*/ virtual void __unk_vfn_311();
+    /*321*/ virtual void sendArmorDamage(class std::bitset<4> const &);
     /*327*/ virtual std::vector<class ItemStack const *> getAllHand() const;
     /*328*/ virtual std::vector<class ItemStack const *> getAllEquipment() const;
     /*330*/ virtual void dropEquipmentOnDeath(class ActorDamageSource const &, int);
@@ -236,12 +256,15 @@ public:
     /*332*/ virtual void clearVanishEnchantedItemsOnDeath();
     /*333*/ virtual void sendInventory(bool);
     /*338*/ virtual void __unk_vfn_338();
+    /*342*/ virtual int getAttackTime();
+    /*343*/ virtual float _getWalkTargetValue(class BlockPos const &);
     /*344*/ virtual bool canExistWhenDisallowMob() const;
     /*345*/ virtual void __unk_vfn_345();
     /*350*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
     /*351*/ virtual void jumpFromGround();
     /*352*/ virtual void jumpFromGround(struct IMobMovementProxy &) const;
     /*353*/ virtual void updateAi();
+    /*355*/ virtual void _serverAiMobStep();
     /*358*/ virtual void updateGliding();
     /*359*/ virtual void __unk_vfn_359();
     /*361*/ virtual void prepareRegion(class ChunkSource &);
@@ -300,11 +323,15 @@ public:
     /*414*/ virtual void sendEventPacket(class EventPacket &) const;
     /*415*/ virtual void addExperience(int);
     /*416*/ virtual void addLevels(int);
+    /*417*/ virtual void setContainerData(class IContainerManager &, int, int) = 0;
+    /*418*/ virtual void slotChanged(class IContainerManager &, class Container &, int, class ItemStack const &, class ItemStack const &, bool) = 0;
     /*419*/ virtual void inventoryChanged(class Container &, int, class ItemStack const &, class ItemStack const &, bool);
+    /*420*/ virtual void refreshContainer(class IContainerManager &) = 0;
     /*421*/ virtual void deleteContainerManager();
     /*422*/ virtual void setFieldOfViewModifier(float);
     /*423*/ virtual bool is2DPositionRelevant(class AutomaticID<class Dimension, int>, class BlockPos const &);
     /*424*/ virtual bool isActorRelevant(class Actor const &);
+    /*425*/ virtual bool isTeacher() const = 0;
     /*426*/ virtual void onSuspension();
     /*427*/ virtual void onLinkedSlotsChanged();
     /*428*/ virtual void startCooldown(class Item const *, bool);
@@ -312,7 +339,13 @@ public:
     /*430*/ virtual int getItemCooldownLeft(unsigned __int64) const;
     /*431*/ virtual int getMaxItemCooldownLeft() const;
     /*432*/ virtual bool isItemOnCooldown(class HashedString const &) const;
+    /*433*/ virtual void sendInventoryTransaction(class InventoryTransaction const &) const = 0;
+    /*434*/ virtual void sendComplexInventoryTransaction(std::unique_ptr<class ComplexInventoryTransaction>) const = 0;
     /*435*/ virtual void sendNetworkPacket(class Packet &) const;
+    /*436*/ virtual class PlayerEventCoordinator & getPlayerEventCoordinator() = 0;
+    /*437*/ virtual class MoveInputHandler * getMoveInputHandler() const = 0;
+    /*438*/ virtual enum InputMode getInputMode() const = 0;
+    /*439*/ virtual enum ClientPlayMode getPlayMode() const = 0;
     /*440*/ virtual void reportMovementTelemetry(enum MovementEventType);
     /*441*/ virtual void __unk_vfn_441();
     /*442*/ virtual std::string getXuid() const;
@@ -320,6 +353,11 @@ public:
     /*444*/ virtual void onMovePlayerPacketNormal(class Vec3 const &, class Vec2 const &, float);
     /*445*/ virtual class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource &);
     /*
+    inline bool canBePulledIntoVehicle() const{
+        bool (Player::*rv)() const;
+        *((void**)&rv) = dlsym("?canBePulledIntoVehicle@Player@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline enum StructureFeatureType getCurrentStructureFeature() const{
         enum StructureFeatureType (Player::*rv)() const;
         *((void**)&rv) = dlsym("?getCurrentStructureFeature@Player@@UEBA?AW4StructureFeatureType@@XZ");

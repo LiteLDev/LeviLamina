@@ -25,6 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~ShipwreckStart();
+    /*2*/ virtual bool isValid() const;
     MCAPI ShipwreckStart(class BiomeSource const &, class Random &, int, int, short);
 
 protected:

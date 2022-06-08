@@ -25,8 +25,14 @@ public:
 
 public:
     /*0*/ virtual ~PlayerUIContainer();
+    /*1*/ virtual void __unk_vfn_1();
+    /*10*/ virtual void setItemWithForceBalance(int, class ItemStack const &, bool);
+    /*15*/ virtual int getMaxStackSize() const;
+    /*16*/ virtual void __unk_vfn_16();
+    /*17*/ virtual void __unk_vfn_17();
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
+    /*31*/ virtual void __unk_vfn_31();
     MCAPI PlayerUIContainer(std::string const &, bool, int);
     MCAPI void load(class ListTag const &, class SemVersion const &);
     MCAPI std::unique_ptr<class ListTag> save();

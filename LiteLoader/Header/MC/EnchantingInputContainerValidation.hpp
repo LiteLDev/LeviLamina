@@ -28,6 +28,7 @@ public:
     /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const &) const;
+    /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /*
     inline int getAvailableSetCount(int a0, class ItemStackBase const & a1) const{

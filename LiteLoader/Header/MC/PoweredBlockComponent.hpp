@@ -26,14 +26,31 @@ public:
 public:
     /*0*/ virtual ~PoweredBlockComponent();
     /*1*/ virtual int getStrength() const;
-    /*7*/ virtual bool canConsumerPower() const;
+    /*7*/ virtual void __unk_vfn_7();
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
     /*11*/ virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /*12*/ virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
-    /*14*/ virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
+    /*13*/ virtual void __unk_vfn_13();
+    /*14*/ virtual void __unk_vfn_14();
+    /*15*/ virtual void __unk_vfn_15();
+    /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual void __unk_vfn_17();
+    /*18*/ virtual void __unk_vfn_18();
     /*20*/ virtual void __unk_vfn_20();
+    /*21*/ virtual void __unk_vfn_21();
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*
+    inline bool evaluate(class CircuitSystem & a0, class BlockPos const & a1){
+        bool (PoweredBlockComponent::*rv)(class CircuitSystem &, class BlockPos const &);
+        *((void**)&rv) = dlsym("?evaluate@PoweredBlockComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class CircuitSystem &>(a0), std::forward<class BlockPos const &>(a1));
+    }
+    inline bool canConsumerPower() const{
+        bool (PoweredBlockComponent::*rv)() const;
+        *((void**)&rv) = dlsym("?canConsumerPower@PoweredBlockComponent@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline bool hasChildrenSource() const{
         bool (PoweredBlockComponent::*rv)() const;
         *((void**)&rv) = dlsym("?hasChildrenSource@PoweredBlockComponent@@UEBA_NXZ");

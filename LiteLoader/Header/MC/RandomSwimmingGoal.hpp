@@ -27,6 +27,7 @@ public:
     /*0*/ virtual ~RandomSwimmingGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual bool canBeInterrupted();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();

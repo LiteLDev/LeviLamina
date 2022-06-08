@@ -27,8 +27,16 @@ public:
     /*0*/ virtual ~PoolElementStructurePiece();
     /*1*/ virtual void moveBoundingBox(int, int, int);
     /*2*/ virtual class PoolElementStructurePiece * asPoolElement();
+    /*3*/ virtual enum StructurePieceType getType() const;
+    /*4*/ virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
     /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /*6*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
+    /*10*/ virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);
+    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
+    /*13*/ virtual int generateHeightAtPosition(class BlockPos const &, class Dimension &, class BlockVolume &, class std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<std::vector<short>>>>> &) const = 0;
+    /*14*/ virtual class Block const * getSupportBlock(class BlockSource &, class BlockPos const &, class Block const &) const = 0;
+    /*15*/ virtual class Block const & getBeardStabilizeBlock(class Block const &) const = 0;
+    /*16*/ virtual enum AdjustmentEffect getTerrainAdjustmentEffect() const = 0;
     /*17*/ virtual bool _needsPostProcessing(class BlockSource &);
     MCAPI PoolElementStructurePiece(class StructurePoolElement const &, class BlockPos, enum Rotation, int, struct JigsawJunction &, class BoundingBox const &, class BlockPos);
     MCAPI class StructurePoolElement const & getElement() const;

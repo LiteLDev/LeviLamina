@@ -40,7 +40,7 @@ public:
     /*14*/ virtual bool canSurvive(class BlockPos const &, class Block const &) const;
     /*15*/ virtual short getMaxHeight() const;
     /*16*/ virtual short getMinHeight() const;
-    /*17*/ virtual bool shimPlaceForOldFeatures(class Feature const &, class BlockPos const &, class Random &) const;
+    /*17*/ virtual void __unk_vfn_17();
     /*18*/ virtual short getHeightmap(int, int);
     /*19*/ virtual bool isLegacyLevel();
     /*20*/ virtual class Biome const * getBiome(class BlockPos const &) const;
@@ -49,6 +49,13 @@ public:
     /*23*/ virtual class LevelData const & getLevelData() const;
     /*24*/ virtual struct WorldGenContext const & getContext();
     /*25*/ virtual void disableBlockSimple();
+    /*
+    inline bool shimPlaceForOldFeatures(class Feature const & a0, class BlockPos const & a1, class Random & a2) const{
+        bool (TransactionalWorldBlockTarget::*rv)(class Feature const &, class BlockPos const &, class Random &) const;
+        *((void**)&rv) = dlsym("?shimPlaceForOldFeatures@TransactionalWorldBlockTarget@@UEBA_NAEBVFeature@@AEBVBlockPos@@AEAVRandom@@@Z");
+        return (this->*rv)(std::forward<class Feature const &>(a0), std::forward<class BlockPos const &>(a1), std::forward<class Random &>(a2));
+    }
+    */
     MCAPI TransactionalWorldBlockTarget(class IBlockWorldGenAPI &);
 
 protected:

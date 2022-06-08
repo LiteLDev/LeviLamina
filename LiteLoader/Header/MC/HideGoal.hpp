@@ -34,6 +34,7 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*16*/ virtual unsigned __int64 _getRepathTime() const;
+    /*17*/ virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType) const;
     MCAPI HideGoal(class Mob &, float, float, float, enum POIType);
 
 protected:

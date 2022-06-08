@@ -24,6 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~ScriptDebugCommand();
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const = 0;
     MCAPI ScriptDebugCommand();
 
 protected:

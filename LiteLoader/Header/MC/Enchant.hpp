@@ -114,7 +114,6 @@ public:
     /*7*/ virtual float getDamageBonus(int, class Actor const &) const;
     /*8*/ virtual void doPostAttack(class Actor &, class Actor &, int) const;
     /*9*/ virtual void doPostHurt(class ItemInstance &, class Actor &, class Actor &, int) const;
-    /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
@@ -133,11 +132,6 @@ public:
     inline bool isMeleeDamageEnchant() const{
         bool (Enchant::*rv)() const;
         *((void**)&rv) = dlsym("?isMeleeDamageEnchant@Enchant@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isDiscoverable() const{
-        bool (Enchant::*rv)() const;
-        *((void**)&rv) = dlsym("?isDiscoverable@Enchant@@UEBA_NXZ");
         return (this->*rv)();
     }
     */

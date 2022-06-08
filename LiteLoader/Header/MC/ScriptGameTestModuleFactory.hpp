@@ -26,6 +26,8 @@ public:
 
 public:
     /*0*/ virtual ~ScriptGameTestModuleFactory();
+    /*2*/ virtual class Json::Value asJsonValue() const;
+    /*3*/ virtual class Json::Value resolve(struct ResolveData const &) const;
     MCAPI ScriptGameTestModuleFactory(class gametest::GameTestRegistry &);
     MCAPI static std::string getModuleUUIDAsString();
 

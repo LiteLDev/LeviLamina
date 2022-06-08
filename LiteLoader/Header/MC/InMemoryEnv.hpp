@@ -28,6 +28,20 @@ public:
     /*0*/ virtual ~InMemoryEnv();
     /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
     /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
+    /*3*/ virtual class Block const * tryGetLiquidBlock(class BlockPos const &) const;
+    /*4*/ virtual class Block const & getBlock(class BlockPos const &) const;
+    /*5*/ virtual class Block const & getBlockNoBoundsCheck(class BlockPos const &) const;
+    /*6*/ virtual class Block const & getExtraBlock(class BlockPos const &) const;
+    /*7*/ virtual class gsl::span<class BlockDataFetchResult<class Block> const, -1> fetchBlocksInBox(class BoundingBox const &, class std::function<bool (class Block const &)>);
+    /*8*/ virtual bool hasBiomeTag(unsigned __int64, class BlockPos const &) const;
+    /*9*/ virtual bool setBlock(class BlockPos const &, class Block const &, int);
+    /*10*/ virtual bool setBlockSimple(class BlockPos const &, class Block const &);
+    /*11*/ virtual bool apply() const;
+    /*12*/ virtual bool placeStructure(class BlockPos const &, class StructureTemplate &, class StructureSettings &);
+    /*13*/ virtual bool mayPlace(class BlockPos const &, class Block const &) const;
+    /*16*/ virtual short getMinHeight() const;
+    /*17*/ virtual void __unk_vfn_17();
+    /*20*/ virtual class Biome const * getBiome(class BlockPos const &) const;
     /*
     inline class leveldb::Status DeleteFileA(std::string const & a0){
         class leveldb::Status (InMemoryEnv::*rv)(std::string const &);

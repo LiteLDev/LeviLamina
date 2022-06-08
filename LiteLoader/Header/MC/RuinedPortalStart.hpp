@@ -25,6 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~RuinedPortalStart();
+    /*2*/ virtual bool isValid() const;
     MCAPI RuinedPortalStart(class BiomeRegistry &, class BiomeSource const &, int, int, class IPreliminarySurfaceProvider const &);
 
 protected:

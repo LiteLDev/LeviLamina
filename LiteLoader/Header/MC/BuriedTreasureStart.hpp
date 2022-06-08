@@ -25,6 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~BuriedTreasureStart();
+    /*2*/ virtual bool isValid() const;
     MCAPI BuriedTreasureStart(class Dimension &, class Random &, int, int);
 
 protected:

@@ -30,6 +30,7 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
+    /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
     /*
     inline bool isItemAllowedToAdd(class ItemStack const & a0) const{
         bool (CreatedOutputContainerValidation::*rv)(class ItemStack const &) const;

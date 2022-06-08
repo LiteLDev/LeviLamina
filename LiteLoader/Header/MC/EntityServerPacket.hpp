@@ -24,7 +24,10 @@ public:
 
 public:
     /*0*/ virtual ~EntityServerPacket();
+    /*1*/ virtual enum MinecraftPacketIds getId() const = 0;
+    /*2*/ virtual std::string getName() const = 0;
     /*3*/ virtual void write(class BinaryStream &) const;
+    /*5*/ virtual bool disallowBatching() const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     MCAPI EntityServerPacket(class EntityContext const &);
     MCAPI EntityServerPacket();

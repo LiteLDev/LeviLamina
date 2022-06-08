@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Json.hpp"
 #include "BlockCommandOrigin.hpp"
 
 #define BEFORE_EXTRA
@@ -26,16 +25,36 @@ public:
 
 public:
     /*0*/ virtual ~MinecartBlockCommandOrigin();
+    /*1*/ virtual std::string const & getRequestId() const;
     /*3*/ virtual class BlockPos getBlockPosition() const;
     /*4*/ virtual class Vec3 getWorldPosition() const;
+    /*5*/ virtual class std::optional<class Vec2> getRotation() const;
+    /*6*/ virtual class Level * getLevel() const;
     /*8*/ virtual class Actor * getEntity() const;
+    /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
+    /*11*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
+    /*12*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
+    /*15*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
+    /*17*/ virtual void __unk_vfn_17();
+    /*18*/ virtual bool isSelectorExpansionAllowed() const;
+    /*20*/ virtual unsigned char getSourceSubId() const;
+    /*21*/ virtual class CommandOrigin const & getOutputReceiver() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
+    /*25*/ virtual class mce::UUID const & getUUID() const;
+    /*26*/ virtual void __unk_vfn_26();
+    /*27*/ virtual void __unk_vfn_27();
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
     /*32*/ virtual class BaseCommandBlock * _getBaseCommandBlock(class BlockSource &) const;
     /*33*/ virtual class CommandBlockActor * _getBlockEntity(class BlockSource &) const;
+    /*
+    inline bool canUseCommandsWithoutCheatsEnabled() const{
+        bool (MinecartBlockCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?canUseCommandsWithoutCheatsEnabled@MinecartBlockCommandOrigin@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI MinecartBlockCommandOrigin(class BlockSource &, struct ActorUniqueID const &);
     MCAPI static std::unique_ptr<class MinecartBlockCommandOrigin> load(class CompoundTag const &, class Level &);
 

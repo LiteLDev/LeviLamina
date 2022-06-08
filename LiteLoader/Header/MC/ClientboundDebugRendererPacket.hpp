@@ -27,6 +27,7 @@ public:
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
+    /*5*/ virtual bool disallowBatching() const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     MCAPI ClientboundDebugRendererPacket(std::string, class mce::Color const &, class Vec3 const &, class std::chrono::duration<__int64, struct std::ratio<1, 1000>>);
     MCAPI ClientboundDebugRendererPacket(enum ClientboundDebugRendererPacket::Type);

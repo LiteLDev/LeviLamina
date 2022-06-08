@@ -25,15 +25,30 @@ public:
 
 public:
     /*0*/ virtual ~SimpleContainer();
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /*5*/ virtual class ItemStack const & getItem(int) const;
     /*9*/ virtual void setItem(int, class ItemStack const &);
+    /*10*/ virtual void setItemWithForceBalance(int, class ItemStack const &, bool);
     /*14*/ virtual int getContainerSize() const;
     /*15*/ virtual int getMaxStackSize() const;
-    /*16*/ virtual void startOpen(class Player &);
-    /*17*/ virtual void stopOpen(class Player &);
+    /*16*/ virtual void __unk_vfn_16();
+    /*17*/ virtual void __unk_vfn_17();
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
+    /*31*/ virtual void __unk_vfn_31();
+    /*
+    inline void stopOpen(class Player & a0){
+        void (SimpleContainer::*rv)(class Player &);
+        *((void**)&rv) = dlsym("?stopOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0));
+    }
+    inline void startOpen(class Player & a0){
+        void (SimpleContainer::*rv)(class Player &);
+        *((void**)&rv) = dlsym("?startOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0));
+    }
+    */
     MCAPI SimpleContainer(std::string const &, bool, int, enum ContainerType);
 
 protected:

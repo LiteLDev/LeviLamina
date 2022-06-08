@@ -27,6 +27,7 @@ public:
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
+    /*5*/ virtual bool disallowBatching() const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     MCAPI AnimateEntityPacket(std::vector<class ActorRuntimeID> const &, std::string const &, std::string const &, float, std::string const &, enum MolangVersion, std::string const &);
     MCAPI AnimateEntityPacket();

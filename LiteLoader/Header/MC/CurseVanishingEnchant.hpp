@@ -27,12 +27,17 @@ public:
     /*0*/ virtual ~CurseVanishingEnchant();
     /*2*/ virtual int getMinCost(int) const;
     /*3*/ virtual int getMaxCost(int) const;
+    /*4*/ virtual int getMinLevel() const;
+    /*5*/ virtual int getMaxLevel() const;
+    /*6*/ virtual int getDamageProtection(int, class ActorDamageSource const &) const;
+    /*7*/ virtual float getDamageBonus(int, class Actor const &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*10*/ virtual void __unk_vfn_10();
+    /*10*/ virtual bool isDiscoverable() const;
     /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
+    /*14*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
     /*
     inline bool isTreasureOnly() const{
         bool (CurseVanishingEnchant::*rv)() const;

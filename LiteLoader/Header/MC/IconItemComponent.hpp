@@ -24,12 +24,19 @@ public:
 
 public:
     /*0*/ virtual ~IconItemComponent();
-    /*1*/ virtual bool isNetworkComponent() const;
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
+    /*
+    inline bool isNetworkComponent() const{
+        bool (IconItemComponent::*rv)() const;
+        *((void**)&rv) = dlsym("?isNetworkComponent@IconItemComponent@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI IconItemComponent(class ComponentItem *);
     MCAPI void setOwnerIcon();
     MCAPI static void bindType();

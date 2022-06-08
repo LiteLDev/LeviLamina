@@ -24,11 +24,20 @@ public:
 
 public:
     /*0*/ virtual ~PistonConsumer();
+    /*1*/ virtual int getStrength() const;
     /*6*/ virtual bool canConsumePowerAnyDirection() const;
+    /*7*/ virtual bool canConsumerPower() const;
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
     /*11*/ virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /*12*/ virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
+    /*13*/ virtual void __unk_vfn_13();
+    /*15*/ virtual void __unk_vfn_15();
+    /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual void __unk_vfn_17();
+    /*18*/ virtual void __unk_vfn_18();
     /*20*/ virtual void __unk_vfn_20();
+    /*21*/ virtual bool isSecondaryPowered() const;
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     MCAPI PistonConsumer();
     MCAPI void setBlockPowerFace(unsigned char);

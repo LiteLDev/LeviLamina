@@ -55,7 +55,7 @@ public:
     /*21*/ virtual class ItemComponent * getComponent(class HashedString const &) const;
     /*22*/ virtual class ICameraItemComponent * getCamera() const;
     /*23*/ virtual class IFoodItemComponent * getFood() const;
-    /*24*/ virtual class FuelItemComponent const * getFuel() const;
+    /*24*/ virtual class FuelItemComponent * getFuel() const;
     /*25*/ virtual class Item & setMaxStackSize(unsigned char);
     /*26*/ virtual class Item & setStackedByData(bool);
     /*27*/ virtual class Item & setMaxDamage(int);
@@ -214,6 +214,11 @@ public:
         bool (Item::*rv)() const;
         *((void**)&rv) = dlsym("?isPattern@Item@@UEBA_NXZ");
         return (this->*rv)();
+    }
+    inline void playSoundIncrementally(class ItemInstance const & a0, class Mob & a1) const{
+        void (Item::*rv)(class ItemInstance const &, class Mob &) const;
+        *((void**)&rv) = dlsym("?playSoundIncrementally@Item@@UEBAXAEBVItemInstance@@AEAVMob@@@Z");
+        return (this->*rv)(std::forward<class ItemInstance const &>(a0), std::forward<class Mob &>(a1));
     }
     inline class mce::Color getBaseColor(class ItemStack const & a0) const{
         class mce::Color (Item::*rv)(class ItemStack const &) const;

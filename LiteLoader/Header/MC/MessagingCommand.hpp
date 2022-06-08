@@ -25,6 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~MessagingCommand();
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const = 0;
 
 protected:
     MCAPI MessagingCommand(bool, bool);

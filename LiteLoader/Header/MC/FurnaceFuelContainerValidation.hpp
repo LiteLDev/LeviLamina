@@ -28,6 +28,7 @@ public:
     /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /*3*/ virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
     /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const &) const;
+    /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     /*
     inline int getContainerOffset(class ContainerScreenContext const & a0) const{
         int (FurnaceFuelContainerValidation::*rv)(class ContainerScreenContext const &) const;

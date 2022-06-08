@@ -24,13 +24,21 @@ public:
 
 public:
     /*0*/ virtual ~ProducerComponent();
+    /*1*/ virtual int getStrength() const;
     /*3*/ virtual void setStrength(int);
+    /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual bool canStopPower() const;
     /*9*/ virtual void setStopPower(bool);
+    /*11*/ virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /*12*/ virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
+    /*13*/ virtual void checkLock(class CircuitSystem &, class BlockPos const &);
     /*14*/ virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
+    /*15*/ virtual void cacheValues(class CircuitSystem &, class BlockPos const &);
+    /*16*/ virtual void updateDependencies(class CircuitSceneGraph &, class BlockPos const &);
     /*17*/ virtual void __unk_vfn_17();
+    /*18*/ virtual bool isHalfPulse() const;
     /*20*/ virtual void __unk_vfn_20();
+    /*21*/ virtual void __unk_vfn_21();
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     MCAPI ProducerComponent();
     MCAPI void allowAttachments(bool);

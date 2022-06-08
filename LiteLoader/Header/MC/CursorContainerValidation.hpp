@@ -30,6 +30,7 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
+    /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
     /*
     inline bool canItemMoveToContainer(class ItemStackBase const & a0) const{
         bool (CursorContainerValidation::*rv)(class ItemStackBase const &) const;

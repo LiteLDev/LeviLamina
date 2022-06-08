@@ -25,8 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~ActorDamageByChildActorSource();
+    /*1*/ virtual bool isEntitySource() const;
     /*2*/ virtual bool isChildEntitySource() const;
+    /*3*/ virtual bool isBlockSource() const;
     /*8*/ virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor *) const;
+    /*10*/ virtual bool getIsWorldBuilder() const;
+    /*11*/ virtual struct ActorUniqueID getEntityUniqueID() const;
+    /*12*/ virtual enum ActorType getEntityType() const;
     /*14*/ virtual bool getDamagingEntityIsCreative() const;
     /*15*/ virtual bool getDamagingEntityIsWorldBuilder() const;
     /*16*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;

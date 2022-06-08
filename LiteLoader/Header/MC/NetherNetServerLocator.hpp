@@ -31,6 +31,7 @@ public:
 
 public:
     /*0*/ virtual ~NetherNetServerLocator();
+    /*1*/ virtual void setGetHostGUIDFn(class std::function<struct RakNet::RakNetGUID (void)> const &);
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void startAnnouncingServer(std::string const &, std::string const &, enum GameType, int, int, bool);
     /*4*/ virtual void stopAnnouncingServer();
@@ -44,6 +45,7 @@ public:
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void __unk_vfn_14();
+    /*15*/ virtual float getPingTimeForGUID(std::string const &);
     MCAPI NetherNetServerLocator();
 
 protected:

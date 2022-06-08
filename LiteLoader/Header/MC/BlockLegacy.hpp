@@ -82,7 +82,7 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual bool canHurtAndBreakItem() const;
-    /*50*/ virtual bool isSignalSource() const;
+    /*50*/ virtual void __unk_vfn_50();
     /*51*/ virtual bool canBeOriginalSurface() const;
     /*52*/ virtual bool canBeAscendedByJumping(class Actor const &, class BlockPos const &) const;
     /*53*/ virtual bool isValidAuxValue(int) const;
