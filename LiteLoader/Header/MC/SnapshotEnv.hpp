@@ -28,41 +28,18 @@ public:
     /*0*/ virtual ~SnapshotEnv();
     /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
     /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
-    /*3*/ virtual class Block const * tryGetLiquidBlock(class BlockPos const &) const;
-    /*4*/ virtual class Block const & getBlock(class BlockPos const &) const;
-    /*5*/ virtual class Block const & getBlockNoBoundsCheck(class BlockPos const &) const;
-    /*6*/ virtual class Block const & getExtraBlock(class BlockPos const &) const;
-    /*7*/ virtual class gsl::span<class BlockDataFetchResult<class Block> const, -1> fetchBlocksInBox(class BoundingBox const &, class std::function<bool (class Block const &)>);
+    /*3*/ virtual class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
+    /*4*/ virtual class leveldb::Status NewAppendableFile(std::string const &, class leveldb::WritableFile **);
+    /*6*/ virtual void __unk_vfn_6();
+    /*7*/ virtual class leveldb::Status DeleteFileA(std::string const &);
     /*8*/ virtual bool hasBiomeTag(unsigned __int64, class BlockPos const &) const;
     /*9*/ virtual bool setBlock(class BlockPos const &, class Block const &, int);
     /*10*/ virtual bool setBlockSimple(class BlockPos const &, class Block const &);
-    /*11*/ virtual bool apply() const;
+    /*11*/ virtual class leveldb::Status RenameFile(std::string const &, std::string const &);
     /*12*/ virtual bool placeStructure(class BlockPos const &, class StructureTemplate &, class StructureSettings &);
     /*13*/ virtual bool mayPlace(class BlockPos const &, class Block const &) const;
     /*16*/ virtual short getMinHeight() const;
-    /*17*/ virtual void __unk_vfn_17();
-    /*
-    inline class leveldb::Status DeleteFileA(std::string const & a0){
-        class leveldb::Status (SnapshotEnv::*rv)(std::string const &);
-        *((void**)&rv) = dlsym("?DeleteFileA@SnapshotEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0));
-    }
-    inline class leveldb::Status NewAppendableFile(std::string const & a0, class leveldb::WritableFile ** a1){
-        class leveldb::Status (SnapshotEnv::*rv)(std::string const &, class leveldb::WritableFile **);
-        *((void**)&rv) = dlsym("?NewAppendableFile@SnapshotEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class leveldb::WritableFile **>(a1));
-    }
-    inline class leveldb::Status NewWritableFile(std::string const & a0, class leveldb::WritableFile ** a1){
-        class leveldb::Status (SnapshotEnv::*rv)(std::string const &, class leveldb::WritableFile **);
-        *((void**)&rv) = dlsym("?NewWritableFile@SnapshotEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class leveldb::WritableFile **>(a1));
-    }
-    inline class leveldb::Status RenameFile(std::string const & a0, std::string const & a1){
-        class leveldb::Status (SnapshotEnv::*rv)(std::string const &, std::string const &);
-        *((void**)&rv) = dlsym("?RenameFile@SnapshotEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<std::string const &>(a1));
-    }
-    */
+    /*17*/ virtual bool shimPlaceForOldFeatures(class Feature const &, class BlockPos const &, class Random &) const;
     MCAPI SnapshotEnv(class leveldb::Env *);
     MCAPI std::vector<struct SnapshotFilenameAndLength> createSnapshot(class Core::Path const &);
     MCAPI void releaseSnapshot();

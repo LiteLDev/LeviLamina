@@ -45,13 +45,15 @@ public:
     /*19*/ virtual void __unk_vfn_19();
     /*20*/ virtual void __unk_vfn_20();
     /*21*/ virtual void __unk_vfn_21();
-    /*22*/ virtual void __unk_vfn_22();
+    /*22*/ virtual void onChunkLoaded(class ChunkSource &, class LevelChunk &);
     /*23*/ virtual void __unk_vfn_23();
     /*24*/ virtual void __unk_vfn_24();
-    /*25*/ virtual void __unk_vfn_25();
-    /*26*/ virtual void __unk_vfn_26();
+    /*25*/ virtual void onChunkUnloaded(class LevelChunk &);
+    /*26*/ virtual void onLevelDestruction(std::string const &);
     /*27*/ virtual void __unk_vfn_27();
     /*28*/ virtual void levelEvent(enum LevelEvent, class Vec3 const &, int);
+    /*29*/ virtual void __unk_vfn_29();
+    /*30*/ virtual void levelSoundEvent(enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
     MCAPI Weather(class Dimension &, class IRandom &);
     MCAPI int calcSnowBlockDepth(class BlockSource &, class BlockPos const &, int) const;
     MCAPI bool canPlaceTopSnow(class BlockSource &, class BlockPos const &, bool, bool, int *) const;

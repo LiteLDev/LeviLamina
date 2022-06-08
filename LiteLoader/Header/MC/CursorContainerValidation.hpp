@@ -25,19 +25,12 @@ public:
 
 public:
     /*0*/ virtual ~CursorContainerValidation();
-    /*2*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual void __unk_vfn_6();
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
+    /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const &) const;
+    /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
+    /*6*/ virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
-    /*
-    inline bool canItemMoveToContainer(class ItemStackBase const & a0) const{
-        bool (CursorContainerValidation::*rv)(class ItemStackBase const &) const;
-        *((void**)&rv) = dlsym("?canItemMoveToContainer@CursorContainerValidation@@UEBA_NAEBVItemStackBase@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const &>(a0));
-    }
-    */
 
 protected:
 

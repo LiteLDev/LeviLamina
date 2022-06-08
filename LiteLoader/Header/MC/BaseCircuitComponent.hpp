@@ -42,7 +42,7 @@ public:
     /*17*/ virtual void __unk_vfn_17();
     /*18*/ virtual bool isHalfPulse() const;
     /*19*/ virtual bool hasSource(class BaseCircuitComponent &);
-    /*20*/ virtual void __unk_vfn_20();
+    /*20*/ virtual bool hasChildrenSource() const;
     /*21*/ virtual bool isSecondaryPowered() const;
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*23*/ virtual enum CircuitComponentType getCircuitComponentGroupType() const;

@@ -30,8 +30,8 @@ public:
     /*0*/ virtual ~DBChunkStorage();
     /*1*/ virtual void shutdown();
     /*2*/ virtual bool isShutdownDone();
-    /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual void __unk_vfn_4();
+    /*3*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
+    /*4*/ virtual class std::shared_ptr<class LevelChunk> getRandomChunk(class Random &);
     /*5*/ virtual bool isChunkKnown(class ChunkPos const &);
     /*8*/ virtual bool postProcess(class ChunkViewSource &);
     /*9*/ virtual void checkAndReplaceChunk(class ChunkViewSource &, class LevelChunk &);

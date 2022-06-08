@@ -114,27 +114,11 @@ public:
     /*7*/ virtual float getDamageBonus(int, class Actor const &) const;
     /*8*/ virtual void doPostAttack(class Actor &, class Actor &, int) const;
     /*9*/ virtual void doPostHurt(class ItemInstance &, class Actor &, class Actor &, int) const;
-    /*11*/ virtual void __unk_vfn_11();
-    /*12*/ virtual void __unk_vfn_12();
-    /*13*/ virtual void __unk_vfn_13();
+    /*10*/ virtual bool isMeleeDamageEnchant() const;
+    /*11*/ virtual bool isProtectionEnchant() const;
+    /*12*/ virtual bool isTreasureOnly() const;
+    /*13*/ virtual bool isDiscoverable() const;
     /*14*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
-    /*
-    inline bool isProtectionEnchant() const{
-        bool (Enchant::*rv)() const;
-        *((void**)&rv) = dlsym("?isProtectionEnchant@Enchant@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isTreasureOnly() const{
-        bool (Enchant::*rv)() const;
-        *((void**)&rv) = dlsym("?isTreasureOnly@Enchant@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isMeleeDamageEnchant() const{
-        bool (Enchant::*rv)() const;
-        *((void**)&rv) = dlsym("?isMeleeDamageEnchant@Enchant@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI Enchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
     MCAPI Enchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int, bool);
     MCAPI bool canEnchant(int, bool) const;

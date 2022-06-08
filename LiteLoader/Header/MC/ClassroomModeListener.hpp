@@ -35,6 +35,25 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual class Particle * addParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
+    /*12*/ virtual void __unk_vfn_12();
+    /*13*/ virtual void __unk_vfn_13();
+    /*14*/ virtual void __unk_vfn_14();
+    /*15*/ virtual void __unk_vfn_15();
+    /*16*/ virtual void __unk_vfn_16();
+    /*17*/ virtual void __unk_vfn_17();
+    /*18*/ virtual void __unk_vfn_18();
+    /*19*/ virtual void __unk_vfn_19();
+    /*20*/ virtual void __unk_vfn_20();
+    /*21*/ virtual void __unk_vfn_21();
+    /*22*/ virtual void onChunkLoaded(class ChunkSource &, class LevelChunk &);
+    /*23*/ virtual void __unk_vfn_23();
+    /*24*/ virtual void __unk_vfn_24();
+    /*25*/ virtual void onChunkUnloaded(class LevelChunk &);
+    /*26*/ virtual void onLevelDestruction(std::string const &);
+    /*27*/ virtual void __unk_vfn_27();
+    /*28*/ virtual void levelEvent(enum LevelEvent, class Vec3 const &, int);
+    /*29*/ virtual void __unk_vfn_29();
+    /*30*/ virtual void levelSoundEvent(enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
     /*
     inline void onEntityRemoved(class Actor & a0){
         void (ClassroomModeListener::*rv)(class Actor &);
@@ -50,16 +69,6 @@ public:
         void (ClassroomModeListener::*rv)(class BlockSource &, class BlockPos const &, unsigned int, class Block const &, class Block const &, int, struct ActorBlockSyncMessage const *, enum BlockChangedEventTarget, class Actor *);
         *((void**)&rv) = dlsym("?onBlockChanged@ClassroomModeListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@IAEBVBlock@@2HPEBUActorBlockSyncMessage@@W4BlockChangedEventTarget@@PEAVActor@@@Z");
         return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1), std::forward<unsigned int>(a2), std::forward<class Block const &>(a3), std::forward<class Block const &>(a4), std::forward<int>(a5), std::forward<struct ActorBlockSyncMessage const *>(a6), std::forward<enum BlockChangedEventTarget>(a7), std::forward<class Actor *>(a8));
-    }
-    inline void onChunkUnloaded(class LevelChunk & a0){
-        void (ClassroomModeListener::*rv)(class LevelChunk &);
-        *((void**)&rv) = dlsym("?onChunkUnloaded@ClassroomModeListener@@UEAAXAEAVLevelChunk@@@Z");
-        return (this->*rv)(std::forward<class LevelChunk &>(a0));
-    }
-    inline void onChunkLoaded(class ChunkSource & a0, class LevelChunk & a1){
-        void (ClassroomModeListener::*rv)(class ChunkSource &, class LevelChunk &);
-        *((void**)&rv) = dlsym("?onChunkLoaded@ClassroomModeListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z");
-        return (this->*rv)(std::forward<class ChunkSource &>(a0), std::forward<class LevelChunk &>(a1));
     }
     inline void onEntityAdded(class Actor & a0){
         void (ClassroomModeListener::*rv)(class Actor &);

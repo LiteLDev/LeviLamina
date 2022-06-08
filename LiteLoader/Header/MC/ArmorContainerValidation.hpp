@@ -30,7 +30,7 @@ public:
     /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const &) const;
     /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     /*6*/ virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
-    /*8*/ virtual void __unk_vfn_8();
+    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 
 protected:

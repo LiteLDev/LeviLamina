@@ -39,7 +39,7 @@ public:
     /*11*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
     /*12*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
     /*15*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
-    /*17*/ virtual void __unk_vfn_17();
+    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*20*/ virtual unsigned char getSourceSubId() const;
     /*21*/ virtual class CommandOrigin const & getOutputReceiver() const;
@@ -48,13 +48,6 @@ public:
     /*26*/ virtual void handleCommandOutputCallback(class Json::Value &&) const;
     /*27*/ virtual void updateValues();
     /*30*/ virtual bool isValid() const;
-    /*
-    inline bool canUseCommandsWithoutCheatsEnabled() const{
-        bool (ScriptingCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?canUseCommandsWithoutCheatsEnabled@ScriptingCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI ScriptingCommandOrigin(class ServerLevel &, class Dimension *, class std::function<void (class Json::Value &&)>);
     MCAPI void __autoclassinit2(unsigned __int64);
 

@@ -29,14 +29,14 @@ public:
     /*0*/ virtual ~SignBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /*2*/ virtual bool save(class CompoundTag &) const;
-    /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual void __unk_vfn_6();
+    /*4*/ virtual void saveBlockData(class CompoundTag &, class BlockSource &) const;
+    /*5*/ virtual void loadBlockData(class CompoundTag const &, class BlockSource &, class DataLoadHelper &);
+    /*6*/ virtual void onCustomTagLoadDone(class BlockSource &);
     /*8*/ virtual void onChanged(class BlockSource &);
     /*11*/ virtual void onPlace(class BlockSource &);
     /*12*/ virtual void __unk_vfn_12();
-    /*13*/ virtual void __unk_vfn_13();
-    /*14*/ virtual void __unk_vfn_14();
+    /*13*/ virtual void onRemoved(class BlockSource &);
+    /*14*/ virtual void triggerEvent(int, int);
     /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual float getShadowRadius(class BlockSource &) const;
     /*18*/ virtual bool hasAlphaLayer() const;
@@ -44,7 +44,7 @@ public:
     /*21*/ virtual std::string const & getCustomName() const;
     /*23*/ virtual std::string getName() const;
     /*25*/ virtual std::string getImmersiveReaderText(class BlockSource &);
-    /*27*/ virtual void __unk_vfn_27();
+    /*27*/ virtual class PistonBlockActor * getOwningPiston(class BlockSource &);
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual float getDeletionDelayTimeSeconds() const;

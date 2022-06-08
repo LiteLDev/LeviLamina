@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
 #include "CommandOrigin.hpp"
 
 #define BEFORE_EXTRA
@@ -38,24 +39,17 @@ public:
     /*11*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
     /*12*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
     /*15*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
-    /*17*/ virtual void __unk_vfn_17();
+    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*20*/ virtual unsigned char getSourceSubId() const;
     /*21*/ virtual class CommandOrigin const & getOutputReceiver() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*24*/ virtual struct CommandOriginData toCommandOriginData() const;
     /*25*/ virtual class mce::UUID const & getUUID() const;
-    /*26*/ virtual void __unk_vfn_26();
-    /*27*/ virtual void __unk_vfn_27();
+    /*26*/ virtual void handleCommandOutputCallback(class Json::Value &&) const;
+    /*27*/ virtual void updateValues();
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
-    /*
-    inline bool canUseCommandsWithoutCheatsEnabled() const{
-        bool (ClientAutomationCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?canUseCommandsWithoutCheatsEnabled@ClientAutomationCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI ClientAutomationCommandOrigin(std::string const &);
 
 protected:

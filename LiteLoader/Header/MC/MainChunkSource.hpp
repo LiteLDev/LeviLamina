@@ -29,10 +29,10 @@ public:
     /*4*/ virtual class std::shared_ptr<class LevelChunk> getRandomChunk(class Random &);
     /*5*/ virtual bool isChunkKnown(class ChunkPos const &);
     /*6*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum ChunkSource::LoadMode, bool);
-    /*8*/ virtual void __unk_vfn_8();
+    /*8*/ virtual bool postProcess(class ChunkViewSource &);
     /*9*/ virtual void checkAndReplaceChunk(class ChunkViewSource &, class LevelChunk &);
     /*17*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
-    /*21*/ virtual void __unk_vfn_21();
+    /*21*/ virtual bool isWithinWorldLimit(class ChunkPos const &) const;
     /*22*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const * getChunkMap();
     /*23*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const & getStorage() const;
     /*24*/ virtual void clearDeletedEntities();

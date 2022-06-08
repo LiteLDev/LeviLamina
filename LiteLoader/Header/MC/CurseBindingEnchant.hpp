@@ -31,20 +31,13 @@ public:
     /*5*/ virtual int getMaxLevel() const;
     /*6*/ virtual int getDamageProtection(int, class ActorDamageSource const &) const;
     /*7*/ virtual float getDamageBonus(int, class Actor const &) const;
-    /*8*/ virtual void __unk_vfn_8();
-    /*9*/ virtual void __unk_vfn_9();
-    /*10*/ virtual bool isDiscoverable() const;
-    /*11*/ virtual void __unk_vfn_11();
-    /*12*/ virtual void __unk_vfn_12();
-    /*13*/ virtual void __unk_vfn_13();
+    /*8*/ virtual void doPostAttack(class Actor &, class Actor &, int) const;
+    /*9*/ virtual void doPostHurt(class ItemInstance &, class Actor &, class Actor &, int) const;
+    /*10*/ virtual bool isMeleeDamageEnchant() const;
+    /*11*/ virtual bool isProtectionEnchant() const;
+    /*12*/ virtual bool isTreasureOnly() const;
+    /*13*/ virtual bool isDiscoverable() const;
     /*14*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
-    /*
-    inline bool isTreasureOnly() const{
-        bool (CurseBindingEnchant::*rv)() const;
-        *((void**)&rv) = dlsym("?isTreasureOnly@CurseBindingEnchant@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI CurseBindingEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int, bool);
 
 protected:

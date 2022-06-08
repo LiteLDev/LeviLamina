@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
 #include "ActorServerCommandOrigin.hpp"
 
 #define BEFORE_EXTRA
@@ -39,8 +40,8 @@ public:
     /*21*/ virtual class CommandOrigin const & getOutputReceiver() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*25*/ virtual class mce::UUID const & getUUID() const;
-    /*26*/ virtual void __unk_vfn_26();
-    /*27*/ virtual void __unk_vfn_27();
+    /*26*/ virtual void handleCommandOutputCallback(class Json::Value &&) const;
+    /*27*/ virtual void updateValues();
     /*30*/ virtual bool isValid() const;
     MCAPI GameDirectorEntityServerCommandOrigin(class Actor &);
     MCAPI GameDirectorEntityServerCommandOrigin(struct ActorUniqueID, class Level &);

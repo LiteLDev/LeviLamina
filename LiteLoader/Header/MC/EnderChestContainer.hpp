@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~EnderChestContainer();
-    /*1*/ virtual void __unk_vfn_1();
+    /*1*/ virtual void init();
     /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /*9*/ virtual void setItem(int, class ItemStack const &);
     /*14*/ virtual int getContainerSize() const;

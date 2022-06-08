@@ -51,7 +51,7 @@ public:
     /*16*/ virtual void onLightningHit(class BlockSource &, class BlockPos const &) const;
     /*17*/ virtual bool liquidCanFlowIntoFromDirection(unsigned char, class std::function<class Block const & (class BlockPos const &)> const &, class BlockPos const &) const;
     /*18*/ virtual bool isSolid() const;
-    /*19*/ virtual void __unk_vfn_19();
+    /*19*/ virtual bool canSpawnOn() const;
     /*20*/ virtual bool isSculkReplaceable(class Block const &) const;
     /*21*/ virtual bool isStrippable(class Block const &) const;
     /*22*/ virtual class Block const & getStrippedBlock(class Block const &) const;
@@ -62,27 +62,27 @@ public:
     /*27*/ virtual void getConnectedDirections(class Block const &, class BlockPos const &, class IConstBlockSource const &, bool &, bool &, bool &, bool &) const;
     /*28*/ virtual class CopperBehavior const * tryGetCopperBehavior() const;
     /*29*/ virtual bool isClimbable(struct IActorMovementProxy const &) const;
-    /*30*/ virtual void __unk_vfn_30();
-    /*31*/ virtual void __unk_vfn_31();
-    /*32*/ virtual void __unk_vfn_32();
+    /*30*/ virtual bool canBeSilkTouched() const;
+    /*31*/ virtual bool falling() const;
+    /*32*/ virtual bool canHaveExtraData() const;
     /*33*/ virtual bool isWaterBlocking() const;
-    /*34*/ virtual void __unk_vfn_34();
+    /*34*/ virtual bool isVibrationBlocking() const;
     /*35*/ virtual void __unk_vfn_35();
-    /*36*/ virtual void __unk_vfn_36();
-    /*37*/ virtual void __unk_vfn_37();
-    /*38*/ virtual void __unk_vfn_38();
-    /*39*/ virtual void __unk_vfn_39();
-    /*40*/ virtual void __unk_vfn_40();
-    /*41*/ virtual void __unk_vfn_41();
+    /*36*/ virtual bool isFenceBlock() const;
+    /*37*/ virtual bool isFenceGateBlock() const;
+    /*38*/ virtual bool isThinFenceBlock() const;
+    /*39*/ virtual bool isWallBlock() const;
+    /*40*/ virtual bool isStairBlock() const;
+    /*41*/ virtual bool isSlabBlock() const;
     /*42*/ virtual bool isDoubleSlabBlock() const;
-    /*43*/ virtual void __unk_vfn_43();
-    /*44*/ virtual void __unk_vfn_44();
-    /*45*/ virtual void __unk_vfn_45();
-    /*46*/ virtual void __unk_vfn_46();
-    /*47*/ virtual void __unk_vfn_47();
-    /*48*/ virtual void __unk_vfn_48();
+    /*43*/ virtual bool isDoorBlock() const;
+    /*44*/ virtual bool isRailBlock() const;
+    /*45*/ virtual bool isButtonBlock() const;
+    /*46*/ virtual bool isLeverBlock() const;
+    /*47*/ virtual bool isCandleCakeBlock() const;
+    /*48*/ virtual bool isMultifaceBlock() const;
     /*49*/ virtual bool canHurtAndBreakItem() const;
-    /*50*/ virtual void __unk_vfn_50();
+    /*50*/ virtual bool isSignalSource() const;
     /*51*/ virtual bool canBeOriginalSurface() const;
     /*52*/ virtual bool canBeAscendedByJumping(class Actor const &, class BlockPos const &) const;
     /*53*/ virtual bool isValidAuxValue(int) const;
@@ -90,8 +90,8 @@ public:
     /*55*/ virtual class Block const & sanitizeFillBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*56*/ virtual void onFillBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*57*/ virtual int getDirectSignal(class BlockSource &, class BlockPos const &, int) const;
-    /*58*/ virtual void __unk_vfn_58();
-    /*59*/ virtual void __unk_vfn_59();
+    /*58*/ virtual bool canBeDestroyedByWaterSpread() const;
+    /*59*/ virtual bool waterSpreadCausesSpawn() const;
     /*60*/ virtual bool canContainLiquid() const;
     /*61*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /*62*/ virtual void handlePrecipitation(class BlockSource &, class BlockPos const &, float, float) const;
@@ -111,7 +111,7 @@ public:
     /*76*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /*77*/ virtual enum BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
     /*78*/ virtual void updateEntityAfterFallOn(class BlockPos const &, struct IActorMovementProxy &) const;
-    /*79*/ virtual void __unk_vfn_79();
+    /*79*/ virtual bool isBounceBlock() const;
     /*80*/ virtual bool isFilteredOut(enum BlockRenderLayer) const;
     /*81*/ virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const *) const;
     /*82*/ virtual bool ignoreEntitiesOnPistonMove(class Block const &) const;
@@ -156,15 +156,15 @@ public:
     /*121*/ virtual void forceExecuteTrigger(class DefinitionTrigger const &, class RenderParams &) const;
     /*122*/ virtual class MobSpawnerData const * getMobToSpawn(class SpawnConditions const &, class BlockSource &) const;
     /*123*/ virtual bool shouldStopFalling(class Actor &) const;
-    /*124*/ virtual void __unk_vfn_124();
+    /*124*/ virtual bool pushesUpFallingBlocks() const;
     /*125*/ virtual float calcGroundFriction(struct IMobMovementProxy const &, class BlockPos const &) const;
     /*126*/ virtual void __unk_vfn_126();
-    /*127*/ virtual void __unk_vfn_127();
+    /*127*/ virtual bool hasComparatorSignal() const;
     /*128*/ virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /*129*/ virtual bool canSlide(class BlockSource &, class BlockPos const &) const;
     /*130*/ virtual bool canSpawnAt(class BlockSource const &, class BlockPos const &) const;
     /*131*/ virtual void notifySpawnedAt(class BlockSource &, class BlockPos const &) const;
-    /*132*/ virtual void __unk_vfn_132();
+    /*132*/ virtual bool causesFreezeEffect() const;
     /*133*/ virtual int getIconYOffset() const;
     /*134*/ virtual std::string buildDescriptionId(class Block const &) const;
     /*135*/ virtual bool isAuxValueRelevantForPicking() const;
@@ -180,7 +180,7 @@ public:
     /*145*/ virtual class AABB const & getUIShape(class Block const &, class AABB &) const;
     /*146*/ virtual int telemetryVariant(class BlockSource &, class BlockPos const &) const;
     /*147*/ virtual int getVariant(class Block const &) const;
-    /*148*/ virtual void __unk_vfn_148();
+    /*148*/ virtual bool isInteractiveBlock() const;
     /*149*/ virtual class Block const & getRenderBlock() const;
     /*150*/ virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /*151*/ virtual enum Flip getFaceFlip(unsigned char, class Block const &) const;
@@ -197,7 +197,7 @@ public:
     /*162*/ virtual class BlockLegacy & setAllowsRunes(bool);
     /*163*/ virtual class BlockLegacy & setCanBeOriginalSurface(bool);
     /*164*/ virtual class BlockLegacy & setMapColor(class mce::Color const &);
-    /*165*/ virtual void __unk_vfn_165();
+    /*165*/ virtual bool hasVariableLighting() const;
     /*166*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /*167*/ virtual void setVisualShape(class AABB const &);
     /*168*/ virtual void setVisualShape(class Vec3 const &, class Vec3 const &);
@@ -219,7 +219,7 @@ public:
     /*184*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*185*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*186*/ virtual bool shouldRandomTick() const;
-    /*187*/ virtual void __unk_vfn_187();
+    /*187*/ virtual bool isCraftingBlock() const;
     /*188*/ virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
@@ -261,11 +261,6 @@ public:
         *((void**)&rv) = dlsym("?hasVariableLighting@BlockLegacy@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool pushesUpFallingBlocks() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?pushesUpFallingBlocks@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isFenceGateBlock() const{
         bool (BlockLegacy::*rv)() const;
         *((void**)&rv) = dlsym("?isFenceGateBlock@BlockLegacy@@UEBA_NXZ");
@@ -279,11 +274,6 @@ public:
     inline bool isCraftingBlock() const{
         bool (BlockLegacy::*rv)() const;
         *((void**)&rv) = dlsym("?isCraftingBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isInteractiveBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isInteractiveBlock@BlockLegacy@@MEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isThinFenceBlock() const{
@@ -301,11 +291,6 @@ public:
         *((void**)&rv) = dlsym("?isSlabBlock@BlockLegacy@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool canHaveExtraData() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?canHaveExtraData@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool detachesOnPistonMove(class BlockSource & a0, class BlockPos const & a1) const{
         bool (BlockLegacy::*rv)(class BlockSource &, class BlockPos const &) const;
         *((void**)&rv) = dlsym("?detachesOnPistonMove@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
@@ -316,19 +301,9 @@ public:
         *((void**)&rv) = dlsym("?causesFreezeEffect@BlockLegacy@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool hasComparatorSignal() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?hasComparatorSignal@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isDoorBlock() const{
         bool (BlockLegacy::*rv)() const;
         *((void**)&rv) = dlsym("?isDoorBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isSignalSource() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isSignalSource@BlockLegacy@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isCandleCakeBlock() const{
@@ -339,26 +314,6 @@ public:
     inline bool isFenceBlock() const{
         bool (BlockLegacy::*rv)() const;
         *((void**)&rv) = dlsym("?isFenceBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isBounceBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isBounceBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool waterSpreadCausesSpawn() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canBeDestroyedByWaterSpread() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeDestroyedByWaterSpread@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isStairBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isStairBlock@BlockLegacy@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isVibrationBlocking() const{
@@ -379,21 +334,6 @@ public:
     inline bool isButtonBlock() const{
         bool (BlockLegacy::*rv)() const;
         *((void**)&rv) = dlsym("?isButtonBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isRailBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isRailBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canSpawnOn() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?canSpawnOn@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canBeSilkTouched() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeSilkTouched@BlockLegacy@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline void onPlayerPlacing(class BlockSource & a0, class BlockPos const & a1, class Actor & a2, unsigned char a3) const{

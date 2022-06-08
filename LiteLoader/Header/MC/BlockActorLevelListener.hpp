@@ -48,6 +48,11 @@ public:
     /*23*/ virtual void __unk_vfn_23();
     /*24*/ virtual void __unk_vfn_24();
     /*25*/ virtual void onChunkUnloaded(class LevelChunk &);
+    /*26*/ virtual void onLevelDestruction(std::string const &);
+    /*27*/ virtual void __unk_vfn_27();
+    /*28*/ virtual void levelEvent(enum LevelEvent, class Vec3 const &, int);
+    /*29*/ virtual void __unk_vfn_29();
+    /*30*/ virtual void levelSoundEvent(enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
     MCAPI BlockActorLevelListener();
 
 protected:

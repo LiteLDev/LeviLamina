@@ -25,9 +25,9 @@ public:
 
 public:
     /*0*/ virtual ~FurnaceIngredientContainerValidation();
-    /*2*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual void __unk_vfn_5();
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
+    /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const &) const;
+    /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 

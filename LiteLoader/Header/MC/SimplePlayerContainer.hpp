@@ -25,15 +25,21 @@ public:
 
 public:
     /*0*/ virtual ~SimplePlayerContainer();
-    /*1*/ virtual void __unk_vfn_1();
+    /*1*/ virtual void init();
     /*9*/ virtual void setItem(int, class ItemStack const &);
     /*10*/ virtual void setItemWithForceBalance(int, class ItemStack const &, bool);
     /*15*/ virtual int getMaxStackSize() const;
-    /*16*/ virtual void __unk_vfn_16();
-    /*17*/ virtual void __unk_vfn_17();
+    /*16*/ virtual void startOpen(class Player &);
+    /*17*/ virtual void stopOpen(class Player &);
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
-    /*31*/ virtual void __unk_vfn_31();
+    /*31*/ virtual void initializeContainerContents(class BlockSource &);
+    /*33*/ virtual bool add(class ItemStack &);
+    /*34*/ virtual bool canAdd(class ItemStack const &) const;
+    /*35*/ virtual void clearSlot(int);
+    /*36*/ virtual int clearInventory(int);
+    /*37*/ virtual void load(class ListTag const &, class SemVersion const &, class Level &);
+    /*38*/ virtual int getEmptySlotsCount() const;
     MCAPI SimplePlayerContainer(class Player &, std::string const &, bool, int, enum ContainerType);
 
 protected:

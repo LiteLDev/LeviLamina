@@ -28,57 +28,20 @@ public:
     /*0*/ virtual ~InMemoryEnv();
     /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
     /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
-    /*3*/ virtual class Block const * tryGetLiquidBlock(class BlockPos const &) const;
-    /*4*/ virtual class Block const & getBlock(class BlockPos const &) const;
-    /*5*/ virtual class Block const & getBlockNoBoundsCheck(class BlockPos const &) const;
-    /*6*/ virtual class Block const & getExtraBlock(class BlockPos const &) const;
-    /*7*/ virtual class gsl::span<class BlockDataFetchResult<class Block> const, -1> fetchBlocksInBox(class BoundingBox const &, class std::function<bool (class Block const &)>);
+    /*3*/ virtual class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
+    /*4*/ virtual class leveldb::Status NewAppendableFile(std::string const &, class leveldb::WritableFile **);
+    /*5*/ virtual bool FileExists(std::string const &);
+    /*6*/ virtual class leveldb::Status GetChildren(std::string const &, std::vector<std::string> *);
+    /*7*/ virtual class leveldb::Status DeleteFileA(std::string const &);
     /*8*/ virtual bool hasBiomeTag(unsigned __int64, class BlockPos const &) const;
     /*9*/ virtual bool setBlock(class BlockPos const &, class Block const &, int);
     /*10*/ virtual bool setBlockSimple(class BlockPos const &, class Block const &);
-    /*11*/ virtual bool apply() const;
+    /*11*/ virtual class leveldb::Status RenameFile(std::string const &, std::string const &);
     /*12*/ virtual bool placeStructure(class BlockPos const &, class StructureTemplate &, class StructureSettings &);
     /*13*/ virtual bool mayPlace(class BlockPos const &, class Block const &) const;
     /*16*/ virtual short getMinHeight() const;
-    /*17*/ virtual void __unk_vfn_17();
-    /*20*/ virtual class Biome const * getBiome(class BlockPos const &) const;
-    /*
-    inline class leveldb::Status DeleteFileA(std::string const & a0){
-        class leveldb::Status (InMemoryEnv::*rv)(std::string const &);
-        *((void**)&rv) = dlsym("?DeleteFileA@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0));
-    }
-    inline bool FileExists(std::string const & a0){
-        bool (InMemoryEnv::*rv)(std::string const &);
-        *((void**)&rv) = dlsym("?FileExists@InMemoryEnv@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0));
-    }
-    inline class leveldb::Status GetChildren(std::string const & a0, std::vector<std::string> * a1){
-        class leveldb::Status (InMemoryEnv::*rv)(std::string const &, std::vector<std::string> *);
-        *((void**)&rv) = dlsym("?GetChildren@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<std::vector<std::string> *>(a1));
-    }
-    inline class leveldb::Status NewAppendableFile(std::string const & a0, class leveldb::WritableFile ** a1){
-        class leveldb::Status (InMemoryEnv::*rv)(std::string const &, class leveldb::WritableFile **);
-        *((void**)&rv) = dlsym("?NewAppendableFile@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class leveldb::WritableFile **>(a1));
-    }
-    inline class leveldb::Status NewWritableFile(std::string const & a0, class leveldb::WritableFile ** a1){
-        class leveldb::Status (InMemoryEnv::*rv)(std::string const &, class leveldb::WritableFile **);
-        *((void**)&rv) = dlsym("?NewWritableFile@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class leveldb::WritableFile **>(a1));
-    }
-    inline class leveldb::Status RenameFile(std::string const & a0, std::string const & a1){
-        class leveldb::Status (InMemoryEnv::*rv)(std::string const &, std::string const &);
-        *((void**)&rv) = dlsym("?RenameFile@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<std::string const &>(a1));
-    }
-    inline void flushToPermanentStorage(){
-        void (InMemoryEnv::*rv)();
-        *((void**)&rv) = dlsym("?flushToPermanentStorage@InMemoryEnv@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+    /*17*/ virtual bool shimPlaceForOldFeatures(class Feature const &, class BlockPos const &, class Random &) const;
+    /*20*/ virtual void flushToPermanentStorage();
     MCAPI InMemoryEnv(class leveldb::Env *, class Core::Path const &);
 
 protected:
