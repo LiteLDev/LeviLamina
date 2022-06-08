@@ -2022,6 +2022,8 @@ TClasslessInstanceHook(void, "?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEA
 }
 
 #include <MC/WeakEntityRef.hpp>
+#include <mc/EntityContext.hpp>
+
 ////////////// NpcCmd //////////////
 TInstanceHook(void,
       "?executeCommandAction@NpcComponent@@QEAAXAEAVActor@@AEAVPlayer@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
@@ -2031,7 +2033,10 @@ TInstanceHook(void,
     {
         //IDA NpcComponent::executeCommandAction
         //NpcSceneDialogueData data(*this, *ac, a5);
-        NpcSceneDialogueData data(*(WeakEntityRef*)((char*)this + 8), a5);
+		
+        auto ec = (EntityContext*)((char*)ac + 8);
+        NpcSceneDialogueData data(WeakEntityRef(ec->getWeakRef()), a5);
+		
         auto container = data.getActionsContainer();
         auto actionAt = container->getActionAt(a4);
         if (actionAt && dAccess<char>(actionAt, 8) == (char)1)

@@ -6,6 +6,7 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "NpcComponent.hpp"
+#include "WeakEntityRef.hpp"
 #undef BEFORE_EXTRA
 
 class NpcSceneDialogueData {
@@ -14,8 +15,7 @@ class NpcSceneDialogueData {
 // Add Member There
 #define ENABLE_VIRTUAL_FAKESYMBOL_NPCSCENEDIALOGUEDATA
 public:
-NpcComponent mComponent;
-    Actor mActor;
+    WeakEntityRef mWer;
     string mString;
 #undef AFTER_EXTRA
 
