@@ -12,6 +12,7 @@
 #include <MC/ServerNetworkHandler.hpp>
 #include <MC/ClientCacheBlobStatusPacket.hpp>
 #include <MC/BinaryStream.hpp>
+#include <EventAPI.h>
 
 #include <MC/SharedConstants.hpp>
 #include <MC/PropertiesSettings.hpp>
@@ -137,11 +138,6 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
         }
     }
     return original(this, netid, pk);
-}
-
-#include <EventAPI.h>
-void FixBugEvent()
-{
 }
 
 TInstanceHook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", PropertiesSettings, const std::string& file)

@@ -41,9 +41,10 @@ LIAPI std::vector<const ItemStack*> Container::getAllSlots() {
     return getSlots();
 }
 
-LIAPI int Container::getSize() {
-    using _QWORD = unsigned long long;
-    return (*(signed int(__fastcall**)(__int64))(*(_QWORD*)this + 112i64))((unsigned long long)this); //IDA Container::getSlotCopies
+LIAPI int Container::getSize()
+{
+    // return (*(signed int(__fastcall**)(__int64))(*(_QWORD*)this + 112i64))((unsigned long long)this); //IDA Container::getSlotCopies
+    return getContainerSize();
 }
 
 LIAPI bool Container::hasContainer(Vec3& pos, int dim) {
