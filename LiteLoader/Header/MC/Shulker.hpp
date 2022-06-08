@@ -60,13 +60,18 @@ public:
     /*269*/ virtual void __unk_vfn_269();
     /*277*/ virtual void _onSizeUpdated();
     /*278*/ virtual void __unk_vfn_278();
+    /*280*/ virtual void __unk_vfn_280();
     /*291*/ virtual void travel(float, float, float);
     /*294*/ virtual void aiStep();
     /*299*/ virtual bool checkSpawnRules(bool);
+    /*303*/ virtual void __unk_vfn_303();
+    /*304*/ virtual void __unk_vfn_304();
     /*307*/ virtual void __unk_vfn_307();
     /*308*/ virtual float getMaxHeadXRot();
     /*311*/ virtual void __unk_vfn_311();
     /*316*/ virtual int getArmorValue() const;
+    /*321*/ virtual void __unk_vfn_321();
+    /*338*/ virtual void __unk_vfn_338();
     /*345*/ virtual void __unk_vfn_345();
     /*350*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
     /*359*/ virtual void __unk_vfn_359();

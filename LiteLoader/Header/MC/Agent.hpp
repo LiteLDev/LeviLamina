@@ -63,11 +63,16 @@ public:
     /*269*/ virtual void __unk_vfn_269();
     /*278*/ virtual void __unk_vfn_278();
     /*279*/ virtual void knockback(class Actor *, int, float, float, float, float, float);
+    /*280*/ virtual void __unk_vfn_280();
     /*291*/ virtual void travel(float, float, float);
     /*294*/ virtual void aiStep();
+    /*303*/ virtual void __unk_vfn_303();
+    /*304*/ virtual void __unk_vfn_304();
     /*307*/ virtual void __unk_vfn_307();
     /*311*/ virtual void __unk_vfn_311();
+    /*321*/ virtual void __unk_vfn_321();
     /*337*/ virtual bool createAIGoals();
+    /*338*/ virtual void __unk_vfn_338();
     /*344*/ virtual bool canExistWhenDisallowMob() const;
     /*345*/ virtual void __unk_vfn_345();
     /*350*/ virtual std::unique_ptr<class BodyControl> initBodyControl();

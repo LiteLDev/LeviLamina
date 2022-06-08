@@ -25,6 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~ScriptPlayerInventoryComponentContainer();
+    /*4*/ virtual void __unk_vfn_4();
     /*11*/ virtual class Container * _tryGetContainer() const;
     /*12*/ virtual void _balanceTransaction(class ItemStack const &) const;
     MCAPI ScriptPlayerInventoryComponentContainer(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &);

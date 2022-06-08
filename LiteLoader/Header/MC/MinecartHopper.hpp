@@ -46,12 +46,18 @@ public:
     /*261*/ virtual void __unk_vfn_261();
     /*269*/ virtual void __unk_vfn_269();
     /*278*/ virtual void __unk_vfn_278();
-    /*279*/ virtual void destroy(class ActorDamageSource const &, bool);
     /*280*/ virtual enum MinecartType getType();
     /*281*/ virtual class Block const * getDefaultDisplayBlock() const;
     /*282*/ virtual void __unk_vfn_282();
     /*283*/ virtual int getDefaultDisplayOffset() const;
     /*284*/ virtual void applyNaturalSlowdown(class BlockSource &);
+    /*
+    inline void destroy(class ActorDamageSource const & a0, bool a1){
+        void (MinecartHopper::*rv)(class ActorDamageSource const &, bool);
+        *((void**)&rv) = dlsym("?destroy@MinecartHopper@@UEAAXAEBVActorDamageSource@@_N@Z");
+        return (this->*rv)(std::forward<class ActorDamageSource const &>(a0), std::forward<bool>(a1));
+    }
+    */
     MCAPI MinecartHopper(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

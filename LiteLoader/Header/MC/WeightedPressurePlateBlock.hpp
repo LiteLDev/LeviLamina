@@ -59,10 +59,26 @@ public:
     /*180*/ virtual void __unk_vfn_180();
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual int getTickDelay() const;
     /*204*/ virtual int getSignalStrength(class BlockSource &, class BlockPos const &) const;
-    /*205*/ virtual int getSignalForData(int) const;
-    /*206*/ virtual int getRedstoneSignal(int) const;
+    /*205*/ virtual void __unk_vfn_205();
+    /*206*/ virtual void __unk_vfn_206();
+    /*
+    inline int getTickDelay() const{
+        int (WeightedPressurePlateBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?getTickDelay@WeightedPressurePlateBlock@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline int getRedstoneSignal(int a0) const{
+        int (WeightedPressurePlateBlock::*rv)(int) const;
+        *((void**)&rv) = dlsym("?getRedstoneSignal@WeightedPressurePlateBlock@@MEBAHH@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    inline int getSignalForData(int a0) const{
+        int (WeightedPressurePlateBlock::*rv)(int) const;
+        *((void**)&rv) = dlsym("?getSignalForData@WeightedPressurePlateBlock@@MEBAHH@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    */
     MCAPI WeightedPressurePlateBlock(std::string const &, int, class Material const &, int);
     MCAPI static int const MAX_WEIGHT_HEAVY;
     MCAPI static int const MAX_WEIGHT_LIGHT;

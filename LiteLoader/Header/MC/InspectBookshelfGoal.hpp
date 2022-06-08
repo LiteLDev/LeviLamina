@@ -33,7 +33,13 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /*13*/ virtual bool _canReach(class BlockPos const &);
-    /*17*/ virtual bool findTargetBlock();
+    /*
+    inline bool findTargetBlock(){
+        bool (InspectBookshelfGoal::*rv)();
+        *((void**)&rv) = dlsym("?findTargetBlock@InspectBookshelfGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI InspectBookshelfGoal(class Mob &, float, int, int, int, float);
 
 protected:

@@ -51,12 +51,16 @@ public:
     /*262*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /*269*/ virtual void __unk_vfn_269();
     /*278*/ virtual void __unk_vfn_278();
-    /*279*/ virtual float getInertia();
     /*280*/ virtual void __unk_vfn_280();
     /*
     inline bool shouldBurn(){
         bool (WitherSkull::*rv)();
         *((void**)&rv) = dlsym("?shouldBurn@WitherSkull@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline float getInertia(){
+        float (WitherSkull::*rv)();
+        *((void**)&rv) = dlsym("?getInertia@WitherSkull@@MEAAMXZ");
         return (this->*rv)();
     }
     */

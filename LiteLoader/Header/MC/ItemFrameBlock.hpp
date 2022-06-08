@@ -77,14 +77,12 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
     /*204*/ virtual class HashedString getSpawnedItemName() const;
     /*205*/ virtual void __unk_vfn_205();
     /*206*/ virtual void __unk_vfn_206();
     /*207*/ virtual void __unk_vfn_207();
     /*208*/ virtual void __unk_vfn_208();
     /*209*/ virtual void __unk_vfn_209();
-    /*210*/ MCAPI std::string const & getDescriptionId() const;
     /*
     inline bool waterSpreadCausesSpawn() const{
         bool (ItemFrameBlock::*rv)() const;
@@ -100,6 +98,11 @@ public:
         bool (ItemFrameBlock::*rv)() const;
         *((void**)&rv) = dlsym("?isInteractiveBlock@ItemFrameBlock@@UEBA_NXZ");
         return (this->*rv)();
+    }
+    inline class ItemInstance getEntityResourceItem(class Randomize & a0, class BlockActor const & a1, int a2) const{
+        class ItemInstance (ItemFrameBlock::*rv)(class Randomize &, class BlockActor const &, int) const;
+        *((void**)&rv) = dlsym("?getEntityResourceItem@ItemFrameBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z");
+        return (this->*rv)(std::forward<class Randomize &>(a0), std::forward<class BlockActor const &>(a1), std::forward<int>(a2));
     }
     */
     MCAPI ItemFrameBlock(std::string const &, int);

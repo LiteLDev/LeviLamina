@@ -66,7 +66,6 @@ public:
     /*181*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
     /*
     inline bool canBeSilkTouched() const{
         bool (SkullBlock::*rv)() const;
@@ -77,6 +76,11 @@ public:
         bool (SkullBlock::*rv)() const;
         *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@SkullBlock@@UEBA_NXZ");
         return (this->*rv)();
+    }
+    inline class ItemInstance getEntityResourceItem(class Randomize & a0, class BlockActor const & a1, int a2) const{
+        class ItemInstance (SkullBlock::*rv)(class Randomize &, class BlockActor const &, int) const;
+        *((void**)&rv) = dlsym("?getEntityResourceItem@SkullBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z");
+        return (this->*rv)(std::forward<class Randomize &>(a0), std::forward<class BlockActor const &>(a1), std::forward<int>(a2));
     }
     */
     MCAPI SkullBlock(std::string const &, int);

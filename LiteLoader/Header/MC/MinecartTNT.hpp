@@ -50,10 +50,16 @@ public:
     /*262*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /*269*/ virtual void __unk_vfn_269();
     /*278*/ virtual void __unk_vfn_278();
-    /*279*/ virtual void destroy(class ActorDamageSource const &, bool);
     /*280*/ virtual enum MinecartType getType();
     /*281*/ virtual class Block const * getDefaultDisplayBlock() const;
     /*282*/ virtual void __unk_vfn_282();
+    /*
+    inline void destroy(class ActorDamageSource const & a0, bool a1){
+        void (MinecartTNT::*rv)(class ActorDamageSource const &, bool);
+        *((void**)&rv) = dlsym("?destroy@MinecartTNT@@UEAAXAEBVActorDamageSource@@_N@Z");
+        return (this->*rv)(std::forward<class ActorDamageSource const &>(a0), std::forward<bool>(a1));
+    }
+    */
     MCAPI MinecartTNT(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void primeFuse(enum ActorDamageCause);
 

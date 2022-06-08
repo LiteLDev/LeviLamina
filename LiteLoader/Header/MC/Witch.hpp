@@ -51,10 +51,15 @@ public:
     /*269*/ virtual void __unk_vfn_269();
     /*277*/ virtual void _onSizeUpdated();
     /*278*/ virtual void __unk_vfn_278();
+    /*280*/ virtual void __unk_vfn_280();
     /*294*/ virtual void aiStep();
+    /*303*/ virtual void __unk_vfn_303();
+    /*304*/ virtual void __unk_vfn_304();
     /*307*/ virtual void __unk_vfn_307();
     /*311*/ virtual void __unk_vfn_311();
+    /*321*/ virtual void __unk_vfn_321();
     /*334*/ virtual float getDamageAfterEnchantReduction(class ActorDamageSource const &, float) const;
+    /*338*/ virtual void __unk_vfn_338();
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
     MCAPI Witch(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

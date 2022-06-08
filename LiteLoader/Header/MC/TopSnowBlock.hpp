@@ -83,7 +83,6 @@ public:
     /*185*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual class mce::Color getDustColor(class Block const &) const;
     /*204*/ virtual std::string getDustParticleName(class Block const &) const;
     /*205*/ virtual void __unk_vfn_205();
     /*207*/ virtual bool isFreeToFall(class BlockSource &, class BlockPos const &) const;
@@ -108,6 +107,11 @@ public:
         bool (TopSnowBlock::*rv)() const;
         *((void**)&rv) = dlsym("?canHaveExtraData@TopSnowBlock@@UEBA_NXZ");
         return (this->*rv)();
+    }
+    inline class mce::Color getDustColor(class Block const & a0) const{
+        class mce::Color (TopSnowBlock::*rv)(class Block const &) const;
+        *((void**)&rv) = dlsym("?getDustColor@TopSnowBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z");
+        return (this->*rv)(std::forward<class Block const &>(a0));
     }
     */
     MCAPI TopSnowBlock(std::string const &, int);

@@ -25,10 +25,17 @@ public:
 
 public:
     /*0*/ virtual ~ScriptActor();
-    /*4*/ virtual class Scripting::Result<std::string> getNameTag() const;
+    /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual class Scripting::Result<void> setNameTag(std::string const &) const;
     /*6*/ virtual class Scripting::Result<bool> getSneaking() const;
     /*7*/ virtual class Scripting::Result<void> setSneaking(bool) const;
+    /*
+    inline class Scripting::Result<std::string> getNameTag() const{
+        class Scripting::Result<std::string> (ScriptActor::*rv)() const;
+        *((void**)&rv) = dlsym("?getNameTag@ScriptActor@@UEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Scripting@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptActor(class ScriptActor &&);
     MCAPI ScriptActor(class Actor const &, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<void> addEffect(class ScriptEffectType const &, int, int, bool);

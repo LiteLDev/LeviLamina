@@ -29,6 +29,7 @@ public:
     /*2*/ virtual bool save(class CompoundTag &) const;
     /*7*/ virtual void tick(class BlockSource &);
     /*12*/ virtual void __unk_vfn_12();
+    /*13*/ virtual void __unk_vfn_13();
     /*16*/ virtual void __unk_vfn_16();
     /*27*/ virtual class PistonBlockActor * getOwningPiston(class BlockSource &);
     /*28*/ virtual void __unk_vfn_28();

@@ -46,10 +46,16 @@ public:
     /*261*/ virtual void __unk_vfn_261();
     /*269*/ virtual void __unk_vfn_269();
     /*278*/ virtual void __unk_vfn_278();
-    /*279*/ virtual float getThrowPower();
     /*280*/ virtual void __unk_vfn_280();
     /*281*/ virtual float getThrowUpAngleOffset();
     /*282*/ virtual float getGravity();
+    /*
+    inline float getThrowPower(){
+        float (ExperiencePotion::*rv)();
+        *((void**)&rv) = dlsym("?getThrowPower@ExperiencePotion@@MEAAMXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ExperiencePotion(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

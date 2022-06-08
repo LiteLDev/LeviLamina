@@ -27,7 +27,6 @@ public:
     /*0*/ virtual ~IdleState();
     /*1*/ virtual void tick();
     /*2*/ virtual void start();
-    /*3*/ virtual void stop();
     MCAPI static std::unique_ptr<class IdleState> create(class PetSleepWithOwnerGoal &);
 
 protected:

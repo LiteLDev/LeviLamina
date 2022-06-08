@@ -36,13 +36,20 @@ public:
     /*8*/ virtual class Actor * getEntity() const;
     /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
+    /*17*/ virtual void __unk_vfn_17();
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
     /*32*/ virtual class BaseCommandBlock * _getBaseCommandBlock(class BlockSource &) const;
     /*33*/ virtual class CommandBlockActor * _getBlockEntity(class BlockSource &) const;
+    /*
+    inline bool canUseCommandsWithoutCheatsEnabled() const{
+        bool (BlockCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?canUseCommandsWithoutCheatsEnabled@BlockCommandOrigin@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BlockCommandOrigin(class BlockSource &, class BlockPos const &);
     MCAPI BlockCommandOrigin(class Level &, class AutomaticID<class Dimension, int>, std::string const &, class BlockPos const &);
     MCAPI static std::unique_ptr<class BlockCommandOrigin> load(class CompoundTag const &, class Level &);

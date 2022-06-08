@@ -68,7 +68,13 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
+    /*
+    inline class ItemInstance getEntityResourceItem(class Randomize & a0, class BlockActor const & a1, int a2) const{
+        class ItemInstance (SignBlock::*rv)(class Randomize &, class BlockActor const &, int) const;
+        *((void**)&rv) = dlsym("?getEntityResourceItem@SignBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z");
+        return (this->*rv)(std::forward<class Randomize &>(a0), std::forward<class BlockActor const &>(a1), std::forward<int>(a2));
+    }
+    */
     MCAPI SignBlock(std::string const &, int, bool, enum SignBlockActor::SignType);
 
 protected:

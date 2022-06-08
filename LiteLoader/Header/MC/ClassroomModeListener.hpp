@@ -32,7 +32,6 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void __unk_vfn_10();
-    /*11*/ virtual class Particle * addParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
     /*
     inline void onEntityRemoved(class Actor & a0){
         void (ClassroomModeListener::*rv)(class Actor &);

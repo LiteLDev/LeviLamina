@@ -48,8 +48,13 @@ public:
     /*261*/ virtual void __unk_vfn_261();
     /*269*/ virtual void __unk_vfn_269();
     /*278*/ virtual void __unk_vfn_278();
+    /*280*/ virtual void __unk_vfn_280();
+    /*303*/ virtual void __unk_vfn_303();
+    /*304*/ virtual void __unk_vfn_304();
     /*307*/ virtual void __unk_vfn_307();
     /*311*/ virtual void __unk_vfn_311();
+    /*321*/ virtual void __unk_vfn_321();
+    /*338*/ virtual void __unk_vfn_338();
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
     /*

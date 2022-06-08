@@ -31,6 +31,7 @@ public:
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void onRemoved(class BlockSource &);
     /*16*/ virtual void __unk_vfn_16();
+    /*27*/ virtual void __unk_vfn_27();
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();

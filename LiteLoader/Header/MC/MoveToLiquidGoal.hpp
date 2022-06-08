@@ -32,7 +32,13 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
-    /*17*/ virtual bool findTargetBlock();
+    /*
+    inline bool findTargetBlock(){
+        bool (MoveToLiquidGoal::*rv)();
+        *((void**)&rv) = dlsym("?findTargetBlock@MoveToLiquidGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI MoveToLiquidGoal(class Mob &, float, int, int, int, enum MaterialType, float);
 
 protected:

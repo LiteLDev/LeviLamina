@@ -68,7 +68,13 @@ public:
     /*192*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual class ItemInstance getExtraResourceItem(class Block const &) const;
+    /*
+    inline class ItemInstance getExtraResourceItem(class Block const & a0) const{
+        class ItemInstance (OldLeafBlock::*rv)(class Block const &) const;
+        *((void**)&rv) = dlsym("?getExtraResourceItem@OldLeafBlock@@MEBA?AVItemInstance@@AEBVBlock@@@Z");
+        return (this->*rv)(std::forward<class Block const &>(a0));
+    }
+    */
     MCAPI OldLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
 
 protected:

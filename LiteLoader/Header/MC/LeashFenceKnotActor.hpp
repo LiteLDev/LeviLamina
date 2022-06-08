@@ -55,11 +55,33 @@ public:
     /*269*/ virtual void __unk_vfn_269();
     /*277*/ virtual void _onSizeUpdated();
     /*278*/ virtual void __unk_vfn_278();
-    /*279*/ virtual void setDir(int);
-    /*280*/ virtual int getWidth() const;
-    /*281*/ virtual int getHeight() const;
-    /*282*/ virtual void dropItem();
+    /*280*/ virtual void __unk_vfn_280();
+    /*281*/ virtual void __unk_vfn_281();
+    /*282*/ virtual void __unk_vfn_282();
+    /*283*/ virtual void __unk_vfn_283();
     /*284*/ virtual bool wouldSurvive(class BlockSource &);
+    /*
+    inline void dropItem(){
+        void (LeashFenceKnotActor::*rv)();
+        *((void**)&rv) = dlsym("?dropItem@LeashFenceKnotActor@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void setDir(int a0){
+        void (LeashFenceKnotActor::*rv)(int);
+        *((void**)&rv) = dlsym("?setDir@LeashFenceKnotActor@@UEAAXH@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    inline int getHeight() const{
+        int (LeashFenceKnotActor::*rv)() const;
+        *((void**)&rv) = dlsym("?getHeight@LeashFenceKnotActor@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline int getWidth() const{
+        int (LeashFenceKnotActor::*rv)() const;
+        *((void**)&rv) = dlsym("?getWidth@LeashFenceKnotActor@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI LeashFenceKnotActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI int numberofAnimalsAttached();
     MCAPI void removeAnimals(class Player *);

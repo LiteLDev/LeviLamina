@@ -52,7 +52,6 @@ public:
     /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
     /*269*/ virtual void __unk_vfn_269();
     /*278*/ virtual void __unk_vfn_278();
-    /*279*/ virtual float getThrowPower();
     /*280*/ virtual void __unk_vfn_280();
     /*281*/ virtual float getThrowUpAngleOffset();
     /*282*/ virtual float getGravity();
@@ -72,6 +71,11 @@ public:
         void (Throwable::*rv)(class HitResult const &);
         *((void**)&rv) = dlsym("?onHit@Throwable@@MEAAXAEBVHitResult@@@Z");
         return (this->*rv)(std::forward<class HitResult const &>(a0));
+    }
+    inline float getThrowPower(){
+        float (Throwable::*rv)();
+        *((void**)&rv) = dlsym("?getThrowPower@Throwable@@UEAAMXZ");
+        return (this->*rv)();
     }
     */
     MCAPI Throwable(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

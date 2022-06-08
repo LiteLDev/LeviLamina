@@ -27,7 +27,9 @@ public:
     /*0*/ virtual ~WorldLimitChunkSource();
     /*3*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
     /*6*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum ChunkSource::LoadMode, bool);
+    /*9*/ virtual void __unk_vfn_9();
     /*21*/ virtual bool isWithinWorldLimit(class ChunkPos const &) const;
+    /*24*/ virtual void __unk_vfn_24();
     /*25*/ virtual bool canCreateViews() const;
     MCAPI WorldLimitChunkSource(std::unique_ptr<class ChunkSource>, class BlockPos const &, int, int);
 

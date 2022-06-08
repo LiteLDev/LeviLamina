@@ -87,7 +87,6 @@ public:
     /*191*/ virtual enum BlockRenderLayer getRenderLayer() const;
     /*192*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
     /*
     inline bool canBeSilkTouched() const{
         bool (DoublePlantBlock::*rv)() const;

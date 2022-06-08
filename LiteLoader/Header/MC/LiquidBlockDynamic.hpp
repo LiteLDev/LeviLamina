@@ -61,12 +61,10 @@ public:
     /*184*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual void __unk_vfn_203();
     /*204*/ virtual void __unk_vfn_204();
     /*205*/ virtual void __unk_vfn_205();
     /*206*/ virtual void __unk_vfn_206();
     /*207*/ virtual void __unk_vfn_207();
-    /*208*/ MCAPI std::string const & getDescriptionId() const;
     MCAPI LiquidBlockDynamic(std::string const &, int, class Material const &);
     MCAPI class std::array<bool, 4> getSpread(class BlockSource &, class BlockPos const &) const;
     MCAPI bool shouldBecomeStatic(class BlockSource &, class BlockPos const &, class Random &) const;

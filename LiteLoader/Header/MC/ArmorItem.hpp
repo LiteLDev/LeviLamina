@@ -3,6 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Json.hpp"
+#include "Potion.hpp"
 #include "Item.hpp"
 
 #define BEFORE_EXTRA
@@ -66,7 +67,13 @@ public:
     /*89*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*116*/ virtual class Item & setIcon(std::string const &, int);
-    /*128*/ virtual float getArmorKnockbackResistance() const;
+    /*
+    inline float getArmorKnockbackResistance() const{
+        float (ArmorItem::*rv)() const;
+        *((void**)&rv) = dlsym("?getArmorKnockbackResistance@ArmorItem@@UEBAMXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ArmorItem(std::string const &, int, class ArmorItem::ArmorMaterial const &, int, enum ArmorSlot);
     MCAPI static class ArmorItem::ArmorMaterial const CHAIN;
     MCAPI static class ArmorItem::ArmorMaterial const DIAMOND;

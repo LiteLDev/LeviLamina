@@ -25,13 +25,10 @@ public:
 
 public:
     /*0*/ virtual ~OffhandContainerValidation();
-    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
-    /*3*/ virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual bool canDestroy(class ContainerScreenContext const &) const;
     /*
     inline bool canItemMoveToContainer(class ItemStackBase const & a0) const{
         bool (OffhandContainerValidation::*rv)(class ItemStackBase const &) const;

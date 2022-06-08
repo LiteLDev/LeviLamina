@@ -3,6 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Json.hpp"
+#include "Potion.hpp"
 #include "BoatItem.hpp"
 
 #define BEFORE_EXTRA
@@ -38,7 +39,13 @@ public:
     /*75*/ virtual void __unk_vfn_75();
     /*76*/ virtual void __unk_vfn_76();
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-    /*128*/ virtual enum ActorType _getActorType() const;
+    /*
+    inline enum ActorType _getActorType() const{
+        enum ActorType (ChestBoatItem::*rv)() const;
+        *((void**)&rv) = dlsym("?_getActorType@ChestBoatItem@@EEBA?AW4ActorType@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ChestBoatItem(std::string const &, int, enum WoodType);
 
 protected:

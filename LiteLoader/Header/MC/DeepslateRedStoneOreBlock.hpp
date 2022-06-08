@@ -61,7 +61,13 @@ public:
     /*184*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual void _lightUpBlock(class BlockSource &, class BlockPos const &) const;
+    /*
+    inline void _lightUpBlock(class BlockSource & a0, class BlockPos const & a1) const{
+        void (DeepslateRedStoneOreBlock::*rv)(class BlockSource &, class BlockPos const &) const;
+        *((void**)&rv) = dlsym("?_lightUpBlock@DeepslateRedStoneOreBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1));
+    }
+    */
     MCAPI DeepslateRedStoneOreBlock(std::string const &, int, bool);
 
 protected:

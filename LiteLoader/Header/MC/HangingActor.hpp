@@ -56,12 +56,15 @@ public:
     /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
     /*269*/ virtual void __unk_vfn_269();
     /*278*/ virtual void __unk_vfn_278();
-    /*279*/ virtual void setDir(int);
-    /*280*/ virtual int getWidth() const = 0;
-    /*281*/ virtual int getHeight() const = 0;
-    /*282*/ virtual void dropItem() = 0;
     /*283*/ virtual bool placeHangingEntity(class BlockSource &, int);
     /*284*/ virtual bool wouldSurvive(class BlockSource &);
+    /*
+    inline void setDir(int a0){
+        void (HangingActor::*rv)(int);
+        *((void**)&rv) = dlsym("?setDir@HangingActor@@UEAAXH@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    */
     MCAPI HangingActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI int getDirection() const;
 

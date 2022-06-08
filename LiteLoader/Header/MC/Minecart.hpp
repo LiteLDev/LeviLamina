@@ -61,8 +61,6 @@ public:
     /*269*/ virtual void __unk_vfn_269();
     /*277*/ virtual void _onSizeUpdated();
     /*278*/ virtual void __unk_vfn_278();
-    /*279*/ virtual void destroy(class ActorDamageSource const &, bool);
-    /*280*/ virtual enum MinecartType getType() = 0;
     /*281*/ virtual class Block const * getDefaultDisplayBlock() const;
     /*282*/ virtual void __unk_vfn_282();
     /*283*/ virtual int getDefaultDisplayOffset() const;
@@ -78,6 +76,11 @@ public:
         int (Minecart::*rv)() const;
         *((void**)&rv) = dlsym("?getDefaultDisplayData@Minecart@@UEBAHXZ");
         return (this->*rv)();
+    }
+    inline void destroy(class ActorDamageSource const & a0, bool a1){
+        void (Minecart::*rv)(class ActorDamageSource const &, bool);
+        *((void**)&rv) = dlsym("?destroy@Minecart@@UEAAXAEBVActorDamageSource@@_N@Z");
+        return (this->*rv)(std::forward<class ActorDamageSource const &>(a0), std::forward<bool>(a1));
     }
     */
     MCAPI Minecart(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

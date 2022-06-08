@@ -33,7 +33,6 @@ public:
     /*7*/ virtual enum EventResult onLevelWeatherChange(std::string const &, bool, bool);
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual enum EventResult onEvent(struct LevelStartLeaveGameEvent const &);
-    /*10*/ virtual enum EventResult onEvent(struct LevelNotificationEvent const &);
     MCAPI ScriptLevelEventListener(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 
 protected:

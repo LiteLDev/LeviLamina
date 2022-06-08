@@ -56,9 +56,14 @@ public:
     /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
     /*269*/ virtual void __unk_vfn_269();
     /*278*/ virtual void __unk_vfn_278();
-    /*279*/ virtual void shoot(class Vec3 const &, float, float, class Vec3 const &);
     /*280*/ virtual void _playPickupSound();
-    /*281*/ virtual class ItemStack _getPickupItem() const = 0;
+    /*
+    inline void shoot(class Vec3 const & a0, float a1, float a2, class Vec3 const & a3){
+        void (AbstractArrow::*rv)(class Vec3 const &, float, float, class Vec3 const &);
+        *((void**)&rv) = dlsym("?shoot@AbstractArrow@@UEAAXAEBVVec3@@MM0@Z");
+        return (this->*rv)(std::forward<class Vec3 const &>(a0), std::forward<float>(a1), std::forward<float>(a2), std::forward<class Vec3 const &>(a3));
+    }
+    */
     MCAPI AbstractArrow(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI bool isPlayerOwned() const;
     MCAPI void setFavoredSlot(int);

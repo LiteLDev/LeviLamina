@@ -77,7 +77,6 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*195*/ virtual struct Brightness getLightEmission(class Block const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
     /*
     inline bool canBeSilkTouched() const{
         bool (SeaPickle::*rv)() const;

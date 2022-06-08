@@ -40,7 +40,6 @@ public:
     /*16*/ virtual enum EventResult onEvent(struct ItemDefinitionEventTriggeredEvent const &);
     /*17*/ virtual enum EventResult onEvent(struct ItemUseOnEvent const &);
     /*18*/ virtual enum EventResult onEvent(struct ItemUseEvent const &);
-    /*19*/ virtual enum EventResult onEvent(struct ItemNotificationEvent const &);
     MCAPI ScriptItemEventListener(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 
 protected:

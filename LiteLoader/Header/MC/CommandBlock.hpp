@@ -74,7 +74,6 @@ public:
     /*206*/ virtual void __unk_vfn_206();
     /*207*/ virtual void __unk_vfn_207();
     /*208*/ virtual void __unk_vfn_208();
-    /*209*/ MCAPI std::string const & getDescriptionId() const;
     /*
     inline bool isInteractiveBlock() const{
         bool (CommandBlock::*rv)() const;

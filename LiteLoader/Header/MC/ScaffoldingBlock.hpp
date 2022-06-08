@@ -73,7 +73,6 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*188*/ virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual class mce::Color getDustColor(class Block const &) const;
     /*204*/ virtual std::string getDustParticleName(class Block const &) const;
     /*205*/ virtual void __unk_vfn_205();
     /*
@@ -81,6 +80,11 @@ public:
         bool (ScaffoldingBlock::*rv)() const;
         *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@ScaffoldingBlock@@UEBA_NXZ");
         return (this->*rv)();
+    }
+    inline class mce::Color getDustColor(class Block const & a0) const{
+        class mce::Color (ScaffoldingBlock::*rv)(class Block const &) const;
+        *((void**)&rv) = dlsym("?getDustColor@ScaffoldingBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z");
+        return (this->*rv)(std::forward<class Block const &>(a0));
     }
     */
     MCAPI ScaffoldingBlock(std::string const &, int);

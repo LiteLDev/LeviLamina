@@ -64,7 +64,7 @@ public:
     /*261*/ virtual void __unk_vfn_261();
     /*269*/ virtual void __unk_vfn_269();
     /*278*/ virtual void __unk_vfn_278();
-    /*279*/ virtual void knockback(class Actor *, int, float, float, float, float, float);
+    /*280*/ virtual void __unk_vfn_280();
     /*294*/ virtual void aiStep();
     /*307*/ virtual void __unk_vfn_307();
     /*311*/ virtual void __unk_vfn_311();
@@ -74,6 +74,7 @@ public:
     /*322*/ virtual void sendArmor(class std::bitset<4> const &);
     /*332*/ virtual void clearVanishEnchantedItemsOnDeath();
     /*333*/ virtual void sendInventory(bool);
+    /*338*/ virtual void __unk_vfn_338();
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
     /*361*/ virtual void prepareRegion(class ChunkSource &);

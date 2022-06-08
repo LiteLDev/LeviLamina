@@ -3,6 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Json.hpp"
+#include "Potion.hpp"
 #include "Item.hpp"
 
 #define BEFORE_EXTRA
@@ -47,7 +48,13 @@ public:
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*116*/ virtual class Item & setIcon(std::string const &, int);
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-    /*128*/ virtual enum ActorType _getActorType() const;
+    /*
+    inline enum ActorType _getActorType() const{
+        enum ActorType (BoatItem::*rv)() const;
+        *((void**)&rv) = dlsym("?_getActorType@BoatItem@@EEBA?AW4ActorType@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BoatItem(std::string const &, int, enum WoodType);
 
 protected:

@@ -31,7 +31,13 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*14*/ virtual void _moveToBlock();
-    /*17*/ virtual bool findTargetBlock();
+    /*
+    inline bool findTargetBlock(){
+        bool (BaseMoveToBlockGoal::*rv)();
+        *((void**)&rv) = dlsym("?findTargetBlock@BaseMoveToBlockGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BaseMoveToBlockGoal(class Mob &, float, int, int, int, float, float);
 
 protected:

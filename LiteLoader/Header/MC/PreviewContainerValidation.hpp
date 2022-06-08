@@ -27,11 +27,8 @@ public:
     /*0*/ virtual ~PreviewContainerValidation();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
-    /*7*/ virtual bool canDestroy(class ContainerScreenContext const &) const;
     /*
     inline bool isValidSlotForContainer(class ContainerScreenContext const & a0, class Container const & a1, int a2) const{
         bool (PreviewContainerValidation::*rv)(class ContainerScreenContext const &, class Container const &, int) const;

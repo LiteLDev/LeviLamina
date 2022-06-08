@@ -70,7 +70,6 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
     /*
     inline bool canBeSilkTouched() const{
         bool (ChemistryTableBlock::*rv)() const;
@@ -86,6 +85,11 @@ public:
         bool (ChemistryTableBlock::*rv)() const;
         *((void**)&rv) = dlsym("?isInteractiveBlock@ChemistryTableBlock@@UEBA_NXZ");
         return (this->*rv)();
+    }
+    inline class ItemInstance getEntityResourceItem(class Randomize & a0, class BlockActor const & a1, int a2) const{
+        class ItemInstance (ChemistryTableBlock::*rv)(class Randomize &, class BlockActor const &, int) const;
+        *((void**)&rv) = dlsym("?getEntityResourceItem@ChemistryTableBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z");
+        return (this->*rv)(std::forward<class Randomize &>(a0), std::forward<class BlockActor const &>(a1), std::forward<int>(a2));
     }
     */
     MCAPI ChemistryTableBlock(std::string const &, int);

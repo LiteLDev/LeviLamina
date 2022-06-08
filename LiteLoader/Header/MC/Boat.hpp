@@ -59,7 +59,13 @@ public:
     /*262*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /*269*/ virtual void __unk_vfn_269();
     /*278*/ virtual void __unk_vfn_278();
-    /*279*/ virtual void destroy(class Actor *);
+    /*
+    inline void destroy(class Actor * a0){
+        void (Boat::*rv)(class Actor *);
+        *((void**)&rv) = dlsym("?destroy@Boat@@UEAAXPEAVActor@@@Z");
+        return (this->*rv)(std::forward<class Actor *>(a0));
+    }
+    */
     MCAPI Boat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void computePaddleForcesBasedOnGaze(class Vec3 &, float &, float &, float, float);
     MCAPI float getRowingTime(enum Side) const;

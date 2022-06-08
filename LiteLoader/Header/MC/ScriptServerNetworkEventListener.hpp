@@ -24,7 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptServerNetworkEventListener();
-    /*1*/ virtual enum EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const &);
     /*2*/ virtual enum EventResult onMessage(struct MessageEvent const &);
     /*3*/ virtual enum EventResult onEvent(struct ChatEvent const &);
     MCAPI ScriptServerNetworkEventListener(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);

@@ -217,6 +217,7 @@ public:
     /*269*/ virtual void __unk_vfn_269();
     /*277*/ virtual void _onSizeUpdated();
     /*278*/ virtual void __unk_vfn_278();
+    /*280*/ virtual void __unk_vfn_280();
     /*285*/ virtual float getSpeed() const;
     /*286*/ virtual void setSpeed(float);
     /*291*/ virtual void travel(float, float, float);
@@ -234,6 +235,7 @@ public:
     /*331*/ virtual void dropEquipmentOnDeath();
     /*332*/ virtual void clearVanishEnchantedItemsOnDeath();
     /*333*/ virtual void sendInventory(bool);
+    /*338*/ virtual void __unk_vfn_338();
     /*344*/ virtual bool canExistWhenDisallowMob() const;
     /*345*/ virtual void __unk_vfn_345();
     /*350*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
@@ -298,15 +300,11 @@ public:
     /*414*/ virtual void sendEventPacket(class EventPacket &) const;
     /*415*/ virtual void addExperience(int);
     /*416*/ virtual void addLevels(int);
-    /*417*/ virtual void setContainerData(class IContainerManager &, int, int) = 0;
-    /*418*/ virtual void slotChanged(class IContainerManager &, class Container &, int, class ItemStack const &, class ItemStack const &, bool) = 0;
     /*419*/ virtual void inventoryChanged(class Container &, int, class ItemStack const &, class ItemStack const &, bool);
-    /*420*/ virtual void refreshContainer(class IContainerManager &) = 0;
     /*421*/ virtual void deleteContainerManager();
     /*422*/ virtual void setFieldOfViewModifier(float);
     /*423*/ virtual bool is2DPositionRelevant(class AutomaticID<class Dimension, int>, class BlockPos const &);
     /*424*/ virtual bool isActorRelevant(class Actor const &);
-    /*425*/ virtual bool isTeacher() const = 0;
     /*426*/ virtual void onSuspension();
     /*427*/ virtual void onLinkedSlotsChanged();
     /*428*/ virtual void startCooldown(class Item const *, bool);
@@ -314,13 +312,7 @@ public:
     /*430*/ virtual int getItemCooldownLeft(unsigned __int64) const;
     /*431*/ virtual int getMaxItemCooldownLeft() const;
     /*432*/ virtual bool isItemOnCooldown(class HashedString const &) const;
-    /*433*/ virtual void sendInventoryTransaction(class InventoryTransaction const &) const = 0;
-    /*434*/ virtual void sendComplexInventoryTransaction(std::unique_ptr<class ComplexInventoryTransaction>) const = 0;
     /*435*/ virtual void sendNetworkPacket(class Packet &) const;
-    /*436*/ virtual class PlayerEventCoordinator & getPlayerEventCoordinator() = 0;
-    /*437*/ virtual class MoveInputHandler * getMoveInputHandler() const = 0;
-    /*438*/ virtual enum InputMode getInputMode() const = 0;
-    /*439*/ virtual enum ClientPlayMode getPlayMode() const = 0;
     /*440*/ virtual void reportMovementTelemetry(enum MovementEventType);
     /*441*/ virtual void __unk_vfn_441();
     /*442*/ virtual std::string getXuid() const;

@@ -3,6 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Json.hpp"
+#include "Potion.hpp"
 #include "MapItemSavedData.hpp"
 #include "Item.hpp"
 
@@ -48,7 +49,13 @@ public:
     /*108*/ virtual bool isSameItem(class ItemStackBase const &, class ItemStackBase const &) const;
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*116*/ virtual class Item & setIcon(std::string const &, int);
-    /*128*/ virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
+    /*
+    inline std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const & a0, class Level & a1, class Actor & a2) const{
+        std::unique_ptr<class Packet> (MapItem::*rv)(class ItemStack const &, class Level &, class Actor &) const;
+        *((void**)&rv) = dlsym("?getUpdatePacket@MapItem@@UEBA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@AEBVItemStack@@AEAVLevel@@AEAVActor@@@Z");
+        return (this->*rv)(std::forward<class ItemStack const &>(a0), std::forward<class Level &>(a1), std::forward<class Actor &>(a2));
+    }
+    */
     MCAPI MapItem(std::string const &, short);
     MCAPI void blockTick(class ItemStack &, class BlockSource &, class BlockPos const &) const;
     MCAPI void update(class Level &, class Actor &, class MapItemSavedData &) const;

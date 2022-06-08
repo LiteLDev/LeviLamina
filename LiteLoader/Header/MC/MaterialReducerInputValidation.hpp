@@ -25,12 +25,10 @@ public:
 
 public:
     /*0*/ virtual ~MaterialReducerInputValidation();
-    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const &) const;
     /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /*

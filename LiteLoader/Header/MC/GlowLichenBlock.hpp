@@ -63,12 +63,16 @@ public:
     /*183*/ virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual class Block const & getMultifaceBlock() const;
     /*204*/ virtual class MultifaceSpreader const & getMultifaceSpreader() const;
     /*
     inline bool canBeSilkTouched() const{
         bool (GlowLichenBlock::*rv)() const;
         *((void**)&rv) = dlsym("?canBeSilkTouched@GlowLichenBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline class Block const & getMultifaceBlock() const{
+        class Block const & (GlowLichenBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?getMultifaceBlock@GlowLichenBlock@@UEBAAEBVBlock@@XZ");
         return (this->*rv)();
     }
     */

@@ -25,15 +25,10 @@ public:
 
 public:
     /*0*/ virtual ~StoneCutterInputContainerValidation();
-    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
-    /*7*/ virtual bool canDestroy(class ContainerScreenContext const &) const;
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
-    /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 
 protected:
 

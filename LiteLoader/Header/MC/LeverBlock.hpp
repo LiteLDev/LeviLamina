@@ -74,7 +74,6 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual void updateShape(class BlockSource *, class BlockPos const &);
     /*
     inline bool canSpawnOn() const{
         bool (LeverBlock::*rv)() const;
@@ -90,6 +89,11 @@ public:
         bool (LeverBlock::*rv)() const;
         *((void**)&rv) = dlsym("?isInteractiveBlock@LeverBlock@@UEBA_NXZ");
         return (this->*rv)();
+    }
+    inline void updateShape(class BlockSource * a0, class BlockPos const & a1){
+        void (LeverBlock::*rv)(class BlockSource *, class BlockPos const &);
+        *((void**)&rv) = dlsym("?updateShape@LeverBlock@@UEAAXPEAVBlockSource@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockSource *>(a0), std::forward<class BlockPos const &>(a1));
     }
     */
     MCAPI LeverBlock(std::string const &, int);

@@ -23,7 +23,6 @@ public:
 
 public:
     /*0*/ virtual ~DebugInfoComponent();
-    /*1*/ virtual enum EventResult onEvent(struct ActorNotificationEvent const &);
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();

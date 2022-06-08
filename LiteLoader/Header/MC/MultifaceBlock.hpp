@@ -68,14 +68,11 @@ public:
     /*188*/ virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual class Block const & getMultifaceBlock() const = 0;
-    /*204*/ virtual class MultifaceSpreader const & getMultifaceSpreader() const = 0;
     /*205*/ virtual void __unk_vfn_205();
     /*206*/ virtual void __unk_vfn_206();
     /*207*/ virtual void __unk_vfn_207();
     /*208*/ virtual void __unk_vfn_208();
     /*209*/ virtual void __unk_vfn_209();
-    /*210*/ MCAPI std::string const & getDescriptionId() const;
     /*
     inline bool isMultifaceBlock() const{
         bool (MultifaceBlock::*rv)() const;

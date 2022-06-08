@@ -71,7 +71,6 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual class mce::Color getDustColor(class Block const &) const;
     /*204*/ virtual std::string getDustParticleName(class Block const &) const;
     /*205*/ virtual void __unk_vfn_205();
     /*206*/ virtual void onLand(class BlockSource &, class BlockPos const &) const;
@@ -95,6 +94,11 @@ public:
         bool (AnvilBlock::*rv)() const;
         *((void**)&rv) = dlsym("?isInteractiveBlock@AnvilBlock@@UEBA_NXZ");
         return (this->*rv)();
+    }
+    inline class mce::Color getDustColor(class Block const & a0) const{
+        class mce::Color (AnvilBlock::*rv)(class Block const &) const;
+        *((void**)&rv) = dlsym("?getDustColor@AnvilBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z");
+        return (this->*rv)(std::forward<class Block const &>(a0));
     }
     */
     MCAPI AnvilBlock(std::string const &, int);

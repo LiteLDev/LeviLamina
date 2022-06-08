@@ -25,9 +25,15 @@ public:
 
 public:
     /*0*/ virtual ~LegacyChunkStorage();
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4();
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void loadChunk(class LevelChunk &, bool);
     /*12*/ virtual bool saveLiveChunk(class LevelChunk &);
     /*17*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
+    /*21*/ virtual void __unk_vfn_21();
+    /*24*/ virtual void __unk_vfn_24();
     MCAPI LegacyChunkStorage(std::unique_ptr<class ChunkSource>, class LevelStorage &, enum StorageVersion, class Biome &);
 
 protected:

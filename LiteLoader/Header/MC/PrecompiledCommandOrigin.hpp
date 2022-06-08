@@ -40,11 +40,18 @@ public:
     /*14*/ virtual bool hasTellPerms() const;
     /*15*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
     /*16*/ virtual bool isWorldBuilder() const;
-    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
+    /*17*/ virtual void __unk_vfn_17();
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
+    /*
+    inline bool canUseCommandsWithoutCheatsEnabled() const{
+        bool (PrecompiledCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?canUseCommandsWithoutCheatsEnabled@PrecompiledCommandOrigin@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

@@ -25,7 +25,9 @@ public:
 
 public:
     /*0*/ virtual ~CraftHandlerLoom();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
+    /*5*/ virtual void __unk_vfn_5();
     MCAPI CraftHandlerLoom(class ItemStackRequestActionCraftHandler &);
 
 protected:

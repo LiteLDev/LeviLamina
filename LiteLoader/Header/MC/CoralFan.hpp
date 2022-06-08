@@ -80,7 +80,6 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
     /*
     inline bool canBeSilkTouched() const{
         bool (CoralFan::*rv)() const;

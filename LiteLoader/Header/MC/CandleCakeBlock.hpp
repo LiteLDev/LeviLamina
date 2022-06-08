@@ -69,7 +69,6 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual int _getNumCandles(class Block const &) const;
     /*204*/ virtual void _iterateCandles(class Block const &, class BlockPos const &, class std::function<void (class Vec3 const &, int)>) const;
     /*205*/ virtual void _tryLightOnFire(class BlockSource &, class BlockPos const &) const;
     /*206*/ virtual void __unk_vfn_206();
@@ -92,6 +91,11 @@ public:
         bool (CandleCakeBlock::*rv)() const;
         *((void**)&rv) = dlsym("?hasComparatorSignal@CandleCakeBlock@@UEBA_NXZ");
         return (this->*rv)();
+    }
+    inline int _getNumCandles(class Block const & a0) const{
+        int (CandleCakeBlock::*rv)(class Block const &) const;
+        *((void**)&rv) = dlsym("?_getNumCandles@CandleCakeBlock@@MEBAHAEBVBlock@@@Z");
+        return (this->*rv)(std::forward<class Block const &>(a0));
     }
     */
     MCAPI CandleCakeBlock(std::string const &, int);

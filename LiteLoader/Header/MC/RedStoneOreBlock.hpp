@@ -69,7 +69,13 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual void _lightUpBlock(class BlockSource &, class BlockPos const &) const;
+    /*
+    inline void _lightUpBlock(class BlockSource & a0, class BlockPos const & a1) const{
+        void (RedStoneOreBlock::*rv)(class BlockSource &, class BlockPos const &) const;
+        *((void**)&rv) = dlsym("?_lightUpBlock@RedStoneOreBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1));
+    }
+    */
     MCAPI RedStoneOreBlock(std::string const &, int, bool);
 
 protected:

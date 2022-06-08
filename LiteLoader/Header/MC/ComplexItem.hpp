@@ -3,6 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Json.hpp"
+#include "Potion.hpp"
 #include "Item.hpp"
 
 #define BEFORE_EXTRA
@@ -39,12 +40,16 @@ public:
     /*71*/ virtual void __unk_vfn_71();
     /*75*/ virtual void __unk_vfn_75();
     /*76*/ virtual void __unk_vfn_76();
-    /*128*/ virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
     /*
     inline bool isComplex() const{
         bool (ComplexItem::*rv)() const;
         *((void**)&rv) = dlsym("?isComplex@ComplexItem@@UEBA_NXZ");
         return (this->*rv)();
+    }
+    inline std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const & a0, class Level & a1, class Actor & a2) const{
+        std::unique_ptr<class Packet> (ComplexItem::*rv)(class ItemStack const &, class Level &, class Actor &) const;
+        *((void**)&rv) = dlsym("?getUpdatePacket@ComplexItem@@UEBA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@AEBVItemStack@@AEAVLevel@@AEAVActor@@@Z");
+        return (this->*rv)(std::forward<class ItemStack const &>(a0), std::forward<class Level &>(a1), std::forward<class Actor &>(a2));
     }
     */
     MCAPI ComplexItem(std::string const &, int);

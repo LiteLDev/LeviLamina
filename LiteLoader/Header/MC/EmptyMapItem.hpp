@@ -3,6 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Json.hpp"
+#include "Potion.hpp"
 #include "Item.hpp"
 
 #define BEFORE_EXTRA
@@ -43,7 +44,6 @@ public:
     /*80*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*110*/ virtual std::string getInteractText(class Player const &) const;
-    /*128*/ virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
     MCAPI EmptyMapItem(std::string const &, short);
     MCAPI static void addPlayerMarker(class ItemStack &);
     MCAPI static void addPlayerMarker(class ItemInstance &);

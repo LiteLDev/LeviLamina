@@ -69,12 +69,16 @@ public:
     /*182*/ virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
     /*
     inline bool waterSpreadCausesSpawn() const{
         bool (EndPortalBlock::*rv)() const;
         *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@EndPortalBlock@@UEBA_NXZ");
         return (this->*rv)();
+    }
+    inline class ItemInstance getEntityResourceItem(class Randomize & a0, class BlockActor const & a1, int a2) const{
+        class ItemInstance (EndPortalBlock::*rv)(class Randomize &, class BlockActor const &, int) const;
+        *((void**)&rv) = dlsym("?getEntityResourceItem@EndPortalBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z");
+        return (this->*rv)(std::forward<class Randomize &>(a0), std::forward<class BlockActor const &>(a1), std::forward<int>(a2));
     }
     */
     MCAPI EndPortalBlock(std::string const &, int);

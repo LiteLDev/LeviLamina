@@ -60,8 +60,14 @@ public:
     /*180*/ virtual void __unk_vfn_180();
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual class Block const & getMultifaceBlock() const;
     /*204*/ virtual class MultifaceSpreader const & getMultifaceSpreader() const;
+    /*
+    inline class Block const & getMultifaceBlock() const{
+        class Block const & (SculkVeinBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?getMultifaceBlock@SculkVeinBlock@@UEBAAEBVBlock@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SculkVeinBlock(std::string const &, int, class Material const &);
 
 protected:

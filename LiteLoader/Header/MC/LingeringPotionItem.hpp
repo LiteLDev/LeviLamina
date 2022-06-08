@@ -47,7 +47,6 @@ public:
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*116*/ virtual class Item & setIcon(std::string const &, int);
-    /*128*/ virtual enum Potion::PotionType getPotionType() const;
     MCAPI LingeringPotionItem(std::string const &, int);
 
 protected:

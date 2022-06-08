@@ -24,14 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~StringByteInput();
-    /*1*/ virtual std::string readString();
-    /*2*/ virtual std::string readLongString();
-    /*3*/ virtual float readFloat();
-    /*4*/ virtual double readDouble();
-    /*5*/ virtual char readByte();
-    /*6*/ virtual short readShort();
-    /*7*/ virtual int readInt();
-    /*8*/ virtual __int64 readLongLong();
     /*9*/ virtual bool readBytes(void *, unsigned __int64);
     /*10*/ virtual unsigned __int64 numBytesLeft() const;
 

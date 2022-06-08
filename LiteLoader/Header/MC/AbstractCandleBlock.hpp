@@ -65,7 +65,6 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*195*/ virtual struct Brightness getLightEmission(class Block const &) const;
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual int _getNumCandles(class Block const &) const;
     /*204*/ virtual void _iterateCandles(class Block const &, class BlockPos const &, class std::function<void (class Vec3 const &, int)>) const;
     /*205*/ virtual void _tryLightOnFire(class BlockSource &, class BlockPos const &) const;
     /*206*/ virtual void __unk_vfn_206();
@@ -73,12 +72,16 @@ public:
     /*208*/ virtual void __unk_vfn_208();
     /*209*/ virtual void __unk_vfn_209();
     /*210*/ virtual void __unk_vfn_210();
-    /*211*/ MCAPI std::string const & getDescriptionId() const;
     /*
     inline bool canBeSilkTouched() const{
         bool (AbstractCandleBlock::*rv)() const;
         *((void**)&rv) = dlsym("?canBeSilkTouched@AbstractCandleBlock@@UEBA_NXZ");
         return (this->*rv)();
+    }
+    inline int _getNumCandles(class Block const & a0) const{
+        int (AbstractCandleBlock::*rv)(class Block const &) const;
+        *((void**)&rv) = dlsym("?_getNumCandles@AbstractCandleBlock@@MEBAHAEBVBlock@@@Z");
+        return (this->*rv)(std::forward<class Block const &>(a0));
     }
     inline bool hasVariableLighting() const{
         bool (AbstractCandleBlock::*rv)() const;

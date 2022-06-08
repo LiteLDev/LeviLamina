@@ -32,9 +32,11 @@ public:
     /*8*/ virtual void onChanged(class BlockSource &);
     /*11*/ virtual void onPlace(class BlockSource &);
     /*12*/ virtual void __unk_vfn_12();
+    /*13*/ virtual void __unk_vfn_13();
     /*16*/ virtual void __unk_vfn_16();
     /*19*/ virtual class BlockActor * getCrackEntity(class BlockSource &, class BlockPos const &);
     /*23*/ virtual std::string getName() const;
+    /*27*/ virtual void __unk_vfn_27();
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();

@@ -68,11 +68,15 @@ public:
     /*181*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual int getTickDelay();
     /*
     inline bool canSpawnOn() const{
         bool (RedstoneTorchBlock::*rv)() const;
         *((void**)&rv) = dlsym("?canSpawnOn@RedstoneTorchBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline int getTickDelay(){
+        int (RedstoneTorchBlock::*rv)();
+        *((void**)&rv) = dlsym("?getTickDelay@RedstoneTorchBlock@@UEAAHXZ");
         return (this->*rv)();
     }
     */
