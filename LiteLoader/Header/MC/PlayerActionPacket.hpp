@@ -45,10 +45,11 @@ class PlayerActionPacket : public Packet {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    BlockPos position;           //48
-    FaceID blockFace;            //60
-    PlayerActionType actionType; //64
-    ActorRuntimeID runtimeID;    //72
+    BlockPos position;           // 48
+    BlockPos position2;          // 60
+    FaceID blockFace;            // 72
+    PlayerActionType actionType; // 76
+    ActorRuntimeID runtimeID;    // 80
 
     inline std::string toDebugString() {
         return fmt::format("{}: position: ({}), blockFace: {}, actionType: {}, runtimeID: {}",
