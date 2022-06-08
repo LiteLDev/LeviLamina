@@ -274,6 +274,30 @@ TClasslessInstanceHook(__int64, "?teleportEntity@EndGatewayBlockActor@@QEAAXAEAV
     return original(this, a1);
 }
 
+// Fix Thorns crash
+#include <MC/ActorDamageSource.hpp>
+TInstanceHook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@M_N1@Z",
+              Mob, class ActorDamageSource* damageSource, float damage, bool unk1_1, bool unk2_0)
+{
+    if (LL::globalConfig.enableFixMcBug && this)
+    {
+        static bool markThorns = false;
+        static auto ActorDamageCause_Thorns = ActorDamageSource::lookupCause("thorns");
+        if (damageSource->getCause() == ActorDamageCause_Thorns)
+        {
+            if (markThorns)
+                return false;
+
+            markThorns = true;
+            auto rtn = original(this, damageSource, damage, unk1_1, unk2_0);
+            markThorns = false;
+            return rtn;
+        }
+    }
+    return original(this, damageSource, damage, unk1_1, unk2_0);
+}
+
+
 //fix Wine Stop
 extern bool isWine();
 TClasslessInstanceHook(void, "?leaveGameSync@ServerInstance@@QEAAXXZ")
