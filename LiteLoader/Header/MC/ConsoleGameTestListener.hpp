@@ -28,9 +28,10 @@ public:
     /*2*/ virtual void onTestPassed(class gametest::BaseGameTestInstance &);
     /*3*/ virtual void onTestFailed(class gametest::BaseGameTestInstance &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSOLEGAMETESTLISTENER
-public:
 #endif
 
+protected:
 
+private:
 
 };

@@ -68,15 +68,15 @@ public:
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARMORSTAND
-public:
     MCVAPI bool interactPreventDefault();
 #endif
     MCAPI ArmorStand(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI int getNumSlotsFilled() const;
     MCAPI void setPoseIndex(int);
 
+protected:
 
-//private:
+private:
     MCAPI void _causeDamage(float);
     MCAPI void _destroyWithEffects(class Vec3 const &);
     MCAPI void _dropHeldItems();

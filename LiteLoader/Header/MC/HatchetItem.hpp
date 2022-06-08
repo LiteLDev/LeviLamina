@@ -44,10 +44,11 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*84*/ virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HATCHETITEM
-public:
 #endif
     MCAPI HatchetItem(std::string const &, int, class Item::Tier const &);
 
+protected:
 
+private:
 
 };

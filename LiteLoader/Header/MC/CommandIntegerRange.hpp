@@ -24,12 +24,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDINTEGERRANGE
-public:
 #endif
     MCAPI CommandIntegerRange(int, int, bool);
     MCAPI CommandIntegerRange();
     MCAPI bool isWithinRange(int) const;
 
+protected:
 
+private:
 
 };

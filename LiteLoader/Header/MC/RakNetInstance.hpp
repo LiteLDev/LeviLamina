@@ -35,7 +35,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKNETINSTANCE
-public:
     MCVAPI void _onDisable();
     MCVAPI void _onEnable();
     MCVAPI void addConnectionStateListener(class Connector::ConnectionStateListener *);
@@ -65,8 +64,9 @@ public:
 #endif
     MCAPI RakNetInstance(class RakNetInstance::ConnectionCallbacks &, class RakPeerHelper::IPSupportInterface &, class Bedrock::NonOwnerPointer<class AppPlatform> const &);
 
+protected:
 
-//private:
+private:
     MCAPI void _changeNatState(enum RakNetInstance::NATState, int, std::string const &);
     MCAPI class std::shared_ptr<class RakNetInstance::RakNetNetworkPeer> _createPeer(class NetworkIdentifier const &);
     MCAPI void _openNatConnection(struct RakNet::SystemAddress const &);

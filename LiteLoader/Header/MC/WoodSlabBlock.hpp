@@ -66,10 +66,11 @@ public:
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WOODSLABBLOCK
-public:
 #endif
     MCAPI WoodSlabBlock(std::string const &, int, bool, class WeakPtr<class BlockLegacy>);
 
+protected:
 
+private:
 
 };

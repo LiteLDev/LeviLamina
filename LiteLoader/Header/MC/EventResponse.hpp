@@ -29,9 +29,10 @@ public:
     /*2*/ virtual void __unk_vfn_2() = 0;
     /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVENTRESPONSE
-public:
 #endif
 
+protected:
 
+private:
 
 };

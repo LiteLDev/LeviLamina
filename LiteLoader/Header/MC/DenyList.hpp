@@ -31,7 +31,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DENYLIST
-public:
 #endif
     MCAPI void addEntry(struct DenyList::Entry const &);
     MCAPI enum DenyList::Duration getDuration(struct DenyList::Entry const &) const;
@@ -40,8 +39,9 @@ public:
     MCAPI void removeEntry(struct DenyList::Entry const &);
     MCAPI ~DenyList();
 
+protected:
 
-//private:
+private:
     MCAPI bool isBlocked(struct DenyList::Entry const &, class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<struct DenyList::Entry>>> &) const;
 
 };

@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINGLECOMPONENT
-public:
 #endif
     MCAPI MingleComponent();
     MCAPI class MingleComponent & clearPreviousPartnerId();
@@ -34,6 +33,8 @@ public:
     MCAPI class MingleComponent & setMingleState(enum MingleComponent::MingleState);
     MCAPI class MingleComponent & setPartnerId(struct ActorUniqueID);
 
+protected:
 
+private:
 
 };

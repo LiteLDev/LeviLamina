@@ -28,10 +28,11 @@ public:
     /*2*/ virtual struct Scripting::Error _getPropertyError(std::string const &) const;
     /*3*/ virtual struct Scripting::Error _setPropertyError(std::string const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTOBJECT
-public:
 #endif
     MCAPI ScriptObject(class Scripting::WeakLifetimeScope const &);
 
+protected:
 
+private:
 
 };

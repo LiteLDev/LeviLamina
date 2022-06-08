@@ -24,11 +24,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKEVENTLISTENER
-public:
     MCVAPI enum EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const &);
     MCVAPI enum EventResult onMessage(struct MessageEvent const &);
 #endif
 
+protected:
 
+private:
 
 };

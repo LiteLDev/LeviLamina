@@ -24,13 +24,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MESASURFACEBUILDERNOISES
-public:
 #endif
     MCAPI ~MesaSurfaceBuilderNoises();
     MCAPI static class MesaSurfaceBuilderNoises make(class XoroshiroPositionalRandomFactory const &);
 
+protected:
 
-//private:
+private:
     MCAPI MesaSurfaceBuilderNoises(class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>);
 
 };

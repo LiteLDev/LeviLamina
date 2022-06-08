@@ -56,12 +56,12 @@ public:
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUMANOIDMONSTER
-public:
 #endif
     MCAPI HumanoidMonster(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
+protected:
 
-//private:
+private:
     MCAPI static float const MAX_ENCHANTED_ARMOR_CHANCE;
     MCAPI static float const MAX_ENCHANTED_WEAPON_CHANCE;
     MCAPI static float const MAX_PICKUP_LOOT_CHANCE;

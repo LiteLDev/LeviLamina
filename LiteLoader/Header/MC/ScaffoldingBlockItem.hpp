@@ -41,10 +41,11 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCAFFOLDINGBLOCKITEM
-public:
 #endif
     MCAPI ScaffoldingBlockItem(std::string const &, int);
 
+protected:
 
+private:
 
 };

@@ -65,12 +65,13 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUSHBLOCK
-public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI BushBlock(std::string const &, int, class Material const &);
     MCAPI bool growCrops(class BlockSource &, class BlockPos const &, enum FertilizerType) const;
 
+protected:
 
+private:
 
 };

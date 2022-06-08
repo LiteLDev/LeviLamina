@@ -34,9 +34,10 @@ public:
     /*10*/ virtual bool AddSuspend();
     /*11*/ virtual bool RemoveSuspend();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKQUEUEPORTCONTEXTIMPL
-public:
 #endif
 
+protected:
 
+private:
 
 };

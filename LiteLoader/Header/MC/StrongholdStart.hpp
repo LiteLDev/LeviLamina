@@ -27,12 +27,12 @@ public:
     /*0*/ virtual ~StrongholdStart();
     /*2*/ virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRONGHOLDSTART
-public:
 #endif
     MCAPI StrongholdStart(class Dimension &, class Random &, int, int);
 
+protected:
 
-//private:
+private:
     MCAPI void _initializePieceSet(class Random &);
 
 };

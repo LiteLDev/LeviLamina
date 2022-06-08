@@ -77,12 +77,12 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAVEVINESBLOCK
-public:
 #endif
     MCAPI CaveVinesBlock(std::string const &, int, enum CaveVinesVariant);
 
+protected:
 
-//private:
+private:
     MCAPI bool _isCaveVinesBlock(class Block const &) const;
     MCAPI bool _isCaveVinesHead(class BlockSource &, class BlockPos const &) const;
     MCAPI bool _pickBerries(class BlockSource &, class BlockPos const &) const;

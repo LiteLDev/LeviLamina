@@ -30,7 +30,6 @@ public:
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTERITEMCOMPONENT
-public:
 #endif
     MCAPI ShooterItemComponent(class ShooterItemComponent const &);
     MCAPI ShooterItemComponent(class ComponentItem *);
@@ -39,8 +38,9 @@ public:
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
+protected:
 
-//private:
+private:
     MCAPI void _consumeAmmunition(class Player *, class ItemStack const &, int, bool, bool) const;
     MCAPI int _getAmmunition(class Player const *, bool, class ItemStack &, bool &) const;
     MCAPI void _shootProjectiles(class ItemStack &, class Player *, int) const;

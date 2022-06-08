@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTLOCATION
-public:
 #endif
     MCAPI static class Scripting::ClassBindingBuilder<class Vec3> bind(struct Scripting::Version);
 
+protected:
 
+private:
 
 };

@@ -24,14 +24,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TESTSUMMARYDISPLAYER
-public:
     MCVAPI void onTestFailed(class gametest::BaseGameTestInstance &);
     MCVAPI void onTestPassed(class gametest::BaseGameTestInstance &);
 #endif
     MCAPI TestSummaryDisplayer(class Level &, class gametest::MultipleTestTracker &);
 
+protected:
 
-//private:
+private:
     MCAPI void _say(std::string const &, std::string const &) const;
     MCAPI void _showTestSummaryIfAllDone() const;
 

@@ -53,10 +53,11 @@ public:
     /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
     /*269*/ virtual void __unk_vfn_269();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKERBULLET
-public:
 #endif
     MCAPI ShulkerBullet(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
+protected:
 
+private:
 
 };

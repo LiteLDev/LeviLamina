@@ -46,11 +46,12 @@ public:
     /*8*/ virtual void writeLongLong(__int64);
     /*9*/ virtual void writeBytes(void const *, unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VARINTDATAOUTPUT
-public:
     MCVAPI void writeLongString(class gsl::basic_string_span<char const, -1>);
     MCVAPI void writeString(class gsl::basic_string_span<char const, -1>);
 #endif
 
+protected:
 
+private:
 
 };

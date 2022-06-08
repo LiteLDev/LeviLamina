@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTIONEVENT
-public:
 #endif
     MCAPI ActionEvent(int, enum ActionEvent::ActionState, bool, enum FocusImpact);
 
+protected:
 
+private:
 
 };

@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLABLOCKTAGS
-public:
 #endif
     MCAPI static char const Acacia[];
     MCAPI static char const Birch[];
@@ -34,6 +33,8 @@ public:
     MCAPI static char const Oak[];
     MCAPI static char const Spruce[];
 
+protected:
 
+private:
 
 };

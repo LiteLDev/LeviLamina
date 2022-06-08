@@ -24,14 +24,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYJIGSAWPLACEMENT
-public:
 #endif
     MCAPI LegacyJigsawPlacement(int, class std::function<std::unique_ptr<class PoolElementStructurePiece> (class StructurePoolElement const &, class BlockPos const &, enum Rotation const &, int, struct JigsawJunction &, class BoundingBox const &, class BlockPos const &)>);
     MCAPI void addPieces(std::vector<std::unique_ptr<class StructurePiece>> &, class StructurePoolElement const &, class Random &, class BlockPos const &, enum Rotation const &, class JigsawStructureRegistry const &, class Dimension &);
     MCAPI ~LegacyJigsawPlacement();
 
+protected:
 
-//private:
+private:
     MCAPI void _addPiece(std::vector<std::unique_ptr<class StructurePiece>> &, class PoolElementStructurePiece const &, class Random &, class BlockPos const &, enum Rotation const &, class JigsawStructureRegistry const &, class Dimension &, class BlockVolume &, class BlockPos const &);
     MCAPI bool _tryPlacingPiece(std::vector<std::unique_ptr<class StructurePiece>> &, class PoolElementStructurePiece const &, class Random &, class JigsawBlockInfo const &, class BoundingBox const &, std::vector<class BoundingBox> &, class BlockPos const &, class StructureTemplatePool const *, class JigsawStructureRegistry const &, class Dimension &, class BlockVolume &, class BlockPos const &);
     MCAPI static class std::shared_ptr<bool> _setTerrainAdjustment(enum AdjustmentEffect, class BoundingBox const &, struct JigsawJunction const &, class Dimension &);

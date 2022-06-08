@@ -25,11 +25,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOLLISIONCOMPONENTPROCESSOR
-public:
 #endif
     MCAPI static void _tryBake(struct BlockRotationComponent const *, struct BlockCollisionComponent *);
     MCAPI static std::unique_ptr<class Util::EntityComponentProcessor> getProcessor();
 
+protected:
 
+private:
 
 };

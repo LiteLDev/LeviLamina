@@ -25,13 +25,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAMAGESENSORDEFINITION
-public:
 #endif
     MCAPI void addDamageSensorTrigger(struct DamageSensorTrigger const &);
     MCAPI void initialize(class EntityContext &, class DamageSensorComponent &) const;
     MCAPI void uninitialize(class EntityContext &, class DamageSensorComponent &) const;
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DamageSensorDefinition>> &);
 
+protected:
 
+private:
 
 };

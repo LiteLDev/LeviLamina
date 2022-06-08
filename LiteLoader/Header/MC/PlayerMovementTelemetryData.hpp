@@ -23,12 +23,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERMOVEMENTTELEMETRYDATA
-public:
 #endif
     MCAPI PlayerMovementTelemetryData();
     MCAPI float getAverage() const;
     MCAPI void reset();
 
+protected:
 
+private:
 
 };

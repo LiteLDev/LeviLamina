@@ -30,11 +30,12 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory &, class IContentKeyProvider const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDTEMPLATEPACKSOURCE
-public:
 #endif
     MCAPI WorldTemplatePackSource(class WorldTemplateManager const &, class mce::UUID const &, enum PackType, enum PackOrigin);
     MCAPI class mce::UUID const & getWorldTemplateId() const;
 
+protected:
 
+private:
 
 };

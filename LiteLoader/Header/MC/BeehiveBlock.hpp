@@ -69,7 +69,6 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEEHIVEBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool hasComparatorSignal() const;
 #endif
@@ -81,8 +80,9 @@ public:
     MCAPI static bool hasHoneyToHarvest(class Block const &);
     MCAPI static void resetHoneyLevel(class BlockSource &, class Block const &, class BlockPos const &);
 
+protected:
 
-//private:
+private:
     MCAPI void _fillHoneyBottle(class Player &, class ItemStack &, class ItemStack &, class BlockSource &, class BlockPos const &) const;
 
 };

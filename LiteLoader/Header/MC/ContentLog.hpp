@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTLOG
-public:
 #endif
     MCAPI ContentLog();
     MCAPI bool isEnabled() const;
@@ -33,8 +32,9 @@ public:
     MCAPI static char const * getLogAreaName(enum LogArea);
     MCAPI static char const * getLogLevelName(enum LogLevel);
 
+protected:
 
-//private:
+private:
     MCAPI void _writeToLog(bool, enum LogArea, enum LogLevel, char *&);
 
 };

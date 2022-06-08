@@ -27,10 +27,11 @@ public:
     /*0*/ virtual ~IsSummonableDescription();
     /*1*/ virtual char const * getJsonName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISSUMMONABLEDESCRIPTION
-public:
 #endif
     MCAPI void parse(class Json::Value const &);
 
+protected:
 
+private:
 
 };

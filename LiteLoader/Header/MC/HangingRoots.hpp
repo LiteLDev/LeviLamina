@@ -69,10 +69,11 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HANGINGROOTS
-public:
 #endif
     MCAPI HangingRoots(std::string const &, int);
 
+protected:
 
+private:
 
 };

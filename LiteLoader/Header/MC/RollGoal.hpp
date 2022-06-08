@@ -32,12 +32,12 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROLLGOAL
-public:
 #endif
     MCAPI RollGoal(class Mob &, float);
 
+protected:
 
-//private:
+private:
     MCAPI void _handleRoll(int, class Vec3 &, float &, float &) const;
 
 };

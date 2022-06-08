@@ -24,13 +24,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDHELPER
-public:
 #endif
     MCAPI BedHelper(int, int, int, int, float, float, float, float);
     MCAPI BedHelper(int, int, int, int, float, float, float, float, float, float);
     MCAPI float getBedRotation(int) const;
     MCAPI void setBedPositionOffsets(int, float &, float &, class Vec3 &);
 
+protected:
 
+private:
 
 };

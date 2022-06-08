@@ -29,12 +29,12 @@ public:
     /*2*/ virtual void executeAction(class RenderParams &) const;
     /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAMAGERESPONSE
-public:
 #endif
     MCAPI static std::string const NameID;
 
+protected:
 
-//private:
+private:
     MCAPI void repairOrHurtItem(int const &, class RenderParams &) const;
 
 };

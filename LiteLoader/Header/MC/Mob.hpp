@@ -196,7 +196,6 @@ public:
     /*359*/ virtual void __unk_vfn_359();
     /*360*/ virtual class AABB _getAdjustedAABBForSpawnCheck(class AABB const &, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOB
-public:
     MCVAPI bool _allowAscendingScaffolding() const;
     MCVAPI void ate();
     MCVAPI bool canBeControlledByPassenger();
@@ -308,7 +307,7 @@ public:
     MCAPI static bool shouldApplyWaterGravity(struct IActorMovementProxy const &);
     MCAPI static class Mob * tryGetFromEntity(class EntityContext &, bool);
 
-//protected:
+protected:
     MCAPI void _doSprintParticleEffect();
     MCAPI void _registerMobAttributes();
     MCAPI int getCurrentSwingDuration();
@@ -320,7 +319,7 @@ public:
     MCAPI static int const MAX_INACTIVITY_TIMER;
     MCAPI static void _jumpFromGround(struct IMobMovementProxy &);
 
-//private:
+private:
     MCAPI bool _initHardCodedComponents();
     MCAPI void _initialize(class EntityContext &);
     MCAPI void _updateSprintingState();

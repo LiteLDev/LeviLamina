@@ -68,7 +68,6 @@ public:
     /*9*/ virtual std::unique_ptr<class Tag> copy() const;
     /*10*/ virtual unsigned __int64 hash() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LISTTAG
-public:
 #endif
     MCAPI ListTag();
     MCAPI void add(std::unique_ptr<class Tag>);
@@ -85,6 +84,8 @@ public:
     MCAPI void popBack();
     MCAPI int size() const;
 
+protected:
 
+private:
 
 };

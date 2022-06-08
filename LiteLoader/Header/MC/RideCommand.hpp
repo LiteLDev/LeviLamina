@@ -27,12 +27,12 @@ public:
     /*0*/ virtual ~RideCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RIDECOMMAND
-public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
 
+protected:
 
-//private:
+private:
     MCAPI void evictPassengers(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void startRiding(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void stopRiding(class CommandOrigin const &, class CommandOutput &) const;

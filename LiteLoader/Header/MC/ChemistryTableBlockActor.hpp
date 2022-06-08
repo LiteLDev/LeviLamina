@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYTABLEBLOCKACTOR
-public:
     MCVAPI class Container * getContainer();
     MCVAPI class Container const * getContainer() const;
     MCVAPI int getContainerSize() const;
@@ -46,8 +45,9 @@ public:
     MCAPI void serverCombine(class BlockSource &, std::vector<class ItemStack> const &);
     MCAPI void serverLabTablePacket_DEPRECATED(class LabTablePacket const &, class BlockSource &);
 
+protected:
 
-//private:
+private:
     MCAPI std::unique_ptr<class LabTableReaction> _createReaction(class Random &, std::vector<class ItemStack> const &);
     MCAPI void _popPendingReactionOutput(class BlockSource &);
     MCAPI enum ChemistryTableType _updateType(class BlockSource &);

@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERBLOCKACTIONS
-public:
 #endif
     MCAPI void addAbortDestroyBlock(class BlockPos const &, int);
     MCAPI void addContinueDestroyBlock(class BlockPos const &, int);
@@ -36,6 +35,8 @@ public:
     MCAPI static class PlayerBlockActions read(class ReadOnlyBinaryStream &);
     MCAPI static void write(class PlayerBlockActions const &, class BinaryStream &);
 
+protected:
 
+private:
 
 };

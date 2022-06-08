@@ -27,12 +27,13 @@ public:
     /*1*/ virtual class leveldb::Status Append(class leveldb::Slice const &);
     /*2*/ virtual class leveldb::Status Close();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INMEMORYWRITABLEFILE
-public:
     MCVAPI class leveldb::Status Flush();
     MCVAPI class leveldb::Status Sync();
 #endif
     MCAPI InMemoryWritableFile(class std::shared_ptr<class InMemoryFile>);
 
+protected:
 
+private:
 
 };

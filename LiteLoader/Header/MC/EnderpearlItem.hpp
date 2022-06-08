@@ -44,11 +44,12 @@ public:
     /*99*/ virtual class HashedString const & getCooldownType() const;
     /*100*/ virtual int getCooldownTime() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERPEARLITEM
-public:
 #endif
     MCAPI EnderpearlItem(std::string const &, int);
     MCAPI static class HashedString const ENDER_PEARL_COOLDOWN;
 
+protected:
 
+private:
 
 };

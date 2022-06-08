@@ -28,12 +28,12 @@ public:
     /*3*/ virtual void __unk_vfn_3() = 0;
     /*4*/ virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONHITSUBCOMPONENT
-public:
 #endif
     MCAPI OnHitSubcomponent();
 
-//protected:
+protected:
     MCAPI bool _canAttack(class Actor *, class Actor *) const;
 
+private:
 
 };

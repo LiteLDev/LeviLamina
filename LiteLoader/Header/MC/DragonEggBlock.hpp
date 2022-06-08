@@ -66,12 +66,12 @@ public:
     /*204*/ virtual std::string getDustParticleName(class Block const &) const;
     /*205*/ virtual void __unk_vfn_205();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONEGGBLOCK
-public:
 #endif
     MCAPI DragonEggBlock(std::string const &, int);
 
+protected:
 
-//private:
+private:
     MCAPI void _teleport(class BlockSource &, class Random &, class BlockPos const &) const;
 
 };

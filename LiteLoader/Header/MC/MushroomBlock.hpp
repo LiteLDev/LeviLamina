@@ -68,10 +68,11 @@ public:
     /*192*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MUSHROOMBLOCK
-public:
 #endif
     MCAPI MushroomBlock(std::string const &, int);
 
+protected:
 
+private:
 
 };

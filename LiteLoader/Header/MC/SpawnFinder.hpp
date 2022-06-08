@@ -24,11 +24,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNFINDER
-public:
 #endif
     MCAPI static class std::optional<class BlockPos> findStandupPosition(class BlockPos const &, class BlockSource const &);
     MCAPI static bool isStandupPosition(class BlockPos const &, class BlockSource const &);
 
+protected:
 
+private:
 
 };

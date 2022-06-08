@@ -26,10 +26,11 @@ public:
 public:
     /*0*/ virtual ~SmokerContainerManagerModel();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMOKERCONTAINERMANAGERMODEL
-public:
 #endif
     MCAPI SmokerContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
+protected:
 
+private:
 
 };

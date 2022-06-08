@@ -28,12 +28,12 @@ public:
     /*2*/ virtual void onTestPassed(class gametest::BaseGameTestInstance &);
     /*3*/ virtual void onTestFailed(class gametest::BaseGameTestInstance &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTREPORTGAMELISTENER
-public:
 #endif
     MCAPI MinecraftReportGameListener(class MinecraftGameTestInstance &, class gametest::GameTestTicker &);
 
+protected:
 
-//private:
+private:
     MCAPI std::string _generateErrorDescription(struct gametest::GameTestError const &) const;
     MCAPI void _reportFailure(struct gametest::GameTestError const &, class BlockSource &);
     MCAPI void _reportPassed(std::string const &, class BlockSource &);

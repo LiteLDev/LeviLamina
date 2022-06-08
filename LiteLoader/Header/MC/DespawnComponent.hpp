@@ -24,13 +24,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESPAWNCOMPONENT
-public:
 #endif
     MCAPI void onDespawn(class Actor &);
     MCAPI void tick(class Actor &);
 
+protected:
 
-//private:
+private:
     MCAPI bool _tryStandardDespawnRules(class Actor &) const;
 
 };

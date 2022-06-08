@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYTRADEABLECOMPONENT
-public:
 #endif
     MCAPI void DecrementMerchantTimer();
     MCAPI void IncrementTradeTier();
@@ -57,8 +56,9 @@ public:
     MCAPI ~LegacyTradeableComponent();
     MCAPI static bool isUseNewTradeScreen(class Actor const &);
 
+protected:
 
-//private:
+private:
     MCAPI struct TradeTable * _getTradeTable(class Actor &);
     MCAPI void _rearrangeTradeList(class Actor &, std::vector<struct Trade> &, unsigned __int64);
     MCAPI bool _refreshTrades(class Actor &);

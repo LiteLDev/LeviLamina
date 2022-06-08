@@ -33,15 +33,15 @@ public:
     /*7*/ virtual void setupCommands(class CommandRegistry &);
     /*8*/ virtual void configureServerNetworkHandler(class ServerInstance &, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAGAMEMODULESERVER
-public:
     MCVAPI void configureDocumentation(class IGameModuleDocumentation &);
     MCVAPI void configureNewPlayer(class Player &);
     MCVAPI void tick();
 #endif
     MCAPI VanillaGameModuleServer();
 
+protected:
 
-//private:
+private:
     MCAPI void _configureWorldGen(class IWorldRegistriesProvider &, struct SpawnSettings const &, class Experiments const &, class ResourcePackManager &, class BaseGameVersion const &);
     MCAPI void _registerGameplayHandlers(class Level &) const;
     MCAPI void _registerListeners(class Level &);

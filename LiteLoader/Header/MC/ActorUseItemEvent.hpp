@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORUSEITEMEVENT
-public:
 #endif
     MCAPI ~ActorUseItemEvent();
 
+protected:
 
+private:
 
 };

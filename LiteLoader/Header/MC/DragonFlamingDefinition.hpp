@@ -26,12 +26,13 @@ public:
     /*0*/ virtual ~DragonFlamingDefinition();
     /*1*/ virtual bool validateMobType(class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONFLAMINGDEFINITION
-public:
 #endif
     MCAPI DragonFlamingDefinition();
     MCAPI void initialize(class EntityContext &, class DragonFlamingGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonFlamingDefinition>> &);
 
+protected:
 
+private:
 
 };

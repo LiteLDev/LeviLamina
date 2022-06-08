@@ -27,9 +27,10 @@ public:
     /*0*/ virtual ~SimpleTreeCanopy();
     /*1*/ virtual class std::optional<class BlockPos> placeCanopy(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &, struct TreeHelper::TreeParams const &, std::vector<class BlockPos> const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLETREECANOPY
-public:
 #endif
 
+protected:
 
+private:
 
 };

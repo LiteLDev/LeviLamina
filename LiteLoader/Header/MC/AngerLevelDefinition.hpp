@@ -23,13 +23,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANGERLEVELDEFINITION
-public:
 #endif
     MCAPI void addNuisanceDefinition(class NuisanceDefinition const &);
     MCAPI void addOnIncreaseSoundDefinition(class SoundDefinition const &);
     MCAPI void initialize(class EntityContext &, class AngerLevelComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AngerLevelDefinition>> &);
 
+protected:
 
+private:
 
 };

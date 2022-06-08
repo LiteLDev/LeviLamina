@@ -23,11 +23,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONSTATESYSTEM
-public:
 #endif
     MCAPI static bool isDimensionReady(class EntityContext const &);
     MCAPI static void setDimensionState(class EntityContext &, enum DimensionStateComponent::DimensionState);
 
+protected:
 
+private:
 
 };

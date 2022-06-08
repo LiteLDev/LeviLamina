@@ -26,7 +26,6 @@ public:
 public:
     /*0*/ virtual ~ScriptBlock();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCK
-public:
 #endif
     MCAPI ScriptBlock(class ScriptBlock &&);
     MCAPI ScriptBlock(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
@@ -44,6 +43,8 @@ public:
     MCAPI class Scripting::Result<void> setWaterlogged(bool);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlock> bind(struct Scripting::Version);
 
+protected:
 
+private:
 
 };

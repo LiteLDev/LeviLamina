@@ -26,12 +26,13 @@ public:
     /*0*/ virtual ~FunctionEntry();
     /*1*/ virtual void execute(class FunctionManager &, class CommandOrigin const &, enum FunctionQueueOrder);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FUNCTIONENTRY
-public:
 #endif
     MCAPI FunctionEntry(std::vector<std::unique_ptr<class IFunctionEntry>> &&, enum FunctionState);
     MCAPI FunctionEntry(enum FunctionState);
     MCAPI enum FunctionState getErrorState() const;
 
+protected:
 
+private:
 
 };

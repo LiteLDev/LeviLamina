@@ -36,12 +36,12 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINGLEGOAL
-public:
 #endif
     MCAPI MingleGoal(class Mob &, float, float, float, struct ActorDefinitionIdentifier, float);
 
+protected:
 
-//private:
+private:
     MCAPI void _findNewPartner(struct ActorUniqueID);
     MCAPI bool _isWithinInteractRange(class Actor &) const;
     MCAPI void _lookAt(class Actor *);

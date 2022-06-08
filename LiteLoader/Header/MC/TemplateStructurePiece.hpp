@@ -28,14 +28,13 @@ public:
     /*1*/ virtual void moveBoundingBox(int, int, int);
     /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEMPLATESTRUCTUREPIECE
-public:
 #endif
     MCAPI TemplateStructurePiece(int);
 
-//protected:
+protected:
     MCAPI void _setup(class LegacyStructureTemplate &, class LegacyStructureSettings const &, class BlockPos const &);
 
-//private:
+private:
     MCAPI void _setBoundingBoxFromTemplate();
 
 };

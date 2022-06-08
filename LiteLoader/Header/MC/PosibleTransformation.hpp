@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POSIBLETRANSFORMATION
-public:
 #endif
     MCAPI ~PosibleTransformation();
 
+protected:
 
+private:
 
 };

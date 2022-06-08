@@ -67,12 +67,12 @@ public:
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STAINEDGLASSBLOCK
-public:
 #endif
     MCAPI StainedGlassBlock(std::string const &, int, class Material const &, bool, bool);
 
+protected:
 
-//private:
+private:
     MCAPI static class BaseGameVersion const STAINED_GLASS_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 };

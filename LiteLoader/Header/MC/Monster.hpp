@@ -60,11 +60,12 @@ public:
     /*359*/ virtual void __unk_vfn_359();
     /*361*/ virtual bool isDarkEnoughToSpawn() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MONSTER
-public:
     MCVAPI bool canExistInPeaceful() const;
 #endif
     MCAPI Monster(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
+protected:
 
+private:
 
 };

@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMENCHANTS
-public:
 #endif
     MCAPI ItemEnchants(int);
     MCAPI ItemEnchants(int, class ListTag const &);
@@ -43,8 +42,9 @@ public:
     MCAPI void removeEnchantment(enum Enchant::Type);
     MCAPI ~ItemEnchants();
 
+protected:
 
-//private:
+private:
     MCAPI std::unique_ptr<class ListTag> _toList() const;
 
 };

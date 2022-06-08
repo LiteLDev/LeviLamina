@@ -78,7 +78,6 @@ public:
     /*209*/ virtual void __unk_vfn_209();
     /*210*/ virtual void __unk_vfn_210();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CANDLECAKEBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool hasComparatorSignal() const;
     MCVAPI bool isCandleCakeBlock() const;
@@ -88,8 +87,9 @@ public:
     MCAPI static class Block const & getCandleFromCandleCake(class Block const &);
     MCAPI static bool tryLightFire(class BlockSource &, class BlockPos const &);
 
+protected:
 
-//private:
+private:
     MCAPI void _popCandle(class BlockSource &, class BlockPos const &) const;
     MCAPI static void _forEachCandle(class Block const &, class BlockPos const &, class std::function<void (class Vec3 const &, int)>);
 

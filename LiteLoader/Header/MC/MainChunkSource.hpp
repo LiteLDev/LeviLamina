@@ -35,10 +35,11 @@ public:
     /*24*/ virtual void clearDeletedEntities();
     /*25*/ virtual bool canCreateViews() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAINCHUNKSOURCE
-public:
 #endif
     MCAPI MainChunkSource(std::unique_ptr<class ChunkSource>);
 
+protected:
 
+private:
 
 };

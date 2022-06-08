@@ -63,11 +63,12 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICEBLOCK
-public:
 #endif
     MCAPI IceBlock(std::string const &, int, bool);
     MCAPI static void melt(class BlockSource &, class BlockPos const &);
 
+protected:
 
+private:
 
 };

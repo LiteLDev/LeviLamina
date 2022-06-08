@@ -34,9 +34,10 @@ public:
     /*8*/ virtual void writeLongLong(__int64);
     /*9*/ virtual void writeBytes(void const *, unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRINGBYTEOUTPUT
-public:
 #endif
 
+protected:
 
+private:
 
 };

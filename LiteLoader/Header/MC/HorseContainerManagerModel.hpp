@@ -30,10 +30,11 @@ public:
     /*8*/ virtual class ItemStack const & getSlot(int) const;
     /*16*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HORSECONTAINERMANAGERMODEL
-public:
 #endif
     MCAPI HorseContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
 
+protected:
 
+private:
 
 };

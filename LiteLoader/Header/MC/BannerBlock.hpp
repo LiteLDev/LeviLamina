@@ -70,7 +70,6 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERBLOCK
-public:
 #endif
     MCAPI BannerBlock(std::string const &, int, bool);
     MCAPI static class AABB EAST_AABB;
@@ -79,8 +78,9 @@ public:
     MCAPI static class AABB STANDING_AABB;
     MCAPI static class AABB WEST_AABB;
 
+protected:
 
-//private:
+private:
     MCAPI class ItemInstance _itemInstanceFromBlockEntity(class gsl::not_null<class BannerBlockActor const *>) const;
 
 };

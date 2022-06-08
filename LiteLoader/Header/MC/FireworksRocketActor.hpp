@@ -53,15 +53,15 @@ public:
     /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
     /*269*/ virtual void __unk_vfn_269();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREWORKSROCKETACTOR
-public:
 #endif
     MCAPI FireworksRocketActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void init(class Level &, class Vec3 const &, class CompoundTag const &, class Vec3 const &, struct ActorUniqueID, bool);
     MCAPI bool isAttachedToEntity() const;
     MCAPI void setDispensed(bool);
 
+protected:
 
-//private:
+private:
     MCAPI void checkAchievement() const;
     MCAPI void dealExplosionDamage();
     MCAPI void initTagData(class Random &);

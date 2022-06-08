@@ -30,11 +30,11 @@ public:
     /*3*/ virtual void finalizeParsedValue(class IWorldRegistriesProvider &);
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTBIOMEHASTAG
-public:
 #endif
 
+protected:
 
-//private:
+private:
     MCAPI bool _evalBiome(class Biome const &, struct FilterContext const &) const;
 
 };

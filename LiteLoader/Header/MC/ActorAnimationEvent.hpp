@@ -24,13 +24,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONEVENT
-public:
 #endif
     MCAPI ActorAnimationEvent(class ActorAnimationEvent &&);
     MCAPI ActorAnimationEvent(float, std::string const &, enum CurrentCmdVersion, enum MolangVersion);
     MCAPI void fire(class RenderParams &, class Actor *) const;
     MCAPI ~ActorAnimationEvent();
 
+protected:
 
+private:
 
 };

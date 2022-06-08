@@ -26,10 +26,11 @@ public:
 public:
     /*0*/ virtual ~ScriptMovementSkipComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMOVEMENTSKIPCOMPONENT
-public:
 #endif
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMovementSkipComponent> bind(struct Scripting::Version);
 
+protected:
 
+private:
 
 };

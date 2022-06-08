@@ -42,14 +42,14 @@ public:
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RENDEROFFSETSITEMCOMPONENT
-public:
 #endif
     MCAPI RenderOffsetsItemComponent(class ComponentItem *);
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
+protected:
 
-//private:
+private:
     MCAPI std::unique_ptr<class CompoundTag> _buildTRSTag(struct RenderOffsetsItemComponent::TRS const &) const;
     MCAPI std::unique_ptr<class CompoundTag> _buildVector3Tag(class std::array<float, 3> const &) const;
     MCAPI void _trsFromTag(class CompoundTag const &, struct RenderOffsetsItemComponent::TRS &);

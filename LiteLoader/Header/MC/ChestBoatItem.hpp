@@ -40,10 +40,11 @@ public:
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*128*/ virtual enum ActorType _getActorType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTBOATITEM
-public:
 #endif
     MCAPI ChestBoatItem(std::string const &, int, enum WoodType);
 
+protected:
 
+private:
 
 };

@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITIESINSIDEVOLUMECOMPONENT
-public:
 #endif
     MCAPI ~EntitiesInsideVolumeComponent();
 
+protected:
 
+private:
 
 };

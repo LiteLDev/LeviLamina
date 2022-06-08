@@ -22,12 +22,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEAMLESSCHUNKBLENDINGATTENUATORFACTORY
-public:
 #endif
     MCAPI class SeamlessChunkBlendingAttenuator getOrCreateAttenuator(class ChunkPos const &);
 
+protected:
 
-//private:
+private:
     MCAPI class SeamlessChunkBlendingAttenuator _createChunkBlendingAttenuator(class ChunkPos const &) const;
     MCAPI std::vector<class std::array<struct SeamlessChunkBlendingAttenuatorUtil::AttenuationData, 4>> _finalizeChunkAttenuationData(std::vector<class std::array<struct SeamlessChunkBlendingAttenuatorFactory::IntermediateAttenuationData, 4>> const &) const;
     MCAPI void _updateIntermediateAttenuationData(std::vector<class std::array<struct SeamlessChunkBlendingAttenuatorFactory::IntermediateAttenuationData, 4>> &, class ChunkPos const &, class ChunkPos const &, class BlendingData const &, bool) const;

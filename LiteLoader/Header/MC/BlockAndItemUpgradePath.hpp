@@ -21,13 +21,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKANDITEMUPGRADEPATH
-public:
 #endif
     MCAPI BlockAndItemUpgradePath();
     MCAPI bool process(std::string &);
 
+protected:
 
-//private:
+private:
     MCAPI void _addUpgradersFor118();
 
 };

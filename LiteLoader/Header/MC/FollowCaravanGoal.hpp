@@ -32,12 +32,12 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLLOWCARAVANGOAL
-public:
 #endif
     MCAPI FollowCaravanGoal(class Mob &, float, int, std::vector<struct MobDescriptor> const &);
 
+protected:
 
-//private:
+private:
     MCAPI bool checkCaravanType(class Mob *);
     MCAPI bool firstIsLeashed(class Mob *, int);
 

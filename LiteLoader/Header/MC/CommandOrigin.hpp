@@ -62,7 +62,6 @@ public:
     /*30*/ virtual bool isValid() const = 0;
     /*31*/ virtual void _setUUID(class mce::UUID const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDORIGIN
-public:
 #endif
     MCAPI CommandOrigin();
     MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const &, class BlockPos const &, int, bool) const;
@@ -71,8 +70,9 @@ public:
     MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const &, int) const;
     MCAPI static std::unique_ptr<class CommandOrigin> fromCommandOriginData(struct CommandOriginData const &, class Bedrock::NonOwnerPointer<class ILevel> const &, class NetworkIdentifier const &, unsigned char);
 
-//protected:
+protected:
     MCAPI static class NetworkIdentifier sUnknownSource;
 
+private:
 
 };

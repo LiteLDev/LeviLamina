@@ -26,16 +26,16 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERFTIMER
-public:
 #endif
     MCAPI PerfTimer(class std::thread::id);
     MCAPI ~PerfTimer();
     MCAPI static bool mEnabled;
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class PerfTimer, class std::allocator<class PerfTimer>> test;
 
-//protected:
+protected:
     MCAPI static int const MultiplyDeBruijnBitPosition[];
     MCAPI static class Core::PathBuffer<std::string> mPath;
 
+private:
 
 };

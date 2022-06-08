@@ -30,14 +30,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNCLIMATEFINDER
-public:
 #endif
     MCAPI SpawnClimateFinder(std::vector<struct ClimateParameters>, struct OverworldNoises3d const &, class DimensionHeightRange const &);
     MCAPI class BlockPos findSpawnPosition() const;
     MCAPI ~SpawnClimateFinder();
 
+protected:
 
-//private:
+private:
     MCAPI struct std::pair<class BlockPos, __int64> _getSpawnPositionAndFitness(class BlockPos) const;
     MCAPI struct SpawnClimateFinder::ResultDetails _radialSearch(struct SpawnClimateFinder::ResultDetails, int, int) const;
 

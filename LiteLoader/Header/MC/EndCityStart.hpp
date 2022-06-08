@@ -27,11 +27,12 @@ public:
     /*0*/ virtual ~EndCityStart();
     /*2*/ virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDCITYSTART
-public:
 #endif
     MCAPI EndCityStart(class Dimension &, class Random &, class ChunkPos const &);
     MCAPI static int getYPositionForFeature(class ChunkPos const &, class Dimension &);
 
+protected:
 
+private:
 
 };

@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ECSEVENTDISPATCHER
-public:
 #endif
     MCAPI void update();
 
+protected:
 
+private:
 
 };

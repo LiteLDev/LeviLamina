@@ -27,11 +27,12 @@ public:
     /*1*/ virtual void packetSentTo(class NetworkIdentifier const &, class Packet const &, unsigned int);
     /*2*/ virtual void packetReceivedFrom(class NetworkIdentifier const &, class Packet const &, unsigned int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKETOBSERVER
-public:
     MCVAPI void dataReceivedFrom(class NetworkIdentifier const &, std::string const &);
     MCVAPI void dataSentTo(class NetworkIdentifier const &, class gsl::basic_string_span<char const, -1>);
 #endif
 
+protected:
 
+private:
 
 };

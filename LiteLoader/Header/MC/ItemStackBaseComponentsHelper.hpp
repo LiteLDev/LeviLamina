@@ -23,11 +23,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKBASECOMPONENTSHELPER
-public:
 #endif
     MCAPI static bool isValidComponent(std::string const &);
     MCAPI static bool updateComponent(class ItemStackBase &, std::string const &, class Json::Value const &);
 
+protected:
 
+private:
 
 };

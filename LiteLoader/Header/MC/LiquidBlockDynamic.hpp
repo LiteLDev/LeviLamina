@@ -68,14 +68,14 @@ public:
     /*207*/ virtual void __unk_vfn_207();
     /*208*/ MCAPI std::string const & getDescriptionId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIQUIDBLOCKDYNAMIC
-public:
 #endif
     MCAPI LiquidBlockDynamic(std::string const &, int, class Material const &);
     MCAPI class std::array<bool, 4> getSpread(class BlockSource &, class BlockPos const &) const;
     MCAPI bool shouldBecomeStatic(class BlockSource &, class BlockPos const &, class Random &) const;
 
+protected:
 
-//private:
+private:
     MCAPI bool _canSpreadTo(class BlockSource &, class BlockPos const &, class BlockPos const &, unsigned char) const;
     MCAPI int _getSlopeDistance(class BlockSource &, class BlockPos const &, int, int) const;
     MCAPI bool _isWaterBlocking(class BlockSource &, class BlockPos const &, class BlockPos const &, unsigned char) const;

@@ -76,7 +76,6 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual void updateShape(class BlockSource *, class BlockPos const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVERBLOCK
-public:
     MCVAPI bool canSpawnOn() const;
     MCVAPI bool isInteractiveBlock() const;
     MCVAPI bool isLeverBlock() const;
@@ -85,8 +84,9 @@ public:
     MCAPI void toggle(class BlockSource &, class BlockPos const &) const;
     MCAPI static enum LeverDirection getLeverFacing(int);
 
+protected:
 
-//private:
+private:
     MCAPI bool _checkCanSurvive(class BlockSource &, class BlockPos const &) const;
     MCAPI void _getShape(class Block const &, class AABB &) const;
 

@@ -53,11 +53,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYSOURCE
-public:
 #endif
     MCAPI bool operator==(class InventorySource const &) const;
     MCAPI std::string toString() const;
 
+protected:
 
+private:
 
 };

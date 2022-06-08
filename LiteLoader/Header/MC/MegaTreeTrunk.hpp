@@ -27,11 +27,11 @@ public:
     /*0*/ virtual ~MegaTreeTrunk();
     /*1*/ virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &, struct TreeHelper::TreeParams const &, class ITreeCanopy const *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MEGATREETRUNK
-public:
 #endif
 
+protected:
 
-//private:
+private:
     MCAPI bool _prepareSpawn(class IBlockWorldGenAPI &, class BlockPos const &, int, struct TreeHelper::TreeParams const &) const;
 
 };

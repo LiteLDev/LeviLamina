@@ -36,15 +36,14 @@ public:
     /*17*/ virtual enum PackAccessAssetGenerationResult generateAssetSet();
     /*21*/ virtual class ContentIdentity readContentIdentity() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCRYPTEDFILEACCESSSTRATEGY
-public:
 #endif
     MCAPI EncryptedFileAccessStrategy(class ResourceLocation const &, class ContentIdentity const &, class IContentKeyProvider const &, bool, class std::optional<class std::unordered_map<class Core::PathBuffer<std::string>, std::string, struct std::hash<class Core::PathBuffer<std::string>>, struct std::equal_to<class Core::PathBuffer<std::string>>, class std::allocator<struct std::pair<class Core::PathBuffer<std::string> const, std::string>>>>);
     MCAPI static bool isValidEncryptedPack(class Core::Path const &, class ContentIdentity &);
 
-//protected:
+protected:
     MCAPI std::string _getContentsFile();
 
-//private:
+private:
     MCAPI static bool _getContentIdentityFromEncryptedStream(std::string &, class ContentIdentity &);
     MCAPI static void _transformStream(std::string &, std::string const &, unsigned __int64);
 

@@ -60,10 +60,11 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*204*/ virtual class HashedString getSpawnedItemName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLOWITEMFRAMEBLOCK
-public:
 #endif
     MCAPI GlowItemFrameBlock(std::string const &, int);
 
+protected:
 
+private:
 
 };

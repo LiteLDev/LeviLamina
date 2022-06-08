@@ -25,10 +25,11 @@ public:
     /*0*/ virtual ~ConsumeItemNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSUMEITEMNODE
-public:
 #endif
     MCAPI ConsumeItemNode();
 
+protected:
 
+private:
 
 };

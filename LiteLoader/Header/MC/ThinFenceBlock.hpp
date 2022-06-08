@@ -69,13 +69,13 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THINFENCEBLOCK
-public:
     MCVAPI bool isThinFenceBlock() const;
 #endif
     MCAPI ThinFenceBlock(std::string const &, int, class Material const &, bool, bool, bool);
 
+protected:
 
-//private:
+private:
     MCAPI static class BaseGameVersion const THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 };

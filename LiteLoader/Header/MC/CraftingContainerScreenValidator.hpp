@@ -25,10 +25,11 @@ public:
 public:
     /*0*/ virtual ~CraftingContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTINGCONTAINERSCREENVALIDATOR
-public:
 #endif
     MCAPI CraftingContainerScreenValidator();
 
+protected:
 
+private:
 
 };

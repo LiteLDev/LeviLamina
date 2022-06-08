@@ -65,10 +65,11 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SANDSTONEBLOCK
-public:
 #endif
     MCAPI SandStoneBlock(std::string const &, int, class Material const &);
 
+protected:
 
+private:
 
 };

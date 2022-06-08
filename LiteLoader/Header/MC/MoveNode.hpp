@@ -26,12 +26,12 @@ public:
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
     /*2*/ virtual void initializeFromDefinition(class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVENODE
-public:
 #endif
     MCAPI MoveNode();
 
+protected:
 
-//private:
+private:
     MCAPI unsigned char convertDirectionStringToKeyPress(std::string);
 
 };

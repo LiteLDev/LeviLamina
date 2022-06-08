@@ -22,13 +22,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKKEY
-public:
 #endif
     MCAPI ChunkKey(class ChunkPos const &, class AutomaticID<class Dimension, int>);
     MCAPI ChunkKey(class LevelChunk const &);
     MCAPI class gsl::basic_string_span<char const, -1> asSpan() const;
     MCAPI unsigned __int64 hashCode() const;
 
+protected:
 
+private:
 
 };

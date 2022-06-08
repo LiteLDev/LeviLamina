@@ -39,13 +39,14 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BELLBLOCKACTOR
-public:
 #endif
     MCAPI BellBlockActor(class BlockPos const &);
     MCAPI void ejectItem(class BlockPos const &, class Actor &) const;
     MCAPI bool isRinging() const;
     MCAPI bool ring(enum Direction::Type, class BlockSource &, bool);
 
+protected:
 
+private:
 
 };

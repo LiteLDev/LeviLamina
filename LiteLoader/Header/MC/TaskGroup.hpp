@@ -31,7 +31,6 @@ public:
     /*4*/ virtual void processCoroutines();
     /*5*/ virtual void taskComplete(class gsl::not_null<class BackgroundTaskBase *>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKGROUP
-public:
 #endif
     MCAPI TaskGroup(class WorkerPool &, class Scheduler &, std::string);
     MCAPI void disableOwnerThreadChecks();
@@ -48,8 +47,9 @@ public:
     MCAPI static class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queueChildSync_DEPRECATED(struct TaskStartInfoEx<void> const &, class std::function<class TaskResult (void)> &&);
     MCAPI static class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queueChild_DEPRECATED(struct TaskStartInfoEx<void> const &, class std::function<class TaskResult (void)> &&, class std::function<void (void)> &&);
 
+protected:
 
-//private:
+private:
     MCAPI void _forAllTasks(class Bedrock::Threading::UniqueLock<class std::mutex> &, class std::function<void (class std::shared_ptr<class BackgroundTaskBase> const &)>);
     MCAPI bool _isEmptyInternal() const;
     MCAPI void _queueInternal(class std::shared_ptr<class BackgroundTaskBase>);

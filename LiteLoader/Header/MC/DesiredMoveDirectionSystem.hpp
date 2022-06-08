@@ -22,11 +22,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESIREDMOVEDIRECTIONSYSTEM
-public:
 #endif
     MCAPI static void rotateTowardsControllingPassenger(bool, class Vec2 &, class Vec2 &, float &, float &, class Vec2 const &);
     MCAPI static void updateLocalMoveVelocity(float &, float &, float &, float, float, float);
 
+protected:
 
+private:
 
 };

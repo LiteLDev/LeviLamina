@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEATTRIBUTEMAP
-public:
 #endif
     MCAPI BaseAttributeMap();
     MCAPI class std::_List_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned int const, class AttributeInstance>>>> begin();
@@ -46,8 +45,9 @@ public:
     MCAPI void updateAttribute(class HashedString const &, float, float, float, float);
     MCAPI ~BaseAttributeMap();
 
+protected:
 
-//private:
+private:
     MCAPI static class AttributeInstance mInvalidInstance;
 
 };

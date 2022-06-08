@@ -62,14 +62,14 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUDDINGAMETHYSTBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI BuddingAmethystBlock(std::string const &, int, class Material const &);
     MCAPI static bool canBudGrowAtPos(class BlockSource &, class BlockPos const &);
 
+protected:
 
-//private:
+private:
     MCAPI bool _canGrowInDirection(class Block const &, unsigned char) const;
 
 };

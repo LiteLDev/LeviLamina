@@ -29,12 +29,12 @@ public:
     /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /*6*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IGLOO
-public:
 #endif
     MCAPI Igloo(short, int, int);
 
+protected:
 
-//private:
+private:
     MCAPI static std::string const STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR;
     MCAPI static std::string const STRUCTURE_LOCATION_IGLOO_TRAPDOOR;
     MCAPI static std::string const STRUCTURE_LOCATION_LABORATORY;

@@ -30,7 +30,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLESPARSECONTAINER
-public:
     MCVAPI void containerContentChanged(int);
     MCVAPI int getContainerSize() const;
     MCVAPI class ItemStack const & getItem(int) const;
@@ -44,8 +43,9 @@ public:
     MCAPI void clearItem(int);
     MCAPI void pushAllToBackingContainer();
 
+protected:
 
-//private:
+private:
     MCAPI void _setBackingContainerSlot(int, class ItemStack const &);
 
 };

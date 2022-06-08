@@ -32,7 +32,6 @@ public:
     /*5*/ virtual std::string toString() const;
     /*6*/ virtual std::string toDebugString() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKBASE
-public:
 #endif
     MCAPI void add(int);
     MCAPI bool addComponents(class Json::Value const &, std::string &);
@@ -163,7 +162,7 @@ public:
     MCAPI static std::string const TAG_LORE;
     MCAPI static std::string const TAG_REPAIR_COST;
 
-//protected:
+protected:
     MCAPI ItemStackBase(class ItemStackBase const &);
     MCAPI ItemStackBase(class Block const &, int, class CompoundTag const *);
     MCAPI ItemStackBase(class BlockLegacy const &, int);
@@ -185,7 +184,7 @@ public:
     MCAPI static std::string const TAG_STORE_CAN_DESTROY;
     MCAPI static std::string const TAG_STORE_CAN_PLACE_ON;
 
-//private:
+private:
     MCAPI void _addCustomUserDataCommon(std::unique_ptr<class CompoundTag> &&);
     MCAPI void _checkForItemWorldCompatibility();
     MCAPI void _loadComponents(class CompoundTag const &);

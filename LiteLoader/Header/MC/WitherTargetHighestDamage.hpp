@@ -33,12 +33,12 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual bool _canAttack(class Mob *, class Actor *, bool, bool, struct MobDescriptor const **);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WITHERTARGETHIGHESTDAMAGE
-public:
 #endif
     MCAPI WitherTargetHighestDamage(class WitherBoss &, std::vector<struct MobDescriptor> const &);
 
+protected:
 
-//private:
+private:
     MCAPI class Player * getHighestDamageTarget();
 
 };

@@ -4,7 +4,6 @@
 #include <string>
 #include "../Tools/Demangler/include/MicrosoftDemangle.h"
 
-
 namespace FakeSymbol
 {
 
@@ -47,6 +46,31 @@ inline static llvm::ms_demangle::SpecialIntrinsicKind consumeSpecialIntrinsicKin
     return SpecialIntrinsicKind::None;
 }
 
+inline static char VirtualToCommonMap(char s)
+{
+    if (s == 'E')   // FC_Private | FC_Virtual
+        return 'Q'; // return 'A';
+    if (s == 'F')   // FC_Private | FC_Virtual | FC_Far
+        return 'R'; // return 'B';
+    if (s == 'M')   // FC_Protected | FC_Virtual
+        return 'Q'; // return 'I';
+    if (s == 'N')   // FC_Protected | FC_Virtual | FC_Far
+        return 'R'; // return 'J';
+    if (s == 'O')   // FC_Protected | FC_Virtual | FC_StaticThisAdjust
+        return 'S'; // return 'K';
+    if (s == 'P')   // FC_Protected | FC_Virtual | FC_StaticThisAdjust | FC_Far
+        return 'T'; // return 'L';
+    if (s == 'U')   // FC_Public | FC_Virtual
+        return 'Q'; // Keep
+    if (s == 'V')   // FC_Public | FC_Virtual | FC_Far
+        return 'R'; // Keep
+    if (s == 'W')   // FC_Public | FC_Virtual | FC_StaticThisAdjust
+        return 'S'; // Keep
+    if (s == 'X')   // FC_Public | FC_Virtual | FC_StaticThisAdjust | FC_Far
+        return 'T'; // Keep
+    return s;       // unk return original Val
+}
+
 // generate fakeSymbol for virtual functions
 inline static std::optional<std::string> getFakeSymbol(const std::string& fn)
 {
@@ -70,35 +94,14 @@ inline static std::optional<std::string> getFakeSymbol(const std::string& fn)
         return std::nullopt;
 
     auto& FunctionClass = DemangledName->Signature->FunctionClass;
-    bool modified = false;
-    size_t originalSize = FunctionClass.toString().size();
-    if (FunctionClass.has(FC_Virtual))
+    if (FunctionClass & FC_Virtual)
     {
-        FunctionClass.remove(FC_Virtual);
-        modified = true;
+        std::string Result = fn;
+        auto fcTag = Result.size() - FunctionClass.backup->size();
+        auto& fcTagChar = Result[fcTag];
+        fcTagChar = VirtualToCommonMap(fcTagChar);
+        return Result;
     }
-    if (FunctionClass.has(FC_Protected))
-    {
-        FunctionClass.remove(FC_Protected);
-        FunctionClass.add(FC_Public);
-        modified = true;
-    }
-    if (FunctionClass.has(FC_Private))
-    {
-        FunctionClass.remove(FC_Private);
-        FunctionClass.add(FC_Public);
-        modified = true;
-    }
-    if (modified)
-    {
-        std::string FakeSymbol = fn;
-        std::string FakeFunctionClass = FunctionClass.toString();
-        size_t BeginPos = fn.size() - FunctionClass.backup->size();
-        FakeSymbol.erase(BeginPos, originalSize);
-        FakeSymbol.insert(BeginPos, FakeFunctionClass);
-        return FakeSymbol;
-    }
-
     return std::nullopt;
 }
 

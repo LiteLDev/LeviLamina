@@ -64,10 +64,11 @@ public:
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COLOREDBLOCK
-public:
 #endif
     MCAPI ColoredBlock(std::string const &, int, class Material const &);
 
+protected:
 
+private:
 
 };

@@ -75,14 +75,14 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BELLBLOCK
-public:
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI BellBlock(std::string const &, int);
     MCAPI bool hasValidAttachment(class Block const &, class BlockSource &, class BlockPos const &) const;
 
+protected:
 
-//private:
+private:
     MCAPI class Block const & _determineAttachment(class Actor &, class BlockSource &, class BlockPos const &, unsigned char) const;
     MCAPI short _getItemId(class gsl::basic_string_span<char const, -1>) const;
     MCAPI class AABB const & _getShape(class Block const &, class AABB &) const;

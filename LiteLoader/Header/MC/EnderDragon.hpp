@@ -67,7 +67,6 @@ public:
     /*357*/ virtual void tickDeath();
     /*359*/ virtual void __unk_vfn_359();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERDRAGON
-public:
     MCVAPI bool canExistInPeaceful() const;
     MCVAPI bool isFishable() const;
 #endif
@@ -91,10 +90,10 @@ public:
     MCAPI void setTargetPos(class Vec3);
     MCAPI void setTurnSpeed(float);
 
-//protected:
+protected:
     MCAPI bool _hurt(class AABB *, class ActorDamageSource const &, float);
 
-//private:
+private:
     MCAPI void checkCrystals();
     MCAPI bool checkWalls(class AABB);
     MCAPI void hurtEntities(class gsl::span<class gsl::not_null<class Actor *>, -1>) const;

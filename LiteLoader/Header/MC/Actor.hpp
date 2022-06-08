@@ -358,7 +358,6 @@ public:
     /*276*/ virtual void _removePassenger(struct ActorUniqueID const &, bool, bool, bool);
     /*277*/ virtual void _onSizeUpdated();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOR
-public:
     MCVAPI void _doAutoAttackOnTouch(class Actor &);
     MCVAPI bool _makeFlySound() const;
     MCVAPI bool breaksFallingBlocks() const;
@@ -776,7 +775,7 @@ public:
     MCAPI static class Actor * tryGetFromEntity(class EntityContext &, bool);
     MCAPI static class Actor * tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
 
-//protected:
+protected:
     MCAPI void _assignActorMovementProxy(class gsl::not_null<class std::shared_ptr<struct IActorMovementProxy>>);
     MCAPI class ItemActor const * _drop(class ItemStack const &, bool);
     MCAPI bool _isHeadInWater() const;
@@ -792,7 +791,7 @@ public:
     MCAPI static bool _isImmersedInWater(class Vec3 const &, class BlockSource const &, class Vec2 const &);
     MCAPI static class Block const & getBlockWhenClimbing(struct IActorMovementProxy const &);
 
-//private:
+private:
     MCAPI void _defaultInitEquipmentDropChances();
     MCAPI void _initAliasProperties();
     MCAPI void _initializeLeashRopeSystem(class Actor *);

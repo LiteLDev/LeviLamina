@@ -60,10 +60,11 @@ public:
     /*354*/ virtual void newServerAiStep();
     /*359*/ virtual void __unk_vfn_359();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGERV2
-public:
 #endif
     MCAPI VillagerV2(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
+protected:
 
+private:
 
 };

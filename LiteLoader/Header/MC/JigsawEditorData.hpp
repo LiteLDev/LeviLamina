@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWEDITORDATA
-public:
 #endif
     MCAPI JigsawEditorData(class JigsawEditorData &&);
     MCAPI JigsawEditorData(std::string const &, std::string const &, std::string const &, std::string const &, enum JigsawJointType);
@@ -42,8 +41,9 @@ public:
     MCAPI void setTargetPool(std::string const &);
     MCAPI ~JigsawEditorData();
 
+protected:
 
-//private:
+private:
     MCAPI static class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string>>> const JOINT_TYPE_TO_NAME;
 
 };

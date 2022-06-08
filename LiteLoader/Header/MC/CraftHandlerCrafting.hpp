@@ -31,12 +31,12 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual class Recipes const * _getLevelRecipes() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERCRAFTING
-public:
 #endif
     MCAPI CraftHandlerCrafting(bool, class Player &, class ItemStackRequestActionCraftHandler &);
 
+protected:
 
-//private:
+private:
     MCAPI enum ItemStackNetResult _handleAutoCraft(class ItemStackRequestActionCraftRecipeAuto const &);
     MCAPI enum ItemStackNetResult _handleCraftOutput(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 12> const &);
 

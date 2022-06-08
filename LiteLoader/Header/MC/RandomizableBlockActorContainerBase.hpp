@@ -35,11 +35,12 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMIZABLEBLOCKACTORCONTAINERBASE
-public:
 #endif
     MCAPI void setLootTable(std::string const &, int);
     MCAPI void unPackLootTable(class Level &, class Container &, class AutomaticID<class Dimension, int>, class Actor *);
 
+protected:
 
+private:
 
 };

@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYSTEMTIMING
-public:
 #endif
     MCAPI ~SystemTiming();
 
+protected:
 
+private:
 
 };

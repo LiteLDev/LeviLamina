@@ -28,11 +28,12 @@ public:
     /*2*/ virtual void startListenTimeout();
     /*3*/ virtual bool listenTimeoutExpired() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEBUGGERWATCHDOG
-public:
 #endif
     MCAPI ScriptDebuggerWatchdog(class std::chrono::duration<int, struct std::ratio<60, 1>>);
     MCAPI void startLeaveGame();
 
+protected:
 
+private:
 
 };

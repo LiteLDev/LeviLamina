@@ -76,13 +76,13 @@ public:
     /*206*/ virtual int getSeedNum(class Randomize &, int, int) const;
     /*207*/ virtual int getCropNum(class Randomize &, int, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CROPBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI CropBlock(std::string const &, int);
 
+protected:
 
-//private:
+private:
     MCAPI float getGrowthSpeed(class BlockSource &, class BlockPos const &) const;
 
 };

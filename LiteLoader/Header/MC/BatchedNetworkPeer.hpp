@@ -31,13 +31,13 @@ public:
     /*4*/ virtual void update();
     /*5*/ virtual void flush(class std::function<void (void)> &&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BATCHEDNETWORKPEER
-public:
 #endif
     MCAPI BatchedNetworkPeer(class std::shared_ptr<class NetworkPeer>, class Scheduler &);
     MCAPI void setAsyncEnabled(bool);
 
+protected:
 
-//private:
+private:
     MCAPI void _startSendTask();
 
 };

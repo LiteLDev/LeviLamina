@@ -24,10 +24,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITICKINGAREA
-public:
 #endif
     MCAPI class CompoundTag serialize() const;
 
+protected:
 
+private:
 
 };

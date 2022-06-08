@@ -26,10 +26,11 @@ public:
     /*0*/ virtual ~NoSurfaceOreFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NOSURFACEOREFEATURE
-public:
 #endif
     MCAPI NoSurfaceOreFeature(struct IntRange, class BlockDescriptor const &, class BlockDescriptor const &, class BlockDescriptor const &);
 
+protected:
 
+private:
 
 };

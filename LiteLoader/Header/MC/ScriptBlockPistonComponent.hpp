@@ -25,7 +25,6 @@ public:
 public:
     /*0*/ virtual ~ScriptBlockPistonComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKPISTONCOMPONENT
-public:
 #endif
     MCAPI ScriptBlockPistonComponent(class ScriptBlockPistonComponent const &);
     MCAPI ScriptBlockPistonComponent(class ScriptBlockPistonComponent &&);
@@ -39,6 +38,8 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockPistonComponent> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockPistonComponent> tryCreate(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
 
+protected:
 
+private:
 
 };

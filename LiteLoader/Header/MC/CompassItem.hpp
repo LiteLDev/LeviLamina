@@ -44,10 +44,11 @@ public:
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPASSITEM
-public:
 #endif
     MCAPI CompassItem(std::string const &, int);
 
+protected:
 
+private:
 
 };

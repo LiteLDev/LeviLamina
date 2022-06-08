@@ -18,10 +18,8 @@
 #include <cstdint>
 #include <string>
 
-namespace llvm
-{
-namespace itanium_demangle
-{
+namespace llvm {
+namespace itanium_demangle {
 class OutputBuffer;
 }
 } // namespace llvm
@@ -29,26 +27,22 @@ class OutputBuffer;
 using llvm::itanium_demangle::OutputBuffer;
 using llvm::itanium_demangle::StringView;
 
-namespace llvm
-{
-namespace ms_demangle
-{
+namespace llvm {
+namespace ms_demangle {
 
 // Storage classes
-enum Qualifiers : uint8_t
-{
-    Q_None = 0,
-    Q_Const = 1 << 0,
-    Q_Volatile = 1 << 1,
-    Q_Far = 1 << 2,
-    Q_Huge = 1 << 3,
+enum Qualifiers : uint8_t {
+    Q_None      = 0,
+    Q_Const     = 1 << 0,
+    Q_Volatile  = 1 << 1,
+    Q_Far       = 1 << 2,
+    Q_Huge      = 1 << 3,
     Q_Unaligned = 1 << 4,
-    Q_Restrict = 1 << 5,
+    Q_Restrict  = 1 << 5,
     Q_Pointer64 = 1 << 6
 };
 
-enum class StorageClass : uint8_t
-{
+enum class StorageClass : uint8_t {
     None,
     PrivateStatic,
     ProtectedStatic,
@@ -57,23 +51,16 @@ enum class StorageClass : uint8_t
     FunctionLocalStatic,
 };
 
-enum class PointerAffinity
-{
-    None,
-    Pointer,
-    Reference,
-    RValueReference
-};
-enum class FunctionRefQualifier
-{
-    None,
-    Reference,
-    RValueReference
-};
+enum class PointerAffinity { None,
+                             Pointer,
+                             Reference,
+                             RValueReference };
+enum class FunctionRefQualifier { None,
+                                  Reference,
+                                  RValueReference };
 
 // Calling conventions
-enum class CallingConv : uint8_t
-{
+enum class CallingConv : uint8_t {
     None,
     Cdecl,
     Pascal,
@@ -88,27 +75,22 @@ enum class CallingConv : uint8_t
     SwiftAsync, // Clang-only
 };
 
-enum class ReferenceKind : uint8_t
-{
-    None,
-    LValueRef,
-    RValueRef
-};
+enum class ReferenceKind : uint8_t { None,
+                                     LValueRef,
+                                     RValueRef };
 
-enum OutputFlags
-{
-    OF_Default = 0,
+enum OutputFlags {
+    OF_Default             = 0,
     OF_NoCallingConvention = 1,
-    OF_NoTagSpecifier = 2,
-    OF_NoAccessSpecifier = 4,
-    OF_NoMemberType = 8,
-    OF_NoReturnType = 16,
-    OF_NoVariableType = 32,
+    OF_NoTagSpecifier      = 2,
+    OF_NoAccessSpecifier   = 4,
+    OF_NoMemberType        = 8,
+    OF_NoReturnType        = 16,
+    OF_NoVariableType      = 32,
 };
 
 // Types
-enum class PrimitiveKind
-{
+enum class PrimitiveKind {
     Void,
     Bool,
     Char,
@@ -132,16 +114,14 @@ enum class PrimitiveKind
     Nullptr,
 };
 
-enum class CharKind
-{
+enum class CharKind {
     Char,
     Char16,
     Char32,
     Wchar,
 };
 
-enum class IntrinsicFunctionKind : uint8_t
-{
+enum class IntrinsicFunctionKind : uint8_t {
     None,
     New,                        // ?2 # operator new
     Delete,                     // ?3 # operator delete
@@ -210,8 +190,7 @@ enum class IntrinsicFunctionKind : uint8_t
     MaxIntrinsic
 };
 
-enum class SpecialIntrinsicKind
-{
+enum class SpecialIntrinsicKind {
     None,
     Vftable,
     Vbtable,
@@ -233,325 +212,59 @@ enum class SpecialIntrinsicKind
 };
 
 // Function classes
-enum FuncClass : uint16_t
-{
-    FC_None = 0,
-    FC_Public = 1 << 0,
-    FC_Protected = 1 << 1,
-    FC_Private = 1 << 2,
-    FC_Global = 1 << 3,
-    FC_Static = 1 << 4,
-    FC_Virtual = 1 << 5,
-    FC_Far = 1 << 6,
-    FC_ExternC = 1 << 7,
-    FC_NoParameterList = 1 << 8,
-    FC_VirtualThisAdjust = 1 << 9,
+enum FuncClass : uint16_t {
+    FC_None                = 0,
+    FC_Public              = 1 << 0,
+    FC_Protected           = 1 << 1,
+    FC_Private             = 1 << 2,
+    FC_Global              = 1 << 3,
+    FC_Static              = 1 << 4,
+    FC_Virtual             = 1 << 5,
+    FC_Far                 = 1 << 6,
+    FC_ExternC             = 1 << 7,
+    FC_NoParameterList     = 1 << 8,
+    FC_VirtualThisAdjust   = 1 << 9,
     FC_VirtualThisAdjustEx = 1 << 10,
-    FC_StaticThisAdjust = 1 << 11,
+    FC_StaticThisAdjust    = 1 << 11,
 };
 
-class FuncClassType
-{
+class FuncClassType {
 public:
     StringView* backup = nullptr;
-    FuncClassType() = default;
+    FuncClassType()    = default;
     constexpr FuncClassType(FuncClass type)
-        : type(type)
-    {
+        : type(type) {
     }
 
-    operator FuncClass() const
-    {
+    operator FuncClass() const {
         return type;
     }
-    void set(FuncClassType type)
-    {
+    void set(FuncClassType type) {
         this->type = type;
     }
-    constexpr bool operator==(FuncClassType type) const
-    {
+    constexpr bool operator==(FuncClassType type) const {
         return this->type == type.type;
     }
-    constexpr bool operator!=(FuncClassType type) const
-    {
+    constexpr bool operator!=(FuncClassType type) const {
         return this->type != type.type;
     }
-    constexpr bool operator==(FuncClass type) const
-    {
+    constexpr bool operator==(FuncClass type) const {
         return this->type == type;
     }
-    constexpr bool operator!=(FuncClass type) const
-    {
+    constexpr bool operator!=(FuncClass type) const {
         return this->type != type;
     }
-
-    inline bool has(FuncClass type) const
-    {
-        return (this->type & type) == type;
-    }
-    inline void remove(FuncClass type)
-    {
-        this->type = static_cast<FuncClass>(this->type & ~type);
-    }
-    inline void add(FuncClass type)
-    {
-        this->type = static_cast<FuncClass>(this->type | type);
-    }
-
-    inline std::string toEnumString()
-    {
-        std::string ret;
-        ret += std::to_string((int)this->type);
-        if (this->type & FC_Public)
-            ret += "\t| Public";
-        if (this->type & FC_Protected)
-            ret += "\t| Protected";
-        if (this->type & FC_Private)
-            ret += "\t| Private";
-        if (this->type & FC_Global)
-            ret += "\t| Global";
-        if (this->type & FC_Static)
-            ret += "\t| Static";
-        if (this->type & FC_Virtual)
-            ret += "\t| Virtual";
-        if (this->type & FC_ExternC)
-            ret += "\t| ExternC";
-        if (this->type & FC_NoParameterList)
-            ret += "\t| NoParameterList";
-        if (this->type & FC_VirtualThisAdjust)
-            ret += "\t| VirtualThisAdjust";
-        if (this->type & FC_VirtualThisAdjustEx)
-            ret += "\t| VirtualThisAdjustEx";
-        if (this->type & FC_StaticThisAdjust)
-            ret += "\t| StaticThisAdjust";
-        if (this->type & FC_Far)
-            ret += "\t| Far";
-        return ret;
-    }
-
-    inline void fromMangledName(StringView& MangledName)
-    {
-        switch (MangledName.popFront())
-        {
-            case '9':
-                this->set(FuncClass(FC_ExternC | FC_NoParameterList));
-                return;
-            case 'A':
-                this->set(FC_Private);
-                return;
-            case 'B':
-                this->set(FuncClass(FC_Private | FC_Far));
-                return;
-            case 'C':
-                this->set(FuncClass(FC_Private | FC_Static));
-                return;
-            case 'D':
-                this->set(FuncClass(FC_Private | FC_Static | FC_Far));
-                return;
-            case 'E':
-                this->set(FuncClass(FC_Private | FC_Virtual));
-                return;
-            case 'F':
-                this->set(FuncClass(FC_Private | FC_Virtual | FC_Far));
-                return;
-            case 'G':
-                this->set(FuncClass(FC_Private | FC_StaticThisAdjust));
-                return;
-            case 'H':
-                this->set(FuncClass(FC_Private | FC_StaticThisAdjust | FC_Far));
-                return;
-            case 'I':
-                this->set(FuncClass(FC_Protected));
-                return;
-            case 'J':
-                this->set(FuncClass(FC_Protected | FC_Far));
-                return;
-            case 'K':
-                this->set(FuncClass(FC_Protected | FC_Static));
-                return;
-            case 'L':
-                this->set(FuncClass(FC_Protected | FC_Static | FC_Far));
-                return;
-            case 'M':
-                this->set(FuncClass(FC_Protected | FC_Virtual));
-                return;
-            case 'N':
-                this->set(FuncClass(FC_Protected | FC_Virtual | FC_Far));
-                return;
-            case 'O':
-                this->set(FuncClass(FC_Protected | FC_Virtual | FC_StaticThisAdjust));
-                return;
-            case 'P':
-                this->set(FuncClass(FC_Protected | FC_Virtual | FC_StaticThisAdjust | FC_Far));
-                return;
-            case 'Q':
-                this->set(FuncClass(FC_Public));
-                return;
-            case 'R':
-                this->set(FuncClass(FC_Public | FC_Far));
-                return;
-            case 'S':
-                this->set(FuncClass(FC_Public | FC_Static));
-                return;
-            case 'T':
-                this->set(FuncClass(FC_Public | FC_Static | FC_Far));
-                return;
-            case 'U':
-                this->set(FuncClass(FC_Public | FC_Virtual));
-                return;
-            case 'V':
-                this->set(FuncClass(FC_Public | FC_Virtual | FC_Far));
-                return;
-            case 'W':
-                this->set(FuncClass(FC_Public | FC_Virtual | FC_StaticThisAdjust));
-                return;
-            case 'X':
-                this->set(FuncClass(FC_Public | FC_Virtual | FC_StaticThisAdjust | FC_Far));
-                return;
-            case 'Y':
-                this->set(FuncClass(FC_Global));
-                return;
-            case 'Z':
-                this->set(FuncClass(FC_Global | FC_Far));
-                return;
-            case '$':
-            {
-                FuncClass VFlag = FC_VirtualThisAdjust;
-                if (MangledName.consumeFront('R'))
-                    VFlag = FuncClass(VFlag | FC_VirtualThisAdjustEx);
-                if (MangledName.empty())
-                    break;
-                switch (MangledName.popFront())
-                {
-                    case '0':
-                        this->set(FuncClass(FC_Private | FC_Virtual | VFlag));
-                        return;
-                    case '1':
-                        this->set(FuncClass(FC_Private | FC_Virtual | VFlag | FC_Far));
-                        return;
-                    case '2':
-                        this->set(FuncClass(FC_Protected | FC_Virtual | VFlag));
-                        return;
-                    case '3':
-                        this->set(FuncClass(FC_Protected | FC_Virtual | VFlag | FC_Far));
-                        return;
-                    case '4':
-                        this->set(FuncClass(FC_Public | FC_Virtual | VFlag));
-                        return;
-                    case '5':
-                        this->set(FuncClass(FC_Public | FC_Virtual | VFlag | FC_Far));
-                        return;
-                }
-            }
-        }
-    }
-    inline std::string toString() const
-    {
-        switch (this->type)
-        {
-            case FC_ExternC | FC_NoParameterList:
-                return "9";
-            case FC_Private:
-                return "A";
-            case FC_Private | FC_Far:
-                return "B";
-            case FC_Private | FC_Static:
-                return "C";
-            case FC_Private | FC_Static | FC_Far:
-                return "D";
-            case FC_Private | FC_Virtual:
-                return "E";
-            case FC_Private | FC_Virtual | FC_Far:
-                return "F";
-            case FC_Private | FC_StaticThisAdjust:
-                return "G";
-            case FC_Private | FC_StaticThisAdjust | FC_Far:
-                return "H";
-            case FC_Protected:
-                return "I";
-            case FC_Protected | FC_Far:
-                return "J";
-            case FC_Protected | FC_Static:
-                return "K";
-            case FC_Protected | FC_Static | FC_Far:
-                return "L";
-            case FC_Protected | FC_Virtual:
-                return "M";
-            case FC_Protected | FC_Virtual | FC_Far:
-                return "N";
-            case FC_Protected | FC_Virtual | FC_StaticThisAdjust:
-                return "O";
-            case FC_Protected | FC_Virtual | FC_StaticThisAdjust | FC_Far:
-                return "P";
-            case FC_Public:
-                return "Q";
-            case FC_Public | FC_Far:
-                return "R";
-            case FC_Public | FC_Static:
-                return "S";
-            case FC_Public | FC_Static | FC_Far:
-                return "T";
-            case FC_Public | FC_Virtual:
-                return "U";
-            case FC_Public | FC_Virtual | FC_Far:
-                return "V";
-            case FC_Public | FC_Virtual | FC_StaticThisAdjust:
-                return "W";
-            case FC_Public | FC_Virtual | FC_StaticThisAdjust | FC_Far:
-                return "X";
-            case FC_Global:
-                return "Y";
-            case FC_Global | FC_Far:
-                return "Z";
-            default:
-                if (this->type & FC_VirtualThisAdjust)
-                {
-                    std::string result;
-                    result += '$';
-                    if (this->type & FC_VirtualThisAdjustEx)
-                        result += 'R';
-                    switch (this->type & ~(FC_VirtualThisAdjust | FC_VirtualThisAdjustEx))
-                    {
-                        case FC_Private | FC_Virtual:
-                            result += '0';
-                            break;
-                        case FC_Private | FC_Virtual | FC_Far:
-                            result += '1';
-                            break;
-                        case FC_Protected | FC_Virtual:
-                            result += '2';
-                            break;
-                        case FC_Protected | FC_Virtual | FC_Far:
-                            result += '3';
-                            break;
-                        case FC_Public | FC_Virtual:
-                            result += '4';
-                            break;
-                        case FC_Public | FC_Virtual | FC_Far:
-                            result += '5';
-                            break;
-                    }
-                    return result;
-                }
-        }
-        return "";
-    }
-
 
 private:
     FuncClass type;
 };
 
-enum class TagKind
-{
-    Class,
-    Struct,
-    Union,
-    Enum
-};
+enum class TagKind { Class,
+                     Struct,
+                     Union,
+                     Enum };
 
-enum class NodeKind
-{
+enum class NodeKind {
     Unknown,
     Md5Symbol,
     PrimitiveType,
@@ -583,16 +296,13 @@ enum class NodeKind
     SpecialTableSymbol
 };
 
-struct Node
-{
+struct Node {
     explicit Node(NodeKind K)
-        : Kind(K)
-    {
+        : Kind(K) {
     }
     virtual ~Node() = default;
 
-    NodeKind kind() const
-    {
+    NodeKind kind() const {
         return Kind;
     }
 
@@ -630,18 +340,15 @@ struct FunctionSymbolNode;
 struct VariableSymbolNode;
 struct SpecialTableSymbolNode;
 
-struct TypeNode : public Node
-{
+struct TypeNode : public Node {
     explicit TypeNode(NodeKind K)
-        : Node(K)
-    {
+        : Node(K) {
     }
 
-    virtual void outputPre(OutputBuffer& OB, OutputFlags Flags) const = 0;
+    virtual void outputPre(OutputBuffer& OB, OutputFlags Flags) const  = 0;
     virtual void outputPost(OutputBuffer& OB, OutputFlags Flags) const = 0;
 
-    void output(OutputBuffer& OB, OutputFlags Flags) const override
-    {
+    void output(OutputBuffer& OB, OutputFlags Flags) const override {
         outputPre(OB, Flags);
         outputPost(OB, Flags);
     }
@@ -649,31 +356,25 @@ struct TypeNode : public Node
     Qualifiers Quals = Q_None;
 };
 
-struct PrimitiveTypeNode : public TypeNode
-{
+struct PrimitiveTypeNode : public TypeNode {
     explicit PrimitiveTypeNode(PrimitiveKind K)
         : TypeNode(NodeKind::PrimitiveType)
-        , PrimKind(K)
-    {
+        , PrimKind(K) {
     }
 
     void outputPre(OutputBuffer& OB, OutputFlags Flags) const override;
-    void outputPost(OutputBuffer& OB, OutputFlags Flags) const override
-    {
+    void outputPost(OutputBuffer& OB, OutputFlags Flags) const override {
     }
 
     PrimitiveKind PrimKind;
 };
 
-struct FunctionSignatureNode : public TypeNode
-{
+struct FunctionSignatureNode : public TypeNode {
     explicit FunctionSignatureNode(NodeKind K)
-        : TypeNode(K)
-    {
+        : TypeNode(K) {
     }
     FunctionSignatureNode()
-        : TypeNode(NodeKind::FunctionSignature)
-    {
+        : TypeNode(NodeKind::FunctionSignature) {
     }
 
     void outputPre(OutputBuffer& OB, OutputFlags Flags) const override;
@@ -704,11 +405,9 @@ struct FunctionSignatureNode : public TypeNode
     bool IsNoexcept = false;
 };
 
-struct IdentifierNode : public Node
-{
+struct IdentifierNode : public Node {
     explicit IdentifierNode(NodeKind K)
-        : Node(K)
-    {
+        : Node(K) {
     }
 
     NodeArrayNode* TemplateParams = nullptr;
@@ -717,11 +416,9 @@ protected:
     void outputTemplateParameters(OutputBuffer& OB, OutputFlags Flags) const;
 };
 
-struct VcallThunkIdentifierNode : public IdentifierNode
-{
+struct VcallThunkIdentifierNode : public IdentifierNode {
     VcallThunkIdentifierNode()
-        : IdentifierNode(NodeKind::VcallThunkIdentifier)
-    {
+        : IdentifierNode(NodeKind::VcallThunkIdentifier) {
     }
 
     void output(OutputBuffer& OB, OutputFlags Flags) const override;
@@ -729,25 +426,21 @@ struct VcallThunkIdentifierNode : public IdentifierNode
     uint64_t OffsetInVTable = 0;
 };
 
-struct DynamicStructorIdentifierNode : public IdentifierNode
-{
+struct DynamicStructorIdentifierNode : public IdentifierNode {
     DynamicStructorIdentifierNode()
-        : IdentifierNode(NodeKind::DynamicStructorIdentifier)
-    {
+        : IdentifierNode(NodeKind::DynamicStructorIdentifier) {
     }
 
     void output(OutputBuffer& OB, OutputFlags Flags) const override;
 
-    VariableSymbolNode* Variable = nullptr;
-    QualifiedNameNode* Name = nullptr;
-    bool IsDestructor = false;
+    VariableSymbolNode* Variable     = nullptr;
+    QualifiedNameNode*  Name         = nullptr;
+    bool                IsDestructor = false;
 };
 
-struct NamedIdentifierNode : public IdentifierNode
-{
+struct NamedIdentifierNode : public IdentifierNode {
     NamedIdentifierNode()
-        : IdentifierNode(NodeKind::NamedIdentifier)
-    {
+        : IdentifierNode(NodeKind::NamedIdentifier) {
     }
 
     void output(OutputBuffer& OB, OutputFlags Flags) const override;
@@ -755,12 +448,10 @@ struct NamedIdentifierNode : public IdentifierNode
     StringView Name;
 };
 
-struct IntrinsicFunctionIdentifierNode : public IdentifierNode
-{
+struct IntrinsicFunctionIdentifierNode : public IdentifierNode {
     explicit IntrinsicFunctionIdentifierNode(IntrinsicFunctionKind Operator)
         : IdentifierNode(NodeKind::IntrinsicFunctionIdentifier)
-        , Operator(Operator)
-    {
+        , Operator(Operator) {
     }
 
     void output(OutputBuffer& OB, OutputFlags Flags) const override;
@@ -768,11 +459,9 @@ struct IntrinsicFunctionIdentifierNode : public IdentifierNode
     IntrinsicFunctionKind Operator;
 };
 
-struct LiteralOperatorIdentifierNode : public IdentifierNode
-{
+struct LiteralOperatorIdentifierNode : public IdentifierNode {
     LiteralOperatorIdentifierNode()
-        : IdentifierNode(NodeKind::LiteralOperatorIdentifier)
-    {
+        : IdentifierNode(NodeKind::LiteralOperatorIdentifier) {
     }
 
     void output(OutputBuffer& OB, OutputFlags Flags) const override;
@@ -780,24 +469,20 @@ struct LiteralOperatorIdentifierNode : public IdentifierNode
     StringView Name;
 };
 
-struct LocalStaticGuardIdentifierNode : public IdentifierNode
-{
+struct LocalStaticGuardIdentifierNode : public IdentifierNode {
     LocalStaticGuardIdentifierNode()
-        : IdentifierNode(NodeKind::LocalStaticGuardIdentifier)
-    {
+        : IdentifierNode(NodeKind::LocalStaticGuardIdentifier) {
     }
 
     void output(OutputBuffer& OB, OutputFlags Flags) const override;
 
-    bool IsThread = false;
+    bool     IsThread   = false;
     uint32_t ScopeIndex = 0;
 };
 
-struct ConversionOperatorIdentifierNode : public IdentifierNode
-{
+struct ConversionOperatorIdentifierNode : public IdentifierNode {
     ConversionOperatorIdentifierNode()
-        : IdentifierNode(NodeKind::ConversionOperatorIdentifier)
-    {
+        : IdentifierNode(NodeKind::ConversionOperatorIdentifier) {
     }
 
     void output(OutputBuffer& OB, OutputFlags Flags) const override;
@@ -806,51 +491,43 @@ struct ConversionOperatorIdentifierNode : public IdentifierNode
     TypeNode* TargetType = nullptr;
 };
 
-struct StructorIdentifierNode : public IdentifierNode
-{
+struct StructorIdentifierNode : public IdentifierNode {
     StructorIdentifierNode()
-        : IdentifierNode(NodeKind::StructorIdentifier)
-    {
+        : IdentifierNode(NodeKind::StructorIdentifier) {
     }
     explicit StructorIdentifierNode(bool IsDestructor)
         : IdentifierNode(NodeKind::StructorIdentifier)
-        , IsDestructor(IsDestructor)
-    {
+        , IsDestructor(IsDestructor) {
     }
 
     void output(OutputBuffer& OB, OutputFlags Flags) const override;
 
     // The name of the class that this is a structor of.
-    IdentifierNode* Class = nullptr;
-    bool IsDestructor = false;
+    IdentifierNode* Class        = nullptr;
+    bool            IsDestructor = false;
 };
 
-struct ThunkSignatureNode : public FunctionSignatureNode
-{
+struct ThunkSignatureNode : public FunctionSignatureNode {
     ThunkSignatureNode()
-        : FunctionSignatureNode(NodeKind::ThunkSignature)
-    {
+        : FunctionSignatureNode(NodeKind::ThunkSignature) {
     }
 
     void outputPre(OutputBuffer& OB, OutputFlags Flags) const override;
     void outputPost(OutputBuffer& OB, OutputFlags Flags) const override;
 
-    struct ThisAdjustor
-    {
-        uint32_t StaticOffset = 0;
-        int32_t VBPtrOffset = 0;
-        int32_t VBOffsetOffset = 0;
-        int32_t VtordispOffset = 0;
+    struct ThisAdjustor {
+        uint32_t StaticOffset   = 0;
+        int32_t  VBPtrOffset    = 0;
+        int32_t  VBOffsetOffset = 0;
+        int32_t  VtordispOffset = 0;
     };
 
     ThisAdjustor ThisAdjust;
 };
 
-struct PointerTypeNode : public TypeNode
-{
+struct PointerTypeNode : public TypeNode {
     PointerTypeNode()
-        : TypeNode(NodeKind::PointerType)
-    {
+        : TypeNode(NodeKind::PointerType) {
     }
     void outputPre(OutputBuffer& OB, OutputFlags Flags) const override;
     void outputPost(OutputBuffer& OB, OutputFlags Flags) const override;
@@ -866,26 +543,22 @@ struct PointerTypeNode : public TypeNode
     TypeNode* Pointee = nullptr;
 };
 
-struct TagTypeNode : public TypeNode
-{
+struct TagTypeNode : public TypeNode {
     explicit TagTypeNode(TagKind Tag)
         : TypeNode(NodeKind::TagType)
-        , Tag(Tag)
-    {
+        , Tag(Tag) {
     }
 
     void outputPre(OutputBuffer& OB, OutputFlags Flags) const override;
     void outputPost(OutputBuffer& OB, OutputFlags Flags) const override;
 
     QualifiedNameNode* QualifiedName = nullptr;
-    TagKind Tag;
+    TagKind            Tag;
 };
 
-struct ArrayTypeNode : public TypeNode
-{
+struct ArrayTypeNode : public TypeNode {
     ArrayTypeNode()
-        : TypeNode(NodeKind::ArrayType)
-    {
+        : TypeNode(NodeKind::ArrayType) {
     }
 
     void outputPre(OutputBuffer& OB, OutputFlags Flags) const override;
@@ -901,22 +574,17 @@ struct ArrayTypeNode : public TypeNode
     TypeNode* ElementType = nullptr;
 };
 
-struct IntrinsicNode : public TypeNode
-{
+struct IntrinsicNode : public TypeNode {
     IntrinsicNode()
-        : TypeNode(NodeKind::IntrinsicType)
-    {
+        : TypeNode(NodeKind::IntrinsicType) {
     }
-    void output(OutputBuffer& OB, OutputFlags Flags) const override
-    {
+    void output(OutputBuffer& OB, OutputFlags Flags) const override {
     }
 };
 
-struct CustomTypeNode : public TypeNode
-{
+struct CustomTypeNode : public TypeNode {
     CustomTypeNode()
-        : TypeNode(NodeKind::Custom)
-    {
+        : TypeNode(NodeKind::Custom) {
     }
 
     void outputPre(OutputBuffer& OB, OutputFlags Flags) const override;
@@ -925,11 +593,9 @@ struct CustomTypeNode : public TypeNode
     IdentifierNode* Identifier = nullptr;
 };
 
-struct NodeArrayNode : public Node
-{
+struct NodeArrayNode : public Node {
     NodeArrayNode()
-        : Node(NodeKind::NodeArray)
-    {
+        : Node(NodeKind::NodeArray) {
     }
 
     void output(OutputBuffer& OB, OutputFlags Flags) const override;
@@ -940,102 +606,86 @@ struct NodeArrayNode : public Node
     size_t Count = 0;
 };
 
-struct QualifiedNameNode : public Node
-{
+struct QualifiedNameNode : public Node {
     QualifiedNameNode()
-        : Node(NodeKind::QualifiedName)
-    {
+        : Node(NodeKind::QualifiedName) {
     }
 
     void output(OutputBuffer& OB, OutputFlags Flags) const override;
 
     NodeArrayNode* Components = nullptr;
 
-    IdentifierNode* getUnqualifiedIdentifier()
-    {
+    IdentifierNode* getUnqualifiedIdentifier() {
         Node* LastComponent = Components->Nodes[Components->Count - 1];
         return static_cast<IdentifierNode*>(LastComponent);
     }
 };
 
-struct TemplateParameterReferenceNode : public Node
-{
+struct TemplateParameterReferenceNode : public Node {
     TemplateParameterReferenceNode()
-        : Node(NodeKind::TemplateParameterReference)
-    {
+        : Node(NodeKind::TemplateParameterReference) {
     }
 
     void output(OutputBuffer& OB, OutputFlags Flags) const override;
 
     SymbolNode* Symbol = nullptr;
 
-    int ThunkOffsetCount = 0;
+    int                    ThunkOffsetCount = 0;
     std::array<int64_t, 3> ThunkOffsets;
-    PointerAffinity Affinity = PointerAffinity::None;
-    bool IsMemberPointer = false;
+    PointerAffinity        Affinity        = PointerAffinity::None;
+    bool                   IsMemberPointer = false;
 };
 
-struct IntegerLiteralNode : public Node
-{
+struct IntegerLiteralNode : public Node {
     IntegerLiteralNode()
-        : Node(NodeKind::IntegerLiteral)
-    {
+        : Node(NodeKind::IntegerLiteral) {
     }
     IntegerLiteralNode(uint64_t Value, bool IsNegative)
         : Node(NodeKind::IntegerLiteral)
         , Value(Value)
-        , IsNegative(IsNegative)
-    {
+        , IsNegative(IsNegative) {
     }
 
     void output(OutputBuffer& OB, OutputFlags Flags) const override;
 
-    uint64_t Value = 0;
-    bool IsNegative = false;
+    uint64_t Value      = 0;
+    bool     IsNegative = false;
 };
 
-struct RttiBaseClassDescriptorNode : public IdentifierNode
-{
+struct RttiBaseClassDescriptorNode : public IdentifierNode {
     RttiBaseClassDescriptorNode()
-        : IdentifierNode(NodeKind::RttiBaseClassDescriptor)
-    {
+        : IdentifierNode(NodeKind::RttiBaseClassDescriptor) {
     }
 
     void output(OutputBuffer& OB, OutputFlags Flags) const override;
 
-    uint32_t NVOffset = 0;
-    int32_t VBPtrOffset = 0;
+    uint32_t NVOffset      = 0;
+    int32_t  VBPtrOffset   = 0;
     uint32_t VBTableOffset = 0;
-    uint32_t Flags = 0;
+    uint32_t Flags         = 0;
 };
 
-struct SymbolNode : public Node
-{
+struct SymbolNode : public Node {
     explicit SymbolNode(NodeKind K)
-        : Node(K)
-    {
+        : Node(K) {
     }
-    void output(OutputBuffer& OB, OutputFlags Flags) const override;
+    void               output(OutputBuffer& OB, OutputFlags Flags) const override;
     QualifiedNameNode* Name = nullptr;
 };
 
-struct SpecialTableSymbolNode : public SymbolNode
-{
+struct SpecialTableSymbolNode : public SymbolNode {
     explicit SpecialTableSymbolNode()
-        : SymbolNode(NodeKind::SpecialTableSymbol)
-    {
+        : SymbolNode(NodeKind::SpecialTableSymbol) {
     }
 
-    void output(OutputBuffer& OB, OutputFlags Flags) const override;
+    void               output(OutputBuffer& OB, OutputFlags Flags) const override;
     QualifiedNameNode* TargetName = nullptr;
-    Qualifiers Quals = Qualifiers::Q_None;
+    Qualifiers         Quals      = Qualifiers::Q_None;
 };
 
-struct LocalStaticGuardVariableNode : public SymbolNode
-{
+struct LocalStaticGuardVariableNode : public SymbolNode {
     LocalStaticGuardVariableNode()
-        : SymbolNode(NodeKind::LocalStaticGuardVariable)
-    {
+        : SymbolNode(NodeKind::LocalStaticGuardVariable) {
     }
 
     void output(OutputBuffer& OB, OutputFlags Flags) const override;
@@ -1043,38 +693,32 @@ struct LocalStaticGuardVariableNode : public SymbolNode
     bool IsVisible = false;
 };
 
-struct EncodedStringLiteralNode : public SymbolNode
-{
+struct EncodedStringLiteralNode : public SymbolNode {
     EncodedStringLiteralNode()
-        : SymbolNode(NodeKind::EncodedStringLiteral)
-    {
+        : SymbolNode(NodeKind::EncodedStringLiteral) {
     }
 
     void output(OutputBuffer& OB, OutputFlags Flags) const override;
 
     StringView DecodedString;
-    bool IsTruncated = false;
-    CharKind Char = CharKind::Char;
+    bool       IsTruncated = false;
+    CharKind   Char        = CharKind::Char;
 };
 
-struct VariableSymbolNode : public SymbolNode
-{
+struct VariableSymbolNode : public SymbolNode {
     VariableSymbolNode()
-        : SymbolNode(NodeKind::VariableSymbol)
-    {
+        : SymbolNode(NodeKind::VariableSymbol) {
     }
 
     void output(OutputBuffer& OB, OutputFlags Flags) const override;
 
-    StorageClass SC = StorageClass::None;
-    TypeNode* Type = nullptr;
+    StorageClass SC   = StorageClass::None;
+    TypeNode*    Type = nullptr;
 };
 
-struct FunctionSymbolNode : public SymbolNode
-{
+struct FunctionSymbolNode : public SymbolNode {
     FunctionSymbolNode()
-        : SymbolNode(NodeKind::FunctionSymbol)
-    {
+        : SymbolNode(NodeKind::FunctionSymbol) {
     }
 
     void output(OutputBuffer& OB, OutputFlags Flags) const override;

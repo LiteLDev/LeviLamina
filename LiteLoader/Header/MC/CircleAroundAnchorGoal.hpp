@@ -32,12 +32,12 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CIRCLEAROUNDANCHORGOAL
-public:
 #endif
     MCAPI CircleAroundAnchorGoal(class Mob &);
 
+protected:
 
-//private:
+private:
     MCAPI float _calculateHeightOffset() const;
     MCAPI void _selectNext();
     MCAPI void _setAnchorAboveTarget();

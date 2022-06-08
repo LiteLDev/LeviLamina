@@ -37,7 +37,6 @@ public:
     /*11*/ virtual void generateBox(class BlockSource &, class BoundingBox const &, int, int, int, int, int, int, class Block const &, class Block const &, bool);
     /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPIECE
-public:
 #endif
     MCAPI class BlockPos _getWorldPos(int, int, int);
     MCAPI void addTerrainAdjustmentToken(class std::shared_ptr<bool>);
@@ -57,6 +56,8 @@ public:
     MCAPI static class StructurePiece * findCollisionPiece(std::vector<std::unique_ptr<class StructurePiece>> const &, class BoundingBox const &);
     MCAPI static int getTotalWeight(std::vector<class PieceWeight> const &);
 
+protected:
 
+private:
 
 };

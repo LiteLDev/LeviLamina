@@ -119,7 +119,6 @@ public:
     /*9*/ virtual std::unique_ptr<class Tag> copy() const = 0;
     /*10*/ virtual unsigned __int64 hash() const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAG
-public:
 #endif
     MCAPI static std::string const NullString;
     MCAPI static std::string getTagName(enum Tag::Type);
@@ -127,8 +126,9 @@ public:
     MCAPI static std::unique_ptr<class Tag> readNamedTag(class IDataInput &, std::string &);
     MCAPI static void writeNamedTag(std::string const &, class Tag const &, class IDataOutput &);
 
-//protected:
+protected:
     MCAPI Tag();
 
+private:
 
 };

@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONATTRIBUTE
-public:
 #endif
     MCAPI ~ActorDefinitionAttribute();
 
+protected:
 
+private:
 
 };

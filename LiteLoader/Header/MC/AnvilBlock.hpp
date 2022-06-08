@@ -76,7 +76,6 @@ public:
     /*205*/ virtual void __unk_vfn_205();
     /*206*/ virtual void onLand(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANVILBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool falling() const;
     MCVAPI bool isCraftingBlock() const;
@@ -84,6 +83,8 @@ public:
 #endif
     MCAPI AnvilBlock(std::string const &, int);
 
+protected:
 
+private:
 
 };

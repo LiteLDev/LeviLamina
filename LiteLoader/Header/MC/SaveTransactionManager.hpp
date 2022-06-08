@@ -24,14 +24,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAVETRANSACTIONMANAGER
-public:
 #endif
     MCAPI SaveTransactionManager(class WorkerPool &, class Scheduler &, class std::function<void (bool)>);
     MCAPI void onBeginCompaction();
     MCAPI void onEndCompaction();
 
+protected:
 
-//private:
+private:
     MCAPI void _hideGlobalSaveIcon();
     MCAPI void _showGlobalSaveIcon();
 

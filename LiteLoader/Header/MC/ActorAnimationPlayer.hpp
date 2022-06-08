@@ -24,13 +24,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONPLAYER
-public:
     MCVAPI void bindParticleEffects(class std::unordered_map<class HashedString, class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class HashedString>>> const &);
     MCVAPI void bindSoundEffects(class std::unordered_map<class HashedString, std::string, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, std::string>>> const &);
     MCVAPI void buildBoneToPartMapping(class AnimationComponent &);
 #endif
     MCAPI ActorAnimationPlayer(class HashedString const &, class ExpressionNode const &);
 
+protected:
 
+private:
 
 };

@@ -24,13 +24,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WSASTARTUPSINGLETON
-public:
 #endif
     MCAPI static void AddRef();
     MCAPI static void Deref();
 
-//protected:
+protected:
     MCAPI static int refCount;
 
+private:
 
 };

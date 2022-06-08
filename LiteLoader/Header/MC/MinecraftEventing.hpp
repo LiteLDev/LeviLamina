@@ -35,7 +35,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTEVENTING
-public:
     MCVAPI void addCrashTelemetryToBatch(class std::shared_ptr<class Bedrock::SessionInfo>);
     MCVAPI void addListener(std::unique_ptr<class Social::Events::IEventListener>);
     MCVAPI void fileEventCloudWorldPullFailed(std::string const &, std::string const &, bool);
@@ -330,8 +329,9 @@ public:
     MCAPI static void fireEventPlayerTransform(class Player &);
     MCAPI static void fireEventSlashCommandExecuted(class Player *, std::string const &, int, int, std::string const &);
 
+protected:
 
-//private:
+private:
     MCAPI void _fireStructureBlockAction(enum IMinecraftEventing::StructureBlockActionType, class StructureEditorData const &, bool, class StructureTelemetryClientData const *);
     MCAPI void _generateWorldSessionId();
     MCAPI void fireEventPlayerMessage(std::string const &, std::string const &, std::string const &, std::string const &);

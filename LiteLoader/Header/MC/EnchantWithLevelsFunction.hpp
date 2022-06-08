@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTWITHLEVELSFUNCTION
-public:
     MCVAPI int apply(class ItemInstance &, class Random &, struct Trade const &, class LootTableContext &);
     MCVAPI int apply(class ItemStack &, class Random &, struct Trade const &, class LootTableContext &);
     MCVAPI void apply(class ItemInstance &, class Random &, class LootTableContext &);
@@ -33,6 +32,8 @@ public:
 #endif
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
+protected:
 
+private:
 
 };

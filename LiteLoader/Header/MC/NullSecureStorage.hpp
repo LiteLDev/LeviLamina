@@ -24,13 +24,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NULLSECURESTORAGE
-public:
     MCVAPI bool add(std::string const &, std::string const &);
     MCVAPI bool addOrUpdate(std::string const &, std::string const &);
     MCVAPI bool get(std::string const &, std::string &);
     MCVAPI bool remove(std::string const &);
 #endif
 
+protected:
 
+private:
 
 };

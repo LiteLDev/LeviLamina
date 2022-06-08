@@ -68,7 +68,6 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKULLBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
@@ -76,8 +75,9 @@ public:
     MCAPI bool checkMobSpawn(class Level &, class BlockSource &, class BlockPos const &, class SkullBlockActor &) const;
     MCAPI static std::string getTypeDescriptionId(int);
 
+protected:
 
-//private:
+private:
     MCAPI void _updatedDragonCircuit(class BlockSource &, class BlockPos const &) const;
 
 };

@@ -50,10 +50,11 @@ public:
     /*278*/ virtual void __unk_vfn_278();
     /*280*/ virtual void __unk_vfn_280();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMALLFIREBALL
-public:
 #endif
     MCAPI SmallFireball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
+protected:
 
+private:
 
 };

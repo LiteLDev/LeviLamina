@@ -21,10 +21,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKINADJUSTMENTS
-public:
 #endif
     MCAPI SkinAdjustments();
 
+protected:
 
+private:
 
 };

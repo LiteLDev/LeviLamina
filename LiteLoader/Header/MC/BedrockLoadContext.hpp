@@ -22,11 +22,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCKLOADCONTEXT
-public:
 #endif
     MCAPI BedrockLoadContext(class SemVersion const &);
     MCAPI ~BedrockLoadContext();
 
+protected:
 
+private:
 
 };

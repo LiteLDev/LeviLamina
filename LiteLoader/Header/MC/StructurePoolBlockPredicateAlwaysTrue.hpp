@@ -23,12 +23,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLBLOCKPREDICATEALWAYSTRUE
-public:
     MCVAPI bool test(class BlockPos const &, class BlockPos const &, class Randomize &) const;
     MCVAPI bool test(class Block const &, class Randomize &) const;
 #endif
     MCAPI StructurePoolBlockPredicateAlwaysTrue();
 
+protected:
 
+private:
 
 };

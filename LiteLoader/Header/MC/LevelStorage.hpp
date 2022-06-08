@@ -58,7 +58,6 @@ public:
     /*30*/ virtual void setCriticalSyncSaveCallback(class std::function<void (void)>) = 0;
     /*31*/ virtual void corruptLevel();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSTORAGE
-public:
 #endif
     MCAPI std::string getServerId(struct PlayerStorageIds const &);
     MCAPI std::string getServerId(class Player const &, bool);
@@ -70,6 +69,8 @@ public:
     MCAPI static std::string const LEGACY_CONSOLE_PLAYER_PREFIX;
     MCAPI static std::string const LOCAL_PLAYER_TAG;
 
+protected:
 
+private:
 
 };

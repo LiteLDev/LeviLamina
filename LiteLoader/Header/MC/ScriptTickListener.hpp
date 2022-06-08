@@ -29,10 +29,11 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual enum EventResult onLevelTick();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTTICKLISTENER
-public:
 #endif
     MCAPI ScriptTickListener(class Scripting::ScriptEngine &, class ScriptFormPromiseTracker &);
 
+protected:
 
+private:
 
 };

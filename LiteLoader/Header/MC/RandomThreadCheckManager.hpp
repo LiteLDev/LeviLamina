@@ -31,12 +31,12 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void onAppResumed();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMTHREADCHECKMANAGER
-public:
 #endif
     MCAPI static void invalidateThreadIndex();
 
+protected:
 
-//private:
+private:
     MCAPI static std::unique_ptr<class RandomThreadCheckManager> mInstance;
     MCAPI static class std::recursive_mutex mMutex;
 

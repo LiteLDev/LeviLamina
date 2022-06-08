@@ -81,15 +81,15 @@ public:
     /*192*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWEETBERRYBUSHBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI SweetBerryBushBlock(std::string const &, int);
     MCAPI static class Vec3 const SLOWDOWN_MULTIPLIER;
 
+protected:
 
-//private:
+private:
     MCAPI bool _growBush(class BlockSource &, class BlockPos const &) const;
     MCAPI bool _pickBerries(class BlockSource &, class BlockPos const &, class Block const &) const;
     MCAPI void _popBerries(class BlockSource &, class BlockPos const &, int const &, std::vector<class Item const *> *) const;

@@ -33,10 +33,11 @@ public:
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDCREATORCONTAINERMANAGERMODEL
-public:
 #endif
     MCAPI CompoundCreatorContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
+protected:
 
+private:
 
 };

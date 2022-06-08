@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_METADATATYPEVISITOR_GET
-public:
 #endif
     MCAPI ~MetaDataTypeVisitor_Get();
 
+protected:
 
+private:
 
 };

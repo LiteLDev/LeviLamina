@@ -24,15 +24,15 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONDATASERIALIZER
-public:
 #endif
     MCAPI std::string createSaveID(std::string const &, std::string const &);
     MCAPI void deleteDataWithID(std::string const &, class LevelStorage &);
     MCAPI void forEachKeyWithDimensionPrefix(std::string const &, std::string const &, class LevelStorage &, class std::function<void (std::string const &, class CompoundTag const &)> const &);
     MCAPI void saveDataWithID(std::string const &, class CompoundTag const &, class LevelStorage &);
 
-//protected:
+protected:
     MCAPI std::string _createLevelStorageID(std::string const &, std::string const &, std::string const &);
 
+private:
 
 };

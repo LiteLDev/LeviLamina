@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTWORLDEVENTS
-public:
 #endif
     MCAPI ScriptWorldEvents(class Scripting::WeakLifetimeScope const &, class gsl::not_null<class Level *>);
     MCAPI ScriptWorldEvents(class ScriptWorldEvents &&);
@@ -62,6 +61,8 @@ public:
     MCAPI ~ScriptWorldEvents();
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptWorldEvents> bind(struct Scripting::Version);
 
+protected:
 
+private:
 
 };

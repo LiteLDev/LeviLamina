@@ -25,12 +25,12 @@ public:
     /*0*/ virtual ~NewExecuteCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NEWEXECUTECOMMAND
-public:
 #endif
     MCAPI static void setup(class CommandRegistry &, int);
 
+protected:
 
-//private:
+private:
     MCAPI bool _detectConditionSubcommand(class CommandOrigin const &, class CommandOutput &) const;
 
 };

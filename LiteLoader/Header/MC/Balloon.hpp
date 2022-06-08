@@ -50,11 +50,12 @@ public:
     /*262*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /*269*/ virtual void __unk_vfn_269();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BALLOON
-public:
 #endif
     MCAPI Balloon(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void remove(bool);
 
+protected:
 
+private:
 
 };

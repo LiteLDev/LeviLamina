@@ -49,10 +49,11 @@ public:
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /*128*/ virtual enum ActorType _getActorType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOATITEM
-public:
 #endif
     MCAPI BoatItem(std::string const &, int, enum WoodType);
 
+protected:
 
+private:
 
 };

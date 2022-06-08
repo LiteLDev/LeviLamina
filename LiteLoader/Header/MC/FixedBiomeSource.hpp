@@ -29,10 +29,11 @@ public:
     /*3*/ virtual bool containsOnly(int, int, int, int, class gsl::span<int const, -1>) const;
     /*4*/ virtual class Biome const * getBiome(int, int, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIXEDBIOMESOURCE
-public:
 #endif
     MCAPI FixedBiomeSource(class Biome const &);
 
+protected:
 
+private:
 
 };

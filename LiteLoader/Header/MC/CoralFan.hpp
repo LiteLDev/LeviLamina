@@ -82,13 +82,14 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORALFAN
-public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI CoralFan(std::string const &, int);
     MCAPI static std::string const CORAL_FAN_NAMES[];
     MCAPI static int const CORAL_FAN_NAMES_COUNT;
 
+protected:
 
+private:
 
 };

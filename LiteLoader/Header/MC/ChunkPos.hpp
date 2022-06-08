@@ -31,7 +31,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKPOS
-public:
 #endif
     MCAPI ChunkPos(class BlockPos const &);
     MCAPI ChunkPos(class Vec3 const &);
@@ -42,6 +41,8 @@ public:
     MCAPI static class ChunkPos const MIN;
     MCAPI static class ChunkPos const ONE;
 
+protected:
 
+private:
 
 };

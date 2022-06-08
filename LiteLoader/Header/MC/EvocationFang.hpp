@@ -49,12 +49,12 @@ public:
     /*261*/ virtual void __unk_vfn_261();
     /*269*/ virtual void __unk_vfn_269();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVOCATIONFANG
-public:
 #endif
     MCAPI EvocationFang(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
+protected:
 
-//private:
+private:
     MCAPI void _dealDamageTo(class Mob &);
 
 };

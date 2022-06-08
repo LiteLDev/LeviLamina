@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDPROPERTYBAG
-public:
 #endif
     MCAPI CommandPropertyBag(class Json::Value const &);
     MCAPI CommandPropertyBag();
@@ -33,6 +32,8 @@ public:
     MCAPI void set(std::string const &, class BlockPos const &);
     MCAPI void set(std::string const &, class Vec3);
 
+protected:
 
+private:
 
 };

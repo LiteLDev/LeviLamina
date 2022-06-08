@@ -45,9 +45,10 @@ public:
     /*4*/ virtual void update();
     /*5*/ virtual void flush(class std::function<void (void)> &&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKPEER
-public:
 #endif
 
+protected:
 
+private:
 
 };

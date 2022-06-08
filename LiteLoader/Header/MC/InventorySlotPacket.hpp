@@ -29,11 +29,12 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYSLOTPACKET
-public:
 #endif
     MCAPI InventorySlotPacket(enum ContainerID, unsigned int, class ItemStack const &);
     MCAPI InventorySlotPacket();
 
+protected:
 
+private:
 
 };

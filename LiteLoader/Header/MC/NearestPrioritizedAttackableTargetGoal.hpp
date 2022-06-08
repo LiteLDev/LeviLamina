@@ -30,10 +30,11 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*11*/ virtual struct ActorUniqueID _findTarget(struct MobDescriptor const **);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NEARESTPRIORITIZEDATTACKABLETARGETGOAL
-public:
 #endif
     MCAPI NearestPrioritizedAttackableTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int, bool, int, bool, bool, int, float, bool, int, bool);
 
+protected:
 
+private:
 
 };

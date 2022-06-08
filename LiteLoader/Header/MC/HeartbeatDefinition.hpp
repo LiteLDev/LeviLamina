@@ -23,11 +23,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HEARTBEATDEFINITION
-public:
 #endif
     MCAPI void initialize(class EntityContext &, class HeartbeatServerComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HeartbeatDefinition>> &);
 
+protected:
 
+private:
 
 };

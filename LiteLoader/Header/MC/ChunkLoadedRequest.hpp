@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKLOADEDREQUEST
-public:
 #endif
     MCAPI ChunkLoadedRequest(class ChunkLoadedRequest &&);
     MCAPI ChunkLoadedRequest(struct Bounds const &, std::unique_ptr<class IRequestAction>, bool, bool);
@@ -42,8 +41,9 @@ public:
     MCAPI static bool isValidTag(class CompoundTag const &);
     MCAPI static struct DeserializedChunkLoadedRequest load(std::string const &, class CompoundTag const &, class ICommandOriginLoader &, std::string const &);
 
+protected:
 
-//private:
+private:
     MCAPI class ITickingAreaView const * _getTickingArea(class Dimension const &) const;
 
 };

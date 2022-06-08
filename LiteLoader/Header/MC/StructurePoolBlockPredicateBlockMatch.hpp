@@ -27,10 +27,11 @@ public:
     /*1*/ virtual bool test(class Block const &, class Randomize &) const;
     /*2*/ virtual bool test(class BlockPos const &, class BlockPos const &, class Randomize &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLBLOCKPREDICATEBLOCKMATCH
-public:
 #endif
     MCAPI StructurePoolBlockPredicateBlockMatch(class Block const &);
 
+protected:
 
+private:
 
 };

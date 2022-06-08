@@ -40,7 +40,6 @@ public:
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXECUTECONTEXTCOMMANDORIGIN
-public:
 #endif
     MCAPI ExecuteContextCommandOrigin(struct ActorUniqueID, class Vec3 const &, class std::optional<class Vec2> const &, struct ActorUniqueID, struct ActorUniqueID, enum ActorLocation, class AutomaticID<class Dimension, int>, class Level &);
     MCAPI void setDimension(class Dimension &);
@@ -50,6 +49,8 @@ public:
     MCAPI void setRotationEntity(class Actor const &);
     MCAPI static std::unique_ptr<class ExecuteContextCommandOrigin> load(class CompoundTag const &, class ServerLevel &);
 
+protected:
 
+private:
 
 };

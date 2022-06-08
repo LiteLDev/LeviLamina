@@ -23,12 +23,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HARDCODEDSPAWNAREAREGISTRY
-public:
 #endif
     MCAPI HardcodedSpawnAreaRegistry();
     MCAPI std::vector<class MobSpawnerData> const & getMobSpawnsForType(enum HardcodedSpawnAreaType) const;
     MCAPI void initMobSpawnsForType(enum HardcodedSpawnAreaType, std::vector<class MobSpawnerData> &&);
 
+protected:
 
+private:
 
 };

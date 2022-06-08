@@ -45,13 +45,14 @@ public:
     /*110*/ virtual std::string getInteractText(class Player const &) const;
     /*128*/ virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EMPTYMAPITEM
-public:
 #endif
     MCAPI EmptyMapItem(std::string const &, short);
     MCAPI static void addPlayerMarker(class ItemStack &);
     MCAPI static void addPlayerMarker(class ItemInstance &);
     MCAPI static bool isLocatorMap(class ItemStack const &);
 
+protected:
 
+private:
 
 };

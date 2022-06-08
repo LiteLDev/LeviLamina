@@ -32,10 +32,11 @@ public:
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWARDSTARGETGOAL
-public:
 #endif
     MCAPI MoveTowardsTargetGoal(class Mob &, float, float);
 
+protected:
 
+private:
 
 };

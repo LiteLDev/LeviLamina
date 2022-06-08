@@ -130,7 +130,6 @@ public:
     /*446*/ virtual int _getSpawnChunkLimit() const;
     /*447*/ virtual void _updateChunkPublisherView(class Vec3 const &, float);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYER
-public:
     MCVAPI void frameUpdate(class FrameUpdateContextBase &);
     MCVAPI void openPortfolio();
 #endif
@@ -155,8 +154,9 @@ public:
     MCAPI void triggerRespawnFromCompletingTheEnd();
     MCAPI static class ServerPlayer * tryGetFromEntity(class EntityContext &, bool);
 
+protected:
 
-//private:
+private:
     MCAPI void _logCDEvent(enum CrashDumpLogStringID, enum CrashDumpLogStringID, enum CrashDumpLogStringID, enum CrashDumpLogStringID);
     MCAPI enum ContainerID _nextContainerCounter();
     MCAPI void _removeNearbyEntities();

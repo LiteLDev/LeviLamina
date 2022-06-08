@@ -43,15 +43,15 @@ public:
     /*21*/ virtual int _getContainerOffset() const;
     /*22*/ virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCONTAINERMODEL
-public:
 #endif
     MCAPI LevelContainerModel(enum ContainerEnumName, int, class Player &, struct ActorUniqueID, enum ContainerCategory);
     MCAPI LevelContainerModel(enum ContainerEnumName, int, class Player &, enum BlockActorType, class BlockPos const &, enum ContainerCategory);
     MCAPI static class Container * getContainerHelper(class Player &, struct ActorUniqueID const &);
     MCAPI static class Container * getContainerHelper(class Player &, enum BlockActorType, class BlockPos const &);
 
+protected:
 
-//private:
+private:
     MCAPI class Actor * _getEntity() const;
     MCAPI void _refreshSlot(int);
 

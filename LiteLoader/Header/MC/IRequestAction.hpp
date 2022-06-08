@@ -30,11 +30,12 @@ public:
     /*2*/ virtual void serialize(class CompoundTag &);
     /*3*/ virtual bool operator==(class IRequestAction &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IREQUESTACTION
-public:
 #endif
     MCAPI IRequestAction(enum IRequestAction::RequestActionType const &);
     MCAPI static bool isValidTag(class CompoundTag const &);
 
+protected:
 
+private:
 
 };

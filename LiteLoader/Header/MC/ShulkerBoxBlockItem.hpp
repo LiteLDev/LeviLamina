@@ -44,12 +44,12 @@ public:
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*92*/ virtual std::string buildEffectDescriptionName(class ItemStackBase const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKERBOXBLOCKITEM
-public:
 #endif
     MCAPI ShulkerBoxBlockItem(std::string const &, int, class Block const *);
 
+protected:
 
-//private:
+private:
     MCAPI std::string buildContainedItemList(class CompoundTag const *) const;
 
 };

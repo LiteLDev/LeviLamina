@@ -23,13 +23,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORTYPETRACKER
-public:
 #endif
     MCAPI ActorTypeTracker();
     MCAPI void markSeenType(class Actor const &);
     MCAPI bool shouldSendPropertyUpdate(class Actor const &);
     MCAPI ~ActorTypeTracker();
 
+protected:
 
+private:
 
 };

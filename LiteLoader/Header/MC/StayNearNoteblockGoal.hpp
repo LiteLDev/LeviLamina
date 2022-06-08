@@ -30,12 +30,12 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STAYNEARNOTEBLOCKGOAL
-public:
 #endif
     MCAPI StayNearNoteblockGoal(class Mob &);
 
+protected:
 
-//private:
+private:
     MCAPI class std::optional<class BlockPos> const _hasLastVibrationAtNoteblock();
 
 };

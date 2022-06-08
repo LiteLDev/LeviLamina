@@ -72,15 +72,15 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STEMBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool isStemBlock() const;
 #endif
     MCAPI StemBlock(std::string const &, int, class BlockLegacy const &);
     MCAPI class BlockLegacy const & getFruitBlock() const;
 
+protected:
 
-//private:
+private:
     MCAPI float getGrowthSpeed(class BlockSource &, class BlockPos const &) const;
 
 };

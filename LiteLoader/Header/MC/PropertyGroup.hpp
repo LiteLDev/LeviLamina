@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYGROUP
-public:
 #endif
     MCAPI PropertyGroup();
     MCAPI class CompoundTag getPropertyDescriptionsAsCompound(bool) const;
@@ -35,8 +34,9 @@ public:
     MCAPI static bool loadPropertiesFromJson(std::vector<class std::shared_ptr<struct PropertyDescription>> &, class Json::Value const &);
     MCAPI static bool loadPropertyFromJson(struct PropertyDescription &, std::string const &, class Json::Value const &);
 
+protected:
 
-//private:
+private:
     MCAPI static class std::unordered_map<class HashedString, class std::shared_ptr<struct PropertyDescription>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::shared_ptr<struct PropertyDescription>>>> MinecraftEngineProperties;
 
 };

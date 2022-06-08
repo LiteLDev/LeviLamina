@@ -50,12 +50,12 @@ public:
     /*119*/ virtual bool canBeCharged() const;
     /*121*/ virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CROSSBOWITEM
-public:
 #endif
     MCAPI CrossbowItem(std::string const &, int);
 
+protected:
 
-//private:
+private:
     MCAPI class Vec3 _getShootDir(class Player const &, float) const;
     MCAPI void _shootArrow(class ItemInstance const &, class ItemInstance const &, class Player &) const;
     MCAPI void _shootFirework(class ItemInstance const &, class Player &) const;

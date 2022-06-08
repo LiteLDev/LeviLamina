@@ -31,7 +31,6 @@ public:
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THROWABLEITEMCOMPONENT
-public:
 #endif
     MCAPI ThrowableItemComponent(class ComponentItem *);
     MCAPI bool releaseUsing(class ItemStack &, class Player *, int) const;
@@ -39,8 +38,9 @@ public:
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
+protected:
 
-//private:
+private:
     MCAPI float _getLaunchPower(int, int, int) const;
 
 };

@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTWORKERPOOL
-public:
 #endif
     MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> ASYNC;
     MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> CONNECTEDSTORAGE;
@@ -45,6 +44,8 @@ public:
     MCAPI static void initializeDefaults();
     MCAPI static void loadWorkerConfigurations(unsigned int, unsigned int);
 
+protected:
 
+private:
 
 };

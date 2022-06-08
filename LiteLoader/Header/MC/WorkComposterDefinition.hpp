@@ -22,12 +22,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKCOMPOSTERDEFINITION
-public:
 #endif
     MCAPI WorkComposterDefinition();
     MCAPI void initialize(class EntityContext &, class WorkComposterGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class WorkComposterDefinition>> &);
 
+protected:
 
+private:
 
 };

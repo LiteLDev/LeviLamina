@@ -22,11 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDECROSSENTITYREMAPSYSTEM
-public:
 #endif
 
+protected:
 
-//private:
+private:
     MCAPI static void _removeNullStrictEntityContexts(std::vector<class StrictEntityContext> &);
 
 };

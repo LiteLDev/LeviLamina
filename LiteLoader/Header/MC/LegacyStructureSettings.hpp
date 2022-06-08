@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYSTRUCTURESETTINGS
-public:
 #endif
     MCAPI LegacyStructureSettings(enum Mirror, enum Rotation, class Block const *, class BoundingBox const &);
     MCAPI LegacyStructureSettings();
@@ -54,6 +53,8 @@ public:
     MCAPI static float const INTEGRITY_MIN;
     MCAPI static int const MAX_STRUCTURE_SIZE;
 
+protected:
 
+private:
 
 };

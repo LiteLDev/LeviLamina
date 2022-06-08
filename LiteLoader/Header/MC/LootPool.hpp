@@ -25,13 +25,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTPOOL
-public:
 #endif
     MCAPI void addRandomItems(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
     MCAPI void deserialize(class Json::Value const &);
 
-//protected:
+protected:
     MCAPI void addRandomItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
 
+private:
 
 };

@@ -70,7 +70,6 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHORUSFLOWERBLOCK
-public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI ChorusFlowerBlock(std::string const &, int);
@@ -79,8 +78,9 @@ public:
     MCAPI static int const GROW_RATE;
     MCAPI static void generatePlant(class BlockSource &, class BlockPos const &, class Random &, int);
 
+protected:
 
-//private:
+private:
     MCAPI void _placeDeadFlower(class BlockSource &, class BlockPos const &) const;
     MCAPI void _placeGrownFlower(class BlockSource &, class BlockPos const &, int) const;
     MCAPI static void _growTreeRecursive(class BlockSource &, class BlockPos const &, class BlockPos const &, class Random &, int, int);

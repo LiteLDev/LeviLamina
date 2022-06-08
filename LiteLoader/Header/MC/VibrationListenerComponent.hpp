@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONLISTENERCOMPONENT
-public:
 #endif
     MCAPI ~VibrationListenerComponent();
 
+protected:
 
+private:
 
 };

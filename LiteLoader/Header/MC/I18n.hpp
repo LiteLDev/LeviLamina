@@ -36,7 +36,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_I18N
-public:
 #endif
     MCAPI static char const NeutralLangCode[];
     MCAPI static void addI18nObserver(class I18nObserver &);
@@ -55,8 +54,9 @@ public:
     MCAPI static void loadAllLanguages(class ResourcePackManager &);
     MCAPI static void loadLanguageKeywordsFromPack(class PackManifest const &, class PackAccessStrategy const &, std::vector<std::string> const &);
 
+protected:
 
-//private:
+private:
     MCAPI static void _findAvailableLanguageNames(class Json::Value const &, class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> &);
     MCAPI static void _findAvailableLanguages(class Json::Value const &, std::vector<std::string> &);
     MCAPI static class Localization * _findLocaleFor(std::string const &);

@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AVERAGETRACKER
-public:
 #endif
     MCAPI void addSample(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
 
+protected:
 
+private:
 
 };

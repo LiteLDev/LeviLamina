@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKREPORT
-public:
 #endif
     MCAPI PackReport(class PackReport const &);
     MCAPI PackReport();
@@ -45,6 +44,8 @@ public:
     MCAPI bool wasUpgraded() const;
     MCAPI ~PackReport();
 
+protected:
 
+private:
 
 };

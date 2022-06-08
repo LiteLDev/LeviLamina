@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTRESULTS_DEPRECATEDASKTYLAING
-public:
     MCVAPI bool _read(class ReadOnlyBinaryStream &);
     MCVAPI void _write(class BinaryStream &) const;
     MCVAPI void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette &, bool);
@@ -32,6 +31,8 @@ public:
     MCAPI unsigned char getNumCrafts() const;
     MCAPI std::vector<class ItemInstance> const & getResults() const;
 
+protected:
 
+private:
 
 };

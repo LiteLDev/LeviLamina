@@ -21,7 +21,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTACTORITERATOR
-public:
 #endif
     MCAPI ScriptActorIterator(std::vector<class Scripting::StrongTypedObjectHandle<class ScriptActor>> &&);
     MCAPI ScriptActorIterator(class ScriptActorIterator const &);
@@ -29,6 +28,8 @@ public:
     MCAPI ~ScriptActorIterator();
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptActorIterator> bind(struct Scripting::Version);
 
+protected:
 
+private:
 
 };

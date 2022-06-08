@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEACONBLOCKACTOR
-public:
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     MCVAPI class Container const * getContainer() const;
@@ -52,8 +51,9 @@ public:
     MCAPI bool setSecondaryEffect(int);
     MCAPI static bool isPaymentItem(class ItemDescriptor const &);
 
+protected:
 
-//private:
+private:
     MCAPI void _applyEffects(class BlockSource &);
     MCAPI int _getEffectTier(int) const;
     MCAPI bool _isEffectValid(int) const;

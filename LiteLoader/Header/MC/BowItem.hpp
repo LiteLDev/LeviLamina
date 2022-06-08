@@ -43,10 +43,11 @@ public:
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*116*/ virtual class Item & setIcon(std::string const &, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOWITEM
-public:
 #endif
     MCAPI BowItem(std::string const &, int);
 
+protected:
 
+private:
 
 };

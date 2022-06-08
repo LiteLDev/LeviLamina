@@ -67,10 +67,11 @@ public:
     /*205*/ virtual class ItemInstance const getBaseCrop() const;
     /*207*/ virtual int getCropNum(class Randomize &, int, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CARROTBLOCK
-public:
 #endif
     MCAPI CarrotBlock(std::string const &, int);
 
+protected:
 
+private:
 
 };

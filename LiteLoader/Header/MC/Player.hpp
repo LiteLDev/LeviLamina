@@ -328,7 +328,6 @@ public:
     /*444*/ virtual void onMovePlayerPacketNormal(class Vec3 const &, class Vec2 const &, float);
     /*445*/ virtual class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYER
-public:
     MCVAPI void displayChatMessage(std::string const &, std::string const &);
     MCVAPI void displayClientMessage(std::string const &);
     MCVAPI bool getAlwaysShowNameTag() const;
@@ -513,7 +512,7 @@ public:
     MCAPI static class Player * tryGetFromEntity(class EntityContext &, bool);
     MCAPI static class Player * tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
 
-//protected:
+protected:
     MCAPI bool _checkAndFixSpawnPosition(class Vec3 &, std::vector<class gsl::not_null<class BlockSource *>>, bool, bool, bool, bool, bool) const;
     MCAPI void _chooseSpawnArea();
     MCAPI bool _chooseSpawnPositionWithinArea();
@@ -524,7 +523,7 @@ public:
     MCAPI bool checkSpawnBlock(class BlockSource const &) const;
     MCAPI static bool _isDangerousBlock(class Block const &, bool);
 
-//private:
+private:
     MCAPI void _addLevels(int);
     MCAPI bool _blockUsingShield(class ActorDamageSource const &, float);
     MCAPI void _ensureSafeSpawnPosition(class Vec3 &);

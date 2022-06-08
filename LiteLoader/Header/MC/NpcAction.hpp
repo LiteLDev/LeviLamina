@@ -28,7 +28,6 @@ public:
     /*1*/ virtual void __unk_vfn_1() = 0;
     /*2*/ virtual bool fromJson(class Json::Value const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCACTION
-public:
 #endif
     MCAPI enum NpcActionMode getMode() const;
     MCAPI std::string const & getText() const;
@@ -40,10 +39,10 @@ public:
     MCAPI void setText(std::string const &);
     MCAPI static std::unique_ptr<class NpcAction> read(class Json::Value const &);
 
-//protected:
+protected:
     MCAPI class Json::Value toJsonBase(class Json::Value &);
 
-//private:
+private:
     MCAPI static std::string const BUTTON_NAME_KEY;
     MCAPI static std::string const DATA_KEY;
     MCAPI static int const MAX_BUTTON_NAME_LENGTH;

@@ -19,7 +19,6 @@ enum EAxis;
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROJECTILECOMPONENT
-public:
 #endif
     MCAPI ProjectileComponent(class ProjectileComponent const &);
     MCAPI ProjectileComponent();
@@ -65,8 +64,9 @@ public:
     MCAPI ~ProjectileComponent();
     MCAPI static unsigned int const DELAY_ON_HIT;
 
+protected:
 
-//private:
+private:
     MCAPI void _handleLightningOnHit(class Actor &);
     MCAPI void _selectNextMoveDirection(class Actor &, enum ProjectileComponent::EAxis);
 

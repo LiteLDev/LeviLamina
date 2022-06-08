@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATEGROUP
-public:
 #endif
     MCAPI BlockStateGroup();
     MCAPI class BlockStateMeta const * getBlockStateFromHash(unsigned __int64 const &) const;
@@ -36,6 +35,8 @@ public:
     MCAPI static std::unique_ptr<class ListTag> createItemStateEnum(class ItemState const &);
     MCAPI static bool loadBlockStateFromJson(struct BlockStateDefinition &, std::string const &, class Json::Value const &);
 
+protected:
 
+private:
 
 };

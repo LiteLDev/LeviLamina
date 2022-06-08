@@ -22,7 +22,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXHAUSTIONCOMPONENT
-public:
 #endif
     MCAPI float getAttackValue() const;
     MCAPI float getHealValue() const;
@@ -33,6 +32,8 @@ public:
     MCAPI float getSwimValue() const;
     MCAPI float getWalkValue() const;
 
+protected:
 
+private:
 
 };

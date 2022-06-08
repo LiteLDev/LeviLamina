@@ -66,7 +66,6 @@ public:
     /*30*/ virtual void setCriticalSyncSaveCallback(class std::function<void (void)>);
     /*31*/ virtual void corruptLevel();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DBSTORAGE
-public:
     MCVAPI struct Core::LevelStorageResult getLevelStorageState() const;
     MCVAPI struct Core::LevelStorageResult getState() const;
 #endif
@@ -74,7 +73,7 @@ public:
     MCAPI void _notifyChunkStorageDestroyed(class DBChunkStorage &);
     MCAPI bool tryRepair(class Core::Path const &) const;
 
-//protected:
+protected:
     MCAPI struct std::pair<class LevelStorageWriteBatch *, class std::_Tree_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>>> _findCacheEntry(std::string const &);
     MCAPI class std::map<std::string, struct DBStorage::PendingWriteResult, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, struct DBStorage::PendingWriteResult>>> _getAllPendingWrites() const;
     MCAPI void _handleErrorStatus(class leveldb::Status const &);
@@ -83,7 +82,7 @@ public:
     MCAPI void _read(class gsl::basic_string_span<char const, -1>, enum DBHelpers::Category, class std::function<void (class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>)> const &) const;
     MCAPI struct DBStorage::PendingWriteResult _readPendingWrite(std::string const &, enum DBHelpers::Category) const;
 
-//private:
+private:
     MCAPI class TaskResult _flushWriteCacheToLevelDB();
     MCAPI std::string _getTelemetryMessage(class leveldb::Status const &) const;
     MCAPI void _markAsCorrupted(class gsl::basic_string_span<char const, -1>) const;

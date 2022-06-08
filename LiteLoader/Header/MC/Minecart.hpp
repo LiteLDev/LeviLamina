@@ -69,7 +69,6 @@ public:
     /*284*/ virtual void applyNaturalSlowdown(class BlockSource &);
     /*285*/ virtual void _lazyInitDisplayBlock();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECART
-public:
     MCVAPI bool canMakeStepSound() const;
     MCVAPI int getDefaultDisplayData() const;
 #endif
@@ -77,8 +76,9 @@ public:
     MCAPI void setCustomDisplay(bool);
     MCAPI void setDisplayBlock(class Block const &);
 
+protected:
 
-//private:
+private:
     MCAPI void _registerLoopingSounds();
 
 };

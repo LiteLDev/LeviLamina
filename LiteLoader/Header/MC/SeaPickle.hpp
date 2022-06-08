@@ -79,13 +79,14 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEAPICKLE
-public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool hasVariableLighting() const;
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI SeaPickle(std::string const &, int);
 
+protected:
 
+private:
 
 };

@@ -61,7 +61,6 @@ public:
     /*354*/ virtual void newServerAiStep();
     /*359*/ virtual void __unk_vfn_359();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERMAN
-public:
 #endif
     MCAPI EnderMan(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI class Block const & getCarryingBlock();
@@ -71,8 +70,9 @@ public:
     MCAPI static class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> mMayTake;
     MCAPI static void shutdown();
 
+protected:
 
-//private:
+private:
     MCAPI static bool mMayTakeIsSetup;
 
 };

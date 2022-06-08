@@ -35,12 +35,12 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual int getRandomEatingEnd() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNACKGOAL
-public:
 #endif
     MCAPI SnackGoal(class Mob &, std::vector<class ItemDescriptor> const &, float, float, float);
 
+protected:
 
-//private:
+private:
     MCAPI bool _hasSnackableItems();
     MCAPI bool _isSnackableItem(class ItemStack const &) const;
     MCAPI void _updateHand(class ItemStack const &);

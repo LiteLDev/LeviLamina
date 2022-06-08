@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATEMETA
-public:
 #endif
     MCAPI BlockStateMeta(class ItemState const &, struct BlockStateDefinition const &);
     MCAPI bool const getBool(int) const;
@@ -37,6 +36,8 @@ public:
     MCAPI enum Tag::Type const getType() const;
     MCAPI int indexOf(unsigned __int64 const &) const;
 
+protected:
 
+private:
 
 };

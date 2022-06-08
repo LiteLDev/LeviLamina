@@ -27,15 +27,15 @@ public:
     /*0*/ virtual ~BaseScriptBlockLiquidContainerComponent();
     /*4*/ virtual class Scripting::Result<void> setFillLevel(int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASESCRIPTBLOCKLIQUIDCONTAINERCOMPONENT
-public:
 #endif
     MCAPI BaseScriptBlockLiquidContainerComponent(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &, enum CauldronLiquidType);
     MCAPI class Scripting::Result<int> getFillLevel();
 
-//protected:
+protected:
     MCAPI class CauldronBlock const * _tryGetCauldronBlock();
     MCAPI class CauldronBlockActor * _tryGetCauldronBlockActor();
     MCAPI static enum GameTestFluidType _getActualCauldronLiquidType(class BlockSource &, class BlockPos);
 
+private:
 
 };

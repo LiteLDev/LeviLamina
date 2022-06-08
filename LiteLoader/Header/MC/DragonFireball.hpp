@@ -51,12 +51,13 @@ public:
     /*280*/ virtual void __unk_vfn_280();
     /*281*/ virtual enum ParticleType getTrailParticle();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONFIREBALL
-public:
     MCVAPI bool shouldBurn();
 #endif
     MCAPI DragonFireball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI static float SPLASH_RANGE;
 
+protected:
 
+private:
 
 };

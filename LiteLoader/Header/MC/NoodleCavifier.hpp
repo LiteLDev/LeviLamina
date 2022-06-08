@@ -24,13 +24,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NOODLECAVIFIER
-public:
 #endif
     MCAPI NoodleCavifier(class NoodleCavifierNoises const &, short);
     MCAPI float cavify(float, class BlockPos const &) const;
     MCAPI void fillNoiseAtPos(class Vec3 const &, int, float);
     MCAPI class std::array<class NoiseCellInterpolator *, 4> getInterpolators(int, int);
 
+protected:
 
+private:
 
 };

@@ -83,7 +83,6 @@ public:
     /*207*/ virtual void __unk_vfn_207();
     /*208*/ MCAPI std::string const & getDescriptionId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOSTERBLOCK
-public:
     MCVAPI bool hasComparatorSignal() const;
 #endif
     MCAPI ComposterBlock(std::string const &, int);
@@ -94,8 +93,9 @@ public:
     MCAPI static class ItemStack extractItem(class BlockSource &, class Block const &, class BlockPos const &);
     MCAPI static class Block const * getComposterAt(class BlockSource &, class BlockPos const &);
 
+protected:
 
-//private:
+private:
     MCAPI void _emitBoneMeal(class Level &, class BlockSource &, class BlockPos const &) const;
     MCAPI void _notifyClientComposterUsed(class Player const &, short, enum MinecraftEventing::POIBlockInteractionType) const;
     MCAPI static class BaseGameVersion const COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION;

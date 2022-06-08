@@ -49,7 +49,6 @@ public:
     /*25*/ virtual void __unk_vfn_25();
     /*26*/ virtual void onLevelDestruction(std::string const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTGAMETEST
-public:
 #endif
     MCAPI MinecraftGameTest(class Level &);
     MCAPI void clearAllTests(class BlockSource &);
@@ -62,8 +61,9 @@ public:
     MCAPI std::string runTestAt(class BlockSource &, class BlockPos const &, class std::optional<enum Rotation>);
     MCAPI std::vector<class std::shared_ptr<class gametest::BaseGameTestInstance>> const & runTests(class Dimension &, struct gametest::TestParameters &&);
 
+protected:
 
-//private:
+private:
     MCAPI void _runTestPreparation(class gametest::BaseGameTestFunction const &);
 
 };

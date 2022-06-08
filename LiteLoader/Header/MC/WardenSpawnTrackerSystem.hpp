@@ -24,11 +24,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WARDENSPAWNTRACKERSYSTEM
-public:
     MCVAPI enum EventResult onLevelAddedPlayer(class Level &, class Player &);
     MCVAPI void tick(class EntityRegistry &);
 #endif
 
+protected:
 
+private:
 
 };

@@ -23,12 +23,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAMEABLECOMPONENT
-public:
 #endif
     MCAPI NameableComponent();
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     MCAPI void nameEntity(class Actor &, std::string const &);
 
+protected:
 
+private:
 
 };

@@ -24,12 +24,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VALIDATORREGISTRY
-public:
 #endif
     MCAPI static void registerValidators(class gsl::basic_string_span<char const, -1>, class std::function<class ContentTierIncompatibleReason (class PackInstance const &, class ContentTierInfo const &)>, class std::function<class ContentTierIncompatibleReason (struct SubpackInfo const &, class ContentTierInfo const &)>);
 
+protected:
 
-//private:
+private:
     MCAPI static class ServiceReference<class ValidatorRegistry> _get();
 
 };

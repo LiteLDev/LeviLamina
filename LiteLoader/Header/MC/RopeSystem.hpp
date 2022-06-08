@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROPESYSTEM
-public:
 #endif
     MCAPI RopeSystem();
     MCAPI void _initializePins(class Vec3 const &, class Vec3 const &);
@@ -37,8 +36,9 @@ public:
     MCAPI static bool sEnabled;
     MCAPI static float const sEpsilon;
 
+protected:
 
-//private:
+private:
     MCAPI void _finalizeBucket(struct AABBBucket &);
     MCAPI void _initializePins();
     MCAPI void _integrate();

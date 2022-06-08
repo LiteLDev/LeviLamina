@@ -27,10 +27,11 @@ public:
     /*0*/ virtual ~DropperContainerManagerModel();
     /*16*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DROPPERCONTAINERMANAGERMODEL
-public:
 #endif
     MCAPI DropperContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
+protected:
 
+private:
 
 };

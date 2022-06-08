@@ -30,14 +30,13 @@ public:
     /*3*/ virtual bool remove(std::string const &);
     /*4*/ virtual bool get(std::string const &, std::string &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILESECURESTORAGE
-public:
 #endif
     MCAPI FileSecureStorage(class Core::PathBuffer<std::string> const &, class Core::PathBuffer<class Core::StackString<char, 1024>> const &, class ISecureStorageKeySystem *, class Core::Path const &, class FileSecureStorage::StorageSystem *);
 
-//protected:
+protected:
     MCAPI bool _init(bool);
 
-//private:
+private:
     MCAPI std::string _contentKeyObfuscator(std::string const &, std::string const &);
     MCAPI class SecureStorageKey _getSecureStorageKey() const;
     MCAPI void _initalizeSymmetricEncyrption(std::string &, bool);

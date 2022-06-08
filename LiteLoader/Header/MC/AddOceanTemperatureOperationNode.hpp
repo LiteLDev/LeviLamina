@@ -28,9 +28,10 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void _fillArea(class OperationNodeDetails::WorkingData<enum BiomeTemperatureCategory, char> &, class Pos2d const &, class Pos2d const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDOCEANTEMPERATUREOPERATIONNODE
-public:
 #endif
 
+protected:
 
+private:
 
 };

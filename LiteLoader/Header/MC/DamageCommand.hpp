@@ -25,12 +25,12 @@ public:
     /*0*/ virtual ~DamageCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAMAGECOMMAND
-public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
 
+protected:
 
-//private:
+private:
     MCAPI void _applyDamage(class CommandSelectorResults<class Actor> &, class ActorDamageSource const &, class CommandOutput &) const;
 
 };

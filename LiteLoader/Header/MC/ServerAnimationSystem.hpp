@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERANIMATIONSYSTEM
-public:
 #endif
     MCAPI static struct TickingSystemWithInfo createServerAnimationSystem();
 
+protected:
 
+private:
 
 };

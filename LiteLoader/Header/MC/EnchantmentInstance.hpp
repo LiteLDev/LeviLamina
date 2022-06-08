@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTMENTINSTANCE
-public:
 #endif
     MCAPI EnchantmentInstance(enum Enchant::Type, int);
     MCAPI EnchantmentInstance();
@@ -34,6 +33,8 @@ public:
     MCAPI void setEnchantLevel(int);
     MCAPI void setEnchantType(enum Enchant::Type);
 
+protected:
 
+private:
 
 };

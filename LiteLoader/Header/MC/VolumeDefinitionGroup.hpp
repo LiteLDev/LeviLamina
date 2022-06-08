@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMEDEFINITIONGROUP
-public:
 #endif
     MCAPI VolumeDefinitionGroup(class gsl::not_null<class Bedrock::NonOwnerPointer<class VolumeComponentFactory const>>);
     MCAPI void loadDefinitions(class ResourcePackManager const &, bool);
@@ -31,8 +30,9 @@ public:
     MCAPI ~VolumeDefinitionGroup();
     MCAPI static void bindVolumeDefinitions();
 
+protected:
 
-//private:
+private:
     MCAPI bool _parseAndRegisterDefinition(std::string const &, class SemVersion const &, std::string const &);
     MCAPI bool _registerDefinition(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator> &, class SemVersion const &, std::string const &);
 

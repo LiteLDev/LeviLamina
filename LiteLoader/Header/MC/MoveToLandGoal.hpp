@@ -34,10 +34,11 @@ public:
     /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /*14*/ virtual void _moveToBlock();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOLANDGOAL
-public:
 #endif
     MCAPI MoveToLandGoal(class Mob &, float, int, int, int, float);
 
+protected:
 
+private:
 
 };

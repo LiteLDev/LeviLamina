@@ -29,10 +29,11 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTNONIMPLEMENTED_DEPRECATEDASKTYLAING
-public:
 #endif
     MCAPI ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
 
+protected:
 
+private:
 
 };

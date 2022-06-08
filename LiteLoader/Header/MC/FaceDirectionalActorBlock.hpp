@@ -63,10 +63,11 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FACEDIRECTIONALACTORBLOCK
-public:
 #endif
     MCAPI FaceDirectionalActorBlock(std::string const &, int, class Material const &, bool, float);
 
+protected:
 
+private:
 
 };

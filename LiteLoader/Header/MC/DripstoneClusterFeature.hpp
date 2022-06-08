@@ -26,11 +26,11 @@ public:
     /*0*/ virtual ~DripstoneClusterFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRIPSTONECLUSTERFEATURE
-public:
 #endif
 
+protected:
 
-//private:
+private:
     MCAPI static int _getDripstoneHeight(class Random &, int, int, float, int);
     MCAPI static bool _placeColumn(class IBlockWorldGenAPI &, class Random &, class BlockPos const &, int, int, float, double, int, float);
     MCAPI static void _replaceBlocksWithDripstoneBlocks(class IBlockWorldGenAPI &, class BlockPos const &, int, unsigned char);

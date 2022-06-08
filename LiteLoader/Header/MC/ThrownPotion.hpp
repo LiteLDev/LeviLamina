@@ -53,13 +53,14 @@ public:
     /*278*/ virtual void __unk_vfn_278();
     /*280*/ virtual void __unk_vfn_280();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THROWNPOTION
-public:
 #endif
     MCAPI ThrownPotion(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI short getPotionId() const;
     MCAPI void setLinger(bool);
     MCAPI static float const SPLASH_RANGE;
 
+protected:
 
+private:
 
 };

@@ -27,10 +27,11 @@ public:
     /*0*/ virtual ~SHStartPiece();
     /*3*/ virtual enum StructurePieceType getType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHSTARTPIECE
-public:
 #endif
     MCAPI SHStartPiece(int, class Random &, int, int);
 
+protected:
 
+private:
 
 };

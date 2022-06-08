@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORTICKNEEDEDCOMPONENT
-public:
 #endif
     MCAPI ActorTickNeededComponent(class ActorTickNeededComponent &&);
     MCAPI ActorTickNeededComponent(class BlockSource &);
@@ -33,6 +32,8 @@ public:
     MCAPI class ActorTickNeededComponent & operator=(class ActorTickNeededComponent &&);
     MCAPI ~ActorTickNeededComponent();
 
+protected:
 
+private:
 
 };

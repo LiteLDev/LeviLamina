@@ -50,13 +50,13 @@ public:
     /*15*/ virtual float getPingTimeForGUID(std::string const &);
     /*16*/ virtual void checkCanConnectToCustomServerAsync(std::string, int, class std::function<void (bool)>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKNETSERVERLOCATOR
-public:
 #endif
     MCAPI RakNetServerLocator(class RakNetInstance &, class RakPeerHelper::IPSupportInterface &, std::vector<std::string>, bool, enum PermissionLAN, enum PermissionIPv6, class Bedrock::NonOwnerPointer<class AppPlatform> const &, class std::function<class std::unique_ptr<class RakNet::RakPeerInterface, void ( *)(class RakNet::RakPeerInterface *)> (void)>);
     MCAPI static bool parseUnconnectedPongPacketData(std::string const &, std::vector<std::string> &);
 
+protected:
 
-//private:
+private:
     MCAPI void _activate();
     MCAPI void _addCustomServerFromIpResolver(class AsynchronousIPResolver const &, int);
     MCAPI bool _addCustomServerV4(class AsynchronousIPResolver const &, int);

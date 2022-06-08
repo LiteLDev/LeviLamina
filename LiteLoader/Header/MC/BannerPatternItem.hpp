@@ -43,11 +43,12 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERPATTERNITEM
-public:
     MCVAPI bool isPattern() const;
 #endif
     MCAPI BannerPatternItem(std::string const &, int, enum BannerPatternItem::Type);
 
+protected:
 
+private:
 
 };

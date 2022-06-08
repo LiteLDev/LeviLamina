@@ -21,7 +21,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTLISTENERCOMPONENT
-public:
 #endif
     MCAPI GameEventListenerComponent();
     MCAPI GameEventListenerComponent(class GameEventListenerComponent &&);
@@ -30,6 +29,8 @@ public:
     MCAPI class GameEventDynamicRegistration * tryGetListenerRegistration() const;
     MCAPI ~GameEventListenerComponent();
 
+protected:
 
+private:
 
 };

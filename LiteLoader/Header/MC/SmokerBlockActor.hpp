@@ -24,11 +24,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMOKERBLOCKACTOR
-public:
     MCVAPI std::string getName() const;
 #endif
     MCAPI SmokerBlockActor(class BlockPos const &);
 
+protected:
 
+private:
 
 };

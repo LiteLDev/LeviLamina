@@ -55,13 +55,13 @@ public:
     /*281*/ virtual class Block const * getDefaultDisplayBlock() const;
     /*282*/ virtual void __unk_vfn_282();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTTNT
-public:
 #endif
     MCAPI MinecartTNT(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void primeFuse(enum ActorDamageCause);
 
+protected:
 
-//private:
+private:
     MCAPI static int const DEFAULT_FUSE_LENGTH;
 
 };

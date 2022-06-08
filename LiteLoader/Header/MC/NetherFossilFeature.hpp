@@ -28,12 +28,12 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERFOSSILFEATURE
-public:
 #endif
     MCAPI NetherFossilFeature(std::vector<class Block const *> &&, bool);
 
+protected:
 
-//private:
+private:
     MCAPI static std::string const STRUCTURE_LOCATION_FOSSIL[];
 
 };

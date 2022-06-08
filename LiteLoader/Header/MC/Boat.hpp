@@ -61,7 +61,6 @@ public:
     /*278*/ virtual void __unk_vfn_278();
     /*279*/ virtual void destroy(class Actor *);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOAT
-public:
 #endif
     MCAPI Boat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void computePaddleForcesBasedOnGaze(class Vec3 &, float &, float &, float, float);
@@ -71,8 +70,9 @@ public:
     MCAPI bool setPaddleState(enum Side, bool);
     MCAPI void setRowingTime(enum Side, float);
 
+protected:
 
-//private:
+private:
     MCAPI void _computePaddleForce(float &, float &, float, float);
     MCAPI void _control();
     MCAPI void _move();

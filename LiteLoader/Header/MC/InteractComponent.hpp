@@ -24,14 +24,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERACTCOMPONENT
-public:
 #endif
     MCAPI short getCooldownCounter() const;
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     MCAPI void setCooldownCounter(short);
 
+protected:
 
-//private:
+private:
     MCAPI bool _runInteraction(class Actor &, struct Interaction const &, class Player &, class ActorInteraction &);
 
 };

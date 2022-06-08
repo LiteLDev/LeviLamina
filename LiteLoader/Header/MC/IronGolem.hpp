@@ -59,13 +59,14 @@ public:
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IRONGOLEM
-public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI IronGolem(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI int getOfferFlowerTick() const;
     MCAPI void offerFlower(bool);
 
+protected:
 
+private:
 
 };

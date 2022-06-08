@@ -26,13 +26,14 @@ public:
     /*5*/ virtual class Scripting::Result<int> getEmptySlotsCount() const;
     /*11*/ virtual class Container * _tryGetContainer() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTINVENTORYCOMPONENTCONTAINER
-public:
 #endif
     MCAPI ScriptInventoryComponentContainer(class ScriptInventoryComponentContainer const &);
     MCAPI ScriptInventoryComponentContainer(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &);
     MCAPI class ScriptInventoryComponentContainer & operator=(class ScriptInventoryComponentContainer const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptInventoryComponentContainer> bind(struct Scripting::Version);
 
+protected:
 
+private:
 
 };

@@ -25,10 +25,11 @@ public:
     /*0*/ virtual ~LootItemActorKilledCondition();
     /*1*/ virtual bool applies(class Random &, class LootTableContext &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMACTORKILLEDCONDITION
-public:
 #endif
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
 
+protected:
 
+private:
 
 };

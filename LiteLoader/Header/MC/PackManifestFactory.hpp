@@ -27,7 +27,6 @@ public:
     /*0*/ virtual ~PackManifestFactory();
     /*1*/ virtual std::unique_ptr<class PackManifest> create(class PackAccessStrategy &, class ResourceLocation const &, class PackReport &, class SubpackInfoCollection *);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKMANIFESTFACTORY
-public:
 #endif
     MCAPI PackManifestFactory(class IPackTelemetry &);
     MCAPI static class Core::PathBuffer<std::string> const MANIFEST_LOG_PATH;
@@ -40,6 +39,8 @@ public:
     MCAPI static class std::unordered_map<std::string, std::vector<char> const, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::vector<char> const>>> mAlternateContentKeys;
     MCAPI static class std::unordered_map<std::string, std::vector<char> const, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::vector<char> const>>> mContentKeys;
 
+protected:
 
+private:
 
 };

@@ -22,11 +22,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSEED64
-public:
 #endif
     MCAPI unsigned int to32BitRandomSeed() const;
     MCAPI static class LevelSeed64 fromUnsigned32(unsigned int);
 
+protected:
 
+private:
 
 };

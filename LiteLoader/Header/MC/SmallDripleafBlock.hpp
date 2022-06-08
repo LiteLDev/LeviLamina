@@ -74,15 +74,15 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMALLDRIPLEAFBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI SmallDripleafBlock(std::string const &, int);
     MCAPI static bool tryPlaceSmallDripleaf(class BlockSource &, class BlockPos const &, int, int);
 
+protected:
 
-//private:
+private:
     MCAPI bool _isViablePlacePos(class BlockSource &, class BlockPos const &) const;
     MCAPI static void placeUpperBlock(class BlockSource &, class BlockPos const &, int);
 

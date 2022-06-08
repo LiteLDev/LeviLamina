@@ -27,10 +27,11 @@ public:
     /*1*/ virtual class std::shared_ptr<class gametest::BaseGameTestInstance> _createGameTestInstance(class gametest::BaseGameTestFunction &);
     /*2*/ virtual void _runTest(class std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTGAMETESTBATCHRUNNER
-public:
 #endif
     MCAPI MinecraftGameTestBatchRunner(std::vector<class gametest::GameTestBatch> &&, class gametest::GameTestTicker &, struct gametest::TestParameters &&, std::unique_ptr<class gametest::IGameTestHelperProvider>, class Dimension &);
 
+protected:
 
+private:
 
 };

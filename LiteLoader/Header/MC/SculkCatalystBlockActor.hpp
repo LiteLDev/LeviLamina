@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKCATALYSTBLOCKACTOR
-public:
     MCVAPI class GameEvents::PositionSource const & getPositionSource() const;
     MCVAPI unsigned int getRange() const;
     MCVAPI void handleGameEvent(class GameEvent const &, class BlockPos const &, class Actor *, class BlockSource &);
@@ -38,6 +37,8 @@ public:
     MCAPI static enum BlockActorType const TypeId;
     MCAPI static std::string const TypeString;
 
+protected:
 
+private:
 
 };

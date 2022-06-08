@@ -42,11 +42,12 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOORITEM
-public:
 #endif
     MCAPI DoorItem(std::string const &, int, enum DoorBlock::DoorType);
     MCAPI static bool place(class BlockSource *, int, int, int, int, class Block const *);
 
+protected:
 
+private:
 
 };

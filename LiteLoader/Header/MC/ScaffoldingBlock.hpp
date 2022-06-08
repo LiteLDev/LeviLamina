@@ -77,16 +77,15 @@ public:
     /*204*/ virtual std::string getDustParticleName(class Block const &) const;
     /*205*/ virtual void __unk_vfn_205();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCAFFOLDINGBLOCK
-public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI ScaffoldingBlock(std::string const &, int);
     MCAPI static int const MAX_STABILITY;
 
-//protected:
+protected:
     MCAPI int calculateStability(class BlockSource const &, class BlockPos const &) const;
 
-//private:
+private:
     MCAPI bool _updateBlockStability(class BlockSource &, class BlockPos const &) const;
 
 };

@@ -24,12 +24,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATDEFINITION
-public:
 #endif
     MCAPI LookAtDefinition();
     MCAPI void initialize(class EntityContext &, class LookAtComponent &) const;
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LookAtDefinition>> &);
 
+protected:
 
+private:
 
 };

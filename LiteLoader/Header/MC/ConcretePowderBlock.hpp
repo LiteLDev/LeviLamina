@@ -71,12 +71,12 @@ public:
     /*204*/ virtual std::string getDustParticleName(class Block const &) const;
     /*205*/ virtual void __unk_vfn_205();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONCRETEPOWDERBLOCK
-public:
 #endif
     MCAPI ConcretePowderBlock(std::string const &, int);
 
+protected:
 
-//private:
+private:
     MCAPI bool _tryTouchWater(class BlockSource &, class BlockPos const &, class std::optional<enum BlockColor>) const;
 
 };

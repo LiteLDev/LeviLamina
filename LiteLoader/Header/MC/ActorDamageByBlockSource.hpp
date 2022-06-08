@@ -29,10 +29,11 @@ public:
     /*8*/ virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor *) const;
     /*19*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDAMAGEBYBLOCKSOURCE
-public:
 #endif
     MCAPI ActorDamageByBlockSource(class Block const &, enum ActorDamageCause);
 
+protected:
 
+private:
 
 };

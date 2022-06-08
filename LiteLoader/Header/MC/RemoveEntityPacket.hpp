@@ -27,11 +27,12 @@ public:
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEENTITYPACKET
-public:
 #endif
     MCAPI RemoveEntityPacket(class EntityContext &);
     MCAPI RemoveEntityPacket();
 
+protected:
 
+private:
 
 };

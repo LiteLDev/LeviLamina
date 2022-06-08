@@ -21,12 +21,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMINECRAFTCOMMONMODULEFACTORY
-public:
 #endif
     MCAPI ScriptMinecraftCommonModuleFactory();
     MCAPI void addCommon(class Scripting::ModuleBindingBuilder &, struct Scripting::Version);
     MCAPI ~ScriptMinecraftCommonModuleFactory();
 
+protected:
 
+private:
 
 };

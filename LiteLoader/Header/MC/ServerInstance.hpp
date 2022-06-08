@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCE
-public:
     MCVAPI void onAppResumed();
     MCVAPI void onAppSuspended();
     MCVAPI void onCriticalDiskError(bool, enum Core::LevelStorageState const &);
@@ -52,8 +51,9 @@ public:
     MCAPI void startServerThread();
     MCAPI static class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const SERVER_MAX_DELAY_BEFORE_SLOWDOWN;
 
+protected:
 
-//private:
+private:
     MCAPI void _threadSafeExecute(class std::function<void (void)>);
     MCAPI void _update();
 

@@ -31,7 +31,6 @@ public:
     /*3*/ virtual void load(class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> &);
     /*4*/ virtual void load(class Json::Value const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OPTION
-public:
 #endif
     MCAPI Option(enum OptionID, enum OptionOwnerType, enum OptionResetFlags, std::string const &, std::string const &, enum OptionType);
     MCAPI bool canModify() const;
@@ -43,8 +42,9 @@ public:
     MCAPI void setRequestSaveCallback(class std::function<void (bool)>);
     MCAPI static bool read(std::string const &, bool &);
 
+protected:
 
-//private:
+private:
     MCAPI void _updatePropertyVector(std::vector<struct std::pair<std::string, std::string>> &, std::string const &);
 
 };

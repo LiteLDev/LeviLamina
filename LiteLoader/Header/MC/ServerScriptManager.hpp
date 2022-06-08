@@ -34,13 +34,13 @@ public:
     /*9*/ virtual enum EventResult onServerThreadStarted(class ServerInstance &);
     /*10*/ virtual enum EventResult onServerThreadStopped(class ServerInstance &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERSCRIPTMANAGER
-public:
 #endif
     MCAPI ServerScriptManager(class std::optional<struct ScriptSettings> &&, class Bedrock::NonOwnerPointer<class Scheduler>);
     MCAPI void onMainThreadStartLeaveGame();
 
+protected:
 
-//private:
+private:
     MCAPI void _registerEventHandlers(class Level &) const;
     MCAPI void _unregisterEventHandlers(class Level &) const;
 

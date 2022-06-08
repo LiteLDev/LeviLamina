@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARSER
-public:
 #endif
     MCAPI static void parse(class Json::Value const &, class SemVersion const &, unsigned char &, unsigned char);
     MCAPI static void parse(class Json::Value const &, class SemVersion const &, int &, char const *, int);
@@ -68,6 +67,8 @@ public:
     MCAPI static void serialize(enum Difficulty const &, class Json::Value &, char const *);
     MCAPI static void serialize(enum ParticleType const &, class Json::Value &, char const *);
 
+protected:
 
+private:
 
 };

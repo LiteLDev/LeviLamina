@@ -29,13 +29,13 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWARDSRESTRICTIONGOAL
-public:
 #endif
     MCAPI MoveTowardsRestrictionGoal(class Mob &);
 
-//protected:
+protected:
     MCAPI class Mob const & _getMob() const;
     MCAPI bool _randomizeWantedPositionTowardsRestriction(class Vec3 const &);
 
+private:
 
 };

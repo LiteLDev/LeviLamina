@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTGAMETESTHELPER
-public:
 #endif
     MCAPI ScriptGameTestHelper(class gametest::BaseGameTestHelper &, class Scripting::WeakLifetimeScope);
     MCAPI class Scripting::Result<void> assertBlockState(class BlockPos const &, class Scripting::Closure<bool (struct Scripting::TypedObjectHandle<class ScriptBlock>)>);
@@ -91,8 +90,9 @@ public:
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class Vec3>> worldPosition(class Vec3 const &) const;
     MCAPI ~ScriptGameTestHelper();
 
+protected:
 
-//private:
+private:
     MCAPI static class std::optional<struct gametest::GameTestError> _callClosure(class Scripting::Closure<void (void)> const &);
 
 };

@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSION
-public:
     MCVAPI std::unique_ptr<class ChunkBuildOrderPolicyBase> _createChunkBuildOrderPolicy();
     MCVAPI void deserialize(class CompoundTag const &);
     MCVAPI bool forceCheckAllNeighChunkSavedStat() const;
@@ -138,10 +137,10 @@ public:
     MCAPI static float const MOON_BRIGHTNESS_PER_PHASE[];
     MCAPI static class std::chrono::duration<__int64, struct std::ratio<1, 1>> const STRUCTURE_PRUNE_INTERVAL;
 
-//protected:
+protected:
     MCAPI void _completeEntityTransfer(class BlockSource &, class OwnerPtrT<struct EntityRefTraits>, bool);
 
-//private:
+private:
     MCAPI void _processEntityChunkTransfers();
     MCAPI void _sendBlockEntityUpdatePacket(class NetworkBlockPosition const &);
     MCAPI void _sendBlocksChangedPackets();

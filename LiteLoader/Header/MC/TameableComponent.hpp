@@ -23,14 +23,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAMEABLECOMPONENT
-public:
 #endif
     MCAPI TameableComponent();
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     MCAPI void tame(class Actor &, class Player &);
 
+protected:
 
-//private:
+private:
     MCAPI bool _attemptToTame(class Actor &, class Player &);
     MCAPI bool _canTame(class Actor &, class Player &);
 

@@ -89,13 +89,14 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOUBLEPLANTBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI DoublePlantBlock(std::string const &, int);
     MCAPI int getType(class BlockSource &, class BlockPos const &, class Block const &) const;
     MCAPI bool placeAt(class BlockSource &, class BlockPos const &, enum DoublePlantType, int, class Actor *) const;
 
+protected:
 
+private:
 
 };

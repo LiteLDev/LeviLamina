@@ -42,7 +42,6 @@ public:
     /*37*/ virtual void load(class ListTag const &, class SemVersion const &, class Level &);
     /*38*/ virtual int getEmptySlotsCount() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILLINGCONTAINER
-public:
 #endif
     MCAPI FillingContainer(class Player *, int, enum ContainerType);
     MCAPI int getHotbarSize() const;
@@ -54,7 +53,7 @@ public:
     MCAPI std::unique_ptr<class ListTag> save();
     MCAPI void swapSlots(int, int);
 
-//protected:
+protected:
     MCAPI int _addResource(class ItemStack const &);
     MCAPI void _doDrop(class ItemStack &, bool);
     MCAPI void _fixBackwardCompabilityItem(class ItemStack &);
@@ -65,5 +64,6 @@ public:
     MCAPI bool _isCreative() const;
     MCAPI void _release(int);
 
+private:
 
 };

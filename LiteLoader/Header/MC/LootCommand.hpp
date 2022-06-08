@@ -25,13 +25,13 @@ public:
     /*0*/ virtual ~LootCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTCOMMAND
-public:
 #endif
     MCAPI class ItemStack getToolItemStack(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI static void setup(class CommandRegistry &);
 
+protected:
 
-//private:
+private:
     MCAPI class std::optional<std::vector<class ItemStack>> _getItemsFromSource(class CommandOrigin const &, class CommandOutput &, class ItemStack const &, class Level &, class AutomaticID<class Dimension, int>) const;
     MCAPI void _outputSuccess(class CommandOutput &, int) const;
     MCAPI void _placeItemsInTarget(class CommandOrigin const &, class CommandOutput &, std::vector<class ItemStack> &) const;

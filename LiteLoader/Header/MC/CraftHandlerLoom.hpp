@@ -27,10 +27,11 @@ public:
     /*0*/ virtual ~CraftHandlerLoom();
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERLOOM
-public:
 #endif
     MCAPI CraftHandlerLoom(class ItemStackRequestActionCraftHandler &);
 
+protected:
 
+private:
 
 };

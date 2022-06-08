@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSYSTEMS
-public:
     MCVAPI void tickMovementCatchup(class EntityRegistry &);
     MCVAPI ~EntitySystems();
 #endif
@@ -39,6 +38,8 @@ public:
     MCAPI void tick(class EntityRegistry &);
     MCAPI void tickEditor(class EntityRegistry &);
 
+protected:
 
+private:
 
 };

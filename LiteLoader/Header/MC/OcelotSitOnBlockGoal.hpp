@@ -36,10 +36,11 @@ public:
     /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /*13*/ virtual bool _canReach(class BlockPos const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCELOTSITONBLOCKGOAL
-public:
 #endif
     MCAPI OcelotSitOnBlockGoal(class Mob &, float);
 
+protected:
 
+private:
 
 };

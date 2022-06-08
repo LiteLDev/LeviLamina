@@ -52,12 +52,12 @@ public:
     /*282*/ virtual void __unk_vfn_282();
     /*284*/ virtual void applyNaturalSlowdown(class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTCHEST
-public:
 #endif
     MCAPI MinecartChest(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
+protected:
 
-//private:
+private:
     MCAPI static int const ITEMS_SIZE;
 
 };

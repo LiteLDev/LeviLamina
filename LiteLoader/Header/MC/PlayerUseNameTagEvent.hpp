@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERUSENAMETAGEVENT
-public:
 #endif
     MCAPI ~PlayerUseNameTagEvent();
 
+protected:
 
+private:
 
 };

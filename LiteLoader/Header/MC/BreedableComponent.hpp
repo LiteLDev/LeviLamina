@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREEDABLECOMPONENT
-public:
 #endif
     MCAPI BreedableComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &);
@@ -39,8 +38,9 @@ public:
     MCAPI void resetLove(class Actor &);
     MCAPI void setLoveTimer(int);
 
+protected:
 
-//private:
+private:
     MCAPI bool _canBreed(class Actor &, class Player &, class ItemStack const &);
     MCAPI void _handleMate(class Actor &, class Actor &);
     MCAPI void _handlePregnancy(class Actor &, class Actor &);

@@ -32,12 +32,12 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AVOIDBLOCKGOAL
-public:
 #endif
     MCAPI AvoidBlockGoal(class Mob &);
 
+protected:
 
-//private:
+private:
     MCAPI bool _isValidTarget(class Block const &) const;
 
 };

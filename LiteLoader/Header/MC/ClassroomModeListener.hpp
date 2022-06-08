@@ -34,7 +34,6 @@ public:
     /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual class Particle * addParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLASSROOMMODELISTENER
-public:
     MCVAPI void onAreaChanged(class BlockSource &, class BlockPos const &, class BlockPos const &);
     MCVAPI void onBlockChanged(class BlockSource &, class BlockPos const &, unsigned int, class Block const &, class Block const &, int, struct ActorBlockSyncMessage const *, enum BlockChangedEventTarget, class Actor *);
     MCVAPI void onChunkLoaded(class ChunkSource &, class LevelChunk &);
@@ -44,6 +43,8 @@ public:
 #endif
     MCAPI ClassroomModeListener(class IMinecraftEventing &);
 
+protected:
 
+private:
 
 };

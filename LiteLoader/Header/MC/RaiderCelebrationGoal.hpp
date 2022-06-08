@@ -32,10 +32,11 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAIDERCELEBRATIONGOAL
-public:
 #endif
     MCAPI RaiderCelebrationGoal(class Mob &);
 
+protected:
 
+private:
 
 };

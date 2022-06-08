@@ -32,12 +32,12 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RIVERFOLLOWINGGOAL
-public:
 #endif
     MCAPI RiverFollowingGoal(class Mob &, float, float);
 
-//protected:
+protected:
     MCAPI void determineSteerDirection();
 
+private:
 
 };

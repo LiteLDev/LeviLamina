@@ -33,10 +33,11 @@ public:
     /*6*/ virtual class IFileWriteAccess * getWriteInterface();
     /*7*/ virtual void unload();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILESYSTEMFILEACCESS
-public:
 #endif
     MCAPI FileSystemFileAccess(enum FileSystemMode);
 
+protected:
 
+private:
 
 };

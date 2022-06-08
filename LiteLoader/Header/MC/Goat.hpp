@@ -59,15 +59,15 @@ public:
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOAT
-public:
 #endif
     MCAPI Goat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI int getHornCount() const;
     MCAPI bool isScreaming();
     MCAPI void reduceHornCount();
 
+protected:
 
-//private:
+private:
     MCAPI static int DEFAULT_HORN_COUNT;
     MCAPI static int SCREAMING_GOAT_VARIANT;
 

@@ -31,7 +31,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDDRAGONFIGHT
-public:
 #endif
     MCAPI EndDragonFight(class BlockSource &);
     MCAPI void loadData(class CompoundTag const &);
@@ -44,8 +43,9 @@ public:
     MCAPI void verifyExitPositions(class EndGatewayBlockActor &);
     MCAPI ~EndDragonFight();
 
+protected:
 
-//private:
+private:
     MCAPI bool _canSpawnNewGateway(class ChunkViewSource *, class BlockPos const &) const;
     MCAPI void _createNewDragon();
     MCAPI struct BuildMatch _findExitPortal();

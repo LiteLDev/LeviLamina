@@ -27,9 +27,10 @@ public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~NavigationClimbDescription();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONCLIMBDESCRIPTION
-public:
 #endif
 
+protected:
 
+private:
 
 };

@@ -28,11 +28,11 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORALFEATURE
-public:
 #endif
 
+protected:
 
-//private:
+private:
     MCAPI void _buildHand(class BlockSource &, class BlockPos const &, class Random &, std::vector<class BlockPos> &, std::vector<struct std::pair<class BlockPos, unsigned char>> &, class gsl::not_null<class Block const *>) const;
     MCAPI void _buildPlantArm(class BlockSource &, class Random &, class BlockPos const &, class gsl::not_null<class Block const *>, std::vector<class BlockPos> &, std::vector<struct std::pair<class BlockPos, unsigned char>> &, unsigned char, bool) const;
     MCAPI void _buildPlantLike(class BlockSource &, class BlockPos const &, class Random &, std::vector<class BlockPos> &, std::vector<struct std::pair<class BlockPos, unsigned char>> &, class gsl::not_null<class Block const *>) const;

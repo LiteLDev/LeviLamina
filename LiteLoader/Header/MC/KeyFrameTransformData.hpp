@@ -23,12 +23,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_KEYFRAMETRANSFORMDATA
-public:
 #endif
     MCAPI KeyFrameTransformData(class KeyFrameTransformData const &);
     MCAPI void addChannelTransform(class ExpressionNode const &, int);
     MCAPI bool operator==(class KeyFrameTransformData const &) const;
 
+protected:
 
+private:
 
 };

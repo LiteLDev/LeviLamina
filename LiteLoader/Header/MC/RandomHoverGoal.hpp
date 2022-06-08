@@ -32,14 +32,14 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMHOVERGOAL
-public:
 #endif
     MCAPI RandomHoverGoal(class Mob &, float, int, float, float, float, struct IntRange);
 
-//protected:
+protected:
     MCAPI bool _computeNewTarget();
     MCAPI bool _mobMeetsPreconditions() const;
     MCAPI void _moveToTarget();
 
+private:
 
 };

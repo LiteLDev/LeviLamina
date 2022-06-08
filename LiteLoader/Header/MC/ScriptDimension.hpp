@@ -26,7 +26,6 @@ public:
 public:
     /*0*/ virtual ~ScriptDimension();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDIMENSION
-public:
 #endif
     MCAPI class Scripting::Result<void> createExplosion(class Vec3 const &, float, struct Scripting::TypedObjectHandle<struct ScriptExplosionOptions>) const;
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptBlock> getBlock(class Scripting::WeakLifetimeScope, class BlockPos const &);
@@ -46,6 +45,8 @@ public:
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptDimension> getOrCreateHandle(class Dimension &, class Scripting::WeakLifetimeScope const &);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptDimension> getOrCreateHandle(class AutomaticID<class Dimension, int>, class Level &, class Scripting::WeakLifetimeScope const &);
 
+protected:
 
+private:
 
 };

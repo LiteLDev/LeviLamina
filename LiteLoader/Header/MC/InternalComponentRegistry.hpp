@@ -26,16 +26,16 @@ public:
     /*0*/ virtual ~InternalComponentRegistry();
     /*1*/ virtual void registerComponents();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERNALCOMPONENTREGISTRY
-public:
 #endif
     MCAPI void addComponentSaveData(class Actor const &, class CompoundTag &);
     MCAPI void initializeComponents(class Actor &, class CompoundTag const &) const;
     MCAPI static std::string const INTERNAL_COMPONENTS;
 
-//protected:
+protected:
     MCAPI void _initializeComponents(class Actor &, class CompoundTag const &) const;
     MCAPI static class CompoundTag const * _getComponentScope(class CompoundTag const &, std::string const &);
     MCAPI static class CompoundTag & _getOrCreateComponentScope(class CompoundTag &, std::string const &);
 
+private:
 
 };

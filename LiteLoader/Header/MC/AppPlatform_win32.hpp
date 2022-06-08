@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORM_WIN32
-public:
     MCVAPI bool canLaunchUri(std::string const &);
     MCVAPI class Core::PathBuffer<std::string> copyImportFileToTempFolder(class Core::Path const &);
     MCVAPI class std::shared_ptr<class WebviewInterface> createWebview(class Webview::PlatformArguments &&) const;
@@ -75,8 +74,9 @@ public:
     MCAPI AppPlatform_win32(struct HWND__*, std::string const &, std::string const &, class gsl::basic_string_span<char const, -1>, class std::shared_ptr<class HIDController>, int, int);
     MCAPI static void setupWorkingDirectory();
 
+protected:
 
-//private:
+private:
     MCAPI struct OSInformation _fetchOSInformation() const;
 
 };

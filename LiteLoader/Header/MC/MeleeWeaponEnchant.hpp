@@ -36,13 +36,13 @@ public:
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MELEEWEAPONENCHANT
-public:
     MCVAPI bool isMeleeDamageEnchant() const;
 #endif
     MCAPI MeleeWeaponEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
 
+protected:
 
-//private:
+private:
     MCAPI static std::vector<enum Enchant::Type> const VALID_ENCHANTMENTS;
 
 };

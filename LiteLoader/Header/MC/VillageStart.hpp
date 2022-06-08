@@ -27,10 +27,11 @@ public:
     /*0*/ virtual ~VillageStart();
     /*2*/ virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGESTART
-public:
 #endif
     MCAPI VillageStart(class Dimension &, class BiomeSource const &, class Random &, int, int, class IPreliminarySurfaceProvider const &);
 
+protected:
 
+private:
 
 };

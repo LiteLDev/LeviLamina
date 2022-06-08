@@ -28,10 +28,11 @@ public:
     /*4*/ virtual bool isInstantaneous() const;
     /*6*/ virtual bool isDurationEffectTick(int, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSTANTANEOUSMOBEFFECT
-public:
 #endif
     MCAPI InstantaneousMobEffect(int, std::string const &, std::string const &, bool, int, int);
 
+protected:
 
+private:
 
 };

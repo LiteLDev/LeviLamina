@@ -32,12 +32,12 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEINDOORSGOAL
-public:
 #endif
     MCAPI MoveIndoorsGoal(class Mob &);
 
+protected:
 
-//private:
+private:
     MCAPI bool _isInside(class BlockPos const &);
     MCAPI void _startPathfinding();
 

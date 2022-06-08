@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREMANAGER
-public:
 #endif
     MCAPI StructureManager();
     MCAPI void clearAndShutdownStructurePlacement();
@@ -43,8 +42,9 @@ public:
     MCAPI enum QueueRequestResult tryPlaceStructureInWorld(std::unique_ptr<class CommandArea>, class ServerLevel &, class Dimension &, class BoundingBox const &, class BlockPos const &, class StructureSettings const &, class StructureTemplate const &, std::unique_ptr<class StructureAnimationData>);
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> getStructurePath(std::string const &);
 
+protected:
 
-//private:
+private:
     MCAPI std::string _createLevelStorageId(std::string const &, std::string const &);
     MCAPI bool _placeSegment(class Dimension &, class StructureAnimationData &, class ChunkLoadActionList &, class BoundingBox const &, class std::function<enum ChunksLoadedStatus (struct Tick)> const &);
     MCAPI bool _placeSegment(class StructureAnimationData &);

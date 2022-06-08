@@ -69,7 +69,6 @@ public:
     /*31*/ virtual void initializeContainerContents(class BlockSource &);
     /*32*/ virtual bool isEmpty() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINER
-public:
     MCVAPI bool canPullOutItem(class BlockSource &, int, int, class ItemInstance const &) const;
     MCVAPI bool canPushInItem(class BlockSource &, int, int, class ItemInstance const &) const;
 #endif
@@ -88,10 +87,11 @@ public:
     MCAPI static enum ContainerType getContainerTypeId(std::string const &);
     MCAPI static std::string const & getContainerTypeName(enum ContainerType);
 
-//protected:
+protected:
     MCAPI void _initRuntimeId(class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
     MCAPI void _serverInitId(int, class ItemStack &, class std::function<void (int, class ItemStack const &)>);
     MCAPI static class BidirectionalUnorderedMap<enum ContainerType, std::string> const containerTypeMap;
 
+private:
 
 };

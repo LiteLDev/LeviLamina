@@ -29,7 +29,6 @@ public:
     /*4*/ virtual bool shouldBuff() const;
     /*5*/ virtual bool isComplete() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEMPORALATTRIBUTEBUFF
-public:
 #endif
     MCAPI TemporalAttributeBuff(class TemporalAttributeBuff const &);
     MCAPI TemporalAttributeBuff(float, int, enum AttributeBuffType, bool, std::string const &);
@@ -39,6 +38,8 @@ public:
     MCAPI void serializationSetLifeTime(int);
     MCAPI void tick();
 
+protected:
 
+private:
 
 };

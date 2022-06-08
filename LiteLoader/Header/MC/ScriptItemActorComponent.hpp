@@ -24,11 +24,12 @@ public:
 public:
     /*0*/ virtual ~ScriptItemActorComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMACTORCOMPONENT
-public:
 #endif
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptItemStack>> getItemStack() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptItemActorComponent> bind(struct Scripting::Version);
 
+protected:
 
+private:
 
 };

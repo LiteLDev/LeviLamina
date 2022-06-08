@@ -25,10 +25,11 @@ public:
 public:
     /*0*/ virtual ~GrindstoneContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GRINDSTONECONTAINERSCREENVALIDATOR
-public:
 #endif
     MCAPI GrindstoneContainerScreenValidator();
 
+protected:
 
+private:
 
 };

@@ -24,14 +24,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLABLOCKUPDATER
-public:
 #endif
     MCAPI static void destroy();
     MCAPI static class CompoundTagUpdaterContext & get();
     MCAPI static void initialize();
 
+protected:
 
-//private:
+private:
     MCAPI static void addBaseUpdater(class CompoundTagUpdaterContext &);
     MCAPI static void addRailUpdater_1_14_0(std::string const &, class CompoundTagUpdaterContext &);
     MCAPI static void addUpdaters_1_10_0(class CompoundTagUpdaterContext &);

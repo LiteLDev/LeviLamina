@@ -70,7 +70,6 @@ public:
     /*195*/ virtual struct Brightness getLightEmission(class Block const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESPAWNANCHORBLOCK
-public:
     MCVAPI bool hasComparatorSignal() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
@@ -78,8 +77,9 @@ public:
     MCAPI static bool addItem(class Container &, int, class ItemStack &, class BlockSource &, class Block const &, class BlockPos const &);
     MCAPI static int getChargeLevel(class Block const &);
 
+protected:
 
-//private:
+private:
     MCAPI static bool bumpCharge(class BlockSource &, class BlockPos const &, short);
     MCAPI static void explode(class Player &, class BlockPos const &, class BlockSource &, class Level &);
     MCAPI static bool trySetSpawn(class Player &, class BlockPos const &, class BlockSource &, class Level &);

@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACK
-public:
 #endif
     MCAPI ResourcePack(class Pack &);
     MCAPI bool areKnownFilesValid();
@@ -58,8 +57,9 @@ public:
     MCAPI static class Core::PathBuffer<std::string> const RESOURCE_PACK_ICON_PATH;
     MCAPI static class Core::PathBuffer<std::string> const TEXTURES_LIST_PATH;
 
+protected:
 
-//private:
+private:
     MCAPI void _createSubpack(struct SubpackInfo const &);
     MCAPI void _createSubpacks();
     MCAPI void _generateIconPath();

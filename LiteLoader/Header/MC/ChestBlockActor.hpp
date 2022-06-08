@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTBLOCKACTOR
-public:
     MCVAPI bool _canOpenThis(class BlockSource &) const;
     MCVAPI bool _detectEntityObstruction(class BlockSource &) const;
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
@@ -82,10 +81,10 @@ public:
     MCAPI void setFindable(bool);
     MCAPI void unpair(class BlockSource &);
 
-//protected:
+protected:
     MCAPI void _getCenter(float &, float &, float &);
 
-//private:
+private:
     MCAPI void _closeChest(class BlockSource &, class Player *);
     MCAPI bool _saveClientSideState(class CompoundTag &) const;
     MCAPI void _tryToPairWith(class BlockSource &, class BlockPos const &);

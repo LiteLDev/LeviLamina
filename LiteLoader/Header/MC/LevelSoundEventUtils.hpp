@@ -24,12 +24,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSOUNDEVENTUTILS
-public:
 #endif
     MCAPI static int serializePercentageToData(float);
 
+protected:
 
-//private:
+private:
     MCAPI static int const MAX_INT_REPRESENTABLE_AS_FLOAT;
 
 };

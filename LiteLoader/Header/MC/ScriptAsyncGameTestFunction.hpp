@@ -25,10 +25,11 @@ public:
     /*0*/ virtual ~ScriptAsyncGameTestFunction();
     /*2*/ virtual std::unique_ptr<class gametest::IGameTestFunctionRunResult> run(class gametest::BaseGameTestHelper &, class gametest::IGameTestFunctionContext &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTASYNCGAMETESTFUNCTION
-public:
 #endif
     MCAPI ScriptAsyncGameTestFunction(class Scripting::WeakLifetimeScope, class Scripting::Closure<class Scripting::Future<void> (struct Scripting::TypedObjectHandle<class ScriptGameTestHelper>)>, std::string const &);
 
+protected:
 
+private:
 
 };

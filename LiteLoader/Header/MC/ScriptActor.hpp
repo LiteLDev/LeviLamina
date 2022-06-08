@@ -30,7 +30,6 @@ public:
     /*6*/ virtual class Scripting::Result<bool> getSneaking() const;
     /*7*/ virtual class Scripting::Result<void> setSneaking(bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTACTOR
-public:
 #endif
     MCAPI ScriptActor(class ScriptActor &&);
     MCAPI ScriptActor(class Actor const &, class Scripting::WeakLifetimeScope const &);
@@ -68,8 +67,9 @@ public:
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptActor> getHandle(class StackRefResultT<struct EntityRefTraits>, class Scripting::WeakLifetimeScope const &);
     MCAPI static class Actor * tryGetActor(struct Scripting::TypedObjectHandle<class ScriptActor> &, class Scripting::WeakLifetimeScope const &);
 
-//protected:
+protected:
     MCAPI class Scripting::Result<struct Scripting::JSON> _runCommand(std::string const &, std::string const &, std::unique_ptr<class CommandOrigin>);
 
+private:
 
 };

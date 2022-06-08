@@ -29,12 +29,13 @@ public:
     /*5*/ virtual class Scripting::Result<void> setCurrent(float const &) const;
     /*6*/ virtual class Scripting::Result<float> getValue() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTESCRIPTACTORCOMPONENT
-public:
 #endif
     MCAPI class Scripting::Result<void> resetToDefaultValue() const;
     MCAPI class Scripting::Result<void> resetToMaxValue() const;
     MCAPI class Scripting::Result<void> resetToMinValue() const;
 
+protected:
 
+private:
 
 };

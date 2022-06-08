@@ -27,9 +27,10 @@ public:
     /*0*/ virtual ~BastionStart();
     /*2*/ virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASTIONSTART
-public:
 #endif
 
+protected:
 
+private:
 
 };

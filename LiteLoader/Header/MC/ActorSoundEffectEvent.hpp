@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSOUNDEFFECTEVENT
-public:
 #endif
     MCAPI ~ActorSoundEffectEvent();
 
+protected:
 
+private:
 
 };

@@ -72,15 +72,15 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FENCEBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool isFenceBlock() const;
 #endif
     MCAPI FenceBlock(std::string const &, int, class Material const &);
     MCAPI void fetchPathableNeighbors(std::vector<class BlockPos> &, class BlockSource &, class BlockPos const &, class Vec3 const &) const;
 
+protected:
 
-//private:
+private:
     MCAPI static class BaseGameVersion const FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 };

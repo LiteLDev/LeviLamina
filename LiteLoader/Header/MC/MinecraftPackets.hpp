@@ -29,10 +29,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTPACKETS
-public:
 #endif
     MCAPI static class std::shared_ptr<class Packet> createPacket(enum MinecraftPacketIds);
 
+protected:
 
+private:
 
 };

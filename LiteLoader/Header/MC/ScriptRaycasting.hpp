@@ -22,13 +22,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTRAYCASTING
-public:
 #endif
     MCAPI static class std::optional<class BlockPos> getBlockFromRay(class BlockSource const &, class Vec3 const &, class Vec3 const &, struct ScriptBlockRaycastOptions const &);
     MCAPI static std::vector<class Actor *> getEntitiesFromRay(class BlockSource &, class Vec3 const &, class Vec3 const &, class Actor const *, struct ScriptEntityRaycastOptions const &);
 
+protected:
 
-//private:
+private:
     MCAPI static std::vector<struct ScriptRaycasting::EntityHitInfo> getEntityHitInfoFromRay(class BlockSource &, class Vec3 const &, class Vec3 const &, float, class Actor const *);
 
 };

@@ -50,7 +50,6 @@ public:
     /*116*/ virtual class Item & setIcon(std::string const &, int);
     /*128*/ virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPITEM
-public:
 #endif
     MCAPI MapItem(std::string const &, short);
     MCAPI void blockTick(class ItemStack &, class BlockSource &, class BlockPos const &) const;
@@ -72,8 +71,9 @@ public:
     MCAPI static void setItemInstanceInfo(class ItemStack &, class MapItemSavedData &);
     MCAPI static void setMapNameIndex(class ItemStack &, int);
 
+protected:
 
-//private:
+private:
     MCAPI void _makeNewExplorationMap(class ItemStack &, class Level &, class Actor *, std::string &) const;
     MCAPI static void _scheduleMapChunkRendering(class Dimension &, class MapItemSavedData const &, struct MapItemSavedData::ChunkBounds, class std::shared_ptr<bool>);
 

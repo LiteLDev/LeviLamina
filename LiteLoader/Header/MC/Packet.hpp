@@ -69,12 +69,13 @@ public:
     /*5*/ virtual bool disallowBatching() const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &) = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKET
-public:
 #endif
     MCAPI void handle(class NetworkIdentifier const &, class NetEventCallback &, class std::shared_ptr<class Packet> &);
     MCAPI bool readNoHeader(class ReadOnlyBinaryStream &, unsigned char const &, struct ExtendedStreamReadResult &);
     MCAPI void writeWithHeader(unsigned char, class BinaryStream &) const;
 
+protected:
 
+private:
 
 };

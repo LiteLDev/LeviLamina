@@ -28,9 +28,10 @@ public:
     /*0*/ virtual ~FindBlockDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FINDBLOCKDEFINITION
-public:
 #endif
 
+protected:
 
+private:
 
 };

@@ -40,15 +40,15 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PREDICTEDMOVEMENTCOMPONENT
-public:
 #endif
     MCAPI PredictedMovementComponent(class Actor &);
     MCAPI bool isEnabled() const;
     MCAPI void reset();
     MCAPI void tick(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> const &);
 
+protected:
 
-//private:
+private:
     MCAPI void _debugLog(struct PredictedMovementComponent::PredictionDbgData const &) const;
     MCAPI bool _isDebugLoggingEnabled() const;
     MCAPI bool _isFeatureEnabled() const;

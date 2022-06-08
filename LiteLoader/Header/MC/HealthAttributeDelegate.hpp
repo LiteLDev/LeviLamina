@@ -30,10 +30,11 @@ public:
     /*4*/ virtual float change(float, float, class AttributeBuff const &);
     /*5*/ virtual float getBuffValueWithModifiers(class AttributeBuff const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HEALTHATTRIBUTEDELEGATE
-public:
 #endif
     MCAPI HealthAttributeDelegate(class AttributeInstance const &, class Mob *);
 
+protected:
 
+private:
 
 };

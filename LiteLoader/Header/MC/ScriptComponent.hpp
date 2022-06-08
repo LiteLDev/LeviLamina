@@ -24,12 +24,13 @@ public:
 public:
     /*0*/ virtual ~ScriptComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCOMPONENT
-public:
 #endif
     MCAPI ScriptComponent(class ScriptComponent const &);
     MCAPI std::string const & getId() const;
     MCAPI class ScriptComponent & operator=(class ScriptComponent const &);
 
+protected:
 
+private:
 
 };

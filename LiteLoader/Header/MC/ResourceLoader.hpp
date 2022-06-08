@@ -37,11 +37,12 @@ public:
     /*10*/ virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const &, std::vector<std::string>) const;
     /*11*/ virtual struct std::pair<int, std::string const &> getPackStackIndexOfResource(class ResourceLocation const &, std::vector<std::string> const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCELOADER
-public:
     MCVAPI bool isInStreamableLocation(class ResourceLocation const &, std::vector<std::string> const &) const;
     MCVAPI bool isInStreamableLocation(class ResourceLocation const &) const;
 #endif
 
+protected:
 
+private:
 
 };

@@ -28,11 +28,12 @@ public:
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual bool validate(class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NEARESTATTACKABLETARGETDEFINITION
-public:
 #endif
     MCAPI void initialize(class EntityContext &, class NearestAttackableTargetGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NearestAttackableTargetDefinition>> &);
 
+protected:
 
+private:
 
 };

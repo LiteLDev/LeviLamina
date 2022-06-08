@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCCOMPONENT
-public:
 #endif
     MCAPI NpcComponent(class NpcComponent &&);
     MCAPI NpcComponent();
@@ -58,8 +57,9 @@ public:
     MCAPI void setSkinIndex(class Actor &, int, bool);
     MCAPI static unsigned __int64 const MAX_NPC_NAME_LENGTH;
 
+protected:
 
-//private:
+private:
     MCAPI void _defineEntityDataString(class Actor &, enum ActorDataIDs);
     MCAPI void _deserializeData();
     MCAPI void _loadActions(std::vector<std::unique_ptr<class NpcAction>> &, std::string const &) const;

@@ -86,7 +86,6 @@ public:
     /*14*/ virtual void __unk_vfn_14();
     /*15*/ virtual bool isClientSide() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARD
-public:
     MCVAPI struct ScoreboardId const & createScoreboardId(std::string const &);
     MCVAPI struct ScoreboardId const & createScoreboardId(class Player const &);
     MCVAPI struct ScoreboardId const & createScoreboardId(class Actor const &);
@@ -138,13 +137,13 @@ public:
     MCAPI static char const * OBJECTIVES_ENUM;
     MCAPI static bool shouldClearScoresOnDeath(class Actor const &);
 
-//protected:
+protected:
     MCAPI void _addLoadedCriteria(std::unique_ptr<class ObjectiveCriteria>);
     MCAPI void _addLoadedObjective(std::unique_ptr<class Objective>);
     MCAPI class std::unordered_map<std::string, std::unique_ptr<class ObjectiveCriteria>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class ObjectiveCriteria>>>> const & _getCriteriaMap() const;
     MCAPI class std::unordered_map<std::string, std::unique_ptr<class Objective>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class Objective>>>> const & _getObjectiveMap() const;
 
-//private:
+private:
     MCAPI struct ScoreboardId const & _getOrCreatePlayerId(class Player &);
     MCAPI void _init();
 

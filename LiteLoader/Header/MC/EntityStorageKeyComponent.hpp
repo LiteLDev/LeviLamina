@@ -22,13 +22,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSTORAGEKEYCOMPONENT
-public:
 #endif
     MCAPI EntityStorageKeyComponent(std::string const &);
     MCAPI void addAdditionalSaveData(class Actor const &, class CompoundTag &) const;
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &);
     MCAPI ~EntityStorageKeyComponent();
 
+protected:
 
+private:
 
 };

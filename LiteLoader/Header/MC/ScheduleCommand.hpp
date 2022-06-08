@@ -33,12 +33,12 @@ public:
     /*0*/ virtual ~ScheduleCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCHEDULECOMMAND
-public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
 
+protected:
 
-//private:
+private:
     MCAPI void _delay(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void _onAreaLoaded(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI struct ScheduleCommand::FunctionInfo _tryGetFunction(class FunctionManager &, class CommandOutput &) const;

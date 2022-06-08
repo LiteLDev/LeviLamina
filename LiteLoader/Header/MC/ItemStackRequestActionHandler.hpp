@@ -36,7 +36,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONHANDLER
-public:
 #endif
     MCAPI ItemStackRequestActionHandler(class ItemStackNetManagerServer &, class Player &);
     MCAPI void _addResponseSlotInfo(struct ItemStackRequestHandlerSlotInfo const &, class ItemStack const &);
@@ -60,8 +59,9 @@ public:
     MCAPI std::vector<class ItemInstance> tryCraft(std::unique_ptr<struct ContainerValidationCraftInputs>);
     MCAPI ~ItemStackRequestActionHandler();
 
+protected:
 
-//private:
+private:
     MCAPI enum ItemStackNetResult _handleDestroy(class ItemStackRequestActionDestroy const &);
     MCAPI enum ItemStackNetResult _handlePlaceInItemContainer(class ItemStackRequestActionPlaceInItemContainer const &);
     MCAPI enum ItemStackNetResult _handleTakeFromItemContainer(class ItemStackRequestActionTakeFromItemContainer const &);

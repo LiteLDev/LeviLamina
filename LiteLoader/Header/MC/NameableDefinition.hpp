@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAMEABLEDEFINITION
-public:
 #endif
     MCAPI NameableDefinition();
     MCAPI void addNameAction(struct NameAction const &);
@@ -32,6 +31,8 @@ public:
     MCAPI ~NameableDefinition();
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NameableDefinition>> &);
 
+protected:
 
+private:
 
 };

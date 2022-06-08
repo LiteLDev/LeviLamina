@@ -28,13 +28,14 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual enum TaskGroupState getState() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERNALTASKGROUP
-public:
     MCVAPI void processCoroutines();
     MCVAPI void requeueTask(class std::shared_ptr<class BackgroundTaskBase>, bool);
     MCVAPI void taskComplete(class gsl::not_null<class BackgroundTaskBase *>);
     MCVAPI void taskRegister(class std::shared_ptr<class BackgroundTaskBase>);
 #endif
 
+protected:
 
+private:
 
 };

@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTRUNNER
-public:
 #endif
     MCAPI static void clearAllTests(class BlockSource &, class gametest::GameTestTicker &, std::vector<class BoundingBox> const &);
     MCAPI static void clearMarkers(class Level &);
@@ -32,6 +31,8 @@ public:
     MCAPI static void runTest(class std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker &);
     MCAPI static std::unique_ptr<class gametest::BaseGameTestBatchRunner> runTests(class Dimension &, class gametest::GameTestRegistry &, std::unique_ptr<class gametest::IGameTestHelperProvider>, class gametest::GameTestTicker &, struct gametest::TestParameters &&);
 
+protected:
 
+private:
 
 };

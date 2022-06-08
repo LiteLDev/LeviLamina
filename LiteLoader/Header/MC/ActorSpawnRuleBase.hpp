@@ -25,13 +25,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSPAWNRULEBASE
-public:
 #endif
 
-//protected:
+protected:
     MCAPI void _applySpawnCondition(class std::function<void (std::string const &, int, class BiomeFilterGroup &, class MobSpawnRules &)>, class Json::Value &, class MobSpawnRules const &, std::string const &);
     MCAPI void _getResources(class ResourcePackManager &, class MobSpawnRules const &, class std::function<void (std::string const &, int, class BiomeFilterGroup &, class MobSpawnRules &)>);
     MCAPI bool _readJsonHeader(std::string &&, class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> &);
 
+private:
 
 };

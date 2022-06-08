@@ -30,7 +30,6 @@ public:
     /*6*/ virtual class Scripting::Result<bool> getSneaking() const;
     /*7*/ virtual class Scripting::Result<void> setSneaking(bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSIMULATEDPLAYER
-public:
 #endif
     MCAPI ScriptSimulatedPlayer(class Player const &, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<bool> attack() const;
@@ -69,8 +68,9 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptSimulatedPlayer> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptSimulatedPlayer> getHandle(class Player const &, class Scripting::WeakLifetimeScope const &);
 
+protected:
 
-//private:
+private:
     MCAPI static class gametest::BaseGameTestHelper const * _getHelper(class SimulatedPlayer const &);
     MCAPI static class std::optional<struct gametest::GameTestError> _toWorld(class SimulatedPlayer &, class BlockPos *, unsigned char *, class Vec3 *);
     MCAPI static struct ScriptNavigationResult _worldToLocalNavigationResult(class SimulatedPlayer &, struct ScriptNavigationResult);

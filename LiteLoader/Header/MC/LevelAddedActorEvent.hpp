@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELADDEDACTOREVENT
-public:
 #endif
     MCAPI ~LevelAddedActorEvent();
 
+protected:
 
+private:
 
 };

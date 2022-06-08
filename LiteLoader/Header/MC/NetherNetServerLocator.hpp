@@ -45,12 +45,12 @@ public:
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void __unk_vfn_14();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERNETSERVERLOCATOR
-public:
 #endif
     MCAPI NetherNetServerLocator();
 
+protected:
 
-//private:
+private:
     MCAPI bool _isNetherNetOverLANAllowed() const;
     MCAPI void _onBroadcastResponseCallback(unsigned __int64, void const *, int);
     MCAPI void _setBroadcastDiscoveryResponse(struct NetherNetServerLocator::ServerData const &);

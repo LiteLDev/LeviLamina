@@ -80,14 +80,14 @@ public:
     /*206*/ virtual int getRedstoneSignal(int) const = 0;
     /*207*/ virtual class AABB const getSensitiveAABB(class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEPRESSUREPLATEBLOCK
-public:
     MCVAPI bool canSpawnOn() const;
     MCVAPI bool isSignalSource() const;
 #endif
 
-//protected:
+protected:
     MCAPI BasePressurePlateBlock(std::string const &, int, class Material const &);
     MCAPI void checkPressed(class BlockSource &, class BlockPos const &, int, int) const;
 
+private:
 
 };

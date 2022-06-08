@@ -32,7 +32,6 @@ public:
     /*6*/ virtual void onContainerScreenOpen(class ContainerScreenContext const &);
     /*10*/ virtual void _initScreen(class ItemStackNetManagerScreen &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETMANAGERSERVER
-public:
 #endif
     MCAPI ItemStackNetManagerServer(class ServerPlayer &, bool);
     MCAPI void _handleLegacyTransactionRequest(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &, std::vector<struct std::pair<enum ContainerEnumName, class std::vector<unsigned char, class std::allocator<unsigned char>>>> const &);
@@ -44,8 +43,9 @@ public:
     MCAPI void startCrafting(bool, class BlockPos const &);
     MCAPI class CallbackToken tryCloseContainerScreen(class std::function<void (void)>);
 
+protected:
 
-//private:
+private:
     MCAPI void _filterStrings(class TypedClientNetId<struct ItemStackRequestIdTag, int, 0>, std::vector<std::string> const &);
     MCAPI void _handleRequestData(std::vector<struct ItemStackResponseInfo> &, class ItemStackRequestData const *);
     MCAPI void _processQueue();

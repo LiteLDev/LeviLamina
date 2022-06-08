@@ -26,11 +26,11 @@ public:
     /*0*/ virtual ~UnknownBlockTypeRegistry();
     /*1*/ virtual class Block const & getUnknownBlock(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UNKNOWNBLOCKTYPEREGISTRY
-public:
 #endif
 
+protected:
 
-//private:
+private:
     MCAPI void _registerBlock(std::string const &, unsigned __int64);
 
 };

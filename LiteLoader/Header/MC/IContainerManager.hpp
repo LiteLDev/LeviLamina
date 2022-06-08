@@ -24,9 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTAINERMANAGER
-public:
 #endif
 
+protected:
 
+private:
 
 };

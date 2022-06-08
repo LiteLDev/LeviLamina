@@ -48,7 +48,6 @@ public:
     /*20*/ virtual class Core::PathBuffer<std::string> const getPathToLevel(std::string const &) const;
     /*21*/ virtual class Core::PathBuffer<std::string> const getPathToLevelInfo(std::string const &, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXTERNALFILELEVELSTORAGESOURCE
-public:
     MCVAPI bool convertLevel(std::string const &, class ProgressListener *);
     MCVAPI bool isBetaRetailLevel(std::string const &) const;
     MCVAPI bool isConvertible(std::string const &);
@@ -56,6 +55,8 @@ public:
 #endif
     MCAPI ExternalFileLevelStorageSource(class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class SaveTransactionManager>> const &);
 
+protected:
 
+private:
 
 };

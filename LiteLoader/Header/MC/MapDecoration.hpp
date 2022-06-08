@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPDECORATION
-public:
 #endif
     MCAPI MapDecoration(enum MapDecoration::Type, signed char, signed char, signed char, std::string const &, class mce::Color const &);
     MCAPI MapDecoration();
@@ -39,6 +38,8 @@ public:
     MCAPI void save(class CompoundTag &);
     MCAPI ~MapDecoration();
 
+protected:
 
+private:
 
 };

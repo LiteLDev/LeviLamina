@@ -29,11 +29,12 @@ public:
     /*3*/ virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy &, class PlayerAuthInputPacket const &, unsigned __int64);
     /*4*/ virtual void flagUnsupportedMovement(unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTREPLAYSTATEPOLICY
-public:
 #endif
     MCAPI bool _checkSupportedFrame(struct IActorMovementProxy &) const;
     MCAPI bool _isSupportedMovementMode(struct IMobMovementProxy const &) const;
 
+protected:
 
+private:
 
 };

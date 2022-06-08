@@ -32,7 +32,6 @@ public:
     /*0*/ virtual ~PackManifest();
     /*1*/ virtual std::unique_ptr<class PackManifest> clone() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKMANIFEST
-public:
 #endif
     MCAPI PackManifest(class PackManifest const &);
     MCAPI PackManifest(enum ManifestType);
@@ -109,8 +108,9 @@ public:
     MCAPI static std::string const MarioPackId;
     MCAPI static enum PackScope StringToPackScope(std::string const &);
 
+protected:
 
-//private:
+private:
     MCAPI void _serializeDependencies(class Json::Value &) const;
     MCAPI void _serializeHeader(class Json::Value &) const;
     MCAPI void _serializeModules(class Json::Value &) const;

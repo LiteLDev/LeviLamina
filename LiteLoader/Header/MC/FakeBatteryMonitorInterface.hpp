@@ -26,10 +26,11 @@ public:
     /*1*/ virtual enum BatteryStatus getBatteryStatus() const;
     /*2*/ virtual float getBatteryLevel() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FAKEBATTERYMONITORINTERFACE
-public:
 #endif
     MCAPI FakeBatteryMonitorInterface();
 
+protected:
 
+private:
 
 };

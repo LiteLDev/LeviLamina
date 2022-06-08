@@ -29,12 +29,12 @@ public:
     /*3*/ virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /*4*/ virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTSUBCOMPONENT
-public:
 #endif
     MCAPI MobEffectSubcomponent();
 
+protected:
 
-//private:
+private:
     MCAPI void _addEffectFromJSON(class Json::Value &);
 
 };

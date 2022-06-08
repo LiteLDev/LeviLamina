@@ -69,15 +69,15 @@ public:
     /*207*/ virtual bool isFreeToFall(class BlockSource &, class BlockPos const &) const;
     /*208*/ virtual void startFalling(class BlockSource &, class BlockPos const &, class Block const &, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HEAVYBLOCK
-public:
     MCVAPI bool falling() const;
 #endif
     MCAPI HeavyBlock(std::string const &, int, class Material const &);
     MCAPI void triggerFallCheck(class BlockSource &, class BlockPos const &) const;
 
-//protected:
+protected:
     MCAPI void _tickBlocksAround2D(class BlockSource &, class BlockPos const &, class Block const &) const;
     MCAPI void checkSlide(class BlockSource &, class BlockPos const &) const;
 
+private:
 
 };

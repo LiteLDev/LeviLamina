@@ -70,12 +70,12 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIPWIREBLOCK
-public:
 #endif
     MCAPI TripWireBlock(std::string const &, int);
 
+protected:
 
-//private:
+private:
     MCAPI void checkPressed(class BlockSource &, class BlockPos const &) const;
     MCAPI void updateSource(class BlockSource &, class BlockPos const &, class Block const &) const;
 

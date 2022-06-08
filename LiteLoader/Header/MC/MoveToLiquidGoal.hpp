@@ -34,10 +34,11 @@ public:
     /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /*17*/ virtual bool findTargetBlock();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOLIQUIDGOAL
-public:
 #endif
     MCAPI MoveToLiquidGoal(class Mob &, float, int, int, int, enum MaterialType, float);
 
+protected:
 
+private:
 
 };

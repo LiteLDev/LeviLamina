@@ -31,10 +31,11 @@ public:
     /*6*/ virtual void setJumpType(class JumpControlComponent &, class Mob &, enum JumpType);
     /*7*/ virtual void resetSpeedModifier(class JumpControlComponent const &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICJUMPCONTROL
-public:
 #endif
     MCAPI DynamicJumpControl();
 
+protected:
 
+private:
 
 };

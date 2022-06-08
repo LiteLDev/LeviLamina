@@ -58,15 +58,15 @@ public:
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ZOMBIE
-public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Zombie(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void setZombieType(enum Zombie::ZombieType);
 
-//protected:
+protected:
     MCAPI static class mce::UUID const SPAWN_BONUS_UUID;
     MCAPI static class Attribute const SPAWN_REINFORCEMENTS_CHANCE;
 
+private:
 
 };

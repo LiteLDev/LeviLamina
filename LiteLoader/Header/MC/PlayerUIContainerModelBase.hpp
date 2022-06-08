@@ -39,12 +39,12 @@ public:
     /*21*/ virtual int _getContainerOffset() const;
     /*22*/ virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERUICONTAINERMODELBASE
-public:
 #endif
     MCAPI PlayerUIContainerModelBase(enum ContainerEnumName, class Player &, int, enum ContainerCategory);
 
-//protected:
+protected:
     MCAPI void _refreshContainer(bool);
 
+private:
 
 };

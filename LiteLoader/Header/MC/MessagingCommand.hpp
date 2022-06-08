@@ -26,12 +26,12 @@ public:
 public:
     /*0*/ virtual ~MessagingCommand();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MESSAGINGCOMMAND
-public:
 #endif
 
-//protected:
+protected:
     MCAPI MessagingCommand(bool, bool);
     MCAPI bool checkChatPermissions(class CommandOrigin const &, class CommandOutput &) const;
 
+private:
 
 };

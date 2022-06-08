@@ -35,12 +35,12 @@ public:
     /*19*/ virtual void __unk_vfn_19();
     /*20*/ virtual class Container * _getContainer() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUDCONTAINERMODEL
-public:
 #endif
     MCAPI HudContainerModel(enum ContainerEnumName, class Player &);
 
+protected:
 
-//private:
+private:
     MCAPI void _refreshContainer();
 
 };

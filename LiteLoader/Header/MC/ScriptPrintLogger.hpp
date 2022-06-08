@@ -30,9 +30,10 @@ public:
     /*4*/ virtual void onException(struct Scripting::ContextId, struct Scripting::Error const &) const;
     /*5*/ virtual bool shouldPrintException(struct Scripting::Error const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPRINTLOGGER
-public:
 #endif
 
+protected:
 
+private:
 
 };

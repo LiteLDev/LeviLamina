@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONACTORLEAVEVOLUMECOMPONENT
-public:
 #endif
     MCAPI ~OnActorLeaveVolumeComponent();
 
+protected:
 
+private:
 
 };

@@ -24,13 +24,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLAMEODDS
-public:
 #endif
     MCAPI static class FlameOdds const EASY;
     MCAPI static class FlameOdds const HARD;
     MCAPI static class FlameOdds const INSTANT;
     MCAPI static class FlameOdds const MEDIUM;
 
+protected:
 
+private:
 
 };

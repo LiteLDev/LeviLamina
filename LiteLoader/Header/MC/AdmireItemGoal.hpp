@@ -32,12 +32,12 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADMIREITEMGOAL
-public:
 #endif
     MCAPI AdmireItemGoal(class Mob &, enum LevelSoundEvent, struct FloatRange, class DefinitionTrigger const &, class DefinitionTrigger const &);
 
+protected:
 
-//private:
+private:
     MCAPI void _tryPlaceItemInInventory(class ContainerComponent &, class ShareableComponent const &);
 
 };

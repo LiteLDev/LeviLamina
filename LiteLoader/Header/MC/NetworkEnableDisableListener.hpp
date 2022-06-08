@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKENABLEDISABLELISTENER
-public:
 #endif
     MCAPI NetworkEnableDisableListener(class Bedrock::NonOwnerPointer<class AppPlatform> const &);
     MCAPI void disable();
@@ -36,6 +35,8 @@ public:
     MCAPI void tryEnable();
     MCAPI void uninitialize();
 
+protected:
 
+private:
 
 };

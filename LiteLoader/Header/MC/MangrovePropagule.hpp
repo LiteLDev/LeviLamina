@@ -67,12 +67,12 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MANGROVEPROPAGULE
-public:
 #endif
     MCAPI MangrovePropagule(std::string const &, int, class BlockLegacy const &);
 
+protected:
 
-//private:
+private:
     MCAPI static int const CHANCE_TO_GROW;
     MCAPI static int const DEFAULT_GROWTH;
     MCAPI static int const MAX_GROWTH;

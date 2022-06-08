@@ -26,10 +26,11 @@ public:
     /*0*/ virtual ~UnburiedConstraint();
     /*1*/ virtual bool isSatisfied(class IBlockWorldGenAPI const &, class BlockPos const &, enum Rotation const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UNBURIEDCONSTRAINT
-public:
 #endif
     MCAPI UnburiedConstraint(class StructureTemplate &);
 
+protected:
 
+private:
 
 };

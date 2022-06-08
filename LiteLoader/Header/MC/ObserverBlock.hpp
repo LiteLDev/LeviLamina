@@ -74,12 +74,12 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OBSERVERBLOCK
-public:
 #endif
     MCAPI ObserverBlock(std::string const &, int);
 
+protected:
 
-//private:
+private:
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &, bool, bool) const;
     MCAPI void _updateState(class BlockSource &, class BlockPos const &, class PulseCapacitor &, bool) const;
 

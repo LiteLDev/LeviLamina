@@ -24,11 +24,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATURETYPEFACTORY
-public:
 #endif
     MCAPI FeatureTypeFactory();
     MCAPI void processFeature(class IWorldRegistriesProvider &, class ResourcePackManager const &, std::string const &, class Json::Value &, class SemVersion const &) const;
 
+protected:
 
+private:
 
 };

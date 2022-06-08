@@ -27,13 +27,13 @@ public:
 public:
     /*0*/ virtual ~ScriptGameTestModuleFactory();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTGAMETESTMODULEFACTORY
-public:
 #endif
     MCAPI ScriptGameTestModuleFactory(class gametest::GameTestRegistry &);
     MCAPI static std::string getModuleUUIDAsString();
 
+protected:
 
-//private:
+private:
     MCAPI void _addV1();
     MCAPI static char const * ModuleName;
     MCAPI static class mce::UUID ModuleUUID;

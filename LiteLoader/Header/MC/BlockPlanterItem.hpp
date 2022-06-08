@@ -43,10 +43,11 @@ public:
     /*126*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPLANTERITEM
-public:
 #endif
     MCAPI BlockPlanterItem(std::string const &, int, class Block const &, bool);
 
+protected:
 
+private:
 
 };

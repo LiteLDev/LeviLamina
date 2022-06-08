@@ -28,11 +28,11 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEEPINGVINESCLUSTERFEATURE
-public:
 #endif
 
+protected:
 
-//private:
+private:
     MCAPI bool _isInvalidPlacementLocation(class BlockSource &, class BlockPos const &) const;
     MCAPI void _placeRoofNetherWart(class BlockSource &, class BlockPos const &, class Random &) const;
     MCAPI void _placeRoofWeepingVines(class BlockSource &, class BlockPos const &, class Random &) const;

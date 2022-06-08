@@ -30,11 +30,12 @@ public:
     /*3*/ virtual bool processPopulationControl(std::string const &, class Json::Value &);
     /*4*/ virtual void readResourceFiles(class ResourcePackManager &, class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNGROUPREGISTRY
-public:
 #endif
     MCAPI SpawnGroupRegistry(class ResourcePackManager &);
     MCAPI class SpawnGroupData const * getSpawnGroup(std::string const &) const;
 
+protected:
 
+private:
 
 };

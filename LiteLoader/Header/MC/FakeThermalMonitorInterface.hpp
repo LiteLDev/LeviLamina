@@ -27,10 +27,11 @@ public:
     /*2*/ virtual float getThermalValueCelsius() const;
     /*3*/ virtual bool isLowBatteryModeEnabled() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FAKETHERMALMONITORINTERFACE
-public:
 #endif
     MCAPI FakeThermalMonitorInterface();
 
+protected:
 
+private:
 
 };

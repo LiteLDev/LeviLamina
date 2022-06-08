@@ -24,13 +24,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWSTRUCTUREBLOCKRULESREGISTRY
-public:
 #endif
     MCAPI void clear();
     MCAPI std::vector<std::unique_ptr<class StructurePoolBlockRule>> const * lookupByName(std::string) const;
     MCAPI void registerBlockRules(std::string, std::unique_ptr<std::vector<class std::unique_ptr<class StructurePoolBlockRule, struct std::default_delete<class StructurePoolBlockRule>>>> &&);
     MCAPI ~JigsawStructureBlockRulesRegistry();
 
+protected:
 
+private:
 
 };

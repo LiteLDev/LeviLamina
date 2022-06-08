@@ -26,7 +26,6 @@ public:
 public:
     /*0*/ virtual ~ScriptInventoryComponent2();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTINVENTORYCOMPONENT2
-public:
 #endif
     MCAPI class Scripting::Result<int> getAdditionalSlotsPerStrength() const;
     MCAPI class Scripting::Result<bool> getCanBeSiphonedFrom() const;
@@ -38,6 +37,8 @@ public:
     MCAPI class ScriptInventoryComponent2 & operator=(class ScriptInventoryComponent2 &&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptInventoryComponent2> bind(struct Scripting::Version);
 
+protected:
 
+private:
 
 };

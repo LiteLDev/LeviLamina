@@ -33,10 +33,11 @@ public:
     /*21*/ virtual bool isSecondaryPowered() const;
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSUMERCOMPONENT
-public:
 #endif
     MCAPI ConsumerComponent();
 
+protected:
 
+private:
 
 };

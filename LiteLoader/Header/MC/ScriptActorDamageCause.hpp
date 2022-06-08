@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTACTORDAMAGECAUSE
-public:
 #endif
     MCAPI static class Scripting::EnumBindingBuilder<std::string> bind(struct Scripting::Version);
 
+protected:
 
+private:
 
 };

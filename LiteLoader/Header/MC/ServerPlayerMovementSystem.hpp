@@ -24,12 +24,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYERMOVEMENTSYSTEM
-public:
 #endif
     MCAPI static void _foreachTransactionPacket(struct PlayerActionComponent const &, bool, class std::function<void (class InventoryTransactionPacket &)> const &);
     MCAPI static struct TickingSystemWithInfo create();
     MCAPI static void onPlayerAuthInputPacket(struct ServerPlayerMovementComponent &, class PlayerAuthInputPacket const &);
 
+protected:
 
+private:
 
 };

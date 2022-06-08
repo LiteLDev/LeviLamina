@@ -76,13 +76,13 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PISTONBLOCK
-public:
     MCVAPI bool pushesUpFallingBlocks() const;
 #endif
     MCAPI PistonBlock(std::string const &, int, enum PistonBlock::Type);
 
+protected:
 
-//private:
+private:
     MCAPI static class BlockPos const ARM_DIRECTION_OFFSETS[];
 
 };

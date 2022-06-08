@@ -21,11 +21,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKMETADATA
-public:
 #endif
     MCAPI PackMetadata(std::unique_ptr<struct EducationMetadata>);
     MCAPI PackMetadata();
 
+protected:
 
+private:
 
 };

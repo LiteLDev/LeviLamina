@@ -44,11 +44,12 @@ public:
     /*81*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FERTILIZERITEM
-public:
 #endif
     MCAPI FertilizerItem(std::string const &, int, enum FertilizerType);
     MCAPI enum FertilizerType getFertilizerType() const;
 
+protected:
 
+private:
 
 };

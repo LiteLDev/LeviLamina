@@ -22,7 +22,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYINSTANCE
-public:
 #endif
     MCAPI PropertyInstance(class std::shared_ptr<struct PropertyDescription const>);
     MCAPI PropertyInstance();
@@ -38,6 +37,8 @@ public:
     MCAPI bool setIntValue(int);
     MCAPI ~PropertyInstance();
 
+protected:
 
+private:
 
 };

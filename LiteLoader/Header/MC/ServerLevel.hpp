@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERLEVEL
-public:
     MCVAPI void consolidateLevelChunkMetaData(class LevelChunk &);
     MCVAPI class Dimension * createDimension(class AutomaticID<class Dimension, int>);
     MCVAPI void decrementTagCache(std::string const &, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> &);
@@ -59,6 +58,8 @@ public:
     MCAPI bool shouldSendSleepMessage() const;
     MCAPI class Bedrock::NonOwnerPointer<class VolumeEntityManagerServer> tryGetVolumeEntityManager() const;
 
+protected:
 
+private:
 
 };

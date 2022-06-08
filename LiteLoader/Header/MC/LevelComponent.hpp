@@ -22,12 +22,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCOMPONENT
-public:
 #endif
     MCAPI LevelComponent(std::unique_ptr<class ILevel>);
     MCAPI class ILevel & getLevel();
     MCAPI ~LevelComponent();
 
+protected:
 
+private:
 
 };

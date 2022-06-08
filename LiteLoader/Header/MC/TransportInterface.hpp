@@ -24,10 +24,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRANSPORTINTERFACE
-public:
     MCVAPI ~TransportInterface();
 #endif
 
+protected:
 
+private:
 
 };

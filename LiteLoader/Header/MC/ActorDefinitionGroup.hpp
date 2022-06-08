@@ -32,7 +32,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONGROUP
-public:
 #endif
     MCAPI ActorDefinitionGroup(class Level &, class ResourcePackManager &, class IMinecraftEventing &, class Experiments const &);
     MCAPI std::vector<std::string> buildActorEventList() const;
@@ -44,11 +43,11 @@ public:
     MCAPI static bool loadActorDefinitionRuntimeIdentifier(class Json::Value const &, class SemVersion const &, std::string &);
     MCAPI static bool tryReadEntityResourceFile(class PackInstance &, class Core::Path const &, class Json::Value &);
 
-//protected:
+protected:
     MCAPI void _addRef(class ActorDefinitionPtr &);
     MCAPI void _removeRef(class ActorDefinitionPtr &);
 
-//private:
+private:
     MCAPI void _getResources(class Level &);
     MCAPI struct ActorDefinitionGroup::LoadActorResult _loadActorDefinition(class Level &, class SemVersion const &, std::string const &, enum CurrentCmdVersion const &, class Json::Value &, class std::unordered_set<std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<std::string>> &, enum LogArea);
     MCAPI bool _loadDefinitionFromJSON(class SemVersion const &, class SemVersion const &, enum CurrentCmdVersion const &, std::string const &, class Json::Value &, std::string const &, class Level &, enum LogArea);

@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCOMMUNICATIONINTERFACE
-public:
 #endif
     MCAPI void sendBandwidthMetric(unsigned __int64, unsigned __int64, unsigned __int64, unsigned __int64, std::string const &);
     MCAPI void sendChunkLoadTelemtryData(struct ChunkLoadTelemetryData const &);
@@ -34,8 +33,9 @@ public:
     MCAPI ~ServerCommunicationInterface();
     MCAPI static std::unique_ptr<class ServerCommunicationInterface> create(struct NetworkAddress const &);
 
+protected:
 
-//private:
+private:
     MCAPI void communicate(std::string const &, class Json::Value const &);
 
 };

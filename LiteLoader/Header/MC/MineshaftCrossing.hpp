@@ -29,10 +29,11 @@ public:
     /*4*/ virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
     /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINESHAFTCROSSING
-public:
 #endif
     MCAPI void _placeSupportPillar(class BlockSource &, class BoundingBox const &, int, int, int, int);
 
+protected:
 
+private:
 
 };

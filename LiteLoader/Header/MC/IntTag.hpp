@@ -41,11 +41,12 @@ public:
     /*9*/ virtual std::unique_ptr<class Tag> copy() const;
     /*10*/ virtual unsigned __int64 hash() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTTAG
-public:
 #endif
     MCAPI IntTag(int);
     MCAPI IntTag();
 
+protected:
 
+private:
 
 };

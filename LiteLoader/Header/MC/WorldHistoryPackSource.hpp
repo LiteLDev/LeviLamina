@@ -31,7 +31,6 @@ public:
     /*4*/ virtual enum PackType getPackType() const;
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory &, class IContentKeyProvider const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDHISTORYPACKSOURCE
-public:
     MCVAPI void forEachPack(class std::function<void (class Pack &)>);
     MCVAPI void forEachPackConst(class std::function<void (class Pack const &)>) const;
 #endif
@@ -39,8 +38,9 @@ public:
     MCAPI class Core::PathBuffer<std::string> const & getPathToWorld() const;
     MCAPI static class Core::PathBuffer<std::string> generateHistoryFilePath(class Core::Path const &, enum PackType);
 
+protected:
 
-//private:
+private:
     MCAPI void _addPackFromHistoryPack(class WorldPackHistory const &);
     MCAPI std::unique_ptr<class Pack> _createPackFromHistoryPack(class WorldPackHistory const &);
     MCAPI bool _readWorldHistoryFile();

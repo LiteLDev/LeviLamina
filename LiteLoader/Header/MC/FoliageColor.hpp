@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLIAGECOLOR
-public:
 #endif
     MCAPI static int getBirchColor(float, float);
     MCAPI static int getDefaultColor();
@@ -39,8 +38,9 @@ public:
     MCAPI static int getMapGrassColor(class BlockSource &, class BlockPos const &);
     MCAPI static int getMapGrassColor(float, float);
 
+protected:
 
-//private:
+private:
     MCAPI static class mce::Color const FOLIAGE_BOTTOM_LEFT;
     MCAPI static class mce::Color const FOLIAGE_BOTTOM_RIGHT;
     MCAPI static class mce::Color const FOLIAGE_TOP_LEFT;

@@ -29,12 +29,13 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKCLIENTRESPONSEPACKET
-public:
 #endif
     MCAPI ResourcePackClientResponsePacket();
     MCAPI class std::set<std::string, struct std::less<std::string>, class std::allocator<std::string>> const & getDownloadingPacks() const;
     MCAPI bool isResponse(enum ResourcePackResponse) const;
 
+protected:
 
+private:
 
 };

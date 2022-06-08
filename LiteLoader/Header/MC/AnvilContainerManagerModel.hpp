@@ -33,13 +33,14 @@ public:
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANVILCONTAINERMANAGERMODEL
-public:
 #endif
     MCAPI AnvilContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
     MCAPI static int const INPUT_SLOT;
     MCAPI static int const MATERIAL_SLOT;
     MCAPI static int const RESULT_SLOT;
 
+protected:
 
+private:
 
 };

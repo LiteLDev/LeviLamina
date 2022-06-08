@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPCONTROLCOMPONENT
-public:
 #endif
     MCAPI JumpControlComponent();
     MCAPI int getAnimationDuration() const;
@@ -42,8 +41,9 @@ public:
     MCAPI void setSwimming(bool);
     MCAPI void update(class Mob &);
 
+protected:
 
-//private:
+private:
     MCAPI float _getDelayInternal() const;
     MCAPI float _getHeightInternal() const;
 

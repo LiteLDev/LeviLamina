@@ -24,10 +24,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTLOADER
-public:
 #endif
     MCAPI NBTLoader(class gsl::not_null<class CompoundTag const *>);
 
+protected:
 
+private:
 
 };

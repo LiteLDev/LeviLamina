@@ -27,10 +27,11 @@ public:
     /*1*/ virtual bool readTransform(std::vector<unsigned char> &) const;
     /*2*/ virtual bool writeTransform(std::vector<unsigned char> &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCRYPTEDZIPTRANSFORMS
-public:
 #endif
     MCAPI EncryptedZipTransforms(class IContentKeyProvider const &);
 
+protected:
 
+private:
 
 };

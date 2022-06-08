@@ -32,7 +32,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPITEMSAVEDDATA
-public:
 #endif
     MCAPI MapItemSavedData(struct ActorUniqueID);
     MCAPI class std::shared_ptr<class MapItemTrackedActor> addTrackedMapEntity(class Actor &, enum MapDecoration::Type);
@@ -70,8 +69,9 @@ public:
     MCAPI ~MapItemSavedData();
     MCAPI static std::string getSerializationKey(struct ActorUniqueID);
 
+protected:
 
-//private:
+private:
     MCAPI void _addDecoration(enum MapDecoration::Type, class Level &, struct MapItemTrackedActor::UniqueId const &, class Vec3 const &, std::string const &, class mce::Color const &);
     MCAPI class std::shared_ptr<class MapItemTrackedActor> _addTrackedMapEntity(struct MapItemTrackedActor::UniqueId const &, class BlockSource &, enum MapDecoration::Type);
     MCAPI void _deserializeData(class CompoundTag const &);

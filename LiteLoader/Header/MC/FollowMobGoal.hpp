@@ -32,12 +32,12 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLLOWMOBGOAL
-public:
 #endif
     MCAPI FollowMobGoal(class Mob &, float, float, int);
 
+protected:
 
-//private:
+private:
     MCAPI bool _setWantedMob();
 
 };

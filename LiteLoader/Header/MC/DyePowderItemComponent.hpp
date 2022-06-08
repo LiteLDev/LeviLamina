@@ -31,13 +31,14 @@ public:
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYEPOWDERITEMCOMPONENT
-public:
 #endif
     MCAPI DyePowderItemComponent(class ComponentItem *);
     MCAPI bool isValidAuxValue(int) const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
+protected:
 
+private:
 
 };

@@ -35,10 +35,11 @@ public:
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYCONTAINERVALIDATION
-public:
     MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;
 #endif
 
+protected:
 
+private:
 
 };

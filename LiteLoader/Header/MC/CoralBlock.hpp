@@ -69,13 +69,14 @@ public:
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORALBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI CoralBlock(std::string const &, int);
     MCAPI static int const DEAD_CORAL_BIT;
     MCAPI static int const DEAD_CORAL_OFFSET;
 
+protected:
 
+private:
 
 };

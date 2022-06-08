@@ -24,13 +24,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPLODEDEFINITION
-public:
 #endif
     MCAPI ExplodeDefinition();
     MCAPI void initialize(class EntityContext &, class ExplodeComponent &) const;
     MCAPI void uninitialize(class EntityContext &) const;
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ExplodeDefinition>> &);
 
+protected:
 
+private:
 
 };

@@ -22,11 +22,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BURYDESCRIPTION
-public:
 #endif
     MCAPI BuryDescription(class BoundingBox const &);
     MCAPI float calculateContribution(class BlockPos const &) const;
 
+protected:
 
+private:
 
 };

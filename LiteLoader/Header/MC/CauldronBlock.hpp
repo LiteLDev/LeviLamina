@@ -77,7 +77,6 @@ public:
     /*193*/ virtual int getExtraRenderLayers() const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAULDRONBLOCK
-public:
     MCVAPI bool hasComparatorSignal() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
@@ -87,8 +86,9 @@ public:
     MCAPI static bool canReceiveStalactiteDrip(class BlockSource &, class BlockPos const &, enum MaterialType);
     MCAPI static void spawnPotionParticles(class Level &, class Vec3 const &, class Random &, int, int);
 
+protected:
 
-//private:
+private:
     MCAPI void _explodeCauldronContents(class BlockSource &, class BlockPos const &, unsigned short) const;
     MCAPI bool const _mayUpdateLiquidLevel(class BlockSource &, class BlockPos const &) const;
     MCAPI void _sendCauldronUsedEventToClient(class Player const &, short, enum MinecraftEventing::POIBlockInteractionType) const;

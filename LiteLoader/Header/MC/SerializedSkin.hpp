@@ -18,7 +18,6 @@ class SerializedSkin {
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERIALIZEDSKIN
-public:
 #endif
     MCAPI SerializedSkin(class SerializedSkin &&);
     MCAPI SerializedSkin();
@@ -36,6 +35,8 @@ public:
     MCAPI void write(class BinaryStream &) const;
     MCAPI ~SerializedSkin();
 
+protected:
 
+private:
 
 };

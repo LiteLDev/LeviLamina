@@ -22,7 +22,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMEVENTLISTENER
-public:
     MCVAPI enum EventResult onEvent(struct ItemNotificationEvent const &);
     MCVAPI enum EventResult onInventoryItemClosed();
     MCVAPI enum EventResult onInventoryItemCraftedAutomaticallyByRecipe(class ItemStackBase const &);
@@ -41,6 +40,8 @@ public:
     MCVAPI enum EventResult onRecipeSelected(class ItemStackBase const &);
 #endif
 
+protected:
 
+private:
 
 };

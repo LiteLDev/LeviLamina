@@ -33,16 +33,15 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*11*/ virtual struct ActorUniqueID _findTarget(struct MobDescriptor const **);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NEARESTATTACKABLETARGETGOAL
-public:
 #endif
     MCAPI NearestAttackableTargetGoal(class Mob &);
 
-//protected:
+protected:
     MCAPI bool _canStartSearching();
     MCAPI std::vector<struct DistanceSortedActor> _getNearbyActors();
     MCAPI bool _isTargetVisible(class Mob const &, float, float) const;
 
-//private:
+private:
     MCAPI bool _selectTarget();
 
 };

@@ -72,15 +72,15 @@ public:
     /*209*/ virtual void __unk_vfn_209();
     /*210*/ virtual void __unk_vfn_210();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CANDLEBLOCK
-public:
     MCVAPI bool isInteractiveBlock() const;
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI CandleBlock(std::string const &, int);
     MCAPI static bool tryLightFire(class BlockSource &, class BlockPos const &);
 
+protected:
 
-//private:
+private:
     MCAPI static void _forEachCandle(class Block const &, class BlockPos const &, class std::function<void (class Vec3 const &, int)>);
 
 };

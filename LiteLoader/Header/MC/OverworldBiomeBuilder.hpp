@@ -24,14 +24,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDBIOMEBUILDER
-public:
 #endif
     MCAPI OverworldBiomeBuilder();
     MCAPI void addBiomes(std::vector<struct BiomeNoiseTarget> &, class BiomeRegistry const &) const;
     MCAPI std::vector<struct ClimateParameters> getWorldSpawnParameters() const;
 
+protected:
 
-//private:
+private:
     MCAPI void _addHighSlice(std::vector<struct BiomeNoiseTarget> &, struct ClimateUtils::Parameter const &) const;
     MCAPI void _addInlandBiomes(std::vector<struct BiomeNoiseTarget> &) const;
     MCAPI void _addLowSlice(std::vector<struct BiomeNoiseTarget> &, struct ClimateUtils::Parameter const &) const;

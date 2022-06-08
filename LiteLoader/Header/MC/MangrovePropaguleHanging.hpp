@@ -61,12 +61,12 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MANGROVEPROPAGULEHANGING
-public:
 #endif
     MCAPI MangrovePropaguleHanging(std::string const &, int, class BlockLegacy const &);
 
+protected:
 
-//private:
+private:
     MCAPI static int const MAX_GROWTH;
 
 };

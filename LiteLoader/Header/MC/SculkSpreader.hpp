@@ -21,7 +21,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSPREADER
-public:
 #endif
     MCAPI SculkSpreader();
     MCAPI SculkSpreader(bool, int, int, int, int);
@@ -43,6 +42,8 @@ public:
     MCAPI void updateCursors(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class Random &);
     MCAPI ~SculkSpreader();
 
+protected:
 
+private:
 
 };

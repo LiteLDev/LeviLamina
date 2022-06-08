@@ -25,12 +25,12 @@ public:
 public:
     /*0*/ virtual ~ScriptDebugCommand();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEBUGCOMMAND
-public:
 #endif
     MCAPI ScriptDebugCommand();
 
-//protected:
+protected:
     MCAPI void _handleDebuggerAttach(class IScriptDebugger *, std::string const &, enum ScriptDebugCommand::DebuggerAction, std::string const &, unsigned short, class CommandOutput &) const;
 
+private:
 
 };

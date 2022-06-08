@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATUREREGISTRY
-public:
 #endif
     MCAPI FeatureRegistry();
     MCAPI void forEachFeature(class std::function<void (class HashedString const &, class WeakRefT<struct FeatureRefTraits>)>) const;
@@ -49,8 +48,9 @@ public:
     MCAPI static std::string const SURFACE_PASS;
     MCAPI static std::string const UNDERGROUND_PASS;
 
+protected:
 
-//private:
+private:
     MCAPI std::string const _featureNamespaceFromInput(std::string const &, std::string const &);
     MCAPI void _registerFeature(std::string const &, std::unique_ptr<class IFeature>);
     MCAPI void _setupFeature(class IWorldRegistriesProvider &, class ResourcePackManager const &, std::string const &, std::string const &, class SemVersion const &);

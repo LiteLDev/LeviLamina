@@ -65,12 +65,12 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOULSANDBLOCK
-public:
 #endif
     MCAPI SoulSandBlock(std::string const &, int);
 
+protected:
 
-//private:
+private:
     MCAPI static class BaseGameVersion const SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION;
 
 };

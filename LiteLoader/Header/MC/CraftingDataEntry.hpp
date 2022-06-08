@@ -24,13 +24,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTINGDATAENTRY
-public:
 #endif
     MCAPI void fillFromMultiRecipe(class MultiRecipe const &);
     MCAPI void fillFromRecipe(class Recipe const &);
     MCAPI void write(class BinaryStream &) const;
     MCAPI ~CraftingDataEntry();
 
+protected:
 
+private:
 
 };

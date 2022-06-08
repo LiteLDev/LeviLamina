@@ -26,13 +26,13 @@ public:
     /*0*/ virtual ~NpcI18nObserver();
     /*1*/ virtual void onLanguageChanged(std::string const &, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCI18NOBSERVER
-public:
     MCVAPI void onLanguageKeywordsLoadedFromPack(class PackManifest const &);
     MCVAPI void onLanguagesLoaded();
 #endif
 
+protected:
 
-//private:
+private:
     MCAPI void _loadNpcData();
 
 };

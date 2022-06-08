@@ -31,13 +31,14 @@ public:
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONITEMCOMPONENT
-public:
 #endif
     MCAPI IconItemComponent(class ComponentItem *);
     MCAPI void setOwnerIcon();
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
+protected:
 
+private:
 
 };

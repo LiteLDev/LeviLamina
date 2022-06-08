@@ -43,10 +43,11 @@ public:
     /*81*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTITEM
-public:
 #endif
     MCAPI MinecartItem(std::string const &, int, enum MinecartType);
 
+protected:
 
+private:
 
 };

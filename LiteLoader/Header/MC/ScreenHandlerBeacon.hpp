@@ -29,12 +29,12 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void postRequest(bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCREENHANDLERBEACON
-public:
 #endif
     MCAPI ScreenHandlerBeacon(class ContainerScreenContext const &, class ItemStackRequestActionHandler &);
 
+protected:
 
-//private:
+private:
     MCAPI enum ItemStackNetResult _handleBeaconPaymentAction(class ItemStackRequestActionBeaconPayment const &);
 
 };

@@ -24,10 +24,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERINTERACTIONSYSTEM
-public:
 #endif
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
 
+protected:
 
+private:
 
 };

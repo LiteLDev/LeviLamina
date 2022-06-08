@@ -37,12 +37,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOUNDINGBOX
-public:
 #endif
     MCAPI BoundingBox(class BlockPos const &, class BlockPos const &, enum Rotation);
     MCAPI bool isValid() const;
     MCAPI static class BoundingBox orientBox(int, int, int, int, int, int, int, int, int, int);
 
+protected:
 
+private:
 
 };

@@ -58,15 +58,15 @@ public:
     /*280*/ virtual void __unk_vfn_280();
     /*281*/ virtual enum ParticleType getTrailParticle();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREBALL
-public:
     MCVAPI bool canMakeStepSound() const;
     MCVAPI void onHit(class HitResult const &);
     MCVAPI bool shouldBurn();
 #endif
     MCAPI Fireball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
+protected:
 
-//private:
+private:
     MCAPI void _setPower(class Vec3 const &);
 
 };

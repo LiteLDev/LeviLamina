@@ -25,12 +25,13 @@ public:
     /*0*/ virtual ~BlockReducer();
     /*1*/ virtual void registerBlock(class ItemStack const &, std::vector<class ItemStack> &&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKREDUCER
-public:
 #endif
     MCAPI BlockReducer();
     MCAPI std::vector<class ItemStack> const * getReduction(class ItemStackBase const &) const;
     MCAPI class std::unordered_map<int, std::vector<class ItemStack>, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::vector<class ItemStack>>>> const & getReductionMap() const;
 
+protected:
 
+private:
 
 };

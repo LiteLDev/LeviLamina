@@ -36,9 +36,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONNECTOR
-public:
 #endif
 
+protected:
 
+private:
 
 };

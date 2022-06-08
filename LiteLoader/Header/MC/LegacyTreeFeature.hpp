@@ -26,10 +26,11 @@ public:
     /*0*/ virtual ~LegacyTreeFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYTREEFEATURE
-public:
 #endif
     MCAPI LegacyTreeFeature(enum LegacyTreeFeature::Type, class FeatureRegistry &);
 
+protected:
 
+private:
 
 };

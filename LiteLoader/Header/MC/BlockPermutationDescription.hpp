@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPERMUTATIONDESCRIPTION
-public:
 #endif
     MCAPI ~BlockPermutationDescription();
 
+protected:
 
+private:
 
 };

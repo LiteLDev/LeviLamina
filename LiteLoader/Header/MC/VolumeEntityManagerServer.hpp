@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMEENTITYMANAGERSERVER
-public:
 #endif
     MCAPI VolumeEntityManagerServer(class StackRefResultT<struct EntityRegistryRefTraits>);
     MCAPI struct std::pair<enum VolumeEntityManagerServer::CreateVolumeResult, class StackRefResultT<struct EntityRefTraits>> createVolume(class PacketSender &, std::string const &, class BlockPos const &, class BlockPos const &, class AutomaticID<class Dimension, int>, std::string const &);
@@ -35,6 +34,8 @@ public:
     MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> removeVolumes(class BlockPos const &, class AutomaticID<class Dimension, int>, class PacketSender &);
     MCAPI void sendAllVolumesToClient(class UserEntityIdentifierComponent const &, class NetworkIdentifier const &, class PacketSender &) const;
 
+protected:
 
+private:
 
 };

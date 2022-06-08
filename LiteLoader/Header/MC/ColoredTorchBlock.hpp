@@ -67,13 +67,13 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COLOREDTORCHBLOCK
-public:
 #endif
     MCAPI ColoredTorchBlock(std::string const &, int, enum ColoredTorchColor);
     MCAPI static class ItemInstance getItemForColor(enum ColoredTorchColor);
 
+protected:
 
-//private:
+private:
     MCAPI enum ColoredTorchColor _getColor(class Block const &) const;
 
 };

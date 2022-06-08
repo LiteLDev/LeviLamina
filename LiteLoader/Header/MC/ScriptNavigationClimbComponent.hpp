@@ -26,10 +26,11 @@ public:
 public:
     /*0*/ virtual ~ScriptNavigationClimbComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTNAVIGATIONCLIMBCOMPONENT
-public:
 #endif
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptNavigationClimbComponent> bind(struct Scripting::Version);
 
+protected:
 
+private:
 
 };

@@ -69,13 +69,13 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GRINDSTONEBLOCK
-public:
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI GrindstoneBlock(std::string const &, int);
 
+protected:
 
-//private:
+private:
     MCAPI class Block const & _determineAttachment(class Actor &, class BlockPos const &, unsigned char) const;
     MCAPI class AABB const & _getShape(class Block const &, class AABB &) const;
 

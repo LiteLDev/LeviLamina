@@ -46,7 +46,6 @@ public:
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDBLOCKACTOR
-public:
 #endif
     MCAPI CommandBlockActor(class BlockPos const &, enum CommandBlockMode);
     MCAPI class BaseCommandBlock & getBaseCommandBlock();
@@ -68,8 +67,9 @@ public:
     MCAPI void updateBlock(class BlockSource &, std::string const &, std::string const &, enum CommandBlockMode, bool, bool, bool, int, bool);
     MCAPI bool wasConditionMet();
 
+protected:
 
-//private:
+private:
     MCAPI void _setAutomatic(class BlockSource &, bool, enum CommandBlockMode);
 
 };

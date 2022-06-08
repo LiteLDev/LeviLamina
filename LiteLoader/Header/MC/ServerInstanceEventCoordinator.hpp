@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCEEVENTCOORDINATOR
-public:
 #endif
     MCAPI void registerServerInstanceEventHandler(std::unique_ptr<class ServerInstanceEventHandler> &&);
     MCAPI void sendEvent(class EventRef<struct ServerInstanceGameplayEvent<void>> const &);
@@ -39,6 +38,8 @@ public:
     MCAPI void sendServerUpdateStart(class ServerInstance &);
     MCAPI void sendStartLeaveGame(class ServerInstance &);
 
+protected:
 
+private:
 
 };

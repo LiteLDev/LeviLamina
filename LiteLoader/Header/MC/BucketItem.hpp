@@ -56,18 +56,17 @@ public:
     /*124*/ virtual std::string getAuxValuesDescription() const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUCKETITEM
-public:
     MCVAPI bool isBucket() const;
     MCVAPI bool uniqueAuxValues() const;
 #endif
     MCAPI BucketItem(std::string const &, int, enum BucketFillType);
     MCAPI static int const DRINK_DURATION;
 
-//protected:
+protected:
     MCAPI void addBucketEntitySaveData(class Actor &, class ItemStack &) const;
     MCAPI bool readBucketEntitySaveData(class BlockSource &, class Actor *, unsigned char, class BlockPos, class ItemInstance const &) const;
 
-//private:
+private:
     MCAPI bool _emptyBucket(class BlockSource &, class Block const &, class BlockPos const &, class Actor *, class ItemStack const &, unsigned char) const;
     MCAPI bool _takeLiquid(class ItemStack &, class Actor &, class BlockPos const &) const;
     MCAPI bool _takePowderSnow(class ItemStack &, class Actor &, class BlockPos const &) const;

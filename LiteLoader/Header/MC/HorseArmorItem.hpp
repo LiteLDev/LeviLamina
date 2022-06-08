@@ -50,12 +50,13 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*81*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HORSEARMORITEM
-public:
 #endif
     MCAPI HorseArmorItem(std::string const &, int, int, enum HorseArmorItem::Tier);
     MCAPI enum HorseArmorItem::Tier getTier() const;
     MCAPI static int const mHealthPerTier[];
 
+protected:
 
+private:
 
 };

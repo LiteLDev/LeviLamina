@@ -72,15 +72,15 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LECTERNBLOCK
-public:
     MCVAPI bool hasComparatorSignal() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI LecternBlock(std::string const &, int);
     MCAPI void emitRedstonePulse(class BlockSource &, class BlockPos const &) const;
 
+protected:
 
-//private:
+private:
     MCAPI bool _dropBook(class Player &, class BlockPos const &) const;
 
 };

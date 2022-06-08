@@ -64,10 +64,11 @@ public:
     /*205*/ virtual int getSignalForData(int) const;
     /*206*/ virtual int getRedstoneSignal(int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRESSUREPLATEBLOCK
-public:
 #endif
     MCAPI PressurePlateBlock(std::string const &, int, class Material const &, enum PressurePlateBlock::Sensitivity);
 
+protected:
 
+private:
 
 };

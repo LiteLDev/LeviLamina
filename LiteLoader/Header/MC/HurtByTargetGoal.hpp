@@ -32,10 +32,11 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*11*/ virtual void alertOther(class Mob *, class Mob *);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HURTBYTARGETGOAL
-public:
 #endif
     MCAPI HurtByTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, bool);
 
+protected:
 
+private:
 
 };

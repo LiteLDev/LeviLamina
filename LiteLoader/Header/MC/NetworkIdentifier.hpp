@@ -28,7 +28,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKIDENTIFIER
-public:
 #endif
     MCAPI NetworkIdentifier(struct NetherNet::NetworkID const &);
     MCAPI NetworkIdentifier(struct RakNet::RakNetGUID const &);
@@ -41,8 +40,9 @@ public:
     MCAPI bool isUnassigned() const;
     MCAPI std::string toString() const;
 
+protected:
 
-//private:
+private:
     MCAPI bool equalsTypeData(class NetworkIdentifier const &) const;
 
 };

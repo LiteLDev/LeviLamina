@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPERMUTATIONEVENTHANDLER
-public:
 #endif
     MCAPI ActorPermutationEventHandler(class Actor &);
     MCAPI void checkActiveComponents(class std::shared_ptr<class ActorPermutation>);
@@ -34,6 +33,8 @@ public:
     MCAPI void reload(class RenderParams &);
     MCAPI ~ActorPermutationEventHandler();
 
+protected:
 
+private:
 
 };

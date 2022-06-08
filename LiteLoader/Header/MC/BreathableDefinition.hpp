@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREATHABLEDEFINITION
-public:
 #endif
     MCAPI BreathableDefinition();
     MCAPI void addBreathableBlockDescriptor(class BlockDescriptor const &);
@@ -32,6 +31,8 @@ public:
     MCAPI void initialize(class EntityContext &, class BreathableComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BreathableDefinition>> &);
 
+protected:
 
+private:
 
 };

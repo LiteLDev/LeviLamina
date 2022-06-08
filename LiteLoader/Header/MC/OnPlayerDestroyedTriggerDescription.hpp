@@ -27,10 +27,11 @@ public:
     /*0*/ virtual ~OnPlayerDestroyedTriggerDescription();
     /*1*/ virtual std::string const & getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLAYERDESTROYEDTRIGGERDESCRIPTION
-public:
 #endif
     MCAPI static std::string const NameID;
 
+protected:
 
+private:
 
 };

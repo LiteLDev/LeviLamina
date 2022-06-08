@@ -27,7 +27,6 @@ public:
     /*2*/ virtual void tick(class MoveControlComponent &, class Mob &);
     /*3*/ virtual void setWantedPosition(class MoveControlComponent &, class Mob &, class Vec3 const &, float);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROL
-public:
 #endif
     MCAPI MoveControl();
     MCAPI static float const MIN_DELTA_TO_JUMP;
@@ -37,9 +36,10 @@ public:
     MCAPI static float const MIN_SPEED_SQR;
     MCAPI static class Vec3 getDiffVector(class Vec3 const &, class Mob const &);
 
-//protected:
+protected:
     MCAPI float calculateMoveSpeed(class MoveControlComponent const &, class Mob &, class Vec3 const &, float);
     MCAPI float calculateYRotation(class MoveControlComponent const &, class Mob const &, class Vec3 const &, float);
 
+private:
 
 };

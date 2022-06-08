@@ -32,12 +32,12 @@ public:
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAPGOAL
-public:
 #endif
     MCAPI NapGoal(class Mob &, float, float, float, float, class ActorFilterGroup const &, class ActorFilterGroup const &);
 
+protected:
 
-//private:
+private:
     MCAPI bool _canSleep(struct Tick const &) const;
     MCAPI bool _detectsMobs() const;
     MCAPI void _setCooldown();

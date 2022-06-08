@@ -29,11 +29,12 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTPACKET
-public:
 #endif
     MCAPI BlockEventPacket(class BlockPos, int, int);
     MCAPI BlockEventPacket();
 
+protected:
 
+private:
 
 };

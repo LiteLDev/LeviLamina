@@ -24,11 +24,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILEACCESSTRANSFORMS
-public:
     MCVAPI bool readTransform(std::vector<unsigned char> &) const;
     MCVAPI bool writeTransform(std::vector<unsigned char> &) const;
 #endif
 
+protected:
 
+private:
 
 };

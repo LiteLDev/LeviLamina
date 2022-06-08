@@ -26,10 +26,11 @@ public:
 public:
     /*0*/ virtual ~ScriptHealthComponent2();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTHEALTHCOMPONENT2
-public:
 #endif
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptHealthComponent2> bind(struct Scripting::Version);
 
+protected:
 
+private:
 
 };

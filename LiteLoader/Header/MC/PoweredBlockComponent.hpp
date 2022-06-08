@@ -34,11 +34,12 @@ public:
     /*20*/ virtual void __unk_vfn_20();
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POWEREDBLOCKCOMPONENT
-public:
     MCVAPI bool hasChildrenSource() const;
 #endif
     MCAPI PoweredBlockComponent(unsigned char);
 
+protected:
 
+private:
 
 };

@@ -28,11 +28,12 @@ public:
     /*11*/ virtual class Container * _tryGetContainer() const;
     /*12*/ virtual void _balanceTransaction(class ItemStack const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLAYERINVENTORYCOMPONENTCONTAINER
-public:
 #endif
     MCAPI ScriptPlayerInventoryComponentContainer(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptPlayerInventoryComponentContainer> bind(struct Scripting::Version);
 
+protected:
 
+private:
 
 };

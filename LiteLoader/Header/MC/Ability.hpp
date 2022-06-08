@@ -27,7 +27,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABILITY
-public:
 #endif
     MCAPI bool getBool() const;
     MCAPI float getFloat() const;
@@ -35,6 +34,8 @@ public:
     MCAPI bool hasOption(enum Ability::Options) const;
     MCAPI void setBool(bool);
 
+protected:
 
+private:
 
 };

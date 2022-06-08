@@ -39,15 +39,15 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LODESTONEBLOCKACTOR
-public:
 #endif
     MCAPI LodestoneBlockActor(class BlockPos const &);
     MCAPI class PositionTrackingId const & getTrackingHandle() const;
     MCAPI bool hasTrackingHandle() const;
     MCAPI bool setTrackingHandle(class PositionTrackingId const &);
 
+protected:
 
-//private:
+private:
     MCAPI static std::string const sTagName_Handle;
 
 };

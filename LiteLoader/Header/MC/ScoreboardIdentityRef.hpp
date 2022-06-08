@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDIDENTITYREF
-public:
 #endif
     MCAPI ScoreboardIdentityRef(struct ScoreboardId const &);
     MCAPI ScoreboardIdentityRef();
@@ -40,6 +39,8 @@ public:
     MCAPI static class ScoreboardIdentityRef const Undefined;
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class ScoreboardIdentityRef const &);
 
+protected:
 
+private:
 
 };

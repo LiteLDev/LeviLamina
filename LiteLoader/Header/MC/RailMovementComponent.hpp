@@ -23,13 +23,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAILMOVEMENTCOMPONENT
-public:
 #endif
     MCAPI RailMovementComponent();
     MCAPI bool canSnapOnRail(class Actor const &, class BlockPos &);
     MCAPI void comeOffTrack(class Actor &);
     MCAPI void moveAlongTrack(class Actor &, class Block const &, class BlockPos const &);
 
+protected:
 
+private:
 
 };

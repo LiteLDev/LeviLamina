@@ -24,15 +24,15 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FULLPLAYERINVENTORYWRAPPER
-public:
 #endif
     MCAPI FullPlayerInventoryWrapper(class PlayerInventory &, class SimpleContainer &, class SimpleContainer &, class InventoryTransactionManager *, class Player *);
     MCAPI int clearAllItems();
     MCAPI int getItemCount(class std::function<bool (class ItemStack const &)>);
     MCAPI int removeResource(class ItemStack const &, class std::function<bool (class ItemStack const &)>, bool, int);
 
+protected:
 
-//private:
+private:
     MCAPI int _clearSimpleContainerItem(class SimpleContainer &, enum ContainerID, int);
     MCAPI int _getSimpleContainerItemCount(class SimpleContainer &, int, class std::function<bool (class ItemStack const &)>);
     MCAPI int _removeCursorItem(class ItemStack const &, bool, int);

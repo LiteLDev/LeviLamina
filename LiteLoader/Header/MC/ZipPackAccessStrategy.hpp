@@ -45,12 +45,12 @@ public:
     /*19*/ virtual void unload();
     /*21*/ virtual class ContentIdentity readContentIdentity() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ZIPPACKACCESSSTRATEGY
-public:
 #endif
     MCAPI ZipPackAccessStrategy(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const &, class ResourceLocation const &, class Core::Path const &);
 
+protected:
 
-//private:
+private:
     MCAPI bool _tryReadFromPendingQueue(class Core::Path const &, std::string &) const;
 
 };

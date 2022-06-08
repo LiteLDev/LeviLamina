@@ -28,11 +28,11 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORALCRUSTFEATURE
-public:
 #endif
 
+protected:
 
-//private:
+private:
     MCAPI class BlockPos _getCropOffsetFromRot(int, int) const;
     MCAPI class BlockPos _getOffsetFromRot(int, int) const;
     MCAPI void _placeCoral(class BlockSource &, class BlockPos const &, class Random &, std::vector<class BlockPos> &, std::vector<struct std::pair<class BlockPos, unsigned char>> &, int) const;

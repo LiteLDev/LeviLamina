@@ -160,7 +160,6 @@ public:
     /*126*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEM
-public:
     MCVAPI class mce::Color getBaseColor(class ItemStack const &) const;
     MCVAPI class mce::Color getSecondaryColor(class ItemStack const &) const;
     MCVAPI bool hasCustomColor(class ItemStackBase const &) const;
@@ -245,10 +244,10 @@ public:
     MCAPI static void startCreativeItemDefinitions(bool, class CreativeItemRegistry *);
     MCAPI static struct NewBlockID toBlockId(short);
 
-//protected:
+protected:
     MCAPI void _helpChangeInventoryItemInPlace(class Actor &, class ItemStack &, class ItemStack &, enum ItemAcquisitionMethod) const;
 
-//private:
+private:
     MCAPI static void _addLooseCreativeItemsClient();
     MCAPI static std::unique_ptr<class std::set<short, struct std::less<short>, class std::allocator<short>>> mServerItemsUsedInCreativeItems;
 

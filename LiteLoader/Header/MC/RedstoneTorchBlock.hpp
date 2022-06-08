@@ -70,13 +70,13 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual int getTickDelay();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REDSTONETORCHBLOCK
-public:
     MCVAPI bool canSpawnOn() const;
 #endif
     MCAPI RedstoneTorchBlock(std::string const &, int, bool);
 
+protected:
 
-//private:
+private:
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &) const;
 
 };

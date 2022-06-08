@@ -28,11 +28,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYTRANSACTIONITEMGROUP
-public:
 #endif
     MCAPI class ItemStack getItemInstance() const;
     MCAPI ~InventoryTransactionItemGroup();
 
+protected:
 
+private:
 
 };

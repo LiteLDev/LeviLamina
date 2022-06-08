@@ -74,7 +74,6 @@ public:
     /*204*/ virtual int getTickDelay() const;
     /*205*/ virtual void dispenseFrom(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPENSERBLOCK
-public:
     MCVAPI bool hasComparatorSignal() const;
     MCVAPI bool isContainerBlock() const;
     MCVAPI bool isInteractiveBlock() const;
@@ -82,10 +81,11 @@ public:
     MCAPI DispenserBlock(std::string const &, int);
     MCAPI static void ejectItem(class BlockSource &, class Vec3 const &, unsigned char, class ItemStack const &);
 
-//protected:
+protected:
     MCAPI void ejectItem(class BlockSource &, class Vec3 const &, unsigned char, class ItemStack const &, class Container &, int) const;
     MCAPI class Vec3 getDispensePosition(class BlockSource &, class Vec3 const &) const;
     MCAPI unsigned char getFacing(class Block const &) const;
 
+private:
 
 };

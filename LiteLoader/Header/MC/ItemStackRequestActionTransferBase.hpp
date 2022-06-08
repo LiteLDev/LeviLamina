@@ -30,12 +30,13 @@ public:
     /*4*/ virtual void _write(class BinaryStream &) const;
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONTRANSFERBASE
-public:
 #endif
     MCAPI unsigned char getAmount() const;
     MCAPI struct ItemStackRequestSlotInfo const & getDst() const;
     MCAPI struct ItemStackRequestSlotInfo const & getSrc() const;
 
+protected:
 
+private:
 
 };

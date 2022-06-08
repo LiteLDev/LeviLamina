@@ -85,12 +85,12 @@ public:
     /*58*/ virtual class std::variant<struct gametest::GameTestError, class Dimension *> getDimension();
     /*59*/ virtual class std::optional<struct gametest::GameTestError> getBlockSource(class BlockSource *&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTGAMETESTHELPER
-public:
 #endif
     MCAPI MinecraftGameTestHelper(class MinecraftGameTestInstance &);
 
+protected:
 
-//private:
+private:
     MCAPI class std::optional<struct gametest::GameTestError> _assertEntityPresent(struct ActorDefinitionIdentifier const &, class AABB const &, class BlockPos const &, bool) const;
     MCAPI class Container const * _getContainer(class BlockPos const &);
     MCAPI int _getItemEntityCount(class Item const &, class AABB const &);

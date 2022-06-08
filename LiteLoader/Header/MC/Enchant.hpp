@@ -120,7 +120,6 @@ public:
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANT
-public:
     MCVAPI bool isDiscoverable() const;
     MCVAPI bool isMeleeDamageEnchant() const;
     MCVAPI bool isProtectionEnchant() const;
@@ -147,6 +146,8 @@ public:
     MCAPI static void shutdownEnchants();
     MCAPI static std::string stringFromEnchantSlot(enum Enchant::Slot const &);
 
+protected:
 
+private:
 
 };

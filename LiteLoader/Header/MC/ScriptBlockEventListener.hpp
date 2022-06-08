@@ -39,10 +39,11 @@ public:
     /*13*/ virtual enum EventResult onEvent(struct PistonActionEvent const &);
     /*14*/ virtual enum EventResult onEvent(struct LeverActionEvent const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKEVENTLISTENER
-public:
 #endif
     MCAPI ScriptBlockEventListener(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 
+protected:
 
+private:
 
 };

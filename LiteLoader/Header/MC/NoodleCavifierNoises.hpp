@@ -23,12 +23,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NOODLECAVIFIERNOISES
-public:
 #endif
     MCAPI NoodleCavifierNoises(class NoodleCavifierNoises const &);
     MCAPI ~NoodleCavifierNoises();
     MCAPI static class NoodleCavifierNoises make(class XoroshiroPositionalRandomFactory const &);
 
+protected:
 
+private:
 
 };

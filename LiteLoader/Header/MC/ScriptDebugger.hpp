@@ -27,13 +27,13 @@ public:
     /*1*/ virtual bool connect(std::string const &, unsigned short);
     /*2*/ virtual void close();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEBUGGER
-public:
 #endif
     MCAPI ScriptDebugger(class Scripting::ScriptEngine &, class IScriptDebuggerWatchdog &);
     MCAPI void checkConnections();
 
+protected:
 
-//private:
+private:
     MCAPI class Scripting::IDebuggerController * _createController();
     MCAPI void _releaseController();
 

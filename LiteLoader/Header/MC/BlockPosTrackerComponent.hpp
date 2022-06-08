@@ -24,11 +24,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPOSTRACKERCOMPONENT
-public:
 #endif
     MCAPI BlockPosTrackerComponent(bool, class BlockPos const &);
     MCAPI void onRemove(class Actor &);
 
+protected:
 
+private:
 
 };

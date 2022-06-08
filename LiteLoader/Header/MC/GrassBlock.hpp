@@ -71,15 +71,15 @@ public:
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GRASSBLOCK
-public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI GrassBlock(std::string const &, int);
     MCAPI bool fertilize(class BlockSource &, class BlockPos const &, class Randomize &) const;
     MCAPI static struct Brightness const MIN_BRIGHTNESS;
 
+protected:
 
-//private:
+private:
     MCAPI bool _canBeGrass(class BlockSource const &, class BlockPos const &) const;
     MCAPI bool _plantGrass(class BlockSource &, class BlockPos const &, class Randomize &) const;
 

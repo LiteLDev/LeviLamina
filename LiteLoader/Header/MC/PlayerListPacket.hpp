@@ -41,12 +41,13 @@ public:
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERLISTPACKET
-public:
 #endif
     MCAPI PlayerListPacket(class mce::UUID const &);
     MCAPI PlayerListPacket();
     MCAPI void emplace(class PlayerListEntry &&);
 
+protected:
 
+private:
 
 };

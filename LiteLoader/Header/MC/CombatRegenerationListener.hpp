@@ -34,9 +34,10 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual enum EventResult onActorDeath(class Actor &, class ActorDamageSource const &, enum ActorType);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMBATREGENERATIONLISTENER
-public:
 #endif
 
+protected:
 
+private:
 
 };

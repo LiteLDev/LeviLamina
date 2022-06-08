@@ -34,12 +34,13 @@ public:
     /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATERIALREDUCERINPUTVALIDATION
-public:
     MCVAPI bool canDestroy(class ContainerScreenContext const &) const;
     MCVAPI int getAvailableSetCount(int, class ItemStackBase const &) const;
 #endif
     MCAPI MaterialReducerInputValidation(class ContainerScreenContext const &);
 
+protected:
 
+private:
 
 };

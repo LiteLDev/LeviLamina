@@ -24,9 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBFILELOCK
-public:
 #endif
 
+protected:
 
+private:
 
 };

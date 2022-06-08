@@ -27,14 +27,14 @@ public:
     /*1*/ virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const &);
     /*2*/ virtual enum ItemStackNetResult endRequest();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCREENHANDLERBASE
-public:
     MCVAPI void endRequestBatch();
     MCVAPI void postRequest(bool);
 #endif
     MCAPI ScreenHandlerBase(class ItemStackRequestActionHandler &);
 
-//protected:
+protected:
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum ContainerEnumName);
 
+private:
 
 };

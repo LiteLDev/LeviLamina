@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCEEVENTLISTENER
-public:
     MCVAPI enum EventResult onEvent(struct ServerInstanceNotificationEvent const &);
     MCVAPI enum EventResult onServerInitializeEnd(class ServerInstance &);
     MCVAPI enum EventResult onServerInitializeStart(class ServerInstance &);
@@ -35,6 +34,8 @@ public:
     MCVAPI enum EventResult onStartLeaveGame(class ServerInstance &);
 #endif
 
+protected:
 
+private:
 
 };

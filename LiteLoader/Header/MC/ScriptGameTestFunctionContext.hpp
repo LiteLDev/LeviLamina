@@ -24,11 +24,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTGAMETESTFUNCTIONCONTEXT
-public:
 #endif
     MCAPI ScriptGameTestFunctionContext(class Scripting::WeakLifetimeScope, class gametest::BaseGameTestHelper &);
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestHelper> getScriptGameTestHelper();
 
+protected:
 
+private:
 
 };

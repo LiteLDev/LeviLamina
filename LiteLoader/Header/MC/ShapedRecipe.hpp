@@ -34,13 +34,13 @@ public:
     /*7*/ virtual int size() const;
     /*15*/ virtual void loadResultList(class BlockPalette const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAPEDRECIPE
-public:
 #endif
     MCAPI ShapedRecipe(class gsl::basic_string_span<char const, -1>, int, int, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int, class mce::UUID const *);
     MCAPI void generateUUID();
 
+protected:
 
-//private:
+private:
     MCAPI bool matches(class CraftingContainer &, int, int, bool) const;
 
 };

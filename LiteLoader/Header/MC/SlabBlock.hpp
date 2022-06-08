@@ -72,16 +72,15 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLABBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool isSlabBlock() const;
 #endif
     MCAPI SlabBlock(std::string const &, int, bool, class Material const &, class WeakPtr<class BlockLegacy>);
 
-//protected:
+protected:
     MCAPI class Block const & getBaseSlab() const;
 
-//private:
+private:
     MCAPI static class BaseGameVersion const TOP_SLAB_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 };

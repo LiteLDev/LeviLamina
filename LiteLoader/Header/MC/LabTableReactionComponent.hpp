@@ -24,12 +24,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLEREACTIONCOMPONENT
-public:
     MCVAPI void _onEnd(class LabTableReaction &, class BlockSource &);
     MCVAPI void _onStart(class LabTableReaction &, class BlockSource &);
     MCVAPI void _onTick(class LabTableReaction &, class BlockSource &);
 #endif
 
+protected:
 
+private:
 
 };

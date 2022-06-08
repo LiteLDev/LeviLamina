@@ -76,7 +76,6 @@ public:
     /*215*/ virtual class Block const * getOnBlock(class Block const *) const;
     /*216*/ virtual class Block const * getOffBlock(class Block const *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPEATERBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
@@ -84,8 +83,9 @@ public:
     MCAPI void updateDelay(class BlockSource &, class BlockPos const &, bool) const;
     MCAPI static float const DELAY_RENDER_OFFSETS[];
 
+protected:
 
-//private:
+private:
     MCAPI static int const DELAYS[];
 
 };

@@ -24,9 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSELECTOR
-public:
 #endif
 
+protected:
 
+private:
 
 };

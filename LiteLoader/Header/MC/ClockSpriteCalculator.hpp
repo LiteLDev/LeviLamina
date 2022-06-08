@@ -23,13 +23,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLOCKSPRITECALCULATOR
-public:
 #endif
     MCAPI ClockSpriteCalculator();
     MCAPI int getFrame() const;
     MCAPI int update(class Actor &, bool);
     MCAPI int update(class BlockSource const &, class Vec3 const &, bool);
 
+protected:
 
+private:
 
 };

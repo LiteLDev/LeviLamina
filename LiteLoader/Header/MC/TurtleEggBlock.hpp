@@ -74,14 +74,14 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TURTLEEGGBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI TurtleEggBlock(std::string const &, int);
 
+protected:
 
-//private:
+private:
     MCAPI static void _decreaseEggs(class BlockSource &, class BlockPos const &, unsigned int, bool);
     MCAPI static void _destroyEgg(class BlockSource &, class BlockPos const &, class Actor &, int, bool);
 

@@ -32,12 +32,12 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWIMWANDERGOAL
-public:
 #endif
     MCAPI SwimWanderGoal(class Mob &);
 
-//protected:
+protected:
     MCAPI bool _setWantedPosition();
 
+private:
 
 };

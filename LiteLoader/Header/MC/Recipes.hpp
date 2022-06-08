@@ -45,7 +45,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECIPES
-public:
 #endif
     MCAPI Recipes(class Level *);
     MCAPI void addShapedRecipe(std::string, std::vector<class ItemInstance> const &, std::vector<std::string> const &, std::vector<class Recipes::Type> const &, std::vector<class HashedString> const &, int, class std::function<std::unique_ptr<class ShapedRecipe> (std::string, int, int, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString)>);
@@ -68,11 +67,11 @@ public:
     MCAPI static int const RECIPE_MAXIMUM_WIDTH;
     MCAPI static std::vector<std::string> Shape(std::string const &, std::string const &, std::string const &);
 
-//protected:
+protected:
     MCAPI void _loadDataDrivenRecipes(std::vector<class PackInstance> const &);
     MCAPI static struct Recipes::NormalizedRectangularRecipeResults _normalizeRectangularRecipe(std::vector<std::string> const &);
 
-//private:
+private:
     MCAPI void _addItemRecipe(std::unique_ptr<class Recipe>);
     MCAPI void _addMapRecipes();
     MCAPI bool _isRecipeValidToAdd(class Recipe const &);

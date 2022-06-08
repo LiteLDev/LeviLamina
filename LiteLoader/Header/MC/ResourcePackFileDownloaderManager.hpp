@@ -24,13 +24,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKFILEDOWNLOADERMANAGER
-public:
 #endif
     MCAPI void cleanup();
     MCAPI void update();
 
+protected:
 
-//private:
+private:
     MCAPI static int const MAX_CHUNK_ATTEMPTS;
 
 };

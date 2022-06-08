@@ -26,11 +26,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORDATA
-public:
 #endif
     MCAPI void copyData(std::string const &, std::string const &, class BehaviorData &);
     MCAPI bool hasDataOfType(std::string const &, enum BehaviorData::DataType) const;
 
+protected:
 
+private:
 
 };

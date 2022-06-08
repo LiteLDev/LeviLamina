@@ -32,7 +32,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBTOKEN
-public:
 #endif
     MCAPI WebToken(std::string);
     MCAPI std::string toString() const;
@@ -40,8 +39,9 @@ public:
     MCAPI ~WebToken();
     MCAPI static std::unique_ptr<class WebToken> createFromData(class Json::Value const &, class PrivateKeyManager const &);
 
+protected:
 
-//private:
+private:
     MCAPI void _parse(class Json::Value &, std::string const &);
     MCAPI std::string _signatureToDER() const;
     MCAPI static std::string _DERToBinary(std::string const &, int);

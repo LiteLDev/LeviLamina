@@ -27,10 +27,11 @@ public:
     /*0*/ virtual ~UnderwaterCaveFeature();
     /*5*/ virtual bool carveEllipsoidVolume(class IBlockWorldGenAPI &, struct CaveFeatureUtils::CarverConfiguration const &, class Random &, class ChunkPos const &, class Vec3 const &, class BoundingBox const &, float, float, struct CaveFeatureUtils::CarvingParameters const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UNDERWATERCAVEFEATURE
-public:
 #endif
     MCAPI UnderwaterCaveFeature();
 
+protected:
 
+private:
 
 };

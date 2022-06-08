@@ -32,10 +32,11 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIMERANDOMDIRECTIONGOAL
-public:
 #endif
     MCAPI SlimeRandomDirectionGoal(class Mob &);
 
+protected:
 
+private:
 
 };

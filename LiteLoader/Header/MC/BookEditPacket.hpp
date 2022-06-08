@@ -28,14 +28,14 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOOKEDITPACKET
-public:
 #endif
     MCAPI BookEditPacket(class BookEditPacket const &);
     MCAPI BookEditPacket();
     MCAPI struct PageContent getPage() const;
 
+protected:
 
-//private:
+private:
     MCAPI void _readPage(class ReadOnlyBinaryStream &);
     MCAPI void _writePage(class BinaryStream &) const;
 

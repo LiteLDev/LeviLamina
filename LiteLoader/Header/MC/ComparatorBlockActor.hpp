@@ -38,10 +38,11 @@ public:
     /*37*/ virtual int getOutputSignal();
     /*38*/ virtual void setOutputSignal(int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPARATORBLOCKACTOR
-public:
 #endif
     MCAPI ComparatorBlockActor(class BlockPos const &);
 
+protected:
 
+private:
 
 };

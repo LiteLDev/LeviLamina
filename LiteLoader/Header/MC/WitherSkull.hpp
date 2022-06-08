@@ -54,11 +54,12 @@ public:
     /*279*/ virtual float getInertia();
     /*280*/ virtual void __unk_vfn_280();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WITHERSKULL
-public:
     MCVAPI bool shouldBurn();
 #endif
     MCAPI WitherSkull(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
+protected:
 
+private:
 
 };

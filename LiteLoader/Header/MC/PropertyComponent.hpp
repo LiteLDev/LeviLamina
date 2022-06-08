@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYCOMPONENT
-public:
 #endif
     MCAPI PropertyComponent(class PropertyComponent &&);
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
@@ -36,6 +35,8 @@ public:
     MCAPI class PropertyComponent & operator=(class PropertyComponent &&);
     MCAPI class CompoundTag updateDirtyProperties();
 
+protected:
 
+private:
 
 };

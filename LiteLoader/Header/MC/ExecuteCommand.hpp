@@ -27,10 +27,11 @@ public:
     /*0*/ virtual ~ExecuteCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXECUTECOMMAND
-public:
 #endif
     MCAPI static void setup(class CommandRegistry &, bool, int);
 
+protected:
 
+private:
 
 };

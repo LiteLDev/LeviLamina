@@ -35,11 +35,12 @@ public:
     /*9*/ virtual bool readBytes(void *, unsigned __int64);
     /*10*/ virtual unsigned __int64 numBytesLeft() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VARINTDATAINPUT
-public:
     MCVAPI std::string readLongString();
     MCVAPI std::string readString();
 #endif
 
+protected:
 
+private:
 
 };

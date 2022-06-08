@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKGRAPHICS
-public:
 #endif
     MCAPI enum BlockShape getBlockShape() const;
     MCAPI struct TextureUVCoordinateSet const & getIconTexture(int) const;
@@ -39,10 +38,10 @@ public:
     MCAPI static std::vector<std::unique_ptr<class BlockGraphics>> mOwnedBlocks;
     MCAPI static void setAtlasItemManager(class std::shared_ptr<class AtlasItemManager>);
 
-//protected:
+protected:
     MCAPI static class std::weak_ptr<class AtlasItemManager> mTerrainTextureAtlas;
 
-//private:
+private:
     MCAPI static class std::mutex mBlockModelAccess;
     MCAPI static class std::unordered_map<unsigned int, class BlockGraphics *, struct std::hash<unsigned int>, struct std::equal_to<unsigned int>, class std::allocator<struct std::pair<unsigned int const, class BlockGraphics *>>> mBlocks;
     MCAPI static bool mInitialized;

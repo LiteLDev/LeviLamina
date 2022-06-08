@@ -28,9 +28,10 @@ public:
     /*5*/ virtual bool isShapeless() const;
     /*10*/ virtual bool isMultiRecipe() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIRECIPE
-public:
 #endif
 
+protected:
 
+private:
 
 };

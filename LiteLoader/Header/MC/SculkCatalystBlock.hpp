@@ -64,12 +64,13 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKCATALYSTBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI SculkCatalystBlock(std::string const &, int, class Material const &);
     MCAPI static void bloom(class BlockSource &, class BlockPos const &, class Block const &, class Random &);
 
+protected:
 
+private:
 
 };

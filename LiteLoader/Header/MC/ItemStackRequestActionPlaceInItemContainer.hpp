@@ -26,10 +26,11 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONPLACEINITEMCONTAINER
-public:
 #endif
     MCAPI ItemStackRequestActionPlaceInItemContainer();
 
+protected:
 
+private:
 
 };

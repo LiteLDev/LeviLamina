@@ -22,13 +22,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSTORAGEKEYSYSTEM
-public:
 #endif
     MCAPI static std::string generateStorageKey(__int64);
     MCAPI static bool getIsDirtySinceSerialization(class EntityContext &, std::string const &);
     MCAPI static void setDirtyFromNonSerializedState(class EntityContext &);
     MCAPI static void setLastSerializedState(class EntityContext &, std::string const &);
 
+protected:
 
+private:
 
 };

@@ -29,11 +29,12 @@ public:
     /*4*/ virtual void _write(class BinaryStream &) const;
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTRECIPEAUTO
-public:
 #endif
     MCAPI ItemStackRequestActionCraftRecipeAuto();
     MCAPI unsigned char getNumCrafts() const;
 
+protected:
 
+private:
 
 };

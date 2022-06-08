@@ -36,13 +36,13 @@ public:
     /*16*/ virtual void ResumeTermination(struct ITaskQueuePortContext *);
     /*17*/ virtual ~TaskQueuePortImpl();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKQUEUEPORTIMPL
-public:
 #endif
     MCAPI long Initialize(enum XTaskQueueDispatchMode);
     MCAPI TaskQueuePortImpl();
 
+protected:
 
-//private:
+private:
     MCAPI bool AppendEntry(struct TaskQueuePortImpl::QueueEntry const &, unsigned __int64, bool);
     MCAPI bool AppendWaitRegistrationEntry(struct TaskQueuePortImpl::WaitRegistration *, bool);
     MCAPI void CancelPendingEntries(struct ITaskQueuePortContext *, bool);

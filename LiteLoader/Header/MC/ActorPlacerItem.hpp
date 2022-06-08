@@ -49,7 +49,6 @@ public:
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPLACERITEM
-public:
     MCVAPI class mce::Color getBaseColor(class ItemStack const &) const;
     MCVAPI class mce::Color getSecondaryColor(class ItemStack const &) const;
     MCVAPI bool isActorPlacerItem() const;
@@ -61,8 +60,9 @@ public:
     MCAPI static void registerCustomEggs(class ActorInfoRegistry const &);
     MCAPI static class Actor * spawnOrMoveAgent(class Vec3 const &, class Actor &);
 
+protected:
 
-//private:
+private:
     MCAPI struct ActorDefinitionIdentifier _getActorID(class BlockSource &) const;
     MCAPI class Actor * _spawnActorAt(class BlockSource &, class Vec3 const &, class Vec3 const &, class ItemStack const &, class Actor *) const;
     MCAPI static void _setAgentOwner(class Player &, class Agent &);

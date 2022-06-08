@@ -22,11 +22,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYERMOVEMENTCORRECTIONSYSTEM
-public:
 #endif
     MCAPI static void _afterMovementSimulation(class Player &, class PlayerAuthInputPacket const &, class ReplayStateComponent const &);
     MCAPI static struct TickingSystemWithInfo create();
 
+protected:
 
+private:
 
 };

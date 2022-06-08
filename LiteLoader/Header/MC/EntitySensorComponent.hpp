@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSENSORCOMPONENT
-public:
 #endif
     MCAPI EntitySensorComponent(class EntitySensorComponent &&);
     MCAPI EntitySensorComponent();
@@ -31,8 +30,9 @@ public:
     MCAPI class EntitySensorComponent & operator=(class EntitySensorComponent &&);
     MCAPI ~EntitySensorComponent();
 
+protected:
 
-//private:
+private:
     MCAPI static int const NO_MAX_COUNT;
 
 };

@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERDIMENSION
-public:
     MCVAPI void _upgradeOldLimboEntity(class CompoundTag &, enum LimboEntitiesVersion);
     MCVAPI std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, enum StorageVersion);
     MCVAPI std::unique_ptr<class WorldGenerator> createGenerator();
@@ -44,8 +43,9 @@ public:
 #endif
     MCAPI NetherDimension(class Level &, class Scheduler &);
 
+protected:
 
-//private:
+private:
     MCAPI static std::unique_ptr<class StructureFeatureRegistry> makeStructureFeatures(unsigned int, class BaseGameVersion const &);
 
 };

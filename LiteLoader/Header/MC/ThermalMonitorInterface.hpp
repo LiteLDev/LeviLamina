@@ -24,9 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THERMALMONITORINTERFACE
-public:
 #endif
 
+protected:
 
+private:
 
 };

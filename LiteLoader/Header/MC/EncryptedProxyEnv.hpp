@@ -28,13 +28,14 @@ public:
     /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
     /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCRYPTEDPROXYENV
-public:
     MCVAPI class leveldb::Status DeleteFileA(std::string const &);
     MCVAPI class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
     MCVAPI class leveldb::Status RenameFile(std::string const &, std::string const &);
 #endif
     MCAPI EncryptedProxyEnv(class leveldb::Env *, class ContentIdentity const &, std::string const &, enum EncryptedProxyReadMode);
 
+protected:
 
+private:
 
 };

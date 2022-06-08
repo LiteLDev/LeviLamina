@@ -26,10 +26,11 @@ public:
 public:
     /*0*/ virtual ~ScriptLavaMovementComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTLAVAMOVEMENTCOMPONENT
-public:
 #endif
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptLavaMovementComponent> bind(struct Scripting::Version);
 
+protected:
 
+private:
 
 };

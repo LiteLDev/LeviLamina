@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMERULES
-public:
 #endif
     MCAPI GameRules(class GameRules const &);
     MCAPI GameRules();
@@ -50,8 +49,9 @@ public:
     MCAPI static unsigned int const MIN_PLAYER_SPAWN_RADIUS;
     MCAPI static std::string const WORLD_POLICY_TAG_NAME;
 
+protected:
 
-//private:
+private:
     MCAPI class GameRule & _registerRule(std::string const &, struct GameRuleId);
     MCAPI void _registerRules();
     MCAPI std::unique_ptr<class GameRulesChangedPacket> _setGameRule(class GameRule *, union GameRule::Value, enum GameRule::Type, bool, bool *, bool *, class GameRule::ValidationError *);

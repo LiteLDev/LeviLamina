@@ -28,9 +28,10 @@ public:
     /*0*/ virtual ~ShootBowDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTBOWDEFINITION
-public:
 #endif
 
+protected:
 
+private:
 
 };

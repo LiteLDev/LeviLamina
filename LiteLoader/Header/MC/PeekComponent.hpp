@@ -24,12 +24,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PEEKCOMPONENT
-public:
 #endif
     MCAPI int & getDuration();
     MCAPI bool getHadTarget() const;
     MCAPI void setHadTarget(bool);
 
+protected:
 
+private:
 
 };

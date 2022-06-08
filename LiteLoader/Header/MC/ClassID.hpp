@@ -24,11 +24,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLASSID
-public:
 #endif
 
+protected:
 
-//private:
+private:
     MCAPI static unsigned __int64 getNextID();
 
 };

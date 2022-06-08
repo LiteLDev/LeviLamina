@@ -44,10 +44,11 @@ public:
     /*100*/ virtual int getCooldownTime() const;
     /*119*/ virtual bool canBeCharged() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COPPERHORNITEM
-public:
 #endif
     MCAPI CopperHornItem(std::string const &, int);
 
+protected:
 
+private:
 
 };

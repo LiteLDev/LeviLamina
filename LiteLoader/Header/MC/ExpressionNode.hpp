@@ -18,7 +18,6 @@ class ExpressionNode {
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPRESSIONNODE
-public:
 #endif
     MCAPI ExpressionNode(class ExpressionNode &&);
     MCAPI ExpressionNode(class ExpressionNode const &);
@@ -59,8 +58,9 @@ public:
     MCAPI static void setExperiments(class Experiments const &);
     MCAPI static void unregisterQueryFunction(std::string const &, class HashedString);
 
+protected:
 
-//private:
+private:
     MCAPI bool _buildTree(struct ExpressionOpBitField const &, enum MolangVersion);
     MCAPI bool _checkAllOperationsAreValid() const;
     MCAPI bool _optimize(enum MolangVersion);

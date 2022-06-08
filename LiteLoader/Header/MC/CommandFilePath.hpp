@@ -21,13 +21,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDFILEPATH
-public:
 #endif
     MCAPI CommandFilePath();
     MCAPI int findInvalidCharacter() const;
     MCAPI std::string const & getText() const;
     MCAPI ~CommandFilePath();
 
+protected:
 
+private:
 
 };

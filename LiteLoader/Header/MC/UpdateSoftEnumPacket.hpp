@@ -35,11 +35,12 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATESOFTENUMPACKET
-public:
 #endif
     MCAPI UpdateSoftEnumPacket(enum SoftEnumUpdateType, std::string const &, std::vector<std::string> const &);
     MCAPI UpdateSoftEnumPacket();
 
+protected:
 
+private:
 
 };

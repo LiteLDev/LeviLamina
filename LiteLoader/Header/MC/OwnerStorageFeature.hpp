@@ -22,14 +22,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OWNERSTORAGEFEATURE
-public:
 #endif
 
-//protected:
+protected:
     MCAPI OwnerStorageFeature(class OwnerStorageFeature &&);
     MCAPI OwnerStorageFeature(enum OwnerStorageFeature::VariadicInit, class FeatureRegistry &);
     MCAPI bool _hasValue() const;
     MCAPI ~OwnerStorageFeature();
 
+private:
 
 };

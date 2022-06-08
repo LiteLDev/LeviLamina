@@ -65,12 +65,12 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUGEMUSHROOMBLOCK
-public:
 #endif
     MCAPI HugeMushroomBlock(std::string const &, int, class Material const &, enum HugeMushroomBlock::Type);
 
+protected:
 
-//private:
+private:
     MCAPI class ItemInstance _getBlockItemWithState(class Block const &, enum MushroomOuterType) const;
 
 };

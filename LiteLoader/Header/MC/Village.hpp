@@ -30,7 +30,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGE
-public:
 #endif
     MCAPI Village(class Dimension &, class mce::UUID, class BlockPos const &);
     MCAPI void addActorToVillage(enum DwellerRole, struct ActorUniqueID const &);
@@ -85,8 +84,9 @@ public:
     MCAPI static bool isVillagePOI(class BlockSource const &, class BlockPos const &);
     MCAPI static bool isVillagePOI(class VillageManager const &, class Block const &);
 
+protected:
 
-//private:
+private:
     MCAPI void _addPoiToVillage(struct ActorUniqueID const &, class std::weak_ptr<class POIInstance>);
     MCAPI void _calcPOIDist();
     MCAPI void _claimUnclaimedPOIs();

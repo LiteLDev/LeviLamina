@@ -60,10 +60,11 @@ public:
     /*188*/ virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVISIBLEBLOCK
-public:
 #endif
     MCAPI InvisibleBlock(std::string const &, int, class Material const &);
 
+protected:
 
+private:
 
 };

@@ -27,9 +27,10 @@ public:
 public:
     /*0*/ virtual ~UseActorDefinition();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_USEACTORDEFINITION
-public:
 #endif
 
+protected:
 
+private:
 
 };

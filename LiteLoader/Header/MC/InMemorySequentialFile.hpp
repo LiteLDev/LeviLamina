@@ -27,10 +27,11 @@ public:
     /*1*/ virtual class leveldb::Status Read(unsigned __int64, class leveldb::Slice *, char *);
     /*2*/ virtual class leveldb::Status Skip(unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INMEMORYSEQUENTIALFILE
-public:
 #endif
     MCAPI InMemorySequentialFile(class std::shared_ptr<class InMemoryFile>);
 
+protected:
 
+private:
 
 };

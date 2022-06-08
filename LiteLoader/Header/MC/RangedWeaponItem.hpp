@@ -46,11 +46,12 @@ public:
     /*89*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
     /*111*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANGEDWEAPONITEM
-public:
 #endif
     MCAPI RangedWeaponItem(std::string const &, int);
     MCAPI float getLaunchPower(int, int, int) const;
 
+protected:
 
+private:
 
 };

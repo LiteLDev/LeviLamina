@@ -43,7 +43,6 @@ public:
     /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual unsigned __int64 registerLoop(std::string const &, class std::function<void (struct LoopingSoundState &)>, float, float);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NULLSOUNDPLAYER
-public:
     MCVAPI void fadeOut(unsigned __int64, float);
     MCVAPI void fadeToStopMusic(float);
     MCVAPI bool getItem(std::string const &, class Core::Path const &, class SoundItem &) const;
@@ -67,6 +66,8 @@ public:
     MCVAPI void unregisterLoop(unsigned __int64, bool);
 #endif
 
+protected:
 
+private:
 
 };

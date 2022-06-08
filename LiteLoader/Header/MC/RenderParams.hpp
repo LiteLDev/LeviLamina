@@ -22,7 +22,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RENDERPARAMS
-public:
 #endif
     MCAPI RenderParams(class RenderParams const &);
     MCAPI RenderParams(class RenderParams &&);
@@ -34,6 +33,8 @@ public:
     MCAPI ~RenderParams();
     MCAPI static class RenderParams & getRenderParams(class Actor &);
 
+protected:
 
+private:
 
 };

@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEDICATEDSERVER
-public:
     MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient>> getAutomationClient() const;
     MCVAPI class IGameModuleShared & getGameModule();
     MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> getPrimaryMinecraft();
@@ -40,8 +39,9 @@ public:
     MCAPI enum DedicatedServer::StartResult runDedicatedServerLoop(class Core::FilePathManager &, class PropertiesSettings &, class LevelSettings &, class AllowListFile &, std::unique_ptr<class PermissionsFile> &);
     MCAPI enum DedicatedServer::StartResult start(std::string const &);
 
+protected:
 
-//private:
+private:
     MCAPI void initalizeAppConfigs();
     MCAPI void initializeHttp();
     MCAPI void initializeLogging();

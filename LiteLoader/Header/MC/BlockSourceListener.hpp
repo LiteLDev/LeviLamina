@@ -32,7 +32,6 @@ public:
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void onBlockEntityAboutToBeRemoved(class BlockSource &, class std::shared_ptr<class BlockActor>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSOURCELISTENER
-public:
     MCVAPI void onAreaChanged(class BlockSource &, class BlockPos const &, class BlockPos const &);
     MCVAPI void onBlockChanged(class BlockSource &, class BlockPos const &, unsigned int, class Block const &, class Block const &, int, struct ActorBlockSyncMessage const *, enum BlockChangedEventTarget, class Actor *);
     MCVAPI void onBlockEntityChanged(class BlockSource &, class BlockActor &);
@@ -41,6 +40,8 @@ public:
     MCVAPI void onSourceCreated(class BlockSource &);
 #endif
 
+protected:
 
+private:
 
 };

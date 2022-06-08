@@ -30,10 +30,11 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATTRADINGPLAYERGOAL
-public:
 #endif
     MCAPI LookAtTradingPlayerGoal(class Mob &, float, float, int, int, int, int);
 
+protected:
 
+private:
 
 };

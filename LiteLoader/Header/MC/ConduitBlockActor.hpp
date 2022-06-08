@@ -39,12 +39,12 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONDUITBLOCKACTOR
-public:
 #endif
     MCAPI ConduitBlockActor(class BlockPos const &);
 
+protected:
 
-//private:
+private:
     MCAPI void _animateTick(class BlockSource &) const;
     MCAPI void _checkShape(class BlockSource &);
     MCAPI void _updateTarget(class BlockSource &);

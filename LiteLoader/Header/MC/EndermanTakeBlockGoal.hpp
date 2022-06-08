@@ -35,10 +35,11 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual class BlockPos getRandomNearbyBlockPos(class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERMANTAKEBLOCKGOAL
-public:
 #endif
     MCAPI EndermanTakeBlockGoal(class EnderMan &);
 
+protected:
 
+private:
 
 };

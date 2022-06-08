@@ -25,11 +25,12 @@ public:
     /*0*/ virtual ~DragonBaseGoalDefinition();
     /*1*/ virtual bool validateMobType(class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONBASEGOALDEFINITION
-public:
 #endif
     MCAPI DragonBaseGoalDefinition();
     MCAPI void initialize(class EntityContext &, class DragonBaseGoal &);
 
+protected:
 
+private:
 
 };

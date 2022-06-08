@@ -25,9 +25,10 @@ public:
     /*0*/ virtual ~AncientCityStart();
     /*2*/ virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANCIENTCITYSTART
-public:
 #endif
 
+protected:
 
+private:
 
 };

@@ -24,13 +24,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHANCEINFORMATION
-public:
 #endif
     MCAPI bool isValid() const;
     MCAPI bool roll(class Random &) const;
     MCAPI void set(unsigned int, unsigned int);
     MCAPI void set(float);
 
+protected:
 
+private:
 
 };

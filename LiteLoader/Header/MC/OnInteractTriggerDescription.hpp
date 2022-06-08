@@ -30,10 +30,11 @@ public:
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONINTERACTTRIGGERDESCRIPTION
-public:
 #endif
     MCAPI static std::string const NameID;
 
+protected:
 
+private:
 
 };

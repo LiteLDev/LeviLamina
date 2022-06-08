@@ -47,12 +47,12 @@ public:
     /*84*/ virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
     /*89*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIGGERITEM
-public:
 #endif
     MCAPI void setBlocks(std::vector<class Block const *> const &);
 
-//protected:
+protected:
     MCAPI DiggerItem(std::string const &, int, int, class Item::Tier const &, std::vector<class Block const *> const &);
 
+private:
 
 };

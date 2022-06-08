@@ -30,13 +30,13 @@ public:
     /*4*/ virtual float change(float, float, class AttributeBuff const &);
     /*5*/ virtual float getBuffValueWithModifiers(class AttributeBuff const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTEINSTANCEDELEGATE
-public:
 #endif
     MCAPI AttributeInstanceDelegate(class AttributeInstance const &);
 
-//protected:
+protected:
     MCAPI class AttributeInstance const & _getInstance() const;
     MCAPI class AttributeInstance * _getMutableInstance() const;
 
+private:
 
 };

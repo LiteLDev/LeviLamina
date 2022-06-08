@@ -32,10 +32,11 @@ public:
     /*10*/ virtual void broadcastChanges();
     /*16*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUDCONTAINERMANAGERMODEL
-public:
 #endif
     MCAPI HudContainerManagerModel(enum ContainerID, class Player &);
 
+protected:
 
+private:
 
 };

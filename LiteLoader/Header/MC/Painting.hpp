@@ -58,11 +58,12 @@ public:
     /*282*/ virtual void dropItem();
     /*283*/ virtual bool placeHangingEntity(class BlockSource &, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PAINTING
-public:
 #endif
     MCAPI Painting(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI class Motive const & getCurrentMotive() const;
 
+protected:
 
+private:
 
 };

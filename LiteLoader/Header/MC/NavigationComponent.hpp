@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONCOMPONENT
-public:
 #endif
     MCAPI NavigationComponent(class NavigationComponent &&);
     MCAPI NavigationComponent();
@@ -91,6 +90,8 @@ public:
     MCAPI void updateLastStuckCheck(class Mob const &);
     MCAPI ~NavigationComponent();
 
+protected:
 
+private:
 
 };

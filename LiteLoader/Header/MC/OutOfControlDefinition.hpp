@@ -25,12 +25,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OUTOFCONTROLDEFINITION
-public:
 #endif
     MCAPI void initialize(class EntityContext &, class OutOfControlComponent &) const;
     MCAPI void uninitialize(class EntityContext &, class OutOfControlComponent &) const;
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class OutOfControlDefinition>> &);
 
+protected:
 
+private:
 
 };

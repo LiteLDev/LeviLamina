@@ -78,7 +78,6 @@ public:
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WALLBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool isWallBlock() const;
 #endif
@@ -91,8 +90,9 @@ public:
     MCAPI static class std::array<std::string, 14> const WALL_NAMES;
     MCAPI static float const WALL_WIDTH;
 
+protected:
 
-//private:
+private:
     MCAPI enum WallConnectionType _desiredConnectionState(class BlockSource &, class BlockPos const &, unsigned char) const;
     MCAPI bool _isCovered(class BlockSource &, class BlockPos const &, class AABB const &) const;
     MCAPI bool _shouldBePost(class BlockSource &, class BlockPos const &, class Block const &) const;

@@ -24,14 +24,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPPER
-public:
 #endif
     MCAPI Hopper(int, bool);
     MCAPI int getCooldownTime() const;
     MCAPI bool isOnCooldown() const;
     MCAPI void setCooldownTime(int);
 
-//protected:
+protected:
     MCAPI bool _addItem(class BlockSource &, class Container &, class ItemStack &, int, int);
     MCAPI bool _addItem(class Container &, class ItemActor &);
     MCAPI class Container * _getAttachedContainerInBlock(class BlockSource &, class Vec3 const &, int);
@@ -49,5 +48,6 @@ public:
     MCAPI bool _tryPushToComposter(class BlockSource &, class Container &, class BlockPos, int);
     MCAPI bool _tryTakeInItemFromSlot(class BlockSource &, class Container &, class Container &, int, int);
 
+private:
 
 };

@@ -65,12 +65,12 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AZALEABLOCK
-public:
 #endif
     MCAPI AzaleaBlock(std::string const &, int);
 
+protected:
 
-//private:
+private:
     MCAPI bool _growTree(class BlockSource &, class BlockPos const &, class Random &) const;
 
 };

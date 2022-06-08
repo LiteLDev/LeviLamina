@@ -24,12 +24,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ILEVEL
-public:
     MCVAPI class Level * asLevel();
     MCVAPI class MultiPlayerLevel * asMultiPlayerLevel();
     MCVAPI class TradeTables * getTradeTables();
 #endif
 
+protected:
 
+private:
 
 };

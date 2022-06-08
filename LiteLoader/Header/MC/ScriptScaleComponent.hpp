@@ -24,9 +24,10 @@ public:
 public:
     /*0*/ virtual ~ScriptScaleComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSCALECOMPONENT
-public:
 #endif
 
+protected:
 
+private:
 
 };

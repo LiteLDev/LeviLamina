@@ -21,11 +21,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNKBUILDERDATA
-public:
 #endif
     MCAPI LevelChunkBuilderData();
     MCAPI ~LevelChunkBuilderData();
 
+protected:
 
+private:
 
 };

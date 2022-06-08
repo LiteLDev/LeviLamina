@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPATTERNPOSTEVENT
-public:
 #endif
     MCAPI ~BlockPatternPostEvent();
 
+protected:
 
+private:
 
 };

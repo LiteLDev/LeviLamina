@@ -33,11 +33,11 @@ public:
     /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct PistonActionEvent const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKGAMEPLAYHANDLER
-public:
 #endif
 
+protected:
 
-//private:
+private:
     MCAPI bool _handleExplosionStartedEvent(struct ExplosionStartedEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>) const;
     MCAPI bool _handlePistonActionEvent(struct PistonActionEvent const &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>) const;
 

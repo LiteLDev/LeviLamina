@@ -28,14 +28,14 @@ public:
     /*2*/ virtual void serialize(class CompoundTag &);
     /*3*/ virtual bool operator==(class IRequestAction &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FUNCTIONACTION
-public:
 #endif
     MCAPI FunctionAction(std::string const &, std::unique_ptr<class CommandOrigin>);
     MCAPI static bool isValidTag(class CompoundTag const &);
     MCAPI static std::unique_ptr<class FunctionAction> load(class CompoundTag const &, class ICommandOriginLoader &);
 
+protected:
 
-//private:
+private:
     MCAPI void _printOriginInvalidError(class ServerLevel &);
     MCAPI void _printOutput(class ServerLevel &, int);
 

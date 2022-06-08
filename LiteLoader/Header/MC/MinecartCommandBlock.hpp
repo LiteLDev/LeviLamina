@@ -56,10 +56,11 @@ public:
     /*284*/ virtual void applyNaturalSlowdown(class BlockSource &);
     /*285*/ virtual void _lazyInitDisplayBlock();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTCOMMANDBLOCK
-public:
 #endif
     MCAPI MinecartCommandBlock(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
+protected:
 
+private:
 
 };

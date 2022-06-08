@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSET
-public:
 #endif
     MCAPI ~BlockSet();
 
+protected:
 
+private:
 
 };

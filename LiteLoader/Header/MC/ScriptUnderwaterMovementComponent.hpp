@@ -26,10 +26,11 @@ public:
 public:
     /*0*/ virtual ~ScriptUnderwaterMovementComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTUNDERWATERMOVEMENTCOMPONENT
-public:
 #endif
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptUnderwaterMovementComponent> bind(struct Scripting::Version);
 
+protected:
 
+private:
 
 };

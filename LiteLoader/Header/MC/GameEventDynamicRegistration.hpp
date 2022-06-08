@@ -22,13 +22,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTDYNAMICREGISTRATION
-public:
 #endif
     MCAPI GameEventDynamicRegistration(class std::shared_ptr<class GameEventListener>);
     MCAPI bool isRegistered() const;
     MCAPI void onListenerMoveChunk(class BlockSource &, class ChunkPos);
     MCAPI void onListenerRemoved();
 
+protected:
 
+private:
 
 };

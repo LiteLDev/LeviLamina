@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CIRCUITSCENEGRAPH
-public:
 #endif
     MCAPI CircuitSceneGraph();
     MCAPI void add(class BlockPos const &, std::unique_ptr<class BaseCircuitComponent>);
@@ -37,8 +36,9 @@ public:
     MCAPI void update(class BlockSource *);
     MCAPI ~CircuitSceneGraph();
 
+protected:
 
-//private:
+private:
     MCAPI void findRelationships(class BlockPos const &, class BaseCircuitComponent *, class BlockSource *);
     MCAPI void processPendingAdds();
     MCAPI void removeComponent(class BlockPos const &);

@@ -25,7 +25,6 @@ public:
     /*0*/ virtual class std::unordered_map<class BlockPos, std::string, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, std::string>>> getMarkers(class BlockPos const &, class LegacyStructureSettings &) const;
     /*1*/ virtual void placeInWorld(class BlockSource &, class BlockPos const &, class LegacyStructureSettings &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYSTRUCTURETEMPLATE
-public:
 #endif
     MCAPI LegacyStructureTemplate();
     MCAPI class BlockPos calculateConnectedPosition(class LegacyStructureSettings const &, class BlockPos const &, class LegacyStructureSettings const &, class BlockPos const &) const;
@@ -56,8 +55,9 @@ public:
     MCAPI static class BlockPos getZeroPositionWithTransform(class BlockPos const &, enum Mirror, enum Rotation, int, int);
     MCAPI static class BlockPos transform(class BlockPos, enum Mirror, enum Rotation);
 
+protected:
 
-//private:
+private:
     MCAPI std::unique_ptr<class CompoundTag> _mapTag(std::unique_ptr<class CompoundTag>, std::string const &);
 
 };

@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPLOSION
-public:
 #endif
     MCAPI Explosion(class BlockSource &, class Actor *, class Vec3 const &, float);
     MCAPI void explode();
@@ -35,6 +34,8 @@ public:
     MCAPI void setMaxResistance(float);
     MCAPI ~Explosion();
 
+protected:
 
+private:
 
 };

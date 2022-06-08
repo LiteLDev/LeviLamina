@@ -34,10 +34,11 @@ public:
     /*9*/ virtual int getPositionSteps() const;
     /*10*/ virtual int getRotationSteps() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEMENTINTERPOLATOR
-public:
 #endif
     MCAPI MovementInterpolator();
 
+protected:
 
+private:
 
 };

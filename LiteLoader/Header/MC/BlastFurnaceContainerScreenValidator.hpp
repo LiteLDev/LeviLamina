@@ -25,10 +25,11 @@ public:
 public:
     /*0*/ virtual ~BlastFurnaceContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLASTFURNACECONTAINERSCREENVALIDATOR
-public:
 #endif
     MCAPI BlastFurnaceContainerScreenValidator();
 
+protected:
 
+private:
 
 };

@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMIZE
-public:
 #endif
     MCAPI Randomize(class Random &);
     MCAPI bool chance(int, int) const;
@@ -38,6 +37,8 @@ public:
     MCAPI ~Randomize();
     MCAPI static float const ChanceFloatGreaterThan_MinExcessiveImprobability;
 
+protected:
 
+private:
 
 };

@@ -31,7 +31,6 @@ public:
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEARABLEITEMCOMPONENT
-public:
 #endif
     MCAPI WearableItemComponent(class ComponentItem *);
     MCAPI enum EquipmentSlot getSlot() const;
@@ -39,6 +38,8 @@ public:
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
+protected:
 
+private:
 
 };

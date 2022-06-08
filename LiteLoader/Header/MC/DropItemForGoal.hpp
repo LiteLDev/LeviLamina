@@ -37,10 +37,11 @@ public:
     /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /*17*/ virtual bool findTargetBlock();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DROPITEMFORGOAL
-public:
 #endif
     MCAPI DropItemForGoal(class Mob &);
 
+protected:
 
+private:
 
 };

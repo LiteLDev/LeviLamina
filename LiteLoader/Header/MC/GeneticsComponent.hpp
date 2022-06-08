@@ -29,7 +29,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENETICSCOMPONENT
-public:
 #endif
     MCAPI GeneticsComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
@@ -41,8 +40,9 @@ public:
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI static int const INVALID_ALLELE_VALUE;
 
+protected:
 
-//private:
+private:
     MCAPI static std::string const GENE_ARRAY;
     MCAPI static std::string const HIDDEN_ALLELE;
     MCAPI static std::string const MAIN_ALLELE;

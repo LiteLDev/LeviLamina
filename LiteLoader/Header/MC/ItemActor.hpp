@@ -63,15 +63,15 @@ public:
     /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
     /*269*/ virtual void __unk_vfn_269();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMACTOR
-public:
     MCVAPI bool canMakeStepSound() const;
 #endif
     MCAPI ItemActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void setSourceEntity(class Actor const *);
     MCAPI static class ItemActor * tryGetFromEntity(class EntityContext &, bool);
 
+protected:
 
-//private:
+private:
     MCAPI void _addComponents();
     MCAPI void _dropContents();
     MCAPI bool _merge(class ItemActor *);

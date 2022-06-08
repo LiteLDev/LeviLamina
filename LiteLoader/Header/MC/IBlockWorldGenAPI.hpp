@@ -24,11 +24,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IBLOCKWORLDGENAPI
-public:
     MCVAPI bool canGetChunk() const;
     MCVAPI class LevelChunk * getChunk(class ChunkPos const &);
 #endif
 
+protected:
 
+private:
 
 };

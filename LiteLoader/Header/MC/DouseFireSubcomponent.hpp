@@ -28,13 +28,14 @@ public:
     /*3*/ virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /*4*/ virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOUSEFIRESUBCOMPONENT
-public:
     MCVAPI void readfromJSON(class Json::Value &, class SemVersion const &);
     MCVAPI void writetoJSON(class Json::Value &) const;
 #endif
     MCAPI DouseFireSubcomponent();
     MCAPI void douseFire(class BlockSource &, class BlockPos const &);
 
+protected:
 
+private:
 
 };

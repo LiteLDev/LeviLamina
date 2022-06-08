@@ -74,13 +74,13 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PISTONARMBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI PistonArmBlock(std::string const &, int, enum PistonBlock::Type);
 
+protected:
 
-//private:
+private:
     MCAPI void _getCollisions(class AABB &, class AABB &, class AABB &, unsigned char) const;
 
 };

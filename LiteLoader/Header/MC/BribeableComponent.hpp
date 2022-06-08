@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BRIBEABLECOMPONENT
-public:
 #endif
     MCAPI BribeableComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &);
@@ -34,8 +33,9 @@ public:
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void resetBribe(class Actor &);
 
+protected:
 
-//private:
+private:
     MCAPI void _bribe(class Actor &, class Player &);
     MCAPI bool _canBribe(class ItemStack const &);
 

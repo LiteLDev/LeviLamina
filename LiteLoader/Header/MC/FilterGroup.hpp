@@ -31,7 +31,6 @@ public:
     /*2*/ virtual bool _setupContext(class FilterTest const &, struct FilterContext &) const;
     /*3*/ virtual bool _handleUnknownMember(std::string const &, class Json::Value const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERGROUP
-public:
 #endif
     MCAPI FilterGroup(class FilterGroup const &);
     MCAPI bool addFilterTest(struct FilterTest::Definition const &, struct FilterInputs const &);
@@ -43,12 +42,13 @@ public:
     MCAPI bool parse(class Json::Value const &);
     MCAPI void serialize(class Json::Value &) const;
 
-//protected:
+protected:
     MCAPI bool _parseFilterInputs(class Json::Value const &, struct FilterTest::Definition const &, struct FilterInputs &);
     MCAPI bool _parseFilterParam(std::string const &, std::string const &, class Json::Value const &, struct FilterParamDefinition const &, class FilterInput &);
     MCAPI bool _parseMember(std::string const &, class Json::Value const &);
     MCAPI bool _parseObject(std::string const &, class Json::Value const &);
     MCAPI bool _parseTest(class Json::Value const &);
 
+private:
 
 };

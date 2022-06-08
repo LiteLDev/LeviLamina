@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SECURESTORAGEKEY
-public:
 #endif
     MCAPI ~SecureStorageKey();
 
+protected:
 
+private:
 
 };

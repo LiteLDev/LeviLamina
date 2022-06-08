@@ -25,10 +25,11 @@ public:
 public:
     /*0*/ virtual ~CartographyContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CARTOGRAPHYCONTAINERSCREENVALIDATOR
-public:
 #endif
     MCAPI CartographyContainerScreenValidator();
 
+protected:
 
+private:
 
 };

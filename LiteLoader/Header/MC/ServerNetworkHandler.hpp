@@ -390,7 +390,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKHANDLER
-public:
     MCVAPI bool allowIncomingPacketId(class NetworkIdentifier const &, enum MinecraftPacketIds);
     MCVAPI class GameSpecificNetEventCallback * getGameSpecificNetEventCallback();
     MCVAPI void handle(class NetworkIdentifier const &, class CreatePhotoPacket const &);
@@ -502,8 +501,9 @@ public:
     MCAPI bool trytLoadPlayer(class ServerPlayer &, class ConnectionRequest const &);
     MCAPI void updateServerAnnouncement();
 
+protected:
 
-//private:
+private:
     MCAPI void _buildSubChunkPacketData(class NetworkIdentifier const &, class ServerPlayer const *, class SubChunkRequestPacket const &, class SubChunkPacket &, unsigned int, bool);
     MCAPI class ServerPlayer & _createNewPlayer(class NetworkIdentifier const &, class SubClientConnectionRequest const &, unsigned char);
     MCAPI void _displayGameMessage(class Player const &, struct ChatEvent &);

@@ -26,10 +26,11 @@ public:
 public:
     /*0*/ virtual ~ScatteredFeatureStart();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCATTEREDFEATURESTART
-public:
 #endif
     MCAPI ScatteredFeatureStart(class BiomeSource const &, short, int, int, class IPreliminarySurfaceProvider const &);
 
+protected:
 
+private:
 
 };

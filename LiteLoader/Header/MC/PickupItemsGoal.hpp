@@ -32,12 +32,12 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PICKUPITEMSGOAL
-public:
 #endif
     MCAPI PickupItemsGoal(class Mob &, float, bool, int, int, float, bool, bool, int, bool, bool, std::vector<class ItemDescriptor> const &);
 
+protected:
 
-//private:
+private:
     MCAPI std::vector<class gsl::not_null<class ItemActor *>> _filterValidTargets(std::vector<struct DistanceSortedActor> const &) const;
     MCAPI struct Shareable const * _getShareableItem(class ItemStack const &) const;
     MCAPI void _pickItemUp(class ItemActor *);

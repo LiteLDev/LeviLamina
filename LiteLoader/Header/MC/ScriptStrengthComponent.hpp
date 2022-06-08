@@ -26,12 +26,13 @@ public:
 public:
     /*0*/ virtual ~ScriptStrengthComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSTRENGTHCOMPONENT
-public:
 #endif
     MCAPI class Scripting::Result<int> getMax() const;
     MCAPI class Scripting::Result<int> getValue() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptStrengthComponent> bind(struct Scripting::Version);
 
+protected:
 
+private:
 
 };

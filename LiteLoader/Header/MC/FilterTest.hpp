@@ -38,14 +38,14 @@ public:
     /*5*/ virtual class Json::Value _serializeDomain() const;
     /*6*/ virtual class Json::Value _serializeValue() const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTEST
-public:
 #endif
     MCAPI class Json::Value serialize() const;
 
-//protected:
+protected:
     MCAPI bool _testValuesWithOperator(int, int) const;
     MCAPI bool _testValuesWithOperator(float, float) const;
     MCAPI bool _testValuesWithOperator(bool, bool) const;
 
+private:
 
 };

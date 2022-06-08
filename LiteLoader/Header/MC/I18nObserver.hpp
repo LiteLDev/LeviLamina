@@ -24,9 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_I18NOBSERVER
-public:
 #endif
 
+protected:
 
+private:
 
 };

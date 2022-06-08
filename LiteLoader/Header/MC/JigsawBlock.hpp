@@ -67,12 +67,13 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWBLOCK
-public:
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI JigsawBlock(std::string const &, int);
     MCAPI static bool canAttach(class JigsawBlockInfo const &, class JigsawBlockInfo const &);
 
+protected:
 
+private:
 
 };

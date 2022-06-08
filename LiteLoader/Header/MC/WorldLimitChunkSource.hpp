@@ -30,10 +30,11 @@ public:
     /*21*/ virtual bool isWithinWorldLimit(class ChunkPos const &) const;
     /*25*/ virtual bool canCreateViews() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDLIMITCHUNKSOURCE
-public:
 #endif
     MCAPI WorldLimitChunkSource(std::unique_ptr<class ChunkSource>, class BlockPos const &, int, int);
 
+protected:
 
+private:
 
 };

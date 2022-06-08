@@ -66,14 +66,14 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FROSTEDICEBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI FrostedIceBlock(std::string const &, int, bool);
     MCAPI void _slightlyMelt(class BlockSource &, class BlockPos const &, class Random &, bool) const;
 
+protected:
 
-//private:
+private:
     MCAPI static int const MAX_AGE;
     MCAPI static int const MIN_NEIGHBORS;
 

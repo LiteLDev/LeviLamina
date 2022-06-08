@@ -32,12 +32,12 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARTERGOAL
-public:
 #endif
     MCAPI BarterGoal(class Mob &);
 
+protected:
 
-//private:
+private:
     MCAPI class Vec3 _getThrowVector();
 
 };

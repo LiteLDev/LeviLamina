@@ -523,10 +523,10 @@ public:
     MCAPI static bool isUsableLevel(class ILevel const &);
     MCAPI static class LevelSeed64 parseLevelSeed64(std::string const &);
 
-//protected:
+protected:
     MCAPI class ServerLevelEventCoordinator & _getServerLevelEventCoordinator();
 
-//private:
+private:
     MCAPI void _cleanupDisconnectedPlayers();
     MCAPI class MapItemSavedData & _createMapSavedData(struct ActorUniqueID const &);
     MCAPI enum CrashDumpLogStringID _getCrashDumpLogCategory();

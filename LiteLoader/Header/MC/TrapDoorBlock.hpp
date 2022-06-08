@@ -73,14 +73,14 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRAPDOORBLOCK
-public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI TrapDoorBlock(std::string const &, int, class Material const &);
 
+protected:
 
-//private:
+private:
     MCAPI void _toggleOpen(class BlockSource &, class Actor *, class BlockPos const &) const;
     MCAPI static class BaseGameVersion const TRAP_DOOR_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 

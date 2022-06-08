@@ -27,10 +27,11 @@ public:
     /*0*/ virtual ~ExhaustionAttributeDelegate();
     /*1*/ virtual void tick();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXHAUSTIONATTRIBUTEDELEGATE
-public:
 #endif
     MCAPI ExhaustionAttributeDelegate(class AttributeInstance const &);
 
+protected:
 
+private:
 
 };

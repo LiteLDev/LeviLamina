@@ -29,11 +29,12 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTPACKET
-public:
 #endif
     MCAPI ItemStackRequestPacket();
     MCAPI class ItemStackRequestBatch const & getRequestBatch() const;
 
+protected:
 
+private:
 
 };

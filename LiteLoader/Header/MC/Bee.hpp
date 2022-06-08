@@ -54,12 +54,12 @@ public:
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEE
-public:
 #endif
     MCAPI Bee(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
-//protected:
+protected:
     MCAPI void _registerLoopingSounds();
 
+private:
 
 };

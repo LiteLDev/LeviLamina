@@ -69,7 +69,6 @@ public:
     /*4*/ virtual bool isInstantaneous() const;
     /*5*/ virtual float getAttributeModifierValue(int, class AttributeModifier const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECT
-public:
 #endif
     MCAPI MobEffect(int, std::string const &, std::string const &, bool, int, int, std::string const &, bool, struct MobEffect::FactorCalculationData const &);
     MCAPI void addAttributeBuff(class Attribute const &, class std::shared_ptr<class AttributeBuff>);
@@ -125,11 +124,11 @@ public:
     MCAPI static std::unique_ptr<class MobEffect> mMobEffects[];
     MCAPI static void shutdownEffects();
 
-//protected:
+protected:
     MCAPI class InstantaneousAttributeBuff _createInstantBuff(class AttributeBuff const &, int, float) const;
     MCAPI class TemporalAttributeBuff _createTemporalBuff(class AttributeBuff const &, int, int) const;
 
-//private:
+private:
     MCAPI static void darknessEffectFactorUpdate(struct MobEffect::FactorCalculationData &, int);
 
 };

@@ -35,10 +35,11 @@ public:
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*24*/ virtual unsigned char getPoweroutDirection() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PULSECAPACITOR
-public:
 #endif
     MCAPI PulseCapacitor();
 
+protected:
 
+private:
 
 };

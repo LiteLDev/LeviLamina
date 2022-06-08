@@ -51,13 +51,13 @@ public:
     /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
     /*269*/ virtual void __unk_vfn_269();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIGHTNINGBOLT
-public:
     MCVAPI bool shouldAlwaysRender();
 #endif
     MCAPI LightningBolt(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
+protected:
 
-//private:
+private:
     MCAPI bool _shouldSetOnFire() const;
 
 };

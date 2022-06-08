@@ -65,12 +65,13 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREVOID
-public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool canHaveExtraData() const;
 #endif
     MCAPI StructureVoid(std::string const &, int);
 
+protected:
 
+private:
 
 };

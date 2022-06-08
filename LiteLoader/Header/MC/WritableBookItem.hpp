@@ -43,7 +43,6 @@ public:
     /*80*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*110*/ virtual std::string getInteractText(class Player const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WRITABLEBOOKITEM
-public:
 #endif
     MCAPI WritableBookItem(std::string const &, int);
     MCAPI static void addPageAt(class ItemStack &, int, struct PageContent const &);
@@ -52,6 +51,8 @@ public:
     MCAPI static void signBook(class ItemStack &, std::string, std::string, std::string);
     MCAPI static void swapPages(class ItemStack &, int, int);
 
+protected:
 
+private:
 
 };

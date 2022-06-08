@@ -24,9 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MONUMENTROOMFITTER
-public:
 #endif
 
+protected:
 
+private:
 
 };

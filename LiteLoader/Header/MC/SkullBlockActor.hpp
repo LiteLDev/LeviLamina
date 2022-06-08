@@ -41,13 +41,14 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKULLBLOCKACTOR
-public:
 #endif
     MCAPI SkullBlockActor(class BlockPos const &);
     MCAPI enum SkullBlockActor::SkullType getSkullType() const;
     MCAPI void setRotation(float);
     MCAPI void setSkullType(int);
 
+protected:
 
+private:
 
 };

@@ -22,11 +22,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOUNDEVENTSYSTEM
-public:
 #endif
     MCAPI static void _tick(class StrictEntityContext const &, class LevelComponent &, struct SoundEventRequestQueueComponent &);
     MCAPI static struct TickingSystemWithInfo create();
 
+protected:
 
+private:
 
 };

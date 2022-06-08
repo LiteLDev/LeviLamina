@@ -28,9 +28,10 @@ public:
     /*2*/ virtual std::string getAlternateContentKey(class ContentIdentity const &) const;
     /*3*/ virtual bool requireEncryptedReads() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTENTKEYPROVIDER
-public:
 #endif
 
+protected:
 
+private:
 
 };

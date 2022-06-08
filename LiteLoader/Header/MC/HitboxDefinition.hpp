@@ -25,12 +25,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HITBOXDEFINITION
-public:
 #endif
     MCAPI void addAABB(struct HitboxJson const &);
     MCAPI void initialize(class EntityContext &, class HitboxComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HitboxDefinition>> &);
 
+protected:
 
+private:
 
 };

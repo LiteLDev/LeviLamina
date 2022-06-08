@@ -58,13 +58,14 @@ public:
     /*279*/ virtual void shoot(class Vec3 const &, float, float, class Vec3 const &);
     /*281*/ virtual class ItemStack _getPickupItem() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THROWNTRIDENT
-public:
 #endif
     MCAPI ThrownTrident(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI class ItemStack getPickupItem() const;
     MCAPI void returnWithLoyalty(int);
     MCAPI void setTridentItem(class ItemStack const &);
 
+protected:
 
+private:
 
 };

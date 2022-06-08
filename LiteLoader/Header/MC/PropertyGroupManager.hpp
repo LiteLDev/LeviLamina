@@ -23,13 +23,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYGROUPMANAGER
-public:
 #endif
     MCAPI PropertyGroupManager();
     MCAPI class PropertyGroup const * getPropertyGroup(class HashedString const &) const;
     MCAPI void registerGroup(class HashedString const &, class PropertyGroup const &);
     MCAPI ~PropertyGroupManager();
 
+protected:
 
+private:
 
 };

@@ -30,7 +30,6 @@ public:
     /*17*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /*21*/ virtual bool isWithinWorldLimit(class ChunkPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKVIEWSOURCE
-public:
 #endif
     MCAPI ChunkViewSource(class ChunkSource &, class LevelChunkGridAreaElement<class std::weak_ptr<class LevelChunk>> &, struct Bounds const &);
     MCAPI ChunkViewSource(class ChunkSource &, enum ChunkSource::LoadMode);
@@ -44,6 +43,8 @@ public:
     MCAPI void move(class BlockPos const &, int, bool, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>);
     MCAPI void rebuildSpecificArea(struct Bounds const &, bool, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>);
 
+protected:
 
+private:
 
 };

@@ -29,12 +29,13 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETTINGSCOMMANDPACKET
-public:
 #endif
     MCAPI SettingsCommandPacket();
     MCAPI std::string const & getCommandString() const;
     MCAPI bool getSupressOutput() const;
 
+protected:
 
+private:
 
 };

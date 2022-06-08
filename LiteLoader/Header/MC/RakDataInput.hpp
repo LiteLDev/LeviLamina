@@ -35,9 +35,10 @@ public:
     /*9*/ virtual bool readBytes(void *, unsigned __int64);
     /*10*/ virtual unsigned __int64 numBytesLeft() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKDATAINPUT
-public:
 #endif
 
+protected:
 
+private:
 
 };

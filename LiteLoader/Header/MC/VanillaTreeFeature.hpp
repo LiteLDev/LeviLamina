@@ -27,11 +27,11 @@ public:
     /*0*/ virtual ~VanillaTreeFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLATREEFEATURE
-public:
 #endif
 
+protected:
 
-//private:
+private:
     MCAPI static void _buildVanillaCanopyVariants(class JsonUtil::JsonSchemaObjectNode<class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>, struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>> &, class std::function<class ITreeCanopyWrapper & (struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature> *)>);
     MCAPI static void _buildVanillaTrunkVariants(class JsonUtil::JsonSchemaObjectNode<class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>, struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>> &, class std::function<class ITreeTrunkWrapper & (struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature> *)>);
 

@@ -72,11 +72,12 @@ public:
     /*204*/ virtual void updateShape(class BlockSource &, class BlockPos const &);
     /*205*/ virtual void updateSignalStrength(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAYLIGHTDETECTORBLOCK
-public:
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI DaylightDetectorBlock(std::string const &, int, bool);
 
+protected:
 
+private:
 
 };

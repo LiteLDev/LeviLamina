@@ -22,11 +22,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDAREA
-public:
 #endif
     MCAPI CommandArea(std::unique_ptr<class ChunkViewSource>);
     MCAPI ~CommandArea();
 
+protected:
 
+private:
 
 };

@@ -24,13 +24,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLENDEDMULTINOISEBIOMEPROVIDER
-public:
 #endif
     MCAPI BlendedMultiNoiseBiomeProvider(struct OverworldNoises3d const &, class ParameterList, class SeamlessChunkBlendingAttenuatorFactory &, class BiomeRegistry const &);
     MCAPI class Biome const * tryGetBiome(class BlockPos const &) const;
     MCAPI class Biome const * tryGetBiome(class BlockPos const &, struct ChunkLocalNoiseCache::CacheEntry const &, struct RTree::Hint *) const;
     MCAPI ~BlendedMultiNoiseBiomeProvider();
 
+protected:
 
+private:
 
 };

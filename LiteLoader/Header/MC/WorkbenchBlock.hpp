@@ -60,11 +60,12 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKBENCHBLOCK
-public:
     MCVAPI bool isCraftingBlock() const;
 #endif
     MCAPI WorkbenchBlock(std::string const &, int);
 
+protected:
 
+private:
 
 };

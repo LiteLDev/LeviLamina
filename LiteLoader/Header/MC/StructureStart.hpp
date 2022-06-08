@@ -27,15 +27,15 @@ public:
     /*1*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /*2*/ virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURESTART
-public:
 #endif
     MCAPI void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
 
-//protected:
+protected:
     MCAPI void calculateBoundingBox();
     MCAPI void moveBoundingBoxes(int);
     MCAPI void moveInsideHeights(class Random &, short, short);
     MCAPI void moveToLevel(short, class Random &, int);
 
+private:
 
 };

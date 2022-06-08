@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRIORITIZEDGOAL
-public:
 #endif
     MCAPI int getPriority() const;
     MCAPI bool getToStart() const;
@@ -33,6 +32,8 @@ public:
     MCAPI void setUsed(bool);
     MCAPI ~PrioritizedGoal();
 
+protected:
 
+private:
 
 };

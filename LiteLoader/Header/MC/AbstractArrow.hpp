@@ -60,15 +60,15 @@ public:
     /*280*/ virtual void _playPickupSound();
     /*281*/ virtual class ItemStack _getPickupItem() const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABSTRACTARROW
-public:
 #endif
     MCAPI AbstractArrow(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI bool isPlayerOwned() const;
     MCAPI void setFavoredSlot(int);
     MCAPI void setIsCreative(bool);
 
-//protected:
+protected:
     MCAPI bool _canPickup(class Player const &) const;
 
+private:
 
 };

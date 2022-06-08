@@ -25,10 +25,11 @@ public:
 public:
     /*0*/ virtual ~ElementConstructorContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ELEMENTCONSTRUCTORCONTAINERSCREENVALIDATOR
-public:
 #endif
     MCAPI ElementConstructorContainerScreenValidator();
 
+protected:
 
+private:
 
 };

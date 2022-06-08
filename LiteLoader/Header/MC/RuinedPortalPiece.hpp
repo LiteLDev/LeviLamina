@@ -28,11 +28,11 @@ public:
     /*3*/ virtual enum StructurePieceType getType() const;
     /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUINEDPORTALPIECE
-public:
 #endif
 
+protected:
 
-//private:
+private:
     MCAPI void _addNetherrackDripColumn(class Random &, class BlockSource &, class BlockPos);
     MCAPI void _maybeReplaceBlock(class Random &, class BlockSource &, class BlockPos, struct PortalEnvironmentModifiers const &);
     MCAPI void _maybeReplaceFullStoneBlock(class Random &, class BlockSource &, class BlockPos, class Block const &, struct PortalEnvironmentModifiers const &);

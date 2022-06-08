@@ -62,7 +62,6 @@ public:
     /*29*/ virtual class ChunkSource & getChunkSource();
     /*30*/ virtual bool isSolidBlockingBlock(class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSOURCE
-public:
     MCVAPI class Dimension & getDimension();
     MCVAPI class Dimension & getDimension() const;
 #endif
@@ -192,7 +191,7 @@ public:
     MCAPI void updateNeighborsAt(class BlockPos const &);
     MCAPI void updateNeighborsAtExceptFromFacing(class BlockPos const &, class BlockPos const &, int);
 
-//protected:
+protected:
     MCAPI void _blockChanged(class BlockPos const &, unsigned int, class Block const &, class Block const &, int, struct ActorBlockSyncMessage const *, class Actor *);
     MCAPI std::vector<class AABB> & _fetchBorderBlockCollisions(class AABB const &, struct IActorMovementProxy *, bool);
     MCAPI void _fetchEntityHelper(class WeakEntityRef, class gsl::span<class gsl::not_null<class Actor const *>, -1>, class AABB const &, bool);
@@ -202,7 +201,7 @@ public:
     MCAPI void addVoidFloor(class AABB const &);
     MCAPI void getTallestCollisionShapeFromUnloadedChunksAABBs(class AABB const &, class AABB &, class Vec3 const &, float &);
 
-//private:
+private:
     MCAPI bool _getBlockPermissions(class BlockPos const &, bool);
     MCAPI float _getLiquidHeight(class BlockPos const &, enum MaterialType, bool);
     MCAPI struct Brightness _getRawBrightness(class BlockPos const &, struct Brightness, bool, bool) const;

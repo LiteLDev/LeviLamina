@@ -22,10 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HASITEMFILTER
-public:
 #endif
     MCAPI ~HasItemFilter();
 
+protected:
 
+private:
 
 };

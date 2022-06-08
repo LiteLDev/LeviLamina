@@ -39,7 +39,6 @@ public:
     /*11*/ virtual struct std::pair<int, std::string const &> getPackStackIndexOfResource(class ResourceLocation const &, std::vector<std::string> const &) const;
     /*12*/ virtual bool hasCapability(class gsl::basic_string_span<char const, -1>) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKMANAGER
-public:
 #endif
     MCAPI ResourcePackManager(class std::function<class Core::PathBuffer<std::string> (void)>, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentTierManager const>> const &, bool);
     MCAPI void clearStack(enum ResourcePackStackType, bool);
@@ -58,8 +57,9 @@ public:
     MCAPI void unRegisterResourcePackListener(class ResourcePackListener &);
     MCAPI bool upgradeJson(std::string &, class Core::Path const &);
 
+protected:
 
-//private:
+private:
     MCAPI void _calculateMinEngineVersionFromFullStack();
     MCAPI void _composeFullStack();
     MCAPI void _getResourcesOfGroup(class PackInstance const &, std::string const &, std::vector<class Core::PathBuffer<std::string>> &) const;

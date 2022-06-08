@@ -27,10 +27,11 @@ public:
     /*0*/ virtual ~VanillaServerNetworkHandler();
     /*1*/ virtual void handle(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLASERVERNETWORKHANDLER
-public:
 #endif
     MCAPI VanillaServerNetworkHandler(class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>, class ServerInstance &);
 
+protected:
 
+private:
 
 };

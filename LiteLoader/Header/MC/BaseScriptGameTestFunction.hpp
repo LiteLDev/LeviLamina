@@ -25,7 +25,6 @@ public:
     /*1*/ virtual std::unique_ptr<class gametest::IGameTestFunctionContext> createContext(class gametest::BaseGameTestHelper &) const;
     /*2*/ virtual std::unique_ptr<class gametest::IGameTestFunctionRunResult> run(class gametest::BaseGameTestHelper &, class gametest::IGameTestFunctionContext &) const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASESCRIPTGAMETESTFUNCTION
-public:
 #endif
     MCAPI BaseScriptGameTestFunction(class Scripting::WeakLifetimeScope, std::string const &);
     MCAPI void addTag(std::string);
@@ -39,6 +38,8 @@ public:
     MCAPI void setSetupTicks(int);
     MCAPI void setStructureName(std::string);
 
+protected:
 
+private:
 
 };

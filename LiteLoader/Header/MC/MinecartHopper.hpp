@@ -53,10 +53,11 @@ public:
     /*283*/ virtual int getDefaultDisplayOffset() const;
     /*284*/ virtual void applyNaturalSlowdown(class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTHOPPER
-public:
 #endif
     MCAPI MinecartHopper(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
+protected:
 
+private:
 
 };

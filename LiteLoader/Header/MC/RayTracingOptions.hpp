@@ -24,10 +24,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAYTRACINGOPTIONS
-public:
 #endif
     MCAPI static class gsl::basic_string_span<char const, -1> const RAY_TRACING_TAG;
 
+protected:
 
+private:
 
 };

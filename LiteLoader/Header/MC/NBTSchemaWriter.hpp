@@ -39,7 +39,6 @@ public:
     /*16*/ virtual bool openArray();
     /*17*/ virtual void close();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTSCHEMAWRITER
-public:
     MCVAPI bool write(unsigned __int64);
     MCVAPI bool write(double);
     MCVAPI bool write(__int64);
@@ -53,8 +52,9 @@ public:
 #endif
     MCAPI NBTSchemaWriter();
 
+protected:
 
-//private:
+private:
     MCAPI bool _serializeTag(std::unique_ptr<class Tag>);
 
 };

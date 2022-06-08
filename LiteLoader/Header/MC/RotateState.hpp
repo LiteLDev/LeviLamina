@@ -29,9 +29,10 @@ public:
     /*2*/ virtual void start();
     /*3*/ virtual void stop();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROTATESTATE
-public:
 #endif
 
+protected:
 
+private:
 
 };

@@ -31,7 +31,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNER
-public:
 #endif
     MCAPI Spawner(class Level &);
     MCAPI void postProcessSpawnMobs(class BlockSource &, int, int, class Random &);
@@ -42,12 +41,12 @@ public:
     MCAPI void tick(class BlockSource &, class LevelChunk const &);
     MCAPI static bool findNextSpawnBlockUnder(class BlockSource const &, class BlockPos &, enum MaterialType, enum SpawnBlockRequirements);
 
-//protected:
+protected:
     MCAPI bool _isSpawnPositionOk(class MobSpawnRules const &, class BlockSource &, class BlockPos const &, bool) const;
     MCAPI void _tickSpawnMobClusters(class BlockSource &, class LevelChunk const &, class BlockPos, class std::function<void (class BlockPos const &, class SpawnConditions &)> const &);
     MCAPI void _tickSpawnStructureMobs(class BlockSource &, class LevelChunk const &, class BlockPos, class std::function<void (class BlockPos const &, struct LevelChunk::HardcodedSpawningArea const &, class SpawnConditions const &)> const &, class std::function<class gsl::span<struct LevelChunk::HardcodedSpawningArea const, -1> (class LevelChunk const &)> const &);
 
-//private:
+private:
     MCAPI int _handlePopulationCap(class MobSpawnerData const *, class SpawnConditions const &, int);
     MCAPI void _permuteId(struct ActorDefinitionIdentifier &, class MobSpawnRules const &, class Random &) const;
     MCAPI void _sendHerdEvents(struct MobSpawnHerdInfo const &, std::vector<class Mob *> &) const;

@@ -27,11 +27,12 @@ public:
     /*0*/ virtual ~ActorAliasDescription();
     /*1*/ virtual char const * getJsonName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORALIASDESCRIPTION
-public:
 #endif
     MCAPI struct AliasInfoDescription const * getAliasInfo(std::string const &) const;
     MCAPI void parse(class Json::Value &, bool);
 
+protected:
 
+private:
 
 };

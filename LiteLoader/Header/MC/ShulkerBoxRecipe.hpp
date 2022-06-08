@@ -29,11 +29,12 @@ public:
     /*12*/ virtual bool itemsMatch(class ItemDescriptor const &, class ItemDescriptor const &) const;
     /*14*/ virtual bool itemsMatch(class ItemDescriptor const &, int, int, class CompoundTag const *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKERBOXRECIPE
-public:
 #endif
     MCAPI ShulkerBoxRecipe(class gsl::basic_string_span<char const, -1>, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int, class mce::UUID const *);
     MCAPI static class mce::UUID const ID;
 
+protected:
 
+private:
 
 };

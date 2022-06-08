@@ -31,9 +31,10 @@ public:
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*6*/ virtual class Json::Value _serializeValue() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTDIMENSIONWEATHER
-public:
 #endif
 
+protected:
 
+private:
 
 };

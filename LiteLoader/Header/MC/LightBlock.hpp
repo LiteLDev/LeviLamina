@@ -73,10 +73,11 @@ public:
     /*195*/ virtual struct Brightness getLightEmission(class Block const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIGHTBLOCK
-public:
 #endif
     MCAPI LightBlock(std::string const &, int, class Material const &);
 
+protected:
 
+private:
 
 };

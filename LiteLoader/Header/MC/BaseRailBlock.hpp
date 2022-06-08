@@ -73,7 +73,6 @@ public:
     /*192*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASERAILBLOCK
-public:
     MCVAPI bool canSpawnOn() const;
     MCVAPI bool isRailBlock() const;
     MCVAPI bool waterSpreadCausesSpawn() const;
@@ -85,8 +84,9 @@ public:
     MCAPI static bool isRail(class Block const &);
     MCAPI static bool isSlope(class Block const &);
 
+protected:
 
-//private:
+private:
     MCAPI bool _canSurvive(class BlockSource const &, class BlockPos const &) const;
     MCAPI void _updatePlacement(class BlockSource &, class BlockPos const &) const;
     MCAPI static void _createCircuitComponent(class BlockSource &, class BlockPos const &);
