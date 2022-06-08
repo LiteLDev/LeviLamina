@@ -9,7 +9,7 @@
 
 #include <vector>
 #include <mutex>
-
+#include <Windows.h>
 #include "../LiteLoader/Header/Utils/Hash.h"
 #include "../LiteLoader/Header/third-party/detours/detours.h"
 #include "../LiteLoader/Lib/third-party/rawpdb/PDB.h"
@@ -24,8 +24,6 @@
 #include "../LiteLoader/Header/third-party/FMT/printf.h"
 #include <iomanip>
 #include "Utils.h"
-
-#include "FakeSymbol.hpp"
 
 using std::list;
 using std::string, std::string_view;
@@ -159,10 +157,6 @@ void InitFastDlsym(const PDB::RawFile& rawPdbFile, const PDB::DBIStream& dbiStre
             const uint32_t rva = imageSectionStream.ConvertSectionOffsetToRVA(record->data.S_PUB32.section, record->data.S_PUB32.offset);
             if (rva == 0u) continue;
             funcMap->emplace(record->data.S_PUB32.name, rva);
-
-            auto fake = FakeSymbol::getFakeSymbol(record->data.S_PUB32.name);
-            if (fake.has_value())
-                funcMap->emplace(fake.value(), rva);
         }
         const PDB::ModuleInfoStream moduleInfoStream = dbiStream.CreateModuleInfoStream(rawPdbFile);
         const PDB::ArrayView<PDB::ModuleInfoStream::Module> modules = moduleInfoStream.GetModules();
