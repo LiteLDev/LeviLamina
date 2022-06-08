@@ -42,6 +42,7 @@ public:
 #endif
     MCAPI ShulkerBoxBlockActor(enum BlockActorType, std::string const &, enum BlockActorRendererId, class BlockPos const &);
     MCAPI void setFacingDir(unsigned char);
+    MCAPI static int const ITEMS_SIZE;
     MCAPI static bool itemAllowed(class ItemStackBase const &);
     MCAPI static bool itemAllowedInSlot(int, class ItemStackBase const &, int);
 
@@ -51,7 +52,6 @@ public:
     MCAPI void _moveCollidedEntities(class BlockSource &) const;
 
 private:
-    MCAPI static int const ITEMS_SIZE;
 
 
 };

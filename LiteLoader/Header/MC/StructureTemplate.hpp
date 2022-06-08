@@ -57,7 +57,6 @@ public:
     MCAPI void placeNextSegmentInWorld(class StructureAnimationData &, class BlockPalette const &) const;
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     MCAPI ~StructureTemplate();
-    MCAPI static class BlockPos const INVALID_POSITION;
 
 //private:
     MCAPI void _fillBlockInfo(class BlockSource &, class BlockPos const &, class BlockPos const &, class BlockPos const &);
@@ -65,6 +64,7 @@ public:
     MCAPI void _placeNextBlockSegmentInWorld(class BlockSource &, unsigned __int64, unsigned __int64, class StructureSettings const &, class DataLoadHelper &, class StructureBlockPalette const &, class BlockPalette const &, class BlockPos, class BlockPos const &, class Vec3 const &, enum Rotation, enum Mirror, float, unsigned int, class StructureTelemetryServerData *, bool, bool) const;
 
 private:
+    MCAPI static class BlockPos const INVALID_POSITION;
 
 
 };

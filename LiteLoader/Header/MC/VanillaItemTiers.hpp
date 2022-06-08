@@ -28,13 +28,17 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAITEMTIERS
 public:
 #endif
+    MCAPI static std::vector<class ItemStack> const getTierItems(class Item::Tier const &, class BaseGameVersion const &);
+
+//private:
+
+private:
     MCAPI static class Item::Tier const DIAMOND;
     MCAPI static class Item::Tier const GOLD;
     MCAPI static class Item::Tier const IRON;
     MCAPI static class Item::Tier const NETHERITE;
     MCAPI static class Item::Tier const STONE;
     MCAPI static class Item::Tier const WOOD;
-    MCAPI static std::vector<class ItemStack> const getTierItems(class Item::Tier const &, class BaseGameVersion const &);
 
 
 };

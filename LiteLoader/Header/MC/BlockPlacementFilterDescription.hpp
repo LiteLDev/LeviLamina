@@ -35,6 +35,10 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPLACEMENTFILTERDESCRIPTION
 public:
 #endif
+
+//private:
+
+private:
     MCAPI static std::string const NameID;
 
 

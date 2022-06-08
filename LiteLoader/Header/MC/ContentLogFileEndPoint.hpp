@@ -34,6 +34,10 @@ public:
     MCVAPI void setEnabled(bool);
 #endif
     MCAPI ContentLogFileEndPoint(class Core::Path, class Core::Path);
+
+//private:
+
+private:
     MCAPI static class gsl::basic_string_span<char const, -1> const FILE_NAME;
 
 

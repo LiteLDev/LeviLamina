@@ -31,10 +31,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOSSILFEATURE
 public:
 #endif
-
-//private:
-
-private:
     MCAPI static std::string const STRUCTURE_LOCATION_FOSSIL[];
 
 

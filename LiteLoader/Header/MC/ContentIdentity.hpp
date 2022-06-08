@@ -31,8 +31,12 @@ public:
     MCAPI class ContentIdentity & operator=(class ContentIdentity const &);
     MCAPI class ContentIdentity & operator=(class ContentIdentity &&);
     MCAPI bool operator==(class ContentIdentity const &) const;
-    MCAPI static class ContentIdentity EMPTY;
     MCAPI static class ContentIdentity fromString(std::string const &);
+
+//private:
+
+private:
+    MCAPI static class ContentIdentity EMPTY;
 
 
 };

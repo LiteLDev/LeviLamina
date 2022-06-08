@@ -65,8 +65,6 @@ public:
     MCAPI void init(class ResourcePackManager &, class ExternalRecipeStore &);
     MCAPI bool loadRecipe(struct std::pair<std::string, class Json::Value> const &, class SemVersion const &);
     MCAPI ~Recipes();
-    MCAPI static int const RECIPE_MAXIMUM_HEIGHT;
-    MCAPI static int const RECIPE_MAXIMUM_WIDTH;
     MCAPI static std::vector<std::string> Shape(std::string const &, std::string const &, std::string const &);
 
 //protected:
@@ -85,6 +83,8 @@ public:
 protected:
 
 private:
+    MCAPI static int const RECIPE_MAXIMUM_HEIGHT;
+    MCAPI static int const RECIPE_MAXIMUM_WIDTH;
 
 
 };

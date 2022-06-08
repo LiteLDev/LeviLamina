@@ -58,6 +58,13 @@ public:
     MCAPI float getDestroyRate(class Block const &);
     MCAPI float getMaxPickRange();
     MCAPI float getMaxPickRangeSqr();
+
+//private:
+    MCAPI bool _canDestroy(class BlockPos const &, unsigned char);
+    MCAPI bool _canUseBlock(class Block const &);
+    MCAPI bool _creativeDestroyBlock(class BlockPos const &, unsigned char);
+
+private:
     MCAPI static float const PICKRANGE_CREATIVE_MAXIMUM;
     MCAPI static float const PICKRANGE_CREATIVE_MAXIMUM_SQR;
     MCAPI static float const PICKRANGE_GAMEPAD;
@@ -68,13 +75,6 @@ public:
     MCAPI static float const PICKRANGE_TOUCH_SURVIVAL;
     MCAPI static float const PICKRANGE_VR_CREATIVE;
     MCAPI static float const PICKRANGE_VR_SURVIVAL;
-
-//private:
-    MCAPI bool _canDestroy(class BlockPos const &, unsigned char);
-    MCAPI bool _canUseBlock(class Block const &);
-    MCAPI bool _creativeDestroyBlock(class BlockPos const &, unsigned char);
-
-private:
 
 
 };

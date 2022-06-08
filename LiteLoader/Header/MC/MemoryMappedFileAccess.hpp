@@ -38,6 +38,10 @@ public:
 public:
 #endif
     MCAPI MemoryMappedFileAccess(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const &, std::unique_ptr<class FileAccessTransforms>);
+
+//private:
+
+private:
     MCAPI static class FileAccessTransforms const EMPTY_TRANSFORMS;
 
 

@@ -27,10 +27,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMACQUISITIONMETHODMAP
 public:
 #endif
-
-//private:
-
-private:
     MCAPI static class BidirectionalUnorderedMap<enum ItemAcquisitionMethod, std::string> const mMap;
 
 

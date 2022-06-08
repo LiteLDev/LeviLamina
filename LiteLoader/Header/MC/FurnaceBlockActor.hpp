@@ -64,8 +64,15 @@ public:
     MCAPI void setTickCount(int);
     MCAPI void storeXPRewardForRemovingWithHopper(class ItemStackBase const &, int);
     MCAPI int withdrawStoredXPReward();
-    MCAPI static int const BURN_INTERVAL;
-    MCAPI static float const DEFAULT_SMELTING_TIME;
+    MCAPI static std::string const BURN_DURATION_KEY;
+    MCAPI static std::string const BURN_TIME_KEY;
+    MCAPI static std::string const COOK_TIME_KEY;
+    MCAPI static std::string const CUSTOM_NAME_KEY;
+    MCAPI static std::string const ITEMS_LIST_KEY;
+    MCAPI static std::string const LAST_FUEL_KEY;
+    MCAPI static std::string const SLOT_KEY;
+    MCAPI static std::string const STORED_XP_DEPRECATED_KEY;
+    MCAPI static std::string const STORED_XP_KEY;
     MCAPI static int getAvailableFuelSetCount(int, class ItemStackBase const &);
     MCAPI static float getBurnDuration(class ItemStackBase const &, float);
     MCAPI static int getXPRewardFromSmeltingItems(class ItemStackBase const &, int);
@@ -84,15 +91,8 @@ public:
 protected:
 
 private:
-    MCAPI static std::string const BURN_DURATION_KEY;
-    MCAPI static std::string const BURN_TIME_KEY;
-    MCAPI static std::string const COOK_TIME_KEY;
-    MCAPI static std::string const CUSTOM_NAME_KEY;
-    MCAPI static std::string const ITEMS_LIST_KEY;
-    MCAPI static std::string const LAST_FUEL_KEY;
-    MCAPI static std::string const SLOT_KEY;
-    MCAPI static std::string const STORED_XP_DEPRECATED_KEY;
-    MCAPI static std::string const STORED_XP_KEY;
+    MCAPI static int const BURN_INTERVAL;
+    MCAPI static float const DEFAULT_SMELTING_TIME;
 
 
 };

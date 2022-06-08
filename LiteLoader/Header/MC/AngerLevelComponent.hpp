@@ -35,11 +35,6 @@ public:
     MCAPI void tick(class ILevel const &);
     MCAPI void tryIncreaseAngerAt(class Actor &, class Actor &);
     MCAPI void tryMakeAngryAt(class Actor &, class Actor &);
-    MCAPI static float const DEFAULT_ANGER_DECREMENT_INTERVAL_SECONDS;
-    MCAPI static int const DEFAULT_ANGRY_BOOST;
-    MCAPI static int const DEFAULT_ANGRY_THRESHOLD;
-    MCAPI static int const DEFAULT_MAX_ANGER_LEVEL;
-    MCAPI static bool const DEFAULT_SHOULD_REMOVE_TARGET;
     MCAPI static bool canBeNuisance(class Actor const *);
 
 //private:
@@ -47,6 +42,11 @@ public:
     MCAPI class std::optional<enum LevelSoundEvent> _getListeningSoundEvent(class Actor &) const;
 
 private:
+    MCAPI static float const DEFAULT_ANGER_DECREMENT_INTERVAL_SECONDS;
+    MCAPI static int const DEFAULT_ANGRY_BOOST;
+    MCAPI static int const DEFAULT_ANGRY_THRESHOLD;
+    MCAPI static int const DEFAULT_MAX_ANGER_LEVEL;
+    MCAPI static bool const DEFAULT_SHOULD_REMOVE_TARGET;
 
 
 };

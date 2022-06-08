@@ -39,13 +39,13 @@ public:
     MCAPI NpcCommandAction();
     MCAPI std::vector<struct NpcCommandAction::SavedCommand> & getCommands();
     MCAPI void setCommands(std::vector<struct NpcCommandAction::SavedCommand> &&);
-    MCAPI static char const COMMAND_DELIMITER;
+    MCAPI static std::string const COMMAND_LINE_KEY;
+    MCAPI static std::string const COMMAND_VERSION_KEY;
 
 //private:
 
 private:
-    MCAPI static std::string const COMMAND_LINE_KEY;
-    MCAPI static std::string const COMMAND_VERSION_KEY;
+    MCAPI static char const COMMAND_DELIMITER;
 
 
 };

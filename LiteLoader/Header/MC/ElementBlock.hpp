@@ -72,13 +72,9 @@ public:
     MCAPI static class ItemInstance getItemForElement(enum ElementType, int);
     MCAPI static void initElements();
     MCAPI static bool isElement(class ItemStackBase const &);
+    MCAPI static std::vector<class BlockLegacy const *> mElements;
     MCAPI static void shutdownElements();
     MCAPI static class BlockLegacy const * tryGetBlockLegacyForElement(enum ElementType);
-
-//private:
-
-private:
-    MCAPI static std::vector<class BlockLegacy const *> mElements;
 
 
 };

@@ -35,10 +35,6 @@ public:
     MCAPI void setPositionSourceType(unsigned int);
     MCAPI void setSearchTime(double);
     MCAPI void setShortJumpCount(unsigned int);
-
-//private:
-
-private:
     MCAPI static std::string const mEventName;
 
 

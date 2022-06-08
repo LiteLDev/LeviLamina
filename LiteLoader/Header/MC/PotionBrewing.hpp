@@ -49,6 +49,12 @@ public:
     MCAPI static bool isFuel(class ItemDescriptor const &);
     MCAPI static bool isIngredient(class ItemDescriptor const &);
     MCAPI static bool isPotionRecipeInput(class ItemDescriptor const &);
+    MCAPI static std::vector<class PotionBrewing::Mix<class ItemInstance>> mChemistryMixes;
+    MCAPI static std::vector<class PotionBrewing::Mix<class Item const &>> mContainerMixes;
+    MCAPI static std::vector<class PotionBrewing::Mix<class ItemDescriptor>> mPotionMixes;
+    MCAPI static std::vector<class PotionBrewing::Ingredient> mValidContainers;
+    MCAPI static class std::unordered_set<class PotionBrewing::Ingredient, struct std::hash<class PotionBrewing::Ingredient>, struct std::equal_to<class PotionBrewing::Ingredient>, class std::allocator<class PotionBrewing::Ingredient>> mValidIngredients;
+    MCAPI static class std::unordered_set<class PotionBrewing::Ingredient, struct std::hash<class PotionBrewing::Ingredient>, struct std::equal_to<class PotionBrewing::Ingredient>, class std::allocator<class PotionBrewing::Ingredient>> mValidRecipeInputs;
     MCAPI static class ItemInstance mix(class ItemDescriptor const &, class ItemInstance const &);
     MCAPI static void shutdown();
 
@@ -57,12 +63,6 @@ public:
     MCAPI static class ItemInstance getChemistryMix(class ItemDescriptor const &, class ItemDescriptor const &);
 
 private:
-    MCAPI static std::vector<class PotionBrewing::Mix<class ItemInstance>> mChemistryMixes;
-    MCAPI static std::vector<class PotionBrewing::Mix<class Item const &>> mContainerMixes;
-    MCAPI static std::vector<class PotionBrewing::Mix<class ItemDescriptor>> mPotionMixes;
-    MCAPI static std::vector<class PotionBrewing::Ingredient> mValidContainers;
-    MCAPI static class std::unordered_set<class PotionBrewing::Ingredient, struct std::hash<class PotionBrewing::Ingredient>, struct std::equal_to<class PotionBrewing::Ingredient>, class std::allocator<class PotionBrewing::Ingredient>> mValidIngredients;
-    MCAPI static class std::unordered_set<class PotionBrewing::Ingredient, struct std::hash<class PotionBrewing::Ingredient>, struct std::equal_to<class PotionBrewing::Ingredient>, class std::allocator<class PotionBrewing::Ingredient>> mValidRecipeInputs;
 
 
 };

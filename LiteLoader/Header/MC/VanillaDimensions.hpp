@@ -27,11 +27,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLADIMENSIONS
 public:
 #endif
-    MCAPI static class AutomaticID<class Dimension, int> const Nether;
-    MCAPI static class AutomaticID<class Dimension, int> const Overworld;
-    MCAPI static class AutomaticID<class Dimension, int> const TheEnd;
-    MCAPI static class Vec3 const TheEndSpawnPoint;
-    MCAPI static class AutomaticID<class Dimension, int> const Undefined;
     MCAPI static bool convertPointBetweenDimensions(class Vec3 const &, class Vec3 &, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>, class DimensionConversionData const &);
     MCAPI static class AutomaticID<class Dimension, int> fromSerializedInt(int);
     MCAPI static class AutomaticID<class Dimension, int> fromString(std::string const &);
@@ -40,8 +35,17 @@ public:
 
 //protected:
 
+//private:
+
 protected:
     MCAPI static class BidirectionalUnorderedMap<std::string, class AutomaticID<class Dimension, int>> const DimensionMap;
+
+private:
+    MCAPI static class AutomaticID<class Dimension, int> const Nether;
+    MCAPI static class AutomaticID<class Dimension, int> const Overworld;
+    MCAPI static class AutomaticID<class Dimension, int> const TheEnd;
+    MCAPI static class Vec3 const TheEndSpawnPoint;
+    MCAPI static class AutomaticID<class Dimension, int> const Undefined;
 
 
 };

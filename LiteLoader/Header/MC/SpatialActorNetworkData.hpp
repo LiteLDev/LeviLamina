@@ -49,6 +49,8 @@ public:
     MCAPI bool shouldSendMotionPredictionHintsPacket() const;
     MCAPI bool shouldSendUpdate(bool, bool) const;
     MCAPI static struct SpatialActorNetworkData::DebugSpatialPacketModifiers & getDebugSpatialPacketModifiers();
+    MCAPI static struct SpatialActorNetworkData::DebugSendRateModifiers mDebugSendRateModifiers;
+    MCAPI static struct SpatialActorNetworkData::DebugSpatialPacketModifiers mDebugSpatialPacketModifiers;
 
 //private:
     MCAPI std::vector<struct NetworkIdentifierWithSubId> _findRelevantPlayersToSendUpdate();
@@ -57,8 +59,6 @@ public:
     MCAPI bool _shouldUpdateBasedOptimizationOnScore(struct ActorUniqueID const &) const;
 
 private:
-    MCAPI static struct SpatialActorNetworkData::DebugSendRateModifiers mDebugSendRateModifiers;
-    MCAPI static struct SpatialActorNetworkData::DebugSpatialPacketModifiers mDebugSpatialPacketModifiers;
 
 
 };

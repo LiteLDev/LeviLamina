@@ -37,6 +37,10 @@ public:
 public:
 #endif
     MCAPI AnvilContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+
+//private:
+
+private:
     MCAPI static int const INPUT_SLOT;
     MCAPI static int const MATERIAL_SLOT;
     MCAPI static int const RESULT_SLOT;

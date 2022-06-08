@@ -27,6 +27,10 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAREDAMPLIFIERS
 public:
 #endif
+
+//private:
+
+private:
     MCAPI static class std::shared_ptr<class Amplifier> ABSORPTION;
     MCAPI static class std::shared_ptr<class Amplifier> FATAL_POISON;
     MCAPI static class std::shared_ptr<class Amplifier> HARM;

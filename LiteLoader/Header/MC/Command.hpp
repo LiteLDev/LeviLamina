@@ -88,7 +88,6 @@ public:
     MCAPI std::string getCommandName() const;
     MCAPI bool hasFlag(struct CommandFlag) const;
     MCAPI void run(class CommandOrigin const &, class CommandOutput &) const;
-    MCAPI static std::string const WILDCARD_TOKEN;
     MCAPI static bool validRange(int, int, int, class CommandOutput &);
     MCAPI static bool validRange(float, float, float, class CommandOutput &);
 
@@ -101,7 +100,12 @@ public:
     MCAPI static bool isWildcard(class CommandSelectorBase const &);
     MCAPI static bool validData(int, unsigned short &, class CommandOutput &);
 
+//private:
+
 protected:
+
+private:
+    MCAPI static std::string const WILDCARD_TOKEN;
 
 
 };

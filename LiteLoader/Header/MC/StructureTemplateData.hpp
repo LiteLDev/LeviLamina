@@ -42,7 +42,6 @@ public:
     MCAPI void setExtraBlockIndices(std::vector<int>);
     MCAPI void setSize(class BlockPos const &);
     MCAPI void setStructureWorldOrigin(class BlockPos const &);
-    MCAPI static std::string const DEFAULT_PALETTE_NAME;
 
 //protected:
     MCAPI enum StructureLoadResult _parseBlockIndices(class CompoundTag const &);
@@ -54,7 +53,12 @@ public:
     MCAPI void _savePalettes(class CompoundTag &) const;
     MCAPI void _saveStructureTag(class CompoundTag &) const;
 
+//private:
+
 protected:
+
+private:
+    MCAPI static std::string const DEFAULT_PALETTE_NAME;
 
 
 };

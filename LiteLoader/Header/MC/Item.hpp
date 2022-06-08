@@ -218,8 +218,6 @@ public:
     MCAPI bool shouldDespawn() const;
     MCAPI bool updateCustomBlockEntityTag(class BlockSource &, class ItemStackBase &, class BlockPos const &) const;
     MCAPI bool useOn(class ItemStack &, class Actor &, int, int, int, unsigned char, class Vec3 const &) const;
-    MCAPI static std::string const ICON_DESCRIPTION_PREFIX;
-    MCAPI static std::string const TAG_DAMAGE;
     MCAPI static void addCreativeItem(class Block const &);
     MCAPI static void addCreativeItem(class ItemInstance const &);
     MCAPI static void addCreativeItem(class ItemStack const &);
@@ -236,12 +234,7 @@ public:
     MCAPI static bool isElytraBroken(int);
     MCAPI static bool isFlyEnabled(class ItemInstance const &);
     MCAPI static bool isSameTypeAndItem(class ItemStackBase const &, class ItemStackBase const &);
-    MCAPI static class CreativeGroupInfo * mActiveCreativeGroupInfo;
-    MCAPI static class CreativeItemGroupCategory * mActiveCreativeItemCategory;
-    MCAPI static class CreativeItemRegistry * mActiveCreativeItemRegistry;
-    MCAPI static bool const mGenerateDenyParticleEffect;
-    MCAPI static struct TextureUVCoordinateSet mInvalidTextureUVCoordinateSet;
-    MCAPI static class std::weak_ptr<class AtlasItemManager> mItemTextureItems;
+    MCAPI static std::unique_ptr<class std::set<short, struct std::less<short>, class std::allocator<short>>> mServerItemsUsedInCreativeItems;
     MCAPI static void setAtlasItemManager(class std::shared_ptr<class AtlasItemManager>);
     MCAPI static void startCreativeItemDefinitions(bool, class CreativeItemRegistry *);
     MCAPI static struct NewBlockID toBlockId(short);
@@ -255,7 +248,14 @@ public:
 protected:
 
 private:
-    MCAPI static std::unique_ptr<class std::set<short, struct std::less<short>, class std::allocator<short>>> mServerItemsUsedInCreativeItems;
+    MCAPI static std::string const ICON_DESCRIPTION_PREFIX;
+    MCAPI static std::string const TAG_DAMAGE;
+    MCAPI static class CreativeGroupInfo * mActiveCreativeGroupInfo;
+    MCAPI static class CreativeItemGroupCategory * mActiveCreativeItemCategory;
+    MCAPI static class CreativeItemRegistry * mActiveCreativeItemRegistry;
+    MCAPI static bool const mGenerateDenyParticleEffect;
+    MCAPI static struct TextureUVCoordinateSet mInvalidTextureUVCoordinateSet;
+    MCAPI static class std::weak_ptr<class AtlasItemManager> mItemTextureItems;
 
 
 };

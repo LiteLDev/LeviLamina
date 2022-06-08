@@ -471,38 +471,6 @@ public:
     MCAPI void updateSpawnChunkView();
     MCAPI void updateTrackedBosses();
     MCAPI void useSelectedItem(enum ItemUseMethod, bool);
-    MCAPI static float const DEFAULT_BB_HEIGHT;
-    MCAPI static float const DEFAULT_BB_WIDTH;
-    MCAPI static float const DEFAULT_FLY_SPEED;
-    MCAPI static float const DEFAULT_PLAYER_HEIGHT_OFFSET;
-    MCAPI static float const DEFAULT_WALK_SPEED;
-    MCAPI static float const DISTANCE_TO_TRANSFORM_EVENT;
-    MCAPI static float const DISTANCE_TO_TRAVELLED_EVENT;
-    MCAPI static class Attribute const EXHAUSTION;
-    MCAPI static class Attribute const EXPERIENCE;
-    MCAPI static int const GLIDE_STOP_DELAY;
-    MCAPI static class Attribute const HUNGER;
-    MCAPI static int const ITEM_USE_INTERVAL_DURATION;
-    MCAPI static class Attribute const LEVEL;
-    MCAPI static int const MAX_ITEM_USE_DURATION;
-    MCAPI static float const PLAYER_ALIVE_HEIGHT;
-    MCAPI static float const PLAYER_ALIVE_WIDTH;
-    MCAPI static float const PLAYER_DEAD_HEIGHT;
-    MCAPI static float const PLAYER_DEAD_WIDTH;
-    MCAPI static float const PLAYER_DOWN_SWIM_SPEED;
-    MCAPI static float const PLAYER_GLIDING_CAMERA_OFFSET;
-    MCAPI static float const PLAYER_SLEEPING_CAMERA_OFFSET;
-    MCAPI static float const PLAYER_SLEEPING_HEIGHT;
-    MCAPI static float const PLAYER_SLEEPING_WIDTH;
-    MCAPI static float const PLAYER_SNEAK_OFFSET;
-    MCAPI static float const PLAYER_SWIMMING_CAMERA_OFFSET;
-    MCAPI static float const PLAYER_SWIM_BREACH_ANGLE;
-    MCAPI static float const PLAYER_SWIM_ENTER_THRESHOLD;
-    MCAPI static float const PLAYER_SWIM_FLY_MULTI;
-    MCAPI static float const PLAYER_UP_SWIM_SPEED;
-    MCAPI static class Attribute const SATURATION;
-    MCAPI static unsigned int const SPAWN_CHUNK_LARGE_JUMP;
-    MCAPI static unsigned int const SPAWN_CHUNK_RADIUS;
     MCAPI static void _aiStep(struct IPlayerMovementProxy &);
     MCAPI static void _travel(struct IPlayerMovementProxy &, float, float, float);
     MCAPI static bool canJump(struct IPlayerMovementProxy &);
@@ -538,6 +506,38 @@ public:
 protected:
 
 private:
+    MCAPI static float const DEFAULT_BB_HEIGHT;
+    MCAPI static float const DEFAULT_BB_WIDTH;
+    MCAPI static float const DEFAULT_FLY_SPEED;
+    MCAPI static float const DEFAULT_PLAYER_HEIGHT_OFFSET;
+    MCAPI static float const DEFAULT_WALK_SPEED;
+    MCAPI static float const DISTANCE_TO_TRANSFORM_EVENT;
+    MCAPI static float const DISTANCE_TO_TRAVELLED_EVENT;
+    MCAPI static class Attribute const EXHAUSTION;
+    MCAPI static class Attribute const EXPERIENCE;
+    MCAPI static int const GLIDE_STOP_DELAY;
+    MCAPI static class Attribute const HUNGER;
+    MCAPI static int const ITEM_USE_INTERVAL_DURATION;
+    MCAPI static class Attribute const LEVEL;
+    MCAPI static int const MAX_ITEM_USE_DURATION;
+    MCAPI static float const PLAYER_ALIVE_HEIGHT;
+    MCAPI static float const PLAYER_ALIVE_WIDTH;
+    MCAPI static float const PLAYER_DEAD_HEIGHT;
+    MCAPI static float const PLAYER_DEAD_WIDTH;
+    MCAPI static float const PLAYER_DOWN_SWIM_SPEED;
+    MCAPI static float const PLAYER_GLIDING_CAMERA_OFFSET;
+    MCAPI static float const PLAYER_SLEEPING_CAMERA_OFFSET;
+    MCAPI static float const PLAYER_SLEEPING_HEIGHT;
+    MCAPI static float const PLAYER_SLEEPING_WIDTH;
+    MCAPI static float const PLAYER_SNEAK_OFFSET;
+    MCAPI static float const PLAYER_SWIMMING_CAMERA_OFFSET;
+    MCAPI static float const PLAYER_SWIM_BREACH_ANGLE;
+    MCAPI static float const PLAYER_SWIM_ENTER_THRESHOLD;
+    MCAPI static float const PLAYER_SWIM_FLY_MULTI;
+    MCAPI static float const PLAYER_UP_SWIM_SPEED;
+    MCAPI static class Attribute const SATURATION;
+    MCAPI static unsigned int const SPAWN_CHUNK_LARGE_JUMP;
+    MCAPI static unsigned int const SPAWN_CHUNK_RADIUS;
 
 
 };

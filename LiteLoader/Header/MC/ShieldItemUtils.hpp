@@ -28,10 +28,6 @@ public:
 public:
 #endif
     MCAPI static bool isBlockedDamageCause(class ActorDamageSource const &);
-
-//private:
-
-private:
     MCAPI static std::vector<enum ActorDamageCause> const mAlwaysBlockableDamageCauses;
 
 

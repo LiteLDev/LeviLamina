@@ -44,14 +44,14 @@ public:
     MCAPI static void addMaterial(std::unique_ptr<class Material>);
     MCAPI static class Material const & getMaterial(enum MaterialType);
     MCAPI static void initMaterials();
+    MCAPI static bool mInitialized;
+    MCAPI static std::vector<std::unique_ptr<class Material>> mMaterials;
     MCAPI static void teardownMaterials();
 
 //private:
     MCAPI static void _setupSurfaceMaterials();
 
 private:
-    MCAPI static bool mInitialized;
-    MCAPI static std::vector<std::unique_ptr<class Material>> mMaterials;
 
 
 };

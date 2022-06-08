@@ -47,13 +47,13 @@ public:
     MCAPI void dropAllItems(class BlockSource &);
     MCAPI class ItemInstance const & getCookingItem(int);
     MCAPI bool setItem(class BlockSource &, class ItemInstance const &);
-    MCAPI static int const MAX_SMOKE_THRESHOLD_COUNTER;
-    MCAPI static int const MIN_SMOKE_THRESHOLD_COUNTER;
 
 //private:
     MCAPI void _finishCooking(class BlockSource &, int);
 
 private:
+    MCAPI static int const MAX_SMOKE_THRESHOLD_COUNTER;
+    MCAPI static int const MIN_SMOKE_THRESHOLD_COUNTER;
 
 
 };

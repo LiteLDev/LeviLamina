@@ -39,11 +39,15 @@ public:
     MCVAPI bool isTreasureOnly() const;
 #endif
     MCAPI SoulSpeedEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
-    MCAPI static class mce::UUID const SOUL_SPEED_BOOST_UUID;
     MCAPI static int getLevel(class Actor const &);
     MCAPI static float getSpeedBoost(int);
     MCAPI static bool isActive(class Actor const &);
     MCAPI static bool shouldSpawnParticles(class Actor const &);
+
+//private:
+
+private:
+    MCAPI static class mce::UUID const SOUL_SPEED_BOOST_UUID;
 
 
 };

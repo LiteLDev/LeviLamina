@@ -42,10 +42,6 @@ public:
     MCAPI void setTarget(std::string const &);
     MCAPI void setTargetPool(std::string const &);
     MCAPI ~JigsawEditorData();
-
-//private:
-
-private:
     MCAPI static class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string>>> const JOINT_TYPE_TO_NAME;
 
 

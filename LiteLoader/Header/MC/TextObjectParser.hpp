@@ -39,17 +39,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTOBJECTPARSER
 public:
 #endif
-    MCAPI static std::string const RAW_TEXT_ERROR_NOT_ARRAY;
-    MCAPI static std::string const RAW_TEXT_ERROR_NOT_OBJECT;
-    MCAPI static std::string const RAW_TEXT_ERROR_NO_DATA;
-    MCAPI static std::string const RAW_TEXT_ERROR_PARSE_FAILED;
-    MCAPI static std::string const RAW_TEXT_ERROR_SCORE_NAME_NOT_STRING;
-    MCAPI static std::string const RAW_TEXT_ERROR_SCORE_NOT_OBJECT;
-    MCAPI static std::string const RAW_TEXT_ERROR_SCORE_OBJECTIVE_NOT_STRING;
-    MCAPI static std::string const RAW_TEXT_ERROR_SELECTOR_NOT_STRING;
-    MCAPI static std::string const RAW_TEXT_ERROR_TEXT_NOT_STRING;
-    MCAPI static std::string const RAW_TEXT_ERROR_TRANSLATE_NOT_STRING;
-    MCAPI static std::string const RAW_TEXT_ERROR_WITH_NOT_ARRAY_OR_RAW_TEXT;
     MCAPI static bool textObjectFromJsonServer(class Json::Value const &, class TextObjectRoot &, struct TextObjectParser::ServerData, struct TextObjectParser::ErrorLocalization &);
     MCAPI static bool textObjectFromJsonString(std::string const &, class TextObjectRoot &, std::string &);
 
@@ -61,6 +50,17 @@ public:
     MCAPI static bool _textObjectFromString(std::string const &, class TextObjectRoot &, struct TextObjectParser::ServerData *, struct TextObjectParser::ErrorLocalization &);
 
 private:
+    MCAPI static std::string const RAW_TEXT_ERROR_NOT_ARRAY;
+    MCAPI static std::string const RAW_TEXT_ERROR_NOT_OBJECT;
+    MCAPI static std::string const RAW_TEXT_ERROR_NO_DATA;
+    MCAPI static std::string const RAW_TEXT_ERROR_PARSE_FAILED;
+    MCAPI static std::string const RAW_TEXT_ERROR_SCORE_NAME_NOT_STRING;
+    MCAPI static std::string const RAW_TEXT_ERROR_SCORE_NOT_OBJECT;
+    MCAPI static std::string const RAW_TEXT_ERROR_SCORE_OBJECTIVE_NOT_STRING;
+    MCAPI static std::string const RAW_TEXT_ERROR_SELECTOR_NOT_STRING;
+    MCAPI static std::string const RAW_TEXT_ERROR_TEXT_NOT_STRING;
+    MCAPI static std::string const RAW_TEXT_ERROR_TRANSLATE_NOT_STRING;
+    MCAPI static std::string const RAW_TEXT_ERROR_WITH_NOT_ARRAY_OR_RAW_TEXT;
 
 
 };

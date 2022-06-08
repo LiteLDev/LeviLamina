@@ -84,6 +84,7 @@ public:
     MCAPI CommandBlock(std::string const &, int, enum CommandBlockMode);
     MCAPI enum CommandBlockMode getMode() const;
     MCAPI void updateBlock(class BlockSource &, class BlockPos const &, enum CommandBlockMode, bool) const;
+    MCAPI static int mCBModeMap[];
 
 //private:
     MCAPI void _execute(class BlockSource &, class CommandBlockActor &, class BlockPos const &, bool) const;
@@ -92,7 +93,6 @@ public:
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &, bool) const;
 
 private:
-    MCAPI static int mCBModeMap[];
 
 
 };

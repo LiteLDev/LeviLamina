@@ -36,6 +36,7 @@ public:
 public:
 #endif
     MCAPI NapGoal(class Mob &, float, float, float, float, class ActorFilterGroup const &, class ActorFilterGroup const &);
+    MCAPI static float const MOB_DETECT_TIME;
 
 //private:
     MCAPI bool _canSleep(struct Tick const &) const;
@@ -43,7 +44,6 @@ public:
     MCAPI void _setCooldown();
 
 private:
-    MCAPI static float const MOB_DETECT_TIME;
 
 
 };

@@ -36,16 +36,16 @@ public:
     MCAPI void readAdditionalSaveData(class CompoundTag const &);
     MCAPI void tick();
     MCAPI ~Raid();
-    MCAPI static class Vec3 const INVALID_SPAWN_POINT;
+    MCAPI static unsigned char const NUM_GROUPS_ON_EASY;
+    MCAPI static unsigned char const NUM_GROUPS_ON_HARD;
+    MCAPI static unsigned char const NUM_GROUPS_ON_NORMAL;
 
 //private:
     MCAPI float _getTotalRaiderHealth() const;
     MCAPI void _tickGroupInPlay();
 
 private:
-    MCAPI static unsigned char const NUM_GROUPS_ON_EASY;
-    MCAPI static unsigned char const NUM_GROUPS_ON_HARD;
-    MCAPI static unsigned char const NUM_GROUPS_ON_NORMAL;
+    MCAPI static class Vec3 const INVALID_SPAWN_POINT;
 
 
 };

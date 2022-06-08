@@ -42,6 +42,8 @@ public:
     MCAPI void saveToLevel(class StructureTemplate const &, class LevelStorage &);
     MCAPI void tick(class Dimension const &);
     MCAPI enum QueueRequestResult tryPlaceStructureInWorld(std::unique_ptr<class CommandArea>, class ServerLevel &, class Dimension &, class BoundingBox const &, class BlockPos const &, class StructureSettings const &, class StructureTemplate const &, std::unique_ptr<class StructureAnimationData>);
+    MCAPI static char const * BEHAVIOR_PACK_STRUCTURES_FOLDER;
+    MCAPI static char const * LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX;
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> getStructurePath(std::string const &);
 
 //private:
@@ -53,8 +55,6 @@ public:
     MCAPI void _savePlacementQueueItem(std::string const &, class StructureAnimationData &);
 
 private:
-    MCAPI static char const * BEHAVIOR_PACK_STRUCTURES_FOLDER;
-    MCAPI static char const * LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX;
 
 
 };

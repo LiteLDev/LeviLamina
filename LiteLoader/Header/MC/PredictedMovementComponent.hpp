@@ -47,6 +47,8 @@ public:
     MCAPI bool isEnabled() const;
     MCAPI void reset();
     MCAPI void tick(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> const &);
+    MCAPI static unsigned int const LERP_STEP_SIZE;
+    MCAPI static std::unique_ptr<struct PredictedMovementComponent::RuntimePredictionData> mGlobalRuntimePredictionData;
 
 //private:
     MCAPI void _debugLog(struct PredictedMovementComponent::PredictionDbgData const &) const;
@@ -58,8 +60,6 @@ public:
     MCAPI bool _tryInterpolate(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> const &);
 
 private:
-    MCAPI static unsigned int const LERP_STEP_SIZE;
-    MCAPI static std::unique_ptr<struct PredictedMovementComponent::RuntimePredictionData> mGlobalRuntimePredictionData;
 
 
 };

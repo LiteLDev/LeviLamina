@@ -41,6 +41,10 @@ public:
     MCAPI RecipeIngredient();
     MCAPI void __autoclassinit2(unsigned __int64);
     MCAPI ~RecipeIngredient();
+
+//private:
+
+private:
     MCAPI static class RecipeIngredient EMPTY_INGREDIENT;
 
 

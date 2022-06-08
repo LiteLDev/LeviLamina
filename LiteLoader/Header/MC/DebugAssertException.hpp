@@ -30,12 +30,8 @@ public:
 #endif
     MCAPI DebugAssertException(class DebugAssertException const &);
     MCAPI DebugAssertException(char const *, char const *, char const *, int, char const *, char const *);
-    MCAPI static bool isEnabled();
-
-//private:
-
-private:
     MCAPI static char const *const WHAT;
+    MCAPI static bool isEnabled();
 
 
 };

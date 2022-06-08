@@ -32,10 +32,6 @@ public:
 public:
 #endif
     MCAPI NetherFossilFeature(std::vector<class Block const *> &&, bool);
-
-//private:
-
-private:
     MCAPI static std::string const STRUCTURE_LOCATION_FOSSIL[];
 
 

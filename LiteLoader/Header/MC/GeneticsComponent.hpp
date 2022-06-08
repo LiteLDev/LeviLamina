@@ -40,14 +40,14 @@ public:
     MCAPI void initializeGenesFromParents(class Actor &, class Actor &, class Actor &);
     MCAPI class GeneticsComponent & operator=(class GeneticsComponent &&);
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
-    MCAPI static int const INVALID_ALLELE_VALUE;
+    MCAPI static std::string const GENE_ARRAY;
+    MCAPI static std::string const HIDDEN_ALLELE;
+    MCAPI static std::string const MAIN_ALLELE;
 
 //private:
 
 private:
-    MCAPI static std::string const GENE_ARRAY;
-    MCAPI static std::string const HIDDEN_ALLELE;
-    MCAPI static std::string const MAIN_ALLELE;
+    MCAPI static int const INVALID_ALLELE_VALUE;
 
 
 };

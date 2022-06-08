@@ -29,5 +29,8 @@ public:
 protected:
 
 private:
+    MCAPI static struct Brightness const INVALID;
+    MCAPI static struct Brightness const MAX;
+    MCAPI static struct Brightness const MIN;
 
 };

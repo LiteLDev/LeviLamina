@@ -35,19 +35,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FACING
 public:
 #endif
-    MCAPI static class std::array<std::vector<unsigned char>, 6> const ALL_EXCEPT;
-    MCAPI static class std::array<std::vector<unsigned char>, 6> const ALL_EXCEPT_AXIS_Y;
-    MCAPI static std::vector<unsigned char> const ALL_FACES;
-    MCAPI static enum Facing::Name const BY2DDATA[];
-    MCAPI static enum Facing::Name const DIRECTIONS[];
-    MCAPI static class BlockPos const DIRECTION[];
-    MCAPI static unsigned char const FACINGMASK[];
-    MCAPI static unsigned char const FACINGMASK_INV[];
-    MCAPI static class Vec3 const NORMAL[];
-    MCAPI static unsigned char const OPPOSITE_FACING[];
-    MCAPI static int const STEP_X[];
-    MCAPI static int const STEP_Y[];
-    MCAPI static int const STEP_Z[];
     MCAPI static unsigned char convertDirectionToFacingDirection(enum Direction::Type);
     MCAPI static unsigned char convertWeirdoDirectionToFacingDirection(enum WeirdoDirection);
     MCAPI static unsigned char convertYRotationToFacingDirection(float);
@@ -72,6 +59,23 @@ public:
     MCAPI static unsigned char rotateFace(unsigned char, enum Facing::Rotation);
     MCAPI static unsigned char rotateFaceAroundGivenFace(unsigned char, unsigned char, enum Facing::Rotation);
     MCAPI static class gsl::basic_string_span<char const, -1> toString(unsigned char);
+
+//private:
+
+private:
+    MCAPI static class std::array<std::vector<unsigned char>, 6> const ALL_EXCEPT;
+    MCAPI static class std::array<std::vector<unsigned char>, 6> const ALL_EXCEPT_AXIS_Y;
+    MCAPI static std::vector<unsigned char> const ALL_FACES;
+    MCAPI static enum Facing::Name const BY2DDATA[];
+    MCAPI static enum Facing::Name const DIRECTIONS[];
+    MCAPI static class BlockPos const DIRECTION[];
+    MCAPI static unsigned char const FACINGMASK[];
+    MCAPI static unsigned char const FACINGMASK_INV[];
+    MCAPI static class Vec3 const NORMAL[];
+    MCAPI static unsigned char const OPPOSITE_FACING[];
+    MCAPI static int const STEP_X[];
+    MCAPI static int const STEP_Y[];
+    MCAPI static int const STEP_Z[];
 
 
 };

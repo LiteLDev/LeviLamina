@@ -56,13 +56,6 @@ public:
     MCAPI MapItem(std::string const &, short);
     MCAPI void blockTick(class ItemStack &, class BlockSource &, class BlockPos const &) const;
     MCAPI void update(class Level &, class Actor &, class MapItemSavedData &) const;
-    MCAPI static std::string const TAG_MAP_INIT;
-    MCAPI static std::string const TAG_MAP_NAME_INDEX;
-    MCAPI static std::string const TAG_MAP_PLAYER_DISPLAY;
-    MCAPI static std::string const TAG_MAP_REGENERATE;
-    MCAPI static std::string const TAG_MAP_SCALE;
-    MCAPI static std::string const TAG_MAP_SCALING;
-    MCAPI static std::string const TAG_MAP_UUID;
     MCAPI static bool doesDisplayPlayerMarkers(class ItemStack const &);
     MCAPI static struct ActorUniqueID getMapId(class CompoundTag const *);
     MCAPI static void markForRegeneration(class ItemInstance &);
@@ -78,6 +71,13 @@ public:
     MCAPI static void _scheduleMapChunkRendering(class Dimension &, class MapItemSavedData const &, struct MapItemSavedData::ChunkBounds, class std::shared_ptr<bool>);
 
 private:
+    MCAPI static std::string const TAG_MAP_INIT;
+    MCAPI static std::string const TAG_MAP_NAME_INDEX;
+    MCAPI static std::string const TAG_MAP_PLAYER_DISPLAY;
+    MCAPI static std::string const TAG_MAP_REGENERATE;
+    MCAPI static std::string const TAG_MAP_SCALE;
+    MCAPI static std::string const TAG_MAP_SCALING;
+    MCAPI static std::string const TAG_MAP_UUID;
 
 
 };

@@ -30,6 +30,7 @@ public:
     MCAPI FeatureToggles(class AppPlatform &);
     MCAPI class Option * get(enum FeatureOptionID);
     MCAPI bool isEnabled(enum FeatureOptionID) const;
+    MCAPI static std::unique_ptr<class FeatureToggles> mFeatureToggles;
 
 //private:
     MCAPI class std::function<void (class Option &)> _getDisabledIfOptionExpectationsNotMetSetupCallback(std::vector<enum FeatureOptionID>, std::vector<enum FeatureOptionID>);
@@ -42,7 +43,6 @@ public:
     MCAPI void _setupDependencies();
 
 private:
-    MCAPI static std::unique_ptr<class FeatureToggles> mFeatureToggles;
 
 
 };

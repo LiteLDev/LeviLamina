@@ -82,7 +82,6 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI ScaffoldingBlock(std::string const &, int);
-    MCAPI static int const MAX_STABILITY;
 
 //protected:
     MCAPI int calculateStability(class BlockSource const &, class BlockPos const &) const;
@@ -93,6 +92,7 @@ public:
 protected:
 
 private:
+    MCAPI static int const MAX_STABILITY;
 
 
 };

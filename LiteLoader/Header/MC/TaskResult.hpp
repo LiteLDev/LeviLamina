@@ -35,9 +35,13 @@ public:
     MCAPI bool isWaiting() const;
     MCAPI bool isWaitingOperationLinked() const;
     MCAPI ~TaskResult();
+    MCAPI static class TaskResult requeueAfter(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
+
+//private:
+
+private:
     MCAPI static class TaskResult const Done;
     MCAPI static class TaskResult const Requeue;
-    MCAPI static class TaskResult requeueAfter(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
 
 
 };

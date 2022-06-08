@@ -72,10 +72,6 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI NetherWartBlock(std::string const &, int);
-
-//private:
-
-private:
     MCAPI static int const MAX_AGE;
 
 

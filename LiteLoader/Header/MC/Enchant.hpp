@@ -141,12 +141,16 @@ public:
     MCAPI static enum Enchant::Slot enchantSlotFromString(class gsl::basic_string_span<char const, -1>);
     MCAPI static class Enchant const * getEnchant(enum Enchant::Type const &);
     MCAPI static void initEnchants();
+    MCAPI static void shutdownEnchants();
+    MCAPI static std::string stringFromEnchantSlot(enum Enchant::Slot const &);
+
+//private:
+
+private:
     MCAPI static class std::unordered_map<class HashedString, enum Enchant::Type, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, enum Enchant::Type>>> mEnchantNameToType;
     MCAPI static class std::unordered_map<enum Enchant::Slot, std::string, struct EnchantSlotEnumHasher, struct std::equal_to<enum Enchant::Slot>, class std::allocator<struct std::pair<enum Enchant::Slot const, std::string>>> mEnchantSlotTypeEnumToStringMap;
     MCAPI static class std::unordered_map<std::string, enum Enchant::Slot, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum Enchant::Slot>>> mEnchantSlotTypeNameToEnumMap;
     MCAPI static std::vector<std::unique_ptr<class Enchant>> mEnchants;
-    MCAPI static void shutdownEnchants();
-    MCAPI static std::string stringFromEnchantSlot(enum Enchant::Slot const &);
 
 
 };

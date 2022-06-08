@@ -38,10 +38,6 @@ public:
 public:
 #endif
     MCAPI DiggingEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
-
-//private:
-
-private:
     MCAPI static std::vector<enum Enchant::Type> const VALID_ENCHANTMENTS;
 
 

@@ -31,10 +31,6 @@ public:
     MCAPI void evaluateActor(class Actor &);
     MCAPI class EntitySensorComponent & operator=(class EntitySensorComponent &&);
     MCAPI ~EntitySensorComponent();
-
-//private:
-
-private:
     MCAPI static int const NO_MAX_COUNT;
 
 

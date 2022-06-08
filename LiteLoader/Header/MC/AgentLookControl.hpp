@@ -30,6 +30,10 @@ public:
 public:
 #endif
     MCAPI AgentLookControl();
+
+//private:
+
+private:
     MCAPI static float sBaseYMax;
 
 

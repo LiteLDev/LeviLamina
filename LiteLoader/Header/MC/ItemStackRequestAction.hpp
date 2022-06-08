@@ -38,13 +38,9 @@ public:
     MCAPI ItemStackRequestAction(enum ItemStackRequestActionType);
     MCAPI enum ItemStackRequestActionType getActionType() const;
     MCAPI void write(class BinaryStream &) const;
+    MCAPI static class BidirectionalUnorderedMap<enum ItemStackRequestActionType, std::string> const actionTypeMap;
     MCAPI static std::string const getActionTypeName(enum ItemStackRequestActionType);
     MCAPI static std::unique_ptr<class ItemStackRequestAction> read(class ReadOnlyBinaryStream &);
-
-//private:
-
-private:
-    MCAPI static class BidirectionalUnorderedMap<enum ItemStackRequestActionType, std::string> const actionTypeMap;
 
 
 };

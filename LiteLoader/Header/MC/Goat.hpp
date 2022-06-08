@@ -66,10 +66,6 @@ public:
     MCAPI int getHornCount() const;
     MCAPI bool isScreaming();
     MCAPI void reduceHornCount();
-
-//private:
-
-private:
     MCAPI static int DEFAULT_HORN_COUNT;
     MCAPI static int SCREAMING_GOAT_VARIANT;
 

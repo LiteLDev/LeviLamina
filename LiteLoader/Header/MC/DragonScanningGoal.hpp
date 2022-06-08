@@ -36,10 +36,6 @@ public:
 public:
 #endif
     MCAPI DragonScanningGoal(class EnderDragon &);
-
-//private:
-
-private:
     MCAPI static float SITTING_ATTACK_VIEW_RANGE;
     MCAPI static float SITTING_CHARGE_VIEW_RANGE;
     MCAPI static int SITTING_SCANNING_IDLE_TICKS;

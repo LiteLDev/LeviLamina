@@ -44,6 +44,7 @@ public:
     MCAPI void resortPriorityQueue();
     MCAPI void start();
     MCAPI void wake();
+    MCAPI static class BackgroundWorker * gLocalWorkerMappingSingleton;
     MCAPI static class BackgroundWorker * getLocal();
 
 //private:
@@ -51,7 +52,6 @@ public:
     MCAPI enum BackgroundWorker::RunOneResult _runOneTask();
 
 private:
-    MCAPI static class BackgroundWorker * gLocalWorkerMappingSingleton;
 
 
 };

@@ -30,6 +30,10 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FREEZINGSYSTEM
 public:
 #endif
+
+//private:
+
+private:
     MCAPI static class mce::UUID const FREEZE_EFFECT_UUID;
     MCAPI static int const VULNERABLE_MOB_FREEZE_DAMAGE;
 

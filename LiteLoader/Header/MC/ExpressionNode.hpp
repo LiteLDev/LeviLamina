@@ -47,14 +47,17 @@ public:
     MCAPI bool operator==(class ExpressionNode const &) const;
     MCAPI bool parse(std::string const &, enum MolangVersion, class gsl::span<class HashedString const, -1>);
     MCAPI ~ExpressionNode();
+    MCAPI static class std::function<struct MolangScriptArg const & (class RenderParams &, std::vector<class ExpressionNode> const &)> _defaultUnknownQueryFunction;
     MCAPI static void bindType();
     MCAPI static void buildExpressionOpTable();
     MCAPI static float fast_atof_positiveOnly(char const *&);
     MCAPI static class Experiments & getExperiments();
     MCAPI static char const * getOpFriendlyName(enum ExpressionOp);
     MCAPI static class std::recursive_mutex & getQueryFunctionMutex();
-    MCAPI static std::vector<struct std::pair<std::string, enum ExpressionOp>> mAliasOpTokens;
-    MCAPI static std::vector<std::string> mExpressionOpTokens;
+    MCAPI static class ExperimentStorage mExperiments;
+    MCAPI static bool mMolangInitialized;
+    MCAPI static class std::unordered_multimap<class HashedString, struct MolangQueryFunction, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct MolangQueryFunction>>> mQueryFunctionAccessors;
+    MCAPI static class std::unordered_map<class HashedString, class std::unordered_set<class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<class HashedString>>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::unordered_set<class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<class HashedString>>>>> mQuerySets;
     MCAPI static class std::function<struct MolangScriptArg const & (class RenderParams &, std::vector<class ExpressionNode> const &)> const * queryFunctionAccessorFromString(std::string const &, enum MolangVersion, enum MolangQueryFunctionReturnType &, bool);
     MCAPI static struct MolangQueryFunction & registerQueryFunction(std::string const &, class std::function<struct MolangScriptArg const & (class RenderParams &, std::vector<class ExpressionNode> const &)>, std::string const &, enum MolangQueryFunctionReturnType, class HashedString, unsigned __int64, unsigned __int64, class std::initializer_list<int> const &);
     MCAPI static void setExperiments(class Experiments const &);
@@ -91,11 +94,8 @@ public:
     MCAPI static void _writeScriptArgToMolangVariable(class MolangVariableMap &, enum MolangVariableIndex, struct MolangScriptArg const &);
 
 private:
-    MCAPI static class std::function<struct MolangScriptArg const & (class RenderParams &, std::vector<class ExpressionNode> const &)> _defaultUnknownQueryFunction;
-    MCAPI static class ExperimentStorage mExperiments;
-    MCAPI static bool mMolangInitialized;
-    MCAPI static class std::unordered_multimap<class HashedString, struct MolangQueryFunction, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct MolangQueryFunction>>> mQueryFunctionAccessors;
-    MCAPI static class std::unordered_map<class HashedString, class std::unordered_set<class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<class HashedString>>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::unordered_set<class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<class HashedString>>>>> mQuerySets;
+    MCAPI static std::vector<struct std::pair<std::string, enum ExpressionOp>> mAliasOpTokens;
+    MCAPI static std::vector<std::string> mExpressionOpTokens;
 
 
 };

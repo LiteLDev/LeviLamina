@@ -72,10 +72,6 @@ public:
 #endif
     MCAPI FrostedIceBlock(std::string const &, int, bool);
     MCAPI void _slightlyMelt(class BlockSource &, class BlockPos const &, class Random &, bool) const;
-
-//private:
-
-private:
     MCAPI static int const MAX_AGE;
     MCAPI static int const MIN_NEIGHBORS;
 

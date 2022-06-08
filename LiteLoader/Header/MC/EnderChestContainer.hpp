@@ -33,6 +33,10 @@ public:
 public:
 #endif
     MCAPI EnderChestContainer();
+
+//private:
+
+private:
     MCAPI static int const ITEMS_SIZE;
 
 

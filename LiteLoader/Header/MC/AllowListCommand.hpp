@@ -28,12 +28,8 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLOWLISTCOMMAND
 public:
 #endif
-    MCAPI static void setup(class CommandRegistry &, class AllowListFile &);
-
-//private:
-
-private:
     MCAPI static class AllowListFile * mAllowListFile;
+    MCAPI static void setup(class CommandRegistry &, class AllowListFile &);
 
 
 };

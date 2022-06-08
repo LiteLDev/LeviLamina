@@ -52,6 +52,8 @@ public:
     MCAPI static class RecipeIngredient getIngredientForCompound(enum CompoundType);
     MCAPI static class ItemInstance getItemForCompound(enum CompoundType, int);
     MCAPI static bool isCompoundItem(class ItemStackBase const &);
+    MCAPI static class std::unordered_map<int, int, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, int>>> mIdToSpecialCompound;
+    MCAPI static class std::unordered_map<int, class ItemInstance, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, class ItemInstance>>> mTypeToSpecialCompound;
     MCAPI static void unregisterSpecialCompounds();
 
 //private:
@@ -60,8 +62,6 @@ public:
     MCAPI static std::string _getName(enum CompoundType);
 
 private:
-    MCAPI static class std::unordered_map<int, int, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, int>>> mIdToSpecialCompound;
-    MCAPI static class std::unordered_map<int, class ItemInstance, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, class ItemInstance>>> mTypeToSpecialCompound;
 
 
 };

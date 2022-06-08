@@ -34,12 +34,12 @@ public:
 public:
 #endif
     MCAPI BeaconContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-    MCAPI static int const PAYMENT_SLOT;
 
 //private:
     MCAPI void _resetSelectionState();
 
 private:
+    MCAPI static int const PAYMENT_SLOT;
 
 
 };

@@ -44,18 +44,14 @@ public:
     MCAPI void setPrev(class BackgroundTaskBase *);
     MCAPI void setStartAfterTime(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>);
     MCAPI void setSyncPriority();
+    MCAPI static class BackgroundTaskBase * gCurrentTask;
     MCAPI static class BackgroundTaskBase * getCurrent();
 
 //protected:
     MCAPI void backDownPriority();
     MCAPI void taskComplete();
 
-//private:
-
 protected:
-
-private:
-    MCAPI static class BackgroundTaskBase * gCurrentTask;
 
 
 };

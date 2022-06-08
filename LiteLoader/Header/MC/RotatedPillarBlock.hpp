@@ -67,10 +67,6 @@ public:
 public:
 #endif
     MCAPI RotatedPillarBlock(std::string const &, int, class Material const &);
-
-//private:
-
-private:
     MCAPI static int const mRotatedX[];
     MCAPI static int const mRotatedZ[];
 

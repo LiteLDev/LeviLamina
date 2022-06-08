@@ -45,12 +45,16 @@ public:
     MCVAPI ~AppPlatformWindows();
 #endif
     MCAPI AppPlatformWindows();
-    MCAPI static std::string const EXPERIMENTS_ACTIVE_KEY;
 
 //protected:
     MCAPI unsigned __int64 _findHighPerformanceThreadsCount() const;
 
+//private:
+
 protected:
+
+private:
+    MCAPI static std::string const EXPERIMENTS_ACTIVE_KEY;
 
 
 };

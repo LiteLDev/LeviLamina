@@ -57,6 +57,10 @@ public:
 public:
 #endif
     MCAPI Ocelot(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+
+//private:
+
+private:
     MCAPI static float const SNEAK_SPEED_MOD;
     MCAPI static float const SPRINT_SPEED_MOD;
 

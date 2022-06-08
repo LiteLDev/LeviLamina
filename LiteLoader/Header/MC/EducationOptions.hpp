@@ -31,7 +31,7 @@ public:
 #endif
     MCAPI EducationOptions(class ResourcePackManager *);
     MCAPI void init(class LevelData const &);
-    MCAPI static class gsl::basic_string_span<char const, -1> const CHEMISTRY_ENABLED;
+    MCAPI static class EducationOptions DEFAULT_OPTION;
     MCAPI static bool isBaseCodeBuilderEnabled();
     MCAPI static bool isChemistryEnabled();
     MCAPI static bool isCodeBuilderEnabled();
@@ -41,7 +41,7 @@ public:
     MCAPI static class ServiceReference<class EducationOptions> _getCurrentOptions();
 
 private:
-    MCAPI static class EducationOptions DEFAULT_OPTION;
+    MCAPI static class gsl::basic_string_span<char const, -1> const CHEMISTRY_ENABLED;
 
 
 };

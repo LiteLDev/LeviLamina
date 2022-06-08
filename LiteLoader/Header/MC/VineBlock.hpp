@@ -79,11 +79,6 @@ public:
     MCAPI void growDown(class BlockSource &, class BlockPos const &, int) const;
     MCAPI void growSideways(class BlockSource &, class BlockPos const &, int) const;
     MCAPI void growUp(class BlockSource &, class BlockPos const &, int) const;
-    MCAPI static int const VINE_ALL;
-    MCAPI static int const VINE_EAST;
-    MCAPI static int const VINE_NORTH;
-    MCAPI static int const VINE_SOUTH;
-    MCAPI static int const VINE_WEST;
     MCAPI static class Block const & getBlockForFace(unsigned char);
     MCAPI static bool isAcceptableNeighbour(class Block const &);
 
@@ -93,6 +88,11 @@ public:
     MCAPI int _nextVineDirections(class BlockSource &, class BlockPos const &) const;
 
 private:
+    MCAPI static int const VINE_ALL;
+    MCAPI static int const VINE_EAST;
+    MCAPI static int const VINE_NORTH;
+    MCAPI static int const VINE_SOUTH;
+    MCAPI static int const VINE_WEST;
 
 
 };

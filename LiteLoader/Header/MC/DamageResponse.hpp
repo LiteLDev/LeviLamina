@@ -32,12 +32,12 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAMAGERESPONSE
 public:
 #endif
-    MCAPI static std::string const NameID;
 
 //private:
     MCAPI void repairOrHurtItem(int const &, class RenderParams &) const;
 
 private:
+    MCAPI static std::string const NameID;
 
 
 };

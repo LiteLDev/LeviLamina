@@ -30,12 +30,8 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYANIMATIONCOMMAND
 public:
 #endif
-    MCAPI static void setup(class CommandRegistry &);
-
-//private:
-
-private:
     MCAPI static enum MolangVersion const mStopExpressionVersion;
+    MCAPI static void setup(class CommandRegistry &);
 
 
 };

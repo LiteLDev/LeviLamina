@@ -699,14 +699,7 @@ public:
     MCAPI void setScoreCallback(class std::function<int (bool &, std::string const &, class Actor const &)>);
     MCAPI void setSoftEnumValues(std::string const &, std::vector<std::string>);
     MCAPI ~CommandRegistry();
-    MCAPI static char const * COMMAND_NAME_ENUM_NAME;
-    MCAPI static char const * FUNCTION_NAME_SOFTENUM_NAME;
-    MCAPI static char const * HASITEM_PARAM_DATA;
-    MCAPI static char const * HASITEM_PARAM_ITEM;
-    MCAPI static char const * HASITEM_PARAM_LOCATION;
-    MCAPI static char const * HASITEM_PARAM_QUANTITY;
-    MCAPI static char const * HASITEM_PARAM_SLOT;
-    MCAPI static char const * TAG_VALUES_SOFTENUM_NAME;
+    MCAPI static struct std::pair<bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const, class CommandRegistry::Symbol> const ParseRuleSymbols[];
 
 //private:
     MCAPI void _addEnumValueConstraintsInternal(std::vector<struct std::pair<unsigned __int64, unsigned int>> const &, enum SemanticConstraint);
@@ -762,7 +755,14 @@ public:
     MCAPI static bool readRelativeCoordinate(bool &, float &, struct CommandRegistry::ParseToken const &, bool, std::string &, std::vector<std::string> &);
 
 private:
-    MCAPI static struct std::pair<bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const, class CommandRegistry::Symbol> const ParseRuleSymbols[];
+    MCAPI static char const * COMMAND_NAME_ENUM_NAME;
+    MCAPI static char const * FUNCTION_NAME_SOFTENUM_NAME;
+    MCAPI static char const * HASITEM_PARAM_DATA;
+    MCAPI static char const * HASITEM_PARAM_ITEM;
+    MCAPI static char const * HASITEM_PARAM_LOCATION;
+    MCAPI static char const * HASITEM_PARAM_QUANTITY;
+    MCAPI static char const * HASITEM_PARAM_SLOT;
+    MCAPI static char const * TAG_VALUES_SOFTENUM_NAME;
 
 
 };

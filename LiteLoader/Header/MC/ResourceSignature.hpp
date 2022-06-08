@@ -30,7 +30,6 @@ public:
 #endif
     MCAPI bool areKnownFilesValid(class PackAccessStrategy const &);
     MCAPI ~ResourceSignature();
-    MCAPI static class Core::PathBuffer<std::string> const SIGNATURE_FILENAME;
 
 //private:
     MCAPI bool _areKnownFilesValid(class PackAccessStrategy const &, bool);
@@ -38,6 +37,7 @@ public:
     MCAPI void _loadSignaturesFile(class Core::Path const &, class PackAccessStrategy const &);
 
 private:
+    MCAPI static class Core::PathBuffer<std::string> const SIGNATURE_FILENAME;
 
 
 };

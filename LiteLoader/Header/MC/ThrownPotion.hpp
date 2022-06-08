@@ -59,6 +59,10 @@ public:
     MCAPI ThrownPotion(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI short getPotionId() const;
     MCAPI void setLinger(bool);
+
+//private:
+
+private:
     MCAPI static float const SPLASH_RANGE;
 
 

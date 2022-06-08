@@ -79,7 +79,6 @@ public:
     MCAPI void setCloseConnection(class NetworkIdentifier const &);
     MCAPI void unregisterClientOrServerInstance(unsigned char const &);
     MCAPI void update(std::vector<class WeakEntityRef> const *);
-    MCAPI static class std::shared_ptr<struct NetherNetInstance> mNetherNetInstance;
 
 //private:
     MCAPI class NetworkHandler::Connection * _getConnectionFromId(class NetworkIdentifier const &) const;
@@ -88,6 +87,7 @@ public:
     MCAPI bool _sortAndPacketizeEvents(class NetworkHandler::Connection &, class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>);
 
 private:
+    MCAPI static class std::shared_ptr<struct NetherNetInstance> mNetherNetInstance;
 
 
 };

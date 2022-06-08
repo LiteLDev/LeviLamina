@@ -49,9 +49,6 @@ public:
     MCAPI int getParticleAmount(class BlockSource &, class BlockPos const &) const;
     MCAPI void setExitPosition(class BlockPos const &);
     MCAPI void teleportEntity(class Actor &);
-    MCAPI static int const COOLDOWN_TIME;
-    MCAPI static int const EVENT_COOLDOWN;
-    MCAPI static int const SPAWN_TIME;
     MCAPI static class BlockPos findExitPortal(class WorldGenerator &, class BlockPos const &);
     MCAPI static class BlockPos findTallestBlock(class BlockSource &, class BlockPos const &, int, bool);
     MCAPI static class BlockPos findValidSpawnAround(class BlockSource &, class BlockPos const &, bool, int);
@@ -60,6 +57,9 @@ public:
     MCAPI static int _getHighestSection(class WorldGenerator &, class BlockVolume &, class BlockPos const &);
 
 private:
+    MCAPI static int const COOLDOWN_TIME;
+    MCAPI static int const EVENT_COOLDOWN;
+    MCAPI static int const SPAWN_TIME;
 
 
 };

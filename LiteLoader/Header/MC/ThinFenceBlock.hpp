@@ -74,10 +74,6 @@ public:
     MCVAPI bool isThinFenceBlock() const;
 #endif
     MCAPI ThinFenceBlock(std::string const &, int, class Material const &, bool, bool, bool);
-
-//private:
-
-private:
     MCAPI static class BaseGameVersion const THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 

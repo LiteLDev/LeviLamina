@@ -32,6 +32,10 @@ public:
 public:
 #endif
     MCAPI EndPodiumFeature(bool);
+
+//private:
+
+private:
     MCAPI static float const CORNER_ROUNDING;
     MCAPI static class BlockPos const END_PODIUM_CHUNK_POSITION;
     MCAPI static class BlockPos const END_PODIUM_LOCATION;

@@ -29,10 +29,6 @@ public:
 #endif
     MCAPI static class Scheduler & client();
     MCAPI static void destroyClientSingleton();
-
-//private:
-
-private:
     MCAPI static std::unique_ptr<class Scheduler> mInstance;
 
 

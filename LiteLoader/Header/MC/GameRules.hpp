@@ -43,13 +43,6 @@ public:
     MCAPI std::unique_ptr<class GameRulesChangedPacket> setRule(struct GameRuleId, bool, bool, bool *, bool *, class GameRule::ValidationError *);
     MCAPI void setTagData(class CompoundTag &) const;
     MCAPI ~GameRules();
-    MCAPI static unsigned int const DEFAULT_PLAYER_SPAWN_RADIUS;
-    MCAPI static int const DEFAULT_RANDOMTICKSPEED;
-    MCAPI static int const MAX_FUNCTIONCOMMANDLIMIT;
-    MCAPI static unsigned int const MAX_PLAYER_SPAWN_RADIUS;
-    MCAPI static int const MAX_RANDOMTICKSPEED;
-    MCAPI static unsigned int const MIN_PLAYER_SPAWN_RADIUS;
-    MCAPI static std::string const WORLD_POLICY_TAG_NAME;
 
 //private:
     MCAPI class GameRule & _registerRule(std::string const &, struct GameRuleId);
@@ -58,6 +51,13 @@ public:
     MCAPI std::unique_ptr<class GameRulesChangedPacket> _setRule(struct GameRuleId, union GameRule::Value, enum GameRule::Type, bool, bool *, bool *, class GameRule::ValidationError *);
 
 private:
+    MCAPI static unsigned int const DEFAULT_PLAYER_SPAWN_RADIUS;
+    MCAPI static int const DEFAULT_RANDOMTICKSPEED;
+    MCAPI static int const MAX_FUNCTIONCOMMANDLIMIT;
+    MCAPI static unsigned int const MAX_PLAYER_SPAWN_RADIUS;
+    MCAPI static int const MAX_RANDOMTICKSPEED;
+    MCAPI static unsigned int const MIN_PLAYER_SPAWN_RADIUS;
+    MCAPI static std::string const WORLD_POLICY_TAG_NAME;
 
 
 };

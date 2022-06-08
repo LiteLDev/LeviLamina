@@ -71,10 +71,6 @@ public:
 public:
 #endif
     MCAPI StainedGlassBlock(std::string const &, int, class Material const &, bool, bool);
-
-//private:
-
-private:
     MCAPI static class BaseGameVersion const STAINED_GLASS_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 

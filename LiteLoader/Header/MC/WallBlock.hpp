@@ -86,11 +86,7 @@ public:
     MCAPI WallBlock(std::string const &, int, class BlockLegacy const &);
     MCAPI WallBlock(std::string const &, int, class Material const &);
     MCAPI void tryFixWallStates(class BlockSource &, class BlockPos const &, int) const;
-    MCAPI static float const POST_HEIGHT;
-    MCAPI static float const POST_WIDTH;
-    MCAPI static float const WALL_HEIGHT;
-    MCAPI static class std::array<std::string, 14> const WALL_NAMES;
-    MCAPI static float const WALL_WIDTH;
+    MCAPI static class BaseGameVersion const WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 //private:
     MCAPI enum WallConnectionType _desiredConnectionState(class BlockSource &, class BlockPos const &, unsigned char) const;
@@ -99,7 +95,11 @@ public:
     MCAPI bool _tryAddToTickingQueue(class BlockSource &, class BlockPos const &) const;
 
 private:
-    MCAPI static class BaseGameVersion const WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    MCAPI static float const POST_HEIGHT;
+    MCAPI static float const POST_WIDTH;
+    MCAPI static float const WALL_HEIGHT;
+    MCAPI static class std::array<std::string, 14> const WALL_NAMES;
+    MCAPI static float const WALL_WIDTH;
 
 
 };

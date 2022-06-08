@@ -72,6 +72,14 @@ public:
 public:
 #endif
     MCAPI ArmorItem(std::string const &, int, class ArmorItem::ArmorMaterial const &, int, enum ArmorSlot);
+    MCAPI static bool dispenseArmor(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char, enum ArmorSlot);
+    MCAPI static enum ArmorSlot getSlotForItem(class ItemStackBase const &);
+    MCAPI static bool isDamageable(class ItemDescriptor const &);
+
+//private:
+    MCAPI class ItemInstance getTierItem() const;
+
+private:
     MCAPI static class ArmorItem::ArmorMaterial const CHAIN;
     MCAPI static class ArmorItem::ArmorMaterial const DIAMOND;
     MCAPI static class ArmorItem::ArmorMaterial const ELYTRA;
@@ -80,15 +88,7 @@ public:
     MCAPI static class ArmorItem::ArmorMaterial const LEATHER;
     MCAPI static class ArmorItem::ArmorMaterial const NETHERITE;
     MCAPI static class ArmorItem::ArmorMaterial const TURTLE;
-    MCAPI static bool dispenseArmor(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char, enum ArmorSlot);
-    MCAPI static enum ArmorSlot getSlotForItem(class ItemStackBase const &);
-    MCAPI static bool isDamageable(class ItemDescriptor const &);
     MCAPI static int const mHealthPerSlot[];
-
-//private:
-    MCAPI class ItemInstance getTierItem() const;
-
-private:
 
 
 };

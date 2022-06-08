@@ -52,10 +52,6 @@ public:
     MCAPI void disconnect();
     MCAPI void host(class NetworkIdentifier const &);
     MCAPI void runEvents();
-
-//private:
-
-private:
     MCAPI static class LocalConnectivitySystem sLocalConnectivitySystem;
 
 

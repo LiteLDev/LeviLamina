@@ -77,18 +77,14 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI TorchBlock(std::string const &, int, enum MaterialType);
+    MCAPI static enum TorchFacing const DATA_FROM_FACING[];
+    MCAPI static unsigned short const FACING_FROM_DATA[];
 
 //protected:
     MCAPI class Vec3 _flameParticlePos(class BlockPos const &, enum TorchFacing) const;
     MCAPI bool canBePlacedOn(class BlockSource &, class BlockPos const &, unsigned char) const;
 
-//private:
-
 protected:
-
-private:
-    MCAPI static enum TorchFacing const DATA_FROM_FACING[];
-    MCAPI static unsigned short const FACING_FROM_DATA[];
 
 
 };

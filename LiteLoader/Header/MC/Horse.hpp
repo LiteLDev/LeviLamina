@@ -89,7 +89,7 @@ public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Horse(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-    MCAPI static int const DONKEY_CHEST_COUNT;
+    MCAPI static int const DATA_AGE;
     MCAPI static class Vec3 getInterpolatedRidingOffset(class Vec2 const &, float, float, float);
 
 //private:
@@ -98,7 +98,7 @@ public:
     MCAPI bool setHorseType(enum ActorType &);
 
 private:
-    MCAPI static int const DATA_AGE;
+    MCAPI static int const DONKEY_CHEST_COUNT;
 
 
 };

@@ -29,6 +29,10 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NULLLOGGER
 public:
 #endif
+
+//private:
+
+private:
     MCAPI static class NullLogger instance;
 
 

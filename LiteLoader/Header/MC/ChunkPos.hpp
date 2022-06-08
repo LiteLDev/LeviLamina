@@ -38,6 +38,10 @@ public:
     MCAPI ChunkPos(class Vec3 const &);
     MCAPI bool isWithinBounds(class ChunkPos const &, class ChunkPos const &) const;
     MCAPI class Vec3 toBlockSpaceVec3(float) const;
+
+//private:
+
+private:
     MCAPI static class ChunkPos const INVALID;
     MCAPI static class ChunkPos const MAX;
     MCAPI static class ChunkPos const MIN;

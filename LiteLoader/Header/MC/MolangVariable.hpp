@@ -35,17 +35,17 @@ public:
     MCAPI static class HashedString const & getVariableName(enum MolangVariableIndex);
     MCAPI static void initVariableMaps();
     MCAPI static bool isValidName(char const *);
+    MCAPI static bool mHasSetWatermark;
+    MCAPI static class std::unordered_map<enum MolangVariableIndex, class HashedString, struct std::hash<enum MolangVariableIndex>, struct std::equal_to<enum MolangVariableIndex>, class std::allocator<struct std::pair<enum MolangVariableIndex const, class HashedString>>> mIndexToVariableNameMap;
+    MCAPI static class std::unordered_map<enum MolangVariableIndex, class HashedString, struct std::hash<enum MolangVariableIndex>, struct std::equal_to<enum MolangVariableIndex>, class std::allocator<struct std::pair<enum MolangVariableIndex const, class HashedString>>> mIndexToVariableNameMap_LowWaterMark;
+    MCAPI static class std::unordered_map<unsigned __int64, enum MolangVariableIndex, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, enum MolangVariableIndex>>> mVariableNameToIndexMap;
+    MCAPI static class std::unordered_map<unsigned __int64, enum MolangVariableIndex, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, enum MolangVariableIndex>>> mVariableNameToIndexMap_LowWaterMark;
     MCAPI static void processWaterMark();
 
 //private:
     MCAPI static class std::recursive_mutex & _getMolangVariableIndexLock();
 
 private:
-    MCAPI static bool mHasSetWatermark;
-    MCAPI static class std::unordered_map<enum MolangVariableIndex, class HashedString, struct std::hash<enum MolangVariableIndex>, struct std::equal_to<enum MolangVariableIndex>, class std::allocator<struct std::pair<enum MolangVariableIndex const, class HashedString>>> mIndexToVariableNameMap;
-    MCAPI static class std::unordered_map<enum MolangVariableIndex, class HashedString, struct std::hash<enum MolangVariableIndex>, struct std::equal_to<enum MolangVariableIndex>, class std::allocator<struct std::pair<enum MolangVariableIndex const, class HashedString>>> mIndexToVariableNameMap_LowWaterMark;
-    MCAPI static class std::unordered_map<unsigned __int64, enum MolangVariableIndex, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, enum MolangVariableIndex>>> mVariableNameToIndexMap;
-    MCAPI static class std::unordered_map<unsigned __int64, enum MolangVariableIndex, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, enum MolangVariableIndex>>> mVariableNameToIndexMap_LowWaterMark;
 
 
 };

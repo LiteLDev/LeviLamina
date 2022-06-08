@@ -42,13 +42,13 @@ public:
 public:
 #endif
     MCAPI SurvivalMode(class Player &);
+    MCAPI static bool mTrialHasEnded;
 
 //private:
     MCAPI void _messagePlayers(std::string);
     MCAPI void _showTrialReminder(bool);
 
 private:
-    MCAPI static bool mTrialHasEnded;
 
 
 };

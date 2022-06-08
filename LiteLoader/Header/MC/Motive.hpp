@@ -33,6 +33,10 @@ public:
     MCAPI bool isPublic() const;
     MCAPI static std::vector<class Motive const *> getAllMotivesAsList();
     MCAPI static class Motive const & getMotiveByName(std::string const &);
+
+//private:
+
+private:
     MCAPI static class Motive const mAlban;
     MCAPI static class Motive const mAztec;
     MCAPI static class Motive const mAztec2;

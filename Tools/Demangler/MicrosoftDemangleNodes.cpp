@@ -667,10 +667,10 @@ void VariableSymbolNode::output(OutputBuffer& OB, OutputFlags Flags) const
 {
     const char* AccessSpec = nullptr;
     bool IsStatic = true;
-    if (SC == StorageClass::PublicStatic)
-        AccessSpec = "public";
-    else if (SC == StorageClass::PrivateStatic)
+    if (SC == StorageClass::PrivateStatic)
         AccessSpec = "private";
+    else if (SC == StorageClass::PublicStatic)
+        AccessSpec = "public";
     else if (SC == StorageClass::ProtectedStatic)
         AccessSpec = "protected";
     else

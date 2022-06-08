@@ -28,13 +28,9 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERSCRIPTDEBUGCOMMAND
 public:
 #endif
-    MCAPI static void setup(class CommandRegistry &, class IScriptDebugger *, class std::optional<struct ScriptSettings> const &);
-
-//private:
-
-private:
     MCAPI static class std::optional<unsigned short> sForcedPort;
     MCAPI static class IScriptDebugger * sServerScriptDebugger;
+    MCAPI static void setup(class CommandRegistry &, class IScriptDebugger *, class std::optional<struct ScriptSettings> const &);
 
 
 };

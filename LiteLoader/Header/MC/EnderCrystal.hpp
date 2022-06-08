@@ -60,6 +60,10 @@ public:
     MCAPI EnderCrystal(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void setBeamTarget(class BlockPos const &);
     MCAPI void setCrystalDamagedCallback(class std::function<void (class EnderCrystal &, class ActorDamageSource const &)>);
+
+//private:
+
+private:
     MCAPI static float const HEAL_DISTANCE;
 
 

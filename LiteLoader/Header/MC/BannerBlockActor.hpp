@@ -45,17 +45,21 @@ public:
     MCAPI BannerBlockActor(class BlockPos const &);
     MCAPI unsigned char getBaseColorInt() const;
     MCAPI void setItemValues(class ItemStackBase const &);
+    MCAPI static enum BannerBlockType getBannerType(class CompoundTag const *);
+    MCAPI static int getBaseColor(class ItemStack const &);
+    MCAPI static int getPatternCount(class CompoundTag const *);
+    MCAPI static bool isDefaultBanner(class ItemStackBase const &);
+    MCAPI static bool removeLastPattern(class ItemStack &, class Player &);
+
+//private:
+
+private:
     MCAPI static int const MAX_PATTERNS;
     MCAPI static std::string const TAG_BASE_COLOR;
     MCAPI static std::string const TAG_COLOR;
     MCAPI static std::string const TAG_PATTERN;
     MCAPI static std::string const TAG_PATTERNS;
     MCAPI static std::string const TAG_TYPE;
-    MCAPI static enum BannerBlockType getBannerType(class CompoundTag const *);
-    MCAPI static int getBaseColor(class ItemStack const &);
-    MCAPI static int getPatternCount(class CompoundTag const *);
-    MCAPI static bool isDefaultBanner(class ItemStackBase const &);
-    MCAPI static bool removeLastPattern(class ItemStack &, class Player &);
 
 
 };

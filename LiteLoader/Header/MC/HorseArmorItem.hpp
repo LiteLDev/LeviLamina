@@ -55,6 +55,10 @@ public:
 #endif
     MCAPI HorseArmorItem(std::string const &, int, int, enum HorseArmorItem::Tier);
     MCAPI enum HorseArmorItem::Tier getTier() const;
+
+//private:
+
+private:
     MCAPI static int const mHealthPerTier[];
 
 

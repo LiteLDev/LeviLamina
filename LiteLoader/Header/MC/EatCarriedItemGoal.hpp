@@ -36,10 +36,6 @@ public:
 public:
 #endif
     MCAPI EatCarriedItemGoal(class Mob &, int);
-
-//private:
-
-private:
     MCAPI static int const CHEW_CHANCE;
     MCAPI static int const EATING_TIME;
 

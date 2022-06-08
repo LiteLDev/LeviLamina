@@ -37,19 +37,15 @@ public:
     MCAPI static bool isBlockDataDriven(std::string const &);
     MCAPI static class BlockTypeRegistry::InhibitModificationsLock lockAgainstRegistryModifications();
     MCAPI static class WeakPtr<class BlockLegacy> lookupByName(class HashedString const &, bool);
-    MCAPI static void prepareBlocks(unsigned int);
-    MCAPI static void registerAlias(class HashedString const &, class HashedString const &);
-    MCAPI static void unregisterBlock(class HashedString const &);
-    MCAPI static void unregisterBlocks();
-
-//private:
-
-private:
     MCAPI static class std::unordered_map<class HashedString, class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class HashedString>>> mBlockAliasLookupMap;
     MCAPI static class std::map<class HashedString, class SharedPtr<class BlockLegacy>, struct std::less<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class SharedPtr<class BlockLegacy>>>> mBlockLookupMap;
     MCAPI static class OwnerPtrT<struct EntityRegistryRefTraits> mEntities;
     MCAPI static class std::set<std::string, struct std::less<std::string>, class std::allocator<std::string>> mKnownNamespaces;
     MCAPI static class std::shared_mutex mSharedMutex;
+    MCAPI static void prepareBlocks(unsigned int);
+    MCAPI static void registerAlias(class HashedString const &, class HashedString const &);
+    MCAPI static void unregisterBlock(class HashedString const &);
+    MCAPI static void unregisterBlocks();
 
 
 };

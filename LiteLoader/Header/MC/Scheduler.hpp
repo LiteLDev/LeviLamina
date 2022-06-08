@@ -33,6 +33,10 @@ public:
     MCAPI void processCoroutines(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
     MCAPI void queueCallback(class std::shared_ptr<class BackgroundTaskBase>);
     MCAPI void setTargetFPS(unsigned int);
+
+//private:
+
+private:
     MCAPI static float const AVERAGE_TASK_TOLERANCE;
 
 

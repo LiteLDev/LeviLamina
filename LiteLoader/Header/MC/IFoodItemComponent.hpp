@@ -25,6 +25,10 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFOODITEMCOMPONENT
 public:
 #endif
+
+//private:
+
+private:
     MCAPI static char const CAN_ALWAYS_EAT[];
     MCAPI static char const NUTRITION[];
     MCAPI static char const ON_CONSUME[];

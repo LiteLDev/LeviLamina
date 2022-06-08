@@ -39,22 +39,18 @@ public:
     MCAPI void setButtonName(std::string const &);
     MCAPI void setMode(enum NpcActionMode);
     MCAPI void setText(std::string const &);
-    MCAPI static std::unique_ptr<class NpcAction> read(class Json::Value const &);
-
-//protected:
-    MCAPI class Json::Value toJsonBase(class Json::Value &);
-
-//private:
-
-protected:
-
-private:
     MCAPI static std::string const BUTTON_NAME_KEY;
     MCAPI static std::string const DATA_KEY;
     MCAPI static int const MAX_BUTTON_NAME_LENGTH;
     MCAPI static std::string const MODE_KEY;
     MCAPI static std::string const TEXT_KEY;
     MCAPI static std::string const TYPE_KEY;
+    MCAPI static std::unique_ptr<class NpcAction> read(class Json::Value const &);
+
+//protected:
+    MCAPI class Json::Value toJsonBase(class Json::Value &);
+
+protected:
 
 
 };

@@ -52,13 +52,13 @@ public:
     MCAPI void rotateFramedItem();
     MCAPI void setItem(class BlockSource &, class ItemInstance const &);
     MCAPI void updateNameTag();
-    MCAPI static float const ROTATION_DEGREES;
 
 //private:
     MCAPI void _checkMapRemoval(class BlockSource &, class ItemInstance &);
     MCAPI void _updateBit(class BlockSource &, class ItemStateVariant<bool> const &, class HashedString const &);
 
 private:
+    MCAPI static float const ROTATION_DEGREES;
 
 
 };

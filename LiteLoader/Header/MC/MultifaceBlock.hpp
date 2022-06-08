@@ -83,14 +83,6 @@ public:
 #endif
     MCAPI MultifaceBlock(std::string const &, int, class Material const &);
     MCAPI void removeFace(class IBlockWorldGenAPI &, class BlockSource *, class Block const &, class BlockPos const &, unsigned char, bool) const;
-    MCAPI static int const MULTIFACE_ALL;
-    MCAPI static int const MULTIFACE_DOWN;
-    MCAPI static int const MULTIFACE_EAST;
-    MCAPI static int const MULTIFACE_NORTH;
-    MCAPI static int const MULTIFACE_SIDES;
-    MCAPI static int const MULTIFACE_SOUTH;
-    MCAPI static int const MULTIFACE_UP;
-    MCAPI static int const MULTIFACE_WEST;
     MCAPI static int convertOldMultifaceToNewMultifaceValue(int);
     MCAPI static class Block const & getBlockForPlacement(class Block const &, class Block const &, class BlockSource &, class BlockPos const &, unsigned char);
     MCAPI static class Block const & getBlockForPlacementWorldGen(class Block const &, class Block const &, class IBlockWorldGenAPI &, class BlockPos const &, unsigned char);
@@ -107,6 +99,14 @@ public:
 protected:
 
 private:
+    MCAPI static int const MULTIFACE_ALL;
+    MCAPI static int const MULTIFACE_DOWN;
+    MCAPI static int const MULTIFACE_EAST;
+    MCAPI static int const MULTIFACE_NORTH;
+    MCAPI static int const MULTIFACE_SIDES;
+    MCAPI static int const MULTIFACE_SOUTH;
+    MCAPI static int const MULTIFACE_UP;
+    MCAPI static int const MULTIFACE_WEST;
 
 
 };

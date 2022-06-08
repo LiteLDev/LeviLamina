@@ -2,8 +2,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Bedrock.hpp"
 #include "Core.hpp"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -31,14 +31,18 @@ public:
 #endif
     MCAPI PerfTimer(class std::thread::id);
     MCAPI ~PerfTimer();
-    MCAPI static bool mEnabled;
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<class PerfTimer, class std::allocator<class PerfTimer>> test;
 
 //protected:
+
+//private:
 
 protected:
     MCAPI static int const MultiplyDeBruijnBitPosition[];
     MCAPI static class Core::PathBuffer<std::string> mPath;
+
+private:
+    MCAPI static bool mEnabled;
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<class PerfTimer, class std::allocator<class PerfTimer>> test;
 
 
 };

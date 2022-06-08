@@ -46,10 +46,6 @@ public:
     MCAPI class PositionTrackingId const & getTrackingHandle() const;
     MCAPI bool hasTrackingHandle() const;
     MCAPI bool setTrackingHandle(class PositionTrackingId const &);
-
-//private:
-
-private:
     MCAPI static std::string const sTagName_Handle;
 
 

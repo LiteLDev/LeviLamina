@@ -30,13 +30,9 @@ public:
 public:
 #endif
     MCAPI ScriptMinecraftUIModuleFactory(class gsl::not_null<class Bedrock::NonOwnerPointer<class ScriptFormPromiseTracker>>);
-    MCAPI static std::string getModuleUUIDAsString();
-
-//private:
-
-private:
     MCAPI static char const * ModuleName;
     MCAPI static class mce::UUID const ModuleUUID;
+    MCAPI static std::string getModuleUUIDAsString();
 
 
 };

@@ -66,6 +66,10 @@ public:
 public:
 #endif
     MCAPI MyceliumBlock(std::string const &, int);
+
+//private:
+
+private:
     MCAPI static struct Brightness const MIN_BRIGHTNESS_TO_PERSIST;
     MCAPI static struct Brightness const MIN_BRIGHTNESS_TO_SPREAD;
 

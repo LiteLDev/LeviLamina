@@ -69,6 +69,7 @@ public:
 #endif
     MCAPI ItemActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void setSourceEntity(class Actor const *);
+    MCAPI static int const LIFETIME;
     MCAPI static class ItemActor * tryGetFromEntity(class EntityContext &, bool);
 
 //private:
@@ -78,7 +79,6 @@ public:
     MCAPI void _validateItem();
 
 private:
-    MCAPI static int const LIFETIME;
 
 
 };

@@ -79,10 +79,6 @@ public:
 #endif
     MCAPI FenceBlock(std::string const &, int, class Material const &);
     MCAPI void fetchPathableNeighbors(std::vector<class BlockPos> &, class BlockSource &, class BlockPos const &, class Vec3 const &) const;
-
-//private:
-
-private:
     MCAPI static class BaseGameVersion const FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 

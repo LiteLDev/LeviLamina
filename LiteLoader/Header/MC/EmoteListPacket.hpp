@@ -34,6 +34,10 @@ public:
 #endif
     MCAPI EmoteListPacket(class ActorRuntimeID);
     MCAPI EmoteListPacket();
+
+//private:
+
+private:
     MCAPI static int const MAX_EMOTE_PIECE_IDS;
 
 

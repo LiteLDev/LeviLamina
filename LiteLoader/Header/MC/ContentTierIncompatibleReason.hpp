@@ -29,8 +29,12 @@ public:
 #endif
     MCAPI ContentTierIncompatibleReason(unsigned int);
     MCAPI std::string getExpandedI18nErrorList(std::string const &, std::vector<std::string> const &) const;
-    MCAPI static class ContentTierIncompatibleReason NoError;
     MCAPI static std::string getExpandedI18nErrorList(unsigned int, std::string const &, std::vector<std::string> const &);
+
+//private:
+
+private:
+    MCAPI static class ContentTierIncompatibleReason NoError;
 
 
 };

@@ -74,16 +74,16 @@ public:
 public:
 #endif
     MCAPI BannerBlock(std::string const &, int, bool);
-    MCAPI static class AABB EAST_AABB;
-    MCAPI static class AABB NORTH_AABB;
-    MCAPI static class AABB SOUTH_AABB;
-    MCAPI static class AABB STANDING_AABB;
-    MCAPI static class AABB WEST_AABB;
 
 //private:
     MCAPI class ItemInstance _itemInstanceFromBlockEntity(class gsl::not_null<class BannerBlockActor const *>) const;
 
 private:
+    MCAPI static class AABB EAST_AABB;
+    MCAPI static class AABB NORTH_AABB;
+    MCAPI static class AABB SOUTH_AABB;
+    MCAPI static class AABB STANDING_AABB;
+    MCAPI static class AABB WEST_AABB;
 
 
 };

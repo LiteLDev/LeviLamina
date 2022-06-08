@@ -81,6 +81,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI HopperBlock(std::string const &, int);
+    MCAPI static class BaseGameVersion const HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
     MCAPI static class BlockPos getAttachedOffset(unsigned char);
 
 //private:
@@ -88,7 +89,6 @@ public:
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &) const;
 
 private:
-    MCAPI static class BaseGameVersion const HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 
 };

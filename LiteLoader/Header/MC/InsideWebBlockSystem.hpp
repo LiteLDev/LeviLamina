@@ -25,6 +25,10 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEWEBBLOCKSYSTEM
 public:
 #endif
+
+//private:
+
+private:
     MCAPI static class Vec3 const SLOWDOWN_MULTIPLIER;
 
 

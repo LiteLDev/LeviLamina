@@ -44,6 +44,24 @@ public:
     MCAPI enum Potion::PotionVariant getPotionVariant() const;
     MCAPI std::string getPrefix() const;
     MCAPI ~Potion();
+    MCAPI static std::string getBasePotion(enum Potion::PotionType);
+    MCAPI static class std::shared_ptr<class Potion const> getPotion(int);
+    MCAPI static class std::shared_ptr<class Potion const> getPotion(class gsl::basic_string_span<char const, -1>);
+    MCAPI static int getPotionCount();
+    MCAPI static void initPotions();
+    MCAPI static int mLastId;
+    MCAPI static class std::shared_ptr<class Potion const> mPotionsById[];
+    MCAPI static class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> mPotionsByName;
+    MCAPI static void shutdownPotions();
+
+//private:
+    MCAPI Potion(class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, class MobEffectInstance const &, enum Potion::PotionVariant);
+    MCAPI Potion(class gsl::basic_string_span<char const, -1>, std::vector<std::string>, std::vector<class MobEffectInstance>, enum Potion::PotionVariant);
+    MCAPI std::string _getDescriptionIdCombiningStrings(enum Potion::PotionType) const;
+    MCAPI std::string _getDescriptionIdSingleString(enum Potion::PotionType) const;
+    MCAPI static void addPotion(class std::shared_ptr<class Potion const>);
+
+private:
     MCAPI static class std::shared_ptr<class Potion const> const Awkward;
     MCAPI static class std::shared_ptr<class Potion const> const FireResistance;
     MCAPI static class std::shared_ptr<class Potion const> const Harming;
@@ -87,24 +105,6 @@ public:
     MCAPI static class std::shared_ptr<class Potion const> const WaterBreathing;
     MCAPI static class std::shared_ptr<class Potion const> const Weakness;
     MCAPI static class std::shared_ptr<class Potion const> const Wither;
-    MCAPI static std::string getBasePotion(enum Potion::PotionType);
-    MCAPI static class std::shared_ptr<class Potion const> getPotion(int);
-    MCAPI static class std::shared_ptr<class Potion const> getPotion(class gsl::basic_string_span<char const, -1>);
-    MCAPI static int getPotionCount();
-    MCAPI static void initPotions();
-    MCAPI static void shutdownPotions();
-
-//private:
-    MCAPI Potion(class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, class MobEffectInstance const &, enum Potion::PotionVariant);
-    MCAPI Potion(class gsl::basic_string_span<char const, -1>, std::vector<std::string>, std::vector<class MobEffectInstance>, enum Potion::PotionVariant);
-    MCAPI std::string _getDescriptionIdCombiningStrings(enum Potion::PotionType) const;
-    MCAPI std::string _getDescriptionIdSingleString(enum Potion::PotionType) const;
-    MCAPI static void addPotion(class std::shared_ptr<class Potion const>);
-
-private:
-    MCAPI static int mLastId;
-    MCAPI static class std::shared_ptr<class Potion const> mPotionsById[];
-    MCAPI static class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> mPotionsByName;
 
 
 };

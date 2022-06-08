@@ -31,13 +31,13 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIPWRECKPIECE
 public:
 #endif
+    MCAPI static std::string const STRUCTURE_SHIPWRECK_TYPES[];
 
 //private:
     MCAPI static class BlockPos _calculateTargetPos(class BlockSource &, class BlockPos, enum Rotation, class BlockPos);
     MCAPI static class BlockPos _calculateTargetPosLegacy(class BlockSource &, class BlockPos, enum Rotation, class BlockPos);
 
 private:
-    MCAPI static std::string const STRUCTURE_SHIPWRECK_TYPES[];
 
 
 };

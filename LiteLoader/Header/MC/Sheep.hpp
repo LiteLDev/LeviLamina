@@ -61,10 +61,6 @@ public:
 #endif
     MCAPI Sheep(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI bool isGrazing() const;
-
-//private:
-
-private:
     MCAPI static int const EAT_ANIMATION_TICKS;
 
 

@@ -29,10 +29,6 @@ public:
 #endif
     MCAPI void cleanup();
     MCAPI void update();
-
-//private:
-
-private:
     MCAPI static int const MAX_CHUNK_ATTEMPTS;
 
 

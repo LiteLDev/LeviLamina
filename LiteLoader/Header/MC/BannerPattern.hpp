@@ -40,6 +40,10 @@ public:
     MCAPI static class std::optional<unsigned char> getPatternIndexFromName(std::string const &);
     MCAPI static unsigned char getPatternIndexFromNameID(std::string const &);
     MCAPI static void initPatterns();
+
+//private:
+
+private:
     MCAPI static class BannerPattern * mBase;
     MCAPI static class BannerPattern * mBorder;
     MCAPI static class BannerPattern * mBricks;

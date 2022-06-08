@@ -32,6 +32,10 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DECREMENTSTACKEVENTRESPONSE
 public:
 #endif
+
+//private:
+
+private:
     MCAPI static std::string const NameID;
 
 

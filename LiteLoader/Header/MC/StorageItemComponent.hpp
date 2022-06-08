@@ -32,7 +32,6 @@ public:
     MCAPI class ItemStack tryRemoveItemStack(class ItemStack &) const;
     MCAPI class ItemStack tryRemoveOneFromItemStack(class ItemStack &) const;
     MCAPI bool use(class ItemStack &, class Player &) const;
-    MCAPI static unsigned int const DEFAULT_MAX_CARRY_WEIGHT;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
@@ -45,6 +44,7 @@ public:
     MCAPI void _updateRemainingWeight(class ItemStack &, class ItemStack const &, int) const;
 
 private:
+    MCAPI static unsigned int const DEFAULT_MAX_CARRY_WEIGHT;
 
 
 };

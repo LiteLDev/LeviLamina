@@ -37,6 +37,10 @@ public:
 #endif
     MCAPI BannerDuplicateRecipe(class gsl::basic_string_span<char const, -1>);
     MCAPI BannerDuplicateRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
+
+//private:
+
+private:
     MCAPI static class mce::UUID const ID;
 
 

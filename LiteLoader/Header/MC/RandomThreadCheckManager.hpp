@@ -35,10 +35,6 @@ public:
 public:
 #endif
     MCAPI static void invalidateThreadIndex();
-
-//private:
-
-private:
     MCAPI static std::unique_ptr<class RandomThreadCheckManager> mInstance;
     MCAPI static class std::recursive_mutex mMutex;
 

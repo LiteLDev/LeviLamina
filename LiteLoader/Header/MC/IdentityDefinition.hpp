@@ -52,9 +52,13 @@ public:
     MCAPI bool isValid() const;
     MCAPI operator bool() const;
     MCAPI ~IdentityDefinition();
-    MCAPI static class IdentityDefinition const Invalid;
     MCAPI static bool convertFakeToReal(class IdentityDefinition &, struct PlayerScoreboardId const &);
     MCAPI static bool isHiddenFakePlayerNameString(std::string const &);
+
+//private:
+
+private:
+    MCAPI static class IdentityDefinition const Invalid;
 
 
 };

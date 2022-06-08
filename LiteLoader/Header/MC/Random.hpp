@@ -45,10 +45,6 @@ public:
     MCAPI int nextInt(int, int);
     MCAPI int nextIntInclusive(int, int);
     MCAPI static class Random & getThreadLocal();
-
-//private:
-
-private:
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random, class std::allocator<class Random>> mThreadLocalRandom;
 
 

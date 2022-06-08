@@ -32,13 +32,13 @@ public:
 public:
 #endif
     MCAPI CommandResponse();
-    MCAPI static std::string const NameID;
 
 //private:
     MCAPI void _addCommand(std::string const &);
     MCAPI void _compileCommands(class Level &) const;
 
 private:
+    MCAPI static std::string const NameID;
 
 
 };

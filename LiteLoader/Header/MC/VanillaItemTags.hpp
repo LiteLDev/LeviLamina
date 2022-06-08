@@ -27,6 +27,10 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAITEMTAGS
 public:
 #endif
+
+//private:
+
+private:
     MCAPI static char const Armor[];
     MCAPI static char const Arrows[];
     MCAPI static char const Banners[];

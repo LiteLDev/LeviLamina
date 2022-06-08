@@ -74,6 +74,10 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI CoralBlock(std::string const &, int);
+
+//private:
+
+private:
     MCAPI static int const DEAD_CORAL_BIT;
     MCAPI static int const DEAD_CORAL_OFFSET;
 

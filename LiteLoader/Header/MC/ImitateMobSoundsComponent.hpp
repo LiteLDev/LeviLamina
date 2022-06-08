@@ -28,12 +28,8 @@ public:
 public:
 #endif
     MCAPI static enum LevelSoundEvent getRandomImitatedSound(class Randomize const &);
-    MCAPI static bool imitateNearbyMobs(class Actor &, class Randomize const &);
-
-//private:
-
-private:
     MCAPI static class std::unordered_map<enum ActorType, enum LevelSoundEvent, struct std::hash<enum ActorType>, struct std::equal_to<enum ActorType>, class std::allocator<struct std::pair<enum ActorType const, enum LevelSoundEvent>>> const imitateMobMap;
+    MCAPI static bool imitateNearbyMobs(class Actor &, class Randomize const &);
 
 
 };

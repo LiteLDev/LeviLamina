@@ -50,10 +50,6 @@ public:
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum ComplexInventoryTransaction::Type);
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum ComplexInventoryTransaction::Type, class InventoryTransaction const &);
     MCAPI static std::string const getTransactionTypeName(enum ComplexInventoryTransaction::Type);
-
-//private:
-
-private:
     MCAPI static class BidirectionalUnorderedMap<enum ComplexInventoryTransaction::Type, std::string> const transactionTypeMap;
 
 

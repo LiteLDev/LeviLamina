@@ -50,9 +50,6 @@ public:
     MCAPI void evictAll(class BlockSource &, bool);
     MCAPI void saveUserData(class CompoundTag &) const;
     MCAPI bool tryAdmit(class Actor &);
-    MCAPI static unsigned int const MAX_OCCUPANCY;
-    MCAPI static enum BlockActorType const TypeId;
-    MCAPI static std::string const TypeString;
 
 //private:
     MCAPI class Actor * _revive(class BlockSource &, struct BeehiveBlockActor::Occupant const &, unsigned char);
@@ -61,6 +58,9 @@ public:
     MCAPI static bool _validSpawnDirection(class BlockSource &, class BlockPos const &, unsigned char);
 
 private:
+    MCAPI static unsigned int const MAX_OCCUPANCY;
+    MCAPI static enum BlockActorType const TypeId;
+    MCAPI static std::string const TypeString;
 
 
 };

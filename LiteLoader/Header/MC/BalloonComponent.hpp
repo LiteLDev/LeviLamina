@@ -37,12 +37,16 @@ public:
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void setAttachedActor(class Actor &, class Actor &);
     MCAPI bool shouldPop(class Actor &, bool &);
+    MCAPI static class Actor * getBalloonForActor(class Actor const &);
+
+//private:
+
+private:
     MCAPI static std::string const ATTACHED_TAG;
     MCAPI static float const FENCE_BALLOON_RANGE;
     MCAPI static float const MAX_BALLOON_RANGE;
     MCAPI static std::string const MAX_HEIGHT_TAG;
     MCAPI static std::string const SHOULD_DROP_TAG;
-    MCAPI static class Actor * getBalloonForActor(class Actor const &);
 
 
 };

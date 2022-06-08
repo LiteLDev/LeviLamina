@@ -46,10 +46,6 @@ public:
     MCAPI unsigned __int64 size() const;
     MCAPI void updateAttribute(class HashedString const &, float, float, float, float);
     MCAPI ~BaseAttributeMap();
-
-//private:
-
-private:
     MCAPI static class AttributeInstance mInvalidInstance;
 
 

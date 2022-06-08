@@ -38,13 +38,17 @@ public:
     MCAPI void __autoclassinit2(unsigned __int64);
     MCAPI class ItemInstance clone() const;
     MCAPI class ItemInstance & operator=(class ItemInstance const &);
-    MCAPI static class ItemInstance const EMPTY_ITEM;
     MCAPI static class ItemInstance fromTag(class CompoundTag const &);
 
 //protected:
     MCAPI ItemInstance(class BlockLegacy const &, int, short);
 
+//private:
+
 protected:
+
+private:
+    MCAPI static class ItemInstance const EMPTY_ITEM;
 
 
 };

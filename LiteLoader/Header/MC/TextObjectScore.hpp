@@ -33,6 +33,10 @@ public:
 public:
 #endif
     MCAPI TextObjectScore(std::string, std::string);
+
+//private:
+
+private:
     MCAPI static std::string const RAW_TEXT_SCORE_KEY;
     MCAPI static std::string const RAW_TEXT_SCORE_NAME_KEY;
     MCAPI static std::string const RAW_TEXT_SCORE_OBJECTIVE_KEY;

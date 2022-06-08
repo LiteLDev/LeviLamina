@@ -37,6 +37,10 @@ public:
 public:
 #endif
     MCAPI LoomContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+
+//private:
+
+private:
     MCAPI static int const BANNER_SLOT;
     MCAPI static int const DYE_SLOT;
     MCAPI static int const MATERIAL_SLOT;

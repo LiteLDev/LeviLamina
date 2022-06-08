@@ -53,6 +53,10 @@ public:
     MCAPI void mixDyes();
     MCAPI void setCustomColor(class mce::Color const &);
     MCAPI void setPotionType(enum Potion::PotionType);
+
+//private:
+
+private:
     MCAPI static class mce::Color WATER_COLOR;
 
 

@@ -56,6 +56,10 @@ public:
 public:
 #endif
     MCAPI SparklerItem(std::string const &, int);
+
+//private:
+
+private:
     MCAPI static struct SparklerItem::ColorInfo const COLORS[];
     MCAPI static int const MAX_ACTIVE_TICKS;
 

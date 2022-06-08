@@ -27,5 +27,8 @@ public:
 protected:
 
 private:
+    MCAPI static __int64 const DEFAULT_INTERPOLATION_WINDOW_SIZE_IN_TICKS;
+    MCAPI static bool const DEFAULT_USE_AGGRESSIVE_TICK_INTERVAL;
+    MCAPI static __int64 const SMALL_INTERPOLATION_WINDOW_SIZE_IN_TICKS;
 
 };

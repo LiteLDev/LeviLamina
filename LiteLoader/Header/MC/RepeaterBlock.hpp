@@ -83,12 +83,12 @@ public:
 #endif
     MCAPI RepeaterBlock(std::string const &, int, bool);
     MCAPI void updateDelay(class BlockSource &, class BlockPos const &, bool) const;
-    MCAPI static float const DELAY_RENDER_OFFSETS[];
+    MCAPI static int const DELAYS[];
 
 //private:
 
 private:
-    MCAPI static int const DELAYS[];
+    MCAPI static float const DELAY_RENDER_OFFSETS[];
 
 
 };

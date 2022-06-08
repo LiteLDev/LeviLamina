@@ -33,10 +33,6 @@ public:
     MCVAPI void playOpenSound(class BlockSource &);
 #endif
     MCAPI EnderChestBlockActor(enum BlockActorType, std::string const &, enum BlockActorRendererId, class BlockPos const &);
-
-//private:
-
-private:
     MCAPI static int const ITEMS_SIZE;
 
 

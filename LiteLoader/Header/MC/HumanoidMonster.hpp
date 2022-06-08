@@ -60,10 +60,6 @@ public:
 public:
 #endif
     MCAPI HumanoidMonster(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-//private:
-
-private:
     MCAPI static float const MAX_ENCHANTED_ARMOR_CHANCE;
     MCAPI static float const MAX_ENCHANTED_WEAPON_CHANCE;
     MCAPI static float const MAX_PICKUP_LOOT_CHANCE;

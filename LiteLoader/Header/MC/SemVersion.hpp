@@ -47,7 +47,6 @@ public:
     MCAPI bool operator>=(class SemVersion const &) const;
     MCAPI bool satisfies(class SemVersion const &) const;
     MCAPI ~SemVersion();
-    MCAPI static struct SemVersion::any_version_constructor const AnyVersionConstructor;
     MCAPI static enum SemVersion::MatchType fromJson(class Json::Value const &, class SemVersion &, enum SemVersion::ParseOption);
     MCAPI static enum SemVersion::MatchType fromJsonArray(class Json::Value const &, class SemVersion &);
     MCAPI static enum SemVersion::MatchType fromString(std::string const &, class SemVersion &, enum SemVersion::ParseOption);
@@ -56,6 +55,7 @@ public:
     MCAPI void _parseVersionToString();
 
 private:
+    MCAPI static struct SemVersion::any_version_constructor const AnyVersionConstructor;
 
 
 };

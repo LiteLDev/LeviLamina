@@ -27,5 +27,16 @@ public:
 protected:
 
 private:
+    MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_AIR_SETTING;
+    MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_LAVA_RESISTANCE_SETTING;
+    MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_LAVA_SETTING;
+    MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_NETHER_AIR_SETTING;
+    MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_POWDER_SNOW_SETTING;
+    MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_WATER_SETTING;
+    MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_WEATHER_SETTING;
+    MCAPI static struct FogDefinition const DEFAULT_FOG_DEFINITION;
+    MCAPI static struct FogVolumetricCoefficientSetting const DEFAULT_VOLUME_COEFFICIENT_AIR_SETTING;
+    MCAPI static struct FogVolumetricCoefficientSetting const DEFAULT_VOLUME_COEFFICIENT_CLOUD_SETTING;
+    MCAPI static struct FogVolumetricCoefficientSetting const DEFAULT_VOLUME_COEFFICIENT_WATER_SETTING;
 
 };

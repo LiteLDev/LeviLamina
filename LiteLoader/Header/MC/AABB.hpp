@@ -64,6 +64,10 @@ public:
     MCAPI class AABB & set(class Vec3 const &, class Vec3 const &);
     MCAPI class AABB & shrink(class Vec3 const &);
     MCAPI class AABB & translateCenterTo(class Vec3 const &);
+
+//private:
+
+private:
     MCAPI static class AABB const BLOCK_SHAPE;
     MCAPI static class AABB const BOX_AT_ORIGIN_WITH_NO_VOLUME;
 

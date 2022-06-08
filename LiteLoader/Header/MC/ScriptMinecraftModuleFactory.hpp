@@ -31,15 +31,11 @@ public:
 public:
 #endif
     MCAPI ScriptMinecraftModuleFactory(class ServerLevel *, class MinecraftCommands *, std::unique_ptr<class ScriptMinecraftCommonModuleFactory>);
+    MCAPI static char const * ModuleName;
+    MCAPI static class mce::UUID const ModuleUUID;
     MCAPI static class std::unordered_map<std::string, std::unique_ptr<class IComponentFactory>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class IComponentFactory>>>> & getActorComponentFactoriesV1();
     MCAPI static std::string getModuleUUIDAsString();
     MCAPI static struct Scripting::ModuleDescriptor makeModuleDescriptorFor(struct Scripting::Version &&);
-
-//private:
-
-private:
-    MCAPI static char const * ModuleName;
-    MCAPI static class mce::UUID const ModuleUUID;
 
 
 };

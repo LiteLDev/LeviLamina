@@ -27,5 +27,6 @@ public:
 protected:
 
 private:
+    MCAPI static float const MIN_DEPTH;
 
 };

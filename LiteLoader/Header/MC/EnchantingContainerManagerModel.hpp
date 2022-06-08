@@ -39,6 +39,10 @@ public:
     MCAPI EnchantingContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
     MCAPI std::vector<class ItemEnchantOption> const & getEnchantOptions() const;
     MCAPI void recalculateOptions();
+
+//private:
+
+private:
     MCAPI static int const NUM_OPTIONS;
 
 

@@ -64,13 +64,17 @@ public:
     MCAPI class Biome & setOddColor(int);
     MCAPI class Biome & setSnowAccumulation(float, float);
     MCAPI void writePacketData(class CompoundTag &, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> &);
+    MCAPI static void buildCachedTemperatureNoise(class LevelChunk &);
+
+//private:
+
+private:
     MCAPI static class gsl::basic_string_span<char const, -1> const BACKCOMPAT_FOG_NAME;
     MCAPI static class mce::Color const DEFAULT_FOG_COLOR;
     MCAPI static class gsl::basic_string_span<char const, -1> const DEFAULT_FOG_ID;
     MCAPI static class mce::Color const DEFAULT_UNDERWATER_COLOR;
     MCAPI static class mce::Color const DEFAULT_WATER_COLOR;
     MCAPI static float const RAIN_TEMP_THRESHOLD;
-    MCAPI static void buildCachedTemperatureNoise(class LevelChunk &);
 
 
 };

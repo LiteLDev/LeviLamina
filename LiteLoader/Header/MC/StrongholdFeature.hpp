@@ -39,7 +39,6 @@ public:
 public:
 #endif
     MCAPI StrongholdFeature(class VillageFeature *, unsigned int);
-    MCAPI static class BlockPos const START_OFFSET;
 
 //protected:
     MCAPI void generatePositions(class Random &, class BiomeSource const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &);
@@ -51,6 +50,7 @@ public:
 protected:
 
 private:
+    MCAPI static class BlockPos const START_OFFSET;
 
 
 };

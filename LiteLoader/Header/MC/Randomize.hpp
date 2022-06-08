@@ -37,6 +37,10 @@ public:
     MCAPI float nextFloat() const;
     MCAPI int nextIntInclusive(int, int) const;
     MCAPI ~Randomize();
+
+//private:
+
+private:
     MCAPI static float const ChanceFloatGreaterThan_MinExcessiveImprobability;
 
 

@@ -75,9 +75,6 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI ChorusFlowerBlock(std::string const &, int);
-    MCAPI static int const BRANCH_DIRECTIONS;
-    MCAPI static unsigned short const DEAD_AGE;
-    MCAPI static int const GROW_RATE;
     MCAPI static void generatePlant(class BlockSource &, class BlockPos const &, class Random &, int);
 
 //private:
@@ -86,6 +83,9 @@ public:
     MCAPI static void _growTreeRecursive(class BlockSource &, class BlockPos const &, class BlockPos const &, class Random &, int, int);
 
 private:
+    MCAPI static int const BRANCH_DIRECTIONS;
+    MCAPI static unsigned short const DEAD_AGE;
+    MCAPI static int const GROW_RATE;
 
 
 };

@@ -33,6 +33,10 @@ public:
 public:
 #endif
     MCAPI ShulkerBoxRecipe(class gsl::basic_string_span<char const, -1>, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int, class mce::UUID const *);
+
+//private:
+
+private:
     MCAPI static class mce::UUID const ID;
 
 

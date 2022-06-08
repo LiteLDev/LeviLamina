@@ -27,5 +27,6 @@ public:
 protected:
 
 private:
+    MCAPI static class std::thread::id const NoAffinity;
 
 };

@@ -37,10 +37,6 @@ public:
     MCAPI class ItemUseInventoryTransaction & operator=(class ItemUseInventoryTransaction const &);
     MCAPI void resendBlocksAroundArea(class Player &, class BlockPos const &, unsigned char) const;
     MCAPI class ItemUseInventoryTransaction & setSelectedItem(class ItemStack const &);
-
-//private:
-
-private:
     MCAPI static class BidirectionalUnorderedMap<enum ItemUseInventoryTransaction::ActionType, std::string> const actionTypeMap;
 
 

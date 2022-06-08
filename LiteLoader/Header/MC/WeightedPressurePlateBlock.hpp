@@ -68,6 +68,10 @@ public:
 public:
 #endif
     MCAPI WeightedPressurePlateBlock(std::string const &, int, class Material const &, int);
+
+//private:
+
+private:
     MCAPI static int const MAX_WEIGHT_HEAVY;
     MCAPI static int const MAX_WEIGHT_LIGHT;
 

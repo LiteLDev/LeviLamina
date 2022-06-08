@@ -60,13 +60,13 @@ public:
 public:
 #endif
     MCAPI Cat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-    MCAPI static float const SNEAK_SPEED_MOD;
-    MCAPI static float const SPRINT_SPEED_MOD;
 
 //private:
     MCAPI float getLieOnPlayer();
 
 private:
+    MCAPI static float const SNEAK_SPEED_MOD;
+    MCAPI static float const SPRINT_SPEED_MOD;
 
 
 };

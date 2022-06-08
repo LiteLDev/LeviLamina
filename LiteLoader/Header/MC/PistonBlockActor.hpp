@@ -56,6 +56,7 @@ public:
     MCAPI bool isRetracting() const;
     MCAPI void moveEntityLastProgress(class Actor &, class Vec3);
     MCAPI void setShouldVerifyArmType(bool);
+    MCAPI static float const ARM_ANIMATION_SPEED;
 
 //private:
     MCAPI bool _attachedBlockWalker(class BlockSource &, class BlockPos const &, unsigned char, unsigned char);
@@ -70,7 +71,6 @@ public:
     MCAPI void _spawnMovingBlocks(class BlockSource &);
 
 private:
-    MCAPI static float const ARM_ANIMATION_SPEED;
 
 
 };

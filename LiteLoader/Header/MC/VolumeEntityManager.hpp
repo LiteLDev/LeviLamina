@@ -35,14 +35,18 @@ public:
 #endif
     MCAPI unsigned __int64 getVolumeInstanceCount() const;
     MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const & getVolumeInstances(class AutomaticID<class Dimension, int>) const;
-    MCAPI static bool isTriggerVolumesEnabled;
     MCAPI static void registerComponentNetRelevancy(class ComponentNetRelevancyRegistry &);
 
 //protected:
     MCAPI VolumeEntityManager(class StackRefResultT<struct EntityRegistryRefTraits>);
     MCAPI class OwnerPtrT<struct EntityRefTraits> _createVolumeEntity(class DefinitionInstanceGroup const &);
 
+//private:
+
 protected:
+
+private:
+    MCAPI static bool isTriggerVolumesEnabled;
 
 
 };

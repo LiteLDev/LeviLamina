@@ -32,10 +32,6 @@ public:
     MCAPI GameTestInstanceLedger(class LevelStorage &);
     MCAPI void clear(class AutomaticID<class Dimension, int>);
     MCAPI std::vector<class BoundingBox> getBoundingBoxes(class AutomaticID<class Dimension, int>) const;
-
-//private:
-
-private:
     MCAPI static std::string const GAME_TEST_INSTANCE_PREFIX;
 
 

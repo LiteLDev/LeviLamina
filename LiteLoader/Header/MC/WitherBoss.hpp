@@ -90,7 +90,7 @@ public:
     MCAPI void setShotDelay(int);
     MCAPI void setWantsToMove(bool);
     MCAPI bool wantsToMove();
-    MCAPI static class mce::UUID const MAX_HEALTH_CAP_UUID;
+    MCAPI static int const TIME_BEFORE_MOVING;
     MCAPI static bool canDestroy(class Block const &);
 
 //private:
@@ -100,7 +100,7 @@ public:
     MCAPI bool canShoot();
 
 private:
-    MCAPI static int const TIME_BEFORE_MOVING;
+    MCAPI static class mce::UUID const MAX_HEALTH_CAP_UUID;
 
 
 };

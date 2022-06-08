@@ -45,10 +45,6 @@ public:
     MCAPI class StructureEditorData const & getStructureData() const;
     MCAPI void setPowered(class BlockSource &, class BlockPos const &, bool, bool);
     MCAPI void setStructureData(class StructureEditorData const &);
-    MCAPI static float const MAX_WIREFRAME_RENDER_DISTANCE;
-    MCAPI static class mce::Color const X_AXIS_COLOR;
-    MCAPI static class mce::Color const Y_AXIS_COLOR;
-    MCAPI static class mce::Color const Z_AXIS_COLOR;
 
 //private:
     MCAPI bool _loadStructure(class BlockSource &, class BlockPos const &, class BaseGameVersion const &);
@@ -56,6 +52,10 @@ public:
     MCAPI void _trigger(class BlockSource &, class BlockPos const &, class BaseGameVersion const &, bool);
 
 private:
+    MCAPI static float const MAX_WIREFRAME_RENDER_DISTANCE;
+    MCAPI static class mce::Color const X_AXIS_COLOR;
+    MCAPI static class mce::Color const Y_AXIS_COLOR;
+    MCAPI static class mce::Color const Z_AXIS_COLOR;
 
 
 };

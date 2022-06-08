@@ -33,10 +33,6 @@ public:
 public:
 #endif
     MCAPI class XoroshiroRandom forStringImpl(std::string const &) const;
-
-//private:
-
-private:
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class Crypto::Hash::md5, class std::allocator<class Crypto::Hash::md5>> mThreadLocalDigest;
 
 

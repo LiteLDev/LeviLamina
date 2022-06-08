@@ -41,10 +41,14 @@ public:
     MCAPI bool operator>(class BaseGameVersion const &) const;
     MCAPI bool operator>=(class BaseGameVersion const &) const;
     MCAPI ~BaseGameVersion();
+    MCAPI static enum SemVersion::MatchType fromString(std::string const &, class BaseGameVersion &);
+
+//private:
+
+private:
     MCAPI static class BaseGameVersion const ANY;
     MCAPI static class BaseGameVersion const EMPTY;
     MCAPI static class BaseGameVersion const INCOMPATIBLE;
-    MCAPI static enum SemVersion::MatchType fromString(std::string const &, class BaseGameVersion &);
 
 
 };

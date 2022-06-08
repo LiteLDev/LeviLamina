@@ -68,6 +68,10 @@ public:
     MCAPI std::unique_ptr<class CompoundTag> loadServerPlayerData(class Player const &, bool);
     MCAPI void save(class Actor &);
     MCAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> saveData(std::string const &, class CompoundTag const &, enum DBHelpers::Category);
+
+//private:
+
+private:
     MCAPI static std::string const LEGACY_CONSOLE_PLAYER_PREFIX;
     MCAPI static std::string const LOCAL_PLAYER_TAG;
 

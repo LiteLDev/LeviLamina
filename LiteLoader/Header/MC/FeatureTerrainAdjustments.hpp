@@ -41,13 +41,13 @@ public:
     MCAPI ~FeatureTerrainAdjustments();
     MCAPI static float calculateContribution(struct FeatureTerrainAdjustments::Descriptions const &, class BlockPos const &, float);
     MCAPI static struct BeardKernel & getBeardKernel();
+    MCAPI static struct BeardKernel mBeardKernel;
     MCAPI static bool shouldDoTerrainAdjustments(struct FeatureTerrainAdjustments::Descriptions const &);
 
 //private:
     MCAPI class std::shared_ptr<bool> _insertDescriptions(std::vector<class ChunkPos> const &, class std::function<void (struct FeatureTerrainAdjustments::Descriptions &, class std::weak_ptr<bool>)> &&);
 
 private:
-    MCAPI static struct BeardKernel mBeardKernel;
 
 
 };

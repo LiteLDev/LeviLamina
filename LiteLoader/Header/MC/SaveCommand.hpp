@@ -32,6 +32,9 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAVECOMMAND
 public:
 #endif
+    MCAPI static std::vector<struct SnapshotFilenameAndLength> mSaveAllFileList;
+    MCAPI static class std::mutex mSaveAllMutex;
+    MCAPI static enum SaveCommand::State mState;
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
@@ -40,9 +43,6 @@ public:
     MCAPI static void saveState(class CommandOutput &);
 
 private:
-    MCAPI static std::vector<struct SnapshotFilenameAndLength> mSaveAllFileList;
-    MCAPI static class std::mutex mSaveAllMutex;
-    MCAPI static enum SaveCommand::State mState;
 
 
 };

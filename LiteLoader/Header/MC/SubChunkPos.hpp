@@ -36,6 +36,10 @@ public:
 #endif
     MCAPI SubChunkPos(class BlockPos const &);
     MCAPI operator class BlockPos() const;
+
+//private:
+
+private:
     MCAPI static class SubChunkPos const MAX;
     MCAPI static class SubChunkPos const MIN;
     MCAPI static class SubChunkPos const ONE;

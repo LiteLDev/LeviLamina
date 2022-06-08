@@ -45,13 +45,13 @@ public:
     MCAPI ~InventoryTransaction();
     MCAPI static class InventoryTransaction deserialize(class ReadOnlyBinaryStream &);
     MCAPI static std::string const getInventoryTransactionErrorName(enum InventoryTransactionError);
+    MCAPI static class BidirectionalUnorderedMap<enum InventoryTransactionError, std::string> const inventoryTransactionErrorMap;
 
 //private:
     MCAPI void _dropCreatedItems(class Player &) const;
     MCAPI void addItemToContent(class ItemStack const &, int);
 
 private:
-    MCAPI static class BidirectionalUnorderedMap<enum InventoryTransactionError, std::string> const inventoryTransactionErrorMap;
 
 
 };

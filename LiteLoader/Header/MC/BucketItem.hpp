@@ -62,7 +62,7 @@ public:
     MCVAPI bool uniqueAuxValues() const;
 #endif
     MCAPI BucketItem(std::string const &, int, enum BucketFillType);
-    MCAPI static int const DRINK_DURATION;
+    MCAPI static std::vector<struct std::pair<enum BucketFillType, enum ActorType>> const mFillTypeToEntityType;
 
 //protected:
     MCAPI void addBucketEntitySaveData(class Actor &, class ItemStack &) const;
@@ -76,7 +76,7 @@ public:
 protected:
 
 private:
-    MCAPI static std::vector<struct std::pair<enum BucketFillType, enum ActorType>> const mFillTypeToEntityType;
+    MCAPI static int const DRINK_DURATION;
 
 
 };

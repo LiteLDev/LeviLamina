@@ -30,6 +30,10 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONSTEPOFFTRIGGERDESCRIPTION
 public:
 #endif
+
+//private:
+
+private:
     MCAPI static std::string const NameID;
 
 

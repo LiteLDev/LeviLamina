@@ -30,6 +30,10 @@ public:
     MCAPI ActorDefinitionPtr(class ActorDefinitionPtr const &);
     MCAPI class ActorDefinitionPtr & operator=(class ActorDefinitionPtr &&);
     MCAPI ~ActorDefinitionPtr();
+
+//private:
+
+private:
     MCAPI static class ActorDefinitionPtr const NONE;
 
 

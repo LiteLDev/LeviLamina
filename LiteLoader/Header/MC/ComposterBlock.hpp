@@ -88,6 +88,8 @@ public:
     MCVAPI bool hasComparatorSignal() const;
 #endif
     MCAPI ComposterBlock(std::string const &, int);
+    MCAPI static class BaseGameVersion const COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    MCAPI static class Vec3 const PARTICLE_OFFSET;
     MCAPI static bool addItem(class Container &, int, class ItemStack &, class BlockSource &, class Block const &, class BlockPos const &);
     MCAPI static int addItems(class ItemStack const &, int, class BlockSource &, class Block const &, class BlockPos const &);
     MCAPI static bool addItems(class Container &, int, class ItemStack &, int, class BlockSource &, class Block const &, class BlockPos const &);
@@ -101,8 +103,6 @@ public:
     MCAPI static std::vector<struct std::pair<int, signed char>> const & _getCompostableItems(class Experiments const &);
 
 private:
-    MCAPI static class BaseGameVersion const COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
-    MCAPI static class Vec3 const PARTICLE_OFFSET;
 
 
 };

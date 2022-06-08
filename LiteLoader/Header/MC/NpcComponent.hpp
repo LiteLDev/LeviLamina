@@ -57,7 +57,13 @@ public:
     MCAPI void setSceneStateForPlayer(class Actor &, struct ActorUniqueID const &, std::string const &);
     MCAPI void setSkin(class Actor &);
     MCAPI void setSkinIndex(class Actor &, int, bool);
-    MCAPI static unsigned __int64 const MAX_NPC_NAME_LENGTH;
+    MCAPI static std::string const ACTIONS_TAG;
+    MCAPI static std::string const INTERACTIVE_TAG;
+    MCAPI static std::string const NAME_RAW_TEXT_TAG;
+    MCAPI static std::string const PLAYER_ID_TAG;
+    MCAPI static std::string const PLAYER_SCENE_MAPPING_TAG;
+    MCAPI static std::string const SCENE_NAME_TAG;
+    MCAPI static std::string const URL_TAG;
 
 //private:
     MCAPI void _defineEntityDataString(class Actor &, enum ActorDataIDs);
@@ -66,13 +72,7 @@ public:
     MCAPI std::string _serializeActions() const;
 
 private:
-    MCAPI static std::string const ACTIONS_TAG;
-    MCAPI static std::string const INTERACTIVE_TAG;
-    MCAPI static std::string const NAME_RAW_TEXT_TAG;
-    MCAPI static std::string const PLAYER_ID_TAG;
-    MCAPI static std::string const PLAYER_SCENE_MAPPING_TAG;
-    MCAPI static std::string const SCENE_NAME_TAG;
-    MCAPI static std::string const URL_TAG;
+    MCAPI static unsigned __int64 const MAX_NPC_NAME_LENGTH;
 
 
 };

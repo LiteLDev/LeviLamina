@@ -78,16 +78,12 @@ public:
     MCVAPI bool isSlabBlock() const;
 #endif
     MCAPI SlabBlock(std::string const &, int, bool, class Material const &, class WeakPtr<class BlockLegacy>);
+    MCAPI static class BaseGameVersion const TOP_SLAB_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 //protected:
     MCAPI class Block const & getBaseSlab() const;
 
-//private:
-
 protected:
-
-private:
-    MCAPI static class BaseGameVersion const TOP_SLAB_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 
 };

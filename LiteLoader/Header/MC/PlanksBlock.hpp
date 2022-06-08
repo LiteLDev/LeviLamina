@@ -68,8 +68,12 @@ public:
 public:
 #endif
     MCAPI PlanksBlock(std::string const &, int);
-    MCAPI static class std::array<std::string, 6> const WOOD_NAMES;
     MCAPI static bool isValidWoodMaterial(int);
+
+//private:
+
+private:
+    MCAPI static class std::array<std::string, 6> const WOOD_NAMES;
 
 
 };

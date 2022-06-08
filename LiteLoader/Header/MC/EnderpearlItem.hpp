@@ -48,6 +48,10 @@ public:
 public:
 #endif
     MCAPI EnderpearlItem(std::string const &, int);
+
+//private:
+
+private:
     MCAPI static class HashedString const ENDER_PEARL_COOLDOWN;
 
 

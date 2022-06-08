@@ -31,6 +31,7 @@ public:
 public:
 #endif
     MCAPI static void postScriptRegisterSetup(class CommandRegistry &);
+    MCAPI static class MinecraftGameTest * sGameTest;
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
@@ -44,7 +45,6 @@ public:
     MCAPI void _runTestAt(class BlockSource &, class CommandOutput *, class BlockPos const &, class std::optional<enum Rotation>) const;
 
 private:
-    MCAPI static class MinecraftGameTest * sGameTest;
 
 
 };
