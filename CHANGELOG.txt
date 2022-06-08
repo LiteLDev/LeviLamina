@@ -1,68 +1,10 @@
 ## [LiteLoader Release Note]
 This is a bug fix update.Please update as soon as possible!
 
-
 ## [Changes]
-- Ignore simulated player in Player DB
-- change create bossbar api, #416
-- Set file name when LLSE load script content
-    - for friendly error output
-- Plugin version will now be displayed in Event Error and Schedule Error
-- Script stack and plugin info is now output if there is an error in LLSE, #430
-- Remove a unstable bug fix
-
-
-## [New features]
-- Add Auto Init dlsym functions on cpp20+ API
-- Add CompoundTag APIs
-	- CompoundTag::nbtListToBinary
-	- CompoundTag::nbtListFromBinary
-	- CompoundTag::nbtListFromNetwork
-	- CompoundTag::nbtListToNetwork
-- Add BoundingBox APIs
-	- BoundingBox::forEachBlockInBox
-	- BoundingBox::mergeBoundingBox
-- Add APIs in BlockPos and Vec3
-- Add void return type support for remote call API
-- Add LLSE APIs
-  - pl.langCode property
-  - en.getBlockFromViewVector
-  - en.getEntityFromViewVector
-  - pl.getBlockFromViewVector
-  - pl.getEntityFromViewVector
-  - sp.simulateWorldMove
-  - sp.simulateMoveTo
-- Virtual functions can be called via dlsym or MCVAPI now
-- Update LibraryBuilder
-
+- Remove MCVAPI
 
 ## [Bug Fixes]
-- Fix BDS bugs
-  - move crash bug
-  - fishing hook crash when teleported by End Gateway
-  - crash when server stopping #428
-- Fix LL bugs:
-  - handle LoadLibrary errors
-  - PreLoader crash when directory "./plugins" does not exist
-  - CompoundTag::fromNetworkNBT
-  - PlayerLeftEvent for Simulated Player
-  - Player APIs for SimulatedPlayer
-- Fix DB bugs:
-  - DB DB::MySQLStmt::bind bug
-  - DB the bug copying data of DB::MySQLStmt
-- Fix LLSE bugs:
-  - mc.spawnSimulatedPlayer by pos
-  - File API return value, #429
-  - file.read memory leak
-  - file.WriteMode and writeSync error, #431
-  - logger stack overflow
-  - WebSocket crash
-  - "get on empty global" or other errors
-  - simulateAttack param
-  - simulateDestory error output
-  - simulateLookAt Entity param
-  - simulateNavigateTo positions param
-  - remote call pos type error
-  - simulateLocalMove
-  - simulateLookAt
-
+- Fix LLSE sp.simulateWorldMove
+- Fix LLSE sp.simulateLocalMove
+- Fix BDS thorns crash

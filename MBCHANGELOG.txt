@@ -1,92 +1,20 @@
 [HEADING=1][LiteLoader Release Note][/HEADING]
-这是一个错误修复更新，1.18.33最终版，请尽快更新!
+这是一个错误修复更新，1.18.33最终版修复，请尽快更新!
 
 [HEADING=1][改变][/HEADING]
 [LIST]
-[*]忽略PlayerDB中的模拟玩家
-[*]更改BossBar API，[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/416']#416[/URL]
-[*]当LLSE加载脚本内容时设置文件名
-[LIST]
-[*]友好的错误输出
-[/LIST]
-[*]显示插件版本在Event和Schedule错误中
-[*]当LLSE中出现错误，现在会输出脚本栈和插件信息，[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/430']#430[/URL]
-[*]删除了一个不稳定的BUG修复
-[/LIST]
-
-[HEADING=1][新内容][/HEADING]
-[LIST]
-[*]添加自动初始化dlsym函数API在cpp20上 
-[*]添加CompoundTag APIs
-[LIST]
-[*]CompoundTag::nbtListToBinary
-[*]CompoundTag::nbtListFromBinary
-[*]CompoundTag::nbtListFromNetwork
-[*]CompoundTag::nbtListToNetwork
-[/LIST]
-[*]添加 BoundingBox APIs
-[LIST]
-[*]BoundingBox::forEachBlockInBox
-[*]BoundingBox::mergeBoundingBox
-[/LIST]
-[*]增加BlockPos和Vec3中的API
-[*]增加远程调用API的无效返回类型的支持
-[*]增加LLSE APIs
-[LIST]
-[*]pl.langCode property
-[*]en.getBlockFromViewVector
-[*]en.getEntityFromViewVector
-[*]pl.getBlockFromViewVector
-[*]pl.getEntityFromViewVector
-[*]sp.simulateWorldMove
-[*]sp.simulateMoveTo
-[/LIST]
-[*]现在可以通过dlsym或MCVAPI调用虚函数
-[*]更新LibraryBuilder
+[*]移除 MCVAPI
 [/LIST]
 
 [HEADING=1][BUG修复][/HEADING]
-[LIST]
-
 [*]BDS bugs
 [LIST]
-[*]异常移动时崩溃的错误
-[*]钓鱼钩在折跃门时传送造成的崩溃
-[*]服务器关闭时造成的概率性崩溃[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/428']#428[/URL]
-[/LIST]
-
-[*]LL bugs
-[LIST]
-[*]处理LoadLibrary错误
-[*]当目录"./plugins "不存在时造成PreLoader崩溃
-[*]CompoundTag::fromNetworkNBT
-[*]PlayerLeftEvent包含模拟玩家离开
-[*]模拟玩家的PlayerAPI
-[/LIST]
-
-[*]DB bugs
-[LIST]
-[*]DB::MyStmt::bind 的bug
-[*]DB::MyStmt复制数据的bug
+[*]装备带荆棘附魔的两个玩家相互攻击使服务端崩溃
 [/LIST]
 
 [*]LLSE bugs
 [LIST]
-[*]mc.spwnSimulatedPlayer的位置错误问题
-[*]File API的返回值错误的问题，[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/429']#429[/URL]
-[*]file.read内存泄漏
-[*]file.WriteMode和writeSync的错误，[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/431']#431[/URL]
-[*]logger堆栈溢出
-[*]WebSocket崩溃
-[*]"在空全局上获取 "或其他错误
-[*]simulateAttack参数
-[*]simulateDestory错误输出
-[*]simulateNavigateTo位置参数
-[*]远程调用API位置类型错误
-[*]simulateLocalMove错误
-[*]simulateLookAt错误
+[*]sp.simulateWorldMove
+[*]sp.simulateWorldMove
 [/LIST]
-
-[/LIST]
-
 
