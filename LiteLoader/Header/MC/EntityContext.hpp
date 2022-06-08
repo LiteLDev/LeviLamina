@@ -6,7 +6,6 @@ template <>
 class WeakRefT<struct EntityRefTraits>
 {
     char filler[24];
-    WeakRefT<struct EntityRefTraits>();
 };
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
