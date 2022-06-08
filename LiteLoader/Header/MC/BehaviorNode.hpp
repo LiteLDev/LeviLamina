@@ -25,8 +25,6 @@ public:
     /*0*/ virtual ~BehaviorNode();
     /*1*/ virtual void __unk_vfn_1() = 0;
     /*2*/ virtual void initializeFromDefinition(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORNODE
-#endif
     MCAPI BehaviorNode();
     MCAPI class BehaviorData & getBehaviorData();
 

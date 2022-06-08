@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTACTORDEFINITIONFEEDITEM
-#endif
     MCAPI static class Scripting::ClassBindingBuilder<struct ActorDefinitionFeedItem> bind(struct Scripting::Version);
 
 protected:

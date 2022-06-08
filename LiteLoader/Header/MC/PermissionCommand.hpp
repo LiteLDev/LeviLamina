@@ -26,8 +26,6 @@ public:
 public:
     /*0*/ virtual ~PermissionCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERMISSIONCOMMAND
-#endif
     MCAPI static void setup(class CommandRegistry &, class PermissionsFile *);
 
 protected:

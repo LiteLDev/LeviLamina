@@ -73,9 +73,13 @@ public:
     /*188*/ virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PISTONARMBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (PistonArmBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@PistonArmBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI PistonArmBlock(std::string const &, int, enum PistonBlock::Type);
 
 protected:

@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTVECTOR
-#endif
     MCAPI ScriptVector(class Vec3 const &);
     MCAPI class ScriptVector normalized() const;
     MCAPI bool operator==(class ScriptVector const &) const;

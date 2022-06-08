@@ -24,8 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlockRecordPlayerComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKRECORDPLAYERCOMPONENT
-#endif
     MCAPI ScriptBlockRecordPlayerComponent(class ScriptBlockRecordPlayerComponent const &);
     MCAPI ScriptBlockRecordPlayerComponent(class ScriptBlockRecordPlayerComponent &&);
     MCAPI class ScriptBlockRecordPlayerComponent & operator=(class ScriptBlockRecordPlayerComponent &&);

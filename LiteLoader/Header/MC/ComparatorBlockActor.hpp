@@ -37,8 +37,6 @@ public:
     /*33*/ virtual void __unk_vfn_33();
     /*37*/ virtual int getOutputSignal();
     /*38*/ virtual void setOutputSignal(int);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPARATORBLOCKACTOR
-#endif
     MCAPI ComparatorBlockActor(class BlockPos const &);
 
 protected:

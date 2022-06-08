@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATURETOGGLES
-#endif
     MCAPI FeatureToggles(class AppPlatform &);
     MCAPI class Option * get(enum FeatureOptionID);
     MCAPI bool isEnabled(enum FeatureOptionID) const;

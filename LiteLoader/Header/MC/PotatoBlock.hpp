@@ -64,8 +64,6 @@ public:
     /*204*/ virtual class ItemInstance const getBaseSeed() const;
     /*205*/ virtual class ItemInstance const getBaseCrop() const;
     /*207*/ virtual int getCropNum(class Randomize &, int, int) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_POTATOBLOCK
-#endif
     MCAPI PotatoBlock(std::string const &, int);
 
 protected:

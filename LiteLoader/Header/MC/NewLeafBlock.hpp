@@ -65,8 +65,6 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual class ItemInstance getExtraResourceItem(class Block const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NEWLEAFBLOCK
-#endif
     MCAPI NewLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
 
 protected:

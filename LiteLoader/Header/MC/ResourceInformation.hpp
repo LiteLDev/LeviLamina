@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEINFORMATION
-#endif
     MCAPI ResourceInformation(class ResourceInformation const &);
     MCAPI ResourceInformation(std::string const &, class SemVersion const &, class mce::UUID const &, std::string const &, std::string const &, std::string const &);
     MCAPI ResourceInformation(std::string const &, class SemVersion const &, class mce::UUID const &, enum ResourceInformation::ResourceType, std::string const &, std::string const &);

@@ -24,8 +24,6 @@ public:
 public:
     /*0*/ virtual ~LootCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTCOMMAND
-#endif
     MCAPI class ItemStack getToolItemStack(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI static void setup(class CommandRegistry &);
 

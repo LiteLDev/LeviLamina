@@ -33,8 +33,6 @@ public:
     /*9*/ virtual void stop(class NavigationComponent &, class Mob &);
     /*11*/ virtual bool canUpdatePath(class Mob const &) const;
     /*12*/ virtual void updatePath(class NavigationComponent &, class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOVERPATHNAVIGATION
-#endif
 
 protected:
 

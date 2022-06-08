@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BURNODDS
-#endif
     MCAPI static class BurnOdds const EASY;
     MCAPI static class BurnOdds const HARD;
     MCAPI static class BurnOdds const INSTANT;

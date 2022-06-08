@@ -35,8 +35,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMREGISTRY
-#endif
     MCAPI static class gsl::basic_string_span<char const, -1> const MINECRAFT_NAMESPACE;
     MCAPI static std::string _parseItemDefinition(std::string const &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum ItemVersion, enum PackType);
     MCAPI static void alterAvailableCreativeItems(class ActorInfoRegistry *, class LevelData &);

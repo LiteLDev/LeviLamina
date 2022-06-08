@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATEDIMAGEDATA
-#endif
     MCAPI AnimatedImageData(class AnimatedImageData const &);
     MCAPI AnimatedImageData(enum persona::AnimatedTextureType, enum persona::AnimationExpression, struct mce::Image const &, float);
 

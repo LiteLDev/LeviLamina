@@ -39,10 +39,18 @@ public:
     /*3*/ virtual void postLoadItems(class BlockPalette &, bool);
     /*4*/ virtual enum InventoryTransactionError handle(class Player &, bool) const;
     /*5*/ virtual void onTransactionError(class Player &, enum InventoryTransactionError) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPLEXINVENTORYTRANSACTION
-    MCVAPI void read(class ReadOnlyBinaryStream &);
-    MCVAPI void write(class BinaryStream &) const;
-#endif
+    /*
+    inline void write(class BinaryStream & a0) const{
+        void (ComplexInventoryTransaction::*rv)(class BinaryStream &) const;
+        *((void**)&rv) = dlsym("?write@ComplexInventoryTransaction@@UEBAXAEAVBinaryStream@@@Z");
+        return (this->*rv)(std::forward<class BinaryStream &>(a0));
+    }
+    inline void read(class ReadOnlyBinaryStream & a0){
+        void (ComplexInventoryTransaction::*rv)(class ReadOnlyBinaryStream &);
+        *((void**)&rv) = dlsym("?read@ComplexInventoryTransaction@@UEAAXAEAVReadOnlyBinaryStream@@@Z");
+        return (this->*rv)(std::forward<class ReadOnlyBinaryStream &>(a0));
+    }
+    */
     MCAPI ComplexInventoryTransaction(enum ComplexInventoryTransaction::Type);
     MCAPI ComplexInventoryTransaction(enum ComplexInventoryTransaction::Type, class InventoryTransaction const &);
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum ComplexInventoryTransaction::Type);

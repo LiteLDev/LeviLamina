@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMSTACK
-#endif
     MCAPI ScriptItemStack(class ScriptItemStack &&);
     MCAPI ScriptItemStack(class ScriptItemStack const &);
     MCAPI ScriptItemStack(class ItemStackBase const &);

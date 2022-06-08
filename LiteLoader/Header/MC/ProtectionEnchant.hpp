@@ -35,9 +35,13 @@ public:
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROTECTIONENCHANT
-    MCVAPI bool isProtectionEnchant() const;
-#endif
+    /*
+    inline bool isProtectionEnchant() const{
+        bool (ProtectionEnchant::*rv)() const;
+        *((void**)&rv) = dlsym("?isProtectionEnchant@ProtectionEnchant@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ProtectionEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
 
 protected:

@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESETEVENTOBJ
-#endif
     MCAPI ResetEventObj(bool, bool);
     MCAPI void set();
     MCAPI void wait();

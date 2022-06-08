@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSOLEINPUTREADER
-#endif
     MCAPI ConsoleInputReader();
     MCAPI bool getLine(std::string &);
     MCAPI void unblockReading();

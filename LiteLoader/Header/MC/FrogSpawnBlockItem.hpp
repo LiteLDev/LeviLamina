@@ -40,8 +40,6 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*126*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FROGSPAWNBLOCKITEM
-#endif
     MCAPI FrogSpawnBlockItem(std::string const &, int);
 
 protected:

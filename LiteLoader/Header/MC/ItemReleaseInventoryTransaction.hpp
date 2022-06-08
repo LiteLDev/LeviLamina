@@ -29,8 +29,6 @@ public:
     /*3*/ virtual void postLoadItems(class BlockPalette &, bool);
     /*4*/ virtual enum InventoryTransactionError handle(class Player &, bool) const;
     /*5*/ virtual void onTransactionError(class Player &, enum InventoryTransactionError) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMRELEASEINVENTORYTRANSACTION
-#endif
 
 protected:
 

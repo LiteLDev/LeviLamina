@@ -327,28 +327,108 @@ public:
     /*443*/ virtual struct PlayerMovementSettings const & getMovementSettings() const;
     /*444*/ virtual void onMovePlayerPacketNormal(class Vec3 const &, class Vec2 const &, float);
     /*445*/ virtual class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYER
-    MCVAPI void displayChatMessage(std::string const &, std::string const &);
-    MCVAPI void displayClientMessage(std::string const &);
-    MCVAPI bool getAlwaysShowNameTag() const;
-    MCVAPI enum StructureFeatureType getCurrentStructureFeature() const;
-    MCVAPI unsigned int getUserId() const;
-    MCVAPI bool isAutoJumpEnabled() const;
-    MCVAPI bool isCreativeModeAllowed();
-    MCVAPI bool isInTrialMode();
-    MCVAPI bool isLocalPlayer() const;
-    MCVAPI bool isPlayer() const;
-    MCVAPI bool isShootable();
-    MCVAPI bool isSimulated() const;
-    MCVAPI void openBook(int, bool, int, class BlockActor *);
-    MCVAPI void openChalkboard(class ChalkboardBlockActor &, bool);
-    MCVAPI void openPortfolio();
-    MCVAPI void openSign(class BlockPos const &);
-    MCVAPI void playEmote(std::string const &);
-    MCVAPI void resetRot();
-    MCVAPI void stopLoading();
-    MCVAPI bool useNewAi() const;
-#endif
+    /*
+    inline enum StructureFeatureType getCurrentStructureFeature() const{
+        enum StructureFeatureType (Player::*rv)() const;
+        *((void**)&rv) = dlsym("?getCurrentStructureFeature@Player@@UEBA?AW4StructureFeatureType@@XZ");
+        return (this->*rv)();
+    }
+    inline bool isInTrialMode(){
+        bool (Player::*rv)();
+        *((void**)&rv) = dlsym("?isInTrialMode@Player@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool useNewAi() const{
+        bool (Player::*rv)() const;
+        *((void**)&rv) = dlsym("?useNewAi@Player@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isSimulated() const{
+        bool (Player::*rv)() const;
+        *((void**)&rv) = dlsym("?isSimulated@Player@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isLocalPlayer() const{
+        bool (Player::*rv)() const;
+        *((void**)&rv) = dlsym("?isLocalPlayer@Player@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline unsigned int getUserId() const{
+        unsigned int (Player::*rv)() const;
+        *((void**)&rv) = dlsym("?getUserId@Player@@UEBAIXZ");
+        return (this->*rv)();
+    }
+    inline bool isPlayer() const{
+        bool (Player::*rv)() const;
+        *((void**)&rv) = dlsym("?isPlayer@Player@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isAutoJumpEnabled() const{
+        bool (Player::*rv)() const;
+        *((void**)&rv) = dlsym("?isAutoJumpEnabled@Player@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isCreativeModeAllowed(){
+        bool (Player::*rv)();
+        *((void**)&rv) = dlsym("?isCreativeModeAllowed@Player@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isShootable(){
+        bool (Player::*rv)();
+        *((void**)&rv) = dlsym("?isShootable@Player@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool getAlwaysShowNameTag() const{
+        bool (Player::*rv)() const;
+        *((void**)&rv) = dlsym("?getAlwaysShowNameTag@Player@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline void displayChatMessage(std::string const & a0, std::string const & a1){
+        void (Player::*rv)(std::string const &, std::string const &);
+        *((void**)&rv) = dlsym("?displayChatMessage@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<std::string const &>(a1));
+    }
+    inline void openChalkboard(class ChalkboardBlockActor & a0, bool a1){
+        void (Player::*rv)(class ChalkboardBlockActor &, bool);
+        *((void**)&rv) = dlsym("?openChalkboard@Player@@UEAAXAEAVChalkboardBlockActor@@_N@Z");
+        return (this->*rv)(std::forward<class ChalkboardBlockActor &>(a0), std::forward<bool>(a1));
+    }
+    inline void openBook(int a0, bool a1, int a2, class BlockActor * a3){
+        void (Player::*rv)(int, bool, int, class BlockActor *);
+        *((void**)&rv) = dlsym("?openBook@Player@@UEAAXH_NHPEAVBlockActor@@@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<bool>(a1), std::forward<int>(a2), std::forward<class BlockActor *>(a3));
+    }
+    inline void displayClientMessage(std::string const & a0){
+        void (Player::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?displayClientMessage@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline void playEmote(std::string const & a0){
+        void (Player::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?playEmote@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline void openSign(class BlockPos const & a0){
+        void (Player::*rv)(class BlockPos const &);
+        *((void**)&rv) = dlsym("?openSign@Player@@UEAAXAEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0));
+    }
+    inline void resetRot(){
+        void (Player::*rv)();
+        *((void**)&rv) = dlsym("?resetRot@Player@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void openPortfolio(){
+        void (Player::*rv)();
+        *((void**)&rv) = dlsym("?openPortfolio@Player@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void stopLoading(){
+        void (Player::*rv)();
+        *((void**)&rv) = dlsym("?stopLoading@Player@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI Player(class Level &, class PacketSender &, enum GameType, class NetworkIdentifier const &, unsigned char, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>, class EntityContext &, std::string const &, std::string const &);
     MCAPI void applyExhaustion(class Vec3 const &);
     MCAPI void broadcastPlayerSpawnedMobEvent(enum ActorType, enum MobSpawnMethod);

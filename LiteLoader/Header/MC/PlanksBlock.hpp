@@ -63,8 +63,6 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLANKSBLOCK
-#endif
     MCAPI PlanksBlock(std::string const &, int);
     MCAPI static class std::array<std::string, 6> const WOOD_NAMES;
     MCAPI static bool isValidWoodMaterial(int);

@@ -35,199 +35,963 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual class GameSpecificNetEventCallback * getGameSpecificNetEventCallback();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETEVENTCALLBACK
-    MCVAPI void handle(class NetworkIdentifier const &, class MapInfoRequestPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class BlockEventPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SetDefaultGameTypePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class CraftingEventPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class CompletedUsingItemPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class MobEquipmentPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ItemComponentPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class PlayStatusPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ClientCacheBlobStatusPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class TickingAreasLoadStatusPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class LoginPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class LevelSoundEventPacketV1 const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class MoveActorAbsolutePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class LabTablePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class DimensionDataPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ServerSettingsResponsePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class LevelEventPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class PlayerListPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class PlayerInputPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class PassengerJumpPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class PlayerEnchantOptionsPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class AddBehaviorTreePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class PurchaseReceiptPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ScriptMessagePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class GuiDataPickItemPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ChangeDimensionPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class CommandBlockUpdatePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class PositionTrackingDBClientRequestPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class NetworkStackLatencyPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SpawnExperienceOrbPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class AnimatePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ResourcePackStackPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ActorPickRequestPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SubChunkPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class PlayerAuthInputPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class MovePlayerPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class TakeItemActorPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class EmoteListPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class StructureTemplateDataRequestPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class CorrectPlayerMovePredictionPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ServerSettingsRequestPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SetCommandsEnabledPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SetPlayerGameTypePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ActorEventPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class AgentActionEventPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ClientboundMapItemDataPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SetActorDataPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class MobArmorEquipmentPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SetDifficultyPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class UpdateSoftEnumPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class DebugInfoPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class MoveActorDeltaPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class BookSignPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class CraftingDataPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class StructureTemplateDataResponsePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class TickSyncPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class EducationSettingsPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class CameraPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class CommandRequestPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class AddVolumeEntityPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class RemoveObjectivePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class LecternUpdatePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class InventoryContentPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class MultiplayerSettingsPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class InventorySlotPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SetLastHurtByPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SetActorMotionPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class UpdateEquipPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class PlayerArmorDamagePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class NpcDialoguePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class AddPlayerPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class PlayerActionPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class AnvilDamagePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class CreativeContentPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class AddItemActorPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ResourcePackChunkRequestPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class MobEffectPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class NetworkSettingsPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ResourcePacksInfoPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class AvailableActorIdentifiersPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SetLocalPlayerAsInitializedPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class AddEntityPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class TextPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ItemStackResponsePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SetSpawnPositionPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ResourcePackDataInfoPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class BookAddPagePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class CameraShakePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ContainerOpenPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ClientToServerHandshakePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ModalFormResponsePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class PhotoTransferPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ServerToClientHandshakePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class LevelEventGenericPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class NetworkChunkPublisherUpdatePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ItemFrameDropItemPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class AvailableCommandsPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SetActorLinkPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class RemoveVolumeEntityPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class CreatePhotoPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class AddMobPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ChangeMobPropertyPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ShowStoreOfferPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class DisconnectPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class CommandOutputPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class LevelSoundEventPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SetScoreboardIdentityPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class PlayerFogPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SimpleEventPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class PlayerSkinPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class AdventureSettingsPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class LevelSoundEventPacketV2 const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class AnimateEntityPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class AutomationClientConnectPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class EventPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ItemStackRequestPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ContainerClosePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class MapCreateLockedCopyPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class BiomeDefinitionListPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class FilterTextPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class UpdateSubChunkBlocksPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SetTitlePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class StartGamePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class BlockPickRequestPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ResourcePackChunkDataPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SetDisplayObjectivePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ClientCacheStatusPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ClientboundDebugRendererPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class BookEditPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class BookSwapPagesPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class MotionPredictionHintsPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SimulationTypePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ContainerSetDataPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class InventoryActionPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ChunkRadiusUpdatedPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class RemoveActorPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SetScorePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class RequestChunkRadiusPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class RespawnPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class AddActorPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class GameRulesChangedPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class EduUriResourcePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class OnScreenTextureAnimationPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SettingsCommandPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ModalFormRequestPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SpawnParticleEffectPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class NpcRequestPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class InteractPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SubClientLoginPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class PlaySoundPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class StopSoundPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class UpdateAttributesPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class StructureBlockUpdatePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class PositionTrackingDBServerBroadcastPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class PlayerStartItemCooldownPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SyncActorPropertyPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ShowCreditsPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SubChunkRequestPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class CodeBuilderSourcePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class BookDeletePagePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class UpdateTradePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class InventoryTransactionPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class UpdatePlayerGameTypePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class RemoveEntityPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SetTimePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ActorFallPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class PacketViolationWarningPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class BossEventPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class TransferPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ShowProfilePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class EmotePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ScriptCustomEventPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class SetHealthPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class AddPaintingPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class HurtArmorPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class CodeBuilderPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class PlayerHotbarPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class ClientCacheMissResponsePacket>);
-    MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class UpdateBlockSyncedPacket>);
-    MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class UpdateBlockPacket>);
-    MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class BlockActorDataPacket>);
-    MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class LevelChunkPacket>);
-    MCVAPI void onConnect(class NetworkIdentifier const &);
-    MCVAPI void onDisconnect(class NetworkIdentifier const &, std::string const &, bool, std::string const &);
-    MCVAPI void onPlayerReady(class Player &);
-    MCVAPI void onStoreOfferReceive(bool, std::string const &);
-    MCVAPI void onTick();
-    MCVAPI void onTransferRequest(class NetworkIdentifier const &, std::string const &, int);
-    MCVAPI void onUnableToConnect();
-    MCVAPI void sendPacketViolationDetectedTelemetryData(struct ExtendedStreamReadResult const &, enum PacketViolationResponse, enum MinecraftPacketIds, class NetworkIdentifier const &);
-#endif
+    /*
+    inline void handle(class NetworkIdentifier const & a0, class MapInfoRequestPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class MapInfoRequestPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMapInfoRequestPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class MapInfoRequestPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class BlockEventPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class BlockEventPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVBlockEventPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class BlockEventPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SetDefaultGameTypePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SetDefaultGameTypePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetDefaultGameTypePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SetDefaultGameTypePacket const &>(a1));
+    }
+    inline void onTick(){
+        void (NetEventCallback::*rv)();
+        *((void**)&rv) = dlsym("?onTick@NetEventCallback@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void handle(class NetworkIdentifier const & a0, class CraftingEventPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class CraftingEventPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCraftingEventPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class CraftingEventPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class CompletedUsingItemPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class CompletedUsingItemPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCompletedUsingItemPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class CompletedUsingItemPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class MobEquipmentPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class MobEquipmentPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMobEquipmentPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class MobEquipmentPacket const &>(a1));
+    }
+    inline void onDisconnect(class NetworkIdentifier const & a0, std::string const & a1, bool a2, std::string const & a3){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, std::string const &, bool, std::string const &);
+        *((void**)&rv) = dlsym("?onDisconnect@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<std::string const &>(a1), std::forward<bool>(a2), std::forward<std::string const &>(a3));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ItemComponentPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ItemComponentPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVItemComponentPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ItemComponentPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class PlayStatusPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class PlayStatusPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayStatusPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class PlayStatusPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ClientCacheBlobStatusPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ClientCacheBlobStatusPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVClientCacheBlobStatusPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ClientCacheBlobStatusPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class TickingAreasLoadStatusPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class TickingAreasLoadStatusPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVTickingAreasLoadStatusPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class TickingAreasLoadStatusPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class LoginPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class LoginPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVLoginPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class LoginPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class LevelSoundEventPacketV1 const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class LevelSoundEventPacketV1 const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVLevelSoundEventPacketV1@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class LevelSoundEventPacketV1 const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class MoveActorAbsolutePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class MoveActorAbsolutePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMoveActorAbsolutePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class MoveActorAbsolutePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class LabTablePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class LabTablePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVLabTablePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class LabTablePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class DimensionDataPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class DimensionDataPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVDimensionDataPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class DimensionDataPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ServerSettingsResponsePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ServerSettingsResponsePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVServerSettingsResponsePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ServerSettingsResponsePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class LevelEventPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class LevelEventPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVLevelEventPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class LevelEventPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class PlayerListPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class PlayerListPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerListPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class PlayerListPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class PlayerInputPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class PlayerInputPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerInputPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class PlayerInputPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class PassengerJumpPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class PassengerJumpPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPassengerJumpPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class PassengerJumpPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class PlayerEnchantOptionsPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class PlayerEnchantOptionsPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerEnchantOptionsPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class PlayerEnchantOptionsPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class AddBehaviorTreePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class AddBehaviorTreePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAddBehaviorTreePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class AddBehaviorTreePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class PurchaseReceiptPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class PurchaseReceiptPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPurchaseReceiptPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class PurchaseReceiptPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ScriptMessagePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ScriptMessagePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVScriptMessagePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ScriptMessagePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class GuiDataPickItemPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class GuiDataPickItemPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVGuiDataPickItemPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class GuiDataPickItemPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ChangeDimensionPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ChangeDimensionPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVChangeDimensionPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ChangeDimensionPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class CommandBlockUpdatePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class CommandBlockUpdatePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCommandBlockUpdatePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class CommandBlockUpdatePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class PositionTrackingDBClientRequestPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class PositionTrackingDBClientRequestPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPositionTrackingDBClientRequestPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class PositionTrackingDBClientRequestPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class NetworkStackLatencyPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class NetworkStackLatencyPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVNetworkStackLatencyPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class NetworkStackLatencyPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SpawnExperienceOrbPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SpawnExperienceOrbPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSpawnExperienceOrbPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SpawnExperienceOrbPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class AnimatePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class AnimatePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAnimatePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class AnimatePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ResourcePackStackPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ResourcePackStackPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackStackPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ResourcePackStackPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ActorPickRequestPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ActorPickRequestPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVActorPickRequestPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ActorPickRequestPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SubChunkPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SubChunkPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSubChunkPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SubChunkPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class PlayerAuthInputPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class PlayerAuthInputPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerAuthInputPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class PlayerAuthInputPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class MovePlayerPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class MovePlayerPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMovePlayerPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class MovePlayerPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class TakeItemActorPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class TakeItemActorPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVTakeItemActorPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class TakeItemActorPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class EmoteListPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class EmoteListPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVEmoteListPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class EmoteListPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class StructureTemplateDataRequestPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class StructureTemplateDataRequestPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVStructureTemplateDataRequestPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class StructureTemplateDataRequestPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class CorrectPlayerMovePredictionPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class CorrectPlayerMovePredictionPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCorrectPlayerMovePredictionPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class CorrectPlayerMovePredictionPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ServerSettingsRequestPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ServerSettingsRequestPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVServerSettingsRequestPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ServerSettingsRequestPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SetCommandsEnabledPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SetCommandsEnabledPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetCommandsEnabledPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SetCommandsEnabledPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SetPlayerGameTypePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SetPlayerGameTypePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetPlayerGameTypePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SetPlayerGameTypePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ActorEventPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ActorEventPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVActorEventPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ActorEventPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class AgentActionEventPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class AgentActionEventPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAgentActionEventPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class AgentActionEventPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ClientboundMapItemDataPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ClientboundMapItemDataPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVClientboundMapItemDataPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ClientboundMapItemDataPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SetActorDataPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SetActorDataPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetActorDataPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SetActorDataPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class MobArmorEquipmentPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class MobArmorEquipmentPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMobArmorEquipmentPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class MobArmorEquipmentPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SetDifficultyPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SetDifficultyPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetDifficultyPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SetDifficultyPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class UpdateSoftEnumPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class UpdateSoftEnumPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVUpdateSoftEnumPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class UpdateSoftEnumPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class DebugInfoPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class DebugInfoPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVDebugInfoPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class DebugInfoPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class MoveActorDeltaPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class MoveActorDeltaPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMoveActorDeltaPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class MoveActorDeltaPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class BookSignPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class BookSignPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVBookSignPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class BookSignPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class CraftingDataPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class CraftingDataPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCraftingDataPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class CraftingDataPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class StructureTemplateDataResponsePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class StructureTemplateDataResponsePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVStructureTemplateDataResponsePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class StructureTemplateDataResponsePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class TickSyncPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class TickSyncPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVTickSyncPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class TickSyncPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class EducationSettingsPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class EducationSettingsPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVEducationSettingsPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class EducationSettingsPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class CameraPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class CameraPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCameraPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class CameraPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class CommandRequestPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class CommandRequestPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCommandRequestPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class CommandRequestPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class AddVolumeEntityPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class AddVolumeEntityPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAddVolumeEntityPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class AddVolumeEntityPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class RemoveObjectivePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class RemoveObjectivePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVRemoveObjectivePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class RemoveObjectivePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class LecternUpdatePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class LecternUpdatePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVLecternUpdatePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class LecternUpdatePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class InventoryContentPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class InventoryContentPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryContentPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class InventoryContentPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class MultiplayerSettingsPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class MultiplayerSettingsPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMultiplayerSettingsPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class MultiplayerSettingsPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class InventorySlotPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class InventorySlotPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVInventorySlotPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class InventorySlotPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SetLastHurtByPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SetLastHurtByPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetLastHurtByPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SetLastHurtByPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SetActorMotionPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SetActorMotionPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetActorMotionPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SetActorMotionPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class UpdateEquipPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class UpdateEquipPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVUpdateEquipPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class UpdateEquipPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class PlayerArmorDamagePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class PlayerArmorDamagePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerArmorDamagePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class PlayerArmorDamagePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class NpcDialoguePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class NpcDialoguePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVNpcDialoguePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class NpcDialoguePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class AddPlayerPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class AddPlayerPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAddPlayerPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class AddPlayerPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class PlayerActionPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class PlayerActionPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerActionPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class PlayerActionPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class AnvilDamagePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class AnvilDamagePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAnvilDamagePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class AnvilDamagePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class CreativeContentPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class CreativeContentPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCreativeContentPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class CreativeContentPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class AddItemActorPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class AddItemActorPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAddItemActorPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class AddItemActorPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ResourcePackClientResponsePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackClientResponsePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ResourcePackClientResponsePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ResourcePackChunkRequestPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ResourcePackChunkRequestPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackChunkRequestPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ResourcePackChunkRequestPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class MobEffectPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class MobEffectPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMobEffectPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class MobEffectPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class NetworkSettingsPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class NetworkSettingsPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVNetworkSettingsPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class NetworkSettingsPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ResourcePacksInfoPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ResourcePacksInfoPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePacksInfoPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ResourcePacksInfoPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class AvailableActorIdentifiersPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class AvailableActorIdentifiersPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAvailableActorIdentifiersPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class AvailableActorIdentifiersPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SetLocalPlayerAsInitializedPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SetLocalPlayerAsInitializedPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetLocalPlayerAsInitializedPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SetLocalPlayerAsInitializedPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class AddEntityPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class AddEntityPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAddEntityPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class AddEntityPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class TextPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class TextPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVTextPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class TextPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ItemStackResponsePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ItemStackResponsePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVItemStackResponsePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ItemStackResponsePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SetSpawnPositionPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SetSpawnPositionPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetSpawnPositionPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SetSpawnPositionPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ResourcePackDataInfoPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ResourcePackDataInfoPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackDataInfoPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ResourcePackDataInfoPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class BookAddPagePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class BookAddPagePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVBookAddPagePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class BookAddPagePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class CameraShakePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class CameraShakePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCameraShakePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class CameraShakePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ContainerOpenPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ContainerOpenPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVContainerOpenPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ContainerOpenPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ClientToServerHandshakePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ClientToServerHandshakePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVClientToServerHandshakePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ClientToServerHandshakePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ModalFormResponsePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ModalFormResponsePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVModalFormResponsePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ModalFormResponsePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class PhotoTransferPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class PhotoTransferPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPhotoTransferPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class PhotoTransferPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ServerToClientHandshakePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ServerToClientHandshakePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVServerToClientHandshakePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ServerToClientHandshakePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class LevelEventGenericPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class LevelEventGenericPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVLevelEventGenericPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class LevelEventGenericPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class NetworkChunkPublisherUpdatePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class NetworkChunkPublisherUpdatePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVNetworkChunkPublisherUpdatePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class NetworkChunkPublisherUpdatePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ItemFrameDropItemPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ItemFrameDropItemPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVItemFrameDropItemPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ItemFrameDropItemPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class AvailableCommandsPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class AvailableCommandsPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAvailableCommandsPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class AvailableCommandsPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SetActorLinkPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SetActorLinkPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetActorLinkPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SetActorLinkPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class RemoveVolumeEntityPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class RemoveVolumeEntityPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVRemoveVolumeEntityPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class RemoveVolumeEntityPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class CreatePhotoPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class CreatePhotoPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCreatePhotoPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class CreatePhotoPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class AddMobPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class AddMobPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAddMobPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class AddMobPacket const &>(a1));
+    }
+    inline void onTransferRequest(class NetworkIdentifier const & a0, std::string const & a1, int a2){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, std::string const &, int);
+        *((void**)&rv) = dlsym("?onTransferRequest@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<std::string const &>(a1), std::forward<int>(a2));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ChangeMobPropertyPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ChangeMobPropertyPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVChangeMobPropertyPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ChangeMobPropertyPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ShowStoreOfferPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ShowStoreOfferPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVShowStoreOfferPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ShowStoreOfferPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class DisconnectPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class DisconnectPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class DisconnectPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class CommandOutputPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class CommandOutputPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCommandOutputPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class CommandOutputPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class LevelSoundEventPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class LevelSoundEventPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVLevelSoundEventPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class LevelSoundEventPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SetScoreboardIdentityPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SetScoreboardIdentityPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetScoreboardIdentityPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SetScoreboardIdentityPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class PlayerFogPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class PlayerFogPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerFogPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class PlayerFogPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SimpleEventPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SimpleEventPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSimpleEventPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SimpleEventPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class PlayerSkinPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class PlayerSkinPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerSkinPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class PlayerSkinPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class AdventureSettingsPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class AdventureSettingsPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAdventureSettingsPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class AdventureSettingsPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class LevelSoundEventPacketV2 const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class LevelSoundEventPacketV2 const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVLevelSoundEventPacketV2@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class LevelSoundEventPacketV2 const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class AnimateEntityPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class AnimateEntityPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAnimateEntityPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class AnimateEntityPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class AutomationClientConnectPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class AutomationClientConnectPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAutomationClientConnectPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class AutomationClientConnectPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class EventPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class EventPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVEventPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class EventPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ItemStackRequestPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ItemStackRequestPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVItemStackRequestPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ItemStackRequestPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ContainerClosePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ContainerClosePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVContainerClosePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ContainerClosePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class MapCreateLockedCopyPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class MapCreateLockedCopyPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMapCreateLockedCopyPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class MapCreateLockedCopyPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class BiomeDefinitionListPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class BiomeDefinitionListPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVBiomeDefinitionListPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class BiomeDefinitionListPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class FilterTextPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class FilterTextPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVFilterTextPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class FilterTextPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class UpdateSubChunkBlocksPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class UpdateSubChunkBlocksPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVUpdateSubChunkBlocksPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class UpdateSubChunkBlocksPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SetTitlePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SetTitlePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetTitlePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SetTitlePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class StartGamePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class StartGamePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVStartGamePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class StartGamePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class BlockPickRequestPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class BlockPickRequestPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVBlockPickRequestPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class BlockPickRequestPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ResourcePackChunkDataPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ResourcePackChunkDataPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackChunkDataPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ResourcePackChunkDataPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SetDisplayObjectivePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SetDisplayObjectivePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetDisplayObjectivePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SetDisplayObjectivePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ClientCacheStatusPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ClientCacheStatusPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVClientCacheStatusPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ClientCacheStatusPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ClientboundDebugRendererPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ClientboundDebugRendererPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVClientboundDebugRendererPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ClientboundDebugRendererPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class BookEditPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class BookEditPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVBookEditPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class BookEditPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class BookSwapPagesPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class BookSwapPagesPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVBookSwapPagesPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class BookSwapPagesPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class MotionPredictionHintsPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class MotionPredictionHintsPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMotionPredictionHintsPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class MotionPredictionHintsPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SimulationTypePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SimulationTypePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSimulationTypePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SimulationTypePacket const &>(a1));
+    }
+    inline void sendPacketViolationDetectedTelemetryData(struct ExtendedStreamReadResult const & a0, enum PacketViolationResponse a1, enum MinecraftPacketIds a2, class NetworkIdentifier const & a3){
+        void (NetEventCallback::*rv)(struct ExtendedStreamReadResult const &, enum PacketViolationResponse, enum MinecraftPacketIds, class NetworkIdentifier const &);
+        *((void**)&rv) = dlsym("?sendPacketViolationDetectedTelemetryData@NetEventCallback@@UEAAXAEBUExtendedStreamReadResult@@W4PacketViolationResponse@@W4MinecraftPacketIds@@AEBVNetworkIdentifier@@@Z");
+        return (this->*rv)(std::forward<struct ExtendedStreamReadResult const &>(a0), std::forward<enum PacketViolationResponse>(a1), std::forward<enum MinecraftPacketIds>(a2), std::forward<class NetworkIdentifier const &>(a3));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ContainerSetDataPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ContainerSetDataPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVContainerSetDataPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ContainerSetDataPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class InventoryActionPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class InventoryActionPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryActionPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class InventoryActionPacket const &>(a1));
+    }
+    inline void onUnableToConnect(){
+        void (NetEventCallback::*rv)();
+        *((void**)&rv) = dlsym("?onUnableToConnect@NetEventCallback@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ChunkRadiusUpdatedPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ChunkRadiusUpdatedPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVChunkRadiusUpdatedPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ChunkRadiusUpdatedPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class RemoveActorPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class RemoveActorPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVRemoveActorPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class RemoveActorPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SetScorePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SetScorePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetScorePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SetScorePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class RequestChunkRadiusPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class RequestChunkRadiusPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVRequestChunkRadiusPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class RequestChunkRadiusPacket const &>(a1));
+    }
+    inline void onConnect(class NetworkIdentifier const & a0){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &);
+        *((void**)&rv) = dlsym("?onConnect@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class RespawnPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class RespawnPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVRespawnPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class RespawnPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class AddActorPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class AddActorPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAddActorPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class AddActorPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class GameRulesChangedPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class GameRulesChangedPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVGameRulesChangedPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class GameRulesChangedPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class EduUriResourcePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class EduUriResourcePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVEduUriResourcePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class EduUriResourcePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class OnScreenTextureAnimationPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class OnScreenTextureAnimationPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVOnScreenTextureAnimationPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class OnScreenTextureAnimationPacket const &>(a1));
+    }
+    inline void onStoreOfferReceive(bool a0, std::string const & a1){
+        void (NetEventCallback::*rv)(bool, std::string const &);
+        *((void**)&rv) = dlsym("?onStoreOfferReceive@NetEventCallback@@UEAAX_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<bool>(a0), std::forward<std::string const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SettingsCommandPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SettingsCommandPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSettingsCommandPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SettingsCommandPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ModalFormRequestPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ModalFormRequestPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVModalFormRequestPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ModalFormRequestPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SpawnParticleEffectPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SpawnParticleEffectPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSpawnParticleEffectPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SpawnParticleEffectPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class NpcRequestPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class NpcRequestPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVNpcRequestPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class NpcRequestPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class InteractPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class InteractPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVInteractPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class InteractPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SubClientLoginPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SubClientLoginPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSubClientLoginPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SubClientLoginPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class PlaySoundPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class PlaySoundPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlaySoundPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class PlaySoundPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class StopSoundPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class StopSoundPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVStopSoundPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class StopSoundPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class UpdateAttributesPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class UpdateAttributesPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVUpdateAttributesPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class UpdateAttributesPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class StructureBlockUpdatePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class StructureBlockUpdatePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVStructureBlockUpdatePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class StructureBlockUpdatePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class PositionTrackingDBServerBroadcastPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class PositionTrackingDBServerBroadcastPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPositionTrackingDBServerBroadcastPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class PositionTrackingDBServerBroadcastPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class PlayerStartItemCooldownPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class PlayerStartItemCooldownPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerStartItemCooldownPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class PlayerStartItemCooldownPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SyncActorPropertyPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SyncActorPropertyPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSyncActorPropertyPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SyncActorPropertyPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ShowCreditsPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ShowCreditsPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVShowCreditsPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ShowCreditsPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SubChunkRequestPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SubChunkRequestPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSubChunkRequestPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SubChunkRequestPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class CodeBuilderSourcePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class CodeBuilderSourcePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCodeBuilderSourcePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class CodeBuilderSourcePacket const &>(a1));
+    }
+    inline void onPlayerReady(class Player & a0){
+        void (NetEventCallback::*rv)(class Player &);
+        *((void**)&rv) = dlsym("?onPlayerReady@NetEventCallback@@UEAAXAEAVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class BookDeletePagePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class BookDeletePagePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVBookDeletePagePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class BookDeletePagePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class UpdateTradePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class UpdateTradePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVUpdateTradePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class UpdateTradePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class InventoryTransactionPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class InventoryTransactionPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class InventoryTransactionPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class UpdatePlayerGameTypePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class UpdatePlayerGameTypePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVUpdatePlayerGameTypePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class UpdatePlayerGameTypePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class RemoveEntityPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class RemoveEntityPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVRemoveEntityPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class RemoveEntityPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SetTimePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SetTimePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetTimePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SetTimePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ActorFallPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ActorFallPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVActorFallPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ActorFallPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class PacketViolationWarningPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class PacketViolationWarningPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPacketViolationWarningPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class PacketViolationWarningPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class BossEventPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class BossEventPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVBossEventPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class BossEventPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class TransferPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class TransferPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVTransferPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class TransferPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ShowProfilePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ShowProfilePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVShowProfilePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ShowProfilePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class EmotePacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class EmotePacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVEmotePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class EmotePacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class ScriptCustomEventPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class ScriptCustomEventPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVScriptCustomEventPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ScriptCustomEventPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class SetHealthPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class SetHealthPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetHealthPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class SetHealthPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class AddPaintingPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class AddPaintingPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAddPaintingPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class AddPaintingPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class HurtArmorPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class HurtArmorPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVHurtArmorPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class HurtArmorPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class CodeBuilderPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class CodeBuilderPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCodeBuilderPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class CodeBuilderPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class PlayerHotbarPacket const & a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class PlayerHotbarPacket const &);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerHotbarPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class PlayerHotbarPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class std::shared_ptr<class ClientCacheMissResponsePacket> a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class std::shared_ptr<class ClientCacheMissResponsePacket>);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VClientCacheMissResponsePacket@@@std@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class std::shared_ptr<class ClientCacheMissResponsePacket>>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class std::shared_ptr<class UpdateBlockSyncedPacket> a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class std::shared_ptr<class UpdateBlockSyncedPacket>);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VUpdateBlockSyncedPacket@@@std@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class std::shared_ptr<class UpdateBlockSyncedPacket>>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class std::shared_ptr<class UpdateBlockPacket> a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class std::shared_ptr<class UpdateBlockPacket>);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VUpdateBlockPacket@@@std@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class std::shared_ptr<class UpdateBlockPacket>>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class std::shared_ptr<class BlockActorDataPacket> a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class std::shared_ptr<class BlockActorDataPacket>);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VBlockActorDataPacket@@@std@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class std::shared_ptr<class BlockActorDataPacket>>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class std::shared_ptr<class LevelChunkPacket> a1){
+        void (NetEventCallback::*rv)(class NetworkIdentifier const &, class std::shared_ptr<class LevelChunkPacket>);
+        *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VLevelChunkPacket@@@std@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class std::shared_ptr<class LevelChunkPacket>>(a1));
+    }
+    */
 
 protected:
 

@@ -56,8 +56,6 @@ public:
     /*267*/ virtual void _playStepSound(class BlockPos const &, class Block const &);
     /*269*/ virtual void __unk_vfn_269();
     /*273*/ virtual void doWaterSplashEffect();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCEORB
-#endif
     MCAPI ExperienceOrb(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI int getIconIndex() const;
     MCAPI void setValue(int);

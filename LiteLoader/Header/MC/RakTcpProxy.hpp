@@ -34,8 +34,6 @@ public:
     /*8*/ virtual struct RakNet::SystemAddress nextCompletedConnectionAttempt();
     /*9*/ virtual struct RakNet::SystemAddress nextFailedConnectionAttempt();
     /*10*/ virtual struct RakNet::SystemAddress nextLostConnection();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKTCPPROXY
-#endif
     MCAPI RakTcpProxy();
 
 protected:

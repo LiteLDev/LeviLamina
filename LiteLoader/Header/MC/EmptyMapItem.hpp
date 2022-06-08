@@ -44,8 +44,6 @@ public:
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*110*/ virtual std::string getInteractText(class Player const &) const;
     /*128*/ virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EMPTYMAPITEM
-#endif
     MCAPI EmptyMapItem(std::string const &, short);
     MCAPI static void addPlayerMarker(class ItemStack &);
     MCAPI static void addPlayerMarker(class ItemInstance &);

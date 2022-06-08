@@ -23,9 +23,13 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRANSPORTINTERFACE
-    MCVAPI ~TransportInterface();
-#endif
+    /*
+    inline  ~TransportInterface(){
+         (TransportInterface::*rv)();
+        *((void**)&rv) = dlsym("??1TransportInterface@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

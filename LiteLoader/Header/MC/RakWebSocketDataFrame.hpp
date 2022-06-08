@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKETDATAFRAME
-#endif
     MCAPI RakWebSocketDataFrame();
     MCAPI enum CloseStatusCode getCloseCode() const;
     MCAPI struct RakWebSocketDataFrameHeader const & getHeader() const;

@@ -32,8 +32,6 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*11*/ virtual struct ActorUniqueID _findTarget(struct MobDescriptor const **);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NEARESTATTACKABLETARGETGOAL
-#endif
     MCAPI NearestAttackableTargetGoal(class Mob &);
 
 protected:

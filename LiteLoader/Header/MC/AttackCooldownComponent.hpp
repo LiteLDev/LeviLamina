@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTACKCOOLDOWNCOMPONENT
-#endif
     MCAPI AttackCooldownComponent(class AttackCooldownComponent &&);
     MCAPI class AttackCooldownComponent & operator=(class AttackCooldownComponent &&);
     MCAPI ~AttackCooldownComponent();

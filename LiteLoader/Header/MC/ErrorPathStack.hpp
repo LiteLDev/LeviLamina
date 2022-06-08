@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ERRORPATHSTACK
-#endif
     MCAPI ErrorPathStack(std::vector<std::string> &, std::string const &);
     MCAPI ~ErrorPathStack();
 

@@ -72,8 +72,6 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TNTBLOCK
-#endif
     MCAPI TntBlock(std::string const &, int);
     MCAPI void _setAllowUnderwater(class Actor *) const;
     MCAPI bool _shouldAllowUnderwater(class Block const &) const;

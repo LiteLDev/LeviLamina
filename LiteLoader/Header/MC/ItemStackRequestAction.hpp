@@ -31,8 +31,6 @@ public:
     /*1*/ virtual class ItemStackRequestActionCraftBase const * getCraftAction() const;
     /*2*/ virtual int getFilteredStringIndex() const;
     /*3*/ virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette &, bool);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTION
-#endif
     MCAPI ItemStackRequestAction(enum ItemStackRequestActionType);
     MCAPI enum ItemStackRequestActionType getActionType() const;
     MCAPI void write(class BinaryStream &) const;

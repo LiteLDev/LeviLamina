@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSOURCEREPORT
-#endif
     MCAPI PackSourceReport(class PackSourceReport const &);
     MCAPI PackSourceReport();
     MCAPI void addReport(struct PackIdVersion const &, class PackReport &&);

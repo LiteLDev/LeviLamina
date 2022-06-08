@@ -31,8 +31,6 @@ public:
     /*10*/ virtual bool travel(class NavigationComponent &, class Mob &, float &, float &, float &);
     /*11*/ virtual bool canUpdatePath(class Mob const &) const;
     /*12*/ virtual void updatePath(class NavigationComponent &, class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WATERBOUNDPATHNAVIGATION
-#endif
 
 protected:
 

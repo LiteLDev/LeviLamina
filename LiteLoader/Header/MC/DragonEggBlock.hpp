@@ -65,8 +65,6 @@ public:
     /*203*/ virtual class mce::Color getDustColor(class Block const &) const;
     /*204*/ virtual std::string getDustParticleName(class Block const &) const;
     /*205*/ virtual void __unk_vfn_205();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONEGGBLOCK
-#endif
     MCAPI DragonEggBlock(std::string const &, int);
 
 protected:

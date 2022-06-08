@@ -34,8 +34,6 @@ public:
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERREACTORBLOCKACTOR
-#endif
     MCAPI NetherReactorBlockActor(class BlockPos const &);
 
 protected:

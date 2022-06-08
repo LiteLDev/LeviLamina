@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUAPPCONFIGS
-#endif
     MCAPI static struct PackIdVersion const EDUResourcePack;
 
 protected:

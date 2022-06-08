@@ -25,8 +25,6 @@ public:
 public:
     /*0*/ virtual ~SingleBlockFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SINGLEBLOCKFEATURE
-#endif
 
 protected:
 

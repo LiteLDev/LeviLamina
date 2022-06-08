@@ -29,8 +29,6 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETSCOREPACKET
-#endif
     MCAPI static class SetScorePacket change(struct ScoreboardId const &, class Objective const &);
     MCAPI static class SetScorePacket change(std::vector<struct ScorePacketInfo>);
     MCAPI static class SetScorePacket remove(struct ScoreboardId const &, class Objective const &);

@@ -109,8 +109,6 @@ public:
     /*8*/ virtual void print(std::string const &, class PrintStream &) const;
     /*9*/ virtual std::unique_ptr<class Tag> copy() const;
     /*10*/ virtual unsigned __int64 hash() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAG
-#endif
     MCAPI CompoundTag(class CompoundTag &&);
     MCAPI CompoundTag();
     MCAPI void append(class CompoundTag const &);

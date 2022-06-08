@@ -23,8 +23,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptIsStackableComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTISSTACKABLECOMPONENT
-#endif
     MCAPI static class HashedString const & getHashedName();
 
 protected:

@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ZLIBFILEACCESSWRAPPER
-#endif
     MCAPI ZlibFileAccessWrapper(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>>);
     MCAPI struct zlib_filefunc64_32_def_s * getZipFunctions() const;
     MCAPI ~ZlibFileAccessWrapper();

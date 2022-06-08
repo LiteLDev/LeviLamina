@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEMODULESERVER
-#endif
     MCAPI GameModuleServer();
 
 protected:

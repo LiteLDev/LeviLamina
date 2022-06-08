@@ -67,8 +67,6 @@ public:
     /*206*/ virtual void __unk_vfn_206();
     /*207*/ virtual void __unk_vfn_207();
     /*208*/ MCAPI std::string const & getDescriptionId() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIQUIDBLOCKDYNAMIC
-#endif
     MCAPI LiquidBlockDynamic(std::string const &, int, class Material const &);
     MCAPI class std::array<bool, 4> getSpread(class BlockSource &, class BlockPos const &) const;
     MCAPI bool shouldBecomeStatic(class BlockSource &, class BlockPos const &, class Random &) const;

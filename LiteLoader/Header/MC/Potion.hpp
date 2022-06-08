@@ -25,8 +25,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_POTION
-#endif
     MCAPI Potion(class Potion const &);
     MCAPI void appendFormattedPotionText(std::string &, enum Potion::PotionType, enum Potion::PotionVariant, class Player const &, float) const;
     MCAPI std::string effectDurationToString(enum Potion::PotionType, float, class MobEffectInstance const &) const;

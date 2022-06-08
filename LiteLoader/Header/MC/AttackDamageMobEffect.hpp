@@ -26,8 +26,6 @@ public:
 public:
     /*0*/ virtual ~AttackDamageMobEffect();
     /*5*/ virtual float getAttributeModifierValue(int, class AttributeModifier const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTACKDAMAGEMOBEFFECT
-#endif
     MCAPI AttackDamageMobEffect(int, std::string const &, std::string const &, bool, int, int);
     MCAPI static float getDamageAfterDamageBoost(float, int);
     MCAPI static float getDamageAfterWeakness(float, int);

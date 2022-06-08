@@ -23,10 +23,18 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PETSLEEPWITHOWNERSTATE
-    MCVAPI void start();
-    MCVAPI void stop();
-#endif
+    /*
+    inline void start(){
+        void (PetSleepWithOwnerState::*rv)();
+        *((void**)&rv) = dlsym("?start@PetSleepWithOwnerState@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void stop(){
+        void (PetSleepWithOwnerState::*rv)();
+        *((void**)&rv) = dlsym("?stop@PetSleepWithOwnerState@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
     MCAPI void dampenSpeed();

@@ -41,8 +41,6 @@ public:
     /*75*/ virtual void __unk_vfn_75();
     /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDEREYEITEM
-#endif
     MCAPI EnderEyeItem(std::string const &, int);
 
 protected:

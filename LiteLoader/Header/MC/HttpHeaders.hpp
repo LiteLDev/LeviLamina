@@ -25,8 +25,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HTTPHEADERS
-#endif
     MCAPI HttpHeaders();
     MCAPI void clear();
     MCAPI bool getHeader(std::string const &, std::string &) const;

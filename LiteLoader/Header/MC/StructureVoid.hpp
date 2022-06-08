@@ -64,10 +64,18 @@ public:
     /*180*/ virtual void __unk_vfn_180();
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREVOID
-    MCVAPI bool canBeSilkTouched() const;
-    MCVAPI bool canHaveExtraData() const;
-#endif
+    /*
+    inline bool canHaveExtraData() const{
+        bool (StructureVoid::*rv)() const;
+        *((void**)&rv) = dlsym("?canHaveExtraData@StructureVoid@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canBeSilkTouched() const{
+        bool (StructureVoid::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@StructureVoid@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI StructureVoid(std::string const &, int);
 
 protected:

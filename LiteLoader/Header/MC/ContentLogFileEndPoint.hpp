@@ -24,13 +24,33 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTLOGFILEENDPOINT
-    MCVAPI void flush();
-    MCVAPI bool isEnabled() const;
-    MCVAPI void log(enum LogArea, enum LogLevel, char const *);
-    MCVAPI bool logOnlyOnce() const;
-    MCVAPI void setEnabled(bool);
-#endif
+    /*
+    inline bool logOnlyOnce() const{
+        bool (ContentLogFileEndPoint::*rv)() const;
+        *((void**)&rv) = dlsym("?logOnlyOnce@ContentLogFileEndPoint@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline void flush(){
+        void (ContentLogFileEndPoint::*rv)();
+        *((void**)&rv) = dlsym("?flush@ContentLogFileEndPoint@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline bool isEnabled() const{
+        bool (ContentLogFileEndPoint::*rv)() const;
+        *((void**)&rv) = dlsym("?isEnabled@ContentLogFileEndPoint@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline void log(enum LogArea a0, enum LogLevel a1, char const * a2){
+        void (ContentLogFileEndPoint::*rv)(enum LogArea, enum LogLevel, char const *);
+        *((void**)&rv) = dlsym("?log@ContentLogFileEndPoint@@UEAAXW4LogArea@@W4LogLevel@@PEBD@Z");
+        return (this->*rv)(std::forward<enum LogArea>(a0), std::forward<enum LogLevel>(a1), std::forward<char const *>(a2));
+    }
+    inline void setEnabled(bool a0){
+        void (ContentLogFileEndPoint::*rv)(bool);
+        *((void**)&rv) = dlsym("?setEnabled@ContentLogFileEndPoint@@UEAAX_N@Z");
+        return (this->*rv)(std::forward<bool>(a0));
+    }
+    */
     MCAPI ContentLogFileEndPoint(class Core::Path, class Core::Path);
     MCAPI static class gsl::basic_string_span<char const, -1> const FILE_NAME;
 

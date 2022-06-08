@@ -74,9 +74,13 @@ public:
     /*192*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TALLGRASS
-    MCVAPI bool canBeSilkTouched() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (TallGrass::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@TallGrass@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI TallGrass(std::string const &, int);
 
 protected:

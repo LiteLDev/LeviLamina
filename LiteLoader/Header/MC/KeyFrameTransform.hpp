@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_KEYFRAMETRANSFORM
-#endif
     MCAPI KeyFrameTransform(float);
     MCAPI KeyFrameTransform(class KeyFrameTransform const &);
     MCAPI class KeyFrameLerpMode & getLerpMode();

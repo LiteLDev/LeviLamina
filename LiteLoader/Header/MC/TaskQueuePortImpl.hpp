@@ -35,8 +35,6 @@ public:
     /*15*/ virtual long SuspendTermination(struct ITaskQueuePortContext *);
     /*16*/ virtual void ResumeTermination(struct ITaskQueuePortContext *);
     /*17*/ virtual ~TaskQueuePortImpl();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKQUEUEPORTIMPL
-#endif
     MCAPI long Initialize(enum XTaskQueueDispatchMode);
     MCAPI TaskQueuePortImpl();
 

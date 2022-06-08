@@ -74,8 +74,6 @@ public:
     /*192*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOWERBLOCK
-#endif
     MCAPI FlowerBlock(std::string const &, int, enum FlowerBlock::Type, class Material const &);
 
 protected:

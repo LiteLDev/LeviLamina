@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTUTILS
-#endif
     MCAPI static int const MAX_EXP_REPAIR_COST;
     MCAPI static int const PROTECTIONFACTOR_PRIMARYCAP;
     MCAPI static int const PROTECTIONFACTOR_SECONDARYCAP;

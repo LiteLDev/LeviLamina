@@ -69,10 +69,18 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*195*/ virtual struct Brightness getLightEmission(class Block const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESPAWNANCHORBLOCK
-    MCVAPI bool hasComparatorSignal() const;
-    MCVAPI bool isInteractiveBlock() const;
-#endif
+    /*
+    inline bool isInteractiveBlock() const{
+        bool (RespawnAnchorBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@RespawnAnchorBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasComparatorSignal() const{
+        bool (RespawnAnchorBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?hasComparatorSignal@RespawnAnchorBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI RespawnAnchorBlock(std::string const &, int);
     MCAPI static bool addItem(class Container &, int, class ItemStack &, class BlockSource &, class Block const &, class BlockPos const &);
     MCAPI static int getChargeLevel(class Block const &);

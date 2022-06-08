@@ -42,8 +42,6 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*116*/ virtual class Item & setIcon(std::string const &, int);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOWITEM
-#endif
     MCAPI BowItem(std::string const &, int);
 
 protected:

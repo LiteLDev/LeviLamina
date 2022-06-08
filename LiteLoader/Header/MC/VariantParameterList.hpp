@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VARIANTPARAMETERLIST
-#endif
     MCAPI bool hasParameter(enum FilterSubject) const;
 
 protected:

@@ -32,10 +32,18 @@ public:
     /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual bool canDestroy(class ContainerScreenContext const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OFFHANDCONTAINERVALIDATION
-    MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;
-    MCVAPI int getContainerOffset(class ContainerScreenContext const &) const;
-#endif
+    /*
+    inline bool canItemMoveToContainer(class ItemStackBase const & a0) const{
+        bool (OffhandContainerValidation::*rv)(class ItemStackBase const &) const;
+        *((void**)&rv) = dlsym("?canItemMoveToContainer@OffhandContainerValidation@@UEBA_NAEBVItemStackBase@@@Z");
+        return (this->*rv)(std::forward<class ItemStackBase const &>(a0));
+    }
+    inline int getContainerOffset(class ContainerScreenContext const & a0) const{
+        int (OffhandContainerValidation::*rv)(class ContainerScreenContext const &) const;
+        *((void**)&rv) = dlsym("?getContainerOffset@OffhandContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z");
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
+    }
+    */
 
 protected:
 

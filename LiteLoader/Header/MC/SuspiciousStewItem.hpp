@@ -40,9 +40,13 @@ public:
     /*75*/ virtual void __unk_vfn_75();
     /*76*/ virtual void __unk_vfn_76();
     /*82*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUSPICIOUSSTEWITEM
-    MCVAPI bool uniqueAuxValues() const;
-#endif
+    /*
+    inline bool uniqueAuxValues() const{
+        bool (SuspiciousStewItem::*rv)() const;
+        *((void**)&rv) = dlsym("?uniqueAuxValues@SuspiciousStewItem@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SuspiciousStewItem(std::string const &, short);
     MCAPI static void applyStewEffect(class ItemStack const &, class Actor &);
 

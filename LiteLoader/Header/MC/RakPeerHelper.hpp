@@ -26,8 +26,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKPEERHELPER
-#endif
     MCAPI RakPeerHelper(class RakPeerHelper::IPSupportInterface &);
     MCAPI int getConnectionIndex(class Social::GameConnectionInfo const &) const;
     MCAPI unsigned short getIPv4BoundPort() const;

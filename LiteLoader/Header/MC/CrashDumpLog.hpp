@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPLOG
-#endif
     MCAPI static void logEvent(struct CrashDumpEventData const &);
     MCAPI static void logFrame(struct CrashDumpFrameData const &);
     MCAPI static void logKeyValue(struct CrashDumpKeyValueData const &);

@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKLEGACYPTR
-#endif
     MCAPI std::string toString() const;
 
 protected:

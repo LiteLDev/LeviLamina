@@ -36,8 +36,6 @@ public:
     /*14*/ virtual void fillInputPacket(class PlayerAuthInputPacket &);
     /*15*/ virtual void __unk_vfn_15() = 0;
     /*16*/ virtual std::unique_ptr<struct IReplayableActorInput> createSnapshot();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEINPUTHANDLER
-#endif
     MCAPI bool wantsMoveForward() const;
 
 protected:

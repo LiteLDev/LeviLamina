@@ -28,8 +28,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENETICSCOMPONENT
-#endif
     MCAPI GeneticsComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI void buildDebugInfo(std::string &) const;

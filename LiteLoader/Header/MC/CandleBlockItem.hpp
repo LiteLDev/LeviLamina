@@ -41,9 +41,13 @@ public:
     /*75*/ virtual void __unk_vfn_75();
     /*76*/ virtual void __unk_vfn_76();
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CANDLEBLOCKITEM
-    MCVAPI bool isCandle() const;
-#endif
+    /*
+    inline bool isCandle() const{
+        bool (CandleBlockItem::*rv)() const;
+        *((void**)&rv) = dlsym("?isCandle@CandleBlockItem@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI CandleBlockItem(std::string const &, int);
 
 protected:

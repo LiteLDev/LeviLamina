@@ -25,8 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~RuinedPortalStart();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUINEDPORTALSTART
-#endif
     MCAPI RuinedPortalStart(class BiomeRegistry &, class BiomeSource const &, int, int, class IPreliminarySurfaceProvider const &);
 
 protected:

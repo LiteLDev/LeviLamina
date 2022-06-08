@@ -49,10 +49,18 @@ public:
     /*23*/ virtual class LevelData const & getLevelData() const;
     /*24*/ virtual struct WorldGenContext const & getContext();
     /*25*/ virtual void disableBlockSimple();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDBLOCKTARGET
-    MCVAPI bool apply() const;
-    MCVAPI bool canGetChunk() const;
-#endif
+    /*
+    inline bool apply() const{
+        bool (WorldBlockTarget::*rv)() const;
+        *((void**)&rv) = dlsym("?apply@WorldBlockTarget@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canGetChunk() const{
+        bool (WorldBlockTarget::*rv)() const;
+        *((void**)&rv) = dlsym("?canGetChunk@WorldBlockTarget@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI WorldBlockTarget(class BlockSource &, struct WorldGenContext const &);
 
 protected:

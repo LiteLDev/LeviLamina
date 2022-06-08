@@ -20,8 +20,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTLISTENERCOMPONENT
-#endif
     MCAPI GameEventListenerComponent();
     MCAPI GameEventListenerComponent(class GameEventListenerComponent &&);
     MCAPI bool initialize(std::unique_ptr<class GameEventDynamicRegistration>);

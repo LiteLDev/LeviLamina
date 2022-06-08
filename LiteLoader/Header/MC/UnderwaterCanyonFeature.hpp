@@ -27,8 +27,6 @@ public:
 public:
     /*0*/ virtual ~UnderwaterCanyonFeature();
     /*1*/ virtual bool carve(class BlockVolume &, class BiomeSource const &, class Random &, class ChunkPos const &, class Vec3 const &, class Vec3 const &, int, int, int, int, int, int, float, float, class gsl::span<float const, -1>, struct WorldGenContext const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UNDERWATERCANYONFEATURE
-#endif
     MCAPI UnderwaterCanyonFeature(short);
 
 protected:

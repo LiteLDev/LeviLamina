@@ -53,8 +53,6 @@ public:
     /*265*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
     /*269*/ virtual void __unk_vfn_269();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERCRYSTAL
-#endif
     MCAPI EnderCrystal(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void setBeamTarget(class BlockPos const &);
     MCAPI void setCrystalDamagedCallback(class std::function<void (class EnderCrystal &, class ActorDamageSource const &)>);

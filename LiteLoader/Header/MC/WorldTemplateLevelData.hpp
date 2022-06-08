@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDTEMPLATELEVELDATA
-#endif
     MCAPI WorldTemplateLevelData();
     MCAPI WorldTemplateLevelData(bool, bool, class BaseGameVersion const &, class BaseGameVersion const &);
     MCAPI class BaseGameVersion const & getBaseGameVersion() const;

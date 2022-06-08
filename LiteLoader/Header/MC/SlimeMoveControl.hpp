@@ -25,8 +25,6 @@ public:
 public:
     /*0*/ virtual ~SlimeMoveControl();
     /*2*/ virtual void tick(class MoveControlComponent &, class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIMEMOVECONTROL
-#endif
     MCAPI SlimeMoveControl();
 
 protected:

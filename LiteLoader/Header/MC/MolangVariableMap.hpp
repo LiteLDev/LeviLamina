@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGVARIABLEMAP
-#endif
     MCAPI MolangVariableMap(class MolangVariableMap &&);
     MCAPI MolangVariableMap(class MolangVariableMap const &);
     MCAPI class MolangVariableMap & clear();

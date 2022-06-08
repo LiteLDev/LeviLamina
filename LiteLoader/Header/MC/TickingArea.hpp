@@ -49,12 +49,28 @@ public:
     /*23*/ virtual bool isRemoved();
     /*24*/ virtual void remove(class LevelStorage &);
     /*25*/ virtual void onComponentChanged(unsigned int, float, bool, class LevelStorage &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREA
-    MCVAPI class BlockSource & getBlockSource();
-    MCVAPI class BlockSource const & getBlockSource() const;
-    MCVAPI class ITickingAreaView const & getView() const;
-    MCVAPI class ITickingAreaView & getView();
-#endif
+    /*
+    inline class BlockSource & getBlockSource(){
+        class BlockSource & (TickingArea::*rv)();
+        *((void**)&rv) = dlsym("?getBlockSource@TickingArea@@UEAAAEAVBlockSource@@XZ");
+        return (this->*rv)();
+    }
+    inline class BlockSource const & getBlockSource() const{
+        class BlockSource const & (TickingArea::*rv)() const;
+        *((void**)&rv) = dlsym("?getBlockSource@TickingArea@@UEBAAEBVBlockSource@@XZ");
+        return (this->*rv)();
+    }
+    inline class ITickingAreaView const & getView() const{
+        class ITickingAreaView const & (TickingArea::*rv)() const;
+        *((void**)&rv) = dlsym("?getView@TickingArea@@UEBAAEBVITickingAreaView@@XZ");
+        return (this->*rv)();
+    }
+    inline class ITickingAreaView & getView(){
+        class ITickingAreaView & (TickingArea::*rv)();
+        *((void**)&rv) = dlsym("?getView@TickingArea@@UEAAAEAVITickingAreaView@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI TickingArea(class Dimension &, class mce::UUID, struct Bounds const &, struct ActorUniqueID);
     MCAPI TickingArea(class Dimension &, class mce::UUID, struct Bounds const &, struct ActorUniqueID, float);
     MCAPI TickingArea(class Dimension &, class mce::UUID, std::string const &, struct Bounds const &, bool, enum TickingAreaLoadMode);

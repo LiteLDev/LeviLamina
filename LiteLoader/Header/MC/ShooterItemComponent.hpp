@@ -29,8 +29,6 @@ public:
     /*4*/ virtual bool isNetworkComponent() const;
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTERITEMCOMPONENT
-#endif
     MCAPI ShooterItemComponent(class ShooterItemComponent const &);
     MCAPI ShooterItemComponent(class ComponentItem *);
     MCAPI bool releaseUsing(class ItemStack &, class Player *, int) const;

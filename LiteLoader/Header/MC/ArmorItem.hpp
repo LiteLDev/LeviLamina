@@ -67,8 +67,6 @@ public:
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*116*/ virtual class Item & setIcon(std::string const &, int);
     /*128*/ virtual float getArmorKnockbackResistance() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARMORITEM
-#endif
     MCAPI ArmorItem(std::string const &, int, class ArmorItem::ArmorMaterial const &, int, enum ArmorSlot);
     MCAPI static class ArmorItem::ArmorMaterial const CHAIN;
     MCAPI static class ArmorItem::ArmorMaterial const DIAMOND;

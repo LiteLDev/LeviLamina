@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOALSELECTORCOMPONENT
-#endif
     MCAPI void addGoal(int, std::unique_ptr<class Goal>);
     MCAPI void buildDebugInfo(std::string &) const;
     MCAPI void clearAllGoals();

@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTACTORDAMAGECAUSE
-#endif
     MCAPI static class Scripting::EnumBindingBuilder<std::string> bind(struct Scripting::Version);
 
 protected:

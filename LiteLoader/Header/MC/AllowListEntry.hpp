@@ -27,8 +27,6 @@ public:
     /*0*/ virtual ~AllowListEntry();
     /*1*/ virtual void serialize(class Json::Value &);
     /*2*/ virtual void deserialize(class Json::Value &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLOWLISTENTRY
-#endif
     MCAPI AllowListEntry(class Json::Value &);
     MCAPI AllowListEntry(std::string);
 

@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANGRYCOMPONENT
-#endif
     MCAPI AngryComponent(class AngryComponent &&);
     MCAPI AngryComponent();
     MCAPI bool canAttack(class Mob &, class Mob *, class Actor *, bool, bool);

@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCDIALOGUESTORAGE
-#endif
     MCAPI struct NpcDialogueScene const * getScene(std::string const &) const;
     MCAPI struct NpcDialogueScene * getScene(std::string const &);
     MCAPI void init(class ResourcePackManager &);

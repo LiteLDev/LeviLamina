@@ -48,8 +48,6 @@ public:
     /*249*/ virtual void __unk_vfn_249();
     /*261*/ virtual void __unk_vfn_261();
     /*269*/ virtual void __unk_vfn_269();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EYEOFENDER
-#endif
     MCAPI EyeOfEnder(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void signalTo(class Player const &, class BlockPos &);
 

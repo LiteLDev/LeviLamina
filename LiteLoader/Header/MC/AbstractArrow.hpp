@@ -59,8 +59,6 @@ public:
     /*279*/ virtual void shoot(class Vec3 const &, float, float, class Vec3 const &);
     /*280*/ virtual void _playPickupSound();
     /*281*/ virtual class ItemStack _getPickupItem() const = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABSTRACTARROW
-#endif
     MCAPI AbstractArrow(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI bool isPlayerOwned() const;
     MCAPI void setFavoredSlot(int);

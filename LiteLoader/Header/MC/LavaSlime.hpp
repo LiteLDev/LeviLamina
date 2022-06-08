@@ -62,8 +62,6 @@ public:
     /*366*/ virtual bool doPlayLandSound();
     /*369*/ virtual void decreaseSquish();
     /*370*/ virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LAVASLIME
-#endif
     MCAPI LavaSlime(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

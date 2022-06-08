@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKBREAKSENSORDEFINITION
-#endif
     MCAPI BlockBreakSensorDefinition();
     MCAPI void initialize(class EntityContext &, class BlockBreakSensorComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BlockBreakSensorDefinition>> &);

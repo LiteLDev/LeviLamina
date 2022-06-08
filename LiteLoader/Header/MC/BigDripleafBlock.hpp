@@ -79,10 +79,18 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIGDRIPLEAFBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-    MCVAPI bool waterSpreadCausesSpawn() const;
-#endif
+    /*
+    inline bool waterSpreadCausesSpawn() const{
+        bool (BigDripleafBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@BigDripleafBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canBeSilkTouched() const{
+        bool (BigDripleafBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@BigDripleafBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BigDripleafBlock(std::string const &, int);
     MCAPI static int const MAX_DRIPLEAF_GROWTH_HEIGHT;
     MCAPI static void placeWithRandomHeight(class BlockSource &, class Random &, class BlockPos, int);

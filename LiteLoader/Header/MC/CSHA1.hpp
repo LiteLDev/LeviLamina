@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CSHA1
-#endif
     MCAPI CSHA1();
     MCAPI void Final();
     MCAPI unsigned char * GetHash() const;

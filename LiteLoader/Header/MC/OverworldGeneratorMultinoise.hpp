@@ -24,21 +24,73 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDGENERATORMULTINOISE
-    MCVAPI void _prepareHeights(class BlockVolume &, class ChunkPos const &, class WorldGenCache const &, class Aquifer *, class std::function<void (class BlockPos const &, class Block const &, int)> &&, bool, std::vector<short> *, int);
-    MCVAPI class ChunkLocalNoiseCache createNoiseCache(class ChunkPos) const;
-    MCVAPI void decorateWorldGenPostProcess(class Biome &, class LevelChunk &, class BlockSource &, class Random &) const;
-    MCVAPI class BlockPos findSpawnPosition() const;
-    MCVAPI class Util::MultidimensionalArray<float, 5, 5, 41> generateDensityCellsForChunk(class ChunkPos const &) const;
-    MCVAPI class BiomeSource const & getBiomeSource() const;
-    MCVAPI int getLevelGenHeight() const;
-    MCVAPI std::unique_ptr<class PerlinSimplexNoise> const & getMaterialAdjNoise() const;
-    MCVAPI class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
-    MCVAPI class PerlinSimplexNoise const & getSurfaceNoise();
-    MCVAPI class std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const;
-    MCVAPI std::unique_ptr<class Aquifer> tryMakeAquifer(class ChunkPos const &, class SurfaceLevelCache const &, short, short, short) const;
-    MCVAPI ~OverworldGeneratorMultinoise();
-#endif
+    /*
+    inline int getLevelGenHeight() const{
+        int (OverworldGeneratorMultinoise::*rv)() const;
+        *((void**)&rv) = dlsym("?getLevelGenHeight@OverworldGeneratorMultinoise@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline  ~OverworldGeneratorMultinoise(){
+         (OverworldGeneratorMultinoise::*rv)();
+        *((void**)&rv) = dlsym("??1OverworldGeneratorMultinoise@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline void _prepareHeights(class BlockVolume & a0, class ChunkPos const & a1, class WorldGenCache const & a2, class Aquifer * a3, class std::function<void (class BlockPos const &, class Block const &, int)> && a4, bool a5, std::vector<short> * a6, int a7){
+        void (OverworldGeneratorMultinoise::*rv)(class BlockVolume &, class ChunkPos const &, class WorldGenCache const &, class Aquifer *, class std::function<void (class BlockPos const &, class Block const &, int)> &&, bool, std::vector<short> *, int);
+        *((void**)&rv) = dlsym("?_prepareHeights@OverworldGeneratorMultinoise@@EEAAXAEAVBlockVolume@@AEBVChunkPos@@AEBVWorldGenCache@@PEAVAquifer@@$$QEAV?$function@$$A6AXAEBVBlockPos@@AEBVBlock@@H@Z@std@@_NPEAV?$vector@FV?$allocator@F@std@@@7@H@Z");
+        return (this->*rv)(std::forward<class BlockVolume &>(a0), std::forward<class ChunkPos const &>(a1), std::forward<class WorldGenCache const &>(a2), std::forward<class Aquifer *>(a3), std::forward<class std::function<void (class BlockPos const &, class Block const &, int)> &&>(a4), std::forward<bool>(a5), std::forward<std::vector<short> *>(a6), std::forward<int>(a7));
+    }
+    inline class ChunkLocalNoiseCache createNoiseCache(class ChunkPos a0) const{
+        class ChunkLocalNoiseCache (OverworldGeneratorMultinoise::*rv)(class ChunkPos) const;
+        *((void**)&rv) = dlsym("?createNoiseCache@OverworldGeneratorMultinoise@@EEBA?AVChunkLocalNoiseCache@@VChunkPos@@@Z");
+        return (this->*rv)(std::forward<class ChunkPos>(a0));
+    }
+    inline void decorateWorldGenPostProcess(class Biome & a0, class LevelChunk & a1, class BlockSource & a2, class Random & a3) const{
+        void (OverworldGeneratorMultinoise::*rv)(class Biome &, class LevelChunk &, class BlockSource &, class Random &) const;
+        *((void**)&rv) = dlsym("?decorateWorldGenPostProcess@OverworldGeneratorMultinoise@@EEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z");
+        return (this->*rv)(std::forward<class Biome &>(a0), std::forward<class LevelChunk &>(a1), std::forward<class BlockSource &>(a2), std::forward<class Random &>(a3));
+    }
+    inline class BlockPos findSpawnPosition() const{
+        class BlockPos (OverworldGeneratorMultinoise::*rv)() const;
+        *((void**)&rv) = dlsym("?findSpawnPosition@OverworldGeneratorMultinoise@@UEBA?AVBlockPos@@XZ");
+        return (this->*rv)();
+    }
+    inline class Util::MultidimensionalArray<float, 5, 5, 41> generateDensityCellsForChunk(class ChunkPos const & a0) const{
+        class Util::MultidimensionalArray<float, 5, 5, 41> (OverworldGeneratorMultinoise::*rv)(class ChunkPos const &) const;
+        *((void**)&rv) = dlsym("?generateDensityCellsForChunk@OverworldGeneratorMultinoise@@UEBA?AV?$MultidimensionalArray@M$04$04$0CJ@@Util@@AEBVChunkPos@@@Z");
+        return (this->*rv)(std::forward<class ChunkPos const &>(a0));
+    }
+    inline class BiomeSource const & getBiomeSource() const{
+        class BiomeSource const & (OverworldGeneratorMultinoise::*rv)() const;
+        *((void**)&rv) = dlsym("?getBiomeSource@OverworldGeneratorMultinoise@@UEBAAEBVBiomeSource@@XZ");
+        return (this->*rv)();
+    }
+    inline std::unique_ptr<class PerlinSimplexNoise> const & getMaterialAdjNoise() const{
+        std::unique_ptr<class PerlinSimplexNoise> const & (OverworldGeneratorMultinoise::*rv)() const;
+        *((void**)&rv) = dlsym("?getMaterialAdjNoise@OverworldGeneratorMultinoise@@MEBAAEBV?$unique_ptr@VPerlinSimplexNoise@@U?$default_delete@VPerlinSimplexNoise@@@std@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4> a0) const{
+        class std::optional<short> (OverworldGeneratorMultinoise::*rv)(class DividedPos2d<4>) const;
+        *((void**)&rv) = dlsym("?getPreliminarySurfaceLevel@OverworldGeneratorMultinoise@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z");
+        return (this->*rv)(std::forward<class DividedPos2d<4>>(a0));
+    }
+    inline class PerlinSimplexNoise const & getSurfaceNoise(){
+        class PerlinSimplexNoise const & (OverworldGeneratorMultinoise::*rv)();
+        *((void**)&rv) = dlsym("?getSurfaceNoise@OverworldGeneratorMultinoise@@MEAAAEBVPerlinSimplexNoise@@XZ");
+        return (this->*rv)();
+    }
+    inline class std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const{
+        class std::optional<class XoroshiroPositionalRandomFactory> (OverworldGeneratorMultinoise::*rv)() const;
+        *((void**)&rv) = dlsym("?getXoroshiroPositionalRandomFactory@OverworldGeneratorMultinoise@@EEBA?AV?$optional@VXoroshiroPositionalRandomFactory@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline std::unique_ptr<class Aquifer> tryMakeAquifer(class ChunkPos const & a0, class SurfaceLevelCache const & a1, short a2, short a3, short a4) const{
+        std::unique_ptr<class Aquifer> (OverworldGeneratorMultinoise::*rv)(class ChunkPos const &, class SurfaceLevelCache const &, short, short, short) const;
+        *((void**)&rv) = dlsym("?tryMakeAquifer@OverworldGeneratorMultinoise@@EEBA?AV?$unique_ptr@VAquifer@@U?$default_delete@VAquifer@@@std@@@std@@AEBVChunkPos@@AEBVSurfaceLevelCache@@FFF@Z");
+        return (this->*rv)(std::forward<class ChunkPos const &>(a0), std::forward<class SurfaceLevelCache const &>(a1), std::forward<short>(a2), std::forward<short>(a3), std::forward<short>(a4));
+    }
+    */
     MCAPI OverworldGeneratorMultinoise(class Dimension &, class LevelSeed64, class Biome const *, std::unique_ptr<class StructureFeatureRegistry>);
     MCAPI static float _applySlides(class DimensionHeightRange const &, float, unsigned char);
 

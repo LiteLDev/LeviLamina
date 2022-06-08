@@ -68,10 +68,18 @@ public:
     /*30*/ virtual void createTransactionContext(class std::function<void (class Container &, int, class ItemStack const &, class ItemStack const &)>, class std::function<void (void)>);
     /*31*/ virtual void initializeContainerContents(class BlockSource &);
     /*32*/ virtual bool isEmpty() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINER
-    MCVAPI bool canPullOutItem(class BlockSource &, int, int, class ItemInstance const &) const;
-    MCVAPI bool canPushInItem(class BlockSource &, int, int, class ItemInstance const &) const;
-#endif
+    /*
+    inline bool canPushInItem(class BlockSource & a0, int a1, int a2, class ItemInstance const & a3) const{
+        bool (Container::*rv)(class BlockSource &, int, int, class ItemInstance const &) const;
+        *((void**)&rv) = dlsym("?canPushInItem@Container@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<class ItemInstance const &>(a3));
+    }
+    inline bool canPullOutItem(class BlockSource & a0, int a1, int a2, class ItemInstance const & a3) const{
+        bool (Container::*rv)(class BlockSource &, int, int, class ItemInstance const &) const;
+        *((void**)&rv) = dlsym("?canPullOutItem@Container@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<class ItemInstance const &>(a3));
+    }
+    */
     MCAPI Container(class Container const &);
     MCAPI Container(enum ContainerType);
     MCAPI Container(enum ContainerType, std::string const &, bool);

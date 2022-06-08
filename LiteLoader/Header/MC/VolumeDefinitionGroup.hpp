@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMEDEFINITIONGROUP
-#endif
     MCAPI VolumeDefinitionGroup(class gsl::not_null<class Bedrock::NonOwnerPointer<class VolumeComponentFactory const>>);
     MCAPI void loadDefinitions(class ResourcePackManager const &, bool);
     MCAPI struct VolumeDefinition const * tryGetVolumeDefinition(std::string const &) const;

@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYTRANSACTIONMANAGER
-#endif
     MCAPI void _createServerSideAction(class ItemStack const &, class ItemStack const &);
     MCAPI void _logExpectedActions() const;
     MCAPI void addAction(class InventoryAction const &, bool);

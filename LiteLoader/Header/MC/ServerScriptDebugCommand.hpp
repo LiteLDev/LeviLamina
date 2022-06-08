@@ -24,8 +24,6 @@ public:
 public:
     /*0*/ virtual ~ServerScriptDebugCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERSCRIPTDEBUGCOMMAND
-#endif
     MCAPI static void setup(class CommandRegistry &, class IScriptDebugger *, class std::optional<struct ScriptSettings> const &);
 
 protected:

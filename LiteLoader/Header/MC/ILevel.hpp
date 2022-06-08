@@ -23,11 +23,23 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ILEVEL
-    MCVAPI class Level * asLevel();
-    MCVAPI class MultiPlayerLevel * asMultiPlayerLevel();
-    MCVAPI class TradeTables * getTradeTables();
-#endif
+    /*
+    inline class MultiPlayerLevel * asMultiPlayerLevel(){
+        class MultiPlayerLevel * (ILevel::*rv)();
+        *((void**)&rv) = dlsym("?asMultiPlayerLevel@ILevel@@UEAAPEAVMultiPlayerLevel@@XZ");
+        return (this->*rv)();
+    }
+    inline class Level * asLevel(){
+        class Level * (ILevel::*rv)();
+        *((void**)&rv) = dlsym("?asLevel@ILevel@@UEAAPEAVLevel@@XZ");
+        return (this->*rv)();
+    }
+    inline class TradeTables * getTradeTables(){
+        class TradeTables * (ILevel::*rv)();
+        *((void**)&rv) = dlsym("?getTradeTables@ILevel@@UEAAPEAVTradeTables@@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

@@ -78,10 +78,18 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORAL
-    MCVAPI bool canBeSilkTouched() const;
-    MCVAPI bool waterSpreadCausesSpawn() const;
-#endif
+    /*
+    inline bool waterSpreadCausesSpawn() const{
+        bool (Coral::*rv)() const;
+        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@Coral@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canBeSilkTouched() const{
+        bool (Coral::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@Coral@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI Coral(std::string const &, int);
 
 protected:

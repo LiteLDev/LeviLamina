@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPARSECONTAINER
-#endif
     MCAPI bool _isSlotInRange(int) const;
     MCAPI void addItemNetworkChangedCallback(enum ContainerEnumName, class std::function<void (int, class ItemStack const &, class ItemStack const &)>);
     MCAPI bool isUsingLegacyScreenTransactions() const;

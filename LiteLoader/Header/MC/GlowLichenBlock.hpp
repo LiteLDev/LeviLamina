@@ -65,9 +65,13 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual class Block const & getMultifaceBlock() const;
     /*204*/ virtual class MultifaceSpreader const & getMultifaceSpreader() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLOWLICHENBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (GlowLichenBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@GlowLichenBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI GlowLichenBlock(std::string const &, int, class Material const &);
 
 protected:

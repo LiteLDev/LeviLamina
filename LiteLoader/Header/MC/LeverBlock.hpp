@@ -75,11 +75,23 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual void updateShape(class BlockSource *, class BlockPos const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVERBLOCK
-    MCVAPI bool canSpawnOn() const;
-    MCVAPI bool isInteractiveBlock() const;
-    MCVAPI bool isLeverBlock() const;
-#endif
+    /*
+    inline bool canSpawnOn() const{
+        bool (LeverBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canSpawnOn@LeverBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isLeverBlock() const{
+        bool (LeverBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isLeverBlock@LeverBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInteractiveBlock() const{
+        bool (LeverBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@LeverBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI LeverBlock(std::string const &, int);
     MCAPI void toggle(class BlockSource &, class BlockPos const &) const;
     MCAPI static enum LeverDirection getLeverFacing(int);

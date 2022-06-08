@@ -31,8 +31,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONGROUP
-#endif
     MCAPI ActorDefinitionGroup(class Level &, class ResourcePackManager &, class IMinecraftEventing &, class Experiments const &);
     MCAPI std::vector<std::string> buildActorEventList() const;
     MCAPI class ActorComponentFactory * getComponentFactory();

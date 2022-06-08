@@ -24,8 +24,6 @@ public:
 public:
     /*0*/ virtual ~BodyControl();
     /*1*/ virtual void clientTick(class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BODYCONTROL
-#endif
     MCAPI BodyControl();
 
 protected:

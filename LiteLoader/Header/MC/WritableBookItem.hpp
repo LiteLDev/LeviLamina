@@ -42,8 +42,6 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*110*/ virtual std::string getInteractText(class Player const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WRITABLEBOOKITEM
-#endif
     MCAPI WritableBookItem(std::string const &, int);
     MCAPI static void addPageAt(class ItemStack &, int, struct PageContent const &);
     MCAPI static struct PageContent deletePage(class ItemStack &, int);

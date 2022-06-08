@@ -25,8 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptDimension();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDIMENSION
-#endif
     MCAPI class Scripting::Result<void> createExplosion(class Vec3 const &, float, struct Scripting::TypedObjectHandle<struct ScriptExplosionOptions>) const;
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptBlock> getBlock(class Scripting::WeakLifetimeScope, class BlockPos const &);
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptBlock>> getBlockFromRay(class Scripting::WeakLifetimeScope, class Vec3 const &, class ScriptVector const &, class std::optional<struct ScriptBlockRaycastOptions> const &) const;

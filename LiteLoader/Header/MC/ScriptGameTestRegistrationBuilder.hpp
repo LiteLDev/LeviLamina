@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTGAMETESTREGISTRATIONBUILDER
-#endif
     MCAPI ScriptGameTestRegistrationBuilder(class ScriptGameTestRegistrationBuilder &&);
     MCAPI ScriptGameTestRegistrationBuilder(class std::shared_ptr<class BaseScriptGameTestFunction>);
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptGameTestRegistrationBuilder> batch(std::string);

@@ -39,8 +39,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PREDICTEDMOVEMENTCOMPONENT
-#endif
     MCAPI PredictedMovementComponent(class Actor &);
     MCAPI bool isEnabled() const;
     MCAPI void reset();

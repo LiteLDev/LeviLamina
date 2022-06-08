@@ -21,10 +21,18 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFORMPROMISETRACKER
-    MCVAPI enum EventResult onEvent(struct PlayerFormCloseEvent const &);
-    MCVAPI enum EventResult onEvent(struct PlayerFormResponseEvent const &);
-#endif
+    /*
+    inline enum EventResult onEvent(struct PlayerFormCloseEvent const & a0){
+        enum EventResult (ScriptFormPromiseTracker::*rv)(struct PlayerFormCloseEvent const &);
+        *((void**)&rv) = dlsym("?onEvent@ScriptFormPromiseTracker@@UEAA?AW4EventResult@@AEBUPlayerFormCloseEvent@@@Z");
+        return (this->*rv)(std::forward<struct PlayerFormCloseEvent const &>(a0));
+    }
+    inline enum EventResult onEvent(struct PlayerFormResponseEvent const & a0){
+        enum EventResult (ScriptFormPromiseTracker::*rv)(struct PlayerFormResponseEvent const &);
+        *((void**)&rv) = dlsym("?onEvent@ScriptFormPromiseTracker@@UEAA?AW4EventResult@@AEBUPlayerFormResponseEvent@@@Z");
+        return (this->*rv)(std::forward<struct PlayerFormResponseEvent const &>(a0));
+    }
+    */
     MCAPI ScriptFormPromiseTracker();
     MCAPI void handleFormClose(unsigned int);
     MCAPI void handleFormResponse(unsigned int, class Json::Value const &);

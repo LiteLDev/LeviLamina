@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKITEMINSTANCEDESCRIPTOR
-#endif
     MCAPI NetworkItemInstanceDescriptor(class ItemInstance const &);
     MCAPI NetworkItemInstanceDescriptor(class ItemStackDescriptor const &);
     MCAPI class ItemInstance getItemInstance(class BlockPalette const &) const;

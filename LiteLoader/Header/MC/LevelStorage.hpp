@@ -57,8 +57,6 @@ public:
     /*29*/ virtual void setCompactionCallback(class std::function<void (enum CompactionStatus)>) = 0;
     /*30*/ virtual void setCriticalSyncSaveCallback(class std::function<void (void)>) = 0;
     /*31*/ virtual void corruptLevel();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSTORAGE
-#endif
     MCAPI std::string getServerId(struct PlayerStorageIds const &);
     MCAPI std::string getServerId(class Player const &, bool);
     MCAPI std::vector<std::string> loadAllPlayerIDs(bool) const;

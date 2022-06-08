@@ -32,8 +32,6 @@ public:
     /*8*/ virtual __int64 readLongLong();
     /*9*/ virtual bool readBytes(void *, unsigned __int64);
     /*11*/ virtual bool readBigEndianBytes(void *, unsigned __int64);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIGENDIANSTRINGBYTEINPUT
-#endif
 
 protected:
 

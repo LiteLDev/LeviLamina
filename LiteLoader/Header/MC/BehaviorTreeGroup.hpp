@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORTREEGROUP
-#endif
     MCAPI BehaviorTreeGroup(class ResourcePackManager &, class BehaviorFactory &);
     MCAPI class BehaviorTreeDefinitionPtr tryGetDefinition(std::string const &);
     MCAPI ~BehaviorTreeGroup();

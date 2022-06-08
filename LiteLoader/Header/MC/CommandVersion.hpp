@@ -27,8 +27,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDVERSION
-#endif
     MCAPI CommandVersion(int, int);
     MCAPI bool covers(class CommandVersion const &) const;
     MCAPI bool isCompatible(int) const;

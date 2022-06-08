@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSETTINGSFACTORY
-#endif
     MCAPI class PackSettings * getPackSettings(class PackManifest const &);
 
 protected:

@@ -20,8 +20,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREFEATUREREGISTRY
-#endif
     MCAPI StructureFeatureRegistry();
     MCAPI bool findNearestStructureFeature(class Dimension &, class IPreliminarySurfaceProvider &, enum StructureFeatureType, class BlockPos const &, class BlockPos &, class BiomeSource const &, bool);
     MCAPI enum StructureFeatureType findStructureFeatureTypeAt(class BlockPos const &);

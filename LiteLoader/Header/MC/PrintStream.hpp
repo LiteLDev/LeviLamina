@@ -25,8 +25,6 @@ public:
 public:
     /*0*/ virtual ~PrintStream();
     /*1*/ virtual void print(std::string const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRINTSTREAM
-#endif
 
 protected:
 

@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATEGROUP
-#endif
     MCAPI BlockStateGroup();
     MCAPI class BlockStateMeta const * getBlockStateFromHash(unsigned __int64 const &) const;
     MCAPI class BlockStateMeta const * getBlockStateFromName(std::string const &) const;

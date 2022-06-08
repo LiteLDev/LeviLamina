@@ -72,15 +72,43 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKACTOR
-    MCVAPI void fixupOnLoad(class LevelChunk &);
-    MCVAPI class Container * getContainer();
-    MCVAPI class Container const * getContainer() const;
-    MCVAPI void onChunkLoaded(class LevelChunk &);
-    MCVAPI void onChunkUnloaded(class LevelChunk &);
-    MCVAPI void onMove();
-    MCVAPI void onNeighborChanged(class BlockSource &, class BlockPos const &);
-#endif
+    /*
+    inline class Container * getContainer(){
+        class Container * (BlockActor::*rv)();
+        *((void**)&rv) = dlsym("?getContainer@BlockActor@@UEAAPEAVContainer@@XZ");
+        return (this->*rv)();
+    }
+    inline class Container const * getContainer() const{
+        class Container const * (BlockActor::*rv)() const;
+        *((void**)&rv) = dlsym("?getContainer@BlockActor@@UEBAPEBVContainer@@XZ");
+        return (this->*rv)();
+    }
+    inline void onChunkLoaded(class LevelChunk & a0){
+        void (BlockActor::*rv)(class LevelChunk &);
+        *((void**)&rv) = dlsym("?onChunkLoaded@BlockActor@@UEAAXAEAVLevelChunk@@@Z");
+        return (this->*rv)(std::forward<class LevelChunk &>(a0));
+    }
+    inline void onChunkUnloaded(class LevelChunk & a0){
+        void (BlockActor::*rv)(class LevelChunk &);
+        *((void**)&rv) = dlsym("?onChunkUnloaded@BlockActor@@UEAAXAEAVLevelChunk@@@Z");
+        return (this->*rv)(std::forward<class LevelChunk &>(a0));
+    }
+    inline void fixupOnLoad(class LevelChunk & a0){
+        void (BlockActor::*rv)(class LevelChunk &);
+        *((void**)&rv) = dlsym("?fixupOnLoad@BlockActor@@UEAAXAEAVLevelChunk@@@Z");
+        return (this->*rv)(std::forward<class LevelChunk &>(a0));
+    }
+    inline void onMove(){
+        void (BlockActor::*rv)();
+        *((void**)&rv) = dlsym("?onMove@BlockActor@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void onNeighborChanged(class BlockSource & a0, class BlockPos const & a1){
+        void (BlockActor::*rv)(class BlockSource &, class BlockPos const &);
+        *((void**)&rv) = dlsym("?onNeighborChanged@BlockActor@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1));
+    }
+    */
     MCAPI BlockActor(enum BlockActorType, class BlockPos const &, std::string const &);
     MCAPI void assignBlockIfNotAssigned(class BlockSource &);
     MCAPI class AABB const & getAABB() const;

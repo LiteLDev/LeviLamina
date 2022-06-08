@@ -29,8 +29,6 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /*5*/ virtual void _postCraftRequest(bool);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERTRADE
-#endif
     MCAPI CraftHandlerTrade(class ContainerScreenContext const &, class ItemStackRequestActionCraftHandler &);
 
 protected:

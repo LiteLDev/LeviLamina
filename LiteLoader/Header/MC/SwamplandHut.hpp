@@ -29,8 +29,6 @@ public:
     /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /*6*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
     /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWAMPLANDHUT
-#endif
     MCAPI SwamplandHut(short, int, int);
 
 protected:

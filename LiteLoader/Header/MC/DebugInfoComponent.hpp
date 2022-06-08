@@ -54,8 +54,6 @@ public:
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
     /*31*/ virtual enum EventResult onEvent(struct ActorDefinitionEvent const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEBUGINFOCOMPONENT
-#endif
     MCAPI DebugInfoComponent(class DebugInfoComponent &&);
     MCAPI DebugInfoComponent(class DebugInfoComponent const &);
     MCAPI void addListener(class HashedString const &, class NetworkIdentifier, unsigned char);

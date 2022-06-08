@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERIALIZERCONTEXT
-#endif
     MCAPI SerializerContext();
     MCAPI void clear();
     MCAPI class SerializerContext detachContext();

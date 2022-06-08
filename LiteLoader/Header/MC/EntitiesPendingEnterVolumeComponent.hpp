@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITIESPENDINGENTERVOLUMECOMPONENT
-#endif
     MCAPI EntitiesPendingEnterVolumeComponent(class EntitiesPendingEnterVolumeComponent &&);
     MCAPI ~EntitiesPendingEnterVolumeComponent();
 

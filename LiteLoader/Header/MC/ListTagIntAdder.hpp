@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LISTTAGINTADDER
-#endif
     MCAPI class ListTagIntAdder & operator()(int);
     MCAPI ~ListTagIntAdder();
 

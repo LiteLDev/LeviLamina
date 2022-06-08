@@ -51,8 +51,6 @@ public:
     /*281*/ virtual class Block const * getDefaultDisplayBlock() const;
     /*282*/ virtual void __unk_vfn_282();
     /*284*/ virtual void applyNaturalSlowdown(class BlockSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTCHEST
-#endif
     MCAPI MinecartChest(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

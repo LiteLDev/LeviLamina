@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKGROUNDTASKQUEUE
-#endif
     MCAPI BackgroundTaskQueue();
     MCAPI void flush();
     MCAPI unsigned __int64 getApproximateTaskCount() const;

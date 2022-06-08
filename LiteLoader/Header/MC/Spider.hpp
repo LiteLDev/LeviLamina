@@ -62,9 +62,13 @@ public:
     /*359*/ virtual void __unk_vfn_359();
     /*362*/ virtual float getModelScale() const;
     /*363*/ virtual enum Spider::Type getSpiderType() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPIDER
-    MCVAPI bool useNewAi() const;
-#endif
+    /*
+    inline bool useNewAi() const{
+        bool (Spider::*rv)() const;
+        *((void**)&rv) = dlsym("?useNewAi@Spider@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI Spider(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

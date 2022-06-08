@@ -33,8 +33,6 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual enum EventResult onServerThreadStarted(class ServerInstance &);
     /*10*/ virtual enum EventResult onServerThreadStopped(class ServerInstance &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERSCRIPTMANAGER
-#endif
     MCAPI ServerScriptManager(class std::optional<struct ScriptSettings> &&, class Bedrock::NonOwnerPointer<class Scheduler>);
     MCAPI void onMainThreadStartLeaveGame();
 

@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FULLPLAYERINVENTORYWRAPPER
-#endif
     MCAPI FullPlayerInventoryWrapper(class PlayerInventory &, class SimpleContainer &, class SimpleContainer &, class InventoryTransactionManager *, class Player *);
     MCAPI int clearAllItems();
     MCAPI int getItemCount(class std::function<bool (class ItemStack const &)>);

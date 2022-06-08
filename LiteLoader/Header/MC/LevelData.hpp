@@ -26,8 +26,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDATA
-#endif
     MCAPI LevelData(class LevelSettings const &, std::string const &, enum GeneratorType, class BlockPos const &, bool, enum EducationEditionOffer, float, float);
     MCAPI LevelData(bool);
     MCAPI struct LevelDataValue const * _getValue(class HashedString const &) const;

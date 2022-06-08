@@ -23,8 +23,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptItemDurabilityComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMDURABILITYCOMPONENT
-#endif
     MCAPI ScriptItemDurabilityComponent(class ScriptItemDurabilityComponent const &);
     MCAPI ScriptItemDurabilityComponent(class Scripting::WeakTypedObjectHandle<class ScriptItemStack>, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<int> getCurrentDamage();

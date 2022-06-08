@@ -88,12 +88,28 @@ public:
     /*205*/ virtual void __unk_vfn_205();
     /*207*/ virtual bool isFreeToFall(class BlockSource &, class BlockPos const &) const;
     /*208*/ virtual void startFalling(class BlockSource &, class BlockPos const &, class Block const &, bool) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TOPSNOWBLOCK
-    MCVAPI bool canBeDestroyedByWaterSpread() const;
-    MCVAPI bool canBeSilkTouched() const;
-    MCVAPI bool canHaveExtraData() const;
-    MCVAPI bool waterSpreadCausesSpawn() const;
-#endif
+    /*
+    inline bool waterSpreadCausesSpawn() const{
+        bool (TopSnowBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@TopSnowBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canBeSilkTouched() const{
+        bool (TopSnowBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@TopSnowBlock@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canBeDestroyedByWaterSpread() const{
+        bool (TopSnowBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeDestroyedByWaterSpread@TopSnowBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canHaveExtraData() const{
+        bool (TopSnowBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canHaveExtraData@TopSnowBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI TopSnowBlock(std::string const &, int);
     MCAPI bool melt(class BlockSource &, class BlockPos const &, int) const;
     MCAPI void startFallingIfLostSupport(class BlockSource &, class BlockPos const &, class Random &) const;

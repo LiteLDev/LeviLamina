@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BRIBEABLECOMPONENT
-#endif
     MCAPI BribeableComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI bool clientBribeCheck(class Actor &);

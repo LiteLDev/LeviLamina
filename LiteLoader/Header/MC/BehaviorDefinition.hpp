@@ -27,8 +27,6 @@ public:
     /*0*/ virtual ~BehaviorDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
     /*2*/ virtual std::unique_ptr<class BehaviorNode> createNode(class Actor &, class BehaviorFactory const &, class BehaviorNode *, class BehaviorData *) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORDEFINITION
-#endif
     MCAPI class BehaviorTreeDefinitionPtr getTreeDefinition() const;
 
 protected:

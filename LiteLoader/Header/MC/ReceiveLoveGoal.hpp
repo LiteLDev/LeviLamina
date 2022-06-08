@@ -31,10 +31,18 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECEIVELOVEGOAL
-    MCVAPI bool canContinueToUse();
-    MCVAPI bool canUse();
-#endif
+    /*
+    inline bool canUse(){
+        bool (ReceiveLoveGoal::*rv)();
+        *((void**)&rv) = dlsym("?canUse@ReceiveLoveGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canContinueToUse(){
+        bool (ReceiveLoveGoal::*rv)();
+        *((void**)&rv) = dlsym("?canContinueToUse@ReceiveLoveGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ReceiveLoveGoal(class VillagerBase &);
 
 protected:

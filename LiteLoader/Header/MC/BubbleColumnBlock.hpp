@@ -74,8 +74,6 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUBBLECOLUMNBLOCK
-#endif
     MCAPI BubbleColumnBlock(std::string const &, int);
     MCAPI static bool addBubbleColumnSegment(class BlockSource &, class BlockPos const &);
     MCAPI static void spawnBubbles(class BlockSource &, class BlockPos const &);

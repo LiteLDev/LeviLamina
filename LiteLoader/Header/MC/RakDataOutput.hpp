@@ -33,8 +33,6 @@ public:
     /*7*/ virtual void writeInt(int);
     /*8*/ virtual void writeLongLong(__int64);
     /*9*/ virtual void writeBytes(void const *, unsigned __int64);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKDATAOUTPUT
-#endif
 
 protected:
 

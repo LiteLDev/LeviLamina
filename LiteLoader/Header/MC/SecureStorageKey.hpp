@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SECURESTORAGEKEY
-#endif
     MCAPI ~SecureStorageKey();
 
 protected:

@@ -30,8 +30,6 @@ public:
     /*3*/ virtual int getMaxCost(int) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual int getMaxLevel() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIDENTRIPTIDEENCHANT
-#endif
     MCAPI TridentRiptideEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 
 protected:

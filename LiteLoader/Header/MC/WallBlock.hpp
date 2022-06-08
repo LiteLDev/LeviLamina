@@ -77,10 +77,18 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WALLBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-    MCVAPI bool isWallBlock() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (WallBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@WallBlock@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isWallBlock() const{
+        bool (WallBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isWallBlock@WallBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI WallBlock(std::string const &, int, class BlockLegacy const &);
     MCAPI WallBlock(std::string const &, int, class Material const &);
     MCAPI void tryFixWallStates(class BlockSource &, class BlockPos const &, int) const;

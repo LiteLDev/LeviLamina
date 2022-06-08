@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PALETTE
-#endif
     MCAPI static class mce::Color const BLACK;
     MCAPI static class mce::Color const BLUE;
     MCAPI static class mce::Color const BROWN;

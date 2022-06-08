@@ -20,8 +20,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKANDITEMUPGRADEPATH
-#endif
     MCAPI BlockAndItemUpgradePath();
     MCAPI bool process(std::string &);
 

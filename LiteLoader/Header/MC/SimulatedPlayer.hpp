@@ -79,10 +79,18 @@ public:
     /*445*/ virtual class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource &);
     /*446*/ virtual int _getSpawnChunkLimit() const;
     /*447*/ virtual void _updateChunkPublisherView(class Vec3 const &, float);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMULATEDPLAYER
-    MCVAPI bool isSimulated() const;
-    MCVAPI bool useNewAi() const;
-#endif
+    /*
+    inline bool useNewAi() const{
+        bool (SimulatedPlayer::*rv)() const;
+        *((void**)&rv) = dlsym("?useNewAi@SimulatedPlayer@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isSimulated() const{
+        bool (SimulatedPlayer::*rv)() const;
+        *((void**)&rv) = dlsym("?isSimulated@SimulatedPlayer@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SimulatedPlayer(class Level &, class PacketSender &, class NetworkHandler &, class ClientBlobCache::Server::ActiveTransfersManager &, enum GameType, class NetworkIdentifier const &, unsigned char, class std::function<void (class ServerPlayer &)>, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>, int, bool, class EntityContext &);
     MCAPI class Bedrock::NonOwnerPointer<class gametest::BaseGameTestHelper> getGameTestHelper() const;
     MCAPI void setGameTestHelper(class Bedrock::NonOwnerPointer<class gametest::BaseGameTestHelper>);

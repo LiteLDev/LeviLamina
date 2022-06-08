@@ -34,8 +34,6 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual bool _setWantedPosition();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMBREACHINGGOAL
-#endif
     MCAPI RandomBreachingGoal(class Mob &, float, int, int, int, float);
 
 protected:

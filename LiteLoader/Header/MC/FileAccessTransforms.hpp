@@ -23,10 +23,18 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILEACCESSTRANSFORMS
-    MCVAPI bool readTransform(std::vector<unsigned char> &) const;
-    MCVAPI bool writeTransform(std::vector<unsigned char> &) const;
-#endif
+    /*
+    inline bool writeTransform(std::vector<unsigned char> & a0) const{
+        bool (FileAccessTransforms::*rv)(std::vector<unsigned char> &) const;
+        *((void**)&rv) = dlsym("?writeTransform@FileAccessTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z");
+        return (this->*rv)(std::forward<std::vector<unsigned char> &>(a0));
+    }
+    inline bool readTransform(std::vector<unsigned char> & a0) const{
+        bool (FileAccessTransforms::*rv)(std::vector<unsigned char> &) const;
+        *((void**)&rv) = dlsym("?readTransform@FileAccessTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z");
+        return (this->*rv)(std::forward<std::vector<unsigned char> &>(a0));
+    }
+    */
 
 protected:
 

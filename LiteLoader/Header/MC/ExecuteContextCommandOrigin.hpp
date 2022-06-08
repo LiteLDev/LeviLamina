@@ -39,8 +39,6 @@ public:
     /*28*/ virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const &) const;
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXECUTECONTEXTCOMMANDORIGIN
-#endif
     MCAPI ExecuteContextCommandOrigin(struct ActorUniqueID, class Vec3 const &, class std::optional<class Vec2> const &, struct ActorUniqueID, struct ActorUniqueID, enum ActorLocation, class AutomaticID<class Dimension, int>, class Level &);
     MCAPI void setDimension(class Dimension &);
     MCAPI void setExecutionEntity(class Actor const &);

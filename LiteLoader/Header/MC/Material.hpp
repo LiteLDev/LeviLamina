@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATERIAL
-#endif
     MCAPI bool getBlocksMotion() const;
     MCAPI bool getBlocksPrecipitation() const;
     MCAPI float getTranslucency() const;

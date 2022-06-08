@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYEREVENTCOORDINATOR
-#endif
     MCAPI PlayerEventCoordinator();
     MCAPI void registerPlayerGameplayHandler(std::unique_ptr<class PlayerGameplayHandler> &&);
     MCAPI enum CoordinatorResult sendEvent(class EventRef<struct PlayerGameplayEvent<enum CoordinatorResult>> const &);

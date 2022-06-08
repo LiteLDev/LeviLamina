@@ -24,8 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlockWaterContainerComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKWATERCONTAINERCOMPONENT
-#endif
     MCAPI ScriptBlockWaterContainerComponent(class ScriptBlockWaterContainerComponent const &);
     MCAPI ScriptBlockWaterContainerComponent(class ScriptBlockWaterContainerComponent &&);
     MCAPI class Scripting::Result<void> addDye(class ScriptItemType const &);

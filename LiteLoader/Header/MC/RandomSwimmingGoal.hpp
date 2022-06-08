@@ -31,8 +31,6 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual bool _setWantedPosition();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMSWIMMINGGOAL
-#endif
     MCAPI RandomSwimmingGoal(class Mob &, float, int, int, int, bool);
 
 protected:

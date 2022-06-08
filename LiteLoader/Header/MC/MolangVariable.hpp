@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGVARIABLE
-#endif
     MCAPI MolangVariable(enum MolangVariableIndex, class HashedString, struct MolangScriptArg);
     MCAPI ~MolangVariable();
     MCAPI static enum MolangVariableIndex getVariableIndex(class HashedString const &);

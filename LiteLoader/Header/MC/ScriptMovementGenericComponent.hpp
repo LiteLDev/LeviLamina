@@ -25,8 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptMovementGenericComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMOVEMENTGENERICCOMPONENT
-#endif
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMovementGenericComponent> bind(struct Scripting::Version);
 
 protected:

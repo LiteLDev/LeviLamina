@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROLCOMPONENT
-#endif
     MCAPI MoveControlComponent();
     MCAPI bool getHasWantedPosition() const;
     MCAPI float getMaxTurn() const;

@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNGROUPDATA
-#endif
     MCAPI SpawnGroupData(std::string const &, class MobSpawnRules &);
     MCAPI void addSpawnRules(class MobSpawnRules &);
     MCAPI std::string const & getIdentifier() const;

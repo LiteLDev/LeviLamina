@@ -66,9 +66,13 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERWARTBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (NetherWartBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@NetherWartBlock@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI NetherWartBlock(std::string const &, int);
 
 protected:

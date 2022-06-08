@@ -21,9 +21,13 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTENTTIERMANAGER
-    MCVAPI ~IContentTierManager();
-#endif
+    /*
+    inline  ~IContentTierManager(){
+         (IContentTierManager::*rv)();
+        *((void**)&rv) = dlsym("??1IContentTierManager@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

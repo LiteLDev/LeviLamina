@@ -65,10 +65,18 @@ public:
     /*29*/ virtual void setCompactionCallback(class std::function<void (enum CompactionStatus)>);
     /*30*/ virtual void setCriticalSyncSaveCallback(class std::function<void (void)>);
     /*31*/ virtual void corruptLevel();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DBSTORAGE
-    MCVAPI struct Core::LevelStorageResult getLevelStorageState() const;
-    MCVAPI struct Core::LevelStorageResult getState() const;
-#endif
+    /*
+    inline struct Core::LevelStorageResult getState() const{
+        struct Core::LevelStorageResult (DBStorage::*rv)() const;
+        *((void**)&rv) = dlsym("?getState@DBStorage@@UEBA?AULevelStorageResult@Core@@XZ");
+        return (this->*rv)();
+    }
+    inline struct Core::LevelStorageResult getLevelStorageState() const{
+        struct Core::LevelStorageResult (DBStorage::*rv)() const;
+        *((void**)&rv) = dlsym("?getLevelStorageState@DBStorage@@UEBA?AULevelStorageResult@Core@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI DBStorage(struct DBStorageConfig, class gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>);
     MCAPI void _notifyChunkStorageDestroyed(class DBChunkStorage &);
     MCAPI bool tryRepair(class Core::Path const &) const;

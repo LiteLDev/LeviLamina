@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDPROPERTYBAG
-#endif
     MCAPI CommandPropertyBag(class Json::Value const &);
     MCAPI CommandPropertyBag();
     MCAPI void addToResultList(std::string const &, std::string const &);

@@ -39,8 +39,6 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDGATEWAYBLOCKACTOR
-#endif
     MCAPI EndGatewayBlockActor(class BlockPos const &);
     MCAPI bool canTeleport(class GetCollisionShapeInterface const *, class BlockSource const &) const;
     MCAPI class BlockPos getExitPosition() const;

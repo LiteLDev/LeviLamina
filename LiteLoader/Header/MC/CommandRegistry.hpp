@@ -671,8 +671,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDREGISTRY
-#endif
     MCAPI CommandRegistry();
     MCAPI void addEnumValueConstraints(std::string const &, std::vector<std::string> const &, enum SemanticConstraint);
     MCAPI int addEnumValues(std::string const &, std::vector<std::string> const &);

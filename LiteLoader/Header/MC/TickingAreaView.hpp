@@ -36,8 +36,6 @@ public:
     /*10*/ virtual void move(struct Bounds const &);
     /*11*/ virtual std::unique_ptr<class ChunkViewSource> createChildSource();
     /*12*/ virtual class std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREAVIEW
-#endif
     MCAPI TickingAreaView(class ChunkSource &);
     MCAPI void unregisterChunkBuildOrderPolicy(class ChunkBuildOrderPolicyBase &);
 

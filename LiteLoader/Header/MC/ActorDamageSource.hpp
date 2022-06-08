@@ -46,8 +46,6 @@ public:
     /*17*/ virtual enum ActorType getDamagingEntityType() const;
     /*18*/ virtual enum ActorCategory getDamagingEntityCategories() const;
     /*19*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDAMAGESOURCE
-#endif
     MCAPI ActorDamageSource(enum ActorDamageCause);
     MCAPI enum ActorDamageCause getCause() const;
     MCAPI void setCause(enum ActorDamageCause);

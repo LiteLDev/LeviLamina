@@ -36,8 +36,6 @@ public:
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWBLOCKACTOR
-#endif
     MCAPI JigsawBlockActor(class BlockPos const &);
 
 protected:

@@ -25,8 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptHealableComponent2();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTHEALABLECOMPONENT2
-#endif
     MCAPI ScriptHealableComponent2(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class Scripting::Result<class ActorFilterGroup> getFilters() const;
     MCAPI class Scripting::Result<bool> getForceUse() const;

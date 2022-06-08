@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTINOISEBIOMEPROVIDER
-#endif
     MCAPI MultiNoiseBiomeProvider(struct OverworldNoises3d const &, class ParameterList);
     MCAPI class Biome const * tryGetBiome(class BlockPos const &) const;
     MCAPI class Biome const * tryGetBiome(class BlockPos const &, struct ChunkLocalNoiseCache::CacheEntry const &, struct RTree::Hint *) const;

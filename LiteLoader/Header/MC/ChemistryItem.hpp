@@ -40,8 +40,6 @@ public:
     /*75*/ virtual void __unk_vfn_75();
     /*76*/ virtual void __unk_vfn_76();
     /*101*/ virtual void fixupCommon(class ItemStackBase &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYITEM
-#endif
     MCAPI static void validate(class ItemStackBase &);
 
 protected:

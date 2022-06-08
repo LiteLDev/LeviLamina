@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTIVEDIRECTORYIDENTITY
-#endif
     MCAPI static std::string const IS_VALID_FIELD;
     MCAPI static std::string const JWT_EXPIRATION_FIELD;
     MCAPI static std::string const JWT_REQUEST_ID_FIELD;

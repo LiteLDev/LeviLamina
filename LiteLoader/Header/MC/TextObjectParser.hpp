@@ -35,8 +35,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTOBJECTPARSER
-#endif
     MCAPI static std::string const RAW_TEXT_ERROR_NOT_ARRAY;
     MCAPI static std::string const RAW_TEXT_ERROR_NOT_OBJECT;
     MCAPI static std::string const RAW_TEXT_ERROR_NO_DATA;

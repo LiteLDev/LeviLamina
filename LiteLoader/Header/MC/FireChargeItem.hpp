@@ -43,8 +43,6 @@ public:
     /*81*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /*126*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIRECHARGEITEM
-#endif
     MCAPI FireChargeItem(std::string const &, int);
     MCAPI static int const LEVEL_SOUND_EVENT_VOLUME;
 

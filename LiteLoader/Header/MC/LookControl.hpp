@@ -25,8 +25,6 @@ public:
     /*0*/ virtual ~LookControl();
     /*1*/ virtual void initializeInternal(class Mob &);
     /*2*/ virtual void tick(class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKCONTROL
-#endif
     MCAPI LookControl();
 
 protected:

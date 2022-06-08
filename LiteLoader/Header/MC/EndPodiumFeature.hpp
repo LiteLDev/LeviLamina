@@ -27,8 +27,6 @@ public:
     /*0*/ virtual ~EndPodiumFeature();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDPODIUMFEATURE
-#endif
     MCAPI EndPodiumFeature(bool);
     MCAPI static float const CORNER_ROUNDING;
     MCAPI static class BlockPos const END_PODIUM_CHUNK_POSITION;

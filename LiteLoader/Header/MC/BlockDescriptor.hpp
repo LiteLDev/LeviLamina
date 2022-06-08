@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDESCRIPTOR
-#endif
     MCAPI BlockDescriptor(class BlockDescriptor &&);
     MCAPI BlockDescriptor(class BlockDescriptor const &);
     MCAPI BlockDescriptor(std::string const &, std::vector<class BlockDescriptor::BlockState> const &&);

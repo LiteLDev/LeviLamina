@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATECOMMANDPARAM
-#endif
     MCAPI BlockStateCommandParam(std::string, std::string, enum BlockStateCommandParam::Type);
     MCAPI bool setBlockState(class Block const **, class CommandOutput &) const;
     MCAPI ~BlockStateCommandParam();

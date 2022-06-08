@@ -35,8 +35,6 @@ public:
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
     /*24*/ virtual void setContainerChanged(int);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTINGCONTAINER
-#endif
     MCAPI CraftingContainer(int, int);
     MCAPI class ItemStack const & getItem(int, int) const;
 

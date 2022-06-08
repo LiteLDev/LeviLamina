@@ -71,9 +71,13 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*204*/ virtual void updateShape(class BlockSource &, class BlockPos const &);
     /*205*/ virtual void updateSignalStrength(class BlockSource &, class BlockPos const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAYLIGHTDETECTORBLOCK
-    MCVAPI bool isInteractiveBlock() const;
-#endif
+    /*
+    inline bool isInteractiveBlock() const{
+        bool (DaylightDetectorBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@DaylightDetectorBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI DaylightDetectorBlock(std::string const &, int, bool);
 
 protected:

@@ -24,8 +24,6 @@ public:
 public:
     /*0*/ virtual class std::unordered_map<class BlockPos, std::string, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, std::string>>> getMarkers(class BlockPos const &, class LegacyStructureSettings &) const;
     /*1*/ virtual void placeInWorld(class BlockSource &, class BlockPos const &, class LegacyStructureSettings &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYSTRUCTURETEMPLATE
-#endif
     MCAPI LegacyStructureTemplate();
     MCAPI class BlockPos calculateConnectedPosition(class LegacyStructureSettings const &, class BlockPos const &, class LegacyStructureSettings const &, class BlockPos const &) const;
     MCAPI std::vector<class JigsawStructureBlockInfo> getJigsawMarkers() const;

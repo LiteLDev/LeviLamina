@@ -61,9 +61,13 @@ public:
     /*185*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUDDINGAMETHYSTBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (BuddingAmethystBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@BuddingAmethystBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BuddingAmethystBlock(std::string const &, int, class Material const &);
     MCAPI static bool canBudGrowAtPos(class BlockSource &, class BlockPos const &);
 

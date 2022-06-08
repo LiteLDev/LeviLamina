@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEXTOBJECT
-#endif
     MCAPI static std::string const RAW_TEXT_OBJECT_KEY;
     MCAPI static std::string const RAW_TEXT_TEXT_KEY;
     MCAPI static std::string const RAW_TEXT_TRANSLATE_KEY;

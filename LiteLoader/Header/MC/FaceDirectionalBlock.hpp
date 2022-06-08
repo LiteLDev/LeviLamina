@@ -63,8 +63,6 @@ public:
     /*180*/ virtual void __unk_vfn_180();
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FACEDIRECTIONALBLOCK
-#endif
     MCAPI FaceDirectionalBlock(std::string const &, int, class Material const &, bool, float);
     MCAPI static enum Flip getFaceFlipStatic(unsigned char, class Block const &, bool);
     MCAPI static unsigned char getFacingDirection(class Block const &, bool);

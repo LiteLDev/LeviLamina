@@ -48,8 +48,6 @@ public:
     /*24*/ virtual void __unk_vfn_24();
     /*25*/ virtual void __unk_vfn_25();
     /*26*/ virtual void onLevelDestruction(std::string const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTGAMETEST
-#endif
     MCAPI MinecraftGameTest(class Level &);
     MCAPI void clearAllTests(class BlockSource &);
     MCAPI class gametest::GameTestRegistry & getRegistry();

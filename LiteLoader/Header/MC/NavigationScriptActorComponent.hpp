@@ -45,8 +45,6 @@ public:
     /*20*/ virtual class Scripting::Result<bool> getCanBreach() const;
     /*21*/ virtual class Scripting::Result<bool> getCanJump() const;
     /*22*/ virtual class Scripting::Result<bool> getCanPathFromAir() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONSCRIPTACTORCOMPONENT
-#endif
     MCAPI NavigationScriptActorComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &, struct Description *ActorDefinitionDescriptor::*);
 
 protected:

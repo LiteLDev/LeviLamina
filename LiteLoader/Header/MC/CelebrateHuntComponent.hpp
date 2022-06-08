@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CELEBRATEHUNTCOMPONENT
-#endif
     MCAPI enum LevelSoundEvent const getCelebrateSound(class Mob const &) const;
     MCAPI struct Tick const getCelebrateUntil() const;
     MCAPI struct Tick const getNextSoundEventTick() const;

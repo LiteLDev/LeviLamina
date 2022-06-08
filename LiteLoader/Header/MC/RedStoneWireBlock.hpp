@@ -74,10 +74,18 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REDSTONEWIREBLOCK
-    MCVAPI bool canSpawnOn() const;
-    MCVAPI bool waterSpreadCausesSpawn() const;
-#endif
+    /*
+    inline bool canSpawnOn() const{
+        bool (RedStoneWireBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canSpawnOn@RedStoneWireBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool waterSpreadCausesSpawn() const{
+        bool (RedStoneWireBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@RedStoneWireBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI RedStoneWireBlock(std::string const &, int);
 
 protected:

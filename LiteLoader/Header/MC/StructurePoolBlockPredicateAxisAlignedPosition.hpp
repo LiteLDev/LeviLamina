@@ -26,8 +26,6 @@ public:
     /*0*/ virtual ~StructurePoolBlockPredicateAxisAlignedPosition();
     /*1*/ virtual bool test(class Block const &, class Randomize &) const;
     /*2*/ virtual bool test(class BlockPos const &, class BlockPos const &, class Randomize &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLBLOCKPREDICATEAXISALIGNEDPOSITION
-#endif
     MCAPI StructurePoolBlockPredicateAxisAlignedPosition(float, float, int, int, unsigned char);
 
 protected:

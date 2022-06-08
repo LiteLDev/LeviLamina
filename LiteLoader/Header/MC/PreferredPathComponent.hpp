@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PREFERREDPATHCOMPONENT
-#endif
     MCAPI struct PreferredPathDescription const & getPreferredPath(class Actor &);
     MCAPI void initFromDefinition(class Actor &);
 

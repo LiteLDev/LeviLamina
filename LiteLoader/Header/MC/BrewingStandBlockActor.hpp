@@ -23,26 +23,98 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREWINGSTANDBLOCKACTOR
-    MCVAPI bool canPullOutItem(class BlockSource &, int, int, class ItemInstance const &) const;
-    MCVAPI bool canPushInItem(class BlockSource &, int, int, class ItemInstance const &) const;
-    MCVAPI class Container const * getContainer() const;
-    MCVAPI class Container * getContainer();
-    MCVAPI int getContainerSize() const;
-    MCVAPI class ItemStack const & getItem(int) const;
-    MCVAPI int getMaxStackSize() const;
-    MCVAPI std::string getName() const;
-    MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
-    MCVAPI void onChanged(class BlockSource &);
-    MCVAPI void onMove();
-    MCVAPI bool save(class CompoundTag &) const;
-    MCVAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
-    MCVAPI void setContainerChanged(int);
-    MCVAPI void setItem(int, class ItemStack const &);
-    MCVAPI void startOpen(class Player &);
-    MCVAPI void stopOpen(class Player &);
-    MCVAPI void tick(class BlockSource &);
-#endif
+    /*
+    inline void startOpen(class Player & a0){
+        void (BrewingStandBlockActor::*rv)(class Player &);
+        *((void**)&rv) = dlsym("?startOpen@BrewingStandBlockActor@@UEAAXAEAVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0));
+    }
+    inline void stopOpen(class Player & a0){
+        void (BrewingStandBlockActor::*rv)(class Player &);
+        *((void**)&rv) = dlsym("?stopOpen@BrewingStandBlockActor@@UEAAXAEAVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0));
+    }
+    inline int getContainerSize() const{
+        int (BrewingStandBlockActor::*rv)() const;
+        *((void**)&rv) = dlsym("?getContainerSize@BrewingStandBlockActor@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline int getMaxStackSize() const{
+        int (BrewingStandBlockActor::*rv)() const;
+        *((void**)&rv) = dlsym("?getMaxStackSize@BrewingStandBlockActor@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline class Container const * getContainer() const{
+        class Container const * (BrewingStandBlockActor::*rv)() const;
+        *((void**)&rv) = dlsym("?getContainer@BrewingStandBlockActor@@UEBAPEBVContainer@@XZ");
+        return (this->*rv)();
+    }
+    inline class Container * getContainer(){
+        class Container * (BrewingStandBlockActor::*rv)();
+        *((void**)&rv) = dlsym("?getContainer@BrewingStandBlockActor@@UEAAPEAVContainer@@XZ");
+        return (this->*rv)();
+    }
+    inline void onMove(){
+        void (BrewingStandBlockActor::*rv)();
+        *((void**)&rv) = dlsym("?onMove@BrewingStandBlockActor@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline bool canPullOutItem(class BlockSource & a0, int a1, int a2, class ItemInstance const & a3) const{
+        bool (BrewingStandBlockActor::*rv)(class BlockSource &, int, int, class ItemInstance const &) const;
+        *((void**)&rv) = dlsym("?canPullOutItem@BrewingStandBlockActor@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<class ItemInstance const &>(a3));
+    }
+    inline bool canPushInItem(class BlockSource & a0, int a1, int a2, class ItemInstance const & a3) const{
+        bool (BrewingStandBlockActor::*rv)(class BlockSource &, int, int, class ItemInstance const &) const;
+        *((void**)&rv) = dlsym("?canPushInItem@BrewingStandBlockActor@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<class ItemInstance const &>(a3));
+    }
+    inline class ItemStack const & getItem(int a0) const{
+        class ItemStack const & (BrewingStandBlockActor::*rv)(int) const;
+        *((void**)&rv) = dlsym("?getItem@BrewingStandBlockActor@@UEBAAEBVItemStack@@H@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    inline std::string getName() const{
+        std::string (BrewingStandBlockActor::*rv)() const;
+        *((void**)&rv) = dlsym("?getName@BrewingStandBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline void load(class Level & a0, class CompoundTag const & a1, class DataLoadHelper & a2){
+        void (BrewingStandBlockActor::*rv)(class Level &, class CompoundTag const &, class DataLoadHelper &);
+        *((void**)&rv) = dlsym("?load@BrewingStandBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
+        return (this->*rv)(std::forward<class Level &>(a0), std::forward<class CompoundTag const &>(a1), std::forward<class DataLoadHelper &>(a2));
+    }
+    inline void onChanged(class BlockSource & a0){
+        void (BrewingStandBlockActor::*rv)(class BlockSource &);
+        *((void**)&rv) = dlsym("?onChanged@BrewingStandBlockActor@@UEAAXAEAVBlockSource@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0));
+    }
+    inline bool save(class CompoundTag & a0) const{
+        bool (BrewingStandBlockActor::*rv)(class CompoundTag &) const;
+        *((void**)&rv) = dlsym("?save@BrewingStandBlockActor@@UEBA_NAEAVCompoundTag@@@Z");
+        return (this->*rv)(std::forward<class CompoundTag &>(a0));
+    }
+    inline void serverInitItemStackIds(int a0, int a1, class std::function<void (int, class ItemStack const &)> a2){
+        void (BrewingStandBlockActor::*rv)(int, int, class std::function<void (int, class ItemStack const &)>);
+        *((void**)&rv) = dlsym("?serverInitItemStackIds@BrewingStandBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<class std::function<void (int, class ItemStack const &)>>(a2));
+    }
+    inline void setContainerChanged(int a0){
+        void (BrewingStandBlockActor::*rv)(int);
+        *((void**)&rv) = dlsym("?setContainerChanged@BrewingStandBlockActor@@UEAAXH@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    inline void setItem(int a0, class ItemStack const & a1){
+        void (BrewingStandBlockActor::*rv)(int, class ItemStack const &);
+        *((void**)&rv) = dlsym("?setItem@BrewingStandBlockActor@@UEAAXHAEBVItemStack@@@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStack const &>(a1));
+    }
+    inline void tick(class BlockSource & a0){
+        void (BrewingStandBlockActor::*rv)(class BlockSource &);
+        *((void**)&rv) = dlsym("?tick@BrewingStandBlockActor@@UEAAXAEAVBlockSource@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0));
+    }
+    */
     MCAPI BrewingStandBlockActor(class BlockPos const &);
     MCAPI void brew();
     MCAPI int getBrewTime() const;

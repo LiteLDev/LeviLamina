@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEHITBOXSYSTEM
-#endif
     MCAPI static void moveHitboxTo(class Vec3 const &, std::vector<struct Hitbox> &);
 
 protected:

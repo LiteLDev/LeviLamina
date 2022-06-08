@@ -61,9 +61,13 @@ public:
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
     /*361*/ virtual bool isDarkEnoughToSpawn() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GUARDIAN
-    MCVAPI bool canSeeInvisible() const;
-#endif
+    /*
+    inline bool canSeeInvisible() const{
+        bool (Guardian::*rv)() const;
+        *((void**)&rv) = dlsym("?canSeeInvisible@Guardian@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI Guardian(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI int getAttackDuration();
     MCAPI class Vec3 getMoveEyeVector();

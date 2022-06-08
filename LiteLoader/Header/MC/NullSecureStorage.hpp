@@ -23,12 +23,28 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NULLSECURESTORAGE
-    MCVAPI bool add(std::string const &, std::string const &);
-    MCVAPI bool addOrUpdate(std::string const &, std::string const &);
-    MCVAPI bool get(std::string const &, std::string &);
-    MCVAPI bool remove(std::string const &);
-#endif
+    /*
+    inline bool remove(std::string const & a0){
+        bool (NullSecureStorage::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?remove@NullSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline bool add(std::string const & a0, std::string const & a1){
+        bool (NullSecureStorage::*rv)(std::string const &, std::string const &);
+        *((void**)&rv) = dlsym("?add@NullSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<std::string const &>(a1));
+    }
+    inline bool addOrUpdate(std::string const & a0, std::string const & a1){
+        bool (NullSecureStorage::*rv)(std::string const &, std::string const &);
+        *((void**)&rv) = dlsym("?addOrUpdate@NullSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<std::string const &>(a1));
+    }
+    inline bool get(std::string const & a0, std::string & a1){
+        bool (NullSecureStorage::*rv)(std::string const &, std::string &);
+        *((void**)&rv) = dlsym("?get@NullSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV23@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<std::string &>(a1));
+    }
+    */
 
 protected:
 

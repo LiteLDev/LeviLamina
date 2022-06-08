@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAGUPDATERCONTEXT
-#endif
     MCAPI CompoundTagUpdaterContext();
     MCAPI class CompoundTagUpdaterBuilder addUpdater(unsigned char, unsigned char, unsigned char);
     MCAPI void sortUpdaters();

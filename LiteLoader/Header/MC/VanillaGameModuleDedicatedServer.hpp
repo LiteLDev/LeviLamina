@@ -28,8 +28,6 @@ public:
     /*2*/ virtual class std::shared_ptr<class IInPackagePacks> createInPackagePacks();
     /*3*/ virtual void registerMolangQueries();
     /*4*/ virtual void registerServerInstanceHandler(class ServerInstanceEventCoordinator &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAGAMEMODULEDEDICATEDSERVER
-#endif
 
 protected:
 

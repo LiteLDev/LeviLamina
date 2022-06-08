@@ -26,8 +26,6 @@ public:
     /*0*/ virtual bool listen(unsigned short);
     /*1*/ virtual bool connect(std::string const &, unsigned short);
     /*2*/ virtual void close();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEBUGGER
-#endif
     MCAPI ScriptDebugger(class Scripting::ScriptEngine &, class IScriptDebuggerWatchdog &);
     MCAPI void checkConnections();
 

@@ -25,8 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlockType();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKTYPE
-#endif
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>> createDefaultBlockPermutation() const;
     MCAPI class BlockLegacy const & getBlock() const;
     MCAPI std::string getId() const;

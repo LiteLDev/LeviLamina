@@ -26,8 +26,6 @@ public:
 
 public:
     /*0*/ virtual ~PlaceBlockDefinition();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLACEBLOCKDEFINITION
-#endif
 
 protected:
 

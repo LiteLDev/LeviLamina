@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTCOMPONENT
-#endif
     MCAPI MobEffectComponent();
     MCAPI class MobEffectComponent & operator=(class MobEffectComponent &&);
     MCAPI ~MobEffectComponent();

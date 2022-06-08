@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARTICLESTELEPORTTRAILEVENT
-#endif
     MCAPI std::unique_ptr<class CompoundTag> save() const;
 
 protected:

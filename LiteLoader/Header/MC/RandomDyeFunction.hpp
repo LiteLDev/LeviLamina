@@ -28,8 +28,6 @@ public:
     /*0*/ virtual ~RandomDyeFunction();
     /*1*/ virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /*3*/ virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMDYEFUNCTION
-#endif
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 protected:

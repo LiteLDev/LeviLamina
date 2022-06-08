@@ -64,13 +64,33 @@ public:
     /*354*/ virtual void newServerAiStep();
     /*355*/ virtual void _serverAiMobStep();
     /*359*/ virtual void __unk_vfn_359();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPC
-    MCVAPI bool breaksFallingBlocks() const;
-    MCVAPI bool interactPreventDefault();
-    MCVAPI bool isFishable() const;
-    MCVAPI bool isTargetable() const;
-    MCVAPI bool useNewAi() const;
-#endif
+    /*
+    inline bool isFishable() const{
+        bool (Npc::*rv)() const;
+        *((void**)&rv) = dlsym("?isFishable@Npc@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isTargetable() const{
+        bool (Npc::*rv)() const;
+        *((void**)&rv) = dlsym("?isTargetable@Npc@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool interactPreventDefault(){
+        bool (Npc::*rv)();
+        *((void**)&rv) = dlsym("?interactPreventDefault@Npc@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool breaksFallingBlocks() const{
+        bool (Npc::*rv)() const;
+        *((void**)&rv) = dlsym("?breaksFallingBlocks@Npc@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool useNewAi() const{
+        bool (Npc::*rv)() const;
+        *((void**)&rv) = dlsym("?useNewAi@Npc@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI Npc(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI static std::string const SKIN_ID_TAG;
     MCAPI static std::vector<struct std::pair<std::string, std::string>> const Skins;

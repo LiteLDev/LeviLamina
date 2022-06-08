@@ -23,54 +23,238 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORM_WIN32
-    MCVAPI bool canLaunchUri(std::string const &);
-    MCVAPI class Core::PathBuffer<std::string> copyImportFileToTempFolder(class Core::Path const &);
-    MCVAPI class std::shared_ptr<class WebviewInterface> createWebview(class Webview::PlatformArguments &&) const;
-    MCVAPI std::string getApplicationId() const;
-    MCVAPI class Core::PathBuffer<std::string> getAssetFileFullPath(class Core::Path const &);
-    MCVAPI enum BuildPlatform getBuildPlatform() const;
-    MCVAPI int getDisplayHeight();
-    MCVAPI int getDisplayWidth();
-    MCVAPI std::string getEdition() const;
-    MCVAPI unsigned __int64 getFreeMemory() const;
-    MCVAPI class Core::PathBuffer<std::string> getLoggingPath() const;
-    MCVAPI unsigned __int64 getMemoryLimit() const;
-    MCVAPI std::string getModelName();
-    MCVAPI enum OsVersion getOSVersion() const;
-    MCVAPI std::string getPackageFamilyName() const;
-    MCVAPI class Core::PathBuffer<std::string> getPackagePath() const;
-    MCVAPI float getPixelsPerMillimeter();
-    MCVAPI std::string getPlatformString() const;
-    MCVAPI bool getPlatformTTSEnabled() const;
-    MCVAPI enum PlatformType getPlatformType() const;
-    MCVAPI enum UIScalingRules getPlatformUIScalingRules() const;
-    MCVAPI class std::variant<struct HWND__*, struct std::monostate> getRenderSurfaceParameters() const;
-    MCVAPI int getScreenHeight() const;
-    MCVAPI int getScreenWidth() const;
-    MCVAPI std::unique_ptr<class SecureStorage> getSecureStorage();
-    MCVAPI class SecureStorageKey getSecureStorageKey(std::string const &);
-    MCVAPI std::string getSubPlatformString() const;
-    MCVAPI unsigned __int64 getTotalPhysicalMemory() const;
-    MCVAPI unsigned __int64 getUsedMemory();
-    MCVAPI bool hasBuyButtonWhenInvalidLicense();
-    MCVAPI bool hasFastAlphaTest() const;
-    MCVAPI bool isCentennial() const;
-    MCVAPI class std::optional<bool> isOnWifiConnectionTelemetryValue();
-    MCVAPI bool isWebviewSupported() const;
-    MCVAPI void launchUri(std::string const &);
-    MCVAPI class std::set<class Core::PathBuffer<std::string>, struct std::less<class Core::PathBuffer<std::string>>, class std::allocator<class Core::PathBuffer<std::string>>> listAssetFilesIn(class Core::Path const &, std::string const &) const;
-    MCVAPI std::string readAssetFile(class Core::Path const &);
-    MCVAPI void setFullscreenMode(enum FullscreenMode);
-    MCVAPI void setScreenSize(int, int);
-    MCVAPI void setSecureStorageKey(std::string const &, class SecureStorageKey const &);
-    MCVAPI void setWindowSize(int, int);
-    MCVAPI void setWindowText(std::string const &);
-    MCVAPI bool supportsFliteTTS() const;
-    MCVAPI bool supportsVibration() const;
-    MCVAPI void updateTextBoxText(std::string const &);
-    MCVAPI ~AppPlatform_win32();
-#endif
+    /*
+    inline enum PlatformType getPlatformType() const{
+        enum PlatformType (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?getPlatformType@AppPlatform_win32@@UEBA?AW4PlatformType@@XZ");
+        return (this->*rv)();
+    }
+    inline enum UIScalingRules getPlatformUIScalingRules() const{
+        enum UIScalingRules (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?getPlatformUIScalingRules@AppPlatform_win32@@EEBA?AW4UIScalingRules@@XZ");
+        return (this->*rv)();
+    }
+    inline bool supportsVibration() const{
+        bool (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?supportsVibration@AppPlatform_win32@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool supportsFliteTTS() const{
+        bool (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?supportsFliteTTS@AppPlatform_win32@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasBuyButtonWhenInvalidLicense(){
+        bool (AppPlatform_win32::*rv)();
+        *((void**)&rv) = dlsym("?hasBuyButtonWhenInvalidLicense@AppPlatform_win32@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canLaunchUri(std::string const & a0){
+        bool (AppPlatform_win32::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?canLaunchUri@AppPlatform_win32@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline bool hasFastAlphaTest() const{
+        bool (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?hasFastAlphaTest@AppPlatform_win32@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline void updateTextBoxText(std::string const & a0){
+        void (AppPlatform_win32::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?updateTextBoxText@AppPlatform_win32@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline void setSecureStorageKey(std::string const & a0, class SecureStorageKey const & a1){
+        void (AppPlatform_win32::*rv)(std::string const &, class SecureStorageKey const &);
+        *((void**)&rv) = dlsym("?setSecureStorageKey@AppPlatform_win32@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSecureStorageKey@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class SecureStorageKey const &>(a1));
+    }
+    inline void setScreenSize(int a0, int a1){
+        void (AppPlatform_win32::*rv)(int, int);
+        *((void**)&rv) = dlsym("?setScreenSize@AppPlatform_win32@@UEAAXHH@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
+    inline enum BuildPlatform getBuildPlatform() const{
+        enum BuildPlatform (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?getBuildPlatform@AppPlatform_win32@@UEBA?AW4BuildPlatform@@XZ");
+        return (this->*rv)();
+    }
+    inline  ~AppPlatform_win32(){
+         (AppPlatform_win32::*rv)();
+        *((void**)&rv) = dlsym("??1AppPlatform_win32@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline class Core::PathBuffer<std::string> copyImportFileToTempFolder(class Core::Path const & a0){
+        class Core::PathBuffer<std::string> (AppPlatform_win32::*rv)(class Core::Path const &);
+        *((void**)&rv) = dlsym("?copyImportFileToTempFolder@AppPlatform_win32@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVPath@3@@Z");
+        return (this->*rv)(std::forward<class Core::Path const &>(a0));
+    }
+    inline class std::shared_ptr<class WebviewInterface> createWebview(class Webview::PlatformArguments && a0) const{
+        class std::shared_ptr<class WebviewInterface> (AppPlatform_win32::*rv)(class Webview::PlatformArguments &&) const;
+        *((void**)&rv) = dlsym("?createWebview@AppPlatform_win32@@UEBA?AV?$shared_ptr@VWebviewInterface@@@std@@$$QEAVPlatformArguments@Webview@@@Z");
+        return (this->*rv)(std::forward<class Webview::PlatformArguments &&>(a0));
+    }
+    inline std::string getApplicationId() const{
+        std::string (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?getApplicationId@AppPlatform_win32@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline class Core::PathBuffer<std::string> getAssetFileFullPath(class Core::Path const & a0){
+        class Core::PathBuffer<std::string> (AppPlatform_win32::*rv)(class Core::Path const &);
+        *((void**)&rv) = dlsym("?getAssetFileFullPath@AppPlatform_win32@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVPath@3@@Z");
+        return (this->*rv)(std::forward<class Core::Path const &>(a0));
+    }
+    inline int getDisplayHeight(){
+        int (AppPlatform_win32::*rv)();
+        *((void**)&rv) = dlsym("?getDisplayHeight@AppPlatform_win32@@UEAAHXZ");
+        return (this->*rv)();
+    }
+    inline int getDisplayWidth(){
+        int (AppPlatform_win32::*rv)();
+        *((void**)&rv) = dlsym("?getDisplayWidth@AppPlatform_win32@@UEAAHXZ");
+        return (this->*rv)();
+    }
+    inline std::string getEdition() const{
+        std::string (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?getEdition@AppPlatform_win32@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline unsigned __int64 getFreeMemory() const{
+        unsigned __int64 (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?getFreeMemory@AppPlatform_win32@@UEBA_KXZ");
+        return (this->*rv)();
+    }
+    inline class Core::PathBuffer<std::string> getLoggingPath() const{
+        class Core::PathBuffer<std::string> (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?getLoggingPath@AppPlatform_win32@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
+        return (this->*rv)();
+    }
+    inline unsigned __int64 getMemoryLimit() const{
+        unsigned __int64 (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?getMemoryLimit@AppPlatform_win32@@UEBA_KXZ");
+        return (this->*rv)();
+    }
+    inline std::string getModelName(){
+        std::string (AppPlatform_win32::*rv)();
+        *((void**)&rv) = dlsym("?getModelName@AppPlatform_win32@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline enum OsVersion getOSVersion() const{
+        enum OsVersion (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?getOSVersion@AppPlatform_win32@@UEBA?AW4OsVersion@@XZ");
+        return (this->*rv)();
+    }
+    inline std::string getPackageFamilyName() const{
+        std::string (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?getPackageFamilyName@AppPlatform_win32@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline class Core::PathBuffer<std::string> getPackagePath() const{
+        class Core::PathBuffer<std::string> (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?getPackagePath@AppPlatform_win32@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
+        return (this->*rv)();
+    }
+    inline float getPixelsPerMillimeter(){
+        float (AppPlatform_win32::*rv)();
+        *((void**)&rv) = dlsym("?getPixelsPerMillimeter@AppPlatform_win32@@UEAAMXZ");
+        return (this->*rv)();
+    }
+    inline std::string getPlatformString() const{
+        std::string (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?getPlatformString@AppPlatform_win32@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline bool getPlatformTTSEnabled() const{
+        bool (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?getPlatformTTSEnabled@AppPlatform_win32@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline class std::variant<struct HWND__*, struct std::monostate> getRenderSurfaceParameters() const{
+        class std::variant<struct HWND__*, struct std::monostate> (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?getRenderSurfaceParameters@AppPlatform_win32@@UEBA?AV?$variant@PEAUHWND__@@Umonostate@std@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline int getScreenHeight() const{
+        int (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?getScreenHeight@AppPlatform_win32@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline int getScreenWidth() const{
+        int (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?getScreenWidth@AppPlatform_win32@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline std::unique_ptr<class SecureStorage> getSecureStorage(){
+        std::unique_ptr<class SecureStorage> (AppPlatform_win32::*rv)();
+        *((void**)&rv) = dlsym("?getSecureStorage@AppPlatform_win32@@UEAA?AV?$unique_ptr@VSecureStorage@@U?$default_delete@VSecureStorage@@@std@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline class SecureStorageKey getSecureStorageKey(std::string const & a0){
+        class SecureStorageKey (AppPlatform_win32::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?getSecureStorageKey@AppPlatform_win32@@UEAA?AVSecureStorageKey@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline std::string getSubPlatformString() const{
+        std::string (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?getSubPlatformString@AppPlatform_win32@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline unsigned __int64 getTotalPhysicalMemory() const{
+        unsigned __int64 (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?getTotalPhysicalMemory@AppPlatform_win32@@UEBA_KXZ");
+        return (this->*rv)();
+    }
+    inline unsigned __int64 getUsedMemory(){
+        unsigned __int64 (AppPlatform_win32::*rv)();
+        *((void**)&rv) = dlsym("?getUsedMemory@AppPlatform_win32@@UEAA_KXZ");
+        return (this->*rv)();
+    }
+    inline bool isCentennial() const{
+        bool (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?isCentennial@AppPlatform_win32@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline class std::optional<bool> isOnWifiConnectionTelemetryValue(){
+        class std::optional<bool> (AppPlatform_win32::*rv)();
+        *((void**)&rv) = dlsym("?isOnWifiConnectionTelemetryValue@AppPlatform_win32@@UEAA?AV?$optional@_N@std@@XZ");
+        return (this->*rv)();
+    }
+    inline bool isWebviewSupported() const{
+        bool (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?isWebviewSupported@AppPlatform_win32@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline void launchUri(std::string const & a0){
+        void (AppPlatform_win32::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?launchUri@AppPlatform_win32@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline class std::set<class Core::PathBuffer<std::string>, struct std::less<class Core::PathBuffer<std::string>>, class std::allocator<class Core::PathBuffer<std::string>>> listAssetFilesIn(class Core::Path const & a0, std::string const & a1) const{
+        class std::set<class Core::PathBuffer<std::string>, struct std::less<class Core::PathBuffer<std::string>>, class std::allocator<class Core::PathBuffer<std::string>>> (AppPlatform_win32::*rv)(class Core::Path const &, std::string const &) const;
+        *((void**)&rv) = dlsym("?listAssetFilesIn@AppPlatform_win32@@UEBA?AV?$set@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@U?$less@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@std@@V?$allocator@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@4@@std@@AEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z");
+        return (this->*rv)(std::forward<class Core::Path const &>(a0), std::forward<std::string const &>(a1));
+    }
+    inline std::string readAssetFile(class Core::Path const & a0){
+        std::string (AppPlatform_win32::*rv)(class Core::Path const &);
+        *((void**)&rv) = dlsym("?readAssetFile@AppPlatform_win32@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@@Z");
+        return (this->*rv)(std::forward<class Core::Path const &>(a0));
+    }
+    inline void setFullscreenMode(enum FullscreenMode a0){
+        void (AppPlatform_win32::*rv)(enum FullscreenMode);
+        *((void**)&rv) = dlsym("?setFullscreenMode@AppPlatform_win32@@UEAAXW4FullscreenMode@@@Z");
+        return (this->*rv)(std::forward<enum FullscreenMode>(a0));
+    }
+    inline void setWindowSize(int a0, int a1){
+        void (AppPlatform_win32::*rv)(int, int);
+        *((void**)&rv) = dlsym("?setWindowSize@AppPlatform_win32@@UEAAXHH@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
+    inline void setWindowText(std::string const & a0){
+        void (AppPlatform_win32::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?setWindowText@AppPlatform_win32@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    */
     MCAPI AppPlatform_win32(struct HWND__*, std::string const &, std::string const &, class gsl::basic_string_span<char const, -1>, class std::shared_ptr<class HIDController>, int, int);
     MCAPI static void setupWorkingDirectory();
 

@@ -62,8 +62,6 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
     /*205*/ virtual void dispenseFrom(class BlockSource &, class BlockPos const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DROPPERBLOCK
-#endif
     MCAPI DropperBlock(std::string const &, int);
     MCAPI static int getAttachedFace(int);
 

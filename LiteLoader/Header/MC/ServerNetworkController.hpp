@@ -27,8 +27,6 @@ public:
     /*1*/ virtual bool isDedicatedServer() const;
     /*2*/ virtual bool isHost(class mce::UUID const &) const;
     /*3*/ virtual bool canChangePermission(class mce::UUID const &, class ServerPlayer const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKCONTROLLER
-#endif
     MCAPI ServerNetworkController(bool, class mce::UUID const &, class std::function<bool (class ServerPlayer const &, enum AbilitiesIndex)>);
 
 protected:

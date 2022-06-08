@@ -24,8 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~BarrelContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARRELCONTAINERSCREENVALIDATOR
-#endif
     MCAPI BarrelContainerScreenValidator();
 
 protected:

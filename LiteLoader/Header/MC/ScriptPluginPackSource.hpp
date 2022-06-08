@@ -24,8 +24,6 @@ public:
     /*0*/ virtual ~ScriptPluginPackSource();
     /*1*/ virtual class PackManifest const & getManifest();
     /*2*/ virtual class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> loadScripts(std::string const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINPACKSOURCE
-#endif
 
 protected:
 

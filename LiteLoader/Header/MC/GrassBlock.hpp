@@ -70,9 +70,13 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GRASSBLOCK
-    MCVAPI bool waterSpreadCausesSpawn() const;
-#endif
+    /*
+    inline bool waterSpreadCausesSpawn() const{
+        bool (GrassBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@GrassBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI GrassBlock(std::string const &, int);
     MCAPI bool fertilize(class BlockSource &, class BlockPos const &, class Randomize &) const;
     MCAPI static struct Brightness const MIN_BRIGHTNESS;

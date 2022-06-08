@@ -72,12 +72,28 @@ public:
     /*345*/ virtual void __unk_vfn_345();
     /*350*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
     /*359*/ virtual void __unk_vfn_359();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENT
-    MCVAPI bool breaksFallingBlocks() const;
-    MCVAPI bool getAlwaysShowNameTag() const;
-    MCVAPI bool interactPreventDefault();
-    MCVAPI bool isTargetable() const;
-#endif
+    /*
+    inline bool isTargetable() const{
+        bool (Agent::*rv)() const;
+        *((void**)&rv) = dlsym("?isTargetable@Agent@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool interactPreventDefault(){
+        bool (Agent::*rv)();
+        *((void**)&rv) = dlsym("?interactPreventDefault@Agent@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool getAlwaysShowNameTag() const{
+        bool (Agent::*rv)() const;
+        *((void**)&rv) = dlsym("?getAlwaysShowNameTag@Agent@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool breaksFallingBlocks() const{
+        bool (Agent::*rv)() const;
+        *((void**)&rv) = dlsym("?breaksFallingBlocks@Agent@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI Agent(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI float getMoveSpeedScalar() const;
     MCAPI int getSelectedSlot() const;

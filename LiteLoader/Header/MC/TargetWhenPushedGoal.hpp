@@ -30,10 +30,18 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETWHENPUSHEDGOAL
-    MCVAPI bool canBeInterrupted();
-    MCVAPI bool canContinueToUse();
-#endif
+    /*
+    inline bool canBeInterrupted(){
+        bool (TargetWhenPushedGoal::*rv)();
+        *((void**)&rv) = dlsym("?canBeInterrupted@TargetWhenPushedGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canContinueToUse(){
+        bool (TargetWhenPushedGoal::*rv)();
+        *((void**)&rv) = dlsym("?canContinueToUse@TargetWhenPushedGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI TargetWhenPushedGoal(class Mob &, std::vector<struct MobDescriptor>, float);
 
 protected:

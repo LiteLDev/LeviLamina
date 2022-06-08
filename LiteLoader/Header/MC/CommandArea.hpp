@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDAREA
-#endif
     MCAPI CommandArea(std::unique_ptr<class ChunkViewSource>);
     MCAPI ~CommandArea();
 

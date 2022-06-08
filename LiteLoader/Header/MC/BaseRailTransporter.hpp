@@ -31,8 +31,6 @@ public:
     /*17*/ virtual void __unk_vfn_17();
     /*20*/ virtual void __unk_vfn_20();
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASERAILTRANSPORTER
-#endif
 
 protected:
 

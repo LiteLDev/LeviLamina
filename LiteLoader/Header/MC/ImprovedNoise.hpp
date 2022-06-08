@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMPROVEDNOISE
-#endif
     MCAPI ImprovedNoise(class IRandom &, struct YBlendingBugSettings);
     MCAPI float _getValue(class Vec3 const &) const;
     MCAPI void _readArea(float *, class Vec3 const &, int, int, int, class Vec3 const &, float) const;

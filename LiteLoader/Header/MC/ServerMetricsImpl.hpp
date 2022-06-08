@@ -27,8 +27,6 @@ public:
     /*1*/ virtual void sendPeriodicMetrics(class ServerInstance &);
     /*2*/ virtual void sendServerTickTime(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const &);
     /*3*/ virtual void sendChunkLoadTelemetryData();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERMETRICSIMPL
-#endif
     MCAPI ServerMetricsImpl(class ServerCommunicationInterface *);
 
 protected:

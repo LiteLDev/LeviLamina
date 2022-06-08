@@ -39,8 +39,6 @@ public:
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMPFIREBLOCKACTOR
-#endif
     MCAPI CampfireBlockActor(class BlockPos const &);
     MCAPI void dropAllItems(class BlockSource &);
     MCAPI class ItemInstance const & getCookingItem(int);

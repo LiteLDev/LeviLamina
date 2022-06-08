@@ -24,8 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~HUDContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUDCONTAINERSCREENVALIDATOR
-#endif
     MCAPI HUDContainerScreenValidator();
 
 protected:

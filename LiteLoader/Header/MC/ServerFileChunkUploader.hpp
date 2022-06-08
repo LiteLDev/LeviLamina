@@ -36,11 +36,23 @@ public:
     /*9*/ virtual enum UploadError getInitErrorCode() const;
     /*10*/ virtual float getUploadProgress(struct FileInfo const &) const;
     /*11*/ virtual struct FileChunkInfo getChunkInfo(struct FileInfo const &, int) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERFILECHUNKUPLOADER
-    MCVAPI void cancelUpload(struct FileInfo const &);
-    MCVAPI void confirmChunkReceived(struct FileInfo const &, struct FileChunkInfo const &);
-    MCVAPI void update();
-#endif
+    /*
+    inline void confirmChunkReceived(struct FileInfo const & a0, struct FileChunkInfo const & a1){
+        void (ServerFileChunkUploader::*rv)(struct FileInfo const &, struct FileChunkInfo const &);
+        *((void**)&rv) = dlsym("?confirmChunkReceived@ServerFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@@Z");
+        return (this->*rv)(std::forward<struct FileInfo const &>(a0), std::forward<struct FileChunkInfo const &>(a1));
+    }
+    inline void update(){
+        void (ServerFileChunkUploader::*rv)();
+        *((void**)&rv) = dlsym("?update@ServerFileChunkUploader@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void cancelUpload(struct FileInfo const & a0){
+        void (ServerFileChunkUploader::*rv)(struct FileInfo const &);
+        *((void**)&rv) = dlsym("?cancelUpload@ServerFileChunkUploader@@UEAAXAEBUFileInfo@@@Z");
+        return (this->*rv)(std::forward<struct FileInfo const &>(a0));
+    }
+    */
     MCAPI ServerFileChunkUploader(class PacketSender &, class NetworkIdentifier const &);
 
 protected:

@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FREEZINGCOMPONENT
-#endif
     MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI void decreaseFreezingEffect();
     MCAPI float getFreezingEffectStrength() const;

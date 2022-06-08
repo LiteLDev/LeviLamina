@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROOMDEFINITION
-#endif
     MCAPI RoomDefinition(class RoomDefinition const &);
     MCAPI RoomDefinition(int);
     MCAPI bool findSource(int);

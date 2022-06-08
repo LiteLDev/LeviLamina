@@ -55,8 +55,6 @@ public:
     /*340*/ virtual void setTransitioningSitting(bool);
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PANDA
-#endif
     MCAPI Panda(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI float getLieOnBackAmount(float) const;
     MCAPI float getSitAmount(float) const;

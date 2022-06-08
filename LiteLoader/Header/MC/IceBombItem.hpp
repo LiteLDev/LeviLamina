@@ -44,8 +44,6 @@ public:
     /*81*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /*99*/ virtual class HashedString const & getCooldownType() const;
     /*100*/ virtual int getCooldownTime() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICEBOMBITEM
-#endif
     MCAPI IceBombItem(std::string const &, int);
     MCAPI static class HashedString const ICE_BOMB_COOLDOWN;
 

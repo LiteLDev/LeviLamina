@@ -28,8 +28,6 @@ public:
     /*0*/ virtual ~XoroshiroPositionalRandomFactory();
     /*1*/ virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const &) const;
     /*2*/ virtual std::unique_ptr<class IRandom> forString(std::string const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_XOROSHIROPOSITIONALRANDOMFACTORY
-#endif
     MCAPI class XoroshiroRandom forStringImpl(std::string const &) const;
 
 protected:

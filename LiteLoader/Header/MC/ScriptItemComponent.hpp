@@ -25,8 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptItemComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMCOMPONENT
-#endif
     MCAPI ScriptItemComponent(class Scripting::WeakTypedObjectHandle<class ScriptItemStack>, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI std::string const & getId() const;
     MCAPI bool valid() const;

@@ -28,8 +28,6 @@ public:
     /*3*/ virtual void setDurationAmplifier(class std::shared_ptr<class Amplifier>);
     /*4*/ virtual bool shouldBuff() const;
     /*5*/ virtual bool isComplete() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEMPORALATTRIBUTEBUFF
-#endif
     MCAPI TemporalAttributeBuff(class TemporalAttributeBuff const &);
     MCAPI TemporalAttributeBuff(float, int, enum AttributeBuffType, bool, std::string const &);
     MCAPI float getBaseAmount() const;

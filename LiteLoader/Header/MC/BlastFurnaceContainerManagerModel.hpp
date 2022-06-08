@@ -25,8 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~BlastFurnaceContainerManagerModel();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLASTFURNACECONTAINERMANAGERMODEL
-#endif
     MCAPI BlastFurnaceContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
 protected:

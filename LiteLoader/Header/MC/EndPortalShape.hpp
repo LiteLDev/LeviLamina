@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDPORTALSHAPE
-#endif
     MCAPI EndPortalShape(class BlockSource &, class BlockPos);
     MCAPI class BlockPos getOrigin() const;
     MCAPI bool isValid(class BlockSource &);

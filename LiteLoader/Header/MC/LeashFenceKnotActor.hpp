@@ -60,8 +60,6 @@ public:
     /*281*/ virtual int getHeight() const;
     /*282*/ virtual void dropItem();
     /*284*/ virtual bool wouldSurvive(class BlockSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEASHFENCEKNOTACTOR
-#endif
     MCAPI LeashFenceKnotActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI int numberofAnimalsAttached();
     MCAPI void removeAnimals(class Player *);

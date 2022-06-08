@@ -26,8 +26,6 @@ public:
     /*0*/ virtual ~StructurePoolBlockPredicateBlockMatchRandom();
     /*1*/ virtual bool test(class Block const &, class Randomize &) const;
     /*2*/ virtual bool test(class BlockPos const &, class BlockPos const &, class Randomize &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLBLOCKPREDICATEBLOCKMATCHRANDOM
-#endif
     MCAPI StructurePoolBlockPredicateBlockMatchRandom(class Block const &, float);
 
 protected:

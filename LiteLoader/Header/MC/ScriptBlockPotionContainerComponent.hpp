@@ -24,8 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlockPotionContainerComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKPOTIONCONTAINERCOMPONENT
-#endif
     MCAPI ScriptBlockPotionContainerComponent(class ScriptBlockPotionContainerComponent const &);
     MCAPI ScriptBlockPotionContainerComponent(class ScriptBlockPotionContainerComponent &&);
     MCAPI class ScriptBlockPotionContainerComponent & operator=(class ScriptBlockPotionContainerComponent &&);

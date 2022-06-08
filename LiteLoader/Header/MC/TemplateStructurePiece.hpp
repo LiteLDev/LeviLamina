@@ -27,8 +27,6 @@ public:
     /*0*/ virtual ~TemplateStructurePiece();
     /*1*/ virtual void moveBoundingBox(int, int, int);
     /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEMPLATESTRUCTUREPIECE
-#endif
     MCAPI TemplateStructurePiece(int);
 
 protected:

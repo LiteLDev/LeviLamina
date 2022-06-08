@@ -27,8 +27,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKIDENTIFIER
-#endif
     MCAPI NetworkIdentifier(struct NetherNet::NetworkID const &);
     MCAPI NetworkIdentifier(struct RakNet::RakNetGUID const &);
     MCAPI NetworkIdentifier(struct sockaddr_in6 const &);

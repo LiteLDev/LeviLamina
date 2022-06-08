@@ -25,8 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptNavigationGenericComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTNAVIGATIONGENERICCOMPONENT
-#endif
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptNavigationGenericComponent> bind(struct Scripting::Version);
 
 protected:

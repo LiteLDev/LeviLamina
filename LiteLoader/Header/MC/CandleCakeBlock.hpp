@@ -77,11 +77,23 @@ public:
     /*208*/ virtual void __unk_vfn_208();
     /*209*/ virtual void __unk_vfn_209();
     /*210*/ virtual void __unk_vfn_210();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CANDLECAKEBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-    MCVAPI bool hasComparatorSignal() const;
-    MCVAPI bool isCandleCakeBlock() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (CandleCakeBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@CandleCakeBlock@@EEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isCandleCakeBlock() const{
+        bool (CandleCakeBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isCandleCakeBlock@CandleCakeBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasComparatorSignal() const{
+        bool (CandleCakeBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?hasComparatorSignal@CandleCakeBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI CandleCakeBlock(std::string const &, int);
     MCAPI static class Block const & getCandleCakeFromCandle(class Block const &);
     MCAPI static class Block const & getCandleFromCandleCake(class Block const &);

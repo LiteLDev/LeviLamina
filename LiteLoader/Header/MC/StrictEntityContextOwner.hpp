@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRICTENTITYCONTEXTOWNER
-#endif
     MCAPI StrictEntityContextOwner(class StrictEntityContextOwner &&);
     MCAPI class StrictEntityContextOwner & operator=(class StrictEntityContextOwner &&);
     MCAPI ~StrictEntityContextOwner();

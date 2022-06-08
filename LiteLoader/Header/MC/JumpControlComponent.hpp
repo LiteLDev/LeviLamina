@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPCONTROLCOMPONENT
-#endif
     MCAPI JumpControlComponent();
     MCAPI int getAnimationDuration() const;
     MCAPI float getDistanceScale() const;

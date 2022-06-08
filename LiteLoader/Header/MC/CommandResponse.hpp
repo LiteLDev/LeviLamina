@@ -27,8 +27,6 @@ public:
     /*1*/ virtual std::string const & getName() const;
     /*2*/ virtual void executeAction(class RenderParams &) const;
     /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDRESPONSE
-#endif
     MCAPI CommandResponse();
     MCAPI static std::string const NameID;
 

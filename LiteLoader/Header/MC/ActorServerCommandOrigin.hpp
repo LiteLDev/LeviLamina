@@ -31,8 +31,6 @@ public:
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*29*/ virtual class CompoundTag serialize() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSERVERCOMMANDORIGIN
-#endif
     MCAPI ActorServerCommandOrigin(class Actor &);
     MCAPI struct ActorUniqueID getTargetOther() const;
     MCAPI void setTargetOther(struct ActorUniqueID);

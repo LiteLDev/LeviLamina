@@ -25,8 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~CompositeDefinition();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOSITEDEFINITION
-#endif
     MCAPI CompositeDefinition();
     MCAPI class BehaviorDefinition const * get(unsigned __int64) const;
     MCAPI unsigned __int64 getCount() const;

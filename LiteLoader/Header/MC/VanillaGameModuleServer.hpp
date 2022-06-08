@@ -32,11 +32,23 @@ public:
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void setupCommands(class CommandRegistry &);
     /*8*/ virtual void configureServerNetworkHandler(class ServerInstance &, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAGAMEMODULESERVER
-    MCVAPI void configureDocumentation(class IGameModuleDocumentation &);
-    MCVAPI void configureNewPlayer(class Player &);
-    MCVAPI void tick();
-#endif
+    /*
+    inline void tick(){
+        void (VanillaGameModuleServer::*rv)();
+        *((void**)&rv) = dlsym("?tick@VanillaGameModuleServer@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void configureDocumentation(class IGameModuleDocumentation & a0){
+        void (VanillaGameModuleServer::*rv)(class IGameModuleDocumentation &);
+        *((void**)&rv) = dlsym("?configureDocumentation@VanillaGameModuleServer@@UEAAXAEAVIGameModuleDocumentation@@@Z");
+        return (this->*rv)(std::forward<class IGameModuleDocumentation &>(a0));
+    }
+    inline void configureNewPlayer(class Player & a0){
+        void (VanillaGameModuleServer::*rv)(class Player &);
+        *((void**)&rv) = dlsym("?configureNewPlayer@VanillaGameModuleServer@@UEAAXAEAVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0));
+    }
+    */
     MCAPI VanillaGameModuleServer();
 
 protected:

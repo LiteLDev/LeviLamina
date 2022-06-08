@@ -23,14 +23,38 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARRELBLOCKACTOR
-    MCVAPI std::string getName() const;
-    MCVAPI void onPlace(class BlockSource &);
-    MCVAPI void playCloseSound(class BlockSource &);
-    MCVAPI void playOpenSound(class BlockSource &);
-    MCVAPI void startOpen(class Player &);
-    MCVAPI void stopOpen(class Player &);
-#endif
+    /*
+    inline void onPlace(class BlockSource & a0){
+        void (BarrelBlockActor::*rv)(class BlockSource &);
+        *((void**)&rv) = dlsym("?onPlace@BarrelBlockActor@@UEAAXAEAVBlockSource@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0));
+    }
+    inline std::string getName() const{
+        std::string (BarrelBlockActor::*rv)() const;
+        *((void**)&rv) = dlsym("?getName@BarrelBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline void playCloseSound(class BlockSource & a0){
+        void (BarrelBlockActor::*rv)(class BlockSource &);
+        *((void**)&rv) = dlsym("?playCloseSound@BarrelBlockActor@@UEAAXAEAVBlockSource@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0));
+    }
+    inline void playOpenSound(class BlockSource & a0){
+        void (BarrelBlockActor::*rv)(class BlockSource &);
+        *((void**)&rv) = dlsym("?playOpenSound@BarrelBlockActor@@UEAAXAEAVBlockSource@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0));
+    }
+    inline void startOpen(class Player & a0){
+        void (BarrelBlockActor::*rv)(class Player &);
+        *((void**)&rv) = dlsym("?startOpen@BarrelBlockActor@@UEAAXAEAVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0));
+    }
+    inline void stopOpen(class Player & a0){
+        void (BarrelBlockActor::*rv)(class Player &);
+        *((void**)&rv) = dlsym("?stopOpen@BarrelBlockActor@@UEAAXAEAVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0));
+    }
+    */
     MCAPI BarrelBlockActor(class BlockPos const &);
 
 protected:

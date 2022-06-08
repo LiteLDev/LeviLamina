@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANGRYDEFINITION
-#endif
     MCAPI AngryDefinition();
     MCAPI void addBroadcastTargetByName(std::string const &);
     MCAPI void initialize(class EntityContext &, class AngryComponent &) const;

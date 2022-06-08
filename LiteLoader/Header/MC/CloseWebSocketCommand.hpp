@@ -26,8 +26,6 @@ public:
 public:
     /*0*/ virtual ~CloseWebSocketCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLOSEWEBSOCKETCOMMAND
-#endif
     MCAPI static void setup(class CommandRegistry &, class IMinecraftApp &);
 
 protected:

@@ -58,11 +58,23 @@ public:
     /*344*/ virtual bool canExistWhenDisallowMob() const;
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIPODCAMERA
-    MCVAPI bool breaksFallingBlocks() const;
-    MCVAPI bool interactPreventDefault();
-    MCVAPI bool isTargetable() const;
-#endif
+    /*
+    inline bool isTargetable() const{
+        bool (TripodCamera::*rv)() const;
+        *((void**)&rv) = dlsym("?isTargetable@TripodCamera@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool interactPreventDefault(){
+        bool (TripodCamera::*rv)();
+        *((void**)&rv) = dlsym("?interactPreventDefault@TripodCamera@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool breaksFallingBlocks() const{
+        bool (TripodCamera::*rv)() const;
+        *((void**)&rv) = dlsym("?breaksFallingBlocks@TripodCamera@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI TripodCamera(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI bool interactWithPlayer(class Player &);
     MCAPI bool isActivated() const;

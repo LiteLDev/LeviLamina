@@ -54,8 +54,6 @@ public:
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
     /*31*/ virtual void __unk_vfn_31();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAAPPCONFIGS
-#endif
 
 protected:
 

@@ -32,11 +32,23 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /*7*/ virtual bool canDestroy(class ContainerScreenContext const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PREVIEWCONTAINERVALIDATION
-    MCVAPI bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
-    MCVAPI bool isItemAllowedToAdd(class ItemStack const &) const;
-    MCVAPI bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
-#endif
+    /*
+    inline bool isValidSlotForContainer(class ContainerScreenContext const & a0, class Container const & a1, int a2) const{
+        bool (PreviewContainerValidation::*rv)(class ContainerScreenContext const &, class Container const &, int) const;
+        *((void**)&rv) = dlsym("?isValidSlotForContainer@PreviewContainerValidation@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z");
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0), std::forward<class Container const &>(a1), std::forward<int>(a2));
+    }
+    inline bool isItemAllowedToAdd(class ItemStack const & a0) const{
+        bool (PreviewContainerValidation::*rv)(class ItemStack const &) const;
+        *((void**)&rv) = dlsym("?isItemAllowedToAdd@PreviewContainerValidation@@UEBA_NAEBVItemStack@@@Z");
+        return (this->*rv)(std::forward<class ItemStack const &>(a0));
+    }
+    inline bool isItemAllowedInSlot(class ContainerScreenContext const & a0, int a1, class ItemStackBase const & a2, int a3) const{
+        bool (PreviewContainerValidation::*rv)(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
+        *((void**)&rv) = dlsym("?isItemAllowedInSlot@PreviewContainerValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z");
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0), std::forward<int>(a1), std::forward<class ItemStackBase const &>(a2), std::forward<int>(a3));
+    }
+    */
 
 protected:
 

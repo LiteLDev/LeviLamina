@@ -29,8 +29,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATURETERRAINADJUSTMENTS
-#endif
     MCAPI struct FeatureTerrainAdjustments::Descriptions at(class ChunkPos const &);
     MCAPI void garbageCollectDescriptions();
     MCAPI class std::shared_ptr<bool> setBeardAndShaver(class BoundingBox const &, int, float, float);

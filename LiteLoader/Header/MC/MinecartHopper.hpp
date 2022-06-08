@@ -52,8 +52,6 @@ public:
     /*282*/ virtual void __unk_vfn_282();
     /*283*/ virtual int getDefaultDisplayOffset() const;
     /*284*/ virtual void applyNaturalSlowdown(class BlockSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTHOPPER
-#endif
     MCAPI MinecartHopper(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

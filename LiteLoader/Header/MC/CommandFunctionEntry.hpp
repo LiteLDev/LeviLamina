@@ -25,8 +25,6 @@ public:
 public:
     /*0*/ virtual ~CommandFunctionEntry();
     /*1*/ virtual void execute(class FunctionManager &, class CommandOrigin const &, enum FunctionQueueOrder);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDFUNCTIONENTRY
-#endif
     MCAPI CommandFunctionEntry(std::unique_ptr<class Command>);
 
 protected:

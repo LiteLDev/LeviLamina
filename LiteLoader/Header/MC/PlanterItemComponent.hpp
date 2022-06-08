@@ -30,8 +30,6 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLANTERITEMCOMPONENT
-#endif
     MCAPI PlanterItemComponent(class ComponentItem *);
     MCAPI bool calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     MCAPI static void bindType();

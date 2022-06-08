@@ -27,8 +27,6 @@ public:
     /*2*/ virtual void __unk_vfn_2() = 0;
     /*3*/ virtual void __unk_vfn_3() = 0;
     /*4*/ virtual char const * getName();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONHITSUBCOMPONENT
-#endif
     MCAPI OnHitSubcomponent();
 
 protected:

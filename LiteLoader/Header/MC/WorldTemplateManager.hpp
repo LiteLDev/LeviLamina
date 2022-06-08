@@ -27,8 +27,6 @@ public:
 public:
     /*0*/ virtual ~WorldTemplateManager();
     /*1*/ virtual struct WorldTemplateInfo const * findInstalledWorldTemplateByUUID(std::vector<class mce::UUID> const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDTEMPLATEMANAGER
-#endif
     MCAPI WorldTemplateManager(class PackManifestFactory &, class IContentKeyProvider const &, class PackSourceFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, bool);
     MCAPI struct WorldTemplateInfo const * findInstalledWorldTemplate(struct PackIdVersion const &) const;
     MCAPI class Core::PathBuffer<std::string> getWorldTemplatesPath() const;

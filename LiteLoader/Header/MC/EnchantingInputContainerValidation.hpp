@@ -33,9 +33,13 @@ public:
     /*6*/ virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /*7*/ virtual bool canDestroy(class ContainerScreenContext const &) const;
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTINGINPUTCONTAINERVALIDATION
-    MCVAPI int getAvailableSetCount(int, class ItemStackBase const &) const;
-#endif
+    /*
+    inline int getAvailableSetCount(int a0, class ItemStackBase const & a1) const{
+        int (EnchantingInputContainerValidation::*rv)(int, class ItemStackBase const &) const;
+        *((void**)&rv) = dlsym("?getAvailableSetCount@EnchantingInputContainerValidation@@UEBAHHAEBVItemStackBase@@@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStackBase const &>(a1));
+    }
+    */
 
 protected:
 

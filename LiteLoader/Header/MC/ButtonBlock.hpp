@@ -79,12 +79,28 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUTTONBLOCK
-    MCVAPI bool canSpawnOn() const;
-    MCVAPI bool isButtonBlock() const;
-    MCVAPI bool isInteractiveBlock() const;
-    MCVAPI bool isSignalSource() const;
-#endif
+    /*
+    inline bool canSpawnOn() const{
+        bool (ButtonBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canSpawnOn@ButtonBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInteractiveBlock() const{
+        bool (ButtonBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@ButtonBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isButtonBlock() const{
+        bool (ButtonBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isButtonBlock@ButtonBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isSignalSource() const{
+        bool (ButtonBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isSignalSource@ButtonBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI void buttonPressed(class BlockSource &, class Block const &, class Vec3 const &) const;
     MCAPI static bool canAttachTo(class BlockSource &, class BlockPos const &, unsigned char);
 

@@ -27,8 +27,6 @@ public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~BucketableDescription();
     /*3*/ virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUCKETABLEDESCRIPTION
-#endif
 
 protected:
 

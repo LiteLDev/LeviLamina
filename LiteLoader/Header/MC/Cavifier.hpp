@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAVIFIER
-#endif
     MCAPI Cavifier(class CavifierNoises const &, float, float);
     MCAPI float cavify(class Vec3, int, float) const;
 

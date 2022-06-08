@@ -45,10 +45,18 @@ public:
     /*7*/ virtual void writeInt(int);
     /*8*/ virtual void writeLongLong(__int64);
     /*9*/ virtual void writeBytes(void const *, unsigned __int64);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VARINTDATAOUTPUT
-    MCVAPI void writeLongString(class gsl::basic_string_span<char const, -1>);
-    MCVAPI void writeString(class gsl::basic_string_span<char const, -1>);
-#endif
+    /*
+    inline void writeString(class gsl::basic_string_span<char const, -1> a0){
+        void (VarIntDataOutput::*rv)(class gsl::basic_string_span<char const, -1>);
+        *((void**)&rv) = dlsym("?writeString@VarIntDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z");
+        return (this->*rv)(std::forward<class gsl::basic_string_span<char const, -1>>(a0));
+    }
+    inline void writeLongString(class gsl::basic_string_span<char const, -1> a0){
+        void (VarIntDataOutput::*rv)(class gsl::basic_string_span<char const, -1>);
+        *((void**)&rv) = dlsym("?writeLongString@VarIntDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z");
+        return (this->*rv)(std::forward<class gsl::basic_string_span<char const, -1>>(a0));
+    }
+    */
 
 protected:
 

@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPDECORATION
-#endif
     MCAPI MapDecoration(enum MapDecoration::Type, signed char, signed char, signed char, std::string const &, class mce::Color const &);
     MCAPI MapDecoration();
     MCAPI class mce::Color const & getColor() const;

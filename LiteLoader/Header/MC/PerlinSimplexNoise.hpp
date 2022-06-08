@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERLINSIMPLEXNOISE
-#endif
     MCAPI PerlinSimplexNoise(class PerlinSimplexNoise const &);
     MCAPI PerlinSimplexNoise(class IRandom &, int, bool);
     MCAPI PerlinSimplexNoise(unsigned int, int);

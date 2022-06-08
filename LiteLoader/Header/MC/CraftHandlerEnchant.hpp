@@ -28,8 +28,6 @@ public:
     /*3*/ virtual void endRequestBatch();
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /*5*/ virtual void _postCraftRequest(bool);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERENCHANT
-#endif
     MCAPI CraftHandlerEnchant(class Player &, class ItemStackRequestActionCraftHandler &);
 
 protected:

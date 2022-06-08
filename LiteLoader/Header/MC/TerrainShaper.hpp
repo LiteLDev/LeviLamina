@@ -29,8 +29,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TERRAINSHAPER
-#endif
     MCAPI float factor(float, float, float) const;
     MCAPI float jaggedness(float, float, float) const;
     MCAPI float offset(float, float, float) const;

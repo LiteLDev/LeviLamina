@@ -30,8 +30,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCATTERPARAMS
-#endif
     MCAPI class ScatterParams::ScatteredPositions scatter(class RenderParams &, class BlockPos const &, class Random &) const;
     MCAPI ~ScatterParams();
     MCAPI static void initMolangParams(class RenderParams &, class BlockPos const &, class Random &);

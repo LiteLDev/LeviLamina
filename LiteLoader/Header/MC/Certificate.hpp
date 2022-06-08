@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CERTIFICATE
-#endif
     MCAPI Certificate(class Certificate const &);
     MCAPI __int64 getExpirationDate() const;
     MCAPI class Json::Value getExtraData(std::string const &, class Json::Value const &) const;

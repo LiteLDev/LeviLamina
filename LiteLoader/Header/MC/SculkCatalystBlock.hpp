@@ -63,9 +63,13 @@ public:
     /*184*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKCATALYSTBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (SculkCatalystBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@SculkCatalystBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SculkCatalystBlock(std::string const &, int, class Material const &);
     MCAPI static void bloom(class BlockSource &, class BlockPos const &, class Block const &, class Random &);
 

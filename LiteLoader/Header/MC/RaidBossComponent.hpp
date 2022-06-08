@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAIDBOSSCOMPONENT
-#endif
     MCAPI RaidBossComponent(class RaidBossComponent &&);
     MCAPI enum BossBarColor getColor();
     MCAPI float getHealthPercent();

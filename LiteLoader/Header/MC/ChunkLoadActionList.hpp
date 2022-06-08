@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKLOADACTIONLIST
-#endif
     MCAPI ChunkLoadActionList();
     MCAPI void addChunkLoadedRequest(class ChunkLoadedRequest, std::string const &, enum ChunksLoadedStatus, class LevelStorage &);
     MCAPI void loadRequests(class LevelStorage &, class ICommandOriginLoader &, std::string const &);

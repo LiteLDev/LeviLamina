@@ -65,8 +65,6 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*196*/ virtual struct Brightness getEmissiveBrightness(class Block const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAGMABLOCK
-#endif
     MCAPI MagmaBlock(std::string const &, int);
 
 protected:

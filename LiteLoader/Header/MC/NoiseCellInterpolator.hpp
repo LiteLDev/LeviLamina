@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NOISECELLINTERPOLATOR
-#endif
     MCAPI NoiseCellInterpolator(class gsl::span<float const, -1>);
     MCAPI NoiseCellInterpolator(class gsl::span<float const, -1>, int, int);
     MCAPI float getLerpedValue() const;

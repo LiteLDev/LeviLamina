@@ -41,8 +41,6 @@ public:
     /*36*/ virtual int clearInventory(int);
     /*37*/ virtual void load(class ListTag const &, class SemVersion const &, class Level &);
     /*38*/ virtual int getEmptySlotsCount() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILLINGCONTAINER
-#endif
     MCAPI FillingContainer(class Player *, int, enum ContainerType);
     MCAPI int getHotbarSize() const;
     MCAPI int getSlotWithItem(class ItemStack const &, bool, bool) const;

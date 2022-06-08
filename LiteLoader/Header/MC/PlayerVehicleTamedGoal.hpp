@@ -31,12 +31,28 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERVEHICLETAMEDGOAL
-    MCVAPI bool canContinueToUse();
-    MCVAPI bool canUse();
-    MCVAPI void start();
-    MCVAPI void tick();
-#endif
+    /*
+    inline void tick(){
+        void (PlayerVehicleTamedGoal::*rv)();
+        *((void**)&rv) = dlsym("?tick@PlayerVehicleTamedGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void start(){
+        void (PlayerVehicleTamedGoal::*rv)();
+        *((void**)&rv) = dlsym("?start@PlayerVehicleTamedGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline bool canUse(){
+        bool (PlayerVehicleTamedGoal::*rv)();
+        *((void**)&rv) = dlsym("?canUse@PlayerVehicleTamedGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canContinueToUse(){
+        bool (PlayerVehicleTamedGoal::*rv)();
+        *((void**)&rv) = dlsym("?canContinueToUse@PlayerVehicleTamedGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI PlayerVehicleTamedGoal(class Mob &);
 
 protected:

@@ -70,8 +70,6 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEEPINGVINESBLOCK
-#endif
     MCAPI WeepingVinesBlock(std::string const &, int);
     MCAPI static void placeVineString(class BlockSource &, class Random &, class BlockPos const &, int, int, int);
 

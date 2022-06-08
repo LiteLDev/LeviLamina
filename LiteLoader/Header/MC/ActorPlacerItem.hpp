@@ -48,12 +48,28 @@ public:
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPLACERITEM
-    MCVAPI class mce::Color getBaseColor(class ItemStack const &) const;
-    MCVAPI class mce::Color getSecondaryColor(class ItemStack const &) const;
-    MCVAPI bool isActorPlacerItem() const;
-    MCVAPI bool isMultiColorTinted(class ItemStack const &) const;
-#endif
+    /*
+    inline bool isMultiColorTinted(class ItemStack const & a0) const{
+        bool (ActorPlacerItem::*rv)(class ItemStack const &) const;
+        *((void**)&rv) = dlsym("?isMultiColorTinted@ActorPlacerItem@@UEBA_NAEBVItemStack@@@Z");
+        return (this->*rv)(std::forward<class ItemStack const &>(a0));
+    }
+    inline bool isActorPlacerItem() const{
+        bool (ActorPlacerItem::*rv)() const;
+        *((void**)&rv) = dlsym("?isActorPlacerItem@ActorPlacerItem@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline class mce::Color getSecondaryColor(class ItemStack const & a0) const{
+        class mce::Color (ActorPlacerItem::*rv)(class ItemStack const &) const;
+        *((void**)&rv) = dlsym("?getSecondaryColor@ActorPlacerItem@@UEBA?AVColor@mce@@AEBVItemStack@@@Z");
+        return (this->*rv)(std::forward<class ItemStack const &>(a0));
+    }
+    inline class mce::Color getBaseColor(class ItemStack const & a0) const{
+        class mce::Color (ActorPlacerItem::*rv)(class ItemStack const &) const;
+        *((void**)&rv) = dlsym("?getBaseColor@ActorPlacerItem@@UEBA?AVColor@mce@@AEBVItemStack@@@Z");
+        return (this->*rv)(std::forward<class ItemStack const &>(a0));
+    }
+    */
     MCAPI ActorPlacerItem(std::string const &, int, struct ActorDefinitionIdentifier const &);
     MCAPI static void forEachCustomEgg(class std::function<void (class Item const &)> const &);
     MCAPI static std::string getCustomSpawnEggName(int);

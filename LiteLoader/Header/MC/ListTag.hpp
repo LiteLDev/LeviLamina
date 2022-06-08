@@ -67,8 +67,6 @@ public:
     /*8*/ virtual void print(std::string const &, class PrintStream &) const;
     /*9*/ virtual std::unique_ptr<class Tag> copy() const;
     /*10*/ virtual unsigned __int64 hash() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LISTTAG
-#endif
     MCAPI ListTag();
     MCAPI void add(std::unique_ptr<class Tag>);
     MCAPI std::unique_ptr<class ListTag> copyList() const;

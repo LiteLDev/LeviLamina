@@ -45,8 +45,6 @@ public:
     /*80*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*110*/ virtual std::string getInteractText(class Player const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WRITTENBOOKITEM
-#endif
     MCAPI WrittenBookItem(std::string const &, int);
     MCAPI static int const MAX_GENERATION;
     MCAPI static int const MAX_PAGES;

@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHANCEINFORMATION
-#endif
     MCAPI bool isValid() const;
     MCAPI bool roll(class Random &) const;
     MCAPI void set(unsigned int, unsigned int);

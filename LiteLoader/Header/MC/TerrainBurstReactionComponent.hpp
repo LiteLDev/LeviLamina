@@ -27,8 +27,6 @@ public:
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void _onEnd(class LabTableReaction &, class BlockSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TERRAINBURSTREACTIONCOMPONENT
-#endif
 
 protected:
 

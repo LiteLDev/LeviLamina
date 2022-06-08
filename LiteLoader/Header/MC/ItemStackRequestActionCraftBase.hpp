@@ -23,11 +23,23 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTBASE
-    MCVAPI class ItemStackRequestActionCraftBase const * getCraftAction() const;
-    MCVAPI void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette &, bool);
-    MCVAPI ~ItemStackRequestActionCraftBase();
-#endif
+    /*
+    inline void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette & a0, bool a1){
+        void (ItemStackRequestActionCraftBase::*rv)(class BlockPalette &, bool);
+        *((void**)&rv) = dlsym("?postLoadItems_DEPRECATEDASKTYLAING@ItemStackRequestActionCraftBase@@UEAAXAEAVBlockPalette@@_N@Z");
+        return (this->*rv)(std::forward<class BlockPalette &>(a0), std::forward<bool>(a1));
+    }
+    inline class ItemStackRequestActionCraftBase const * getCraftAction() const{
+        class ItemStackRequestActionCraftBase const * (ItemStackRequestActionCraftBase::*rv)() const;
+        *((void**)&rv) = dlsym("?getCraftAction@ItemStackRequestActionCraftBase@@UEBAPEBV1@XZ");
+        return (this->*rv)();
+    }
+    inline  ~ItemStackRequestActionCraftBase(){
+         (ItemStackRequestActionCraftBase::*rv)();
+        *((void**)&rv) = dlsym("??1ItemStackRequestActionCraftBase@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

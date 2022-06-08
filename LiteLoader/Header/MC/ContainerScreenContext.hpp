@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSCREENCONTEXT
-#endif
     MCAPI ContainerScreenContext(class Player &, enum ContainerType, struct ActorUniqueID const &);
     MCAPI ContainerScreenContext(class Player &, enum ContainerType, class BlockPos const &);
     MCAPI ContainerScreenContext();

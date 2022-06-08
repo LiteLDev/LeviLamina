@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTDATA
-#endif
     MCAPI std::vector<std::unique_ptr<class ItemStackRequestAction>> const & getActions() const;
     MCAPI class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> const & getRequestId() const;
     MCAPI std::vector<std::string> const & getStringsToFilter() const;

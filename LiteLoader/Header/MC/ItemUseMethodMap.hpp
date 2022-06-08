@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMUSEMETHODMAP
-#endif
     MCAPI static std::string const & getItemUseMethodName(enum ItemUseMethod);
 
 protected:

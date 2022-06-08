@@ -29,8 +29,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPITEMTRACKEDACTOR
-#endif
     MCAPI MapItemTrackedActor(struct MapItemTrackedActor::UniqueId const &, class BlockSource &);
     MCAPI float getDecorationRotation(class BlockSource &);
     MCAPI class Actor * getEntity(class BlockSource &);

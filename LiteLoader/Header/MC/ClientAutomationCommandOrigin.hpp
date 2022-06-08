@@ -42,8 +42,6 @@ public:
     /*24*/ virtual struct CommandOriginData toCommandOriginData() const;
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTAUTOMATIONCOMMANDORIGIN
-#endif
     MCAPI ClientAutomationCommandOrigin(std::string const &);
 
 protected:

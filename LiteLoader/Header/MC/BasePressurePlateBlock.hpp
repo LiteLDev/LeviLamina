@@ -79,10 +79,18 @@ public:
     /*205*/ virtual int getSignalForData(int) const = 0;
     /*206*/ virtual int getRedstoneSignal(int) const = 0;
     /*207*/ virtual class AABB const getSensitiveAABB(class BlockPos const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEPRESSUREPLATEBLOCK
-    MCVAPI bool canSpawnOn() const;
-    MCVAPI bool isSignalSource() const;
-#endif
+    /*
+    inline bool canSpawnOn() const{
+        bool (BasePressurePlateBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canSpawnOn@BasePressurePlateBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isSignalSource() const{
+        bool (BasePressurePlateBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isSignalSource@BasePressurePlateBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
     MCAPI BasePressurePlateBlock(std::string const &, int, class Material const &);

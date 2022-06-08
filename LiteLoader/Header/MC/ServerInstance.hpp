@@ -25,22 +25,78 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCE
-    MCVAPI void onAppResumed();
-    MCVAPI void onAppSuspended();
-    MCVAPI void onCriticalDiskError(bool, enum Core::LevelStorageState const &);
-    MCVAPI void onGameModeChanged();
-    MCVAPI void onGameSessionReset();
-    MCVAPI void onInternetUpdate();
-    MCVAPI void onLevelCorrupt();
-    MCVAPI void onLevelExit();
-    MCVAPI void onLowDiskSpace(bool);
-    MCVAPI void onLowMemory();
-    MCVAPI void onOutOfDiskSpace(bool);
-    MCVAPI void onTick(int, int);
-    MCVAPI void updateScreens();
-    MCVAPI ~ServerInstance();
-#endif
+    /*
+    inline void onLevelExit(){
+        void (ServerInstance::*rv)();
+        *((void**)&rv) = dlsym("?onLevelExit@ServerInstance@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void onGameSessionReset(){
+        void (ServerInstance::*rv)();
+        *((void**)&rv) = dlsym("?onGameSessionReset@ServerInstance@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void onInternetUpdate(){
+        void (ServerInstance::*rv)();
+        *((void**)&rv) = dlsym("?onInternetUpdate@ServerInstance@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void onTick(int a0, int a1){
+        void (ServerInstance::*rv)(int, int);
+        *((void**)&rv) = dlsym("?onTick@ServerInstance@@UEAAXHH@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
+    inline void onGameModeChanged(){
+        void (ServerInstance::*rv)();
+        *((void**)&rv) = dlsym("?onGameModeChanged@ServerInstance@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void updateScreens(){
+        void (ServerInstance::*rv)();
+        *((void**)&rv) = dlsym("?updateScreens@ServerInstance@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline  ~ServerInstance(){
+         (ServerInstance::*rv)();
+        *((void**)&rv) = dlsym("??1ServerInstance@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline void onAppResumed(){
+        void (ServerInstance::*rv)();
+        *((void**)&rv) = dlsym("?onAppResumed@ServerInstance@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void onAppSuspended(){
+        void (ServerInstance::*rv)();
+        *((void**)&rv) = dlsym("?onAppSuspended@ServerInstance@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void onCriticalDiskError(bool a0, enum Core::LevelStorageState const & a1){
+        void (ServerInstance::*rv)(bool, enum Core::LevelStorageState const &);
+        *((void**)&rv) = dlsym("?onCriticalDiskError@ServerInstance@@UEAAX_NAEBW4LevelStorageState@Core@@@Z");
+        return (this->*rv)(std::forward<bool>(a0), std::forward<enum Core::LevelStorageState const &>(a1));
+    }
+    inline void onLevelCorrupt(){
+        void (ServerInstance::*rv)();
+        *((void**)&rv) = dlsym("?onLevelCorrupt@ServerInstance@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void onLowDiskSpace(bool a0){
+        void (ServerInstance::*rv)(bool);
+        *((void**)&rv) = dlsym("?onLowDiskSpace@ServerInstance@@UEAAX_N@Z");
+        return (this->*rv)(std::forward<bool>(a0));
+    }
+    inline void onLowMemory(){
+        void (ServerInstance::*rv)();
+        *((void**)&rv) = dlsym("?onLowMemory@ServerInstance@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void onOutOfDiskSpace(bool a0){
+        void (ServerInstance::*rv)(bool);
+        *((void**)&rv) = dlsym("?onOutOfDiskSpace@ServerInstance@@UEAAX_N@Z");
+        return (this->*rv)(std::forward<bool>(a0));
+    }
+    */
     MCAPI ServerInstance(class IMinecraftApp &, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerInstanceEventCoordinator>> const &);
     MCAPI void disconnectAllClientsWithMessage(std::string);
     MCAPI bool enableItemStackNetManager() const;

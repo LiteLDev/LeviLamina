@@ -31,12 +31,28 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUIDMOVEAWAYFROMGROUNDGOAL
-    MCVAPI bool canContinueToUse();
-    MCVAPI bool canUse();
-    MCVAPI void stop();
-    MCVAPI void tick();
-#endif
+    /*
+    inline void stop(){
+        void (SquidMoveAwayFromGroundGoal::*rv)();
+        *((void**)&rv) = dlsym("?stop@SquidMoveAwayFromGroundGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void tick(){
+        void (SquidMoveAwayFromGroundGoal::*rv)();
+        *((void**)&rv) = dlsym("?tick@SquidMoveAwayFromGroundGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline bool canContinueToUse(){
+        bool (SquidMoveAwayFromGroundGoal::*rv)();
+        *((void**)&rv) = dlsym("?canContinueToUse@SquidMoveAwayFromGroundGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canUse(){
+        bool (SquidMoveAwayFromGroundGoal::*rv)();
+        *((void**)&rv) = dlsym("?canUse@SquidMoveAwayFromGroundGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

@@ -39,8 +39,6 @@ public:
     /*12*/ virtual class InPackagePackSource * getDynamicPackagePackSource(enum PackType);
     /*13*/ virtual void setDynamicPackagePacks(class std::shared_ptr<class IDynamicPackagePacks> const &);
     /*14*/ virtual void setDynamicPackageRoot(class Core::PathBuffer<std::string>);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSOURCEFACTORY
-#endif
     MCAPI PackSourceFactory(class std::shared_ptr<class IInPackagePacks> const &);
 
 protected:

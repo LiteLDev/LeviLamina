@@ -25,8 +25,6 @@ public:
 public:
     /*0*/ virtual ~OceanMonumentStart();
     /*1*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANMONUMENTSTART
-#endif
     MCAPI void createMonument(class Dimension &, class Random &, int, int);
 
 protected:

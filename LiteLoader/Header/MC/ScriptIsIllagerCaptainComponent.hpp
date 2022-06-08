@@ -23,8 +23,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptIsIllagerCaptainComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTISILLAGERCAPTAINCOMPONENT
-#endif
     MCAPI static class HashedString const & getHashedName();
 
 protected:

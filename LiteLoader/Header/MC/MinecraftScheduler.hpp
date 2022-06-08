@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTSCHEDULER
-#endif
     MCAPI static class Scheduler & client();
     MCAPI static void destroyClientSingleton();
 

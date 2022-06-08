@@ -43,8 +43,6 @@ public:
     /*16*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const &) const;
     /*18*/ virtual bool canRecurse() const;
     /*19*/ virtual void unload();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTORYPACKACCESSSTRATEGY
-#endif
     MCAPI DirectoryPackAccessStrategy(class ResourceLocation const &, bool);
 
 protected:

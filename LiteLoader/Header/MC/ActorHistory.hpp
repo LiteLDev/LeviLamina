@@ -29,8 +29,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORHISTORY
-#endif
     MCAPI bool addFrame(struct IActorMovementProxy &, unsigned __int64);
     MCAPI struct ActorHistory::Snapshot createSnapshot(struct IActorMovementProxy &) const;
     MCAPI ~ActorHistory();

@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATCOMPONENT
-#endif
     MCAPI LookAtComponent();
     MCAPI int & getCoolingTime();
     MCAPI float getSearchRadius() const;

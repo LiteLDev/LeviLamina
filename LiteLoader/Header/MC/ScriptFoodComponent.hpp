@@ -23,8 +23,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptFoodComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFOODCOMPONENT
-#endif
     MCAPI ScriptFoodComponent(class ScriptFoodComponent const &);
     MCAPI ScriptFoodComponent(class Scripting::WeakTypedObjectHandle<class ScriptItemStack>, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<bool> getCanAlwaysEat();

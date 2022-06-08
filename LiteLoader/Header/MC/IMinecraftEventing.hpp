@@ -22,10 +22,18 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMINECRAFTEVENTING
-    MCVAPI void updatePlayerUndergroundStatus(class Player *, bool);
-    MCVAPI ~IMinecraftEventing();
-#endif
+    /*
+    inline void updatePlayerUndergroundStatus(class Player * a0, bool a1){
+        void (IMinecraftEventing::*rv)(class Player *, bool);
+        *((void**)&rv) = dlsym("?updatePlayerUndergroundStatus@IMinecraftEventing@@UEAAXPEAVPlayer@@_N@Z");
+        return (this->*rv)(std::forward<class Player *>(a0), std::forward<bool>(a1));
+    }
+    inline  ~IMinecraftEventing(){
+         (IMinecraftEventing::*rv)();
+        *((void**)&rv) = dlsym("??1IMinecraftEventing@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

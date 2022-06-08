@@ -32,8 +32,6 @@ public:
     /*0*/ virtual ~NpcCommandAction();
     /*1*/ virtual class Json::Value toJson();
     /*2*/ virtual bool fromJson(class Json::Value const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCCOMMANDACTION
-#endif
     MCAPI NpcCommandAction();
     MCAPI std::vector<struct NpcCommandAction::SavedCommand> & getCommands();
     MCAPI void setCommands(std::vector<struct NpcCommandAction::SavedCommand> &&);

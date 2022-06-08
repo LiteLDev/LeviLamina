@@ -51,8 +51,6 @@ public:
     /*249*/ virtual void __unk_vfn_249();
     /*261*/ virtual void __unk_vfn_261();
     /*269*/ virtual void __unk_vfn_269();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LLAMASPIT
-#endif
     MCAPI LlamaSpit(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

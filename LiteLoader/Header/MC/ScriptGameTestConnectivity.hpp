@@ -20,8 +20,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTGAMETESTCONNECTIVITY
-#endif
     MCAPI ScriptGameTestConnectivity(class ScriptGameTestConnectivity const &);
     MCAPI ScriptGameTestConnectivity(bool, bool, bool, bool);
 

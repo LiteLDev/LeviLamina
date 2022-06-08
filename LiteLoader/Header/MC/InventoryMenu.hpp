@@ -23,15 +23,43 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYMENU
-    MCVAPI class Container * _getContainer() const;
-    MCVAPI std::vector<class ItemStack> getItemCopies() const;
-    MCVAPI class ItemStack const & getSlot(int) const;
-    MCVAPI void removeSlot(int, int);
-    MCVAPI void serverInitItemStackIds();
-    MCVAPI void setSlot(int, class ItemStack const &, bool);
-    MCVAPI ~InventoryMenu();
-#endif
+    /*
+    inline class Container * _getContainer() const{
+        class Container * (InventoryMenu::*rv)() const;
+        *((void**)&rv) = dlsym("?_getContainer@InventoryMenu@@MEBAPEAVContainer@@XZ");
+        return (this->*rv)();
+    }
+    inline  ~InventoryMenu(){
+         (InventoryMenu::*rv)();
+        *((void**)&rv) = dlsym("??1InventoryMenu@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline std::vector<class ItemStack> getItemCopies() const{
+        std::vector<class ItemStack> (InventoryMenu::*rv)() const;
+        *((void**)&rv) = dlsym("?getItemCopies@InventoryMenu@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline class ItemStack const & getSlot(int a0) const{
+        class ItemStack const & (InventoryMenu::*rv)(int) const;
+        *((void**)&rv) = dlsym("?getSlot@InventoryMenu@@UEBAAEBVItemStack@@H@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    inline void removeSlot(int a0, int a1){
+        void (InventoryMenu::*rv)(int, int);
+        *((void**)&rv) = dlsym("?removeSlot@InventoryMenu@@UEAAXHH@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
+    inline void serverInitItemStackIds(){
+        void (InventoryMenu::*rv)();
+        *((void**)&rv) = dlsym("?serverInitItemStackIds@InventoryMenu@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void setSlot(int a0, class ItemStack const & a1, bool a2){
+        void (InventoryMenu::*rv)(int, class ItemStack const &, bool);
+        *((void**)&rv) = dlsym("?setSlot@InventoryMenu@@UEAAXHAEBVItemStack@@_N@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStack const &>(a1), std::forward<bool>(a2));
+    }
+    */
     MCAPI InventoryMenu(class Player &, class Container *);
 
 protected:

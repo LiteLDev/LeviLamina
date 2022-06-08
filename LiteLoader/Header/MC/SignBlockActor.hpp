@@ -41,8 +41,6 @@ public:
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIGNBLOCKACTOR
-#endif
     MCAPI SignBlockActor(class BlockPos const &);
     MCAPI class mce::Color const & getSignTextColor() const;
     MCAPI bool isBug471852Resolved() const;

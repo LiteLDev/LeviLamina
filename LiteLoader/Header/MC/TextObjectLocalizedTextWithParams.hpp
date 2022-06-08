@@ -28,8 +28,6 @@ public:
     /*1*/ virtual std::string asString() const;
     /*2*/ virtual class Json::Value asJsonValue() const;
     /*3*/ virtual class Json::Value resolve(struct ResolveData const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTOBJECTLOCALIZEDTEXTWITHPARAMS
-#endif
     MCAPI TextObjectLocalizedTextWithParams(std::string, std::vector<std::string> const &);
     MCAPI TextObjectLocalizedTextWithParams(std::string, std::unique_ptr<class TextObjectRoot>);
 

@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AREAATTACKDEFINITION
-#endif
     MCAPI AreaAttackDefinition();
     MCAPI void initialize(class EntityContext &, class AreaAttackComponent &);
     MCAPI void setDamageCause(std::string const &);

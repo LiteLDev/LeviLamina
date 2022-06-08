@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONPTR
-#endif
     MCAPI ActorDefinitionPtr();
     MCAPI ActorDefinitionPtr(class ActorDefinitionGroup &, class ActorDefinition &);
     MCAPI ActorDefinitionPtr(class ActorDefinitionPtr const &);

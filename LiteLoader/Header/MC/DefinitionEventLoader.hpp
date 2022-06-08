@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFINITIONEVENTLOADER
-#endif
     MCAPI static class DefinitionEvent loadEvent(class Json::Value, class SemVersion const &, enum TypeExecutingEvent, class EventResponseFactory const *);
 
 protected:

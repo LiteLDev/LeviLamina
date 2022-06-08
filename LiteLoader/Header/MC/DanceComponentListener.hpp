@@ -52,8 +52,6 @@ public:
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void levelSoundEvent(enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DANCECOMPONENTLISTENER
-#endif
 
 protected:
 

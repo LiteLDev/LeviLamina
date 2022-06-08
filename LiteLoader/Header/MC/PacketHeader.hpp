@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKETHEADER
-#endif
     MCAPI unsigned int getChannel() const;
 
 protected:

@@ -34,8 +34,6 @@ public:
     /*7*/ virtual bool canDestroy(class ContainerScreenContext const &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HORSEEQUIPCONTAINERVALIDATION
-#endif
     MCAPI HorseEquipContainerValidation(class ContainerScreenContext const &);
 
 protected:

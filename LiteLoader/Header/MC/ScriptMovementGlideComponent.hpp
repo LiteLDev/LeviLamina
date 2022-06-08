@@ -25,8 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptMovementGlideComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMOVEMENTGLIDECOMPONENT
-#endif
     MCAPI class Scripting::Result<float> getSpeedWhenTurning() const;
     MCAPI class Scripting::Result<float> getStartSpeed() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMovementGlideComponent> bind(struct Scripting::Version);

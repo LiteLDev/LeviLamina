@@ -32,8 +32,6 @@ public:
     /*0*/ virtual ~ActorFilterGroup();
     /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType) const;
     /*3*/ virtual bool _handleUnknownMember(std::string const &, class Json::Value const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORFILTERGROUP
-#endif
     MCAPI ActorFilterGroup(class ActorFilterGroup const &);
     MCAPI bool evaluateActor(class Actor const &, class VariantParameterList const &) const;
     MCAPI class ActorFilterGroup & operator=(class ActorFilterGroup const &);

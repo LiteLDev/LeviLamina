@@ -86,10 +86,18 @@ public:
     /*188*/ virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STAIRBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-    MCVAPI bool isStairBlock() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (StairBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@StairBlock@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isStairBlock() const{
+        bool (StairBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isStairBlock@StairBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI StairBlock(std::string const &, int, class BlockLegacy const &, int);
     MCAPI bool setInnerPieceShape(class Block const &, class BlockSource &, class BlockPos const &, class AABB &, bool) const;
     MCAPI bool setStepShape(class Block const &, class BlockSource &, class BlockPos const &, class AABB &, bool) const;

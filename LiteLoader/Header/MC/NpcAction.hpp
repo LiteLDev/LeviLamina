@@ -27,8 +27,6 @@ public:
     /*0*/ virtual ~NpcAction();
     /*1*/ virtual void __unk_vfn_1() = 0;
     /*2*/ virtual bool fromJson(class Json::Value const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCACTION
-#endif
     MCAPI enum NpcActionMode getMode() const;
     MCAPI std::string const & getText() const;
     MCAPI enum NpcActionType getType() const;

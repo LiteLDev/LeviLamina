@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYREGISTRYBASE
-#endif
     MCAPI EntityRegistryBase(class entt::basic_registry<class EntityId> &);
     MCAPI bool isValidEntity(class EntityContextBase const &) const;
     MCAPI ~EntityRegistryBase();

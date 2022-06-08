@@ -29,8 +29,6 @@ public:
     /*1*/ virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTHOURLYCLOCK
-#endif
 
 protected:
 

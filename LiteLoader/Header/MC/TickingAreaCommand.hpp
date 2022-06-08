@@ -26,8 +26,6 @@ public:
 public:
     /*0*/ virtual ~TickingAreaCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREACOMMAND
-#endif
     MCAPI static std::string formatTickingAreaList(std::vector<struct TickingAreaDescription> const &);
     MCAPI static void setup(class CommandRegistry &);
 

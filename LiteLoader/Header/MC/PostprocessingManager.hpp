@@ -28,8 +28,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_POSTPROCESSINGMANAGER
-#endif
     MCAPI PostprocessingManager();
     MCAPI class std::optional<std::vector<struct PostprocessingManager::LockedChunk>> tryLock(class ChunkPos const &, class ChunkSource &);
     MCAPI ~PostprocessingManager();

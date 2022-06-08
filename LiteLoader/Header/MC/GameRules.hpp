@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMERULES
-#endif
     MCAPI GameRules(class GameRules const &);
     MCAPI GameRules();
     MCAPI std::unique_ptr<class GameRulesChangedPacket> createAllGameRulesPacket() const;

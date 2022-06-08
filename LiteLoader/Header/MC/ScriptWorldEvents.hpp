@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTWORLDEVENTS
-#endif
     MCAPI ScriptWorldEvents(class Scripting::WeakLifetimeScope const &, class gsl::not_null<class Level *>);
     MCAPI ScriptWorldEvents(class ScriptWorldEvents &&);
     MCAPI class Level & getLevel() const;

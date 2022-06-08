@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTACTORTYPES
-#endif
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptActorType> get(class Scripting::WeakLifetimeScope &, std::string const &);
     MCAPI static void bind(class Scripting::ModuleBindingBuilder &, struct Scripting::Version, class std::unordered_map<std::string, std::unique_ptr<class ActorDefinition>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class ActorDefinition>>>> const &);
 

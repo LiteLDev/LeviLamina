@@ -25,8 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptMovementHoverComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMOVEMENTHOVERCOMPONENT
-#endif
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMovementHoverComponent> bind(struct Scripting::Version);
 
 protected:

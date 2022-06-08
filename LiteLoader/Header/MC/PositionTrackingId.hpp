@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_POSITIONTRACKINGID
-#endif
     MCAPI PositionTrackingId(class PositionTrackingId &&);
     MCAPI PositionTrackingId(class PositionTrackingId const &);
     MCAPI PositionTrackingId(std::string const &);

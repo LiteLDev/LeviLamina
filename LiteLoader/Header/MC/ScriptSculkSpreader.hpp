@@ -23,8 +23,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptSculkSpreader();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSCULKSPREADER
-#endif
     MCAPI void addCursorsWithOffset(class BlockPos const &, int);
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class BlockPos>> getCursorPosition(int) const;
     MCAPI class Scripting::Result<int> getMaxCharge() const;

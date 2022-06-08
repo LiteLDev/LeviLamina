@@ -32,8 +32,6 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*14*/ virtual void _moveToBlock();
     /*17*/ virtual bool findTargetBlock();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEMOVETOBLOCKGOAL
-#endif
     MCAPI BaseMoveToBlockGoal(class Mob &, float, int, int, int, float, float);
 
 protected:

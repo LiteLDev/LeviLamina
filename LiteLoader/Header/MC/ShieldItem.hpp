@@ -51,8 +51,6 @@ public:
     /*100*/ virtual int getCooldownTime() const;
     /*105*/ virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemInstance const &, class ItemInstance const &, bool, bool) const;
     /*106*/ virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIELDITEM
-#endif
     MCAPI ShieldItem(std::string const &, int);
     MCAPI void playBlockSound(class Player *) const;
     MCAPI void playBreakSound(class Player *) const;

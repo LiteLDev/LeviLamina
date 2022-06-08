@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAITEMTIERS
-#endif
     MCAPI static class Item::Tier const DIAMOND;
     MCAPI static class Item::Tier const GOLD;
     MCAPI static class Item::Tier const IRON;

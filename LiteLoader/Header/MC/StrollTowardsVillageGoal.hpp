@@ -31,8 +31,6 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*17*/ virtual class BlockPos _selectRandomPosInVillage();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STROLLTOWARDSVILLAGEGOAL
-#endif
     MCAPI StrollTowardsVillageGoal(class Mob &, float, float, float, int, float);
 
 protected:

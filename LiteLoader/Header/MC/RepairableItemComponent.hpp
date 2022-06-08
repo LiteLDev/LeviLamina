@@ -30,8 +30,6 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPAIRABLEITEMCOMPONENT
-#endif
     MCAPI RepairableItemComponent(class ComponentItem *);
     MCAPI int handleItemRepair(class ItemStackBase &, class ItemStackBase &);
     MCAPI bool isValidRepairItem(class ItemStackBase const &) const;

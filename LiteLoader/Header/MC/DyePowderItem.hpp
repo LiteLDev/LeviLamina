@@ -47,8 +47,6 @@ public:
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*116*/ virtual class Item & setIcon(std::string const &, int);
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYEPOWDERITEM
-#endif
     MCAPI DyePowderItem(std::string const &, int, enum ItemColor, bool, bool);
 
 protected:

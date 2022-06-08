@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERLINNOISE
-#endif
     MCAPI PerlinNoise(class PerlinNoise const &);
     MCAPI PerlinNoise(class IRandom &, int, int);
     MCAPI PerlinNoise(class IRandom &, struct YBlendingBugSettings, int, int);

@@ -42,10 +42,18 @@ public:
     /*15*/ virtual enum DataLoadHelperType getType() const;
     /*16*/ virtual bool shouldResetTime();
     /*17*/ virtual struct ActorUniqueID _generateNewID();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREDATALOADHELPER
-    MCVAPI float loadRotationDegreesX(float);
-    MCVAPI float loadRotationRadiansX(float);
-#endif
+    /*
+    inline float loadRotationDegreesX(float a0){
+        float (StructureDataLoadHelper::*rv)(float);
+        *((void**)&rv) = dlsym("?loadRotationDegreesX@StructureDataLoadHelper@@UEAAMM@Z");
+        return (this->*rv)(std::forward<float>(a0));
+    }
+    inline float loadRotationRadiansX(float a0){
+        float (StructureDataLoadHelper::*rv)(float);
+        *((void**)&rv) = dlsym("?loadRotationRadiansX@StructureDataLoadHelper@@UEAAMM@Z");
+        return (this->*rv)(std::forward<float>(a0));
+    }
+    */
     MCAPI StructureDataLoadHelper(class BlockPos const &, class BlockPos const &, class Vec3 const &, struct ActorUniqueID, enum Rotation, enum Mirror, class Level &);
 
 protected:

@@ -26,10 +26,18 @@ public:
     /*0*/ virtual ~ScreenHandlerBase();
     /*1*/ virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const &);
     /*2*/ virtual enum ItemStackNetResult endRequest();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCREENHANDLERBASE
-    MCVAPI void endRequestBatch();
-    MCVAPI void postRequest(bool);
-#endif
+    /*
+    inline void postRequest(bool a0){
+        void (ScreenHandlerBase::*rv)(bool);
+        *((void**)&rv) = dlsym("?postRequest@ScreenHandlerBase@@UEAAX_N@Z");
+        return (this->*rv)(std::forward<bool>(a0));
+    }
+    inline void endRequestBatch(){
+        void (ScreenHandlerBase::*rv)();
+        *((void**)&rv) = dlsym("?endRequestBatch@ScreenHandlerBase@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScreenHandlerBase(class ItemStackRequestActionHandler &);
 
 protected:

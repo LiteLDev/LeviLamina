@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRICTENTITYCONTEXT
-#endif
     MCAPI StrictEntityContext(class StrictEntityContext &&);
     MCAPI StrictEntityContext(class EntityRegistryBase &, class EntityId);
     MCAPI StrictEntityContext(class EntityContextBase const &);

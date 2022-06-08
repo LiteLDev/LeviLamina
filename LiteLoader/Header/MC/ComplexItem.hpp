@@ -40,9 +40,13 @@ public:
     /*75*/ virtual void __unk_vfn_75();
     /*76*/ virtual void __unk_vfn_76();
     /*128*/ virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPLEXITEM
-    MCVAPI bool isComplex() const;
-#endif
+    /*
+    inline bool isComplex() const{
+        bool (ComplexItem::*rv)() const;
+        *((void**)&rv) = dlsym("?isComplex@ComplexItem@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ComplexItem(std::string const &, int);
 
 protected:

@@ -23,18 +23,58 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASECONTAINERMENU
-    MCVAPI void broadcastChanges();
-    MCVAPI void containerContentChanged(int);
-    MCVAPI enum ContainerID getContainerId() const;
-    MCVAPI enum ContainerType getContainerType() const;
-    MCVAPI bool isResultSlot(int);
-    MCVAPI bool isSlotDirty(int);
-    MCVAPI void setContainerId(enum ContainerID);
-    MCVAPI void setContainerType(enum ContainerType);
-    MCVAPI void setData(int, int);
-    MCVAPI ~BaseContainerMenu();
-#endif
+    /*
+    inline bool isResultSlot(int a0){
+        bool (BaseContainerMenu::*rv)(int);
+        *((void**)&rv) = dlsym("?isResultSlot@BaseContainerMenu@@UEAA_NH@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    inline bool isSlotDirty(int a0){
+        bool (BaseContainerMenu::*rv)(int);
+        *((void**)&rv) = dlsym("?isSlotDirty@BaseContainerMenu@@UEAA_NH@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    inline void containerContentChanged(int a0){
+        void (BaseContainerMenu::*rv)(int);
+        *((void**)&rv) = dlsym("?containerContentChanged@BaseContainerMenu@@UEAAXH@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    inline void setData(int a0, int a1){
+        void (BaseContainerMenu::*rv)(int, int);
+        *((void**)&rv) = dlsym("?setData@BaseContainerMenu@@UEAAXHH@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
+    inline enum ContainerType getContainerType() const{
+        enum ContainerType (BaseContainerMenu::*rv)() const;
+        *((void**)&rv) = dlsym("?getContainerType@BaseContainerMenu@@UEBA?AW4ContainerType@@XZ");
+        return (this->*rv)();
+    }
+    inline enum ContainerID getContainerId() const{
+        enum ContainerID (BaseContainerMenu::*rv)() const;
+        *((void**)&rv) = dlsym("?getContainerId@BaseContainerMenu@@UEBA?AW4ContainerID@@XZ");
+        return (this->*rv)();
+    }
+    inline void setContainerId(enum ContainerID a0){
+        void (BaseContainerMenu::*rv)(enum ContainerID);
+        *((void**)&rv) = dlsym("?setContainerId@BaseContainerMenu@@UEAAXW4ContainerID@@@Z");
+        return (this->*rv)(std::forward<enum ContainerID>(a0));
+    }
+    inline void setContainerType(enum ContainerType a0){
+        void (BaseContainerMenu::*rv)(enum ContainerType);
+        *((void**)&rv) = dlsym("?setContainerType@BaseContainerMenu@@UEAAXW4ContainerType@@@Z");
+        return (this->*rv)(std::forward<enum ContainerType>(a0));
+    }
+    inline  ~BaseContainerMenu(){
+         (BaseContainerMenu::*rv)();
+        *((void**)&rv) = dlsym("??1BaseContainerMenu@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline void broadcastChanges(){
+        void (BaseContainerMenu::*rv)();
+        *((void**)&rv) = dlsym("?broadcastChanges@BaseContainerMenu@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BaseContainerMenu(class Player &, enum ContainerType);
 
 protected:

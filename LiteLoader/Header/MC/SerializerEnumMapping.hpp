@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERIALIZERENUMMAPPING
-#endif
     MCAPI bool lookup(std::string const &, __int64 &) const;
     MCAPI bool lookup(__int64, std::string &) const;
 

@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERACTCOMPONENT
-#endif
     MCAPI short getCooldownCounter() const;
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     MCAPI void setCooldownCounter(short);

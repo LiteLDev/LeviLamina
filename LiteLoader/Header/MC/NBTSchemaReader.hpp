@@ -54,25 +54,93 @@ public:
     /*30*/ virtual std::string pushMember(unsigned __int64);
     /*31*/ virtual void pushElement(unsigned __int64);
     /*32*/ virtual void pop();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTSCHEMAREADER
-    MCVAPI short asInt16() const;
-    MCVAPI int asInt32() const;
-    MCVAPI __int64 asInt64() const;
-    MCVAPI signed char asInt8() const;
-    MCVAPI unsigned short asUInt16() const;
-    MCVAPI unsigned int asUInt32() const;
-    MCVAPI unsigned __int64 asUInt64() const;
-    MCVAPI unsigned char asUInt8() const;
-    MCVAPI bool isBool() const;
-    MCVAPI bool isInt16() const;
-    MCVAPI bool isInt32() const;
-    MCVAPI bool isInt64() const;
-    MCVAPI bool isInt8() const;
-    MCVAPI bool isUInt16() const;
-    MCVAPI bool isUInt32() const;
-    MCVAPI bool isUInt64() const;
-    MCVAPI bool isUInt8() const;
-#endif
+    /*
+    inline short asInt16() const{
+        short (NBTSchemaReader::*rv)() const;
+        *((void**)&rv) = dlsym("?asInt16@NBTSchemaReader@@UEBAFXZ");
+        return (this->*rv)();
+    }
+    inline unsigned short asUInt16() const{
+        unsigned short (NBTSchemaReader::*rv)() const;
+        *((void**)&rv) = dlsym("?asUInt16@NBTSchemaReader@@UEBAGXZ");
+        return (this->*rv)();
+    }
+    inline int asInt32() const{
+        int (NBTSchemaReader::*rv)() const;
+        *((void**)&rv) = dlsym("?asInt32@NBTSchemaReader@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline unsigned int asUInt32() const{
+        unsigned int (NBTSchemaReader::*rv)() const;
+        *((void**)&rv) = dlsym("?asUInt32@NBTSchemaReader@@UEBAIXZ");
+        return (this->*rv)();
+    }
+    inline __int64 asInt64() const{
+        __int64 (NBTSchemaReader::*rv)() const;
+        *((void**)&rv) = dlsym("?asInt64@NBTSchemaReader@@UEBA_JXZ");
+        return (this->*rv)();
+    }
+    inline unsigned __int64 asUInt64() const{
+        unsigned __int64 (NBTSchemaReader::*rv)() const;
+        *((void**)&rv) = dlsym("?asUInt64@NBTSchemaReader@@UEBA_KXZ");
+        return (this->*rv)();
+    }
+    inline unsigned char asUInt8() const{
+        unsigned char (NBTSchemaReader::*rv)() const;
+        *((void**)&rv) = dlsym("?asUInt8@NBTSchemaReader@@UEBAEXZ");
+        return (this->*rv)();
+    }
+    inline signed char asInt8() const{
+        signed char (NBTSchemaReader::*rv)() const;
+        *((void**)&rv) = dlsym("?asInt8@NBTSchemaReader@@UEBACXZ");
+        return (this->*rv)();
+    }
+    inline bool isBool() const{
+        bool (NBTSchemaReader::*rv)() const;
+        *((void**)&rv) = dlsym("?isBool@NBTSchemaReader@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isUInt8() const{
+        bool (NBTSchemaReader::*rv)() const;
+        *((void**)&rv) = dlsym("?isUInt8@NBTSchemaReader@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInt8() const{
+        bool (NBTSchemaReader::*rv)() const;
+        *((void**)&rv) = dlsym("?isInt8@NBTSchemaReader@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isUInt16() const{
+        bool (NBTSchemaReader::*rv)() const;
+        *((void**)&rv) = dlsym("?isUInt16@NBTSchemaReader@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInt16() const{
+        bool (NBTSchemaReader::*rv)() const;
+        *((void**)&rv) = dlsym("?isInt16@NBTSchemaReader@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isUInt32() const{
+        bool (NBTSchemaReader::*rv)() const;
+        *((void**)&rv) = dlsym("?isUInt32@NBTSchemaReader@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInt32() const{
+        bool (NBTSchemaReader::*rv)() const;
+        *((void**)&rv) = dlsym("?isInt32@NBTSchemaReader@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInt64() const{
+        bool (NBTSchemaReader::*rv)() const;
+        *((void**)&rv) = dlsym("?isInt64@NBTSchemaReader@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isUInt64() const{
+        bool (NBTSchemaReader::*rv)() const;
+        *((void**)&rv) = dlsym("?isUInt64@NBTSchemaReader@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI NBTSchemaReader(class gsl::not_null<class CompoundTag const *>);
 
 protected:

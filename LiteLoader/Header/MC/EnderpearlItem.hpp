@@ -43,8 +43,6 @@ public:
     /*80*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*99*/ virtual class HashedString const & getCooldownType() const;
     /*100*/ virtual int getCooldownTime() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERPEARLITEM
-#endif
     MCAPI EnderpearlItem(std::string const &, int);
     MCAPI static class HashedString const ENDER_PEARL_COOLDOWN;
 

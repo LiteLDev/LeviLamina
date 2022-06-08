@@ -62,8 +62,6 @@ public:
     /*282*/ virtual void dropItem() = 0;
     /*283*/ virtual bool placeHangingEntity(class BlockSource &, int);
     /*284*/ virtual bool wouldSurvive(class BlockSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HANGINGACTOR
-#endif
     MCAPI HangingActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI int getDirection() const;
 

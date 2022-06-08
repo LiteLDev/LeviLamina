@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUOYANCYCOMPONENT
-#endif
     MCAPI BuoyancyComponent(class BuoyancyComponent const &);
     MCAPI BuoyancyComponent();
     MCAPI bool canFloat(class Actor const &) const;

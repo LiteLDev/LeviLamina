@@ -23,24 +23,88 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERDIMENSION
-    MCVAPI void _upgradeOldLimboEntity(class CompoundTag &, enum LimboEntitiesVersion);
-    MCVAPI std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, enum StorageVersion);
-    MCVAPI std::unique_ptr<class WorldGenerator> createGenerator();
-    MCVAPI void fixWallChunk(class ChunkSource &, class LevelChunk &);
-    MCVAPI bool forceCheckAllNeighChunkSavedStat() const;
-    MCVAPI int getDefaultBiome() const;
-    MCVAPI float getTimeOfDay(int, float) const;
-    MCVAPI void init();
-    MCVAPI bool isFoggyAt(int, int) const;
-    MCVAPI bool isNaturalDimension() const;
-    MCVAPI bool isValidSpawn(int, int) const;
-    MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const &) const;
-    MCVAPI bool mayRespawnViaBed() const;
-    MCVAPI bool showSky() const;
-    MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const &, class AutomaticID<class Dimension, int>) const;
-    MCVAPI void upgradeLevelChunk(class ChunkSource &, class LevelChunk &, class LevelChunk &);
-#endif
+    /*
+    inline bool showSky() const{
+        bool (NetherDimension::*rv)() const;
+        *((void**)&rv) = dlsym("?showSky@NetherDimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isNaturalDimension() const{
+        bool (NetherDimension::*rv)() const;
+        *((void**)&rv) = dlsym("?isNaturalDimension@NetherDimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool mayRespawnViaBed() const{
+        bool (NetherDimension::*rv)() const;
+        *((void**)&rv) = dlsym("?mayRespawnViaBed@NetherDimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isValidSpawn(int a0, int a1) const{
+        bool (NetherDimension::*rv)(int, int) const;
+        *((void**)&rv) = dlsym("?isValidSpawn@NetherDimension@@UEBA_NHH@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
+    inline bool isFoggyAt(int a0, int a1) const{
+        bool (NetherDimension::*rv)(int, int) const;
+        *((void**)&rv) = dlsym("?isFoggyAt@NetherDimension@@UEBA_NHH@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
+    inline bool forceCheckAllNeighChunkSavedStat() const{
+        bool (NetherDimension::*rv)() const;
+        *((void**)&rv) = dlsym("?forceCheckAllNeighChunkSavedStat@NetherDimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline void _upgradeOldLimboEntity(class CompoundTag & a0, enum LimboEntitiesVersion a1){
+        void (NetherDimension::*rv)(class CompoundTag &, enum LimboEntitiesVersion);
+        *((void**)&rv) = dlsym("?_upgradeOldLimboEntity@NetherDimension@@EEAAXAEAVCompoundTag@@W4LimboEntitiesVersion@@@Z");
+        return (this->*rv)(std::forward<class CompoundTag &>(a0), std::forward<enum LimboEntitiesVersion>(a1));
+    }
+    inline std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource> a0, enum StorageVersion a1){
+        std::unique_ptr<class ChunkSource> (NetherDimension::*rv)(std::unique_ptr<class ChunkSource>, enum StorageVersion);
+        *((void**)&rv) = dlsym("?_wrapStorageForVersionCompatibility@NetherDimension@@EEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z");
+        return (this->*rv)(std::forward<std::unique_ptr<class ChunkSource>>(a0), std::forward<enum StorageVersion>(a1));
+    }
+    inline void fixWallChunk(class ChunkSource & a0, class LevelChunk & a1){
+        void (NetherDimension::*rv)(class ChunkSource &, class LevelChunk &);
+        *((void**)&rv) = dlsym("?fixWallChunk@NetherDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z");
+        return (this->*rv)(std::forward<class ChunkSource &>(a0), std::forward<class LevelChunk &>(a1));
+    }
+    inline bool levelChunkNeedsUpgrade(class LevelChunk const & a0) const{
+        bool (NetherDimension::*rv)(class LevelChunk const &) const;
+        *((void**)&rv) = dlsym("?levelChunkNeedsUpgrade@NetherDimension@@UEBA_NAEBVLevelChunk@@@Z");
+        return (this->*rv)(std::forward<class LevelChunk const &>(a0));
+    }
+    inline void upgradeLevelChunk(class ChunkSource & a0, class LevelChunk & a1, class LevelChunk & a2){
+        void (NetherDimension::*rv)(class ChunkSource &, class LevelChunk &, class LevelChunk &);
+        *((void**)&rv) = dlsym("?upgradeLevelChunk@NetherDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z");
+        return (this->*rv)(std::forward<class ChunkSource &>(a0), std::forward<class LevelChunk &>(a1), std::forward<class LevelChunk &>(a2));
+    }
+    inline std::unique_ptr<class WorldGenerator> createGenerator(){
+        std::unique_ptr<class WorldGenerator> (NetherDimension::*rv)();
+        *((void**)&rv) = dlsym("?createGenerator@NetherDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline int getDefaultBiome() const{
+        int (NetherDimension::*rv)() const;
+        *((void**)&rv) = dlsym("?getDefaultBiome@NetherDimension@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline float getTimeOfDay(int a0, float a1) const{
+        float (NetherDimension::*rv)(int, float) const;
+        *((void**)&rv) = dlsym("?getTimeOfDay@NetherDimension@@UEBAMHM@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<float>(a1));
+    }
+    inline void init(){
+        void (NetherDimension::*rv)();
+        *((void**)&rv) = dlsym("?init@NetherDimension@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline class Vec3 translatePosAcrossDimension(class Vec3 const & a0, class AutomaticID<class Dimension, int> a1) const{
+        class Vec3 (NetherDimension::*rv)(class Vec3 const &, class AutomaticID<class Dimension, int>) const;
+        *((void**)&rv) = dlsym("?translatePosAcrossDimension@NetherDimension@@UEBA?AVVec3@@AEBV2@V?$AutomaticID@VDimension@@H@@@Z");
+        return (this->*rv)(std::forward<class Vec3 const &>(a0), std::forward<class AutomaticID<class Dimension, int>>(a1));
+    }
+    */
     MCAPI NetherDimension(class Level &, class Scheduler &);
 
 protected:

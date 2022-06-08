@@ -54,9 +54,13 @@ public:
     /*351*/ virtual void jumpFromGround();
     /*354*/ virtual void newServerAiStep();
     /*359*/ virtual void __unk_vfn_359();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHEEP
-    MCVAPI bool useNewAi() const;
-#endif
+    /*
+    inline bool useNewAi() const{
+        bool (Sheep::*rv)() const;
+        *((void**)&rv) = dlsym("?useNewAi@Sheep@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI Sheep(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI bool isGrazing() const;
 

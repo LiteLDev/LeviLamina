@@ -105,12 +105,28 @@ public:
     /*125*/ virtual bool _checkUseOnPermissions(class Actor &, class ItemStackBase &, unsigned char const &, class BlockPos const &) const;
     /*126*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPONENTITEM
-    MCVAPI int getVariant(int, int, bool) const;
-    MCVAPI bool hasCustomColor(class ItemStackBase const &) const;
-    MCVAPI bool isComponentBased() const;
-    MCVAPI bool useVariant(int, int, bool) const;
-#endif
+    /*
+    inline bool useVariant(int a0, int a1, bool a2) const{
+        bool (ComponentItem::*rv)(int, int, bool) const;
+        *((void**)&rv) = dlsym("?useVariant@ComponentItem@@UEBA_NHH_N@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<bool>(a2));
+    }
+    inline bool hasCustomColor(class ItemStackBase const & a0) const{
+        bool (ComponentItem::*rv)(class ItemStackBase const &) const;
+        *((void**)&rv) = dlsym("?hasCustomColor@ComponentItem@@UEBA_NAEBVItemStackBase@@@Z");
+        return (this->*rv)(std::forward<class ItemStackBase const &>(a0));
+    }
+    inline int getVariant(int a0, int a1, bool a2) const{
+        int (ComponentItem::*rv)(int, int, bool) const;
+        *((void**)&rv) = dlsym("?getVariant@ComponentItem@@UEBAHHH_N@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<bool>(a2));
+    }
+    inline bool isComponentBased() const{
+        bool (ComponentItem::*rv)() const;
+        *((void**)&rv) = dlsym("?isComponentBased@ComponentItem@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ComponentItem(std::string const &, short);
     MCAPI void _addCerealItemsToMap();
     MCAPI class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ComponentItem>> _buildItemsFileSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ComponentItem>> &, bool, class SemVersion);

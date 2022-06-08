@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDBLOCKCOMPONENT
-#endif
     MCAPI CommandBlockComponent(class CommandBlockComponent &&);
     MCAPI CommandBlockComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &);

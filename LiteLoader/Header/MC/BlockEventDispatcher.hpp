@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTDISPATCHER
-#endif
     MCAPI void dispatchEvent(class BlockPos const &, unsigned int, class Block const &, class Block const &, class Actor *);
     MCAPI class BlockEventDispatcherToken registerListener(class Vec3 const &, float, class std::function<void (class BlockPos const &, unsigned int, class Block const &, class Actor *)>);
     MCAPI void removeListener(int);

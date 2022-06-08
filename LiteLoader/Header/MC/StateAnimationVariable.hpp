@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STATEANIMATIONVARIABLE
-#endif
     MCAPI void addKeyFrame(float, float);
 
 protected:

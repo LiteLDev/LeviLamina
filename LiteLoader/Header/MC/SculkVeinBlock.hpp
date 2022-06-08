@@ -62,8 +62,6 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual class Block const & getMultifaceBlock() const;
     /*204*/ virtual class MultifaceSpreader const & getMultifaceSpreader() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKVEINBLOCK
-#endif
     MCAPI SculkVeinBlock(std::string const &, int, class Material const &);
 
 protected:

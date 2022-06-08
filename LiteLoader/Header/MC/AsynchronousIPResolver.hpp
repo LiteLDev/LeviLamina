@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ASYNCHRONOUSIPRESOLVER
-#endif
     MCAPI AsynchronousIPResolver(std::string);
     MCAPI std::string getIp() const;
     MCAPI std::string const & getOriginalUrl() const;

@@ -24,8 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlockPistonComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKPISTONCOMPONENT
-#endif
     MCAPI ScriptBlockPistonComponent(class ScriptBlockPistonComponent const &);
     MCAPI ScriptBlockPistonComponent(class ScriptBlockPistonComponent &&);
     MCAPI class Scripting::Result<std::vector<class BlockPos>> getAttachedBlocks();

@@ -62,10 +62,18 @@ public:
     /*343*/ virtual float _getWalkTargetValue(class BlockPos const &);
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARROT
-    MCVAPI bool _makeFlySound() const;
-    MCVAPI bool useNewAi() const;
-#endif
+    /*
+    inline bool useNewAi() const{
+        bool (Parrot::*rv)() const;
+        *((void**)&rv) = dlsym("?useNewAi@Parrot@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool _makeFlySound() const{
+        bool (Parrot::*rv)() const;
+        *((void**)&rv) = dlsym("?_makeFlySound@Parrot@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI Parrot(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI float getFlap() const;
     MCAPI float getFlapSpeed() const;

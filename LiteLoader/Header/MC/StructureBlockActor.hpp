@@ -37,8 +37,6 @@ public:
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREBLOCKACTOR
-#endif
     MCAPI StructureBlockActor(class BlockPos const &);
     MCAPI class StructureEditorData const & getStructureData() const;
     MCAPI void setPowered(class BlockSource &, class BlockPos const &, bool, bool);

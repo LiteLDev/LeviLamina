@@ -34,8 +34,6 @@ public:
     /*7*/ virtual void tick();
     /*8*/ virtual void _updateState() = 0;
     /*9*/ virtual unsigned int _genMaskingKey() const = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKET
-#endif
     MCAPI RakWebSocket(std::unique_ptr<class TcpProxy>, bool);
     MCAPI void close(bool, bool);
     MCAPI std::string getUri() const;

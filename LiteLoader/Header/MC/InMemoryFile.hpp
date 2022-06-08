@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INMEMORYFILE
-#endif
     MCAPI InMemoryFile(class Core::Path const &);
     MCAPI class leveldb::Status append(class leveldb::Slice const &);
     MCAPI class leveldb::Status close(enum InMemoryAccessMode);

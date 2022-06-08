@@ -39,8 +39,6 @@ public:
     /*13*/ virtual bool itemsMatch(class ItemDescriptor const &, class ItemDescriptor const &, class CompoundTag const *) const;
     /*14*/ virtual bool itemsMatch(class ItemDescriptor const &, int, int, class CompoundTag const *) const;
     /*15*/ virtual void loadResultList(class BlockPalette const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECIPE
-#endif
     MCAPI int countQuantityOfIngredient(class ItemInstance const &) const;
     MCAPI int getHeight() const;
     MCAPI std::vector<class RecipeIngredient> const & getIngredients() const;

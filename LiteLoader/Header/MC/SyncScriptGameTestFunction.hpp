@@ -24,8 +24,6 @@ public:
 public:
     /*0*/ virtual ~SyncScriptGameTestFunction();
     /*2*/ virtual std::unique_ptr<class gametest::IGameTestFunctionRunResult> run(class gametest::BaseGameTestHelper &, class gametest::IGameTestFunctionContext &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYNCSCRIPTGAMETESTFUNCTION
-#endif
     MCAPI SyncScriptGameTestFunction(class Scripting::WeakLifetimeScope, class Scripting::Closure<void (struct Scripting::TypedObjectHandle<class ScriptGameTestHelper>)>, std::string const &);
 
 protected:

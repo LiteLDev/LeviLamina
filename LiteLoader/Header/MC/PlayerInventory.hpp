@@ -29,11 +29,23 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERINVENTORY
-    MCVAPI void containerContentChanged(int);
-    MCVAPI void containerSizeChanged(int);
-    MCVAPI void createTransactionContext(class std::function<void (class Container &, int, class ItemStack const &, class ItemStack const &)>, class std::function<void (void)>);
-#endif
+    /*
+    inline void containerSizeChanged(int a0){
+        void (PlayerInventory::*rv)(int);
+        *((void**)&rv) = dlsym("?containerSizeChanged@PlayerInventory@@UEAAXH@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    inline void containerContentChanged(int a0){
+        void (PlayerInventory::*rv)(int);
+        *((void**)&rv) = dlsym("?containerContentChanged@PlayerInventory@@UEAAXH@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    inline void createTransactionContext(class std::function<void (class Container &, int, class ItemStack const &, class ItemStack const &)> a0, class std::function<void (void)> a1){
+        void (PlayerInventory::*rv)(class std::function<void (class Container &, int, class ItemStack const &, class ItemStack const &)>, class std::function<void (void)>);
+        *((void**)&rv) = dlsym("?createTransactionContext@PlayerInventory@@UEAAXV?$function@$$A6AXAEAVContainer@@HAEBVItemStack@@1@Z@std@@V?$function@$$A6AXXZ@3@@Z");
+        return (this->*rv)(std::forward<class std::function<void (class Container &, int, class ItemStack const &, class ItemStack const &)>>(a0), std::forward<class std::function<void (void)>>(a1));
+    }
+    */
     MCAPI PlayerInventory(std::unique_ptr<class Inventory>);
     MCAPI class std::weak_ptr<class HudContainerManagerModel> _getHudContainerManagerModel();
     MCAPI bool add(class ItemStack &, bool);

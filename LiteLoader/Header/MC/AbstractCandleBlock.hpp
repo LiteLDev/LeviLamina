@@ -74,11 +74,23 @@ public:
     /*209*/ virtual void __unk_vfn_209();
     /*210*/ virtual void __unk_vfn_210();
     /*211*/ MCAPI std::string const & getDescriptionId() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABSTRACTCANDLEBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-    MCVAPI bool hasVariableLighting() const;
-    MCVAPI bool isInteractiveBlock() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (AbstractCandleBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@AbstractCandleBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasVariableLighting() const{
+        bool (AbstractCandleBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?hasVariableLighting@AbstractCandleBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInteractiveBlock() const{
+        bool (AbstractCandleBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@AbstractCandleBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI AbstractCandleBlock(std::string const &, int, class Material const &);
 
 protected:

@@ -25,9 +25,13 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRONGHOLDPIECE
-    MCVAPI ~StrongholdPiece();
-#endif
+    /*
+    inline  ~StrongholdPiece(){
+         (StrongholdPiece::*rv)();
+        *((void**)&rv) = dlsym("??1StrongholdPiece@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI std::unique_ptr<class StructurePiece> findAndCreatePieceFactory(std::string const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
     MCAPI class StructurePiece * generateAndAddPiece(class SHStartPiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
     MCAPI std::unique_ptr<class StructurePiece> generatePieceFromSmallDoor(class SHStartPiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random const &, int, int, int, int, int);

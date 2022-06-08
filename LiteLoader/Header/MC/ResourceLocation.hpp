@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCELOCATION
-#endif
     MCAPI ResourceLocation(class Core::Path const &);
     MCAPI ResourceLocation(class Core::Path const &, enum ResourceFileSystem);
     MCAPI ResourceLocation();

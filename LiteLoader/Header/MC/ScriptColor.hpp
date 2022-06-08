@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCOLOR
-#endif
     MCAPI ScriptColor(class mce::Color const &);
     MCAPI class mce::Color const & getColor() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptColor> bind(struct Scripting::Version);

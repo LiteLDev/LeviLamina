@@ -27,8 +27,6 @@ public:
     /*0*/ virtual ~OceanMonumentSimpleRoom();
     /*3*/ virtual enum StructurePieceType getType() const;
     /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANMONUMENTSIMPLEROOM
-#endif
 
 protected:
 

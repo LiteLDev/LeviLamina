@@ -57,9 +57,13 @@ public:
     /*265*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
     /*269*/ virtual void __unk_vfn_269();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FALLINGBLOCK
-    MCVAPI float getDeletionDelayTimeSeconds() const;
-#endif
+    /*
+    inline float getDeletionDelayTimeSeconds() const{
+        float (FallingBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?getDeletionDelayTimeSeconds@FallingBlock@@UEBAMXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI FallingBlock(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI class Block const & getFallingBlock() const;
     MCAPI void setFallDamageAmount(float);

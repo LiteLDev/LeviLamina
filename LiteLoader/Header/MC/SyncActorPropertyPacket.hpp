@@ -29,8 +29,6 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYNCACTORPROPERTYPACKET
-#endif
     MCAPI SyncActorPropertyPacket(class Actor const &);
     MCAPI SyncActorPropertyPacket();
 

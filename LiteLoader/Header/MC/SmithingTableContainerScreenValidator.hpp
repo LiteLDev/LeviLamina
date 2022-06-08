@@ -24,8 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~SmithingTableContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMITHINGTABLECONTAINERSCREENVALIDATOR
-#endif
     MCAPI SmithingTableContainerScreenValidator();
 
 protected:

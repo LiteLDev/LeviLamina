@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SENSINGCOMPONENT
-#endif
     MCAPI bool canSee(class Mob &, class Actor const &);
     MCAPI void reset();
     MCAPI bool withinFOV(class Mob &, class Vec3 const &, float);

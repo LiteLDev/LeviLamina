@@ -76,11 +76,23 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-    MCVAPI bool isBounceBlock() const;
-    MCVAPI bool isInteractiveBlock() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (BedBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@BedBlock@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInteractiveBlock() const{
+        bool (BedBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@BedBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isBounceBlock() const{
+        bool (BedBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isBounceBlock@BedBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BedBlock(std::string const &, int);
     MCAPI static unsigned short const HEAD_PIECE_DATA;
     MCAPI static unsigned short const OCCUPIED_DATA;

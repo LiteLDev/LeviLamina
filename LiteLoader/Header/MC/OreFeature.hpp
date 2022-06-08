@@ -24,8 +24,6 @@ public:
 public:
     /*0*/ virtual ~OreFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OREFEATURE
-#endif
     MCAPI OreFeature(int, std::vector<struct ReplaceRule> &&);
     MCAPI OreFeature();
 

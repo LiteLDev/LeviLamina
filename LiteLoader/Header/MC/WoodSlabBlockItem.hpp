@@ -40,8 +40,6 @@ public:
     /*71*/ virtual void __unk_vfn_71();
     /*75*/ virtual void __unk_vfn_75();
     /*76*/ virtual void __unk_vfn_76();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WOODSLABBLOCKITEM
-#endif
 
 protected:
 

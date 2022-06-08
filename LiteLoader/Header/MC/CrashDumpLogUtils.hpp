@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPLOGUTILS
-#endif
     MCAPI static enum CrashDumpLogStringID getTagFromOptions(unsigned __int64, class gsl::span<enum CrashDumpLogStringID const, -1>);
 
 protected:

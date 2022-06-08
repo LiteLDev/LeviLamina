@@ -35,8 +35,6 @@ public:
     /*16*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const &) const;
     /*17*/ virtual enum PackAccessAssetGenerationResult generateAssetSet();
     /*21*/ virtual class ContentIdentity readContentIdentity() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCRYPTEDFILEACCESSSTRATEGY
-#endif
     MCAPI EncryptedFileAccessStrategy(class ResourceLocation const &, class ContentIdentity const &, class IContentKeyProvider const &, bool, class std::optional<class std::unordered_map<class Core::PathBuffer<std::string>, std::string, struct std::hash<class Core::PathBuffer<std::string>>, struct std::equal_to<class Core::PathBuffer<std::string>>, class std::allocator<struct std::pair<class Core::PathBuffer<std::string> const, std::string>>>>);
     MCAPI static bool isValidEncryptedPack(class Core::Path const &, class ContentIdentity &);
 

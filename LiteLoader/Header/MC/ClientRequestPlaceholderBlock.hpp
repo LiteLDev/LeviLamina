@@ -59,8 +59,6 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*188*/ virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTREQUESTPLACEHOLDERBLOCK
-#endif
     MCAPI ClientRequestPlaceholderBlock(std::string const &, int, class Material const &);
 
 protected:

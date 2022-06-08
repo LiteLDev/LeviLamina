@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANGERLEVELDEFINITION
-#endif
     MCAPI void addNuisanceDefinition(class NuisanceDefinition const &);
     MCAPI void addOnIncreaseSoundDefinition(class SoundDefinition const &);
     MCAPI void initialize(class EntityContext &, class AngerLevelComponent &);

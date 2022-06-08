@@ -29,8 +29,6 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*5*/ virtual bool disallowBatching() const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCLIENTLOGINPACKET
-#endif
     MCAPI SubClientLoginPacket();
 
 protected:

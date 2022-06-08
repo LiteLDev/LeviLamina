@@ -28,8 +28,6 @@ public:
     /*2*/ virtual class leveldb::Status Close();
     /*3*/ virtual class leveldb::Status Flush();
     /*4*/ virtual class leveldb::Status Sync();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNAPSHOTWRITABLEFILE
-#endif
     MCAPI SnapshotWritableFile(class leveldb::WritableFile *&&, class std::shared_mutex &);
 
 protected:

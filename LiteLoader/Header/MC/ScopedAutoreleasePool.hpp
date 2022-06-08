@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOPEDAUTORELEASEPOOL
-#endif
     MCAPI ScopedAutoreleasePool();
     MCAPI void drain();
     MCAPI void drainNow();

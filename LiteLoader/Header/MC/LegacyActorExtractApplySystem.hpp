@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYACTOREXTRACTAPPLYSYSTEM
-#endif
     MCAPI static struct TickingSystemWithInfo createApplySystem();
     MCAPI static struct TickingSystemWithInfo createCleanupSystem();
     MCAPI static struct TickingSystemWithInfo createExtractSystem();

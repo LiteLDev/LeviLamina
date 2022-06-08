@@ -53,9 +53,13 @@ public:
     /*311*/ virtual void __unk_vfn_311();
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHICKEN
-    MCVAPI bool useNewAi() const;
-#endif
+    /*
+    inline bool useNewAi() const{
+        bool (Chicken::*rv)() const;
+        *((void**)&rv) = dlsym("?useNewAi@Chicken@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI Chicken(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

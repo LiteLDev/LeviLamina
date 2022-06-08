@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYOPTIONALOWNERREF
-#endif
     MCAPI EntityOptionalOwnerRef();
     MCAPI bool isSet() const;
     MCAPI void setOwnedRef(class OwnerPtrT<struct EntityRefTraits>);

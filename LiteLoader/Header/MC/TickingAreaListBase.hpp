@@ -25,8 +25,6 @@ public:
 public:
     /*0*/ virtual ~TickingAreaListBase();
     /*1*/ virtual bool removeDistantEntityAreasAndCheckForRemoved(std::vector<class Vec3> const &, class std::function<void (class ITickingArea const &)>, class LevelStorage &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREALISTBASE
-#endif
     MCAPI void add(std::unique_ptr<class ITickingArea>);
     MCAPI unsigned int countEntityTickingAreas() const;
     MCAPI unsigned int countStandaloneTickingAreas() const;

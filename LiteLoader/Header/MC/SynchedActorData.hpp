@@ -159,8 +159,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYNCHEDACTORDATA
-#endif
     MCAPI SynchedActorData(class SynchedActorData &&);
     MCAPI SynchedActorData();
     MCAPI bool _assignValues(class SynchedActorData const &, class Actor *);

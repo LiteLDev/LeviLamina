@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBSPAWNERPERMUTATION
-#endif
     MCAPI ~MobSpawnerPermutation();
 
 protected:

@@ -27,8 +27,6 @@ public:
     /*1*/ virtual void handleGameEvent(class GameEvent const &, class BlockPos const &, class Actor *, class BlockSource &);
     /*2*/ virtual class GameEvents::PositionSource const & getPositionSource() const;
     /*3*/ virtual unsigned int getRange() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONLISTENER
-#endif
     MCAPI VibrationListener(std::unique_ptr<class VibrationListenerConfig> &&, class GameEvents::PositionSource, unsigned int, enum VibrationListener::OwnerType);
     MCAPI class GameEvent const & getGameEvent() const;
     MCAPI void tick(class BlockSource &);

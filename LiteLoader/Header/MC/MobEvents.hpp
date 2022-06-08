@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEVENTS
-#endif
     MCAPI MobEvents(class LevelStorage &);
     MCAPI bool areEventsEnabled() const;
     MCAPI void deserialize(class CompoundTag const &);

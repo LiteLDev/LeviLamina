@@ -37,8 +37,6 @@ public:
     /*16*/ virtual void setTrialMode(bool);
     /*17*/ virtual bool isInTrialMode();
     /*18*/ virtual void registerUpsellScreenCallback(class std::function<void (bool)>);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SURVIVALMODE
-#endif
     MCAPI SurvivalMode(class Player &);
 
 protected:

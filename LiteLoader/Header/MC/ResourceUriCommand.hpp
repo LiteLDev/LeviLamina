@@ -26,8 +26,6 @@ public:
 public:
     /*0*/ virtual ~ResourceUriCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEURICOMMAND
-#endif
     MCAPI static void setup(class CommandRegistry &);
 
 protected:

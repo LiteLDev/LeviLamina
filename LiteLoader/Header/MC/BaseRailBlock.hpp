@@ -72,11 +72,23 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*192*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASERAILBLOCK
-    MCVAPI bool canSpawnOn() const;
-    MCVAPI bool isRailBlock() const;
-    MCVAPI bool waterSpreadCausesSpawn() const;
-#endif
+    /*
+    inline bool canSpawnOn() const{
+        bool (BaseRailBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canSpawnOn@BaseRailBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool waterSpreadCausesSpawn() const{
+        bool (BaseRailBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@BaseRailBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isRailBlock() const{
+        bool (BaseRailBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isRailBlock@BaseRailBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BaseRailBlock(std::string const &, int, bool);
     MCAPI static bool isCorner(class BlockSource const &, class BlockPos const &);
     MCAPI static bool isFacingWestEast(class BlockSource const &, class BlockPos const &);

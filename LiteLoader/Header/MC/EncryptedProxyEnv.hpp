@@ -27,11 +27,23 @@ public:
     /*0*/ virtual ~EncryptedProxyEnv();
     /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
     /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCRYPTEDPROXYENV
-    MCVAPI class leveldb::Status DeleteFileA(std::string const &);
-    MCVAPI class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
-    MCVAPI class leveldb::Status RenameFile(std::string const &, std::string const &);
-#endif
+    /*
+    inline class leveldb::Status DeleteFileA(std::string const & a0){
+        class leveldb::Status (EncryptedProxyEnv::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?DeleteFileA@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline class leveldb::Status NewWritableFile(std::string const & a0, class leveldb::WritableFile ** a1){
+        class leveldb::Status (EncryptedProxyEnv::*rv)(std::string const &, class leveldb::WritableFile **);
+        *((void**)&rv) = dlsym("?NewWritableFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class leveldb::WritableFile **>(a1));
+    }
+    inline class leveldb::Status RenameFile(std::string const & a0, std::string const & a1){
+        class leveldb::Status (EncryptedProxyEnv::*rv)(std::string const &, std::string const &);
+        *((void**)&rv) = dlsym("?RenameFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<std::string const &>(a1));
+    }
+    */
     MCAPI EncryptedProxyEnv(class leveldb::Env *, class ContentIdentity const &, std::string const &, enum EncryptedProxyReadMode);
 
 protected:

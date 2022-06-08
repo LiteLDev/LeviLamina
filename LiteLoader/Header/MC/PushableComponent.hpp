@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PUSHABLECOMPONENT
-#endif
     MCAPI PushableComponent();
     MCAPI void initFromDefinition(class Actor &);
     MCAPI void initFromDefinition(class Actor &, struct PushableDescription &);

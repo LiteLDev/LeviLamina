@@ -29,8 +29,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOMPONENTFACTORY
-#endif
     MCAPI BlockComponentFactory(class Experiments const &);
     MCAPI std::unique_ptr<struct BlockComponentDescription> createDescription(std::string const &) const;
     MCAPI void initializeFactory(class Experiments const &);

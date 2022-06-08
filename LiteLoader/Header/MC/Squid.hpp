@@ -59,8 +59,6 @@ public:
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
     /*361*/ virtual enum LevelSoundEvent _getInkSquirtSoundEvent() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUID
-#endif
     MCAPI Squid(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &, class mce::Color const &);
     MCAPI void spawnInkParticles();
 

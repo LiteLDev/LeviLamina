@@ -45,8 +45,6 @@ public:
     /*269*/ virtual void __unk_vfn_269();
     /*278*/ virtual void __unk_vfn_278();
     /*279*/ virtual void destroy(class Actor *);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTBOAT
-#endif
     MCAPI ChestBoat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

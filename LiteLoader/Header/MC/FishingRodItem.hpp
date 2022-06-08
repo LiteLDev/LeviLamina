@@ -50,8 +50,6 @@ public:
     /*111*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*116*/ virtual class Item & setIcon(std::string const &, int);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FISHINGRODITEM
-#endif
     MCAPI FishingRodItem(std::string const &, int);
 
 protected:

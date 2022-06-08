@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTTIERINCOMPATIBLEREASON
-#endif
     MCAPI ContentTierIncompatibleReason(unsigned int);
     MCAPI std::string getExpandedI18nErrorList(std::string const &, std::vector<std::string> const &) const;
     MCAPI static class ContentTierIncompatibleReason NoError;

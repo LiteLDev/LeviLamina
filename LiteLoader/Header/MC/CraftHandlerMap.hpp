@@ -27,8 +27,6 @@ public:
     /*0*/ virtual ~CraftHandlerMap();
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /*6*/ virtual class Recipes const * _getLevelRecipes() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERMAP
-#endif
     MCAPI CraftHandlerMap(class Player &, class ItemStackRequestActionCraftHandler &);
 
 protected:

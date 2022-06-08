@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONDITIONALBANDWIDTHOPTIMIZATIONDEFINITION
-#endif
     MCAPI void addConditionalBandwidthOptimization(struct ConditionalBandwidthOptimization const &);
     MCAPI void addDefaultBandwidthOptimization(struct ConditionalBandwidthOptimization const &);
     MCAPI void initialize(class EntityContext &, class ConditionalBandwidthOptimizationComponent &) const;

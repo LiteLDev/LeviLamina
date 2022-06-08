@@ -24,8 +24,6 @@ public:
 public:
     /*0*/ virtual ~ContainerScreenValidationActivate();
     /*3*/ virtual struct ContainerValidationResult tryActivate();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSCREENVALIDATIONACTIVATE
-#endif
 
 protected:
 

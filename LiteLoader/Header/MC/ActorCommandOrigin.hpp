@@ -40,8 +40,6 @@ public:
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORCOMMANDORIGIN
-#endif
     MCAPI ActorCommandOrigin(class Actor &);
     MCAPI static std::unique_ptr<class ActorCommandOrigin> load(class CompoundTag const &, class Level &);
 

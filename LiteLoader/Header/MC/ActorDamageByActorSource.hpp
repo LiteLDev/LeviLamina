@@ -35,8 +35,6 @@ public:
     /*16*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
     /*17*/ virtual enum ActorType getDamagingEntityType() const;
     /*19*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDAMAGEBYACTORSOURCE
-#endif
     MCAPI ActorDamageByActorSource(class Actor &, enum ActorDamageCause);
 
 protected:

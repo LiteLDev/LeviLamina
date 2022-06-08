@@ -77,10 +77,18 @@ public:
     /*184*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AIRBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-    MCVAPI bool canHaveExtraData() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (AirBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@AirBlock@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canHaveExtraData() const{
+        bool (AirBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canHaveExtraData@AirBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI AirBlock(std::string const &, int, class Material const &);
 
 protected:

@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKETDATAFRAMEPARSER
-#endif
     MCAPI RakWebSocketDataFrameParser(bool);
     MCAPI class std::shared_ptr<class RakWebSocketDataFrame> readFrame(class RakNet::BitStream &);
     MCAPI void setOnFailHandler(class std::function<void (std::string const &, enum CloseStatusCode)>);

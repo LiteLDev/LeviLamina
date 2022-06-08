@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONCONTROLLERSTATE
-#endif
     MCAPI void addAnimation(class HashedString const &);
     MCAPI void addAnimation(class HashedString const &, class ExpressionNode const &);
     MCAPI void addBlendTransitionKeyFrame(float, float);

@@ -27,8 +27,6 @@ public:
     /*1*/ virtual void execute(class ServerLevel &, class Dimension &);
     /*2*/ virtual void serialize(class CompoundTag &);
     /*3*/ virtual bool operator==(class IRequestAction &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREANIMATIONACTION
-#endif
     MCAPI StructureAnimationAction(class StructureSettings const &, class AutomaticID<class Dimension, int>, class BlockPos const &, std::string const &);
     MCAPI StructureAnimationAction(std::unique_ptr<class StructureAnimationData>, class AutomaticID<class Dimension, int>);
     MCAPI static bool isValidTag(class CompoundTag const &);

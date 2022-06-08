@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETNEARBYCOMPONENT
-#endif
     MCAPI bool getWasInsideRange() const;
     MCAPI bool getWasOutsideRange() const;
     MCAPI bool getWasSeenLastTick() const;

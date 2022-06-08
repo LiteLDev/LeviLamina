@@ -26,9 +26,13 @@ public:
 
 public:
     /*0*/ virtual ~FlushableStorageAreaEnv();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLUSHABLESTORAGEAREAENV
-    MCVAPI void flushToPermanentStorage();
-#endif
+    /*
+    inline void flushToPermanentStorage(){
+        void (FlushableStorageAreaEnv::*rv)();
+        *((void**)&rv) = dlsym("?flushToPermanentStorage@FlushableStorageAreaEnv@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI FlushableStorageAreaEnv(class leveldb::Env *, class std::shared_ptr<class Core::FileStorageArea>);
 
 protected:

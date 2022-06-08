@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONFIRECOMPONENT
-#endif
     MCAPI void addAdditionalSaveData(class Actor const &, class CompoundTag &) const;
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &);
     MCAPI static void convertFromLegacyData(class CompoundTag const &, class CompoundTag &);

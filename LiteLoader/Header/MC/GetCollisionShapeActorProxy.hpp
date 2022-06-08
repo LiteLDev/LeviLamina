@@ -30,13 +30,33 @@ public:
     /*6*/ virtual class Block const & getExtraBlock(class BlockPos const &) const;
     /*7*/ virtual class AABB const & getAABB() const;
     /*8*/ virtual bool hasBiomeTag(unsigned __int64, class BlockPos const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GETCOLLISIONSHAPEACTORPROXY
-    MCVAPI bool canDecendThroughBlock() const;
-    MCVAPI enum ActorType getEntityTypeId() const;
-    MCVAPI float getFeetAttachPosY() const;
-    MCVAPI bool hasLightWeightFamilyTag() const;
-    MCVAPI bool isRiding() const;
-#endif
+    /*
+    inline bool canDecendThroughBlock() const{
+        bool (GetCollisionShapeActorProxy::*rv)() const;
+        *((void**)&rv) = dlsym("?canDecendThroughBlock@GetCollisionShapeActorProxy@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline enum ActorType getEntityTypeId() const{
+        enum ActorType (GetCollisionShapeActorProxy::*rv)() const;
+        *((void**)&rv) = dlsym("?getEntityTypeId@GetCollisionShapeActorProxy@@UEBA?AW4ActorType@@XZ");
+        return (this->*rv)();
+    }
+    inline float getFeetAttachPosY() const{
+        float (GetCollisionShapeActorProxy::*rv)() const;
+        *((void**)&rv) = dlsym("?getFeetAttachPosY@GetCollisionShapeActorProxy@@UEBAMXZ");
+        return (this->*rv)();
+    }
+    inline bool hasLightWeightFamilyTag() const{
+        bool (GetCollisionShapeActorProxy::*rv)() const;
+        *((void**)&rv) = dlsym("?hasLightWeightFamilyTag@GetCollisionShapeActorProxy@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isRiding() const{
+        bool (GetCollisionShapeActorProxy::*rv)() const;
+        *((void**)&rv) = dlsym("?isRiding@GetCollisionShapeActorProxy@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI GetCollisionShapeActorProxy(struct IActorMovementProxy const &);
 
 protected:

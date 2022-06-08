@@ -31,8 +31,6 @@ public:
     /*9*/ virtual void setData(int, int);
     /*10*/ virtual void broadcastChanges();
     /*16*/ virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUDCONTAINERMANAGERMODEL
-#endif
     MCAPI HudContainerManagerModel(enum ContainerID, class Player &);
 
 protected:

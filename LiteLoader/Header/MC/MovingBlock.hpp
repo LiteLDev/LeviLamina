@@ -65,9 +65,13 @@ public:
     /*182*/ virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVINGBLOCK
-    MCVAPI bool pushesUpFallingBlocks() const;
-#endif
+    /*
+    inline bool pushesUpFallingBlocks() const{
+        bool (MovingBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?pushesUpFallingBlocks@MovingBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI MovingBlock(std::string const &, int);
 
 protected:

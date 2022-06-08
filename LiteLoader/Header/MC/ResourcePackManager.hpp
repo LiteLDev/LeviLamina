@@ -38,8 +38,6 @@ public:
     /*10*/ virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const &, std::vector<std::string>) const;
     /*11*/ virtual struct std::pair<int, std::string const &> getPackStackIndexOfResource(class ResourceLocation const &, std::vector<std::string> const &) const;
     /*12*/ virtual bool hasCapability(class gsl::basic_string_span<char const, -1>) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKMANAGER
-#endif
     MCAPI ResourcePackManager(class std::function<class Core::PathBuffer<std::string> (void)>, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentTierManager const>> const &, bool);
     MCAPI void clearStack(enum ResourcePackStackType, bool);
     MCAPI int composeFullStack(class ResourcePackStack &, class ResourcePackStack const &, class ResourcePackStack const &, class ResourcePackStack const &) const;

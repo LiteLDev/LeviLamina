@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLENDINGDATA
-#endif
     MCAPI class std::optional<unsigned char> getBiome(int, int, int) const;
     MCAPI class std::optional<float> getDensity(int, int, int) const;
     MCAPI class std::optional<short> getHeight(int, int) const;

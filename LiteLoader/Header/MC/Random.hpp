@@ -23,18 +23,58 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOM
-    MCVAPI void consumeCount(unsigned int);
-    MCVAPI std::unique_ptr<class IRandom> fork();
-    MCVAPI bool nextBoolean();
-    MCVAPI double nextDouble();
-    MCVAPI float nextFloat();
-    MCVAPI double nextGaussianDouble();
-    MCVAPI int nextInt(int);
-    MCVAPI int nextInt();
-    MCVAPI __int64 nextLong();
-    MCVAPI ~Random();
-#endif
+    /*
+    inline  ~Random(){
+         (Random::*rv)();
+        *((void**)&rv) = dlsym("??1Random@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline void consumeCount(unsigned int a0){
+        void (Random::*rv)(unsigned int);
+        *((void**)&rv) = dlsym("?consumeCount@Random@@UEAAXI@Z");
+        return (this->*rv)(std::forward<unsigned int>(a0));
+    }
+    inline std::unique_ptr<class IRandom> fork(){
+        std::unique_ptr<class IRandom> (Random::*rv)();
+        *((void**)&rv) = dlsym("?fork@Random@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline bool nextBoolean(){
+        bool (Random::*rv)();
+        *((void**)&rv) = dlsym("?nextBoolean@Random@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline double nextDouble(){
+        double (Random::*rv)();
+        *((void**)&rv) = dlsym("?nextDouble@Random@@UEAANXZ");
+        return (this->*rv)();
+    }
+    inline float nextFloat(){
+        float (Random::*rv)();
+        *((void**)&rv) = dlsym("?nextFloat@Random@@UEAAMXZ");
+        return (this->*rv)();
+    }
+    inline double nextGaussianDouble(){
+        double (Random::*rv)();
+        *((void**)&rv) = dlsym("?nextGaussianDouble@Random@@UEAANXZ");
+        return (this->*rv)();
+    }
+    inline int nextInt(int a0){
+        int (Random::*rv)(int);
+        *((void**)&rv) = dlsym("?nextInt@Random@@UEAAHH@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    inline int nextInt(){
+        int (Random::*rv)();
+        *((void**)&rv) = dlsym("?nextInt@Random@@UEAAHXZ");
+        return (this->*rv)();
+    }
+    inline __int64 nextLong(){
+        __int64 (Random::*rv)();
+        *((void**)&rv) = dlsym("?nextLong@Random@@UEAA_JXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI Random(unsigned int, bool);
     MCAPI Random();
     MCAPI float nextFloat(float, float);

@@ -30,8 +30,6 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYEPOWDERITEMCOMPONENT
-#endif
     MCAPI DyePowderItemComponent(class ComponentItem *);
     MCAPI bool isValidAuxValue(int) const;
     MCAPI static void bindType();

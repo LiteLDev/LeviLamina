@@ -45,8 +45,6 @@ public:
     /*19*/ virtual void unload() = 0;
     /*20*/ virtual bool hasUpgradeFiles() const;
     /*21*/ virtual class ContentIdentity readContentIdentity() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKACCESSSTRATEGY
-#endif
     MCAPI PackAccessStrategy();
     MCAPI bool hasGeneratedAssetSet() const;
     MCAPI static class Core::PathBuffer<std::string> const PACK_IMPORT_LOCK_FILE;

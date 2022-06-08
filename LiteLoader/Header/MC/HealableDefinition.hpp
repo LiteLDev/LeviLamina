@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HEALABLEDEFINITION
-#endif
     MCAPI HealableDefinition();
     MCAPI void addFeedItem(struct FeedItem const &);
     MCAPI void addFeedItemByName(std::string const &);

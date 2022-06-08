@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CIRCUITSCENEGRAPH
-#endif
     MCAPI CircuitSceneGraph();
     MCAPI void add(class BlockPos const &, std::unique_ptr<class BaseCircuitComponent>);
     MCAPI class BaseCircuitComponent * getBaseComponent(class BlockPos const &);

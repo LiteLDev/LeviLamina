@@ -25,8 +25,6 @@ public:
     /*1*/ virtual bool append(class ContainerValidationCommitObject *);
     /*2*/ virtual bool canCommit(class ContainerScreenContext const &) const;
     /*3*/ virtual void commit(class ContainerScreenContext const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCECOSTCOMMITOBJECT
-#endif
     MCAPI ExperienceCostCommitObject(int);
 
 protected:

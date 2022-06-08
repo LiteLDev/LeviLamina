@@ -23,15 +23,43 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKCATALYSTBLOCKACTOR
-    MCVAPI class GameEvents::PositionSource const & getPositionSource() const;
-    MCVAPI unsigned int getRange() const;
-    MCVAPI void handleGameEvent(class GameEvent const &, class BlockPos const &, class Actor *, class BlockSource &);
-    MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
-    MCVAPI void onRemoved(class BlockSource &);
-    MCVAPI bool save(class CompoundTag &) const;
-    MCVAPI void tick(class BlockSource &);
-#endif
+    /*
+    inline class GameEvents::PositionSource const & getPositionSource() const{
+        class GameEvents::PositionSource const & (SculkCatalystBlockActor::*rv)() const;
+        *((void**)&rv) = dlsym("?getPositionSource@SculkCatalystBlockActor@@UEBAAEBVPositionSource@GameEvents@@XZ");
+        return (this->*rv)();
+    }
+    inline unsigned int getRange() const{
+        unsigned int (SculkCatalystBlockActor::*rv)() const;
+        *((void**)&rv) = dlsym("?getRange@SculkCatalystBlockActor@@UEBAIXZ");
+        return (this->*rv)();
+    }
+    inline void handleGameEvent(class GameEvent const & a0, class BlockPos const & a1, class Actor * a2, class BlockSource & a3){
+        void (SculkCatalystBlockActor::*rv)(class GameEvent const &, class BlockPos const &, class Actor *, class BlockSource &);
+        *((void**)&rv) = dlsym("?handleGameEvent@SculkCatalystBlockActor@@UEAAXAEBVGameEvent@@AEBVBlockPos@@PEAVActor@@AEAVBlockSource@@@Z");
+        return (this->*rv)(std::forward<class GameEvent const &>(a0), std::forward<class BlockPos const &>(a1), std::forward<class Actor *>(a2), std::forward<class BlockSource &>(a3));
+    }
+    inline void load(class Level & a0, class CompoundTag const & a1, class DataLoadHelper & a2){
+        void (SculkCatalystBlockActor::*rv)(class Level &, class CompoundTag const &, class DataLoadHelper &);
+        *((void**)&rv) = dlsym("?load@SculkCatalystBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
+        return (this->*rv)(std::forward<class Level &>(a0), std::forward<class CompoundTag const &>(a1), std::forward<class DataLoadHelper &>(a2));
+    }
+    inline void onRemoved(class BlockSource & a0){
+        void (SculkCatalystBlockActor::*rv)(class BlockSource &);
+        *((void**)&rv) = dlsym("?onRemoved@SculkCatalystBlockActor@@UEAAXAEAVBlockSource@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0));
+    }
+    inline bool save(class CompoundTag & a0) const{
+        bool (SculkCatalystBlockActor::*rv)(class CompoundTag &) const;
+        *((void**)&rv) = dlsym("?save@SculkCatalystBlockActor@@UEBA_NAEAVCompoundTag@@@Z");
+        return (this->*rv)(std::forward<class CompoundTag &>(a0));
+    }
+    inline void tick(class BlockSource & a0){
+        void (SculkCatalystBlockActor::*rv)(class BlockSource &);
+        *((void**)&rv) = dlsym("?tick@SculkCatalystBlockActor@@UEAAXAEAVBlockSource@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0));
+    }
+    */
     MCAPI SculkCatalystBlockActor(class BlockPos const &);
     MCAPI class SculkSpreader & getSculkSpreader();
     MCAPI static enum BlockActorType const TypeId;

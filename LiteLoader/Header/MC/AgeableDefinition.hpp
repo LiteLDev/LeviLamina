@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGEABLEDEFINITION
-#endif
     MCAPI void addDropItem(class ItemDescriptor const &);
     MCAPI void addFeedItem(struct ActorDefinitionFeedItem const &);
     MCAPI void addFeedItemByName(std::string const &);

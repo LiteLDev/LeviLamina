@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUCATIONLOCALLEVELSETTINGS
-#endif
     MCAPI ~EducationLocalLevelSettings();
 
 protected:

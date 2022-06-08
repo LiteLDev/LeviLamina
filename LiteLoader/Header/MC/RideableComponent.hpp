@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RIDEABLECOMPONENT
-#endif
     MCAPI RideableComponent(class RideableComponent &&);
     MCAPI RideableComponent();
     MCAPI bool areSeatsFull(class Actor const &) const;

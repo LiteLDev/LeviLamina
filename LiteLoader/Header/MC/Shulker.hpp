@@ -70,11 +70,23 @@ public:
     /*345*/ virtual void __unk_vfn_345();
     /*350*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
     /*359*/ virtual void __unk_vfn_359();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKER
-    MCVAPI bool breaksFallingBlocks() const;
-    MCVAPI bool isLeashableType();
-    MCVAPI bool useNewAi() const;
-#endif
+    /*
+    inline bool isLeashableType(){
+        bool (Shulker::*rv)();
+        *((void**)&rv) = dlsym("?isLeashableType@Shulker@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool useNewAi() const{
+        bool (Shulker::*rv)() const;
+        *((void**)&rv) = dlsym("?useNewAi@Shulker@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool breaksFallingBlocks() const{
+        bool (Shulker::*rv)() const;
+        *((void**)&rv) = dlsym("?breaksFallingBlocks@Shulker@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI Shulker(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI static class std::shared_ptr<class AttributeModifier> COVERED_ARMOR_MODIFIER;
     MCAPI static class mce::UUID const COVERED_ARMOR_MODIFIER_UUID;

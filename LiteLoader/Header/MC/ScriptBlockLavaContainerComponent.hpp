@@ -24,8 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlockLavaContainerComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKLAVACONTAINERCOMPONENT
-#endif
     MCAPI ScriptBlockLavaContainerComponent(class ScriptBlockLavaContainerComponent const &);
     MCAPI ScriptBlockLavaContainerComponent(class ScriptBlockLavaContainerComponent &&);
     MCAPI class ScriptBlockLavaContainerComponent & operator=(class ScriptBlockLavaContainerComponent &&);

@@ -29,8 +29,6 @@ public:
     /*2*/ virtual int getMinCost(int) const;
     /*3*/ virtual int getMaxCost(int) const;
     /*4*/ virtual int getMaxLevel() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIDENTCHANNELINGENCHANT
-#endif
     MCAPI TridentChannelingEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 
 protected:

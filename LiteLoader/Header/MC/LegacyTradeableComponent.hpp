@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYTRADEABLECOMPONENT
-#endif
     MCAPI void DecrementMerchantTimer();
     MCAPI void IncrementTradeTier();
     MCAPI LegacyTradeableComponent();

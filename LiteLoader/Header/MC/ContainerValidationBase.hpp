@@ -23,17 +23,53 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONBASE
-    MCVAPI bool canDestroy(class ContainerScreenContext const &) const;
-    MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;
-    MCVAPI int getAvailableSetCount(int, class ItemStackBase const &) const;
-    MCVAPI int getContainerOffset(class ContainerScreenContext const &) const;
-    MCVAPI int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
-    MCVAPI bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
-    MCVAPI bool isItemAllowedToAdd(class ItemStack const &) const;
-    MCVAPI bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
-    MCVAPI bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
-#endif
+    /*
+    inline int getContainerOffset(class ContainerScreenContext const & a0) const{
+        int (ContainerValidationBase::*rv)(class ContainerScreenContext const &) const;
+        *((void**)&rv) = dlsym("?getContainerOffset@ContainerValidationBase@@UEBAHAEBVContainerScreenContext@@@Z");
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
+    }
+    inline bool isItemAllowedToAdd(class ItemStack const & a0) const{
+        bool (ContainerValidationBase::*rv)(class ItemStack const &) const;
+        *((void**)&rv) = dlsym("?isItemAllowedToAdd@ContainerValidationBase@@UEBA_NAEBVItemStack@@@Z");
+        return (this->*rv)(std::forward<class ItemStack const &>(a0));
+    }
+    inline bool isItemAllowedInSlot(class ContainerScreenContext const & a0, int a1, class ItemStackBase const & a2, int a3) const{
+        bool (ContainerValidationBase::*rv)(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
+        *((void**)&rv) = dlsym("?isItemAllowedInSlot@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z");
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0), std::forward<int>(a1), std::forward<class ItemStackBase const &>(a2), std::forward<int>(a3));
+    }
+    inline bool isItemAllowedToRemove(class ContainerScreenContext const & a0, class ItemStackBase const & a1) const{
+        bool (ContainerValidationBase::*rv)(class ContainerScreenContext const &, class ItemStackBase const &) const;
+        *((void**)&rv) = dlsym("?isItemAllowedToRemove@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z");
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0), std::forward<class ItemStackBase const &>(a1));
+    }
+    inline int getContainerSize(class ContainerScreenContext const & a0, class Container const & a1) const{
+        int (ContainerValidationBase::*rv)(class ContainerScreenContext const &, class Container const &) const;
+        *((void**)&rv) = dlsym("?getContainerSize@ContainerValidationBase@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z");
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0), std::forward<class Container const &>(a1));
+    }
+    inline bool canDestroy(class ContainerScreenContext const & a0) const{
+        bool (ContainerValidationBase::*rv)(class ContainerScreenContext const &) const;
+        *((void**)&rv) = dlsym("?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z");
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
+    }
+    inline bool canItemMoveToContainer(class ItemStackBase const & a0) const{
+        bool (ContainerValidationBase::*rv)(class ItemStackBase const &) const;
+        *((void**)&rv) = dlsym("?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z");
+        return (this->*rv)(std::forward<class ItemStackBase const &>(a0));
+    }
+    inline int getAvailableSetCount(int a0, class ItemStackBase const & a1) const{
+        int (ContainerValidationBase::*rv)(int, class ItemStackBase const &) const;
+        *((void**)&rv) = dlsym("?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStackBase const &>(a1));
+    }
+    inline bool isValidSlotForContainer(class ContainerScreenContext const & a0, class Container const & a1, int a2) const{
+        bool (ContainerValidationBase::*rv)(class ContainerScreenContext const &, class Container const &, int) const;
+        *((void**)&rv) = dlsym("?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z");
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0), std::forward<class Container const &>(a1), std::forward<int>(a2));
+    }
+    */
 
 protected:
 

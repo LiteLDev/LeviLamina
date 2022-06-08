@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTTABLES
-#endif
     MCAPI class LootTable * lookupByName(std::string const &, class ResourcePackManager &);
     MCAPI ~LootTables();
 

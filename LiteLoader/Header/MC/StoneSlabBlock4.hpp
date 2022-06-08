@@ -65,8 +65,6 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STONESLABBLOCK4
-#endif
     MCAPI StoneSlabBlock4(std::string const &, int, bool, class WeakPtr<class BlockLegacy>);
     MCAPI static class std::array<std::string, 5> const SLAB_NAMES;
 

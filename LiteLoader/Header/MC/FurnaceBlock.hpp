@@ -68,12 +68,28 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACEBLOCK
-    MCVAPI bool hasComparatorSignal() const;
-    MCVAPI bool isContainerBlock() const;
-    MCVAPI bool isCraftingBlock() const;
-    MCVAPI bool isInteractiveBlock() const;
-#endif
+    /*
+    inline bool hasComparatorSignal() const{
+        bool (FurnaceBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?hasComparatorSignal@FurnaceBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isCraftingBlock() const{
+        bool (FurnaceBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isCraftingBlock@FurnaceBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isContainerBlock() const{
+        bool (FurnaceBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isContainerBlock@FurnaceBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInteractiveBlock() const{
+        bool (FurnaceBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@FurnaceBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI FurnaceBlock(std::string const &, int, bool);
     MCAPI static void setLit(bool, class BlockSource &, class BlockPos const &, enum BlockActorType, class Block const &, class Block const &);
 

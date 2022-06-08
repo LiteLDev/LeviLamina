@@ -26,8 +26,6 @@ public:
     /*0*/ virtual ~PortalForcer();
     /*1*/ virtual void deserialize(class CompoundTag const &);
     /*2*/ virtual void serialize(class CompoundTag &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PORTALFORCER
-#endif
     MCAPI PortalForcer(class Level &);
     MCAPI class PortalRecord const & addPortalRecord(class AutomaticID<class Dimension, int>, class PortalShape const &);
     MCAPI class PortalRecord const & addPortalRecord(class AutomaticID<class Dimension, int>, class PortalRecord);

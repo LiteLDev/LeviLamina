@@ -25,8 +25,6 @@ public:
 public:
     /*0*/ virtual ~IDefinitionInstance();
     /*1*/ virtual unsigned short getRuntimeTypeId() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDEFINITIONINSTANCE
-#endif
 
 protected:
 

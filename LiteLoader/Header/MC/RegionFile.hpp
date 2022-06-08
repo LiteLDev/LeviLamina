@@ -25,8 +25,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REGIONFILE
-#endif
     MCAPI RegionFile(class Core::Path const &);
     MCAPI bool open();
     MCAPI bool readChunk(int, int, class RakNet::BitStream **);

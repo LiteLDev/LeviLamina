@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLABLOCKUPDATER
-#endif
     MCAPI static void destroy();
     MCAPI static class CompoundTagUpdaterContext & get();
     MCAPI static void initialize();

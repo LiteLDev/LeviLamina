@@ -28,8 +28,6 @@ public:
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWARDSRESTRICTIONGOAL
-#endif
     MCAPI MoveTowardsRestrictionGoal(class Mob &);
 
 protected:

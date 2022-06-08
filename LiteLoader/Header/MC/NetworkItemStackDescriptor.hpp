@@ -28,8 +28,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKITEMSTACKDESCRIPTOR
-#endif
     MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor &&);
     MCAPI NetworkItemStackDescriptor(class ItemStack const &);
     MCAPI NetworkItemStackDescriptor(class ItemStackDescriptor const &);

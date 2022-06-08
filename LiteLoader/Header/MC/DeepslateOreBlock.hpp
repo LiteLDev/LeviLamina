@@ -63,8 +63,6 @@ public:
     /*180*/ virtual void __unk_vfn_180();
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEEPSLATEOREBLOCK
-#endif
     MCAPI DeepslateOreBlock(std::string const &, int);
 
 protected:

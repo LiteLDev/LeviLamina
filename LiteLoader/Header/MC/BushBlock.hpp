@@ -64,9 +64,13 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUSHBLOCK
-    MCVAPI bool waterSpreadCausesSpawn() const;
-#endif
+    /*
+    inline bool waterSpreadCausesSpawn() const{
+        bool (BushBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@BushBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BushBlock(std::string const &, int, class Material const &);
     MCAPI bool growCrops(class BlockSource &, class BlockPos const &, enum FertilizerType) const;
 

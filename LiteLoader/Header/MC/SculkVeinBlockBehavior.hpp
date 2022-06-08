@@ -27,8 +27,6 @@ public:
     /*3*/ virtual bool attemptSpreadVeins(class IBlockWorldGenAPI &, class BlockPos const &, class Block const &, int, class SculkSpreader &) const;
     /*4*/ virtual int attemptUseCharge(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class BlockPos const &, int, int, class Random &, class SculkSpreader &) const;
     /*5*/ virtual void onDischarged(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKVEINBLOCKBEHAVIOR
-#endif
 
 protected:
 

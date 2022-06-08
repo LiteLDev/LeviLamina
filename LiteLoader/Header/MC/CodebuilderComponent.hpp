@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CODEBUILDERCOMPONENT
-#endif
     MCAPI enum CodeBuilderExecutionState::CodeStatus getCodeStatus() const;
     MCAPI void resetCodeStatus();
     MCAPI void setCodeStatus(std::string const &);

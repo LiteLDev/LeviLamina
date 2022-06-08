@@ -37,8 +37,6 @@ public:
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOWERPOTBLOCKACTOR
-#endif
     MCAPI FlowerPotBlockActor(class BlockPos const &);
     MCAPI class Block const * getPlantItem() const;
     MCAPI void setPlantItem(class Block const *);

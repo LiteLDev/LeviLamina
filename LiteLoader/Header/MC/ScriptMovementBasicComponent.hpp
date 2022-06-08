@@ -25,8 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptMovementBasicComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMOVEMENTBASICCOMPONENT
-#endif
     MCAPI class Scripting::Result<float> getMaxTurn() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMovementBasicComponent> bind(struct Scripting::Version);
 

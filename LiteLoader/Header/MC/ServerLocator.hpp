@@ -23,10 +23,18 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERLOCATOR
-    MCVAPI void _onDisable();
-    MCVAPI void _onEnable();
-#endif
+    /*
+    inline void _onEnable(){
+        void (ServerLocator::*rv)();
+        *((void**)&rv) = dlsym("?_onEnable@ServerLocator@@EEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void _onDisable(){
+        void (ServerLocator::*rv)();
+        *((void**)&rv) = dlsym("?_onDisable@ServerLocator@@EEAAXXZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

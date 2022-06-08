@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDWILDCARDINT
-#endif
     MCAPI CommandWildcardInt();
     MCAPI int getValue() const;
     MCAPI bool isWildcard() const;

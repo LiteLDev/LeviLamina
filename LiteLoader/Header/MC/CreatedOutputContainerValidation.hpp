@@ -34,11 +34,23 @@ public:
     /*7*/ virtual bool canDestroy(class ContainerScreenContext const &) const;
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATEDOUTPUTCONTAINERVALIDATION
-    MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;
-    MCVAPI bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
-    MCVAPI bool isItemAllowedToAdd(class ItemStack const &) const;
-#endif
+    /*
+    inline bool isItemAllowedToAdd(class ItemStack const & a0) const{
+        bool (CreatedOutputContainerValidation::*rv)(class ItemStack const &) const;
+        *((void**)&rv) = dlsym("?isItemAllowedToAdd@CreatedOutputContainerValidation@@UEBA_NAEBVItemStack@@@Z");
+        return (this->*rv)(std::forward<class ItemStack const &>(a0));
+    }
+    inline bool isItemAllowedInSlot(class ContainerScreenContext const & a0, int a1, class ItemStackBase const & a2, int a3) const{
+        bool (CreatedOutputContainerValidation::*rv)(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
+        *((void**)&rv) = dlsym("?isItemAllowedInSlot@CreatedOutputContainerValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z");
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0), std::forward<int>(a1), std::forward<class ItemStackBase const &>(a2), std::forward<int>(a3));
+    }
+    inline bool canItemMoveToContainer(class ItemStackBase const & a0) const{
+        bool (CreatedOutputContainerValidation::*rv)(class ItemStackBase const &) const;
+        *((void**)&rv) = dlsym("?canItemMoveToContainer@CreatedOutputContainerValidation@@UEBA_NAEBVItemStackBase@@@Z");
+        return (this->*rv)(std::forward<class ItemStackBase const &>(a0));
+    }
+    */
 
 protected:
 

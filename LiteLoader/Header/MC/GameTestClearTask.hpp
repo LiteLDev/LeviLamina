@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTCLEARTASK
-#endif
     MCAPI GameTestClearTask(class Dimension &, class BoundingBox const &);
     MCAPI bool isDone() const;
     MCAPI void tick();

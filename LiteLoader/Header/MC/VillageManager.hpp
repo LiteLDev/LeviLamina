@@ -25,8 +25,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGEMANAGER
-#endif
     MCAPI VillageManager(class Dimension &);
     MCAPI void applyHeroOfTheVillageEffect(class Actor &);
     MCAPI class std::weak_ptr<class Village> fetchClosestVillage(class BlockPos const &, int, unsigned int) const;

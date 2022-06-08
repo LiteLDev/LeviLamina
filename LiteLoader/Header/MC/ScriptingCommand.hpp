@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTINGCOMMAND
-#endif
     MCAPI ScriptingCommand(std::string const &);
     MCAPI std::string serializeJsonOutput() const;
     MCAPI void setJsonOutput(class Json::Value &&);

@@ -24,8 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlockSnowContainerComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKSNOWCONTAINERCOMPONENT
-#endif
     MCAPI ScriptBlockSnowContainerComponent(class ScriptBlockSnowContainerComponent &&);
     MCAPI ScriptBlockSnowContainerComponent(class ScriptBlockSnowContainerComponent const &);
     MCAPI class ScriptBlockSnowContainerComponent & operator=(class ScriptBlockSnowContainerComponent &&);

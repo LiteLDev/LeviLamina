@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JOURNALEDFILE
-#endif
     MCAPI JournaledFile(class std::function<class Core::Result (class Core::Path)> &&);
     MCAPI class Core::Result close();
     MCAPI class Core::Result open(class Core::Path, class Core::FileOpenMode, enum Core::FileBufferingMode);

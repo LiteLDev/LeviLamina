@@ -72,10 +72,18 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRAPDOORBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-    MCVAPI bool isInteractiveBlock() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (TrapDoorBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@TrapDoorBlock@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInteractiveBlock() const{
+        bool (TrapDoorBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@TrapDoorBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI TrapDoorBlock(std::string const &, int, class Material const &);
 
 protected:

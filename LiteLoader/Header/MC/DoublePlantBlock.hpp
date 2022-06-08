@@ -88,9 +88,13 @@ public:
     /*192*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOUBLEPLANTBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (DoublePlantBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@DoublePlantBlock@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI DoublePlantBlock(std::string const &, int);
     MCAPI int getType(class BlockSource &, class BlockPos const &, class Block const &) const;
     MCAPI bool placeAt(class BlockSource &, class BlockPos const &, enum DoublePlantType, int, class Actor *) const;

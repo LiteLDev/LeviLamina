@@ -24,8 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlockInventoryComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKINVENTORYCOMPONENT
-#endif
     MCAPI ScriptBlockInventoryComponent(class ScriptBlockInventoryComponent &&);
     MCAPI ScriptBlockInventoryComponent(class ScriptBlockInventoryComponent const &);
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptBlockInventoryComponentContainer>> getOrCreateContainer();

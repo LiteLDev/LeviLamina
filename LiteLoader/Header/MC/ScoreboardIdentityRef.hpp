@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDIDENTITYREF
-#endif
     MCAPI ScoreboardIdentityRef(struct ScoreboardId const &);
     MCAPI ScoreboardIdentityRef();
     MCAPI struct ActorUniqueID const & getEntityId() const;

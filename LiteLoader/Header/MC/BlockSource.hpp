@@ -61,10 +61,18 @@ public:
     /*28*/ virtual class AABB getTallestCollisionShape(class AABB const &, float *, bool, struct IActorMovementProxy *);
     /*29*/ virtual class ChunkSource & getChunkSource();
     /*30*/ virtual bool isSolidBlockingBlock(class BlockPos const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSOURCE
-    MCVAPI class Dimension & getDimension();
-    MCVAPI class Dimension & getDimension() const;
-#endif
+    /*
+    inline class Dimension & getDimension(){
+        class Dimension & (BlockSource::*rv)();
+        *((void**)&rv) = dlsym("?getDimension@BlockSource@@UEAAAEAVDimension@@XZ");
+        return (this->*rv)();
+    }
+    inline class Dimension & getDimension() const{
+        class Dimension & (BlockSource::*rv)() const;
+        *((void**)&rv) = dlsym("?getDimension@BlockSource@@UEBAAEAVDimension@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BlockSource(class ChunkSource &, bool, bool);
     MCAPI BlockSource(class Level &, class Dimension &, class ChunkSource &, bool, bool);
     MCAPI class gsl::span<class gsl::not_null<class Actor *>, -1> _fetchEntities(struct IActorMovementProxy const *, class AABB const &, bool);

@@ -21,8 +21,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptItemCooldownComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMCOOLDOWNCOMPONENT
-#endif
     MCAPI ScriptItemCooldownComponent(class ScriptItemCooldownComponent const &);
     MCAPI ScriptItemCooldownComponent(class Scripting::WeakTypedObjectHandle<class ScriptItemStack>, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<std::string> getCooldownCategory();

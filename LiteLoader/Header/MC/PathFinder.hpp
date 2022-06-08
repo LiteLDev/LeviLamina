@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PATHFINDER
-#endif
     MCAPI PathFinder(class BlockSource *, class NavigationComponent const &);
     MCAPI std::unique_ptr<class Path> findPath(class Actor &, class Actor &, float);
     MCAPI std::unique_ptr<class Path> findPath(class Actor &, int, int, int, float);

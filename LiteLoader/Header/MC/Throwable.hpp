@@ -57,11 +57,23 @@ public:
     /*281*/ virtual float getThrowUpAngleOffset();
     /*282*/ virtual float getGravity();
     /*283*/ virtual enum ParticleType getParticleType();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_THROWABLE
-    MCVAPI bool canMakeStepSound() const;
-    MCVAPI void onHit(class HitResult const &);
-    MCVAPI bool stopUponGroundCollision() const;
-#endif
+    /*
+    inline bool stopUponGroundCollision() const{
+        bool (Throwable::*rv)() const;
+        *((void**)&rv) = dlsym("?stopUponGroundCollision@Throwable@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canMakeStepSound() const{
+        bool (Throwable::*rv)() const;
+        *((void**)&rv) = dlsym("?canMakeStepSound@Throwable@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline void onHit(class HitResult const & a0){
+        void (Throwable::*rv)(class HitResult const &);
+        *((void**)&rv) = dlsym("?onHit@Throwable@@MEAAXAEBVHitResult@@@Z");
+        return (this->*rv)(std::forward<class HitResult const &>(a0));
+    }
+    */
     MCAPI Throwable(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void shoot(class Mob &);
     MCAPI void shoot(class Vec3 const &, float, float, class Vec3 const &);

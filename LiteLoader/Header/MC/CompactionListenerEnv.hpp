@@ -25,9 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~CompactionListenerEnv();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPACTIONLISTENERENV
-    MCVAPI void Schedule(void ( *)(void *), void *);
-#endif
+    /*
+    inline void Schedule(void ( *)(void *) a0, void * a1){
+        void (CompactionListenerEnv::*rv)(void ( *)(void *), void *);
+        *((void**)&rv) = dlsym("?Schedule@CompactionListenerEnv@@UEAAXP6AXPEAX@Z0@Z");
+        return (this->*rv)(std::forward<void ( *)(void *)>(a0), std::forward<void *>(a1));
+    }
+    */
     MCAPI CompactionListenerEnv(class leveldb::Env *);
     MCAPI void setCompactionCallback(class std::function<void (enum CompactionStatus)>);
 

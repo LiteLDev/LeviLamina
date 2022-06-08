@@ -69,8 +69,6 @@ public:
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual class ItemInstance getExtraResourceItem(class Block const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OLDLEAFBLOCK
-#endif
     MCAPI OldLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
 
 protected:

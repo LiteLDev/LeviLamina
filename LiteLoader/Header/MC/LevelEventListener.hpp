@@ -23,17 +23,53 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELEVENTLISTENER
-    MCVAPI enum EventResult onEvent(struct LevelNotificationEvent const &);
-    MCVAPI enum EventResult onLevelAddedPlayer(class Level &, class Player &);
-    MCVAPI enum EventResult onLevelBiomesRegistered(class BiomeRegistry &);
-    MCVAPI enum EventResult onLevelInitialized(class Level &);
-    MCVAPI enum EventResult onLevelRemovedActor(class Level &, class Actor &);
-    MCVAPI enum EventResult onLevelRemovedPlayer(class Level &, class Player &);
-    MCVAPI enum EventResult onLevelSaveData(class Level &, class CompoundTag &);
-    MCVAPI enum EventResult onLevelTick();
-    MCVAPI enum EventResult onLevelWeatherChange(std::string const &, bool, bool);
-#endif
+    /*
+    inline enum EventResult onLevelInitialized(class Level & a0){
+        enum EventResult (LevelEventListener::*rv)(class Level &);
+        *((void**)&rv) = dlsym("?onLevelInitialized@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@@Z");
+        return (this->*rv)(std::forward<class Level &>(a0));
+    }
+    inline enum EventResult onEvent(struct LevelNotificationEvent const & a0){
+        enum EventResult (LevelEventListener::*rv)(struct LevelNotificationEvent const &);
+        *((void**)&rv) = dlsym("?onEvent@LevelEventListener@@UEAA?AW4EventResult@@AEBULevelNotificationEvent@@@Z");
+        return (this->*rv)(std::forward<struct LevelNotificationEvent const &>(a0));
+    }
+    inline enum EventResult onLevelTick(){
+        enum EventResult (LevelEventListener::*rv)();
+        *((void**)&rv) = dlsym("?onLevelTick@LevelEventListener@@UEAA?AW4EventResult@@XZ");
+        return (this->*rv)();
+    }
+    inline enum EventResult onLevelWeatherChange(std::string const & a0, bool a1, bool a2){
+        enum EventResult (LevelEventListener::*rv)(std::string const &, bool, bool);
+        *((void**)&rv) = dlsym("?onLevelWeatherChange@LevelEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<bool>(a1), std::forward<bool>(a2));
+    }
+    inline enum EventResult onLevelBiomesRegistered(class BiomeRegistry & a0){
+        enum EventResult (LevelEventListener::*rv)(class BiomeRegistry &);
+        *((void**)&rv) = dlsym("?onLevelBiomesRegistered@LevelEventListener@@UEAA?AW4EventResult@@AEAVBiomeRegistry@@@Z");
+        return (this->*rv)(std::forward<class BiomeRegistry &>(a0));
+    }
+    inline enum EventResult onLevelRemovedActor(class Level & a0, class Actor & a1){
+        enum EventResult (LevelEventListener::*rv)(class Level &, class Actor &);
+        *((void**)&rv) = dlsym("?onLevelRemovedActor@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVActor@@@Z");
+        return (this->*rv)(std::forward<class Level &>(a0), std::forward<class Actor &>(a1));
+    }
+    inline enum EventResult onLevelAddedPlayer(class Level & a0, class Player & a1){
+        enum EventResult (LevelEventListener::*rv)(class Level &, class Player &);
+        *((void**)&rv) = dlsym("?onLevelAddedPlayer@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Level &>(a0), std::forward<class Player &>(a1));
+    }
+    inline enum EventResult onLevelSaveData(class Level & a0, class CompoundTag & a1){
+        enum EventResult (LevelEventListener::*rv)(class Level &, class CompoundTag &);
+        *((void**)&rv) = dlsym("?onLevelSaveData@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVCompoundTag@@@Z");
+        return (this->*rv)(std::forward<class Level &>(a0), std::forward<class CompoundTag &>(a1));
+    }
+    inline enum EventResult onLevelRemovedPlayer(class Level & a0, class Player & a1){
+        enum EventResult (LevelEventListener::*rv)(class Level &, class Player &);
+        *((void**)&rv) = dlsym("?onLevelRemovedPlayer@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Level &>(a0), std::forward<class Player &>(a1));
+    }
+    */
 
 protected:
 

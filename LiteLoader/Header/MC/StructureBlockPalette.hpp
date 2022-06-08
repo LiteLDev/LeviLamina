@@ -29,8 +29,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREBLOCKPALETTE
-#endif
     MCAPI void addBlockPositionData(unsigned __int64, struct StructureBlockPalette::BlockPositionData);
     MCAPI unsigned __int64 addMapping(std::unique_ptr<class CompoundTag>);
     MCAPI class std::unordered_map<unsigned __int64, struct StructureBlockPalette::BlockPositionData, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, struct StructureBlockPalette::BlockPositionData>>> const & getAllBlockPositionData() const;

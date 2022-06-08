@@ -24,22 +24,78 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLATWORLDGENERATOR
-    MCVAPI void decorateWorldGenLoadChunk(class Biome &, class LevelChunk &, class BlockVolumeTarget &, class Random &, class ChunkPos const &) const;
-    MCVAPI void decorateWorldGenPostProcess(class Biome &, class LevelChunk &, class BlockSource &, class Random &) const;
-    MCVAPI bool findNearestStructureFeature(enum StructureFeatureType, class BlockPos const &, class BlockPos &, bool);
-    MCVAPI class BlockPos findSpawnPosition() const;
-    MCVAPI enum StructureFeatureType findStructureFeatureTypeAt(class BlockPos const &);
-    MCVAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos>);
-    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const &, unsigned int) const;
-    MCVAPI class BiomeSource const & getBiomeSource() const;
-    MCVAPI struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const;
-    MCVAPI bool isStructureFeatureTypeAt(class BlockPos const &, enum StructureFeatureType) const;
-    MCVAPI void loadChunk(class LevelChunk &, bool);
-    MCVAPI bool postProcess(class ChunkViewSource &);
-    MCVAPI void prepareAndComputeHeights(class BlockVolume &, class ChunkPos const &, std::vector<short> &, bool, int);
-    MCVAPI void prepareHeights(class BlockVolume &, class ChunkPos const &, bool);
-#endif
+    /*
+    inline bool isStructureFeatureTypeAt(class BlockPos const & a0, enum StructureFeatureType a1) const{
+        bool (FlatWorldGenerator::*rv)(class BlockPos const &, enum StructureFeatureType) const;
+        *((void**)&rv) = dlsym("?isStructureFeatureTypeAt@FlatWorldGenerator@@UEBA_NAEBVBlockPos@@W4StructureFeatureType@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0), std::forward<enum StructureFeatureType>(a1));
+    }
+    inline bool findNearestStructureFeature(enum StructureFeatureType a0, class BlockPos const & a1, class BlockPos & a2, bool a3){
+        bool (FlatWorldGenerator::*rv)(enum StructureFeatureType, class BlockPos const &, class BlockPos &, bool);
+        *((void**)&rv) = dlsym("?findNearestStructureFeature@FlatWorldGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_N@Z");
+        return (this->*rv)(std::forward<enum StructureFeatureType>(a0), std::forward<class BlockPos const &>(a1), std::forward<class BlockPos &>(a2), std::forward<bool>(a3));
+    }
+    inline enum StructureFeatureType findStructureFeatureTypeAt(class BlockPos const & a0){
+        enum StructureFeatureType (FlatWorldGenerator::*rv)(class BlockPos const &);
+        *((void**)&rv) = dlsym("?findStructureFeatureTypeAt@FlatWorldGenerator@@UEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0));
+    }
+    inline void prepareAndComputeHeights(class BlockVolume & a0, class ChunkPos const & a1, std::vector<short> & a2, bool a3, int a4){
+        void (FlatWorldGenerator::*rv)(class BlockVolume &, class ChunkPos const &, std::vector<short> &, bool, int);
+        *((void**)&rv) = dlsym("?prepareAndComputeHeights@FlatWorldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z");
+        return (this->*rv)(std::forward<class BlockVolume &>(a0), std::forward<class ChunkPos const &>(a1), std::forward<std::vector<short> &>(a2), std::forward<bool>(a3), std::forward<int>(a4));
+    }
+    inline void prepareHeights(class BlockVolume & a0, class ChunkPos const & a1, bool a2){
+        void (FlatWorldGenerator::*rv)(class BlockVolume &, class ChunkPos const &, bool);
+        *((void**)&rv) = dlsym("?prepareHeights@FlatWorldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z");
+        return (this->*rv)(std::forward<class BlockVolume &>(a0), std::forward<class ChunkPos const &>(a1), std::forward<bool>(a2));
+    }
+    inline void garbageCollectBlueprints(class buffer_span<class ChunkPos> a0){
+        void (FlatWorldGenerator::*rv)(class buffer_span<class ChunkPos>);
+        *((void**)&rv) = dlsym("?garbageCollectBlueprints@FlatWorldGenerator@@UEAAXV?$buffer_span@VChunkPos@@@@@Z");
+        return (this->*rv)(std::forward<class buffer_span<class ChunkPos>>(a0));
+    }
+    inline void decorateWorldGenLoadChunk(class Biome & a0, class LevelChunk & a1, class BlockVolumeTarget & a2, class Random & a3, class ChunkPos const & a4) const{
+        void (FlatWorldGenerator::*rv)(class Biome &, class LevelChunk &, class BlockVolumeTarget &, class Random &, class ChunkPos const &) const;
+        *((void**)&rv) = dlsym("?decorateWorldGenLoadChunk@FlatWorldGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z");
+        return (this->*rv)(std::forward<class Biome &>(a0), std::forward<class LevelChunk &>(a1), std::forward<class BlockVolumeTarget &>(a2), std::forward<class Random &>(a3), std::forward<class ChunkPos const &>(a4));
+    }
+    inline void decorateWorldGenPostProcess(class Biome & a0, class LevelChunk & a1, class BlockSource & a2, class Random & a3) const{
+        void (FlatWorldGenerator::*rv)(class Biome &, class LevelChunk &, class BlockSource &, class Random &) const;
+        *((void**)&rv) = dlsym("?decorateWorldGenPostProcess@FlatWorldGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z");
+        return (this->*rv)(std::forward<class Biome &>(a0), std::forward<class LevelChunk &>(a1), std::forward<class BlockSource &>(a2), std::forward<class Random &>(a3));
+    }
+    inline class BlockPos findSpawnPosition() const{
+        class BlockPos (FlatWorldGenerator::*rv)() const;
+        *((void**)&rv) = dlsym("?findSpawnPosition@FlatWorldGenerator@@UEBA?AVBlockPos@@XZ");
+        return (this->*rv)();
+    }
+    inline class BiomeArea getBiomeArea(class BoundingBox const & a0, unsigned int a1) const{
+        class BiomeArea (FlatWorldGenerator::*rv)(class BoundingBox const &, unsigned int) const;
+        *((void**)&rv) = dlsym("?getBiomeArea@FlatWorldGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z");
+        return (this->*rv)(std::forward<class BoundingBox const &>(a0), std::forward<unsigned int>(a1));
+    }
+    inline class BiomeSource const & getBiomeSource() const{
+        class BiomeSource const & (FlatWorldGenerator::*rv)() const;
+        *((void**)&rv) = dlsym("?getBiomeSource@FlatWorldGenerator@@UEBAAEBVBiomeSource@@XZ");
+        return (this->*rv)();
+    }
+    inline struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const{
+        struct WorldGenerator::BlockVolumeDimensions (FlatWorldGenerator::*rv)() const;
+        *((void**)&rv) = dlsym("?getBlockVolumeDimensions@FlatWorldGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ");
+        return (this->*rv)();
+    }
+    inline void loadChunk(class LevelChunk & a0, bool a1){
+        void (FlatWorldGenerator::*rv)(class LevelChunk &, bool);
+        *((void**)&rv) = dlsym("?loadChunk@FlatWorldGenerator@@UEAAXAEAVLevelChunk@@_N@Z");
+        return (this->*rv)(std::forward<class LevelChunk &>(a0), std::forward<bool>(a1));
+    }
+    inline bool postProcess(class ChunkViewSource & a0){
+        bool (FlatWorldGenerator::*rv)(class ChunkViewSource &);
+        *((void**)&rv) = dlsym("?postProcess@FlatWorldGenerator@@UEAA_NAEAVChunkViewSource@@@Z");
+        return (this->*rv)(std::forward<class ChunkViewSource &>(a0));
+    }
+    */
     MCAPI FlatWorldGenerator(class Dimension &, unsigned int, class Json::Value const &);
 
 protected:

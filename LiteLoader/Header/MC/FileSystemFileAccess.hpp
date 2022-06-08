@@ -32,8 +32,6 @@ public:
     /*5*/ virtual class IFileReadAccess const * getReadInterface() const;
     /*6*/ virtual class IFileWriteAccess * getWriteInterface();
     /*7*/ virtual void unload();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILESYSTEMFILEACCESS
-#endif
     MCAPI FileSystemFileAccess(enum FileSystemMode);
 
 protected:

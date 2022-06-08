@@ -54,8 +54,6 @@ public:
     /*4*/ virtual void setNull();
     /*5*/ virtual std::string toString() const;
     /*6*/ virtual std::string toDebugString() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACK
-#endif
     MCAPI ItemStack(class ItemStack const &);
     MCAPI ItemStack(class Block const &, int, class CompoundTag const *);
     MCAPI ItemStack(class BlockLegacy const &, int);

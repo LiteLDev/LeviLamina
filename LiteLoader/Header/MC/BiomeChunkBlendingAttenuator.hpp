@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMECHUNKBLENDINGATTENUATOR
-#endif
     MCAPI BiomeChunkBlendingAttenuator(class ChunkPos, class std::array<class std::array<struct BiomeChunkBlendingAttenuator::HeightAttenuationData, 2>, 2>);
     MCAPI struct TerrainInfo attenuateOffsetAndFactor(class DividedPos2d<4> const &, short, struct TerrainInfo const &, class PerlinSimplexNoise const &);
     MCAPI ~BiomeChunkBlendingAttenuator();

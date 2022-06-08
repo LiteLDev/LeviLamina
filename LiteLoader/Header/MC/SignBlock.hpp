@@ -69,8 +69,6 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIGNBLOCK
-#endif
     MCAPI SignBlock(std::string const &, int, bool, enum SignBlockActor::SignType);
 
 protected:

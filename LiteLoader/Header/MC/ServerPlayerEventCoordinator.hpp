@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYEREVENTCOORDINATOR
-#endif
     MCAPI void sendPlayerAuthInputApplied(class Player &);
     MCAPI void sendPlayerAuthInputReceived(class Player &);
     MCAPI void sendPlayerMovementAnomaly(class Player &, class Vec3 const &, float, float);

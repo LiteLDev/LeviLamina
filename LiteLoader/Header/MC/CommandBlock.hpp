@@ -75,10 +75,18 @@ public:
     /*207*/ virtual void __unk_vfn_207();
     /*208*/ virtual void __unk_vfn_208();
     /*209*/ MCAPI std::string const & getDescriptionId() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDBLOCK
-    MCVAPI bool hasComparatorSignal() const;
-    MCVAPI bool isInteractiveBlock() const;
-#endif
+    /*
+    inline bool isInteractiveBlock() const{
+        bool (CommandBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@CommandBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasComparatorSignal() const{
+        bool (CommandBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?hasComparatorSignal@CommandBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI CommandBlock(std::string const &, int, enum CommandBlockMode);
     MCAPI enum CommandBlockMode getMode() const;
     MCAPI void updateBlock(class BlockSource &, class BlockPos const &, enum CommandBlockMode, bool) const;

@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAREABLEDEFINITION
-#endif
     MCAPI ShareableDefinition();
     MCAPI void addShareable(struct Shareable const &);
     MCAPI void addShareableByName(std::string const &);

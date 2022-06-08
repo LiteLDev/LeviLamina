@@ -62,9 +62,13 @@ public:
     /*185*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NYLIUMBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (NyliumBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@NyliumBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI NyliumBlock(std::string const &, int);
     MCAPI bool canBeNylium(class BlockSource const &, class BlockPos const &) const;
     MCAPI static class Block const & crimsonBlockProvider(class Randomize const &);

@@ -44,8 +44,6 @@ public:
     /*3*/ virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const = 0;
     /*4*/ virtual void update();
     /*5*/ virtual void flush(class std::function<void (void)> &&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKPEER
-#endif
 
 protected:
 

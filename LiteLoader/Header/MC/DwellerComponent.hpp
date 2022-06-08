@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DWELLERCOMPONENT
-#endif
     MCAPI void DecrementDwellingUpdateInterval();
     MCAPI DwellerComponent(class DwellerComponent &&);
     MCAPI DwellerComponent();

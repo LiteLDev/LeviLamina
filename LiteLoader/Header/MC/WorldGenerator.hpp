@@ -29,17 +29,53 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDGENERATOR
-    MCVAPI void addHardcodedSpawnAreas(class LevelChunk &);
-    MCVAPI void debugRender();
-    MCVAPI bool findNearestStructureFeature(enum StructureFeatureType, class BlockPos const &, class BlockPos &, bool);
-    MCVAPI enum StructureFeatureType findStructureFeatureTypeAt(class BlockPos const &);
-    MCVAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos>);
-    MCVAPI class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
-    MCVAPI bool isStructureFeatureTypeAt(class BlockPos const &, enum StructureFeatureType) const;
-    MCVAPI void postProcessMobsAt(class BlockSource &, int, int, class Random &);
-    MCVAPI ~WorldGenerator();
-#endif
+    /*
+    inline class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4> a0) const{
+        class std::optional<short> (WorldGenerator::*rv)(class DividedPos2d<4>) const;
+        *((void**)&rv) = dlsym("?getPreliminarySurfaceLevel@WorldGenerator@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z");
+        return (this->*rv)(std::forward<class DividedPos2d<4>>(a0));
+    }
+    inline  ~WorldGenerator(){
+         (WorldGenerator::*rv)();
+        *((void**)&rv) = dlsym("??1WorldGenerator@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline void addHardcodedSpawnAreas(class LevelChunk & a0){
+        void (WorldGenerator::*rv)(class LevelChunk &);
+        *((void**)&rv) = dlsym("?addHardcodedSpawnAreas@WorldGenerator@@UEAAXAEAVLevelChunk@@@Z");
+        return (this->*rv)(std::forward<class LevelChunk &>(a0));
+    }
+    inline void debugRender(){
+        void (WorldGenerator::*rv)();
+        *((void**)&rv) = dlsym("?debugRender@WorldGenerator@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline bool findNearestStructureFeature(enum StructureFeatureType a0, class BlockPos const & a1, class BlockPos & a2, bool a3){
+        bool (WorldGenerator::*rv)(enum StructureFeatureType, class BlockPos const &, class BlockPos &, bool);
+        *((void**)&rv) = dlsym("?findNearestStructureFeature@WorldGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_N@Z");
+        return (this->*rv)(std::forward<enum StructureFeatureType>(a0), std::forward<class BlockPos const &>(a1), std::forward<class BlockPos &>(a2), std::forward<bool>(a3));
+    }
+    inline enum StructureFeatureType findStructureFeatureTypeAt(class BlockPos const & a0){
+        enum StructureFeatureType (WorldGenerator::*rv)(class BlockPos const &);
+        *((void**)&rv) = dlsym("?findStructureFeatureTypeAt@WorldGenerator@@UEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0));
+    }
+    inline void garbageCollectBlueprints(class buffer_span<class ChunkPos> a0){
+        void (WorldGenerator::*rv)(class buffer_span<class ChunkPos>);
+        *((void**)&rv) = dlsym("?garbageCollectBlueprints@WorldGenerator@@UEAAXV?$buffer_span@VChunkPos@@@@@Z");
+        return (this->*rv)(std::forward<class buffer_span<class ChunkPos>>(a0));
+    }
+    inline bool isStructureFeatureTypeAt(class BlockPos const & a0, enum StructureFeatureType a1) const{
+        bool (WorldGenerator::*rv)(class BlockPos const &, enum StructureFeatureType) const;
+        *((void**)&rv) = dlsym("?isStructureFeatureTypeAt@WorldGenerator@@UEBA_NAEBVBlockPos@@W4StructureFeatureType@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0), std::forward<enum StructureFeatureType>(a1));
+    }
+    inline void postProcessMobsAt(class BlockSource & a0, int a1, int a2, class Random & a3){
+        void (WorldGenerator::*rv)(class BlockSource &, int, int, class Random &);
+        *((void**)&rv) = dlsym("?postProcessMobsAt@WorldGenerator@@UEAAXAEAVBlockSource@@HHAEAVRandom@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<class Random &>(a3));
+    }
+    */
     MCAPI WorldGenerator(class Dimension &);
     MCAPI WorldGenerator(class Dimension &, std::unique_ptr<class StructureFeatureRegistry>);
     MCAPI class StructureFeatureRegistry & getStructureFeatureRegistry() const;

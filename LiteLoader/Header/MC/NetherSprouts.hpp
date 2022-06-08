@@ -69,9 +69,13 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERSPROUTS
-    MCVAPI bool canBeSilkTouched() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (NetherSprouts::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@NetherSprouts@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI NetherSprouts(std::string const &, int);
 
 protected:

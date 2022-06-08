@@ -27,8 +27,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETRESULTMAP
-#endif
     MCAPI static std::string const & getItemStackNetResultName(enum ItemStackNetResult);
 
 protected:

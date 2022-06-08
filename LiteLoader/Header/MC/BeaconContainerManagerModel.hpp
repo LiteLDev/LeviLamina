@@ -29,8 +29,6 @@ public:
     /*7*/ virtual void setSlot(int, class ItemStack const &, bool);
     /*8*/ virtual class ItemStack const & getSlot(int) const;
     /*16*/ virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEACONCONTAINERMANAGERMODEL
-#endif
     MCAPI BeaconContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
     MCAPI static int const PAYMENT_SLOT;
 

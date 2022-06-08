@@ -17,8 +17,6 @@ class Abilities {
 #undef AFTER_EXTRA
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABILITIES
-#endif
     MCAPI Abilities(class Abilities const &);
     MCAPI Abilities();
     MCAPI void addSaveData(class CompoundTag &) const;

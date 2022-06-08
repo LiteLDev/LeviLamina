@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEFINITIONTRIGGER
-#endif
     MCAPI static class Scripting::ClassBindingBuilder<class DefinitionTrigger> bind(struct Scripting::Version);
 
 protected:

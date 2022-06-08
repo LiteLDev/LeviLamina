@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_POIBLUEPRINT
-#endif
     MCAPI POIBlueprint(std::string, enum POIType, float, bool, unsigned __int64, unsigned __int64, std::string, std::string, std::string);
 
 protected:

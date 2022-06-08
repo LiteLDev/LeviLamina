@@ -57,11 +57,23 @@ public:
     /*279*/ virtual float getInertia();
     /*280*/ virtual void __unk_vfn_280();
     /*281*/ virtual enum ParticleType getTrailParticle();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREBALL
-    MCVAPI bool canMakeStepSound() const;
-    MCVAPI void onHit(class HitResult const &);
-    MCVAPI bool shouldBurn();
-#endif
+    /*
+    inline bool canMakeStepSound() const{
+        bool (Fireball::*rv)() const;
+        *((void**)&rv) = dlsym("?canMakeStepSound@Fireball@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool shouldBurn(){
+        bool (Fireball::*rv)();
+        *((void**)&rv) = dlsym("?shouldBurn@Fireball@@MEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline void onHit(class HitResult const & a0){
+        void (Fireball::*rv)(class HitResult const &);
+        *((void**)&rv) = dlsym("?onHit@Fireball@@MEAAXAEBVHitResult@@@Z");
+        return (this->*rv)(std::forward<class HitResult const &>(a0));
+    }
+    */
     MCAPI Fireball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEAREA
-#endif
     MCAPI BiomeArea(class BoundingBox const &, unsigned int);
     MCAPI ~BiomeArea();
 

@@ -66,6 +66,7 @@ public:
     IUserManager(IUserManager const&) = delete;
     IUserManager(IUserManager const&&) = delete;
 };
+
 #undef AFTER_EXTRA
     MCAPI extern class Social::GameConnectionInfo const INVALID_CONNECTION;
 

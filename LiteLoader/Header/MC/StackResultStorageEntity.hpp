@@ -28,8 +28,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STACKRESULTSTORAGEENTITY
-#endif
 
 protected:
     MCAPI StackResultStorageEntity(class StackResultStorageEntity &&);

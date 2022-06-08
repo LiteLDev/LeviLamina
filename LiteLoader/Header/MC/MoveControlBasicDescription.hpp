@@ -28,8 +28,6 @@ public:
     /*1*/ virtual ~MoveControlBasicDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROLBASICDESCRIPTION
-#endif
 
 protected:
 

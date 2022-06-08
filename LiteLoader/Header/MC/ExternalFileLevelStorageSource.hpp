@@ -47,12 +47,28 @@ public:
     /*19*/ virtual class Core::PathBuffer<std::string> const getBasePath() const;
     /*20*/ virtual class Core::PathBuffer<std::string> const getPathToLevel(std::string const &) const;
     /*21*/ virtual class Core::PathBuffer<std::string> const getPathToLevelInfo(std::string const &, bool) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXTERNALFILELEVELSTORAGESOURCE
-    MCVAPI bool convertLevel(std::string const &, class ProgressListener *);
-    MCVAPI bool isBetaRetailLevel(std::string const &) const;
-    MCVAPI bool isConvertible(std::string const &);
-    MCVAPI bool requiresConversion(std::string const &);
-#endif
+    /*
+    inline bool requiresConversion(std::string const & a0){
+        bool (ExternalFileLevelStorageSource::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?requiresConversion@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline bool isConvertible(std::string const & a0){
+        bool (ExternalFileLevelStorageSource::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?isConvertible@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline bool isBetaRetailLevel(std::string const & a0) const{
+        bool (ExternalFileLevelStorageSource::*rv)(std::string const &) const;
+        *((void**)&rv) = dlsym("?isBetaRetailLevel@ExternalFileLevelStorageSource@@UEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline bool convertLevel(std::string const & a0, class ProgressListener * a1){
+        bool (ExternalFileLevelStorageSource::*rv)(std::string const &, class ProgressListener *);
+        *((void**)&rv) = dlsym("?convertLevel@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAVProgressListener@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class ProgressListener *>(a1));
+    }
+    */
     MCAPI ExternalFileLevelStorageSource(class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class SaveTransactionManager>> const &);
 
 protected:

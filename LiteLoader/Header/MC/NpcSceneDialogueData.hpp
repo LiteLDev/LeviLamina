@@ -47,12 +47,28 @@ public:
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual struct ActorUniqueID const & getActorUniqueID();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCSCENEDIALOGUEDATA
-    MCVAPI struct NpcActionsContainer & getActionsContainer();
-    MCVAPI struct NpcActionsContainer const & getActionsContainer() const;
-    MCVAPI class Actor const & getActor() const;
-    MCVAPI class Actor & getActor();
-#endif
+    /*
+    inline class Actor const & getActor() const{
+        class Actor const & (NpcSceneDialogueData::*rv)() const;
+        *((void**)&rv) = dlsym("?getActor@NpcSceneDialogueData@@UEBAAEBVActor@@XZ");
+        return (this->*rv)();
+    }
+    inline class Actor & getActor(){
+        class Actor & (NpcSceneDialogueData::*rv)();
+        *((void**)&rv) = dlsym("?getActor@NpcSceneDialogueData@@UEAAAEAVActor@@XZ");
+        return (this->*rv)();
+    }
+    inline struct NpcActionsContainer & getActionsContainer(){
+        struct NpcActionsContainer & (NpcSceneDialogueData::*rv)();
+        *((void**)&rv) = dlsym("?getActionsContainer@NpcSceneDialogueData@@UEAAAEAUNpcActionsContainer@@XZ");
+        return (this->*rv)();
+    }
+    inline struct NpcActionsContainer const & getActionsContainer() const{
+        struct NpcActionsContainer const & (NpcSceneDialogueData::*rv)() const;
+        *((void**)&rv) = dlsym("?getActionsContainer@NpcSceneDialogueData@@UEBAAEBUNpcActionsContainer@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI NpcSceneDialogueData(class NpcComponent &, class Actor &, std::string const &);
 
 protected:

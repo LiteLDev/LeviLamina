@@ -34,8 +34,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPATIALACTORNETWORKDATA
-#endif
     MCAPI SpatialActorNetworkData(class Actor &);
     MCAPI void enableAutoSend(bool);
     MCAPI class Vec3 getLastSentPositionForAddingEntity();

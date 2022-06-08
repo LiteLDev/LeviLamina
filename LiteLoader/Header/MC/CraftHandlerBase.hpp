@@ -31,8 +31,6 @@ public:
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &) = 0;
     /*5*/ virtual void _postCraftRequest(bool);
     /*6*/ virtual class Recipes const * _getLevelRecipes() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERBASE
-#endif
     MCAPI CraftHandlerBase(class ItemStackRequestActionCraftHandler &);
     MCAPI bool _isNonImplementedTrustClientResults() const;
     MCAPI enum ItemStackNetResult endRequest(enum ItemStackNetResult);

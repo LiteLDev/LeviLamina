@@ -41,8 +41,6 @@ public:
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*26*/ virtual void handleCommandOutputCallback(class Json::Value &&) const;
     /*30*/ virtual bool isValid() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTINGCOMMANDORIGIN
-#endif
     MCAPI ScriptingCommandOrigin(class ServerLevel &, class Dimension *, class std::function<void (class Json::Value &&)>);
     MCAPI void __autoclassinit2(unsigned __int64);
 

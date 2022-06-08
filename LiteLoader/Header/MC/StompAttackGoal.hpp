@@ -34,8 +34,6 @@ public:
     /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STOMPATTACKGOAL
-#endif
     MCAPI StompAttackGoal(class Mob &);
 
 protected:

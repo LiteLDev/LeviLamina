@@ -25,8 +25,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMDESCRIPTORCOUNT
-#endif
     MCAPI ItemDescriptorCount(class Block const &, unsigned short);
     MCAPI ItemDescriptorCount(class BlockLegacy const &, unsigned short);
     MCAPI ItemDescriptorCount(class Item const &, int, unsigned short);

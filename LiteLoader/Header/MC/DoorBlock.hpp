@@ -80,11 +80,23 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOORBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-    MCVAPI bool isDoorBlock() const;
-    MCVAPI bool isInteractiveBlock() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (DoorBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@DoorBlock@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isDoorBlock() const{
+        bool (DoorBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isDoorBlock@DoorBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInteractiveBlock() const{
+        bool (DoorBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@DoorBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI DoorBlock(std::string const &, int, class Material const &, enum DoorBlock::DoorType);
     MCAPI enum Direction::Type getBlockedDirection(class IConstBlockSource const &, class BlockPos const &) const;
     MCAPI int getDir(class IConstBlockSource const &, class BlockPos const &) const;

@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERBLOCKACTIONS
-#endif
     MCAPI void addAbortDestroyBlock(class BlockPos const &, int);
     MCAPI void addContinueDestroyBlock(class BlockPos const &, int);
     MCAPI void addStartDestroyBlock(class BlockPos const &, int);

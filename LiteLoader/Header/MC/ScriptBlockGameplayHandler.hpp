@@ -32,8 +32,6 @@ public:
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct PistonActionEvent const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKGAMEPLAYHANDLER
-#endif
 
 protected:
 

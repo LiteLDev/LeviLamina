@@ -27,8 +27,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYTRANSACTIONITEMGROUP
-#endif
     MCAPI class ItemStack getItemInstance() const;
     MCAPI ~InventoryTransactionItemGroup();
 

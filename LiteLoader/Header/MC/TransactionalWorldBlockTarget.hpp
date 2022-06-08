@@ -49,8 +49,6 @@ public:
     /*23*/ virtual class LevelData const & getLevelData() const;
     /*24*/ virtual struct WorldGenContext const & getContext();
     /*25*/ virtual void disableBlockSimple();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRANSACTIONALWORLDBLOCKTARGET
-#endif
     MCAPI TransactionalWorldBlockTarget(class IBlockWorldGenAPI &);
 
 protected:

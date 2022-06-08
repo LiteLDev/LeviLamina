@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYCOMPONENT
-#endif
     MCAPI PropertyComponent(class PropertyComponent &&);
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI void addProperty(class PropertyInstance const &);

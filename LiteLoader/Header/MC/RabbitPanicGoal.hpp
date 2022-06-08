@@ -26,8 +26,6 @@ public:
 public:
     /*0*/ virtual ~RabbitPanicGoal();
     /*3*/ virtual void __unk_vfn_3();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RABBITPANICGOAL
-#endif
 
 protected:
 

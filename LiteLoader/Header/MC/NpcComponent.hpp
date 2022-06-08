@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCCOMPONENT
-#endif
     MCAPI NpcComponent(class NpcComponent &&);
     MCAPI NpcComponent();
     MCAPI void addAdditionalSaveData(class Actor &, class CompoundTag &) const;

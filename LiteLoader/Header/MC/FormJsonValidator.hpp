@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FORMJSONVALIDATOR
-#endif
     MCAPI static class JsonValidator::Property getContentItemProperty(class JsonValidator::Property const &, class JsonValidator::Property const &, class JsonValidator::Property const &, class JsonValidator::Property const &, class JsonValidator::Property const &, class JsonValidator::Property const &);
     MCAPI static class JsonValidator::Property getControlLockedProperty();
     MCAPI static class JsonValidator::Property getDropdownProperty(bool);

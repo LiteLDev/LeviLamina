@@ -49,8 +49,6 @@ public:
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*116*/ virtual class Item & setIcon(std::string const &, int);
     /*128*/ virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPITEM
-#endif
     MCAPI MapItem(std::string const &, short);
     MCAPI void blockTick(class ItemStack &, class BlockSource &, class BlockPos const &) const;
     MCAPI void update(class Level &, class Actor &, class MapItemSavedData &) const;

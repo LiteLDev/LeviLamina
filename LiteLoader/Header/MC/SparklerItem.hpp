@@ -51,8 +51,6 @@ public:
     /*113*/ virtual struct Brightness getLightEmission(int) const;
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*116*/ virtual class Item & setIcon(std::string const &, int);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPARKLERITEM
-#endif
     MCAPI SparklerItem(std::string const &, int);
     MCAPI static struct SparklerItem::ColorInfo const COLORS[];
     MCAPI static int const MAX_ACTIVE_TICKS;

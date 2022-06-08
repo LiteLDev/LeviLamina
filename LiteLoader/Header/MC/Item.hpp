@@ -159,21 +159,73 @@ public:
     /*125*/ virtual bool _checkUseOnPermissions(class Actor &, class ItemStackBase &, unsigned char const &, class BlockPos const &) const;
     /*126*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEM
-    MCVAPI class mce::Color getBaseColor(class ItemStack const &) const;
-    MCVAPI class mce::Color getSecondaryColor(class ItemStack const &) const;
-    MCVAPI bool hasCustomColor(class ItemStackBase const &) const;
-    MCVAPI bool isActorPlacerItem() const;
-    MCVAPI bool isBucket() const;
-    MCVAPI bool isCandle() const;
-    MCVAPI bool isComplex() const;
-    MCVAPI bool isComponentBased() const;
-    MCVAPI bool isMultiColorTinted(class ItemStack const &) const;
-    MCVAPI bool isMusicDisk() const;
-    MCVAPI bool isPattern() const;
-    MCVAPI bool showsDurabilityInCreative() const;
-    MCVAPI bool uniqueAuxValues() const;
-#endif
+    /*
+    inline bool isMultiColorTinted(class ItemStack const & a0) const{
+        bool (Item::*rv)(class ItemStack const &) const;
+        *((void**)&rv) = dlsym("?isMultiColorTinted@Item@@UEBA_NAEBVItemStack@@@Z");
+        return (this->*rv)(std::forward<class ItemStack const &>(a0));
+    }
+    inline bool isBucket() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isBucket@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isActorPlacerItem() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isActorPlacerItem@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isComponentBased() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isComponentBased@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasCustomColor(class ItemStackBase const & a0) const{
+        bool (Item::*rv)(class ItemStackBase const &) const;
+        *((void**)&rv) = dlsym("?hasCustomColor@Item@@UEBA_NAEBVItemStackBase@@@Z");
+        return (this->*rv)(std::forward<class ItemStackBase const &>(a0));
+    }
+    inline bool uniqueAuxValues() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?uniqueAuxValues@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool showsDurabilityInCreative() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?showsDurabilityInCreative@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isComplex() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isComplex@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isCandle() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isCandle@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isMusicDisk() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isMusicDisk@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isPattern() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isPattern@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline class mce::Color getBaseColor(class ItemStack const & a0) const{
+        class mce::Color (Item::*rv)(class ItemStack const &) const;
+        *((void**)&rv) = dlsym("?getBaseColor@Item@@UEBA?AVColor@mce@@AEBVItemStack@@@Z");
+        return (this->*rv)(std::forward<class ItemStack const &>(a0));
+    }
+    inline class mce::Color getSecondaryColor(class ItemStack const & a0) const{
+        class mce::Color (Item::*rv)(class ItemStack const &) const;
+        *((void**)&rv) = dlsym("?getSecondaryColor@Item@@UEBA?AVColor@mce@@AEBVItemStack@@@Z");
+        return (this->*rv)(std::forward<class ItemStack const &>(a0));
+    }
+    */
     MCAPI Item(std::string const &, short);
     MCAPI void addOnResetBAIcallback(class std::function<void (void)> const &);
     MCAPI class Item & addTag(class HashedString const &);

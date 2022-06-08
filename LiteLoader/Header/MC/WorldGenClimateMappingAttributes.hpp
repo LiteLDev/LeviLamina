@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDGENCLIMATEMAPPINGATTRIBUTES
-#endif
     MCAPI class WorldGenClimateMappingAttributes & operator=(class WorldGenClimateMappingAttributes &&);
     MCAPI ~WorldGenClimateMappingAttributes();
 

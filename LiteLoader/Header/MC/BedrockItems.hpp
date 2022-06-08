@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCKITEMS
-#endif
     MCAPI static class WeakPtr<class Item> mAir;
     MCAPI static void registerItems();
     MCAPI static void unregisterItems();

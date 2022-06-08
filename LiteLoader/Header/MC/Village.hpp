@@ -29,8 +29,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGE
-#endif
     MCAPI Village(class Dimension &, class mce::UUID, class BlockPos const &);
     MCAPI void addActorToVillage(enum DwellerRole, struct ActorUniqueID const &);
     MCAPI void addAggressor(class Mob const &);

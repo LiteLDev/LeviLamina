@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWSTRUCTUREELEMENTREGISTRY
-#endif
     MCAPI void clear();
     MCAPI class StructurePoolElement const * lookupByName(std::string) const;
     MCAPI void registerStructureElement(std::string, std::unique_ptr<class StructurePoolElement> &&);

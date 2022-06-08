@@ -23,9 +23,13 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCOMPONENTFACTORYBASE
-    MCVAPI ~EntityComponentFactoryBase();
-#endif
+    /*
+    inline  ~EntityComponentFactoryBase(){
+         (EntityComponentFactoryBase::*rv)();
+        *((void**)&rv) = dlsym("??1EntityComponentFactoryBase@@MEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI void addComponents(class EntityContext &, class DefinitionInstanceGroup const &) const;
     MCAPI void removeComponents(class EntityContext &, class DefinitionInstanceGroup const &) const;
 

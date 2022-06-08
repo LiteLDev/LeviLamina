@@ -26,8 +26,6 @@ public:
     /*0*/ virtual ~ChunkBuildOrderPolicyBase();
     /*1*/ virtual void __unk_vfn_1() = 0;
     /*2*/ virtual unsigned int registerForUpdates();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKBUILDORDERPOLICYBASE
-#endif
 
 protected:
 

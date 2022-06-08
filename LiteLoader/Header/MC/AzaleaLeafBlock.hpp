@@ -67,8 +67,6 @@ public:
     /*192*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AZALEALEAFBLOCK
-#endif
     MCAPI AzaleaLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
 
 protected:

@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTCOORDINATOR
-#endif
     MCAPI class BlockGameplayHandler & getBlockGameplayHandler();
     MCAPI void registerBlockGameplayHandler(std::unique_ptr<class BlockGameplayHandler> &&);
     MCAPI void sendBlockDestroyedByPlayer(class Player &, class Block const &, class BlockPos const &);

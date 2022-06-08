@@ -26,8 +26,6 @@ public:
     /*0*/ virtual ~SimplePositionalRandomFactory();
     /*1*/ virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const &) const;
     /*2*/ virtual std::unique_ptr<class IRandom> forString(std::string const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLEPOSITIONALRANDOMFACTORY
-#endif
     MCAPI SimplePositionalRandomFactory(__int64);
     MCAPI class SimpleRandom forBlockPosImpl(class BlockPos const &) const;
 

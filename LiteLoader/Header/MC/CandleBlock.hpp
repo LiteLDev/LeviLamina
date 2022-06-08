@@ -71,10 +71,18 @@ public:
     /*208*/ virtual void __unk_vfn_208();
     /*209*/ virtual void __unk_vfn_209();
     /*210*/ virtual void __unk_vfn_210();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CANDLEBLOCK
-    MCVAPI bool isInteractiveBlock() const;
-    MCVAPI bool waterSpreadCausesSpawn() const;
-#endif
+    /*
+    inline bool waterSpreadCausesSpawn() const{
+        bool (CandleBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@CandleBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInteractiveBlock() const{
+        bool (CandleBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@CandleBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI CandleBlock(std::string const &, int);
     MCAPI static bool tryLightFire(class BlockSource &, class BlockPos const &);
 

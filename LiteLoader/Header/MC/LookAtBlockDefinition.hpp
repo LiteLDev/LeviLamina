@@ -27,8 +27,6 @@ public:
 public:
     /*0*/ virtual ~LookAtBlockDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATBLOCKDEFINITION
-#endif
 
 protected:
 

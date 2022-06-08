@@ -26,8 +26,6 @@ public:
     /*0*/ virtual ~TestAction();
     /*1*/ virtual void execute(class ServerLevel &, class Dimension &);
     /*3*/ virtual bool operator==(class IRequestAction &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TESTACTION
-#endif
     MCAPI TestAction();
 
 protected:

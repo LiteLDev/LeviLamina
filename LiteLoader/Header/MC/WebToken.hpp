@@ -31,8 +31,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBTOKEN
-#endif
     MCAPI WebToken(std::string);
     MCAPI std::string toString() const;
     MCAPI bool verifyWithIncludedKey(std::vector<std::string> const &) const;

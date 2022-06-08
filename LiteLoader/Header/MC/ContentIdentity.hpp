@@ -16,8 +16,6 @@ class ContentIdentity {
 #undef AFTER_EXTRA
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTIDENTITY
-#endif
     MCAPI ContentIdentity();
     MCAPI ContentIdentity(class ContentIdentity &&);
     MCAPI ContentIdentity(class ContentIdentity const &);

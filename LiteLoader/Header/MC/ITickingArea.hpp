@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITICKINGAREA
-#endif
     MCAPI class CompoundTag serialize() const;
 
 protected:

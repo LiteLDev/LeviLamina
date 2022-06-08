@@ -23,9 +23,13 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLASTFURNACEBLOCKACTOR
-    MCVAPI std::string getName() const;
-#endif
+    /*
+    inline std::string getName() const{
+        std::string (BlastFurnaceBlockActor::*rv)() const;
+        *((void**)&rv) = dlsym("?getName@BlastFurnaceBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BlastFurnaceBlockActor(class BlockPos const &);
 
 protected:

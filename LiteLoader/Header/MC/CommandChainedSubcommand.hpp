@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDCHAINEDSUBCOMMAND
-#endif
     MCAPI class Command * getCommand() const;
     MCAPI void setCommand(std::unique_ptr<class Command>);
 

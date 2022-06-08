@@ -73,10 +73,18 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REEDBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-    MCVAPI bool waterSpreadCausesSpawn() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (ReedBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@ReedBlock@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool waterSpreadCausesSpawn() const{
+        bool (ReedBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@ReedBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ReedBlock(std::string const &, int);
 
 protected:

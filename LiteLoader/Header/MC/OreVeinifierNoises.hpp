@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OREVEINIFIERNOISES
-#endif
     MCAPI OreVeinifierNoises(class OreVeinifierNoises const &);
     MCAPI class XoroshiroPositionalRandomFactory const & getPositionalRandomFactory() const;
     MCAPI float sampleGapNoise(float, float, float) const;

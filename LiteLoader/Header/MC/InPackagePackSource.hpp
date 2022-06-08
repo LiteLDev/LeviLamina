@@ -29,10 +29,18 @@ public:
     /*3*/ virtual enum PackOrigin getPackOrigin() const;
     /*4*/ virtual enum PackType getPackType() const;
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory &, class IContentKeyProvider const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INPACKAGEPACKSOURCE
-    MCVAPI void forEachPack(class std::function<void (class Pack &)>);
-    MCVAPI void forEachPackConst(class std::function<void (class Pack const &)>) const;
-#endif
+    /*
+    inline void forEachPack(class std::function<void (class Pack &)> a0){
+        void (InPackagePackSource::*rv)(class std::function<void (class Pack &)>);
+        *((void**)&rv) = dlsym("?forEachPack@InPackagePackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z");
+        return (this->*rv)(std::forward<class std::function<void (class Pack &)>>(a0));
+    }
+    inline void forEachPackConst(class std::function<void (class Pack const &)> a0) const{
+        void (InPackagePackSource::*rv)(class std::function<void (class Pack const &)>) const;
+        *((void**)&rv) = dlsym("?forEachPackConst@InPackagePackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z");
+        return (this->*rv)(std::forward<class std::function<void (class Pack const &)>>(a0));
+    }
+    */
     MCAPI InPackagePackSource(class std::shared_ptr<class IInPackagePacks> const &, enum PackType);
 
 protected:

@@ -27,10 +27,18 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /*4*/ virtual char const * getName();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IGNITESUBCOMPONENT
-    MCVAPI void readfromJSON(class Json::Value &, class SemVersion const &);
-    MCVAPI void writetoJSON(class Json::Value &) const;
-#endif
+    /*
+    inline void writetoJSON(class Json::Value & a0) const{
+        void (IgniteSubcomponent::*rv)(class Json::Value &) const;
+        *((void**)&rv) = dlsym("?writetoJSON@IgniteSubcomponent@@UEBAXAEAVValue@Json@@@Z");
+        return (this->*rv)(std::forward<class Json::Value &>(a0));
+    }
+    inline void readfromJSON(class Json::Value & a0, class SemVersion const & a1){
+        void (IgniteSubcomponent::*rv)(class Json::Value &, class SemVersion const &);
+        *((void**)&rv) = dlsym("?readfromJSON@IgniteSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z");
+        return (this->*rv)(std::forward<class Json::Value &>(a0), std::forward<class SemVersion const &>(a1));
+    }
+    */
     MCAPI IgniteSubcomponent();
 
 protected:

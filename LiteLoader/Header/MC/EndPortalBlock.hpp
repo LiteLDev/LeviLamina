@@ -70,9 +70,13 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDPORTALBLOCK
-    MCVAPI bool waterSpreadCausesSpawn() const;
-#endif
+    /*
+    inline bool waterSpreadCausesSpawn() const{
+        bool (EndPortalBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@EndPortalBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI EndPortalBlock(std::string const &, int);
 
 protected:

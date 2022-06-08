@@ -25,8 +25,6 @@ public:
 public:
     /*0*/ virtual ~SurfaceLevelCache();
     /*1*/ virtual class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SURFACELEVELCACHE
-#endif
     MCAPI SurfaceLevelCache(class DividedPos2d<4>, class IPreliminarySurfaceProvider const &, unsigned __int64);
 
 protected:

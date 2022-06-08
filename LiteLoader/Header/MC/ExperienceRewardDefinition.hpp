@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCEREWARDDEFINITION
-#endif
     MCAPI void addBredExpressionNode(class ExpressionNode const &);
     MCAPI void addDeathExpressionNode(class ExpressionNode const &);
     MCAPI void initialize(class EntityContext &, class ExperienceRewardComponent &);

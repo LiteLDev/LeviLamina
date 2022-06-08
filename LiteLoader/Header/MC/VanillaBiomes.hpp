@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLABIOMES
-#endif
     MCAPI static class mce::Color const SWAMP_WATER_COLOR;
     MCAPI static class mce::Color const WATER_FOG_COLOR_SWAMP;
     MCAPI static void initBiomeComponents(class BiomeComponentFactory &);

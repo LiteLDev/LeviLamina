@@ -35,8 +35,6 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void _attemptMoveToTarget(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DELAYEDATTACKGOAL
-#endif
     MCAPI DelayedAttackGoal(class Mob &);
 
 protected:

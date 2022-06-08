@@ -25,8 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~NetherFortressStart();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERFORTRESSSTART
-#endif
     MCAPI NetherFortressStart(class Random &, short, int, int);
 
 protected:

@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYJIGSAWPLACEMENT
-#endif
     MCAPI LegacyJigsawPlacement(int, class std::function<std::unique_ptr<class PoolElementStructurePiece> (class StructurePoolElement const &, class BlockPos const &, enum Rotation const &, int, struct JigsawJunction &, class BoundingBox const &, class BlockPos const &)>);
     MCAPI void addPieces(std::vector<std::unique_ptr<class StructurePiece>> &, class StructurePoolElement const &, class Random &, class BlockPos const &, enum Rotation const &, class JigsawStructureRegistry const &, class Dimension &);
     MCAPI ~LegacyJigsawPlacement();

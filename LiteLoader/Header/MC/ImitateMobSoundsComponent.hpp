@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMITATEMOBSOUNDSCOMPONENT
-#endif
     MCAPI static enum LevelSoundEvent getRandomImitatedSound(class Randomize const &);
     MCAPI static bool imitateNearbyMobs(class Actor &, class Randomize const &);
 

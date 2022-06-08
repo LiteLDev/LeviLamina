@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOTIVE
-#endif
     MCAPI int getHeight() const;
     MCAPI std::string const getName() const;
     MCAPI int getWidth() const;

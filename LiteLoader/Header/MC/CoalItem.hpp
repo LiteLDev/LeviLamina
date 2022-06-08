@@ -41,8 +41,6 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*123*/ virtual float getFurnaceXPmultiplier(class ItemStackBase const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COALITEM
-#endif
 
 protected:
 

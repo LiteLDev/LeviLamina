@@ -33,10 +33,18 @@ public:
     /*6*/ virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEACONPAYMENTCONTAINERVALIDATION
-    MCVAPI bool canDestroy(class ContainerScreenContext const &) const;
-    MCVAPI int getAvailableSetCount(int, class ItemStackBase const &) const;
-#endif
+    /*
+    inline bool canDestroy(class ContainerScreenContext const & a0) const{
+        bool (BeaconPaymentContainerValidation::*rv)(class ContainerScreenContext const &) const;
+        *((void**)&rv) = dlsym("?canDestroy@BeaconPaymentContainerValidation@@UEBA_NAEBVContainerScreenContext@@@Z");
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
+    }
+    inline int getAvailableSetCount(int a0, class ItemStackBase const & a1) const{
+        int (BeaconPaymentContainerValidation::*rv)(int, class ItemStackBase const &) const;
+        *((void**)&rv) = dlsym("?getAvailableSetCount@BeaconPaymentContainerValidation@@UEBAHHAEBVItemStackBase@@@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStackBase const &>(a1));
+    }
+    */
 
 protected:
 

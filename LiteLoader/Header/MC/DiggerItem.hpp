@@ -46,8 +46,6 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*84*/ virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
     /*89*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIGGERITEM
-#endif
     MCAPI void setBlocks(std::vector<class Block const *> const &);
 
 protected:

@@ -61,8 +61,6 @@ public:
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const = 0;
     /*31*/ virtual void _setUUID(class mce::UUID const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDORIGIN
-#endif
     MCAPI CommandOrigin();
     MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const &, class BlockPos const &, int, bool) const;
     MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const &, int) const;

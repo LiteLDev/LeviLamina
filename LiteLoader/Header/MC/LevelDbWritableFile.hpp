@@ -29,8 +29,6 @@ public:
     /*2*/ virtual class leveldb::Status Close();
     /*3*/ virtual class leveldb::Status Flush();
     /*4*/ virtual class leveldb::Status Sync();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBWRITABLEFILE
-#endif
     MCAPI LevelDbWritableFile(std::string, class Core::File &&);
 
 protected:

@@ -50,9 +50,13 @@ public:
     /*265*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
     /*269*/ virtual void __unk_vfn_269();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIGHTNINGBOLT
-    MCVAPI bool shouldAlwaysRender();
-#endif
+    /*
+    inline bool shouldAlwaysRender(){
+        bool (LightningBolt::*rv)();
+        *((void**)&rv) = dlsym("?shouldAlwaysRender@LightningBolt@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI LightningBolt(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

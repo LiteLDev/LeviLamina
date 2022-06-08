@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINMANAGER
-#endif
     MCAPI ScriptPluginManager(class Scripting::ScriptEngine &, class Scripting::IPrinter *);
     MCAPI class ScriptPluginManagerResult discoverPlugins(enum ResourceInformation::ResourceType, class IScriptPluginSourceEnumerator const &);
     MCAPI void releasePlugins();

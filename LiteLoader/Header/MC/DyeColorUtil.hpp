@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYECOLORUTIL
-#endif
     MCAPI static class std::array<short, 16> const COLOR_TO_AUX;
     MCAPI static class std::array<short, 4> const DEPRECATED_DYE_AUX_VALUES;
     MCAPI static class std::array<short, 16> const DYE_AUX_VALUES;

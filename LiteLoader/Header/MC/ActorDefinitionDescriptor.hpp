@@ -16,8 +16,6 @@ class ActorDefinitionDescriptor {
 #undef AFTER_EXTRA
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONDESCRIPTOR
-#endif
     MCAPI ActorDefinitionDescriptor();
     MCAPI ActorDefinitionDescriptor(class ActorDefinitionDescriptor &&);
     MCAPI ActorDefinitionDescriptor(class ActorDefinitionDescriptor const &);

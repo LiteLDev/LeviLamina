@@ -53,8 +53,6 @@ public:
     /*359*/ virtual void __unk_vfn_359();
     /*362*/ virtual float getModelScale() const;
     /*363*/ virtual enum Spider::Type getSpiderType() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAVESPIDER
-#endif
     MCAPI CaveSpider(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

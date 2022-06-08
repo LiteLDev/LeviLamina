@@ -46,8 +46,6 @@ public:
     /*85*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     /*89*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHEARSITEM
-#endif
 
 protected:
 

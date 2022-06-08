@@ -42,8 +42,6 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*81*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNOWBALLITEM
-#endif
 
 protected:
 

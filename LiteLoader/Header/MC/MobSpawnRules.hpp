@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBSPAWNRULES
-#endif
     MCAPI MobSpawnRules(class MobSpawnRules const &);
     MCAPI MobSpawnRules(class MobSpawnRules &&);
     MCAPI MobSpawnRules();

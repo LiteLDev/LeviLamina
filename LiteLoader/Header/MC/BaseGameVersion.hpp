@@ -17,8 +17,6 @@ class BaseGameVersion {
 #undef AFTER_EXTRA
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEGAMEVERSION
-#endif
     MCAPI BaseGameVersion(class BaseGameVersion const &);
     MCAPI BaseGameVersion(class SemVersion const &);
     MCAPI BaseGameVersion(unsigned short, unsigned int, unsigned int);

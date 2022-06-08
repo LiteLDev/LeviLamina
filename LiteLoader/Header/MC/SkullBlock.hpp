@@ -67,10 +67,18 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKULLBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-    MCVAPI bool waterSpreadCausesSpawn() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (SkullBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@SkullBlock@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool waterSpreadCausesSpawn() const{
+        bool (SkullBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@SkullBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SkullBlock(std::string const &, int);
     MCAPI bool checkMobSpawn(class Level &, class BlockSource &, class BlockPos const &, class SkullBlockActor &) const;
     MCAPI static std::string getTypeDescriptionId(int);

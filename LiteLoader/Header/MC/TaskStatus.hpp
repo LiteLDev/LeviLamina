@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKSTATUS
-#endif
     MCAPI TaskStatus();
     MCAPI bool isComplete() const;
     MCAPI operator enum TaskStatus::Value() const;

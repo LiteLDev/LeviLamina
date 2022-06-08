@@ -26,8 +26,6 @@ public:
 public:
     /*0*/ virtual ~SpreadPlayersCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPREADPLAYERSCOMMAND
-#endif
     MCAPI static std::vector<class Vec2> createInitialPositions(class Random &, int, class Vec2 const &, class Vec2 const &);
     MCAPI static void setup(class CommandRegistry &);
     MCAPI static bool spreadPositions(class CommandOutput &, class Random &, class CommandOrigin const &, class Vec2 const &, float, class Vec2 const &, class Vec2 const &, std::vector<class Vec2> &, class std::map<class ChunkPos, std::unique_ptr<class CommandArea>, struct std::less<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<class CommandArea>>>> &, int);

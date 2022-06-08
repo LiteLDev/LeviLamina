@@ -43,8 +43,6 @@ public:
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*116*/ virtual class Item & setIcon(std::string const &, int);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDITEM
-#endif
     MCAPI CompoundItem(std::string const &, int, class Experiments const &);
     MCAPI static enum CompoundType getCompoundType(class ItemDescriptor const &);
     MCAPI static class RecipeIngredient getIngredientForCompound(enum CompoundType);

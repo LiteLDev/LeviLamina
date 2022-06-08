@@ -37,8 +37,6 @@ public:
     /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual void generateBox(class BlockSource &, class BoundingBox const &, int, int, int, int, int, int, class Block const &, class Block const &, bool);
     /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBBRIDGEENDFILLER
-#endif
     MCAPI static std::unique_ptr<class NetherFortressPiece> createPiece(std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
 
 protected:

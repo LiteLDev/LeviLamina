@@ -75,10 +75,18 @@ public:
     /*214*/ virtual int getTurnOnDelay(class Block const &) const;
     /*215*/ virtual class Block const * getOnBlock(class Block const *) const;
     /*216*/ virtual class Block const * getOffBlock(class Block const *) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPEATERBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-    MCVAPI bool isInteractiveBlock() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (RepeaterBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@RepeaterBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInteractiveBlock() const{
+        bool (RepeaterBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@RepeaterBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI RepeaterBlock(std::string const &, int, bool);
     MCAPI void updateDelay(class BlockSource &, class BlockPos const &, bool) const;
     MCAPI static float const DELAY_RENDER_OFFSETS[];

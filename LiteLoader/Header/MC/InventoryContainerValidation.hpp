@@ -34,9 +34,13 @@ public:
     /*7*/ virtual bool canDestroy(class ContainerScreenContext const &) const;
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYCONTAINERVALIDATION
-    MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;
-#endif
+    /*
+    inline bool canItemMoveToContainer(class ItemStackBase const & a0) const{
+        bool (InventoryContainerValidation::*rv)(class ItemStackBase const &) const;
+        *((void**)&rv) = dlsym("?canItemMoveToContainer@InventoryContainerValidation@@UEBA_NAEBVItemStackBase@@@Z");
+        return (this->*rv)(std::forward<class ItemStackBase const &>(a0));
+    }
+    */
 
 protected:
 

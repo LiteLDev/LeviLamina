@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTCOMMANDCOMPONENT
-#endif
     MCAPI AgentCommandComponent();
     MCAPI bool addCommand(std::unique_ptr<class AgentCommands::Command>);
     MCAPI std::unique_ptr<class AgentCommands::Command> const & getCurrentCommand() const;

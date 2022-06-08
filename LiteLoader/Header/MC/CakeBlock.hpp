@@ -69,10 +69,18 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAKEBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-    MCVAPI bool hasComparatorSignal() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (CakeBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@CakeBlock@@EEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasComparatorSignal() const{
+        bool (CakeBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?hasComparatorSignal@CakeBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI CakeBlock(std::string const &, int);
     MCAPI static int getComparatorSignalFromBites(int);
     MCAPI static void removeCakeSlice(class Player &, class BlockSource &, class BlockPos const &, class Block const *);

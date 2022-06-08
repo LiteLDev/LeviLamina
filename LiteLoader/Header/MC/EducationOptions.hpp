@@ -23,10 +23,18 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUCATIONOPTIONS
-    MCVAPI void onActiveResourcePacksChanged(class ResourcePackManager &);
-    MCVAPI ~EducationOptions();
-#endif
+    /*
+    inline  ~EducationOptions(){
+         (EducationOptions::*rv)();
+        *((void**)&rv) = dlsym("??1EducationOptions@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline void onActiveResourcePacksChanged(class ResourcePackManager & a0){
+        void (EducationOptions::*rv)(class ResourcePackManager &);
+        *((void**)&rv) = dlsym("?onActiveResourcePacksChanged@EducationOptions@@UEAAXAEAVResourcePackManager@@@Z");
+        return (this->*rv)(std::forward<class ResourcePackManager &>(a0));
+    }
+    */
     MCAPI EducationOptions(class ResourcePackManager *);
     MCAPI void init(class LevelData const &);
     MCAPI static class gsl::basic_string_span<char const, -1> const CHEMISTRY_ENABLED;

@@ -75,9 +75,13 @@ public:
     /*205*/ virtual class ItemInstance const getBaseCrop() const;
     /*206*/ virtual int getSeedNum(class Randomize &, int, int) const;
     /*207*/ virtual int getCropNum(class Randomize &, int, int) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CROPBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (CropBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@CropBlock@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI CropBlock(std::string const &, int);
 
 protected:

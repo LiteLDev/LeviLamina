@@ -23,17 +23,53 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDDIMENSION
-    MCVAPI void _upgradeOldLimboEntity(class CompoundTag &, enum LimboEntitiesVersion);
-    MCVAPI std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, enum StorageVersion);
-    MCVAPI std::unique_ptr<class WorldGenerator> createGenerator();
-    MCVAPI void fixWallChunk(class ChunkSource &, class LevelChunk &);
-    MCVAPI class mce::Color getBrightnessDependentFogColor(class mce::Color const &, float) const;
-    MCVAPI short getCloudHeight() const;
-    MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const &) const;
-    MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const &, class AutomaticID<class Dimension, int>) const;
-    MCVAPI void upgradeLevelChunk(class ChunkSource &, class LevelChunk &, class LevelChunk &);
-#endif
+    /*
+    inline void _upgradeOldLimboEntity(class CompoundTag & a0, enum LimboEntitiesVersion a1){
+        void (OverworldDimension::*rv)(class CompoundTag &, enum LimboEntitiesVersion);
+        *((void**)&rv) = dlsym("?_upgradeOldLimboEntity@OverworldDimension@@EEAAXAEAVCompoundTag@@W4LimboEntitiesVersion@@@Z");
+        return (this->*rv)(std::forward<class CompoundTag &>(a0), std::forward<enum LimboEntitiesVersion>(a1));
+    }
+    inline void fixWallChunk(class ChunkSource & a0, class LevelChunk & a1){
+        void (OverworldDimension::*rv)(class ChunkSource &, class LevelChunk &);
+        *((void**)&rv) = dlsym("?fixWallChunk@OverworldDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z");
+        return (this->*rv)(std::forward<class ChunkSource &>(a0), std::forward<class LevelChunk &>(a1));
+    }
+    inline bool levelChunkNeedsUpgrade(class LevelChunk const & a0) const{
+        bool (OverworldDimension::*rv)(class LevelChunk const &) const;
+        *((void**)&rv) = dlsym("?levelChunkNeedsUpgrade@OverworldDimension@@UEBA_NAEBVLevelChunk@@@Z");
+        return (this->*rv)(std::forward<class LevelChunk const &>(a0));
+    }
+    inline std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource> a0, enum StorageVersion a1){
+        std::unique_ptr<class ChunkSource> (OverworldDimension::*rv)(std::unique_ptr<class ChunkSource>, enum StorageVersion);
+        *((void**)&rv) = dlsym("?_wrapStorageForVersionCompatibility@OverworldDimension@@EEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z");
+        return (this->*rv)(std::forward<std::unique_ptr<class ChunkSource>>(a0), std::forward<enum StorageVersion>(a1));
+    }
+    inline std::unique_ptr<class WorldGenerator> createGenerator(){
+        std::unique_ptr<class WorldGenerator> (OverworldDimension::*rv)();
+        *((void**)&rv) = dlsym("?createGenerator@OverworldDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline class mce::Color getBrightnessDependentFogColor(class mce::Color const & a0, float a1) const{
+        class mce::Color (OverworldDimension::*rv)(class mce::Color const &, float) const;
+        *((void**)&rv) = dlsym("?getBrightnessDependentFogColor@OverworldDimension@@UEBA?AVColor@mce@@AEBV23@M@Z");
+        return (this->*rv)(std::forward<class mce::Color const &>(a0), std::forward<float>(a1));
+    }
+    inline short getCloudHeight() const{
+        short (OverworldDimension::*rv)() const;
+        *((void**)&rv) = dlsym("?getCloudHeight@OverworldDimension@@UEBAFXZ");
+        return (this->*rv)();
+    }
+    inline class Vec3 translatePosAcrossDimension(class Vec3 const & a0, class AutomaticID<class Dimension, int> a1) const{
+        class Vec3 (OverworldDimension::*rv)(class Vec3 const &, class AutomaticID<class Dimension, int>) const;
+        *((void**)&rv) = dlsym("?translatePosAcrossDimension@OverworldDimension@@UEBA?AVVec3@@AEBV2@V?$AutomaticID@VDimension@@H@@@Z");
+        return (this->*rv)(std::forward<class Vec3 const &>(a0), std::forward<class AutomaticID<class Dimension, int>>(a1));
+    }
+    inline void upgradeLevelChunk(class ChunkSource & a0, class LevelChunk & a1, class LevelChunk & a2){
+        void (OverworldDimension::*rv)(class ChunkSource &, class LevelChunk &, class LevelChunk &);
+        *((void**)&rv) = dlsym("?upgradeLevelChunk@OverworldDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z");
+        return (this->*rv)(std::forward<class ChunkSource &>(a0), std::forward<class LevelChunk &>(a1), std::forward<class LevelChunk &>(a2));
+    }
+    */
     MCAPI OverworldDimension(class Level &, class Scheduler &);
 
 protected:

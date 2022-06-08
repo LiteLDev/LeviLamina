@@ -55,8 +55,6 @@ public:
     /*282*/ virtual void __unk_vfn_282();
     /*284*/ virtual void applyNaturalSlowdown(class BlockSource &);
     /*285*/ virtual void _lazyInitDisplayBlock();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTCOMMANDBLOCK
-#endif
     MCAPI MinecartCommandBlock(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

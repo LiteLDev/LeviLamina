@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROPESYSTEM
-#endif
     MCAPI RopeSystem();
     MCAPI void _initializePins(class Vec3 const &, class Vec3 const &);
     MCAPI void cutAtPercent(float);

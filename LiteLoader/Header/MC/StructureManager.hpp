@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREMANAGER
-#endif
     MCAPI StructureManager();
     MCAPI void clearAndShutdownStructurePlacement();
     MCAPI class StructureTemplateDataResponsePacket createStructureDataExportPacket(std::string const &, class ResourcePackManager const *, class LevelStorage *, enum StructureTemplateResponseType);

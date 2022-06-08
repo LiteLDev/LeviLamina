@@ -23,10 +23,18 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TESTSUMMARYDISPLAYER
-    MCVAPI void onTestFailed(class gametest::BaseGameTestInstance &);
-    MCVAPI void onTestPassed(class gametest::BaseGameTestInstance &);
-#endif
+    /*
+    inline void onTestFailed(class gametest::BaseGameTestInstance & a0){
+        void (TestSummaryDisplayer::*rv)(class gametest::BaseGameTestInstance &);
+        *((void**)&rv) = dlsym("?onTestFailed@TestSummaryDisplayer@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z");
+        return (this->*rv)(std::forward<class gametest::BaseGameTestInstance &>(a0));
+    }
+    inline void onTestPassed(class gametest::BaseGameTestInstance & a0){
+        void (TestSummaryDisplayer::*rv)(class gametest::BaseGameTestInstance &);
+        *((void**)&rv) = dlsym("?onTestPassed@TestSummaryDisplayer@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z");
+        return (this->*rv)(std::forward<class gametest::BaseGameTestInstance &>(a0));
+    }
+    */
     MCAPI TestSummaryDisplayer(class Level &, class gametest::MultipleTestTracker &);
 
 protected:

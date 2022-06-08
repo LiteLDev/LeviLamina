@@ -50,8 +50,6 @@ public:
     /*81*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /*83*/ virtual void releaseUsing(class ItemStack &, class Player *, int) const;
     /*85*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIDENTITEM
-#endif
     MCAPI TridentItem(std::string const &, int);
     MCAPI static int const CHARGE_THRESHOLD_TIME;
     MCAPI static int const THROW_THRESHOLD_TIME;

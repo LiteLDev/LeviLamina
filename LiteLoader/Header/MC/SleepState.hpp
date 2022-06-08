@@ -27,8 +27,6 @@ public:
     /*1*/ virtual void tick();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void stop();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLEEPSTATE
-#endif
 
 protected:
 

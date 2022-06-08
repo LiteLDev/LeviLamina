@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTE
-#endif
     MCAPI Attribute(class HashedString const &, enum RedefinitionMode, bool);
     MCAPI unsigned int const getIDValue() const;
     MCAPI class HashedString const & getName() const;

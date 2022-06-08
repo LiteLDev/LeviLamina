@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PHOTOSTORAGE
-#endif
     MCAPI PhotoStorage(class Core::Path const &);
     MCAPI ~PhotoStorage();
     MCAPI static std::string const BOOKS_DIR;

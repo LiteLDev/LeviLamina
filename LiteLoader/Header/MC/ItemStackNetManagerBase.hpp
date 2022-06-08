@@ -34,8 +34,6 @@ public:
     /*8*/ virtual class SparseContainer * initOpenContainer(class BlockSource &, enum ContainerEnumName, class ContainerWeakRef const &);
     /*9*/ virtual void _addLegacyTransactionRequestSetItemSlot(class ItemStackNetManagerScreen &, enum ContainerType, int);
     /*10*/ virtual void _initScreen(class ItemStackNetManagerScreen &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETMANAGERBASE
-#endif
     MCAPI ItemStackNetManagerBase(class Player &, bool, bool);
     MCAPI class ItemStackNetManagerScreenStack & _getScreenStack();
     MCAPI class ContainerScreenContext const & getScreenContext() const;

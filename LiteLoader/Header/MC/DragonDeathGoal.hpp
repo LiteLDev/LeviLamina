@@ -31,10 +31,18 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONDEATHGOAL
-    MCVAPI bool canContinueToUse();
-    MCVAPI bool canUse();
-#endif
+    /*
+    inline bool canUse(){
+        bool (DragonDeathGoal::*rv)();
+        *((void**)&rv) = dlsym("?canUse@DragonDeathGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canContinueToUse(){
+        bool (DragonDeathGoal::*rv)();
+        *((void**)&rv) = dlsym("?canContinueToUse@DragonDeathGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI DragonDeathGoal(class EnderDragon &);
 
 protected:

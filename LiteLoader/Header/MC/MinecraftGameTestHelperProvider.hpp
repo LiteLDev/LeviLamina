@@ -26,8 +26,6 @@ public:
     /*0*/ virtual ~MinecraftGameTestHelperProvider();
     /*1*/ virtual std::unique_ptr<class gametest::BaseGameTestHelper> createGameTestHelper(class gametest::BaseGameTestInstance &);
     /*2*/ virtual std::unique_ptr<class gametest::IGameTestHelperProvider> clone();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTGAMETESTHELPERPROVIDER
-#endif
 
 protected:
 

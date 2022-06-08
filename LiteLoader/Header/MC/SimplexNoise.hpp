@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLEXNOISE
-#endif
     MCAPI SimplexNoise(class IRandom &, bool);
     MCAPI void _add(float *, float, float, int, int, float, float, float) const;
     MCAPI float _getValue(class Vec2 const &) const;

@@ -24,18 +24,58 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERGENERATOR
-    MCVAPI void decorateWorldGenLoadChunk(class Biome &, class LevelChunk &, class BlockVolumeTarget &, class Random &, class ChunkPos const &) const;
-    MCVAPI void decorateWorldGenPostProcess(class Biome &, class LevelChunk &, class BlockSource &, class Random &) const;
-    MCVAPI class BlockPos findSpawnPosition() const;
-    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const &, unsigned int) const;
-    MCVAPI class BiomeSource const & getBiomeSource() const;
-    MCVAPI struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const;
-    MCVAPI void loadChunk(class LevelChunk &, bool);
-    MCVAPI bool postProcess(class ChunkViewSource &);
-    MCVAPI void prepareAndComputeHeights(class BlockVolume &, class ChunkPos const &, std::vector<short> &, bool, int);
-    MCVAPI void prepareHeights(class BlockVolume &, class ChunkPos const &, bool);
-#endif
+    /*
+    inline struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const{
+        struct WorldGenerator::BlockVolumeDimensions (NetherGenerator::*rv)() const;
+        *((void**)&rv) = dlsym("?getBlockVolumeDimensions@NetherGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ");
+        return (this->*rv)();
+    }
+    inline void decorateWorldGenLoadChunk(class Biome & a0, class LevelChunk & a1, class BlockVolumeTarget & a2, class Random & a3, class ChunkPos const & a4) const{
+        void (NetherGenerator::*rv)(class Biome &, class LevelChunk &, class BlockVolumeTarget &, class Random &, class ChunkPos const &) const;
+        *((void**)&rv) = dlsym("?decorateWorldGenLoadChunk@NetherGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z");
+        return (this->*rv)(std::forward<class Biome &>(a0), std::forward<class LevelChunk &>(a1), std::forward<class BlockVolumeTarget &>(a2), std::forward<class Random &>(a3), std::forward<class ChunkPos const &>(a4));
+    }
+    inline void decorateWorldGenPostProcess(class Biome & a0, class LevelChunk & a1, class BlockSource & a2, class Random & a3) const{
+        void (NetherGenerator::*rv)(class Biome &, class LevelChunk &, class BlockSource &, class Random &) const;
+        *((void**)&rv) = dlsym("?decorateWorldGenPostProcess@NetherGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z");
+        return (this->*rv)(std::forward<class Biome &>(a0), std::forward<class LevelChunk &>(a1), std::forward<class BlockSource &>(a2), std::forward<class Random &>(a3));
+    }
+    inline class BlockPos findSpawnPosition() const{
+        class BlockPos (NetherGenerator::*rv)() const;
+        *((void**)&rv) = dlsym("?findSpawnPosition@NetherGenerator@@UEBA?AVBlockPos@@XZ");
+        return (this->*rv)();
+    }
+    inline class BiomeArea getBiomeArea(class BoundingBox const & a0, unsigned int a1) const{
+        class BiomeArea (NetherGenerator::*rv)(class BoundingBox const &, unsigned int) const;
+        *((void**)&rv) = dlsym("?getBiomeArea@NetherGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z");
+        return (this->*rv)(std::forward<class BoundingBox const &>(a0), std::forward<unsigned int>(a1));
+    }
+    inline class BiomeSource const & getBiomeSource() const{
+        class BiomeSource const & (NetherGenerator::*rv)() const;
+        *((void**)&rv) = dlsym("?getBiomeSource@NetherGenerator@@UEBAAEBVBiomeSource@@XZ");
+        return (this->*rv)();
+    }
+    inline void loadChunk(class LevelChunk & a0, bool a1){
+        void (NetherGenerator::*rv)(class LevelChunk &, bool);
+        *((void**)&rv) = dlsym("?loadChunk@NetherGenerator@@UEAAXAEAVLevelChunk@@_N@Z");
+        return (this->*rv)(std::forward<class LevelChunk &>(a0), std::forward<bool>(a1));
+    }
+    inline bool postProcess(class ChunkViewSource & a0){
+        bool (NetherGenerator::*rv)(class ChunkViewSource &);
+        *((void**)&rv) = dlsym("?postProcess@NetherGenerator@@UEAA_NAEAVChunkViewSource@@@Z");
+        return (this->*rv)(std::forward<class ChunkViewSource &>(a0));
+    }
+    inline void prepareAndComputeHeights(class BlockVolume & a0, class ChunkPos const & a1, std::vector<short> & a2, bool a3, int a4){
+        void (NetherGenerator::*rv)(class BlockVolume &, class ChunkPos const &, std::vector<short> &, bool, int);
+        *((void**)&rv) = dlsym("?prepareAndComputeHeights@NetherGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z");
+        return (this->*rv)(std::forward<class BlockVolume &>(a0), std::forward<class ChunkPos const &>(a1), std::forward<std::vector<short> &>(a2), std::forward<bool>(a3), std::forward<int>(a4));
+    }
+    inline void prepareHeights(class BlockVolume & a0, class ChunkPos const & a1, bool a2){
+        void (NetherGenerator::*rv)(class BlockVolume &, class ChunkPos const &, bool);
+        *((void**)&rv) = dlsym("?prepareHeights@NetherGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z");
+        return (this->*rv)(std::forward<class BlockVolume &>(a0), std::forward<class ChunkPos const &>(a1), std::forward<bool>(a2));
+    }
+    */
     MCAPI NetherGenerator(class Dimension &, unsigned int, class Biome const *, std::unique_ptr<class StructureFeatureRegistry>);
     MCAPI void buildSurfaces(class BlockVolume &, class LevelChunk &, class ChunkPos const &);
     MCAPI class Util::MultidimensionalArray<float, 5, 5, 17> generateDensityCellsForChunk(class ChunkPos const &) const;

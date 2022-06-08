@@ -24,8 +24,6 @@ public:
     /*0*/ virtual ~ScriptPluginPackSourceEnumerator();
     /*1*/ virtual std::vector<struct PackIdVersion> const & getFullPackStack() const;
     /*2*/ virtual std::vector<std::unique_ptr<class IScriptPluginSource>> const & getPluginSources() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINPACKSOURCEENUMERATOR
-#endif
     MCAPI ScriptPluginPackSourceEnumerator(std::string const &, std::vector<class PackInstance> const &, std::vector<class PackInstance> const &);
 
 protected:

@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARTICLESBLOCKEXPLOSIONEVENT
-#endif
     MCAPI void addExplodePosition(class Vec3 const &);
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     MCAPI ~ParticlesBlockExplosionEvent();

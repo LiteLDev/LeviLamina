@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREINTEGRITYPROCESSOR
-#endif
     MCAPI StructureIntegrityProcessor(float, unsigned int);
     MCAPI std::vector<bool> generateFlagsForIndices(int, int) const;
 

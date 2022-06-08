@@ -357,28 +357,108 @@ public:
     /*275*/ virtual void updateInsideBlock();
     /*276*/ virtual void _removePassenger(struct ActorUniqueID const &, bool, bool, bool);
     /*277*/ virtual void _onSizeUpdated();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOR
-    MCVAPI void _doAutoAttackOnTouch(class Actor &);
-    MCVAPI bool _makeFlySound() const;
-    MCVAPI bool breaksFallingBlocks() const;
-    MCVAPI bool canExistInPeaceful() const;
-    MCVAPI bool canMakeStepSound() const;
-    MCVAPI bool canSeeInvisible() const;
-    MCVAPI void changeDimension(class ChangeDimensionPacket const &);
-    MCVAPI bool getAlwaysShowNameTag() const;
-    MCVAPI float getDeletionDelayTimeSeconds() const;
-    MCVAPI int getOutputSignal() const;
-    MCVAPI bool hasOutputSignal(unsigned char) const;
-    MCVAPI bool interactPreventDefault();
-    MCVAPI bool isCreativeModeAllowed();
-    MCVAPI bool isFishable() const;
-    MCVAPI bool isLeashableType();
-    MCVAPI bool isLocalPlayer() const;
-    MCVAPI bool isPlayer() const;
-    MCVAPI bool isShootable();
-    MCVAPI bool isTargetable() const;
-    MCVAPI void renderDebugServerState(class Options const &);
-#endif
+    /*
+    inline bool canSeeInvisible() const{
+        bool (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?canSeeInvisible@Actor@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isCreativeModeAllowed(){
+        bool (Actor::*rv)();
+        *((void**)&rv) = dlsym("?isCreativeModeAllowed@Actor@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool breaksFallingBlocks() const{
+        bool (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?breaksFallingBlocks@Actor@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isShootable(){
+        bool (Actor::*rv)();
+        *((void**)&rv) = dlsym("?isShootable@Actor@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasOutputSignal(unsigned char a0) const{
+        bool (Actor::*rv)(unsigned char) const;
+        *((void**)&rv) = dlsym("?hasOutputSignal@Actor@@UEBA_NE@Z");
+        return (this->*rv)(std::forward<unsigned char>(a0));
+    }
+    inline bool isLeashableType(){
+        bool (Actor::*rv)();
+        *((void**)&rv) = dlsym("?isLeashableType@Actor@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isLocalPlayer() const{
+        bool (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?isLocalPlayer@Actor@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool _makeFlySound() const{
+        bool (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?_makeFlySound@Actor@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isPlayer() const{
+        bool (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?isPlayer@Actor@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool interactPreventDefault(){
+        bool (Actor::*rv)();
+        *((void**)&rv) = dlsym("?interactPreventDefault@Actor@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool getAlwaysShowNameTag() const{
+        bool (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?getAlwaysShowNameTag@Actor@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline int getOutputSignal() const{
+        int (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?getOutputSignal@Actor@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline bool canExistInPeaceful() const{
+        bool (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?canExistInPeaceful@Actor@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isFishable() const{
+        bool (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?isFishable@Actor@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canMakeStepSound() const{
+        bool (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?canMakeStepSound@Actor@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isTargetable() const{
+        bool (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?isTargetable@Actor@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline void changeDimension(class ChangeDimensionPacket const & a0){
+        void (Actor::*rv)(class ChangeDimensionPacket const &);
+        *((void**)&rv) = dlsym("?changeDimension@Actor@@UEAAXAEBVChangeDimensionPacket@@@Z");
+        return (this->*rv)(std::forward<class ChangeDimensionPacket const &>(a0));
+    }
+    inline void renderDebugServerState(class Options const & a0){
+        void (Actor::*rv)(class Options const &);
+        *((void**)&rv) = dlsym("?renderDebugServerState@Actor@@UEAAXAEBVOptions@@@Z");
+        return (this->*rv)(std::forward<class Options const &>(a0));
+    }
+    inline void _doAutoAttackOnTouch(class Actor & a0){
+        void (Actor::*rv)(class Actor &);
+        *((void**)&rv) = dlsym("?_doAutoAttackOnTouch@Actor@@EEAAXAEAV1@@Z");
+        return (this->*rv)(std::forward<class Actor &>(a0));
+    }
+    inline float getDeletionDelayTimeSeconds() const{
+        float (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?getDeletionDelayTimeSeconds@Actor@@UEBAMXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI Actor(class ILevel &, class EntityContext &);
     MCAPI Actor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI class Vec3 _randomHeartPos();

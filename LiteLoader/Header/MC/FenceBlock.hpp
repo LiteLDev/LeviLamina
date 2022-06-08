@@ -71,10 +71,18 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FENCEBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-    MCVAPI bool isFenceBlock() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (FenceBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@FenceBlock@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isFenceBlock() const{
+        bool (FenceBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isFenceBlock@FenceBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI FenceBlock(std::string const &, int, class Material const &);
     MCAPI void fetchPathableNeighbors(std::vector<class BlockPos> &, class BlockSource &, class BlockPos const &, class Vec3 const &) const;
 

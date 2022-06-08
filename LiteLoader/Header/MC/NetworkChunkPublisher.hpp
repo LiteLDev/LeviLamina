@@ -29,8 +29,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKCHUNKPUBLISHER
-#endif
     MCAPI NetworkChunkPublisher(class Level &, class NetworkHandler &, class ClientBlobCache::Server::ActiveTransfersManager &, class NetworkIdentifier const &, unsigned char);
     MCAPI void clearRegion();
     MCAPI void destroyRegion();

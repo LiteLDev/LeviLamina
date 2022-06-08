@@ -54,8 +54,6 @@ public:
     /*26*/ virtual std::unique_ptr<class BlendingDataProvider> tryGetBlendingDataProvider();
     /*27*/ virtual class BiomeChunkBlendingAttenuator getBiomeHeightAttenuatorForLevelChunk(class ChunkPos const &);
     /*28*/ virtual class std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKSOURCE
-#endif
     MCAPI ChunkSource(class Dimension *, int);
     MCAPI ChunkSource(std::unique_ptr<class ChunkSource>);
     MCAPI void checkAndLaunchChunkGenerationTasks(bool);

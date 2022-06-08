@@ -25,8 +25,6 @@ public:
 public:
     /*0*/ virtual ~NullPreliminarySurfaceProvider();
     /*1*/ virtual class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NULLPRELIMINARYSURFACEPROVIDER
-#endif
 
 protected:
 

@@ -23,17 +23,53 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBVIEWOBSERVER
-    MCVAPI void onDownloadBegin(struct WebviewDownloadInfo const &);
-    MCVAPI void onDownloadCanceled(struct WebviewDownloadInfo const &);
-    MCVAPI void onDownloadComplete(struct WebviewDownloadInfo const &);
-    MCVAPI void onDownloadUpdate(struct WebviewDownloadInfo const &);
-    MCVAPI void onError(struct WebviewError const &);
-    MCVAPI void onLoadingBegin();
-    MCVAPI void onLoadingEnd();
-    MCVAPI void onMessageRecieved(std::string const &);
-    MCVAPI void onWebviewChanged();
-#endif
+    /*
+    inline void onDownloadBegin(struct WebviewDownloadInfo const & a0){
+        void (WebviewObserver::*rv)(struct WebviewDownloadInfo const &);
+        *((void**)&rv) = dlsym("?onDownloadBegin@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z");
+        return (this->*rv)(std::forward<struct WebviewDownloadInfo const &>(a0));
+    }
+    inline void onError(struct WebviewError const & a0){
+        void (WebviewObserver::*rv)(struct WebviewError const &);
+        *((void**)&rv) = dlsym("?onError@WebviewObserver@@UEAAXAEBUWebviewError@@@Z");
+        return (this->*rv)(std::forward<struct WebviewError const &>(a0));
+    }
+    inline void onWebviewChanged(){
+        void (WebviewObserver::*rv)();
+        *((void**)&rv) = dlsym("?onWebviewChanged@WebviewObserver@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void onMessageRecieved(std::string const & a0){
+        void (WebviewObserver::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?onMessageRecieved@WebviewObserver@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline void onDownloadCanceled(struct WebviewDownloadInfo const & a0){
+        void (WebviewObserver::*rv)(struct WebviewDownloadInfo const &);
+        *((void**)&rv) = dlsym("?onDownloadCanceled@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z");
+        return (this->*rv)(std::forward<struct WebviewDownloadInfo const &>(a0));
+    }
+    inline void onDownloadUpdate(struct WebviewDownloadInfo const & a0){
+        void (WebviewObserver::*rv)(struct WebviewDownloadInfo const &);
+        *((void**)&rv) = dlsym("?onDownloadUpdate@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z");
+        return (this->*rv)(std::forward<struct WebviewDownloadInfo const &>(a0));
+    }
+    inline void onDownloadComplete(struct WebviewDownloadInfo const & a0){
+        void (WebviewObserver::*rv)(struct WebviewDownloadInfo const &);
+        *((void**)&rv) = dlsym("?onDownloadComplete@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z");
+        return (this->*rv)(std::forward<struct WebviewDownloadInfo const &>(a0));
+    }
+    inline void onLoadingBegin(){
+        void (WebviewObserver::*rv)();
+        *((void**)&rv) = dlsym("?onLoadingBegin@WebviewObserver@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void onLoadingEnd(){
+        void (WebviewObserver::*rv)();
+        *((void**)&rv) = dlsym("?onLoadingEnd@WebviewObserver@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

@@ -27,8 +27,6 @@ public:
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATURE
-#endif
     MCAPI Feature(class Actor *);
 
 protected:

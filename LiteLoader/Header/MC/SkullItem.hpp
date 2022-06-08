@@ -49,8 +49,6 @@ public:
     /*124*/ virtual std::string getAuxValuesDescription() const;
     /*126*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKULLITEM
-#endif
     MCAPI SkullItem(std::string const &, int);
 
 protected:

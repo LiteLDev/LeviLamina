@@ -50,8 +50,6 @@ public:
     /*80*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*84*/ virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
     /*85*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAPONITEM
-#endif
     MCAPI WeaponItem(std::string const &, int, class Item::Tier const &);
 
 protected:

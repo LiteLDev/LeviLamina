@@ -25,8 +25,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DBSTORAGEENVIRONMENTCHAIN
-#endif
     MCAPI DBStorageEnvironmentChain(struct DBStorageConfig const &, class Core::Path const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>);
     MCAPI class CompactionListenerEnv * getCompactionListenerEnv() const;
     MCAPI class FlushableEnv * getFlushableEnv() const;

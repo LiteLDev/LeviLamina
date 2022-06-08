@@ -43,8 +43,6 @@ public:
     /*4*/ virtual class MerchantRecipe * getMatchingRecipeFor(class MerchantRecipe const &);
     /*5*/ virtual void load(class CompoundTag const &);
     /*6*/ virtual std::unique_ptr<class CompoundTag> createTag(bool) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MERCHANTRECIPELIST
-#endif
     MCAPI MerchantRecipeList();
     MCAPI void assignNetIds();
     MCAPI class MerchantRecipe const * getRecipeByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &) const;

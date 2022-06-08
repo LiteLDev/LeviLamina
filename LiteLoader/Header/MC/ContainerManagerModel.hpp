@@ -40,8 +40,6 @@ public:
     /*14*/ virtual bool isServerAuthoritative() const;
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit() = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERMANAGERMODEL
-#endif
     MCAPI ContainerManagerModel(enum ContainerID, class Player &);
     MCAPI class Player & getPlayer() const;
     MCAPI void postInit();

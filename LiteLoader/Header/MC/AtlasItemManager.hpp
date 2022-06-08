@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATLASITEMMANAGER
-#endif
     MCAPI class TextureAtlasItem const & getTextureItem(std::string const &) const;
 
 protected:

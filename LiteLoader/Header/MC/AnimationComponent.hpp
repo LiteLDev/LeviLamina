@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATIONCOMPONENT
-#endif
     MCAPI AnimationComponent(enum AnimationComponentGroup, class AnimationComponentID const &);
     MCAPI void applyAnimations(bool);
     MCAPI class std::shared_ptr<class ActorAnimationPlayer> createAnimationPlayer(class HashedString const &, class ExpressionNode const &, class std::set<class HashedString, struct std::hash<class HashedString>, class std::allocator<class HashedString>> &);

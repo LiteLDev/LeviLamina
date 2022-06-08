@@ -30,10 +30,18 @@ public:
     /*3*/ virtual enum PackOrigin getPackOrigin() const;
     /*4*/ virtual enum PackType getPackType() const;
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory &, class IContentKeyProvider const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDHISTORYPACKSOURCE
-    MCVAPI void forEachPack(class std::function<void (class Pack &)>);
-    MCVAPI void forEachPackConst(class std::function<void (class Pack const &)>) const;
-#endif
+    /*
+    inline void forEachPack(class std::function<void (class Pack &)> a0){
+        void (WorldHistoryPackSource::*rv)(class std::function<void (class Pack &)>);
+        *((void**)&rv) = dlsym("?forEachPack@WorldHistoryPackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z");
+        return (this->*rv)(std::forward<class std::function<void (class Pack &)>>(a0));
+    }
+    inline void forEachPackConst(class std::function<void (class Pack const &)> a0) const{
+        void (WorldHistoryPackSource::*rv)(class std::function<void (class Pack const &)>) const;
+        *((void**)&rv) = dlsym("?forEachPackConst@WorldHistoryPackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z");
+        return (this->*rv)(std::forward<class std::function<void (class Pack const &)>>(a0));
+    }
+    */
     MCAPI WorldHistoryPackSource(class Core::Path const &, enum PackType);
     MCAPI class Core::PathBuffer<std::string> const & getPathToWorld() const;
     MCAPI static class Core::PathBuffer<std::string> generateHistoryFilePath(class Core::Path const &, enum PackType);

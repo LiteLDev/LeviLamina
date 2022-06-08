@@ -25,8 +25,6 @@ public:
     /*0*/ virtual ~SequenceBehaviorNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
     /*2*/ virtual void initializeFromDefinition(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEQUENCEBEHAVIORNODE
-#endif
     MCAPI SequenceBehaviorNode();
 
 protected:

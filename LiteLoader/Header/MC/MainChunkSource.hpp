@@ -34,8 +34,6 @@ public:
     /*23*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const & getStorage() const;
     /*24*/ virtual void clearDeletedEntities();
     /*25*/ virtual bool canCreateViews() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAINCHUNKSOURCE
-#endif
     MCAPI MainChunkSource(std::unique_ptr<class ChunkSource>);
 
 protected:

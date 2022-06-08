@@ -23,15 +23,43 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLASERVERGAMEPLAYEVENTLISTENER
-    MCVAPI enum EventResult onBlockInteractedWith(class Player &, class BlockPos const &);
-    MCVAPI enum EventResult onBlockPlacedByPlayer(class Player &, class Block const &, class BlockPos const &, bool);
-    MCVAPI enum EventResult onEvent(struct ActorHurtEvent const &);
-    MCVAPI enum EventResult onEvent(struct PlayerDamageEvent const &);
-    MCVAPI enum EventResult onEvent(struct PlayerOpenContainerEvent const &);
-    MCVAPI enum EventResult onPlayerMovementAnomaly(class Player &, class Vec3 const &, float, float);
-    MCVAPI enum EventResult onPlayerMovementCorrected(class Player &, class Vec3 const &, float, float);
-#endif
+    /*
+    inline enum EventResult onEvent(struct ActorHurtEvent const & a0){
+        enum EventResult (VanillaServerGameplayEventListener::*rv)(struct ActorHurtEvent const &);
+        *((void**)&rv) = dlsym("?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUActorHurtEvent@@@Z");
+        return (this->*rv)(std::forward<struct ActorHurtEvent const &>(a0));
+    }
+    inline enum EventResult onEvent(struct PlayerDamageEvent const & a0){
+        enum EventResult (VanillaServerGameplayEventListener::*rv)(struct PlayerDamageEvent const &);
+        *((void**)&rv) = dlsym("?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerDamageEvent@@@Z");
+        return (this->*rv)(std::forward<struct PlayerDamageEvent const &>(a0));
+    }
+    inline enum EventResult onBlockInteractedWith(class Player & a0, class BlockPos const & a1){
+        enum EventResult (VanillaServerGameplayEventListener::*rv)(class Player &, class BlockPos const &);
+        *((void**)&rv) = dlsym("?onBlockInteractedWith@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class BlockPos const &>(a1));
+    }
+    inline enum EventResult onBlockPlacedByPlayer(class Player & a0, class Block const & a1, class BlockPos const & a2, bool a3){
+        enum EventResult (VanillaServerGameplayEventListener::*rv)(class Player &, class Block const &, class BlockPos const &, bool);
+        *((void**)&rv) = dlsym("?onBlockPlacedByPlayer@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlock@@AEBVBlockPos@@_N@Z");
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class Block const &>(a1), std::forward<class BlockPos const &>(a2), std::forward<bool>(a3));
+    }
+    inline enum EventResult onEvent(struct PlayerOpenContainerEvent const & a0){
+        enum EventResult (VanillaServerGameplayEventListener::*rv)(struct PlayerOpenContainerEvent const &);
+        *((void**)&rv) = dlsym("?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z");
+        return (this->*rv)(std::forward<struct PlayerOpenContainerEvent const &>(a0));
+    }
+    inline enum EventResult onPlayerMovementAnomaly(class Player & a0, class Vec3 const & a1, float a2, float a3){
+        enum EventResult (VanillaServerGameplayEventListener::*rv)(class Player &, class Vec3 const &, float, float);
+        *((void**)&rv) = dlsym("?onPlayerMovementAnomaly@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z");
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class Vec3 const &>(a1), std::forward<float>(a2), std::forward<float>(a3));
+    }
+    inline enum EventResult onPlayerMovementCorrected(class Player & a0, class Vec3 const & a1, float a2, float a3){
+        enum EventResult (VanillaServerGameplayEventListener::*rv)(class Player &, class Vec3 const &, float, float);
+        *((void**)&rv) = dlsym("?onPlayerMovementCorrected@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z");
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class Vec3 const &>(a1), std::forward<float>(a2), std::forward<float>(a3));
+    }
+    */
 
 protected:
 

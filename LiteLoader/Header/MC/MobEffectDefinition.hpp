@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTDEFINITION
-#endif
     MCAPI MobEffectDefinition();
     MCAPI void initialize(class EntityContext &, class MobEffectComponent &);
     MCAPI void setEffectTimeInTicks(int const &);

@@ -23,8 +23,6 @@ public:
 
 public:
     /*0*/ virtual void containerContentChanged(int);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERCOMPONENT
-#endif
     MCAPI ContainerComponent(class ContainerComponent &&);
     MCAPI ContainerComponent();
     MCAPI class FillingContainer * _getRawContainerPtr();

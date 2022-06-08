@@ -45,8 +45,6 @@ public:
     /*99*/ virtual class HashedString const & getCooldownType() const;
     /*100*/ virtual int getCooldownTime() const;
     /*119*/ virtual bool canBeCharged() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOATHORNITEM
-#endif
     MCAPI GoatHornItem(std::string const &, int);
     MCAPI static void addGoatHornVarationSaveData(class Goat &, class ItemStack &);
 

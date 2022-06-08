@@ -43,8 +43,6 @@ public:
     /*111*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LODESTONECOMPASSITEM
-#endif
     MCAPI LodestoneCompassItem(std::string const &, int);
     MCAPI static class PositionTrackingId getPositionTrackingId(class ItemStackBase const &);
     MCAPI static bool linkCompassToLodestone(class ItemStack &, class BlockSource &, class BlockPos);

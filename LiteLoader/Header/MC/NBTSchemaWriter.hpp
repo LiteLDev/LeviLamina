@@ -38,18 +38,58 @@ public:
     /*15*/ virtual bool openObject();
     /*16*/ virtual bool openArray();
     /*17*/ virtual void close();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTSCHEMAWRITER
-    MCVAPI bool write(unsigned __int64);
-    MCVAPI bool write(double);
-    MCVAPI bool write(__int64);
-    MCVAPI bool write(signed char);
-    MCVAPI bool write(unsigned char);
-    MCVAPI bool write(bool);
-    MCVAPI bool write(short);
-    MCVAPI bool write(unsigned short);
-    MCVAPI bool write(int);
-    MCVAPI bool write(unsigned int);
-#endif
+    /*
+    inline bool write(unsigned __int64 a0){
+        bool (NBTSchemaWriter::*rv)(unsigned __int64);
+        *((void**)&rv) = dlsym("?write@NBTSchemaWriter@@UEAA_N_K@Z");
+        return (this->*rv)(std::forward<unsigned __int64>(a0));
+    }
+    inline bool write(double a0){
+        bool (NBTSchemaWriter::*rv)(double);
+        *((void**)&rv) = dlsym("?write@NBTSchemaWriter@@UEAA_NN@Z");
+        return (this->*rv)(std::forward<double>(a0));
+    }
+    inline bool write(__int64 a0){
+        bool (NBTSchemaWriter::*rv)(__int64);
+        *((void**)&rv) = dlsym("?write@NBTSchemaWriter@@UEAA_N_J@Z");
+        return (this->*rv)(std::forward<__int64>(a0));
+    }
+    inline bool write(signed char a0){
+        bool (NBTSchemaWriter::*rv)(signed char);
+        *((void**)&rv) = dlsym("?write@NBTSchemaWriter@@UEAA_NC@Z");
+        return (this->*rv)(std::forward<signed char>(a0));
+    }
+    inline bool write(unsigned char a0){
+        bool (NBTSchemaWriter::*rv)(unsigned char);
+        *((void**)&rv) = dlsym("?write@NBTSchemaWriter@@UEAA_NE@Z");
+        return (this->*rv)(std::forward<unsigned char>(a0));
+    }
+    inline bool write(bool a0){
+        bool (NBTSchemaWriter::*rv)(bool);
+        *((void**)&rv) = dlsym("?write@NBTSchemaWriter@@UEAA_N_N@Z");
+        return (this->*rv)(std::forward<bool>(a0));
+    }
+    inline bool write(short a0){
+        bool (NBTSchemaWriter::*rv)(short);
+        *((void**)&rv) = dlsym("?write@NBTSchemaWriter@@UEAA_NF@Z");
+        return (this->*rv)(std::forward<short>(a0));
+    }
+    inline bool write(unsigned short a0){
+        bool (NBTSchemaWriter::*rv)(unsigned short);
+        *((void**)&rv) = dlsym("?write@NBTSchemaWriter@@UEAA_NG@Z");
+        return (this->*rv)(std::forward<unsigned short>(a0));
+    }
+    inline bool write(int a0){
+        bool (NBTSchemaWriter::*rv)(int);
+        *((void**)&rv) = dlsym("?write@NBTSchemaWriter@@UEAA_NH@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    inline bool write(unsigned int a0){
+        bool (NBTSchemaWriter::*rv)(unsigned int);
+        *((void**)&rv) = dlsym("?write@NBTSchemaWriter@@UEAA_NI@Z");
+        return (this->*rv)(std::forward<unsigned int>(a0));
+    }
+    */
     MCAPI NBTSchemaWriter();
 
 protected:

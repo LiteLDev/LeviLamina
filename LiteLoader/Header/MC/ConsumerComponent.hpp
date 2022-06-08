@@ -32,8 +32,6 @@ public:
     /*20*/ virtual void __unk_vfn_20();
     /*21*/ virtual bool isSecondaryPowered() const;
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSUMERCOMPONENT
-#endif
     MCAPI ConsumerComponent();
 
 protected:

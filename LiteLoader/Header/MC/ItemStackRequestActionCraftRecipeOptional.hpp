@@ -28,8 +28,6 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void _write(class BinaryStream &) const;
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTRECIPEOPTIONAL
-#endif
     MCAPI ItemStackRequestActionCraftRecipeOptional();
     MCAPI class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const & getRecipeNetId() const;
 

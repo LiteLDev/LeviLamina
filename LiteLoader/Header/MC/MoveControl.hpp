@@ -26,8 +26,6 @@ public:
     /*1*/ virtual void initializeInternal(class Mob &, struct MoveControlDescription *);
     /*2*/ virtual void tick(class MoveControlComponent &, class Mob &);
     /*3*/ virtual void setWantedPosition(class MoveControlComponent &, class Mob &, class Vec3 const &, float);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROL
-#endif
     MCAPI MoveControl();
     MCAPI static float const MIN_DELTA_TO_JUMP;
     MCAPI static float const MIN_DELTA_TO_JUMP_UNDERWATER;

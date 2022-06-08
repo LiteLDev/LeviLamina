@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCHEDULER
-#endif
     MCAPI Scheduler(std::string, unsigned int);
     MCAPI void changeThread(class std::thread::id);
     MCAPI class WorkerPool & getCoroutinePool();

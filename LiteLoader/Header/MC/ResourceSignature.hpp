@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCESIGNATURE
-#endif
     MCAPI bool areKnownFilesValid(class PackAccessStrategy const &);
     MCAPI ~ResourceSignature();
     MCAPI static class Core::PathBuffer<std::string> const SIGNATURE_FILENAME;

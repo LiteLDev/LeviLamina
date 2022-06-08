@@ -55,9 +55,13 @@ public:
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
     /*361*/ virtual bool isDarkEnoughToSpawn() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GHAST
-    MCVAPI bool useNewAi() const;
-#endif
+    /*
+    inline bool useNewAi() const{
+        bool (Ghast::*rv)() const;
+        *((void**)&rv) = dlsym("?useNewAi@Ghast@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI Ghast(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

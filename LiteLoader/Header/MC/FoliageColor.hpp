@@ -25,8 +25,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLIAGECOLOR
-#endif
     MCAPI static int getBirchColor(float, float);
     MCAPI static int getDefaultColor();
     MCAPI static int getEvergreenColor(float, float);

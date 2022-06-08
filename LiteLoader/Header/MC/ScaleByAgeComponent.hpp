@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCALEBYAGECOMPONENT
-#endif
     MCAPI ScaleByAgeComponent();
     MCAPI void _initializeScale(class EntityContext &);
 

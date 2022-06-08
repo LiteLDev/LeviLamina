@@ -22,11 +22,23 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTRESULTS_DEPRECATEDASKTYLAING
-    MCVAPI bool _read(class ReadOnlyBinaryStream &);
-    MCVAPI void _write(class BinaryStream &) const;
-    MCVAPI void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette &, bool);
-#endif
+    /*
+    inline bool _read(class ReadOnlyBinaryStream & a0){
+        bool (ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING::*rv)(class ReadOnlyBinaryStream &);
+        *((void**)&rv) = dlsym("?_read@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@MEAA_NAEAVReadOnlyBinaryStream@@@Z");
+        return (this->*rv)(std::forward<class ReadOnlyBinaryStream &>(a0));
+    }
+    inline void _write(class BinaryStream & a0) const{
+        void (ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING::*rv)(class BinaryStream &) const;
+        *((void**)&rv) = dlsym("?_write@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@MEBAXAEAVBinaryStream@@@Z");
+        return (this->*rv)(std::forward<class BinaryStream &>(a0));
+    }
+    inline void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette & a0, bool a1){
+        void (ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING::*rv)(class BlockPalette &, bool);
+        *((void**)&rv) = dlsym("?postLoadItems_DEPRECATEDASKTYLAING@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@UEAAXAEAVBlockPalette@@_N@Z");
+        return (this->*rv)(std::forward<class BlockPalette &>(a0), std::forward<bool>(a1));
+    }
+    */
     MCAPI ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
     MCAPI unsigned char getNumCrafts() const;
     MCAPI std::vector<class ItemInstance> const & getResults() const;

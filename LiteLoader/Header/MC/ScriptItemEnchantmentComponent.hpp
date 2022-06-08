@@ -21,8 +21,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptItemEnchantmentComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMENCHANTMENTCOMPONENT
-#endif
     MCAPI ScriptItemEnchantmentComponent(class ScriptItemEnchantmentComponent const &);
     MCAPI ScriptItemEnchantmentComponent(class Scripting::WeakTypedObjectHandle<class ScriptItemStack>, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<class ScriptItemEnchantments> getEnchantments() const;

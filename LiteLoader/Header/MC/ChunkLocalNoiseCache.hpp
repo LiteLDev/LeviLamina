@@ -28,8 +28,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKLOCALNOISECACHE
-#endif
     MCAPI ChunkLocalNoiseCache(class DividedPos2d<4>, int);
     MCAPI ChunkLocalNoiseCache();
     MCAPI struct ChunkLocalNoiseCache::CacheEntry const & getCacheEntry(class DividedPos2d<4> const &) const;

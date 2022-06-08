@@ -26,8 +26,6 @@ public:
 public:
     /*0*/ virtual ~ServerCorrectionPolicy();
     /*3*/ virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy &, class PlayerAuthInputPacket const &, unsigned __int64);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCORRECTIONPOLICY
-#endif
 
 protected:
 

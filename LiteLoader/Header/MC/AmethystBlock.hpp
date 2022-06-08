@@ -61,9 +61,13 @@ public:
     /*180*/ virtual void __unk_vfn_180();
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMETHYSTBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (AmethystBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@AmethystBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI AmethystBlock(std::string const &, int, class Material const &);
 
 protected:

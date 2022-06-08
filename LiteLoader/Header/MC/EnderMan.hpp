@@ -60,8 +60,6 @@ public:
     /*345*/ virtual void __unk_vfn_345();
     /*354*/ virtual void newServerAiStep();
     /*359*/ virtual void __unk_vfn_359();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERMAN
-#endif
     MCAPI EnderMan(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI class Block const & getCarryingBlock();
     MCAPI void setCarryingBlock(class Block const &);

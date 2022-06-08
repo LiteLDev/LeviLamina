@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPINLOCK
-#endif
     MCAPI SpinLock();
     MCAPI void lock();
     MCAPI bool try_lock();

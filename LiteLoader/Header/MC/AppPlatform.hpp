@@ -31,209 +31,1013 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORM
-    MCVAPI std::unique_ptr<class Bedrock::Http::IProxyResolver> _createProxyResolver();
-    MCVAPI void _disableCPUBoost();
-    MCVAPI void _fireAppTerminated();
-    MCVAPI void _initializeFileStorageAreas();
-    MCVAPI void _onInitialize();
-    MCVAPI void _onTeardown();
-    MCVAPI void _teardownFileStorageAreas();
-    MCVAPI bool _tryEnableCPUBoost();
-    MCVAPI bool allowBetaXblSignIn() const;
-    MCVAPI bool allowContentLogWriteToDisk();
-    MCVAPI bool allowsResourcePackDevelopment() const;
-    MCVAPI bool alwaysUseZippedPacksForDlc() const;
-    MCVAPI bool areThreadsFrozen() const;
-    MCVAPI void buyGame();
-    MCVAPI bool canLaunchUri(std::string const &);
-    MCVAPI bool canManageLegacyData() const;
-    MCVAPI bool canSwapVRMode(bool) const;
-    MCVAPI int checkLicense();
-    MCVAPI void collectGraphicsHardwareDetails();
-    MCVAPI bool compareAppReceiptToLocalReceipt(std::string const &);
-    MCVAPI bool copyAssetFile(class Core::Path const &, class Core::Path const &);
-    MCVAPI class Core::PathBuffer<std::string> copyImportFileToTempFolder(class Core::Path const &);
-    MCVAPI class std::shared_ptr<class Core::FileStorageArea> createLoggingStorageArea(enum Core::FileAccessType, class Core::Path const &);
-    MCVAPI void createUserInput();
-    MCVAPI class std::shared_ptr<class WebviewInterface> createWebview(class Webview::PlatformArguments &&) const;
-    MCVAPI bool doesLANRequireMultiplayerRestrictions() const;
-    MCVAPI void exitVRMode(class std::function<void (void)>);
-    MCVAPI void finish();
-    MCVAPI enum ARVRPlatform getARVRPlatform() const;
-    MCVAPI struct AppPlatform::AndroidScopedStorageInfo const & getAndroidScopedStorageInfo() const;
-    MCVAPI class Core::PathBuffer<std::string> getAssetFileFullPath(class Core::Path const &);
-    MCVAPI std::vector<std::string> getBroadcastAddresses();
-    MCVAPI std::vector<enum Social::MultiplayerServiceIdentifier> getBroadcastingMultiplayerServiceIds(bool, bool) const;
-    MCVAPI enum BuildPlatform getBuildPlatform() const;
-    MCVAPI class Core::PathBuffer<std::string> getCacheStoragePath();
-    MCVAPI class Core::PathBuffer<std::string> getCatalogSearchScratchPath();
-    MCVAPI std::string getClientUpdateUrl() const;
-    MCVAPI enum InputMode getDefaultInputMode() const;
-    MCVAPI int getDefaultNetworkMaxPlayers() const;
-    MCVAPI float getDefaultSafeZoneScaleX() const;
-    MCVAPI float getDefaultSafeZoneScaleY() const;
-    MCVAPI float getDefaultScreenPositionX() const;
-    MCVAPI float getDefaultScreenPositionY() const;
-    MCVAPI enum DeviceSunsetTier getDeviceSunsetTier() const;
-    MCVAPI int getDisplayHeight();
-    MCVAPI int getDisplayWidth();
-    MCVAPI std::string getEdition() const;
-    MCVAPI class std::optional<struct ScreenshotOptions> getExtraLevelSaveDataIconParams(std::string const &) const;
-    MCVAPI std::string getFeedbackBugsLink() const;
-    MCVAPI std::string getFeedbackHelpLink() const;
-    MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> getFileAccess(enum ResourceFileSystem);
-    MCVAPI unsigned __int64 getHighPerformanceThreadsCount() const;
-    MCVAPI std::vector<std::string> getIPAddresses();
-    MCVAPI class Core::PathBuffer<std::string> getInternalPackStoragePath() const;
-    MCVAPI class Core::PathBuffer<std::string> getLevelInfoCachePath() const;
-    MCVAPI class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> getLevelSaveInterval() const;
-    MCVAPI class Core::PathBuffer<std::string> getLoggingPath() const;
-    MCVAPI unsigned __int64 getLowPhysicalMemoryThreshold() const;
-    MCVAPI int getMaxSimRadiusInChunks() const;
-    MCVAPI int getMaxSimultaneousDownloads() const;
-    MCVAPI unsigned int getMaxSimultaneousServiceRequests() const;
-    MCVAPI unsigned __int64 getMaximumUsedMemory();
-    MCVAPI void ( *)(std::string const &, std::string const &) getModalErrorMessageProc();
-    MCVAPI std::string getModelName();
-    MCVAPI std::vector<class std::shared_ptr<class Social::MultiplayerService>> getMultiplayerServiceListToRegister() const;
-    MCVAPI int getNumberOfParticleFramesToInterpolate() const;
-    MCVAPI enum OsVersion getOSVersion() const;
-    MCVAPI class Core::PathBuffer<std::string> getOnDiskPackScratchPath();
-    MCVAPI class Core::PathBuffer<std::string> getOnDiskScratchPath();
-    MCVAPI class std::optional<enum OperationMode> getOperationMode() const;
-    MCVAPI unsigned __int64 getOptimalLDBSize();
-    MCVAPI class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> getOptionsSaveInterval() const;
-    MCVAPI std::string getPackageFamilyName() const;
-    MCVAPI class Core::PathBuffer<std::string> getPackagedShaderCachePath();
-    MCVAPI float getPixelsPerMillimeter();
-    MCVAPI int getPlatformDpi() const;
-    MCVAPI std::string getPlatformStringVar(int);
-    MCVAPI bool getPlatformTTSEnabled() const;
-    MCVAPI bool getPlatformTTSExists() const;
-    MCVAPI enum PlatformType getPlatformType() const;
-    MCVAPI enum UIScalingRules getPlatformUIScalingRules() const;
-    MCVAPI class std::variant<struct HWND__*, struct std::monostate> getRenderSurfaceParameters() const;
-    MCVAPI int getScreenHeight() const;
-    MCVAPI int getScreenWidth() const;
-    MCVAPI std::unique_ptr<class SecureStorage> getSecureStorage();
-    MCVAPI class SecureStorageKey getSecureStorageKey(std::string const &);
-    MCVAPI class Core::PathBuffer<std::string> getSettingsPath();
-    MCVAPI class Core::PathBuffer<std::string> getShaderCachePath();
-    MCVAPI float getStoreNetworkFailureTimeout() const;
-    MCVAPI class mce::UUID const & getThirdPartyPackUUID() const;
-    MCVAPI unsigned __int64 getTotalHardwareThreadsCount() const;
-    MCVAPI std::vector<std::string> getUserInput();
-    MCVAPI int getUserInputStatus();
-    MCVAPI class Core::PathBuffer<std::string> getUserStorageRootPath() const;
-    MCVAPI class Core::PathBuffer<std::string> getUserdataPathForLevels() const;
-    MCVAPI enum VRControllerType getVRControllerType() const;
-    MCVAPI void goToExternalConsumablesStoreListing() const;
-    MCVAPI void handlePlatformSpecificCommerceError(unsigned int);
-    MCVAPI bool hasAssetFile(class Core::Path const &);
-    MCVAPI bool hasBuyButtonWhenInvalidLicense();
-    MCVAPI bool hasFastAlphaTest() const;
-    MCVAPI bool hasIDEProfiler();
-    MCVAPI bool hasJournalingFilesystem() const;
-    MCVAPI bool hasPlatformSpecificInvites() const;
-    MCVAPI bool hasSeparatedStorageAreasForContentAcquisition() const;
-    MCVAPI void hideSplashScreen();
-    MCVAPI bool importAsFlatFile() const;
-    MCVAPI void initialize();
-    MCVAPI void initializeGameStreaming();
-    MCVAPI void initializeScreenDependentResources();
-    MCVAPI bool isAutoCompactionEnabled() const;
-    MCVAPI bool isBrazeEnabled() const;
-    MCVAPI bool isCentennial() const;
-    MCVAPI bool isContentAutoUpdateAllowed() const;
-    MCVAPI bool isCrossPlatformToggleVisible() const;
-    MCVAPI bool isDisplayInitialized() const;
-    MCVAPI bool isDownloadAndImportBlocking() const;
-    MCVAPI bool isDownloadBuffered() const;
-    MCVAPI bool isFireTV() const;
-    MCVAPI bool isJoinableViaExternalServers() const;
-    MCVAPI bool isKeyboardVisible() const;
-    MCVAPI bool isLANAllowed() const;
-    MCVAPI bool isLowMemoryDevice() const;
-    MCVAPI bool isLowPhysicalMemoryDevice() const;
-    MCVAPI bool isNetworkAllowed() const;
-    MCVAPI bool isNetworkAvailable() const;
-    MCVAPI bool isNetworkEnabled(bool) const;
-    MCVAPI bool isNetworkThrottled() const;
-    MCVAPI class std::optional<bool> isOnWifiConnectionTelemetryValue();
-    MCVAPI bool isQuitCapable() const;
-    MCVAPI bool isRatingsPromptSupported() const;
-    MCVAPI bool isRealmsEnabled() const;
-    MCVAPI bool isTelemetryAllowed();
-    MCVAPI bool isTrialWorldsTransferToFullGameAllowed() const;
-    MCVAPI bool isWebviewSupported() const;
-    MCVAPI bool isWin10Arm() const;
-    MCVAPI void launchLegacyVersion();
-    MCVAPI void launchRatingsPrompt();
-    MCVAPI void launchSettings();
-    MCVAPI void launchUri(std::string const &);
-    MCVAPI class std::set<class Core::PathBuffer<std::string>, struct std::less<class Core::PathBuffer<std::string>>, class std::allocator<class Core::PathBuffer<std::string>>> listAssetFilesIn(class Core::Path const &, std::string const &) const;
-    MCVAPI unsigned int maxFileDataRequestConcurrency() const;
-    MCVAPI bool minimizeBackgroundDownloads() const;
-    MCVAPI bool multiplayerRequiresPremiumAccess() const;
-    MCVAPI bool multiplayerRequiresUGCEnabled() const;
-    MCVAPI bool notifyControllerConnectionStateChange() const;
-    MCVAPI void onPrimaryUserNetworkReady();
-    MCVAPI bool platformRequiresControllerApplet() const;
-    MCVAPI std::string readAssetFile(class Core::Path const &);
-    MCVAPI void registerExperimentsActiveCrashDump(std::vector<std::string> const &) const;
-    MCVAPI void registerFileForCollectionWithCrashDump(class Core::Path const &);
-    MCVAPI bool reloadRenderResourcesOnResume() const;
-    MCVAPI bool requireControllerAtStartup() const;
-    MCVAPI bool requiresAutoSaveIconExplanationPopup() const;
-    MCVAPI bool requiresLiveGoldForMultiplayer() const;
-    MCVAPI bool requiresNetworkOutageMessaging() const;
-    MCVAPI bool requiresPatchNoticePopup() const;
-    MCVAPI bool requiresXboxLiveSigninToPlay() const;
-    MCVAPI void restartApp(bool);
-    MCVAPI bool restartRequested();
-    MCVAPI void setARVRPlatform(enum ARVRPlatform);
-    MCVAPI void setBrazeID(std::string const &);
-    MCVAPI void setFullscreenMode(enum FullscreenMode);
-    MCVAPI void setNetworkAllowed(bool);
-    MCVAPI void setScreenSize(int, int);
-    MCVAPI void setSecureStorageKey(std::string const &, class SecureStorageKey const &);
-    MCVAPI void setSleepEnabled(bool);
-    MCVAPI void setThreadsFrozen(bool);
-    MCVAPI void setVRControllerType(enum VRControllerType);
-    MCVAPI void setWindowSize(int, int);
-    MCVAPI void setWindowText(std::string const &);
-    MCVAPI bool shouldPauseDownloadsWhenEnterGame() const;
-    MCVAPI bool shouldRegisterForXboxLiveNotifications() const;
-    MCVAPI bool shouldRemoveGraphicsDeviceOnAppTermination() const;
-    MCVAPI void showDialog(int);
-    MCVAPI void showPlatformEmptyStoreDialog(class std::function<void (bool)> &&);
-    MCVAPI void showPlatformStoreIcon(bool);
-    MCVAPI bool supportsAutoSaveOnDBCompaction() const;
-    MCVAPI bool supportsClientUpdate() const;
-    MCVAPI bool supportsDayOneExperience() const;
-    MCVAPI bool supportsFliteTTS() const;
-    MCVAPI bool supportsInPackageRecursion() const;
-    MCVAPI bool supportsLaunchingLegacyVersion() const;
-    MCVAPI bool supportsLegacySinglePremiumCacheDirectory() const;
-    MCVAPI bool supportsVRModeSwap() const;
-    MCVAPI bool supportsVibration() const;
-    MCVAPI bool supportsWorldShare() const;
-    MCVAPI bool supportsXboxLiveAchievements() const;
-    MCVAPI void teardown();
-    MCVAPI void trackPurchaseEvent(std::string const &, std::string const &, std::string const &, std::string const &, std::string const &, std::string const &, std::string const &, std::string const &);
-    MCVAPI void tryEnterVRMode(bool, class std::function<void (bool)>);
-    MCVAPI void updateLocalization(std::string const &);
-    MCVAPI void updateTextBoxText(std::string const &);
-    MCVAPI bool useAppPlatformForTelemetryIPAddress();
-    MCVAPI bool useNativeStoreForRealmsPurchase();
-    MCVAPI bool usePlatformProfilePicturesOnly() const;
-    MCVAPI bool useXboxControlHelpers() const;
-    MCVAPI bool usesAsyncOptionSaving() const;
-    MCVAPI bool usesHDRBrightness() const;
-    MCVAPI void vibrate(int);
-    MCVAPI ~AppPlatform();
-#endif
+    /*
+    inline bool isDownloadBuffered() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isDownloadBuffered@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool getPlatformTTSExists() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getPlatformTTSExists@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isCentennial() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isCentennial@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasFastAlphaTest() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?hasFastAlphaTest@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasIDEProfiler(){
+        bool (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?hasIDEProfiler@AppPlatform@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isWin10Arm() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isWin10Arm@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasBuyButtonWhenInvalidLicense(){
+        bool (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?hasBuyButtonWhenInvalidLicense@AppPlatform@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool requiresAutoSaveIconExplanationPopup() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?requiresAutoSaveIconExplanationPopup@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool minimizeBackgroundDownloads() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?minimizeBackgroundDownloads@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool usesHDRBrightness() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?usesHDRBrightness@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasSeparatedStorageAreasForContentAcquisition() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?hasSeparatedStorageAreasForContentAcquisition@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool requiresXboxLiveSigninToPlay() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?requiresXboxLiveSigninToPlay@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isRatingsPromptSupported() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isRatingsPromptSupported@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool shouldRemoveGraphicsDeviceOnAppTermination() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?shouldRemoveGraphicsDeviceOnAppTermination@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool useXboxControlHelpers() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?useXboxControlHelpers@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isFireTV() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isFireTV@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isAutoCompactionEnabled() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isAutoCompactionEnabled@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool supportsDayOneExperience() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?supportsDayOneExperience@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool _tryEnableCPUBoost(){
+        bool (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?_tryEnableCPUBoost@AppPlatform@@MEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool requiresNetworkOutageMessaging() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?requiresNetworkOutageMessaging@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isBrazeEnabled() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isBrazeEnabled@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool multiplayerRequiresPremiumAccess() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?multiplayerRequiresPremiumAccess@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool supportsWorldShare() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?supportsWorldShare@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool supportsFliteTTS() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?supportsFliteTTS@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isTrialWorldsTransferToFullGameAllowed() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isTrialWorldsTransferToFullGameAllowed@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool alwaysUseZippedPacksForDlc() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?alwaysUseZippedPacksForDlc@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool requiresLiveGoldForMultiplayer() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?requiresLiveGoldForMultiplayer@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isWebviewSupported() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isWebviewSupported@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool supportsAutoSaveOnDBCompaction() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?supportsAutoSaveOnDBCompaction@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool useAppPlatformForTelemetryIPAddress(){
+        bool (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?useAppPlatformForTelemetryIPAddress@AppPlatform@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool compareAppReceiptToLocalReceipt(std::string const & a0){
+        bool (AppPlatform::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?compareAppReceiptToLocalReceipt@AppPlatform@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline bool isCrossPlatformToggleVisible() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isCrossPlatformToggleVisible@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool importAsFlatFile() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?importAsFlatFile@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool requiresPatchNoticePopup() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?requiresPatchNoticePopup@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canLaunchUri(std::string const & a0){
+        bool (AppPlatform::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?canLaunchUri@AppPlatform@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline bool requireControllerAtStartup() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?requireControllerAtStartup@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasPlatformSpecificInvites() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?hasPlatformSpecificInvites@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool supportsLaunchingLegacyVersion() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?supportsLaunchingLegacyVersion@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasJournalingFilesystem() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?hasJournalingFilesystem@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canManageLegacyData() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?canManageLegacyData@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool supportsVRModeSwap() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?supportsVRModeSwap@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canSwapVRMode(bool a0) const{
+        bool (AppPlatform::*rv)(bool) const;
+        *((void**)&rv) = dlsym("?canSwapVRMode@AppPlatform@@UEBA_N_N@Z");
+        return (this->*rv)(std::forward<bool>(a0));
+    }
+    inline bool platformRequiresControllerApplet() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?platformRequiresControllerApplet@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool usePlatformProfilePicturesOnly() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?usePlatformProfilePicturesOnly@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool multiplayerRequiresUGCEnabled() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?multiplayerRequiresUGCEnabled@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isDownloadAndImportBlocking() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isDownloadAndImportBlocking@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool doesLANRequireMultiplayerRestrictions() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?doesLANRequireMultiplayerRestrictions@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool usesAsyncOptionSaving() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?usesAsyncOptionSaving@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool shouldPauseDownloadsWhenEnterGame() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?shouldPauseDownloadsWhenEnterGame@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool shouldRegisterForXboxLiveNotifications() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?shouldRegisterForXboxLiveNotifications@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline int getUserInputStatus(){
+        int (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?getUserInputStatus@AppPlatform@@UEAAHXZ");
+        return (this->*rv)();
+    }
+    inline int checkLicense(){
+        int (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?checkLicense@AppPlatform@@UEAAHXZ");
+        return (this->*rv)();
+    }
+    inline int getPlatformDpi() const{
+        int (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getPlatformDpi@AppPlatform@@EEBAHXZ");
+        return (this->*rv)();
+    }
+    inline enum OsVersion getOSVersion() const{
+        enum OsVersion (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getOSVersion@AppPlatform@@UEBA?AW4OsVersion@@XZ");
+        return (this->*rv)();
+    }
+    inline bool isTelemetryAllowed(){
+        bool (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?isTelemetryAllowed@AppPlatform@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isDisplayInitialized() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isDisplayInitialized@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isLANAllowed() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isLANAllowed@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool allowsResourcePackDevelopment() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?allowsResourcePackDevelopment@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool notifyControllerConnectionStateChange() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?notifyControllerConnectionStateChange@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isNetworkAllowed() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isNetworkAllowed@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isContentAutoUpdateAllowed() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isContentAutoUpdateAllowed@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool getPlatformTTSEnabled() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getPlatformTTSEnabled@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool supportsVibration() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?supportsVibration@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool reloadRenderResourcesOnResume() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?reloadRenderResourcesOnResume@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool supportsClientUpdate() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?supportsClientUpdate@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool supportsInPackageRecursion() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?supportsInPackageRecursion@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool allowBetaXblSignIn() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?allowBetaXblSignIn@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool allowContentLogWriteToDisk(){
+        bool (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?allowContentLogWriteToDisk@AppPlatform@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isNetworkEnabled(bool a0) const{
+        bool (AppPlatform::*rv)(bool) const;
+        *((void**)&rv) = dlsym("?isNetworkEnabled@AppPlatform@@UEBA_N_N@Z");
+        return (this->*rv)(std::forward<bool>(a0));
+    }
+    inline bool useNativeStoreForRealmsPurchase(){
+        bool (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?useNativeStoreForRealmsPurchase@AppPlatform@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool supportsXboxLiveAchievements() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?supportsXboxLiveAchievements@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isJoinableViaExternalServers() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isJoinableViaExternalServers@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool supportsLegacySinglePremiumCacheDirectory() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?supportsLegacySinglePremiumCacheDirectory@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline void updateLocalization(std::string const & a0){
+        void (AppPlatform::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?updateLocalization@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline void setWindowText(std::string const & a0){
+        void (AppPlatform::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?setWindowText@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline void buyGame(){
+        void (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?buyGame@AppPlatform@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void launchRatingsPrompt(){
+        void (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?launchRatingsPrompt@AppPlatform@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void createUserInput(){
+        void (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?createUserInput@AppPlatform@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void launchSettings(){
+        void (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?launchSettings@AppPlatform@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void setWindowSize(int a0, int a1){
+        void (AppPlatform::*rv)(int, int);
+        *((void**)&rv) = dlsym("?setWindowSize@AppPlatform@@UEAAXHH@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
+    inline void launchLegacyVersion(){
+        void (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?launchLegacyVersion@AppPlatform@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void handlePlatformSpecificCommerceError(unsigned int a0){
+        void (AppPlatform::*rv)(unsigned int);
+        *((void**)&rv) = dlsym("?handlePlatformSpecificCommerceError@AppPlatform@@UEAAXI@Z");
+        return (this->*rv)(std::forward<unsigned int>(a0));
+    }
+    inline void launchUri(std::string const & a0){
+        void (AppPlatform::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?launchUri@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline void goToExternalConsumablesStoreListing() const{
+        void (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?goToExternalConsumablesStoreListing@AppPlatform@@UEBAXXZ");
+        return (this->*rv)();
+    }
+    inline void finish(){
+        void (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?finish@AppPlatform@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void updateTextBoxText(std::string const & a0){
+        void (AppPlatform::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?updateTextBoxText@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline void initializeScreenDependentResources(){
+        void (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?initializeScreenDependentResources@AppPlatform@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void hideSplashScreen(){
+        void (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?hideSplashScreen@AppPlatform@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void onPrimaryUserNetworkReady(){
+        void (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?onPrimaryUserNetworkReady@AppPlatform@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void _onInitialize(){
+        void (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?_onInitialize@AppPlatform@@EEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void showPlatformStoreIcon(bool a0){
+        void (AppPlatform::*rv)(bool);
+        *((void**)&rv) = dlsym("?showPlatformStoreIcon@AppPlatform@@UEAAX_N@Z");
+        return (this->*rv)(std::forward<bool>(a0));
+    }
+    inline void setNetworkAllowed(bool a0){
+        void (AppPlatform::*rv)(bool);
+        *((void**)&rv) = dlsym("?setNetworkAllowed@AppPlatform@@UEAAX_N@Z");
+        return (this->*rv)(std::forward<bool>(a0));
+    }
+    inline void _initializeFileStorageAreas(){
+        void (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?_initializeFileStorageAreas@AppPlatform@@MEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void setScreenSize(int a0, int a1){
+        void (AppPlatform::*rv)(int, int);
+        *((void**)&rv) = dlsym("?setScreenSize@AppPlatform@@UEAAXHH@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
+    inline void _onTeardown(){
+        void (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?_onTeardown@AppPlatform@@EEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void _disableCPUBoost(){
+        void (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?_disableCPUBoost@AppPlatform@@MEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void trackPurchaseEvent(std::string const & a0, std::string const & a1, std::string const & a2, std::string const & a3, std::string const & a4, std::string const & a5, std::string const & a6, std::string const & a7){
+        void (AppPlatform::*rv)(std::string const &, std::string const &, std::string const &, std::string const &, std::string const &, std::string const &, std::string const &, std::string const &);
+        *((void**)&rv) = dlsym("?trackPurchaseEvent@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0000000@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<std::string const &>(a1), std::forward<std::string const &>(a2), std::forward<std::string const &>(a3), std::forward<std::string const &>(a4), std::forward<std::string const &>(a5), std::forward<std::string const &>(a6), std::forward<std::string const &>(a7));
+    }
+    inline void setSleepEnabled(bool a0){
+        void (AppPlatform::*rv)(bool);
+        *((void**)&rv) = dlsym("?setSleepEnabled@AppPlatform@@UEAAX_N@Z");
+        return (this->*rv)(std::forward<bool>(a0));
+    }
+    inline void setSecureStorageKey(std::string const & a0, class SecureStorageKey const & a1){
+        void (AppPlatform::*rv)(std::string const &, class SecureStorageKey const &);
+        *((void**)&rv) = dlsym("?setSecureStorageKey@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSecureStorageKey@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class SecureStorageKey const &>(a1));
+    }
+    inline void registerFileForCollectionWithCrashDump(class Core::Path const & a0){
+        void (AppPlatform::*rv)(class Core::Path const &);
+        *((void**)&rv) = dlsym("?registerFileForCollectionWithCrashDump@AppPlatform@@UEAAXAEBVPath@Core@@@Z");
+        return (this->*rv)(std::forward<class Core::Path const &>(a0));
+    }
+    inline void setBrazeID(std::string const & a0){
+        void (AppPlatform::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?setBrazeID@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline void showDialog(int a0){
+        void (AppPlatform::*rv)(int);
+        *((void**)&rv) = dlsym("?showDialog@AppPlatform@@UEAAXH@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    inline void registerExperimentsActiveCrashDump(std::vector<std::string> const & a0) const{
+        void (AppPlatform::*rv)(std::vector<std::string> const &) const;
+        *((void**)&rv) = dlsym("?registerExperimentsActiveCrashDump@AppPlatform@@UEBAXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::vector<std::string> const &>(a0));
+    }
+    inline void initializeGameStreaming(){
+        void (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?initializeGameStreaming@AppPlatform@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void vibrate(int a0){
+        void (AppPlatform::*rv)(int);
+        *((void**)&rv) = dlsym("?vibrate@AppPlatform@@UEAAXH@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    inline void setFullscreenMode(enum FullscreenMode a0){
+        void (AppPlatform::*rv)(enum FullscreenMode);
+        *((void**)&rv) = dlsym("?setFullscreenMode@AppPlatform@@UEAAXW4FullscreenMode@@@Z");
+        return (this->*rv)(std::forward<enum FullscreenMode>(a0));
+    }
+    inline enum PlatformType getPlatformType() const{
+        enum PlatformType (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getPlatformType@AppPlatform@@UEBA?AW4PlatformType@@XZ");
+        return (this->*rv)();
+    }
+    inline std::string getPackageFamilyName() const{
+        std::string (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getPackageFamilyName@AppPlatform@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline float getDefaultScreenPositionY() const{
+        float (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getDefaultScreenPositionY@AppPlatform@@UEBAMXZ");
+        return (this->*rv)();
+    }
+    inline float getDefaultScreenPositionX() const{
+        float (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getDefaultScreenPositionX@AppPlatform@@UEBAMXZ");
+        return (this->*rv)();
+    }
+    inline std::vector<std::string> getIPAddresses(){
+        std::vector<std::string> (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?getIPAddresses@AppPlatform@@UEAA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline std::vector<class std::shared_ptr<class Social::MultiplayerService>> getMultiplayerServiceListToRegister() const{
+        std::vector<class std::shared_ptr<class Social::MultiplayerService>> (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getMultiplayerServiceListToRegister@AppPlatform@@UEBA?AV?$vector@V?$shared_ptr@VMultiplayerService@Social@@@std@@V?$allocator@V?$shared_ptr@VMultiplayerService@Social@@@std@@@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline std::vector<std::string> getBroadcastAddresses(){
+        std::vector<std::string> (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?getBroadcastAddresses@AppPlatform@@UEAA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline std::vector<std::string> getUserInput(){
+        std::vector<std::string> (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?getUserInput@AppPlatform@@UEAA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline std::vector<enum Social::MultiplayerServiceIdentifier> getBroadcastingMultiplayerServiceIds(bool a0, bool a1) const{
+        std::vector<enum Social::MultiplayerServiceIdentifier> (AppPlatform::*rv)(bool, bool) const;
+        *((void**)&rv) = dlsym("?getBroadcastingMultiplayerServiceIds@AppPlatform@@UEBA?AV?$vector@W4MultiplayerServiceIdentifier@Social@@V?$allocator@W4MultiplayerServiceIdentifier@Social@@@std@@@std@@_N0@Z");
+        return (this->*rv)(std::forward<bool>(a0), std::forward<bool>(a1));
+    }
+    inline  ~AppPlatform(){
+         (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("??1AppPlatform@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline std::unique_ptr<class Bedrock::Http::IProxyResolver> _createProxyResolver(){
+        std::unique_ptr<class Bedrock::Http::IProxyResolver> (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?_createProxyResolver@AppPlatform@@EEAA?AV?$unique_ptr@VIProxyResolver@Http@Bedrock@@U?$default_delete@VIProxyResolver@Http@Bedrock@@@std@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline void _fireAppTerminated(){
+        void (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?_fireAppTerminated@AppPlatform@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void _teardownFileStorageAreas(){
+        void (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?_teardownFileStorageAreas@AppPlatform@@MEAAXXZ");
+        return (this->*rv)();
+    }
+    inline bool areThreadsFrozen() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?areThreadsFrozen@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline void collectGraphicsHardwareDetails(){
+        void (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?collectGraphicsHardwareDetails@AppPlatform@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline bool copyAssetFile(class Core::Path const & a0, class Core::Path const & a1){
+        bool (AppPlatform::*rv)(class Core::Path const &, class Core::Path const &);
+        *((void**)&rv) = dlsym("?copyAssetFile@AppPlatform@@UEAA_NAEBVPath@Core@@0@Z");
+        return (this->*rv)(std::forward<class Core::Path const &>(a0), std::forward<class Core::Path const &>(a1));
+    }
+    inline class Core::PathBuffer<std::string> copyImportFileToTempFolder(class Core::Path const & a0){
+        class Core::PathBuffer<std::string> (AppPlatform::*rv)(class Core::Path const &);
+        *((void**)&rv) = dlsym("?copyImportFileToTempFolder@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVPath@3@@Z");
+        return (this->*rv)(std::forward<class Core::Path const &>(a0));
+    }
+    inline class std::shared_ptr<class Core::FileStorageArea> createLoggingStorageArea(enum Core::FileAccessType a0, class Core::Path const & a1){
+        class std::shared_ptr<class Core::FileStorageArea> (AppPlatform::*rv)(enum Core::FileAccessType, class Core::Path const &);
+        *((void**)&rv) = dlsym("?createLoggingStorageArea@AppPlatform@@UEAA?AV?$shared_ptr@VFileStorageArea@Core@@@std@@W4FileAccessType@Core@@AEBVPath@5@@Z");
+        return (this->*rv)(std::forward<enum Core::FileAccessType>(a0), std::forward<class Core::Path const &>(a1));
+    }
+    inline class std::shared_ptr<class WebviewInterface> createWebview(class Webview::PlatformArguments && a0) const{
+        class std::shared_ptr<class WebviewInterface> (AppPlatform::*rv)(class Webview::PlatformArguments &&) const;
+        *((void**)&rv) = dlsym("?createWebview@AppPlatform@@UEBA?AV?$shared_ptr@VWebviewInterface@@@std@@$$QEAVPlatformArguments@Webview@@@Z");
+        return (this->*rv)(std::forward<class Webview::PlatformArguments &&>(a0));
+    }
+    inline void exitVRMode(class std::function<void (void)> a0){
+        void (AppPlatform::*rv)(class std::function<void (void)>);
+        *((void**)&rv) = dlsym("?exitVRMode@AppPlatform@@UEAAXV?$function@$$A6AXXZ@std@@@Z");
+        return (this->*rv)(std::forward<class std::function<void (void)>>(a0));
+    }
+    inline enum ARVRPlatform getARVRPlatform() const{
+        enum ARVRPlatform (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getARVRPlatform@AppPlatform@@UEBA?AW4ARVRPlatform@@XZ");
+        return (this->*rv)();
+    }
+    inline struct AppPlatform::AndroidScopedStorageInfo const & getAndroidScopedStorageInfo() const{
+        struct AppPlatform::AndroidScopedStorageInfo const & (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getAndroidScopedStorageInfo@AppPlatform@@UEBAAEBUAndroidScopedStorageInfo@1@XZ");
+        return (this->*rv)();
+    }
+    inline class Core::PathBuffer<std::string> getAssetFileFullPath(class Core::Path const & a0){
+        class Core::PathBuffer<std::string> (AppPlatform::*rv)(class Core::Path const &);
+        *((void**)&rv) = dlsym("?getAssetFileFullPath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVPath@3@@Z");
+        return (this->*rv)(std::forward<class Core::Path const &>(a0));
+    }
+    inline unsigned int maxFileDataRequestConcurrency() const{
+        unsigned int (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?maxFileDataRequestConcurrency@AppPlatform@@UEBAIXZ");
+        return (this->*rv)();
+    }
+    inline unsigned int getMaxSimultaneousServiceRequests() const{
+        unsigned int (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getMaxSimultaneousServiceRequests@AppPlatform@@UEBAIXZ");
+        return (this->*rv)();
+    }
+    inline enum BuildPlatform getBuildPlatform() const{
+        enum BuildPlatform (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getBuildPlatform@AppPlatform@@UEBA?AW4BuildPlatform@@XZ");
+        return (this->*rv)();
+    }
+    inline class Core::PathBuffer<std::string> getCatalogSearchScratchPath(){
+        class Core::PathBuffer<std::string> (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?getCatalogSearchScratchPath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
+        return (this->*rv)();
+    }
+    inline class Core::PathBuffer<std::string> getCacheStoragePath(){
+        class Core::PathBuffer<std::string> (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?getCacheStoragePath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
+        return (this->*rv)();
+    }
+    inline class Core::PathBuffer<std::string> getOnDiskScratchPath(){
+        class Core::PathBuffer<std::string> (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?getOnDiskScratchPath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
+        return (this->*rv)();
+    }
+    inline std::string getClientUpdateUrl() const{
+        std::string (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getClientUpdateUrl@AppPlatform@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline enum InputMode getDefaultInputMode() const{
+        enum InputMode (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getDefaultInputMode@AppPlatform@@UEBA?AW4InputMode@@XZ");
+        return (this->*rv)();
+    }
+    inline int getDefaultNetworkMaxPlayers() const{
+        int (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getDefaultNetworkMaxPlayers@AppPlatform@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline float getDefaultSafeZoneScaleX() const{
+        float (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getDefaultSafeZoneScaleX@AppPlatform@@UEBAMXZ");
+        return (this->*rv)();
+    }
+    inline float getDefaultSafeZoneScaleY() const{
+        float (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getDefaultSafeZoneScaleY@AppPlatform@@UEBAMXZ");
+        return (this->*rv)();
+    }
+    inline enum DeviceSunsetTier getDeviceSunsetTier() const{
+        enum DeviceSunsetTier (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getDeviceSunsetTier@AppPlatform@@UEBA?AW4DeviceSunsetTier@@XZ");
+        return (this->*rv)();
+    }
+    inline int getDisplayHeight(){
+        int (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?getDisplayHeight@AppPlatform@@UEAAHXZ");
+        return (this->*rv)();
+    }
+    inline int getDisplayWidth(){
+        int (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?getDisplayWidth@AppPlatform@@UEAAHXZ");
+        return (this->*rv)();
+    }
+    inline std::string getEdition() const{
+        std::string (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getEdition@AppPlatform@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline class std::optional<struct ScreenshotOptions> getExtraLevelSaveDataIconParams(std::string const & a0) const{
+        class std::optional<struct ScreenshotOptions> (AppPlatform::*rv)(std::string const &) const;
+        *((void**)&rv) = dlsym("?getExtraLevelSaveDataIconParams@AppPlatform@@UEBA?AV?$optional@UScreenshotOptions@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline std::string getFeedbackBugsLink() const{
+        std::string (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getFeedbackBugsLink@AppPlatform@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline std::string getFeedbackHelpLink() const{
+        std::string (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getFeedbackHelpLink@AppPlatform@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> getFileAccess(enum ResourceFileSystem a0){
+        class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> (AppPlatform::*rv)(enum ResourceFileSystem);
+        *((void**)&rv) = dlsym("?getFileAccess@AppPlatform@@UEAA?AV?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@W4ResourceFileSystem@@@Z");
+        return (this->*rv)(std::forward<enum ResourceFileSystem>(a0));
+    }
+    inline unsigned __int64 getHighPerformanceThreadsCount() const{
+        unsigned __int64 (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getHighPerformanceThreadsCount@AppPlatform@@UEBA_KXZ");
+        return (this->*rv)();
+    }
+    inline class Core::PathBuffer<std::string> getInternalPackStoragePath() const{
+        class Core::PathBuffer<std::string> (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getInternalPackStoragePath@AppPlatform@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
+        return (this->*rv)();
+    }
+    inline class Core::PathBuffer<std::string> getLevelInfoCachePath() const{
+        class Core::PathBuffer<std::string> (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getLevelInfoCachePath@AppPlatform@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
+        return (this->*rv)();
+    }
+    inline class Core::PathBuffer<std::string> getPackagedShaderCachePath(){
+        class Core::PathBuffer<std::string> (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?getPackagedShaderCachePath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
+        return (this->*rv)();
+    }
+    inline class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> getLevelSaveInterval() const{
+        class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getLevelSaveInterval@AppPlatform@@UEBA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@XZ");
+        return (this->*rv)();
+    }
+    inline class Core::PathBuffer<std::string> getLoggingPath() const{
+        class Core::PathBuffer<std::string> (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getLoggingPath@AppPlatform@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
+        return (this->*rv)();
+    }
+    inline class Core::PathBuffer<std::string> getUserdataPathForLevels() const{
+        class Core::PathBuffer<std::string> (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getUserdataPathForLevels@AppPlatform@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
+        return (this->*rv)();
+    }
+    inline unsigned __int64 getLowPhysicalMemoryThreshold() const{
+        unsigned __int64 (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getLowPhysicalMemoryThreshold@AppPlatform@@UEBA_KXZ");
+        return (this->*rv)();
+    }
+    inline int getMaxSimRadiusInChunks() const{
+        int (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getMaxSimRadiusInChunks@AppPlatform@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline int getMaxSimultaneousDownloads() const{
+        int (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getMaxSimultaneousDownloads@AppPlatform@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline unsigned __int64 getMaximumUsedMemory(){
+        unsigned __int64 (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?getMaximumUsedMemory@AppPlatform@@UEAA_KXZ");
+        return (this->*rv)();
+    }
+    inline void ( *)(std::string const &, std::string const &) getModalErrorMessageProc(){
+        void ( *)(std::string const &, std::string const &) (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?getModalErrorMessageProc@AppPlatform@@UEAAP6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@ZXZ");
+        return (this->*rv)();
+    }
+    inline std::string getModelName(){
+        std::string (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?getModelName@AppPlatform@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline int getNumberOfParticleFramesToInterpolate() const{
+        int (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getNumberOfParticleFramesToInterpolate@AppPlatform@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline class Core::PathBuffer<std::string> getOnDiskPackScratchPath(){
+        class Core::PathBuffer<std::string> (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?getOnDiskPackScratchPath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
+        return (this->*rv)();
+    }
+    inline class std::optional<enum OperationMode> getOperationMode() const{
+        class std::optional<enum OperationMode> (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getOperationMode@AppPlatform@@UEBA?AV?$optional@W4OperationMode@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline unsigned __int64 getOptimalLDBSize(){
+        unsigned __int64 (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?getOptimalLDBSize@AppPlatform@@UEAA_KXZ");
+        return (this->*rv)();
+    }
+    inline class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> getOptionsSaveInterval() const{
+        class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getOptionsSaveInterval@AppPlatform@@UEBA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@XZ");
+        return (this->*rv)();
+    }
+    inline float getStoreNetworkFailureTimeout() const{
+        float (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getStoreNetworkFailureTimeout@AppPlatform@@UEBAMXZ");
+        return (this->*rv)();
+    }
+    inline float getPixelsPerMillimeter(){
+        float (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?getPixelsPerMillimeter@AppPlatform@@UEAAMXZ");
+        return (this->*rv)();
+    }
+    inline std::string getPlatformStringVar(int a0){
+        std::string (AppPlatform::*rv)(int);
+        *((void**)&rv) = dlsym("?getPlatformStringVar@AppPlatform@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    inline enum UIScalingRules getPlatformUIScalingRules() const{
+        enum UIScalingRules (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getPlatformUIScalingRules@AppPlatform@@EEBA?AW4UIScalingRules@@XZ");
+        return (this->*rv)();
+    }
+    inline class std::variant<struct HWND__*, struct std::monostate> getRenderSurfaceParameters() const{
+        class std::variant<struct HWND__*, struct std::monostate> (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getRenderSurfaceParameters@AppPlatform@@UEBA?AV?$variant@PEAUHWND__@@Umonostate@std@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline int getScreenHeight() const{
+        int (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getScreenHeight@AppPlatform@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline int getScreenWidth() const{
+        int (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getScreenWidth@AppPlatform@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline std::unique_ptr<class SecureStorage> getSecureStorage(){
+        std::unique_ptr<class SecureStorage> (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?getSecureStorage@AppPlatform@@UEAA?AV?$unique_ptr@VSecureStorage@@U?$default_delete@VSecureStorage@@@std@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline class SecureStorageKey getSecureStorageKey(std::string const & a0){
+        class SecureStorageKey (AppPlatform::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?getSecureStorageKey@AppPlatform@@UEAA?AVSecureStorageKey@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline class Core::PathBuffer<std::string> getSettingsPath(){
+        class Core::PathBuffer<std::string> (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?getSettingsPath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
+        return (this->*rv)();
+    }
+    inline class Core::PathBuffer<std::string> getShaderCachePath(){
+        class Core::PathBuffer<std::string> (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?getShaderCachePath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
+        return (this->*rv)();
+    }
+    inline class mce::UUID const & getThirdPartyPackUUID() const{
+        class mce::UUID const & (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getThirdPartyPackUUID@AppPlatform@@UEBAAEBVUUID@mce@@XZ");
+        return (this->*rv)();
+    }
+    inline unsigned __int64 getTotalHardwareThreadsCount() const{
+        unsigned __int64 (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getTotalHardwareThreadsCount@AppPlatform@@UEBA_KXZ");
+        return (this->*rv)();
+    }
+    inline class Core::PathBuffer<std::string> getUserStorageRootPath() const{
+        class Core::PathBuffer<std::string> (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getUserStorageRootPath@AppPlatform@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
+        return (this->*rv)();
+    }
+    inline enum VRControllerType getVRControllerType() const{
+        enum VRControllerType (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?getVRControllerType@AppPlatform@@UEBA?AW4VRControllerType@@XZ");
+        return (this->*rv)();
+    }
+    inline bool hasAssetFile(class Core::Path const & a0){
+        bool (AppPlatform::*rv)(class Core::Path const &);
+        *((void**)&rv) = dlsym("?hasAssetFile@AppPlatform@@UEAA_NAEBVPath@Core@@@Z");
+        return (this->*rv)(std::forward<class Core::Path const &>(a0));
+    }
+    inline void initialize(){
+        void (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?initialize@AppPlatform@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline bool isKeyboardVisible() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isKeyboardVisible@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isLowMemoryDevice() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isLowMemoryDevice@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isLowPhysicalMemoryDevice() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isLowPhysicalMemoryDevice@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isNetworkAvailable() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isNetworkAvailable@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isNetworkThrottled() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isNetworkThrottled@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline class std::optional<bool> isOnWifiConnectionTelemetryValue(){
+        class std::optional<bool> (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?isOnWifiConnectionTelemetryValue@AppPlatform@@UEAA?AV?$optional@_N@std@@XZ");
+        return (this->*rv)();
+    }
+    inline bool isQuitCapable() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isQuitCapable@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isRealmsEnabled() const{
+        bool (AppPlatform::*rv)() const;
+        *((void**)&rv) = dlsym("?isRealmsEnabled@AppPlatform@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline class std::set<class Core::PathBuffer<std::string>, struct std::less<class Core::PathBuffer<std::string>>, class std::allocator<class Core::PathBuffer<std::string>>> listAssetFilesIn(class Core::Path const & a0, std::string const & a1) const{
+        class std::set<class Core::PathBuffer<std::string>, struct std::less<class Core::PathBuffer<std::string>>, class std::allocator<class Core::PathBuffer<std::string>>> (AppPlatform::*rv)(class Core::Path const &, std::string const &) const;
+        *((void**)&rv) = dlsym("?listAssetFilesIn@AppPlatform@@UEBA?AV?$set@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@U?$less@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@std@@V?$allocator@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@4@@std@@AEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z");
+        return (this->*rv)(std::forward<class Core::Path const &>(a0), std::forward<std::string const &>(a1));
+    }
+    inline std::string readAssetFile(class Core::Path const & a0){
+        std::string (AppPlatform::*rv)(class Core::Path const &);
+        *((void**)&rv) = dlsym("?readAssetFile@AppPlatform@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@@Z");
+        return (this->*rv)(std::forward<class Core::Path const &>(a0));
+    }
+    inline void restartApp(bool a0){
+        void (AppPlatform::*rv)(bool);
+        *((void**)&rv) = dlsym("?restartApp@AppPlatform@@UEAAX_N@Z");
+        return (this->*rv)(std::forward<bool>(a0));
+    }
+    inline bool restartRequested(){
+        bool (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?restartRequested@AppPlatform@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline void setARVRPlatform(enum ARVRPlatform a0){
+        void (AppPlatform::*rv)(enum ARVRPlatform);
+        *((void**)&rv) = dlsym("?setARVRPlatform@AppPlatform@@UEAAXW4ARVRPlatform@@@Z");
+        return (this->*rv)(std::forward<enum ARVRPlatform>(a0));
+    }
+    inline void setThreadsFrozen(bool a0){
+        void (AppPlatform::*rv)(bool);
+        *((void**)&rv) = dlsym("?setThreadsFrozen@AppPlatform@@UEAAX_N@Z");
+        return (this->*rv)(std::forward<bool>(a0));
+    }
+    inline void setVRControllerType(enum VRControllerType a0){
+        void (AppPlatform::*rv)(enum VRControllerType);
+        *((void**)&rv) = dlsym("?setVRControllerType@AppPlatform@@UEAAXW4VRControllerType@@@Z");
+        return (this->*rv)(std::forward<enum VRControllerType>(a0));
+    }
+    inline void showPlatformEmptyStoreDialog(class std::function<void (bool)> && a0){
+        void (AppPlatform::*rv)(class std::function<void (bool)> &&);
+        *((void**)&rv) = dlsym("?showPlatformEmptyStoreDialog@AppPlatform@@UEAAX$$QEAV?$function@$$A6AX_N@Z@std@@@Z");
+        return (this->*rv)(std::forward<class std::function<void (bool)> &&>(a0));
+    }
+    inline void teardown(){
+        void (AppPlatform::*rv)();
+        *((void**)&rv) = dlsym("?teardown@AppPlatform@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void tryEnterVRMode(bool a0, class std::function<void (bool)> a1){
+        void (AppPlatform::*rv)(bool, class std::function<void (bool)>);
+        *((void**)&rv) = dlsym("?tryEnterVRMode@AppPlatform@@UEAAX_NV?$function@$$A6AX_N@Z@std@@@Z");
+        return (this->*rv)(std::forward<bool>(a0), std::forward<class std::function<void (bool)>>(a1));
+    }
+    */
     MCAPI AppPlatform(bool);
     MCAPI std::unique_ptr<struct Bedrock::PlatformRuntimeInfo> & accessPlatformRuntimeInformation_Shim();
     MCAPI void addListener(class AppPlatformListener *, float);

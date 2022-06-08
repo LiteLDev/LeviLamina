@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDENTITYDICTIONARY
-#endif
     MCAPI IdentityDictionary();
     MCAPI bool clearIdentity(struct ScoreboardId const &);
     MCAPI struct ScoreboardId const & convertFakeToReal(struct ScoreboardId const &, struct PlayerScoreboardId const &);

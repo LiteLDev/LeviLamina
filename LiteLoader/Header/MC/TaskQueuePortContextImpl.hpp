@@ -33,8 +33,6 @@ public:
     /*9*/ virtual void ItemQueued();
     /*10*/ virtual bool AddSuspend();
     /*11*/ virtual bool RemoveSuspend();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKQUEUEPORTCONTEXTIMPL
-#endif
 
 protected:
 

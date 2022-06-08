@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERRESPAWNBLOCKRADIUSRANDOMIZER
-#endif
     MCAPI bool getNextPosition(class Vec3 &, bool);
     MCAPI void init(unsigned int, class Random &);
 

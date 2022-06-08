@@ -76,9 +76,13 @@ public:
     /*208*/ virtual void __unk_vfn_208();
     /*209*/ virtual void __unk_vfn_209();
     /*210*/ MCAPI std::string const & getDescriptionId() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIFACEBLOCK
-    MCVAPI bool isMultifaceBlock() const;
-#endif
+    /*
+    inline bool isMultifaceBlock() const{
+        bool (MultifaceBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isMultifaceBlock@MultifaceBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI MultifaceBlock(std::string const &, int, class Material const &);
     MCAPI void removeFace(class IBlockWorldGenAPI &, class BlockSource *, class Block const &, class BlockPos const &, unsigned char, bool) const;
     MCAPI static int const MULTIFACE_ALL;

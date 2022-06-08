@@ -129,10 +129,18 @@ public:
     /*441*/ virtual void __unk_vfn_441();
     /*446*/ virtual int _getSpawnChunkLimit() const;
     /*447*/ virtual void _updateChunkPublisherView(class Vec3 const &, float);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYER
-    MCVAPI void frameUpdate(class FrameUpdateContextBase &);
-    MCVAPI void openPortfolio();
-#endif
+    /*
+    inline void frameUpdate(class FrameUpdateContextBase & a0){
+        void (ServerPlayer::*rv)(class FrameUpdateContextBase &);
+        *((void**)&rv) = dlsym("?frameUpdate@ServerPlayer@@UEAAXAEAVFrameUpdateContextBase@@@Z");
+        return (this->*rv)(std::forward<class FrameUpdateContextBase &>(a0));
+    }
+    inline void openPortfolio(){
+        void (ServerPlayer::*rv)();
+        *((void**)&rv) = dlsym("?openPortfolio@ServerPlayer@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ServerPlayer(class Level &, class PacketSender &, class NetworkHandler &, class ClientBlobCache::Server::ActiveTransfersManager &, enum GameType, class NetworkIdentifier const &, unsigned char, class std::function<void (class ServerPlayer &)>, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>, int, bool, class EntityContext &);
     MCAPI void checkCheating(class Vec3 const &);
     MCAPI void disconnect();

@@ -34,8 +34,6 @@ public:
     /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /*13*/ virtual bool _canReach(class BlockPos const &);
     /*17*/ virtual bool findTargetBlock();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSPECTBOOKSHELFGOAL
-#endif
     MCAPI InspectBookshelfGoal(class Mob &, float, int, int, int, float);
 
 protected:

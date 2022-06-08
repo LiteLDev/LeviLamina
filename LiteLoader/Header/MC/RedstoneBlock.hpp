@@ -62,9 +62,13 @@ public:
     /*181*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REDSTONEBLOCK
-    MCVAPI bool canSpawnOn() const;
-#endif
+    /*
+    inline bool canSpawnOn() const{
+        bool (RedstoneBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canSpawnOn@RedstoneBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI RedstoneBlock(std::string const &, int);
 
 protected:

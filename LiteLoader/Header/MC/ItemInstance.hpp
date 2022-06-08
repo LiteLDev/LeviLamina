@@ -21,8 +21,6 @@ public:
     /*1*/ virtual void reinit(class Item const &, int, int);
     /*2*/ virtual void reinit(class BlockLegacy const &, int);
     /*3*/ virtual void reinit(class gsl::basic_string_span<char const, -1>, int, int);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMINSTANCE
-#endif
     MCAPI ItemInstance(class ItemStackBase const &);
     MCAPI ItemInstance(class ItemInstance const &);
     MCAPI ItemInstance(class Block const &, int, class CompoundTag const *);

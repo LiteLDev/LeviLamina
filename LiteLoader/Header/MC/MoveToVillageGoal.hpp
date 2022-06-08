@@ -36,8 +36,6 @@ public:
     /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /*14*/ virtual void _moveToBlock();
     /*17*/ virtual class BlockPos _selectRandomPosInVillage();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOVILLAGEGOAL
-#endif
     MCAPI MoveToVillageGoal(class Mob &, float, float, float, int);
 
 protected:

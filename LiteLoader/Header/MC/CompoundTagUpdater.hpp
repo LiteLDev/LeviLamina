@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAGUPDATER
-#endif
     MCAPI bool update(class CompoundTag &) const;
     MCAPI ~CompoundTagUpdater();
 

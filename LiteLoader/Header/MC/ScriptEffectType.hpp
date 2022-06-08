@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTEFFECTTYPE
-#endif
     MCAPI ScriptEffectType(class MobEffect const &);
     MCAPI class MobEffect const & getEffect() const;
     MCAPI std::string getName() const;

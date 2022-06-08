@@ -23,10 +23,18 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEGOALDEFINITION
-    MCVAPI bool validate(class Mob &);
-    MCVAPI bool validateMobType(class Mob &);
-#endif
+    /*
+    inline bool validateMobType(class Mob & a0){
+        bool (BaseGoalDefinition::*rv)(class Mob &);
+        *((void**)&rv) = dlsym("?validateMobType@BaseGoalDefinition@@UEAA_NAEAVMob@@@Z");
+        return (this->*rv)(std::forward<class Mob &>(a0));
+    }
+    inline bool validate(class Mob & a0){
+        bool (BaseGoalDefinition::*rv)(class Mob &);
+        *((void**)&rv) = dlsym("?validate@BaseGoalDefinition@@UEAA_NAEAVMob@@@Z");
+        return (this->*rv)(std::forward<class Mob &>(a0));
+    }
+    */
     MCAPI void initialize(class EntityContext &, class Goal &);
 
 protected:

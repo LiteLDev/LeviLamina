@@ -119,12 +119,28 @@ public:
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANT
-    MCVAPI bool isDiscoverable() const;
-    MCVAPI bool isMeleeDamageEnchant() const;
-    MCVAPI bool isProtectionEnchant() const;
-    MCVAPI bool isTreasureOnly() const;
-#endif
+    /*
+    inline bool isProtectionEnchant() const{
+        bool (Enchant::*rv)() const;
+        *((void**)&rv) = dlsym("?isProtectionEnchant@Enchant@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isTreasureOnly() const{
+        bool (Enchant::*rv)() const;
+        *((void**)&rv) = dlsym("?isTreasureOnly@Enchant@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isMeleeDamageEnchant() const{
+        bool (Enchant::*rv)() const;
+        *((void**)&rv) = dlsym("?isMeleeDamageEnchant@Enchant@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isDiscoverable() const{
+        bool (Enchant::*rv)() const;
+        *((void**)&rv) = dlsym("?isDiscoverable@Enchant@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI Enchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
     MCAPI Enchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int, bool);
     MCAPI bool canEnchant(int, bool) const;

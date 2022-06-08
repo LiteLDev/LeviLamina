@@ -36,10 +36,18 @@ public:
     /*9*/ virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const &) const;
     /*10*/ virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const &, std::vector<std::string>) const;
     /*11*/ virtual struct std::pair<int, std::string const &> getPackStackIndexOfResource(class ResourceLocation const &, std::vector<std::string> const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCELOADER
-    MCVAPI bool isInStreamableLocation(class ResourceLocation const &, std::vector<std::string> const &) const;
-    MCVAPI bool isInStreamableLocation(class ResourceLocation const &) const;
-#endif
+    /*
+    inline bool isInStreamableLocation(class ResourceLocation const & a0, std::vector<std::string> const & a1) const{
+        bool (ResourceLoader::*rv)(class ResourceLocation const &, std::vector<std::string> const &) const;
+        *((void**)&rv) = dlsym("?isInStreamableLocation@ResourceLoader@@UEBA_NAEBVResourceLocation@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z");
+        return (this->*rv)(std::forward<class ResourceLocation const &>(a0), std::forward<std::vector<std::string> const &>(a1));
+    }
+    inline bool isInStreamableLocation(class ResourceLocation const & a0) const{
+        bool (ResourceLoader::*rv)(class ResourceLocation const &) const;
+        *((void**)&rv) = dlsym("?isInStreamableLocation@ResourceLoader@@UEBA_NAEBVResourceLocation@@@Z");
+        return (this->*rv)(std::forward<class ResourceLocation const &>(a0));
+    }
+    */
 
 protected:
 

@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TIMERCOMPONENT
-#endif
     MCAPI TimerComponent(class TimerComponent &&);
     MCAPI TimerComponent(class TimerComponent const &);
     MCAPI TimerComponent();

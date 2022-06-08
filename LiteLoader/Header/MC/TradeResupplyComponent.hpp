@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADERESUPPLYCOMPONENT
-#endif
     MCAPI TradeResupplyComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI void initFromDefinition(class Actor &);

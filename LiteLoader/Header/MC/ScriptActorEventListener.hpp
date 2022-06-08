@@ -58,8 +58,6 @@ public:
     /*32*/ virtual enum EventResult onEvent(struct ActorAttackEvent const &);
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual enum EventResult onEvent(struct ActorAddEffectEvent const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTACTOREVENTLISTENER
-#endif
     MCAPI ScriptActorEventListener(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 
 protected:

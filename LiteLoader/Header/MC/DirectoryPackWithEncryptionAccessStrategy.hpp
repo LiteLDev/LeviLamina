@@ -44,8 +44,6 @@ public:
     /*19*/ virtual void unload();
     /*20*/ virtual bool hasUpgradeFiles() const;
     /*21*/ virtual class ContentIdentity readContentIdentity() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTORYPACKWITHENCRYPTIONACCESSSTRATEGY
-#endif
     MCAPI DirectoryPackWithEncryptionAccessStrategy(class ResourceLocation const &, class ResourceLocation const &, class IContentKeyProvider const &);
 
 protected:

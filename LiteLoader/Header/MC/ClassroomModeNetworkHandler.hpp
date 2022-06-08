@@ -23,10 +23,18 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLASSROOMMODENETWORKHANDLER
-    MCVAPI bool allowIncomingPacketId(class NetworkIdentifier const &, enum MinecraftPacketIds);
-    MCVAPI void onWebsocketRequest(std::string const &, std::string const &, class std::function<void (void)>);
-#endif
+    /*
+    inline bool allowIncomingPacketId(class NetworkIdentifier const & a0, enum MinecraftPacketIds a1){
+        bool (ClassroomModeNetworkHandler::*rv)(class NetworkIdentifier const &, enum MinecraftPacketIds);
+        *((void**)&rv) = dlsym("?allowIncomingPacketId@ClassroomModeNetworkHandler@@UEAA_NAEBVNetworkIdentifier@@W4MinecraftPacketIds@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<enum MinecraftPacketIds>(a1));
+    }
+    inline void onWebsocketRequest(std::string const & a0, std::string const & a1, class std::function<void (void)> a2){
+        void (ClassroomModeNetworkHandler::*rv)(std::string const &, std::string const &, class std::function<void (void)>);
+        *((void**)&rv) = dlsym("?onWebsocketRequest@ClassroomModeNetworkHandler@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$function@$$A6AXXZ@3@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<std::string const &>(a1), std::forward<class std::function<void (void)>>(a2));
+    }
+    */
     MCAPI ClassroomModeNetworkHandler(bool);
 
 protected:

@@ -24,8 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~MaterialReducerContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATERIALREDUCERCONTAINERSCREENVALIDATOR
-#endif
     MCAPI MaterialReducerContainerScreenValidator();
 
 protected:

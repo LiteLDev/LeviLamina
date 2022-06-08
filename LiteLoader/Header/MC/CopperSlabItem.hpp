@@ -40,8 +40,6 @@ public:
     /*75*/ virtual void __unk_vfn_75();
     /*76*/ virtual void __unk_vfn_76();
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COPPERSLABITEM
-#endif
     MCAPI CopperSlabItem(std::string const &, int, class Block const &);
 
 protected:

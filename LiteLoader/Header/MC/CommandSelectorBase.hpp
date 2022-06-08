@@ -48,8 +48,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDSELECTORBASE
-#endif
     MCAPI void addFamilyFilter(struct InvertableFilter<std::string> const &);
     MCAPI void addFilter(class std::function<bool (class CommandOrigin const &, class Actor const &)>);
     MCAPI void addGameModeFilter(struct InvertableFilter<enum GameType> const &);

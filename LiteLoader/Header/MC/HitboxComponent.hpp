@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HITBOXCOMPONENT
-#endif
     MCAPI void fromCompoundTag(class CompoundTag const &);
     MCAPI void toCompoundTag(class CompoundTag &);
 

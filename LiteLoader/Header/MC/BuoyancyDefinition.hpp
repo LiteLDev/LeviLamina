@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUOYANCYDEFINITION
-#endif
     MCAPI BuoyancyDefinition();
     MCAPI void initialize(class EntityContext &, class BuoyancyComponent &) const;
     MCAPI void uninitialize(class EntityContext &, class BuoyancyComponent &) const;

@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDPACKHISTORY
-#endif
     MCAPI WorldPackHistory(class WorldPackHistory &&);
     MCAPI WorldPackHistory(class WorldPackHistory const &);
     MCAPI bool getCanBeRedownloaded() const;

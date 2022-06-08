@@ -32,8 +32,6 @@ public:
     /*10*/ virtual void broadcastChanges();
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CARTOGRAPHYCONTAINERMANAGERMODEL
-#endif
     MCAPI CartographyContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
 protected:

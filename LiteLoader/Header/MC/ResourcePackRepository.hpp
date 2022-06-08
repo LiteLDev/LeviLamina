@@ -81,8 +81,6 @@ public:
     /*47*/ virtual void registerResourcePackRemovedCallback(void *, class std::function<void (class ResourcePack *)>);
     /*48*/ virtual void unregisterResourcePackRemovedCallback(void *);
     /*49*/ virtual bool isInitialized();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKREPOSITORY
-#endif
     MCAPI ResourcePackRepository(class IMinecraftEventing &, class PackManifestFactory &, class IContentAccessibilityProvider &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, class PackSourceFactory &, bool);
     MCAPI static class mce::UUID const CHEMISTRY_PACK_UUID;
     MCAPI static class mce::UUID const CHEMISTRY_SERVER_PACK_UUID;

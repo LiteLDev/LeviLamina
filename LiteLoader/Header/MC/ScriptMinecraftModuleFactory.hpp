@@ -26,8 +26,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptMinecraftModuleFactory();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMINECRAFTMODULEFACTORY
-#endif
     MCAPI ScriptMinecraftModuleFactory(class ServerLevel *, class MinecraftCommands *, std::unique_ptr<class ScriptMinecraftCommonModuleFactory>);
     MCAPI static class std::unordered_map<std::string, std::unique_ptr<class IComponentFactory>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class IComponentFactory>>>> & getActorComponentFactoriesV1();
     MCAPI static std::string getModuleUUIDAsString();

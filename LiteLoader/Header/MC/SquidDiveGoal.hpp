@@ -31,10 +31,18 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUIDDIVEGOAL
-    MCVAPI void stop();
-    MCVAPI void tick();
-#endif
+    /*
+    inline void stop(){
+        void (SquidDiveGoal::*rv)();
+        *((void**)&rv) = dlsym("?stop@SquidDiveGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void tick(){
+        void (SquidDiveGoal::*rv)();
+        *((void**)&rv) = dlsym("?tick@SquidDiveGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

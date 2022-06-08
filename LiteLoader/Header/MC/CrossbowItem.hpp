@@ -49,8 +49,6 @@ public:
     /*116*/ virtual class Item & setIcon(std::string const &, int);
     /*119*/ virtual bool canBeCharged() const;
     /*121*/ virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CROSSBOWITEM
-#endif
     MCAPI CrossbowItem(std::string const &, int);
 
 protected:

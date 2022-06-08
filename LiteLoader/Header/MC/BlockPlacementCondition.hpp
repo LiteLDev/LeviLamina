@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPLACEMENTCONDITION
-#endif
     MCAPI void _addBlockDescriptor(class BlockDescriptor const &);
     MCAPI ~BlockPlacementCondition();
 

@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOCKINGCOMPONENT
-#endif
     MCAPI FlockingComponent(class FlockingComponent &&);
     MCAPI FlockingComponent();
     MCAPI void addFlockMember(struct ActorUniqueID);

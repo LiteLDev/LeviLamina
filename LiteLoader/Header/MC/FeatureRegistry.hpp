@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATUREREGISTRY
-#endif
     MCAPI FeatureRegistry();
     MCAPI void forEachFeature(class std::function<void (class HashedString const &, class WeakRefT<struct FeatureRefTraits>)>) const;
     MCAPI std::vector<std::string> getLargeFeaturePasses() const;

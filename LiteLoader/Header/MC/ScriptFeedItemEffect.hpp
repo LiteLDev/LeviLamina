@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFEEDITEMEFFECT
-#endif
     MCAPI static class Scripting::ClassBindingBuilder<struct FeedItem::Effect> bind(struct Scripting::Version);
 
 protected:

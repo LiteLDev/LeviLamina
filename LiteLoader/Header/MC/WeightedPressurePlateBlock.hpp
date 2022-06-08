@@ -63,8 +63,6 @@ public:
     /*204*/ virtual int getSignalStrength(class BlockSource &, class BlockPos const &) const;
     /*205*/ virtual int getSignalForData(int) const;
     /*206*/ virtual int getRedstoneSignal(int) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEIGHTEDPRESSUREPLATEBLOCK
-#endif
     MCAPI WeightedPressurePlateBlock(std::string const &, int, class Material const &, int);
     MCAPI static int const MAX_WEIGHT_HEAVY;
     MCAPI static int const MAX_WEIGHT_LIGHT;

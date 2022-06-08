@@ -33,8 +33,6 @@ public:
     /*7*/ virtual class std::shared_ptr<class ActorAnimationPlayer> findAnimation(class HashedString const &);
     /*8*/ virtual enum ActorAnimationType getAnimationType() const;
     /*9*/ virtual class HashedString const & getRawName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSKELETALANIMATIONPLAYER
-#endif
     MCAPI ActorSkeletalAnimationPlayer(class HashedString const &, class ActorSkeletalAnimationPtr, class AnimationComponent &, class ExpressionNode const &);
 
 protected:

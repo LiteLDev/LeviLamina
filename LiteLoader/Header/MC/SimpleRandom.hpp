@@ -34,8 +34,6 @@ public:
     /*8*/ virtual void consumeCount(unsigned int);
     /*9*/ virtual std::unique_ptr<class IRandom> fork();
     /*10*/ virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLERANDOM
-#endif
 
 protected:
 

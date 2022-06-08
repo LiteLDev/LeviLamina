@@ -69,8 +69,6 @@ public:
     /*181*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BORDERBLOCK
-#endif
     MCAPI BorderBlock(std::string const &, int);
 
 protected:

@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEBUGENDPOINT
-#endif
     MCAPI void initializeContentLogging(class ResourcePackManager &, class Core::Path const &);
 
 protected:

@@ -27,8 +27,6 @@ public:
     /*1*/ virtual ~BreakBlocksDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKBLOCKSDESCRIPTION
-#endif
     MCAPI BreakBlocksDescription();
 
 protected:

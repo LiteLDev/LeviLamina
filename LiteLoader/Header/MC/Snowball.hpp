@@ -48,8 +48,6 @@ public:
     /*269*/ virtual void __unk_vfn_269();
     /*278*/ virtual void __unk_vfn_278();
     /*280*/ virtual void __unk_vfn_280();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNOWBALL
-#endif
     MCAPI Snowball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

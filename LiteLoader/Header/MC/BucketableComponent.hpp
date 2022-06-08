@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUCKETABLECOMPONENT
-#endif
     MCAPI BucketableComponent();
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     MCAPI void initFromDefinition(class Actor &);

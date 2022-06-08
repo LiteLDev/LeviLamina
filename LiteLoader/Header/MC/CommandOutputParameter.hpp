@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDOUTPUTPARAMETER
-#endif
     MCAPI CommandOutputParameter(class CommandOutputParameter &&);
     MCAPI CommandOutputParameter(class CommandOutputParameter const &);
     MCAPI CommandOutputParameter(class CommandSelectorResults<class Actor> const &);

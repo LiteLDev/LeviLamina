@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKGRAPHICS
-#endif
     MCAPI enum BlockShape getBlockShape() const;
     MCAPI struct TextureUVCoordinateSet const & getIconTexture(int) const;
     MCAPI bool isFull() const;

@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPALETTE
-#endif
     MCAPI BlockPalette(class Level &);
     MCAPI BlockPalette(struct BlockPalette::ConstructorToken);
     MCAPI void cacheBlockComponentData();

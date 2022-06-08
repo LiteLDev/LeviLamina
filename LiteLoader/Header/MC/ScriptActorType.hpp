@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTACTORTYPE
-#endif
     MCAPI ScriptActorType(class ActorDefinition &);
     MCAPI std::string getId() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptActorType> bind(struct Scripting::Version);

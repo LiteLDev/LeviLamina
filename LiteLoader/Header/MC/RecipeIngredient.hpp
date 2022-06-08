@@ -29,8 +29,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECIPEINGREDIENT
-#endif
     MCAPI RecipeIngredient(class RecipeIngredient const &);
     MCAPI RecipeIngredient(class Block const &, unsigned short);
     MCAPI RecipeIngredient(class BlockLegacy const &, unsigned short);

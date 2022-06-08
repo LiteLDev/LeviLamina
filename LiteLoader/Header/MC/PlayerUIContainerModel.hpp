@@ -31,8 +31,6 @@ public:
     /*16*/ virtual void __unk_vfn_16();
     /*19*/ virtual void __unk_vfn_19();
     /*21*/ virtual int _getContainerOffset() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERUICONTAINERMODEL
-#endif
     MCAPI PlayerUIContainerModel(enum ContainerEnumName, class Player &);
 
 protected:

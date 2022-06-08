@@ -40,12 +40,28 @@ public:
     /*14*/ virtual void __unk_vfn_14();
     /*15*/ virtual float getPingTimeForGUID(std::string const &);
     /*16*/ virtual void checkCanConnectToCustomServerAsync(std::string, int, class std::function<void (bool)>);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STUBSERVERLOCATOR
-    MCVAPI void addCustomServer(class AsynchronousIPResolver const &, int);
-    MCVAPI void addCustomServer(std::string const &, int);
-    MCVAPI bool isIPv4Supported() const;
-    MCVAPI bool isIPv6Supported() const;
-#endif
+    /*
+    inline bool isIPv6Supported() const{
+        bool (StubServerLocator::*rv)() const;
+        *((void**)&rv) = dlsym("?isIPv6Supported@StubServerLocator@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isIPv4Supported() const{
+        bool (StubServerLocator::*rv)() const;
+        *((void**)&rv) = dlsym("?isIPv4Supported@StubServerLocator@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline void addCustomServer(class AsynchronousIPResolver const & a0, int a1){
+        void (StubServerLocator::*rv)(class AsynchronousIPResolver const &, int);
+        *((void**)&rv) = dlsym("?addCustomServer@StubServerLocator@@UEAAXAEBVAsynchronousIPResolver@@H@Z");
+        return (this->*rv)(std::forward<class AsynchronousIPResolver const &>(a0), std::forward<int>(a1));
+    }
+    inline void addCustomServer(std::string const & a0, int a1){
+        void (StubServerLocator::*rv)(std::string const &, int);
+        *((void**)&rv) = dlsym("?addCustomServer@StubServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<int>(a1));
+    }
+    */
     MCAPI StubServerLocator();
 
 protected:

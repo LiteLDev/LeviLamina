@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDBIOMEBUILDER
-#endif
     MCAPI OverworldBiomeBuilder();
     MCAPI void addBiomes(std::vector<struct BiomeNoiseTarget> &, class BiomeRegistry const &) const;
     MCAPI std::vector<struct ClimateParameters> getWorldSpawnParameters() const;

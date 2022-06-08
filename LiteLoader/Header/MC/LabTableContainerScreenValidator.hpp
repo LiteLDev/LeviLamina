@@ -24,8 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~LabTableContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLECONTAINERSCREENVALIDATOR
-#endif
     MCAPI LabTableContainerScreenValidator();
 
 protected:

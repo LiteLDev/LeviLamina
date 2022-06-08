@@ -29,8 +29,6 @@ public:
     /*7*/ virtual int getWorldX(int, int);
     /*8*/ virtual int getWorldZ(int, int);
     /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANMONUMENTPIECE
-#endif
 
 protected:
     MCAPI OceanMonumentPiece(int, int &, class std::shared_ptr<class RoomDefinition>, int, int, int);

@@ -66,8 +66,6 @@ public:
     /*185*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MANGROVEPROPAGULE
-#endif
     MCAPI MangrovePropagule(std::string const &, int, class BlockLegacy const &);
 
 protected:

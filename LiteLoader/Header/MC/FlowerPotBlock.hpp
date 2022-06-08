@@ -70,10 +70,18 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOWERPOTBLOCK
-    MCVAPI bool isInteractiveBlock() const;
-    MCVAPI bool waterSpreadCausesSpawn() const;
-#endif
+    /*
+    inline bool isInteractiveBlock() const{
+        bool (FlowerPotBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@FlowerPotBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool waterSpreadCausesSpawn() const{
+        bool (FlowerPotBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@FlowerPotBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI FlowerPotBlock(std::string const &, int);
     MCAPI class FlowerPotBlockActor * getFlowerPotEntity(class BlockSource &, class BlockPos const &) const;
     MCAPI static bool isValidResource(class Block const &);

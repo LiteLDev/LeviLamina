@@ -30,8 +30,6 @@ public:
     /*3*/ virtual enum TaskGroupState getState() const;
     /*4*/ virtual void processCoroutines();
     /*5*/ virtual void taskComplete(class gsl::not_null<class BackgroundTaskBase *>);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKGROUP
-#endif
     MCAPI TaskGroup(class WorkerPool &, class Scheduler &, std::string);
     MCAPI void disableOwnerThreadChecks();
     MCAPI void flush(class std::function<void (void)>);

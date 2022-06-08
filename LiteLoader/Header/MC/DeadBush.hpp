@@ -62,8 +62,6 @@ public:
     /*183*/ virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEADBUSH
-#endif
     MCAPI DeadBush(std::string const &, int);
 
 protected:

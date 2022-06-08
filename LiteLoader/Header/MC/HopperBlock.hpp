@@ -73,11 +73,23 @@ public:
     /*188*/ virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPPERBLOCK
-    MCVAPI bool hasComparatorSignal() const;
-    MCVAPI bool isContainerBlock() const;
-    MCVAPI bool isInteractiveBlock() const;
-#endif
+    /*
+    inline bool isContainerBlock() const{
+        bool (HopperBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isContainerBlock@HopperBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasComparatorSignal() const{
+        bool (HopperBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?hasComparatorSignal@HopperBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInteractiveBlock() const{
+        bool (HopperBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@HopperBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI HopperBlock(std::string const &, int);
     MCAPI static class BlockPos getAttachedOffset(unsigned char);
 

@@ -34,9 +34,13 @@ public:
     /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLEINPUTVALIDATION
-    MCVAPI bool canDestroy(class ContainerScreenContext const &) const;
-#endif
+    /*
+    inline bool canDestroy(class ContainerScreenContext const & a0) const{
+        bool (LabTableInputValidation::*rv)(class ContainerScreenContext const &) const;
+        *((void**)&rv) = dlsym("?canDestroy@LabTableInputValidation@@UEBA_NAEBVContainerScreenContext@@@Z");
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
+    }
+    */
 
 protected:
 

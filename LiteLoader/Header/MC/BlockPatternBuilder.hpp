@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPATTERNBUILDER
-#endif
     MCAPI class BlockPatternBuilder & aisle(int, ...);
     MCAPI class BlockPatternBuilder & build();
     MCAPI class BlockPatternBuilder & define(char, class Block const &);

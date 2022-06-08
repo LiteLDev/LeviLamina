@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREATHABLEDEFINITION
-#endif
     MCAPI BreathableDefinition();
     MCAPI void addBreathableBlockDescriptor(class BlockDescriptor const &);
     MCAPI void addNonBreathableBlockDescriptor(class BlockDescriptor const &);

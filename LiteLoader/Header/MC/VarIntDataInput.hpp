@@ -34,10 +34,18 @@ public:
     /*8*/ virtual __int64 readLongLong();
     /*9*/ virtual bool readBytes(void *, unsigned __int64);
     /*10*/ virtual unsigned __int64 numBytesLeft() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VARINTDATAINPUT
-    MCVAPI std::string readLongString();
-    MCVAPI std::string readString();
-#endif
+    /*
+    inline std::string readLongString(){
+        std::string (VarIntDataInput::*rv)();
+        *((void**)&rv) = dlsym("?readLongString@VarIntDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline std::string readString(){
+        std::string (VarIntDataInput::*rv)();
+        *((void**)&rv) = dlsym("?readString@VarIntDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

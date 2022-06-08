@@ -52,8 +52,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTCOMMANDS
-#endif
     MCAPI MinecraftCommands(class Minecraft &);
     MCAPI class Command * compileCommand(class HashedString const &, class CommandOrigin &, enum CurrentCmdVersion, class std::function<void (std::string const &)>);
     MCAPI struct MCRESULT executeCommand(class std::shared_ptr<class CommandContext>, bool) const;

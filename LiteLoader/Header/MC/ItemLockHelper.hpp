@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMLOCKHELPER
-#endif
     MCAPI static bool addItemLockMode(class ItemStackBase &, class Json::Value const &);
     MCAPI static bool addKeepOnDeath(class ItemStackBase &, class Json::Value const &);
     MCAPI static bool canMoveItemSlots(class Actor const &, class ItemStackBase const &);

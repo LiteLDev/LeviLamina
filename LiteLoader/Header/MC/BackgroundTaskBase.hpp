@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKGROUNDTASKBASE
-#endif
     MCAPI BackgroundTaskBase(class gsl::not_null<class IBackgroundTaskOwner *>, struct TaskStartInfoBase const &, bool);
     MCAPI void _makeOrphan();
     MCAPI bool canBeRunBy(class std::thread::id) const;

@@ -36,8 +36,6 @@ public:
     /*14*/ virtual void _moveToBlock();
     /*15*/ virtual class Vec3 _getTargetPosition() const;
     /*17*/ virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOPOIGOAL
-#endif
     MCAPI MoveToPOIGoal(class Mob &, float, enum POIType, float);
     MCAPI bool getPOI(enum POIType);
 

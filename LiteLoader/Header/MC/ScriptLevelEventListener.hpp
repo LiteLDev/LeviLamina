@@ -34,8 +34,6 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual enum EventResult onEvent(struct LevelStartLeaveGameEvent const &);
     /*10*/ virtual enum EventResult onEvent(struct LevelNotificationEvent const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTLEVELEVENTLISTENER
-#endif
     MCAPI ScriptLevelEventListener(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 
 protected:

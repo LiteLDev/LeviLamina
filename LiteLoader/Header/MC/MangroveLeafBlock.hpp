@@ -58,8 +58,6 @@ public:
     /*180*/ virtual void __unk_vfn_180();
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MANGROVELEAFBLOCK
-#endif
     MCAPI MangroveLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
 
 protected:

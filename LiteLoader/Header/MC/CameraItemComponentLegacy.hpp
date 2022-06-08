@@ -39,8 +39,6 @@ public:
     /*10*/ virtual void use(class ItemStack &, class Player &);
     /*11*/ virtual void releaseUsing(class ItemStack &, class Player &, int);
     /*12*/ virtual bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMERAITEMCOMPONENTLEGACY
-#endif
     MCAPI CameraItemComponentLegacy(class Item &);
     MCAPI bool init(class Json::Value &, class SemVersion const &);
 

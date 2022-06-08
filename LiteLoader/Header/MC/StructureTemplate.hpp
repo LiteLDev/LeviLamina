@@ -39,8 +39,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETEMPLATE
-#endif
     MCAPI StructureTemplate(class gsl::basic_string_span<char const, -1>);
     MCAPI void fillFromWorld(class BlockSource &, class BlockPos const &, class StructureSettings const &);
     MCAPI class Block const & getBlockAtPos(class BlockPos const &) const;

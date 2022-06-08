@@ -24,12 +24,28 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTBOOKFORTRADINGFUNCTION
-    MCVAPI int apply(class ItemStack &, class Random &, struct Trade const &, class LootTableContext &);
-    MCVAPI int apply(class ItemInstance &, class Random &, struct Trade const &, class LootTableContext &);
-    MCVAPI void apply(class ItemStack &, class Random &, class LootTableContext &);
-    MCVAPI void apply(class ItemInstance &, class Random &, class LootTableContext &);
-#endif
+    /*
+    inline int apply(class ItemStack & a0, class Random & a1, struct Trade const & a2, class LootTableContext & a3){
+        int (EnchantBookForTradingFunction::*rv)(class ItemStack &, class Random &, struct Trade const &, class LootTableContext &);
+        *((void**)&rv) = dlsym("?apply@EnchantBookForTradingFunction@@UEAAHAEAVItemStack@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z");
+        return (this->*rv)(std::forward<class ItemStack &>(a0), std::forward<class Random &>(a1), std::forward<struct Trade const &>(a2), std::forward<class LootTableContext &>(a3));
+    }
+    inline int apply(class ItemInstance & a0, class Random & a1, struct Trade const & a2, class LootTableContext & a3){
+        int (EnchantBookForTradingFunction::*rv)(class ItemInstance &, class Random &, struct Trade const &, class LootTableContext &);
+        *((void**)&rv) = dlsym("?apply@EnchantBookForTradingFunction@@UEAAHAEAVItemInstance@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z");
+        return (this->*rv)(std::forward<class ItemInstance &>(a0), std::forward<class Random &>(a1), std::forward<struct Trade const &>(a2), std::forward<class LootTableContext &>(a3));
+    }
+    inline void apply(class ItemStack & a0, class Random & a1, class LootTableContext & a2){
+        void (EnchantBookForTradingFunction::*rv)(class ItemStack &, class Random &, class LootTableContext &);
+        *((void**)&rv) = dlsym("?apply@EnchantBookForTradingFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z");
+        return (this->*rv)(std::forward<class ItemStack &>(a0), std::forward<class Random &>(a1), std::forward<class LootTableContext &>(a2));
+    }
+    inline void apply(class ItemInstance & a0, class Random & a1, class LootTableContext & a2){
+        void (EnchantBookForTradingFunction::*rv)(class ItemInstance &, class Random &, class LootTableContext &);
+        *((void**)&rv) = dlsym("?apply@EnchantBookForTradingFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z");
+        return (this->*rv)(std::forward<class ItemInstance &>(a0), std::forward<class Random &>(a1), std::forward<class LootTableContext &>(a2));
+    }
+    */
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 protected:

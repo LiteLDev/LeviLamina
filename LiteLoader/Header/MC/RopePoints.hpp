@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROPEPOINTS
-#endif
     MCAPI void beginRope();
     MCAPI void endRope();
     MCAPI void freezeInterpolation();

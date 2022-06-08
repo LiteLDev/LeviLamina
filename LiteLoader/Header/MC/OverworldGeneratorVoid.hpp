@@ -21,18 +21,58 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDGENERATORVOID
-    MCVAPI void _prepareHeights(class BlockVolume &, class ChunkPos const &, class WorldGenCache const &, class Aquifer *, class std::function<void (class BlockPos const &, class Block const &, int)> &&, bool, std::vector<short> *, int);
-    MCVAPI void decorateWorldGenPostProcess(class Biome &, class LevelChunk &, class BlockSource &, class Random &) const;
-    MCVAPI class BlockPos findSpawnPosition() const;
-    MCVAPI class Util::MultidimensionalArray<float, 5, 5, 41> generateDensityCellsForChunk(class ChunkPos const &) const;
-    MCVAPI class BiomeSource const & getBiomeSource() const;
-    MCVAPI int getLevelGenHeight() const;
-    MCVAPI std::unique_ptr<class PerlinSimplexNoise> const & getMaterialAdjNoise() const;
-    MCVAPI class PerlinSimplexNoise const & getSurfaceNoise();
-    MCVAPI class std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const;
-    MCVAPI void loadChunk(class LevelChunk &, bool);
-#endif
+    /*
+    inline void _prepareHeights(class BlockVolume & a0, class ChunkPos const & a1, class WorldGenCache const & a2, class Aquifer * a3, class std::function<void (class BlockPos const &, class Block const &, int)> && a4, bool a5, std::vector<short> * a6, int a7){
+        void (OverworldGeneratorVoid::*rv)(class BlockVolume &, class ChunkPos const &, class WorldGenCache const &, class Aquifer *, class std::function<void (class BlockPos const &, class Block const &, int)> &&, bool, std::vector<short> *, int);
+        *((void**)&rv) = dlsym("?_prepareHeights@OverworldGeneratorVoid@@EEAAXAEAVBlockVolume@@AEBVChunkPos@@AEBVWorldGenCache@@PEAVAquifer@@$$QEAV?$function@$$A6AXAEBVBlockPos@@AEBVBlock@@H@Z@std@@_NPEAV?$vector@FV?$allocator@F@std@@@7@H@Z");
+        return (this->*rv)(std::forward<class BlockVolume &>(a0), std::forward<class ChunkPos const &>(a1), std::forward<class WorldGenCache const &>(a2), std::forward<class Aquifer *>(a3), std::forward<class std::function<void (class BlockPos const &, class Block const &, int)> &&>(a4), std::forward<bool>(a5), std::forward<std::vector<short> *>(a6), std::forward<int>(a7));
+    }
+    inline void decorateWorldGenPostProcess(class Biome & a0, class LevelChunk & a1, class BlockSource & a2, class Random & a3) const{
+        void (OverworldGeneratorVoid::*rv)(class Biome &, class LevelChunk &, class BlockSource &, class Random &) const;
+        *((void**)&rv) = dlsym("?decorateWorldGenPostProcess@OverworldGeneratorVoid@@EEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z");
+        return (this->*rv)(std::forward<class Biome &>(a0), std::forward<class LevelChunk &>(a1), std::forward<class BlockSource &>(a2), std::forward<class Random &>(a3));
+    }
+    inline class BlockPos findSpawnPosition() const{
+        class BlockPos (OverworldGeneratorVoid::*rv)() const;
+        *((void**)&rv) = dlsym("?findSpawnPosition@OverworldGeneratorVoid@@UEBA?AVBlockPos@@XZ");
+        return (this->*rv)();
+    }
+    inline class Util::MultidimensionalArray<float, 5, 5, 41> generateDensityCellsForChunk(class ChunkPos const & a0) const{
+        class Util::MultidimensionalArray<float, 5, 5, 41> (OverworldGeneratorVoid::*rv)(class ChunkPos const &) const;
+        *((void**)&rv) = dlsym("?generateDensityCellsForChunk@OverworldGeneratorVoid@@UEBA?AV?$MultidimensionalArray@M$04$04$0CJ@@Util@@AEBVChunkPos@@@Z");
+        return (this->*rv)(std::forward<class ChunkPos const &>(a0));
+    }
+    inline class BiomeSource const & getBiomeSource() const{
+        class BiomeSource const & (OverworldGeneratorVoid::*rv)() const;
+        *((void**)&rv) = dlsym("?getBiomeSource@OverworldGeneratorVoid@@UEBAAEBVBiomeSource@@XZ");
+        return (this->*rv)();
+    }
+    inline int getLevelGenHeight() const{
+        int (OverworldGeneratorVoid::*rv)() const;
+        *((void**)&rv) = dlsym("?getLevelGenHeight@OverworldGeneratorVoid@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline std::unique_ptr<class PerlinSimplexNoise> const & getMaterialAdjNoise() const{
+        std::unique_ptr<class PerlinSimplexNoise> const & (OverworldGeneratorVoid::*rv)() const;
+        *((void**)&rv) = dlsym("?getMaterialAdjNoise@OverworldGeneratorVoid@@UEBAAEBV?$unique_ptr@VPerlinSimplexNoise@@U?$default_delete@VPerlinSimplexNoise@@@std@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline class PerlinSimplexNoise const & getSurfaceNoise(){
+        class PerlinSimplexNoise const & (OverworldGeneratorVoid::*rv)();
+        *((void**)&rv) = dlsym("?getSurfaceNoise@OverworldGeneratorVoid@@UEAAAEBVPerlinSimplexNoise@@XZ");
+        return (this->*rv)();
+    }
+    inline class std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const{
+        class std::optional<class XoroshiroPositionalRandomFactory> (OverworldGeneratorVoid::*rv)() const;
+        *((void**)&rv) = dlsym("?getXoroshiroPositionalRandomFactory@OverworldGeneratorVoid@@UEBA?AV?$optional@VXoroshiroPositionalRandomFactory@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline void loadChunk(class LevelChunk & a0, bool a1){
+        void (OverworldGeneratorVoid::*rv)(class LevelChunk &, bool);
+        *((void**)&rv) = dlsym("?loadChunk@OverworldGeneratorVoid@@UEAAXAEAVLevelChunk@@_N@Z");
+        return (this->*rv)(std::forward<class LevelChunk &>(a0), std::forward<bool>(a1));
+    }
+    */
     MCAPI OverworldGeneratorVoid(class Dimension &, unsigned int);
 
 protected:

@@ -35,8 +35,6 @@ public:
     /*4*/ virtual void putKey(std::string const &, class std::shared_ptr<std::string>, enum DBHelpers::Category);
     /*5*/ virtual void deleteKey(std::string const &, enum DBHelpers::Category);
     /*6*/ virtual void flush(class LevelStorage &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSTORAGEWRITEBATCH
-#endif
     MCAPI LevelStorageWriteBatch();
     MCAPI void addFlushCallback(class std::function<void (void)>);
     MCAPI void clear();

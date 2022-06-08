@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFILTERGROUP
-#endif
     MCAPI static class Scripting::ClassBindingBuilder<class ActorFilterGroup> bind(struct Scripting::Version);
 
 protected:

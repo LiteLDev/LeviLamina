@@ -29,12 +29,28 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMCOMPONENT
-    MCVAPI void initializeFromNetwork(class CompoundTag const &);
-    MCVAPI bool isNetworkComponent() const;
-    MCVAPI bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
-    MCVAPI void writeSettings();
-#endif
+    /*
+    inline bool isNetworkComponent() const{
+        bool (ItemComponent::*rv)() const;
+        *((void**)&rv) = dlsym("?isNetworkComponent@ItemComponent@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool useOn(class ItemStack & a0, class Actor & a1, class BlockPos const & a2, unsigned char a3, class Vec3 const & a4) const{
+        bool (ItemComponent::*rv)(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
+        *((void**)&rv) = dlsym("?useOn@ItemComponent@@UEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z");
+        return (this->*rv)(std::forward<class ItemStack &>(a0), std::forward<class Actor &>(a1), std::forward<class BlockPos const &>(a2), std::forward<unsigned char>(a3), std::forward<class Vec3 const &>(a4));
+    }
+    inline void initializeFromNetwork(class CompoundTag const & a0){
+        void (ItemComponent::*rv)(class CompoundTag const &);
+        *((void**)&rv) = dlsym("?initializeFromNetwork@ItemComponent@@UEAAXAEBVCompoundTag@@@Z");
+        return (this->*rv)(std::forward<class CompoundTag const &>(a0));
+    }
+    inline void writeSettings(){
+        void (ItemComponent::*rv)();
+        *((void**)&rv) = dlsym("?writeSettings@ItemComponent@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ItemComponent(class ComponentItem *);
     MCAPI static void bindItemComponentType();
 

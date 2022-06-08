@@ -25,8 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlock();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCK
-#endif
     MCAPI ScriptBlock(class ScriptBlock &&);
     MCAPI ScriptBlock(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<class Scripting::StrongObjectHandle> getComponent(std::string const &);

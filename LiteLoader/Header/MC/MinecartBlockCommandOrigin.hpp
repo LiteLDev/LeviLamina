@@ -36,8 +36,6 @@ public:
     /*30*/ virtual bool isValid() const;
     /*32*/ virtual class BaseCommandBlock * _getBaseCommandBlock(class BlockSource &) const;
     /*33*/ virtual class CommandBlockActor * _getBlockEntity(class BlockSource &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTBLOCKCOMMANDORIGIN
-#endif
     MCAPI MinecartBlockCommandOrigin(class BlockSource &, struct ActorUniqueID const &);
     MCAPI static std::unique_ptr<class MinecartBlockCommandOrigin> load(class CompoundTag const &, class Level &);
 

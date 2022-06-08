@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDATAWRAPPER
-#endif
     MCAPI LevelDataWrapper();
     MCAPI class LevelData const & operator*() const;
     MCAPI class LevelData & operator*();

@@ -32,10 +32,18 @@ public:
     /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOULSPEEDENCHANT
-    MCVAPI bool isDiscoverable() const;
-    MCVAPI bool isTreasureOnly() const;
-#endif
+    /*
+    inline bool isDiscoverable() const{
+        bool (SoulSpeedEnchant::*rv)() const;
+        *((void**)&rv) = dlsym("?isDiscoverable@SoulSpeedEnchant@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isTreasureOnly() const{
+        bool (SoulSpeedEnchant::*rv)() const;
+        *((void**)&rv) = dlsym("?isTreasureOnly@SoulSpeedEnchant@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SoulSpeedEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
     MCAPI static class mce::UUID const SOUL_SPEED_BOOST_UUID;
     MCAPI static int getLevel(class Actor const &);

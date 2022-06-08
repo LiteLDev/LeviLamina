@@ -43,8 +43,6 @@ public:
     /*80*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*82*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /*83*/ virtual void releaseUsing(class ItemStack &, class Player *, int) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPYGLASSITEM
-#endif
     MCAPI SpyglassItem(std::string const &, short);
 
 protected:

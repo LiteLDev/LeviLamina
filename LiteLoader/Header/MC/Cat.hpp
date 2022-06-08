@@ -55,8 +55,6 @@ public:
     /*345*/ virtual void __unk_vfn_345();
     /*355*/ virtual void _serverAiMobStep();
     /*359*/ virtual void __unk_vfn_359();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAT
-#endif
     MCAPI Cat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI static float const SNEAK_SPEED_MOD;
     MCAPI static float const SPRINT_SPEED_MOD;

@@ -71,9 +71,13 @@ public:
     /*368*/ virtual void playLandSound();
     /*369*/ virtual void decreaseSquish();
     /*370*/ virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIME
-    MCVAPI bool useNewAi() const;
-#endif
+    /*
+    inline bool useNewAi() const{
+        bool (Slime::*rv)() const;
+        *((void**)&rv) = dlsym("?useNewAi@Slime@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI Slime(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI float getOldSquishValue() const;
     MCAPI int getSlimeSize() const;

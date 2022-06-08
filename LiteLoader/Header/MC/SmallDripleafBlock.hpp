@@ -73,10 +73,18 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMALLDRIPLEAFBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-    MCVAPI bool waterSpreadCausesSpawn() const;
-#endif
+    /*
+    inline bool waterSpreadCausesSpawn() const{
+        bool (SmallDripleafBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@SmallDripleafBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canBeSilkTouched() const{
+        bool (SmallDripleafBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@SmallDripleafBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SmallDripleafBlock(std::string const &, int);
     MCAPI static bool tryPlaceSmallDripleaf(class BlockSource &, class BlockPos const &, int, int);
 

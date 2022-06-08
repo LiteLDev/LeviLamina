@@ -40,8 +40,6 @@ public:
     /*13*/ virtual void setPacketSender(class PacketSender *);
     /*14*/ virtual void writeToLevelStorage();
     /*15*/ virtual bool isClientSide() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERSCOREBOARD
-#endif
     MCAPI ServerScoreboard(class CommandSoftEnumRegistry, class LevelStorage *);
     MCAPI void deserialize(std::unique_ptr<class CompoundTag>);
     MCAPI std::unique_ptr<class CompoundTag> serialize() const;

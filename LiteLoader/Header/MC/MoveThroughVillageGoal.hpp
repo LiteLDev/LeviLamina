@@ -31,10 +31,18 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETHROUGHVILLAGEGOAL
-    MCVAPI bool canContinueToUse();
-    MCVAPI bool canUse();
-#endif
+    /*
+    inline bool canContinueToUse(){
+        bool (MoveThroughVillageGoal::*rv)();
+        *((void**)&rv) = dlsym("?canContinueToUse@MoveThroughVillageGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canUse(){
+        bool (MoveThroughVillageGoal::*rv)();
+        *((void**)&rv) = dlsym("?canUse@MoveThroughVillageGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI MoveThroughVillageGoal(class Mob &, float, bool);
 
 protected:

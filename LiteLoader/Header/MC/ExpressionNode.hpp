@@ -17,8 +17,6 @@ class ExpressionNode {
 #undef AFTER_EXTRA
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPRESSIONNODE
-#endif
     MCAPI ExpressionNode(class ExpressionNode &&);
     MCAPI ExpressionNode(class ExpressionNode const &);
     MCAPI ExpressionNode(std::string const &, class SemVersion const &, class gsl::span<class HashedString const, -1>);

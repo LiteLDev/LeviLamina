@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPPERCOMPONENT
-#endif
     MCAPI HopperComponent();
     MCAPI class BlockPos getLastPosition() const;
     MCAPI bool pullInItems(class Actor &);

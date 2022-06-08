@@ -24,8 +24,6 @@ public:
 
 public:
     /*0*/ virtual bool _createItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EMPTYLOOTITEM
-#endif
 
 protected:
 

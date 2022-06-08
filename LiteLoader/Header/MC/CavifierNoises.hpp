@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAVIFIERNOISES
-#endif
     MCAPI CavifierNoises(class CavifierNoises const &);
     MCAPI ~CavifierNoises();
     MCAPI static class CavifierNoises make(class XoroshiroPositionalRandomFactory const &);

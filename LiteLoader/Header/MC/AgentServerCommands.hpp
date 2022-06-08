@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTSERVERCOMMANDS
-#endif
     MCAPI static void setupStandardServer(class Minecraft &, std::string const &);
 
 protected:

@@ -33,8 +33,6 @@ public:
     /*8*/ virtual bool isActive() const;
     /*9*/ virtual int getPositionSteps() const;
     /*10*/ virtual int getRotationSteps() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEMENTINTERPOLATOR
-#endif
     MCAPI MovementInterpolator();
 
 protected:

@@ -25,8 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptLeashableComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTLEASHABLECOMPONENT
-#endif
     MCAPI ScriptLeashableComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class Scripting::Result<float> getSoftDistance() const;
     MCAPI class Scripting::Result<void> leash(class ScriptActor &) const;

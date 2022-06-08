@@ -31,8 +31,6 @@ public:
     /*4*/ virtual std::vector<class ItemInstance> const & getResultItem() const;
     /*6*/ virtual bool matches(class CraftingContainer &, class Level &) const;
     /*7*/ virtual int size() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERDUPLICATERECIPE
-#endif
     MCAPI BannerDuplicateRecipe(class gsl::basic_string_span<char const, -1>);
     MCAPI BannerDuplicateRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
     MCAPI static class mce::UUID const ID;

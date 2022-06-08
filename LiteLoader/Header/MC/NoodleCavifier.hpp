@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NOODLECAVIFIER
-#endif
     MCAPI NoodleCavifier(class NoodleCavifierNoises const &, short);
     MCAPI float cavify(float, class BlockPos const &) const;
     MCAPI void fillNoiseAtPos(class Vec3 const &, int, float);

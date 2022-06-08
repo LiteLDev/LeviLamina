@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROJECTILEFACTORY
-#endif
     MCAPI ProjectileFactory(class Level &);
     MCAPI bool shootProjectileFromDefinition(struct ActorDefinitionIdentifier const &, class Mob *, class Vec3);
     MCAPI static std::unique_ptr<class OnHitSubcomponent> createSubcomponent(class Json::Value &, class SemVersion const &, std::string const &);

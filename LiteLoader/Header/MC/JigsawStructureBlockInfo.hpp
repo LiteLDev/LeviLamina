@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWSTRUCTUREBLOCKINFO
-#endif
     MCAPI JigsawStructureBlockInfo(class JigsawStructureBlockInfo &&);
     MCAPI JigsawStructureBlockInfo(class BlockPos const &, std::unique_ptr<class CompoundTag>, class Block const &);
     MCAPI class CompoundTag * getNonEmptyTag();

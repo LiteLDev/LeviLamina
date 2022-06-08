@@ -27,8 +27,6 @@ public:
     /*1*/ virtual void initFilePick(class Core::Path const &, class std::function<void (bool, struct FileInfo)>);
     /*2*/ virtual unsigned __int64 readBytes(struct FileInfo const &, unsigned __int64, unsigned __int64, std::vector<unsigned char> &);
     /*3*/ virtual bool writeBytes(struct FileInfo const &, unsigned __int64, unsigned __int64, std::vector<unsigned char> const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYSTEMFILEPICKER
-#endif
     MCAPI SystemFilePicker();
 
 protected:

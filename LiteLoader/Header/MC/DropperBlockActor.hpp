@@ -24,11 +24,23 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DROPPERBLOCKACTOR
-    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
-    MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
-    MCVAPI std::string getName() const;
-#endif
+    /*
+    inline std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource & a0){
+        std::unique_ptr<class BlockActorDataPacket> (DropperBlockActor::*rv)(class BlockSource &);
+        *((void**)&rv) = dlsym("?_getUpdatePacket@DropperBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0));
+    }
+    inline void _onUpdatePacket(class CompoundTag const & a0, class BlockSource & a1){
+        void (DropperBlockActor::*rv)(class CompoundTag const &, class BlockSource &);
+        *((void**)&rv) = dlsym("?_onUpdatePacket@DropperBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z");
+        return (this->*rv)(std::forward<class CompoundTag const &>(a0), std::forward<class BlockSource &>(a1));
+    }
+    inline std::string getName() const{
+        std::string (DropperBlockActor::*rv)() const;
+        *((void**)&rv) = dlsym("?getName@DropperBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI DropperBlockActor(class BlockPos);
     MCAPI bool pushOutItems(class BlockSource &);
 

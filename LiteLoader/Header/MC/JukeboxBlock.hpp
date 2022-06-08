@@ -65,9 +65,13 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUKEBOXBLOCK
-    MCVAPI bool hasComparatorSignal() const;
-#endif
+    /*
+    inline bool hasComparatorSignal() const{
+        bool (JukeboxBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?hasComparatorSignal@JukeboxBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI JukeboxBlock(std::string const &, int);
 
 protected:

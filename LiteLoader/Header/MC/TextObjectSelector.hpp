@@ -28,8 +28,6 @@ public:
     /*1*/ virtual std::string asString() const;
     /*2*/ virtual class Json::Value asJsonValue() const;
     /*3*/ virtual class Json::Value resolve(struct ResolveData const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTOBJECTSELECTOR
-#endif
     MCAPI TextObjectSelector(std::string);
     MCAPI static std::string const RAW_TEXT_SELECTOR_KEY;
     MCAPI static std::string const RAW_TEXT_SELECTOR_STAR;

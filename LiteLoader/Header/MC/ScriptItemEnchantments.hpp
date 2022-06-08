@@ -20,8 +20,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMENCHANTMENTS
-#endif
     MCAPI ScriptItemEnchantments(class ScriptItemEnchantments &&);
     MCAPI ScriptItemEnchantments(class ScriptItemEnchantments const &);
     MCAPI ScriptItemEnchantments(class ItemEnchants const &);

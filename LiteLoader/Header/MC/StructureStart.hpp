@@ -26,8 +26,6 @@ public:
     /*0*/ virtual ~StructureStart();
     /*1*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /*2*/ virtual bool isValid() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURESTART
-#endif
     MCAPI void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
 
 protected:

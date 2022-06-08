@@ -23,16 +23,48 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCEEVENTLISTENER
-    MCVAPI enum EventResult onEvent(struct ServerInstanceNotificationEvent const &);
-    MCVAPI enum EventResult onServerInitializeEnd(class ServerInstance &);
-    MCVAPI enum EventResult onServerInitializeStart(class ServerInstance &);
-    MCVAPI enum EventResult onServerMinecraftInitialized(class ServerInstance &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const &);
-    MCVAPI enum EventResult onServerResume(class ServerInstance &);
-    MCVAPI enum EventResult onServerSuspend(class ServerInstance &);
-    MCVAPI enum EventResult onServerUpdateEnd(class ServerInstance &);
-    MCVAPI enum EventResult onStartLeaveGame(class ServerInstance &);
-#endif
+    /*
+    inline enum EventResult onServerResume(class ServerInstance & a0){
+        enum EventResult (ServerInstanceEventListener::*rv)(class ServerInstance &);
+        *((void**)&rv) = dlsym("?onServerResume@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z");
+        return (this->*rv)(std::forward<class ServerInstance &>(a0));
+    }
+    inline enum EventResult onServerInitializeEnd(class ServerInstance & a0){
+        enum EventResult (ServerInstanceEventListener::*rv)(class ServerInstance &);
+        *((void**)&rv) = dlsym("?onServerInitializeEnd@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z");
+        return (this->*rv)(std::forward<class ServerInstance &>(a0));
+    }
+    inline enum EventResult onServerMinecraftInitialized(class ServerInstance & a0, class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const & a1){
+        enum EventResult (ServerInstanceEventListener::*rv)(class ServerInstance &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const &);
+        *((void**)&rv) = dlsym("?onServerMinecraftInitialized@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@AEBV?$not_null@V?$NonOwnerPointer@VMinecraft@@@Bedrock@@@gsl@@@Z");
+        return (this->*rv)(std::forward<class ServerInstance &>(a0), std::forward<class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const &>(a1));
+    }
+    inline enum EventResult onServerInitializeStart(class ServerInstance & a0){
+        enum EventResult (ServerInstanceEventListener::*rv)(class ServerInstance &);
+        *((void**)&rv) = dlsym("?onServerInitializeStart@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z");
+        return (this->*rv)(std::forward<class ServerInstance &>(a0));
+    }
+    inline enum EventResult onServerSuspend(class ServerInstance & a0){
+        enum EventResult (ServerInstanceEventListener::*rv)(class ServerInstance &);
+        *((void**)&rv) = dlsym("?onServerSuspend@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z");
+        return (this->*rv)(std::forward<class ServerInstance &>(a0));
+    }
+    inline enum EventResult onStartLeaveGame(class ServerInstance & a0){
+        enum EventResult (ServerInstanceEventListener::*rv)(class ServerInstance &);
+        *((void**)&rv) = dlsym("?onStartLeaveGame@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z");
+        return (this->*rv)(std::forward<class ServerInstance &>(a0));
+    }
+    inline enum EventResult onEvent(struct ServerInstanceNotificationEvent const & a0){
+        enum EventResult (ServerInstanceEventListener::*rv)(struct ServerInstanceNotificationEvent const &);
+        *((void**)&rv) = dlsym("?onEvent@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEBUServerInstanceNotificationEvent@@@Z");
+        return (this->*rv)(std::forward<struct ServerInstanceNotificationEvent const &>(a0));
+    }
+    inline enum EventResult onServerUpdateEnd(class ServerInstance & a0){
+        enum EventResult (ServerInstanceEventListener::*rv)(class ServerInstance &);
+        *((void**)&rv) = dlsym("?onServerUpdateEnd@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z");
+        return (this->*rv)(std::forward<class ServerInstance &>(a0));
+    }
+    */
 
 protected:
 

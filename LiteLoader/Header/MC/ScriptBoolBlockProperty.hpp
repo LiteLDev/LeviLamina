@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBOOLBLOCKPROPERTY
-#endif
     MCAPI ScriptBoolBlockProperty(class ScriptBoolBlockProperty &&);
     MCAPI ScriptBoolBlockProperty(std::string, class ItemState const &, std::vector<bool>, class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>);
     MCAPI class Scripting::Result<bool> getState() const;

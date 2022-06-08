@@ -75,12 +75,28 @@ public:
     /*204*/ virtual std::string getDustParticleName(class Block const &) const;
     /*205*/ virtual void __unk_vfn_205();
     /*206*/ virtual void onLand(class BlockSource &, class BlockPos const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANVILBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-    MCVAPI bool falling() const;
-    MCVAPI bool isCraftingBlock() const;
-    MCVAPI bool isInteractiveBlock() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (AnvilBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@AnvilBlock@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isCraftingBlock() const{
+        bool (AnvilBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isCraftingBlock@AnvilBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool falling() const{
+        bool (AnvilBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?falling@AnvilBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInteractiveBlock() const{
+        bool (AnvilBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@AnvilBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI AnvilBlock(std::string const &, int);
 
 protected:

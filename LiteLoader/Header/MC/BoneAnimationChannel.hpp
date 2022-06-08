@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BONEANIMATIONCHANNEL
-#endif
     MCAPI class KeyFrameTransform & addKeyFrame(float);
     MCAPI void sortKeyFrames();
 

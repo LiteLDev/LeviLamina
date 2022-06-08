@@ -31,8 +31,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FACING
-#endif
     MCAPI static class std::array<std::vector<unsigned char>, 6> const ALL_EXCEPT;
     MCAPI static class std::array<std::vector<unsigned char>, 6> const ALL_EXCEPT_AXIS_Y;
     MCAPI static std::vector<unsigned char> const ALL_FACES;

@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEBLOCKEVENTMAP
-#endif
     MCAPI InsideBlockEventMap(class Block const &, bool, bool, bool, class DefinitionTrigger const &, class DefinitionTrigger const &);
     MCAPI InsideBlockEventMap(class InsideBlockEventMap const &);
     MCAPI class gsl::not_null<class Block const *> getBlock() const;

@@ -34,8 +34,6 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual int getRandomEatingEnd() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNACKGOAL
-#endif
     MCAPI SnackGoal(class Mob &, std::vector<class ItemDescriptor> const &, float, float, float);
 
 protected:

@@ -30,8 +30,6 @@ public:
     /*3*/ virtual class Vec3 getTempMobPos(class Mob const &) const;
     /*9*/ virtual void stop(class NavigationComponent &, class Mob &);
     /*12*/ virtual void updatePath(class NavigationComponent &, class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENERICPATHNAVIGATION
-#endif
 
 protected:
 

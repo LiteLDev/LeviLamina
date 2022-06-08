@@ -59,10 +59,18 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CARTOGRAPHYTABLEBLOCK
-    MCVAPI bool isCraftingBlock() const;
-    MCVAPI bool isInteractiveBlock() const;
-#endif
+    /*
+    inline bool isInteractiveBlock() const{
+        bool (CartographyTableBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@CartographyTableBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isCraftingBlock() const{
+        bool (CartographyTableBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isCraftingBlock@CartographyTableBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI CartographyTableBlock(std::string const &, int);
 
 protected:

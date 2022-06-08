@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONCONVERSIONDATA
-#endif
     MCAPI DimensionConversionData(class Vec3 const &, int);
     MCAPI int getNetherScale() const;
     MCAPI class Vec3 const & getOverworldSpawnPoint() const;

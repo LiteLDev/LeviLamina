@@ -34,8 +34,6 @@ public:
     /*8*/ virtual bool peek() const;
     /*9*/ virtual bool receive(char *, unsigned __int64);
     /*10*/ virtual void send(char const *, unsigned __int64);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEBUGGERTRANSPORT
-#endif
     MCAPI ScriptDebuggerTransport(class IScriptDebuggerWatchdog &);
 
 protected:

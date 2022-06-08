@@ -70,8 +70,6 @@ public:
     /*191*/ virtual enum BlockRenderLayer getRenderLayer() const;
     /*192*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAPLING
-#endif
     MCAPI Sapling(std::string const &, int);
 
 protected:

@@ -35,8 +35,6 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void _attemptMoveToTarget(class Actor &);
     /*11*/ virtual void _attemptAttackTarget(class Actor &, float, float, float, float);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MELEEATTACKGOAL
-#endif
     MCAPI MeleeAttackGoal(class Mob &);
 
 protected:

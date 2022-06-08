@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACK
-#endif
     MCAPI ResourcePack(class Pack &);
     MCAPI bool areKnownFilesValid();
     MCAPI void forEachIn(class Core::Path const &, class std::function<void (class Core::Path const &)>, int, bool) const;

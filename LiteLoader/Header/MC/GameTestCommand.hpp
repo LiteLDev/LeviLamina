@@ -26,8 +26,6 @@ public:
 public:
     /*0*/ virtual ~GameTestCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTCOMMAND
-#endif
     MCAPI static void postScriptRegisterSetup(class CommandRegistry &);
     MCAPI static void setup(class CommandRegistry &);
 

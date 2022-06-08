@@ -29,8 +29,6 @@ public:
     /*5*/ virtual class Scripting::Result<void> setNameTag(std::string const &) const;
     /*6*/ virtual class Scripting::Result<bool> getSneaking() const;
     /*7*/ virtual class Scripting::Result<void> setSneaking(bool) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSIMULATEDPLAYER
-#endif
     MCAPI ScriptSimulatedPlayer(class Player const &, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<bool> attack() const;
     MCAPI class Scripting::Result<bool> attackEntity(class ScriptActor const &) const;

@@ -30,8 +30,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDRAWTEXT
-#endif
     MCAPI std::string const & getText() const;
 
 protected:

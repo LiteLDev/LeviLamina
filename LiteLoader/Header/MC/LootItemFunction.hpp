@@ -29,8 +29,6 @@ public:
     /*2*/ virtual int apply(class ItemStack &, class Random &, struct Trade const &, class LootTableContext &);
     /*3*/ virtual void apply(class ItemInstance &, class Random &, class LootTableContext &) = 0;
     /*4*/ virtual int apply(class ItemInstance &, class Random &, struct Trade const &, class LootTableContext &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMFUNCTION
-#endif
     MCAPI std::vector<std::unique_ptr<class LootItemCondition>> const & getConditions() const;
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value);
 

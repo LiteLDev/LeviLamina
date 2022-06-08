@@ -70,8 +70,6 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual void _lightUpBlock(class BlockSource &, class BlockPos const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REDSTONEOREBLOCK
-#endif
     MCAPI RedStoneOreBlock(std::string const &, int, bool);
 
 protected:

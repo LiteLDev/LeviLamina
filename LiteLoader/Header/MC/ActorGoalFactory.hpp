@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORGOALFACTORY
-#endif
     MCAPI void _initializeBedrock();
 
 protected:

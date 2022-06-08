@@ -28,8 +28,6 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory &, class IContentKeyProvider const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOSITEPACKSOURCE
-#endif
     MCAPI CompositePackSource(std::vector<class PackSource *> &&);
     MCAPI CompositePackSource();
     MCAPI void addPackSource(class PackSource *);

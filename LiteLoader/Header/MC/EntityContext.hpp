@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCONTEXT
-#endif
     MCAPI EntityContext(class EntityRegistry &, class EntityId);
     MCAPI class WeakRefT<struct EntityRefTraits> getWeakRef() const;
 

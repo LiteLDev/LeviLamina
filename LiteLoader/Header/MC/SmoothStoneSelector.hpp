@@ -25,8 +25,6 @@ public:
 public:
     /*0*/ virtual ~SmoothStoneSelector();
     /*1*/ virtual class Block const & next(class Random &, int, int, int, bool) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMOOTHSTONESELECTOR
-#endif
 
 protected:
 

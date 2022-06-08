@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAREDATTRIBUTES
-#endif
     MCAPI static class Attribute const ABSORPTION;
     MCAPI static class Attribute const ATTACK_DAMAGE;
     MCAPI static class Attribute const FOLLOW_RANGE;

@@ -26,8 +26,6 @@ public:
     /*0*/ virtual ~LootSystem();
     /*1*/ virtual void registerEvents(class entt::dispatcher &);
     /*2*/ virtual void tick(class EntityRegistry &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTSYSTEM
-#endif
 
 protected:
 

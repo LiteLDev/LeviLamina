@@ -23,8 +23,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptIsTamedComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTISTAMEDCOMPONENT
-#endif
     MCAPI static class HashedString const & getHashedName();
 
 protected:

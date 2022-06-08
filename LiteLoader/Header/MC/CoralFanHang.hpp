@@ -70,8 +70,6 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORALFANHANG
-#endif
     MCAPI CoralFanHang(std::string const &, int);
 
 protected:

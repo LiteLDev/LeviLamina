@@ -31,8 +31,6 @@ public:
 public:
     /*0*/ virtual ~PackManifest();
     /*1*/ virtual std::unique_ptr<class PackManifest> clone() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKMANIFEST
-#endif
     MCAPI PackManifest(class PackManifest const &);
     MCAPI PackManifest(enum ManifestType);
     MCAPI void addLegacyModuleDependency(struct LegacyPackIdVersion const &);

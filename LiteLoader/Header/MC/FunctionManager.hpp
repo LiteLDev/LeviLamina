@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FUNCTIONMANAGER
-#endif
     MCAPI FunctionManager(std::unique_ptr<class ICommandDispatcher>, std::unique_ptr<class CommandOrigin>, class GameRule const *);
     MCAPI int execute(class FunctionEntry &, class CommandOrigin const &, enum FunctionQueueOrder);
     MCAPI class ICommandDispatcher & getCommandDispatcher();

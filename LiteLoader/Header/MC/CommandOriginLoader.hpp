@@ -25,8 +25,6 @@ public:
 public:
     /*0*/ virtual ~CommandOriginLoader();
     /*1*/ virtual std::unique_ptr<class CommandOrigin> load(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDORIGINLOADER
-#endif
     MCAPI CommandOriginLoader(class ServerLevel &);
     MCAPI static std::unique_ptr<class CommandOrigin> load(class CompoundTag const &, class ServerLevel &);
 

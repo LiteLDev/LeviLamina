@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCALEBYAGEDEFINITION
-#endif
     MCAPI ScaleByAgeDefinition();
     MCAPI void initialize(class EntityContext &, class ScaleByAgeComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ScaleByAgeDefinition>> &);

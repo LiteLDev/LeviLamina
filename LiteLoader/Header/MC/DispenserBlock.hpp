@@ -73,11 +73,23 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*204*/ virtual int getTickDelay() const;
     /*205*/ virtual void dispenseFrom(class BlockSource &, class BlockPos const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPENSERBLOCK
-    MCVAPI bool hasComparatorSignal() const;
-    MCVAPI bool isContainerBlock() const;
-    MCVAPI bool isInteractiveBlock() const;
-#endif
+    /*
+    inline bool isContainerBlock() const{
+        bool (DispenserBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isContainerBlock@DispenserBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInteractiveBlock() const{
+        bool (DispenserBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@DispenserBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasComparatorSignal() const{
+        bool (DispenserBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?hasComparatorSignal@DispenserBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI DispenserBlock(std::string const &, int);
     MCAPI static void ejectItem(class BlockSource &, class Vec3 const &, unsigned char, class ItemStack const &);
 

@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTBATCH
-#endif
     MCAPI std::vector<std::unique_ptr<class ItemStackRequestData>> const & getRequests() const;
     MCAPI std::vector<std::unique_ptr<class ItemStackRequestData>> takeRequests() const;
     MCAPI void write(class BinaryStream &) const;

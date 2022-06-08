@@ -45,8 +45,6 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDBLOCKACTOR
-#endif
     MCAPI CommandBlockActor(class BlockPos const &, enum CommandBlockMode);
     MCAPI class BaseCommandBlock & getBaseCommandBlock();
     MCAPI std::string const & getCommand() const;

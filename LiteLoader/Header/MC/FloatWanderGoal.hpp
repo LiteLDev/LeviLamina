@@ -31,8 +31,6 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOATWANDERGOAL
-#endif
     MCAPI FloatWanderGoal(class Mob &, float, float, float, bool, bool, struct FloatRange);
 
 protected:

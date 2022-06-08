@@ -29,8 +29,6 @@ public:
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*3*/ virtual void finalizeParsedValue(class IWorldRegistriesProvider &);
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTBIOMEHASTAG
-#endif
 
 protected:
 

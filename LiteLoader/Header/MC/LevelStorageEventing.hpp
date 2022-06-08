@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSTORAGEEVENTING
-#endif
     MCAPI LevelStorageEventing(std::string const &, class LevelData const &, std::string const &);
     MCAPI void fireDBStorageError(char const *);
     MCAPI void fireEventWorldCorruptionCausedWorldShutdown(std::string const &, class std::optional<bool>);

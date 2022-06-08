@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMDESCRIPTOR
-#endif
     MCAPI ItemDescriptor(class ItemDescriptor &&);
     MCAPI ItemDescriptor(class ItemDescriptor const &);
     MCAPI ItemDescriptor(class Block const &);

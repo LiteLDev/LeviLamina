@@ -66,9 +66,13 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CARPETBLOCK
-    MCVAPI bool waterSpreadCausesSpawn() const;
-#endif
+    /*
+    inline bool waterSpreadCausesSpawn() const{
+        bool (CarpetBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@CarpetBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI CarpetBlock(std::string const &, int, class Material const &);
 
 protected:

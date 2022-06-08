@@ -26,8 +26,6 @@ public:
 public:
     /*0*/ virtual ~LookAtEntityGoal();
     /*3*/ virtual void __unk_vfn_3();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATENTITYGOAL
-#endif
 
 protected:
 

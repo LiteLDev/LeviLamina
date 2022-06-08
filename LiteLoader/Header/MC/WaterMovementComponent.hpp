@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WATERMOVEMENTCOMPONENT
-#endif
     MCAPI WaterMovementComponent();
     MCAPI float getDragFactor() const;
     MCAPI void initFromDefinition(class Actor &);

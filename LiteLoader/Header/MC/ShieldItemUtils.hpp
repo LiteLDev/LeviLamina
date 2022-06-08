@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIELDITEMUTILS
-#endif
     MCAPI static bool isBlockedDamageCause(class ActorDamageSource const &);
 
 protected:

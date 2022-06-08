@@ -25,8 +25,6 @@ struct any_version_constructor {
 #undef AFTER_EXTRA
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEMVERSION
-#endif
     MCAPI SemVersion(class SemVersion const &);
     MCAPI SemVersion(unsigned short, unsigned short, unsigned short, std::string const &, std::string const &);
     MCAPI SemVersion(struct SemVersion::any_version_constructor);

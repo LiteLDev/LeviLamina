@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UNVERIFIEDCERTIFICATE
-#endif
     MCAPI UnverifiedCertificate(class UnverifiedCertificate &&);
     MCAPI UnverifiedCertificate(class UnverifiedCertificate const &);
     MCAPI std::string getIdentityPublicKey() const;

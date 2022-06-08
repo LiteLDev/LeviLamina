@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEAMLESSCHUNKBLENDINGATTENUATORFACTORY
-#endif
     MCAPI class SeamlessChunkBlendingAttenuator getOrCreateAttenuator(class ChunkPos const &);
 
 protected:

@@ -43,8 +43,6 @@ public:
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*113*/ virtual struct Brightness getLightEmission(int) const;
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLOWSTICKITEM
-#endif
     MCAPI GlowStickItem(std::string const &, int);
     MCAPI static enum ItemColor const COLORS[];
     MCAPI static int const MAX_ACTIVE_TICKS;

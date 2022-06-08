@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPINFO
-#endif
     MCAPI JumpInfo(float, float, int, int);
     MCAPI int getAnimDuration() const;
     MCAPI float getDistanceScale() const;

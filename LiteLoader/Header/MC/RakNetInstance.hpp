@@ -34,34 +34,138 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKNETINSTANCE
-    MCVAPI void _onDisable();
-    MCVAPI void _onEnable();
-    MCVAPI void addConnectionStateListener(class Connector::ConnectionStateListener *);
-    MCVAPI bool connect(void *);
-    MCVAPI void disconnect();
-    MCVAPI class Social::GameConnectionInfo const & getConnectedGameInfo() const;
-    MCVAPI unsigned short getIPv4Port() const;
-    MCVAPI unsigned short getIPv6Port() const;
-    MCVAPI std::string getLocalIp();
-    MCVAPI std::vector<std::string> getLocalIps() const;
-    MCVAPI struct Connector::NatPunchInfo getNatPunchInfo() const;
-    MCVAPI class RakNet::RakPeerInterface * getPeer();
-    MCVAPI class RakNet::RakPeerInterface const * getPeer() const;
-    MCVAPI unsigned short getPort() const;
-    MCVAPI std::vector<struct RakNet::SystemAddress> getRefinedLocalIps() const;
-    MCVAPI unsigned __int64 getTransportIdentifier() const;
-    MCVAPI bool host(struct ConnectionDefinition const &);
-    MCVAPI bool isIPv4Supported() const;
-    MCVAPI bool isIPv6Supported() const;
-    MCVAPI bool isServer() const;
-    MCVAPI void removeConnectionStateListener(class Connector::ConnectionStateListener *);
-    MCVAPI void runEvents();
-    MCVAPI void setupNatPunch(bool);
-    MCVAPI void startNatPunchingClient(std::string const &, unsigned short);
-    MCVAPI void tick();
-    MCVAPI ~RakNetInstance();
-#endif
+    /*
+    inline bool isServer() const{
+        bool (RakNetInstance::*rv)() const;
+        *((void**)&rv) = dlsym("?isServer@RakNetInstance@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline  ~RakNetInstance(){
+         (RakNetInstance::*rv)();
+        *((void**)&rv) = dlsym("??1RakNetInstance@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline void _onDisable(){
+        void (RakNetInstance::*rv)();
+        *((void**)&rv) = dlsym("?_onDisable@RakNetInstance@@EEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void _onEnable(){
+        void (RakNetInstance::*rv)();
+        *((void**)&rv) = dlsym("?_onEnable@RakNetInstance@@EEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void addConnectionStateListener(class Connector::ConnectionStateListener * a0){
+        void (RakNetInstance::*rv)(class Connector::ConnectionStateListener *);
+        *((void**)&rv) = dlsym("?addConnectionStateListener@RakNetInstance@@UEAAXPEAVConnectionStateListener@Connector@@@Z");
+        return (this->*rv)(std::forward<class Connector::ConnectionStateListener *>(a0));
+    }
+    inline bool connect(void * a0){
+        bool (RakNetInstance::*rv)(void *);
+        *((void**)&rv) = dlsym("?connect@RakNetInstance@@UEAA_NPEAX@Z");
+        return (this->*rv)(std::forward<void *>(a0));
+    }
+    inline void disconnect(){
+        void (RakNetInstance::*rv)();
+        *((void**)&rv) = dlsym("?disconnect@RakNetInstance@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline class Social::GameConnectionInfo const & getConnectedGameInfo() const{
+        class Social::GameConnectionInfo const & (RakNetInstance::*rv)() const;
+        *((void**)&rv) = dlsym("?getConnectedGameInfo@RakNetInstance@@UEBAAEBVGameConnectionInfo@Social@@XZ");
+        return (this->*rv)();
+    }
+    inline unsigned short getIPv4Port() const{
+        unsigned short (RakNetInstance::*rv)() const;
+        *((void**)&rv) = dlsym("?getIPv4Port@RakNetInstance@@UEBAGXZ");
+        return (this->*rv)();
+    }
+    inline unsigned short getIPv6Port() const{
+        unsigned short (RakNetInstance::*rv)() const;
+        *((void**)&rv) = dlsym("?getIPv6Port@RakNetInstance@@UEBAGXZ");
+        return (this->*rv)();
+    }
+    inline std::string getLocalIp(){
+        std::string (RakNetInstance::*rv)();
+        *((void**)&rv) = dlsym("?getLocalIp@RakNetInstance@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline std::vector<std::string> getLocalIps() const{
+        std::vector<std::string> (RakNetInstance::*rv)() const;
+        *((void**)&rv) = dlsym("?getLocalIps@RakNetInstance@@UEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline struct Connector::NatPunchInfo getNatPunchInfo() const{
+        struct Connector::NatPunchInfo (RakNetInstance::*rv)() const;
+        *((void**)&rv) = dlsym("?getNatPunchInfo@RakNetInstance@@UEBA?AUNatPunchInfo@Connector@@XZ");
+        return (this->*rv)();
+    }
+    inline class RakNet::RakPeerInterface * getPeer(){
+        class RakNet::RakPeerInterface * (RakNetInstance::*rv)();
+        *((void**)&rv) = dlsym("?getPeer@RakNetInstance@@UEAAPEAVRakPeerInterface@RakNet@@XZ");
+        return (this->*rv)();
+    }
+    inline class RakNet::RakPeerInterface const * getPeer() const{
+        class RakNet::RakPeerInterface const * (RakNetInstance::*rv)() const;
+        *((void**)&rv) = dlsym("?getPeer@RakNetInstance@@UEBAPEBVRakPeerInterface@RakNet@@XZ");
+        return (this->*rv)();
+    }
+    inline unsigned short getPort() const{
+        unsigned short (RakNetInstance::*rv)() const;
+        *((void**)&rv) = dlsym("?getPort@RakNetInstance@@UEBAGXZ");
+        return (this->*rv)();
+    }
+    inline std::vector<struct RakNet::SystemAddress> getRefinedLocalIps() const{
+        std::vector<struct RakNet::SystemAddress> (RakNetInstance::*rv)() const;
+        *((void**)&rv) = dlsym("?getRefinedLocalIps@RakNetInstance@@UEBA?AV?$vector@USystemAddress@RakNet@@V?$allocator@USystemAddress@RakNet@@@std@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline unsigned __int64 getTransportIdentifier() const{
+        unsigned __int64 (RakNetInstance::*rv)() const;
+        *((void**)&rv) = dlsym("?getTransportIdentifier@RakNetInstance@@UEBA_KXZ");
+        return (this->*rv)();
+    }
+    inline bool host(struct ConnectionDefinition const & a0){
+        bool (RakNetInstance::*rv)(struct ConnectionDefinition const &);
+        *((void**)&rv) = dlsym("?host@RakNetInstance@@UEAA_NAEBUConnectionDefinition@@@Z");
+        return (this->*rv)(std::forward<struct ConnectionDefinition const &>(a0));
+    }
+    inline bool isIPv4Supported() const{
+        bool (RakNetInstance::*rv)() const;
+        *((void**)&rv) = dlsym("?isIPv4Supported@RakNetInstance@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isIPv6Supported() const{
+        bool (RakNetInstance::*rv)() const;
+        *((void**)&rv) = dlsym("?isIPv6Supported@RakNetInstance@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline void removeConnectionStateListener(class Connector::ConnectionStateListener * a0){
+        void (RakNetInstance::*rv)(class Connector::ConnectionStateListener *);
+        *((void**)&rv) = dlsym("?removeConnectionStateListener@RakNetInstance@@UEAAXPEAVConnectionStateListener@Connector@@@Z");
+        return (this->*rv)(std::forward<class Connector::ConnectionStateListener *>(a0));
+    }
+    inline void runEvents(){
+        void (RakNetInstance::*rv)();
+        *((void**)&rv) = dlsym("?runEvents@RakNetInstance@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void setupNatPunch(bool a0){
+        void (RakNetInstance::*rv)(bool);
+        *((void**)&rv) = dlsym("?setupNatPunch@RakNetInstance@@UEAAX_N@Z");
+        return (this->*rv)(std::forward<bool>(a0));
+    }
+    inline void startNatPunchingClient(std::string const & a0, unsigned short a1){
+        void (RakNetInstance::*rv)(std::string const &, unsigned short);
+        *((void**)&rv) = dlsym("?startNatPunchingClient@RakNetInstance@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<unsigned short>(a1));
+    }
+    inline void tick(){
+        void (RakNetInstance::*rv)();
+        *((void**)&rv) = dlsym("?tick@RakNetInstance@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI RakNetInstance(class RakNetInstance::ConnectionCallbacks &, class RakPeerHelper::IPSupportInterface &, class Bedrock::NonOwnerPointer<class AppPlatform> const &);
 
 protected:

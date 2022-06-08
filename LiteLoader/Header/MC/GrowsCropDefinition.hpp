@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GROWSCROPDEFINITION
-#endif
     MCAPI GrowsCropDefinition();
     MCAPI void initialize(class EntityContext &, class GrowsCropComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GrowsCropDefinition>> &);

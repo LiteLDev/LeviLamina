@@ -35,8 +35,6 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*16*/ virtual unsigned __int64 _getRepathTime() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLEEPGOAL
-#endif
     MCAPI SleepGoal(class Mob &, float, float, float, float, int, float);
 
 protected:

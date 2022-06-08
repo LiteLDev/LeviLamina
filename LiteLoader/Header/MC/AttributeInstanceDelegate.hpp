@@ -29,8 +29,6 @@ public:
     /*3*/ virtual bool willChange(float, float, class AttributeBuff const &);
     /*4*/ virtual float change(float, float, class AttributeBuff const &);
     /*5*/ virtual float getBuffValueWithModifiers(class AttributeBuff const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTEINSTANCEDELEGATE
-#endif
     MCAPI AttributeInstanceDelegate(class AttributeInstance const &);
 
 protected:

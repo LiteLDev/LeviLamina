@@ -195,14 +195,38 @@ public:
     /*358*/ virtual void updateGliding();
     /*359*/ virtual void __unk_vfn_359();
     /*360*/ virtual class AABB _getAdjustedAABBForSpawnCheck(class AABB const &, class Vec3 const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOB
-    MCVAPI bool _allowAscendingScaffolding() const;
-    MCVAPI void ate();
-    MCVAPI bool canBeControlledByPassenger();
-    MCVAPI bool isShootable();
-    MCVAPI void renderDebugServerState(class Options const &);
-    MCVAPI bool useNewAi() const;
-#endif
+    /*
+    inline bool canBeControlledByPassenger(){
+        bool (Mob::*rv)();
+        *((void**)&rv) = dlsym("?canBeControlledByPassenger@Mob@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isShootable(){
+        bool (Mob::*rv)();
+        *((void**)&rv) = dlsym("?isShootable@Mob@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool _allowAscendingScaffolding() const{
+        bool (Mob::*rv)() const;
+        *((void**)&rv) = dlsym("?_allowAscendingScaffolding@Mob@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool useNewAi() const{
+        bool (Mob::*rv)() const;
+        *((void**)&rv) = dlsym("?useNewAi@Mob@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline void ate(){
+        void (Mob::*rv)();
+        *((void**)&rv) = dlsym("?ate@Mob@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void renderDebugServerState(class Options const & a0){
+        void (Mob::*rv)(class Options const &);
+        *((void**)&rv) = dlsym("?renderDebugServerState@Mob@@UEAAXAEBVOptions@@@Z");
+        return (this->*rv)(std::forward<class Options const &>(a0));
+    }
+    */
     MCAPI Mob(class Level &, class EntityContext &);
     MCAPI Mob(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void _endJump();

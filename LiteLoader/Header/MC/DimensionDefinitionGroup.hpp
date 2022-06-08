@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONDEFINITIONGROUP
-#endif
     MCAPI DimensionDefinitionGroup(class ResourcePackManager *const, bool);
     MCAPI class std::optional<struct DimensionDefinitionGroup::DimensionDefinition> getDimensionDefinition(std::string const &) const;
     MCAPI bool isEmpty() const;

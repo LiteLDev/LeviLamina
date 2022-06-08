@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EATBLOCKDEFINITION
-#endif
     MCAPI EatBlockDefinition();
     MCAPI void addSuccessChanceExpressionNode(class ExpressionNode const &);
     MCAPI void initialize(class EntityContext &, class EatBlockGoal &);

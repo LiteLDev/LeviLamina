@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ECSEVENTDISPATCHER
-#endif
     MCAPI void update();
 
 protected:

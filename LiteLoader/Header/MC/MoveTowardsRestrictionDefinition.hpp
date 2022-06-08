@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWARDSRESTRICTIONDEFINITION
-#endif
     MCAPI MoveTowardsRestrictionDefinition();
     MCAPI void initialize(class EntityContext &, class MoveTowardsRestrictionGoal &);
 

@@ -29,8 +29,6 @@ public:
     /*6*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum ChunkSource::LoadMode, bool);
     /*17*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /*21*/ virtual bool isWithinWorldLimit(class ChunkPos const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKVIEWSOURCE
-#endif
     MCAPI ChunkViewSource(class ChunkSource &, class LevelChunkGridAreaElement<class std::weak_ptr<class LevelChunk>> &, struct Bounds const &);
     MCAPI ChunkViewSource(class ChunkSource &, enum ChunkSource::LoadMode);
     MCAPI ChunkViewSource(class ChunkViewSource const &);

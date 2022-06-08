@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEFINITIONMODIFIER
-#endif
     MCAPI static class Scripting::ClassBindingBuilder<struct DefinitionModifier> bind(struct Scripting::Version);
 
 protected:

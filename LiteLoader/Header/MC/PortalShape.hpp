@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PORTALSHAPE
-#endif
     MCAPI PortalShape(class BlockSource const &, class BlockPos const &, enum PortalAxis);
     MCAPI void createPortalBlocks(class WorldChangeTransaction &) const;
     MCAPI class PortalRecord createRecord() const;

@@ -59,10 +59,18 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMITHINGTABLEBLOCK
-    MCVAPI bool isCraftingBlock() const;
-    MCVAPI bool isInteractiveBlock() const;
-#endif
+    /*
+    inline bool isInteractiveBlock() const{
+        bool (SmithingTableBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@SmithingTableBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isCraftingBlock() const{
+        bool (SmithingTableBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isCraftingBlock@SmithingTableBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SmithingTableBlock(std::string const &, int, class Material const &);
 
 protected:

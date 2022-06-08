@@ -71,12 +71,28 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTBLOCK
-    MCVAPI bool detachesOnPistonMove(class BlockSource &, class BlockPos const &) const;
-    MCVAPI bool hasComparatorSignal() const;
-    MCVAPI bool isContainerBlock() const;
-    MCVAPI bool isInteractiveBlock() const;
-#endif
+    /*
+    inline bool detachesOnPistonMove(class BlockSource & a0, class BlockPos const & a1) const{
+        bool (ChestBlock::*rv)(class BlockSource &, class BlockPos const &) const;
+        *((void**)&rv) = dlsym("?detachesOnPistonMove@ChestBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1));
+    }
+    inline bool hasComparatorSignal() const{
+        bool (ChestBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?hasComparatorSignal@ChestBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInteractiveBlock() const{
+        bool (ChestBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@ChestBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isContainerBlock() const{
+        bool (ChestBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isContainerBlock@ChestBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ChestBlock(std::string const &, int, enum ChestBlock::ChestType, enum MaterialType);
     MCAPI void updateSignalStrength(class BlockSource &, class BlockPos const &, int) const;
 

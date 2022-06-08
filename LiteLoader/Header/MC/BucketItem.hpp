@@ -55,10 +55,18 @@ public:
     /*116*/ virtual class Item & setIcon(std::string const &, int);
     /*124*/ virtual std::string getAuxValuesDescription() const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUCKETITEM
-    MCVAPI bool isBucket() const;
-    MCVAPI bool uniqueAuxValues() const;
-#endif
+    /*
+    inline bool uniqueAuxValues() const{
+        bool (BucketItem::*rv)() const;
+        *((void**)&rv) = dlsym("?uniqueAuxValues@BucketItem@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isBucket() const{
+        bool (BucketItem::*rv)() const;
+        *((void**)&rv) = dlsym("?isBucket@BucketItem@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BucketItem(std::string const &, int, enum BucketFillType);
     MCAPI static int const DRINK_DURATION;
 

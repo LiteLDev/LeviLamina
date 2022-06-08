@@ -30,10 +30,18 @@ public:
     /*3*/ virtual enum PackOrigin getPackOrigin() const;
     /*4*/ virtual enum PackType getPackType() const;
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory &, class IContentKeyProvider const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTORYPACKSOURCE
-    MCVAPI void forEachPack(class std::function<void (class Pack &)>);
-    MCVAPI void forEachPackConst(class std::function<void (class Pack const &)>) const;
-#endif
+    /*
+    inline void forEachPack(class std::function<void (class Pack &)> a0){
+        void (DirectoryPackSource::*rv)(class std::function<void (class Pack &)>);
+        *((void**)&rv) = dlsym("?forEachPack@DirectoryPackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z");
+        return (this->*rv)(std::forward<class std::function<void (class Pack &)>>(a0));
+    }
+    inline void forEachPackConst(class std::function<void (class Pack const &)> a0) const{
+        void (DirectoryPackSource::*rv)(class std::function<void (class Pack const &)>) const;
+        *((void**)&rv) = dlsym("?forEachPackConst@DirectoryPackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z");
+        return (this->*rv)(std::forward<class std::function<void (class Pack const &)>>(a0));
+    }
+    */
     MCAPI DirectoryPackSource(class Core::Path const &, enum PackType, enum PackOrigin, bool);
     MCAPI class Core::PathBuffer<std::string> const & getPath() const;
     MCAPI bool removePack(class Core::Path const &);

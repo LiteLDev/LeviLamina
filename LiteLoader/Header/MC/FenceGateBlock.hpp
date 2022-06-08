@@ -70,10 +70,18 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FENCEGATEBLOCK
-    MCVAPI bool isFenceGateBlock() const;
-    MCVAPI bool isInteractiveBlock() const;
-#endif
+    /*
+    inline bool isInteractiveBlock() const{
+        bool (FenceGateBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@FenceGateBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isFenceGateBlock() const{
+        bool (FenceGateBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isFenceGateBlock@FenceGateBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI FenceGateBlock(std::string const &, int, enum WoodType);
     MCAPI void resolveIsInWall(class BlockSource &, class BlockPos const &) const;
 

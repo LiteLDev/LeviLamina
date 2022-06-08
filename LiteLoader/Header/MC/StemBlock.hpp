@@ -71,10 +71,18 @@ public:
     /*185*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STEMBLOCK
-    MCVAPI bool canBeSilkTouched() const;
-    MCVAPI bool isStemBlock() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (StemBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@StemBlock@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isStemBlock() const{
+        bool (StemBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isStemBlock@StemBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI StemBlock(std::string const &, int, class BlockLegacy const &);
     MCAPI class BlockLegacy const & getFruitBlock() const;
 

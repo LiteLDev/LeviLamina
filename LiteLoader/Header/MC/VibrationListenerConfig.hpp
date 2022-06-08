@@ -21,9 +21,13 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONLISTENERCONFIG
-    MCVAPI bool isValidVibration(class GameEvent const &, class Actor const *);
-#endif
+    /*
+    inline bool isValidVibration(class GameEvent const & a0, class Actor const * a1){
+        bool (VibrationListenerConfig::*rv)(class GameEvent const &, class Actor const *);
+        *((void**)&rv) = dlsym("?isValidVibration@VibrationListenerConfig@@UEAA_NAEBVGameEvent@@PEBVActor@@@Z");
+        return (this->*rv)(std::forward<class GameEvent const &>(a0), std::forward<class Actor const *>(a1));
+    }
+    */
 
 protected:
 

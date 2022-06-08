@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASICTIMER
-#endif
     MCAPI BasicTimer(double, class std::function<double (void)>);
     MCAPI bool isFinished() const;
     MCAPI void resetTime();

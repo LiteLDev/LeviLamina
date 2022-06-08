@@ -33,9 +33,13 @@ public:
     /*17*/ virtual void __unk_vfn_17();
     /*20*/ virtual void __unk_vfn_20();
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_POWEREDBLOCKCOMPONENT
-    MCVAPI bool hasChildrenSource() const;
-#endif
+    /*
+    inline bool hasChildrenSource() const{
+        bool (PoweredBlockComponent::*rv)() const;
+        *((void**)&rv) = dlsym("?hasChildrenSource@PoweredBlockComponent@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI PoweredBlockComponent(unsigned char);
 
 protected:

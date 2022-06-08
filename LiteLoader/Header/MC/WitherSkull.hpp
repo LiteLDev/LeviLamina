@@ -53,9 +53,13 @@ public:
     /*278*/ virtual void __unk_vfn_278();
     /*279*/ virtual float getInertia();
     /*280*/ virtual void __unk_vfn_280();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WITHERSKULL
-    MCVAPI bool shouldBurn();
-#endif
+    /*
+    inline bool shouldBurn(){
+        bool (WitherSkull::*rv)();
+        *((void**)&rv) = dlsym("?shouldBurn@WitherSkull@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI WitherSkull(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

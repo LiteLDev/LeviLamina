@@ -20,8 +20,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYNCEDPLAYERMOVEMENTSETTINGS
-#endif
     MCAPI SyncedPlayerMovementSettings(struct PlayerMovementSettings const &);
     MCAPI SyncedPlayerMovementSettings();
 

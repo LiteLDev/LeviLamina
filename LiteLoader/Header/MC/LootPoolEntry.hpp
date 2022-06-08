@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTPOOLENTRY
-#endif
     MCAPI void createItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
     MCAPI std::vector<std::unique_ptr<class LootItemCondition>> const & getConditions() const;
     MCAPI int getWeight(float) const;

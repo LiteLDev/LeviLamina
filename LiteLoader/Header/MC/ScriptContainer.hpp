@@ -34,8 +34,6 @@ public:
     /*10*/ virtual class Scripting::Result<bool> swapItems(int, int, class ScriptContainer &) const;
     /*11*/ virtual class Container * _tryGetContainer() const = 0;
     /*12*/ virtual void _balanceTransaction(class ItemStack const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCONTAINER
-#endif
     MCAPI ScriptContainer(class Scripting::WeakLifetimeScope const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptContainer> bind(struct Scripting::Version);
 

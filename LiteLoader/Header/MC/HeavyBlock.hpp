@@ -68,9 +68,13 @@ public:
     /*206*/ virtual void onLand(class BlockSource &, class BlockPos const &) const;
     /*207*/ virtual bool isFreeToFall(class BlockSource &, class BlockPos const &) const;
     /*208*/ virtual void startFalling(class BlockSource &, class BlockPos const &, class Block const &, bool) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HEAVYBLOCK
-    MCVAPI bool falling() const;
-#endif
+    /*
+    inline bool falling() const{
+        bool (HeavyBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?falling@HeavyBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI HeavyBlock(std::string const &, int, class Material const &);
     MCAPI void triggerFallCheck(class BlockSource &, class BlockPos const &) const;
 

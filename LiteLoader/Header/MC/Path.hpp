@@ -29,8 +29,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PATH
-#endif
     MCAPI Path();
     MCAPI class Vec3 currentPos(class Actor const *) const;
     MCAPI class BlockPos const & currentPos() const;

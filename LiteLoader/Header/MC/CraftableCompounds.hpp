@@ -24,8 +24,6 @@ public:
 public:
     /*0*/ virtual ~CraftableCompounds();
     /*1*/ virtual void _registerCompound(std::vector<class ItemStack> const &, class ItemStack const &, enum LabTableReactionType, enum CompoundContainerType);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTABLECOMPOUNDS
-#endif
     MCAPI CraftableCompounds();
     MCAPI std::vector<class ItemStack> const * getComponents(class ItemDescriptor const &) const;
     MCAPI class ItemStack const & getCompound(std::vector<class ItemStack> const &);

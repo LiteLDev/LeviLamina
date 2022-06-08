@@ -84,8 +84,6 @@ public:
     /*57*/ virtual void removeSimulatedPlayer(class SimulatedPlayer &);
     /*58*/ virtual class std::variant<struct gametest::GameTestError, class Dimension *> getDimension();
     /*59*/ virtual class std::optional<struct gametest::GameTestError> getBlockSource(class BlockSource *&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTGAMETESTHELPER
-#endif
     MCAPI MinecraftGameTestHelper(class MinecraftGameTestInstance &);
 
 protected:

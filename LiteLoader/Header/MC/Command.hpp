@@ -80,8 +80,6 @@ public:
 public:
     /*0*/ virtual ~Command();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMAND
-#endif
     MCAPI Command();
     MCAPI std::string getCommandName() const;
     MCAPI bool hasFlag(struct CommandFlag) const;

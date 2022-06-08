@@ -23,10 +23,18 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKEVENTLISTENER
-    MCVAPI enum EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const &);
-    MCVAPI enum EventResult onMessage(struct MessageEvent const &);
-#endif
+    /*
+    inline enum EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const & a0){
+        enum EventResult (ServerNetworkEventListener::*rv)(struct ServerNetworkGameplayNotificationEvent const &);
+        *((void**)&rv) = dlsym("?onEvent@ServerNetworkEventListener@@UEAA?AW4EventResult@@AEBUServerNetworkGameplayNotificationEvent@@@Z");
+        return (this->*rv)(std::forward<struct ServerNetworkGameplayNotificationEvent const &>(a0));
+    }
+    inline enum EventResult onMessage(struct MessageEvent const & a0){
+        enum EventResult (ServerNetworkEventListener::*rv)(struct MessageEvent const &);
+        *((void**)&rv) = dlsym("?onMessage@ServerNetworkEventListener@@UEAA?AW4EventResult@@AEBUMessageEvent@@@Z");
+        return (this->*rv)(std::forward<struct MessageEvent const &>(a0));
+    }
+    */
 
 protected:
 

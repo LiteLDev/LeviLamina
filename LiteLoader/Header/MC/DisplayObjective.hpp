@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPLAYOBJECTIVE
-#endif
     MCAPI DisplayObjective(class Objective const &, enum ObjectiveSortOrder);
     MCAPI std::string const getBelowNameStringForId(struct ScoreboardId const &) const;
     MCAPI class Objective const & getObjective() const;

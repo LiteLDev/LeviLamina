@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTACTORQUERY
-#endif
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptActorIterator> createActorIterator(class CommandSelectorResults<class Actor> &&, class Scripting::WeakLifetimeScope const &);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptPlayerIterator> createPlayerIterator(class CommandSelectorResults<class Player> &&, class Scripting::WeakLifetimeScope const &, class Dimension const *);
     MCAPI static class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptActorIterator>> queryActors(enum ActorSelectorType, class std::optional<struct ScriptActorQueryOptions> const &, class Scripting::WeakLifetimeScope const &, class Dimension *, class Level &);

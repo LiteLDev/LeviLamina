@@ -71,10 +71,18 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LECTERNBLOCK
-    MCVAPI bool hasComparatorSignal() const;
-    MCVAPI bool isInteractiveBlock() const;
-#endif
+    /*
+    inline bool hasComparatorSignal() const{
+        bool (LecternBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?hasComparatorSignal@LecternBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInteractiveBlock() const{
+        bool (LecternBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@LecternBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI LecternBlock(std::string const &, int);
     MCAPI void emitRedstonePulse(class BlockSource &, class BlockPos const &) const;
 

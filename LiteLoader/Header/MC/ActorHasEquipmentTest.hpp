@@ -32,8 +32,6 @@ public:
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*5*/ virtual class Json::Value _serializeDomain() const;
     /*6*/ virtual class Json::Value _serializeValue() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORHASEQUIPMENTTEST
-#endif
 
 protected:
 

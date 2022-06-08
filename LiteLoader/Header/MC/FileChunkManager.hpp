@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILECHUNKMANAGER
-#endif
     MCAPI FileChunkManager();
     MCAPI struct FileChunkInfo getChunkInfo(int) const;
     MCAPI std::vector<struct FileChunkInfo> const & getChunks() const;

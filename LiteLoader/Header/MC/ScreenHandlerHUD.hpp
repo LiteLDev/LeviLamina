@@ -25,8 +25,6 @@ public:
 public:
     /*0*/ virtual ~ScreenHandlerHUD();
     /*1*/ virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCREENHANDLERHUD
-#endif
 
 protected:
 

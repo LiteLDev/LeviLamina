@@ -21,8 +21,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEAMLESSCHUNKBLENDINGATTENUATOR
-#endif
     MCAPI SeamlessChunkBlendingAttenuator(class ChunkPos, class std::optional<std::vector<class std::array<struct SeamlessChunkBlendingAttenuatorUtil::AttenuationData, 4>>>, short);
     MCAPI float attenuateDensity(class DividedPos2d<4> const &, int, float) const;
     MCAPI struct TerrainInfo attenuateTerrainInfo(class DividedPos2d<4> const &, struct TerrainInfo const &) const;

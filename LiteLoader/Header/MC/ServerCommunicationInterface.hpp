@@ -24,8 +24,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCOMMUNICATIONINTERFACE
-#endif
     MCAPI void sendBandwidthMetric(unsigned __int64, unsigned __int64, unsigned __int64, unsigned __int64, std::string const &);
     MCAPI void sendChunkLoadTelemtryData(struct ChunkLoadTelemetryData const &);
     MCAPI void sendServerStarted();

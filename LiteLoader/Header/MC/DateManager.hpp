@@ -25,8 +25,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DATEMANAGER
-#endif
     MCAPI static std::string getCurrentTimestampFileName();
     MCAPI static __int64 getRealTime();
     MCAPI static struct tm toDateTime(__int64, enum DateManager::TimeZoneType);

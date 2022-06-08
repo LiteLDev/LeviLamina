@@ -81,9 +81,13 @@ public:
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORALFAN
-    MCVAPI bool canBeSilkTouched() const;
-#endif
+    /*
+    inline bool canBeSilkTouched() const{
+        bool (CoralFan::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@CoralFan@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI CoralFan(std::string const &, int);
     MCAPI static std::string const CORAL_FAN_NAMES[];
     MCAPI static int const CORAL_FAN_NAMES_COUNT;

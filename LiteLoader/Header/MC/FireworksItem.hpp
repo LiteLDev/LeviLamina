@@ -44,8 +44,6 @@ public:
     /*80*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*81*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREWORKSITEM
-#endif
     MCAPI FireworksItem(std::string const &, int);
     MCAPI static std::string const TAG_EXPLOSIONS;
     MCAPI static std::string const TAG_E_FLIGHT;

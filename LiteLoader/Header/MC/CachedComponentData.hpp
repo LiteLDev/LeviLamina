@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CACHEDCOMPONENTDATA
-#endif
     MCAPI void cacheComponentData(class Block const &);
 
 protected:

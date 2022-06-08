@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTEINSTANCEHANDLE
-#endif
     MCAPI class AttributeInstance const & getInstance() const;
     MCAPI class AttributeInstance * getMutableInstance() const;
     MCAPI void inheritFrom(class AttributeInstanceHandle const &, class BaseAttributeMap *);

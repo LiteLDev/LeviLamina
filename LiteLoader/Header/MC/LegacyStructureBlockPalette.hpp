@@ -22,8 +22,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYSTRUCTUREBLOCKPALETTE
-#endif
     MCAPI LegacyStructureBlockPalette();
     MCAPI void addMapping(int, class Block const &);
     MCAPI void clearMap();

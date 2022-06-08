@@ -85,11 +85,23 @@ public:
     /*208*/ virtual void __unk_vfn_208();
     /*209*/ virtual void __unk_vfn_209();
     /*210*/ MCAPI std::string const & getDescriptionId() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMFRAMEBLOCK
-    MCVAPI bool hasComparatorSignal() const;
-    MCVAPI bool isInteractiveBlock() const;
-    MCVAPI bool waterSpreadCausesSpawn() const;
-#endif
+    /*
+    inline bool waterSpreadCausesSpawn() const{
+        bool (ItemFrameBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@ItemFrameBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasComparatorSignal() const{
+        bool (ItemFrameBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?hasComparatorSignal@ItemFrameBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInteractiveBlock() const{
+        bool (ItemFrameBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isInteractiveBlock@ItemFrameBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ItemFrameBlock(std::string const &, int);
 
 protected:

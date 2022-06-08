@@ -31,8 +31,6 @@ public:
     /*4*/ virtual class Item const * eatItem(class ItemStack &, class Actor &, class Level &);
     /*5*/ virtual bool use(class ItemStack &, class Player &);
     /*6*/ virtual class Item const * useTimeDepleted(class ItemStack &, class Player &, class Level &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOODITEMCOMPONENTLEGACY
-#endif
     MCAPI FoodItemComponentLegacy(class Item &);
     MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     MCAPI bool init(class Json::Value &, class SemVersion const &);

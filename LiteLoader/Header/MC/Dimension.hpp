@@ -23,42 +23,178 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSION
-    MCVAPI std::unique_ptr<class ChunkBuildOrderPolicyBase> _createChunkBuildOrderPolicy();
-    MCVAPI void deserialize(class CompoundTag const &);
-    MCVAPI bool forceCheckAllNeighChunkSavedStat() const;
-    MCVAPI class mce::Color getBrightnessDependentFogColor(class mce::Color const &, float) const;
-    MCVAPI class DimensionBrightnessRamp const & getBrightnessRamp() const;
-    MCVAPI float getClearColorScale();
-    MCVAPI short getCloudHeight() const;
-    MCVAPI int getDefaultBiome() const;
-    MCVAPI class BaseLightTextureImageBuilder * getLightTextureImageBuilder() const;
-    MCVAPI class BlockPos getSpawnPos() const;
-    MCVAPI int getSpawnYPosition() const;
-    MCVAPI float getSunIntensity(float, class Vec3 const &, float) const;
-    MCVAPI float getTimeOfDay(int, float) const;
-    MCVAPI bool hasBedrockFog();
-    MCVAPI bool hasGround() const;
-    MCVAPI void init();
-    MCVAPI bool is2DPositionRelevantForPlayer(class BlockPos const &, class Player &) const;
-    MCVAPI bool isActorRelevantForPlayer(class Player &, class Actor const &) const;
-    MCVAPI bool isDay() const;
-    MCVAPI bool isFoggyAt(int, int) const;
-    MCVAPI bool isNaturalDimension() const;
-    MCVAPI bool isValidSpawn(int, int) const;
-    MCVAPI bool mayRespawnViaBed() const;
-    MCVAPI void onBlockChanged(class BlockSource &, class BlockPos const &, unsigned int, class Block const &, class Block const &, int, struct ActorBlockSyncMessage const *, enum BlockChangedEventTarget, class Actor *);
-    MCVAPI void onBlockEvent(class BlockSource &, int, int, int, int, int);
-    MCVAPI void onChunkLoaded(class ChunkSource &, class LevelChunk &);
-    MCVAPI void onLevelDestruction(std::string const &);
-    MCVAPI void sendBroadcast(class Packet const &, class Player *);
-    MCVAPI void serialize(class CompoundTag &) const;
-    MCVAPI bool showSky() const;
-    MCVAPI void startLeaveGame();
-    MCVAPI void tick();
-    MCVAPI void tickRedstone();
-    MCVAPI ~Dimension();
-#endif
+    /*
+    inline bool forceCheckAllNeighChunkSavedStat() const{
+        bool (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?forceCheckAllNeighChunkSavedStat@Dimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasBedrockFog(){
+        bool (Dimension::*rv)();
+        *((void**)&rv) = dlsym("?hasBedrockFog@Dimension@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isFoggyAt(int a0, int a1) const{
+        bool (Dimension::*rv)(int, int) const;
+        *((void**)&rv) = dlsym("?isFoggyAt@Dimension@@UEBA_NHH@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
+    inline bool isValidSpawn(int a0, int a1) const{
+        bool (Dimension::*rv)(int, int) const;
+        *((void**)&rv) = dlsym("?isValidSpawn@Dimension@@UEBA_NHH@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
+    inline int getDefaultBiome() const{
+        int (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?getDefaultBiome@Dimension@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline int getSpawnYPosition() const{
+        int (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?getSpawnYPosition@Dimension@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline bool mayRespawnViaBed() const{
+        bool (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?mayRespawnViaBed@Dimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasGround() const{
+        bool (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?hasGround@Dimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isNaturalDimension() const{
+        bool (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?isNaturalDimension@Dimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool showSky() const{
+        bool (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?showSky@Dimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline class BaseLightTextureImageBuilder * getLightTextureImageBuilder() const{
+        class BaseLightTextureImageBuilder * (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?getLightTextureImageBuilder@Dimension@@UEBAPEAVBaseLightTextureImageBuilder@@XZ");
+        return (this->*rv)();
+    }
+    inline short getCloudHeight() const{
+        short (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?getCloudHeight@Dimension@@UEBAFXZ");
+        return (this->*rv)();
+    }
+    inline class BlockPos getSpawnPos() const{
+        class BlockPos (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?getSpawnPos@Dimension@@UEBA?AVBlockPos@@XZ");
+        return (this->*rv)();
+    }
+    inline  ~Dimension(){
+         (Dimension::*rv)();
+        *((void**)&rv) = dlsym("??1Dimension@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline std::unique_ptr<class ChunkBuildOrderPolicyBase> _createChunkBuildOrderPolicy(){
+        std::unique_ptr<class ChunkBuildOrderPolicyBase> (Dimension::*rv)();
+        *((void**)&rv) = dlsym("?_createChunkBuildOrderPolicy@Dimension@@EEAA?AV?$unique_ptr@VChunkBuildOrderPolicyBase@@U?$default_delete@VChunkBuildOrderPolicyBase@@@std@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline void deserialize(class CompoundTag const & a0){
+        void (Dimension::*rv)(class CompoundTag const &);
+        *((void**)&rv) = dlsym("?deserialize@Dimension@@UEAAXAEBVCompoundTag@@@Z");
+        return (this->*rv)(std::forward<class CompoundTag const &>(a0));
+    }
+    inline class mce::Color getBrightnessDependentFogColor(class mce::Color const & a0, float a1) const{
+        class mce::Color (Dimension::*rv)(class mce::Color const &, float) const;
+        *((void**)&rv) = dlsym("?getBrightnessDependentFogColor@Dimension@@UEBA?AVColor@mce@@AEBV23@M@Z");
+        return (this->*rv)(std::forward<class mce::Color const &>(a0), std::forward<float>(a1));
+    }
+    inline class DimensionBrightnessRamp const & getBrightnessRamp() const{
+        class DimensionBrightnessRamp const & (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?getBrightnessRamp@Dimension@@UEBAAEBVDimensionBrightnessRamp@@XZ");
+        return (this->*rv)();
+    }
+    inline float getClearColorScale(){
+        float (Dimension::*rv)();
+        *((void**)&rv) = dlsym("?getClearColorScale@Dimension@@UEAAMXZ");
+        return (this->*rv)();
+    }
+    inline float getSunIntensity(float a0, class Vec3 const & a1, float a2) const{
+        float (Dimension::*rv)(float, class Vec3 const &, float) const;
+        *((void**)&rv) = dlsym("?getSunIntensity@Dimension@@UEBAMMAEBVVec3@@M@Z");
+        return (this->*rv)(std::forward<float>(a0), std::forward<class Vec3 const &>(a1), std::forward<float>(a2));
+    }
+    inline float getTimeOfDay(int a0, float a1) const{
+        float (Dimension::*rv)(int, float) const;
+        *((void**)&rv) = dlsym("?getTimeOfDay@Dimension@@MEBAMHM@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<float>(a1));
+    }
+    inline void init(){
+        void (Dimension::*rv)();
+        *((void**)&rv) = dlsym("?init@Dimension@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline bool is2DPositionRelevantForPlayer(class BlockPos const & a0, class Player & a1) const{
+        bool (Dimension::*rv)(class BlockPos const &, class Player &) const;
+        *((void**)&rv) = dlsym("?is2DPositionRelevantForPlayer@Dimension@@UEBA_NAEBVBlockPos@@AEAVPlayer@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0), std::forward<class Player &>(a1));
+    }
+    inline bool isActorRelevantForPlayer(class Player & a0, class Actor const & a1) const{
+        bool (Dimension::*rv)(class Player &, class Actor const &) const;
+        *((void**)&rv) = dlsym("?isActorRelevantForPlayer@Dimension@@UEBA_NAEAVPlayer@@AEBVActor@@@Z");
+        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class Actor const &>(a1));
+    }
+    inline bool isDay() const{
+        bool (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?isDay@Dimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline void onBlockChanged(class BlockSource & a0, class BlockPos const & a1, unsigned int a2, class Block const & a3, class Block const & a4, int a5, struct ActorBlockSyncMessage const * a6, enum BlockChangedEventTarget a7, class Actor * a8){
+        void (Dimension::*rv)(class BlockSource &, class BlockPos const &, unsigned int, class Block const &, class Block const &, int, struct ActorBlockSyncMessage const *, enum BlockChangedEventTarget, class Actor *);
+        *((void**)&rv) = dlsym("?onBlockChanged@Dimension@@UEAAXAEAVBlockSource@@AEBVBlockPos@@IAEBVBlock@@2HPEBUActorBlockSyncMessage@@W4BlockChangedEventTarget@@PEAVActor@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1), std::forward<unsigned int>(a2), std::forward<class Block const &>(a3), std::forward<class Block const &>(a4), std::forward<int>(a5), std::forward<struct ActorBlockSyncMessage const *>(a6), std::forward<enum BlockChangedEventTarget>(a7), std::forward<class Actor *>(a8));
+    }
+    inline void onBlockEvent(class BlockSource & a0, int a1, int a2, int a3, int a4, int a5){
+        void (Dimension::*rv)(class BlockSource &, int, int, int, int, int);
+        *((void**)&rv) = dlsym("?onBlockEvent@Dimension@@UEAAXAEAVBlockSource@@HHHHH@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<int>(a3), std::forward<int>(a4), std::forward<int>(a5));
+    }
+    inline void onChunkLoaded(class ChunkSource & a0, class LevelChunk & a1){
+        void (Dimension::*rv)(class ChunkSource &, class LevelChunk &);
+        *((void**)&rv) = dlsym("?onChunkLoaded@Dimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z");
+        return (this->*rv)(std::forward<class ChunkSource &>(a0), std::forward<class LevelChunk &>(a1));
+    }
+    inline void onLevelDestruction(std::string const & a0){
+        void (Dimension::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?onLevelDestruction@Dimension@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline void sendBroadcast(class Packet const & a0, class Player * a1){
+        void (Dimension::*rv)(class Packet const &, class Player *);
+        *((void**)&rv) = dlsym("?sendBroadcast@Dimension@@UEAAXAEBVPacket@@PEAVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Packet const &>(a0), std::forward<class Player *>(a1));
+    }
+    inline void serialize(class CompoundTag & a0) const{
+        void (Dimension::*rv)(class CompoundTag &) const;
+        *((void**)&rv) = dlsym("?serialize@Dimension@@UEBAXAEAVCompoundTag@@@Z");
+        return (this->*rv)(std::forward<class CompoundTag &>(a0));
+    }
+    inline void startLeaveGame(){
+        void (Dimension::*rv)();
+        *((void**)&rv) = dlsym("?startLeaveGame@Dimension@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void tick(){
+        void (Dimension::*rv)();
+        *((void**)&rv) = dlsym("?tick@Dimension@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void tickRedstone(){
+        void (Dimension::*rv)();
+        *((void**)&rv) = dlsym("?tickRedstone@Dimension@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI Dimension(class ILevel &, class AutomaticID<class Dimension, int>, class DimensionHeightRange, class Scheduler &, std::string);
     MCAPI void addActorChunkTransferToQueue(class ChunkPos &, class ChunkPos &);
     MCAPI void addActorUnloadedChunkTransferToQueue(class ChunkPos const &, class ChunkPos const &, class AutomaticID<class Dimension, int>, std::string &, std::unique_ptr<class CompoundTag>);
