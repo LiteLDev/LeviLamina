@@ -2,12 +2,12 @@
 #include <MC/ColorFormat.hpp>
 #include <LoggerAPI.h>
 
-//ChunkBlockPos::ChunkBlockPos(BlockPos const& pos, short minHeight)
+// ChunkBlockPos::ChunkBlockPos(BlockPos const& pos, short minHeight)
 //{
-//    this->x = (char)pos.x & 0xf;
-//    this->z = (char)pos.z & 0xf;
-//    this->y = (short)(pos.y - minHeight);
-//}
+//     this->x = (char)pos.x & 0xf;
+//     this->z = (char)pos.z & 0xf;
+//     this->y = (short)(pos.y - minHeight);
+// }
 
 extern Logger logger;
 namespace mce
@@ -43,26 +43,31 @@ mce::Color Color::fromColorCode(std::string const& code)
 {
     return *ColorFormat::ColorFromColorCode(code);
 };
-}
+} // namespace mce
 
-Vec3 BlockPos::toVec3() const {
+Vec3 BlockPos::toVec3() const
+{
     return {(float)x, (float)y, (float)z};
 }
 
-Vec3 BlockPos::bottomCenter() const {
+Vec3 BlockPos::bottomCenter() const
+{
     return {(float)x + 0.5f, (float)y, (float)z + 0.5f};
 }
 
-Vec3 BlockPos::center() const {
+Vec3 BlockPos::center() const
+{
     return {(float)x + 0.5f, (float)y + 0.5f, (float)z + 0.5f};
 }
 
-bool BlockPos::containedWithin(BoundingBox const& box) const {
-        return x >= box.bpos1.x && y >= box.bpos1.y && z >= box.bpos1.z &&
-               x <= box.bpos2.x && y <= box.bpos2.y && z <= box.bpos2.z;
-    }
+bool BlockPos::containedWithin(BoundingBox const& box) const
+{
+    return x >= box.min.x && y >= box.min.y && z >= box.min.z &&
+           x <= box.max.x && y <= box.max.y && z <= box.max.z;
+}
 
-BlockPos Vec3::toBlockPos() const {
+BlockPos Vec3::toBlockPos() const
+{
     auto px = (int)x;
     auto py = (int)y;
     auto pz = (int)z;
@@ -75,17 +80,20 @@ BlockPos Vec3::toBlockPos() const {
     return {px, py, pz};
 }
 
-float Vec3::length() const {
+float Vec3::length() const
+{
     return sqrt(x * x + y * y + z * z);
 }
 
-float Vec3::distanceTo(Vec3 const& a0) const {
+float Vec3::distanceTo(Vec3 const& a0) const
+{
     Vec3 tmp = *this - a0;
     return tmp.length();
 }
 
-AABB BoundingBox::toAABB() const {
-    Vec3 vec1 = {(float)bpos1.x, (float)bpos1.y, (float)bpos1.z};
-    Vec3 vec2 = {(float)bpos1.x, (float)bpos1.y, (float)bpos1.z};
-    return {vec1, vec2 + Vec3{1, 1, 1}};
+AABB BoundingBox::toAABB() const
+{
+    Vec3 vec1 = min.toVec3();
+    Vec3 vec2 = min.toVec3();
+    return {vec1, vec2 + 1.0f};
 }
