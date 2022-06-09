@@ -1,9 +1,30 @@
 [HEADING=1][LiteLoader Release Note][/HEADING]
 LiteLoaderBDS-2.3.0更新已发布，适应于BDS-1.19.1，协议版本527
 
-[HEADING=1][新内容][/HEADING]
+[HEADING=2][新内容][/HEADING]
 [LIST]
 [*]支持BDS1.19.0
 [*]配置文件新添经济核心（LLMoney）开关
+[*]LLMoney远程调用支持
+[/LIST]
+
+[HEADING=2][改变][/HEADING]
+[LIST]
+[*]Change LLSE
+[LIST]
+[*]bl.setNbt
+[/LIST]
+[/LIST]
+
+[HEADING=2][BUG修复][/HEADING]
+[LIST]
+[*]修复LL Bugs
+[LIST]
+[*]Actor::isPlayer()
+[/LIST]
+[*]修复LLSE Bugs
+[LIST]
+[*]pl.getRespawnPosition
+[/LIST]
 [/LIST]
 
