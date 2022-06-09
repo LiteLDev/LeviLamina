@@ -172,8 +172,8 @@ Local<Value> BlockClass::setNbt(const Arguments& args)
         if (!nbt)
             return Local<Value>();    //Null
         
-        block->setNbt(nbt);
         // update Pre Data
+        Level::setBlock(pos.getBlockPos(), pos.dim, (CompoundTag*)nbt);
         preloadData(pos.getBlockPos(), pos.getDimensionId());
         return Boolean::newBoolean(true);
     }
