@@ -54,6 +54,9 @@ namespace LL {
                         {"enabled", conf.enableOutputFilter},
                         {"onlyFilterConsoleOutput", conf.onlyFilterConsoleOutput},
                         {"filterRegex", conf.outputFilterRegex}
+                    }}, 
+                    {"EconomyCore", {
+                        {"enabled", conf.enableEconomyCore}
                     }}
                 }
             }
@@ -154,6 +157,11 @@ namespace LL {
                 conf.enableOutputFilter = setting.value("enabled", false);
                 conf.onlyFilterConsoleOutput = setting.value("onlyFilterConsoleOutput", true);
                 conf.outputFilterRegex = setting.value("filterRegex", std::vector<std::string>());
+            }
+            if (modules.find("EconomyCore") != modules.end())
+            {
+                const nlohmann::json& setting = modules.at("EconomyCore");
+                conf.enableEconomyCore = setting.value("enabled", true);
             }
         }
     }

@@ -111,9 +111,15 @@ void LL::LoadMain() {
             continue;
         auto strPath = UTF82String(path.u8string());
         if (strPath.find("LiteLoader.dll") != string::npos
-            || strPath.find("LiteXLoader") != string::npos)      // Skip Wrong file path
+            || strPath.find("LiteXLoader") != string::npos ) // Skip Wrong file path		
             continue;
-
+        
+        if (strPath.find("LLMoney.dll") != string::npos) {
+            if (!globalConfig.enableEconomyCore) {
+				continue;
+            }
+        }
+		
         string ext = UTF82String(path.extension().u8string());
         if (ext != ".dll")
         {
