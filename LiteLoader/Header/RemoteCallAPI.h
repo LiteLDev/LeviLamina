@@ -6,6 +6,10 @@
 #include "MC/Container.hpp"
 #include "MC/ItemStack.hpp"
 #include "MC/BlockInstance.hpp"
+#include "MC/VanillaDimensions.hpp"
+#include "MC/Player.hpp"
+#include "MC/Block.hpp"
+#include "MC/BlockActor.hpp"
 #define TEST_NEW_VALUE_TYPE
 
 ///////////////////////////////////////////////////////
@@ -122,6 +126,7 @@ struct BlockType
         return instance;
     };
 };
+
 struct NumberType
 {
     __int64 i = 0;
@@ -177,10 +182,78 @@ struct NumberType
     };
 };
 
+struct WorldPosType
+{
+    Vec3 pos = Vec3::ZERO;
+    int dimId = 3; // VanillaDimensions::Undefined;
+    WorldPosType(Vec3 const& pos, int dimId = 3)
+        : pos(pos)
+        , dimId(dimId){};
+    WorldPosType(std::pair<Vec3, int> const& pos)
+        : pos(pos.first)
+        , dimId(pos.second){};
+    template <typename RTN>
+    inline RTN get() = delete;
+    template <>
+    inline Vec3 get()
+    {
+        return pos;
+    };
+    template <>
+    inline BlockPos get()
+    {
+        return BlockPos(pos);
+    };
+    template <>
+    inline std::pair<Vec3, int> get()
+    {
+        return std::make_pair(pos, dimId);
+    };
+    template <>
+    inline std::pair<BlockPos, int> get()
+    {
+        return std::make_pair(BlockPos(pos), dimId);
+    };
+};
+
+struct BlockPosType
+{
+    BlockPos pos = BlockPos::ZERO;
+    int dimId = 0;
+    BlockPosType(BlockPos const& pos, int dimId = 0)
+        : pos(pos)
+        , dimId(dimId){};
+    BlockPosType(std::pair<BlockPos, int> const& pos)
+        : pos(pos.first)
+        , dimId(pos.second){};
+    template <typename RTN>
+    inline RTN get() = delete;
+    template <>
+    inline BlockPos get()
+    {
+        return pos;
+    };
+    template <>
+    inline std::pair<BlockPos, int> get()
+    {
+        return std::make_pair(pos, dimId);
+    };
+    template <>
+    inline Vec3 get()
+    {
+        return pos.toVec3();
+    };
+    template <>
+    inline std::pair<Vec3, int> get()
+    {
+        return std::make_pair(pos.toVec3(), dimId);
+    };
+};
+
 
 // std::string  -> json
 // std::string* -> bytes
-#define ExtraType std::nullptr_t, NumberType, Player*, Actor*, BlockActor*, Container*, Vec3, BlockPos, ItemType, BlockType, NbtType
+#define ExtraType std::nullptr_t, NumberType, Player*, Actor*, BlockActor*, Container*, WorldPosType, BlockPosType, ItemType, BlockType, NbtType
 #define ElementType bool, std::string, ExtraType
 template <typename _Ty, class... _Types>
 static constexpr bool is_one_of_v = std::_Meta_find_unique_index<std::variant<_Types...>, _Ty>::value < sizeof...(_Types);
@@ -261,6 +334,18 @@ struct ValueType
         : value(Value(v)){};
 };
 
+template <typename _Ty>
+static constexpr bool is_supported_type_v = std::is_void_v<_Ty> ||
+                                            is_one_of_v<_Ty, ElementType> ||
+                                            std::is_assignable_v<NumberType, _Ty> ||
+                                            std::is_assignable_v<NbtType, _Ty> ||
+                                            std::is_assignable_v<BlockType, _Ty> ||
+                                            std::is_assignable_v<ItemType, _Ty> ||
+                                            std::is_assignable_v<WorldPosType, _Ty> ||
+                                            std::is_assignable_v<BlockPosType, _Ty> ||
+                                            std::is_base_of_v<Player, std::remove_pointer_t<_Ty>> ||
+                                            std::is_base_of_v<Actor, std::remove_pointer_t<_Ty>>;
+
 template <typename RTN>
 RTN extract(ValueType&& val);
 template <typename T>
@@ -270,7 +355,7 @@ template <typename RTN>
 RTN extractValue(Value&& value)
 {
     using Type = std::remove_const_t<std::remove_reference_t<RTN>>;
-    static_assert(std::is_void_v<Type> || is_one_of_v<Type, ElementType> || std::is_assignable_v<NumberType, RTN> || std::is_assignable_v<NbtType, RTN> || std::is_assignable_v<BlockType, RTN> || std::is_assignable_v<ItemType, RTN> || std::is_base_of_v<Player, std::remove_pointer_t<RTN>> || std::is_base_of_v<Actor, std::remove_pointer_t<RTN>>);
+    static_assert(is_supported_type_v<Type>, "Unsupported Type:");
     if constexpr (is_one_of_v<Type, ElementType>)
         return std::get<Type>(value);
     else if constexpr (std::is_assignable_v<NumberType, RTN>)
@@ -281,6 +366,10 @@ RTN extractValue(Value&& value)
         return std::get<ItemType>(value).get<Type>();
     else if constexpr (std::is_assignable_v<BlockType, RTN>)
         return std::get<BlockType>(value).get<Type>();
+    else if constexpr (std::is_assignable_v<WorldPosType, RTN>)
+        return std::get<WorldPosType>(value).get<Type>();
+    else if constexpr (std::is_assignable_v<BlockPosType, RTN>)
+        return std::get<BlockPosType>(value).get<Type>();
     else if constexpr (std::is_base_of_v<Player, std::remove_pointer_t<RTN>>)
         return static_cast<RTN>(std::get<Player*>(value));
     else if constexpr (std::is_base_of_v<Actor, std::remove_pointer_t<RTN>>)
@@ -336,7 +425,7 @@ template <typename T>
 ValueType packValue(T val)
 {
     using RawType = std::remove_reference_t<std::remove_const_t<T>>;
-    static_assert(std::is_void_v<RawType> || is_one_of_v<RawType, ElementType> || std::is_assignable_v<NumberType, T> || std::is_assignable_v<NbtType, T> || std::is_assignable_v<BlockType, T> || std::is_assignable_v<ItemType, T> || std::is_base_of_v<Player, std::remove_pointer_t<T>> || std::is_base_of_v<Actor, std::remove_pointer_t<T>>);
+    static_assert(is_supported_type_v<RawType>, "Unsupported Type");
     if constexpr (is_one_of_v<RawType, ElementType>)
         return ValueType(std::forward<T>(val));
     else if constexpr (std::is_assignable_v<NumberType, T>)
@@ -347,13 +436,17 @@ ValueType packValue(T val)
         return ValueType(ItemType(std::forward<T>(val)));
     else if constexpr (std::is_assignable_v<BlockType, T>)
         return ValueType(BlockType(std::forward<T>(val)));
+    else if constexpr (std::is_assignable_v<WorldPosType, T>)
+        return ValueType(WorldPosType(std::forward<T>(val)));
+    else if constexpr (std::is_assignable_v<BlockPosType, T>)
+        return ValueType(BlockPosType(std::forward<T>(val)));
     else if constexpr (std::is_base_of_v<Player, std::remove_pointer_t<T>>)
         return ValueType(static_cast<Player*>(std::forward<T>(val)));
     else if constexpr (std::is_base_of_v<Actor, std::remove_pointer_t<T>>)
         return ValueType(static_cast<Actor*>(std::forward<T>(val)));
     else if constexpr (std::is_void_v<RawType>)
         return ValueType();
-    throw std::exception(fmt::format(__FUNCTION__ " - Unsupported Type: {}", typeid(T).name()).c_str());
+    throw std::runtime_error(fmt::format(__FUNCTION__ " - Unsupported Type: {}", typeid(T).name()).c_str());
     return ValueType();
 }
 template <typename T>
@@ -393,40 +486,6 @@ ValueType pack(T val)
         return packValue(std::forward<T>(val));
 }
 
-
-inline bool testExtra = ([]() {
-    std::vector<std::string> input{"aa", "abcd", "test"};
-    auto output = extract<decltype(input)>(pack(input));
-    assert(output == input);
-    std::unordered_map<std::string, std::string> input2{
-        {"aa", "bb"},
-        {"ab", "ba"},
-        {"abc", "cba"},
-    };
-    auto output2 = extract<decltype(input2)>(pack(input2));
-    assert(output2 == input2);
-    std::vector<decltype(input2)> input3{input2, input2};
-    auto output3 = extract<decltype(input3)>(pack(input3));
-    assert(output3 == input3);
-    std::unordered_map<std::string, decltype(input3)> input4{
-        {"aa", input3},
-        {"ab", input3},
-        {"abc", input3},
-    };
-    auto output4 = extract<decltype(input4)>(pack(input4));
-    assert(output4 == input4);
-
-    std::vector<decltype(input4)> input5{input4, input4, input4};
-    auto output5 = extract<decltype(input5)>(pack(input5));
-    assert(output5 == input5);
-#if false
-    __debugbreak();
-    output5.erase(output5.begin());
-    assert(output5 == input5);
-    __debugbreak();
-#endif // false
-    return true;
-})();
 
 #else
 

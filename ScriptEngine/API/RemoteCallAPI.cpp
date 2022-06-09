@@ -45,9 +45,14 @@ RemoteCall::ValueType pack(Local<Object> value)
     if (IsInstanceOf<ContainerClass>(value))
         return ContainerClass::extract(value);
     if (IsInstanceOf<FloatPos>(value))
-        return FloatPos::extractPos(value)->getVec3();
-    if (IsInstanceOf<IntPos>(value))
-        return IntPos::extractPos(value)->getBlockPos();
+    {
+        auto pos = FloatPos::extractPos(value);
+        return std::make_pair(pos->getVec3(), pos->getDimensionId());
+    }
+    if (IsInstanceOf<IntPos>(value)) {
+        auto pos = IntPos::extractPos(value);
+        return std::make_pair(pos->getBlockPos(), pos->getDimensionId());
+    }
     if (IsInstanceOf<NbtCompoundClass>(value))
         return NbtCompoundClass::extract(value);
     std::unordered_map<std::string, RemoteCall::ValueType> result;
@@ -142,13 +147,13 @@ Local<Value> _extractValue(Container* v)
 {
     return ContainerClass::newContainer(v);
 };
-Local<Value> _extractValue(Vec3 v)
+Local<Value> _extractValue(RemoteCall::WorldPosType v)
 {
-    return FloatPos::newPos(v);
+    return FloatPos::newPos(v.pos, v.dimId);
 };
-Local<Value> _extractValue(BlockPos v)
+Local<Value> _extractValue(RemoteCall::BlockPosType v)
 {
-    return IntPos::newPos(v);
+    return IntPos::newPos(v.pos, v.dimId);
 };
 Local<Value> _extractValue(RemoteCall::BlockType v)
 {
