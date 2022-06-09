@@ -13,4 +13,4 @@ add_compile_options(
         /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /FC /diagnostics:column /utf-8
 )
 
-add_library(SymDBHelper STATIC SymDBHelper.c)
+add_library(SymDBHelper STATIC SymDBHelper.cpp)

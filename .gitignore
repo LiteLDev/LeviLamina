@@ -29,3 +29,5 @@ cmake-build-release/
 /out
 LiteLoader/Lib/Demangler.pdb
 LiteLoader/Lib/Demangler.lib
+
+/build
