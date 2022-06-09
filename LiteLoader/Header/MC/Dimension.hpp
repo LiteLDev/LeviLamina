@@ -5,7 +5,12 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+class DimensionHeightRange
+{
+public:
+    short min;
+    short max;
+};
 #undef BEFORE_EXTRA
 
 class Dimension {
