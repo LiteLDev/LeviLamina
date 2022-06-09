@@ -17,7 +17,7 @@
 #include <MC/SharedConstants.hpp>
 #include <MC/PropertiesSettings.hpp>
 #include <MC/ServerPlayer.hpp>
-#include <LiteLoader/Header/ScheduleAPI.h>
+#include <ScheduleAPI.h>
 
 using namespace LL;
 
