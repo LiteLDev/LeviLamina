@@ -6,7 +6,7 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include <MC/NetworkIdentifier.hpp>
-class Certificate;
+#include <MC/Certificate.hpp>
 
 #undef BEFORE_EXTRA
 
