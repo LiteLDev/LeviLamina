@@ -114,6 +114,7 @@ public:
 
     // SimulatedPlayer API (API/SimulatedPlayerAPI.cpp)
     
+    Local<Value> simulateSneak(const Arguments& args);
     Local<Value> simulateAttack(const Arguments& args);
     Local<Value> simulateDestory(const Arguments& args);
     Local<Value> simulateDisconnect(const Arguments& args);
@@ -130,6 +131,7 @@ public:
     Local<Value> simulateStopInteracting(const Arguments& args);
     Local<Value> simulateStopMoving(const Arguments& args);
     Local<Value> simulateStopUsingItem(const Arguments& args);
+    Local<Value> simulateStopSneaking(const Arguments& args);
 
     // bool simulateSetItem(class ItemStack&, bool, int);
     // bool simulateGiveItem(class ItemStack&, bool);

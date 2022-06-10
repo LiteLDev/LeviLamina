@@ -24,6 +24,18 @@ bool SimulatedPlayer::simulateUseItem()
     return simulateUseItemInSlot(slot);
 }
 
+bool SimulatedPlayer::simulateSneak()
+{
+    setSneaking(true);
+    return isSneaking();
+}
+
+bool SimulatedPlayer::simulateStopSneaking()
+{
+    setSneaking(false);
+    return !isSneaking();
+}
+
 template <>
 class OwnerPtrT<struct EntityRefTraits>
 {

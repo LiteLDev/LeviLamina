@@ -129,6 +129,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         
         //SimulatedPlayer API
         .instanceFunction("isSimulatedPlayer", &PlayerClass::isSimulatedPlayer)
+        .instanceFunction("simulateSneak", &PlayerClass::simulateSneak)
         .instanceFunction("simulateAttack", &PlayerClass::simulateAttack)
         .instanceFunction("simulateDestory", &PlayerClass::simulateDestory)
         .instanceFunction("simulateDisconnect", &PlayerClass::simulateDisconnect)
@@ -145,6 +146,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("simulateStopInteracting", &PlayerClass::simulateStopInteracting)
         .instanceFunction("simulateStopMoving", &PlayerClass::simulateStopMoving)
         .instanceFunction("simulateStopUsingItem", &PlayerClass::simulateStopUsingItem)
+        .instanceFunction("simulateStopSneaking", &PlayerClass::simulateStopSneaking)
         
         //For Compatibility
         .instanceProperty("ip", &PlayerClass::getIP)

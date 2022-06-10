@@ -19,6 +19,8 @@ class SimulatedPlayer : public ServerPlayer {
 public:
     LIAPI bool simulateDestory();
     LIAPI bool simulateUseItem();
+    LIAPI bool simulateSneak();
+    LIAPI bool simulateStopSneaking();
     LIAPI static class SimulatedPlayer* create(std::string const& name, class BlockPos const& position, class AutomaticID<class Dimension, int> dimensionId = 0);
     LIAPI static class SimulatedPlayer* create(std::string const& name, class AutomaticID<class Dimension, int> dimensionId = 0);
 
