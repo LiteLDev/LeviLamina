@@ -41,10 +41,10 @@ public:
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*24*/ virtual unsigned char getPoweroutDirection() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPEATERCAPACITOR
-public:
 #endif
     MCAPI RepeaterCapacitor();
     MCAPI void setDelay(int);
+
 
 
 };

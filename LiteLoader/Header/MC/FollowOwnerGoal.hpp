@@ -35,9 +35,9 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void onPlayerDimensionChanged(class Player *, class AutomaticID<class Dimension, int>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLLOWOWNERGOAL
-public:
 #endif
     MCAPI FollowOwnerGoal(class Mob &, float, float, float, bool, bool, float);
+
 
 
 };

@@ -31,7 +31,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDGENERATOR
-public:
     MCVAPI class ChunkLocalNoiseCache createNoiseCache(class ChunkPos) const;
     MCVAPI class WorldGenCache createWorldGenCache(class ChunkPos) const;
     MCVAPI void decorateWorldGenLoadChunk(class Biome &, class LevelChunk &, class BlockVolumeTarget &, class Random &, class ChunkPos const &) const;
@@ -46,6 +45,7 @@ public:
 #endif
     MCAPI OverworldGenerator(class Dimension &, bool, std::unique_ptr<class StructureFeatureRegistry>);
     MCAPI void buildSurfaces(struct OverworldGenerator::ThreadData &, class BlockVolume &, class LevelChunk &, class ChunkPos const &, class SurfaceLevelCache const &);
+
 
 
 };

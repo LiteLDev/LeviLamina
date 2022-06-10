@@ -24,10 +24,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPLODECOMPONENT
-public:
 #endif
     MCAPI ExplodeComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI void explode(class Actor &, class Vec3 const &);
     MCAPI int getFuseLength() const;
     MCAPI int getInitialFuseLength() const;
@@ -38,6 +37,7 @@ public:
     MCAPI void setAllowUnderwater(bool);
     MCAPI void setFuseLength(int);
     MCAPI void setTntExpodeGameRuleRequired();
+
 
 
 };

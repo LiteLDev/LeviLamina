@@ -31,9 +31,8 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AQUIFER
-public:
 #endif
-    MCAPI Aquifer(class ChunkPos const &, class AquiferNoises const &, class SurfaceLevelCache const &, int, int, int);
+    MCAPI Aquifer(class ChunkPos const &, class AquiferNoises const &, struct OverworldNoises3d const &, class SurfaceLevelCache const &, int, int, int);
     MCAPI void computeAt(class BlockPos const &);
     MCAPI float getLastBarrier() const;
     MCAPI class Block const * getLastFluidBlockType(bool) const;
@@ -43,6 +42,7 @@ public:
 //private:
     MCAPI struct Aquifer::FluidSample _computeAquifer(class BlockPos const &) const;
     MCAPI struct Aquifer::FluidSample _getOrComputeNewFluidSample(class BlockPos const &);
+
 
 private:
     MCAPI static class std::array<struct std::pair<int, int>, 13> const chunkOffset;

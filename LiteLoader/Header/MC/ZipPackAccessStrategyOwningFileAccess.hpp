@@ -26,9 +26,9 @@ public:
 public:
     /*0*/ virtual ~ZipPackAccessStrategyOwningFileAccess();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ZIPPACKACCESSSTRATEGYOWNINGFILEACCESS
-public:
 #endif
     MCAPI ZipPackAccessStrategyOwningFileAccess(class std::shared_ptr<class IFileAccess>, class ResourceLocation const &, class Core::Path const &);
+
 
 
 };

@@ -12,14 +12,28 @@ static_assert(sizeof(ScriptNavigationResult) == 32);
 bool SimulatedPlayer::simulateDestory()
 {
     FaceID face = FaceID::Unknown;
-    auto block = getBlockFromViewVector(face);
-    return simulateDestroyBlock(block.getPosition(), (ScriptFacing)face);
+    auto blockIns = getBlockFromViewVector(face);
+    if (blockIns.isNull())
+        return false;
+    return simulateDestroyBlock(blockIns.getPosition(), (ScriptFacing)face);
 }
 
 bool SimulatedPlayer::simulateUseItem()
 {
     auto slot = getSelectedItemSlot();
     return simulateUseItemInSlot(slot);
+}
+
+bool SimulatedPlayer::simulateSneak()
+{
+    setSneaking(true);
+    return isSneaking();
+}
+
+bool SimulatedPlayer::simulateStopSneaking()
+{
+    setSneaking(false);
+    return !isSneaking();
 }
 
 template <>
@@ -46,12 +60,7 @@ public:
     inline SimulatedPlayer* tryGetSimulatedPlayer(bool b = false)
     {
         auto& context = dAccess<StackResultStorageEntity, 0>(this).getStackRef();
-        auto player = SimulatedPlayer::tryGetFromEntity(context, b);
-        if (player)
-        {
-            return player;
-        }
-        return nullptr;
+        return SimulatedPlayer::tryGetFromEntity(context, b);
     }
 
     inline bool hasValue() const
@@ -62,12 +71,6 @@ public:
     }
     // inline bool isValid()
 };
-inline void addUser(Level& level, class OwnerPtrT<struct EntityRefTraits> a0)
-{
-    void (Level::*rv)(class OwnerPtrT<struct EntityRefTraits>) = nullptr;
-    *((void**)&rv) = dlsym("?addUser@Level@@UEAAXV?$OwnerPtrT@UEntityRefTraits@@@@@Z");
-    return (level.*rv)(std::forward<class OwnerPtrT<struct EntityRefTraits>>(a0));
-}
 
 class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class BlockPos const& position, class AutomaticID<class Dimension, int> dimensionId)
 {
@@ -80,13 +83,14 @@ class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class Bl
     {
         player->postLoad(/* isNewPlayer */ true);
         Level& level = player->getLevel();
-        addUser(level, std::move(ownerPtr));
+        level.addUser(std::move(ownerPtr));
         auto pos = position.bottomCenter();
         pos.y = pos.y + 1.62001f;
         player->setPos(pos);
         player->setRespawnReady(pos);
         player->setSpawnBlockRespawnPosition(position, dimensionId);
         player->setLocalPlayerAsInitialized();
+        player->doInitialSpawn();
     }
     return player;
 }
@@ -101,13 +105,14 @@ class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class Au
     {
         player->postLoad(/* isNewPlayer */ true);
         Level& level = player->getLevel();
-        addUser(level, std::move(ownerPtr));
+        level.addUser(std::move(ownerPtr));
         // auto pos = bpos.bottomCenter();
         // pos.y = pos.y + 1.62001;
         // player->setPos(pos);
         // player->setRespawnReady(pos);
         // player->setSpawnBlockRespawnPosition(bpos, dimId);
         player->setLocalPlayerAsInitialized();
+        player->doInitialSpawn();
     }
     return player;
 }

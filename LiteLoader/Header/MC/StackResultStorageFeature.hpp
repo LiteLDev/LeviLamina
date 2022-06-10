@@ -25,13 +25,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STACKRESULTSTORAGEFEATURE
-public:
 #endif
 
 //protected:
     MCAPI StackResultStorageFeature(class WeakStorageFeature const &);
     MCAPI class IFeature & _getStackRef() const;
     MCAPI bool _hasValue() const;
+
 
 protected:
 

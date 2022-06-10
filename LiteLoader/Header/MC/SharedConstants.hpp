@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "CodeBuilder.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,6 +16,7 @@ namespace SharedConstants {
 
 #undef AFTER_EXTRA
     MCAPI extern enum CodeBuilder::ProtocolVersion const CodeBuilderProtocolVersion;
+    MCAPI extern enum ActorDigestFormat const CurrentActorDigestFormat;
     MCAPI extern enum BlendVersion const CurrentBlendVersion;
     MCAPI extern class SemVersion const CurrentGameSemVersion;
     MCAPI extern enum LevelChunkFormat const CurrentLevelChunkFormat;

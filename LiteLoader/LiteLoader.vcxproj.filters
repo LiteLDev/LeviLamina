@@ -539,9 +539,6 @@
     <ClInclude Include="Header\MC\Player.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\Scripting.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
     <ClInclude Include="Header\MC\Spawner.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
@@ -784,9 +781,6 @@
     </ClInclude>
     <ClInclude Include="Header\Utils\ShellLinkFile.h">
       <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\BoundingBox.hpp">
-      <Filter>Header\MC</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

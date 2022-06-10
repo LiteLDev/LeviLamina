@@ -3,6 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Core.hpp"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +18,7 @@ namespace ExternalFileLevelStorage {
 #undef AFTER_EXTRA
     MCAPI class Core::Result _readLevelDataFromFile(class Core::Path const &, std::string const &, class LevelData &);
     MCAPI bool _writeLevelDat(class Core::Path const &, class LevelData const &);
-    MCAPI std::unique_ptr<class PackAccessStrategy> getAccessStrategy(class Core::Path const &, class ContentIdentity const &, class IContentKeyProvider const &);
+    MCAPI std::unique_ptr<class PackAccessStrategy> getAccessStrategy(class Core::Path const &, class ContentIdentity const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
     MCAPI std::vector<std::string> const getImportantFiles();
     MCAPI std::string getLevelIDFromPath(class Core::Path const &, class Core::Path const &);
     MCAPI bool isLevelMarkedForSync(class Core::Path const &);

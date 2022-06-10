@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASECONTAINERMENU
-public:
     MCVAPI void broadcastChanges();
     MCVAPI void containerContentChanged(int);
     MCVAPI enum ContainerID getContainerId() const;
@@ -41,6 +40,7 @@ public:
 
 //protected:
     MCAPI void _saveLastSlots(class Container *);
+
 
 protected:
 

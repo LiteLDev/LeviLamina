@@ -25,10 +25,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKCATALYSTBLOCKACTOR
-public:
     MCVAPI class GameEvents::PositionSource const & getPositionSource() const;
     MCVAPI unsigned int getRange() const;
-    MCVAPI void handleGameEvent(class GameEvent const &, class BlockPos const &, class Actor *, class BlockSource &);
+    MCVAPI void handleGameEvent(class GameEvent const &, struct GameEventContext const &, class BlockSource &);
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     MCVAPI void onRemoved(class BlockSource &);
     MCVAPI bool save(class CompoundTag &) const;
@@ -38,6 +37,7 @@ public:
     MCAPI class SculkSpreader & getSculkSpreader();
     MCAPI static enum BlockActorType const TypeId;
     MCAPI static std::string const TypeString;
+
 
 
 };

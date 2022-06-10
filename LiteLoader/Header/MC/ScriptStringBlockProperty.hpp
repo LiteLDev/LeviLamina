@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSTRINGBLOCKPROPERTY
-public:
 #endif
     MCAPI ScriptStringBlockProperty(class ScriptStringBlockProperty &&);
     MCAPI ScriptStringBlockProperty(std::string, class ItemState const &, std::vector<std::string>, class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>);
@@ -33,6 +32,7 @@ public:
     MCAPI class ScriptStringBlockProperty & operator=(class ScriptStringBlockProperty &&);
     MCAPI class Scripting::Result<void> setState(std::string);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptStringBlockProperty> bind(struct Scripting::Version);
+
 
 
 };

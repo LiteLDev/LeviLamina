@@ -27,9 +27,9 @@ public:
 public:
     /*0*/ virtual ~ShipwreckStart();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIPWRECKSTART
-public:
 #endif
     MCAPI ShipwreckStart(class BiomeSource const &, class Random &, int, int, short);
+
 
 
 };

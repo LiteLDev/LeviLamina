@@ -25,9 +25,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUCATIONEDITIONOFFERVALUE
-public:
 #endif
     MCAPI class EducationEditionOfferValue & operator=(enum EducationEditionOffer);
+
 
 
 };

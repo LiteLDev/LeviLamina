@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNKMETADATADICTIONARY
-public:
 #endif
     MCAPI void checkAndSerialize(class std::function<void (std::string const &)>) const;
     MCAPI void deserialize(class IDataInput &);
@@ -32,6 +31,7 @@ public:
 
 //protected:
     MCAPI class std::shared_ptr<class LevelChunkMetaData> _registerMetaData(class LevelChunkMetaData const &);
+
 
 protected:
 

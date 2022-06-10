@@ -76,7 +76,7 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual void __unk_vfn_6();
+    /*6*/ virtual void onObjectiveAdded(class Objective const &);
     /*7*/ virtual void onObjectiveRemoved(class Objective &);
     /*8*/ virtual void onScoreChanged(struct ScoreboardId const &, class Objective const &);
     /*9*/ virtual void __unk_vfn_9();
@@ -87,11 +87,9 @@ public:
     /*14*/ virtual void __unk_vfn_14();
     /*15*/ virtual bool isClientSide() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARD
-public:
     MCVAPI struct ScoreboardId const & createScoreboardId(std::string const &);
     MCVAPI struct ScoreboardId const & createScoreboardId(class Player const &);
     MCVAPI struct ScoreboardId const & createScoreboardId(class Actor const &);
-    MCVAPI void onObjectiveAdded(class Objective const &);
     MCVAPI void onPlayerIdentityUpdated(struct PlayerScoreboardId const &);
     MCVAPI void onPlayerJoined(class Player const &);
     MCVAPI void onPlayerScoreRemoved(struct ScoreboardId const &, class Objective const &);
@@ -104,6 +102,8 @@ public:
     MCAPI void addScoreListener(class Player &, std::string const &);
     MCAPI int applyPlayerOperation(bool &, std::vector<struct ScoreboardId> &, struct ScoreboardId const &, class Objective &, std::vector<struct ScoreboardId> &, class Objective &, enum CommandOperator);
     MCAPI bool clearScoreboardIdentity(struct ScoreboardId const &);
+    MCAPI void forEachIdentityRef(class std::function<void (class ScoreboardIdentityRef &)>);
+    MCAPI void forEachObjective(class std::function<void (class Objective &)>);
     MCAPI class ObjectiveCriteria * getCriteria(std::string const &) const;
     MCAPI std::vector<std::string> getCriteriaNames() const;
     MCAPI std::vector<struct PlayerScore> getDisplayInfoFiltered(std::string const &) const;
@@ -113,6 +113,7 @@ public:
     MCAPI class Objective * getObjective(std::string const &) const;
     MCAPI std::vector<std::string> getObjectiveNames() const;
     MCAPI std::vector<class Objective const *> getObjectives() const;
+    MCAPI class ScoreboardEventCoordinator & getScoreboardEventCoordinator();
     MCAPI struct ScoreboardId const & getScoreboardId(struct PlayerScoreboardId const &) const;
     MCAPI struct ScoreboardId const & getScoreboardId(std::string const &) const;
     MCAPI struct ScoreboardId const & getScoreboardId(class Actor const &) const;
@@ -148,6 +149,7 @@ public:
 //private:
     MCAPI struct ScoreboardId const & _getOrCreatePlayerId(class Player &);
     MCAPI void _init();
+
 
 protected:
 

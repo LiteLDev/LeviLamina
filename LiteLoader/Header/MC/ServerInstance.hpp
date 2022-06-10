@@ -27,7 +27,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCE
-public:
     MCVAPI void onAppResumed();
     MCVAPI void onAppSuspended();
     MCVAPI void onCriticalDiskError(bool, enum Core::LevelStorageState const &);
@@ -39,6 +38,7 @@ public:
     MCVAPI void onLowDiskSpace(bool);
     MCVAPI void onLowMemory();
     MCVAPI void onOutOfDiskSpace(bool);
+    MCVAPI void onRequestResourceReload();
     MCVAPI void onTick(int, int);
     MCVAPI void updateScreens();
     MCVAPI ~ServerInstance();
@@ -56,6 +56,7 @@ public:
 //private:
     MCAPI void _threadSafeExecute(class std::function<void (void)>);
     MCAPI void _update();
+
 
 private:
 

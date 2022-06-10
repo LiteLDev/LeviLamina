@@ -18,27 +18,27 @@ class RideableComponent {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RIDEABLECOMPONENT
 public:
     class RideableComponent& operator=(class RideableComponent const &) = delete;
-    RideableComponent(class RideableComponent const &) = delete;
 #endif
 
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RIDEABLECOMPONENT
-public:
 #endif
     MCAPI RideableComponent(class RideableComponent &&);
+    MCAPI RideableComponent(class RideableComponent const &);
     MCAPI RideableComponent();
     MCAPI bool areSeatsFull(class Actor const &) const;
     MCAPI bool canAddPassenger(class Actor const &, class Actor &) const;
     MCAPI bool getFirstAvailableSeatPosition(class Actor const &, class Actor &, class Vec3 &) const;
-    MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
+    MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &) const;
     MCAPI class RideableComponent & operator=(class RideableComponent &&);
-    MCAPI void positionPassenger(class Actor &, class Actor &);
-    MCAPI bool pullInEntity(class Actor &, class Actor &);
+    MCAPI void positionPassenger(class Actor &, class Actor &) const;
+    MCAPI bool pullInEntity(class Actor &, class Actor &) const;
+    MCAPI ~RideableComponent();
 
 //private:
-    MCAPI void _setCanPlayerRide(class Player &, bool);
-    MCAPI struct SeatDescription getValidSeat(class Actor const &, int) const;
+    MCAPI void _setCanPlayerRide(class Player &, bool) const;
+
 
 private:
 

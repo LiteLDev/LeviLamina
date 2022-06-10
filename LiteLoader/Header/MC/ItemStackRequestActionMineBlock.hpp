@@ -32,13 +32,13 @@ public:
     /*4*/ virtual void _write(class BinaryStream &) const;
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONMINEBLOCK
-public:
 #endif
     MCAPI ItemStackRequestActionMineBlock();
     MCAPI enum ItemStackRequestActionMineBlock::PreValidationStatus getPreValidationStatus() const;
     MCAPI int getPredictedDurability() const;
     MCAPI struct ItemStackRequestSlotInfo getSrc() const;
     MCAPI void setPreValidationStatus(enum ItemStackRequestActionMineBlock::PreValidationStatus) const;
+
 
 
 };

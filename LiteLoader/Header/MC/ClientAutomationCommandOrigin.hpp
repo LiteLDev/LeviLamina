@@ -44,9 +44,9 @@ public:
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTAUTOMATIONCOMMANDORIGIN
-public:
 #endif
     MCAPI ClientAutomationCommandOrigin(std::string const &);
+
 
 
 };

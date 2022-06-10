@@ -45,7 +45,6 @@ public:
     /*32*/ virtual class BaseCommandBlock * _getBaseCommandBlock(class BlockSource &) const;
     /*33*/ virtual class CommandBlockActor * _getBlockEntity(class BlockSource &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOMMANDORIGIN
-public:
 #endif
     MCAPI BlockCommandOrigin(class BlockSource &, class BlockPos const &);
     MCAPI BlockCommandOrigin(class Level &, class AutomaticID<class Dimension, int>, std::string const &, class BlockPos const &);
@@ -53,6 +52,7 @@ public:
 
 //protected:
     MCAPI std::string _getName(class BlockSource &) const;
+
 
 protected:
 

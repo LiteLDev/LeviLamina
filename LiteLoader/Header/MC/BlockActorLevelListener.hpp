@@ -48,9 +48,9 @@ public:
     /*24*/ virtual void __unk_vfn_24();
     /*25*/ virtual void onChunkUnloaded(class LevelChunk &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKACTORLEVELLISTENER
-public:
 #endif
     MCAPI BlockActorLevelListener();
+
 
 
 };

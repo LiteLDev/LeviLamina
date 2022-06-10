@@ -50,7 +50,7 @@ Certificate* Player::getCertificate()
 {
     UserEntityIdentifierComponent* ueic = getUserEntityIdentifierComponent();
     if (ueic) {
-        return dAccess<Certificate*, 184>(ueic);
+        return ueic->mCertificate.get();
     }
     return nullptr;
 }
@@ -58,7 +58,7 @@ Certificate* Player::getCertificate()
 std::string Player::getRealName() 
 {
     if (isSimulatedPlayer())
-        return dAccess<std::string>(this, 2232);
+        return dAccess<std::string>(this, 2472);
     return ExtendedCertificate::getIdentityName(*getCertificate());
 }
 
@@ -154,6 +154,8 @@ string Player::getDeviceTypeName()
             return "Xbox";
         case 14:
             return "WindowsPhone";
+        case 15:
+            return "Linux";
         default:
             return "Unknown";
     }
@@ -245,7 +247,7 @@ bool Player::runcmd(const string& cmd)
 
 Container* Player::getEnderChestContainer() 
 {
-    return dAccess<Container*>(this, 4192); // IDA Player::Player() 782
+    return dAccess<Container*>(this, 4552); // IDA Player::Player() 782
 }
 
 bool Player::transferServer(const string& address, unsigned short port)
@@ -309,8 +311,7 @@ string Player::getUuid()
     auto ueic = getUserEntityIdentifierComponent();
     if (!ueic)
         return "";
-    auto& uuid = dAccess<mce::UUID>(ueic, 168);
-    return uuid.asString();
+    return ueic->mUUID.asString();
 }
 
 unsigned char Player::getClientSubId()
@@ -318,7 +319,7 @@ unsigned char Player::getClientSubId()
     auto ueic = getUserEntityIdentifierComponent();
     if (!ueic)
         return -1;
-    return dAccess<unsigned char>(ueic, 160);
+    return ueic->mClientSubId;
 }
 
 float Player::getAvgPacketLoss()

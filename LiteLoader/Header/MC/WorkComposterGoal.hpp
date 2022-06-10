@@ -30,13 +30,13 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*18*/ virtual void useWorkstation();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKCOMPOSTERGOAL
-public:
 #endif
     MCAPI WorkComposterGoal(class Mob &);
 
 //private:
     MCAPI bool _tryCompostItems();
     MCAPI bool _tryEmptyComposter();
+
 
 private:
 

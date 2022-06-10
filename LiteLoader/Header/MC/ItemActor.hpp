@@ -36,35 +36,34 @@ public:
     /*40*/ virtual void __unk_vfn_40();
     /*47*/ virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
     /*48*/ virtual void normalTick();
-    /*61*/ virtual void __unk_vfn_61();
-    /*68*/ virtual void __unk_vfn_68();
-    /*82*/ virtual void __unk_vfn_82();
-    /*88*/ virtual void __unk_vfn_88();
-    /*89*/ virtual void playerTouch(class Player &);
-    /*95*/ virtual void __unk_vfn_95();
-    /*98*/ virtual void __unk_vfn_98();
-    /*105*/ virtual void __unk_vfn_105();
+    /*60*/ virtual void __unk_vfn_60();
+    /*67*/ virtual void __unk_vfn_67();
+    /*81*/ virtual void __unk_vfn_81();
+    /*87*/ virtual void __unk_vfn_87();
+    /*88*/ virtual void playerTouch(class Player &);
+    /*94*/ virtual void __unk_vfn_94();
+    /*97*/ virtual void __unk_vfn_97();
+    /*104*/ virtual void __unk_vfn_104();
+    /*106*/ virtual void __unk_vfn_106();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*109*/ virtual void __unk_vfn_109();
-    /*134*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
-    /*141*/ virtual void handleEntityEvent(enum ActorEvent, int);
-    /*171*/ virtual struct ActorUniqueID getSourceUniqueID() const;
-    /*175*/ virtual class AABB getLiquidAABB(enum MaterialType) const;
-    /*181*/ virtual void __unk_vfn_181();
-    /*195*/ virtual void __unk_vfn_195();
-    /*198*/ virtual bool canSynchronizeNewEntity() const;
+    /*133*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
+    /*140*/ virtual void handleEntityEvent(enum ActorEvent, int);
+    /*170*/ virtual struct ActorUniqueID getSourceUniqueID() const;
+    /*174*/ virtual class AABB getLiquidAABB(enum MaterialType) const;
+    /*180*/ virtual void __unk_vfn_180();
+    /*194*/ virtual void __unk_vfn_194();
+    /*197*/ virtual bool canSynchronizeNewEntity() const;
+    /*219*/ virtual void __unk_vfn_219();
     /*220*/ virtual void __unk_vfn_220();
-    /*221*/ virtual void __unk_vfn_221();
-    /*246*/ virtual void __unk_vfn_246();
-    /*249*/ virtual void __unk_vfn_249();
-    /*261*/ virtual void __unk_vfn_261();
-    /*262*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /*265*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
-    /*269*/ virtual void __unk_vfn_269();
+    /*245*/ virtual void __unk_vfn_245();
+    /*248*/ virtual void __unk_vfn_248();
+    /*264*/ virtual void __unk_vfn_264();
+    /*265*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    /*268*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
+    /*269*/ virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /*272*/ virtual void __unk_vfn_272();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMACTOR
-public:
     MCVAPI bool canMakeStepSound() const;
 #endif
     MCAPI ItemActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
@@ -76,6 +75,7 @@ public:
     MCAPI void _dropContents();
     MCAPI bool _merge(class ItemActor *);
     MCAPI void _validateItem();
+
 
 private:
     MCAPI static int const LIFETIME;

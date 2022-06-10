@@ -25,10 +25,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTWORLDEVENTS
-public:
 #endif
-    MCAPI ScriptWorldEvents(class Scripting::WeakLifetimeScope const &, class gsl::not_null<class Level *>);
     MCAPI ScriptWorldEvents(class ScriptWorldEvents &&);
+    MCAPI ScriptWorldEvents(class Scripting::WeakLifetimeScope const &, class gsl::not_null<class Level *>);
     MCAPI class Level & getLevel() const;
     MCAPI void onActivateLever(struct ScriptLeverActionEvent &);
     MCAPI void onActivatePiston(struct ScriptPistonActionEvent &);
@@ -50,18 +49,28 @@ public:
     MCAPI void onDataDrivenActorEventSend(struct ScriptDataDrivenActorTriggerEvent &);
     MCAPI void onExplodeBlock(struct ScriptBlockExplodedEvent &);
     MCAPI void onExplosion(struct ScriptExplosionStartedEvent &);
+    MCAPI void onItemCompleteCharge(struct ScriptItemCompleteChargeEvent &);
     MCAPI void onItemDefinitionEventTriggered(struct ScriptItemDefinitionEvent &);
+    MCAPI void onItemReleaseCharge(struct ScriptItemReleaseChargeEvent &);
+    MCAPI void onItemStartCharge(struct ScriptItemChargeEvent &);
+    MCAPI void onItemStartUseOn(struct ScriptItemStartUseOnEvent &);
+    MCAPI void onItemStopCharge(struct ScriptItemStopChargeEvent &);
+    MCAPI void onItemStopUseOn(struct ScriptItemStopUseOnEvent &);
     MCAPI void onItemUse(struct ScriptItemUseEvent &);
     MCAPI void onItemUseOn(struct ScriptItemUseOnEvent &);
     MCAPI void onLevelTick(struct ScriptTickEvent &);
     MCAPI void onPlayerJoin(struct ScriptPlayerJoinEvent &);
     MCAPI void onPlayerLeave(struct ScriptPlayerLeaveEvent &);
+    MCAPI void onProjectileHit(struct ScriptProjectileHitEvent &);
+    MCAPI void onPushButton(struct ScriptButtonPushEvent &);
     MCAPI void onServerMessage(struct ScriptServerMessage &);
     MCAPI void onWeatherChanged(struct ScriptWeatherChangedEvent &);
+    MCAPI void onWorldInitialize(struct ScriptWorldInitializeEvent &);
     MCAPI class ScriptWorldEvents & operator=(class ScriptWorldEvents &&);
     MCAPI void registerListener(struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
     MCAPI ~ScriptWorldEvents();
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptWorldEvents> bind(struct Scripting::Version);
+
 
 
 };

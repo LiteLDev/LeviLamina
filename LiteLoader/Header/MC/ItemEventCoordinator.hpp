@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMEVENTCOORDINATOR
-public:
 #endif
     MCAPI ItemEventCoordinator();
     MCAPI class ItemGameplayHandler & getItemGameplayHandler();
@@ -32,6 +31,7 @@ public:
     MCAPI void onItemSpawnedActor(class ItemStackBase const &, class Actor const &);
     MCAPI void registerItemGameplayHandler(std::unique_ptr<class ItemGameplayHandler>);
     MCAPI enum CoordinatorResult sendEvent(class EventRef<struct MutableItemGameplayEvent<enum CoordinatorResult>>);
+
 
 
 };

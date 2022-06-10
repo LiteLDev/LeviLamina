@@ -25,9 +25,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TOOLRECIPES
-public:
 #endif
     MCAPI static void addRecipes(class Recipes &);
+
 
 
 };

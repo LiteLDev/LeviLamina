@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CSHA1
-public:
 #endif
     MCAPI CSHA1();
     MCAPI void Final();
@@ -35,6 +34,7 @@ public:
 
 //private:
     MCAPI void Transform(unsigned int *, unsigned char const *);
+
 
 private:
 

@@ -28,7 +28,6 @@ public:
     /*0*/ virtual ~MusicCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MUSICCOMMAND
-public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
 
@@ -36,6 +35,7 @@ public:
     MCAPI void _handleActionQueueOrPlay(class CompoundTag &, class CommandOutput &) const;
     MCAPI void _handleActionStop(class CompoundTag &, class CommandOutput &) const;
     MCAPI void _handleActionVolume(class CompoundTag &, class CommandOutput &) const;
+
 
 private:
 

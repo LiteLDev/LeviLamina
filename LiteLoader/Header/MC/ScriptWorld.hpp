@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "ScriptObject.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class ScriptWorld {
+class ScriptWorld : public ScriptObject {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -24,20 +25,30 @@ public:
 
 
 public:
+    /*0*/ virtual ~ScriptWorld();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTWORLD
-public:
 #endif
     MCAPI ScriptWorld(class Scripting::WeakLifetimeScope const &, class ServerLevel *);
     MCAPI void _playOrQueueMusic(std::string const &, class std::optional<struct ScriptMusicOptions>, enum LevelEvent);
     MCAPI void broadcastClientMessage(std::string const &, std::string const &);
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptDimension>> getDimension(std::string const &);
+    MCAPI class Scripting::Result<class std::optional<class std::variant<float, bool, std::string>>> getDynamicProperty(struct Scripting::ContextConfig const &, std::string const &) const;
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptPlayerIterator>> getPlayers(class std::optional<struct ScriptActorQueryOptions>) const;
+    MCAPI class ScriptScoreboard & getScoreboard();
+    MCAPI class ScriptWorld & operator=(class ScriptWorld &&);
     MCAPI void playMusic(std::string const &, class std::optional<struct ScriptMusicOptions>);
     MCAPI void playSound(std::string const &, class std::optional<struct ScriptSoundOptions>);
     MCAPI void queueMusic(std::string const &, class std::optional<struct ScriptMusicOptions>);
+    MCAPI class Scripting::Result<bool> removeDynamicProperty(struct Scripting::ContextConfig const &, std::string const &);
+    MCAPI class Scripting::Result<void> setDynamicProperty(struct Scripting::ContextConfig const &, std::string const &, class std::variant<float, bool, std::string> const &);
     MCAPI void stopMusic();
-    MCAPI ~ScriptWorld();
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptWorld> bind(struct Scripting::Version);
+
+//private:
+    MCAPI class std::optional<struct Scripting::Error> _validateDynamicProperty(std::string const &, class std::variant<float, bool, std::string> const *) const;
+
+
+private:
 
 
 };

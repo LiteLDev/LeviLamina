@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERLEVEL
-public:
     MCVAPI void consolidateLevelChunkMetaData(class LevelChunk &);
     MCVAPI class Dimension * createDimension(class AutomaticID<class Dimension, int>);
     MCVAPI void decrementTagCache(std::string const &, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType>> &);
@@ -53,12 +52,15 @@ public:
 #endif
     MCAPI ServerLevel(class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> const &, std::unique_ptr<class LevelStorage>, std::unique_ptr<class LevelLooseFileStorage>, class IMinecraftEventing &, class ResourcePackManager &, class ResourcePackManager &, class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class MinecraftCommands &, class Scheduler &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner>> const &, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>, class std::weak_ptr<class ItemRegistry>, class std::weak_ptr<class BlockTypeRegistry>);
     MCAPI class MinecraftCommands & getCommands();
+    MCAPI class DynamicPropertiesDefinition & getDynamicPropertiesDefinition();
     MCAPI class FunctionManager & getFunctionManager();
     MCAPI class MobEvents const & getMobEvents() const;
     MCAPI class MobEvents & getMobEvents();
+    MCAPI class DynamicProperties & getOrAddDynamicProperties();
     MCAPI void setShouldSendSleepMessage(bool);
     MCAPI bool shouldSendSleepMessage() const;
     MCAPI class Bedrock::NonOwnerPointer<class VolumeEntityManagerServer> tryGetVolumeEntityManager() const;
+
 
 
 };

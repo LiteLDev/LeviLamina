@@ -27,24 +27,23 @@ public:
 
 public:
     /*0*/ virtual ~WritableBookItem();
-    /*5*/ virtual void __unk_vfn_5();
     /*7*/ virtual void __unk_vfn_7();
     /*10*/ virtual void __unk_vfn_10();
-    /*12*/ virtual void __unk_vfn_12();
-    /*47*/ virtual void __unk_vfn_47();
-    /*49*/ virtual void __unk_vfn_49();
-    /*55*/ virtual bool requiresInteract() const;
-    /*62*/ virtual void __unk_vfn_62();
+    /*13*/ virtual void __unk_vfn_13();
+    /*15*/ virtual void __unk_vfn_15();
+    /*51*/ virtual void __unk_vfn_51();
+    /*53*/ virtual void __unk_vfn_53();
+    /*59*/ virtual bool requiresInteract() const;
     /*66*/ virtual void __unk_vfn_66();
-    /*67*/ virtual void __unk_vfn_67();
-    /*68*/ virtual void __unk_vfn_68();
+    /*70*/ virtual void __unk_vfn_70();
     /*71*/ virtual void __unk_vfn_71();
+    /*72*/ virtual void __unk_vfn_72();
     /*75*/ virtual void __unk_vfn_75();
-    /*76*/ virtual void __unk_vfn_76();
-    /*80*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
-    /*110*/ virtual std::string getInteractText(class Player const &) const;
+    /*79*/ virtual void __unk_vfn_79();
+    /*80*/ virtual void __unk_vfn_80();
+    /*84*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
+    /*115*/ virtual std::string getInteractText(class Player const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WRITABLEBOOKITEM
-public:
 #endif
     MCAPI WritableBookItem(std::string const &, int);
     MCAPI static void addPageAt(class ItemStack &, int, struct PageContent const &);
@@ -52,6 +51,7 @@ public:
     MCAPI static void replacePage(class ItemStack &, int, struct PageContent const &);
     MCAPI static void signBook(class ItemStack &, std::string, std::string, std::string);
     MCAPI static void swapPages(class ItemStack &, int, int);
+
 
 
 };

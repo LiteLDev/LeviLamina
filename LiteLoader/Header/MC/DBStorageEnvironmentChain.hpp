@@ -27,7 +27,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DBSTORAGEENVIRONMENTCHAIN
-public:
 #endif
     MCAPI DBStorageEnvironmentChain(struct DBStorageConfig const &, class Core::Path const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>);
     MCAPI class CompactionListenerEnv * getCompactionListenerEnv() const;
@@ -41,6 +40,7 @@ public:
 
 //private:
     MCAPI static std::unique_ptr<class FlushableEnv> createFlushableEnv(class leveldb::Env *, class std::shared_ptr<class Core::FileStorageArea>, class Core::Path const &);
+
 
 private:
 

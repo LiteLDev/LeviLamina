@@ -44,12 +44,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MERCHANTRECIPE
-public:
 #endif
+    MCAPI MerchantRecipe(class MerchantRecipe const &);
     MCAPI MerchantRecipe(class ItemInstance const &, class ItemInstance const &, class ItemInstance const &);
     MCAPI MerchantRecipe(class ItemInstance const &, class ItemInstance const &);
     MCAPI MerchantRecipe(class CompoundTag const *);
-    MCAPI MerchantRecipe(class MerchantRecipe const &);
     MCAPI void calculateDemandPrices(int, int, int, bool);
     MCAPI std::unique_ptr<class CompoundTag> createTag(bool) const;
     MCAPI int getBaseCountA() const;
@@ -83,6 +82,7 @@ public:
     MCAPI void setUses(int);
     MCAPI bool shouldRewardExp() const;
     MCAPI ~MerchantRecipe();
+
 
 
 };

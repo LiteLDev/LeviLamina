@@ -31,7 +31,6 @@ public:
     /*3*/ virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
     /*4*/ virtual void update();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBRTCNETWORKPEER
-public:
 #endif
     MCAPI WebRTCNetworkPeer(class std::shared_ptr<struct NetherNetInstance> const &);
     MCAPI void setRemoteUserID(unsigned __int64);
@@ -39,6 +38,7 @@ public:
 
 //private:
     MCAPI void _updateConnectionStatus();
+
 
 private:
 

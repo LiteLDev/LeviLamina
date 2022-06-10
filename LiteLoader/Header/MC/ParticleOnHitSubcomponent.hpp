@@ -30,12 +30,12 @@ public:
     /*3*/ virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /*4*/ virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARTICLEONHITSUBCOMPONENT
-public:
 #endif
     MCAPI ParticleOnHitSubcomponent();
 
 //private:
     MCAPI bool isParticleTypeIconBreak() const;
+
 
 private:
 

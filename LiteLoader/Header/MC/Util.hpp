@@ -3,7 +3,6 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Json.hpp"
-#include "Tag.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -38,15 +37,16 @@ public:
     MCAPI extern std::string const EMPTY_GUID;
     MCAPI extern std::string const EMPTY_STRING;
     MCAPI extern std::string const NEW_LINE;
-    MCAPI void _breakIntoWordsAndFindProfanity(std::string &, std::string &, std::vector<struct std::pair<int, int>> const &, class std::unordered_set<char, struct std::hash<char>, struct std::equal_to<char>, class std::allocator<char>> const &, class std::set<struct std::pair<int, int>, struct std::less<struct std::pair<int, int>>, class std::allocator<struct std::pair<int, int>>> &, class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> const &, class std::unordered_set<std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<std::string>> const &);
+    MCAPI void _breakIntoWordsAndFindProfanity(std::string &, std::vector<struct std::pair<int, int>> const &, class std::unordered_set<char, struct std::hash<char>, struct std::equal_to<char>, class std::allocator<char>> const &, class std::set<struct std::pair<int, int>, struct std::less<struct std::pair<int, int>>, class std::allocator<struct std::pair<int, int>>> &, class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> const &, class std::unordered_set<std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<std::string>> const &);
     MCAPI void _logIfValidLogArea(enum LogArea, std::string const &);
-    MCAPI void _recordProfanityLocationInWord(std::string const &, std::string &, std::vector<struct std::pair<int, int>> const &, int, int, class std::set<struct std::pair<int, int>, struct std::less<struct std::pair<int, int>>, class std::allocator<struct std::pair<int, int>>> &, class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> const &, class std::unordered_set<std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<std::string>> const &);
+    MCAPI void _recordProfanityLocationInWord(std::string const &, std::vector<struct std::pair<int, int>> const &, int, int, class std::set<struct std::pair<int, int>, struct std::less<struct std::pair<int, int>>, class std::allocator<struct std::pair<int, int>>> &, class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> const &, class std::unordered_set<std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<std::string>> const &);
     MCAPI std::string base64_decode(std::string const &);
     MCAPI std::string base64_encode(std::string const &, bool);
     MCAPI std::string base64_encode(unsigned char const *, unsigned __int64, bool);
     MCAPI std::string base64url_decode(std::string);
     MCAPI std::string base64url_encode(std::string);
     MCAPI std::string boolToString(bool);
+    MCAPI std::string & clearAndReturn(std::string &);
     MCAPI bool compareNoCase(class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>);
     MCAPI std::string cp1252ToUTF8(std::string const &);
     MCAPI std::string cp437ToUTF8(std::string const &);
@@ -55,13 +55,12 @@ public:
     MCAPI bool endsWith(class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>);
     MCAPI std::string ensureNamespace(std::string const &);
     MCAPI std::string filterProfanityFromString(std::string const &, class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> const &, class std::unordered_set<std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<std::string>> const &);
+    MCAPI class std::set<struct std::pair<int, int>, struct std::less<struct std::pair<int, int>>, class std::allocator<struct std::pair<int, int>>> findProfanityInString(std::string const &, class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> const &, class std::unordered_set<std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<std::string>> const &);
     MCAPI std::string format(char const *, ...);
     MCAPI void freeStringMemory(std::string &);
     MCAPI std::string fromHex(std::string const &);
-    MCAPI unsigned __int64 generateHashFromTag(class Tag const &);
     MCAPI class BidirectionalUnorderedMap<int, unsigned __int64> generateHashMapFromListTag(class ListTag const &);
     MCAPI struct std::pair<std::string, std::string> getDataInheritance(std::string const &);
-    MCAPI std::unique_ptr<class Tag> getDataTagFromJson(class Json::Value const &, enum Tag::Type const &);
     MCAPI std::string getNameWithoutNamespace(std::string const &);
     MCAPI std::string getNamespace(std::string const &);
     MCAPI unsigned int hashCode(class std::basic_string_view<char, struct std::char_traits<char>>);
@@ -101,10 +100,9 @@ public:
     MCAPI std::string toLower(class gsl::basic_string_span<char const, -1> const &);
     MCAPI std::string toLower(char const *);
     MCAPI void toLowerInPlace(std::string &);
-    MCAPI enum Tag::Type toSimpleTagValueType(enum Json::ValueType const &);
-    MCAPI std::string toString(std::string const &);
     MCAPI std::string toString(float, int);
     MCAPI char const * toString(enum BoneTransformType);
+    MCAPI std::string toString(std::string const &);
     MCAPI std::string toString(class std::basic_string<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t>> const &);
     MCAPI std::string toStringWithPaddedZeroes(unsigned int, unsigned char);
     MCAPI std::string toUpper(std::string const &);

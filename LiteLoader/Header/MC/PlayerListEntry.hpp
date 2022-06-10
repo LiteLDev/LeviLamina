@@ -33,13 +33,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERLISTENTRY
-public:
 #endif
     MCAPI PlayerListEntry(class Player const &);
     MCAPI class PlayerListEntry clone() const;
     MCAPI bool read(class ReadOnlyBinaryStream &);
     MCAPI void write(class BinaryStream &) const;
     MCAPI ~PlayerListEntry();
+
 
 
 };

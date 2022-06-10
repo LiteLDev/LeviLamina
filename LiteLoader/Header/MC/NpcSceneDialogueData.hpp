@@ -6,28 +6,17 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "NpcComponent.hpp"
+#include "WeakEntityRef.hpp"
 #undef BEFORE_EXTRA
 
 class NpcSceneDialogueData {
 
 #define AFTER_EXTRA
 // Add Member There
+#define ENABLE_VIRTUAL_FAKESYMBOL_NPCSCENEDIALOGUEDATA
 public:
-NpcComponent mComponent;
-    Actor mActor;
+    WeakEntityRef mWer;
     string mString;
-    inline struct NpcActionsContainer& getActionsContainer()
-    {
-        struct NpcActionsContainer& (NpcSceneDialogueData::*rv)();
-        *((void**)&rv) = dlsym("?getActionsContainer@NpcSceneDialogueData@@UEAAAEAUNpcActionsContainer@@XZ");
-        return (this->*rv)();
-    }
-    inline struct NpcActionsContainer const& getActionsContainer() const
-    {
-        struct NpcActionsContainer const& (NpcSceneDialogueData::*rv)() const;
-        *((void**)&rv) = dlsym("?getActionsContainer@NpcSceneDialogueData@@UEBAAEBUNpcActionsContainer@@XZ");
-        return (this->*rv)();
-    }
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCSCENEDIALOGUEDATA
@@ -47,15 +36,15 @@ public:
     /*5*/ virtual std::string const & getSceneName() const;
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void __unk_vfn_7();
-    /*8*/ virtual struct ActorUniqueID const & getActorUniqueID();
+    /*8*/ virtual struct ActorUniqueID getActorUniqueID();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCSCENEDIALOGUEDATA
-public:
-    MCVAPI struct NpcActionsContainer & getActionsContainer();
-    MCVAPI struct NpcActionsContainer const & getActionsContainer() const;
-    MCVAPI class Actor const & getActor() const;
-    MCVAPI class Actor & getActor();
+    MCVAPI struct NpcActionsContainer * getActionsContainer();
+    MCVAPI struct NpcActionsContainer const * getActionsContainer() const;
+    MCVAPI class Actor const * getActor() const;
+    MCVAPI class Actor * getActor();
 #endif
-    MCAPI NpcSceneDialogueData(class NpcComponent &, class Actor &, std::string const &);
+    MCAPI NpcSceneDialogueData(class WeakEntityRef, std::string const &);
+
 
 
 };

@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKRESULT
-public:
 #endif
     MCAPI TaskResult();
     MCAPI class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> getRunAtTime() const;
@@ -38,6 +37,7 @@ public:
     MCAPI static class TaskResult const Done;
     MCAPI static class TaskResult const Requeue;
     MCAPI static class TaskResult requeueAfter(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
+
 
 
 };

@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKWORLDCOMPONENT
-public:
 #endif
     MCAPI TickWorldComponent(class TickWorldComponent &&);
     MCAPI TickWorldComponent();
@@ -39,6 +38,7 @@ public:
     MCAPI void setTickingArea(class Actor &, class std::shared_ptr<class ITickingArea>);
     MCAPI void updateArea(class Actor &);
     MCAPI ~TickWorldComponent();
+
 
 
 };

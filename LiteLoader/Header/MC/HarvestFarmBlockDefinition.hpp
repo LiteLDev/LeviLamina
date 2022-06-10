@@ -25,11 +25,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HARVESTFARMBLOCKDEFINITION
-public:
 #endif
     MCAPI HarvestFarmBlockDefinition();
     MCAPI void initialize(class EntityContext &, class HarvestFarmBlockGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HarvestFarmBlockDefinition>> &);
+
 
 
 };

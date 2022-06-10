@@ -28,7 +28,6 @@ public:
     /*0*/ virtual ~ResourceUriCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEURICOMMAND
-public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
 
@@ -36,6 +35,7 @@ public:
     MCAPI void _executeClear(class Level &, class Player *, class CommandOutput &) const;
     MCAPI void _executeNamed(class Level &, class Player *, class CommandOutput &) const;
     MCAPI void _executeUriOnly(class Level &, class Player *, class CommandOutput &) const;
+
 
 private:
 

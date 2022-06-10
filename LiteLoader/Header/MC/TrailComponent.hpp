@@ -24,10 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRAILCOMPONENT
-public:
 #endif
     MCAPI TrailComponent();
     MCAPI void initFromDefinition(class Actor &);
+
 
 
 };

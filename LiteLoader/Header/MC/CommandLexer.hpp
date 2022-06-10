@@ -25,13 +25,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDLEXER
-public:
 #endif
     MCAPI CommandLexer(std::string const &);
     MCAPI struct CommandLexer::Token const & next() const;
     MCAPI void step();
     MCAPI static bool isDigit(char);
     MCAPI static bool isFilePathCharacter(char);
+
 
 
 };

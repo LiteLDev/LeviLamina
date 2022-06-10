@@ -65,7 +65,7 @@ public:
     /*30*/ virtual void refreshPacks();
     /*31*/ virtual void requestReloadUserPacks();
     /*32*/ virtual void requestReloadDynamicPackagePacks();
-    /*33*/ virtual class IContentKeyProvider const & getKeyProvider() const;
+    /*33*/ virtual class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> getKeyProvider() const;
     /*34*/ virtual class PackManifestFactory & getPackManifestFactory();
     /*35*/ virtual class PackSettingsFactory & getPackSettingsFactory() const;
     /*36*/ virtual class PackSourceFactory & getPackSourceFactory();
@@ -83,7 +83,6 @@ public:
     /*48*/ virtual void unregisterResourcePackRemovedCallback(void *);
     /*49*/ virtual bool isInitialized();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKREPOSITORY
-public:
 #endif
     MCAPI ResourcePackRepository(class IMinecraftEventing &, class PackManifestFactory &, class IContentAccessibilityProvider &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, class PackSourceFactory &, bool);
     MCAPI static class mce::UUID const CHEMISTRY_PACK_UUID;
@@ -103,6 +102,7 @@ public:
     MCAPI bool _removePack(class ResourceLocation const &, bool);
     MCAPI void _saveKnownUserPacks(struct ResourcePackRepository::KnownPackContainer &, enum KnownPackType);
     MCAPI void _triggerRemoveResourcePackCallback(class ResourcePack *);
+
 
 private:
 

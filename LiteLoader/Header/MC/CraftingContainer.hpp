@@ -37,10 +37,10 @@ public:
     /*23*/ virtual void __unk_vfn_23();
     /*24*/ virtual void setContainerChanged(int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTINGCONTAINER
-public:
 #endif
     MCAPI CraftingContainer(int, int);
     MCAPI class ItemStack const & getItem(int, int) const;
+
 
 
 };

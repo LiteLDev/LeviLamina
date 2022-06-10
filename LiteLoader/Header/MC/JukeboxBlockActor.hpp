@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUKEBOXBLOCKACTOR
-public:
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     MCVAPI bool canPullOutItem(class BlockSource &, int, int, class ItemInstance const &) const;
@@ -53,6 +52,7 @@ public:
 //private:
     MCAPI void _onChanged(class BlockSource &, enum LevelSoundEvent);
     MCAPI void _spawnMusicParticles(class Level &, float);
+
 
 private:
 

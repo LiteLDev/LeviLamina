@@ -29,11 +29,12 @@ public:
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /*14*/ virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
     /*19*/ virtual void __unk_vfn_19();
-    /*26*/ virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
-    /*30*/ virtual void __unk_vfn_30();
+    /*25*/ virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -72,7 +73,6 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FENCEGATEBLOCK
-public:
     MCVAPI bool isFenceGateBlock() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
@@ -81,6 +81,8 @@ public:
 
 //private:
     MCAPI void _onOpenChanged(class BlockSource &, class BlockPos const &) const;
+    MCAPI void _setOpen(class BlockSource &, class gsl::not_null<class Block const *>, class BlockPos const &, class Player *, bool) const;
+
 
 private:
 

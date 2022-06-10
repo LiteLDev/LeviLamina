@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMPOS
-public:
 #endif
     MCAPI static bool getPos(class Vec3 &, class Mob &, int, int, int, enum SolidityCheckType);
     MCAPI static bool getPosAvoid(class Vec3 &, class Mob &, int, int, class Vec3 const &, enum SolidityCheckType, int);
@@ -41,6 +40,7 @@ public:
     MCAPI static bool snapToGround(class BlockPos &, int, int, int, class std::function<bool (class BlockPos &)>);
     MCAPI static bool snapToGround(class BlockPos &, int, int, class std::function<bool (class BlockPos &)>);
     MCAPI static bool spawnSnapToGround(class BlockSource &, class BlockPos &, float, int);
+
 
 private:
 

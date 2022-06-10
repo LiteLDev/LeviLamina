@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYMENU
-public:
     MCVAPI class Container * _getContainer() const;
     MCVAPI std::vector<class ItemStack> getItemCopies() const;
     MCVAPI class ItemStack const & getSlot(int) const;
@@ -35,6 +34,7 @@ public:
     MCVAPI ~InventoryMenu();
 #endif
     MCAPI InventoryMenu(class Player &, class Container *);
+
 
 
 };

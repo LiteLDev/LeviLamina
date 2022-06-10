@@ -90,6 +90,19 @@ SimulatedPlayer* PlayerClass::asSimulatedPlayer()
     return nullptr;
 }
 
+Local<Value> PlayerClass::simulateSneak(const Arguments& args)
+{
+    try
+    {
+        auto sp = asSimulatedPlayer();
+        if (!sp)
+            return Local<Value>();
+
+        return Boolean::newBoolean(sp->simulateSneak());
+    }
+    CATCH("Fail in " __FUNCTION__ "!")
+}
+
 // bool simulateAttack(class Actor*);
 // bool simulateAttack();
 Local<Value> PlayerClass::simulateAttack(const Arguments& args)
@@ -380,7 +393,7 @@ Local<Value> PlayerClass::simulateWorldMove(const Arguments& args)
             speed = args[index].asNumber().toFloat();
         }
 
-        sp->simulateLocalMove(target, speed);
+        sp->simulateWorldMove(target, speed);
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in " __FUNCTION__ "!")
@@ -433,7 +446,7 @@ Local<Value> PlayerClass::simulateMoveTo(const Arguments& args)
             speed = args[index].asNumber().toFloat();
         }
 
-        sp->simulateLocalMove(target, speed);
+        sp->simulateMoveToLocation(target, speed);
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in " __FUNCTION__ "!")
@@ -756,3 +769,16 @@ Local<Value> PlayerClass::simulateStopUsingItem(const Arguments& args)
     }
     CATCH("Fail in " __FUNCTION__ "!")
 };
+
+Local<Value> PlayerClass::simulateStopSneaking(const Arguments& args)
+{
+    try
+    {
+        auto sp = asSimulatedPlayer();
+        if (!sp)
+            return Local<Value>();
+        
+        return Boolean::newBoolean(sp->simulateStopSneaking());
+    }
+    CATCH("Fail in " __FUNCTION__ "!")
+}

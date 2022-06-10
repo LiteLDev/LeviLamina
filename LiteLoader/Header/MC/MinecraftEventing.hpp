@@ -36,7 +36,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTEVENTING
-public:
     MCVAPI void addCrashTelemetryToBatch(class std::shared_ptr<class Bedrock::SessionInfo>);
     MCVAPI void addListener(std::unique_ptr<class Social::Events::IEventListener>);
     MCVAPI void fileEventCloudWorldPullFailed(std::string const &, std::string const &, bool);
@@ -76,7 +75,8 @@ public:
     MCVAPI void fireEventCodeBuilderRuntimeAction(std::string const &) const;
     MCVAPI void fireEventCodeBuilderScoreChanged(std::string const &, int) const;
     MCVAPI void fireEventCompoundCreatorCreated(int, int);
-    MCVAPI void fireEventConnectedStorageUploadResult(bool, unsigned int, unsigned int, unsigned int, std::string const &);
+    MCVAPI void fireEventConnectedStorageError(std::string const &, std::string const &, __int64);
+    MCVAPI void fireEventConnectedStorageResult(enum ConnectedStorageEventType, bool, unsigned int, class std::optional<unsigned int>, std::string const &, std::string const &, __int64, class std::optional<unsigned int>, class std::optional<unsigned int>, class std::optional<unsigned int>);
     MCVAPI void fireEventConnectionFailed(enum IConnectionEventing::ConnectionFailureReason);
     MCVAPI void fireEventContentLogsInWorldSession(std::string const &, unsigned int, unsigned int);
     MCVAPI void fireEventContentShared(std::string const &, std::string const &, enum IMinecraftEventing::ShareMode const &);
@@ -90,8 +90,6 @@ public:
     MCVAPI void fireEventDeviceLost();
     MCVAPI void fireEventDifficultySet(enum Difficulty, enum Difficulty);
     MCVAPI void fireEventDiskStatus(enum DiskStatus, enum Core::LevelStorageState, unsigned __int64);
-    MCVAPI void fireEventDwellerDied(class Actor &, class ActorDamageSource const &, bool);
-    MCVAPI void fireEventDwellerRemoved(class Actor &, bool);
     MCVAPI void fireEventEduContentVerificationFailed() const;
     MCVAPI void fireEventEduDemoConversion(enum ADRole, enum LastClickedSource);
     MCVAPI void fireEventEduOptionSet(class Option const &) const;
@@ -104,7 +102,6 @@ public:
     MCVAPI void fireEventGameRulesUpdated(float, float, std::string const &);
     MCVAPI void fireEventGameRulesUpdated(int, int, std::string const &);
     MCVAPI void fireEventGameRulesUpdated(bool, bool, std::string const &);
-    MCVAPI void fireEventGameSessionStart(class Player *, class IClientInstance &, class Level &, std::string const &, int, std::string const &, std::string const &, bool);
     MCVAPI void fireEventHardwareInfo();
     MCVAPI void fireEventHowToPlayTopicChanged(std::string const &, enum InputMode);
     MCVAPI void fireEventIAPPurchaseAttempt(std::string const &, std::string const &, class Offer &, enum PurchasePath);
@@ -131,6 +128,7 @@ public:
     MCVAPI void fireEventOnAppSuspend(std::vector<struct std::pair<std::string, float>>, bool);
     MCVAPI void fireEventOnDeviceLost(std::vector<struct std::pair<std::string, float>>);
     MCVAPI void fireEventOnSuccessfulClientLogin(class Level const *);
+    MCVAPI void fireEventOneDSPlayerReportPayload(std::string const &);
     MCVAPI void fireEventOptionsUpdated(class Options &, enum InputMode, bool);
     MCVAPI void fireEventOreUIError(unsigned int const &, std::string const &);
     MCVAPI void fireEventPackHashChanged(class PackManifest const &);
@@ -162,6 +160,7 @@ public:
     MCVAPI void fireEventPlayerMessageSay(std::string const &, std::string const &);
     MCVAPI void fireEventPlayerMessageTell(std::string const &, std::string const &, std::string const &);
     MCVAPI void fireEventPlayerMessageTitle(std::string const &, std::string const &, std::string const &);
+    MCVAPI void fireEventPlayerReportSent(bool, std::string const &, std::string const &);
     MCVAPI void fireEventPlayerTravelled(class Player *, float);
     MCVAPI void fireEventPopupClosed(std::string const &) const;
     MCVAPI void fireEventPopupFiredEdu(std::string const &, std::string const &, std::string const &, std::string const &, enum ActiveDirectoryAction);
@@ -240,15 +239,18 @@ public:
     MCVAPI void fireEventWorldGenerated(std::string const &, class LevelSettings const &, bool);
     MCVAPI void fireEventWorldHistoryPackSourceMissingDuringUpgrade(std::string const &, std::string const &, std::string const &);
     MCVAPI void fireEventWorldImported(__int64, unsigned __int64);
-    MCVAPI void fireEventWorldLoaded(class Player *, class Level &, class ResourcePackManager const &, struct PacksInfoData const &, bool);
+    MCVAPI void fireEventWorldLoaded(class Player *, std::string const &, std::string const &, bool);
     MCVAPI void fireEventWorldLoadedClassroomCustomization(enum IMinecraftEventing::WorldClassroomCustomization, class buffer_span<struct std::pair<class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>>>);
     MCVAPI void fireExternalUriLaunched(std::string const &) const;
     MCVAPI void fireGlobalResourcePackCrashRecovery(class PackInstance &, class mce::UUID, int);
     MCVAPI void fireIDESelected(std::string const &) const;
     MCVAPI void fireInAppCodeBuilderActivated(enum OpenCodeMethod, std::string const &) const;
     MCVAPI void fireInAppCodeBuilderDismissed(std::string const &) const;
-    MCVAPI void fireLessonActionTaken(std::string const &, std::string const &, std::string const &, enum IMinecraftEventing::EducationLessonAction);
+    MCVAPI void fireInviteStatusReceived(std::string);
+    MCVAPI void fireInviteStatusSentImpl(unsigned int, std::vector<std::string>);
+    MCVAPI void fireLessonActionTaken(std::string const &, std::string const &, std::string const &, enum IMinecraftEventing::EducationLessonAction, int);
     MCVAPI void fireLessonCompleteDialogOpened(enum IMinecraftEventing::LessonCompleteDialogEntryPoint) const;
+    MCVAPI void fireLessonProgressEvent(std::string const &, std::string const &, std::string const &, std::string const &, std::string const &, int);
     MCVAPI void fireLibraryButtonPressed(std::string const &, std::string const &, std::string const &);
     MCVAPI void fireMinecraftVersionInviteAccepted(bool, unsigned __int64);
     MCVAPI void fireMinecraftVersionLaunched(bool);
@@ -335,6 +337,7 @@ public:
     MCAPI void _fireStructureBlockAction(enum IMinecraftEventing::StructureBlockActionType, class StructureEditorData const &, bool, class StructureTelemetryClientData const *);
     MCAPI void _generateWorldSessionId();
     MCAPI void fireEventPlayerMessage(std::string const &, std::string const &, std::string const &, std::string const &);
+
 
 private:
     MCAPI static std::unique_ptr<class Social::Events::AchievementEventing> mAchievementEventing;

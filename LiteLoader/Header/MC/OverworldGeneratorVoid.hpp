@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDGENERATORVOID
-public:
     MCVAPI void _prepareHeights(class BlockVolume &, class ChunkPos const &, class WorldGenCache const &, class Aquifer *, class std::function<void (class BlockPos const &, class Block const &, int)> &&, bool, std::vector<short> *, int);
     MCVAPI void decorateWorldGenPostProcess(class Biome &, class LevelChunk &, class BlockSource &, class Random &) const;
     MCVAPI class BlockPos findSpawnPosition() const;
@@ -36,6 +35,7 @@ public:
     MCVAPI void loadChunk(class LevelChunk &, bool);
 #endif
     MCAPI OverworldGeneratorVoid(class Dimension &, unsigned int);
+
 
 
 };

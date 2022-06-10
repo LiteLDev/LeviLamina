@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUNTIMELIGHTINGMANAGER
-public:
 #endif
     MCAPI RuntimeLightingManager(class Dimension &);
     MCAPI void flushRunTimeLighting();
@@ -37,6 +36,7 @@ public:
     MCAPI void _getListOfChunksWithPlayerDistance();
     MCAPI void _relightChunks(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
     MCAPI void _removeProcessedSubchunks();
+
 
 private:
 

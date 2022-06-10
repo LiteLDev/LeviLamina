@@ -29,7 +29,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYTRANSACTION
-public:
 #endif
     MCAPI InventoryTransaction(class InventoryTransaction const &);
     MCAPI void _logTransaction(bool) const;
@@ -49,6 +48,7 @@ public:
 //private:
     MCAPI void _dropCreatedItems(class Player &) const;
     MCAPI void addItemToContent(class ItemStack const &, int);
+
 
 private:
     MCAPI static class BidirectionalUnorderedMap<enum InventoryTransactionError, std::string> const inventoryTransactionErrorMap;

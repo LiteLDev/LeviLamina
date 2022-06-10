@@ -36,7 +36,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKNETINSTANCE
-public:
     MCVAPI void _onDisable();
     MCVAPI void _onEnable();
     MCVAPI void addConnectionStateListener(class Connector::ConnectionStateListener *);
@@ -72,6 +71,7 @@ public:
     MCAPI void _openNatConnection(struct RakNet::SystemAddress const &);
     MCAPI void _pingNatService(bool);
     MCAPI void _storeLocalIP();
+
 
 private:
 

@@ -45,7 +45,6 @@ public:
     /*17*/ virtual bool isInTrialMode();
     /*18*/ virtual void registerUpsellScreenCallback(class std::function<void (bool)>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEMODE
-public:
 #endif
     MCAPI GameMode(class Player &, std::unique_ptr<struct IGameModeTimer>, std::unique_ptr<struct IGameModeMessenger>);
     MCAPI bool _startDestroyBlock(class BlockPos const &, class Vec3 const &, unsigned char, bool &);
@@ -58,6 +57,7 @@ public:
     MCAPI float getDestroyRate(class Block const &);
     MCAPI float getMaxPickRange();
     MCAPI float getMaxPickRangeSqr();
+    MCAPI bool isLastBuildBlockInteractive() const;
     MCAPI static float const PICKRANGE_CREATIVE_MAXIMUM;
     MCAPI static float const PICKRANGE_CREATIVE_MAXIMUM_SQR;
     MCAPI static float const PICKRANGE_GAMEPAD;
@@ -73,6 +73,7 @@ public:
     MCAPI bool _canDestroy(class BlockPos const &, unsigned char);
     MCAPI bool _canUseBlock(class Block const &);
     MCAPI bool _creativeDestroyBlock(class BlockPos const &, unsigned char);
+
 
 private:
 

@@ -18,16 +18,15 @@ class KeyFrameTransform {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_KEYFRAMETRANSFORM
 public:
     class KeyFrameTransform& operator=(class KeyFrameTransform const &) = delete;
+    KeyFrameTransform(class KeyFrameTransform const &) = delete;
     KeyFrameTransform() = delete;
 #endif
 
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_KEYFRAMETRANSFORM
-public:
 #endif
     MCAPI KeyFrameTransform(float);
-    MCAPI KeyFrameTransform(class KeyFrameTransform const &);
     MCAPI class KeyFrameLerpMode & getLerpMode();
     MCAPI class KeyFrameTransform & operator=(class KeyFrameTransform &&);
     MCAPI bool optimizeAndGetDataValues(class Vec3 &, class Vec3 &);
@@ -38,6 +37,7 @@ public:
     MCAPI void setPre(class ExpressionNode const &, int);
     MCAPI ~KeyFrameTransform();
     MCAPI static void computeCubicPolynomial(class KeyFrameTransform *, class KeyFrameTransform &, class KeyFrameTransform &, class KeyFrameTransform *);
+
 
 
 };

@@ -22,6 +22,7 @@
 #include <MC/ListTag.hpp>
 #include <MC/CompoundTag.hpp>
 #include <MC/SimulatedPlayer.hpp>
+#include <MC/BlockSource.hpp>
 #include <PlayerInfoAPI.h>
 #include <SafeGuardRecord.h>
 #include <string>
@@ -128,6 +129,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         
         //SimulatedPlayer API
         .instanceFunction("isSimulatedPlayer", &PlayerClass::isSimulatedPlayer)
+        .instanceFunction("simulateSneak", &PlayerClass::simulateSneak)
         .instanceFunction("simulateAttack", &PlayerClass::simulateAttack)
         .instanceFunction("simulateDestory", &PlayerClass::simulateDestory)
         .instanceFunction("simulateDisconnect", &PlayerClass::simulateDisconnect)
@@ -144,6 +146,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("simulateStopInteracting", &PlayerClass::simulateStopInteracting)
         .instanceFunction("simulateStopMoving", &PlayerClass::simulateStopMoving)
         .instanceFunction("simulateStopUsingItem", &PlayerClass::simulateStopUsingItem)
+        .instanceFunction("simulateStopSneaking", &PlayerClass::simulateStopSneaking)
         
         //For Compatibility
         .instanceProperty("ip", &PlayerClass::getIP)
@@ -267,7 +270,7 @@ Player* PlayerClass::get()
     if (!isValid)
         return nullptr;
     else
-        return Level::getPlayer(id);
+        return Global<Level>->getPlayer(id);
 }
 
 Local<Value> PlayerClass::getName()
@@ -816,6 +819,11 @@ Local<Value> PlayerClass::getRespawnPosition(const Arguments& args)
         if (!player)
             return Local<Value>();
         auto position = player->getRespawnPosition();
+        if (position.first.y == 32767) {
+            auto region = Level::getBlockSource(position.second);
+            if (region)
+                position.first = region->getHeightmapPos(position.first);
+        }
         return IntPos::newPos(position.first,position.second);
     }
     CATCH("Fail in getRespawnPosition!")
@@ -1278,7 +1286,7 @@ Local<Value> PlayerClass::sendSimpleForm(const Arguments& args)
             if (!EngineManager::isValid(engine))
                 return;
 
-            Player* pl = Level::getPlayer(id);
+            Player* pl = Global<Level>->getPlayer(id);
             if (!pl)
                 return;
 
@@ -1320,7 +1328,7 @@ Local<Value> PlayerClass::sendModalForm(const Arguments& args)
             if (!EngineManager::isValid(engine))
                 return;
 
-            Player* pl = Level::getPlayer(id);
+            Player* pl = Global<Level>->getPlayer(id);
             if (!pl)
                 return;
 
@@ -1361,7 +1369,7 @@ Local<Value> PlayerClass::sendCustomForm(const Arguments& args)
             if (!EngineManager::isValid(engine))
                 return;
 
-            Player* pl = Level::getPlayer(id);
+            Player* pl = Global<Level>->getPlayer(id);
             if (!pl)
                 return;
 

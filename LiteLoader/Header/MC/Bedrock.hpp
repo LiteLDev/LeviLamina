@@ -51,7 +51,11 @@ public:
 } // namespace PubSub
 namespace Threading {
 enum AsyncStatus;
-class CountReference {
+template <typename T0>
+class UniqueLock;
+
+class CountReference
+{
 public:
     CountReference() = delete;
     CountReference(CountReference const&) = delete;

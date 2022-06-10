@@ -31,40 +31,39 @@ public:
     /*28*/ virtual void move(class Vec3 const &);
     /*40*/ virtual void __unk_vfn_40();
     /*48*/ virtual void normalTick();
-    /*61*/ virtual void __unk_vfn_61();
-    /*68*/ virtual void __unk_vfn_68();
-    /*82*/ virtual void __unk_vfn_82();
-    /*87*/ virtual float getBrightness(float) const;
-    /*88*/ virtual void __unk_vfn_88();
-    /*94*/ virtual bool isPickable();
-    /*95*/ virtual void __unk_vfn_95();
-    /*98*/ virtual void __unk_vfn_98();
-    /*105*/ virtual void __unk_vfn_105();
+    /*60*/ virtual void __unk_vfn_60();
+    /*67*/ virtual void __unk_vfn_67();
+    /*81*/ virtual void __unk_vfn_81();
+    /*86*/ virtual float getBrightness(float) const;
+    /*87*/ virtual void __unk_vfn_87();
+    /*93*/ virtual bool isPickable();
+    /*94*/ virtual void __unk_vfn_94();
+    /*97*/ virtual void __unk_vfn_97();
+    /*104*/ virtual void __unk_vfn_104();
+    /*106*/ virtual void __unk_vfn_106();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*109*/ virtual void __unk_vfn_109();
-    /*134*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
-    /*181*/ virtual void __unk_vfn_181();
-    /*195*/ virtual void __unk_vfn_195();
+    /*133*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
+    /*180*/ virtual void __unk_vfn_180();
+    /*194*/ virtual void __unk_vfn_194();
+    /*219*/ virtual void __unk_vfn_219();
     /*220*/ virtual void __unk_vfn_220();
-    /*221*/ virtual void __unk_vfn_221();
-    /*239*/ virtual void setSize(float, float);
-    /*246*/ virtual void __unk_vfn_246();
-    /*249*/ virtual void __unk_vfn_249();
-    /*261*/ virtual void __unk_vfn_261();
-    /*262*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /*265*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
-    /*269*/ virtual void __unk_vfn_269();
-    /*278*/ virtual void __unk_vfn_278();
-    /*279*/ virtual void setDir(int);
-    /*280*/ virtual int getWidth() const = 0;
-    /*281*/ virtual int getHeight() const = 0;
-    /*282*/ virtual void dropItem() = 0;
-    /*283*/ virtual bool placeHangingEntity(class BlockSource &, int);
-    /*284*/ virtual bool wouldSurvive(class BlockSource &);
+    /*238*/ virtual void setSize(float, float);
+    /*245*/ virtual void __unk_vfn_245();
+    /*248*/ virtual void __unk_vfn_248();
+    /*264*/ virtual void __unk_vfn_264();
+    /*265*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    /*268*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
+    /*269*/ virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /*272*/ virtual void __unk_vfn_272();
+    /*281*/ virtual void __unk_vfn_281();
+    /*282*/ virtual void setDir(int);
+    /*283*/ virtual int getWidth() const = 0;
+    /*284*/ virtual int getHeight() const = 0;
+    /*285*/ virtual void dropItem() = 0;
+    /*286*/ virtual bool placeHangingEntity(class BlockSource &, int);
+    /*287*/ virtual bool wouldSurvive(class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HANGINGACTOR
-public:
 #endif
     MCAPI HangingActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI int getDirection() const;
@@ -77,6 +76,7 @@ public:
 //private:
     MCAPI bool _blockContainsObstruction(class BlockSource const &, class BlockPos const &) const;
     MCAPI bool _canSurviveOnBlock(class BlockSource const &, class BlockPos const &, bool) const;
+
 
 protected:
 

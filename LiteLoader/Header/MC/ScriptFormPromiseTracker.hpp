@@ -16,14 +16,12 @@ class ScriptFormPromiseTracker {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTFORMPROMISETRACKER
 public:
-    class ScriptFormPromiseTracker& operator=(class ScriptFormPromiseTracker const &) = delete;
     ScriptFormPromiseTracker(class ScriptFormPromiseTracker const &) = delete;
 #endif
 
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFORMPROMISETRACKER
-public:
     MCVAPI enum EventResult onEvent(struct PlayerFormCloseEvent const &);
     MCVAPI enum EventResult onEvent(struct PlayerFormResponseEvent const &);
 #endif
@@ -31,7 +29,9 @@ public:
     MCAPI void handleFormClose(unsigned int);
     MCAPI void handleFormResponse(unsigned int, class Json::Value const &);
     MCAPI void handlePlayerQuit(class NetworkIdentifier const &);
+    MCAPI class ScriptFormPromiseTracker & operator=(class ScriptFormPromiseTracker const &);
     MCAPI void rejectAllForShutdown();
+
 
 
 };

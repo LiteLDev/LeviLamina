@@ -62,17 +62,32 @@ THook(void, "?_appendLogEntryMetadata@LogDetails@BedrockLog@@AEAAXAEAV?$basic_st
 
 #include "LiteLoader.h"
 #include <MC/BedrockLog.hpp>
-THook(void, "?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4ZZ",
+namespace ModifyInfomation
+{
+    int telemetryText = 0;
+}
+    THook(void, "?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4ZZ",
       enum BedrockLog::LogCategory a1, class std::bitset<3> a2, enum BedrockLog::LogRule a3, enum LogAreaID a4, unsigned int a5, char const* a6, int a7, char const* a8, ...)
 {
     va_list va;
     auto text = (char*)a8;
+    va_start(va, a8);
+    if (string(text).find("= TELEMETRY MESSAGE =") != string(text).npos)
+    {
+        ModifyInfomation::telemetryText = 6;  
+        return BedrockLog::log_va(a1, a2, a3, a4, a5, a6, a7, "To enable Server Telemetry, add the line 'emit-server-telemetry=true' to the server.properties file in the bds directory", va);
+    }
+	if (ModifyInfomation::telemetryText > 0)
+	{
+		ModifyInfomation::telemetryText--;
+		return;
+	}
+	
     if (string(text).find("setting up server logging...") != string(text).npos 
         || string(text).find("Server started") != string(text).npos)
     {
         return;
     }
-    va_start(va, a8);
     return BedrockLog::log_va(a1, a2, a3, a4, a5, a6, a7, a8, va);
 }
 

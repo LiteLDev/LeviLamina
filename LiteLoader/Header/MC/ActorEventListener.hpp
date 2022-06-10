@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTLISTENER
-public:
     MCVAPI enum EventResult onActorAttackedActor(class Actor &, class Actor &);
     MCVAPI enum EventResult onActorCarriedItemChanged(class Actor &, class ItemInstance const &, class ItemInstance const &, enum HandSlot);
     MCVAPI enum EventResult onActorCreated(class Actor &);
@@ -46,6 +45,7 @@ public:
     MCVAPI enum EventResult onActorUseItemOn(class Actor &, class ItemStack const &, class BlockPos const &, unsigned char);
     MCVAPI enum EventResult onEvent(struct ActorNotificationEvent const &);
 #endif
+
 
 
 };

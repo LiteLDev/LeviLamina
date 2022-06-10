@@ -26,9 +26,9 @@ public:
 public:
     /*0*/ virtual ~SmokerContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMOKERCONTAINERSCREENVALIDATOR
-public:
 #endif
     MCAPI SmokerContainerScreenValidator();
+
 
 
 };

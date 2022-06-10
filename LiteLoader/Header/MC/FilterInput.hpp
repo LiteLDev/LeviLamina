@@ -24,11 +24,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERINPUT
-public:
 #endif
     MCAPI FilterInput(int);
     MCAPI class FilterInput & operator=(class FilterInput const &);
     MCAPI ~FilterInput();
+
 
 
 };

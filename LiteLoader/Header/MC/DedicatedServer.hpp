@@ -27,7 +27,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEDICATEDSERVER
-public:
     MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient>> getAutomationClient() const;
     MCVAPI class IGameModuleShared & getGameModule();
     MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> getPrimaryMinecraft();
@@ -45,6 +44,7 @@ public:
     MCAPI void initalizeAppConfigs();
     MCAPI void initializeHttp();
     MCAPI void initializeLogging();
+
 
 private:
 

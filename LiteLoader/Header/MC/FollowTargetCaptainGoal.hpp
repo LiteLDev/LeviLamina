@@ -33,12 +33,12 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLLOWTARGETCAPTAINGOAL
-public:
 #endif
     MCAPI FollowTargetCaptainGoal(class Mob &, float, float, float);
 
 //private:
     MCAPI void _determineMovePos();
+
 
 private:
 

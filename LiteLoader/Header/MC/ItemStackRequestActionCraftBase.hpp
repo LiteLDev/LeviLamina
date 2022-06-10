@@ -25,11 +25,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTBASE
-public:
     MCVAPI class ItemStackRequestActionCraftBase const * getCraftAction() const;
     MCVAPI void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette &, bool);
     MCVAPI ~ItemStackRequestActionCraftBase();
 #endif
+
 
 
 };

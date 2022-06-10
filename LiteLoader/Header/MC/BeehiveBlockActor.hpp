@@ -43,7 +43,6 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEEHIVEBLOCKACTOR
-public:
 #endif
     MCAPI BeehiveBlockActor(class BlockPos const &);
     MCAPI void disableBeeSpawn();
@@ -59,6 +58,7 @@ public:
     MCAPI bool _tickOccupant(class BlockSource &, struct BeehiveBlockActor::Occupant &);
     MCAPI void _trySpawnBees(class BlockSource &);
     MCAPI static bool _validSpawnDirection(class BlockSource &, class BlockPos const &, unsigned char);
+
 
 private:
 

@@ -24,12 +24,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROLECHECKER
-public:
 #endif
     MCAPI RoleChecker();
     MCAPI void checkRole(std::string const &, class std::function<void (enum ADRole, std::string const &, std::string const &)>);
     MCAPI bool lookupInProgress() const;
     MCAPI ~RoleChecker();
+
 
 
 };

@@ -33,12 +33,12 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKELETONHORSETRAPGOAL
-public:
 #endif
     MCAPI SkeletonHorseTrapGoal(class Horse &, int, float);
 
 //private:
     MCAPI class Skeleton * _createSkeleton(enum Difficulty const &, class Horse const &);
+
 
 private:
 

@@ -28,7 +28,6 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUGEMUSHROOMFEATURE
-public:
 #endif
     MCAPI HugeMushroomFeature(int);
     MCAPI HugeMushroomFeature();
@@ -36,6 +35,7 @@ public:
 
 //private:
     MCAPI bool _canSurvive(class Block const &) const;
+
 
 private:
 

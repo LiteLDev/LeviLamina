@@ -25,10 +25,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTMOVEMENTTRACKER
-public:
 #endif
-    MCAPI GameEventMovementTracker(class Mob &);
-    MCAPI void trackMovement(bool);
+    MCAPI GameEventMovementTracker(class Vec3 const &);
+    MCAPI void trackMovement(class Actor &, bool);
+
 
 
 };

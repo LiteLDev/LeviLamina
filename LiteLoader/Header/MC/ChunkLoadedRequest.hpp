@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKLOADEDREQUEST
-public:
 #endif
     MCAPI ChunkLoadedRequest(class ChunkLoadedRequest &&);
     MCAPI ChunkLoadedRequest(struct Bounds const &, std::unique_ptr<class IRequestAction>, bool, bool);
@@ -45,6 +44,7 @@ public:
 
 //private:
     MCAPI class ITickingAreaView const * _getTickingArea(class Dimension const &) const;
+
 
 private:
 

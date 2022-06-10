@@ -30,13 +30,13 @@ public:
     /*7*/ virtual void setSlot(int, class ItemStack const &, bool);
     /*8*/ virtual class ItemStack const & getSlot(int) const;
     /*10*/ virtual void broadcastChanges();
-    /*15*/ virtual bool isValid(float);
-    /*16*/ virtual class ContainerScreenContext _postInit();
+    /*16*/ virtual bool isValid(float);
+    /*17*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADE2CONTAINERMANAGERMODEL
-public:
 #endif
     MCAPI Trade2ContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
     MCAPI class Actor * getEntity() const;
+
 
 
 };

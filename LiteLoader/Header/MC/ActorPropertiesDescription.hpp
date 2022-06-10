@@ -9,7 +9,7 @@
 
 #undef BEFORE_EXTRA
 
-class ActorPropertiesDescription {
+struct ActorPropertiesDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -18,19 +18,16 @@ class ActorPropertiesDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORPROPERTIESDESCRIPTION
 public:
-    class ActorPropertiesDescription& operator=(class ActorPropertiesDescription const &) = delete;
-    ActorPropertiesDescription(class ActorPropertiesDescription const &) = delete;
+    ActorPropertiesDescription(struct ActorPropertiesDescription const &) = delete;
     ActorPropertiesDescription() = delete;
 #endif
 
-
 public:
-    /*0*/ virtual ~ActorPropertiesDescription();
-    /*1*/ virtual char const * getJsonName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPROPERTIESDESCRIPTION
-public:
-#endif
+    MCAPI struct ActorPropertiesDescription & operator=(struct ActorPropertiesDescription const &);
     MCAPI void parse(class Json::Value &);
 
+protected:
+
+private:
 
 };

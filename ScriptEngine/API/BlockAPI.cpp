@@ -172,8 +172,8 @@ Local<Value> BlockClass::setNbt(const Arguments& args)
         if (!nbt)
             return Local<Value>();    //Null
         
-        block->setNbt(nbt);
         // update Pre Data
+        Level::setBlock(pos.getBlockPos(), pos.dim, (CompoundTag*)nbt);
         preloadData(pos.getBlockPos(), pos.getDimensionId());
         return Boolean::newBoolean(true);
     }
@@ -475,7 +475,7 @@ Local<Value> McClass::spawnParticle(const Arguments& args)
             return Local<Value>();
         }
 
-        Level::spawnParticleEffect(type.toStr(), pos.getVec3(), Level::getDimension(pos.dim));
+        Global<Level>->spawnParticleEffect(type.toStr(), pos.getVec3(), Global<Level>->getDimension(pos.dim));
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in SpawnParticle!")

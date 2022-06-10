@@ -223,6 +223,8 @@ struct OperationNodeDetails
 struct PositionTrackingDB
 {
     class TrackingRecord;
+    class PositionTrackingDBClient;
+    class PositionTrackingDBServer;
 };
 
 struct BlockGeometry
@@ -445,6 +447,11 @@ public:
     }
 };
 
+namespace cg
+{
+    class ImageBuffer;
+};
+
 template <int a>
 class DividedPos2d;
 
@@ -470,11 +477,6 @@ template <typename T1>
 class WildcardCommandSelector;
 
 //enum
-class CodeBuilder
-{
-public:
-    enum ProtocolVersion;
-};
 
 enum class ContainerType : char {
     INVENTORY              = -1,
@@ -1008,7 +1010,11 @@ enum class MinecraftPacketIds : int
     TickingAreasLoadStatus            = 0xB3,
     DimensionData                     = 0xB4,
     AgentActionEvent                  = 0xB5,
-    ChangeMobProperty 		          = 0xB6
+    ChangeMobProperty 		          = 0xB6,
+    LessonProgress                    = 0xB7,
+    RequestAbility                    = 0xB8,
+    RequestPermissions                = 0xB9,
+    ToastRequest                      = 0XBA
 };
 
 enum ItemStackNetResult :unsigned char {

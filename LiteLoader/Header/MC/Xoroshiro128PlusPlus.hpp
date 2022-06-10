@@ -23,9 +23,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_XOROSHIRO128PLUSPLUS
-public:
 #endif
     MCAPI __int64 nextLong();
+
 
 
 };

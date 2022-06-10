@@ -16,12 +16,12 @@ struct ItemDefinitionEventTriggeredEvent {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMDEFINITIONEVENTTRIGGEREDEVENT
 public:
     struct ItemDefinitionEventTriggeredEvent& operator=(struct ItemDefinitionEventTriggeredEvent const &) = delete;
-    ItemDefinitionEventTriggeredEvent(struct ItemDefinitionEventTriggeredEvent const &) = delete;
     ItemDefinitionEventTriggeredEvent() = delete;
 #endif
 
 public:
     MCAPI ItemDefinitionEventTriggeredEvent(struct ItemDefinitionEventTriggeredEvent &&);
+    MCAPI ItemDefinitionEventTriggeredEvent(struct ItemDefinitionEventTriggeredEvent const &);
     MCAPI ~ItemDefinitionEventTriggeredEvent();
 
 protected:

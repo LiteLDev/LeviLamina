@@ -20,8 +20,8 @@ public:
 #endif
 
 public:
-    MCAPI BiomeDecorationFeature(struct BiomeDecorationFeature &&);
     MCAPI BiomeDecorationFeature(struct BiomeDecorationFeature const &);
+    MCAPI BiomeDecorationFeature(struct BiomeDecorationFeature &&);
     MCAPI ~BiomeDecorationFeature();
 
 protected:

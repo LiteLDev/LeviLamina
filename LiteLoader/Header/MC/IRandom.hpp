@@ -36,8 +36,8 @@ public:
     /*9*/ virtual void __unk_vfn_9() = 0;
     /*10*/ virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IRANDOM
-public:
 #endif
+
 
 
 };

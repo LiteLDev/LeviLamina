@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "SideBySideErrorHandling.hpp"
 #include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
@@ -16,6 +17,9 @@ namespace VanillaSystemsRegistration {
 
 #undef AFTER_EXTRA
     MCAPI void registerSharedVanillaPlayerInteractionSystems(class EntitySystems &);
+    MCAPI void registerSideBySideApply(class EntitySystems &, class std::variant<struct SideBySideExtractionId::StepA, struct SideBySideExtractionId::StepB, struct SideBySideExtractionId::TickBegin>, class std::optional<enum SideBySideErrorHandling::ErrorLevel>);
+    MCAPI void registerSideBySideExtract(class EntitySystems &, class std::variant<struct SideBySideExtractionId::StepA, struct SideBySideExtractionId::StepB, struct SideBySideExtractionId::TickBegin>);
+    MCAPI void registerTickFilterSystems(class EntitySystems &);
     MCAPI void registerVanillaServerTickingSystems(class EntitySystems &, class Experiments const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>);
 
 };

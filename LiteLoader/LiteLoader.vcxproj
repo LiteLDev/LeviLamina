@@ -207,7 +207,6 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\ItemActor.hpp" />
     <ClInclude Include="Header\MC\MinecraftCommands.hpp" />
     <ClInclude Include="Header\MC\RakNet.hpp" />
-    <ClInclude Include="Header\MC\Scripting.hpp" />
     <ClInclude Include="Header\MC\Types.hpp" />
     <ClInclude Include="Header\MC\WebToken.hpp" />
     <ClInclude Include="Header\MC\Actor.hpp" />

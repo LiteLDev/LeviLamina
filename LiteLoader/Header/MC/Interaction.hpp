@@ -26,6 +26,7 @@ public:
     MCAPI Interaction();
     MCAPI void addActorDefinitionIdentifierByName(std::string const &);
     MCAPI void addLevelSoundEventByName(std::string const &);
+    MCAPI void addVibrationByName(std::string const &);
     MCAPI void setCooldown(float const &);
     MCAPI void setCooldownAfterBeingAttacked(float const &);
     MCAPI void setParticleType(std::string const &);

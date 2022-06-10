@@ -24,11 +24,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKTYPES
-public:
 #endif
     MCAPI ScriptBlockTypes();
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptBlockType> get(class Scripting::WeakLifetimeScope &, std::string const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockTypes> bind(struct Scripting::Version);
+
 
 
 };

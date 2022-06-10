@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PHOTOSTORAGE
-public:
 #endif
     MCAPI PhotoStorage(class Core::Path const &);
     MCAPI ~PhotoStorage();
@@ -37,6 +36,7 @@ public:
 
 //private:
     MCAPI void _readManifest();
+
 
 private:
 

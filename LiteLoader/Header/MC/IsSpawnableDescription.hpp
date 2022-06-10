@@ -28,9 +28,9 @@ public:
     /*0*/ virtual ~IsSpawnableDescription();
     /*1*/ virtual char const * getJsonName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISSPAWNABLEDESCRIPTION
-public:
 #endif
     MCAPI void parse(class Json::Value const &);
+
 
 
 };

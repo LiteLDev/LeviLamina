@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKGRAPHICS
-public:
 #endif
     MCAPI enum BlockShape getBlockShape() const;
     MCAPI struct TextureUVCoordinateSet const & getIconTexture(int) const;
@@ -43,6 +42,7 @@ public:
 //protected:
 
 //private:
+
 
 protected:
     MCAPI static class std::weak_ptr<class AtlasItemManager> mTerrainTextureAtlas;

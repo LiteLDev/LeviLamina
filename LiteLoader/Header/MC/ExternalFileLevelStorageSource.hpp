@@ -32,8 +32,8 @@ public:
     /*3*/ virtual class Core::Result getLevelData(std::string const &, class LevelData &) const;
     /*4*/ virtual void saveLevelData(std::string const &, class LevelData const &);
     /*5*/ virtual void getLevelList(std::vector<class Core::PathBuffer<std::string>> &);
-    /*6*/ virtual std::unique_ptr<class LevelStorage> createLevelStorage(class Scheduler &, std::string const &, class ContentIdentity const &, class IContentKeyProvider const &, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>, std::unique_ptr<class LevelStorageEventing>);
-    /*7*/ virtual std::unique_ptr<class LevelLooseFileStorage> createLevelLooseStorage(std::string const &, class ContentIdentity const &, class IContentKeyProvider const &);
+    /*6*/ virtual std::unique_ptr<class LevelStorage> createLevelStorage(class Scheduler &, std::string const &, class ContentIdentity const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>, std::unique_ptr<class LevelStorageEventing>);
+    /*7*/ virtual std::unique_ptr<class LevelLooseFileStorage> createLevelLooseStorage(std::string const &, class ContentIdentity const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
     /*8*/ virtual bool isNewLevelIdAcceptable(std::string const &);
     /*9*/ virtual void deleteLevel(std::string const &);
     /*10*/ virtual bool renameLevel(std::string const &, std::string const &);
@@ -49,13 +49,13 @@ public:
     /*20*/ virtual class Core::PathBuffer<std::string> const getPathToLevel(std::string const &) const;
     /*21*/ virtual class Core::PathBuffer<std::string> const getPathToLevelInfo(std::string const &, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXTERNALFILELEVELSTORAGESOURCE
-public:
     MCVAPI bool convertLevel(std::string const &, class ProgressListener *);
     MCVAPI bool isBetaRetailLevel(std::string const &) const;
     MCVAPI bool isConvertible(std::string const &);
     MCVAPI bool requiresConversion(std::string const &);
 #endif
     MCAPI ExternalFileLevelStorageSource(class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class SaveTransactionManager>> const &);
+
 
 
 };

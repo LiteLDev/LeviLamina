@@ -19,7 +19,6 @@ class ExpressionNode {
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPRESSIONNODE
-public:
 #endif
     MCAPI ExpressionNode(class ExpressionNode &&);
     MCAPI ExpressionNode(class ExpressionNode const &);
@@ -89,6 +88,7 @@ public:
     MCAPI static bool _initializeMolangQueries();
     MCAPI static void _writeScriptArgToMemberAccessedVariable(struct MolangEvalParams &, class ExpressionNode const &, struct MolangScriptArg const &);
     MCAPI static void _writeScriptArgToMolangVariable(class MolangVariableMap &, enum MolangVariableIndex, struct MolangScriptArg const &);
+
 
 private:
     MCAPI static class std::function<struct MolangScriptArg const & (class RenderParams &, std::vector<class ExpressionNode> const &)> _defaultUnknownQueryFunction;

@@ -29,14 +29,15 @@ public:
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /*19*/ virtual void __unk_vfn_19();
-    /*23*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
-    /*26*/ virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
-    /*29*/ virtual bool isClimbable(struct IActorMovementProxy const &) const;
-    /*30*/ virtual void __unk_vfn_30();
+    /*22*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    /*25*/ virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
+    /*30*/ virtual bool isClimbable(struct IActorMovementProxy const &) const;
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*33*/ virtual bool isWaterBlocking() const;
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
+    /*34*/ virtual bool isWaterBlocking() const;
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -75,7 +76,6 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POWDERSNOWBLOCK
-public:
     MCVAPI bool canBeDestroyedByWaterSpread() const;
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool causesFreezeEffect() const;
@@ -83,6 +83,7 @@ public:
     MCAPI PowderSnowBlock(std::string const &, int, class Material const &);
     MCAPI static bool canWalkOnTop(struct IActorMovementProxy const &);
     MCAPI static bool canWalkOnTop(class GetCollisionShapeInterface const &);
+
 
 
 };

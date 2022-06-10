@@ -29,33 +29,33 @@ public:
 
 public:
     /*0*/ virtual ~HorseArmorItem();
-    /*5*/ virtual void __unk_vfn_5();
     /*7*/ virtual void __unk_vfn_7();
     /*10*/ virtual void __unk_vfn_10();
-    /*12*/ virtual void __unk_vfn_12();
-    /*14*/ virtual bool isDyeable() const;
-    /*47*/ virtual void __unk_vfn_47();
-    /*49*/ virtual void __unk_vfn_49();
-    /*56*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
-    /*60*/ virtual int getArmorValue() const;
-    /*62*/ virtual void __unk_vfn_62();
+    /*13*/ virtual void __unk_vfn_13();
+    /*15*/ virtual void __unk_vfn_15();
+    /*17*/ virtual bool isDyeable() const;
+    /*51*/ virtual void __unk_vfn_51();
+    /*53*/ virtual void __unk_vfn_53();
+    /*60*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
+    /*64*/ virtual int getArmorValue() const;
     /*66*/ virtual void __unk_vfn_66();
-    /*67*/ virtual void __unk_vfn_67();
-    /*68*/ virtual void __unk_vfn_68();
-    /*69*/ virtual class mce::Color getColor(class CompoundTag const *, class ItemDescriptor const &) const;
-    /*70*/ virtual bool hasCustomColor(class CompoundTag const *) const;
+    /*70*/ virtual void __unk_vfn_70();
     /*71*/ virtual void __unk_vfn_71();
-    /*73*/ virtual void clearColor(class CompoundTag *) const;
-    /*74*/ virtual void setColor(class ItemStackBase &, class mce::Color const &) const;
+    /*72*/ virtual void __unk_vfn_72();
+    /*73*/ virtual class mce::Color getColor(class CompoundTag const *, class ItemDescriptor const &) const;
+    /*74*/ virtual bool hasCustomColor(class CompoundTag const *) const;
     /*75*/ virtual void __unk_vfn_75();
-    /*76*/ virtual void __unk_vfn_76();
-    /*81*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
+    /*77*/ virtual void clearColor(class CompoundTag *) const;
+    /*78*/ virtual void setColor(class ItemStackBase &, class mce::Color const &) const;
+    /*79*/ virtual void __unk_vfn_79();
+    /*80*/ virtual void __unk_vfn_80();
+    /*85*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HORSEARMORITEM
-public:
 #endif
     MCAPI HorseArmorItem(std::string const &, int, int, enum HorseArmorItem::Tier);
     MCAPI enum HorseArmorItem::Tier getTier() const;
     MCAPI static int const mHealthPerTier[];
+
 
 
 };

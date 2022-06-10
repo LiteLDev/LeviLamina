@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONDIFFLIST
-public:
 #endif
     MCAPI ActorDefinitionDiffList(class ActorDefinitionGroup &);
     MCAPI void addDefinition(std::string const &);
@@ -51,6 +50,7 @@ public:
 
 //private:
     MCAPI void _updateStack();
+
 
 private:
 

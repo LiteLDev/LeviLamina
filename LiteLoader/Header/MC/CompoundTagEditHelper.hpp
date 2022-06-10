@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAGEDITHELPER
-public:
 #endif
     MCAPI class CompoundTag const * getParent() const;
     MCAPI void replaceWith(std::string const &, std::unique_ptr<class Tag>);
@@ -33,6 +32,7 @@ public:
 
 //private:
     MCAPI void pushChild(std::string const &);
+
 
 private:
 

@@ -27,9 +27,9 @@ public:
 public:
     /*0*/ virtual ~ScriptNavigationWalkComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTNAVIGATIONWALKCOMPONENT
-public:
 #endif
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptNavigationWalkComponent> bind(struct Scripting::Version);
+
 
 
 };

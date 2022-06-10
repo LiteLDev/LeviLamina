@@ -26,12 +26,16 @@ public:
     /*0*/ virtual ~NewExecuteCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NEWEXECUTECOMMAND
-public:
 #endif
     MCAPI static void setup(class CommandRegistry &, int);
 
 //private:
     MCAPI bool _detectConditionSubcommand(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI class Objective * _getObjective(class Scoreboard const &, std::string const &, class CommandOutput &) const;
+    MCAPI class std::optional<struct ScoreInfo> _getScoreFromSelectorOnObjective(class Scoreboard const &, class CommandSelector<class Actor> const &, std::string const &, class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI class std::optional<struct ScoreboardId> _getScoreboardIdForSelector(class Scoreboard const &, class CommandSelector<class Actor> const &, class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI void _handleScoreNotFound(class CommandOrigin const &, class CommandSelector<class Actor> const &, class Objective const &, class CommandOutput &) const;
+
 
 private:
 

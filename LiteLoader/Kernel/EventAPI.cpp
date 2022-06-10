@@ -1053,7 +1053,7 @@ TInstanceHook(void, "?setArmor@Player@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z",
                 plinv.add(*it, 1);
                 getArmorContainer().setItem(slot, ItemStack::EMPTY_ITEM);
                 Schedule::delay([uid] {
-                    auto sp = Level::getPlayer(uid);
+                    auto sp = Global<Level>->getPlayer(uid);
                     if (sp)
                         sp->refreshInventory();
                 },1);
@@ -2021,6 +2021,9 @@ TClasslessInstanceHook(void, "?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEA
     return original(this, a2, a3, a4);
 }
 
+#include <MC/WeakEntityRef.hpp>
+#include <mc/EntityContext.hpp>
+
 ////////////// NpcCmd //////////////
 TInstanceHook(void,
       "?executeCommandAction@NpcComponent@@QEAAXAEAVActor@@AEAVPlayer@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
@@ -2029,9 +2032,13 @@ TInstanceHook(void,
     IF_LISTENED(NpcCmdEvent)
     {
         //IDA NpcComponent::executeCommandAction
-        NpcSceneDialogueData data(*this, *ac, a5);
-        auto& container = data.getActionsContainer();
-        auto actionAt = container.getActionAt(a4);
+        //NpcSceneDialogueData data(*this, *ac, a5);
+		
+        auto ec = (EntityContext*)((char*)ac + 8);
+        NpcSceneDialogueData data(WeakEntityRef(ec->getWeakRef()), a5);
+		
+        auto container = data.getActionsContainer();
+        auto actionAt = container->getActionAt(a4);
         if (actionAt && dAccess<char>(actionAt, 8) == (char)1)
         {
             

@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATERIAL
-public:
 #endif
     MCAPI bool getBlocksMotion() const;
     MCAPI bool getBlocksPrecipitation() const;
@@ -48,6 +47,7 @@ public:
 
 //private:
     MCAPI static void _setupSurfaceMaterials();
+
 
 private:
     MCAPI static bool mInitialized;

@@ -25,9 +25,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETGOALDEFINITION
-public:
 #endif
     MCAPI void initialize(class EntityContext &, class TargetGoal &);
+
 
 
 };

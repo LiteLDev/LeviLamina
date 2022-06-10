@@ -24,11 +24,15 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTCOMPONENT
-public:
 #endif
+    MCAPI MobEffectComponent(class MobEffectComponent &&);
     MCAPI MobEffectComponent();
+    MCAPI void addAdditionalSaveData(class CompoundTag &, class Actor const &) const;
     MCAPI class MobEffectComponent & operator=(class MobEffectComponent &&);
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
+    MCAPI void tick(class Actor &);
     MCAPI ~MobEffectComponent();
+
 
 
 };

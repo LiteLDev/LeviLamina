@@ -23,9 +23,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMDATA
-public:
 #endif
     MCAPI ~ItemData();
+
 
 
 };

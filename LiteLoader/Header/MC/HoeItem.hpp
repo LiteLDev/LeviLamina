@@ -28,25 +28,25 @@ public:
 
 public:
     /*0*/ virtual ~HoeItem();
-    /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual void executeEvent(class ItemStackBase &, std::string const &, class RenderParams &) const;
     /*7*/ virtual void __unk_vfn_7();
+    /*9*/ virtual void executeEvent(class ItemStackBase &, std::string const &, class RenderParams &) const;
     /*10*/ virtual void __unk_vfn_10();
-    /*12*/ virtual void __unk_vfn_12();
-    /*47*/ virtual void __unk_vfn_47();
-    /*49*/ virtual void __unk_vfn_49();
-    /*58*/ virtual int getEnchantSlot() const;
-    /*62*/ virtual void __unk_vfn_62();
+    /*13*/ virtual void __unk_vfn_13();
+    /*15*/ virtual void __unk_vfn_15();
+    /*51*/ virtual void __unk_vfn_51();
+    /*53*/ virtual void __unk_vfn_53();
+    /*62*/ virtual int getEnchantSlot() const;
     /*66*/ virtual void __unk_vfn_66();
-    /*67*/ virtual void __unk_vfn_67();
-    /*68*/ virtual void __unk_vfn_68();
+    /*70*/ virtual void __unk_vfn_70();
     /*71*/ virtual void __unk_vfn_71();
+    /*72*/ virtual void __unk_vfn_72();
     /*75*/ virtual void __unk_vfn_75();
-    /*76*/ virtual void __unk_vfn_76();
+    /*79*/ virtual void __unk_vfn_79();
+    /*80*/ virtual void __unk_vfn_80();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOEITEM
-public:
 #endif
     MCAPI HoeItem(std::string const &, int, class Item::Tier const &, class Experiments const &);
+
 
 
 };

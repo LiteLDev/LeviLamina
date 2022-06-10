@@ -33,11 +33,11 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EATCARRIEDITEMGOAL
-public:
 #endif
     MCAPI EatCarriedItemGoal(class Mob &, int);
 
 //private:
+
 
 private:
     MCAPI static int const CHEW_CHANCE;

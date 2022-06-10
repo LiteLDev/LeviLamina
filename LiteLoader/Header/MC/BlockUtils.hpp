@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKUTILS
-public:
 #endif
     MCAPI static bool allowsNetherVegetation(class BlockLegacy const &);
     MCAPI static bool canGrowTreeWithBeehive(class Block const &);
@@ -36,6 +35,7 @@ public:
     MCAPI static bool isLiquidSource(class Block const &);
     MCAPI static bool isThinFenceOrWallBlock(class Block const &);
     MCAPI static bool isWaterSource(class Block const &);
+
 
 
 };

@@ -8,7 +8,7 @@
 
 #undef BEFORE_EXTRA
 
-class BlockPlacementCondition {
+struct BlockPlacementCondition {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -17,18 +17,17 @@ class BlockPlacementCondition {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPLACEMENTCONDITION
 public:
-    class BlockPlacementCondition& operator=(class BlockPlacementCondition const &) = delete;
-    BlockPlacementCondition(class BlockPlacementCondition const &) = delete;
     BlockPlacementCondition() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPLACEMENTCONDITION
-public:
-#endif
-    MCAPI void _addBlockDescriptor(class BlockDescriptor const &);
+    MCAPI BlockPlacementCondition(struct BlockPlacementCondition const &);
+    MCAPI struct BlockPlacementCondition & operator=(struct BlockPlacementCondition const &);
+    MCAPI struct BlockPlacementCondition & operator=(struct BlockPlacementCondition &&);
     MCAPI ~BlockPlacementCondition();
 
+protected:
+
+private:
 
 };

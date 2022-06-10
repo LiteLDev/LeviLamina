@@ -37,7 +37,6 @@ public:
     /*16*/ virtual void ResumeTermination(struct ITaskQueuePortContext *);
     /*17*/ virtual ~TaskQueuePortImpl();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKQUEUEPORTIMPL
-public:
 #endif
     MCAPI long Initialize(enum XTaskQueueDispatchMode);
     MCAPI TaskQueuePortImpl();
@@ -51,6 +50,7 @@ public:
     MCAPI void SubmitPendingCallback();
     MCAPI static void EraseQueue(class LocklessQueue<struct TaskQueuePortImpl::QueueEntry> *);
     MCAPI static void WaitCallback(struct _TP_CALLBACK_INSTANCE *, void *, struct _TP_WAIT *, unsigned long);
+
 
 private:
 

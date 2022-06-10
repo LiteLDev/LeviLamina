@@ -14,9 +14,12 @@ namespace CerealHelpers {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void bindBrightness();
     MCAPI void bindColor();
+    MCAPI void bindHelpers();
+    MCAPI void bindIdentifierString();
     MCAPI void bindIntRange();
+    MCAPI void bindLocIdString();
+    MCAPI void bindResourcePath();
     MCAPI void bindVec3();
     MCAPI class std::array<int, 3> blockPosAsArray(class BlockPos const &);
     MCAPI void blockPosFromArray(class BlockPos &, class std::array<int, 3> const &);

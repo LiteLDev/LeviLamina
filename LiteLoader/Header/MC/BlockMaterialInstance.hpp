@@ -20,8 +20,8 @@ public:
 #endif
 
 public:
-    MCAPI struct BlockMaterialInstance & operator=(struct BlockMaterialInstance &&);
     MCAPI struct BlockMaterialInstance & operator=(struct BlockMaterialInstance const &);
+    MCAPI struct BlockMaterialInstance & operator=(struct BlockMaterialInstance &&);
     MCAPI ~BlockMaterialInstance();
 
 protected:

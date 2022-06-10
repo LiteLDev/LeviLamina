@@ -28,11 +28,12 @@ public:
     /*0*/ virtual ~MultifaceBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /*19*/ virtual void __unk_vfn_19();
-    /*30*/ virtual void __unk_vfn_30();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*33*/ virtual bool isWaterBlocking() const;
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
+    /*34*/ virtual bool isWaterBlocking() const;
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -71,14 +72,7 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual class Block const & getMultifaceBlock() const = 0;
     /*204*/ virtual class MultifaceSpreader const & getMultifaceSpreader() const = 0;
-    /*205*/ virtual void __unk_vfn_205();
-    /*206*/ virtual void __unk_vfn_206();
-    /*207*/ virtual void __unk_vfn_207();
-    /*208*/ virtual void __unk_vfn_208();
-    /*209*/ virtual void __unk_vfn_209();
-    /*210*/ MCAPI std::string const & getDescriptionId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIFACEBLOCK
-public:
     MCVAPI bool isMultifaceBlock() const;
 #endif
     MCAPI MultifaceBlock(std::string const &, int, class Material const &);
@@ -103,6 +97,7 @@ public:
 
 //private:
     MCAPI void _removeBlock(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, bool) const;
+
 
 protected:
 

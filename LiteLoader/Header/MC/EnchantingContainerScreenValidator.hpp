@@ -26,9 +26,9 @@ public:
 public:
     /*0*/ virtual ~EnchantingContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTINGCONTAINERSCREENVALIDATOR
-public:
 #endif
     MCAPI EnchantingContainerScreenValidator();
+
 
 
 };

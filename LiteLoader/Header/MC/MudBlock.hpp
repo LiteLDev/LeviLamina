@@ -24,13 +24,12 @@ public:
 
 public:
     /*0*/ virtual ~MudBlock();
-    /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
-    /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /*19*/ virtual void __unk_vfn_19();
-    /*30*/ virtual void __unk_vfn_30();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -48,6 +47,7 @@ public:
     /*59*/ virtual void __unk_vfn_59();
     /*72*/ virtual void __unk_vfn_72();
     /*79*/ virtual void __unk_vfn_79();
+    /*93*/ virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /*104*/ virtual void __unk_vfn_104();
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();
@@ -57,12 +57,13 @@ public:
     /*165*/ virtual void __unk_vfn_165();
     /*179*/ virtual void __unk_vfn_179();
     /*180*/ virtual void __unk_vfn_180();
+    /*185*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MUDBLOCK
-public:
 #endif
     MCAPI MudBlock(std::string const &, int);
+
 
 
 };

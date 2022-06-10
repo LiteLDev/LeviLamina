@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKETDATAFRAME
-public:
 #endif
     MCAPI RakWebSocketDataFrame();
     MCAPI enum CloseStatusCode getCloseCode() const;
@@ -43,6 +42,7 @@ public:
     MCAPI static bool _isNonControl(unsigned char);
     MCAPI static bool _isUnsupported(unsigned char);
     MCAPI static void _maskUnmaskData(unsigned char *, unsigned int, unsigned int, unsigned int);
+
 
 private:
 

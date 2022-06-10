@@ -25,12 +25,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETELEMETRYCLIENTDATA
-public:
 #endif
     MCAPI unsigned int getMirrorEditCount() const;
     MCAPI unsigned int getOffsetEditCount() const;
     MCAPI unsigned int getRotationEditCount() const;
     MCAPI unsigned int getSizeEditCount() const;
+
 
 
 };

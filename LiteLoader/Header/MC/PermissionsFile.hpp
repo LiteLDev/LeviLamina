@@ -27,7 +27,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERMISSIONSFILE
-public:
 #endif
     MCAPI PermissionsFile(class Core::Path const &);
     MCAPI void applyPlayerPermissionsFromDisk(class Player &, class UserEntityIdentifierComponent const &, enum CommandPermissionLevel);
@@ -41,6 +40,7 @@ public:
 //private:
     MCAPI class std::tuple<enum FileReadResult, class Json::Value> readPermissionFile();
     MCAPI void setDefaultPlayerPermission(class Player &, enum CommandPermissionLevel);
+
 
 private:
 

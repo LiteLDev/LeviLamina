@@ -35,7 +35,6 @@ public:
     /*0*/ virtual ~GameRuleCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMERULECOMMAND
-public:
 #endif
     MCAPI static void setup(class CommandRegistry &, struct GameRuleCommand::InitProxy &&);
 
@@ -43,6 +42,7 @@ public:
     MCAPI void getGameRule(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void setGameRule(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI static void createJsonIndex(std::string const &, class GameRule const &, class Json::Value &, std::string *);
+
 
 private:
 

@@ -30,9 +30,9 @@ public:
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /*4*/ virtual class Block const & getBlockToPlace(class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPILEFEATURE
-public:
 #endif
     MCAPI BlockPileFeature(class Block const &);
+
 
 
 };

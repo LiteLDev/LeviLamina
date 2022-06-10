@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDAREAFACTORY
-public:
 #endif
     MCAPI CommandAreaFactory(class Dimension &);
     MCAPI std::unique_ptr<class CommandArea> findArea(class BlockPos const &, class BlockPos const &, int, bool) const;
@@ -37,6 +36,7 @@ public:
 
 //private:
     MCAPI std::unique_ptr<class CommandArea> _getArea(struct Bounds const &, bool, bool) const;
+
 
 private:
 

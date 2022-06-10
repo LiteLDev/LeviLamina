@@ -51,9 +51,9 @@ public:
     /*24*/ virtual struct WorldGenContext const & getContext();
     /*25*/ virtual void disableBlockSimple();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRANSACTIONALWORLDBLOCKTARGET
-public:
 #endif
     MCAPI TransactionalWorldBlockTarget(class IBlockWorldGenAPI &);
+
 
 
 };

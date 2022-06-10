@@ -111,7 +111,6 @@ public:
     /*9*/ virtual std::unique_ptr<class Tag> copy() const;
     /*10*/ virtual unsigned __int64 hash() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAG
-public:
 #endif
     MCAPI CompoundTag(class CompoundTag &&);
     MCAPI CompoundTag();
@@ -138,8 +137,8 @@ public:
     MCAPI class Int64Tag * getInt64Tag(class gsl::basic_string_span<char const, -1>);
     MCAPI class IntTag * getIntTag(class gsl::basic_string_span<char const, -1>);
     MCAPI class IntTag const * getIntTag(class gsl::basic_string_span<char const, -1>) const;
-    MCAPI class ListTag * getList(class gsl::basic_string_span<char const, -1>);
     MCAPI class ListTag const * getList(class gsl::basic_string_span<char const, -1>) const;
+    MCAPI class ListTag * getList(class gsl::basic_string_span<char const, -1>);
     MCAPI short getShort(class gsl::basic_string_span<char const, -1>) const;
     MCAPI class ShortTag const * getShortTag(class gsl::basic_string_span<char const, -1>) const;
     MCAPI std::string const & getString(class gsl::basic_string_span<char const, -1>) const;
@@ -161,6 +160,7 @@ public:
     MCAPI class std::map<std::string, class CompoundTagVariant, struct std::less<void>, class std::allocator<struct std::pair<std::string const, class CompoundTagVariant>>> const & rawView() const;
     MCAPI bool remove(class gsl::basic_string_span<char const, -1>);
     MCAPI void rename(class gsl::basic_string_span<char const, -1>, std::string);
+
 
 
 };

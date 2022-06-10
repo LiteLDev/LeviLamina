@@ -83,10 +83,59 @@ int removeFuncs(std::vector<std::pair<std::string, std::string>> funcs)
 
 } // namespace RemoteCall
 
+static_assert(RemoteCall::is_supported_type_v<void>);
+static_assert(RemoteCall::is_supported_type_v<int>);
+static_assert(RemoteCall::is_supported_type_v<bool>);
+static_assert(RemoteCall::is_supported_type_v<float>);
+static_assert(RemoteCall::is_supported_type_v<size_t>);
+static_assert(RemoteCall::is_supported_type_v<Player*>);
+static_assert(RemoteCall::is_supported_type_v<Actor*>);
+static_assert(RemoteCall::is_supported_type_v<Mob*>);
+static_assert(RemoteCall::is_supported_type_v<BlockActor*>);
+static_assert(RemoteCall::is_supported_type_v<Block*>);
+static_assert(RemoteCall::is_supported_type_v<Vec3>);
+static_assert(RemoteCall::is_supported_type_v<Vec3&>);
+static_assert(RemoteCall::is_supported_type_v<Vec3 const&>);
+//static_assert(RemoteCall::is_supported_type_v<Vec3 const*>);
+static_assert(RemoteCall::is_supported_type_v<CompoundTag*>);
+
 
 #ifdef DEBUG
 #include <ScheduleAPI.h>
 #include <MC/Player.hpp>
+inline bool testExtra = ([]() {
+    std::vector<std::string> input{"aa", "abcd", "test"};
+    auto output = RemoteCall::extract<decltype(input)>(RemoteCall::pack(input));
+    assert(output == input);
+    std::unordered_map<std::string, std::string> input2{
+        {"aa", "bb"},
+        {"ab", "ba"},
+        {"abc", "cba"},
+    };
+    auto output2 = RemoteCall::extract<decltype(input2)>(RemoteCall::pack(input2));
+    assert(output2 == input2);
+    std::vector<decltype(input2)> input3{input2, input2};
+    auto output3 = RemoteCall::extract<decltype(input3)>(RemoteCall::pack(input3));
+    assert(output3 == input3);
+    std::unordered_map<std::string, decltype(input3)> input4{
+        {"aa", input3},
+        {"ab", input3},
+        {"abc", input3},
+    };
+    auto output4 = RemoteCall::extract<decltype(input4)>(RemoteCall::pack(input4));
+    assert(output4 == input4);
+
+    std::vector<decltype(input4)> input5{input4, input4, input4};
+    auto output5 = RemoteCall::extract<decltype(input5)>(RemoteCall::pack(input5));
+    assert(output5 == input5);
+#if false
+    __debugbreak();
+    output5.erase(output5.begin());
+    assert(output5 == input5);
+    __debugbreak();
+#endif // false
+    return true;
+})();
 int TestExport(std::string a0, int a1, int a2)
 {
     return static_cast<int>(a0.size()) + a1;

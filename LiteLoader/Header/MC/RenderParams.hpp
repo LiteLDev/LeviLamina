@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RENDERPARAMS
-public:
 #endif
     MCAPI RenderParams(class RenderParams const &);
     MCAPI RenderParams(class RenderParams &&);
@@ -34,6 +33,7 @@ public:
     MCAPI float & operator[](unsigned __int64);
     MCAPI ~RenderParams();
     MCAPI static class RenderParams & getRenderParams(class Actor &);
+
 
 
 };

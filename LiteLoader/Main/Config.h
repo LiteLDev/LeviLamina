@@ -58,6 +58,7 @@ struct LLConfig
     bool enableFixMcBug = true;
     bool enableOutputFilter = false;
     bool onlyFilterConsoleOutput = true;
+    bool enableEconomyCore = true;
     std::vector<std::string> outputFilterRegex;
     // Runtime Config
     LLServerStatus serverStatus = LLServerStatus::Starting;

@@ -29,8 +29,8 @@ public:
     /*0*/ virtual ~ActivateToolDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTIVATETOOLDEFINITION
-public:
 #endif
+
 
 
 };

@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORFACTORY
-public:
 #endif
     MCAPI ActorFactory(class gsl::not_null<class Bedrock::NonOwnerPointer<class Level>>);
     MCAPI void applyEntityInitializer(struct ActorDefinitionIdentifier const &, class EntityContext &) const;
@@ -39,7 +38,7 @@ public:
     MCAPI class OwnerPtrT<struct EntityRefTraits> createSummonedActor(struct ActorDefinitionIdentifier const &, class Actor *, class Vec3 const &);
     MCAPI class OwnerPtrT<struct EntityRefTraits> createTransformedActor(struct ActorDefinitionIdentifier const &, class Actor *);
     MCAPI class ActorGoalFactory & getGoalFactory();
-    MCAPI void init(class BaseGameVersion const &, class Experiments const &);
+    MCAPI void init(class Experiments const &);
     MCAPI class OwnerPtrT<struct EntityRefTraits> loadActor(class CompoundTag *, class DataLoadHelper &, class DimensionHeightRange const &, class LevelChunk const *);
     MCAPI void setDefinitionGroup(class ActorDefinitionGroup *);
     MCAPI void setEntityInitializer(class std::shared_ptr<class IEntityInitializer>);
@@ -51,10 +50,10 @@ public:
 //private:
     MCAPI void _buildSummonableActorList(class Experiments const &, class std::function<void (std::string const &, struct ActorFactoryData const &)>) const;
     MCAPI class OwnerPtrT<struct EntityRefTraits> _constructActor(struct ActorDefinitionIdentifier const &, class Vec3 const &, class Vec2 const &) const;
-    MCAPI void _initPropertiesOnActor(class Actor &) const;
     MCAPI void _loadDefinitionGroups(class ActorDefinitionGroup *);
     MCAPI void _loadDefinitionsHelper();
     MCAPI bool _validateActorData(class CompoundTag &, struct ActorDefinitionIdentifier &, class Vec3 &, class LevelChunk const *) const;
+
 
 private:
     MCAPI static std::vector<struct VanillaActorData> builtinEntityMappings;

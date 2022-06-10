@@ -42,10 +42,10 @@ public:
     /*6*/ virtual bool isObstructingChests(class BlockSource &, class BlockPos const &) const;
     /*7*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &, int &) const;
     /*8*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
-    /*9*/ virtual void addAABBs(class Block const &, class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
+    /*9*/ virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
-    /*11*/ virtual bool addCollisionShapes(class Block const &, class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
-    /*12*/ virtual bool updateTallestCollisionShape(class Block const &, class BlockSource &, class BlockPos const &, class AABB const &, class optional_ref<class GetCollisionShapeInterface const>, class AABB &, class Vec3 const &, float &) const;
+    /*11*/ virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
+    /*12*/ virtual bool updateTallestCollisionShape(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const &, class optional_ref<class GetCollisionShapeInterface const>, class AABB &, class Vec3 const &, float &) const;
     /*13*/ virtual class AABB const & getOutline(class BlockSource &, class BlockPos const &, class AABB &) const;
     /*14*/ virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
     /*15*/ virtual void onProjectileHit(class BlockSource &, class BlockPos const &, class Actor const &) const;
@@ -53,21 +53,21 @@ public:
     /*17*/ virtual bool liquidCanFlowIntoFromDirection(unsigned char, class std::function<class Block const & (class BlockPos const &)> const &, class BlockPos const &) const;
     /*18*/ virtual bool isSolid() const;
     /*19*/ virtual void __unk_vfn_19();
-    /*20*/ virtual bool isSculkReplaceable(class Block const &) const;
-    /*21*/ virtual bool isStrippable(class Block const &) const;
-    /*22*/ virtual class Block const & getStrippedBlock(class Block const &) const;
-    /*23*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
-    /*24*/ virtual bool canProvideFullSupport(class Block const &, unsigned char) const;
-    /*25*/ virtual bool canProvideMultifaceSupport(class Block const &, unsigned char) const;
-    /*26*/ virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
-    /*27*/ virtual void getConnectedDirections(class Block const &, class BlockPos const &, class IConstBlockSource const &, bool &, bool &, bool &, bool &) const;
-    /*28*/ virtual class CopperBehavior const * tryGetCopperBehavior() const;
-    /*29*/ virtual bool isClimbable(struct IActorMovementProxy const &) const;
-    /*30*/ virtual void __unk_vfn_30();
+    /*20*/ virtual bool isStrippable(class Block const &) const;
+    /*21*/ virtual class Block const & getStrippedBlock(class Block const &) const;
+    /*22*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    /*23*/ virtual bool canProvideFullSupport(class Block const &, unsigned char) const;
+    /*24*/ virtual bool canProvideMultifaceSupport(class Block const &, unsigned char) const;
+    /*25*/ virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
+    /*26*/ virtual void getConnectedDirections(class Block const &, class BlockPos const &, class IConstBlockSource const &, bool &, bool &, bool &, bool &) const;
+    /*27*/ virtual class CopperBehavior const * tryGetCopperBehavior() const;
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
+    /*30*/ virtual bool isClimbable(struct IActorMovementProxy const &) const;
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*33*/ virtual bool isWaterBlocking() const;
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
+    /*34*/ virtual bool isWaterBlocking() const;
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -111,7 +111,7 @@ public:
     /*75*/ virtual void onStructureNeighborBlockPlace(class BlockSource &, class BlockPos const &) const;
     /*76*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /*77*/ virtual enum BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
-    /*78*/ virtual void updateEntityAfterFallOn(class BlockPos const &, struct IActorMovementProxy &) const;
+    /*78*/ virtual void updateEntityAfterFallOn(class BlockPos const &, struct UpdateEntityAfterFallOnInterface &) const;
     /*79*/ virtual void __unk_vfn_79();
     /*80*/ virtual bool isFilteredOut(enum BlockRenderLayer) const;
     /*81*/ virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const *) const;
@@ -237,10 +237,11 @@ public:
     /*201*/ virtual bool _executeTrigger(class DefinitionTrigger const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;
     /*202*/ virtual void _forceExecuteTrigger(class DefinitionTrigger const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKLEGACY
-public:
     MCVAPI bool canBeDestroyedByWaterSpread() const;
     MCVAPI bool canBeSilkTouched() const;
+    MCVAPI bool canDamperVibrations() const;
     MCVAPI bool canHaveExtraData() const;
+    MCVAPI bool canOccludeVibrations() const;
     MCVAPI bool canSpawnOn() const;
     MCVAPI bool causesFreezeEffect() const;
     MCVAPI bool detachesOnPistonMove(class BlockSource &, class BlockPos const &) const;
@@ -265,7 +266,6 @@ public:
     MCVAPI bool isStairBlock() const;
     MCVAPI bool isStemBlock() const;
     MCVAPI bool isThinFenceBlock() const;
-    MCVAPI bool isVibrationBlocking() const;
     MCVAPI bool isWallBlock() const;
     MCVAPI void onPlayerPlacing(class BlockSource &, class BlockPos const &, class Actor &, unsigned char) const;
     MCVAPI void onStepOff(class Actor &, class BlockPos const &) const;
@@ -294,6 +294,9 @@ public:
     MCAPI void getDebugText(std::vector<std::string> &, class BlockPos const &) const;
     MCAPI class Block const & getDefaultState() const;
     MCAPI std::string const & getDescriptionId() const;
+    MCAPI class EntityContext const & getEntity() const;
+    MCAPI class EntityContext & getEntityForModification() const;
+    MCAPI class EntityContext const & getEntityNoCheck() const;
     MCAPI class Material const & getMaterial() const;
     MCAPI std::string const & getNamespace() const;
     MCAPI class HashedString const & getRawNameHash() const;
@@ -353,6 +356,7 @@ public:
 
 //private:
     MCAPI void initParams(class RenderParams &, class BlockSource &, class BlockPos const &, class Actor *) const;
+
 
 protected:
 

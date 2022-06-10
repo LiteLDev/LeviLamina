@@ -25,9 +25,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDEVENTCOORDINATOR
-public:
 #endif
+    MCAPI void sendOnObjectiveAdded(std::string const &);
+    MCAPI void sendOnObjectiveRemoved(std::string const &);
     MCAPI void sendOnScoreChanged(struct ScoreboardId const &, std::string const &, int);
+    MCAPI void sendOnScoreboardIdentityRemoved(struct ScoreboardId const &);
+
 
 
 };

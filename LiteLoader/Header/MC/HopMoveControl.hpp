@@ -28,9 +28,9 @@ public:
     /*2*/ virtual void tick(class MoveControlComponent &, class Mob &);
     /*3*/ virtual void setWantedPosition(class MoveControlComponent &, class Mob &, class Vec3 const &, float);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPMOVECONTROL
-public:
 #endif
     MCAPI HopMoveControl();
+
 
 
 };

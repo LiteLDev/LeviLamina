@@ -32,7 +32,6 @@ public:
     /*4*/ virtual void processCoroutines();
     /*5*/ virtual void taskComplete(class gsl::not_null<class BackgroundTaskBase *>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKGROUP
-public:
 #endif
     MCAPI TaskGroup(class WorkerPool &, class Scheduler &, std::string);
     MCAPI void disableOwnerThreadChecks();
@@ -54,6 +53,7 @@ public:
     MCAPI bool _isEmptyInternal() const;
     MCAPI void _queueInternal(class std::shared_ptr<class BackgroundTaskBase>);
     MCAPI static class TaskGroup * getCurrentTaskGroup();
+
 
 private:
 

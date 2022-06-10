@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINRESULT
-public:
 #endif
     MCAPI ScriptPluginResult(struct Scripting::ModuleDescriptor const &);
     MCAPI void addError(std::string const &);
@@ -34,7 +33,9 @@ public:
     MCAPI void addWarning(std::string const &);
     MCAPI std::vector<class std::variant<struct ScriptPluginResult::Error, struct ScriptPluginResult::Warning, struct ScriptPluginResult::Info>> const & getMessages() const;
     MCAPI struct Scripting::ModuleDescriptor const & getModuleDescriptor() const;
+    MCAPI bool hasErrors() const;
     MCAPI ~ScriptPluginResult();
+
 
 
 };

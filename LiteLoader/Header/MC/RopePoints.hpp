@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROPEPOINTS
-public:
 #endif
     MCAPI void beginRope();
     MCAPI void endRope();
@@ -32,6 +31,7 @@ public:
     MCAPI void reserve(unsigned __int64);
     MCAPI unsigned __int64 size() const;
     MCAPI ~RopePoints();
+
 
 
 };

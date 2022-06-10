@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -28,14 +29,14 @@ public:
     /*2*/ virtual void forEachPack(class std::function<void (class Pack &)>);
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual class PackSourceReport load(class IPackManifestFactory &, class IContentKeyProvider const &);
+    /*5*/ virtual class PackSourceReport load(class IPackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOSITEPACKSOURCE
-public:
 #endif
     MCAPI CompositePackSource(std::vector<class PackSource *> &&);
     MCAPI CompositePackSource();
     MCAPI void addPackSource(class PackSource *);
     MCAPI void clear();
+
 
 
 };

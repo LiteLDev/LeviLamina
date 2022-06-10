@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEACTORABSOLUTEDATA
-public:
 #endif
     MCAPI MoveActorAbsoluteData(class Actor const &);
     MCAPI MoveActorAbsoluteData();
@@ -34,6 +33,7 @@ public:
     MCAPI bool isDifferenceSignificant(class MoveActorAbsoluteData const &, class Vec3 const &) const;
     MCAPI void setRot(class Vec2 const &);
     MCAPI void setYHeadRot(float);
+
 
 
 };

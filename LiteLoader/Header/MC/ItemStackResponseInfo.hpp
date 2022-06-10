@@ -20,7 +20,6 @@ public:
 #endif
 
 public:
-    MCAPI ItemStackResponseInfo(struct ItemStackResponseInfo &&);
     MCAPI ItemStackResponseInfo();
     MCAPI ~ItemStackResponseInfo();
 

@@ -27,7 +27,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OBJECTIVE
-public:
 #endif
     MCAPI Objective(std::string const &, class ObjectiveCriteria const &);
     MCAPI class ObjectiveCriteria const & getCriteria() const;
@@ -40,12 +39,14 @@ public:
     MCAPI bool hasScore(struct ScoreboardId const &) const;
     MCAPI bool hasScores() const;
     MCAPI void setDisplayName(std::string const &);
+    MCAPI ~Objective();
     MCAPI static std::unique_ptr<class Objective> deserialize(class CompoundTag const &, class Scoreboard &);
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class Objective const &);
 
 //private:
     MCAPI bool _modifyPlayerScore(int &, struct ScoreboardId const &, int, enum PlayerScoreSetFunction);
     MCAPI void _resetPlayer(struct ScoreboardId const &);
+
 
 private:
 

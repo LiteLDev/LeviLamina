@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -19,10 +20,11 @@ struct NetherNetInstance {
 public:
     struct NetherNetInstance& operator=(struct NetherNetInstance const &) = delete;
     NetherNetInstance(struct NetherNetInstance const &) = delete;
+    NetherNetInstance() = delete;
 #endif
 
 public:
-    MCAPI NetherNetInstance();
+    MCAPI NetherNetInstance(class std::shared_ptr<class Bedrock::Http::LibHttpClientInstance>);
 
 protected:
 

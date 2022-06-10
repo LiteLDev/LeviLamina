@@ -37,7 +37,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_I18N
-public:
 #endif
     MCAPI static char const NeutralLangCode[];
     MCAPI static void addI18nObserver(class I18nObserver &);
@@ -64,6 +63,7 @@ public:
     MCAPI static class Localization * _getAdditionalTranslationsBackupLocale(std::string const &, bool);
     MCAPI static std::string & _getLocaleCodeFor(std::string const &);
     MCAPI static class Localization & _getPackKeywordLocale(std::string const &);
+
 
 private:
     MCAPI static std::vector<std::unique_ptr<class Localization>> mAdditionalTranslationsBackup;

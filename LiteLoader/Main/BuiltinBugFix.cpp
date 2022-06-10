@@ -12,11 +12,12 @@
 #include <MC/ServerNetworkHandler.hpp>
 #include <MC/ClientCacheBlobStatusPacket.hpp>
 #include <MC/BinaryStream.hpp>
+#include <EventAPI.h>
 
 #include <MC/SharedConstants.hpp>
 #include <MC/PropertiesSettings.hpp>
 #include <MC/ServerPlayer.hpp>
-#include <LiteLoader/Header/ScheduleAPI.h>
+#include <ScheduleAPI.h>
 
 using namespace LL;
 
@@ -116,8 +117,8 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
             {
                 for (auto& a : action.second)
                 {
-                    auto fromDesc = ItemStack::fromDescriptor(a.fromDescriptor, *Global<Level>->getBlockPalette(), true);
-                    auto toDesc = ItemStack::fromDescriptor(a.fromDescriptor, *Global<Level>->getBlockPalette(), true);
+                    auto fromDesc = ItemStack::fromDescriptor(a.fromDescriptor, Global<Level>->getBlockPalette(), true);
+                    auto toDesc = ItemStack::fromDescriptor(a.fromDescriptor, Global<Level>->getBlockPalette(), true);
                     if (!itemMayFromReducer(fromDesc) || !itemMayFromReducer(toDesc) || !itemMayFromReducer(a.fromItem) || !itemMayFromReducer(a.toItem))
                     {
                         if (mayFromReducer)
@@ -137,30 +138,6 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
         }
     }
     return original(this, netid, pk);
-}
-
-#include <EventAPI.h>
-void FixBugEvent()
-{
-}
-
-// Fix sleeping drop item
-#include <MC/ItemActor.hpp>
-#include <MC/MovementInterpolator.hpp>
-TInstanceHook(ItemActor*, "?_drop@Actor@@IEAAPEBVItemActor@@AEBVItemStack@@_N@Z", Actor, ItemStack* a2, char a3)
-{
-    auto out = dAccess<MovementInterpolator*, 0x508>(this);
-    if (!dAccess<bool, 0x2c>(out))
-    {
-        auto num = dAccess<int, 0x20>(out);
-        if (num == 1)
-        {
-            auto v17 = *(Vec2*)((char*)out + 0x14);
-            this->setRot(v17);
-        }
-        --dAccess<int, 0x24>(out);
-    }
-    return original(this, a2, a3);
 }
 
 TInstanceHook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", PropertiesSettings, const std::string& file)

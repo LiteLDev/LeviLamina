@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPATTERNBUILDER
-public:
 #endif
     MCAPI class BlockPatternBuilder & aisle(int, ...);
     MCAPI class BlockPatternBuilder & build();
@@ -40,6 +39,7 @@ public:
 
 //private:
     MCAPI bool _fitsBlockPatternEntry(int, int, class BlockPos const &, class Block const &);
+
 
 private:
 

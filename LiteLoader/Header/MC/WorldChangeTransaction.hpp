@@ -25,13 +25,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDCHANGETRANSACTION
-public:
 #endif
     MCAPI WorldChangeTransaction(class IBlockWorldGenAPI &);
     MCAPI bool apply() const;
     MCAPI class Block const & getBlock(class BlockPos const &) const;
     MCAPI void setBlock(class BlockPos const &, class Block const &, int);
     MCAPI ~WorldChangeTransaction();
+
 
 
 };

@@ -33,12 +33,12 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEGGOAL
-public:
 #endif
     MCAPI BegGoal(class Mob &, std::vector<class ItemDescriptor> const &, float, int, int);
 
 //private:
     MCAPI bool _playerHoldingInteresting(class Player *);
+
 
 private:
 

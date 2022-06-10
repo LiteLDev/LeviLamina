@@ -27,10 +27,11 @@ public:
 public:
     /*0*/ virtual ~HeavyBlock();
     /*19*/ virtual void __unk_vfn_19();
-    /*30*/ virtual void __unk_vfn_30();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -70,7 +71,6 @@ public:
     /*207*/ virtual bool isFreeToFall(class BlockSource &, class BlockPos const &) const;
     /*208*/ virtual void startFalling(class BlockSource &, class BlockPos const &, class Block const &, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HEAVYBLOCK
-public:
     MCVAPI bool falling() const;
 #endif
     MCAPI HeavyBlock(std::string const &, int, class Material const &);
@@ -79,6 +79,7 @@ public:
 //protected:
     MCAPI void _tickBlocksAround2D(class BlockSource &, class BlockPos const &, class Block const &) const;
     MCAPI void checkSlide(class BlockSource &, class BlockPos const &) const;
+
 
 protected:
 

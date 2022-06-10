@@ -26,11 +26,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERACTDEFINITION
-public:
 #endif
     MCAPI void addInteraction(struct Interaction const &);
     MCAPI void initialize(class EntityContext &, class InteractComponent &) const;
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InteractDefinition>> &);
+
 
 
 };

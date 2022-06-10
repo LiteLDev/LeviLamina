@@ -25,9 +25,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSTORAGEOBSERVER
-public:
 #endif
     MCAPI void onSave(std::string const &);
+
 
 
 };

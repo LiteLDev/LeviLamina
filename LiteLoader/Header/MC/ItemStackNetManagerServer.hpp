@@ -33,7 +33,6 @@ public:
     /*6*/ virtual void onContainerScreenOpen(class ContainerScreenContext const &);
     /*10*/ virtual void _initScreen(class ItemStackNetManagerScreen &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETMANAGERSERVER
-public:
 #endif
     MCAPI ItemStackNetManagerServer(class ServerPlayer &, bool);
     MCAPI void _handleLegacyTransactionRequest(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &, std::vector<struct std::pair<enum ContainerEnumName, class std::vector<unsigned char, class std::allocator<unsigned char>>>> const &);
@@ -51,6 +50,7 @@ public:
     MCAPI void _processQueue();
     MCAPI void _queueRequest(std::unique_ptr<class ItemStackRequestData>);
     MCAPI bool _tryFilterText(class ItemStackRequestData const *);
+
 
 private:
 

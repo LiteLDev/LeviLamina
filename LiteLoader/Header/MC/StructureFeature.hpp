@@ -33,7 +33,6 @@ public:
     /*6*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &) = 0;
     /*7*/ virtual class StructureStart * getStructureAt(int, int, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREFEATURE
-public:
 #endif
     MCAPI StructureFeature(unsigned int, enum StructureFeatureType);
     MCAPI void addHardcodedSpawnAreas(class LevelChunk &);
@@ -54,6 +53,7 @@ public:
 
 //protected:
     MCAPI void addFeature(class Dimension &, class Random &, class ChunkPos const &, class BiomeSource const &, class IPreliminarySurfaceProvider const &);
+
 
 protected:
 

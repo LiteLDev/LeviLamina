@@ -21,7 +21,6 @@ public:
 #endif
 
 public:
-    MCAPI struct VehicleComponent & operator=(struct VehicleComponent &&);
     MCAPI ~VehicleComponent();
 
 protected:

@@ -178,7 +178,6 @@ void CheckProtocolVersion()
 
 // extern
 extern void EndScheduleSystem();
-extern void FixBugEvent();
 
 void LLMain()
 {
@@ -248,9 +247,6 @@ void LLMain()
 
     // Register simple server logger
     RegisterSimpleServerLogger();
-
-    // Fix bug events
-    FixBugEvent();
 
     // Register Started
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {

@@ -29,12 +29,12 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void _write(class BinaryStream &) const;
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
+    /*6*/ virtual struct ItemStackNetIdVariant const & getRecipeNetId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTGRINDSTONE
-public:
 #endif
     MCAPI ItemStackRequestActionCraftGrindstone();
-    MCAPI struct ItemStackNetIdVariant const & getRecipeNetId() const;
     MCAPI int getRepairCost() const;
+
 
 
 };

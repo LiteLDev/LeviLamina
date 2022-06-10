@@ -33,7 +33,6 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPTOBLOCKGOAL
-public:
 #endif
     MCAPI JumpToBlockGoal(class Mob &);
     MCAPI void resetCooldown();
@@ -45,6 +44,7 @@ public:
     MCAPI bool _findJumpableBlocks(bool);
     MCAPI bool _findTargetBlock();
     MCAPI bool _validTransition(class Vec3 const &, class Vec3 const &) const;
+
 
 private:
 
