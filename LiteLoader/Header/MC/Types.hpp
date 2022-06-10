@@ -42,6 +42,11 @@ public:
         , g(g)
         , b(b)
         , a(a){};
+    Color(unsigned char ir, unsigned char ig, unsigned char ib, unsigned char ia = 255)
+        : r(ir / 255.0f)
+        , g(ig / 255.0f)
+        , b(ib / 255.0f)
+        , a(ia / 255.0f){};
 
     inline operator bool() const
     {
@@ -53,6 +58,15 @@ public:
     LIAPI std::string toNearestColorCode() const;
     LIAPI static class mce::Color fromConsoleCode(std::string const&);
     LIAPI static class mce::Color fromColorCode(std::string const&);
+    LIAPI class mce::Color sRGBToLinear() const;
+    LIAPI class mce::Color LinearTosRGB() const;
+    LIAPI class mce::Color LinearToXYZ() const;
+    LIAPI class mce::Color XYZToLinear() const;
+    LIAPI class mce::Color XYZToLab() const;
+    LIAPI class mce::Color LabToXYZ() const;
+    LIAPI double deltaE76(mce::Color const dst) const; // 2.3 for JND
+    LIAPI double deltaE94(mce::Color const dst) const;
+    LIAPI double deltaE00(mce::Color const dst) const;
 
     MCAPI static mce::Color const NIL;
     MCAPI static class mce::Color fromHexString(std::string const&);
