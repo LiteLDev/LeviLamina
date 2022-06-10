@@ -6,14 +6,15 @@ LiteLoaderBDS-2.3.0 update has been released, adapted to BDS-1.19.1, ProtocolVer
 - Add EconomyCore switch options, #323
   - `plugins\LiteLoader\LiteLoader.json`
 - LLMoney Remote Call Support
+- Add LLSE sneak related APIs
 
 ## [Change]
+- Update RemoteCall API
 - Change LLSE
   - bl.setNbt
 
 ## [Bug Fixes]
 - Fix LL bugs:
   - Actor::isPlayer()
-
 - Fix LLSE bugs:
   - pl.getRespawnPosition

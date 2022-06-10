@@ -10,7 +10,8 @@ LiteLoaderBDS-2.3.0更新已发布，适应于BDS-1.19.1，协议版本527
 
 [HEADING=2][改变][/HEADING]
 [LIST]
-[*]Change LLSE
+[*]更新远程调用API
+[*]LLSE的改变
 [LIST]
 [*]bl.setNbt
 [/LIST]
