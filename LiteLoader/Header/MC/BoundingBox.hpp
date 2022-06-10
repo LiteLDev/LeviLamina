@@ -45,6 +45,54 @@ public:
         return (&min)[index];
     }
 
+    constexpr BoundingBox& operator+=(int& b)
+    {
+        min += b;
+        max += b;
+        return *this;
+    }
+
+    constexpr BoundingBox& operator-=(int& b)
+    {
+        min -= b;
+        max -= b;
+        return *this;
+    }
+
+    constexpr BoundingBox& operator+=(BlockPos const& b)
+    {
+        min += b;
+        max += b;
+        return *this;
+    }
+
+    constexpr BoundingBox& operator-=(BlockPos const& b)
+    {
+        min -= b;
+        max -= b;
+        return *this;
+    }
+
+    inline BoundingBox operator+(BlockPos const& b) const
+    {
+        return BoundingBox(min + b, max + b);
+    }
+
+    inline BoundingBox operator+(int& b) const
+    {
+        return BoundingBox(min + b, max + b);
+    }
+
+    inline BoundingBox operator-(BlockPos const& b) const
+    {
+        return BoundingBox(min - b, max - b);
+    }
+
+    inline BoundingBox operator-(int& b) const
+    {
+        return BoundingBox(min - b, max - b);
+    }
+
     inline void forEachBlockInBox(const std::function<void(const BlockPos&)>& todo)
     {
         for (int y = min.y; y <= max.y; y++)
