@@ -209,7 +209,7 @@ void LL::LoadMain() {
                     info += "<" + fileVersion + ">";
                 }
                 logger.error("Plugin [{}] throws an std::exception in onPostInit", info);
-                logger.error("Exception: ", TextEncoding::toUTF8(e.what()));
+                logger.error("Exception: {}", TextEncoding::toUTF8(e.what()));
                 logger.error("Fail to init this plugin!");
             }
             catch (...)
