@@ -43,6 +43,8 @@ public:
     {
         return taskId;
     }
+
+    bool isFinished() const;
 };
 
 namespace Schedule
