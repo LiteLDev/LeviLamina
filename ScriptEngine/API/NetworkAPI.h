@@ -152,6 +152,7 @@ public:
 
     Local<Value> setHeader(const Arguments& args);
     Local<Value> getHeader(const Arguments& args);
+    Local<Value> write(const Arguments& args);
 
     void setHeaders(const Local<Value>& headers);
     void setStatus(const Local<Value>& status);

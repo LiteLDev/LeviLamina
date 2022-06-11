@@ -59,6 +59,7 @@ ClassDefine<HttpServerClass> HttpServerClassBuilder =
 
         .instanceFunction("listen", &HttpServerClass::listen)
         .instanceFunction("stop", &HttpServerClass::stop)
+        .instanceFunction("close", &HttpServerClass::stop)
         .instanceFunction("isRunning", &HttpServerClass::isRunning)
         .build();
 
@@ -84,6 +85,7 @@ ClassDefine<HttpResponseClass> HttpResponseClassBuilder =
         .constructor(nullptr)
         .instanceFunction("getHeader", &HttpResponseClass::getHeader)
         .instanceFunction("setHeader", &HttpResponseClass::setHeader)
+        .instanceFunction("write", &HttpResponseClass::write)
 
         .instanceProperty("headers", &HttpResponseClass::getHeaders, &HttpResponseClass::setHeaders)
         .instanceProperty("status", &HttpResponseClass::getStatus, &HttpResponseClass::setStatus)
@@ -428,30 +430,33 @@ using namespace httplib;
 #define ADD_CALLBACK(method, path, func) \
 callbacks.emplace(make_pair(path, HttpServerCallback{EngineScope::currentEngine(), script::Global<Function>{func}, HttpRequestType::method, path})); \
 svr->##method##(path.c_str(), [this, engine = EngineScope::currentEngine()](const Request& req, Response& resp) { \
-    if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying()) \
-        return; \
-    auto task = Schedule::nextTick([this, engine, req, &resp] { \
-        if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying()) \
-            return; \
-        EngineScope enter(engine); \
-        auto range = this->callbacks.equal_range(req.path); \
-        auto it = range.first; \
-        while (it != range.second) \
-        { \
-            if (it->second.type == HttpRequestType::method) \
-            { \
-                auto reqObj = new HttpRequestClass(req); \
-                auto respObj = new HttpResponseClass(resp); \
-                it->second.func.get().call({}, reqObj, respObj); \
-                resp = *respObj->get(); \
-                break; \
-            } \
-            ++it; \
-        } \
-    }); \
-    while (!task.isFinished()) \
-        std::this_thread::sleep_for(std::chrono::milliseconds(1)); \
-});
+    if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())      \
+        return;                                                                                   \
+    auto task = Schedule::nextTick([this, engine, req, &resp] {                                   \
+        if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())  \
+            return;                                                 \
+        EngineScope enter(engine);                                  \
+        for (auto& [k, v] : this->callbacks)                        \
+        {                                                           \
+            if (v.type != HttpRequestType::method) return;          \
+            std::regex rgx(k);                                      \
+            std::smatch matches;                                    \
+            if (std::regex_match(req.path, matches, rgx))           \
+            {                                                       \
+                if (matches == req.matches)                         \
+                {                                                   \
+                    auto reqObj = new HttpRequestClass(req);        \
+                    auto respObj = new HttpResponseClass(resp);     \
+                    v.func.get().call({}, reqObj, respObj);         \
+                    resp = *respObj->get();                         \
+                    break;                                          \
+                }                                                   \
+            }                                                       \
+        }                                                           \
+    });                                                             \
+    while (!task.isFinished())                                      \
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));                                                                                  \
+});                                                                                                                                                 
 
 HttpServerClass::HttpServerClass(const Local<Object>& scriptObj)
     : ScriptClass(scriptObj)
@@ -484,6 +489,37 @@ Local<Value> HttpServerClass::onGet(const Arguments& args)
         auto path = args[0].toStr();
         auto func = args[1].asFunction();
         ADD_CALLBACK(Get, path, func);
+        /* for debug
+        callbacks.emplace(make_pair(path, HttpServerCallback{EngineScope::currentEngine(), script::Global<Function>{func}, HttpRequestType::Get, path}));
+        svr->Get(path.c_str(), [this, engine = EngineScope::currentEngine()](const Request& req, Response& resp) {
+            if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
+                return;
+            auto task = Schedule::nextTick([this, engine, req, &resp] {
+                if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
+                    return;
+                EngineScope enter(engine);
+                for (auto& [k, v] : this->callbacks)
+                {
+                    if (v.type != HttpRequestType::Get) return;
+                    std::regex rgx(k);
+                    std::smatch matches;
+                    if (std::regex_match(req.path, matches, rgx))
+                    {
+                        if (matches == req.matches)
+                        {
+                            auto reqObj = new HttpRequestClass(req);
+                            auto respObj = new HttpResponseClass(resp);
+                            v.func.get().call({}, reqObj, respObj);
+                            resp = *respObj->get();
+                            break;
+                        }
+                    }
+                }
+            });
+            while (!task.isFinished())
+                std::this_thread::sleep_for(std::chrono::milliseconds(1));
+        });
+        */
         return this->getScriptObject();
     }
     CATCH("Fail in onGet")
@@ -733,6 +769,7 @@ Local<Value> HttpServerClass::stop(const Arguments& args)
 
     try {
         RecordOperation(ENGINE_OWN_DATA()->pluginName, "StopHttpServer", "");
+        svr->stop();
         return Local<Value>();
     }
     CATCH("Fail in stop!");
@@ -918,11 +955,14 @@ Local<Value> HttpResponseClass::setHeader(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
-    CHECK_ARG_TYPE(args[1], ValueKind::kString);
 
     try {
         auto key = args[0].toStr();
-        auto value = args[1].toStr();
+        string value;
+        if (args[1].isString())
+            value = args[1].toStr();
+        else
+            value = ValueToString(args[1]);
         resp->headers.insert(make_pair(key, value));
         return this->getScriptObject(); // return self
     }
@@ -947,6 +987,17 @@ Local<Value> HttpResponseClass::getHeader(const Arguments& args)
         return arr;
     }
     CATCH("Fail in getHeader!");
+}
+
+Local<Value> HttpResponseClass::write(const Arguments& args)
+{
+    try {
+        for (size_t i = 0ULL; i < args.size(); i++) {
+            resp->body += ValueToString(args[i]);
+        }
+        return this->getScriptObject();
+    }
+    CATCH("Fail in write!");
 }
 
 void HttpResponseClass::setHeaders(const Local<Value>& headers)
