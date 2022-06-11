@@ -267,7 +267,7 @@ bool ScheduleTask::isFinished() const {
     locker.lock();
     if (pendingClear) {
         locker.unlock();
-        return;
+        return true;
     }
     for (auto tid : pendingCancelList) { // 准备出队,但还在队里
         if (tid == taskId) {

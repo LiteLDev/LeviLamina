@@ -20,6 +20,18 @@ struct ListenerListType
     script::Global<Function> func;
 };
 
+enum class HttpRequestType : char
+{
+    Get = 0, Post, Put, Delete, Options, Patch, Head
+};
+
+struct HttpServerCallback
+{
+    ScriptEngine* engine;
+    script::Global<Function> func;
+    HttpRequestType type;
+    std::string path;
+};
 
 //////////////////// Network Static ////////////////////
 
@@ -74,6 +86,38 @@ extern ClassDefine<WSClientClass> WSClientClassBuilder;
 
 class HttpServerClass : public ScriptClass
 {
+
+protected:
+    std::shared_ptr<httplib::Server> svr = nullptr;
+    std::multimap<std::string, HttpServerCallback> callbacks;
+    HttpServerCallback errorCallback, exceptionCallback, preRoutingCallback, postRoutingCallback;
+
+public:
+    HttpServerClass(const Local<Object>& scriptObj);
+    HttpServerClass();
+    ~HttpServerClass();
+    static HttpServerClass* constructor(const Arguments& args);
+
+    Local<Value> onGet(const Arguments& args);
+    Local<Value> onPut(const Arguments& args);
+    Local<Value> onPost(const Arguments& args);
+    Local<Value> onPatch(const Arguments& args);
+    Local<Value> onDelete(const Arguments& args);
+    Local<Value> onOptions(const Arguments& args);
+
+    Local<Value> onPreRouting(const Arguments& args);
+    Local<Value> onPostRouting(const Arguments& args);
+    Local<Value> onError(const Arguments& args);
+    Local<Value> onException(const Arguments& args);
+    
+    Local<Value> listen(const Arguments& args);
+    Local<Value> stop(const Arguments& args);
+    Local<Value> isRunning(const Arguments& args);
+};
+extern ClassDefine<HttpServerClass> HttpServerClassBuilder;
+
+class HttpRequestClass : public ScriptClass
+{
     std::shared_ptr<httplib::Request> req;
 
 public:
@@ -89,7 +133,7 @@ public:
     Local<Value> getPath();
     Local<Value> getParams();
     Local<Value> getRemoteAddr();
-    Local<value> getRemotePort();
+    Local<Value> getRemotePort();
     Local<Value> getVersion();
     Local<Value> getRegexMatches();
     //Local<Value> getMultiFormData();

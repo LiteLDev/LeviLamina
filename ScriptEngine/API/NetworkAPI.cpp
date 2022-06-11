@@ -42,6 +42,26 @@ ClassDefine<WSClientClass> WSClientClassBuilder =
         .property("Closed", [] { return Number::newNumber((int)WebSocketClient::Status::Closed); })
         .build();
 
+ClassDefine<HttpServerClass> HttpServerClassBuilder =
+    defineClass<HttpServerClass>("HttpServer")
+        .constructor(&HttpServerClass::constructor)
+        .instanceFunction("onGet", &HttpServerClass::onGet)
+        .instanceFunction("onPut", &HttpServerClass::onPut)
+        .instanceFunction("onPost", &HttpServerClass::onPost)
+        .instanceFunction("onPatch", &HttpServerClass::onPatch)
+        .instanceFunction("onDelete", &HttpServerClass::onDelete)
+        .instanceFunction("onOptions", &HttpServerClass::onOptions)
+
+        .instanceFunction("onPreRouting", &HttpServerClass::onPreRouting)
+        .instanceFunction("onPostRouting", &HttpServerClass::onPostRouting)
+        .instanceFunction("onError", &HttpServerClass::onError)
+        .instanceFunction("onException", &HttpServerClass::onException)
+
+        .instanceFunction("listen", &HttpServerClass::listen)
+        .instanceFunction("stop", &HttpServerClass::stop)
+        .instanceFunction("isRunning", &HttpServerClass::isRunning)
+        .build();
+
 ClassDefine<HttpRequestClass> HttpRequestClassBuilder =
     defineClass<HttpRequestClass>("HttpRequest")
         .instanceFunction("getHeader", &HttpRequestClass::getHeader)
@@ -399,6 +419,333 @@ Local<Value> WSClientClass::errorCode(const Arguments& args)
     CATCH("Fail in errorCode!");
 }
 
+//////////////////// Class HttpServer ////////////////////
+
+using namespace httplib;
+
+#define ADD_CALLBACK(method, path, func) \
+callbacks.emplace(make_pair(path, HttpServerCallback{EngineScope::currentEngine(), script::Global<Function>{func}, HttpRequestType::method, path})); \
+svr->##method##(path.c_str(), [this, engine = EngineScope::currentEngine()](const Request& req, Response& resp) { \
+    if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying()) \
+        return; \
+    auto task = Schedule::nextTick([this, engine, req, &resp] { \
+        if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying()) \
+            return; \
+        EngineScope enter(engine); \
+        auto range = this->callbacks.equal_range(req.path); \
+        auto it = range.first; \
+        while (it != range.second) \
+        { \
+            if (it->second.type == HttpRequestType::method) \
+            { \
+                auto reqObj = new HttpRequestClass(req); \
+                auto respObj = new HttpResponseClass(resp); \
+                it->second.func.get().call({}, reqObj, respObj); \
+                resp = *respObj->get(); \
+                break; \
+            } \
+            ++it; \
+        } \
+    }); \
+    while (!task.isFinished()) \
+        std::this_thread::sleep_for(std::chrono::milliseconds(1)); \
+});
+
+HttpServerClass::HttpServerClass(const Local<Object>& scriptObj)
+    : ScriptClass(scriptObj)
+    , svr(new Server)
+{
+}
+HttpServerClass::HttpServerClass()
+    : ScriptClass(ScriptClass::ConstructFromCpp<HttpServerClass>{})
+    , svr(new Server)
+{
+}
+
+HttpServerClass::~HttpServerClass()
+{
+    svr->stop();
+}
+
+HttpServerClass* HttpServerClass::constructor(const Arguments& args)
+{
+    return new HttpServerClass(args.thiz());
+}
+
+Local<Value> HttpServerClass::onGet(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kFunction);
+
+    try {
+        auto path = args[0].toStr();
+        auto func = args[1].asFunction();
+        ADD_CALLBACK(Get, path, func);
+        return this->getScriptObject();
+    }
+    CATCH("Fail in onGet")
+}
+
+Local<Value> HttpServerClass::onPut(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kFunction);
+
+    try {
+        auto path = args[0].toStr();
+        auto func = args[1].asFunction();
+        ADD_CALLBACK(Put, path, func);
+        return this->getScriptObject();
+    }
+    CATCH("Fail in onPut!");
+}
+
+Local<Value> HttpServerClass::onPost(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kFunction);
+
+    try {
+        auto path = args[0].toStr();
+        auto func = args[1].asFunction();
+        ADD_CALLBACK(Post, path, func);
+        return this->getScriptObject();
+    }
+    CATCH("Fail in onPost!");
+}
+
+Local<Value> HttpServerClass::onPatch(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kFunction);
+
+    try {
+        auto path = args[0].toStr();
+        auto func = args[1].asFunction();
+        ADD_CALLBACK(Patch, path, func);
+        return this->getScriptObject();
+    }
+    CATCH("Fail in onPatch!");
+}
+
+Local<Value> HttpServerClass::onDelete(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kFunction);
+
+    try {
+        auto path = args[0].toStr();
+        auto func = args[1].asFunction();
+        ADD_CALLBACK(Delete, path, func);
+        return this->getScriptObject();
+    }
+    CATCH("Fail in onDelete!");
+}
+
+Local<Value> HttpServerClass::onOptions(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kFunction);
+
+    try {
+        auto path = args[0].toStr();
+        auto func = args[1].asFunction();
+        ADD_CALLBACK(Options, path, func);
+        return this->getScriptObject();
+    }
+    CATCH("Fail in onOptions!");
+}
+
+Local<Value> HttpServerClass::onError(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kFunction);
+
+    try {
+        errorCallback = {EngineScope::currentEngine(), script::Global{args[0].asFunction()}};
+        svr->set_error_handler([this, engine = EngineScope::currentEngine()]
+                               (const Request& req, Response& resp) {
+            if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
+                    return;
+            auto task = Schedule::nextTick([this, engine, req, &resp] {
+                if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
+                    return;
+                EngineScope enter(engine);
+                auto reqObj = new HttpRequestClass(req);
+                auto respObj = new HttpResponseClass(resp);
+                this->errorCallback.func.get().call({}, reqObj, respObj);
+                resp = *respObj->get();
+            });
+            while (!task.isFinished())
+                std::this_thread::sleep_for(std::chrono::milliseconds(1));
+        });
+        return this->getScriptObject();
+    }
+    CATCH("Fail in onError!");
+}
+
+Local<Value> HttpServerClass::onPreRouting(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kFunction);
+
+    try {
+        preRoutingCallback = {EngineScope::currentEngine(), script::Global{args[0].asFunction()}};
+        svr->set_pre_routing_handler([this, engine = EngineScope::currentEngine()]
+                                     (const Request& req, Response& resp) {
+            if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
+                    return Server::HandlerResponse::Unhandled;
+            bool handled = false;
+            auto task = Schedule::nextTick([this, engine, req, &resp, &handled] {
+                if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
+                    return;
+                EngineScope enter(engine);
+                auto reqObj = new HttpRequestClass(req);
+                auto respObj = new HttpResponseClass(resp);
+                auto res = this->preRoutingCallback.func.get().call({}, reqObj, respObj);
+                if (res.isBoolean() && res.asBoolean().value() == true)
+                {
+                    handled = true;
+                }
+                resp = *respObj->get();
+            });
+            while (!task.isFinished())
+                std::this_thread::sleep_for(std::chrono::milliseconds(1));
+            return handled ? Server::HandlerResponse::Handled : Server::HandlerResponse::Unhandled;
+        });
+        return this->getScriptObject();
+    }
+    CATCH("Fail in onPreRouting!");
+}
+
+Local<Value> HttpServerClass::onPostRouting(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kFunction);
+
+    try {
+        postRoutingCallback = {EngineScope::currentEngine(), script::Global{args[0].asFunction()}};
+        svr->set_post_routing_handler([this, engine = EngineScope::currentEngine()]
+                                     (const Request& req, Response& resp) {
+            if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
+                    return;
+            auto task = Schedule::nextTick([this, engine, req, &resp] {
+                if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
+                    return;
+                EngineScope enter(engine);
+                auto reqObj = new HttpRequestClass(req);
+                auto respObj = new HttpResponseClass(resp);
+                this->postRoutingCallback.func.get().call({}, reqObj, respObj);
+                resp = *respObj->get();
+            });
+            while (!task.isFinished())
+                std::this_thread::sleep_for(std::chrono::milliseconds(1));
+        });
+        return this->getScriptObject();
+    }
+    CATCH("Fail in onPostRouting!");
+}
+
+Local<Value> HttpServerClass::onException(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kFunction);
+
+    try {
+        exceptionCallback = {EngineScope::currentEngine(), script::Global{args[0].asFunction()}};
+        svr->set_exception_handler([this, engine = EngineScope::currentEngine()]
+                                   (const Request& req, Response& resp, std::exception& e) {
+            if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
+                    return;
+            auto task = Schedule::nextTick([this, engine, req, &resp] {
+                if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
+                    return;
+                EngineScope enter(engine);
+                auto reqObj = new HttpRequestClass(req);
+                auto respObj = new HttpResponseClass(resp);
+                this->exceptionCallback.func.get().call({}, reqObj, respObj);
+                resp = *respObj->get();
+            });
+            while (!task.isFinished())
+                std::this_thread::sleep_for(std::chrono::milliseconds(1));
+        });
+        return this->getScriptObject();
+    }
+    CATCH("Fail in onException!");
+}
+
+Local<Value> HttpServerClass::listen(const Arguments& args)
+{
+    if (args.size() == 1)
+    {
+        CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+    }
+    else if (args.size() == 2)
+    {
+        CHECK_ARG_TYPE(args[0], ValueKind::kString);
+        CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+    }
+    else
+    {
+        LOG_WRONG_ARG_TYPE();
+        return Local<Value>();
+    }
+    
+    try {
+        string addr = "127.0.0.1";
+        int port = 80;
+        if (args.size() == 2)
+        {
+            addr = args[0].toStr();
+            port = args[1].asNumber().toInt32();
+        }
+        else
+        {
+            port = args[0].asNumber().toInt32();
+        }
+        if (port < 0 || port > 65535)
+        {
+            throw script::Exception("Invalid port number! (0~65535)");
+        }
+
+        RecordOperation(ENGINE_OWN_DATA()->pluginName, "StartHttpServer", fmt::format("on {}:{}", addr, port));
+        
+        thread th([this](string addr, int port) {
+            svr->listen(addr.c_str(), port);
+        }, addr, port);
+        th.detach();
+        return this->getScriptObject(); // return self
+    }
+    CATCH("Fail in listen!");
+}
+
+Local<Value> HttpServerClass::stop(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 0);
+
+    try {
+        RecordOperation(ENGINE_OWN_DATA()->pluginName, "StopHttpServer", "");
+        return Local<Value>();
+    }
+    CATCH("Fail in stop!");
+}
+
+Local<Value> HttpServerClass::isRunning(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 0);
+
+    try {
+        return Boolean::newBoolean(svr->is_running());
+    }
+    CATCH("Fail in isRunning!");
+}
+
 Local<Object> Headers2Object(const Headers& headers) 
 {
     auto obj = Object::newObject();
@@ -409,7 +756,7 @@ Local<Object> Headers2Object(const Headers& headers)
     for (auto& header : headers)
     {
         auto arr = obj.get(header.first).asArray();
-        arr.add(header.second);
+        arr.add(String::newString(header.second));
         obj.set(header.first, arr);
     }
     return obj;
@@ -420,32 +767,32 @@ Local<Object> Params2Object(const Params& params)
     auto obj = Object::newObject();
     for (auto& param : params)
     {
-        if (paras.count(param.first) == 1)
+        if (params.count(param.first) == 1)
             obj.set(param.first, param.second);
         else {
             if (!obj.has(param.first)) {
                 obj.set(param.first, Array::newArray());
             }
             auto arr = obj.get(param.first).asArray();
-            arr.add(param.second);
+            arr.add(String::newString(param.second));
             obj.set(param.first, arr);
         }
     }
     return obj;
 }
 
-HttpRequestClass::HttpRequestClass(const Local<Object>& scriptObj, const HttpRequest& req)
+HttpRequestClass::HttpRequestClass(const Local<Object>& scriptObj, const Request& req)
     : ScriptClass(scriptObj)
     , req(new Request(req))
 {
 }
-HttpRequestClass::HttpRequestClass(const HttpRequest& req)
+HttpRequestClass::HttpRequestClass(const Request& req)
     : ScriptClass(ScriptClass::ConstructFromCpp<HttpRequestClass>{})
     , req(new Request(req))
 {
 }
 
-std::shared_ptr<HttpRequest> HttpRequestClass::get()
+std::shared_ptr<Request> HttpRequestClass::get()
 {
     return req;
 }
@@ -453,7 +800,7 @@ std::shared_ptr<HttpRequest> HttpRequestClass::get()
 Local<Value> HttpRequestClass::getHeaders()
 {
     try {
-        return Headers2Array(req->headers);
+        return Headers2Object(req->headers);
     }
     CATCH("Fail in getHeaders!");
 }
@@ -471,7 +818,7 @@ Local<Value> HttpRequestClass::getHeader(const Arguments& args)
         auto arr = Array::newArray();
         for (auto it = value.first; it != value.second; ++it)
         {
-            arr.push(it->second);
+            arr.add(String::newString(it->second));
         }
         return arr;
     }
@@ -542,25 +889,25 @@ Local<Value> HttpRequestClass::getRegexMatches()
         auto arr = Array::newArray();
         for (auto& match : smt)
         {
-            arr.push(String::newString(match));
+            arr.add(String::newString(match));
         }
         return arr;
     }
     CATCH("Fail in getRegexMatches!");
 }
 
-HttpResponseClass::HttpResponseClass(const Local<Object>& scriptObj, const HttpResponse& resp)
+HttpResponseClass::HttpResponseClass(const Local<Object>& scriptObj, const Response& resp)
     : ScriptClass(scriptObj)
     , resp(new Response(resp))
 {
 }
-HttpResponseClass::HttpResponseClass(const HttpResponse& resp)
+HttpResponseClass::HttpResponseClass(const Response& resp)
     : ScriptClass(ScriptClass::ConstructFromCpp<HttpResponseClass>{})
     , resp(new Response(resp))
 {
 }
 
-std::shared_ptr<HttpResponse> HttpResponseClass::get()
+std::shared_ptr<Response> HttpResponseClass::get()
 {
     return resp;
 }
@@ -593,7 +940,7 @@ Local<Value> HttpResponseClass::getHeader(const Arguments& args)
         auto arr = Array::newArray();
         for (auto it = value.first; it != value.second; ++it)
         {
-            arr.push(it->second);
+            arr.add(String::newString(it->second));
         }
         return arr;
     }
@@ -602,7 +949,7 @@ Local<Value> HttpResponseClass::getHeader(const Arguments& args)
 
 void HttpResponseClass::setHeaders(const Local<Value>& headers)
 {
-    CHECK_ARG_TYPE(headers, ValueKind::kObject);
+    CHECK_ARG_TYPE_S(headers, ValueKind::kObject);
 
     try {
         auto keys = headers.asObject().getKeys();
@@ -621,63 +968,63 @@ void HttpResponseClass::setHeaders(const Local<Value>& headers)
             resp->headers.insert(make_pair(key_str, val_str));
         }
     }
-    CATCH("Fail in setHeaders!");
+    CATCH_S("Fail in setHeaders!");
 }
 
 void HttpResponseClass::setStatus(const Local<Value>& status) 
 {
-    CHECK_ARG_TYPE(status, ValueKind::kNumber);
+    CHECK_ARG_TYPE_S(status, ValueKind::kNumber);
 
     try {
         resp->status = status.toInt();
     }
-    CATCH("Fail in setStatus!");
+    CATCH_S("Fail in setStatus!");
 }
 
 void HttpResponseClass::setBody(const Local<Value>& body)
 {
-    CHECK_ARG_TYPE(body, ValueKind::kString);
+    CHECK_ARG_TYPE_S(body, ValueKind::kString);
 
     try {
         resp->body = body.toStr();
     }
-    CATCH("Fail in setBody!");
+    CATCH_S("Fail in setBody!");
 }
 
 void HttpResponseClass::setReason(const Local<Value>& reason)
 {
-    CHECK_ARG_TYPE(reason, ValueKind::kString);
+    CHECK_ARG_TYPE_S(reason, ValueKind::kString);
 
     try {
         resp->reason = reason.toStr();
     }
-    CATCH("Fail in setReason!");
+    CATCH_S("Fail in setReason!");
 }
 
 void HttpResponseClass::setVersion(const Local<Value>& version)
 {
-    CHECK_ARG_TYPE(version, ValueKind::kString);
+    CHECK_ARG_TYPE_S(version, ValueKind::kString);
 
     try {
         resp->version = version.toStr();
     }
-    CATCH("Fail in setVersion!");
+    CATCH_S("Fail in setVersion!");
 }
 
 void HttpResponseClass::setRedirect(const Local<Value>& redirect)
 {
-    CHECK_ARG_TYPE(redirect, ValueKind::kString);
+    CHECK_ARG_TYPE_S(redirect, ValueKind::kString);
 
     try {
         resp->location = redirect.toStr();
     }
-    CATCH("Fail in setRedirect!");
+    CATCH_S("Fail in setRedirect!");
 }
 
 Local<Value> HttpResponseClass::getHeaders()
 {
     try {
-        return Headers2Array(resp->headers);
+        return Headers2Object(resp->headers);
     }
     CATCH("Fail in getHeaders!");
 }
