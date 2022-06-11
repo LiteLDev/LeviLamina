@@ -54,10 +54,29 @@ const http_server_test = {
 			resp.status = 200;
 			resp.reason = "OK";
 			resp.setHeader("Content-Type", "text/html");
+		}).onGet("/404", (req, resp) => {
+			resp.status = 404;
+			resp.reason = "Not Found";
+			resp.write("Not Found");
+		}).onGet("/test-redirect", (req, resp) => {
+			// https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Redirections
+			resp.status = 301;
+			resp.reason = "Moved Permanently";
+			resp.setHeader("Location", "https://github.com");
+		}).onGet("/(.+)", (req, resp) => {
+			resp.write("Hello World! ", req.matches);
 		}).onPreRouting((req, resp) => {
 			logger.info("http_server_test: run: onPreRouting: resp.body.length: ", resp.body.length);
+			if (req.path == "/test-prerouting") {
+				resp.body = "Hello World!";
+				resp.status = 200;
+				resp.reason = "OK";
+				return false;
+			}
 		}).onPostRouting((req, resp) => {
 			logger.info("http_server_test: run: onPostRouting: resp.body.length: ", resp.body.length);
+		}).onError((req, resp) => {
+			resp.write("\nonError called");
 		}).listen(this.listen_address, this.listen_port);
 		logger.info("http_server_test: run: Server listening on " + this.listen_address + ":" + this.listen_port);
 	},

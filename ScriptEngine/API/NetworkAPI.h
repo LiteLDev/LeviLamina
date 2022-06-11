@@ -159,13 +159,11 @@ public:
     void setBody(const Local<Value>& body);
     void setReason(const Local<Value>& reason);
     void setVersion(const Local<Value>& version);
-    void setRedirect(const Local<Value>& redirect);
 
     Local<Value> getHeaders();
     Local<Value> getStatus();
     Local<Value> getBody();
     Local<Value> getReason();
     Local<Value> getVersion();
-    Local<Value> getRedirect();
 };
 extern ClassDefine<HttpResponseClass> HttpResponseClassBuilder;
