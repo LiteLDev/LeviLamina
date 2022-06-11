@@ -703,7 +703,7 @@ Local<Value> HttpServerClass::onException(const Arguments& args)
                                    (const Request& req, Response& resp, std::exception& e) {
             if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
                     return;
-            auto task = Schedule::nextTick([this, engine, req, &resp] {
+            auto task = Schedule::nextTick([this, engine, req, &resp, e] {
                 if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
                     return;
                 EngineScope enter(engine);
