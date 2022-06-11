@@ -3,6 +3,7 @@
 
 #include <list>
 #include <third-party/LightWebSocketClient/include/WebSocketClient.h>
+#include <third-party/httplib/httplib.h>
 using namespace cyanray;
 
 //////////////////// Types ////////////////////
@@ -70,3 +71,56 @@ public:
     static Local<Object> newWSClient();
 };
 extern ClassDefine<WSClientClass> WSClientClassBuilder;
+
+class HttpServerClass : public ScriptClass
+{
+    std::shared_ptr<httplib::Request> req;
+
+public:
+    HttpRequestClass(const Local<Object>& scriptObj, const httplib::Request& req = {});
+    HttpRequestClass(const httplib::Request& req = {});
+    //static HttpRequestClass* constructor(const Arguments& args);
+    std::shared_ptr<httplib::Request> get();
+
+    Local<Value> getHeaders();
+    Local<Value> getHeader(const Arguments& args);
+    Local<Value> getBody();
+    Local<Value> getMethod();
+    Local<Value> getPath();
+    Local<Value> getParams();
+    Local<Value> getRemoteAddr();
+    Local<value> getRemotePort();
+    Local<Value> getVersion();
+    Local<Value> getRegexMatches();
+    //Local<Value> getMultiFormData();
+};
+extern ClassDefine<HttpRequestClass> HttpRequestClassBuilder;
+
+class HttpResponseClass : public ScriptClass
+{
+    std::shared_ptr<httplib::Response> resp;
+
+public:
+    HttpResponseClass(const Local<Object>& scriptObj, const httplib::Response& resp = {});
+    HttpResponseClass(const httplib::Response& resp);
+    //static HttpResponseClass* constructor(const Arguments& args);
+    std::shared_ptr<httplib::Response> get();
+
+    Local<Value> setHeader(const Arguments& args);
+    Local<Value> getHeader(const Arguments& args);
+
+    void setHeaders(const Local<Value>& headers);
+    void setStatus(const Local<Value>& status);
+    void setBody(const Local<Value>& body);
+    void setReason(const Local<Value>& reason);
+    void setVersion(const Local<Value>& version);
+    void setRedirect(const Local<Value>& redirect);
+
+    Local<Value> getHeaders();
+    Local<Value> getStatus();
+    Local<Value> getBody();
+    Local<Value> getReason();
+    Local<Value> getVersion();
+    Local<Value> getRedirect();
+};
+extern ClassDefine<HttpResponseClass> HttpResponseClassBuilder;

@@ -42,6 +42,34 @@ ClassDefine<WSClientClass> WSClientClassBuilder =
         .property("Closed", [] { return Number::newNumber((int)WebSocketClient::Status::Closed); })
         .build();
 
+ClassDefine<HttpRequestClass> HttpRequestClassBuilder =
+    defineClass<HttpRequestClass>("HttpRequest")
+        .instanceFunction("getHeader", &HttpRequestClass::getHeader)
+
+        .instanceProperty("headers", &HttpRequestClass::getHeaders)
+        .instanceProperty("method", &HttpRequestClass::getMethod)
+        .instanceProperty("body", &HttpRequestClass::getBody)
+        .instanceProperty("path", &HttpRequestClass::getPath)
+        .instanceProperty("params", &HttpRequestClass::getParams)
+        .instanceProperty("query", &HttpRequestClass::getParams)
+        .instanceProperty("remoteAddr", &HttpRequestClass::getRemoteAddr)
+        .instanceProperty("remotePort", &HttpRequestClass::getRemotePort)
+        .instanceProperty("version", &HttpRequestClass::getVersion)
+        .instanceProperty("matches", &HttpRequestClass::getRegexMatches)
+        .build();
+
+ClassDefine<HttpResponseClass> HttpResponseClassBuilder =
+    defineClass<HttpResponseClass>("HttpResponse")
+        .instanceFunction("getHeader", &HttpResponseClass::getHeader)
+        .instanceFunction("setHeader", &HttpResponseClass::setHeader)
+
+        .instanceProperty("headers", &HttpResponseClass::getHeaders, &HttpResponseClass::setHeaders)
+        .instanceProperty("status", &HttpResponseClass::getStatus, &HttpResponseClass::setStatus)
+        .instanceProperty("body", &HttpResponseClass::getBody, &HttpResponseClass::setBody)
+        .instanceProperty("version", &HttpResponseClass::getVersion, &HttpResponseClass::setVersion)
+        .instanceProperty("reason", &HttpResponseClass::getReason, &HttpResponseClass::setReason)
+        .instanceProperty("redirect", &HttpResponseClass::getRedirect, &HttpResponseClass::setRedirect)
+        .build();
 
 //生成函数
 WSClientClass::WSClientClass(const Local<Object>& scriptObj)
@@ -369,6 +397,329 @@ Local<Value> WSClientClass::errorCode(const Arguments& args)
         return Local<Value>();
     }
     CATCH("Fail in errorCode!");
+}
+
+Local<Object> Headers2Object(const Headers& headers) 
+{
+    auto obj = Object::newObject();
+    for (auto& header : headers)
+    {
+        obj.set(header.first, Array::newArray());
+    }
+    for (auto& header : headers)
+    {
+        auto arr = obj.get(header.first).asArray();
+        arr.add(header.second);
+        obj.set(header.first, arr);
+    }
+    return obj;
+}
+
+Local<Object> Params2Object(const Params& params) 
+{
+    auto obj = Object::newObject();
+    for (auto& param : params)
+    {
+        if (paras.count(param.first) == 1)
+            obj.set(param.first, param.second);
+        else {
+            if (!obj.has(param.first)) {
+                obj.set(param.first, Array::newArray());
+            }
+            auto arr = obj.get(param.first).asArray();
+            arr.add(param.second);
+            obj.set(param.first, arr);
+        }
+    }
+    return obj;
+}
+
+HttpRequestClass::HttpRequestClass(const Local<Object>& scriptObj, const HttpRequest& req)
+    : ScriptClass(scriptObj)
+    , req(new Request(req))
+{
+}
+HttpRequestClass::HttpRequestClass(const HttpRequest& req)
+    : ScriptClass(ScriptClass::ConstructFromCpp<HttpRequestClass>{})
+    , req(new Request(req))
+{
+}
+
+std::shared_ptr<HttpRequest> HttpRequestClass::get()
+{
+    return req;
+}
+
+Local<Value> HttpRequestClass::getHeaders()
+{
+    try {
+        return Headers2Array(req->headers);
+    }
+    CATCH("Fail in getHeaders!");
+}
+
+Local<Value> HttpRequestClass::getHeader(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+
+    try {
+        auto key = args[0].toStr();
+        if (req->headers.count(key) == 0)
+            return Array::newArray();
+        auto value = req->headers.equal_range(key);
+        auto arr = Array::newArray();
+        for (auto it = value.first; it != value.second; ++it)
+        {
+            arr.push(it->second);
+        }
+        return arr;
+    }
+    CATCH("Fail in getHeader!");
+}
+
+Local<Value> HttpRequestClass::getBody()
+{
+    try {
+        return String::newString(req->body);
+    }
+    CATCH("Fail in getBody!");
+}
+
+Local<Value> HttpRequestClass::getMethod()
+{
+    try {
+        return String::newString(req->method);
+    }
+    CATCH("Fail in getMethod!");
+}
+
+Local<Value> HttpRequestClass::getPath()
+{
+    try {
+        return String::newString(req->path);
+    }
+    CATCH("Fail in getPath!");
+}
+
+Local<Value> HttpRequestClass::getParams()
+{
+    try {
+        return Params2Object(req->params);
+    }
+    CATCH("Fail in getParams!");
+}
+
+Local<Value> HttpRequestClass::getRemoteAddr()
+{
+    try {
+        return String::newString(req->remote_addr);
+    }
+    CATCH("Fail in getRemoteAddr!");
+}
+
+Local<Value> HttpRequestClass::getRemotePort()
+{
+    try {
+        return Number::newNumber(req->remote_port);
+    }
+    CATCH("Fail in getRemotePort!");
+}
+
+
+Local<Value> HttpRequestClass::getVersion()
+{
+    try {
+        return String::newString(req->version);
+    }
+    CATCH("Fail in getVersion!");
+}
+
+Local<Value> HttpRequestClass::getRegexMatches()
+{
+    try {
+        auto smt = req->matches;
+        auto arr = Array::newArray();
+        for (auto& match : smt)
+        {
+            arr.push(String::newString(match));
+        }
+        return arr;
+    }
+    CATCH("Fail in getRegexMatches!");
+}
+
+HttpResponseClass::HttpResponseClass(const Local<Object>& scriptObj, const HttpResponse& resp)
+    : ScriptClass(scriptObj)
+    , resp(new Response(resp))
+{
+}
+HttpResponseClass::HttpResponseClass(const HttpResponse& resp)
+    : ScriptClass(ScriptClass::ConstructFromCpp<HttpResponseClass>{})
+    , resp(new Response(resp))
+{
+}
+
+std::shared_ptr<HttpResponse> HttpResponseClass::get()
+{
+    return resp;
+}
+
+Local<Value> HttpResponseClass::setHeader(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kString);
+
+    try {
+        auto key = args[0].toStr();
+        auto value = args[1].toStr();
+        resp->headers.insert(make_pair(key, value));
+        return this->getScriptObject(); // return self
+    }
+    CATCH("Fail in setHeader!");
+}
+
+Local<Value> HttpResponseClass::getHeader(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+
+    try {
+        auto key = args[0].toStr();
+        if (resp->headers.count(key) == 0)
+            return Array::newArray();
+        auto value = resp->headers.equal_range(key);
+        auto arr = Array::newArray();
+        for (auto it = value.first; it != value.second; ++it)
+        {
+            arr.push(it->second);
+        }
+        return arr;
+    }
+    CATCH("Fail in getHeader!");
+}
+
+void HttpResponseClass::setHeaders(const Local<Value>& headers)
+{
+    CHECK_ARG_TYPE(headers, ValueKind::kObject);
+
+    try {
+        auto keys = headers.asObject().getKeys();
+        for (auto& key : keys)
+        {
+            auto key_str = key.toString();
+            auto value = headers.asObject().get(key);
+            if (value.isArray()) {
+                for (size_t i = 0ULL; i < value.asArray().size(); ++i)
+                {
+                    resp->headers.insert(make_pair(key_str, ValueToString(value.asArray().get(i))));
+                }
+                return;
+            }
+            auto val_str = ValueToString(value);
+            resp->headers.insert(make_pair(key_str, val_str));
+        }
+    }
+    CATCH("Fail in setHeaders!");
+}
+
+void HttpResponseClass::setStatus(const Local<Value>& status) 
+{
+    CHECK_ARG_TYPE(status, ValueKind::kNumber);
+
+    try {
+        resp->status = status.toInt();
+    }
+    CATCH("Fail in setStatus!");
+}
+
+void HttpResponseClass::setBody(const Local<Value>& body)
+{
+    CHECK_ARG_TYPE(body, ValueKind::kString);
+
+    try {
+        resp->body = body.toStr();
+    }
+    CATCH("Fail in setBody!");
+}
+
+void HttpResponseClass::setReason(const Local<Value>& reason)
+{
+    CHECK_ARG_TYPE(reason, ValueKind::kString);
+
+    try {
+        resp->reason = reason.toStr();
+    }
+    CATCH("Fail in setReason!");
+}
+
+void HttpResponseClass::setVersion(const Local<Value>& version)
+{
+    CHECK_ARG_TYPE(version, ValueKind::kString);
+
+    try {
+        resp->version = version.toStr();
+    }
+    CATCH("Fail in setVersion!");
+}
+
+void HttpResponseClass::setRedirect(const Local<Value>& redirect)
+{
+    CHECK_ARG_TYPE(redirect, ValueKind::kString);
+
+    try {
+        resp->location = redirect.toStr();
+    }
+    CATCH("Fail in setRedirect!");
+}
+
+Local<Value> HttpResponseClass::getHeaders()
+{
+    try {
+        return Headers2Array(resp->headers);
+    }
+    CATCH("Fail in getHeaders!");
+}
+
+Local<Value> HttpResponseClass::getStatus()
+{
+    try {
+        return Number::newNumber(resp->status);
+    }
+    CATCH("Fail in getStatus!");
+}
+
+Local<Value> HttpResponseClass::getBody()
+{
+    try {
+        return String::newString(resp->body);
+    }
+    CATCH("Fail in getBody!");
+}
+
+Local<Value> HttpResponseClass::getReason()
+{
+    try {
+        return String::newString(resp->reason);
+    }
+    CATCH("Fail in getReason!");
+}
+
+Local<Value> HttpResponseClass::getVersion()
+{
+    try {
+        return String::newString(resp->version);
+    }
+    CATCH("Fail in getVersion!");
+}
+
+Local<Value> HttpResponseClass::getRedirect()
+{
+    try {
+        return String::newString(resp->location);
+    }
+    CATCH("Fail in getRedirect!");
 }
 
 
