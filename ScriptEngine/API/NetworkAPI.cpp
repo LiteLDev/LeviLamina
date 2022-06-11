@@ -64,6 +64,7 @@ ClassDefine<HttpServerClass> HttpServerClassBuilder =
 
 ClassDefine<HttpRequestClass> HttpRequestClassBuilder =
     defineClass<HttpRequestClass>("HttpRequest")
+        .constructor(nullptr)
         .instanceFunction("getHeader", &HttpRequestClass::getHeader)
 
         .instanceProperty("headers", &HttpRequestClass::getHeaders)
@@ -80,6 +81,7 @@ ClassDefine<HttpRequestClass> HttpRequestClassBuilder =
 
 ClassDefine<HttpResponseClass> HttpResponseClassBuilder =
     defineClass<HttpResponseClass>("HttpResponse")
+        .constructor(nullptr)
         .instanceFunction("getHeader", &HttpResponseClass::getHeader)
         .instanceFunction("setHeader", &HttpResponseClass::setHeader)
 
