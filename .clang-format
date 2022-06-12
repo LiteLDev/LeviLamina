@@ -3,8 +3,8 @@ Language: Cpp
 # BasedOnStyle: LLVM
 AccessModifierOffset: -4
 AlignAfterOpenBracket: Align
-AlignConsecutiveAssignments: false
-AlignConsecutiveDeclarations: false
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
 AlignEscapedNewlinesLeft: true
 AlignOperands: true
 AlignTrailingComments: true
@@ -17,7 +17,7 @@ AllowShortLoopsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: false
 AllowShortLambdasOnASingleLine: true
 AlwaysBreakAfterDefinitionReturnType: None
-ColumnLimit: 0
+ColumnLimit: 120
 CommentPragmas: '^ IWYU pragma:'
 PointerAlignment: Left
 IndentWidth: 4
@@ -38,29 +38,29 @@ UseTab: Never
 BreakBeforeBraces: Custom
 BraceWrapping:
   # case 语句后面
-  AfterCaseLabel: true
+  AfterCaseLabel: false
   # class定义后面
-  AfterClass: true
+  AfterClass: false
   # 控制语句后面
-  AfterControlStatement: true
+  AfterControlStatement: false
   # enum定义后面
-  AfterEnum: true
+  AfterEnum: false
   # 函数定义后面
-  AfterFunction: true
+  AfterFunction: false
   # 命名空间定义后面
-  AfterNamespace: true
+  AfterNamespace: false
   # struct定义后面
-  AfterStruct: true
+  AfterStruct: false
   # union定义后面
-  AfterUnion: true
+  AfterUnion: false
   # extern导出块后面
   AfterExternBlock: false
   # catch之前
-  BeforeCatch: true
+  BeforeCatch: false
   # else之前
-  BeforeElse: true
+  BeforeElse: false
   # 缩进大括号(整个大括号框起来的部分都缩进)
-  IndentBraces: false
+  IndentBraces: true
   # 空函数的大括号是否可以在一行
   SplitEmptyFunction: true
   # 空记录体(struct/class/union)的大括号是否可以在一行
