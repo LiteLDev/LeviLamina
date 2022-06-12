@@ -42,7 +42,7 @@ public:
         , g(g)
         , b(b)
         , a(a){};
-    Color(unsigned char ir, unsigned char ig, unsigned char ib, unsigned char ia = 255)
+    Color(int ir, int ig, int ib, int ia = 255)
         : r(ir / 255.0f)
         , g(ig / 255.0f)
         , b(ib / 255.0f)
@@ -65,8 +65,8 @@ public:
     LIAPI class mce::Color XYZToLab() const;
     LIAPI class mce::Color LabToXYZ() const;
     LIAPI double deltaE76(mce::Color const dst) const; // 2.3 for JND
-    LIAPI double deltaE94(mce::Color const dst) const;
-    LIAPI double deltaE00(mce::Color const dst) const;
+    LIAPI double deltaE94(mce::Color const dst) const; // 1.0 for JND
+    LIAPI double deltaE00(mce::Color const dst) const; // 1.0 for JND
 
     MCAPI static mce::Color const NIL;
     MCAPI static class mce::Color fromHexString(std::string const&);
@@ -78,6 +78,18 @@ public:
 };
 
 }; // namespace mce
+
+namespace std {
+
+    template <>
+    struct hash<mce::Color> {
+        std::size_t operator()(mce::Color const& c) const noexcept {
+            return (std::hash<float>()(c.r) ^ std::hash<float>()(c.g) ^
+                    std::hash<float>()(c.b) ^ std::hash<float>()(c.a));
+        }
+    };
+
+}  // namespace std
 
 template <typename A, typename T>
 class AutomaticID
