@@ -75,7 +75,7 @@ public:
     MCAPI int toARGB(void) const;
     MCAPI std::string toHexString(void) const;
 
-    constexpr bool operator!=(const Color& c) const
+    inline bool operator!=(const Color& c) const
     {
         return !(c == *this);
     }
