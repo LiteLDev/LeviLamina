@@ -85,6 +85,16 @@ public:
         return {k.x, k.y, k.z, 1.0f};
     }
 
+    inline BlockPos toBlockPos() const
+    {
+        return {r * 255.0f, g * 255.0f, b * 255.0f};
+    }
+
+    inline static Color fromBlockPos(const BlockPos& k)
+    {
+        return {k.x / 255.0f, k.y / 255.0f, k.z / 255.0f, 1.0f};
+    }
+
     inline bool operator!=(const Color& c) const
     {
         return !(c == *this);
