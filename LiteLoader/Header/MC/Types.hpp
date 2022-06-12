@@ -53,7 +53,7 @@ public:
         return !(*this == NIL);
     }
 
-    LIAPI double distanceTo(mce::Color const dst) const;
+    LIAPI double distanceTo(mce::Color const& dst) const;
     LIAPI std::string toConsoleCode(bool foreground = true) const;
     LIAPI std::string toNearestColorCode() const;
     LIAPI static class mce::Color fromConsoleCode(std::string const&);
