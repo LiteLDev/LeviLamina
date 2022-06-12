@@ -94,4 +94,7 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass<CommandClass>(CommandClassBuilder);
     engine->registerNativeClass<CommandOriginClass>(CommandOriginClassBuilder);
     engine->registerNativeClass<CommandOutputClass>(CommandOutputClassBuilder);
+    engine->registerNativeClass<HttpServerClass>(HttpServerClassBuilder);
+    engine->registerNativeClass<HttpRequestClass>(HttpRequestClassBuilder);
+    engine->registerNativeClass<HttpResponseClass>(HttpResponseClassBuilder);
 }

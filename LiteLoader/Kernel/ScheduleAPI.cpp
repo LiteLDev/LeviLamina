@@ -34,7 +34,7 @@ public:
         , interval((long long)interval)
         , count(count)
         , taskId(++nextTaskId)
-        , handler(handler){};
+        , handler(handler) {};
 
     inline unsigned int getTaskId() {
         return taskId;
@@ -175,6 +175,13 @@ public:
         }
 
     }
+
+    bool has(unsigned int taskId) {
+        for (auto& task : c)
+            if (task.taskId == taskId)
+                return true;
+        return false;
+    }
 };
 
 ScheduleTaskQueueType taskQueue;
@@ -252,6 +259,32 @@ ScheduleTask::ScheduleTask(unsigned int taskId)
 bool ScheduleTask::cancel() {
     locker.lock();
     pendingCancelList.push_back(taskId);
+    locker.unlock();
+    return true;
+}
+
+bool ScheduleTask::isFinished() const {
+    locker.lock();
+    if (pendingClear) {
+        locker.unlock();
+        return true;
+    }
+    for (auto tid : pendingCancelList) { // 准备出队,但还在队里
+        if (tid == taskId) {
+            locker.unlock();
+            return true;
+        }
+    }
+    for (auto& t : pendingTaskList) { // 还没进队,不在队里
+        if (t.taskId == taskId) {
+            locker.unlock();
+            return false;
+        }
+    }
+    if (taskQueue.has(taskId)) { // 还在队里
+        locker.unlock();
+        return false;
+    }
     locker.unlock();
     return true;
 }

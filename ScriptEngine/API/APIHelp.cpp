@@ -20,6 +20,7 @@
 #include <API/DataAPI.h>
 #include <API/DatabaseAPI.h>
 #include <API/PlayerAPI.h>
+#include <API/NetworkAPI.h>
 #include <Global.hpp>
 #include <Engine/EngineOwnData.h>
 
@@ -161,6 +162,18 @@ void PrintValue(T &out, Local<Value> v)
             if (IsInstanceOf<DBStmtClass>(v))
             {
                 out << "<DBStmt>";
+            }
+            if (IsInstanceOf<HttpServerClass>(v))
+            {
+                out << "<HttpServer>";
+            }
+            if (IsInstanceOf<HttpRequestClass>(v))
+            {
+                out << "<HttpRequest>";
+            }
+            if (IsInstanceOf<HttpResponseClass>(v))
+            {
+                out << "<HttpResponse>";
             }
 
             Local<Object> obj = v.asObject();
