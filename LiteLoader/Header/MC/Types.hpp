@@ -75,6 +75,16 @@ public:
     MCAPI int toARGB(void) const;
     MCAPI std::string toHexString(void) const;
 
+    inline Vec3 toVec3() const
+    {
+        return {r, g, b};
+    }
+
+    inline static Color fromVec3(const Vec3& k)
+    {
+        return {k.x, k.y, k.z, 1.0f};
+    }
+
     inline bool operator!=(const Color& c) const
     {
         return !(c == *this);
