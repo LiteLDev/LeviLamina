@@ -64,9 +64,9 @@ public:
     LIAPI class mce::Color XYZToLinear() const;
     LIAPI class mce::Color XYZToLab() const;
     LIAPI class mce::Color LabToXYZ() const;
-    LIAPI double deltaE76(mce::Color const dst) const; // 2.3 for JND
-    LIAPI double deltaE94(mce::Color const dst) const; // 1.0 for JND
-    LIAPI double deltaE00(mce::Color const dst) const; // 1.0 for JND
+    LIAPI double deltaE76(mce::Color const& dst) const; // 2.3 for JND
+    LIAPI double deltaE94(mce::Color const& dst) const; // 1.0 for JND
+    LIAPI double deltaE00(mce::Color const& dst) const; // 1.0 for JND
 
     MCAPI static mce::Color const NIL;
     MCAPI static class mce::Color fromHexString(std::string const&);
