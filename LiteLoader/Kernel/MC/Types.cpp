@@ -98,7 +98,7 @@ mce::Color Color::LabToXYZ() const
     float mb = nz > delta ? pow(nz, 3.0f) : (nz - 4.0f / 29.0f) * 3.0f * delta2;
     return Color(mr * 0.950489f, mg, mb * 1.08884f, a);
 };
-double mce::Color::deltaE76(mce::Color const dst) const
+double mce::Color::deltaE76(mce::Color const& dst) const
 {
     auto ma = this->sRGBToLinear().LinearToXYZ().XYZToLab();
     auto mb = dst.sRGBToLinear().LinearToXYZ().XYZToLab();
@@ -107,7 +107,7 @@ double mce::Color::deltaE76(mce::Color const dst) const
     double db = ma.b - mb.b;
     return sqrt(dL * dL + da * da + db * db);
 }
-double mce::Color::deltaE94(mce::Color const dst) const
+double mce::Color::deltaE94(mce::Color const& dst) const
 {
     auto ma = this->sRGBToLinear().LinearToXYZ().XYZToLab();
     auto mb = dst.sRGBToLinear().LinearToXYZ().XYZToLab();
@@ -132,7 +132,7 @@ double mce::Color::deltaE94(mce::Color const dst) const
     dH = dH / SH;
     return sqrt(dL * dL + dC * dC + dH * dH);
 }
-double mce::Color::deltaE00(mce::Color const dst) const
+double mce::Color::deltaE00(mce::Color const& dst) const
 {
     auto ma = this->sRGBToLinear().LinearToXYZ().XYZToLab();
     auto mb = dst.sRGBToLinear().LinearToXYZ().XYZToLab();
@@ -212,7 +212,7 @@ double mce::Color::deltaE00(mce::Color const dst) const
     dHp = dHp / SH;
     return sqrt(dL * dL + dCp * dCp + dHp * dHp + RT * dCp * dHp);
 }
-double mce::Color::distanceTo(mce::Color const dst) const
+double mce::Color::distanceTo(mce::Color const& dst) const
 {
     return this->deltaE00(dst);
 }
