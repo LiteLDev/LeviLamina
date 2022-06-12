@@ -5,7 +5,8 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+enum VanillaBiomeTypes;
+    
 #undef BEFORE_EXTRA
 
 class Biome {
@@ -13,7 +14,12 @@ class Biome {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum BiomeTempCategory;
+    enum BiomeTempCategory;
+    LIAPI int getId() const;
+    LIAPI std::string const& getName() const;
+    LIAPI static Biome* fromId(int id);
+    LIAPI static Biome* fromName(std::string const& name);
+    LIAPI static std::vector<Biome*> getBiomesByType(VanillaBiomeTypes type);
 
 #undef AFTER_EXTRA
 
