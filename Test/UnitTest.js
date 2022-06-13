@@ -98,12 +98,28 @@ const http_server_test = {
 		}
 	}
 }
+// Class JsonConfigFile
+const json_config_file_test = {
+	file: PLUGIN_DIR + "json_config_file_test.json",
+	run: function() {
+		let config = new JsonConfigFile(this.file);
+		config.init("test1", "test");
+		config.init("test2", [1145141919810, "test2"]);
+		config.init("test3", 2333333333);
+		config.init("test4", {test: "test"});
+		logger.info("json_config_file_test: run: test1: ", config.get("test1"));
+		logger.info("json_config_file_test: run: test2: ", config.get("test2"));
+		logger.info("json_config_file_test: run: test3: ", config.get("test3"));
+		logger.info("json_config_file_test: run: test4: ", config.get("test4"));
+	}
+}
 
 ///////////////////////////////////// CLASSES //////////////////////////////////////
 const CLASSES = [
 	ll_test,
 	file_test,
-	http_server_test
+	http_server_test,
+	json_config_file_test
 ];
 
 ///////////////////////////////// UNIT TEST COMMAND /////////////////////////////////
@@ -145,3 +161,4 @@ init();
 ll_test.run();
 file_test.run();
 http_server_test.run();
+json_config_file_test.run();
