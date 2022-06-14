@@ -479,11 +479,11 @@ DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicComm
     try
     {
         if (!commandInstance)
-            return nullptr;
+            throw std::runtime_error("Command instance is null");
         if (!commandInstance->callback)
-            return nullptr;
+            throw std::runtime_error("Can't setup command without callback");
         if (commandInstance->overloads.empty())
-            return nullptr;
+            throw std::runtime_error("Can't setup command without overloads");
         // commandInstance->updateSoftEnum();
 
         for (auto& param : commandInstance->parameterDatas)
@@ -496,7 +496,7 @@ DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicComm
                     auto namesInBds = CommandRegistry::getEnumNames();
                     auto iter = std::find(namesInBds.begin(), namesInBds.end(), param.description);
                     if (iter == namesInBds.end())
-                        throw("Enum " + std::string(param.description) + "not found in command and BDS");
+                        throw std::runtime_error("Enum " + std::string(param.description) + "not found in command and BDS");
 #ifndef USE_PARSE_ENUM_STRING_ // fix Enum
                     commandInstance->setEnum(*iter, CommandRegistry::getEnumValues(*iter));
 #endif // USE_PARSE_ENUM_STRING
@@ -593,10 +593,10 @@ bool DynamicCommand::onServerCommandsRegister(CommandRegistry& registry)
         try
         {
             if (!LL::getPlugin(handler) && handler != GetCurrentModule())
-                throw "Plugin that registered command \"" + name + "\" not found";
+                throw std::runtime_error("Plugin that registered command \"" + name + "\" not found");
             auto res = DynamicCommand::_setup(std::move(command));
             if (!res)
-                throw "Command \"" + name + "\" setup failed";
+                throw std::runtime_error("Command \"" + name + "\" setup failed");
         }
         CatchDynamicCommandError("DynamicCommand::_setup - " + name, handler);
     };
@@ -667,6 +667,8 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(std:
 DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class DynamicCommandInstance> commandInstance)
 {
     auto ptr = commandInstance.get();
+    if (!ptr)
+        throw std::runtime_error("DynamicCommand::setup - commandInstance is null");
     if (!serverCommandsRegistered)
     {
         delaySetupLock.lock();
@@ -676,7 +678,8 @@ DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class Dynami
     }
     //logger.warn("Registering command \"{}\" after RegCmdEvent, note that this is unstable!", commandInstance->getCommandName());
     Schedule::nextTick([instance{commandInstance.release()}]() {
-        DynamicCommand::_setup(std::unique_ptr<class DynamicCommandInstance>(instance));
+        if (!_setup(std::unique_ptr<class DynamicCommandInstance>(instance)))
+            logger.warn("Registering command \"{}\" failed", instance->getCommandName());
         updateAvailableCommands();
         });
     return ptr;
