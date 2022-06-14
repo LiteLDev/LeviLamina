@@ -381,6 +381,9 @@
     <ClCompile Include="Kernel\Utils\ShellLinkFile.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\MC\BiomeAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -784,6 +787,9 @@
     </ClInclude>
     <ClInclude Include="Header\MC\BoundingBox.hpp" />
     <ClInclude Include="Header\MC\ItemStackRequestAction.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Path.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
   </ItemGroup>

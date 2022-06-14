@@ -6,6 +6,9 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
+enum NodeType;
+enum PathCompletionType;
+
 #undef BEFORE_EXTRA
 
 class Path {
@@ -13,12 +16,15 @@ class Path {
 #define AFTER_EXTRA
 // Add Member There
 public:
-class Node {
-public:
-    Node() = delete;
-    Node(Node const&) = delete;
-    Node(Node const&&) = delete;
-};
+    class Node
+    {
+        BlockPos mPos;
+        enum NodeType mType;
+    };
+
+    std::vector<Node> mNodes;
+    size_t mIndex;
+    enum PathCompletionType mCompletionType;
 
 #undef AFTER_EXTRA
 

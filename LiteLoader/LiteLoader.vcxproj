@@ -111,6 +111,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\DB\Session.cpp" />
     <ClCompile Include="Kernel\DB\Stmt.cpp" />
     <ClCompile Include="Kernel\I18nAPI_LL.cpp" />
+    <ClCompile Include="Kernel\MC\BiomeAPI.cpp" />
     <ClCompile Include="Kernel\NBT\PrettySnbtFormatAPI.cpp" />
     <ClCompile Include="Kernel\Compatibility.cpp" />
     <ClCompile Include="Kernel\MC\ColorFormatAPI.cpp" />
@@ -190,6 +191,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\MobEffectInstance.hpp" />
     <ClInclude Include="Header\MC\NbtIo.hpp" />
     <ClInclude Include="Header\MC\Packet.hpp" />
+    <ClInclude Include="Header\MC\Path.hpp" />
     <ClInclude Include="Header\MC\PrettySnbtFormat.hpp" />
     <ClInclude Include="Header\MC\ReadOnlyBinaryStream.hpp" />
     <ClInclude Include="Header\MC\RelativeFloat.hpp" />
