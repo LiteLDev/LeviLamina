@@ -60,7 +60,7 @@ BraceWrapping:
   # else之前
   BeforeElse: false
   # 缩进大括号(整个大括号框起来的部分都缩进)
-  IndentBraces: true
+  IndentBraces: false
   # 空函数的大括号是否可以在一行
   SplitEmptyFunction: true
   # 空记录体(struct/class/union)的大括号是否可以在一行
