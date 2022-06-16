@@ -23,8 +23,8 @@ function Directory:new(o, patn)
 end
 
 function Directory:name()
-    s = string.reverse(self.dirPath)
-    _, i = string.find(s, '/')
+    local s = string.reverse(self.dirPath)
+    local _, i = string.find(s, '/')
     return string.reverse(string.sub(s, 0, i))
 end
 
@@ -33,14 +33,14 @@ function Directory:children()
 end
 
 function Directory:rename(newName)
-    s = string.reverse(self.dirPath)
-    _, i = string.find(s, '/')
-    str = string.reverse(string.sub(s, i))
-    newPath = str..newName
-    result = File.rename(self.dirPath, newPath);
+    local s = string.reverse(self.dirPath)
+    local _, i = string.find(s, '/')
+    local str = string.reverse(string.sub(s, i))
+    local newPath = str..newName
+    local result = File.rename(self.dirPath, newPath);
     if (result)
     then
-        self.dirPath = newPath
+        self.dirPath = newName
     end
     return result
 end

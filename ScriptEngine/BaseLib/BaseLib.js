@@ -488,6 +488,9 @@ Promise
         constructor(path) {
             if (File.checkIsDir(path)) {
                 File.createDir(path);
+                if (!path.endsWith('/')) {
+                    path += '/';
+                }
                 this.dirPath = path;
             } else {
                 throw `${path} is not a directory!`;
@@ -500,7 +503,21 @@ Promise
 
         async children() {
             return new Promise((resolve, reject) => {
-                let result = File.getFilesList(this.dirPath);
+                let list = File.getFilesList(this.dirPath);
+                let path = this.dirPath;
+                let result = [];
+                for (const it of list) {
+                    result.push({
+                        fileName: it,
+                        parentPath: path,
+                        toString: function () {
+                            return it;
+                        },
+                        asFile: function () {
+                            return new FilePromise(path + it);
+                        }
+                    });
+                }
                 resolve(result);
             });
         }
@@ -509,7 +526,7 @@ Promise
             return new Promise((resolve, reject) => {
                 let parentPath = this.dirPath.substr(0, this.dirPath.lastIndexOf('/') + 1);
                 let newPath = `${parentPath}${newName}`;
-                let result = File.rename(this.dirPath, newPath);
+                let result = File.rename(this.dirPath, newName);
                 if (result) {
                     this.dirPath = newPath;
                 }
@@ -636,10 +653,10 @@ Promise
         });
     }
 
-    async function newProcessAsync(cmd, timeLimit) {
+    async function newProcessAsync(process, timeLimit) {
         return new Promise((resolve, reject) => {
-            system.cmd(
-                cmd, 
+            system.newProcess(
+                process, 
                 (exitcode, output) => { 
                     resolve({ exitcode, output }); 
                 }, 
@@ -655,8 +672,8 @@ Promise
     globalThis.network.HttpClient = HttpClient;
     globalThis.WSClient = WSClientPromise;
 
-    globalThis.system.prototype.shellAsync = cmdAsync;
-    globalThis.system.prototype.newProcessAsync = newProcessAsync;
+    globalThis.system.shellAsync = cmdAsync;
+    globalThis.system.newProcessAsync = newProcessAsync;
 })();
 /*
 Promise end
