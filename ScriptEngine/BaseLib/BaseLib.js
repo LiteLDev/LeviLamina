@@ -453,7 +453,7 @@ Promise
             return new Promise((resolve, reject) => {
                 let parentPath = this.filePath.substr(0, this.filePath.lastIndexOf('/') + 1);
                 let newPath = `${parentPath}${newName}`;
-                let result = File.rename(this.filePath, newPath);
+                let result = File.rename(this.filePath, newName);
                 if (result) {
                     this.filePath = newPath;
                 }

@@ -40,7 +40,7 @@ function Directory:rename(newName)
     local result = File.rename(self.dirPath, newPath);
     if (result)
     then
-        self.dirPath = newName
+        self.dirPath = newPath
     end
     return result
 end
