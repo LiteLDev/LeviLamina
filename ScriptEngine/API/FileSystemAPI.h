@@ -39,6 +39,8 @@ public:
     static FileClass* constructor(const Arguments& args);
 
     Local<Value> getPath();
+    Local<Value> getExtension();
+    Local<Value> getFileName();
     Local<Value> getAbsolutePath();
     Local<Value> getSize();
     

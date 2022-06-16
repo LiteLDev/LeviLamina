@@ -386,6 +386,285 @@ cjs.js end
 
 
 /*
+Promise 
+*/
+(function () {
+    const internal = {};
+    internal.File = File;
+    internal.WSClient = WSClient;
+
+    class FilePromise extends File {
+        constructor(path, mode) {
+            super(path, mode);
+            this.filePath = path; // Becasue this->path in C++ class is private.
+        }
+
+        read(cnt, callback) {
+            if (callback) {
+                return super.read(cnt, callback);
+            } else {
+                return new Promise((resolve, reject) => {
+                    super.read(cnt, (result) => { resolve(result); });
+                });
+            }
+        }
+    
+        readLine(callback) {
+            if (callback) {
+                return super.readLine(callback);
+            } else {
+                return new Promise((resolve, reject) => {
+                    super.readLine((result) => { resolve(result); });
+                });
+            }
+        }
+    
+        readAll(callback) {
+            if (callback) {
+                return super.readAll(callback);
+            } else {
+                return new Promise((resolve, reject) => {
+                    super.readAll((result) => { resolve(result); });
+                });
+            }
+        }
+
+        write(data, callback) {
+            if (callback) {
+                return super.write(data, callback);
+            } else {
+                return new Promise((resolve, reject) => {
+                    super.write(data, (result) => { resolve(result); });
+                });
+            }
+        }
+
+        writeLine(str, callback) {
+            if (callback) {
+                return super.writeLine(str, callback);
+            } else {
+                return new Promise((resolve, reject) => {
+                    super.writeLine(str, (result) => { resolve(result); });
+                });
+            }
+        }
+
+        async rename(newName) {
+            return new Promise((resolve, reject) => {
+                let parentPath = this.filePath.substr(0, this.filePath.lastIndexOf('/') + 1);
+                let newPath = `${parentPath}${newName}`;
+                let result = File.rename(this.filePath, newPath);
+                if (result) {
+                    this.filePath = newPath;
+                }
+                resolve(result);
+            });
+        }
+
+        async remove() {
+            return new Promise((resolve, reject) => {
+                let result = File.delete(this.filePath);
+                super.close();
+                resolve(result);
+            });
+        }
+
+        async copyTo(pathTo) {
+            return new Promise((resolve, reject) => {
+                let result = File.copy(this.filePath, pathTo);
+                resolve(result);
+            });
+        }
+
+        async moveTo(pathTo) {
+            return new Promise((resolve, reject) => {
+                let result = File.move(this.filePath, pathTo);
+                resolve(result);
+            });
+        }
+    }
+
+    class Directory {
+        constructor(path) {
+            if (File.checkIsDir(path)) {
+                File.createDir(path);
+                this.dirPath = path;
+            } else {
+                throw `${path} is not a directory!`;
+            }
+        }
+
+        get name() {
+            return this.dirPath.substr(this.dirPath.lastIndexOf('/') + 1);
+        }
+
+        async children() {
+            return new Promise((resolve, reject) => {
+                let result = File.getFilesList(this.dirPath);
+                resolve(result);
+            });
+        }
+
+        async rename(newName) {
+            return new Promise((resolve, reject) => {
+                let parentPath = this.dirPath.substr(0, this.dirPath.lastIndexOf('/') + 1);
+                let newPath = `${parentPath}${newName}`;
+                let result = File.rename(this.dirPath, newPath);
+                if (result) {
+                    this.dirPath = newPath;
+                }
+                resolve(result);
+            });
+        }
+
+        async remove() {
+            return new Promise((resolve, reject) => {
+                let result = File.delete(this.dirPath);
+                resolve(result);
+            });
+        }
+
+        async copyTo(pathTo) {
+            return new Promise((resolve, reject) => {
+                let result = File.copy(this.dirPath, pathTo);
+                resolve(result);
+            });
+        }
+
+        async moveTo(pathTo) {
+            return new Promise((resolve, reject) => {
+                let result = File.move(this.dirPath, pathTo);
+                if (result) {
+                    this.dirPath = pathTo;
+                }
+                resolve(result);
+            });
+        }
+    }
+
+    class HttpClient {
+        constructor(header) {
+            this.header = header;
+        }
+        
+        get header() {
+            return this.header;
+        }
+
+        set header(value) {
+            this.header = value;
+        }
+
+        async get(url) {
+            return new Promise((resolve, reject) => {
+                let data = {};
+                let res = network.httpGet(url, this.header, (status, result) => {
+                    data['status'] = status;
+                    data['result'] = result;
+                });
+                if (res) {
+                    resolve(data);
+                } else {
+                    reject('Fail to send request!');
+                }
+            });
+        }
+
+        async post(url, data, type) {
+            return new Promise((resolve, reject) => {
+                let _data = {};
+                let res = network.httpGet(url, this.header, data, type, (status, result) => {
+                    data['status'] = status;
+                    data['result'] = result;
+                });
+                if (res) {
+                    resolve(_data);
+                } else {
+                    reject('Fail to send request!');
+                }
+            });
+        }
+
+        static async put(url, data, type) {
+            return new Promise((resolve, reject) => {
+                reject('Method not yet implemented.');
+            });
+        }
+
+        static async delete(url, data, type) {
+            return new Promise((resolve, reject) => {
+                reject('Method not yet implemented.');
+            });
+        }
+    }
+
+    class WSClientPromise extends WSClient {
+        constructor() {
+            super();
+        }
+
+        connectAsync(target, callback) {
+            if (callback) {
+                return super.connectAsync(target, callback);
+            } else {
+                return new Promise((resolve, reject) => {
+                    super.connectAsync(target, (success) => { resolve(success); });
+                });
+            }
+        }
+
+        /**
+         * @param { string | ArrayBuffer } data - Data to send.
+         * @returns { Promise<boolean> } Is it sent successfully.
+         */
+        async sendAsync(data) {
+            return new Promise((resolve, reject) => {
+                resolve(super.send(data));
+            });
+        }
+    }
+
+    async function cmdAsync(cmd, timeLimit) {
+        return new Promise((resolve, reject) => {
+            system.cmd(
+                cmd, 
+                (exitcode, output) => { 
+                    resolve({ exitcode, output }); 
+                }, 
+                timeLimit
+            );
+        });
+    }
+
+    async function newProcessAsync(cmd, timeLimit) {
+        return new Promise((resolve, reject) => {
+            system.cmd(
+                cmd, 
+                (exitcode, output) => { 
+                    resolve({ exitcode, output }); 
+                }, 
+                timeLimit
+            );
+        });
+    }
+
+    globalThis.internal = internal;
+
+    globalThis.File = FilePromise;
+    globalThis.Directory = Directory;
+    globalThis.network.HttpClient = HttpClient;
+    globalThis.WSClient = WSClientPromise;
+
+    globalThis.system.prototype.shellAsync = cmdAsync;
+    globalThis.system.prototype.newProcessAsync = newProcessAsync;
+})();
+/*
+Promise end
+*/
+
+
+
+/*
 For Compatibility
 */
 globalThis.file = File;

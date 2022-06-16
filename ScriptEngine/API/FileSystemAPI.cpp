@@ -22,6 +22,8 @@ ClassDefine<FileClass> FileClassBuilder =
     defineClass<FileClass>("File")
         .constructor(&FileClass::constructor)
         .instanceProperty("path", &FileClass::getPath)
+        .instanceProperty("extension", &FileClass::getExtension)
+        .instanceProperty("fileName", &FileClass::getFileName)
         .instanceProperty("absolutePath", &FileClass::getAbsolutePath)
         .instanceProperty("size", &FileClass::getSize)
 
@@ -148,6 +150,22 @@ Local<Value> FileClass::getPath()
 {
     try {
         return String::newString(path);
+    }
+    CATCH("Fail in getPath!");
+}
+
+Local<Value> FileClass::getExtension()
+{
+    try {
+        return String::newString(filesystem::path(path).extension().u8string());
+    }
+    CATCH("Fail in getPath!");
+}
+
+Local<Value> FileClass::getFileName()
+{
+    try {
+        return String::newString(filesystem::path(path).filename().u8string());
     }
     CATCH("Fail in getPath!");
 }
