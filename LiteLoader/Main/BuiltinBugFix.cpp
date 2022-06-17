@@ -252,11 +252,10 @@ TClasslessInstanceHook(__int64, "?teleportEntity@EndGatewayBlockActor@@QEAAXAEAV
 }
 
 //fix Wine Stop
-extern bool isWine();
 TClasslessInstanceHook(void, "?leaveGameSync@ServerInstance@@QEAAXXZ")
 {
     original(this);
-    if (isWine())
+    if (IsWineEnvironment())
     {
         std::cerr << "Quit correctly" << std::endl;
         auto proc = GetCurrentProcess();
@@ -305,4 +304,32 @@ TClasslessInstanceHook(void, "?fireEventPlayerTeleported@MinecraftEventing@@SAXP
     original(this, a1, a2, a3, a4);
 }
 
+// set stdin mode to text mode if in wine environment
+inline bool _tryFixConsoleInputMode()
+{
+    if (LL::globalConfig.enableFixMcBug && IsWineEnvironment())
+    {
+        int result = _setmode(_fileno(stdin), _O_U8TEXT);
+        if (result == -1)
+        {
+            logger.error("Cannot set stdin to utf8 text mode");
+            return false;
+        }
+        return true;
+    }
+    return true;
+}
+
+// Fix wine console input
+THook(std::wistream&,
+      "??$getline@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@YAAEAV?$basic_istream@_WU?$char_traits@_W@std@@@0@$$"
+      "QEAV10@AEAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@0@_W@Z",
+      std::wistream&& ret, std::wstring& a1, wchar_t a2)
+{
+    if (&ret == &std::wcin)
+    {
+        static bool fixed = _tryFixConsoleInputMode();
+    }
+    return original(std::move(ret), a1, a2);
+}
 
