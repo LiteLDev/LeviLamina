@@ -574,31 +574,21 @@ Promise
 
         async get(url) {
             return new Promise((resolve, reject) => {
-                let data = {};
                 let res = network.httpGet(url, this.header, (status, result) => {
-                    data['status'] = status;
-                    data['result'] = result;
+                    resolve({ status, result });
                 });
-                if (res) {
-                    resolve(data);
-                } else {
+                if (!res) 
                     reject('Fail to send request!');
-                }
             });
         }
 
         async post(url, data, type) {
             return new Promise((resolve, reject) => {
-                let _data = {};
                 let res = network.httpGet(url, this.header, data, type, (status, result) => {
-                    data['status'] = status;
-                    data['result'] = result;
+                    resolve({ status, result });
                 });
-                if (res) {
-                    resolve(_data);
-                } else {
+                if (!res)
                     reject('Fail to send request!');
-                }
             });
         }
 
