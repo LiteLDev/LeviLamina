@@ -213,10 +213,8 @@ Local<Value> FileClass::getSize()
 Local<Value> FileClass::remove()
 {
     try{
-        bool result = remove_all(path) > 0;
-        if (result)
-            file.close();
-        return Boolean::newBoolean(result);
+        file.close();
+        return Boolean::newBoolean(remove_all(path) > 0);
     }
     catch(const filesystem_error& e)
     {
