@@ -178,3 +178,19 @@ string GetModuleName(HMODULE handler)
     GetModuleFileNameEx(GetCurrentProcess(), handler, buf, MAX_PATH);
     return UTF82String(std::filesystem::path(buf).filename().u8string());
 }
+
+inline bool isWine()
+{
+    HMODULE ntdll = GetModuleHandle(L"ntdll.dll");
+    auto pwine_get_version = GetProcAddress(ntdll, "wine_get_version");
+    if (pwine_get_version)
+        return true;
+    else
+        return false;
+}
+
+bool IsWineEnvironment()
+{
+    static bool result = isWine();
+    return result;
+}
