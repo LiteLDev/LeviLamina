@@ -16,7 +16,7 @@ function Directory:new(o, patn)
     then
         File.createDir(path)
         self.dirPath = path
-    else
+    elseif (File.exists(path))
         return nil
     end
     return o
@@ -26,6 +26,10 @@ function Directory:name()
     local s = string.reverse(self.dirPath)
     local _, i = string.find(s, '/')
     return string.reverse(string.sub(s, 0, i))
+end
+
+function Directory:path()
+    return self.dirPath
 end
 
 function Directory:children()

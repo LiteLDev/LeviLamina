@@ -490,13 +490,21 @@ Promise
                     path += '/';
                 }
                 this.dirPath = path;
-            } else {
+            } else if (File.exists(path)) {
                 throw `${path} is not a directory!`;
             }
         }
 
         get name() {
             return this.dirPath.substr(this.dirPath.lastIndexOf('/') + 1);
+        }
+
+        set name(value) {
+            this.rename(value);
+        }
+
+        get path() {
+            return this.dirPath;
         }
 
         async children() {
