@@ -391,6 +391,7 @@ Promise
 (function () {
     const internal = {};
     internal.File = File;
+    internal.Directory = Directory;
     internal.WSClient = WSClient;
 
     class FilePromise extends File {
@@ -461,7 +462,7 @@ Promise
 
         async remove() {
             return new Promise((resolve, reject) => {
-                let result = File.delete(this.filePath);
+                let result = super.remove();
                 super.close();
                 resolve(result);
             });
@@ -469,104 +470,56 @@ Promise
 
         async copyTo(pathTo) {
             return new Promise((resolve, reject) => {
-                let result = File.copy(this.filePath, pathTo);
+                let result = super.copyTo(pathTo);
                 resolve(result);
             });
         }
 
         async moveTo(pathTo) {
             return new Promise((resolve, reject) => {
-                let result = File.move(this.filePath, pathTo);
+                let result = super.moveTo(pathTo);
                 resolve(result);
             });
         }
     }
 
-    class Directory {
+    class DirectoryPromise extends Directory {
         constructor(path) {
-            if (File.checkIsDir(path)) {
-                File.createDir(path);
-                if (!path.endsWith('/')) {
-                    path += '/';
-                }
-                this.dirPath = path;
-            } else if (File.exists(path)) {
-                throw `${path} is not a directory!`;
-            }
-        }
-
-        get name() {
-            return this.dirPath.substr(this.dirPath.lastIndexOf('/') + 1);
+            super(path);
         }
 
         set name(value) {
             this.rename(value);
         }
 
-        get path() {
-            return this.dirPath;
+        get children() {
+            return super.getChildren();
         }
 
-        async children() {
+        async getChildrenAsync() {
             return new Promise((resolve, reject) => {
-                let list = File.getFilesList(this.dirPath);
-                let path = this.dirPath;
-                let result = [];
-                for (const it of list) {
-                    result.push({
-                        fileName: it,
-                        parentPath: path,
-                        isDir: function () {
-                            return File.checkIsDir(path + it);
-                        },
-                        toString: function () {
-                            return it;
-                        },
-                        toFile: function () {
-                            return new FilePromise(path + it);
-                        },
-                        toDirectory: function () {
-                            return new Directory(path + it);
-                        }
-                    });
-                }
+                let result = super.getChildren();
                 resolve(result);
             });
         }
 
-        rename(newName) {
-            let parentPath = this.dirPath.substr(0, this.dirPath.lastIndexOf('/') + 1);
-            let newPath = `${parentPath}${newName}`;
-            let result = File.rename(this.dirPath, newName);
-            if (result) {
-                this.dirPath = newPath;
-            }
-            return result;
-        }
-
-        async remove() {
+        async removeAsync() {
             return new Promise((resolve, reject) => {
-                let result = File.delete(this.dirPath);
-                if (result) {
-                    this.close();
-                }
+                let result = super.remove(this.path);
                 resolve(result);
             });
         }
 
-        async copyTo(pathTo) {
+        async copyToAsync(pathTo) {
             return new Promise((resolve, reject) => {
-                let result = File.copy(this.dirPath, pathTo);
+                let result = super.copyTo(pathTo);
                 resolve(result);
             });
         }
 
-        async moveTo(pathTo) {
+        async moveToAsync(pathTo) {
             return new Promise((resolve, reject) => {
-                let result = File.move(this.dirPath, pathTo);
-                if (result) {
-                    this.dirPath = pathTo;
-                }
+                let result = super.moveTo(pathTo);
                 resolve(result);
             });
         }
@@ -671,7 +624,7 @@ Promise
     globalThis.internal = internal;
 
     globalThis.File = FilePromise;
-    globalThis.Directory = Directory;
+    globalThis.Directory = DirectoryPromise;
     globalThis.network.HttpClient = HttpClient;
     globalThis.WSClient = WSClientPromise;
 

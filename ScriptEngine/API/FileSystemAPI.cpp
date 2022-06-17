@@ -27,6 +27,10 @@ ClassDefine<FileClass> FileClassBuilder =
         .instanceProperty("absolutePath", &FileClass::getAbsolutePath)
         .instanceProperty("size", &FileClass::getSize)
 
+        .instanceFunction("remove", &FileClass::remove)
+        .instanceFunction("copyTo", &FileClass::copyTo)
+        .instanceFunction("moveTo", &FileClass::moveTo)
+
         .instanceFunction("readSync", &FileClass::readSync)
         .instanceFunction("readLineSync", &FileClass::readLineSync)
         .instanceFunction("readAllSync", &FileClass::readAllSync)
@@ -68,6 +72,21 @@ ClassDefine<FileClass> FileClassBuilder =
 
         //For Compatibility
         .function("open", &FileClass::open)
+        .build();
+
+ClassDefine<DirectoryClass> DirectoryClassBuilder =
+    defineClass<DirectoryClass>("Directory")
+        .constructor(&DirectoryClass::constructor)
+        .instanceProperty("path", &DirectoryClass::getPath)
+        .instanceProperty("name", &DirectoryClass::getName)
+        .instanceProperty("absolutePath", &DirectoryClass::getAbsolutePath)
+
+        .instanceFunction("remove", &DirectoryClass::remove)
+        .instanceFunction("rename", &DirectoryClass::rename)
+        .instanceFunction("copyTo", &DirectoryClass::copyTo)
+        .instanceFunction("moveTo", &DirectoryClass::moveTo)
+
+        .instanceFunction("getChildren", &DirectoryClass::getChildren)
         .build();
 
 //////////////////// Classes ////////////////////
@@ -159,7 +178,7 @@ Local<Value> FileClass::getExtension()
     try {
         return String::newString(filesystem::path(path).extension().u8string());
     }
-    CATCH("Fail in getPath!");
+    CATCH("Fail in getExtension!");
 }
 
 Local<Value> FileClass::getFileName()
@@ -167,7 +186,7 @@ Local<Value> FileClass::getFileName()
     try {
         return String::newString(filesystem::path(path).filename().u8string());
     }
-    CATCH("Fail in getPath!");
+    CATCH("Fail in getFileName!");
 }
 
 Local<Value> FileClass::getAbsolutePath()
@@ -189,6 +208,59 @@ Local<Value> FileClass::getSize()
         return Number::newNumber((long long)size);
     }
     CATCH("Fail in getPath!");
+}
+
+Local<Value> FileClass::remove()
+{
+    try{
+        bool result = remove_all(path) > 0;
+        if (result)
+            file.close();
+        return Boolean::newBoolean(result);
+    }
+    catch(const filesystem_error& e)
+    {
+        LOG_ERROR_WITH_SCRIPT_INFO("Fail to Delete " + path + "!\n");
+        return Boolean::newBoolean(false);
+    }
+    CATCH("Fail in FileRemove!");
+}
+
+Local<Value> FileClass::copyTo(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+
+    try{
+        filesystem::copy(path, args[0].asString().toString());
+        return Boolean::newBoolean(true);
+    }
+    catch(const filesystem_error& e)
+    {
+        LOG_ERROR_WITH_SCRIPT_INFO("Fail to Copy " + args[0].asString().toString() + "!\n");
+        return Boolean::newBoolean(false);
+    }
+    CATCH("Fail in FileCopyTo!");
+}
+
+Local<Value> FileClass::moveTo(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+
+    try{
+        auto pathTo = filesystem::path(args[0].asString().toString());
+        filesystem::copy(path, pathTo);
+        file.close();
+        remove_all(path);
+        return Boolean::newBoolean(true);
+    }
+    catch(const filesystem_error& e)
+    {
+        LOG_ERROR_WITH_SCRIPT_INFO("Fail to Move " + path + "!\n");
+        return Boolean::newBoolean(false);
+    }
+    CATCH("Fail in FileMoveTo!");
 }
 
 Local<Value> FileClass::readSync(const Arguments& args)
@@ -831,4 +903,204 @@ Local<Object> FileClass::newFile(std::fstream&& f, const std::string& path, bool
 {
     auto newp = new FileClass(std::move(f), path, isBinary);
     return newp->getScriptObject();
+}
+
+//生成函数
+DirectoryClass::DirectoryClass(const Local<Object>& scriptObj, const std::string& path)
+    :ScriptClass(scriptObj)
+{
+    this->path = path;
+}
+
+DirectoryClass::DirectoryClass(const std::string& path)
+    :ScriptClass(ScriptClass::ConstructFromCpp<FileClass>{})
+{
+    this->path = path;
+}
+
+DirectoryClass* DirectoryClass::constructor(const Arguments& args)
+{
+    CHECK_ARGS_COUNT_C(args, 1);
+    CHECK_ARG_TYPE_C(args[0], ValueKind::kString);
+
+    try {
+        string path = args[0].toStr();
+        if(exists(path) && !is_directory(path))
+        {
+            LOG_ERROR_WITH_SCRIPT_INFO("Path <" + args[0].asString().toString() + "> isn't a directory!\n");
+            return nullptr;
+        }
+        CreateDirs(path);
+        
+        return new DirectoryClass(args.thiz(), path);
+    }
+    catch (const filesystem_error& e)
+    {
+        LOG_ERROR_WITH_SCRIPT_INFO("Fail to Open Directory " + args[0].asString().toString() + "!\n");
+        return nullptr;
+    }
+    CATCH_C("Fail in OpenDirectory!");
+}
+
+//成员函数
+Local<Value> DirectoryClass::getName()
+{
+    try {
+        string pathStr = path.u8string();
+        return String::newString(pathStr.substr(pathStr.find_first_of('/') + 1));
+    }
+    CATCH("Fail in getName!");
+}
+
+Local<Value> DirectoryClass::getPath()
+{
+    try {
+         return String::newString(path.u8string());
+    }
+    CATCH("Fail in getPath!");
+}
+
+Local<Value> DirectoryClass::getAbsolutePath()
+{
+    try {
+        return String::newString(absolute(path).u8string());
+    }
+    CATCH("Fail in getAbsolutePath!");
+}
+
+Local<Value> DirectoryClass::remove()
+{
+    try{
+        return Boolean::newBoolean(remove_all(path) > 0);
+    }
+    catch(const filesystem_error& e)
+    {
+        LOG_ERROR_WITH_SCRIPT_INFO("Fail to Delete " + path.u8string() + "!\n");
+        return Boolean::newBoolean(false);
+    }
+    CATCH("Fail in DirectoryRemove!");
+}
+
+Local<Value> DirectoryClass::rename(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+
+    try{
+        filesystem::rename(path, args[0].asString().toString());
+        path = filesystem::path(args[0].asString().toString());
+        return Boolean::newBoolean(true);
+    }
+    catch(const filesystem_error& e)
+    {
+        LOG_ERROR_WITH_SCRIPT_INFO("Fail to Rename " + args[0].asString().toString() + "!\n");
+        return Boolean::newBoolean(false);
+    }
+    CATCH("Fail in DirectoryRename!");
+}
+
+Local<Value> DirectoryClass::copyTo(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+
+    try{
+        copy(path,args[0].asString().toString());
+        return Boolean::newBoolean(true);
+    }
+    catch(const filesystem_error& e)
+    {
+        LOG_ERROR_WITH_SCRIPT_INFO("Fail to Copy " + args[0].asString().toString() + "!\n");
+        return Boolean::newBoolean(false);
+    }
+    CATCH("Fail in DirectoryCopyTo!");
+}
+
+Local<Value> DirectoryClass::moveTo(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+
+    try{
+        auto pathTo = filesystem::path(args[0].asString().toString());
+        copy(path, pathTo);
+        remove_all(path);
+        path = pathTo;
+        return Boolean::newBoolean(true);
+    }
+    catch(const filesystem_error& e)
+    {
+        LOG_ERROR_WITH_SCRIPT_INFO("Fail to Move " + path.u8string() + "!\n");
+        return Boolean::newBoolean(false);
+    }
+    CATCH("Fail in DirectoryMoveTo!");
+}
+
+Local<Value> DirectoryClass::getChildren()
+{
+    try {
+        auto fileList = GetFileNameList(path.u8string());
+
+        Local<Array> arr = Array::newArray();
+        for (auto& file : fileList)
+        {
+            filesystem::path childPath = path / file;
+            Local<Object> child = Object::newObject();
+            child.set("name", childPath.filename());
+            child.set("parentPath", path.u8string());
+            child.set("isDir", Function::newFunction([childPath]()
+            {
+                return Boolean::newBoolean(is_directory(childPath));
+            }));
+            child.set("toString", Function::newFunction([file]()
+            {
+                return String::newString(file);
+            }));
+            child.set("get", Function::newFunction([childPath](const Arguments& args)
+                -> Local<Value>
+            {
+                if (is_directory(childPath))
+                {
+                    auto instance = new DirectoryClass(childPath.u8string());
+                    return instance->getScriptObject();
+                }
+
+                try
+                {
+                    FileOpenMode fMode = (FileOpenMode)(args[0].toInt());
+                    ios_base::openmode mode = ios_base::in;
+                    if (fMode == FileOpenMode::WriteMode)
+                    {
+                        mode |= ios_base::out;
+                        mode |= ios_base::trunc;
+                    }
+                    else if (fMode == FileOpenMode::AppendMode)
+                    {
+                        mode |= ios_base::app;
+                    }
+
+                    bool isBinary = false;
+                    if (args.size() >= 2 && args[1].asBoolean().value())
+                    {
+                        isBinary = true;
+                        mode |= ios_base::binary;
+                    }
+
+                    fstream fs(childPath, mode);
+                    if (!fs.is_open())
+                    {
+                        LOG_ERROR_WITH_SCRIPT_INFO("Fail to Open File " + childPath.u8string() + "!\n");
+                        return Local<Value>();
+                    }
+                    auto instance = new  FileClass(std::move(fs), childPath.u8string(), isBinary);
+                    return instance->getScriptObject();
+                }
+                CATCH("Fail in getFileIstance");
+            }));
+            
+            arr.add(child);
+        }
+        return arr;
+    }
+    CATCH("Fail in getDirectoryChildren!");
 }

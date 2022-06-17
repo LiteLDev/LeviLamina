@@ -72,6 +72,7 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass<ContainerClass>(ContainerClassBuilder);
     engine->registerNativeClass<EntityClass>(EntityClassBuilder);
     engine->registerNativeClass<FileClass>(FileClassBuilder);
+    engine->registerNativeClass<DirectoryClass>(DirectoryClassBuilder);
     engine->registerNativeClass<WSClientClass>(WSClientClassBuilder);
     engine->registerNativeClass<BlockEntityClass>(BlockEntityClassBuilder);
     engine->registerNativeClass<SimpleFormClass>(SimpleFormClassBuilder);

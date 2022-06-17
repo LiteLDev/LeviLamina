@@ -43,6 +43,10 @@ public:
     Local<Value> getFileName();
     Local<Value> getAbsolutePath();
     Local<Value> getSize();
+
+    Local<Value> remove();
+    Local<Value> copyTo(const Arguments& args);
+    Local<Value> moveTo(const Arguments& args);
     
     Local<Value> readSync(const Arguments& args);
     Local<Value> readLineSync(const Arguments& args);
@@ -82,4 +86,25 @@ public:
     static Local<Object> newFile(std::fstream&& f, const std::string& path, bool isBinary);
     static Local<Value> open(const Arguments& args) { return OpenFile(args); }
 };
+class DirectoryClass : public ScriptClass
+{
+private:
+    filesystem::path path;
+public:
+    explicit DirectoryClass(const Local<Object>& scriptObj, const std::string& path);
+    explicit DirectoryClass(const std::string& path);
+    static DirectoryClass* constructor(const Arguments& args);
+    
+    Local<Value> getName();
+    Local<Value> getPath();
+    Local<Value> getAbsolutePath();
+    
+    Local<Value> remove();
+    Local<Value> rename(const Arguments& args);
+    Local<Value> copyTo(const Arguments& args);
+    Local<Value> moveTo(const Arguments& args);
+
+    Local<Value> getChildren();
+};
 extern ClassDefine<FileClass> FileClassBuilder;
+extern ClassDefine<DirectoryClass> DirectoryClassBuilder;
