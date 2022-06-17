@@ -449,16 +449,14 @@ Promise
             }
         }
 
-        async rename(newName) {
-            return new Promise((resolve, reject) => {
-                let parentPath = this.filePath.substr(0, this.filePath.lastIndexOf('/') + 1);
-                let newPath = `${parentPath}${newName}`;
-                let result = File.rename(this.filePath, newName);
-                if (result) {
-                    this.filePath = newPath;
-                }
-                resolve(result);
-            });
+        rename(newName) {
+            let parentPath = this.filePath.substr(0, this.filePath.lastIndexOf('/') + 1);
+            let newPath = `${parentPath}${newName}`;
+            let result = File.rename(this.filePath, newName);
+            if (result) {
+                this.filePath = newPath;
+            }
+            return result;
         }
 
         async remove() {
@@ -510,11 +508,17 @@ Promise
                     result.push({
                         fileName: it,
                         parentPath: path,
+                        isDir: function () {
+                            return File.checkIsDir(path + it);
+                        },
                         toString: function () {
                             return it;
                         },
-                        asFile: function () {
+                        toFile: function () {
                             return new FilePromise(path + it);
+                        },
+                        toDirectory: function () {
+                            return new Directory(path + it);
                         }
                     });
                 }
@@ -522,21 +526,22 @@ Promise
             });
         }
 
-        async rename(newName) {
-            return new Promise((resolve, reject) => {
-                let parentPath = this.dirPath.substr(0, this.dirPath.lastIndexOf('/') + 1);
-                let newPath = `${parentPath}${newName}`;
-                let result = File.rename(this.dirPath, newName);
-                if (result) {
-                    this.dirPath = newPath;
-                }
-                resolve(result);
-            });
+        rename(newName) {
+            let parentPath = this.dirPath.substr(0, this.dirPath.lastIndexOf('/') + 1);
+            let newPath = `${parentPath}${newName}`;
+            let result = File.rename(this.dirPath, newName);
+            if (result) {
+                this.dirPath = newPath;
+            }
+            return result;
         }
 
         async remove() {
             return new Promise((resolve, reject) => {
                 let result = File.delete(this.dirPath);
+                if (result) {
+                    this.close();
+                }
                 resolve(result);
             });
         }
