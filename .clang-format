@@ -32,6 +32,7 @@ KeepEmptyLinesAtTheStartOfBlocks: true
 BreakConstructorInitializersBeforeComma: true
 SpaceAfterCStyleCast: false
 IndentCaseLabels: true 
+NamespaceIndentation: All
 TabWidth: 4
 UseTab: Never
 
