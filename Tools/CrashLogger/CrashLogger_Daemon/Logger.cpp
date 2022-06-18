@@ -45,7 +45,7 @@ bool CreateLogFiles()
 		CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
 	if (hDumpFile == INVALID_HANDLE_VALUE || hDumpFile == NULL)
 	{
-		log("[CrashLogger][ERROR] Fail to open CoreDump file! Error Code:%d\n", GetLastError());
+		log("[CrashLogger][ERROR] Fail to open CoreDump file! Error Code: 0x%X\n", GetLastError());
 	}
 
 	string tracePath = STACKTRACE_OUTPUT_PATH_PREFIX + dateTimeStr + ".log";
@@ -71,7 +71,7 @@ void CoreDump(PEXCEPTION_POINTERS e)
 		
 		if (!MiniDumpWriteDump(hProcess, dProcessId, hDumpFile, MiniDumpNormal, &dumpInfo, NULL, NULL))
 		{
-			log("[CrashLogger][ERROR] Fail to Generate Minidump! Error Code: %u\n", GetLastError());
+			log("[CrashLogger][ERROR] Fail to Generate Minidump! Error Code: 0x%X\n", GetLastError());
 		}
 		else
 			printf("-- Minidump generated in Directory ./logs/Crash\n");
