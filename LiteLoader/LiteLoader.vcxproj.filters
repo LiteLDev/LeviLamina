@@ -785,11 +785,13 @@
     <ClInclude Include="Header\Utils\ShellLinkFile.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\BoundingBox.hpp" />
     <ClInclude Include="Header\MC\ItemStackRequestAction.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
     <ClInclude Include="Header\MC\Path.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\BoundingBox.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
   </ItemGroup>
