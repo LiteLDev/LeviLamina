@@ -211,13 +211,7 @@ bool BlockPos::containedWithin(BoundingBox const& box) const {
 }
 
 BlockPos Vec3::toBlockPos() const {
-    auto px = (int)x;
-    auto py = (int)y;
-    auto pz = (int)z;
-    if (px < 0 && px != x) px = px - 1;
-    if (py < 0 && py != y) py = py - 1;
-    if (pz < 0 && pz != z) pz = pz - 1;
-    return {px, py, pz};
+    return BlockPos((int)std::floor((double)x), (int)std::floor((double)y), (int)std::floor((double)z));
 }
 
 float Vec3::length() const {
