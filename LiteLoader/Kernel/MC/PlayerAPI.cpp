@@ -161,19 +161,19 @@ string Player::getDeviceTypeName()
     }
 }
 
-bool Player::kick(const string& msg) 
+bool Player::kick(const std::string& msg) 
 {
     NetworkIdentifier* pNetworkIdentifier = getNetworkIdentifier();
     Global<ServerNetworkHandler>->disconnectClient(*pNetworkIdentifier, msg, 0);
     return true;
 }
 
-bool Player::sendText(string text, TextType type)
+bool Player::sendText(const std::string& text, TextType type)
 {
     return sendTextPacket(text, type);
 }
 
-bool Player::talkAs(const string& msg)
+bool Player::talkAs(const std::string& msg)
 {
     return sendTextTalkPacket(msg);
 }

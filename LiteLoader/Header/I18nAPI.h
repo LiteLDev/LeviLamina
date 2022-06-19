@@ -44,7 +44,7 @@
 
 /**
  * @brief I18N API class.
- * 
+ *
  */
 class I18N {
 
@@ -62,12 +62,11 @@ private:
     void save();
 
 public:
-
     static const constexpr char* POD_KEY = "_ll_plugin_i18n"; ///< PluginOwnData key
 
     /**
      * @brief Construct a I18N object.
-     * 
+     *
      * @param filePath         The path to the i18n file(json)
      * @param defaultLangCode  The default language code(if no lang code is specified, it will use this)
      * @param defaultLangData  The default translation data
@@ -79,7 +78,7 @@ public:
         : filePath(filePath)
         , defaultLangCode(defaultLangCode)
         , defaultLangData(defaultLangData) {
-        if (hModule) 
+        if (hModule)
             curModule = hModule;
         else
             curModule = GetCurrentModule();
@@ -89,14 +88,13 @@ public:
 
     /**
      * @brief Get the translation of the specified key.
-     * 
+     *
      * @param  key       The language key
      * @param  langCode  The language code like en_US,zh_CN("" => this->defaultLangCode)
      * @return The translation
      * @see    I18N::defaultLangCode
      */
     LIAPI std::string get(const std::string& key, const std::string& langCode = "");
-
 };
 
 #ifdef UNICODE
@@ -109,56 +107,74 @@ public:
 
 namespace Translation {
 
-template <bool B, class T = void> using enable_if_t = typename std::enable_if<B, T>::type;
+    template <bool B, class T = void>
+    using enable_if_t = typename std::enable_if<B, T>::type;
 
-///////////////// tr Impl /////////////////
-template <typename S, typename... Args, Translation::enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-inline std::string trImpl(HMODULE hPlugin, const S& formatStr, const Args&... args) {
-    auto& i18n = PluginOwnData::getImpl<I18N>(hPlugin, I18N::POD_KEY);
-
-    std::string realFormatStr = i18n.get(formatStr);
-    // realFormatStr = FixCurlyBracket(realFormatStr);
-    if constexpr (0 == sizeof...(args)) {
-        // Avoid fmt if only one argument
-        return realFormatStr;
-    } else {
-        return fmt::format(realFormatStr, args...);
+    ///////////////// tr Impl /////////////////
+    template <typename S, typename... Args, Translation::enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
+    inline std::string trImpl(HMODULE hPlugin, const S& formatStr, const Args&... args) {
+        std::string realFormatStr = formatStr;
+        if (PluginOwnData::hasImpl(hPlugin, I18N::POD_KEY)) {
+            auto& i18n = PluginOwnData::getImpl<I18N>(hPlugin, I18N::POD_KEY);
+            realFormatStr = i18n.get(formatStr);
+        }
+        // realFormatStr = FixCurlyBracket(realFormatStr);
+        if constexpr (0 == sizeof...(args)) {
+            // Avoid fmt if only one argument
+            return realFormatStr;
+        } else {
+            return fmt::format(realFormatStr, args...);
+        }
     }
-}
+    template <typename S, typename... Args, Translation::enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
+    inline std::string trlImpl(HMODULE hPlugin, const std::string& langCode, const S& formatStr, const Args&... args) {
+        std::string realFormatStr = formatStr;
+        if (PluginOwnData::hasImpl(hPlugin, I18N::POD_KEY)) {
+            auto& i18n = PluginOwnData::getImpl<I18N>(hPlugin, I18N::POD_KEY);
+            realFormatStr = i18n.get(formatStr);
+        }
+        // realFormatStr = FixCurlyBracket(realFormatStr);
+        if constexpr (0 == sizeof...(args)) {
+            // Avoid fmt if only one argument
+            return realFormatStr;
+        } else {
+            return fmt::format(realFormatStr, args...);
+        }
+    }
 
-///////////////// trc Impl /////////////////
-template <typename S, typename... Args, Translation::enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-[[deprecated("Please use trImpl(...).c_str()")]]
-inline const char* trcImpl(HMODULE hPlugin, const S& formatStr, const Args&... args) {
-    std::string res = trImpl(hPlugin, formatStr, args...);
-    std::string name = std::string(I18N::POD_KEY) + "_translation_" + fmt::v8::detail::to_string_view<S>(formatStr).data();
-    auto& str = PluginOwnData::setImpl<std::string>(hPlugin, name, res);
-    return str.c_str();
-}
+    ///////////////// trc Impl /////////////////
+    template <typename S, typename... Args, Translation::enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
+    [[deprecated("Use trImpl(...).c_str() instead")]] inline const char* trcImpl(HMODULE hPlugin, const S& formatStr,
+                                                                                 const Args&... args) {
+        std::string res = trImpl(hPlugin, formatStr, args...);
+        std::string name =
+            std::string(I18N::POD_KEY) + "_translation_" + fmt::v8::detail::to_string_view<S>(formatStr).data();
+        auto& str = PluginOwnData::setImpl<std::string>(hPlugin, name, res);
+        return str.c_str();
+    }
 
-[[deprecated]]
-LIAPI bool loadImpl(HMODULE hPlugin, const std::string& filePath); // For compatibility
-LIAPI bool loadImpl(HMODULE hPlugin, const std::string& filePath, const std::string& defaultLangCode,
-                    const I18N::LangData& defaultLangData);
+    [[deprecated]] LIAPI bool loadImpl(HMODULE hPlugin, const std::string& filePath); // For compatibility
+    LIAPI bool loadImpl(HMODULE hPlugin, const std::string& filePath, const std::string& defaultLangCode,
+                        const I18N::LangData& defaultLangData);
 
-/**
- * @brief Load i18n from a file.
- * 
- * @param  filePath         The path to the i18n file(json)
- * @param  defaultLangCode  The default language code(if no lang code is specified, it will use this)
- * @param  defaultLangData  The default translation data
- * @return True if load successfully, false otherwise.
- */
-inline bool load(const std::string& filePath, const std::string& defaultLangCode = "en_US",
-                 const I18N::LangData& defaultLangData = {}) {
-    return loadImpl(GetCurrentModule(), filePath, defaultLangCode, defaultLangData);
-}
+    /**
+     * @brief Load i18n from a file.
+     *
+     * @param  filePath         The path to the i18n file(json)
+     * @param  defaultLangCode  The default language code(if no lang code is specified, it will use this)
+     * @param  defaultLangData  The default translation data
+     * @return True if load successfully, false otherwise.
+     */
+    inline bool load(const std::string& filePath, const std::string& defaultLangCode = "en_US",
+                     const I18N::LangData& defaultLangData = {}) {
+        return loadImpl(GetCurrentModule(), filePath, defaultLangCode, defaultLangData);
+    }
 
 }; // namespace Translation
 
 /**
  * @brief Translate a str.
- * 
+ *
  * @tparam S          The string type
  * @tparam Args       ...
  * @param  formatStr  The str to translate and format
@@ -234,15 +250,56 @@ inline const char* trc(const char* formatStr, const Args&... args) {
     return trc(std::string(formatStr), args...);
 }
 
+/**
+ * @brief Translate a str to the specified language.
+ *
+ * @tparam S          The string type
+ * @tparam Args       ...
+ * @param  langCode   The language code like en_US
+ * @param  formatStr  The str to translate and format
+ * @param  args       The format arguments
+ * @return The translated str
+ * @see    fmt::format
+ * @see    https://fmt.dev/latest/index.html
+ * @par Example
+ * @code
+ * trl("zh_CN", "There are {0} days before {1} to come back", 3, "alex");
+ * @endcode
+ */
+template <typename S, typename... Args>
+inline std::string trl(const std::string& langCode, const std::string& formatStr, const Args&... args) {
+    return Translation::trlImpl(GetCurrentModule(), langCode, formatStr, args...);
+}
+
+/**
+ * @brief Translate a str to the specified language.
+ *
+ * @tparam Args       ...
+ * @param  langCode   The language code like en_US
+ * @param  formatStr  The str to translate and format
+ * @param  args       The format arguments
+ * @return The translated str
+ * @see    fmt::format
+ * @see    https://fmt.dev/latest/index.html
+ * @par Example
+ * @code
+ * trl("zh_CN", "There are {0} days before {1} to come back", 3, "alex");
+ * @endcode
+ */
+template <typename S, typename... Args>
+inline std::string trl(const std::string& langCode, const char* formatStr, const Args&... args) {
+    return trl(langCode, std::string(formatStr), args...);
+}
+
 // For text encoding
 namespace TextEncoding {
-LIAPI Encoding getLocalEncoding();
-LIAPI Encoding detectEncoding(const std::string& text, bool* isReliable = nullptr);
+    LIAPI Encoding getLocalEncoding();
+    LIAPI Encoding detectEncoding(const std::string& text, bool* isReliable = nullptr);
 
-LIAPI std::string fromUnicode(const std::wstring& text, Encoding to = Encoding::UTF8);
-LIAPI std::wstring toUnicode(const std::string& text, Encoding from = Encoding::UTF8);
-LIAPI std::string toUTF8(const std::string& text);
-LIAPI std::string toUTF8(const std::string& text, Encoding from);
+    LIAPI std::string fromUnicode(const std::wstring& text, Encoding to = Encoding::UTF8);
+    LIAPI std::wstring toUnicode(const std::string& text, Encoding from = Encoding::UTF8);
+    LIAPI std::string toUTF8(const std::string& text);
+    LIAPI std::string toUTF8(const std::string& text, Encoding from);
 
-LIAPI std::string convert(const std::string& text, Encoding from, Encoding to);
+    LIAPI std::string convert(const std::string& text, Encoding from, Encoding to);
 } // namespace TextEncoding
