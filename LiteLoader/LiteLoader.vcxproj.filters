@@ -794,6 +794,24 @@
     <ClInclude Include="Header\MC\BoundingBox.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
+    <ClInclude Include="Header\MC\ContentIdentity.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Core.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\PackIdVersion.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\PackInfoData.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\ResourcePacksInfoPacket.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\SemVersion.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Lib\third-party\openssl\libcrypto.lib">

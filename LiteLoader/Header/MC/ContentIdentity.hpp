@@ -12,7 +12,9 @@ class ContentIdentity {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    mce::UUID uuid;
+    bool valid{};
 #undef AFTER_EXTRA
 
 

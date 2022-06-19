@@ -13,7 +13,14 @@ class ResourcePackDataInfoPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    string mPackId;
+    unsigned int maxChunkSize;
+    int chunkCount;
+    unsigned __int64 compressedPackSize;
+    string sha256;
+    bool isPremium;
+    int packType;
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKDATAINFOPACKET

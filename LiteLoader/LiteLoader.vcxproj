@@ -172,6 +172,8 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\CommandSelectorBase.hpp" />
     <ClInclude Include="Header\MC\CompoundTag.hpp" />
     <ClInclude Include="Header\MC\CompoundTagVariant.hpp" />
+    <ClInclude Include="Header\MC\ContentIdentity.hpp" />
+    <ClInclude Include="Header\MC\Core.hpp" />
     <ClInclude Include="Header\MC\DataItem.hpp" />
     <ClInclude Include="Header\MC\DataItem2.hpp" />
     <ClInclude Include="Header\MC\DBStorage.hpp" />
@@ -193,11 +195,15 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\MobEffectInstance.hpp" />
     <ClInclude Include="Header\MC\NbtIo.hpp" />
     <ClInclude Include="Header\MC\Packet.hpp" />
+    <ClInclude Include="Header\MC\PackIdVersion.hpp" />
+    <ClInclude Include="Header\MC\PackInfoData.hpp" />
     <ClInclude Include="Header\MC\Path.hpp" />
     <ClInclude Include="Header\MC\PrettySnbtFormat.hpp" />
     <ClInclude Include="Header\MC\ReadOnlyBinaryStream.hpp" />
     <ClInclude Include="Header\MC\RelativeFloat.hpp" />
+    <ClInclude Include="Header\MC\ResourcePacksInfoPacket.hpp" />
     <ClInclude Include="Header\MC\ScoreboardId.hpp" />
+    <ClInclude Include="Header\MC\SemVersion.hpp" />
     <ClInclude Include="Header\MC\ShortTag.hpp" />
     <ClInclude Include="Header\MC\SimulatedPlayer.hpp" />
     <ClInclude Include="Header\MC\StringTag.hpp" />
