@@ -17,7 +17,6 @@ AllowShortLoopsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: false
 AllowShortLambdasOnASingleLine: true
 AlwaysBreakAfterDefinitionReturnType: None
-AlwaysBreakTemplateDeclarations: Yes
 ColumnLimit: 120
 CommentPragmas: '^ IWYU pragma:'
 PointerAlignment: Left
