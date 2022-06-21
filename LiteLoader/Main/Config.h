@@ -59,7 +59,8 @@ struct LLConfig
     bool enableOutputFilter = false;
     bool onlyFilterConsoleOutput = true;
     bool enableEconomyCore = true;
-    std::vector<std::string> outputFilterRegex;
+    std::vector<std::string> outputFilterRegex = {};
+
     // Runtime Config
     LLServerStatus serverStatus = LLServerStatus::Starting;
     std::thread::id tickThreadId;
@@ -72,6 +73,8 @@ void inline to_json(nlohmann::json& j, const LLConfig& conf);
 void inline from_json(const nlohmann::json& j, LLConfig& conf);
 
 bool LoadLLConfig();
+
+bool SaveLLConfig();
 } // namespace LL
 
 /////////////////////// LL AutoUpgrade ///////////////////////
