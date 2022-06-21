@@ -50,6 +50,17 @@ public:
     LIAPI bool isOperator();
     LIAPI bool isOP();
 
+    LIAPI int getCurrentExperience();
+    LIAPI bool setCurrentExperience(int exp);
+    LIAPI size_t getTotalExperience();
+    LIAPI bool setTotalExperience(size_t exp);
+    LIAPI bool reduceExperience(size_t exp);
+
+    // Experience required to upgrade to level from (level-1)
+    LIAPI static int getXpNeededForLevel(int level);
+
+    // Experience required to upgrade to level from level 0
+    LIAPI static size_t getTotalXpNeededForLevel(int level);
 
     LIAPI bool sendText(string text, TextType type = TextType::RAW);
     template <typename... Args>
