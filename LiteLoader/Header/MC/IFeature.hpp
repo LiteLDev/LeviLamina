@@ -7,7 +7,8 @@ public:
     /*0*/ virtual ~IFeature() = 0;
     /*1*/ virtual std::optional<BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&,
                                                 class RenderParams&) const = 0;
-    /*2*/ virtual void isValidPlacement(std::string const&);
+    /*2*/ virtual void __unk_vfn_2();
+    /*2*/ //virtual void isValidPlacement(std::string const&);
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFEATURE
