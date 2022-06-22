@@ -55,11 +55,7 @@ if "%LL_SDK_NOW_STATUS%" neq "" (
     echo [INFO] Modified files found.
     echo.
     git add .
-    if "%LL_SDK_NOW_BRANCH%" == "main"(
-         git commit -m %LL_NOW_TAG%
-    ) else (
-         git commit -m "Upgrade LiteLoaderSDK"
-    )
+    git commit -m %LL_NOW_TAG%
     echo.
     echo [INFO] Pushing to origin...
     echo.
