@@ -89,12 +89,19 @@ public:
     /**
      * @brief Get the translation of the specified key.
      *
-     * @param  key       The language key
-     * @param  langCode  The language code like en_US,zh_CN("" => this->defaultLangCode)
-     * @return The translation
+     * @param  key          The language key
+     * @param  langCode     The language code like en_US,zh_CN("" => this->defaultLangCode)
+     * @return std::string  The translation
      * @see    I18N::defaultLangCode
      */
     LIAPI std::string get(const std::string& key, const std::string& langCode = "");
+
+    /**
+     * @brief Get the default language code
+     * 
+     * @return std::string  The code
+     */
+    LIAPI std::string getDefaultLangCode();
 };
 
 #ifdef UNICODE
@@ -175,11 +182,11 @@ namespace Translation {
 /**
  * @brief Translate a str.
  *
- * @tparam S          The string type
- * @tparam Args       ...
- * @param  formatStr  The str to translate and format
- * @param  args       The format arguments
- * @return The translated str
+ * @tparam S            The string type
+ * @tparam Args         ...
+ * @param  formatStr    The str to translate and format
+ * @param  args         The format arguments
+ * @return std::string  The translated str
  * @see    fmt::format
  * @see    https://fmt.dev/latest/index.html
  * @par Example
@@ -195,10 +202,10 @@ inline std::string tr(const S& formatStr, const Args&... args) {
 /**
  * @brief Translate a str.
  *
- * @tparam Args       ...
- * @param  formatStr  The str to translate and format
- * @param  args       The format arguments
- * @return The translated str
+ * @tparam Args         ...
+ * @param  formatStr    The str to translate and format
+ * @param  args         The format arguments
+ * @return std::string  The translated str
  * @see    fmt::format
  * @see    https://fmt.dev/latest/index.html
  * @par Example
@@ -214,11 +221,11 @@ inline std::string tr(const char* formatStr, const Args&... args) {
 /**
  * @brief Translate a str(c-style str).
  *
- * @tparam S          The string type
- * @tparam Args       ...
- * @param  formatStr  The str to translate and format
- * @param  args       The format arguments
- * @return The translated str(c-style str)
+ * @tparam S            The string type
+ * @tparam Args         ...
+ * @param  formatStr    The str to translate and format
+ * @param  args         The format arguments
+ * @return const char*  The translated str(c-style str)
  * @see    fmt::format
  * @see    https://fmt.dev/latest/index.html
  * @par Example
@@ -234,10 +241,10 @@ inline const char* trc(const S& formatStr, const Args&... args) {
 /**
  * @brief Translate a str(c-style str).
  *
- * @tparam Args       ...
- * @param  formatStr  The str to translate and format
- * @param  args       The format arguments
- * @return The translated str(c-style str)
+ * @tparam Args         ...
+ * @param  formatStr    The str to translate and format
+ * @param  args         The format arguments
+ * @return const char*  The translated str(c-style str)
  * @see    fmt::format
  * @see    https://fmt.dev/latest/index.html
  * @par Example
@@ -253,12 +260,12 @@ inline const char* trc(const char* formatStr, const Args&... args) {
 /**
  * @brief Translate a str to the specified language.
  *
- * @tparam S          The string type
- * @tparam Args       ...
- * @param  langCode   The language code like en_US
- * @param  formatStr  The str to translate and format
- * @param  args       The format arguments
- * @return The translated str
+ * @tparam S            The string type
+ * @tparam Args         ...
+ * @param  langCode     The language code like en_US
+ * @param  formatStr    The str to translate and format
+ * @param  args         The format arguments
+ * @return std::string  The translated str
  * @see    fmt::format
  * @see    https://fmt.dev/latest/index.html
  * @par Example
@@ -274,11 +281,11 @@ inline std::string trl(const std::string& langCode, const std::string& formatStr
 /**
  * @brief Translate a str to the specified language.
  *
- * @tparam Args       ...
- * @param  langCode   The language code like en_US
- * @param  formatStr  The str to translate and format
- * @param  args       The format arguments
- * @return The translated str
+ * @tparam Args         ...
+ * @param  langCode     The language code like en_US
+ * @param  formatStr    The str to translate and format
+ * @param  args         The format arguments
+ * @return std::string  The translated str
  * @see    fmt::format
  * @see    https://fmt.dev/latest/index.html
  * @par Example

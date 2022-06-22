@@ -68,6 +68,10 @@ std::string I18N::get(const std::string& key, const std::string& langCode) {
     return key;
 }
 
+std::string I18N::getDefaultLangCode() {
+    return this->defaultLangCode;
+}
+
 ///////////////////////////// Encoding-CodePage Map /////////////////////////////
 #undef UNICODE
 namespace TextEncoding {
