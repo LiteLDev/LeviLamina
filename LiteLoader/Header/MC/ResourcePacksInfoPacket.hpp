@@ -6,6 +6,8 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "PackInfoData.hpp"
+#include "PackIdVersion.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -13,7 +15,12 @@ class ResourcePacksInfoPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    bool mTexturePackRequired;
+    bool mHasScripts;
+    bool mForceServerPacks;
+    std::vector<struct PackInfoData> mAddOnPacks;
+    std::vector<struct PackInfoData> mTexturePacks;
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKSINFOPACKET

@@ -111,6 +111,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\DB\Session.cpp" />
     <ClCompile Include="Kernel\DB\Stmt.cpp" />
     <ClCompile Include="Kernel\I18nAPI_LL.cpp" />
+    <ClCompile Include="Kernel\MC\BiomeAPI.cpp" />
     <ClCompile Include="Kernel\NBT\PrettySnbtFormatAPI.cpp" />
     <ClCompile Include="Kernel\Compatibility.cpp" />
     <ClCompile Include="Kernel\MC\ColorFormatAPI.cpp" />
@@ -153,6 +154,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\Automation.hpp" />
     <ClInclude Include="Header\MC\BinaryStream.hpp" />
     <ClInclude Include="Header\MC\BlockInstance.hpp" />
+    <ClInclude Include="Header\MC\BoundingBox.hpp" />
     <ClInclude Include="Header\MC\ByteArrayTag.hpp" />
     <ClInclude Include="Header\MC\ByteTag.hpp" />
     <ClInclude Include="Header\MC\ColorFormat.hpp" />
@@ -168,6 +170,8 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\CommandSelectorBase.hpp" />
     <ClInclude Include="Header\MC\CompoundTag.hpp" />
     <ClInclude Include="Header\MC\CompoundTagVariant.hpp" />
+    <ClInclude Include="Header\MC\ContentIdentity.hpp" />
+    <ClInclude Include="Header\MC\Core.hpp" />
     <ClInclude Include="Header\MC\DataItem.hpp" />
     <ClInclude Include="Header\MC\DataItem2.hpp" />
     <ClInclude Include="Header\MC\DBStorage.hpp" />
@@ -184,14 +188,20 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\IntArrayTag.hpp" />
     <ClInclude Include="Header\MC\IntTag.hpp" />
     <ClInclude Include="Header\MC\ItemStackBase.hpp" />
+    <ClInclude Include="Header\MC\ItemStackRequestAction.hpp" />
     <ClInclude Include="Header\MC\ListTag.hpp" />
     <ClInclude Include="Header\MC\MobEffectInstance.hpp" />
     <ClInclude Include="Header\MC\NbtIo.hpp" />
     <ClInclude Include="Header\MC\Packet.hpp" />
+    <ClInclude Include="Header\MC\PackIdVersion.hpp" />
+    <ClInclude Include="Header\MC\PackInfoData.hpp" />
+    <ClInclude Include="Header\MC\Path.hpp" />
     <ClInclude Include="Header\MC\PrettySnbtFormat.hpp" />
     <ClInclude Include="Header\MC\ReadOnlyBinaryStream.hpp" />
     <ClInclude Include="Header\MC\RelativeFloat.hpp" />
+    <ClInclude Include="Header\MC\ResourcePacksInfoPacket.hpp" />
     <ClInclude Include="Header\MC\ScoreboardId.hpp" />
+    <ClInclude Include="Header\MC\SemVersion.hpp" />
     <ClInclude Include="Header\MC\ShortTag.hpp" />
     <ClInclude Include="Header\MC\SimulatedPlayer.hpp" />
     <ClInclude Include="Header\MC\StringTag.hpp" />

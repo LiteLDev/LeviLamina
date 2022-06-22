@@ -179,6 +179,29 @@ mc.broadcast("Hello everyone ~ ");
 
 ```
 
+#### 在屏幕上方显示消息(类似于成就完成)
+
+`pl.sendToast(title,message)`
+
+- 参数：
+
+  - title : `String`  
+    待发送的标题
+
+  - message : `String`  
+    待发送的文本  
+
+- 返回值：是否成功发送
+
+- 返回值类型：`Boolean`
+
+```clike
+[Js]
+pl.sendToast("Hello","everyone ~");
+[Lua]
+
+```
+
 #### 以某个玩家身份执行一条命令 
 
 `pl.runcmd(cmd)`

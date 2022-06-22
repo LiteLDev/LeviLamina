@@ -20,6 +20,7 @@
 #include <API/DataAPI.h>
 #include <API/DatabaseAPI.h>
 #include <API/PlayerAPI.h>
+#include <API/NetworkAPI.h>
 #include <Global.hpp>
 #include <Engine/EngineOwnData.h>
 
@@ -162,6 +163,18 @@ void PrintValue(T &out, Local<Value> v)
             {
                 out << "<DBStmt>";
             }
+            if (IsInstanceOf<HttpServerClass>(v))
+            {
+                out << "<HttpServer>";
+            }
+            if (IsInstanceOf<HttpRequestClass>(v))
+            {
+                out << "<HttpRequest>";
+            }
+            if (IsInstanceOf<HttpResponseClass>(v))
+            {
+                out << "<HttpResponse>";
+            }
 
             Local<Object> obj = v.asObject();
             std::vector<std::string> keys = obj.getKeyNames();
@@ -230,8 +243,21 @@ bool CheckIsFloat(const Local<Value> &num)
     }
 }
 
-
 ///////////////////// Json To Value /////////////////////
+
+Local<Value> BigInteger_Helper(fifo_json& i)
+{
+    if (i.is_number_integer())
+    {
+        if (i.is_number_unsigned())
+        {
+            auto ui = i.get<uint64_t>();
+            if (ui <= LLONG_MAX) return Number::newNumber((int64_t)ui);
+            return Number::newNumber((double)ui);
+        }
+        return Number::newNumber(i.get<int64_t>());
+    }
+}
 
 void JsonToValue_Helper(Local<Array> &res, fifo_json &j);
 
@@ -244,7 +270,7 @@ void JsonToValue_Helper(Local<Object> &res, const string &key, fifo_json &j)
         break;
     case fifo_json::value_t::number_integer:
     case fifo_json::value_t::number_unsigned:
-        res.set(key, Number::newNumber(j.get<int>()));
+        res.set(key, BigInteger_Helper(j));
         break;
     case fifo_json::value_t::number_float:
         res.set(key, Number::newNumber(j.get<double>()));
@@ -286,7 +312,7 @@ void JsonToValue_Helper(Local<Array> &res, fifo_json &j)
         break;
     case fifo_json::value_t::number_integer:
     case fifo_json::value_t::number_unsigned:
-        res.add(Number::newNumber(j.get<int>()));
+        res.add(BigInteger_Helper(j));
         break;
     case fifo_json::value_t::number_float:
         res.add(Number::newNumber(j.get<double>()));
@@ -330,7 +356,7 @@ Local<Value> JsonToValue(fifo_json j)
         break;
     case fifo_json::value_t::number_integer:
     case fifo_json::value_t::number_unsigned:
-        res = Number::newNumber(j.get<int>());
+        res = BigInteger_Helper(j);
         break;
     case fifo_json::value_t::number_float:
         res = Number::newNumber(j.get<double>());

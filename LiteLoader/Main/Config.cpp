@@ -167,38 +167,46 @@ namespace LL {
     }
 } // namespace LL
 
+inline bool SaveConfig(nlohmann::json& config) {
+    std::ofstream of(LITELOADER_CONFIG_FILE);
+    if (of) {
+        of << config.dump(4);
+        return true;
+    } else {
+        logger.error("Configuration File Creation failed!");
+        return false;
+    }
+}
 
 bool LL::LoadLLConfig()
 {
     try
     {
         auto content = ReadAllFile(LITELOADER_CONFIG_FILE);
-        if (!content)
+        if (!content || content.value().empty())
         {
             logger.warn("LL Config File <{}> not found. Creating configuration file...", LITELOADER_CONFIG_FILE);
             filesystem::create_directories(filesystem::path(LITELOADER_CONFIG_FILE).remove_filename().u8string());
-            std::ofstream of(LITELOADER_CONFIG_FILE);
-            if (of)
-            {
-                of << nlohmann::json(LL::globalConfig).dump(4);
-            }
-            else
-            {
-                logger.error("Configuration File Creation failed!");
-            }
+            LL::SaveLLConfig();
         }
         else
         {
-            auto out = nlohmann::json::parse(*content, nullptr, true, true);
-            LL::globalConfig = out;
-            std::ofstream of(LITELOADER_CONFIG_FILE);
-            if (of)
-            {
-                of << nlohmann::json(LL::globalConfig).dump(4);
-            }
-            else
-            {
-                logger.error("Configuration File Creation failed!");
+            try {
+                auto out = nlohmann::json::parse(*content, nullptr, false, true);
+                LL::globalConfig = out;
+                auto config = nlohmann::json(LL::globalConfig);
+                if (out != config) {
+                    logger.warn("LL Config File <{}> is outdated.",
+                                LITELOADER_CONFIG_FILE);
+                    logger.warn("Updating configuration file...");
+                    return SaveConfig(config);
+                }
+                return true;
+            } catch (const nlohmann::json::exception& e) {
+                logger.error("Fail to parse config file <{}> !", LITELOADER_CONFIG_FILE);
+                logger.error("{}", e.what());
+                logger.error("Using default config file...");
+                return LL::SaveLLConfig();
             }
         }
     }
@@ -214,4 +222,9 @@ bool LL::LoadLLConfig()
         return false;
     }
     return true;
+}
+
+bool LL::SaveLLConfig() {
+    auto config = nlohmann::json(LL::globalConfig);
+    return SaveConfig(config);
 }

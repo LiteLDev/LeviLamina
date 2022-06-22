@@ -12,6 +12,7 @@
 #include <MC/ServerNetworkHandler.hpp>
 #include <MC/NetworkIdentifier.hpp>
 #include <MC/NetworkPeer.hpp>
+#include <MC/ToastRequestPacket.hpp>
 
 #include <MC/ExtendedCertificate.hpp>
 #include <MC/ConnectionRequest.hpp>
@@ -30,6 +31,7 @@
 #include <MC/PlaySoundPacket.hpp>
 #include <MC/SetDisplayObjectivePacket.hpp>
 #include <MC/Block.hpp>
+#include <MC/AttributeInstance.hpp>
 
 #include <Impl/ObjectivePacketHelper.h>
 #include <Impl/FormPacketHelper.h>
@@ -37,6 +39,7 @@
 #include <bitset>
 #include <MC/ItemStackDescriptor.hpp>
 #include <MC/NetworkItemStackDescriptor.hpp>
+#include <MC/ToastRequestPacket.hpp>
 
 extern Logger logger;
 
@@ -351,6 +354,90 @@ bool Player::isOP()
     return isOperator();
 }
 
+int Player::getCurrentExperience() {
+    auto& attr = getAttribute(Player::EXPERIENCE);
+    float currentExp = getXpNeededForNextLevel() * attr.getCurrentValue();
+    return static_cast<int>(currentExp);
+}
+
+bool Player::setCurrentExperience(int exp) {
+    auto attr = getMutableAttribute(Player::EXPERIENCE);
+    if (!attr) return false;
+    int levelExp = getXpNeededForNextLevel();
+    attr->setCurrentValue(static_cast<float>(exp) / levelExp);
+    return true;
+}
+
+size_t Player::getTotalExperience() {
+    int level = getPlayerLevel();
+    size_t exp = getTotalXpNeededForLevel(level);
+    exp += getCurrentExperience();
+    return exp;
+}
+
+bool Player::setTotalExperience(size_t exp) {
+    resetPlayerLevel();
+    if (exp <= INT32_MAX) {
+        addExperience(static_cast<int>(exp));
+        return true;
+    } else {
+        addExperience(INT32_MAX);
+        size_t newExp = exp - INT32_MAX;
+        if (exp <= INT32_MAX) {
+            addExperience(static_cast<int>(exp));
+        } else {
+            // reach max level
+            addExperience(INT32_MAX); 
+        }
+        return true;
+    }
+}
+
+bool Player::reduceExperience(size_t exp) {
+    auto attr = getMutableAttribute(Player::EXPERIENCE);
+    if (!attr) return false;
+    int neededExp = getXpNeededForNextLevel();
+    int currExp = static_cast<int>(attr->getCurrentValue() * neededExp);
+    if (exp <= currExp) {
+        attr->setCurrentValue(static_cast<float>(currExp - exp) / neededExp);
+        return true;
+    }
+    attr->setCurrentValue(0);
+    size_t needExp = exp - currExp;
+    int level = getPlayerLevel();
+    while (level > 0) {
+        addLevels(-1);
+        int levelXp = getXpNeededForNextLevel();
+        if (needExp < levelXp) {
+            attr->setCurrentValue(static_cast<float>(levelXp - needExp) / getXpNeededForNextLevel());
+            return true;
+        }
+        needExp -= levelXp;
+        level = getPlayerLevel();
+    }
+    return false;
+}
+
+int Player::getXpNeededForLevel(int nextLevel) {
+    int const level = nextLevel - 1;
+    if (level / 15) {
+        if (level / 15 == 1)
+            return 5 * level - 38;
+        else
+            return 9 * level - 158;
+    } else {
+        return 2 * level + 7;
+    }
+}
+
+size_t Player::getTotalXpNeededForLevel(int level) {
+    size_t result = 0;
+    for (int i = 1; i <= level; i++) {
+        result += getXpNeededForLevel(i);
+    }
+    return result;
+}
+
 bool Player::crashClient() 
 {
     if (isSimulatedPlayer())
@@ -475,6 +562,11 @@ bool Player::sendTextPacket(string text, TextType Type) const
     auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::Text);
     pkt->read(wp);
     sendNetworkPacket(*pkt);
+    return true;
+}
+
+bool Player::sendToastPacket(string title, string msg) {
+    sendNetworkPacket(ToastRequestPacket(title, msg));
     return true;
 }
 
@@ -851,3 +943,42 @@ bool Player::sendCustomFormPacket(const std::string& data, std::function<void(st
         }
     });
 }
+
+#ifdef DEBUG
+
+bool testPlayerExperience(Player& player) {
+    player.resetPlayerLevel();
+    size_t totalExp = player.getTotalExperience();
+    assert(totalExp == 0);
+    player.setTotalExperience(123456);
+    totalExp = player.getTotalExperience();
+    assert(totalExp == 123456);
+
+    assert(player.reduceExperience(12345));
+    int level = player.getPlayerLevel();
+    int exp = player.getCurrentExperience();
+    totalExp = player.getTotalExperience();
+    logger.warn("level: {} exp: {}, totalExp: {}", level, exp, totalExp);
+    assert(totalExp == 123456 - 12345);
+    player.resetPlayerLevel();
+    player.addLevels(12345);
+    level = player.getPlayerLevel();
+    exp = player.getCurrentExperience();
+    totalExp = player.getTotalExperience();
+    logger.warn("level: {} exp: {}, totalExp: {}", level, exp, totalExp);
+    player.resetPlayerLevel();
+    player.addExperience(INT32_MAX);
+    level = player.getPlayerLevel();
+    exp = player.getCurrentExperience();
+    totalExp = player.getTotalExperience();
+    logger.warn("level: {} exp: {}, totalExp: {}", level, exp, totalExp);
+    //for (int i = 0; i <= 1000; i++) {
+    //    int level = i * i;
+    //    int exp = Player::getXpNeededForLevel(level + 1);
+    //    size_t total = Player::getTotalXpNeededForLevel(level);
+    //    logger.warn("Level: {}, exp needed: {}, total exp: {}", level, exp, total);
+    //}
+    return true;
+}
+
+#endif // DEBUG

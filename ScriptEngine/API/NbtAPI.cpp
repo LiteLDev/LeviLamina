@@ -1377,7 +1377,7 @@ Local<Value> NbtListClass::setString(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
-    CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+    CHECK_ARG_TYPE(args[1], ValueKind::kString);
 
     try
     {
@@ -1406,7 +1406,7 @@ Local<Value> NbtListClass::setByteArray(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
-    CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+    CHECK_ARG_TYPE(args[1], ValueKind::kByteBuffer);
 
     try
     {

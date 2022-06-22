@@ -48,7 +48,7 @@ void RowSet::add(const Row& row)
         if (!header->check(row))
             throw std::runtime_error("RowSet::add: Row doesn't match header");
     }
-    else if (row.header && !header->empty())
+    else if (row.header && !row.header->empty())
     {
         header = row.header;
     }

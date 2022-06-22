@@ -43,6 +43,8 @@ public:
     {
         return taskId;
     }
+
+    LIAPI bool isFinished() const;
 };
 
 namespace Schedule

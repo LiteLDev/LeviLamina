@@ -73,7 +73,6 @@ bool inline IsInstanceOf(Local<Value> v)
 // 参数数量错误输出
 #define LOG_WRONG_ARGS_COUNT() LOG_ERROR_WITH_SCRIPT_INFO("Wrong number of arguments!");
 
-
 // 至少COUNT个参数
 #define CHECK_ARGS_COUNT(ARGS,COUNT) \
     if(ARGS.size()<COUNT) \
@@ -135,6 +134,14 @@ bool inline IsInstanceOf(Local<Value> v)
         return nullptr; \
     }
 
+// 检查是否TYPE类型_Setter
+#define CHECK_ARG_TYPE_S(ARG, TYPE) \
+    if (ARG.getKind() != TYPE)      \
+    {                               \
+        LOG_WRONG_ARG_TYPE();       \
+        return;             \
+    }
+
 // 截获引擎异常_Constructor
 #define CATCH_C(LOG) \
     catch(const Exception& e) \
@@ -162,6 +169,36 @@ bool inline IsInstanceOf(Local<Value> v)
         logger.error("Uncaught Exception Detected!"); \
         LOG_ERROR_WITH_SCRIPT_INFO(); \
         return nullptr; \
+    }
+
+// 截获引擎异常_Setter
+#define CATCH_S(LOG)                                                 \
+    catch (const Exception& e)                                       \
+    {                                                                \
+        logger.error(LOG##"\n");                                     \
+        PrintException(e);                                           \
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
+        return;                                                      \
+    }                                                                \
+    catch (const std::exception& e)                                  \
+    {                                                                \
+        logger.error("C++ Uncaught Exception Detected!");            \
+        logger.error(TextEncoding::toUTF8(e.what()));                \
+        LOG_ERROR_WITH_SCRIPT_INFO();                                \
+        return;                                                      \
+    }                                                                \
+    catch (const seh_exception& e)                                   \
+    {                                                                \
+        logger.error("SEH Uncaught Exception Detected!");            \
+        logger.error(TextEncoding::toUTF8(e.what()));                \
+        LOG_ERROR_WITH_SCRIPT_INFO();                                \
+        return;                                                      \
+    }                                                                \
+    catch (...)                                                      \
+    {                                                                \
+        logger.error("Uncaught Exception Detected!");                \
+        LOG_ERROR_WITH_SCRIPT_INFO();                                \
+        return;                                                      \
     }
 
 

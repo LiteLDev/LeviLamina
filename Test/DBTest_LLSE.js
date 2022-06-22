@@ -36,6 +36,8 @@ function test_db(session)
     do {
         log(stmt.fetch());
     } while (stmt.step());
+    stmt = session.prepare("SELECT * FROM test_llse WHERE a = 'foo' OR a = 'bar'");
+    log(stmt.execute().fetchAll());
     session.close();
 }
 

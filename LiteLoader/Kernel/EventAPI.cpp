@@ -367,7 +367,7 @@ THook(void, "?disconnect@ServerPlayer@@QEAAXXZ",
     {
         PlayerLeftEvent ev{};
         ev.mPlayer = sp;
-        ev.mXUID = "";
+        ev.mXUID = sp->getXuid();
         ev.call();
     }
     IF_LISTENED_END(PlayerLeftEvent)

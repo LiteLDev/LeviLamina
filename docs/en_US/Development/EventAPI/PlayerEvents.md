@@ -409,7 +409,7 @@ Replacement Item: Old Item Object's `type` does not equal the new item's `type`,
   `function(player,pos)`
 - Parameters: 
   - player : `Player`  
-    THe player that is moving.
+    The player that is moving.
   - pos : `FloatPos`  
     The current position of the player.
 - Intercept event: cannot be intercepted.

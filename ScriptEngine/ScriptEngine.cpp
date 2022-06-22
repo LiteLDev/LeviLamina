@@ -46,6 +46,7 @@ void LoadConfigFile()
         auto content = ReadAllFile(LITELOADER_CONFIG_FILE);
         if (content) {
             globalConfig = fifo_json::parse(*content, nullptr, true, true);
+            return;
         }
     }
     catch (const nlohmann::json::exception& e) {
@@ -55,6 +56,7 @@ void LoadConfigFile()
     catch (...) {
         logger.error("Fail to load config file <{}> !", LITELOADER_CONFIG_FILE);
     }
+    globalConfig = fifo_json::object();
 }
 
 void entry()
