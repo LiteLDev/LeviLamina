@@ -63,10 +63,10 @@ if "%LL_SDK_NOW_STATUS%" neq "" (
     echo.
     git add .
     if "%LL_SDK_NOW_BRANCH%" == "main" (
-        git commit -m From LiteLoader %LL_NOW_TAG%
+        git commit -m "From LiteLoader %LL_NOW_TAG%"
         git tag %LL_NOW_TAG%
     ) else (
-        git commit -m From LiteLoader %LL_NOW_TAG_LONG%
+        git commit -m "From LiteLoader %LL_NOW_TAG_LONG%"
     )
     echo.
     echo [INFO] Pushing to origin...
