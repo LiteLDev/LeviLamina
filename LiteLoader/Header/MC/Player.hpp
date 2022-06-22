@@ -122,6 +122,7 @@ public:
     LIAPI bool sendTextTalkPacket(const string& msg, Player* target/* = nullptr*/);
 
     LIAPI bool sendRawFormPacket(unsigned formId, const string& data) const;
+    LIAPI bool sendToastPacket(string title, string msg);
 
     LIAPI static bool isValid(Player* player);
 

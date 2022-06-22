@@ -12,6 +12,7 @@
 #include <MC/ServerNetworkHandler.hpp>
 #include <MC/NetworkIdentifier.hpp>
 #include <MC/NetworkPeer.hpp>
+#include <MC/ToastRequestPacket.hpp>
 
 #include <MC/ExtendedCertificate.hpp>
 #include <MC/ConnectionRequest.hpp>
@@ -38,6 +39,7 @@
 #include <bitset>
 #include <MC/ItemStackDescriptor.hpp>
 #include <MC/NetworkItemStackDescriptor.hpp>
+#include <MC/ToastRequestPacket.hpp>
 
 extern Logger logger;
 
@@ -560,6 +562,11 @@ bool Player::sendTextPacket(string text, TextType Type) const
     auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::Text);
     pkt->read(wp);
     sendNetworkPacket(*pkt);
+    return true;
+}
+
+bool Player::sendToastPacket(string title, string msg) {
+    sendNetworkPacket(ToastRequestPacket(title, msg));
     return true;
 }
 

@@ -5,6 +5,7 @@ LiteLoaderBDS-2.3.1 update has been released, adapted to BDS-1.19.1, ProtocolVer
 - Add initial support for HttpRequest and HttpResponse
 - Add biome APIs
 - Add Experience related APIs
+- Add sendToast API
 
 ## [Change]
 - Improve Dynamic command error output

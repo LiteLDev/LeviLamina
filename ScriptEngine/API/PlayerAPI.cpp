@@ -79,6 +79,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("clearItem", &PlayerClass::clearItem)
         .instanceFunction("isSprinting", &PlayerClass::isSprinting)
         .instanceFunction("setSprinting", &PlayerClass::setSprinting)
+        .instanceFunction("sendToast", &PlayerClass::sendToast)
 
         .instanceFunction("getBlockStandingOn", &PlayerClass::getBlockStandingOn)
         .instanceFunction("getDevice", &PlayerClass::getDevice)
@@ -1897,4 +1898,20 @@ Local<Value> PlayerClass::removeItem(const Arguments& args)
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in removeItem!")
+}
+
+
+Local<Value> PlayerClass::sendToast(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kString);
+    try {
+        Player* player = get();
+
+        if (!player) return Local<Value>();
+
+        player->sendToastPacket(args[0].toStr(), args[1].toStr());
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in sendToast!");
 }

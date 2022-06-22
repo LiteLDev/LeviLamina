@@ -6,6 +6,7 @@ LiteLoaderBDS-2.3.1更新已发布，适应于BDS-1.19.1，协议版本527
 [*]新增HttpRequest和HttpResponse的支持
 [*]新添群系API
 [*]新添经验相关API
+[*]新添sendToast API
 [/LIST]
 
 [HEADING=2][改变][/HEADING]
