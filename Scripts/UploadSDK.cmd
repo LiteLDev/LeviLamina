@@ -54,10 +54,10 @@ for /f "delims=" %%i in ('git status . -s') do set LL_SDK_NOW_STATUS=%%i
 if "%LL_SDK_NOW_STATUS%" neq "" (
     echo [INFO] Modified files found.
     echo.
-     git add .
+    git add .
     if "%LL_SDK_NOW_BRANCH%" == "main"(
          git commit -m %LL_NOW_TAG%
-    )else(
+    ) else (
          git commit -m "Upgrade LiteLoaderSDK"
     )
     echo.
