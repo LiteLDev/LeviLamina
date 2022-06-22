@@ -23,6 +23,7 @@ echo [INFO] Fetching LiteLoaderSDK to GitHub ...
 echo.
 
 for /f "delims=" %%i in ('git rev-parse --abbrev-ref HEAD') do set LL_SDK_NOW_BRANCH=%%i
+for /f "delims=" %%i in ('git describe') do set LL_NOW_TAG=%%i
 if not exist LiteLoaderSDK/Header/ (
     echo [WARNING] LiteLoaderSDK files no found. Pulling from remote...
     echo.
@@ -53,8 +54,12 @@ for /f "delims=" %%i in ('git status . -s') do set LL_SDK_NOW_STATUS=%%i
 if "%LL_SDK_NOW_STATUS%" neq "" (
     echo [INFO] Modified files found.
     echo.
-    git add .
-    git commit -m "Update LiteLoaderSDK"
+     git add .
+    if "%LL_SDK_NOW_BRANCH%" == "main"(
+         git commit -m %LL_NOW_TAG%
+    )else(
+         git commit -m "Upgrade LiteLoaderSDK"
+    )
     echo.
     echo [INFO] Pushing to origin...
     echo.
