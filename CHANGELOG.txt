@@ -1,20 +1,25 @@
 ## [LiteLoader Release Note]
-LiteLoaderBDS-2.3.0 update has been released, adapted to BDS-1.19.1, ProtocolVersion 527
+LiteLoaderBDS-2.3.1 update has been released, adapted to BDS-1.19.1, ProtocolVersion 527
 
 ## [New features]
-- Support BDS 1.19.1
-- Add EconomyCore switch options, #323
-  - `plugins\LiteLoader\LiteLoader.json`
-- LLMoney Remote Call Support
-- Add LLSE sneak related APIs
+- Add initial support for HttpRequest and HttpResponse
+- Add biome APIs
+- Add Experience related APIs
 
 ## [Change]
-- Update RemoteCall API
-- Change LLSE
-  - bl.setNbt
+- Improve Dynamic command error output
 
 ## [Bug Fixes]
 - Fix LL bugs:
-  - Actor::isPlayer()
+  - Teleport bug
+  - Sqlite bug,#452
+  - Vec3::toBlockPos error
+  - Xuid of PlayerLeftEvent
+  - Config loading error
+  - LLSE error when config load fails
 - Fix LLSE bugs:
-  - pl.getRespawnPosition
+  - Plugin onPostInit Error reason output
+  - NbtListClass bugs
+  - JsonConfigFile Bugs,#456
+- Fix BDS bugs:
+  - Wine console input
