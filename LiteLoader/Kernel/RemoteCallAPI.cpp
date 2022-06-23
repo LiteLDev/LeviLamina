@@ -10,7 +10,7 @@ namespace RemoteCall
 CallbackFn const EMPTY_FUNC{};
 std::unordered_map<std::string, RemoteCall::ExportedFuncData> exportedFuncs;
 
-bool exportFunc(std::string const& nameSpace, std::string const& funcName, CallbackFn&& callback, HMODULE handler)
+bool exportFunc(std::string const& nameSpace, std::string const& funcName, CallbackFn&& callback, HMODULE handle)
 {
     if (nameSpace.find("::") != nameSpace.npos)
     {
@@ -19,7 +19,7 @@ bool exportFunc(std::string const& nameSpace, std::string const& funcName, Callb
     }
     if (exportedFuncs.count(nameSpace + "::" + funcName) != 0)
         return false;
-    exportedFuncs.emplace(nameSpace + "::" + funcName, ExportedFuncData{handler, std::move(callback)});
+    exportedFuncs.emplace(nameSpace + "::" + funcName, ExportedFuncData{handle, std::move(callback)});
     return true;
 }
 
@@ -46,10 +46,10 @@ bool removeFunc(std::string const& nameSpace, std::string const& funcName)
     return removeFunc(nameSpace + "::" + funcName);
 }
 
-void _onCallError(std::string const& msg, HMODULE handler)
+void _onCallError(std::string const& msg, HMODULE handle)
 {
     logger.error(msg);
-    auto plugin = LL::getPlugin(handler);
+    auto plugin = LL::getPlugin(handle);
     if (plugin)
         logger.error("In plugin <{}>", plugin->name);
 }

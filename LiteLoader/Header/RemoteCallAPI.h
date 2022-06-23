@@ -514,12 +514,12 @@ using CallbackFn = std::function<ValueType(std::vector<ValueType>)>;
 
 struct ExportedFuncData
 {
-    HMODULE handler;
+    HMODULE handle;
     CallbackFn callback;
 };
 
 LIAPI extern CallbackFn const EMPTY_FUNC;
-LIAPI bool exportFunc(std::string const& nameSpace, std::string const& funcName, CallbackFn&& callback, HMODULE handler = GetCurrentModule());
+LIAPI bool exportFunc(std::string const& nameSpace, std::string const& funcName, CallbackFn&& callback, HMODULE handle = GetCurrentModule());
 LIAPI CallbackFn const& importFunc(std::string const& nameSpace, std::string const& funcName);
 
 
@@ -552,7 +552,7 @@ LIAPI bool hasFunc(std::string const& nameSpace, std::string const& funcName);
 LIAPI bool removeFunc(std::string const& nameSpace, std::string const& funcName);
 LIAPI int removeNameSpace(std::string const& nameSpace);
 LIAPI int removeFuncs(std::vector<std::pair<std::string, std::string>> funcs);
-LIAPI void _onCallError(std::string const& msg, HMODULE handler = GetCurrentModule());
+LIAPI void _onCallError(std::string const& msg, HMODULE handle = GetCurrentModule());
 
 template <typename RTN, typename... Args>
 inline bool _importAs(std::string const& nameSpace, std::string const& funcName, std::function<RTN(Args...)>& func)

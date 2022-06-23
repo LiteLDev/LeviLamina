@@ -24,17 +24,17 @@ public:
     long long leftTime, interval;
     int count;
     std::function<void(void)> task;
-    HMODULE handler;
+    HMODULE handle;
 
     ScheduleTaskData::ScheduleTaskData(TaskType type, std::function<void(void)> task, unsigned long long delay,
-                                       unsigned long long interval, int count, HMODULE handler)
+                                       unsigned long long interval, int count, HMODULE handle)
         : type(type)
         , task(task)
         , leftTime((long long)delay)
         , interval((long long)interval)
         , count(count)
         , taskId(++nextTaskId)
-        , handler(handler) {};
+        , handle(handle) {};
 
     inline unsigned int getTaskId() {
         return taskId;
@@ -151,20 +151,20 @@ public:
                     logger.error("SEH exception occurred in ScheduleTask!");
                     logger.error("{}", TextEncoding::toUTF8(e.what()));
                     logger.error("TaskId: {}", t.taskId);
-                    if (auto plugin = LL::getPlugin(t.handler))
+                    if (auto plugin = LL::getPlugin(t.handle))
                         logger.error("In Plugin: <{} {}>", plugin->name, plugin->version.toString());
                 }
                 catch (const std::exception& e) {
                     logger.error("Exception occurred in ScheduleTask!");
                     logger.error("{}", TextEncoding::toUTF8(e.what()));
                     logger.error("TaskId: {}", t.taskId);
-                    if (auto plugin = LL::getPlugin(t.handler))
+                    if (auto plugin = LL::getPlugin(t.handle))
                         logger.error("In Plugin: <{} {}>", plugin->name, plugin->version.toString());
                 }
                 catch (...) {
                     logger.error("Exception occurred in ScheduleTask!");
                     logger.error("TaskId: {}", t.taskId);
-                    if (auto plugin = LL::getPlugin(t.handler))
+                    if (auto plugin = LL::getPlugin(t.handle))
                         logger.error("In Plugin: <{} {}>", plugin->name, plugin->version.toString());
                 }
                 pop();
@@ -188,25 +188,25 @@ ScheduleTaskQueueType taskQueue;
 
 
 namespace Schedule {
-    ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay, HMODULE handler)
+    ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay, HMODULE handle)
     {
         if (LL::globalConfig.serverStatus >= LL::LLServerStatus::Stopping)
             return ScheduleTask((unsigned) -1);
-        ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, tickDelay, -1, -1, handler);
+        ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, tickDelay, -1, -1, handle);
         locker.lock();
         pendingTaskList.push_back(sche);
         locker.unlock();
         return ScheduleTask(sche.getTaskId());
     }
 
-    ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickRepeat, int maxCount, HMODULE handler)
+    ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickRepeat, int maxCount, HMODULE handle)
     {
         if (LL::globalConfig.serverStatus >= LL::LLServerStatus::Stopping)
             return ScheduleTask((unsigned) -1);
         ScheduleTaskData::TaskType type = maxCount < 0 ?
                                           ScheduleTaskData::TaskType::InfiniteRepeat
                                                        : ScheduleTaskData::TaskType::Repeat;
-        ScheduleTaskData sche(type, task, std::max(tickRepeat, 1ull), std::max(tickRepeat, 1ull), maxCount, handler);
+        ScheduleTaskData sche(type, task, std::max(tickRepeat, 1ull), std::max(tickRepeat, 1ull), maxCount, handle);
         locker.lock();
         pendingTaskList.push_back(sche);
         locker.unlock();
@@ -214,24 +214,24 @@ namespace Schedule {
     }
 
     ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay,
-        unsigned long long tickRepeat, int maxCount, HMODULE handler)
+        unsigned long long tickRepeat, int maxCount, HMODULE handle)
     {
         if (LL::globalConfig.serverStatus >= LL::LLServerStatus::Stopping)
             return ScheduleTask((unsigned)-1);
         ScheduleTaskData::TaskType type = maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat
                                                        : ScheduleTaskData::TaskType::Repeat;
-        ScheduleTaskData sche(type, task, tickDelay, std::max(tickRepeat, 1ull), maxCount, handler);
+        ScheduleTaskData sche(type, task, tickDelay, std::max(tickRepeat, 1ull), maxCount, handle);
         locker.lock();
         pendingTaskList.push_back(sche);
         locker.unlock();
         return ScheduleTask(sche.getTaskId());
     }
 
-    ScheduleTask nextTick(std::function<void(void)> task, HMODULE handler)
+    ScheduleTask nextTick(std::function<void(void)> task, HMODULE handle)
     {
         if (LL::globalConfig.serverStatus >= LL::LLServerStatus::Stopping)
             return ScheduleTask((unsigned) -1);
-        ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, 1, -1, -1, handler);
+        ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, 1, -1, -1, handle);
         locker.lock();
         pendingTaskList.push_back(sche);
         locker.unlock();

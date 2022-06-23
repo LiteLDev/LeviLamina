@@ -23,8 +23,8 @@ HMODULE inline GetCurrentModule()
     return nullptr;
 }
 
-// Get the module path from a module handler
-LIAPI std::string GetModulePath(HMODULE handler);
-LIAPI std::string GetModuleName(HMODULE handler);
+// Get the module path from a module handle
+LIAPI std::string GetModulePath(HMODULE handle);
+LIAPI std::string GetModuleName(HMODULE handle);
 
 LIAPI bool IsWineEnvironment();

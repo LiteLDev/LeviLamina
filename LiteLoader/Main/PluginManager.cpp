@@ -18,15 +18,15 @@ using namespace std;
 extern Logger logger;
 std::unordered_map<std::string, LL::Plugin> plugins;
 
-bool LL::PluginManager::registerPlugin(HMODULE handler, std::string name, std::string desc, LL::Version version,
+bool LL::PluginManager::registerPlugin(HMODULE handle, std::string name, std::string desc, LL::Version version,
                     std::map<std::string, std::string> others)
 {
-    if (handler != nullptr)             // DLL Plugin
+    if (handle != nullptr)             // DLL Plugin
     {
-        if (getPlugin(handler) != nullptr)
+        if (getPlugin(handle) != nullptr)
         {
-            erase_if(plugins, [&handler](auto& data) {               // Allow plugins to overwrite their own plugin registory
-                return data.second.handler == handler;
+            erase_if(plugins, [&handle](auto& data) {               // Allow plugins to overwrite their own plugin registory
+                return data.second.handle == handle;
             });                           
         }
         else if (getPlugin(name) != nullptr) {
@@ -35,7 +35,7 @@ bool LL::PluginManager::registerPlugin(HMODULE handler, std::string name, std::s
     }
 
     LL::Plugin plugin{name, desc, version, others};
-    plugin.handler = handler;
+    plugin.handle = handle;
     try
     {
         plugin.type = others.at("PluginType") == "Script Plugin" ? Plugin::PluginType::ScriptPlugin : Plugin::PluginType::DllPlugin;
@@ -43,7 +43,7 @@ bool LL::PluginManager::registerPlugin(HMODULE handler, std::string name, std::s
     }
     catch (...)
     {
-        plugin.type = handler ? Plugin::PluginType::DllPlugin : Plugin::PluginType::ScriptPlugin;
+        plugin.type = handle ? Plugin::PluginType::DllPlugin : Plugin::PluginType::ScriptPlugin;
     }
 
     try
@@ -53,8 +53,8 @@ bool LL::PluginManager::registerPlugin(HMODULE handler, std::string name, std::s
     }
     catch (...)
     {
-        if (handler)
-            plugin.filePath = GetModulePath(handler);
+        if (handle)
+            plugin.filePath = GetModulePath(handle);
     }
 
     plugins.emplace(name, plugin);
@@ -102,12 +102,12 @@ LL::Plugin* LL::PluginManager::getPlugin(std::string name, bool includeScriptPlu
     return nullptr;
 }
 
-LL::Plugin* LL::PluginManager::getPlugin(HMODULE handler) {
-    if (!handler)
+LL::Plugin* LL::PluginManager::getPlugin(HMODULE handle) {
+    if (!handle)
         return nullptr;
 
     for (auto& it : plugins) {
-        if (it.second.handler == handler) {
+        if (it.second.handle == handle) {
             return &it.second;
         }
     }
@@ -188,7 +188,7 @@ bool LL::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
         if (!getPlugin(lib))
             return false;
         //  Call onPostInit
-        auto fn = GetProcAddress(getPlugin(lib)->handler, "onPostInit");
+        auto fn = GetProcAddress(getPlugin(lib)->handle, "onPostInit");
         if (fn) {
             try {
                 ((void (*)()) fn)();
@@ -443,10 +443,10 @@ bool LL::PluginManager::callEventAtHotUnload(std::string pluginName)
 }
 
 //Helper
-LIAPI bool RegisterPlugin(HMODULE handler, std::string name, std::string desc, LL::Version version,
+LIAPI bool RegisterPlugin(HMODULE handle, std::string name, std::string desc, LL::Version version,
     std::map<std::string, std::string> others)
 {
     others["PluginType"] = "DLL Plugin";
-    others["PluginFilePath"] = handler ? GetModulePath(handler) : name;
-    return LL::PluginManager::registerPlugin(handler, name, desc, version, others);
+    others["PluginFilePath"] = handle ? GetModulePath(handle) : name;
+    return LL::PluginManager::registerPlugin(handle, name, desc, version, others);
 }
