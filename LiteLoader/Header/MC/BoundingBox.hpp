@@ -84,8 +84,13 @@ public:
             for (int x = min.x; x <= max.x; x++)
                     for (int z = min.z; z <= max.z; z++) { todo({x, y, z}); }
     }
-    inline static BoundingBox mergeBoundingBox(BoundingBox const& a, BoundingBox const& b) {
-        return BoundingBox(BlockPos::min(a.min, b.min), BlockPos::max(a.max, b.max));
+    
+    inline BoundingBox merge(BoundingBox const& a) {
+        return BoundingBox(BlockPos::min(a.min,min), BlockPos::max(a.max,max));
+    }
+    
+    inline BoundingBox merge(BlockPos const& a) {
+        return BoundingBox(BlockPos::min(a, min), BlockPos::max(a, max));
     }
 
 public:
