@@ -86,7 +86,7 @@ public:
     }
     
     inline BoundingBox merge(BoundingBox const& a) {
-        return BoundingBox(BlockPos::min(a.min,min), BlockPos::max(a.max,max));
+        return BoundingBox(BlockPos::min(a.min, min), BlockPos::max(a.max, max));
     }
     
     inline BoundingBox merge(BlockPos const& a) {
