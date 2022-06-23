@@ -54,7 +54,6 @@ public:
 private:
     HMODULE curModule;
     std::string filePath;
-    std::string defaultLangCode = "en_US";
     LangData langData;
     LangData defaultLangData;
 
@@ -62,7 +61,8 @@ private:
     void save();
 
 public:
-    static const constexpr char* POD_KEY = "_ll_plugin_i18n"; ///< PluginOwnData key
+    
+    std::string defaultLangCode = "en_US";
 
     /**
      * @brief Construct a I18N object.
@@ -96,12 +96,8 @@ public:
      */
     LIAPI std::string get(const std::string& key, const std::string& langCode = "");
 
-    /**
-     * @brief Get the default language code
-     * 
-     * @return std::string  The code
-     */
-    LIAPI std::string getDefaultLangCode();
+    static const constexpr char* POD_KEY = "_ll_plugin_i18n"; ///< PluginOwnData key
+
 };
 
 #ifdef UNICODE
@@ -175,6 +171,20 @@ namespace Translation {
     inline bool load(const std::string& filePath, const std::string& defaultLangCode = "en_US",
                      const I18N::LangData& defaultLangData = {}) {
         return loadImpl(GetCurrentModule(), filePath, defaultLangCode, defaultLangData);
+    }
+
+    /**
+     * @brief Get the I18N object of a certain plugin.
+     *
+     * @param  hPlugin              The plugin handle(nullptr -> GetCurrentModule())
+     * @return std::optional<I18N>  The I18N object
+     */
+    inline std::optional<I18N> getI18N(HMODULE hPlugin = nullptr) {
+        auto handle = (hPlugin == nullptr ? GetCurrentModule() : hPlugin);
+        if (handle && PluginOwnData::hasImpl(handle, I18N::POD_KEY)) {
+            return PluginOwnData::getImpl<I18N>(handle, I18N::POD_KEY);
+        }
+        return std::optional<I18N>();
     }
 
 }; // namespace Translation
