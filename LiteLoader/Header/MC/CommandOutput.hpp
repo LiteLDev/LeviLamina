@@ -7,11 +7,12 @@
 // Include Headers or Declare Types Here
 #include "CommandOutputParameter.hpp"
 #include "CommandOrigin.hpp"
+#include "Command.hpp"
 #include "ServerPlayer.hpp"
 #include "../Utils/PluginOwnData.h"
 #include "../I18nAPI.h"
 
-#define POD_COMMANDOUTPUT_LANGCODE "_ll_plugin_cmdoutp_langcode_" + std::to_string((uint64_t)this)
+#define POD_COMMANDOUTPUT_LANGCODE ("_ll_plugin_cmdoutp_langcode_" + std::to_string((uint64_t)this))
 #undef BEFORE_EXTRA
 
 class CommandOutput {
@@ -63,7 +64,7 @@ public:
     template <typename ... Args>
     inline void addMessage(const std::string& format, const Args&... args) {
         if (PluginOwnData::has(POD_COMMANDOUTPUT_LANGCODE))
-            this->addMessage(trl(PluginOwnData::get<std::string>(POD_COMMANDOUTPUT_LANGCODE), format, args...);
+            this->addMessage(trl(PluginOwnData::get<std::string>(POD_COMMANDOUTPUT_LANGCODE), format, args...));
         else this->addMessage(tr(format, args...));
     }
 
@@ -78,7 +79,7 @@ public:
     template <typename... Args>
     inline void success(const std::string& format, const Args&... args) {
         if (PluginOwnData::has(POD_COMMANDOUTPUT_LANGCODE))
-            this->success(trl(PluginOwnData::get<std::string>(POD_COMMANDOUTPUT_LANGCODE), format, args...);
+            this->success(trl(PluginOwnData::get<std::string>(POD_COMMANDOUTPUT_LANGCODE), format, args...));
         else this->success(tr(format, args...));
     }
     
@@ -93,7 +94,7 @@ public:
     template <typename... Args>
     inline void error(const std::string& format, const Args&... args) {
         if (PluginOwnData::has(POD_COMMANDOUTPUT_LANGCODE))
-            this->error(trl(PluginOwnData::get<std::string>(POD_COMMANDOUTPUT_LANGCODE), format, args...);
+            this->error(trl(PluginOwnData::get<std::string>(POD_COMMANDOUTPUT_LANGCODE), format, args...));
         else this->error(tr(format, args...));
     }
 
