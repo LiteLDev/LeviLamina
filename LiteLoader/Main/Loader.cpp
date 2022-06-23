@@ -198,12 +198,12 @@ void LL::LoadMain() {
     //  Call onPostInit
     auto plugins = PluginManager::getAllPlugins(false);
     for (auto&[name, plugin]: plugins) {
-        auto fn = GetProcAddress(plugin->handler, "onPostInit");
+        auto fn = GetProcAddress(plugin->handle, "onPostInit");
         if (fn) {
             try {
                 ((void (*)()) fn)();
             } catch (std::exception &e) {
-                std::string fileVersion = GetFileVersionString(plugin->handler, true);
+                std::string fileVersion = GetFileVersionString(plugin->handle, true);
                 std::string info = name;
                 if (!fileVersion.empty()) {
                     info += "<" + fileVersion + ">";
@@ -214,7 +214,7 @@ void LL::LoadMain() {
             }
             catch (...)
             {
-                std::string fileVersion = GetFileVersionString(plugin->handler, true);
+                std::string fileVersion = GetFileVersionString(plugin->handle, true);
                 std::string info = name;
                 if (!fileVersion.empty())
                 {

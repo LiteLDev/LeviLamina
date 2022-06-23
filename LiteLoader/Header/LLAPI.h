@@ -48,7 +48,7 @@ struct Plugin
     std::map<std::string, std::string> others;  // `otherInformation` before
 
     std::string filePath;
-    HMODULE handler;
+    HMODULE handle;
 
     enum class PluginType
     {
@@ -62,11 +62,12 @@ struct Plugin
     template <typename ReturnType = void, typename... Args>
     inline ReturnType callFunction(const char* functionName, Args... args)
     {
-        void* address = GetProcAddress(handler, functionName);
+        void* address = GetProcAddress(handle, functionName);
         if (!address)
             return ReturnType();
         return reinterpret_cast<ReturnType (*)(Args...)>(address)(std::forward<Args>(args)...);
     }
+
 };
 
 } // namespace LL
@@ -169,12 +170,12 @@ inline bool registerPlugin(std::string name, std::string desc, LL::Version versi
  */
 LIAPI LL::Plugin* getPlugin(std::string name);
 /**
- * @brief Get a loaded plugin by HMODULE handler
+ * @brief Get a loaded plugin by HMODULE handle
  * 
  * @param  name         The name of the plugin
  * @return LL::Plugin*  The plugin(nullptr if not found)
  */
-LIAPI LL::Plugin* getPlugin(HMODULE handler);
+LIAPI LL::Plugin* getPlugin(HMODULE handle);
 
 /**
  * @brief Get whether the plugin is loaded

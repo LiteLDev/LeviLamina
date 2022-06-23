@@ -46,7 +46,7 @@ bool EconomySystem::init()
         return false;
     }
 
-    HMODULE h = llmoney->handler;
+    HMODULE h = llmoney->handle;
 
     dynamicSymbolsMap.LLMoneyGet = (LLMoneyGet_T)GetProcAddress(h, "LLMoneyGet");
     if (!dynamicSymbolsMap.LLMoneyGet)

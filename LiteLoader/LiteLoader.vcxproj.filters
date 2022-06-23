@@ -333,7 +333,7 @@
     <ClCompile Include="Kernel\Command\DynamicCommandAPI.cpp">
       <Filter>Kernel\Command</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\I18nAPI.cpp">
+    <ClCompile Include="Kernel\I18nAPI_LL.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\Network\PacketAPI.cpp">

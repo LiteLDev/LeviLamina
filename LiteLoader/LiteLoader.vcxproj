@@ -110,9 +110,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\DB\RowSet.cpp" />
     <ClCompile Include="Kernel\DB\Session.cpp" />
     <ClCompile Include="Kernel\DB\Stmt.cpp" />
-    <ClCompile Include="Kernel\I18nAPI.cpp">
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)I18nAPI_LL.obj</ObjectFileName>
-    </ClCompile>
+    <ClCompile Include="Kernel\I18nAPI_LL.cpp" />
     <ClCompile Include="Kernel\MC\BiomeAPI.cpp" />
     <ClCompile Include="Kernel\NBT\PrettySnbtFormatAPI.cpp" />
     <ClCompile Include="Kernel\Compatibility.cpp" />

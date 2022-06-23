@@ -12,7 +12,9 @@ jobs:
     runs-on: windows-2022
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Download Server
         working-directory: ${{env.GITHUB_WORKSPACE}}
@@ -116,7 +118,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          body_path: ${{ github.workspace }}\CHANGELOG.txt
+          body_path: ${{ github.workspace }}\CHANGELOG.md
           files: |
             ${{ github.workspace }}\LiteLoader-${{ steps.rel.outputs.tag }}.zip
             ${{ github.workspace }}\PDB.zip

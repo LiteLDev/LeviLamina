@@ -181,6 +181,29 @@ mc.broadcast("Hello everyone ~ ");
 
 ```
 
+#### Display a toast to the top of the screen
+
+`pl.sendToast(title,message)`
+
+- Parameters: 
+
+  - title : `String`  
+    The title of the toast.  
+
+  - message : `string`  
+    the message that the toast may contain alongside the title.
+
+- Return value: Whether the message was sent successfully.
+- Return value type: `Boolean`
+
+```Javascript
+[JS]
+pl.sendToast("Hello","everyone ~");
+[Lua]
+
+```
+
+
 #### Execute a Command as a Player 
 
 `pl.runcmd(cmd)`

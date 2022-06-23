@@ -43,18 +43,18 @@ extern Logger logger;
     func(Command);                 \
     func(WildcardSelector);
 
-#define CatchDynamicCommandError(func, handler)                                                                   \
+#define CatchDynamicCommandError(func, handle)                                                                   \
     catch (const seh_exception& e)                                                                                \
     {                                                                                                             \
-        OutputError("Uncaught SEH Exception Detected!", e.code(), TextEncoding::toUTF8(e.what()), func, handler); \
+        OutputError("Uncaught SEH Exception Detected!", e.code(), TextEncoding::toUTF8(e.what()), func, handle); \
     }                                                                                                             \
     catch (const std::exception& e)                                                                               \
     {                                                                                                             \
-        OutputError("Uncaught C++ Exception Detected!", errno, TextEncoding::toUTF8(e.what()), func, handler);    \
+        OutputError("Uncaught C++ Exception Detected!", errno, TextEncoding::toUTF8(e.what()), func, handle);    \
     }                                                                                                             \
     catch (...)                                                                                                   \
     {                                                                                                             \
-        OutputError("Uncaught Exception Detected!", -1, "", func, handler);                                       \
+        OutputError("Uncaught Exception Detected!", -1, "", func, handle);                                       \
     }
 
 // global variable and function
@@ -127,12 +127,12 @@ auto const ParameterSizeMap = std::unordered_map<ParameterType, size_t>{
 #endif // ENABLE_PARAMETER_TYPE_POSTFIX
 };
 
-inline void OutputError(std::string errorMsg, int errorCode, std::string errorWhat, std::string func, HMODULE handler)
+inline void OutputError(std::string errorMsg, int errorCode, std::string errorWhat, std::string func, HMODULE handle)
 {
     logger.error(errorMsg);
     logger.error("Error: Code [{}] {}", errorCode, errorWhat);
     logger.error("In Function ({})", func);
-    if (auto plugin = LL::getPlugin(handler))
+    if (auto plugin = LL::getPlugin(handle))
         logger.error("In Plugin <{}>", plugin->name);
 }
 
@@ -475,7 +475,7 @@ DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicComm
 #ifdef DEBUG
     logger.info("Setting up command \"{}\"", name);
 #endif // DEBUG
-    auto handler = commandInstance->handler;
+    auto handle = commandInstance->handle;
     try
     {
         if (!commandInstance)
@@ -578,7 +578,7 @@ DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicComm
         auto res = dynamicCommandInstances.emplace(commandInstance->name, std::move(commandInstance));
         return res.first->second.get();
     }
-    CatchDynamicCommandError("DynamicCommand::_setup - " + name, handler);
+    CatchDynamicCommandError("DynamicCommand::_setup - " + name, handle);
     return nullptr;
 }
 
@@ -589,16 +589,16 @@ bool DynamicCommand::onServerCommandsRegister(CommandRegistry& registry)
     for (auto& command : delaySetupCommandInstances)
     {
         std::string name = command->getCommandName();
-        auto handler = command->handler;
+        auto handle = command->handle;
         try
         {
-            if (!LL::getPlugin(handler) && handler != GetCurrentModule())
+            if (!LL::getPlugin(handle) && handle != GetCurrentModule())
                 throw std::runtime_error("Plugin that registered command \"" + name + "\" not found");
             auto res = DynamicCommand::_setup(std::move(command));
             if (!res)
                 throw std::runtime_error("Command \"" + name + "\" setup failed");
         }
-        CatchDynamicCommandError("DynamicCommand::_setup - " + name, handler);
+        CatchDynamicCommandError("DynamicCommand::_setup - " + name, handle);
     };
     delaySetupCommandInstances.clear();
     return true;
@@ -653,12 +653,12 @@ void DynamicCommand::execute(CommandOrigin const& origin, CommandOutput& output)
         }
         commandIns.callback(*this, origin, output, results);
     }
-    CatchDynamicCommandError("DynamicCommand::execute", commandIns.handler);
+    CatchDynamicCommandError("DynamicCommand::execute", commandIns.handle);
 }
 
-std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(std::string const& name, std::string const& description, CommandPermissionLevel permission, CommandFlag flag1, CommandFlag flag2, HMODULE handler)
+std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(std::string const& name, std::string const& description, CommandPermissionLevel permission, CommandFlag flag1, CommandFlag flag2, HMODULE handle)
 {
-    return DynamicCommandInstance::create(name, description, permission, flag1 |= flag2, handler);
+    return DynamicCommandInstance::create(name, description, permission, flag1 |= flag2, handle);
 }
 #include <LLAPI.h>
 #include <EventAPI.h>
@@ -685,9 +685,9 @@ DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class Dynami
     return ptr;
 }
 
-std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(std::string const& name, std::string const& description, std::unordered_map<std::string, std::vector<std::string>>&& enums, std::vector<ParameterData>&& params, std::vector<std::vector<std::string>>&& overloads, CallBackFn callback, CommandPermissionLevel permission, CommandFlag flag1, CommandFlag flag2, HMODULE handler)
+std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(std::string const& name, std::string const& description, std::unordered_map<std::string, std::vector<std::string>>&& enums, std::vector<ParameterData>&& params, std::vector<std::vector<std::string>>&& overloads, CallBackFn callback, CommandPermissionLevel permission, CommandFlag flag1, CommandFlag flag2, HMODULE handle)
 {
-    auto command = createCommand(name, description, permission, flag1, flag2, handler);
+    auto command = createCommand(name, description, permission, flag1, flag2, handle);
     if (!command)
         return false;
     for (auto& [name, values] : enums)
@@ -760,12 +760,12 @@ DynamicCommandInstance const* DynamicCommand::getInstance(std::string const& com
 
 #pragma region DynamicCommandInstance
 
-inline DynamicCommandInstance::DynamicCommandInstance(std::string const& name, std::string const& description, CommandPermissionLevel permission, CommandFlag flag, HMODULE handler)
+inline DynamicCommandInstance::DynamicCommandInstance(std::string const& name, std::string const& description, CommandPermissionLevel permission, CommandFlag flag, HMODULE handle)
     : name(name)
     , description(std::make_unique<std::string>(description))
     , permission(permission)
     , flag(flag)
-    , handler(handler){};
+    , handle(handle){};
 
 inline DynamicCommandInstance::~DynamicCommandInstance()
 {
@@ -774,7 +774,7 @@ inline DynamicCommandInstance::~DynamicCommandInstance()
     this->builder = nullptr;
 }
 
-inline std::unique_ptr<DynamicCommandInstance> DynamicCommandInstance::create(std::string const& name, std::string const& description, CommandPermissionLevel permission, CommandFlag flag, HMODULE handler)
+inline std::unique_ptr<DynamicCommandInstance> DynamicCommandInstance::create(std::string const& name, std::string const& description, CommandPermissionLevel permission, CommandFlag flag, HMODULE handle)
 {
     if (LL::globalConfig.serverStatus != LL::LLServerStatus::Running)
     {
@@ -792,7 +792,7 @@ inline std::unique_ptr<DynamicCommandInstance> DynamicCommandInstance::create(st
         logger.error("Command \"{}\" already exists", name);
         return {};
     }
-    return std::unique_ptr<DynamicCommandInstance>(new DynamicCommandInstance(name, description, permission, flag, handler));
+    return std::unique_ptr<DynamicCommandInstance>(new DynamicCommandInstance(name, description, permission, flag, handle));
 }
 
 inline bool DynamicCommandInstance::addOverload(std::vector<DynamicCommand::ParameterData>&& params)
