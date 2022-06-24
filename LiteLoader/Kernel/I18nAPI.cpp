@@ -154,20 +154,21 @@ namespace Translation {
         return loadImpl(hPlugin, filePath, "en_US", {});
     }
 
-    bool loadImpl(HMODULE hPlugin, const std::string& filePath, const std::string& defaultLangCode,
+   I18N* loadImpl(HMODULE hPlugin, const std::string& filePath, const std::string& defaultLangCode,
                   const I18N::LangData& defaultLangData) {
         try {
             I18N i18n(filePath, defaultLangCode, defaultLangData, hPlugin);
+            return &PluginOwnData::getImpl<I18N>(hPlugin, I18N::POD_KEY);
         } catch (const std::exception& e) {
             logger.error("Fail to load translation file <{}> !", filePath);
             logger.error("{}", TextEncoding::toUTF8(e.what()));
-            return false;
+            return nullptr;
         } catch (...) {
             logger.error("Fail to load translation file <{}> !", filePath);
-            return false;
+            return nullptr;
         }
-        return true;
-    }
+        return nullptr;
+   }
 }; // namespace Translation
 
 namespace TextEncoding {

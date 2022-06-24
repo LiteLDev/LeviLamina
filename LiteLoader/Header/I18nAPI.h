@@ -85,6 +85,10 @@ public:
         load(filePath);
         PluginOwnData::setImpl<I18N>(curModule, POD_KEY, *this);
     }
+    /// Copy constructor
+    I18N(const I18N& other) {
+        *this = other;
+    }
 
     /**
      * @brief Get the translation of the specified key.
@@ -157,8 +161,8 @@ namespace Translation {
     }
 
     [[deprecated]] LIAPI bool loadImpl(HMODULE hPlugin, const std::string& filePath); // For compatibility
-    LIAPI bool loadImpl(HMODULE hPlugin, const std::string& filePath, const std::string& defaultLangCode,
-                        const I18N::LangData& defaultLangData);
+    LIAPI I18N* loadImpl(HMODULE hPlugin, const std::string& filePath, const std::string& defaultLangCode,
+                         const I18N::LangData& defaultLangData);
 
     /**
      * @brief Load i18n from a file.
@@ -166,9 +170,9 @@ namespace Translation {
      * @param  filePath         The path to the i18n file(json)
      * @param  defaultLangCode  The default language code(if no lang code is specified, it will use this)
      * @param  defaultLangData  The default translation data
-     * @return True if load successfully, false otherwise.
+     * @return I18N*            The pointer to the I18N object in PluginOwnData, null if failed
      */
-    inline bool load(const std::string& filePath, const std::string& defaultLangCode = "en_US",
+    inline I18N* load(const std::string& filePath, const std::string& defaultLangCode = "en_US",
                      const I18N::LangData& defaultLangData = {}) {
         return loadImpl(GetCurrentModule(), filePath, defaultLangCode, defaultLangData);
     }
