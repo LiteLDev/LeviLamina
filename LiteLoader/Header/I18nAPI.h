@@ -288,7 +288,7 @@ inline const char* trc(const char* formatStr, const Args&... args) {
  * @endcode
  */
 template <typename S, typename... Args>
-inline std::string trl(const std::string& langCode, const std::string& formatStr, const Args&... args) {
+inline std::string trl(const std::string& langCode, const S& formatStr, const Args&... args) {
     return Translation::trlImpl(GetCurrentModule(), langCode, formatStr, args...);
 }
 
@@ -297,7 +297,7 @@ inline std::string trl(const std::string& langCode, const std::string& formatStr
  *
  * @tparam Args         ...
  * @param  langCode     The language code like en_US
- * @param  formatStr    The str to translate and format
+ * @param  formatStr    The str to translate and format(c-style)
  * @param  args         The format arguments
  * @return std::string  The translated str
  * @see    fmt::format
@@ -307,7 +307,7 @@ inline std::string trl(const std::string& langCode, const std::string& formatStr
  * trl("zh_CN", "There are {0} days before {1} to come back", 3, "alex");
  * @endcode
  */
-template <typename S, typename... Args>
+template <typename... Args>
 inline std::string trl(const std::string& langCode, const char* formatStr, const Args&... args) {
     return trl(langCode, std::string(formatStr), args...);
 }

@@ -20,6 +20,25 @@ class CommandOutput {
 #define AFTER_EXTRA
 // Add Member There
 public:
+
+    /**
+     * @brief Output a message(without I18N).
+     * 
+     * @param str  The message
+     */
+    LIAPI void addMessage(const std::string& str);
+    /**
+     * @brief Output a success message(without I18N).
+     *
+     * @param str  The message
+     */
+    LIAPI void success(const string& str);
+    /**
+     * @brief Output a success message(without I18N).
+     *
+     * @param str  The message
+     */
+    LIAPI void error(const string& str);
     
     /**
      * @brief Set the output language code of this CommandOutput object.
@@ -58,7 +77,7 @@ public:
      * @see    tr
      */
     template <typename ... Args>
-    inline void addMessage(const std::string& format, const Args&... args) {
+    inline void trAddMessage(const std::string& format, const Args&... args) {
         if (PluginOwnData::has(POD_COMMANDOUTPUT_LANGCODE))
             this->addMessage(trl(PluginOwnData::get<std::string>(POD_COMMANDOUTPUT_LANGCODE), format, args...));
         else this->addMessage(tr(format, args...));
@@ -73,7 +92,7 @@ public:
      * @see    tr
      */
     template <typename... Args>
-    inline void success(const std::string& format, const Args&... args) {
+    inline void trSuccess(const std::string& format, const Args&... args) {
         if (PluginOwnData::has(POD_COMMANDOUTPUT_LANGCODE))
             this->success(trl(PluginOwnData::get<std::string>(POD_COMMANDOUTPUT_LANGCODE), format, args...));
         else this->success(tr(format, args...));
@@ -88,7 +107,7 @@ public:
      * @see    tr
      */
     template <typename... Args>
-    inline void error(const std::string& format, const Args&... args) {
+    inline void trError(const std::string& format, const Args&... args) {
         if (PluginOwnData::has(POD_COMMANDOUTPUT_LANGCODE))
             this->error(trl(PluginOwnData::get<std::string>(POD_COMMANDOUTPUT_LANGCODE), format, args...));
         else this->error(tr(format, args...));
