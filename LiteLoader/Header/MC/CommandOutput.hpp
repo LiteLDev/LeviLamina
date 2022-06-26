@@ -20,9 +20,6 @@ class CommandOutput {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    LIAPI void addMessage(std::string str);
-    LIAPI void success(const string& str);
-    LIAPI void error(const string& str);
     
     /**
      * @brief Set the output language code of this CommandOutput object.
@@ -45,8 +42,7 @@ public:
                 case OriginType::Player: 
                     code = ori.getPlayer()->getLanguageCode();
                     break;
-                default:
-                    code = i18n.getDefaultLangCode();
+                default: code = i18n.defaultLangCode;
                     break;
             }
         }
