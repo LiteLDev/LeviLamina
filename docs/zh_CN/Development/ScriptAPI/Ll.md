@@ -143,23 +143,24 @@ LLSE提供了接口 import 来导入其他插件已经导出的函数。
 
 #### 远程调用参数类型对照，其中Type可以为其他受支持的类型
 
-| 内部类型 | C++ | ScriptEngine | .Net |
+| 内部类型 | C++ | ScriptEngine | .NET |
 | -- | -- | -- | -- | 
-| `std::nullptr_t` | `std::nullptr_t` | `Null` | - | 
-| `bool` | `bool` | `Boolean` | - | 
-| `RemoteCall::NumberType` | `__int64`, `double`... | `Number` | - | 
-| `std::string` | `std::string` | `String` | - | 
-| `std::vector<Type>` | `std::vector<Type>` | `Array` | - | 
-| `std::unordered_map<std::string,Type>` | `std::unordered_map<std::string,Type>` | `Array` | - | 
-| `Actor*` | `Actor*` | `Entity` | - | 
-| `Player*` | `Player*` | `Player` | - | 
-| `RemoteCall::ItemType` | `ItemStack*`, `std::unique_ptr<ItemStack>` | `Item` | - | 
-| `RemoteCall::BlockType` | `Block*`, `BlockInstance` | `Block` | - | 
-| `BlockActor*` | `BlockActor*` | `BlockActor` | - | 
-| `Container*` | `Container*` | `Container` | - | 
-| `Vec3` | `Vec3` | `FloatPos` | - | 
-| `BlockPos` | `BlockPos` | `IntPos` | - | 
-| `RemoteCall::NbtType` | `CompoundTag*`,`std::unique_ptr<CompoundTag>` | `NBTCompound` | - | 
+| `std::nullptr_t` | `std::nullptr_t` | `Null` | `null` / `Nothing` / `nullptr`
+ | 
+| `bool` | `bool` | `Boolean` | `Boolean` | 
+| `RemoteCall::NumberType` | `__int64`, `double`... | `Number` | `Int64`, `Double`... | 
+| `std::string` | `std::string` | `String` | `String` | 
+| `std::vector<Type>` | `std::vector<Type>` | `Array` | `List<Type>` | 
+| `std::unordered_map<std::string,Type>` | `std::unordered_map<std::string,Type>` | `Array` | `Dictionary<String,Type>` | 
+| `Actor*` | `Actor*` | `Entity` | `MC.Actor` | 
+| `Player*` | `Player*` | `Player` | `MC.Player` | 
+| `RemoteCall::ItemType` | `ItemStack*`, `std::unique_ptr<ItemStack>` | `Item` | `RemoteCall.ItemType` | 
+| `RemoteCall::BlockType` | `Block*`, `BlockInstance` | `Block` | `RemoteCall.BlockType` | 
+| `BlockActor*` | `BlockActor*` | `BlockActor` | `MC.BlockActor` | 
+| `Container*` | `Container*` | `Container` | `MC.Container` | 
+| `RemoteCall::WorldPosType` | `Vec3`,`std::pair<Vec3,int>` | `FloatPos` | `MC.Vec3`,`RemoteCall.WorldPosType` | 
+| `RemoteCall::BlockPosType` | `BlockPos`,`std::pair<BlockPos, int>` | `IntPos` | `MC.BlockPos`,`RemoteCall.BlockPosType` | 
+| `RemoteCall::NbtType` | `CompoundTag*`,`std::unique_ptr<CompoundTag>` | `NBTCompound` | `RemoteCall.NbtType` | 
 
 #### 远程调用函数举例说明
 
