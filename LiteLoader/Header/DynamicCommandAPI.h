@@ -412,7 +412,7 @@ public:
     /*0*/ virtual ~DynamicCommand();
     /*1*/ virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
-    LIAPI static std::unique_ptr<class DynamicCommandInstance> createCommand(std::string const& name, std::string const& description, CommandPermissionLevel permission = CommandPermissionLevel::GameMasters, CommandFlag flag1 = {(CommandFlagValue)0x80}, CommandFlag flag2 = {(CommandFlagValue)0}, HMODULE handler = GetCurrentModule());
+    LIAPI static std::unique_ptr<class DynamicCommandInstance> createCommand(std::string const& name, std::string const& description, CommandPermissionLevel permission = CommandPermissionLevel::GameMasters, CommandFlag flag1 = {(CommandFlagValue)0x80}, CommandFlag flag2 = {(CommandFlagValue)0}, HMODULE handle = GetCurrentModule());
     LIAPI static std::unique_ptr<class DynamicCommandInstance> createCommand(
         std::string const& name,
         std::string const& description,
@@ -423,7 +423,7 @@ public:
         CommandPermissionLevel permission = CommandPermissionLevel::GameMasters,
         CommandFlag flag1 = {(CommandFlagValue)0x80},
         CommandFlag flag2 = {(CommandFlagValue)0},
-        HMODULE handler = GetCurrentModule());
+        HMODULE handle = GetCurrentModule());
 
     LIAPI static DynamicCommandInstance const* setup(std::unique_ptr<class DynamicCommandInstance> commandInstance);
     inline static DynamicCommandInstance const* setup(
@@ -436,9 +436,9 @@ public:
         CommandPermissionLevel permission = CommandPermissionLevel::GameMasters,
         CommandFlag flag1 = {(CommandFlagValue)0x80},
         CommandFlag flag2 = {(CommandFlagValue)0},
-        HMODULE handler = GetCurrentModule())
+        HMODULE handle = GetCurrentModule())
     {
-        return setup(createCommand(name, description, std::move(enums), std::move(params), std::move(overloads), std::move(callback), permission, flag1, flag2, handler));
+        return setup(createCommand(name, description, std::move(enums), std::move(params), std::move(overloads), std::move(callback), permission, flag1, flag2, handle));
     };
 
     // Experiment
@@ -507,11 +507,11 @@ private:
     std::vector<std::vector<ParameterIndex>> overloads = {}; // indices of parameter instance
 
     mutable DynamicCommand::CallBackFn callback = nullptr;
-    HMODULE handler = nullptr;
+    HMODULE handle = nullptr;
 
     friend class DynamicCommand;
 
-    LIAPI DynamicCommandInstance(std::string const& name, std::string const& description, CommandPermissionLevel permission = CommandPermissionLevel::GameMasters, CommandFlag flag = {(CommandFlagValue)0x80}, HMODULE handler = GetCurrentModule());
+    LIAPI DynamicCommandInstance(std::string const& name, std::string const& description, CommandPermissionLevel permission = CommandPermissionLevel::GameMasters, CommandFlag flag = {(CommandFlagValue)0x80}, HMODULE handle = GetCurrentModule());
 
     LIAPI bool setBuilder(DynamicCommand::BuilderFn builder);
     LIAPI DynamicCommand::BuilderFn initCommandBuilder();
@@ -520,7 +520,7 @@ private:
 public:
     virtual ~DynamicCommandInstance();
 
-    LIAPI static std::unique_ptr<DynamicCommandInstance> create(std::string const& name, std::string const& description, CommandPermissionLevel permission, CommandFlag flag, HMODULE handler = GetCurrentModule());
+    LIAPI static std::unique_ptr<DynamicCommandInstance> create(std::string const& name, std::string const& description, CommandPermissionLevel permission, CommandFlag flag, HMODULE handle = GetCurrentModule());
     LIAPI std::string const& setEnum(std::string const& description, std::vector<std::string> const& values);
     LIAPI std::string const& getEnumValue(int index) const;
     LIAPI ParameterIndex newParameter(DynamicCommand::ParameterData&& data);

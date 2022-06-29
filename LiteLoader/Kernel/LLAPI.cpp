@@ -38,8 +38,8 @@ LL::Plugin *LL::getPlugin(std::string name) {
     return PluginManager::getPlugin(name);
 }
 
-LL::Plugin *LL::getPlugin(HMODULE handler) {
-    return PluginManager::getPlugin(handler);
+LL::Plugin *LL::getPlugin(HMODULE handle) {
+    return PluginManager::getPlugin(handle);
 }
 
 bool LL::hasPlugin(std::string name) {
