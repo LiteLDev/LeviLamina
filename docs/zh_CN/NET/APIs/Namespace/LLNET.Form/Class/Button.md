@@ -18,7 +18,7 @@ public ref class Button: public SimpleFormElement
 ```
 <br>
 
-继承 [Object](https://docs.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0) → [SimpleFormElement] → [Button](Button.md)
+继承 [Object](https://docs.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0) → [SimpleFormElement] → [Button](zh_CN/NET/APIs/Namespace/LLNET.Form/Class/Button.md)
 
 <br>
 

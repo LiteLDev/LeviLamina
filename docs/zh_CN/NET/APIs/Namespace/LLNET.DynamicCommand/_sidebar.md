@@ -1,19 +1,16 @@
 - LLNET.DynamicCommand 命名空间
   - 类
-    - [DynamicCommandInvalidCastException](Class/DynamicCommandInvalidCastException/DynamicCommandInvalidCastException.md)
-    - [HookFailedException](Class/HookFailedException/HookFailedException.md)
-    - [InvalidRemoteCallTypeException](Class/InvalidRemoteCallTypeException/InvalidRemoteCallTypeException.md)
-    - [LibPathAttribute](Class/LibPathAttribute/LibPathAttribute.md)
-    - [LiteLoaderDotNETException](Class/LiteLoaderDotNETException/LiteLoaderDotNETException.md)
-    - [MCException](Class/MCException/MCException.md)
-    - [NativePluginException](Class/NativePluginException/NativePluginException.md)
-    - [PluginMainAttribute](Class/PluginMainAttribute/PluginMainAttribute.md)
-    - [RegisterCommandException](Class/RegisterCommandException/RegisterCommandException.md)
-    - [RemoteCallExportFunctionException](Class/RemoteCallExportFunctionException/RemoteCallExportFunctionException.md)
-    - [RemoteCallImportFunctionException](Class/RemoteCallImportFunctionException/RemoteCallImportFunctionException.md)
+    - [CommandAliasAttribute](zh_CN/NET/APIs/Namespace/LLNET.DynamicCommand/Class/CommandAliasAttribute/CommandAliasAttribute.md)
+    - [CommandAttribute](zh_CN/NET/APIs/Namespace/LLNET.DynamicCommand/Class/CommandAttribute/CommandAttribute.md)
+    - [CommandEmptyOverloadAttribute](zh_CN/NET/APIs/Namespace/LLNET.DynamicCommand/Class/CommandEmptyOverloadAttribute/CommandEmptyOverloadAttribute.md)
+    - [CommandEnumAttribute](zh_CN/NET/APIs/Namespace/LLNET.DynamicCommand/Class/CommandEnumAttribute/CommandEnumAttribute.md)
+    - [CommandParameterAttribute](zh_CN/NET/APIs/Namespace/LLNET.DynamicCommand/Class/CommandParameterAttribute/CommandParameterAttribute.md)
+    - [CommandParameterOverloadAttribute]
+    - [DynamicCommand]
+    - [DynamicCommandInstance]
   - 结构
-    - [Pair<TKey,TValue>](Struct/Pair/Pair.md)
-    - [SecondaryRankPtr](Struct/SecondaryRankPtr/SecondaryRankPtr.md)
   - 接口
-    - [IPluginInitializer](Interface/IPluginInitializer/IPluginInitializer.md)
+  - [ICommand]
+  - [ICommandData]
+  - [ICommandEvent]
   - 枚举

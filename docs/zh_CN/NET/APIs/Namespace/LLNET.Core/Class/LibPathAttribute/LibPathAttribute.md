@@ -22,7 +22,7 @@ public ref class LibPathAttribute
 ```
 <br>
 
-继承 [Object](https://docs.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0) → [Attribute](https://docs.microsoft.com/zh-cn/dotnet/api/system.attribute?view=net-6.0) → [LibPathAttribute](LibPathAttribute.md)
+继承 [Object](https://docs.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0) → [Attribute](https://docs.microsoft.com/zh-cn/dotnet/api/system.attribute?view=net-6.0) → [LibPathAttribute](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/LibPathAttribute/LibPathAttribute.md)
    
 <br>
 
@@ -55,6 +55,6 @@ using LLNET.Core;
 - 
     |||
     |-|-|
-    |[Path](Properties/Path.md)|获取或设置当前实例路径。|
+    |[Path](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/LibPathAttribute/Properties/Path.md)|获取或设置当前实例路径。|
 
 

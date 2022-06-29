@@ -69,8 +69,8 @@ namespace PluginMain
 
 ## 定义自定义插件入口
 
->自定义插件入口不必受限制于命名空间与类名，通过继承 [LLNET.Core](../APIs/Namespace/LLNET.Core/LLNET.Core.md) 命名空间下的 [IPluginInitializer](../APIs/Namespace/LLNET.Core/Interface/IPluginInitializer/IPluginInitializer.md) 接口并实现接口属性与方法，即可完成插件入口的定义与插件信息的注册。<br><br> 
-自定义入口需要 [PluginMainAtribute](../APIs/Namespace/LLNET.Core/Class/PluginMainAttribute/PluginMainAttribute.md) 的配合使用。
+>自定义插件入口不必受限制于命名空间与类名，通过继承 [LLNET.Core](zh_CN/NET/APIs/Namespace/LLNET.Core/LLNET.Core.md) 命名空间下的 [IPluginInitializer](zh_CN/NET/APIs/Namespace/LLNET.Core/Interface/IPluginInitializer/IPluginInitializer.md) 接口并实现接口属性与方法，即可完成插件入口的定义与插件信息的注册。<br><br> 
+自定义入口需要 [PluginMainAtribute](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/PluginMainAttribute/PluginMainAttribute.md) 的配合使用。
 
 <br>
 

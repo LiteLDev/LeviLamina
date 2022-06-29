@@ -70,7 +70,7 @@ namespace PluginMain
 
             var button1 = new Button("Button1",String.Empty,player => 
             {
-                MC.Level.RuncmdEx($"kill \"{player.Name}\"");
+                MC.Level.RuncmdEx($"kill /"{player.Name}/"");
             });
 
             //追加按钮
@@ -106,7 +106,7 @@ namespace PluginMain
 
             var button1 = new Button("Button1",String.Empty,player => 
             {
-                MC.Level.RuncmdEx($"kill \"{player.Name}\"");
+                MC.Level.RuncmdEx($"kill /"{player.Name}/"");
             });
 
             //追加按钮
@@ -286,4 +286,4 @@ namespace PluginMain
 
 >[!WARNING|label:性能注意事项]
 >
->参见 [自定义表单底层相关](../HowItWorks/CustomForm.md)。
+>参见 [自定义表单底层相关](zh_CN/NET/HowItWorks/CustomForm.md)。

@@ -30,7 +30,7 @@ TValue
 <br>
 
 
-继承 [Object](https://docs.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0) → [ValueType](https://docs.microsoft.com/zh-cn/dotnet/api/system.valuetype?view=net-6.0) → [Pair<TKey,TValue>](../../Struct/Pair/Pair.md)
+继承 [Object](https://docs.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0) → [ValueType](https://docs.microsoft.com/zh-cn/dotnet/api/system.valuetype?view=net-6.0) → [Pair<TKey,TValue>](zh_CN/NET/APIs/Namespace/LLNET.Core/Struct/Pair/Pair.md)
 
 <br>
 

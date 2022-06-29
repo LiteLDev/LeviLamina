@@ -1,14 +1,15 @@
 - LLNET.AllowList 命名空间
   - 类
-    - **[AllowListManager](zh_CN\NET\APIs\Namespace\LLNET.AllowList\AllowListManager.md)**
+    - **[AllowListManager](zh_CN/NET/APIs/Namespace/LLNET.AllowList/AllowListManager.md)**
       - 属性
-        - [Size](Properties/Size.md)
-        - [AllowList](Properties/AllowList.md)
+        - [Size](zh_CN/NET/APIs/Namespace/LLNET.AllowList/Class/AllowListManager/Properties/Size.md)
+        - [AllowList](zh_CN/NET/APIs/Namespace/LLNET.AllowList/Class/AllowListManager/Properties/AllowList.md)
       - 方法
-        - [Add](Method/Add.md)
-        - [Has](Method/Has.md)
-        - [Remove](Method/Remove.md)
-        - [Reload](Method/Reload.md)
+        - [Add](zh_CN/NET/APIs/Namespace/LLNET.AllowList/Class/AllowListManager/Method/Add.md)
+        - [Has](zh_CN/NET/APIs/Namespace/LLNET.AllowList/Class/AllowListManager/Method/Has.md)
+        - [Remove](zh_CN/NET/APIs/Namespace/LLNET.AllowList/Class/AllowListManager/Method/Remove.md)
+        - [Reload](zh_CN/NET/APIs/Namespace/LLNET.AllowList/Class/AllowListManager/Method/Reload.md)
   - 结构
   - 接口
   - 枚举
+- [👈 返回上一页](zh_CN/NET/)

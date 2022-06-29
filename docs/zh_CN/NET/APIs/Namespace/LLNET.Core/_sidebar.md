@@ -1,19 +1,19 @@
 - LLNET.Core 命名空间
   - 类
-    - [DynamicCommandInvalidCastException](Class/DynamicCommandInvalidCastException/DynamicCommandInvalidCastException.md)
-    - [HookFailedException](Class/HookFailedException/HookFailedException.md)
-    - [InvalidRemoteCallTypeException](Class/InvalidRemoteCallTypeException/InvalidRemoteCallTypeException.md)
-    - [LibPathAttribute](Class/LibPathAttribute/LibPathAttribute.md)
-    - [LiteLoaderDotNETException](Class/LiteLoaderDotNETException/LiteLoaderDotNETException.md)
-    - [MCException](Class/MCException/MCException.md)
-    - [NativePluginException](Class/NativePluginException/NativePluginException.md)
-    - [PluginMainAttribute](Class/PluginMainAttribute/PluginMainAttribute.md)
-    - [RegisterCommandException](Class/RegisterCommandException/RegisterCommandException.md)
-    - [RemoteCallExportFunctionException](Class/RemoteCallExportFunctionException/RemoteCallExportFunctionException.md)
-    - [RemoteCallImportFunctionException](Class/RemoteCallImportFunctionException/RemoteCallImportFunctionException.md)
+    - [DynamicCommandInvalidCastException](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/DynamicCommandInvalidCastException/DynamicCommandInvalidCastException.md)
+    - [HookFailedException](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/HookFailedException/HookFailedException.md)
+    - [InvalidRemoteCallTypeException](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/InvalidRemoteCallTypeException/InvalidRemoteCallTypeException.md)
+    - [LibPathAttribute](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/LibPathAttribute/LibPathAttribute.md)
+    - [LiteLoaderDotNETException](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/LiteLoaderDotNETException/LiteLoaderDotNETException.md)
+    - [MCException](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/MCException/MCException.md)
+    - [NativePluginException](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/NativePluginException/NativePluginException.md)
+    - [PluginMainAttribute](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/PluginMainAttribute/PluginMainAttribute.md)
+    - [RegisterCommandException](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/RegisterCommandException/RegisterCommandException.md)
+    - [RemoteCallExportFunctionException](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/RemoteCallExportFunctionException/RemoteCallExportFunctionException.md)
+    - [RemoteCallImportFunctionException](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/RemoteCallImportFunctionException/RemoteCallImportFunctionException.md)
   - 结构
-    - [Pair<TKey,TValue>](Struct/Pair/Pair.md)
-    - [SecondaryRankPtr](Struct/SecondaryRankPtr/SecondaryRankPtr.md)
+    - [Pair<TKey,TValue>](zh_CN/NET/APIs/Namespace/LLNET.Core/Struct/Pair/Pair.md)
+    - [SecondaryRankPtr](zh_CN/NET/APIs/Namespace/LLNET.Core/Struct/SecondaryRankPtr/SecondaryRankPtr.md)
   - 接口
-    - [IPluginInitializer](Interface/IPluginInitializer/IPluginInitializer.md)
+    - [IPluginInitializer](zh_CN/NET/APIs/Namespace/LLNET.Core/Interface/IPluginInitializer/IPluginInitializer.md)
   - 枚举

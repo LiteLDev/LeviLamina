@@ -22,7 +22,7 @@ public ref class CommandEmptyOverloadAttribute
 ```
 <br>
 
-继承 [Object](https://docs.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0) → [Attribute](https://docs.microsoft.com/zh-cn/dotnet/api/system.attribute?view=net-6.0) → [CommandEmptyOverloadAttribute](CommandEmptyOverloadAttribute.md)
+继承 [Object](https://docs.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0) → [Attribute](https://docs.microsoft.com/zh-cn/dotnet/api/system.attribute?view=net-6.0) → [CommandEmptyOverloadAttribute](zh_CN/NET/APIs/Namespace/LLNET.DynamicCommand/Class/CommandEmptyOverloadAttribute/CommandEmptyOverloadAttribute.md)
    
 <br>
 
