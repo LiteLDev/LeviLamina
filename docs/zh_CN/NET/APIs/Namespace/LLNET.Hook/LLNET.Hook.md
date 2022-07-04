@@ -8,11 +8,8 @@
 
 |||
 |-|-|
-|[HookAPI](zh_CN/NET/APIs/Namespace/LLNET.Hook/Class/HookAPI.md)|包含与钩子和符号相关的各种接口。|
-|[HookSymbolAttribute](zh_CN/NET/APIs/Namespace/LLNET.Hook/Class/HookSymbolAttribute.md)|用于指定THook派生类符号的特性。|
-|[Thook](zh_CN/NET/APIs/Namespace/LLNET.Hook/Class/Thook.md)|包含用于注册自定义Thook的接口。|
+|[HookAPI](Class/HookAPI.md)|包含与钩子和符号相关的各种接口。|
+|[HookSymbolAttribute](Class/HookSymbolAttribute.md)|用于指定THook派生类符号的特性。|
+|[Thook](Class/Thook.md)|包含用于注册自定义Thook的接口。|
 |[THookBase<TDelegate>]|自定义THook基类。|
 |[THookRegister]|用于注册THook的底层类。|
-
-
-

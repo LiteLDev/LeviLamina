@@ -1,4 +1,4 @@
-# LiteLoaderBDS Documentation
+# Home
 
 [![status](https://img.shields.io/github/workflow/status/LiteLDev/LiteLoader/Build%20LiteLoader?style=for-the-badge)](https://github.com/LiteLDev/LiteLoader/actions)
 [
