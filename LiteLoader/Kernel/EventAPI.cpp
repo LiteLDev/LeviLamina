@@ -798,6 +798,10 @@ TClasslessInstanceHook(bool, "?_useOn@DoorItem@@EEBA_NAEAVItemStack@@AEAVActor@@
                     break;
                 case 8:
                     v11 = VanillaBlocks::mWarpedDoor;
+                    break;
+                case 9: 
+                    v11 = VanillaBlocks::mMangroveDoor;
+                    break;
             }
             if (!v11) return false;
             ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(v11), {a4.x, a4.y + 1, a4.z}, (int)a3->getDimensionId());
