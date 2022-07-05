@@ -132,7 +132,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
             }
         if (abnormal && !mayFromReducer)
         {
-            string cmd = ReplaceStr(globalConfig.antiGiveCommand, "{player}", sp->getRealName());
+            string cmd = ReplaceStr(globalConfig.antiGiveCommand, "{player}", "\"" + sp->getRealName() + "\"");
             Level::runcmd(cmd);
             return;
         }
