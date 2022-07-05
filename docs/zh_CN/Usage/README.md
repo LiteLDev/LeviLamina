@@ -36,10 +36,10 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 
 安装完毕后，以下命令可以为您管理服务器提供帮助：
 
-启动服务器：`docker container start liteloader`
-停止服务器：`docker container stop -t 30 liteloader`
-进入控制台：`docker attach liteloader`
-退出控制台：按下 `Ctrl + P + Q`
+启动服务器：`docker container start liteloader`  
+停止服务器：`docker container stop -t 30 liteloader`  
+进入控制台：`docker attach liteloader`  
+退出控制台：按下 `Ctrl + P + Q`  
 如果按下 `Ctrl + C`，服务器进程将会终止。
 
 如想管理服务端文件，使用命令 `docker volume --help` 了解详情。
