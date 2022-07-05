@@ -1,0 +1,37 @@
+# LLNET.Core 命名空间
+
+包含用于定义常用引用类型、接口、特性和处理异常的基础类和基类。
+
+<br>
+
+## 类
+
+|||
+|-|-|
+|[DynamicCommandInvalidCastException](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/DynamicCommandInvalidCastException/DynamicCommandInvalidCastException.md)|表示在**动态指令执行时转换类型**的过程中发生的一个或多个错误。|
+|[HookFailedException](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/HookFailedException/HookFailedException.md)|表示在**挂载BDS钩子**的过程中发生的一个或多个错误。|
+|[InvalidRemoteCallTypeException](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/InvalidRemoteCallTypeException/InvalidRemoteCallTypeException.md)|**注册远程调用函数时检测到不可导出或不受支持的类型**引发的异常。
+|[LibPathAttribute](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/LibPathAttribute/LibPathAttribute.md)|指示LL.NET将会搜索的插件所依赖的库目录路径。|
+|[LiteLoaderDotNETException](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/LiteLoaderDotNETException/LiteLoaderDotNETException.md)|作为LL.NET一切异常的基类。|
+|[LLNETLibraryAttribute]|暂未实现功能。|
+|[MCException](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/MCException/MCException.md)|检测到 [BDS](https://www.minecraft.net/en-us/download/server/bedrock) 发生的错误而引发的异常基类。|
+|[NativePluginException](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/NativePluginException/NativePluginException.md)|尝试对非.NET插件对象调用Plugin.GetPluginAssembly时引发的异常|
+|[PluginMainAttribute](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/PluginMainAttribute/PluginMainAttribute.md)|指示由自定义插件入口加载的插件的入口类。|
+|[RegisterCommandException](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/RegisterCommandException/RegisterCommandException.md)|表示在**注册指令**的过程中发生的一个或多个错误。|
+|[RemoteCallExportFunctionException](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/RemoteCallExportFunctionException/RemoteCallExportFunctionException.md)|表示在**执行动态远程调用的导出函数中**的过程中发生的一个或多个错误。|
+|[RemoteCallImportFunctionException](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/RemoteCallImportFunctionException/RemoteCallImportFunctionException.md)|表示在**执行动态远程调用的导入函数中**的过程中发生的一个或多个错误。|
+
+<br>
+
+## 结构
+|||
+|-|-|
+|[Pair\<Tkey,TValue\>](zh_CN/NET/APIs/Namespace/LLNET.Core/Struct/Pair/Pair.md)|[System.Collections.Generic.KeyValuePair\<Tkey,TValue\>](https://docs.microsoft.com/zh-cn/dotnet/api/system.collections.generic.keyvaluepair?view=net-6.0)的替代品。|
+|[SecondaryRankPtr](zh_CN/NET/APIs/Namespace/LLNET.Core/Struct/SecondaryRankPtr/SecondaryRankPtr.md)|用于表示二级指针的结构。|
+
+<br>
+
+## 接口
+|||
+|-|-|
+|[IPluginInitializer](zh_CN/NET/APIs/Namespace/LLNET.Core/Interface/IPluginInitializer/IPluginInitializer.md)|作为自定义插件入口的基础接口。|

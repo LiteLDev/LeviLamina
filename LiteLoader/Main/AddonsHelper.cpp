@@ -27,6 +27,8 @@ using namespace RegisterCommandHelper;
 Logger addonLogger("AddonHelper");
 std::vector<Addon> addons;
 
+bool AutoInstallAddons(string path);
+
 //Helper
 std::string GetAddonJsonFile(Addon::Type type)
 {
@@ -263,10 +265,11 @@ void FindManifest(vector<string> &result, const string& path)
     if (!foundManifest)
     {
         //No manifest file
-        filesystem::directory_iterator ent2(str2wstr(path));
-        for (auto& file : ent2)
-            if (file.is_directory())
-                FindManifest(result, UTF82String(file.path().u8string()));
+        if (!AutoInstallAddons(path)) {
+            filesystem::directory_iterator ent2(str2wstr(path));
+            for (auto& file : ent2)
+                if (file.is_directory()) FindManifest(result, UTF82String(file.path().u8string()));
+        }
     }
     return;
 }
@@ -313,22 +316,24 @@ bool AddonsManager::install(std::string packPath)
             packPath = newPath;
         }
 
-        filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
-        filesystem::create_directories(ADDON_INSTALL_TEMP_DIR, ec);
+        name = UTF82String(filesystem::path(str2wstr(packPath)).filename().u8string());
 
-        auto res = NewProcessSync(fmt::format("{} x \"{}\" -o{} -aoa", ZIP_PROGRAM_PATH, packPath, ADDON_INSTALL_TEMP_DIR), ADDON_INSTALL_MAX_WAIT);
+        //filesystem::remove_all(ADDON_INSTALL_TEMP_DIR + name + "/", ec); //?
+        //filesystem::create_directories(ADDON_INSTALL_TEMP_DIR + name + "/", ec);
+
+        auto res = NewProcessSync(fmt::format("{} x \"{}\" -o{} -aoa", ZIP_PROGRAM_PATH, packPath, "\"" ADDON_INSTALL_TEMP_DIR + name + "/\""), ADDON_INSTALL_MAX_WAIT);
         if (res.first != 0)
         {
             addonLogger.error("Fail to uncompress addon {}!", name);
             addonLogger.error("Exit Code: {}", res.first);
             addonLogger.error("Program Output:\n{}", res.second);
             addonLogger.error("* Install progress aborted!");
-            filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
+            filesystem::remove_all(ADDON_INSTALL_TEMP_DIR + name + "/", ec);
             return false;
         }
 
         vector<string> paths;
-        FindManifest(paths, ADDON_INSTALL_TEMP_DIR);
+        FindManifest(paths, ADDON_INSTALL_TEMP_DIR + name + "/");
 		
         for (auto& dir : paths)
         {
@@ -339,7 +344,7 @@ bool AddonsManager::install(std::string packPath)
                 throw std::exception("Error in Install Addon To Level ");
         }
 
-        filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
+        filesystem::remove_all(ADDON_INSTALL_TEMP_DIR + name + "/", ec);
         filesystem::remove_all(str2wstr(packPath), ec);
         return true;
     }
@@ -561,7 +566,8 @@ public:
                     ListAllAddons(output);
                 break;
             case Operation::Install:
-                if (AddonsManager::install(target))
+                if (AddonsManager::install(target)) 
+                    filesystem::remove_all(ADDON_INSTALL_TEMP_DIR);
                     output.success();
                 break;
             case Operation::Uninstall:
@@ -713,20 +719,18 @@ void BuildAddonsList()
               });
 }
 
-
-void AutoInstallAddons()
-{
+bool AutoInstallAddons(string path) {
     std::error_code ec;
-    if (!filesystem::exists(str2wstr(LL::globalConfig.addonsInstallPath)))
+    if (!filesystem::exists(str2wstr(path)))
     {
-        filesystem::create_directories(str2wstr(LL::globalConfig.addonsInstallPath), ec);
+        filesystem::create_directories(str2wstr(path), ec);
         addonLogger.warn("Directory created. You can move compressed Addon files to {} to get installed at next launch.",
             LL::globalConfig.addonsInstallPath);
-        return;
+        return false;
     }
     std::vector<string> toInstallList;
 
-    filesystem::directory_iterator ent(str2wstr(LL::globalConfig.addonsInstallPath));
+    filesystem::directory_iterator ent(str2wstr(path));
     for (auto& file : ent)
     {
         if (!file.is_regular_file())
@@ -739,7 +743,7 @@ void AutoInstallAddons()
     }
 
     if (toInstallList.empty())
-        return;
+        return false;
 
     addonLogger.warn("{} new addon(s) found to install. Working...", toInstallList.size());
     int cnt = 0;
@@ -761,21 +765,26 @@ void AutoInstallAddons()
     if (cnt == 0)
     {
         addonLogger.error("No addon was installed.");
-        return;
     }
     else
     {
         addonLogger.warn("{} addon(s) was installed.", cnt);
-        return;
     }
+    return true;
 }
 
 void InitAddonsHelper()
 {
     if (LL::isDebugMode())
         addonLogger.consoleLevel = addonLogger.debug.level;
-    AutoInstallAddons();
+
+    filesystem::remove_all(ADDON_INSTALL_TEMP_DIR);
+    filesystem::create_directories(ADDON_INSTALL_TEMP_DIR);
+
+    AutoInstallAddons(LL::globalConfig.addonsInstallPath);
     BuildAddonsList();
+
+    filesystem::remove_all(ADDON_INSTALL_TEMP_DIR);
     
     Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
         AddonsCommand::setup(ev.mCommandRegistry);
