@@ -62,7 +62,7 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 > 没错，，就这么简单~
 
 ## 安装资源包/Addon
-将`.mcpack`、`.mcaddon`或`.zip`格式的资源包/Addon复制到`plugins/AddonsHelper`文件夹内，重新启动服务器，LiteLoader会为您自动配置资源包/Addon。
+将`.mcpack`、`.mcaddon`或`.zip`格式的资源包/Addon复制到`plugins/AddonsHelper`文件夹内，重新启动服务器，LiteLoader会为您自动配置资源包/Addon。  
 您可以通过`addons`指令对资源包和Addon进行管理
 
 ## 🔌 插件热管理
@@ -71,17 +71,17 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 
 - `ll list`  
   **列出** 当前加载的所有插件列表
-- `ll load ./plugins/xxxx.js`
+- `ll load ./plugins/xxxx.js`  
   **热加载** 位于指定路径的插件。路径是相对于BDS根目录的相对路径。
-- `ll unload xxxx.lua`
+- `ll unload xxxx.lua`  
   **热卸载** 在插件列表中名为 xxxx.lua 的插件
-- `ll reload xxxx.dll`
+- `ll reload xxxx.dll`  
   **重新加载** 在插件列表中名为 xxxx.dll 的插件
-- `ll reload`
+- `ll reload`  
   **重新加载** 插件列表中的所有插件
-- `ll version`
+- `ll version`  
   输出当前安装的LL版本
-- `ll upgrade`
+- `ll upgrade`  
   手动检查`LiteLoaderBDS`自动更新
 
 #### 热管理功能 常见问题 & 解答
@@ -99,11 +99,11 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 
 引擎提供了以下控制台命令用于脚本调试：
 
-- `jsdebug`
+- `jsdebug`  
   进入Js实时调试模式
-- `luadebug`
+- `luadebug`  
   进入Lua实时调试模式
 
-在实时调试模式下，标准输入会被当做脚本语言执行，并实时输出结果。
-当发生错误时，引擎会输出错误信息与堆栈跟踪信息。
+在实时调试模式下，标准输入会被当做脚本语言执行，并实时输出结果。  
+当发生错误时，引擎会输出错误信息与堆栈跟踪信息。  
 再次输入对应的`jsdebug`或`luadebug`将退出实时调试模式。
