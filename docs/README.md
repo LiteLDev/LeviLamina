@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /assets/LL-logo.png
+heroImage: /assets/LL-Logo.png
 heroText: LiteLoaderBDS
 tagline: A lightweight & cross-language plugin loader for Minecraft Bedrock Dedicated Server
 actionText: Documentation
