@@ -138,7 +138,7 @@ namespace Translation {
         std::string realFormatStr = formatStr;
         if (PluginOwnData::hasImpl(hPlugin, I18N::POD_KEY)) {
             auto& i18n = PluginOwnData::getImpl<I18N>(hPlugin, I18N::POD_KEY);
-            realFormatStr = i18n.get(formatStr);
+            realFormatStr = i18n.get(formatStr, langCode);
         }
         // realFormatStr = FixCurlyBracket(realFormatStr);
         if constexpr (0 == sizeof...(args)) {
