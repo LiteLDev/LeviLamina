@@ -128,6 +128,31 @@ module.exports = {
         'SystemAPI/SystemInfo'
       ],
       '/zh_CN/': 'auto'
+    },
+    'locales': {
+      '/en_US/': {
+        selectText: 'Languages',
+        label: 'English',
+        ariaLabel: 'Languages',
+        editLinkText: 'Edit this page on GitHub',
+        serviceWorker: {
+          updatePopup: {
+            message: "New content is available.",
+            buttonText: "Refresh"
+          }
+        }
+      },
+      '/zh_CN/': {
+        selectText: '选择语言',
+        label: '简体中文',
+        editLinkText: '在 GitHub 上编辑此页',
+        serviceWorker: {
+          updatePopup: {
+            message: "发现新内容可用.",
+            buttonText: "刷新"
+          }
+        }
+      }
     }
   },
   locales: {
@@ -137,30 +162,11 @@ module.exports = {
       lang: 'en-US', // 将会被设置为 <html> 的 lang 属性
       title: 'LiteLoaderBDS Docs',
       description: 'Documentation of LiteLoaderBDS',
-      selectText: 'Languages',
-      label: 'English',
-      ariaLabel: 'Languages',
-      editLinkText: 'Edit this page on GitHub',
-      serviceWorker: {
-        updatePopup: {
-          message: "New content is available.",
-          buttonText: "Refresh"
-        }
-      }
     },
     '/zh_CN/': {
       lang: 'zh-CN',
       title: 'LiteLoaderBDS文档',
       description: 'LiteLoaderBDS的文档',
-      selectText: '选择语言',
-      label: '简体中文',
-      editLinkText: '在 GitHub 上编辑此页',
-      serviceWorker: {
-        updatePopup: {
-          message: "发现新内容可用.",
-          buttonText: "刷新"
-        }
-      }
     }
   }
 }
