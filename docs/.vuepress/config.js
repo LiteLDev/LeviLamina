@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'LiteLoaderBDS Docs',
+  title: 'LiteLoaderBDS',
   description: 'Documentation of LiteLoaderBDS',
   plugins: [
     '@vuepress/active-header-links',
@@ -26,7 +26,6 @@ module.exports = {
     ['meta', { name: 'keywords', content: 'LiteLoaderBDS,Bedrock Dedicated Server,BDS,BDS plugin,Minecraft,LiteLoader,Bedrock' }],
   ],
   themeConfig: {
-    logo: '/assets/LL-Logo.png',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Github', link: 'https://github.com/LiteLDev/LiteLoaderBDS' }
@@ -173,12 +172,12 @@ module.exports = {
     // 作为特例，默认语言可以使用 '/' 作为其路径。
     '/en_US/': {
       lang: 'en-US', // 将会被设置为 <html> 的 lang 属性
-      title: 'LiteLoaderBDS Docs',
+      title: 'LiteLoaderBDS',
       description: 'Documentation of LiteLoaderBDS',
     },
     '/zh_CN/': {
       lang: 'zh-CN',
-      title: 'LiteLoaderBDS文档',
+      title: 'LiteLoaderBDS',
       description: 'LiteLoaderBDS的文档',
     }
   }
