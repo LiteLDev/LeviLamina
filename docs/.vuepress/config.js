@@ -5,7 +5,20 @@ module.exports = {
     '@vuepress/active-header-links',
     '@vuepress/back-to-top',
     '@vuepress/medium-zoom',
-    ['vuepress-plugin-code-copy', true]
+    ['vuepress-plugin-code-copy', true],
+    [
+      'vuepress-plugin-mygitalk', {
+        enable: true,
+        home: false,
+        gitalk: {
+          clientID: 'c2e7f66c16b62843194c',
+          clientSecret: 'f521bbc5ef7c1c50f54ba04022a058797302a7a7',
+          repo: 'DocsComments',
+          owner: 'LiteLDev',
+          admin: ['ShrBox'],
+        }
+      }
+    ],
   ],
   head: [
     ['link', { rel: 'icon', href: '/assets/LL-Logo.png' }],
