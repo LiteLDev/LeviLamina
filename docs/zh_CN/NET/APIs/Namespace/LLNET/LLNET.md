@@ -8,7 +8,7 @@
 
 |||
 |-|-|
-|[IPlugin](zh_CN/NET/APIs/Namespace/LLNET/Iplugin.md)|暂未实现任何功能|
+|[IPlugin](Iplugin.md)|暂未实现任何功能|
 
 
 

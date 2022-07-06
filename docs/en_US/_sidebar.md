@@ -1,5 +1,0 @@
-- [Home](/en_US/)
-- [Installation and Usage](/en_US/Usage/)
-- [Common problems](/en_US/QA/)
-- [Development of script plugin](/en_US/Development/)
-- [Maintenance document](/en_US/Maintenance/)

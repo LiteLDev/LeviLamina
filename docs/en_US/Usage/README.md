@@ -6,7 +6,7 @@
 
 1. Download the latest <code>LiteLoader-<i>version</i>.zip</code> from [Releases](https://github.com/LiteLDev/LiteLoader/releases) or [Actions](https://github.com/LiteLDev/LiteLoader/actions), 
 2. Unzip everything into the directory of `bedrock_server.exe`. If you are prompted with conflicting files during the decompression process, just select `Overwrite`.
-3. Ensure that the `bedrock_server.pdb` file exists.    
+3. Ensure that the `bedrock_server.pdb` file exists.  
    Run `LLPeEditor.exe` to generate the BDS with the exported symbols (`bedrock_server_mod.exe`)  
 4. When the console output `Press any key to continue. . . ` , press any key to close the window
 5. Execute `bedrock_server_mod.exe` and enjoy it !
@@ -29,12 +29,12 @@ docker pull shrbox/liteloaderbds
 docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ```
 Start server: `docker container start liteloader`  
-Force stop server(not recommended): `docker container stop liteloader`  
+Stop server: `docker container stop -t 30 liteloader`  
 Enter console: `docker attach liteloader`  
 Exit console: Press `Ctrl + P + Q`. If you press `Ctrl + C`, the server process will exit.  
-If you want to manage server files, use `docker volume --help` for more details.  
+If you want to manage server files, use `docker volume --help` for more details.
 
-Everything's done! Next, you can install **LiteLoader** plugins!  
+Everything's done! Next, you can install **LiteLoader** plugins!
 
 <br>
 
@@ -61,7 +61,7 @@ You can manage ResourcePacks and Addons by using `addons` command
 
 ## 🔌 Plugins hot management
 
-Don't need to close server, you can manage plugins, we provided these console commands
+Don't need to close server, you can manage plugins, we provided these console commands:
 
 - `ll list`  
   **List** plugins
@@ -96,6 +96,6 @@ Don't need to close server, you can manage plugins, we provided these console co
 - `luadebug`  
   Enter Lua real time debug mode
 
-In real-time debugging mode, the standard input will be executed as the corresponding type of scripting language, and the results will be output in real time.  
+In real-time debugging mode, the standard input will be executed as scripting language, and the results will be output in real time.  
 If an error occurs, the engine will output an error message and a stack trace.  
 Entering the `jsdebug` or `luadebug` again will exit the real time debugg mode.

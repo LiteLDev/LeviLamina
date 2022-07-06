@@ -15,14 +15,14 @@
 
 ## 🔨 Installation and Usage
 
-👉[Click here](/en_US/Usage/)👈 to read `LiteLoaderBDS` the documentation
+👉[Click here](Usage/)👈 to read `LiteLoaderBDS` the documentation
 <br>
 
 ## ❓Common problems
 
 Meet some problem while installing or using `LiteLoaderBDS`? There are some common solution.
 
-👉[Click here](/en_US/QA/)👈 to read common problem and its sulution.
+👉[Click here](QA/)👈 to read common problem and its sulution.
 
 <br>
 
@@ -36,11 +36,11 @@ But the documentation is still writing.
 
 Using `JavaScript` and `Lua` to develop plugin is easy and efficient.
 
-👉[Click here](/en_US/Development/)👈 to read the documentation.
+👉[Click here](Development/)👈 to read the documentation.
 <br>
 
 ## 🎬 Join the development of LiteLoaderBDS
 
 We welcome your contributions to `LiteLoaderBDS`
 
-👉[Click here](/en_US/Maintenance/)👈 to read the documentation of development and maintenance
+👉[Click here](Maintenance/)👈 to read the documentation of development and maintenance
