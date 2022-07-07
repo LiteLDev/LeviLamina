@@ -6,19 +6,11 @@ module.exports = {
     '@vuepress/back-to-top',
     '@vuepress/medium-zoom',
     ['vuepress-plugin-code-copy', true],
-    [
-      'vuepress-plugin-mygitalk', {
-        enable: true,
-        home: false,
-        gitalk: {
-          clientID: 'c2e7f66c16b62843194c',
-          clientSecret: 'f521bbc5ef7c1c50f54ba04022a058797302a7a7',
-          repo: 'DocsComments',
-          owner: 'LiteLDev',
-          admin: ['ShrBox'],
-        }
+    ['sitemap',
+      {
+        hostname: 'https://docs.litebds.com'
       }
-    ],
+    ]
   ],
   head: [
     ['link', { rel: 'icon', href: '/assets/LL-Logo.png' }],
@@ -143,7 +135,7 @@ module.exports = {
       '/zh_CN/': 'auto'
     },
     'locales': {
-      '/en_US/': {
+      '/': {
         selectText: 'Languages',
         label: 'English',
         ariaLabel: 'Languages',
@@ -171,7 +163,7 @@ module.exports = {
   locales: {
     // 键名是该语言所属的子路径
     // 作为特例，默认语言可以使用 '/' 作为其路径。
-    '/en_US/': {
+    '/': {
       lang: 'en-US', // 将会被设置为 <html> 的 lang 属性
       title: 'LiteLoaderBDS Docs',
       description: 'Documentation of LiteLoaderBDS',
