@@ -127,7 +127,8 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("getAttributes", &PlayerClass::getAttributes)
         .instanceFunction("getEntityFromViewVector", &PlayerClass::getEntityFromViewVector)
         .instanceFunction("getBlockFromViewVector", &PlayerClass::getBlockFromViewVector)
-        
+        .instanceFunction("quickEvalMolangScript", &PlayerClass::quickEvalMolangScript)
+
         //SimulatedPlayer API
         .instanceFunction("isSimulatedPlayer", &PlayerClass::isSimulatedPlayer)
         .instanceFunction("simulateSneak", &PlayerClass::simulateSneak)
@@ -1825,6 +1826,17 @@ Local<Value> PlayerClass::isSimulatedPlayer(const Arguments& args)
         return Boolean::newBoolean(get()->isSimulatedPlayer());
     }
     CATCH("Fail in isSimulatedPlayer!");
+}
+
+Local<Value> PlayerClass::quickEvalMolangScript(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    try {
+        Player* actor = get();
+        if (!actor) return Local<Value>();
+        return Number::newNumber(actor->quickEvalMolangScript(args[0].toStr()));
+    }
+    CATCH("Fail in quickEvalMolangScript!");
 }
 
 

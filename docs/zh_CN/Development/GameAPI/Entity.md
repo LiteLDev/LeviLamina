@@ -358,3 +358,18 @@
 - 返回值类型：`Boolean`
 
 <br>
+
+
+#### 快速执行Molang表达式
+
+`en.quickEvalMolangScript(str)`
+
+- 参数：
+  - str : `String`  
+    Molang表达式
+- 返回值：表达式执行结果
+- 返回值类型：`Float`
+
+关于Molang的详细使用方法，请参考 [MOLANG文档 bedrock.dev](https://bedrock.dev/zh/docs/stable/Molang)
+
+<br>

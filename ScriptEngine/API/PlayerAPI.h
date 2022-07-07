@@ -112,6 +112,7 @@ public:
     Local<Value> getBlockFromViewVector(const Arguments& args);
 
     Local<Value> isSimulatedPlayer(const Arguments& args);
+    Local<Value> quickEvalMolangScript(const Arguments& args);
 
     // SimulatedPlayer API (API/SimulatedPlayerAPI.cpp)
     

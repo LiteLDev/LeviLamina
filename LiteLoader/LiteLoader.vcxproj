@@ -133,6 +133,7 @@ LibraryBuilder.exe
     <ClCompile Include="Main\CrashLogger.cpp" />
     <ClCompile Include="Main\dllmain.cpp" />
     <ClCompile Include="Main\BuiltinBugFix.cpp" />
+    <ClCompile Include="MolangAPI.cpp" />
     <ClInclude Include="Header\AllowListAPI.h" />
     <ClInclude Include="Header\DB\Any.h" />
     <ClInclude Include="Header\DB\ConnParams.h" />
