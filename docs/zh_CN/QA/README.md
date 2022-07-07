@@ -2,7 +2,8 @@
 下载LiteLoader.zip，并将其完全解压到BDS所在路径
 
 ## 如何更新BDS版本？
-从Minecraft官网上下载最新的BDS，并将除了`server.properties`、`allowlist.json`、`permission.json`之外的所有文件解压到旧版本BDS所在路径并覆盖
+从Minecraft官网上下载最新的BDS，并将除了`server.properties`、`allowlist.json`、`permission.json`之外的所有文件解压到旧版本BDS所在路径并覆盖  
+然后运行`LLPeEditor.exe`来生成新的`bedrock_server_mod.exe`
 
 ## 如何在Linux发行版上运行LiteLoaderBDS？
 由于我们没有开发针对Linux版Bedrock Dedicated Server的版本，所以你需要借助[Wine](https://www.winehq.org/)来运行Windows版BDS来加载LiteLoaderBDS，你也可以选择我们提供的[Docker镜像](https://github.com/LiteLDev/LiteLoaderBDS#for-linux)
