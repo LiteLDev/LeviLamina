@@ -1115,7 +1115,11 @@ enum class MinecraftPacketIds : int {
     LessonProgress                    = 0xB7,
     RequestAbility                    = 0xB8,
     RequestPermissions                = 0xB9,
-    ToastRequest                      = 0XBA
+    ToastRequest                      = 0xBA,
+    UpdateAbilities                   = 0xBB,
+    UpdateAdventureSettings           = 0xBC,
+    DeathInfo                         = 0XBD,
+    EditorNetwork                     = 0XBE
 };
 
 enum ItemStackNetResult : unsigned char {
