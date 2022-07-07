@@ -62,5 +62,6 @@ public:
     Local<Value> getEntityFromViewVector(const Arguments& args);
     Local<Value> getBlockFromViewVector(const Arguments& args);
         
+    Local<Value> quickEvalMolangScript(const Arguments& args);
 };
 extern ClassDefine<EntityClass> EntityClassBuilder;
