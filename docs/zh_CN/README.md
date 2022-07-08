@@ -1,53 +1,58 @@
-# LiteLoaderBDS文档
+---
+home: true
+sidebar: false
+heroText:
+tagline:
+---
 
-[![status](https://img.shields.io/github/workflow/status/LiteLDev/LiteLoader/Build%20LiteLoader?style=for-the-badge)](https://github.com/LiteLDev/LiteLoader/actions)
-[
-![Latest Tag](https://img.shields.io/github/v/tag/LiteLDev/LiteLoader?label=LATEST%20TAG&style=for-the-badge)
-![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoader/latest/total?style=for-the-badge)
-](https://github.com/LiteLDev/LiteLoader/releases/latest)
+<div class="content">
+    <div class="row">
+        <div class="col-sm-3">
+            <p class="logo_p"><img src="/assets/compass_item.png" alt="Logo"></p>
+        </div>
+        <div class="col-sm-9">
+            <h1>指南针</h1>
+            <p>在这里你可以找到 <code>JavaScript/Lua/.NET/C++</code> 的插件文档</p>
+        </div>
+    </div>
+    <div class="row buttons-content">
+        <div class="col-sm-6 btn-link"><a href="/zh_CN/Usage" class="navigator-link">🔨 加载器安装 与 使用指南</a></div>
+        <div class="col-sm-6 btn-link"><a href="/zh_CN/QA" class="navigator-link">❓ 常见问题</a></div>
+        <div class="col-sm-6 btn-link"><a class="navigator-link">⛳ C++ 文档（即将推出）</a></div>
+        <div class="col-sm-6 btn-link"><a href="/zh_CN/NET" class="navigator-link">🥏 .NET 文档</a></div>
+        <div class="col-sm-6 btn-link"><a href="/zh_CN/Development" class="navigator-link">🎯 JavaScript/Lua 文档</a></div>
+        <div class="col-sm-6 btn-link"><a href="/zh_CN/Maintenance" class="navigator-link">🎬 参与 LiteLoaderBDS 项目开发</a></div>
+    </div>
+</div>
 
-## 🎨 项目简介
-`LiteLoaderBDS`是一个基岩版官方服务端`Bedrock Dedicated Server`（以下简称 **BDS**）插件框架，提供强大的跨语言脚本插件支持能力和稳定的开发API支持。
+<style>
+.content {
+    margin: 30px 0;
+}
 
-👉[点击此处](https://github.com/LiteLDev/LiteLoaderBDS/blob/main/README_zh-cn.md)👈 查看对LL项目更详细的解释说明  
-<br>
+.logo_p {
+    text-align: center;
+}
 
-## 🔨 加载器安装 与 使用指南
+.logo_p img {
+    width: 128px;
+    image-rendering: pixelated;
+}
 
-这里介绍了如何为BDS服务端安装`LiteLoaderBDS`加载器，如何修改配置，以及如何安装 LL 插件  
+.btn-link {
+    margin-top: 20px;
+}
 
-👉[点击此处](Usage/)👈 查看 `LiteLoaderBDS` 安装和使用文档
-<br>
+.navigator-link {
+    border: 1px solid #3eaf7c;
+    display: flex;
+    padding: 16px;
+    border-radius: 6px;
+}
 
-## ❓常见问题
-
-安装和使用 `LiteLoaderBDS` 过程中遇到问题？这里有一些常见问题的解决方法
-
-👉[点击此处](QA/)👈 查看常见问题与解决方法
-<br>
-
-## ⛳ C++ 插件 - 开发指南 与 API文档
-
-使用 `C++`, `Golang` 等编译型语言开发 LL 插件，拥有海量API，自由实现你的任意想法
-
-在做了(新建文件夹)
-<br>
-
-## 🎯 脚本插件 - 开发指南 与 API文档
-使用 `JavaScript`, `Lua` 等脚本语言开发 LL 插件，容易上手，功能强大
-
-👉[点击此处](Development/)👈 查看 脚本插件开发文档 
-<br>
-
-## 🪁 .NET 插件 - 开发指南 与 API文档
-使用 `C# `, `Visual Basic.NET`, `F#` 等 .NET语言开发 LL 插件，编写简单，类库丰富
-
-👉[点击此处](NET/)👈 查看 .NET插件开发文档 
-<br>
-
-## 🎬 参与 LiteLoaderBDS 项目开发
-
-我们欢迎你对`LiteLoaderBDS`做出自己的贡献！  
-
-👉[点击此处](Maintenance/)👈查看 LL项目维护与支持文档
-<br>
+@media screen and (max-width: 576px) {
+    .logo_p {
+        text-align: left;
+    }
+}
+</style>

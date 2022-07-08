@@ -4,7 +4,7 @@ heroText:
 tagline: 
 ---
 
-<main aria-labelledby="main-title" class="home">
+<main aria-labelledby="main-title">
   <header class="hero">
     <img src="/assets/LL-Logo.png" alt="hero"> 
     <h1 id="main-title">
