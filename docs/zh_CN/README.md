@@ -16,12 +16,12 @@ tagline:
         </div>
     </div>
     <div class="row buttons-content">
-        <div class="col-sm-6 btn-link"><a href="/en_US/Usage" class="navigator-link">🔨 加载器安装 与 使用指南</a></div>
-        <div class="col-sm-6 btn-link"><a href="/en_US/QA" class="navigator-link">❓ 常见问题</a></div>
+        <div class="col-sm-6 btn-link"><a href="/zh_CN/Usage" class="navigator-link">🔨 加载器安装 与 使用指南</a></div>
+        <div class="col-sm-6 btn-link"><a href="/zh_CN/QA" class="navigator-link">❓ 常见问题</a></div>
         <div class="col-sm-6 btn-link"><a class="navigator-link">⛳ C++ 文档（即将推出）</a></div>
         <div class="col-sm-6 btn-link"><a href="/zh_CN/NET" class="navigator-link">🥏 .NET 文档</a></div>
-        <div class="col-sm-6 btn-link"><a href="/en_US/Development" class="navigator-link">🎯 JavaScript/Lua 文档</a></div>
-        <div class="col-sm-6 btn-link"><a href="/en_US/Maintenance" class="navigator-link">🎬 参与 LiteLoaderBDS 项目开发</a></div>
+        <div class="col-sm-6 btn-link"><a href="/zh_CN/Development" class="navigator-link">🎯 JavaScript/Lua 文档</a></div>
+        <div class="col-sm-6 btn-link"><a href="/zh_CN/Maintenance" class="navigator-link">🎬 参与 LiteLoaderBDS 项目开发</a></div>
         <div class="col-sm-6 btn-link"><a href="https://t.me/LiteLoader" class="navigator-link">💬 Telegram 聊天</a></div>
     </div>
 </div>
