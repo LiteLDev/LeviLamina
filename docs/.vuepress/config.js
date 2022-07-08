@@ -18,6 +18,7 @@ module.exports = {
     ['meta', { name: 'description', content: 'LiteLoaderBDS\'s documentation' }],
     ['meta', { name: 'keywords', content: 'LiteLoaderBDS,Bedrock Dedicated Server,BDS,BDS plugin,Minecraft,LiteLoader,Bedrock' }],
   ],
+  theme: 'default-prefers-color-scheme',
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
