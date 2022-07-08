@@ -11,8 +11,8 @@ tagline:
             <p class="logo_p"><img src="/assets/compass_item.png" alt="Logo"></p>
         </div>
         <div class="col-sm-9">
-            <h1>航海家</h1>
-            <p>在这里你会找到链接到 <code>JavaScript/Lua/.NET/C++</code> 文档。此外，您还可以在这里找到 Telegram 中的聊天链接以及有用的链接</p>
+            <h1>指南针</h1>
+            <p>在这里你可以找到 <code>JavaScript/Lua/.NET/C++</code> 的插件文档</p>
         </div>
     </div>
     <div class="row buttons-content">
@@ -22,7 +22,6 @@ tagline:
         <div class="col-sm-6 btn-link"><a href="/zh_CN/NET" class="navigator-link">🥏 .NET 文档</a></div>
         <div class="col-sm-6 btn-link"><a href="/zh_CN/Development" class="navigator-link">🎯 JavaScript/Lua 文档</a></div>
         <div class="col-sm-6 btn-link"><a href="/zh_CN/Maintenance" class="navigator-link">🎬 参与 LiteLoaderBDS 项目开发</a></div>
-        <div class="col-sm-6 btn-link"><a href="https://t.me/LiteLoader" class="navigator-link">💬 Telegram 聊天</a></div>
     </div>
 </div>
 
