@@ -12,7 +12,7 @@ tagline:
         </div>
         <div class="col-sm-9">
             <h1>Navigator</h1>
-            <p>Here you will find links to <code>JavaScript/Lua/.NET/C++</code> documentation. Also here you can find links to chats in Telegram and just useful links</p>
+            <p>Here you will find links to <code>JavaScript/Lua/.NET/C++</code> documentation</p>
         </div>
     </div>
     <div class="row buttons-content">
@@ -22,7 +22,6 @@ tagline:
         <div class="col-sm-6 btn-link"><a class="navigator-link">🪁 .NET Documentation (coming soon)</a></div>
         <div class="col-sm-6 btn-link"><a href="/en_US/Development" class="navigator-link">🎯 JavaScript/Lua Documentation</a></div>
         <div class="col-sm-6 btn-link"><a href="/en_US/Maintenance" class="navigator-link">🎬 Development and Maintenance</a></div>
-        <div class="col-sm-6 btn-link"><a href="https://t.me/LiteLoader" class="navigator-link">💬 Telegram Chat</a></div>
     </div>
 </div>
 
