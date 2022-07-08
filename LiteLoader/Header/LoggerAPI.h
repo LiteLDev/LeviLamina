@@ -40,6 +40,7 @@
 #include "Utils/FileHelper.h"
 #include "Utils/PluginOwnData.h"
 #include "Utils/StringHelper.h"
+#include "I18nAPI.h"
 #include <string>
 #include <sstream>
 #include <iostream>
@@ -119,6 +120,10 @@ public:
         template <typename S, typename... Args, enable_if_type<(fmt::v8::detail::is_string<S>::value), int> = 0>
         void operator()(const S& formatStr, const Args&... args)
         {
+            if (PluginOwnData::has(I18N::POD_KEY)) {
+                *this << tr(formatStr, args...) << endl;
+                return;
+            }
             if constexpr (0 == sizeof...(args))
             {
                 // Avoid fmt if only one argument
@@ -134,6 +139,10 @@ public:
         template <typename... Args>
         void operator()(const char* formatStr, const Args&... args)
         {
+            if (PluginOwnData::has(I18N::POD_KEY)) {
+                *this << tr(formatStr, args...) << endl;
+                return;
+            }
             if constexpr (0 == sizeof...(args))
             {
                 // Avoid fmt if only one argument

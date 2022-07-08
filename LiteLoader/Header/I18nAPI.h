@@ -4,16 +4,18 @@
 //
 // [Usage - Translation]
 //
-//  Translation::load("plugins/xxx/lang/zh_CN.json");
+//  Translation::load("plugins/xxx/lang.json");
 //  ...
 //  tr("There are {0} days before {1} to come back", 3, "alex");          // return translated string [std::string]
 //  trc("There are {0} days before {1} to come back", 3, "alex");         // return translated string [const char*]
 //
-//  ** In Translation File: plugins/xxx/lang/zh_CN.json
+//  ** In Translation File: plugins/xxx/lang.json
 //  {
-//       "There are {0} days before {1} to come back": "在{1}回来前还剩{0}天",
-//       "...": "...",
-//       "...": "..."
+//      "zh_CN": {
+//          "There are {0} days before {1} to come back": "在{1}回来前还剩{0}天",
+//          "...": "...",
+//          "...": "..."
+//      }
 //  }
 //
 //
@@ -33,7 +35,6 @@
 
 #include "Global.h"
 #include "LLAPI.h"
-#include "LoggerAPI.h"
 #include "Utils/FileHelper.h"
 #include "Utils/PluginOwnData.h"
 #include "third-party/Nlohmann/json.hpp"

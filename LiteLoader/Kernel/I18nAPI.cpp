@@ -49,6 +49,7 @@ std::string I18N::get(const std::string& key, const std::string& langCode) {
         if (lang.count(key)) return lang[key];
         // Search for the similar language in langData
         for (auto& [lc, ld] : langData) {
+            if (lc.length() < 2) continue;
             if (lc.substr(0, 2) == langType) {
                 if (ld.count(key)) { return ld[key]; }
             }
@@ -61,6 +62,7 @@ std::string I18N::get(const std::string& key, const std::string& langCode) {
     // Search for the similar language
     for (auto& [lc, ld] : defaultLangData) {
         if (lc.substr(0, 2) == langType) {
+            if (lc.length() < 2) continue;
             if (ld.count(key)) { return ld[key]; }
         }
     }
