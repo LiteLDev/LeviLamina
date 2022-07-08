@@ -14,6 +14,7 @@ module.exports = {
   ],
   head: [
     ['link', { rel: 'icon', href: '/assets/LL-Logo.png' }],
+    ['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0-beta1/css/bootstrap-grid.min.css' }],
     ['meta', { name: 'description', content: 'LiteLoaderBDS\'s documentation' }],
     ['meta', { name: 'keywords', content: 'LiteLoaderBDS,Bedrock Dedicated Server,BDS,BDS plugin,Minecraft,LiteLoader,Bedrock' }],
   ],
