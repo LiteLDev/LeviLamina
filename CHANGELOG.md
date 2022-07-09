@@ -1,3 +1,6 @@
+## New Forum
+[https://forum.litebds.com/](https://forum.litebds.com/)
+
 ## [LiteLoader Release Note]
 LiteLoaderBDS-2.3.2 update has been released, adapted to BDS-1.19.1, ProtocolVersion 527
 
