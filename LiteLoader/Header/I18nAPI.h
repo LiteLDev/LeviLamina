@@ -65,6 +65,8 @@ public:
     
     std::string defaultLangCode = "en_US";
 
+    I18N() {
+    }
     /**
      * @brief Construct a I18N object.
      *
