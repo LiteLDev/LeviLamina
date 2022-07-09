@@ -54,7 +54,7 @@ set_property(TARGET sqlite3 PROPERTY IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_D
 add_library(base64 STATIC IMPORTED)
 set_property(TARGET base64 PROPERTY IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/Header/third-party/cpp-base64/lib/cpp-base64.lib")
 
-target_link_libraries(LiteLoader Chakra base64 sqlitecpp sqlite3
+target_link_libraries(LiteLoader base64 sqlitecpp sqlite3
         "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/openssl/libcrypto.lib"
         "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/openssl/libssl.lib"
         "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/leveldb/leveldb.lib")
