@@ -1,4 +1,3 @@
-#include "APIHelp.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -23,6 +22,7 @@
 #include <API/NetworkAPI.h>
 #include <Global.hpp>
 #include <Engine/EngineOwnData.h>
+#include "APIHelp.h"
 
 using namespace std;
 

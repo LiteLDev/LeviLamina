@@ -101,7 +101,7 @@ public:
      */
     LIAPI std::string get(const std::string& key, const std::string& langCode = "");
 
-    static const constexpr char* POD_KEY = "_ll_plugin_i18n"; ///< PluginOwnData key
+    static const constexpr char* POD_KEY = "ll_plugin_i18n"; ///< PluginOwnData key
 
 };
 
