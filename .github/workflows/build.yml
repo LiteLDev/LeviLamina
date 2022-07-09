@@ -1,6 +1,16 @@
 name: Build LiteLoader
 
-on: [ push ]
+on: 
+  push:
+    paths:
+      - '**.cpp'
+      - '**.cc'
+      - '**.cxx'
+      - '**.c'
+      - '**.hpp'
+      - '**.hh'
+      - '**.hxx'
+      - '**.h'
 
 env:
   SOLUTION_FILE_PATH: .
