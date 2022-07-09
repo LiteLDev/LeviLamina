@@ -10,7 +10,8 @@ module.exports = {
       {
         hostname: 'https://docs.litebds.com'
       }
-    ]
+    ],
+    'fulltext-search'
   ],
   head: [
     ['link', { rel: 'icon', href: '/assets/LL-Logo.png' }],

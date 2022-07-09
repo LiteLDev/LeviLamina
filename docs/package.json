@@ -15,6 +15,7 @@
     "@vuepress/plugin-medium-zoom": "^1.9.7",
     "vuepress": "^1.9.7",
     "vuepress-plugin-code-copy": "^1.0.6",
+    "vuepress-plugin-fulltext-search": "^2.2.1",
     "vuepress-plugin-sitemap": "^2.3.1",
     "vuepress-theme-default-prefers-color-scheme": "^2.0.0"
   }
