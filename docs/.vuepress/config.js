@@ -22,6 +22,7 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Community', link: 'https://forum.litebds.com/' },
       { text: 'Github', link: 'https://github.com/LiteLDev/LiteLoaderBDS' }
     ],
     sidebar: {
