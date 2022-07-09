@@ -299,17 +299,14 @@ Local<Value> McClass::getBlock(const Arguments& args)
             return Local<Value>();
         }
 
-        auto block = Level::getBlock(pos.getBlockPos(),pos.dim);
+        auto block = Level::getBlockEx(pos.getBlockPos(),pos.dim);
         if (!block)
         {
-            LOG_WRONG_ARG_TYPE();
+            // LOG_WRONG_ARG_TYPE();
             return Local<Value>();
         }
-        else
-        {
-            BlockPos bp{ pos.x,pos.y,pos.z };
-            return BlockClass::newBlock(block, &bp, pos.dim);
-        }
+        BlockPos bp{pos.x, pos.y, pos.z};
+        return BlockClass::newBlock(block, &bp, pos.dim);
     }
     CATCH("Fail in GetBlock!")
 }
