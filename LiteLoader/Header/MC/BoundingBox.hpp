@@ -6,10 +6,6 @@
 #include "AABB.hpp"
 #include "BlockPos.hpp"
 
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-
 class BoundingBox {
 
 public:
