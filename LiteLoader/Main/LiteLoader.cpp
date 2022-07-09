@@ -13,7 +13,7 @@
 #include "Loader.h"
 #include "AutoUpgrade.h"
 #include "CrashLogger.h"
-#include <I18nAPI.h>
+#include "DefaultLangData.h"
 #include "AddonsHelper.h"
 #include <EventAPI.h>
 #include "Version.h"
@@ -84,7 +84,7 @@ void CheckRunningBDS()
                 std::wstring path{buf, sz};
                 if (current == path)
                 {
-                    logger.error("Detected the existence of another bds process with the same path!");
+                    logger.error("Detected the existence of another BDS process with the same path!");
                     logger.error("This may cause the network port and the level to be occupied");
                     logger.error("Do you want to terminate the process with PID {}?  (y=Yes, n=No)", pid);
                     char ch;
@@ -194,6 +194,12 @@ void LLMain()
     std::error_code ec;
     std::filesystem::create_directories("plugins", ec);
 
+    // Load Config
+    LL::LoadLLConfig();
+
+    // I18n
+    Translation::load("plugins/LiteLoader/language.json", LL::globalConfig.language, defaultLangData);
+
     // Check Protocol Version
     CheckProtocolVersion();
 
@@ -207,14 +213,8 @@ void LLMain()
     // Init LL Logger
     Logger::setDefaultFile("logs/LiteLoader-latest.log", false);
 
-    // Load Config
-    LL::LoadLLConfig();
-
     // Check Running BDS(Requires Config)
     CheckRunningBDS();
-
-    // I18n
-    Translation::load("plugins/LiteLoader/LangPack/" + LL::globalConfig.language + ".json");
 
     // Builtin CrashLogger
     LL::InitCrashLogger(LL::globalConfig.enableCrashLogger);

@@ -19,7 +19,6 @@
 #include <LiteLoader/Main/Version.h>
 #include <Utils/FileHelper.h>
 #include <Tools/JsonHelper.h>
-#include <I18nAPI.h>
 #include <EconomicSystem.h>
 
 using namespace std;

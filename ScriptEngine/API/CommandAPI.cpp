@@ -1,6 +1,5 @@
-#include "DynamicCommandAPI.h"
+//#include "DynamicCommandAPI.h"
 #include "CommandAPI.h"
-#include "APIHelp.h"
 #include "McAPI.h"
 #include "ItemAPI.h"
 #include "PlayerAPI.h"
@@ -14,7 +13,6 @@
 #include <Engine/LoaderHelper.h>
 #include <Utils/STLHelper.h>
 #include <RegCommandAPI.h>
-#include <Global.hpp>
 #include <filesystem>
 #include <Configs.h>
 #include <vector>
