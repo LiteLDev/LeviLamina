@@ -16,10 +16,10 @@ body:
     label: 异常模块
     description: 出现问题的模块
     options:
-      - Core(核心)
-      - ScriptEngine(脚本引擎)
+      - Core（核心）
+      - ScriptEngine（脚本引擎）
       - AddonsHelper
-      - SymDB2
+      - PeEditor
   validations:
     required: true
 - type: dropdown
@@ -28,15 +28,17 @@ body:
     label: 操作系统
     multiple: false
     options:
+      - Windows Server 2022
       - Windows Server 2019
       - Windows Server 2016
       - Windows Server 2012
       - 其他版本的 Windows Server
-      - Windows 10
       - Windows 11
-      - Linux(Ubuntu/CentOS/...) with docker
-      - Linux(Ubuntu/CentOS/...) with wine
-      - 其他系统
+      - Windows 10
+      - 其他版本的 Windows
+      - GNU/Linux with docker
+      - GNU/Linux with wine
+      - 其他操作系统
   validations:
     required: true
 - type: input
