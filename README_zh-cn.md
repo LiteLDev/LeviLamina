@@ -293,7 +293,6 @@ PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](
 [BedrockX](https://github.com/Sysca11/BedrockX) GPLv3以及额外限制和例外  
 [ElementZero](https://github.com/Element-0/ElementZero) GPLv3  
 [ScriptX](https://github.com/Tencent/ScriptX) Apache License Version 2.0  
-[ChakraCore](https://github.com/chakra-core/ChakraCore) MIT License  
 [OpenSSL](https://github.com/openssl/openssl) Apache-2.0 License  
 [SimpleIni](https://github.com/brofield/simpleini) MIT License  
 [Nlohmann-Json](https://github.com/nlohmann/json) MIT License  
