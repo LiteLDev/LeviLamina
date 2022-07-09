@@ -36,8 +36,8 @@ body:
       - Windows 11
       - Windows 10
       - Other Windows
-      - Linux(Ubuntu/CentOS/...) with docker
-      - Linux(Ubuntu/CentOS/...) with wine
+      - GNU/Linux with docker
+      - GNU/Linux with wine
       - Other
   validations:
     required: true
