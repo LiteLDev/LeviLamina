@@ -20,8 +20,8 @@ public ref class NativePluginException
 ```
 <br>
 
-继承 [Object](https://docs.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0) → [Exception](https://docs.microsoft.com/zh-cn/dotnet/api/system.exception?view=net-6.0) → [LiteLoaderDotNETException](../LiteLoaderDotNETException/LiteLoaderDotNETException.md) → 
-[NativePluginException](NativePluginException.md)
+继承 [Object](https://docs.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0) → [Exception](https://docs.microsoft.com/zh-cn/dotnet/api/system.exception?view=net-6.0) → [LiteLoaderDotNETException](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/LiteLoaderDotNETException/LiteLoaderDotNETException.md) → 
+[NativePluginException](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/NativePluginException/NativePluginException.md)
 
 <br>
 

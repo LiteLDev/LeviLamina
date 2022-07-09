@@ -1,38 +1,24 @@
 [HEADING=1][LiteLoader Release Note][/HEADING]
-LiteLoaderBDS-2.3.1更新已发布，适应于BDS-1.19.1，协议版本527
+LiteLoaderBDS-2.3.2更新已发布，适应于BDS-1.19.x，协议版本527
 
 [HEADING=2][新内容][/HEADING]
 [LIST]
-[*]新增HttpRequest和HttpResponse的支持
-[*]新添群系API
-[*]新添经验相关API
-[*]新添sendToast API
+[*]新增Molang API
 [/LIST]
 
 [HEADING=2][改变][/HEADING]
 [LIST]
-[*]改进动态命令的错误输出
+[*]全新的文档
 [/LIST]
 
 [HEADING=2][BUG修复][/HEADING]
 [LIST]
 [*]修复LL Bugs
 [LIST]
-[*]修复Actor::Teleport
-[*]修复Sqlite的bug,[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/452']#452[/URL]
-[*]修复Vec3::toBlockPos的错误
-[*]修复PlayerLeftEvent的Xuid
-[*]修复配置文件加载出现的错误
-[*]修复配置加载失败时造成的LLSE出现错误
-[/LIST]
-[*]修复LLSE Bugs
-[LIST]
-[*]修复未输出onPostInit错误的原因
-[*]修复NbtListClass的错误
-[*]修复JsonConfigFile的错误,[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/456']#456[/URL]
-[/LIST]
-[*]修复BDS Bugs
-[LIST]
-[*]修复Wine控制台无法输出的问题
+[*]修复AntiGive的一个错误
+[*]修复AddonsHelper不支持嵌套,[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/343']#343[/URL]
+[*]修复使用PlayerPlaceBlockEvent时，无法放置红木门,[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/496']#495[/URL]
+[*]修复 PlayerMoveEvent无法使用的bug,[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/496']#496[/URL]
+[*]修复AntiGive无法踢出空格玩家的问题,[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/497']#497[/URL]
 [/LIST]
 [/LIST]

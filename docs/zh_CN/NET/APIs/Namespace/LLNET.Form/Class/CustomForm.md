@@ -18,7 +18,7 @@ ref class CustomForm : public ClassTemplate<CustomForm, ::Form::CustomForm>, pub
 ```
 <br>
 
-继承 [Object](https://docs.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0) → [ClassTemplate<REFCLASS,NATIVECLASS>] → [CustomForm](CustomForm.md)
+继承 [Object](https://docs.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0) → [ClassTemplate<REFCLASS,NATIVECLASS>] → [CustomForm](zh_CN/NET/APIs/Namespace/LLNET.Form/Class/CustomForm.md)
 
 <br>
 

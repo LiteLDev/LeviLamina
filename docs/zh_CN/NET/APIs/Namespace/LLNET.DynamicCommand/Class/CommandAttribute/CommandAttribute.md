@@ -22,7 +22,7 @@ public ref class CommandAttribute
 ```
 <br>
 
-继承 [Object](https://docs.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0) → [Attribute](https://docs.microsoft.com/zh-cn/dotnet/api/system.attribute?view=net-6.0) → [CommandAttribute](CommandAttribute.md)
+继承 [Object](https://docs.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0) → [Attribute](https://docs.microsoft.com/zh-cn/dotnet/api/system.attribute?view=net-6.0) → [CommandAttribute](zh_CN/NET/APIs/Namespace/LLNET.DynamicCommand/Class/CommandAttribute/CommandAttribute.md)
    
 <br>
 

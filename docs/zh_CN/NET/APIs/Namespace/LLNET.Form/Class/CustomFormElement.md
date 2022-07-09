@@ -18,7 +18,7 @@ public ref class CustomFormElement abstract
 ```
 <br>
 
-继承 [Object](https://docs.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0) → [CustomFormElement](CustomFormElement.md)
+继承 [Object](https://docs.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0) → [CustomFormElement](zh_CN/NET/APIs/Namespace/LLNET.Form/Class/CustomFormElement.md)
 
 <br>
 

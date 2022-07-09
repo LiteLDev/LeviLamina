@@ -22,7 +22,7 @@ public ref class PluginMainAttribute
 ```
 <br>
 
-继承 [Object](https://docs.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0) → [Attribute](https://docs.microsoft.com/zh-cn/dotnet/api/system.attribute?view=net-6.0) → [PluginMainAttribute](PluginMainAttribute.md)
+继承 [Object](https://docs.microsoft.com/zh-cn/dotnet/api/system.object?view=net-6.0) → [Attribute](https://docs.microsoft.com/zh-cn/dotnet/api/system.attribute?view=net-6.0) → [PluginMainAttribute](zh_CN/NET/APIs/Namespace/LLNET.Core/Class/PluginMainAttribute/PluginMainAttribute.md)
    
 <br>
 
@@ -30,7 +30,7 @@ public ref class PluginMainAttribute
 
 <br>
 
-[如何：定义插件入口](../../../../../HowTo/PluginEntry.md)
+[如何：定义插件入口](zh_CN/NET/HowTo/PluginEntry.md)
 
 <br>
 

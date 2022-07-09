@@ -73,7 +73,7 @@ namespace PluginMain
     |||
     |-|-|
     |[Size](zh_CN/NET/APIs/Namespace/LLNET.AllowList/Properties/Size.md)|获取 `AllowList` 大小。|
-    |[AllowList](zh_CN\NET\APIs\Namespace\LLNET.AllowList\Properties\AllowList.md)|获取或设置序列化为Json字符串的 `AllowList`。|
+    |[AllowList](zh_CN/NET/APIs/Namespace/LLNET.AllowList/Properties/AllowList.md)|获取或设置序列化为Json字符串的 `AllowList`。|
 
 <br>
 
@@ -81,14 +81,14 @@ namespace PluginMain
 - 
     |||
     |-|-|
-    |[Has(String)](zh_CN\NET\APIs\Namespace\LLNET.AllowList\Method\Has.md)|根据玩家名称查明玩家是否存在。|
-    |[Has(String, String)](zh_CN\NET\APIs\Namespace\LLNET.AllowList\Method\Has.md)|根据玩家名称、Xuid查明玩家是否存在。|
-    |[Has(String, String, Int32)](zh_CN\NET\APIs\Namespace\LLNET.AllowList\Method\Has.md)|根据玩家名称、Xuid查明玩家是否存在。|
-    |[Add(String)](zh_CN\NET\APIs\Namespace\LLNET.AllowList\Method\Add.md)|根据玩家名称将玩家添加到白名单中|
-    |[Add(String, String)](zh_CN\NET\APIs\Namespace\LLNET.AllowList\Method\Add.md)|根据玩家名称与Xuid将玩家添加到白名单中|
-    |[Add(String, String, Boolean)](zh_CN\NET\APIs\Namespace\LLNET.AllowList\Method\Add.md)|根据玩家名称与Xuid将玩家添加到白名单中|
-    |[Remove(String)](zh_CN\NET\APIs\Namespace\LLNET.AllowList\Method\Remove.md)|根据玩家名称将玩家从白名单中移除。|
-    |[Remove(String, String)](zh_CN\NET\APIs\Namespace\LLNET.AllowList\Method\Remove.md)|根据玩家名称与Xuid将玩家从白名单中移除。|
-    |[Reload()](zh_CN\NET\APIs\Namespace\LLNET.AllowList\Method\Reload.md)|重载白名单。|
+    |[Has(String)](zh_CN/NET/APIs/Namespace/LLNET.AllowList/Method/Has.md)|根据玩家名称查明玩家是否存在。|
+    |[Has(String, String)](zh_CN/NET/APIs/Namespace/LLNET.AllowList/Method/Has.md)|根据玩家名称、Xuid查明玩家是否存在。|
+    |[Has(String, String, Int32)](zh_CN/NET/APIs/Namespace/LLNET.AllowList/Method/Has.md)|根据玩家名称、Xuid查明玩家是否存在。|
+    |[Add(String)](zh_CN/NET/APIs/Namespace/LLNET.AllowList/Method/Add.md)|根据玩家名称将玩家添加到白名单中|
+    |[Add(String, String)](zh_CN/NET/APIs/Namespace/LLNET.AllowList/Method/Add.md)|根据玩家名称与Xuid将玩家添加到白名单中|
+    |[Add(String, String, Boolean)](zh_CN/NET/APIs/Namespace/LLNET.AllowList/Method/Add.md)|根据玩家名称与Xuid将玩家添加到白名单中|
+    |[Remove(String)](zh_CN/NET/APIs/Namespace/LLNET.AllowList/Method/Remove.md)|根据玩家名称将玩家从白名单中移除。|
+    |[Remove(String, String)](zh_CN/NET/APIs/Namespace/LLNET.AllowList/Method/Remove.md)|根据玩家名称与Xuid将玩家从白名单中移除。|
+    |[Reload()](zh_CN/NET/APIs/Namespace/LLNET.AllowList/Method/Reload.md)|重载白名单。|
 
 

@@ -1,4 +1,4 @@
-# LiteLoader ScriptEngine - Script Assist Interface Documentation
+# LLSE - Script Assist Interface Documentation
 
 > A large number of **helper functions** are provided here, including log functions, loader function interfaces, and more.
 

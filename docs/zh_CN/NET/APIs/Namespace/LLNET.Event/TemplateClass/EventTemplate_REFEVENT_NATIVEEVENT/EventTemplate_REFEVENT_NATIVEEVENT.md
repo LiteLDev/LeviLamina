@@ -4,7 +4,7 @@
 
 <br>
 
->作为 [LLNET.Event](../../LLNET.Event.md) 命名空间中所有**事件**的模板基类。
+>作为 [LLNET.Event](zh_CN/NET/APIs/Namespace/LLNET.Event/LLNET.Event.md) 命名空间中所有**事件**的模板基类。
 
 <br>
 

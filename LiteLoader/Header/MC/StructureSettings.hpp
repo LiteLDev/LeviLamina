@@ -27,7 +27,7 @@ class StructureSettings {
 #define AFTER_EXTRA
 // Add Member There
 private:
-char filler[96];
+char filler[104];
 
 public:
 inline StructureSettings(BlockPos const& size, bool ignoreEntities, bool ignoreBlocks)

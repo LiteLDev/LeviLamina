@@ -23,7 +23,7 @@ public interface class IPluginInitializer
 
 <br>
 
-[如何：定义插件入口](../../../../../HowTo/PluginEntry.md)
+[如何：定义插件入口](zh_CN/NET/HowTo/PluginEntry.md)
 
 <br>
 

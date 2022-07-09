@@ -336,7 +336,7 @@ namespace PluginMain
 <br>
 
 C#
-```like
+```cs
 using System;
 using LLNET.DynamicCommand;
 using MC;
@@ -381,7 +381,7 @@ public class KillAllPlayersCommand: Icommand
 <br>
 
 C#
-```like
+```cs
 using System;
 using LLNET.DynamicCommand;
 

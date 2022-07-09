@@ -376,7 +376,7 @@ mc.regPlayerCmd("fly on","Turn on the fly mode",function(pl,args){
 ```
 
 
-### 注册一个新的后台控制台命令（假命令）  
+### 注册一个新的控制台命令（假命令）  
 
 `mc.regConsoleCmd(cmd,description,callback)`
 
