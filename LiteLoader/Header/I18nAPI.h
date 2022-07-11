@@ -50,19 +50,18 @@
 class I18N {
 
 public:
-    using LangData = std::map<std::string, std::unordered_map<std::string, std::string>>;
+    using SubLangData = std::unordered_map<std::string, std::string>;
+    using LangData = std::map<std::string, SubLangData>;
 
-private:
-    HMODULE curModule;
+    HMODULE curModule = nullptr;
     std::string filePath;
     LangData langData;
     LangData defaultLangData;
 
     void load(const std::string& fileName);
+    void loadOldLangFile(const std::string& fileName);
     void save();
 
-public:
-    
     std::string defaultLangCode = "en_US";
 
     I18N() {

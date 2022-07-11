@@ -30,6 +30,17 @@ void I18N::load(const std::string& fileName) {
     save();
 }
 
+void I18N::loadOldLangFile(const std::string& fileName) {
+    if (!fs::exists(fileName)) {
+        throw std::invalid_argument("Language file not found!");
+    }
+    auto langCode = fs::path(fileName).stem().string();
+    std::fstream file(fileName, std::ios::in);
+    nlohmann::json j;
+    file >> j;
+    langData[langCode] = j.get<SubLangData>();
+}
+
 void I18N::save() {
     std::fstream file;
     if (fs::exists(filePath))
@@ -153,8 +164,18 @@ namespace TextEncoding
 ///////////////////////////// Encoding-CodePage Map /////////////////////////////
 
 namespace Translation {
+
     bool loadImpl(HMODULE hPlugin, const std::string& filePath) {
-        return loadImpl(hPlugin, filePath, "en_US", {});
+        try {
+            I18N i18n{};
+            i18n.curModule = hPlugin;
+            i18n.loadOldLangFile(filePath);
+            return &PluginOwnData::setImpl<I18N>(hPlugin, I18N::POD_KEY);
+        } catch (const std::exception& e) {
+            logger.error("Fail to load translation file <{}> !", filePath);
+            logger.error("{}", TextEncoding::toUTF8(e.what()));
+        } catch (...) { logger.error("Fail to load translation file <{}> !", filePath); }
+        return false;
     }
 
    I18N* loadImpl(HMODULE hPlugin, const std::string& filePath, const std::string& defaultLangCode,
@@ -165,10 +186,8 @@ namespace Translation {
         } catch (const std::exception& e) {
             logger.error("Fail to load translation file <{}> !", filePath);
             logger.error("{}", TextEncoding::toUTF8(e.what()));
-            return nullptr;
         } catch (...) {
             logger.error("Fail to load translation file <{}> !", filePath);
-            return nullptr;
         }
         return nullptr;
    }
