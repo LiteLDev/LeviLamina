@@ -197,7 +197,7 @@ Local<Value> McClass::newCommand(const Arguments& args)
         }
 
         auto desc = args[1].toStr();
-        CommandPermissionLevel permission = CommandPermissionLevel::Any;
+        CommandPermissionLevel permission = CommandPermissionLevel::GameMasters;
         CommandFlag flag = {(CommandFlagValue)0x80};
         std::string alias = "";
         if (args.size() > 2)

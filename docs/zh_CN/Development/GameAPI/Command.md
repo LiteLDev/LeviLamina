@@ -76,7 +76,7 @@ log(result.output);
     | `PermType.GameMasters` | 只有OP可以执行这条指令     |
     | `PermType.Console`     | 只有控制台可以执行这条指令 |
 
-    默认值 `PermType.Any`，表示任何人都可以执行这个命令
+    默认值 `PermType.GameMasters`，表示任何人都可以执行这个命令
 
   - flag : `Integer`  
     （可选参数）默认值 `0x80`   
