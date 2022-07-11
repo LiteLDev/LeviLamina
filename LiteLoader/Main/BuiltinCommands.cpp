@@ -461,7 +461,8 @@ void RegisterCommands()
     Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
         LLCommand::setup(ev.mCommandRegistry);
         VersionCommand::setup(ev.mCommandRegistry);
-        TeleportDimensionCommand::setup(ev.mCommandRegistry);
+        if (LL::globalConfig.enableTpdimCommand) { TeleportDimensionCommand::setup(ev.mCommandRegistry); }
+		
         return true;
     });
 }

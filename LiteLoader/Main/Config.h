@@ -59,6 +59,8 @@ struct LLConfig
     bool enableOutputFilter = false;
     bool onlyFilterConsoleOutput = true;
     bool enableEconomyCore = true;
+    bool enableTpdimCommand = true;
+    bool enableForceUtf8Input = false;
     std::vector<std::string> outputFilterRegex = {};
 
     // Runtime Config

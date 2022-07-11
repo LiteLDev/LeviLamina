@@ -307,7 +307,7 @@ TClasslessInstanceHook(void, "?fireEventPlayerTeleported@MinecraftEventing@@SAXP
 // set stdin mode to text mode if in wine environment
 inline bool _tryFixConsoleInputMode()
 {
-    if (LL::globalConfig.enableFixMcBug && IsWineEnvironment())
+    if ((LL::globalConfig.enableFixMcBug && IsWineEnvironment()) || LL::globalConfig.enableForceUtf8Input)
     {
         int result = _setmode(_fileno(stdin), _O_U8TEXT);
         if (result == -1)
