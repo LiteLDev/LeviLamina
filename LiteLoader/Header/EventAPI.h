@@ -173,6 +173,7 @@ public:
     ItemStack* mItemStack;
     BlockInstance mBlockInstance;
     unsigned char mFace;
+    Vec3 mClickPos;
 };
 
 class PlayerChatEvent : public EventTemplate<PlayerChatEvent>
