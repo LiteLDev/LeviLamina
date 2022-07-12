@@ -164,19 +164,19 @@ string Player::getDeviceTypeName()
     }
 }
 
-bool Player::kick(const string& msg) 
+bool Player::kick(const std::string& msg) 
 {
     NetworkIdentifier* pNetworkIdentifier = getNetworkIdentifier();
     Global<ServerNetworkHandler>->disconnectClient(*pNetworkIdentifier, msg, 0);
     return true;
 }
 
-bool Player::sendText(string text, TextType type)
+bool Player::sendText(const std::string& text, TextType type)
 {
     return sendTextPacket(text, type);
 }
 
-bool Player::talkAs(const string& msg)
+bool Player::talkAs(const std::string& msg)
 {
     return sendTextTalkPacket(msg);
 }
@@ -250,7 +250,7 @@ bool Player::runcmd(const string& cmd)
 
 Container* Player::getEnderChestContainer() 
 {
-    return dAccess<Container*>(this, 4552); // IDA Player::Player() 782
+    return dAccess<Container*>(this, 4960); // IDA Player::Player() 782
 }
 
 bool Player::transferServer(const string& address, unsigned short port)

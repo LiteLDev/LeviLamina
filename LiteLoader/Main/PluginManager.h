@@ -11,7 +11,6 @@ namespace LL
 
     class PluginManager
     {
-    private:
         static bool callEventAtHotLoad(std::string pluginName);
         static bool callEventAtHotUnload(std::string pluginName);
 

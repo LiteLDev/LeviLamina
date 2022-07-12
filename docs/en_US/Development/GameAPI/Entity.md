@@ -326,3 +326,17 @@ The following APIs provide APIs for interacting with entities at specified locat
 - Return value type:  `Boolean`
 
 <br>
+
+
+#### Quick execute Molang expression
+
+`en.quickEvalMolangScript(str)`
+
+- Parameters:
+  - str : `String`  
+    Molang expression string.
+- Return value: The result of the Molang expression.
+- Return value type:  `Float`
+
+For detailed usage of Molang, refer to [MOLANG Doc bedrock.dev](https://bedrock.dev/zh/docs/stable/Molang)
+<br>

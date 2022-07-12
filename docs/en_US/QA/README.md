@@ -2,7 +2,8 @@
 Download the newer LiteLoader.zip, unzip it to BDS directory
 
 ## How to update Bedrock Dedicated Server
-Download the latest Bedrock Dedicated Server from [Minecraft.net](https://www.minecraft.net/en-us/download/server/bedrock), unzip it fully except `server.properties`,`allowlist.json`,`permission.json` to the old version of Bedrock Dedicated Server directory
+Download the latest Bedrock Dedicated Server from [Minecraft.net](https://www.minecraft.net/en-us/download/server/bedrock), unzip it fully except `server.properties`,`allowlist.json`,`permission.json` to the old version of Bedrock Dedicated Server directory  
+Then run `LLPeEditor.exe` to generate new `bedrock_server_mod.exe`
 
 ## How to run LiteLoaderBDS on Linux
 Because we have not develop Linux version, so you need to use [Wine](https://www.winehq.org/) to run Windows's Bedrock Dedicated Server to load LiteLoaderBDS, you can choose [the docker image or installation script](https://github.com/LiteLDev/LiteLoaderBDS#for-linux) which provided by us

@@ -19,7 +19,7 @@ body:
       - Core
       - ScriptEngine
       - AddonsHelper
-      - SymDB2
+      - PeEditor
   validations:
     required: true
 - type: dropdown
@@ -28,14 +28,16 @@ body:
     label: Operating System
     multiple: false
     options:
+      - Windows Server 2022
       - Windows Server 2019
       - Windows Server 2016
       - Windows Server 2012
       - Other Windows Server
-      - Windows 10
       - Windows 11
-      - Linux(Ubuntu/CentOS/...) with docker
-      - Linux(Ubuntu/CentOS/...) with wine
+      - Windows 10
+      - Other Windows
+      - GNU/Linux with docker
+      - GNU/Linux with wine
       - Other
   validations:
     required: true

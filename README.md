@@ -11,7 +11,7 @@ QQ Group: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ Group 2: [85051
 
 ##### English | [简体中文](README_zh-cn.md)
 
-![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20%26%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLiteLoaderBDS%2Fmain%2Fdocs%2Fassets%2FLL-Logo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
+![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20%26%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLiteLoaderBDS%2Fmain%2Fdocs%2F.vuepress%2Fpublic%2Fassets%2FLL-Logo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
 `LiteLoaderBDS` is an unofficial plugin loader that provides basic API support for `Bedrock Dedicated Server`, with a
 massive API, lots of packed utility interfaces, a rich event system and powerful basic interface support.
@@ -293,7 +293,6 @@ Project|License
 [BedrockX](https://github.com/Sysca11/BedrockX)|GPLv3 with extra restrictions&exceptions
 [ElementZero](https://github.com/Element-0/ElementZero)|GPLv3
 [ScriptX](https://github.com/Tencent/ScriptX)|Apache License Version 2.0
-[ChakraCore](https://github.com/chakra-core/ChakraCore)|MIT License
 [OpenSSL](https://github.com/openssl/openssl)|Apache-2.0 License
 [SimpleIni](https://github.com/brofield/simpleini)|MIT License
 [Nlohmann-Json](https://github.com/nlohmann/json)|MIT License

@@ -2,6 +2,126 @@
 #include <Utils/StringHelper.h>
 #include <Main/LiteLoader.h>
 using namespace std;
+namespace fs = std::filesystem;
+
+void I18N::load(const std::string& fileName) {
+    if (!fs::exists(fileName)) {
+        fs::create_directories(fs::path(fileName).parent_path());
+        std::fstream file(fileName, std::ios::out | std::ios::app);
+        nlohmann::json j = defaultLangData;
+        file << std::setw(4) << j; // Dump default language data
+        file.close();
+        langData = defaultLangData;
+        return; // Skip parsing
+    }
+    std::fstream file(fileName, std::ios::in);
+    nlohmann::json j;
+    file >> j;
+    langData = j.get<LangData>();
+    file.close();
+    // Replenish the missing keys
+    for (auto& [lang, dat] : langData) {
+        if (defaultLangData.count(lang)) {
+            for (auto& [k, v] : defaultLangData[lang]) {
+                if (!dat.count(k)) { dat[k] = v; }
+            }
+        }
+    }
+    save();
+}
+
+void I18N::loadOldLangFile(const std::string& fileName) {
+    if (!fs::exists(fileName)) {
+        throw std::invalid_argument("Language file not found!");
+    }
+    auto langCode = fs::path(fileName).stem().string();
+    std::fstream file(fileName, std::ios::in);
+    nlohmann::json j;
+    file >> j;
+    langData[langCode] = j.get<SubLangData>();
+}
+
+void I18N::save() {
+    std::fstream file;
+    if (fs::exists(filePath))
+        file.open(filePath, std::ios::out | std::ios::ate);
+    else
+        file.open(filePath, std::ios::out | std::ios::app);
+    nlohmann::json j = langData;
+    file << std::setw(4) << j;
+    file.close();
+}
+
+std::string I18N::get(const std::string& key, const std::string& langCode) {
+    auto& langc = (langCode.empty() ? defaultLangCode : langCode);
+    auto langType = langc.substr(0, 2);
+    if (langData.count(langc)) {
+        auto& lang = langData[langc];
+        if (lang.count(key)) return lang[key];
+        // Search for the similar language in langData
+        for (auto& [lc, ld] : langData) {
+            if (lc.length() < 2) continue;
+            if (lc.substr(0, 2) == langType) {
+                if (ld.count(key)) { return ld[key]; }
+            }
+        }
+    }
+    // If not found, try falling back to the default language data
+    if (defaultLangData.count(langc)) {
+        if (defaultLangData[langc].count(key)) return defaultLangData[langc][key]; // Fall back
+    }
+    // Search for the similar language
+    for (auto& [lc, ld] : defaultLangData) {
+        if (lc.substr(0, 2) == langType) {
+            if (lc.length() < 2) continue;
+            if (ld.count(key)) { return ld[key]; }
+        }
+    }
+    // Finally, not found, return the key
+    return key;
+}
+
+
+namespace Translation {
+
+bool loadImpl(HMODULE hPlugin, const std::string& filePath) {
+    try {
+        I18N i18n{};
+        i18n.curModule = hPlugin;
+        i18n.loadOldLangFile(filePath);
+        return &PluginOwnData::setImpl<I18N>(hPlugin, I18N::POD_KEY);
+    } catch (const std::exception& e) {
+        logger.error("Fail to load translation file <{}> !", filePath);
+        logger.error("- {}", TextEncoding::toUTF8(e.what()));
+    } catch (...) { logger.error("Fail to load translation file <{}> !", filePath); }
+    return false;
+}
+
+I18N* loadImpl(HMODULE hPlugin, const std::string& filePath, const std::string& defaultLangCode,
+               const I18N::LangData& defaultLangData) {
+    try {
+        I18N i18n(filePath, defaultLangCode, defaultLangData, hPlugin);
+        return &PluginOwnData::getImpl<I18N>(hPlugin, I18N::POD_KEY);
+    } catch (const std::exception& e) {
+        logger.error("Fail to load translation file <{}> !", filePath);
+        logger.error("- {}", TextEncoding::toUTF8(e.what()));
+    } catch (...) { logger.error("Fail to load translation file <{}> !", filePath); }
+    return nullptr;
+}
+
+I18N* loadFromImpl(HMODULE hPlugin, HMODULE hTarget) {
+    try {
+        auto& i18n = PluginOwnData::getImpl<I18N>(hTarget, I18N::POD_KEY);
+        return &PluginOwnData::setImpl<I18N>(hPlugin, I18N::POD_KEY, i18n);
+    } catch (const std::exception& e) {
+        logger.error("Fail to load translation from another plugin!", e.what());
+        logger.error("- {}", e.what());
+    } catch (...) { logger.error("Fail to load translation from another plugin!"); }
+    return nullptr;
+}
+
+}; // namespace Translation
+
 
 ///////////////////////////// Encoding-CodePage Map /////////////////////////////
 #undef UNICODE
@@ -84,29 +204,6 @@ namespace TextEncoding
 }
 #define UNICODE
 ///////////////////////////// Encoding-CodePage Map /////////////////////////////
-
-namespace Translation {
-    bool loadImpl(HMODULE hPlugin, const std::string &filePath) {
-        try {
-            auto content = ReadAllFile(filePath);
-            if (!content)
-                throw std::exception("Fail to open translation file!");
-
-            PluginOwnData::setImpl<nlohmann::json>(hPlugin, TRANSLATION_DATA_NAME,
-                nlohmann::json::parse(*content, nullptr, true, true));
-            PluginOwnData::setImpl<std::string>(hPlugin, TRANSLATION_DATA_FILE, filePath);
-        }
-        catch (const nlohmann::json::exception &e) {
-            logger.error("Fail to load translation file <{}> !", filePath);
-            logger.error("{}", TextEncoding::toUTF8(e.what()));
-            return false;
-        } catch (...) {
-            logger.error("Fail to load translation file <{}> !", filePath);
-            return false;
-        }
-        return true;
-    }
-}; // namespace Translation
 
 namespace TextEncoding
 {

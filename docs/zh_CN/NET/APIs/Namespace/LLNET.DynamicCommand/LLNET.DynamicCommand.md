@@ -8,11 +8,11 @@
 
 |||
 |-|-|
-|[CommandAliasAttribute](zh_CN/NET/APIs/Namespace/LLNET.DynamicCommand/Class/CommandAliasAttribute/CommandAliasAttribute.md)|用于指定命令别名的特性。|
-|[CommandAttribute](zh_CN/NET/APIs/Namespace/LLNET.DynamicCommand/Class/CommandAttribute/CommandAttribute.md)|用于指定命令主体类的特性。|
-|[CommandEmptyOverloadAttribute](zh_CN/NET/APIs/Namespace/LLNET.DynamicCommand/Class/CommandEmptyOverloadAttribute/CommandEmptyOverloadAttribute.md)|用于指定命令具有空重载的特性。|
-|[CommandEnumAttribute](zh_CN/NET/APIs/Namespace/LLNET.DynamicCommand/Class/CommandEnumAttribute/CommandEnumAttribute.md)|用于指定命令枚举参数的特性。|
-|[CommandParameterAttribute](zh_CN/NET/APIs/Namespace/LLNET.DynamicCommand/Class/CommandParameterAttribute/CommandParameterAttribute.md)|用于指定命令参数的特性。|
+|[CommandAliasAttribute](Class/CommandAliasAttribute/CommandAliasAttribute.md)|用于指定命令别名的特性。|
+|[CommandAttribute](Class/CommandAttribute/CommandAttribute.md)|用于指定命令主体类的特性。|
+|[CommandEmptyOverloadAttribute](Class/CommandEmptyOverloadAttribute/CommandEmptyOverloadAttribute.md)|用于指定命令具有空重载的特性。|
+|[CommandEnumAttribute](Class/CommandEnumAttribute/CommandEnumAttribute.md)|用于指定命令枚举参数的特性。|
+|[CommandParameterAttribute](Class/CommandParameterAttribute/CommandParameterAttribute.md)|用于指定命令参数的特性。|
 |[CommandParameterOverloadAttribute]|用于指定命令参数重载规则的特性。|
 |[DynamicCommand]|用于定义、注册、管理动态命令的类。|
 |[DynamicCommandInstance]|动态命令实例类。|

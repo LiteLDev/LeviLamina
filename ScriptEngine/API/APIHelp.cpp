@@ -1,4 +1,3 @@
-#include "APIHelp.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -23,6 +22,7 @@
 #include <API/NetworkAPI.h>
 #include <Global.hpp>
 #include <Engine/EngineOwnData.h>
+#include "APIHelp.h"
 
 using namespace std;
 
@@ -257,6 +257,7 @@ Local<Value> BigInteger_Helper(fifo_json& i)
         }
         return Number::newNumber(i.get<int64_t>());
     }
+    return Local<Value>();
 }
 
 void JsonToValue_Helper(Local<Array> &res, fifo_json &j);

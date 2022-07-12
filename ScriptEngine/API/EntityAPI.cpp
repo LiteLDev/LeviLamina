@@ -57,6 +57,7 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("getAllTags", &EntityClass::getAllTags)
         .instanceFunction("getEntityFromViewVector", &EntityClass::getEntityFromViewVector)
         .instanceFunction("getBlockFromViewVector", &EntityClass::getBlockFromViewVector)
+        .instanceFunction("quickEvalMolangScript", &EntityClass::quickEvalMolangScript)
 
         //For Compatibility
         .instanceFunction("setTag", &EntityClass::setNbt)
@@ -659,6 +660,18 @@ Local<Value> EntityClass::getBlockFromViewVector(const Arguments& args)
         return BlockClass::newBlock(std::move(blockInstance));
     }
     CATCH("Fail in getBlockFromViewVector!");
+}
+
+Local<Value> EntityClass::quickEvalMolangScript(const Arguments& args) {
+	CHECK_ARGS_COUNT(args, 1);
+	CHECK_ARG_TYPE(args[0], ValueKind::kString);
+	try {
+        Actor* actor = get();
+        if (!actor)
+			return Local<Value>();
+		return Number::newNumber(actor->quickEvalMolangScript(args[0].toStr()));
+	}
+	CATCH("Fail in quickEvalMolangScript!");
 }
 
 Local<Value> McClass::getAllEntities(const Arguments& args) {

@@ -1,46 +1,58 @@
-# LiteLoaderBDS Documentation
+---
+home: true
+sidebar: false
+heroText:
+tagline:
+---
 
-[![status](https://img.shields.io/github/workflow/status/LiteLDev/LiteLoader/Build%20LiteLoader?style=for-the-badge)](https://github.com/LiteLDev/LiteLoader/actions)
-[
-![Latest Tag](https://img.shields.io/github/v/tag/LiteLDev/LiteLoader?label=LATEST%20TAG&style=for-the-badge)
-![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoader/latest/total?style=for-the-badge)
-](https://github.com/LiteLDev/LiteLoader/releases/latest)
+<div class="content">
+    <div class="row">
+        <div class="col-sm-3">
+            <p class="logo_p"><img src="/assets/compass_item.png" alt="Logo"></p>
+        </div>
+        <div class="col-sm-9">
+            <h1>Navigator</h1>
+            <p>Here you will find links to <code>JavaScript/Lua/.NET/C++</code> documentation</p>
+        </div>
+    </div>
+    <div class="row buttons-content">
+        <div class="col-sm-6 btn-link"><a href="/en_US/Usage" class="navigator-link">🔨 Installation and Usage</a></div>
+        <div class="col-sm-6 btn-link"><a href="/en_US/QA" class="navigator-link">❓ Common problems</a></div>
+        <div class="col-sm-6 btn-link"><a class="navigator-link">⛳ C++ Documentation (coming soon)</a></div>
+        <div class="col-sm-6 btn-link"><a class="navigator-link">🪁 .NET Documentation (coming soon)</a></div>
+        <div class="col-sm-6 btn-link"><a href="/en_US/Development" class="navigator-link">🎯 JavaScript/Lua Documentation</a></div>
+        <div class="col-sm-6 btn-link"><a href="/en_US/Maintenance" class="navigator-link">🎬 Development and Maintenance</a></div>
+    </div>
+</div>
 
-## 🎨 Description
-`LiteLoaderBDS` is a plugin framework for `Bedrock Dedicated Server`(BDS), providing powerful corss language script plugin support and stable API support.
+<style>
+.content {
+    margin: 30px 0;
+}
 
-👉[README](https://github.com/LiteLDev/LiteLoaderBDS)👈
+.logo_p {
+    text-align: center;
+}
 
-<br>
+.logo_p img {
+    width: 128px;
+    image-rendering: pixelated;
+}
 
-## 🔨 Installation and Usage
+.btn-link {
+    margin-top: 20px;
+}
 
-👉[Click here](/en_US/Usage/)👈 to read `LiteLoaderBDS` the documentation
-<br>
+.navigator-link {
+    border: 1px solid #3eaf7c;
+    display: flex;
+    padding: 16px;
+    border-radius: 6px;
+}
 
-## ❓Common problems
-
-Meet some problem while installing or using `LiteLoaderBDS`? There are some common solution.
-
-👉[Click here](/en_US/QA/)👈 to read common problem and its sulution.
-
-<br>
-
-## ⛳ Development guide and API documentation of C++ Plugin
-
-Using `C++` to develop LiteLoader plugin can realize your creative idea.
-But the documentation is still writing.
-<br>
-
-## 🎯 Development guide and API documentation of Scirpt Plugin
-
-Using `JavaScript` and `Lua` to develop plugin is easy and efficient.
-
-👉[Click here](/en_US/Development/)👈 to read the documentation.
-<br>
-
-## 🎬 Join the development of LiteLoaderBDS
-
-We welcome your contributions to `LiteLoaderBDS`
-
-👉[Click here](/en_US/Maintenance/)👈 to read the documentation of development and maintenance
+@media screen and (max-width: 576px) {
+    .logo_p {
+        text-align: left;
+    }
+}
+</style>

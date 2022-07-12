@@ -16,6 +16,7 @@
     #include "UserEntityIdentifierComponent.hpp"
     #include "ScorePacketInfo.hpp"
     #include "DataItem.hpp"
+    #include "../I18nAPI.h"
 #undef BEFORE_EXTRA
 
 class Player : public Mob {
@@ -63,11 +64,49 @@ public:
     LIAPI static size_t getTotalXpNeededForLevel(int level);
 
     LIAPI bool sendText(string text, TextType type = TextType::RAW);
+    
+    /**
+     * @brief Translate(localize) a text for the player with provided plugin handle.
+     * 
+     * @param  hPlugin      The plugin handle
+     * @param  format       The str to translate and format
+     * @param  args         The format arguments
+     * @return std::string  The translated str
+     */
     template <typename... Args>
-    bool sendFormattedText(string text, const Args&... args)
-    {
-        if constexpr (0 == sizeof...(args))
-        {
+    inline std::string trImpl(HMODULE hPlugin, const std::string& format, const Args&... args) {
+        return Translation::trlImpl(hPlugin, this->getLanguageCode(), format, args...);
+    }
+
+    /**
+     * @brief Translate(localize) a text for the player(convenience func).
+     *
+     * @param  format       The str to translate and format
+     * @param  args         The format arguments
+     * @return std::string  The translated str
+     */
+    template <typename... Args>
+    inline std::string tr(const std::string& format, const Args&... args) {
+        return trImpl(GetCurrentModule(), format, args...);
+    }
+
+    LIAPI bool sendText(const std::string& text, TextType type = TextType::RAW);
+    /**
+     * @brief Translate(localize) and send a text to the player(convenience func).
+     * 
+     * @tparam ttype  The text type(default RAW)
+     * @tparam Args   ...
+     * @param  text   The str to translate and format
+     * @param  args   The format arguments
+     * @return bool   Success or not
+     */
+    template <TextType ttype = TextType::RAW, typename ... Args>
+    inline bool sendText(const std::string& text, const Args&... args) {
+        return sendText(this->tr(text, args...), ttype);
+    }
+    template <typename... Args>
+    inline bool sendFormattedText(const std::string& text, const Args&... args) {
+        if constexpr (0 == sizeof...(args)) {
             // Avoid fmt if only one argument
             return sendText(text);
         }

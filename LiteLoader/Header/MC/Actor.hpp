@@ -59,6 +59,8 @@ public:
     LIAPI bool setNbt(CompoundTag* nbt);
     LIAPI bool refreshActorData();
     LIAPI bool addEffect(MobEffect::EffectType type, int tick, int level, bool ambient = false, bool showParticles = true, bool showAnimation = false);
+    LIAPI float quickEvalMolangScript(const string& expression);
+    //LIAPI Json::Value quickEvalMolangScriptAsJson(const string& expression);
 
     inline Vec3 getPos()
     {

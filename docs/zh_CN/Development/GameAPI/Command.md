@@ -73,10 +73,8 @@ log(result.output);
     | 执行权限               | 含义                       |
     | ---------------------- | -------------------------- |
     | `PermType.Any`         | 任何人都可以执行这条指令   |
-    | `PermType.GameMasters` | 只有OP可以执行这条指令     |
+    | `PermType.GameMasters` | 只有OP可以执行这条指令（默认值）|
     | `PermType.Console`     | 只有控制台可以执行这条指令 |
-
-    默认值 `PermType.Any`，表示任何人都可以执行这个命令
 
   - flag : `Integer`  
     （可选参数）默认值 `0x80`   
@@ -376,7 +374,7 @@ mc.regPlayerCmd("fly on","Turn on the fly mode",function(pl,args){
 ```
 
 
-### 注册一个新的后台控制台命令（假命令）  
+### 注册一个新的控制台命令（假命令）  
 
 `mc.regConsoleCmd(cmd,description,callback)`
 

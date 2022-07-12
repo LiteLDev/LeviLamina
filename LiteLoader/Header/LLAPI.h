@@ -5,13 +5,17 @@
 
 #ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN
-#endif // ! WIN32_LEAN_AND_MEAN
+#endif
+
+#ifndef NOMINMAX
+#define NOMINMAX
+#endif
+
 #include <Windows.h>
 
 #include "Global.h"
 #include "Utils/WinHelper.h"
 #include "Utils/PluginOwnData.h"
-#include "LoggerAPI.h"
 
 // LL types
 namespace LL
@@ -191,6 +195,13 @@ LIAPI bool hasPlugin(std::string name);
  * @return std::unordered_map<std::string, LL::Plugin*>  The loaded plugins(name-plugin)
  */
 LIAPI std::unordered_map<std::string, LL::Plugin*> getAllPlugins();
+
+/**
+ * @breif Get the handle of LiteLoader.dll.
+ * 
+ * @return HMODULE  The handle
+ */
+LIAPI HMODULE getLoaderHandle();
 
 /// Server Status
 enum class ServerStatus

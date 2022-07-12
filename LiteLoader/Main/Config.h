@@ -33,7 +33,7 @@ struct LLConfig
     bool debugMode = false;
     bool colorLog = true;
     int logLevel = 4;
-    std::string language = "en";
+    std::string language = "en_US";
 
     bool enableScriptEngine = true;
     bool alwaysLaunchScriptEngine = false;
@@ -59,6 +59,8 @@ struct LLConfig
     bool enableOutputFilter = false;
     bool onlyFilterConsoleOutput = true;
     bool enableEconomyCore = true;
+    bool enableTpdimCommand = true;
+    bool enableForceUtf8Input = false;
     std::vector<std::string> outputFilterRegex = {};
 
     // Runtime Config
