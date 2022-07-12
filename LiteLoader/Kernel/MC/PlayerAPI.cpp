@@ -674,7 +674,7 @@ bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType
     bs.writeType(pos);
     bs.writeType(Vec3{0, 0, 0});
     bs.writeType(Vec3{0, 0, 0});
-
+    bs.writeFloat(0.0);
     // Atrribute
     bs.writeUnsignedVarInt(0);
 
