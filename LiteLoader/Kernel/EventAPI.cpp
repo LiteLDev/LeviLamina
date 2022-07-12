@@ -1900,9 +1900,8 @@ TClasslessInstanceHook(void, "?onHit@ProjectileComponent@@QEAAXAEAVActor@@AEBVHi
 
 
 ////////////// WitherBossDestroy //////////////
-TInstanceHook(void, "?_destroyBlocks@WitherBoss@@AEAAXAEAVLevel@@AEBVAABB@@AEAVBlockSource@@H@Z",
-      Actor , Level* a2, AABB* aabb, BlockSource* a4, int a5)
-{
+TInstanceHook(void, "?_destroyBlocks@WitherBoss@@AEAAXAEAVLevel@@AEBVAABB@@AEAVBlockSource@@HW4WitherAttackType@1@@Z",
+              Actor, Level* a2, AABB* aabb, BlockSource* a4, int a5,unsigned int a6) {
     IF_LISTENED(WitherBossDestroyEvent)
     {
         WitherBossDestroyEvent ev{};
@@ -1914,7 +1913,7 @@ TInstanceHook(void, "?_destroyBlocks@WitherBoss@@AEAAXAEAVLevel@@AEBVAABB@@AEAVB
         *aabb = ev.mDestroyRange;
     }
     IF_LISTENED_END(WitherBossDestroyEvent)
-    original(this, a2, aabb, a4, a5);
+    original(this, a2, aabb, a4, a5,a6);
 }
 
 
