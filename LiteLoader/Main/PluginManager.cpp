@@ -92,13 +92,15 @@ LL::Plugin* LL::PluginManager::getPlugin(std::string name, bool includeScriptPlu
     auto res = GetPlugin_Raw(name, includeScriptPlugin);
     if (res)
         return res;
+    /* issue #510
     try
     {
-        name = UTF82String(filesystem::path(str2wstr(name)).filename().replace_extension("").u8string());
+        name = UTF82String(filesystem::path(str2wstr(name)).stem().u8string());
         return GetPlugin_Raw(name, includeScriptPlugin);
     }
     catch(...)
     { }
+    */
     return nullptr;
 }
 

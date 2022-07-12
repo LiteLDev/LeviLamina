@@ -257,6 +257,7 @@ Local<Value> BigInteger_Helper(fifo_json& i)
         }
         return Number::newNumber(i.get<int64_t>());
     }
+    return Local<Value>();
 }
 
 void JsonToValue_Helper(Local<Array> &res, fifo_json &j);
