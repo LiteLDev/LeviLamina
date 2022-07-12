@@ -187,7 +187,7 @@ Reminder: This event does not fire when the player returns to the Overworld from
 #### `"onUseItemOn"` - Player Use Item on Block Event (Right-Click)
 
 - Listener function prototype 
-  `function(player,item,block,side)`
+  `function(player,item,block,side,pos)`
 - Parameters: 
   - player : `Player`  
     The player that used the item.
@@ -198,6 +198,9 @@ Reminder: This event does not fire when the player returns to the Overworld from
   - side : `Number`  
     The face of the object that was clicked.  
     The faces: `0`-Down `1`-Up `2`-North `3`-South `4`-West `5`-East
+  - pos : `FloatPos`
+    The position that was right-clicked.
+
 - Intercept events: function returns `false`
 
 Note: Win10 client right-clicking on the player will trigger this event on the server multiple times in a row.

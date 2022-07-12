@@ -172,6 +172,7 @@ public:
     Player* mPlayer;
     ItemStack* mItemStack;
     BlockInstance mBlockInstance;
+    Vec3* mClickPos;
     unsigned char mFace;
 };
 

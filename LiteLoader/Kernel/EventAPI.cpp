@@ -1662,21 +1662,19 @@ TInstanceHook(bool, "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z",
 
 
 /////////////////// PlayerUseItemOn ///////////////////
-TInstanceHook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z",
-      GameMode , ItemStack& it, BlockPos bp, unsigned char side, void* a5, void* a6_block)
-{
-    IF_LISTENED(PlayerUseItemOnEvent)
-    {
+TInstanceHook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z", GameMode,
+              ItemStack& it, BlockPos bp, unsigned char side, Vec3* clickPos, void* a6_block) {
+    IF_LISTENED(PlayerUseItemOnEvent) {
         PlayerUseItemOnEvent ev{};
         ev.mPlayer = this->getPlayer();
         ev.mBlockInstance = Level::getBlockInstance(bp, ev.mPlayer->getDimensionId());
         ev.mItemStack = &it;
         ev.mFace = side;
-        if (!ev.call())
-            return false;
+        ev.mClickPos = clickPos;
+        if (!ev.call()) return false;
     }
     IF_LISTENED_END(PlayerUseItemOnEvent)
-    return original(this, it, bp, side, a5, a6_block);
+    return original(this, it, bp, side, clickPos, a6_block);
 }
 
 
