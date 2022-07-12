@@ -586,7 +586,7 @@ void EnableEventListener(int eventId)
             {
                 CallEvent(EVENT_TYPES::onUseItemOn, PlayerClass::newPlayer((Player*)ev.mPlayer),
                           ItemClass::newItem(ev.mItemStack), BlockClass::newBlock(ev.mBlockInstance),
-                          Number::newNumber(ev.mFace), FloatPos::newPos(*ev.mClickPos));
+                          Number::newNumber(ev.mFace), FloatPos::newPos(ev.mClickPos));
             }
             IF_LISTENED_END(EVENT_TYPES::onUseItemOn);
         });

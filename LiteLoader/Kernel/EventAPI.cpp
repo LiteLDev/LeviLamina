@@ -1670,7 +1670,7 @@ TInstanceHook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAE
         ev.mBlockInstance = Level::getBlockInstance(bp, ev.mPlayer->getDimensionId());
         ev.mItemStack = &it;
         ev.mFace = side;
-        ev.mClickPos = clickPos;
+        ev.mClickPos = *clickPos;
         if (!ev.call()) return false;
     }
     IF_LISTENED_END(PlayerUseItemOnEvent)
