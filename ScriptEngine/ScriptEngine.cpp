@@ -73,7 +73,7 @@ void entry()
     LoadConfigFile();
 
     //I18n
-    Translation::load("plugins/LiteLoader/LangPack/" + globalConfig.value("Language","en") + ".json");
+    Translation::loadFromImpl(GetCurrentModule(), LL::getLoaderHandle());
 
     //初始化全局数据
     InitLocalShareData();

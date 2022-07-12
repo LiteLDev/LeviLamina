@@ -164,8 +164,10 @@ namespace Translation {
     LIAPI I18N* loadImpl(HMODULE hPlugin, const std::string& filePath, const std::string& defaultLangCode,
                          const I18N::LangData& defaultLangData);
 
+    LIAPI I18N* loadFromImpl(HMODULE hPlugin, HMODULE hTarget);
+
     /**
-     * @brief Load i18n from a file.
+     * @brief Load translation from a file.
      *
      * @param  filePath         The path to the i18n file(json)
      * @param  defaultLangCode  The default language code(if no lang code is specified, it will use this)
@@ -175,6 +177,20 @@ namespace Translation {
     inline I18N* load(const std::string& filePath, const std::string& defaultLangCode = "en_US",
                      const I18N::LangData& defaultLangData = {}) {
         return loadImpl(GetCurrentModule(), filePath, defaultLangCode, defaultLangData);
+    }
+
+    /**
+     * @brief Load translation from another plugin.
+     * 
+     * @param  plugin  The plugin name.
+     * @return I18N*   The pointer to the I18N object in PluginOwnData, null if failed
+     */
+    inline I18N* loadFrom(const std::string& plugin) {
+        if (LL::hasPlugin(plugin)) {
+            auto p = LL::getPlugin(plugin);
+            if (p) return loadFromImpl(GetCurrentModule(), p->handle);
+        }
+        return nullptr;
     }
 
     /**

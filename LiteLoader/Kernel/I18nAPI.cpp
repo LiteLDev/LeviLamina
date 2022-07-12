@@ -81,6 +81,48 @@ std::string I18N::get(const std::string& key, const std::string& langCode) {
     return key;
 }
 
+
+namespace Translation {
+
+bool loadImpl(HMODULE hPlugin, const std::string& filePath) {
+    try {
+        I18N i18n{};
+        i18n.curModule = hPlugin;
+        i18n.loadOldLangFile(filePath);
+        return &PluginOwnData::setImpl<I18N>(hPlugin, I18N::POD_KEY);
+    } catch (const std::exception& e) {
+        logger.error("Fail to load translation file <{}> !", filePath);
+        logger.error("- {}", TextEncoding::toUTF8(e.what()));
+    } catch (...) { logger.error("Fail to load translation file <{}> !", filePath); }
+    return false;
+}
+
+I18N* loadImpl(HMODULE hPlugin, const std::string& filePath, const std::string& defaultLangCode,
+               const I18N::LangData& defaultLangData) {
+    try {
+        I18N i18n(filePath, defaultLangCode, defaultLangData, hPlugin);
+        return &PluginOwnData::getImpl<I18N>(hPlugin, I18N::POD_KEY);
+    } catch (const std::exception& e) {
+        logger.error("Fail to load translation file <{}> !", filePath);
+        logger.error("- {}", TextEncoding::toUTF8(e.what()));
+    } catch (...) { logger.error("Fail to load translation file <{}> !", filePath); }
+    return nullptr;
+}
+
+I18N* loadFromImpl(HMODULE hPlugin, HMODULE hTarget) {
+    try {
+        auto& i18n = PluginOwnData::getImpl<I18N>(hTarget, I18N::POD_KEY);
+        return &PluginOwnData::setImpl<I18N>(hPlugin, I18N::POD_KEY, i18n);
+    } catch (const std::exception& e) {
+        logger.error("Fail to load translation from another plugin!", e.what());
+        logger.error("- {}", e.what());
+    } catch (...) { logger.error("Fail to load translation from another plugin!"); }
+    return nullptr;
+}
+
+}; // namespace Translation
+
+
 ///////////////////////////// Encoding-CodePage Map /////////////////////////////
 #undef UNICODE
 namespace TextEncoding
@@ -162,36 +204,6 @@ namespace TextEncoding
 }
 #define UNICODE
 ///////////////////////////// Encoding-CodePage Map /////////////////////////////
-
-namespace Translation {
-
-    bool loadImpl(HMODULE hPlugin, const std::string& filePath) {
-        try {
-            I18N i18n{};
-            i18n.curModule = hPlugin;
-            i18n.loadOldLangFile(filePath);
-            return &PluginOwnData::setImpl<I18N>(hPlugin, I18N::POD_KEY);
-        } catch (const std::exception& e) {
-            logger.error("Fail to load translation file <{}> !", filePath);
-            logger.error("{}", TextEncoding::toUTF8(e.what()));
-        } catch (...) { logger.error("Fail to load translation file <{}> !", filePath); }
-        return false;
-    }
-
-   I18N* loadImpl(HMODULE hPlugin, const std::string& filePath, const std::string& defaultLangCode,
-                  const I18N::LangData& defaultLangData) {
-        try {
-            I18N i18n(filePath, defaultLangCode, defaultLangData, hPlugin);
-            return &PluginOwnData::getImpl<I18N>(hPlugin, I18N::POD_KEY);
-        } catch (const std::exception& e) {
-            logger.error("Fail to load translation file <{}> !", filePath);
-            logger.error("{}", TextEncoding::toUTF8(e.what()));
-        } catch (...) {
-            logger.error("Fail to load translation file <{}> !", filePath);
-        }
-        return nullptr;
-   }
-}; // namespace Translation
 
 namespace TextEncoding
 {

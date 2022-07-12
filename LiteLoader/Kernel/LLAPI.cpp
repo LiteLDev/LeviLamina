@@ -50,6 +50,10 @@ std::unordered_map<std::string, LL::Plugin*> LL::getAllPlugins() {
     return PluginManager::getAllPlugins();
 }
 
+HMODULE LL::getLoaderHandle() {
+    return GetCurrentModule();
+}
+
 //Version
 LL::Version::Version(int major, int minor, int revision, Status status)
         : major(major), minor(minor), revision(revision), status(status) {}
