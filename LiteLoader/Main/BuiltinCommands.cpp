@@ -10,7 +10,6 @@
 #include <MC/Packet.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/VanillaDimensions.hpp>
-#include <Main/AutoUpgrade.h>
 #include <Main/Config.h>
 #include <Main/PluginManager.h>
 #include <ScriptEngine/Configs.h>

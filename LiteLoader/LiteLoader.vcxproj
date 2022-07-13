@@ -316,7 +316,6 @@ LibraryBuilder.exe
     <ClInclude Include="Header\Utils\STLHelper.h" />
     <ClInclude Include="Header\Utils\StringReader.h" />
     <ClInclude Include="Main\AddonsHelper.h" />
-    <ClInclude Include="Main\AutoUpgrade.h" />
     <ClInclude Include="Main\Config.h" />
     <ClInclude Include="Main\CrashLogger.h" />
     <ClInclude Include="Header\EventAPI.h" />
