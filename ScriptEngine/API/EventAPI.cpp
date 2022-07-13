@@ -850,7 +850,7 @@ void EnableEventListener(int eventId)
                 AABB range = ev.mDestroyRange;
                 int dimId = ((Actor*)ev.mWitherBoss)->getDimensionId();
                 CallEvent(EVENT_TYPES::onWitherBossDestroy, EntityClass::newEntity((Actor*)ev.mWitherBoss),
-                    IntPos::newPos(range.pointA.toBlockPos(), dimId), IntPos::newPos(range.pointB.toBlockPos(), dimId));
+                    IntPos::newPos(range.min.toBlockPos(), dimId), IntPos::newPos(range.max.toBlockPos(), dimId));
             }
             IF_LISTENED_END(EVENT_TYPES::onWitherBossDestroy);
         });
