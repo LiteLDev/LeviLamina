@@ -11,7 +11,6 @@
 #include <HookAPI.h>
 #include "Config.h"
 #include "Loader.h"
-#include "AutoUpgrade.h"
 #include "CrashLogger.h"
 #include "DefaultLangData.h"
 #include "AddonsHelper.h"
@@ -252,7 +251,7 @@ void LLMain()
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {
         logger.info("LiteLoader is distributed under the AGPLv3 License");
         logger.info("Our new fourm is now available! -> https://fourm.litebds.com");
-        logger.info("\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");
+        logger.info("Thanks to RhyMC (rhymc.com) for supporting this project.");
         return true;
     });
 
