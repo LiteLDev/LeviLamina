@@ -203,13 +203,11 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 
 ### 开发辅助工具 - VSCode 开发辅助插件 & 补全库
 
-使用 Moxicat 开发的 LiteLoader 开发辅助插件
-帮助你更好地完成**脚本插件**的开发！  
-代码提示、自动补全、自动文档、错误提醒、运行时调试。。。。
+使用 Moxicat 开发的 LiteLoader 开发辅助插件  
+帮助你更好地完成**脚本插件**的开发!  
+代码提示、自动补全、自动文档、错误提醒、运行时调试......
 只有你想不到，没有他做不到  
-用过绝不后悔的顶级插件开发体验！
-
-![LLScriptHelper](docs/assets/LXLDevHelper.gif)
+用过绝不后悔的顶级插件开发体验!
 
 [点击这里](https://www.minebbs.com/resources/llscripthelper.2672/)
 查看扩展说明与介绍  
@@ -219,33 +217,13 @@ VSCode扩展商店搜索`LLScriptHelper`，安装**LLScriptHelper**，即刻体�
 
 ### 开发辅助工具 - Blockly-LXL 图形化开发套件
 
-没有编程基础？对复杂的语言规则感到厌烦？  
-你有没有想过，BDS插件开发可以像拼图一样容易？
+没有编程基础？对复杂的语言规则感到厌烦?  
+你有没有想过，BDS插件开发可以像拼图一样容易?
 
-看这里！pa733的 Blockly-LXL 图形化开发套件，将插件开发体验提升到了新的高度
-
-![Blockly-LXL](docs/assets/BLLXL.png)
+看这里!pa733的 Blockly-LXL 图形化开发套件，将插件开发体验提升到了新的高度
 
 [点击这里](https://www.minebbs.com/resources/blockly-lxl.2671/)
 查看相关安装与使用说明
-
-<br>
-
-### 开发辅助工具 - CommonJs  for LLSE
-
-CJS.JS作者是callstackexceed，这个插件为在LLSE下使用Js开发插件提供了大家熟知的CommonJS接口，方便Js插件的模块化设计
-
-![CommonJs](docs/assets/CommonJS.png)
-
-[点击这里](https://github.com/callstackexceed/cjs.js) 前往GitHub查看使用说明，并下载使用
-
-项目作者callstackexceed，也是MC addon `NormaConstructor`的一个开发者。  
-`NormaConstructor`是一个开源的快速建造（类WorldEdit）插件，目前运行在Scripting API和LLSE上。  
-NC不仅需要用户，也需要开发人员。欢迎大家在 [MineBBS](https://www.minebbs.com/resources/integral-worldedit-liteloader.2738/) 和 mcpedl 关注 `NormaConstructor` 的相关进展
-
-<br/>
-
-------
 
 ## 🔨 构建项目
 

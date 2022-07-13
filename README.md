@@ -220,11 +220,9 @@ You can also learn plugin development methods and tips here
 
 ### Development Aids - VSCode Development Aids & Complementary Libraries
 
-Use the LiteLoader development helper plugin developed by Moxicat
+Use the LiteLoader development helper plugin developed by Moxicat  
 Helps you do better with **script plugins**!  
-Code hint, auto-completion, auto-documentation, error alert, runtime debugging ....
-
-![LLScriptHelper](docs/assets/LXLDevHelper.gif)
+Code hint, auto-completion, auto-documentation, error alert, runtime debugging and so on
 
 [Click here](https://www.minebbs.com/resources/llscripthelper.2672/)
 View more description and introduction of this extension  
@@ -238,8 +236,6 @@ No programming foundation? Tired of complex language rules?
 Have you ever thought that BDS plug-in development could be as easy as a puzzle?
 
 Here it is! The Blockly-LXL graphical development kit from pa733 takes the plugin development experience to a new level!
-
-![Blockly-LXL](docs/assets/BLLXL.png)
 
 [Click here](https://www.minebbs.com/resources/blockly-lxl.2671/)
 View related installation and usage instructions
