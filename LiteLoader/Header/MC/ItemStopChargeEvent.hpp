@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct ItemStopChargeEvent {
+class ItemStopChargeEvent {
 
 #define AFTER_EXTRA
 
@@ -15,16 +15,17 @@ struct ItemStopChargeEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTOPCHARGEEVENT
 public:
-    struct ItemStopChargeEvent& operator=(struct ItemStopChargeEvent const &) = delete;
-    ItemStopChargeEvent(struct ItemStopChargeEvent const &) = delete;
+    class ItemStopChargeEvent& operator=(class ItemStopChargeEvent const &) = delete;
+    ItemStopChargeEvent(class ItemStopChargeEvent const &) = delete;
     ItemStopChargeEvent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTOPCHARGEEVENT
+#endif
     MCAPI ~ItemStopChargeEvent();
 
-protected:
 
-private:
 
 };

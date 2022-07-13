@@ -43,7 +43,7 @@ public:
     /*79*/ virtual void __unk_vfn_79();
     /*80*/ virtual void __unk_vfn_80();
     /*95*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-    /*132*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    /*134*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BALLOONITEM
 #endif
     MCAPI BalloonItem(std::string const &, int);

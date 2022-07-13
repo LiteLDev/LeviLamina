@@ -32,9 +32,8 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEMOBSPAWNER
 #endif
     MCAPI BaseMobSpawner(struct ActorDefinitionIdentifier);
-    MCAPI class Actor * createAndAddDisplayEntity(class BlockSource &);
+    MCAPI void removeDisplayEntity();
     MCAPI void setEntityId(struct ActorDefinitionIdentifier);
-    MCAPI class Mob * tryGetOrCreateDisplayEntity(class BlockSource &);
 
 //protected:
     MCAPI void _delay(class BlockSource &);

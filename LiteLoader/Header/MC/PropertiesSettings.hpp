@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -34,6 +35,7 @@ public:
     MCAPI unsigned short getCompressionThresholdBytesize() const;
     MCAPI std::string const & getCustomProperty(std::string const &) const;
     MCAPI enum PlayerPermissionLevel const getDefaultPlayerPermissionLevel() const;
+    MCAPI enum Bedrock::Http::Implementation getDesiredHttpImplementation() const;
     MCAPI enum Difficulty getDifficulty() const;
     MCAPI std::vector<std::string> const & getExtraTrustedKeys() const;
     MCAPI enum GameType getGameMode() const;

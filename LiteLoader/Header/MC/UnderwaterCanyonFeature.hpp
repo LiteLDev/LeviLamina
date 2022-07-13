@@ -31,6 +31,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UNDERWATERCANYONFEATURE
 #endif
     MCAPI UnderwaterCanyonFeature(short);
+    MCAPI static bool isDiggable(class Block const &);
 
 
 

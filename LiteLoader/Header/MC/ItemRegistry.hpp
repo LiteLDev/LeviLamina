@@ -52,20 +52,14 @@ public:
     MCAPI static struct std::pair<class HashedString, int> getNameFromAlias(class HashedString const &, int);
     MCAPI static class HashedString getNameFromLegacyID(short);
     MCAPI static class std::unordered_map<class HashedString, class WeakPtr<class Item>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class WeakPtr<class Item>>>> const & getNameToItemMap();
-    MCAPI static void initCreativeItemsServer(class ActorInfoRegistry *, class BlockDefinitionGroup *, bool, class Experiments const &, class std::function<void (class ActorInfoRegistry *, class BlockDefinitionGroup *, class CreativeItemRegistry *, bool, class BaseGameVersion const &, class Experiments const &)>);
+    MCAPI static void initCreativeItemsServer(class ActorInfoRegistry *, class BlockDefinitionGroup *, bool, class Experiments const &, class std::function<void (class ItemRegistryRef, class ActorInfoRegistry *, class BlockDefinitionGroup *, class CreativeItemRegistry *, bool, class BaseGameVersion const &, class Experiments const &)>);
     MCAPI static void initServerData(class ResourcePackManager &, class Experiments const &, enum ItemVersion);
     MCAPI static bool isComponentBasedItemSchema(class SemVersion const &);
     MCAPI static bool isCreativeItem(class ItemInstance const &);
-    MCAPI static class WeakPtr<class Item> lookupByName(int &, int &, std::string const &);
-    MCAPI static class WeakPtr<class Item> lookupByName(int &, std::string const &);
-    MCAPI static class WeakPtr<class Item> lookupByName(class HashedString const &);
-    MCAPI static class WeakPtr<class Item> lookupByNameNoAlias(std::string const &);
-    MCAPI static class WeakPtr<class Item> lookupByNameNoAlias(class HashedString const &);
-    MCAPI static class WeakPtr<class Item> lookupByNameNoParsing(int &, class HashedString const &);
-    MCAPI static class WeakPtr<class Item> lookupByNameNoParsing(class HashedString const &);
     MCAPI static bool mCheckForItemWorldCompatibility;
     MCAPI static class std::mutex mCompatibilityCheckLock;
     MCAPI static std::vector<class SharedPtr<class Item>> mDeadItemRegistry;
+    MCAPI static class ItemRegistry mItemRegistryInstance;
     MCAPI static std::unique_ptr<class ItemEventResponseFactory> mResponseFactory;
     MCAPI static bool mServerInitializingCreativeItems;
     MCAPI static class BaseGameVersion mWorldBaseGameVersion;
@@ -84,6 +78,13 @@ public:
     MCAPI static std::vector<std::string> validateServerItemComponents(std::vector<struct std::pair<std::string, class CompoundTag>> const &);
 
 //private:
+    MCAPI class WeakPtr<class Item> lookupByName(int &, int &, std::string const &) const;
+    MCAPI class WeakPtr<class Item> lookupByName(int &, std::string const &) const;
+    MCAPI class WeakPtr<class Item> lookupByName(class HashedString const &) const;
+    MCAPI class WeakPtr<class Item> lookupByNameNoAlias(std::string const &) const;
+    MCAPI class WeakPtr<class Item> lookupByNameNoAlias(class HashedString const &) const;
+    MCAPI class WeakPtr<class Item> lookupByNameNoParsing(int &, class HashedString const &) const;
+    MCAPI class WeakPtr<class Item> lookupByNameNoParsing(class HashedString const &) const;
     MCAPI static void _loadItemDefinition(class Json::Value &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum ItemVersion, enum PackType);
 
 

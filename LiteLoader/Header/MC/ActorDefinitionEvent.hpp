@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct ActorDefinitionEvent {
+class ActorDefinitionEvent {
 
 #define AFTER_EXTRA
 
@@ -15,16 +15,19 @@ struct ActorDefinitionEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITIONEVENT
 public:
-    struct ActorDefinitionEvent& operator=(struct ActorDefinitionEvent const &) = delete;
-    ActorDefinitionEvent(struct ActorDefinitionEvent const &) = delete;
     ActorDefinitionEvent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONEVENT
+#endif
+    MCAPI ActorDefinitionEvent(class ActorDefinitionEvent const &);
+    MCAPI ActorDefinitionEvent(class ActorDefinitionEvent &&);
+    MCAPI void evaluateGroups(class Actor &, std::vector<struct ActorDefinitionModifier> &, class VariantParameterList const &) const;
+    MCAPI class ActorDefinitionEvent & operator=(class ActorDefinitionEvent const &);
     MCAPI ~ActorDefinitionEvent();
 
-protected:
 
-private:
 
 };

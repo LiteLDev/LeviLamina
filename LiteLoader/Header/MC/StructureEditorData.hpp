@@ -18,13 +18,13 @@ class StructureEditorData {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREEDITORDATA
 public:
     class StructureEditorData& operator=(class StructureEditorData const &) = delete;
-    StructureEditorData(class StructureEditorData const &) = delete;
 #endif
 
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREEDITORDATA
 #endif
+    MCAPI StructureEditorData(class StructureEditorData const &);
     MCAPI StructureEditorData();
     MCAPI std::string getAnimationModeAsString() const;
     MCAPI float getAnimationSeconds() const;

@@ -4,11 +4,11 @@
 #include "../Global.h"
 #include "Actor.hpp"
 #include "Bedrock.hpp"
+#include "ScriptModuleMinecraft.hpp"
 #include "ServerPlayer.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-#include "ScriptNavigationResult.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -42,46 +42,46 @@ public:
     /*67*/ virtual void __unk_vfn_67();
     /*81*/ virtual void __unk_vfn_81();
     /*87*/ virtual void __unk_vfn_87();
-    /*94*/ virtual void __unk_vfn_94();
-    /*97*/ virtual void __unk_vfn_97();
-    /*104*/ virtual void __unk_vfn_104();
-    /*106*/ virtual void __unk_vfn_106();
+    /*95*/ virtual void __unk_vfn_95();
+    /*98*/ virtual void __unk_vfn_98();
+    /*105*/ virtual void __unk_vfn_105();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*180*/ virtual void __unk_vfn_180();
-    /*194*/ virtual void __unk_vfn_194();
-    /*219*/ virtual void __unk_vfn_219();
+    /*110*/ virtual void __unk_vfn_110();
+    /*181*/ virtual void __unk_vfn_181();
+    /*195*/ virtual void __unk_vfn_195();
     /*220*/ virtual void __unk_vfn_220();
-    /*245*/ virtual void __unk_vfn_245();
-    /*248*/ virtual void __unk_vfn_248();
-    /*264*/ virtual void __unk_vfn_264();
-    /*272*/ virtual void __unk_vfn_272();
-    /*281*/ virtual void __unk_vfn_281();
-    /*297*/ virtual void aiStep();
-    /*310*/ virtual void __unk_vfn_310();
-    /*314*/ virtual void __unk_vfn_314();
-    /*348*/ virtual void __unk_vfn_348();
-    /*362*/ virtual void __unk_vfn_362();
-    /*372*/ virtual void __unk_vfn_372();
-    /*378*/ virtual void __unk_vfn_378();
-    /*379*/ virtual void __unk_vfn_379();
+    /*221*/ virtual void __unk_vfn_221();
+    /*246*/ virtual void __unk_vfn_246();
+    /*249*/ virtual void __unk_vfn_249();
+    /*267*/ virtual void __unk_vfn_267();
+    /*275*/ virtual void __unk_vfn_275();
+    /*284*/ virtual void __unk_vfn_284();
+    /*299*/ virtual void aiStep();
+    /*312*/ virtual void __unk_vfn_312();
+    /*316*/ virtual void __unk_vfn_316();
+    /*350*/ virtual void __unk_vfn_350();
+    /*364*/ virtual void __unk_vfn_364();
+    /*374*/ virtual void __unk_vfn_374();
+    /*380*/ virtual void __unk_vfn_380();
     /*381*/ virtual void __unk_vfn_381();
-    /*382*/ virtual void __unk_vfn_382();
-    /*387*/ virtual void __unk_vfn_387();
-    /*388*/ virtual void __unk_vfn_388();
-    /*391*/ virtual void __unk_vfn_391();
-    /*394*/ virtual void __unk_vfn_394();
-    /*395*/ virtual void __unk_vfn_395();
-    /*404*/ virtual void __unk_vfn_404();
-    /*405*/ virtual void __unk_vfn_405();
-    /*409*/ virtual void __unk_vfn_409();
-    /*416*/ virtual void __unk_vfn_416();
-    /*444*/ virtual void __unk_vfn_444();
-    /*445*/ virtual std::string getXuid() const;
-    /*446*/ virtual struct PlayerMovementSettings const & getMovementSettings() const;
-    /*448*/ virtual class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource &);
-    /*449*/ virtual int _getSpawnChunkLimit() const;
-    /*450*/ virtual void _updateChunkPublisherView(class Vec3 const &, float);
+    /*383*/ virtual void __unk_vfn_383();
+    /*384*/ virtual void __unk_vfn_384();
+    /*389*/ virtual void __unk_vfn_389();
+    /*390*/ virtual void __unk_vfn_390();
+    /*393*/ virtual void __unk_vfn_393();
+    /*396*/ virtual void __unk_vfn_396();
+    /*397*/ virtual void __unk_vfn_397();
+    /*406*/ virtual void __unk_vfn_406();
+    /*407*/ virtual void __unk_vfn_407();
+    /*411*/ virtual void __unk_vfn_411();
+    /*418*/ virtual void __unk_vfn_418();
+    /*446*/ virtual void __unk_vfn_446();
+    /*447*/ virtual std::string getXuid() const;
+    /*448*/ virtual struct PlayerMovementSettings const & getMovementSettings() const;
+    /*450*/ virtual class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource &);
+    /*451*/ virtual int _getSpawnChunkLimit() const;
+    /*452*/ virtual void _updateChunkPublisherView(class Vec3 const &, float);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMULATEDPLAYER
     MCVAPI bool isSimulated() const;
     MCVAPI bool useNewAi() const;
@@ -89,13 +89,14 @@ public:
     MCAPI SimulatedPlayer(class Level &, class PacketSender &, class NetworkHandler &, class ClientBlobCache::Server::ActiveTransfersManager &, enum GameType, class NetworkIdentifier const &, unsigned char, class std::function<void (class ServerPlayer &)>, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>, int, bool, class EntityContext &);
     MCAPI class Bedrock::NonOwnerPointer<class gametest::BaseGameTestHelper> getGameTestHelper() const;
     MCAPI void setGameTestHelper(class Bedrock::NonOwnerPointer<class gametest::BaseGameTestHelper>);
+    MCAPI void setXuid(std::string const &);
     MCAPI bool simulateAttack(class Actor *);
     MCAPI bool simulateAttack();
-    MCAPI bool simulateDestroyBlock(class BlockPos const &, enum ScriptFacing);
+    MCAPI bool simulateDestroyBlock(class BlockPos const &, enum ScriptModuleMinecraft::ScriptFacing);
     MCAPI void simulateDisconnect();
     MCAPI bool simulateGiveItem(class ItemStack &, bool);
     MCAPI bool simulateInteract(class Actor &);
-    MCAPI bool simulateInteract(class BlockPos const &, enum ScriptFacing);
+    MCAPI bool simulateInteract(class BlockPos const &, enum ScriptModuleMinecraft::ScriptFacing);
     MCAPI bool simulateInteract();
     MCAPI bool simulateJump();
     MCAPI void simulateLocalMove(class Vec3 const &, float);
@@ -103,8 +104,8 @@ public:
     MCAPI void simulateLookAt(class BlockPos const &);
     MCAPI void simulateLookAt(class Vec3 const &);
     MCAPI void simulateMoveToLocation(class Vec3 const &, float);
-    MCAPI struct ScriptNavigationResult simulateNavigateToEntity(class Actor &, float);
-    MCAPI struct ScriptNavigationResult simulateNavigateToLocation(class Vec3 const &, float);
+    MCAPI struct ScriptModuleMinecraft::ScriptNavigationResult simulateNavigateToEntity(class Actor &, float);
+    MCAPI struct ScriptModuleMinecraft::ScriptNavigationResult simulateNavigateToLocation(class Vec3 const &, float);
     MCAPI void simulateNavigateToLocations(std::vector<class Vec3> &&, float);
     MCAPI void simulateSetBodyRotation(float);
     MCAPI bool simulateSetItem(class ItemStack &, bool, int);
@@ -114,15 +115,15 @@ public:
     MCAPI void simulateStopUsingItem();
     MCAPI bool simulateUseItem(class ItemStack &);
     MCAPI bool simulateUseItemInSlot(int);
-    MCAPI bool simulateUseItemInSlotOnBlock(int, class BlockPos const &, enum ScriptFacing, class Vec3 const &);
-    MCAPI bool simulateUseItemOnBlock(class ItemStack &, class BlockPos const &, enum ScriptFacing, class Vec3 const &);
+    MCAPI bool simulateUseItemInSlotOnBlock(int, class BlockPos const &, enum ScriptModuleMinecraft::ScriptFacing, class Vec3 const &);
+    MCAPI bool simulateUseItemOnBlock(class ItemStack &, class BlockPos const &, enum ScriptModuleMinecraft::ScriptFacing, class Vec3 const &);
     MCAPI void simulateWorldMove(class Vec3 const &, float);
-    MCAPI static class SimulatedPlayer * create(std::string const &, class BlockPos const &, class AutomaticID<class Dimension, int>, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>);
+    MCAPI static class SimulatedPlayer * create(std::string const &, class BlockPos const &, class AutomaticID<class Dimension, int>, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>, std::string const &);
     MCAPI static class SimulatedPlayer * tryGetFromEntity(class EntityContext &, bool);
 
 //private:
     MCAPI void _addMoveComponent();
-    MCAPI struct ScriptNavigationResult _createNavigationResult(class NavigationComponent *) const;
+    MCAPI struct ScriptModuleMinecraft::ScriptNavigationResult _createNavigationResult(class NavigationComponent *) const;
     MCAPI float _getInputSpeed();
     MCAPI void _startCooldown();
     MCAPI bool _trySwing();

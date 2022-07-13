@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct ItemCompleteChargeEvent {
+class ItemCompleteChargeEvent {
 
 #define AFTER_EXTRA
 
@@ -15,16 +15,17 @@ struct ItemCompleteChargeEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMCOMPLETECHARGEEVENT
 public:
-    struct ItemCompleteChargeEvent& operator=(struct ItemCompleteChargeEvent const &) = delete;
-    ItemCompleteChargeEvent(struct ItemCompleteChargeEvent const &) = delete;
+    class ItemCompleteChargeEvent& operator=(class ItemCompleteChargeEvent const &) = delete;
+    ItemCompleteChargeEvent(class ItemCompleteChargeEvent const &) = delete;
     ItemCompleteChargeEvent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMCOMPLETECHARGEEVENT
+#endif
     MCAPI ~ItemCompleteChargeEvent();
 
-protected:
 
-private:
 
 };

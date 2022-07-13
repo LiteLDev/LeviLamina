@@ -65,9 +65,11 @@ public:
     /*85*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /*89*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     /*93*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
-    /*119*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-    /*121*/ virtual class Item & setIcon(std::string const &, int);
-    /*133*/ virtual float getArmorKnockbackResistance() const;
+    /*113*/ virtual enum ActorLocation getEquipLocation() const;
+    /*114*/ virtual enum LevelSoundEvent getEquipSound() const;
+    /*121*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /*123*/ virtual class Item & setIcon(std::string const &, int);
+    /*135*/ virtual float getArmorKnockbackResistance() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARMORITEM
 #endif
     MCAPI ArmorItem(std::string const &, int, class ArmorItem::ArmorMaterial const &, int, enum ArmorSlot);

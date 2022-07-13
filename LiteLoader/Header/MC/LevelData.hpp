@@ -36,14 +36,15 @@ public:
     MCAPI std::unique_ptr<class CompoundTag> createTag() const;
     MCAPI void disableAchievements();
     MCAPI bool educationFeaturesEnabled() const;
-    MCAPI struct AdventureSettings & getAdventureSettings();
     MCAPI struct AdventureSettings const & getAdventureSettings() const;
+    MCAPI struct AdventureSettings & getAdventureSettings();
     MCAPI class BaseGameVersion const & getBaseGameVersion() const;
     MCAPI std::string const getBiomeOverride() const;
     MCAPI bool getBonusChestSpawned() const;
     MCAPI struct Tick const & getCurrentTick() const;
     MCAPI class Abilities & getDefaultAbilities();
-    MCAPI class Abilities const & getDefaultAbilities() const;
+    MCAPI class PermissionsHandler & getDefaultPermissions();
+    MCAPI class PermissionsHandler const & getDefaultPermissions() const;
     MCAPI class CompoundTag const & getEduSharedUriResource() const;
     MCAPI enum EducationEditionOffer getEducationEditionOffer() const;
     MCAPI std::string const & getEducationProductId() const;
@@ -76,8 +77,8 @@ public:
     MCAPI int getRainTime() const;
     MCAPI class LevelSeed64 getSeed() const;
     MCAPI unsigned int getServerChunkTickRange() const;
-    MCAPI class AutomaticID<class Dimension, int> getSpawnDimension() const;
     MCAPI class BlockPos const & getSpawnPos() const;
+    MCAPI struct SpawnSettings const & getSpawnSettings() const;
     MCAPI enum StorageVersion getStorageVersion() const;
     MCAPI enum GeneratorType getStoredGenerator() const;
     MCAPI void getTagData(class CompoundTag const &);
@@ -98,6 +99,7 @@ public:
     MCAPI bool hasMapsCenteredToOrigin() const;
     MCAPI bool hasStartWithMapEnabled() const;
     MCAPI void incrementTick();
+    MCAPI bool isEditorWorld() const;
     MCAPI bool isEducationEditionLevel() const;
     MCAPI bool isFromLockedTemplate() const;
     MCAPI bool isFromWorldTemplate() const;

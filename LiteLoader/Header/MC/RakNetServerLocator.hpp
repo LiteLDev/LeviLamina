@@ -36,7 +36,7 @@ public:
     /*0*/ virtual ~RakNetServerLocator();
     /*1*/ virtual void _onDisable();
     /*2*/ virtual void _onEnable();
-    /*3*/ virtual void startAnnouncingServer(std::string const &, std::string const &, enum GameType, int, int, bool);
+    /*3*/ virtual void startAnnouncingServer(std::string const &, std::string const &, enum GameType, int, int, bool, bool);
     /*4*/ virtual void stopAnnouncingServer();
     /*5*/ virtual void startServerDiscovery(struct PortPair);
     /*6*/ virtual void stopServerDiscovery();

@@ -12,7 +12,10 @@ namespace ActorMobilityUtils {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
+    MCAPI void endJump(struct StateVectorComponent const &, struct MobJumpComponent &, struct SynchedActorDataComponent &, struct VehicleComponent const *, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ParrotFlag>>, struct PassengerComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ExitFromPassengerFlag>, class FlagComponent<struct StopRidingRequestFlag>> &);
+    MCAPI float getJumpPower(class JumpControlComponent const *, class FlagComponent<struct SquidFlag> const *);
     MCAPI class Vec3 getPosFromAABB(class AABB const &, float, class Vec2 const &);
+    MCAPI bool isFlying(struct AbilitiesComponent const &);
     MCAPI bool isFree(class IConstBlockSource const &, class AABB const &, class Vec3 const &, float);
     MCAPI bool isImmersedInWater(class Vec3 const &, class IConstBlockSource const &, class Vec2 const &);
     MCAPI bool isUnderLiquid(class Vec3 const &, class Vec3 const &, class IConstBlockSource const &, enum MaterialType);

@@ -31,11 +31,6 @@ public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
 
-//private:
-    MCAPI static void convertClonedTag(class CompoundTag &, class BlockActor const &, class BlockPos const &);
-
-
-private:
 
 
 };

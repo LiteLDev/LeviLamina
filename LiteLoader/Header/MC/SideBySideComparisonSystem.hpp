@@ -24,8 +24,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDECOMPARISONSYSTEM
 #endif
-    MCAPI static struct TickingSystemWithInfo createSideBySideComparisonSystem(class std::variant<struct SideBySideExtractionId::StepA, struct SideBySideExtractionId::StepB, struct SideBySideExtractionId::TickBegin>);
-    MCAPI static class std::array<struct TickingSystemWithInfo, 4> createSideBySideExceptionSystems();
+    MCAPI static struct TickingSystemWithInfo createSideBySideComparisonSystem(class std::variant<struct SideBySideExtractionId::TickBegin, struct SideBySideExtractionId::BeginManagePassengers, struct SideBySideExtractionId::ManagePassengersStopRiding, struct SideBySideExtractionId::ManagePassengersPositioning, struct SideBySideExtractionId::EntityInside>);
+    MCAPI static class std::array<struct TickingSystemWithInfo, 6> createSideBySideExceptionSystems();
 
 
 

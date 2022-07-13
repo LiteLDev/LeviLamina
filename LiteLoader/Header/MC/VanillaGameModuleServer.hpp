@@ -41,6 +41,7 @@ public:
     MCAPI VanillaGameModuleServer();
 
 //private:
+    MCAPI void _configureEntitySystems(class Level &, class ResourcePackManager &, class Experiments const &);
     MCAPI void _configureWorldGen(class IWorldRegistriesProvider &, struct SpawnSettings const &, class Experiments const &, class ResourcePackManager &, class BaseGameVersion const &);
     MCAPI void _registerGameplayHandlers(class Level &) const;
     MCAPI void _registerListeners(class Level &);

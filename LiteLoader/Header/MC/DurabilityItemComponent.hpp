@@ -31,13 +31,13 @@ public:
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DURABILITYITEMCOMPONENT
 #endif
-    MCAPI DurabilityItemComponent(class ComponentItem *);
     MCAPI int getDamageChance(int) const;
     MCAPI struct IntRange getDamageChanceRange() const;
     MCAPI int getMaxDamage() const;
     MCAPI void setMaxDamage(int);
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
+    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 
 

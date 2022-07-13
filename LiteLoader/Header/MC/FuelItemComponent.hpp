@@ -33,7 +33,6 @@ public:
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FUELITEMCOMPONENT
 #endif
-    MCAPI FuelItemComponent(class ComponentItem *);
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 

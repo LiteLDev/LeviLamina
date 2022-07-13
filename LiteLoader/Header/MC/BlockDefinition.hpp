@@ -2,6 +2,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "reflection.hpp"
+#include "Core.hpp"
 
 #define BEFORE_EXTRA
 
@@ -26,5 +28,6 @@ public:
 protected:
 
 private:
+    MCAPI static class CerealDocumentUpgrader mDocumentUpgrader;
 
 };

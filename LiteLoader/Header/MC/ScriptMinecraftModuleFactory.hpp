@@ -3,6 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Json.hpp"
+#include "ScriptModuleMinecraft.hpp"
 #include "TextObjectText.hpp"
 
 #define BEFORE_EXTRA
@@ -29,12 +30,13 @@ public:
     /*0*/ virtual ~ScriptMinecraftModuleFactory();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMINECRAFTMODULEFACTORY
 #endif
-    MCAPI ScriptMinecraftModuleFactory(class ServerLevel *, std::unique_ptr<class ScriptMinecraftCommonModuleFactory>);
-    MCAPI static class std::unordered_map<std::string, std::unique_ptr<class IComponentFactory>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class IComponentFactory>>>> & getActorComponentFactoriesV1();
+    MCAPI ScriptMinecraftModuleFactory(class ServerLevel *);
+    MCAPI static class std::unordered_map<std::string, std::unique_ptr<class ScriptModuleMinecraft::IComponentFactory>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class ScriptModuleMinecraft::IComponentFactory>>>> & getActorComponentFactories();
     MCAPI static std::string getModuleUUIDAsString();
     MCAPI static struct Scripting::ModuleDescriptor makeModuleDescriptorFor(struct Scripting::Version);
 
 //private:
+    MCAPI struct Scripting::ModuleBinding _generateBindings(struct Scripting::Version const &, std::vector<std::string> const &);
 
 
 private:

@@ -60,6 +60,7 @@ public:
 
 //private:
     MCAPI void _fillBlockInfo(class BlockSource &, class BlockPos const &, class BlockPos const &, class BlockPos const &);
+    MCAPI void _fillEntityList(class BlockSource &, class BlockPos const &, class BlockPos const &);
     MCAPI void _placeEntitiesInWorld(class BlockSource &, class DataLoadHelper &, bool) const;
     MCAPI void _placeNextBlockSegmentInWorld(class BlockSource &, unsigned __int64, unsigned __int64, class StructureSettings const &, class DataLoadHelper &, class StructureBlockPalette const &, class BlockPalette const &, class BlockPos, class BlockPos const &, class Vec3 const &, enum Rotation, enum Mirror, float, unsigned int, class StructureTelemetryServerData *, bool, bool) const;
 

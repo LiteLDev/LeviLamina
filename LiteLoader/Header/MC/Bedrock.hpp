@@ -84,7 +84,10 @@ class LockGuard
 } // namespace Threading
 
 class ScopeExit;
-
+class Http {
+public:
+    enum Implementation;
+};
 class SessionInfo
 {
 public:

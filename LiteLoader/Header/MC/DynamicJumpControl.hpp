@@ -25,12 +25,13 @@ public:
 public:
     /*0*/ virtual ~DynamicJumpControl();
     /*1*/ virtual void initializeInternal(class Mob &, struct JumpControlDescription *);
-    /*2*/ virtual void tick(class JumpControlComponent &, class Mob &);
-    /*3*/ virtual int getJumpDelay(class JumpControlComponent const &, class Mob const &) const;
-    /*4*/ virtual float getJumpPower(class JumpControlComponent const &, class Mob const &) const;
-    /*5*/ virtual enum JumpType getJumpType(class JumpControlComponent const &, class Mob const &) const;
-    /*6*/ virtual void setJumpType(class JumpControlComponent &, class Mob &, enum JumpType);
-    /*7*/ virtual void resetSpeedModifier(class JumpControlComponent const &, class Mob &);
+    /*2*/ virtual std::unique_ptr<class JumpControl> clone() const;
+    /*3*/ virtual void tick(class JumpControlComponent &, class Mob &);
+    /*4*/ virtual int getJumpDelay(class JumpControlComponent const &) const;
+    /*5*/ virtual float getJumpPower(class JumpControlComponent const &) const;
+    /*6*/ virtual enum JumpType getJumpType(class JumpControlComponent const &) const;
+    /*7*/ virtual void setJumpType(class JumpControlComponent &, enum JumpType);
+    /*8*/ virtual void resetSpeedModifier(class JumpControlComponent const &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICJUMPCONTROL
 #endif
     MCAPI DynamicJumpControl();

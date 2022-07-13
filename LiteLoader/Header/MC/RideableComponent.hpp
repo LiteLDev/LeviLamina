@@ -31,6 +31,7 @@ public:
     MCAPI bool canAddPassenger(class Actor const &, class Actor &) const;
     MCAPI bool getFirstAvailableSeatPosition(class Actor const &, class Actor &, class Vec3 &) const;
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &) const;
+    MCAPI int getSeatCount() const;
     MCAPI class RideableComponent & operator=(class RideableComponent &&);
     MCAPI void positionPassenger(class Actor &, class Actor &) const;
     MCAPI bool pullInEntity(class Actor &, class Actor &) const;

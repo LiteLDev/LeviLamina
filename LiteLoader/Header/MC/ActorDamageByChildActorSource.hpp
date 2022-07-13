@@ -27,13 +27,13 @@ public:
 public:
     /*0*/ virtual ~ActorDamageByChildActorSource();
     /*2*/ virtual bool isChildEntitySource() const;
-    /*8*/ virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor *) const;
-    /*14*/ virtual bool getDamagingEntityIsCreative() const;
-    /*15*/ virtual bool getDamagingEntityIsWorldBuilder() const;
-    /*16*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
-    /*17*/ virtual enum ActorType getDamagingEntityType() const;
-    /*18*/ virtual enum ActorCategory getDamagingEntityCategories() const;
-    /*19*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
+    /*10*/ virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor *) const;
+    /*16*/ virtual bool getDamagingEntityIsCreative() const;
+    /*17*/ virtual bool getDamagingEntityIsWorldBuilder() const;
+    /*18*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
+    /*19*/ virtual enum ActorType getDamagingEntityType() const;
+    /*20*/ virtual enum ActorCategory getDamagingEntityCategories() const;
+    /*21*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDAMAGEBYCHILDACTORSOURCE
 #endif
     MCAPI ActorDamageByChildActorSource(class Actor &, class Actor &, enum ActorDamageCause);

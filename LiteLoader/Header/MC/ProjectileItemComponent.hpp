@@ -33,7 +33,6 @@ public:
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROJECTILEITEMCOMPONENT
 #endif
-    MCAPI ProjectileItemComponent(class ComponentItem *);
     MCAPI bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     MCAPI class Vec3 getShootDir(class Player const &, float) const;
     MCAPI class Actor * shootProjectile(class BlockSource &, class Vec3 const &, class Vec3 const &, float, class Player *) const;

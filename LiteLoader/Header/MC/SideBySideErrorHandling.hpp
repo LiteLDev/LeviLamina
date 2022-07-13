@@ -12,6 +12,6 @@ namespace SideBySideErrorHandling {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-    MCAPI struct TickingSystemWithInfo createSideBySideErrorHandlingSystem(enum SideBySideErrorHandling::ErrorLevel);
+    MCAPI struct TickingSystemWithInfo createSideBySideErrorHandlingSystem(enum SideBySideErrorHandling::ErrorLevel, bool);
 
 };

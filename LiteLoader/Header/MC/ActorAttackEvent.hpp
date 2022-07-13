@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct ActorAttackEvent {
+class ActorAttackEvent {
 
 #define AFTER_EXTRA
 
@@ -15,16 +15,17 @@ struct ActorAttackEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORATTACKEVENT
 public:
-    struct ActorAttackEvent& operator=(struct ActorAttackEvent const &) = delete;
-    ActorAttackEvent(struct ActorAttackEvent const &) = delete;
+    class ActorAttackEvent& operator=(class ActorAttackEvent const &) = delete;
+    ActorAttackEvent(class ActorAttackEvent const &) = delete;
     ActorAttackEvent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORATTACKEVENT
+#endif
     MCAPI ~ActorAttackEvent();
 
-protected:
 
-private:
 
 };

@@ -42,8 +42,8 @@ public:
     /*79*/ virtual void __unk_vfn_79();
     /*80*/ virtual void __unk_vfn_80();
     /*95*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-    /*119*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-    /*121*/ virtual class Item & setIcon(std::string const &, int);
+    /*121*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /*123*/ virtual class Item & setIcon(std::string const &, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDITEM
 #endif
     MCAPI CompoundItem(std::string const &, int, class Experiments const &);

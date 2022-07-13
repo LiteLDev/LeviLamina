@@ -29,6 +29,7 @@ public:
     /*2*/ virtual void tick(class EntityRegistry &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROJECTILESYSTEM
 #endif
+    MCAPI static void _tickProjectileComponent(class Actor *, class ProjectileComponent &);
 
 
 

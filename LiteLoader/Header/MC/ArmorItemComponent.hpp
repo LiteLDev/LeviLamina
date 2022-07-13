@@ -33,7 +33,6 @@ public:
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARMORITEMCOMPONENT
 #endif
-    MCAPI ArmorItemComponent(class ComponentItem *);
     MCAPI enum ArmorTextureType getArmorTextureType() const;
     MCAPI int getArmorValue() const;
     MCAPI static void bindType();

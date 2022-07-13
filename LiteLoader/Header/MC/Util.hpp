@@ -32,6 +32,12 @@ public:
     MultidimensionalArray(MultidimensionalArray const&&) = delete;
 };
 
+struct FormattedString {
+    FormattedString() = delete;
+    FormattedString(FormattedString const&) = delete;
+    FormattedString(FormattedString const&&) = delete;
+};
+
 #undef AFTER_EXTRA
     MCAPI extern int const COLOR_CODE;
     MCAPI extern std::string const EMPTY_GUID;
@@ -40,6 +46,7 @@ public:
     MCAPI void _breakIntoWordsAndFindProfanity(std::string &, std::vector<struct std::pair<int, int>> const &, class std::unordered_set<char, struct std::hash<char>, struct std::equal_to<char>, class std::allocator<char>> const &, class std::set<struct std::pair<int, int>, struct std::less<struct std::pair<int, int>>, class std::allocator<struct std::pair<int, int>>> &, class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> const &, class std::unordered_set<std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<std::string>> const &);
     MCAPI void _logIfValidLogArea(enum LogArea, std::string const &);
     MCAPI void _recordProfanityLocationInWord(std::string const &, std::vector<struct std::pair<int, int>> const &, int, int, class std::set<struct std::pair<int, int>, struct std::less<struct std::pair<int, int>>, class std::allocator<struct std::pair<int, int>>> &, class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> const &, class std::unordered_set<std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<std::string>> const &);
+    MCAPI struct Util::FormattedString allocateVFormat(char const *, char *);
     MCAPI std::string base64_decode(std::string const &);
     MCAPI std::string base64_encode(std::string const &, bool);
     MCAPI std::string base64_encode(unsigned char const *, unsigned __int64, bool);

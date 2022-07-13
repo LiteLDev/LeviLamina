@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "InternalComponentRegistry.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -39,8 +40,9 @@ public:
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void __unk_vfn_14();
-    /*15*/ virtual enum DataLoadHelperType getType() const;
-    /*16*/ virtual bool shouldResetTime();
+    /*15*/ virtual struct InternalComponentRegistry::ComponentInfo const * loadActorInternalComponentInfo(class std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct InternalComponentRegistry::ComponentInfo>>> const &, std::string const &);
+    /*16*/ virtual enum DataLoadHelperType getType() const;
+    /*17*/ virtual bool shouldResetTime();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFAULTDATALOADHELPER
     MCVAPI struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
     MCVAPI class BlockPos loadBlockPosition(class BlockPos const &);

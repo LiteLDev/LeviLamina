@@ -27,8 +27,8 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LECTERNBLOCKACTOR
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
-    MCVAPI class Container * getContainer();
     MCVAPI class Container const * getContainer() const;
+    MCVAPI class Container * getContainer();
     MCVAPI int getContainerSize() const;
     MCVAPI class ItemStack const & getItem(int) const;
     MCVAPI int getMaxStackSize() const;

@@ -27,7 +27,7 @@ public:
     /*0*/ virtual ~StubServerLocator();
     /*1*/ virtual void setGetHostGUIDFn(class std::function<struct RakNet::RakNetGUID (void)> const &);
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual void startAnnouncingServer(std::string const &, std::string const &, enum GameType, int, int, bool);
+    /*3*/ virtual void startAnnouncingServer(std::string const &, std::string const &, enum GameType, int, int, bool, bool);
     /*4*/ virtual void stopAnnouncingServer();
     /*5*/ virtual void startServerDiscovery(struct PortPair);
     /*6*/ virtual void stopServerDiscovery();

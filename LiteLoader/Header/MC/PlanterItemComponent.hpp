@@ -33,7 +33,6 @@ public:
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLANTERITEMCOMPONENT
 #endif
-    MCAPI PlanterItemComponent(class ComponentItem *);
     MCAPI bool calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();

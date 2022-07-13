@@ -67,6 +67,7 @@ public:
     MCAPI std::string getTenantId() const;
     MCAPI bool isCapeOnClassicSkin() const;
     MCAPI bool isClientThirdPartyNameOnly() const;
+    MCAPI bool isEditorMode() const;
     MCAPI bool isEduMode() const;
     MCAPI bool isPersonaSkin() const;
     MCAPI bool isPremiumSkin() const;

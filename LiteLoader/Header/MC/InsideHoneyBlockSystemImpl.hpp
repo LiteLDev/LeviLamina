@@ -25,6 +25,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEHONEYBLOCKSYSTEMIMPL
 #endif
     MCAPI static bool isSlidingDown(class BlockPos const &, class Vec3 const &, class Vec3 const &, class Vec2 const &);
+    MCAPI static void movementSystem(class StrictEntityContext const &, struct InsideBlockWithPosAndBlockComponent<struct HoneyBlockFlag> const &, struct AABBShapeComponent const &, struct StateVectorComponent &, struct FallDistanceComponent &);
 
 
 

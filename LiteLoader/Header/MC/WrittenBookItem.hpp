@@ -45,7 +45,7 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*84*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*95*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-    /*115*/ virtual std::string getInteractText(class Player const &) const;
+    /*117*/ virtual std::string getInteractText(class Player const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WRITTENBOOKITEM
 #endif
     MCAPI WrittenBookItem(std::string const &, int);

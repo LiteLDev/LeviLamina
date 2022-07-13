@@ -34,7 +34,7 @@ public:
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOBLOCKGOAL
 #endif
-    MCAPI MoveToBlockGoal(class Mob &, float, int, int, int, int, float, class Vec3, float, enum TargetSelectionMethod, std::vector<class DefinitionTrigger>, std::vector<class DefinitionTrigger>, std::vector<class ItemDescriptor>, class ActorFilterGroup const &);
+    MCAPI MoveToBlockGoal(class Mob &, float, int, int, int, int, float, class Vec3, float, enum TargetSelectionMethod, std::vector<class ActorDefinitionTrigger>, std::vector<class ActorDefinitionTrigger>, std::vector<class ItemDescriptor>, class ActorFilterGroup const &);
 
 //private:
     MCAPI void _checkIfStuck();

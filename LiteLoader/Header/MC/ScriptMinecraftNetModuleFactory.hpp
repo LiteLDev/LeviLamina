@@ -32,6 +32,7 @@ public:
     MCAPI static std::string getModuleUUIDAsString();
 
 //private:
+    MCAPI void _addV1();
 
 
 private:

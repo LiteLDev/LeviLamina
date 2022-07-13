@@ -34,34 +34,34 @@ public:
     /*67*/ virtual void __unk_vfn_67();
     /*81*/ virtual void __unk_vfn_81();
     /*87*/ virtual void __unk_vfn_87();
-    /*94*/ virtual void __unk_vfn_94();
-    /*97*/ virtual void __unk_vfn_97();
-    /*104*/ virtual void __unk_vfn_104();
-    /*106*/ virtual void __unk_vfn_106();
+    /*95*/ virtual void __unk_vfn_95();
+    /*98*/ virtual void __unk_vfn_98();
+    /*105*/ virtual void __unk_vfn_105();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*118*/ virtual void setSitting(bool);
-    /*132*/ virtual enum LevelSoundEvent getAmbientSound() const;
-    /*140*/ virtual void handleEntityEvent(enum ActorEvent, int);
-    /*166*/ virtual bool load(class CompoundTag const &, class DataLoadHelper &);
-    /*180*/ virtual void __unk_vfn_180();
-    /*189*/ virtual void onSynchedDataUpdate(int);
-    /*194*/ virtual void __unk_vfn_194();
-    /*219*/ virtual void __unk_vfn_219();
+    /*110*/ virtual void __unk_vfn_110();
+    /*119*/ virtual void setSitting(bool);
+    /*133*/ virtual enum LevelSoundEvent getAmbientSound() const;
+    /*141*/ virtual void handleEntityEvent(enum ActorEvent, int);
+    /*167*/ virtual bool load(class CompoundTag const &, class DataLoadHelper &);
+    /*181*/ virtual void __unk_vfn_181();
+    /*190*/ virtual void onSynchedDataUpdate(int);
+    /*195*/ virtual void __unk_vfn_195();
     /*220*/ virtual void __unk_vfn_220();
-    /*245*/ virtual void __unk_vfn_245();
-    /*248*/ virtual void __unk_vfn_248();
-    /*264*/ virtual void __unk_vfn_264();
-    /*265*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /*272*/ virtual void __unk_vfn_272();
-    /*281*/ virtual void __unk_vfn_281();
-    /*310*/ virtual void __unk_vfn_310();
-    /*312*/ virtual bool isAlliedTo(class Mob *);
-    /*314*/ virtual void __unk_vfn_314();
-    /*341*/ virtual void onBorn(class Actor &, class Actor &);
-    /*348*/ virtual void __unk_vfn_348();
-    /*357*/ virtual void newServerAiStep();
-    /*362*/ virtual void __unk_vfn_362();
+    /*221*/ virtual void __unk_vfn_221();
+    /*246*/ virtual void __unk_vfn_246();
+    /*249*/ virtual void __unk_vfn_249();
+    /*267*/ virtual void __unk_vfn_267();
+    /*268*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    /*275*/ virtual void __unk_vfn_275();
+    /*284*/ virtual void __unk_vfn_284();
+    /*312*/ virtual void __unk_vfn_312();
+    /*314*/ virtual bool isAlliedTo(class Mob *);
+    /*316*/ virtual void __unk_vfn_316();
+    /*343*/ virtual void onBorn(class Actor &, class Actor &);
+    /*350*/ virtual void __unk_vfn_350();
+    /*359*/ virtual void newServerAiStep();
+    /*364*/ virtual void __unk_vfn_364();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WOLF
 #endif
     MCAPI Wolf(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
@@ -69,6 +69,7 @@ public:
     MCAPI float getShakeAnim() const;
     MCAPI float getTailAngle();
     MCAPI bool isShaking() const;
+    MCAPI void postNormalTick();
 
 //private:
     MCAPI void _avoidSnowBury();

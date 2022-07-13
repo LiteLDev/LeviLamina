@@ -33,11 +33,11 @@ public:
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPAIRABLEITEMCOMPONENT
 #endif
-    MCAPI RepairableItemComponent(class ComponentItem *);
     MCAPI int handleItemRepair(class ItemStackBase &, class ItemStackBase &);
     MCAPI bool isValidRepairItem(class ItemStackBase const &) const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
+    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 //private:
     MCAPI struct RepairItemEntry const * _getRepairItemEntry(class ItemStackBase const &) const;

@@ -37,7 +37,6 @@ public:
     MCAPI DrinkPotionGoal(class Mob &, float, std::vector<struct DrinkPotionData> const &);
 
 //private:
-    MCAPI void _updateEquipment(class ItemStack const &);
 
 
 private:

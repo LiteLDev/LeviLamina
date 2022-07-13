@@ -3,6 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Direction.hpp"
+#include "InternalComponentRegistry.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -40,9 +41,10 @@ public:
     /*12*/ virtual enum Mirror loadMirror(enum Mirror);
     /*13*/ virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
     /*14*/ virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
-    /*15*/ virtual enum DataLoadHelperType getType() const;
-    /*16*/ virtual bool shouldResetTime();
-    /*17*/ virtual struct ActorUniqueID _generateNewID();
+    /*15*/ virtual struct InternalComponentRegistry::ComponentInfo const * loadActorInternalComponentInfo(class std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct InternalComponentRegistry::ComponentInfo>>> const &, std::string const &);
+    /*16*/ virtual enum DataLoadHelperType getType() const;
+    /*17*/ virtual bool shouldResetTime();
+    /*18*/ virtual struct ActorUniqueID _generateNewID();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREDATALOADHELPER
     MCVAPI float loadRotationDegreesX(float);
     MCVAPI float loadRotationRadiansX(float);

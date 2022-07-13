@@ -33,7 +33,7 @@ public:
 public:
     /*0*/ virtual ~NetherNetServerLocator();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual void startAnnouncingServer(std::string const &, std::string const &, enum GameType, int, int, bool);
+    /*3*/ virtual void startAnnouncingServer(std::string const &, std::string const &, enum GameType, int, int, bool, bool);
     /*4*/ virtual void stopAnnouncingServer();
     /*5*/ virtual void startServerDiscovery(struct PortPair);
     /*6*/ virtual void stopServerDiscovery();

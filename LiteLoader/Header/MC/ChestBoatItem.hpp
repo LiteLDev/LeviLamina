@@ -39,7 +39,7 @@ public:
     /*79*/ virtual void __unk_vfn_79();
     /*80*/ virtual void __unk_vfn_80();
     /*95*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-    /*133*/ virtual enum ActorType _getActorType() const;
+    /*135*/ virtual enum ActorType _getActorType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTBOATITEM
 #endif
     MCAPI ChestBoatItem(std::string const &, int, int);

@@ -38,6 +38,7 @@ public:
 #endif
     MCAPI ItemComponent(class ComponentItem *);
     MCAPI static void bindItemComponentType();
+    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 
 

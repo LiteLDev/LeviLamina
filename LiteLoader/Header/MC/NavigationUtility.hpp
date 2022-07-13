@@ -17,7 +17,6 @@ namespace NavigationUtility {
     MCAPI bool canFlyDirectly(class Mob &, class Vec3 const &, class Vec3 const &);
     MCAPI bool canMoveDirectly(class Mob &, class Vec3 const &, class Vec3 const &, int, int, int, bool);
     MCAPI bool canMoveDirectlyWaterBound(class Mob const &, class Vec3 const &, class Vec3 const &);
-    MCAPI bool canWalkAbove(class Mob &, int, int, int, int, int, int, class Vec3 const &, float, float, bool);
     MCAPI bool canWalkDirectly(class Mob &, class Vec3 const &, class Vec3 const &, int, int, int, bool);
     MCAPI bool canWalkOn(class Mob &, int, int, int, int, int, int, class Vec3 const &, float, float, bool);
     MCAPI bool closeToDone(class Mob const &, float);

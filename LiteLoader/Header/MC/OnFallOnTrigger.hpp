@@ -24,6 +24,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONFALLONTRIGGER
 #endif
+    MCAPI OnFallOnTrigger(class OnFallOnTrigger &&);
     MCAPI ~OnFallOnTrigger();
 
 

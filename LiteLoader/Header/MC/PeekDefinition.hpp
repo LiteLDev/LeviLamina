@@ -20,13 +20,13 @@ class PeekDefinition {
 public:
     class PeekDefinition& operator=(class PeekDefinition const &) = delete;
     PeekDefinition(class PeekDefinition const &) = delete;
+    PeekDefinition() = delete;
 #endif
 
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PEEKDEFINITION
 #endif
-    MCAPI PeekDefinition();
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class PeekDefinition>> &);
 
 

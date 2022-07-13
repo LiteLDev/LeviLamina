@@ -35,7 +35,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORM
     MCVAPI std::unique_ptr<class Bedrock::Http::IProxyResolver> _createProxyResolver();
     MCVAPI void _disableCPUBoost();
-    MCVAPI void _fireAppTerminated();
     MCVAPI void _initializeFileStorageAreas();
     MCVAPI void _onInitialize();
     MCVAPI void _onTeardown();
@@ -160,7 +159,6 @@ public:
     MCVAPI bool isDownloadBuffered() const;
     MCVAPI bool isFireTV() const;
     MCVAPI bool isJoinableViaExternalServers() const;
-    MCVAPI bool isKeyboardVisible() const;
     MCVAPI bool isLANAllowed() const;
     MCVAPI bool isLowMemoryDevice() const;
     MCVAPI bool isLowPhysicalMemoryDevice() const;
@@ -243,6 +241,7 @@ public:
     MCVAPI ~AppPlatform();
 #endif
     MCAPI AppPlatform(bool);
+    MCAPI void _fireAppTerminated();
     MCAPI std::unique_ptr<struct Bedrock::PlatformRuntimeInfo> & accessPlatformRuntimeInformation_Shim();
     MCAPI class Core::PathBuffer<std::string> getCurrentStoragePath() const;
     MCAPI class Core::PathBuffer<std::string> getInternalStoragePath() const;

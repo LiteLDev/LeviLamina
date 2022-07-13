@@ -49,9 +49,9 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*95*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*101*/ virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
-    /*118*/ virtual struct Brightness getLightEmission(int) const;
-    /*119*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-    /*121*/ virtual class Item & setIcon(std::string const &, int);
+    /*120*/ virtual struct Brightness getLightEmission(int) const;
+    /*121*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /*123*/ virtual class Item & setIcon(std::string const &, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPARKLERITEM
 #endif
     MCAPI SparklerItem(std::string const &, int);

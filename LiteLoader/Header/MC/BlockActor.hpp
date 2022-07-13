@@ -66,14 +66,16 @@ public:
     /*27*/ virtual class PistonBlockActor * getOwningPiston(class BlockSource &);
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
-    /*30*/ virtual float getDeletionDelayTimeSeconds() const;
-    /*31*/ virtual void __unk_vfn_31();
+    /*30*/ virtual void __unk_vfn_30();
+    /*31*/ virtual float getDeletionDelayTimeSeconds() const;
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
-    /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
-    /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
-    /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
+    /*34*/ virtual void __unk_vfn_34();
+    /*35*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
+    /*36*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
+    /*37*/ virtual bool _playerCanUpdate(class Player const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKACTOR
+    MCVAPI void eraseLootTable();
     MCVAPI void fixupOnLoad(class LevelChunk &);
     MCVAPI class Container * getContainer();
     MCVAPI class Container const * getContainer() const;

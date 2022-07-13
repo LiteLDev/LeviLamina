@@ -50,7 +50,6 @@ public:
 
 //private:
     MCAPI bool const _isTierOneBlock(class BlockLegacy const &) const;
-    MCAPI bool const _isTierTwoBlock(class BlockLegacy const &) const;
 
 
 private:

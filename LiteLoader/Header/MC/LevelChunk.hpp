@@ -90,7 +90,7 @@ public:
     MCAPI class Actor * getEntity(struct ActorUniqueID const &) const;
     MCAPI class Block const & getExtraBlock(class ChunkBlockPos const &) const;
     MCAPI enum LevelChunk::Finalization getFinalized() const;
-    MCAPI class GameEventDispatcher & getGameEventDispatcher() const;
+    MCAPI class GameEventListenerRegistry & getGameEventListenerRegistry() const;
     MCAPI class ChunkSource * getGenerator() const;
     MCAPI int getGrassColor(class ChunkBlockPos const &);
     MCAPI class DimensionHeightRange const & getHeightRange() const;
@@ -150,7 +150,8 @@ public:
     MCAPI void recalculateSubchunkHashes(bool);
     MCAPI void recomputeHeightMap(bool);
     MCAPI class std::shared_ptr<class BlockActor> removeBlockEntity(class BlockPos const &);
-    MCAPI bool removeEntity(class WeakEntityRef, bool);
+    MCAPI bool removeEntityFromChunk(class WeakEntityRef);
+    MCAPI bool removeEntityFromWorld(class WeakEntityRef);
     MCAPI void removeHardcodedSpawningArea(enum HardcodedSpawnAreaType);
     MCAPI void runtimeRelightSubchunk(class BlockSource &, unsigned __int64, std::vector<struct SubChunkLightUpdate> const &, std::vector<class BlockPos> &);
     MCAPI void serialize2DMaps(class IDataOutput &) const;

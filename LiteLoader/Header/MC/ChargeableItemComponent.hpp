@@ -31,7 +31,6 @@ public:
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHARGEABLEITEMCOMPONENT
 #endif
-    MCAPI ChargeableItemComponent(class ComponentItem *);
     MCAPI float getMovementModifier() const;
     MCAPI bool use(class ItemStack &, class Player &) const;
     MCAPI void useTimeDepleted(class ItemStack &, class Player &, class Level &) const;

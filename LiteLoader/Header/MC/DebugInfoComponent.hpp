@@ -54,7 +54,7 @@ public:
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
-    /*31*/ virtual enum EventResult onEvent(struct ActorDefinitionEvent const &);
+    /*31*/ virtual enum EventResult onEvent(struct ActorDefinitionTriggeredEvent const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEBUGINFOCOMPONENT
 #endif
     MCAPI DebugInfoComponent(class DebugInfoComponent &&);

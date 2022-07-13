@@ -44,7 +44,7 @@ public:
     /*84*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*103*/ virtual class HashedString const & getCooldownType() const;
     /*104*/ virtual int getCooldownTime() const;
-    /*124*/ virtual bool canBeCharged() const;
+    /*126*/ virtual bool canBeCharged() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOATHORNITEM
 #endif
     MCAPI GoatHornItem(std::string const &, int);

@@ -46,9 +46,9 @@ public:
     /*84*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*85*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /*95*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-    /*119*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-    /*121*/ virtual class Item & setIcon(std::string const &, int);
-    /*133*/ virtual enum Potion::PotionType getPotionType() const;
+    /*121*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /*123*/ virtual class Item & setIcon(std::string const &, int);
+    /*135*/ virtual enum Potion::PotionType getPotionType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LINGERINGPOTIONITEM
 #endif
     MCAPI LingeringPotionItem(std::string const &, int);

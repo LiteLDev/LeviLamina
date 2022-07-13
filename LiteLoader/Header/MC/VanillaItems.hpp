@@ -27,7 +27,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAITEMS
 #endif
     MCAPI static void registerItems(class BaseGameVersion const &, class Experiments const &, bool);
-    MCAPI static void serverInitCreativeItemsCallback(class ActorInfoRegistry *, class BlockDefinitionGroup *, class CreativeItemRegistry *, bool, class BaseGameVersion const &, class Experiments const &);
+    MCAPI static void serverInitCreativeItemsCallback(class ItemRegistryRef, class ActorInfoRegistry *, class BlockDefinitionGroup *, class CreativeItemRegistry *, bool, class BaseGameVersion const &, class Experiments const &);
     MCAPI static void unregisterItems();
 
 

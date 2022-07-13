@@ -42,7 +42,7 @@ public:
     /*79*/ virtual void __unk_vfn_79();
     /*80*/ virtual void __unk_vfn_80();
     /*84*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
-    /*115*/ virtual std::string getInteractText(class Player const &) const;
+    /*117*/ virtual std::string getInteractText(class Player const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WRITABLEBOOKITEM
 #endif
     MCAPI WritableBookItem(std::string const &, int);

@@ -44,8 +44,8 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*85*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /*89*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
-    /*131*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
-    /*132*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    /*133*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
+    /*134*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLINTANDSTEELITEM
 #endif
     MCAPI FlintAndSteelItem(std::string const &, int);

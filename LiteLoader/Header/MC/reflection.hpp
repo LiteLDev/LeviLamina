@@ -10,7 +10,10 @@
 namespace reflection {
 
 #define AFTER_EXTRA
-
+    class details {
+    class BasicCompositeSchema;
+    };
+    struct Schema;
 #undef AFTER_EXTRA
     MCAPI class std::unordered_map<std::string, class std::unordered_map<std::string, std::unique_ptr<class reflection::details::BasicCompositeSchema>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class reflection::details::BasicCompositeSchema>>>>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, class std::unordered_map<std::string, std::unique_ptr<class reflection::details::BasicCompositeSchema>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class reflection::details::BasicCompositeSchema>>>>>>> & schemaMap();
 

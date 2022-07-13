@@ -18,8 +18,8 @@ struct RepairItemEntry {
 public:
     MCAPI RepairItemEntry(struct RepairItemEntry const &);
     MCAPI RepairItemEntry();
-    MCAPI struct RepairItemEntry & operator=(struct RepairItemEntry const &);
     MCAPI struct RepairItemEntry & operator=(struct RepairItemEntry &&);
+    MCAPI struct RepairItemEntry & operator=(struct RepairItemEntry const &);
     MCAPI ~RepairItemEntry();
 
 protected:

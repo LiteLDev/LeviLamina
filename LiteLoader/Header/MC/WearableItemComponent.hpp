@@ -33,7 +33,6 @@ public:
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEARABLEITEMCOMPONENT
 #endif
-    MCAPI WearableItemComponent(class ComponentItem *);
     MCAPI enum EquipmentSlot getSlot() const;
     MCAPI bool use(class ItemStack &, class Player &) const;
     MCAPI static void bindType();

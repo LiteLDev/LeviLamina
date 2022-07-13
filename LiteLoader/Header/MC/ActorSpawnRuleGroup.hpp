@@ -29,7 +29,7 @@ public:
     /*1*/ virtual std::string const & getRootKey();
     /*2*/ virtual std::string const & getFileType();
     /*3*/ virtual bool processPopulationControl(std::string const &, class Json::Value &);
-    /*4*/ virtual void readResourceFiles(class ResourcePackManager &, class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> &);
+    /*4*/ virtual void readResourceFiles(class ResourcePackManager &, class std::unordered_map<std::string, struct ActorSpawnRuleDefinition, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, struct ActorSpawnRuleDefinition>>> &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSPAWNRULEGROUP
 #endif
     MCAPI ActorSpawnRuleGroup(class ResourcePackManager &, class IWorldRegistriesProvider &);

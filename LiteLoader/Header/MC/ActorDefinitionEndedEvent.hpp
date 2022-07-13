@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct ActorDefinitionEndedEvent {
+class ActorDefinitionEndedEvent {
 
 #define AFTER_EXTRA
 
@@ -15,16 +15,17 @@ struct ActorDefinitionEndedEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITIONENDEDEVENT
 public:
-    struct ActorDefinitionEndedEvent& operator=(struct ActorDefinitionEndedEvent const &) = delete;
-    ActorDefinitionEndedEvent(struct ActorDefinitionEndedEvent const &) = delete;
+    class ActorDefinitionEndedEvent& operator=(class ActorDefinitionEndedEvent const &) = delete;
+    ActorDefinitionEndedEvent(class ActorDefinitionEndedEvent const &) = delete;
     ActorDefinitionEndedEvent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONENDEDEVENT
+#endif
     MCAPI ~ActorDefinitionEndedEvent();
 
-protected:
 
-private:
 
 };

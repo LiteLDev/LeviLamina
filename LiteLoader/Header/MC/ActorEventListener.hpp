@@ -29,7 +29,7 @@ public:
     MCVAPI enum EventResult onActorCarriedItemChanged(class Actor &, class ItemInstance const &, class ItemInstance const &, enum HandSlot);
     MCVAPI enum EventResult onActorCreated(class Actor &);
     MCVAPI enum EventResult onActorDeath(class Actor &, class ActorDamageSource const &, enum ActorType);
-    MCVAPI enum EventResult onActorDefinitionEvent(class Actor &, std::string const &, std::vector<struct DefinitionModifier> &);
+    MCVAPI enum EventResult onActorDefinitionEvent(class Actor &, std::string const &, std::vector<struct ActorDefinitionModifier> &);
     MCVAPI enum EventResult onActorDroppedItem(class Actor &, class ItemInstance const &);
     MCVAPI enum EventResult onActorEquippedArmor(class Actor &, class ItemInstance const &, enum ArmorSlot);
     MCVAPI enum EventResult onActorMobInteraction(class Actor &, enum MinecraftEventing::InteractionType, enum ActorType);

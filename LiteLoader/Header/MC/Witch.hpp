@@ -32,35 +32,36 @@ public:
     /*67*/ virtual void __unk_vfn_67();
     /*81*/ virtual void __unk_vfn_81();
     /*87*/ virtual void __unk_vfn_87();
-    /*94*/ virtual void __unk_vfn_94();
-    /*97*/ virtual void __unk_vfn_97();
-    /*104*/ virtual void __unk_vfn_104();
-    /*106*/ virtual void __unk_vfn_106();
+    /*95*/ virtual void __unk_vfn_95();
+    /*98*/ virtual void __unk_vfn_98();
+    /*105*/ virtual void __unk_vfn_105();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*110*/ virtual bool canAttack(class Actor *, bool) const;
-    /*115*/ virtual void performRangedAttack(class Actor &, float);
-    /*140*/ virtual void handleEntityEvent(enum ActorEvent, int);
-    /*180*/ virtual void __unk_vfn_180();
-    /*194*/ virtual void __unk_vfn_194();
-    /*219*/ virtual void __unk_vfn_219();
+    /*110*/ virtual void __unk_vfn_110();
+    /*112*/ virtual bool canAttack(class Actor *, bool) const;
+    /*116*/ virtual void performRangedAttack(class Actor &, float);
+    /*141*/ virtual void handleEntityEvent(enum ActorEvent, int);
+    /*181*/ virtual void __unk_vfn_181();
+    /*195*/ virtual void __unk_vfn_195();
     /*220*/ virtual void __unk_vfn_220();
-    /*245*/ virtual void __unk_vfn_245();
-    /*248*/ virtual void __unk_vfn_248();
-    /*262*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
-    /*264*/ virtual void __unk_vfn_264();
-    /*272*/ virtual void __unk_vfn_272();
-    /*280*/ virtual void _onSizeUpdated();
-    /*281*/ virtual void __unk_vfn_281();
-    /*297*/ virtual void aiStep();
-    /*310*/ virtual void __unk_vfn_310();
-    /*314*/ virtual void __unk_vfn_314();
-    /*337*/ virtual float getDamageAfterEnchantReduction(class ActorDamageSource const &, float) const;
-    /*348*/ virtual void __unk_vfn_348();
-    /*362*/ virtual void __unk_vfn_362();
+    /*221*/ virtual void __unk_vfn_221();
+    /*246*/ virtual void __unk_vfn_246();
+    /*249*/ virtual void __unk_vfn_249();
+    /*265*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
+    /*267*/ virtual void __unk_vfn_267();
+    /*275*/ virtual void __unk_vfn_275();
+    /*283*/ virtual void _onSizeUpdated();
+    /*284*/ virtual void __unk_vfn_284();
+    /*299*/ virtual void aiStep();
+    /*312*/ virtual void __unk_vfn_312();
+    /*316*/ virtual void __unk_vfn_316();
+    /*339*/ virtual float getDamageAfterEnchantReduction(class ActorDamageSource const &, float) const;
+    /*350*/ virtual void __unk_vfn_350();
+    /*364*/ virtual void __unk_vfn_364();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WITCH
 #endif
     MCAPI Witch(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+    MCAPI void preAiStep();
 
 //private:
 

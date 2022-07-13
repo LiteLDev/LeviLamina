@@ -16,42 +16,47 @@ class Abilities {
 
 #undef AFTER_EXTRA
 
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ABILITIES
+public:
+    Abilities() = delete;
+#endif
+
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABILITIES
 #endif
     MCAPI Abilities(class Abilities const &);
-    MCAPI Abilities();
+    MCAPI Abilities(bool);
     MCAPI void addSaveData(class CompoundTag &) const;
-    MCAPI void forEachAbility(class std::function<void (class Ability &, char const *)> const &, enum Ability::Options);
+    MCAPI void forEachAbility(class std::function<void (class Ability const &, enum AbilitiesIndex)> const &, enum Ability::Options) const;
+    MCAPI void forEachAbility(class std::function<void (class Ability &, enum AbilitiesIndex)> const &, enum Ability::Options);
     MCAPI class Ability & getAbility(enum AbilitiesIndex);
     MCAPI class Ability const & getAbility(enum AbilitiesIndex) const;
     MCAPI bool getBool(enum AbilitiesIndex) const;
-    MCAPI enum CommandPermissionLevel getCommandPermissions() const;
-    MCAPI class Ability const & getCustomAbilityFromCache(enum AbilitiesIndex) const;
-    MCAPI class Ability & getCustomAbilityFromCache(enum AbilitiesIndex);
     MCAPI float getFloat(enum AbilitiesIndex) const;
-    MCAPI enum PlayerPermissionLevel getPlayerPermissions() const;
-    MCAPI bool isFlying() const;
+    MCAPI bool isAnyAbilitySet() const;
     MCAPI bool loadSaveData(class CompoundTag const &);
     MCAPI class Abilities & operator=(class Abilities const &);
     MCAPI bool operator==(class Abilities const &) const;
+    MCAPI void setAbility(enum AbilitiesIndex, class Ability const &);
     MCAPI void setAbility(enum AbilitiesIndex, float);
     MCAPI void setAbility(enum AbilitiesIndex, bool);
     MCAPI void setAbilityDiff(enum AbilitiesIndex, bool, bool &);
-    MCAPI void setCommandPermissions(enum CommandPermissionLevel);
-    MCAPI void setPlayerPermissions(enum PlayerPermissionLevel);
-    MCAPI ~Abilities();
+    MCAPI void setDefault();
+    MCAPI void setFromPermissions(enum PlayerPermissionLevel);
+    MCAPI void unSet(enum AbilitiesIndex);
+    MCAPI void unSet();
+    MCAPI static class Ability INVALID_ABILITY;
+    MCAPI static std::string const SERIALIZATION_TAG;
     MCAPI static char const * getAbilityName(enum AbilitiesIndex);
+    MCAPI static class Ability const & getDefault(enum AbilitiesIndex);
     MCAPI static enum AbilitiesIndex nameToAbilityIndex(std::string const &);
 
 //private:
-    MCAPI void _registerAbilities();
 
 
 private:
     MCAPI static class std::array<char const *, 18> ABILITY_NAMES;
-    MCAPI static std::string const TAG;
 
 
 };
