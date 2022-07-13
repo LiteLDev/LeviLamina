@@ -17,8 +17,7 @@ public:
     LIAPI string getExpressionString();
     LIAPI bool isInitialized();
     LIAPI bool isValid();
-    LIAPI bool
-        MolangInstance::parse(const string& expressionStr, enum MolangVersion version = (MolangVersion)6,
+    LIAPI bool parse(const string& expressionStr, enum MolangVersion version = (MolangVersion)6,
                               gsl::span<class HashedString const, -1> v = gsl::span<class HashedString const, -1>(
                                   {HashedString("default" /*or "world_gen"*/)}));
 
