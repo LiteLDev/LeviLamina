@@ -5,6 +5,7 @@
 #include "Vec2.hpp"
 #include "Vec3.hpp"
 #include "BlockPos.hpp"
+#include "AABB.hpp"
 #include "BoundingBox.hpp"
 #include "ChunkPos.hpp"
 #include "ChunkBlockPos.hpp"
