@@ -35,7 +35,7 @@ public:
     MCAPI ItemInstance(class gsl::basic_string_span<char const, -1>, int, int, class CompoundTag const *);
     MCAPI ItemInstance();
     MCAPI void __autoclassinit2(unsigned __int64);
-    MCAPI class ItemInstance clone() const;
+    //MCAPI class ItemInstance clone() const;
     MCAPI class ItemInstance & operator=(class ItemInstance const &);
     MCAPI static class ItemInstance const EMPTY_ITEM;
     MCAPI static class ItemInstance fromTag(class CompoundTag const &);

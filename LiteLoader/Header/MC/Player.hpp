@@ -62,8 +62,6 @@ public:
 
     // Experience required to upgrade to level from level 0
     LIAPI static size_t getTotalXpNeededForLevel(int level);
-
-    LIAPI bool sendText(string text, TextType type = TextType::RAW);
     
     /**
      * @brief Translate(localize) a text for the player with provided plugin handle.

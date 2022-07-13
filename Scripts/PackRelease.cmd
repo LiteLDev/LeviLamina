@@ -18,7 +18,6 @@ echo.
 copy /Y x64\Release\LLPreLoader.dll RELEASE\LLPreLoader.dll
 copy /Y x64\Release\LiteLoader.dll RELEASE\LiteLoader.dll
 copy /Y x64\Release\LiteLoader.*.dll RELEASE\plugins\LiteLoader\
-copy /Y x64\Release\LLAutoUpdate.dll RELEASE\plugins\LiteLoader\LLAutoUpdate.dll
 copy /Y Tools\LLPeEditor.exe RELEASE\LLPeEditor.exe
 copy /Y ScriptEngine\BaseLib\* RELEASE\plugins\lib\
 
