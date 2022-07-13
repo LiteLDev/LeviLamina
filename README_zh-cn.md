@@ -159,16 +159,6 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 
 更多**安装与使用指南** ，请👉[移步 LiteLoader 文档站](https://docs.litebds.com/#/zh_CN/Usage/)👈查看
 
-## 📥 自动更新
-
-从`2.0.0`版本开始，LiteLoader增加了自动更新功能  
-如果BDS版本相同，LiteLoader的更新将会**自动推送**，并且**自动在下一次服务端开启时安装**  
-第一时间获取最新功能更新！ 免去重复手动升级的烦恼~
-
-你也可以在控制台使用 `ll upgrade` 命令手动检查更新。
-
-<br/>
-
 ------
 
 ## 📕 LiteLoader 插件开发
@@ -199,8 +189,6 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 你可以直接在生产环境中使用它们
 也可以在这里学习插件开发的方法和技巧
 
-<br>
-
 ### 开发辅助工具 - VSCode 开发辅助插件 & 补全库
 
 使用 Moxicat 开发的 LiteLoader 开发辅助插件  
@@ -213,8 +201,6 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 查看扩展说明与介绍  
 VSCode扩展商店搜索`LLScriptHelper`，安装**LLScriptHelper**，即刻体验
 
-<br>
-
 ### 开发辅助工具 - Blockly-LXL 图形化开发套件
 
 没有编程基础？对复杂的语言规则感到厌烦?  
@@ -224,6 +210,8 @@ VSCode扩展商店搜索`LLScriptHelper`，安装**LLScriptHelper**，即刻体�
 
 [点击这里](https://www.minebbs.com/resources/blockly-lxl.2671/)
 查看相关安装与使用说明
+
+------
 
 ## 🔨 构建项目
 
@@ -238,8 +226,6 @@ VSCode扩展商店搜索`LLScriptHelper`，安装**LLScriptHelper**，即刻体�
 5. 选择完毕之后，点击对话框中的 **生成** 按钮，进行批生成
 6. 编译生成成功之后，返回到项目根目录，执行 Scripts 文件夹中的 `PackRelease.cmd` 脚本  
    执行完之后，根目录 `RELEASE` 文件夹内的内容即为完整的 `LiteLoader` 环境及所有的依赖库
-
-<br/>
 
 ## 🎬 参与贡献
 

@@ -171,19 +171,6 @@ Everything's done! Next, you can install **LiteLoader** plugins!
 
 For more **installation and usage guides**,  come to 👉[LiteLoader documentation](https://docs.litebds.com/#/en/Usage/)👈 to view
 
-<br>
-
-## 📥 Auto update
-
-From version `2.0.0`, LiteLoader has added an auto-update function.  
-If in the same BDS version, LiteLoader update will **automatically push**, and **automatically install** the next time
-the server is started.  
-The latest features, get the first time! Eliminate the trouble of repeated manual upgrades!
-
-You can use `ll upgrade` command at console to check for update manually too.
-
-<br/>
-
 ------
 
 ## 📕 LiteLoader plugin development
@@ -208,15 +195,11 @@ If you have a revision request or need to add an API, please contact the author 
 Please come to 👉[LiteLoader documentation](https://docs.litebds.com/#/en/Development/)👈 for detailed **API documentation** and **plugin development tutorial**.  
 If you have a revision request or need to add an API, please feel free to contact the author or post an Issue  
 
-<br>
-
 ### Example Plugins
 
 [Click here](https://github.com/LiteLDev) for more open source LiteLoader plugins as sample plugins.
 You can use them directly in production environments
 You can also learn plugin development methods and tips here
-
-<br>
 
 ### Development Aids - VSCode Development Aids & Complementary Libraries
 
@@ -228,8 +211,6 @@ Code hint, auto-completion, auto-documentation, error alert, runtime debugging a
 View more description and introduction of this extension  
 VSCode extension store search `LLScriptHelper`, install **LLScriptHelper** and experience it instantly!
 
-<br>
-
 ### Development Aids - Blockly-LXL Graphical Development Kit
 
 No programming foundation? Tired of complex language rules?  
@@ -239,7 +220,6 @@ Here it is! The Blockly-LXL graphical development kit from pa733 takes the plugi
 
 [Click here](https://www.minebbs.com/resources/blockly-lxl.2671/)
 View related installation and usage instructions
-<br/>
 
 ## 🔨 Build project
 
