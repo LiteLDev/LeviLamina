@@ -36,9 +36,17 @@ enum class ScriptFacing {
 
 enum ScriptMessageSourceType;
 struct ScriptNavigationResult {
+public:
+    bool mIsFullPath;
+    std::vector<BlockPos> mPath;
+	
+public:
+    struct ScriptNavigationResult& operator=(struct ScriptNavigationResult const&) = delete;
+    ScriptNavigationResult(struct ScriptNavigationResult const&) = delete;
     ScriptNavigationResult() = delete;
-    ScriptNavigationResult(ScriptNavigationResult const&) = delete;
-    ScriptNavigationResult(ScriptNavigationResult const&&) = delete;
+
+public:
+    MCAPI ~ScriptNavigationResult();
 };
 #undef AFTER_EXTRA
     MCAPI class Scripting::ClassBindingBuilder<class BlockPos> bindBlockLocation(struct Scripting::Version);

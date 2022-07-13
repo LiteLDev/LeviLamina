@@ -144,7 +144,7 @@ Local<Value> PlayerClass::simulateDestory(const Arguments& args){
         int dimid = sp->getDimensionId();
         BlockPos bpos;
         size_t index = 0;
-        ScriptFacing face = (ScriptFacing)0;
+        ScriptModuleMinecraft::ScriptFacing face = (ScriptModuleMinecraft::ScriptFacing)0;
         if (IsInstanceOf<IntPos>(args[0]))
         {
             auto pos = IntPos::extractPos(args[index]);
@@ -189,7 +189,7 @@ Local<Value> PlayerClass::simulateDestory(const Arguments& args){
         if (args.size() > index)
         {
             CHECK_ARG_TYPE(args[index], ValueKind::kNumber);
-            face = (ScriptFacing)args[index].toInt();
+            face = (ScriptModuleMinecraft::ScriptFacing)args[index].toInt();
         }
         //TODO
         return Boolean::newBoolean(sp->simulateDestroyBlock(bpos, face));
@@ -233,7 +233,7 @@ Local<Value> PlayerClass::simulateInteract(const Arguments& args){
         int dimid = sp->getDimensionId();
         BlockPos bpos;
         size_t index = 0;
-        ScriptFacing face = (ScriptFacing)0;
+        ScriptModuleMinecraft::ScriptFacing face = (ScriptModuleMinecraft::ScriptFacing)0;
         if (IsInstanceOf<IntPos>(args[0]))
         {
             auto pos = IntPos::extractPos(args[index]);
@@ -535,8 +535,7 @@ Local<Value> PlayerClass::simulateSetBodyRotation(const Arguments& args)
 // void simulateWorldMove(class Vec3 const&, float);
 // void simulateMoveToLocation(class Vec3 const&, float);
 
-inline Local<Value> NavigateResultToObject(ScriptNavigationResult const& res)
-{
+inline Local<Value> NavigateResultToObject(ScriptModuleMinecraft::ScriptNavigationResult const& res) {
     auto obj = Object::newObject();
     obj.set(String::newString("isFullPath"), Boolean::newBoolean(res.mIsFullPath));
     auto path = Array::newArray();
@@ -677,7 +676,7 @@ Local<Value> PlayerClass::simulateUseItem(const Arguments& args)
         }
 
         BlockPos bpos;
-        ScriptFacing face = (ScriptFacing)0;
+        ScriptModuleMinecraft::ScriptFacing face = (ScriptModuleMinecraft::ScriptFacing)0;
         Vec3 relativePos = {0.5, 0.5, 0.5};
         if (IsInstanceOf<IntPos>(args[1]))
             bpos = IntPos::extractPos(args[1])->getBlockPos();
@@ -691,7 +690,7 @@ Local<Value> PlayerClass::simulateUseItem(const Arguments& args)
         if (args.size() > 2)
         {
             CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
-            face = (ScriptFacing)args[2].toInt();
+            face = (ScriptModuleMinecraft::ScriptFacing)args[2].toInt();
             if (args.size()>3)
             {
                 if (IsInstanceOf<FloatPos>(args[3]))
