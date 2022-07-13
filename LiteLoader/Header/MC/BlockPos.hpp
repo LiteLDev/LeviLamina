@@ -184,8 +184,8 @@ public:
     }
 
     LIAPI Vec3 toVec3() const;
-    LIAPI BoundingBox toBoundingBox() const;
-    LIAPI AABB toAABB() const;
+    LIAPI class BoundingBox toBoundingBox() const;
+    LIAPI class AABB toAABB() const;
     LIAPI Vec3 bottomCenter() const;
     LIAPI Vec3 center() const;
     LIAPI bool containedWithin(class BoundingBox const&) const;
