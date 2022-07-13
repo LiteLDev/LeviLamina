@@ -25,7 +25,6 @@ namespace LL {
                     {"alwaysLaunch", conf.alwaysLaunchScriptEngine}
                 }},
                 {"Modules", {
-                    {"AutoUpgrade", {{"enabled", conf.enableAutoUpdate}} },
                     {"CrashLogger", {
                         {"enabled", conf.enableCrashLogger},
                         {"path", conf.crashLoggerPath}
@@ -87,11 +86,6 @@ namespace LL {
         if (j.find("Modules") != j.end()) {
             const nlohmann::json &modules = j.at("Modules");
 
-            if (modules.count("AutoUpgrade"))
-            {
-                const nlohmann::json& setting = modules.at("AutoUpgrade");
-                conf.enableAutoUpdate = setting.value("enabled", true);
-            }
             if (modules.count("CrashLogger"))
             {
                 const nlohmann::json& setting = modules.at("CrashLogger");

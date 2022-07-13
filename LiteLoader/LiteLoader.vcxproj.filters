@@ -258,9 +258,6 @@
     <ClCompile Include="Kernel\ObjectivePacketHelper.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Main\AutoUpgrade.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
     <ClCompile Include="Main\BuiltinBugFix.cpp">
       <Filter>Main</Filter>
     </ClCompile>

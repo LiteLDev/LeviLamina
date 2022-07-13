@@ -252,8 +252,6 @@ void LLMain()
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {
         logger.info("LiteLoader is distributed under the AGPLv3 License");
         logger.info("\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");
-        if (LL::globalConfig.enableAutoUpdate)
-            LL::InitAutoUpdateCheck();
         return true;
     });
 

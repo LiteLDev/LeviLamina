@@ -129,7 +129,6 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\Utils\STLHelper.cpp" />
     <ClCompile Include="Kernel\Utils\StringReader.cpp" />
     <ClCompile Include="Main\AddonsHelper.cpp" />
-    <ClCompile Include="Main\AutoUpgrade.cpp" />
     <ClCompile Include="Main\BuiltinUnlockCmd.cpp" />
     <ClCompile Include="Main\Config.cpp" />
     <ClCompile Include="Main\CrashLogger.cpp" />

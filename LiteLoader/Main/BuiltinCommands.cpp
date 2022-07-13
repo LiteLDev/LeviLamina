@@ -167,16 +167,6 @@ public:
     }
 };
 
-void LLUpgradeCommand(CommandOutput& output, bool isForce)
-{
-    std::thread([isForce]() {
-        // Set global SEH-Exception handler
-        _set_se_translator(seh_exception::TranslateSEHtoCE);
-
-        LL::CheckAutoUpdate(true, isForce);
-    }).detach();
-}
-
 void LLListPluginsCommand(CommandOutput& output)
 {
     auto plugins = LL::getAllPlugins();
@@ -301,19 +291,13 @@ class LLCommand : public Command
     {
         Version,
         List,
-        Upgrade,
         Help,
         Load,
         Unload,
         Reload
     };
-    enum class UpgradeOption
-    {
-        Force
-    };
 
     Operation operation;
-    UpgradeOption upgradeOption;
     bool hasUpgradeOption, hasPluginNameSet;
     CommandRawText pluginNameToDoOperation;
 
@@ -334,9 +318,6 @@ public:
         {
             case Operation::Version:
                 LLVersionCommand(output);
-                break;
-            case Operation::Upgrade:
-                LLUpgradeCommand(output, hasUpgradeOption && upgradeOption == UpgradeOption::Force);
                 break;
             case Operation::List:
                 if (!hasPluginNameSet)
@@ -421,17 +402,6 @@ public:
             "ll",
             makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_OptionalPluginName").addOptions((CommandParameterOption)1),
             makeOptional<CommandParameterDataType::SOFT_ENUM>((std::string LLCommand::*)&LLCommand::pluginNameToDoOperation, "pluginName", "PluginName", &LLCommand::hasPluginNameSet));
-
-        // ll upgrade
-        registry->addEnum<Operation>("Operation_WithOption", {
-            {"upgrade", Operation::Upgrade},
-        });
-		
-        registry->addEnum<UpgradeOption>("UpgradeOption", {{"force", UpgradeOption::Force}});
-        registry->registerOverload<LLCommand>(
-            "ll",
-            makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_WithOption").addOptions((CommandParameterOption)1),
-            makeOptional<CommandParameterDataType::ENUM>(&LLCommand::upgradeOption, "Option", "UpgradeOption", &LLCommand::hasUpgradeOption).addOptions((CommandParameterOption)1));
     }
 };
 
