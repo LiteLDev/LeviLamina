@@ -421,21 +421,6 @@
 
 <br>
 
-#### `"onMove"` - 玩家正在移动
-
-- 监听函数原型
-  `function(player,pos)`
-- 参数：
-  - player : `Player`  
-    正在移动的玩家对象
-  - pos : `FloatPos`  
-    这个玩家当前的位置
-- 拦截事件：不可以拦截
-
-注：在玩家移动的过程中，会在服务端反复不断触发这个事件
-
-<br>
-
 #### `"onChangeSprinting"` - 玩家改变疾跑状态
 
 - 监听函数原型

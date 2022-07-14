@@ -406,21 +406,6 @@ Replacement Item: Old Item Object's `type` does not equal the new item's `type`,
 
 <br>
 
-#### `"onMove"` - Player Move Event
-
-- Listener function prototype 
-  `function(player,pos)`
-- Parameters: 
-  - player : `Player`  
-    The player that is moving.
-  - pos : `FloatPos`  
-    The current position of the player.
-- Intercept event: cannot be intercepted.
-
-Note: In the process of player movement, this event will be repeatedly triggered on the server side.
-
-<br>
-
 #### `"onChangeSprinting"` - Player Sprint State Change Event
 
 - Listener function prototype 
