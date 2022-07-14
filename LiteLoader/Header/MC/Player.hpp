@@ -46,6 +46,7 @@ public:
     LIAPI Container* getEnderChestContainer();
     LIAPI std::pair<BlockPos, int> getRespawnPosition();
     LIAPI float getAvgPacketLoss();
+    LIAPI float getPacketLoss();
     LIAPI string getClientId();
     LIAPI int getDeviceType();
     LIAPI bool isOperator();
