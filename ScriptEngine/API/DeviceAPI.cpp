@@ -95,7 +95,7 @@ Local<Value> DeviceClass::getLastPing()
 
         return Number::newNumber(player->getLastPing());
     }
-    CATCH("Fail in getAvgPing!")
+    CATCH("Fail in getLastPing!")
 }
 
 Local<Value> DeviceClass::getLastPacketLoss()
@@ -107,7 +107,7 @@ Local<Value> DeviceClass::getLastPacketLoss()
 
         return Number::newNumber(player->getLastPacketLoss());
     }
-    CATCH("Fail in getAvgPacketLoss!")
+    CATCH("Fail in getLastPacketLoss!")
 }
 
 Local<Value> DeviceClass::getOs()
@@ -120,6 +120,18 @@ Local<Value> DeviceClass::getOs()
         return String::newString(player->getDeviceName());
     }
     CATCH("Fail in getOs!")
+}
+
+Local<Value> DeviceClass::getServerAddress()
+{
+    try {
+        Player* player = getPlayer();
+        if (!player)
+            return Local<Value>();
+
+        return String::newString(player->getServerAddress());
+    }
+    CATCH("Fail in getServerAddress!")
 }
 
 Local<Value> DeviceClass::getClientId()
