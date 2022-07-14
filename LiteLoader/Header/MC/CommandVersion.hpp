@@ -11,7 +11,7 @@
 class CommandVersion {
 
 #define AFTER_EXTRA
-// Add Member There  
+// Add Member There
 public:
 int Min = 1, Max = 0x7FFFFFFF;
 CommandVersion(){};

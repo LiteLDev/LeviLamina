@@ -24,7 +24,7 @@ struct ItemStackNetIdVariant {
         TypedServerNetId<ItemStackNetIdTag, int, 0>, TypedClientNetId<ItemStackRequestIdTag, int, 0>,
         TypedClientNetId<ItemStackLegacyRequestIdTag, int, 0>>
         id;
-   
+
 	
 #undef AFTER_EXTRA
 

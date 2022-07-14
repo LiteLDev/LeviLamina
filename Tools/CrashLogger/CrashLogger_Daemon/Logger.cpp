@@ -24,7 +24,7 @@ extern wstring bdsVersion;
     {                                           \
         fprintf(fLog, format, __VA_ARGS__);     \
         fflush(fLog);                           \
-    }  
+    }
 
 string GetDateTime()
 {

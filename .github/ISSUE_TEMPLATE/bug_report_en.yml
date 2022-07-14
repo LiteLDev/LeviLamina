@@ -87,7 +87,7 @@ body:
   id: plugins
   attributes:
     label: Plugin list
-    description: Please copy the command output of `ll list`. 
+    description: Please copy the command output of `ll list`.
     render: shell
 - type: markdown
   attributes:

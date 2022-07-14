@@ -14,8 +14,8 @@ link_directories(${LiteLoader_SOURCE_DIR}/Lib/third-party)
 link_directories(${CMAKE_SOURCE_DIR}/x64/Release/)
 
 add_compile_options(
-        /permissive- /GS /GL /W0 /Gy /Zc:wchar_t /Zi /Gm- /O2 /sdl /Zc:inline /fp:precise 
-        /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /std:c++17 /FC /EHsc /nologo /diagnostics:column 
+        /permissive- /GS /GL /W0 /Gy /Zc:wchar_t /Zi /Gm- /O2 /sdl /Zc:inline /fp:precise
+        /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /std:c++17 /FC /EHsc /nologo /diagnostics:column
 )
 
 add_link_options(

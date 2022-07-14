@@ -13,7 +13,7 @@ AllowShortBlocksOnASingleLine : true
 AllowShortCaseLabelsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: Inline
 AllowShortIfStatementsOnASingleLine: true
-AllowShortLoopsOnASingleLine: true 
+AllowShortLoopsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: false
 AllowShortLambdasOnASingleLine: true
 AlwaysBreakAfterDefinitionReturnType: None
@@ -31,7 +31,7 @@ IndentWrappedFunctionNames: true
 KeepEmptyLinesAtTheStartOfBlocks: true
 BreakConstructorInitializersBeforeComma: true
 SpaceAfterCStyleCast: false
-IndentCaseLabels: true 
+IndentCaseLabels: true
 TabWidth: 4
 UseTab: Never
 

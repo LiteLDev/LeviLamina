@@ -220,12 +220,12 @@ void test_sqlite()
     Session::create("file:///plugins/DBTest/dbs/test_create_by_url.db");
 
     Session::create(DBType::SQLite)->open("file:///plugins/DBTest/dbs/test_create_by_url2.db");
-    
+
     auto s1 = Session::create(DBType::SQLite);
     s1->open("file:///plugins/DBTest/dbs/test_create_by_url3.db");
     s1->execute("CREATE TABLE IF NOT EXISTS test (a INTEGER)");
     s1->close();
-    
+
     auto sess = Session::create(DBType::SQLite);
     sess->setDebugOutput(true);
     sess->open({{"path", "plugins/DBTest/dbs/a.db"}});
@@ -241,9 +241,9 @@ constexpr const char* passwd = "root";
 constexpr const char* dbname = "lldbtest";
 void test_mysql()
 {
-    const std::string url = fmt::format("mysql://{}:{}@{}:{}/", 
+    const std::string url = fmt::format("mysql://{}:{}@{}:{}/",
                             user, passwd, host, port);
-    
+
     auto s1 = Session::create(url); // Test url
     s1->execute("CREATE DATABASE IF NOT EXISTS " + std::string(dbname));
     s1->close();

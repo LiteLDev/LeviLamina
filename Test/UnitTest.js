@@ -37,7 +37,7 @@ const http_server_test = {
 	run: function() {
 		this.server = new HttpServer();
 		this.server.onGet("/hello(.+)", (req, resp) => {
-			logger.info("http_server_test: run: onGet: Received a request from ", req.remoteAddr, 
+			logger.info("http_server_test: run: onGet: Received a request from ", req.remoteAddr,
 						':', req.remotePort, " for ", req.path);
 			resp.write("<html><body>")
 				.write("<h1>It works!</h1>")

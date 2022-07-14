@@ -219,7 +219,7 @@ SOFTWARE.
             return loadIndex(id);
         }
 
-        
+
         function loadNodeModules(id, start) {
             let dirs = node_modules_paths(start);
             let result;

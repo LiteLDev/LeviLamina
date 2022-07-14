@@ -3,7 +3,7 @@ LiteLoaderBDS-2.4.0更新已发布，适应于BDS-1.19.10，协议版本534
 
 [HEADING=2][新内容][/HEADING]
 [LIST]
-[*]支持BDS1.19.10 ,by @QingYu,@WangYneos 
+[*]支持BDS1.19.10 ,by @QingYu,@WangYneos
 [*]全新的I18N API(为中小型插件设计) ,by @Jasonzyt（服务于大型插件的i18n正在制作中）
 [*]配置文件新增enableTpdimCommand与enableForceUtf8Input,[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/518']#518[/URL] by @QingYu
 [*]重写PlayerPlaceBlockEvent, by @Redbeanw44602

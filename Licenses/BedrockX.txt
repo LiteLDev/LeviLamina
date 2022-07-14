@@ -7,7 +7,7 @@ restrictions:
 ! It means DO NOT MAKE COMMERICIAL USE OF ANYTHING which breaks the EULA.
 ! Accepting this LICENSE means you ACCEPTED Minecraft EULA(https://account.mojang.com/terms) too.
 ! If you violate the EULA,any legal liability is IRRELEVANT to the developer
-! NO WARRANTY 
+! NO WARRANTY
 
 Second,If you provides a server hosting service,you can use this framework for free,but you SHOULD NOT make PRIVATE changes to this framework as a selling point.If you fixed or tweaked the code,please pull request,instead of making it private for commercial use.
 Do not do evil.

@@ -17,14 +17,14 @@ bool InitDaemonProcess()
     sa.nLength = sizeof(SECURITY_ATTRIBUTES);
 
     wchar_t daemonPath[MAX_PATH];
-    
+
     wsprintf(daemonPath, L"%ls %u", DAEMON_PROCESS_PATH, GetCurrentProcessId());
     if (!CreateProcess(NULL, daemonPath, &sa, &sa, TRUE, 0, NULL, NULL, &si, &pi))
     {
         printf("[CrashLogger][ERROR] Could not Create Daemon Process! Error Code: %d\n", GetLastError());
         return false;
     }
-    
+
     CloseHandle(pi.hProcess);
     CloseHandle(pi.hThread);
     return true;

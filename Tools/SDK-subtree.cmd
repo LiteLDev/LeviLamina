@@ -17,7 +17,7 @@ for /f "tokens=3* delims= " %%i in ('Reg query "HKCU\Software\Microsoft\Windows\
         echo [INFO] System Proxy enabled. Adapting Settings finished.
         echo.
     )
-) 
+)
 
 echo [INFO] Upgrading LL-SDK from GitHub ...
 echo.

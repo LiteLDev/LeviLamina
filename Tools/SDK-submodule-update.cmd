@@ -11,7 +11,7 @@ for /f "tokens=3* delims= " %%i in ('Reg query "HKCU\Software\Microsoft\Windows\
         echo [INFO] System Proxy enabled. Adapting Settings finished.
         echo.
     )
-) 
+)
 
 git submodule update --init --recursive
 

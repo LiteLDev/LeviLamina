@@ -32,7 +32,7 @@ public:
     TeleportationCause teleportationCause;
     int entityType;
     long tick;
-    
+
     inline std::string toDebugString() {
         return fmt::format("{}: pos: {}, mode: {}, cause: {}",
             __super::toDebugString(), position.toString(), (int)mode, int(teleportationCause));

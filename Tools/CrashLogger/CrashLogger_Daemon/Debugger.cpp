@@ -94,7 +94,7 @@ DWORD OnException(const EXCEPTION_DEBUG_INFO* e, DWORD processId, DWORD threadId
 
     EXCEPTION_POINTERS exception = { 0 };
     CONTEXT context{};
-    
+
     HANDLE hThread = OpenThread(THREAD_ALL_ACCESS, TRUE, threadId);
     if (hThread == NULL)
     {
@@ -158,7 +158,7 @@ void DebuggerMain(HANDLE hPro)
         default:
             break;
         }
-        
+
         if (waitEvent == true)
             ContinueDebugEvent(debugEvent.dwProcessId, debugEvent.dwThreadId, continueStatus);
         else
