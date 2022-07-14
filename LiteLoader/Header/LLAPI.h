@@ -104,20 +104,20 @@ namespace LL
 LIAPI std::string getLoaderVersionString();
 /**
  * @brief Get the loader version as a Version object
- * 
+ *
  * @return LL::Version  The loader version
  */
 LIAPI Version getLoaderVersion();
 /**
  * @brief Get whether LiteLoader is in debug mode
- * 
+ *
  * @return bool  True if it is in debug mode
  */
 LIAPI bool isDebugMode();
 
 /**
  * @brief Get the data path of the plugin
- * 
+ *
  * @param  pluginName   The name of the plugin
  * @return std::string  The data path of the plugin
  */
@@ -125,7 +125,7 @@ LIAPI std::string getDataPath(const std::string& pluginName);
 
 /**
  * @brief Register a plugin
- * 
+ *
  * @param  name     The name of the plugin
  * @param  desc     The description(introduction) of the plugin
  * @param  version  The version of the plugin(LL::Version)
@@ -147,14 +147,14 @@ inline bool registerPlugin(std::string name, std::string desc, LL::Version versi
 
 /**
  * @brief Register a plugin
- * 
+ *
  * @param  name     The name of the plugin
  * @param  desc     The descirption(introduction) of the plugin
  * @param  version  The version of the plugin(LL::Version)
  * @param  others   The other information of the plugin(key-value)
  * @return bool     True if the plugin is registered successfully
  * @note   The implementation of this function must be in header file(because of `GetCurrentModule`)
- * 
+ *
  * @par Example
  * @code
  * LL::registerPlugin("Test", "A test plugin", Version(0, 0, 1, Version::Dev), {{"Note","This is Note"}});
@@ -168,14 +168,14 @@ inline bool registerPlugin(std::string name, std::string desc, LL::Version versi
 
 /**
  * @brief Get a loaded plugin by name
- * 
+ *
  * @param  name         The name of the plugin
  * @return LL::Plugin*  The plugin(nullptr if not found)
  */
 LIAPI LL::Plugin* getPlugin(std::string name);
 /**
  * @brief Get a loaded plugin by HMODULE handle
- * 
+ *
  * @param  name         The name of the plugin
  * @return LL::Plugin*  The plugin(nullptr if not found)
  */
@@ -183,7 +183,7 @@ LIAPI LL::Plugin* getPlugin(HMODULE handle);
 
 /**
  * @brief Get whether the plugin is loaded
- * 
+ *
  * @param  name  The name of the plugin
  * @return bool  True if the plugin is loaded
  */
@@ -191,14 +191,14 @@ LIAPI bool hasPlugin(std::string name);
 
 /**
  * @brief Get the All the loaded plugins
- * 
+ *
  * @return std::unordered_map<std::string, LL::Plugin*>  The loaded plugins(name-plugin)
  */
 LIAPI std::unordered_map<std::string, LL::Plugin*> getAllPlugins();
 
 /**
  * @breif Get the handle of LiteLoader.dll.
- * 
+ *
  * @return HMODULE  The handle
  */
 LIAPI HMODULE getLoaderHandle();

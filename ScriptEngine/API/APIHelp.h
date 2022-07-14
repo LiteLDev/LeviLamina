@@ -81,7 +81,7 @@ bool inline IsInstanceOf(Local<Value> v)
         return Local<Value>(); \
     }
 
-// 检查是否TYPE类型 
+// 检查是否TYPE类型
 #define CHECK_ARG_TYPE(ARG,TYPE) \
     if(ARG.getKind() != TYPE) \
     { \

@@ -91,7 +91,7 @@ bool HttpPost(const string& url, const httplib::Headers& headers, const string& 
     }
     if (timeout > 0)
         cli->set_connection_timeout(timeout, 0);
-        
+
     std::thread([cli, headers, data, type, callback, path{std::move(path)}]() {
         _set_se_translator(seh_exception::TranslateSEHtoCE);
         try

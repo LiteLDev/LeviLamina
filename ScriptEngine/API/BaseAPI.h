@@ -67,7 +67,7 @@ public:
 
     explicit DirectionAngle(const Local<Object>& scriptObj) : ScriptClass(scriptObj) {}
     static DirectionAngle* create(const Arguments& args);
-    
+
     static Local<Object> newAngle(float pitch, float yaw);
     Local<Value> getPitch() { return Number::newNumber(pitch); }
     Local<Value> getYaw() { return Number::newNumber(yaw); }

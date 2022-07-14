@@ -59,7 +59,7 @@ extern ClassDefine<NbtEndClass> NbtEndClassBuilder;
 
 
 //NBT Byte
-class NbtByteClass : public ScriptClass 
+class NbtByteClass : public ScriptClass
 {
 public:
     std::unique_ptr<ByteTag> nbt;
@@ -121,7 +121,7 @@ public:
     static IntTag* extract(Local<Value> v);
     static Local<Value> pack(IntTag* tag, bool noDelete = false);
     static Local<Value> pack(std::unique_ptr<IntTag> tag);
-    
+
     Local<Value> getType(const Arguments& args);
     Local<Value> set(const Arguments& args);
     Local<Value> get(const Arguments& args);
@@ -265,7 +265,7 @@ public:
     static ListTag* extract(Local<Value> v);
     static Local<Value> pack(ListTag* tag, bool noDelete = false);
     static Local<Value> pack(std::unique_ptr<ListTag> tag);
-    
+
     Local<Value> getType(const Arguments& args);
     Local<Value> getSize(const Arguments& args);
     Local<Value> getTypeOf(const Arguments& args);

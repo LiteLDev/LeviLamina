@@ -29,7 +29,7 @@ void ModuleMessage::handle(utils::Message &engineMsg)       // Warning: Execute 
 {
     ModuleMessage msg;
     msg.type = GET_MESSAGE_TYPE(engineMsg);
-    msg.header = GET_MESSAGE_HEADER(engineMsg); 
+    msg.header = GET_MESSAGE_HEADER(engineMsg);
     msg.data = GET_MESSAGE_DATA_PTR(engineMsg);
 
     switch (msg.getType())
@@ -317,7 +317,7 @@ bool ModuleMessageResult::cancel()
         EngineScope scope(engine);
         engine->messageQueue()->removeMessageIf([id](utils::Message& message) {
             return (GET_MESSAGE_HEADER(message))->id == id ?
-                utils::MessageQueue::RemoveMessagePredReturnType::kRemoveAndContinue 
+                utils::MessageQueue::RemoveMessagePredReturnType::kRemoveAndContinue
                 : utils::MessageQueue::RemoveMessagePredReturnType::kDontRemove;
         });
     }

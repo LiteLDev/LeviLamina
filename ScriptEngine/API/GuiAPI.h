@@ -17,7 +17,7 @@ public:
     {
         return &form;
     }
-    
+
     static Local<Object> newForm();
     static Form::SimpleForm* extract(Local<Value> v);
     static bool sendForm(Form::SimpleForm* form, Player* player, script::Local<Function> &callback);

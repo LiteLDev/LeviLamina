@@ -58,7 +58,7 @@ public:
      * @param  query     Query to execute
      * @param  callback  Callback to process results
      * @return *this
-     * 
+     *
      * @par Implementation
      * @see SQLiteSession::query
      */
@@ -128,7 +128,7 @@ public:
     virtual DBType getType() = 0;
     /**
      * @brief Get or set the self pointer
-     * 
+     *
      * @return std::weak_ptr<Session>  self
      */
     virtual std::weak_ptr<Session> getOrSetSelf();
@@ -195,7 +195,7 @@ private:
 
     /**
      * @brief Create a new session(internal).
-     * 
+     *
      * @param  type    Database type
      * @param  params  Connection parameters
      * @return SharedPointer<Session>  The session
@@ -210,7 +210,7 @@ public:
 
     /**
      * @brief Get the Session ptr by the (this) pointer.
-     * 
+     *
      * @param  session  The (this) pointer
      * @return std::shared_ptr<Session>  The Session ptr
      */

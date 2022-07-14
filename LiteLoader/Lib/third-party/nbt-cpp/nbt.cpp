@@ -15,7 +15,7 @@ void skip_space(std::istream & input) {
 			input.putback(next);
 			return;
 		}
-	} 
+	}
 }
 
 int context_id() {

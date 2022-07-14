@@ -11,7 +11,7 @@ class PlayerClass : public ScriptClass
 private:
     ActorUniqueID id;
     bool isValid = true;
-    
+
 public:
     explicit PlayerClass(Player* p);
 
@@ -25,6 +25,7 @@ public:
 
     Local<Value> getName();
     Local<Value> getPos();
+    Local<Value> getLastDeathPos();
     Local<Value> getBlockPos();
     Local<Value> getRealName();
     Local<Value> getXuid();
@@ -40,6 +41,8 @@ public:
     Local<Value> getDirection();
     Local<Value> getUniqueID();
     Local<Value> getLangCode();
+
+    Local<Value> isLoading(const Arguments& args);
 
     Local<Value> isOP(const Arguments& args);
     Local<Value> setPermLevel(const Arguments& args);
@@ -85,10 +88,14 @@ public:
     Local<Value> setBossBar(const Arguments& args);
     Local<Value> removeBossBar(const Arguments& args);
     Local<Value> addLevel(const Arguments& args);
+    Local<Value> reduceLevel(const Arguments& args);
     Local<Value> getLevel(const Arguments& arg);
     Local<Value> resetLevel(const Arguments& arg);
-    Local<Value> getXpNeededForNextLevel(const Arguments& arg);
+    Local<Value> getExperience(const Arguments& arg);
+    Local<Value> setExperience(const Arguments& arg);
     Local<Value> addExperience(const Arguments& args);
+    Local<Value> reduceExperience(const Arguments& arg);
+    Local<Value> getXpNeededForNextLevel(const Arguments& arg);
 
     Local<Value> sendSimpleForm(const Arguments& args);
     Local<Value> sendModalForm(const Arguments& args);
@@ -115,7 +122,7 @@ public:
     Local<Value> quickEvalMolangScript(const Arguments& args);
 
     // SimulatedPlayer API (API/SimulatedPlayerAPI.cpp)
-    
+
     Local<Value> simulateSneak(const Arguments& args);
     Local<Value> simulateAttack(const Arguments& args);
     Local<Value> simulateDestory(const Arguments& args);

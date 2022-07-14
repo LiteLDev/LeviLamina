@@ -59,7 +59,7 @@ TInstanceHook(DBStorage*, "??0DBStorage@@QEAA@UDBStorageConfig@@V?$not_null@V?$N
 
 #if 0
 // ChunkSource
-THook(void*, "??0ChunkSource@@QEAA@V?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@@Z", ChunkSource* a1, void** a2) 
+THook(void*, "??0ChunkSource@@QEAA@V?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@@Z", ChunkSource* a1, void** a2)
 {
 	Global<ChunkSource> = a1);
 	return original(a1, a2);

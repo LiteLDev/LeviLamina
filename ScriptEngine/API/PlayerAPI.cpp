@@ -41,6 +41,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
 
         .instanceProperty("name", &PlayerClass::getName)
         .instanceProperty("pos", &PlayerClass::getPos)
+        .instanceProperty("lastDeathPos", &PlayerClass::getLastDeathPos)
         .instanceProperty("blockPos", &PlayerClass::getBlockPos)
         .instanceProperty("realName", &PlayerClass::getRealName)
         .instanceProperty("xuid", &PlayerClass::getXuid)
@@ -56,6 +57,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceProperty("direction", &PlayerClass::getDirection)
         .instanceProperty("uniqueId", &PlayerClass::getUniqueID)
         .instanceProperty("langCode", &PlayerClass::getLangCode)
+        .instanceFunction("isLoading", &PlayerClass::isLoading)
 
         .instanceFunction("isOP", &PlayerClass::isOP)
         .instanceFunction("setPermLevel", &PlayerClass::setPermLevel)
@@ -102,10 +104,14 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("setBossBar", &PlayerClass::setBossBar)
         .instanceFunction("removeBossBar", &PlayerClass::removeBossBar)
         .instanceFunction("addLevel", &PlayerClass::addLevel)
+        .instanceFunction("reduceLevel", &PlayerClass::reduceLevel)
         .instanceFunction("getLevel", &PlayerClass::getLevel)
         .instanceFunction("resetLevel", &PlayerClass::resetLevel)
-        .instanceFunction("getXpNeededForNextLevel", &PlayerClass::getXpNeededForNextLevel)
         .instanceFunction("addExperience", &PlayerClass::addExperience)
+        .instanceFunction("reduceExperience", &PlayerClass::reduceExperience)
+        .instanceFunction("getExperience", &PlayerClass::getExperience)
+        .instanceFunction("setExperience", &PlayerClass::setExperience)
+        .instanceFunction("getXpNeededForNextLevel", &PlayerClass::getXpNeededForNextLevel)
 
         .instanceFunction("sendSimpleForm", &PlayerClass::sendSimpleForm)
         .instanceFunction("sendModalForm", &PlayerClass::sendModalForm)
@@ -149,7 +155,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("simulateStopMoving", &PlayerClass::simulateStopMoving)
         .instanceFunction("simulateStopUsingItem", &PlayerClass::simulateStopUsingItem)
         .instanceFunction("simulateStopSneaking", &PlayerClass::simulateStopSneaking)
-        
+
         //For Compatibility
         .instanceProperty("ip", &PlayerClass::getIP)
         .instanceFunction("setTag", &PlayerClass::setNbt)
@@ -276,7 +282,7 @@ Player* PlayerClass::get()
 }
 
 Local<Value> PlayerClass::getName()
-{ 
+{
     try{
         Player* player = get();
         if (!player)
@@ -288,7 +294,7 @@ Local<Value> PlayerClass::getName()
 }
 
 Local<Value> PlayerClass::getPos()
-{ 
+{
     try{
         Player* player = get();
         if (!player)
@@ -297,6 +303,17 @@ Local<Value> PlayerClass::getPos()
         return FloatPos::newPos(player->getPosition(),player->getDimensionId());
     }
     CATCH("Fail in getPlayerPos!")
+}
+
+Local<Value> PlayerClass::getLastDeathPos()
+{
+    try {
+        Player* player = get();
+        if (!player || player->hasDiedBefore()) return Local<Value>();
+
+        return IntPos::newPos(player->getLastDeathPos().value(), player->getLastDeathDimension().value());
+    }
+    CATCH("Fail in getLastDeathPos!")
 }
 
 Local<Value> PlayerClass::getBlockPos()
@@ -524,7 +541,7 @@ Local<Value> PlayerClass::getLangCode()
 Local<Value> PlayerClass::teleport(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args,1)
-    
+
     try{
         FloatVec4 pos;
 
@@ -602,6 +619,18 @@ Local<Value> PlayerClass::kill(const Arguments& args)
     CATCH("Fail in KillPlayer!")
 }
 
+Local<Value> PlayerClass::isLoading(const Arguments& args)
+{
+    try{
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->isLoading());
+    }
+    CATCH("Fail in isLoading!")
+}
+
 Local<Value> PlayerClass::isOP(const Arguments& args)
 {
     try{
@@ -618,7 +647,7 @@ Local<Value> PlayerClass::setPermLevel(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
-    
+
     try{
         Player* player = get();
         if (!player)
@@ -664,7 +693,7 @@ Local<Value> PlayerClass::runcmd(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
-    
+
     try{
         Player* player = get();
         if (!player)
@@ -688,7 +717,7 @@ Local<Value> PlayerClass::kick(const Arguments& args)
         string msg="正在从服务器断开连接";
         if(args.size() >= 1)
             msg = args[0].toStr();
-        
+
         player->kick(msg);
         return Boolean::newBoolean(true);       //=======???
     }
@@ -905,7 +934,7 @@ Local<Value> PlayerClass::rename(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
-    
+
     try{
         Player* player = get();
         if (!player)
@@ -930,6 +959,21 @@ Local<Value> PlayerClass::addLevel(const Arguments& args)
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in addLevel!");
+}
+
+Local<Value> PlayerClass::reduceLevel(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player) return Local<Value>();
+
+        player->addLevels(-args[0].toInt());
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in reduceLevel!");
 }
 
 Local<Value> PlayerClass::getLevel(const Arguments& args)
@@ -957,16 +1001,31 @@ Local<Value> PlayerClass::resetLevel(const Arguments& args)
     CATCH("Fail in resetLevel!")
 }
 
-Local<Value> PlayerClass::getXpNeededForNextLevel(const Arguments& args)
+Local<Value> PlayerClass::getExperience(const Arguments& args)
 {
     try {
         Player* player = get();
         if (!player)
             return Local<Value>();
 
-        return Number::newNumber(player->getXpNeededForNextLevel());
+        return Number::newNumber(player->getCurrentExperience());
     }
-    CATCH("Fail in getXpNeededForNextLevel!")
+    CATCH("Fail in getExperience!")
+}
+
+Local<Value> PlayerClass::setExperience(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player) return Local<Value>();
+
+        player->setCurrentExperience(args[0].toInt());
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setExperience!");
 }
 
 Local<Value> PlayerClass::addExperience(const Arguments& args)
@@ -983,6 +1042,33 @@ Local<Value> PlayerClass::addExperience(const Arguments& args)
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in addExperience!");
+}
+
+Local<Value> PlayerClass::reduceExperience(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player) return Local<Value>();
+
+        player->reduceExperience(args[0].toInt());
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in reduceExperience!");
+}
+
+Local<Value> PlayerClass::getXpNeededForNextLevel(const Arguments& args)
+{
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Number::newNumber(player->getXpNeededForNextLevel());
+    }
+    CATCH("Fail in getXpNeededForNextLevel!")
 }
 
 Local<Value> PlayerClass::transServer(const Arguments& args)
@@ -1043,7 +1129,7 @@ Local<Value> PlayerClass::getScore(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
-    
+
     try{
         Player* player = get();
         if (!player)
@@ -1059,7 +1145,7 @@ Local<Value> PlayerClass::setScore(const Arguments& args)
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
-    
+
     try{
         Player* player = get();
         if (!player)
@@ -1075,7 +1161,7 @@ Local<Value> PlayerClass::addScore(const Arguments& args)
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
-    
+
     try{
         Player* player = get();
         if (!player)
@@ -1091,7 +1177,7 @@ Local<Value> PlayerClass::reduceScore(const Arguments& args)
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
-    
+
     try{
         Player* player = get();
         if (!player)
@@ -1124,7 +1210,7 @@ Local<Value> PlayerClass::setSidebar(const Arguments& args)
     CHECK_ARG_TYPE(args[1], ValueKind::kObject);
     if (args.size() >= 3)
         CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
-    
+
     try
     {
         Player* player = get();
@@ -1255,7 +1341,7 @@ Local<Value> PlayerClass::sendSimpleForm(const Arguments& args)
     CHECK_ARG_TYPE(args[4], ValueKind::kFunction);
 
     try
-    {   
+    {
         Player* player = get();
         if (!player)
             return Local<Value>();
@@ -1462,7 +1548,7 @@ Local<Value> PlayerClass::setExtraData(const Arguments& args)
         string key = args[0].toStr();
         if(key.empty())
             return Boolean::newBoolean(false);
-    
+
         ENGINE_OWN_DATA()->playerDataDB[player->getRealName() + "-" + key] = args[1];
         return Boolean::newBoolean(true);
     }
@@ -1508,7 +1594,7 @@ Local<Value> PlayerClass::delExtraData(const Arguments& args)
         string key = args[0].toStr();
         if(key.empty())
             return Boolean::newBoolean(false);
-    
+
         ENGINE_OWN_DATA()->playerDataDB.erase(player->getRealName() + "-" + key);
         return Boolean::newBoolean(true);
     }
@@ -1766,7 +1852,7 @@ Local<Value> PlayerClass::getAttributes(const Arguments& args)
 
 Local<Value> PlayerClass::getEntityFromViewVector(const Arguments& args)
 {
-    
+
     try {
         Player* player = get();
         if (!player)

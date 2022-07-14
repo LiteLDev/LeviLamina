@@ -407,7 +407,7 @@ public:
     static bool onServerCommandsRegister(CommandRegistry& registry);
 
     friend class DynamicCommandInstance;
-    
+
 public:
     /*0*/ virtual ~DynamicCommand();
     /*1*/ virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;

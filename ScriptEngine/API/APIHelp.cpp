@@ -388,7 +388,7 @@ Local<Value> JsonToValue(fifo_json j)
         res = Local<Value>();
         break;
     }
-    
+
     return res;
 }
 

@@ -448,7 +448,7 @@ Local<Value> ConfIniClass::set(const Arguments& args)
     {
         if (!isValid())
             return Local<Value>();
-        
+
         string section = args[0].toStr();
         string key = args[1].toStr();
         switch (args[2].getKind())
@@ -489,7 +489,7 @@ Local<Value> ConfIniClass::getStr(const Arguments& args)
         if (!isValid())
             return Local<Value>();
 
-        return String::newString(iniConf->getString(args[0].toStr(), args[1].toStr(), 
+        return String::newString(iniConf->getString(args[0].toStr(), args[1].toStr(),
             args.size() >= 3 ? args[2].toStr() : ""));
     }
     CATCH("Fail in confIniGetStr!")
@@ -508,7 +508,7 @@ Local<Value> ConfIniClass::getInt(const Arguments& args)
         if (!isValid())
             return Local<Value>();
 
-        return Number::newNumber(iniConf->getInt(args[0].toStr(), args[1].toStr(), 
+        return Number::newNumber(iniConf->getInt(args[0].toStr(), args[1].toStr(),
             args.size() >= 3 ? args[2].asNumber().toInt32() : 0));
     }
     CATCH("Fail in ConfIniGetInt!");
@@ -527,7 +527,7 @@ Local<Value> ConfIniClass::getFloat(const Arguments& args)
         if (!isValid())
             return Local<Value>();
 
-        return Number::newNumber(iniConf->getFloat(args[0].toStr(), args[1].toStr(), 
+        return Number::newNumber(iniConf->getFloat(args[0].toStr(), args[1].toStr(),
             args.size() >= 3 ? (float)args[2].asNumber().toDouble() : 0.0));
     }
     CATCH("Fail in ConfIniGetFloat!");
@@ -546,7 +546,7 @@ Local<Value> ConfIniClass::getBool(const Arguments& args)
         if (!isValid())
             return Local<Value>();
 
-        return Boolean::newBoolean(iniConf->getBool(args[0].toStr(), args[1].toStr(), 
+        return Boolean::newBoolean(iniConf->getBool(args[0].toStr(), args[1].toStr(),
             args.size() >= 3 ? args[2].asBoolean().value() : false));
     }
     CATCH("Fail in ConfIniGetBool");

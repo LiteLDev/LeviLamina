@@ -44,7 +44,7 @@ public:
     LIAPI void addByteArray(char data[], size_t size);
     LIAPI void addIntArray(TagMemoryChunk);
     LIAPI void addIntArray(int data[], size_t size);
-    
+
     LIAPI std::vector<Tag*>::const_iterator begin() const;
     LIAPI std::vector<Tag*>::const_iterator end() const;
 

@@ -17,7 +17,7 @@ Block* Block::create(const string& name, unsigned short tileData)
     return (Block*)((BlockLegacy*)blk)->toBlock(tileData);
 }
 
-Block* Block::create(CompoundTag* nbt) 
+Block* Block::create(CompoundTag* nbt)
 {
     // pair<enum BlockSerializationUtils::NBTState, Block*>
     auto result = BlockSerializationUtils::tryGetBlockFromNBT(*nbt, nullptr);

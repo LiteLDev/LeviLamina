@@ -47,9 +47,9 @@ ClassDefine<DirectionAngle> DirectionAngleBuilder =
         .instanceFunction("toString", &DirectionAngle::toString)
 
         .build();
-        
 
-//////////////////// IntPos ////////////////////   
+
+//////////////////// IntPos ////////////////////
 
 IntPos* IntPos::create(const Arguments& args)
 {

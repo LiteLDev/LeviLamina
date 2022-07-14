@@ -68,7 +68,7 @@ void MySQLSession::open(const ConnParams& params)
                                       "utf8");
     //IF_ENDBG dbLogger.debug("MySQLSession::open: MySQL default charset name: {}", defaultCharset);
     mysql_options(conn, MYSQL_SET_CHARSET_NAME, charset.c_str());
-    auto res = mysql_real_connect(conn, p.getHost().c_str(), p.getUsername().c_str(), p.getPassword().c_str(), 
+    auto res = mysql_real_connect(conn, p.getHost().c_str(), p.getUsername().c_str(), p.getPassword().c_str(),
                                   (db.empty() ? nullptr : db.c_str()), port, nullptr, 0);
     if (!res)
     {

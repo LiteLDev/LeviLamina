@@ -137,7 +137,7 @@ void Welcome()
     if (!LL::globalConfig.enableWelcomeText)
         return;
 
-       
+
     cout << "\r" << R"(                                                                       )" << endl
          << "\r" << R"(          _     _ _       _                    _                       )" << endl
          << "\r" << R"(         | |   (_) |_ ___| |    ___   __ _  __| | ___ _ __             )" << endl

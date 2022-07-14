@@ -155,7 +155,7 @@ bool Level::hasContainer(Vec3 pos, int dim)
 Container* Level::getContainer(Vec3 pos, int dim)
 {
     // VirtualCall<Container*>(getBlockEntity(), 224); // IDA ChestBlockActor::`vftable'{for `RandomizableBlockActorContainerBase'}
-    
+
     // This function didn't use 'this' pointer
     return ((DropperBlockActor*)nullptr)->_getContainerAt(*Level::getBlockSource(dim), pos);
 }
@@ -343,7 +343,7 @@ ItemStack* Level::getItemStackFromId(short itemId, int aux) {
     return nullptr;
 }
 
-void Level::broadcastText(const string& a1, TextType ty) 
+void Level::broadcastText(const string& a1, TextType ty)
 {
     if (!Global<Level>)
         return;

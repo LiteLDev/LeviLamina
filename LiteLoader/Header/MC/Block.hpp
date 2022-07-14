@@ -27,7 +27,7 @@ public:
         __int64 v2; // r8
         __int64 v3; // rax
         v2 = *(__int64*)(this + 16);
-        if (!v2 || (v3 = *(__int64*)(&a2 + 16)) == 0) 
+        if (!v2 || (v3 = *(__int64*)(&a2 + 16)) == 0)
             return false;
         return v2 == v3 && *(unsigned short*)(this + 8) == *(unsigned short*)(&a2 + 8);
     }
@@ -37,7 +37,7 @@ public:
         __int64 v3; // rax
 
         v2 = *(__int64*)(this + 16);
-        if (!v2 || (v3 = *(__int64*)(&a2 + 16)) == 0) 
+        if (!v2 || (v3 = *(__int64*)(&a2 + 16)) == 0)
             return false;
         return v2 != v3 || *(unsigned short*)(this + 8) != *(unsigned short*)(&a2 + 8);
     }

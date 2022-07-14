@@ -134,7 +134,7 @@ enum class ActorDataIDs : unsigned short
     //UNKNOWN_121                         = 121, // Float
     //UNKNOWN_122                         = 122, // String
     //UNKNOWN_123                         = 123, // Int
-    //UNKNOWN_124                         = 124, // String     
+    //UNKNOWN_124                         = 124, // String
 
     /*
     AMBIENT_SOUND_EVENT_NAME            = 109,
@@ -142,7 +142,7 @@ enum class ActorDataIDs : unsigned short
     NAME_RAW_TEXT                       = 111,
     CAN_RIDE_TARGET                     = 112,
     */
-   
+
 
 };
 

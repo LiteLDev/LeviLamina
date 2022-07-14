@@ -23,7 +23,7 @@ public:
     inline AABB()
         : min(Vec3::MIN)
         , max(Vec3::MIN){};
-    
+
     MCAPI AABB(class Vec3 const &, class Vec3 const &);
     MCAPI AABB(class Vec3 const &, float);
     MCAPI AABB(float, float, float, float, float, float);

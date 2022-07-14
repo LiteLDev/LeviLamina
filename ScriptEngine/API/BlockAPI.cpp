@@ -20,7 +20,7 @@ ClassDefine<BlockClass> BlockClassBuilder =
     defineClass<BlockClass>("LLSE_Block")
         .constructor(nullptr)
         .instanceFunction("getRawPtr", &BlockClass::getRawPtr)
-        
+
         .instanceProperty("name", &BlockClass::getName)
         .instanceProperty("type", &BlockClass::getType)
         .instanceProperty("id", &BlockClass::getId)
@@ -171,7 +171,7 @@ Local<Value> BlockClass::setNbt(const Arguments& args)
         auto nbt = NbtCompoundClass::extract(args[0]);
         if (!nbt)
             return Local<Value>();    //Null
-        
+
         // update Pre Data
         Level::setBlock(pos.getBlockPos(), pos.dim, (CompoundTag*)nbt);
         preloadData(pos.getBlockPos(), pos.getDimensionId());
@@ -409,7 +409,7 @@ Local<Value> McClass::setBlock(const Arguments& args)
 
 Local<Value> McClass::spawnParticle(const Arguments& args)
 {
-    CHECK_ARGS_COUNT(args, 2)      
+    CHECK_ARGS_COUNT(args, 2)
 
     try
     {

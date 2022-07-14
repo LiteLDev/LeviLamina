@@ -184,7 +184,7 @@ void InitFastDlsym(const PDB::RawFile& rawPdbFile, const PDB::DBIStream& dbiStre
 
 		/*std::ofstream os;
         os.open("SymList.txt");
-        string str; 
+        string str;
         for (auto iter = funcMap->begin(); funcMap->end() != iter; iter++)
         {
             str += fmt::sprintf("[%08d] %s\n",iter->second,iter->first);

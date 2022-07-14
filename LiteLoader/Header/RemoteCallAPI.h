@@ -24,7 +24,7 @@
 // // in other plugin
 // auto strSize = RemoteCall::importAs<int(std::string const& arg)>("TestNameSpace", "strSize");
 // logger.info("Size of str: {}", strSize("12345678"));
-// 
+//
 // // in js plugin
 // const strSize = ll.import("TestNameSpace", "strSize");
 // logger.info(`Size of str: ${strSize("12345678")}`);

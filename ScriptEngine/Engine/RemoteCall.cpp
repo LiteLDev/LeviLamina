@@ -52,7 +52,7 @@ void RemoteSyncCallRequest(ModuleMessage& msg)
         //logger.debug("*** Before remote call execute");
         Local<Value> result = funcData->func.get().call({}, argsVector);
         //logger.debug("*** After remote call execute");
-        
+
         //Feedback
         //logger.debug("*** Before remote call result return");
         if (!msg.sendResult(ModuleMessage::MessageType::RemoteSyncCallReturn, ValueToJson(result)))
@@ -70,7 +70,7 @@ void RemoteSyncCallRequest(ModuleMessage& msg)
             PrintException(e);
             logger.error("[Error] In Plugin: " + ENGINE_OWN_DATA()->pluginName);
         }
-        
+
         //Feedback
         if (!msg.sendResult(ModuleMessage::MessageType::RemoteSyncCallReturn, "[null]"))
         {

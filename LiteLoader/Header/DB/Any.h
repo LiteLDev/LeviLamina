@@ -12,7 +12,7 @@ class Any;
 
 /**
  * @brief Function to convert Any to T.
- * 
+ *
  * @tparam T The type to convert to
  * @param v  The Any object
  * @return T The converted value
@@ -91,7 +91,7 @@ namespace DB
 
 /**
  * @brief Any class to store some SQL basic types
- * 
+ *
  */
 class Any
 {
@@ -126,127 +126,127 @@ public:
 
     /**
      * @brief Construct a new Any object with null value.
-     * 
+     *
      */
     LIAPI Any();
     /**
      * @brief Construct a new Any object with boolean value.
-     * 
+     *
      * @param v The boolean value
      */
     LIAPI Any(bool v);
     /**
      * @brief Construct a new Any object with int64 value.
-     * 
+     *
      * @param v The integer value
      */
     LIAPI Any(int64_t v);
     /**
      * @brief Construct a new Any object with uint64 value.
-     * 
+     *
      * @param v The unsigned integer value
      */
     LIAPI Any(uint64_t v);
     /**
      * @brief Construct a new Any object with double value.
-     * 
+     *
      * @param v The floating value
      */
     LIAPI Any(double v);
     /**
      * @brief Construct a new Any object with string value.
-     * 
+     *
      * @param v The string value
      */
     LIAPI Any(const std::string& v);
     /**
      * @brief Construct a new Any object with const char* value.
-     * 
+     *
      * @param v The const char* value
      */
     LIAPI Any(const char* v);
     /**
      * @brief Construct a new Any object with char* value.
-     * 
+     *
      * @param v   The char* value
      * @param len The length of the char* value
      */
     LIAPI Any(char* v, size_t len);
     /**
      * @brief Construct a new Any object with date value.
-     * 
+     *
      * @param v The Date object
      */
     LIAPI Any(const Date& v);
     /**
      * @brief Construct a new Any object with time value.
-     * 
+     *
      * @param v The Time object
      */
     LIAPI Any(const Time& v);
     /**
      * @brief Construct a new Any object with date time value.
-     * 
+     *
      * @param v The DateTime object
      */
     LIAPI Any(const DateTime& v);
     /**
      * @brief Construct a new Any object with int8(char) value.
-     * 
+     *
      * @param v The char value
      */
     LIAPI Any(char v);
     /**
      * @brief Construct a new Any object with uint8(unsigned char) value.
-     * 
+     *
      * @param v The unsigned char value
      */
     LIAPI Any(unsigned char v);
     /**
      * @brief Construct a new Any object with int16(short) value.
-     * 
+     *
      * @param v The short value
      */
     LIAPI Any(short v);
     /**
      * @brief Construct a new Any object with uint16(unsigned short) value.
-     * 
+     *
      * @param v The unsigned short value
      */
     LIAPI Any(unsigned short v);
     /**
      * @brief Construct a new Any object with int32(int) value.
-     * 
+     *
      * @param v The int value
      */
     LIAPI Any(int v);
     /**
      * @brief Construct a new Any object with uint32(unsigned int) value.
-     * 
+     *
      * @param v The unsigned int value
      */
     LIAPI Any(unsigned int v);
     /**
      * @brief Construct a new Any object with long value.
-     * 
+     *
      * @param v The long value
      */
     LIAPI Any(long v);
     /**
      * @brief Construct a new Any object with unsigned long value.
-     * 
+     *
      * @param v The unsigned long value
      */
     LIAPI Any(unsigned long v);
     /**
      * @brief Construct a new Any object with float value.
-     * 
+     *
      * @param v The float value
      */
     LIAPI Any(float v);
     /**
      * @brief Construct a new Any object with byte array value.
-     * 
+     *
      * @param v The byte array value
      */
     LIAPI Any(const ByteArray& v);
@@ -260,63 +260,63 @@ public:
 
     /**
      * @brief Get if the value is null.
-     * 
+     *
      */
     LIAPI bool is_null() const;
     /**
      * @brief Get if the value is boolean.
-     * 
+     *
      */
     LIAPI bool is_boolean() const;
     /**
      * @brief Get if the value is (unsigned) integer.
-     * 
+     *
      */
     LIAPI bool is_integer() const;
     /**
      * @brief Get if the value is unsigned integer.
-     * 
+     *
      */
     LIAPI bool is_uinteger() const;
     /**
      * @brief Get if the value is floating.
-     * 
+     *
      */
     LIAPI bool is_floating() const;
     /**
      * @brief Get if the value is string.
-     * 
+     *
      */
     LIAPI bool is_string() const;
     /**
      * @brief Get if the value is date.
-     * 
+     *
      */
     LIAPI bool is_date() const;
     /**
      * @brief Get if the value is time.
-     * 
+     *
      */
     LIAPI bool is_time() const;
     /**
      * @brief Get if the value is date time.
-     * 
+     *
      */
     LIAPI bool is_datetime() const;
     /**
      * @brief Get if the value is blob.
-     * 
+     *
      */
     LIAPI bool is_blob() const;
     /**
      * @brief Get if the value is floating or (unsigned) integer.
-     * 
+     *
      */
     LIAPI bool is_number() const;
 
     /**
      * @brief Get the number value as T
-     * 
+     *
      * @tparam T             The C++ basic number type to convert to, such as int, long, double, etc.
      * @return T             The value
      * @throws std::bad_cast If the value cannot be converted to T or the value is not a number
@@ -351,7 +351,7 @@ public:
 
     /**
      * @brief Get the value as T.
-     * 
+     *
      * @tparam T  The type of the value
      * @return T  The value
      * @throws std::bad_cast  If the value cannot be converted to T
@@ -381,7 +381,7 @@ public:
     }
     /**
      * @brief Get the value as string
-     * 
+     *
      * @tparam T     = bool
      * @return bool  The value
      * @throws std::bad_cast  If the value cannot be converted to string
@@ -412,7 +412,7 @@ public:
     }
     /**
      * @brief Get the value as char
-     * 
+     *
      * @tparam T     = char
      * @return char  The value
      * @throws std::bad_cast  If the value cannot be converted to char
@@ -424,7 +424,7 @@ public:
     }
     /**
      * @brief Get the value as unsigned char
-     * 
+     *
      * @tparam T              = unsigned char
      * @return unsigned char  The value
      * @throws std::bad_cast  If the value cannot be converted to unsigned char
@@ -436,7 +436,7 @@ public:
     }
     /**
      * @brief Get the value as short
-     * 
+     *
      * @tparam T      = short
      * @return short  The value
      * @throws std::bad_cast  If the value cannot be converted to short
@@ -448,7 +448,7 @@ public:
     }
     /**
      * @brief Get the value as unsigned short
-     * 
+     *
      * @tparam T               = unsigned short
      * @return unsigned short  The value
      * @throws std::bad_cast   If the value cannot be converted to unsigned short
@@ -460,7 +460,7 @@ public:
     }
     /**
      * @brief Get the value as int
-     * 
+     *
      * @tparam T    = int
      * @return int  The value
      * @throws std::bad_cast  If the value cannot be converted to int
@@ -472,7 +472,7 @@ public:
     }
     /**
      * @brief Get the value as unsigned int
-     * 
+     *
      * @tparam T              = unsigned int
      * @return unsigned int   The value
      * @throws std::bad_cast  If the value cannot be converted to unsigned int
@@ -484,7 +484,7 @@ public:
     }
     /**
      * @brief Get the value as long
-     * 
+     *
      * @tparam T     = long
      * @return long  The value
      * @throws std::bad_cast  If the value cannot be converted to long
@@ -496,7 +496,7 @@ public:
     }
     /**
      * @brief Get the value as unsigned long
-     * 
+     *
      * @tparam T              = unsigned long
      * @return unsigned long  The value
      * @throws std::bad_cast  If the value cannot be converted to unsigned long
@@ -508,7 +508,7 @@ public:
     }
     /**
      * @brief Get the value as long long
-     * 
+     *
      * @tparam T              = long long
      * @return long long      The value
      * @throws std::bad_cast  If the value cannot be converted to long long
@@ -520,7 +520,7 @@ public:
     }
     /**
      * @brief Get the value as unsigned long long
-     * 
+     *
      * @tparam T                   = unsigned long long
      * @return unsigned long long  The value
      * @throws std::bad_cast       If the value cannot be converted to unsigned long long
@@ -532,7 +532,7 @@ public:
     }
     /**
      * @brief Get the value as double.
-     * 
+     *
      * @tparam T       = double
      * @return double  The value
      * @throws std::bad_cast  If the value cannot be converted to double
@@ -544,7 +544,7 @@ public:
     }
     /**
      * @brief Get the value as float.
-     * 
+     *
      * @tparam T      = float
      * @return float  The value
      * @throws std::bad_cast  If the value cannot be converted to float
@@ -556,7 +556,7 @@ public:
     }
     /**
      * @brief Get the value as string.
-     * 
+     *
      * @tparam T              = std::string
      * @return std::string    The value
      * @throws std::bad_cast  If the value cannot be converted to string
@@ -604,7 +604,7 @@ public:
     }
     /**
      * @brief Get the value as Date
-     * 
+     *
      * @tparam T         = DB::Date
      * @return DB::Date  The value
      * @throws std::bad_cast  If the value cannot be converted to DB::Date
@@ -630,7 +630,7 @@ public:
     }
     /**
      * @brief Get the value as Time
-     * 
+     *
      * @tparam T         = DB::Time
      * @return DB::Time  The value
      * @throws std::bad_cast  If the value cannot be converted to DB::Time
@@ -656,7 +656,7 @@ public:
     }
     /**
      * @brief Get the value as DateTime
-     * 
+     *
      * @tparam T              = DB::DateTime
      * @return DB::DateTime   The value
      * @throws std::bad_cast  If the value cannot be converted to DB::DateTime
@@ -681,7 +681,7 @@ public:
     }
     /**
      * @brief Get the value as ByteArray
-     * 
+     *
      * @tparam T              = DB::ByteArray
      * @return DB::ByteArray  The value
      * @throws std::bad_cast  If the value cannot be converted to DB::ByteArray
@@ -709,7 +709,7 @@ public:
 
     /**
      * @brief Convert Any::Type to string.
-     * 
+     *
      * @param  type         The Any::Type value
      * @return std::string  The string value
      */
@@ -717,7 +717,7 @@ public:
 
     /**
      * @brief Convert string to Any.
-     * 
+     *
      * @param  str  The string
      * @return Any  The converted value
      */

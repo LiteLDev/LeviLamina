@@ -109,7 +109,7 @@ public:
     Local<Value> onPostRouting(const Arguments& args);
     Local<Value> onError(const Arguments& args);
     Local<Value> onException(const Arguments& args);
-    
+
     Local<Value> listen(const Arguments& args);
     Local<Value> stop(const Arguments& args);
     Local<Value> isRunning(const Arguments& args);

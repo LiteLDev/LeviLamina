@@ -4,7 +4,7 @@
 //  Must be used header-only!
 //
 //  [Usage]
-// 
+//
 //  PluginOwnData::set<std::string>("name","hello!");
 //  ......
 //  ......
@@ -12,7 +12,7 @@
 //  ......
 //  if(PluginOwnData::has("name"))
 //      PluginOwnData::remove<std::string>("name");
-// 
+//
 ////////////////////////////////////////////////////////////////////////
 
 

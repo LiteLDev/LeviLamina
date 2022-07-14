@@ -22,7 +22,7 @@ struct PackInfoData {
     std::string mSubpackName;
     ContentIdentity mContentIdentity;
     bool mHasScripts;
-    bool mForceServerPacks; 
+    bool mForceServerPacks;
     bool isRtxCapable;
 	
 #undef AFTER_EXTRA

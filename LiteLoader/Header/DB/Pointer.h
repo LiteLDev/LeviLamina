@@ -8,7 +8,7 @@ class Stmt;
 
 /**
  * @brief A smart pointer class extended from std::shared_ptr
- * 
+ *
  * @tparam  T  Type of the pointer
  * @warning This class is only for internal use(Session, Stmt and so on).
  *           So do not use this class directly, use std::shared_ptr instead.

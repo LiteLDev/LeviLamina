@@ -86,7 +86,7 @@ template<typename EVENT>
 std::list<ListenerData<EVENT>> listeners;
 
 
-/////////////////////////////// Listener Manager /////////////////////////////// 
+/////////////////////////////// Listener Manager ///////////////////////////////
 
 template<typename EVENT>
 int EventManager<EVENT>::addEventListener(std::string name, std::function<bool(EVENT)> callback)
@@ -120,7 +120,7 @@ bool EventManager<EVENT>::hasListener()
 }
 
 
-/////////////////////////////// Event Calling /////////////////////////////// 
+/////////////////////////////// Event Calling ///////////////////////////////
 
 inline void OutputError(std::string errorMsg, int errorCode, std::string errorWhat, std::string eventName, std::string pluginName)
 {
@@ -217,7 +217,7 @@ bool EventManager<EVENT>::callToPlugin(std::string pluginName, EVENT& ev)
 }
 
 
-/////////////////////////////// Event Declare /////////////////////////////// 
+/////////////////////////////// Event Declare ///////////////////////////////
 
 #define DECLARE_EVENT_DATA(EVENT) \
     template class EventManager<EVENT>; \
@@ -320,7 +320,7 @@ DECLARE_EVENT_DATA(MobSpawnEvent);
 #endif
 
 
-/////////////////////////////// Events /////////////////////////////// 
+/////////////////////////////// Events ///////////////////////////////
 
 
 /////////////////// PreJoin ///////////////////
@@ -719,7 +719,7 @@ TClasslessInstanceHook(bool, "?_useOn@BambooBlockItem@@UEBA_NAEAVItemStack@@AEAV
             if (onBlock == VanillaBlocks::mBambooBlock || onBlock == VanillaBlocks::mBambooSapling
                 || underBlock == VanillaBlocks::mBambooBlock || underBlock == VanillaBlocks::mBambooSapling)
                 return original(this, a2, a3, a4, a5, a6); // listen in BlockSource::mayPlace
-            
+
             PlayerPlaceBlockEvent ev{};
             ev.mPlayer = (Player*)a3;
             ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(VanillaBlocks::mBambooSapling), a4, (int)a3->getDimensionId());
@@ -824,7 +824,7 @@ TClasslessInstanceHook(bool, "?_useOn@DoorItem@@EEBA_NAEAVItemStack@@AEAVActor@@
                 case 8:
                     v11 = VanillaBlocks::mWarpedDoor;
                     break;
-                case 9: 
+                case 9:
                     v11 = VanillaBlocks::mMangroveDoor;
                     break;
             }
@@ -856,7 +856,7 @@ TClasslessInstanceHook(bool, "?_useOn@RedStoneDustItem@@EEBA_NAEAVItemStack@@AEA
     return original(this, a2, a3, a4, a5, a6);
 }
 
-//THook(bool, "?_useOn@SignItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z", 
+//THook(bool, "?_useOn@SignItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z",
 //      class SignItem* a1, ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, Vec3* a6)
 //{
 //    IF_LISTENED(PlayerPlaceBlockEvent)
@@ -2068,12 +2068,12 @@ TInstanceHook(void,
         auto actionAt = container->getActionAt(a4);
         if (actionAt && dAccess<char>(actionAt, 8) == (char)1)
         {
-            
+
             NpcCmdEvent ev{};
             ev.mPlayer = pl;
             ev.mNpc = ac;
             ev.mCommand = actionAt->getText();
-            if (!ev.call()) 
+            if (!ev.call())
                 return;
         }
     }
@@ -2273,7 +2273,7 @@ TInstanceHook(void, "?dropSlot@Inventory@@QEAAXH_N00@Z",
             {
                 auto& item = this->getItem(a2);
                 if (!item.isNull())
-                {        
+                {
                    ev.mItemStack = const_cast<ItemStack*>(&item);
                    ev.mPlayer = pl;
                 }

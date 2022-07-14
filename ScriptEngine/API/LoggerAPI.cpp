@@ -85,7 +85,7 @@ Local<Value> LoggerClass::debug(const Arguments& args)
 Local<Value> LoggerClass::info(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args,1)
-    
+
     try {
         auto globalConf = ENGINE_OWN_DATA();
         LogDataHelper(&globalConf->logger.info, args);
@@ -97,7 +97,7 @@ Local<Value> LoggerClass::info(const Arguments& args)
 Local<Value> LoggerClass::warn(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args,1)
-    
+
     try {
         auto globalConf = ENGINE_OWN_DATA();
         LogDataHelper(&globalConf->logger.warn, args);
@@ -109,7 +109,7 @@ Local<Value> LoggerClass::warn(const Arguments& args)
 Local<Value> LoggerClass::error(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args,1)
-    
+
     try {
         auto globalConf = ENGINE_OWN_DATA();
         LogDataHelper(&globalConf->logger.error, args);
@@ -121,7 +121,7 @@ Local<Value> LoggerClass::error(const Arguments& args)
 Local<Value> LoggerClass::fatal(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args,1)
-    
+
     try {
         auto globalConf = ENGINE_OWN_DATA();
         LogDataHelper(&globalConf->logger.fatal, args);

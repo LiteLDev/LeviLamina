@@ -415,7 +415,7 @@ void EnableEventListener(int eventId)
 
     case EVENT_TYPES::onAttackEntity:
         Event::PlayerAttackEvent::subscribe([](const PlayerAttackEvent& ev)
-        {   
+        {
             IF_LISTENED(EVENT_TYPES::onAttackEntity)
             {
                 if (ev.mTarget)
@@ -1164,7 +1164,7 @@ void InitBasicEventListeners()
         }
         return true;
     });
-    
+
     Event::ConsoleCmdEvent::subscribe_ref([](ConsoleCmdEvent& ev)
     {
         string cmd = ev.mCommand;

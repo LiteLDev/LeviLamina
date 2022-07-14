@@ -53,7 +53,7 @@ namespace LL {
                         {"enabled", conf.enableOutputFilter},
                         {"onlyFilterConsoleOutput", conf.onlyFilterConsoleOutput},
                         {"filterRegex", conf.outputFilterRegex}
-                    }}, 
+                    }},
                     {"EconomyCore", {
                         {"enabled", conf.enableEconomyCore}
                     }},

@@ -48,7 +48,7 @@ ClassDefine<FileClass> FileClassBuilder =
         .property("ReadMode", [] { return Number::newNumber((int)FileOpenMode::ReadMode); })
         .property("WriteMode", [] { return Number::newNumber((int)FileOpenMode::WriteMode); })
         .property("AppendMode", [] { return Number::newNumber((int)FileOpenMode::AppendMode); })
-    
+
         .function("readFrom", &FileClass::readFromStatic)
         .function("writeTo", &FileClass::writeToStatic)
         .function("writeLine", &FileClass::writeLineStatic)
@@ -355,7 +355,7 @@ Local<Value> FileClass::write(const Arguments& args)
     CHECK_ARGS_COUNT(args, 1);
     if (args.size() >= 2)
         CHECK_ARG_TYPE(args[1], ValueKind::kFunction);
-    
+
     try {
         string data;
         bool isString = true;
@@ -375,10 +375,10 @@ Local<Value> FileClass::write(const Arguments& args)
         }
 
         script::Global<Function> callbackFunc;
-        if (args.size() >= 2) 
+        if (args.size() >= 2)
             callbackFunc = args[1].asFunction();
 
-        pool.enqueue([fp{ &file }, lock{ &lock }, data{ std::move(data) }, isString, 
+        pool.enqueue([fp{ &file }, lock{ &lock }, data{ std::move(data) }, isString,
             callback{ std::move(callbackFunc) }, engine{ EngineScope::currentEngine() }]()
         {
             if (LL::isServerStopping())
@@ -423,7 +423,7 @@ Local<Value> FileClass::writeLine(const Arguments& args)
         if (args.size() >= 2)
             callbackFunc = args[1].asFunction();
 
-        pool.enqueue([fp{ &file }, lock{ &lock }, data{ std::move(data) }, 
+        pool.enqueue([fp{ &file }, lock{ &lock }, data{ std::move(data) },
             callback{ std::move(callbackFunc) }, engine{ EngineScope::currentEngine() }]()
         {
             if (LL::isServerStopping())
@@ -716,7 +716,7 @@ Local<Value> FileReadFrom(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
-    
+
     try{
         auto content = ReadAllFile(args[0].toStr());
         if(!content)
@@ -731,7 +731,7 @@ Local<Value> FileWriteTo(const Arguments& args)
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     CHECK_ARG_TYPE(args[1], ValueKind::kString);
-    
+
     try{
         string path = args[0].toStr();
         CreateDirs(path);
@@ -745,7 +745,7 @@ Local<Value> FileWriteLine(const Arguments& args)
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     CHECK_ARG_TYPE(args[1], ValueKind::kString);
-    
+
     try{
         string path = args[0].toStr();
         CreateDirs(path);

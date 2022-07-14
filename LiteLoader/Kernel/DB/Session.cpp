@@ -41,7 +41,7 @@ ResultSet Session::query(const std::string& query)
                 dbLogger.debug(str);
             }
         }
-        else 
+        else
         {
             dbLogger.debug("Session::query: Query returned no result");
         }
@@ -101,9 +101,9 @@ SharedPointer<Session> Session::create(DBType type, const ConnParams& params)
 }
 SharedPointer<Session> Session::create(DBType type, const std::string& host, uint16_t port, const std::string& user, const std::string& password, const std::string& database)
 {
-    return _Create(type, 
+    return _Create(type,
         {{"host", host}, {"port", port}, {"user", user}, {"password", password}, {"database", database}});
-    
+
 }
 SharedPointer<Session> Session::create(DBType type, const std::string& path)
 {

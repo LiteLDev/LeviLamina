@@ -373,7 +373,7 @@ public:
             "ll",
             makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_Common").addOptions((CommandParameterOption)1));
 
-        // ll load 
+        // ll load
         registry->addEnum<Operation>("Operation_FreeFilePath", {
             {"load", Operation::Load},
         });

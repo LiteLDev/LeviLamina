@@ -95,7 +95,7 @@ LL::Version LL::Version::parse(const std::string &str) {
         ver.status = Status::Dev;
     else
         ver.status = Status::Release;
-    
+
     auto res = SplitStrWithPattern(a, ".");
 
     if (res.size() >= 1)
@@ -104,7 +104,7 @@ LL::Version LL::Version::parse(const std::string &str) {
         ver.minor = stoi(res[1]);
     if (res.size() >= 3)
         ver.revision = stoi(res[2]);
-    
+
     return ver;
 }
 

@@ -26,7 +26,7 @@ public:
     LIAPI static std::unique_ptr<KVDB> create(const std::string& path, bool read_cache = true, int cache_sz = 0, int Bfilter_bit = 0);
     LIAPI static std::unique_ptr<KVDB> open(const std::string& path, bool create = true, bool read_cache = true, int cache_sz = 0, int Bfilter_bit = 0);
     LIAPI ~KVDB();
-    
+
     KVDB() = default;
     KVDB(KVDB const&) = delete;
     KVDB& operator=(KVDB const&) = delete;

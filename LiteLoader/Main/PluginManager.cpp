@@ -27,7 +27,7 @@ bool LL::PluginManager::registerPlugin(HMODULE handle, std::string name, std::st
         {
             erase_if(plugins, [&handle](auto& data) {               // Allow plugins to overwrite their own plugin registory
                 return data.second.handle == handle;
-            });                           
+            });
         }
         else if (getPlugin(name) != nullptr) {
             return false;                                      // Reject overwriting other's data
@@ -65,7 +65,7 @@ bool LL::PluginManager::unRegisterPlugin(std::string name)
 {
     auto plugin = getPlugin(name);
     if (plugin == nullptr)
-    { 
+    {
         return false;
     }
     else

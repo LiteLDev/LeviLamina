@@ -2,25 +2,25 @@
 //  Logger System - Log text to console, file and player easily
 //  - Created by RimuruChan on 2021/12/11.
 //
-// 
+//
 //  [Create Logger]
-// 
+//
 //  Logger logger("MyPlugin");                  // Create a logger (default: only log to console)
 //  logger.setFile("logs/MyPlugin.log");        // Optional, also record log to File
-// 
+//
 //  auto pl = mc.getPlayer("Jim");
 //  if(pl)
 //      logger.setPlayer(pl);                   // Optional, also record log to a Player
 //  ......
 //  logger.setFile(nullptr);                    // Stop record log to File (Passing nullptr to setPlayer works like this)
-//  
-// 
+//
+//
 //  [Use Logger]
-// 
+//
 //  logger.info("Infomation");                                  // Common
 //  logger.error("Error! Code:{}",GetLastError());              // FMT Format
 //  logger.warn << "Warning! Fail to do sth." << logger.endl;   // STL Format
-// 
+//
 ////////////////////////////////////////////////////////////////////////
 
 #pragma once
@@ -148,7 +148,7 @@ public:
                 // Avoid fmt if only one argument
                 *this << formatStr << endl;
             }
-            else 
+            else
             {
                 std::string str = fmt::format(std::string(formatStr), args...);
                 *this << str << endl;
@@ -157,7 +157,7 @@ public:
     };
 
 private:
- 
+
     LIAPI static bool setDefaultFileImpl(HMODULE hPlugin, const std::string& logFile, bool appendMode);
     LIAPI static bool setDefaultFileImpl(HMODULE hPlugin, nullptr_t);
 

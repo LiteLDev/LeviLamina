@@ -123,7 +123,7 @@ public:
 
     /**
      * @brief Execute the statement(after binding all the parameters)
-     * 
+     *
      * @return Stmt&  *this
      * @note   If `this->autoExecute` is true, there is no need to call this method
      */
@@ -184,7 +184,7 @@ public:
 
     /**
      * @brief Fetch the current row.
-     * 
+     *
      * @param[out] row    The current row
      * @return     Stmt&  *this
      */
@@ -222,13 +222,13 @@ public:
 
     /**
      * @brief Fetch each of the result rows(For compatibility).
-     * 
+     *
      * @param  cb     Callback function to handle the result rows
      * @return Stmt&  *this
      * @note   Return false in callback to stop fetching
      * @see Stmt::fetchEach
      */
-    inline Stmt& fetchAll(std::function<bool(const Row&)> cb) 
+    inline Stmt& fetchAll(std::function<bool(const Row&)> cb)
     {
         return fetchEach(cb);
     }
@@ -283,9 +283,9 @@ public:
 
     /**
      * @brief Reset the statement from executing state to perpared state
-     * 
+     *
      * @return Stmt& *this
-     * 
+     *
      * @par Note
      * Different between `reset()`, `reexec` and `clear()`:
      * - `reset()` : Reset the statement to the prepared state
@@ -300,7 +300,7 @@ public:
      * @return Stmt&  *this
      * @note   If you want to clear the bound value, use clear() instead.
      * @see    Stmt::reset
-     * 
+     *
      * @par Impletementation
      * @see SQLiteStmt::reexec
      */
@@ -388,7 +388,7 @@ public:
 
     /**
      * @brief Get the shared pointer point to this
-     * 
+     *
      * @return SharedPointer<Stmt>  The ptr
      */
     virtual SharedPointer<Stmt> getSharedPointer() const;
@@ -406,7 +406,7 @@ public:
 
     /**
      * @brief Fetch the current row(internal).
-     * 
+     *
      * @return Row  The current row
      */
     virtual Row _Fetch() = 0;
@@ -426,7 +426,7 @@ public:
 
     /**
      * @brief Operator>> to store the result.
-     * 
+     *
      * @tparam T  The value type
      * @param  v  Where to store
      * @return SharedPointer<Stmt>  this
@@ -441,7 +441,7 @@ public:
     inline SharedPointer<Stmt> operator>>(ResultSet& v)
     {
         fetchAll(v);
-        return getSharedPointer();     
+        return getSharedPointer();
     }
     template <typename T>
     inline SharedPointer<Stmt> operator>>(std::vector<T>& v)
@@ -563,7 +563,7 @@ public:
 
     /**
      * @brief Operator-> to implement better API.
-     * 
+     *
      * @return Stmt*  this
      */
     inline Stmt* operator->()

@@ -74,7 +74,7 @@ namespace ModifyInfomation
     va_start(va, a8);
     if (string(text).find("= TELEMETRY MESSAGE =") != string(text).npos)
     {
-        ModifyInfomation::telemetryText = 6;  
+        ModifyInfomation::telemetryText = 6;
         return BedrockLog::log_va(a1, a2, a3, a4, a5, a6, a7, "To enable Server Telemetry, add the line 'emit-server-telemetry=true' to the server.properties file in the bds directory", va);
     }
 	if (ModifyInfomation::telemetryText > 0)
@@ -83,7 +83,7 @@ namespace ModifyInfomation
 		return;
 	}
 	
-    if (string(text).find("setting up server logging...") != string(text).npos 
+    if (string(text).find("setting up server logging...") != string(text).npos
         || string(text).find("Server started") != string(text).npos)
     {
         return;

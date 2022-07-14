@@ -60,7 +60,7 @@ public:
     LIAPI void skipDigits(const std::string& chars = "");
     LIAPI void skipLettersAndDigits(const std::string& chars = "");
 
-    
+
     template <typename T>
     inline T readInteger()
     {

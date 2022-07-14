@@ -63,10 +63,10 @@ public:
 
     // Experience required to upgrade to level from level 0
     LIAPI static size_t getTotalXpNeededForLevel(int level);
-    
+
     /**
      * @brief Translate(localize) a text for the player with provided plugin handle.
-     * 
+     *
      * @param  hPlugin      The plugin handle
      * @param  format       The str to translate and format
      * @param  args         The format arguments
@@ -92,7 +92,7 @@ public:
     LIAPI bool sendText(const std::string& text, TextType type = TextType::RAW);
     /**
      * @brief Translate(localize) and send a text to the player(convenience func).
-     * 
+     *
      * @tparam ttype  The text type(default RAW)
      * @tparam Args   ...
      * @param  text   The str to translate and format
@@ -116,7 +116,7 @@ public:
     LIAPI bool kick(const string& msg);
     LIAPI bool crashClient();
     LIAPI bool talkAs(const string& msg);
-    LIAPI bool giveItem(ItemStack* item); 
+    LIAPI bool giveItem(ItemStack* item);
     LIAPI int clearItem(string typeName);
     LIAPI bool runcmd(const string& cmd);
     LIAPI bool transferServer(const string& address, unsigned short port);

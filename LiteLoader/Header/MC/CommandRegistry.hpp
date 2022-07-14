@@ -290,7 +290,7 @@ public:
         CommandVersion version;
         inline std::string toDebugString() const
         {
-            
+
             return fmt::format("<ParseRule {} - [{}]>", sym.toDebugString(), toString(syms));
         }
     };
@@ -468,7 +468,7 @@ public:
     inline void registerOverload(std::string const& name, Params... params) {
         registerOverload(name, &allocateCommand<T>, {params...});
     }
-    
+
     template <typename Type>
     bool
         fakeParse(void*, ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&) const {
@@ -561,7 +561,7 @@ public:
 private:
     template <typename T>
     bool parse(void*, ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&) const {
-            
+
     };
 
 public:

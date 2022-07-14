@@ -1562,7 +1562,7 @@ inline void __appendPrettySNBT(std::ostringstream& oss, CompoundTag& tag, unsign
         oss << format.mKeyFormat.mPrefix;
         __appendPrettyString(oss, key, format);
         oss << format.mKeyFormat.mSuffix << format.mColon;
-        
+
         auto tag = const_cast<Tag*>(child.get());
         switch (tag->getTagType())
         {

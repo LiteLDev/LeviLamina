@@ -248,7 +248,7 @@ void WSClientClass::addListener(const string& event, Local<Function> func)
     else
     {
         LOG_ERROR_WITH_SCRIPT_INFO("WSClient Event \"" + event + "\" No Found!\n");
-    }  
+    }
 }
 
 Local<Value> WSClientClass::getStatus()
@@ -456,7 +456,7 @@ svr->##method##(path.c_str(), [this, engine = EngineScope::currentEngine()](cons
     });                                                             \
     while (!task.isFinished())                                      \
         std::this_thread::sleep_for(std::chrono::milliseconds(1));                                                                                  \
-});                                                                                                                                                 
+});
 
 HttpServerClass::HttpServerClass(const Local<Object>& scriptObj)
     : ScriptClass(scriptObj)
@@ -736,7 +736,7 @@ Local<Value> HttpServerClass::listen(const Arguments& args)
         LOG_WRONG_ARG_TYPE();
         return Local<Value>();
     }
-    
+
     try {
         string addr = "127.0.0.1";
         int port = 80;
@@ -755,7 +755,7 @@ Local<Value> HttpServerClass::listen(const Arguments& args)
         }
 
         RecordOperation(ENGINE_OWN_DATA()->pluginName, "StartHttpServer", fmt::format("on {}:{}", addr, port));
-        
+
         thread th([this](string addr, int port) {
             svr->listen(addr.c_str(), port);
         }, addr, port);
@@ -787,7 +787,7 @@ Local<Value> HttpServerClass::isRunning(const Arguments& args)
     CATCH("Fail in isRunning!");
 }
 
-Local<Object> Headers2Object(const Headers& headers) 
+Local<Object> Headers2Object(const Headers& headers)
 {
     auto obj = Object::newObject();
     for (auto& header : headers)
@@ -803,7 +803,7 @@ Local<Object> Headers2Object(const Headers& headers)
     return obj;
 }
 
-Local<Object> Params2Object(const Params& params) 
+Local<Object> Params2Object(const Params& params)
 {
     auto obj = Object::newObject();
     for (auto& param : params)
@@ -1026,7 +1026,7 @@ void HttpResponseClass::setHeaders(const Local<Value>& headers)
     CATCH_S("Fail in setHeaders!");
 }
 
-void HttpResponseClass::setStatus(const Local<Value>& status) 
+void HttpResponseClass::setStatus(const Local<Value>& status)
 {
     CHECK_ARG_TYPE_S(status, ValueKind::kNumber);
 
@@ -1174,8 +1174,8 @@ Local<Value> NetworkClass::httpPost(const Arguments& args)
         CHECK_ARG_TYPE(args[1], ValueKind::kString);
         CHECK_ARG_TYPE(args[3], ValueKind::kFunction);
     }
-    
-    
+
+
     try
     {
         string target = args[0].toStr();
@@ -1206,7 +1206,7 @@ Local<Value> NetworkClass::httpPost(const Arguments& args)
                     maps.insert({keys[i], obj.get(keys[i]).toStr()});
                 }
             }
-            
+
             return Boolean::newBoolean(HttpPost(target, maps ,args[2].toStr(), args[3].toStr(), lambda));
         }
         return Boolean::newBoolean(HttpPost(target, args[1].toStr(), args[2].toStr(), lambda));

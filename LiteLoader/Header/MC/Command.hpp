@@ -53,7 +53,7 @@ class Command {
 protected:
     int version;                       // 8
     CommandRegistry* registry;         // 16
-    CommandRegistry::Symbol symbol;    // 24, 
+    CommandRegistry::Symbol symbol;    // 24,
     CommandPermissionLevel permission; // 28
     CommandFlag flag;                  // 30
 

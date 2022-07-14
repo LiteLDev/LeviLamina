@@ -642,7 +642,7 @@ class ConsoleOutputEvent : public EventTemplate<ConsoleOutputEvent>
 public:
     std::string mOutput;
 };
-    
+
 class PlayerBedEnterEvent : public EventTemplate<PlayerBedEnterEvent>
 {
 public:

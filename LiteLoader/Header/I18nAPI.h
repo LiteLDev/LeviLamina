@@ -17,16 +17,16 @@
 //          "...": "..."
 //      }
 //  }
-// 
-// 
+//
+//
 // [Usage - Text Encoding]
-// 
+//
 //  Encoding local = TextEncoding::getLocalEncoding();                      // Get local encoding
 //  Encoding code = TextEncoding::detectEncoding("你好吗？");                // Detect the encoding of text
-// 
+//
 //  string hello = TextEncoding::fromUnicode(L"Hello");                     // Convert Unicode wstring -> MBCS string
 //  wstring world = TextEncoding::toUnicode("World");                       // Convert MBCS string -> Unicode wstring
-// 
+//
 //  string tomorrow = TextEncoding::toUTF8("明天");                          // Convert MBCS string of any encoding to UTF8 string
 //  string tonight = TextEncoding::convert("今天晚上", Encoding::CHINESE_GB, Encoding::UTF8);
 //                                                                          // Convert from one MBCS encoding to another
@@ -181,7 +181,7 @@ namespace Translation {
 
     /**
      * @brief Load translation from another plugin.
-     * 
+     *
      * @param  plugin  The plugin name.
      * @return I18N*   The pointer to the I18N object in PluginOwnData, null if failed
      */

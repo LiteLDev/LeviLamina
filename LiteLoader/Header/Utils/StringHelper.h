@@ -31,14 +31,14 @@ LIAPI std::string UTF82String(std::u8string str);
 #endif
     /**
  * @brief Integer to hex string.
- * 
+ *
  * @tparam T      The integer type
  * @param  value  The integer value
  * @param  upper  Whether to use upper case (0x1A or 0x1a)
  * @param  no0x   Whether to omit 0x prefix
  * @param  noLeadingZero  Whether to omit leading zero
  * @return std::string    The hex string
- * 
+ *
  * @par Example
  * @code
  * IntToHexStr(15); // "F"

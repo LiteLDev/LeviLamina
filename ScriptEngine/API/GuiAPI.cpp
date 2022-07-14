@@ -210,7 +210,7 @@ Local<Value> CustomFormClass::addInput(const Arguments& args)
     try{
         string placeholder = args.size() >= 2 ? args[1].toStr() : "";
         string def = args.size() >= 3 ? args[2].toStr() : "";
-        
+
         form.append(Input(args[0].toStr(), args[0].toStr(), placeholder, def));
         return this->getScriptObject();
     }
@@ -226,7 +226,7 @@ Local<Value> CustomFormClass::addSwitch(const Arguments& args)
 
     try{
         bool def = args.size() >= 2 ? args[1].asBoolean().value() : false;
-        
+
         form.append(Toggle(args[0].toStr(), args[0].toStr(), def));
         return this->getScriptObject();
     }
@@ -248,7 +248,7 @@ Local<Value> CustomFormClass::addDropdown(const Arguments& args)
             options.push_back(optionsArr.get(i).toStr());
 
         int def = args.size() >= 3 ? args[2].asNumber().toInt32() : 0;
-        
+
         form.append(Dropdown(args[0].toStr(), args[0].toStr(), options, def));
         return this->getScriptObject();
     }
@@ -271,12 +271,12 @@ Local<Value> CustomFormClass::addSlider(const Arguments& args)
         int maxValue = args[2].asNumber().toInt32();
         if(minValue >= maxValue)
             maxValue = minValue + 1;
-        
+
         int step = args.size() >= 4 ? args[3].asNumber().toInt32() : 1;
         int defValue = args.size() >= 5 ? args[4].asNumber().toInt32() : minValue;
         if (defValue < minValue || defValue > maxValue)
             defValue = minValue;
-        
+
         form.append(Slider(args[0].toStr(), args[0].toStr(), minValue, maxValue, step, defValue));
         return this->getScriptObject();
     }
@@ -298,7 +298,7 @@ Local<Value> CustomFormClass::addStepSlider(const Arguments& args)
             steps.push_back(stepsArr.get(i).toStr());
 
         int defIndex = args.size() >= 3 ? args[2].asNumber().toInt32() : 0;
-        
+
         form.append(StepSlider(args[0].toStr(), args[0].toStr(), steps, defIndex));
         return this->getScriptObject();
     }

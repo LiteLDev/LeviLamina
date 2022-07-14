@@ -74,7 +74,7 @@ void ItemClass::preloadData()
 }
 
 Local<Value> ItemClass::getName()
-{ 
+{
     try{
         //已预加载
         return String::newString(name);
@@ -197,7 +197,7 @@ Local<Value> ItemClass::setLore(const Arguments& args)
         }
         if(lores.empty())
             return Boolean::newBoolean(false);
-        
+
         item->setLore(lores);
         return Boolean::newBoolean(true);
     }

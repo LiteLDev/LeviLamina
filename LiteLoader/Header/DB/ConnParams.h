@@ -44,7 +44,7 @@ public:
 
     /**
      * @brief Get the scheme.
-     * 
+     *
      * @return std::string  The scheme
      */
     LIAPI std::string getScheme();

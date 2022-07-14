@@ -41,7 +41,7 @@ public:
     Local<Value> getPath();
     Local<Value> getAbsolutePath();
     Local<Value> getSize();
-    
+
     Local<Value> readSync(const Arguments& args);
     Local<Value> readLineSync(const Arguments& args);
     Local<Value> readAllSync(const Arguments& args);

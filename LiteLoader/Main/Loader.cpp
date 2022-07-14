@@ -113,7 +113,7 @@ void LL::LoadMain() {
         if (strPath.find("LiteLoader.dll") != string::npos
             || strPath.find("LiteXLoader") != string::npos ) // Skip Wrong file path		
             continue;
-        
+
         if (strPath.find("LLMoney.dll") != string::npos) {
             if (!globalConfig.enableEconomyCore) {
 				continue;
@@ -164,7 +164,7 @@ void LL::LoadMain() {
             if (isShellLink)
                 logger.info("ShellLink Plugin <{} => {}> loaded",
                             UTF82String(file.path().filename().u8string()), UTF82String(path.u8string()));
-            else 
+            else
                 logger.info("Plugin <{}> loaded", pluginFileName);
 
             if (PluginManager::getPlugin(lib) == nullptr) {

@@ -231,7 +231,7 @@ Local<Value> LlClass::require(const Arguments& args)
         //插件目录
         existing = false;
         string requirePath = "";
-        
+
         //Direct
         std::error_code ec;
         if (filesystem::exists(str2wstr(require), ec))
@@ -254,7 +254,7 @@ Local<Value> LlClass::require(const Arguments& args)
         }
 
         if (existing)
-        { 
+        {
             bool success = PluginManager::loadPlugin(requirePath);
             if (success)
             {

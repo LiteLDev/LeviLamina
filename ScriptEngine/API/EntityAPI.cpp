@@ -136,7 +136,7 @@ Local<Value> EntityClass::getUniqueID()
 }
 #include <MC/CommandUtils.hpp>
 Local<Value> EntityClass::getName()
-{ 
+{
     try{
         Actor* entity = get();
         if (!entity)
@@ -172,7 +172,7 @@ Local<Value> EntityClass::getId()
 }
 
 Local<Value> EntityClass::getPos()
-{ 
+{
     try{
         Actor* entity = get();
         if (!entity)
@@ -263,7 +263,7 @@ Local<Value> EntityClass::getDirection()
             return Local<Value>();
 
         Vec2 *vec = entity->getDirection();
-        return DirectionAngle::newAngle(vec->x, vec->y); 
+        return DirectionAngle::newAngle(vec->x, vec->y);
     }
     CATCH("Fail in getDirection!")
 }
@@ -278,7 +278,7 @@ Local<Value> EntityClass::teleport(const Arguments& args)
         CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
         CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
     }
-    
+
     try{
         FloatVec4 pos;
 
@@ -333,7 +333,7 @@ Local<Value> EntityClass::teleport(const Arguments& args)
             LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
         }
-        
+
         Actor* entity = get();
         if (!entity)
             return Local<Value>();
@@ -884,7 +884,7 @@ Local<Value> McClass::explode(const Arguments& args)
         }
 
         auto source = EntityClass::extract(args[beginIndex + 0]); //Can be nullptr
-        
+
         CHECK_ARG_TYPE(args[beginIndex + 1], ValueKind::kNumber);
         CHECK_ARG_TYPE(args[beginIndex + 2], ValueKind::kNumber);
         CHECK_ARG_TYPE(args[beginIndex + 3], ValueKind::kBoolean);

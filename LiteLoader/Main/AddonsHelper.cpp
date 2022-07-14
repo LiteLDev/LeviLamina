@@ -75,7 +75,7 @@ std::optional<Addon> parseAddonFromPath(std::filesystem::path addonPath)
         if (!manifestFile || manifestFile->empty())
             throw std::exception("manifest.json not found!");
         std::string content = FixMojangJson(*manifestFile);
-        
+
         auto manifest = nlohmann::json::parse(content, nullptr, true, true);
         auto header = manifest["header"];
         auto uuid = header["uuid"];
@@ -501,7 +501,7 @@ void ListAllAddons(CommandOutput& output)
             output.success(fmt::format("§e{:>2}§r: §8{} [v{}] ({})", index + 1, ColorFormat::removeColorCode(addonName), addon.version.toString(), addonType));
             output.success(fmt::format("    §8Disabled"));
         }
-        
+
     }
 }
 
@@ -566,7 +566,7 @@ public:
                     ListAllAddons(output);
                 break;
             case Operation::Install:
-                if (AddonsManager::install(target)) 
+                if (AddonsManager::install(target))
                     filesystem::remove_all(ADDON_INSTALL_TEMP_DIR);
                     output.success();
                 break;
@@ -785,7 +785,7 @@ void InitAddonsHelper()
     BuildAddonsList();
 
     filesystem::remove_all(ADDON_INSTALL_TEMP_DIR);
-    
+
     Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
         AddonsCommand::setup(ev.mCommandRegistry);
         return true;

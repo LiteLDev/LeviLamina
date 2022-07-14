@@ -98,7 +98,7 @@ public:
             return;
         }
         if (!pendingCancelList.empty())
-        { 
+        {
             std::vector<uint32_t> tmpList;
             locker.lock();
             // ScheduleTaskData destructor may trigger ScriptX's lock

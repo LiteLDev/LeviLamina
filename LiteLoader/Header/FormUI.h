@@ -16,7 +16,7 @@
 //      .addButton("Settings", "",                                           // Add a button "Settings" with no image
 //          [](Player* pl) { pl->sendText("Get into settings..."); })        // Settings's callback function
 //
-//      .addButton("Exit")                                                   // Add a single button "Exit" 
+//      .addButton("Exit")                                                   // Add a single button "Exit"
 //      .sendTo(Level::getPlayer("John"));                   // Send the form to a player called "Jim"
 //
 //
@@ -29,11 +29,11 @@
 //      .addInput("username", "Your Name")                                      // Add an input line to gather player's name
 //      .addDropdown("sex", "Your Sex", { "Male","Female","Secret" })           // Add a dropdown to gather player's sex
 //      .addSlider("age", "Your Age", 3, 100)                                   // Add a slider to gather player's age
-//  
+//
 //      .addLabel("label2", "MC Information")                                   // Add a label shows "MC Information"
 //      .addToggle("licensed", "Purchased a licensed Minecraft?", true)         // Add a toggle about whether he buys a licensed mc or not
 //      .addStepSlider("ability", "MC Ability", { "Beginner", "Experienced", "Master" })      // Add a step slider shows his game ability
-//  
+//
 //      .sendTo(Level::getPlayer("yqs112358"),                                  // Send the form to a player called "John"
 //          [](Player* player, auto result)                                     // Callback function to process the result
 //          {

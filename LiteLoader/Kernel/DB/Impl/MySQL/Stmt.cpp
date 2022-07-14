@@ -60,7 +60,7 @@ namespace DB
 
 /**
  * @brief Parse the query with named parameters
- * 
+ *
  * @param query  Query with named parameters
  * @return std::unordered_map<std::string, int>  Indexes of parameters
  */
@@ -126,7 +126,7 @@ std::unordered_map<std::string, int> ParseStmtParams(std::string& query)
 
 /**
  * @brief Allocate the memory for the buffer in field receiver
- * 
+ *
  * @param  field  Field to allocate memory for
  * @return std::pair<std::shared_ptr<char[]>, std::size_t>  Allocated memory and its size
  */
@@ -199,7 +199,7 @@ std::pair<std::shared_ptr<char[]>, std::size_t> AllocateBuffer(const MYSQL_FIELD
 
 /**
  * @brief Judge if the field is unsigned type
- * 
+ *
  * @param  field  Field to judge
  * @return bool   True if the field is unsigned
  */
@@ -210,7 +210,7 @@ bool IsUnsigned(const MYSQL_FIELD& field)
 
 /**
  * @brief Convert Receiver to Any
- * 
+ *
  * @param  receiver  Receiver to convert
  * @return Any       Converted value
  */

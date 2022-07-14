@@ -10,7 +10,7 @@ class MySQLSession;
 
 /**
  * @brief Fetched data receiver(buffer)
- * 
+ *
  */
 struct Receiver
 {

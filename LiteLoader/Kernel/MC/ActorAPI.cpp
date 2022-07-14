@@ -109,7 +109,7 @@ bool Actor::teleport(Vec3 to, int dimID)
     if (!this->isAlive())
         return false;
     char mem[48];
-    auto computeTarget = (TeleportTarget * (*)(void*, class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>, std::optional<TeleportRotationData> const&, int))(&TeleportCommand::computeTarget);   
+    auto computeTarget = (TeleportTarget * (*)(void*, class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>, std::optional<TeleportRotationData> const&, int))(&TeleportCommand::computeTarget);
     auto target = computeTarget(mem, *this, to, nullptr, dimID, TeleportRotationData{getRotation().x, getRotation().y, {}}, 15);
     TeleportCommand::applyTarget(*this, *target, false);
     return true;
