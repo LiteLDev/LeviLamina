@@ -81,7 +81,7 @@ Local<Value> DeviceClass::getAvgPacketLoss()
         if (!player)
             return Local<Value>();
 
-        return  Number::newNumber(0);       //=================???
+        return Number::newNumber(player->getAvgPacketLoss());
     }
     CATCH("Fail in getAvgPacketLoss!")
 }
