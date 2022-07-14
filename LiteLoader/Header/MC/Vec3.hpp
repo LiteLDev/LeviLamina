@@ -110,7 +110,7 @@ public:
 
 
     float& operator[](int index) {
-            if (index < 0 || index > 2) { return (&x)[0]; }
+        if (index < 0 || index > 2) { return (&x)[0]; }
         return (&x)[index];
     }
 
