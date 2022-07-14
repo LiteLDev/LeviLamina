@@ -35,8 +35,6 @@ public:
 
     MCAPI float distanceToLineSquared(class Vec3 const&, class Vec3 const&) const;
 
-    MCAPI float distanceToSqr(class Vec3 const&) const;
-
     MCAPI class Vec3 floor(float) const;
 
     MCAPI bool isNan() const;
@@ -96,6 +94,14 @@ public:
     inline Vec3 normalize() const {
         float l = length();
         return {x / l, y / l, z / l};
+    }
+
+      inline float distanceToSqr(const struct Vec3& a2) const {
+        return (float)((float)((float)(*((float*)&a2 + 1) - *((float*)this + 1)) *
+                               (float)(*((float*)&a2 + 1) - *((float*)this + 1))) +
+                       (float)((float)(*(float*)&a2 - *(float*)this) * (float)(*(float*)&a2 - *(float*)this))) +
+               (float)((float)(*((float*)&a2 + 2) - *((float*)this + 2)) *
+                       (float)(*((float*)&a2 + 2) - *((float*)this + 2)));
     }
 
 
