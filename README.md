@@ -18,7 +18,7 @@ massive API, lots of packed utility interfaces, a rich event system and powerful
 
 `LiteLoader` provides a massive API, a powerful event system and a large number of encapsulated development infrastructure interfaces, providing a solid foundation for extending the Bedrock Edition **BDS** with more gameplay and functionality. With plugins, it is easy to extend the functionality of BDS, the associated development is easy to learn, and the development approach is flexible.
 
-Writing plugins in **C++，Golang，JavaScript，Lua，Python**  and other languages, which allows developers to easily extend and customize **BDS** functionality,
+Writing plugins in **C++, Golang, JavaScript, Lua, C#**  and other languages, which allows developers to easily extend and customize **BDS** functionality,
 making it easy to learn and extremely flexible.
 
 <br/>
@@ -61,19 +61,16 @@ void PluginInit()
 ```javascript
 // Register for shutdown command
 mc.listen("onServerStarted", () => {
-    const cmd = mc.newCommand("stopsvr", "close server", PermType.GameMasters);
+    const cmd = mc.newCommand("stopsvr", "close server");
     cmd.overload();
     cmd.setCallback((_cmd, ori, out, _res) => {
-        const pl = ori.player;
         out.success("stop command executed successfully");
         mc.broadcast(
-            `Player${pl.realName}Execute the stop command. The server will be shut down after 5 seconds`
+            `Player${ori.player.realName}Execute the stop command. The server will be shut down after 5 seconds`
         );
 
         // Execute stop command
-        setTimeout(() => {
-            mc.runcmd("stop");
-        }, 5000);
+        setTimeout(() => mc.runcmd("stop"), 5000);
     });
     cmd.setup();
 });
@@ -85,20 +82,20 @@ mc.listen("onServerStarted", () => {
 
 - 💻 Support for developing plugins in many different languages, Keeping the API uniform
 
-| Supported languages | `C++`，`JavaScript`，`Lua`，`Golang`，`.Net`|
+| Supported languages | `C++`, `Go`, `JavaScript`, `Lua`, `.NET`|
 | -------------------------- | ------------------------------------ |
-| **Upcoming supported  languages** | `Python`，`Ruby`，`TypeScript` |
+| **Upcoming supported languages** | `Python`, `Ruby`, `TypeScript` |
 
 - 📕 Smooth development experience with great compatibility
   - Auto-generated C++ headers, access to all `BDS` classes and functions, full toolchain support and evolving features
-  - For scripting language plugins, a multi-language code completion library, a powerful VSCode plugin, a hot-loading system ...... Many tools to help you write every line of code more efficiently
+  - For scripting language plugins, a multi-language code completion library, a powerful VSCode plugin, a hot-loading system...... Many tools to help you write every line of code more efficiently
   - When a version is updated, the API is guaranteed to be largely **backward compatible** and the plugin requires little or no code changes with the version update. With the `LiteLoader` series' unique symbol lookup technology, cross-version **auto-adaptation** is no longer a dream
 
 - 📋 Well documented and explained in detail
   - Welcome to 👉[LiteLoader documentation](https://docs.litebds.com/)👈 to see more  
 
 - 🎈 Numerous well-packaged interfaces
-  - Numerous game APIs support: players, entities, cubes, items, containers, NBTs, server systems ......
+  - Numerous game APIs support: players, entities, cubes, items, containers, NBTs, server systems......
   - Up to **50+** game events to listen to, no matter what happens,  the first to respond
 
 - 🛡 Secure, stable and versatile
@@ -107,7 +104,8 @@ mc.listen("onServerStarted", () => {
   - Supports running on Linux, MacOS platforms via **Wine**, bringing a free plugin experience to other platforms as well: write once, **share on multiple platforms**.
 
 - 🏆 Sound app ecosystem
-  - A large number of existing plugins, mature publishing platform, instantly 👉[Go to MineBBS](https://www.minebbs.com/resources/?prefix_id=67)👈 to find and download your favorite LL plugins  
+  - A large number of existing plugins, mature publishing platform, instantly 👉[Go to official forum](https://forum.litebds.com/)👈 to find and download your favorite LL plugins  
+
 - 🏃 Open Source & Community Building
   - The project is licensed under the `AGPL-3.0` open source license and will **never** be charged for or released as a commercial version.  
   - The design philosophy is **decentralised** and you can be assured of a **free** plugin loading framework!  
@@ -122,8 +120,8 @@ mc.listen("onServerStarted", () => {
 2. Unzip everything into the directory of `bedrock_server.exe`. If you are prompted with conflicting files during the decompression process, just select `Overwrite`.
 3. Ensure that the `bedrock_server.pdb` file exists.
    Run `LLPeEditor.exe` to generate the BDS with the exported symbols (`bedrock_server_mod.exe`)  
-4. When the console output `Press any key to continue. . .` , press any key to close the window
-5. Execute `bedrock_server_mod.exe` and enjoy it !
+4. When the console output `Press any key to continue . . . ` , press any key to close the window
+5. Execute `bedrock_server_mod.exe` and enjoy it!
 
 ### For Linux
 
@@ -289,7 +287,7 @@ or using it for commercial propose.
 > Do not do evil.
 
 Although we expected to build an open-source community, but forcing everything open-source will ruin this community. So
-you can write plugins based on `LiteLoader` with ANY open-source license or even don't publish your source code. but if
+you can write plugins based on `LiteLoader` with ANY open-source license or even do not publish your source code. but if
 you modified the framework, or write a new framework based on this framework, you MUST open-source it.
 
 If you want to reproduce and distribute this framework, you have to get our authorization!

@@ -13,11 +13,11 @@ QQ群: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ2群: [850517473](h
 
 ![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20%26%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLiteLoaderBDS%2Fmain%2Fdocs%2F.vuepress%2Fpublic%2Fassets%2FLL-Logo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
-`LiteLoaderBDS` 是一个非官方的 `Minecraft` 服务端插件加载器，为基岩版官方服务端`Bedrock Dedicated Server`（以下简称**BDS**）提供插件开发支持 和 插件加载服务，弥补了官方行为包开发接口长期以来存在的一些不足。
+`LiteLoaderBDS` 是一个非官方的 `Minecraft` 服务端插件加载器，为基岩版专用服务器——`Bedrock Dedicated Server`（以下简称**BDS**）提供插件开发支持 和 插件加载服务，弥补了官方行为包开发接口长期以来存在的一些不足。
 
 `LiteLoader` 提供了海量的API、强大的事件系统以及大量封装的开发基础设施接口，为拓展基岩版**BDS**的更多玩法和功能提供了坚实的基础。通过插件，可以很容易地拓展BDS的功能，相关开发易于学习，且开发方式比较灵活。
 
-项目支持使用 **C++，Golang，JavaScript，Lua，Python** 等各种语言编写插件。同时，插件不需要随着**BDS**版本更新而不断修改代码，仅需本项目在底层适配更新即可，给插件开发与维护带来了很大的便利。  
+项目支持使用 **C++、Golang、JavaScript、Lua、C#** 等各种语言编写插件。同时，插件不需要随着**BDS**版本更新而不断修改代码，仅需本项目在底层适配更新即可，给插件开发与维护带来了很大的便利。  
 
 ## 🎁 第一印象
 
@@ -55,17 +55,14 @@ void PluginInit()
 ```javascript
 // 注册关服命令
 mc.listen("onServerStarted", () => {
-    const cmd = mc.newCommand("stopsvr", "关闭服务器", PermType.GameMasters);
+    const cmd = mc.newCommand("stopsvr", "关闭服务器");
     cmd.overload();
     cmd.setCallback((_cmd, ori, out, _res) => {
-        const pl = ori.player;
         out.success("关服命令执行成功");
-        mc.broadcast(`玩家${pl.realName}执行了关服命令。服务器将在5秒之后关闭`);
+        mc.broadcast(`玩家${ori.player.realName}执行了关服命令。服务器将在5秒之后关闭`);
 
         //执行关服命令
-        setTimeout(() => {
-            mc.runcmd("stop");
-        }, 5000);
+        setTimeout(() => mc.runcmd("stop"), 5000);
     });
     cmd.setup();
 });
@@ -77,13 +74,13 @@ mc.listen("onServerStarted", () => {
 
 - 💻 支持多种不同的语言开发插件，保持接口统一
 
-| 目前已支持的插件开发语言   | `C++`，`Golang`，`JavaScript`，`Lua` ，`.Net`|
+| 目前已支持的插件开发语言   | `C++`、`Go`、`JavaScript`、`Lua` 、`.NET`|
 | -------------------------- | ------------------------------------ |
-| **即将支持的插件开发语言** | `Python`，`Ruby`，`TypeScript` |
+| **即将支持的插件开发语言** | `Python`、`Ruby`、`TypeScript` |
 
 - 📕 开发体验流畅，兼容性强
   - 拥有自动生成的C++头文件，可以访问`BDS`所有的类和功能，拥有完善的工具链支持，且功能不断发展中
-  - 对于脚本语言插件，拥有多语言代码补全库、强大的VSCode插件、热加载系统 ......众多辅助工具，帮你更有效地写好每一行代码
+  - 对于脚本语言插件，拥有多语言代码补全库、强大的VSCode插件、热加载系统……众多辅助工具，帮你更有效地写好每一行代码
   - 版本更新时，将保证 API 基本 **向下兼容**，插件几乎不需要随版本更新而修改代码。`LiteLoader`系列独有符号查找技术，跨版本 **自动适配** 不再是梦想
 
 - 📋 开发文档完善，讲解详细
@@ -99,7 +96,8 @@ mc.listen("onServerStarted", () => {
   - 支持通过 **Wine** 在Linux、MacOS平台运行，给其他平台也带来自由的插件体验：一次编写，**多平台共享**
 
 - 🏆 应用生态健全
-  - 海量现有插件，成熟发布平台，即刻 👉[前往MineBBS](https://www.minebbs.com/resources/?prefix_id=67)👈 查找并下载你喜欢的 LL 插件  
+  - 海量现有插件，成熟发布平台，即刻 👉[前往官方论坛](https://forum.litebds.com/)👈 查找并下载你喜欢的 LL 插件  
+
 - 🏃 开源 & 社区共建
   - 项目采用 `AGPL-3.0` 开源许可证，**永远不会** 收费或者推出商业版。  
   - 设计思想采取 **去中心化** 设计，放心享受 **自由** 的插件加载框架！  
@@ -114,7 +112,7 @@ mc.listen("onServerStarted", () => {
 2. 将压缩文件内的所有内容解压到 `bedrock_server.exe` 所在的目录。如果解压的过程中提示文件有冲突，选择覆盖即可。
 3. 保证 `bedrock_server.pdb`文件存在。  
    运行 `LLPeEditor.exe` 来生成具有导出符号的BDS（`bedrock_server_mod.exe`）  
-4. 当控制台输出 `请按任意键继续. . .` 时，按任意键关闭窗口
+4. 当控制台输出 `请按任意键继续. . . ` 时，按任意键关闭窗口
 3. 运行 `bedrock_server_mod.exe` 开服
 
 ### 对于 Linux 用户
@@ -193,7 +191,7 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 
 使用 Moxicat 开发的 LiteLoader 开发辅助插件  
 帮助你更好地完成**脚本插件**的开发!  
-代码提示、自动补全、自动文档、错误提醒、运行时调试......
+代码提示、自动补全、自动文档、错误提醒、运行时调试……
 只有你想不到，没有他做不到  
 用过绝不后悔的顶级插件开发体验!
 
