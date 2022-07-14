@@ -24,7 +24,10 @@ Each device information object contains some fixed object properties. for a spec
 | dv.ip            | The IP address of the player's device | `String`  |
 | dv.avgPing       | Average network latency for players (ms) | `Integer` |
 | dv.avgPacketLoss | Player's average network packet loss rate (%) | `Float`   |
+| dv.lastPing      | Network latency for players (ms) | `Integer` |
+| dv.lastPacketLoss| Player's network packet loss rate (%) | `Float`   |
 | dv.os            | The OS type of the player's device | `String`  |
+| dv.serverAddress | The player's connection address | `String`  |
 | dv.clientId      | ID of the player client | `String`  |
 
 These object properties are read-only and cannot be modified 
@@ -33,18 +36,18 @@ Among them, the operating system type attribute returns a string that records th
 
 | dv.os           | Device Operating System|
 | --------------- | --------------------- |
-| `Android`       | Android (Mobile phone)       |
-| `iOS`           | Apple iOS (Mobile phone)          |
-| `OSX`           | Apple OSX (Computer)          |
-| `Amazon`        | Amazon                |
-| `GearVR`        | GearVR                |
-| `Hololens`      | Hololens              |
-| `Windows10`     | Windows 10 (Computer)         |
-| `Win32`         | Win32 (Education Edition?) (Computer)  |
-| `TVOS`          | TVOS                  |
-| `PlayStation`   | PlayStation Host       |
-| `Nintendo`      | Nintendo Host         |
-| `Xbox`          | Xbox Host             |
-| `WindowsPhone`  | Windows Phone     |
+| `Android`       | Google Android (Mobile phone)       |
+| `iOS`           | Apple iOS (Mobile phone) or iPadOS         |
+| `macOS`         | Apple macOS (Computer)          |
+| `FireOS`        | Amazon FireOS         |
+| `GearVR`        | Samsung GearVR                |
+| `HoloLens`      | Microsoft Hololens              |
+| `UWP`           | Microsoft Windows (Computer)         |
+| `Win32`         | Microsoft Win32 (Education Edition?) (Computer)  |
+| `tvOS`          | Apple tvOS                  |
+| `PlayStation`   | Sony PlayStation Host       |
+| `Switch`        | Nintendo Switch Host         |
+| `Xbox`          | Microsoft Xbox Host             |
+| `WindowsMobile` | Windows Mobile     |
+| `Hidden`        | Hidden System              |
 | `Unknown`       | Unknown System              |
-

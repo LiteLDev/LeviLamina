@@ -87,13 +87,16 @@ Each player object contains some member functions (member methods) that can be e
 - Return value: Whether the player is an OP.
 - Return value type: `Boolean`  
 
-```Javascript
-[JS]
-// For a `Player` object pl
-var open = pl.isOP();
-[Lua]
+<br>
 
-```
+#### Determine if the Player Is Loading  
+
+`pl.isLoading()`
+
+- Return value: Whether the player is loading.
+- Return value type: `Boolean`  
+
+<br>
 
 #### Disconnect Player  
 
@@ -107,15 +110,7 @@ var open = pl.isOP();
 - Return value: Whether the connection was successfully disconnected.
 - Return value type: `Boolean`
 
-```Javascript
-[JS]
-//For a `Player` object pl
-pl.kick();
-```
-```Lua
-[Lua]
-pl:kick()
-```
+<br>
 
 #### Send a Text Message to the Player  
 
@@ -142,13 +137,7 @@ pl:kick()
 
 - Return value type: `Boolean`
 
-```Javascript
-[JS]
-//For a `Player` object pl
-pl.tell("Welcome back ~ ",5);
-[Lua]
-
-```
+<br>
 
 #### Broadcast a Text Message to All Players  
 
@@ -174,12 +163,7 @@ pl.tell("Welcome back ~ ",5);
 
 - Return value type: `Boolean`
 
-```Javascript
-[JS]
-mc.broadcast("Hello everyone ~ ");
-[Lua]
-
-```
+<br>
 
 #### Display a toast to the top of the screen
 
@@ -196,13 +180,7 @@ mc.broadcast("Hello everyone ~ ");
 - Return value: Whether the message was sent successfully.
 - Return value type: `Boolean`
 
-```Javascript
-[JS]
-pl.sendToast("Hello","everyone ~");
-[Lua]
-
-```
-
+<br>
 
 #### Execute a Command as a Player 
 
@@ -214,13 +192,7 @@ pl.sendToast("Hello","everyone ~");
 - Return value: Whether the execution was successful.
 - Return value type:  `Boolean`   
 
-```Javascript
-[JS]
-//For a `Player` object pl
-var open = pl.runcmd("tp ~ ~+50 ~");
-[Lua]
-
-```
+<br>
 
 #### Speak as a Player
 
@@ -232,6 +204,7 @@ var open = pl.runcmd("tp ~ ~+50 ~");
 - Return value: Whether the execution was successful.
 - Return value type:  `Boolean`   
 
+<br>
 
 #### Speak to a Player as a Player
 
@@ -258,13 +231,7 @@ var open = pl.runcmd("tp ~ ~+50 ~");
 - Return value: Whether the teleport was successful or not.
 - Return value type: `Boolean`
 
-```Javascript
-[JS]
-//For a `Player` object pl, a coordinate object pos
-pl.teleport(pos);
-[Lua]
-
-```
+<br>
 
 #### Kill the Player  
 
@@ -273,13 +240,7 @@ pl.teleport(pos);
 - Return value: Whether the execution was successful.
 - Return value type: `Boolean`
 
-```Javascript
-[JS]
-//For a `Player` object pl
-pl.kill();
-[Lua]
-
-```
+<br>
 
 #### Damage the Player
 
@@ -317,13 +278,7 @@ Note that the damage dealt here is real damage and cannot be reduced by protecti
 - Return value: WHether the rename was successful.
 - Return value type: `Boolean`
 
-```Javascript
-[JS]
-//For a `Player` object pl
-pl.rename("newname");
-[Lua]
-
-```
+<br>
 
 #### Get the Block the Player Is Currently Standing On
 
@@ -331,6 +286,15 @@ pl.rename("newname");
 
 - Return value: The `Block` object currently standing on.
 - Return value type: `Block`
+
+<br>
+
+#### Get the Player’s Last Died Coordinates  
+
+`pl.getLastDeathPos()`
+
+- Return value: Last died point coordinates
+- Return value type: `IntPos`
 
 <br>
 
@@ -398,6 +362,7 @@ For more usage of container objects, please refer to [Container Object API Docum
 - Return value type: `Container`
 
 For more usage of container objects, please refer to [Container Object API Documentation](/en_US/Development/GameAPI/Container.md)
+
 <br>
 
 #### Get the Player’s Respawn Coordinates  
@@ -490,13 +455,7 @@ After modifying the player's items, in order for the client to take effect, it i
 
 - Return value type: `Boolean`
 
-```Javascript
-[JS]
-//For a `Player` object pl
-pl.setPermLevel(1);
-[Lua]
-
-```
+<br>
 
 #### Modify Player Game Mode
 
@@ -509,13 +468,7 @@ pl.setPermLevel(1);
 - Return value: Whether the modification was successful.
 - Return value type: `Boolean`
 
-```Javascript
-[JS]
-//For a `Player` object pl
-pl.setGameMode(1);
-[Lua]
-
-```
+<br>
 
 #### Increase Player Experience Level 
 
@@ -527,31 +480,40 @@ pl.setGameMode(1);
 - Return value: Whether the setting was successful.
 - Return value type: `Boolean`
 
-```Javascript
-[JS]
-//For a `Player` object pl
-pl.addLevel(6);
-[Lua]
+<br>
 
-```
+#### Decreases Player Experience Level
+
+`pl.reduceLevel(count)`
+
+- Parameters: 
+  - count : `Integer`  
+    The number of experience levels to reduce.
+- Return value: Whether the setting was successful.
+- Return value type: `Boolean`
+
+<br>
 
 #### Get Player Experience Level 
 
 `pl.getLevel()`
 
-- Return value: The player's experience level
+- Return value: The player's experience level.
 - Return value type: `Integer`
 
-```JavaScript
-[Js]
-//For a `Player` object pl
-pl.getLevel();
-```
-```Lua
-[Lua]
---For a `Player` object pl
-pl.getLevel()
-```
+<br>
+
+#### Set Player Experience Level
+
+`pl.setLevel(count)`
+
+- Parameters
+  - count : `Integer`  
+    The number of experience levels to set.
+- Return value: Whether the setting was successful.
+- Return value type: `Boolean`
+
+<br>
 
 #### Reset Player Experience
 
@@ -560,16 +522,73 @@ pl.getLevel()
 - Return value: Whether the setting was successful.
 - Return value type: `Boolean`
 
-```Javascript
-[JS]
-//For a `Player` object pl
-pl.resetLevel();
-```
-```Lua
-[Lua]
---For a `Player` object pl
-pl:resetLevel()
-```
+<br>
+
+#### Get Player Current Experience Points 
+
+`pl.getCurrentExperience()`
+
+- Return value: The player's current experience points.
+- Return value type: `Integer`
+
+<br>
+
+#### Set Player Current Experience Points
+
+`pl.setCurrentExperience(count)`
+
+- Parameters
+  - count : `Integer`  
+    The number of experience points to set.
+- Return value: Whether the setting was successful.
+- Return value type: `Boolean`
+
+<br>
+
+#### Get Player Total Experience Points
+
+`pl.getTotalExperience()`
+
+- Return value: The player's total experience points.
+- Return value type: `Integer`
+
+<br>
+
+#### Set Player Total Experience Points
+
+`pl.getTotalExperience(count)`
+
+- Parameters
+  - count : `Integer`  
+    The number of experience points to set.
+- Return value: Whether the setting was successful.
+- Return value type: `Boolean`
+
+<br>
+
+#### Increase Player Experience Points
+
+`pl.addExperience(count)`
+
+- Parameters: 
+  - count : `Integer`
+    The amount of experience points to give to the player.
+- Return value: Whether the setting was successful.
+- Return value type: `Boolean`
+
+<br>
+
+#### Decreases Player Experience Points
+
+`pl.reduceExperience(count)`
+
+- Parameters: 
+  - count : `Integer`  
+    The number of experience points to reduce.
+- Return value: Whether the setting was successful.
+- Return value type: `Boolean`
+
+<br>
 
 #### Get the Experience Points Needed for Players to Level Up
 
@@ -580,37 +599,7 @@ pl:resetLevel()
 
 Note that this method ignores the experience value that exceeds the level when calculating.
 
-```Javascript
-[JS]
-//For a `Player` object pl
-pl.getXpNeededForNextLevel();
-```
-```Lua
-[Lua]
---For a `Player` object pl
-pl.getXpNeededForNextLevel()
-```
-
-#### Increase Player Experience
-
-`pl.addExperience(count)`
-
-- Parameters: 
-  - count : `Integer`
-    The amount of experience points to give to the player.
-- Return value: Whether the setting was successful.
-- Return value type: `Boolean`
-
-```Javascript
-[JS]
-//For a `Player` object pl
-pl.addExperience(6);
-```
-```Lua
-[Lua]
---For a `Player` object pl
-pl:addExperience(6)
-```
+<br>
 
 #### Send the Player to the Specified Server  
 
@@ -625,13 +614,7 @@ pl:addExperience(6)
 - Return value: Whether the transfer was successful or not.
 - Return value type: `Boolean` 
 
-```Javascript
-[JS]
-//For a `Player` object pl
-pl.transServer("123.45.67.89",23333);
-[Lua]
-
-```
+<br>
 
 #### Crash the Player Client
 
@@ -640,16 +623,7 @@ pl.transServer("123.45.67.89",23333);
 - Return value: Whether the execution was successful.
 - Return value type: `Boolean` 
 
-```Javascript
-//For a `Player` object pl
-[JS]
-pl.crash();
-```
-```Lua
-[Lua]
-pl:crash()
-
-```
+<br>
 
 #### Set Player Custom Sidebar
 
@@ -669,13 +643,7 @@ pl:crash()
 
 - Return value type: `Boolean`
 
-```Javascript
-[JS]
-//For a `Player` object pl
-pl.setSidebar("title",{"aaaa":3,"bbb":12,"cc":7});
-[Lua]
-
-```
+<br>
 
 #### Remove Player Customization Sidebar 
 
@@ -684,13 +652,7 @@ pl.setSidebar("title",{"aaaa":3,"bbb":12,"cc":7});
 - Return value: Whether the removal was successful.
 - Return value type: `Boolean`
 
-```Javascript
-[JS]
-//For a `Player` object pl
-pl.removeSidebar();
-[Lua]
-
-```
+<br>
 
 #### Sets the Custom Boss Health Bar That the Player Sees  
 
@@ -708,13 +670,7 @@ pl.removeSidebar();
 - Return value: Whether the setting was successful or not.
 - Return value type: `Boolean`
 
-```Javascript
-[JS]
-//For a `Player` object pl
-pl.setBossBar(1145141919,"Hello ~ ",80,0);
-[Lua]
-
-```
+<br>
 
 #### Remove the Player’s Custom Boss Health Bar  
 
@@ -726,13 +682,7 @@ pl.setBossBar(1145141919,"Hello ~ ",80,0);
 - Return value: Whether the removal was successful.
 - Return value type: `Boolean`
 
-```Javascript
-[JS]
-//For a `Player` object pl
-pl.removeBossBar(1145141919);
-[Lua]
-
-```
+<br>
 
 #### Get the Player's NBT Object
 
@@ -822,14 +772,14 @@ Each item in the list of key-value pairs looks like: `"mayfly": 1` etc.
 Each item in the array is a key-value pair list object `Object`, and the Attributes object contains several contents such as `Base` `Current` `DefaultMax` `DefaultMin` `Max` `Min` `Name` by default. Its content looks like:
 ```JSON
 {
-        "Base": 0, 
-        "Current": 0, 
-        "DefaultMax": 1024, 
-        "DefaultMin": -1024, 
-        "Max": 1024, 
-        "Min": -1024, 
-        "Name": "minecraft:luck"
-}, 
+    "Base": 0, 
+    "Current": 0, 
+    "DefaultMax": 1024, 
+    "DefaultMin": -1024, 
+    "Max": 1024, 
+    "Min": -1024, 
+    "Name": "minecraft:luck"
+}
 ```
 
 (Here it's displayed visually using JSON format)
