@@ -104,7 +104,7 @@ public:
         return (*this - b).length();
     }
 
-    inline float distanceToSqr(class Vec3 const& b) const {
+    inline float distanceToSqr(Vec3 const& b) const {
         return (*this - b).lengthSqr();
     }
 
