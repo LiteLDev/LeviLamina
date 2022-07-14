@@ -1030,13 +1030,13 @@ TClasslessInstanceHook(void, "?sendPlayerMove@PlayerEventCoordinator@@QEAAXAEAVP
 {
     IF_LISTENED(PlayerMoveEvent)
     {
-       // if (pl->isMoving())
-       // {
+        if (pl->isMoving())
+        {
             PlayerMoveEvent ev{};
             ev.mPlayer = pl;
             ev.mPos = pl->getPosition();
             ev.call();
-       // }
+        }
     }
     IF_LISTENED_END(PlayerMoveEvent)
     return original(this, pl);
