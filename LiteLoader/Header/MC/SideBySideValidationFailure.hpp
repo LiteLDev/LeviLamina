@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct SideBySideValidationFailure {
+class SideBySideValidationFailure {
 
 #define AFTER_EXTRA
 
@@ -15,16 +15,18 @@ struct SideBySideValidationFailure {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIDEBYSIDEVALIDATIONFAILURE
 public:
-    struct SideBySideValidationFailure& operator=(struct SideBySideValidationFailure const &) = delete;
-    SideBySideValidationFailure(struct SideBySideValidationFailure const &) = delete;
+    class SideBySideValidationFailure& operator=(class SideBySideValidationFailure const &) = delete;
+    SideBySideValidationFailure(class SideBySideValidationFailure const &) = delete;
     SideBySideValidationFailure() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDEVALIDATIONFAILURE
+#endif
+    MCAPI std::string generateMessage(bool, bool, bool, std::string const &, class Vec3 const &) const;
     MCAPI ~SideBySideValidationFailure();
 
-protected:
 
-private:
 
 };

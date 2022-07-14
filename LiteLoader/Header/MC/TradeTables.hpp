@@ -32,7 +32,7 @@ public:
     MCAPI ~TradeTables();
 
 //private:
-    MCAPI void _parseAndStoreTradeTable(class ResourcePackManager *, class Core::Path const &);
+    MCAPI void _parseAndStoreTradeTable(class ItemRegistryRef, class ResourcePackManager *, class Core::Path const &);
 
 
 private:

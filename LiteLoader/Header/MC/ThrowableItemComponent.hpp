@@ -33,7 +33,6 @@ public:
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THROWABLEITEMCOMPONENT
 #endif
-    MCAPI ThrowableItemComponent(class ComponentItem *);
     MCAPI bool releaseUsing(class ItemStack &, class Player *, int) const;
     MCAPI bool use(class ItemStack &, class Player &) const;
     MCAPI static void bindType();

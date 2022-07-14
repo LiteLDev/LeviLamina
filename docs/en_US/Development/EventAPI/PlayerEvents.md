@@ -187,7 +187,7 @@ Reminder: This event does not fire when the player returns to the Overworld from
 #### `"onUseItemOn"` - Player Use Item on Block Event (Right-Click)
 
 - Listener function prototype 
-  `function(player,item,block,side)`
+  `function(player,item,block,side,pos)`
 - Parameters: 
   - player : `Player`  
     The player that used the item.
@@ -198,6 +198,9 @@ Reminder: This event does not fire when the player returns to the Overworld from
   - side : `Number`  
     The face of the object that was clicked.  
     The faces: `0`-Down `1`-Up `2`-North `3`-South `4`-West `5`-East
+  - pos : `FloatPos`
+    The position that was right-clicked.
+
 - Intercept events: function returns `false`
 
 Note: Win10 client right-clicking on the player will trigger this event on the server multiple times in a row.
@@ -400,21 +403,6 @@ There are many different combinations of old item objects and new item objects, 
 - Item Increase Stack: Old Item Object's `type` == new item object's `type`, old item's `count` < new item's `count`.
 - Item Reduce Stack: Old Item Object's `type` == new item object's `type`, old item's `count` > new item's `count`.
 Replacement Item: Old Item Object's `type` does not equal the new item's `type`, and neither item stack is empty.
-
-<br>
-
-#### `"onMove"` - Player Move Event
-
-- Listener function prototype 
-  `function(player,pos)`
-- Parameters: 
-  - player : `Player`  
-    The player that is moving.
-  - pos : `FloatPos`  
-    The current position of the player.
-- Intercept event: cannot be intercepted.
-
-Note: In the process of player movement, this event will be repeatedly triggered on the server side.
 
 <br>
 

@@ -27,9 +27,13 @@ public:
     /*0*/ virtual ~InternalTaskGroup();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual enum TaskGroupState getState() const;
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual enum TaskGroupState getState() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERNALTASKGROUP
     MCVAPI void processCoroutines();
+    MCVAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queue(struct TaskStartInfoEx<void> const &, class std::function<class TaskResult (void)> &&, class std::function<void (void)> &&);
+    MCVAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queueSync(struct TaskStartInfoEx<void> const &, class std::function<class TaskResult (void)> &&);
     MCVAPI void requeueTask(class std::shared_ptr<class BackgroundTaskBase>, bool);
     MCVAPI void taskComplete(class gsl::not_null<class BackgroundTaskBase *>);
     MCVAPI void taskRegister(class std::shared_ptr<class BackgroundTaskBase>);

@@ -31,6 +31,12 @@ public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
 
+//private:
+    MCAPI void _executeLocateBiome(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI void _executeLocateStructure(class CommandOrigin const &, class CommandOutput &) const;
+
+
+private:
 
 
 };

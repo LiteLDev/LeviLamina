@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct ItemReleaseChargeEvent {
+class ItemReleaseChargeEvent {
 
 #define AFTER_EXTRA
 
@@ -15,16 +15,17 @@ struct ItemReleaseChargeEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMRELEASECHARGEEVENT
 public:
-    struct ItemReleaseChargeEvent& operator=(struct ItemReleaseChargeEvent const &) = delete;
-    ItemReleaseChargeEvent(struct ItemReleaseChargeEvent const &) = delete;
+    class ItemReleaseChargeEvent& operator=(class ItemReleaseChargeEvent const &) = delete;
+    ItemReleaseChargeEvent(class ItemReleaseChargeEvent const &) = delete;
     ItemReleaseChargeEvent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMRELEASECHARGEEVENT
+#endif
     MCAPI ~ItemReleaseChargeEvent();
 
-protected:
 
-private:
 
 };

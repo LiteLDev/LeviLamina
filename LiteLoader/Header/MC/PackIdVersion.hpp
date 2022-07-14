@@ -22,14 +22,13 @@ enum class PackType : uint8_t
 #undef BEFORE_EXTRA
 
 struct PackIdVersion {
+
+#define AFTER_EXTRA
+// Add Member There
 public:
     mce::UUID mUUID;
     SemVersion mVersion;
     PackType mType;
-#define AFTER_EXTRA
-// Add Member There
-public:
-    
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKIDVERSION

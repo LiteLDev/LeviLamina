@@ -11,7 +11,7 @@ QQ Group: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ Group 2: [85051
 
 ##### English | [简体中文](README_zh-cn.md)
 
-![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20%26%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLiteLoaderBDS%2Fmain%2Fdocs%2Fassets%2FLL-Logo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
+![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20%26%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLiteLoaderBDS%2Fmain%2Fdocs%2F.vuepress%2Fpublic%2Fassets%2FLL-Logo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
 `LiteLoaderBDS` is an unofficial plugin loader that provides basic API support for `Bedrock Dedicated Server`, with a
 massive API, lots of packed utility interfaces, a rich event system and powerful basic interface support.
@@ -169,20 +169,7 @@ Everything's done! Next, you can install **LiteLoader** plugins!
 2. Place all the obtained contents directly into the `plugins` directory
 3. Run `bedrock_server_mod.exe` to start the service
 
-For more **installation and usage guides**,  come to 👉[LiteLoader documentation](https://docs.litebds.com/#/en/Usage/)👈 to view
-
-<br>
-
-## 📥 Auto update
-
-From version `2.0.0`, LiteLoader has added an auto-update function.  
-If in the same BDS version, LiteLoader update will **automatically push**, and **automatically install** the next time
-the server is started.  
-The latest features, get the first time! Eliminate the trouble of repeated manual upgrades!
-
-You can use `ll upgrade` command at console to check for update manually too.
-
-<br/>
+For more **installation and usage guides**,  come to 👉[LiteLoader documentation](https://docs.litebds.com/en_US/Usage/)👈 to view
 
 ------
 
@@ -196,7 +183,7 @@ You can use `ll upgrade` command at console to check for update manually too.
 1. Compile, and select the appropriate PDB file as prompted to generate the dependency libs
 1. Copy the plugin to the plugins directory for testing
 
-For plugins development examples and guidance, please come to 👉[LiteLoader documentation](https://docs.litebds.com/#/en/Usage/)👈  
+For plugins development examples and guidance, please come to 👉[LiteLoader documentation](https://docs.litebds.com/en_US/Usage/)👈  
 If you have a revision request or need to add an API, please contact the author or post an Issue
 
 ### Developing plugins using scripting Languages
@@ -205,10 +192,8 @@ If you have a revision request or need to add an API, please contact the author 
 2. Write the code
 3. Copy the plugin to the plugins directory for testing
 
-Please come to 👉[LiteLoader documentation](https://docs.litebds.com/#/en/Development/)👈 for detailed **API documentation** and **plugin development tutorial**.  
+Please come to 👉[LiteLoader documentation](https://docs.litebds.com/en_US/Development/)👈 for detailed **API documentation** and **plugin development tutorial**.  
 If you have a revision request or need to add an API, please feel free to contact the author or post an Issue  
-
-<br>
 
 ### Example Plugins
 
@@ -216,21 +201,15 @@ If you have a revision request or need to add an API, please feel free to contac
 You can use them directly in production environments
 You can also learn plugin development methods and tips here
 
-<br>
-
 ### Development Aids - VSCode Development Aids & Complementary Libraries
 
-Use the LiteLoader development helper plugin developed by Moxicat
+Use the LiteLoader development helper plugin developed by Moxicat  
 Helps you do better with **script plugins**!  
-Code hint, auto-completion, auto-documentation, error alert, runtime debugging ....
-
-![LLScriptHelper](docs/assets/LXLDevHelper.gif)
+Code hint, auto-completion, auto-documentation, error alert, runtime debugging and so on
 
 [Click here](https://www.minebbs.com/resources/llscripthelper.2672/)
 View more description and introduction of this extension  
 VSCode extension store search `LLScriptHelper`, install **LLScriptHelper** and experience it instantly!
-
-<br>
 
 ### Development Aids - Blockly-LXL Graphical Development Kit
 
@@ -239,11 +218,8 @@ Have you ever thought that BDS plug-in development could be as easy as a puzzle?
 
 Here it is! The Blockly-LXL graphical development kit from pa733 takes the plugin development experience to a new level!
 
-![Blockly-LXL](docs/assets/BLLXL.png)
-
 [Click here](https://www.minebbs.com/resources/blockly-lxl.2671/)
 View related installation and usage instructions
-<br/>
 
 ## 🔨 Build project
 
@@ -272,7 +248,7 @@ You can use the following methods to contribute to the `LiteLoader` project
 
 ⭐⭐⭐We welcome your contributions to LiteLoader!⭐⭐⭐
 
-If you are interested in contributing to LiteLoaderBDS, feel free to come to 👉[LiteLoader documentation](https://docs.litebds.com/#/en/Maintance/)👈 to view **Project Maintenance and Support Documentation**  
+If you are interested in contributing to LiteLoaderBDS, feel free to come to 👉[LiteLoader documentation](https://docs.litebds.com/en_US/Maintenance/)👈 to view **Project Maintenance and Support Documentation**  
 
 ------
 
@@ -293,7 +269,6 @@ Project|License
 [BedrockX](https://github.com/Sysca11/BedrockX)|GPLv3 with extra restrictions&exceptions
 [ElementZero](https://github.com/Element-0/ElementZero)|GPLv3
 [ScriptX](https://github.com/Tencent/ScriptX)|Apache License Version 2.0
-[ChakraCore](https://github.com/chakra-core/ChakraCore)|MIT License
 [OpenSSL](https://github.com/openssl/openssl)|Apache-2.0 License
 [SimpleIni](https://github.com/brofield/simpleini)|MIT License
 [Nlohmann-Json](https://github.com/nlohmann/json)|MIT License

@@ -56,6 +56,7 @@ public:
     MCAPI class MobSpawnRules & setDelaySpawnChance(int);
     MCAPI class MobSpawnRules & setDifficultyRange(enum Difficulty, enum Difficulty);
     MCAPI class MobSpawnRules & setExperimentalGameplay();
+    MCAPI class MobSpawnRules & setHardcodedSpawnRuleCallback(class std::function<bool (class SpawnConditions const &, class BlockSource &)>);
     MCAPI class MobSpawnRules & setHeightRange(int, int);
     MCAPI class MobSpawnRules & setLavaSpawner();
     MCAPI class MobSpawnRules & setMobEventType(std::string const &);

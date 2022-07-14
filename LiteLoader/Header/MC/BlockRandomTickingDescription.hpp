@@ -19,10 +19,10 @@ struct BlockRandomTickingDescription {
 public:
     struct BlockRandomTickingDescription& operator=(struct BlockRandomTickingDescription const &) = delete;
     BlockRandomTickingDescription(struct BlockRandomTickingDescription const &) = delete;
+    BlockRandomTickingDescription() = delete;
 #endif
 
 public:
-    MCAPI BlockRandomTickingDescription();
 
 protected:
 

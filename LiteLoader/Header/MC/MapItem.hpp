@@ -46,10 +46,10 @@ public:
     /*101*/ virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
     /*102*/ virtual void refreshedInContainer(class ItemStackBase const &, class Level &) const;
     /*106*/ virtual void fixupCommon(class ItemStackBase &, class Level &) const;
-    /*113*/ virtual bool isSameItem(class ItemStackBase const &, class ItemStackBase const &) const;
-    /*119*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-    /*121*/ virtual class Item & setIcon(std::string const &, int);
-    /*133*/ virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
+    /*115*/ virtual bool isSameItem(class ItemStackBase const &, class ItemStackBase const &) const;
+    /*121*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /*123*/ virtual class Item & setIcon(std::string const &, int);
+    /*135*/ virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPITEM
 #endif
     MCAPI MapItem(std::string const &, short);

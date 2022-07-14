@@ -9,7 +9,6 @@
 #include <MC/ItemInstance.hpp>
 #include <MC/ItemStack.hpp>
 #include <MC/Level.hpp>
-#include <MC/LootComponent.hpp>
 #include <MC/ItemInstance.hpp>
 
 BlockInstance::BlockInstance(Block* block, BlockPos pos, int dimID)

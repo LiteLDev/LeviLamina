@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "IFeature.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class Feature {
+class Feature : public IFeature {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -26,7 +27,7 @@ public:
 public:
     /*0*/ virtual ~Feature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
-    /*2*/ virtual void __unk_vfn_2();
+    /*2*/ virtual bool isValidPlacement(std::string const &);
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATURE
 #endif

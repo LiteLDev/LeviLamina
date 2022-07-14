@@ -56,7 +56,7 @@ public:
     /*21*/ virtual class WeakRefT<struct SharePtrRefTraits<class BlockSource>> getWeakRef();
     /*22*/ virtual void addListener(class BlockSourceListener &);
     /*23*/ virtual void removeListener(class BlockSourceListener &);
-    /*24*/ virtual class gsl::span<class gsl::not_null<class Actor *>, -1> fetchEntities(class Actor const *, class AABB const &, bool);
+    /*24*/ virtual class gsl::span<class gsl::not_null<class Actor *>, -1> fetchEntities(class Actor const *, class AABB const &, bool, bool);
     /*25*/ virtual class gsl::span<class gsl::not_null<class Actor *>, -1> fetchEntities(enum ActorType, class AABB const &, class Actor const *);
     /*26*/ virtual bool setBlock(class BlockPos const &, class Block const &, int, struct ActorBlockSyncMessage const *, class Actor *);
     /*27*/ virtual short getMinHeight() const;
@@ -68,8 +68,8 @@ public:
     /*33*/ virtual class ChunkSource & getChunkSource();
     /*34*/ virtual bool isSolidBlockingBlock(class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSOURCE
-    MCVAPI class Dimension & getDimension() const;
     MCVAPI class Dimension & getDimension();
+    MCVAPI class Dimension & getDimension() const;
     MCVAPI class Dimension const & getDimensionConst() const;
 #endif
     MCAPI BlockSource(class ChunkSource &, bool, bool);
@@ -107,7 +107,7 @@ public:
     MCAPI class gsl::span<class BlockDataFetchResult<class Block> const, -1> fetchBlocksInBoxSorted(class BoundingBox const &, class std::function<bool (class Block const &)>);
     MCAPI class gsl::span<class BlockDataFetchResult<class Block> const, -1> fetchBlocksInCylinder(class BlockPos const &, unsigned int, unsigned int, class std::function<bool (class Block const &)>);
     MCAPI class gsl::span<class BlockDataFetchResult<class Block> const, -1> fetchBlocksInCylinderSorted(class BlockPos const &, unsigned int, unsigned int, class std::function<bool (class Block const &)>);
-    MCAPI class gsl::span<class gsl::not_null<class Actor *>, -1> fetchEntities(class gsl::span<class gsl::not_null<class Actor const *>, -1>, class AABB const &, bool);
+    MCAPI class gsl::span<class gsl::not_null<class Actor *>, -1> fetchEntities(class gsl::span<class gsl::not_null<class Actor const *>, -1>, class AABB const &, bool, bool);
     MCAPI std::vector<class Actor *> const & fetchEntities2(enum ActorType, class AABB const &, bool);
     MCAPI class Actor * fetchNearestEntityOfType(class Actor const *, class AABB const &, enum ActorType);
     MCAPI bool findNextTopSolidBlockAbove(class BlockPos &);
@@ -133,8 +133,8 @@ public:
     MCAPI short getHeightmap(int, int);
     MCAPI short getHeightmap(class BlockPos const &) const;
     MCAPI class BlockPos getHeightmapPos(class BlockPos const &) const;
-    MCAPI class Level & getLevel();
     MCAPI class Level & getLevel() const;
+    MCAPI class Level & getLevel();
     MCAPI class Level const & getLevelConst() const;
     MCAPI bool getNextTickUpdateForPos(class BlockPos const &, enum TickingQueueType, struct Tick &) const;
     MCAPI bool getPublicSource() const;

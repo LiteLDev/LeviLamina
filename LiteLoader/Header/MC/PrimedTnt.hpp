@@ -32,7 +32,7 @@ public:
     /*14*/ virtual ~PrimedTnt();
     /*17*/ virtual enum ActorType getOwnerEntityType();
     /*40*/ virtual void __unk_vfn_40();
-    /*43*/ virtual void teleportTo(class Vec3 const &, bool, int, int);
+    /*43*/ virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
     /*48*/ virtual void normalTick();
     /*60*/ virtual void __unk_vfn_60();
     /*67*/ virtual void __unk_vfn_67();
@@ -40,28 +40,29 @@ public:
     /*79*/ virtual float getShadowRadius() const;
     /*81*/ virtual void __unk_vfn_81();
     /*87*/ virtual void __unk_vfn_87();
-    /*93*/ virtual bool isPickable();
-    /*94*/ virtual void __unk_vfn_94();
-    /*97*/ virtual void __unk_vfn_97();
-    /*104*/ virtual void __unk_vfn_104();
-    /*106*/ virtual void __unk_vfn_106();
+    /*94*/ virtual bool isPickable();
+    /*95*/ virtual void __unk_vfn_95();
+    /*98*/ virtual void __unk_vfn_98();
+    /*105*/ virtual void __unk_vfn_105();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*170*/ virtual struct ActorUniqueID getSourceUniqueID() const;
-    /*180*/ virtual void __unk_vfn_180();
-    /*194*/ virtual void __unk_vfn_194();
-    /*219*/ virtual void __unk_vfn_219();
+    /*110*/ virtual void __unk_vfn_110();
+    /*171*/ virtual struct ActorUniqueID getSourceUniqueID() const;
+    /*181*/ virtual void __unk_vfn_181();
+    /*195*/ virtual void __unk_vfn_195();
     /*220*/ virtual void __unk_vfn_220();
-    /*245*/ virtual void __unk_vfn_245();
-    /*248*/ virtual void __unk_vfn_248();
-    /*264*/ virtual void __unk_vfn_264();
-    /*265*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /*268*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /*269*/ virtual void addAdditionalSaveData(class CompoundTag &) const;
-    /*272*/ virtual void __unk_vfn_272();
+    /*221*/ virtual void __unk_vfn_221();
+    /*246*/ virtual void __unk_vfn_246();
+    /*249*/ virtual void __unk_vfn_249();
+    /*267*/ virtual void __unk_vfn_267();
+    /*268*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    /*271*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
+    /*272*/ virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /*275*/ virtual void __unk_vfn_275();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRIMEDTNT
 #endif
     MCAPI PrimedTnt(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+    MCAPI void postNormalTick();
 
 
 

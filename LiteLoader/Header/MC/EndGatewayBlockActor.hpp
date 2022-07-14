@@ -36,10 +36,11 @@ public:
     /*18*/ virtual bool hasAlphaLayer() const;
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
-    /*31*/ virtual void __unk_vfn_31();
+    /*30*/ virtual void __unk_vfn_30();
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
-    /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
+    /*34*/ virtual void __unk_vfn_34();
+    /*35*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDGATEWAYBLOCKACTOR
 #endif
     MCAPI EndGatewayBlockActor(class BlockPos const &);

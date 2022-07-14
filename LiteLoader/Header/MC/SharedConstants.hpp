@@ -22,6 +22,7 @@ namespace SharedConstants {
     MCAPI extern enum LevelChunkFormat const CurrentLevelChunkFormat;
     MCAPI extern enum StorageVersion const CurrentStorageVersion;
     MCAPI extern enum SubChunkFormat const CurrentSubChunkFormat;
+    MCAPI extern bool const DevInitiallyMuteMusic;
     MCAPI extern int const EduDiscoveryProtocolVersion;
     MCAPI extern bool const IsAnyBeta;
     MCAPI extern bool const IsBeta;

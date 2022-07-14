@@ -13,6 +13,5 @@ namespace ServerPlayerMovementSystemUtils {
 
 #undef AFTER_EXTRA
     MCAPI void _handlePlayerAuthInputPacket(class PlayerAuthInputPacket const &, class gsl::not_null<class ServerPlayer *>);
-    MCAPI void _tickPlayerMovement(class ViewedEntityContextT<class StrictEntityContext, class FlagComponent<struct ActorMovementTickNeededFlag> const, class FlagComponent<struct PlayerComponentFlag> const, struct ServerPlayerCurrentMovementComponent const, class ActorOwnerComponent> &);
 
 };

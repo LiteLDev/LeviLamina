@@ -93,6 +93,7 @@ public:
     MCAPI class std::unordered_map<struct ActorUniqueID, class WeakEntityRef, struct std::hash<struct ActorUniqueID>, struct std::equal_to<struct ActorUniqueID>, class std::allocator<struct std::pair<struct ActorUniqueID const, class WeakEntityRef>>> & getEntityIdMap();
     MCAPI class std::unordered_map<struct ActorUniqueID, class WeakEntityRef, struct std::hash<struct ActorUniqueID>, struct std::equal_to<struct ActorUniqueID>, class std::allocator<struct std::pair<struct ActorUniqueID const, class WeakEntityRef>>> const & getEntityIdMapConst() const;
     MCAPI class FeatureTerrainAdjustments & getFeatureTerrainAdjustments();
+    MCAPI class GameEventDispatcher * getGameEventDispatcher() const;
     MCAPI short getHeight() const;
     MCAPI unsigned short getHeightInSubchunks() const;
     MCAPI class DimensionHeightRange const & getHeightRange() const;
@@ -119,6 +120,7 @@ public:
     MCAPI bool isSubChunkHeightWithinRange(short const &) const;
     MCAPI bool isUltraWarm() const;
     MCAPI void onStaticTickingAreaAdded(std::string const &);
+    MCAPI void registerDisplayEntity(class WeakRefT<struct EntityRefTraits>);
     MCAPI void registerEntity(struct ActorUniqueID const &, class WeakRefT<struct EntityRefTraits>);
     MCAPI void removeActorByID(struct ActorUniqueID const &);
     MCAPI void removeWither(struct ActorUniqueID const &);

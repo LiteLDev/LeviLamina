@@ -26,6 +26,8 @@ struct NetworkStatus {
     double unk24;         //24
     double unk32;         //32
     double unk40;         //40
+    int unk48;            //48
+    bool unk52;           //52
 };
 
 #undef AFTER_EXTRA

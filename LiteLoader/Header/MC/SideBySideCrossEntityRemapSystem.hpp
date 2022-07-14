@@ -24,7 +24,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDECROSSENTITYREMAPSYSTEM
 #endif
-    MCAPI static void _remapContext(class StrictEntityContext &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct UsesSideBySideComparisonComponent const> const &);
+    MCAPI static void _remapContext(class StrictEntityContext &, struct SideBySideRemappingComponent const &);
 
 //private:
     MCAPI static void _removeNullStrictEntityContexts(std::vector<class StrictEntityContext> &);

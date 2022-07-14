@@ -28,7 +28,6 @@ public:
 #endif
     MCAPI static struct TickingSystemWithInfo createBase();
     MCAPI static struct TickingSystemWithInfo createInputPacketDependentFilter();
-    MCAPI static struct TickingSystemWithInfo createSideBySide();
 
 
 

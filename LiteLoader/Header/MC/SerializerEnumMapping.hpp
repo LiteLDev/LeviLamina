@@ -28,6 +28,8 @@ public:
 #endif
     MCAPI bool lookup(std::string const &, __int64 &) const;
     MCAPI bool lookup(__int64, std::string &) const;
+    MCAPI class SerializerEnumMapping & operator=(class SerializerEnumMapping &&);
+    MCAPI std::string toString() const;
 
 
 

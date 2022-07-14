@@ -33,29 +33,29 @@ public:
     /*67*/ virtual void __unk_vfn_67();
     /*81*/ virtual void __unk_vfn_81();
     /*87*/ virtual void __unk_vfn_87();
-    /*94*/ virtual void __unk_vfn_94();
-    /*97*/ virtual void __unk_vfn_97();
-    /*104*/ virtual void __unk_vfn_104();
-    /*106*/ virtual void __unk_vfn_106();
+    /*95*/ virtual void __unk_vfn_95();
+    /*98*/ virtual void __unk_vfn_98();
+    /*105*/ virtual void __unk_vfn_105();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*132*/ virtual enum LevelSoundEvent getAmbientSound() const;
-    /*180*/ virtual void __unk_vfn_180();
-    /*194*/ virtual void __unk_vfn_194();
-    /*219*/ virtual void __unk_vfn_219();
+    /*110*/ virtual void __unk_vfn_110();
+    /*133*/ virtual enum LevelSoundEvent getAmbientSound() const;
+    /*181*/ virtual void __unk_vfn_181();
+    /*195*/ virtual void __unk_vfn_195();
     /*220*/ virtual void __unk_vfn_220();
-    /*245*/ virtual void __unk_vfn_245();
-    /*248*/ virtual void __unk_vfn_248();
-    /*264*/ virtual void __unk_vfn_264();
-    /*268*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /*272*/ virtual void __unk_vfn_272();
-    /*280*/ virtual void _onSizeUpdated();
-    /*281*/ virtual void __unk_vfn_281();
-    /*310*/ virtual void __unk_vfn_310();
-    /*314*/ virtual void __unk_vfn_314();
-    /*343*/ virtual void setTransitioningSitting(bool);
-    /*348*/ virtual void __unk_vfn_348();
-    /*362*/ virtual void __unk_vfn_362();
+    /*221*/ virtual void __unk_vfn_221();
+    /*246*/ virtual void __unk_vfn_246();
+    /*249*/ virtual void __unk_vfn_249();
+    /*267*/ virtual void __unk_vfn_267();
+    /*271*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
+    /*275*/ virtual void __unk_vfn_275();
+    /*283*/ virtual void _onSizeUpdated();
+    /*284*/ virtual void __unk_vfn_284();
+    /*312*/ virtual void __unk_vfn_312();
+    /*316*/ virtual void __unk_vfn_316();
+    /*345*/ virtual void setTransitioningSitting(bool);
+    /*350*/ virtual void __unk_vfn_350();
+    /*364*/ virtual void __unk_vfn_364();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PANDA
 #endif
     MCAPI Panda(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
@@ -63,6 +63,7 @@ public:
     MCAPI float getSitAmount(float) const;
     MCAPI int getSneezeCounter() const;
     MCAPI int getUnhappyCounter() const;
+    MCAPI void postNormalTick();
 
 
 

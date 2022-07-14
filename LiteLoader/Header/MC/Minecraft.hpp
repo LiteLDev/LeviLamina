@@ -42,6 +42,7 @@ public:
     MCAPI void configureGameTest(class Level &, class Experiments const &);
     MCAPI void disconnectClient(class NetworkIdentifier const &, std::string const &);
     MCAPI class MinecraftCommands & getCommands();
+    MCAPI class Bedrock::NonOwnerPointer<class Editor::IEditorManager> getEditorManager();
     MCAPI class GameModuleServer & getGameModuleServer();
     MCAPI class optional_ref<class MinecraftGameTest> getGameTest();
     MCAPI double getLastTimestep();

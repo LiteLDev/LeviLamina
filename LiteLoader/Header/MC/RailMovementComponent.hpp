@@ -27,7 +27,7 @@ public:
 #endif
     MCAPI RailMovementComponent();
     MCAPI void comeOffTrack(class Actor &);
-    MCAPI void moveAlongTrack(class Actor &, class Block const &, class BlockPos const &);
+    MCAPI void moveAlongTrack(class Actor &, class BlockPos const &);
     MCAPI bool operator==(class RailMovementComponent const &) const;
 
 

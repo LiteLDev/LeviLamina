@@ -28,30 +28,30 @@ public:
     /*0*/ virtual ~HoneyBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /*19*/ virtual void __unk_vfn_19();
-    /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
-    /*31*/ virtual void __unk_vfn_31();
+    /*30*/ virtual void __unk_vfn_30();
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
-    /*35*/ virtual void __unk_vfn_35();
+    /*34*/ virtual void __unk_vfn_34();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
     /*38*/ virtual void __unk_vfn_38();
     /*39*/ virtual void __unk_vfn_39();
     /*40*/ virtual void __unk_vfn_40();
     /*41*/ virtual void __unk_vfn_41();
-    /*43*/ virtual void __unk_vfn_43();
+    /*42*/ virtual void __unk_vfn_42();
     /*44*/ virtual void __unk_vfn_44();
     /*45*/ virtual void __unk_vfn_45();
     /*46*/ virtual void __unk_vfn_46();
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
-    /*58*/ virtual void __unk_vfn_58();
+    /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
-    /*72*/ virtual void __unk_vfn_72();
-    /*79*/ virtual void __unk_vfn_79();
-    /*104*/ virtual void __unk_vfn_104();
-    /*112*/ virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
+    /*60*/ virtual void __unk_vfn_60();
+    /*73*/ virtual void __unk_vfn_73();
+    /*80*/ virtual void __unk_vfn_80();
+    /*105*/ virtual void __unk_vfn_105();
+    /*113*/ virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();
     /*127*/ virtual void __unk_vfn_127();
@@ -60,6 +60,7 @@ public:
     /*148*/ virtual void __unk_vfn_148();
     /*165*/ virtual void __unk_vfn_165();
     /*177*/ virtual void onStandOn(class EntityContext &, class BlockPos const &) const;
+    /*178*/ virtual void __unk_vfn_178();
     /*179*/ virtual void __unk_vfn_179();
     /*180*/ virtual void __unk_vfn_180();
     /*182*/ virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
@@ -69,6 +70,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HONEYBLOCK
 #endif
     MCAPI HoneyBlock(std::string const &, int, class Material const &);
+    MCAPI static void triggerSlidingDownEffects(class Actor &, class BlockPos const &, class Block const &);
 
 
 

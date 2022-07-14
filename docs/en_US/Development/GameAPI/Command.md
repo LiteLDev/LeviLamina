@@ -69,10 +69,9 @@ An interface for registering custom commands is provided here. By docking with t
     | Execution Permission   | Meaning                     |
     | ---------------------- | -------------------------- |
     | `PermType.Any`         | Anyone can execute the command.   |
-    | `PermType.GameMasters` | Only the OP can execute the command.     |
+    | `PermType.GameMasters` | Only the OP can execute the command.(Default value)|
     | `PermType.Console`     | Only the console can execute the command. |
 
-    Defaults to `PermType.Any`, indicating that anyone can execute the command.
   - flag : `Integer`  
     (Optional parameter) Default value is `0x80`   
     At present, you can directly press this input, and related modifications will be made in the future.

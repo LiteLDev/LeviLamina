@@ -11,7 +11,7 @@ QQ群: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ2群: [850517473](h
 
 ##### [English](README.md) | 简体中文
 
-![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20%26%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLiteLoaderBDS%2Fmain%2Fdocs%2Fassets%2FLL-Logo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
+![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20%26%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLiteLoaderBDS%2Fmain%2Fdocs%2F.vuepress%2Fpublic%2Fassets%2FLL-Logo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
 `LiteLoaderBDS` 是一个非官方的 `Minecraft` 服务端插件加载器，为基岩版官方服务端`Bedrock Dedicated Server`（以下简称**BDS**）提供插件开发支持 和 插件加载服务，弥补了官方行为包开发接口长期以来存在的一些不足。
 
@@ -157,17 +157,7 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 2. 将所有获取到的内容直接放入`plugins`目录
 3. 运行`bedrock_server_mod.exe` 开服
 
-更多**安装与使用指南** ，请👉[移步 LiteLoader 文档站](https://docs.litebds.com/#/zh_CN/Usage/)👈查看
-
-## 📥 自动更新
-
-从`2.0.0`版本开始，LiteLoader增加了自动更新功能  
-如果BDS版本相同，LiteLoader的更新将会**自动推送**，并且**自动在下一次服务端开启时安装**  
-第一时间获取最新功能更新！ 免去重复手动升级的烦恼~
-
-你也可以在控制台使用 `ll upgrade` 命令手动检查更新。
-
-<br/>
+更多**安装与使用指南** ，请👉[移步 LiteLoader 文档站](https://docs.litebds.com/zh_CN/Usage/)👈查看
 
 ------
 
@@ -181,7 +171,7 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 1. 编译生成，并按提示选择相应的PDB文件以生成依赖库lib
 1. 复制插件到 plugins 目录进行测试
 
-具体插件开发示例与指导，请👉[移步 LiteLoader 文档站](https://docs.litebds.com/#/zh_CN/Usage/)👈查看  
+具体插件开发示例与指导，请👉[移步 LiteLoader 文档站](https://docs.litebds.com/zh_CN/Usage/)👈查看  
 如果有修订需求或者有新增API的需要，欢迎联系作者或者发布Issue  
 
 ### 使用脚本语言开发插件
@@ -190,7 +180,7 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 2. 编写代码
 3. 复制插件到 plugins 目录进行测试
 
-请👉[移步 LiteLoader 文档站](https://docs.litebds.com/#/zh_CN/Development/)👈查看详细的**API文档**和**插件开发教程**  
+请👉[移步 LiteLoader 文档站](https://docs.litebds.com/zh_CN/Development/)👈查看详细的**API文档**和**插件开发教程**  
 如果有修订需求或者有新增API的需要，欢迎联系作者或者发布Issue  
 
 ### 示例插件
@@ -199,51 +189,27 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 你可以直接在生产环境中使用它们
 也可以在这里学习插件开发的方法和技巧
 
-<br>
-
 ### 开发辅助工具 - VSCode 开发辅助插件 & 补全库
 
-使用 Moxicat 开发的 LiteLoader 开发辅助插件
-帮助你更好地完成**脚本插件**的开发！  
-代码提示、自动补全、自动文档、错误提醒、运行时调试。。。。
+使用 Moxicat 开发的 LiteLoader 开发辅助插件  
+帮助你更好地完成**脚本插件**的开发!  
+代码提示、自动补全、自动文档、错误提醒、运行时调试......
 只有你想不到，没有他做不到  
-用过绝不后悔的顶级插件开发体验！
-
-![LLScriptHelper](docs/assets/LXLDevHelper.gif)
+用过绝不后悔的顶级插件开发体验!
 
 [点击这里](https://www.minebbs.com/resources/llscripthelper.2672/)
 查看扩展说明与介绍  
 VSCode扩展商店搜索`LLScriptHelper`，安装**LLScriptHelper**，即刻体验
 
-<br>
-
 ### 开发辅助工具 - Blockly-LXL 图形化开发套件
 
-没有编程基础？对复杂的语言规则感到厌烦？  
-你有没有想过，BDS插件开发可以像拼图一样容易？
+没有编程基础？对复杂的语言规则感到厌烦?  
+你有没有想过，BDS插件开发可以像拼图一样容易?
 
-看这里！pa733的 Blockly-LXL 图形化开发套件，将插件开发体验提升到了新的高度
-
-![Blockly-LXL](docs/assets/BLLXL.png)
+看这里!pa733的 Blockly-LXL 图形化开发套件，将插件开发体验提升到了新的高度
 
 [点击这里](https://www.minebbs.com/resources/blockly-lxl.2671/)
 查看相关安装与使用说明
-
-<br>
-
-### 开发辅助工具 - CommonJs  for LLSE
-
-CJS.JS作者是callstackexceed，这个插件为在LLSE下使用Js开发插件提供了大家熟知的CommonJS接口，方便Js插件的模块化设计
-
-![CommonJs](docs/assets/CommonJS.png)
-
-[点击这里](https://github.com/callstackexceed/cjs.js) 前往GitHub查看使用说明，并下载使用
-
-项目作者callstackexceed，也是MC addon `NormaConstructor`的一个开发者。  
-`NormaConstructor`是一个开源的快速建造（类WorldEdit）插件，目前运行在Scripting API和LLSE上。  
-NC不仅需要用户，也需要开发人员。欢迎大家在 [MineBBS](https://www.minebbs.com/resources/integral-worldedit-liteloader.2738/) 和 mcpedl 关注 `NormaConstructor` 的相关进展
-
-<br/>
 
 ------
 
@@ -261,8 +227,6 @@ NC不仅需要用户，也需要开发人员。欢迎大家在 [MineBBS](https:/
 6. 编译生成成功之后，返回到项目根目录，执行 Scripts 文件夹中的 `PackRelease.cmd` 脚本  
    执行完之后，根目录 `RELEASE` 文件夹内的内容即为完整的 `LiteLoader` 环境及所有的依赖库
 
-<br/>
-
 ## 🎬 参与贡献
 
 您可以使用以下方法为 `LiteLoader` 项目做出贡献
@@ -274,7 +238,7 @@ NC不仅需要用户，也需要开发人员。欢迎大家在 [MineBBS](https:/
 
 ⭐⭐⭐我们欢迎您的贡献！⭐⭐⭐
 
-PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](https://docs.litebds.com/#/zh_CN/Maintance/)👈查看 **项目维护与支持文档**  
+PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](https://docs.litebds.com/zh_CN/Maintenance/)👈查看 **项目维护与支持文档**  
 
 ------
 
@@ -293,7 +257,6 @@ PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](
 [BedrockX](https://github.com/Sysca11/BedrockX) GPLv3以及额外限制和例外  
 [ElementZero](https://github.com/Element-0/ElementZero) GPLv3  
 [ScriptX](https://github.com/Tencent/ScriptX) Apache License Version 2.0  
-[ChakraCore](https://github.com/chakra-core/ChakraCore) MIT License  
 [OpenSSL](https://github.com/openssl/openssl) Apache-2.0 License  
 [SimpleIni](https://github.com/brofield/simpleini) MIT License  
 [Nlohmann-Json](https://github.com/nlohmann/json) MIT License  

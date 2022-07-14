@@ -33,7 +33,7 @@ struct LLConfig
     bool debugMode = false;
     bool colorLog = true;
     int logLevel = 4;
-    std::string language = "en";
+    std::string language = "en_US";
 
     bool enableScriptEngine = true;
     bool alwaysLaunchScriptEngine = false;
@@ -41,7 +41,6 @@ struct LLConfig
     bool enableAddonsHelper = true;
     std::string addonsInstallPath = "plugins/AddonsHelper";
 
-    bool enableAutoUpdate = true;
     bool enableCrashLogger = true;
     std::string crashLoggerPath = "plugins\\LiteLoader\\CrashLogger_Daemon.exe";
     std::string antiGiveCommand = "kick {player}";
@@ -59,6 +58,8 @@ struct LLConfig
     bool enableOutputFilter = false;
     bool onlyFilterConsoleOutput = true;
     bool enableEconomyCore = true;
+    bool enableTpdimCommand = true;
+    bool enableForceUtf8Input = false;
     std::vector<std::string> outputFilterRegex = {};
 
     // Runtime Config
@@ -76,24 +77,6 @@ bool LoadLLConfig();
 
 bool SaveLLConfig();
 } // namespace LL
-
-/////////////////////// LL AutoUpgrade ///////////////////////
-
-#define LL_RELAY_INDEX "https://upgrade.litebds.com/id.json"
-#define LL_UPDATE_URL_PREFIX "https://cdn.jsdelivr.net/gh/LiteLDev/Upgrade"
-#define LL_UPDATE_URL_PATH "/LL/LL.json"
-
-#define LL_UPDATE_CHECK_INTERVAL (10 * 60)
-#define LL_UPDATE_CONNECTION_TIMEOUT 60
-
-#define LL_UPDATE_PROGRAM "plugins/LiteLoader/LLAutoUpdate.dll"
-#define LL_UPDATE_CHECK_PRELOAD "plugins/preload.conf"
-
-#define LL_UPDATE_CACHE_PATH "plugins/LiteLoader/Update/"
-#define LL_UPDATE_INFO_RECORD "plugins/LiteLoader/Update/Update.ini"
-
-#define LL_UPDATE_OTHER_FILES_RECORD "plugins/LiteLoader/Versions.ini"
-
 
 /////////////////////// Addon Helper ///////////////////////
 

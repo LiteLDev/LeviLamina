@@ -110,7 +110,9 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\DB\RowSet.cpp" />
     <ClCompile Include="Kernel\DB\Session.cpp" />
     <ClCompile Include="Kernel\DB\Stmt.cpp" />
-    <ClCompile Include="Kernel\I18nAPI_LL.cpp" />
+    <ClCompile Include="Kernel\I18nAPI.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)I18nAPI_LL.obj</ObjectFileName>
+    </ClCompile>
     <ClCompile Include="Kernel\MC\BiomeAPI.cpp" />
     <ClCompile Include="Kernel\NBT\PrettySnbtFormatAPI.cpp" />
     <ClCompile Include="Kernel\Compatibility.cpp" />
@@ -127,7 +129,6 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\Utils\STLHelper.cpp" />
     <ClCompile Include="Kernel\Utils\StringReader.cpp" />
     <ClCompile Include="Main\AddonsHelper.cpp" />
-    <ClCompile Include="Main\AutoUpgrade.cpp" />
     <ClCompile Include="Main\BuiltinUnlockCmd.cpp" />
     <ClCompile Include="Main\Config.cpp" />
     <ClCompile Include="Main\CrashLogger.cpp" />
@@ -315,7 +316,6 @@ LibraryBuilder.exe
     <ClInclude Include="Header\Utils\STLHelper.h" />
     <ClInclude Include="Header\Utils\StringReader.h" />
     <ClInclude Include="Main\AddonsHelper.h" />
-    <ClInclude Include="Main\AutoUpgrade.h" />
     <ClInclude Include="Main\Config.h" />
     <ClInclude Include="Main\CrashLogger.h" />
     <ClInclude Include="Header\EventAPI.h" />
@@ -343,6 +343,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\Utils\VarInt.h" />
     <ClInclude Include="Header\Utils\ViewHelper.h" />
     <ClInclude Include="Lib\third-party\nbt-cpp\nbt_internal.hpp" />
+    <ClInclude Include="Main\DefaultLangData.h" />
     <ClInclude Include="Main\LiteLoader.h" />
     <ClInclude Include="Main\Loader.h" />
     <ClInclude Include="Main\PluginManager.h" />

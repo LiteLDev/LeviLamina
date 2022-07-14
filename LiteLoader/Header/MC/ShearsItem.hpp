@@ -46,7 +46,7 @@ public:
     /*88*/ virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
     /*89*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     /*93*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
-    /*132*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    /*134*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHEARSITEM
 #endif
 

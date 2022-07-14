@@ -27,6 +27,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDEEXTRACTIONSYSTEM
 #endif
     MCAPI static void onSideBySideExtractionRequest(struct OnExtractSideBySide const &);
+    MCAPI static void onStoreSideBySideResult(struct OnStoreSideBySideResult const &);
 
 
 

@@ -1,6 +1,26 @@
 name: Build LiteLoader
 
-on: [ push ]
+on:
+  pull_request:
+    paths:
+      - '**.cpp'
+      - '**.cc'
+      - '**.cxx'
+      - '**.c'
+      - '**.hpp'
+      - '**.hh'
+      - '**.hxx'
+      - '**.h'
+  push:
+    paths:
+      - '**.cpp'
+      - '**.cc'
+      - '**.cxx'
+      - '**.c'
+      - '**.hpp'
+      - '**.hh'
+      - '**.hxx'
+      - '**.h'
 
 env:
   SOLUTION_FILE_PATH: .
@@ -12,7 +32,7 @@ jobs:
     runs-on: windows-2022
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.0.2
         with:
           fetch-depth: 0
 
@@ -33,7 +53,7 @@ jobs:
         shell: cmd
 
       - name: Add MSBuild to PATH
-        uses: microsoft/setup-msbuild@v1
+        uses: microsoft/setup-msbuild@v1.1
         
       - name: Change LITELOADER_VERSION_STATUS_BETA
         working-directory: ${{env.GITHUB_WORKSPACE}}
@@ -77,8 +97,7 @@ jobs:
       - name: Pack PDB
         working-directory: ${{env.GITHUB_WORKSPACE}}
         if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          7z a -tzip PDB.zip PDB
+        run: 7z a -tzip PDB.zip PDB
         shell: bash
 
       - name: Update LiteLoaderSDK
@@ -94,13 +113,13 @@ jobs:
         shell: cmd
 
       - name: Upload LiteLoader
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3.1.0
         with:
           name: LiteLoader
           path: ${{ github.workspace }}\RELEASE
 
       - name: Upload PDB
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3.1.0
         with:
           name: PDB
           path: ${{ github.workspace }}\PDB
@@ -115,7 +134,7 @@ jobs:
         shell: bash
 
       - name: Create New Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v0.1.14
         if: startsWith(github.ref, 'refs/tags/')
         with:
           body_path: ${{ github.workspace }}\CHANGELOG.md

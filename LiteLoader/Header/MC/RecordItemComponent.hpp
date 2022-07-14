@@ -33,7 +33,6 @@ public:
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECORDITEMCOMPONENT
 #endif
-    MCAPI RecordItemComponent(class ComponentItem *);
     MCAPI std::string getAlias() const;
     MCAPI int getComparatorSignal() const;
     MCAPI float getDuration() const;

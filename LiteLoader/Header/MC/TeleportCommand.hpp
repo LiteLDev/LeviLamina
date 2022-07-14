@@ -21,9 +21,9 @@ enum TeleportAnalysis;
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TELEPORTCOMMAND
 public:
-    class TeleportCommand& operator=(class TeleportCommand const &) = delete;
-    TeleportCommand(class TeleportCommand const &) = delete;
-    TeleportCommand() = delete;
+    class TeleportCommand& operator=(class TeleportCommand const &) = default;
+    TeleportCommand(class TeleportCommand const&) = default;
+    TeleportCommand() = default;
 #endif
 
 
@@ -32,7 +32,7 @@ public:
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TELEPORTCOMMAND
 #endif
-    MCAPI static void applyTarget(class Actor &, class TeleportTarget);
+    MCAPI static void applyTarget(class Actor &, class TeleportTarget, bool);
     MCAPI static class TeleportTarget computeTarget(class Actor &, class Vec3, class Vec3 *, class AutomaticID<class Dimension, int>, class std::optional<class TeleportRotationData> const &, int);
     MCAPI static void setup(class CommandRegistry &);
 

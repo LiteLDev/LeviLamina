@@ -29,7 +29,6 @@ public:
     MCAPI bool const ProxyDecryptsHttps() const;
     MCAPI class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const & ProxyUri() const;
     MCAPI long Send(char const *, struct XAsyncBlock *);
-    MCAPI class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const & Uri() const;
 
 protected:
 

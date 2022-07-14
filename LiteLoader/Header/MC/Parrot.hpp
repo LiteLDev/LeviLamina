@@ -35,34 +35,34 @@ public:
     /*79*/ virtual float getShadowRadius() const;
     /*81*/ virtual void __unk_vfn_81();
     /*87*/ virtual void __unk_vfn_87();
-    /*94*/ virtual void __unk_vfn_94();
-    /*97*/ virtual void __unk_vfn_97();
-    /*104*/ virtual void __unk_vfn_104();
-    /*106*/ virtual void __unk_vfn_106();
+    /*95*/ virtual void __unk_vfn_95();
+    /*98*/ virtual void __unk_vfn_98();
+    /*105*/ virtual void __unk_vfn_105();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*118*/ virtual void setSitting(bool);
-    /*129*/ virtual void vehicleLanded(class Vec3 const &, class Vec3 const &);
-    /*131*/ virtual void playAmbientSound();
-    /*132*/ virtual enum LevelSoundEvent getAmbientSound() const;
-    /*133*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
-    /*180*/ virtual void __unk_vfn_180();
-    /*192*/ virtual bool canBePulledIntoVehicle() const;
-    /*194*/ virtual void __unk_vfn_194();
-    /*219*/ virtual void __unk_vfn_219();
+    /*110*/ virtual void __unk_vfn_110();
+    /*119*/ virtual void setSitting(bool);
+    /*130*/ virtual void vehicleLanded(class Vec3 const &, class Vec3 const &);
+    /*132*/ virtual void playAmbientSound();
+    /*133*/ virtual enum LevelSoundEvent getAmbientSound() const;
+    /*134*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
+    /*181*/ virtual void __unk_vfn_181();
+    /*193*/ virtual bool canBePulledIntoVehicle() const;
+    /*195*/ virtual void __unk_vfn_195();
     /*220*/ virtual void __unk_vfn_220();
-    /*245*/ virtual void __unk_vfn_245();
-    /*248*/ virtual void __unk_vfn_248();
-    /*264*/ virtual void __unk_vfn_264();
-    /*270*/ virtual void _playStepSound(class BlockPos const &, class Block const &);
-    /*272*/ virtual void __unk_vfn_272();
-    /*281*/ virtual void __unk_vfn_281();
-    /*297*/ virtual void aiStep();
-    /*310*/ virtual void __unk_vfn_310();
-    /*314*/ virtual void __unk_vfn_314();
-    /*346*/ virtual float _getWalkTargetValue(class BlockPos const &);
-    /*348*/ virtual void __unk_vfn_348();
-    /*362*/ virtual void __unk_vfn_362();
+    /*221*/ virtual void __unk_vfn_221();
+    /*246*/ virtual void __unk_vfn_246();
+    /*249*/ virtual void __unk_vfn_249();
+    /*267*/ virtual void __unk_vfn_267();
+    /*273*/ virtual void _playStepSound(class BlockPos const &, class Block const &);
+    /*275*/ virtual void __unk_vfn_275();
+    /*284*/ virtual void __unk_vfn_284();
+    /*299*/ virtual void aiStep();
+    /*312*/ virtual void __unk_vfn_312();
+    /*316*/ virtual void __unk_vfn_316();
+    /*348*/ virtual float _getWalkTargetValue(class BlockPos const &);
+    /*350*/ virtual void __unk_vfn_350();
+    /*364*/ virtual void __unk_vfn_364();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARROT
     MCVAPI bool _makeFlySound() const;
     MCVAPI bool useNewAi() const;
@@ -70,6 +70,7 @@ public:
     MCAPI Parrot(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI float getFlap() const;
     MCAPI float getFlapSpeed() const;
+    MCAPI void postAiStep();
 
 
 

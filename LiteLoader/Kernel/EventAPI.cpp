@@ -646,9 +646,34 @@ TClasslessInstanceHook(void, "?sendBlockDestructionStarted@BlockEventCoordinator
     IF_LISTENED_END(PlayerStartDestroyBlockEvent)
     return original(this, pl, bp);
 }
+
+/////////////////// PlayerPlaceBlock ///////////////////
+#include <MC/ItemUseInventoryTransaction.hpp>
+TInstanceHook(char, "?checkBlockPermissions@BlockSource@@QEAA_NAEAVActor@@AEBVBlockPos@@EAEBVItemStackBase@@_N@Z",
+    BlockSource, Actor* ac, BlockPos* bp, unsigned __int8 facing, ItemStackBase* item, bool a6)
+{
+    if (ac->isPlayer())
+    {
+        IF_LISTENED(PlayerPlaceBlockEvent)
+        {
+            auto pl = (Player*)ac;
+            PlayerPlaceBlockEvent ev{};
+            ev.mPlayer = pl;
+            ev.mBlockInstance = this->getBlockInstance(*bp);
+            if (!ev.call())
+            {   // this pointer is not used.
+                ((ItemUseInventoryTransaction*)nullptr)->resendBlocksAroundArea(*pl, *bp, facing);
+                return false;
+            }
+        }
+        IF_LISTENED_END(PlayerPlaceBlockEvent)
+    }
+    return original(this, ac, bp, facing, item, a6);
+}
+
+/*
 #include <MC/BedrockBlocks.hpp>
 #include <mc/BlockLegacy.hpp>
-/////////////////// PlayerPlaceBlock ///////////////////
 TInstanceHook(bool, "?_useOn@BlockItem@@MEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z",
               Item, ItemStack* a2, Actor* ac, BlockPos* a4, unsigned __int8 a5, class Vec3* a6)
 {
@@ -918,6 +943,7 @@ TInstanceHook(bool, "?useOn@SeedItemComponentLegacy@@QEAA_NAEAVItemStack@@AEAVAc
     IF_LISTENED_END(PlayerPlaceBlockEvent)
     return original(this, a2, a3, a4, a5, a6);
 }
+*/
 
 /////////////////// PlayerOpenContainer ///////////////////
 TClasslessInstanceHook(__int64, "?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z", void* a2)
@@ -1004,13 +1030,13 @@ TClasslessInstanceHook(void, "?sendPlayerMove@PlayerEventCoordinator@@QEAAXAEAVP
 {
     IF_LISTENED(PlayerMoveEvent)
     {
-       // if (pl->isMoving())
-       // {
+        if (pl->isMoving())
+        {
             PlayerMoveEvent ev{};
             ev.mPlayer = pl;
             ev.mPos = pl->getPosition();
             ev.call();
-       // }
+        }
     }
     IF_LISTENED_END(PlayerMoveEvent)
     return original(this, pl);
@@ -1662,21 +1688,19 @@ TInstanceHook(bool, "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z",
 
 
 /////////////////// PlayerUseItemOn ///////////////////
-TInstanceHook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z",
-      GameMode , ItemStack& it, BlockPos bp, unsigned char side, void* a5, void* a6_block)
-{
-    IF_LISTENED(PlayerUseItemOnEvent)
-    {
+TInstanceHook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z", GameMode,
+              ItemStack& it, BlockPos bp, unsigned char side, Vec3* clickPos, void* a6_block) {
+    IF_LISTENED(PlayerUseItemOnEvent) {
         PlayerUseItemOnEvent ev{};
         ev.mPlayer = this->getPlayer();
         ev.mBlockInstance = Level::getBlockInstance(bp, ev.mPlayer->getDimensionId());
         ev.mItemStack = &it;
         ev.mFace = side;
-        if (!ev.call())
-            return false;
+        ev.mClickPos = *clickPos;
+        if (!ev.call()) return false;
     }
     IF_LISTENED_END(PlayerUseItemOnEvent)
-    return original(this, it, bp, side, a5, a6_block);
+    return original(this, it, bp, side, clickPos, a6_block);
 }
 
 
@@ -1900,9 +1924,8 @@ TClasslessInstanceHook(void, "?onHit@ProjectileComponent@@QEAAXAEAVActor@@AEBVHi
 
 
 ////////////// WitherBossDestroy //////////////
-TInstanceHook(void, "?_destroyBlocks@WitherBoss@@AEAAXAEAVLevel@@AEBVAABB@@AEAVBlockSource@@H@Z",
-      Actor , Level* a2, AABB* aabb, BlockSource* a4, int a5)
-{
+TInstanceHook(void, "?_destroyBlocks@WitherBoss@@AEAAXAEAVLevel@@AEBVAABB@@AEAVBlockSource@@HW4WitherAttackType@1@@Z",
+              Actor, Level* a2, AABB* aabb, BlockSource* a4, int a5,unsigned int a6) {
     IF_LISTENED(WitherBossDestroyEvent)
     {
         WitherBossDestroyEvent ev{};
@@ -1914,7 +1937,7 @@ TInstanceHook(void, "?_destroyBlocks@WitherBoss@@AEAAXAEAVLevel@@AEBVAABB@@AEAVB
         *aabb = ev.mDestroyRange;
     }
     IF_LISTENED_END(WitherBossDestroyEvent)
-    original(this, a2, aabb, a4, a5);
+    original(this, a2, aabb, a4, a5,a6);
 }
 
 

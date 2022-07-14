@@ -19,10 +19,10 @@ struct BlockQueuedTickingDescription {
 public:
     struct BlockQueuedTickingDescription& operator=(struct BlockQueuedTickingDescription const &) = delete;
     BlockQueuedTickingDescription(struct BlockQueuedTickingDescription const &) = delete;
+    BlockQueuedTickingDescription() = delete;
 #endif
 
 public:
-    MCAPI BlockQueuedTickingDescription();
 
 protected:
 

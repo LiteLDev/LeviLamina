@@ -46,8 +46,8 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*85*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /*95*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-    /*121*/ virtual class Item & setIcon(std::string const &, int);
-    /*132*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    /*123*/ virtual class Item & setIcon(std::string const &, int);
+    /*134*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYEPOWDERITEM
 #endif
     MCAPI DyePowderItem(std::string const &, int, enum ItemColor, bool, bool);

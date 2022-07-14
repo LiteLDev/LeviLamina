@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct ActorRemoveEffectEvent {
+class ActorRemoveEffectEvent {
 
 #define AFTER_EXTRA
 
@@ -15,16 +15,17 @@ struct ActorRemoveEffectEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORREMOVEEFFECTEVENT
 public:
-    struct ActorRemoveEffectEvent& operator=(struct ActorRemoveEffectEvent const &) = delete;
-    ActorRemoveEffectEvent(struct ActorRemoveEffectEvent const &) = delete;
+    class ActorRemoveEffectEvent& operator=(class ActorRemoveEffectEvent const &) = delete;
+    ActorRemoveEffectEvent(class ActorRemoveEffectEvent const &) = delete;
     ActorRemoveEffectEvent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORREMOVEEFFECTEVENT
+#endif
     MCAPI ~ActorRemoveEffectEvent();
 
-protected:
 
-private:
 
 };

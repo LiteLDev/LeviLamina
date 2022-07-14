@@ -21,7 +21,6 @@ public:
 
 public:
     MCAPI DefinitionModifier(struct DefinitionModifier const &);
-    MCAPI struct DefinitionModifier & operator=(struct DefinitionModifier &&);
     MCAPI ~DefinitionModifier();
 
 protected:

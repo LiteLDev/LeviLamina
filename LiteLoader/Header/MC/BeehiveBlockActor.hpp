@@ -39,9 +39,10 @@ public:
     /*16*/ virtual void __unk_vfn_16();
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
-    /*31*/ virtual void __unk_vfn_31();
+    /*30*/ virtual void __unk_vfn_30();
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
+    /*34*/ virtual void __unk_vfn_34();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEEHIVEBLOCKACTOR
 #endif
     MCAPI BeehiveBlockActor(class BlockPos const &);
@@ -57,7 +58,6 @@ public:
     MCAPI class Actor * _revive(class BlockSource &, struct BeehiveBlockActor::Occupant const &, unsigned char);
     MCAPI bool _tickOccupant(class BlockSource &, struct BeehiveBlockActor::Occupant &);
     MCAPI void _trySpawnBees(class BlockSource &);
-    MCAPI static bool _validSpawnDirection(class BlockSource &, class BlockPos const &, unsigned char);
 
 
 private:

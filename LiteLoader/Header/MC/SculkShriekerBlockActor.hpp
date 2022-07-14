@@ -32,15 +32,17 @@ public:
     /*16*/ virtual void __unk_vfn_16();
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
-    /*31*/ virtual void __unk_vfn_31();
+    /*30*/ virtual void __unk_vfn_30();
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
+    /*34*/ virtual void __unk_vfn_34();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSHRIEKERBLOCKACTOR
 #endif
     MCAPI SculkShriekerBlockActor(class BlockPos const &);
-    MCAPI void clearThreatResponse();
-    MCAPI class std::optional<struct SculkShriekerBlockActor::QueuedThreatResponse> dequeueThreatResponse();
-    MCAPI void queueThreatResponse(int);
+    MCAPI void tryRespond(class BlockSource &, class BlockPos const &);
+    MCAPI bool tryShriek(class BlockSource &, class BlockPos, class Player &);
+    MCAPI static class SculkShriekerBlockActor * tryGet(class BlockSource &, class BlockPos);
+    MCAPI static class Player * tryGetPlayerInHierarchy(class Actor *);
 
 
 

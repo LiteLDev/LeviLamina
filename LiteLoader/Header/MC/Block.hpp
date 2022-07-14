@@ -22,6 +22,25 @@ public:
 	LIAPI unsigned short getTileData();
     LIAPI std::unique_ptr<CompoundTag> getNbt();
     LIAPI bool setNbt(CompoundTag* nbt);
+
+    inline bool operator==(class Block const& a2) const {
+        __int64 v2; // r8
+        __int64 v3; // rax
+        v2 = *(__int64*)(this + 16);
+        if (!v2 || (v3 = *(__int64*)(&a2 + 16)) == 0) 
+            return false;
+        return v2 == v3 && *(unsigned short*)(this + 8) == *(unsigned short*)(&a2 + 8);
+    }
+	
+    inline bool operator!=(class Block const& a2) const {
+        __int64 v2; // r8
+        __int64 v3; // rax
+
+        v2 = *(__int64*)(this + 16);
+        if (!v2 || (v3 = *(__int64*)(&a2 + 16)) == 0) 
+            return false;
+        return v2 != v3 || *(unsigned short*)(this + 8) != *(unsigned short*)(&a2 + 8);
+    }
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCK
@@ -93,7 +112,6 @@ public:
     MCAPI std::string getDescriptionId() const;
     MCAPI float getDestroySpeed() const;
     MCAPI int getDirectSignal(class BlockSource &, class BlockPos const &, int) const;
-    MCAPI class EntityContext const & getEntity() const;
     MCAPI class EntityContext & getEntityForModification() const;
     MCAPI float getExplosionResistance(class Actor *) const;
     MCAPI int getFlameOdds() const;
@@ -128,6 +146,7 @@ public:
     MCAPI bool ignoreEntitiesOnPistonMove() const;
     MCAPI void initEntity(class EntityRegistry &);
     MCAPI void initParams(class RenderParams &, class BlockSource &, class BlockPos const &, class Actor *) const;
+    MCAPI bool isAir() const;
     MCAPI bool isAttachedTo(class BlockSource &, class BlockPos const &, class BlockPos &) const;
     MCAPI bool isAuxValueRelevantForPicking() const;
     MCAPI bool isBounceBlock() const;
@@ -184,8 +203,6 @@ public:
     MCAPI void onStepOn(class Actor &, class BlockPos const &) const;
     MCAPI void onStructureBlockPlace(class BlockSource &, class BlockPos const &) const;
     MCAPI void onStructureNeighborBlockPlace(class BlockSource &, class BlockPos const &) const;
-    MCAPI bool operator!=(class Block const &) const;
-    MCAPI bool operator==(class Block const &) const;
     MCAPI void playerDestroy(class Player &, class BlockPos const &) const;
     MCAPI bool playerWillDestroy(class Player &, class BlockPos const &) const;
     MCAPI class ItemActor * popResource(class BlockSource &, class BlockPos const &, class ItemInstance const &) const;
@@ -223,6 +240,7 @@ public:
     MCAPI bool _isSolid() const;
     MCAPI class BlockTypeRegistryReadLock _lockRegistryForRead() const;
     MCAPI void _tryInitEntityIfNotInitialized();
+    MCAPI class EntityContext const & getEntity() const;
 
 
 protected:

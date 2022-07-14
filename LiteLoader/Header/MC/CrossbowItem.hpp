@@ -45,11 +45,11 @@ public:
     /*84*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*86*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /*87*/ virtual void releaseUsing(class ItemStack &, class Player *, int) const;
-    /*116*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
-    /*119*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-    /*121*/ virtual class Item & setIcon(std::string const &, int);
-    /*124*/ virtual bool canBeCharged() const;
-    /*126*/ virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
+    /*118*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
+    /*121*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /*123*/ virtual class Item & setIcon(std::string const &, int);
+    /*126*/ virtual bool canBeCharged() const;
+    /*128*/ virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CROSSBOWITEM
 #endif
     MCAPI CrossbowItem(std::string const &, int);

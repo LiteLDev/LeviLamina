@@ -24,7 +24,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STORAGEITEMCOMPONENT
 #endif
-    MCAPI StorageItemComponent(class ComponentItem *);
     MCAPI unsigned int calculateAddableCount(class ItemStack const &, class ItemStackBase const &) const;
     MCAPI bool tryAddItemStack(class ItemStack &, class ItemStack &) const;
     MCAPI void tryGenerateUserData(class ItemStack &) const;

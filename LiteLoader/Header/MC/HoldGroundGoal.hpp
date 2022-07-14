@@ -34,7 +34,7 @@ public:
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOLDGROUNDGOAL
 #endif
-    MCAPI HoldGroundGoal(class Mob &, float, bool, float, class DefinitionTrigger const &);
+    MCAPI HoldGroundGoal(class Mob &, float, bool, float, class ActorDefinitionTrigger const &);
 
 
 

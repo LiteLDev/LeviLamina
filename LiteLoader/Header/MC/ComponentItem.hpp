@@ -4,6 +4,8 @@
 #include "../Global.h"
 #include "Json.hpp"
 #include "JsonUtil.hpp"
+#include "reflection.hpp"
+#include "Core.hpp"
 #include "Item.hpp"
 
 #define BEFORE_EXTRA
@@ -99,17 +101,17 @@ public:
     /*100*/ virtual unsigned char getMaxStackSize(class ItemDescriptor const &) const;
     /*103*/ virtual class HashedString const & getCooldownType() const;
     /*104*/ virtual int getCooldownTime() const;
-    /*114*/ virtual void initClient(class Json::Value &, class SemVersion const &);
-    /*115*/ virtual std::string getInteractText(class Player const &) const;
-    /*116*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
-    /*117*/ virtual bool isEmissive(int) const;
-    /*119*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-    /*121*/ virtual class Item & setIcon(std::string const &, int);
-    /*124*/ virtual bool canBeCharged() const;
-    /*129*/ virtual std::string getAuxValuesDescription() const;
-    /*130*/ virtual bool _checkUseOnPermissions(class Actor &, class ItemStackBase &, unsigned char const &, class BlockPos const &) const;
-    /*131*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
-    /*132*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    /*116*/ virtual void initClient(class Json::Value &, class SemVersion const &);
+    /*117*/ virtual std::string getInteractText(class Player const &) const;
+    /*118*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
+    /*119*/ virtual bool isEmissive(int) const;
+    /*121*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /*123*/ virtual class Item & setIcon(std::string const &, int);
+    /*126*/ virtual bool canBeCharged() const;
+    /*131*/ virtual std::string getAuxValuesDescription() const;
+    /*132*/ virtual bool _checkUseOnPermissions(class Actor &, class ItemStackBase &, unsigned char const &, class BlockPos const &) const;
+    /*133*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
+    /*134*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPONENTITEM
     MCVAPI int getVariant(int, int, bool) const;
     MCVAPI bool hasCustomColor(class ItemStackBase const &) const;
@@ -135,7 +137,9 @@ public:
     MCAPI class WearableItemComponent * getWearable() const;
     MCAPI bool isStorage() const;
     MCAPI bool parseJsonEvents(class Json::Value const &, class SemVersion const &);
+    MCAPI static struct reflection::Schema createItemAbstractCerealSchema(std::string const &);
     MCAPI static void registerItemComponentTypes();
+    MCAPI static bool upgradeJson(std::string &, class Core::Path const &, class std::optional<class SemVersion>);
 
 //private:
     MCAPI std::unique_ptr<class CompoundTag> _buildItemPropertiesNetworkTag() const;
@@ -147,6 +151,7 @@ public:
 
 
 private:
+    MCAPI static class CerealDocumentUpgrader mDocumentUpgrader;
 
 
 };

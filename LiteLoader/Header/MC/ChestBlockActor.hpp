@@ -34,6 +34,7 @@ public:
     MCVAPI bool canPushInItem(class BlockSource &, int, int, class ItemInstance const &) const;
     MCVAPI void clearCache();
     MCVAPI int clearInventory(int);
+    MCVAPI void eraseLootTable();
     MCVAPI class Container const * getContainer() const;
     MCVAPI class Container * getContainer();
     MCVAPI int getContainerSize() const;

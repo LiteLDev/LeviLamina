@@ -24,7 +24,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLYTRAVELSYSTEM
 #endif
-    MCAPI static float getPlayerFlySpeed(class Abilities const &, class SynchedActorData const &);
+    MCAPI static float getPlayerFlySpeed(class LayeredAbilities const &, class SynchedActorData const &);
 
 
 

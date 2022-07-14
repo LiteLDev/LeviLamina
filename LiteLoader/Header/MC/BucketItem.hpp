@@ -51,11 +51,11 @@ public:
     /*95*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*100*/ virtual unsigned char getMaxStackSize(class ItemDescriptor const &) const;
     /*112*/ virtual bool validFishInteraction(int) const;
-    /*118*/ virtual struct Brightness getLightEmission(int) const;
-    /*119*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-    /*121*/ virtual class Item & setIcon(std::string const &, int);
-    /*129*/ virtual std::string getAuxValuesDescription() const;
-    /*132*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    /*120*/ virtual struct Brightness getLightEmission(int) const;
+    /*121*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /*123*/ virtual class Item & setIcon(std::string const &, int);
+    /*131*/ virtual std::string getAuxValuesDescription() const;
+    /*134*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUCKETITEM
     MCVAPI bool isBucket() const;
     MCVAPI bool uniqueAuxValues() const;
@@ -69,6 +69,7 @@ public:
 
 //private:
     MCAPI bool _emptyBucket(class BlockSource &, class Block const &, class BlockPos const &, class Actor *, class ItemStack const &, unsigned char) const;
+    MCAPI void _removeBubbleColumn(class BlockSource &, class BlockPos const &) const;
     MCAPI bool _takeLiquid(class ItemStack &, class Actor &, class BlockPos const &) const;
     MCAPI bool _takePowderSnow(class ItemStack &, class Actor &, class BlockPos const &) const;
 

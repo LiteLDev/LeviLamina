@@ -258,9 +258,6 @@
     <ClCompile Include="Kernel\ObjectivePacketHelper.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Main\AutoUpgrade.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
     <ClCompile Include="Main\BuiltinBugFix.cpp">
       <Filter>Main</Filter>
     </ClCompile>
@@ -333,7 +330,7 @@
     <ClCompile Include="Kernel\Command\DynamicCommandAPI.cpp">
       <Filter>Kernel\Command</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\I18nAPI_LL.cpp">
+    <ClCompile Include="Kernel\I18nAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\Network\PacketAPI.cpp">
@@ -665,9 +662,6 @@
     <ClInclude Include="Header\Impl\ObjectivePacketHelper.h">
       <Filter>Header\Impl</Filter>
     </ClInclude>
-    <ClInclude Include="Main\AutoUpgrade.h">
-      <Filter>Main</Filter>
-    </ClInclude>
     <ClInclude Include="Main\Config.h">
       <Filter>Main</Filter>
     </ClInclude>
@@ -814,6 +808,9 @@
     </ClInclude>
     <ClInclude Include="Header\MC\SemVersion.hpp">
       <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\DefaultLangData.h">
+      <Filter>Main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

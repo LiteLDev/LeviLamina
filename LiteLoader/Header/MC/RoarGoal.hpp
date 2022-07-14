@@ -34,11 +34,6 @@ public:
 #endif
     MCAPI RoarGoal(class Mob &);
 
-//private:
-    MCAPI class std::optional<class WeakEntityRef> _findRoarTarget() const;
-
-
-private:
 
 
 };

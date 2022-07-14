@@ -24,5 +24,6 @@ namespace VanillaGameVersions {
     MCAPI extern class BaseGameVersion const NetherUpdate;
     MCAPI extern class BaseGameVersion const NetherUpdate_U3;
     MCAPI extern class BaseGameVersion const WildUpdateVersion;
+    MCAPI extern class BaseGameVersion const WildUpdateVersion_U1;
 
 };

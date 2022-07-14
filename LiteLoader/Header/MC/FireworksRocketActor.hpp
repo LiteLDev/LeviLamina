@@ -35,29 +35,30 @@ public:
     /*79*/ virtual float getShadowRadius() const;
     /*81*/ virtual void __unk_vfn_81();
     /*87*/ virtual void __unk_vfn_87();
-    /*94*/ virtual void __unk_vfn_94();
-    /*97*/ virtual void __unk_vfn_97();
-    /*104*/ virtual void __unk_vfn_104();
-    /*106*/ virtual void __unk_vfn_106();
+    /*95*/ virtual void __unk_vfn_95();
+    /*98*/ virtual void __unk_vfn_98();
+    /*105*/ virtual void __unk_vfn_105();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*140*/ virtual void handleEntityEvent(enum ActorEvent, int);
-    /*180*/ virtual void __unk_vfn_180();
-    /*189*/ virtual void onSynchedDataUpdate(int);
-    /*194*/ virtual void __unk_vfn_194();
-    /*219*/ virtual void __unk_vfn_219();
+    /*110*/ virtual void __unk_vfn_110();
+    /*141*/ virtual void handleEntityEvent(enum ActorEvent, int);
+    /*181*/ virtual void __unk_vfn_181();
+    /*190*/ virtual void onSynchedDataUpdate(int);
+    /*195*/ virtual void __unk_vfn_195();
     /*220*/ virtual void __unk_vfn_220();
-    /*245*/ virtual void __unk_vfn_245();
-    /*248*/ virtual void __unk_vfn_248();
-    /*264*/ virtual void __unk_vfn_264();
-    /*268*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /*269*/ virtual void addAdditionalSaveData(class CompoundTag &) const;
-    /*272*/ virtual void __unk_vfn_272();
+    /*221*/ virtual void __unk_vfn_221();
+    /*246*/ virtual void __unk_vfn_246();
+    /*249*/ virtual void __unk_vfn_249();
+    /*267*/ virtual void __unk_vfn_267();
+    /*271*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
+    /*272*/ virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /*275*/ virtual void __unk_vfn_275();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREWORKSROCKETACTOR
 #endif
     MCAPI FireworksRocketActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void init(class Level &, class Vec3 const &, class CompoundTag const &, class Vec3 const &, struct ActorUniqueID, bool);
     MCAPI bool isAttachedToEntity() const;
+    MCAPI void postNormalTick();
     MCAPI void setDispensed(bool);
 
 //private:

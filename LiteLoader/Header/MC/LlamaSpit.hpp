@@ -35,23 +35,23 @@ public:
     /*81*/ virtual void __unk_vfn_81();
     /*86*/ virtual float getBrightness(float) const;
     /*87*/ virtual void __unk_vfn_87();
-    /*93*/ virtual bool isPickable();
-    /*94*/ virtual void __unk_vfn_94();
-    /*97*/ virtual void __unk_vfn_97();
-    /*104*/ virtual void __unk_vfn_104();
-    /*106*/ virtual void __unk_vfn_106();
+    /*94*/ virtual bool isPickable();
+    /*95*/ virtual void __unk_vfn_95();
+    /*98*/ virtual void __unk_vfn_98();
+    /*105*/ virtual void __unk_vfn_105();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*141*/ virtual float getPickRadius();
-    /*170*/ virtual struct ActorUniqueID getSourceUniqueID() const;
-    /*180*/ virtual void __unk_vfn_180();
-    /*194*/ virtual void __unk_vfn_194();
-    /*219*/ virtual void __unk_vfn_219();
+    /*110*/ virtual void __unk_vfn_110();
+    /*142*/ virtual float getPickRadius();
+    /*171*/ virtual struct ActorUniqueID getSourceUniqueID() const;
+    /*181*/ virtual void __unk_vfn_181();
+    /*195*/ virtual void __unk_vfn_195();
     /*220*/ virtual void __unk_vfn_220();
-    /*245*/ virtual void __unk_vfn_245();
-    /*248*/ virtual void __unk_vfn_248();
-    /*264*/ virtual void __unk_vfn_264();
-    /*272*/ virtual void __unk_vfn_272();
+    /*221*/ virtual void __unk_vfn_221();
+    /*246*/ virtual void __unk_vfn_246();
+    /*249*/ virtual void __unk_vfn_249();
+    /*267*/ virtual void __unk_vfn_267();
+    /*275*/ virtual void __unk_vfn_275();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LLAMASPIT
 #endif
     MCAPI LlamaSpit(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

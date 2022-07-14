@@ -38,7 +38,6 @@ public:
 #endif
     MCAPI Random(unsigned int, bool);
     MCAPI Random();
-    MCAPI float nextFloat(float, float);
     MCAPI float nextGaussianFloat();
     MCAPI int nextGaussianInt(int);
     MCAPI int nextInt(int, int);

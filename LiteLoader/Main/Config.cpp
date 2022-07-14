@@ -25,7 +25,6 @@ namespace LL {
                     {"alwaysLaunch", conf.alwaysLaunchScriptEngine}
                 }},
                 {"Modules", {
-                    {"AutoUpgrade", {{"enabled", conf.enableAutoUpdate}} },
                     {"CrashLogger", {
                         {"enabled", conf.enableCrashLogger},
                         {"path", conf.crashLoggerPath}
@@ -57,7 +56,10 @@ namespace LL {
                     }}, 
                     {"EconomyCore", {
                         {"enabled", conf.enableEconomyCore}
-                    }}
+                    }},
+                     {"ForceUtf8Input", {{"enabled", conf.enableForceUtf8Input}
+                    }},
+                   {"TpdimCommand", {{"enabled", conf.enableTpdimCommand}}},
                 }
             }
         };
@@ -84,11 +86,6 @@ namespace LL {
         if (j.find("Modules") != j.end()) {
             const nlohmann::json &modules = j.at("Modules");
 
-            if (modules.count("AutoUpgrade"))
-            {
-                const nlohmann::json& setting = modules.at("AutoUpgrade");
-                conf.enableAutoUpdate = setting.value("enabled", true);
-            }
             if (modules.count("CrashLogger"))
             {
                 const nlohmann::json& setting = modules.at("CrashLogger");
@@ -162,6 +159,14 @@ namespace LL {
             {
                 const nlohmann::json& setting = modules.at("EconomyCore");
                 conf.enableEconomyCore = setting.value("enabled", true);
+            }
+            if (modules.find("TpdimCommand") != modules.end()) {
+                const nlohmann::json& setting = modules.at("TpdimCommand");
+                conf.enableTpdimCommand = setting.value("enabled", true);
+            }
+            if (modules.find("ForceUtf8Input") != modules.end()) {
+                const nlohmann::json& setting = modules.at("ForceUtf8Input");
+                conf.enableForceUtf8Input = setting.value("enabled", true);
             }
         }
     }

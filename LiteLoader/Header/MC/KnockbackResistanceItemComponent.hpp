@@ -33,7 +33,6 @@ public:
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_KNOCKBACKRESISTANCEITEMCOMPONENT
 #endif
-    MCAPI KnockbackResistanceItemComponent(class ComponentItem *);
     MCAPI float getProtectionValue() const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();

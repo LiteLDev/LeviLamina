@@ -384,6 +384,7 @@ namespace VanillaItemNames {
     MCAPI extern class HashedString const TadpoleSpawnEgg;
     MCAPI extern class HashedString const TntMinecart;
     MCAPI extern class HashedString const TotemOfUndying;
+    MCAPI extern class HashedString const TraderLlamaSpawnEgg;
     MCAPI extern class HashedString const Trident;
     MCAPI extern class HashedString const TropicalFish;
     MCAPI extern class HashedString const TropicalFishBucket;

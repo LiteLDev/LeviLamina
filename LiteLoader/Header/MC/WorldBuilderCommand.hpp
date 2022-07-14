@@ -29,6 +29,7 @@ public:
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDBUILDERCOMMAND
 #endif
+    MCAPI static void setWorldBuilder(class LayeredAbilities &, bool);
     MCAPI static void setup(class CommandRegistry &);
 
 

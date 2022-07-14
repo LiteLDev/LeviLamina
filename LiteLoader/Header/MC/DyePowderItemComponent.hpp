@@ -33,7 +33,6 @@ public:
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYEPOWDERITEMCOMPONENT
 #endif
-    MCAPI DyePowderItemComponent(class ComponentItem *);
     MCAPI bool isValidAuxValue(int) const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();

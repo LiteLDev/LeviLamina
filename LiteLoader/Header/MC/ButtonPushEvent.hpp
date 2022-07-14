@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct ButtonPushEvent {
+class ButtonPushEvent {
 
 #define AFTER_EXTRA
 
@@ -15,16 +15,17 @@ struct ButtonPushEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUTTONPUSHEVENT
 public:
-    struct ButtonPushEvent& operator=(struct ButtonPushEvent const &) = delete;
-    ButtonPushEvent(struct ButtonPushEvent const &) = delete;
+    class ButtonPushEvent& operator=(class ButtonPushEvent const &) = delete;
+    ButtonPushEvent(class ButtonPushEvent const &) = delete;
     ButtonPushEvent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUTTONPUSHEVENT
+#endif
     MCAPI ~ButtonPushEvent();
 
-protected:
 
-private:
 
 };

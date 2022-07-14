@@ -11,9 +11,8 @@
 #include <HookAPI.h>
 #include "Config.h"
 #include "Loader.h"
-#include "AutoUpgrade.h"
 #include "CrashLogger.h"
-#include <I18nAPI.h>
+#include "DefaultLangData.h"
 #include "AddonsHelper.h"
 #include <EventAPI.h>
 #include "Version.h"
@@ -84,7 +83,7 @@ void CheckRunningBDS()
                 std::wstring path{buf, sz};
                 if (current == path)
                 {
-                    logger.error("Detected the existence of another bds process with the same path!");
+                    logger.error("Detected the existence of another BDS process with the same path!");
                     logger.error("This may cause the network port and the level to be occupied");
                     logger.error("Do you want to terminate the process with PID {}?  (y=Yes, n=No)", pid);
                     char ch;
@@ -194,6 +193,12 @@ void LLMain()
     std::error_code ec;
     std::filesystem::create_directories("plugins", ec);
 
+    // Load Config
+    LL::LoadLLConfig();
+
+    // I18n
+    Translation::load("plugins/LiteLoader/language.json", LL::globalConfig.language, defaultLangData);
+
     // Check Protocol Version
     CheckProtocolVersion();
 
@@ -207,14 +212,8 @@ void LLMain()
     // Init LL Logger
     Logger::setDefaultFile("logs/LiteLoader-latest.log", false);
 
-    // Load Config
-    LL::LoadLLConfig();
-
     // Check Running BDS(Requires Config)
     CheckRunningBDS();
-
-    // I18n
-    Translation::load("plugins/LiteLoader/LangPack/" + LL::globalConfig.language + ".json");
 
     // Builtin CrashLogger
     LL::InitCrashLogger(LL::globalConfig.enableCrashLogger);
@@ -251,9 +250,8 @@ void LLMain()
     // Register Started
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {
         logger.info("LiteLoader is distributed under the AGPLv3 License");
-        logger.info("\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");
-        if (LL::globalConfig.enableAutoUpdate)
-            LL::InitAutoUpdateCheck();
+        logger.info("Our new fourm is now available! -> https://fourm.litebds.com");
+        logger.info("Thanks to RhyMC (rhymc.com) for supporting this project.");
         return true;
     });
 

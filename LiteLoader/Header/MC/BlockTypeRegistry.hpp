@@ -30,6 +30,7 @@ public:
 #endif
     MCAPI static unsigned __int64 computeBlockTypeRegistryChecksum(class BaseGameVersion const &);
     MCAPI static void forEachBlock(class std::function<bool (class BlockLegacy const &)>);
+    MCAPI static class Block const & getDefaultBlockState(class HashedString const &, bool);
     MCAPI static class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
     MCAPI static void initBlockEntities(class Experiments const &);
     MCAPI static void initEntityRegistry();

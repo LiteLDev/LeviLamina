@@ -33,6 +33,7 @@ public:
     MCAPI static struct Scripting::ModuleDescriptor makeModuleDescriptorFor(struct Scripting::Version);
 
 //private:
+    MCAPI void _addV1();
 
 
 private:

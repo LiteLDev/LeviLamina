@@ -15,7 +15,6 @@ namespace PlayerMovement {
 
 #undef AFTER_EXTRA
     MCAPI struct ActorUniqueID getControllingPassengerID(std::vector<struct ActorUniqueID> const &, int);
-    MCAPI bool isFlying(struct IPlayerMovementProxy const &);
     MCAPI void updatePlayerOnInput(struct IPlayerMovementProxy &, class MoveInputHandler &, class Vec3 &);
     MCAPI void updatePlayerRiding(struct IPlayerMovementProxy &, class MoveInputHandler &);
     MCAPI void updateSwimTravel(struct IPlayerMovementProxy &, class MoveInputHandler &, class Vec3 &);

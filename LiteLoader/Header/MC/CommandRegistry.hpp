@@ -731,8 +731,8 @@ public:
     MCAPI std::string describe(struct CommandRegistry::Signature const &, std::string const &, struct CommandRegistry::Overload const &, unsigned int, unsigned int *, unsigned int *) const;
     MCAPI std::string describe(class CommandParameterData const &) const;
     MCAPI std::string describe(class CommandRegistry::Symbol) const;
-    MCAPI struct CommandRegistry::Signature * findCommand(std::string const &);
     MCAPI struct CommandRegistry::Signature const * findCommand(std::string const &) const;
+    MCAPI struct CommandRegistry::Signature * findCommand(std::string const &);
     MCAPI class CommandRegistry::Symbol findEnumValue(std::string const &) const;
     MCAPI class CommandRegistry::Symbol findIdentifierInfo(std::string const &) const;
     MCAPI class CommandRegistry::Symbol findPostfix(std::string const &) const;

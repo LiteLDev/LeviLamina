@@ -192,6 +192,10 @@ extern Logger logger;
 #include <MC/RequestAbilityPacket.hpp>
 #include <MC/RequestPermissionsPacket.hpp>
 #include <MC/ToastRequestPacket.hpp>
+#include <MC/UpdateAbilitiesPacket.hpp>
+#include <MC/UpdateAdventureSettingsPacket.hpp>
+#include <MC/DeathInfoPacket.hpp>
+#include <MC/EditorNetworkPacket.hpp>
 
 #endif INCLUDE_ALL_PACKET
 
@@ -379,7 +383,11 @@ extern Logger logger;
     Func(LessonProgressPacket);                    \
     Func(RequestAbilityPacket);                    \
     Func(RequestPermissionsPacket);                \
-    Func(ToastRequestPacket);      
+    Func(ToastRequestPacket);                      \
+    Func(UpdateAbilitiesPacket);                   \
+    Func(UpdateAdventureSettingsPacket);           \
+    Func(EditorNetworkPacket);                     \
+    Func(DeathInfoPacket);                         \
 
 #define DeclearClass(packet) class packet;
 
@@ -648,7 +656,7 @@ static_assert(sizeof(ResourcePackClientResponsePacket) == 0x48, "size of Resourc
 static_assert(sizeof(TextPacket) == 0xD8, "size of TextPacket should be 216");
 static_assert(sizeof(SetTimePacket) == 0x38, "size of SetTimePacket should be 56");
 static_assert(sizeof(StartGamePacket) == 0x508, "size of StartGamePacket should be 1288");
-static_assert(sizeof(AddPlayerPacket) == 0x378, "size of AddPlayerPacket should be 888");
+static_assert(sizeof(AddPlayerPacket) == 0x518, "size of AddPlayerPacket should be 1304");
 static_assert(sizeof(AddActorPacket) == 0x180, "size of AddActorPacket should be 384");
 static_assert(sizeof(RemoveActorPacket) == 0x38, "size of RemoveActorPacket should be 56");
 static_assert(sizeof(AddItemActorPacket) == 0x118, "size of AddItemActorPacket should be 280");
@@ -817,6 +825,10 @@ static_assert(sizeof(LessonProgressPacket) == 0x58, "size of LessonProgressPacke
 static_assert(sizeof(RequestAbilityPacket) == 0x40, "size of RequestAbilityPacket should be 64");
 static_assert(sizeof(RequestPermissionsPacket) == 0x40, "size of RequestPermissionsPacket should be 64");
 static_assert(sizeof(ToastRequestPacket) == 0x70, "size of ToastRequestPacket should be 112");
+static_assert(sizeof(UpdateAbilitiesPacket) == 0x58, "size of UpdateAbilitiesPacket should be 88");
+static_assert(sizeof(UpdateAdventureSettingsPacket) == 0x38, "size of UpdateAdventureSettingsPacket should be 56");
+static_assert(sizeof(DeathInfoPacket) == 0x68, "size of DeathInfoPacket should be 104");
+static_assert(sizeof(EditorNetworkPacket) == 0x48, "size of EditorNetworkPacket should be 72");
 
 #endif // SIZE_STATIC_ASSERT
 
@@ -833,7 +845,7 @@ static_assert(sizeof(ResourcePackClientResponsePacket) == 0x48 || sizeof(Resourc
 static_assert(sizeof(TextPacket) == 0xD8 || sizeof(TextPacket) == 48, "size of TextPacket should be 216 or 48(default)");
 static_assert(sizeof(SetTimePacket) == 0x38 || sizeof(SetTimePacket) == 48, "size of SetTimePacket should be 56 or 48(default)");
 static_assert(sizeof(StartGamePacket) == 0x508 || sizeof(StartGamePacket) == 48, "size of StartGamePacket should be 1288 or 48(default)");
-static_assert(sizeof(AddPlayerPacket) == 0x378 || sizeof(AddPlayerPacket) == 48, "size of AddPlayerPacket should be 888 or 48(default)");
+static_assert(sizeof(AddPlayerPacket) == 0x518 || sizeof(AddPlayerPacket) == 48, "size of AddPlayerPacket should be 1304 or 48(default)");
 static_assert(sizeof(AddActorPacket) == 0x180 || sizeof(AddActorPacket) == 48, "size of AddActorPacket should be 384 or 48(default)");
 static_assert(sizeof(RemoveActorPacket) == 0x38 || sizeof(RemoveActorPacket) == 48, "size of RemoveActorPacket should be 56 or 48(default)");
 static_assert(sizeof(AddItemActorPacket) == 0x118 || sizeof(AddItemActorPacket) == 48, "size of AddItemActorPacket should be 280 or 48(default)");
@@ -1002,5 +1014,9 @@ static_assert(sizeof(LessonProgressPacket) == 0x58 || sizeof(LessonProgressPacke
 static_assert(sizeof(RequestAbilityPacket) == 0x40 || sizeof(RequestAbilityPacket) == 48, "size of RequestAbilityPacket should be 64 or 48(default)");
 static_assert(sizeof(RequestPermissionsPacket) == 0x40 || sizeof(RequestPermissionsPacket) == 48, "size of RequestPermissionsPacket should be 64 or 48(default)");
 static_assert(sizeof(ToastRequestPacket) == 0x70 || sizeof(ToastRequestPacket) == 48, "size of ToastRequestPacket should be 112 or 48(default)");
+static_assert(sizeof(UpdateAbilitiesPacket) == 0x58 || sizeof(UpdateAbilitiesPacket) == 48, "size of UpdateAbilitiesPacket should be 88 or 48(default)");
+static_assert(sizeof(UpdateAdventureSettingsPacket) == 0x38 || sizeof(UpdateAdventureSettingsPacket) == 48, "size of UpdateAdventureSettingsPacket should be 56 or 48(default)");
+static_assert(sizeof(DeathInfoPacket) == 0x68 || sizeof(DeathInfoPacket) == 48, "size of DeathInfoPacket should be 104 or 48(default)");
+static_assert(sizeof(EditorNetworkPacket) == 0x48 || sizeof(EditorNetworkPacket) == 48, "size of EditorNetworkPacket should be 72 or 48(default)");
 
 #endif // SIZE_STATIC_ASSERT_IF_DEFINE

@@ -39,7 +39,7 @@ public:
     /*17*/ virtual bool findTargetBlock();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LAYEGGGOAL
 #endif
-    MCAPI LayEggGoal(class Mob &, float, int, int, float, std::vector<class ItemDescriptor> const &, std::vector<enum MaterialType> const &, bool, bool, float, class ItemDescriptor const &, class DefinitionTrigger const &, std::string const &);
+    MCAPI LayEggGoal(class Mob &, float, int, int, float, std::vector<class ItemDescriptor> const &, std::vector<enum MaterialType> const &, bool, bool, float, class ItemDescriptor const &, class ActorDefinitionTrigger const &, std::string const &);
 
 //protected:
     MCAPI bool _isTargetBlock(class BlockLegacy const &) const;

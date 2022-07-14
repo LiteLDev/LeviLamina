@@ -31,8 +31,6 @@ public:
     MCAPI bool Gametest() const;
     MCAPI bool SpectatorMode() const;
     MCAPI bool UpcomingCreatorFeatures() const;
-    MCAPI bool VanillaExperiments() const;
-    MCAPI bool WildUpdate() const;
     MCAPI std::string getExperimentsActiveAsJSONList() const;
     MCAPI std::vector<std::string> getExperimentsActiveForTelemetry() const;
     MCAPI void getTagData(class CompoundTag const &);

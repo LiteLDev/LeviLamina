@@ -3,6 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Core.hpp"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -28,9 +29,11 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEDICATEDSERVER
     MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient>> getAutomationClient() const;
+    MCVAPI class Bedrock::NonOwnerPointer<class Editor::IEditorManager> getEditorManager() const;
     MCVAPI class IGameModuleShared & getGameModule();
     MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> getPrimaryMinecraft();
     MCVAPI bool isDedicatedServer() const;
+    MCVAPI bool isEditorModeEnabled() const;
     MCVAPI bool isEduMode() const;
     MCVAPI void onNetworkMaxPlayersChanged(unsigned int);
     MCVAPI bool stop();
@@ -38,11 +41,12 @@ public:
 #endif
     MCAPI DedicatedServer();
     MCAPI enum DedicatedServer::StartResult runDedicatedServerLoop(class Core::FilePathManager &, class PropertiesSettings &, class LevelSettings &, class AllowListFile &, std::unique_ptr<class PermissionsFile> &);
-    MCAPI enum DedicatedServer::StartResult start(std::string const &);
+    MCAPI enum DedicatedServer::StartResult start(std::string const &, class Bedrock::ActivationArguments const &);
 
 //private:
+    MCAPI std::string const & _getLevelName(class PropertiesSettings const &) const;
     MCAPI void initalizeAppConfigs();
-    MCAPI void initializeHttp();
+    MCAPI void initializeHttp(enum Bedrock::Http::Implementation);
     MCAPI void initializeLogging();
 
 

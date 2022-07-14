@@ -24,9 +24,14 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDESIMULATORSYSTEM
 #endif
+    MCAPI static void _assignSimulator(class StrictEntityContext const &, class StrictEntityContextOwner, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ActorMovementTickNeededFlag>, struct SideBySideSimulatorComponent, class FlagComponent<struct UsesECSMovementFlag>>, struct SideBySideRemappingComponent::Data &);
+    MCAPI static void _clearRemappings(class OptionalGlobalT<struct SideBySideRemappingComponent, class EntityRegistryBase>);
     MCAPI static struct TickingSystemWithInfo createBegin();
+    MCAPI static struct TickingSystemWithInfo createClearRemappingsSystem();
     MCAPI static struct TickingSystemWithInfo createEnd();
-    MCAPI static struct TickingSystemWithInfo createMigrator(class std::variant<struct SideBySideExtractionId::StepA, struct SideBySideExtractionId::StepB, struct SideBySideExtractionId::TickBegin>);
+    MCAPI static struct TickingSystemWithInfo createMigrator(class std::variant<struct SideBySideExtractionId::TickBegin, struct SideBySideExtractionId::BeginManagePassengers, struct SideBySideExtractionId::ManagePassengersStopRiding, struct SideBySideExtractionId::ManagePassengersPositioning, struct SideBySideExtractionId::EntityInside>);
+    MCAPI static struct TickingSystemWithInfo createSideBySideResultMigratorSystem();
+    MCAPI static void tickBegin(class EntityFactory, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ActorMovementTickNeededFlag>, struct SideBySideSimulatorComponent, class FlagComponent<struct UsesECSMovementFlag>>, class OptionalGlobalT<struct SideBySideRemappingComponent, class EntityRegistryBase>);
     MCAPI static void tickEnd(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct SideBySideSimulatorComponent>, class EntityFactory);
 
 

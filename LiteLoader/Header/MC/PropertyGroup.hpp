@@ -39,8 +39,10 @@ public:
     MCAPI void _addFloatProperty(std::string const &, bool, float, float, float);
     MCAPI void _addIntProperty(std::string const &, bool, int, int, int);
     MCAPI void _addPropertyMetadata(std::string const &, bool, enum PropertyMetadata::ContainedPropertyType);
+    MCAPI std::string const & _getFriendlyJsonTypeString(enum PropertyMetadata::ContainedPropertyType);
     MCAPI bool _loadPropertyFromJson(std::string const &, class Json::Value const &);
     MCAPI void _reserveSpaceForTypes(std::vector<unsigned __int64> const &);
+    MCAPI bool _validateDataType(class Json::Value const &, enum PropertyMetadata::ContainedPropertyType);
     MCAPI static enum PropertyMetadata::ContainedPropertyType _getJsonPropertyType(class Json::Value const &);
 
 

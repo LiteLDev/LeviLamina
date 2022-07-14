@@ -33,7 +33,6 @@ public:
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAPONITEMCOMPONENT
 #endif
-    MCAPI WeaponItemComponent(class ComponentItem *);
     MCAPI void appendFormattedHovertext(class ItemStackBase const &, std::string &, bool) const;
     MCAPI void hitActor(class ItemStack &, class Actor &, class Mob &) const;
     MCAPI void hitBlock(class ItemStack &, class Block const &, class BlockPos const &, class Mob &) const;

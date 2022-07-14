@@ -27,15 +27,15 @@ public:
 public:
     /*0*/ virtual ~ActorDamageByActorSource();
     /*1*/ virtual bool isEntitySource() const;
-    /*8*/ virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor *) const;
-    /*9*/ virtual bool getIsCreative() const;
-    /*10*/ virtual bool getIsWorldBuilder() const;
-    /*11*/ virtual struct ActorUniqueID getEntityUniqueID() const;
-    /*12*/ virtual enum ActorType getEntityType() const;
-    /*13*/ virtual enum ActorCategory getEntityCategories() const;
-    /*16*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
-    /*17*/ virtual enum ActorType getDamagingEntityType() const;
-    /*19*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
+    /*10*/ virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor *) const;
+    /*11*/ virtual bool getIsCreative() const;
+    /*12*/ virtual bool getIsWorldBuilder() const;
+    /*13*/ virtual struct ActorUniqueID getEntityUniqueID() const;
+    /*14*/ virtual enum ActorType getEntityType() const;
+    /*15*/ virtual enum ActorCategory getEntityCategories() const;
+    /*18*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
+    /*19*/ virtual enum ActorType getDamagingEntityType() const;
+    /*21*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDAMAGEBYACTORSOURCE
 #endif
     MCAPI ActorDamageByActorSource(class Actor &, enum ActorDamageCause);

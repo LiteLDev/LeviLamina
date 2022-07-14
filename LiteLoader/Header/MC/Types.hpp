@@ -5,6 +5,7 @@
 #include "Vec2.hpp"
 #include "Vec3.hpp"
 #include "BlockPos.hpp"
+#include "AABB.hpp"
 #include "BoundingBox.hpp"
 #include "ChunkPos.hpp"
 #include "ChunkBlockPos.hpp"
@@ -390,6 +391,10 @@ struct GameEventConfig {
 struct OperationNodeValues {
     enum Terrain;
 };
+class Editor {
+public:
+    class IEditorManager;
+};
 
 struct SubChunkStorageUnit {
     enum PruneType;
@@ -501,16 +506,6 @@ struct SharePtrRefTraits;
 
 template <typename T>
 class SubChunkStorage;
-
-enum class ScriptFacing {
-    Unknown = -1,
-    Down    = 0,
-    Up      = 1,
-    North   = 2,
-    South   = 3,
-    West    = 4,
-    East    = 5,
-};
 
 template <typename T, typename T2>
 class TagRegistry;

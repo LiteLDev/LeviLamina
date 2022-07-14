@@ -30,7 +30,7 @@ public:
     MCAPI static class DefinitionEvent loadEvent(class Json::Value, class SemVersion const &, enum TypeExecutingEvent, class EventResponseFactory const *);
 
 //private:
-    MCAPI static void _loadCollection(class DefinitionEvent &, class Json::Value, class SemVersion const &, enum TypeExecutingEvent, class EventResponseFactory const *);
+    MCAPI static void _loadCollection(class DefinitionEvent &, class Json::Value const &, class SemVersion const &, enum TypeExecutingEvent, class EventResponseFactory const *);
 
 
 private:

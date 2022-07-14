@@ -41,6 +41,7 @@ public:
     MCAPI void enableAutoSend(bool);
     MCAPI class Vec3 getLastSentPositionForAddingEntity();
     MCAPI class Vec2 getLastSentRotationForAddingEntity();
+    MCAPI float getLastSentYBodyRotationForAddingEntity();
     MCAPI float getLastSentYHeadRotationForAddingEntity();
     MCAPI void handleClientData(class MoveActorAbsoluteData const &);
     MCAPI bool isAutoSendEnabled() const;

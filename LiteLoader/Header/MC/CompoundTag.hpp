@@ -114,6 +114,7 @@ public:
 #endif
     MCAPI CompoundTag(class CompoundTag &&);
     MCAPI CompoundTag();
+    //MCAPI void __autoclassinit2(unsigned __int64);
     MCAPI void append(class CompoundTag const &);
     MCAPI class std::_Tree_const_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, class CompoundTagVariant>>>> begin() const;
     MCAPI void clear();
@@ -160,6 +161,7 @@ public:
     MCAPI class std::map<std::string, class CompoundTagVariant, struct std::less<void>, class std::allocator<struct std::pair<std::string const, class CompoundTagVariant>>> const & rawView() const;
     MCAPI bool remove(class gsl::basic_string_span<char const, -1>);
     MCAPI void rename(class gsl::basic_string_span<char const, -1>, std::string);
+    MCAPI unsigned __int64 size() const;
 
 
 

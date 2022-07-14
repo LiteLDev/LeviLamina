@@ -584,8 +584,9 @@ void EnableEventListener(int eventId)
         Event::PlayerUseItemOnEvent::subscribe([](const PlayerUseItemOnEvent& ev) {
             IF_LISTENED(EVENT_TYPES::onUseItemOn)
             {
-                CallEvent(EVENT_TYPES::onUseItemOn, PlayerClass::newPlayer((Player*)ev.mPlayer), ItemClass::newItem(ev.mItemStack),
-                    BlockClass::newBlock(ev.mBlockInstance), Number::newNumber(ev.mFace));
+                CallEvent(EVENT_TYPES::onUseItemOn, PlayerClass::newPlayer((Player*)ev.mPlayer),
+                          ItemClass::newItem(ev.mItemStack), BlockClass::newBlock(ev.mBlockInstance),
+                          Number::newNumber(ev.mFace), FloatPos::newPos(ev.mClickPos));
             }
             IF_LISTENED_END(EVENT_TYPES::onUseItemOn);
         });
@@ -849,7 +850,7 @@ void EnableEventListener(int eventId)
                 AABB range = ev.mDestroyRange;
                 int dimId = ((Actor*)ev.mWitherBoss)->getDimensionId();
                 CallEvent(EVENT_TYPES::onWitherBossDestroy, EntityClass::newEntity((Actor*)ev.mWitherBoss),
-                    IntPos::newPos(range.pointA.toBlockPos(), dimId), IntPos::newPos(range.pointB.toBlockPos(), dimId));
+                    IntPos::newPos(range.min.toBlockPos(), dimId), IntPos::newPos(range.max.toBlockPos(), dimId));
             }
             IF_LISTENED_END(EVENT_TYPES::onWitherBossDestroy);
         });

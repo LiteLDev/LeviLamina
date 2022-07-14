@@ -44,7 +44,7 @@ public:
     /*84*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*86*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /*95*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-    /*121*/ virtual class Item & setIcon(std::string const &, int);
+    /*123*/ virtual class Item & setIcon(std::string const &, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MEDICINEITEM
 #endif
     MCAPI MedicineItem(std::string const &, int);

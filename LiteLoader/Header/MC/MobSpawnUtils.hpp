@@ -15,6 +15,6 @@ namespace MobSpawnUtils {
 
 #undef AFTER_EXTRA
     MCAPI class OwnerPtrT<struct EntityRefTraits> spawnIfSummonable(struct ActorDefinitionIdentifier const &, class ActorDefinitionGroup &, class ActorFactory &, class Vec3 const &, class Vec2 const &);
-    MCAPI class Mob * trySpawnMob(class BlockSource &, struct ActorDefinitionIdentifier const &, class BlockPos, int, int, int, class std::function<bool (class BlockPos)> const &);
+    MCAPI class Mob * trySpawnMob(class BlockSource &, struct ActorDefinitionIdentifier const &, class BlockPos, int, int, int, class std::function<bool (class BlockPos)> const &, enum MobSpawnUtils::SurfaceDetectionType);
 
 };

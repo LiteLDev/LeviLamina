@@ -238,12 +238,13 @@ TInstanceHook(void, "?die@ServerPlayer@@UEAAXAEBVActorDamageSource@@@Z", ServerP
 #endif
 
 //fix Fishing Hook changeDimension Crash
-TInstanceHook(__int64, "?changeDimension@Actor@@UEAAXV?$AutomaticID@VDimension@@H@@_N@Z", Actor, unsigned int a1, char a2)
+TInstanceHook(__int64, "?changeDimension@Actor@@UEAAXV?$AutomaticID@VDimension@@H@@@Z", Actor, unsigned int a1)
 {
-    if (!LL::globalConfig.enableFixMcBug) return original(this, a1, a2);
+    if (!LL::globalConfig.enableFixMcBug) return original(this, a1);
     if ((int)this->getEntityTypeId() == 0x4D) return 0;
-    return original(this, a1, a2);
+    return original(this, a1);
 }
+
 TClasslessInstanceHook(__int64, "?teleportEntity@EndGatewayBlockActor@@QEAAXAEAVActor@@@Z", Actor* a1)
 {
     if (!LL::globalConfig.enableFixMcBug) return original(this, a1);
@@ -307,7 +308,7 @@ TClasslessInstanceHook(void, "?fireEventPlayerTeleported@MinecraftEventing@@SAXP
 // set stdin mode to text mode if in wine environment
 inline bool _tryFixConsoleInputMode()
 {
-    if (LL::globalConfig.enableFixMcBug && IsWineEnvironment())
+    if ((LL::globalConfig.enableFixMcBug && IsWineEnvironment()) || LL::globalConfig.enableForceUtf8Input)
     {
         int result = _setmode(_fileno(stdin), _O_U8TEXT);
         if (result == -1)

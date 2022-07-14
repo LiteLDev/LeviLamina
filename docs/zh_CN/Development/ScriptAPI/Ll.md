@@ -151,7 +151,7 @@ LLSE提供了接口 import 来导入其他插件已经导出的函数。
 | `RemoteCall::NumberType` | `__int64`, `double`... | `Number` | `Int64`, `Double`... | 
 | `std::string` | `std::string` | `String` | `String` | 
 | `std::vector<Type>` | `std::vector<Type>` | `Array` | `List<Type>` | 
-| `std::unordered_map<std::string,Type>` | `std::unordered_map<std::string,Type>` | `Array` | `Dictionary<String,Type>` | 
+| `std::unordered_map<std::string,Type>` | `std::unordered_map<std::string,Type>` | `Object` | `Dictionary<String,Type>` | 
 | `Actor*` | `Actor*` | `Entity` | `MC.Actor` | 
 | `Player*` | `Player*` | `Player` | `MC.Player` | 
 | `RemoteCall::ItemType` | `ItemStack*`, `std::unique_ptr<ItemStack>` | `Item` | `RemoteCall.ItemType` | 

@@ -26,7 +26,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATIONCOMPONENT
 #endif
-    MCAPI AnimationComponent(enum AnimationComponentGroup, class AnimationComponentID const &);
+    MCAPI AnimationComponent(enum AnimationComponentGroupType, class AnimationComponentID const &);
     MCAPI void applyAnimations(bool);
     MCAPI class std::shared_ptr<class ActorAnimationPlayer> createAnimationPlayer(class HashedString const &, class ExpressionNode const &, class std::set<class HashedString, struct std::hash<class HashedString>, class std::allocator<class HashedString>> &);
     MCAPI class std::unordered_map<enum SkeletalHierarchyIndex, std::vector<class BoneOrientation>, struct std::hash<enum SkeletalHierarchyIndex>, struct std::equal_to<enum SkeletalHierarchyIndex>, class std::allocator<struct std::pair<enum SkeletalHierarchyIndex const, std::vector<class BoneOrientation>>>> & getAllBoneOrientations();
@@ -45,14 +45,11 @@ public:
     MCAPI void setupDeltaTimeAndLifeTimeParams(bool);
     MCAPI bool shouldReloadBasedOnLastReloadInitTimeStamp() const;
     MCAPI bool usesLastReloadInitTimeStampClient() const;
-    MCAPI static class std::shared_ptr<class AnimationComponent> getAnimationComponent(enum AnimationComponentGroup, class AnimationComponentID);
+    MCAPI ~AnimationComponent();
     MCAPI static unsigned __int64 getReloadTimeStampClient();
     MCAPI static void incrementCurrentServerFrameIndex();
 
 //private:
-    MCAPI static class std::unordered_map<class AnimationComponentID, class std::weak_ptr<class AnimationComponent>, struct std::hash<class AnimationComponentID>, struct std::equal_to<class AnimationComponentID>, class std::allocator<struct std::pair<class AnimationComponentID const, class std::weak_ptr<class AnimationComponent>>>> & _getAllAnimationComponents(enum AnimationComponentGroup);
-    MCAPI static class std::recursive_mutex & _getAnimationComponentMapLock();
-    MCAPI static void _removeAnimationComponentFromGlobalMap(enum AnimationComponentGroup, class AnimationComponentID const &);
 
 
 private:

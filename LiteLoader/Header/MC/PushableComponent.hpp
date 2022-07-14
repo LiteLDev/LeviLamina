@@ -27,7 +27,7 @@ public:
 #endif
     MCAPI PushableComponent();
     MCAPI void initFromDefinition(class Actor &);
-    MCAPI void initFromDefinition(class Actor &, struct PushableDescription &);
+    MCAPI void initFromDefinition(class Actor &, struct PushableDescription const &);
     MCAPI bool isPushable();
     MCAPI bool isPushableByPiston();
     MCAPI void push(class Actor &, class Actor &, bool);

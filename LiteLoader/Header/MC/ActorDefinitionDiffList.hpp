@@ -28,7 +28,8 @@ public:
 #endif
     MCAPI ActorDefinitionDiffList(class ActorDefinitionGroup &);
     MCAPI void addDefinition(std::string const &);
-    MCAPI class ActorDefinitionDescriptor buildAdditiveDescriptionFrom(unsigned __int64, unsigned __int64);
+    MCAPI void addPendingPropertyChange(unsigned __int64, class std::variant<int, float, bool, unsigned __int64>);
+    MCAPI class ActorDefinitionDescriptor buildAdditiveDescriptionFrom(unsigned __int64, unsigned __int64) const;
     MCAPI void clearChangedDescription();
     MCAPI void clearDefinitions();
     MCAPI std::string definitionListToString(std::string const &) const;

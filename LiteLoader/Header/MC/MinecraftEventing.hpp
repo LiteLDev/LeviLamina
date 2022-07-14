@@ -66,6 +66,7 @@ public:
     MCVAPI void fireEventButtonPressed(class gsl::basic_string_span<char const, -1>, class buffer_span<struct std::pair<class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>>>) const;
     MCVAPI void fireEventCameraUsed(bool);
     MCVAPI void fireEventChatSettingsUpdated(class Player const *, std::vector<class Social::Events::Property> const &) const;
+    MCVAPI void fireEventChildAccountSignIn(bool, bool);
     MCVAPI void fireEventChunkChanged(class LevelChunk &);
     MCVAPI void fireEventChunkLoaded(class LevelChunk &);
     MCVAPI void fireEventChunkUnloaded(class LevelChunk &);
@@ -75,7 +76,7 @@ public:
     MCVAPI void fireEventCodeBuilderRuntimeAction(std::string const &) const;
     MCVAPI void fireEventCodeBuilderScoreChanged(std::string const &, int) const;
     MCVAPI void fireEventCompoundCreatorCreated(int, int);
-    MCVAPI void fireEventConnectedStorageError(std::string const &, std::string const &, __int64);
+    MCVAPI void fireEventConnectedStorageError(char const *, std::string const &, __int64);
     MCVAPI void fireEventConnectedStorageResult(enum ConnectedStorageEventType, bool, unsigned int, class std::optional<unsigned int>, std::string const &, std::string const &, __int64, class std::optional<unsigned int>, class std::optional<unsigned int>, class std::optional<unsigned int>);
     MCVAPI void fireEventConnectionFailed(enum IConnectionEventing::ConnectionFailureReason);
     MCVAPI void fireEventContentLogsInWorldSession(std::string const &, unsigned int, unsigned int);
@@ -102,6 +103,7 @@ public:
     MCVAPI void fireEventGameRulesUpdated(float, float, std::string const &);
     MCVAPI void fireEventGameRulesUpdated(int, int, std::string const &);
     MCVAPI void fireEventGameRulesUpdated(bool, bool, std::string const &);
+    MCVAPI void fireEventGoogleAccountHoldWarning(bool);
     MCVAPI void fireEventHardwareInfo();
     MCVAPI void fireEventHowToPlayTopicChanged(std::string const &, enum InputMode);
     MCVAPI void fireEventIAPPurchaseAttempt(std::string const &, std::string const &, class Offer &, enum PurchasePath);
@@ -150,6 +152,7 @@ public:
     MCVAPI void fireEventPersonaStillLoading(bool, bool, bool, bool, bool, bool, bool, bool);
     MCVAPI void fireEventPersonaUserLoadedActive(std::string const &, std::string const &, bool);
     MCVAPI void fireEventPersonaXForgeResponses(std::vector<std::string> const &, int);
+    MCVAPI void fireEventPlayIntegrityCheck(int, std::string const &, std::string const &, std::string const &, std::string const &);
     MCVAPI void fireEventPlayerBanned(std::string const &);
     MCVAPI void fireEventPlayerBounced(class Player *, class Block const &, int);
     MCVAPI void fireEventPlayerDamaged(class Player *, enum ActorDamageCause);
@@ -188,8 +191,10 @@ public:
     MCVAPI void fireEventRespondedToAcceptContent(struct PacksInfoData const &, bool);
     MCVAPI void fireEventScreenChanged(unsigned int const &, std::string const &, class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> const &);
     MCVAPI void fireEventScreenLoaded(unsigned int const &, std::string const &, double, double, double);
-    MCVAPI void fireEventScriptLoaded(std::string const &, unsigned __int64);
-    MCVAPI void fireEventScriptRan(std::string const &, unsigned __int64, bool, bool);
+    MCVAPI void fireEventScriptDebuggerConnect(bool);
+    MCVAPI void fireEventScriptDebuggerListen(bool);
+    MCVAPI void fireEventScriptPluginDiscovery(class ScriptPluginResult const &, bool);
+    MCVAPI void fireEventScriptPluginRun(class ScriptPluginResult const &, class std::chrono::duration<__int64, struct std::ratio<1, 1000000>>, bool);
     MCVAPI void fireEventSearchCatalogRequest(class SearchRequestTelemetry const &);
     MCVAPI void fireEventSearchItemSelected(int, int, std::string const &, int, int);
     MCVAPI void fireEventServerDrivenLayoutImagesLoaded(class RequestTelemetry &, std::string, int, unsigned __int64, int, int, int, std::vector<unsigned short> &);
@@ -208,6 +213,7 @@ public:
     MCVAPI void fireEventStartClient(std::string const &);
     MCVAPI void fireEventStartWorld(enum IMinecraftEventing::NetworkType, std::string const &, enum Social::MultiplayerServiceIdentifier);
     MCVAPI void fireEventStorage(int, std::string const &);
+    MCVAPI void fireEventStorageAreaFull(std::string const &, class std::unordered_map<std::string, unsigned __int64, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, unsigned __int64>>> &);
     MCVAPI void fireEventStorageReport(std::string const &);
     MCVAPI void fireEventStoreDiscoveryRequestResponse(unsigned short);
     MCVAPI void fireEventStoreLocalizationBinaryFetchResponse(unsigned short, unsigned int);
@@ -215,8 +221,7 @@ public:
     MCVAPI void fireEventStorePlayFabRequestResponse(unsigned short);
     MCVAPI void fireEventStorePromotionNotification(std::string const &);
     MCVAPI void fireEventStoreSearch(struct storeSearch::TelemetryData const &);
-    MCVAPI void fireEventStoreSessionAuthRequestResponse(unsigned short);
-    MCVAPI void fireEventStoreSessionConfigRequestResponse(unsigned short);
+    MCVAPI void fireEventStoreSessionResponse(std::string const &, unsigned short);
     MCVAPI void fireEventStructureExport(struct glTFExportData const &, enum IMinecraftEventing::ExportOutcome, enum IMinecraftEventing::ExportStage) const;
     MCVAPI void fireEventTagButtonPressed(std::string const &, bool) const;
     MCVAPI void fireEventTelemetryHttpError(enum Social::Events::TelemetrySystemType, class Bedrock::Http::Status);

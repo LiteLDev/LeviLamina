@@ -21,8 +21,7 @@ public:
 #endif
 
 public:
-    MCAPI void addValidationFailure(struct SideBySideValidationFailure const &);
-    MCAPI struct SideBySideValidationFailureComponent & operator=(struct SideBySideValidationFailureComponent &&);
+    MCAPI ~SideBySideValidationFailureComponent();
 
 protected:
 

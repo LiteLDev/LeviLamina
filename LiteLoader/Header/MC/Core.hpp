@@ -125,6 +125,9 @@ Profile(Profile const&&) = delete;
 enum FileAccessType;
 
 #undef AFTER_EXTRA
+    MCAPI extern char const * RESULT_FAILED_MESSAGE;
+    MCAPI extern char const * RESULT_NOT_IMPLEMENTED_MESSAGE;
+    MCAPI extern char const * RESULT_SUCCEEDED_MESSAGE;
     MCAPI unsigned __int64 operator&(enum Core::DirectoryIterationFlags, enum Core::DirectoryIterationFlags);
     MCAPI enum Core::DirectoryIterationFlags operator|(enum Core::DirectoryIterationFlags, enum Core::DirectoryIterationFlags);
     MCAPI extern class std::shared_ptr<class Core::FileStorageArea> sRootStorageArea;

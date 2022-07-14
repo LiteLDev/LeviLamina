@@ -47,10 +47,10 @@ public:
     /*84*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*89*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     /*93*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
-    /*115*/ virtual std::string getInteractText(class Player const &) const;
-    /*116*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
-    /*119*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-    /*121*/ virtual class Item & setIcon(std::string const &, int);
+    /*117*/ virtual std::string getInteractText(class Player const &) const;
+    /*118*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
+    /*121*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /*123*/ virtual class Item & setIcon(std::string const &, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FISHINGRODITEM
 #endif
     MCAPI FishingRodItem(std::string const &, int);
