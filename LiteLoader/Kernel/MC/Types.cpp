@@ -223,15 +223,6 @@ BlockPos Vec3::toBlockPos() const {
     return BlockPos((int)std::floor((double)x), (int)std::floor((double)y), (int)std::floor((double)z));
 }
 
-float Vec3::length() const {
-    return sqrt(x * x + y * y + z * z);
-}
-
-float Vec3::distanceTo(Vec3 const& a0) const {
-    Vec3 tmp = *this - a0;
-    return tmp.length();
-}
-
 AABB BoundingBox::toAABB() const {
     Vec3 vec1 = min.toVec3();
     Vec3 vec2 = max.toVec3();
