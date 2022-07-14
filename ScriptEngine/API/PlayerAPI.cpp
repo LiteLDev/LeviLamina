@@ -106,11 +106,14 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("addLevel", &PlayerClass::addLevel)
         .instanceFunction("reduceLevel", &PlayerClass::reduceLevel)
         .instanceFunction("getLevel", &PlayerClass::getLevel)
+        .instanceFunction("setLevel", &PlayerClass::setLevel)
         .instanceFunction("resetLevel", &PlayerClass::resetLevel)
         .instanceFunction("addExperience", &PlayerClass::addExperience)
         .instanceFunction("reduceExperience", &PlayerClass::reduceExperience)
-        .instanceFunction("getExperience", &PlayerClass::getExperience)
-        .instanceFunction("setExperience", &PlayerClass::setExperience)
+        .instanceFunction("getCurrentExperience", &PlayerClass::getCurrentExperience)
+        .instanceFunction("setCurrentExperience", &PlayerClass::setCurrentExperience)
+        .instanceFunction("getTotalExperience", &PlayerClass::getTotalExperience)
+        .instanceFunction("setTotalExperience", &PlayerClass::setTotalExperience)
         .instanceFunction("getXpNeededForNextLevel", &PlayerClass::getXpNeededForNextLevel)
 
         .instanceFunction("sendSimpleForm", &PlayerClass::sendSimpleForm)
@@ -988,6 +991,21 @@ Local<Value> PlayerClass::getLevel()
     CATCH("Fail in getLevel!")
 }
 
+Local<Value> PlayerClass::setLevel(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player) return Local<Value>();
+
+        player->addLevels(args[0].toInt() - player->getPlayerLevel());
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in reduceLevel!");
+}
+
 Local<Value> PlayerClass::resetLevel()
 {
     try {
@@ -1001,19 +1019,18 @@ Local<Value> PlayerClass::resetLevel()
     CATCH("Fail in resetLevel!")
 }
 
-Local<Value> PlayerClass::getExperience()
+Local<Value> PlayerClass::getCurrentExperience()
 {
     try {
         Player* player = get();
         if (!player)
             return Local<Value>();
-
         return Number::newNumber(player->getCurrentExperience());
     }
-    CATCH("Fail in getExperience!")
+    CATCH("Fail in getCurrentExperience!")
 }
 
-Local<Value> PlayerClass::setExperience(const Arguments& args)
+Local<Value> PlayerClass::setCurrentExperience(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
@@ -1025,7 +1042,33 @@ Local<Value> PlayerClass::setExperience(const Arguments& args)
         player->setCurrentExperience(args[0].toInt());
         return Boolean::newBoolean(true);
     }
-    CATCH("Fail in setExperience!");
+    CATCH("Fail in setCurrentExperience!");
+}
+
+Local<Value> PlayerClass::getTotalExperience()
+{
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        return Number::newNumber((int64_t)player->getTotalExperience());
+    }
+    CATCH("Fail in getTotalExperience!")
+}
+
+Local<Value> PlayerClass::setTotalExperience(const Arguments& args)
+{
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player) return Local<Value>();
+
+        player->setTotalExperience(args[0].asNumber().toInt64());
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setTotalExperience!");
 }
 
 Local<Value> PlayerClass::addExperience(const Arguments& args)

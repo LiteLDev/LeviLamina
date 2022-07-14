@@ -90,9 +90,12 @@ public:
     Local<Value> addLevel(const Arguments& args);
     Local<Value> reduceLevel(const Arguments& args);
     Local<Value> getLevel();
+    Local<Value> setLevel(const Arguments& args);
     Local<Value> resetLevel();
-    Local<Value> getExperience();
-    Local<Value> setExperience(const Arguments& arg);
+    Local<Value> getCurrentExperience();
+    Local<Value> setCurrentExperience(const Arguments& arg);
+    Local<Value> getTotalExperience();
+    Local<Value> setTotalExperience(const Arguments& arg);
     Local<Value> addExperience(const Arguments& args);
     Local<Value> reduceExperience(const Arguments& arg);
     Local<Value> getXpNeededForNextLevel();
