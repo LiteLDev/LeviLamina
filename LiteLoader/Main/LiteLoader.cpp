@@ -134,10 +134,6 @@ extern void RegisterSimpleServerLogger();
 
 void Welcome()
 {
-    if (!LL::globalConfig.enableWelcomeText)
-        return;
-
-
     cout << "\r" << R"(                                                                       )" << endl
          << "\r" << R"(          _     _ _       _                    _                       )" << endl
          << "\r" << R"(         | |   (_) |_ ___| |    ___   __ _  __| | ___ _ __             )" << endl
@@ -227,7 +223,8 @@ void LLMain()
     SetWindowText(hwnd, s.c_str());
 
     // Welcome
-    Welcome();
+    if (LL::globalConfig.enableWelcomeText)
+        Welcome();
 
     // DebugMode
     CheckDevMode();
@@ -249,9 +246,9 @@ void LLMain()
 
     // Register Started
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {
-        logger.info("LiteLoader is distributed under the AGPLv3 License");
-        logger.info("Our new fourm is now available! -> https://fourm.litebds.com");
-        logger.info("Thanks to RhyMC (rhymc.com) for supporting this project.");
+        logger.info("LiteLoader is licensed under AGPLv3");
+        logger.info("Our new forum is live! => https://fourm.litebds.com");
+        logger.info("Thanks to RhyCloud(rhymc.com) for the support");
         return true;
     });
 
