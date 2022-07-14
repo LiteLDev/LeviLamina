@@ -10,8 +10,7 @@
 //////////////////// Structs ////////////////////
 
 //导出函数表
-struct ExportedFuncData
-{
+struct ExportedFuncData {
     std::string fromEngineType;
     ScriptEngine* engine;
     script::Global<Function> func;
@@ -19,15 +18,13 @@ struct ExportedFuncData
 };
 
 //消息系统处理函数信息
-struct MessageHandlers
-{
+struct MessageHandlers {
     script::utils::Message::MessageProc* handler;
     script::utils::Message::MessageProc* cleaner;
 };
 
 //全局共享数据
-struct GlobalDataType
-{
+struct GlobalDataType {
     //引擎管理器表
     SRWLock engineListLock;
     std::list<ScriptEngine*> globalEngineList;
@@ -44,7 +41,7 @@ struct GlobalDataType
     std::map<std::string, MessageHandlers> messageSystemHandlers;
     std::map<std::string, HANDLE> messageThreads;
 
-    //OperationCount
+    // OperationCount
     std::map<std::string, int> operationCountData;
 };
 

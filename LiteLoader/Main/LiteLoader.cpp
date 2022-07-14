@@ -24,8 +24,7 @@ time_t startTime;
 time_t endTime;
 
 // Add plugins folder to path
-void FixPluginsLibDir()
-{
+void FixPluginsLibDir() {
     auto buffer = new WCHAR[8192];
     auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
     std::wstring PATH{buffer, sz};
@@ -35,8 +34,7 @@ void FixPluginsLibDir()
     delete[] buffer;
 }
 
-void FixUpCWD()
-{
+void FixUpCWD() {
     string buf;
     buf.assign(8192, '\0');
     GetModuleFileNameA(nullptr, buf.data(), 8192);
@@ -44,18 +42,17 @@ void FixUpCWD()
     SetCurrentDirectoryA(buf.c_str());
 }
 
-void CheckRunningBDS()
-{
+void CheckRunningBDS() {
     if (!LL::globalConfig.enableCheckRunningBDS)
         return;
     std::vector<DWORD> pids;
     PROCESSENTRY32 pe32{};
     pe32.dwSize = sizeof(pe32);
     HANDLE hProcessSnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
-    if (hProcessSnap == INVALID_HANDLE_VALUE) return;
+    if (hProcessSnap == INVALID_HANDLE_VALUE)
+        return;
     bool res = Process32First(hProcessSnap, &pe32); // Start traversing
-    while (res)
-    {
+    while (res) {
         std::wstring name = pe32.szExeFile;
         auto pid = pe32.th32ProcessID;
         if (_getpid() != pid && (name == L"bedrock_server.exe" || name == L"bedrock_server_mod.exe")) {
@@ -73,25 +70,21 @@ void CheckRunningBDS()
         WCHAR buf[8196] = {0};
         // Open process handle
         auto handle = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ | PROCESS_TERMINATE, false, pid);
-        if (handle)
-        {
+        if (handle) {
             DWORD sz = NULL;
             WCHAR buf[8196] = {0};
             // Get the full path of the process
-            if (sz = GetModuleFileNameEx(handle, NULL, buf, 8196))
-            {
+            if (sz = GetModuleFileNameEx(handle, NULL, buf, 8196)) {
                 std::wstring path{buf, sz};
-                if (current == path)
-                {
+                if (current == path) {
                     logger.error("Detected the existence of another BDS process with the same path!");
                     logger.error("This may cause the network port and the level to be occupied");
                     logger.error("Do you want to terminate the process with PID {}?  (y=Yes, n=No)", pid);
                     char ch;
                     cin >> ch;
-                    if (ch == 'y' || ch == 'Y')
-                    {
-                        //auto cmd = "taskkill /F /PID " + std::to_string(pid);
-                        //system(cmd.c_str());
+                    if (ch == 'y' || ch == 'Y') {
+                        // auto cmd = "taskkill /F /PID " + std::to_string(pid);
+                        // system(cmd.c_str());
                         TerminateProcess(handle, 1);
                     }
                 }
@@ -101,21 +94,16 @@ void CheckRunningBDS()
     }
 }
 
-void FixAllowList()
-{
-    if (filesystem::exists("whitelist.json"))
-    {
-        if (filesystem::exists("allowlist.json"))
-        {
+void FixAllowList() {
+    if (filesystem::exists("whitelist.json")) {
+        if (filesystem::exists("allowlist.json")) {
             auto res = ReadAllFile("allowlist.json");
-            if (res && (res->empty() || nlohmann::json::parse(*res, nullptr, true, true).empty()))
-            {
+            if (res && (res->empty() || nlohmann::json::parse(*res, nullptr, true, true).empty())) {
                 logger.warn("allowlist.json is empty! Removing...");
                 filesystem::remove("allowlist.json");
-            }
-            else
-            {
-                logger.warn("Both allowlist.json and whitelist.json exist and aren't empty. Please check them manually");
+            } else {
+                logger.warn(
+                    "Both allowlist.json and whitelist.json exist and aren't empty. Please check them manually");
                 return;
             }
         }
@@ -132,21 +120,29 @@ extern bool InitPlayerDatabase();
 
 extern void RegisterSimpleServerLogger();
 
-void Welcome()
-{
+void Welcome() {
     if (!LL::globalConfig.enableWelcomeText)
         return;
 
-       
-    cout << "\r" << R"(                                                                       )" << endl
-         << "\r" << R"(          _     _ _       _                    _                       )" << endl
-         << "\r" << R"(         | |   (_) |_ ___| |    ___   __ _  __| | ___ _ __             )" << endl
-         << "\r" << R"(         | |   | | __/ _ \ |   / _ \ / _` |/ _` |/ _ \ '__|            )" << endl
-         << "\r" << R"(         | |___| | ||  __/ |__| (_) | (_| | (_| |  __/ |               )" << endl
-         << "\r" << R"(         |_____|_|\__\___|_____\___/ \__,_|\__,_|\___|_|               )" << endl
-         << "\r" << R"(                                                                       )" << endl
-         << "\r" << R"(       --------   Light-Weight BDS Plugin Loader   ----------          )" << endl
-         << "\r" << R"(                                                                       )" << endl;
+
+    cout << "\r"
+         << R"(                                                                       )" << endl
+         << "\r"
+         << R"(          _     _ _       _                    _                       )" << endl
+         << "\r"
+         << R"(         | |   (_) |_ ___| |    ___   __ _  __| | ___ _ __             )" << endl
+         << "\r"
+         << R"(         | |   | | __/ _ \ |   / _ \ / _` |/ _` |/ _ \ '__|            )" << endl
+         << "\r"
+         << R"(         | |___| | ||  __/ |__| (_) | (_| | (_| |  __/ |               )" << endl
+         << "\r"
+         << R"(         |_____|_|\__\___|_____\___/ \__,_|\__,_|\___|_|               )" << endl
+         << "\r"
+         << R"(                                                                       )" << endl
+         << "\r"
+         << R"(       --------   Light-Weight BDS Plugin Loader   ----------          )" << endl
+         << "\r"
+         << R"(                                                                       )" << endl;
 }
 
 void CheckDevMode() {
@@ -154,22 +150,18 @@ void CheckDevMode() {
         logger.warn("Currently in developer mode!");
 }
 
-void CheckBetaVersion()
-{
-    if (LITELOADER_VERSION_STATUS != LL::Version::Release)
-    {
+void CheckBetaVersion() {
+    if (LITELOADER_VERSION_STATUS != LL::Version::Release) {
         logger.warn("Currently using a beta version.");
         logger.warn("PLEASE DO NOT USE IN PRODUCTION ENVIRONMENT!");
     }
 }
 
-void CheckProtocolVersion()
-{
+void CheckProtocolVersion() {
     auto currentProtocol = LL::getServerProtocolVersion();
-    if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol)
-    {
-        logger.warn("Protocol version not match, target version: {}, current version: {}.",
-                    TARGET_BDS_PROTOCOL_VERSION, currentProtocol);
+    if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
+        logger.warn("Protocol version not match, target version: {}, current version: {}.", TARGET_BDS_PROTOCOL_VERSION,
+                    currentProtocol);
         logger.warn("This will most likely crash the server, please use the LiteLoader that matches the BDS version!");
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
@@ -178,8 +170,7 @@ void CheckProtocolVersion()
 // extern
 extern void EndScheduleSystem();
 
-void LLMain()
-{
+void LLMain() {
     // Set global SEH-Exception handler
     _set_se_translator(seh_exception::TranslateSEHtoCE);
 
@@ -233,8 +224,7 @@ void LLMain()
     CheckDevMode();
 
     // Addon Helper
-    if (LL::globalConfig.enableAddonsHelper)
-    {
+    if (LL::globalConfig.enableAddonsHelper) {
         InitAddonsHelper();
     }
 
@@ -263,14 +253,11 @@ void LLMain()
 }
 
 // Call LLMain
-THook(int, "main", int a, void* b)
-{
+THook(int, "main", int a, void* b) {
     startTime = clock();
     char** str = static_cast<char**>(b);
-    for (int i = 0; i < a; ++i)
-    {
-        if (strcmp(str[i], "--noColor") == 0)
-        {
+    for (int i = 0; i < a; ++i) {
+        if (strcmp(str[i], "--noColor") == 0) {
             LL::commandLineOption.noColorOption = true;
             break;
         }

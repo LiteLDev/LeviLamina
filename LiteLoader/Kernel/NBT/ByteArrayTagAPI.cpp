@@ -14,7 +14,7 @@ std::unique_ptr<ByteArrayTag> ByteArrayTag::create() {
 }
 
 std::unique_ptr<ByteArrayTag> ByteArrayTag::create(TagMemoryChunk const& val) {
-    auto tag=Tag::newTag(Tag::Type::ByteArray);
+    auto tag = Tag::newTag(Tag::Type::ByteArray);
     tag->asByteArrayTag()->set(val);
     return std::unique_ptr<ByteArrayTag>((ByteArrayTag*)tag.release());
 }

@@ -4,8 +4,7 @@
 
 //////////////////// LLSE Static ////////////////////
 
-class LlClass
-{
+class LlClass {
 public:
     static Local<Value> registerPlugin(const Arguments& args);
     static Local<Value> version(const Arguments& args);

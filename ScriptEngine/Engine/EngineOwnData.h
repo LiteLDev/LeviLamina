@@ -8,14 +8,12 @@
 #include <memory>
 #include <LoggerAPI.h>
 
-struct FormCallbackData
-{
+struct FormCallbackData {
     script::ScriptEngine* engine;
     script::Global<script::Function> func;
 };
 
-struct RemoteCallData
-{
+struct RemoteCallData {
     std::string nameSpace;
     std::string funcName;
     script::Global<Function> callback;
@@ -32,8 +30,7 @@ struct SimpleCallbackData
 
 class Player;
 
-struct EngineOwnData
-{
+struct EngineOwnData {
     //基础信息
     std::string pluginName = "";
     std::string pluginFilePath = "";
@@ -42,7 +39,7 @@ struct EngineOwnData
     //表单回调
     std::map<unsigned, FormCallbackData> formCallbacks;
 
-    //RemoteCall Exported Functions: unordered_map<nameSpace, funcName>
+    // RemoteCall Exported Functions: unordered_map<nameSpace, funcName>
     std::unordered_map<std::string, RemoteCallData> exportFuncs;
 
     /*
@@ -65,27 +62,24 @@ struct EngineOwnData
     }
     */
 
-    //LoggerAPI
+    // LoggerAPI
     bool toConsole = true;
     ::Logger logger = ::Logger("");
     int maxLogLevel = 4;
 
     //玩家绑定数据
-    std::unordered_map<std::string,script::Global<Value>> playerDataDB;
+    std::unordered_map<std::string, script::Global<Value>> playerDataDB;
 
-    //Unload Callbacks, use for close database...
+    // Unload Callbacks, use for close database...
     int index = 0;
     std::unordered_map<int, std::function<void(ScriptEngine*)>> unloadCallbacks;
-    inline int addUnloadCallback(std::function<void(ScriptEngine*)>&& cb)
-    {
+    inline int addUnloadCallback(std::function<void(ScriptEngine*)>&& cb) {
         unloadCallbacks[++index] = cb;
         return index;
     }
-    inline bool removeUnloadCallback(int index)
-    {
+    inline bool removeUnloadCallback(int index) {
         return unloadCallbacks.erase(index);
     }
-
 };
 
 // 引擎附加数据

@@ -9,25 +9,13 @@ public:
 
     inline Vec3() = default;
 
-    inline Vec3(float _x, float _y, float _z)
-        : x(_x)
-        , y(_y)
-        , z(_z){};
+    inline Vec3(float _x, float _y, float _z) : x(_x), y(_y), z(_z){};
 
-    inline explicit Vec3(BlockPos& pos)
-        : x((float)pos.x)
-        , y((float)pos.y)
-        , z((float)pos.z){};
+    inline explicit Vec3(BlockPos& pos) : x((float)pos.x), y((float)pos.y), z((float)pos.z){};
 
-    inline Vec3(double _x, double _y, double _z)
-        : x((float)_x)
-        , y((float)_y)
-        , z((float)_z){};
+    inline Vec3(double _x, double _y, double _z) : x((float)_x), y((float)_y), z((float)_z){};
 
-    inline Vec3(int _x, int _y, int _z)
-        : x((float)_x)
-        , y((float)_y)
-        , z((float)_z){};
+    inline Vec3(int _x, int _y, int _z) : x((float)_x), y((float)_y), z((float)_z){};
 
     MCAPI class Vec3 abs() const;
 
@@ -110,7 +98,9 @@ public:
 
 
     float& operator[](int index) {
-        if (index < 0 || index > 2) { return (&x)[0]; }
+        if (index < 0 || index > 2) {
+            return (&x)[0];
+        }
         return (&x)[index];
     }
 
@@ -229,7 +219,8 @@ public:
 
 namespace std {
 
-template <> struct hash<Vec3> {
+template <>
+struct hash<Vec3> {
     std::size_t operator()(Vec3 const& pos) const noexcept {
         return (std::hash<float>()(pos.x) ^ std::hash<float>()(pos.y) ^ std::hash<float>()(pos.z));
     }

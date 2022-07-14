@@ -1,6 +1,6 @@
 #pragma once
 
-//Types
+// Types
 namespace RakNet {
 class RakPeer;
 };
@@ -18,5 +18,4 @@ class PropertiesSettings;
 
 class LevelStorage;
 
-template <typename T>
-LIAPI inline T* Global = nullptr;
+template <typename T> LIAPI inline T* Global = nullptr;

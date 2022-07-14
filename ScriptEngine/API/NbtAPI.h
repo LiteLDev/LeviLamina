@@ -16,34 +16,34 @@
 extern struct Tag;
 extern ClassDefine<void> NbtStaticBuilder;
 
-//NBT Static
-class NbtStatic : public ScriptClass
-{
+// NBT Static
+class NbtStatic : public ScriptClass {
 public:
     static Local<Value> newTag(const Arguments& args);
     static Local<Value> parseSNBT(const Arguments& args);
     static Local<Value> parseBinaryNBT(const Arguments& args);
 
-    template<Tag::Type T>
-    static Local<Value> getType()
-    {
+    template <Tag::Type T>
+    static Local<Value> getType() {
         return Number::newNumber((int)T);
     }
 };
 extern ClassDefine<void> NbtStaticBuilder;
 
 
-//NBT End
+// NBT End
 class EndTag;
-class NbtEndClass : public ScriptClass
-{
+class NbtEndClass : public ScriptClass {
 public:
     std::unique_ptr<EndTag> nbt;
     bool canDelete = true;
 
     explicit NbtEndClass(const Local<Object>& scriptObj, std::unique_ptr<EndTag> p);
     explicit NbtEndClass(std::unique_ptr<EndTag> p);
-    ~NbtEndClass() { if (!canDelete) nbt.release(); }
+    ~NbtEndClass() {
+        if (!canDelete)
+            nbt.release();
+    }
 
     static NbtEndClass* constructor(const Arguments& args);
     static EndTag* extract(Local<Value> v);
@@ -58,16 +58,18 @@ public:
 extern ClassDefine<NbtEndClass> NbtEndClassBuilder;
 
 
-//NBT Byte
-class NbtByteClass : public ScriptClass 
-{
+// NBT Byte
+class NbtByteClass : public ScriptClass {
 public:
     std::unique_ptr<ByteTag> nbt;
     bool canDelete = true;
 
     explicit NbtByteClass(const Local<Object>& scriptObj, std::unique_ptr<ByteTag> p);
     explicit NbtByteClass(std::unique_ptr<ByteTag> p);
-    ~NbtByteClass() { if (!canDelete) nbt.release(); }
+    ~NbtByteClass() {
+        if (!canDelete)
+            nbt.release();
+    }
 
     static NbtByteClass* constructor(const Arguments& args);
     static ByteTag* extract(Local<Value> v);
@@ -82,16 +84,18 @@ public:
 extern ClassDefine<NbtByteClass> NbtByteClassBuilder;
 
 
-//NBT Short
-class NbtShortClass : public ScriptClass
-{
+// NBT Short
+class NbtShortClass : public ScriptClass {
 public:
     std::unique_ptr<ShortTag> nbt;
     bool canDelete = true;
 
     explicit NbtShortClass(const Local<Object>& scriptObj, std::unique_ptr<ShortTag> p);
     explicit NbtShortClass(std::unique_ptr<ShortTag> p);
-    ~NbtShortClass() { if (!canDelete) nbt.release(); }
+    ~NbtShortClass() {
+        if (!canDelete)
+            nbt.release();
+    }
 
     static NbtShortClass* constructor(const Arguments& args);
     static ShortTag* extract(Local<Value> v);
@@ -106,22 +110,24 @@ public:
 extern ClassDefine<NbtShortClass> NbtShortClassBuilder;
 
 
-//NBT Int
-class NbtIntClass : public ScriptClass
-{
+// NBT Int
+class NbtIntClass : public ScriptClass {
 public:
     std::unique_ptr<IntTag> nbt;
     bool canDelete = true;
 
     explicit NbtIntClass(const Local<Object>& scriptObj, std::unique_ptr<IntTag> p);
     explicit NbtIntClass(std::unique_ptr<IntTag> p);
-    ~NbtIntClass() { if (!canDelete) nbt.release(); }
+    ~NbtIntClass() {
+        if (!canDelete)
+            nbt.release();
+    }
 
     static NbtIntClass* constructor(const Arguments& args);
     static IntTag* extract(Local<Value> v);
     static Local<Value> pack(IntTag* tag, bool noDelete = false);
     static Local<Value> pack(std::unique_ptr<IntTag> tag);
-    
+
     Local<Value> getType(const Arguments& args);
     Local<Value> set(const Arguments& args);
     Local<Value> get(const Arguments& args);
@@ -130,16 +136,18 @@ public:
 extern ClassDefine<NbtIntClass> NbtIntClassBuilder;
 
 
-//NBT Long
-class NbtLongClass : public ScriptClass
-{
+// NBT Long
+class NbtLongClass : public ScriptClass {
 public:
     std::unique_ptr<Int64Tag> nbt;
     bool canDelete = true;
 
     explicit NbtLongClass(const Local<Object>& scriptObj, std::unique_ptr<Int64Tag> p);
     explicit NbtLongClass(std::unique_ptr<Int64Tag> p);
-    ~NbtLongClass() { if (!canDelete) nbt.release(); }
+    ~NbtLongClass() {
+        if (!canDelete)
+            nbt.release();
+    }
 
     static NbtLongClass* constructor(const Arguments& args);
     static Int64Tag* extract(Local<Value> v);
@@ -154,16 +162,18 @@ public:
 extern ClassDefine<NbtLongClass> NbtLongClassBuilder;
 
 
-//NBT Float
-class NbtFloatClass : public ScriptClass
-{
+// NBT Float
+class NbtFloatClass : public ScriptClass {
 public:
     std::unique_ptr<FloatTag> nbt;
     bool canDelete = true;
 
     explicit NbtFloatClass(const Local<Object>& scriptObj, std::unique_ptr<FloatTag> p);
     explicit NbtFloatClass(std::unique_ptr<FloatTag> p);
-    ~NbtFloatClass() { if (!canDelete) nbt.release(); }
+    ~NbtFloatClass() {
+        if (!canDelete)
+            nbt.release();
+    }
 
     static NbtFloatClass* constructor(const Arguments& args);
     static FloatTag* extract(Local<Value> v);
@@ -178,16 +188,18 @@ public:
 extern ClassDefine<NbtFloatClass> NbtFloatClassBuilder;
 
 
-//NBT Double
-class NbtDoubleClass : public ScriptClass
-{
+// NBT Double
+class NbtDoubleClass : public ScriptClass {
 public:
     std::unique_ptr<DoubleTag> nbt;
     bool canDelete = true;
 
     explicit NbtDoubleClass(const Local<Object>& scriptObj, std::unique_ptr<DoubleTag> p);
     explicit NbtDoubleClass(std::unique_ptr<DoubleTag> p);
-    ~NbtDoubleClass() { if (!canDelete) nbt.release(); }
+    ~NbtDoubleClass() {
+        if (!canDelete)
+            nbt.release();
+    }
 
     static NbtDoubleClass* constructor(const Arguments& args);
     static DoubleTag* extract(Local<Value> v);
@@ -202,16 +214,18 @@ public:
 extern ClassDefine<NbtDoubleClass> NbtDoubleClassBuilder;
 
 
-//NBT String
-class NbtStringClass : public ScriptClass
-{
+// NBT String
+class NbtStringClass : public ScriptClass {
 public:
     std::unique_ptr<StringTag> nbt;
     bool canDelete = true;
 
     explicit NbtStringClass(const Local<Object>& scriptObj, std::unique_ptr<StringTag> p);
     explicit NbtStringClass(std::unique_ptr<StringTag> p);
-    ~NbtStringClass() { if (!canDelete) nbt.release(); }
+    ~NbtStringClass() {
+        if (!canDelete)
+            nbt.release();
+    }
 
     static NbtStringClass* constructor(const Arguments& args);
     static StringTag* extract(Local<Value> v);
@@ -226,16 +240,18 @@ public:
 extern ClassDefine<NbtStringClass> NbtStringClassBuilder;
 
 
-//NBT ByteArray
-class NbtByteArrayClass : public ScriptClass
-{
+// NBT ByteArray
+class NbtByteArrayClass : public ScriptClass {
 public:
     std::unique_ptr<ByteArrayTag> nbt;
     bool canDelete = true;
 
     explicit NbtByteArrayClass(const Local<Object>& scriptObj, std::unique_ptr<ByteArrayTag> p);
     explicit NbtByteArrayClass(std::unique_ptr<ByteArrayTag> p);
-    ~NbtByteArrayClass() { if (!canDelete) nbt.release(); }
+    ~NbtByteArrayClass() {
+        if (!canDelete)
+            nbt.release();
+    }
 
     static NbtByteArrayClass* constructor(const Arguments& args);
     static ByteArrayTag* extract(Local<Value> v);
@@ -250,22 +266,24 @@ public:
 extern ClassDefine<NbtByteArrayClass> NbtByteArrayClassBuilder;
 
 
-//NBT List
-class NbtListClass : public ScriptClass
-{
+// NBT List
+class NbtListClass : public ScriptClass {
 public:
     std::unique_ptr<ListTag> nbt;
     bool canDelete = true;
 
     explicit NbtListClass(const Local<Object>& scriptObj, std::unique_ptr<ListTag> p);
     explicit NbtListClass(std::unique_ptr<ListTag> p);
-    ~NbtListClass() { if (!canDelete) nbt.release(); }
+    ~NbtListClass() {
+        if (!canDelete)
+            nbt.release();
+    }
 
     static NbtListClass* constructor(const Arguments& args);
     static ListTag* extract(Local<Value> v);
     static Local<Value> pack(ListTag* tag, bool noDelete = false);
     static Local<Value> pack(std::unique_ptr<ListTag> tag);
-    
+
     Local<Value> getType(const Arguments& args);
     Local<Value> getSize(const Arguments& args);
     Local<Value> getTypeOf(const Arguments& args);
@@ -292,16 +310,18 @@ public:
 extern ClassDefine<NbtListClass> NbtListClassBuilder;
 
 
-//NBT Compound
-class NbtCompoundClass : public ScriptClass
-{
+// NBT Compound
+class NbtCompoundClass : public ScriptClass {
 public:
     std::unique_ptr<CompoundTag> nbt;
     bool canDelete = true;
 
     explicit NbtCompoundClass(const Local<Object>& scriptObj, std::unique_ptr<CompoundTag> p);
     explicit NbtCompoundClass(std::unique_ptr<CompoundTag> p);
-    ~NbtCompoundClass() { if (!canDelete) nbt.release(); }
+    ~NbtCompoundClass() {
+        if (!canDelete)
+            nbt.release();
+    }
 
     static NbtCompoundClass* constructor(const Arguments& args);
     static CompoundTag* extract(Local<Value> v);
@@ -337,7 +357,7 @@ public:
 extern ClassDefine<NbtCompoundClass> NbtCompoundClassBuilder;
 
 
-//Helper
+// Helper
 bool IsNbtClass(Local<Value> value);
 Local<Value> Tag2Value(Tag* nbt, bool autoExpansion = false);
 void NbtCompoundClassAddHelper(CompoundTag* tag, Local<Object>& obj);

@@ -8,8 +8,7 @@
 
 //////////////////// Data Static ////////////////////
 
-class DataClass
-{
+class DataClass {
 public:
     static Local<Value> xuid2name(const Arguments& args);
     static Local<Value> name2xuid(const Arguments& args);
@@ -30,8 +29,7 @@ extern ClassDefine<void> DataClassBuilder;
 
 //////////////////// Money Static ////////////////////
 
-class MoneyClass
-{
+class MoneyClass {
 public:
     static Local<Value> set(const Arguments& args);
     static Local<Value> get(const Arguments& args);
@@ -46,8 +44,7 @@ extern ClassDefine<void> MoneyClassBuilder;
 
 //////////////////// Classes ////////////////////
 
-class ConfBaseClass
-{
+class ConfBaseClass {
 protected:
     std::string confPath;
     virtual bool flush() = 0;
@@ -65,8 +62,7 @@ public:
 };
 
 
-class ConfJsonClass : public ScriptClass, public ConfBaseClass
-{
+class ConfJsonClass : public ScriptClass, public ConfBaseClass {
 private:
     fifo_json jsonConf;
     bool flush() override;
@@ -93,8 +89,7 @@ public:
 extern ClassDefine<ConfJsonClass> ConfJsonClassBuilder;
 
 
-class ConfIniClass : public ScriptClass, public ConfBaseClass
-{
+class ConfIniClass : public ScriptClass, public ConfBaseClass {
 private:
     SimpleIni* iniConf;
     bool flush() override;
@@ -107,8 +102,7 @@ public:
     ~ConfIniClass();
     static ConfIniClass* constructor(const Arguments& args);
 
-    bool isValid()
-    {
+    bool isValid() {
         return iniConf != nullptr;
     }
 

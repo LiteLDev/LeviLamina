@@ -25,8 +25,7 @@ Local<Value> GetFilesList(const Arguments& args);
 
 
 //////////////////// Classes ////////////////////
-class FileClass : public ScriptClass
-{
+class FileClass : public ScriptClass {
 private:
     std::fstream file;
     string path;
@@ -41,7 +40,7 @@ public:
     Local<Value> getPath();
     Local<Value> getAbsolutePath();
     Local<Value> getSize();
-    
+
     Local<Value> readSync(const Arguments& args);
     Local<Value> readLineSync(const Arguments& args);
     Local<Value> readAllSync(const Arguments& args);
@@ -62,22 +61,48 @@ public:
     Local<Value> errorCode(const Arguments& args);
     Local<Value> clear(const Arguments& args);
 
-    static Local<Value> readFromStatic(const Arguments& args) { return FileReadFrom(args); }
-    static Local<Value> writeToStatic(const Arguments& args) { return FileWriteTo(args); }
-    static Local<Value> writeLineStatic(const Arguments& args) { return FileWriteLine(args); }
+    static Local<Value> readFromStatic(const Arguments& args) {
+        return FileReadFrom(args);
+    }
+    static Local<Value> writeToStatic(const Arguments& args) {
+        return FileWriteTo(args);
+    }
+    static Local<Value> writeLineStatic(const Arguments& args) {
+        return FileWriteLine(args);
+    }
 
-    static Local<Value> createDir(const Arguments& args) { return DirCreate(args); }
-    static Local<Value> copy(const Arguments& args) { return PathCopy(args); }
-    static Local<Value> move(const Arguments& args) { return PathMove(args); }
-    static Local<Value> rename(const Arguments& args) { return PathRename(args); }
-    static Local<Value> del(const Arguments& args) { return PathDelete(args); }
-    static Local<Value> exists(const Arguments& args) { return PathExists(args); }
-    static Local<Value> checkIsDir(const Arguments& args) { return CheckIsDir(args); }
-    static Local<Value> getFileSize(const Arguments& args) { return GetFileSize(args); }
-    static Local<Value> getFilesList(const Arguments& args) { return GetFilesList(args); }
+    static Local<Value> createDir(const Arguments& args) {
+        return DirCreate(args);
+    }
+    static Local<Value> copy(const Arguments& args) {
+        return PathCopy(args);
+    }
+    static Local<Value> move(const Arguments& args) {
+        return PathMove(args);
+    }
+    static Local<Value> rename(const Arguments& args) {
+        return PathRename(args);
+    }
+    static Local<Value> del(const Arguments& args) {
+        return PathDelete(args);
+    }
+    static Local<Value> exists(const Arguments& args) {
+        return PathExists(args);
+    }
+    static Local<Value> checkIsDir(const Arguments& args) {
+        return CheckIsDir(args);
+    }
+    static Local<Value> getFileSize(const Arguments& args) {
+        return GetFileSize(args);
+    }
+    static Local<Value> getFilesList(const Arguments& args) {
+        return GetFilesList(args);
+    }
 
-    //For Compatibility
+    // For Compatibility
     static Local<Object> newFile(std::fstream&& f, const std::string& path, bool isBinary);
-    static Local<Value> open(const Arguments& args) { return OpenFile(args); }
+    static Local<Value> open(const Arguments& args) {
+        return OpenFile(args);
+    }
 };
 extern ClassDefine<FileClass> FileClassBuilder;

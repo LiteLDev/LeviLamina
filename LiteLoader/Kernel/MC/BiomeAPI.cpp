@@ -3,30 +3,25 @@
 #include <MC/VanillaBiomes.hpp>
 #include <MC/Level.hpp>
 
-int Biome::getId() const
-{
+int Biome::getId() const {
     return dAccess<int, 120>(this);
 }
 
-std::string const& Biome::getName() const
-{
+std::string const& Biome::getName() const {
     return dAccess<std::string, 8>(this);
 }
 
-Biome* Biome::fromId(int id)
-{
+Biome* Biome::fromId(int id) {
     auto& reg = Global<Level>->getBiomeRegistry();
     return reg.lookupById(id);
 }
 
-Biome* Biome::fromName(std::string const& name)
-{
+Biome* Biome::fromName(std::string const& name) {
     auto& reg = Global<Level>->getBiomeRegistry();
     return reg.lookupByName(name);
 }
 
-std::vector<Biome*> Biome::getBiomesByType(VanillaBiomeTypes type)
-{
+std::vector<Biome*> Biome::getBiomesByType(VanillaBiomeTypes type) {
     std::vector<Biome*> result;
     auto& reg = Global<Level>->getBiomeRegistry();
     reg.forEachBiome([&](Biome& biome) {
@@ -42,8 +37,7 @@ std::vector<Biome*> Biome::getBiomesByType(VanillaBiomeTypes type)
 #include <MC/Minecraft.hpp>
 extern Logger logger;
 
-TClasslessInstanceHook2("startServerThread_TestBiome", void, "?startServerThread@ServerInstance@@QEAAXXZ")
-{
+TClasslessInstanceHook2("startServerThread_TestBiome", void, "?startServerThread@ServerInstance@@QEAAXXZ") {
     Global<Level> = Global<Minecraft>->getLevel();
     auto& reg = Global<Level>->getBiomeRegistry();
     assert(reg.isRegistrationFinished());
@@ -52,8 +46,7 @@ TClasslessInstanceHook2("startServerThread_TestBiome", void, "?startServerThread
         assert(&bio == Biome::fromId(bio.getId()));
         assert(&bio == Biome::fromName(bio.getName()));
     });
-    for (size_t i = 0; i < 20; i++)
-    {
+    for (size_t i = 0; i < 20; i++) {
         auto biomes = Biome::getBiomesByType((VanillaBiomeTypes)i);
         std::string biomesInfo = "";
         for (auto biome : biomes)

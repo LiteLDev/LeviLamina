@@ -5,25 +5,23 @@
 
 //////////////////// Classes ////////////////////
 class ItemStack;
-class ItemClass : public ScriptClass
-{
+class ItemClass : public ScriptClass {
 private:
-    ItemStack *item;
+    ItemStack* item;
 
     // Pre data
-    std::string name,type;
+    std::string name, type;
     int id, count, aux;
 
 public:
-	explicit ItemClass(ItemStack *p);
+    explicit ItemClass(ItemStack* p);
     void preloadData();
 
-    ItemStack *get()
-    {
+    ItemStack* get() {
         return item;
     }
 
-    static Local<Object> newItem(ItemStack *p);
+    static Local<Object> newItem(ItemStack* p);
     static ItemStack* extract(Local<Value> v);
     Local<Value> getRawPtr(const Arguments& args);
 

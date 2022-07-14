@@ -2,13 +2,11 @@
 #include <Utils/StringHelper.h>
 #include <LoggerAPI.h>
 
-namespace DB
-{
+namespace DB {
 
 #pragma region URL_Parser
 
-struct URL
-{
+struct URL {
     std::string scheme;
     std::string user;
     std::string password;
@@ -19,29 +17,24 @@ struct URL
     std::string fragment;
 };
 
-URL ParseURL(const std::string& url)
-{
+URL ParseURL(const std::string& url) {
     URL result;
     std::string cur = url;
 
     size_t pos = cur.find("://");
-    if (pos != std::string::npos)
-    {
+    if (pos != std::string::npos) {
         result.scheme = cur.substr(0, pos);
         cur = cur.substr(pos + 3);
     }
     pos = cur.find('@');
     auto pos0 = pos;
-    if (pos != std::string::npos)
-    {
+    if (pos != std::string::npos) {
         std::string userInfo = cur.substr(0, pos);
         pos = userInfo.find(':');
-        if (pos != std::string::npos)
-        {
+        if (pos != std::string::npos) {
             result.user = userInfo.substr(0, pos);
             result.password = userInfo.substr(pos + 1);
-        }
-        else
+        } else
             result.user = userInfo;
         cur = cur.substr(pos0 + 1);
     }
@@ -49,12 +42,10 @@ URL ParseURL(const std::string& url)
     auto pos1 = pos;
     std::string address = cur.substr(0, pos);
     pos = address.find(':');
-    if (pos != std::string::npos)
-    {
+    if (pos != std::string::npos) {
         result.host = address.substr(0, pos);
         result.port = static_cast<uint16_t>(std::stoi(address.substr(pos + 1)));
-    }
-    else
+    } else
         result.host = address;
     if (pos1 == std::string::npos)
         return result;
@@ -67,40 +58,33 @@ URL ParseURL(const std::string& url)
         return result;
     else
         cur = cur.substr(pos);
-    if (cur[0] == '?')
-    {
+    if (cur[0] == '?') {
         cur = cur.substr(1);
         pos = cur.find('#');
         std::string query = cur.substr(0, pos);
-        if (pos != std::string::npos)
-        {
+        if (pos != std::string::npos) {
             result.fragment = cur.substr(pos + 1);
         }
         std::vector<std::string> pairs = SplitStrWithPattern(query, "&");
-        for (auto& pair : pairs)
-        {
+        for (auto& pair : pairs) {
             std::string k, v;
             pos = pair.find('=');
             if (pos == std::string::npos)
                 k = pair;
-            else
-            {
+            else {
                 k = pair.substr(0, pos);
                 v = pair.substr(pos + 1);
             }
             result.query.emplace(k, v);
         }
-    }
-    else if (cur[0] == '#')
-    {
+    } else if (cur[0] == '#') {
         result.fragment = cur.substr(1);
     }
     return result;
 }
 
 extern Logger dbLogger;
-void PrintURL(const URL& url)
-{
+void PrintURL(const URL& url) {
     dbLogger.debug("Parsed URL");
     dbLogger.debug("scheme: {}", url.scheme);
     dbLogger.debug("user: {}", url.user);
@@ -116,31 +100,23 @@ void PrintURL(const URL& url)
 
 #pragma endregion
 
-ConnParams::ConnParams(const std::initializer_list<Any>& list)
-    : std::unordered_map<std::string, Any>()
-{
+ConnParams::ConnParams(const std::initializer_list<Any>& list) : std::unordered_map<std::string, Any>() {
     bool key = true;
     std::string keyName;
-    for (auto& item : list)
-    {
-        if (key)
-        {
-            if (item.is_string())
-            {
+    for (auto& item : list) {
+        if (key) {
+            if (item.is_string()) {
                 throw std::invalid_argument("ConnParams::ConnParams: Key must be string");
             }
             keyName = item.get<std::string>();
             key = false;
-        }
-        else
-        {
+        } else {
             insert({keyName, item});
             key = true;
         }
     }
     auto host = getHost();
-    if (host.find(':') != std::string::npos)
-    {
+    if (host.find(':') != std::string::npos) {
         host = host.substr(0, host.find_last_of(':'));
         auto port = host.substr(host.find_last_of(':') + 1);
         (*this)["host"] = host;
@@ -148,90 +124,80 @@ ConnParams::ConnParams(const std::initializer_list<Any>& list)
     }
 }
 ConnParams::ConnParams(const std::initializer_list<std::pair<std::string, Any>>& list)
-    : std::unordered_map<std::string, Any>()
-{
-    for (auto& item : list)
-    {
+: std::unordered_map<std::string, Any>() {
+    for (auto& item : list) {
         insert(item);
     }
     auto host = getHost();
-    if (host.find(':') != std::string::npos)
-    {
+    if (host.find(':') != std::string::npos) {
         host = host.substr(0, host.find_last_of(':'));
         auto port = host.substr(host.find_last_of(':') + 1);
         (*this)["host"] = host;
         (*this)["port"] = std::stoi(port);
     }
 }
-ConnParams::ConnParams(const std::string& str)
-    : std::unordered_map<std::string, Any>()
-{
+ConnParams::ConnParams(const std::string& str) : std::unordered_map<std::string, Any>() {
     raw = str;
     auto url = ParseURL(str);
 #if defined(LLDB_DEBUG_MODE)
     PrintURL(url);
 #endif
 
-    if (!url.scheme.empty()) insert({"scheme", url.scheme});
-    if (!url.host.empty()) insert({"host", url.host});
-    if (url.port) insert({"port", url.port});
-    if (!url.user.empty()) insert({"user", url.user});
-    if (!url.password.empty()) insert({"password", url.password});
-    if (!url.path.empty())
-    {
+    if (!url.scheme.empty())
+        insert({"scheme", url.scheme});
+    if (!url.host.empty())
+        insert({"host", url.host});
+    if (url.port)
+        insert({"port", url.port});
+    if (!url.user.empty())
+        insert({"user", url.user});
+    if (!url.password.empty())
+        insert({"password", url.password});
+    if (!url.path.empty()) {
         std::string path = url.path;
-        if (path[0] == '/') path = path.substr(1);
+        if (path[0] == '/')
+            path = path.substr(1);
         insert({"path", path});
     }
-    if (!url.fragment.empty()) insert({"fragment", url.fragment});
-    for (auto& pair : url.query)
-    {
+    if (!url.fragment.empty())
+        insert({"fragment", url.fragment});
+    for (auto& pair : url.query) {
         insert({pair.first, Any::str2any(pair.second)});
     }
 }
-ConnParams::ConnParams(const char* str)
-    : std::unordered_map<std::string, Any>()
-{
+ConnParams::ConnParams(const char* str) : std::unordered_map<std::string, Any>() {
     *this = ConnParams(std::string(str));
 }
 
-std::string ConnParams::getScheme()
-{
+std::string ConnParams::getScheme() {
     return get<std::string>({"scheme", "protocol", "type"}, true);
 }
 
-std::string ConnParams::getHost()
-{
+std::string ConnParams::getHost() {
     return get<std::string>({"host", "hostname", "server", "server_name", "ip", "address"}, true);
 }
 
-uint16_t ConnParams::getPort()
-{
+uint16_t ConnParams::getPort() {
     return get<uint16_t>({"port", "port_number", "port_num", "port_id", "portid"}, true, 0);
 }
 
-std::string ConnParams::getUsername()
-{
+std::string ConnParams::getUsername() {
     return get<std::string>({"user", "username", "user_name", "usr", "usrname"}, true);
 }
 
-std::string ConnParams::getPassword()
-{
+std::string ConnParams::getPassword() {
     return get<std::string>({"password", "pass", "passwd", "pass_word"}, true);
 }
 
-std::string ConnParams::getDatabase()
-{
+std::string ConnParams::getDatabase() {
     return get<std::string>({"database", "db", "db_name", "dbname", "path"}, true);
 }
 
-std::string ConnParams::getPath()
-{
+std::string ConnParams::getPath() {
     return get<std::string>({"path", "file", "file_name", "filename"}, true);
 }
 
-std::string ConnParams::getRaw()
-{
+std::string ConnParams::getRaw() {
     return raw;
 }
 

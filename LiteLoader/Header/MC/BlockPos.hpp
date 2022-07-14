@@ -4,12 +4,8 @@ class Vec3;
 class BlockPos {
 public:
     int x, y, z;
-    inline BlockPos()
-        : BlockPos(0, 0, 0){};
-    inline BlockPos(int mx, int my, int mz)
-        : x(mx)
-        , y(my)
-        , z(mz){};
+    inline BlockPos() : BlockPos(0, 0, 0){};
+    inline BlockPos(int mx, int my, int mz) : x(mx), y(my), z(mz){};
 
     MCAPI BlockPos(class ChunkPos const&, class ChunkBlockPos const&, short);
     MCAPI BlockPos(class ChunkPos const&, int);
@@ -63,7 +59,9 @@ public:
 
 
     int& operator[](int index) {
-        if (index < 0 || index > 2) { return (&x)[0]; }
+        if (index < 0 || index > 2) {
+            return (&x)[0];
+        }
         return (&x)[index];
     }
 

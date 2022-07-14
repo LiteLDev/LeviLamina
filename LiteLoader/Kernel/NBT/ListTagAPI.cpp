@@ -21,35 +21,29 @@ std::vector<Tag*>& ListTag::value() {
     return dAccess<std::vector<Tag*>, 8>(this);
 }
 
-Tag const* ListTag::operator[](int index) const
-{
+Tag const* ListTag::operator[](int index) const {
     if (index < size())
         return get(index);
     return nullptr;
 }
 
-Tag::Type ListTag::getElementType() const
-{
+Tag::Type ListTag::getElementType() const {
     return elementType;
 }
 
-size_t ListTag::getSize() const
-{
+size_t ListTag::getSize() const {
     return val.size();
 }
 
-std::vector<Tag*>::const_iterator ListTag::begin() const
-{
+std::vector<Tag*>::const_iterator ListTag::begin() const {
     return val.begin();
 }
 
-std::vector<Tag*>::const_iterator ListTag::end() const
-{
+std::vector<Tag*>::const_iterator ListTag::end() const {
     return val.end();
 }
 
-vector<Tag*> ListTag::get()
-{
+vector<Tag*> ListTag::get() {
     return value();
 }
 
@@ -100,13 +94,11 @@ void ListTag::addString(const string& v) {
     add(StringTag::create(v));
 }
 
-void ListTag::addByteArray(char data[], size_t size)
-{
-    add(ByteArrayTag::create(data,size));
+void ListTag::addByteArray(char data[], size_t size) {
+    add(ByteArrayTag::create(data, size));
 }
 
-void ListTag::addIntArray(int data[], size_t size)
-{
+void ListTag::addIntArray(int data[], size_t size) {
     add(Tag::asTag(IntArrayTag::create(data, size)));
 }
 

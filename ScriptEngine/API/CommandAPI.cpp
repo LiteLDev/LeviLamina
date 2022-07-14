@@ -27,7 +27,7 @@
 
 
 //////////////////// Class Definition ////////////////////
-
+// clang-format off
 ClassDefine<void> PermissionStaticBuilder = EnumDefineBuilder<CommandPermissionLevel>::build("PermType");
 ClassDefine<void> ParamTypeStaticBuilder = EnumDefineBuilder<DynamicCommand::ParameterType>::build("ParamType");
 ClassDefine<void> ParamOptionStaticBuilder = EnumDefineBuilder<CommandParameterOption>::build("ParamOption");
@@ -53,23 +53,18 @@ ClassDefine<CommandClass> CommandClassBuilder =
         .instanceFunction("setup", &CommandClass::setup)
 
         .build();
-
+// clang-format off
 //////////////////// Helper ////////////////////
 
-bool LLSERemoveCmdCallback(script::ScriptEngine* engine)
-{
-    erase_if(localShareData->commandCallbacks, [&engine](auto& data) {
-        return data.second.fromEngine == engine;
-    });
+bool LLSERemoveCmdCallback(script::ScriptEngine* engine) {
+    erase_if(localShareData->commandCallbacks, [&engine](auto& data) { return data.second.fromEngine == engine; });
     return true;
 }
 
-Local<Value> convertResult(DynamicCommand::Result const& result)
-{
+Local<Value> convertResult(DynamicCommand::Result const& result) {
     if (!result.isSet)
-        return Local<Value>(); //null
-    switch (result.type)
-    {
+        return Local<Value>(); // null
+    switch (result.type) {
         case DynamicCommand::ParameterType::Bool:
             return Boolean::newBoolean(result.getRaw<bool>());
         case DynamicCommand::ParameterType::Int:
@@ -78,31 +73,25 @@ Local<Value> convertResult(DynamicCommand::Result const& result)
             return Number::newNumber(result.getRaw<float>());
         case DynamicCommand::ParameterType::String:
             return String::newString(result.getRaw<std::string>());
-        case DynamicCommand::ParameterType::Actor:
-        {
+        case DynamicCommand::ParameterType::Actor: {
             auto arr = Array::newArray();
-            for (auto i : result.get<std::vector<Actor*>>())
-            {
+            for (auto i : result.get<std::vector<Actor*>>()) {
                 arr.add(EntityClass::newEntity(i));
             }
             return arr;
         }
-        case DynamicCommand::ParameterType::Player:
-        {
+        case DynamicCommand::ParameterType::Player: {
             auto arr = Array::newArray();
-            for (auto i : result.get<std::vector<Player*>>())
-            {
+            for (auto i : result.get<std::vector<Player*>>()) {
                 arr.add(PlayerClass::newPlayer(i));
             }
             return arr;
         }
-        case DynamicCommand::ParameterType::BlockPos:
-        {
+        case DynamicCommand::ParameterType::BlockPos: {
             auto dim = result.origin->getDimension();
             return IntPos::newPos(result.get<BlockPos>(), dim ? (int)dim->getDimensionId() : -1);
         }
-        case DynamicCommand::ParameterType::Vec3:
-        {
+        case DynamicCommand::ParameterType::Vec3: {
             auto dim = result.origin->getDimension();
             return FloatPos::newPos(result.get<Vec3>(), dim ? (int)dim->getDimensionId() : -1);
         }
@@ -113,9 +102,11 @@ Local<Value> convertResult(DynamicCommand::Result const& result)
         case DynamicCommand::ParameterType::JsonValue:
             return String::newString(JsonHelpers::serialize(result.getRaw<Json::Value>()));
         case DynamicCommand::ParameterType::Item:
-            return ItemClass::newItem(new ItemStack(result.getRaw<CommandItem>().createInstance(1, 1, nullptr, true).value_or(ItemInstance::EMPTY_ITEM)));
+            return ItemClass::newItem(new ItemStack(
+                result.getRaw<CommandItem>().createInstance(1, 1, nullptr, true).value_or(ItemInstance::EMPTY_ITEM)));
         case DynamicCommand::ParameterType::Block:
-            return BlockClass::newBlock(const_cast<Block*>(result.getRaw<Block const*>()), const_cast<BlockPos*>(&BlockPos::MIN), -1);
+            return BlockClass::newBlock(const_cast<Block*>(result.getRaw<Block const*>()),
+                                        const_cast<BlockPos*>(&BlockPos::MIN), -1);
         case DynamicCommand::ParameterType::Effect:
             return String::newString(result.getRaw<MobEffect const*>()->getResourceName());
         case DynamicCommand::ParameterType::Enum:
@@ -127,23 +118,18 @@ Local<Value> convertResult(DynamicCommand::Result const& result)
         case DynamicCommand::ParameterType::ActorType:
             return String::newString(result.getRaw<ActorDefinitionIdentifier const*>()->getCanonicalName());
         default:
-            return Local<Value>(); //null
+            return Local<Value>(); // null
             break;
     }
 }
 
-template <typename T>
-std::enable_if_t<std::is_enum_v<T>, T> parseEnum(Local<Value> const& value)
-{
-    if (value.isString())
-    {
+template <typename T> std::enable_if_t<std::is_enum_v<T>, T> parseEnum(Local<Value> const& value) {
+    if (value.isString()) {
         auto tmp = magic_enum::enum_cast<T>(value.toStr());
         if (!tmp.has_value())
             throw std::runtime_error("Unable to parse Enum value");
         return tmp.value();
-    }
-    else if (value.isNumber())
-    {
+    } else if (value.isNumber()) {
         return (T)value.toInt();
     }
     throw std::runtime_error("Unable to parse Enum value");
@@ -151,25 +137,21 @@ std::enable_if_t<std::is_enum_v<T>, T> parseEnum(Local<Value> const& value)
 
 //////////////////// MC APIs ////////////////////
 
-Local<Value> McClass::runcmd(const Arguments& args)
-{
+Local<Value> McClass::runcmd(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1)
     CHECK_ARG_TYPE(args[0], ValueKind::kString)
 
-    try
-    {
+    try {
         return Boolean::newBoolean(Level::executeCommand(args[0].asString().toString()));
     }
     CATCH("Fail in RunCmd!")
 }
 
-Local<Value> McClass::runcmdEx(const Arguments& args)
-{
+Local<Value> McClass::runcmdEx(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1)
     CHECK_ARG_TYPE(args[0], ValueKind::kString)
 
-    try
-    {
+    try {
         std::pair<bool, string> result = Level::executeCommandEx(args[0].asString().toString());
         Local<Object> resObj = Object::newObject();
         resObj.set("success", result.first);
@@ -179,50 +161,42 @@ Local<Value> McClass::runcmdEx(const Arguments& args)
     CATCH("Fail in RunCmdEx!")
 }
 
-//name, description, permission, flag, alias
-Local<Value> McClass::newCommand(const Arguments& args)
-{
+// name, description, permission, flag, alias
+Local<Value> McClass::newCommand(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     CHECK_ARG_TYPE(args[1], ValueKind::kString);
 
-    try
-    {
+    try {
         auto name = args[0].toStr();
         auto instance = DynamicCommand::getInstance(name);
-        if (instance)
-        {
+        if (instance) {
             logger.info("Dynamic command {} already exists, changes will not be applied except for setOverload!", name);
-            return CommandClass::newCommand(const_cast<std::add_pointer_t<std::remove_cv_t<std::remove_pointer_t<decltype(instance)>>>>(instance));
+            return CommandClass::newCommand(
+                const_cast<std::add_pointer_t<std::remove_cv_t<std::remove_pointer_t<decltype(instance)>>>>(instance));
         }
 
         auto desc = args[1].toStr();
         CommandPermissionLevel permission = CommandPermissionLevel::GameMasters;
         CommandFlag flag = {(CommandFlagValue)0x80};
         std::string alias = "";
-        if (args.size() > 2)
-        {
+        if (args.size() > 2) {
             permission = parseEnum<CommandPermissionLevel>(args[2]);
-            if (args.size() > 3)
-            {
+            if (args.size() > 3) {
                 CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
                 flag = {(CommandFlagValue)args[3].toInt()};
-                if (args.size() > 4)
-                {
+                if (args.size() > 4) {
                     CHECK_ARG_TYPE(args[4], ValueKind::kString);
                     alias = args[4].toStr();
                 }
             }
         }
         auto command = DynamicCommand::createCommand(name, desc, permission, flag);
-        if (command)
-        {
+        if (command) {
             if (!alias.empty())
                 command->setAlias(alias);
             return CommandClass::newCommand(std::move(command));
-        }
-        else
-        {
+        } else {
             return Boolean::newBoolean(false);
         }
     }
@@ -232,68 +206,53 @@ Local<Value> McClass::newCommand(const Arguments& args)
 //////////////////// Command APIs ////////////////////
 
 CommandClass::CommandClass(std::unique_ptr<DynamicCommandInstance>&& p)
-    : ScriptClass(ScriptClass::ConstructFromCpp<CommandClass>{})
-    , uptr(std::move(p))
-    , ptr(uptr.get())
-    , registered(false){};
+: ScriptClass(ScriptClass::ConstructFromCpp<CommandClass>{}), uptr(std::move(p)), ptr(uptr.get()), registered(false){};
 
 CommandClass::CommandClass(DynamicCommandInstance* p)
-    : ScriptClass(ScriptClass::ConstructFromCpp<CommandClass>{})
-    , uptr()
-    , ptr(p)
-    , registered(true){};
+: ScriptClass(ScriptClass::ConstructFromCpp<CommandClass>{}), uptr(), ptr(p), registered(true){};
 
-Local<Object> CommandClass::newCommand(std::unique_ptr<DynamicCommandInstance>&& p)
-{
+Local<Object> CommandClass::newCommand(std::unique_ptr<DynamicCommandInstance>&& p) {
     auto newp = new CommandClass(std::move(p));
     return newp->getScriptObject();
 }
 
-Local<Object> CommandClass::newCommand(DynamicCommandInstance* p)
-{
+Local<Object> CommandClass::newCommand(DynamicCommandInstance* p) {
     auto newp = new CommandClass(p);
     return newp->getScriptObject();
 }
 
-Local<Value> CommandClass::getName()
-{
-    try
-    {
+Local<Value> CommandClass::getName() {
+    try {
         return String::newString(get()->getCommandName());
     }
     CATCH("Fail in getCommandName!")
 }
 
-Local<Value> CommandClass::setAlias(const Arguments& args)
-{
+Local<Value> CommandClass::setAlias(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1)
     CHECK_ARG_TYPE(args[0], ValueKind::kString)
-    try
-    {
+    try {
         if (registered)
-            return Boolean::newBoolean(true); //TODO
+            return Boolean::newBoolean(true); // TODO
         return Boolean::newBoolean(get()->setAlias(args[0].toStr()));
     }
     CATCH("Fail in setAlias!")
 }
 
 // string, vector<string>
-Local<Value> CommandClass::setEnum(const Arguments& args)
-{
+Local<Value> CommandClass::setEnum(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2)
     CHECK_ARG_TYPE(args[0], ValueKind::kString)
     CHECK_ARG_TYPE(args[1], ValueKind::kArray)
-    try
-    {
+    try {
         if (registered)
-            return Local<Value>(); //TODO
+            return Local<Value>(); // TODO
         auto enumName = args[0].toStr();
         auto enumArr = args[1].asArray();
         if (enumArr.size() == 0 || !enumArr.get(0).isString())
             return Local<Value>();
         vector<string> enumValues;
-        for (int i = 0; i < enumArr.size(); ++i)
-        {
+        for (int i = 0; i < enumArr.size(); ++i) {
             enumValues.push_back(enumArr.get(i).toStr());
         }
         return String::newString(get()->setEnum(enumName, std::move(enumValues)));
@@ -305,14 +264,12 @@ Local<Value> CommandClass::setEnum(const Arguments& args)
 // name, type, description, identifier, option
 // name, type, optional, description, option
 // name, type, description, option
-Local<Value> CommandClass::newParameter(const Arguments& args)
-{
+Local<Value> CommandClass::newParameter(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
-    try
-    {
+    try {
         if (registered)
-            return Boolean::newBoolean(true); //TODO
+            return Boolean::newBoolean(true); // TODO
         auto name = args[0].toStr();
         DynamicCommand::ParameterType type = parseEnum<DynamicCommand::ParameterType>(args[1]);
         std::string description = "";
@@ -330,21 +287,20 @@ Local<Value> CommandClass::newParameter(const Arguments& args)
             option = (CommandParameterOption)args[index++].toInt();
         if (index != args.size())
             throw std::runtime_error("Error Argument in newParameter");
-        return Number::newNumber((int64_t)get()->newParameter(name, type, optional, description, identifier, option).index);
+        return Number::newNumber(
+            (int64_t)get()->newParameter(name, type, optional, description, identifier, option).index);
     }
     CATCH("Fail in newParameter!")
 }
 
 // name, type, description, identifier, option
 // name, type, description, option
-Local<Value> CommandClass::mandatory(const Arguments& args)
-{
+Local<Value> CommandClass::mandatory(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
-    try
-    {
+    try {
         if (registered)
-            return Boolean::newBoolean(true); //TODO
+            return Boolean::newBoolean(true); // TODO
         auto name = args[0].toStr();
         DynamicCommand::ParameterType type = parseEnum<DynamicCommand::ParameterType>(args[1]);
         std::string description = "";
@@ -360,21 +316,20 @@ Local<Value> CommandClass::mandatory(const Arguments& args)
             option = (CommandParameterOption)args[index++].toInt();
         if (index != args.size())
             throw std::runtime_error("Error Argument in newParameter");
-        return Number::newNumber((int64_t)get()->newParameter(name, type, optional, description, identifier, option).index);
+        return Number::newNumber(
+            (int64_t)get()->newParameter(name, type, optional, description, identifier, option).index);
     }
     CATCH("Fail in newParameter!")
 }
 
 // name, type, description, identifier, option
 // name, type, description, option
-Local<Value> CommandClass::optional(const Arguments& args)
-{
+Local<Value> CommandClass::optional(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
-    try
-    {
+    try {
         if (registered)
-            return Boolean::newBoolean(true); //TODO
+            return Boolean::newBoolean(true); // TODO
         auto name = args[0].toStr();
         DynamicCommand::ParameterType type = parseEnum<DynamicCommand::ParameterType>(args[1]);
         std::string description = "";
@@ -390,62 +345,49 @@ Local<Value> CommandClass::optional(const Arguments& args)
             option = (CommandParameterOption)args[index++].toInt();
         if (index != args.size())
             throw std::runtime_error("Error Argument in newParameter");
-        return Number::newNumber((int64_t)get()->newParameter(name, type, optional, description, identifier, option).index);
+        return Number::newNumber(
+            (int64_t)get()->newParameter(name, type, optional, description, identifier, option).index);
     }
     CATCH("Fail in newParameter!")
 }
 
 // vector<identifier>
 // vector<index>
-Local<Value> CommandClass::addOverload(const Arguments& args)
-{
-    try
-    {
+Local<Value> CommandClass::addOverload(const Arguments& args) {
+    try {
         if (registered)
-            return Boolean::newBoolean(true); //TODO
+            return Boolean::newBoolean(true); // TODO
         auto command = get();
         if (args.size() == 0)
             return Boolean::newBoolean(command->addOverload(std::vector<DynamicCommandInstance::ParameterIndex>{}));
-        if (args[0].isNumber())
-        {
+        if (args[0].isNumber()) {
             std::vector<DynamicCommandInstance::ParameterIndex> params;
-            for (int i = 0; i < args.size(); ++i)
-            {
+            for (int i = 0; i < args.size(); ++i) {
                 CHECK_ARG_TYPE(args[i], ValueKind::kNumber);
                 params.emplace_back(command, (size_t)args[i].asNumber().toInt64());
             }
             return Boolean::newBoolean(command->addOverload(std::move(params)));
-        }
-        else if (args[0].isString())
-        {
+        } else if (args[0].isString()) {
             std::vector<std::string> params;
-            for (int i = 0; i < args.size(); ++i)
-            {
+            for (int i = 0; i < args.size(); ++i) {
                 CHECK_ARG_TYPE(args[i], ValueKind::kString);
                 params.emplace_back(args[i].toStr());
             }
             return Boolean::newBoolean(command->addOverload(std::move(params)));
-        }
-        else if (args[0].isArray())
-        {
+        } else if (args[0].isArray()) {
             auto arr = args[0].asArray();
             if (arr.size() == 0)
                 return Boolean::newBoolean(command->addOverload(std::vector<DynamicCommandInstance::ParameterIndex>{}));
-            if (arr.get(0).isNumber())
-            {
+            if (arr.get(0).isNumber()) {
                 std::vector<DynamicCommandInstance::ParameterIndex> params;
-                for (int i = 0; i < arr.size(); ++i)
-                {
+                for (int i = 0; i < arr.size(); ++i) {
                     CHECK_ARG_TYPE(arr.get(i), ValueKind::kNumber);
                     params.emplace_back(command, (size_t)arr.get(i).asNumber().toInt64());
                 }
                 return Boolean::newBoolean(command->addOverload(std::move(params)));
-            }
-            else if (arr.get(0).isString())
-            {
+            } else if (arr.get(0).isString()) {
                 std::vector<std::string> params;
-                for (int i = 0; i < arr.size(); ++i)
-                {
+                for (int i = 0; i < arr.size(); ++i) {
                     CHECK_ARG_TYPE(arr.get(i), ValueKind::kString);
                     params.emplace_back(arr.get(i).toStr());
                 }
@@ -459,18 +401,15 @@ Local<Value> CommandClass::addOverload(const Arguments& args)
 }
 
 void onExecute(DynamicCommand const& command, CommandOrigin const& origin, CommandOutput& output,
-               std::unordered_map<std::string, DynamicCommand::Result>& results)
-{
+               std::unordered_map<std::string, DynamicCommand::Result>& results) {
     auto instance = command.getInstance();
     auto& commandName = instance->getCommandName();
-    if (localShareData->commandCallbacks.find(commandName) == localShareData->commandCallbacks.end())
-    {
+    if (localShareData->commandCallbacks.find(commandName) == localShareData->commandCallbacks.end()) {
         logger.warn("Command {} failed to execute, is the plugin unloaded?", commandName);
         return;
     }
     EngineScope enter(localShareData->commandCallbacks[commandName].fromEngine);
-    try
-    {
+    try {
         Local<Object> args = Object::newObject();
         auto cmd = CommandClass::newCommand(const_cast<DynamicCommandInstance*>(instance));
         auto ori = CommandOriginClass::newCommandOrigin(&origin);
@@ -484,38 +423,34 @@ void onExecute(DynamicCommand const& command, CommandOrigin const& origin, Comma
 
 // not complete
 void onExecute2(DynamicCommand const& command, CommandOrigin const& origin, CommandOutput& output,
-               std::unordered_map<std::string, DynamicCommand::Result>& results)
-{
+                std::unordered_map<std::string, DynamicCommand::Result>& results) {
     auto instance = command.getInstance();
     auto& commandName = instance->getCommandName();
-    if (localShareData->commandCallbacks.find(commandName) == localShareData->commandCallbacks.end())
-    {
+    if (localShareData->commandCallbacks.find(commandName) == localShareData->commandCallbacks.end()) {
         logger.warn("Command {} failed to execute, is the plugin unloaded?", commandName);
         return;
     }
     EngineScope enter(localShareData->commandCallbacks[commandName].fromEngine);
-    try
-    {
-        //auto ctx = CommandContextClass::newCommandContext(&command, &origin, &output, &results);
-        //Local<Object> args = Object::newObject();
-        //for (auto& [name, param] : results)
-        //    args.set(name, convertResult(param));
-        //localShareData->commandCallbacks[commandName].func.get().call({}, ctx, args);
+    try {
+        // auto ctx = CommandContextClass::newCommandContext(&command, &origin, &output, &results);
+        // Local<Object> args = Object::newObject();
+        // for (auto& [name, param] : results)
+        //     args.set(name, convertResult(param));
+        // localShareData->commandCallbacks[commandName].func.get().call({}, ctx, args);
     }
     CATCH_WITHOUT_RETURN("Fail in executing command \"" + commandName + "\"!")
 }
 
 // function (command, origin, output, results){}
-Local<Value> CommandClass::setCallback(const Arguments& args)
-{
+Local<Value> CommandClass::setCallback(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kFunction);
-    try
-    {
+    try {
         auto func = args[0].asFunction();
         DynamicCommandInstance* command = get();
         auto& commandName = command->getCommandName();
-        localShareData->commandCallbacks[commandName] = {EngineScope::currentEngine(), 0, script::Global<Function>(func)};
+        localShareData->commandCallbacks[commandName] = {EngineScope::currentEngine(), 0,
+                                                         script::Global<Function>(func)};
         if (registered)
             return Boolean::newBoolean(true);
         get()->setCallback(onExecute);
@@ -525,12 +460,9 @@ Local<Value> CommandClass::setCallback(const Arguments& args)
 }
 
 // setup(Function<Command, Origin, Output, Map<String, Any>>)
-Local<Value> CommandClass::setup(const Arguments& args)
-{
-    try
-    {
-        if (args.size() > 0)
-        {
+Local<Value> CommandClass::setup(const Arguments& args) {
+    try {
+        if (args.size() > 0) {
             setCallback(args);
         }
         if (registered)
@@ -540,27 +472,22 @@ Local<Value> CommandClass::setup(const Arguments& args)
     CATCH("Fail in setup!")
 }
 
-Local<Value> CommandClass::isRegistered()
-{
+Local<Value> CommandClass::isRegistered() {
     return Boolean::newBoolean(registered);
 }
 
-Local<Value> CommandClass::toString(const Arguments& args)
-{
-    try
-    {
+Local<Value> CommandClass::toString(const Arguments& args) {
+    try {
         return String::newString(fmt::format("<Command({})>", get()->getCommandName()));
     }
     CATCH("Fail in toString!");
 }
 
-Local<Value> CommandClass::setSoftEnum(const Arguments& args)
-{
+Local<Value> CommandClass::setSoftEnum(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     CHECK_ARG_TYPE(args[1], ValueKind::kArray);
-    try
-    {
+    try {
         auto name = args[0].toStr();
         auto enums = parseStringList(args[1].asArray());
         return String::newString(get()->setSoftEnum(name, std::move(enums)));
@@ -568,13 +495,11 @@ Local<Value> CommandClass::setSoftEnum(const Arguments& args)
     CATCH("Fail in setSoftEnum!");
 }
 
-Local<Value> CommandClass::addSoftEnumValues(const Arguments& args)
-{
+Local<Value> CommandClass::addSoftEnumValues(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     CHECK_ARG_TYPE(args[1], ValueKind::kArray);
-    try
-    {
+    try {
         auto name = args[0].toStr();
         auto enums = parseStringList(args[1].asArray());
         return Boolean::newBoolean(get()->addSoftEnumValues(name, std::move(enums)));
@@ -582,13 +507,11 @@ Local<Value> CommandClass::addSoftEnumValues(const Arguments& args)
     CATCH("Fail in addSoftEnumValues!");
 }
 
-Local<Value> CommandClass::removeSoftEnumValues(const Arguments& args)
-{
+Local<Value> CommandClass::removeSoftEnumValues(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     CHECK_ARG_TYPE(args[1], ValueKind::kArray);
-    try
-    {
+    try {
         auto name = args[0].toStr();
         auto enums = parseStringList(args[1].asArray());
         return Boolean::newBoolean(get()->removeSoftEnumValues(name, std::move(enums)));
@@ -596,22 +519,18 @@ Local<Value> CommandClass::removeSoftEnumValues(const Arguments& args)
     CATCH("Fail in removeSoftEnumValues!");
 }
 
-Local<Value> CommandClass::getSoftEnumValues(const Arguments& args)
-{
+Local<Value> CommandClass::getSoftEnumValues(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
-    try
-    {
+    try {
         auto name = args[0].toStr();
         return getStringArray(get()->getSoftEnumValues(name));
     }
     CATCH("Fail in getSoftEnumValues");
 }
 
-Local<Value> CommandClass::getSoftEnumNames(const Arguments& args)
-{
-    try
-    {
+Local<Value> CommandClass::getSoftEnumNames(const Arguments& args) {
+    try {
         return getStringArray(get()->getSoftEnumNames());
     }
     CATCH("Fail in getSoftEnumNames");

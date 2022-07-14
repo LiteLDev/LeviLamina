@@ -3,12 +3,13 @@
 #include <SimpleIni/SimpleIni.h>
 using std::string;
 
-class SimpleIni : public CSimpleIniA
-{
+class SimpleIni : public CSimpleIniA {
 public:
     std::string filePath;
 
-    static inline SimpleIni* create(const std::string& path) { return create(path, ""); }
+    static inline SimpleIni* create(const std::string& path) {
+        return create(path, "");
+    }
     static SimpleIni* create(const std::string& path, const std::string& defContent);
 
     bool setInt(const string& sec, const string& key, int value);

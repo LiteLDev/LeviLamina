@@ -1,34 +1,25 @@
 #include <DB/Session.h>
 #include <LoggerAPI.h>
 
-namespace DB
-{
+namespace DB {
 
-Stmt::Stmt(const std::weak_ptr<Session>& parent, bool autoExecute)
-    : parent(parent)
-    , autoExecute(autoExecute)
-{
+Stmt::Stmt(const std::weak_ptr<Session>& parent, bool autoExecute) : parent(parent), autoExecute(autoExecute) {
 }
 
 
-Stmt::~Stmt()
-{
+Stmt::~Stmt() {
 }
 
-void Stmt::setDebugOutput(bool enable)
-{
+void Stmt::setDebugOutput(bool enable) {
     debugOutput = enable;
 }
 
-std::weak_ptr<Session> Stmt::getParent() const
-{
+std::weak_ptr<Session> Stmt::getParent() const {
     return parent;
 }
 
-SharedPointer<Stmt> Stmt::getSharedPointer() const
-{
-    if (!self.expired())
-    {
+SharedPointer<Stmt> Stmt::getSharedPointer() const {
+    if (!self.expired()) {
         return self.lock();
     }
     return nullptr;
@@ -56,22 +47,14 @@ SharedPointer<Stmt> Stmt::getSharedPointer() const
     */
 }
 
-SharedPointer<Stmt> Stmt::operator,(const BindType& b)
-{
-    if (b.name.empty() && b.idx == -1)
-    {
+SharedPointer<Stmt> Stmt::operator,(const BindType&b) {
+    if (b.name.empty() && b.idx == -1) {
         bind(b.value);
-    }
-    else if (!b.name.empty())
-    {
+    } else if (!b.name.empty()) {
         bind(b.value, b.name);
-    }
-    else if (b.idx != -1)
-    {
+    } else if (b.idx != -1) {
         bind(b.value, b.idx);
-    }
-    else
-    {
+    } else {
         throw std::invalid_argument("Stmt::operator,: Parameter `b`(const BindType&) is invalid");
     }
     return getSharedPointer();
