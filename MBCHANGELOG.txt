@@ -1,24 +1,27 @@
 [HEADING=1][LiteLoader Release Note][/HEADING]
-LiteLoaderBDS-2.3.2更新已发布，适应于BDS-1.19.x，协议版本527
+LiteLoaderBDS-2.4.0更新已发布，适应于BDS-1.19.10，协议版本534
 
 [HEADING=2][新内容][/HEADING]
 [LIST]
-[*]新增Molang API
-[/LIST]
-
-[HEADING=2][改变][/HEADING]
-[LIST]
-[*]全新的文档
+[*]支持BDS1.19.10 ,by @QingYu,@WangYneos 
+[*]全新的I18N API ,by @Jasonzyt
+[*]配置文件新增enableTpdimCommand与enableForceUtf8Input,[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/518']#518[/URL] by @QingYu
+[*]重写PlayerPlaceBlockEvent, by @Redbeanw44602
+[*]为onUseItemOnEvent新增点击目标的坐标(Vec3), [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/523']#523[/URL] by @OEOTYAN
 [/LIST]
 
 [HEADING=2][BUG修复][/HEADING]
 [LIST]
+
 [*]修复LL Bugs
 [LIST]
-[*]修复AntiGive的一个错误
-[*]修复AddonsHelper不支持嵌套,[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/343']#343[/URL]
-[*]修复使用PlayerPlaceBlockEvent时，无法放置红木门,[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/496']#495[/URL]
-[*]修复 PlayerMoveEvent无法使用的bug,[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/496']#496[/URL]
-[*]修复AntiGive无法踢出空格玩家的问题,[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/497']#497[/URL]
+[*]修复不会加载文件名与已注册插件名称相同的插件,[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/510']#510[/URL] by @Jasonzyt
+[*]修复Molang API(MC/ExpressionNode.hpp) 的错误 , [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/524']#524[/URL] by @LazuliKao
+[*]修复onMove的部分问题 , [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/530']#530[/URL] by @Redbeanw44602
+[*]修复distanceToSqr API ,by @QingYu
+[/LIST]
+[*]修复LLSE bugs
+[LIST]
+[*]修复mc.newCommand中参数perm的默认值不正确, [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/517']#517[/URL] by @StarsDream00
 [/LIST]
 [/LIST]
