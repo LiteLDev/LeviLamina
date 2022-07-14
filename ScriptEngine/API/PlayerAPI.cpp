@@ -229,7 +229,7 @@ Local<Value> McClass::getPlayer(const Arguments& args)
     CATCH("Fail in GetPlayer!")
 }
 
-Local<Value> McClass::getOnlinePlayers(const Arguments& args)
+Local<Value> McClass::getOnlinePlayers()
 {
     try{
         auto players = Level::getAllPlayers();
@@ -505,7 +505,7 @@ Local<Value> PlayerClass::getInWater()
     CATCH("Fail in getInWater!")
 }
 
-Local<Value> PlayerClass::getRawPtr(const Arguments& args)
+Local<Value> PlayerClass::getRawPtr()
 {
     try {
         Player* player = get();
@@ -606,7 +606,7 @@ Local<Value> PlayerClass::teleport(const Arguments& args)
     CATCH("Fail in TeleportPlayer!")
 }
 
-Local<Value> PlayerClass::kill(const Arguments& args)
+Local<Value> PlayerClass::kill()
 {
     try{
         Player* player = get();
@@ -619,7 +619,7 @@ Local<Value> PlayerClass::kill(const Arguments& args)
     CATCH("Fail in KillPlayer!")
 }
 
-Local<Value> PlayerClass::isLoading(const Arguments& args)
+Local<Value> PlayerClass::isLoading()
 {
     try{
         Player* player = get();
@@ -631,7 +631,7 @@ Local<Value> PlayerClass::isLoading(const Arguments& args)
     CATCH("Fail in isLoading!")
 }
 
-Local<Value> PlayerClass::isOP(const Arguments& args)
+Local<Value> PlayerClass::isOP()
 {
     try{
         Player* player = get();
@@ -783,7 +783,7 @@ Local<Value> PlayerClass::talkTo(const Arguments& args)
     CATCH("Fail in talkTo!");
 }
 
-Local<Value> PlayerClass::getHand(const Arguments& args)
+Local<Value> PlayerClass::getHand()
 {
     try {
         Player* player = get();
@@ -795,7 +795,7 @@ Local<Value> PlayerClass::getHand(const Arguments& args)
     CATCH("Fail in getHand!");
 }
 
-Local<Value> PlayerClass::getOffHand(const Arguments& args)
+Local<Value> PlayerClass::getOffHand()
 {
     try {
         Player* player = get();
@@ -807,7 +807,7 @@ Local<Value> PlayerClass::getOffHand(const Arguments& args)
     CATCH("Fail in getOffHand!");
 }
 
-Local<Value> PlayerClass::getInventory(const Arguments& args)
+Local<Value> PlayerClass::getInventory()
 {
     try {
         Player* player = get();
@@ -819,7 +819,7 @@ Local<Value> PlayerClass::getInventory(const Arguments& args)
     CATCH("Fail in getInventory!");
 }
 
-Local<Value> PlayerClass::getArmor(const Arguments& args)
+Local<Value> PlayerClass::getArmor()
 {
     try {
         Player* player = get();
@@ -831,7 +831,7 @@ Local<Value> PlayerClass::getArmor(const Arguments& args)
     CATCH("Fail in getArmor!");
 }
 
-Local<Value> PlayerClass::getEnderChest(const Arguments& args)
+Local<Value> PlayerClass::getEnderChest()
 {
     try {
         Player* player = get();
@@ -843,7 +843,7 @@ Local<Value> PlayerClass::getEnderChest(const Arguments& args)
     CATCH("Fail in getEnderChest!");
 }
 
-Local<Value> PlayerClass::getRespawnPosition(const Arguments& args)
+Local<Value> PlayerClass::getRespawnPosition()
 {
     try {
         Player* player = get();
@@ -918,7 +918,7 @@ Local<Value> PlayerClass::setRespawnPosition(const Arguments& args)
     CATCH("Fail in setRespawnPosition!")
 }
 
-Local<Value> PlayerClass::refreshItems(const Arguments& args)
+Local<Value> PlayerClass::refreshItems()
 {
     try {
         Player* player = get();
@@ -976,7 +976,7 @@ Local<Value> PlayerClass::reduceLevel(const Arguments& args)
     CATCH("Fail in reduceLevel!");
 }
 
-Local<Value> PlayerClass::getLevel(const Arguments& args)
+Local<Value> PlayerClass::getLevel()
 {
     try {
         Player* player = get();
@@ -988,7 +988,7 @@ Local<Value> PlayerClass::getLevel(const Arguments& args)
     CATCH("Fail in getLevel!")
 }
 
-Local<Value> PlayerClass::resetLevel(const Arguments& args)
+Local<Value> PlayerClass::resetLevel()
 {
     try {
         Player* player = get();
@@ -1001,7 +1001,7 @@ Local<Value> PlayerClass::resetLevel(const Arguments& args)
     CATCH("Fail in resetLevel!")
 }
 
-Local<Value> PlayerClass::getExperience(const Arguments& args)
+Local<Value> PlayerClass::getExperience()
 {
     try {
         Player* player = get();
@@ -1059,7 +1059,7 @@ Local<Value> PlayerClass::reduceExperience(const Arguments& args)
     CATCH("Fail in reduceExperience!");
 }
 
-Local<Value> PlayerClass::getXpNeededForNextLevel(const Arguments& args)
+Local<Value> PlayerClass::getXpNeededForNextLevel()
 {
     try {
         Player* player = get();
@@ -1087,7 +1087,7 @@ Local<Value> PlayerClass::transServer(const Arguments& args)
     CATCH("Fail in transServer!");
 }
 
-Local<Value> PlayerClass::crash(const Arguments& args)
+Local<Value> PlayerClass::crash()
 {
     try {
         Player* player = get();
@@ -1101,7 +1101,7 @@ Local<Value> PlayerClass::crash(const Arguments& args)
     CATCH("Fail in crashPlayer!");
 }
 
-Local<Value> PlayerClass::getBlockStandingOn(const Arguments& args)
+Local<Value> PlayerClass::getBlockStandingOn()
 {
     try {
         Player* player = get();
@@ -1113,7 +1113,7 @@ Local<Value> PlayerClass::getBlockStandingOn(const Arguments& args)
     CATCH("Fail in getBlockStandingOn!");
 }
 
-Local<Value> PlayerClass::getDevice(const Arguments& args)
+Local<Value> PlayerClass::getDevice()
 {
     try {
         Player* player = get();
@@ -1234,7 +1234,7 @@ Local<Value> PlayerClass::setSidebar(const Arguments& args)
     CATCH("Fail in setSidebar!")
 }
 
-Local<Value> PlayerClass::removeSidebar(const Arguments& args)
+Local<Value> PlayerClass::removeSidebar()
 {
     try{
         Player* player = get();
@@ -1634,7 +1634,7 @@ Local<Value> PlayerClass::setOnFire(const Arguments& args)
     CATCH("Fail in setOnFire!");
 }
 
-Local<Value> PlayerClass::refreshChunks(const Arguments& args)
+Local<Value> PlayerClass::refreshChunks()
 {
     try {
         Player* player = get();
@@ -1710,7 +1710,7 @@ Local<Value> PlayerClass::setSprinting(const Arguments& args)
     CATCH("Fail in setSprinting!");
 }
 
-Local<Value> PlayerClass::getNbt(const Arguments& args)
+Local<Value> PlayerClass::getNbt()
 {
     try {
         Player* player = get();
@@ -1785,7 +1785,7 @@ Local<Value> PlayerClass::hasTag(const Arguments& args)
     CATCH("Fail in hasTag!");
 }
 
-Local<Value> PlayerClass::getAllTags(const Arguments& args)
+Local<Value> PlayerClass::getAllTags()
 {
     try {
         Player* player = get();
@@ -1801,7 +1801,7 @@ Local<Value> PlayerClass::getAllTags(const Arguments& args)
     CATCH("Fail in getAllTags!");
 }
 
-Local<Value> PlayerClass::getAbilities(const Arguments& args)
+Local<Value> PlayerClass::getAbilities()
 {
     try {
         Player* player = get();
@@ -1821,7 +1821,7 @@ Local<Value> PlayerClass::getAbilities(const Arguments& args)
     CATCH("Fail in getAbilities!");
 }
 
-Local<Value> PlayerClass::getAttributes(const Arguments& args)
+Local<Value> PlayerClass::getAttributes()
 {
     try {
         Player* player = get();
@@ -1905,7 +1905,7 @@ Local<Value> PlayerClass::getBlockFromViewVector(const Arguments& args)
     CATCH("Fail in getBlockFromViewVector!");
 }
 
-Local<Value> PlayerClass::isSimulatedPlayer(const Arguments& args)
+Local<Value> PlayerClass::isSimulatedPlayer()
 {
     try
     {
@@ -1928,7 +1928,7 @@ Local<Value> PlayerClass::quickEvalMolangScript(const Arguments& args) {
 
 //////////////////// For Compatibility ////////////////////
 
-Local<Value> PlayerClass::getAllItems(const Arguments& args)
+Local<Value> PlayerClass::getAllItems()
 {
     try {
         Player* player = get();

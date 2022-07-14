@@ -21,7 +21,7 @@ public:
 
     static Local<Object> newPlayer(Player *p);
     static Player* extract(Local<Value> v);
-    Local<Value> getRawPtr(const Arguments& args);
+    Local<Value> getRawPtr();
 
     Local<Value> getName();
     Local<Value> getPos();
@@ -42,41 +42,41 @@ public:
     Local<Value> getUniqueID();
     Local<Value> getLangCode();
 
-    Local<Value> isLoading(const Arguments& args);
+    Local<Value> isLoading();
 
-    Local<Value> isOP(const Arguments& args);
+    Local<Value> isOP();
     Local<Value> setPermLevel(const Arguments& args);
     Local<Value> setGameMode(const Arguments& args);
 
     Local<Value> runcmd(const Arguments& args);
     Local<Value> teleport(const Arguments& args);
-    Local<Value> kill(const Arguments& args);
+    Local<Value> kill();
     Local<Value> kick(const Arguments& args);
     Local<Value> tell(const Arguments& args);
     Local<Value> talkAs(const Arguments& args);
     Local<Value> talkTo(const Arguments& args);
     Local<Value> rename(const Arguments& args);
     Local<Value> transServer(const Arguments& args);
-    Local<Value> crash(const Arguments& args);
+    Local<Value> crash();
     Local<Value> hurt(const Arguments& args);
     Local<Value> setOnFire(const Arguments& args);
-    Local<Value> refreshChunks(const Arguments& args);
+    Local<Value> refreshChunks();
     Local<Value> giveItem(const Arguments& args);
     Local<Value> clearItem(const Arguments& args);
     Local<Value> isSprinting(const Arguments& args);
     Local<Value> setSprinting(const Arguments& args);
     Local<Value> sendToast(const Arguments& args);
 
-    Local<Value> getBlockStandingOn(const Arguments& args);
-    Local<Value> getDevice(const Arguments& args);
-    Local<Value> getHand(const Arguments& args);
-    Local<Value> getOffHand(const Arguments& args);
-    Local<Value> getInventory(const Arguments& args);
-    Local<Value> getArmor(const Arguments& args);
-    Local<Value> getEnderChest(const Arguments& args);
-    Local<Value> getRespawnPosition(const Arguments& args);
+    Local<Value> getBlockStandingOn();
+    Local<Value> getDevice();
+    Local<Value> getHand();
+    Local<Value> getOffHand();
+    Local<Value> getInventory();
+    Local<Value> getArmor();
+    Local<Value> getEnderChest();
+    Local<Value> getRespawnPosition();
     Local<Value> setRespawnPosition(const Arguments& args);
-    Local<Value> refreshItems(const Arguments& args);
+    Local<Value> refreshItems();
 
     Local<Value> getScore(const Arguments& args);
     Local<Value> setScore(const Arguments& args);
@@ -84,18 +84,18 @@ public:
     Local<Value> reduceScore(const Arguments& args);
     Local<Value> deleteScore(const Arguments& args);
     Local<Value> setSidebar(const Arguments& args);
-    Local<Value> removeSidebar(const Arguments& args);
+    Local<Value> removeSidebar();
     Local<Value> setBossBar(const Arguments& args);
     Local<Value> removeBossBar(const Arguments& args);
     Local<Value> addLevel(const Arguments& args);
     Local<Value> reduceLevel(const Arguments& args);
-    Local<Value> getLevel(const Arguments& arg);
-    Local<Value> resetLevel(const Arguments& arg);
-    Local<Value> getExperience(const Arguments& arg);
+    Local<Value> getLevel();
+    Local<Value> resetLevel();
+    Local<Value> getExperience();
     Local<Value> setExperience(const Arguments& arg);
     Local<Value> addExperience(const Arguments& args);
     Local<Value> reduceExperience(const Arguments& arg);
-    Local<Value> getXpNeededForNextLevel(const Arguments& arg);
+    Local<Value> getXpNeededForNextLevel();
 
     Local<Value> sendSimpleForm(const Arguments& args);
     Local<Value> sendModalForm(const Arguments& args);
@@ -107,18 +107,18 @@ public:
     Local<Value> getExtraData(const Arguments& args);
     Local<Value> delExtraData(const Arguments& args);
 
-    Local<Value> getNbt(const Arguments& args);
+    Local<Value> getNbt();
     Local<Value> setNbt(const Arguments& args);
     Local<Value> addTag(const Arguments& args);
     Local<Value> hasTag(const Arguments& args);
     Local<Value> removeTag(const Arguments& args);
-    Local<Value> getAllTags(const Arguments& args);
-    Local<Value> getAbilities(const Arguments& args);
-    Local<Value> getAttributes(const Arguments& args);
+    Local<Value> getAllTags();
+    Local<Value> getAbilities();
+    Local<Value> getAttributes();
     Local<Value> getEntityFromViewVector(const Arguments& args);
     Local<Value> getBlockFromViewVector(const Arguments& args);
 
-    Local<Value> isSimulatedPlayer(const Arguments& args);
+    Local<Value> isSimulatedPlayer();
     Local<Value> quickEvalMolangScript(const Arguments& args);
 
     // SimulatedPlayer API (API/SimulatedPlayerAPI.cpp)
@@ -147,7 +147,7 @@ public:
 
     //For Compatibility
     Local<Value> getIP();
-    Local<Value> getAllItems(const Arguments& args);
+    Local<Value> getAllItems();
     Local<Value> removeItem(const Arguments& args);
 };
 extern ClassDefine<PlayerClass> PlayerClassBuilder;

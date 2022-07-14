@@ -18,7 +18,7 @@ public:
     static Local<Value> listen(const Arguments& args);
 
     static Local<Value> getPlayer(const Arguments& args);
-    static Local<Value> getOnlinePlayers(const Arguments& args);
+    static Local<Value> getOnlinePlayers();
     static Local<Value> getAllEntities(const Arguments& args);
 
     static Local<Value> newItem(const Arguments& args);
