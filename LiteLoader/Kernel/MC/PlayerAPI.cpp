@@ -128,37 +128,37 @@ string Player::getDeviceTypeName()
     switch ((int)getPlatform()) 
     {
         case -1:
-            return "Unknown";
+            return "Hidden";
         case 1:
             return "Android";
         case 2:
             return "iOS";
         case 3:
-            return "OSX";
+            return "macOS";
         case 4:
-            return "Amazon";
+            return "FireOS";
         case 5:
             return "GearVR";
         case 6:
-            return "Hololens";
+            return "HoloLens";
         case 7:
-            return "Win10";
+            return "UWP";
         case 8:
-            return "WIN32";
+            return "Win32";
         case 9:
             return "Dedicated";
         case 10:
-            return "TVOS";
+            return "tvOS";
         case 11:
             return "PlayStation";
         case 12:
-            return "Nintendo";
+            return "Switch";
         case 13:
             return "Xbox";
         case 14:
-            return "WindowsPhone";
+            return "WindowsMobile";
         case 15:
-            return "Linux";
+            return "GNU/Linux";
         default:
             return "Unknown";
     }
