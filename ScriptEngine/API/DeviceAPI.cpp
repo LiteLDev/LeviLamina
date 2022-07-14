@@ -15,7 +15,10 @@ ClassDefine<DeviceClass> DeviceClassBuilder =
         .instanceProperty("ip", &DeviceClass::getIP)
 		.instanceProperty("avgPing", &DeviceClass::getAvgPing)
 		.instanceProperty("avgPacketLoss", &DeviceClass::getAvgPacketLoss)
+		.instanceProperty("lastPing", &DeviceClass::getLastPing)
+		.instanceProperty("lastPacketLoss", &DeviceClass::getLastPacketLoss)
         .instanceProperty("os", &DeviceClass::getOs)
+        .instanceProperty("serverAddress", &DeviceClass::getServerAddress)
         .instanceProperty("clientId", &DeviceClass::getClientId)
 		.build();
 
