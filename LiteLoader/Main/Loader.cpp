@@ -86,6 +86,23 @@ void LoadScriptEngine()
     }
 }
 
+void LoadDotNETEngine()
+{
+    std::string llVersion = GetFileVersionString(GetCurrentModule(), true);
+    std::string path = "plugins/LiteLoader.NET.dll";
+    std::string version = GetFileVersionString(path, true);
+    if (version != llVersion)
+        logger.warn("The file version <{}> of .NET Engine does not match the LiteLoader version <{}>",
+                     version, llVersion);
+    auto lib = LoadLibrary(str2wstr(path).c_str());
+    if (lib)
+        logger.info("* .NETEngine loaded");
+    else {
+        logger.error("* Fail to load .NETEngine!");
+        logger.error("* Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
+    }
+}
+
 void LL::LoadMain() {
     logger.info("Loading plugins...");
 
@@ -111,6 +128,7 @@ void LL::LoadMain() {
             continue;
         auto strPath = UTF82String(path.u8string());
         if (strPath.find("LiteLoader.dll") != string::npos
+            || strPath.find("LiteLoader.NET.dll") != string::npos
             || strPath.find("LiteXLoader") != string::npos ) // Skip Wrong file path		
             continue;
 
@@ -194,6 +212,9 @@ void LL::LoadMain() {
     if (LL::globalConfig.enableScriptEngine)
         if(LL::globalConfig.alwaysLaunchScriptEngine || hasScriptPlugin)
             LoadScriptEngine();
+
+    // Load .NETEngine
+    if (filesystem::exists("plugins/LiteLoader.NET.dll")) LoadDotNETEngine();
 
     //  Call onPostInit
     auto plugins = PluginManager::getAllPlugins(false);
